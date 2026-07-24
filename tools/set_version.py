@@ -36,7 +36,7 @@ def replace_all_expected(path: Path, pattern: str, replacement: str, expected: i
 def sync_version(version: str) -> None:
     if not SEMVER_RE.fullmatch(version):
         raise VersionSyncError(
-            "Version must use semantic versioning, for example 0.9.2 or 1.0.0-beta.1."
+            "Version must use semantic versioning, for example 1.2.3 or 1.0.0-beta.1."
         )
 
     (ROOT / "VERSION").write_text(f"{version}\n", encoding="utf-8")

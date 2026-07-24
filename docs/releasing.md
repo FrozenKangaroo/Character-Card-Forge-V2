@@ -70,7 +70,7 @@ The repository must allow Actions **Read and write permissions** so the workflow
 
 ## macOS unsigned build
 
-The macOS artifact is a Universal 2 application supporting Apple Silicon and Intel Macs, but it is neither Developer ID signed nor notarised.
+The macOS artifact is a Universal 2 application supporting Apple Silicon and Intel Macs, but it is neither Developer ID signed nor notarised. The project must keep `rendering/textures/vram_compression/import_etc2_astc=true`; Godot requires ETC2/ASTC imports for ARM64 or Universal exports. GitHub Actions starts from a clean checkout and imports these textures automatically. After changing this setting in an existing local clone, delete `.godot/imported/` before a manual macOS export so textures are regenerated.
 
 A user may be able to launch it by right-clicking the app and choosing **Open**. When Gatekeeper still blocks it, the user can remove the downloaded quarantine attribute after extracting the ZIP:
 
@@ -89,7 +89,7 @@ The release workflow supports `workflow_dispatch` with an existing tag. Use this
 To synchronise a version without tagging:
 
 ```bash
-python3 tools/set_version.py 0.9.2
+python3 tools/set_version.py 0.9.3
 python3 tools/validate_project.py
 ```
 

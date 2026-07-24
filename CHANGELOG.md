@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.9.3
+
+### Fixed
+
+- Enabled `rendering/textures/vram_compression/import_etc2_astc` so Godot can export the Universal macOS preset containing Apple Silicon ARM64 support.
+- Extended release validation to reject a universal/ARM64 macOS configuration when ETC2/ASTC texture import is disabled, catching this before the export step.
+- Preserved the Windows, Linux, and unsigned macOS release workflow and all v0.9.2 application features unchanged.
+
+### Release note
+
+- GitHub Actions performs a clean import, so the newly enabled texture format is generated automatically. Local clones that previously imported textures may delete `.godot/imported/` before a manual macOS export to force reimport.
+
 ## 0.9.2
 
 ### Added

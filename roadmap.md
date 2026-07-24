@@ -23,11 +23,17 @@ The existing PyWebView application is a feature reference, not an architecture o
 
 ## Current Development Phase
 
-**GitHub Release Infrastructure — v0.9.2 stable candidate**
+**GitHub Release Infrastructure — v0.9.3 stable candidate**
 
-The Godot rewrite now has reproducible Windows, Linux, and unsigned Universal macOS exports driven by committed presets and tag-triggered GitHub Actions. Release metadata is synchronised and validated before publication, and build outputs receive SHA-256 checksums. The next feature phase remains the Vision and Attachments foundation.
+The Godot rewrite now has reproducible Windows, Linux, and unsigned Universal macOS exports driven by committed presets and tag-triggered GitHub Actions. v0.9.3 enables the ETC2/ASTC texture import required for Apple Silicon within the Universal macOS build and validates that requirement before export. The next feature phase remains the Vision and Attachments foundation.
 
 ## Completed
+
+### v0.9.3 — Universal macOS Export Hotfix
+
+- Enabled ETC2/ASTC texture import required by Godot for Universal and ARM64 macOS exports.
+- Added pre-export validation for the required project setting.
+- Preserved all v0.9.2 release infrastructure and v0.9.1 application features.
 
 ### v0.9.2 — GitHub Release Infrastructure
 

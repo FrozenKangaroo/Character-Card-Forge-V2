@@ -8,6 +8,7 @@
 - [ ] Confirm no Godot warnings are being treated as errors.
 - [ ] Update `CHANGELOG.md` and `roadmap.md`.
 - [ ] Run `python3 tools/validate_project.py`.
+- [ ] Confirm ETC2/ASTC texture import remains enabled for the Universal macOS preset.
 - [ ] Confirm the GitHub **Validate Godot project** workflow is green on `main`.
 
 ## Create the release

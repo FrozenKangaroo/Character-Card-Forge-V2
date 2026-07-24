@@ -29,7 +29,7 @@ def main() -> None:
     parser.add_argument(
         "--tag",
         default="",
-        help="Optional release tag to compare with VERSION, for example v0.9.2",
+        help="Optional release tag to compare with VERSION, for example v1.2.3",
     )
     args = parser.parse_args()
 
@@ -71,6 +71,12 @@ def main() -> None:
             source_version == version,
             f"{source} reports {source_version}, but VERSION reports {version}.",
         )
+
+    project_text = (ROOT / "project.godot").read_text(encoding="utf-8")
+    require(
+        'textures/vram_compression/import_etc2_astc=true' in project_text,
+        "Universal/ARM64 macOS exports require ETC2/ASTC texture import to be enabled.",
+    )
 
     preset_text = (ROOT / "export_presets.cfg").read_text(encoding="utf-8")
     for preset_name in ("Windows Desktop", "Linux x86_64", "macOS Universal"):

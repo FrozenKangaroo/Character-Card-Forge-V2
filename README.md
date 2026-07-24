@@ -2,9 +2,9 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.6 desktop application. The original PyWebView application is a feature reference only: its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Version 0.9.2 scope
+## Version 0.9.3 scope
 
-v0.9.2 adds the **GitHub Release Infrastructure** for the new public repository at `FrozenKangaroo/Character-Card-Forge-V2`. The application feature set remains the v0.9.1 Series System stable candidate, while the project can now be validated, exported, packaged, checksummed, and published automatically from a version tag.
+v0.9.3 is the first release-infrastructure hotfix. It enables ETC2/ASTC texture imports required by Godot's Universal macOS export, including Apple Silicon ARM64, and extends validation so this configuration error is caught before export. The application feature set remains the v0.9.1 Series System stable candidate.
 
 ### Automated desktop releases
 
