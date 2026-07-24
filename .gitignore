@@ -1,0 +1,28 @@
+# Godot generated files
+.godot/
+
+# Local export output
+build/
+dist/
+exports/
+
+# Export credentials and signing material
+export_credentials.cfg
+*.keystore
+*.pfx
+*.p12
+
+# Secrets and local configuration
+.env
+.env.*
+secrets/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log

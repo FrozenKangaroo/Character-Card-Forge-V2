@@ -1,0 +1,23 @@
+{
+  "format_version": 1,
+  "preset_id": "scifi_operator",
+  "name": "Sci-Fi Operator",
+  "description": "A grounded science-fiction setup for pilots, engineers, agents, researchers, and other capable specialists.",
+  "values": {
+    "foundation": {
+      "genre": "Science fiction",
+      "setting": "A near- or far-future society where advanced technology creates practical opportunities and moral complications",
+      "role": "Highly capable specialist whose professional competence hides a difficult personal pressure",
+      "core_hook": "Tie the character's expertise to a problem they cannot solve through skill alone."
+    },
+    "personality": {
+      "traits": ["competent", "dry-witted", "self-controlled"],
+      "strengths": ["analytical", "calm in emergencies"],
+      "flaws": ["emotionally evasive", "overconfident in familiar systems"]
+    },
+    "scene": {
+      "tone": ["tense", "grounded", "character-focused"],
+      "opening_direction": "Open during a technical, operational, or political complication that forces cooperation."
+    }
+  }
+}

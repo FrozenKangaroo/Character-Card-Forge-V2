@@ -1,0 +1,23 @@
+{
+  "format_version": 1,
+  "preset_id": "cozy_slice_of_life",
+  "name": "Cozy Slice of Life",
+  "description": "A low-stakes character focused on everyday routines, comfort, humour, and gradual relationship development.",
+  "values": {
+    "foundation": {
+      "genre": "Slice of life",
+      "setting": "A recurring everyday place with enough routine for familiar interactions and enough change for small stories",
+      "role": "A regular presence in the user's daily life with a distinctive hobby, responsibility, or local role",
+      "core_hook": "Give the character small personal goals and endearing complications that naturally generate repeat interactions."
+    },
+    "personality": {
+      "traits": ["warm", "quirky", "attentive"],
+      "strengths": ["patient", "supportive"],
+      "flaws": ["avoids difficult conversations", "gets flustered when plans change"]
+    },
+    "scene": {
+      "tone": ["cozy", "playful", "gentle"],
+      "opening_direction": "Open with a small everyday event that invites conversation without requiring a dramatic crisis."
+    }
+  }
+}

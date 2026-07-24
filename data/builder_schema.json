@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "steps": [
+    {
+      "id": "foundation",
+      "title": "Foundation",
+      "description": "Define the core identity, genre, role, and dramatic hook. These details become the spine of the generated concept.",
+      "fields": [
+        {"id": "working_name", "label": "Working name", "type": "line", "path": "foundation.working_name", "placeholder": "Optional character name"},
+        {"id": "genre", "label": "Genre", "type": "line", "path": "foundation.genre", "placeholder": "Fantasy, cyberpunk, contemporary romance…"},
+        {"id": "setting", "label": "Setting", "type": "line", "path": "foundation.setting", "placeholder": "Where and when does the character exist?"},
+        {"id": "role", "label": "Role / archetype", "type": "line", "path": "foundation.role", "placeholder": "Reluctant healer, rival captain, wandering detective…"},
+        {"id": "core_hook", "label": "Core hook", "type": "multiline", "path": "foundation.core_hook", "placeholder": "What makes this character immediately interesting or dramatically useful?", "height": 130},
+        {"id": "goals", "label": "Primary goals", "type": "multiline", "path": "foundation.goals", "placeholder": "What does the character want right now and in the long term?", "height": 120}
+      ]
+    },
+    {
+      "id": "personality",
+      "title": "Personality",
+      "description": "Shape temperament, contradictions, motivations, flaws, speech, and relationship behaviour.",
+      "fields": [
+        {"id": "traits", "label": "Core traits", "type": "tags", "path": "personality.traits", "placeholder": "witty, guarded, patient"},
+        {"id": "strengths", "label": "Strengths", "type": "tags", "path": "personality.strengths", "placeholder": "observant, loyal, adaptable"},
+        {"id": "flaws", "label": "Flaws", "type": "tags", "path": "personality.flaws", "placeholder": "stubborn, jealous, reckless"},
+        {"id": "motivations", "label": "Motivations", "type": "multiline", "path": "personality.motivations", "placeholder": "What drives their choices beneath the surface?", "height": 120},
+        {"id": "fears", "label": "Fears / vulnerabilities", "type": "multiline", "path": "personality.fears", "placeholder": "Emotional or practical vulnerabilities that can shape scenes.", "height": 120},
+        {"id": "speech_style", "label": "Speech style", "type": "multiline", "path": "personality.speech_style", "placeholder": "Vocabulary, rhythm, formality, verbal tics, humour…", "height": 110},
+        {"id": "mannerisms", "label": "Mannerisms", "type": "multiline", "path": "personality.mannerisms", "placeholder": "Repeated habits, body language, behavioural tells…", "height": 110},
+        {"id": "relationship_style", "label": "Relationship style", "type": "multiline", "path": "personality.relationship_style", "placeholder": "How do they approach trust, conflict, affection, rivalry, authority, and intimacy?", "height": 130}
+      ]
+    },
+    {
+      "id": "background",
+      "title": "Background",
+      "description": "Give the character enough physical and historical grounding to stay coherent during roleplay.",
+      "fields": [
+        {"id": "appearance", "label": "Appearance", "type": "multiline", "path": "background.appearance", "placeholder": "Distinctive physical features, clothing, presentation, age impression…", "height": 150},
+        {"id": "backstory", "label": "Backstory", "type": "multiline", "path": "background.backstory", "placeholder": "Important history that explains the present character without becoming a full biography.", "height": 180},
+        {"id": "skills", "label": "Skills / capabilities", "type": "tags", "path": "background.skills", "placeholder": "medicine, swordplay, negotiation"},
+        {"id": "secrets", "label": "Secrets / hidden complications", "type": "multiline", "path": "background.secrets", "placeholder": "Optional hidden truths or complications that can create future story hooks.", "height": 130},
+        {"id": "boundaries", "label": "Behavioural boundaries", "type": "multiline", "path": "background.boundaries", "placeholder": "Things the character strongly will or will not do; useful for consistency.", "height": 120}
+      ]
+    },
+    {
+      "id": "scene",
+      "title": "Scene",
+      "description": "Build the default roleplay setup and the relationship between the character and the user.",
+      "fields": [
+        {"id": "location", "label": "Starting location", "type": "line", "path": "scene.location", "placeholder": "Where does the roleplay begin?"},
+        {"id": "situation", "label": "Starting situation", "type": "multiline", "path": "scene.situation", "placeholder": "What is happening when the conversation begins?", "height": 150},
+        {"id": "user_role", "label": "User role", "type": "line", "path": "scene.user_role", "placeholder": "Stranger, partner, rival, commander, classmate…"},
+        {"id": "relationship", "label": "Initial relationship", "type": "line", "path": "scene.relationship", "placeholder": "How do the character and user currently relate?"},
+        {"id": "tone", "label": "Desired tone", "type": "tags", "path": "scene.tone", "placeholder": "tense, playful, slow-burn"},
+        {"id": "opening_direction", "label": "Opening direction", "type": "multiline", "path": "scene.opening_direction", "placeholder": "What should the first message establish, reveal, or invite?", "height": 140}
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review",
+      "description": "Review the assembled builder brief before applying it to the character project.",
+      "fields": []
+    }
+  ]
+}

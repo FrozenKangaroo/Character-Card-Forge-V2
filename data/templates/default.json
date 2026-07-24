@@ -1,0 +1,203 @@
+{
+  "format_version": 2,
+  "template_id": "default",
+  "name": "Default Character Card",
+  "description": "The starter Character Card Forge workspace template.",
+  "global_generation_instructions": [
+    "Write a coherent character suitable for roleplay.",
+    "Keep fields internally consistent.",
+    "Do not include markdown fences around the JSON response.",
+    "Return valid JSON only."
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "description": "Identity, organisation, and the core concept used for generation.",
+      "fields": [
+        {
+          "id": "name",
+          "label": "Character name",
+          "type": "line",
+          "path": "character.name",
+          "placeholder": "Character name",
+          "generate": true,
+          "required": true,
+          "generation_prompt": ""
+        },
+        {
+          "id": "tags",
+          "label": "Tags",
+          "type": "tags",
+          "path": "metadata.tags",
+          "placeholder": "fantasy, mage, rival",
+          "generate": true,
+          "required": false,
+          "generation_prompt": ""
+        },
+        {
+          "id": "summary",
+          "label": "Library summary",
+          "type": "multiline",
+          "path": "metadata.summary",
+          "placeholder": "A short searchable summary for the library.",
+          "generate": true,
+          "height": 90,
+          "required": false,
+          "generation_prompt": ""
+        },
+        {
+          "id": "concept",
+          "label": "Generation concept",
+          "type": "multiline",
+          "path": "concept.prompt",
+          "placeholder": "Describe the character you want to create. This is the primary input for AI generation.",
+          "generate": false,
+          "height": 180,
+          "required": false,
+          "generation_prompt": ""
+        },
+        {
+          "id": "concept_notes",
+          "label": "Private concept notes",
+          "type": "multiline",
+          "path": "concept.notes",
+          "placeholder": "Notes for yourself. These are not sent to generation unless you copy them into the concept.",
+          "generate": false,
+          "height": 120,
+          "required": false,
+          "generation_prompt": ""
+        }
+      ],
+      "kind": "standard"
+    },
+    {
+      "id": "character",
+      "title": "Character",
+      "description": "Core roleplay content.",
+      "fields": [
+        {
+          "id": "description",
+          "label": "Description",
+          "type": "multiline",
+          "path": "character.description",
+          "placeholder": "Appearance, background, role, habits, and important facts.",
+          "generate": true,
+          "height": 220,
+          "required": true,
+          "generation_prompt": ""
+        },
+        {
+          "id": "personality",
+          "label": "Personality",
+          "type": "multiline",
+          "path": "character.personality",
+          "placeholder": "Temperament, motivations, strengths, flaws, mannerisms, and behaviour.",
+          "generate": true,
+          "height": 200,
+          "required": true,
+          "generation_prompt": ""
+        },
+        {
+          "id": "scenario",
+          "label": "Scenario",
+          "type": "multiline",
+          "path": "character.scenario",
+          "placeholder": "The default roleplay situation and context.",
+          "generate": true,
+          "height": 150,
+          "required": false,
+          "generation_prompt": ""
+        },
+        {
+          "id": "first_message",
+          "label": "First message",
+          "type": "multiline",
+          "path": "character.first_message",
+          "placeholder": "The character's opening message.",
+          "generate": true,
+          "height": 240,
+          "required": true,
+          "generation_prompt": ""
+        },
+        {
+          "id": "example_dialogue",
+          "label": "Example dialogue",
+          "type": "multiline",
+          "path": "character.example_dialogue",
+          "placeholder": "Example dialogue demonstrating voice and behaviour.",
+          "generate": true,
+          "height": 220,
+          "required": false,
+          "generation_prompt": ""
+        }
+      ],
+      "kind": "standard"
+    },
+    {
+      "id": "advanced",
+      "title": "Advanced",
+      "description": "Advanced character-card instructions and creator metadata.",
+      "fields": [
+        {
+          "id": "creator",
+          "label": "Creator",
+          "type": "line",
+          "path": "metadata.creator",
+          "placeholder": "Creator name or handle",
+          "generate": false,
+          "required": false,
+          "generation_prompt": ""
+        },
+        {
+          "id": "character_version",
+          "label": "Character version",
+          "type": "line",
+          "path": "metadata.character_version",
+          "placeholder": "Example: 1.0",
+          "generate": false,
+          "required": false,
+          "generation_prompt": ""
+        },
+        {
+          "id": "creator_notes",
+          "label": "Creator notes",
+          "type": "multiline",
+          "path": "character.creator_notes",
+          "placeholder": "Notes intended for users of the card.",
+          "generate": true,
+          "height": 150,
+          "required": false,
+          "generation_prompt": ""
+        },
+        {
+          "id": "system_prompt",
+          "label": "System prompt",
+          "type": "multiline",
+          "path": "character.system_prompt",
+          "placeholder": "Optional character-specific system prompt.",
+          "generate": true,
+          "height": 180,
+          "required": false,
+          "generation_prompt": ""
+        },
+        {
+          "id": "post_history_instructions",
+          "label": "Post-history instructions",
+          "type": "multiline",
+          "path": "character.post_history_instructions",
+          "placeholder": "Optional instructions applied after chat history.",
+          "generate": true,
+          "height": 180,
+          "required": false,
+          "generation_prompt": ""
+        }
+      ],
+      "kind": "standard"
+    }
+  ],
+  "output_policy": {
+    "mode": "strict",
+    "unexpected_fields": "ignore"
+  }
+}

@@ -1,0 +1,30 @@
+; Engine configuration file.
+; Character Card Forge - Godot rewrite
+config_version=5
+
+[application]
+config/name="Character Card Forge"
+config/version="0.9.1"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/size/window_width_override=1440
+window/size/window_height_override=810
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.035, 0.039, 0.055, 1)
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
