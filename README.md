@@ -2,68 +2,43 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.6 desktop application. The original PyWebView application is a feature reference only: its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Version 0.9.1 scope
+## Version 0.9.2 scope
 
-v0.9.1 retains the **Series System Foundation** feature set and adds a Godot 4.6 strict-warning maintenance pass. Series are reusable, standalone JSON definitions that can organise many projects and provide shared continuity, setting, visual, and generation guidance without duplicating those rules into every character card.
+v0.9.2 adds the **GitHub Release Infrastructure** for the new public repository at `FrozenKangaroo/Character-Card-Forge-V2`. The application feature set remains the v0.9.1 Series System stable candidate, while the project can now be validated, exported, packaged, checksummed, and published automatically from a version tag.
 
-Existing format-v2 projects remain compatible. An unassigned project simply keeps an empty `metadata.series_id`; assigning a series is additive and does not change the project format version.
+### Automated desktop releases
 
-### Native Series Manager
+A pushed `vX.Y.Z` tag now triggers GitHub Actions to:
 
-Open **Series** from the main sidebar to:
+- download the matching official Godot 4.6.3 editor and export templates;
+- validate release metadata and bundled JSON;
+- import and parse the project headlessly;
+- export Windows x86-64, Linux x86-64, and macOS Universal builds;
+- package the Windows and Linux downloads;
+- publish the unsigned macOS Universal ZIP;
+- generate `SHA256SUMS.txt`;
+- create a GitHub Release and attach all downloads.
 
-- create, edit, duplicate, save, and delete series definitions;
-- record names, aliases, descriptions, categories, setting guidance, canon notes, visual direction, generation rules, default tags, and auto-match keywords;
-- search the local series library and see project usage counts;
-- import/export individual series JSON files;
-- export or import one or more series as a portable `.ccfseries` renamed-ZIP Series Pack;
-- generate or improve a structured series bible through the active OpenAI-compatible text profile;
-- run Auto Assign across currently unassigned saved projects.
+The macOS build is intentionally unsigned and unnotarised for now. See `docs/releasing.md` for first-launch guidance and the future signing path.
 
-Series definitions live under `user://character_card_forge/series/` and remain independent from character projects. See `docs/series_system.md` and `docs/series_format.md`.
+### Local release helper
 
-### Project assignment and Auto Series
+The new Godot-native `release.sh` preserves the useful two-path workflow from the old PyWebView app:
 
-The Character Workspace now includes a project-level Series selector plus:
+1. synchronise the version, validate, commit, push `main`, create an annotated tag, and trigger release builds;
+2. validate, commit, and push source changes without making a release.
 
-- **Auto Series**, which scores local names, aliases, matching keywords, default tags, and categories against the current project;
-- **Apply Series Tags**, which copies missing series default tags into project metadata;
-- **Manage Series**, which opens the Series Manager.
+`tools/set_version.py` synchronises the application version across Godot project settings, runtime display, portable package manifests, and export presets. Published tags are not deleted or reused; a failed published version should be followed by a patch bump.
 
-Auto assignment is deterministic and local. Ambiguous ties are not silently applied. Deleting a series does not erase a project's stored series ID; the workspace and library show a repairable missing reference instead.
+### Export presets
 
-### Series-aware generation
+Committed `export_presets.cfg` definitions cover:
 
-Assigned series guidance is now supplied to:
+- `Windows Desktop` — embedded-PCK x86-64 executable;
+- `Linux x86_64` — embedded-PCK native executable;
+- `macOS Universal` — unsigned Universal 2 ZIP for Intel and Apple Silicon.
 
-- full-character generation;
-- per-field AI suggestions;
-- Safe Section Build, Custom Section Build, and Revision;
-- Character Builder filling and concept extraction;
-- Group Scene Generator;
-- Relationship Matrix generation;
-- Card Workflow Studio planning.
-
-The series bible is treated as protected continuity and style context rather than content to copy verbatim into every field.
-
-### Character Library integration
-
-Character Library 2.0 now supports:
-
-- Series and Unassigned filters;
-- series names in search results, compact rows, grid cards, and project details;
-- bulk series assignment or clearing;
-- bulk Auto Series matching;
-- bulk application of assigned-series default tags.
-
-The disposable library cache resolves series names at refresh time, so editing a series does not rewrite every assigned project.
-
-### Portable interoperability
-
-- `.ccfproject` packages include the assigned series definition when it is available locally.
-- Package imports remap colliding series IDs safely and update the imported project reference.
-- Character Card V2 exports preserve the CCF series ID and display name inside the existing namespaced `character_card_forge/v1` extension.
-- Individual card imports restore the series ID as a project-level reference without pretending series data is part of the Character Card standard.
+Bundled JSON remains explicitly included in every export because the builder schemas, presets, and templates are runtime data.
 
 ## Existing major systems
 

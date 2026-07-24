@@ -1,0 +1,102 @@
+name: Build tagged release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing v-prefixed tag to build
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  GODOT_VERSION: 4.6.3
+  GODOT_STATUS: stable
+
+jobs:
+  build-release:
+    name: Export and publish desktop builds
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Resolve release tag
+        id: release_tag
+        env:
+          PUSH_TAG: ${{ github.ref_name }}
+          MANUAL_TAG: ${{ inputs.tag }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [[ "${EVENT_NAME}" == "workflow_dispatch" ]]; then
+            echo "tag=${MANUAL_TAG}" >> "${GITHUB_OUTPUT}"
+          else
+            echo "tag=${PUSH_TAG}" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Check out tagged source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.release_tag.outputs.tag }}
+          fetch-depth: 0
+
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Validate tag, metadata, and JSON
+        run: python3 ./tools/validate_project.py --tag "${{ steps.release_tag.outputs.tag }}"
+
+      - name: Import and parse the Godot project
+        run: godot --headless --path . --import
+
+      - name: Export Windows x86-64
+        run: |
+          mkdir -p build/windows
+          godot --headless --path . \
+            --export-release "Windows Desktop" \
+            build/windows/CharacterCardForge.exe
+
+      - name: Export Linux x86-64
+        run: |
+          mkdir -p build/linux
+          godot --headless --path . \
+            --export-release "Linux x86_64" \
+            build/linux/CharacterCardForge.x86_64
+          chmod +x build/linux/CharacterCardForge.x86_64
+
+      - name: Export unsigned macOS Universal
+        run: |
+          mkdir -p build/macos
+          godot --headless --path . \
+            --export-release "macOS Universal" \
+            build/macos/CharacterCardForge.zip
+
+      - name: Package downloads and checksums
+        run: ./tools/package_release.sh
+
+      - name: Upload build artifacts for diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: CharacterCardForge-${{ steps.release_tag.outputs.tag }}
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release_tag.outputs.tag }}
+        run: |
+          gh release create "${RELEASE_TAG}" dist/* \
+            --repo "${GITHUB_REPOSITORY}" \
+            --title "Character Card Forge ${RELEASE_TAG}" \
+            --generate-notes \
+            --verify-tag

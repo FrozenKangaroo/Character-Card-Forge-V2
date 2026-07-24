@@ -1,0 +1,38 @@
+name: Validate Godot project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: 4.6.3
+  GODOT_STATUS: stable
+
+jobs:
+  validate:
+    name: Parse and validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Validate release metadata and JSON
+        run: python3 ./tools/validate_project.py
+
+      - name: Import and parse the Godot project
+        run: godot --headless --path . --import

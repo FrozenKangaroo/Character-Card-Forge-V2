@@ -1,7 +1,7 @@
 # Godot generated files
 .godot/
 
-# Local export output
+# Local and CI export output
 build/
 dist/
 exports/
@@ -16,6 +16,10 @@ export_credentials.cfg
 .env
 .env.*
 secrets/
+
+# Python helper caches
+__pycache__/
+*.py[cod]
 
 # Editor and operating-system files
 .vscode/

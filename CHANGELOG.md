@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.9.2
+
+### Added
+
+- Committed Godot export presets for Windows x86-64, Linux x86-64, and unsigned Universal macOS builds.
+- GitHub Actions validation on pushes, pull requests, and manual runs using the official Godot 4.6.3 editor and export templates.
+- Tag-triggered release workflow that validates, exports, packages, checksums, and publishes all three desktop builds.
+- Windows ZIP and Linux tar.gz packaging plus `SHA256SUMS.txt` generation.
+- Godot-native `release.sh` with source-only and production-release paths.
+- `tools/set_version.py` for synchronising runtime, project, package-manifest, and export-preset versions.
+- `tools/validate_project.py`, `tools/setup_godot_ci.sh`, and `tools/package_release.sh`.
+- Release documentation and checklist.
+
+### Changed
+
+- The official source/release target is now `FrozenKangaroo/Character-Card-Forge-V2`.
+- Published version tags are treated as immutable; corrections use a new patch version instead of deleting release history.
+- macOS builds are explicitly labelled unsigned and unnotarised.
+
+### Compatibility
+
+- Application features and internal data formats remain unchanged from v0.9.1.
+- Character project format remains version 2; series and portable package format versions remain version 1.
+
 ## 0.9.1
 
 ### Fixed

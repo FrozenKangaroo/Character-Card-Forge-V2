@@ -23,11 +23,23 @@ The existing PyWebView application is a feature reference, not an architecture o
 
 ## Current Development Phase
 
-**Series System Foundation — v0.9.1 stable candidate**
+**GitHub Release Infrastructure — v0.9.2 stable candidate**
 
-Standalone series bibles can now organise projects, drive continuity-aware generation, support local deterministic Auto Series matching, and travel through JSON, `.ccfseries`, and `.ccfproject` interchange paths. Project JSON remains authoritative and stores only a stable series reference. The next major phase is the Vision and Attachments foundation.
+The Godot rewrite now has reproducible Windows, Linux, and unsigned Universal macOS exports driven by committed presets and tag-triggered GitHub Actions. Release metadata is synchronised and validated before publication, and build outputs receive SHA-256 checksums. The next feature phase remains the Vision and Attachments foundation.
 
 ## Completed
+
+### v0.9.2 — GitHub Release Infrastructure
+
+- Added committed Windows x86-64, Linux x86-64, and macOS Universal export presets.
+- Added push/PR validation using the official Godot 4.6.3 editor and export templates.
+- Added tag-triggered exports and automatic GitHub Release publication.
+- Added Windows ZIP, Linux tar.gz, unsigned macOS ZIP, and SHA-256 checksum generation.
+- Added a Godot-native two-path `release.sh` for source-only pushes or production tags.
+- Added safe semantic-version synchronisation across runtime, package manifests, and export presets.
+- Added release metadata, bundled-JSON, preset, and tag validation tooling.
+- Added release documentation and an operator checklist.
+- Preserved the v0.9.1 application feature set and all existing data formats.
 
 ### v0.9.1 — Strict Warning Maintenance
 
