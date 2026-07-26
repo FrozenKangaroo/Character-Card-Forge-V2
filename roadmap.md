@@ -23,12 +23,14 @@ The existing PyWebView application remains a feature reference, not an architect
 - New features extend the central project model rather than create parallel copies of character state.
 - Wider desktop windows expose additional workspace instead of letterboxing a fixed 16:9 interface.
 - Detachable native tool windows are preferred for substantial workflows that benefit from multi-monitor use; primary navigation workspaces may remain embedded when that interaction is clearer.
+- Generation parity work should port useful V1 behaviour into the Godot architecture rather than recreate PyWebView-specific implementation details.
+- Workspace/editing structure, AI-generation structure, and interoperable Character Card output fields should be treated as related but distinct layers where that produces cleaner templates and exports.
 
 ## Current Development Phase
 
-**Image Generation Expansion — v0.12 development candidate**
+**v0.12 development candidate — Image Generation Expansion + Generation Parity Phase 1**
 
-v0.11.0 established the first native image-generation foundation and has now been promoted from candidate to a real release. The current v0.12 branch expands that same system rather than replacing the central image asset/gallery model.
+v0.11.0 established the first native image-generation foundation and has now been promoted from candidate to a real release. The current v0.12 branch expands that image system and begins a source-audited generation-parity programme after comparing the Godot generator with the V1 PyWebView implementation.
 
 The v0.12 candidate currently adds:
 
@@ -45,9 +47,16 @@ The v0.12 candidate currently adds:
 - capture of returned Stable Diffusion seeds for reproducibility;
 - gallery **Regenerate** and **New Seed Variant** workflows;
 - format-v2 generated-image metadata while retaining older gallery entries;
-- Image Studio as a selected main navigation workspace rather than an unexpected popup, while provider connection management remains in Settings.
+- Image Studio as a selected main navigation workspace rather than an unexpected popup, while provider connection management remains in Settings;
+- a V1-inspired default character-generation contract that treats the source concept as authoritative instead of generic inspiration;
+- a corrected **Description** contract focused on visible physical appearance/external presentation rather than mixing biography and personality into the same field;
+- structured labelled guidance inside Description for age, appearance, outfit style, and distinguishing features while still exporting through the normal Character Card Description field;
+- richer **Personality** guidance for traits, motivation, behaviour toward `{{user}}`, speech, strengths, flaws, likes, dislikes, and mannerisms while retaining the normal Character Card Personality field;
+- stronger Scenario and First Message continuity guidance so both describe the same immediately playable opening situation;
+- V1-style Example Dialogue guidance requiring one `<START>` marker followed by one continuous example conversation;
+- stronger required-field and concept-fidelity instructions in the built-in template without changing existing project or template format versions.
 
-Release/application metadata intentionally remains on v0.11.0 while this branch is a development candidate. A normal `release.sh` promotion can synchronise v0.12.0 after real local-provider testing confirms the new provider split and Forge/A1111 workflow.
+Release/application metadata intentionally remains on v0.11.0 while this branch is a development candidate. A normal `release.sh` promotion can synchronise v0.12.0 after real local-provider testing confirms the new provider split/Forge workflow and a text-generation smoke test confirms the revised default generation contract behaves well on the user's configured backend.
 
 ## Completed
 
@@ -172,7 +181,7 @@ Release/application metadata intentionally remains on v0.11.0 while this branch 
 
 ## In Progress
 
-### v0.12 — Image Generation Expansion candidate
+### v0.12 — Image Generation Expansion + Generation Parity Phase 1 candidate
 
 - **Implemented:** settings-format-v6 separation between character-AI profiles and dedicated image-provider profiles.
 - **Implemented:** v5 → v6 migration preserving text/vision assignments and image-generation defaults while preventing an SD provider from inheriting an OpenAI-style text URL/model/key.
@@ -192,9 +201,16 @@ Release/application metadata intentionally remains on v0.11.0 while this branch 
 - **Implemented:** New Seed Variant workflow using the stored recipe with a fresh random SD seed.
 - **Implemented:** profile-level Save Image Defaults using the dedicated image-provider record.
 - **Implemented:** Image Studio embedded as a primary main-content workspace with selected sidebar state; connection credentials live in Settings rather than the Studio.
-- **Validated:** repository checks and Godot 4.6.3 headless import/parse pass on the separated-provider candidate.
+- **Implemented — Generation Parity Phase 1:** source-audited the V1 generation/template behaviour and documented the architectural gaps that matter to output quality.
+- **Implemented — Generation Parity Phase 1:** rewrote the built-in Default template's generation instructions so the source concept is authoritative and explicit supplied details should be preserved rather than casually reinvented.
+- **Implemented — Generation Parity Phase 1:** restored physical/external-only Description semantics with labelled Age, Appearance, Outfit Style, and Distinguishing Features guidance inside the standard interoperable Description field.
+- **Implemented — Generation Parity Phase 1:** expanded Personality guidance into labelled traits, motivation, behaviour toward `{{user}}`, speech, strengths, flaws, likes, dislikes, and habits/mannerisms inside the standard interoperable Personality field.
+- **Implemented — Generation Parity Phase 1:** strengthened Scenario/First Message continuity and Example Dialogue formatting guidance.
+- **Validated previously:** repository checks and Godot 4.6.3 headless import/parse pass on the separated-provider candidate.
+- **Pending validation:** repository/CI parse validation after the Generation Parity Phase 1 template changes.
 - **Pending validation:** real-world Forge/Automatic1111 testing on the user's local setup.
 - **Pending validation:** OpenAI-compatible batch behaviour across providers with different `n` limits/response envelopes.
+- **Pending validation:** compare at least several freshly generated cards against the previous V2 default template to confirm Description/Personality fidelity improves across the user's normal text model.
 
 ### Ongoing validation
 
@@ -217,9 +233,27 @@ Release/application metadata intentionally remains on v0.11.0 while this branch 
 
 ## Next Up
 
-### v0.13 — Image Workflow Expansion
+### v0.13 — Generation Parity Core
 
-After v0.12 is validated and released:
+The V1 source audit showed that its higher output quality came from more than prompt wording. After v0.12 is validated and released, make the generation contract an explicit engine feature rather than relying only on stronger default-template prose.
+
+- Separate **workspace fields**, **generation subfields/components**, and **interoperable output bindings** so several editable/generatable components can fold into one Character Card field such as Description or Personality.
+- Add template-managed generation components with stable IDs, labels, instructions, enabled state, required state, ordering, and output binding.
+- Keep older format-v2 templates working through migration/defaults; version the template schema when the new component model is introduced.
+- Add private pre-generation Q&A/interview passes driven by enabled template questions.
+- Verify that every required Q&A question receives an answer and perform targeted retry passes for only missing answers.
+- Feed reviewed/completed Q&A into final generation as private planning context rather than exporting it as card content.
+- Define builder/context precedence so explicit builder guidance overrides generic generation assumptions without silently overwriting unrelated established character facts.
+- Add concept-fidelity checks for supplied names and distinctive concept markers, with a strict regeneration path when output clearly drifts from the source concept.
+- Add template-aware completeness validation for required fields, required generation components, special formatting contracts, and enabled sections.
+- Add targeted semantic repair for incomplete generated fields/sections while preserving useful content from the original response.
+- Revalidate repaired results before Generation Preview and surface useful diagnostics such as missing components and repair attempts.
+- Keep the existing review-first Generation Preview: automatic generation/repair may improve a proposal, but generated content must still not silently overwrite project data.
+- Add user-visible generation progress that can distinguish planning/Q&A, generation, validation, and repair stages.
+
+### v0.14 — Image Workflow Expansion
+
+The previously planned v0.13 image-workflow milestone is deliberately moved, not removed, so generation parity can take priority after the V1 source audit.
 
 - Add image-to-image/reference-image generation where the selected backend supports it.
 - Allow existing generated images and managed visual attachments to become generation references without copying binary data into JSON.
@@ -235,7 +269,11 @@ After v0.12 is validated and released:
 ### Generation Improvements
 
 - Streaming text support where providers support it.
-- Structured generation diagnostics and stronger response-repair attempts.
+- Structured generation diagnostics and stronger response-repair attempts. **Promoted to the v0.13 Generation Parity Core milestone.**
+- V1-style concept fidelity, Q&A completeness, template completeness validation, and targeted semantic repair. **Planned for v0.13.**
+- V1-style Full/Lite/Compact-Lite or equivalent multi-pass generation strategies for smaller context windows after the core generation contract is explicit and testable.
+- Section-by-section generation/continuation with per-stage progress, inspired by the later V1 beta workflow, once the exact behaviour is source-verified or cleanly specified for the Godot architecture.
+- Optional template-level rules for special formatting contracts such as one `<START>` marker, greeting counts, or constrained tag sets without hard-coding every format rule into the general generator.
 - Separate Text and Vision role assignments within the Character AI provider collection. **Completed in v0.10.0 and retained.**
 - Dedicated image-provider collection independent from Character AI credentials/models. **v0.12 candidate implemented with settings format v6.**
 - Image backend selection per dedicated image provider. **v0.12 candidate implemented.**
@@ -288,7 +326,7 @@ After v0.12 is validated and released:
 - Character analysis and full-card analysis. **Review-first foundation completed in v0.10.0.**
 - PDF/text/subtitle/transcript attachments. **Managed attachment foundation completed in v0.10.0; PDF extraction remains planned.**
 - Attachment preprocessing and context budgeting. **Foundation completed in v0.10.0.**
-- Visual-reference handoff into image-to-image workflows. **Planned for v0.13.**
+- Visual-reference handoff into image-to-image workflows. **Planned for v0.14.**
 
 ### Image Generation
 
@@ -303,10 +341,10 @@ After v0.12 is validated and released:
 - Batch generation. **v0.12 candidate implemented.**
 - Seed-aware regeneration and new-seed variants. **v0.12 candidate implemented for reproducible backends.**
 - Sampler/steps/CFG/seed image-provider defaults. **v0.12 candidate implemented.**
-- Image-to-image/reference-image generation. **Planned for v0.13.**
-- Emotion-image generation and regeneration. **Planned for v0.13.**
-- Per-emotion prompt editing. **Planned for v0.13.**
-- Reusable visual-style/prompt presets. **Planned for v0.13.**
+- Image-to-image/reference-image generation. **Planned for v0.14.**
+- Emotion-image generation and regeneration. **Planned for v0.14.**
+- Per-emotion prompt editing. **Planned for v0.14.**
+- Reusable visual-style/prompt presets. **Planned for v0.14.**
 - Richer provider-specific quality/aspect/advanced controls.
 - LoRA/embedding-oriented workflow helpers where useful.
 
@@ -335,7 +373,7 @@ After v0.12 is validated and released:
 - Final AI Audit.
 - Card rating and improvement suggestions.
 - Consistency checking.
-- Missing-field checks.
+- Missing-field checks. **Core generation-time completeness checks promoted to v0.13; broader audit/reporting remains planned here.**
 - Token estimates.
 - Revision history and snapshots.
 - Generation-recipe comparison for image variants.
@@ -349,6 +387,7 @@ After v0.12 is validated and released:
 - Keep generated assets referenced by relative paths inside portable packages.
 - Preserve older generated-image records when image metadata grows.
 - Add reusable template packs if community template sharing becomes useful.
+- Document the distinction between workspace fields, generation components, and interoperable output bindings when the v0.13 template schema is introduced.
 
 ## Technical Improvements
 
@@ -362,6 +401,7 @@ After v0.12 is validated and released:
 - Add additional API authentication modes where local servers require them.
 - Split very large UI scripts into reusable components as workflows expand.
 - Consider formal provider-adapter classes once image/text provider diversity justifies the abstraction.
+- Keep generation validators/repair logic in reusable services rather than embedding V1-specific assumptions directly into workspace UI code.
 
 ## Polish
 
@@ -373,6 +413,7 @@ After v0.12 is validated and released:
 - Better empty states and onboarding.
 - Native notifications for completed long-running jobs where useful.
 - Image-gallery thumbnails and denser browsing once gallery collections become larger.
+- Clear generation-progress and repair-status presentation as the v0.13 multi-stage pipeline lands.
 
 ## Long-Term Ideas
 
@@ -389,3 +430,4 @@ After v0.12 is validated and released:
 - Reproducing the old PyWebView interface is explicitly not planned.
 - A mobile browser interface will only return if there is a strong workflow need and it can remain cleanly separated from the desktop application core.
 - Highly backend-specific Stable Diffusion controls should remain optional adapter-owned features rather than becoming mandatory fields in every character project.
+- Exact recreation of V1's internal prompt strings is not a goal; source-audited behaviour should be re-expressed as maintainable Godot-native data and services.
