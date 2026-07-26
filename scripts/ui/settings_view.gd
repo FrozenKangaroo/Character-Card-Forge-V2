@@ -7,6 +7,7 @@ var _settings: Dictionary = {}
 var _loaded_profile_id := ""
 var _loading_profile := false
 var _loading_roles := false
+var _tabs: TabContainer
 var _profile_selector: OptionButton
 var _text_role_selector: OptionButton
 var _vision_role_selector: OptionButton
@@ -29,40 +30,74 @@ var _image_settings_view: CCFImageProviderSettingsView
 
 
 func _ready() -> void:
-	add_theme_constant_override("separation", 14)
+	add_theme_constant_override("separation", 10)
 	_model_service = CCFModelService.new()
 	add_child(_model_service)
 	_model_service.models_loaded.connect(_on_models_loaded)
 	_model_service.models_failed.connect(_on_models_failed)
-	_build_character_ai_settings()
+
+	_tabs = TabContainer.new()
+	_tabs.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_tabs.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	add_child(_tabs)
+
+	var character_root := _make_scroll_tab("Character AI")
+	_build_character_ai_settings(character_root)
+
+	var image_root := _make_scroll_tab("Image Generation")
 	_image_settings_view = CCFImageProviderSettingsView.new()
+	_image_settings_view.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_image_settings_view.settings_saved.connect(_on_image_settings_saved)
-	add_child(_image_settings_view)
+	image_root.add_child(_image_settings_view)
+
 	load_settings(CCFSettingsService.load_settings())
 
 
-func _build_character_ai_settings() -> void:
+func show_image_settings() -> void:
+	if _tabs != null and _tabs.get_tab_count() >= 2:
+		_tabs.current_tab = 1
+
+
+func _make_scroll_tab(tab_title: String) -> VBoxContainer:
+	var scroll := ScrollContainer.new()
+	scroll.name = tab_title
+	scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_tabs.add_child(scroll)
+	var margin := MarginContainer.new()
+	margin.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	margin.add_theme_constant_override("margin_right", 10)
+	margin.add_theme_constant_override("margin_bottom", 12)
+	scroll.add_child(margin)
+	var root := VBoxContainer.new()
+	root.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	root.add_theme_constant_override("separation", 14)
+	margin.add_child(root)
+	return root
+
+
+func _build_character_ai_settings(parent: VBoxContainer) -> void:
 	var intro := Label.new()
 	intro.text = "Character AI providers"
 	intro.add_theme_font_size_override("font_size", 22)
-	add_child(intro)
+	parent.add_child(intro)
 
 	var hint := Label.new()
-	hint.text = "These profiles are only for character text generation and vision analysis. Image generation providers are configured separately below."
+	hint.text = "These profiles are only for character text generation and vision analysis. Stable Diffusion and other image providers have their own Image Generation tab."
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	hint.modulate = Color(0.75, 0.77, 0.84)
-	add_child(hint)
+	parent.add_child(hint)
 
 	var role_heading := Label.new()
 	role_heading.text = "Character AI roles"
 	role_heading.add_theme_font_size_override("font_size", 19)
-	add_child(role_heading)
+	parent.add_child(role_heading)
 
 	var role_grid := GridContainer.new()
 	role_grid.columns = 2
 	role_grid.add_theme_constant_override("h_separation", 14)
 	role_grid.add_theme_constant_override("v_separation", 10)
-	add_child(role_grid)
+	parent.add_child(role_grid)
 
 	role_grid.add_child(_label("Text generation profile"))
 	_text_role_selector = OptionButton.new()
@@ -77,19 +112,19 @@ func _build_character_ai_settings() -> void:
 	role_grid.add_child(_vision_role_selector)
 
 	var role_hint := Label.new()
-	role_hint.text = "Text and vision roles use OpenAI-compatible chat/model APIs. They do not carry Stable Diffusion server settings."
+	role_hint.text = "Text and vision roles use OpenAI-compatible chat/model APIs. They do not carry image-server URLs, checkpoints, samplers, or Stable Diffusion settings."
 	role_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	role_hint.modulate = Color(0.64, 0.68, 0.8)
-	add_child(role_hint)
+	parent.add_child(role_hint)
 
 	var profile_heading := Label.new()
 	profile_heading.text = "Edit character AI profile"
 	profile_heading.add_theme_font_size_override("font_size", 19)
-	add_child(profile_heading)
+	parent.add_child(profile_heading)
 
 	var profile_row := HBoxContainer.new()
 	profile_row.add_theme_constant_override("separation", 8)
-	add_child(profile_row)
+	parent.add_child(profile_row)
 	_profile_selector = OptionButton.new()
 	_profile_selector.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_profile_selector.item_selected.connect(_on_profile_selected)
@@ -111,7 +146,7 @@ func _build_character_ai_settings() -> void:
 	form.columns = 2
 	form.add_theme_constant_override("h_separation", 14)
 	form.add_theme_constant_override("v_separation", 10)
-	add_child(form)
+	parent.add_child(form)
 	_profile_name = _add_line(form, "Profile name")
 	_base_url = _add_line(form, "API base URL")
 	_api_key = _add_line(form, "API key")
@@ -166,13 +201,13 @@ func _build_character_ai_settings() -> void:
 	var generation_heading := Label.new()
 	generation_heading.text = "Character generation behaviour"
 	generation_heading.add_theme_font_size_override("font_size", 19)
-	add_child(generation_heading)
+	parent.add_child(generation_heading)
 
 	var generation_grid := GridContainer.new()
 	generation_grid.columns = 2
 	generation_grid.add_theme_constant_override("h_separation", 14)
 	generation_grid.add_theme_constant_override("v_separation", 10)
-	add_child(generation_grid)
+	parent.add_child(generation_grid)
 	generation_grid.add_child(_label("Use existing fields as context"))
 	_include_existing = CheckBox.new()
 	_include_existing.text = "Preserve and improve existing content when useful"
@@ -202,7 +237,7 @@ func _build_character_ai_settings() -> void:
 
 	var actions := HBoxContainer.new()
 	actions.add_theme_constant_override("separation", 10)
-	add_child(actions)
+	parent.add_child(actions)
 	var save_button := Button.new()
 	save_button.text = "Save Character AI Settings"
 	save_button.custom_minimum_size = Vector2(190, 42)
@@ -216,7 +251,7 @@ func _build_character_ai_settings() -> void:
 	_status = Label.new()
 	_status.modulate = Color(0.72, 0.82, 0.72)
 	_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	add_child(_status)
+	parent.add_child(_status)
 
 
 func load_settings(settings: Dictionary) -> void:
