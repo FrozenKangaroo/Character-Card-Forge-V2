@@ -1,22 +1,29 @@
-# Image Generation Foundation
+# Image Generation
 
-Character Card Forge v0.11 development adds the first native image-generation workflow to the Godot rewrite. The implementation follows the same project-first architecture as the rest of V2: generated artwork is stored as ordinary image files and `character.json` stores only lightweight metadata and relative paths.
+Character Card Forge v0.11 introduced the native image-generation foundation. The v0.12 development candidate expands that same project-first architecture with dedicated Stable Diffusion Forge / Automatic1111 support, image-backend discovery, reproducible seeds, batches, and regenerate/variant workflows.
 
-## Provider role
+Generated artwork remains stored as ordinary image files. `character.json` stores lightweight metadata and relative paths rather than image blobs or base64 data.
 
-Settings format version 4 adds a third reusable provider assignment:
+## Provider roles and image backends
+
+Settings format version 5 keeps the three independent reusable provider roles:
 
 - **Text generation** — character/card writing and planning workflows.
 - **Vision analysis** — multimodal analysis of attached reference images.
-- **Image generation** — text-to-image requests used by Image Generation Studio.
+- **Image generation** — text-to-image work in Image Generation Studio.
 
-Existing v3 settings migrate without changing the user's Text or Vision assignments. The new Image role initially inherits the previously active API profile. Image Generation Studio can select any reusable profile and make it the new Image-role default.
+Each reusable profile now also has an `image_backend` value:
 
-The v0.11 foundation uses the profile's existing `base_url`, `api_key`, and `model` fields. The model can be overridden per generation inside Image Generation Studio, which is useful when a provider exposes text and image models through the same OpenAI-compatible base URL.
+- `openai_compatible` — OpenAI-compatible Images API.
+- `automatic1111` — Stable Diffusion Forge / Automatic1111 WebUI API.
+
+The role assignment and backend type are intentionally separate. A profile can still serve Text, Vision, and Image roles, while Image Studio selects its adapter from the profile's image backend.
+
+Existing settings migrate non-destructively. v3 Text/Vision assignments and v4 Image-role assignments remain unchanged; v5 adds image-backend/default fields to each profile.
 
 ## OpenAI-compatible image adapter
 
-`CCFImageGenerationService` sends a POST request to:
+For an OpenAI-compatible image profile, `CCFImageGenerationService` sends a POST request to:
 
 ```text
 <profile base URL>/images/generations
@@ -24,20 +31,22 @@ The v0.11 foundation uses the profile's existing `base_url`, `api_key`, and `mod
 
 If the configured base URL already ends in `/images/generations`, it is used unchanged.
 
-The initial payload contains:
+A typical request is:
 
 ```json
 {
   "model": "provider-model-id",
   "prompt": "...",
-  "n": 1,
+  "n": 2,
   "size": "1024x1024"
 }
 ```
 
-`size` is omitted when the Image Studio size field is `auto`.
+`size` is omitted when the Image Studio size field is `auto`. The batch control is sent through `n`; providers remain free to impose their own limits.
 
-The adapter accepts several common response shapes so the core gallery does not depend on one provider's envelope:
+OpenAI-compatible image routes have no universal negative-prompt field. Image Studio therefore appends exclusion text as provider-neutral `Avoid or exclude:` guidance for this backend.
+
+The adapter accepts common response shapes:
 
 - OpenAI-style `data[].b64_json`;
 - `base64`, `b64`, `image`, or `image_base64` fields;
@@ -45,37 +54,125 @@ The adapter accepts several common response shapes so the core gallery does not 
 - HTTP/HTTPS image URLs;
 - raw PNG, JPEG, or WebP response bodies.
 
-Remote URLs are downloaded after the generation response. Received PNG/JPEG/WebP images are decoded by Godot and normalised to PNG before entering the project.
+Remote image URLs are downloaded after the generation response. Received images are decoded by Godot and normalised to PNG before entering the project.
 
-## Image Studio
+### OpenAI model discovery
 
-**Image Studio** is a detachable native tool window available from the main sidebar. It deliberately operates on saved projects instead of silently serialising unsaved workspace edits.
+Image Studio can query `<base URL>/models` and list returned model IDs. The OpenAI-compatible model-list schema does not reliably identify which models support image generation, so discovery is intentionally presented as a model list rather than a guarantee of image capability.
 
-The studio provides:
+## Stable Diffusion Forge / Automatic1111 adapter
+
+Profiles using `automatic1111` target the WebUI API used by Automatic1111 and compatible Forge installations.
+
+The base URL can be either the server root:
+
+```text
+http://127.0.0.1:7860
+```
+
+or its API root:
+
+```text
+http://127.0.0.1:7860/sdapi/v1
+```
+
+Image Studio sends text-to-image requests to:
+
+```text
+/sdapi/v1/txt2img
+```
+
+A typical request contains:
+
+```json
+{
+  "prompt": "...",
+  "negative_prompt": "...",
+  "batch_size": 2,
+  "n_iter": 1,
+  "steps": 28,
+  "cfg_scale": 7.0,
+  "seed": -1,
+  "sampler_name": "Euler a",
+  "width": 1024,
+  "height": 1024,
+  "save_images": false,
+  "send_images": true
+}
+```
+
+When a checkpoint/model override is supplied, the request uses `override_settings.sd_model_checkpoint` and asks the WebUI to restore its prior checkpoint after the request. This avoids permanently changing the server's global model simply because one Character Card Forge job used another checkpoint.
+
+The WebUI API must be enabled by the server. Local installations commonly expose it with their API option; exact launch/configuration details depend on the installed Forge or Automatic1111 version.
+
+### Stable Diffusion discovery
+
+Image Studio queries:
+
+```text
+/sdapi/v1/sd-models
+/sdapi/v1/samplers
+```
+
+The returned checkpoint titles and sampler names can be selected directly in the studio. Discovery does not mutate the server's active model.
+
+## Image Studio controls
+
+The detachable **Image Generation Studio** operates on saved projects instead of silently serialising unsaved workspace edits.
+
+Shared controls include:
 
 - saved project and character selection;
-- reusable API-profile selection;
-- Image-role assignment;
-- per-run model override;
-- editable resolution/size input;
+- reusable Image-provider selection and default assignment;
+- backend identification;
+- model/checkpoint override;
+- model/sampler discovery;
+- resolution/size input;
 - Auto, Natural language, and Stable Diffusion-style prompt modes;
 - deterministic prompt building from the central character model;
-- freeform visual direction and exclusion/negative guidance;
-- cancellable image requests;
-- a persistent generated-image gallery;
-- image preview and open-in-system-app action;
-- **Set as Portrait** without duplicating the image file;
-- non-destructive removal of gallery records while retaining the PNG as a recoverable asset.
+- freeform visual direction and negative/exclusion guidance;
+- batch size from 1 to 8;
+- cancellable requests;
+- persistent generated-image gallery;
+- preview/open-in-system-app;
+- **Set as Portrait**;
+- non-destructive gallery-record removal.
 
-When the main workspace has unsaved edits, opening Image Studio warns that image prompts use the saved project state.
+Forge/A1111 additionally uses:
+
+- sampler;
+- steps;
+- CFG scale;
+- seed.
+
+These values can be saved back to the selected provider profile with **Save Image Defaults**. Keeping advanced image defaults on the image profile means local SD tuning does not pollute text-generation settings.
+
+## Seeds, regeneration, and variants
+
+For Forge/A1111, `seed = -1` requests a random seed. Character Card Forge reads the WebUI response `info` metadata and stores the actual returned seed for each image whenever it is available.
+
+This makes a generated gallery item reproducible later:
+
+- **Regenerate** reloads the selected image's stored prompt, negative prompt, profile, model/checkpoint, sampler, steps, CFG, size, and seed, then creates a new image.
+- **New Seed Variant** reloads the same stored generation recipe but resets the requested seed to `-1` before generation.
+
+OpenAI-compatible providers do not have a universal seed control, so seed reproducibility is backend-dependent.
+
+## Batch generation
+
+Image Studio supports batches of 1–8 images.
+
+For OpenAI-compatible Images APIs the batch size is sent as `n`.
+
+For Forge/A1111 the batch size is sent as `batch_size` with `n_iter = 1`. Returned images are decoded and saved individually, and any returned `all_seeds` values are associated with the corresponding gallery records.
+
+The project is saved once after a completed batch rather than once per image.
 
 ## Prompt building
 
 Natural-language prompt generation draws from the selected character's central V2 model, including the character name, optional group role, description or concept, personality cues, and additional visual direction.
 
-Stable Diffusion-style mode builds a concise comma-separated prompt from the same authoritative character data. It is intentionally a foundation rather than a full tag editor; later versions can add provider-specific prompt presets, LoRA/embedding controls, sampler settings, and dedicated local Stable Diffusion adapters without changing the character model.
-
-The OpenAI-compatible route has no universal negative-prompt field. In this foundation, exclusion text is appended to the prompt as provider-neutral `Avoid or exclude:` guidance rather than sending a backend-specific parameter.
+Stable Diffusion-style mode builds a concise comma-separated prompt from the same authoritative character data. It is deliberately provider-neutral so later LoRA, embedding, preset, and style tooling can extend the prompt layer without creating a second character model.
 
 ## Generated image records
 
@@ -86,31 +183,40 @@ characters/<project UUID>/
 └── characters/
     └── <character UUID>/
         └── generated_images/
-            └── generated_<timestamp>_<suffix>.png
+            └── generated_<timestamp>_<batch index>_<suffix>.png
 ```
 
-The character's existing `assets.generated_images[]` array receives a lightweight format-v1 record similar to:
+v0.12 writes format-v2 gallery records similar to:
 
 ```json
 {
-  "format_version": 1,
+  "format_version": 2,
   "image_id": "image_...",
   "path": "characters/<character UUID>/generated_images/generated_....png",
   "created_at": "...",
-  "provider": "openai_compatible",
-  "profile_id": "default",
-  "profile_name": "Default",
-  "model": "image-model-id",
+  "provider": "automatic1111",
+  "backend": "automatic1111",
+  "profile_id": "local-sd",
+  "profile_name": "Local Forge",
+  "model": "checkpoint-name",
   "size": "1024x1024",
-  "prompt_style": "natural",
+  "prompt_style": "stable_diffusion",
   "prompt": "...",
   "negative_prompt": "...",
+  "batch_index": 0,
+  "batch_size": 2,
+  "sampler": "Euler a",
+  "steps": 28,
+  "cfg_scale": 7.0,
+  "seed": 123456789,
+  "generation_mode": "new",
+  "source_image_id": "",
   "width": 1024,
   "height": 1024
 }
 ```
 
-Older string-only entries in `assets.generated_images[]` remain displayable by the studio where a valid relative path is present.
+Older v1 dictionary records and string-only path entries remain displayable. The format is additive: old generated images do not need migration just to remain usable.
 
 Assigning a gallery image as the portrait stores the same relative path in:
 
@@ -118,24 +224,24 @@ Assigning a gallery image as the portrait stores the same relative path in:
 characters[].assets.portrait
 ```
 
-No image bytes or base64 data are duplicated into `character.json`.
+No image bytes are duplicated into `character.json`.
 
 ## Portability
 
-Generated images live under the existing character project tree, so the current `.ccfproject` packaging system includes them automatically alongside other project assets. Character Card PNG export can continue using `assets.portrait` as the selected card artwork.
+Generated images live under the existing character project tree, so `.ccfproject` packaging includes them automatically alongside other project assets. Character Card PNG export can continue using `assets.portrait` as the selected card artwork.
 
 ## Current limitations and next expansion
 
-The v0.11 foundation intentionally establishes the shared storage, provider-role, prompt, and gallery architecture first. Still planned:
+The v0.12 candidate restores the legacy application's major local text-to-image path without introducing a second image database. Still planned:
 
-- dedicated Stable Diffusion Forge / Automatic1111 adapter and backend-specific settings;
-- provider capability detection and image-model discovery/filtering;
-- multiple-image batches and variations;
 - image-to-image/reference-image generation;
-- emotion-image generation and regeneration;
+- emotion-image generation and regeneration using the existing `emotion_images/` tree;
 - per-emotion prompt editing;
-- richer gallery management and asset cleanup;
-- provider-specific quality/aspect/resolution controls;
-- optional prompt presets and reusable visual styles.
+- reusable prompt/style presets;
+- richer gallery cleanup and intentional file deletion;
+- provider-specific quality/aspect controls where useful;
+- LoRA/embedding and other SD-specific advanced controls;
+- stronger capability detection for providers with richer metadata;
+- optional API authentication modes beyond the current profile bearer-key behaviour.
 
-These additions should extend `CCFImageGenerationService` through provider adapters and continue writing to the same central character asset model rather than creating parallel image databases.
+These additions should continue extending the same image service boundary and central character asset model.
