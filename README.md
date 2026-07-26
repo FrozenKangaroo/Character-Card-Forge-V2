@@ -2,23 +2,37 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.6 desktop application. The original PyWebView application is a feature reference only: its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## v0.11 image-generation development candidate
+## v0.12 image-generation development candidate
 
-The current feature branch begins the **Image Generation Foundation** while release metadata remains on the last validated v0.10.0 baseline until this candidate is tested. The Godot rewrite now has independent Text, Vision, and Image provider roles plus a detachable Image Generation Studio built around ordinary per-character image files.
+v0.11.0 established the first native Image Generation Studio. The current v0.12 development branch expands that foundation with a dedicated local Stable Diffusion Forge / Automatic1111 path while preserving the OpenAI-compatible Images API workflow.
+
+Release/application metadata intentionally remains at v0.11.0 until this candidate is parsed by CI and tested against a real local image backend. The normal release helper can perform the coordinated v0.12.0 version promotion afterward.
 
 ### Image generation
 
-- Assign existing reusable API profiles independently to **Text generation**, **Vision analysis**, and **Image generation** roles.
-- Send text-to-image requests to OpenAI-compatible `/images/generations` endpoints.
-- Override the selected image model per generation when a provider exposes different text and image models through one base URL.
+- Assign reusable API profiles independently to **Text generation**, **Vision analysis**, and **Image generation** roles.
+- Choose an image backend per profile:
+  - OpenAI-compatible Images API;
+  - Stable Diffusion Forge / Automatic1111 WebUI API.
+- Send OpenAI-compatible requests to `/images/generations`.
+- Send Forge/A1111 requests to `/sdapi/v1/txt2img`.
+- Discover OpenAI-compatible model IDs through `/models`.
+- Discover Stable Diffusion checkpoints and samplers through `/sdapi/v1/sd-models` and `/sdapi/v1/samplers`.
+- Override the image model/checkpoint per generation.
 - Build editable natural-language or Stable Diffusion-style prompts from the central character model.
+- Use real Stable Diffusion negative prompts on Forge/A1111; OpenAI-compatible routes retain provider-neutral exclusion guidance.
+- Control image size, batch size, sampler, steps, CFG, and seed where the selected backend supports them.
+- Capture returned Stable Diffusion seeds so gallery images retain reproducible generation recipes.
+- Generate batches and save the completed batch into the project in one update.
+- Regenerate a gallery image from its stored prompt/settings/seed.
+- Create a **New Seed Variant** from the stored generation recipe.
 - Accept common base64, data-URL, remote-URL, and raw-image provider responses.
 - Normalise received PNG, JPEG, and WebP images into managed PNG files.
 - Keep generated artwork in the existing per-character `generated_images/` tree with lightweight metadata in `character.json`.
 - Browse generated images in a persistent gallery and promote a selected image to the character portrait without duplicating image bytes.
 - Warn when Image Studio is opened while the main workspace has unsaved edits because the studio deliberately uses saved project state.
 
-See `docs/image_generation.md` for provider behaviour, prompt modes, generated-image records, portability, and the planned Stable Diffusion/emotion-image expansion.
+See `docs/image_generation.md` for backend URLs, request behaviour, seeds, batches, generated-image records, portability, and the next image-workflow phase.
 
 ### Vision and attachments
 
@@ -31,7 +45,7 @@ The v0.10.0 foundation remains intact:
 - Analyse an image through the Vision role using Concept Extraction or Full-card Suggestions.
 - Send every visual proposal into the existing detachable Generation Preview; no vision result overwrites card content directly.
 
-PDFs are stored portably and represented by metadata in this foundation release; native PDF text extraction is still planned. See `docs/vision_attachments.md` for the schema, context rules, supported formats, provider requirements, and current limitations.
+PDFs are stored portably and represented by metadata in the current foundation; native PDF text extraction is still planned. See `docs/vision_attachments.md` for the schema, context rules, supported formats, provider requirements, and limitations.
 
 ### Automated desktop releases
 
@@ -41,7 +55,7 @@ A pushed `vX.Y.Z` tag triggers GitHub Actions to:
 - validate release metadata and bundled JSON;
 - import and parse the project headlessly;
 - export Windows x86-64, Linux x86-64, and macOS Universal builds;
-- package the Windows and Linux downloads;
+- package Windows and Linux downloads;
 - publish the unsigned macOS Universal ZIP;
 - generate `SHA256SUMS.txt`;
 - create a GitHub Release and attach all downloads.
@@ -57,9 +71,20 @@ cd /home/damee/character-card-forge
 ./release.sh
 ```
 
-It automatically performs a safe additive sync into `~/Projects/Character-Card-Forge-V2`, excludes generated/local output, and then continues from the Git checkout. Repository-only files are not deleted. An alternate checkout can be selected with `CCF_REPO_DIR=/path/to/clone ./release.sh`.
+The helper now keeps the staging checkout current automatically:
 
-The Godot-native helper preserves the useful two-path workflow from the old PyWebView app:
+- fetches the latest `origin/main`;
+- fast-forwards a clean destination checkout;
+- automatically reconciles the common case where locally synced files already exactly match a newly merged `origin/main`;
+- stops before overwriting genuinely different local work;
+- refuses silently diverged Git history;
+- performs a safe additive `rsync` into `~/Projects/Character-Card-Forge-V2`;
+- excludes generated/local output and never deletes repository-only files by default;
+- continues execution from the Git checkout after sync.
+
+An alternate checkout can be selected with `CCF_REPO_DIR=/path/to/clone ./release.sh`.
+
+The Godot-native helper keeps two release paths:
 
 1. synchronise the version, validate, commit, push `main`, create an annotated tag, and trigger release builds;
 2. validate, commit, and push source changes without making a release.
@@ -74,7 +99,7 @@ Committed `export_presets.cfg` definitions cover:
 - `Linux x86_64` — embedded-PCK native executable;
 - `macOS Universal` — unsigned Universal 2 ZIP for Intel and Apple Silicon.
 
-Bundled JSON remains explicitly included in every export because the builder schemas, presets, and templates are runtime data.
+Bundled JSON remains explicitly included in every export because builder schemas, presets, and templates are runtime data.
 
 ## Existing major systems
 
@@ -96,7 +121,8 @@ Bundled JSON remains explicitly included in every export because the builder sch
 - Multiple API profiles and compatible `/models` discovery.
 - Separate text-generation, vision-analysis, and image-generation provider roles.
 - Managed project/character attachments with context budgeting and review-first visual analysis.
-- Independent image-generation request service and detachable generated-image gallery.
+- Independent image-generation and image-capability services.
+- OpenAI Images plus Forge/A1111 image adapters in the v0.12 candidate.
 
 ### Multi-character systems
 
@@ -197,18 +223,19 @@ character_card_forge/
 
 ## Architecture
 
-- `scripts/services/storage_service.gd` — format-v2 project persistence, v1 migration, roster helpers, reference maintenance, library-row extraction, and user-data layout.
+- `scripts/services/storage_service.gd` — format-v2 project persistence, migration, roster helpers, reference maintenance, library-row extraction, and user-data layout.
 - `scripts/services/series_service.gd` — versioned series persistence, matching, assignment, generation context, default tags, JSON import/export, and `.ccfseries` packaging.
 - `scripts/services/library_service.gd` — disposable incremental indexing, thumbnail caching, view-state persistence, series decoration, virtual organisation, favourites, and bulk tools.
 - `scripts/services/card_format_service.gd` — Character Card V1/V2 normalisation, mapping, validation, JSON import/export, PNG metadata read/write, and CCF extension round trips.
 - `scripts/services/project_package_service.gd` — `.ccfproject` ZIP packaging, asset/template/series inclusion, safe extraction, and ID collision handling.
 - `scripts/services/relationship_service.gd` — relationship pair normalisation and generation-context rendering.
-- `scripts/services/settings_service.gd` — settings format v4, reusable API profiles, and text/vision/image role assignments.
+- `scripts/services/settings_service.gd` — settings format v5, reusable API profiles, text/vision/image roles, image backend type, and backend-specific image defaults.
 - `scripts/services/template_service.gd` — template storage, migration, validation, import/export, and field discovery.
 - `scripts/services/builder_service.gd` — builder schema/state, presets, concept composition, and character transfer logic.
 - `scripts/services/tool_window_state_service.gd` — detachable-window geometry persistence.
 - `scripts/services/generation_service.gd` — queued text and multimodal jobs including character, builder, controlled, group-scene, relationship, card-workflow, series, and vision analysis.
-- `scripts/services/image_generation_service.gd` — independent OpenAI-compatible text-to-image requests, prompt preparation, flexible result decoding, and managed PNG persistence.
+- `scripts/services/image_generation_service.gd` — OpenAI Images and Forge/A1111 generation adapters, batches, reproducible metadata, result decoding, and managed PNG persistence.
+- `scripts/services/image_capability_service.gd` — image model/checkpoint/sampler discovery and backend capability summaries.
 - `scripts/services/attachment_service.gd` — managed attachment import, format normalisation, preprocessing summaries, context budgeting, and vision image payloads.
 - `scripts/ui/series_manager_view.gd` — native Series Manager and AI series-bible editor.
 - `scripts/ui/library_view.gd` — Character Library 2.0 browsing, series filters, detail summaries, and bulk project management.
@@ -216,7 +243,7 @@ character_card_forge/
 - `scripts/ui/workspace_view.gd` — active-character workspace, project/roster coordination, and series assignment.
 - `scripts/ui/import_export_window.gd` — mapping preview, card import/export, portable project packages, and batch export.
 - `scripts/ui/attachment_manager_window.gd` — project/character attachment management and review-first vision analysis.
-- `scripts/ui/image_generation_window.gd` — detachable project/character image-generation studio, gallery, and portrait assignment.
+- `scripts/ui/image_generation_window.gd` — detachable image-generation studio, backend controls, capability discovery, gallery, regeneration/variants, and portrait assignment.
 - `scripts/ui/project_context_window.gd` — shared project-context editor.
 - `scripts/ui/group_scene_window.gd` — multi-character group-scene generation and review.
 - `scripts/ui/relationship_matrix_window.gd` — structured pair-matrix editor and AI relationship drafting.
@@ -225,4 +252,4 @@ character_card_forge/
 - `scripts/ui/controlled_build_window.gd` — controlled section and revision workflows.
 - `scripts/ui/template_manager_view.gd` — native template editor.
 
-See the `docs/` directory for current format and workflow documentation.
+See the `docs/` directory for current format and workflow documentation, and `roadmap.md` for completed work plus planned legacy-feature parity.
