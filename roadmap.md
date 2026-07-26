@@ -2,9 +2,9 @@
 
 ## Project Vision
 
-Rebuild Character Card Forge as a responsive, native Godot desktop application for creating, generating, editing, organising, importing, and exporting AI roleplay character cards.
+Rebuild Character Card Forge as a responsive, native Godot desktop application for creating, generating, editing, organising, importing, exporting, analysing, and illustrating AI roleplay character cards.
 
-The existing PyWebView application is a feature reference, not an architecture or interface specification. The rewrite should preserve useful capabilities while replacing the legacy persistence, frontend, and job architecture with modular Godot-native systems.
+The existing PyWebView application remains a feature reference, not an architecture or interface specification. The rewrite should preserve useful capabilities while replacing the legacy persistence, frontend, and job architecture with modular Godot-native systems.
 
 ## Core Design Principles
 
@@ -17,313 +17,223 @@ The existing PyWebView application is a feature reference, not an architecture o
 - Non-blocking networking and long-running tasks.
 - Clear separation between project data, UI, AI providers, imports/exports, and integrations.
 - OpenAI-compatible backends remain a first-class target.
+- Local/self-hosted backends remain first-class where the old application had useful local workflows.
 - Data formats are versioned from the beginning.
-- New features should extend the central project model rather than create parallel copies of character state.
-- Wider desktop windows should expose additional workspace instead of letterboxing a fixed 16:9 interface.
+- New features extend the central project model rather than create parallel copies of character state.
+- Wider desktop windows expose additional workspace instead of letterboxing a fixed 16:9 interface.
+- Detachable native tool windows are preferred for substantial workflows that benefit from multi-monitor use.
 
 ## Current Development Phase
 
-**Image Generation Foundation — v0.11 development candidate**
+**Image Generation Expansion — v0.12 development candidate**
 
-The Godot rewrite now has the first native image-generation path on the v0.11 feature branch: a third Image provider role, OpenAI-compatible image requests, central-model prompt building, managed per-character generated-image files, a detachable gallery/studio, and direct portrait assignment. Release/application metadata intentionally remains on the last validated v0.10.0 baseline until this candidate passes repository validation and real-world Godot/provider testing.
+v0.11.0 established the first native image-generation foundation and has now been promoted from candidate to a real release. The current v0.12 branch expands that same system rather than replacing it.
 
-The next image phase will restore the legacy application's dedicated Stable Diffusion Forge/Automatic1111 path and expand the shared gallery architecture into batches, variations, capability discovery, and emotion images rather than building a second image system.
+The v0.12 candidate currently adds:
+
+- per-profile image-backend selection;
+- Stable Diffusion Forge / Automatic1111 WebUI API support alongside OpenAI-compatible Images APIs;
+- `/sdapi/v1/txt2img` generation using the existing central gallery and asset model;
+- WebUI checkpoint and sampler discovery;
+- OpenAI-compatible model discovery from `/models`;
+- batch generation;
+- sampler, steps, CFG, seed, size, checkpoint/model, and prompt controls;
+- capture of returned Stable Diffusion seeds for reproducibility;
+- gallery **Regenerate** and **New Seed Variant** workflows;
+- format-v2 generated-image metadata while retaining older gallery entries;
+- settings-format-v5 migration for backend-specific image profile defaults.
+
+Release/application metadata intentionally remains on v0.11.0 while this branch is a development candidate. A normal `release.sh` promotion can synchronise v0.12.0 after repository validation and real local-provider testing.
 
 ## Completed
+
+### v0.11.0 — Image Generation Foundation
+
+- Added an Image generation provider role independent of Text and Vision roles.
+- Added settings-format-v4 migration preserving existing assignments.
+- Added OpenAI-compatible `/images/generations` requests in a dedicated cancellable image service.
+- Added flexible decoding for base64, data URLs, downloadable URLs, and raw PNG/JPEG/WebP responses.
+- Added PNG normalisation and ordinary per-character generated-image storage.
+- Added natural-language and Stable Diffusion-style prompt construction from the central character model.
+- Added default image size and prompt-style settings plus per-run model override.
+- Added detachable Image Generation Studio with project/character selection, editable prompts, gallery preview, open-in-system-app, and portrait assignment.
+- Added lightweight `assets.generated_images[]` metadata and preserved `.ccfproject` portability.
+- Added dedicated image-generation documentation and repository validation.
+- Promoted release metadata to v0.11.0 after local testing.
+
+### Release Workflow Maintenance after v0.11.0
+
+- Updated `release.sh` to fetch and fast-forward a clean destination `main` automatically before syncing the development copy.
+- Added automatic reconciliation when previously synced local files already exactly match newly merged `origin/main` files.
+- Preserved safety stops for genuinely different local work, local-only commits, and diverged history.
+- Removed the common post-merge manual fetch/reset step from the normal release workflow.
 
 ### v0.10.0 — Vision and Attachments Foundation
 
 - Added independent Text generation and Vision analysis assignments backed by reusable API profiles.
-- Added settings-format-v3 migration that preserves the prior active profile for both new roles.
+- Added settings-format-v3 migration preserving the prior active profile for both roles.
 - Added shared-project and per-character attachment collections without increasing project format version 2.
 - Added managed local files for images, GIFs, text, PDFs, subtitles, transcripts, notes, and arbitrary references.
 - Added preprocessing summaries, text/token estimates, context inclusion controls, and configurable deterministic prompt budgeting.
-- Added attachment context to the principal character and multi-character generation workflows.
+- Added attachment context to principal character and multi-character generation workflows.
 - Added image/GIF Concept Extraction and Full-card Suggestions through OpenAI-compatible multimodal requests.
-- Reused Generation Preview so every visual proposal remains editable and opt-in.
+- Reused Generation Preview so visual proposals remain editable and opt-in.
 - Kept attachment files portable inside existing `.ccfproject` packages.
-- Documented the attachment format, provider roles, limitations, and future expansion path.
 
-### v0.9.4 — One-Command Repository Sync
+### v0.9.x — Series and Release Infrastructure
 
-- Added automatic `rsync` deployment from the development project into the Git checkout before release actions.
-- Added configurable checkout discovery through `CCF_REPO_DIR`, defaulting to `~/Projects/Character-Card-Forge-V2`.
-- Added preflight protection for missing repositories, wrong branches, unexpected remotes, uncommitted destination changes, and missing `rsync`.
-- Kept synchronisation additive so repository-only files are not silently deleted.
-- Excluded generated imports, build output, caches, and logs from deployment.
-- Automatically continued execution from the synced repository copy.
+- Added the Series System foundation and native Series Manager.
+- Added versioned series definitions/bibles, categories, aliases, canon notes, visual direction, generation rules, default tags, and matching keywords.
+- Added deterministic local Auto Series matching and series-aware Character Library filtering/bulk actions.
+- Added series context across major generation workflows.
+- Added portable `.ccfseries` packs and `.ccfproject` series inclusion/remapping.
+- Added warning cleanup and strict Godot 4.6 maintenance fixes.
+- Added Windows x86-64, Linux x86-64, and macOS Universal export presets.
+- Added GitHub Actions validation and tag-triggered release builds.
+- Added semantic-version synchronisation and release validation tooling.
+- Added Universal macOS texture-import hotfixes.
+- Added automatic development-copy → Git-checkout `rsync` release workflow.
 
-### v0.9.3 — Universal macOS Export Hotfix
+### v0.8.x — Character Library 2.0
 
-- Enabled ETC2/ASTC texture import required by Godot for Universal and ARM64 macOS exports.
-- Added pre-export validation for the required project setting.
-- Preserved all v0.9.2 release infrastructure and v0.9.1 application features.
-
-### v0.9.2 — GitHub Release Infrastructure
-
-- Added committed Windows x86-64, Linux x86-64, and macOS Universal export presets.
-- Added push/PR validation using the official Godot 4.6.3 editor and export templates.
-- Added tag-triggered exports and automatic GitHub Release publication.
-- Added Windows ZIP, Linux tar.gz, unsigned macOS ZIP, and SHA-256 checksum generation.
-- Added a Godot-native two-path `release.sh` for source-only pushes or production tags.
-- Added safe semantic-version synchronisation across runtime, package manifests, and export presets.
-- Added release metadata, bundled-JSON, preset, and tag validation tooling.
-- Added release documentation and an operator checklist.
-- Preserved the v0.9.1 application feature set and all existing data formats.
-
-### v0.9.1 — Strict Warning Maintenance
-
-- Wired series context into Idea Generator prompts instead of leaving its API parameter unused.
-- Renamed project-package remapping locals and parameters that shadowed Godot's built-in `remap()` function.
-- Added explicit FileDialog enum casts for strict Godot 4.6 compilation.
-- Preserved all v0.9.0 Series System data formats and behaviour.
-
-### v0.9.0 — Series System Foundation
-
-- Added a native Series Manager with create, edit, save, duplicate, delete, search, usage-count, import, export, and AI-drafting workflows.
-- Added standalone versioned series JSON files outside character projects.
-- Added names, aliases, descriptions, categories, setting guidance, canon notes, visual direction, generation rules, default tags, and matching keywords.
-- Added project-level series selection, clearing, Auto Series matching, missing-reference repair visibility, and default-tag application.
-- Added deterministic local Auto Series scoring and safe handling of ambiguous equal-scoring candidates.
-- Added Series and Unassigned filters plus bulk assignment, clearing, auto-match, and tag application in Character Library 2.0.
-- Added current-series display throughout library cards, rows, project details, recent projects, search, and Dashboard statistics.
-- Added assigned-series context to full character generation, field suggestions, Controlled Build, Character Builder, Group Scene Generator, Relationship Matrix generation, and Card Workflow Studio planning.
-- Added portable `.ccfseries` renamed-ZIP Series Packs with versioned manifests and collision-safe ID remapping.
-- Added referenced series inclusion/remapping in `.ccfproject` packages.
-- Added CCF series-reference round trips through the namespaced Character Card V2 extension.
-- Kept project format version 2 because series assignment is additive and was already reserved in metadata.
-
-### v0.8.1 — Parser hotfix
-
-- Replaced the invalid constructor-backed PNG signature constant with a typed static byte array.
-- Retained all v0.8.0 Character Library 2.0 features unchanged.
-
-### v0.8.0 — Character Library 2.0
-
-- Replaced the basic project list with thumbnail-grid and compact-list views.
-- Added project portrait thumbnails with source-image freshness checks and disposable cache storage.
-- Added incremental per-project indexing based on `character.json` fingerprints.
-- Added broad project/character/card-text search and multiple sorting modes.
-- Added favourites-only, folder, collection, tag, and unfiled filters.
-- Added virtual folders and collections stored as recoverable project metadata rather than filesystem moves.
-- Added project detail summaries covering the full roster and recorded import metadata.
-- Added grid/list multi-selection and bulk favourite, tag, folder, collection, and delete actions.
-- Added library-wide case-insensitive tag merging across project and character metadata.
-- Added remembered library view and filter preferences.
+- Added thumbnail-grid and compact-list views.
+- Added project portrait thumbnails with disposable cache storage.
+- Added incremental per-project indexing.
+- Added broad project/character/card-text search, sorting, favourites, folders, collections, tags, unfiled filtering, and bulk actions.
+- Added project detail summaries and remembered library preferences.
 - Updated Dashboard statistics to reuse the library index.
-- Kept project format version 2 because library organisation is additive.
+- Added parser/warning maintenance without changing the library data model.
 
-### v0.7.1 — Strict-Typing Maintenance
+### v0.7.x — Import / Export Foundation
 
-- Fixed the Card Workflow generation instruction selection so no local variable is inferred from a `Variant` returned by `Dictionary.get()`.
-- Preserved the exact v0.7.0 prompt behaviour while compiling cleanly when Godot warnings are treated as errors.
-- Updated portable project-package manifests to identify the patch release correctly.
+- Added detachable Import / Export Studio.
+- Added Character Card V2 JSON export/import and tolerant legacy V1 import.
+- Added PNG/APNG `chara` metadata reading and Character Card V2 metadata writing.
+- Preserved alternate greetings, embedded lorebooks, creator/version metadata, and unknown V2 extension data.
+- Added namespaced CCF V2 extension round trips for CCF-only/template-specific fields.
+- Added mapping/compatibility reports.
+- Added portable `.ccfproject` renamed-ZIP packages with assets, manifest, templates, safe extraction, and ID remapping.
+- Added batch JSON export from split-card workflow plans.
 
-### v0.7.0 — Import / Export Foundation
+### v0.6.x — Relationships and Multi-Character Card Workflows
 
-- Added detachable Import / Export Studio with mapping preview, validation, card import/export, portable project packaging, and batch export tabs.
-- Added Character Card V2 JSON export for any selected character in a multi-character CCF project.
-- Added Character Card V2 JSON import and tolerant legacy V1 import into new clean CCF projects.
-- Added PNG/APNG `chara` metadata reading and Character Card V2 metadata writing into a copy of an existing PNG image.
-- Added preservation of alternate greetings, embedded character lorebooks, creator metadata, character-version metadata, and unknown V2 extension data.
-- Added a namespaced CCF V2 extension for round-tripping template-specific and CCF-only character data without pretending those fields are standard card fields.
-- Added compatibility reports showing direct, preserved, and namespaced field mappings before export.
-- Added `.ccfproject` renamed-ZIP packages containing project JSON, project assets, a manifest, and referenced custom templates.
-- Added fresh-UUID package imports, safe relative-path extraction, and custom-template ID collision remapping.
-- Added batch Character Card V2 JSON export driven by saved Split-card batch workflows.
-- Kept the internal project format at version 2 because the new interoperability fields are additive.
+- Added structured sparse relationship matrices.
+- Added detachable relationship editing and AI-assisted relationship drafting.
+- Added relationship-aware context to major generation workflows.
+- Added detachable Card Workflow Studio with multi-character single-card, split-card batch-plan, and group-card planning modes.
+- Added reusable project-level card workflow drafts.
+- Added reference cleanup/remapping when characters change or projects are duplicated.
 
-### v0.6.0 — Relationships and Multi-Character Card Workflows
+### v0.5.x — Multi-Character Project Foundation
 
-- Added a structured sparse relationship-matrix model with one canonical record per character pair.
-- Added detachable Relationship Matrix editing for labels, status, intensity, tags, shared summaries, directional perspectives, dynamics, and notes.
-- Added AI-assisted relationship generation across selected character sets with review-before-project-apply behaviour.
-- Added relationship-aware context to full-character generation, field suggestions, Controlled Build, Group Scene Generator, and Card Workflow Studio planning.
-- Added a detachable Card Workflow Studio with multi-character single-card, split-card batch-plan, and group-card planning modes.
-- Added reusable project-level `card_workflows[]` drafts with per-character output directions.
-- Added safe UUID remapping for relationships and workflow references when projects are duplicated.
-- Added relationship cleanup and workflow-reference pruning when characters are removed.
-- Kept the project format at version 2 because the new structures are additive to the existing multi-character container.
-
-### v0.5.3 — Responsive Workspace Layout
-
-- Replaced fixed single-line workspace control rows with wrapping horizontal flow layouts where multi-character controls can exceed ordinary 16:9 widths.
-- Workspace actions now reflow onto additional rows instead of rendering outside the visible application frame.
-- Project, character-roster, and template controls wrap at narrower desktop widths while naturally remaining compact on ultrawide displays.
-- Preserved wider-display expansion without introducing fixed 16:9 letterboxing or horizontal scrolling.
-
-### v0.5.2 — Godot 4.6 Warning Cleanup
-
-- Replaced two mixed-type ternary expressions with explicit typed/default-value branches in the Character Builder code.
-- Renamed local `mode` variables in the Controlled Build window to avoid shadowing `Window.mode`.
-- Renamed the local preview `title` variable to avoid shadowing `Window.title`.
-- Kept Controlled Build job metadata and runtime behaviour unchanged.
-
-### v0.5.1 — Multi-Character Compile Hotfix
-
-- Fixed the explicit integer typing required by Godot 4.6 when calculating the next character number from variant-backed project data.
-
-### v0.5.0 — Multi-Character Project Foundation
-
-- Upgraded the central project schema to format v2 with a `characters[]` collection.
-- Added non-destructive migration from the Godot rewrite's format-v1 single-character projects.
-- Added project-level shared context for premise, setting, current situation, shared rules, and notes.
-- Added in-workspace character roster switching, creation, duplication, removal, and optional group-role metadata.
-- Preserved independent templates, generation histories, builder state, assets, and custom fields per character.
-- Added project-level Shared Context and Group Scene Generator native windows.
-- Added the first multi-character AI workflow with selectable characters, shared-context generation, per-character scenario suggestions, and review-before-apply behaviour.
-- Added shared project context to normal character, field-suggestion, and controlled-build generation prompts.
+- Upgraded the central project schema to format v2 with `characters[]`.
+- Added migration from earlier single-character projects.
+- Added project-level shared premise/setting/situation/rules/notes.
+- Added character roster switching, creation, duplication, removal, and group-role metadata.
+- Preserved independent templates, histories, builder state, assets, and custom fields per character.
+- Added Shared Context and Group Scene native windows.
+- Added shared context to major generation prompts.
 - Updated Character Library and Dashboard semantics for multi-character projects.
-- Added per-character asset directory foundations for later image and attachment systems.
+- Added per-character asset directory foundations.
+- Added responsive workspace-flow layouts and strict Godot warning maintenance.
 
-### v0.4.1 — Controlled Section Building
+### v0.4.x — Guided and Controlled Building
 
-- Added detachable Safe Section Build, Custom Section Build, and selected-field Revision workflows.
-- Added explicit protected-context prompts so unselected content can guide consistency without becoming writable output.
-- Added hard allowed-field enforcement in Generation Preview for controlled jobs.
-- Added per-field keep/replace review through the existing editable Generation Preview.
-- Added freeform revision instructions for partial regeneration of existing content.
-- Added balanced JSON extraction, common local JSON repair, and one automatic AI response-repair pass.
-- Added parse-strategy and repair-count generation diagnostics/history metadata.
+- Added native Guided Character Builder with data-driven steps and presets.
+- Added AI step fill, full-builder fill, concept extraction, review, and character transfer workflows.
+- Added safe fill-empty and optional overwrite behaviour.
+- Added originating-project checks for asynchronous results.
+- Added Safe Section Build, Custom Section Build, and selected-field Revision workflows.
+- Added protected-context prompts and allowed-field enforcement.
+- Added per-field keep/replace review and editable Generation Preview.
+- Added JSON extraction/repair and generation diagnostics.
 
-### v0.4.0 — Guided Character Builder
+### v0.3.x — Template System and Native Tool Windows
 
-- Added a detachable native Character Builder.
-- Added data-driven Foundation, Personality, Background, Scene, and Review steps.
-- Added JSON-backed builder presets.
-- Added per-step and full-builder AI filling through the shared generation queue.
-- Added AI concept-to-builder extraction.
-- Added builder completion and assembled-concept review.
-- Added Send to Concept and Apply to Character workflows.
-- Added non-destructive fill-empty behaviour with optional overwrite mode.
-- Stored reusable builder state inside each character project's workspace data.
-- Added originating-project checks for asynchronous AI results to prevent cross-character result leakage after project switches.
-
-### v0.3.3 — Native Window Startup Fix
-
-- Fixed native tool-window construction order so `force_native` is configured only after each new `Window` has been hidden.
-- Removed the startup errors introduced by v0.3.2 while preserving detachable Idea Generator and Generation Preview windows.
-
-### v0.3.2 — Native Tool Windows
-
-- Moved Idea Generator and Generation Preview into detachable native OS windows.
-- Kept large tool windows non-exclusive so the main workspace can remain interactive.
-- Added remembered tool-window size and placement in a separate disposable UI-state file.
-- Added off-screen placement rejection for changed monitor layouts.
-- Added project ownership checks for Generation Preview and automatic tool closing when switching characters.
-
-### v0.3.1 — Warning Cleanup
-
-- Removed an unused generation-service local variable.
-- Renamed an Idea Generator local that shadowed GDScript's built-in `seed()` function.
-- Kept the v0.3 template-system feature set unchanged while cleaning the reported editor warnings.
-
-### v0.3.0 — Template System
-
-- Added a native Template Manager.
-- Added separate versioned user-template JSON storage.
-- Added create, duplicate, import, export, save, and delete template workflows.
-- Kept the built-in Default template read-only.
-- Added section creation, editing, deletion, and reordering.
-- Added Standard and Interview/Q&A section kinds.
-- Added field creation, editing, deletion, and reordering.
-- Added line, multiline, tags, number, checkbox, and select field types.
-- Added required and AI-generation flags.
-- Added per-field AI instructions/questions.
-- Added global template AI rules.
-- Added strict/flexible output discipline and unexpected-field handling.
-- Added template switching per character while retaining hidden project data.
-- Added template validation and format-v1 → format-v2 normalisation.
-- Extended AI prompts and Generation Preview for typed custom fields.
+- Added native Template Manager with versioned user templates.
+- Added editable sections, fields, field types, AI instructions, template rules, output discipline, and migration/validation.
+- Added detachable native Idea Generator and Generation Preview windows with remembered geometry.
+- Added native-window lifecycle and GDScript warning fixes.
 
 ### v0.2.x — Generation Foundation
 
-- Added a shared queued AI generation service.
-- Added active-job cancellation, queue status, and retry handling.
-- Added full-generation preview with selective field application.
-- Added editable generated proposals.
-- Added per-field AI suggestions.
-- Added an Idea Generator.
-- Added approximate concept token estimates.
-- Added multiple OpenAI-compatible API profiles.
-- Added compatible `/models` discovery.
-- Fixed modal lifecycle issues.
-- Fixed maximised ultrawide letterboxing by using expandable canvas scaling.
+- Added shared queued AI generation service.
+- Added cancellation, queue status, retries, editable previews, selective application, per-field suggestions, Idea Generator, approximate token estimates, multiple API profiles, and compatible `/models` discovery.
+- Fixed early modal lifecycle and ultrawide canvas behaviour.
 
 ### v0.1.x — Application Foundation
 
-- Created the Godot 4.6 project structure.
-- Added native application shell and navigation.
-- Added versioned character project JSON format.
-- Added per-character asset directories.
-- Added settings persistence.
-- Added template-generated editing tabs and fields.
-- Added Character Library scanning, search, open, duplicate, and delete.
-- Added asynchronous OpenAI-compatible generation.
-- Added generation metadata/history.
-- Fixed initial generated tab labels and GDScript shadowing warnings.
+- Created the Godot 4.6 project structure and native shell/navigation.
+- Added versioned character project JSON, per-character assets, settings persistence, template-generated editing fields, basic Character Library, asynchronous OpenAI-compatible generation, and generation history.
 
 ## In Progress
 
-### v0.11 — Image Generation Foundation candidate
+### v0.12 — Image Generation Expansion candidate
 
-- Added an Image generation provider role independent of Text and Vision roles.
-- Added settings-format-v4 migration that preserves existing Text/Vision assignments and seeds Image from the prior active profile.
-- Added OpenAI-compatible `/images/generations` requests in a dedicated cancellable service.
-- Added flexible response decoding for common base64 fields, data URLs, downloadable image URLs, and raw PNG/JPEG/WebP bodies.
-- Added PNG normalisation before managed storage.
-- Added natural-language and Stable Diffusion-style prompt construction from the central character model.
-- Added default image size and prompt-style settings plus per-run model override.
-- Added detachable Image Generation Studio with saved project/character selection, editable prompt controls, gallery preview, open-in-system-app, and portrait assignment.
-- Added lightweight generated-image metadata under the existing `assets.generated_images[]` model.
-- Kept `.ccfproject` portability by storing generated files inside the existing per-character asset tree.
-- Added repository validation markers and dedicated image-generation architecture documentation.
-- Pending Godot 4.6 CI parsing and real-world provider testing before release metadata is promoted to v0.11.0.
+- **Implemented:** settings-format-v5 image backend and backend-specific profile defaults.
+- **Implemented:** OpenAI-compatible and Forge/Automatic1111 provider adapters behind the same image service.
+- **Implemented:** Forge/A1111 `/sdapi/v1/txt2img` generation.
+- **Implemented:** direct Stable Diffusion negative prompts.
+- **Implemented:** sampler, steps, CFG, seed, batch, resolution, and checkpoint/model controls.
+- **Implemented:** WebUI checkpoint discovery from `/sdapi/v1/sd-models`.
+- **Implemented:** WebUI sampler discovery from `/sdapi/v1/samplers`.
+- **Implemented:** OpenAI-compatible `/models` discovery in Image Studio with capability caveats.
+- **Implemented:** multi-image batches with one project save per completed batch.
+- **Implemented:** actual returned WebUI seed capture from `info.all_seeds` where available.
+- **Implemented:** generated-image record format v2 with backend and reproducibility metadata.
+- **Implemented:** gallery Regenerate workflow using stored generation settings and seed.
+- **Implemented:** New Seed Variant workflow using the stored recipe with a fresh random SD seed.
+- **Implemented:** profile-level Save Image Defaults from Image Studio.
+- **Pending validation:** Godot 4.6.3 headless parse/CI on the completed branch.
+- **Pending validation:** real-world Forge/Automatic1111 testing on the user's local setup.
+- **Pending validation:** OpenAI-compatible batch behaviour across providers with different `n` limits/response envelopes.
 
 ### Ongoing validation
 
 - Real-world testing against multiple OpenAI-compatible text backends.
 - Stronger generation-response repair and structured diagnostics.
 - UI refinement as larger workflows are restored.
-- Continued testing of template editing and custom typed fields.
-- Real-world testing of guided builder AI extraction/fill behaviour across different providers.
-- Real-world testing of relationship-matrix AI output across providers and larger character rosters.
-- Real-world testing of Card Workflow Studio planning quality and project-reference maintenance.
-- Real-world round-trip testing against Character Card V2 files produced by multiple ecosystem tools.
-- Real-world PNG/APNG metadata testing across different card images and chunk layouts.
-- Portable `.ccfproject` import/export testing with large asset trees and custom-template collisions.
-- Real-world Character Library 2.0 testing with large project collections, mixed portrait formats, and repeated bulk metadata operations.
-- Real-world Series Manager and `.ccfseries` pack testing across large local series libraries.
-- Auto Series scoring tests against ambiguous franchises, aliases, and overlapping keywords.
-- Verification that all supported AI workflows consistently honour assigned series guidance across providers.
-- Real-world attachment imports across Linux, Windows, and macOS file-dialog behaviour.
-- Context-budget testing with large text, subtitle, and transcript collections.
-- Vision-analysis testing across image-capable OpenAI-compatible providers and local multimodal servers.
-- Portable `.ccfproject` round trips containing shared and per-character attachment trees.
+- Continued template/custom-field testing.
+- Guided builder AI extraction/fill testing across providers.
+- Relationship-matrix AI output testing across providers and larger rosters.
+- Card Workflow Studio planning and reference-maintenance testing.
+- Character Card V2 JSON/PNG/APNG round-trip testing against multiple ecosystem tools.
+- `.ccfproject` testing with large asset trees and custom-template collisions.
+- Character Library 2.0 testing with large collections, portrait formats, and repeated bulk operations.
+- Series Manager / `.ccfseries` testing across large local libraries.
+- Auto Series scoring tests against ambiguous franchises and aliases.
+- Attachment imports across Linux, Windows, and macOS.
+- Context-budget testing with large text/subtitle/transcript collections.
+- Vision-analysis testing across image-capable OpenAI-compatible and local multimodal servers.
+- `.ccfproject` round trips containing attachment and generated-image trees.
 
 ## Next Up
 
-### v0.12 — Image Generation Expansion
+### v0.13 — Image Workflow Expansion
 
-- Add a dedicated Stable Diffusion Forge / Automatic1111-compatible adapter using the same image-generation service boundary and gallery model.
-- Add provider/backend type and image-specific connection controls without coupling image generation to the Text or Vision roles.
-- Add provider capability detection and image-model discovery/filtering where APIs expose useful metadata.
-- Add multi-image batch generation, regenerate/variation workflows, and richer gallery actions.
-- Add image-to-image/reference-image generation where supported.
-- Add emotion-image generation and regeneration using the existing `emotion_images/` asset tree.
-- Add per-emotion prompt editing and reusable prompt/style presets.
-- Add provider-specific controls such as aspect/resolution, sampler/steps/CFG, seed, quality, and compatible advanced options behind adapter-owned settings.
+After v0.12 is validated and released:
+
+- Add image-to-image/reference-image generation where the selected backend supports it.
+- Allow existing generated images and managed visual attachments to become generation references without copying binary data into JSON.
+- Add emotion-image generation/regeneration using the existing per-character `emotion_images/` asset tree.
+- Add named emotions/expressions and per-emotion editable prompts.
+- Add reusable visual-style/prompt presets.
+- Add richer gallery management, including intentional file deletion with portrait/reference safety checks.
+- Add provider-specific quality/aspect controls where useful.
+- Add opt-in Stable Diffusion advanced controls such as LoRA/embedding-oriented prompt helpers without hard-coding one WebUI ecosystem into the central character format.
 
 ## Planned Features
 
 ### Generation Improvements
 
 - Streaming text support where providers support it.
-- Structured generation diagnostics and response-repair attempts.
-- Separate text, vision, and image provider roles/profiles. **Text/Vision foundation completed in v0.10.0; Image role implemented in the v0.11 candidate.**
+- Structured generation diagnostics and stronger response-repair attempts.
+- Separate text, vision, and image provider roles/profiles. **Completed through v0.11.0.**
+- Image backend selection per reusable profile. **v0.12 candidate implemented.**
 - Recent/favourite model lists.
-- Provider capability detection.
+- Broader provider capability detection.
 - Token-limit metadata and stronger context-budget estimation.
+- Reusable provider presets without duplicating credentials unnecessarily.
 
 ### Multi-Character Workflows
 
@@ -331,9 +241,9 @@ The next image phase will restore the legacy application's dedicated Stable Diff
 - Relationship-aware generation context. **Foundation completed in v0.6.0.**
 - Multi-character single-card planning. **Foundation completed in v0.6.0; final generation/export still planned.**
 - Split-card batch planning. **Foundation completed in v0.6.0; automatic full-card batch execution still planned.**
-- Group-card planning workflows. **Foundation completed in v0.6.0; dedicated export formats still planned.**
+- Group-card planning workflows. **Foundation completed in v0.6.0; dedicated generation/export remains planned.**
 - Shared lore and deeper group continuity tools.
-- Relationship visualisation/flowchart integration in the future Character Library 2.0.
+- Relationship visualisation/flowchart integration in Character Library 2.0.
 
 ### Character Library 2.0
 
@@ -341,11 +251,13 @@ The next image phase will restore the legacy application's dedicated Stable Diff
 - Sorting and advanced filters. **Foundation completed in v0.8.0; series filters added in v0.9.0.**
 - Tags and tag merging. **Completed in v0.8.0.**
 - Virtual folders. **Completed in v0.8.0.**
+- Collections. **Completed in v0.8.0.**
 - Card groups and variations.
-- Series sidebar. **Completed in v0.9.0.**
+- Series sidebar/filtering. **Completed in v0.9.0.**
 - Favourites. **Completed in v0.8.0.**
 - Flowchart/relationship views.
 - Incremental disposable search index. **Completed in v0.8.0.**
+- Richer image/portrait filtering once image workflows mature.
 
 ### Series System
 
@@ -362,36 +274,42 @@ The next image phase will restore the legacy application's dedicated Stable Diff
 ### Vision and Attachments
 
 - Images as concept references. **Local attachment and review-first analysis foundation completed in v0.10.0.**
-- GIF frame handling. **File attachment support completed in v0.10.0; explicit frame selection remains planned.**
+- GIF frame handling. **File support completed in v0.10.0; explicit frame selection remains planned.**
 - Image URL references.
 - Character analysis and full-card analysis. **Review-first foundation completed in v0.10.0.**
 - PDF/text/subtitle/transcript attachments. **Managed attachment foundation completed in v0.10.0; PDF extraction remains planned.**
 - Attachment preprocessing and context budgeting. **Foundation completed in v0.10.0.**
+- Visual-reference handoff into image-to-image workflows. **Planned for v0.13.**
 
 ### Image Generation
 
-- OpenAI-compatible image provider support. **Foundation implemented in the v0.11 candidate.**
-- Natural-language image prompt builder. **Foundation implemented in the v0.11 candidate.**
-- Stable Diffusion-style prompt builder. **Foundation implemented in the v0.11 candidate.**
-- Generated image gallery. **Foundation implemented in the v0.11 candidate.**
-- Character portrait assignment. **Foundation implemented in the v0.11 candidate.**
-- Stable Diffusion Forge / Automatic1111-compatible provider support.
-- Image provider capability/model discovery.
-- Batch generation, variations, and regeneration.
-- Image-to-image/reference-image generation.
-- Emotion-image generation and regeneration.
-- Per-emotion prompt editing.
-- Provider-specific advanced controls and reusable visual-style presets.
+- OpenAI-compatible image provider support. **Completed in v0.11.0; batch path expanded in v0.12 candidate.**
+- Natural-language image prompt builder. **Completed in v0.11.0.**
+- Stable Diffusion-style prompt builder. **Completed in v0.11.0.**
+- Generated image gallery. **Completed in v0.11.0.**
+- Character portrait assignment. **Completed in v0.11.0.**
+- Stable Diffusion Forge / Automatic1111-compatible provider support. **v0.12 candidate implemented.**
+- Image provider model/checkpoint and sampler discovery. **v0.12 candidate implemented.**
+- Batch generation. **v0.12 candidate implemented.**
+- Seed-aware regeneration and new-seed variants. **v0.12 candidate implemented for reproducible backends.**
+- Sampler/steps/CFG/seed profile defaults. **v0.12 candidate implemented.**
+- Image-to-image/reference-image generation. **Planned for v0.13.**
+- Emotion-image generation and regeneration. **Planned for v0.13.**
+- Per-emotion prompt editing. **Planned for v0.13.**
+- Reusable visual-style/prompt presets. **Planned for v0.13.**
+- Richer provider-specific quality/aspect/advanced controls.
+- LoRA/embedding-oriented workflow helpers where useful.
 
 ### Import / Export
 
 - Character Card V2 JSON import/export. **Foundation completed in v0.7.0.**
 - Character Card V2 PNG/APNG metadata read and PNG metadata write. **Foundation completed in v0.7.0.**
-- SillyTavern ecosystem field mapping and compatibility reports. **Foundation completed in v0.7.0; broader interoperability testing remains.**
+- SillyTavern ecosystem field mapping and compatibility reports. **Foundation completed in v0.7.0; broader testing remains.**
 - Embedded lorebook preservation. **Round-trip preservation completed in v0.7.0; dedicated editing remains planned.**
 - Portable Character Card Forge `.ccfproject` packages. **Foundation completed in v0.7.0.**
 - Split-workflow batch JSON export. **Foundation completed in v0.7.0; PNG batch export and automatic generation remain planned.**
 - Additional external formats where they provide meaningful interoperability.
+- Generated image/emotion asset export options where external formats support them.
 
 ### Front Porch Integration
 
@@ -410,6 +328,7 @@ The next image phase will restore the legacy application's dedicated Stable Diff
 - Missing-field checks.
 - Token estimates.
 - Revision history and snapshots.
+- Generation-recipe comparison for image variants.
 
 ## Data and Content Tools
 
@@ -418,28 +337,32 @@ The next image phase will restore the legacy application's dedicated Stable Diff
 - Maintain project-format migration functions as the schema evolves beyond format version 2.
 - Maintain the documented `.ccfproject` renamed-ZIP package format and version it when compatibility changes.
 - Keep generated assets referenced by relative paths inside portable packages.
+- Preserve older generated-image records when image metadata grows.
 - Add reusable template packs if community template sharing becomes useful.
 
 ## Technical Improvements
 
-- Add automated schema validation tests.
+- Add automated schema validation tests beyond marker-based repository validation.
 - Add project recovery from interrupted writes using temporary-file replacement.
 - Add optional autosave with safe snapshots.
 - Add async thumbnail generation.
-- Generalise the cancellable task service beyond AI jobs to scanning and imports.
+- Generalise the cancellable task service beyond AI jobs to scanning/imports.
 - Add structured application logging and a diagnostics viewer.
 - Add secure credential-storage options where platform support permits.
+- Add additional API authentication modes where local servers require them.
 - Split very large UI scripts into reusable components as workflows expand.
+- Consider formal provider-adapter classes once image/text provider diversity justifies the abstraction.
 
 ## Polish
 
 - Custom application theme and stronger visual identity.
-- Continue responsive-layout refinement for very narrow desktop windows and future high-density toolbars.
-- Continue deciding which substantial tools should become detachable native windows while keeping small confirmations embedded.
+- Continue responsive-layout refinement for narrow desktop windows and high-density toolbars.
+- Continue moving substantial workflows into detachable native windows where multi-monitor use benefits.
 - Keyboard shortcuts.
 - Drag-and-drop files.
 - Better empty states and onboarding.
 - Native notifications for completed long-running jobs where useful.
+- Image-gallery thumbnails and denser browsing once gallery collections become larger.
 
 ## Long-Term Ideas
 
@@ -448,9 +371,11 @@ The next image phase will restore the legacy application's dedicated Stable Diff
 - Community template sharing.
 - Batch character generation pipelines.
 - Local semantic search over large character libraries.
+- Provider-agnostic image recipe presets shareable between projects where settings overlap safely.
 
 ## Deferred / Experimental Ideas
 
 - Legacy database import is intentionally deferred and is not a compatibility goal.
 - Reproducing the old PyWebView interface is explicitly not planned.
 - A mobile browser interface will only return if there is a strong workflow need and it can remain cleanly separated from the desktop application core.
+- Highly backend-specific Stable Diffusion controls should remain optional adapter-owned features rather than becoming mandatory fields in every character project.
