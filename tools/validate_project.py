@@ -38,11 +38,17 @@ def main() -> None:
         "export_presets.cfg",
         "scenes/main.tscn",
         "scripts/main.gd",
+        "scripts/main_with_image_page.gd",
         "scripts/services/attachment_service.gd",
         "scripts/services/image_generation_service.gd",
         "scripts/services/image_capability_service.gd",
+        "scripts/services/settings_service.gd",
         "scripts/ui/attachment_manager_window.gd",
         "scripts/ui/image_generation_window.gd",
+        "scripts/ui/image_generation_controller.gd",
+        "scripts/ui/image_generation_page.gd",
+        "scripts/ui/image_provider_settings_view.gd",
+        "scripts/ui/settings_view.gd",
         "docs/vision_attachments.md",
         "docs/image_generation.md",
         "roadmap.md",
@@ -89,31 +95,34 @@ def main() -> None:
 
     settings_text = (ROOT / "scripts/services/settings_service.gd").read_text(encoding="utf-8")
     require(
-        "const SETTINGS_FORMAT_VERSION := 5" in settings_text,
-        "Settings schema must be version 5 for image-backend profile configuration.",
+        "const SETTINGS_FORMAT_VERSION := 6" in settings_text,
+        "Settings schema must be version 6 for separated character-AI and image providers.",
     )
-    require(
-        'const ROLE_TEXT := "text"' in settings_text
-        and 'const ROLE_VISION := "vision"' in settings_text
-        and 'const ROLE_IMAGE := "image"' in settings_text,
-        "Text, vision, and image provider roles are not all defined.",
-    )
-    require(
-        'const IMAGE_BACKEND_OPENAI := "openai_compatible"' in settings_text
-        and 'const IMAGE_BACKEND_AUTOMATIC1111 := "automatic1111"' in settings_text,
-        "OpenAI and Stable Diffusion image backend types are not both defined.",
-    )
+    for marker_text in (
+        'const ROLE_TEXT := "text"',
+        'const ROLE_VISION := "vision"',
+        'const ROLE_IMAGE := "image"',
+        'const PROFILE_KIND_AI := "ai"',
+        'const PROFILE_KIND_IMAGE := "image"',
+        'const IMAGE_BACKEND_OPENAI := "openai_compatible"',
+        'const IMAGE_BACKEND_AUTOMATIC1111 := "automatic1111"',
+        '"image_profiles": [_default_image_profile()]',
+        '"base_url": "http://127.0.0.1:7860"',
+        "static func image_profiles(",
+        "static func image_profile_by_id(",
+        "static func create_image_profile(",
+        "static func replace_image_profile_by_id(",
+        "static func _migrate_v5_image_profile(",
+    ):
+        require(marker_text in settings_text, f"Separated provider settings are missing {marker_text}")
     require(
         '"attachment_context_character_limit": 24000' in settings_text,
         "The default attachment context budget is missing.",
     )
     require(
-        '"default_image_size": "1024x1024"' in settings_text,
-        "The default image-generation size is missing.",
-    )
-    require(
-        '"default_image_prompt_style": "auto"' in settings_text,
-        "The default image prompt style is missing.",
+        '"default_image_size": "1024x1024"' in settings_text
+        and '"default_image_prompt_style": "auto"' in settings_text,
+        "Default image generation settings are missing.",
     )
     for marker_text in (
         '"sampler": "Euler a"',
@@ -173,9 +182,7 @@ def main() -> None:
         "Attachment context is not wired into the expected generation workflows.",
     )
 
-    image_generation_text = (
-        ROOT / "scripts/services/image_generation_service.gd"
-    ).read_text(encoding="utf-8")
+    image_generation_text = (ROOT / "scripts/services/image_generation_service.gd").read_text(encoding="utf-8")
     for marker_text in (
         "func generate(",
         "static func build_prompt(",
@@ -190,10 +197,7 @@ def main() -> None:
         "Marshalls.base64_to_raw",
         "decoded_image.save_png(",
     ):
-        require(
-            marker_text in image_generation_text,
-            f"Image generation service is missing {marker_text}",
-        )
+        require(marker_text in image_generation_text, f"Image generation service is missing {marker_text}")
     require(
         '"provider": _pending_backend' in image_generation_text
         and '"backend": _pending_backend' in image_generation_text,
@@ -204,9 +208,7 @@ def main() -> None:
         "Stable Diffusion returned seeds are not captured for reproducible gallery records.",
     )
 
-    capability_text = (
-        ROOT / "scripts/services/image_capability_service.gd"
-    ).read_text(encoding="utf-8")
+    capability_text = (ROOT / "scripts/services/image_capability_service.gd").read_text(encoding="utf-8")
     for marker_text in (
         "func fetch_capabilities(",
         '"sd-models"',
@@ -228,15 +230,55 @@ def main() -> None:
         "Vision results are not routed through the review-first generation preview.",
     )
 
-    main_text = (ROOT / "scripts/main.gd").read_text(encoding="utf-8")
+    settings_view_text = (ROOT / "scripts/ui/settings_view.gd").read_text(encoding="utf-8")
     require(
-        "CCFImageGenerationWindow.new()" in main_text
-        and '"Image Studio"' in main_text,
-        "The detachable Image Generation Studio entry point is missing.",
+        'intro.text = "Character AI providers"' in settings_view_text
+        and "CCFImageProviderSettingsView.new()" in settings_view_text,
+        "Settings does not separate character AI from image provider configuration.",
     )
-    image_window_text = (
-        ROOT / "scripts/ui/image_generation_window.gd"
-    ).read_text(encoding="utf-8")
+    require(
+        "Image generation profile" not in settings_view_text
+        and 'form.add_child(_label("Image backend"))' not in settings_view_text,
+        "Legacy image-provider controls are still mixed into the character AI form.",
+    )
+
+    image_provider_view_text = (ROOT / "scripts/ui/image_provider_settings_view.gd").read_text(encoding="utf-8")
+    for marker_text in (
+        'heading.text = "Image generation providers"',
+        '"http://127.0.0.1:7860"',
+        '"Server URL"',
+        "_api_key_row.visible = not is_sd",
+        "CCFSettingsService.create_image_profile(",
+        "CCFSettingsService.replace_image_profile_by_id(",
+    ):
+        require(marker_text in image_provider_view_text, f"Image provider settings are missing {marker_text}")
+
+    image_controller_text = (ROOT / "scripts/ui/image_generation_controller.gd").read_text(encoding="utf-8")
+    require(
+        "CCFSettingsService.image_profiles(_settings)" in image_controller_text
+        and "CCFSettingsService.image_profile_by_id(" in image_controller_text,
+        "Image Studio controller is not using the dedicated image provider collection.",
+    )
+
+    image_page_text = (ROOT / "scripts/ui/image_generation_page.gd").read_text(encoding="utf-8")
+    require(
+        'settings_button.text = "Manage Image Providers in Settings"' in image_page_text,
+        "Image Studio is missing its Settings shortcut.",
+    )
+    require(
+        "Server URL / port" not in image_page_text and "Save Connection" not in image_page_text,
+        "Connection credentials are still embedded in Image Studio.",
+    )
+
+    main_page_text = (ROOT / "scripts/main_with_image_page.gd").read_text(encoding="utf-8")
+    require(
+        "CCFImageGenerationController.new()" in main_page_text
+        and '_nav_buttons["image"]' in main_page_text
+        and 'button.disabled = nav_id == "image"' in main_page_text,
+        "Image Studio is not wired as a selected main navigation page with the dedicated controller.",
+    )
+
+    image_window_text = (ROOT / "scripts/ui/image_generation_window.gd").read_text(encoding="utf-8")
     for marker_text in (
         '"Set as Portrait"',
         'assets["generated_images"]',
@@ -305,9 +347,9 @@ def main() -> None:
         )
 
     print(
-        f"Validated Character Card Forge v{version}: "
-        f"version metadata, three export presets, Vision/Attachments, OpenAI Images, "
-        f"Forge/A1111 image expansion, and {len(json_files)} JSON files."
+        f"Validated Character Card Forge v{version}: version metadata, three export presets, "
+        f"Vision/Attachments, separated character/image providers, OpenAI Images, Forge/A1111, "
+        f"and {len(json_files)} JSON files."
     )
 
 
