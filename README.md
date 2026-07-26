@@ -2,13 +2,28 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.6 desktop application. The original PyWebView application is a feature reference only: its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Version 0.10.0 scope
+## v0.11 image-generation development candidate
 
-v0.10.0 begins the **Vision and Attachments Foundation**. Character projects can now contain managed local reference files and notes, ordinary generation can use a configurable attachment-context budget, and image-capable OpenAI-compatible models can propose review-first character concepts or controlled full-card suggestions.
+The current feature branch begins the **Image Generation Foundation** while release metadata remains on the last validated v0.10.0 baseline until this candidate is tested. The Godot rewrite now has independent Text, Vision, and Image provider roles plus a detachable Image Generation Studio built around ordinary per-character image files.
+
+### Image generation
+
+- Assign existing reusable API profiles independently to **Text generation**, **Vision analysis**, and **Image generation** roles.
+- Send text-to-image requests to OpenAI-compatible `/images/generations` endpoints.
+- Override the selected image model per generation when a provider exposes different text and image models through one base URL.
+- Build editable natural-language or Stable Diffusion-style prompts from the central character model.
+- Accept common base64, data-URL, remote-URL, and raw-image provider responses.
+- Normalise received PNG, JPEG, and WebP images into managed PNG files.
+- Keep generated artwork in the existing per-character `generated_images/` tree with lightweight metadata in `character.json`.
+- Browse generated images in a persistent gallery and promote a selected image to the character portrait without duplicating image bytes.
+- Warn when Image Studio is opened while the main workspace has unsaved edits because the studio deliberately uses saved project state.
+
+See `docs/image_generation.md` for provider behaviour, prompt modes, generated-image records, portability, and the planned Stable Diffusion/emotion-image expansion.
 
 ### Vision and attachments
 
-- Assign existing API profiles independently to **Text generation** and **Vision analysis** roles.
+The v0.10.0 foundation remains intact:
+
 - Attach images, GIFs, text files, PDFs, subtitles, transcripts, notes, and arbitrary reference files at project or character scope.
 - Keep attachment metadata in `character.json` while copying source files into ordinary project asset folders.
 - Inspect file type, size, image dimensions where available, text length, and estimated prompt size.
@@ -20,7 +35,7 @@ PDFs are stored portably and represented by metadata in this foundation release;
 
 ### Automated desktop releases
 
-A pushed `vX.Y.Z` tag now triggers GitHub Actions to:
+A pushed `vX.Y.Z` tag triggers GitHub Actions to:
 
 - download the matching official Godot 4.6.3 editor and export templates;
 - validate release metadata and bundled JSON;
@@ -76,11 +91,12 @@ Bundled JSON remains explicitly included in every export because the builder sch
 - Full-character generation with editable Generation Preview.
 - Per-field AI suggestions.
 - Idea Generator.
-- Shared queued OpenAI-compatible generation service.
+- Shared queued OpenAI-compatible text/vision generation service.
 - Cancellation, retry handling, malformed-JSON recovery, and one AI repair pass.
 - Multiple API profiles and compatible `/models` discovery.
-- Separate text-generation and vision-analysis provider roles.
+- Separate text-generation, vision-analysis, and image-generation provider roles.
 - Managed project/character attachments with context budgeting and review-first visual analysis.
+- Independent image-generation request service and detachable generated-image gallery.
 
 ### Multi-character systems
 
@@ -134,6 +150,7 @@ Substantial tools use native operating-system windows and can be dragged outside
 - Card Workflow Studio
 - Import / Export Studio
 - Vision and Attachments
+- Image Generation Studio
 
 Their size and position are stored as disposable UI state rather than project content. The Series Manager itself is a full main-navigation workspace.
 
@@ -186,11 +203,12 @@ character_card_forge/
 - `scripts/services/card_format_service.gd` — Character Card V1/V2 normalisation, mapping, validation, JSON import/export, PNG metadata read/write, and CCF extension round trips.
 - `scripts/services/project_package_service.gd` — `.ccfproject` ZIP packaging, asset/template/series inclusion, safe extraction, and ID collision handling.
 - `scripts/services/relationship_service.gd` — relationship pair normalisation and generation-context rendering.
-- `scripts/services/settings_service.gd` — settings format v3, API profiles, and text/vision role assignments.
+- `scripts/services/settings_service.gd` — settings format v4, reusable API profiles, and text/vision/image role assignments.
 - `scripts/services/template_service.gd` — template storage, migration, validation, import/export, and field discovery.
 - `scripts/services/builder_service.gd` — builder schema/state, presets, concept composition, and character transfer logic.
 - `scripts/services/tool_window_state_service.gd` — detachable-window geometry persistence.
 - `scripts/services/generation_service.gd` — queued text and multimodal jobs including character, builder, controlled, group-scene, relationship, card-workflow, series, and vision analysis.
+- `scripts/services/image_generation_service.gd` — independent OpenAI-compatible text-to-image requests, prompt preparation, flexible result decoding, and managed PNG persistence.
 - `scripts/services/attachment_service.gd` — managed attachment import, format normalisation, preprocessing summaries, context budgeting, and vision image payloads.
 - `scripts/ui/series_manager_view.gd` — native Series Manager and AI series-bible editor.
 - `scripts/ui/library_view.gd` — Character Library 2.0 browsing, series filters, detail summaries, and bulk project management.
@@ -198,6 +216,7 @@ character_card_forge/
 - `scripts/ui/workspace_view.gd` — active-character workspace, project/roster coordination, and series assignment.
 - `scripts/ui/import_export_window.gd` — mapping preview, card import/export, portable project packages, and batch export.
 - `scripts/ui/attachment_manager_window.gd` — project/character attachment management and review-first vision analysis.
+- `scripts/ui/image_generation_window.gd` — detachable project/character image-generation studio, gallery, and portrait assignment.
 - `scripts/ui/project_context_window.gd` — shared project-context editor.
 - `scripts/ui/group_scene_window.gd` — multi-character group-scene generation and review.
 - `scripts/ui/relationship_matrix_window.gd` — structured pair-matrix editor and AI relationship drafting.
