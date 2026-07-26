@@ -1,8 +1,8 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "template_id": "default",
   "name": "Default Character Card",
-  "description": "The starter Character Card Forge workspace template, with a V1-inspired generation contract for concept fidelity, physical description, personality depth, and playable openings.",
+  "description": "The starter Character Card Forge workspace template, with V1-inspired configurable generation components for physical description, personality depth, and playable openings.",
   "global_generation_instructions": [
     "Write a coherent fictional character suitable for roleplay.",
     "Treat the user's generation concept as authoritative. Preserve supplied names, relationships, premise, setting, visual details, clothing, props, requested dynamics, and opening-scene beats unless they directly conflict with an explicit safety constraint.",
@@ -15,6 +15,159 @@
     "Required fields must be present and meaningfully filled. Do not silently omit a required field.",
     "Do not include markdown fences around the JSON response.",
     "Return valid JSON only."
+  ],
+  "generation_groups": [
+    {
+      "id": "description_structure",
+      "title": "Description structure",
+      "output_field_id": "description",
+      "enabled": true,
+      "allow_extra_components": false,
+      "components": [
+        {
+          "id": "age",
+          "label": "Age",
+          "enabled": true,
+          "required": true,
+          "instruction": "Character age or apparent age where appropriate."
+        },
+        {
+          "id": "appearance",
+          "label": "Appearance",
+          "enabled": true,
+          "required": true,
+          "instruction": "Face, hair, eyes, skin, body/build, and important visible traits supported by the concept."
+        },
+        {
+          "id": "outfit_style",
+          "label": "Outfit Style",
+          "enabled": true,
+          "required": true,
+          "instruction": "Usual or starting clothing, visible accessories, and overall presentation."
+        },
+        {
+          "id": "distinguishing_features",
+          "label": "Distinguishing Features",
+          "enabled": true,
+          "required": true,
+          "instruction": "Distinctive visible details that help identify the character at a glance."
+        }
+      ]
+    },
+    {
+      "id": "personality_structure",
+      "title": "Personality structure",
+      "output_field_id": "personality",
+      "enabled": true,
+      "allow_extra_components": true,
+      "components": [
+        {
+          "id": "mind",
+          "label": "Mind",
+          "enabled": true,
+          "required": true,
+          "instruction": "Core personality traits, motivations, goals, values, and internal conflicts."
+        },
+        {
+          "id": "moral_alignment",
+          "label": "Moral Alignment",
+          "enabled": true,
+          "required": false,
+          "instruction": "Practical moral outlook and how strongly the character follows it."
+        },
+        {
+          "id": "emotional_tendencies",
+          "label": "Emotional Tendencies",
+          "enabled": true,
+          "required": true,
+          "instruction": "Typical emotional reactions, sensitivities, coping patterns, and emotional contradictions."
+        },
+        {
+          "id": "decision_style",
+          "label": "Decision Style",
+          "enabled": true,
+          "required": false,
+          "instruction": "How the character makes choices under ordinary conditions and pressure."
+        },
+        {
+          "id": "occupation",
+          "label": "Occupation",
+          "enabled": true,
+          "required": false,
+          "instruction": "Work, profession, studies, or regular social role where relevant to the concept."
+        },
+        {
+          "id": "likes",
+          "label": "Likes",
+          "enabled": true,
+          "required": true,
+          "instruction": "Specific things the character enjoys rather than generic filler."
+        },
+        {
+          "id": "dislikes",
+          "label": "Dislikes",
+          "enabled": true,
+          "required": true,
+          "instruction": "Specific irritations, aversions, and things the character actively avoids."
+        },
+        {
+          "id": "hobbies",
+          "label": "Hobbies",
+          "enabled": true,
+          "required": false,
+          "instruction": "Recurring leisure activities and interests grounded in the concept."
+        },
+        {
+          "id": "skills",
+          "label": "Skills",
+          "enabled": true,
+          "required": false,
+          "instruction": "Notable practical, social, creative, academic, or specialised capabilities."
+        },
+        {
+          "id": "boundaries",
+          "label": "Boundaries",
+          "enabled": true,
+          "required": true,
+          "instruction": "Things the character refuses, resists, fears crossing, or treats as personal limits."
+        },
+        {
+          "id": "risk_tolerance",
+          "label": "Risk Tolerance",
+          "enabled": true,
+          "required": false,
+          "instruction": "How willing the character is to take social, physical, emotional, or strategic risks."
+        },
+        {
+          "id": "secrecy",
+          "label": "Secrecy",
+          "enabled": true,
+          "required": false,
+          "instruction": "What the character hides, how private they are, and how they handle sensitive information."
+        },
+        {
+          "id": "relationship_behavior",
+          "label": "Relationship Behavior toward {{user}}",
+          "enabled": true,
+          "required": true,
+          "instruction": "How the character tends to treat {{user}}, including attachment style, tension, affection, rivalry, trust, or dependence implied by the concept."
+        },
+        {
+          "id": "loyalty",
+          "label": "Loyalty",
+          "enabled": true,
+          "required": false,
+          "instruction": "What earns or breaks loyalty and how loyalty is expressed in behaviour."
+        },
+        {
+          "id": "speech_style",
+          "label": "Speech Style",
+          "enabled": true,
+          "required": true,
+          "instruction": "Voice, vocabulary, tone, pacing, slang, quirks, and conversational habits."
+        }
+      ]
+    }
   ],
   "sections": [
     {
@@ -81,29 +234,29 @@
     {
       "id": "character",
       "title": "Character",
-      "description": "Core interoperable roleplay-card fields. Description and Personality deliberately keep V1-style responsibilities separate.",
+      "description": "Core interoperable roleplay-card fields. Description and Personality generation structure is configurable independently from the final Character Card fields.",
       "fields": [
         {
           "id": "description",
           "label": "Description",
           "type": "multiline",
           "path": "character.description",
-          "placeholder": "Visible physical appearance and external presentation: age, face, hair, eyes, build, notable features, outfit, and accessories.",
+          "placeholder": "Visible physical appearance and external presentation.",
           "generate": true,
           "height": 240,
           "required": true,
-          "generation_prompt": "Physical and external description only. Use concise labelled lines in this order: Age: ...; Appearance: ...; Outfit Style: ...; Distinguishing Features: ... . Appearance should cover face, hair, eyes, skin, body/build, and other important visible traits when supported by the concept. Outfit Style should cover clothing and visible accessories. Do not put backstory, occupation, personality, motivations, relationship history, or scenario events here unless a detail is directly visible and necessary to describe appearance."
+          "generation_prompt": "Physical and external description only. Follow the enabled Description generation components supplied by the active template. Do not put backstory, occupation, personality, motivations, relationship history, or scenario events here unless a detail is directly visible and necessary to describe appearance."
         },
         {
           "id": "personality",
           "label": "Personality",
           "type": "multiline",
           "path": "character.personality",
-          "placeholder": "Internal traits, motivation, behaviour toward {{user}}, speech, strengths, flaws, preferences, habits, and roleplay behaviour.",
+          "placeholder": "Structured internal traits, motivations, preferences, behaviour, and speech.",
           "generate": true,
-          "height": 260,
+          "height": 300,
           "required": true,
-          "generation_prompt": "Build a roleplay-useful internal profile. Use concise labelled lines in this order: Core Traits: ...; Motivation: ...; Behavior Toward {{user}}: ...; Speech Style: ...; Strengths: ...; Flaws: ...; Likes: ...; Dislikes: ...; Habits / Mannerisms: ... . Keep these details specific, mutually consistent, and grounded in the concept rather than generic archetype filler."
+          "generation_prompt": "Build a roleplay-useful internal profile using the enabled Personality generation components supplied by the active template. Keep details specific, mutually consistent, and grounded in the concept rather than generic archetype filler."
         },
         {
           "id": "scenario",
