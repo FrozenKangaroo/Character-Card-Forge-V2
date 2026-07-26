@@ -39,7 +39,9 @@ def main() -> None:
         "scenes/main.tscn",
         "scripts/main.gd",
         "scripts/services/attachment_service.gd",
+        "scripts/services/image_generation_service.gd",
         "scripts/ui/attachment_manager_window.gd",
+        "scripts/ui/image_generation_window.gd",
         "docs/vision_attachments.md",
         "release.sh",
         "VERSION",
@@ -84,23 +86,36 @@ def main() -> None:
 
     settings_text = (ROOT / "scripts/services/settings_service.gd").read_text(encoding="utf-8")
     require(
-        "const SETTINGS_FORMAT_VERSION := 3" in settings_text,
-        "Settings schema must be version 3 for provider-role assignments.",
+        "const SETTINGS_FORMAT_VERSION := 4" in settings_text,
+        "Settings schema must be version 4 for text, vision, and image provider roles.",
     )
     require(
         'const ROLE_TEXT := "text"' in settings_text
-        and 'const ROLE_VISION := "vision"' in settings_text,
-        "Text and vision provider roles are not both defined.",
+        and 'const ROLE_VISION := "vision"' in settings_text
+        and 'const ROLE_IMAGE := "image"' in settings_text,
+        "Text, vision, and image provider roles are not all defined.",
     )
     require(
         '"attachment_context_character_limit": 24000' in settings_text,
         "The default attachment context budget is missing.",
+    )
+    require(
+        '"default_image_size": "1024x1024"' in settings_text,
+        "The default image-generation size is missing.",
+    )
+    require(
+        '"default_image_prompt_style": "auto"' in settings_text,
+        "The default image prompt style is missing.",
     )
 
     storage_text = (ROOT / "scripts/services/storage_service.gd").read_text(encoding="utf-8")
     require(
         storage_text.count('"attachments": []') >= 2,
         "Project and character attachment arrays are not both initialised.",
+    )
+    require(
+        '"generated_images": []' in storage_text and '"portrait": ""' in storage_text,
+        "Character asset records are missing generated-image or portrait foundations.",
     )
     require(
         'character["project_attachments"]' in storage_text,
@@ -142,6 +157,25 @@ def main() -> None:
         "Attachment context is not wired into the expected generation workflows.",
     )
 
+    image_generation_text = (
+        ROOT / "scripts/services/image_generation_service.gd"
+    ).read_text(encoding="utf-8")
+    for marker_text in (
+        "func generate(",
+        "static func build_prompt(",
+        '"/images/generations"',
+        "Marshalls.base64_to_raw",
+        "decoded_image.save_png(",
+    ):
+        require(
+            marker_text in image_generation_text,
+            f"Image generation service is missing {marker_text}",
+        )
+    require(
+        '"provider": PROVIDER_OPENAI_COMPATIBLE' in image_generation_text,
+        "Generated image metadata does not record the provider adapter.",
+    )
+
     workspace_text = (ROOT / "scripts/ui/workspace_view.gd").read_text(encoding="utf-8")
     require(
         "CCFAttachmentManagerWindow.new()" in workspace_text
@@ -152,6 +186,22 @@ def main() -> None:
         'job_type == "vision_analysis"' in workspace_text
         and 'metadata.get("preview_fields", [])' in workspace_text,
         "Vision results are not routed through the review-first generation preview.",
+    )
+
+    main_text = (ROOT / "scripts/main.gd").read_text(encoding="utf-8")
+    require(
+        "CCFImageGenerationWindow.new()" in main_text
+        and '"Image Studio"' in main_text,
+        "The detachable Image Generation Studio entry point is missing.",
+    )
+    image_window_text = (
+        ROOT / "scripts/ui/image_generation_window.gd"
+    ).read_text(encoding="utf-8")
+    require(
+        '"Set as Portrait"' in image_window_text
+        and 'assets["generated_images"]' in image_window_text
+        and 'assets["portrait"]' in image_window_text,
+        "Image Studio does not expose gallery persistence and portrait assignment.",
     )
 
     release_text = (ROOT / "release.sh").read_text(encoding="utf-8")
@@ -208,7 +258,7 @@ def main() -> None:
 
     print(
         f"Validated Character Card Forge v{version}: "
-        f"version metadata, three export presets, Vision/Attachments foundation, "
+        f"version metadata, three export presets, Vision/Attachments and Image Generation foundations, "
         f"and {len(json_files)} JSON files."
     )
 
