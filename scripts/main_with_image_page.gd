@@ -24,7 +24,7 @@ func _ready() -> void:
 	_image_page.visible = false
 	_image_page.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_image_page.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	_image_page.settings_requested.connect(func(): _show_view("settings"))
+	_image_page.settings_requested.connect(_open_image_provider_settings)
 	_content.add_child(_image_page)
 	_image_page.attach_controller(_image_generation_window)
 	if str(_settings.get("ui", {}).get("last_view", "dashboard")) == "image":
@@ -36,6 +36,12 @@ func _register_image_nav_button() -> void:
 		if node is Button and node.text == "Image Studio":
 			_nav_buttons["image"] = node
 			return
+
+
+func _open_image_provider_settings() -> void:
+	_show_view("settings")
+	if _settings_view != null:
+		_settings_view.show_image_settings()
 
 
 func _open_image_studio() -> void:
