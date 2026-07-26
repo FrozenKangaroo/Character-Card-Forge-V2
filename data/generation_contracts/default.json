@@ -1,0 +1,40 @@
+{
+  "format_version": 1,
+  "template_id": "default",
+  "fields": {
+    "description": {
+      "minimum_characters": 180,
+      "required_labels": [
+        "Age",
+        "Appearance",
+        "Outfit Style",
+        "Distinguishing Features"
+      ]
+    },
+    "personality": {
+      "minimum_characters": 320,
+      "required_labels": [
+        "Core Traits",
+        "Motivation",
+        "Behavior Toward {{user}}",
+        "Speech Style",
+        "Strengths",
+        "Flaws",
+        "Likes",
+        "Dislikes",
+        "Habits / Mannerisms"
+      ]
+    },
+    "first_message": {
+      "minimum_characters": 120
+    },
+    "example_dialogue": {
+      "marker_rules": [
+        {
+          "marker": "<START>",
+          "exact_count": 1
+        }
+      ]
+    }
+  }
+}
