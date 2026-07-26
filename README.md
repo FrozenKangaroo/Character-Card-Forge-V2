@@ -2,11 +2,27 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.6 desktop application. The original PyWebView application is a feature reference only: its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## v0.12 image-generation development candidate
+## v0.12 development candidate
 
-v0.11.0 established the first native Image Generation Studio. The current v0.12 development branch expands that foundation with a dedicated local Stable Diffusion Forge / Automatic1111 path while preserving the OpenAI-compatible Images API workflow.
+v0.11.0 established the first native Image Generation Studio. The current v0.12 development branch expands that foundation with a dedicated local Stable Diffusion Forge / Automatic1111 path while preserving the OpenAI-compatible Images API workflow, and begins a source-audited generation-parity programme based on the useful behaviour of Character Card Forge V1.
 
-Release/application metadata intentionally remains at v0.11.0 until this candidate is parsed by CI and tested against a real local image backend. The normal release helper can perform the coordinated v0.12.0 version promotion afterward.
+Release/application metadata intentionally remains at v0.11.0 until this candidate is parsed by CI, tested against a real local image backend, and smoke-tested with the revised default text-generation contract. The normal release helper can perform the coordinated v0.12.0 version promotion afterward.
+
+### Generation parity — Phase 1
+
+The first parity pass deliberately improves the data-driven built-in template before attempting V1's larger multi-stage generation pipeline.
+
+- Treat the user's Generation Concept as authoritative source material rather than loose inspiration.
+- Preserve supplied names, relationships, premise, setting, visible details, clothing, props, requested dynamics, and explicit opening beats instead of casually replacing them.
+- Restore **Description** to its V1-style job: visible physical appearance and external presentation rather than a mixture of appearance, biography, personality, and scenario facts.
+- Ask Description to organise the standard Character Card field with labelled **Age**, **Appearance**, **Outfit Style**, and **Distinguishing Features** content.
+- Expand **Personality** generation into labelled **Core Traits**, **Motivation**, **Behavior Toward {{user}}**, **Speech Style**, **Strengths**, **Flaws**, **Likes**, **Dislikes**, and **Habits / Mannerisms** while still using the interoperable Character Card Personality field.
+- Make Scenario and First Message describe the same immediately playable starting situation.
+- Preserve explicit scenario/greeting material from the source concept where it exists.
+- Ask Example Dialogue for exactly one `<START>` marker followed by one continuous 2-3 exchange conversation.
+- Strengthen required-field and cross-field consistency instructions without changing project format 2 or template format 2.
+
+This is intentionally only Phase 1. The V1 source audit also found private pre-generation Q&A, required-output validation, targeted missing-section repair, concept-fidelity retries, builder precedence, and multi-pass generation. Those are now staged in `roadmap.md` for the Generation Parity Core milestone rather than being squeezed into one risky change.
 
 ### Image generation
 
@@ -114,10 +130,11 @@ Bundled JSON remains explicitly included in every export because builder schemas
 - Custom Section Build.
 - Selected-field revision workflows.
 - Full-character generation with editable Generation Preview.
+- V1-inspired concept-fidelity/physical-description/personality generation contract in the v0.12 candidate.
 - Per-field AI suggestions.
 - Idea Generator.
 - Shared queued OpenAI-compatible text/vision generation service.
-- Cancellation, retry handling, malformed-JSON recovery, and one AI repair pass.
+- Cancellation, retry handling, malformed-JSON recovery, and one JSON repair pass.
 - Multiple API profiles and compatible `/models` discovery.
 - Separate text-generation, vision-analysis, and image-generation provider roles.
 - Managed project/character attachments with context budgeting and review-first visual analysis.
@@ -160,7 +177,7 @@ Open **Templates** from the sidebar to:
 - add field-specific and global AI instructions;
 - choose strict or flexible AI output handling.
 
-The built-in Default template remains read-only. Duplicate it before editing.
+The built-in Default template remains read-only. Duplicate it before editing. The v0.12 candidate keeps template format 2 unchanged while making the built-in generation instructions much closer to V1's field responsibilities. The later Generation Parity Core milestone will introduce explicit generation components/output bindings with migration rather than overloading today's field model.
 
 ## Desktop tool windows
 
@@ -229,7 +246,7 @@ character_card_forge/
 - `scripts/services/card_format_service.gd` — Character Card V1/V2 normalisation, mapping, validation, JSON import/export, PNG metadata read/write, and CCF extension round trips.
 - `scripts/services/project_package_service.gd` — `.ccfproject` ZIP packaging, asset/template/series inclusion, safe extraction, and ID collision handling.
 - `scripts/services/relationship_service.gd` — relationship pair normalisation and generation-context rendering.
-- `scripts/services/settings_service.gd` — settings format v5, reusable API profiles, text/vision/image roles, image backend type, and backend-specific image defaults.
+- `scripts/services/settings_service.gd` — settings format v6, reusable Character AI profiles, dedicated image-provider profiles, text/vision roles, image backend types, and backend-specific image defaults.
 - `scripts/services/template_service.gd` — template storage, migration, validation, import/export, and field discovery.
 - `scripts/services/builder_service.gd` — builder schema/state, presets, concept composition, and character transfer logic.
 - `scripts/services/tool_window_state_service.gd` — detachable-window geometry persistence.
@@ -238,18 +255,3 @@ character_card_forge/
 - `scripts/services/image_capability_service.gd` — image model/checkpoint/sampler discovery and backend capability summaries.
 - `scripts/services/attachment_service.gd` — managed attachment import, format normalisation, preprocessing summaries, context budgeting, and vision image payloads.
 - `scripts/ui/series_manager_view.gd` — native Series Manager and AI series-bible editor.
-- `scripts/ui/library_view.gd` — Character Library 2.0 browsing, series filters, detail summaries, and bulk project management.
-- `scripts/ui/library_project_card.gd` — reusable thumbnail-grid project card.
-- `scripts/ui/workspace_view.gd` — active-character workspace, project/roster coordination, and series assignment.
-- `scripts/ui/import_export_window.gd` — mapping preview, card import/export, portable project packages, and batch export.
-- `scripts/ui/attachment_manager_window.gd` — project/character attachment management and review-first vision analysis.
-- `scripts/ui/image_generation_window.gd` — detachable image-generation studio, backend controls, capability discovery, gallery, regeneration/variants, and portrait assignment.
-- `scripts/ui/project_context_window.gd` — shared project-context editor.
-- `scripts/ui/group_scene_window.gd` — multi-character group-scene generation and review.
-- `scripts/ui/relationship_matrix_window.gd` — structured pair-matrix editor and AI relationship drafting.
-- `scripts/ui/card_workflow_window.gd` — saved multi-character card workflow planning.
-- `scripts/ui/character_builder_window.gd` — guided Character Builder.
-- `scripts/ui/controlled_build_window.gd` — controlled section and revision workflows.
-- `scripts/ui/template_manager_view.gd` — native template editor.
-
-See the `docs/` directory for current format and workflow documentation, and `roadmap.md` for completed work plus planned legacy-feature parity.
