@@ -2,9 +2,10 @@ class_name CCFSettingsService
 extends RefCounted
 
 const SETTINGS_FILE := CCFStorageService.SETTINGS_DIR + "/app_settings.json"
-const SETTINGS_FORMAT_VERSION := 3
+const SETTINGS_FORMAT_VERSION := 4
 const ROLE_TEXT := "text"
 const ROLE_VISION := "vision"
+const ROLE_IMAGE := "image"
 
 
 static func default_settings() -> Dictionary:
@@ -13,14 +14,17 @@ static func default_settings() -> Dictionary:
 		"active_api_profile_id": "default",
 		"provider_roles": {
 			"text_profile_id": "default",
-			"vision_profile_id": "default"
+			"vision_profile_id": "default",
+			"image_profile_id": "default"
 		},
 		"api_profiles": [_default_profile()],
 		"generation": {
 			"include_existing_fields": true,
 			"retry_count": 1,
 			"default_idea_count": 6,
-			"attachment_context_character_limit": 24000
+			"attachment_context_character_limit": 24000,
+			"default_image_size": "1024x1024",
+			"default_image_prompt_style": "auto"
 		},
 		"ui": {"last_view": "dashboard"}
 	}
@@ -150,7 +154,7 @@ static func delete_active_profile(settings: Dictionary) -> Dictionary:
 	var fallback_id := str(filtered[0].get("id", "default"))
 	settings["active_api_profile_id"] = fallback_id
 	var provider_roles: Dictionary = settings.get("provider_roles", {}).duplicate(true)
-	for role_key in ["text_profile_id", "vision_profile_id"]:
+	for role_key in ["text_profile_id", "vision_profile_id", "image_profile_id"]:
 		if str(provider_roles.get(role_key, "")) == active_id:
 			provider_roles[role_key] = fallback_id
 	settings["provider_roles"] = provider_roles
@@ -160,6 +164,7 @@ static func delete_active_profile(settings: Dictionary) -> Dictionary:
 static func _normalise(settings: Dictionary) -> Dictionary:
 	var defaults := default_settings()
 	var result := defaults.duplicate(true)
+	var incoming_format := int(settings.get("format_version", 2))
 
 	result["format_version"] = SETTINGS_FORMAT_VERSION
 	result["active_api_profile_id"] = str(
@@ -188,12 +193,15 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 	var incoming_roles = settings.get("provider_roles", {})
 	if incoming_roles is Dictionary:
 		provider_roles.merge(incoming_roles, true)
-	# Existing v2 settings used the active profile for all work. Preserve that behaviour
-	# when role assignments do not yet exist.
-	if int(settings.get("format_version", 2)) < SETTINGS_FORMAT_VERSION:
+	# Settings format v2 used one active profile for all work. v3 introduced
+	# explicit text/vision assignments. v4 adds image generation without
+	# disturbing choices already made for the earlier roles.
+	if incoming_format < 3:
 		provider_roles["text_profile_id"] = str(result.get("active_api_profile_id", "default"))
 		provider_roles["vision_profile_id"] = str(result.get("active_api_profile_id", "default"))
-	for role_key in ["text_profile_id", "vision_profile_id"]:
+	if incoming_format < 4:
+		provider_roles["image_profile_id"] = str(result.get("active_api_profile_id", "default"))
+	for role_key in ["text_profile_id", "vision_profile_id", "image_profile_id"]:
 		var requested_id := str(provider_roles.get(role_key, "")).strip_edges()
 		if not _profile_id_exists(profiles, requested_id):
 			provider_roles[role_key] = str(result.get("active_api_profile_id", "default"))
@@ -214,6 +222,16 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 		2000,
 		120000
 	)
+	var image_size_text := str(generation_settings.get("default_image_size", "1024x1024")).strip_edges()
+	generation_settings["default_image_size"] = (
+		image_size_text if not image_size_text.is_empty() else "1024x1024"
+	)
+	var image_prompt_style := str(
+		generation_settings.get("default_image_prompt_style", "auto")
+	).strip_edges().to_lower()
+	if not image_prompt_style in ["auto", "natural", "stable_diffusion"]:
+		image_prompt_style = "auto"
+	generation_settings["default_image_prompt_style"] = image_prompt_style
 	result["generation"] = generation_settings
 
 	var ui_settings: Dictionary = defaults.get("ui", {}).duplicate(true)
