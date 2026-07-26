@@ -18,20 +18,24 @@ The existing PyWebView application remains a feature reference, not an architect
 - Clear separation between project data, UI, AI providers, imports/exports, and integrations.
 - OpenAI-compatible backends remain a first-class target.
 - Local/self-hosted backends remain first-class where the old application had useful local workflows.
+- Character text/vision providers and image-generation providers are separate configuration domains even when they use similar HTTP APIs.
 - Data formats are versioned from the beginning.
 - New features extend the central project model rather than create parallel copies of character state.
 - Wider desktop windows expose additional workspace instead of letterboxing a fixed 16:9 interface.
-- Detachable native tool windows are preferred for substantial workflows that benefit from multi-monitor use.
+- Detachable native tool windows are preferred for substantial workflows that benefit from multi-monitor use; primary navigation workspaces may remain embedded when that interaction is clearer.
 
 ## Current Development Phase
 
 **Image Generation Expansion — v0.12 development candidate**
 
-v0.11.0 established the first native image-generation foundation and has now been promoted from candidate to a real release. The current v0.12 branch expands that same system rather than replacing it.
+v0.11.0 established the first native image-generation foundation and has now been promoted from candidate to a real release. The current v0.12 branch expands that same system rather than replacing the central image asset/gallery model.
 
 The v0.12 candidate currently adds:
 
-- per-profile image-backend selection;
+- dedicated image-provider profiles separated from character text/vision API profiles;
+- settings-format-v6 migration from the earlier shared-profile model;
+- separate **Character AI** and **Image Generation** Settings tabs;
+- local Forge/A1111 configuration centred on a WebUI server URL, with no API key required for a normal local installation;
 - Stable Diffusion Forge / Automatic1111 WebUI API support alongside OpenAI-compatible Images APIs;
 - `/sdapi/v1/txt2img` generation using the existing central gallery and asset model;
 - WebUI checkpoint and sampler discovery;
@@ -41,9 +45,9 @@ The v0.12 candidate currently adds:
 - capture of returned Stable Diffusion seeds for reproducibility;
 - gallery **Regenerate** and **New Seed Variant** workflows;
 - format-v2 generated-image metadata while retaining older gallery entries;
-- settings-format-v5 migration for backend-specific image profile defaults.
+- Image Studio as a selected main navigation workspace rather than an unexpected popup, while provider connection management remains in Settings.
 
-Release/application metadata intentionally remains on v0.11.0 while this branch is a development candidate. A normal `release.sh` promotion can synchronise v0.12.0 after repository validation and real local-provider testing.
+Release/application metadata intentionally remains on v0.11.0 while this branch is a development candidate. A normal `release.sh` promotion can synchronise v0.12.0 after real local-provider testing confirms the new provider split and Forge/A1111 workflow.
 
 ## Completed
 
@@ -170,7 +174,10 @@ Release/application metadata intentionally remains on v0.11.0 while this branch 
 
 ### v0.12 — Image Generation Expansion candidate
 
-- **Implemented:** settings-format-v5 image backend and backend-specific profile defaults.
+- **Implemented:** settings-format-v6 separation between character-AI profiles and dedicated image-provider profiles.
+- **Implemented:** v5 → v6 migration preserving text/vision assignments and image-generation defaults while preventing an SD provider from inheriting an OpenAI-style text URL/model/key.
+- **Implemented:** separate **Character AI** and **Image Generation** Settings tabs.
+- **Implemented:** local Forge/A1111 image providers default to `http://127.0.0.1:7860` and hide/clear the API key for normal local use.
 - **Implemented:** OpenAI-compatible and Forge/Automatic1111 provider adapters behind the same image service.
 - **Implemented:** Forge/A1111 `/sdapi/v1/txt2img` generation.
 - **Implemented:** direct Stable Diffusion negative prompts.
@@ -183,8 +190,9 @@ Release/application metadata intentionally remains on v0.11.0 while this branch 
 - **Implemented:** generated-image record format v2 with backend and reproducibility metadata.
 - **Implemented:** gallery Regenerate workflow using stored generation settings and seed.
 - **Implemented:** New Seed Variant workflow using the stored recipe with a fresh random SD seed.
-- **Implemented:** profile-level Save Image Defaults from Image Studio.
-- **Pending validation:** Godot 4.6.3 headless parse/CI on the completed branch.
+- **Implemented:** profile-level Save Image Defaults using the dedicated image-provider record.
+- **Implemented:** Image Studio embedded as a primary main-content workspace with selected sidebar state; connection credentials live in Settings rather than the Studio.
+- **Validated:** repository checks and Godot 4.6.3 headless import/parse pass on the separated-provider candidate.
 - **Pending validation:** real-world Forge/Automatic1111 testing on the user's local setup.
 - **Pending validation:** OpenAI-compatible batch behaviour across providers with different `n` limits/response envelopes.
 
@@ -228,8 +236,9 @@ After v0.12 is validated and released:
 
 - Streaming text support where providers support it.
 - Structured generation diagnostics and stronger response-repair attempts.
-- Separate text, vision, and image provider roles/profiles. **Completed through v0.11.0.**
-- Image backend selection per reusable profile. **v0.12 candidate implemented.**
+- Separate Text and Vision role assignments within the Character AI provider collection. **Completed in v0.10.0 and retained.**
+- Dedicated image-provider collection independent from Character AI credentials/models. **v0.12 candidate implemented with settings format v6.**
+- Image backend selection per dedicated image provider. **v0.12 candidate implemented.**
 - Recent/favourite model lists.
 - Broader provider capability detection.
 - Token-limit metadata and stronger context-budget estimation.
@@ -283,16 +292,17 @@ After v0.12 is validated and released:
 
 ### Image Generation
 
-- OpenAI-compatible image provider support. **Completed in v0.11.0; batch path expanded in v0.12 candidate.**
+- OpenAI-compatible image provider support. **Completed in v0.11.0; dedicated provider storage and batch path expanded in v0.12 candidate.**
 - Natural-language image prompt builder. **Completed in v0.11.0.**
 - Stable Diffusion-style prompt builder. **Completed in v0.11.0.**
 - Generated image gallery. **Completed in v0.11.0.**
 - Character portrait assignment. **Completed in v0.11.0.**
 - Stable Diffusion Forge / Automatic1111-compatible provider support. **v0.12 candidate implemented.**
+- Dedicated image-provider Settings tab and local server configuration. **v0.12 candidate implemented.**
 - Image provider model/checkpoint and sampler discovery. **v0.12 candidate implemented.**
 - Batch generation. **v0.12 candidate implemented.**
 - Seed-aware regeneration and new-seed variants. **v0.12 candidate implemented for reproducible backends.**
-- Sampler/steps/CFG/seed profile defaults. **v0.12 candidate implemented.**
+- Sampler/steps/CFG/seed image-provider defaults. **v0.12 candidate implemented.**
 - Image-to-image/reference-image generation. **Planned for v0.13.**
 - Emotion-image generation and regeneration. **Planned for v0.13.**
 - Per-emotion prompt editing. **Planned for v0.13.**
@@ -357,7 +367,7 @@ After v0.12 is validated and released:
 
 - Custom application theme and stronger visual identity.
 - Continue responsive-layout refinement for narrow desktop windows and high-density toolbars.
-- Continue moving substantial workflows into detachable native windows where multi-monitor use benefits.
+- Continue using detachable native windows where multi-monitor workflows benefit while keeping primary navigation pages embedded when that is clearer.
 - Keyboard shortcuts.
 - Drag-and-drop files.
 - Better empty states and onboarding.
