@@ -37,6 +37,87 @@ canonical_existing_dir() {
     (cd "${directory}" && pwd -P)
 }
 
+working_copy_matches_ref() {
+    local repo_dir="$1"
+    local ref="$2"
+    local path
+    local remote_blob
+    local local_blob
+    local -a changed_paths=()
+
+    mapfile -d '' changed_paths < <(
+        {
+            git -C "${repo_dir}" diff --name-only -z
+            git -C "${repo_dir}" diff --cached --name-only -z
+            git -C "${repo_dir}" ls-files --others --exclude-standard -z
+        } | sort -zu
+    )
+
+    if [[ "${#changed_paths[@]}" -eq 0 ]]; then
+        return 1
+    fi
+
+    for path in "${changed_paths[@]}"; do
+        if [[ ! -f "${repo_dir}/${path}" ]]; then
+            return 1
+        fi
+        if ! remote_blob="$(git -C "${repo_dir}" rev-parse "${ref}:${path}" 2>/dev/null)"; then
+            return 1
+        fi
+        local_blob="$(git hash-object "${repo_dir}/${path}")"
+        if [[ "${local_blob}" != "${remote_blob}" ]]; then
+            return 1
+        fi
+    done
+
+    return 0
+}
+
+update_destination_main() {
+    local repo_dir="$1"
+
+    print_status "Updating destination checkout"
+    git -C "${repo_dir}" fetch origin main --prune
+
+    if [[ -n "$(git -C "${repo_dir}" status --porcelain)" ]]; then
+        if working_copy_matches_ref "${repo_dir}" "origin/main"; then
+            echo "The local files already match the merged origin/main state."
+            echo "Reconciling the checkout automatically."
+            git -C "${repo_dir}" reset --hard origin/main >/dev/null
+        else
+            echo "WARNING: The destination repository contains local changes that differ from origin/main."
+            echo "The development copy may overwrite files with the same names."
+            git -C "${repo_dir}" status --short
+            if ! prompt_yes_no "Continue with the sync?" "N"; then
+                exit 1
+            fi
+            return 0
+        fi
+    fi
+
+    if git -C "${repo_dir}" merge-base --is-ancestor HEAD origin/main; then
+        if [[ "$(git -C "${repo_dir}" rev-parse HEAD)" != \
+              "$(git -C "${repo_dir}" rev-parse origin/main)" ]]; then
+            git -C "${repo_dir}" merge --ff-only origin/main
+        else
+            echo "Destination checkout is already current."
+        fi
+        return 0
+    fi
+
+    if git -C "${repo_dir}" merge-base --is-ancestor origin/main HEAD; then
+        echo "WARNING: Destination main contains local commits not present on origin/main."
+        if ! prompt_yes_no "Continue without resetting those commits?" "N"; then
+            exit 1
+        fi
+        return 0
+    fi
+
+    echo "ERROR: Destination main has diverged from origin/main." >&2
+    echo "Resolve the Git history before running the release script again." >&2
+    exit 1
+}
+
 sync_to_repository() {
     local repo_dir
 
@@ -75,13 +156,7 @@ sync_to_repository() {
         fi
     fi
 
-    if [[ -n "$(git -C "${repo_dir}" status --porcelain)" ]]; then
-        echo "WARNING: The destination repository already contains uncommitted changes."
-        echo "The development copy may overwrite files with the same names."
-        if ! prompt_yes_no "Continue with the sync?" "N"; then
-            exit 1
-        fi
-    fi
+    update_destination_main "${repo_dir}"
 
     if ! command -v rsync >/dev/null 2>&1; then
         echo "ERROR: rsync is required to copy the development project into the Git clone." >&2
