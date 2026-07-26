@@ -2,10 +2,17 @@
   "format_version": 2,
   "template_id": "default",
   "name": "Default Character Card",
-  "description": "The starter Character Card Forge workspace template.",
+  "description": "The starter Character Card Forge workspace template, with a V1-inspired generation contract for concept fidelity, physical description, personality depth, and playable openings.",
   "global_generation_instructions": [
-    "Write a coherent character suitable for roleplay.",
-    "Keep fields internally consistent.",
+    "Write a coherent fictional character suitable for roleplay.",
+    "Treat the user's generation concept as authoritative. Preserve supplied names, relationships, premise, setting, visual details, clothing, props, requested dynamics, and opening-scene beats unless they directly conflict with an explicit safety constraint.",
+    "Expand and organise the supplied concept instead of replacing it with an unrelated character, backstory, outfit, relationship, or scenario.",
+    "Keep every generated field internally consistent with the concept and with the other generated fields.",
+    "Description is for visible physical appearance and external presentation. Keep biography, motivations, internal personality, and scenario events out of Description unless they are directly visible or necessary to explain an external feature.",
+    "Personality is for internal traits, motivations, behaviour, speech, habits, strengths, flaws, preferences, and relationship behaviour. Do not use Personality as a duplicate physical description.",
+    "Scenario and First message must describe the same starting situation and should be immediately playable with {{user}}.",
+    "Use {{char}} for the character and {{user}} for the user where placeholders are appropriate.",
+    "Required fields must be present and meaningfully filled. Do not silently omit a required field.",
     "Do not include markdown fences around the JSON response.",
     "Return valid JSON only."
   ],
@@ -13,7 +20,7 @@
     {
       "id": "overview",
       "title": "Overview",
-      "description": "Identity, organisation, and the core concept used for generation.",
+      "description": "Identity, organisation, and the authoritative concept used for generation.",
       "fields": [
         {
           "id": "name",
@@ -23,7 +30,7 @@
           "placeholder": "Character name",
           "generate": true,
           "required": true,
-          "generation_prompt": ""
+          "generation_prompt": "Use the supplied name when the concept provides one. Invent a name only when the concept genuinely leaves the character unnamed."
         },
         {
           "id": "tags",
@@ -33,7 +40,7 @@
           "placeholder": "fantasy, mage, rival",
           "generate": true,
           "required": false,
-          "generation_prompt": ""
+          "generation_prompt": "Return 6-10 concise searchable tags that describe the character, role, genre, notable traits, and relationship or scenario hooks. Avoid redundant near-duplicate tags."
         },
         {
           "id": "summary",
@@ -44,14 +51,14 @@
           "generate": true,
           "height": 90,
           "required": false,
-          "generation_prompt": ""
+          "generation_prompt": "Write a compact 1-3 sentence library summary identifying who the character is, their role or hook, and the most useful distinguishing premise. This is catalogue text, not an in-character introduction."
         },
         {
           "id": "concept",
           "label": "Generation concept",
           "type": "multiline",
           "path": "concept.prompt",
-          "placeholder": "Describe the character you want to create. This is the primary input for AI generation.",
+          "placeholder": "Describe the character you want to create. This is the primary authoritative input for AI generation.",
           "generate": false,
           "height": 180,
           "required": false,
@@ -74,62 +81,62 @@
     {
       "id": "character",
       "title": "Character",
-      "description": "Core roleplay content.",
+      "description": "Core interoperable roleplay-card fields. Description and Personality deliberately keep V1-style responsibilities separate.",
       "fields": [
         {
           "id": "description",
           "label": "Description",
           "type": "multiline",
           "path": "character.description",
-          "placeholder": "Appearance, background, role, habits, and important facts.",
+          "placeholder": "Visible physical appearance and external presentation: age, face, hair, eyes, build, notable features, outfit, and accessories.",
           "generate": true,
-          "height": 220,
+          "height": 240,
           "required": true,
-          "generation_prompt": ""
+          "generation_prompt": "Physical and external description only. Use concise labelled lines in this order: Age: ...; Appearance: ...; Outfit Style: ...; Distinguishing Features: ... . Appearance should cover face, hair, eyes, skin, body/build, and other important visible traits when supported by the concept. Outfit Style should cover clothing and visible accessories. Do not put backstory, occupation, personality, motivations, relationship history, or scenario events here unless a detail is directly visible and necessary to describe appearance."
         },
         {
           "id": "personality",
           "label": "Personality",
           "type": "multiline",
           "path": "character.personality",
-          "placeholder": "Temperament, motivations, strengths, flaws, mannerisms, and behaviour.",
+          "placeholder": "Internal traits, motivation, behaviour toward {{user}}, speech, strengths, flaws, preferences, habits, and roleplay behaviour.",
           "generate": true,
-          "height": 200,
+          "height": 260,
           "required": true,
-          "generation_prompt": ""
+          "generation_prompt": "Build a roleplay-useful internal profile. Use concise labelled lines in this order: Core Traits: ...; Motivation: ...; Behavior Toward {{user}}: ...; Speech Style: ...; Strengths: ...; Flaws: ...; Likes: ...; Dislikes: ...; Habits / Mannerisms: ... . Keep these details specific, mutually consistent, and grounded in the concept rather than generic archetype filler."
         },
         {
           "id": "scenario",
           "label": "Scenario",
           "type": "multiline",
           "path": "character.scenario",
-          "placeholder": "The default roleplay situation and context.",
+          "placeholder": "The current roleplay starting situation: where {{char}} and {{user}} are, why they are interacting, and the immediate hook.",
           "generate": true,
-          "height": 150,
-          "required": false,
-          "generation_prompt": ""
+          "height": 170,
+          "required": true,
+          "generation_prompt": "Describe the current starting situation for the chat, not a full biography. Establish location/context, the relationship or reason {{char}} and {{user}} are interacting, the immediate tension or goal, and enough context to make the roleplay playable at once. Preserve any explicit scenario supplied in the concept."
         },
         {
           "id": "first_message",
           "label": "First message",
           "type": "multiline",
           "path": "character.first_message",
-          "placeholder": "The character's opening message.",
+          "placeholder": "The character's playable opening message to {{user}}.",
           "generate": true,
-          "height": 240,
+          "height": 260,
           "required": true,
-          "generation_prompt": ""
+          "generation_prompt": "Write a complete playable opening from {{char}} that begins in the Scenario already established. Include a small amount of scene/action context and natural dialogue directed toward {{user}}. Preserve explicit greeting/opening beats supplied in the concept. Do not contradict the Scenario, replace the premise with a new one, or narrate {{user}}'s private thoughts, choices, or feelings as decided facts."
         },
         {
           "id": "example_dialogue",
           "label": "Example dialogue",
           "type": "multiline",
           "path": "character.example_dialogue",
-          "placeholder": "Example dialogue demonstrating voice and behaviour.",
+          "placeholder": "One continuous example conversation demonstrating {{char}}'s voice and behaviour.",
           "generate": true,
-          "height": 220,
+          "height": 240,
           "required": false,
-          "generation_prompt": ""
+          "generation_prompt": "Demonstrate the character's voice, behaviour, and relationship dynamic. Begin with exactly one <START> marker, then write one continuous 2-3 exchange example using {{user}}: ... and {{char}}: ... lines. Do not repeat <START> before every exchange."
         }
       ],
       "kind": "standard"
@@ -137,7 +144,7 @@
     {
       "id": "advanced",
       "title": "Advanced",
-      "description": "Advanced character-card instructions and creator metadata.",
+      "description": "Advanced character-card instructions and creator metadata. These fields remain optional unless a custom template makes them required.",
       "fields": [
         {
           "id": "creator",
@@ -164,22 +171,22 @@
           "label": "Creator notes",
           "type": "multiline",
           "path": "character.creator_notes",
-          "placeholder": "Notes intended for users of the card.",
+          "placeholder": "Optional notes intended for users of the card.",
           "generate": true,
           "height": 150,
           "required": false,
-          "generation_prompt": ""
+          "generation_prompt": "Only generate this when there is genuinely useful user-facing information about intended use, premise, or card behaviour. Keep it concise and do not repeat the Description or Personality."
         },
         {
           "id": "system_prompt",
           "label": "System prompt",
           "type": "multiline",
           "path": "character.system_prompt",
-          "placeholder": "Optional character-specific system prompt.",
+          "placeholder": "Optional character-specific behavioural instructions.",
           "generate": true,
           "height": 180,
           "required": false,
-          "generation_prompt": ""
+          "generation_prompt": "Use only when character-specific behavioural rules materially improve roleplay consistency. Write actionable instructions for portraying {{char}}; do not merely restate personality prose."
         },
         {
           "id": "post_history_instructions",
@@ -190,7 +197,7 @@
           "generate": true,
           "height": 180,
           "required": false,
-          "generation_prompt": ""
+          "generation_prompt": "Use only for concise late-priority behavioural constraints that need to remain active after chat history. Avoid duplicating the system prompt."
         }
       ],
       "kind": "standard"
