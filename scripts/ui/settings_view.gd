@@ -18,6 +18,7 @@ var _model: LineEdit
 var _temperature: SpinBox
 var _max_tokens: SpinBox
 var _vision_detail: OptionButton
+var _image_backend: OptionButton
 var _include_existing: CheckBox
 var _retry_count: SpinBox
 var _idea_count: SpinBox
@@ -39,12 +40,12 @@ func _ready() -> void:
 	_model_service.models_failed.connect(_on_models_failed)
 
 	var intro := Label.new()
-	intro.text = "OpenAI-compatible provider profiles"
+	intro.text = "Provider profiles"
 	intro.add_theme_font_size_override("font_size", 22)
 	add_child(intro)
 
 	var hint := Label.new()
-	hint.text = "Create reusable backend profiles, then assign separate profiles to text generation, vision analysis, and image generation. One profile may serve multiple roles."
+	hint.text = "Create reusable backend profiles, then assign separate profiles to text generation, vision analysis, and image generation. Image profiles can use either an OpenAI-compatible Images API or a Stable Diffusion Forge / Automatic1111 WebUI API."
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	hint.modulate = Color(0.75, 0.77, 0.84)
 	add_child(hint)
@@ -79,7 +80,7 @@ func _ready() -> void:
 	role_grid.add_child(_image_role_selector)
 
 	var role_hint := Label.new()
-	role_hint.text = "For multimodal vision, choose a model that accepts image_url input. For Image Studio, choose a profile whose base URL exposes an OpenAI-compatible /images/generations route; its model can still be overridden per run."
+	role_hint.text = "Text and vision profiles use OpenAI-compatible chat/model APIs. Image Studio reads the selected image profile's Image backend setting and exposes backend-specific discovery and generation controls."
 	role_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	role_hint.modulate = Color(0.64, 0.68, 0.8)
 	add_child(role_hint)
@@ -134,11 +135,12 @@ func _ready() -> void:
 	model_row.add_theme_constant_override("separation", 8)
 	model_box.add_child(model_row)
 	_model = LineEdit.new()
-	_model.placeholder_text = "Enter a model ID or fetch the model list"
+	_model.placeholder_text = "Enter a model ID or checkpoint"
 	_model.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	model_row.add_child(_model)
 	_fetch_models_button = Button.new()
 	_fetch_models_button.text = "Fetch Models"
+	_fetch_models_button.tooltip_text = "Uses the OpenAI-compatible /models endpoint. Stable Diffusion checkpoints are discovered from Image Studio."
 	_fetch_models_button.pressed.connect(_fetch_models)
 	model_row.add_child(_fetch_models_button)
 
@@ -171,6 +173,25 @@ func _ready() -> void:
 		_vision_detail.set_item_metadata(_vision_detail.item_count - 1, detail)
 	_vision_detail.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	form.add_child(_vision_detail)
+
+	form.add_child(_label("Image backend"))
+	_image_backend = OptionButton.new()
+	_image_backend.add_item("OpenAI-compatible Images API")
+	_image_backend.set_item_metadata(
+		_image_backend.item_count - 1, CCFSettingsService.IMAGE_BACKEND_OPENAI
+	)
+	_image_backend.add_item("Stable Diffusion Forge / Automatic1111")
+	_image_backend.set_item_metadata(
+		_image_backend.item_count - 1, CCFSettingsService.IMAGE_BACKEND_AUTOMATIC1111
+	)
+	_image_backend.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	form.add_child(_image_backend)
+
+	var backend_hint := Label.new()
+	backend_hint.text = "For Stable Diffusion WebUI profiles, set the base URL to the server root (for example http://127.0.0.1:7860) or its /sdapi/v1 path. Image Studio will use /txt2img and discover checkpoints/samplers automatically."
+	backend_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	backend_hint.modulate = Color(0.64, 0.68, 0.8)
+	add_child(backend_hint)
 
 	var generation_heading := Label.new()
 	generation_heading.text = "Generation behaviour"
@@ -298,6 +319,7 @@ func _save() -> void:
 
 	var result := CCFSettingsService.save_settings(_settings)
 	if result.get("ok", false):
+		_settings = CCFSettingsService.load_settings()
 		_status.text = "Settings saved. Text, vision, and image provider assignments are now active."
 		settings_saved.emit(_settings.duplicate(true))
 	else:
@@ -360,6 +382,7 @@ func _load_active_profile() -> void:
 	_temperature.value = float(profile.get("temperature", 0.8))
 	_max_tokens.value = int(profile.get("max_output_tokens", 6000))
 	_select_metadata(_vision_detail, str(profile.get("vision_detail", "auto")))
+	_select_metadata(_image_backend, CCFSettingsService.image_backend(profile))
 	_reset_fetched_models()
 
 
@@ -378,6 +401,11 @@ func _capture_loaded_profile() -> void:
 		str(_vision_detail.get_selected_metadata())
 		if _vision_detail.selected >= 0
 		else "auto"
+	)
+	profile["image_backend"] = (
+		str(_image_backend.get_selected_metadata())
+		if _image_backend.selected >= 0
+		else CCFSettingsService.IMAGE_BACKEND_OPENAI
 	)
 	CCFSettingsService.replace_profile_by_id(_settings, _loaded_profile_id, profile)
 
@@ -455,6 +483,9 @@ func _delete_profile() -> void:
 func _fetch_models() -> void:
 	_capture_loaded_profile()
 	var profile := CCFSettingsService.profile_by_id(_settings, _loaded_profile_id)
+	if CCFSettingsService.image_backend(profile) == CCFSettingsService.IMAGE_BACKEND_AUTOMATIC1111:
+		_status.text = "Stable Diffusion checkpoints are discovered from Image Studio so its WebUI-specific API can be used."
+		return
 	var result := _model_service.fetch_models(profile)
 	if not result.get("ok", false):
 		_status.text = str(result.get("error", "Could not fetch models."))
