@@ -23,9 +23,11 @@ The existing PyWebView application is a feature reference, not an architecture o
 
 ## Current Development Phase
 
-**Vision and Attachments Foundation — v0.10.0 stable candidate**
+**Image Generation Foundation — v0.11 development candidate**
 
-The Godot rewrite now supports managed shared/character reference files, separate text and vision provider roles, configurable attachment context budgeting, and review-first image analysis through the existing Generation Preview. Attachment metadata extends the central project model while source files remain ordinary portable assets. The next feature phase is the Image Generation Foundation.
+The Godot rewrite now has the first native image-generation path on the v0.11 feature branch: a third Image provider role, OpenAI-compatible image requests, central-model prompt building, managed per-character generated-image files, a detachable gallery/studio, and direct portrait assignment. Release/application metadata intentionally remains on the last validated v0.10.0 baseline until this candidate passes repository validation and real-world Godot/provider testing.
+
+The next image phase will restore the legacy application's dedicated Stable Diffusion Forge/Automatic1111 path and expand the shared gallery architecture into batches, variations, capability discovery, and emotion images rather than building a second image system.
 
 ## Completed
 
@@ -263,7 +265,24 @@ The Godot rewrite now supports managed shared/character reference files, separat
 
 ## In Progress
 
-- Real-world testing against multiple OpenAI-compatible backends.
+### v0.11 — Image Generation Foundation candidate
+
+- Added an Image generation provider role independent of Text and Vision roles.
+- Added settings-format-v4 migration that preserves existing Text/Vision assignments and seeds Image from the prior active profile.
+- Added OpenAI-compatible `/images/generations` requests in a dedicated cancellable service.
+- Added flexible response decoding for common base64 fields, data URLs, downloadable image URLs, and raw PNG/JPEG/WebP bodies.
+- Added PNG normalisation before managed storage.
+- Added natural-language and Stable Diffusion-style prompt construction from the central character model.
+- Added default image size and prompt-style settings plus per-run model override.
+- Added detachable Image Generation Studio with saved project/character selection, editable prompt controls, gallery preview, open-in-system-app, and portrait assignment.
+- Added lightweight generated-image metadata under the existing `assets.generated_images[]` model.
+- Kept `.ccfproject` portability by storing generated files inside the existing per-character asset tree.
+- Added repository validation markers and dedicated image-generation architecture documentation.
+- Pending Godot 4.6 CI parsing and real-world provider testing before release metadata is promoted to v0.11.0.
+
+### Ongoing validation
+
+- Real-world testing against multiple OpenAI-compatible text backends.
 - Stronger generation-response repair and structured diagnostics.
 - UI refinement as larger workflows are restored.
 - Continued testing of template editing and custom typed fields.
@@ -284,14 +303,16 @@ The Godot rewrite now supports managed shared/character reference files, separat
 
 ## Next Up
 
-### v0.11 — Image Generation Foundation
+### v0.12 — Image Generation Expansion
 
-- Add an Image generation provider role without coupling it to text or vision analysis profiles.
-- Add OpenAI-compatible image-generation requests and a provider adapter boundary for Stable Diffusion-compatible backends.
-- Build natural-language and Stable Diffusion-style prompt preparation from the central character model and reviewed visual references.
-- Add a managed generated-image gallery using ordinary per-character asset files.
-- Allow reviewed gallery images to become the character portrait without duplicating binary data in JSON.
-- Preserve room for later emotion-image prompts, batch generation, regeneration, and provider capability detection.
+- Add a dedicated Stable Diffusion Forge / Automatic1111-compatible adapter using the same image-generation service boundary and gallery model.
+- Add provider/backend type and image-specific connection controls without coupling image generation to the Text or Vision roles.
+- Add provider capability detection and image-model discovery/filtering where APIs expose useful metadata.
+- Add multi-image batch generation, regenerate/variation workflows, and richer gallery actions.
+- Add image-to-image/reference-image generation where supported.
+- Add emotion-image generation and regeneration using the existing `emotion_images/` asset tree.
+- Add per-emotion prompt editing and reusable prompt/style presets.
+- Add provider-specific controls such as aspect/resolution, sampler/steps/CFG, seed, quality, and compatible advanced options behind adapter-owned settings.
 
 ## Planned Features
 
@@ -299,7 +320,7 @@ The Godot rewrite now supports managed shared/character reference files, separat
 
 - Streaming text support where providers support it.
 - Structured generation diagnostics and response-repair attempts.
-- Separate text and vision provider roles/profiles. **Foundation completed in v0.10.0; image role remains planned for v0.11.**
+- Separate text, vision, and image provider roles/profiles. **Text/Vision foundation completed in v0.10.0; Image role implemented in the v0.11 candidate.**
 - Recent/favourite model lists.
 - Provider capability detection.
 - Token-limit metadata and stronger context-budget estimation.
@@ -349,13 +370,18 @@ The Godot rewrite now supports managed shared/character reference files, separat
 
 ### Image Generation
 
-- Stable Diffusion-compatible provider support.
-- OpenAI-compatible image provider support.
-- Natural-language image prompt builder.
-- Generated image gallery.
-- Character portrait assignment.
+- OpenAI-compatible image provider support. **Foundation implemented in the v0.11 candidate.**
+- Natural-language image prompt builder. **Foundation implemented in the v0.11 candidate.**
+- Stable Diffusion-style prompt builder. **Foundation implemented in the v0.11 candidate.**
+- Generated image gallery. **Foundation implemented in the v0.11 candidate.**
+- Character portrait assignment. **Foundation implemented in the v0.11 candidate.**
+- Stable Diffusion Forge / Automatic1111-compatible provider support.
+- Image provider capability/model discovery.
+- Batch generation, variations, and regeneration.
+- Image-to-image/reference-image generation.
 - Emotion-image generation and regeneration.
 - Per-emotion prompt editing.
+- Provider-specific advanced controls and reusable visual-style presets.
 
 ### Import / Export
 

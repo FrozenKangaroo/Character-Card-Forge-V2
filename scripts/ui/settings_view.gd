@@ -10,6 +10,7 @@ var _loading_roles := false
 var _profile_selector: OptionButton
 var _text_role_selector: OptionButton
 var _vision_role_selector: OptionButton
+var _image_role_selector: OptionButton
 var _profile_name: LineEdit
 var _base_url: LineEdit
 var _api_key: LineEdit
@@ -21,6 +22,8 @@ var _include_existing: CheckBox
 var _retry_count: SpinBox
 var _idea_count: SpinBox
 var _attachment_context_limit: SpinBox
+var _default_image_size: LineEdit
+var _image_prompt_style: OptionButton
 var _fetched_models: OptionButton
 var _fetch_models_button: Button
 var _status: Label
@@ -41,7 +44,7 @@ func _ready() -> void:
 	add_child(intro)
 
 	var hint := Label.new()
-	hint.text = "Create reusable backend profiles, then assign separate profiles to text generation and vision analysis. Existing profiles remain compatible and can serve both roles."
+	hint.text = "Create reusable backend profiles, then assign separate profiles to text generation, vision analysis, and image generation. One profile may serve multiple roles."
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	hint.modulate = Color(0.75, 0.77, 0.84)
 	add_child(hint)
@@ -69,8 +72,14 @@ func _ready() -> void:
 	_vision_role_selector.item_selected.connect(_on_role_selected.bind(CCFSettingsService.ROLE_VISION))
 	role_grid.add_child(_vision_role_selector)
 
+	role_grid.add_child(_label("Image generation profile"))
+	_image_role_selector = OptionButton.new()
+	_image_role_selector.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_image_role_selector.item_selected.connect(_on_role_selected.bind(CCFSettingsService.ROLE_IMAGE))
+	role_grid.add_child(_image_role_selector)
+
 	var role_hint := Label.new()
-	role_hint.text = "A profile may be assigned to both roles. For multimodal analysis, choose a profile whose selected model accepts image_url input."
+	role_hint.text = "For multimodal vision, choose a model that accepts image_url input. For Image Studio, choose a profile whose base URL exposes an OpenAI-compatible /images/generations route; its model can still be overridden per run."
 	role_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	role_hint.modulate = Color(0.64, 0.68, 0.8)
 	add_child(role_hint)
@@ -204,6 +213,26 @@ func _ready() -> void:
 	_attachment_context_limit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	generation_grid.add_child(_attachment_context_limit)
 
+	generation_grid.add_child(_label("Default image size"))
+	_default_image_size = LineEdit.new()
+	_default_image_size.placeholder_text = "1024x1024 or auto"
+	_default_image_size.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	generation_grid.add_child(_default_image_size)
+
+	generation_grid.add_child(_label("Default image prompt style"))
+	_image_prompt_style = OptionButton.new()
+	for style_entry in [
+		{"label": "Auto", "value": "auto"},
+		{"label": "Natural language", "value": "natural"},
+		{"label": "Stable Diffusion style", "value": "stable_diffusion"}
+	]:
+		_image_prompt_style.add_item(str(style_entry["label"]))
+		_image_prompt_style.set_item_metadata(
+			_image_prompt_style.item_count - 1, str(style_entry["value"])
+		)
+	_image_prompt_style.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	generation_grid.add_child(_image_prompt_style)
+
 	var actions := HBoxContainer.new()
 	actions.add_theme_constant_override("separation", 10)
 	add_child(actions)
@@ -243,6 +272,10 @@ func load_settings(settings: Dictionary) -> void:
 	_attachment_context_limit.value = int(
 		generation_settings.get("attachment_context_character_limit", 24000)
 	)
+	_default_image_size.text = str(generation_settings.get("default_image_size", "1024x1024"))
+	_select_metadata(
+		_image_prompt_style, str(generation_settings.get("default_image_prompt_style", "auto"))
+	)
 
 
 func _save() -> void:
@@ -255,11 +288,17 @@ func _save() -> void:
 	generation_settings["attachment_context_character_limit"] = int(
 		_attachment_context_limit.value
 	)
+	generation_settings["default_image_size"] = _default_image_size.text.strip_edges()
+	generation_settings["default_image_prompt_style"] = (
+		str(_image_prompt_style.get_selected_metadata())
+		if _image_prompt_style.selected >= 0
+		else "auto"
+	)
 	_settings["generation"] = generation_settings
 
 	var result := CCFSettingsService.save_settings(_settings)
 	if result.get("ok", false):
-		_status.text = "Settings saved. Text and vision role assignments are now active."
+		_status.text = "Settings saved. Text, vision, and image provider assignments are now active."
 		settings_saved.emit(_settings.duplicate(true))
 	else:
 		_status.text = str(result.get("error", "Could not save settings."))
@@ -293,7 +332,10 @@ func _refresh_role_selectors() -> void:
 	var vision_id := CCFSettingsService.role_profile_id(
 		_settings, CCFSettingsService.ROLE_VISION
 	)
-	for selector in [_text_role_selector, _vision_role_selector]:
+	var image_id := CCFSettingsService.role_profile_id(
+		_settings, CCFSettingsService.ROLE_IMAGE
+	)
+	for selector in [_text_role_selector, _vision_role_selector, _image_role_selector]:
 		selector.clear()
 		for profile in _settings.get("api_profiles", []):
 			if not profile is Dictionary:
@@ -304,6 +346,7 @@ func _refresh_role_selectors() -> void:
 			)
 	_select_profile_id(_text_role_selector, text_id)
 	_select_profile_id(_vision_role_selector, vision_id)
+	_select_profile_id(_image_role_selector, image_id)
 	_loading_roles = false
 
 
@@ -351,6 +394,12 @@ func _capture_role_assignments() -> void:
 			_settings,
 			CCFSettingsService.ROLE_VISION,
 			str(_vision_role_selector.get_selected_metadata())
+		)
+	if _image_role_selector.selected >= 0:
+		CCFSettingsService.set_role_profile(
+			_settings,
+			CCFSettingsService.ROLE_IMAGE,
+			str(_image_role_selector.get_selected_metadata())
 		)
 
 

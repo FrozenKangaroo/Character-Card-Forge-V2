@@ -12,23 +12,30 @@ var _workspace: CCFWorkspaceView
 var _settings_view: CCFSettingsView
 var _template_manager: CCFTemplateManagerView
 var _series_manager: CCFSeriesManagerView
+var _image_generation_window: CCFImageGenerationWindow
 var _current_view := "dashboard"
 var _nav_buttons: Dictionary = {}
+
 
 func _ready() -> void:
 	CCFStorageService.ensure_directories()
 	_settings = CCFSettingsService.load_settings()
 	_build_theme()
 	_build_shell()
+	_build_image_generation_window()
 	_show_view(str(_settings.get("ui", {}).get("last_view", "dashboard")))
+
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		if _workspace != null:
 			_workspace.save_tool_window_state()
+		if _image_generation_window != null:
+			_image_generation_window.save_window_state()
 		if _workspace != null and _workspace.has_unsaved_changes():
 			_global_status.text = "Unsaved workspace changes exist. Save them before closing if you want to keep them."
 		get_tree().quit()
+
 
 func _build_theme() -> void:
 	var app_theme := Theme.new()
@@ -80,6 +87,7 @@ func _build_theme() -> void:
 	app_theme.set_color("font_color", "TextEdit", Color("f1f0f7"))
 	self.theme = app_theme
 
+
 func _build_shell() -> void:
 	var background := ColorRect.new()
 	background.color = Color("10111a")
@@ -108,15 +116,16 @@ func _build_shell() -> void:
 	brand.text = "CHARACTER\nCARD FORGE"
 	brand.add_theme_font_size_override("font_size", 22)
 	side.add_child(brand)
-	var version := Label.new()
-	version.text = "Godot rewrite • v%s" % APP_VERSION
-	version.modulate = Color(0.64, 0.66, 0.75)
-	side.add_child(version)
+	var version_label := Label.new()
+	version_label.text = "Godot rewrite • v%s" % APP_VERSION
+	version_label.modulate = Color(0.64, 0.66, 0.75)
+	side.add_child(version_label)
 	side.add_child(HSeparator.new())
 
 	_add_nav(side, "dashboard", "Home")
 	_add_nav(side, "library", "Character Library")
 	_add_nav(side, "workspace", "Workspace")
+	_add_tool_button(side, "Image Studio", _open_image_studio)
 	_add_nav(side, "series", "Series")
 	_add_nav(side, "templates", "Templates")
 	_add_nav(side, "settings", "Settings")
@@ -130,14 +139,14 @@ func _build_shell() -> void:
 	data_hint.modulate = Color(0.58, 0.61, 0.7)
 	side.add_child(data_hint)
 
-	var main := VBoxContainer.new()
-	main.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	main.add_theme_constant_override("separation", 0)
-	shell.add_child(main)
+	var main_content := VBoxContainer.new()
+	main_content.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	main_content.add_theme_constant_override("separation", 0)
+	shell.add_child(main_content)
 
 	var header := PanelContainer.new()
 	header.custom_minimum_size.y = 66
-	main.add_child(header)
+	main_content.add_child(header)
 	var header_margin := MarginContainer.new()
 	header_margin.add_theme_constant_override("margin_left", 22)
 	header_margin.add_theme_constant_override("margin_right", 22)
@@ -162,7 +171,7 @@ func _build_shell() -> void:
 	_content.add_theme_constant_override("margin_right", 22)
 	_content.add_theme_constant_override("margin_top", 18)
 	_content.add_theme_constant_override("margin_bottom", 20)
-	main.add_child(_content)
+	main_content.add_child(_content)
 
 	_dashboard = CCFDashboardView.new()
 	_dashboard.new_character_requested.connect(_create_new_character)
@@ -204,14 +213,45 @@ func _build_shell() -> void:
 	_settings_view.settings_saved.connect(_on_settings_saved)
 	_content.add_child(_settings_view)
 
-func _add_nav(parent: VBoxContainer, id: String, text: String) -> void:
+
+func _build_image_generation_window() -> void:
+	_image_generation_window = CCFImageGenerationWindow.new()
+	_image_generation_window.visible = false
+	_image_generation_window.title = "Character Card Forge — Image Generation Studio"
+	_image_generation_window.size = Vector2i(1180, 820)
+	_image_generation_window.min_size = Vector2i(920, 650)
+	_image_generation_window.force_native = true
+	_image_generation_window.transient = true
+	_image_generation_window.exclusive = false
+	_image_generation_window.project_changed.connect(_on_image_project_changed)
+	add_child(_image_generation_window)
+	_image_generation_window.hide()
+
+
+func _add_nav(parent: VBoxContainer, view_id: String, button_text: String) -> void:
 	var button := Button.new()
-	button.text = text
+	button.text = button_text
 	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	button.custom_minimum_size.y = 44
-	button.pressed.connect(func(): _show_view(id))
+	button.pressed.connect(func(): _show_view(view_id))
 	parent.add_child(button)
-	_nav_buttons[id] = button
+	_nav_buttons[view_id] = button
+
+
+func _add_tool_button(parent: VBoxContainer, button_text: String, action: Callable) -> void:
+	var button := Button.new()
+	button.text = button_text
+	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	button.custom_minimum_size.y = 44
+	button.pressed.connect(action)
+	parent.add_child(button)
+
+
+func _open_image_studio() -> void:
+	if _workspace != null and _workspace.has_unsaved_changes():
+		_global_status.text = "Image Studio uses saved projects. Save workspace changes first if you want them included in image prompts."
+	_image_generation_window.open_studio()
+
 
 func _show_view(view_id: String) -> void:
 	if not view_id in ["dashboard", "library", "workspace", "series", "templates", "settings"]:
@@ -235,9 +275,9 @@ func _show_view(view_id: String) -> void:
 		"settings": "Settings"
 	}.get(view_id, "Character Card Forge")
 
-	for id in _nav_buttons:
-		var button: Button = _nav_buttons[id]
-		button.disabled = id == view_id
+	for nav_id in _nav_buttons:
+		var button: Button = _nav_buttons[nav_id]
+		button.disabled = nav_id == view_id
 
 	if view_id == "dashboard":
 		_dashboard.refresh()
@@ -256,6 +296,7 @@ func _show_view(view_id: String) -> void:
 	_settings["ui"] = ui
 	CCFSettingsService.save_settings(_settings)
 
+
 func _create_new_character() -> void:
 	var project := CCFStorageService.new_project()
 	var result := CCFStorageService.save_project(project)
@@ -266,6 +307,7 @@ func _create_new_character() -> void:
 	_show_view("workspace")
 	_global_status.text = "New character project created"
 	_refresh_home_and_library()
+
 
 func _open_project(project_id: String) -> void:
 	var loaded := CCFStorageService.load_project(project_id)
@@ -278,9 +320,11 @@ func _open_project(project_id: String) -> void:
 	_show_view("workspace")
 	_global_status.text = "Project loaded"
 
+
 func _on_project_saved(_project: Dictionary) -> void:
 	_global_status.text = "Project saved"
 	_refresh_home_and_library()
+
 
 func _on_project_imported(project: Dictionary) -> void:
 	if project.is_empty():
@@ -293,21 +337,38 @@ func _on_project_imported(project: Dictionary) -> void:
 	_refresh_home_and_library()
 
 
+func _on_image_project_changed(project: Dictionary) -> void:
+	_refresh_home_and_library()
+	var current_project := _workspace.current_project()
+	if str(current_project.get("project_id", "")) != str(project.get("project_id", "")):
+		_global_status.text = "Image Studio updated a saved character project."
+		return
+	if _workspace.has_unsaved_changes():
+		_global_status.text = "Image Studio updated the saved project. The open workspace has unsaved edits, so it was not reloaded."
+		return
+	var template_id := CCFStorageService.active_character_template_id(project)
+	_workspace.load_project(project, CCFTemplateService.load_template(template_id), _settings)
+	_global_status.text = "Image Studio updated the open project and refreshed its saved portrait/gallery data."
+
+
 func _on_settings_saved(settings: Dictionary) -> void:
 	_settings = settings.duplicate(true)
 	_workspace.update_settings(_settings)
 	_series_manager.load_settings(_settings)
 	_global_status.text = "Settings saved"
 
+
 func _on_templates_changed() -> void:
 	_workspace.refresh_templates()
 	_global_status.text = "Templates updated"
+
 
 func _on_series_changed() -> void:
 	_workspace.refresh_series()
 	_library.refresh_projects(true)
 	_dashboard.refresh()
 	_global_status.text = "Series library updated"
+
 
 func _refresh_home_and_library() -> void:
 	_dashboard.refresh()
