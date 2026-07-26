@@ -18,9 +18,41 @@ https://github.com/FrozenKangaroo/Character-Card-Forge-V2
 - Git and GitHub CLI (`gh`) authenticated for the repository.
 - Python 3.
 - Godot 4.6.3 available as `godot`, `godot4`, or through `GODOT_BIN` for local engine validation.
-- A clean local clone on the `main` branch.
+- A local clone on the `main` branch at `~/Projects/Character-Card-Forge-V2`, or another location supplied through `CCF_REPO_DIR`.
+- `rsync` when running the helper from a separate development project directory.
 
 The local helper does not build platform binaries. It validates and pushes the source/tag; GitHub Actions performs the reproducible exports.
+
+## Development directory and repository sync
+
+The ordinary development project may remain at:
+
+```text
+/home/damee/character-card-forge/
+```
+
+The Git checkout remains at:
+
+```text
+~/Projects/Character-Card-Forge-V2/
+```
+
+Run the helper from the development project:
+
+```bash
+cd /home/damee/character-card-forge
+./release.sh
+```
+
+Before showing the release menu, the helper performs a safe additive `rsync` into the checkout and then re-launches itself from the repository copy. It excludes `.git/`, `.godot/`, build/export folders, Python caches, and logs. It does not use `--delete`, so files that exist only in the repository are preserved.
+
+For another checkout location:
+
+```bash
+CCF_REPO_DIR=/path/to/Character-Card-Forge-V2 ./release.sh
+```
+
+The helper stops before synchronising when the destination is missing, is not a Git repository, is on a branch other than `main`, or has uncommitted changes that the operator declines to overwrite. Running the helper directly inside the Git checkout skips synchronisation.
 
 ## Source-only update
 
@@ -89,7 +121,7 @@ The release workflow supports `workflow_dispatch` with an existing tag. Use this
 To synchronise a version without tagging:
 
 ```bash
-python3 tools/set_version.py 0.9.3
+python3 tools/set_version.py 0.10.0
 python3 tools/validate_project.py
 ```
 

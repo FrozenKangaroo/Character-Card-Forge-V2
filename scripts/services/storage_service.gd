@@ -55,6 +55,7 @@ static func new_project() -> Dictionary:
 		"characters": [first_character],
 		"relationships": [],
 		"card_workflows": [],
+		"attachments": [],
 		"workspace": {
 			"active_character_id": str(first_character.get("character_id", "")),
 			"selected_project_tab": "characters"
@@ -109,6 +110,7 @@ static func new_character_record(character_name: String = "Untitled Character") 
 			"generated_images": [],
 			"emotion_images": []
 		},
+		"attachments": [],
 		"workspace": {
 			"selected_section": "overview",
 			"builder": {}
@@ -129,6 +131,7 @@ static func save_project(project: Dictionary) -> Dictionary:
 
 	var folder := project_folder(project_id)
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(folder + "/assets"))
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(folder + "/attachments"))
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(folder + "/generated_images"))
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(folder + "/emotion_images"))
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(folder + "/characters"))
@@ -140,6 +143,7 @@ static func save_project(project: Dictionary) -> Dictionary:
 			continue
 		var character_root := folder + "/characters/" + character_id
 		DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(character_root + "/assets"))
+		DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(character_root + "/attachments"))
 		DirAccess.make_dir_recursive_absolute(
 			ProjectSettings.globalize_path(character_root + "/generated_images")
 		)
@@ -306,6 +310,10 @@ static func duplicate_project(project_id: String) -> Dictionary:
 	metadata["name"] = str(metadata.get("name", "Untitled Project")) + " Copy"
 	copy["metadata"] = metadata
 	var old_to_new_ids: Dictionary = {}
+	var attachment_copy_plan: Array[Dictionary] = []
+	copy["attachments"] = _remap_duplicate_attachments(
+		copy.get("attachments", []), "", "", attachment_copy_plan
+	)
 	var duplicated_characters: Array = []
 	for raw_character in copy.get("characters", []):
 		if not raw_character is Dictionary:
@@ -315,6 +323,12 @@ static func duplicate_project(project_id: String) -> Dictionary:
 		var new_character_id := _new_uuid()
 		old_to_new_ids[old_character_id] = new_character_id
 		character["character_id"] = new_character_id
+		character["attachments"] = _remap_duplicate_attachments(
+			character.get("attachments", []),
+			old_character_id,
+			new_character_id,
+			attachment_copy_plan
+		)
 		character["created_at"] = now
 		character["updated_at"] = now
 		duplicated_characters.append(character)
@@ -358,7 +372,48 @@ static func duplicate_project(project_id: String) -> Dictionary:
 	var old_active_id := str(workspace.get("active_character_id", ""))
 	workspace["active_character_id"] = str(old_to_new_ids.get(old_active_id, ""))
 	copy["workspace"] = workspace
-	return save_project(copy)
+	var save_result := save_project(copy)
+	if not bool(save_result.get("ok", false)):
+		return save_result
+	var target_project_id := str(save_result.get("project_id", ""))
+	var copy_warnings: Array[String] = []
+	for copy_entry in attachment_copy_plan:
+		var file_result := CCFAttachmentService.copy_managed_attachment(
+			project_id,
+			target_project_id,
+			str(copy_entry.get("source", "")),
+			str(copy_entry.get("target", ""))
+		)
+		if not bool(file_result.get("ok", false)):
+			copy_warnings.append(str(file_result.get("error", "Could not copy an attachment.")))
+	if not copy_warnings.is_empty():
+		save_result["warnings"] = copy_warnings
+	return save_result
+
+
+static func _remap_duplicate_attachments(
+	raw_attachments: Variant,
+	old_character_id: String,
+	new_character_id: String,
+	copy_plan: Array[Dictionary]
+) -> Array:
+	var result: Array = []
+	for raw_attachment in CCFAttachmentService.normalise_list(raw_attachments):
+		var attachment: Dictionary = raw_attachment.duplicate(true)
+		var source_relative := str(attachment.get("relative_path", ""))
+		var target_relative := source_relative
+		if not old_character_id.is_empty() and not new_character_id.is_empty():
+			var old_prefix := "characters/%s/" % old_character_id
+			if target_relative.begins_with(old_prefix):
+				target_relative = (
+					"characters/%s/" % new_character_id
+					+ target_relative.trim_prefix(old_prefix)
+				)
+		attachment["relative_path"] = target_relative
+		if not source_relative.is_empty() and not target_relative.is_empty():
+			copy_plan.append({"source": source_relative, "target": target_relative})
+		result.append(attachment)
+	return result
 
 
 static func delete_project(project_id: String) -> Dictionary:
@@ -495,6 +550,8 @@ static func update_character(project: Dictionary, workspace_document: Dictionary
 	cleaned.erase("project_metadata")
 	cleaned.erase("relationships")
 	cleaned.erase("project_characters")
+	cleaned.erase("project_attachments")
+	cleaned.erase("attachment_context_character_limit")
 	cleaned.erase("card_workflows")
 	cleaned["character_id"] = character_id
 	cleaned["updated_at"] = Time.get_datetime_string_from_system(true)
@@ -515,6 +572,7 @@ static func character_workspace_document(project: Dictionary, character_id: Stri
 	character["shared_context"] = project.get("shared_context", {}).duplicate(true)
 	character["project_metadata"] = project.get("metadata", {}).duplicate(true)
 	character["relationships"] = project.get("relationships", []).duplicate(true)
+	character["project_attachments"] = project.get("attachments", []).duplicate(true)
 	character["project_characters"] = project_character_summaries(project)
 	character["card_workflows"] = project.get("card_workflows", []).duplicate(true)
 	return character
@@ -615,6 +673,7 @@ static func _normalise_project(project: Dictionary) -> Dictionary:
 	defaults["relationships"] = _normalise_relationships(defaults, defaults["relationships"])
 	var card_workflows = project.get("card_workflows", [])
 	defaults["card_workflows"] = _normalise_card_workflows(defaults, card_workflows)
+	defaults["attachments"] = CCFAttachmentService.normalise_list(project.get("attachments", []))
 	for key in project:
 		if not defaults.has(key):
 			var custom_value = project.get(key)
@@ -652,6 +711,7 @@ static func _normalise_character(character: Dictionary) -> Dictionary:
 				if custom_value is Dictionary or custom_value is Array
 				else custom_value
 			)
+	defaults["attachments"] = CCFAttachmentService.normalise_list(character.get("attachments", []))
 	var character_metadata: Dictionary = defaults.get("metadata", {})
 	character_metadata["tags"] = _normalise_string_array(character_metadata.get("tags", []))
 	defaults["metadata"] = character_metadata
@@ -685,6 +745,7 @@ static func _migrate_v1_project(project: Dictionary) -> Dictionary:
 			"character",
 			"generation",
 			"assets",
+			"attachments",
 			"workspace"
 		]:
 			continue

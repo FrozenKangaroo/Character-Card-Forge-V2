@@ -464,7 +464,7 @@ func _generate_series_draft() -> void:
 	if seed_text.is_empty() and str(_active_series.get("description", "")).strip_edges().is_empty():
 		_status.text = "Enter source notes or a description for the AI draft."
 		return
-	var profile := CCFSettingsService.active_profile(_settings)
+	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
 	var retry_count := int(_settings.get("generation", {}).get("retry_count", 1))
 	var result := _generation_service.queue_series_generation(
 		seed_text, _active_series, profile, retry_count

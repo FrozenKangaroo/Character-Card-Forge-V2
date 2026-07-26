@@ -2,8 +2,9 @@
 set -euo pipefail
 
 EXPECTED_REMOTE="https://github.com/FrozenKangaroo/Character-Card-Forge-V2.git"
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "${ROOT_DIR}"
+SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+DEFAULT_REPO_DIR="${HOME}/Projects/Character-Card-Forge-V2"
+REPO_DIR_INPUT="${CCF_REPO_DIR:-${DEFAULT_REPO_DIR}}"
 
 print_status() {
     printf '\033[0;36m=== %s ===\033[0m\n' "$1"
@@ -26,6 +27,95 @@ prompt_yes_no() {
         y|Y|yes|YES|Yes) return 0 ;;
         *) return 1 ;;
     esac
+}
+
+canonical_existing_dir() {
+    local directory="$1"
+    if [[ ! -d "${directory}" ]]; then
+        return 1
+    fi
+    (cd "${directory}" && pwd -P)
+}
+
+sync_to_repository() {
+    local repo_dir
+
+    if ! repo_dir="$(canonical_existing_dir "${REPO_DIR_INPUT}")"; then
+        echo "ERROR: Git repository directory was not found:" >&2
+        echo "  ${REPO_DIR_INPUT}" >&2
+        echo "Set CCF_REPO_DIR when your clone is stored elsewhere." >&2
+        exit 1
+    fi
+
+    if [[ ! -d "${repo_dir}/.git" ]]; then
+        echo "ERROR: Destination is not a Git repository:" >&2
+        echo "  ${repo_dir}" >&2
+        exit 1
+    fi
+
+    if [[ "${SOURCE_DIR}" == "${repo_dir}" ]]; then
+        cd "${repo_dir}"
+        return 0
+    fi
+
+    local repo_branch
+    repo_branch="$(git -C "${repo_dir}" branch --show-current)"
+    if [[ "${repo_branch}" != "main" ]]; then
+        echo "ERROR: The destination clone must be on main before syncing; current branch is ${repo_branch}." >&2
+        exit 1
+    fi
+
+    local repo_origin
+    repo_origin="$(git -C "${repo_dir}" remote get-url origin 2>/dev/null || true)"
+    if [[ "${repo_origin}" != "${EXPECTED_REMOTE}" && \
+          "${repo_origin}" != "git@github.com:FrozenKangaroo/Character-Card-Forge-V2.git" ]]; then
+        echo "WARNING: destination origin is ${repo_origin:-missing}, expected ${EXPECTED_REMOTE}."
+        if ! prompt_yes_no "Sync into this repository anyway?" "N"; then
+            exit 1
+        fi
+    fi
+
+    if [[ -n "$(git -C "${repo_dir}" status --porcelain)" ]]; then
+        echo "WARNING: The destination repository already contains uncommitted changes."
+        echo "The development copy may overwrite files with the same names."
+        if ! prompt_yes_no "Continue with the sync?" "N"; then
+            exit 1
+        fi
+    fi
+
+    if ! command -v rsync >/dev/null 2>&1; then
+        echo "ERROR: rsync is required to copy the development project into the Git clone." >&2
+        echo "On Fedora/Nobara, install it with: sudo dnf install rsync" >&2
+        exit 1
+    fi
+
+    print_status "Synchronising development project"
+    echo "Source:      ${SOURCE_DIR}/"
+    echo "Repository:  ${repo_dir}/"
+    echo "Mode:        safe additive sync (repository-only files are not deleted)"
+
+    rsync -a \
+        --exclude='.git/' \
+        --exclude='.godot/' \
+        --exclude='build/' \
+        --exclude='dist/' \
+        --exclude='exports/' \
+        --exclude='__pycache__/' \
+        --exclude='*.pyc' \
+        --exclude='*.pyo' \
+        --exclude='*.log' \
+        "${SOURCE_DIR}/" \
+        "${repo_dir}/"
+
+    chmod +x "${repo_dir}/release.sh"
+    if compgen -G "${repo_dir}/tools/*.sh" >/dev/null; then
+        chmod +x "${repo_dir}"/tools/*.sh
+    fi
+
+    echo "Sync complete. Continuing from the repository checkout."
+    exec env \
+        CCF_REPO_DIR="${repo_dir}" \
+        "${repo_dir}/release.sh" "$@"
 }
 
 find_godot() {
@@ -113,6 +203,7 @@ ensure_tag_available() {
     fi
 }
 
+sync_to_repository "$@"
 validate_repository
 
 print_status "Deployment strategy"

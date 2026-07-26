@@ -57,6 +57,7 @@ var _group_scene_window: CCFGroupSceneWindow
 var _relationship_window: CCFRelationshipMatrixWindow
 var _card_workflow_window: CCFCardWorkflowWindow
 var _import_export_window: CCFImportExportWindow
+var _attachment_window: CCFAttachmentManagerWindow
 
 
 func _ready() -> void:
@@ -101,6 +102,11 @@ func _ready() -> void:
 	import_export_button.text = "Import / Export"
 	import_export_button.pressed.connect(_open_import_export_studio)
 	top.add_child(import_export_button)
+	var attachments_button := Button.new()
+	attachments_button.text = "Vision / Attachments"
+	attachments_button.tooltip_text = "Manage project reference files and run review-first image analysis."
+	attachments_button.pressed.connect(_open_attachment_manager)
+	top.add_child(attachments_button)
 	var templates_button := Button.new()
 	templates_button.text = "Manage Templates"
 	templates_button.pressed.connect(func(): template_manager_requested.emit())
@@ -240,6 +246,7 @@ func _ready() -> void:
 	_build_relationship_window()
 	_build_card_workflow_window()
 	_build_import_export_window()
+	_build_attachment_window()
 	_build_delete_character_confirmation()
 
 
@@ -256,6 +263,7 @@ func load_project(project: Dictionary, template: Dictionary, settings: Dictionar
 	)
 	_template = template.duplicate(true)
 	_settings = settings.duplicate(true)
+	_apply_attachment_runtime_context()
 	_dirty = false
 	var generation: Dictionary = _project.get("generation", {}).duplicate(true)
 	generation["template_id"] = str(_template.get("template_id", "default"))
@@ -271,6 +279,7 @@ func load_project(project: Dictionary, template: Dictionary, settings: Dictionar
 
 func update_settings(settings: Dictionary) -> void:
 	_settings = settings.duplicate(true)
+	_apply_attachment_runtime_context()
 	if _idea_count != null:
 		_idea_count.value = int(_generation_settings().get("default_idea_count", 6))
 	if (
@@ -310,6 +319,14 @@ func update_settings(settings: Dictionary) -> void:
 		_import_export_window.update_project_context(
 			_project_container, _settings, _active_character_id
 		)
+	if (
+		_attachment_window != null
+		and _attachment_window.owns_project(str(_project_container.get("project_id", "")))
+	):
+		_commit_active_character_to_container()
+		_attachment_window.update_project_context(
+			_project_container, _active_character_id, _template, _settings
+		)
 
 
 func refresh_series() -> void:
@@ -322,6 +339,7 @@ func refresh_series() -> void:
 		_project = CCFStorageService.character_workspace_document(
 			_project_container, _active_character_id
 		)
+		_apply_attachment_runtime_context()
 		_update_project_level_window_contexts()
 
 
@@ -483,6 +501,7 @@ func _on_series_selected(index: int) -> void:
 	_project = CCFStorageService.character_workspace_document(
 		_project_container, _active_character_id
 	)
+	_apply_attachment_runtime_context()
 	_dirty = true
 	_update_project_level_window_contexts()
 	_status.text = (
@@ -517,6 +536,7 @@ func _auto_assign_series() -> void:
 	_project = CCFStorageService.character_workspace_document(
 		_project_container, _active_character_id
 	)
+	_apply_attachment_runtime_context()
 	_dirty = true
 	_populate_series_selector()
 	_update_project_level_window_contexts()
@@ -537,6 +557,7 @@ func _apply_series_tags() -> void:
 	_project = CCFStorageService.character_workspace_document(
 		_project_container, _active_character_id
 	)
+	_apply_attachment_runtime_context()
 	_dirty = true
 	_status.text = "%d new series tag%s added to the project. Save when ready." % [
 		int(result.get("added", 0)), "" if int(result.get("added", 0)) == 1 else "s"
@@ -631,6 +652,7 @@ func _switch_active_character(character_id: String) -> void:
 	workspace["active_character_id"] = character_id
 	_project_container["workspace"] = workspace
 	_project = CCFStorageService.character_workspace_document(_project_container, character_id)
+	_apply_attachment_runtime_context()
 	var generation = _project.get("generation", {})
 	var template_id := "default"
 	if generation is Dictionary:
@@ -742,6 +764,7 @@ func _on_shared_context_applied(context: Dictionary) -> void:
 	_project["shared_context"] = context.duplicate(true)
 	_dirty = true
 	_project = CCFStorageService.character_workspace_document(_project_container, _active_character_id)
+	_apply_attachment_runtime_context()
 	_update_project_level_window_contexts()
 	_status.text = "Shared project context updated. Save the project when ready."
 
@@ -798,6 +821,7 @@ func _on_group_scene_result_apply_requested(
 		CCFStorageService.update_character(_project_container, workspace_document)
 	# Reload the active character because its scenario may have been changed by the group proposal.
 	_project = CCFStorageService.character_workspace_document(_project_container, _active_character_id)
+	_apply_attachment_runtime_context()
 	var generation = _project.get("generation", {})
 	var template_id := str(generation.get("template_id", "default")) if generation is Dictionary else "default"
 	_template = CCFTemplateService.load_template(template_id)
@@ -844,6 +868,7 @@ func _on_relationships_applied(relationships: Array) -> void:
 	_commit_active_character_to_container()
 	_project_container["relationships"] = relationships.duplicate(true)
 	_project = CCFStorageService.character_workspace_document(_project_container, _active_character_id)
+	_apply_attachment_runtime_context()
 	_dirty = true
 	_update_project_level_window_contexts()
 	_status.text = "Relationship matrix updated. Character generation can now use the new relationship context. Save the project when ready."
@@ -894,6 +919,7 @@ func _on_card_workflow_saved(workflow: Dictionary) -> void:
 		workflows.append(workflow.duplicate(true))
 	_project_container["card_workflows"] = workflows
 	_project = CCFStorageService.character_workspace_document(_project_container, _active_character_id)
+	_apply_attachment_runtime_context()
 	_dirty = true
 	_update_card_workflow_context()
 	_status.text = "Card workflow draft saved into the project. Save the project file when ready."
@@ -908,6 +934,7 @@ func _on_card_workflow_deleted(workflow_id: String) -> void:
 		workflows.append(raw_workflow)
 	_project_container["card_workflows"] = workflows
 	_project = CCFStorageService.character_workspace_document(_project_container, _active_character_id)
+	_apply_attachment_runtime_context()
 	_dirty = true
 	_update_card_workflow_context()
 	_status.text = "Card workflow draft removed. Save the project file when ready."
@@ -948,6 +975,62 @@ func _on_external_project_imported(imported_project: Dictionary) -> void:
 	project_imported.emit(imported_project)
 
 
+func _build_attachment_window() -> void:
+	_attachment_window = CCFAttachmentManagerWindow.new()
+	_attachment_window.visible = false
+	_attachment_window.set_generation_service(_generation_service)
+	_attachment_window.attachments_changed.connect(_on_attachments_changed)
+	_attachment_window.vision_preview_requested.connect(_show_generation_preview)
+	_attachment_window.project_refresh_requested.connect(_refresh_attachment_project_context)
+	add_child(_attachment_window)
+	_attachment_window.hide()
+
+
+func _open_attachment_manager() -> void:
+	if _project_container.is_empty():
+		return
+	_capture_all_fields()
+	_commit_active_character_to_container()
+	_capture_project_name()
+	_attachment_window.open_for_project(
+		_project_container, _active_character_id, _template, _settings
+	)
+
+
+func _refresh_attachment_project_context() -> void:
+	if _project_container.is_empty() or _attachment_window == null:
+		return
+	_attachment_window.update_project_context(
+		_project_container, _active_character_id, _template, _settings
+	)
+
+
+func _on_attachments_changed(
+	project_attachments: Array,
+	character_id: String,
+	character_attachments: Array
+) -> void:
+	if _project_container.is_empty() or character_id != _active_character_id:
+		return
+	_project_container["attachments"] = project_attachments.duplicate(true)
+	var character_index := CCFStorageService.character_index(
+		_project_container, character_id
+	)
+	if character_index >= 0:
+		var characters: Array = _project_container.get("characters", []).duplicate(true)
+		var character: Dictionary = characters[character_index].duplicate(true)
+		character["attachments"] = character_attachments.duplicate(true)
+		characters[character_index] = character
+		_project_container["characters"] = characters
+	_project = CCFStorageService.character_workspace_document(
+		_project_container, _active_character_id
+	)
+	_apply_attachment_runtime_context()
+	_dirty = true
+	_update_header()
+	_status.text = "Attachments updated. Save the project when ready."
+
+
 func _update_project_level_window_contexts() -> void:
 	if (
 		_project_context_window != null
@@ -958,6 +1041,7 @@ func _update_project_level_window_contexts() -> void:
 	_update_relationship_context()
 	_update_card_workflow_context()
 	_update_import_export_context()
+	_update_attachment_context()
 
 
 func _update_group_scene_context() -> void:
@@ -998,6 +1082,17 @@ func _update_import_export_context() -> void:
 		)
 
 
+func _update_attachment_context() -> void:
+	if (
+		_attachment_window != null
+		and _attachment_window.owns_project(str(_project_container.get("project_id", "")))
+	):
+		_commit_active_character_to_container()
+		_attachment_window.update_project_context(
+			_project_container, _active_character_id, _template, _settings
+		)
+
+
 func _release_project_level_windows() -> void:
 	if _project_context_window != null:
 		_project_context_window.release_project()
@@ -1009,6 +1104,8 @@ func _release_project_level_windows() -> void:
 		_card_workflow_window.release_project()
 	if _import_export_window != null:
 		_import_export_window.release_project()
+	if _attachment_window != null:
+		_attachment_window.release_project()
 
 
 func _rebuild_form() -> void:
@@ -1208,7 +1305,7 @@ func _generate_character() -> void:
 	if _project.is_empty():
 		return
 	_capture_all_fields()
-	var profile := CCFSettingsService.active_profile(_settings)
+	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
 	var generation_settings := _generation_settings()
 	var result := _generation_service.queue_character_generation(
 		_project,
@@ -1231,7 +1328,7 @@ func _suggest_field(field: Dictionary) -> void:
 	if _project.is_empty():
 		return
 	_capture_all_fields()
-	var profile := CCFSettingsService.active_profile(_settings)
+	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
 	var result := _generation_service.queue_field_suggestion(
 		_project, _template, field, profile, int(_generation_settings().get("retry_count", 1))
 	)
@@ -1274,6 +1371,10 @@ func _on_job_completed(
 			_idea_generate_button.disabled = false
 		_status.text = "AI result discarded because its originating project or character is no longer active."
 		return
+	if job_type == "vision_analysis" and _attachment_window != null:
+		if _attachment_window.handle_job_completed(job_id, data, metadata):
+			_status.text = "Vision analysis finished. Review the detachable proposal window."
+			return
 	if job_type == "group_scene" and _group_scene_window != null:
 		if _group_scene_window.handle_job_completed(job_id, data, metadata):
 			_status.text = "Group scene generation finished. Review the detachable proposal window."
@@ -1314,6 +1415,10 @@ func _on_job_completed(
 
 
 func _on_job_failed(job_id: String, job_type: String, message: String) -> void:
+	if job_type == "vision_analysis" and _attachment_window != null:
+		if _attachment_window.handle_job_failed(job_id, message):
+			_status.text = message
+			return
 	if job_type == "group_scene" and _group_scene_window != null:
 		if _group_scene_window.handle_job_failed(job_id, message):
 			_status.text = message
@@ -1343,6 +1448,10 @@ func _on_job_failed(job_id: String, job_type: String, message: String) -> void:
 
 
 func _on_job_cancelled(job_id: String, job_type: String) -> void:
+	if job_type == "vision_analysis" and _attachment_window != null:
+		if _attachment_window.handle_job_cancelled(job_id):
+			_status.text = "Vision analysis cancelled."
+			return
 	if job_type == "group_scene" and _group_scene_window != null:
 		if _group_scene_window.handle_job_cancelled(job_id):
 			_status.text = "Group scene generation cancelled."
@@ -1455,7 +1564,27 @@ func _show_generation_preview(
 			allowed_ids[str(allowed_id)] = true
 	var restrict_to_allowed := not allowed_ids.is_empty()
 	var scoped_ignored_count := 0
-	for field in CCFTemplateService.generation_fields(_template):
+	var preview_fields: Array = []
+	var preview_field_ids: Dictionary = {}
+	var raw_preview_fields = metadata.get("preview_fields", [])
+	if raw_preview_fields is Array:
+		for raw_preview_field in raw_preview_fields:
+			if not raw_preview_field is Dictionary:
+				continue
+			var custom_field_id := str(raw_preview_field.get("id", ""))
+			if custom_field_id.is_empty() or preview_field_ids.has(custom_field_id):
+				continue
+			preview_fields.append(raw_preview_field.duplicate(true))
+			preview_field_ids[custom_field_id] = true
+	for template_field in CCFTemplateService.generation_fields(_template):
+		if not template_field is Dictionary:
+			continue
+		var template_field_id := str(template_field.get("id", ""))
+		if preview_field_ids.has(template_field_id):
+			continue
+		preview_fields.append(template_field.duplicate(true))
+		preview_field_ids[template_field_id] = true
+	for field in preview_fields:
 		var field_id := str(field.get("id", ""))
 		known_ids[field_id] = true
 		if not generated.has(field_id):
@@ -1764,7 +1893,7 @@ func _open_idea_generator() -> void:
 
 
 func _generate_ideas() -> void:
-	var profile := CCFSettingsService.active_profile(_settings)
+	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
 	var result := _generation_service.queue_idea_generation(
 		_idea_seed.text,
 		profile,
@@ -2055,6 +2184,8 @@ func save_tool_window_state() -> void:
 		_card_workflow_window.save_window_state()
 	if _import_export_window != null:
 		_import_export_window.save_window_state()
+	if _attachment_window != null:
+		_attachment_window.save_window_state()
 
 
 func _close_tool_windows_for_project_change() -> void:
@@ -2069,6 +2200,8 @@ func _close_tool_windows_for_project_change() -> void:
 	_builder_window.release_project()
 	_hide_controlled_build()
 	_controlled_build_window.release_project()
+	if _attachment_window != null:
+		_attachment_window.release_project()
 
 
 func _record_generation_history(
@@ -2095,6 +2228,17 @@ func _record_generation_history(
 		history.resize(50)
 	generation["history"] = history
 	_project["generation"] = generation
+
+
+func _apply_attachment_runtime_context() -> void:
+	if _project.is_empty():
+		return
+	_project["attachment_context_character_limit"] = int(
+		_generation_settings().get(
+			"attachment_context_character_limit",
+			CCFAttachmentService.DEFAULT_CONTEXT_CHARACTER_LIMIT
+		)
+	)
 
 
 func _generation_settings() -> Dictionary:

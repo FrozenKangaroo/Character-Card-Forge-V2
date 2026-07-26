@@ -514,7 +514,7 @@ func _queue_builder_fill(builder_fields: Array, scope_label: String) -> void:
 	if _generation_service == null:
 		_status.text = "Generation service is not available."
 		return
-	var profile := CCFSettingsService.active_profile(_settings)
+	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
 	var result := _generation_service.queue_builder_fill(
 		_state,
 		builder_fields,
@@ -538,7 +538,7 @@ func _analyse_current_concept() -> void:
 	if _generation_service == null:
 		_status.text = "Generation service is not available."
 		return
-	var profile := CCFSettingsService.active_profile(_settings)
+	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
 	var result := _generation_service.queue_builder_extract(
 		_current_concept,
 		CCFBuilderService.all_fields(),

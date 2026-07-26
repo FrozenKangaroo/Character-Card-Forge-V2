@@ -23,11 +23,33 @@ The existing PyWebView application is a feature reference, not an architecture o
 
 ## Current Development Phase
 
-**GitHub Release Infrastructure — v0.9.3 stable candidate**
+**Vision and Attachments Foundation — v0.10.0 stable candidate**
 
-The Godot rewrite now has reproducible Windows, Linux, and unsigned Universal macOS exports driven by committed presets and tag-triggered GitHub Actions. v0.9.3 enables the ETC2/ASTC texture import required for Apple Silicon within the Universal macOS build and validates that requirement before export. The next feature phase remains the Vision and Attachments foundation.
+The Godot rewrite now supports managed shared/character reference files, separate text and vision provider roles, configurable attachment context budgeting, and review-first image analysis through the existing Generation Preview. Attachment metadata extends the central project model while source files remain ordinary portable assets. The next feature phase is the Image Generation Foundation.
 
 ## Completed
+
+### v0.10.0 — Vision and Attachments Foundation
+
+- Added independent Text generation and Vision analysis assignments backed by reusable API profiles.
+- Added settings-format-v3 migration that preserves the prior active profile for both new roles.
+- Added shared-project and per-character attachment collections without increasing project format version 2.
+- Added managed local files for images, GIFs, text, PDFs, subtitles, transcripts, notes, and arbitrary references.
+- Added preprocessing summaries, text/token estimates, context inclusion controls, and configurable deterministic prompt budgeting.
+- Added attachment context to the principal character and multi-character generation workflows.
+- Added image/GIF Concept Extraction and Full-card Suggestions through OpenAI-compatible multimodal requests.
+- Reused Generation Preview so every visual proposal remains editable and opt-in.
+- Kept attachment files portable inside existing `.ccfproject` packages.
+- Documented the attachment format, provider roles, limitations, and future expansion path.
+
+### v0.9.4 — One-Command Repository Sync
+
+- Added automatic `rsync` deployment from the development project into the Git checkout before release actions.
+- Added configurable checkout discovery through `CCF_REPO_DIR`, defaulting to `~/Projects/Character-Card-Forge-V2`.
+- Added preflight protection for missing repositories, wrong branches, unexpected remotes, uncommitted destination changes, and missing `rsync`.
+- Kept synchronisation additive so repository-only files are not silently deleted.
+- Excluded generated imports, build output, caches, and logs from deployment.
+- Automatically continued execution from the synced repository copy.
 
 ### v0.9.3 — Universal macOS Export Hotfix
 
@@ -255,18 +277,21 @@ The Godot rewrite now has reproducible Windows, Linux, and unsigned Universal ma
 - Real-world Series Manager and `.ccfseries` pack testing across large local series libraries.
 - Auto Series scoring tests against ambiguous franchises, aliases, and overlapping keywords.
 - Verification that all supported AI workflows consistently honour assigned series guidance across providers.
+- Real-world attachment imports across Linux, Windows, and macOS file-dialog behaviour.
+- Context-budget testing with large text, subtitle, and transcript collections.
+- Vision-analysis testing across image-capable OpenAI-compatible providers and local multimodal servers.
+- Portable `.ccfproject` round trips containing shared and per-character attachment trees.
 
 ## Next Up
 
-### v0.10 — Vision and Attachments Foundation
+### v0.11 — Image Generation Foundation
 
-- Add separate text and vision provider roles without breaking existing API profiles.
-- Attach local images, GIFs, text files, PDFs, subtitles, transcripts, and notes to character projects.
-- Keep attachment metadata in project JSON while storing source files as ordinary assets.
-- Add image and document preprocessing with explicit context-size summaries before generation.
-- Add character-image analysis and concept extraction into the existing review-first generation workflow.
-- Add full-card visual analysis and controlled suggestions without directly overwriting card content.
-- Design the attachment model for later image-generation prompts, emotion images, and mobile/remote workflows.
+- Add an Image generation provider role without coupling it to text or vision analysis profiles.
+- Add OpenAI-compatible image-generation requests and a provider adapter boundary for Stable Diffusion-compatible backends.
+- Build natural-language and Stable Diffusion-style prompt preparation from the central character model and reviewed visual references.
+- Add a managed generated-image gallery using ordinary per-character asset files.
+- Allow reviewed gallery images to become the character portrait without duplicating binary data in JSON.
+- Preserve room for later emotion-image prompts, batch generation, regeneration, and provider capability detection.
 
 ## Planned Features
 
@@ -274,7 +299,7 @@ The Godot rewrite now has reproducible Windows, Linux, and unsigned Universal ma
 
 - Streaming text support where providers support it.
 - Structured generation diagnostics and response-repair attempts.
-- Separate text, vision, and image provider roles/profiles.
+- Separate text and vision provider roles/profiles. **Foundation completed in v0.10.0; image role remains planned for v0.11.**
 - Recent/favourite model lists.
 - Provider capability detection.
 - Token-limit metadata and stronger context-budget estimation.
@@ -315,12 +340,12 @@ The Godot rewrite now has reproducible Windows, Linux, and unsigned Universal ma
 
 ### Vision and Attachments
 
-- Images as concept references.
-- GIF frame handling.
+- Images as concept references. **Local attachment and review-first analysis foundation completed in v0.10.0.**
+- GIF frame handling. **File attachment support completed in v0.10.0; explicit frame selection remains planned.**
 - Image URL references.
-- Character analysis and full-card analysis.
-- PDF/text/subtitle/transcript attachments.
-- Attachment preprocessing and context budgeting.
+- Character analysis and full-card analysis. **Review-first foundation completed in v0.10.0.**
+- PDF/text/subtitle/transcript attachments. **Managed attachment foundation completed in v0.10.0; PDF extraction remains planned.**
+- Attachment preprocessing and context budgeting. **Foundation completed in v0.10.0.**
 
 ### Image Generation
 

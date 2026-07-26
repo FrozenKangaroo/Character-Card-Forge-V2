@@ -274,7 +274,7 @@ func _generate_scene() -> void:
 	if selected_ids.size() < 2:
 		_status.text = "Select at least two characters for a group-scene generation."
 		return
-	var profile := CCFSettingsService.active_profile(_settings)
+	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
 	var generation_settings = _settings.get("generation", {})
 	var retry_count := 1
 	if generation_settings is Dictionary:

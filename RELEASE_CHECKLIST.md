@@ -2,10 +2,16 @@
 
 ## Before tagging
 
-- [ ] Work from the `main` branch.
+- [ ] Keep the Git checkout on the `main` branch.
+- [ ] Run `release.sh` from the development project and review the displayed source/destination paths.
+- [ ] Confirm the destination checkout has no unexpected uncommitted changes before approving a sync.
 - [ ] Pull the latest `origin/main` and resolve any changes.
 - [ ] Confirm the application launches in Godot 4.6.3.
 - [ ] Confirm no Godot warnings are being treated as errors.
+- [ ] Open Settings and confirm Text and Vision provider role selectors retain their saved profiles.
+- [ ] Add, edit, and remove a note attachment at both project and character scope.
+- [ ] Import a small image and text attachment and confirm their managed paths/context summary.
+- [ ] When a vision-capable model is available, confirm analysis opens Generation Preview without directly applying fields.
 - [ ] Update `CHANGELOG.md` and `roadmap.md`.
 - [ ] Run `python3 tools/validate_project.py`.
 - [ ] Confirm ETC2/ASTC texture import remains enabled for the Universal macOS preset.

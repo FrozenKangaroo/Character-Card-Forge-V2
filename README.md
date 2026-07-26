@@ -2,9 +2,21 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.6 desktop application. The original PyWebView application is a feature reference only: its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Version 0.9.3 scope
+## Version 0.10.0 scope
 
-v0.9.3 is the first release-infrastructure hotfix. It enables ETC2/ASTC texture imports required by Godot's Universal macOS export, including Apple Silicon ARM64, and extends validation so this configuration error is caught before export. The application feature set remains the v0.9.1 Series System stable candidate.
+v0.10.0 begins the **Vision and Attachments Foundation**. Character projects can now contain managed local reference files and notes, ordinary generation can use a configurable attachment-context budget, and image-capable OpenAI-compatible models can propose review-first character concepts or controlled full-card suggestions.
+
+### Vision and attachments
+
+- Assign existing API profiles independently to **Text generation** and **Vision analysis** roles.
+- Attach images, GIFs, text files, PDFs, subtitles, transcripts, notes, and arbitrary reference files at project or character scope.
+- Keep attachment metadata in `character.json` while copying source files into ordinary project asset folders.
+- Inspect file type, size, image dimensions where available, text length, and estimated prompt size.
+- Include enabled notes and supported text attachments in existing character, field, controlled-build, group, relationship, and card-workflow prompts.
+- Analyse an image through the Vision role using Concept Extraction or Full-card Suggestions.
+- Send every visual proposal into the existing detachable Generation Preview; no vision result overwrites card content directly.
+
+PDFs are stored portably and represented by metadata in this foundation release; native PDF text extraction is still planned. See `docs/vision_attachments.md` for the schema, context rules, supported formats, provider requirements, and current limitations.
 
 ### Automated desktop releases
 
@@ -23,7 +35,16 @@ The macOS build is intentionally unsigned and unnotarised for now. See `docs/rel
 
 ### Local release helper
 
-The new Godot-native `release.sh` preserves the useful two-path workflow from the old PyWebView app:
+Run the helper from the development project directory:
+
+```bash
+cd /home/damee/character-card-forge
+./release.sh
+```
+
+It automatically performs a safe additive sync into `~/Projects/Character-Card-Forge-V2`, excludes generated/local output, and then continues from the Git checkout. Repository-only files are not deleted. An alternate checkout can be selected with `CCF_REPO_DIR=/path/to/clone ./release.sh`.
+
+The Godot-native helper preserves the useful two-path workflow from the old PyWebView app:
 
 1. synchronise the version, validate, commit, push `main`, create an annotated tag, and trigger release builds;
 2. validate, commit, and push source changes without making a release.
@@ -58,6 +79,8 @@ Bundled JSON remains explicitly included in every export because the builder sch
 - Shared queued OpenAI-compatible generation service.
 - Cancellation, retry handling, malformed-JSON recovery, and one AI repair pass.
 - Multiple API profiles and compatible `/models` discovery.
+- Separate text-generation and vision-analysis provider roles.
+- Managed project/character attachments with context budgeting and review-first visual analysis.
 
 ### Multi-character systems
 
@@ -110,6 +133,7 @@ Substantial tools use native operating-system windows and can be dragged outside
 - Relationship Matrix
 - Card Workflow Studio
 - Import / Export Studio
+- Vision and Attachments
 
 Their size and position are stored as disposable UI state rather than project content. The Series Manager itself is a full main-navigation workspace.
 
@@ -137,11 +161,13 @@ character_card_forge/
 │   └── <project UUID>/
 │       ├── character.json
 │       ├── assets/
+│       ├── attachments/
 │       ├── generated_images/
 │       ├── emotion_images/
 │       └── characters/
 │           └── <character UUID>/
 │               ├── assets/
+│               ├── attachments/
 │               ├── generated_images/
 │               └── emotion_images/
 ├── cache/
@@ -160,16 +186,18 @@ character_card_forge/
 - `scripts/services/card_format_service.gd` — Character Card V1/V2 normalisation, mapping, validation, JSON import/export, PNG metadata read/write, and CCF extension round trips.
 - `scripts/services/project_package_service.gd` — `.ccfproject` ZIP packaging, asset/template/series inclusion, safe extraction, and ID collision handling.
 - `scripts/services/relationship_service.gd` — relationship pair normalisation and generation-context rendering.
-- `scripts/services/settings_service.gd` — application settings and API profiles.
+- `scripts/services/settings_service.gd` — settings format v3, API profiles, and text/vision role assignments.
 - `scripts/services/template_service.gd` — template storage, migration, validation, import/export, and field discovery.
 - `scripts/services/builder_service.gd` — builder schema/state, presets, concept composition, and character transfer logic.
 - `scripts/services/tool_window_state_service.gd` — detachable-window geometry persistence.
-- `scripts/services/generation_service.gd` — queued AI jobs including character, builder, controlled, group-scene, relationship, card-workflow, and series generation.
+- `scripts/services/generation_service.gd` — queued text and multimodal jobs including character, builder, controlled, group-scene, relationship, card-workflow, series, and vision analysis.
+- `scripts/services/attachment_service.gd` — managed attachment import, format normalisation, preprocessing summaries, context budgeting, and vision image payloads.
 - `scripts/ui/series_manager_view.gd` — native Series Manager and AI series-bible editor.
 - `scripts/ui/library_view.gd` — Character Library 2.0 browsing, series filters, detail summaries, and bulk project management.
 - `scripts/ui/library_project_card.gd` — reusable thumbnail-grid project card.
 - `scripts/ui/workspace_view.gd` — active-character workspace, project/roster coordination, and series assignment.
 - `scripts/ui/import_export_window.gd` — mapping preview, card import/export, portable project packages, and batch export.
+- `scripts/ui/attachment_manager_window.gd` — project/character attachment management and review-first vision analysis.
 - `scripts/ui/project_context_window.gd` — shared project-context editor.
 - `scripts/ui/group_scene_window.gd` — multi-character group-scene generation and review.
 - `scripts/ui/relationship_matrix_window.gd` — structured pair-matrix editor and AI relationship drafting.

@@ -38,6 +38,10 @@ def main() -> None:
         "export_presets.cfg",
         "scenes/main.tscn",
         "scripts/main.gd",
+        "scripts/services/attachment_service.gd",
+        "scripts/ui/attachment_manager_window.gd",
+        "docs/vision_attachments.md",
+        "release.sh",
         "VERSION",
         ".github/workflows/validate.yml",
         ".github/workflows/release.yml",
@@ -76,6 +80,93 @@ def main() -> None:
     require(
         'textures/vram_compression/import_etc2_astc=true' in project_text,
         "Universal/ARM64 macOS exports require ETC2/ASTC texture import to be enabled.",
+    )
+
+    settings_text = (ROOT / "scripts/services/settings_service.gd").read_text(encoding="utf-8")
+    require(
+        "const SETTINGS_FORMAT_VERSION := 3" in settings_text,
+        "Settings schema must be version 3 for provider-role assignments.",
+    )
+    require(
+        'const ROLE_TEXT := "text"' in settings_text
+        and 'const ROLE_VISION := "vision"' in settings_text,
+        "Text and vision provider roles are not both defined.",
+    )
+    require(
+        '"attachment_context_character_limit": 24000' in settings_text,
+        "The default attachment context budget is missing.",
+    )
+
+    storage_text = (ROOT / "scripts/services/storage_service.gd").read_text(encoding="utf-8")
+    require(
+        storage_text.count('"attachments": []') >= 2,
+        "Project and character attachment arrays are not both initialised.",
+    )
+    require(
+        'character["project_attachments"]' in storage_text,
+        "Character workspace documents do not receive shared project attachments.",
+    )
+    require(
+        "copy_managed_attachment(" in storage_text,
+        "Project duplication does not copy managed attachment files.",
+    )
+
+    attachment_text = (ROOT / "scripts/services/attachment_service.gd").read_text(encoding="utf-8")
+    for marker_text in (
+        "static func import_file(",
+        "static func create_note(",
+        "static func context_report_for_workspace(",
+        "static func image_data_url(",
+    ):
+        require(marker_text in attachment_text, f"Attachment service is missing {marker_text}")
+    require(
+        "MAX_TEXT_FILE_BYTES := 4 * 1024 * 1024" in attachment_text,
+        "Attachment text preprocessing safety limit is missing.",
+    )
+    require(
+        "MAX_VISION_IMAGE_BYTES := 25 * 1024 * 1024" in attachment_text,
+        "Vision image safety limit is missing.",
+    )
+
+    generation_text = (ROOT / "scripts/services/generation_service.gd").read_text(encoding="utf-8")
+    require(
+        "func queue_vision_analysis(" in generation_text,
+        "Vision analysis generation workflow is missing.",
+    )
+    require(
+        '"type": "image_url"' in generation_text,
+        "Vision analysis does not send OpenAI-compatible image_url content.",
+    )
+    require(
+        generation_text.count("ENABLED ATTACHMENT CONTEXT") >= 6,
+        "Attachment context is not wired into the expected generation workflows.",
+    )
+
+    workspace_text = (ROOT / "scripts/ui/workspace_view.gd").read_text(encoding="utf-8")
+    require(
+        "CCFAttachmentManagerWindow.new()" in workspace_text
+        and 'attachments_button.text = "Vision / Attachments"' in workspace_text,
+        "The workspace attachment manager entry point is missing.",
+    )
+    require(
+        'job_type == "vision_analysis"' in workspace_text
+        and 'metadata.get("preview_fields", [])' in workspace_text,
+        "Vision results are not routed through the review-first generation preview.",
+    )
+
+    release_text = (ROOT / "release.sh").read_text(encoding="utf-8")
+    require(
+        'DEFAULT_REPO_DIR="${HOME}/Projects/Character-Card-Forge-V2"' in release_text,
+        "release.sh is missing the standard repository destination.",
+    )
+    require("rsync -a" in release_text, "release.sh is missing automatic repository sync.")
+    require(
+        "--exclude='.git/'" in release_text,
+        "release.sh must protect the repository metadata during sync.",
+    )
+    require(
+        "--delete" not in release_text,
+        "release.sh must not delete repository-only files during its default sync.",
     )
 
     preset_text = (ROOT / "export_presets.cfg").read_text(encoding="utf-8")
@@ -117,7 +208,8 @@ def main() -> None:
 
     print(
         f"Validated Character Card Forge v{version}: "
-        f"version metadata, three export presets, and {len(json_files)} JSON files."
+        f"version metadata, three export presets, Vision/Attachments foundation, "
+        f"and {len(json_files)} JSON files."
     )
 
 

@@ -1,5 +1,49 @@
 # Changelog
 
+## 0.10.0
+
+### Added
+
+- Added explicit Text generation and Vision analysis provider roles while retaining the existing reusable OpenAI-compatible API profile model.
+- Migrated application settings to format version 3, assigning the previously active profile to both roles so existing configurations keep working.
+- Added a detachable Vision and Attachments manager for shared-project and active-character references.
+- Added managed import for images, GIFs, text, Markdown, structured text files, PDFs, subtitles, transcripts, and arbitrary files, plus note attachments stored directly in project metadata.
+- Added versioned attachment records with safe relative paths, file metadata, preprocessing summaries, user notes, and per-attachment context toggles.
+- Added project-level and per-character attachment folders; source files remain ordinary assets rather than database blobs or permanent base64 data.
+- Added deterministic attachment-context assembly with a configurable 2,000–120,000 character budget and explicit character/token estimates.
+- Added attachment context to full-character generation, field suggestions, Controlled Build, Group Scene, Relationship Matrix, and Card Workflow generation.
+- Added review-first multimodal Concept Extraction and Full-card Suggestions for image/GIF attachments using the profile assigned to the Vision role, with in-memory PNG conversion for other Godot-readable image formats.
+- Added custom preview-field support so vision analysis can propose the generation concept alongside template fields inside the existing detachable Generation Preview.
+- Added attachment and provider-role documentation.
+
+### Changed
+
+- Existing text-generation tools now resolve their provider through the Text role instead of the profile currently open in the Settings editor.
+- Project format remains version 2 because shared and character attachment arrays are optional additive data.
+- Portable `.ccfproject` packages automatically include managed attachment files through the existing full project-tree packaging model.
+
+### Current limitations
+
+- PDF files are stored and summarised by metadata; native PDF text extraction and page rendering are not included yet.
+- Vision capability is not auto-detected. The model assigned to the Vision role must accept OpenAI-compatible multimodal `image_url` requests.
+- Removing an attachment entry retains its managed file as a recoverable orphan until a later asset-cleanup tool is added.
+
+## 0.9.4
+
+### Added
+
+- Added automatic safe `rsync` deployment from the development project directory into the Git repository checkout before the release menu opens.
+- Added a default repository destination of `~/Projects/Character-Card-Forge-V2`, matching the standard local checkout used for this project.
+- Added `CCF_REPO_DIR` support for alternate clone locations without editing the script.
+- Added destination preflight checks for the Git repository, `main` branch, expected remote, existing uncommitted changes, and the local `rsync` dependency.
+- The synced repository copy now takes over execution automatically, so source-only pushes and tagged releases still run from the actual Git checkout.
+
+### Safety
+
+- Synchronisation is additive by default and never uses `rsync --delete`, preventing repository-only files from being removed silently.
+- Generated Godot imports, exports, build output, Python caches, and logs are excluded from synchronisation.
+- Running `release.sh` directly inside the repository continues to work and skips the copy step.
+
 ## 0.9.3
 
 ### Fixed

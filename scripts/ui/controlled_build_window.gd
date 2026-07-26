@@ -411,7 +411,7 @@ func _queue_controlled_build() -> void:
 	elif build_mode == MODE_REVISION:
 		scope_label = "selected field revision"
 
-	var profile := CCFSettingsService.active_profile(_settings)
+	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
 	var result := _generation_service.queue_controlled_build(
 		_project,
 		_template,

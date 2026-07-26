@@ -80,6 +80,10 @@ func queue_character_generation(
 	if not relationship_context_text.is_empty():
 		user_prompt += "\n\nESTABLISHED RELATIONSHIPS FOR THIS CHARACTER:\n%s" % relationship_context_text
 		user_prompt += "\nRespect these relationship dynamics without letting them replace the character's individual personality."
+	var attachment_context_text := _workspace_attachment_context_text(project)
+	if not attachment_context_text.is_empty():
+		user_prompt += "\n\nENABLED ATTACHMENT CONTEXT:\n%s" % attachment_context_text
+		user_prompt += "\nUse attachment text and notes as supporting context. Image metadata is descriptive only unless a separate vision analysis has been reviewed."
 	if not existing_lines.is_empty():
 		user_prompt += (
 			"\n\nEXISTING VALUES TO PRESERVE OR IMPROVE WHEN USEFUL:\n%s"
@@ -168,6 +172,9 @@ func queue_field_suggestion(
 	var relationship_context_text := _relationship_context_text(project)
 	if not relationship_context_text.is_empty():
 		prompt += "\n\nESTABLISHED RELATIONSHIPS FOR THIS CHARACTER:\n%s" % relationship_context_text
+	var attachment_context_text := _workspace_attachment_context_text(project)
+	if not attachment_context_text.is_empty():
+		prompt += "\n\nENABLED ATTACHMENT CONTEXT:\n%s" % attachment_context_text
 	var custom_instruction := str(field.get("generation_prompt", "")).strip_edges()
 	if not custom_instruction.is_empty():
 		prompt += "\n\nFIELD-SPECIFIC INSTRUCTION OR QUESTION:\n%s" % custom_instruction
@@ -205,6 +212,140 @@ func queue_field_suggestion(
 			"field": field.duplicate(true),
 			"field_id": field_id,
 			"field_path": field_path,
+			"project_id": str(project.get("project_id", ""))
+		},
+		retry_count
+	)
+
+
+func queue_vision_analysis(
+	project: Dictionary,
+	template: Dictionary,
+	attachment: Dictionary,
+	profile: Dictionary,
+	analysis_mode: String,
+	retry_count: int
+) -> Dictionary:
+	if not CCFAttachmentService.is_vision_compatible(attachment):
+		return {"ok": false, "error": "Select an image or GIF attachment for vision analysis."}
+	var container_project_id := str(
+		project.get("container_project_id", project.get("project_id", ""))
+	)
+	var image_result := CCFAttachmentService.image_data_url(
+		container_project_id, attachment
+	)
+	if not bool(image_result.get("ok", false)):
+		return image_result
+
+	var mode := analysis_mode if analysis_mode in ["concept", "full_card"] else "concept"
+	var preview_fields: Array = []
+	var field_lines: Array[String] = []
+	var field_ids: Array[String] = []
+	var concept_field := {
+		"id": "concept_prompt",
+		"label": "Generation Concept",
+		"path": "concept.prompt",
+		"type": "multiline",
+		"generate": true
+	}
+	preview_fields.append(concept_field)
+	field_ids.append("concept_prompt")
+	field_lines.append(
+		"- concept_prompt: a detailed generation-ready character concept grounded in the visible evidence"
+	)
+
+	for raw_field in CCFTemplateService.generation_fields(template):
+		if not raw_field is Dictionary:
+			continue
+		var field: Dictionary = raw_field
+		var field_type := str(field.get("type", "multiline"))
+		if not field_type in ["line", "multiline", "tags", "number", "checkbox", "select"]:
+			continue
+		var field_id := str(field.get("id", "")).strip_edges()
+		if field_id.is_empty() or field_ids.has(field_id):
+			continue
+		if mode == "concept" and not field_id in ["name", "description", "personality", "tags"]:
+			continue
+		preview_fields.append(field.duplicate(true))
+		field_ids.append(field_id)
+		field_lines.append(
+			"- %s: %s (%s)" % [
+				field_id,
+				str(field.get("label", field_id)),
+				_field_type_instruction(field)
+			]
+		)
+
+	var attachment_name := str(attachment.get("display_name", "Image attachment"))
+	var preprocess = attachment.get("preprocess", {})
+	var preprocess_summary := ""
+	if preprocess is Dictionary:
+		preprocess_summary = str(preprocess.get("summary", "")).strip_edges()
+	var attachment_notes := str(attachment.get("notes", "")).strip_edges()
+	var prompt := (
+		"Analyse the attached visual reference for Character Card Forge. Distinguish direct visual evidence from creative inference. Do not identify a real person or claim certainty about facts that are not visible."
+	)
+	prompt += "\n\nATTACHMENT: %s" % attachment_name
+	if not preprocess_summary.is_empty():
+		prompt += "\nFILE SUMMARY: %s" % preprocess_summary
+	if not attachment_notes.is_empty():
+		prompt += "\nUSER NOTES: %s" % attachment_notes
+	var existing_concept := str(
+		CCFStorageService.get_value_at_path(project, "concept.prompt", "")
+	).strip_edges()
+	if not existing_concept.is_empty():
+		prompt += "\n\nCURRENT CHARACTER CONCEPT — use for continuity, but propose rather than overwrite:\n%s" % existing_concept
+	var series_context_text := _series_context_text(project)
+	if not series_context_text.is_empty():
+		prompt += "\n\nASSIGNED SERIES BIBLE:\n%s" % series_context_text
+	var relationship_context_text := _relationship_context_text(project)
+	if not relationship_context_text.is_empty():
+		prompt += "\n\nESTABLISHED RELATIONSHIPS FOR CONTINUITY:\n%s" % relationship_context_text
+	var attachment_context_text := _workspace_attachment_context_text(project)
+	if not attachment_context_text.is_empty():
+		prompt += "\n\nOTHER ENABLED ATTACHMENT CONTEXT:\n%s" % attachment_context_text
+	if mode == "full_card":
+		prompt += "\n\nCreate controlled full-card suggestions. Visual facts should remain faithful to the image; personality, history, and roleplay hooks must be clearly plausible creative proposals rather than presented as observed facts."
+	else:
+		prompt += "\n\nExtract a concise but useful character concept and visual-description foundation. Keep non-visual personality suggestions conservative and roleplay-oriented."
+	prompt += "\n\nRETURNED JSON KEYS:\n%s" % _join_values(field_lines, "\n")
+	prompt += "\n\nReturn one valid JSON object using only those keys. Do not add markdown fences or commentary. Tags must be arrays of short strings, checkbox values must be booleans, and number fields must be JSON numbers."
+
+	var detail := str(profile.get("vision_detail", "auto"))
+	if not detail in ["auto", "low", "high"]:
+		detail = "auto"
+	var messages := [
+		{
+			"role": "system",
+			"content": "You are Character Card Forge's multimodal character-reference analyst. Produce reviewable suggestions, never silently overwrite project data, and return valid JSON only."
+		},
+		{
+			"role": "user",
+			"content": [
+				{"type": "text", "text": prompt},
+				{
+					"type": "image_url",
+					"image_url": {
+						"url": str(image_result.get("data_url", "")),
+						"detail": detail
+					}
+				}
+			]
+		}
+	]
+	return _queue_chat_job(
+		"vision_analysis",
+		"Vision analysis: %s" % attachment_name,
+		profile,
+		messages,
+		"object",
+		{
+			"field_ids": field_ids,
+			"preview_fields": preview_fields,
+			"output_policy": {"mode": "strict", "unexpected_fields": "ignore"},
+			"attachment_id": str(attachment.get("attachment_id", "")),
+			"attachment_name": attachment_name,
+			"analysis_mode": mode,
 			"project_id": str(project.get("project_id", ""))
 		},
 		retry_count
@@ -304,6 +445,9 @@ func queue_controlled_build(
 	var relationship_context_text := _relationship_context_text(project)
 	if not relationship_context_text.is_empty():
 		prompt += "\n\nESTABLISHED RELATIONSHIPS FOR THIS CHARACTER — context only, do not rewrite unrelated relationship data:\n%s" % relationship_context_text
+	var attachment_context_text := _workspace_attachment_context_text(project)
+	if not attachment_context_text.is_empty():
+		prompt += "\n\nENABLED ATTACHMENT CONTEXT — context only, do not rewrite unrelated fields:\n%s" % attachment_context_text
 	if not target_current_lines.is_empty():
 		if mode == "revision":
 			prompt += (
@@ -575,6 +719,9 @@ func queue_group_scene_generation(
 	)
 	if not relationship_context_text.is_empty():
 		prompt += "\n\nESTABLISHED RELATIONSHIPS AMONG THE SELECTED CHARACTERS:\n%s" % relationship_context_text
+	var attachment_context_text := _project_attachment_context_text(project, valid_character_ids)
+	if not attachment_context_text.is_empty():
+		prompt += "\n\nENABLED ATTACHMENT CONTEXT:\n%s" % attachment_context_text
 	var clean_instructions := instructions.strip_edges()
 	if not clean_instructions.is_empty():
 		prompt += "\n\nUSER INSTRUCTIONS:\n%s" % clean_instructions
@@ -669,6 +816,9 @@ func queue_relationship_generation(
 	)
 	if not existing_relationships.is_empty():
 		prompt += "\n\nEXISTING RELATIONSHIPS TO PRESERVE OR THOUGHTFULLY IMPROVE:\n%s" % existing_relationships
+	var attachment_context_text := _project_attachment_context_text(project, valid_character_ids)
+	if not attachment_context_text.is_empty():
+		prompt += "\n\nENABLED ATTACHMENT CONTEXT:\n%s" % attachment_context_text
 	prompt += "\n\nSELECTED CHARACTERS:\n\n%s" % _join_values(character_blocks, "\n\n---\n\n")
 	prompt += "\n\nREQUIRED PAIRS — return exactly one relationship object for every pair:\n%s" % _join_values(pair_lines, "\n")
 	var clean_instructions := instructions.strip_edges()
@@ -763,6 +913,9 @@ func queue_card_workflow_generation(
 	)
 	if not relationship_context_text.is_empty():
 		prompt += "\n\nESTABLISHED RELATIONSHIPS:\n%s" % relationship_context_text
+	var attachment_context_text := _project_attachment_context_text(project, valid_character_ids)
+	if not attachment_context_text.is_empty():
+		prompt += "\n\nENABLED ATTACHMENT CONTEXT:\n%s" % attachment_context_text
 	prompt += "\n\nSELECTED CHARACTERS:\n\n%s" % _join_values(character_blocks, "\n\n---\n\n")
 	var clean_instructions := instructions.strip_edges()
 	if not clean_instructions.is_empty():
@@ -915,7 +1068,7 @@ func _queue_chat_job(
 	if base_url.is_empty():
 		return {"ok": false, "error": "Set an API base URL in Settings first."}
 	if model.is_empty():
-		return {"ok": false, "error": "Set a text model in Settings first."}
+		return {"ok": false, "error": "Set a model in the selected provider profile first."}
 
 	var job_id := "job_%06d" % _next_job_number
 	_next_job_number += 1
@@ -1249,6 +1402,32 @@ func _normalise_ideas(raw_ideas: Array) -> Array:
 			}
 		)
 	return ideas
+
+
+func _workspace_attachment_context_text(project: Dictionary) -> String:
+	var limit := int(
+		project.get(
+			"attachment_context_character_limit",
+			CCFAttachmentService.DEFAULT_CONTEXT_CHARACTER_LIMIT
+		)
+	)
+	var report := CCFAttachmentService.context_report_for_workspace(project, limit)
+	return str(report.get("text", ""))
+
+
+func _project_attachment_context_text(
+	project: Dictionary, character_ids: Array[String]
+) -> String:
+	var limit := int(
+		project.get(
+			"attachment_context_character_limit",
+			CCFAttachmentService.DEFAULT_CONTEXT_CHARACTER_LIMIT
+		)
+	)
+	var report := CCFAttachmentService.context_report_for_characters(
+		project, character_ids, limit
+	)
+	return str(report.get("text", ""))
 
 
 func _builder_state_context(builder_state: Dictionary) -> String:

@@ -17,6 +17,7 @@ character.json
 ├── characters[]
 ├── relationships[]
 ├── card_workflows[]
+├── attachments[]
 └── workspace
 ```
 
@@ -60,6 +61,7 @@ concept
 character
 generation
 assets
+attachments[]
 workspace
 ```
 
@@ -72,6 +74,7 @@ Each character keeps its own:
 - selected template;
 - generation history;
 - asset references;
+- character-specific managed attachment metadata;
 - Character Builder state and editor state.
 
 Characters can therefore use different templates inside the same project.
@@ -171,11 +174,13 @@ v0.5 creates project-level asset directories and per-character directories ready
 <project UUID>/
 ├── character.json
 ├── assets/
+├── attachments/
 ├── generated_images/
 ├── emotion_images/
 └── characters/
     └── <character UUID>/
         ├── assets/
+        ├── attachments/
         ├── generated_images/
         └── emotion_images/
 ```
@@ -269,3 +274,26 @@ The first two are rebuildable accelerators. `library_view.json` contains only br
 The series definition is deliberately not embedded in `character.json`. This lets many projects share one current bible and avoids duplicated stale guidance. Missing IDs are retained as repairable references. The project schema remains format version 2 because series assignment was already reserved in metadata and is additive.
 
 Portable `.ccfproject` packages may include the referenced series JSON and remap the project ID on collision-safe import. See `series_format.md` and `series_system.md`.
+
+## v0.10 vision and attachment fields
+
+Project format version remains `2` because attachments are optional additive collections. Older format-v2 projects load with empty attachment arrays and require no destructive migration.
+
+Shared attachment metadata is stored at:
+
+```text
+attachments[]
+```
+
+Character-specific attachment metadata is stored at:
+
+```text
+characters[].attachments[]
+```
+
+Each record has its own attachment format version and references a managed file by a safe project-relative path. Note attachments may store `note_text` directly because they are ordinary authored text rather than large binary assets. Files remain outside JSON under project-level or per-character `attachments/` directories.
+Project duplication preserves shared attachment paths, remaps character-folder prefixes to new character UUIDs, and copies the referenced managed files into the duplicated project.
+
+The active-character workspace adapter temporarily exposes project attachments as `project_attachments[]` and the configured context limit as `attachment_context_character_limit`. These adapter values are removed before the character record is merged back into `characters[]`; they are not duplicate authoritative project fields.
+
+See `vision_attachments.md` for the attachment schema, preprocessing rules, provider roles, and review-first analysis workflow.
