@@ -2,108 +2,89 @@
 
 Character Card Forge V2 is not intended to recreate the PyWebView implementation, but V1 remains an important behavioural reference for character-generation quality.
 
-A source audit of the public V1.0.13 code showed that the old application did substantially more than send a single broad prompt. This document records the behaviours worth carrying forward into the Godot architecture and separates what is implemented now from later work.
+A source audit of the public V1.0.13 code showed that the old application did substantially more than send one broad prompt. This document records the behaviours worth carrying forward, what is already implemented in Godot, and what remains staged for later parity work.
 
-## Why this exists
+## Goals
 
-The early Godot rewrite deliberately focused on clean storage, native UI, portable projects, templates, builders, imports/exports, relationships, attachments, and provider services. Its first full-character generator was intentionally simpler: collect every template field marked `generate`, ask for one JSON object, repair malformed JSON when possible, then show the result in Generation Preview.
+Generation Parity should:
 
-That is a sound foundation, but it does not reproduce several quality controls that existed in V1.
-
-The goal of Generation Parity is therefore:
-
-- keep V2's modular Godot services and review-first workflow;
+- keep V2's modular Godot services, portable project model, and review-first workflow;
 - port the useful generation behaviours that made V1 more reliable;
-- avoid copying PyWebView-specific state management or UI architecture;
-- keep character-card interoperability clean;
-- keep templates data-driven and migratable.
+- avoid copying PyWebView-specific state/UI architecture;
+- preserve Character Card interoperability;
+- keep templates and generation contracts data-driven and migratable;
+- distinguish authoring structure from the final interoperable card schema.
 
 ## Source-audited V1 behaviours
 
 ### Description and Personality had distinct responsibilities
 
-V1's default Description focused on visible appearance and external traits. Its default structured guidance included age, appearance, and outfit style.
+V1's Description focused on visible appearance and external traits. Its structured guidance included age, appearance, and outfit style.
 
-V1's Personality guidance focused on internal traits and roleplay behaviour, including motivation, behaviour toward `{{user}}`, and speech style.
+Personality focused on internal traits and roleplay behaviour, including motivation, behaviour toward `{{user}}`, and speech style.
 
-The early V2 Default template blurred these responsibilities by describing Description as appearance, background, role, habits, and important facts. Phase 1 corrects this immediately.
+Early V2 blurred these responsibilities by describing Description as appearance, background, role, habits, and important facts. v0.12 Generation Parity Phase 1 corrected that prompt/template problem.
 
 ### Structured authoring could fold into standard Character Card fields
 
-V1 treated authoring/generation structure as more detailed than the final interoperable Character Card schema. Multiple Description-oriented components could be folded into Description, and multiple Personality-oriented components could be folded into Personality.
+V1's authoring/generation structure could be richer than the final Character Card schema. Multiple Description-oriented components could fold into Description, and multiple Personality-oriented components could fold into Personality.
 
-This is different from assuming that every editable or generatable concept must become its own top-level Character Card field.
-
-A future template schema should explicitly represent three layers:
+The long-term V2 model therefore needs three related layers:
 
 1. **Workspace fields** — persistent editable project information.
 2. **Generation components** — structured expectations/questions used while producing content.
-3. **Output bindings** — interoperable Character Card destinations such as `data.description` or `data.personality`.
+3. **Output bindings** — interoperable destinations such as Character Card Description or Personality.
 
-These layers may overlap, but they should not be forced to be identical.
+These layers may overlap, but should not be forced to be identical.
 
-### Enabled template fields were generation instructions
+### Enabled fields affected generation
 
-In V1, disabling a configured subfield removed that expectation from the generated template. Enabled fields were not merely UI visibility controls.
+In V1, disabling a configured subfield removed that expectation from generation. Enabled state was not merely visual hiding.
 
-V2 already distinguishes `generate` and `required` on workspace fields. Generation Parity Core should add an explicit enabled/required model for generation components rather than overloading existing field semantics.
+V2 already has `generate` and `required` on workspace fields. A later v0.13 slice will add an explicit enabled/required model for generation components rather than overloading workspace-field semantics.
 
 ### V1 validated generated content after the model answered
 
-V1 did not treat syntactically valid output as automatically complete.
-
-It checked enabled sections and fields, plus special structural rules such as:
+V1 did not treat syntactically valid output as automatically complete. It checked enabled sections/fields and special structural rules such as:
 
 - requested alternative greeting count;
 - exactly one `<START>` marker in Example Dialogues;
-- non-empty tag output;
+- non-empty tags;
 - non-empty enabled ordinary sections.
 
-When content was missing, V1 could request replacement content for the affected section and merge the repair back into the original card before validating again.
+When content was missing, V1 could request corrected content and validate again.
 
-V2 currently has robust JSON extraction/repair but does not yet have the equivalent template-semantic completeness pass.
+This behaviour is now beginning to exist as an engine feature in V2 v0.13.
 
-### V1 had a private pre-generation Q&A pass
+### V1 had private pre-generation Q&A
 
-When template Q&A was enabled, V1 first asked the model to answer the configured questions as private planning context.
+When enabled, V1 first generated private planning answers for configured questions, checked for missing answers, retried missing questions, canonicalised the answer set, and fed it into final generation without exporting it as ordinary card content.
 
-It then checked whether every question had been answered, retried only missing questions, canonicalised the Q&A ordering, and fed the completed answers into final card generation without exporting the interview as a card section.
-
-This is a useful pattern for extracting motivations, contradictions, hidden relationship dynamics, and other details before prose generation.
+This remains planned for v0.13 after the semantic-validation foundation.
 
 ### V1 checked source-concept fidelity
 
-The V1 generator included explicit rules that the source concept was authoritative. Later logic checked for obvious drift such as losing a supplied primary name or distinctive markers and could regenerate under stricter fidelity instructions.
+V1 treated the user's source concept as authoritative and later logic could detect obvious drift such as losing a supplied primary name or distinctive literal markers.
 
-V2's Phase 1 Default template restores the prompt-side fidelity rule. A reusable validator/retry path remains planned.
+V2 v0.12 restored the prompt-side fidelity rule. Conservative reusable fidelity diagnostics/retry remain planned for v0.13.
 
 ### V1 supported multi-pass generation
 
-Public V1.0.13 included Full, Lite, and Compact Lite generation strategies. Lite modes divided generation into broad passes and carried earlier context forward.
+Public V1.0.13 included Full, Lite, and Compact Lite strategies. Lite modes divided generation into broad passes and carried earlier generated context forward.
 
-Later V1 beta UI observed during the rewrite also exposed finer section progress/continuation behaviour. Exact recreation of that later beta is not assumed until its source is available or the behaviour is explicitly specified, but section-level progress/continuation remains a useful design direction.
+A later V1 beta UI also showed finer section progress/continuation. Equivalent multi-pass and section-level workflows remain later parity work after the core contract/validator model is stable.
 
 ## v0.12 — Generation Parity Phase 1
 
-Phase 1 intentionally changes generation behaviour through the existing format-v2 Default template without changing project or template schemas.
+Phase 1 changed generation behaviour through the existing format-v2 Default template without changing project or template schemas.
 
-### Concept fidelity
+### Concept fidelity prompt rules
 
-The Default template now tells generation that the user's concept is authoritative and explicitly asks the model to preserve supplied:
-
-- names;
-- relationships;
-- premise and setting;
-- visual details and clothing;
-- props;
-- requested dynamics;
-- opening-scene beats.
-
-The generator should expand and organise those details instead of replacing them with unrelated material.
+The Default template now says the source Generation Concept is authoritative and asks the model to preserve supplied names, relationships, premise/setting, visual details, clothing, props, requested dynamics, and opening-scene beats.
 
 ### Description contract
 
-`character.description` remains the normal interoperable Description field, but its generation instruction now asks for labelled content in this order:
+`character.description` remains the normal interoperable Description field, but the default generation instruction asks for:
 
 ```text
 Age: ...
@@ -112,13 +93,11 @@ Outfit Style: ...
 Distinguishing Features: ...
 ```
 
-Appearance guidance covers visible face, hair, eyes, skin, body/build, and notable traits when supported by the concept.
-
-Biography, motivations, internal personality, relationship history, and scenario events should not be dumped into Description unless a detail is directly visible and necessary to explain appearance.
+Biography, motivations, internal personality, relationship history, and scenario events should not be dumped into Description unless directly relevant to visible presentation.
 
 ### Personality contract
 
-`character.personality` remains the normal interoperable Personality field, but generation now asks for:
+`character.personality` remains the normal interoperable Personality field, but the default generation instruction asks for:
 
 ```text
 Core Traits: ...
@@ -132,40 +111,168 @@ Dislikes: ...
 Habits / Mannerisms: ...
 ```
 
-These are organised inside one standard Character Card field rather than creating nine incompatible top-level card properties.
+These structured components remain inside the standard Personality field rather than becoming incompatible top-level card properties.
 
-### Scenario and opening continuity
+### Scenario, First Message, and Example Dialogue
 
-Scenario now explicitly describes the current starting situation rather than a biography. It should establish context, why `{{char}}` and `{{user}}` are interacting, and the immediate hook.
+Scenario describes the current starting situation rather than biography. First Message begins in that same situation and should preserve explicit opening material from the concept.
 
-First Message must begin in that same Scenario, preserve explicit opening material from the concept, include natural dialogue and a small amount of scene/action context, and avoid deciding `{{user}}`'s private thoughts or choices.
+Example Dialogue asks for exactly one `<START>` marker followed by one continuous example conversation.
 
-### Example Dialogue
-
-The Default template now asks Example Dialogue to use exactly one `<START>` marker followed by one continuous 2-3 exchange `{{user}}` / `{{char}}` conversation.
-
-### What Phase 1 does not claim
-
-Phase 1 improves the contract sent to the existing full-character generation service. It does **not** yet add automatic semantic validation or repair.
-
-A model can still return incomplete but valid JSON. The existing Generation Preview remains the user-facing review boundary.
+Phase 1 improved the requested contract but still relied on the model to obey it.
 
 ## v0.13 — Generation Parity Core
 
-The next parity milestone should make the behaviours above first-class engine features.
+v0.13 begins turning those expectations into actual engine behaviour.
 
-### Template model
+### Implemented: data-driven generation contracts
 
-Add a versioned generation-component/output-binding model capable of expressing:
+The built-in Default template now has a separate versioned contract file:
+
+```text
+data/generation_contracts/default.json
+```
+
+The current contract format is intentionally small and independent of project format 2 and template format 2.
+
+It currently supports per-field rules such as:
+
+```json
+{
+  "minimum_characters": 180,
+  "required_labels": [
+    "Age",
+    "Appearance",
+    "Outfit Style",
+    "Distinguishing Features"
+  ]
+}
+```
+
+and marker rules such as:
+
+```json
+{
+  "marker_rules": [
+    {
+      "marker": "<START>",
+      "exact_count": 1
+    }
+  ]
+}
+```
+
+Generic required top-level keys are not hard-coded into that file: they are derived from the active template's AI-generatable fields where `required` is true.
+
+### Implemented: semantic completeness validation
+
+`CCFGenerationContractService` validates a parsed full-character proposal after JSON syntax/shape handling.
+
+The current checks include:
+
+- required top-level generation keys are present and non-empty;
+- configured minimum useful-content lengths;
+- configured labelled components inside bound text fields;
+- configured exact marker counts.
+
+For the bundled Default template this currently means, among other things:
+
+- Description should contain all four expected labelled visual components;
+- Personality should contain all nine expected labelled personality components;
+- First Message must not be trivially short;
+- Example Dialogue, when returned, must contain exactly one `<START>`.
+
+This is deliberately a completeness contract, not a subjective prose-quality grader.
+
+### Implemented: targeted semantic repair
+
+`CCFParityGenerationService` layers semantic validation onto the existing queued generation service without replacing the established JSON parsing/repair system.
+
+A full-character run now follows this path:
+
+```text
+Generate character
+        ↓
+Parse / locally repair JSON as before
+        ↓
+Validate generation contract
+        ↓
+Complete? ── yes ──→ Generation Preview
+        │
+        no
+        ↓
+Targeted semantic repair request
+        ↓
+Parse response
+        ↓
+Validate contract again
+        ↓
+Generation Preview
+```
+
+The semantic repair request receives:
+
+- the authoritative source concept;
+- the complete current generated JSON;
+- the exact detected missing/incomplete requirements;
+- the generation contract;
+- the original requested top-level keys.
+
+It asks for the complete repaired object rather than a diff or loose missing fragments, and explicitly tells the model to preserve useful content that already satisfies the request.
+
+Only one semantic repair pass is allowed in this initial implementation. This prevents a bad model/provider response from causing an uncontrolled repair loop or unexpected repeated API usage.
+
+### Implemented: revalidation and diagnostics
+
+The repaired result is checked again before it reaches Generation Preview.
+
+Generation metadata records:
+
+- the final generation-contract report;
+- whether semantic repair was used;
+- semantic repair attempt count;
+- the report that triggered repair.
+
+Generation Preview remains review-first: automatic repair does not write generated data directly into the character project.
+
+### Implemented: queue integration
+
+Repair uses the same asynchronous `HTTPRequest`, cancellation, retry, queue, and status architecture as existing generation.
+
+While semantic repair is running, the active label changes to:
+
+```text
+Repairing incomplete character generation
+```
+
+The upgraded service remains the shared queue used by the workspace's existing AI tools. Semantic contract validation/repair currently activates only for full-character generation; Builder, Controlled Build, Vision/Attachments, relationships, group scenes, and card-workflow jobs retain their existing behaviour.
+
+### Current custom-template behaviour
+
+This first implementation intentionally avoids pretending the richer component/output-binding schema already exists.
+
+For any template, required AI-generatable top-level fields receive generic presence/non-empty validation.
+
+The richer nested Description/Personality/marker rules are currently bundled for the built-in Default template through its external contract file.
+
+A later v0.13 slice will make these nested/component rules part of an editable template-generation model so user templates can define equivalent contracts cleanly.
+
+## Remaining v0.13 work
+
+### Generation components and output bindings
+
+Add a versioned model capable of expressing:
 
 - stable component ID;
 - label;
 - enabled state;
 - required state;
-- instruction/question;
+- generation instruction/question;
 - order;
 - parent/output binding;
-- type/format expectations where needed.
+- type/format expectations.
+
+This will allow, for example, many editable Personality components to fold into one interoperable Character Card Personality field.
 
 Older format-v2 templates must continue loading with sensible migration/defaults.
 
@@ -173,60 +280,28 @@ Older format-v2 templates must continue loading with sensible migration/defaults
 
 Add an optional planning stage that:
 
-1. builds the enabled Q&A question list;
-2. requests answers before final generation;
+1. builds enabled questions;
+2. generates private answers before final card generation;
 3. verifies all required questions were answered;
 4. retries only missing questions;
 5. canonicalises the final answer set;
-6. adds the answers to generation context without exporting them as ordinary card content.
+6. adds the answers to generation context without exporting them as card content.
 
 ### Concept-fidelity validation
 
-Add reusable fidelity diagnostics for concrete supplied details where checking is defensible, such as a supplied primary name or distinctive literal markers.
+Add conservative checks for concrete supplied details where validation is defensible, such as a supplied primary name or distinctive literal marker.
 
-Clearly drifted output may be regenerated once under a stricter fidelity prompt before ordinary completeness repair begins.
-
-This check should remain conservative: it must not punish legitimate paraphrasing or nameless concepts.
-
-### Template completeness validation
-
-After parsing a model response, validate the generated proposal against the active template contract.
-
-Checks should include:
-
-- required top-level generation fields;
-- non-empty required values;
-- required generation components within bound output fields;
-- configured special formatting contracts;
-- type constraints already represented by the template.
-
-Diagnostics should identify exactly what is missing rather than only saying that the card is invalid.
-
-### Targeted semantic repair
-
-When validation fails, request only the affected field/section/component group.
-
-The repair prompt should receive:
-
-- source concept;
-- private Q&A where enabled;
-- relevant established project context;
-- current generated value;
-- exact missing requirements.
-
-The model should return a complete replacement for the affected bound field so useful existing content can be preserved while missing material is filled.
-
-Revalidate after repair before opening Generation Preview.
+Clearly drifted output may receive one stricter retry before ordinary completeness repair. The system should not punish legitimate paraphrasing or nameless concepts.
 
 ### Builder precedence
 
-Builder guidance should become explicit generation context with clear precedence rules. User-entered builder values should not be treated as casual suggestions that a later full-card generation can ignore.
+Explicit builder values should become high-priority generation context rather than casual suggestions that full generation may ignore.
 
-The exact policy should remain review-first and should avoid silently overwriting unrelated established character data.
+The policy must remain review-first and must not silently rewrite unrelated established content.
 
-### Progress and diagnostics
+### Richer progress and diagnostics
 
-Longer generation should expose useful stages such as:
+Longer generation should eventually expose stages such as:
 
 ```text
 Planning / Q&A
@@ -237,25 +312,28 @@ Repairing missing content
 Ready for review
 ```
 
-This should integrate with the existing queue/cancellation architecture rather than blocking the UI.
+The current v0.13 slice already exposes the repair stage through the existing queue label; richer per-stage reporting is still planned.
+
+Generation Preview should also surface the semantic contract report and repair history more clearly.
 
 ## Later parity work
 
-After the core validator/repair model is stable:
+After the core validator/component model is stable:
 
 - add provider-aware streaming where worthwhile;
 - add Full/Lite/Compact-Lite or equivalent multi-pass strategies for smaller context windows;
 - consider section-by-section generation/continuation and progress;
-- make greeting counts and similar output rules configurable template contracts;
-- apply the same validator architecture to split-card and multi-character generation rather than creating separate one-off implementations;
+- make greeting counts and similar output rules configurable contracts;
+- apply the validator architecture to split-card and multi-character generation rather than creating separate one-off implementations;
 - add Final AI Audit/card-rating workflows as quality tools distinct from generation-time completeness checking.
 
 ## Backwards compatibility
 
-Generation Parity should not require users to rebuild existing projects.
+Generation Parity should not require existing projects to be rebuilt.
 
-- Project format 2 remains the source of truth until a real project-schema change requires a new version.
-- Phase 1 keeps template format 2.
-- When generation components/output bindings require a template-format bump, old templates should be migrated or interpreted with sensible defaults.
-- Character Card V1/V2 import/export should continue using standard interoperable fields.
-- CCF-only richer authoring data should remain namespaced/project data unless an external card format has a real corresponding field.
+- Project format 2 remains authoritative until a real project-schema change requires a new version.
+- Existing format-v2 templates continue loading.
+- The initial Default semantic contract is a separate versioned data file rather than a forced template-schema bump.
+- When generation components/output bindings do require a template-format change, older templates should migrate or receive sensible interpreted defaults.
+- Character Card V1/V2 import/export continues using standard interoperable fields.
+- Rich CCF authoring/generation structure should remain namespaced project/template data unless an external format has a real corresponding field.
