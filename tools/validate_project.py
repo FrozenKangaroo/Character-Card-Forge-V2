@@ -40,9 +40,12 @@ def main() -> None:
         "scripts/main.gd",
         "scripts/services/attachment_service.gd",
         "scripts/services/image_generation_service.gd",
+        "scripts/services/image_capability_service.gd",
         "scripts/ui/attachment_manager_window.gd",
         "scripts/ui/image_generation_window.gd",
         "docs/vision_attachments.md",
+        "docs/image_generation.md",
+        "roadmap.md",
         "release.sh",
         "VERSION",
         ".github/workflows/validate.yml",
@@ -86,14 +89,19 @@ def main() -> None:
 
     settings_text = (ROOT / "scripts/services/settings_service.gd").read_text(encoding="utf-8")
     require(
-        "const SETTINGS_FORMAT_VERSION := 4" in settings_text,
-        "Settings schema must be version 4 for text, vision, and image provider roles.",
+        "const SETTINGS_FORMAT_VERSION := 5" in settings_text,
+        "Settings schema must be version 5 for image-backend profile configuration.",
     )
     require(
         'const ROLE_TEXT := "text"' in settings_text
         and 'const ROLE_VISION := "vision"' in settings_text
         and 'const ROLE_IMAGE := "image"' in settings_text,
         "Text, vision, and image provider roles are not all defined.",
+    )
+    require(
+        'const IMAGE_BACKEND_OPENAI := "openai_compatible"' in settings_text
+        and 'const IMAGE_BACKEND_AUTOMATIC1111 := "automatic1111"' in settings_text,
+        "OpenAI and Stable Diffusion image backend types are not both defined.",
     )
     require(
         '"attachment_context_character_limit": 24000' in settings_text,
@@ -107,6 +115,14 @@ def main() -> None:
         '"default_image_prompt_style": "auto"' in settings_text,
         "The default image prompt style is missing.",
     )
+    for marker_text in (
+        '"sampler": "Euler a"',
+        '"steps": 28',
+        '"cfg_scale": 7.0',
+        '"seed": -1',
+        '"batch_size": 1',
+    ):
+        require(marker_text in settings_text, f"Image profile defaults are missing {marker_text}")
 
     storage_text = (ROOT / "scripts/services/storage_service.gd").read_text(encoding="utf-8")
     require(
@@ -164,6 +180,13 @@ def main() -> None:
         "func generate(",
         "static func build_prompt(",
         '"/images/generations"',
+        '"txt2img"',
+        '"negative_prompt"',
+        '"sampler_name"',
+        '"cfg_scale"',
+        '"seed"',
+        '"batch_size"',
+        "generation_batch_completed",
         "Marshalls.base64_to_raw",
         "decoded_image.save_png(",
     ):
@@ -172,9 +195,26 @@ def main() -> None:
             f"Image generation service is missing {marker_text}",
         )
     require(
-        '"provider": PROVIDER_OPENAI_COMPATIBLE' in image_generation_text,
-        "Generated image metadata does not record the provider adapter.",
+        '"provider": _pending_backend' in image_generation_text
+        and '"backend": _pending_backend' in image_generation_text,
+        "Generated image metadata does not record the selected image backend.",
     )
+    require(
+        "_extract_response_seeds(" in image_generation_text,
+        "Stable Diffusion returned seeds are not captured for reproducible gallery records.",
+    )
+
+    capability_text = (
+        ROOT / "scripts/services/image_capability_service.gd"
+    ).read_text(encoding="utf-8")
+    for marker_text in (
+        "func fetch_capabilities(",
+        '"sd-models"',
+        '"samplers"',
+        '"/models"',
+        "capabilities_loaded",
+    ):
+        require(marker_text in capability_text, f"Image capability service is missing {marker_text}")
 
     workspace_text = (ROOT / "scripts/ui/workspace_view.gd").read_text(encoding="utf-8")
     require(
@@ -197,12 +237,16 @@ def main() -> None:
     image_window_text = (
         ROOT / "scripts/ui/image_generation_window.gd"
     ).read_text(encoding="utf-8")
-    require(
-        '"Set as Portrait"' in image_window_text
-        and 'assets["generated_images"]' in image_window_text
-        and 'assets["portrait"]' in image_window_text,
-        "Image Studio does not expose gallery persistence and portrait assignment.",
-    )
+    for marker_text in (
+        '"Set as Portrait"',
+        'assets["generated_images"]',
+        'assets["portrait"]',
+        '"Discover Models / Samplers"',
+        '"New Seed Variant"',
+        "_current_generation_options(",
+        "CCFImageCapabilityService.new()",
+    ):
+        require(marker_text in image_window_text, f"Image Studio is missing {marker_text}")
 
     release_text = (ROOT / "release.sh").read_text(encoding="utf-8")
     require(
@@ -210,6 +254,10 @@ def main() -> None:
         "release.sh is missing the standard repository destination.",
     )
     require("rsync -a" in release_text, "release.sh is missing automatic repository sync.")
+    require(
+        "update_destination_main" in release_text and "working_copy_matches_ref" in release_text,
+        "release.sh is missing automatic main fast-forward/reconciliation.",
+    )
     require(
         "--exclude='.git/'" in release_text,
         "release.sh must protect the repository metadata during sync.",
@@ -258,8 +306,8 @@ def main() -> None:
 
     print(
         f"Validated Character Card Forge v{version}: "
-        f"version metadata, three export presets, Vision/Attachments and Image Generation foundations, "
-        f"and {len(json_files)} JSON files."
+        f"version metadata, three export presets, Vision/Attachments, OpenAI Images, "
+        f"Forge/A1111 image expansion, and {len(json_files)} JSON files."
     )
 
 
