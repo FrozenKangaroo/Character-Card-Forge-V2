@@ -38,7 +38,7 @@ static func default_settings() -> Dictionary:
 static func load_settings() -> Dictionary:
 	CCFStorageService.ensure_directories()
 	if not FileAccess.file_exists(SETTINGS_FILE):
-		var defaults := default_settings()
+		var defaults: Dictionary = default_settings()
 		save_settings(defaults)
 		return defaults
 	var file := FileAccess.open(SETTINGS_FILE, FileAccess.READ)
@@ -85,10 +85,12 @@ static func role_profile_id(settings: Dictionary, role: String) -> String:
 	if provider_roles is Dictionary:
 		requested = str(provider_roles.get(role_key, "")).strip_edges()
 	if role == ROLE_IMAGE:
-		return str(image_profile_by_id(settings, requested).get("id", "image_default"))
+		var image_profile: Dictionary = image_profile_by_id(settings, requested)
+		return str(image_profile.get("id", "image_default"))
 	if requested.is_empty():
 		requested = str(settings.get("active_api_profile_id", "default"))
-	return str(profile_by_id(settings, requested).get("id", "default"))
+	var ai_profile: Dictionary = profile_by_id(settings, requested)
+	return str(ai_profile.get("id", "default"))
 
 
 static func set_role_profile(settings: Dictionary, role: String, profile_id: String) -> void:
@@ -126,21 +128,22 @@ static func image_profiles(settings: Dictionary) -> Array:
 
 
 static func image_profile_by_id(settings: Dictionary, profile_id: String) -> Dictionary:
-	var profiles := image_profiles(settings)
+	var profiles: Array = image_profiles(settings)
 	for profile in profiles:
-		if str(profile.get("id", "")) == profile_id:
+		if profile is Dictionary and str(profile.get("id", "")) == profile_id:
 			return profile
-	return profiles[0] if not profiles.is_empty() else _default_image_profile()
+	if not profiles.is_empty() and profiles[0] is Dictionary:
+		return profiles[0]
+	return _default_image_profile()
 
 
 static func replace_active_profile(settings: Dictionary, profile: Dictionary) -> void:
-	var active_id := str(settings.get("active_api_profile_id", "default"))
-	replace_profile_by_id(settings, active_id, profile)
+	replace_profile_by_id(settings, str(settings.get("active_api_profile_id", "default")), profile)
 
 
 static func replace_profile_by_id(settings: Dictionary, profile_id: String, profile: Dictionary) -> void:
 	var profiles: Array = settings.get("api_profiles", []).duplicate(true)
-	var replacement := _normalise_ai_profile(profile)
+	var replacement: Dictionary = _normalise_ai_profile(profile)
 	replacement["id"] = profile_id
 	var replaced := false
 	for index in range(profiles.size()):
@@ -155,7 +158,7 @@ static func replace_profile_by_id(settings: Dictionary, profile_id: String, prof
 
 static func replace_image_profile_by_id(settings: Dictionary, profile_id: String, profile: Dictionary) -> void:
 	var profiles: Array = settings.get("image_profiles", []).duplicate(true)
-	var replacement := _normalise_image_profile(profile)
+	var replacement: Dictionary = _normalise_image_profile(profile)
 	replacement["id"] = profile_id
 	var replaced := false
 	for index in range(profiles.size()):
@@ -170,7 +173,7 @@ static func replace_image_profile_by_id(settings: Dictionary, profile_id: String
 
 static func create_profile(settings: Dictionary, display_name := "New Profile") -> Dictionary:
 	var profile_id := _new_profile_id("profile")
-	var profile := _default_ai_profile()
+	var profile: Dictionary = _default_ai_profile()
 	profile["id"] = profile_id
 	profile["name"] = display_name
 	var profiles: Array = settings.get("api_profiles", []).duplicate(true)
@@ -182,7 +185,7 @@ static func create_profile(settings: Dictionary, display_name := "New Profile") 
 
 
 static func duplicate_active_profile(settings: Dictionary) -> Dictionary:
-	var source := active_profile(settings).duplicate(true)
+	var source: Dictionary = active_profile(settings).duplicate(true)
 	var profile_id := _new_profile_id("profile")
 	source["id"] = profile_id
 	source["name"] = "%s Copy" % str(source.get("name", "Profile"))
@@ -218,7 +221,7 @@ static func delete_active_profile(settings: Dictionary) -> Dictionary:
 
 static func create_image_profile(settings: Dictionary, display_name := "Local Stable Diffusion") -> Dictionary:
 	var profile_id := _new_profile_id("image")
-	var profile := _default_image_profile()
+	var profile: Dictionary = _default_image_profile()
 	profile["id"] = profile_id
 	profile["name"] = display_name
 	var profiles: Array = settings.get("image_profiles", []).duplicate(true)
@@ -229,7 +232,7 @@ static func create_image_profile(settings: Dictionary, display_name := "Local St
 
 
 static func duplicate_image_profile(settings: Dictionary, profile_id: String) -> Dictionary:
-	var source := image_profile_by_id(settings, profile_id).duplicate(true)
+	var source: Dictionary = image_profile_by_id(settings, profile_id).duplicate(true)
 	var new_id := _new_profile_id("image")
 	source["id"] = new_id
 	source["name"] = "%s Copy" % str(source.get("name", "Image Provider"))
@@ -244,6 +247,8 @@ static func delete_image_profile(settings: Dictionary, profile_id: String) -> Di
 	var profiles: Array = settings.get("image_profiles", []).duplicate(true)
 	if profiles.size() <= 1:
 		return {"ok": false, "error": "At least one image provider must remain."}
+	var provider_roles: Dictionary = settings.get("provider_roles", {}).duplicate(true)
+	var was_default := str(provider_roles.get("image_profile_id", "")) == profile_id
 	var filtered: Array = []
 	for profile in profiles:
 		if profile is Dictionary and str(profile.get("id", "")) != profile_id:
@@ -251,8 +256,9 @@ static func delete_image_profile(settings: Dictionary, profile_id: String) -> Di
 	if filtered.is_empty():
 		return {"ok": false, "error": "Could not remove the image provider."}
 	settings["image_profiles"] = filtered
-	if role_profile_id(settings, ROLE_IMAGE) == profile_id:
-		set_role_profile(settings, ROLE_IMAGE, str(filtered[0].get("id", "image_default")))
+	if was_default:
+		provider_roles["image_profile_id"] = str(filtered[0].get("id", "image_default"))
+		settings["provider_roles"] = provider_roles
 	return {"ok": true}
 
 
@@ -268,15 +274,15 @@ static func image_settings(profile: Dictionary) -> Dictionary:
 
 
 static func _normalise(settings: Dictionary) -> Dictionary:
-	var defaults := default_settings()
-	var result := defaults.duplicate(true)
+	var defaults: Dictionary = default_settings()
+	var result: Dictionary = defaults.duplicate(true)
 	var incoming_format := int(settings.get("format_version", 2))
 	result["format_version"] = SETTINGS_FORMAT_VERSION
 
+	var raw_profiles = settings.get("api_profiles", [])
 	var ai_profiles: Array = []
-	var incoming_profiles = settings.get("api_profiles", [])
-	if incoming_profiles is Array:
-		for profile in incoming_profiles:
+	if raw_profiles is Array:
+		for profile in raw_profiles:
 			if profile is Dictionary:
 				ai_profiles.append(_normalise_ai_profile(profile))
 	if ai_profiles.is_empty():
@@ -286,8 +292,8 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 	if not _profile_id_exists(ai_profiles, str(result["active_api_profile_id"])):
 		result["active_api_profile_id"] = str(ai_profiles[0].get("id", "default"))
 
-	var incoming_roles = settings.get("provider_roles", {})
 	var provider_roles: Dictionary = defaults.get("provider_roles", {}).duplicate(true)
+	var incoming_roles = settings.get("provider_roles", {})
 	if incoming_roles is Dictionary:
 		provider_roles.merge(incoming_roles, true)
 	if incoming_format < 3:
@@ -305,7 +311,7 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 				if profile is Dictionary:
 					image_profile_list.append(_normalise_image_profile(profile))
 	else:
-		image_profile_list.append(_migrate_v5_image_profile(settings, ai_profiles, provider_roles))
+		image_profile_list.append(_migrate_v5_image_profile(settings, provider_roles))
 	if image_profile_list.is_empty():
 		image_profile_list.append(_default_image_profile())
 	result["image_profiles"] = image_profile_list
@@ -337,14 +343,16 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 	return result
 
 
-static func _migrate_v5_image_profile(settings: Dictionary, ai_profiles: Array, provider_roles: Dictionary) -> Dictionary:
+static func _migrate_v5_image_profile(settings: Dictionary, provider_roles: Dictionary) -> Dictionary:
 	var legacy_id := str(provider_roles.get("image_profile_id", settings.get("active_api_profile_id", "default")))
-	var legacy := _default_ai_profile()
-	for candidate in ai_profiles:
-		if candidate is Dictionary and str(candidate.get("id", "")) == legacy_id:
-			legacy = candidate
-			break
-	var migrated := _default_image_profile()
+	var legacy: Dictionary = _default_ai_profile()
+	var raw_profiles = settings.get("api_profiles", [])
+	if raw_profiles is Array:
+		for candidate in raw_profiles:
+			if candidate is Dictionary and str(candidate.get("id", "")) == legacy_id:
+				legacy = candidate.duplicate(true)
+				break
+	var migrated: Dictionary = _default_image_profile()
 	migrated["id"] = "image_default"
 	migrated["name"] = "%s Image" % str(legacy.get("name", "Default"))
 	migrated["image_backend"] = image_backend(legacy)
@@ -365,7 +373,7 @@ static func _migrate_v5_image_profile(settings: Dictionary, ai_profiles: Array, 
 
 
 static func _normalise_ai_profile(profile: Dictionary) -> Dictionary:
-	var result := _default_ai_profile()
+	var result: Dictionary = _default_ai_profile()
 	result.merge(profile, true)
 	result["profile_kind"] = PROFILE_KIND_AI
 	result.erase("image_backend")
@@ -383,7 +391,7 @@ static func _normalise_ai_profile(profile: Dictionary) -> Dictionary:
 
 
 static func _normalise_image_profile(profile: Dictionary) -> Dictionary:
-	var result := _default_image_profile()
+	var result: Dictionary = _default_image_profile()
 	result.merge(profile, true)
 	result["profile_kind"] = PROFILE_KIND_IMAGE
 	var profile_id := str(result.get("id", "")).strip_edges()
@@ -399,7 +407,7 @@ static func _normalise_image_profile(profile: Dictionary) -> Dictionary:
 
 
 static func _normalise_image_settings(raw_settings: Variant) -> Dictionary:
-	var result := _default_image_settings()
+	var result: Dictionary = _default_image_settings()
 	if raw_settings is Dictionary:
 		result.merge(raw_settings, true)
 	result["sampler"] = str(result.get("sampler", "Euler a")).strip_edges()
