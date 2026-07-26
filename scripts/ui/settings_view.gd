@@ -10,7 +10,6 @@ var _loading_roles := false
 var _profile_selector: OptionButton
 var _text_role_selector: OptionButton
 var _vision_role_selector: OptionButton
-var _image_role_selector: OptionButton
 var _profile_name: LineEdit
 var _base_url: LineEdit
 var _api_key: LineEdit
@@ -18,40 +17,44 @@ var _model: LineEdit
 var _temperature: SpinBox
 var _max_tokens: SpinBox
 var _vision_detail: OptionButton
-var _image_backend: OptionButton
 var _include_existing: CheckBox
 var _retry_count: SpinBox
 var _idea_count: SpinBox
 var _attachment_context_limit: SpinBox
-var _default_image_size: LineEdit
-var _image_prompt_style: OptionButton
 var _fetched_models: OptionButton
 var _fetch_models_button: Button
 var _status: Label
 var _model_service: CCFModelService
+var _image_settings_view: CCFImageProviderSettingsView
 
 
 func _ready() -> void:
 	add_theme_constant_override("separation", 14)
-
 	_model_service = CCFModelService.new()
 	add_child(_model_service)
 	_model_service.models_loaded.connect(_on_models_loaded)
 	_model_service.models_failed.connect(_on_models_failed)
+	_build_character_ai_settings()
+	_image_settings_view = CCFImageProviderSettingsView.new()
+	_image_settings_view.settings_saved.connect(_on_image_settings_saved)
+	add_child(_image_settings_view)
+	load_settings(CCFSettingsService.load_settings())
 
+
+func _build_character_ai_settings() -> void:
 	var intro := Label.new()
-	intro.text = "Provider profiles"
+	intro.text = "Character AI providers"
 	intro.add_theme_font_size_override("font_size", 22)
 	add_child(intro)
 
 	var hint := Label.new()
-	hint.text = "Create reusable backend profiles, then assign separate profiles to text generation, vision analysis, and image generation. Image profiles can use either an OpenAI-compatible Images API or a Stable Diffusion Forge / Automatic1111 WebUI API."
+	hint.text = "These profiles are only for character text generation and vision analysis. Image generation providers are configured separately below."
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	hint.modulate = Color(0.75, 0.77, 0.84)
 	add_child(hint)
 
 	var role_heading := Label.new()
-	role_heading.text = "Provider roles"
+	role_heading.text = "Character AI roles"
 	role_heading.add_theme_font_size_override("font_size", 19)
 	add_child(role_heading)
 
@@ -73,42 +76,32 @@ func _ready() -> void:
 	_vision_role_selector.item_selected.connect(_on_role_selected.bind(CCFSettingsService.ROLE_VISION))
 	role_grid.add_child(_vision_role_selector)
 
-	role_grid.add_child(_label("Image generation profile"))
-	_image_role_selector = OptionButton.new()
-	_image_role_selector.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_image_role_selector.item_selected.connect(_on_role_selected.bind(CCFSettingsService.ROLE_IMAGE))
-	role_grid.add_child(_image_role_selector)
-
 	var role_hint := Label.new()
-	role_hint.text = "Text and vision profiles use OpenAI-compatible chat/model APIs. Image Studio reads the selected image profile's Image backend setting and exposes backend-specific discovery and generation controls."
+	role_hint.text = "Text and vision roles use OpenAI-compatible chat/model APIs. They do not carry Stable Diffusion server settings."
 	role_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	role_hint.modulate = Color(0.64, 0.68, 0.8)
 	add_child(role_hint)
 
 	var profile_heading := Label.new()
-	profile_heading.text = "Edit provider profile"
+	profile_heading.text = "Edit character AI profile"
 	profile_heading.add_theme_font_size_override("font_size", 19)
 	add_child(profile_heading)
 
 	var profile_row := HBoxContainer.new()
 	profile_row.add_theme_constant_override("separation", 8)
 	add_child(profile_row)
-
 	_profile_selector = OptionButton.new()
 	_profile_selector.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_profile_selector.item_selected.connect(_on_profile_selected)
 	profile_row.add_child(_profile_selector)
-
 	var new_profile_button := Button.new()
 	new_profile_button.text = "New"
 	new_profile_button.pressed.connect(_create_profile)
 	profile_row.add_child(new_profile_button)
-
 	var duplicate_button := Button.new()
 	duplicate_button.text = "Duplicate"
 	duplicate_button.pressed.connect(_duplicate_profile)
 	profile_row.add_child(duplicate_button)
-
 	var delete_button := Button.new()
 	delete_button.text = "Delete"
 	delete_button.pressed.connect(_delete_profile)
@@ -119,7 +112,6 @@ func _ready() -> void:
 	form.add_theme_constant_override("h_separation", 14)
 	form.add_theme_constant_override("v_separation", 10)
 	add_child(form)
-
 	_profile_name = _add_line(form, "Profile name")
 	_base_url = _add_line(form, "API base URL")
 	_api_key = _add_line(form, "API key")
@@ -130,20 +122,17 @@ func _ready() -> void:
 	model_box.add_theme_constant_override("separation", 6)
 	model_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	form.add_child(model_box)
-
 	var model_row := HBoxContainer.new()
 	model_row.add_theme_constant_override("separation", 8)
 	model_box.add_child(model_row)
 	_model = LineEdit.new()
-	_model.placeholder_text = "Enter a model ID or checkpoint"
+	_model.placeholder_text = "Enter a text/vision model ID"
 	_model.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	model_row.add_child(_model)
 	_fetch_models_button = Button.new()
 	_fetch_models_button.text = "Fetch Models"
-	_fetch_models_button.tooltip_text = "Uses the OpenAI-compatible /models endpoint. Stable Diffusion checkpoints are discovered from Image Studio."
 	_fetch_models_button.pressed.connect(_fetch_models)
 	model_row.add_child(_fetch_models_button)
-
 	_fetched_models = OptionButton.new()
 	_fetched_models.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_fetched_models.item_selected.connect(_on_fetched_model_selected)
@@ -174,27 +163,8 @@ func _ready() -> void:
 	_vision_detail.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	form.add_child(_vision_detail)
 
-	form.add_child(_label("Image backend"))
-	_image_backend = OptionButton.new()
-	_image_backend.add_item("OpenAI-compatible Images API")
-	_image_backend.set_item_metadata(
-		_image_backend.item_count - 1, CCFSettingsService.IMAGE_BACKEND_OPENAI
-	)
-	_image_backend.add_item("Stable Diffusion Forge / Automatic1111")
-	_image_backend.set_item_metadata(
-		_image_backend.item_count - 1, CCFSettingsService.IMAGE_BACKEND_AUTOMATIC1111
-	)
-	_image_backend.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	form.add_child(_image_backend)
-
-	var backend_hint := Label.new()
-	backend_hint.text = "For Stable Diffusion WebUI profiles, set the base URL to the server root (for example http://127.0.0.1:7860) or its /sdapi/v1 path. Image Studio will use /txt2img and discover checkpoints/samplers automatically."
-	backend_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	backend_hint.modulate = Color(0.64, 0.68, 0.8)
-	add_child(backend_hint)
-
 	var generation_heading := Label.new()
-	generation_heading.text = "Generation behaviour"
+	generation_heading.text = "Character generation behaviour"
 	generation_heading.add_theme_font_size_override("font_size", 19)
 	add_child(generation_heading)
 
@@ -203,12 +173,10 @@ func _ready() -> void:
 	generation_grid.add_theme_constant_override("h_separation", 14)
 	generation_grid.add_theme_constant_override("v_separation", 10)
 	add_child(generation_grid)
-
 	generation_grid.add_child(_label("Use existing fields as context"))
 	_include_existing = CheckBox.new()
 	_include_existing.text = "Preserve and improve existing content when useful"
 	generation_grid.add_child(_include_existing)
-
 	generation_grid.add_child(_label("Automatic retries"))
 	_retry_count = SpinBox.new()
 	_retry_count.min_value = 0
@@ -216,7 +184,6 @@ func _ready() -> void:
 	_retry_count.step = 1
 	_retry_count.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	generation_grid.add_child(_retry_count)
-
 	generation_grid.add_child(_label("Default idea count"))
 	_idea_count = SpinBox.new()
 	_idea_count.min_value = 1
@@ -224,7 +191,6 @@ func _ready() -> void:
 	_idea_count.step = 1
 	_idea_count.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	generation_grid.add_child(_idea_count)
-
 	generation_grid.add_child(_label("Attachment context limit"))
 	_attachment_context_limit = SpinBox.new()
 	_attachment_context_limit.min_value = 2000
@@ -234,36 +200,14 @@ func _ready() -> void:
 	_attachment_context_limit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	generation_grid.add_child(_attachment_context_limit)
 
-	generation_grid.add_child(_label("Default image size"))
-	_default_image_size = LineEdit.new()
-	_default_image_size.placeholder_text = "1024x1024 or auto"
-	_default_image_size.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	generation_grid.add_child(_default_image_size)
-
-	generation_grid.add_child(_label("Default image prompt style"))
-	_image_prompt_style = OptionButton.new()
-	for style_entry in [
-		{"label": "Auto", "value": "auto"},
-		{"label": "Natural language", "value": "natural"},
-		{"label": "Stable Diffusion style", "value": "stable_diffusion"}
-	]:
-		_image_prompt_style.add_item(str(style_entry["label"]))
-		_image_prompt_style.set_item_metadata(
-			_image_prompt_style.item_count - 1, str(style_entry["value"])
-		)
-	_image_prompt_style.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	generation_grid.add_child(_image_prompt_style)
-
 	var actions := HBoxContainer.new()
 	actions.add_theme_constant_override("separation", 10)
 	add_child(actions)
-
 	var save_button := Button.new()
-	save_button.text = "Save Settings"
-	save_button.custom_minimum_size = Vector2(150, 42)
+	save_button.text = "Save Character AI Settings"
+	save_button.custom_minimum_size = Vector2(190, 42)
 	save_button.pressed.connect(_save)
 	actions.add_child(save_button)
-
 	var folder_button := Button.new()
 	folder_button.text = "Open Data Folder"
 	folder_button.pressed.connect(func(): OS.shell_open(CCFStorageService.user_data_path()))
@@ -274,8 +218,6 @@ func _ready() -> void:
 	_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	add_child(_status)
 
-	load_settings(CCFSettingsService.load_settings())
-
 
 func load_settings(settings: Dictionary) -> void:
 	_settings = settings.duplicate(true)
@@ -285,18 +227,12 @@ func load_settings(settings: Dictionary) -> void:
 	_refresh_role_selectors()
 	_load_active_profile()
 	var generation_settings: Dictionary = _settings.get("generation", {})
-	_include_existing.button_pressed = bool(
-		generation_settings.get("include_existing_fields", true)
-	)
+	_include_existing.button_pressed = bool(generation_settings.get("include_existing_fields", true))
 	_retry_count.value = int(generation_settings.get("retry_count", 1))
 	_idea_count.value = int(generation_settings.get("default_idea_count", 6))
-	_attachment_context_limit.value = int(
-		generation_settings.get("attachment_context_character_limit", 24000)
-	)
-	_default_image_size.text = str(generation_settings.get("default_image_size", "1024x1024"))
-	_select_metadata(
-		_image_prompt_style, str(generation_settings.get("default_image_prompt_style", "auto"))
-	)
+	_attachment_context_limit.value = int(generation_settings.get("attachment_context_character_limit", 24000))
+	if _image_settings_view != null:
+		_image_settings_view.load_settings(_settings)
 
 
 func _save() -> void:
@@ -306,24 +242,25 @@ func _save() -> void:
 	generation_settings["include_existing_fields"] = _include_existing.button_pressed
 	generation_settings["retry_count"] = int(_retry_count.value)
 	generation_settings["default_idea_count"] = int(_idea_count.value)
-	generation_settings["attachment_context_character_limit"] = int(
-		_attachment_context_limit.value
-	)
-	generation_settings["default_image_size"] = _default_image_size.text.strip_edges()
-	generation_settings["default_image_prompt_style"] = (
-		str(_image_prompt_style.get_selected_metadata())
-		if _image_prompt_style.selected >= 0
-		else "auto"
-	)
+	generation_settings["attachment_context_character_limit"] = int(_attachment_context_limit.value)
 	_settings["generation"] = generation_settings
-
 	var result := CCFSettingsService.save_settings(_settings)
-	if result.get("ok", false):
+	if bool(result.get("ok", false)):
 		_settings = CCFSettingsService.load_settings()
-		_status.text = "Settings saved. Text, vision, and image provider assignments are now active."
+		_status.text = "Character AI settings saved."
+		if _image_settings_view != null:
+			_image_settings_view.load_settings(_settings)
 		settings_saved.emit(_settings.duplicate(true))
 	else:
 		_status.text = str(result.get("error", "Could not save settings."))
+
+
+func _on_image_settings_saved(settings: Dictionary) -> void:
+	_settings = settings.duplicate(true)
+	_refresh_profile_selector()
+	_refresh_role_selectors()
+	_load_active_profile()
+	settings_saved.emit(_settings.duplicate(true))
 
 
 func _refresh_profile_selector() -> void:
@@ -331,18 +268,15 @@ func _refresh_profile_selector() -> void:
 	_profile_selector.clear()
 	var active_id := str(_settings.get("active_api_profile_id", "default"))
 	var selected_index := 0
-	var profiles = _settings.get("api_profiles", [])
-	if profiles is Array:
-		for profile in profiles:
-			if not profile is Dictionary:
-				continue
-			var display_name := str(profile.get("name", "Profile"))
-			var profile_id := str(profile.get("id", ""))
-			_profile_selector.add_item(display_name)
-			var item_index := _profile_selector.item_count - 1
-			_profile_selector.set_item_metadata(item_index, profile_id)
-			if profile_id == active_id:
-				selected_index = item_index
+	for profile in _settings.get("api_profiles", []):
+		if not profile is Dictionary:
+			continue
+		var profile_id := str(profile.get("id", ""))
+		_profile_selector.add_item(str(profile.get("name", "Profile")))
+		var item_index := _profile_selector.item_count - 1
+		_profile_selector.set_item_metadata(item_index, profile_id)
+		if profile_id == active_id:
+			selected_index = item_index
 	if _profile_selector.item_count > 0:
 		_profile_selector.select(selected_index)
 	_loading_profile = false
@@ -351,24 +285,16 @@ func _refresh_profile_selector() -> void:
 func _refresh_role_selectors() -> void:
 	_loading_roles = true
 	var text_id := CCFSettingsService.role_profile_id(_settings, CCFSettingsService.ROLE_TEXT)
-	var vision_id := CCFSettingsService.role_profile_id(
-		_settings, CCFSettingsService.ROLE_VISION
-	)
-	var image_id := CCFSettingsService.role_profile_id(
-		_settings, CCFSettingsService.ROLE_IMAGE
-	)
-	for selector in [_text_role_selector, _vision_role_selector, _image_role_selector]:
+	var vision_id := CCFSettingsService.role_profile_id(_settings, CCFSettingsService.ROLE_VISION)
+	for selector in [_text_role_selector, _vision_role_selector]:
 		selector.clear()
 		for profile in _settings.get("api_profiles", []):
 			if not profile is Dictionary:
 				continue
 			selector.add_item(str(profile.get("name", "Profile")))
-			selector.set_item_metadata(
-				selector.item_count - 1, str(profile.get("id", "default"))
-			)
+			selector.set_item_metadata(selector.item_count - 1, str(profile.get("id", "default")))
 	_select_profile_id(_text_role_selector, text_id)
 	_select_profile_id(_vision_role_selector, vision_id)
-	_select_profile_id(_image_role_selector, image_id)
 	_loading_roles = false
 
 
@@ -382,7 +308,6 @@ func _load_active_profile() -> void:
 	_temperature.value = float(profile.get("temperature", 0.8))
 	_max_tokens.value = int(profile.get("max_output_tokens", 6000))
 	_select_metadata(_vision_detail, str(profile.get("vision_detail", "auto")))
-	_select_metadata(_image_backend, CCFSettingsService.image_backend(profile))
 	_reset_fetched_models()
 
 
@@ -397,38 +322,15 @@ func _capture_loaded_profile() -> void:
 	profile["model"] = _model.text.strip_edges()
 	profile["temperature"] = _temperature.value
 	profile["max_output_tokens"] = int(_max_tokens.value)
-	profile["vision_detail"] = (
-		str(_vision_detail.get_selected_metadata())
-		if _vision_detail.selected >= 0
-		else "auto"
-	)
-	profile["image_backend"] = (
-		str(_image_backend.get_selected_metadata())
-		if _image_backend.selected >= 0
-		else CCFSettingsService.IMAGE_BACKEND_OPENAI
-	)
+	profile["vision_detail"] = str(_vision_detail.get_selected_metadata()) if _vision_detail.selected >= 0 else "auto"
 	CCFSettingsService.replace_profile_by_id(_settings, _loaded_profile_id, profile)
 
 
 func _capture_role_assignments() -> void:
 	if _text_role_selector.selected >= 0:
-		CCFSettingsService.set_role_profile(
-			_settings,
-			CCFSettingsService.ROLE_TEXT,
-			str(_text_role_selector.get_selected_metadata())
-		)
+		CCFSettingsService.set_role_profile(_settings, CCFSettingsService.ROLE_TEXT, str(_text_role_selector.get_selected_metadata()))
 	if _vision_role_selector.selected >= 0:
-		CCFSettingsService.set_role_profile(
-			_settings,
-			CCFSettingsService.ROLE_VISION,
-			str(_vision_role_selector.get_selected_metadata())
-		)
-	if _image_role_selector.selected >= 0:
-		CCFSettingsService.set_role_profile(
-			_settings,
-			CCFSettingsService.ROLE_IMAGE,
-			str(_image_role_selector.get_selected_metadata())
-		)
+		CCFSettingsService.set_role_profile(_settings, CCFSettingsService.ROLE_VISION, str(_vision_role_selector.get_selected_metadata()))
 
 
 func _on_profile_selected(index: int) -> void:
@@ -440,14 +342,14 @@ func _on_profile_selected(index: int) -> void:
 		return
 	_settings["active_api_profile_id"] = profile_id
 	_load_active_profile()
-	_status.text = "Profile selected for editing. Press Save Settings to persist changes."
+	_status.text = "Character AI profile selected. Press Save Character AI Settings to persist changes."
 
 
 func _on_role_selected(_index: int, role: String) -> void:
 	if _loading_roles:
 		return
 	_capture_role_assignments()
-	_status.text = "%s provider assignment changed locally. Press Save Settings to persist it." % role.capitalize()
+	_status.text = "%s provider assignment changed locally." % role.capitalize()
 
 
 func _create_profile() -> void:
@@ -456,7 +358,7 @@ func _create_profile() -> void:
 	_refresh_profile_selector()
 	_refresh_role_selectors()
 	_load_active_profile()
-	_status.text = "New API profile created and assigned to text generation."
+	_status.text = "New character AI profile created and assigned to text generation."
 
 
 func _duplicate_profile() -> void:
@@ -465,33 +367,30 @@ func _duplicate_profile() -> void:
 	_refresh_profile_selector()
 	_refresh_role_selectors()
 	_load_active_profile()
-	_status.text = "API profile duplicated and assigned to text generation."
+	_status.text = "Character AI profile duplicated."
 
 
 func _delete_profile() -> void:
 	_capture_loaded_profile()
 	var result := CCFSettingsService.delete_active_profile(_settings)
-	if not result.get("ok", false):
+	if not bool(result.get("ok", false)):
 		_status.text = str(result.get("error", "Could not delete profile."))
 		return
 	_refresh_profile_selector()
 	_refresh_role_selectors()
 	_load_active_profile()
-	_status.text = "API profile deleted. Any affected provider roles used the remaining profile."
+	_status.text = "Character AI profile deleted."
 
 
 func _fetch_models() -> void:
 	_capture_loaded_profile()
 	var profile := CCFSettingsService.profile_by_id(_settings, _loaded_profile_id)
-	if CCFSettingsService.image_backend(profile) == CCFSettingsService.IMAGE_BACKEND_AUTOMATIC1111:
-		_status.text = "Stable Diffusion checkpoints are discovered from Image Studio so its WebUI-specific API can be used."
-		return
 	var result := _model_service.fetch_models(profile)
-	if not result.get("ok", false):
+	if not bool(result.get("ok", false)):
 		_status.text = str(result.get("error", "Could not fetch models."))
 		return
 	_fetch_models_button.disabled = true
-	_status.text = "Fetching model list…"
+	_status.text = "Fetching text/vision model list…"
 
 
 func _on_models_loaded(models: Array) -> void:
@@ -514,7 +413,7 @@ func _on_fetched_model_selected(index: int) -> void:
 	if index <= 0:
 		return
 	_model.text = _fetched_models.get_item_text(index)
-	_status.text = "Selected model %s. Press Save Settings to persist it." % _model.text
+	_status.text = "Selected model %s." % _model.text
 
 
 func _reset_fetched_models() -> void:
