@@ -2,10 +2,12 @@ class_name CCFSettingsService
 extends RefCounted
 
 const SETTINGS_FILE := CCFStorageService.SETTINGS_DIR + "/app_settings.json"
-const SETTINGS_FORMAT_VERSION := 4
+const SETTINGS_FORMAT_VERSION := 5
 const ROLE_TEXT := "text"
 const ROLE_VISION := "vision"
 const ROLE_IMAGE := "image"
+const IMAGE_BACKEND_OPENAI := "openai_compatible"
+const IMAGE_BACKEND_AUTOMATIC1111 := "automatic1111"
 
 
 static func default_settings() -> Dictionary:
@@ -161,6 +163,17 @@ static func delete_active_profile(settings: Dictionary) -> Dictionary:
 	return {"ok": true}
 
 
+static func image_backend(profile: Dictionary) -> String:
+	var backend := str(profile.get("image_backend", IMAGE_BACKEND_OPENAI)).strip_edges().to_lower()
+	if backend not in [IMAGE_BACKEND_OPENAI, IMAGE_BACKEND_AUTOMATIC1111]:
+		return IMAGE_BACKEND_OPENAI
+	return backend
+
+
+static func image_settings(profile: Dictionary) -> Dictionary:
+	return _normalise_image_settings(profile.get("image_settings", {}))
+
+
 static func _normalise(settings: Dictionary) -> Dictionary:
 	var defaults := default_settings()
 	var result := defaults.duplicate(true)
@@ -193,9 +206,9 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 	var incoming_roles = settings.get("provider_roles", {})
 	if incoming_roles is Dictionary:
 		provider_roles.merge(incoming_roles, true)
-	# Settings format v2 used one active profile for all work. v3 introduced
-	# explicit text/vision assignments. v4 adds image generation without
-	# disturbing choices already made for the earlier roles.
+	# v2 used one active profile for all work. v3 introduced text/vision roles,
+	# v4 added image role assignment, and v5 adds image-backend configuration
+	# inside profiles without changing role choices.
 	if incoming_format < 3:
 		provider_roles["text_profile_id"] = str(result.get("active_api_profile_id", "default"))
 		provider_roles["vision_profile_id"] = str(result.get("active_api_profile_id", "default"))
@@ -229,7 +242,7 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 	var image_prompt_style := str(
 		generation_settings.get("default_image_prompt_style", "auto")
 	).strip_edges().to_lower()
-	if not image_prompt_style in ["auto", "natural", "stable_diffusion"]:
+	if image_prompt_style not in ["auto", "natural", "stable_diffusion"]:
 		image_prompt_style = "auto"
 	generation_settings["default_image_prompt_style"] = image_prompt_style
 	result["generation"] = generation_settings
@@ -254,9 +267,33 @@ static func _normalise_profile(profile: Dictionary) -> Dictionary:
 	result["temperature"] = clampf(float(result.get("temperature", 0.8)), 0.0, 2.0)
 	result["max_output_tokens"] = maxi(128, int(result.get("max_output_tokens", 6000)))
 	result["vision_detail"] = str(result.get("vision_detail", "auto"))
-	if not result["vision_detail"] in ["auto", "low", "high"]:
+	if result["vision_detail"] not in ["auto", "low", "high"]:
 		result["vision_detail"] = "auto"
+	result["image_backend"] = image_backend(result)
+	result["image_settings"] = _normalise_image_settings(result.get("image_settings", {}))
 	return result
+
+
+static func _normalise_image_settings(raw_settings: Variant) -> Dictionary:
+	var result := _default_image_settings()
+	if raw_settings is Dictionary:
+		result.merge(raw_settings, true)
+	result["sampler"] = str(result.get("sampler", "Euler a")).strip_edges()
+	result["steps"] = clampi(int(result.get("steps", 28)), 1, 150)
+	result["cfg_scale"] = clampf(float(result.get("cfg_scale", 7.0)), 1.0, 30.0)
+	result["seed"] = int(result.get("seed", -1))
+	result["batch_size"] = clampi(int(result.get("batch_size", 1)), 1, 8)
+	return result
+
+
+static func _default_image_settings() -> Dictionary:
+	return {
+		"sampler": "Euler a",
+		"steps": 28,
+		"cfg_scale": 7.0,
+		"seed": -1,
+		"batch_size": 1
+	}
 
 
 static func _default_profile() -> Dictionary:
@@ -268,7 +305,9 @@ static func _default_profile() -> Dictionary:
 		"model": "",
 		"temperature": 0.8,
 		"max_output_tokens": 6000,
-		"vision_detail": "auto"
+		"vision_detail": "auto",
+		"image_backend": IMAGE_BACKEND_OPENAI,
+		"image_settings": _default_image_settings()
 	}
 
 
