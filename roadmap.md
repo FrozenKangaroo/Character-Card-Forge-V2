@@ -23,6 +23,7 @@ The existing PyWebView application remains a feature and behaviour reference, no
 - Detachable native tool windows are used where multi-monitor workflows benefit; primary navigation pages may remain embedded when clearer.
 - Generation parity ports useful V1 behaviour into the Godot architecture rather than recreating PyWebView-specific implementation details.
 - Workspace/editing structure, AI-generation structure, and interoperable Character Card output fields are related but distinct layers.
+- Major interface restructuring and visual polish should follow stable workflow architecture where practical, avoiding repeated UI rewrites while core authoring/generation systems are still changing.
 
 ## Current Development Phase
 
@@ -173,6 +174,15 @@ This milestone was moved from the original v0.13 slot so generation parity could
 - Add provider-specific quality/aspect controls where useful.
 - Add optional Stable Diffusion advanced helpers such as LoRA/embedding-oriented prompt tools without making one WebUI ecosystem part of the central character schema.
 
+### Post-core Authoring Workflow and Interface Pass — version TBD
+
+Do this after the major generation, Q&A, image, import/export, and project workflows are sufficiently stable that UI changes are unlikely to be immediately invalidated by another architecture change.
+
+- Restore a full **Guided Manual** authoring mode inspired by V1, implemented on top of the same template, generation-component, output-binding, and project data model used everywhere else.
+- Expand the existing Builder foundation into richer Character, Personality, and Scene Builder workflows with stronger presets, manual guidance, optional AI assistance, review-first application, and integration with concept/Q&A context.
+- Revisit Workspace information architecture once the final set of major workflows is known: use clearer tabs/pages/sections, reduce the current top-level button wall, and group related tools by task rather than historical implementation order.
+- Perform the larger visual-polish pass only after workflow hierarchy stabilises: spacing, typography, theme/identity, responsive layouts, high-density/ultrawide use, consistent controls, keyboard workflows, onboarding, and better empty/error/progress states.
+
 ## Planned Features
 
 ### Generation Improvements
@@ -187,6 +197,16 @@ This milestone was moved from the original v0.13 slot so generation parity could
 - Section-by-section generation/continuation with per-stage progress, inspired by the later V1 beta workflow once its desired Godot behaviour is cleanly specified.
 - Configurable special formatting rules such as `<START>` counts, greeting counts, and constrained tag sets.
 - Recent/favourite model lists, broader provider capability detection, token-limit metadata/context estimation, and reusable provider presets.
+
+### Authoring Workflows
+
+- **Guided Manual mode:** provide template-driven manual character construction where the user can work through the active sections/components directly, without requiring AI generation. It should use the same underlying data model as generated cards rather than a parallel manual-only representation.
+- Guided Manual should understand enabled/disabled template structure, required content, output bindings, section progress/completeness, and the final interoperable Character Card projection.
+- Allow optional AI assistance inside Guided Manual where useful, but keep manual authoring fully usable without an AI provider.
+- **Builder expansion:** grow the current Guided Character Builder foundation back toward the richer V1 workflow, including distinct Character, Personality, and Scene Builder experiences where that separation remains useful.
+- Builders should accept both manual input and AI-assisted fill/extraction, preserve explicit user guidance, feed structured planning context into final generation, and participate in the v0.13 precedence rules rather than acting as isolated tools.
+- Add/revisit builder presets, reusable builder templates, clearer completion/progress state, richer selective revision, and smooth handoff between Concept → Q&A → Builders → final generation.
+- Keep builder data as planning/source context unless explicitly mapped into card output; do not recreate the old architecture by making every planning field a permanent exported card field.
 
 ### Multi-Character Workflows
 
@@ -222,16 +242,20 @@ This milestone was moved from the original v0.13 slot so generation parity could
 
 ### Character Concept Exchange — later milestone
 
-This is intentionally planned after the generation/template architecture has stabilised enough that the concept format can remain durable instead of changing every few releases.
+This is intentionally planned after the generation/template/Q&A architecture has stabilised enough that the concept format can remain durable instead of changing every few releases.
 
 - Add a Character Card Forge-specific, versioned, human-readable concept document for **pre-generation source material**, distinct from a completed Character Card or full `.ccfproject` project.
 - Working format idea: JSON content with a dedicated extension such as `.ccfconcept`; exact extension and schema should not be frozen until the generation/template model is mature.
 - Make the format easy for external AI assistants to produce from a conversation or partially fleshed-out character idea, with a published schema/example and clear instructions for generating a valid concept file.
 - Keep the format deliberately higher-level and more stable than the internal project/template schema. It should describe what the character should become rather than mirror every current workspace field or generation-component ID.
 - Require a main concept, with optional structured planning material such as identity ideas, physical/visual direction, personality direction, background, relationships, setting, scenario/opening ideas, constraints, and freeform notes.
+- Include optional **template Q&A answers** associated with a recognised Character Card Forge Q&A template once the Q&A template format is stable.
+- Include optional **extra Q&A** as arbitrary character-specific question/answer pairs that do not have to exist in the reusable Q&A template, preserving the useful V1 one-off-question workflow.
+- During import, map compatible template-Q&A answers to the active Q&A plan, retain unmatched imported answers as supplemental/extra Q&A instead of silently discarding them, and leave unanswered required current-template questions for the normal Q&A completeness pass.
+- Treat imported and extra Q&A as private planning context for generation, not automatic Character Card output.
 - Allow omitted/unknown sections so a rough concept remains valid and Character Card Forge can perform the detailed generation work later.
 - Import through a review/mapping step into a new character or character concept workspace instead of treating the file as a finished card.
-- Feed imported concept material into the normal Character Card Forge pipeline: templates, generation components, future private Q&A, builders, concept-fidelity checks, semantic repair, and Generation Preview.
+- Feed imported concept material into the normal Character Card Forge pipeline: templates, generation components, private Q&A, builders, concept-fidelity checks, semantic repair, and Generation Preview.
 - Consider concept export as well as import so concepts can be shared, archived, refined by another AI, and re-imported without requiring a completed card.
 - Version the concept format independently and provide migrations/defaults once it enters active use.
 
@@ -262,7 +286,17 @@ This is intentionally planned after the generation/template architecture has sta
 
 ## Polish
 
-- Custom application theme/visual identity, responsive layout refinement, keyboard shortcuts, drag-and-drop, better onboarding/empty states, native completion notifications, denser image gallery browsing, and richer generation progress/repair presentation.
+Major interface polish is intentionally sequenced after the main systems and authoring workflows are in place, while small usability fixes that prevent data loss or block testing should continue to be addressed immediately.
+
+- Rework Workspace navigation and hierarchy around the final workflows rather than continuing to accumulate unrelated top-level buttons.
+- Use tabs/pages/sections where they make task boundaries clearer, while retaining detachable windows where multi-monitor use genuinely benefits.
+- Create a stronger application theme and visual identity with consistent spacing, typography, hierarchy, selected states, form controls, dialogs, and status/progress presentation.
+- Refine responsive behaviour for normal desktop, ultrawide, high-DPI, and smaller supported windows.
+- Add keyboard shortcuts and keyboard-first editing/navigation where practical.
+- Add drag-and-drop where it improves file/image workflows.
+- Improve onboarding, empty states, inline explanations, validation feedback, error recovery, and progress reporting.
+- Standardise unsaved-change protection and safe close/navigation behaviour across editors and tool windows.
+- Add native completion notifications where useful and denser gallery/library browsing where large collections benefit.
 
 ## Long-Term Ideas
 
