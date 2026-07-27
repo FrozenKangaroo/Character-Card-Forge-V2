@@ -15,16 +15,6 @@ func _build_interview_payload(
 	if known_answers.is_empty():
 		return payload
 
-	var answer_lines: Array[String] = []
-	for question_id_value in known_answers:
-		var question_id := str(question_id_value).strip_edges()
-		var answer := _value_to_text(known_answers.get(question_id_value, "")).strip_edges()
-		if question_id.is_empty() or answer.is_empty():
-			continue
-		answer_lines.append("%s: %s" % [question_id, answer])
-	if answer_lines.is_empty():
-		return payload
-
 	var messages_value: Variant = payload.get("messages", [])
 	if not messages_value is Array or messages_value.is_empty():
 		return payload
@@ -38,16 +28,25 @@ func _build_interview_payload(
 		return payload
 
 	var existing_content := str(message.get("content", ""))
-	var known_block := _join_string_array(answer_lines, "\n")
-	if not known_block.is_empty() and not existing_content.contains(
-		"AUTHOR-SUPPLIED OR PREVIOUS INTERVIEW ANSWERS — authoritative planning facts:"
-	):
-		message["content"] = (
-			existing_content
-			+ "\n\nAUTHOR-SUPPLIED OR PREVIOUS INTERVIEW ANSWERS — authoritative planning facts:\n"
-			+ known_block
-			+ "\nDo not contradict or replace these answers. Use them when resolving the remaining questions."
-		)
-		messages[last_index] = message
-		payload["messages"] = messages
+	if existing_content.contains("KNOWN INTERVIEW ANSWERS — preserve these; do not contradict them:"):
+		return payload
+
+	var answer_lines: Array[String] = []
+	for question_id_value in known_answers:
+		var question_id := str(question_id_value).strip_edges()
+		var answer := _value_to_text(known_answers.get(question_id_value, "")).strip_edges()
+		if question_id.is_empty() or answer.is_empty():
+			continue
+		answer_lines.append("%s: %s" % [question_id, answer])
+	if answer_lines.is_empty():
+		return payload
+
+	message["content"] = (
+		existing_content
+		+ "\n\nAUTHOR-SUPPLIED OR PREVIOUS INTERVIEW ANSWERS — authoritative planning facts:\n"
+		+ _join_string_array(answer_lines, "\n")
+		+ "\nDo not contradict or replace these answers. Use them when resolving the remaining questions."
+	)
+	messages[last_index] = message
+	payload["messages"] = messages
 	return payload
