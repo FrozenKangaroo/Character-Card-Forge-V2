@@ -220,6 +220,21 @@ This milestone was moved from the original v0.13 slot so generation parity could
 - Character Card V2 JSON/PNG/APNG, SillyTavern-oriented mappings, lorebook preservation, `.ccfproject`, and split-workflow JSON export. **Foundation completed.**
 - Broader ecosystem testing, PNG batch export, automatic split-workflow generation, additional meaningful formats, and generated/emotion image export options.
 
+### Character Concept Exchange — later milestone
+
+This is intentionally planned after the generation/template architecture has stabilised enough that the concept format can remain durable instead of changing every few releases.
+
+- Add a Character Card Forge-specific, versioned, human-readable concept document for **pre-generation source material**, distinct from a completed Character Card or full `.ccfproject` project.
+- Working format idea: JSON content with a dedicated extension such as `.ccfconcept`; exact extension and schema should not be frozen until the generation/template model is mature.
+- Make the format easy for external AI assistants to produce from a conversation or partially fleshed-out character idea, with a published schema/example and clear instructions for generating a valid concept file.
+- Keep the format deliberately higher-level and more stable than the internal project/template schema. It should describe what the character should become rather than mirror every current workspace field or generation-component ID.
+- Require a main concept, with optional structured planning material such as identity ideas, physical/visual direction, personality direction, background, relationships, setting, scenario/opening ideas, constraints, and freeform notes.
+- Allow omitted/unknown sections so a rough concept remains valid and Character Card Forge can perform the detailed generation work later.
+- Import through a review/mapping step into a new character or character concept workspace instead of treating the file as a finished card.
+- Feed imported concept material into the normal Character Card Forge pipeline: templates, generation components, future private Q&A, builders, concept-fidelity checks, semantic repair, and Generation Preview.
+- Consider concept export as well as import so concepts can be shared, archived, refined by another AI, and re-imported without requiring a completed card.
+- Version the concept format independently and provide migrations/defaults once it enters active use.
+
 ### Front Porch Integration
 
 - Data folder discovery/configuration, character scanning, import, install/export, character management, and chat reading/export where practical.
@@ -237,6 +252,7 @@ This milestone was moved from the original v0.13 slot so generation parity could
 - Preserve older generated-image records as metadata evolves.
 - Add reusable template packs if community template sharing becomes useful.
 - Maintain documentation for workspace fields vs generation components vs output bindings.
+- When Character Concept Exchange is implemented, keep its schema/version independent from the internal project/template formats so concept files remain portable across Character Card Forge versions where practical.
 
 ## Technical Improvements
 
