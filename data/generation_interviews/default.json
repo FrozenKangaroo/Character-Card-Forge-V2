@@ -1,0 +1,61 @@
+{
+  "format_version": 1,
+  "name": "Default private generation interview",
+  "description": "Private planning questions used before full character generation when the active template does not define its own Interview / Q&A section.",
+  "questions": [
+    {
+      "id": "core_identity",
+      "label": "Core Identity",
+      "required": true,
+      "question": "What is the most important identity, role, premise, or defining fact that must remain true about this character?"
+    },
+    {
+      "id": "primary_motivation",
+      "label": "Primary Motivation",
+      "required": true,
+      "question": "What does the character want most at the start of the roleplay, and what makes that desire personally important?"
+    },
+    {
+      "id": "inner_conflict",
+      "label": "Inner Conflict",
+      "required": true,
+      "question": "What contradiction, insecurity, unresolved tension, or competing desire gives the character emotional depth?"
+    },
+    {
+      "id": "user_dynamic",
+      "label": "Dynamic with {{user}}",
+      "required": true,
+      "question": "What relationship or interpersonal dynamic should exist between {{char}} and {{user}}, including trust, tension, expectations, affection, rivalry, dependence, or uncertainty implied by the concept?"
+    },
+    {
+      "id": "boundaries",
+      "label": "Boundaries",
+      "required": true,
+      "question": "What important limits, refusals, fears, sensitivities, or lines the character is reluctant to cross should shape their behaviour?"
+    },
+    {
+      "id": "voice",
+      "label": "Voice",
+      "required": true,
+      "question": "How should {{char}} sound in dialogue: tone, vocabulary, pacing, slang, formality, verbal habits, and any distinctive quirks?"
+    },
+    {
+      "id": "visual_anchor",
+      "label": "Visual Anchor",
+      "required": true,
+      "question": "Which physical appearance, outfit, accessory, or presentation details are most important to preserve consistently?"
+    },
+    {
+      "id": "opening_hook",
+      "label": "Opening Hook",
+      "required": true,
+      "question": "What immediate situation, tension, goal, or interaction should the Scenario and First Message begin with so the roleplay is playable straight away?"
+    },
+    {
+      "id": "private_complication",
+      "label": "Private Complication",
+      "required": false,
+      "question": "Is there a secret, misconception, hidden pressure, or complication that would make the character more interesting without contradicting the supplied concept?"
+    }
+  ]
+}
