@@ -1,13 +1,13 @@
 class_name CCFTemplateManagerV013View
 extends CCFTemplateManagerView
 
-var _generation_editor: CCFGenerationComponentEditorWindow
+var _generation_editor: CCFGenerationComponentEditorGuardWindow
 var _generation_button: Button
 
 
 func _ready() -> void:
 	super._ready()
-	_generation_editor = CCFGenerationComponentEditorWindow.new()
+	_generation_editor = CCFGenerationComponentEditorGuardWindow.new()
 	_generation_editor.visible = false
 	_generation_editor.groups_applied.connect(_on_generation_groups_applied)
 	add_child(_generation_editor)
