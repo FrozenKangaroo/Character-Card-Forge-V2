@@ -51,7 +51,7 @@ func open_for_project(project: Dictionary, settings: Dictionary) -> void:
 	_populate_presets()
 	_render_step()
 	_update_completion()
-	_status.text = "Builder state is stored with this character. Generate Character uses non-empty Builder fields as planning guidance; Apply to Character directly transfers selected Builder projections into card fields."
+	_status.text = "Builder state is stored with this character when you save the project."
 
 func update_project_context(project: Dictionary, settings: Dictionary) -> void:
 	if str(project.get("project_id", "")) != _project_id:
@@ -93,9 +93,9 @@ func handle_job_completed(job_id: String, job_type: String, data: Variant, metad
 	_update_completion()
 	builder_state_changed.emit(_state.duplicate(true))
 	if job_type == "builder_extract":
-		_status.text = "Concept analysed. Review the extracted builder details; accepted Builder state can guide Generate Character before you directly apply it to card fields."
+		_status.text = "Concept analysed. Review the extracted builder details before applying them."
 	else:
-		_status.text = "AI builder details added. Review and edit them; accepted Builder state can guide Generate Character before direct card application."
+		_status.text = "AI builder details added. Review and edit anything you want."
 	return true
 
 func handle_job_failed(job_id: String, message: String) -> bool:
@@ -231,7 +231,7 @@ func _build_interface() -> void:
 	step_actions.add_child(_ai_all_button)
 
 	var action_hint := Label.new()
-	action_hint.text = "Builder fields are a planning scratchpad: Generate Character uses non-empty values as guidance, while only Apply to Character writes Builder projections directly into card fields."
+	action_hint.text = "AI fills the builder scratchpad only. Nothing reaches the character card until you apply it."
 	action_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	action_hint.modulate = Color(0.59, 0.63, 0.73)
 	action_hint.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -283,7 +283,7 @@ func _build_interface() -> void:
 
 	var apply_button := Button.new()
 	apply_button.text = "Apply to Character"
-	apply_button.tooltip_text = "Transfer Builder projections into concept, physical Description, Personality/lore, Scenario, name, and tags."
+	apply_button.tooltip_text = "Transfer builder details into the concept, description, personality, scenario, name, and tags."
 	apply_button.pressed.connect(_request_character_apply)
 	footer_actions.add_child(apply_button)
 
@@ -330,125 +330,133 @@ func _apply_selected_preset() -> void:
 	_capture_visible_fields()
 	if _preset_selector.selected < 0:
 		return
-	var preset_id := str(_preset_selector.get_item_metadata(_preset_selector.selected))
+	var preset_id := str(_preset_selector.get_selected_metadata())
 	_state = CCFBuilderService.apply_preset(_state, preset_id)
 	_state["selected_step"] = _current_step_id()
 	_render_step()
 	_update_completion()
 	builder_state_changed.emit(_state.duplicate(true))
-	_status.text = "Builder preset applied. Review it; non-empty Builder values can guide Generate Character."
+	if preset_id == "custom":
+		_status.text = "Builder cleared."
+	else:
+		_status.text = "Preset applied to its matching builder fields. Existing details outside the preset were kept."
 
 func _select_preset_id(preset_id: String) -> void:
 	if _preset_selector == null:
 		return
-	for index in range(_preset_selector.item_count):
-		if str(_preset_selector.get_item_metadata(index)) == preset_id:
-			_preset_selector.select(index)
+	for item_index in range(_preset_selector.item_count):
+		if str(_preset_selector.get_item_metadata(item_index)) == preset_id:
+			_preset_selector.select(item_index)
 			_update_preset_description()
 			return
 
-func _select_step(step_index: int) -> void:
-	_capture_visible_fields()
-	_current_step_index = clampi(step_index, 0, maxi(0, CCFBuilderService.steps().size() - 1))
-	_state["selected_step"] = _current_step_id()
-	_render_step()
-
-func _previous_step() -> void:
-	if _current_step_index <= 0:
-		return
-	_select_step(_current_step_index - 1)
-
-func _next_step() -> void:
-	if _current_step_index >= CCFBuilderService.steps().size() - 1:
-		return
-	_select_step(_current_step_index + 1)
-
-func _clear_current_step() -> void:
-	_capture_visible_fields()
-	_state = CCFBuilderService.clear_step(_state, _current_step_id())
-	_state["selected_step"] = _current_step_id()
-	_select_preset_id("custom")
-	_render_step()
-	_update_completion()
-	builder_state_changed.emit(_state.duplicate(true))
-	_status.text = "Current Builder step cleared."
-
 func _render_step() -> void:
-	_clear_children(_step_content)
+	if _step_content == null:
+		return
 	_field_controls.clear()
-	var steps := CCFBuilderService.steps()
-	if steps.is_empty():
-		_step_title.text = "No Builder schema"
+	_clear_children(_step_content)
+	var builder_steps := CCFBuilderService.steps()
+	if builder_steps.is_empty():
+		_step_title.text = "Builder unavailable"
 		_step_description.text = "The builder schema could not be loaded."
 		return
-	_current_step_index = clampi(_current_step_index, 0, steps.size() - 1)
-	var step: Dictionary = steps[_current_step_index]
-	_step_title.text = str(step.get("title", "Step"))
-	_step_description.text = str(step.get("description", ""))
-	var fields = step.get("fields", [])
-	var has_fields := fields is Array and not fields.is_empty()
-	_ai_step_button.disabled = not has_fields
-	_ai_all_button.disabled = CCFBuilderService.all_fields().is_empty()
-	for builder_field in fields:
-		if builder_field is Dictionary:
-			_add_builder_field(builder_field)
-	if not has_fields:
-		var review_label := Label.new()
-		review_label.text = CCFBuilderService.compose_concept(_state)
-		review_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		review_label.selectable = true
-		_step_content.add_child(review_label)
-	_update_navigation_buttons()
+	_current_step_index = clampi(_current_step_index, 0, builder_steps.size() - 1)
+	var builder_step: Dictionary = builder_steps[_current_step_index]
+	_step_title.text = str(builder_step.get("title", "Builder Step"))
+	_step_description.text = str(builder_step.get("description", ""))
+
+	for button_index in range(_step_buttons.size()):
+		_step_buttons[button_index].disabled = button_index == _current_step_index
+
+	var builder_fields = builder_step.get("fields", [])
+	if builder_fields is Array and not builder_fields.is_empty():
+		for builder_field in builder_fields:
+			if builder_field is Dictionary:
+				_add_builder_field(builder_field)
+		_ai_step_button.disabled = false
+	else:
+		_render_review()
+		_ai_step_button.disabled = true
+
+	_previous_button.disabled = _current_step_index <= 0
+	_next_button.disabled = _current_step_index >= builder_steps.size() - 1
+	_state["selected_step"] = _current_step_id()
 
 func _add_builder_field(builder_field: Dictionary) -> void:
-	var field_path := str(builder_field.get("path", ""))
-	if field_path.is_empty():
-		return
 	var label := Label.new()
 	label.text = str(builder_field.get("label", builder_field.get("id", "Field")))
 	label.add_theme_font_size_override("font_size", 16)
 	_step_content.add_child(label)
+
+	var field_path := str(builder_field.get("path", ""))
 	var field_type := str(builder_field.get("type", "line"))
-	var value = CCFStorageService.get_value_at_path(
-		_state, field_path, [] if field_type == "tags" else ""
-	)
+	var default_value: Variant = ""
+	if field_type == "tags":
+		default_value = []
+	var value: Variant = CCFStorageService.get_value_at_path(_state, field_path, default_value)
 	var control: Control
+
 	if field_type == "multiline":
 		var text_edit := TextEdit.new()
 		text_edit.text = str(value)
 		text_edit.placeholder_text = str(builder_field.get("placeholder", ""))
-		text_edit.custom_minimum_size.y = float(builder_field.get("height", 110))
+		text_edit.custom_minimum_size.y = float(builder_field.get("height", 120))
 		text_edit.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
-		text_edit.text_changed.connect(_on_builder_field_edited)
+		text_edit.text_changed.connect(func(): _on_builder_control_changed(field_path, field_type, text_edit))
 		control = text_edit
 	else:
 		var line_edit := LineEdit.new()
 		line_edit.placeholder_text = str(builder_field.get("placeholder", ""))
-		line_edit.text = (
-			_join_values(value, ", ") if field_type == "tags" and value is Array else str(value)
-		)
-		line_edit.text_changed.connect(func(_value: String): _on_builder_field_edited())
+		line_edit.text = _value_to_text(value)
+		line_edit.text_changed.connect(func(_new_text: String): _on_builder_control_changed(field_path, field_type, line_edit))
 		control = line_edit
+
 	control.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_step_content.add_child(control)
 	_field_controls[field_path] = {"control": control, "type": field_type}
 
-func _on_builder_field_edited() -> void:
-	_capture_visible_fields()
+func _render_review() -> void:
+	var completion := CCFBuilderService.completion_percent(_state)
+	var overview := Label.new()
+	overview.text = "Builder completion: %d%%. The preview below is the generation concept that will be created from the current builder state." % completion
+	overview.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_step_content.add_child(overview)
+
+	var concept_preview := TextEdit.new()
+	concept_preview.text = CCFBuilderService.compose_concept(_state)
+	concept_preview.editable = false
+	concept_preview.custom_minimum_size.y = 400
+	concept_preview.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	_step_content.add_child(concept_preview)
+
+	var destination_note := Label.new()
+	destination_note.text = "Apply to Character can populate: character name, generation concept, description, personality, scenario, and library tags. First message and other template fields remain available for normal AI generation or manual editing."
+	destination_note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	destination_note.modulate = Color(0.64, 0.68, 0.78)
+	_step_content.add_child(destination_note)
+
+func _on_builder_control_changed(field_path: String, field_type: String, control: Control) -> void:
+	var value: Variant = ""
+	if control is LineEdit:
+		value = control.text
+	elif control is TextEdit:
+		value = control.text
+	if field_type == "tags":
+		value = _parse_tags(str(value))
+	CCFStorageService.set_value_at_path(_state, field_path, value)
 	_state["preset_id"] = "custom"
-	_state["updated_at"] = Time.get_datetime_string_from_system(true)
 	_select_preset_id("custom")
+	_state["updated_at"] = Time.get_datetime_string_from_system(true)
+	_state["selected_step"] = _current_step_id()
 	_update_completion()
 	builder_state_changed.emit(_state.duplicate(true))
-	_status.text = "Unsaved Builder changes. Generate Character can use the current non-empty Builder values as planning guidance."
 
 func _capture_visible_fields() -> void:
-	if _field_controls.is_empty():
-		return
+	var changed := false
 	for field_path in _field_controls:
-		var entry: Dictionary = _field_controls[field_path]
-		var control: Control = entry.get("control")
-		var field_type := str(entry.get("type", "line"))
+		var row: Dictionary = _field_controls[field_path]
+		var control: Control = row.get("control")
+		var field_type := str(row.get("type", "line"))
 		var value: Variant = ""
 		if control is LineEdit:
 			value = control.text
@@ -456,26 +464,60 @@ func _capture_visible_fields() -> void:
 			value = control.text
 		if field_type == "tags":
 			value = _parse_tags(str(value))
-		CCFStorageService.set_value_at_path(_state, field_path, value)
-	_state["updated_at"] = Time.get_datetime_string_from_system(true)
+		var current_value = CCFStorageService.get_value_at_path(_state, field_path, "")
+		if JSON.stringify(current_value) != JSON.stringify(value):
+			CCFStorageService.set_value_at_path(_state, field_path, value)
+			changed = true
+	var step_id := _current_step_id()
+	if str(_state.get("selected_step", "foundation")) != step_id:
+		_state["selected_step"] = step_id
+		changed = true
+	if changed:
+		_state["updated_at"] = Time.get_datetime_string_from_system(true)
+
+func _select_step(step_index: int) -> void:
+	_capture_visible_fields()
+	var builder_steps := CCFBuilderService.steps()
+	var safe_index := clampi(step_index, 0, maxi(0, builder_steps.size() - 1))
+	if safe_index != _current_step_index:
+		_current_step_index = safe_index
+		_state["selected_step"] = _current_step_id()
+		_state["updated_at"] = Time.get_datetime_string_from_system(true)
+	_render_step()
+	builder_state_changed.emit(_state.duplicate(true))
+
+func _previous_step() -> void:
+	_select_step(maxi(0, _current_step_index - 1))
+
+func _next_step() -> void:
+	_select_step(mini(CCFBuilderService.steps().size() - 1, _current_step_index + 1))
+
+func _clear_current_step() -> void:
+	_capture_visible_fields()
+	_state = CCFBuilderService.clear_step(_state, _current_step_id())
+	_select_preset_id("custom")
+	_render_step()
+	_update_completion()
+	builder_state_changed.emit(_state.duplicate(true))
+	_status.text = "Current builder step cleared."
 
 func _ai_fill_current_step() -> void:
 	_capture_visible_fields()
-	var fields := CCFBuilderService.fields_for_step(_current_step_id())
-	_queue_builder_fill(fields, str(CCFBuilderService.step_by_id(_current_step_id()).get("title", "Builder step")))
+	var builder_fields := CCFBuilderService.fields_for_step(_current_step_id())
+	_queue_builder_fill(builder_fields, str(CCFBuilderService.step_by_id(_current_step_id()).get("title", "Builder step")))
 
 func _ai_fill_all() -> void:
 	_capture_visible_fields()
 	_queue_builder_fill(CCFBuilderService.all_fields(), "all builder fields")
 
-func _queue_builder_fill(fields: Array, scope_label: String) -> void:
+func _queue_builder_fill(builder_fields: Array, scope_label: String) -> void:
 	if _generation_service == null:
-		_status.text = "AI generation service is not available."
+		_status.text = "Generation service is not available."
 		return
 	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
 	var result := _generation_service.queue_builder_fill(
 		_state,
-		fields,
+		builder_fields,
 		profile,
 		scope_label,
 		int(_generation_settings().get("retry_count", 1)),
@@ -483,16 +525,18 @@ func _queue_builder_fill(fields: Array, scope_label: String) -> void:
 		_series_context
 	)
 	if not result.get("ok", false):
-		_status.text = str(result.get("error", "Could not queue builder AI fill."))
+		_status.text = str(result.get("error", "Could not queue builder generation."))
 		return
-	_tracked_jobs[str(result.get("job_id", ""))] = true
-	_status.text = "Builder AI fill queued."
+	var job_id := str(result.get("job_id", ""))
+	_tracked_jobs[job_id] = true
+	var queued_ahead := int(result.get("queued_ahead", 0))
+	_status.text = "Builder AI job queued%s." % (" behind %d job(s)" % queued_ahead if queued_ahead > 0 else "")
 
 func _analyse_current_concept() -> void:
 	_capture_visible_fields()
 	concept_refresh_requested.emit()
-	if _current_concept.strip_edges().is_empty():
-		_status.text = "Enter a generation concept before analysing it."
+	if _generation_service == null:
+		_status.text = "Generation service is not available."
 		return
 	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
 	var result := _generation_service.queue_builder_extract(
@@ -504,41 +548,41 @@ func _analyse_current_concept() -> void:
 		_series_context
 	)
 	if not result.get("ok", false):
-		_status.text = str(result.get("error", "Could not analyse the concept."))
+		_status.text = str(result.get("error", "Could not analyse the current concept."))
 		return
-	_tracked_jobs[str(result.get("job_id", ""))] = true
-	_status.text = "Concept analysis queued."
+	var job_id := str(result.get("job_id", ""))
+	_tracked_jobs[job_id] = true
+	var queued_ahead := int(result.get("queued_ahead", 0))
+	_status.text = "Concept analysis queued%s." % (" behind %d job(s)" % queued_ahead if queued_ahead > 0 else "")
 
 func _request_concept_apply() -> void:
 	_capture_visible_fields()
+	builder_state_changed.emit(_state.duplicate(true))
 	concept_apply_requested.emit(_state.duplicate(true))
 
 func _request_character_apply() -> void:
 	_capture_visible_fields()
+	builder_state_changed.emit(_state.duplicate(true))
 	character_apply_requested.emit(_state.duplicate(true), _overwrite_checkbox.button_pressed)
 
+func _update_completion() -> void:
+	if _completion_label != null:
+		_completion_label.text = "Builder %d%% complete" % CCFBuilderService.completion_percent(_state)
+
 func _current_step_id() -> String:
-	var steps := CCFBuilderService.steps()
-	if steps.is_empty():
+	var builder_steps := CCFBuilderService.steps()
+	if builder_steps.is_empty():
 		return "foundation"
-	return str(steps[clampi(_current_step_index, 0, steps.size() - 1)].get("id", "foundation"))
+	var safe_index := clampi(_current_step_index, 0, builder_steps.size() - 1)
+	return str(builder_steps[safe_index].get("id", "foundation"))
 
 func _step_index_for_id(step_id: String) -> int:
-	var steps := CCFBuilderService.steps()
-	for index in range(steps.size()):
-		if str(steps[index].get("id", "")) == step_id:
-			return index
+	var builder_steps := CCFBuilderService.steps()
+	for step_index in range(builder_steps.size()):
+		var builder_step = builder_steps[step_index]
+		if builder_step is Dictionary and str(builder_step.get("id", "")) == step_id:
+			return step_index
 	return 0
-
-func _update_navigation_buttons() -> void:
-	var step_count := CCFBuilderService.steps().size()
-	_previous_button.disabled = _current_step_index <= 0
-	_next_button.disabled = _current_step_index >= step_count - 1
-	for index in range(_step_buttons.size()):
-		_step_buttons[index].disabled = index == _current_step_index
-
-func _update_completion() -> void:
-	_completion_label.text = "Builder %d%% complete" % CCFBuilderService.completion_percent(_state)
 
 func _generation_settings() -> Dictionary:
 	var generation = _settings.get("generation", {})
@@ -549,23 +593,30 @@ func _hide_builder() -> void:
 	builder_state_changed.emit(_state.duplicate(true))
 	hide()
 
+func _parse_tags(text: String) -> Array[String]:
+	var tags: Array[String] = []
+	for tag_part in text.split(",", false):
+		var clean_tag := tag_part.strip_edges()
+		if not clean_tag.is_empty() and not tags.has(clean_tag):
+			tags.append(clean_tag)
+	return tags
+
+func _value_to_text(value: Variant) -> String:
+	if value is Array:
+		var parts: Array[String] = []
+		for item in value:
+			var clean_item := str(item).strip_edges()
+			if not clean_item.is_empty():
+				parts.append(clean_item)
+		var result := ""
+		for part_index in range(parts.size()):
+			if part_index > 0:
+				result += ", "
+			result += parts[part_index]
+		return result
+	return str(value)
+
 func _clear_children(node: Node) -> void:
 	for child in node.get_children():
 		node.remove_child(child)
 		child.queue_free()
-
-func _parse_tags(value: String) -> Array[String]:
-	var result: Array[String] = []
-	for token in value.replace("\n", ",").split(",", false):
-		var clean := token.strip_edges()
-		if not clean.is_empty() and not result.has(clean):
-			result.append(clean)
-	return result
-
-func _join_values(values: Array, separator: String) -> String:
-	var result := ""
-	for index in range(values.size()):
-		if index > 0:
-			result += separator
-		result += str(values[index])
-	return result
