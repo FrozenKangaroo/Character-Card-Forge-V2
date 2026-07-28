@@ -66,12 +66,7 @@ Per-field provenance can be added later if a workflow needs finer precedence ins
 
 Using Builder state during **Generate Character** does not directly copy Builder fields into Character Card fields. It influences the generation request, whose result still goes through semantic validation and Generation Preview.
 
-**Apply to Character** remains the explicit direct-projection action.
-
-The Builder UI now explains this distinction:
-
-- **Generate Character** uses non-empty Builder values as planning guidance.
-- **Apply to Character** directly transfers Builder projections into card/workspace fields.
+**Apply to Character** remains the explicit direct-projection action. In other words, Builder state can now guide normal generation even when the user has not first projected the scratchpad directly into Description, Personality, Scenario, name, tags, or Concept.
 
 ## Description projection correction
 
