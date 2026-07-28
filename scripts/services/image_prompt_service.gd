@@ -25,8 +25,8 @@ const LOCATION_TAGS := [
 	"train carriage",
 	"train interior",
 	"bus stop",
-	"street",
 	"city street",
+	"street",
 	"park",
 	"beach",
 	"hotel room",
@@ -71,8 +71,8 @@ const VISIBLE_OBJECT_TAGS := [
 	"blackboard",
 	"whiteboard",
 	"windows",
-	"books",
 	"bookshelves",
+	"books",
 	"laptop",
 	"phone",
 	"train",
@@ -81,6 +81,17 @@ const VISIBLE_OBJECT_TAGS := [
 	"streetlights",
 	"neon signs",
 	"flowers"
+]
+
+const WEAK_STANDALONE_TAGS := [
+	"long",
+	"bright",
+	"simple",
+	"small",
+	"thin",
+	"natural",
+	"especially",
+	"paired"
 ]
 
 
@@ -116,8 +127,7 @@ static func _build_sd_prompt(
 	_append_unique(visual_tags, "solo")
 	_append_unique(visual_tags, "character focus")
 
-	var age_text := str(components.get("age", "")).strip_edges()
-	var age_tag := _age_tag(age_text)
+	var age_tag := _age_tag(str(components.get("age", "")))
 	if not age_tag.is_empty():
 		_append_unique(visual_tags, age_tag)
 
@@ -138,6 +148,7 @@ static func _build_sd_prompt(
 	for tag in _extra_visual_tags(extra_direction):
 		_append_unique(visual_tags, tag)
 
+	# Subject/solo/focus alone are not enough information to invent a portrait.
 	if visual_tags.size() <= 3:
 		return ""
 	_append_unique(visual_tags, "detailed face")
@@ -191,7 +202,12 @@ static func scene_visual_tags(scenario: String) -> Array[String]:
 
 	if lower.contains("sunset") or lower.contains("golden hour"):
 		_append_unique(tags, "warm golden-hour lighting")
-		_append_unique(tags, "sunset light through windows" if lower.contains("window") or lower.contains("classroom") else "warm sunset lighting")
+		_append_unique(
+			tags,
+			"sunset light through windows"
+			if lower.contains("window") or lower.contains("classroom")
+			else "warm sunset lighting"
+		)
 	elif lower.contains("sunrise"):
 		_append_unique(tags, "soft sunrise lighting")
 	elif lower.contains("night") or lower.contains("midnight"):
@@ -235,9 +251,10 @@ static func _age_tag(age_text: String) -> String:
 	if clean.is_empty():
 		return ""
 	var digits := ""
-	for character in clean:
-		if str(character).is_valid_int():
-			digits += str(character)
+	for index in range(clean.length()):
+		var character := clean.substr(index, 1)
+		if character.is_valid_int():
+			digits += character
 		elif not digits.is_empty():
 			break
 	if not digits.is_empty():
@@ -257,81 +274,97 @@ static func _subject_tag(description: String) -> String:
 
 
 static func _prose_to_visual_tags(text: String, character_name: String) -> Array[String]:
-	var prepared := text.replace("\n", " ")
+	var prepared := text.to_lower().replace("\n", " ")
+	var name_lower := character_name.strip_edges().to_lower()
+	if not name_lower.is_empty() and name_lower != "untitled character":
+		prepared = prepared.replace(name_lower + " has ", "")
+		prepared = prepared.replace(name_lower + " is ", "")
+		prepared = prepared.replace(name_lower + " wears ", "")
+
+	# Turn common descriptive prose into short independent visual phrases before
+	# splitting. This is intentionally conservative: anything uncertain remains
+	# editable in Image Studio instead of sending narrative/card prose to Forge.
+	for pair in [
+		[" falls past her shoulders", ", past-shoulder length hair"],
+		[" falls past his shoulders", ", past-shoulder length hair"],
+		[" falls to her waist", ", waist-length hair"],
+		[" falls to his waist", ", waist-length hair"],
+		[" framing a face with ", ", "],
+		[" often curve into ", ", "],
+		[" often curves into ", ", "],
+		[" curves into ", ", "],
+		[" paired with ", ", "],
+		[" rests just below her collarbone", ""],
+		[" rests just below his collarbone", ""],
+		[" are painted ", " "],
+		[" is painted ", " "],
+		[" glows naturally", ""],
+		[" is visible ", " "],
+		[" with an especially ", ", "],
+		[" with a ", ", "],
+		[" with ", ", "],
+		[" and ", ", "]
+	]:
+		prepared = prepared.replace(str(pair[0]), str(pair[1]))
 	prepared = prepared.replace(";", ",").replace(". ", ", ").replace(".", ",")
-	prepared = prepared.replace(" falls past her shoulders", ", past-shoulder length hair")
-	prepared = prepared.replace(" falls past his shoulders", ", past-shoulder length hair")
-	prepared = prepared.replace(" falls to her waist", ", waist-length hair")
-	prepared = prepared.replace(" falls to his waist", ", waist-length hair")
-	prepared = prepared.replace(" framing a face with ", ", ")
-	prepared = prepared.replace(" glows naturally", "")
-	prepared = prepared.replace(" is visible ", " ")
 
 	var tags: Array[String] = []
 	for raw_fragment in prepared.split(",", false):
-		var fragment := _clean_visual_fragment(str(raw_fragment), character_name)
-		if fragment.is_empty():
-			continue
-		for sub_fragment in fragment.split(" and ", false):
-			var tag := _clean_visual_fragment(str(sub_fragment), character_name)
-			if not tag.is_empty():
-				_append_unique(tags, tag)
+		var tag := _clean_visual_fragment(str(raw_fragment))
+		if not tag.is_empty():
+			_append_unique(tags, tag)
 	return tags
 
 
-static func _clean_visual_fragment(fragment: String, character_name: String) -> String:
-	var value := fragment.strip_edges()
+static func _clean_visual_fragment(fragment: String) -> String:
+	var value := fragment.strip_edges().to_lower()
 	if value.is_empty():
 		return ""
-	var lower := value.to_lower()
-	for stop_phrase in [" that ", " which ", " when ", " while ", " because ", " so that "]:
-		var index := lower.find(stop_phrase)
-		if index >= 0:
-			value = value.left(index).strip_edges()
-			lower = value.to_lower()
 
-	var name_lower := character_name.strip_edges().to_lower()
-	var prefixes: Array[String] = []
-	if not name_lower.is_empty() and name_lower != "untitled character":
-		prefixes.append(name_lower + " has ")
-		prefixes.append(name_lower + " is ")
-		prefixes.append(name_lower + " wears ")
 	for prefix in [
-		"she has ", "she is ", "she wears ", "she sports ",
+		"and ", "she has ", "she is ", "she wears ", "she sports ",
 		"he has ", "he is ", "he wears ", "he sports ",
 		"they have ", "they are ", "they wear ",
-		"her ", "his ", "their "
+		"her ", "his ", "their ",
+		"most striking feature is ", "most distinctive feature is ", "striking feature is "
 	]:
-		prefixes.append(prefix)
-	for prefix in prefixes:
-		if lower.begins_with(prefix):
+		if value.begins_with(prefix):
 			value = value.substr(prefix.length()).strip_edges()
-			lower = value.to_lower()
 			break
+	# A prose phrase may expose another removable prefix after the first one.
+	for prefix in ["her ", "his ", "their ", "a ", "an ", "the "]:
+		if value.begins_with(prefix):
+			value = value.substr(prefix.length()).strip_edges()
+			break
+
+	for stop_phrase in [" that ", " which ", " when ", " while ", " because ", " so that "]:
+		var stop_index := value.find(stop_phrase)
+		if stop_index >= 0:
+			value = value.left(stop_index).strip_edges()
 
 	for rejected in [
 		"asks ", "wants ", "feels ", "thinks ", "believes ", "remembers ",
-		"habitually ", "usually fidgets", "often fidgets", "relationship", "boyfriend",
-		"girlfriend", "cheating", "motivation", "reason is"
+		"fidgets", "draws attention", "relationship", "boyfriend", "girlfriend",
+		"cheating", "motivation", "reason is", "nervous", "habitually"
 	]:
-		if lower.contains(rejected):
+		if value.contains(rejected):
 			return ""
 
 	value = value.replace("especially ", "").replace("naturally ", "")
-	value = value.replace("a pair of ", "").replace("an especially ", "")
-	value = value.replace("the ", "") if value.to_lower().begins_with("the ") else value
-	value = value.strip_edges().trim_prefix("a ").trim_prefix("an ")
+	value = value.replace("pair of ", "")
+	value = value.strip_edges()
 	while value.ends_with(".") or value.ends_with(","):
 		value = value.left(value.length() - 1).strip_edges()
-	if value.is_empty():
+	if value.is_empty() or WEAK_STANDALONE_TAGS.has(value):
 		return ""
+
 	var words := value.split(" ", false)
-	if words.size() > 12:
+	if words.size() > 10:
 		var shortened: Array[String] = []
-		for index in range(12):
+		for index in range(10):
 			shortened.append(str(words[index]))
 		value = " ".join(shortened)
-	return value.to_lower()
+	return value
 
 
 static func _extra_visual_tags(extra_direction: String) -> Array[String]:
