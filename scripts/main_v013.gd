@@ -1,13 +1,78 @@
 extends "res://scripts/main_with_image_page.gd"
 
-const BUILD_DISPLAY_VERSION := "0.13.2"
+const BUILD_DISPLAY_VERSION := "0.13.3"
+
+
+func _build_image_generation_window() -> void:
+	_image_generation_window = CCFImageGenerationControllerV0133.new()
+	_image_generation_window.visible = false
+	_image_generation_window.title = "Character Card Forge — Image Generation Studio"
+	_image_generation_window.size = Vector2i(1180, 820)
+	_image_generation_window.min_size = Vector2i(920, 650)
+	_image_generation_window.force_native = true
+	_image_generation_window.transient = true
+	_image_generation_window.exclusive = false
+	_image_generation_window.project_changed.connect(_on_image_project_changed)
+	add_child(_image_generation_window)
+	_image_generation_window.hide()
 
 
 func _ready() -> void:
 	super._ready()
+	_install_workspace_v0133()
 	_install_v013_template_manager()
 	_install_generation_parity_service()
 	_update_build_version_label()
+
+
+func _install_workspace_v0133() -> void:
+	if _content == null or _workspace is CCFWorkspaceV0133View:
+		return
+	var previous_workspace: CCFWorkspaceView = _workspace
+	var should_be_visible := _current_view == "workspace"
+	if previous_workspace != null:
+		if previous_workspace.project_saved.is_connected(_on_project_saved):
+			previous_workspace.project_saved.disconnect(_on_project_saved)
+		if previous_workspace.library_requested.is_connected(_show_library_from_workspace):
+			previous_workspace.library_requested.disconnect(_show_library_from_workspace)
+		if previous_workspace.settings_requested.is_connected(_show_settings_from_workspace):
+			previous_workspace.settings_requested.disconnect(_show_settings_from_workspace)
+		if previous_workspace.template_manager_requested.is_connected(_show_templates_from_workspace):
+			previous_workspace.template_manager_requested.disconnect(_show_templates_from_workspace)
+		if previous_workspace.series_manager_requested.is_connected(_show_series_from_workspace):
+			previous_workspace.series_manager_requested.disconnect(_show_series_from_workspace)
+		if previous_workspace.project_imported.is_connected(_on_project_imported):
+			previous_workspace.project_imported.disconnect(_on_project_imported)
+		if previous_workspace.get_parent() == _content:
+			_content.remove_child(previous_workspace)
+		previous_workspace.queue_free()
+
+	var upgraded := CCFWorkspaceV0133View.new()
+	upgraded.visible = should_be_visible
+	upgraded.project_saved.connect(_on_project_saved)
+	upgraded.library_requested.connect(_show_library_from_workspace)
+	upgraded.settings_requested.connect(_show_settings_from_workspace)
+	upgraded.template_manager_requested.connect(_show_templates_from_workspace)
+	upgraded.series_manager_requested.connect(_show_series_from_workspace)
+	upgraded.project_imported.connect(_on_project_imported)
+	_workspace = upgraded
+	_content.add_child(upgraded)
+
+
+func _show_library_from_workspace() -> void:
+	_show_view("library")
+
+
+func _show_settings_from_workspace() -> void:
+	_show_view("settings")
+
+
+func _show_templates_from_workspace() -> void:
+	_show_view("templates")
+
+
+func _show_series_from_workspace() -> void:
+	_show_view("series")
 
 
 func _install_v013_template_manager() -> void:
@@ -47,14 +112,14 @@ func _install_generation_parity_service() -> void:
 	if _workspace == null:
 		return
 	var current_service: CCFGenerationService = _workspace._generation_service
-	if current_service is CCFBuilderPrecedenceGenerationService:
+	if current_service is CCFModeStyleGenerationService:
 		return
 	if current_service != null:
 		_disconnect_workspace_generation_signals(current_service)
 		if current_service.get_parent() == _workspace:
 			_workspace.remove_child(current_service)
 		current_service.queue_free()
-	var parity_service := CCFBuilderPrecedenceGenerationService.new()
+	var parity_service := CCFModeStyleGenerationService.new()
 	_workspace._generation_service = parity_service
 	_workspace.add_child(parity_service)
 	parity_service.job_started.connect(_workspace._on_job_started)
