@@ -1,6 +1,6 @@
 extends "res://scripts/main_with_image_page.gd"
 
-const BUILD_DISPLAY_VERSION := "0.13.3-hotfix1"
+const BUILD_DISPLAY_VERSION := "0.13.3-hotfix2"
 
 
 func _build_image_generation_window() -> void:

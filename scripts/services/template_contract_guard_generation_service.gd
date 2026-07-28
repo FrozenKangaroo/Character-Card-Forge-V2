@@ -5,6 +5,47 @@ const TEMPLATE_STRUCTURE_RULE := "The active template generation contract is aut
 const STRUCTURE_REPAIR_MARKER := "TEMPLATE STRUCTURE REPAIR RULE — mandatory:"
 
 
+# v0.13.3 introduced a helper-name collision: CCFModeStyleGenerationService defined
+# _decorate_character_job(), which unintentionally overrode the parity service helper
+# that attaches the semantic generation contract. Route both dictionary shapes here so
+# the parent chain can keep its existing API while contract metadata is never lost.
+func _decorate_character_job(job_id: String, value: Dictionary) -> void:
+	if value.has("required_fields") and value.has("field_rules"):
+		_decorate_generation_contract(job_id, value)
+		return
+	super._decorate_character_job(job_id, value)
+
+
+func _decorate_generation_contract(job_id: String, contract: Dictionary) -> void:
+	var contract_text := CCFGenerationContractService.prompt_text(contract)
+	for index in range(_queue.size()):
+		var job: Dictionary = _queue[index]
+		if str(job.get("id", "")) != job_id:
+			continue
+		job["semantic_repair_attempts"] = 0
+		var metadata_value: Variant = job.get("metadata", {})
+		var metadata: Dictionary = metadata_value.duplicate(true) if metadata_value is Dictionary else {}
+		metadata["generation_contract"] = contract.duplicate(true)
+		metadata["generation_contract_attached"] = true
+		job["metadata"] = metadata
+		job["payload"] = _payload_with_contract(job.get("payload", {}), contract_text)
+		_queue[index] = job
+		return
+
+	if str(_active_job.get("id", "")) == job_id:
+		_active_job["semantic_repair_attempts"] = 0
+		var active_metadata_value: Variant = _active_job.get("metadata", {})
+		var active_metadata: Dictionary = (
+			active_metadata_value.duplicate(true) if active_metadata_value is Dictionary else {}
+		)
+		active_metadata["generation_contract"] = contract.duplicate(true)
+		active_metadata["generation_contract_attached"] = true
+		_active_job["metadata"] = active_metadata
+		_active_job["payload"] = _payload_with_contract(
+			_active_job.get("payload", {}), contract_text
+		)
+
+
 func _process_completed_content(content: String) -> void:
 	if _active_job.is_empty() or str(_active_job.get("type", "")) != "character":
 		super._process_completed_content(content)
@@ -17,34 +58,43 @@ func _process_completed_content(content: String) -> void:
 		super._process_completed_content(content)
 		return
 
+	var metadata_value: Variant = _active_job.get("metadata", {})
+	var metadata: Dictionary = (
+		metadata_value.duplicate(true) if metadata_value is Dictionary else {}
+	)
+	var contract_value: Variant = metadata.get("generation_contract", {})
+	if not contract_value is Dictionary or contract_value.is_empty():
+		metadata["template_contract_blocked_preview"] = true
+		metadata["template_contract_missing"] = true
+		_active_job["metadata"] = metadata
+		_handle_failure(
+			"Character generation could not continue because the active template contract was not attached to the generation job. Nothing was offered for application. This is an internal generation-pipeline error, not a problem with the character template.",
+			false
+		)
+		return
+
 	var parse_mode := str(_active_job.get("parse_mode", "object"))
 	var parse_result: Dictionary = _parse_job_output_with_diagnostics(content, parse_mode)
 	if bool(parse_result.get("ok", false)):
 		var parsed_value: Variant = parse_result.get("data")
 		if parsed_value is Dictionary:
-			var metadata_value: Variant = _active_job.get("metadata", {})
-			var metadata: Dictionary = (
-				metadata_value.duplicate(true) if metadata_value is Dictionary else {}
+			var report := CCFGenerationContractService.validate_generated_data(
+				parsed_value, contract_value
 			)
-			var contract_value: Variant = metadata.get("generation_contract", {})
-			if contract_value is Dictionary and not contract_value.is_empty():
-				var report := CCFGenerationContractService.validate_generated_data(
-					parsed_value, contract_value
+			var semantic_attempts := int(_active_job.get("semantic_repair_attempts", 0))
+			if not bool(report.get("ok", false)) and semantic_attempts >= 1:
+				metadata["generation_contract_report"] = report.duplicate(true)
+				metadata["semantic_repair_attempts"] = semantic_attempts
+				metadata["semantic_repair_used"] = true
+				metadata["template_contract_blocked_preview"] = true
+				_active_job["metadata"] = metadata
+				var details := CCFGenerationContractService.repair_instructions(report)
+				_handle_failure(
+					"Character generation still did not satisfy the active template after the bounded repair pass. Nothing was offered for application, so the template structure was preserved.\n\n%s"
+					% details,
+					false
 				)
-				var semantic_attempts := int(_active_job.get("semantic_repair_attempts", 0))
-				if not bool(report.get("ok", false)) and semantic_attempts >= 1:
-					metadata["generation_contract_report"] = report.duplicate(true)
-					metadata["semantic_repair_attempts"] = semantic_attempts
-					metadata["semantic_repair_used"] = true
-					metadata["template_contract_blocked_preview"] = true
-					_active_job["metadata"] = metadata
-					var details := CCFGenerationContractService.repair_instructions(report)
-					_handle_failure(
-						"Character generation still did not satisfy the active template after the bounded repair pass. Nothing was offered for application, so the template structure was preserved.\n\n%s"
-						% details,
-						false
-					)
-					return
+				return
 
 	super._process_completed_content(content)
 
