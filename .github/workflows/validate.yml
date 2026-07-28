@@ -36,3 +36,6 @@ jobs:
 
       - name: Import and parse the Godot project
         run: godot --headless --path . --import
+
+      - name: Test generation contract dispatch
+        run: godot --headless --path . --script res://tools/test_generation_contract_dispatch.gd
