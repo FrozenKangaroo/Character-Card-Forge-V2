@@ -2,7 +2,7 @@
 
 v0.13.1 adds a V1-inspired private planning interview before full-character generation.
 
-The interview is not another Character Card output format. Its answers exist only as temporary planning context inside the active generation job and are not applied to the project or exported as card fields.
+The interview is not another Character Card output format. Automatically generated answers exist only as temporary planning context inside the active generation job and are not applied to the project or exported as card fields.
 
 ## Generation flow
 
@@ -48,9 +48,27 @@ The current default asks about:
 
 These questions are intended to make the model resolve useful connective character details before it has to write all card fields at once.
 
+## Viewing and editing interview questions
+
+Template Manager exposes the bundled interview as a visible **Interview / Q&A** section even when the underlying template is currently inheriting `data/generation_interviews/default.json`.
+
+For the built-in Default template the inherited section is read-only, just like the rest of that template. Duplicate Default to customise it.
+
+For a user template that does not yet define an Interview / Q&A section, Template Manager displays the inherited bundled questions as editable template data. Changing the questions and pressing **Save Template** stores that Interview / Q&A section explicitly in the user template. From then on, that template uses its saved questions instead of the bundled fallback.
+
+The normal Sections and Fields editor is the interview editor:
+
+- add/remove/reorder question fields in the Interview / Q&A section;
+- edit the field label to change its human-readable name;
+- edit **Per-field AI instruction / interview question** to change the actual planning question;
+- toggle **AI may generate this field** to enable or disable that question;
+- toggle **Required field** to decide whether a missing answer blocks full generation.
+
+Interview fields are also ordinary planning fields in a saved custom template, so a user may type an answer manually in the character workspace. A non-empty manual answer becomes authoritative planning context and is not re-asked by the automatic interview.
+
 ## Template-defined Interview / Q&A sections
 
-Template Manager already supports the **Interview / Q&A** section kind. v0.13.1 gives that kind a specific role during full-character generation.
+Template Manager supports the **Interview / Q&A** section kind. v0.13.1 gives that kind a specific role during full-character generation.
 
 When at least one Interview / Q&A section exists, its AI-generatable fields replace the bundled default questions.
 
@@ -88,7 +106,7 @@ AI-generated interview answers are intentionally ephemeral:
 
 The completed answers are appended to the full-character request under an explicit **PRIVATE PRE-GENERATION INTERVIEW NOTES** block. The model is told to use them as planning context, not to copy the question/answer framing into the card or mention that an interview occurred.
 
-Manually entered values in a custom Interview / Q&A workspace field remain ordinary project data because the user entered them deliberately. The automatic AI answers do not overwrite those fields.
+Manually entered values in an Interview / Q&A workspace field remain ordinary project data because the user entered them deliberately. The automatic AI answers do not overwrite those fields.
 
 ## Interaction with generation components
 
@@ -108,4 +126,4 @@ concept → interview planning → structured generation → semantic validation
 
 No project-format or template-format bump is required for this slice.
 
-Older templates with no Interview / Q&A sections use the bundled default interview. Existing Interview / Q&A sections become private planning definitions for full-character generation, while their workspace fields remain available for manual planning notes and per-field AI suggestions.
+Older templates with no Interview / Q&A sections continue to use the bundled default interview. Template Manager now surfaces that inherited interview so it is no longer invisible. Existing Interview / Q&A sections remain private planning definitions for full-character generation, while their workspace fields remain available for manual planning notes and per-field AI suggestions.
