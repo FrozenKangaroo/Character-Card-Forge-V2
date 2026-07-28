@@ -27,11 +27,11 @@ The existing PyWebView application remains a feature and behaviour reference, no
 
 ## Current Development Phase
 
-**v0.13.1 development candidate — Generation Parity Core / Private Interview**
+**v0.13.2 development candidate — Generation Parity Core / Builder Context Precedence**
 
-The v0.12 source milestone is already merged into `main`: it contains expanded image generation, separated image providers, and Generation Parity Phase 1. v0.13 moves parity into the generation engine, makes V1-style structured Description/Personality expectations editable template data, and now adds a bounded private planning interview before full-card generation.
+The v0.12 source milestone is already merged into `main`: it contains expanded image generation, separated image providers, and Generation Parity Phase 1. v0.13 moves parity into the generation engine, makes V1-style structured Description/Personality expectations editable template data, adds a bounded private planning interview, and now defines how accepted Builder guidance participates in the same planning pipeline.
 
-The running development build displays **v0.13.1**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
+The running development build displays **v0.13.2**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
 
 The current v0.13 candidate now includes:
 
@@ -54,11 +54,16 @@ The current v0.13 candidate now includes:
 - a private pre-generation interview before full-character generation;
 - a bundled default interview covering identity, motivation, inner conflict, `{{user}}` dynamic, boundaries, voice, visual anchors, opening hook, and an optional complication;
 - template-defined **Interview / Q&A** sections overriding the bundled interview when present;
+- inherited bundled questions surfaced in Template Manager so they can be viewed and duplicated/customised rather than remaining hidden runtime data;
 - existing non-empty Interview / Q&A workspace values treated as manual planning answers rather than replaced;
 - required-answer completeness checking and up to two targeted retries containing only still-missing required answers;
 - clean failure before full-card generation when required planning answers remain missing after the bounded retries;
 - completed interview answers fed into final generation as ephemeral private planning context rather than card output or persisted completion metadata;
-- visible cancellable queue stages for planning, missing-answer completion, full generation, and semantic repair.
+- visible cancellable queue stages for planning, missing-answer completion, full generation, and semantic repair;
+- explicit character-planning precedence: source concept → manual Interview/Q&A → current Builder guidance → AI-inferred interview notes → existing card values/generic inference;
+- non-empty Builder state fed into the private interview, missing-answer retries, full generation, and semantic repair rather than remaining isolated from Generate Character;
+- compact Builder participation diagnostics stored in generation metadata without duplicating the raw Builder scratchpad;
+- direct Builder projection aligned with parity semantics so Character Card Description receives physical Appearance rather than role/backstory/skills/secrets/boundaries.
 
 ## Completed
 
@@ -143,28 +148,36 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Unsaved-change protection for the Generation Components editor.
 - Private pre-generation interview before full-character generation.
 - Bundled default interview when a template has no Interview / Q&A section.
+- Bundled/inherited Interview / Q&A visibility through Template Manager, with custom templates able to save their own edited question sets.
 - Template-defined interview questions using existing `interview` section fields and their AI/required settings.
 - Manual non-empty interview-field values respected as existing planning answers.
 - Required Q&A completeness checking and up to two targeted missing-answer retries.
 - Completed Q&A fed into full generation as private planning context without persisting AI answers as card/project output.
 - Queue status exposes interview planning and missing-answer retry stages.
+- Character-specific planning precedence: source concept > manual Interview/Q&A > Builder guidance > AI interview answers > existing card values/generic inference.
+- Current non-empty Builder state participates in interview planning, missing-answer retries, full generation, and semantic repair.
+- Builder participation metadata records only counts/precedence diagnostics rather than duplicating raw planning text.
+- Builder UI distinguishes scratchpad guidance used by Generate Character from direct **Apply to Character** projection.
+- Builder direct Description projection corrected to physical Appearance only; role, goals, backstory, skills, secrets, and behavioural boundaries remain on the Personality/lore side.
 - Existing Generation Preview remains the final review boundary.
 - Existing asynchronous queue/cancellation architecture remains authoritative.
 
 **Still in v0.13:**
 
-- Define builder/context precedence so explicit user-entered builder guidance outranks generic generation assumptions without silently rewriting unrelated facts.
 - Add conservative concept-fidelity diagnostics for supplied names/distinctive literal markers, with at most one stricter retry for clear drift.
 - Improve visible stages beyond the current queue labels: generation, fidelity check, validation, repair, ready for review.
-- Present interview, semantic validation, and repair diagnostics directly in Generation Preview.
+- Present interview, planning-precedence, semantic validation, and repair diagnostics directly in Generation Preview.
 - Expand configurable special contracts beyond the current component/minimum-length/marker foundations, including greeting counts and constrained sets where useful.
-- Test Q&A retries, component toggling, and semantic repair across real text backends and deliberately incomplete/low-token responses.
+- Test Q&A retries, Builder precedence, component toggling, and semantic repair across real text backends and deliberately incomplete/low-token responses.
+- Consider per-Builder-field provenance only if later workflows need to distinguish manual, preset, concept-extracted, and Builder-AI values inside the accepted scratchpad.
 
 ### Ongoing validation
 
 - Real-world testing across multiple OpenAI-compatible text backends.
 - Compare fresh characters against pre-parity V2 output, especially Description/Personality separation and concept fidelity.
 - Test the v0.13.1 interview → missing-answer retry → full generation → semantic repair sequence, including templates that override or disable the bundled interview.
+- Test v0.13.2 conflicts deliberately: concept versus manual Q&A, manual Q&A versus Builder guidance, Builder guidance versus AI-inferred interview answers, and semantic repair after those conflicts.
+- Confirm Builder **Apply to Character** no longer places backstory/skills/secrets/boundaries in physical Description.
 - Forge/Automatic1111 and OpenAI-compatible image batch testing.
 - Template format-2 → format-3 migration and custom generation-component testing.
 - Guided Builder, relationship, group/card workflow, import/export, large-library, series, attachments, vision, and `.ccfproject` interoperability testing.
@@ -173,7 +186,7 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 ### Remaining v0.13 Generation Parity Core
 
-Builder/context precedence is the next major parity slice, followed by conservative concept-fidelity retry, richer multi-stage progress, and Generation Preview diagnostics.
+Conservative concept-fidelity diagnostics/retry is the next major parity slice, followed by richer multi-stage progress and Generation Preview diagnostics.
 
 ### v0.14 — Image Workflow Expansion
 
@@ -206,7 +219,7 @@ Do this after the major generation, Q&A, image, import/export, and project workf
 - V1-style private Q&A completeness and targeted missing-answer retries. **Core implemented in v0.13.1 candidate.**
 - Conservative concept-fidelity validation/retry. **Planned for v0.13.**
 - Semantic completeness validation and targeted repair. **Initial core implemented in v0.13 candidate.**
-- Builder guidance precedence for full generation. **Planned for v0.13.**
+- Builder guidance precedence for full generation and semantic repair. **Core implemented in v0.13.2 candidate.**
 - V1-style Full/Lite/Compact-Lite or equivalent multi-pass strategies after the core contract is stable.
 - Section-by-section generation/continuation with per-stage progress, inspired by the later V1 beta workflow once its desired Godot behaviour is cleanly specified.
 - Configurable special formatting rules such as `<START>` counts, greeting counts, and constrained tag sets.

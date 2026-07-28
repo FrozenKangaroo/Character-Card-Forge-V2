@@ -1,6 +1,6 @@
 extends "res://scripts/main_with_image_page.gd"
 
-const BUILD_DISPLAY_VERSION := "0.13.1"
+const BUILD_DISPLAY_VERSION := "0.13.2"
 
 
 func _ready() -> void:
@@ -47,14 +47,14 @@ func _install_generation_parity_service() -> void:
 	if _workspace == null:
 		return
 	var current_service: CCFGenerationService = _workspace._generation_service
-	if current_service is CCFInterviewContextGenerationService:
+	if current_service is CCFBuilderPrecedenceGenerationService:
 		return
 	if current_service != null:
 		_disconnect_workspace_generation_signals(current_service)
 		if current_service.get_parent() == _workspace:
 			_workspace.remove_child(current_service)
 		current_service.queue_free()
-	var parity_service := CCFInterviewContextGenerationService.new()
+	var parity_service := CCFBuilderPrecedenceGenerationService.new()
 	_workspace._generation_service = parity_service
 	_workspace.add_child(parity_service)
 	parity_service.job_started.connect(_workspace._on_job_started)
