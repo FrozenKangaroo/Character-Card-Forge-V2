@@ -206,6 +206,10 @@ static func compose_concept(raw_state: Dictionary) -> String:
 static func compose_personality(raw_state: Dictionary) -> String:
 	var state := normalise_state(raw_state)
 	var lines: Array[String] = []
+	# Character Card Description is now physical/external only. Builder identity,
+	# history and capabilities therefore fold into Personality/lore-side content.
+	_append_labelled(lines, "Role / archetype", _text(state, "foundation.role"))
+	_append_labelled(lines, "Goals", _text(state, "foundation.goals"))
 	_append_labelled(lines, "Core traits", _value_text(CCFStorageService.get_value_at_path(state, "personality.traits", [])))
 	_append_labelled(lines, "Strengths", _value_text(CCFStorageService.get_value_at_path(state, "personality.strengths", [])))
 	_append_labelled(lines, "Flaws", _value_text(CCFStorageService.get_value_at_path(state, "personality.flaws", [])))
@@ -214,17 +218,16 @@ static func compose_personality(raw_state: Dictionary) -> String:
 	_append_labelled(lines, "Speech style", _text(state, "personality.speech_style"))
 	_append_labelled(lines, "Mannerisms", _text(state, "personality.mannerisms"))
 	_append_labelled(lines, "Relationship style", _text(state, "personality.relationship_style"))
+	_append_labelled(lines, "Backstory", _text(state, "background.backstory"))
+	_append_labelled(lines, "Skills / capabilities", _value_text(CCFStorageService.get_value_at_path(state, "background.skills", [])))
+	_append_labelled(lines, "Secrets / hidden complications", _text(state, "background.secrets"))
+	_append_labelled(lines, "Behavioural boundaries", _text(state, "background.boundaries"))
 	return _join_strings(lines, "\n\n")
 
 static func compose_description(raw_state: Dictionary) -> String:
 	var state := normalise_state(raw_state)
 	var lines: Array[String] = []
-	_append_labelled(lines, "Role", _text(state, "foundation.role"))
 	_append_labelled(lines, "Appearance", _text(state, "background.appearance"))
-	_append_labelled(lines, "Backstory", _text(state, "background.backstory"))
-	_append_labelled(lines, "Skills", _value_text(CCFStorageService.get_value_at_path(state, "background.skills", [])))
-	_append_labelled(lines, "Secrets", _text(state, "background.secrets"))
-	_append_labelled(lines, "Behavioural boundaries", _text(state, "background.boundaries"))
 	return _join_strings(lines, "\n\n")
 
 static func compose_scenario(raw_state: Dictionary) -> String:
