@@ -1,6 +1,6 @@
 extends "res://scripts/main_with_image_page.gd"
 
-const BUILD_DISPLAY_VERSION := "0.13.6"
+const BUILD_DISPLAY_VERSION := "0.13.7"
 
 
 func _build_image_generation_window() -> void:
@@ -73,7 +73,7 @@ func _install_settings_v0135() -> void:
 
 
 func _install_workspace_v0133() -> void:
-	if _content == null or _workspace is CCFWorkspaceV0136View:
+	if _content == null or _workspace is CCFWorkspaceV0137View:
 		return
 	var previous_workspace: CCFWorkspaceView = _workspace
 	var should_be_visible := _current_view == "workspace"
@@ -94,7 +94,7 @@ func _install_workspace_v0133() -> void:
 			_content.remove_child(previous_workspace)
 		previous_workspace.queue_free()
 
-	var upgraded := CCFWorkspaceV0136View.new()
+	var upgraded := CCFWorkspaceV0137View.new()
 	upgraded.visible = should_be_visible
 	upgraded.project_saved.connect(_on_project_saved)
 	upgraded.library_requested.connect(_show_library_from_workspace)
