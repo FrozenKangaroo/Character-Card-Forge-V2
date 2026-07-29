@@ -27,11 +27,11 @@ The existing PyWebView application remains a feature and behaviour reference, no
 
 ## Current Development Phase
 
-**v0.13.4 development candidate — Conservative Concept Fidelity**
+**v0.13.6 development candidate — Project Draft Lifecycle & Usability**
 
-The v0.12 source milestone is already merged into `main`: it contains expanded image generation, separated image providers, and Generation Parity Phase 1. v0.13 moves parity into the generation engine, makes V1-style structured Description/Personality expectations editable template data, adds a bounded private planning interview, defines Builder precedence, restores Mode & Style author intent, repairs the immediate Image Studio workflow problems discovered during runtime testing, and now adds a conservative concept-fidelity correction stage.
+The v0.12 source milestone is already merged into `main`: it contains expanded image generation, separated image providers, and Generation Parity Phase 1. v0.13 moves parity into the generation engine, makes V1-style structured Description/Personality expectations editable template data, adds a bounded private planning interview, defines Builder precedence, restores Mode & Style author intent, adds conservative concept-fidelity correction, and is now tightening project/character lifecycle and usability problems exposed by real runtime testing.
 
-The running development build displays **v0.13.4**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
+The running development build displays **v0.13.6**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
 
 The current v0.13 candidate now includes:
 
@@ -80,7 +80,16 @@ The current v0.13 candidate now includes:
 - deterministic Stable Diffusion tag-style prompt synthesis from physical Description content plus visually detectable Scenario setting/time/weather/lighting/objects;
 - natural-language image prompts restricted to visually useful character/setting information rather than Personality or hidden story explanation;
 - Auto image-prompt style resolving to SD tags for Forge/A1111 and natural language for OpenAI-compatible image providers;
-- Generate/Cancel moved into the upper Image Studio controls so the primary action cannot be pushed below the visible prompt workspace.
+- Generate/Cancel moved into the upper Image Studio controls so the primary action cannot be pushed below the visible prompt workspace;
+- V2 PNG export uses the active portrait automatically when available instead of always asking for another source image;
+- Character AI profiles expose separate Text and Vision model selections while retaining shared provider credentials where desired;
+- default Vision Analysis now keeps Character Card Description strictly physical/visual and no longer proposes Personality;
+- single-character project presentation and terminology now distinguish Character Projects from contained Characters more clearly;
+- new Character Projects begin as in-memory drafts instead of immediately creating empty Library entries;
+- empty added-character drafts are discarded before save rather than becoming repeated placeholder characters;
+- unnamed meaningful characters are blocked from being persisted under placeholder names;
+- unnamed projects automatically use the first name of the first real character, while an explicitly entered project name remains authoritative;
+- null AI proposals are filtered before Generation Preview so values such as `<null>` are not offered as real edits.
 
 ## Completed
 
@@ -189,6 +198,12 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Visual-only SD prompt synthesis plus Scenario-derived environment/time/lighting tags.
 - Raw Concept removal from automatic SD-prompt fallback behavior.
 - Always-visible Image Studio Generate/Cancel controls.
+- Portrait-backed Character Card V2 PNG export path.
+- Separate Text/Vision model selection for shared Character AI profiles.
+- Default Vision Analysis physical-only Description scope and no default Personality inference.
+- Character Project vs Character terminology/presentation cleanup.
+- In-memory new-project drafts, empty-character pruning, first-character project naming, and placeholder-name save protection.
+- Null AI proposal filtering before Generation Preview.
 - Existing Generation Preview remains the final review boundary.
 - Existing asynchronous queue/cancellation architecture remains authoritative.
 
@@ -214,6 +229,8 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Confirm Apply Selected persists accepted generation before immediately entering Image Studio.
 - Use the Lila-style regression fixture to confirm SD prompt building produces visual tags rather than `Age:/Appearance:/Outfit Style:` prose or relationship/motive text.
 - Confirm scenarios such as **university classroom at sunset** contribute environment/time/lighting tags without leaking nonvisual motivations or hidden relationship details.
+- Confirm default Vision Analysis keeps environment/pose information out of Description and filters null optional proposals.
+- Test draft lifecycle deliberately: empty new project → leave without Library entry; first named character → first save; empty added character → prune; manual project name → preserve.
 - Forge/Automatic1111 and OpenAI-compatible image batch testing.
 - Template format-2 → format-3 migration and custom generation-component testing.
 - Guided Builder, relationship, group/card workflow, import/export, large-library, series, attachments, vision, and `.ccfproject` interoperability testing.
@@ -222,11 +239,11 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 ### Remaining v0.13 Generation Parity Core
 
-Richer multi-stage progress and Generation Preview diagnostics are the next major parity slice now that conservative concept-fidelity correction is in place, followed by alternative greeting parity and eventual true split/multi-pass Lite/Compact Lite execution.
+Richer multi-stage progress and Generation Preview diagnostics are the next major parity slice once the current runtime usability regressions are settled, followed by alternative greeting parity and eventual true split/multi-pass Lite/Compact Lite execution.
 
 ### v0.14 — Image Workflow Expansion
 
-The immediate Image Studio correctness/usability repairs landed in the v0.13.3 candidate because they blocked normal character → portrait testing. The larger v0.14 expansion remains planned.
+The immediate Image Studio correctness/usability repairs landed during v0.13 because they blocked normal character → portrait testing. The larger v0.14 expansion remains planned.
 
 - Add image-to-image/reference-image generation where supported.
 - Allow generated images and managed visual attachments to become generation references without embedding binary data in JSON.
@@ -244,6 +261,8 @@ Do this after the major generation, Q&A, image, import/export, and project workf
 
 - Restore a full **Guided Manual** authoring mode inspired by V1, implemented on top of the same template, generation-component, output-binding, and project data model used everywhere else.
 - Expand the existing Builder foundation into richer Character, Personality, and Scene Builder workflows with stronger presets, manual guidance, optional AI assistance, review-first application, and integration with concept/Q&A context.
+- Perform a systematic V1 parity and authoring-UX audit to classify features as missing, relocated, evolved/replaced, partial, or intentionally retired before the final interface redesign.
+- Hide implementation-facing identifiers such as internal field/component IDs behind sensible automatic defaults and Advanced controls wherever users do not need to manage them directly.
 - Revisit Workspace information architecture once the final set of major workflows is known: use clearer tabs/pages/sections, reduce the current top-level button wall, and group related tools by task rather than historical implementation order.
 - Perform the larger visual-polish pass only after workflow hierarchy stabilises: spacing, typography, theme/identity, responsive layouts, high-density/ultrawide use, consistent controls, keyboard workflows, onboarding, and better empty/error/progress states.
 
@@ -278,7 +297,8 @@ Do this after the major generation, Q&A, image, import/export, and project workf
 
 - Relationship matrix generation/editing and relationship-aware context. **Foundation completed.**
 - Multi-character single-card planning, split-card batch planning, and group-card planning. **Foundations completed; final generation/export execution remains planned.**
-- Shared lore/deeper continuity and relationship visualisation/flowchart views.
+- Add a visual **Relationship Map** editor using draggable character cards, directional/named connections, selectable anchor points, and editor-only layout metadata while keeping relationship content independent of canvas geometry.
+- Shared lore/deeper continuity and additional relationship visualisation/flowchart views.
 
 ### Character Library 2.0
 
@@ -293,6 +313,7 @@ Do this after the major generation, Q&A, image, import/export, and project workf
 ### Vision and Attachments
 
 - Images as concept references and review-first analysis. **Foundation completed.**
+- Default concept-mode analysis should remain observational: physical Character Description only, with scene context kept outside Description and no automatic Personality inference. **Implemented in v0.13.5 hotfix.**
 - GIF frame selection, image URL references, native PDF text extraction, preprocessing/context refinement, and visual-reference handoff to v0.14 image workflows.
 
 ### Image Generation
@@ -352,6 +373,7 @@ This is intentionally planned after the generation/template/Q&A architecture has
 - Add recovery from interrupted writes, optional autosave/snapshots, async thumbnails, general cancellable tasks, structured logging/diagnostics, secure credential storage, additional authentication modes, UI script decomposition, and provider-adapter abstractions as diversity grows.
 - Keep generation validators/repair logic in reusable services rather than embedding V1 assumptions in workspace UI code.
 - Keep image-prompt synthesis separate from Character Card Description so prose-card semantics and provider-specific visual prompt formats do not collapse into one field again.
+- Add release-aware update checking against **published GitHub Releases/package assets only**, never repository source state. Update installation must remain explicitly user-approved, support staying on older versions, and eventually use safe download/verification/restart-helper/rollback mechanics rather than silently overwriting the running application.
 
 ## Polish
 
