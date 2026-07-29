@@ -2,7 +2,7 @@ extends SceneTree
 
 
 func _init() -> void:
-	var concept := "Lila is 23 years old with G-cup breasts. She says `No shortcuts` when challenged."
+	var concept := "Lila is a 23-year-old woman with G-cup breasts. She says `No shortcuts` when challenged."
 	var plan := CCFConceptFidelityService.build_plan(concept, "Lila")
 	var anchors_value: Variant = plan.get("anchors", [])
 	if not anchors_value is Array or anchors_value.size() < 3:
