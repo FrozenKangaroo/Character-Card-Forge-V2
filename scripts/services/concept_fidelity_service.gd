@@ -119,7 +119,7 @@ static func metadata_report(report: Dictionary, retry_attempts: int) -> Dictiona
 static func _append_age_anchors(anchors: Array[Dictionary], concept: String) -> void:
 	var seen: Dictionary = {}
 	var patterns := [
-		"(?i)\\b([1-9][0-9]{0,2})\\s*[- ]?\\s*years?\\s*old\\b",
+		"(?i)\\b([1-9][0-9]{0,2})\\s*[- ]?\\s*years?\\s*[- ]?\\s*old\\b",
 		"(?i)\\bage\\s*[:=]?\\s*([1-9][0-9]{0,2})\\b",
 		"(?i)\\b([1-9][0-9]{0,2})\\s*(?:yo|y/o)\\b"
 	]
@@ -304,7 +304,7 @@ static func _number_words(value: int) -> String:
 	if value < 20:
 		return ones[value]
 	var tens := ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
-	var tens_value := value / 10
+	var tens_value := int(floor(float(value) / 10.0))
 	var remainder := value % 10
 	if remainder == 0:
 		return tens[tens_value]
