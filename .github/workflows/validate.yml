@@ -42,3 +42,6 @@ jobs:
 
       - name: Test concept fidelity
         run: timeout 30s godot --headless --path . --script res://tools/test_concept_fidelity.gd
+
+      - name: Test project draft lifecycle
+        run: timeout 30s godot --headless --path . --script res://tools/test_project_lifecycle.gd
