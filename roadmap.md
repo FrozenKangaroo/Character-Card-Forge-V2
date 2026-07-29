@@ -27,11 +27,11 @@ The existing PyWebView application remains a feature and behaviour reference, no
 
 ## Current Development Phase
 
-**v0.13.3 development candidate — Mode & Style + Image Workflow Repair**
+**v0.13.4 development candidate — Conservative Concept Fidelity**
 
-The v0.12 source milestone is already merged into `main`: it contains expanded image generation, separated image providers, and Generation Parity Phase 1. v0.13 moves parity into the generation engine, makes V1-style structured Description/Personality expectations editable template data, adds a bounded private planning interview, defines Builder precedence, restores Mode & Style author intent, and repairs the immediate Image Studio workflow problems discovered during runtime testing.
+The v0.12 source milestone is already merged into `main`: it contains expanded image generation, separated image providers, and Generation Parity Phase 1. v0.13 moves parity into the generation engine, makes V1-style structured Description/Personality expectations editable template data, adds a bounded private planning interview, defines Builder precedence, restores Mode & Style author intent, repairs the immediate Image Studio workflow problems discovered during runtime testing, and now adds a conservative concept-fidelity correction stage.
 
-The running development build displays **v0.13.3**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
+The running development build displays **v0.13.4**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
 
 The current v0.13 candidate now includes:
 
@@ -39,6 +39,7 @@ The current v0.13 candidate now includes:
 - one targeted repair pass for valid-but-incomplete full-character results;
 - revalidation before Generation Preview;
 - repair diagnostics and a visible cancellable repair queue stage;
+- fail-closed template-contract protection and a regression test for the v0.13.3 Mode & Style decorator collision;
 - template format **3**, adding first-class `generation_groups` and generation components;
 - automatic loading/normalisation of older format-2 templates;
 - generation groups that bind many structured components into an existing interoperable card/workspace field rather than creating extra Character Card top-level fields;
@@ -69,6 +70,11 @@ The current v0.13 candidate now includes:
 - independent Writing Style, First Message Style, First Message Length, and greeting-specific custom instructions;
 - **Cinematic + Detailed** as the default opening behavior, targeting roughly 350–650 words, while Brief remains an explicit 60–160 word option;
 - Mode & Style guidance preserved through full generation and semantic repair;
+- conservative concept-fidelity plans built from high-confidence source markers after template validation;
+- supplied non-placeholder character names, explicit numeric ages, and distinctive cup-size measurements treated as critical fidelity markers;
+- quoted/backticked literal concept markers retained as advisory diagnostics without forcing automatic rewrites;
+- at most one stricter full-JSON concept-fidelity correction pass for clear critical drift, preserving source concept precedence, template structure, planning context, and Mode & Style;
+- compact fidelity metadata including retry use and any remaining clear drift rather than an unbounded retry loop;
 - Generation Preview **Apply Selected** now autosaves accepted generated fields immediately;
 - Image Studio automatic prompt building no longer falls back to raw Generation Concept prose;
 - deterministic Stable Diffusion tag-style prompt synthesis from physical Description content plus visually detectable Scenario setting/time/weather/lighting/objects;
@@ -107,7 +113,7 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 ### v0.9.x — Series and Release Infrastructure
 
-- Added versioned series bibles, Series Manager, categories/aliases/canon/visual/generation guidance, deterministic Auto Series, series-aware library tools, `.ccfseries`, export presets, GitHub Actions releases, semantic-version tooling, and release-helper infrastructure.
+- Added versioned series bibles, Series Manager, categories/aliases/canon/visual/generation guidance, deterministic Auto Series, categories, import/export, and portable packs.
 
 ### v0.8.x — Character Library 2.0
 
@@ -149,6 +155,7 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 - Semantic completeness validation and one bounded targeted repair pass.
 - Revalidation before review and repair diagnostics metadata.
+- Fail-closed template contract protection, including regression coverage for the v0.13.3 generation-contract dispatch bug.
 - Template format 3 with generation groups/components and backwards loading of format 2.
 - Explicit separation between normal workspace/output fields and structured generation components.
 - Editable output bindings from a generation group to an existing card/workspace field.
@@ -174,6 +181,10 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Writing Style plus independent First Message style/length/custom guidance.
 - Detailed cinematic greeting as the new default instead of universal short greetings.
 - Mode & Style participation in semantic repair.
+- Conservative concept-fidelity plans for supplied names, explicit numeric ages, distinctive cup-size literals, and advisory quoted markers.
+- One bounded concept-fidelity correction for clear critical drift after semantic/template validation.
+- Fidelity correction retains source concept precedence, planning context, Mode & Style, and the active template contract.
+- Fidelity metadata records marker counts, retry use, advisory misses, and remaining clear drift without unbounded retries.
 - Generation Preview Apply Selected autosave.
 - Visual-only SD prompt synthesis plus Scenario-derived environment/time/lighting tags.
 - Raw Concept removal from automatic SD-prompt fallback behavior.
@@ -183,13 +194,13 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 **Still in v0.13:**
 
-- Add conservative concept-fidelity diagnostics for supplied names/distinctive literal markers, with at most one stricter retry for clear drift.
 - Improve visible stages beyond the current queue labels: generation, fidelity check, validation, repair, ready for review.
-- Present interview, planning-precedence, Mode & Style, semantic validation, and repair diagnostics directly in Generation Preview.
+- Present interview, planning-precedence, Mode & Style, concept-fidelity, semantic validation, and repair diagnostics directly in Generation Preview.
 - Expand configurable special contracts beyond the current component/minimum-length/marker foundations, including greeting counts and constrained sets where useful.
 - Complete V1-equivalent split/multi-pass execution for Lite/Compact Lite rather than only density guidance.
 - Restore configurable alternative First Messages with per-alternative style/instructions and interoperable export where supported.
-- Test Q&A retries, Builder precedence, Mode & Style, component toggling, and semantic repair across real text backends and deliberately incomplete/low-token responses.
+- Test Q&A retries, Builder precedence, Mode & Style, component toggling, semantic repair, and concept-fidelity correction across real text backends and deliberately incomplete/low-token responses.
+- Consider expanding automatic concept-fidelity marker types only where runtime evidence shows they can remain high-confidence and avoid false-positive rewrites.
 - Consider per-Builder-field provenance only if later workflows need to distinguish manual, preset, concept-extracted, and Builder-AI values inside the accepted scratchpad.
 
 ### Ongoing validation
@@ -199,6 +210,7 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Test the v0.13.1 interview → missing-answer retry → full generation → semantic repair sequence, including templates that override or disable the bundled interview.
 - Test v0.13.2 conflicts deliberately: concept versus manual Q&A, manual Q&A versus Builder guidance, Builder guidance versus AI-inferred interview answers, and semantic repair after those conflicts.
 - Test v0.13.3 First Message modes deliberately: Detailed/Cinematic should be substantially fuller than earlier V2 output while Brief remains intentionally short.
+- Test v0.13.4 deliberate fidelity drift: supplied name changes, numeric age changes/omissions, explicit cup-size loss, equivalent written-out ages, and advisory quoted-marker omissions that must not trigger retries.
 - Confirm Apply Selected persists accepted generation before immediately entering Image Studio.
 - Use the Lila-style regression fixture to confirm SD prompt building produces visual tags rather than `Age:/Appearance:/Outfit Style:` prose or relationship/motive text.
 - Confirm scenarios such as **university classroom at sunset** contribute environment/time/lighting tags without leaking nonvisual motivations or hidden relationship details.
@@ -210,7 +222,7 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 ### Remaining v0.13 Generation Parity Core
 
-Conservative concept-fidelity diagnostics/retry is the next major parity slice, followed by richer multi-stage progress, Generation Preview diagnostics, alternative greeting parity, and eventual true split/multi-pass Lite/Compact Lite execution.
+Richer multi-stage progress and Generation Preview diagnostics are the next major parity slice now that conservative concept-fidelity correction is in place, followed by alternative greeting parity and eventual true split/multi-pass Lite/Compact Lite execution.
 
 ### v0.14 — Image Workflow Expansion
 
@@ -242,7 +254,7 @@ Do this after the major generation, Q&A, image, import/export, and project workf
 - Streaming text support where providers support it.
 - Generation components/output bindings and editable per-template semantic contracts. **Core implemented in v0.13 candidate; expand special contracts over time.**
 - V1-style private Q&A completeness and targeted missing-answer retries. **Core implemented in v0.13.1 candidate.**
-- Conservative concept-fidelity validation/retry. **Planned for v0.13.**
+- Conservative concept-fidelity validation/retry. **Core implemented in v0.13.4 candidate; expand marker types only when they remain high-confidence.**
 - Semantic completeness validation and targeted repair. **Initial core implemented in v0.13 candidate.**
 - Builder guidance precedence for full generation and semantic repair. **Core implemented in v0.13.2 candidate.**
 - V1-inspired Mode & Style controls and First Message length/style guidance. **Foundation implemented in v0.13.3 candidate.**
