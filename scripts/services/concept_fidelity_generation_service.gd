@@ -121,7 +121,7 @@ func _job_with_fidelity_plan(job_value: Dictionary, plan: Dictionary) -> Diction
 	var metadata_value: Variant = job.get("metadata", {})
 	var metadata: Dictionary = metadata_value.duplicate(true) if metadata_value is Dictionary else {}
 	var anchors_value: Variant = plan.get("anchors", [])
-	var anchor_count := anchors_value.size() if anchors_value is Array else 0
+	var anchor_count: int = anchors_value.size() if anchors_value is Array else 0
 	metadata["concept_fidelity_plan"] = {
 		"format_version": int(plan.get("format_version", CCFConceptFidelityService.FORMAT_VERSION)),
 		"anchor_count": anchor_count,
