@@ -45,3 +45,6 @@ jobs:
 
       - name: Test project draft lifecycle
         run: timeout 30s godot --headless --path . --script res://tools/test_project_lifecycle.gd
+
+      - name: Test generation diagnostics
+        run: timeout 30s godot --headless --path . --script res://tools/test_generation_diagnostics.gd
