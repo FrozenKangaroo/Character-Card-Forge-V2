@@ -41,4 +41,4 @@ jobs:
         run: godot --headless --path . --script res://tools/test_generation_contract_dispatch.gd
 
       - name: Test concept fidelity
-        run: godot --headless --path . --script res://tools/test_concept_fidelity.gd
+        run: timeout 30s godot --headless --path . --script res://tools/test_concept_fidelity.gd
