@@ -1,6 +1,6 @@
 extends "res://scripts/main_with_image_page.gd"
 
-const BUILD_DISPLAY_VERSION := "0.13.5"
+const BUILD_DISPLAY_VERSION := "0.13.6"
 
 
 func _build_image_generation_window() -> void:
@@ -73,7 +73,7 @@ func _install_settings_v0135() -> void:
 
 
 func _install_workspace_v0133() -> void:
-	if _content == null or _workspace is CCFWorkspaceV0135View:
+	if _content == null or _workspace is CCFWorkspaceV0136View:
 		return
 	var previous_workspace: CCFWorkspaceView = _workspace
 	var should_be_visible := _current_view == "workspace"
@@ -94,7 +94,7 @@ func _install_workspace_v0133() -> void:
 			_content.remove_child(previous_workspace)
 		previous_workspace.queue_free()
 
-	var upgraded := CCFWorkspaceV0135View.new()
+	var upgraded := CCFWorkspaceV0136View.new()
 	upgraded.visible = should_be_visible
 	upgraded.project_saved.connect(_on_project_saved)
 	upgraded.library_requested.connect(_show_library_from_workspace)
@@ -202,3 +202,25 @@ func _rebind_workspace_generation_clients(service: CCFGenerationService) -> void
 	for client in clients:
 		if client != null and client.has_method("set_generation_service"):
 			client.call("set_generation_service", service)
+
+
+func _create_new_character() -> void:
+	var project := CCFStorageService.new_project()
+	var metadata: Dictionary = project.get("metadata", {}).duplicate(true)
+	metadata["name"] = ""
+	metadata["name_is_manual"] = false
+	project["metadata"] = metadata
+	var characters: Array = project.get("characters", []).duplicate(true)
+	if not characters.is_empty() and characters[0] is Dictionary:
+		var first_character: Dictionary = characters[0].duplicate(true)
+		var character_metadata: Dictionary = first_character.get("metadata", {}).duplicate(true)
+		var card: Dictionary = first_character.get("character", {}).duplicate(true)
+		character_metadata["name"] = ""
+		card["name"] = ""
+		first_character["metadata"] = character_metadata
+		first_character["character"] = card
+		characters[0] = first_character
+		project["characters"] = characters
+	_workspace.load_project(project, CCFTemplateService.load_default_template(), _settings)
+	_show_view("workspace")
+	_global_status.text = "New Character Project draft — it will appear in the Library after its first real character is saved."
