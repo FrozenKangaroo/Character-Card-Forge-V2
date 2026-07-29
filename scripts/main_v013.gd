@@ -1,6 +1,6 @@
 extends "res://scripts/main_with_image_page.gd"
 
-const BUILD_DISPLAY_VERSION := "0.13.4"
+const BUILD_DISPLAY_VERSION := "0.13.5"
 
 
 func _build_image_generation_window() -> void:
@@ -19,14 +19,61 @@ func _build_image_generation_window() -> void:
 
 func _ready() -> void:
 	super._ready()
+	_install_library_v0135()
+	_install_settings_v0135()
 	_install_workspace_v0133()
 	_install_v013_template_manager()
 	_install_generation_parity_service()
 	_update_build_version_label()
 
 
+func _install_library_v0135() -> void:
+	if _content == null or _library is CCFLibraryV0135View:
+		return
+	var previous_library: CCFLibraryView = _library
+	var should_be_visible := _current_view == "library"
+	if previous_library != null:
+		if previous_library.new_character_requested.is_connected(_create_new_character):
+			previous_library.new_character_requested.disconnect(_create_new_character)
+		if previous_library.open_project_requested.is_connected(_open_project):
+			previous_library.open_project_requested.disconnect(_open_project)
+		if previous_library.project_changed.is_connected(_refresh_home_and_library):
+			previous_library.project_changed.disconnect(_refresh_home_and_library)
+		if previous_library.get_parent() == _content:
+			_content.remove_child(previous_library)
+		previous_library.queue_free()
+	var upgraded := CCFLibraryV0135View.new()
+	upgraded.visible = should_be_visible
+	upgraded.new_character_requested.connect(_create_new_character)
+	upgraded.open_project_requested.connect(_open_project)
+	upgraded.project_changed.connect(_refresh_home_and_library)
+	_library = upgraded
+	_content.add_child(upgraded)
+	if should_be_visible:
+		upgraded.refresh_projects()
+
+
+func _install_settings_v0135() -> void:
+	if _content == null or _settings_view is CCFSettingsV0135View:
+		return
+	var previous_settings: CCFSettingsView = _settings_view
+	var should_be_visible := _current_view == "settings"
+	if previous_settings != null:
+		if previous_settings.settings_saved.is_connected(_on_settings_saved):
+			previous_settings.settings_saved.disconnect(_on_settings_saved)
+		if previous_settings.get_parent() == _content:
+			_content.remove_child(previous_settings)
+		previous_settings.queue_free()
+	var upgraded := CCFSettingsV0135View.new()
+	upgraded.visible = should_be_visible
+	upgraded.settings_saved.connect(_on_settings_saved)
+	_settings_view = upgraded
+	_content.add_child(upgraded)
+	upgraded.load_settings(_settings)
+
+
 func _install_workspace_v0133() -> void:
-	if _content == null or _workspace is CCFWorkspaceV0133View:
+	if _content == null or _workspace is CCFWorkspaceV0135View:
 		return
 	var previous_workspace: CCFWorkspaceView = _workspace
 	var should_be_visible := _current_view == "workspace"
@@ -47,7 +94,7 @@ func _install_workspace_v0133() -> void:
 			_content.remove_child(previous_workspace)
 		previous_workspace.queue_free()
 
-	var upgraded := CCFWorkspaceV0133View.new()
+	var upgraded := CCFWorkspaceV0135View.new()
 	upgraded.visible = should_be_visible
 	upgraded.project_saved.connect(_on_project_saved)
 	upgraded.library_requested.connect(_show_library_from_workspace)
@@ -112,14 +159,14 @@ func _install_generation_parity_service() -> void:
 	if _workspace == null:
 		return
 	var current_service: CCFGenerationService = _workspace._generation_service
-	if current_service is CCFConceptFidelityGenerationService:
+	if current_service is CCFGenerationServiceV0135:
 		return
 	if current_service != null:
 		_disconnect_workspace_generation_signals(current_service)
 		if current_service.get_parent() == _workspace:
 			_workspace.remove_child(current_service)
 		current_service.queue_free()
-	var parity_service := CCFConceptFidelityGenerationService.new()
+	var parity_service := CCFGenerationServiceV0135.new()
 	_workspace._generation_service = parity_service
 	_workspace.add_child(parity_service)
 	parity_service.job_started.connect(_workspace._on_job_started)
