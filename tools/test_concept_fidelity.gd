@@ -1,7 +1,15 @@
 extends SceneTree
 
+var _finished := false
+
 
 func _init() -> void:
+	var watchdog := create_timer(10.0)
+	watchdog.timeout.connect(_on_watchdog_timeout)
+	call_deferred("_run_tests")
+
+
+func _run_tests() -> void:
 	var concept := "Lila is a 23-year-old woman with G-cup breasts. She says `No shortcuts` when challenged."
 	var plan := CCFConceptFidelityService.build_plan(concept, "Lila")
 	var anchors_value: Variant = plan.get("anchors", [])
@@ -82,10 +90,19 @@ func _init() -> void:
 		_fail("Concept fidelity plan summary was not stored in generation metadata.")
 		return
 
+	_finished = true
 	print("Concept fidelity regression test passed.")
 	quit(0)
 
 
+func _on_watchdog_timeout() -> void:
+	if _finished:
+		return
+	push_error("Concept fidelity regression test timed out before completion.")
+	quit(1)
+
+
 func _fail(message: String) -> void:
+	_finished = true
 	push_error(message)
 	quit(1)
