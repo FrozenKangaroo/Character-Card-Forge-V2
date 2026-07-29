@@ -30,7 +30,7 @@ static func export_project(project: Dictionary, destination_path: String) -> Dic
 		"package_format_version": PACKAGE_FORMAT_VERSION,
 		"created_at": Time.get_datetime_string_from_system(true),
 		"application": "Character Card Forge",
-		"application_version": "0.11.3",
+		"application_version": "0.13.3",
 		"project_format_version": int(project.get("format_version", 2)),
 		"project_id": project_id,
 		"project_name": project_name,

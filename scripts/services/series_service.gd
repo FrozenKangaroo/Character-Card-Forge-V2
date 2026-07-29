@@ -396,7 +396,7 @@ static func export_pack(series_ids: Array[String], destination_path: String) -> 
 		"package_format_version": PACKAGE_FORMAT_VERSION,
 		"created_at": Time.get_datetime_string_from_system(true),
 		"application": "Character Card Forge",
-		"application_version": "0.11.3",
+		"application_version": "0.13.3",
 		"series_format_version": FORMAT_VERSION,
 		"series_count": included.size(),
 		"series": manifest_series
