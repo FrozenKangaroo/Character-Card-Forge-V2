@@ -5,7 +5,7 @@ const IMAGE_PROMPT_SERVICE_V0139 = preload("res://scripts/services/image_prompt_
 const IMAGE_PROMPT_GENERATION_SERVICE_V01312 = preload("res://scripts/services/image_prompt_generation_service_v01312.gd")
 
 var _prompt_character_scope := ""
-var _prompt_generation_service: CCFGenerationService
+var _prompt_generation_service: CCFImagePromptGenerationServiceV01312
 var _prompt_generation_job_id := ""
 var _ai_prompt_button: Button
 var _local_prompt_button: Button
