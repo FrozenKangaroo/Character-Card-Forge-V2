@@ -66,3 +66,6 @@ jobs:
 
       - name: Test assistant response compatibility
         run: timeout 30s godot --headless --path . --script res://tools/test_assistant_response_shapes.gd
+
+      - name: Test v0.13.11 vision and model capabilities
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01311_vision_capabilities.gd
