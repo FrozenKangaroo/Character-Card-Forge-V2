@@ -60,3 +60,6 @@ jobs:
 
       - name: Test concise image prompt construction
         run: timeout 30s godot --headless --path . --script res://tools/test_image_prompt_concision.gd
+
+      - name: Test default template selection
+        run: timeout 30s godot --headless --path . --script res://tools/test_default_template_selection.gd
