@@ -1,11 +1,14 @@
 class_name CCFImageGenerationControllerV0133
 extends CCFImageGenerationController
 
+const IMAGE_PROMPT_SERVICE_V0139 = preload("res://scripts/services/image_prompt_service_v0139.gd")
+
 var _prompt_character_scope := ""
 
 
 func _ready() -> void:
 	super._ready()
+	_enable_prompt_wrapping()
 	_relocate_generation_actions()
 
 
@@ -29,7 +32,7 @@ func _build_prompt_from_character() -> void:
 			if backend == CCFSettingsService.IMAGE_BACKEND_AUTOMATIC1111
 			else "natural"
 		)
-	var prompt := CCFImagePromptService.build_prompt(
+	var prompt: String = IMAGE_PROMPT_SERVICE_V0139.build_prompt(
 		_project,
 		_active_character_id,
 		resolved_style,
@@ -39,9 +42,9 @@ func _build_prompt_from_character() -> void:
 	if prompt.is_empty():
 		_status.text = "Not enough visual character information to build an image prompt. Add a physical Description or enter visual direction manually. Raw Generation Concept text is no longer used as an image-prompt fallback."
 	elif resolved_style == "stable_diffusion":
-		_status.text = "Built a Stable Diffusion tag-style prompt from physical Description plus visually detectable Scenario setting/time/lighting."
+		_status.text = "Built a balanced Stable Diffusion prompt from core physical/outfit anchors plus a small number of visible Scenario cues. Extra visual direction is preserved when supplied."
 	else:
-		_status.text = "Built a natural-language image prompt from physical Description plus visually detectable Scenario setting/time/lighting."
+		_status.text = "Built a balanced natural-language prompt from core physical/outfit anchors plus a small number of visible Scenario cues. Extra visual direction is preserved when supplied."
 
 
 func _prepare_character_prompt_scope() -> void:
@@ -59,6 +62,12 @@ func _prepare_character_prompt_scope() -> void:
 		_negative_prompt_edit.text = ""
 	if _extra_direction_edit != null:
 		_extra_direction_edit.text = ""
+
+
+func _enable_prompt_wrapping() -> void:
+	for editor in [_extra_direction_edit, _prompt_edit, _negative_prompt_edit]:
+		if editor is TextEdit:
+			(editor as TextEdit).wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
 
 
 func _relocate_generation_actions() -> void:
