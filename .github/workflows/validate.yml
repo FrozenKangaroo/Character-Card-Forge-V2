@@ -54,3 +54,6 @@ jobs:
 
       - name: Test multi-group output composition
         run: timeout 30s godot --headless --path . --script res://tools/test_multi_group_output_composition.gd
+
+      - name: Test quiet malformed JSON handling
+        run: timeout 30s godot --headless --path . --script res://tools/test_quiet_json_parser.gd
