@@ -116,7 +116,7 @@ func _nested_positive_int(data: Dictionary, containers: Array[String], keys: Arr
 	return 0
 
 
-func _detect_vision(entry: Dictionary) -> bool:
+func _detect_vision(entry: Dictionary, depth: int = 0) -> bool:
 	for key in ["vision", "supports_vision", "multimodal"]:
 		if bool(entry.get(key, false)):
 			return true
@@ -127,9 +127,14 @@ func _detect_vision(entry: Dictionary) -> bool:
 				var value := str(modality).to_lower()
 				if value.contains("image") or value.contains("vision"):
 					return true
-	var capabilities: Variant = entry.get("capabilities", {})
-	if capabilities is Dictionary:
-		return _detect_vision(capabilities)
+	# Missing capabilities used to default to {}, which recursively called this
+	# function forever. Only recurse when the provider actually supplied a
+	# non-empty nested capabilities object, and bound nesting defensively.
+	if depth >= 8 or not entry.has("capabilities"):
+		return false
+	var capabilities: Variant = entry.get("capabilities")
+	if capabilities is Dictionary and not capabilities.is_empty():
+		return _detect_vision(capabilities, depth + 1)
 	return false
 
 
