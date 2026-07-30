@@ -1,6 +1,8 @@
 class_name CCFWorkspaceV01310View
 extends CCFWorkspaceV0138View
 
+const TEMPLATE_PREFERENCES = preload("res://scripts/services/template_preference_service.gd")
+
 
 func _add_character() -> void:
 	if _project_container.is_empty():
@@ -9,8 +11,8 @@ func _add_character() -> void:
 	var character_id := CCFStorageService.add_character(
 		_project_container, "Untitled Character"
 	)
-	var default_template_id := CCFTemplatePreferenceService.default_template_id(_settings)
-	CCFTemplatePreferenceService.assign_character_template(
+	var default_template_id: String = TEMPLATE_PREFERENCES.default_template_id(_settings)
+	TEMPLATE_PREFERENCES.assign_character_template(
 		_project_container, character_id, default_template_id
 	)
 	_blank_character_name(character_id)
