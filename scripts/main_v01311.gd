@@ -60,7 +60,8 @@ func _rename_creative_vision_mode() -> void:
 		var selector: OptionButton = node
 		for index in range(selector.item_count):
 			var item_text := selector.get_item_text(index)
-			if item_text in ["Full Card Suggestions", "Full Card", "Full card suggestions"]:
+			var lowered := item_text.to_lower()
+			if (lowered.contains("full") and lowered.contains("card") and lowered.contains("suggest")) or lowered == "full card":
 				selector.set_item_text(index, "Creative Concept")
 				selector.tooltip_text = "Visual Analysis describes visible character traits conservatively. Creative Concept uses the image as a visual seed and invents a generation-ready character premise for the normal Character Card Forge generation pipeline."
 
