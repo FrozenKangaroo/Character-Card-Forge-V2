@@ -28,11 +28,11 @@ The existing PyWebView application remains a feature and behaviour reference, no
 
 ## Current Development Phase
 
-**v0.13.10 development candidate — Generation Parity + Runtime Usability**
+**v0.13.11 development candidate — Creative Vision + Provider Capability Usability**
 
-The v0.12 source milestone is already merged into `main`: it contains expanded image generation, separated image providers, and Generation Parity Phase 1. v0.13 has moved parity into the generation engine while runtime testing has also exposed workflow problems worth fixing before the larger v0.14 image expansion.
+The v0.12 source milestone is already merged into `main`: it contains expanded image generation, separated image providers, and Generation Parity Phase 1. v0.13 has moved parity into the generation engine while runtime testing has also exposed workflow and provider-compatibility problems worth fixing before the larger v0.14 image expansion.
 
-The running development build displays **v0.13.10**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
+The running development build displays **v0.13.11**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
 
 The current v0.13 line includes:
 
@@ -52,7 +52,14 @@ The current v0.13 line includes:
 - configurable Alternative First Messages stored separately from the main First Message and exported through Character Card V2 alternate greetings;
 - Generation Preview Apply Selected autosave and null-proposal filtering;
 - default Vision Analysis restricted to observable physical/visual Description, with no default Personality inference;
+- **Creative Concept** vision mode using an image as a visual seed for an original generation-ready concept rather than attempting to fill final card fields directly;
+- Creative Concept preserving clear visual identity anchors while deliberately inventing coherent identity, motivations, conflicts, background hooks, secrets, setting possibilities, and roleplay potential when the image provides little narrative information;
 - separate Text and Vision model selection for Character AI profiles;
+- separate Text and Vision context/output configuration, including independent Vision output and temperature settings;
+- best-effort `/models` capability discovery preserving raw metadata and recognising common context-window, maximum-output, and vision-capability fields where providers expose them;
+- Text and Vision Auto output limits using detected per-model metadata independently, with manual values retained as fallbacks when metadata is unavailable;
+- removal of the old 131,072 UI hard ceiling so large-model output limits can be entered without silent clamping;
+- hardened assistant-response parsing for alternate OpenAI-compatible response envelopes and clearer reasoning/length diagnostics;
 - Image Studio prompt state isolation between characters;
 - V2 PNG export using the active portrait automatically when available;
 - Image Studio prompt controls with real multiline word wrapping;
@@ -146,6 +153,10 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Alternative First Messages with V2 alternate-greeting export.
 - Runtime project-draft lifecycle and naming cleanup.
 - Physical-only default Vision Analysis and separate Vision model selection.
+- Creative Concept vision mode that produces source concept material rather than bypassing normal character generation.
+- Per-model capability discovery with independent Text/Vision output limits and context settings.
+- Large output-token values no longer constrained by the old 131,072 UI ceiling.
+- Hardened assistant-response envelope compatibility and reasoning/length diagnostics.
 - Image prompt correctness/usability repairs needed for character → portrait testing.
 - Default Character Template preference for future characters with per-character assignment preservation.
 - Existing Generation Preview remains the final review boundary.
@@ -155,13 +166,13 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 - Expand configurable special generation contracts beyond component/minimum-length/marker foundations, including greeting counts and constrained sets where useful.
 - Complete V1-equivalent split/multi-pass execution for Lite/Compact Lite rather than only density guidance.
-- Continue real-provider regression testing of Q&A retries, Builder precedence, Mode & Style, component toggling/composition, semantic repair, concept-fidelity correction, malformed-JSON recovery, and default-template workflows.
+- Continue real-provider regression testing of Q&A retries, Builder precedence, Mode & Style, component toggling/composition, semantic repair, concept-fidelity correction, malformed-JSON recovery, response-envelope compatibility, Creative Concept generation, capability discovery, and default-template workflows.
 - Consider expanding automatic concept-fidelity marker types only where runtime evidence shows they can remain high-confidence and avoid false-positive rewrites.
 - Consider per-Builder-field provenance only if later workflows need to distinguish manual, preset, concept-extracted, and Builder-AI values inside the accepted scratchpad.
 
 ### Ongoing validation
 
-- Real-world testing across multiple OpenAI-compatible text backends.
+- Real-world testing across multiple OpenAI-compatible text and vision backends.
 - Compare fresh characters against pre-parity V2 output, especially Description/Personality separation and concept fidelity.
 - Test Interview → missing-answer retry → full generation → semantic repair, including templates that override or disable the bundled interview.
 - Test precedence conflicts deliberately: concept versus manual Q&A, manual Q&A versus Builder, Builder versus AI interview answers, and semantic repair after those conflicts.
@@ -169,9 +180,13 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Test deliberate concept-fidelity drift: supplied name, numeric age, explicit cup-size markers, equivalent written-out ages, and advisory quoted-marker omissions.
 - Confirm multiple enabled generation groups bound to the same output field compose in template order and targeted repair can identify missing groups/components.
 - Confirm malformed provider JSON enters normal local/provider repair without noisy engine parser failures.
+- Confirm alternate successful provider envelopes produce usable assistant text and reasoning-only/length failures produce actionable diagnostics.
 - Confirm Alternative First Messages remain separate from the main First Message and survive V2 export.
 - Confirm Apply Selected persists accepted generation before immediately entering Image Studio.
 - Confirm default Vision Analysis keeps environment/pose out of Description and filters null optional proposals.
+- Test Creative Concept with sparse and detailed images: visual anchors should persist while invented narrative material should be coherent, useful, and clearly more than an image caption.
+- Test model capability discovery across backends that expose rich metadata, partial metadata, and IDs only; unknown limits must remain unknown rather than guessed.
+- Test Text and Vision models with different context/output limits and confirm independent Auto/manual behavior.
 - Test draft lifecycle deliberately: empty new project → leave without Library entry; first named character → first save; empty added character → prune; manual project name → preserve.
 - Test default-template lifecycle deliberately: select custom default → new project inherits it → Add Character inherits it → change default → existing characters unchanged → delete default → built-in fallback.
 - Compare balanced image prompts across character descriptions with elaborate outfits and behavioural prose; explicit Additional visual direction must remain authoritative.
@@ -224,10 +239,12 @@ Do this after the major generation, Q&A, image, import/export, and project workf
 - Multi-stage generation progress and review diagnostics. **Core implemented in v0.13.7.**
 - Alternative First Messages with configurable count/style/instructions and interoperable export where supported. **Core implemented in v0.13.8.**
 - Multiple generation groups bound to one final field must compose rather than overwrite. **Core implemented in v0.13.9.**
+- Creative Concept vision mode: image → original generation-ready source concept → normal Q&A/template generation. **Core implemented in v0.13.11.**
+- Per-model capability discovery and independent Text/Vision token limits. **Initial best-effort core implemented in v0.13.11; expand provider-specific adapters/metadata recognition over time.**
 - V1-style Full/Lite/Compact-Lite or equivalent true multi-pass strategies after the core contract is stable.
 - Section-by-section generation/continuation with per-stage progress where it remains useful after the multi-pass design is finalised.
 - Configurable special formatting rules such as `<START>` counts, greeting counts, and constrained tag sets.
-- Recent/favourite model lists, broader provider capability detection, token-limit metadata/context estimation, and reusable provider presets.
+- Recent/favourite model lists, richer token-budget estimation using discovered context limits, and reusable provider presets.
 
 ### Template and Authoring Defaults
 
@@ -268,6 +285,7 @@ Do this after the major generation, Q&A, image, import/export, and project workf
 
 - Images as concept references and review-first analysis. **Foundation completed.**
 - Default concept-mode analysis remains observational: physical Character Description only, scene context outside Description, no automatic Personality inference. **Implemented in v0.13.5 hotfix.**
+- Creative Concept mode deliberately invents a coherent character premise from visual anchors and returns Generation Concept only. **Implemented in v0.13.11.**
 - GIF frame selection, image URL references, native PDF text extraction, preprocessing/context refinement, and visual-reference handoff to v0.14 image workflows.
 
 ### Image Generation
