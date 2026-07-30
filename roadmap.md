@@ -23,73 +23,49 @@ The existing PyWebView application remains a feature and behaviour reference, no
 - Detachable native tool windows are used where multi-monitor workflows benefit; primary navigation pages may remain embedded when clearer.
 - Generation parity ports useful V1 behaviour into the Godot architecture rather than recreating PyWebView-specific implementation details.
 - Workspace/editing structure, AI-generation structure, planning controls, and interoperable Character Card output fields are related but distinct layers.
+- Stable IDs are internal references; user-facing names may change without silently breaking bindings or preferences.
 - Major interface restructuring and visual polish should follow stable workflow architecture where practical, avoiding repeated UI rewrites while core authoring/generation systems are still changing.
 
 ## Current Development Phase
 
-**v0.13.6 development candidate — Project Draft Lifecycle & Usability**
+**v0.13.10 development candidate — Generation Parity + Runtime Usability**
 
-The v0.12 source milestone is already merged into `main`: it contains expanded image generation, separated image providers, and Generation Parity Phase 1. v0.13 moves parity into the generation engine, makes V1-style structured Description/Personality expectations editable template data, adds a bounded private planning interview, defines Builder precedence, restores Mode & Style author intent, adds conservative concept-fidelity correction, and is now tightening project/character lifecycle and usability problems exposed by real runtime testing.
+The v0.12 source milestone is already merged into `main`: it contains expanded image generation, separated image providers, and Generation Parity Phase 1. v0.13 has moved parity into the generation engine while runtime testing has also exposed workflow problems worth fixing before the larger v0.14 image expansion.
 
-The running development build displays **v0.13.6**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
+The running development build displays **v0.13.10**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
 
-The current v0.13 candidate now includes:
+The current v0.13 line includes:
 
 - semantic completeness validation after ordinary JSON parsing;
-- one targeted repair pass for valid-but-incomplete full-character results;
-- revalidation before Generation Preview;
-- repair diagnostics and a visible cancellable repair queue stage;
-- fail-closed template-contract protection and a regression test for the v0.13.3 Mode & Style decorator collision;
-- template format **3**, adding first-class `generation_groups` and generation components;
-- automatic loading/normalisation of older format-2 templates;
-- generation groups that bind many structured components into an existing interoperable card/workspace field rather than creating extra Character Card top-level fields;
-- add/remove/reorder generation groups and components;
-- per-group enable/disable, output-field binding, and allow-extra-components policy;
-- per-component label, AI instruction, enabled state, required state, and ordering;
-- disabled components omitted from both generation prompts and completeness validation;
-- enabled required components used by semantic missing-component repair;
-- a Template Manager **Edit Generation Components** workflow with safe close protection for unapplied edits;
-- the Default Description structure: Age, Appearance, Outfit Style, Distinguishing Features;
-- a richer V1-inspired Default Personality structure: Mind, Moral Alignment, Emotional Tendencies, Decision Style, Occupation, Likes, Dislikes, Hobbies, Skills, Boundaries, Risk Tolerance, Secrecy, Relationship Behavior toward `{{user}}`, Loyalty, and Speech Style;
-- standard Character Card Description and Personality remain the final interoperable output fields;
-- a private pre-generation interview before full-character generation;
-- a bundled default interview covering identity, motivation, inner conflict, `{{user}}` dynamic, boundaries, voice, visual anchors, opening hook, and an optional complication;
-- template-defined **Interview / Q&A** sections overriding the bundled interview when present;
-- inherited bundled questions surfaced in Template Manager so they can be viewed and duplicated/customised rather than remaining hidden runtime data;
-- existing non-empty Interview / Q&A workspace values treated as manual planning answers rather than replaced;
-- required-answer completeness checking and up to two targeted retries containing only still-missing required answers;
-- clean failure before full-card generation when required planning answers remain missing after the bounded retries;
-- completed interview answers fed into final generation as ephemeral private planning context rather than card output or persisted completion metadata;
-- visible cancellable queue stages for planning, missing-answer completion, full generation, and semantic repair;
-- explicit character-planning precedence: source concept → manual Interview/Q&A → current Builder guidance → AI-inferred interview notes → existing card values/generic inference;
-- non-empty Builder state fed into the private interview, missing-answer retries, full generation, and semantic repair rather than remaining isolated from Generate Character;
-- compact Builder participation diagnostics stored in generation metadata without duplicating the raw Builder scratchpad;
-- direct Builder projection aligned with parity semantics so Character Card Description receives physical Appearance rather than role/backstory/skills/secrets/boundaries;
-- an app-level **Mode & Style** Workspace tab available regardless of active template;
-- V1-inspired Full Prompt, Lite, and Compact Lite author-intent modes, with split/multi-pass execution still planned as a later strategy upgrade;
-- independent Writing Style, First Message Style, First Message Length, and greeting-specific custom instructions;
-- **Cinematic + Detailed** as the default opening behavior, targeting roughly 350–650 words, while Brief remains an explicit 60–160 word option;
-- Mode & Style guidance preserved through full generation and semantic repair;
-- conservative concept-fidelity plans built from high-confidence source markers after template validation;
-- supplied non-placeholder character names, explicit numeric ages, and distinctive cup-size measurements treated as critical fidelity markers;
-- quoted/backticked literal concept markers retained as advisory diagnostics without forcing automatic rewrites;
-- at most one stricter full-JSON concept-fidelity correction pass for clear critical drift, preserving source concept precedence, template structure, planning context, and Mode & Style;
-- compact fidelity metadata including retry use and any remaining clear drift rather than an unbounded retry loop;
-- Generation Preview **Apply Selected** now autosaves accepted generated fields immediately;
-- Image Studio automatic prompt building no longer falls back to raw Generation Concept prose;
-- deterministic Stable Diffusion tag-style prompt synthesis from physical Description content plus visually detectable Scenario setting/time/weather/lighting/objects;
-- natural-language image prompts restricted to visually useful character/setting information rather than Personality or hidden story explanation;
-- Auto image-prompt style resolving to SD tags for Forge/A1111 and natural language for OpenAI-compatible image providers;
-- Generate/Cancel moved into the upper Image Studio controls so the primary action cannot be pushed below the visible prompt workspace;
-- V2 PNG export uses the active portrait automatically when available instead of always asking for another source image;
-- Character AI profiles expose separate Text and Vision model selections while retaining shared provider credentials where desired;
-- default Vision Analysis now keeps Character Card Description strictly physical/visual and no longer proposes Personality;
-- single-character project presentation and terminology now distinguish Character Projects from contained Characters more clearly;
-- new Character Projects begin as in-memory drafts instead of immediately creating empty Library entries;
-- empty added-character drafts are discarded before save rather than becoming repeated placeholder characters;
-- unnamed meaningful characters are blocked from being persisted under placeholder names;
-- unnamed projects automatically use the first name of the first real character, while an explicitly entered project name remains authoritative;
-- null AI proposals are filtered before Generation Preview so values such as `<null>` are not offered as real edits.
+- one targeted repair pass for valid-but-incomplete full-character results and revalidation before Generation Preview;
+- fail-closed generation-contract protection and regression coverage for dispatch/contract regressions;
+- template format 3 with first-class generation groups/components and backwards loading of format-2 templates;
+- editable group/component ordering, enabled/required state, per-component AI instructions, output bindings, and allow-extra-components policy;
+- multiple generation groups targeting one Character Card field composed in template order instead of later groups overwriting earlier groups;
+- Default Description structure: Age, Appearance, Outfit Style, Distinguishing Features;
+- richer V1-inspired Default Personality structure including Mind, Moral Alignment, Emotional Tendencies, Decision Style, Occupation, Likes, Dislikes, Hobbies, Skills, Boundaries, Risk Tolerance, Secrecy, Relationship Behavior toward `{{user}}`, Loyalty, and Speech Style;
+- private pre-generation Interview / Q&A with bundled defaults, template overrides, manual answers, required-answer checking, and bounded retries;
+- explicit planning precedence: source concept → manual Interview/Q&A → Builder guidance → AI interview answers → existing card values/generic inference;
+- Mode & Style controls for Full/Lite/Compact Lite intent, writing style, First Message style, length, and custom greeting guidance;
+- conservative concept-fidelity checks and one bounded correction pass for high-confidence supplied markers;
+- multi-stage generation progress and Generation Preview diagnostics covering planning, generation, validation, fidelity, repair, and review without exposing private scratchpad content;
+- configurable Alternative First Messages stored separately from the main First Message and exported through Character Card V2 alternate greetings;
+- Generation Preview Apply Selected autosave and null-proposal filtering;
+- default Vision Analysis restricted to observable physical/visual Description, with no default Personality inference;
+- separate Text and Vision model selection for Character AI profiles;
+- Image Studio prompt state isolation between characters;
+- V2 PNG export using the active portrait automatically when available;
+- Image Studio prompt controls with real multiline word wrapping;
+- balanced image-prompt synthesis focused on stable visual identity instead of converting every Description sentence into tags;
+- bounded appearance/outfit/scene prompt detail and filtering of behavioural, symbolic, and transient prose from automatic image prompts;
+- recoverable malformed provider JSON handled through the repair path without misleading engine-level parser errors;
+- Character Project vs Character terminology/presentation cleanup;
+- in-memory new-project drafts, empty-character pruning, first-character project naming, and placeholder-name save protection;
+- global **Default Character Template** selection by stable template ID;
+- Template Manager **Set as Default** state plus Settings → Defaults selection;
+- first characters in new projects and newly added characters automatically inheriting the selected global default;
+- existing characters retaining their assigned template when the global default changes;
+- safe fallback to the built-in Default template when a configured custom default is deleted or unavailable.
 
 ## Completed
 
@@ -100,16 +76,15 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Separated Character AI profiles from dedicated Image Generation providers with settings-format-v6 migration.
 - Added separate Character AI and Image Generation Settings tabs.
 - Added Forge/Automatic1111 WebUI generation alongside OpenAI-compatible Images APIs.
-- Added `/sdapi/v1/txt2img`, checkpoint/sampler discovery, OpenAI `/models` discovery, batches, sampler/steps/CFG/seed controls, returned-seed capture, Regenerate, and New Seed Variant workflows.
+- Added checkpoint/sampler/model discovery, batches, sampler/steps/CFG/seed controls, returned-seed capture, Regenerate, and New Seed Variant workflows.
 - Kept Image Studio as a selected main workspace while provider credentials live in Settings.
-- Source-audited V1 generation behaviour and documented the quality/architecture gaps.
+- Source-audited V1 generation behaviour and documented quality/architecture gaps.
 - Made Generation Concept authoritative in the Default template.
-- Restored Description to physical/external semantics.
-- Expanded Personality generation guidance and strengthened Scenario / First Message continuity and Example Dialogue formatting.
+- Restored Description to physical/external semantics and strengthened Personality, Scenario, First Message, and Example Dialogue guidance.
 
 ### v0.11.0 — Image Generation Foundation
 
-- Added an independent Image generation role.
+- Added an independent image-generation role.
 - Added OpenAI-compatible image generation, flexible response decoding, PNG normalisation, generated-image storage, prompt construction, gallery/preview, portrait assignment, metadata, documentation, and validation.
 
 ### Release Workflow Maintenance after v0.11.0
@@ -122,7 +97,7 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 ### v0.9.x — Series and Release Infrastructure
 
-- Added versioned series bibles, Series Manager, categories/aliases/canon/visual/generation guidance, deterministic Auto Series, categories, import/export, and portable packs.
+- Added versioned series bibles, Series Manager, categories/aliases/canon/visual/generation guidance, deterministic Auto Series, import/export, portable packs, export presets, validation/releases, semantic-version tooling, and release-helper infrastructure.
 
 ### v0.8.x — Character Library 2.0
 
@@ -162,59 +137,25 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 **Implemented:**
 
-- Semantic completeness validation and one bounded targeted repair pass.
-- Revalidation before review and repair diagnostics metadata.
-- Fail-closed template contract protection, including regression coverage for the v0.13.3 generation-contract dispatch bug.
-- Template format 3 with generation groups/components and backwards loading of format 2.
-- Explicit separation between normal workspace/output fields and structured generation components.
-- Editable output bindings from a generation group to an existing card/workspace field.
-- Add/remove/reorder/enable/disable generation groups and subcomponents.
-- Required/optional component semantics and per-component AI instructions.
-- Dynamic contract prompts and validation generated from the active template rather than fixed Default Personality labels.
-- Default V1-inspired Description and Personality structures stored as data.
-- Unsaved-change protection for the Generation Components editor.
-- Private pre-generation interview before full-character generation.
-- Bundled default interview when a template has no Interview / Q&A section.
-- Bundled/inherited Interview / Q&A visibility through Template Manager, with custom templates able to save their own edited question sets.
-- Template-defined interview questions using existing `interview` section fields and their AI/required settings.
-- Manual non-empty interview-field values respected as existing planning answers.
-- Required Q&A completeness checking and up to two targeted missing-answer retries.
-- Completed Q&A fed into full generation as private planning context without persisting AI answers as card/project output.
-- Queue status exposes interview planning and missing-answer retry stages.
-- Character-specific planning precedence: source concept > manual Interview/Q&A > Builder guidance > AI interview answers > existing card values/generic inference.
-- Current non-empty Builder state participates in interview planning, missing-answer retries, full generation, and semantic repair.
-- Builder participation metadata records only counts/precedence diagnostics rather than duplicating raw planning text.
-- Builder direct Description projection corrected to physical Appearance only; role, goals, backstory, skills, secrets, and behavioural boundaries remain on the Personality/lore side.
-- App-level Mode & Style state stored with the character generation workspace rather than tied to one template.
-- Full/Lite/Compact Lite density guidance foundation.
-- Writing Style plus independent First Message style/length/custom guidance.
-- Detailed cinematic greeting as the new default instead of universal short greetings.
-- Mode & Style participation in semantic repair.
-- Conservative concept-fidelity plans for supplied names, explicit numeric ages, distinctive cup-size literals, and advisory quoted markers.
-- One bounded concept-fidelity correction for clear critical drift after semantic/template validation.
-- Fidelity correction retains source concept precedence, planning context, Mode & Style, and the active template contract.
-- Fidelity metadata records marker counts, retry use, advisory misses, and remaining clear drift without unbounded retries.
-- Generation Preview Apply Selected autosave.
-- Visual-only SD prompt synthesis plus Scenario-derived environment/time/lighting tags.
-- Raw Concept removal from automatic SD-prompt fallback behavior.
-- Always-visible Image Studio Generate/Cancel controls.
-- Portrait-backed Character Card V2 PNG export path.
-- Separate Text/Vision model selection for shared Character AI profiles.
-- Default Vision Analysis physical-only Description scope and no default Personality inference.
-- Character Project vs Character terminology/presentation cleanup.
-- In-memory new-project drafts, empty-character pruning, first-character project naming, and placeholder-name save protection.
-- Null AI proposal filtering before Generation Preview.
+- Data-driven generation groups/components and output bindings.
+- Required/optional component semantics, multi-group composition, semantic validation, bounded targeted repair, and fail-closed contract dispatch.
+- Private Interview / Q&A planning, required-answer retries, Builder participation, and explicit planning precedence.
+- App-level Mode & Style foundation.
+- Conservative concept-fidelity diagnostics/correction.
+- Multi-stage progress plus Generation Preview diagnostics.
+- Alternative First Messages with V2 alternate-greeting export.
+- Runtime project-draft lifecycle and naming cleanup.
+- Physical-only default Vision Analysis and separate Vision model selection.
+- Image prompt correctness/usability repairs needed for character → portrait testing.
+- Default Character Template preference for future characters with per-character assignment preservation.
 - Existing Generation Preview remains the final review boundary.
 - Existing asynchronous queue/cancellation architecture remains authoritative.
 
 **Still in v0.13:**
 
-- Improve visible stages beyond the current queue labels: generation, fidelity check, validation, repair, ready for review.
-- Present interview, planning-precedence, Mode & Style, concept-fidelity, semantic validation, and repair diagnostics directly in Generation Preview.
-- Expand configurable special contracts beyond the current component/minimum-length/marker foundations, including greeting counts and constrained sets where useful.
+- Expand configurable special generation contracts beyond component/minimum-length/marker foundations, including greeting counts and constrained sets where useful.
 - Complete V1-equivalent split/multi-pass execution for Lite/Compact Lite rather than only density guidance.
-- Restore configurable alternative First Messages with per-alternative style/instructions and interoperable export where supported.
-- Test Q&A retries, Builder precedence, Mode & Style, component toggling, semantic repair, and concept-fidelity correction across real text backends and deliberately incomplete/low-token responses.
+- Continue real-provider regression testing of Q&A retries, Builder precedence, Mode & Style, component toggling/composition, semantic repair, concept-fidelity correction, malformed-JSON recovery, and default-template workflows.
 - Consider expanding automatic concept-fidelity marker types only where runtime evidence shows they can remain high-confidence and avoid false-positive rewrites.
 - Consider per-Builder-field provenance only if later workflows need to distinguish manual, preset, concept-extracted, and Builder-AI values inside the accepted scratchpad.
 
@@ -222,15 +163,18 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 - Real-world testing across multiple OpenAI-compatible text backends.
 - Compare fresh characters against pre-parity V2 output, especially Description/Personality separation and concept fidelity.
-- Test the v0.13.1 interview → missing-answer retry → full generation → semantic repair sequence, including templates that override or disable the bundled interview.
-- Test v0.13.2 conflicts deliberately: concept versus manual Q&A, manual Q&A versus Builder guidance, Builder guidance versus AI-inferred interview answers, and semantic repair after those conflicts.
-- Test v0.13.3 First Message modes deliberately: Detailed/Cinematic should be substantially fuller than earlier V2 output while Brief remains intentionally short.
-- Test v0.13.4 deliberate fidelity drift: supplied name changes, numeric age changes/omissions, explicit cup-size loss, equivalent written-out ages, and advisory quoted-marker omissions that must not trigger retries.
+- Test Interview → missing-answer retry → full generation → semantic repair, including templates that override or disable the bundled interview.
+- Test precedence conflicts deliberately: concept versus manual Q&A, manual Q&A versus Builder, Builder versus AI interview answers, and semantic repair after those conflicts.
+- Test First Message modes deliberately: Detailed/Cinematic should be substantially fuller while Brief remains intentionally short.
+- Test deliberate concept-fidelity drift: supplied name, numeric age, explicit cup-size markers, equivalent written-out ages, and advisory quoted-marker omissions.
+- Confirm multiple enabled generation groups bound to the same output field compose in template order and targeted repair can identify missing groups/components.
+- Confirm malformed provider JSON enters normal local/provider repair without noisy engine parser failures.
+- Confirm Alternative First Messages remain separate from the main First Message and survive V2 export.
 - Confirm Apply Selected persists accepted generation before immediately entering Image Studio.
-- Use the Lila-style regression fixture to confirm SD prompt building produces visual tags rather than `Age:/Appearance:/Outfit Style:` prose or relationship/motive text.
-- Confirm scenarios such as **university classroom at sunset** contribute environment/time/lighting tags without leaking nonvisual motivations or hidden relationship details.
-- Confirm default Vision Analysis keeps environment/pose information out of Description and filters null optional proposals.
+- Confirm default Vision Analysis keeps environment/pose out of Description and filters null optional proposals.
 - Test draft lifecycle deliberately: empty new project → leave without Library entry; first named character → first save; empty added character → prune; manual project name → preserve.
+- Test default-template lifecycle deliberately: select custom default → new project inherits it → Add Character inherits it → change default → existing characters unchanged → delete default → built-in fallback.
+- Compare balanced image prompts across character descriptions with elaborate outfits and behavioural prose; explicit Additional visual direction must remain authoritative.
 - Forge/Automatic1111 and OpenAI-compatible image batch testing.
 - Template format-2 → format-3 migration and custom generation-component testing.
 - Guided Builder, relationship, group/card workflow, import/export, large-library, series, attachments, vision, and `.ccfproject` interoperability testing.
@@ -239,11 +183,11 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 ### Remaining v0.13 Generation Parity Core
 
-Richer multi-stage progress and Generation Preview diagnostics are the next major parity slice once the current runtime usability regressions are settled, followed by alternative greeting parity and eventual true split/multi-pass Lite/Compact Lite execution.
+True split/multi-pass Lite/Compact Lite execution and broader configurable generation contracts are the main remaining parity work after the current runtime regression cycle. Continue tightening real-provider behaviour before the larger image milestone.
 
 ### v0.14 — Image Workflow Expansion
 
-The immediate Image Studio correctness/usability repairs landed during v0.13 because they blocked normal character → portrait testing. The larger v0.14 expansion remains planned.
+The immediate Image Studio correctness/usability repairs landed during v0.13 because they blocked normal character → portrait testing. The larger v0.14 expansion remains reserved and planned.
 
 - Add image-to-image/reference-image generation where supported.
 - Allow generated images and managed visual attachments to become generation references without embedding binary data in JSON.
@@ -259,46 +203,56 @@ The immediate Image Studio correctness/usability repairs landed during v0.13 bec
 
 Do this after the major generation, Q&A, image, import/export, and project workflows are sufficiently stable that UI changes are unlikely to be immediately invalidated by another architecture change.
 
-- Restore a full **Guided Manual** authoring mode inspired by V1, implemented on top of the same template, generation-component, output-binding, and project data model used everywhere else.
-- Expand the existing Builder foundation into richer Character, Personality, and Scene Builder workflows with stronger presets, manual guidance, optional AI assistance, review-first application, and integration with concept/Q&A context.
-- Perform a systematic V1 parity and authoring-UX audit to classify features as missing, relocated, evolved/replaced, partial, or intentionally retired before the final interface redesign.
-- Hide implementation-facing identifiers such as internal field/component IDs behind sensible automatic defaults and Advanced controls wherever users do not need to manage them directly.
-- Revisit Workspace information architecture once the final set of major workflows is known: use clearer tabs/pages/sections, reduce the current top-level button wall, and group related tools by task rather than historical implementation order.
-- Perform the larger visual-polish pass only after workflow hierarchy stabilises: spacing, typography, theme/identity, responsive layouts, high-density/ultrawide use, consistent controls, keyboard workflows, onboarding, and better empty/error/progress states.
+- Restore a full **Guided Manual** authoring mode inspired by V1, implemented on the same template, generation-component, output-binding, and project data model used everywhere else.
+- Expand the existing Builder foundation into richer Character, Personality, and Scene Builder workflows with presets, manual guidance, optional AI assistance, review-first application, and concept/Q&A integration.
+- Perform a systematic V1 parity and authoring-UX audit classifying features as missing, relocated, evolved/replaced, partial, or intentionally retired before the final interface redesign.
+- Hide implementation-facing identifiers such as internal field/component IDs behind automatic defaults and Advanced controls wherever users do not need them directly.
+- Revisit Workspace information architecture once the final set of major workflows is known: clearer tabs/pages/sections, less top-level button clutter, task-oriented grouping.
+- Perform the larger visual-polish pass after workflow hierarchy stabilises: spacing, typography, theme/identity, responsive layouts, ultrawide use, controls, keyboard workflows, onboarding, and empty/error/progress states.
 
 ## Planned Features
 
 ### Generation Improvements
 
-- Streaming text support where providers support it.
-- Generation components/output bindings and editable per-template semantic contracts. **Core implemented in v0.13 candidate; expand special contracts over time.**
-- V1-style private Q&A completeness and targeted missing-answer retries. **Core implemented in v0.13.1 candidate.**
-- Conservative concept-fidelity validation/retry. **Core implemented in v0.13.4 candidate; expand marker types only when they remain high-confidence.**
-- Semantic completeness validation and targeted repair. **Initial core implemented in v0.13 candidate.**
-- Builder guidance precedence for full generation and semantic repair. **Core implemented in v0.13.2 candidate.**
-- V1-inspired Mode & Style controls and First Message length/style guidance. **Foundation implemented in v0.13.3 candidate.**
-- V1-style Full/Lite/Compact-Lite or equivalent true multi-pass strategies after the core contract is stable; v0.13.3 currently restores the user-facing modes as density guidance, not the old split execution.
-- Alternative First Messages with configurable count, preset/custom style, and separate instructions, mapped to interoperable card fields where supported.
-- Section-by-section generation/continuation with per-stage progress, inspired by the later V1 beta workflow once its desired Godot behaviour is cleanly specified.
+- Streaming text where providers support it.
+- Generation components/output bindings and editable per-template semantic contracts. **Core implemented in v0.13; expand special contracts over time.**
+- V1-style private Q&A completeness and targeted missing-answer retries. **Core implemented in v0.13.1.**
+- Builder guidance precedence. **Core implemented in v0.13.2.**
+- Mode & Style and First Message length/style guidance. **Foundation implemented in v0.13.3.**
+- Conservative concept-fidelity validation/retry. **Core implemented in v0.13.4.**
+- Semantic completeness validation and targeted repair. **Core implemented in v0.13.**
+- Multi-stage generation progress and review diagnostics. **Core implemented in v0.13.7.**
+- Alternative First Messages with configurable count/style/instructions and interoperable export where supported. **Core implemented in v0.13.8.**
+- Multiple generation groups bound to one final field must compose rather than overwrite. **Core implemented in v0.13.9.**
+- V1-style Full/Lite/Compact-Lite or equivalent true multi-pass strategies after the core contract is stable.
+- Section-by-section generation/continuation with per-stage progress where it remains useful after the multi-pass design is finalised.
 - Configurable special formatting rules such as `<START>` counts, greeting counts, and constrained tag sets.
 - Recent/favourite model lists, broader provider capability detection, token-limit metadata/context estimation, and reusable provider presets.
 
+### Template and Authoring Defaults
+
+- Global default template stored by stable template ID. **Implemented in v0.13.10.**
+- New project first characters and newly added characters inherit the current global default. **Implemented in v0.13.10.**
+- Existing characters retain their explicit assigned template when the global default changes. **Implemented in v0.13.10.**
+- Missing/deleted custom defaults fall back safely to built-in Default. **Implemented in v0.13.10.**
+- Continue keeping template IDs/internal bindings out of ordinary user-facing workflow where a name/selector is sufficient.
+
 ### Authoring Workflows
 
-- **Guided Manual mode:** provide template-driven manual character construction where the user can work through the active sections/components directly, without requiring AI generation. It should use the same underlying data model as generated cards rather than a parallel manual-only representation.
-- Guided Manual should understand enabled/disabled template structure, required content, output bindings, section progress/completeness, and the final interoperable Character Card projection.
-- Allow optional AI assistance inside Guided Manual where useful, but keep manual authoring fully usable without an AI provider.
-- **Builder expansion:** grow the current Guided Character Builder foundation back toward the richer V1 workflow, including distinct Character, Personality, and Scene Builder experiences where that separation remains useful.
-- Builders should accept both manual input and AI-assisted fill/extraction, preserve explicit user guidance, feed structured planning context into final generation, and participate in the v0.13 precedence rules rather than acting as isolated tools.
-- Add/revisit builder presets, reusable builder templates, clearer completion/progress state, richer selective revision, and smooth handoff between Concept → Q&A → Builders → final generation.
-- Keep builder data as planning/source context unless explicitly mapped into card output; do not recreate the old architecture by making every planning field a permanent exported card field.
+- **Guided Manual mode:** template-driven manual construction through active sections/components without requiring AI generation, using the same underlying card/project model.
+- Guided Manual should understand enabled/disabled template structure, required content, output bindings, section progress/completeness, and final interoperable Character Card projection.
+- Allow optional AI assistance inside Guided Manual while keeping manual authoring fully usable without a provider.
+- **Builder expansion:** grow Guided Character Builder toward richer V1 Character, Personality, and Scene Builder experiences where that separation remains useful.
+- Builders should accept manual input and AI fill/extraction, preserve explicit user guidance, feed structured planning context into final generation, and participate in established precedence rules.
+- Add/revisit builder presets, reusable builder templates, clearer completion/progress state, richer selective revision, and smooth Concept → Q&A → Builders → generation handoff.
+- Keep Builder data as planning/source context unless explicitly mapped into card output.
 
 ### Multi-Character Workflows
 
 - Relationship matrix generation/editing and relationship-aware context. **Foundation completed.**
 - Multi-character single-card planning, split-card batch planning, and group-card planning. **Foundations completed; final generation/export execution remains planned.**
-- Add a visual **Relationship Map** editor using draggable character cards, directional/named connections, selectable anchor points, and editor-only layout metadata while keeping relationship content independent of canvas geometry.
-- Shared lore/deeper continuity and additional relationship visualisation/flowchart views.
+- Add a visual **Relationship Map** editor using draggable character cards, directional/named connections, selectable anchor points, and editor-only layout metadata while relationship content remains independent of canvas geometry.
+- Support richer shared lore/deeper continuity and additional relationship visualisation/flowchart views.
 
 ### Character Library 2.0
 
@@ -313,14 +267,14 @@ Do this after the major generation, Q&A, image, import/export, and project workf
 ### Vision and Attachments
 
 - Images as concept references and review-first analysis. **Foundation completed.**
-- Default concept-mode analysis should remain observational: physical Character Description only, with scene context kept outside Description and no automatic Personality inference. **Implemented in v0.13.5 hotfix.**
+- Default concept-mode analysis remains observational: physical Character Description only, scene context outside Description, no automatic Personality inference. **Implemented in v0.13.5 hotfix.**
 - GIF frame selection, image URL references, native PDF text extraction, preprocessing/context refinement, and visual-reference handoff to v0.14 image workflows.
 
 ### Image Generation
 
 - OpenAI-compatible generation, prompt builders, gallery, portrait assignment. **Foundation completed.**
 - Forge/Automatic1111, provider settings, checkpoint/sampler discovery, batches, seeds, regeneration, and SD defaults. **v0.12 source milestone implemented.**
-- Visual-only SD prompt synthesis, Scenario-derived setting/time/lighting tags, no raw Concept fallback, provider-aware Auto prompt style, and always-visible Generate/Cancel. **v0.13.3 repair candidate.**
+- Visual-only prompt synthesis, Scenario-derived setting cues, no raw Concept fallback, provider-aware Auto style, wrapping prompt editors, and balanced core-identity prompting. **v0.13 runtime repairs implemented.**
 - Image-to-image/reference generation, emotion workflows, per-emotion prompts, visual presets, richer provider controls, and LoRA/embedding helpers. **v0.14/later.**
 
 ### Import / Export
@@ -330,22 +284,22 @@ Do this after the major generation, Q&A, image, import/export, and project workf
 
 ### Character Concept Exchange — later milestone
 
-This is intentionally planned after the generation/template/Q&A architecture has stabilised enough that the concept format can remain durable instead of changing every few releases.
+This remains intentionally after generation/template/Q&A architecture stabilises enough for the concept format to stay durable.
 
-- Add a Character Card Forge-specific, versioned, human-readable concept document for **pre-generation source material**, distinct from a completed Character Card or full `.ccfproject` project.
-- Working format idea: JSON content with a dedicated extension such as `.ccfconcept`; exact extension and schema should not be frozen until the generation/template model is mature.
-- Make the format easy for external AI assistants to produce from a conversation or partially fleshed-out character idea, with a published schema/example and clear instructions for generating a valid concept file.
-- Keep the format deliberately higher-level and more stable than the internal project/template schema. It should describe what the character should become rather than mirror every current workspace field or generation-component ID.
-- Require a main concept, with optional structured planning material such as identity ideas, physical/visual direction, personality direction, background, relationships, setting, scenario/opening ideas, constraints, and freeform notes.
-- Include optional **template Q&A answers** associated with a recognised Character Card Forge Q&A template once the Q&A template format is stable.
-- Include optional **extra Q&A** as arbitrary character-specific question/answer pairs that do not have to exist in the reusable Q&A template, preserving the useful V1 one-off-question workflow.
-- During import, map compatible template-Q&A answers to the active Q&A plan, retain unmatched imported answers as supplemental/extra Q&A instead of silently discarding them, and leave unanswered required current-template questions for the normal Q&A completeness pass.
-- Treat imported and extra Q&A as private planning context for generation, not automatic Character Card output.
-- Allow omitted/unknown sections so a rough concept remains valid and Character Card Forge can perform the detailed generation work later.
-- Import through a review/mapping step into a new character or character concept workspace instead of treating the file as a finished card.
-- Feed imported concept material into the normal Character Card Forge pipeline: templates, generation components, private Q&A, builders, Mode & Style, concept-fidelity checks, semantic repair, and Generation Preview.
-- Consider concept export as well as import so concepts can be shared, archived, refined by another AI, and re-imported without requiring a completed card.
-- Version the concept format independently and provide migrations/defaults once it enters active use.
+- Add a Character Card Forge-specific, versioned, human-readable concept document for **pre-generation source material**, distinct from a completed Character Card or full `.ccfproject`.
+- Working format idea: JSON content with a dedicated extension such as `.ccfconcept`; exact extension/schema should not be frozen until the model is mature.
+- Make it easy for external AI assistants to produce using a published schema/example.
+- Keep it higher-level and more stable than internal project/template schemas: describe what the character should become rather than mirror every workspace/component ID.
+- Require a main concept with optional identity, physical/visual direction, personality direction, background, relationships, setting, scenario/opening ideas, constraints, and freeform notes.
+- Include optional template-Q&A answers associated with a recognised Q&A template once that format is stable.
+- Include optional extra Q&A as arbitrary character-specific question/answer pairs preserving the useful V1 one-off-question workflow.
+- During import, map compatible Q&A to the active plan, retain unmatched answers as supplemental Q&A, and leave unanswered required current-template questions to normal completeness handling.
+- Treat imported/extra Q&A as private planning context, not automatic Character Card output.
+- Allow omitted/unknown sections so rough concepts remain valid.
+- Import through a review/mapping step into a new character/concept workspace instead of treating the file as a finished card.
+- Feed concept material into normal templates, generation components, Q&A, Builders, Mode & Style, fidelity checks, semantic repair, and Generation Preview.
+- Consider concept export for sharing, archiving, external AI refinement, and re-import.
+- Version the concept format independently and provide migrations/defaults once active use begins.
 
 ### Front Porch Integration
 
@@ -353,7 +307,13 @@ This is intentionally planned after the generation/template/Q&A architecture has
 
 ### Quality Tools
 
-- Final AI Audit, card rating/improvement suggestions, consistency checking, broader missing-field reports, token estimates, revision history/snapshots, and image-recipe comparison.
+- Final AI Audit.
+- Card rating and improvement suggestions.
+- Consistency checking.
+- Broader missing-field reports beyond generation-time completeness checks.
+- Token estimates.
+- Revision history and snapshots.
+- Generation-recipe comparison for image variants.
 
 ## Data and Content Tools
 
@@ -364,39 +324,55 @@ This is intentionally planned after the generation/template/Q&A architecture has
 - Preserve older generated-image records as metadata evolves.
 - Add reusable template packs if community template sharing becomes useful.
 - Maintain documentation for workspace fields vs generation components vs output bindings.
-- Document persistent planning settings such as Mode & Style separately from exported card fields.
-- When Character Concept Exchange is implemented, keep its schema/version independent from the internal project/template formats so concept files remain portable across Character Card Forge versions where practical.
+- Document persistent planning settings such as Mode & Style and authoring defaults separately from exported card fields.
+- When Character Concept Exchange is implemented, keep its schema/version independent from internal project/template formats so concept files remain portable across versions where practical.
 
 ## Technical Improvements
 
 - Add automated schema/behaviour tests beyond marker validation.
-- Add recovery from interrupted writes, optional autosave/snapshots, async thumbnails, general cancellable tasks, structured logging/diagnostics, secure credential storage, additional authentication modes, UI script decomposition, and provider-adapter abstractions as diversity grows.
+- Add recovery from interrupted writes using temporary-file replacement.
+- Add optional autosave with safe snapshots.
+- Add async thumbnail generation.
+- Generalise cancellable task handling beyond AI jobs to scanning/imports.
+- Add structured application logging and diagnostics viewer.
+- Add secure credential-storage options where platform support permits.
+- Add additional API authentication modes where local servers require them.
+- Split very large UI scripts into reusable components as workflows expand.
+- Consider formal provider-adapter classes as provider diversity grows.
 - Keep generation validators/repair logic in reusable services rather than embedding V1 assumptions in workspace UI code.
 - Keep image-prompt synthesis separate from Character Card Description so prose-card semantics and provider-specific visual prompt formats do not collapse into one field again.
-- Add release-aware update checking against **published GitHub Releases/package assets only**, never repository source state. Update installation must remain explicitly user-approved, support staying on older versions, and eventually use safe download/verification/restart-helper/rollback mechanics rather than silently overwriting the running application.
+- Add release-aware update checking against **published GitHub Releases/package assets only**, never repository source state.
+- Update installation must remain explicitly user-approved, support intentionally staying on older versions, and eventually use safe download/verification/restart-helper/rollback mechanics rather than silently overwriting the running application.
+- Development/source testing remains a Godot + repository workflow; packaged applications do not need a repository-development update channel.
+- Packaged releases may skip development version numbers; each published package should be independently installable and migrations should support direct upgrade from supported older persisted formats without requiring every intermediate development build.
 
 ## Polish
 
-Major interface polish is intentionally sequenced after the main systems and authoring workflows are in place, while small usability fixes that prevent data loss or block testing should continue to be addressed immediately.
+Major interface polish is intentionally sequenced after the main systems and authoring workflows are in place, while small usability fixes that prevent data loss or block testing should continue immediately.
 
-- Rework Workspace navigation and hierarchy around the final workflows rather than continuing to accumulate unrelated top-level buttons.
-- Use tabs/pages/sections where they make task boundaries clearer, while retaining detachable windows where multi-monitor use genuinely benefits.
-- Create a stronger application theme and visual identity with consistent spacing, typography, hierarchy, selected states, form controls, dialogs, and status/progress presentation.
+- Rework Workspace navigation/hierarchy around final workflows rather than accumulating unrelated top-level buttons.
+- Use tabs/pages/sections where they make task boundaries clearer while retaining detachable windows where multi-monitor use benefits.
+- Create a stronger theme/visual identity with consistent spacing, typography, hierarchy, selected states, controls, dialogs, and status/progress presentation.
 - Refine responsive behaviour for normal desktop, ultrawide, high-DPI, and smaller supported windows.
 - Add keyboard shortcuts and keyboard-first editing/navigation where practical.
 - Add drag-and-drop where it improves file/image workflows.
 - Improve onboarding, empty states, inline explanations, validation feedback, error recovery, and progress reporting.
-- Standardise unsaved-change protection and safe close/navigation behaviour across editors and tool windows.
-- Add native completion notifications where useful and denser gallery/library browsing where large collections benefit.
+- Standardise unsaved-change protection and safe close/navigation across editors and tool windows.
+- Add native completion notifications where useful and denser gallery/library browsing for large collections.
 
 ## Long-Term Ideas
 
-- Optional LAN/mobile companion service, plugin/provider extension API, community template sharing, batch character generation, local semantic library search, and provider-agnostic image recipe presets.
+- Optional LAN/mobile companion service as a separate service rather than an embedded web frontend.
+- Plugin/provider extension API.
+- Community template sharing.
+- Batch character generation pipelines.
+- Local semantic search over large character libraries.
+- Provider-agnostic image recipe presets shareable where settings overlap safely.
 
 ## Deferred / Experimental Ideas
 
-- Legacy database import remains intentionally deferred.
-- Reproducing the old PyWebView interface is not planned.
-- A mobile browser interface only returns if a strong separated workflow need appears.
+- Legacy database import remains intentionally deferred and is not a compatibility goal.
+- Reproducing the old PyWebView interface is explicitly not planned.
+- A mobile browser interface only returns if a strong workflow need appears and it can remain cleanly separated from the desktop core.
 - Highly backend-specific Stable Diffusion controls remain optional adapter-owned features rather than mandatory project fields.
 - Exact recreation of V1 prompt strings is not a goal; source-audited behaviour should be expressed as maintainable Godot-native data and services.
