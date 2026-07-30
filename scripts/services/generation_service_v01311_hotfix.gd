@@ -159,7 +159,7 @@ func _process_completed_content(content: String) -> void:
 	super._process_completed_content(content)
 
 
-func _begin_creative_expansion(seed: Dictionary) -> void:
+func _begin_creative_expansion(visual_seed: Dictionary) -> void:
 	var job_id := str(_active_job.get("id", ""))
 	var runtime_value: Variant = _creative_runtime.get(job_id, {})
 	if not runtime_value is Dictionary:
@@ -189,7 +189,7 @@ func _begin_creative_expansion(seed: Dictionary) -> void:
 		"Create an ORIGINAL, generation-ready roleplay character concept from the visual seed below. "
 		+ "The visual seed is evidence, not a story. Invent the narrative identity now."
 	)
-	prompt += "\n\nVISUAL SEED:\n%s" % JSON.stringify(seed, "  ")
+	prompt += "\n\nVISUAL SEED:\n%s" % JSON.stringify(visual_seed, "  ")
 	var attachment_notes := str(runtime.get("attachment_notes", "")).strip_edges()
 	if not attachment_notes.is_empty():
 		prompt += "\n\nUSER IMAGE GUIDANCE — authoritative where it specifies intent:\n%s" % attachment_notes
