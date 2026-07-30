@@ -17,9 +17,6 @@ func _init() -> void:
 	_expect(int(parsed.get("max_output_tokens", 0)) == 250000, "Nested maximum-output metadata should be preserved.")
 	_expect(bool(parsed.get("vision", false)), "Image modality should advertise vision capability.")
 
-	# Regression: providers frequently return plain model entries without a
-	# capabilities object. The v0.13.11 parser used to recurse forever because
-	# a missing value defaulted to an empty Dictionary and was parsed again.
 	var text_only: Dictionary = capabilities.capability_from_entry({"id": "text-only"})
 	_expect(str(text_only.get("id", "")) == "text-only", "Plain model entries should still be accepted.")
 	_expect(not bool(text_only.get("vision", true)), "Missing capability metadata must resolve to non-vision without recursion.")
@@ -28,6 +25,17 @@ func _init() -> void:
 		"capabilities": {"modalities": ["text"]}
 	})
 	_expect(not bool(nested_nonvision.get("vision", true)), "Nested text-only capabilities should terminate safely.")
+
+	var nano_url: String = capabilities._models_url("https://nano-gpt.com/api/v1")
+	_expect(
+		nano_url == "https://nano-gpt.com/api/v1/models?detailed=true",
+		"NanoGPT model discovery must request detailed metadata so context_length and max_output_tokens can be returned."
+	)
+	var generic_url: String = capabilities._models_url("https://example-provider.invalid/v1")
+	_expect(
+		generic_url == "https://example-provider.invalid/v1/models",
+		"Generic OpenAI-compatible providers must keep the ordinary models URL."
+	)
 
 	var generation = GENERATION_SERVICE.new()
 	var profile := {

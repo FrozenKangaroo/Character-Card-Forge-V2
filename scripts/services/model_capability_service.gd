@@ -127,9 +127,6 @@ func _detect_vision(entry: Dictionary, depth: int = 0) -> bool:
 				var value := str(modality).to_lower()
 				if value.contains("image") or value.contains("vision"):
 					return true
-	# Missing capabilities used to default to {}, which recursively called this
-	# function forever. Only recurse when the provider actually supplied a
-	# non-empty nested capabilities object, and bound nesting defensively.
 	if depth >= 8 or not entry.has("capabilities"):
 		return false
 	var capabilities: Variant = entry.get("capabilities")
@@ -144,6 +141,18 @@ func _models_url(base_url: String) -> String:
 		url = url.trim_suffix("/chat/completions")
 	if url.ends_with("/responses"):
 		url = url.trim_suffix("/responses")
-	if url.ends_with("/models"):
-		return url
-	return url + "/models"
+	if not url.ends_with("/models"):
+		url += "/models"
+	return _provider_models_url(url)
+
+
+func _provider_models_url(models_url: String) -> String:
+	# NanoGPT's OpenAI-compatible basic listing intentionally omits the rich
+	# metadata Character Card Forge needs. Its documented detailed mode exposes
+	# context_length, max_output_tokens, capabilities and pricing. Keep this
+	# provider-specific so generic OpenAI-compatible servers are not sent an
+	# unknown query parameter they may reject.
+	var lower_url := models_url.to_lower()
+	if lower_url.contains("nano-gpt.com") and not lower_url.contains("detailed="):
+		return models_url + ("&" if models_url.contains("?") else "?") + "detailed=true"
+	return models_url
