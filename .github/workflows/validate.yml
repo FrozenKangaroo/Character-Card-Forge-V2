@@ -51,3 +51,6 @@ jobs:
 
       - name: Test alternative greetings export
         run: timeout 30s godot --headless --path . --script res://tools/test_alternative_greetings.gd
+
+      - name: Test multi-group output composition
+        run: timeout 30s godot --headless --path . --script res://tools/test_multi_group_output_composition.gd

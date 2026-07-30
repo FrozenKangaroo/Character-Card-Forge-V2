@@ -60,6 +60,41 @@ The generation components do not become separate Character Card V2 fields. They 
 
 A generation group must bind to a real workspace field ID or template validation rejects it.
 
+## Multiple groups bound to one field
+
+More than one enabled generation group may target the same output field. Those groups are composed into one final Character Card value in template order; a later group must never replace an earlier group.
+
+For example:
+
+```text
+Personality structure → personality
+Sexual Traits        → personality
+Background           → personality
+```
+
+produces one `character.personality` value containing all three sections:
+
+```text
+Personality structure
+
+Mind: ...
+Moral Alignment: ...
+
+Sexual Traits
+
+Experience Level: ...
+Preferences: ...
+
+Background
+
+Backstory: ...
+Relationships: ...
+```
+
+When two or more groups share an output field, each group title becomes a required section heading. Required components are validated inside their own section, so a result containing only the last group is treated as incomplete and enters the normal bounded semantic-repair path.
+
+Group order in the Generation Components editor controls section order in the combined field. `Allow AI to add extra labelled components` remains local to the group where it is enabled.
+
 ## Editing
 
 Open **Templates**, select a user template, then choose **Edit Generation Components**.
