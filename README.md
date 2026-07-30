@@ -161,6 +161,33 @@ Open the project in Godot 4.6.x and run it.
 
 No Python runtime, web server, PyWebView, Node.js, or browser frontend is required by the application.
 
+## Keeping a development test checkout current
+
+For testing the newest merged development source, clone the repository once instead of repeatedly downloading GitHub ZIP archives.
+
+```bash
+git clone git@github.com:FrozenKangaroo/Character-Card-Forge-V2.git
+cd Character-Card-Forge-V2
+bash update.sh
+```
+
+After the first clone, update the test checkout at any time with:
+
+```bash
+bash update.sh
+```
+
+The updater always targets `origin/main`. It requires a clean working tree, switches a clean checkout back to `main` when necessary, fetches the latest remote state, and performs a fast-forward-only merge. It deliberately refuses to overwrite local edits, detached-HEAD state, or divergent local commits.
+
+If desired, make it directly executable once:
+
+```bash
+chmod +x update.sh
+./update.sh
+```
+
+This is a **development-source updater**, not the planned packaged application updater. It follows `main`, so it may contain newly merged development work that has not yet been promoted to a packaged release.
+
 ## Local release helper
 
 From the development project directory:
