@@ -1,6 +1,8 @@
 class_name CCFSettingsV01310View
 extends CCFSettingsV0135View
 
+const TEMPLATE_PREFERENCES = preload("res://scripts/services/template_preference_service.gd")
+
 var _default_template_selector: OptionButton
 var _default_template_status: Label
 
@@ -54,8 +56,8 @@ func _populate_default_template_selector() -> void:
 	if _default_template_selector == null:
 		return
 	_default_template_selector.clear()
-	var requested := CCFTemplatePreferenceService.requested_default_template_id(_settings)
-	var resolved := CCFTemplatePreferenceService.default_template_id(_settings)
+	var requested: String = TEMPLATE_PREFERENCES.requested_default_template_id(_settings)
+	var resolved: String = TEMPLATE_PREFERENCES.default_template_id(_settings)
 	var selected_index := 0
 	for raw_summary in CCFTemplateService.list_templates():
 		if not raw_summary is Dictionary:
@@ -82,7 +84,7 @@ func _save_default_template_setting() -> void:
 	if _default_template_selector == null or _default_template_selector.selected < 0:
 		return
 	var selected_id := str(_default_template_selector.get_selected_metadata())
-	var resolved := CCFTemplatePreferenceService.set_default_template_id(_settings, selected_id)
+	var resolved: String = TEMPLATE_PREFERENCES.set_default_template_id(_settings, selected_id)
 	var result := CCFSettingsService.save_settings(_settings)
 	if not bool(result.get("ok", false)):
 		_default_template_status.text = str(result.get("error", "Could not save authoring defaults."))
