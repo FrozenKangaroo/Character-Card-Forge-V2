@@ -72,3 +72,6 @@ jobs:
 
       - name: Test v0.13.11 creative vision hotfix
         run: timeout 30s godot --headless --path . --script res://tools/test_v01311_creative_vision_hotfix.gd
+
+      - name: Test v0.13.11 seed identifier naming
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01311_seed_warning_name.gd
