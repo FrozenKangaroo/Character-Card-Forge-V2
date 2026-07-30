@@ -20,6 +20,8 @@ func _ready() -> void:
 
 
 func _install_prompt_generation_service() -> void:
+	if _prompt_generation_service != null:
+		return
 	_prompt_generation_service = IMAGE_PROMPT_GENERATION_SERVICE_V01312.new()
 	add_child(_prompt_generation_service)
 	_prompt_generation_service.job_completed.connect(_on_prompt_job_completed)
@@ -34,6 +36,13 @@ func _upgrade_prompt_actions() -> void:
 			break
 	if _ai_prompt_button == null:
 		return
+	# The base window uses _build_prompt_from_character() both for its button and
+	# for passive project/character refreshes. Once prompt building became an AI
+	# request, those paths must be separated so browsing never spends tokens.
+	if _ai_prompt_button.pressed.is_connected(_build_prompt_from_character):
+		_ai_prompt_button.pressed.disconnect(_build_prompt_from_character)
+	if not _ai_prompt_button.pressed.is_connected(_generate_prompt_from_character):
+		_ai_prompt_button.pressed.connect(_generate_prompt_from_character)
 	_ai_prompt_button.text = "Generate Prompt from Character"
 	_ai_prompt_button.tooltip_text = "Use the configured Character AI Text role to write a purpose-built image prompt from the selected character."
 	_local_prompt_button = Button.new()
@@ -49,9 +58,21 @@ func _upgrade_prompt_actions() -> void:
 
 
 func _build_prompt_from_character() -> void:
+	# Called automatically by the base Image Studio whenever a project loads or
+	# the active character changes. This hook is intentionally passive in
+	# v0.13.12: it clears character-specific working state but never calls AI.
+	_prepare_character_prompt_scope()
+
+
+func _generate_prompt_from_character() -> void:
 	if _prompt_edit == null:
 		return
-	if _prompt_generation_service != null and _prompt_generation_service.has_active_job():
+	if _prompt_generation_service == null:
+		_install_prompt_generation_service()
+	if _prompt_generation_service == null:
+		_status.text = "Image-prompt generation service is not available."
+		return
+	if _prompt_generation_service.has_active_job():
 		_prompt_generation_service.cancel_active_job()
 		return
 	_prepare_character_prompt_scope()
