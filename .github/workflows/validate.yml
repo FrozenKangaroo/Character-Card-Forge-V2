@@ -69,3 +69,6 @@ jobs:
 
       - name: Test v0.13.11 vision and model capabilities
         run: timeout 30s godot --headless --path . --script res://tools/test_v01311_vision_capabilities.gd
+
+      - name: Test v0.13.11 creative vision hotfix
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01311_creative_vision_hotfix.gd
