@@ -115,7 +115,8 @@ func _capture_alternative_greetings() -> void:
 	var greetings: Array[String] = []
 	for child in _alternate_editors.get_children():
 		if child is TextEdit:
-			var text := child.text.strip_edges()
+			var editor: TextEdit = child as TextEdit
+			var text: String = editor.text.strip_edges()
 			if not text.is_empty():
 				greetings.append(text)
 	CCFStorageService.set_value_at_path(_project, "character.alternate_greetings", greetings)
