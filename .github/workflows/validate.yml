@@ -57,3 +57,6 @@ jobs:
 
       - name: Test quiet malformed JSON handling
         run: timeout 30s godot --headless --path . --script res://tools/test_quiet_json_parser.gd
+
+      - name: Test concise image prompt construction
+        run: timeout 30s godot --headless --path . --script res://tools/test_image_prompt_concision.gd
