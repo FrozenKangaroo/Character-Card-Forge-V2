@@ -179,3 +179,47 @@ func _queue_chat_job(
 		metadata,
 		retry_count
 	)
+
+
+func _parse_job_output_with_diagnostics(content: String, parse_mode: String) -> Dictionary:
+	var candidates := _json_candidates(content)
+	var candidate_index := 0
+	var first_error := ""
+	for candidate in candidates:
+		var candidate_text := str(candidate)
+		var parse_attempt := _parse_json_quiet(candidate_text)
+		var parsed_value: Variant = parse_attempt.get("data") if bool(parse_attempt.get("ok", false)) else null
+		var strategy := "direct" if candidate_index == 0 else "extracted_json"
+		if parsed_value == null:
+			if first_error.is_empty():
+				first_error = str(parse_attempt.get("diagnostic", "Malformed JSON."))
+			var repaired_candidate := _repair_common_json(candidate_text)
+			if repaired_candidate != candidate_text:
+				var repaired_attempt := _parse_json_quiet(repaired_candidate)
+				if bool(repaired_attempt.get("ok", false)):
+					parsed_value = repaired_attempt.get("data")
+					strategy = "local_json_repair"
+		if parsed_value != null:
+			var normalised := _normalise_parsed_output(parsed_value, parse_mode)
+			if bool(normalised.get("ok", false)):
+				normalised["strategy"] = strategy
+				return normalised
+		candidate_index += 1
+	var diagnostic := (
+		"Expected %s output, but the assistant response did not contain a usable matching JSON structure."
+		% _expected_shape_description(parse_mode)
+	)
+	if not first_error.is_empty():
+		diagnostic += " First parse failure: %s" % first_error
+	return {"ok": false, "diagnostic": diagnostic}
+
+
+func _parse_json_quiet(text: String) -> Dictionary:
+	var parser := JSON.new()
+	var error_code: int = parser.parse(text)
+	if error_code != OK:
+		return {
+			"ok": false,
+			"diagnostic": "%s at line %d." % [parser.get_error_message(), parser.get_error_line()]
+		}
+	return {"ok": true, "data": parser.data}
