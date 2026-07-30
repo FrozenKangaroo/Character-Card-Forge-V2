@@ -1,6 +1,8 @@
 class_name CCFTemplateManagerV01310View
 extends CCFTemplateManagerV013View
 
+const TEMPLATE_PREFERENCES = preload("res://scripts/services/template_preference_service.gd")
+
 var _default_template_button: Button
 var _default_template_hint: Label
 var _preference_settings: Dictionary = {}
@@ -14,7 +16,7 @@ func _ready() -> void:
 
 func refresh_templates(select_template_id := "") -> void:
 	_preference_settings = CCFSettingsService.load_settings()
-	var repaired := CCFTemplatePreferenceService.repair_missing_default(_preference_settings)
+	var repaired: bool = TEMPLATE_PREFERENCES.repair_missing_default(_preference_settings)
 	if repaired:
 		CCFSettingsService.save_settings(_preference_settings)
 	super.refresh_templates(select_template_id)
@@ -43,7 +45,7 @@ func _set_selected_as_default() -> void:
 	if _current_template_id.is_empty():
 		return
 	_preference_settings = CCFSettingsService.load_settings()
-	var resolved := CCFTemplatePreferenceService.set_default_template_id(
+	var resolved: String = TEMPLATE_PREFERENCES.set_default_template_id(
 		_preference_settings, _current_template_id
 	)
 	var save_result := CCFSettingsService.save_settings(_preference_settings)
@@ -58,7 +60,7 @@ func _set_selected_as_default() -> void:
 func _delete_template() -> void:
 	var deleting_id := _current_template_id
 	var was_default := (
-		CCFTemplatePreferenceService.default_template_id(CCFSettingsService.load_settings())
+		TEMPLATE_PREFERENCES.default_template_id(CCFSettingsService.load_settings())
 		== deleting_id
 	)
 	var result := CCFTemplateService.delete_template(deleting_id)
@@ -67,7 +69,7 @@ func _delete_template() -> void:
 		return
 	if was_default:
 		_preference_settings = CCFSettingsService.load_settings()
-		CCFTemplatePreferenceService.set_default_template_id(_preference_settings, "default")
+		TEMPLATE_PREFERENCES.set_default_template_id(_preference_settings, "default")
 		CCFSettingsService.save_settings(_preference_settings)
 	_current_template_id = ""
 	templates_changed.emit()
@@ -82,7 +84,7 @@ func _delete_template() -> void:
 func _mark_default_template_in_list() -> void:
 	if _template_list == null:
 		return
-	var default_id := CCFTemplatePreferenceService.default_template_id(_preference_settings)
+	var default_id: String = TEMPLATE_PREFERENCES.default_template_id(_preference_settings)
 	for index in range(_template_list.item_count):
 		var template_id := str(_template_list.get_item_metadata(index))
 		var label := _template_list.get_item_text(index)
@@ -95,7 +97,7 @@ func _mark_default_template_in_list() -> void:
 func _update_default_template_controls() -> void:
 	if _default_template_button == null:
 		return
-	var default_id := CCFTemplatePreferenceService.default_template_id(_preference_settings)
+	var default_id: String = TEMPLATE_PREFERENCES.default_template_id(_preference_settings)
 	var selected_is_default := not _current_template_id.is_empty() and _current_template_id == default_id
 	_default_template_button.disabled = _current_template_id.is_empty() or selected_is_default
 	_default_template_button.text = "Default Template ✓" if selected_is_default else "Set as Default"
