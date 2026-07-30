@@ -78,3 +78,6 @@ jobs:
 
       - name: Test v0.13.12 AI image prompt planning
         run: timeout 30s godot --headless --path . --script res://tools/test_image_prompt_generation_v01312.gd
+
+      - name: Test v0.13.12 Image Studio startup prompt behavior
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01312_image_prompt_startup.gd
