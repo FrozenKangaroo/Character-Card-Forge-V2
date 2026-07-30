@@ -1,6 +1,6 @@
 extends "res://scripts/main_v01311_hotfix.gd"
 
-const BUILD_DISPLAY_VERSION_V01312 := "0.13.12"
+const BUILD_DISPLAY_VERSION_V01312 := "0.13.12-hotfix1"
 
 
 func _update_build_version_label() -> void:
