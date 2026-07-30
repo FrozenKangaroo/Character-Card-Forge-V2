@@ -63,3 +63,6 @@ jobs:
 
       - name: Test default template selection
         run: timeout 30s godot --headless --path . --script res://tools/test_default_template_selection.gd
+
+      - name: Test assistant response compatibility
+        run: timeout 30s godot --headless --path . --script res://tools/test_assistant_response_shapes.gd

@@ -5,6 +5,7 @@ const TEMPLATE_PREFERENCES = preload("res://scripts/services/template_preference
 const WORKSPACE_V01310 = preload("res://scripts/ui/workspace_v01310.gd")
 const SETTINGS_V01310 = preload("res://scripts/ui/settings_view_v01310.gd")
 const TEMPLATE_MANAGER_V01310 = preload("res://scripts/ui/template_manager_v01310_view.gd")
+const GENERATION_SERVICE_V01310_HOTFIX = preload("res://scripts/services/generation_service_v01310_hotfix.gd")
 
 
 func _install_settings_v0135() -> void:
@@ -83,6 +84,28 @@ func _install_v013_template_manager() -> void:
 	_content.add_child(upgraded_manager)
 	if should_be_visible:
 		upgraded_manager.refresh_templates()
+
+
+func _install_generation_parity_service() -> void:
+	if _workspace == null:
+		return
+	var current_service: CCFGenerationService = _workspace._generation_service
+	if current_service != null and current_service.get_script() == GENERATION_SERVICE_V01310_HOTFIX:
+		return
+	if current_service != null:
+		_disconnect_workspace_generation_signals(current_service)
+		if current_service.get_parent() == _workspace:
+			_workspace.remove_child(current_service)
+		current_service.queue_free()
+	var upgraded_service: CCFGenerationService = GENERATION_SERVICE_V01310_HOTFIX.new()
+	_workspace._generation_service = upgraded_service
+	_workspace.add_child(upgraded_service)
+	upgraded_service.job_started.connect(_workspace._on_job_started)
+	upgraded_service.job_completed.connect(_workspace._on_job_completed)
+	upgraded_service.job_failed.connect(_workspace._on_job_failed)
+	upgraded_service.job_cancelled.connect(_workspace._on_job_cancelled)
+	upgraded_service.queue_changed.connect(_workspace._on_queue_changed)
+	_rebind_workspace_generation_clients(upgraded_service)
 
 
 func _create_new_character() -> void:
