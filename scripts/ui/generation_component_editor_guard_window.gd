@@ -14,6 +14,7 @@ func _ready() -> void:
 func open_for_template(template: Dictionary, read_only: bool) -> void:
 	super.open_for_template(template, read_only)
 	_applied_groups = _groups.duplicate(true)
+	_status.text += " Multiple enabled groups may target the same Character Card field; they are combined in group order, using their titles as section headings."
 
 
 func _apply() -> void:
