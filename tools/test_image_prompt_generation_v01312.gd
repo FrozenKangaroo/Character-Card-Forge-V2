@@ -20,7 +20,8 @@ func _init() -> void:
 		{}, character, "stable_diffusion", "three-quarter portrait, wet pavement reflections"
 	)
 	_expect(messages.size() == 2, "Image prompt generation should build one system and one user message.")
-	var user_prompt := str((messages[1] as Dictionary).get("content", ""))
+	var user_message: Dictionary = messages[1]
+	var user_prompt := str(user_message.get("content", ""))
 	_expect(user_prompt.contains("PURPOSE-BUILT image-generation prompt"), "Prompt generation must ask the text model to author a new image prompt rather than extract tags.")
 	_expect(user_prompt.contains("short black hair"), "Physical description must be supplied as visual grounding.")
 	_expect(user_prompt.contains("late-night train station"), "Scenario should be available for visually expressible scene choices.")
@@ -31,7 +32,8 @@ func _init() -> void:
 	var natural_messages: Array = service.build_image_prompt_messages(
 		{}, character, "natural", "cinematic portrait"
 	)
-	var natural_prompt := str((natural_messages[1] as Dictionary).get("content", ""))
+	var natural_user_message: Dictionary = natural_messages[1]
+	var natural_prompt := str(natural_user_message.get("content", ""))
 	_expect(natural_prompt.contains("80–160 words"), "Natural prompt mode should request concise image-specific prose.")
 	_expect(natural_prompt.contains('"prompt"'), "Image prompt generation should request a structured positive prompt result.")
 	_expect(natural_prompt.contains('"negative_prompt"'), "Image prompt generation should support an optional generated negative prompt.")
