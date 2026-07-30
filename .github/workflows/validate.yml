@@ -48,3 +48,6 @@ jobs:
 
       - name: Test generation diagnostics
         run: timeout 30s godot --headless --path . --script res://tools/test_generation_diagnostics.gd
+
+      - name: Test alternative greetings export
+        run: timeout 30s godot --headless --path . --script res://tools/test_alternative_greetings.gd
