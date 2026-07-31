@@ -28,11 +28,11 @@ The existing PyWebView application remains a feature and behaviour reference, no
 
 ## Current Development Phase
 
-**v0.14.0 development candidate — V1 Authoring Workflow Parity Foundation**
+**v0.14.0-hotfix1 development candidate — V1 Authoring Workflow Parity + Interview Budget Repair**
 
 The v0.13 line established the modern generation, validation, Q&A, provider, vision, project-lifecycle, and AI-authored image-prompt foundations. Runtime use then highlighted an important parity problem: V2's underlying generation architecture is stronger than V1, but its everyday character-authoring workflow became too dependent on typing values manually.
 
-The running development build displays **v0.14.0**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
+The running development build displays **v0.14.0-hotfix1**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
 
 v0.14 therefore restores the distinct V1 authoring workflows before the larger image expansion:
 
@@ -45,7 +45,17 @@ v0.14 therefore restores the distinct V1 authoring workflows before the larger i
 
 The first v0.14.0 slice adds a versioned shared authoring-option catalog and restores option suggestions to the existing Character Builder without changing `workspace.builder` storage. Existing Builder precedence therefore remains intact: accepted Builder values continue to participate in concept/Q&A/full-generation planning exactly as before.
 
+v0.14.0-hotfix1 also removes the historical fixed **2,600-token private Interview ceiling**. Interview planning and missing-answer retries now preserve the Text role's already-resolved output budget instead of silently replacing a large model/profile limit with a tiny stage-specific maximum. This is especially important for reasoning models, long Generation Concepts, and custom templates with larger Interview / Q&A sets.
+
 ## Completed
+
+### v0.14.0-hotfix1 — Private Interview Output Budget
+
+- Removed the hidden 2,600-token completion ceiling from private Interview / Q&A planning.
+- Interview planning now inherits the already-resolved Text-role `max_tokens` budget, preserving Auto-detected/manual model limits and the existing request-level context budgeting performed before the character job is queued.
+- Missing-required-answer retries use the same resolved output budget rather than falling back to the legacy cap.
+- Deliberately smaller user/model budgets remain respected; the hotfix removes an artificial ceiling rather than forcing a larger minimum.
+- Added regression coverage using a large 384,000-token resolved output budget and a larger custom question set so the fixed cap cannot return unnoticed.
 
 ### v0.13.x — Generation Parity and Provider/Workflow Stabilisation
 
@@ -152,6 +162,7 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Single-choice suggestions fill the editable field; multi-value/tag suggestions append without replacing existing choices.
 - Selecting a suggestion marks the Builder state exactly like manual editing, so current `workspace.builder` storage, AI fill/extraction, Apply to Character, concept composition, and generation precedence remain compatible.
 - Option pools are deliberately shared data rather than hard-coded button logic so the Idea Generator can reuse them as candidate pools.
+- Private Interview / Q&A planning now preserves the resolved Text-role output budget instead of imposing the legacy 2,600-token stage ceiling.
 
 **Next v0.14 authoring slices:**
 
@@ -178,6 +189,7 @@ These generation-engine tasks remain important and should be completed without b
 - Real-world testing across multiple OpenAI-compatible text and vision backends.
 - Compare fresh characters against pre-parity V2 output, especially Description/Personality separation and concept fidelity.
 - Deliberately test concept/manual-Q&A/Builder/AI-answer precedence conflicts and semantic repair after those conflicts.
+- Test long Generation Concepts and larger custom Interview / Q&A sets with reasoning models; the private interview must retain the resolved Text-role output budget and reach final JSON without a CCF-imposed 2,600-token ceiling.
 - Confirm Detailed/Cinematic First Message modes remain substantially fuller while Brief remains intentionally short.
 - Confirm multiple enabled generation groups bound to the same output field compose in template order and targeted repair identifies missing groups/components.
 - Confirm malformed provider JSON enters normal repair without noisy engine-level parser failures.
