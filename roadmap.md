@@ -19,7 +19,7 @@ The existing PyWebView application remains a feature and behaviour reference, no
 - Character text/vision providers and image-generation providers are separate configuration domains.
 - Data formats are versioned and older content should remain usable where practical.
 - New features extend the central project model rather than create parallel copies of character state.
-- Wider desktop windows expose additional workspace instead of letterboxing a fixed interface.
+- Wider desktop windows expose additional workspace instead of scaling the interface larger or letterboxing a fixed canvas.
 - Detachable native tool windows are used where multi-monitor workflows benefit; primary navigation pages may remain embedded when clearer.
 - Generation parity ports useful V1 behaviour into the Godot architecture rather than recreating PyWebView-specific implementation details.
 - Workspace/editing structure, authoring/planning structure, AI-generation structure, and interoperable Character Card output fields are related but distinct layers.
@@ -28,11 +28,11 @@ The existing PyWebView application remains a feature and behaviour reference, no
 
 ## Current Development Phase
 
-**v0.14.0-hotfix1 development candidate — V1 Authoring Workflow Parity + Interview Budget Repair**
+**v0.14.1 development candidate — V1 Authoring Workflow Parity + Desktop UX Stabilisation**
 
 The v0.13 line established the modern generation, validation, Q&A, provider, vision, project-lifecycle, and AI-authored image-prompt foundations. Runtime use then highlighted an important parity problem: V2's underlying generation architecture is stronger than V1, but its everyday character-authoring workflow became too dependent on typing values manually.
 
-The running development build displays **v0.14.0-hotfix1**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
+The running development build displays **v0.14.1**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
 
 v0.14 therefore restores the distinct V1 authoring workflows before the larger image expansion:
 
@@ -45,9 +45,30 @@ v0.14 therefore restores the distinct V1 authoring workflows before the larger i
 
 The first v0.14.0 slice adds a versioned shared authoring-option catalog and restores option suggestions to the existing Character Builder without changing `workspace.builder` storage. Existing Builder precedence therefore remains intact: accepted Builder values continue to participate in concept/Q&A/full-generation planning exactly as before.
 
-v0.14.0-hotfix1 also removes the historical fixed **2,600-token private Interview ceiling**. Interview planning and missing-answer retries now preserve the Text role's already-resolved output budget instead of silently replacing a large model/profile limit with a tiny stage-specific maximum. This is especially important for reasoning models, long Generation Concepts, and custom templates with larger Interview / Q&A sets.
+v0.14.0-hotfix1 removed the historical fixed **2,600-token private Interview ceiling**. Interview planning and missing-answer retries preserve the Text role's already-resolved output budget instead of silently replacing a large model/profile limit with a tiny stage-specific maximum.
+
+v0.14.0-hotfix2 made the embedded Image Studio vertically scrollable so genuine content overflow can never push lower prompt/gallery controls beyond reach.
+
+v0.14.1 moves the application away from game-style canvas stretching to desktop-native 1:1 interface sizing: increasing the window size exposes more usable workspace instead of enlarging every control. It also persists and renders the latest private Interview / Q&A responses with **Manual answer** versus **AI Interview** provenance, so planning details that affected generation remain inspectable after the run.
 
 ## Completed
+
+### v0.14.1 — Desktop-Native Layout + Interview Review
+
+- Switched the desktop app away from `canvas_items` stretch scaling so resizing/maximising the main window exposes additional workspace instead of scaling the whole UI larger.
+- Kept responsive Control/container layouts and explicit scroll containers responsible for adapting to available space.
+- Private Interview / Q&A planning now carries answered question text and provenance into final generation metadata.
+- The latest completed interview review is stored in character-local `generation.interview_review` state and survives normal project save/reopen workflows.
+- Interview / Q&A sections display a **Latest generation interview responses** panel containing the actual planning answers used by generation.
+- Manual versus AI provenance remains explicit; displaying an AI response does not silently promote it to a higher-priority manual answer.
+- Added regression coverage for desktop stretch mode, answer persistence, provenance, and Interview / Q&A rendering.
+
+### v0.14.0-hotfix2 — Image Studio Embedded Layout
+
+- Mounted the embedded Image Studio inside an expanding vertical scroll viewport.
+- Genuine vertical overflow is now reachable without narrowing the main application window.
+- Horizontal scrolling remains disabled so Image Studio continues using its responsive flow/split layout.
+- Added a headless layout regression for the embedded studio scroll contract.
 
 ### v0.14.0-hotfix1 — Private Interview Output Budget
 
@@ -154,7 +175,7 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 
 ### v0.14 — V1 Authoring Workflow Parity
 
-**Implemented in the first v0.14.0 slice:**
+**Implemented in the current v0.14 line:**
 
 - Added `data/authoring_option_pools.json`, a versioned shared catalog of suggested authoring values keyed to existing Builder paths.
 - Added reusable option pools for genre, setting, role/archetype, traits, strengths, flaws, speech style, relationship style, skills, scene location, user role, initial relationship, and tone.
@@ -162,9 +183,12 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Single-choice suggestions fill the editable field; multi-value/tag suggestions append without replacing existing choices.
 - Selecting a suggestion marks the Builder state exactly like manual editing, so current `workspace.builder` storage, AI fill/extraction, Apply to Character, concept composition, and generation precedence remain compatible.
 - Option pools are deliberately shared data rather than hard-coded button logic so the Idea Generator can reuse them as candidate pools.
-- Private Interview / Q&A planning now preserves the resolved Text-role output budget instead of imposing the legacy 2,600-token stage ceiling.
+- Private Interview / Q&A planning preserves the resolved Text-role output budget instead of imposing the legacy 2,600-token stage ceiling.
+- Embedded Image Studio overflow is vertically scrollable rather than clipped.
+- Desktop window resizing uses native 1:1 UI sizing so larger windows expose more real workspace.
+- Latest private Interview / Q&A responses are persisted and visible with Manual/AI provenance.
 
-**Next v0.14 authoring slices:**
+**Next v0.14 authoring and organisation slices:**
 
 - Expand/adjust the built-in option catalog from real V1 usage and runtime feedback without turning suggestions into rigid enums.
 - Add template/user authoring-option overrides so custom workflows can supply their own Builder choices.
@@ -172,7 +196,10 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Rework **Idea Generator** around per-field candidate pools: enable/disable choices, add custom choices, and save reusable pool presets.
 - Add Idea Generator field locks, single-field reroll, and **Reroll Unlocked** while preserving accepted selections.
 - Let generated combinations be edited before being sent to Generation Concept or other planning workflows.
-- Define clear provenance only if needed: manual value, selected preset, Idea Generator choice, concept extraction, or Builder AI.
+- Define clear provenance only where useful: manual value, selected preset, Idea Generator choice, concept extraction, Builder AI, or private Interview AI.
+- Add first-class **Move Character** and **Copy Character** workflows between existing Character Projects or into a new project, carrying character-local state/assets while safely handling project-level relationships/context.
+- Make move operations transactional so the source character is never removed until the destination has saved successfully; preserve/remap relationships when multiple characters are eventually moved together.
+- Establish a shared text-input convention: multiline editors accept `Shift+Enter` for a newline, and any future Enter-to-submit control reserves `Shift+Enter` for multiline input.
 - Perform a formal V1 authoring UX audit: missing / equivalent-relocated / replaced-evolved / partial / intentionally retired, plus V2-only features.
 
 ### Remaining v0.13 Generation Parity Core carried forward
@@ -190,6 +217,8 @@ These generation-engine tasks remain important and should be completed without b
 - Compare fresh characters against pre-parity V2 output, especially Description/Personality separation and concept fidelity.
 - Deliberately test concept/manual-Q&A/Builder/AI-answer precedence conflicts and semantic repair after those conflicts.
 - Test long Generation Concepts and larger custom Interview / Q&A sets with reasoning models; the private interview must retain the resolved Text-role output budget and reach final JSON without a CCF-imposed 2,600-token ceiling.
+- Confirm persisted Interview / Q&A reviews match the responses used by generation and preserve Manual versus AI provenance after save/reopen.
+- Confirm maximising and resizing the desktop app exposes additional workspace without scaling controls larger; genuine content overflow should remain reachable through local scroll containers.
 - Confirm Detailed/Cinematic First Message modes remain substantially fuller while Brief remains intentionally short.
 - Confirm multiple enabled generation groups bound to the same output field compose in template order and targeted repair identifies missing groups/components.
 - Confirm malformed provider JSON enters normal repair without noisy engine-level parser failures.
@@ -208,7 +237,7 @@ These generation-engine tasks remain important and should be completed without b
 
 ### Continue v0.14 Authoring Workflow Parity
 
-The immediate next target after the option-driven Builder foundation is the V1-style Idea Generator pool workflow, followed by explicit Manual Guided parity and the authoring UX audit. All authoring modes should continue to share accepted project/planning data rather than inventing parallel card schemas.
+The immediate next target after the option-driven Builder foundation and current runtime-stability fixes is the V1-style Idea Generator pool workflow, followed by explicit Manual Guided parity, character move/copy organisation, shared keyboard-input behaviour, and the authoring UX audit. All authoring modes should continue to share accepted project/planning data rather than inventing parallel card schemas.
 
 ### v0.15 — Image Workflow Expansion
 
@@ -234,6 +263,7 @@ Do the larger navigation/theme/layout redesign after the core generation, author
 - Generate and commit canonical Godot 4.6 `.gd.uid` sidecars rather than repeatedly treating them as disposable local noise.
 - Synchronise project/release version metadata so `project.godot`, the development build label, VERSION, tags, and release assets cannot drift silently.
 - Continue replacing version-layer compatibility bridges with clean named APIs when the surrounding workflow is stable.
+- Audit remaining primary pages/tool windows for fixed minimum sizes or game-style assumptions that fight normal desktop resizing; use flexible containers and local scrolling where content genuinely cannot fit.
 
 ## Long-Term Ideas
 
