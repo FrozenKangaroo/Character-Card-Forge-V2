@@ -99,3 +99,6 @@ jobs:
 
       - name: Test v0.14.6 preview selection safety
         run: timeout 30s godot --headless --path . --script res://tools/test_v0146_preview_selection_safety.gd
+
+      - name: Test v0.14.7 Manual Guided components and state isolation
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0147_manual_guided_components.gd
