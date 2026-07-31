@@ -102,3 +102,6 @@ jobs:
 
       - name: Test v0.14.7 Manual Guided components and state isolation
         run: timeout 30s godot --headless --path . --script res://tools/test_v0147_manual_guided_components.gd
+
+      - name: Test v0.14.8 Manual Guided alternative greetings
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0148_manual_guided_alternative_greetings.gd
