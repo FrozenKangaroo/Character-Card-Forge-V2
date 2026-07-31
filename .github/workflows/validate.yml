@@ -84,3 +84,6 @@ jobs:
 
       - name: Test v0.14 authoring option foundation
         run: timeout 30s godot --headless --path . --script res://tools/test_v014_authoring_options.gd
+
+      - name: Test v0.14 private interview output budget
+        run: timeout 30s godot --headless --path . --script res://tools/test_v014_interview_output_budget.gd
