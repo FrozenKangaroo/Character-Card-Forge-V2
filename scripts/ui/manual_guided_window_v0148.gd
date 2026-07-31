@@ -3,11 +3,10 @@ extends "res://scripts/ui/manual_guided_window_v0147.gd"
 
 var _alternative_editors: Array[TextEdit] = []
 var _building_alternatives := false
+var _skip_alternative_capture_once := false
 
 
 func open_for_character(project: Dictionary, template: Dictionary, saved_state: Dictionary = {}) -> void:
-	# Clear repeatable controls before the v0.14.7 context switch so controls from
-	# another character can never be captured into the incoming draft.
 	_alternative_editors.clear()
 	var incoming_state := saved_state.duplicate(true)
 	if not incoming_state.has("alternative_greetings"):
@@ -22,10 +21,14 @@ func _render_page() -> void:
 	if str(definition.get("id", "")) == "first":
 		_add_alternative_greetings_editor()
 		_update_preview()
+	else:
+		_alternative_editors.clear()
 
 
 func _capture_controls() -> void:
-	if not _building_alternatives and not _alternative_editors.is_empty():
+	if _skip_alternative_capture_once:
+		_skip_alternative_capture_once = false
+	elif not _building_alternatives and not _alternative_editors.is_empty():
 		var greetings: Array[String] = []
 		for editor in _alternative_editors:
 			var clean := editor.text.strip_edges()
@@ -126,6 +129,7 @@ func _add_alternative_greeting() -> void:
 	var greetings := _normalise_alternative_greetings(_state.get("alternative_greetings", []))
 	greetings.append("")
 	_state["alternative_greetings"] = greetings
+	_skip_alternative_capture_once = true
 	_render_page()
 
 
@@ -135,6 +139,7 @@ func _remove_alternative_greeting(index: int) -> void:
 	if index >= 0 and index < greetings.size():
 		greetings.remove_at(index)
 	_state["alternative_greetings"] = greetings
+	_skip_alternative_capture_once = true
 	_render_page()
 
 
@@ -148,6 +153,7 @@ func _move_alternative_greeting(index: int, offset: int) -> void:
 	greetings[index] = greetings[target]
 	greetings[target] = value
 	_state["alternative_greetings"] = greetings
+	_skip_alternative_capture_once = true
 	_render_page()
 
 
