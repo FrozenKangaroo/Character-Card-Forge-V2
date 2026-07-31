@@ -93,3 +93,6 @@ jobs:
 
       - name: Test v0.14.1 desktop layout and interview review
         run: timeout 30s godot --headless --path . --script res://tools/test_v0141_desktop_layout_interview_review.gd
+
+      - name: Test v0.14.2 character transfer and text input
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0142_character_transfer_input.gd
