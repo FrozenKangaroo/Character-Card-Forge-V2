@@ -6,11 +6,13 @@ signal settings_requested
 var _controller: CCFImageGenerationWindow
 var _mounted := false
 var _page_status: Label
+var _studio_scroll: ScrollContainer
 
 
 func _ready() -> void:
 	add_theme_constant_override("separation", 10)
 	_build_header()
+	_build_studio_scroll()
 
 
 func attach_controller(controller: CCFImageGenerationWindow) -> void:
@@ -53,9 +55,22 @@ func _build_header() -> void:
 	add_child(_page_status)
 
 
+func _build_studio_scroll() -> void:
+	_studio_scroll = ScrollContainer.new()
+	_studio_scroll.name = "ImageStudioScroll"
+	_studio_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_studio_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_studio_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_studio_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	_studio_scroll.follow_focus = true
+	add_child(_studio_scroll)
+
+
 func _mount_controller_ui() -> void:
 	if _mounted or _controller == null:
 		return
+	if _studio_scroll == null:
+		_build_studio_scroll()
 	var studio_root: Control = null
 	for child in _controller.get_children():
 		if child is MarginContainer:
@@ -64,7 +79,7 @@ func _mount_controller_ui() -> void:
 	if studio_root == null:
 		_page_status.text = "Could not mount the Image Studio interface into the main workspace."
 		return
-	studio_root.reparent(self)
+	studio_root.reparent(_studio_scroll)
 	studio_root.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	studio_root.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	studio_root.visible = true
