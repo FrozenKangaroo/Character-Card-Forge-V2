@@ -28,11 +28,11 @@ The existing PyWebView application remains a feature and behaviour reference, no
 
 ## Current Development Phase
 
-**v0.14.1 development candidate — V1 Authoring Workflow Parity + Desktop UX Stabilisation**
+**v0.14.2 development candidate — V1 Authoring Workflow Parity + Character Organisation**
 
 The v0.13 line established the modern generation, validation, Q&A, provider, vision, project-lifecycle, and AI-authored image-prompt foundations. Runtime use then highlighted an important parity problem: V2's underlying generation architecture is stronger than V1, but its everyday character-authoring workflow became too dependent on typing values manually.
 
-The running development build displays **v0.14.1**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
+The running development build displays **v0.14.2**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
 
 v0.14 therefore restores the distinct V1 authoring workflows before the larger image expansion:
 
@@ -51,7 +51,20 @@ v0.14.0-hotfix2 made the embedded Image Studio vertically scrollable so genuine 
 
 v0.14.1 moves the application away from game-style canvas stretching to desktop-native 1:1 interface sizing: increasing the window size exposes more usable workspace instead of enlarging every control. It also persists and renders the latest private Interview / Q&A responses with **Manual answer** versus **AI Interview** provenance, so planning details that affected generation remain inspectable after the run.
 
+v0.14.2 adds first-class character transfer between projects and establishes a shared multiline keyboard convention. Characters can be moved or copied into existing/new projects together with character-local files and authoring state, while destination-first move semantics protect the source from data loss. `Shift+Enter` now consistently inserts a newline across current and future multiline editors.
+
 ## Completed
+
+### v0.14.2 — Character Transfer + Multiline Input Convention
+
+- Added **Move / Copy…** to the character roster workflow for transfers into existing Character Projects or a newly created project.
+- Copy creates an independent character ID and remaps character-local managed paths; Move preserves character identity where practical.
+- Character-local card data, Generation Concept, Builder state, Interview review/provenance, assigned template, generation history/settings, portrait/generated/emotion-image records, managed files, and character attachments travel with the character.
+- Shared project context, shared attachments and project relationships remain project-level rather than silently following a transferred character.
+- Move is destination-first: files are copied and the destination is saved before the source roster/files are changed.
+- Moving a project's sole character leaves a fresh empty draft in the source so project-level context/attachments are preserved instead of deleting the source project.
+- Added an application-level `Shift+Enter` convention for `TextEdit`: Shift+Enter inserts a newline while plain Enter retains each editor's existing behaviour.
+- Added filesystem-backed regression coverage for copy/move identity, managed file transfer/removal, Builder/Interview state preservation, sole-character handling, and Shift+Enter.
 
 ### v0.14.1 — Desktop-Native Layout + Interview Review
 
@@ -81,7 +94,7 @@ v0.14.1 moves the application away from game-style canvas stretching to desktop-
 ### v0.13.x — Generation Parity and Provider/Workflow Stabilisation
 
 - Added semantic completeness validation after ordinary JSON parsing and one targeted repair pass for valid-but-incomplete full-character results.
-- Added fail-closed generation-contract protection and regression coverage for contract/dispatch regressions.
+- Added fail-closed generation-contract protection and regression coverage for dispatch/contract regressions.
 - Added template format 3 generation groups/components with editable order, enabled/required state, AI instructions, output bindings, and allow-extra-components policy.
 - Multiple enabled generation groups targeting one Character Card field now compose in template order instead of overwriting one another.
 - Restored structured V1-inspired Description and Personality expectations while keeping Description physical/external.
@@ -187,6 +200,8 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Embedded Image Studio overflow is vertically scrollable rather than clipped.
 - Desktop window resizing uses native 1:1 UI sizing so larger windows expose more real workspace.
 - Latest private Interview / Q&A responses are persisted and visible with Manual/AI provenance.
+- Characters can now be moved/copied between existing or new projects with character-local authoring state/assets and destination-first move safety.
+- Multiline editors share a consistent `Shift+Enter` newline convention.
 
 **Next v0.14 authoring and organisation slices:**
 
@@ -197,9 +212,7 @@ Source merged to `main`; it was a source milestone rather than a separate publis
 - Add Idea Generator field locks, single-field reroll, and **Reroll Unlocked** while preserving accepted selections.
 - Let generated combinations be edited before being sent to Generation Concept or other planning workflows.
 - Define clear provenance only where useful: manual value, selected preset, Idea Generator choice, concept extraction, Builder AI, or private Interview AI.
-- Add first-class **Move Character** and **Copy Character** workflows between existing Character Projects or into a new project, carrying character-local state/assets while safely handling project-level relationships/context.
-- Make move operations transactional so the source character is never removed until the destination has saved successfully; preserve/remap relationships when multiple characters are eventually moved together.
-- Establish a shared text-input convention: multiline editors accept `Shift+Enter` for a newline, and any future Enter-to-submit control reserves `Shift+Enter` for multiline input.
+- Extend character transfer to future batch Move/Copy Selected workflows; preserve/remap relationships when multiple related characters are transferred together.
 - Perform a formal V1 authoring UX audit: missing / equivalent-relocated / replaced-evolved / partial / intentionally retired, plus V2-only features.
 
 ### Remaining v0.13 Generation Parity Core carried forward
@@ -219,6 +232,8 @@ These generation-engine tasks remain important and should be completed without b
 - Test long Generation Concepts and larger custom Interview / Q&A sets with reasoning models; the private interview must retain the resolved Text-role output budget and reach final JSON without a CCF-imposed 2,600-token ceiling.
 - Confirm persisted Interview / Q&A reviews match the responses used by generation and preserve Manual versus AI provenance after save/reopen.
 - Confirm maximising and resizing the desktop app exposes additional workspace without scaling controls larger; genuine content overflow should remain reachable through local scroll containers.
+- Confirm character Move/Copy preserves the exact character-local state and managed files while excluding project-shared context/relationships; failed destination saves must leave the source untouched.
+- Confirm `Shift+Enter` remains reliable across existing and newly created multiline editors on supported desktop platforms.
 - Confirm Detailed/Cinematic First Message modes remain substantially fuller while Brief remains intentionally short.
 - Confirm multiple enabled generation groups bound to the same output field compose in template order and targeted repair identifies missing groups/components.
 - Confirm malformed provider JSON enters normal repair without noisy engine-level parser failures.
@@ -237,7 +252,7 @@ These generation-engine tasks remain important and should be completed without b
 
 ### Continue v0.14 Authoring Workflow Parity
 
-The immediate next target after the option-driven Builder foundation and current runtime-stability fixes is the V1-style Idea Generator pool workflow, followed by explicit Manual Guided parity, character move/copy organisation, shared keyboard-input behaviour, and the authoring UX audit. All authoring modes should continue to share accepted project/planning data rather than inventing parallel card schemas.
+The immediate next target after the option-driven Builder foundation, current runtime-stability fixes, character transfer and shared keyboard-input behaviour is the V1-style Idea Generator pool workflow, followed by explicit Manual Guided parity and the authoring UX audit. All authoring modes should continue to share accepted project/planning data rather than inventing parallel card schemas.
 
 ### v0.15 — Image Workflow Expansion
 
