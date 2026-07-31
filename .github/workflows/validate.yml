@@ -96,3 +96,6 @@ jobs:
 
       - name: Test v0.14.2 character transfer and text input
         run: timeout 30s godot --headless --path . --script res://tools/test_v0142_character_transfer_input.gd
+
+      - name: Test v0.14.6 preview selection safety
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0146_preview_selection_safety.gd
