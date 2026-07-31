@@ -45,8 +45,6 @@ func _init() -> void:
 	assert(str(outputs["character.personality"]).contains("Mind: Confident but thoughtful."), "Personality Mind must be exposed/composed.")
 	assert(str(outputs["character.personality"]).contains("Moral Alignment: Pragmatic good."), "Optional enabled Personality components must be exposed/composed.")
 
-	# Template changes are authoritative. Add one component, disable another, then
-	# reconcile a saved draft and verify its schema follows the edited template.
 	var edited := template.duplicate(true)
 	for raw_group in edited.get("generation_groups", []):
 		if raw_group is Dictionary and str(raw_group.get("id", "")) == "personality_structure":
@@ -78,8 +76,7 @@ func _init() -> void:
 	assert(source.contains("character_id"), "Manual Guided draft state must carry character identity.")
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v0147.gd")
 	assert(main_source.contains("0.14.7"), "v0.14.7 development label is missing.")
-	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene_source.contains("main_v0147.gd"), "Main scene must use v0.14.7 shell.")
+	assert(FileAccess.file_exists("res://scripts/ui/workspace_v0147.gd"), "v0.14.7 workspace layer must remain available to newer shells.")
 
 	manual.free()
 	print("v0.14.7 Manual Guided component/state regression passed")
