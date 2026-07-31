@@ -63,11 +63,13 @@ func _init() -> void:
 	)
 	var panel := workspace.find_child(
 		CCFWorkspaceV0141View.INTERVIEW_REVIEW_PANEL_NAME,
-		"PanelContainer",
 		true,
 		false
 	)
-	_assert_true(panel != null, "Interview / Q&A UI must render the persisted review panel.")
+	_assert_true(
+		panel is PanelContainer,
+		"Interview / Q&A UI must render the persisted review panel."
+	)
 	_assert_true(
 		_has_label_text(panel, "Source: AI Interview"),
 		"Rendered review must identify AI Interview provenance."
