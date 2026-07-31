@@ -24,14 +24,15 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Workspace/editing structure, authoring/planning structure, AI-generation structure, lore/context structure, and interoperable Character Card output fields are related but distinct layers.
 - Stable IDs are internal references; user-facing names may change without silently breaking bindings or preferences.
 - Missing core authoring/data behaviour should be restored before the larger visual redesign, but usability regressions such as toolbar overcrowding should be fixed as soon as they become obvious.
+- Existing folders, collections, series, templates, and other named objects should be selected from visible UI choices rather than requiring users to retype names they already created.
 
 ## Current Development Phase
 
-**v0.14.5 development candidate — Authoring Parity, Navigation Hierarchy, and Lorebooks**
+**v0.14.9 development candidate — Authoring Parity, Lorebooks, and Library UX**
 
-The v0.13 line established the modern generation, validation, Q&A, provider, vision, project-lifecycle, and AI-authored image-prompt foundations. v0.14 restores V1 authoring workflows and is now also filling missing first-class Character Card data such as lorebooks.
+The v0.13 line established the modern generation, validation, Q&A, provider, vision, project-lifecycle, and AI-authored image-prompt foundations. v0.14 restores V1 authoring workflows, fills missing first-class Character Card data such as lorebooks, and now includes targeted usability passes where feature growth has made navigation or management unclear.
 
-The running development build displays **v0.14.5**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
+The running development build displays **v0.14.9**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
 
 The current authoring model deliberately keeps three distinct routes:
 
@@ -39,15 +40,47 @@ The current authoring model deliberately keeps three distinct routes:
 - **Manual Guided** — direct template-aware authoring for users who already know what they want; it does not require AI and skips private Interview / Q&A.
 - **Idea Generator** — controlled ingredient/pool composition that creates an editable concept seed before normal generation.
 
-v0.14.5 also introduces a clearer navigation hierarchy. Save, Generate Character, and Library remain frequent visible actions while secondary workflows are grouped under **Author**, **Project**, **Character**, and **Tools** menus instead of each new feature adding another equally prominent button.
+Workspace navigation keeps Save, Generate Character, and Library immediately visible while secondary workflows are grouped under **Author**, **Project**, **Character**, and **Tools** menus instead of each new feature adding another equally prominent button.
 
-Lorebook data becomes a first-class editing concern:
+Library navigation follows the same hierarchy principle: common filtering and assignment stay visible, secondary actions move into menus, and existing folders/collections are assigned through pickers rather than remembered free-text names.
+
+Lorebook data is a first-class editing concern:
 
 - **Project Lorebook** contains shared world, location, organisation, rule, history, and recurring-NPC context for the whole multi-character project.
 - **Character Lorebook** edits the active character's interoperable `character_book` data so Character Card imports/exports can preserve lore instead of treating it as an opaque blob.
 - Lorebook entries remain separate from Description, Personality, Scenario, and other direct card prose even when generation can later use selected lore as context.
 
 ## Completed
+
+### v0.14.9 — Library Assignment and Action UX
+
+- Reworked the Library action panel so the active project or bulk selection is named explicitly instead of relying on the ambiguous “actions use active project” message.
+- Replaced free-text assignment of existing folders and collections with populated **Choose folder…** and **Choose collection…** pickers built from current Library facet values.
+- Preserved creation workflows with explicit **New Folder…** and **New Collection…** dialogs that create names by assigning the current project selection.
+- Grouped lower-frequency Favourite, Series, Folder, and Collection operations into contextual menus to reduce the always-visible button wall.
+- Kept **All Character Projects** as the explicit filter reset and **Unfiled** as a genuine folder filter.
+- Added regression coverage for picker-based assignment, menu grouping, selection context, and v0.14.9 application wiring.
+
+### v0.14.8 — Manual Guided Alternative Greetings
+
+- Added a dedicated repeatable Alternative Greetings editor to Manual Guided First Message(s).
+- Each greeting is independently editable, removable, and reorderable.
+- Existing `character.alternate_greetings` values repopulate as separate entries and round-trip through the interoperable Character Card array.
+- Blank alternatives are omitted on Apply; State Tracking remains intentionally deferred.
+
+### v0.14.7 — Manual Guided Component Parity + State Isolation
+
+- Manual Guided now reads enabled Generation Components from the active template as the source of truth for structured Description and Personality fields.
+- Adding, removing, disabling, renaming, reordering, or changing component instructions is reflected automatically when Manual Guided opens.
+- Structured values compose into normal Character Card output fields using the same group structure rather than a second hard-coded schema.
+- Generation Concept and private Interview/Q&A planning fields are excluded from Manual Guided.
+- Fixed previous-character/project Manual Guided state leaking into newly opened characters.
+
+### v0.14.6 — Generation Preview Selection Safety
+
+- Unchecked Generation Preview rows perform no write at all, preserving existing fields during both normal generation and Vision Analysis.
+- Preview Apply captures live workspace values first so manual edits made while generation was running remain authoritative.
+- Added regression coverage for preserving unchecked Generation Concept/Personality while applying selected proposals.
 
 ### v0.14.5 — Grouped Workspace Navigation + Lorebook Foundation
 
@@ -65,7 +98,7 @@ Lorebook data becomes a first-class editing concern:
 - Restored **Manual Guided** as a no-AI, template-driven direct-authoring workflow.
 - Manual Guided skips private Interview / Q&A and writes directly into the normal character workspace.
 - Added seven V1-inspired pages: Description, Personality, Scenario, First Message(s), Example Dialogues, Tags and System Prompt, and State Tracking and Image Prompts.
-- Added per-section Include controls, live output preview, character-local draft persistence, Tags array conversion, and paragraph-separated Alternative Greeting conversion.
+- Added per-section Include controls, live output preview, character-local draft persistence, Tags array conversion, and Alternative Greeting conversion foundations.
 - Recorded the V1 authoring audit and expanded the future Idea Generator/Builder parity scope.
 
 ### v0.14.3 — Recoverable Generation Review
@@ -165,7 +198,7 @@ Lorebook data becomes a first-class editing concern:
 
 ### v0.14 — V1 Authoring Workflow Parity
 
-Current v0.14 capabilities include option-driven Builder suggestions, no-AI Manual Guided authoring, character transfer, interview review/provenance, recoverable validation failures, native desktop resizing, and grouped workspace navigation.
+Current v0.14 capabilities include option-driven Builder suggestions, component-driven no-AI Manual Guided authoring, repeatable Alternative Greetings, character transfer, interview review/provenance, recoverable validation failures, safe selective Preview application, native desktop resizing, grouped workspace navigation, lorebooks, and clearer Library organisation workflows.
 
 **Next authoring slices:**
 
@@ -197,6 +230,15 @@ v0.14.5 establishes editable project and character lorebooks. Continue with:
 - Expose lorebook/support entries appropriately from Manual Guided without flattening them into ordinary prose fields.
 - Consider reusable shared world-lore libraries after project/character lore semantics stabilise.
 
+### Library UX follow-up
+
+v0.14.9 replaces existing-folder/collection name retyping with assignment pickers and groups secondary actions. Continue with:
+
+- Consider sidebar context menus for rename/delete/edit operations instead of adding management buttons.
+- Consider stable internal IDs for folders/collections if future rename semantics require identity independent of display names.
+- Improve multi-selection affordances and keyboard selection where runtime testing shows ambiguity.
+- Keep **All Character Projects** as the obvious reset state and **Unfiled** as a real filter, not an accidental reset shortcut.
+
 ### Remaining v0.13 Generation Parity Core carried forward
 
 - Expand special generation contracts beyond component/minimum-length/marker foundations, including greeting counts and constrained sets where useful.
@@ -215,6 +257,9 @@ v0.14.5 establishes editable project and character lorebooks. Continue with:
 - Confirm character Move/Copy preserves exact character-local state/files while excluding project-shared context/relationships.
 - Confirm grouped navigation keeps all previous workflows reachable without duplicate primary buttons.
 - Confirm project lore persists across save/reopen and character lore survives Character Card import/export.
+- Confirm Manual Guided follows Generation Component changes and isolates drafts between characters/projects.
+- Confirm Alternative Greetings retain order and round-trip through Manual Guided and Character Card export.
+- Confirm Library folder/collection pickers refresh after creating or assigning organisation values.
 - Confirm `Shift+Enter` remains reliable across existing and new multiline editors.
 - Confirm multiple enabled generation groups bound to one output field compose in template order.
 - Confirm malformed provider JSON enters repair without noisy engine parser failures.
@@ -227,7 +272,7 @@ v0.14.5 establishes editable project and character lorebooks. Continue with:
 
 ### Continue v0.14 Authoring + Lorebook Parity
 
-1. Runtime-test v0.14.5 navigation and Lorebook Manager.
+1. Runtime-test v0.14.9 Library assignment/action UX and v0.14.8 Alternative Greetings.
 2. Harden Character Card lorebook interoperability/unknown-field preservation.
 3. Rebuild Idea Generator around the mature V1 controlled-pool workflow.
 4. Continue deeper Builder option coverage and template/user pool overrides.
@@ -260,6 +305,7 @@ Character Card Forge is not a level-based game, so the project-wide JSON level-p
 - Audit remaining pages/tool windows for fixed-size/game-style assumptions that fight desktop resizing.
 - Continue navigation hierarchy work as new features arrive; do not return to a one-button-per-feature toolbar.
 - Add reusable data-model/service helpers for lorebook normalisation and interoperability rather than leaving format knowledge only in UI code.
+- Audit Library organisation data for stable-ID needs before implementing rename-heavy workflows.
 
 ## Polish
 
