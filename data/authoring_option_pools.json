@@ -1,0 +1,115 @@
+{
+  "format_version": 1,
+  "description": "Shared authoring suggestions for Character Builder and future Idea Generator pool workflows. Options are suggestions, never hard validation enums.",
+  "fields": {
+    "foundation.genre": {
+      "label": "Genre",
+      "mode": "single",
+      "options": [
+        "Contemporary", "Romance", "Slice of Life", "Drama", "Comedy", "Mystery", "Thriller",
+        "Fantasy", "Urban Fantasy", "Science Fiction", "Cyberpunk", "Historical", "Horror", "Adventure"
+      ]
+    },
+    "foundation.setting": {
+      "label": "Setting",
+      "mode": "single",
+      "options": [
+        "Modern city", "Small town", "University campus", "High school", "Office / workplace", "Café",
+        "Shared apartment", "Fantasy kingdom", "Space station", "Cyberpunk megacity",
+        "Post-apocalyptic settlement", "Historical city"
+      ]
+    },
+    "foundation.role": {
+      "label": "Role / archetype",
+      "mode": "single",
+      "options": [
+        "Childhood friend", "Classmate", "Rival", "Co-worker", "Boss / manager", "Neighbour", "Stranger",
+        "Roommate", "Mentor", "Protégé", "Detective", "Healer", "Adventurer", "Noble", "Royal guard",
+        "Mage", "Scientist", "Hacker", "Artist", "Freelancer"
+      ]
+    },
+    "personality.traits": {
+      "label": "Core traits",
+      "mode": "multi",
+      "options": [
+        "playful", "reserved", "confident", "shy", "sarcastic", "warm", "guarded", "curious", "ambitious",
+        "patient", "impulsive", "pragmatic", "idealistic", "affectionate", "competitive", "mischievous",
+        "stoic", "energetic"
+      ]
+    },
+    "personality.strengths": {
+      "label": "Strengths",
+      "mode": "multi",
+      "options": [
+        "observant", "loyal", "adaptable", "patient", "resourceful", "empathetic", "disciplined", "creative",
+        "courageous", "persuasive", "dependable", "quick-thinking"
+      ]
+    },
+    "personality.flaws": {
+      "label": "Flaws",
+      "mode": "multi",
+      "options": [
+        "stubborn", "jealous", "reckless", "secretive", "impatient", "overconfident", "indecisive", "possessive",
+        "avoidant", "perfectionist", "hot-tempered", "self-doubting"
+      ]
+    },
+    "personality.speech_style": {
+      "label": "Speech style",
+      "mode": "single",
+      "options": [
+        "Casual and conversational", "Polite and formal", "Dry and sarcastic", "Warm and expressive",
+        "Quiet and concise", "Energetic and fast-paced", "Blunt and direct", "Playfully teasing",
+        "Thoughtful and measured"
+      ]
+    },
+    "personality.relationship_style": {
+      "label": "Relationship style",
+      "mode": "single",
+      "options": [
+        "Slow to trust but deeply loyal", "Openly affectionate", "Playful and teasing", "Competitive but caring",
+        "Protective", "Independent and slow to rely on others", "Conflict-avoidant", "Direct and communicative",
+        "Guarded until comfortable"
+      ]
+    },
+    "background.skills": {
+      "label": "Skills / capabilities",
+      "mode": "multi",
+      "options": [
+        "programming", "web design", "medicine", "cooking", "negotiation", "investigation", "research", "teaching",
+        "mechanics", "music", "art", "photography", "martial arts", "swordplay", "survival", "leadership"
+      ]
+    },
+    "scene.location": {
+      "label": "Starting location",
+      "mode": "single",
+      "options": [
+        "Café", "University campus", "Classroom", "Office", "Apartment", "Train station", "Park", "Bookshop",
+        "Bar / pub", "Hospital", "Fantasy tavern", "Castle", "Space station", "Workshop"
+      ]
+    },
+    "scene.user_role": {
+      "label": "User role",
+      "mode": "single",
+      "options": [
+        "Stranger", "Friend", "Childhood friend", "Classmate", "Co-worker", "Roommate", "Neighbour", "Rival",
+        "Partner", "Client", "Student", "Mentor", "Commander", "Teammate"
+      ]
+    },
+    "scene.relationship": {
+      "label": "Initial relationship",
+      "mode": "single",
+      "options": [
+        "Meeting for the first time", "Already friends", "Childhood friends", "Friendly rivals", "Professional acquaintances",
+        "Co-workers", "Classmates", "Roommates", "Neighbours", "Estranged friends", "Uneasy allies", "Long-term partners"
+      ]
+    },
+    "scene.tone": {
+      "label": "Desired tone",
+      "mode": "multi",
+      "options": [
+        "playful", "warm", "romantic", "dramatic", "tense", "mysterious", "comedic", "slow-burn", "adventurous",
+        "melancholic", "slice-of-life", "suspenseful"
+      ]
+    }
+  }
+}
