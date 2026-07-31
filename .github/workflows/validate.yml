@@ -90,3 +90,6 @@ jobs:
 
       - name: Test v0.14 Image Studio scroll layout
         run: timeout 30s godot --headless --path . --script res://tools/test_v014_image_studio_scroll_layout.gd
+
+      - name: Test v0.14.1 desktop layout and interview review
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0141_desktop_layout_interview_review.gd
