@@ -8,7 +8,7 @@ var _skip_alternative_capture_once := false
 
 func open_for_character(project: Dictionary, template: Dictionary, saved_state: Dictionary = {}) -> void:
 	_alternative_editors.clear()
-	var incoming_state := saved_state.duplicate(true)
+	var incoming_state: Dictionary = saved_state.duplicate(true)
 	if not incoming_state.has("alternative_greetings"):
 		var existing := _value_at_path(project, "character.alternate_greetings")
 		incoming_state["alternative_greetings"] = _normalise_alternative_greetings(existing)
