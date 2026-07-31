@@ -87,3 +87,6 @@ jobs:
 
       - name: Test v0.14 private interview output budget
         run: timeout 30s godot --headless --path . --script res://tools/test_v014_interview_output_budget.gd
+
+      - name: Test v0.14 Image Studio scroll layout
+        run: timeout 30s godot --headless --path . --script res://tools/test_v014_image_studio_scroll_layout.gd
