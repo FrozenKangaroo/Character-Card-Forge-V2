@@ -52,13 +52,31 @@ func attach_ai_idea_window(legacy_window: Window) -> void:
 		control.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 		control.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		control.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		_hide_embedded_close_buttons(control)
+	# The legacy Window remains alive because its controls' callbacks belong to
+	# it, but it must stay permanently hidden now that it only acts as the
+	# controller behind the embedded AI Ideas tab.
 	legacy_window.close_requested.connect(_on_embedded_ai_close_requested)
 
 
+func _hide_embedded_close_buttons(root: Control) -> void:
+	if root is Button and root.text == "Close":
+		root.hide()
+		root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	for node in root.find_children("*", "Button", true, false):
+		if node is Button and node.text == "Close":
+			node.hide()
+			node.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+
 func open_generator() -> void:
+	if _embedded_ai_window != null:
+		_embedded_ai_window.hide()
 	open_studio()
 	_tabs.current_tab = 0
 
 
 func _on_embedded_ai_close_requested() -> void:
+	if _embedded_ai_window != null:
+		_embedded_ai_window.hide()
 	hide()

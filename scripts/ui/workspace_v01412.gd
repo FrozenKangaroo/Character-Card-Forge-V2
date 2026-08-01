@@ -31,6 +31,18 @@ func _route_existing_idea_generator_button() -> void:
 	if button == null:
 		_status.text = "Idea Generator button could not be found."
 		return
+	# Replace the legacy window-opening callback rather than adding a second
+	# callback. Keeping both caused the emptied legacy native Window to appear
+	# beside the unified Idea Generator after its controls were embedded.
+	for connection_value in button.pressed.get_connections():
+		if not connection_value is Dictionary:
+			continue
+		var connection: Dictionary = connection_value
+		var callable_value: Variant = connection.get("callable")
+		if callable_value is Callable:
+			var callback: Callable = callable_value
+			if button.pressed.is_connected(callback):
+				button.pressed.disconnect(callback)
 	button.pressed.connect(_on_unified_idea_generator_pressed)
 
 
