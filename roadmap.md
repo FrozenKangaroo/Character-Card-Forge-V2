@@ -20,21 +20,41 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Wider desktop windows should reveal more workspace rather than scale a fixed game-style canvas.
 - Secondary workflows belong in grouped menus instead of an ever-growing wall of top-level buttons.
 - V1 parity is judged by useful workflow capability, not literal screen-for-screen reproduction.
+- AI Ideas target interactive Character Card / SillyTavern-style roleplay by default: the generated character should have a clear relationship and opening dynamic with literal `{{user}}` unless the author explicitly requests a detached narrator/observer/world-NPC role.
 
 ## Current Development Phase
 
-**v0.14.16 development candidate — Authoring Parity + Hardened Idea Generation**
+**v0.14.18 development candidate — Authoring Parity + User-Centric Idea Generation**
 
-The v0.14 line is closing the remaining practical V1 authoring gap while keeping V2's stronger project architecture. Current V2 now includes Manual Guided, recoverable generation review, focused Character/Personality/Scene builders, both AI and structured Idea Generator workflows, related-character/AI-variation creation, first-class lorebook generation context, multi-character projects/relationships, portable project content, and improved Library organisation.
+The v0.14 line is closing the remaining practical V1 authoring gap while keeping V2's stronger project architecture. Current V2 now includes Manual Guided, recoverable generation review, focused Character/Personality/Scene builders, both AI and structured Idea Generator workflows, related-character/AI-variation creation, first-class lorebook generation context, detachable Lorebook editing, multi-character projects/relationships, portable project content, and improved Library organisation.
 
-The running development build displays **v0.14.16**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.14.18**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.14.18 — User-Centric SillyTavern Idea Generation
+
+- Reframed AI Ideas as interactive Character Card / SillyTavern concepts rather than detached fiction synopses.
+- By default every generated idea must explicitly centre the card character's relationship and immediate roleplay dynamic with literal `{{user}}`.
+- Added `roleplay_hook` to the Idea Generator schema so each idea explains why the generated character and `{{user}}` are interacting now and what drives the opening roleplay.
+- `character_role`, `roleplay_hook`, and `concept` must all explicitly involve `{{user}}` for normal ideas.
+- Third-person prose remains required for the card character while second-person `you`/`your` narration remains invalid.
+- The generator may not replace `{{user}}` with a named protagonist or drift to unrelated characters whose story would work without the user.
+- Explicit observer/narrator/world-NPC/detached requests remain supported as an opt-in exception rather than the default.
+- Extended semantic validation and the single bounded repair pass to fix missing `{{user}}` framing and missing roleplay hooks before result cards are shown.
+- Added regression coverage using an affair/dinner premise where previous outputs silently replaced `{{user}}` with named characters.
+
+### v0.14.17 — Detachable Lorebook Manager
+
+- Configured Lorebook Manager as a true native OS window before it enters the scene tree.
+- Lorebook Manager is non-modal and non-transient, so it can be moved outside the main application bounds and onto another monitor.
+- Retained all v0.14.15 lorebook trigger/context/editing behaviour without tying the tool to the main window.
+- Added regression coverage for native-window setup ordering and forward-compatible shell inheritance.
 
 ### v0.14.16 — Idea Generator Identity + POV Validation
 
 - Strengthened AI Ideas from prompt-only POV guidance into a validated output contract.
-- Every idea now identifies `character_name`, `character_role`, and an exact `source_anchor` copied from the source premise.
+- Every idea identifies `character_name`, `character_role`, and an exact `source_anchor` copied from the source premise.
 - `{{user}}` remains the future chat user and cannot become the generated card subject.
 - Concepts are required to use neutral third-person design prose; narrative `you` / `your` wording is rejected before result cards are shown.
 - Seeded ideas reject common newly invented observer/relative/viewpoint roles when those role types are absent from the source premise.
@@ -63,12 +83,12 @@ The running development build displays **v0.14.16**. Release metadata remains co
 
 ### v0.14.13 — Idea Generator POV Safety
 
-- AI Ideas now describe proposed characters/scenarios in neutral third person rather than producing `You are <character>` concepts.
+- AI Ideas describe proposed characters/scenarios in neutral third person rather than producing `You are <character>` concepts.
 - `{{user}}` remains the eventual chat user and is not assigned invented identity/actions unless supplied by the prompt.
 
 ### v0.14.12 — Unified Idea Generator
 
-- One Idea Generator entry point now contains AI Ideas and Structured Builder tabs.
+- One Idea Generator entry point contains AI Ideas and Structured Builder tabs.
 - Removed redundant Concept Studio navigation and duplicate/orphan legacy Idea Generator windows.
 
 ### v0.14.11 — Structured Idea Builder + Editable Pools
@@ -186,7 +206,7 @@ The running development build displays **v0.14.16**. Release metadata remains co
 - Runtime-test the v0.14.14 focused builders and tune field/option coverage against real authoring use.
 - Add template/user overrides for focused-builder and authoring-option pools.
 - Add remaining structured Idea Generator conveniences where useful: reusable presets, richer chips, field enable/disable, individual local reroll and conditional/gender-aware pools.
-- Continue runtime-testing v0.14.16 AI Ideas identity/POV validation across complex multi-person premises and tune grounding rules without suppressing legitimate characters already present in a seed.
+- Runtime-test v0.14.18 AI Ideas against varied SillyTavern premises, especially multi-person relationship setups, and tune only when legitimate prompt-specified detached roles need exceptions.
 - Define clearer provenance for manual values, presets, Idea Generator choices, concept extraction, Builder AI, Interview AI and derivation.
 - Finish true V1-equivalent Lite / Compact Lite split or multi-pass execution rather than relying only on density guidance.
 - Continue character derivation with optional relationship creation/remapping and richer source-context selection after runtime testing.
@@ -195,7 +215,7 @@ The running development build displays **v0.14.16**. Release metadata remains co
 
 ### Lorebook and Context Work
 
-v0.14.15 establishes generation activation and trigger preview. Continue with:
+v0.14.15 establishes generation activation and trigger preview; v0.14.17 makes the editor independently detachable. Continue with:
 
 - Audit Character Card V2/V3 `character_book` import/export against real cards and preserve unknown/extension fields without loss.
 - Add standalone lorebook JSON import/export.
@@ -225,7 +245,7 @@ V1 Front Porch-style state remains intentionally incomplete. Planned direct-auth
 
 ## Next Up
 
-1. Runtime-test v0.14.16 AI Ideas against complex multi-person prompts and tune identity grounding if needed.
+1. Runtime-test v0.14.18 AI Ideas with varied `{{user}}`-centric relationship prompts and explicit detached-role exceptions.
 2. Harden Character Book/lorebook import-export unknown-field preservation.
 3. Add standalone lorebook import/export and large-lorebook search/filter tools.
 4. Add State Tracking direct-authoring support.
