@@ -126,3 +126,6 @@ jobs:
 
       - name: Test v0.14.15 lorebook generation and triggers
         run: timeout 30s godot --headless --path . --script res://tools/test_v01415_lorebook_support.gd
+
+      - name: Test v0.14.16 Idea Generator identity and POV contract
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01416_idea_identity_pov.gd
