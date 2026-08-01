@@ -153,3 +153,6 @@ jobs:
 
       - name: Test v0.15.1 Character Collaborator context budgeting
         run: timeout 30s godot --headless --path . --script res://tools/test_v0151_context_budgeting.gd
+
+      - name: Test v0.15.2 large output tokens and Collaborator live wiring
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0152_large_output_and_collaborator_wiring.gd
