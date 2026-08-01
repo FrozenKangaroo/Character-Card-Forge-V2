@@ -2,6 +2,11 @@ class_name CCFGenerationServiceV01416
 extends "res://scripts/services/generation_service_v01415.gd"
 
 const IDEA_CONTRACT_VERSION_V01416 := "identity_pov_v2"
+const GUARDED_ROLE_TERMS := [
+	"mother", "father", "parent", "sister", "brother", "sibling", "daughter", "son",
+	"observer", "outsider", "bystander", "investigator", "detective", "reporter", "therapist",
+	"teacher", "boss", "coworker", "colleague", "neighbor", "neighbour", "roommate", "classmate"
+]
 
 
 func queue_idea_generation(
@@ -29,7 +34,7 @@ func queue_idea_generation(
 		+ "- The intended card subject must be one of the people or relationship roles already present in SOURCE PREMISE. You may invent a name for an unnamed person, but NEVER invent a new observer, narrator, relative, investigator, bystander, or viewpoint role merely to tell the scenario.\n"
 		+ "- {{user}} is the eventual chat user and can NEVER be the generated character. Preserve {{user}} literally.\n"
 		+ "- character_role must state exactly who the generated character is relative to {{user}} or the premise.\n"
-		+ "- source_anchor must copy a short, exact, contiguous phrase from SOURCE PREMISE proving that this person/role is grounded in the user's premise. If no source premise exists, use an empty string.\n"
+		+ "- source_anchor must copy a short, exact, contiguous phrase from SOURCE PREMISE that directly identifies the generated person's role. Do not use a nearby phrase about somebody else. If no source premise exists, use an empty string.\n"
 		+ "- Do not reinterpret the premise by silently swapping who cheated, who is pregnant, who is partnered with whom, or any other stated relationship fact."
 	)
 	prompt += (
@@ -182,6 +187,8 @@ func _validate_idea_batch(ideas: Array, seed: String) -> Dictionary:
 				local_issues.append("missing source_anchor")
 			elif not lowered_seed.contains(source_anchor.to_lower()):
 				local_issues.append("source_anchor is not an exact phrase from the source premise")
+			if _role_introduces_unseeded_identity(character_role, lowered_seed):
+				local_issues.append("character_role introduces a person/relationship type not present in the source premise")
 		if _contains_second_person_narration(concept):
 			local_issues.append("concept uses second-person you/your narration")
 		if requires_user_placeholder and not concept.contains("{{user}}"):
@@ -196,7 +203,7 @@ func _validate_idea_batch(ideas: Array, seed: String) -> Dictionary:
 		if local_issues.is_empty():
 			valid_ideas.append(idea)
 		else:
-			issues.append("Idea %d: %s" % [index + 1, "; ".join(local_issues)])
+			issues.append("Idea %d: %s" % [index + 1, _join_values(local_issues, "; ")])
 	return {"valid_ideas": valid_ideas, "issues": issues}
 
 
@@ -205,6 +212,15 @@ func _contains_second_person_narration(text: String) -> bool:
 	if regex.compile("(?i)(^|[^a-z])(you|your|yours|yourself|you're|you've|you'll|you'd)([^a-z]|$)") != OK:
 		return false
 	return regex.search(text) != null
+
+
+func _role_introduces_unseeded_identity(character_role: String, lowered_seed: String) -> bool:
+	var lowered_role := character_role.to_lower()
+	for term in GUARDED_ROLE_TERMS:
+		var role_term := str(term)
+		if lowered_role.contains(role_term) and not lowered_seed.contains(role_term):
+			return true
+	return false
 
 
 func _start_idea_semantic_repair(ideas: Array, issues: Array) -> void:
@@ -218,7 +234,7 @@ func _start_idea_semantic_repair(ideas: Array, issues: Array) -> void:
 			"role": "system",
 			"content": (
 				"You repair Character Card Forge idea objects. Return the full repaired JSON array only. Preserve each idea's premise and diversity while fixing every identity/POV violation. "
-				+ "Every card subject must be a person/role explicitly present in SOURCE PREMISE, {{user}} can never be the card subject, source_anchor must be copied exactly from the premise, and concept must use neutral third-person prose with no narrative you/your language."
+				+ "Every card subject must be a person/role explicitly present in SOURCE PREMISE, {{user}} can never be the card subject, source_anchor must be copied exactly from the premise, and concept must use neutral third-person prose with no narrative you/your language. Do not invent an observer, outsider, parent, investigator, or other new viewpoint role."
 			)
 		},
 		{
@@ -226,7 +242,7 @@ func _start_idea_semantic_repair(ideas: Array, issues: Array) -> void:
 			"content": (
 				"SOURCE PREMISE:\n%s\n\nVALIDATION FAILURES:\n%s\n\nIDEAS TO REPAIR:\n%s\n\n"
 				+ "Return the same number of ideas. Every object must contain title, character_name, character_role, source_anchor, concept, tags. Do not add commentary."
-			) % [str(metadata.get("seed", "")), "\n".join(issues), JSON.stringify(ideas)]
+			) % [str(metadata.get("seed", "")), _join_values(issues, "\n"), JSON.stringify(ideas)]
 		}
 	]
 	_active_job["payload"] = payload
