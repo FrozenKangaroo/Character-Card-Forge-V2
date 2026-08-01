@@ -33,8 +33,19 @@ func _init() -> void:
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v0151.gd")
 	assert(main_source.contains("SETTINGS_V0151"), "v0.15.1 shell must install the context-window-aware Settings view.")
 	assert(main_source.contains("WORKSPACE_V0151"), "v0.15.1 shell must install the corrected Workspace.")
-	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene.contains("main_v0151.gd"), "Main scene must use the v0.15.1 shell.")
 
-	print("v0.15.1 context-window budgeting regression passed")
+	var v0152_settings := FileAccess.get_file_as_string("res://scripts/ui/settings_view_v0152.gd")
+	assert(v0152_settings.contains("MAX_OUTPUT_TOKENS_V0152 := 4194304"), "v0.15.2 must allow output-token limits well beyond 131,072.")
+	assert(v0152_settings.contains("allow_greater = true"), "Maximum Output Tokens must permit manually entered future model limits above the configured spinner range.")
+	assert(not v0152_settings.contains("131072"), "v0.15.2 must not reintroduce the old 131,072 output-token ceiling.")
+	var main_v0152 := FileAccess.get_file_as_string("res://scripts/main_v0152.gd")
+	assert(main_v0152.contains("main_v0151.gd") and main_v0152.contains("SETTINGS_V0152"), "v0.15.2 must preserve v0.15.1 and install the large-output Settings view.")
+	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
+	assert(
+		scene.contains("main_v0151.gd")
+		or (scene.contains("main_v0152.gd") and main_v0152.contains("main_v0151.gd")),
+		"The active main shell must preserve v0.15.1 context budgeting through direct use or inheritance."
+	)
+
+	print("v0.15.1/v0.15.2 context-window and large-output budgeting regression passed")
 	quit(0)

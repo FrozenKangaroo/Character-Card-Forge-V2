@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _install_generation_service_v015() -> void:
 	var previous_service: CCFGenerationService = _generation_service
-	if previous_service != null and previous_service.get_script() == GENERATION_SERVICE_V015:
+	if previous_service != null and previous_service.has_method("queue_collaborator_reply"):
 		return
 	if previous_service != null:
 		if previous_service.job_started.is_connected(_on_job_started):
@@ -46,7 +46,20 @@ func _install_generation_service_v015() -> void:
 		_builder_window.set_generation_service(_generation_service)
 	if _attachment_window != null:
 		_attachment_window.set_generation_service(_generation_service)
+	if _character_collaborator_window != null:
+		_character_collaborator_window.set_generation_service(_generation_service)
 	_wire_ai_idea_controller_to_current_service()
+
+
+func _ensure_collaborator_generation_service_v015() -> bool:
+	if _generation_service == null or not _generation_service.has_method("queue_collaborator_reply"):
+		_install_generation_service_v015()
+	if _generation_service == null or not _generation_service.has_method("queue_collaborator_reply"):
+		_status.text = "Character Collaborator could not activate its generation service."
+		return false
+	if _character_collaborator_window != null:
+		_character_collaborator_window.set_generation_service(_generation_service)
+	return true
 
 
 func _build_character_collaborator_window_v015() -> void:
@@ -84,6 +97,8 @@ func _on_author_collaborator_menu_v015(id: int) -> void:
 
 func _open_character_collaborator_v015() -> void:
 	if _project_container.is_empty():
+		return
+	if not _ensure_collaborator_generation_service_v015():
 		return
 	_commit_active_character_to_container()
 	_capture_project_name()
