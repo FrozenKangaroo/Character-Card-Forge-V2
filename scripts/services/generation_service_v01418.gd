@@ -120,14 +120,14 @@ func _normalise_ideas(raw_ideas: Array) -> Array:
 	return ideas
 
 
-func _validate_idea_batch(ideas: Array, seed: String) -> Dictionary:
-	var base_report := super._validate_idea_batch(ideas, seed)
+func _validate_idea_batch(ideas: Array, idea_seed_text: String) -> Dictionary:
+	var base_report := super._validate_idea_batch(ideas, idea_seed_text)
 	var base_valid: Array = base_report.get("valid_ideas", [])
 	var issues: Array[String] = []
 	for issue in base_report.get("issues", []):
 		issues.append(str(issue))
 	var accepted: Array = []
-	var detached_pov := _seed_requests_detached_pov(seed)
+	var detached_pov := _seed_requests_detached_pov(idea_seed_text)
 	for raw in base_valid:
 		if not raw is Dictionary:
 			continue
@@ -187,8 +187,8 @@ func _start_idea_semantic_repair(ideas: Array, issues: Array) -> void:
 	call_deferred("_start_active_request")
 
 
-func _seed_requests_detached_pov(seed: String) -> bool:
-	var lowered := seed.to_lower()
+func _seed_requests_detached_pov(seed_text: String) -> bool:
+	var lowered := seed_text.to_lower()
 	for marker in [
 		"observer card",
 		"observer character",
