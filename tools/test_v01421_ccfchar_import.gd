@@ -1,0 +1,60 @@
+extends SceneTree
+
+
+func _init() -> void:
+	var minimal := {
+		"format": "character_card_forge_character_source",
+		"format_version": 1,
+		"concept": {"prompt": "A racer girl who drags {{user}} to the track after class."}
+	}
+	var parsed := CCFCharSourceServiceV01421.normalise_source(minimal)
+	assert(parsed.get("ok", false), "Concept-only .ccfchar sources must be accepted.")
+	var values: Dictionary = parsed.get("values", {})
+	assert(values.size() == 1 and values.has("concept.prompt"), "Concept-only source must not invent missing fields.")
+
+	var workspace := CCFStorageService.new_character_record("Existing")
+	CCFStorageService.set_value_at_path(workspace, "character.description", "Keep this description")
+	var applied := CCFCharSourceServiceV01421.apply_values(workspace, parsed, ["concept.prompt"])
+	assert(applied.get("ok", false), "Concept-only source should apply.")
+	assert(CCFStorageService.get_value_at_path(workspace, "character.description", "") == "Keep this description", "Omitted fields must remain untouched.")
+	assert(CCFStorageService.get_value_at_path(workspace, "concept.prompt", "") == minimal.concept.prompt, "Concept must map into the workspace.")
+
+	var complete := {
+		"format": "character_card_forge_character_source",
+		"format_version": 1,
+		"metadata": {"summary": "", "tags": ["racing", "university"]},
+		"character": {
+			"name": "Mika",
+			"personality": "Competitive and excitable.",
+			"alternate_greetings": ["Hi {{user}}!", "Track day, {{user}}!"]
+		},
+		"generation": {"template_id": "default", "mode": "full", "style": "anime romantic comedy"},
+		"lorebook": {"name": "Mika Lore", "entries": [{"keys": ["karting"], "content": "Mika raced karts."}]}
+	}
+	var complete_parsed := CCFCharSourceServiceV01421.normalise_source(complete)
+	assert(complete_parsed.get("ok", false), "Full .ccfchar source should parse.")
+	var complete_values: Dictionary = complete_parsed.get("values", {})
+	assert(complete_values.has("character.alternate_greetings"), "Alternative greetings must be supported.")
+	assert(complete_values.has("character.character_book"), "Lorebook must map to character.character_book.")
+	assert(complete_values.get("generation.mode") == "full", "Generation mode must be importable.")
+	assert(complete_values.get("generation.style") == "anime romantic comedy", "Generation style must be importable.")
+
+	var all_paths: Array[String] = []
+	for raw_path in complete_values.keys():
+		all_paths.append(str(raw_path))
+	CCFCharSourceServiceV01421.apply_values(workspace, complete_parsed, all_paths)
+	assert(CCFStorageService.get_value_at_path(workspace, "metadata.summary", "not-empty") == "", "Explicit empty strings must be able to clear selected fields.")
+	assert((CCFStorageService.get_value_at_path(workspace, "character.alternate_greetings", []) as Array).size() == 2, "Alternative greetings must round-trip into workspace data.")
+	assert(CCFStorageService.get_value_at_path(workspace, "generation.mode", "") == "full", "Mode must be stored in generation authoring state.")
+	assert((CCFStorageService.get_value_at_path(workspace, "character.character_book", {}) as Dictionary).get("name", "") == "Mika Lore", "Lorebook must be applied intact.")
+
+	var workspace_source := FileAccess.get_file_as_string("res://scripts/ui/workspace_v01421.gd")
+	assert(workspace_source.contains("Import .ccfchar Source"), "Workspace must expose the .ccfchar importer.")
+	assert(workspace_source.contains("Apply Selected"), "Importer must provide review/selective apply.")
+	var docs := FileAccess.get_file_as_string("res://docs/ccfchar-format.md")
+	assert(docs.contains("Missing property = do nothing"), "Format documentation must explain non-destructive partial imports.")
+	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
+	assert(scene.contains("main_v01421.gd"), "Main scene must use the v0.14.21 shell.")
+
+	print("v0.14.21 CCFCHAR import regression passed")
+	quit(0)
