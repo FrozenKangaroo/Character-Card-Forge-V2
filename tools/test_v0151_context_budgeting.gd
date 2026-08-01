@@ -6,10 +6,12 @@ func _init() -> void:
 	for marker in [
 		"Context window tokens",
 		"context_window_tokens",
-		"Set Context Window to 0 if the provider/model limit is unknown",
-		"max_output_tokens"
+		"Set Context Window to 0 if the provider/model limit is unknown"
 	]:
 		assert(settings_source.contains(marker), "v0.15.1 settings are missing %s." % marker)
+	var base_settings_source := FileAccess.get_file_as_string("res://scripts/ui/settings_view.gd")
+	assert(base_settings_source.contains("Maximum output tokens"), "Character AI Settings must retain a separate Maximum Output Tokens control.")
+	assert(settings_source.contains("Maximum Output Tokens is only the response limit"), "v0.15.1 Settings must explain the distinction between context capacity and response output limits.")
 
 	var collaborator_source := FileAccess.get_file_as_string("res://scripts/ui/character_collaborator_window_v0151.gd")
 	for marker in [
