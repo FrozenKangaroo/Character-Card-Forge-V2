@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "fields": [
+    {"id":"gender","label":"Gender","multi_select":false,"max_random_choices":1,"options":["Any / unspecified","Woman","Man","Non-binary","Trans woman","Trans man"]},
+    {"id":"archetype","label":"Archetype","multi_select":false,"max_random_choices":1,"options":["Gyaru","Childhood friend","Office lady","Tsundere","Idol","Detective","Older sister","Younger sister","Rival"]},
+    {"id":"core_conflict","label":"Core Conflict","multi_select":false,"max_random_choices":1,"options":["Jealousy","Double life","Forbidden attraction","Family expectations","Hidden identity","Rivalry","Second chance"]},
+    {"id":"setting","label":"Setting","multi_select":false,"max_random_choices":1,"options":["Share house","University","Cafe","Office","Fantasy academy","Small town","Space station"]},
+    {"id":"tone","label":"Tone","multi_select":false,"max_random_choices":1,"options":["Slow burn","Dark drama","Spicy comedy","Romantic comedy","Mystery","Bittersweet","Wholesome"]},
+    {"id":"occupation","label":"Occupation / Role","multi_select":false,"max_random_choices":1,"options":["Teacher","Detective","Idol","Bartender","Student","Programmer","Knight","Healer"]},
+    {"id":"relationship","label":"Relationship to {{user}}","multi_select":false,"max_random_choices":1,"options":["Coworker","Spouse","Roommate","Ex-girlfriend","Childhood friend","Rival","Stranger","Sibling"]},
+    {"id":"status","label":"Status / Social Position","multi_select":false,"max_random_choices":1,"options":["Wealthy","Poor","Ojou-sama","Celebrity","Ordinary","Disgraced","Royalty"]},
+    {"id":"personality","label":"Personality","multi_select":true,"max_random_choices":3,"options":["Affectionate","Ambitious","Anxious","Blunt","Confident","Flirty","Jealous","Loyal","Optimist","Rebellious","Romantic","Sensitive","Sharp-tongued","Shy","Stylish","Talkative","Timid","Tomboy","Vindictive","Whimsical"]},
+    {"id":"subject_of","label":"Subject Of","multi_select":true,"max_random_choices":3,"options":["A secret","A rumour","An arranged marriage","A prophecy","A workplace scandal","A family dispute","A love triangle"]},
+    {"id":"engages_in","label":"Engages In","multi_select":true,"max_random_choices":3,"options":["Gaming","Cosplay","Cooking","Music","Sports","Investigation","Magic","Pranks","Reading"]},
+    {"id":"engages_in_sexual","label":"Engages In (Sexual)","multi_select":true,"max_random_choices":3,"options":["Flirting","Teasing","Roleplay","Voyeurism","Exhibitionism","Power play","Romantic intimacy"]}
+  ]
+}
