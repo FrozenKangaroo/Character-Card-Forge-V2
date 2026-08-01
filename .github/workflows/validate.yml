@@ -120,3 +120,6 @@ jobs:
 
       - name: Test v0.14.13 Idea Generator point of view
         run: timeout 30s godot --headless --path . --script res://tools/test_v01413_idea_generator_pov.gd
+
+      - name: Test v0.14.14 focused Character Builders
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01414_focused_builders.gd
