@@ -138,3 +138,6 @@ jobs:
 
       - name: Test v0.14.19 live Idea Generator service wiring
         run: timeout 30s godot --headless --path . --script res://tools/test_v01419_idea_generator_live_service.gd
+
+      - name: Test v0.14.20 Relationship Graph and linked variants
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01420_relationship_variants.gd
