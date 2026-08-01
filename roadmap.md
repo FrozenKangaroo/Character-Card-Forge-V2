@@ -23,17 +23,36 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - AI Ideas target interactive Character Card / SillyTavern-style roleplay by default: the generated character should have a clear relationship and opening dynamic with literal `{{user}}` unless the author explicitly requests a detached narrator/observer/world-NPC role.
 - Alternate character routes should not require full duplicate cards when only a few fields differ; linked variants may inherit from a base while exports always materialise normal standalone cards.
 - Visual graph layout metadata stays separate from authoritative character, relationship, and route data.
+- Relationship and route/timeline editors share one reusable graph-canvas interaction model: draggable cards, explicit anchor points, labelled connections and saved endpoint/layout metadata.
 - External authoring tools and AIs should be able to hand CCF a partial character without being forced to generate filler for fields they do not know.
 
 ## Current Development Phase
 
-**v0.14.21 development candidate — Authoring Interchange + Continuity Tools**
+**v0.14.22 development candidate — Shared Graph Canvas + Continuity Tools**
 
-The v0.14 line is closing the remaining practical V1 authoring gap while expanding V2-native continuity and interoperability tooling. Current V2 includes Manual Guided, recoverable generation review, focused Character/Personality/Scene builders, AI and structured Idea Generator workflows, related-character/AI-variation creation, first-class lorebooks, multi-character projects/relationships, a detachable Relationship Graph foundation, linked delta-style character variants, portable project content, the `.ccfchar` partial/full authoring interchange format, and improved Library organisation.
+The v0.14 line is closing the remaining practical V1 authoring gap while expanding V2-native continuity and interoperability tooling. Current V2 includes Manual Guided, recoverable generation review, focused Character/Personality/Scene builders, AI and structured Idea Generator workflows, related-character/AI-variation creation, first-class lorebooks, multi-character projects/relationships, Linked Variants, `.ccfchar` authoring interchange, an editable Relationship Graph, and a VN-style Route / Timeline Flowchart built on a shared anchor-based graph canvas.
 
-The running development build displays **v0.14.21**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.14.22**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.14.22 — Shared Graph Canvas + Editable Relationship / Route Charts
+
+- Added a reusable graph-canvas control shared by Relationship Graph and Route / Timeline Flowchart rather than implementing two incompatible editors.
+- Every graph card exposes 12 explicit anchor points: top-left/middle/right, right-top/middle/bottom, bottom-right/middle/left, and left-bottom/middle/top.
+- Cards can be dragged freely and graph layout preserves their exact positions.
+- Dragging from one anchor to an anchor on another card requests a connection; source and destination anchor names are persisted with the connection.
+- Connections render as labelled orthogonal paths with directional arrowheads.
+- Upgraded Relationship Graph so new relationships can be created directly in the graph.
+- Relationship creation asks **“What is the connection these two characters have?”** and accepts freeform labels instead of forcing a short predefined list.
+- Relationship connections support forward, reverse, mutual and undirected semantics while retaining the permanent `{{user}}` node.
+- Graph-created relationship records are saved back into project relationship data; node layout remains workspace/editor metadata.
+- Added **Project → Route / Timeline Flowchart…** as a separate detachable native window.
+- Route Flowchart automatically exposes full characters and Linked Variants as character-reference nodes and supports freeform Step/Event nodes.
+- Flowchart connections ask **“What does this connection represent?”**, allowing arbitrary VN-style choice, event, time-skip, route and ending labels.
+- Route/timeline data is stored separately at project level with a versioned schema so it does not contaminate Character Card export.
+- Updated older v0.14.20/v0.14.21 shell regressions to remain forward-compatible with newer inherited shells.
+- Added regression coverage for all 12 anchors, dragging, exact anchor persistence, freeform connection prompts, Relationship Graph save wiring, Route Flowchart availability, Linked Variant visibility and v0.14.22 shell integration.
 
 ### v0.14.21 — `.ccfchar` Authoring Interchange
 
@@ -250,16 +269,19 @@ v0.14.21 establishes `.ccfchar` v1 as the stable single-character authoring hand
 
 ### Relationship, Variant and Route Tools
 
-v0.14.20 establishes the first graph and linked-diff foundation. Continue with:
+v0.14.22 establishes the shared 12-anchor graph canvas, graph-side relationship creation and the first Route / Timeline Flowchart. Continue with:
 
-- Upgrade Relationship Graph from display/layout to full graph editing: create/delete connections, edit labels/direction and support richer relationship metadata directly from graph edges.
-- Add zoom/pan, portrait thumbnails, grouping, relationship-type styling and optional graph filters after the core data path is stable.
+- Add connection selection, edit and delete for both Relationship Graph and Route Flowchart.
+- Add manual connector waypoints/routing handles so dense charts can route around cards cleanly.
+- Add zoom/pan, portrait thumbnails, grouping, relationship-type styling and optional graph filters.
+- Preserve exact anchor choices and connector layout metadata when graph editing expands.
+- Add richer relationship metadata editing without forcing freeform edge labels into a narrow taxonomy.
 - Add a clear **Resolved Card / Overrides Only** variant inspector and per-field **Revert to Inherited** actions.
 - Make linked-variant asset overrides explicit while inherited assets continue referencing the base without copies.
 - Add safe re-parenting and flatten-all options for variant dependency trees.
-- Add the separate **Route / Timeline Graph** for VN-style branching events, decisions, time skips, good/bad ends and alternate continuities.
-- Route nodes may link to a base character, a Linked Variant or a full independent character; creating a route version must continue offering the user's Full Character vs Linked Variant choice.
-- Keep route/timeline data project-level and versioned so it can evolve without contaminating Character Card export.
+- Expand Route / Timeline nodes with explicit decision, event, time-skip, route-state, good/bad end and alternate-continuity node types.
+- Allow route nodes to create/link either a base character, a Linked Variant or a full independent character while preserving the user's Full Character vs Linked Variant choice.
+- Add route-node notes/conditions and branch metadata separately from final Character Card content.
 - Later allow previewing how a route state changes relationships without silently applying those changes.
 
 ### Lorebook and Context Work
@@ -294,14 +316,15 @@ V1 Front Porch-style state remains intentionally incomplete. Planned direct-auth
 
 ## Next Up
 
-1. Runtime-test `.ccfchar` files ranging from concept-only to complete characters, including AI-generated files, alternative greetings, mode/style and lorebooks.
-2. Runtime-test v0.14.20 Linked Variants with ordinary edits, base edits, variant-of-variant chains and JSON/PNG export.
-3. Runtime-test Relationship Graph with existing relationship projects and tune endpoint/label rendering against the real relationship schema.
-4. Add graph-side relationship creation/editing and the first Route / Timeline Graph data schema after the v0.14.20 foundation is stable.
-5. Harden Character Book/lorebook import-export unknown-field preservation and add standalone lorebook import/export.
-6. Add State Tracking direct-authoring support.
-7. Finish remaining Builder/Idea Generator conveniences and true Lite/Compact generation execution.
-8. Begin v0.15 image workflow expansion once primary authoring/data parity is stable.
+1. Runtime-test the v0.14.22 Relationship Graph by dragging cards, connecting different anchor combinations and creating freeform relationship labels including `{{user}}` links.
+2. Runtime-test the Route / Timeline Flowchart with base characters, Linked Variants, Full Character versions and Step/Event nodes.
+3. Add graph connection edit/delete and manual waypoint routing after the core anchor interaction is proven in real projects.
+4. Runtime-test `.ccfchar` files ranging from concept-only to complete characters, including AI-generated files, alternative greetings, mode/style and lorebooks.
+5. Runtime-test Linked Variants with ordinary edits, base edits, variant-of-variant chains and JSON/PNG export.
+6. Harden Character Book/lorebook import-export unknown-field preservation and add standalone lorebook import/export.
+7. Add State Tracking direct-authoring support.
+8. Finish remaining Builder/Idea Generator conveniences and true Lite/Compact generation execution.
+9. Begin v0.15 image workflow expansion once primary authoring/data parity is stable.
 
 ## v0.15 — Image Workflow Expansion
 
@@ -342,6 +365,7 @@ Character Card Forge is not a level-based game. The equivalent externally editab
 - Add reusable lorebook normalisation/interoperability helpers instead of duplicating format knowledge in UI code.
 - Keep Linked Variant resolution/diff/materialisation in one service rather than teaching every editor/exporter a separate inheritance implementation.
 - Keep `.ccfchar` parsing/mapping in one versioned service so future import/export paths share one schema implementation.
+- Keep graph-node dragging, anchor semantics and connector rendering in the shared graph canvas rather than duplicating interaction logic in Relationship and Route windows.
 - Audit folders/collections for stable-ID needs before rename-heavy workflows.
 
 ## Polish

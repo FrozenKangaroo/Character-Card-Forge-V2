@@ -54,13 +54,12 @@ func _init() -> void:
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01420.gd")
 	assert(main_source.contains("main_v01419.gd"), "v0.14.20 must preserve v0.14.19 through inheritance.")
 	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	var current_shell_source := FileAccess.get_file_as_string("res://scripts/main_v01421.gd")
+	var shell_21 := FileAccess.get_file_as_string("res://scripts/main_v01421.gd")
+	var shell_22 := FileAccess.get_file_as_string("res://scripts/main_v01422.gd")
 	assert(
 		scene.contains("main_v01420.gd")
-		or (
-			scene.contains("main_v01421.gd")
-			and current_shell_source.contains("main_v01420.gd")
-		),
+		or (scene.contains("main_v01421.gd") and shell_21.contains("main_v01420.gd"))
+		or (scene.contains("main_v01422.gd") and shell_22.contains("main_v01421.gd") and shell_21.contains("main_v01420.gd")),
 		"The active main shell must preserve v0.14.20 through direct use or inheritance."
 	)
 	print("v0.14.20 Relationship Graph and linked variant regression passed")
