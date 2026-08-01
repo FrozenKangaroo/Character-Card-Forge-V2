@@ -108,3 +108,6 @@ jobs:
 
       - name: Test v0.14.9 Library assignment UX
         run: timeout 30s godot --headless --path . --script res://tools/test_v0149_library_ux.gd
+
+      - name: Test v0.14.10 related character and AI variation
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01410_character_derivation.gd

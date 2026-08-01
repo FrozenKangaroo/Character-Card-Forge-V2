@@ -25,20 +25,23 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Stable IDs are internal references; user-facing names may change without silently breaking bindings or preferences.
 - Missing core authoring/data behaviour should be restored before the larger visual redesign, but usability regressions such as toolbar overcrowding should be fixed as soon as they become obvious.
 - Existing folders, collections, series, templates, and other named objects should be selected from visible UI choices rather than requiring users to retype names they already created.
+- Derived characters must remain independent records: source context may seed generation, but creating a related character or variation must never overwrite the source character.
 
 ## Current Development Phase
 
-**v0.14.9 development candidate — Authoring Parity, Lorebooks, and Library UX**
+**v0.14.10 development candidate — Authoring Parity, Character Derivation, Lorebooks, and Library UX**
 
-The v0.13 line established the modern generation, validation, Q&A, provider, vision, project-lifecycle, and AI-authored image-prompt foundations. v0.14 restores V1 authoring workflows, fills missing first-class Character Card data such as lorebooks, and now includes targeted usability passes where feature growth has made navigation or management unclear.
+The v0.13 line established the modern generation, validation, Q&A, provider, vision, project-lifecycle, and AI-authored image-prompt foundations. v0.14 restores V1 authoring workflows, fills missing first-class Character Card data such as lorebooks, adds related-character/variation authoring, and includes targeted usability passes where feature growth has made navigation or management unclear.
 
-The running development build displays **v0.14.9**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
+The running development build displays **v0.14.10**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
 
 The current authoring model deliberately keeps three distinct routes:
 
 - **Character Builder** — option-driven character construction for users who want structured choices without writing everything manually.
 - **Manual Guided** — direct template-aware authoring for users who already know what they want; it does not require AI and skips private Interview / Q&A.
 - **Idea Generator** — controlled ingredient/pool composition that creates an editable concept seed before normal generation.
+
+V1-style **Make AI Variation** behaviour is now evolving into a broader **Create Related Character / AI Variation** workflow: the active character can ground a new standalone related character or transformed version, the user controls what source context is included, derivation provenance is retained internally, and normal Generation Preview remains the review boundary before generated values are accepted.
 
 Workspace navigation keeps Save, Generate Character, and Library immediately visible while secondary workflows are grouped under **Author**, **Project**, **Character**, and **Tools** menus instead of each new feature adding another equally prominent button.
 
@@ -51,6 +54,18 @@ Lorebook data is a first-class editing concern:
 - Lorebook entries remain separate from Description, Personality, Scenario, and other direct card prose even when generation can later use selected lore as context.
 
 ## Completed
+
+### v0.14.10 — Related Character / AI Variation Foundation
+
+- Added **Character → Create Related Character / AI Variation…** as the V2 evolution of V1's Make AI Variation workflow.
+- Supports two derivation modes: create a distinct related character from established source facts, or create a transformed variation of the same identity such as an older/younger, future/past, alternate-universe, or changed-life-path version.
+- The user supplies an authoritative derivation instruction and may optionally name the new character before generation.
+- Source Character Card text, shared project context, and source-character relationships can be included independently as grounding context.
+- Variations preserve established identity anchors unless the derivation request explicitly transforms them; related-character mode explicitly avoids cloning the source character.
+- Creates a new independent character record first, seeds its Generation Concept from the derivation context, carries the source template assignment, and can immediately launch the normal Generate Character / Generation Preview workflow.
+- Stores non-exported derivation provenance under character workspace metadata: source project ID, source character ID/name, derivation type, prompt, and timestamp.
+- The source character is never overwritten.
+- Added regression coverage for context inclusion/exclusion, related/variation guidance, provenance markers, menu wiring, normal-generation routing, and v0.14.10 shell wiring.
 
 ### v0.14.9 — Library Assignment and Action UX
 
@@ -198,7 +213,7 @@ Lorebook data is a first-class editing concern:
 
 ### v0.14 — V1 Authoring Workflow Parity
 
-Current v0.14 capabilities include option-driven Builder suggestions, component-driven no-AI Manual Guided authoring, repeatable Alternative Greetings, character transfer, interview review/provenance, recoverable validation failures, safe selective Preview application, native desktop resizing, grouped workspace navigation, lorebooks, and clearer Library organisation workflows.
+Current v0.14 capabilities include option-driven Builder suggestions, component-driven no-AI Manual Guided authoring, repeatable Alternative Greetings, character transfer, related-character/variation derivation, interview review/provenance, recoverable validation failures, safe selective Preview application, native desktop resizing, grouped workspace navigation, lorebooks, and clearer Library organisation workflows.
 
 **Next authoring slices:**
 
@@ -211,8 +226,9 @@ Current v0.14 capabilities include option-driven Builder suggestions, component-
 - Support locks, single-field local reroll, **Reroll Unlocked**, and configurable random choice count without spending AI tokens.
 - Keep conditional pool capability such as gender-aware relationship/archetype suggestions, implemented data-first rather than hard-coded into UI handlers.
 - Let the final selected/randomised combination remain editable before **Generate Concept**, then use AI only for the compact editable Main Concept seed.
-- Define useful provenance for manual values, presets, Idea Generator choices, concept extraction, Builder AI, and private Interview AI.
+- Define useful provenance for manual values, presets, Idea Generator choices, concept extraction, Builder AI, private Interview AI, and character derivation.
 - Continue V1 Character Builder / Personality Builder / Scene Builder parity where those structured controls remain useful in V2.
+- Expand character derivation after runtime testing with optional direct relationship creation/remapping, richer source-context selection, and possible batch/branch workflows without making derived characters dependent on their source at runtime.
 - Extend character transfer to future batch Move/Copy Selected workflows with relationship preservation/remapping when related characters move together.
 - Continue the formal V1 authoring UX audit: missing / equivalent-relocated / replaced-evolved / partial / intentionally retired / V2-only.
 
@@ -255,6 +271,8 @@ v0.14.9 replaces existing-folder/collection name retyping with assignment picker
 - Confirm persisted Interview/Q&A reviews match the responses actually used by generation.
 - Confirm native resizing exposes additional workspace and genuine overflow remains reachable locally.
 - Confirm character Move/Copy preserves exact character-local state/files while excluding project-shared context/relationships.
+- Confirm related-character mode produces a distinct standalone character while preserving established source facts, and variation mode preserves source identity anchors unless explicitly transformed.
+- Confirm derivation context toggles exclude disabled source-card/shared-context/relationship data and the original character is never modified.
 - Confirm grouped navigation keeps all previous workflows reachable without duplicate primary buttons.
 - Confirm project lore persists across save/reopen and character lore survives Character Card import/export.
 - Confirm Manual Guided follows Generation Component changes and isolates drafts between characters/projects.
@@ -266,13 +284,13 @@ v0.14.9 replaces existing-folder/collection name retyping with assignment picker
 - Test Creative Concept with sparse and detailed images.
 - Test model capability discovery across rich, partial, and ID-only providers.
 - Test Text and Vision models with different context/output limits.
-- Test default-template lifecycle, project draft lifecycle, Builder options, Manual Guided, Idea Generator, Lorebooks, relationships, group/card workflows, import/export, large-library, series, attachments, vision, and `.ccfproject` interoperability.
+- Test default-template lifecycle, project draft lifecycle, Builder options, Manual Guided, Idea Generator, character derivation, Lorebooks, relationships, group/card workflows, import/export, large-library, series, attachments, vision, and `.ccfproject` interoperability.
 
 ## Next Up
 
 ### Continue v0.14 Authoring + Lorebook Parity
 
-1. Runtime-test v0.14.9 Library assignment/action UX and v0.14.8 Alternative Greetings.
+1. Runtime-test v0.14.10 Related Character / AI Variation and v0.14.9 Library assignment/action UX.
 2. Harden Character Card lorebook interoperability/unknown-field preservation.
 3. Rebuild Idea Generator around the mature V1 controlled-pool workflow.
 4. Continue deeper Builder option coverage and template/user pool overrides.
@@ -306,6 +324,7 @@ Character Card Forge is not a level-based game, so the project-wide JSON level-p
 - Continue navigation hierarchy work as new features arrive; do not return to a one-button-per-feature toolbar.
 - Add reusable data-model/service helpers for lorebook normalisation and interoperability rather than leaving format knowledge only in UI code.
 - Audit Library organisation data for stable-ID needs before implementing rename-heavy workflows.
+- Keep derivation provenance as internal workspace metadata unless/until a portable interoperable extension format is deliberately defined.
 
 ## Polish
 
