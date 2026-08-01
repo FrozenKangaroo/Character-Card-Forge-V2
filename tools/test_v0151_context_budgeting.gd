@@ -40,12 +40,30 @@ func _init() -> void:
 	assert(not v0152_settings.contains("131072"), "v0.15.2 must not reintroduce the old 131,072 output-token ceiling.")
 	var main_v0152 := FileAccess.get_file_as_string("res://scripts/main_v0152.gd")
 	assert(main_v0152.contains("main_v0151.gd") and main_v0152.contains("SETTINGS_V0152"), "v0.15.2 must preserve v0.15.1 and install the large-output Settings view.")
-	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(
-		scene.contains("main_v0151.gd")
-		or (scene.contains("main_v0152.gd") and main_v0152.contains("main_v0151.gd")),
-		"The active main shell must preserve v0.15.1 context budgeting through direct use or inheritance."
-	)
+	assert(_active_main_inherits_from("res://scripts/main_v0151.gd"), "The active main shell must preserve v0.15.1 context budgeting through direct use or inheritance.")
 
 	print("v0.15.1/v0.15.2 context-window and large-output budgeting regression passed")
 	quit(0)
+
+
+func _active_main_inherits_from(target_path: String) -> bool:
+	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
+	var regex := RegEx.new()
+	regex.compile("res://scripts/main_[^\\\"]+\\.gd")
+	var match_result := regex.search(scene)
+	if match_result == null:
+		return false
+	var current_path := match_result.get_string()
+	var visited: Dictionary = {}
+	while not current_path.is_empty() and not visited.has(current_path):
+		if current_path == target_path:
+			return true
+		visited[current_path] = true
+		var source := FileAccess.get_file_as_string(current_path)
+		var extends_regex := RegEx.new()
+		extends_regex.compile("extends \\\"(res://scripts/main_[^\\\"]+\\.gd)\\\"")
+		var extends_match := extends_regex.search(source)
+		if extends_match == null:
+			break
+		current_path = extends_match.get_string(1)
+	return false
