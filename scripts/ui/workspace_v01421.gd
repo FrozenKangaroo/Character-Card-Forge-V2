@@ -20,6 +20,9 @@ func _ready() -> void:
 func _build_ccfchar_import_ui() -> void:
 	_ccfchar_dialog = FileDialog.new()
 	_ccfchar_dialog.visible = false
+	_ccfchar_dialog.force_native = true
+	_ccfchar_dialog.transient = false
+	_ccfchar_dialog.exclusive = false
 	_ccfchar_dialog.access = FileDialog.ACCESS_FILESYSTEM
 	_ccfchar_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 	_ccfchar_dialog.filters = PackedStringArray(["*.ccfchar ; Character Card Forge character source"])
@@ -30,6 +33,9 @@ func _build_ccfchar_import_ui() -> void:
 
 	_ccfchar_preview = ConfirmationDialog.new()
 	_ccfchar_preview.visible = false
+	_ccfchar_preview.force_native = true
+	_ccfchar_preview.transient = false
+	_ccfchar_preview.exclusive = false
 	_ccfchar_preview.title = "Import .ccfchar Source"
 	_ccfchar_preview.ok_button_text = "Apply Selected"
 	_ccfchar_preview.min_size = Vector2i(760, 620)
@@ -41,6 +47,14 @@ func _build_ccfchar_import_ui() -> void:
 	intro.text = "Only supplied fields are shown. Uncheck anything you do not want to apply; omitted fields are never cleared."
 	intro.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	root.add_child(intro)
+	var actions := HBoxContainer.new()
+	actions.add_theme_constant_override("separation", 8)
+	root.add_child(actions)
+	var import_another := Button.new()
+	import_another.text = "Import Another .ccfchar…"
+	import_another.tooltip_text = "Choose a different Character Card Forge source file without closing the workspace."
+	import_another.pressed.connect(_on_ccfchar_import_another)
+	actions.add_child(import_another)
 	var scroll := ScrollContainer.new()
 	scroll.custom_minimum_size = Vector2(700, 460)
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -72,7 +86,19 @@ func _on_ccfchar_character_menu(id: int) -> void:
 		return
 	if _project.is_empty():
 		return
+	_open_ccfchar_file_dialog()
+
+
+func _open_ccfchar_file_dialog() -> void:
+	if _ccfchar_dialog == null:
+		return
 	_ccfchar_dialog.popup_centered_ratio(0.72)
+
+
+func _on_ccfchar_import_another() -> void:
+	if _ccfchar_preview != null:
+		_ccfchar_preview.hide()
+	_open_ccfchar_file_dialog()
 
 
 func _on_ccfchar_file_selected(path: String) -> void:
@@ -132,7 +158,7 @@ func _apply_ccfchar_selected() -> void:
 	_commit_active_character_to_container()
 	_populate_project_controls()
 	_update_project_level_window_contexts()
-	_status.text = "Imported %d field%s from .ccfchar. Review the workspace, then generate or save when ready." % [
+	_status.text = "Imported %d field%s from .ccfchar. Review the workspace, then generate or save when ready. Use Character → Import .ccfchar Source… to import another file." % [
 		int(result.get("count", 0)),
 		"" if int(result.get("count", 0)) == 1 else "s"
 	]
