@@ -56,14 +56,12 @@ func _on_structured_concept_selected(concept_text: String) -> void:
 		return
 	_capture_all_fields()
 	_commit_active_character_to_container()
-	var active_character := CCFStorageService.get_character(_project_container, _active_character_id)
-	if active_character.is_empty():
-		return
-	var concept_value: Variant = active_character.get("concept", {})
+	_project = CCFStorageService.character_workspace_document(_project_container, _active_character_id)
+	var concept_value: Variant = _project.get("concept", {})
 	var concept: Dictionary = concept_value.duplicate(true) if concept_value is Dictionary else {}
 	concept["prompt"] = concept_text
-	active_character["concept"] = concept
-	CCFStorageService.update_character(_project_container, active_character)
+	_project["concept"] = concept
+	CCFStorageService.update_character(_project_container, _project)
 	_project = CCFStorageService.character_workspace_document(_project_container, _active_character_id)
 	_dirty = true
 	_rebuild_form()
