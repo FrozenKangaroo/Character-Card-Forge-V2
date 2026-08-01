@@ -126,8 +126,8 @@ func _process_completed_content(content: String) -> void:
 		super._process_completed_content(content)
 		return
 	var metadata: Dictionary = _active_job.get("metadata", {})
-	var seed := str(metadata.get("seed", ""))
-	var validation := _validate_idea_batch(parsed_value, seed)
+	var source_premise := str(metadata.get("seed", ""))
+	var validation := _validate_idea_batch(parsed_value, source_premise)
 	var issues: Array = validation.get("issues", [])
 	if not issues.is_empty() and int(metadata.get("semantic_repair_attempts", 0)) < 1:
 		_start_idea_semantic_repair(parsed_value, issues)
@@ -160,11 +160,11 @@ func _process_completed_content(content: String) -> void:
 	call_deferred("_start_next_job")
 
 
-func _validate_idea_batch(ideas: Array, seed: String) -> Dictionary:
+func _validate_idea_batch(ideas: Array, source_premise: String) -> Dictionary:
 	var valid_ideas: Array = []
 	var issues: Array[String] = []
-	var lowered_seed := seed.to_lower()
-	var requires_user_placeholder := seed.contains("{{user}}")
+	var lowered_premise := source_premise.to_lower()
+	var requires_user_placeholder := source_premise.contains("{{user}}")
 	for index in range(ideas.size()):
 		var raw: Variant = ideas[index]
 		if not raw is Dictionary:
@@ -182,12 +182,12 @@ func _validate_idea_batch(ideas: Array, seed: String) -> Dictionary:
 			local_issues.append("missing character_role")
 		if concept.is_empty():
 			local_issues.append("missing concept")
-		if not seed.is_empty():
+		if not source_premise.is_empty():
 			if source_anchor.is_empty():
 				local_issues.append("missing source_anchor")
-			elif not lowered_seed.contains(source_anchor.to_lower()):
+			elif not lowered_premise.contains(source_anchor.to_lower()):
 				local_issues.append("source_anchor is not an exact phrase from the source premise")
-			if _role_introduces_unseeded_identity(character_role, lowered_seed):
+			if _role_introduces_unseeded_identity(character_role, lowered_premise):
 				local_issues.append("character_role introduces a person/relationship type not present in the source premise")
 		if _contains_second_person_narration(concept):
 			local_issues.append("concept uses second-person you/your narration")
@@ -214,11 +214,11 @@ func _contains_second_person_narration(text: String) -> bool:
 	return regex.search(text) != null
 
 
-func _role_introduces_unseeded_identity(character_role: String, lowered_seed: String) -> bool:
+func _role_introduces_unseeded_identity(character_role: String, lowered_premise: String) -> bool:
 	var lowered_role := character_role.to_lower()
 	for term in GUARDED_ROLE_TERMS:
 		var role_term := str(term)
-		if lowered_role.contains(role_term) and not lowered_seed.contains(role_term):
+		if lowered_role.contains(role_term) and not lowered_premise.contains(role_term):
 			return true
 	return false
 
