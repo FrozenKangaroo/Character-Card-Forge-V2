@@ -21,70 +21,82 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Secondary workflows belong in grouped menus instead of an ever-growing wall of top-level buttons.
 - V1 parity is judged by useful workflow capability, not literal screen-for-screen reproduction.
 - AI Ideas target interactive Character Card / SillyTavern-style roleplay by default: the generated character should have a clear relationship and opening dynamic with literal `{{user}}` unless the author explicitly requests a detached narrator/observer/world-NPC role.
+- Alternate character routes should not require full duplicate cards when only a few fields differ; linked variants may inherit from a base while exports always materialise normal standalone cards.
+- Visual graph layout metadata stays separate from authoritative character, relationship, and route data.
 
 ## Current Development Phase
 
-**v0.14.18 development candidate — Authoring Parity + User-Centric Idea Generation**
+**v0.14.20 development candidate — Authoring Parity + Continuity Tools**
 
-The v0.14 line is closing the remaining practical V1 authoring gap while keeping V2's stronger project architecture. Current V2 now includes Manual Guided, recoverable generation review, focused Character/Personality/Scene builders, both AI and structured Idea Generator workflows, related-character/AI-variation creation, first-class lorebook generation context, detachable Lorebook editing, multi-character projects/relationships, portable project content, and improved Library organisation.
+The v0.14 line is closing the remaining practical V1 authoring gap while beginning V2-native continuity tooling. Current V2 includes Manual Guided, recoverable generation review, focused Character/Personality/Scene builders, AI and structured Idea Generator workflows, related-character/AI-variation creation, first-class lorebooks, multi-character projects/relationships, a detachable Relationship Graph foundation, linked delta-style character variants, portable project content, and improved Library organisation.
 
-The running development build displays **v0.14.18**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.14.20**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.14.20 — Relationship Graph + Linked Variants
+
+- Added a detachable project Relationship Graph over the existing structured relationship data.
+- Added a permanent `{{user}}` graph node alongside project characters.
+- Existing relationships render as labelled directional connections without creating a second relationship model.
+- Graph nodes are draggable, Auto Layout is available, and saved positions live only in project workspace metadata.
+- Added explicit character-version creation choice between a full independent character and a Linked Variant.
+- Linked Variants use a versioned sparse record containing a base character reference plus only changed overrides.
+- Variant editing resolves inherited data into the normal full workspace while save/commit recomputes the minimal deep diff.
+- Variants can inherit unchanged card fields and assets without duplicating portrait/image files during authoring.
+- Added recursive variant resolution with cycle protection and dependency checks.
+- Added Convert Linked Variant to Full Character.
+- Prevented deleting a base character while direct linked variants still depend on it.
+- Import / Export Studio receives a temporary materialised character for variants, so JSON/PNG export remains a complete ordinary Character Card with no external dependency on CCF variant metadata.
+- Added regression coverage for inheritance, diff-only storage, materialisation/export projection, graph `{{user}}` support, menu wiring, and shell integration.
+
+### v0.14.19 — Live Idea Generator Service Wiring
+
+- Fixed the unified AI Ideas tab retaining a stale generation-service reference through its hidden legacy controller.
+- Rebinds the embedded AI Ideas controller to the workspace's current generation service after service upgrades and whenever the unified Idea Generator opens.
+- Ensures the visible Generate Ideas action actually reaches the v0.14.18 `{{user}}`-centric validation and repair path.
+- Added integration regression coverage using a fake embedded controller rather than testing only the generation service in isolation.
 
 ### v0.14.18 — User-Centric SillyTavern Idea Generation
 
 - Reframed AI Ideas as interactive Character Card / SillyTavern concepts rather than detached fiction synopses.
 - By default every generated idea must explicitly centre the card character's relationship and immediate roleplay dynamic with literal `{{user}}`.
-- Added `roleplay_hook` to the Idea Generator schema so each idea explains why the generated character and `{{user}}` are interacting now and what drives the opening roleplay.
+- Added `roleplay_hook` so each idea explains why the generated character and `{{user}}` are interacting now and what drives the opening roleplay.
 - `character_role`, `roleplay_hook`, and `concept` must all explicitly involve `{{user}}` for normal ideas.
 - Third-person prose remains required for the card character while second-person `you`/`your` narration remains invalid.
-- The generator may not replace `{{user}}` with a named protagonist or drift to unrelated characters whose story would work without the user.
-- Explicit observer/narrator/world-NPC/detached requests remain supported as an opt-in exception rather than the default.
-- Extended semantic validation and the single bounded repair pass to fix missing `{{user}}` framing and missing roleplay hooks before result cards are shown.
-- Added regression coverage using an affair/dinner premise where previous outputs silently replaced `{{user}}` with named characters.
+- Explicit observer/narrator/world-NPC/detached requests remain supported as opt-in exceptions.
+- Extended semantic validation and bounded repair for missing `{{user}}` framing and roleplay hooks.
 
 ### v0.14.17 — Detachable Lorebook Manager
 
 - Configured Lorebook Manager as a true native OS window before it enters the scene tree.
-- Lorebook Manager is non-modal and non-transient, so it can be moved outside the main application bounds and onto another monitor.
-- Retained all v0.14.15 lorebook trigger/context/editing behaviour without tying the tool to the main window.
-- Added regression coverage for native-window setup ordering and forward-compatible shell inheritance.
+- Lorebook Manager is non-modal and non-transient, so it can move outside the main app bounds and onto another monitor.
+- Retained v0.14.15 lorebook trigger/context/editing behaviour.
 
 ### v0.14.16 — Idea Generator Identity + POV Validation
 
 - Strengthened AI Ideas from prompt-only POV guidance into a validated output contract.
-- Every idea identifies `character_name`, `character_role`, and an exact `source_anchor` copied from the source premise.
-- `{{user}}` remains the future chat user and cannot become the generated card subject.
-- Concepts are required to use neutral third-person design prose; narrative `you` / `your` wording is rejected before result cards are shown.
-- Seeded ideas reject common newly invented observer/relative/viewpoint roles when those role types are absent from the source premise.
-- Invalid batches receive one bounded semantic repair pass that preserves the original premise while correcting identity and POV violations.
-- After repair, only ideas satisfying the contract reach the UI; a completely invalid batch fails cleanly rather than showing misleading concepts.
-- Added regression coverage using the same class of double-affair/pregnancy premise that exposed the original inconsistent POV behaviour.
+- Every idea identifies `character_name`, `character_role`, and a source anchor grounded in the premise.
+- `{{user}}` cannot become the generated card subject.
+- Narrative second person and invented unrelated viewpoint roles are rejected/repaired.
 
 ### v0.14.15 — Lorebook Generation + Trigger Tools
 
 - Promoted Project Lorebook and Character Lorebook from passive editable data into active generation context.
-- Added deterministic lore activation using enabled state, constant entries, primary keys, optional selective secondary keys, and case sensitivity.
-- Active entries are ordered by priority and insertion order.
-- Lorebook token budgets cap injected context instead of blindly sending every entry to the model.
-- Character generation, field suggestions, and inherited generation workflows receive activated lore through the shared generation-context path.
-- Added Trigger Preview in Lorebook Manager for testing which entries activate against sample text.
-- Added Copy to Other Scope and Move to Other Scope for transferring entries between Project and Character Lorebooks.
-- Preserved the existing interoperable `character.character_book` location for character lore.
-- Added regression coverage for constant/key/selective activation, disabled entries, generation-service wiring, trigger preview, scope transfer, and v0.14.15 shell integration.
+- Added deterministic constant/key/selective/case-sensitive activation, ordering and token budgets.
+- Added Trigger Preview plus Copy/Move between project and character scopes.
+- Preserved interoperable `character.character_book` storage.
 
 ### v0.14.14 — Focused Character Builders
 
-- Kept the existing V2 Full Character builder and added direct Appearance, Personality, and Scene tabs.
-- Restored mapped V1 field groups and option pools through `data/focused_builder_schema_v01414.json` rather than hard-coded UI forms.
-- Added editable guidance and safe Sync to Full Character without bypassing the established Send to Concept / Apply to Character review boundary.
-- Focused builder state persists separately per character.
+- Kept the V2 Full Character builder and added direct Appearance, Personality, and Scene tabs.
+- Restored mapped V1 field groups and option pools through `data/focused_builder_schema_v01414.json` rather than hard-coded forms.
+- Added editable guidance and safe Sync to Full Character while retaining existing review boundaries.
 
 ### v0.14.13 — Idea Generator POV Safety
 
 - AI Ideas describe proposed characters/scenarios in neutral third person rather than producing `You are <character>` concepts.
-- `{{user}}` remains the eventual chat user and is not assigned invented identity/actions unless supplied by the prompt.
+- `{{user}}` remains the eventual chat user.
 
 ### v0.14.12 — Unified Idea Generator
 
@@ -125,7 +137,7 @@ The running development build displays **v0.14.18**. Release metadata remains co
 ### v0.14.5 — Grouped Navigation + Lorebook Foundation
 
 - Added grouped Author / Project / Character / Tools workspace menus.
-- Added Project Lorebook and Character Lorebook editing with standard Character Card `character_book` storage for character lore.
+- Added Project Lorebook and Character Lorebook editing with standard Character Card `character_book` storage.
 
 ### v0.14.4 — Manual Guided
 
@@ -203,15 +215,29 @@ The running development build displays **v0.14.18**. Release metadata remains co
 
 ### v0.14 — Finish Practical V1 Authoring Parity
 
-- Runtime-test the v0.14.14 focused builders and tune field/option coverage against real authoring use.
+- Runtime-test focused builders and tune field/option coverage against real authoring use.
 - Add template/user overrides for focused-builder and authoring-option pools.
-- Add remaining structured Idea Generator conveniences where useful: reusable presets, richer chips, field enable/disable, individual local reroll and conditional/gender-aware pools.
-- Runtime-test v0.14.18 AI Ideas against varied SillyTavern premises, especially multi-person relationship setups, and tune only when legitimate prompt-specified detached roles need exceptions.
+- Add remaining structured Idea Generator conveniences: reusable presets, richer chips, field enable/disable, individual local reroll and conditional/gender-aware pools.
+- Continue runtime-testing the v0.14.18/v0.14.19 AI Ideas path against varied SillyTavern premises.
 - Define clearer provenance for manual values, presets, Idea Generator choices, concept extraction, Builder AI, Interview AI and derivation.
 - Finish true V1-equivalent Lite / Compact Lite split or multi-pass execution rather than relying only on density guidance.
-- Continue character derivation with optional relationship creation/remapping and richer source-context selection after runtime testing.
+- Continue character derivation with optional relationship creation/remapping and richer source-context selection.
 - Extend Move/Copy to batch character transfer with relationship preservation/remapping when related characters move together.
 - Complete the formal V1 feature audit using: ported / replaced-evolved / partial / intentionally retired / V2-only.
+
+### Relationship, Variant and Route Tools
+
+v0.14.20 establishes the first graph and linked-diff foundation. Continue with:
+
+- Upgrade Relationship Graph from display/layout to full graph editing: create/delete connections, edit labels/direction and support richer relationship metadata directly from graph edges.
+- Add zoom/pan, portrait thumbnails, grouping, relationship-type styling and optional graph filters after the core data path is stable.
+- Add a clear **Resolved Card / Overrides Only** variant inspector and per-field **Revert to Inherited** actions.
+- Make linked-variant asset overrides explicit while inherited assets continue referencing the base without copies.
+- Add safe re-parenting and flatten-all options for variant dependency trees.
+- Add the separate **Route / Timeline Graph** for VN-style branching events, decisions, time skips, good/bad ends and alternate continuities.
+- Route nodes may link to a base character, a Linked Variant or a full independent character; creating a route version must continue offering the user's Full Character vs Linked Variant choice.
+- Keep route/timeline data project-level and versioned so it can evolve without contaminating Character Card export.
+- Later allow previewing how a route state changes relationships without silently applying those changes.
 
 ### Lorebook and Context Work
 
@@ -220,8 +246,8 @@ v0.14.15 establishes generation activation and trigger preview; v0.14.17 makes t
 - Audit Character Card V2/V3 `character_book` import/export against real cards and preserve unknown/extension fields without loss.
 - Add standalone lorebook JSON import/export.
 - Add search/filter/sort for large lorebooks.
-- Add optional scan-depth/recursion behaviour only where interoperability requires it; avoid pretending unsupported semantics exist.
-- Add explicit per-generation lore scope controls when users need to override automatic activation.
+- Add optional scan-depth/recursion behaviour only where interoperability requires it.
+- Add explicit per-generation lore scope controls.
 - Add Manual Guided lorebook editing/creation without flattening lore into ordinary prose fields.
 - Add AI helpers such as Extract Lore and Suggest Lore Entry after direct editing/interoperability is stable.
 - Consider reusable shared world-lore libraries after project/character semantics stabilise.
@@ -245,12 +271,13 @@ V1 Front Porch-style state remains intentionally incomplete. Planned direct-auth
 
 ## Next Up
 
-1. Runtime-test v0.14.18 AI Ideas with varied `{{user}}`-centric relationship prompts and explicit detached-role exceptions.
-2. Harden Character Book/lorebook import-export unknown-field preservation.
-3. Add standalone lorebook import/export and large-lorebook search/filter tools.
-4. Add State Tracking direct-authoring support.
-5. Finish remaining Builder/Idea Generator parity conveniences and true Lite/Compact generation execution.
-6. Begin v0.15 image workflow expansion once primary authoring/data parity is stable.
+1. Runtime-test v0.14.20 Linked Variants with ordinary edits, base edits, variant-of-variant chains and JSON/PNG export.
+2. Runtime-test Relationship Graph with existing relationship projects and tune endpoint/label rendering against the real relationship schema.
+3. Add graph-side relationship creation/editing and the first Route / Timeline Graph data schema after the v0.14.20 foundation is stable.
+4. Harden Character Book/lorebook import-export unknown-field preservation and add standalone lorebook import/export.
+5. Add State Tracking direct-authoring support.
+6. Finish remaining Builder/Idea Generator conveniences and true Lite/Compact generation execution.
+7. Begin v0.15 image workflow expansion once primary authoring/data parity is stable.
 
 ## v0.15 — Image Workflow Expansion
 
@@ -278,7 +305,7 @@ V1 gained deep Front Porch database integration late in development. V2 should n
 
 ## Level and Content Tools
 
-Character Card Forge is not a level-based game. The equivalent externally editable content systems are templates, builder schemas, authoring option pools, series bibles, lorebooks, attachments and portable `.ccfproject` packages. These remain versioned and separated from engine code wherever practical.
+Character Card Forge is not a level-based game. The equivalent externally editable content systems are templates, builder schemas, authoring option pools, series bibles, lorebooks, relationship/route metadata, attachments and portable `.ccfproject` packages. These remain versioned and separated from engine code wherever practical.
 
 ## Technical Improvements
 
@@ -289,18 +316,20 @@ Character Card Forge is not a level-based game. The equivalent externally editab
 - Audit remaining tool windows for fixed-size assumptions and duplicated controls.
 - Keep regression tests feature-focused and forward-compatible; older tests must not pin `main.tscn` permanently to their historical shell.
 - Add reusable lorebook normalisation/interoperability helpers instead of duplicating format knowledge in UI code.
+- Keep Linked Variant resolution/diff/materialisation in one service rather than teaching every editor/exporter a separate inheritance implementation.
 - Audit folders/collections for stable-ID needs before rename-heavy workflows.
 
 ## Polish
 
-- Full workspace visual hierarchy/theme pass after primary authoring, lorebook, image and interoperability work stabilises.
+- Full workspace visual hierarchy/theme pass after primary authoring, lorebook, graph, image and interoperability work stabilises.
 - Improve keyboard navigation, focus order, tooltips, empty states, confirmation wording and accessibility.
 - Reduce unnecessary modal depth and duplicated controls.
 - Preserve multi-monitor-friendly detachable windows only where they improve the workflow.
 
 ## Long-Term Ideas
 
-- Visual relationship-map canvas with draggable character cards, directional/mutual links, notes, grouping and zoom/pan.
+- Rich Relationship Graph with draggable portrait cards, named directional/mutual links, notes, grouping, filtering and zoom/pan.
+- VN-style Route / Timeline Graph with linked alternate character versions, branch conditions and continuity inspection.
 - Character Concept Exchange format after authoring/planning schemas stabilise.
 - Shared/community authoring-option, builder-preset and lorebook libraries.
 - GitHub-Releases-only in-app updater with explicit user-controlled download/install, release channels, hashes and safe restart/install.
