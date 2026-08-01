@@ -48,8 +48,9 @@ func _init() -> void:
 	assert(workspace.contains("GENERATION_SERVICE_V01416"), "Workspace must install the hardened Idea Generator service.")
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01416.gd")
 	assert(main_source.contains("extends \"res://scripts/main_v01415.gd\""), "v0.14.16 must retain v0.14.15 lorebook support.")
-	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene.contains("main_v01416.gd"), "Main scene must use the v0.14.16 shell.")
+	var successor := FileAccess.get_file_as_string("res://scripts/main_v01417.gd")
+	if not successor.is_empty():
+		assert(successor.contains("extends \"res://scripts/main_v01416.gd\""), "Newer shells must retain the v0.14.16 Idea Generator contract through inheritance.")
 	print("v0.14.16 Idea Generator identity/POV regression passed")
 	service.free()
 	quit(0)

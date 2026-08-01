@@ -129,3 +129,6 @@ jobs:
 
       - name: Test v0.14.16 Idea Generator identity and POV contract
         run: timeout 30s godot --headless --path . --script res://tools/test_v01416_idea_identity_pov.gd
+
+      - name: Test v0.14.17 detachable Lorebook Manager
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01417_detachable_lorebook.gd
