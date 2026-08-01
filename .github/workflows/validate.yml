@@ -112,5 +112,8 @@ jobs:
       - name: Test v0.14.10 related character and AI variation
         run: timeout 30s godot --headless --path . --script res://tools/test_v01410_character_derivation.gd
 
-      - name: Test v0.14.11 Concept Studio and editable options
+      - name: Test v0.14.11 Idea workflows and editable options
         run: timeout 30s godot --headless --path . --script res://tools/test_v01411_concept_studio.gd
+
+      - name: Test v0.14.12 unified Idea Generator
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01412_unified_idea_generator.gd
