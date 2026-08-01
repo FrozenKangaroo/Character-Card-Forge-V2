@@ -20,7 +20,8 @@ func _init() -> void:
 	assert(workspace.contains("Choose AI Ideas or Structured Builder"), "Unified workflow status guidance is missing.")
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01412.gd")
 	assert(main_source.contains("WORKSPACE_V01412"), "v0.14.12 workspace is not installed.")
-	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene.contains("main_v01412.gd"), "Main scene must use the v0.14.12 shell.")
+	var successor := FileAccess.get_file_as_string("res://scripts/main_v01413.gd")
+	if not successor.is_empty():
+		assert(successor.contains("main_v01412.gd"), "Newer shells must retain the v0.14.12 unified Idea Generator through inheritance.")
 	print("v0.14.12 unified Idea Generator regression passed")
 	quit(0)
