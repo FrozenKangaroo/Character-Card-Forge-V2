@@ -135,3 +135,6 @@ jobs:
 
       - name: Test v0.14.18 user-centric Idea Generator
         run: timeout 30s godot --headless --path . --script res://tools/test_v01418_user_centric_ideas.gd
+
+      - name: Test v0.14.19 live Idea Generator service wiring
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01419_idea_generator_live_service.gd
