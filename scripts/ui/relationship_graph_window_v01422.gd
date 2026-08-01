@@ -4,7 +4,6 @@ extends "res://scripts/ui/relationship_graph_window_v01420.gd"
 signal graph_saved(layout: Dictionary, relationships: Array)
 
 const GRAPH_CANVAS = preload("res://scripts/ui/graph_canvas_v01422.gd")
-const USER_NODE_ID := "{{user}}"
 
 var _graph_canvas: CCFGraphCanvasV01422
 var _relationships_v01422: Array = []
