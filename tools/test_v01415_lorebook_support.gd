@@ -42,7 +42,8 @@ func _init() -> void:
 	assert(workspace.contains("LOREBOOK_WINDOW_V01415"), "Workspace must install the upgraded Lorebook Manager.")
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01415.gd")
 	assert(main_source.contains("extends \"res://scripts/main_v01414.gd\""), "v0.14.15 must preserve v0.14.14.")
-	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene.contains("main_v01415.gd"), "Main scene must use the v0.14.15 shell.")
+	var successor := FileAccess.get_file_as_string("res://scripts/main_v01416.gd")
+	if not successor.is_empty():
+		assert(successor.contains("extends \"res://scripts/main_v01415.gd\""), "Newer shells must retain v0.14.15 lorebook support through inheritance.")
 	print("v0.14.15 lorebook support regression passed")
 	quit(0)

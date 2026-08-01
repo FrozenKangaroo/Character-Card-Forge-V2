@@ -23,13 +23,24 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.14.15 development candidate — Authoring Parity + First-Class Lorebooks**
+**v0.14.16 development candidate — Authoring Parity + Hardened Idea Generation**
 
-The v0.14 line is closing the remaining practical V1 authoring gap while keeping V2's stronger project architecture. Current V2 now includes Manual Guided, recoverable generation review, focused Character/Personality/Scene builders, both AI and structured Idea Generator workflows, related-character/AI-variation creation, lorebook editing, multi-character projects/relationships, portable project content, and improved Library organisation.
+The v0.14 line is closing the remaining practical V1 authoring gap while keeping V2's stronger project architecture. Current V2 now includes Manual Guided, recoverable generation review, focused Character/Personality/Scene builders, both AI and structured Idea Generator workflows, related-character/AI-variation creation, first-class lorebook generation context, multi-character projects/relationships, portable project content, and improved Library organisation.
 
-The running development build displays **v0.14.15**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.14.16**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.14.16 — Idea Generator Identity + POV Validation
+
+- Strengthened AI Ideas from prompt-only POV guidance into a validated output contract.
+- Every idea now identifies `character_name`, `character_role`, and an exact `source_anchor` copied from the source premise.
+- `{{user}}` remains the future chat user and cannot become the generated card subject.
+- Concepts are required to use neutral third-person design prose; narrative `you` / `your` wording is rejected before result cards are shown.
+- Seeded ideas reject common newly invented observer/relative/viewpoint roles when those role types are absent from the source premise.
+- Invalid batches receive one bounded semantic repair pass that preserves the original premise while correcting identity and POV violations.
+- After repair, only ideas satisfying the contract reach the UI; a completely invalid batch fails cleanly rather than showing misleading concepts.
+- Added regression coverage using the same class of double-affair/pregnancy premise that exposed the original inconsistent POV behaviour.
 
 ### v0.14.15 — Lorebook Generation + Trigger Tools
 
@@ -175,6 +186,7 @@ The running development build displays **v0.14.15**. Release metadata remains co
 - Runtime-test the v0.14.14 focused builders and tune field/option coverage against real authoring use.
 - Add template/user overrides for focused-builder and authoring-option pools.
 - Add remaining structured Idea Generator conveniences where useful: reusable presets, richer chips, field enable/disable, individual local reroll and conditional/gender-aware pools.
+- Continue runtime-testing v0.14.16 AI Ideas identity/POV validation across complex multi-person premises and tune grounding rules without suppressing legitimate characters already present in a seed.
 - Define clearer provenance for manual values, presets, Idea Generator choices, concept extraction, Builder AI, Interview AI and derivation.
 - Finish true V1-equivalent Lite / Compact Lite split or multi-pass execution rather than relying only on density guidance.
 - Continue character derivation with optional relationship creation/remapping and richer source-context selection after runtime testing.
@@ -213,7 +225,7 @@ V1 Front Porch-style state remains intentionally incomplete. Planned direct-auth
 
 ## Next Up
 
-1. Runtime-test v0.14.15 lore activation, trigger preview and Project ↔ Character scope transfer.
+1. Runtime-test v0.14.16 AI Ideas against complex multi-person prompts and tune identity grounding if needed.
 2. Harden Character Book/lorebook import-export unknown-field preservation.
 3. Add standalone lorebook import/export and large-lorebook search/filter tools.
 4. Add State Tracking direct-authoring support.
