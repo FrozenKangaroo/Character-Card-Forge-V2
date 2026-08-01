@@ -117,3 +117,6 @@ jobs:
 
       - name: Test v0.14.12 unified Idea Generator
         run: timeout 30s godot --headless --path . --script res://tools/test_v01412_unified_idea_generator.gd
+
+      - name: Test v0.14.13 Idea Generator point of view
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01413_idea_generator_pov.gd
