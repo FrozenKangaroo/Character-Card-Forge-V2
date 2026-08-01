@@ -215,13 +215,13 @@ func _refresh_entries() -> void:
 		if not raw is Dictionary:
 			continue
 		var entry: Dictionary = raw
-		var name := str(entry.get("name", "")).strip_edges()
-		if name.is_empty():
-			name = str(entry.get("comment", "")).strip_edges()
-		if name.is_empty():
-			name = "Lore Entry %d" % (index + 1)
+		var entry_name := str(entry.get("name", "")).strip_edges()
+		if entry_name.is_empty():
+			entry_name = str(entry.get("comment", "")).strip_edges()
+		if entry_name.is_empty():
+			entry_name = "Lore Entry %d" % (index + 1)
 		var prefix := "" if bool(entry.get("enabled", true)) else "[Off] "
-		_entry_list.add_item(prefix + name)
+		_entry_list.add_item(prefix + entry_name)
 	if _selected_index >= 0 and _selected_index < _entry_list.item_count:
 		_entry_list.select(_selected_index)
 
