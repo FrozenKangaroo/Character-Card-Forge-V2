@@ -33,13 +33,38 @@ func _init() -> void:
 
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01422.gd")
 	assert(main_source.contains("main_v01421.gd"), "v0.14.22 must preserve v0.14.21 through inheritance.")
-	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	var shell_15 := FileAccess.get_file_as_string("res://scripts/main_v015.gd")
-	assert(
-		scene.contains("main_v01422.gd")
-		or (scene.contains("main_v015.gd") and shell_15.contains("main_v01422.gd")),
-		"The active main shell must preserve v0.14.22 through direct use or inheritance."
-	)
+	assert(_active_shell_preserves("main_v01422.gd"), "The active main shell must preserve v0.14.22 through direct use or inheritance.")
 
 	print("v0.14.22 shared graph canvas regression passed")
 	quit(0)
+
+
+func _active_shell_preserves(target_script: String) -> bool:
+	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
+	var marker := "res://scripts/"
+	var start := scene.find(marker)
+	if start < 0:
+		return false
+	start += marker.length()
+	var finish := scene.find("\"", start)
+	if finish < 0:
+		return false
+	return _script_inheritance_contains(scene.substr(start, finish - start), target_script, {})
+
+
+func _script_inheritance_contains(script_name: String, target_script: String, visited: Dictionary) -> bool:
+	if script_name == target_script:
+		return true
+	if visited.has(script_name):
+		return false
+	visited[script_name] = true
+	var source := FileAccess.get_file_as_string("res://scripts/%s" % script_name)
+	var marker := "extends \"res://scripts/"
+	var start := source.find(marker)
+	if start < 0:
+		return false
+	start += marker.length()
+	var finish := source.find("\"", start)
+	if finish < 0:
+		return false
+	return _script_inheritance_contains(source.substr(start, finish - start), target_script, visited)

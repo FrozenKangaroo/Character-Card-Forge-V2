@@ -150,3 +150,6 @@ jobs:
 
       - name: Test v0.15 Character Collaborator
         run: timeout 30s godot --headless --path . --script res://tools/test_v015_character_collaborator.gd
+
+      - name: Test v0.15.1 Character Collaborator context budgeting
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0151_context_budgeting.gd

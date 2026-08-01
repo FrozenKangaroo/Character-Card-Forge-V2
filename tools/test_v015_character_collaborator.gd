@@ -45,7 +45,12 @@ func _init() -> void:
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v015.gd")
 	assert(main_source.contains("main_v01422.gd"), "v0.15 must preserve v0.14.22 graph work through inheritance.")
 	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene.contains("main_v015.gd"), "Main scene must use the v0.15 shell.")
+	var shell_151 := FileAccess.get_file_as_string("res://scripts/main_v0151.gd")
+	assert(
+		scene.contains("main_v015.gd")
+		or (scene.contains("main_v0151.gd") and shell_151.contains("main_v015.gd")),
+		"The active main shell must preserve v0.15 Character Collaborator through direct use or inheritance."
+	)
 
 	var sample := "one two three four five six seven eight"
 	assert(CCFGenerationService.estimate_tokens(sample) > 0, "Context token estimation must remain available to the Collaborator.")
