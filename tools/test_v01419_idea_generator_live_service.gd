@@ -29,8 +29,9 @@ func _init() -> void:
 
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01419.gd")
 	assert(main_source.contains("extends \"res://scripts/main_v01418.gd\""), "v0.14.19 must retain the v0.14.18 user-centric contract.")
-	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene.contains("main_v01419.gd"), "Main scene must use the v0.14.19 shell.")
+	var successor := FileAccess.get_file_as_string("res://scripts/main_v01420.gd")
+	if not successor.is_empty():
+		assert(successor.contains("main_v01419.gd"), "Newer shells must retain v0.14.19 live Idea Generator wiring through inheritance.")
 
 	workspace.remove_child(legacy)
 	legacy.free()
