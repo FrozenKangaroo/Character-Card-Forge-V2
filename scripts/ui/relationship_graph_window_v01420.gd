@@ -114,17 +114,17 @@ func _rebuild_graph() -> void:
 	for index in range(ids.size()):
 		var node_id := ids[index]
 		var fallback := _fallback_position(index)
-		var position := _position_for(node_id, fallback)
-		_create_node(node_id, position)
+		var node_position := _position_for(node_id, fallback)
+		_create_node(node_id, node_position)
 	_create_relationship_labels()
 	_canvas.queue_redraw()
 
 
-func _create_node(node_id: String, position: Vector2) -> void:
+func _create_node(node_id: String, node_position: Vector2) -> void:
 	var button := Button.new()
 	button.custom_minimum_size = Vector2(190, 72)
 	button.size = Vector2(190, 72)
-	button.position = position
+	button.position = node_position
 	button.text = _display_name(node_id)
 	button.tooltip_text = "Drag to reposition. Click to select this character." if node_id != USER_NODE_ID else "Special roleplay user node."
 	button.mouse_default_cursor_shape = Control.CURSOR_MOVE
@@ -255,13 +255,13 @@ func _display_name(node_id: String) -> String:
 			var character: Dictionary = raw_character
 			var metadata_value: Variant = character.get("metadata", {})
 			var metadata: Dictionary = metadata_value if metadata_value is Dictionary else {}
-			var name := str(metadata.get("name", "")).strip_edges()
-			if name.is_empty():
+			var display_name := str(metadata.get("name", "")).strip_edges()
+			if display_name.is_empty():
 				var card_value: Variant = character.get("character", {})
 				if card_value is Dictionary:
-					name = str((card_value as Dictionary).get("name", "")).strip_edges()
-			if not name.is_empty():
-				return name
+					display_name = str((card_value as Dictionary).get("name", "")).strip_edges()
+			if not display_name.is_empty():
+				return display_name
 	return "Unknown Character"
 
 
@@ -276,7 +276,7 @@ func _position_for(node_id: String, fallback: Vector2) -> Vector2:
 
 func _fallback_position(index: int) -> Vector2:
 	var column := index % 4
-	var row := index / 4
+	var row := int(index / 4.0)
 	return Vector2(90 + column * 360, 90 + row * 220)
 
 
