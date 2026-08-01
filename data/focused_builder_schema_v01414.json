@@ -1,0 +1,124 @@
+{
+  "format_version": 1,
+  "schema_id": "ccf.focused-builders.v01414",
+  "tabs": [
+    {
+      "id": "appearance",
+      "title": "Appearance",
+      "output_path": "background.appearance",
+      "output_label": "Built Visual Description",
+      "groups": [
+        {"id":"overall","title":"Overall","fields":[
+          {"id":"presentation","label":"Presentation","type":"select","options":["feminine","masculine","androgynous"]},
+          {"id":"build","label":"Build","type":"select","options":["petite","slender","athletic","curvy","hourglass","soft and plush","tall and elegant"]},
+          {"id":"skin_tone","label":"Skin Tone","type":"select","options":["fair","pale","warm ivory","light tan","golden tan","olive","brown","deep brown"]}
+        ]},
+        {"id":"hair","title":"Hair","fields":[
+          {"id":"hair_length","label":"Hair Length","type":"select","options":["pixie cut","short bob","shoulder-length","mid-back length","waist-length","very long"]},
+          {"id":"hair_texture","label":"Hair Texture / Style","type":"select","options":["straight","soft waves","loose curls","messy layered","twin tails","ponytail","drill curls"]},
+          {"id":"hair_colour","label":"Hair Colour","type":"select","options":["black","dark brown","chestnut brown","honey blonde","platinum blonde","pink","blue","silver","red","purple","two-tone"]},
+          {"id":"hair_accent","label":"Accent / Undertone Colour","type":"line","placeholder":"pink underside, blue streaks, darker roots…","visible_when":{"field":"hair_colour","equals":"two-tone"}}
+        ]},
+        {"id":"face","title":"Face","fields":[
+          {"id":"face_shape","label":"Face Shape","type":"select","options":["heart-shaped","oval","round","sharp and angular","soft and delicate"]},
+          {"id":"eye_shape","label":"Eye Shape","type":"select","options":["large anime eyes","almond-shaped","sharp upturned","sleepy half-lidded","gentle drooping"]},
+          {"id":"eye_colour","label":"Eye Colour","type":"select","options":["brown","dark brown","amber","blue","green","grey","violet","red","gold"]},
+          {"id":"makeup","label":"Makeup Style","type":"select","options":["natural makeup","gyaru makeup","soft pink makeup","smoky eye makeup","glossy lips","no visible makeup"]}
+        ]},
+        {"id":"body","title":"Body Details","fields":[
+          {"id":"bust","label":"Chest / Bust Size","type":"select","options":["small chest","B-cup","C-cup","D-cup","E-cup","F-cup","large bust","very large bust"]},
+          {"id":"waist_hips","label":"Waist / Hips","type":"select","options":["narrow waist and slim hips","narrow waist and wide hips","balanced proportions","soft waist and rounded hips","athletic core and toned hips"]},
+          {"id":"legs","label":"Legs","type":"select","options":["long slender legs","toned legs","soft thick thighs","athletic legs"]}
+        ]},
+        {"id":"clothing","title":"Clothing","fields":[
+          {"id":"clothing_style","label":"Style Family","type":"select","options":["school uniform","clean gyaru","casual streetwear","office lady","gothic lolita","sporty","cosy homewear","elegant dress","fantasy outfit","revealing gyaru","nightclub outfit","lingerie-inspired fashion","swimsuit / bikini","crop top and mini skirt","bodycon dress","fetish-inspired fashion","bedroom wear"]},
+          {"id":"exposure","label":"Revealing Level","type":"select","options":["modest","slightly revealing","flirty and figure-hugging","cleavage-focused","short hem / exposed thighs","midriff-baring","boldly revealing","provocative adult-coded"]},
+          {"id":"specific_outfit","label":"Specific Outfit","type":"line","placeholder":"crop top, mini skirt, thigh-highs, choker…"},
+          {"id":"clothing_colours","label":"Main Clothing Colours","type":"line","placeholder":"white and navy, pastel pink, black and gold…"},
+          {"id":"underwear_style","label":"Underwear Style","type":"select","options":["simple underwear","cute matching set","lace lingerie","satin lingerie","sports bra and shorts","bralette and panties","thong","g-string","garter belt and stockings","thigh-high stockings","teddy / bodysuit","corset lingerie","sheer lingerie","no bra under outfit","no visible underwear details"]},
+          {"id":"underwear_coverage","label":"Underwear Coverage","type":"select","options":["modest coverage","cute and practical","flirty but not explicit","revealing adult-coded","barely-there styling"]},
+          {"id":"underwear_colour","label":"Underwear Colour","type":"line"},
+          {"id":"underwear_details","label":"Underwear Details","type":"line"},
+          {"id":"footwear","label":"Footwear","type":"select","options":["platform sneakers","ankle boots","thigh-high boots","loafers","heels","sandals","strappy heels","platform boots"]}
+        ]},
+        {"id":"traits","title":"Accessories & Traits","fields":[
+          {"id":"accessories","label":"Accessories","type":"line"},
+          {"id":"distinguishing_features","label":"Distinguishing Features","type":"line"},
+          {"id":"vibe","label":"Vibe","type":"select","options":["confident","shy","playful","elegant","bratty","cool and aloof","soft and caring"]}
+        ]}
+      ]
+    },
+    {
+      "id": "personality",
+      "title": "Personality",
+      "output_path": "personality.relationship_style",
+      "output_label": "Built Personality / Trait Guidance",
+      "groups": [
+        {"id":"core","title":"Core Personality","fields":[
+          {"id":"archetype","label":"Archetype","type":"select","options":["sweet and affectionate","confident gyaru","bratty tease","shy but secretly bold","cool and aloof","motherly and caring","dominant and commanding","submissive and eager to please","manipulative social butterfly","chaotic troublemaker","serious overachiever","dreamy airhead"]},
+          {"id":"social_energy","label":"Social Energy","type":"select","options":["introverted","quietly observant","ambivert","outgoing","life of the party","attention-seeking"]},
+          {"id":"confidence","label":"Confidence","type":"select","options":["insecure but hides it","cautiously confident","naturally confident","cocky","shameless","arrogant until challenged"]},
+          {"id":"emotional_style","label":"Emotional Style","type":"select","options":["warm and expressive","guarded and defensive","emotionally avoidant","dramatic and reactive","calm and pragmatic","clingy when attached","jealous but denies it","rationalises bad choices"]}
+        ]},
+        {"id":"mind","title":"Mind & Motivations","fields":[
+          {"id":"main_drive","label":"Main Drive","type":"select","options":["wants affection and security","wants freedom and excitement","wants validation and attention","wants control","wants revenge or payback","wants self-improvement","wants to escape boredom","wants to protect her secret life"]},
+          {"id":"hidden_fear","label":"Hidden Fear","type":"select","options":["being abandoned","being exposed","being ordinary","losing control","falling in love","being judged","disappointing family","becoming dependent on {{user}}"]},
+          {"id":"moral_alignment","label":"Moral Alignment","type":"select","options":["principled","kind but flexible","conflicted","self-serving but not cruel","reckless when tempted","manipulative when cornered","shamelessly hedonistic"]},
+          {"id":"decision_style","label":"Decision Style","type":"select","options":["careful and calculated","impulsive when emotional","impulsive when aroused","risk-aware but thrill-seeking","goes with the flow","plans everything then breaks her own rules"]}
+        ]},
+        {"id":"relationship_behaviour","title":"Relationship Behaviour","fields":[
+          {"id":"toward_user","label":"Toward {{user}}","type":"select","options":["sweet and devoted","teasing and flirty","guarded but attached","possessive","uses {{user}} as emotional safety","pushes {{user}}'s boundaries","acts innocent while hiding secrets","treats {{user}} as a toy to tease"]},
+          {"id":"attachment_style","label":"Attachment Style","type":"select","options":["secure once trusted","avoidant","anxious and clingy","fearful avoidant","casual but slowly catching feelings","emotionally loyal but physically adventurous"]},
+          {"id":"conflict_style","label":"Conflict Style","type":"select","options":["talks things out","deflects with jokes","gets bratty and defensive","goes cold and distant","seduces to avoid the issue","lies until cornered","confesses when guilt overwhelms her"]},
+          {"id":"secrecy","label":"Secrecy","type":"select","options":["honest by default","keeps small secrets","strategic and careful","reckless with secrets","compartmentalises different lives","enjoys hiding taboo behaviour"]}
+        ]},
+        {"id":"social_role","title":"Current Relationship / Social Role","fields":[
+          {"id":"relationship_status","label":"Current Relationship Status","type":"editable_select","options":["single","dating someone else","friend's girlfriend","best friend's girlfriend","married woman","engaged","divorced","widow","step-sister","step-mother","roommate","coworker","boss / superior","teacher / mentor","client / customer","neighbour","club member","idol / public figure","secretly in a relationship","open relationship","complicated / undefined"]},
+          {"id":"important_person","label":"Current Partner / Important Person","type":"line"},
+          {"id":"public_image","label":"Public Relationship Image","type":"editable_select","options":["publicly single and available","publicly loyal girlfriend","publicly devoted wife","publicly pure / innocent","publicly professional","publicly unavailable","rumoured to be promiscuous","keeps relationships private","relationship status is ambiguous"]},
+          {"id":"relationship_pressure","label":"Relationship Problem / Pressure","type":"editable_select","options":["none yet","bored in current relationship","neglected by partner","sexually unsatisfied","emotionally lonely","tempted by {{user}}","trying to stay loyal","hiding attraction","hiding infidelity","trapped by family expectations","wants revenge","risk of exposure"]}
+        ]},
+        {"id":"user_relationship","title":"Relationship with {{user}}","fields":[
+          {"id":"user_role","label":"Relationship Role","type":"editable_select","options":["strangers meeting for the first time","childhood friends","best friends","classmates","coworkers","neighbours","roommates","step-siblings","ex-lovers","current lovers","secret lovers","fuckbuddies","forbidden crush","rivals with tension","owner / employee dynamic"]},
+          {"id":"relationship_history","label":"Relationship History","type":"editable_select","options":["just met, no shared history","grew up together and know each other deeply","used to be close but drifted apart","used to hook up casually","dated before and broke up badly","have unresolved romantic tension","share a secret nobody else knows","{{user}} knows her hidden side","their families are connected","forced into close proximity recently"]},
+          {"id":"current_dynamic","label":"Current Dynamic","type":"editable_select","options":["comfortable and affectionate","awkward and avoidant","teasing with obvious chemistry","secretly dependent on each other","mutual attraction neither admits","power imbalance with tension","trust mixed with resentment","uses banter to hide vulnerability","physical familiarity with emotional distance","dangerously close to crossing a line"]},
+          {"id":"secret_tension","label":"Secret / Tension","type":"editable_select","options":["no major secret yet","hides how much she wants {{user}}","hides sexual history from {{user}}","hides feelings behind teasing","hides jealousy","hides a betrayal","hides another relationship","afraid {{user}} will expose her","afraid {{user}} will reject the real her","both know the situation is wrong but want it anyway"]},
+          {"id":"desired_direction","label":"Desired Direction","type":"editable_select","options":["wants things to stay casual","wants emotional closeness but fears it","wants to seduce {{user}}","wants {{user}} to pursue her","wants to test {{user}}'s limits","wants forgiveness or reassurance","wants to keep control of the relationship","wants a secret arrangement","wants to protect {{user}} from the truth"]}
+        ]},
+        {"id":"daily_life","title":"Daily Life / Profile Traits","fields":[
+          {"id":"occupation","label":"Occupation","type":"editable_select","options":["student","university student","office worker","teacher","nurse","idol / performer","hostess","maid cafe worker","artist","streamer","housewife","unemployed"]},
+          {"id":"likes","label":"Likes","type":"line"},
+          {"id":"dislikes","label":"Dislikes","type":"line"},
+          {"id":"hobbies","label":"Hobbies","type":"line"}
+        ]}
+      ]
+    },
+    {
+      "id": "scene",
+      "title": "Scene",
+      "output_path": "scene.situation",
+      "output_label": "Built Scene / Scenario Guidance",
+      "groups": [
+        {"id":"setting","title":"Setting","fields":[
+          {"id":"setting_type","label":"Setting Type","type":"editable_select","options":["school","university","workplace","office","maid cafe","hostess club","apartment","share house","family home","train station","hotel","love hotel","beach","festival","fantasy tavern"]},
+          {"id":"specific_location","label":"Specific Location","type":"line"},
+          {"id":"time_atmosphere","label":"Time / Atmosphere","type":"editable_select","options":["early morning","school lunch break","after school","late evening","midnight","rainy afternoon","summer festival night","weekend alone together"]}
+        ]},
+        {"id":"situation","title":"Situation","fields":[
+          {"id":"opening_situation","label":"Opening Situation","type":"editable_select","options":["first meeting","reunion after time apart","caught in an awkward moment","secret conversation","confession about to happen","argument turning intimate","accidental discovery","late-night visit","deal or arrangement proposed","after a betrayal is revealed","stress relief request"]},
+          {"id":"just_happened","label":"What Just Happened","type":"multiline"},
+          {"id":"about_to_happen","label":"What Is About to Happen","type":"multiline"}
+        ]},
+        {"id":"stakes","title":"Tension & Stakes","fields":[
+          {"id":"emotional_tone","label":"Emotional Tone","type":"editable_select","options":["playful teasing","romantic tension","awkward forbidden tension","dangerous temptation","guilty and conflicted","angry and vulnerable","soft healing moment","chaotic comedy","dark secretive tension"]},
+          {"id":"immediate_goal","label":"Immediate Goal","type":"editable_select","options":["wants comfort from {{user}}","wants to tease {{user}}","wants to hide a secret","wants to confess something","wants to test {{user}}'s reaction","wants help with a problem","wants to seduce {{user}}","wants to negotiate an arrangement","wants to avoid being exposed"]},
+          {"id":"complication","label":"Complication / Risk","type":"line"}
+        ]},
+        {"id":"notes","title":"Scenario Notes","fields":[
+          {"id":"props","label":"Important Props / Objects","type":"line"},
+          {"id":"extra_notes","label":"Extra Scene Notes","type":"multiline"}
+        ]}
+      ]
+    }
+  ]
+}
