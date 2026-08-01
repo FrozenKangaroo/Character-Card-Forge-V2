@@ -141,3 +141,6 @@ jobs:
 
       - name: Test v0.14.20 Relationship Graph and linked variants
         run: timeout 30s godot --headless --path . --script res://tools/test_v01420_relationship_variants.gd
+
+      - name: Test v0.14.21 CCFCHAR authoring import
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01421_ccfchar_import.gd
