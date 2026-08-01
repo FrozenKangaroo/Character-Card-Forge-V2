@@ -150,11 +150,11 @@ func _rebuild_structured_fields() -> void:
 		var menu := MenuButton.new()
 		menu.text = "Choose"
 		row.add_child(menu)
-		var popup := menu.get_popup()
+		var option_popup: PopupMenu = menu.get_popup()
 		for option_index in range(field.get("options", []).size()):
-			popup.add_item(str(field.get("options", [])[option_index]), option_index)
-		popup.id_pressed.connect(func(id: int) -> void:
-			var value := popup.get_item_text(popup.get_item_index(id))
+			option_popup.add_item(str(field.get("options", [])[option_index]), option_index)
+		option_popup.id_pressed.connect(func(id: int) -> void:
+			var value := option_popup.get_item_text(option_popup.get_item_index(id))
 			if bool(field.get("multi_select", false)) and not edit.text.strip_edges().is_empty():
 				var values := edit.text.split(",", false)
 				if not values.has(value):

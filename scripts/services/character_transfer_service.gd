@@ -30,8 +30,6 @@ static func transfer_character(
 			"error": "Choose a different Character Project. Use Duplicate Character for a copy inside the current project."
 		}
 
-	# Persist the current source state first so the transfer always reflects the
-	# exact character the user is looking at, including freshly edited authoring data.
 	var persisted_source := source_project.duplicate(true)
 	var source_save := CCFStorageService.save_project(persisted_source)
 	if not bool(source_save.get("ok", false)):
@@ -53,31 +51,18 @@ static func transfer_character(
 	var destination_character := source_character.duplicate(true)
 	var source_character_id := str(source_character.get("character_id", ""))
 	var destination_character_id := source_character_id
-	if clean_operation == OPERATION_COPY or CCFStorageService.character_index(
-		target_project, destination_character_id
-	) >= 0:
-		destination_character_id = str(
-			CCFStorageService.new_character_record(
-				CCFStorageService.character_display_name(source_character)
-			).get("character_id", "")
-		)
+	if clean_operation == OPERATION_COPY or CCFStorageService.character_index(target_project, destination_character_id) >= 0:
+		destination_character_id = str(CCFStorageService.new_character_record(CCFStorageService.character_display_name(source_character)).get("character_id", ""))
 	if destination_character_id.is_empty():
 		return {"ok": false, "error": "Could not allocate an identity for the destination character."}
 
 	if destination_character_id != source_character_id:
-		destination_character = _remap_character_paths(
-			destination_character, source_character_id, destination_character_id
-		)
+		destination_character = _remap_character_paths(destination_character, source_character_id, destination_character_id)
 		destination_character["character_id"] = destination_character_id
 		destination_character["created_at"] = Time.get_datetime_string_from_system(true)
 	destination_character["updated_at"] = Time.get_datetime_string_from_system(true)
 
-	var copy_result := _copy_character_tree(
-		source_project_id,
-		source_character_id,
-		clean_destination_id,
-		destination_character_id
-	)
+	var copy_result := _copy_character_tree(source_project_id, source_character_id, clean_destination_id, destination_character_id)
 	if not bool(copy_result.get("ok", false)):
 		if create_new_project:
 			_cleanup_project_folder(clean_destination_id)
@@ -118,9 +103,7 @@ static func transfer_character(
 	if clean_operation == OPERATION_MOVE:
 		var source_characters: Array = source_after.get("characters", []).duplicate(true)
 		if source_characters.size() > 1:
-			var delete_result := CCFStorageService.delete_character(
-				source_after, source_character_id
-			)
+			var delete_result := CCFStorageService.delete_character(source_after, source_character_id)
 			if not bool(delete_result.get("ok", false)):
 				return {
 					"ok": false,
@@ -129,9 +112,6 @@ static func transfer_character(
 					"error": "The destination was saved, but the source character could not be removed. No source files were deleted."
 				}
 		else:
-			# Character Projects currently maintain at least one roster record. Preserve
-			# the source project's shared context/attachments by replacing the moved sole
-			# character with an unsaved-style empty draft rather than deleting the project.
 			var empty_draft := CCFStorageService.new_character_record()
 			source_after["characters"] = [empty_draft]
 			source_after["relationships"] = []
@@ -165,7 +145,7 @@ static func transfer_character(
 	}
 
 
-static func _new_target_project(source_character: Dictionary, project_name: String) -> Dictionary:
+static func _new_target_project(_source_character: Dictionary, project_name: String) -> Dictionary:
 	var target := CCFStorageService.new_project()
 	target["characters"] = []
 	target["relationships"] = []
@@ -186,9 +166,7 @@ static func _new_target_project(source_character: Dictionary, project_name: Stri
 	return target
 
 
-static func _remap_character_paths(
-	value: Variant, source_character_id: String, destination_character_id: String
-) -> Variant:
+static func _remap_character_paths(value: Variant, source_character_id: String, destination_character_id: String) -> Variant:
 	var source_prefix := "characters/%s/" % source_character_id
 	var destination_prefix := "characters/%s/" % destination_character_id
 	if value is String:
@@ -196,38 +174,21 @@ static func _remap_character_paths(
 	if value is Array:
 		var remapped_array: Array = []
 		for item in value:
-			remapped_array.append(
-				_remap_character_paths(item, source_character_id, destination_character_id)
-			)
+			remapped_array.append(_remap_character_paths(item, source_character_id, destination_character_id))
 		return remapped_array
 	if value is Dictionary:
 		var remapped_dictionary: Dictionary = {}
 		for key in value:
-			remapped_dictionary[key] = _remap_character_paths(
-				value.get(key), source_character_id, destination_character_id
-			)
+			remapped_dictionary[key] = _remap_character_paths(value.get(key), source_character_id, destination_character_id)
 		return remapped_dictionary
 	return value
 
 
-static func _copy_character_tree(
-	source_project_id: String,
-	source_character_id: String,
-	target_project_id: String,
-	target_character_id: String
-) -> Dictionary:
-	var source_root := ProjectSettings.globalize_path(
-		CCFStorageService.project_folder(source_project_id).path_join(
-			"characters/%s" % source_character_id
-		)
-	)
+static func _copy_character_tree(source_project_id: String, source_character_id: String, target_project_id: String, target_character_id: String) -> Dictionary:
+	var source_root := ProjectSettings.globalize_path(CCFStorageService.project_folder(source_project_id).path_join("characters/%s" % source_character_id))
 	if not DirAccess.dir_exists_absolute(source_root):
 		return {"ok": true, "copied": false}
-	var target_root := ProjectSettings.globalize_path(
-		CCFStorageService.project_folder(target_project_id).path_join(
-			"characters/%s" % target_character_id
-		)
-	)
+	var target_root := ProjectSettings.globalize_path(CCFStorageService.project_folder(target_project_id).path_join("characters/%s" % target_character_id))
 	_cleanup_tree_absolute(target_root)
 	var copy_error := _copy_tree_absolute(source_root, target_root)
 	if copy_error != OK:
@@ -244,34 +205,22 @@ static func _copy_tree_absolute(source_path: String, target_path: String) -> Err
 	if make_error != OK:
 		return make_error
 	for directory_name in DirAccess.get_directories_at(source_path):
-		var nested_error := _copy_tree_absolute(
-			source_path.path_join(directory_name), target_path.path_join(directory_name)
-		)
+		var nested_error := _copy_tree_absolute(source_path.path_join(directory_name), target_path.path_join(directory_name))
 		if nested_error != OK:
 			return nested_error
 	for file_name in DirAccess.get_files_at(source_path):
-		var copy_error := DirAccess.copy_absolute(
-			source_path.path_join(file_name), target_path.path_join(file_name)
-		)
+		var copy_error := DirAccess.copy_absolute(source_path.path_join(file_name), target_path.path_join(file_name))
 		if copy_error != OK:
 			return copy_error
 	return OK
 
 
 static func _cleanup_character_tree(project_id: String, character_id: String) -> void:
-	_cleanup_tree_absolute(
-		ProjectSettings.globalize_path(
-			CCFStorageService.project_folder(project_id).path_join(
-				"characters/%s" % character_id
-			)
-		)
-	)
+	_cleanup_tree_absolute(ProjectSettings.globalize_path(CCFStorageService.project_folder(project_id).path_join("characters/%s" % character_id)))
 
 
 static func _cleanup_project_folder(project_id: String) -> void:
-	_cleanup_tree_absolute(
-		ProjectSettings.globalize_path(CCFStorageService.project_folder(project_id))
-	)
+	_cleanup_tree_absolute(ProjectSettings.globalize_path(CCFStorageService.project_folder(project_id)))
 
 
 static func _cleanup_tree_absolute(path: String) -> void:

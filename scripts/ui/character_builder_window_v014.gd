@@ -70,10 +70,13 @@ func _on_authoring_option_selected(
 	if option.is_empty():
 		selector.select(0)
 		return
+	var default_value: Variant = ""
+	if field_type == "tags":
+		default_value = []
 	var current_value: Variant = CCFStorageService.get_value_at_path(
 		_state,
 		field_path,
-		[] if field_type == "tags" else ""
+		default_value
 	)
 	var next_value: Variant = CCFAuthoringOptionService.apply_option(
 		current_value, field_type, option
