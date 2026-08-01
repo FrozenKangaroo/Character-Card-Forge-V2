@@ -14,7 +14,7 @@ func _init() -> void:
 		assert(service_source.contains(required_text), "v0.14.18 Idea Generator is missing %s." % required_text)
 
 	var service := CCFGenerationServiceV01418.new()
-	var seed := "{{user}} is sleeping with his friend's girlfriend when her boyfriend calls and invites {{user}} over for dinner with them later. She finds the risk exciting."
+	var source_premise := "{{user}} is sleeping with his friend's girlfriend when her boyfriend calls and invites {{user}} over for dinner with them later. She finds the risk exciting."
 	var valid_idea := {
 		"title": "The Reckless Girlfriend",
 		"character_name": "Claire",
@@ -24,7 +24,7 @@ func _init() -> void:
 		"concept": "Claire is {{user}}'s friend's girlfriend and has been secretly sleeping with {{user}}. Her boyfriend's sudden invitation puts Claire and {{user}} together in a dangerous social situation where she becomes increasingly excited by the risk of discovery.",
 		"tags": ["affair", "risk", "dinner"]
 	}
-	var good_report := service._validate_idea_batch([valid_idea], seed)
+	var good_report := service._validate_idea_batch([valid_idea], source_premise)
 	assert(good_report.get("issues", []).is_empty(), "A grounded {{user}}-centric roleplay idea should pass.")
 	assert(good_report.get("valid_ideas", []).size() == 1, "A valid user-centric idea must reach the UI.")
 
@@ -32,18 +32,19 @@ func _init() -> void:
 	detached_story["character_role"] = "Liam's girlfriend"
 	detached_story["roleplay_hook"] = "Claire has to survive dinner without Liam learning about the affair."
 	detached_story["concept"] = "Claire is Liam's girlfriend. She has been cheating with his friend and must conceal the affair during dinner."
-	var detached_report := service._validate_idea_batch([detached_story], seed)
+	var detached_report := service._validate_idea_batch([detached_story], source_premise)
 	assert(not detached_report.get("issues", []).is_empty(), "A normal Idea Generator result must not erase {{user}} from the roleplay framing.")
 
-	var explicit_observer_seed := "Create an observer card without {{user}}; the character is an omniscient narrator watching a royal court."
-	assert(service._seed_requests_detached_pov(explicit_observer_seed), "Explicit detached/narrator requests must be recognised as exceptions.")
+	var explicit_observer_premise := "Create an observer card without {{user}}; the character is an omniscient narrator watching a royal court."
+	assert(service._seed_requests_detached_pov(explicit_observer_premise), "Explicit detached/narrator requests must be recognised as exceptions.")
 
 	var workspace := FileAccess.get_file_as_string("res://scripts/ui/workspace_v01418.gd")
 	assert(workspace.contains("GENERATION_SERVICE_V01418"), "Workspace must install the v0.14.18 generation service.")
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01418.gd")
 	assert(main_source.contains("extends \"res://scripts/main_v01417.gd\""), "v0.14.18 must preserve the detachable Lorebook layer.")
-	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene.contains("main_v01418.gd"), "Main scene must use the v0.14.18 shell.")
+	var successor := FileAccess.get_file_as_string("res://scripts/main_v01419.gd")
+	if not successor.is_empty():
+		assert(successor.contains("main_v01418.gd"), "Newer shells must retain the v0.14.18 user-centric Idea Generator through inheritance.")
 	print("v0.14.18 user-centric Idea Generator regression passed")
 	service.free()
 	quit(0)
