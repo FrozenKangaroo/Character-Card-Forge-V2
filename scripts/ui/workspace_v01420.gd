@@ -220,28 +220,28 @@ func _open_character_version_dialog() -> void:
 func _create_requested_character_version() -> void:
 	_commit_active_character_to_container()
 	var mode := str(_version_type.get_item_metadata(_version_type.selected))
-	var name := _version_name.text.strip_edges()
+	var version_name := _version_name.text.strip_edges()
 	var source := VARIANT_SERVICE.resolve_character(_project_container, _active_character_id)
 	if source.is_empty():
 		return
-	if name.is_empty():
-		name = "%s — Variant" % CCFStorageService.character_display_name(source)
+	if version_name.is_empty():
+		version_name = "%s — Variant" % CCFStorageService.character_display_name(source)
 	var created: Dictionary
 	if mode == "variant":
-		created = VARIANT_SERVICE.create_variant(source, name)
+		created = VARIANT_SERVICE.create_variant(source, version_name)
 	else:
 		created = source.duplicate(true)
 		created.erase("record_type")
 		created.erase("variant")
-		var fresh := CCFStorageService.new_character_record(name)
+		var fresh := CCFStorageService.new_character_record(version_name)
 		created["character_id"] = str(fresh.get("character_id", ""))
 		created["created_at"] = str(fresh.get("created_at", ""))
 		created["updated_at"] = str(fresh.get("updated_at", ""))
 		var metadata: Dictionary = created.get("metadata", {}).duplicate(true)
-		metadata["name"] = name
+		metadata["name"] = version_name
 		created["metadata"] = metadata
 		var card: Dictionary = created.get("character", {}).duplicate(true)
-		card["name"] = name
+		card["name"] = version_name
 		created["character"] = card
 	if created.is_empty():
 		_status.text = "Character version could not be created."
