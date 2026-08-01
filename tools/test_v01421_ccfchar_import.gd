@@ -62,9 +62,11 @@ func _init() -> void:
 	assert(docs.contains("Missing property = do nothing"), "Format documentation must explain non-destructive partial imports.")
 	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
 	var shell_22 := FileAccess.get_file_as_string("res://scripts/main_v01422.gd")
+	var shell_15 := FileAccess.get_file_as_string("res://scripts/main_v015.gd")
 	assert(
 		scene.contains("main_v01421.gd")
-		or (scene.contains("main_v01422.gd") and shell_22.contains("main_v01421.gd")),
+		or (scene.contains("main_v01422.gd") and shell_22.contains("main_v01421.gd"))
+		or (scene.contains("main_v015.gd") and shell_15.contains("main_v01422.gd") and shell_22.contains("main_v01421.gd")),
 		"The active main shell must preserve v0.14.21 through direct use or inheritance."
 	)
 

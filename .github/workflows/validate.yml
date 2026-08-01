@@ -147,3 +147,6 @@ jobs:
 
       - name: Test v0.14.22 shared graph canvas and flowchart
         run: timeout 30s godot --headless --path . --script res://tools/test_v01422_graph_canvas.gd
+
+      - name: Test v0.15 Character Collaborator
+        run: timeout 30s godot --headless --path . --script res://tools/test_v015_character_collaborator.gd
