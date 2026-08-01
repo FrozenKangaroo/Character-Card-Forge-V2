@@ -16,11 +16,23 @@ func _init() -> void:
 		"border_color"
 	]:
 		assert(source.contains(marker), "v0.15.3 Collaborator chat UX is missing %s." % marker)
+
+	var service_source := FileAccess.get_file_as_string("res://scripts/services/generation_service_v015.gd")
+	for marker in [
+		"proactive creative character-design partner",
+		"do not merely acknowledge, paraphrase, or mechanically follow",
+		"Offer several materially different suggestions or alternatives",
+		"identify undeveloped areas",
+		"3 to 5 concise, genuinely different directions",
+		"not generic invitations"
+	]:
+		assert(service_source.contains(marker), "Character Collaborator creative-initiative prompt is missing %s." % marker)
+
 	var workspace := FileAccess.get_file_as_string("res://scripts/ui/workspace_v0153.gd")
 	assert(workspace.contains("CHARACTER_COLLABORATOR_WINDOW_V0153"), "v0.15.3 Workspace must instantiate the chat-UX Collaborator window.")
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v0153.gd")
 	assert(main_source.contains("WORKSPACE_V0153"), "v0.15.3 shell must install the v0.15.3 Workspace.")
 	var scene := FileAccess.get_file_as_string("res://scenes/main.tscn")
 	assert(scene.contains("main_v0153.gd"), "Main scene must use the v0.15.3 shell.")
-	print("v0.15.3 Character Collaborator chat UX regression passed")
+	print("v0.15.3 Character Collaborator chat UX and proactive prompt regression passed")
 	quit(0)
