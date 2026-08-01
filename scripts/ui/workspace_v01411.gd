@@ -24,7 +24,8 @@ func _build_concept_studio() -> void:
 func _add_concept_studio_route() -> void:
 	for node in find_children("*", "MenuButton", true, false):
 		if node is MenuButton and node.text == "Author":
-			var popup := node.get_popup()
+			var menu_button := node as MenuButton
+			var popup: PopupMenu = menu_button.get_popup()
 			var route_id := 1411
 			popup.add_separator()
 			popup.add_item("Concept Studio — AI Ideas + Structured Builder", route_id)
