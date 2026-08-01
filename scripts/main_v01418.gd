@@ -33,7 +33,7 @@ func _install_workspace_v0133() -> void:
 	upgraded.library_requested.connect(_show_library_from_workspace)
 	upgraded.settings_requested.connect(_show_settings_from_workspace)
 	upgraded.template_manager_requested.connect(_show_templates_from_workspace)
-	upgraded.series_manager_requested.connect(_show_series_manager_from_workspace)
+	upgraded.series_manager_requested.connect(_show_series_from_workspace)
 	upgraded.project_imported.connect(_on_project_imported)
 	_workspace = upgraded
 	_content.add_child(upgraded)
