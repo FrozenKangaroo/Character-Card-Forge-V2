@@ -123,3 +123,6 @@ jobs:
 
       - name: Test v0.14.14 focused Character Builders
         run: timeout 30s godot --headless --path . --script res://tools/test_v01414_focused_builders.gd
+
+      - name: Test v0.14.15 lorebook generation and triggers
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01415_lorebook_support.gd

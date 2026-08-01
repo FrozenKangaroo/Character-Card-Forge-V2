@@ -4,344 +4,277 @@
 
 Rebuild Character Card Forge as a responsive, native Godot desktop application for creating, generating, editing, organising, importing, exporting, analysing, and illustrating AI roleplay character cards.
 
-The original PyWebView V1 application remains a feature and behaviour reference, not an architecture or interface specification. Useful V1 behaviour should be re-expressed as maintainable Godot-native systems rather than copied literally.
+The original PyWebView V1 application remains a feature and behaviour reference, not an architecture specification. Useful V1 behaviour should be re-expressed as maintainable Godot-native systems with versioned external data and portable Character Card / `.ccfproject` content.
 
 ## Core Design Principles
 
-- Godot-native UI using Control nodes and containers.
-- Character project files are the source of truth; the legacy internal database is not a compatibility target.
-- Large assets remain ordinary files rather than database blobs or data URLs.
-- Search indexes and thumbnails are disposable caches.
-- Template-driven fields and generation behaviour.
-- Non-blocking networking and long-running tasks.
-- Clear separation between project data, UI, AI providers, imports/exports, integrations, and generated assets.
-- OpenAI-compatible and useful local/self-hosted backends remain first-class targets.
-- Character text/vision providers and image-generation providers are separate configuration domains.
-- Data formats are versioned and older content should remain usable where practical.
-- New features extend the central project model rather than create parallel copies of character state.
-- Wider desktop windows expose additional workspace instead of scaling the interface larger or letterboxing a fixed canvas.
-- Detachable native tool windows are used where multi-monitor workflows benefit; primary navigation pages may remain embedded when clearer.
-- Workspace/editing structure, authoring/planning structure, AI-generation structure, lore/context structure, and interoperable Character Card output fields are related but distinct layers.
-- Stable IDs are internal references; user-facing names may change without silently breaking bindings or preferences.
-- Missing core authoring/data behaviour should be restored before the larger visual redesign, but usability regressions such as toolbar overcrowding should be fixed as soon as they become obvious.
-- Existing folders, collections, series, templates, and other named objects should be selected from visible UI choices rather than requiring users to retype names they already created.
-- Derived characters must remain independent records: source context may seed generation, but creating a related character or variation must never overwrite the source character.
+- Godot-native desktop UI with detachable tool windows where useful.
+- Character project JSON/files are the source of truth; the legacy V1 database is not.
+- Versioned, externally inspectable templates, authoring schemas, lorebooks, series data, settings, and project packages.
+- Clear separation between character data, project-shared context, AI generation, providers, images, imports/exports, library indexing, and tooling.
+- OpenAI-compatible and local/self-hosted text, vision, and image providers remain first-class targets.
+- Text/Vision provider roles and Image Generation providers stay independently configurable.
+- New systems extend the central project model rather than create parallel character copies.
+- Existing character/card data must not be destroyed by unchecked preview fields, failed reviews, disabled generation components, or unrelated regeneration.
+- Stable internal IDs should survive user-facing renames where practical.
+- Wider desktop windows should reveal more workspace rather than scale a fixed game-style canvas.
+- Secondary workflows belong in grouped menus instead of an ever-growing wall of top-level buttons.
+- V1 parity is judged by useful workflow capability, not literal screen-for-screen reproduction.
 
 ## Current Development Phase
 
-**v0.14.10 development candidate — Authoring Parity, Character Derivation, Lorebooks, and Library UX**
+**v0.14.15 development candidate — Authoring Parity + First-Class Lorebooks**
 
-The v0.13 line established the modern generation, validation, Q&A, provider, vision, project-lifecycle, and AI-authored image-prompt foundations. v0.14 restores V1 authoring workflows, fills missing first-class Character Card data such as lorebooks, adds related-character/variation authoring, and includes targeted usability passes where feature growth has made navigation or management unclear.
+The v0.14 line is closing the remaining practical V1 authoring gap while keeping V2's stronger project architecture. Current V2 now includes Manual Guided, recoverable generation review, focused Character/Personality/Scene builders, both AI and structured Idea Generator workflows, related-character/AI-variation creation, lorebook editing, multi-character projects/relationships, portable project content, and improved Library organisation.
 
-The running development build displays **v0.14.10**. Published/tagged release metadata remains controlled by the release workflow until an actual release promotion is performed.
-
-The current authoring model deliberately keeps three distinct routes:
-
-- **Character Builder** — option-driven character construction for users who want structured choices without writing everything manually.
-- **Manual Guided** — direct template-aware authoring for users who already know what they want; it does not require AI and skips private Interview / Q&A.
-- **Idea Generator** — controlled ingredient/pool composition that creates an editable concept seed before normal generation.
-
-V1-style **Make AI Variation** behaviour is now evolving into a broader **Create Related Character / AI Variation** workflow: the active character can ground a new standalone related character or transformed version, the user controls what source context is included, derivation provenance is retained internally, and normal Generation Preview remains the review boundary before generated values are accepted.
-
-Workspace navigation keeps Save, Generate Character, and Library immediately visible while secondary workflows are grouped under **Author**, **Project**, **Character**, and **Tools** menus instead of each new feature adding another equally prominent button.
-
-Library navigation follows the same hierarchy principle: common filtering and assignment stay visible, secondary actions move into menus, and existing folders/collections are assigned through pickers rather than remembered free-text names.
-
-Lorebook data is a first-class editing concern:
-
-- **Project Lorebook** contains shared world, location, organisation, rule, history, and recurring-NPC context for the whole multi-character project.
-- **Character Lorebook** edits the active character's interoperable `character_book` data so Character Card imports/exports can preserve lore instead of treating it as an opaque blob.
-- Lorebook entries remain separate from Description, Personality, Scenario, and other direct card prose even when generation can later use selected lore as context.
+The running development build displays **v0.14.15**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
 
-### v0.14.10 — Related Character / AI Variation Foundation
+### v0.14.15 — Lorebook Generation + Trigger Tools
 
-- Added **Character → Create Related Character / AI Variation…** as the V2 evolution of V1's Make AI Variation workflow.
-- Supports two derivation modes: create a distinct related character from established source facts, or create a transformed variation of the same identity such as an older/younger, future/past, alternate-universe, or changed-life-path version.
-- The user supplies an authoritative derivation instruction and may optionally name the new character before generation.
-- Source Character Card text, shared project context, and source-character relationships can be included independently as grounding context.
-- Variations preserve established identity anchors unless the derivation request explicitly transforms them; related-character mode explicitly avoids cloning the source character.
-- Creates a new independent character record first, seeds its Generation Concept from the derivation context, carries the source template assignment, and can immediately launch the normal Generate Character / Generation Preview workflow.
-- Stores non-exported derivation provenance under character workspace metadata: source project ID, source character ID/name, derivation type, prompt, and timestamp.
-- The source character is never overwritten.
-- Added regression coverage for context inclusion/exclusion, related/variation guidance, provenance markers, menu wiring, normal-generation routing, and v0.14.10 shell wiring.
+- Promoted Project Lorebook and Character Lorebook from passive editable data into active generation context.
+- Added deterministic lore activation using enabled state, constant entries, primary keys, optional selective secondary keys, and case sensitivity.
+- Active entries are ordered by priority and insertion order.
+- Lorebook token budgets cap injected context instead of blindly sending every entry to the model.
+- Character generation, field suggestions, and inherited generation workflows receive activated lore through the shared generation-context path.
+- Added Trigger Preview in Lorebook Manager for testing which entries activate against sample text.
+- Added Copy to Other Scope and Move to Other Scope for transferring entries between Project and Character Lorebooks.
+- Preserved the existing interoperable `character.character_book` location for character lore.
+- Added regression coverage for constant/key/selective activation, disabled entries, generation-service wiring, trigger preview, scope transfer, and v0.14.15 shell integration.
 
-### v0.14.9 — Library Assignment and Action UX
+### v0.14.14 — Focused Character Builders
 
-- Reworked the Library action panel so the active project or bulk selection is named explicitly instead of relying on the ambiguous “actions use active project” message.
-- Replaced free-text assignment of existing folders and collections with populated **Choose folder…** and **Choose collection…** pickers built from current Library facet values.
-- Preserved creation workflows with explicit **New Folder…** and **New Collection…** dialogs that create names by assigning the current project selection.
-- Grouped lower-frequency Favourite, Series, Folder, and Collection operations into contextual menus to reduce the always-visible button wall.
-- Kept **All Character Projects** as the explicit filter reset and **Unfiled** as a genuine folder filter.
-- Added regression coverage for picker-based assignment, menu grouping, selection context, and v0.14.9 application wiring.
+- Kept the existing V2 Full Character builder and added direct Appearance, Personality, and Scene tabs.
+- Restored mapped V1 field groups and option pools through `data/focused_builder_schema_v01414.json` rather than hard-coded UI forms.
+- Added editable guidance and safe Sync to Full Character without bypassing the established Send to Concept / Apply to Character review boundary.
+- Focused builder state persists separately per character.
+
+### v0.14.13 — Idea Generator POV Safety
+
+- AI Ideas now describe proposed characters/scenarios in neutral third person rather than producing `You are <character>` concepts.
+- `{{user}}` remains the eventual chat user and is not assigned invented identity/actions unless supplied by the prompt.
+
+### v0.14.12 — Unified Idea Generator
+
+- One Idea Generator entry point now contains AI Ideas and Structured Builder tabs.
+- Removed redundant Concept Studio navigation and duplicate/orphan legacy Idea Generator windows.
+
+### v0.14.11 — Structured Idea Builder + Editable Pools
+
+- Restored the V1-style structured ingredient workflow alongside V2's freeform AI Ideas workflow.
+- Added locks, randomisation, custom values, multi-select fields, editable option lists, per-field reset, and reset-all behaviour.
+
+### v0.14.10 — Related Character / AI Variation
+
+- Added creation of independent related characters or transformed versions of an existing character.
+- Source card, project context, and relationships can independently seed derivation.
+- Internal provenance records the source character/project and transformation request without overwriting the source.
+
+### v0.14.9 — Library Assignment UX
+
+- Replaced retyping of existing folder/collection names with assignment pickers.
+- Grouped lower-frequency Library actions while preserving All Character Projects as the explicit filter reset.
 
 ### v0.14.8 — Manual Guided Alternative Greetings
 
-- Added a dedicated repeatable Alternative Greetings editor to Manual Guided First Message(s).
-- Each greeting is independently editable, removable, and reorderable.
-- Existing `character.alternate_greetings` values repopulate as separate entries and round-trip through the interoperable Character Card array.
-- Blank alternatives are omitted on Apply; State Tracking remains intentionally deferred.
+- Added independently editable, reorderable, removable Alternative Greetings that round-trip through Character Card arrays.
 
-### v0.14.7 — Manual Guided Component Parity + State Isolation
+### v0.14.7 — Manual Guided Component Parity
 
-- Manual Guided now reads enabled Generation Components from the active template as the source of truth for structured Description and Personality fields.
-- Adding, removing, disabling, renaming, reordering, or changing component instructions is reflected automatically when Manual Guided opens.
-- Structured values compose into normal Character Card output fields using the same group structure rather than a second hard-coded schema.
-- Generation Concept and private Interview/Q&A planning fields are excluded from Manual Guided.
-- Fixed previous-character/project Manual Guided state leaking into newly opened characters.
+- Manual Guided reads enabled template Generation Components as its source of truth.
+- Component add/remove/rename/reorder changes are reflected automatically.
+- Fixed character/project draft leakage.
 
-### v0.14.6 — Generation Preview Selection Safety
+### v0.14.6 — Preview Selection Safety
 
-- Unchecked Generation Preview rows perform no write at all, preserving existing fields during both normal generation and Vision Analysis.
-- Preview Apply captures live workspace values first so manual edits made while generation was running remain authoritative.
-- Added regression coverage for preserving unchecked Generation Concept/Personality while applying selected proposals.
+- Unchecked Generation Preview rows perform no write and preserve existing content.
+- Live workspace values are recaptured before Apply so user edits made during generation remain authoritative.
 
-### v0.14.5 — Grouped Workspace Navigation + Lorebook Foundation
+### v0.14.5 — Grouped Navigation + Lorebook Foundation
 
-- Reorganised the crowded workspace controls into **Author**, **Project**, **Character**, and **Tools** menus while keeping Save, Generate Character, Library, project identity, character selection, template selection, and status/progress immediately visible.
-- Existing actions are routed through their current handlers rather than reimplemented, reducing UI duplication risk.
-- Added a detachable **Lorebook Manager** supporting both Project Lorebook and active-character Lorebook scopes.
-- Character lore maps to `character.character_book` rather than creating a second incompatible lore format.
-- Project lore is stored as first-class project data and remains available to every character in that project.
-- Lore entries include stable IDs, names, primary keys, secondary keys, content, comments, enabled state, constant/selective/case-sensitive flags, priority, insertion order, position, and extension storage.
-- Added add, duplicate, delete, scope-switch, edit, and apply workflows.
-- Added regression coverage for grouped navigation, lorebook field support, and v0.14.5 application wiring.
+- Added grouped Author / Project / Character / Tools workspace menus.
+- Added Project Lorebook and Character Lorebook editing with standard Character Card `character_book` storage for character lore.
 
-### v0.14.4 — Manual Guided Direct Authoring
+### v0.14.4 — Manual Guided
 
-- Restored **Manual Guided** as a no-AI, template-driven direct-authoring workflow.
-- Manual Guided skips private Interview / Q&A and writes directly into the normal character workspace.
-- Added seven V1-inspired pages: Description, Personality, Scenario, First Message(s), Example Dialogues, Tags and System Prompt, and State Tracking and Image Prompts.
-- Added per-section Include controls, live output preview, character-local draft persistence, Tags array conversion, and Alternative Greeting conversion foundations.
-- Recorded the V1 authoring audit and expanded the future Idea Generator/Builder parity scope.
+- Restored no-AI, template-aware direct authoring across Description, Personality, Scenario, First Message(s), Example Dialogues, Tags/System Prompt, and future-facing state/image sections.
 
 ### v0.14.3 — Recoverable Generation Review
 
-- A parseable generated character is no longer discarded merely because semantic/template review still fails after the bounded repair pass.
-- Generation Preview receives the preserved candidate plus exact review diagnostics.
-- Users can keep, edit, selectively apply, or later repair individual fields with the normal AI Suggest workflow.
-- Truly unparseable/missing-contract/provider failures still fail normally.
+- Parseable AI output is preserved for review even if semantic/template validation still fails after repair.
+- Users can edit, selectively apply, keep, or later regenerate individual sections.
 
-### v0.14.2 — Character Transfer + Multiline Input Convention
+### v0.14.2 — Character Transfer + Text Input Convention
 
-- Added **Move / Copy…** for character transfer into existing or new projects.
-- Copy creates an independent character identity; Move preserves identity where practical.
-- Character-local card data, Generation Concept, Builder state, Interview review/provenance, assigned template, generation history/settings, portrait/generated/emotion-image records, managed files, and character attachments travel with the character.
-- Shared project context/attachments/relationships remain project-level.
-- Move is destination-first so a failed destination save does not damage the source.
-- Moving a project's only character leaves a fresh empty character in the source project.
-- Added the shared `Shift+Enter` newline convention for multiline editors.
+- Added Move/Copy between existing/new projects while preserving character-local data and files.
+- Added consistent Shift+Enter multiline input behaviour.
 
-### v0.14.1 — Desktop-Native Layout + Interview Review
+### v0.14.1 — Desktop Layout + Interview Review
 
-- Switched away from game-style canvas scaling so maximising/resizing exposes more real workspace instead of enlarging controls.
-- Private Interview / Q&A responses persist with Manual versus AI provenance.
-- Latest interview responses remain inspectable after generation and save/reopen.
+- Native resizing exposes more workspace.
+- Interview/Q&A answers persist with Manual versus AI provenance.
 
-### v0.14.0 + hotfixes — Authoring Options and Runtime Stability
+### v0.14.0 — Authoring Option Foundation
 
-- Added `data/authoring_option_pools.json`, a versioned shared suggestion catalog for existing Builder paths.
-- Builder option suggestions remain editable planning values rather than restrictive enums.
-- Private Interview / Q&A planning preserves the resolved Text-role output budget instead of using the old 2,600-token ceiling.
-- Embedded Image Studio genuine vertical overflow is scrollable instead of clipped.
+- Added shared versioned authoring-option pools for Builder suggestions.
+- Stabilised Interview output budgets and Image Studio scrolling.
 
-### v0.13.x — Generation Parity and Provider/Workflow Stabilisation
+### v0.13.x — Generation Parity and Provider Stabilisation
 
-- Added semantic completeness validation after JSON parsing and one bounded repair pass.
-- Added generation contracts, template format-3 generation groups/components, component order/enabled/required state, prompt instructions, bindings, and composition into shared output fields.
-- Restored V1-inspired Description/Personality generation expectations while keeping Description physical/external.
-- Added private Interview / Q&A planning with bundled defaults, template overrides, manual answers, required-answer checking, and bounded retries.
-- Defined planning precedence: source concept → manual Interview/Q&A → Builder guidance → AI interview answers → existing values/generic inference.
-- Added Mode & Style controls for Full/Lite/Compact Lite intent, writing style, First Message style/length, and custom greeting guidance.
-- Added conservative concept-fidelity checks/correction, Generation Preview diagnostics, configurable Alternative First Messages, selective application, and null filtering.
-- Added review-first Vision Analysis, Creative Concept, separate Text/Vision model selection and budgets, model capability discovery, malformed-response handling, default-template selection, project drafts, V2 PNG export, Image Studio isolation, AI-authored image prompts, and NanoGPT detailed discovery.
+- Generation contracts/groups/components, semantic validation/repair, private Interview/Q&A, mode/style controls, concept fidelity, Generation Preview diagnostics, alternate greetings, Vision Analysis, Creative Concept, model capability discovery, provider-response compatibility, default templates, project drafts, and AI-authored image prompts.
 
-### v0.12 source milestone — Image Expansion + Generation Parity Phase 1
+### v0.12.x — Image Provider Expansion
 
-- Separated Character AI profiles from dedicated Image Generation providers.
-- Added separate Character AI and Image Generation Settings.
-- Added Forge/Automatic1111 generation alongside OpenAI-compatible Images APIs.
-- Added checkpoint/sampler/model discovery, batch generation, sampler/steps/CFG/seed controls, returned-seed capture, Regenerate, and New Seed Variant workflows.
-- Source-audited V1 generation behaviour and restored Generation Concept authority plus stronger core field guidance.
+- Separate image provider settings, Forge/A1111 and OpenAI-compatible API image generation, model/sampler discovery, batch generation, seed/steps/CFG controls, regenerate/new-seed workflows.
 
-### v0.11.0 — Image Generation Foundation
+### v0.11.x — Image Generation Foundation
 
-- Added independent image-generation role, OpenAI-compatible image generation, response decoding, PNG normalisation, generated-image storage, prompt construction, gallery/preview, portrait assignment, and metadata.
+- Generated-image storage/gallery, prompt construction, portrait assignment, response decoding and PNG normalisation.
 
-### v0.10.0 — Vision and Attachments Foundation
+### v0.10.x — Vision and Attachments
 
-- Added independent Text/Vision provider assignments, project/per-character attachments, preprocessing/context budgeting, generation context, review-first image analysis, and portable attachment storage.
+- Independent Text/Vision roles, project/per-character attachments, vision preprocessing/context budgeting, review-first analysis, and portable managed assets.
 
 ### v0.9.x — Series and Release Infrastructure
 
-- Added versioned series bibles, Series Manager, categories/aliases/canon/visual/generation guidance, deterministic Auto Series, import/export, portable packs, export presets, validation/releases, semantic-version tooling, and release/update helper infrastructure.
+- Versioned Series Bibles, Series Manager, Auto Series, series packs/import/export, release validation, export presets, and release/update helper tooling.
 
 ### v0.8.x — Character Library 2.0
 
-- Added thumbnail/list views, portrait thumbnails, incremental indexing, broad search, sorting, favourites, folders, collections, tags, filters, bulk tools, and dashboard statistics reuse.
+- Thumbnail/list views, search, sorting, favourites, folders, collections, tags, filters, bulk tools, incremental indexing, and dashboard statistics reuse.
 
 ### v0.7.x — Import / Export Foundation
 
-- Added Character Card V1/V2 import, V2 export, PNG/APNG metadata support, compatibility reports, lorebook/character-book preservation, CCF extension round trips, portable `.ccfproject`, and split-workflow JSON export.
+- Character Card V1/V2 import, V2 export, PNG/APNG metadata, compatibility reports, Character Book preservation, CCF extension round-trips, and portable `.ccfproject` packages.
 
 ### v0.6.x — Relationships and Multi-Character Card Workflows
 
-- Added relationship matrices, directional editing/generation, relationship-aware context, and multi-character Card Workflow Studio planning.
+- Relationship matrices, directional relationship generation/context, Group Scene generation, and Card Workflow Studio planning.
 
 ### v0.5.x — Multi-Character Project Foundation
 
-- Added project format v2 with `characters[]`, migration, shared context, roster tools, independent per-character state/assets/templates, Group Scene generation, and per-character asset directories.
+- Project format v2 with `characters[]`, shared context, roster tools, per-character state/assets/templates, and migration support.
 
-### v0.4.x — Guided and Controlled Building Foundation
+### v0.4.x — Guided / Controlled Building
 
-- Added Guided Character Builder, whole-builder presets, AI fill/extraction, Safe/Custom Section Build, selected-field revision, protected context, review-first field application, JSON repair, and diagnostics.
+- Guided Character Builder, presets, AI fill/extraction, safe section builds, selected-field revision and diagnostics.
 
-### v0.3.x — Template System and Native Tool Windows
+### v0.3.x — Template System
 
-- Added Template Manager, versioned user templates, editable sections/fields/types/AI instructions/output policy, migration/validation, Idea Generator, and Generation Preview.
+- Template Manager, editable fields/generation instructions/output policy, migration/validation, Idea Generator and Generation Preview.
 
-### v0.2.x — Generation Foundation
+### v0.2.x / v0.1.x — Application + Generation Foundations
 
-- Added queued generation, cancellation, retries, editable previews, selective application, field suggestions, Idea Generator, token estimates, API profiles, and model discovery.
-
-### v0.1.x — Application Foundation
-
-- Added the Godot 4.6 shell, project JSON, settings, template-driven editing, Character Library foundation, asynchronous generation, and generation history.
+- Godot shell, project JSON, template-driven editor, async generation queue/cancellation/retries, field suggestions, API profiles/model discovery, generation history and initial Library.
 
 ## In Progress
 
-### v0.14 — V1 Authoring Workflow Parity
+### v0.14 — Finish Practical V1 Authoring Parity
 
-Current v0.14 capabilities include option-driven Builder suggestions, component-driven no-AI Manual Guided authoring, repeatable Alternative Greetings, character transfer, related-character/variation derivation, interview review/provenance, recoverable validation failures, safe selective Preview application, native desktop resizing, grouped workspace navigation, lorebooks, and clearer Library organisation workflows.
-
-**Next authoring slices:**
-
-- Expand and tune the built-in authoring option catalog from real V1/runtime usage without turning suggestions into rigid enums.
-- Add template/user authoring-option overrides so custom templates can provide their own candidate pools.
-- Restore the mature V1 **Idea Generator** as a controlled ingredient composer rather than a generic “ask AI for ideas” popup.
-- Support the V1 ingredient families: Gender, Archetype, Core Conflict, Setting, Tone, Occupation/Role, Relationship to `{{user}}`, Status/Social Position, Personality, Subject Of, Engages In, and Engages In (Sexual).
-- Support per-field editable option pools, custom values, enable/disable state, reset-to-default, and reusable presets.
-- Support single-select and configurable multi-select fields with chips; V1 defaults were Personality, Subject Of, Engages In, and Engages In (Sexual).
-- Support locks, single-field local reroll, **Reroll Unlocked**, and configurable random choice count without spending AI tokens.
-- Keep conditional pool capability such as gender-aware relationship/archetype suggestions, implemented data-first rather than hard-coded into UI handlers.
-- Let the final selected/randomised combination remain editable before **Generate Concept**, then use AI only for the compact editable Main Concept seed.
-- Define useful provenance for manual values, presets, Idea Generator choices, concept extraction, Builder AI, private Interview AI, and character derivation.
-- Continue V1 Character Builder / Personality Builder / Scene Builder parity where those structured controls remain useful in V2.
-- Expand character derivation after runtime testing with optional direct relationship creation/remapping, richer source-context selection, and possible batch/branch workflows without making derived characters dependent on their source at runtime.
-- Extend character transfer to future batch Move/Copy Selected workflows with relationship preservation/remapping when related characters move together.
-- Continue the formal V1 authoring UX audit: missing / equivalent-relocated / replaced-evolved / partial / intentionally retired / V2-only.
+- Runtime-test the v0.14.14 focused builders and tune field/option coverage against real authoring use.
+- Add template/user overrides for focused-builder and authoring-option pools.
+- Add remaining structured Idea Generator conveniences where useful: reusable presets, richer chips, field enable/disable, individual local reroll and conditional/gender-aware pools.
+- Define clearer provenance for manual values, presets, Idea Generator choices, concept extraction, Builder AI, Interview AI and derivation.
+- Finish true V1-equivalent Lite / Compact Lite split or multi-pass execution rather than relying only on density guidance.
+- Continue character derivation with optional relationship creation/remapping and richer source-context selection after runtime testing.
+- Extend Move/Copy to batch character transfer with relationship preservation/remapping when related characters move together.
+- Complete the formal V1 feature audit using: ported / replaced-evolved / partial / intentionally retired / V2-only.
 
 ### Lorebook and Context Work
 
-v0.14.5 establishes editable project and character lorebooks. Continue with:
+v0.14.15 establishes generation activation and trigger preview. Continue with:
 
-- Confirm Character Card V2/V3 import/export maps standard `character_book` properties and entries without data loss.
-- Preserve unknown/extension lorebook fields during edit/save round trips.
-- Add import/export for standalone lorebook JSON where useful.
-- Add entry search/filter/sort and move/copy between project and character scopes.
-- Make project and character lore available to generation through explicit context selection/budgeting rather than blindly injecting every entry.
-- Implement trigger evaluation for previews/testing: primary/secondary keys, constant entries, case sensitivity, selective logic, priority/order, recursion/scan depth where supported.
-- Add optional AI Suggest / extract-lore helpers after the direct manual workflow is stable.
-- Expose lorebook/support entries appropriately from Manual Guided without flattening them into ordinary prose fields.
-- Consider reusable shared world-lore libraries after project/character lore semantics stabilise.
+- Audit Character Card V2/V3 `character_book` import/export against real cards and preserve unknown/extension fields without loss.
+- Add standalone lorebook JSON import/export.
+- Add search/filter/sort for large lorebooks.
+- Add optional scan-depth/recursion behaviour only where interoperability requires it; avoid pretending unsupported semantics exist.
+- Add explicit per-generation lore scope controls when users need to override automatic activation.
+- Add Manual Guided lorebook editing/creation without flattening lore into ordinary prose fields.
+- Add AI helpers such as Extract Lore and Suggest Lore Entry after direct editing/interoperability is stable.
+- Consider reusable shared world-lore libraries after project/character semantics stabilise.
 
-### Library UX follow-up
+### State Tracking
 
-v0.14.9 replaces existing-folder/collection name retyping with assignment pickers and groups secondary actions. Continue with:
+V1 Front Porch-style state remains intentionally incomplete. Planned direct-authoring support includes:
 
-- Consider sidebar context menus for rename/delete/edit operations instead of adding management buttons.
-- Consider stable internal IDs for folders/collections if future rename semantics require identity independent of display names.
-- Improve multi-selection affordances and keyboard selection where runtime testing shows ambiguity.
-- Keep **All Character Projects** as the obvious reset state and **Unfiled** as a real filter, not an accidental reset shortcut.
+- starting emotion and objective;
+- short-term bond / long-term bond;
+- trust level;
+- time-of-day and weekday anchors;
+- preservation/import/export as interoperable extension data where appropriate;
+- no hard dependency on Front Porch runtime/database internals.
 
-### Remaining v0.13 Generation Parity Core carried forward
+### Remaining Generation Parity
 
-- Expand special generation contracts beyond component/minimum-length/marker foundations, including greeting counts and constrained sets where useful.
-- Complete V1-equivalent split/multi-pass execution for Lite/Compact Lite rather than only density guidance.
-- Continue real-provider regression testing across Q&A retries, Builder precedence, Mode & Style, component toggling/composition, semantic repair, concept fidelity, malformed JSON, alternate provider envelopes, Creative Concept, capability discovery, AI image prompts, and default templates.
-- Expand concept-fidelity marker types only where runtime evidence shows they remain high-confidence.
-
-### Ongoing validation
-
-- Real-world testing across multiple OpenAI-compatible text and vision backends.
-- Compare new output against pre-parity V2 output, especially Description/Personality separation and concept fidelity.
-- Test concept/manual-Q&A/Builder/AI-answer precedence conflicts and semantic repair.
-- Test long Generation Concepts and large custom Interview/Q&A sets with reasoning models.
-- Confirm persisted Interview/Q&A reviews match the responses actually used by generation.
-- Confirm native resizing exposes additional workspace and genuine overflow remains reachable locally.
-- Confirm character Move/Copy preserves exact character-local state/files while excluding project-shared context/relationships.
-- Confirm related-character mode produces a distinct standalone character while preserving established source facts, and variation mode preserves source identity anchors unless explicitly transformed.
-- Confirm derivation context toggles exclude disabled source-card/shared-context/relationship data and the original character is never modified.
-- Confirm grouped navigation keeps all previous workflows reachable without duplicate primary buttons.
-- Confirm project lore persists across save/reopen and character lore survives Character Card import/export.
-- Confirm Manual Guided follows Generation Component changes and isolates drafts between characters/projects.
-- Confirm Alternative Greetings retain order and round-trip through Manual Guided and Character Card export.
-- Confirm Library folder/collection pickers refresh after creating or assigning organisation values.
-- Confirm `Shift+Enter` remains reliable across existing and new multiline editors.
-- Confirm multiple enabled generation groups bound to one output field compose in template order.
-- Confirm malformed provider JSON enters repair without noisy engine parser failures.
-- Test Creative Concept with sparse and detailed images.
-- Test model capability discovery across rich, partial, and ID-only providers.
-- Test Text and Vision models with different context/output limits.
-- Test default-template lifecycle, project draft lifecycle, Builder options, Manual Guided, Idea Generator, character derivation, Lorebooks, relationships, group/card workflows, import/export, large-library, series, attachments, vision, and `.ccfproject` interoperability.
+- Expand generation contracts for greeting counts and constrained sets where useful.
+- Finish true Lite/Compact split/multi-pass behaviour.
+- Continue provider regression testing for Builder/Interview precedence, semantic repair, malformed responses, Creative Concept, capability discovery and alternate provider envelopes.
 
 ## Next Up
 
-### Continue v0.14 Authoring + Lorebook Parity
+1. Runtime-test v0.14.15 lore activation, trigger preview and Project ↔ Character scope transfer.
+2. Harden Character Book/lorebook import-export unknown-field preservation.
+3. Add standalone lorebook import/export and large-lorebook search/filter tools.
+4. Add State Tracking direct-authoring support.
+5. Finish remaining Builder/Idea Generator parity conveniences and true Lite/Compact generation execution.
+6. Begin v0.15 image workflow expansion once primary authoring/data parity is stable.
 
-1. Runtime-test v0.14.10 Related Character / AI Variation and v0.14.9 Library assignment/action UX.
-2. Harden Character Card lorebook interoperability/unknown-field preservation.
-3. Rebuild Idea Generator around the mature V1 controlled-pool workflow.
-4. Continue deeper Builder option coverage and template/user pool overrides.
-5. Finish the formal V1 authoring parity audit.
+## v0.15 — Image Workflow Expansion
 
-### v0.15 — Image Workflow Expansion
+Planned:
 
-The image milestone remains after primary authoring/data parity:
+- image-to-image/reference-image generation where providers support it;
+- generated images and managed attachments as references without embedding binary data in JSON;
+- emotion-image generation/regeneration using the existing per-character emotion-image tree;
+- named emotions/expressions and editable per-emotion prompts;
+- reusable visual-style/prompt presets;
+- richer gallery deletion/management with portrait/reference safety;
+- provider-specific quality/aspect controls;
+- optional advanced Forge/A1111 helpers such as LoRA/embedding prompt tools without making one WebUI ecosystem central to the project schema;
+- richer AI prompt refinement/regeneration while keeping deterministic/local fallback prompt construction.
 
-- Add image-to-image/reference-image generation where providers support it.
-- Allow generated images and managed visual attachments to become generation references without embedding binary data in JSON.
-- Add emotion-image generation/regeneration using the existing `emotion_images/` tree.
-- Add named emotions/expressions and per-emotion editable prompts.
-- Add reusable visual-style/prompt presets.
-- Add richer gallery management including intentional deletion with portrait/reference safety checks.
-- Add provider-specific quality/aspect controls where useful.
-- Add optional Stable Diffusion advanced helpers such as LoRA/embedding prompt tools without making one WebUI ecosystem part of the central schema.
-- Expand AI-authored prompt refinement/regeneration while retaining the deterministic/local visual-anchor fallback.
+## Front Porch Compatibility — Optional / Separate
+
+V1 gained deep Front Porch database integration late in development. V2 should not make that database layout part of its core project model. Potential optional compatibility work:
+
+- import directly from Front Porch Stable/Beta installs;
+- direct single/group-card export;
+- installed-character manager with safe backups;
+- state/realism extension mapping;
+- keep all integration isolated behind adapters so normal V2 projects remain portable and Front-Porch-independent.
 
 ## Level and Content Tools
 
-Character Card Forge is not a level-based game, so the project-wide JSON level-package requirements do not apply directly. Its analogous content systems are versioned templates, projects, series data, authoring option pools, lorebooks, attachments, and portable `.ccfproject` packages. These should remain externally inspectable, versioned, portable, and editor-driven.
+Character Card Forge is not a level-based game. The equivalent externally editable content systems are templates, builder schemas, authoring option pools, series bibles, lorebooks, attachments and portable `.ccfproject` packages. These remain versioned and separated from engine code wherever practical.
 
 ## Technical Improvements
 
-- Simplify the release workflow around the canonical development checkout and retire unnecessary two-copy staging when safe.
-- Generate/commit canonical Godot `.gd.uid` sidecars consistently instead of repeatedly treating them as disposable local noise.
-- Synchronise project/release version metadata so development label, VERSION, tags, project settings, and release assets cannot silently drift.
-- Continue replacing version-layer compatibility bridges with clean named APIs when surrounding workflows stabilise.
-- Audit remaining pages/tool windows for fixed-size/game-style assumptions that fight desktop resizing.
-- Continue navigation hierarchy work as new features arrive; do not return to a one-button-per-feature toolbar.
-- Add reusable data-model/service helpers for lorebook normalisation and interoperability rather than leaving format knowledge only in UI code.
-- Audit Library organisation data for stable-ID needs before implementing rename-heavy workflows.
-- Keep derivation provenance as internal workspace metadata unless/until a portable interoperable extension format is deliberately defined.
+- Simplify release workflow around the canonical development checkout.
+- Generate/commit canonical Godot `.gd.uid` sidecars consistently rather than repeatedly treating them as local noise.
+- Synchronise development/version/release metadata to avoid drift between labels, VERSION, project settings, tags and assets.
+- Replace temporary version-layer compatibility bridges with clean named APIs once surrounding systems stabilise.
+- Audit remaining tool windows for fixed-size assumptions and duplicated controls.
+- Keep regression tests feature-focused and forward-compatible; older tests must not pin `main.tscn` permanently to their historical shell.
+- Add reusable lorebook normalisation/interoperability helpers instead of duplicating format knowledge in UI code.
+- Audit folders/collections for stable-ID needs before rename-heavy workflows.
 
 ## Polish
 
-- Full workspace visual hierarchy/theme pass after authoring, lorebook, image, import/export, and project workflows stabilise.
-- Improve keyboard navigation, focus order, tooltips, empty states, confirmation language, and accessibility.
+- Full workspace visual hierarchy/theme pass after primary authoring, lorebook, image and interoperability work stabilises.
+- Improve keyboard navigation, focus order, tooltips, empty states, confirmation wording and accessibility.
 - Reduce unnecessary modal depth and duplicated controls.
-- Preserve multi-monitor friendly detachable tools where they genuinely improve workflows.
+- Preserve multi-monitor-friendly detachable windows only where they improve the workflow.
 
 ## Long-Term Ideas
 
-- Visual relationship-map canvas with draggable character cards, directional/mutual connections, labels, notes, grouping, zoom/pan, and future world-entity support.
+- Visual relationship-map canvas with draggable character cards, directional/mutual links, notes, grouping and zoom/pan.
 - Character Concept Exchange format after authoring/planning schemas stabilise.
-- Shared/community authoring-option and lorebook libraries.
-- GitHub-Releases-only packaged updater with explicit user-controlled download/install, release channels, hashes, and safe restart/install.
-- Richer reusable authoring libraries and community-shareable presets after the local data model proves stable.
+- Shared/community authoring-option, builder-preset and lorebook libraries.
+- GitHub-Releases-only in-app updater with explicit user-controlled download/install, release channels, hashes and safe restart/install.
+- Reusable world/campaign libraries spanning multiple projects.
 
 ## Deferred / Experimental Ideas
 
-- The V1 Front Porch-specific Manual Guided group-card implementation remains a behavioural reference but will not be copied directly. Future V2 manual multi-character authoring should build on the existing project, relationship, shared-context, Group Scene, and Card Workflow architecture.
-- Large visual/navigation redesign concepts remain deferred until workflow architecture is stable; targeted usability fixes remain immediate.
+- V1 Front Porch-specific Manual Guided group-card implementation remains a behavioural reference but will not be copied directly; future manual multi-character authoring should build on V2 projects, relationships, shared context, Group Scene and Card Workflow architecture.
+- Large navigation/theme redesign concepts remain deferred until workflow architecture is stable; targeted usability fixes remain immediate.
