@@ -3,9 +3,10 @@ extends SceneTree
 
 func _init() -> void:
 	var window := FileAccess.get_file_as_string("res://scripts/ui/idea_generator_window_v01412.gd")
+	var inherited_workflows := FileAccess.get_file_as_string("res://scripts/ui/concept_studio_window_v01411.gd")
 	assert(window.contains("title = \"Idea Generator\""), "Unified tool must retain the established Idea Generator name.")
 	assert(window.contains("AI Ideas"), "Unified Idea Generator must include the AI Ideas tab.")
-	assert(window.contains("Structured Builder"), "Unified Idea Generator must retain Structured Builder through inheritance.")
+	assert(inherited_workflows.contains("Structured Builder"), "Unified Idea Generator must retain Structured Builder through inheritance.")
 	assert(window.contains("attach_ai_idea_window"), "Existing AI Ideas UI must be embedded into the unified window.")
 	assert(not window.contains("Open AI Idea Generator"), "AI Ideas must not require a second-window launch button.")
 	var workspace := FileAccess.get_file_as_string("res://scripts/ui/workspace_v01412.gd")
