@@ -62,9 +62,10 @@ func _init() -> void:
 	assert(workspace_source.contains("derivation_type"), "Derivation provenance must retain related/variation type.")
 	assert(workspace_source.contains("Generate Character"), "Auto-generate must route through the normal generation workflow.")
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01410.gd")
-	assert(main_source.contains("0.14.10"), "v0.14.10 development label is missing.")
-	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene_source.contains("main_v01410.gd"), "Main scene must use v0.14.10 shell.")
+	assert(main_source.contains("0.14.10"), "v0.14.10 development layer is missing.")
+	var current_main_source := FileAccess.get_file_as_string("res://scripts/main_v01411.gd")
+	if not current_main_source.is_empty():
+		assert(current_main_source.contains("main_v01410.gd"), "Newer application shells must retain the v0.14.10 derivation layer.")
 
 	workspace.free()
 	print("v0.14.10 related character / AI variation regression passed")
