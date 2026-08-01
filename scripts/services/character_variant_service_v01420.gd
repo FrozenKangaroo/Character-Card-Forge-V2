@@ -3,6 +3,17 @@ extends RefCounted
 
 const VARIANT_FORMAT_VERSION := 1
 const RECORD_TYPE := "linked_variant"
+const WORKSPACE_CONTEXT_KEYS := [
+	"project_id",
+	"container_project_id",
+	"shared_context",
+	"project_metadata",
+	"relationships",
+	"project_characters",
+	"project_attachments",
+	"attachment_context_character_limit",
+	"card_workflows"
+]
 
 
 static func is_variant(record: Dictionary) -> bool:
@@ -26,7 +37,8 @@ static func create_variant(base_character: Dictionary, label: String = "Variant"
 		"overrides": {},
 		"created_at": now
 	}
-	# Variant records deliberately do not duplicate base assets/card payloads.
+	# Linked variants deliberately avoid duplicating the base card/assets. The
+	# full character is reconstructed only while editing or exporting.
 	record["character"] = {"name": clean_label}
 	record["assets"] = {}
 	record["attachments"] = []
@@ -62,10 +74,27 @@ static func _resolve_character(project: Dictionary, character_id: String, visite
 	if not label.is_empty():
 		metadata["name"] = label
 		var card: Dictionary = resolved.get("character", {}).duplicate(true)
-		if not overrides.has("character") or not (overrides.get("character", {}) is Dictionary and (overrides.get("character", {}) as Dictionary).has("name")):
+		var character_overrides: Variant = overrides.get("character", {})
+		if not (character_overrides is Dictionary and (character_overrides as Dictionary).has("name")):
 			card["name"] = label
 		resolved["character"] = card
 	resolved["metadata"] = metadata
+	return resolved
+
+
+static func workspace_document(project: Dictionary, variant_id: String) -> Dictionary:
+	var resolved := resolve_character(project, variant_id)
+	if resolved.is_empty():
+		return {}
+	var project_id := str(project.get("project_id", ""))
+	resolved["container_project_id"] = project_id
+	resolved["project_id"] = CCFStorageService.workspace_owner_id(project_id, variant_id)
+	resolved["shared_context"] = project.get("shared_context", {}).duplicate(true)
+	resolved["project_metadata"] = project.get("metadata", {}).duplicate(true)
+	resolved["relationships"] = project.get("relationships", []).duplicate(true)
+	resolved["project_attachments"] = project.get("attachments", []).duplicate(true)
+	resolved["project_characters"] = CCFStorageService.project_character_summaries(project)
+	resolved["card_workflows"] = project.get("card_workflows", []).duplicate(true)
 	return resolved
 
 
@@ -78,17 +107,21 @@ static func update_variant_from_resolved(project: Dictionary, variant_id: String
 	var base := resolve_character(project, base_id)
 	if base.is_empty():
 		return {"ok": false, "error": "Linked variant base character could not be resolved."}
-	var comparison := edited_resolved.duplicate(true)
-	for internal_key in ["character_id", "record_type", "variant", "created_at", "updated_at", "container_project_id", "container_shared_context", "container_relationships", "container_metadata"]:
-		comparison.erase(internal_key)
-	var base_comparison := base.duplicate(true)
-	for internal_key in ["character_id", "record_type", "variant", "created_at", "updated_at", "container_project_id", "container_shared_context", "container_relationships", "container_metadata"]:
-		base_comparison.erase(internal_key)
+	var comparison := _strip_runtime_context(edited_resolved)
+	var base_comparison := _strip_runtime_context(base)
 	var diff := _deep_diff(base_comparison, comparison)
 	variant_data["overrides"] = diff
 	record["variant"] = variant_data
-	var replace_result := _replace_character(project, variant_id, record)
-	if not replace_result:
+	var edited_metadata: Variant = comparison.get("metadata", {})
+	if edited_metadata is Dictionary:
+		var display_name := str((edited_metadata as Dictionary).get("name", "")).strip_edges()
+		if not display_name.is_empty():
+			variant_data["label"] = display_name
+			record["variant"] = variant_data
+			var sparse_metadata: Dictionary = record.get("metadata", {}).duplicate(true)
+			sparse_metadata["name"] = display_name
+			record["metadata"] = sparse_metadata
+	if not _replace_character(project, variant_id, record):
 		return {"ok": false, "error": "Linked variant could not be updated."}
 	return {"ok": true, "override_count": count_leaf_overrides(diff), "overrides": diff}
 
@@ -106,6 +139,18 @@ static func materialize_variant(project: Dictionary, variant_id: String, keep_id
 	return resolved
 
 
+static func project_with_materialized_character(project: Dictionary, character_id: String) -> Dictionary:
+	var copy := project.duplicate(true)
+	var raw := _find_character(project, character_id)
+	if raw.is_empty() or not is_variant(raw):
+		return copy
+	var full := materialize_variant(project, character_id, true)
+	if full.is_empty():
+		return copy
+	_replace_character(copy, character_id, full)
+	return copy
+
+
 static func convert_to_full_character(project: Dictionary, variant_id: String) -> Dictionary:
 	var full := materialize_variant(project, variant_id, true)
 	if full.is_empty():
@@ -113,6 +158,20 @@ static func convert_to_full_character(project: Dictionary, variant_id: String) -
 	if not _replace_character(project, variant_id, full):
 		return {"ok": false, "error": "Linked variant could not be converted."}
 	return {"ok": true, "character": full}
+
+
+static func dependent_variant_ids(project: Dictionary, base_character_id: String) -> Array[String]:
+	var result: Array[String] = []
+	var characters_value: Variant = project.get("characters", [])
+	if not characters_value is Array:
+		return result
+	for raw_character in characters_value:
+		if not raw_character is Dictionary or not is_variant(raw_character):
+			continue
+		var variant_data: Dictionary = raw_character.get("variant", {})
+		if str(variant_data.get("base_character_id", "")) == base_character_id:
+			result.append(str(raw_character.get("character_id", "")))
+	return result
 
 
 static func count_leaf_overrides(value: Variant) -> int:
@@ -125,6 +184,15 @@ static func count_leaf_overrides(value: Variant) -> int:
 		else:
 			total += 1
 	return total
+
+
+static func _strip_runtime_context(source: Dictionary) -> Dictionary:
+	var cleaned := source.duplicate(true)
+	for key in WORKSPACE_CONTEXT_KEYS:
+		cleaned.erase(key)
+	for key in ["character_id", "record_type", "variant", "created_at", "updated_at"]:
+		cleaned.erase(key)
+	return cleaned
 
 
 static func _deep_diff(base: Variant, edited: Variant) -> Dictionary:
