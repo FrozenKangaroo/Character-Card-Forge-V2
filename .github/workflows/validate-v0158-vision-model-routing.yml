@@ -1,0 +1,28 @@
+name: Validate v0.15.8 Vision model routing
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/services/generation_service_v0158.gd'
+      - 'scripts/ui/workspace_v0158.gd'
+      - 'scripts/main_v0158.gd'
+      - 'scenes/main.tscn'
+      - 'tools/test_v0158_vision_model_routing.gd'
+      - '.github/workflows/validate-v0158-vision-model-routing.yml'
+  workflow_dispatch:
+
+jobs:
+  vision-model-routing:
+    runs-on: ubuntu-24.04
+    env:
+      GODOT_VERSION: '4.6.3'
+      GODOT_STATUS: stable
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+      - name: Import and parse project
+        run: godot --headless --path . --import
+      - name: Test v0.15.8 Vision model routing
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0158_vision_model_routing.gd
