@@ -41,16 +41,34 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - **Generate Character** is a full synthesis action: populated Workspace fields are authoritative source material, while the active template defines the generated output contract. Selective/missing-field tools remain separate workflows.
 - Full synthesis review should expose the complete returned template result, including intentionally preserved values, rather than collapsing review to only byte-different fields.
 - Generation Components are the authoritative transformation recipe for grouped outputs: Workspace data is the source fact pool, enabled components decide what is materialised, and template fields are the final destinations.
+- Character Collaborator handoff is blueprint-first by default: preserve the collaboration as one detailed canonical Generation Concept before template materialisation so repeated field-to-field transformations do not silently discard carefully developed facts.
+- Direct field-filling from Collaborator remains an explicit alternative workflow and should preserve high detail while carrying supplementary character data such as Alternative Greetings and Character Lorebook entries.
 
 ## Current Development Phase
 
-**v0.15.14 development candidate — component-driven full character synthesis**
+**v0.15.15 development candidate — blueprint-first Collaborator handoff**
 
-The v0.15 line now has persistent Character Collaborator sessions, strict Vision → Text handling, visible Vision analysis, durable desktop FileDialog state, and full-character synthesis from an already-populated Workspace. v0.15.14 makes the active template's Generation Components the actual transformation plan so grouped outputs such as Description and Personality are rebuilt from all relevant Workspace facts according to enabled component instructions instead of being treated as independent field paraphrases.
+The v0.15 line now has persistent Character Collaborator sessions, strict Vision → Text handling, visible Vision analysis, durable desktop FileDialog state, component-driven full-character synthesis, and a safer handoff model for long creative sessions. v0.15.15 makes a loss-minimising Generation Blueprint the recommended bridge from Collaborator to Workspace while retaining an optional detailed direct-draft mode that also materialises Alternative Greetings and Character Lorebook data.
 
-The running development build displays **v0.15.14**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.15**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.15 — Blueprint-First Collaborator Handoff
+
+- Replaced the one-size-fits-all Collaborator materialisation action with an explicit Workspace handoff selector.
+- **Blueprint → Generation Concept (Recommended)** is the default handoff mode.
+- Blueprint mode asks the Text model for a long, loss-minimising canonical source document rather than immediately scattering the collaboration across many card fields.
+- Blueprint prompts explicitly preserve concrete accepted facts, later corrections, chronology, relationship details, appearance, behaviour, history, scenario beats, dialogue requirements, boundaries, secrets and other established specifics instead of aggressively summarising them.
+- The generated Blueprint includes dedicated Alternative Greetings and Lorebook planning sections so those parts of the character are not forgotten when they were developed in the collaboration.
+- Blueprint mode creates a normal Workspace character with the detailed blueprint in `concept.prompt`; normal **Generate Character** can then materialise the card from that source using the active template and Generation Components.
+- Kept **Detailed Workspace Draft** as an alternative for authors who want immediate field population.
+- Strengthened Detailed Workspace Draft prompts to favour detail retention over terse field summaries and to use the active template/Generation Component structure as organisation rather than as a reason to discard information.
+- Detailed Workspace Draft now returns and stores `character.alternate_greetings` as complete playable openings.
+- Detailed Workspace Draft now returns and stores a Character Card-compatible `character.character_book` Lorebook object.
+- Added handoff-mode provenance, visible working states and handoff-specific Workspace status messages.
+- Added v0.15.15 generation-service, Collaborator window, Workspace, app-shell, regression and CI coverage.
+- Made the v0.15.14 regression forward-compatible with later inherited shells.
 
 ### v0.15.14 — Component-Driven Full Character Synthesis
 
@@ -257,15 +275,17 @@ The running development build displays **v0.15.14**. Release metadata remains co
 
 ## In Progress
 
-- Validate v0.15.14 component-driven full synthesis against real populated Collaborator handoffs, custom templates, disabled groups, and mixed enabled/disabled component sets.
-- Continue profiling very long Collaborator sessions so token estimation, transcript rendering, and autosave remain responsive at large context sizes.
+- Validate v0.15.15 Blueprint handoff against long real Collaborator sessions and confirm small established facts survive into Generation Concept rather than being collapsed during field distribution.
+- Validate Detailed Workspace Draft against real characters with Alternative Greetings and Lorebook material, including custom templates and mixed Generation Component configurations.
+- Continue profiling very long Collaborator sessions so token estimation, transcript rendering, autosave, Blueprint generation and direct-draft generation remain responsive at large context sizes.
 - Continue hardening forward-compatible regression tests so a new inherited shell does not falsely break an older feature check.
 - Continue V1 parity review where V1 still has useful authoring workflow details that V2 has not yet surpassed.
 
 ## Next Up
 
+- Evaluate extending normal **Generate Character** review so a Blueprint can optionally materialise Alternative Greetings and Lorebook entries in the same reviewed generation operation rather than requiring separate authoring tools.
 - Improve visibility/diagnostics around exactly which Generation Groups and components participated in a full synthesis result.
-- Improve distinction and wording between full-character synthesis, Controlled Build, AI Suggest, and direct manual authoring so users can clearly choose whether AI should rewrite, selectively fill, or leave text untouched.
+- Improve distinction and wording between Blueprint handoff, Detailed Workspace Draft, full-character synthesis, Controlled Build, AI Suggest, and direct manual authoring.
 - Continue polishing Character Collaborator context management, image-reference workflows, and generation handoff.
 - Continue relationship/route graph usability and Linked Variant workflow testing.
 
@@ -289,6 +309,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
 - Continue reducing synchronous whole-library work from interactive Collaborator paths as conversation histories grow.
 - Keep Generation Component semantics data-driven so new groups/components can be added without hard-coding Description or Personality behavior into the service.
+- Treat the detailed Generation Concept Blueprint as preserved authoring source, not disposable intermediate text, so later template/model changes can regenerate the card without reconstructing the Collaborator session.
 
 ## Polish
 
