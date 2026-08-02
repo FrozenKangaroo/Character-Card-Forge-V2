@@ -43,16 +43,33 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Generation Components are the authoritative transformation recipe for grouped outputs: Workspace data is the source fact pool, enabled components decide what is materialised, and template fields are the final destinations.
 - Character Collaborator handoff is blueprint-first by default: preserve the collaboration as one detailed canonical Generation Concept before template materialisation so repeated field-to-field transformations do not silently discard carefully developed facts.
 - Direct field-filling from Collaborator remains an explicit alternative workflow and should preserve high detail while carrying supplementary character data such as Alternative Greetings and Character Lorebook entries.
+- The generation service installed in the live Workspace must retain the complete parity/validation inheritance chain. Regression tests must verify the actual active service composition, not only isolated helper classes that may no longer be wired into runtime generation.
 
 ## Current Development Phase
 
-**v0.15.15 development candidate — blueprint-first Collaborator handoff**
+**v0.15.16 development candidate — generation pipeline restoration**
 
-The v0.15 line now has persistent Character Collaborator sessions, strict Vision → Text handling, visible Vision analysis, durable desktop FileDialog state, component-driven full-character synthesis, and a safer handoff model for long creative sessions. v0.15.15 makes a loss-minimising Generation Blueprint the recommended bridge from Collaborator to Workspace while retaining an optional detailed direct-draft mode that also materialises Alternative Greetings and Character Lorebook data.
+The Blueprint-first Collaborator handoff remains the preferred way to preserve a long creative session, but the subsequent Character generation path is being corrected at its architectural root. v0.15.16 reconnects the modern v0.15 generation-service chain to the proven v0.13 parity stack and routes the real **Generate Character** action back through template-contract validation rather than the v0.15.12 unvalidated synthesis shortcut.
 
-The running development build displays **v0.15.15**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.16**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.16 — Generation Pipeline Restoration
+
+- Identified a long-lived regression introduced by v0.14.13: the Idea Generator POV service extended the bare `CCFGenerationService`, unintentionally disconnecting all later services from the v0.13.5 parity-generation stack.
+- Repaired that inheritance boundary so v0.14.13 now extends `generation_service_v0135.gd`; every later v0.14/v0.15 generation service therefore inherits the established generation contract again.
+- Restored active-template Generation Component prompting **and enforcement**, including required component labels, multi-group composition rules, output bindings, marker rules and minimum-content checks.
+- Restored semantic completeness validation plus the bounded repair pass for otherwise-valid JSON that does not satisfy the active template.
+- Restored fail-closed template protection: output that still violates the active template after repair is rejected instead of being offered in Generation Preview.
+- Restored the inherited Interview/Q&A generation flow, Builder precedence, Mode & Style generation guidance/repair preservation, and concept-fidelity validation/retry to the modern v0.15 service chain.
+- Routed the Workspace **Generate Character** button back through `queue_character_generation()` so those systems actually participate at runtime instead of calling the v0.15.12 `queue_full_character_synthesis()` shortcut.
+- Kept Blueprint/Collaborator, Vision, lorebook context, provider settings and later v0.15 features layered above the restored parity foundation.
+- Rebound all known generation clients—Builder, Controlled Build, Group Scene, Relationships, Card Workflow, Attachments, Collaborator and AI Ideas—to the same v0.15.16 restored generation-service instance.
+- Retained the v0.15.12–v0.15.14 synthesis implementation in source for compatibility/history, but normal **Generate Character** no longer routes through it until any future synthesis redesign can participate in the same validated template contract.
+- Added a v0.15.16 integration regression that instantiates the actual active v0.15.16 service, verifies it inherits every required parity layer, decorates a real Default-template contract through that leaf service, and proves flattened Description/Personality output fails validation.
+- Made the v0.15.15 Blueprint regression forward-compatible with later inherited shells.
+- Added dedicated v0.15.16 CI coverage.
 
 ### v0.15.15 — Blueprint-First Collaborator Handoff
 
@@ -275,17 +292,20 @@ The running development build displays **v0.15.15**. Release metadata remains co
 
 ## In Progress
 
+- Runtime-test v0.15.16 with real Blueprint → Generate Character flows and confirm the actual provider output obeys custom/default Generation Components, including multi-group output composition and disabled components.
+- Confirm Interview/Q&A, Builder precedence, Mode & Style, concept-fidelity retry and semantic repair all still behave correctly when reached through the modern v0.15.16 service rather than only through headless integration tests.
 - Validate v0.15.15 Blueprint handoff against long real Collaborator sessions and confirm small established facts survive into Generation Concept rather than being collapsed during field distribution.
 - Validate Detailed Workspace Draft against real characters with Alternative Greetings and Lorebook material, including custom templates and mixed Generation Component configurations.
 - Continue profiling very long Collaborator sessions so token estimation, transcript rendering, autosave, Blueprint generation and direct-draft generation remain responsive at large context sizes.
-- Continue hardening forward-compatible regression tests so a new inherited shell does not falsely break an older feature check.
+- Continue hardening forward-compatible regression tests so a new inherited shell or runtime service replacement cannot falsely pass while dropping an older capability.
 - Continue V1 parity review where V1 still has useful authoring workflow details that V2 has not yet surpassed.
 
 ## Next Up
 
 - Evaluate extending normal **Generate Character** review so a Blueprint can optionally materialise Alternative Greetings and Lorebook entries in the same reviewed generation operation rather than requiring separate authoring tools.
-- Improve visibility/diagnostics around exactly which Generation Groups and components participated in a full synthesis result.
-- Improve distinction and wording between Blueprint handoff, Detailed Workspace Draft, full-character synthesis, Controlled Build, AI Suggest, and direct manual authoring.
+- Revisit the v0.15.12–v0.15.14 full-Workspace synthesis idea only if it can be layered through the restored parity pipeline without bypassing template-contract validation, repair, Mode & Style, Interview/Q&A, Builder precedence or concept fidelity.
+- Improve visibility/diagnostics around exactly which Generation Groups and components participated in a generated result.
+- Improve distinction and wording between Blueprint handoff, Detailed Workspace Draft, full-character generation, Controlled Build, AI Suggest, and direct manual authoring.
 - Continue polishing Character Collaborator context management, image-reference workflows, and generation handoff.
 - Continue relationship/route graph usability and Linked Variant workflow testing.
 
@@ -304,6 +324,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 ## Technical Improvements
 
 - Keep generation services modular and preserve older project/card compatibility as schemas evolve.
+- Treat runtime generation-service composition as a tested compatibility boundary; new service subclasses must extend the previous capability chain unless a deliberate replacement is documented and integration-tested.
 - Reduce inherited-shell regression fragility by testing capability/inheritance rather than exact active-version filenames.
 - Continue warning-as-error GDScript hygiene and CI parsing on Godot 4.6.x.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
@@ -324,6 +345,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Deferred / Experimental Ideas
 
+- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.16 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
 - More elaborate graph visualisation/layout automation beyond the current draggable anchor-based system.
 - Optional advanced context compression strategies beyond the current explicit user-triggered summarisation model.
 - Experimental provider-specific optimisations should remain opt-in until they can be implemented without weakening the generic OpenAI-compatible path.

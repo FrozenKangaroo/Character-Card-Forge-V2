@@ -1,5 +1,5 @@
 class_name CCFGenerationServiceV01413
-extends CCFGenerationService
+extends "res://scripts/services/generation_service_v0135.gd"
 
 
 func queue_idea_generation(
