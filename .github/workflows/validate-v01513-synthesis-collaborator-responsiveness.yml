@@ -1,0 +1,32 @@
+name: Validate v0.15.13 synthesis and Collaborator responsiveness
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/services/generation_service_v01513.gd'
+      - 'scripts/services/collaborator_session_store_v01513.gd'
+      - 'scripts/services/file_dialog_state_service_v01510.gd'
+      - 'scripts/ui/character_collaborator_window_v01513.gd'
+      - 'scripts/ui/workspace_v01513.gd'
+      - 'scripts/main_v01513.gd'
+      - 'scenes/main.tscn'
+      - 'tools/test_v01513_synthesis_collaborator_responsiveness.gd'
+      - 'tools/test_v01512_full_character_synthesis.gd'
+      - '.github/workflows/validate-v01513-synthesis-collaborator-responsiveness.yml'
+  workflow_dispatch:
+
+jobs:
+  synthesis-collaborator-responsiveness:
+    runs-on: ubuntu-24.04
+    env:
+      GODOT_VERSION: '4.6.3'
+      GODOT_STATUS: stable
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+      - name: Import and parse project
+        run: godot --headless --path . --import
+      - name: Test v0.15.13 synthesis and Collaborator responsiveness
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01513_synthesis_collaborator_responsiveness.gd
