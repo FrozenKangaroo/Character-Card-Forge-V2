@@ -1,0 +1,29 @@
+name: Validate v0.15.9 Vision limits
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/ui/settings_view_v0159.gd'
+      - 'scripts/services/generation_service_v0159.gd'
+      - 'scripts/ui/workspace_v0159.gd'
+      - 'scripts/main_v0159.gd'
+      - 'scenes/main.tscn'
+      - 'tools/test_v0159_vision_limits_and_input_optimisation.gd'
+      - '.github/workflows/validate-v0159-vision-limits.yml'
+  workflow_dispatch:
+
+jobs:
+  vision-limits:
+    runs-on: ubuntu-24.04
+    env:
+      GODOT_VERSION: '4.6.3'
+      GODOT_STATUS: stable
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+      - name: Import and parse project
+        run: godot --headless --path . --import
+      - name: Test v0.15.9 Vision limits and preprocessing
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0159_vision_limits_and_input_optimisation.gd

@@ -34,16 +34,30 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Rich-text styling must remain readable across supported platforms and should not depend on synthetic font effects that introduce glyph-rendering artifacts.
 - Collaborator image attachments must be analysed by the configured Vision role first. The Text role receives a comprehensive Vision-derived description of the full scene, never the original image payload, and decides how to use that evidence according to the author's request.
 - AI profiles may expose different Text and Vision model IDs; Vision-role requests must route through the dedicated `vision_model` while Text-role requests continue to use `model`.
+- Text and Vision models may have different context/output limits; Vision jobs must use Vision-specific token limits rather than inheriting Text-model limits.
+- Vision input preprocessing must preserve originals and only optimise genuinely oversized files; small images should pass through unchanged.
 
 ## Current Development Phase
 
-**v0.15.8 development candidate — dedicated Vision-model routing**
+**v0.15.9 development candidate — independent Vision token limits & input optimisation**
 
-The v0.15 line now has a usable long-form conversational authoring workflow with independent persistent chats and a strict Vision → Text image pipeline. v0.15.8 fixes the remaining provider-routing bug so multimodal image requests use the configured profile's dedicated Vision model rather than accidentally sending the image to that profile's normal Text model.
+The v0.15 line now has a usable long-form conversational authoring workflow with independent persistent chats and a strict Vision → Text image pipeline. v0.15.9 separates Vision-model context/output limits from Text-model limits and adds conservative automatic preprocessing for genuinely oversized image attachments while leaving normal small images untouched.
 
-The running development build displays **v0.15.8**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.9**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.9 — Independent Vision Token Limits & Input Optimisation
+
+- Added **Vision Context Window Tokens** to Character AI profiles independently of the Text model context window.
+- Added **Vision Maximum Output Tokens** independently of the normal Text-model response limit.
+- Vision jobs remap the dedicated Vision model and Vision token limits onto a temporary routed profile without mutating saved Text settings.
+- Added preflight validation preventing Vision Maximum Output Tokens from exceeding or equalling a known Vision context window.
+- Preserved `0` as an unknown Vision-context value for providers/models whose limit is not known.
+- Added conservative automatic Vision-input optimisation: images at or below 4096 px on the longest edge and 8 MiB pass through unchanged.
+- Oversized images are proportionally resized when needed and encoded to a temporary high-quality WebP solely for the Vision request.
+- Original attachments are never modified, and temporary preprocessing files are removed after the synchronous payload conversion/queueing step.
+- Added v0.15.9 Settings, generation-service, Workspace, app-shell, regression and dedicated CI coverage.
 
 ### v0.15.8 — Dedicated Vision-Model Routing
 
