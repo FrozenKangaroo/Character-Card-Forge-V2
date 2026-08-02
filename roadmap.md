@@ -47,16 +47,29 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Direct field-filling from Collaborator remains an explicit alternative workflow and should preserve high detail while carrying supplementary character data such as Alternative Greetings and Character Lorebook entries.
 - The generation service installed in the live Workspace must retain the complete parity/validation inheritance chain. Regression tests must verify the actual active service composition, not only isolated helper classes that may no longer be wired into runtime generation.
 - Normal Godot import/open operations should leave the Git checkout clean. Generated script UID sidecars remain non-canonical local metadata until the project deliberately adopts one checked-in UID set, and default ProjectSettings should use Godot's canonical serialization rather than being repeatedly rewritten.
+- Release/update helpers should prefer the Git checkout they are actually launched from when it is already the repository root. Separate development-copy-to-repository syncing is a fallback workflow, not a reason to silently route a normal checkout through an unrelated clone.
 
 ## Current Development Phase
 
-**v0.15.18 development candidate — Godot checkout hygiene + warning cleanup**
+**v0.15.19 development candidate — release checkout selection**
 
-v0.15.18 is a release-preparation maintenance build. It removes the recurring false-dirty state that was making both `update.sh` and `release.sh` stop on normal Godot-generated metadata, aligns `project.godot` with Godot 4.6's canonical serialization while preserving disabled desktop stretch behaviour, and removes the v0.15.17 Lorebook `Node.name` shadowing warning before the next tagged release.
+v0.15.19 finishes the release-preparation workflow cleanup exposed during the v0.15.18 runtime test. `release.sh` now recognises when it is already running from the real Character Card Forge Git checkout and uses that checkout directly, while retaining explicit `CCF_REPO_DIR` overrides and the older separate-development-copy fallback. The release/update helper scripts are also stored as executable files so `./update.sh` and `./release.sh` work normally on Linux.
 
-The running development build displays **v0.15.18**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.19**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.19 — Release Checkout Selection
+
+- Changed `release.sh` repository selection precedence to: explicit `CCF_REPO_DIR`, then the script's own directory when it is the Git repository root, then the legacy `$HOME/Projects/Character-Card-Forge-V2` destination fallback for genuinely separate development copies.
+- Running `release.sh` from the normal updated checkout therefore no longer consults or warns about an unrelated stale clone under `$HOME/Projects`.
+- Kept destination syncing, dirty-tree protection, remote validation, fast-forward safety, and additive `rsync` behaviour for the separate-development-copy workflow.
+- Added a small diagnostic-only repository-selection mode used by regression tests so selection precedence can be exercised without entering the interactive release flow.
+- Synced development copies now restore executable bits for both `release.sh` and `update.sh`.
+- Stored `release.sh`, `update.sh`, and the new shell regression as executable Git files so the normal `./update.sh` / `./release.sh` invocation works on Linux after checkout.
+- Made the v0.15.18 active-shell regression forward-compatible with later inherited v0.15 shells.
+- Added shell and Godot regression coverage for current-checkout selection, explicit override precedence, legacy fallback behaviour, executable modes, app-shell version wiring, and retained v0.15.18 checkout hygiene.
+- Added dedicated Godot 4.6.3 CI for v0.15.19.
 
 ### v0.15.18 — Godot Checkout Hygiene + Warning Cleanup
 
@@ -319,8 +332,9 @@ The running development build displays **v0.15.18**. Release metadata remains co
 
 ## In Progress
 
-- Runtime-test v0.15.18 on the same Linux/Godot workflow that previously produced batches of `.gd.uid` files and removed the explicit stretch line; confirm opening/importing the project now leaves `git status` clean.
-- Run both `update.sh` and `release.sh` after that normal Godot session and confirm neither reports the previous false local-change warning while real tracked edits still remain protected.
+- Runtime-test v0.15.19 by launching `./update.sh` and then `./release.sh` from the normal Character Card Forge checkout; confirm `release.sh` reports that it is using the current repository and does not inspect the stale `$HOME/Projects/Character-Card-Forge-V2` clone.
+- Runtime-test the explicit `CCF_REPO_DIR` override and a genuinely separate development-copy release so both intentional alternate workflows remain available.
+- Confirm normal Godot open/import operations still leave `git status` clean after the v0.15.19 shell update.
 - Runtime-test v0.15.17 Blueprint → Generate Character flows using both the built-in Default template and the user's preferred custom/default template; confirm the template remains selected after handoff and validated generation follows its Generation Components.
 - Confirm generated Interview/Q&A responses again appear in **Latest generation interview responses**, including Manual-vs-AI provenance, after a real provider run and after save/reopen.
 - Validate new Blueprint handoff against long Collaborator sessions containing multiple Alternative Greetings and substantial side-character/location lore; confirm the structured character data matches the preserved Blueprint source without dropping concrete details.
@@ -361,6 +375,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Continue warning-as-error GDScript hygiene and CI parsing on Godot 4.6.x.
 - Keep normal Godot import/open operations checkout-clean; CI should detect repository-visible generated metadata before it reaches update/release workflows.
 - Keep the temporary `*.gd.uid` ignore narrowly scoped to the current non-canonical sidecar phase and replace it with a checked-in canonical UID set when that migration is intentionally performed.
+- Prefer the current repository checkout for release/update work when the helper script is already running from that repository root; preserve alternate destination syncing only for explicit overrides or genuinely separate development copies.
+- Keep release/update helper executable modes under version control so Linux users can invoke them directly.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
 - Continue reducing synchronous whole-library work from interactive Collaborator paths as conversation histories grow.
 - Keep Generation Component semantics data-driven so new groups/components can be added without hard-coding Description or Personality behavior into the service.
@@ -381,7 +397,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Deferred / Experimental Ideas
 
-- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.18 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
+- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.19 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
 - More elaborate graph visualisation/layout automation beyond the current draggable anchor-based system.
 - Optional advanced context compression strategies beyond the current explicit user-triggered summarisation model.
 - Experimental provider-specific optimisations should remain opt-in until they can be implemented without weakening the generic OpenAI-compatible path.
