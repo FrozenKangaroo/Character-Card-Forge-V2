@@ -78,8 +78,7 @@ func _init() -> void:
 
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01516.gd")
 	assert(main_source.contains('BUILD_DISPLAY_VERSION_V01516 := "0.15.16"'), "The v0.15.16 shell must expose its build version.")
-	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene_source.contains("main_v01516.gd"), "The active scene must use v0.15.16.")
+	assert(_active_shell_inherits_v01516(), "The active scene must use v0.15.16 or a later shell inheriting from it.")
 
 	service.free()
 	print("v0.15.16 generation pipeline restoration regression passed")
@@ -97,3 +96,31 @@ func _last_user_prompt(job: Dictionary) -> String:
 	if not message_value is Dictionary:
 		return ""
 	return str((message_value as Dictionary).get("content", ""))
+
+
+func _active_shell_inherits_v01516() -> bool:
+	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
+	var marker := "res://scripts/"
+	var marker_at := scene_source.find(marker)
+	if marker_at < 0:
+		return false
+	var end_at := scene_source.find("\"", marker_at)
+	if end_at < 0:
+		return false
+	var path := scene_source.substr(marker_at, end_at - marker_at)
+	for _depth in range(20):
+		if path == "res://scripts/main_v01516.gd":
+			return true
+		if not FileAccess.file_exists(path):
+			return false
+		var source := FileAccess.get_file_as_string(path)
+		var extends_marker := "extends \""
+		var extends_at := source.find(extends_marker)
+		if extends_at < 0:
+			return false
+		var start_at := extends_at + extends_marker.length()
+		var next_end := source.find("\"", start_at)
+		if next_end < 0:
+			return false
+		path = source.substr(start_at, next_end - start_at)
+	return false
