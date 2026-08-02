@@ -40,16 +40,31 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - File-dialog authoring state should survive application restarts instead of depending on Godot's process-local FileDialog state.
 - **Generate Character** is a full synthesis action: populated Workspace fields are authoritative source material, while the active template defines the generated output contract. Selective/missing-field tools remain separate workflows.
 - Full synthesis review should expose the complete returned template result, including intentionally preserved values, rather than collapsing review to only byte-different fields.
+- Generation Components are the authoritative transformation recipe for grouped outputs: Workspace data is the source fact pool, enabled components decide what is materialised, and template fields are the final destinations.
 
 ## Current Development Phase
 
-**v0.15.13 development candidate — complete synthesis review and Collaborator responsiveness**
+**v0.15.14 development candidate — component-driven full character synthesis**
 
-The v0.15 line now has persistent Character Collaborator sessions, strict Vision → Text handling, visible Vision analysis, durable desktop FileDialog state, and full-character synthesis from an already-populated Workspace. v0.15.13 tightens that synthesis contract so every generatable template field is requested and reviewable, while reducing local pre-request work on long Collaborator conversations and making preparation feedback visible immediately.
+The v0.15 line now has persistent Character Collaborator sessions, strict Vision → Text handling, visible Vision analysis, durable desktop FileDialog state, and full-character synthesis from an already-populated Workspace. v0.15.14 makes the active template's Generation Components the actual transformation plan so grouped outputs such as Description and Personality are rebuilt from all relevant Workspace facts according to enabled component instructions instead of being treated as independent field paraphrases.
 
-The running development build displays **v0.15.13**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.14**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.14 — Component-Driven Full Character Synthesis
+
+- Full-character synthesis now reads the active template's `generation_groups` and builds an explicit component-driven generation plan.
+- The complete populated Workspace is treated as a shared source/fact pool rather than a set of isolated destination fields.
+- Enabled Generation Groups bind their ordered enabled components to the group's configured output field.
+- Component labels, requiredness, order, and author instructions are passed explicitly to the model as the transformation recipe.
+- Disabled groups and disabled components do not participate in synthesis; a group with every component disabled is treated as intentionally inactive.
+- Grouped fields gather relevant facts from anywhere in the Workspace and materialise one coherent final output value rather than exposing component subkeys.
+- AI-generatable fields not controlled by a Generation Group continue to follow their normal field-specific generation instructions.
+- Existing canon remains authoritative while material can be reorganised, reconciled and deepened to satisfy the component recipe.
+- Preserved v0.15.13 complete-result preview behaviour and added explicit component-plan metadata for diagnostics/regression coverage.
+- Added v0.15.14 generation-service, Workspace, app-shell, regression and CI coverage.
+- Made the v0.15.13 regression forward-compatible with later inherited shells.
 
 ### v0.15.13 — Complete Synthesis Review + Collaborator Responsiveness
 
@@ -242,13 +257,14 @@ The running development build displays **v0.15.13**. Release metadata remains co
 
 ## In Progress
 
-- Validate v0.15.13 full synthesis against real populated Collaborator handoffs and different templates, especially whether providers consistently return all requested template keys.
+- Validate v0.15.14 component-driven full synthesis against real populated Collaborator handoffs, custom templates, disabled groups, and mixed enabled/disabled component sets.
 - Continue profiling very long Collaborator sessions so token estimation, transcript rendering, and autosave remain responsive at large context sizes.
 - Continue hardening forward-compatible regression tests so a new inherited shell does not falsely break an older feature check.
 - Continue V1 parity review where V1 still has useful authoring workflow details that V2 has not yet surpassed.
 
 ## Next Up
 
+- Improve visibility/diagnostics around exactly which Generation Groups and components participated in a full synthesis result.
 - Improve distinction and wording between full-character synthesis, Controlled Build, AI Suggest, and direct manual authoring so users can clearly choose whether AI should rewrite, selectively fill, or leave text untouched.
 - Continue polishing Character Collaborator context management, image-reference workflows, and generation handoff.
 - Continue relationship/route graph usability and Linked Variant workflow testing.
@@ -272,6 +288,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Continue warning-as-error GDScript hygiene and CI parsing on Godot 4.6.x.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
 - Continue reducing synchronous whole-library work from interactive Collaborator paths as conversation histories grow.
+- Keep Generation Component semantics data-driven so new groups/components can be added without hard-coding Description or Personality behavior into the service.
 
 ## Polish
 
