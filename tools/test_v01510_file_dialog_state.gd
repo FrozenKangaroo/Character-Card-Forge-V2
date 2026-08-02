@@ -17,8 +17,33 @@ func _init() -> void:
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01510.gd")
 	assert(main_source.contains("FILE_DIALOG_STATE_SERVICE_V01510"), "The v0.15.10 shell must install the shared FileDialog state service.")
 	assert(main_source.contains("BUILD_DISPLAY_VERSION_V01510 := \"0.15.10\""), "The v0.15.10 shell must expose the new build version.")
-	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene_source.contains("main_v01510.gd"), "The active scene must use v0.15.10.")
+	assert(_active_shell_inherits_v01510(), "The active scene must use v0.15.10 or a later shell that inherits it.")
 
 	print("v0.15.10 persistent FileDialog state regression passed")
 	quit(0)
+
+
+func _active_shell_inherits_v01510() -> bool:
+	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
+	var marker := "res://scripts/main_v"
+	var start := scene_source.find(marker)
+	if start < 0:
+		return false
+	var end := scene_source.find(".gd", start)
+	if end < 0:
+		return false
+	var script_path := scene_source.substr(start, end - start + 3)
+	for _depth in range(16):
+		if script_path == "res://scripts/main_v01510.gd":
+			return true
+		var source := FileAccess.get_file_as_string(script_path)
+		var extends_prefix := "extends \""
+		var extends_start := source.find(extends_prefix)
+		if extends_start < 0:
+			return false
+		extends_start += extends_prefix.length()
+		var extends_end := source.find("\"", extends_start)
+		if extends_end < 0:
+			return false
+		script_path = source.substr(extends_start, extends_end - extends_start)
+	return false
