@@ -33,16 +33,26 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Collaborator conversations are independent local authoring documents. A project link is optional metadata and must never be required for a chat to survive an app restart.
 - Rich-text styling must remain readable across supported platforms and should not depend on synthetic font effects that introduce glyph-rendering artifacts.
 - Collaborator image attachments must be analysed by the configured Vision role first. The Text role receives a comprehensive Vision-derived description of the full scene, never the original image payload, and decides how to use that evidence according to the author's request.
+- AI profiles may expose different Text and Vision model IDs; Vision-role requests must route through the dedicated `vision_model` while Text-role requests continue to use `model`.
 
 ## Current Development Phase
 
-**v0.15.7 development candidate — Character Collaborator Vision pipeline**
+**v0.15.8 development candidate — dedicated Vision-model routing**
 
-The v0.15 line now has a usable long-form conversational authoring workflow with independent persistent chats. v0.15.7 makes image attachments follow a strict two-stage multimodal pipeline: the configured Vision model inspects and describes the complete image, then the text-only Collaborator receives that explicitly provenance-tagged description as reference context.
+The v0.15 line now has a usable long-form conversational authoring workflow with independent persistent chats and a strict Vision → Text image pipeline. v0.15.8 fixes the remaining provider-routing bug so multimodal image requests use the configured profile's dedicated Vision model rather than accidentally sending the image to that profile's normal Text model.
 
-The running development build displays **v0.15.7**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.8**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.8 — Dedicated Vision-Model Routing
+
+- Character Collaborator Vision jobs now copy the selected Vision-role profile and route the provider request through its dedicated `vision_model` value.
+- Normal Text-role requests continue to use the profile's normal `model`; the stored profile is never mutated by Vision routing.
+- A missing/blank Vision model now produces a clear Settings error instead of silently falling back to the Text model and sending it an unsupported image payload.
+- Preserved the full-scene Vision analysis and provenance-tagged Vision → Text handoff introduced in v0.15.7.
+- Added v0.15.8 regression and CI coverage verifying the model remap, non-mutating profile copy, missing-model guard, live service installation, and active shell.
+- Made the v0.15.7 Vision regression forward-compatible with later inherited v0.15 shells.
 
 ### v0.15.7 — Collaborator Vision Pipeline
 
