@@ -31,16 +31,26 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Character Collaborator should preserve established canon by default, deepen existing material before rewriting premises, and make alternate/rewrite directions explicit rather than silently replacing accepted facts.
 - Collaborator presentation should use semantic rich text for readability while preserving the original model response in stored conversation data.
 - Collaborator conversations are independent local authoring documents. A project link is optional metadata and must never be required for a chat to survive an app restart.
+- Rich-text styling must remain readable across supported platforms and should not depend on synthetic font effects that introduce glyph-rendering artifacts.
 
 ## Current Development Phase
 
-**v0.15.5 development candidate — independent Character Collaborator session persistence**
+**v0.15.6 development candidate — Character Collaborator rich-text rendering fix**
 
-The v0.15 line now has a usable long-form conversational authoring workflow. v0.15.5 fixes the remaining persistence architecture problem by moving the authoritative chat history out of project-save ownership and into a dedicated local Collaborator Library. Unsaved projects can therefore be closed without destroying their brainstorming conversations, while project-linked snapshots remain available for portability and backwards compatibility.
+The v0.15 line now has a usable long-form conversational authoring workflow with independent persistent chats. v0.15.6 is a focused rendering-quality fix for coloured/bold Collaborator responses on affected Linux/font stacks: semantic colours and heading hierarchy are retained while the artifact-prone synthetic bold path is removed.
 
-The running development build displays **v0.15.5**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.6**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.6 — Collaborator Rich-Text Rendering Fix
+
+- Removed the Collaborator renderer's synthetic `RichTextLabel.push_bold()` path that could produce dark vertical marks inside coloured glyphs on affected systems.
+- Preserved heading size hierarchy and semantic section colours without relying on synthetic bold rendering.
+- Inline `**bold**` emphasis now uses a brighter theme-safe tint instead of the artifact-prone bold path.
+- Native italics remain supported.
+- Raw AI response text remains unchanged for persistence and Copy; only presentation rendering changed.
+- Added v0.15.6 regression coverage preventing the synthetic bold path from returning to the Collaborator renderer.
 
 ### v0.15.5 — Independent Collaborator Session Persistence
 
