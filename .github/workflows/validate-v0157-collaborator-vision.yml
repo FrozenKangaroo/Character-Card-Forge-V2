@@ -1,0 +1,29 @@
+name: Validate v0.15.7 Collaborator Vision pipeline
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/services/generation_service_v0157.gd'
+      - 'scripts/ui/character_collaborator_window_v0157.gd'
+      - 'scripts/ui/workspace_v0157.gd'
+      - 'scripts/main_v0157.gd'
+      - 'scenes/main.tscn'
+      - 'tools/test_v0157_collaborator_vision_pipeline.gd'
+      - '.github/workflows/validate-v0157-collaborator-vision.yml'
+  workflow_dispatch:
+
+jobs:
+  collaborator-vision-pipeline:
+    runs-on: ubuntu-24.04
+    env:
+      GODOT_VERSION: '4.6.3'
+      GODOT_STATUS: stable
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+      - name: Import and parse project
+        run: godot --headless --path . --import
+      - name: Test v0.15.7 Collaborator Vision pipeline
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0157_collaborator_vision_pipeline.gd
