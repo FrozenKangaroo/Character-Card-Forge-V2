@@ -1,0 +1,29 @@
+name: Validate v0.15.14 component-driven synthesis
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/services/generation_service_v01514.gd'
+      - 'scripts/ui/workspace_v01514.gd'
+      - 'scripts/main_v01514.gd'
+      - 'scenes/main.tscn'
+      - 'tools/test_v01514_component_driven_synthesis.gd'
+      - 'tools/test_v01513_synthesis_collaborator_responsiveness.gd'
+      - '.github/workflows/validate-v01514-component-driven-synthesis.yml'
+  workflow_dispatch:
+
+jobs:
+  component-driven-synthesis:
+    runs-on: ubuntu-24.04
+    env:
+      GODOT_VERSION: '4.6.3'
+      GODOT_STATUS: stable
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+      - name: Import and parse project
+        run: godot --headless --path . --import
+      - name: Test v0.15.14 component-driven full synthesis
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01514_component_driven_synthesis.gd
