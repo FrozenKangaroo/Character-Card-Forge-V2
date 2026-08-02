@@ -42,18 +42,34 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Full synthesis review should expose the complete returned template result, including intentionally preserved values, rather than collapsing review to only byte-different fields.
 - Generation Components are the authoritative transformation recipe for grouped outputs: Workspace data is the source fact pool, enabled components decide what is materialised, and template fields are the final destinations.
 - Character Collaborator handoff is blueprint-first by default: preserve the collaboration as one detailed canonical Generation Concept before template materialisation so repeated field-to-field transformations do not silently discard carefully developed facts.
+- Collaborator-created characters inherit the active Workspace template at handoff time; a new character must not silently fall back to the built-in Default template merely because `new_character_record()` starts there.
+- Alternative Greetings and Character Lorebook material developed during Blueprint collaboration are first-class character data as well as preserved source text. Structured copies should land in the existing `character.alternate_greetings` and `character.character_book` paths without weakening the validated normal-template generation contract.
 - Direct field-filling from Collaborator remains an explicit alternative workflow and should preserve high detail while carrying supplementary character data such as Alternative Greetings and Character Lorebook entries.
 - The generation service installed in the live Workspace must retain the complete parity/validation inheritance chain. Regression tests must verify the actual active service composition, not only isolated helper classes that may no longer be wired into runtime generation.
 
 ## Current Development Phase
 
-**v0.15.16 development candidate — generation pipeline restoration**
+**v0.15.17 development candidate — Blueprint supplementary materialisation + handoff continuity**
 
-The Blueprint-first Collaborator handoff remains the preferred way to preserve a long creative session, but the subsequent Character generation path is being corrected at its architectural root. v0.15.16 reconnects the modern v0.15 generation-service chain to the proven v0.13 parity stack and routes the real **Generate Character** action back through template-contract validation rather than the v0.15.12 unvalidated synthesis shortcut.
+v0.15.17 closes the remaining Collaborator → Workspace continuity gaps exposed by real Blueprint testing. The handoff now preserves the active custom template instead of falling back to the built-in Default template, Blueprint output carries structured Alternative Greetings and Character Lorebook data alongside the canonical Generation Concept, older Blueprint-created characters can materialise missing supplementary data from their existing concept when Generate Character is used, and the readable Interview/Q&A review metadata lost by the v0.15.16 inheritance repair is restored at the active service leaf.
 
-The running development build displays **v0.15.16**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.17**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.17 — Blueprint Supplementary Materialisation + Handoff Continuity
+
+- Blueprint handoff now returns structured `alternate_greetings` and a Character Card-compatible `lorebook` object in addition to the long canonical `concept_prompt`.
+- The long Generation Concept still retains dedicated Alternative Greetings and Lorebook sections; structured supplementary fields are copies for the existing first-class character data paths, not replacements for the preserved Blueprint source.
+- Collaborator Blueprint and Detailed Workspace Draft handoffs now stamp the currently active `generation.template_id` onto the newly created character **before** switching Workspace character, so a custom/default user template survives the transfer instead of silently reverting to built-in Default.
+- New Blueprint-created characters immediately store complete Alternative Greetings in `character.alternate_greetings` and Character Lorebook data in `character.character_book` when the collaboration produced them.
+- Added a compatibility materialisation pass for characters created by pre-v0.15.17 Blueprint handoff: when provenance says the character came from Blueprint and structured supplementary data was never materialised, the next **Generate Character** queues a focused extraction job from the existing authoritative Generation Concept before the normal validated character-generation job.
+- Supplementary extraction never replaces already-populated Alternative Greetings/Lorebook data and records provenance so an intentionally empty or reviewed result is not regenerated on every Generate Character click.
+- Normal Character Card template fields continue through `queue_character_generation()` with Generation Components, Interview/Q&A, Builder precedence, Mode & Style, concept fidelity, semantic validation/repair and fail-closed template enforcement; supplementary materialisation is deliberately separate from that strict template output contract.
+- Restored readable Interview/Q&A review metadata at the active v0.15.17 generation-service leaf. Actual answered questions, answer text, required state and Manual-vs-AI provenance again reach the inherited Workspace **Latest generation interview responses** panel.
+- Kept the v0.15.16 parity-pipeline regression and made its active-shell assertion forward-compatible.
+- Added dedicated v0.15.17 regression coverage for Interview review reconstruction, custom-template preservation, pre-v0.15.17 Blueprint supplemental detection, structured Alternative Greetings/Lorebook routing, active shell wiring and restored pipeline inheritance.
+- Added dedicated v0.15.17 CI coverage.
 
 ### v0.15.16 — Generation Pipeline Restoration
 
@@ -292,17 +308,19 @@ The running development build displays **v0.15.16**. Release metadata remains co
 
 ## In Progress
 
-- Runtime-test v0.15.16 with real Blueprint → Generate Character flows and confirm the actual provider output obeys custom/default Generation Components, including multi-group output composition and disabled components.
-- Confirm Interview/Q&A, Builder precedence, Mode & Style, concept-fidelity retry and semantic repair all still behave correctly when reached through the modern v0.15.16 service rather than only through headless integration tests.
-- Validate v0.15.15 Blueprint handoff against long real Collaborator sessions and confirm small established facts survive into Generation Concept rather than being collapsed during field distribution.
-- Validate Detailed Workspace Draft against real characters with Alternative Greetings and Lorebook material, including custom templates and mixed Generation Component configurations.
+- Runtime-test v0.15.17 with real Blueprint → Generate Character flows using both the built-in Default template and the user's preferred custom/default template; confirm the template remains selected after handoff and validated generation follows its Generation Components.
+- Confirm generated Interview/Q&A responses again appear in **Latest generation interview responses**, including Manual-vs-AI provenance, after a real provider run and after save/reopen.
+- Validate new Blueprint handoff against long Collaborator sessions containing multiple Alternative Greetings and substantial side-character/location lore; confirm the structured character data matches the preserved Blueprint source without dropping concrete details.
+- Validate compatibility materialisation on a character created by v0.15.15/v0.15.16 Blueprint handoff whose Generation Concept already contains Alternative Greetings/Lorebook sections but whose structured fields are still empty.
+- Confirm supplementary materialisation never overwrites manually populated Alternative Greetings or Lorebook entries and is not repeatedly queued once reviewed/materialised.
+- Continue runtime-testing the restored v0.15.16 generation pipeline with custom/default Generation Components, multi-group output composition, disabled components, Builder precedence, Mode & Style, concept-fidelity retry and semantic repair.
 - Continue profiling very long Collaborator sessions so token estimation, transcript rendering, autosave, Blueprint generation and direct-draft generation remain responsive at large context sizes.
 - Continue hardening forward-compatible regression tests so a new inherited shell or runtime service replacement cannot falsely pass while dropping an older capability.
 - Continue V1 parity review where V1 still has useful authoring workflow details that V2 has not yet surpassed.
 
 ## Next Up
 
-- Evaluate extending normal **Generate Character** review so a Blueprint can optionally materialise Alternative Greetings and Lorebook entries in the same reviewed generation operation rather than requiring separate authoring tools.
+- Decide whether Blueprint supplementary material should gain its own explicit review dialog before being committed, or whether the existing editable Alternative Greetings tab and Lorebook Manager provide sufficient review once the material is placed there.
 - Revisit the v0.15.12–v0.15.14 full-Workspace synthesis idea only if it can be layered through the restored parity pipeline without bypassing template-contract validation, repair, Mode & Style, Interview/Q&A, Builder precedence or concept fidelity.
 - Improve visibility/diagnostics around exactly which Generation Groups and components participated in a generated result.
 - Improve distinction and wording between Blueprint handoff, Detailed Workspace Draft, full-character generation, Controlled Build, AI Suggest, and direct manual authoring.
@@ -331,6 +349,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Continue reducing synchronous whole-library work from interactive Collaborator paths as conversation histories grow.
 - Keep Generation Component semantics data-driven so new groups/components can be added without hard-coding Description or Personality behavior into the service.
 - Treat the detailed Generation Concept Blueprint as preserved authoring source, not disposable intermediate text, so later template/model changes can regenerate the card without reconstructing the Collaborator session.
+- Treat `generation.template_id` as part of character handoff continuity: any workflow creating a character from an active authoring context must deliberately carry the selected template rather than relying on the storage-layer default.
+- Keep supplementary Blueprint materialisation separate from the strict template-field validation contract unless/until the template schema explicitly models those app-level data structures.
 
 ## Polish
 
@@ -345,7 +365,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Deferred / Experimental Ideas
 
-- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.16 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
+- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.17 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
 - More elaborate graph visualisation/layout automation beyond the current draggable anchor-based system.
 - Optional advanced context compression strategies beyond the current explicit user-triggered summarisation model.
 - Experimental provider-specific optimisations should remain opt-in until they can be implemented without weakening the generic OpenAI-compatible path.
