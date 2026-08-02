@@ -28,16 +28,37 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - External authoring tools and AIs should be able to hand CCF a partial character without being forced to generate filler for fields they do not know.
 - Long-running AI collaboration must account for model context limits, reserve output space, preserve original local transcripts, and make lossy summarisation explicit to the user.
 - Provider/model token limits must remain data-driven; UI controls must not impose obsolete ceilings that prevent use of newer long-context/high-output models.
+- Character Collaborator should preserve established canon by default, deepen existing material before rewriting premises, and make alternate/rewrite directions explicit rather than silently replacing accepted facts.
+- Collaborator presentation should use semantic rich text for readability while preserving the original model response in stored conversation data.
 
 ## Current Development Phase
 
-**v0.15.2 development candidate — Character Collaborator + large-model budgeting**
+**v0.15.4 development candidate — Character Collaborator persistence, behaviour contract, and rich presentation**
 
-The v0.15 line adds a conversational authoring layer while retaining the mature structured tools built through v0.14. Character Collaborator supports long-running model conversations, reference context and explicit Workspace handoff. v0.15.1 separated total context capacity from response limits, and v0.15.2 removes the obsolete 131,072-token output-control ceiling so modern high-output models can be configured correctly.
+The v0.15 line now has a usable long-form conversational authoring workflow. After context budgeting, large-model support, and core chat UX, v0.15.4 focuses on making Collaborator sessions durable and easier to manage while tightening the creative contract around established character facts and rendering structured model output as native styled chat content instead of exposing raw Markdown markers.
 
-The running development build displays **v0.15.2**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.4**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.4 — Collaborator Persistence, Behaviour Contract & Rich Text
+
+- Autosaves Collaborator session data to the project after each meaningful session change, including user messages, AI replies, regenerated variants, summaries, context changes, renames, and deletions.
+- Added **Rename** and **Delete** controls for saved Collaborator conversations, with deletion scoped only to the chat session rather than generated characters or other project data.
+- Strengthened the Collaborator system contract so established facts are preserved by default and contradictory ideas are clearly framed as alternate/rewrite directions.
+- Added proportional response-depth guidance: small changes remain conversational while major design decisions may use deeper structured analysis.
+- Added a non-pathologizing default for unusual traits, sexuality, habits, preferences, and behaviour unless psychological dysfunction is explicitly established or being explored.
+- Added a restricted presentation contract for headings, emphasis, and labelled list sections.
+- AI responses now render headings, italics, bold text, bullets, and semantic labels as native rich text rather than showing raw Markdown markers.
+- Added restrained semantic colours for headings and common labels such as Behavior, Sample dialogue, Effect, Drawback/Warning, and Motive while keeping the raw response available for Copy and transcript persistence.
+
+### v0.15.3 — Character Collaborator Chat UX
+
+- Added automatic wrapping for long pasted/input text.
+- Added clearly differentiated user and Collaborator message cards.
+- Added selectable chat text, normal context-menu copying, and one-click whole-message Copy actions.
+- Added visible in-chat working states for replies, summarisation, image analysis, and Workspace character generation.
+- Improved auto-scroll after sending, generation start, and response completion by waiting for Godot layout updates before scrolling.
 
 ### v0.15.2 — Large Output Token Limits
 
