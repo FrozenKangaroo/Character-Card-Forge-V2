@@ -23,11 +23,37 @@ func _init() -> void:
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v0159.gd")
 	assert(main_source.contains("SETTINGS_V0159"), "The v0.15.9 shell must install the new Settings view.")
 	assert(main_source.contains("WORKSPACE_V0159"), "The v0.15.9 shell must install the new Workspace.")
-	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene_source.contains("main_v0159.gd"), "The active scene must use v0.15.9.")
+	assert(_active_shell_inherits_v0159(), "The active scene must use v0.15.9 or a later shell derived from it.")
 	var roadmap_source := FileAccess.get_file_as_string("res://roadmap.md")
-	assert(roadmap_source.contains("v0.15.9 development candidate"), "The project roadmap must track the active v0.15.9 development phase.")
-	assert(roadmap_source.contains("Independent Vision Token Limits & Input Optimisation"), "The roadmap must record the v0.15.9 feature set.")
+	assert(roadmap_source.contains("v0.15.9 — Independent Vision Token Limits & Input Optimisation"), "The roadmap must retain the v0.15.9 feature history.")
 
 	print("v0.15.9 Vision limits and input optimisation regression passed")
 	quit(0)
+
+
+func _active_shell_inherits_v0159() -> bool:
+	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
+	var marker := "res://scripts/main_v"
+	var start := scene_source.find(marker)
+	if start < 0:
+		return false
+	var finish := scene_source.find(".gd", start)
+	if finish < 0:
+		return false
+	var current_path := scene_source.substr(start, finish - start + 3)
+	for _depth in range(32):
+		if current_path == "res://scripts/main_v0159.gd":
+			return true
+		if not FileAccess.file_exists(current_path):
+			return false
+		var source := FileAccess.get_file_as_string(current_path)
+		var extends_marker := "extends \"res://scripts/main_v"
+		var extends_start := source.find(extends_marker)
+		if extends_start < 0:
+			return false
+		extends_start += 9
+		var extends_end := source.find("\"", extends_start)
+		if extends_end < 0:
+			return false
+		current_path = source.substr(extends_start, extends_end - extends_start)
+	return false

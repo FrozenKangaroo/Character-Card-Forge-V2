@@ -36,16 +36,30 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - AI profiles may expose different Text and Vision model IDs; Vision-role requests must route through the dedicated `vision_model` while Text-role requests continue to use `model`.
 - Text and Vision models may have different context/output limits; Vision jobs must use Vision-specific token limits rather than inheriting Text-model limits.
 - Vision input preprocessing must preserve originals and only optimise genuinely oversized files; small images should pass through unchanged.
+- File-dialog authoring state should survive application restarts instead of depending on Godot's process-local FileDialog state.
 
 ## Current Development Phase
 
-**v0.15.9 development candidate — independent Vision token limits & input optimisation**
+**v0.15.10 development candidate — persistent FileDialog state**
 
-The v0.15 line now has a usable long-form conversational authoring workflow with independent persistent chats and a strict Vision → Text image pipeline. v0.15.9 separates Vision-model context/output limits from Text-model limits and adds conservative automatic preprocessing for genuinely oversized image attachments while leaving normal small images untouched.
+The v0.15 line now has a usable long-form conversational authoring workflow with independent persistent chats and a strict Vision → Text image pipeline. v0.15.10 improves everyday desktop workflow by persisting FileDialog favourites, recent/history locations, last-used filesystem directory, layout/view choices, hidden-file preference, and sort choice across application relaunches while seeding Downloads as a convenient default location.
 
-The running development build displays **v0.15.9**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.10**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.10 — Persistent FileDialog State
+
+- Added a shared `user://` FileDialog preference store independent of projects and release/update files.
+- Persists Godot FileDialog favourites across app relaunches using the engine's shared favorite-list API.
+- Persists recent/history directories with a bounded 20-folder history rather than allowing an unbounded list.
+- Seeds the operating system's actual Downloads directory as a default quick location on first use when available.
+- Persists the last-used filesystem directory for future open/save dialogs.
+- Persists list/thumbnail display mode and hidden-file visibility.
+- Persists the selected built-in FileDialog sort mode, including date/modified sorting, through a guarded UI-state bridge because Godot 4.6 does not expose sort mode as a public property.
+- Tracks FileDialog nodes created throughout the app so the behaviour is shared rather than duplicated per workflow.
+- Made the v0.15.9 Vision regression forward-compatible with later inherited app shells.
+- Added dedicated v0.15.10 regression and CI coverage.
 
 ### v0.15.9 — Independent Vision Token Limits & Input Optimisation
 
