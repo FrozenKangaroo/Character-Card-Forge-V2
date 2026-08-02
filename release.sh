@@ -266,9 +266,14 @@ run_checks() {
     if godot_bin="$(find_godot)"; then
         print_status "Parsing project with $(${godot_bin} --version | head -n 1)"
         "${godot_bin}" --headless --path . --import
+
+        print_status "Running broad release regression suite"
+        python3 ./tools/run_regression_suite.py \
+            --profile release \
+            --godot "${godot_bin}"
     else
-        echo "WARNING: Godot was not found in PATH; local engine validation was skipped."
-        echo "GitHub Actions will still parse the project before any release is published."
+        echo "WARNING: Godot was not found in PATH; local engine validation and broad regression checks were skipped."
+        echo "GitHub Actions will still parse and regression-test the project before any release is published."
     fi
 }
 

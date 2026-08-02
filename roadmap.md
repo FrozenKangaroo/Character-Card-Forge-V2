@@ -48,16 +48,31 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - The generation service installed in the live Workspace must retain the complete parity/validation inheritance chain. Regression tests must verify the actual active service composition, not only isolated helper classes that may no longer be wired into runtime generation.
 - Normal Godot import/open operations should leave the Git checkout clean. Generated script UID sidecars remain non-canonical local metadata until the project deliberately adopts one checked-in UID set, and default ProjectSettings should use Godot's canonical serialization rather than being repeatedly rewritten.
 - Release/update helpers should prefer the Git checkout they are actually launched from when it is already the repository root. Separate development-copy-to-repository syncing is a fallback workflow, not a reason to silently route a normal checkout through an unrelated clone.
+- Every major supported workflow should have representative cross-feature regression coverage. A new feature is not release-ready merely because its own focused test passes; unrelated core, generation, authoring, content, Collaborator, image/Vision and release workflows must remain healthy too.
+- Automated local regression tests that exercise `user://` state must run in isolated temporary app-data directories so testing cannot overwrite real author settings, FileDialog history, or Collaborator conversations.
 
 ## Current Development Phase
 
-**v0.15.19 development candidate — release checkout selection**
+**v0.15.20 development candidate — broad regression safety**
 
-v0.15.19 finishes the release-preparation workflow cleanup exposed during the v0.15.18 runtime test. `release.sh` now recognises when it is already running from the real Character Card Forge Git checkout and uses that checkout directly, while retaining explicit `CCF_REPO_DIR` overrides and the older separate-development-copy fallback. The release/update helper scripts are also stored as executable files so `./update.sh` and `./release.sh` work normally on Linux.
+v0.15.20 turns regression protection into an explicit release gate. A versioned data-driven regression registry now selects representative tests across the app rather than relying on whatever feature is currently receiving manual attention. The same broad profile runs in GitHub Actions and automatically from `release.sh` when Godot is available locally, with temporary HOME/XDG/AppData isolation protecting real `user://` data during persistence tests.
 
-The running development build displays **v0.15.19**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.20**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.20 — Broad Regression Safety
+
+- Added `tools/regression_suites_v01520.json`, a versioned data-driven registry grouping representative tests into current wiring, core, generation, authoring, content, Character Collaborator, image/Vision, and workflow-safety suites.
+- Added **quick** and **release** profiles. Quick coverage is suitable while actively developing; the release profile deliberately crosses unrelated feature areas so hyper-focus on one new feature cannot silently become the release test plan.
+- Added `tools/run_regression_suite.py`, which runs the selected suites, continues after individual failures, and reports every failed area together instead of hiding later regressions behind the first failing test.
+- Regression subprocesses run with temporary HOME/XDG/AppData directories, protecting real `user://` Character Collaborator sessions, settings, FileDialog state and other local app data when persistence tests run on a developer machine.
+- Added a v0.15.20 live regression test that verifies the registry breadth, required critical feature coverage, active app-shell lineage, release-gate wiring, and the current generation service's parity/Interview/template-contract/concept-fidelity/Blueprint capabilities.
+- `release.sh` now automatically runs the full release regression profile after Godot import whenever a local Godot executable is available. A representative regression failure stops the release before commit/tag creation.
+- Added dedicated Godot 4.6.3 CI that runs the same broad release profile on every pull request and on `main`, in addition to the existing focused historical/version regressions.
+- Added `docs/regression-testing.md` documenting quick/full runs, suite selection, data isolation, the release gate, and the rule that new major features must join the representative registry.
+- Made the v0.15.19 active-shell regression inheritance-aware so later app shells can extend it without producing false failures.
+- Added the v0.15.20 inherited app shell and version display without replacing any runtime feature service.
 
 ### v0.15.19 — Release Checkout Selection
 
@@ -332,9 +347,9 @@ The running development build displays **v0.15.19**. Release metadata remains co
 
 ## In Progress
 
-- Runtime-test v0.15.19 by launching `./update.sh` and then `./release.sh` from the normal Character Card Forge checkout; confirm `release.sh` reports that it is using the current repository and does not inspect the stale `$HOME/Projects/Character-Card-Forge-V2` clone.
-- Runtime-test the explicit `CCF_REPO_DIR` override and a genuinely separate development-copy release so both intentional alternate workflows remain available.
-- Confirm normal Godot open/import operations still leave `git status` clean after the v0.15.19 shell update.
+- Runtime-test the new `python3 tools/run_regression_suite.py --profile quick` and `--profile release` commands on the normal Linux/Godot development machine and confirm they complete without touching real Character Collaborator/FileDialog/settings data.
+- Runtime-test `release.sh` and confirm the new **Running broad release regression suite** gate executes before staging/tagging and stops cleanly if any representative test fails.
+- Continue expanding the representative registry whenever a newly supported major workflow would otherwise depend primarily on manual testing.
 - Runtime-test v0.15.17 Blueprint → Generate Character flows using both the built-in Default template and the user's preferred custom/default template; confirm the template remains selected after handoff and validated generation follows its Generation Components.
 - Confirm generated Interview/Q&A responses again appear in **Latest generation interview responses**, including Manual-vs-AI provenance, after a real provider run and after save/reopen.
 - Validate new Blueprint handoff against long Collaborator sessions containing multiple Alternative Greetings and substantial side-character/location lore; confirm the structured character data matches the preserved Blueprint source without dropping concrete details.
@@ -347,6 +362,7 @@ The running development build displays **v0.15.19**. Release metadata remains co
 
 ## Next Up
 
+- Keep the representative regression registry aligned with the actual supported feature surface as generation transparency/workflow-clarity work begins; do not let new major features remain outside the release profile.
 - Perform a deliberate canonical GDScript UID migration later: generate one stable project-wide `.gd.uid` set, commit it together, remove the temporary ignore rule, and add CI that detects unexpected UID churn rather than treating arbitrary local sidecars as source.
 - Decide whether Blueprint supplementary material should gain its own explicit review dialog before being committed, or whether the existing editable Alternative Greetings tab and Lorebook Manager provide sufficient review once the material is placed there.
 - Revisit the v0.15.12–v0.15.14 full-Workspace synthesis idea only if it can be layered through the restored parity pipeline without bypassing template-contract validation, repair, Mode & Style, Interview/Q&A, Builder precedence or concept fidelity.
@@ -372,6 +388,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep generation services modular and preserve older project/card compatibility as schemas evolve.
 - Treat runtime generation-service composition as a tested compatibility boundary; new service subclasses must extend the previous capability chain unless a deliberate replacement is documented and integration-tested.
 - Reduce inherited-shell regression fragility by testing capability/inheritance rather than exact active-version filenames.
+- Maintain the versioned representative regression registry as a release compatibility boundary across unrelated app areas; focused version tests remain useful but are not sufficient on their own.
+- Keep local regression subprocesses isolated from real HOME/XDG/AppData state so tests exercising `user://` remain safe to run automatically before releases.
 - Continue warning-as-error GDScript hygiene and CI parsing on Godot 4.6.x.
 - Keep normal Godot import/open operations checkout-clean; CI should detect repository-visible generated metadata before it reaches update/release workflows.
 - Keep the temporary `*.gd.uid` ignore narrowly scoped to the current non-canonical sidecar phase and replace it with a checked-in canonical UID set when that migration is intentionally performed.
@@ -397,7 +415,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Deferred / Experimental Ideas
 
-- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.19 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
+- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.20 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
 - More elaborate graph visualisation/layout automation beyond the current draggable anchor-based system.
 - Optional advanced context compression strategies beyond the current explicit user-triggered summarisation model.
 - Experimental provider-specific optimisations should remain opt-in until they can be implemented without weakening the generic OpenAI-compatible path.

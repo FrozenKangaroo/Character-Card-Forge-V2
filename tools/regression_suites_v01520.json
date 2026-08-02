@@ -1,0 +1,324 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites",
+  "description": "Representative cross-feature regression coverage intended to catch breakage outside the feature currently under active development.",
+  "profiles": {
+    "quick": [
+      "current_wiring",
+      "core",
+      "generation",
+      "collaborator"
+    ],
+    "release": [
+      "current_wiring",
+      "core",
+      "generation",
+      "authoring",
+      "content",
+      "collaborator",
+      "image_and_vision",
+      "workflow"
+    ]
+  },
+  "suites": {
+    "current_wiring": {
+      "description": "Current live app-shell and cross-feature wiring checks.",
+      "tests": [
+        {
+          "id": "v01520_live_regression_safety",
+          "label": "v0.15.20 live feature wiring and regression registry",
+          "kind": "godot",
+          "path": "tools/test_v01520_regression_safety.gd",
+          "timeout_seconds": 30
+        }
+      ]
+    },
+    "core": {
+      "description": "Project lifecycle, data parsing, template defaults, and provider response compatibility.",
+      "tests": [
+        {
+          "id": "project_lifecycle",
+          "label": "Project draft lifecycle",
+          "kind": "godot",
+          "path": "tools/test_project_lifecycle.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "default_template_selection",
+          "label": "Default template selection",
+          "kind": "godot",
+          "path": "tools/test_default_template_selection.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "quiet_json_parser",
+          "label": "Malformed JSON handling",
+          "kind": "godot",
+          "path": "tools/test_quiet_json_parser.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "assistant_response_shapes",
+          "label": "Assistant response compatibility",
+          "kind": "godot",
+          "path": "tools/test_assistant_response_shapes.gd",
+          "timeout_seconds": 30
+        }
+      ]
+    },
+    "generation": {
+      "description": "Template contracts, Generation Components, interview review, preview safety, concept fidelity, and the restored live generation pipeline.",
+      "tests": [
+        {
+          "id": "generation_contract_dispatch",
+          "label": "Generation contract dispatch",
+          "kind": "godot",
+          "path": "tools/test_generation_contract_dispatch.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "multi_group_output_composition",
+          "label": "Multi-group Generation Component composition",
+          "kind": "godot",
+          "path": "tools/test_multi_group_output_composition.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "concept_fidelity",
+          "label": "Concept fidelity",
+          "kind": "godot",
+          "path": "tools/test_concept_fidelity.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v0141_interview_review",
+          "label": "Interview response review",
+          "kind": "godot",
+          "path": "tools/test_v0141_desktop_layout_interview_review.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v0146_preview_selection_safety",
+          "label": "Generation Preview selection safety",
+          "kind": "godot",
+          "path": "tools/test_v0146_preview_selection_safety.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01516_generation_pipeline_restoration",
+          "label": "Live semantic generation pipeline composition",
+          "kind": "godot",
+          "path": "tools/test_v01516_generation_pipeline_restoration.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01517_blueprint_materialisation",
+          "label": "Blueprint template, Interview, Alternative Greetings and Lorebook materialisation",
+          "kind": "godot",
+          "path": "tools/test_v01517_blueprint_materialisation.gd",
+          "timeout_seconds": 30
+        }
+      ]
+    },
+    "authoring": {
+      "description": "Manual Guided, Alternative Greetings, related-character creation, Idea workflows, and focused builders.",
+      "tests": [
+        {
+          "id": "v0147_manual_guided_components",
+          "label": "Manual Guided Generation Components",
+          "kind": "godot",
+          "path": "tools/test_v0147_manual_guided_components.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v0148_manual_guided_alternative_greetings",
+          "label": "Manual Guided Alternative Greetings",
+          "kind": "godot",
+          "path": "tools/test_v0148_manual_guided_alternative_greetings.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01410_character_derivation",
+          "label": "Related character and AI variation",
+          "kind": "godot",
+          "path": "tools/test_v01410_character_derivation.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01411_concept_studio",
+          "label": "Idea workflows and editable option pools",
+          "kind": "godot",
+          "path": "tools/test_v01411_concept_studio.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01414_focused_builders",
+          "label": "Focused Appearance, Personality and Scene builders",
+          "kind": "godot",
+          "path": "tools/test_v01414_focused_builders.gd",
+          "timeout_seconds": 30
+        }
+      ]
+    },
+    "content": {
+      "description": "Library, Lorebook, relationship/variant, CCFCHAR import, and shared graph tooling.",
+      "tests": [
+        {
+          "id": "v0149_library_ux",
+          "label": "Library assignment and navigation",
+          "kind": "godot",
+          "path": "tools/test_v0149_library_ux.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01415_lorebook_support",
+          "label": "Lorebook generation context and trigger tools",
+          "kind": "godot",
+          "path": "tools/test_v01415_lorebook_support.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01420_relationship_variants",
+          "label": "Relationship Graph and Linked Variants",
+          "kind": "godot",
+          "path": "tools/test_v01420_relationship_variants.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01421_ccfchar_import",
+          "label": "CCFCHAR authoring import",
+          "kind": "godot",
+          "path": "tools/test_v01421_ccfchar_import.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01422_graph_canvas",
+          "label": "Shared relationship/route graph canvas",
+          "kind": "godot",
+          "path": "tools/test_v01422_graph_canvas.gd",
+          "timeout_seconds": 30
+        }
+      ]
+    },
+    "collaborator": {
+      "description": "Character Collaborator foundation, context budgeting, independent persistence, responsiveness, and Blueprint handoff.",
+      "tests": [
+        {
+          "id": "v015_character_collaborator",
+          "label": "Character Collaborator foundation",
+          "kind": "godot",
+          "path": "tools/test_v015_character_collaborator.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v0151_context_budgeting",
+          "label": "Collaborator context budgeting",
+          "kind": "godot",
+          "path": "tools/test_v0151_context_budgeting.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v0155_independent_sessions",
+          "label": "Independent Collaborator session persistence",
+          "kind": "godot",
+          "path": "tools/test_v0155_independent_collaborator_sessions.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01513_collaborator_responsiveness",
+          "label": "Collaborator responsiveness and synthesis continuity",
+          "kind": "godot",
+          "path": "tools/test_v01513_synthesis_collaborator_responsiveness.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01515_blueprint_handoff",
+          "label": "Blueprint-first Collaborator handoff",
+          "kind": "godot",
+          "path": "tools/test_v01515_blueprint_first_handoff.gd",
+          "timeout_seconds": 30
+        }
+      ]
+    },
+    "image_and_vision": {
+      "description": "Image prompt behaviour and the independent Vision pipeline/model/input limits.",
+      "tests": [
+        {
+          "id": "image_prompt_concision",
+          "label": "Concise image prompt construction",
+          "kind": "godot",
+          "path": "tools/test_image_prompt_concision.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01312_image_prompt_startup",
+          "label": "Image Studio startup prompt behaviour",
+          "kind": "godot",
+          "path": "tools/test_v01312_image_prompt_startup.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v0157_collaborator_vision",
+          "label": "Collaborator Vision-to-Text pipeline",
+          "kind": "godot",
+          "path": "tools/test_v0157_collaborator_vision_pipeline.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v0158_vision_model_routing",
+          "label": "Independent Vision model routing",
+          "kind": "godot",
+          "path": "tools/test_v0158_vision_model_routing.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v0159_vision_limits",
+          "label": "Vision token limits and image input optimisation",
+          "kind": "godot",
+          "path": "tools/test_v0159_vision_limits_and_input_optimisation.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01510_file_dialog_state",
+          "label": "Persistent FileDialog state",
+          "kind": "godot",
+          "path": "tools/test_v01510_file_dialog_state.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01511_visible_vision_analysis",
+          "label": "Visible persistent Vision Analysis transcript cards",
+          "kind": "godot",
+          "path": "tools/test_v01511_visible_vision_analysis.gd",
+          "timeout_seconds": 30
+        }
+      ]
+    },
+    "workflow": {
+      "description": "Godot checkout hygiene and update/release safety.",
+      "tests": [
+        {
+          "id": "v01518_checkout_hygiene",
+          "label": "Godot checkout hygiene",
+          "kind": "godot",
+          "path": "tools/test_v01518_checkout_hygiene.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01519_release_selection_godot",
+          "label": "Release checkout selection integration",
+          "kind": "godot",
+          "path": "tools/test_v01519_release_checkout_selection.gd",
+          "timeout_seconds": 30
+        },
+        {
+          "id": "v01519_release_selection_shell",
+          "label": "Release checkout selection shell behaviour",
+          "kind": "shell",
+          "path": "tools/test_v01519_release_checkout_selection.sh",
+          "timeout_seconds": 30
+        }
+      ]
+    }
+  }
+}

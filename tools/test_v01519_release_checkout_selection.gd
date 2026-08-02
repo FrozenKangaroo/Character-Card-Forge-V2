@@ -37,11 +37,27 @@ func _init() -> void:
 		main_source.contains('BUILD_DISPLAY_VERSION_V01519 := "0.15.19"'),
 		"The v0.15.19 shell must expose its build version."
 	)
-	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
 	assert(
-		scene_source.contains("main_v01519.gd"),
-		"The active scene must use the v0.15.19 shell."
+		_active_shell_inherits_from("res://scripts/main_v01519.gd"),
+		"The active scene must use or inherit the v0.15.19 app shell."
 	)
 
 	print("v0.15.19 release checkout selection regression passed")
 	quit(0)
+
+
+func _active_shell_inherits_from(target_path: String) -> bool:
+	var packed := load("res://scenes/main.tscn") as PackedScene
+	if packed == null:
+		return false
+	var root := packed.instantiate()
+	if root == null:
+		return false
+	var current := root.get_script() as Script
+	while current != null:
+		if current.resource_path == target_path:
+			root.free()
+			return true
+		current = current.get_base_script()
+	root.free()
+	return false
