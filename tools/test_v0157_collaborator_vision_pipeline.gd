@@ -19,10 +19,10 @@ func _init() -> void:
 	assert(window_source.contains("vision_description"), "Raw Vision description must be retained separately in context metadata.")
 
 	var workspace_source := FileAccess.get_file_as_string("res://scripts/ui/workspace_v0157.gd")
-	assert(workspace_source.contains("GENERATION_SERVICE_V0157"), "Workspace must install the v0.15.7 Vision-capable service.")
-	assert(workspace_source.contains("CHARACTER_COLLABORATOR_WINDOW_V0157"), "Workspace must install the v0.15.7 Collaborator window.")
+	assert(workspace_source.contains("GENERATION_SERVICE_V0157"), "The v0.15.7 Workspace layer must install its Vision-capable service.")
+	assert(workspace_source.contains("CHARACTER_COLLABORATOR_WINDOW_V0157"), "The v0.15.7 Workspace layer must install its Collaborator window.")
 	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene_source.contains("main_v0157.gd"), "The active scene must use v0.15.7.")
+	assert(scene_source.contains("main_v015"), "The active scene must use the v0.15 development shell or a later inherited shell.")
 
 	print("v0.15.7 Collaborator Vision pipeline regression passed")
 	quit(0)
