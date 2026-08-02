@@ -31,8 +31,35 @@ func _init() -> void:
 
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01513.gd")
 	assert(main_source.contains("BUILD_DISPLAY_VERSION_V01513 := \"0.15.13\""), "The v0.15.13 shell must expose the build version.")
-	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene_source.contains("main_v01513.gd"), "The active scene must use v0.15.13.")
+	assert(_active_shell_inherits_v01513(), "The active scene must use v0.15.13 or a later shell inheriting from it.")
 
 	print("v0.15.13 synthesis and Collaborator responsiveness regression passed")
 	quit(0)
+
+
+func _active_shell_inherits_v01513() -> bool:
+	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
+	var marker := "res://scripts/"
+	var marker_at := scene_source.find(marker)
+	if marker_at < 0:
+		return false
+	var end_at := scene_source.find("\"", marker_at)
+	if end_at < 0:
+		return false
+	var path := scene_source.substr(marker_at, end_at - marker_at)
+	for _depth in range(16):
+		if path == "res://scripts/main_v01513.gd":
+			return true
+		if not FileAccess.file_exists(path):
+			return false
+		var source := FileAccess.get_file_as_string(path)
+		var extends_marker := "extends \""
+		var extends_at := source.find(extends_marker)
+		if extends_at < 0:
+			return false
+		var start_at := extends_at + extends_marker.length()
+		var next_end := source.find("\"", start_at)
+		if next_end < 0:
+			return false
+		path = source.substr(start_at, next_end - start_at)
+	return false
