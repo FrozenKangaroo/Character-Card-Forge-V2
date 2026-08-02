@@ -17,7 +17,7 @@ static func load_sessions() -> Array:
 		if not file_name.to_lower().ends_with(".json"):
 			continue
 		var path := "%s/%s" % [STORE_DIR, file_name]
-		var parsed := JSON.parse_string(FileAccess.get_file_as_string(path))
+		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
 		if not parsed is Dictionary:
 			continue
 		var document: Dictionary = parsed
