@@ -9,7 +9,6 @@ func _init() -> void:
 	assert(service_source.contains("setting/environment"), "Vision analysis must include scene setting/environment.")
 	assert(service_source.contains("readable or partially readable text"), "Vision analysis must include visible text when legible.")
 	assert(service_source.contains("apparent action/event/situation"), "Vision analysis must describe what appears to be happening in the scene.")
-	assert(service_source.contains("source_role": CCFSettingsService.ROLE_VISION) if false else true)
 	assert(service_source.contains("CCFSettingsService.ROLE_VISION"), "Vision job metadata must identify the Vision role.")
 	assert(service_source.contains("vision_description_of_user_attached_image"), "Vision output must carry explicit provenance.")
 
