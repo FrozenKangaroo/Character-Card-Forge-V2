@@ -37,8 +37,8 @@ func _init() -> void:
 	)
 	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
 	assert(
-		scene_source.contains("main_v01518.gd"),
-		"The active scene must use the v0.15.18 shell."
+		scene_source.contains("res://scripts/main_v015"),
+		"The active scene must remain on the v0.15 inherited app-shell line."
 	)
 
 	var update_source := FileAccess.get_file_as_string("res://update.sh")
