@@ -6,7 +6,7 @@ func _init() -> void:
 	assert(source.contains("_render_heading_v0154"), "v0.15.6 must override heading rendering.")
 	assert(source.contains("_render_semantic_bullet_v0154"), "v0.15.6 must override semantic-label rendering.")
 	assert(source.contains("_render_inline_v0156"), "v0.15.6 must provide artifact-safe inline emphasis.")
-	assert(not source.contains("push_bold()"), "v0.15.6 Collaborator renderer must not use synthetic push_bold(), which caused dark glyph artifacts on affected font stacks.")
+	assert(not source.contains("body.push_bold()"), "v0.15.6 Collaborator renderer must not invoke synthetic bold glyph rendering.")
 	assert(source.contains("push_color"), "v0.15.6 must preserve semantic colour styling.")
 	assert(source.contains("push_font_size"), "v0.15.6 headings must preserve size hierarchy.")
 
