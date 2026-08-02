@@ -1,0 +1,30 @@
+name: Validate v0.15.15 blueprint-first Collaborator handoff
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/services/generation_service_v01515.gd'
+      - 'scripts/ui/character_collaborator_window_v01515.gd'
+      - 'scripts/ui/workspace_v01515.gd'
+      - 'scripts/main_v01515.gd'
+      - 'scenes/main.tscn'
+      - 'tools/test_v01515_blueprint_first_handoff.gd'
+      - 'tools/test_v01514_component_driven_synthesis.gd'
+      - '.github/workflows/validate-v01515-blueprint-handoff.yml'
+  workflow_dispatch:
+
+jobs:
+  blueprint-first-handoff:
+    runs-on: ubuntu-24.04
+    env:
+      GODOT_VERSION: '4.6.3'
+      GODOT_STATUS: stable
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+      - name: Import and parse project
+        run: godot --headless --path . --import
+      - name: Test v0.15.15 blueprint-first Collaborator handoff
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01515_blueprint_first_handoff.gd
