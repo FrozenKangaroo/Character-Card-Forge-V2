@@ -1,0 +1,32 @@
+name: Validate v0.15.17 Blueprint materialisation
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/services/generation_service_v01517.gd'
+      - 'scripts/ui/workspace_v01517.gd'
+      - 'scripts/main_v01517.gd'
+      - 'scenes/main.tscn'
+      - 'tools/test_v01516_generation_pipeline_restoration.gd'
+      - 'tools/test_v01517_blueprint_materialisation.gd'
+      - 'roadmap.md'
+      - '.github/workflows/validate-v01517-blueprint-materialisation.yml'
+  workflow_dispatch:
+
+jobs:
+  blueprint-materialisation:
+    runs-on: ubuntu-24.04
+    env:
+      GODOT_VERSION: '4.6.3'
+      GODOT_STATUS: stable
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+      - name: Import and parse project
+        run: godot --headless --path . --import
+      - name: Recheck v0.15.16 generation pipeline
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01516_generation_pipeline_restoration.gd
+      - name: Test v0.15.17 Blueprint materialisation
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01517_blueprint_materialisation.gd
