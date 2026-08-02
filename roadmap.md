@@ -37,197 +37,151 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Text and Vision models may have different context/output limits; Vision jobs must use Vision-specific token limits rather than inheriting Text-model limits.
 - Vision input preprocessing must preserve originals and only optimise genuinely oversized files; small images should pass through unchanged.
 - File-dialog authoring state should survive application restarts instead of depending on Godot's process-local FileDialog state.
+- **Generate Character** is a full synthesis action: populated Workspace fields are authoritative source material, while the active template defines the generated output contract. Selective/missing-field tools remain separate workflows.
 
 ## Current Development Phase
 
-**v0.15.10 development candidate — persistent FileDialog state**
+**v0.15.12 development candidate — full character synthesis from Workspace**
 
-The v0.15 line now has a usable long-form conversational authoring workflow with independent persistent chats and a strict Vision → Text image pipeline. v0.15.10 improves everyday desktop workflow by persisting FileDialog favourites, recent/history locations, last-used filesystem directory, layout/view choices, hidden-file preference, and sort choice across application relaunches while seeding Downloads as a convenient default location.
+The v0.15 line now has persistent Character Collaborator sessions, strict Vision → Text handling, visible Vision analysis, durable desktop FileDialog state, and a full-character generation path that can materialise a finished card from an already-populated Workspace instead of treating filled fields as “nothing to generate.”
 
-The running development build displays **v0.15.10**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.12**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.12 — Full Character Synthesis from Workspace
+
+- Added a dedicated full-character synthesis path instead of relying on existing/missing-field gating.
+- **Generate Character** now reads all populated fields exposed by the active template as source material, including fields that are not themselves AI-generated outputs.
+- Existing character facts are treated as canon to preserve, reconcile, deepen, and polish rather than as a reason to skip generation.
+- The active template's AI-generatable fields remain the explicit JSON output contract, so populated output fields are still regenerated as part of a coherent complete character.
+- Full synthesis no longer requires a Generation Concept when other meaningful Workspace material already exists.
+- Generation Mode and Style are included as synthesis guidance when present.
+- Existing shared project context, series bible, relationships, and enabled attachment context remain available to the synthesis pass.
+- Full-synthesis jobs carry explicit `full_workspace_synthesis` scope and canon-preservation metadata.
+- AI Suggest and Controlled Build remain separate selective-generation workflows.
+- Added v0.15.12 Workspace/service/app-shell integration and dedicated regression/CI coverage.
+- Made the v0.15.11 regression forward-compatible with later inherited app shells.
+
+### v0.15.11 — Visible Vision Analysis Messages
+
+- Completed Collaborator Vision analysis now replaces the temporary analysing state with a persistent, visually distinct **Vision Analysis** transcript message.
+- Vision descriptions are selectable/copyable, preserve profile/model provenance, autosave with the independent chat session, and remain available as tagged reference context for the Text model.
+- Completion scrolls to the visible result instead of leaving the transcript apparently stuck.
+- Added v0.15.11 regression and CI coverage.
 
 ### v0.15.10 — Persistent FileDialog State
 
 - Added a shared `user://` FileDialog preference store independent of projects and release/update files.
-- Persists Godot FileDialog favourites across app relaunches using the engine's shared favorite-list API.
-- Persists recent/history directories with a bounded 20-folder history rather than allowing an unbounded list.
-- Seeds the operating system's actual Downloads directory as a default quick location on first use when available.
-- Persists the last-used filesystem directory for future open/save dialogs.
-- Persists list/thumbnail display mode and hidden-file visibility.
-- Persists the selected built-in FileDialog sort mode, including date/modified sorting, through a guarded UI-state bridge because Godot 4.6 does not expose sort mode as a public property.
-- Tracks FileDialog nodes created throughout the app so the behaviour is shared rather than duplicated per workflow.
-- Made the v0.15.9 Vision regression forward-compatible with later inherited app shells.
-- Added dedicated v0.15.10 regression and CI coverage.
+- Persists favourites, recent/history directories, last-used filesystem directory, list/thumbnail mode, hidden-file visibility, and sort selection across app relaunches.
+- Seeds the operating system's actual Downloads directory as a default quick location when available.
+- Recent history is bounded to 20 folders.
+- Added shared FileDialog tracking and dedicated regression/CI coverage.
 
 ### v0.15.9 — Independent Vision Token Limits & Input Optimisation
 
-- Added **Vision Context Window Tokens** to Character AI profiles independently of the Text model context window.
-- Added **Vision Maximum Output Tokens** independently of the normal Text-model response limit.
-- Vision jobs remap the dedicated Vision model and Vision token limits onto a temporary routed profile without mutating saved Text settings.
-- Added preflight validation preventing Vision Maximum Output Tokens from exceeding or equalling a known Vision context window.
-- Preserved `0` as an unknown Vision-context value for providers/models whose limit is not known.
-- Added conservative automatic Vision-input optimisation: images at or below 4096 px on the longest edge and 8 MiB pass through unchanged.
-- Oversized images are proportionally resized when needed and encoded to a temporary high-quality WebP solely for the Vision request.
-- Original attachments are never modified, and temporary preprocessing files are removed after the synchronous payload conversion/queueing step.
-- Added v0.15.9 Settings, generation-service, Workspace, app-shell, regression and dedicated CI coverage.
+- Added independent Vision Context Window and Vision Maximum Output token limits.
+- Vision jobs use Vision-specific limits without mutating Text settings.
+- Added preflight validation for impossible Vision output/context combinations.
+- Small images pass through unchanged; genuinely oversized images may be proportionally resized and temporarily encoded as high-quality WebP without modifying originals.
+- Added v0.15.9 Settings, generation-service, Workspace, app-shell, regression and CI coverage.
 
 ### v0.15.8 — Dedicated Vision-Model Routing
 
-- Character Collaborator Vision jobs now copy the selected Vision-role profile and route the provider request through its dedicated `vision_model` value.
-- Normal Text-role requests continue to use the profile's normal `model`; the stored profile is never mutated by Vision routing.
-- A missing/blank Vision model now produces a clear Settings error instead of silently falling back to the Text model and sending it an unsupported image payload.
-- Preserved the full-scene Vision analysis and provenance-tagged Vision → Text handoff introduced in v0.15.7.
-- Added v0.15.8 regression and CI coverage verifying the model remap, non-mutating profile copy, missing-model guard, live service installation, and active shell.
-- Made the v0.15.7 Vision regression forward-compatible with later inherited v0.15 shells.
+- Vision-role requests route through the profile's dedicated `vision_model`; Text requests continue to use `model`.
+- Missing Vision models now produce a clear configuration error instead of silently sending images to the Text model.
+- Preserved the full-scene Vision → Text handoff and added regression coverage.
 
 ### v0.15.7 — Collaborator Vision Pipeline
 
-- Enforced the configured **Vision** provider role for Character Collaborator image attachments instead of allowing image analysis to blur into normal Text-role generation.
-- Expanded Collaborator Vision analysis from appearance-focused extraction to a comprehensive full-scene description covering visible people/characters, appearance, clothing, expressions, poses, interactions, setting/environment, props/objects, readable text, lighting, composition, visual style, and the apparent action or situation.
-- Required the Vision analyst to distinguish direct visual observations from uncertain interpretation rather than inventing relationships, intent, identities, emotions, or off-screen context.
-- The original image payload is sent only to the multimodal Vision request; the separate Text Collaborator receives only the resulting description.
-- Vision-derived context is explicitly labelled **VISION DESCRIPTION OF USER-ATTACHED IMAGE** so the Text model knows it is grounded visual evidence supplied by another model and must not pretend it inspected the original image itself.
-- Stored Vision provenance including profile/model metadata and the raw Vision description alongside the wrapped Text-model context.
-- Added clearer UI status showing which configured Vision profile/model is analysing the attachment and explaining the Vision → Text handoff.
-- Added v0.15.7 regression coverage verifying Vision-role selection, full-scene analysis requirements, provenance tagging, live service installation, and the active v0.15.7 shell.
+- Enforced the configured Vision role for Collaborator image attachments.
+- Vision analysis describes the complete visible scene: people/characters, appearance, clothing, expressions, poses, interactions, setting, props, readable text, lighting, composition, style, and apparent activity.
+- Direct observations are separated from uncertain interpretation.
+- Original image payloads go only to Vision; the Text model receives a provenance-tagged full-scene description.
+- Added visible Vision profile/model status and regression coverage.
 
 ### v0.15.6 — Collaborator Rich-Text Rendering Fix
 
-- Removed the Collaborator renderer's synthetic `RichTextLabel.push_bold()` path that could produce dark vertical marks inside coloured glyphs on affected systems.
-- Preserved heading size hierarchy and semantic section colours without relying on synthetic bold rendering.
-- Inline `**bold**` emphasis now uses a brighter theme-safe tint instead of the artifact-prone bold path.
-- Native italics remain supported.
-- Raw AI response text remains unchanged for persistence and Copy; only presentation rendering changed.
-- Added v0.15.6 regression coverage preventing the synthetic bold path from returning to the Collaborator renderer.
+- Removed synthetic `push_bold()` styling that could create dark glyph artifacts on affected font/Linux stacks.
+- Preserved semantic colour, heading hierarchy, italics, selectable text, and unmodified stored responses.
 
 ### v0.15.5 — Independent Collaborator Session Persistence
 
-- Added a versioned local Collaborator session store under `user://collaborator_sessions`.
-- Every Collaborator conversation now autosaves independently of `.ccfproject` persistence.
-- A chat started from a new or unsaved project survives closing and reopening Character Card Forge even if that project was never saved.
-- Collaborator loads the local conversation library when opened, including draft/unlinked conversations and chats linked to other projects.
-- Added optional linked project ID/name metadata without making the project the owner of the chat.
-- Existing project-embedded Collaborator sessions are merged into the local library so older projects remain portable and migrate forward naturally.
-- Project-linked conversations may still be included as a project snapshot when the project is explicitly saved, but chat autosave no longer calls `save_project()` or forces an otherwise-unsaved project to disk.
-- The session selector distinguishes project-linked conversations from draft/unlinked chats.
-- Added regression coverage that writes, reloads, merges, and removes local Collaborator conversations without any saved project.
+- Added versioned local Collaborator storage under `user://collaborator_sessions`.
+- Chats survive application restart even when started from an unsaved project.
+- Project association is optional metadata rather than ownership.
+- Existing project-embedded chats migrate/merge into the local library while project saves may still include linked snapshots.
 
 ### v0.15.4 — Collaborator Persistence, Behaviour Contract & Rich Text
 
-- Added autosave after each meaningful Collaborator session change, including user messages, AI replies, regenerated variants, summaries, context changes, renames, and deletions.
-- Added **Rename** and **Delete** controls for saved Collaborator conversations, with deletion scoped only to the chat session rather than generated characters or other project data.
-- Strengthened the Collaborator system contract so established facts are preserved by default and contradictory ideas are clearly framed as alternate/rewrite directions.
-- Added proportional response-depth guidance: small changes remain conversational while major design decisions may use deeper structured analysis.
-- Added a non-pathologizing default for unusual traits, sexuality, habits, preferences, and behaviour unless psychological dysfunction is explicitly established or being explored.
-- Added a restricted presentation contract for headings, emphasis, and labelled list sections.
-- AI responses now render headings, italics, bold text, bullets, and semantic labels as native rich text rather than showing raw Markdown markers.
-- Added restrained semantic colours for headings and common labels such as Behavior, Sample dialogue, Effect, Drawback/Warning, and Motive while keeping the raw response available for Copy and transcript persistence.
+- Added autosave after meaningful Collaborator changes plus rename/delete controls.
+- Added canon-preservation, proportional response-depth, and non-pathologizing collaboration rules.
+- Added semantic rich-text rendering for headings, emphasis, bullets, and common design labels while preserving raw response text for storage/Copy.
 
 ### v0.15.3 — Character Collaborator Chat UX
 
-- Added automatic wrapping for long pasted/input text.
-- Added clearly differentiated user and Collaborator message cards.
-- Added selectable chat text, normal context-menu copying, and one-click whole-message Copy actions.
-- Added visible in-chat working states for replies, summarisation, image analysis, and Workspace character generation.
-- Improved auto-scroll after sending, generation start, and response completion by waiting for Godot layout updates before scrolling.
+- Added input wrapping, differentiated user/AI cards, selectable/copyable text, visible working states, and improved auto-scroll.
 
 ### v0.15.2 — Large Output Token Limits
 
-- Removed the Settings UI's effective 131,072 Maximum Output Tokens ceiling.
-- Raised the normal spinner range to 4,194,304 tokens and enabled manually entered values above that range for future models.
-- Kept backend profile storage unbounded above rather than introducing a second hidden clamp.
-- Added regression coverage explicitly requiring support for values above 131,072, including 384k-class output limits.
+- Removed the old 131,072 effective output-token ceiling and allowed modern large-output model limits, including 384k-class values.
 
 ### v0.15.1 — Context Window Budgeting
 
-- Added a separate Context Window Tokens setting to Character AI profiles.
-- Kept Maximum Output Tokens as the response limit rather than treating it as total context capacity.
-- Added unknown-context mode (`0`) that reports estimated input without incorrectly blocking sends.
-- Added input allowance, output reserve, headroom and total-context reporting in Character Collaborator.
-- Prevented oversized configured output reserves from collapsing the calculated input budget to a bogus one-token allowance.
-- Added warning and critical thresholds before a known model context window is exhausted.
+- Added separate model context-window configuration, output reserve/headroom reporting, unknown-context mode, and pre-send context warnings.
 
 ### v0.15.0 — Character Collaborator Foundation
 
-- Added **Author → Character Collaborator…** as a detachable native tool window.
-- Added persistent collaboration sessions with full local message history.
-- Added natural freeform Text-provider conversation for character brainstorming rather than forcing every interaction through structured field generation.
-- Added the active project character as optional read-only collaboration context.
-- Added Character Card JSON and Character Card V2 PNG/APNG import as read-only context using the existing card parser and PNG metadata extraction path.
-- Added PNG/JPG/WebP reference-image context; images are first analysed by the configured Vision provider and the resulting grounded description is supplied to the Text provider.
-- Added approximate context-budget reporting using the selected model/profile context window and a reserved output-token allowance.
-- Added over-budget protection rather than silently sending requests that exceed the configured context budget.
-- Added **Summarise Older Messages…** with a clear warning that compression can lose nuance, exact wording, chronology, or minor detail.
-- Preserved original transcript messages locally even after older content is represented by compressed model-facing memory.
-- Added **Regenerate Response** while retaining previous assistant generations as selectable response variants.
-- Added **Generate Character → Workspace** to materialise the current collaboration through the active template into a normal new Workspace character.
-- Collaboration itself does not mutate character/project data; only explicit handoff actions cross the authoring boundary.
-- Added a v0.15 generation-service layer for collaborator replies, summarisation, vision reference analysis, and final character materialisation.
-- Added v0.15 shell integration and regression coverage while preserving v0.14.22 through inheritance.
+- Added detachable freeform Character Collaborator conversations with local history.
+- Added existing-character, JSON, V2 PNG/APNG, and image reference context.
+- Added context budgeting and explicit lossy summarisation with original transcript preservation.
+- Added response regeneration with variants and **Generate Character → Workspace** handoff.
+- Collaboration remains non-canonical until an explicit apply/generate/import action.
 
 ### v0.14.22 — Shared Graph Canvas + Editable Relationship / Route Charts
 
-- Added one reusable graph-canvas control shared by Relationship Graph and Route / Timeline Flowchart.
-- Every graph card exposes 12 explicit anchor points around its perimeter.
-- Cards can be dragged freely and exact positions are preserved.
-- Anchor-to-anchor connections preserve exact source/destination anchor names.
-- Connections render as labelled orthogonal paths with direction support.
-- Relationship Graph creates freeform labelled relationships directly from dragged connections and retains the permanent `{{user}}` node.
-- Added **Project → Route / Timeline Flowchart…** with character, Linked Variant, and freeform Step/Event nodes.
-- Flowchart edges use freeform labels suitable for choices, events, time skips, alternate routes, and endings.
-- Route/timeline data remains project-level versioned authoring data and does not contaminate Character Card export.
+- Added reusable draggable graph cards with 12 anchors, labelled anchor-to-anchor connections, persistent layout metadata, Relationship Graph editing, and Route/Timeline Flowchart editing.
 
 ### v0.14.21 — `.ccfchar` Authoring Interchange
 
-- Added a versioned `.ccfchar` JSON format for importing externally authored data directly into the active workspace.
-- Sources may contain only Generation Concept, a subset of fields, or a nearly complete character.
-- Supports recognised Overview/metadata, Character, Advanced, template, generation mode/style, Alternative Greetings, and Character Lorebook data.
-- Missing properties never erase current values; explicitly supplied empty values remain intentional edits.
-- Added review-first selective import and safe handling/reporting of unknown top-level keys.
-- Added `docs/ccfchar-format.md` with schema rules, examples, and AI-authoring guidance.
+- Added versioned partial/full external character import covering Overview, Character, Advanced, template, mode/style, Alternative Greetings, and Lorebook data.
+- Added review-first import and `docs/ccfchar-format.md` for human/AI authoring.
 
 ### v0.14.20 — Relationship Graph + Linked Variants
 
-- Added the first detachable Relationship Graph with `{{user}}`, draggable nodes, labelled relationships, and editor-only layout metadata.
-- Added explicit choice between **Linked Variant** and **Full Character** when creating character versions.
-- Linked Variants store sparse differences from a base, recursively inherit unchanged data/assets, and materialise into ordinary complete cards for export.
-- Added cycle protection, dependency checks, base-deletion protection, and Convert Linked Variant to Full Character.
+- Added labelled relationship graphs and sparse Linked Variants that inherit from a base card, store only differences, protect against cycles/dependency deletion, and materialise complete standalone exports.
 
 ### v0.14.19 — Live Idea Generator Service Wiring
 
-- Fixed the unified AI Ideas tab retaining a stale generation-service reference through its hidden legacy controller.
-- Rebinds the visible Generate Ideas path to the current live service so current validation/repair rules actually run.
+- Fixed the visible Idea Generator retaining a stale generation-service reference and rebound it to the live validation/repair service.
 
 ### v0.14.18 — User-Centric SillyTavern Idea Generation
 
-- Reframed AI Ideas around interactive Character Card roleplay with literal `{{user}}` involvement by default.
-- Added roleplay hooks and semantic validation/repair for missing user-centric framing while preserving explicit detached-role exceptions.
+- Reframed AI Ideas around interactive Character Card roleplay with literal `{{user}}` involvement by default and repair for missing user-centric framing.
 
 ### v0.14.17 — Detachable Lorebook Manager
 
-- Made Lorebook Manager a native, non-modal, non-transient tool window suitable for multi-monitor use.
+- Made Lorebook Manager a native non-modal, non-transient tool window suitable for multi-monitor use.
 
 ### v0.14.16 — Idea Generator Identity + POV Validation
 
-- Added explicit character identity/source anchoring and rejected/repaired accidental viewpoint-character replacement or invalid second-person framing.
+- Added explicit identity/source anchoring and validation/repair for accidental viewpoint-character replacement or invalid POV framing.
 
 ### v0.14.15 — Lorebook Generation + Trigger Tools
 
-- Promoted Project/Character Lorebooks into active generation context with deterministic constant/key/selective activation, ordering, token budgets, Trigger Preview, and scope transfer tools.
+- Promoted Project/Character Lorebooks into generation context with constant/key/selective activation, ordering, token budgets, Trigger Preview, and scope transfer tools.
 
 ### v0.14.14 — Focused Character Builders
 
-- Added direct Appearance, Personality, and Scene builders alongside the Full Character builder using external focused-builder schema data.
+- Added focused Appearance, Personality, and Scene builders alongside Full Character builder using external builder schema data.
 
 ### v0.14.13 — Idea Generator POV Safety
 
-- Kept AI Ideas in neutral third-person design prose and preserved `{{user}}` as the eventual chat user.
+- Kept AI Ideas in neutral third-person design prose while preserving `{{user}}` as the eventual chat user.
 
 ### v0.14.12 — Unified Idea Generator
 
-- Combined AI Ideas and Structured Builder into one Idea Generator entry point and retired duplicate/orphan legacy windows.
+- Combined AI Ideas and Structured Builder into one Idea Generator workflow and retired duplicate/orphan windows.
 
 ### v0.14.11 — Structured Idea Builder + Editable Pools
 
@@ -235,11 +189,11 @@ The running development build displays **v0.15.10**. Release metadata remains co
 
 ### v0.14.10 — Related Character / AI Variation
 
-- Added creation of independent related characters or transformed versions seeded by source card, project context, and/or relationships with provenance.
+- Added independent related-character/transformed-version creation seeded by source card, project context, and relationships with provenance.
 
 ### v0.14.9 — Library Assignment UX
 
-- Replaced retyping of existing folder/collection names with assignment pickers and simplified Library filtering/navigation.
+- Added assignment pickers for existing folders/collections and simplified Library filtering/navigation.
 
 ### v0.14.8 — Manual Guided Alternative Greetings
 
@@ -247,7 +201,7 @@ The running development build displays **v0.15.10**. Release metadata remains co
 
 ### v0.14.7 — Manual Guided Component Parity
 
-- Manual Guided now follows enabled template Generation Components and keeps state isolated per character/project.
+- Manual Guided now follows enabled template Generation Components with per-character/project state isolation.
 
 ### v0.14.6 — Preview Selection Safety
 
@@ -263,8 +217,56 @@ The running development build displays **v0.15.10**. Release metadata remains co
 
 ### v0.14.3 — Recoverable Generation Review
 
-- Preserves parseable AI output for user review/editing even when semantic validation still fails after bounded repair.
+- Preserves parseable AI output for review/editing even when semantic validation still fails after bounded repair.
 
 ### v0.14.2 — Character Transfer + Text Input Convention
 
 - Added Move/Copy between projects with character-local data/files and consistent multiline input behaviour.
+
+## In Progress
+
+- Continue validating v0.15 Collaborator → Workspace → full generation round trips against real character projects and different templates.
+- Continue hardening forward-compatible regression tests so a new inherited shell does not falsely break an older feature check.
+- Continue V1 parity review where V1 still has useful authoring workflow details that V2 has not yet surpassed.
+
+## Next Up
+
+- Improve distinction and wording between full-character synthesis, Controlled Build, AI Suggest, and direct manual authoring so users can clearly choose whether AI should rewrite, selectively fill, or leave text untouched.
+- Continue polishing Character Collaborator context management, image-reference workflows, and generation handoff.
+- Continue relationship/route graph usability and Linked Variant workflow testing.
+
+## Planned Features
+
+- Further Library organisation/search/filter polish and large-library performance work.
+- More template authoring/validation tooling and clearer documentation of template generation contracts.
+- Stronger import/export diagnostics and compatibility reporting for external Character Card ecosystems.
+- Additional AI-provider capability discovery where providers expose reliable model metadata.
+- Continued V1 workflow parity where it improves V2 rather than reproducing obsolete architecture.
+
+## Level and Content Tools
+
+Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable, versioned templates, `.ccfchar` interchange, project packages, lorebooks, and future schema/editor tooling. Loading and saving should continue to use the same data model exposed to authoring tools.
+
+## Technical Improvements
+
+- Keep generation services modular and preserve older project/card compatibility as schemas evolve.
+- Reduce inherited-shell regression fragility by testing capability/inheritance rather than exact active-version filenames.
+- Continue warning-as-error GDScript hygiene and CI parsing on Godot 4.6.x.
+- Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
+
+## Polish
+
+- Continue improving semantic colour/theme consistency, keyboard navigation, detachable-window behaviour, multi-monitor use, resizing, and long-text editing.
+- Improve visible progress/error states for potentially long AI operations.
+
+## Long-Term Ideas
+
+- Expand graph tooling into richer character/route planning without contaminating exported card data.
+- Make Character Collaborator capable of increasingly sophisticated project-wide creative planning while keeping explicit boundaries between brainstorming and canonical data.
+- Continue supporting portable user-created templates/content and external AI-assisted authoring workflows.
+
+## Deferred / Experimental Ideas
+
+- More elaborate graph visualisation/layout automation beyond the current draggable anchor-based system.
+- Optional advanced context compression strategies beyond the current explicit user-triggered summarisation model.
+- Experimental provider-specific optimisations should remain opt-in until they can be implemented without weakening the generic OpenAI-compatible path.
