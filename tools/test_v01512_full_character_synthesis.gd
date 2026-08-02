@@ -19,9 +19,33 @@ func _init() -> void:
 	var base_workspace_source := FileAccess.get_file_as_string("res://scripts/ui/workspace_view.gd")
 	assert(base_workspace_source.contains("_suggest_field"), "Selective field generation must remain available separately.")
 	assert(base_workspace_source.contains("Controlled Build"), "Controlled/selective generation must remain available separately.")
-
-	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene_source.contains("main_v01512.gd"), "The active scene must use v0.15.12.")
+	assert(_active_shell_inherits_v01512(), "The active scene must use v0.15.12 or a later shell that inherits it.")
 
 	print("v0.15.12 full character synthesis regression passed")
 	quit(0)
+
+
+func _active_shell_inherits_v01512() -> bool:
+	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
+	var marker := "res://scripts/main_v"
+	var start := scene_source.find(marker)
+	if start < 0:
+		return false
+	var end := scene_source.find(".gd", start)
+	if end < 0:
+		return false
+	var script_path := scene_source.substr(start, end - start + 3)
+	for _depth in range(16):
+		if script_path == "res://scripts/main_v01512.gd":
+			return true
+		var source := FileAccess.get_file_as_string(script_path)
+		var extends_prefix := "extends \""
+		var extends_start := source.find(extends_prefix)
+		if extends_start < 0:
+			return false
+		extends_start += extends_prefix.length()
+		var extends_end := source.find("\"", extends_start)
+		if extends_end < 0:
+			return false
+		script_path = source.substr(extends_start, extends_end - extends_start)
+	return false

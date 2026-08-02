@@ -31,6 +31,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Character Collaborator should preserve established canon by default, deepen existing material before rewriting premises, and make alternate/rewrite directions explicit rather than silently replacing accepted facts.
 - Collaborator presentation should use semantic rich text for readability while preserving the original model response in stored conversation data.
 - Collaborator conversations are independent local authoring documents. A project link is optional metadata and must never be required for a chat to survive an app restart.
+- Collaborator autosave on the interactive send path should touch only the active conversation; unrelated archived chats must not make current-message preparation slower.
 - Rich-text styling must remain readable across supported platforms and should not depend on synthetic font effects that introduce glyph-rendering artifacts.
 - Collaborator image attachments must be analysed by the configured Vision role first. The Text role receives a comprehensive Vision-derived description of the full scene, never the original image payload, and decides how to use that evidence according to the author's request.
 - AI profiles may expose different Text and Vision model IDs; Vision-role requests must route through the dedicated `vision_model` while Text-role requests continue to use `model`.
@@ -38,16 +39,32 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Vision input preprocessing must preserve originals and only optimise genuinely oversized files; small images should pass through unchanged.
 - File-dialog authoring state should survive application restarts instead of depending on Godot's process-local FileDialog state.
 - **Generate Character** is a full synthesis action: populated Workspace fields are authoritative source material, while the active template defines the generated output contract. Selective/missing-field tools remain separate workflows.
+- Full synthesis review should expose the complete returned template result, including intentionally preserved values, rather than collapsing review to only byte-different fields.
 
 ## Current Development Phase
 
-**v0.15.12 development candidate — full character synthesis from Workspace**
+**v0.15.13 development candidate — complete synthesis review and Collaborator responsiveness**
 
-The v0.15 line now has persistent Character Collaborator sessions, strict Vision → Text handling, visible Vision analysis, durable desktop FileDialog state, and a full-character generation path that can materialise a finished card from an already-populated Workspace instead of treating filled fields as “nothing to generate.”
+The v0.15 line now has persistent Character Collaborator sessions, strict Vision → Text handling, visible Vision analysis, durable desktop FileDialog state, and full-character synthesis from an already-populated Workspace. v0.15.13 tightens that synthesis contract so every generatable template field is requested and reviewable, while reducing local pre-request work on long Collaborator conversations and making preparation feedback visible immediately.
 
-The running development build displays **v0.15.12**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.13**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.13 — Complete Synthesis Review + Collaborator Responsiveness
+
+- Strengthened full-character synthesis so every AI-generatable field in the active template is explicitly mandatory in the synthesis response, even when the Workspace already contains a value.
+- Added stronger whole-character editorial guidance: preserve canon, reconcile cross-field facts, and actively polish each returned field into final-form card text rather than treating populated fields as finished work.
+- Full-synthesis preview now shows every returned template field, including fields whose final value intentionally matches the existing Workspace text.
+- Missing requested synthesis fields are reported explicitly in the preview instead of silently making a complete generation look like a one-field update.
+- Character Collaborator now paints a **Preparing context…** state before token estimation, transcript assembly, autosave, or request construction so long conversations no longer look unresponsive immediately after Send.
+- Context-budget validation now includes the newly pasted message instead of checking only the previous transcript.
+- Added a high defensive single-message safety bound so pathological pastes fail gracefully instead of creating an unbounded UI/request workload.
+- Added targeted Collaborator autosave that writes only the active session on the message hot path instead of serialising every saved chat after each message.
+- Deferred project chat snapshots now include only conversations linked to the current project, so unrelated saved conversations do not inflate normal current-chat updates.
+- Fixed the two Godot 4.6.3 `INT_AS_ENUM_WITHOUT_CAST` FileDialog warnings by explicitly restoring persisted integers as `FileDialog.DisplayMode` enum values.
+- Made the v0.15.12 regression forward-compatible with later inherited app shells.
+- Added dedicated v0.15.13 regression and CI coverage.
 
 ### v0.15.12 — Full Character Synthesis from Workspace
 
@@ -225,7 +242,8 @@ The running development build displays **v0.15.12**. Release metadata remains co
 
 ## In Progress
 
-- Continue validating v0.15 Collaborator → Workspace → full generation round trips against real character projects and different templates.
+- Validate v0.15.13 full synthesis against real populated Collaborator handoffs and different templates, especially whether providers consistently return all requested template keys.
+- Continue profiling very long Collaborator sessions so token estimation, transcript rendering, and autosave remain responsive at large context sizes.
 - Continue hardening forward-compatible regression tests so a new inherited shell does not falsely break an older feature check.
 - Continue V1 parity review where V1 still has useful authoring workflow details that V2 has not yet surpassed.
 
@@ -253,11 +271,12 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Reduce inherited-shell regression fragility by testing capability/inheritance rather than exact active-version filenames.
 - Continue warning-as-error GDScript hygiene and CI parsing on Godot 4.6.x.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
+- Continue reducing synchronous whole-library work from interactive Collaborator paths as conversation histories grow.
 
 ## Polish
 
 - Continue improving semantic colour/theme consistency, keyboard navigation, detachable-window behaviour, multi-monitor use, resizing, and long-text editing.
-- Improve visible progress/error states for potentially long AI operations.
+- Improve visible progress/error states for potentially long AI operations and distinguish local context preparation from provider/model thinking time.
 
 ## Long-Term Ideas
 

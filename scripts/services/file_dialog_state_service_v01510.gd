@@ -117,7 +117,7 @@ func _track_dialog_v01510(dialog: FileDialog) -> void:
 	if _tracked_dialog_ids_v01510.has(instance_id):
 		return
 	_tracked_dialog_ids_v01510[instance_id] = true
-	dialog.display_mode = int(_state_v01510.get("display_mode", FileDialog.DISPLAY_THUMBNAILS))
+	dialog.display_mode = int(_state_v01510.get("display_mode", FileDialog.DISPLAY_THUMBNAILS)) as FileDialog.DisplayMode
 	dialog.show_hidden_files = bool(_state_v01510.get("show_hidden_files", false))
 	var last_dir := str(_state_v01510.get("last_filesystem_dir", "")).strip_edges()
 	if dialog.access == FileDialog.ACCESS_FILESYSTEM and not last_dir.is_empty() and DirAccess.dir_exists_absolute(last_dir):
@@ -137,7 +137,7 @@ func _on_dialog_visibility_changed_v01510(dialog: FileDialog) -> void:
 	if not is_instance_valid(dialog):
 		return
 	if dialog.visible:
-		dialog.display_mode = int(_state_v01510.get("display_mode", dialog.display_mode))
+		dialog.display_mode = int(_state_v01510.get("display_mode", dialog.display_mode)) as FileDialog.DisplayMode
 		dialog.show_hidden_files = bool(_state_v01510.get("show_hidden_files", dialog.show_hidden_files))
 		FileDialog.set_favorite_list(PackedStringArray(_state_v01510.get("favorites", [])))
 		FileDialog.set_recent_list(PackedStringArray(_state_v01510.get("recents", [])))
