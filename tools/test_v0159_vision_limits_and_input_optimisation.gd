@@ -25,6 +25,9 @@ func _init() -> void:
 	assert(main_source.contains("WORKSPACE_V0159"), "The v0.15.9 shell must install the new Workspace.")
 	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
 	assert(scene_source.contains("main_v0159.gd"), "The active scene must use v0.15.9.")
+	var roadmap_source := FileAccess.get_file_as_string("res://roadmap.md")
+	assert(roadmap_source.contains("v0.15.9 development candidate"), "The project roadmap must track the active v0.15.9 development phase.")
+	assert(roadmap_source.contains("Independent Vision Token Limits & Input Optimisation"), "The roadmap must record the v0.15.9 feature set.")
 
 	print("v0.15.9 Vision limits and input optimisation regression passed")
 	quit(0)
