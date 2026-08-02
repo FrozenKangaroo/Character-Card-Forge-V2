@@ -349,10 +349,10 @@ func _normalise_alternative_greetings_v01517(value: Variant) -> Array[String]:
 
 func _normalise_lorebook_v01517(value: Variant) -> Dictionary:
 	var lorebook: Dictionary = value.duplicate(true) if value is Dictionary else {}
-	var name := str(lorebook.get("name", "Character Lorebook")).strip_edges()
-	if name.is_empty():
-		name = "Character Lorebook"
-	lorebook["name"] = name
+	var book_name := str(lorebook.get("name", "Character Lorebook")).strip_edges()
+	if book_name.is_empty():
+		book_name = "Character Lorebook"
+	lorebook["name"] = book_name
 	var entries_value: Variant = lorebook.get("entries", [])
 	if not entries_value is Array:
 		lorebook["entries"] = []

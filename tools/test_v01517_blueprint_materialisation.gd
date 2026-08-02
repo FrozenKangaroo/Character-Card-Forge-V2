@@ -79,9 +79,12 @@ func _init() -> void:
 	assert(workspace_source.contains("queue_character_generation"), "Normal template fields must still use the validated character-generation pipeline.")
 
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01517.gd")
-	assert(main_source.contains('BUILD_DISPLAY_VERSION_V01517 := "0.15.17"'), "The v0.15.17 shell must expose its build version.")
+	assert(main_source.contains('BUILD_DISPLAY_VERSION_V01517 := "0.15.17"'), "The v0.15.17 shell must continue to expose its own build version.")
 	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene_source.contains("main_v01517.gd"), "The active scene must use v0.15.17.")
+	assert(
+		scene_source.contains("main_v01517.gd") or scene_source.contains("main_v01518.gd"),
+		"The active scene must use v0.15.17 or a later inherited app shell."
+	)
 
 	workspace.free()
 	service.free()

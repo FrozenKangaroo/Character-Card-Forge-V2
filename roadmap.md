@@ -46,16 +46,27 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Alternative Greetings and Character Lorebook material developed during Blueprint collaboration are first-class character data as well as preserved source text. Structured copies should land in the existing `character.alternate_greetings` and `character.character_book` paths without weakening the validated normal-template generation contract.
 - Direct field-filling from Collaborator remains an explicit alternative workflow and should preserve high detail while carrying supplementary character data such as Alternative Greetings and Character Lorebook entries.
 - The generation service installed in the live Workspace must retain the complete parity/validation inheritance chain. Regression tests must verify the actual active service composition, not only isolated helper classes that may no longer be wired into runtime generation.
+- Normal Godot import/open operations should leave the Git checkout clean. Generated script UID sidecars remain non-canonical local metadata until the project deliberately adopts one checked-in UID set, and default ProjectSettings should use Godot's canonical serialization rather than being repeatedly rewritten.
 
 ## Current Development Phase
 
-**v0.15.17 development candidate — Blueprint supplementary materialisation + handoff continuity**
+**v0.15.18 development candidate — Godot checkout hygiene + warning cleanup**
 
-v0.15.17 closes the remaining Collaborator → Workspace continuity gaps exposed by real Blueprint testing. The handoff now preserves the active custom template instead of falling back to the built-in Default template, Blueprint output carries structured Alternative Greetings and Character Lorebook data alongside the canonical Generation Concept, older Blueprint-created characters can materialise missing supplementary data from their existing concept when Generate Character is used, and the readable Interview/Q&A review metadata lost by the v0.15.16 inheritance repair is restored at the active service leaf.
+v0.15.18 is a release-preparation maintenance build. It removes the recurring false-dirty state that was making both `update.sh` and `release.sh` stop on normal Godot-generated metadata, aligns `project.godot` with Godot 4.6's canonical serialization while preserving disabled desktop stretch behaviour, and removes the v0.15.17 Lorebook `Node.name` shadowing warning before the next tagged release.
 
-The running development build displays **v0.15.17**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.18**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.18 — Godot Checkout Hygiene + Warning Cleanup
+
+- Added a repository policy for regenerated `*.gd.uid` script sidecars: they are ignored until Character Card Forge deliberately performs a one-time canonical UID migration and commits a stable project-wide set.
+- This prevents the large batches of locally generated GDScript UID sidecars from making `git status`, `update.sh`, or the destination-safety checks in `release.sh` report false local modifications.
+- Removed the explicit `window/stretch/mode="disabled"` line from `project.godot`. Godot 4.6 resolves the omitted default to `disabled`, so desktop-native resizing behaviour is unchanged while Godot no longer deletes the line and dirties the checkout after import/open.
+- Kept the existing v0.14.1 runtime regression that verifies the resolved stretch mode is actually `disabled` rather than relying on serialized text alone.
+- Fixed the v0.15.17 `SHADOWED_VARIABLE_BASE_CLASS` warning by renaming the local Lorebook `name` variable to `book_name`, avoiding collision with `Node.name`.
+- Added a v0.15.18 regression covering the UID ignore policy, canonical `project.godot` serialization, runtime stretch-mode resolution, warning-safe Lorebook normalisation, active version shell, and the existing Git-safety mechanisms used by `update.sh`/`release.sh`.
+- Added dedicated Godot 4.6.3 CI that imports the project and then explicitly fails if `git status` is dirty, so future Godot-generated checkout noise is caught before merge/release.
 
 ### v0.15.17 — Blueprint Supplementary Materialisation + Handoff Continuity
 
@@ -127,7 +138,7 @@ The running development build displays **v0.15.17**. Release metadata remains co
 - Context-budget validation now includes the newly pasted message instead of checking only the previous transcript.
 - Added a high defensive single-message safety bound so pathological pastes fail gracefully instead of creating an unbounded UI/request workload.
 - Added targeted Collaborator autosave that writes only the active session on the message hot path instead of serialising every saved chat after each message.
-- Deferred project chat snapshots now include only conversations linked to the current project, so unrelated saved conversations do not inflate normal current-chat updates.
+- Deferred project chat snapshots now include only conversations linked to the current project, so unrelated saved conversations no longer inflate normal current-chat updates.
 - Fixed the two Godot 4.6.3 `INT_AS_ENUM_WITHOUT_CAST` FileDialog warnings by explicitly restoring persisted integers as `FileDialog.DisplayMode` enum values.
 - Made the v0.15.12 regression forward-compatible with later inherited app shells.
 - Added dedicated v0.15.13 regression and CI coverage.
@@ -308,7 +319,9 @@ The running development build displays **v0.15.17**. Release metadata remains co
 
 ## In Progress
 
-- Runtime-test v0.15.17 with real Blueprint → Generate Character flows using both the built-in Default template and the user's preferred custom/default template; confirm the template remains selected after handoff and validated generation follows its Generation Components.
+- Runtime-test v0.15.18 on the same Linux/Godot workflow that previously produced batches of `.gd.uid` files and removed the explicit stretch line; confirm opening/importing the project now leaves `git status` clean.
+- Run both `update.sh` and `release.sh` after that normal Godot session and confirm neither reports the previous false local-change warning while real tracked edits still remain protected.
+- Runtime-test v0.15.17 Blueprint → Generate Character flows using both the built-in Default template and the user's preferred custom/default template; confirm the template remains selected after handoff and validated generation follows its Generation Components.
 - Confirm generated Interview/Q&A responses again appear in **Latest generation interview responses**, including Manual-vs-AI provenance, after a real provider run and after save/reopen.
 - Validate new Blueprint handoff against long Collaborator sessions containing multiple Alternative Greetings and substantial side-character/location lore; confirm the structured character data matches the preserved Blueprint source without dropping concrete details.
 - Validate compatibility materialisation on a character created by v0.15.15/v0.15.16 Blueprint handoff whose Generation Concept already contains Alternative Greetings/Lorebook sections but whose structured fields are still empty.
@@ -320,6 +333,7 @@ The running development build displays **v0.15.17**. Release metadata remains co
 
 ## Next Up
 
+- Perform a deliberate canonical GDScript UID migration later: generate one stable project-wide `.gd.uid` set, commit it together, remove the temporary ignore rule, and add CI that detects unexpected UID churn rather than treating arbitrary local sidecars as source.
 - Decide whether Blueprint supplementary material should gain its own explicit review dialog before being committed, or whether the existing editable Alternative Greetings tab and Lorebook Manager provide sufficient review once the material is placed there.
 - Revisit the v0.15.12–v0.15.14 full-Workspace synthesis idea only if it can be layered through the restored parity pipeline without bypassing template-contract validation, repair, Mode & Style, Interview/Q&A, Builder precedence or concept fidelity.
 - Improve visibility/diagnostics around exactly which Generation Groups and components participated in a generated result.
@@ -345,6 +359,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Treat runtime generation-service composition as a tested compatibility boundary; new service subclasses must extend the previous capability chain unless a deliberate replacement is documented and integration-tested.
 - Reduce inherited-shell regression fragility by testing capability/inheritance rather than exact active-version filenames.
 - Continue warning-as-error GDScript hygiene and CI parsing on Godot 4.6.x.
+- Keep normal Godot import/open operations checkout-clean; CI should detect repository-visible generated metadata before it reaches update/release workflows.
+- Keep the temporary `*.gd.uid` ignore narrowly scoped to the current non-canonical sidecar phase and replace it with a checked-in canonical UID set when that migration is intentionally performed.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
 - Continue reducing synchronous whole-library work from interactive Collaborator paths as conversation histories grow.
 - Keep Generation Component semantics data-driven so new groups/components can be added without hard-coding Description or Personality behavior into the service.
@@ -365,7 +381,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Deferred / Experimental Ideas
 
-- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.17 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
+- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.18 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
 - More elaborate graph visualisation/layout automation beyond the current draggable anchor-based system.
 - Optional advanced context compression strategies beyond the current explicit user-triggered summarisation model.
 - Experimental provider-specific optimisations should remain opt-in until they can be implemented without weakening the generic OpenAI-compatible path.
