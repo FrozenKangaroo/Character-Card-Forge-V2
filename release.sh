@@ -4,7 +4,31 @@ set -euo pipefail
 EXPECTED_REMOTE="https://github.com/FrozenKangaroo/Character-Card-Forge-V2.git"
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 DEFAULT_REPO_DIR="${HOME}/Projects/Character-Card-Forge-V2"
-REPO_DIR_INPUT="${CCF_REPO_DIR:-${DEFAULT_REPO_DIR}}"
+
+resolve_repository_input() {
+    if [[ -n "${CCF_REPO_DIR:-}" ]]; then
+        printf '%s\n' "${CCF_REPO_DIR}"
+        return 0
+    fi
+
+    local source_root=""
+    if source_root="$(git -C "${SOURCE_DIR}" rev-parse --show-toplevel 2>/dev/null)"; then
+        source_root="$(cd "${source_root}" && pwd -P)"
+        if [[ "${source_root}" == "${SOURCE_DIR}" ]]; then
+            printf '%s\n' "${SOURCE_DIR}"
+            return 0
+        fi
+    fi
+
+    printf '%s\n' "${DEFAULT_REPO_DIR}"
+}
+
+REPO_DIR_INPUT="$(resolve_repository_input)"
+
+if [[ "${CCF_RELEASE_PRINT_REPO_ONLY:-0}" == "1" ]]; then
+    printf '%s\n' "${REPO_DIR_INPUT}"
+    exit 0
+fi
 
 print_status() {
     printf '\033[0;36m=== %s ===\033[0m\n' "$1"
@@ -135,6 +159,8 @@ sync_to_repository() {
     fi
 
     if [[ "${SOURCE_DIR}" == "${repo_dir}" ]]; then
+        print_status "Using current repository checkout"
+        echo "Release repository: ${repo_dir}"
         cd "${repo_dir}"
         return 0
     fi
@@ -182,7 +208,7 @@ sync_to_repository() {
         "${SOURCE_DIR}/" \
         "${repo_dir}/"
 
-    chmod +x "${repo_dir}/release.sh"
+    chmod +x "${repo_dir}/release.sh" "${repo_dir}/update.sh"
     if compgen -G "${repo_dir}/tools/*.sh" >/dev/null; then
         chmod +x "${repo_dir}"/tools/*.sh
     fi
