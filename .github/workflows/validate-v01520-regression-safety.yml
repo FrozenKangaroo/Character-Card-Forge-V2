@@ -1,0 +1,53 @@
+name: Validate v0.15.20 broad regression safety
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v01520-regression-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.6.3'
+  GODOT_STATUS: stable
+
+jobs:
+  broad-regression:
+    name: Broad cross-feature regression gate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Validate project metadata
+        run: python3 ./tools/validate_project.py
+
+      - name: Import and parse project
+        run: godot --headless --path . --import
+
+      - name: Confirm import leaves checkout clean
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain --untracked-files=normal)" ]]; then
+            echo "Godot import created repository-visible changes:"
+            git status --short
+            exit 1
+          fi
+
+      - name: Validate v0.15.20 regression registry and live wiring
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01520_regression_safety.gd
+
+      - name: Run broad release regression profile
+        run: python3 ./tools/run_regression_suite.py --profile release --godot "$(command -v godot)"
