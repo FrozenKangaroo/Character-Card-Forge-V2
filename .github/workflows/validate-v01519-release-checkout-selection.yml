@@ -1,0 +1,39 @@
+name: Validate v0.15.19 release checkout selection
+
+on:
+  pull_request:
+    paths:
+      - 'release.sh'
+      - 'update.sh'
+      - 'scripts/main_v01519.gd'
+      - 'scenes/main.tscn'
+      - 'tools/test_v01518_checkout_hygiene.gd'
+      - 'tools/test_v01519_release_checkout_selection.gd'
+      - 'tools/test_v01519_release_checkout_selection.sh'
+      - '.github/workflows/validate-v01519-release-checkout-selection.yml'
+  workflow_dispatch:
+
+jobs:
+  release-checkout-selection:
+    runs-on: ubuntu-24.04
+    env:
+      GODOT_VERSION: '4.6.3'
+      GODOT_STATUS: stable
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project
+        run: godot --headless --path . --import
+
+      - name: Recheck v0.15.18 checkout hygiene
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01518_checkout_hygiene.gd
+
+      - name: Test v0.15.19 release selection shell behavior
+        run: bash ./tools/test_v01519_release_checkout_selection.sh
+
+      - name: Test v0.15.19 app-shell integration
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01519_release_checkout_selection.gd
