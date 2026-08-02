@@ -32,16 +32,28 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Collaborator presentation should use semantic rich text for readability while preserving the original model response in stored conversation data.
 - Collaborator conversations are independent local authoring documents. A project link is optional metadata and must never be required for a chat to survive an app restart.
 - Rich-text styling must remain readable across supported platforms and should not depend on synthetic font effects that introduce glyph-rendering artifacts.
+- Collaborator image attachments must be analysed by the configured Vision role first. The Text role receives a comprehensive Vision-derived description of the full scene, never the original image payload, and decides how to use that evidence according to the author's request.
 
 ## Current Development Phase
 
-**v0.15.6 development candidate — Character Collaborator rich-text rendering fix**
+**v0.15.7 development candidate — Character Collaborator Vision pipeline**
 
-The v0.15 line now has a usable long-form conversational authoring workflow with independent persistent chats. v0.15.6 is a focused rendering-quality fix for coloured/bold Collaborator responses on affected Linux/font stacks: semantic colours and heading hierarchy are retained while the artifact-prone synthetic bold path is removed.
+The v0.15 line now has a usable long-form conversational authoring workflow with independent persistent chats. v0.15.7 makes image attachments follow a strict two-stage multimodal pipeline: the configured Vision model inspects and describes the complete image, then the text-only Collaborator receives that explicitly provenance-tagged description as reference context.
 
-The running development build displays **v0.15.6**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.7**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.7 — Collaborator Vision Pipeline
+
+- Enforced the configured **Vision** provider role for Character Collaborator image attachments instead of allowing image analysis to blur into normal Text-role generation.
+- Expanded Collaborator Vision analysis from appearance-focused extraction to a comprehensive full-scene description covering visible people/characters, appearance, clothing, expressions, poses, interactions, setting/environment, props/objects, readable text, lighting, composition, visual style, and the apparent action or situation.
+- Required the Vision analyst to distinguish direct visual observations from uncertain interpretation rather than inventing relationships, intent, identities, emotions, or off-screen context.
+- The original image payload is sent only to the multimodal Vision request; the separate Text Collaborator receives only the resulting description.
+- Vision-derived context is explicitly labelled **VISION DESCRIPTION OF USER-ATTACHED IMAGE** so the Text model knows it is grounded visual evidence supplied by another model and must not pretend it inspected the original image itself.
+- Stored Vision provenance including profile/model metadata and the raw Vision description alongside the wrapped Text-model context.
+- Added clearer UI status showing which configured Vision profile/model is analysing the attachment and explaining the Vision → Text handoff.
+- Added v0.15.7 regression coverage verifying Vision-role selection, full-scene analysis requirements, provenance tagging, live service installation, and the active v0.15.7 shell.
 
 ### v0.15.6 — Collaborator Rich-Text Rendering Fix
 
