@@ -1,0 +1,34 @@
+name: Validate v0.15.5 Collaborator persistence
+
+on:
+  pull_request:
+    paths:
+      - "scripts/services/collaborator_session_store_v0155.gd"
+      - "scripts/ui/character_collaborator_window_v0155.gd"
+      - "scripts/ui/workspace_v0155.gd"
+      - "scripts/main_v0155.gd"
+      - "scenes/main.tscn"
+      - "tools/test_v0155_independent_collaborator_sessions.gd"
+      - ".github/workflows/validate_v0155.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-v0155:
+    name: Independent Collaborator sessions
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GODOT_VERSION: 4.6.3
+      GODOT_STATUS: stable
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+      - name: Import and parse project
+        run: godot --headless --path . --import
+      - name: Test v0.15.5 independent Collaborator persistence
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0155_independent_collaborator_sessions.gd

@@ -30,20 +30,33 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Provider/model token limits must remain data-driven; UI controls must not impose obsolete ceilings that prevent use of newer long-context/high-output models.
 - Character Collaborator should preserve established canon by default, deepen existing material before rewriting premises, and make alternate/rewrite directions explicit rather than silently replacing accepted facts.
 - Collaborator presentation should use semantic rich text for readability while preserving the original model response in stored conversation data.
+- Collaborator conversations are independent local authoring documents. A project link is optional metadata and must never be required for a chat to survive an app restart.
 
 ## Current Development Phase
 
-**v0.15.4 development candidate — Character Collaborator persistence, behaviour contract, and rich presentation**
+**v0.15.5 development candidate — independent Character Collaborator session persistence**
 
-The v0.15 line now has a usable long-form conversational authoring workflow. After context budgeting, large-model support, and core chat UX, v0.15.4 focuses on making Collaborator sessions durable and easier to manage while tightening the creative contract around established character facts and rendering structured model output as native styled chat content instead of exposing raw Markdown markers.
+The v0.15 line now has a usable long-form conversational authoring workflow. v0.15.5 fixes the remaining persistence architecture problem by moving the authoritative chat history out of project-save ownership and into a dedicated local Collaborator Library. Unsaved projects can therefore be closed without destroying their brainstorming conversations, while project-linked snapshots remain available for portability and backwards compatibility.
 
-The running development build displays **v0.15.4**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.5**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
 
+### v0.15.5 — Independent Collaborator Session Persistence
+
+- Added a versioned local Collaborator session store under `user://collaborator_sessions`.
+- Every Collaborator conversation now autosaves independently of `.ccfproject` persistence.
+- A chat started from a new or unsaved project survives closing and reopening Character Card Forge even if that project was never saved.
+- Collaborator loads the local conversation library when opened, including draft/unlinked conversations and chats linked to other projects.
+- Added optional linked project ID/name metadata without making the project the owner of the chat.
+- Existing project-embedded Collaborator sessions are merged into the local library so older projects remain portable and migrate forward naturally.
+- Project-linked conversations may still be included as a project snapshot when the project is explicitly saved, but chat autosave no longer calls `save_project()` or forces an otherwise-unsaved project to disk.
+- The session selector distinguishes project-linked conversations from draft/unlinked chats.
+- Added regression coverage that writes, reloads, merges, and removes local Collaborator conversations without any saved project.
+
 ### v0.15.4 — Collaborator Persistence, Behaviour Contract & Rich Text
 
-- Autosaves Collaborator session data to the project after each meaningful session change, including user messages, AI replies, regenerated variants, summaries, context changes, renames, and deletions.
+- Added autosave after each meaningful Collaborator session change, including user messages, AI replies, regenerated variants, summaries, context changes, renames, and deletions.
 - Added **Rename** and **Delete** controls for saved Collaborator conversations, with deletion scoped only to the chat session rather than generated characters or other project data.
 - Strengthened the Collaborator system contract so established facts are preserved by default and contradictory ideas are clearly framed as alternate/rewrite directions.
 - Added proportional response-depth guidance: small changes remain conversational while major design decisions may use deeper structured analysis.
@@ -79,7 +92,7 @@ The running development build displays **v0.15.4**. Release metadata remains con
 ### v0.15.0 — Character Collaborator Foundation
 
 - Added **Author → Character Collaborator…** as a detachable native tool window.
-- Added persistent per-project collaboration sessions with full local message history.
+- Added persistent collaboration sessions with full local message history.
 - Added natural freeform Text-provider conversation for character brainstorming rather than forcing every interaction through structured field generation.
 - Added the active project character as optional read-only collaboration context.
 - Added Character Card JSON and Character Card V2 PNG/APNG import as read-only context using the existing card parser and PNG metadata extraction path.
