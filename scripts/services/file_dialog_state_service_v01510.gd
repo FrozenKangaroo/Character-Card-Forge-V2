@@ -89,9 +89,9 @@ func _restore_shared_lists_v01510() -> void:
 
 
 func _capture_shared_lists_v01510() -> bool:
-	var favorites := _normalise_path_list_v01510(FileDialog.get_favorite_list(), 0)
-	var recents := _normalise_path_list_v01510(FileDialog.get_recent_list(), MAX_RECENT_DIRS_V01510)
-	var changed := favorites != _state_v01510.get("favorites", []) or recents != _state_v01510.get("recents", [])
+	var favorites: Array = _normalise_path_list_v01510(FileDialog.get_favorite_list(), 0)
+	var recents: Array = _normalise_path_list_v01510(FileDialog.get_recent_list(), MAX_RECENT_DIRS_V01510)
+	var changed: bool = favorites != _state_v01510.get("favorites", []) or recents != _state_v01510.get("recents", [])
 	if changed:
 		_state_v01510["favorites"] = favorites
 		_state_v01510["recents"] = recents
