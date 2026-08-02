@@ -4,7 +4,7 @@ extends SceneTree
 func _init() -> void:
 	var service_source := FileAccess.get_file_as_string("res://scripts/services/generation_service_v0154.gd")
 	for marker in [
-		"Preserve established character facts by default",
+		"preserve established character facts by default",
 		"alternate/rewrite directions",
 		"Prefer deepening, connecting, and extending existing material",
 		"Match response depth to the current stage of collaboration",
