@@ -47,9 +47,11 @@ func _active_shell_inherits_v01513() -> bool:
 	if end_at < 0:
 		return false
 	var path := scene_source.substr(marker_at, end_at - marker_at)
-	for _depth in range(16):
+	var visited := {}
+	while not path.is_empty() and not visited.has(path):
 		if path == "res://scripts/main_v01513.gd":
 			return true
+		visited[path] = true
 		if not FileAccess.file_exists(path):
 			return false
 		var source := FileAccess.get_file_as_string(path)
