@@ -4,6 +4,7 @@ extends "res://scripts/ui/character_collaborator_window_v01515.gd"
 const ATTACHMENT_SERVICE_V01521 = preload("res://scripts/services/collaborator_attachment_service_v01521.gd")
 
 var _attach_files_button_v01521: Button
+var _attach_chat_button_v01521: Button
 var _attachment_dialog_v01521: FileDialog
 
 
@@ -15,6 +16,15 @@ func _ready() -> void:
 
 
 func _install_attachment_controls_v01521() -> void:
+	if _send_button != null and _send_button.get_parent() != null:
+		var chat_actions := _send_button.get_parent()
+		_attach_chat_button_v01521 = Button.new()
+		_attach_chat_button_v01521.text = "Attach…"
+		_attach_chat_button_v01521.tooltip_text = "Attach reference images, text/Markdown, subtitle scripts or JSON without pasting their contents into the message box."
+		_attach_chat_button_v01521.pressed.connect(_open_attachment_dialog_v01521)
+		chat_actions.add_child(_attach_chat_button_v01521)
+		chat_actions.move_child(_attach_chat_button_v01521, _send_button.get_index())
+
 	if _context_list == null:
 		return
 	var context_scroll := _context_list.get_parent()
@@ -27,20 +37,18 @@ func _install_attachment_controls_v01521() -> void:
 		if node is Button and (node as Button).text == "Add Reference Image…":
 			old_image_button = node as Button
 			break
-	if old_image_button == null or old_image_button.get_parent() == null:
-		return
+	if old_image_button != null and old_image_button.get_parent() != null:
+		var actions := old_image_button.get_parent()
+		var insert_index := old_image_button.get_index()
+		old_image_button.visible = false
+		old_image_button.disabled = true
 
-	var actions := old_image_button.get_parent()
-	var insert_index := old_image_button.get_index()
-	old_image_button.visible = false
-	old_image_button.disabled = true
-
-	_attach_files_button_v01521 = Button.new()
-	_attach_files_button_v01521.text = "Attach Files…"
-	_attach_files_button_v01521.tooltip_text = "Attach images or text-based reference files. Supported text formats: TXT, Markdown, SRT, ASS/SSA and JSON. Images continue through the configured Vision model."
-	_attach_files_button_v01521.pressed.connect(_open_attachment_dialog_v01521)
-	actions.add_child(_attach_files_button_v01521)
-	actions.move_child(_attach_files_button_v01521, insert_index)
+		_attach_files_button_v01521 = Button.new()
+		_attach_files_button_v01521.text = "Attach Files…"
+		_attach_files_button_v01521.tooltip_text = "Attach images or text-based reference files. Supported text formats: TXT, Markdown, SRT, ASS/SSA and JSON. Images continue through the configured Vision model."
+		_attach_files_button_v01521.pressed.connect(_open_attachment_dialog_v01521)
+		actions.add_child(_attach_files_button_v01521)
+		actions.move_child(_attach_files_button_v01521, insert_index)
 
 	for node in context_panel.find_children("*", "Label", true, false):
 		if not node is Label:
@@ -262,5 +270,8 @@ func _remove_image_attachment_context_v01521(source_path: String) -> void:
 
 func _refresh_action_state() -> void:
 	super._refresh_action_state()
+	var busy := _generation_service != null and _generation_service.has_active_job()
 	if _attach_files_button_v01521 != null:
-		_attach_files_button_v01521.disabled = _generation_service != null and _generation_service.has_active_job()
+		_attach_files_button_v01521.disabled = busy
+	if _attach_chat_button_v01521 != null:
+		_attach_chat_button_v01521.disabled = busy
