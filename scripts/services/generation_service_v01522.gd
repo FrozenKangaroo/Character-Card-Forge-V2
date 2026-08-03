@@ -349,7 +349,7 @@ func _safe_common_context_v01522(job: Dictionary) -> String:
 			if not raw_field is Dictionary:
 				continue
 			var field: Dictionary = raw_field
-			var value := CCFStorageService.get_value_at_path(project, str(field.get("path", "")), "")
+			var value: Variant = CCFStorageService.get_value_at_path(project, str(field.get("path", "")), "")
 			var value_text := _value_to_text(value).strip_edges()
 			if value_text.is_empty():
 				continue
@@ -656,7 +656,7 @@ func _start_safe_field_repair_v01522(section: Dictionary, issues: Array) -> void
 			_join_string_array(_issue_texts_v01522(issues), "\n- ")
 		]
 	)
-	var previous := _active_job.get("safe_pending_field_value", null)
+	var previous: Variant = _active_job.get("safe_pending_field_value", null)
 	if _value_has_content_v01522(previous):
 		prompt += "\n\nPrevious value to improve rather than unrelatedly rewrite:\n%s" % _value_to_text(previous)
 	var instruction := str(field.get("generation_prompt", "")).strip_edges()
