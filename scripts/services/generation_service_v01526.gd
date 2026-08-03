@@ -231,12 +231,12 @@ func dependency_waves_v01526(plan: Array) -> Array:
 			if completed.has(index):
 				continue
 			var dependencies := _section_dependency_indices_v01526(plan, index)
-			var ready := true
+			var dependencies_satisfied := true
 			for dependency_index in dependencies:
 				if not completed.has(dependency_index):
-					ready = false
+					dependencies_satisfied = false
 					break
-			if ready:
+			if dependencies_satisfied:
 				wave.append(index)
 		if wave.is_empty():
 			# Invalid/cyclic custom dependencies must not deadlock the build.

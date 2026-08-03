@@ -1070,8 +1070,8 @@ func _redact_known_secrets_v01522(text: String) -> String:
 			var separator := header_text.find(":")
 			if separator < 0:
 				continue
-			var name := header_text.substr(0, separator).strip_edges().to_lower()
-			if name not in ["authorization", "proxy-authorization", "x-api-key", "api-key"]:
+			var header_name := header_text.substr(0, separator).strip_edges().to_lower()
+			if header_name not in ["authorization", "proxy-authorization", "x-api-key", "api-key"]:
 				continue
 			var secret_value := header_text.substr(separator + 1).strip_edges()
 			if not secret_value.is_empty():
