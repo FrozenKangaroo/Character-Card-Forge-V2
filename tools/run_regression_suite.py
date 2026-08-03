@@ -177,10 +177,7 @@ def run_tests(tests: list[dict[str, Any]], godot_bin: str) -> int:
         for index, test in enumerate(tests, start=1):
             label = str(test.get("label", test.get("id", "Unnamed test")))
             suite = str(test.get("suite", "unknown"))
-            # Manifest values are focused-test baselines. A full sequential profile
-            # repeatedly cold-starts Godot in isolated app-data directories, so give
-            # each test 2x headroom without skipping or weakening any assertion.
-            timeout_seconds = max(10, int(test.get("timeout_seconds", 30)) * 2)
+            timeout_seconds = max(5, int(test.get("timeout_seconds", 30)))
             command = command_for_test(test, godot_bin)
             print(f"[{index:02d}/{len(tests):02d}] {suite}: {label}")
             test_root = temp_root / str(test.get("id", f"test-{index}"))
