@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.22",
+  "description": "v0.15.21 broad regression coverage plus Safe Section Build, Generation Strategy, focused component repair, and Generation Diagnostics coverage.",
+  "base_manifest": "regression_suites_v01521.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01522_safe_section_generation",
+        "label": "v0.15.22 Safe Section Build + Generation Diagnostics",
+        "kind": "godot",
+        "path": "tools/test_v01522_safe_section_generation.gd",
+        "timeout_seconds": 30
+      }
+    ]
+  }
+}

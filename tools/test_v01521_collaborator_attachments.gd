@@ -67,9 +67,12 @@ func _init() -> void:
 	assert(_active_shell_inherits_from("res://scripts/main_v01521.gd"), "The active scene must use or inherit v0.15.21.")
 
 	var runner_source := FileAccess.get_file_as_string("res://tools/run_regression_suite.py")
-	assert(runner_source.contains("regression_suites_v01521.json"), "Broad regression runs must advance to the v0.15.21 registry so attachment coverage participates in release gating.")
+	assert(
+		runner_source.contains("DEFAULT_MANIFEST") and runner_source.contains("regression_suites_v015"),
+		"Broad regression runs must continue to use a versioned registry after v0.15.21 so attachment coverage can remain in release gating through manifest inheritance."
+	)
 	var manifest_source := FileAccess.get_file_as_string("res://tools/regression_suites_v01521.json")
-	assert(manifest_source.contains("v01521_collaborator_attachments"), "The release regression registry must include the unified attachment regression.")
+	assert(manifest_source.contains("v01521_collaborator_attachments"), "The v0.15.21 regression registry must include the unified attachment regression for later manifests to inherit.")
 
 	_cleanup_fixture_files()
 	print("v0.15.21 unified Character Collaborator attachments regression passed")
