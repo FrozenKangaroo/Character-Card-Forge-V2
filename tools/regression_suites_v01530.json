@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.30",
+  "description": "v0.15.29 broad coverage plus visible word wrapping for Image Prompt and Negative Prompt editors.",
+  "base_manifest": "regression_suites_v01529.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01530_image_prompt_word_wrap",
+        "label": "v0.15.30 Image Prompt and Negative Prompt word wrapping",
+        "kind": "python",
+        "path": "tools/test_v01530_image_prompt_word_wrap_strict.py",
+        "timeout_seconds": 55
+      }
+    ]
+  }
+}
