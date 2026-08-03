@@ -32,7 +32,14 @@ jobs:
         run: ./tools/setup_godot_ci.sh
 
       - name: Import and parse project
-        run: godot --headless --path . --import
+        shell: bash
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v01526-import.log
+          if grep -E "SCRIPT ERROR: (Parse Error|Compile Error)|Failed to load script" /tmp/ccf-v01526-import.log; then
+            echo "Godot reported a script parse/compile failure during import."
+            exit 1
+          fi
 
       - name: Confirm import leaves checkout clean
         shell: bash
@@ -44,7 +51,7 @@ jobs:
           fi
 
       - name: Test concurrent AI scheduler and Collaborator compatibility
-        run: timeout 45s godot --headless --path . --script res://tools/test_v01526_concurrent_ai_scheduler.gd
+        run: python3 ./tools/test_v01526_concurrent_ai_scheduler_strict.py
 
       - name: Recheck Character generation token-budget invariant
         run: timeout 30s godot --headless --path . --script res://tools/test_v01525_generation_token_budget.gd
