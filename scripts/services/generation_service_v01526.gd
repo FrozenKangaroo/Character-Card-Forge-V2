@@ -188,7 +188,7 @@ func queue_parallel_safe_section_v01526(
 	state["index"] = section_index
 	job["safe_build_state"] = state
 	var plan_value: Variant = state.get("plan", [])
-	var plan_size := plan_value.size() if plan_value is Array else 1
+	var plan_size: int = plan_value.size() if plan_value is Array else 1
 	job["label"] = "Safe Section Build • %d/%d • %s" % [
 		section_index + 1, plan_size, str(section.get("title", "Section"))
 	]
