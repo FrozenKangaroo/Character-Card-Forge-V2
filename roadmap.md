@@ -49,22 +49,40 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Deferred or awaited UI work must verify that its node, controls, and original `SceneTree` are still valid after every await before touching them.
 - Detached tools that consume saved project data must receive save/change notifications rather than relying only on startup scans or stale private caches.
 - Image provider discovery belongs to Image profiles and must never be stored in or resolved through Character Text/Vision profiles.
+- Image Studio is a first-class main-navigation page. Its native `Window` controller may remain an implementation detail, but normal navigation must present the studio embedded in the main workspace.
+- **Generate Prompt from Character** is an AI-authored Character Text-role workflow; deterministic Character → image-prompt construction remains an explicit **Build Local Fallback** rather than silently replacing the AI path.
+- Passive Image Studio browsing, project loading, and character switching must never spend provider tokens; AI calls require an explicit user action.
 
 ## Current Development Phase
 
-**v0.15.28 development candidate — Image Studio Live Project and Provider State**
+**v0.15.29 development candidate — Embedded Image Studio + AI Prompt Restoration**
 
-v0.15.28 fixes the boundary between Workspace Save, Image provider Settings, and the detached Image Studio window.
+v0.15.29 restores two established Image Studio contracts that regressed in v0.15.28 while preserving v0.15.28's live project and Image-provider state fixes.
 
-A saved Workspace project is now pushed directly into Image Studio and becomes available without restarting the application. Opening Image Studio prefers the current saved Workspace project and active character. **Reload Projects** still rescans disk, reports the number of projects found, and preserves the preferred selection. A just-saved project snapshot can fill the dropdown immediately if the operating system has not reflected its new directory in the same frame.
+Image Studio is again shown as the selected main application page. The current Image Studio controller UI is mounted inside its scrollable workspace page, while the native controller `Window` remains hidden during normal navigation. The compatibility `open_studio()` path is refresh-only so later inherited callers cannot accidentally reopen the native popup.
 
-Image Studio now enumerates only `image_profiles` and resolves them through `image_profile_by_id()`. Character Text/Vision `api_profiles` no longer appear in Image Studio and are no longer modified by Image default saving.
+The normal Character → image prompt action is again **Generate Prompt from Character**. It explicitly calls the configured Character AI Text role to author a purpose-built image-generation prompt from Description, Scenario, visually useful Personality/First Message context, Generation Concept when available, and authoritative Additional visual direction. Stable Diffusion and natural-language prompt styles remain distinct, and an optional generated negative prompt is applied when supplied.
 
-Model/checkpoint and sampler discovery is cached per Image provider. Discovery from either Settings or Image Studio updates the same cache, survives restart, and refreshes an already-created Image Studio window. **Build Prompt from Character** remains local and deterministic, but now reports visible reasons when no usable saved project/character source is selected instead of silently returning.
+**Build Local Fallback** remains the deterministic token-free alternative. Loading Image Studio or switching projects/characters stays passive and never triggers a Text-provider request. The restored AI prompt service inherits the current v0.15.26 scheduler-aware generation stack instead of bypassing newer concurrency architecture.
 
-The running development build displays **v0.15.28**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.29**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.29 — Embedded Image Studio + AI Prompt Restoration
+
+- Restored Image Studio as an embedded main-navigation page rather than a native popup workflow.
+- Remounted the current v0.15.29 controller UI inside the established `CCFImageGenerationPage` scroll viewport while retaining the native Window only as a hidden implementation detail.
+- Made the controller `open_studio()` compatibility entry point refresh-only so normal or inherited callers cannot reopen the popup.
+- Restored **Generate Prompt from Character** as an explicit Character AI Text-role request that authors a purpose-built image prompt instead of mechanically extracting card fields.
+- Restored the established separation between the AI-authored prompt action and **Build Local Fallback**, which remains deterministic and provider-free.
+- Kept project/character loading passive so merely opening or browsing Image Studio cannot spend Text-provider tokens.
+- Preserved Description, Scenario, Personality, First Message, Generation Concept, and Additional visual direction as prompt-authoring source context, with Additional visual direction treated as authoritative for the requested image.
+- Kept Stable Diffusion-style and natural-language prompt contracts distinct and retained optional generated negative prompts.
+- Prevented a completed AI prompt from applying if the active character changed while the request was running.
+- Implemented the restored prompt writer on the current v0.15.26 scheduler/generation inheritance chain rather than reviving the old v0.13 service unchanged.
+- Preserved v0.15.28 Workspace-save handoff, correct Image-profile routing, and persistent model/sampler discovery.
+- Added `docs/v01529-image-studio-regression-restoration.md`, a real-main-scene regression, a strict wrapper, a focused v0.15.29 workflow, and the v0.15.29 broad regression manifest.
 
 ### v0.15.28 — Image Studio Live Project and Provider State
 
@@ -77,7 +95,8 @@ The running development build displays **v0.15.28**. Release metadata remains co
 - Added a normalised per-Image-profile `discovered_capabilities` cache for models/checkpoints, samplers, backend flags, notes, and discovery time.
 - Made Settings **Test / Discover** save its discovered lists and notify the live Image Studio.
 - Made Image Studio discovery save to the same cache and restore cached lists whenever an Image profile is selected.
-- Added explicit Build Prompt errors for missing project, missing active character, missing selected character, and empty source material.
+- Added visible prompt-state errors instead of silent failures.
+- v0.15.28 also accidentally reintroduced native popup presentation and replaced the established AI-authored Character → image prompt with local extraction; both regressions are explicitly corrected in v0.15.29 without removing the v0.15.28 state fixes.
 - Added `docs/v01528-image-studio-live-state.md`, a strict real-main-scene regression, a v0.15.28 workflow, and the v0.15.28 broad regression manifest.
 
 ### v0.15.27 — Runtime Lifecycle and Warning Cleanup
@@ -286,8 +305,9 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
-- Runtime-test v0.15.28 with the user's real Stable Diffusion/Forge provider: Settings discovery, cached checkpoint/sampler lists, Image Studio discovery, generation, restart persistence, and prompt building after Workspace Save.
-- Runtime-test v0.15.28 with real provider calls while Character generation, Character Collaborator, Idea Generator, Vision, and Image generation run concurrently.
+- Runtime-test v0.15.29 with the user's real Character AI Text provider plus Stable Diffusion/Forge provider: AI-authored prompt, optional negative prompt, cached checkpoint/sampler lists, image generation, and restart persistence.
+- Compare **Generate Prompt from Character** against **Build Local Fallback** across sparse and detailed characters; AI prompting should add deliberate composition without drifting established physical identity.
+- Runtime-test v0.15.29 with real provider calls while Character generation, Character Collaborator, Idea Generator, Vision, AI image-prompt generation, and Image generation run concurrently.
 - Runtime-test parallel Safe Section Build with Interview/Q&A, multiple Output Groups targeting one field, a separate Sexual Traits group, and deliberately varied completion order.
 - Verify First Message waits for Scenario and later dialogue/greeting sections wait for intended dependencies in a real custom template.
 - Test Vision and Image global-participation toggles with cloud Text plus local Vision/Stable Diffusion.
@@ -350,6 +370,10 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep detached tools synchronised through explicit save/settings signals and stable IDs, not only startup scans.
 - Keep Image capability caches per Image profile and normalise them before persistence.
 - Keep Character Text/Vision and Image profile lookup paths separate at every UI/service boundary.
+- Keep Image Studio's embedded-page presentation as a tested user-facing contract even when its controller remains implemented as a Window internally.
+- Preserve the explicit-action boundary for AI image prompting: passive refresh is provider-free, Generate Prompt uses Text AI, and Local Fallback never calls a provider.
+- When replacing/upgrading an Image Studio controller, reattach the current controller content to the embedded host rather than reopening or exposing the hidden native Window.
+- Prefer capability/user-contract regression assertions over fixed-depth inheritance or assumptions about exact historical script filenames.
 - Keep normal Godot import/open operations checkout-clean.
 - Replace the temporary `.gd.uid` ignore policy with a deliberate checked-in canonical set when that migration occurs.
 - Keep release/update helper executable modes under version control.
@@ -381,6 +405,6 @@ Character Card Forge is an authoring application rather than a level-based game.
 - The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path because it bypassed the established parity/validation pipeline. Any revival must compose with that pipeline.
 - Provider-specific concurrency heuristics remain opt-in until CCF can model provider limits without weakening the generic OpenAI-compatible path.
 - Shared GPU resource pools are deferred until real local Vision/Image testing establishes the necessary controls.
-- Persistent local queue recovery across application restarts is deferred; v0.15.28 queues are process-local.
+- Persistent local queue recovery across application restarts is deferred; v0.15.29 queues are process-local.
 - More elaborate graph layout automation beyond the current draggable anchor-based system.
 - Advanced context compression beyond explicit user-triggered summarisation.
