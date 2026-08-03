@@ -1,0 +1,56 @@
+name: Validate v0.15.22 Safe Section generation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v01522-safe-section-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.6.3'
+  GODOT_STATUS: stable
+
+jobs:
+  safe-section-generation:
+    name: Safe Section Build and diagnostics
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project
+        run: godot --headless --path . --import
+
+      - name: Confirm import leaves checkout clean
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain --untracked-files=normal)" ]]; then
+            echo "Godot import created repository-visible changes:"
+            git status --short
+            exit 1
+          fi
+
+      - name: Test Safe Section Build and Generation Diagnostics
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01522_safe_section_generation.gd
+
+      - name: Recheck restored generation pipeline
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01516_generation_pipeline.gd
+
+      - name: Recheck Blueprint materialisation and handoff continuity
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01517_blueprint_materialisation.gd
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --profile quick --godot "$(command -v godot)"
