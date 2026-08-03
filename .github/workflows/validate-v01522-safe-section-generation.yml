@@ -47,7 +47,7 @@ jobs:
         run: timeout 30s godot --headless --path . --script res://tools/test_v01522_safe_section_generation.gd
 
       - name: Recheck restored generation pipeline
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01516_generation_pipeline.gd
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01516_generation_pipeline_restoration.gd
 
       - name: Recheck Blueprint materialisation and handoff continuity
         run: timeout 30s godot --headless --path . --script res://tools/test_v01517_blueprint_materialisation.gd
