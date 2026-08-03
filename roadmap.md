@@ -46,22 +46,31 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Generation reliability strategy is independent of Generation Mode/Style.
 - Safe generation fails narrowly: accepted sections remain accepted, and missing required components receive focused repair rather than unrelated regeneration.
 - Failed provider generations remain inspectable through credential-redacted Diagnostics containing request, raw response, assistant text, parse/validation state, termination reason, token usage, repair evidence, and trace.
+- Deferred or awaited UI work must verify that its node, controls, and original `SceneTree` are still valid after every await before touching them.
 
 ## Current Development Phase
 
-**v0.15.26 development candidate — Concurrent AI Scheduler + Collaborator Service Compatibility**
+**v0.15.27 development candidate — Runtime Lifecycle and Warning Cleanup**
 
-v0.15.26 replaces the effective one-request application bottleneck with a dependency-aware capacity scheduler. Generate Character, Character Collaborator, Idea Generator, authoring tools, Vision/Attachments, and Image Studio use isolated workers that can run together up to user-configured overall and role-specific limits. Work beyond capacity remains queued.
+v0.15.27 is a focused cleanup release following the larger v0.15.26 scheduler build. It removes the two reported GDScript shadowing warnings and fixes Character Collaborator's deferred chat-scroll coroutine accessing `get_tree().process_frame` after its window had already been detached or queued for deletion during live shell replacement.
 
-Safe Section Build keeps Interview/Q&A as a mandatory planning barrier. After Interview completion, eligible sections run in dependency waves. Every sibling in a wave receives the same frozen accepted-context snapshot, and child results remain isolated until the coordinator assembles them in template and Generation Group order. First Message waits for Scenario, and later greeting/dialogue material waits for required scene/opening context when those outputs exist.
+The Collaborator scroll path now validates the window, its ScrollContainer, and one retained SceneTree reference before and after each awaited frame. If the window leaves that tree, the operation exits without touching freed/detached UI state.
 
-Vision and Image roles can count toward the overall maximum or operate outside it while retaining their own role limits, supporting combinations such as cloud Text plus local Vision and local Stable Diffusion. Provider-specific API pools and shared local-GPU resource pools are planned refinements rather than part of this version.
+The strict regression reproduces the exact lifecycle by starting the two-frame scroll, removing the Collaborator window while the coroutine is suspended, and rejecting `data.tree is null`, invalid `process_frame` access, either reported shadowing warning, script-load errors, and assertion failures.
 
-The build also fixes the reported Character Collaborator failure caused by an exact v0.15.22 service comparison. Collaborator now uses capability-based compatibility and a dedicated current v0.15.26 worker.
-
-The running development build displays **v0.15.26**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.27**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.27 — Runtime Lifecycle and Warning Cleanup
+
+- Renamed the Diagnostics header local from `name` to `header_name`, removing the `Node.name` shadowing warning without suppressing the warning category.
+- Renamed the Safe Section dependency-wave local from `ready` to `dependencies_satisfied`, removing the `Node.ready` signal shadowing warning.
+- Made Character Collaborator's asynchronous `_scroll_chat_to_bottom()` lifecycle-safe before and after both awaited process frames.
+- Added retained-SceneTree validation so a window detached or replaced during an await exits cleanly instead of calling `get_tree()` on a null tree.
+- Added a real lifecycle regression that starts the scroll, detaches/queues the Collaborator window, advances several frames, and requires a clean exit.
+- Added a strict wrapper and import gate that fail on the two reported warnings, `data.tree is null`, invalid `process_frame` access, script errors, assertion failures, or missing success markers.
+- Advanced the active shell and broad regression manifest to v0.15.27 while retaining v0.15.26 scheduler, token-budget, Safe Section, and cross-feature coverage.
 
 ### v0.15.26 — Concurrent AI Scheduler + Collaborator Service Compatibility
 
@@ -271,7 +280,7 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
-- Runtime-test v0.15.26 with real provider calls: run Character generation, Character Collaborator, Idea Generator, and Vision concurrently and verify configured capacity/queue behavior.
+- Runtime-test v0.15.27 with real provider calls: run Character generation, Character Collaborator, Idea Generator, and Vision concurrently and verify configured capacity/queue behavior without startup or window-lifecycle errors.
 - Runtime-test parallel Safe Section Build with Interview/Q&A, multiple Output Groups targeting one field, a separate Sexual Traits group, and deliberately varied completion order.
 - Verify First Message waits for Scenario and later dialogue/greeting sections wait for the intended dependencies in a real custom template.
 - Test Vision and Image global-participation toggles with cloud Text plus local Vision/Stable Diffusion.
@@ -329,7 +338,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Maintain the versioned representative regression registry as a release compatibility boundary across unrelated app areas.
 - Keep local regression subprocesses isolated from real HOME/XDG/AppData state.
 - Keep strict wrappers/import gates for Godot cases where logged script/assertion failures may not produce a nonzero exit code.
-- Continue warning-as-error GDScript hygiene on Godot 4.6.x.
+- Continue warning-as-error GDScript hygiene on Godot 4.6.x without hiding warning categories globally.
+- Audit awaited/deferred UI callbacks for node/tree validity whenever windows or views can be replaced dynamically.
 - Keep normal Godot import/open operations checkout-clean.
 - Replace the temporary `.gd.uid` ignore policy with a deliberate checked-in canonical set when that migration occurs.
 - Keep release/update helper executable modes under version control.
@@ -360,6 +370,6 @@ Character Card Forge is an authoring application rather than a level-based game.
 - The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path because it bypassed the established parity/validation pipeline. Any revival must compose with that pipeline.
 - Provider-specific concurrency heuristics remain opt-in until CCF can model provider limits without weakening the generic OpenAI-compatible path.
 - Shared GPU resource pools are deferred until real local Vision/Image testing establishes the necessary controls.
-- Persistent local queue recovery across application restarts is deferred; v0.15.26 queues are process-local.
+- Persistent local queue recovery across application restarts is deferred; v0.15.27 queues are process-local.
 - More elaborate graph layout automation beyond the current draggable anchor-based system.
 - Advanced context compression beyond explicit user-triggered summarisation.
