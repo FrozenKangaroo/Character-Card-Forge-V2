@@ -1,5 +1,5 @@
 class_name CCFSettingsV01522View
-extends CCFSettingsView
+extends "res://scripts/ui/settings_view_v0159.gd"
 
 const STRATEGY_SAFE_SECTION := "safe_section"
 const STRATEGY_FAST_FULL := "fast_full"
