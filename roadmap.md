@@ -47,90 +47,96 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Safe generation fails narrowly: accepted sections remain accepted, and missing required components receive focused repair rather than unrelated regeneration.
 - Failed provider generations remain inspectable through credential-redacted Diagnostics containing request, raw response, assistant text, parse/validation state, termination reason, token usage, repair evidence, and trace.
 - Deferred or awaited UI work must verify that its node, controls, and original `SceneTree` are still valid after every await before touching them.
+- Detached tools that consume saved project data must receive save/change notifications rather than relying only on startup scans or stale private caches.
+- Image provider discovery belongs to Image profiles and must never be stored in or resolved through Character Text/Vision profiles.
 
 ## Current Development Phase
 
-**v0.15.27 development candidate — Runtime Lifecycle and Warning Cleanup**
+**v0.15.28 development candidate — Image Studio Live Project and Provider State**
 
-v0.15.27 is a focused cleanup release following the larger v0.15.26 scheduler build. It removes the two reported GDScript shadowing warnings and fixes Character Collaborator's deferred chat-scroll coroutine accessing `get_tree().process_frame` after its window had already been detached or queued for deletion during live shell replacement.
+v0.15.28 fixes the boundary between Workspace Save, Image provider Settings, and the detached Image Studio window.
 
-The Collaborator scroll path now validates the window, its ScrollContainer, and one retained SceneTree reference before and after each awaited frame. If the window leaves that tree, the operation exits without touching freed/detached UI state.
+A saved Workspace project is now pushed directly into Image Studio and becomes available without restarting the application. Opening Image Studio prefers the current saved Workspace project and active character. **Reload Projects** still rescans disk, reports the number of projects found, and preserves the preferred selection. A just-saved project snapshot can fill the dropdown immediately if the operating system has not reflected its new directory in the same frame.
 
-The strict regression reproduces the exact lifecycle by starting the two-frame scroll, removing the Collaborator window while the coroutine is suspended, and rejecting `data.tree is null`, invalid `process_frame` access, either reported shadowing warning, script-load errors, and assertion failures.
+Image Studio now enumerates only `image_profiles` and resolves them through `image_profile_by_id()`. Character Text/Vision `api_profiles` no longer appear in Image Studio and are no longer modified by Image default saving.
 
-The running development build displays **v0.15.27**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+Model/checkpoint and sampler discovery is cached per Image provider. Discovery from either Settings or Image Studio updates the same cache, survives restart, and refreshes an already-created Image Studio window. **Build Prompt from Character** remains local and deterministic, but now reports visible reasons when no usable saved project/character source is selected instead of silently returning.
+
+The running development build displays **v0.15.28**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
 
+### v0.15.28 — Image Studio Live Project and Provider State
+
+- Added direct Workspace `project_saved` handoff into Image Studio so newly saved projects appear without app restart.
+- Made opening Image Studio prefer the current saved Workspace project and active character.
+- Made **Reload Projects** perform a real disk rescan, retain the preferred project where possible, and report how many saved projects were found.
+- Added an immediate saved-project fallback for the same-frame case where a platform directory listing has not yet exposed the new project folder.
+- Replaced Image Studio's incorrect Character `api_profiles` enumeration/lookup with `image_profiles` and `image_profile_by_id()`.
+- Corrected **Save Image Defaults** so it updates the selected Image profile rather than a Text/Vision profile.
+- Added a normalised per-Image-profile `discovered_capabilities` cache for models/checkpoints, samplers, backend flags, notes, and discovery time.
+- Made Settings **Test / Discover** save its discovered lists and notify the live Image Studio.
+- Made Image Studio discovery save to the same cache and restore cached lists whenever an Image profile is selected.
+- Added explicit Build Prompt errors for missing project, missing active character, missing selected character, and empty source material.
+- Added `docs/v01528-image-studio-live-state.md`, a strict real-main-scene regression, a v0.15.28 workflow, and the v0.15.28 broad regression manifest.
+
 ### v0.15.27 — Runtime Lifecycle and Warning Cleanup
 
-- Renamed the Diagnostics header local from `name` to `header_name`, removing the `Node.name` shadowing warning without suppressing the warning category.
-- Renamed the Safe Section dependency-wave local from `ready` to `dependencies_satisfied`, removing the `Node.ready` signal shadowing warning.
-- Made Character Collaborator's asynchronous `_scroll_chat_to_bottom()` lifecycle-safe before and after both awaited process frames.
-- Added retained-SceneTree validation so a window detached or replaced during an await exits cleanly instead of calling `get_tree()` on a null tree.
-- Added a real lifecycle regression that starts the scroll, detaches/queues the Collaborator window, advances several frames, and requires a clean exit.
-- Added a strict wrapper and import gate that fail on the two reported warnings, `data.tree is null`, invalid `process_frame` access, script errors, assertion failures, or missing success markers.
-- Advanced the active shell and broad regression manifest to v0.15.27 while retaining v0.15.26 scheduler, token-budget, Safe Section, and cross-feature coverage.
+- Removed the reported `Node.name` and `Node.ready` shadowing warnings without suppressing warning categories.
+- Made Character Collaborator's two-frame deferred chat scroll safe when its window leaves the SceneTree.
+- Added strict lifecycle/import coverage for the reported null-tree errors and warnings.
 
 ### v0.15.26 — Concurrent AI Scheduler + Collaborator Service Compatibility
 
-- Added a shared AI capacity scheduler with configurable overall, Text, Vision, Image, and per-character Safe Section limits.
-- Kept backwards-compatible defaults equivalent to the previous single-job behaviour; parallelism is enabled deliberately in Character AI settings.
-- Added isolated live workers for primary Character generation, Character Collaborator, Idea Generator, authoring tools, and Vision/Attachments.
-- Added scheduler-aware Image Studio execution using the same capacity manager while retaining Image Studio's provider flow and Cancel control.
-- Added **Vision jobs count toward the overall maximum** and **Image jobs count toward the overall maximum** settings; independent roles still obey their role limits.
-- Preserved Interview/Q&A as a required Safe Section barrier, then added dependency-wave parallel section generation with frozen sibling context.
-- Added built-in Scenario → First Message and Scenario/First Message → later dialogue/greeting dependencies plus data-driven `depends_on` support.
-- Kept child results isolated and assembled fields in template/Generation Group order, including multiple Output Groups targeting one Character Card field.
-- Routed the assembled candidate through the existing template contract, semantic repair, concept-fidelity correction, fail-closed validation, Diagnostics, and Generation Preview.
-- Replaced Character Collaborator's exact `generation_service_v01522.gd` comparison with capability-based compatibility and a dedicated v0.15.26 worker.
-- Added aggregate `running / queued` Workspace status and **Cancel AI Queue** for Text/Vision workers.
-- Added `docs/v01526-concurrent-ai-scheduler.md`, the composable v0.15.26 regression manifest, real-main-scene scheduler/Collaborator coverage, and a strict wrapper that treats logged Godot assertion/script errors as failures even if Godot returns exit code zero.
+- Added configurable overall, Text, Vision, Image, and per-character Safe Section concurrency with queued overflow work.
+- Added isolated workers for Character generation, Collaborator, Ideas, authoring tools, Vision/Attachments, and Image Studio.
+- Added dependency-wave parallel Safe Section generation with frozen sibling context and deterministic template-order assembly.
+- Replaced Collaborator's exact historical script check with capability-based current-service compatibility.
 
 ### v0.15.25 — Character Generation Token Budget Invariant
 
 - Made the active Text profile's Maximum Output Tokens authoritative for Interview, Safe Sections, repairs, fidelity correction, and Fast Full Card.
-- Removed the reintroduced historical 2,600-token Interview ceiling and added request-time enforcement plus provider termination/token Diagnostics.
+- Removed the historical 2,600-token Interview ceiling and added request-time enforcement plus termination/token Diagnostics.
 
 ### v0.15.24 — Live Safe Section Service Wiring
 
-- Fixed the live Workspace retaining an old v0.14.3 service and added a real-main-scene service-composition regression.
+- Fixed the live Workspace retaining an old service and added real-main-scene composition coverage.
 
 ### v0.15.23 — Token Settings Regression Fix
 
-- Restored Text context/output controls, separate Vision controls, and large modern output-token values after a Settings inheritance regression.
+- Restored Text and Vision token controls and modern large output values.
 
 ### v0.15.22 — Safe Section Build + Generation Diagnostics
 
-- Added Safe Section Build as the recommended strategy, Fast Full Card as the lower-request alternative, focused component/field repair, deterministic multi-group assembly, and credential-redacted failure Diagnostics.
+- Added recommended Safe Section Build, Fast Full Card, focused component/field repair, deterministic multi-group assembly, and credential-redacted Diagnostics.
 
 ### v0.15.21 — Unified Collaborator Attachments
 
-- Added persistent TXT/Markdown/subtitle/JSON/image references with token accounting, Vision routing, removal semantics, and attachment documentation.
+- Added persistent text/subtitle/JSON/image references with token accounting, Vision routing, removal semantics, and documentation.
 
 ### v0.15.20 — Broad Regression Safety
 
-- Added composable quick/release regression profiles, isolated app-data execution, release gating, and representative cross-feature CI.
+- Added composable quick/release regression profiles, isolated app-data execution, and release gating.
 
 ### v0.15.19 — Release Checkout Selection
 
-- Made release/update helpers prefer the current checkout, preserved explicit separate-copy syncing, and restored executable Linux helper modes.
+- Made release/update helpers prefer the current checkout and retained explicit separate-copy syncing.
 
 ### v0.15.18 — Checkout Hygiene + Warning Cleanup
 
-- Added temporary `.gd.uid` policy, canonical project serialization checks, checkout-clean CI, and warning cleanup.
+- Added `.gd.uid` policy, canonical project serialization checks, checkout-clean CI, and warning cleanup.
 
 ### v0.15.17 — Blueprint Supplementary Materialisation
 
-- Restored Interview review metadata, preserved active templates through Collaborator handoff, and materialised Alternative Greetings/Lorebook data without overwriting accepted content.
+- Restored Interview review metadata and materialised Alternative Greetings/Lorebook data without overwriting accepted content.
 
 ### v0.15.16 — Generation Pipeline Restoration
 
-- Repaired the parity inheritance boundary and restored Interview/Q&A, Builder precedence, Mode & Style, template enforcement, semantic repair, concept fidelity, fail-closed behavior, and current-client rebinding.
+- Restored Interview/Q&A, Builder precedence, Mode & Style, template enforcement, semantic repair, fidelity, fail-closed behavior, and current-client rebinding.
 
 ### v0.15.15 — Blueprint-First Collaborator Handoff
 
-- Made detailed Generation Concept Blueprint the recommended handoff and retained Detailed Workspace Draft as an explicit alternative.
+- Made detailed Generation Concept Blueprint the recommended handoff while retaining Detailed Workspace Draft.
 
 ### v0.15.14 — Component-Driven Full Synthesis
 
@@ -138,7 +144,7 @@ The running development build displays **v0.15.27**. Release metadata remains co
 
 ### v0.15.13 — Complete Synthesis Review + Responsiveness
 
-- Added complete-result review and improved Collaborator context-preparation/autosave responsiveness.
+- Added complete-result review and improved Collaborator context preparation and autosave responsiveness.
 
 ### v0.15.12 — Full Character Synthesis from Workspace
 
@@ -158,11 +164,11 @@ The running development build displays **v0.15.27**. Release metadata remains co
 
 ### v0.15.8 — Dedicated Vision Routing
 
-- Routed Vision requests through `vision_model` and produced clear missing-model errors.
+- Routed Vision requests through the configured Vision model and produced clear missing-model errors.
 
 ### v0.15.7 — Collaborator Vision Pipeline
 
-- Added full-scene Vision analysis and enforced the Vision → Text boundary.
+- Added full-scene Vision analysis and enforced the Vision-to-Text boundary.
 
 ### v0.15.6 — Collaborator Rich-Text Fix
 
@@ -178,11 +184,11 @@ The running development build displays **v0.15.27**. Release metadata remains co
 
 ### v0.15.3 — Collaborator Chat UX
 
-- Added wrapped input, distinct user/AI cards, selectable text, visible work states, and improved scrolling.
+- Added wrapped input, distinct user/AI cards, selectable text, visible work states, copying, and reliable deferred scrolling.
 
 ### v0.15.2 — Large Output Token Limits
 
-- Removed the old 131,072 effective UI ceiling and supported modern large-output models.
+- Removed the old effective 131,072 output-token UI ceiling and supported modern large-output models.
 
 ### v0.15.1 — Context Window Budgeting
 
@@ -270,7 +276,7 @@ The running development build displays **v0.15.27**. Release metadata remains co
 
 ### v0.14.3 — Recoverable Generation Review
 
-- Preserved parseable failed-review output for import/editing/regeneration rather than discarding it.
+- Preserved parseable failed-review output for import, editing, and regeneration rather than discarding it.
 
 ### v0.14.2 — Character Transfer + Text Convention
 
@@ -280,18 +286,19 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
-- Runtime-test v0.15.27 with real provider calls: run Character generation, Character Collaborator, Idea Generator, and Vision concurrently and verify configured capacity/queue behavior without startup or window-lifecycle errors.
+- Runtime-test v0.15.28 with the user's real Stable Diffusion/Forge provider: Settings discovery, cached checkpoint/sampler lists, Image Studio discovery, generation, restart persistence, and prompt building after Workspace Save.
+- Runtime-test v0.15.28 with real provider calls while Character generation, Character Collaborator, Idea Generator, Vision, and Image generation run concurrently.
 - Runtime-test parallel Safe Section Build with Interview/Q&A, multiple Output Groups targeting one field, a separate Sexual Traits group, and deliberately varied completion order.
-- Verify First Message waits for Scenario and later dialogue/greeting sections wait for the intended dependencies in a real custom template.
+- Verify First Message waits for Scenario and later dialogue/greeting sections wait for intended dependencies in a real custom template.
 - Test Vision and Image global-participation toggles with cloud Text plus local Vision/Stable Diffusion.
 - Compare real-world latency, rate-limit behavior, completeness, and provider cost between sequential Safe Build, parallel Safe Build, and Fast Full Card.
-- Deliberately provoke section failure/cancellation while siblings are active and confirm successful isolated results are not incorrectly written or cross-contaminated.
-- Continue real-provider Diagnostics testing, including missing required components, malformed envelopes, content filtering, and genuine configured output-limit exhaustion.
+- Deliberately provoke section failure/cancellation while siblings are active and confirm successful isolated results are not cross-contaminated.
+- Continue real-provider Diagnostics testing, including missing required components, malformed envelopes, content filtering, and configured output-limit exhaustion.
 - Runtime-test unified Collaborator attachments with TXT/Markdown, SRT, ASS/SSA, JSON, and image references through save/reopen and Blueprint handoff.
-- Confirm generated Interview/Q&A review responses and Manual-vs-AI provenance survive real generation and save/reopen.
+- Confirm generated Interview/Q&A review responses and Manual-vs-AI provenance survive generation and save/reopen.
 - Validate Blueprint supplementary compatibility materialisation without overwriting manually populated Alternative Greetings/Lorebooks.
-- Continue profiling very long Collaborator sessions so preparation, rendering, autosave, Blueprint generation, and direct-draft generation remain responsive.
-- Runtime-test `python3 tools/run_regression_suite.py --profile quick` and `--profile release` on the normal Linux/Godot development machine and confirm real `user://` data remains untouched.
+- Continue profiling very long Collaborator sessions for preparation, rendering, autosave, Blueprint generation, and direct-draft responsiveness.
+- Runtime-test `python3 tools/run_regression_suite.py --profile quick` and `--profile release` on the normal Linux/Godot machine and confirm real `user://` data remains untouched.
 - Runtime-test `release.sh` and confirm the broad release gate runs before staging/tagging and fails closed.
 - Continue hardening forward-compatible tests so later shells/services cannot drop historical capabilities or hotfix invariants.
 - Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
@@ -340,6 +347,9 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep strict wrappers/import gates for Godot cases where logged script/assertion failures may not produce a nonzero exit code.
 - Continue warning-as-error GDScript hygiene on Godot 4.6.x without hiding warning categories globally.
 - Audit awaited/deferred UI callbacks for node/tree validity whenever windows or views can be replaced dynamically.
+- Keep detached tools synchronised through explicit save/settings signals and stable IDs, not only startup scans.
+- Keep Image capability caches per Image profile and normalise them before persistence.
+- Keep Character Text/Vision and Image profile lookup paths separate at every UI/service boundary.
 - Keep normal Godot import/open operations checkout-clean.
 - Replace the temporary `.gd.uid` ignore policy with a deliberate checked-in canonical set when that migration occurs.
 - Keep release/update helper executable modes under version control.
@@ -357,6 +367,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Improve semantic colour/theme consistency, keyboard navigation, detachable-window behavior, multi-monitor use, resizing, and long-text editing.
 - Improve visible progress/error states for long AI operations and distinguish queue wait, local preparation, provider thinking, repair, and validation time.
 - Improve queue labels so project, character, workflow, role, provider, model, section, and dependency state are legible without opening Diagnostics.
+- Continue replacing silent button no-ops with visible actionable status messages.
 
 ## Long-Term Ideas
 
@@ -370,6 +381,6 @@ Character Card Forge is an authoring application rather than a level-based game.
 - The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path because it bypassed the established parity/validation pipeline. Any revival must compose with that pipeline.
 - Provider-specific concurrency heuristics remain opt-in until CCF can model provider limits without weakening the generic OpenAI-compatible path.
 - Shared GPU resource pools are deferred until real local Vision/Image testing establishes the necessary controls.
-- Persistent local queue recovery across application restarts is deferred; v0.15.27 queues are process-local.
+- Persistent local queue recovery across application restarts is deferred; v0.15.28 queues are process-local.
 - More elaborate graph layout automation beyond the current draggable anchor-based system.
 - Advanced context compression beyond explicit user-triggered summarisation.

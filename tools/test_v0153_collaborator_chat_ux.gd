@@ -11,11 +11,21 @@ func _init() -> void:
 		"Character Collaborator is thinking…",
 		"_build_message_card_v0153",
 		"_build_working_card_v0153",
-		"await get_tree().process_frame",
 		"bg_color",
 		"border_color"
 	]:
 		assert(source.contains(marker), "v0.15.3 Collaborator chat UX is missing %s." % marker)
+	var has_frame_wait := (
+		source.contains("await get_tree().process_frame")
+		or (
+			source.contains("var scene_tree := get_tree()")
+			and source.contains("await scene_tree.process_frame")
+		)
+	)
+	assert(
+		has_frame_wait,
+		"v0.15.3 Collaborator chat UX must retain deferred process-frame scrolling through either the original call or the later lifecycle-safe retained SceneTree implementation."
+	)
 
 	var service_source := FileAccess.get_file_as_string("res://scripts/services/generation_service_v015.gd")
 	for marker in [
