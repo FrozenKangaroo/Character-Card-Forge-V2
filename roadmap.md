@@ -12,7 +12,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Character project JSON/files are the source of truth; the legacy V1 database is not.
 - Versioned, externally inspectable templates, authoring schemas, lorebooks, series data, settings, project packages, and interchange formats.
 - Clear separation between character data, project-shared context, AI generation, providers, images, imports/exports, library indexing, and tooling.
-- OpenAI-compatible and local/self-hosted text, vision, and image providers remain first-class targets.
+- OpenAI-compatible and local/self-hosted Text, Vision, and Image providers remain first-class targets.
 - Text/Vision provider roles and Image Generation providers stay independently configurable.
 - New systems extend the central project model rather than create parallel character copies.
 - Existing character/card data must not be destroyed by unchecked preview fields, failed reviews, disabled generation components, unrelated regeneration, partial imports, or exploratory AI conversation.
@@ -21,480 +21,345 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Wider desktop windows should reveal more workspace rather than scale a fixed game-style canvas.
 - Secondary workflows belong in grouped menus instead of an ever-growing wall of top-level buttons.
 - V1 parity is judged by useful workflow capability, not literal screen-for-screen reproduction.
-- AI Ideas target interactive Character Card / SillyTavern-style roleplay by default: generated characters should have a clear relationship and opening dynamic with literal `{{user}}` unless the author explicitly requests a detached narrator/observer/world-NPC role.
+- AI Ideas target interactive Character Card / SillyTavern-style roleplay by default and normally establish a meaningful relationship or opening dynamic with literal `{{user}}`.
 - Alternate character routes should not require full duplicate cards when only a few fields differ; Linked Variants may inherit from a base while exports always materialise normal standalone cards.
 - Visual graph layout metadata stays separate from authoritative character, relationship, and route data.
-- Relationship and route/timeline editors share one reusable graph-canvas interaction model: draggable cards, explicit anchor points, labelled connections, and saved endpoint/layout metadata.
 - External authoring tools and AIs should be able to hand CCF a partial character without being forced to generate filler for fields they do not know.
 - Long-running AI collaboration must account for model context limits, reserve output space, preserve original local transcripts, and make lossy summarisation explicit to the user.
-- Provider/model token limits must remain data-driven; UI controls must not impose obsolete ceilings that prevent use of newer long-context/high-output models.
-- Character-generation stages must not silently substitute their own smaller output-token ceilings for the active Text provider/profile setting. Interview planning, Safe Section requests, repairs and full-card generation must all respect the same configured Character Text maximum output allowance.
-- Character Collaborator should preserve established canon by default, deepen existing material before rewriting premises, and make alternate/rewrite directions explicit rather than silently replacing accepted facts.
-- Collaborator presentation should use semantic rich text for readability while preserving the original model response in stored conversation data.
-- Collaborator conversations are independent local authoring documents. A project link is optional metadata and must never be required for a chat to survive an app restart.
-- Collaborator autosave on the interactive send path should touch only the active conversation; unrelated archived chats must not make current-message preparation slower.
-- Rich-text styling must remain readable across supported platforms and should not depend on synthetic font effects that introduce glyph-rendering artifacts.
-- Collaborator image attachments must be analysed by the configured Vision role first. The Text role receives a comprehensive Vision-derived description of the full scene, never the original image payload, and decides how to use that evidence according to the author's request.
-- AI profiles may expose different Text and Vision model IDs; Vision-role requests must route through the dedicated `vision_model` while Text-role requests continue to use `model`.
-- Text and Vision models may have different context/output limits; Vision jobs must use Vision-specific token limits rather than inheriting Text-model limits.
-- Vision input preprocessing must preserve originals and only optimise genuinely oversized files; small images should pass through unchanged.
-- File-dialog authoring state should survive application restarts instead of depending on Godot's process-local FileDialog state.
-- **Generate Character** is a full synthesis action: populated Workspace fields are authoritative source material, while the active template defines the generated output contract. Selective/missing-field tools remain separate workflows.
-- Full synthesis review should expose the complete returned template result, including intentionally preserved values, rather than collapsing review to only byte-different fields.
-- Generation Components are the authoritative transformation recipe for grouped outputs: Workspace data is the source fact pool, enabled components decide what is materialised, and template fields are the final destinations.
-- Character Collaborator handoff is blueprint-first by default: preserve the collaboration as one detailed canonical Generation Concept before template materialisation so repeated field-to-field transformations do not silently discard carefully developed facts.
-- Collaborator-created characters inherit the active Workspace template at handoff time; a new character must not silently fall back to the built-in Default template merely because `new_character_record()` starts there.
-- Alternative Greetings and Character Lorebook material developed during Blueprint collaboration are first-class character data as well as preserved source text. Structured copies should land in the existing `character.alternate_greetings` and `character.character_book` paths without weakening the validated normal-template generation contract.
-- Direct field-filling from Collaborator remains an explicit alternative workflow and should preserve high detail while carrying supplementary character data such as Alternative Greetings and Character Lorebook entries.
-- The generation service installed in the live Workspace must retain the complete parity/validation inheritance chain. Regression tests must verify the actual active service composition, not only isolated helper classes that may no longer be wired into runtime generation.
-- Normal Godot import/open operations should leave the Git checkout clean. Generated script UID sidecars remain non-canonical local metadata until the project deliberately adopts one checked-in UID set, and default ProjectSettings should use Godot's canonical serialization rather than being repeatedly rewritten.
-- Release/update helpers should prefer the Git checkout they are actually launched from when it is already the repository root. Separate development-copy-to-repository syncing is a fallback workflow, not a reason to silently route a normal checkout through an unrelated clone.
-- Every major supported workflow should have representative cross-feature regression coverage. A new feature is not release-ready merely because its own focused test passes; unrelated core, generation, authoring, content, Collaborator, image/Vision and release workflows must remain healthy too.
-- Automated local regression tests that exercise `user://` state must run in isolated temporary app-data directories so testing cannot overwrite real author settings, FileDialog history, or Collaborator conversations.
-- Collaborator attachments are first-class read-only source context. Text-like files should preserve and embed their source text, images should continue through the Vision → Text boundary, and removing an attachment from active context must not silently erase historical conversation evidence or directly alter project data.
-- Generation reliability strategy is independent of Generation Mode/Style: the template defines what content is needed, while the provider-level strategy defines how many requests are used to produce and validate that content.
-- Safe generation should fail narrowly. Accepted sections remain accepted, and a missing required Generation Component should trigger a focused request for that component rather than force regeneration of unrelated content.
-- Failed provider generations should remain inspectable without exposing credentials; raw response shape, extracted assistant content, parse/validation state, provider termination reason, token usage and repair evidence are part of the debugging surface.
+- Provider/model token limits remain data-driven; UI controls and generation stages must not impose obsolete hidden ceilings.
+- Every Character-generation sub-request uses the active Text profile's authoritative Maximum Output Tokens allowance unless the user changes that profile setting.
+- Concurrent AI work must preserve isolated request/job state. A shared scheduler may coordinate capacity, but unrelated Character, Collaborator, Idea, Vision, authoring-tool, and Image jobs must never share one mutable `_active_job`.
+- Parallel generation must remain deterministic: dependency order and template order—not network completion timing—determine context and final assembly.
+- Character Collaborator preserves established canon by default, deepens existing material before rewriting premises, and makes alternate/rewrite directions explicit.
+- Collaborator conversations are independent local authoring documents; project association is optional metadata rather than ownership.
+- Collaborator image attachments go through the configured Vision role first; the Text role receives a provenance-tagged description rather than the original image payload.
+- Text and Vision models may have different context/output limits and must use their own role-specific settings.
+- Vision input preprocessing preserves originals and only optimises genuinely oversized files.
+- **Generate Character** uses the complete authoritative Workspace as source material while the active template and Generation Components define the generated output contract.
+- Collaborator Blueprint handoff preserves one detailed canonical Generation Concept before template materialisation; direct field filling remains an explicit alternative.
+- Alternative Greetings and Character Lorebook material are first-class character data as well as preserved authoring source.
+- The live Workspace generation-service composition is a tested compatibility boundary. Compatibility is capability-based rather than an exact historical script filename check.
+- Normal Godot import/open operations leave the Git checkout clean.
+- Release/update helpers prefer the repository checkout they are launched from and retain separate-copy syncing only as an explicit fallback.
+- Every major supported workflow has representative cross-feature regression coverage; a focused feature test alone is not a release gate.
+- Automated tests that exercise `user://` run in isolated temporary app-data directories.
+- Generation reliability strategy is independent of Generation Mode/Style.
+- Safe generation fails narrowly: accepted sections remain accepted, and missing required components receive focused repair rather than unrelated regeneration.
+- Failed provider generations remain inspectable through credential-redacted Diagnostics containing request, raw response, assistant text, parse/validation state, termination reason, token usage, repair evidence, and trace.
 
 ## Current Development Phase
 
-**v0.15.25 development candidate — Character Generation Token Budget Invariant**
+**v0.15.26 development candidate — Concurrent AI Scheduler + Collaborator Service Compatibility**
 
-v0.15.25 fixes the hidden output-token ceiling exposed by real Generation Diagnostics. The active Character generation service now captures the Text provider/profile `max_tokens` from the initial queued Character request and restores that exact allowance immediately before every Character sub-request. Private Interview/Q&A planning and retries, Safe Section Output Groups and standalone fields, focused component/field repairs, JSON repair, semantic/template repair, concept-fidelity correction and Fast Full Card therefore cannot silently impose a smaller stage-specific output limit.
+v0.15.26 replaces the effective one-request application bottleneck with a dependency-aware capacity scheduler. Generate Character, Character Collaborator, Idea Generator, authoring tools, Vision/Attachments, and Image Studio use isolated workers that can run together up to user-configured overall and role-specific limits. Work beyond capacity remains queued.
 
-The failure also exposed a development-history regression: v0.14.0-hotfix1 had already removed the original private Interview 2,600-token ceiling, but the later v0.14.13/v0.15 parity inheritance restoration started from the v0.13.5 service and bypassed that hotfix. v0.15.25 enforces the rule at the active leaf and tests the real runtime Workspace so future inheritance changes cannot quietly resurrect the cap.
+Safe Section Build keeps Interview/Q&A as a mandatory planning barrier. After Interview completion, eligible sections run in dependency waves. Every sibling in a wave receives the same frozen accepted-context snapshot, and child results remain isolated until the coordinator assembles them in template and Generation Group order. First Message waits for Scenario, and later greeting/dialogue material waits for required scene/opening context when those outputs exist.
 
-Generation Diagnostics now promotes provider termination information into the Overview, including request `max_tokens`, the configured Character Text output allowance, `finish_reason`, incomplete reason where available, provider token counts, and a prominent **OUTPUT LIMIT REACHED** warning for length-limited responses.
+Vision and Image roles can count toward the overall maximum or operate outside it while retaining their own role limits, supporting combinations such as cloud Text plus local Vision and local Stable Diffusion. Provider-specific API pools and shared local-GPU resource pools are planned refinements rather than part of this version.
 
-The running development build displays **v0.15.25**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The build also fixes the reported Character Collaborator failure caused by an exact v0.15.22 service comparison. Collaborator now uses capability-based compatibility and a dedicated current v0.15.26 worker.
+
+The running development build displays **v0.15.26**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
 
+### v0.15.26 — Concurrent AI Scheduler + Collaborator Service Compatibility
+
+- Added a shared AI capacity scheduler with configurable overall, Text, Vision, Image, and per-character Safe Section limits.
+- Kept backwards-compatible defaults equivalent to the previous single-job behaviour; parallelism is enabled deliberately in Character AI settings.
+- Added isolated live workers for primary Character generation, Character Collaborator, Idea Generator, authoring tools, and Vision/Attachments.
+- Added scheduler-aware Image Studio execution using the same capacity manager while retaining Image Studio's provider flow and Cancel control.
+- Added **Vision jobs count toward the overall maximum** and **Image jobs count toward the overall maximum** settings; independent roles still obey their role limits.
+- Preserved Interview/Q&A as a required Safe Section barrier, then added dependency-wave parallel section generation with frozen sibling context.
+- Added built-in Scenario → First Message and Scenario/First Message → later dialogue/greeting dependencies plus data-driven `depends_on` support.
+- Kept child results isolated and assembled fields in template/Generation Group order, including multiple Output Groups targeting one Character Card field.
+- Routed the assembled candidate through the existing template contract, semantic repair, concept-fidelity correction, fail-closed validation, Diagnostics, and Generation Preview.
+- Replaced Character Collaborator's exact `generation_service_v01522.gd` comparison with capability-based compatibility and a dedicated v0.15.26 worker.
+- Added aggregate `running / queued` Workspace status and **Cancel AI Queue** for Text/Vision workers.
+- Added `docs/v01526-concurrent-ai-scheduler.md`, the composable v0.15.26 regression manifest, real-main-scene scheduler/Collaborator coverage, and a strict wrapper that treats logged Godot assertion/script errors as failures even if Godot returns exit code zero.
+
 ### v0.15.25 — Character Generation Token Budget Invariant
 
-- Made the active Text provider/profile Maximum Output Tokens allowance authoritative for every Character-generation request instead of permitting hidden per-stage output ceilings.
-- Restored private Interview/Q&A generation to the original Character request budget, eliminating the historical 2,600-token cap that had re-entered the live pipeline through a later inheritance regression.
-- Added a final request-time invariant that restores the authoritative Character Text output budget before Interview planning/retries, Safe Section requests, focused component/field repairs, JSON repair, semantic/template repair, concept-fidelity correction and Fast Full Card requests are sent.
-- Deliberately smaller user-configured Maximum Output Tokens values remain exact; v0.15.25 removes hidden limits rather than forcing an arbitrary larger minimum.
-- Added provider termination extraction for common Chat Completions and Responses-style envelopes, including `finish_reason`, incomplete reason, provider input/output/total token counts and explicit output-limit detection.
-- Expanded Generation Diagnostics Overview with configured/request token budgets and a prominent **OUTPUT LIMIT REACHED** indicator when the provider reports a length/output-limit termination.
-- Added a v0.15.25 live Workspace/service leaf so the real app uses the token-safe generation service while retaining Safe Section Build, Fast Full Card and Generation Diagnostics.
-- Added a 39-question Interview regression using a 32,768-token configured budget, a deliberately smaller 1,800-token case, a simulated inherited stage trying to force 2,600, provider `finish_reason: length` diagnostics, and real `main.tscn` live-service verification.
-- Advanced the composable broad regression registry to `regression_suites_v01525.json` and added dedicated Godot 4.6.3 CI coverage.
-- Added `docs/v01525-generation-token-budget.md` documenting the regression, invariant and diagnostic behaviour.
+- Made the active Text profile's Maximum Output Tokens authoritative for Interview, Safe Sections, repairs, fidelity correction, and Fast Full Card.
+- Removed the reintroduced historical 2,600-token Interview ceiling and added request-time enforcement plus provider termination/token Diagnostics.
 
-### v0.15.24 — Live Safe Section Generation Service Wiring
+### v0.15.24 — Live Safe Section Service Wiring
 
-- Fixed a runtime regression where the visible v0.15.22 Workspace could still retain a legacy `CCFGenerationServiceV0143` instance and fail because `queue_character_generation_with_strategy()` did not exist on the live service.
-- Added a Workspace guard after inherited startup and immediately before Generate Character; stale services are replaced and all generation clients are rebound to the strategy-aware service.
-- Added a real-runtime regression that instantiates `scenes/main.tscn`, finds the actual live Workspace, and verifies the installed service exposes Safe Section strategy and Diagnostics capabilities rather than only testing the service class in isolation.
-- Added v0.15.24 to the composable broad regression registry.
+- Fixed the live Workspace retaining an old v0.14.3 service and added a real-main-scene service-composition regression.
 
 ### v0.15.23 — Token Settings Regression Fix
 
-- Fixed the v0.15.22 Settings inheritance regression that had removed the Text **Context window tokens** control and restored the old 131,072 Maximum Output Tokens UI ceiling.
-- Restored the full v0.15.9 settings inheritance chain, preserving Text context/output controls and separate Vision token controls while keeping the new Generation Strategy setting.
-- Restored the 4,194,304 Maximum Output Tokens UI range with `allow_greater`, so provider-specific values above the visible range remain accepted.
-- Added focused token-settings regression coverage.
+- Restored Text context/output controls, separate Vision controls, and large modern output-token values after a Settings inheritance regression.
 
 ### v0.15.22 — Safe Section Build + Generation Diagnostics
 
-- Added a separate **Generation Strategy** control to Character AI / AI Providers. It is intentionally independent of the existing Full/Lite/Compact Lite Generation Mode and Mode & Style controls.
-- Made **Safe Section Build** the default/recommended strategy for new and legacy settings that do not explicitly choose a strategy; retained **Fast Full Card** as the opt-in lower-request/lower-latency path.
-- Added a data-driven safe generation plan where each enabled Generation Output Group is one section and each generatable field without an Output Group—such as Scenario or First Message—is one standalone section.
-- Safe sections use fresh provider conversations while repeatedly supplying the authoritative character concept, applicable project/template context, Interview/Q&A and Builder planning guidance, Mode & Style guidance, and already accepted sections as continuity context.
-- Generation Output Group responses are validated at component level. Missing required components trigger focused requests for only the missing component instead of rewriting an accepted group or discarding the rest of the card; missing optional components are allowed to remain absent.
-- Multiple Generation Output Groups targeting the same Character Card field are assembled in template order, with group headings retained when required by the existing generation contract, so later groups append rather than overwrite earlier accepted content.
-- Safe Build delegates the assembled candidate back through the established template-contract, semantic repair, concept-fidelity, fail-closed and Generation Preview chain, preserving the restored v0.15 generation safeguards instead of creating a parallel unchecked output path.
-- Added terminal **Generation Diagnostics** capture with the actual request payload, raw API response body, extracted assistant text, parsed output, validation report, repair evidence and request/response trace.
-- Added a **View Diagnostics…** failure action plus a detachable diagnostics inspector with Copy Full Diagnostic and Save Diagnostic Bundle actions. Authentication headers, API keys, passwords, tokens and known credential values are redacted before diagnostics are exposed.
-- Advanced the composable broad regression manifest to `regression_suites_v01522.json` and added focused Godot 4.6.3 CI coverage for default strategy selection, Output Group/standalone-section planning, multi-group field assembly, diagnostics redaction, active Workspace wiring and retained generation-pipeline inheritance.
+- Added Safe Section Build as the recommended strategy, Fast Full Card as the lower-request alternative, focused component/field repair, deterministic multi-group assembly, and credential-redacted failure Diagnostics.
 
-### v0.15.21 — Unified Character Collaborator Attachments
+### v0.15.21 — Unified Collaborator Attachments
 
-- Added unified **Attach…** and **Attach Files…** controls so reference files can be added directly from the chat composer or Reference Context without pasting their contents into a message.
-- Added multi-file TXT, Markdown, SRT, ASS, SSA and JSON reference support while keeping raw JSON attachment distinct from the dedicated Character Card import workflow.
-- Text attachment contents are preserved verbatim and embedded in the saved Collaborator session; subtitle timing/dialogue order, ASS/SSA speaker/style fields and JSON structure remain available as source evidence even if the original file later moves or disappears.
-- Added a 4 MiB per-text-file safety limit plus empty/binary/unsupported-file rejection.
-- Folded PNG/JPG/JPEG/WebP image references into the same attachment UX while retaining the existing dedicated Vision-model analysis and the rule that the Text model receives only the Vision-derived description.
-- Unified Reference Context presentation now shows attachment filename, format, preview and estimated token cost, and overall context reporting calls out the portion consumed by attachments.
-- Existing attachments can be removed from future model context through the Reference Context list. Historical Vision Analysis cards also expose **Remove Attachment**, which removes the active image-derived reference while preserving the transcript record of the earlier analysis.
-- Kept attachments as read-only authoring source material: adding or removing them does not directly write Character, Lorebook, Alternative Greeting or other Workspace fields.
-- Added `docs/collaborator-attachments.md` documenting supported formats, persistence, removal semantics, context budgeting and the raw-JSON-versus-Character-Card distinction.
-- Advanced the broad regression runner to a composable `regression_suites_v01521.json` layer so attachment coverage joins both quick and release profiles without duplicating the v0.15.20 registry.
-- Added focused Godot 4.6.3 regression/CI coverage for text preservation, supported format routing, existing Vision behaviour, Blueprint continuity, active Workspace wiring and inherited app-shell compatibility.
+- Added persistent TXT/Markdown/subtitle/JSON/image references with token accounting, Vision routing, removal semantics, and attachment documentation.
 
 ### v0.15.20 — Broad Regression Safety
 
-- Added `tools/regression_suites_v01520.json`, a versioned data-driven registry grouping representative tests into current wiring, core, generation, authoring, content, Character Collaborator, image/Vision, and workflow-safety suites.
-- Added **quick** and **release** profiles. Quick coverage is suitable while actively developing; the release profile deliberately crosses unrelated feature areas so hyper-focus on one new feature cannot silently become the release test plan.
-- Added `tools/run_regression_suite.py`, which runs the selected suites, continues after individual failures, and reports every failed area together instead of hiding later regressions behind the first failing test.
-- Regression subprocesses run with temporary HOME/XDG/AppData directories, protecting real `user://` Character Collaborator sessions, settings, FileDialog state and other local app data when persistence tests run on a developer machine.
-- Added a v0.15.20 live regression test that verifies the registry breadth, required critical feature coverage, active app-shell lineage, release-gate wiring, and the current generation service's parity/Interview/template-contract/concept-fidelity/Blueprint capabilities.
-- `release.sh` now automatically runs the full release regression profile after Godot import whenever a local Godot executable is available. A representative regression failure stops the release before commit/tag creation.
-- Added dedicated Godot 4.6.3 CI that runs the same broad release profile on every pull request and on `main`, in addition to the existing focused historical/version regressions.
-- Added `docs/regression-testing.md` documenting quick/full runs, suite selection, data isolation, the release gate, and the rule that new major features must join the representative registry.
-- Made the v0.15.19 active-shell regression inheritance-aware so later app shells can extend it without producing false failures.
-- Added the v0.15.20 inherited app shell and version display without replacing any runtime feature service.
+- Added composable quick/release regression profiles, isolated app-data execution, release gating, and representative cross-feature CI.
 
 ### v0.15.19 — Release Checkout Selection
 
-- Changed `release.sh` repository selection precedence to: explicit `CCF_REPO_DIR`, then the script's own directory when it is the Git repository root, then the legacy `$HOME/Projects/Character-Card-Forge-V2` destination fallback for genuinely separate development copies.
-- Running `release.sh` from the normal updated checkout therefore no longer consults or warns about an unrelated stale clone under `$HOME/Projects`.
-- Kept destination syncing, dirty-tree protection, remote validation, fast-forward safety, and additive `rsync` behaviour for the separate-development-copy workflow.
-- Added a small diagnostic-only repository-selection mode used by regression tests so selection precedence can be exercised without entering the interactive release flow.
-- Synced development copies now restore executable bits for both `release.sh` and `update.sh`.
-- Stored `release.sh`, `update.sh`, and the new shell regression as executable Git files so the normal `./update.sh` / `./release.sh` invocation works on Linux after checkout.
-- Made the v0.15.18 active-shell regression forward-compatible with later inherited v0.15 shells.
-- Added shell and Godot regression coverage for current-checkout selection, explicit override precedence, legacy fallback behaviour, executable modes, app-shell version wiring, and retained v0.15.18 checkout hygiene.
-- Added dedicated Godot 4.6.3 CI for v0.15.19.
+- Made release/update helpers prefer the current checkout, preserved explicit separate-copy syncing, and restored executable Linux helper modes.
 
-### v0.15.18 — Godot Checkout Hygiene + Warning Cleanup
+### v0.15.18 — Checkout Hygiene + Warning Cleanup
 
-- Added a repository policy for regenerated `*.gd.uid` script sidecars: they are ignored until Character Card Forge deliberately performs a one-time canonical UID migration and commits a stable project-wide set.
-- This prevents the large batches of locally generated GDScript UID sidecars from making `git status`, `update.sh`, or the destination-safety checks in `release.sh` report false local modifications.
-- Removed the explicit `window/stretch/mode="disabled"` line from `project.godot`. Godot 4.6 resolves the omitted default to `disabled`, so desktop-native resizing behaviour is unchanged while Godot no longer deletes the line and dirties the checkout after import/open.
-- Kept the existing v0.14.1 runtime regression that verifies the resolved stretch mode is actually `disabled` rather than relying on serialized text alone.
-- Fixed the v0.15.17 `SHADOWED_VARIABLE_BASE_CLASS` warning by renaming the local Lorebook `name` variable to `book_name`, avoiding collision with `Node.name`.
-- Added a v0.15.18 regression covering the UID ignore policy, canonical `project.godot` serialization, runtime stretch-mode resolution, warning-safe Lorebook normalisation, active version shell, and the existing Git-safety mechanisms used by `update.sh`/`release.sh`.
-- Added dedicated Godot 4.6.3 CI that imports the project and then explicitly fails if `git status` is dirty, so future Godot-generated checkout noise is caught before merge/release.
+- Added temporary `.gd.uid` policy, canonical project serialization checks, checkout-clean CI, and warning cleanup.
 
-### v0.15.17 — Blueprint Supplementary Materialisation + Handoff Continuity
+### v0.15.17 — Blueprint Supplementary Materialisation
 
-- Blueprint handoff now returns structured `alternate_greetings` and a Character Card-compatible `lorebook` object in addition to the long canonical `concept_prompt`.
-- The long Generation Concept still retains dedicated Alternative Greetings and Lorebook sections; structured supplementary fields are copies for the existing first-class character data paths, not replacements for the preserved Blueprint source.
-- Collaborator Blueprint and Detailed Workspace Draft handoffs now stamp the currently active `generation.template_id` onto the newly created character **before** switching Workspace character, so a custom/default user template survives the transfer instead of silently reverting to built-in Default.
-- New Blueprint-created characters immediately store complete Alternative Greetings in `character.alternate_greetings` and Character Lorebook data in `character.character_book` when the collaboration produced them.
-- Added a compatibility materialisation pass for characters created by pre-v0.15.17 Blueprint handoff: when provenance says the character came from Blueprint and structured supplementary data was never materialised, the next **Generate Character** queues a focused extraction job from the existing authoritative Generation Concept before the normal validated character-generation job.
-- Supplementary extraction never replaces already-populated Alternative Greetings/Lorebook data and records provenance so an intentionally empty or reviewed result is not regenerated on every Generate Character click.
-- Normal Character Card template fields continue through `queue_character_generation()` with Generation Components, Interview/Q&A, Builder precedence, Mode & Style, concept fidelity, semantic validation/repair and fail-closed template enforcement; supplementary materialisation is deliberately separate from that strict template output contract.
-- Restored readable Interview/Q&A review metadata at the active v0.15.17 generation-service leaf. Actual answered questions, answer text, required state and Manual-vs-AI provenance again reach the inherited Workspace **Latest generation interview responses** panel.
-- Kept the v0.15.16 parity-pipeline regression and made its active-shell assertion forward-compatible.
-- Added dedicated v0.15.17 regression coverage for Interview review reconstruction, custom-template preservation, pre-v0.15.17 Blueprint supplemental detection, structured Alternative Greetings/Lorebook routing, active shell wiring and restored pipeline inheritance.
-- Added dedicated v0.15.17 CI coverage.
+- Restored Interview review metadata, preserved active templates through Collaborator handoff, and materialised Alternative Greetings/Lorebook data without overwriting accepted content.
 
 ### v0.15.16 — Generation Pipeline Restoration
 
-- Identified a long-lived regression introduced by v0.14.13: the Idea Generator POV service extended the bare `CCFGenerationService`, unintentionally disconnecting all later services from the v0.13.5 parity-generation stack.
-- Repaired that inheritance boundary so v0.14.13 now extends `generation_service_v0135.gd`; every later v0.14/v0.15 generation service therefore inherits the established generation contract again.
-- Restored active-template Generation Component prompting **and enforcement**, including required component labels, multi-group composition rules, output bindings, marker rules and minimum-content checks.
-- Restored semantic completeness validation plus the bounded repair pass for otherwise-valid JSON that does not satisfy the active template.
-- Restored fail-closed template protection: output that still violates the active template after repair is rejected instead of being offered in Generation Preview.
-- Restored the inherited Interview/Q&A generation flow, Builder precedence, Mode & Style generation guidance/repair preservation, and concept-fidelity validation/retry to the modern v0.15 service chain.
-- Routed the Workspace **Generate Character** button back through `queue_character_generation()` so those systems actually participate at runtime instead of calling the v0.15.12 `queue_full_character_synthesis()` shortcut.
-- Kept Blueprint/Collaborator, Vision, lorebook context, provider settings and later v0.15 features layered above the restored parity foundation.
-- Rebound all known generation clients—Builder, Controlled Build, Group Scene, Relationships, Card Workflow, Attachments, Collaborator and AI Ideas—to the same v0.15.16 restored generation-service instance.
-- Retained the v0.15.12–v0.15.14 synthesis implementation in source for compatibility/history, but normal **Generate Character** no longer routes through it until any future synthesis redesign can participate in the same validated template contract.
-- Added a v0.15.16 integration regression that instantiates the actual active v0.15.16 service, verifies it inherits every required parity layer, decorates a real Default-template contract through that leaf service, and proves flattened Description/Personality output fails validation.
-- Made the v0.15.15 Blueprint regression forward-compatible with later inherited shells.
-- Added dedicated v0.15.16 CI coverage.
+- Repaired the parity inheritance boundary and restored Interview/Q&A, Builder precedence, Mode & Style, template enforcement, semantic repair, concept fidelity, fail-closed behavior, and current-client rebinding.
 
 ### v0.15.15 — Blueprint-First Collaborator Handoff
 
-- Replaced the one-size-fits-all Collaborator materialisation action with an explicit Workspace handoff selector.
-- **Blueprint → Generation Concept (Recommended)** is the default handoff mode.
-- Blueprint mode asks the Text model for a long, loss-minimising canonical source document rather than immediately scattering the collaboration across many card fields.
-- Blueprint prompts explicitly preserve concrete accepted facts, later corrections, chronology, relationship details, appearance, behaviour, history, scenario beats, dialogue requirements, boundaries, secrets and other established specifics instead of aggressively summarising them.
-- The generated Blueprint includes dedicated Alternative Greetings and Lorebook planning sections so those parts of the character are not forgotten when they were developed in the collaboration.
-- Blueprint mode creates a normal Workspace character with the detailed blueprint in `concept.prompt`; normal **Generate Character** can then materialise the card from that source using the active template and Generation Components.
-- Kept **Detailed Workspace Draft** as an alternative for authors who want immediate field population.
-- Strengthened Detailed Workspace Draft prompts to favour detail retention over terse field summaries and to use the active template/Generation Component structure as organisation rather than as a reason to discard information.
-- Detailed Workspace Draft now returns and stores `character.alternate_greetings` as complete playable openings.
-- Detailed Workspace Draft now returns and stores a Character Card-compatible `character.character_book` Lorebook object.
-- Added handoff-mode provenance, visible working states and handoff-specific Workspace status messages.
-- Added v0.15.15 generation-service, Collaborator window, Workspace, app-shell, regression and CI coverage.
-- Made the v0.15.14 regression forward-compatible with later inherited shells.
+- Made detailed Generation Concept Blueprint the recommended handoff and retained Detailed Workspace Draft as an explicit alternative.
 
-### v0.15.14 — Component-Driven Full Character Synthesis
+### v0.15.14 — Component-Driven Full Synthesis
 
-- Full-character synthesis now reads the active template's `generation_groups` and builds an explicit component-driven generation plan.
-- The complete populated Workspace is treated as a shared source/fact pool rather than a set of isolated destination fields.
-- Enabled Generation Groups bind their ordered enabled components to the group's configured output field.
-- Component labels, requiredness, order, and author instructions are passed explicitly to the model as the transformation recipe.
-- Disabled groups and disabled components do not participate in synthesis; a group with every component disabled is treated as intentionally inactive.
-- Grouped fields gather relevant facts from anywhere in the Workspace and materialise one coherent final output value rather than exposing component subkeys.
-- AI-generatable fields not controlled by a Generation Group continue to follow their normal field-specific generation instructions.
-- Existing canon remains authoritative while material can be reorganised, reconciled and deepened to satisfy the component recipe.
-- Preserved v0.15.13 complete-result preview behaviour and added explicit component-plan metadata for diagnostics/regression coverage.
-- Added v0.15.14 generation-service, Workspace, app-shell, regression and CI coverage.
-- Made the v0.15.13 regression forward-compatible with later inherited shells.
+- Added Generation Group/component-driven transformation planning from the complete Workspace source pool.
 
-### v0.15.13 — Complete Synthesis Review + Collaborator Responsiveness
+### v0.15.13 — Complete Synthesis Review + Responsiveness
 
-- Strengthened full-character synthesis so every AI-generatable field in the active template is explicitly mandatory in the synthesis response, even when the Workspace already contains a value.
-- Added stronger whole-character editorial guidance: preserve canon, reconcile cross-field facts, and actively polish each returned field into final-form card text rather than treating populated fields as finished work.
-- Full-synthesis preview now shows every returned template field, including fields whose final value intentionally matches the existing Workspace text.
-- Missing requested synthesis fields are reported explicitly in the preview instead of silently making a complete generation look like a one-field update.
-- Character Collaborator now paints a **Preparing context…** state before token estimation, transcript assembly, autosave, or request construction so long conversations no longer look unresponsive immediately after Send.
-- Context-budget validation now includes the newly pasted message instead of checking only the previous transcript.
-- Added a high defensive single-message safety bound so pathological pastes fail gracefully instead of creating an unbounded UI/request workload.
-- Added targeted Collaborator autosave that writes only the active session on the message hot path instead of serialising every saved chat after each message.
-- Deferred project chat snapshots now include only conversations linked to the current project, so unrelated saved conversations no longer inflate normal current-chat updates.
-- Fixed the two Godot 4.6.3 `INT_AS_ENUM_WITHOUT_CAST` FileDialog warnings by explicitly restoring persisted integers as `FileDialog.DisplayMode` enum values.
-- Made the v0.15.12 regression forward-compatible with later inherited app shells.
-- Added dedicated v0.15.13 regression and CI coverage.
+- Added complete-result review and improved Collaborator context-preparation/autosave responsiveness.
 
 ### v0.15.12 — Full Character Synthesis from Workspace
 
-- Added a dedicated full-character synthesis path instead of relying on existing/missing-field gating.
-- **Generate Character** now reads all populated fields exposed by the active template as source material, including fields that are not themselves AI-generated outputs.
-- Existing character facts are treated as canon to preserve, reconcile, deepen, and polish rather than as a reason to skip generation.
-- The active template's AI-generatable fields remain the explicit JSON output contract, so populated output fields are still regenerated as part of a coherent complete character.
-- Full synthesis no longer requires a Generation Concept when other meaningful Workspace material already exists.
-- Generation Mode and Style are included as synthesis guidance when present.
-- Existing shared project context, series bible, relationships, and enabled attachment context remain available to the synthesis pass.
-- Full-synthesis jobs carry explicit `full_workspace_synthesis` scope and canon-preservation metadata.
-- AI Suggest and Controlled Build remain separate selective-generation workflows.
-- Added v0.15.12 Workspace/service/app-shell integration and dedicated regression/CI coverage.
-- Made the v0.15.11 regression forward-compatible with later inherited app shells.
+- Added full-Workspace synthesis while retaining selective tools; later normal Generate Character routing returned to the validated parity pipeline.
 
 ### v0.15.11 — Visible Vision Analysis Messages
 
-- Completed Collaborator Vision analysis now replaces the temporary analysing state with a persistent, visually distinct **Vision Analysis** transcript message.
-- Vision descriptions are selectable/copyable, preserve profile/model provenance, autosave with the independent chat session, and remain available as tagged reference context for the Text model.
-- Completion scrolls to the visible result instead of leaving the transcript apparently stuck.
-- Added v0.15.11 regression and CI coverage.
+- Made Vision results persistent, selectable, provenance-aware Collaborator transcript content.
 
 ### v0.15.10 — Persistent FileDialog State
 
-- Added a shared `user://` FileDialog preference store independent of projects and release/update files.
-- Persists favourites, recent/history directories, last-used filesystem directory, list/thumbnail mode, hidden-file visibility, and sort selection across app relaunches.
-- Seeds the operating system's actual Downloads directory as a default quick location when available.
-- Recent history is bounded to 20 folders.
-- Added shared FileDialog tracking and dedicated regression/CI coverage.
+- Persisted favourites, history, filesystem location, view mode, hidden-file state, and sorting across restarts.
 
-### v0.15.9 — Independent Vision Token Limits & Input Optimisation
+### v0.15.9 — Independent Vision Limits & Input Optimisation
 
-- Added independent Vision Context Window and Vision Maximum Output token limits.
-- Vision jobs use Vision-specific limits without mutating Text settings.
-- Added preflight validation for impossible Vision output/context combinations.
-- Small images pass through unchanged; genuinely oversized images may be proportionally resized and temporarily encoded as high-quality WebP without modifying originals.
-- Added v0.15.9 Settings, generation-service, Workspace, app-shell, regression and CI coverage.
+- Added separate Vision context/output limits and safe preprocessing for genuinely oversized images.
 
-### v0.15.8 — Dedicated Vision-Model Routing
+### v0.15.8 — Dedicated Vision Routing
 
-- Vision-role requests route through the profile's dedicated `vision_model`; Text requests continue to use `model`.
-- Missing Vision models now produce a clear configuration error instead of silently sending images to the Text model.
-- Preserved the full-scene Vision → Text handoff and added regression coverage.
+- Routed Vision requests through `vision_model` and produced clear missing-model errors.
 
 ### v0.15.7 — Collaborator Vision Pipeline
 
-- Enforced the configured Vision role for Collaborator image attachments.
-- Vision analysis describes the complete visible scene: people/characters, appearance, clothing, expressions, poses, interactions, setting, props, readable text, lighting, composition, style, and apparent activity.
-- Direct observations are separated from uncertain interpretation.
-- Original image payloads go only to Vision; the Text model receives a provenance-tagged full-scene description.
-- Added visible Vision profile/model status and regression coverage.
+- Added full-scene Vision analysis and enforced the Vision → Text boundary.
 
-### v0.15.6 — Collaborator Rich-Text Rendering Fix
+### v0.15.6 — Collaborator Rich-Text Fix
 
-- Removed synthetic `push_bold()` styling that could create dark glyph artifacts on affected font/Linux stacks.
-- Preserved semantic colour, heading hierarchy, italics, selectable text, and unmodified stored responses.
+- Removed synthetic bold rendering artifacts while preserving semantic presentation and raw stored text.
 
-### v0.15.5 — Independent Collaborator Session Persistence
+### v0.15.5 — Independent Collaborator Persistence
 
-- Added versioned local Collaborator storage under `user://collaborator_sessions`.
-- Chats survive application restart even when started from an unsaved project.
-- Project association is optional metadata rather than ownership.
-- Existing project-embedded chats migrate/merge into the local library while project saves may still include linked snapshots.
+- Added versioned local chat storage under `user://collaborator_sessions` with optional project links.
 
-### v0.15.4 — Collaborator Persistence, Behaviour Contract & Rich Text
+### v0.15.4 — Collaborator Persistence & Behaviour Contract
 
-- Added autosave after meaningful Collaborator changes plus rename/delete controls.
-- Added canon-preservation, proportional response-depth, and non-pathologizing collaboration rules.
-- Added semantic rich-text rendering for headings, emphasis, bullets, and common design labels while preserving raw response text for storage/Copy.
+- Added autosave, rename/delete, canon-preservation guidance, proportional response depth, and semantic rich text.
 
-### v0.15.3 — Character Collaborator Chat UX
+### v0.15.3 — Collaborator Chat UX
 
-- Added input wrapping, differentiated user/AI cards, selectable/copyable text, visible working states, and improved auto-scroll.
+- Added wrapped input, distinct user/AI cards, selectable text, visible work states, and improved scrolling.
 
 ### v0.15.2 — Large Output Token Limits
 
-- Removed the old 131,072 effective output-token ceiling and allowed modern large-output model limits, including 384k-class values.
+- Removed the old 131,072 effective UI ceiling and supported modern large-output models.
 
 ### v0.15.1 — Context Window Budgeting
 
-- Added separate model context-window configuration, output reserve/headroom reporting, unknown-context mode, and pre-send context warnings.
+- Added separate context configuration, output reserve/headroom, unknown-context mode, and warnings.
 
-### v0.15.0 — Character Collaborator Foundation
+### v0.15.0 — Collaborator Foundation
 
-- Added detachable freeform Character Collaborator conversations with local history.
-- Added existing-character, JSON, V2 PNG/APNG, and image reference context.
-- Added context budgeting and explicit lossy summarisation with original transcript preservation.
-- Added response regeneration with variants and **Generate Character → Workspace** handoff.
-- Collaboration remains non-canonical until an explicit apply/generate/import action.
+- Added detachable freeform collaboration, reference context, summarisation, response variants, and explicit Workspace handoff.
 
-### v0.14.22 — Shared Graph Canvas + Editable Relationship / Route Charts
+### v0.14.22 — Shared Graph Canvas
 
-- Added reusable draggable graph cards with 12 anchors, labelled anchor-to-anchor connections, persistent layout metadata, Relationship Graph editing, and Route/Timeline Flowchart editing.
+- Added reusable draggable graph cards, anchors, labelled connections, Relationship Graph, and Route/Timeline editing.
 
-### v0.14.21 — `.ccfchar` Authoring Interchange
+### v0.14.21 — `.ccfchar` Interchange
 
-- Added versioned partial/full external character import covering Overview, Character, Advanced, template, mode/style, Alternative Greetings, and Lorebook data.
-- Added review-first import and `docs/ccfchar-format.md` for human/AI authoring.
+- Added versioned partial/full external character authoring interchange with review-first import.
 
 ### v0.14.20 — Relationship Graph + Linked Variants
 
-- Added labelled relationship graphs and sparse Linked Variants that inherit from a base card, store only differences, protect against cycles/dependency deletion, and materialise complete standalone exports.
+- Added labelled relationship graphs and sparse inheriting variants that export as complete standalone cards.
 
-### v0.14.19 — Live Idea Generator Service Wiring
+### v0.14.19 — Live Idea Generator Wiring
 
-- Fixed the visible Idea Generator retaining a stale generation-service reference and rebound it to the live validation/repair service.
+- Rebound the visible Idea Generator to the current validation/repair service.
 
-### v0.14.18 — User-Centric SillyTavern Idea Generation
+### v0.14.18 — User-Centric Idea Generation
 
-- Reframed AI Ideas around interactive Character Card roleplay with literal `{{user}}` involvement by default and repair for missing user-centric framing.
+- Reframed Ideas around interactive roleplay and literal `{{user}}` involvement.
 
 ### v0.14.17 — Detachable Lorebook Manager
 
-- Made Lorebook Manager a native non-modal, non-transient tool window suitable for multi-monitor use.
+- Added a native non-modal multi-monitor-friendly Lorebook tool window.
 
-### v0.14.16 — Idea Generator Identity + POV Validation
+### v0.14.16 — Idea Identity + POV Validation
 
-- Added explicit identity/source anchoring and validation/repair for accidental viewpoint-character replacement or invalid POV framing.
+- Added identity/source anchoring and repair for viewpoint-character replacement.
 
 ### v0.14.15 — Lorebook Generation + Trigger Tools
 
-- Promoted Project/Character Lorebooks into generation context with constant/key/selective activation, ordering, token budgets, Trigger Preview, and scope transfer tools.
+- Added scoped lorebook generation context, activation rules, ordering, budgets, Trigger Preview, and transfer tools.
 
 ### v0.14.14 — Focused Character Builders
 
-- Added focused Appearance, Personality, and Scene builders alongside Full Character builder using external builder schema data.
+- Added Appearance, Personality, and Scene builders alongside Full Character Builder.
 
-### v0.14.13 — Idea Generator POV Safety
+### v0.14.13 — Idea POV Safety
 
-- Kept AI Ideas in neutral third-person design prose while preserving `{{user}}` as the eventual chat user.
+- Kept AI Ideas in neutral third-person design prose while preserving literal `{{user}}`.
 
 ### v0.14.12 — Unified Idea Generator
 
-- Combined AI Ideas and Structured Builder into one Idea Generator workflow and retired duplicate/orphan windows.
+- Combined AI Ideas and Structured Builder into one workflow.
 
-### v0.14.11 — Structured Idea Builder + Editable Pools
+### v0.14.11 — Structured Idea Builder
 
-- Restored V1-style structured ingredients with locks, randomisation, custom values, multi-select fields, editable option lists, and reset controls.
+- Restored V1-style ingredients, locks, randomisation, custom values, multi-select fields, editable pools, and reset controls.
 
 ### v0.14.10 — Related Character / AI Variation
 
-- Added independent related-character/transformed-version creation seeded by source card, project context, and relationships with provenance.
+- Added independent related/transformed character creation with source/project/relationship provenance.
 
 ### v0.14.9 — Library Assignment UX
 
-- Added assignment pickers for existing folders/collections and simplified Library filtering/navigation.
+- Added existing-folder/collection pickers and simplified filtering/navigation.
 
 ### v0.14.8 — Manual Guided Alternative Greetings
 
-- Added repeatable, reorderable, removable Alternative Greetings with Character Card round-trip support.
+- Added repeatable, reorderable Alternative Greetings with Character Card round-trip support.
 
 ### v0.14.7 — Manual Guided Component Parity
 
-- Manual Guided now follows enabled template Generation Components with per-character/project state isolation.
+- Made Manual Guided follow active Generation Components with per-character/project state isolation.
 
 ### v0.14.6 — Preview Selection Safety
 
-- Unchecked Generation Preview rows perform no writes and live user edits remain authoritative when applying generated content.
+- Ensured unchecked Preview rows write nothing and current user edits remain authoritative.
 
 ### v0.14.5 — Grouped Navigation + Lorebook Foundation
 
-- Added grouped Author / Project / Character / Tools menus plus Project and Character Lorebook editing.
+- Added grouped menus and Project/Character Lorebook editing.
 
 ### v0.14.4 — Manual Guided
 
-- Restored no-AI template-aware direct authoring across core card fields and future-facing sections.
+- Restored template-aware no-AI authoring across core and future-facing fields.
 
 ### v0.14.3 — Recoverable Generation Review
 
-- Preserves parseable AI output for review/editing even when semantic validation still fails after bounded repair.
+- Preserved parseable failed-review output for import/editing/regeneration rather than discarding it.
 
-### v0.14.2 — Character Transfer + Text Input Convention
+### v0.14.2 — Character Transfer + Text Convention
 
-- Added Move/Copy between projects with character-local data/files and consistent multiline input behaviour.
+- Added Move/Copy between projects and consistent multiline input behaviour.
+
+Detailed per-release implementation notes remain in versioned docs, pull requests, tests, and Git history.
 
 ## In Progress
 
-- Runtime-test v0.15.25 against the same long Generation Concept and large custom Interview/Q&A set that previously stopped at exactly 2,600 tokens; confirm the diagnostic request now shows the active Text Maximum Output Tokens setting and the Interview reaches complete JSON unless the provider genuinely reaches that configured limit.
-- Runtime-test **Safe Section Build** with a real custom template containing multiple Output Groups targeting the same Character Card field, including a separate Sexual Traits group, and confirm each group is a separate provider request while the final field is assembled in template order.
-- Deliberately provoke missing required components and provider response-shape failures to verify focused component repair and the Generation Diagnostics inspector against real API responses.
-- Compare real-world request count, latency and completeness between Safe Section Build and Fast Full Card across cloud and local/self-hosted providers; keep Safe as the default unless evidence shows a better reliability trade-off.
-- Runtime-test unified Collaborator attachments with real TXT/Markdown, SRT, ASS/SSA, JSON and image references; confirm text survives save/reopen, image references still route Vision → Text, attachment token costs remain visible, and removing references updates future context without erasing historical Vision Analysis messages.
-- Validate a long subtitle-script attachment as personality/dialogue reference through normal brainstorming and Blueprint handoff, checking that timestamps/dialogue evidence remain available without accidental auto-summarisation or direct project writes.
-- Runtime-test the new `python3 tools/run_regression_suite.py --profile quick` and `--profile release` commands on the normal Linux/Godot development machine and confirm they complete without touching real Character Collaborator/FileDialog/settings data.
-- Runtime-test `release.sh` and confirm the new **Running broad release regression suite** gate executes before staging/tagging and stops cleanly if any representative test fails.
-- Continue expanding the representative registry whenever a newly supported major workflow would otherwise depend primarily on manual testing.
-- Runtime-test v0.15.17 Blueprint → Generate Character flows using both the built-in Default template and the user's preferred custom/default template; confirm the template remains selected after handoff and validated generation follows its Generation Components.
-- Confirm generated Interview/Q&A responses again appear in **Latest generation interview responses**, including Manual-vs-AI provenance, after a real provider run and after save/reopen.
-- Validate new Blueprint handoff against long Collaborator sessions containing multiple Alternative Greetings and substantial side-character/location lore; confirm the structured character data matches the preserved Blueprint source without dropping concrete details.
-- Validate compatibility materialisation on a character created by v0.15.15/v0.15.16 Blueprint handoff whose Generation Concept already contains Alternative Greetings/Lorebook sections but whose structured fields are still empty.
-- Confirm supplementary materialisation never overwrites manually populated Alternative Greetings or Lorebook entries and is not repeatedly queued once reviewed/materialised.
-- Continue runtime-testing the restored v0.15.16 generation pipeline with custom/default Generation Components, multi-group output composition, disabled components, Builder precedence, Mode & Style, concept-fidelity retry and semantic repair.
-- Continue profiling very long Collaborator sessions so token estimation, transcript rendering, autosave, Blueprint generation and direct-draft generation remain responsive at large context sizes.
-- Continue hardening forward-compatible regression tests so a new inherited shell or runtime service replacement cannot falsely pass while dropping an older capability or historical hotfix.
-- Continue V1 parity review where V1 still has useful authoring workflow details that V2 has not yet surpassed.
+- Runtime-test v0.15.26 with real provider calls: run Character generation, Character Collaborator, Idea Generator, and Vision concurrently and verify configured capacity/queue behavior.
+- Runtime-test parallel Safe Section Build with Interview/Q&A, multiple Output Groups targeting one field, a separate Sexual Traits group, and deliberately varied completion order.
+- Verify First Message waits for Scenario and later dialogue/greeting sections wait for the intended dependencies in a real custom template.
+- Test Vision and Image global-participation toggles with cloud Text plus local Vision/Stable Diffusion.
+- Compare real-world latency, rate-limit behavior, completeness, and provider cost between sequential Safe Build, parallel Safe Build, and Fast Full Card.
+- Deliberately provoke section failure/cancellation while siblings are active and confirm successful isolated results are not incorrectly written or cross-contaminated.
+- Continue real-provider Diagnostics testing, including missing required components, malformed envelopes, content filtering, and genuine configured output-limit exhaustion.
+- Runtime-test unified Collaborator attachments with TXT/Markdown, SRT, ASS/SSA, JSON, and image references through save/reopen and Blueprint handoff.
+- Confirm generated Interview/Q&A review responses and Manual-vs-AI provenance survive real generation and save/reopen.
+- Validate Blueprint supplementary compatibility materialisation without overwriting manually populated Alternative Greetings/Lorebooks.
+- Continue profiling very long Collaborator sessions so preparation, rendering, autosave, Blueprint generation, and direct-draft generation remain responsive.
+- Runtime-test `python3 tools/run_regression_suite.py --profile quick` and `--profile release` on the normal Linux/Godot development machine and confirm real `user://` data remains untouched.
+- Runtime-test `release.sh` and confirm the broad release gate runs before staging/tagging and fails closed.
+- Continue hardening forward-compatible tests so later shells/services cannot drop historical capabilities or hotfix invariants.
+- Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
 
 ## Next Up
 
-- Consider a future **Custom Section Build** strategy that lets advanced users combine selected Output Groups/standalone fields into chosen request batches without weakening the same component-level validation and repair model.
-- Expand Generation Diagnostics from terminal-failure inspection into optional recent-attempt history/retry tooling if real provider testing shows that persistent multi-attempt traces are useful beyond the current failure dialog.
-- Evaluate whether attachment UX should grow a true pending-message attachment strip/chips so an author can stage and remove files before Send, or whether session-level Reference Context remains the clearer default for long-lived character-development sources.
-- Consider optional per-message attachment association/display for cases where a source belongs to one specific request while retaining the current ability to keep a reference active across multiple Collaborator turns.
-- Keep the representative regression registry aligned with the actual supported feature surface as generation transparency/workflow-clarity work begins; do not let new major features remain outside the release profile.
-- Perform a deliberate canonical GDScript UID migration later: generate one stable project-wide `.gd.uid` set, commit it together, remove the temporary ignore rule, and add CI that detects unexpected UID churn rather than treating arbitrary local sidecars as source.
-- Decide whether Blueprint supplementary material should gain its own explicit review dialog before being committed, or whether the existing editable Alternative Greetings tab and Lorebook Manager provide sufficient review once the material is placed there.
-- Revisit the v0.15.12–v0.15.14 full-Workspace synthesis idea only if it can be layered through the restored parity pipeline without bypassing template-contract validation, repair, Mode & Style, Interview/Q&A, Builder precedence or concept fidelity.
-- Improve visibility/diagnostics around exactly which Generation Groups and components participated in a generated result.
-- Improve distinction and wording between Blueprint handoff, Detailed Workspace Draft, full-character generation, Controlled Build, AI Suggest, and direct manual authoring.
-- Continue polishing Character Collaborator context management, image-reference workflows, and generation handoff.
-- Continue relationship/route graph usability and Linked Variant workflow testing.
+- Add optional provider/API execution pools so profiles sharing one cloud provider can share a provider-specific concurrency/rate-limit ceiling.
+- Add optional local hardware pools so Vision and Image providers using the same GPU can share a configurable resource limit.
+- Add richer queue UI with parent/child jobs, per-job cancellation, pause/resume, priority, move-to-front, and section progress.
+- Consider round-robin fairness refinements so one large parent build cannot dominate all eligible Text slots.
+- Consider a future **Custom Section Build** strategy for user-defined request batches while retaining component-level validation and deterministic assembly.
+- Expand Diagnostics into optional recent-attempt history/retry tooling if real provider testing shows persistent traces are useful.
+- Evaluate a pending-message attachment strip and optional per-message attachment association while retaining long-lived Reference Context.
+- Keep the representative regression registry aligned with the actual supported feature surface.
+- Perform a deliberate canonical GDScript UID migration later and replace the temporary ignore policy with checked-in stable UIDs and churn detection.
+- Decide whether Blueprint supplementary material needs a dedicated review dialog or existing Alternative Greetings/Lorebook tools provide sufficient review.
+- Revisit full-Workspace synthesis only if it composes through the validated parity pipeline rather than bypassing it.
+- Improve visible reporting of exactly which Generation Groups/components participated in a result.
+- Clarify the distinction between Blueprint handoff, Detailed Workspace Draft, Generate Character, Controlled Build, AI Suggest, and manual authoring.
+- Continue relationship/route graph and Linked Variant usability testing.
 
 ## Planned Features
 
-- Further Library organisation/search/filter polish and large-library performance work.
-- More template authoring/validation tooling and clearer documentation of template generation contracts.
+- Further Library organisation, search/filter polish, and large-library performance work.
+- More template authoring/validation tools and clearer documentation of generation contracts and dependencies.
 - Stronger import/export diagnostics and compatibility reporting for external Character Card ecosystems.
-- Additional AI-provider capability discovery where providers expose reliable model metadata.
+- Additional provider capability discovery where providers expose reliable metadata.
 - Continued V1 workflow parity where it improves V2 rather than reproducing obsolete architecture.
+- More robust queue persistence/recovery only if future server-owned or long-running generation workflows require it; API keys remain local and are never moved into portable projects.
 
 ## Level and Content Tools
 
-Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable, versioned templates, `.ccfchar` interchange, project packages, lorebooks, and future schema/editor tooling. Loading and saving should continue to use the same data model exposed to authoring tools.
+Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable, versioned templates, `.ccfchar` interchange, project packages, lorebooks, and schema/editor tooling. Loading and saving continue to use the same data model exposed to authoring tools.
 
 ## Technical Improvements
 
 - Keep generation services modular and preserve older project/card compatibility as schemas evolve.
-- Treat runtime generation-service composition as a tested compatibility boundary; new service subclasses must extend the previous capability chain unless a deliberate replacement is documented and integration-tested.
-- Treat important historical hotfix behaviour as an active-leaf regression invariant rather than assuming the original hotfix class will always remain in a later inheritance chain.
-- Maintain one authoritative Character Text output budget per queued generation job and reassert it at request time so prompt/temperature transformations cannot silently introduce hidden token ceilings.
-- Reduce inherited-shell regression fragility by testing capability/inheritance rather than exact active-version filenames.
-- Maintain the versioned representative regression registry as a release compatibility boundary across unrelated app areas; focused version tests remain useful but are not sufficient on their own.
-- Keep local regression subprocesses isolated from real HOME/XDG/AppData state so tests exercising `user://` remain safe to run automatically before releases.
-- Keep regression registry versions composable so a new patch can append representative coverage without duplicating or silently dropping the established cross-feature release surface.
-- Continue warning-as-error GDScript hygiene and CI parsing on Godot 4.6.x.
-- Keep normal Godot import/open operations checkout-clean; CI should detect repository-visible generated metadata before it reaches update/release workflows.
-- Keep the temporary `*.gd.uid` ignore narrowly scoped to the current non-canonical sidecar phase and replace it with a checked-in canonical UID set when that migration is intentionally performed.
-- Prefer the current repository checkout for release/update work when the helper script is already running from that repository root; preserve alternate destination syncing only for explicit overrides or genuinely separate development copies.
-- Keep release/update helper executable modes under version control so Linux users can invoke them directly.
+- Treat runtime generation-service composition as a capability-tested compatibility boundary.
+- Keep important historical hotfix behavior as active-leaf regression invariants rather than assuming an old class remains in every later inheritance chain.
+- Maintain one authoritative Character Text output budget per queued generation job and reassert it at request time.
+- Keep each concurrent worker's request, retry, repair, Diagnostics, cancellation, and parent-state data isolated.
+- Keep dependency graphs data-driven and detect cycles/invalid references without deadlocking a build.
+- Preserve frozen wave context and deterministic template-order assembly for parallel generation.
+- Maintain the versioned representative regression registry as a release compatibility boundary across unrelated app areas.
+- Keep local regression subprocesses isolated from real HOME/XDG/AppData state.
+- Keep strict wrappers/import gates for Godot cases where logged script/assertion failures may not produce a nonzero exit code.
+- Continue warning-as-error GDScript hygiene on Godot 4.6.x.
+- Keep normal Godot import/open operations checkout-clean.
+- Replace the temporary `.gd.uid` ignore policy with a deliberate checked-in canonical set when that migration occurs.
+- Keep release/update helper executable modes under version control.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
-- Continue reducing synchronous whole-library work from interactive Collaborator paths as conversation histories grow.
-- Keep Collaborator file decoding/classification separate from UI composition; preserve attachment source provenance, embedded text and context-cost accounting without allowing attached files to bypass normal project-write boundaries.
-- Keep Generation Component semantics data-driven so new groups/components can be added without hard-coding Description or Personality behavior into the service.
-- Treat the detailed Generation Concept Blueprint as preserved authoring source, not disposable intermediate text, so later template/model changes can regenerate the card without reconstructing the Collaborator session.
-- Treat `generation.template_id` as part of character handoff continuity: any workflow creating a character from an active authoring context must deliberately carry the selected template rather than relying on the storage-layer default.
-- Keep supplementary Blueprint materialisation separate from the strict template-field validation contract unless/until the template schema explicitly models those app-level data structures.
-- Treat Output Groups as safe-build section boundaries without hard-coding particular labels such as Description, Personality, Sexual Traits or Background; custom user-defined groups must participate identically.
-- Keep generation diagnostics credential-safe by redacting secret-bearing keys and known authentication values before any debug bundle reaches UI, clipboard or disk.
+- Continue reducing synchronous whole-library work from interactive Collaborator paths.
+- Keep attachment decoding/classification separate from UI composition and project-write boundaries.
+- Keep Generation Component and section-dependency semantics data-driven.
+- Treat Generation Concept Blueprint as preserved authoring source rather than disposable intermediate text.
+- Carry `generation.template_id` through every character-creation handoff.
+- Keep supplementary Blueprint materialisation separate from strict template-field validation unless the schema explicitly models it.
+- Keep Diagnostics credential-safe before UI, clipboard, or disk exposure.
 
 ## Polish
 
-- Continue improving semantic colour/theme consistency, keyboard navigation, detachable-window behaviour, multi-monitor use, resizing, and long-text editing.
-- Improve visible progress/error states for potentially long AI operations and distinguish local context preparation from provider/model thinking time.
+- Improve semantic colour/theme consistency, keyboard navigation, detachable-window behavior, multi-monitor use, resizing, and long-text editing.
+- Improve visible progress/error states for long AI operations and distinguish queue wait, local preparation, provider thinking, repair, and validation time.
+- Improve queue labels so project, character, workflow, role, provider, model, section, and dependency state are legible without opening Diagnostics.
 
 ## Long-Term Ideas
 
 - Expand graph tooling into richer character/route planning without contaminating exported card data.
-- Make Character Collaborator capable of increasingly sophisticated project-wide creative planning while keeping explicit boundaries between brainstorming and canonical data.
+- Make Character Collaborator capable of increasingly sophisticated project-wide creative planning while keeping explicit brainstorming/canonical boundaries.
 - Continue supporting portable user-created templates/content and external AI-assisted authoring workflows.
+- Consider durable server-owned background jobs for future remote/mobile workflows while keeping generation logic shared and credentials server-side; this is separate from the current local desktop scheduler.
 
 ## Deferred / Experimental Ideas
 
-- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.25 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
-- More elaborate graph visualisation/layout automation beyond the current draggable anchor-based system.
-- Optional advanced context compression strategies beyond the current explicit user-triggered summarisation model.
-- Experimental provider-specific optimisations should remain opt-in until they can be implemented without weakening the generic OpenAI-compatible path.
+- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path because it bypassed the established parity/validation pipeline. Any revival must compose with that pipeline.
+- Provider-specific concurrency heuristics remain opt-in until CCF can model provider limits without weakening the generic OpenAI-compatible path.
+- Shared GPU resource pools are deferred until real local Vision/Image testing establishes the necessary controls.
+- Persistent local queue recovery across application restarts is deferred; v0.15.26 queues are process-local.
+- More elaborate graph layout automation beyond the current draggable anchor-based system.
+- Advanced context compression beyond explicit user-triggered summarisation.

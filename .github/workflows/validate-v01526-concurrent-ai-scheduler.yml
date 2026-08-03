@@ -1,0 +1,69 @@
+name: Validate v0.15.26 concurrent AI scheduler
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v01526-concurrent-ai-scheduler-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.6.3'
+  GODOT_STATUS: stable
+
+jobs:
+  concurrent-ai-scheduler:
+    name: Concurrent AI scheduler and live service wiring
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project
+        shell: bash
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v01526-import.log
+          if grep -E "SCRIPT ERROR: (Parse Error|Compile Error)|Failed to load script" /tmp/ccf-v01526-import.log; then
+            echo "Godot reported a script parse/compile failure during import."
+            exit 1
+          fi
+
+      - name: Confirm import leaves checkout clean
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain --untracked-files=normal)" ]]; then
+            echo "Godot import created repository-visible changes:"
+            git status --short
+            exit 1
+          fi
+
+      - name: Test concurrent AI scheduler and Collaborator compatibility
+        run: python3 ./tools/test_v01526_concurrent_ai_scheduler_strict.py
+
+      - name: Recheck Character generation token-budget invariant
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01525_generation_token_budget.gd
+
+      - name: Recheck live strategy-aware generation service
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01524_live_generation_service.gd
+
+      - name: Recheck Safe Section generation
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01522_safe_section_generation.gd
+
+      - name: Recheck token settings regression
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01523_token_settings_regression.gd
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --profile quick --godot "$(command -v godot)"

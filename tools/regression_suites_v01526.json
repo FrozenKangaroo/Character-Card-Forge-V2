@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.26",
+  "description": "v0.15.25 broad regression coverage plus dependency-aware concurrent Text/Vision/Image scheduling, deterministic parallel Safe Section assembly, and current-service Character Collaborator wiring.",
+  "base_manifest": "regression_suites_v01525.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01526_concurrent_ai_scheduler",
+        "label": "v0.15.26 concurrent AI scheduler and Collaborator service compatibility",
+        "kind": "python",
+        "path": "tools/test_v01526_concurrent_ai_scheduler_strict.py",
+        "timeout_seconds": 55
+      }
+    ]
+  }
+}

@@ -25,7 +25,8 @@ func _init() -> void:
 	assert(main_source.contains("WORKSPACE_V0159"), "The v0.15.9 shell must install the new Workspace.")
 	assert(_active_shell_inherits_v0159(), "The active scene must use v0.15.9 or a later shell derived from it.")
 	var roadmap_source := FileAccess.get_file_as_string("res://roadmap.md")
-	assert(roadmap_source.contains("v0.15.9 — Independent Vision Token Limits & Input Optimisation"), "The roadmap must retain the v0.15.9 feature history.")
+	assert(roadmap_source.contains("### v0.15.9 — Independent Vision Limits & Input Optimisation"), "The roadmap must retain the v0.15.9 feature-history heading.")
+	assert(roadmap_source.contains("Added separate Vision context/output limits"), "The condensed roadmap history must still state the independent Vision token-limit capability.")
 
 	print("v0.15.9 Vision limits and input optimisation regression passed")
 	quit(0)
@@ -41,7 +42,7 @@ func _active_shell_inherits_v0159() -> bool:
 	if finish < 0:
 		return false
 	var current_path := scene_source.substr(start, finish - start + 3)
-	for _depth in range(32):
+	for _depth in range(64):
 		if current_path == "res://scripts/main_v0159.gd":
 			return true
 		if not FileAccess.file_exists(current_path):
