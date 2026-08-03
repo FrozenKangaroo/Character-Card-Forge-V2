@@ -125,11 +125,34 @@ func _working_text_v0153() -> String:
 
 
 func _scroll_chat_to_bottom() -> void:
-	if _chat_scroll == null:
+	if (
+		_chat_scroll == null
+		or not is_instance_valid(_chat_scroll)
+		or not is_inside_tree()
+	):
 		return
-	await get_tree().process_frame
-	await get_tree().process_frame
+	var scene_tree := get_tree()
+	if scene_tree == null:
+		return
+	await scene_tree.process_frame
+	if (
+		_chat_scroll == null
+		or not is_instance_valid(_chat_scroll)
+		or not is_inside_tree()
+		or get_tree() != scene_tree
+	):
+		return
+	await scene_tree.process_frame
+	if (
+		_chat_scroll == null
+		or not is_instance_valid(_chat_scroll)
+		or not is_inside_tree()
+		or get_tree() != scene_tree
+	):
+		return
 	var scroll_bar := _chat_scroll.get_v_scroll_bar()
+	if scroll_bar == null or not is_instance_valid(scroll_bar):
+		return
 	_chat_scroll.scroll_vertical = int(scroll_bar.max_value)
 
 
