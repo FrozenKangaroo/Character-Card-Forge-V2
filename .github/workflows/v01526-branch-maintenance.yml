@@ -1,6 +1,7 @@
 name: v0.15.26 branch maintenance
 
 on:
+  pull_request:
   push:
     branches:
       - agent/v0.15.26-concurrent-ai-scheduler
@@ -10,7 +11,7 @@ permissions:
 
 jobs:
   patch:
-    if: github.actor != 'github-actions[bot]' || !contains(github.event.head_commit.message, 'Apply v0.15.26 maintenance patch')
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
