@@ -8,6 +8,7 @@ The runner deliberately isolates HOME/app-data directories so tests that exercis
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import os
 from pathlib import Path
@@ -20,10 +21,16 @@ from typing import Any
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v01520.json"
+DEFAULT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v01521.json"
 
 
-def load_manifest(path: Path) -> dict[str, Any]:
+def load_manifest(path: Path, _visited: set[Path] | None = None) -> dict[str, Any]:
+    resolved = path.resolve()
+    visited = set() if _visited is None else set(_visited)
+    if resolved in visited:
+        raise RuntimeError(f"Regression manifest inheritance cycle detected at {path}")
+    visited.add(resolved)
+
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
@@ -32,6 +39,32 @@ def load_manifest(path: Path) -> dict[str, Any]:
         raise RuntimeError(
             f"Unsupported regression manifest format_version: {data.get('format_version')!r}"
         )
+
+    base_name = str(data.get("base_manifest", "")).strip()
+    if base_name:
+        base_path = path.parent / base_name
+        merged = copy.deepcopy(load_manifest(base_path, visited))
+        if data.get("name"):
+            merged["name"] = data["name"]
+        if data.get("description"):
+            merged["description"] = data["description"]
+        additions = data.get("suite_additions", {})
+        if not isinstance(additions, dict):
+            raise RuntimeError("Regression suite_additions must be an object.")
+        suites = merged.get("suites", {})
+        if not isinstance(suites, dict):
+            raise RuntimeError("Inherited regression manifest has invalid suites.")
+        for suite_name, extra_tests in additions.items():
+            if suite_name not in suites or not isinstance(suites[suite_name], dict):
+                raise RuntimeError(f"Regression additions reference unknown suite: {suite_name}")
+            if not isinstance(extra_tests, list):
+                raise RuntimeError(f"Regression additions for {suite_name} must be an array.")
+            current_tests = suites[suite_name].get("tests", [])
+            if not isinstance(current_tests, list):
+                raise RuntimeError(f"Inherited suite {suite_name} has invalid tests.")
+            current_tests.extend(copy.deepcopy(extra_tests))
+        return merged
+
     if not isinstance(data.get("suites"), dict) or not isinstance(data.get("profiles"), dict):
         raise RuntimeError("Regression manifest must contain object-valued suites and profiles.")
     return data
@@ -126,118 +159,111 @@ def isolated_environment(root: Path) -> dict[str, str]:
 
 def command_for_test(test: dict[str, Any], godot_bin: str) -> list[str]:
     kind = str(test.get("kind", "godot"))
-    rel_path = str(test["path"])
-    absolute = REPO_ROOT / rel_path
+    rel_path = str(test.get("path", ""))
     if kind == "godot":
-        resource_path = "res://" + Path(rel_path).as_posix()
-        return [godot_bin, "--headless", "--path", str(REPO_ROOT), "--script", resource_path]
-    if kind == "shell":
-        bash = shutil.which("bash")
-        if not bash:
-            raise RuntimeError(f"bash is required for shell regression {test['id']}.")
-        return [bash, str(absolute)]
+        return [godot_bin, "--headless", "--path", str(REPO_ROOT), "--script", f"res://{rel_path}"]
     if kind == "python":
-        return [sys.executable, str(absolute)]
-    raise RuntimeError(f"Unsupported regression test kind {kind!r} for {test['id']}.")
+        return [sys.executable, str(REPO_ROOT / rel_path)]
+    if kind == "shell":
+        return ["bash", str(REPO_ROOT / rel_path)]
+    raise RuntimeError(f"Unsupported regression test kind {kind!r} for {test.get('id')}")
 
 
 def run_tests(tests: list[dict[str, Any]], godot_bin: str) -> int:
-    failures: list[tuple[dict[str, Any], str]] = []
+    failures: list[tuple[dict[str, Any], int, str]] = []
     started = time.monotonic()
-
-    with tempfile.TemporaryDirectory(prefix="ccf-regression-") as temp_dir:
-        env = isolated_environment(Path(temp_dir))
-        print(f"Regression data isolation: {temp_dir}")
-        print(f"Running {len(tests)} representative regression tests...\n")
-
+    with tempfile.TemporaryDirectory(prefix="ccf-regression-") as tmp:
+        temp_root = Path(tmp)
         for index, test in enumerate(tests, start=1):
-            label = str(test.get("label", test["id"]))
-            suite = str(test.get("suite", ""))
-            timeout_seconds = int(test.get("timeout_seconds", 30))
-            print(f"[{index:02d}/{len(tests):02d}] {suite}: {label}")
+            label = str(test.get("label", test.get("id", "Unnamed test")))
+            suite = str(test.get("suite", "unknown"))
+            timeout_seconds = max(5, int(test.get("timeout_seconds", 30)))
             command = command_for_test(test, godot_bin)
-            test_started = time.monotonic()
+            print(f"[{index:02d}/{len(tests):02d}] {suite}: {label}")
+            test_root = temp_root / str(test.get("id", f"test-{index}"))
+            test_root.mkdir(parents=True, exist_ok=True)
             try:
                 completed = subprocess.run(
                     command,
                     cwd=REPO_ROOT,
-                    env=env,
+                    env=isolated_environment(test_root),
+                    text=True,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.STDOUT,
-                    text=True,
                     timeout=timeout_seconds,
                     check=False,
                 )
-                duration = time.monotonic() - test_started
-                if completed.returncode == 0:
-                    print(f"  PASS ({duration:.1f}s)")
+                output = completed.stdout or ""
+                if completed.returncode != 0:
+                    failures.append((test, completed.returncode, output))
+                    print(f"  FAIL (exit {completed.returncode})")
                 else:
-                    output = completed.stdout or "<no output>"
-                    failures.append((test, output))
-                    print(f"  FAIL exit={completed.returncode} ({duration:.1f}s)")
-                    print(output.rstrip())
+                    print("  PASS")
+                    if output.strip():
+                        last_line = output.strip().splitlines()[-1]
+                        print(f"  {last_line}")
             except subprocess.TimeoutExpired as exc:
-                duration = time.monotonic() - test_started
-                output = ""
-                if exc.stdout:
-                    output = exc.stdout if isinstance(exc.stdout, str) else exc.stdout.decode(errors="replace")
-                failures.append((test, output or f"Timed out after {timeout_seconds}s"))
-                print(f"  FAIL timeout after {duration:.1f}s")
-                if output:
-                    print(output.rstrip())
-            print()
+                output = (exc.stdout or "") if isinstance(exc.stdout, str) else ""
+                failures.append((test, 124, output))
+                print(f"  FAIL (timeout after {timeout_seconds}s)")
 
-    duration = time.monotonic() - started
-    passed = len(tests) - len(failures)
-    print("=== Broad regression summary ===")
-    print(f"Passed: {passed}/{len(tests)}")
-    print(f"Failed: {len(failures)}")
-    print(f"Time:   {duration:.1f}s")
+    elapsed = time.monotonic() - started
+    print()
+    print(f"Regression suite finished in {elapsed:.1f}s: {len(tests) - len(failures)} passed, {len(failures)} failed.")
     if failures:
-        print("\nFailed tests:")
-        for test, _output in failures:
-            print(f"  - {test.get('suite')}: {test.get('label', test.get('id'))}")
+        print("\nFailures:")
+        for test, code, output in failures:
+            print(f"\n--- {test.get('suite')} / {test.get('label', test.get('id'))} (exit {code}) ---")
+            trimmed = output.strip()
+            if trimmed:
+                print(trimmed[-8000:])
         return 1
-    print("All representative feature areas passed.")
     return 0
 
 
-def print_manifest(manifest: dict[str, Any]) -> None:
-    print(manifest.get("name", "Regression suites"))
-    print("Profiles:")
-    for profile, suite_names in manifest["profiles"].items():
-        print(f"  {profile}: {', '.join(str(item) for item in suite_names)}")
-    print("Suites:")
-    for suite_name, suite in manifest["suites"].items():
-        tests = suite.get("tests", []) if isinstance(suite, dict) else []
-        print(f"  {suite_name}: {len(tests)} tests")
-        if isinstance(suite, dict) and suite.get("description"):
-            print(f"    {suite['description']}")
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--manifest",
+        type=Path,
+        default=DEFAULT_MANIFEST,
+        help=f"Regression manifest path (default: {DEFAULT_MANIFEST.relative_to(REPO_ROOT)})",
+    )
+    parser.add_argument("--profile", choices=["quick", "release"], help="Named regression profile to run.")
+    parser.add_argument(
+        "--suite",
+        action="append",
+        default=[],
+        help="Run an additional named suite. May be passed more than once.",
+    )
+    parser.add_argument("--godot", help="Godot executable. Defaults to GODOT_BIN/godot/godot4.")
+    parser.add_argument("--list", action="store_true", help="List selected tests without running them.")
+    return parser.parse_args()
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Run Character Card Forge broad regression suites.")
-    parser.add_argument("--manifest", default=str(DEFAULT_MANIFEST), help="Regression suite JSON manifest.")
-    parser.add_argument("--profile", default=None, help="Named profile from the manifest, e.g. quick or release.")
-    parser.add_argument("--suite", action="append", default=[], help="Additional suite to run; may be repeated.")
-    parser.add_argument("--godot", default=None, help="Godot executable path. Defaults to GODOT_BIN/godot/godot4.")
-    parser.add_argument("--list", action="store_true", help="List profiles and suites without running tests.")
-    args = parser.parse_args()
-
+    args = parse_args()
+    manifest_path = args.manifest if args.manifest.is_absolute() else REPO_ROOT / args.manifest
     try:
-        manifest = load_manifest(Path(args.manifest).resolve())
-        if args.list:
-            print_manifest(manifest)
-            return 0
+        manifest = load_manifest(manifest_path)
         suite_names, tests = collect_tests(manifest, args.profile, args.suite)
         validate_test_paths(tests)
+        if args.list:
+            print(f"Suites: {', '.join(suite_names)}")
+            for test in tests:
+                print(f"- {test['id']}: {test.get('label', test['id'])} [{test.get('kind', 'godot')}]")
+            return 0
         godot_bin = resolve_godot(args.godot)
-        print(f"Regression suites: {', '.join(suite_names)}")
-        print(f"Godot: {godot_bin}")
-        return run_tests(tests, godot_bin)
     except RuntimeError as exc:
-        print(f"Regression runner error: {exc}", file=sys.stderr)
+        print(f"ERROR: {exc}", file=sys.stderr)
         return 2
+
+    print(f"Character Card Forge regression profile: {args.profile or 'custom/release-default'}")
+    print(f"Suites: {', '.join(suite_names)}")
+    print(f"Tests: {len(tests)}")
+    print(f"Godot: {godot_bin}")
+    print()
+    return run_tests(tests, godot_bin)
 
 
 if __name__ == "__main__":
