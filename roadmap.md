@@ -28,6 +28,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - External authoring tools and AIs should be able to hand CCF a partial character without being forced to generate filler for fields they do not know.
 - Long-running AI collaboration must account for model context limits, reserve output space, preserve original local transcripts, and make lossy summarisation explicit to the user.
 - Provider/model token limits must remain data-driven; UI controls must not impose obsolete ceilings that prevent use of newer long-context/high-output models.
+- Character-generation stages must not silently substitute their own smaller output-token ceilings for the active Text provider/profile setting. Interview planning, Safe Section requests, repairs and full-card generation must all respect the same configured Character Text maximum output allowance.
 - Character Collaborator should preserve established canon by default, deepen existing material before rewriting premises, and make alternate/rewrite directions explicit rather than silently replacing accepted facts.
 - Collaborator presentation should use semantic rich text for readability while preserving the original model response in stored conversation data.
 - Collaborator conversations are independent local authoring documents. A project link is optional metadata and must never be required for a chat to survive an app restart.
@@ -53,19 +54,48 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Collaborator attachments are first-class read-only source context. Text-like files should preserve and embed their source text, images should continue through the Vision → Text boundary, and removing an attachment from active context must not silently erase historical conversation evidence or directly alter project data.
 - Generation reliability strategy is independent of Generation Mode/Style: the template defines what content is needed, while the provider-level strategy defines how many requests are used to produce and validate that content.
 - Safe generation should fail narrowly. Accepted sections remain accepted, and a missing required Generation Component should trigger a focused request for that component rather than force regeneration of unrelated content.
-- Failed provider generations should remain inspectable without exposing credentials; raw response shape, extracted assistant content, parse/validation state and repair evidence are part of the debugging surface.
+- Failed provider generations should remain inspectable without exposing credentials; raw response shape, extracted assistant content, parse/validation state, provider termination reason, token usage and repair evidence are part of the debugging surface.
 
 ## Current Development Phase
 
-**v0.15.22 development candidate — Safe Section Build + Generation Diagnostics**
+**v0.15.25 development candidate — Character Generation Token Budget Invariant**
 
-v0.15.22 makes generation reliability an explicit provider-level strategy rather than overloading the existing Full/Lite/Compact Lite writing mode. **Safe Section Build** is the default/recommended path: each enabled Generation Output Group and each standalone generatable Character Card field is generated in a fresh provider request, accepted content becomes continuity context for later sections, and missing required Generation Components receive focused component-only repair requests. **Fast Full Card** remains available for authors who prefer fewer requests and lower latency while accepting a higher risk of incomplete initial output.
+v0.15.25 fixes the hidden output-token ceiling exposed by real Generation Diagnostics. The active Character generation service now captures the Text provider/profile `max_tokens` from the initial queued Character request and restores that exact allowance immediately before every Character sub-request. Private Interview/Q&A planning and retries, Safe Section Output Groups and standalone fields, focused component/field repairs, JSON repair, semantic/template repair, concept-fidelity correction and Fast Full Card therefore cannot silently impose a smaller stage-specific output limit.
 
-Failed generation attempts now preserve a credential-redacted diagnostic bundle containing the request payload, raw provider response, extracted assistant text, parsed output, validation state, repair evidence, and a full trace. The Workspace exposes **View Diagnostics…** after terminal failures so provider-shape and template-completeness problems can be debugged instead of collapsing into an opaque error string.
+The failure also exposed a development-history regression: v0.14.0-hotfix1 had already removed the original private Interview 2,600-token ceiling, but the later v0.14.13/v0.15 parity inheritance restoration started from the v0.13.5 service and bypassed that hotfix. v0.15.25 enforces the rule at the active leaf and tests the real runtime Workspace so future inheritance changes cannot quietly resurrect the cap.
 
-The running development build displays **v0.15.22**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+Generation Diagnostics now promotes provider termination information into the Overview, including request `max_tokens`, the configured Character Text output allowance, `finish_reason`, incomplete reason where available, provider token counts, and a prominent **OUTPUT LIMIT REACHED** warning for length-limited responses.
+
+The running development build displays **v0.15.25**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.25 — Character Generation Token Budget Invariant
+
+- Made the active Text provider/profile Maximum Output Tokens allowance authoritative for every Character-generation request instead of permitting hidden per-stage output ceilings.
+- Restored private Interview/Q&A generation to the original Character request budget, eliminating the historical 2,600-token cap that had re-entered the live pipeline through a later inheritance regression.
+- Added a final request-time invariant that restores the authoritative Character Text output budget before Interview planning/retries, Safe Section requests, focused component/field repairs, JSON repair, semantic/template repair, concept-fidelity correction and Fast Full Card requests are sent.
+- Deliberately smaller user-configured Maximum Output Tokens values remain exact; v0.15.25 removes hidden limits rather than forcing an arbitrary larger minimum.
+- Added provider termination extraction for common Chat Completions and Responses-style envelopes, including `finish_reason`, incomplete reason, provider input/output/total token counts and explicit output-limit detection.
+- Expanded Generation Diagnostics Overview with configured/request token budgets and a prominent **OUTPUT LIMIT REACHED** indicator when the provider reports a length/output-limit termination.
+- Added a v0.15.25 live Workspace/service leaf so the real app uses the token-safe generation service while retaining Safe Section Build, Fast Full Card and Generation Diagnostics.
+- Added a 39-question Interview regression using a 32,768-token configured budget, a deliberately smaller 1,800-token case, a simulated inherited stage trying to force 2,600, provider `finish_reason: length` diagnostics, and real `main.tscn` live-service verification.
+- Advanced the composable broad regression registry to `regression_suites_v01525.json` and added dedicated Godot 4.6.3 CI coverage.
+- Added `docs/v01525-generation-token-budget.md` documenting the regression, invariant and diagnostic behaviour.
+
+### v0.15.24 — Live Safe Section Generation Service Wiring
+
+- Fixed a runtime regression where the visible v0.15.22 Workspace could still retain a legacy `CCFGenerationServiceV0143` instance and fail because `queue_character_generation_with_strategy()` did not exist on the live service.
+- Added a Workspace guard after inherited startup and immediately before Generate Character; stale services are replaced and all generation clients are rebound to the strategy-aware service.
+- Added a real-runtime regression that instantiates `scenes/main.tscn`, finds the actual live Workspace, and verifies the installed service exposes Safe Section strategy and Diagnostics capabilities rather than only testing the service class in isolation.
+- Added v0.15.24 to the composable broad regression registry.
+
+### v0.15.23 — Token Settings Regression Fix
+
+- Fixed the v0.15.22 Settings inheritance regression that had removed the Text **Context window tokens** control and restored the old 131,072 Maximum Output Tokens UI ceiling.
+- Restored the full v0.15.9 settings inheritance chain, preserving Text context/output controls and separate Vision token controls while keeping the new Generation Strategy setting.
+- Restored the 4,194,304 Maximum Output Tokens UI range with `allow_greater`, so provider-specific values above the visible range remain accepted.
+- Added focused token-settings regression coverage.
 
 ### v0.15.22 — Safe Section Build + Generation Diagnostics
 
@@ -380,8 +410,9 @@ The running development build displays **v0.15.22**. Release metadata remains co
 
 ## In Progress
 
+- Runtime-test v0.15.25 against the same long Generation Concept and large custom Interview/Q&A set that previously stopped at exactly 2,600 tokens; confirm the diagnostic request now shows the active Text Maximum Output Tokens setting and the Interview reaches complete JSON unless the provider genuinely reaches that configured limit.
 - Runtime-test **Safe Section Build** with a real custom template containing multiple Output Groups targeting the same Character Card field, including a separate Sexual Traits group, and confirm each group is a separate provider request while the final field is assembled in template order.
-- Deliberately provoke missing required components and provider response-shape failures to verify focused component repair and the new Generation Diagnostics inspector against real API responses.
+- Deliberately provoke missing required components and provider response-shape failures to verify focused component repair and the Generation Diagnostics inspector against real API responses.
 - Compare real-world request count, latency and completeness between Safe Section Build and Fast Full Card across cloud and local/self-hosted providers; keep Safe as the default unless evidence shows a better reliability trade-off.
 - Runtime-test unified Collaborator attachments with real TXT/Markdown, SRT, ASS/SSA, JSON and image references; confirm text survives save/reopen, image references still route Vision → Text, attachment token costs remain visible, and removing references updates future context without erasing historical Vision Analysis messages.
 - Validate a long subtitle-script attachment as personality/dialogue reference through normal brainstorming and Blueprint handoff, checking that timestamps/dialogue evidence remain available without accidental auto-summarisation or direct project writes.
@@ -395,7 +426,7 @@ The running development build displays **v0.15.22**. Release metadata remains co
 - Confirm supplementary materialisation never overwrites manually populated Alternative Greetings or Lorebook entries and is not repeatedly queued once reviewed/materialised.
 - Continue runtime-testing the restored v0.15.16 generation pipeline with custom/default Generation Components, multi-group output composition, disabled components, Builder precedence, Mode & Style, concept-fidelity retry and semantic repair.
 - Continue profiling very long Collaborator sessions so token estimation, transcript rendering, autosave, Blueprint generation and direct-draft generation remain responsive at large context sizes.
-- Continue hardening forward-compatible regression tests so a new inherited shell or runtime service replacement cannot falsely pass while dropping an older capability.
+- Continue hardening forward-compatible regression tests so a new inherited shell or runtime service replacement cannot falsely pass while dropping an older capability or historical hotfix.
 - Continue V1 parity review where V1 still has useful authoring workflow details that V2 has not yet surpassed.
 
 ## Next Up
@@ -429,6 +460,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 - Keep generation services modular and preserve older project/card compatibility as schemas evolve.
 - Treat runtime generation-service composition as a tested compatibility boundary; new service subclasses must extend the previous capability chain unless a deliberate replacement is documented and integration-tested.
+- Treat important historical hotfix behaviour as an active-leaf regression invariant rather than assuming the original hotfix class will always remain in a later inheritance chain.
+- Maintain one authoritative Character Text output budget per queued generation job and reassert it at request time so prompt/temperature transformations cannot silently introduce hidden token ceilings.
 - Reduce inherited-shell regression fragility by testing capability/inheritance rather than exact active-version filenames.
 - Maintain the versioned representative regression registry as a release compatibility boundary across unrelated app areas; focused version tests remain useful but are not sufficient on their own.
 - Keep local regression subprocesses isolated from real HOME/XDG/AppData state so tests exercising `user://` remain safe to run automatically before releases.
@@ -461,7 +494,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Deferred / Experimental Ideas
 
-- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.22 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
+- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.25 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
 - More elaborate graph visualisation/layout automation beyond the current draggable anchor-based system.
 - Optional advanced context compression strategies beyond the current explicit user-triggered summarisation model.
 - Experimental provider-specific optimisations should remain opt-in until they can be implemented without weakening the generic OpenAI-compatible path.
