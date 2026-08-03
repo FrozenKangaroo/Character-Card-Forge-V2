@@ -1,25 +1,25 @@
 name: v0.15.22 branch maintenance
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - agent/v0.15.22-safe-section-diagnostics
 
 permissions:
   contents: write
 
 concurrency:
-  group: v01522-maintenance-${{ github.head_ref }}
+  group: v01522-maintenance-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   patch:
-    if: github.head_ref == 'agent/v0.15.22-safe-section-diagnostics'
     runs-on: ubuntu-24.04
     steps:
       - name: Check out feature branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: agent/v0.15.22-safe-section-diagnostics
           fetch-depth: 0
 
       - name: Apply targeted v0.15.22 maintenance edits
@@ -91,4 +91,4 @@ The running development build displays **v0.15.22**. Release metadata remains co
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add scripts/services/generation_service_v01522.gd roadmap.md
           git commit -m "Fix v0.15.22 warnings and update roadmap"
-          git push origin HEAD:${{ github.head_ref }}
+          git push origin HEAD:agent/v0.15.22-safe-section-diagnostics
