@@ -52,22 +52,28 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Image Studio is a first-class main-navigation page. Its native `Window` controller may remain an implementation detail, but normal navigation must present the studio embedded in the main workspace.
 - **Generate Prompt from Character** is an AI-authored Character Text-role workflow; deterministic Character → image-prompt construction remains an explicit **Build Local Fallback** rather than silently replacing the AI path.
 - Passive Image Studio browsing, project loading, and character switching must never spend provider tokens; AI calls require an explicit user action.
+- Long-form multiline authoring fields such as Image Prompt and Negative Prompt must wrap visually at the available editor width instead of requiring horizontal scrolling; visual wrapping must not mutate the stored text.
 
 ## Current Development Phase
 
-**v0.15.29 development candidate — Embedded Image Studio + AI Prompt Restoration**
+**v0.15.30 development candidate — Image Prompt Word Wrapping**
 
-v0.15.29 restores two established Image Studio contracts that regressed in v0.15.28 while preserving v0.15.28's live project and Image-provider state fixes.
+v0.15.30 is a narrow Image Studio presentation fix following the v0.15.29 embedded-page and AI-prompt restoration. The Image Prompt and Negative Prompt controls remain normal multiline `TextEdit` editors, but now use boundary word wrapping so long AI-authored or manually edited prompts flow across visible lines instead of appearing as one enormous horizontal line.
 
-Image Studio is again shown as the selected main application page. The current Image Studio controller UI is mounted inside its scrollable workspace page, while the native controller `Window` remains hidden during normal navigation. The compatibility `open_studio()` path is refresh-only so later inherited callers cannot accidentally reopen the native popup.
+The underlying prompt text is unchanged. Wrapping is presentation-only and therefore does not alter copied prompt content, negative prompts, saved defaults, or the text sent to image providers. Existing vertical scrolling remains available for long prompts, and horizontal scroll is reset when the editors are configured.
 
-The normal Character → image prompt action is again **Generate Prompt from Character**. It explicitly calls the configured Character AI Text role to author a purpose-built image-generation prompt from Description, Scenario, visually useful Personality/First Message context, Generation Concept when available, and authoritative Additional visual direction. Stable Diffusion and natural-language prompt styles remain distinct, and an optional generated negative prompt is applied when supplied.
-
-**Build Local Fallback** remains the deterministic token-free alternative. Loading Image Studio or switching projects/characters stays passive and never triggers a Text-provider request. The restored AI prompt service inherits the current v0.15.26 scheduler-aware generation stack instead of bypassing newer concurrency architecture.
-
-The running development build displays **v0.15.29**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.30**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.30 — Image Prompt Word Wrapping
+
+- Enabled `TextEdit.LINE_WRAPPING_BOUNDARY` for both the Image Prompt and Negative Prompt editors.
+- Reset horizontal scroll when those editors are configured while preserving multiline editing and vertical scrolling.
+- Kept wrapping presentation-only so prompt text passed to clipboard, settings, AI prompt workflows, and Image providers remains unchanged.
+- Preserved the v0.15.29 embedded Image Studio, Character Text-role **Generate Prompt from Character**, and deterministic **Build Local Fallback** behavior.
+- Preserved v0.15.28 Workspace-save handoff, Image-profile separation, and cached model/sampler discovery.
+- Added `docs/v01530-image-prompt-word-wrap.md`, a strict real-main-scene regression that inserts a long single paragraph into both live editors and verifies actual wrapped visual lines, a focused v0.15.30 workflow, and the v0.15.30 broad regression manifest.
 
 ### v0.15.29 — Embedded Image Studio + AI Prompt Restoration
 
@@ -305,9 +311,9 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
-- Runtime-test v0.15.29 with the user's real Character AI Text provider plus Stable Diffusion/Forge provider: AI-authored prompt, optional negative prompt, cached checkpoint/sampler lists, image generation, and restart persistence.
+- Runtime-test v0.15.30 with the user's real Character AI Text provider plus Stable Diffusion/Forge provider: AI-authored prompt, optional negative prompt, visible wrapping for both prompt editors, cached checkpoint/sampler lists, image generation, and restart persistence.
 - Compare **Generate Prompt from Character** against **Build Local Fallback** across sparse and detailed characters; AI prompting should add deliberate composition without drifting established physical identity.
-- Runtime-test v0.15.29 with real provider calls while Character generation, Character Collaborator, Idea Generator, Vision, AI image-prompt generation, and Image generation run concurrently.
+- Runtime-test v0.15.30 with real provider calls while Character generation, Character Collaborator, Idea Generator, Vision, AI image-prompt generation, and Image generation run concurrently.
 - Runtime-test parallel Safe Section Build with Interview/Q&A, multiple Output Groups targeting one field, a separate Sexual Traits group, and deliberately varied completion order.
 - Verify First Message waits for Scenario and later dialogue/greeting sections wait for intended dependencies in a real custom template.
 - Test Vision and Image global-participation toggles with cloud Text plus local Vision/Stable Diffusion.
@@ -372,6 +378,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep Character Text/Vision and Image profile lookup paths separate at every UI/service boundary.
 - Keep Image Studio's embedded-page presentation as a tested user-facing contract even when its controller remains implemented as a Window internally.
 - Preserve the explicit-action boundary for AI image prompting: passive refresh is provider-free, Generate Prompt uses Text AI, and Local Fallback never calls a provider.
+- Keep Image Prompt and Negative Prompt as multiline wrapped editors; test actual visual line wrapping rather than relying only on source-level configuration.
 - When replacing/upgrading an Image Studio controller, reattach the current controller content to the embedded host rather than reopening or exposing the hidden native Window.
 - Prefer capability/user-contract regression assertions over fixed-depth inheritance or assumptions about exact historical script filenames.
 - Keep normal Godot import/open operations checkout-clean.
@@ -405,6 +412,6 @@ Character Card Forge is an authoring application rather than a level-based game.
 - The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path because it bypassed the established parity/validation pipeline. Any revival must compose with that pipeline.
 - Provider-specific concurrency heuristics remain opt-in until CCF can model provider limits without weakening the generic OpenAI-compatible path.
 - Shared GPU resource pools are deferred until real local Vision/Image testing establishes the necessary controls.
-- Persistent local queue recovery across application restarts is deferred; v0.15.29 queues are process-local.
+- Persistent local queue recovery across application restarts is deferred; v0.15.30 queues are process-local.
 - More elaborate graph layout automation beyond the current draggable anchor-based system.
 - Advanced context compression beyond explicit user-triggered summarisation.
