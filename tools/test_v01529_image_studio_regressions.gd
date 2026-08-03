@@ -105,7 +105,7 @@ func _test_real_app_v01529(project: Dictionary) -> void:
 	var studio_scroll := image_page.get("_studio_scroll") as ScrollContainer
 	assert(studio_scroll != null, "The embedded Image Studio must retain its scrolling viewport.")
 	assert(
-		_find_descendant_of_type_v01529(studio_scroll, MarginContainer) != null,
+		_find_margin_container_v01529(studio_scroll) != null,
 		"The current Image Studio controls must be mounted inside the embedded scroll viewport."
 	)
 
@@ -134,7 +134,7 @@ func _test_real_app_v01529(project: Dictionary) -> void:
 		prompt_service.pending_count() > 0 or prompt_service.has_active_job(),
 		"The explicit prompt action must enter the Text generation queue rather than locally extracting card fields."
 	)
-	var active_or_queued := prompt_service.get("_queue")
+	var active_or_queued: Variant = prompt_service.get("_queue")
 	if active_or_queued is Array:
 		(active_or_queued as Array).clear()
 	image_window.set("_prompt_generation_job_id_v01529", "")
@@ -188,12 +188,12 @@ func _find_button_v01529(root: Node, button_text: String) -> Button:
 	return null
 
 
-func _find_descendant_of_type_v01529(root: Node, expected_type: Variant) -> Node:
+func _find_margin_container_v01529(root: Node) -> MarginContainer:
+	if root is MarginContainer:
+		return root as MarginContainer
 	for child in root.get_children():
-		if is_instance_of(child, expected_type):
-			return child
 		if child is Node:
-			var found := _find_descendant_of_type_v01529(child, expected_type)
+			var found := _find_margin_container_v01529(child)
 			if found != null:
 				return found
 	return null
