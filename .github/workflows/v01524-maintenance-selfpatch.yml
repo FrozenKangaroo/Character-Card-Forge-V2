@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - agent/v0.15.24-live-generation-service-hotfix
+  pull_request:
 
 permissions:
   contents: write
