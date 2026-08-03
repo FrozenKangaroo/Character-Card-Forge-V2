@@ -4,7 +4,9 @@ Character Card Forge has a large inherited feature surface. A new feature can wo
 
 ## Broad regression profiles
 
-The versioned manifest `tools/regression_suites_v01520.json` groups representative tests by user-facing area:
+The regression registry is versioned and composable. `tools/regression_suites_v01520.json` remains the broad baseline introduced in v0.15.20, while later manifests such as `tools/regression_suites_v01521.json` inherit that baseline and append representative tests for newly supported major features.
+
+The resulting merged registry groups representative tests by user-facing area:
 
 - current live wiring
 - core project/data behaviour
@@ -15,7 +17,7 @@ The versioned manifest `tools/regression_suites_v01520.json` groups representati
 - image and Vision workflows
 - update/release workflow safety
 
-The manifest is data-driven so later versions can add or replace representative tests without rewriting the runner.
+This keeps the registry data-driven without copying the entire historical test list into every patch release.
 
 ## Run locally
 
@@ -63,9 +65,10 @@ GitHub Actions also runs the same broad release profile on every pull request an
 When a new major feature becomes part of the supported app surface:
 
 1. Add or extend a focused regression test for the feature.
-2. Add a representative entry to the appropriate suite in `tools/regression_suites_v01520.json`.
-3. Prefer testing the current live service/workspace composition rather than only instantiating an isolated historical helper.
-4. Make historical shell/version tests inheritance-aware where later versions are expected to extend them.
-5. Keep tests deterministic and offline; provider calls should be mocked, inspected, or validated at the request/response boundary rather than requiring live API credentials.
+2. Add a new versioned manifest layer that inherits the current registry and appends the representative test to the appropriate suite.
+3. Advance `DEFAULT_MANIFEST` in `tools/run_regression_suite.py` to the new manifest layer.
+4. Prefer testing the current live service/workspace composition rather than only instantiating an isolated historical helper.
+5. Make historical shell/version tests inheritance-aware where later versions are expected to extend them.
+6. Keep tests deterministic and offline; provider calls should be mocked, inspected, or validated at the request/response boundary rather than requiring live API credentials.
 
 The broad suite is not intended to replace focused tests. It is a cross-feature release gate that makes it much harder for development focus on one area to hide regressions somewhere else.
