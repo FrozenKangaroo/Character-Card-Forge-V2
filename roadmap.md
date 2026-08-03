@@ -50,16 +50,31 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Release/update helpers should prefer the Git checkout they are actually launched from when it is already the repository root. Separate development-copy-to-repository syncing is a fallback workflow, not a reason to silently route a normal checkout through an unrelated clone.
 - Every major supported workflow should have representative cross-feature regression coverage. A new feature is not release-ready merely because its own focused test passes; unrelated core, generation, authoring, content, Collaborator, image/Vision and release workflows must remain healthy too.
 - Automated local regression tests that exercise `user://` state must run in isolated temporary app-data directories so testing cannot overwrite real author settings, FileDialog history, or Collaborator conversations.
+- Collaborator attachments are first-class read-only source context. Text-like files should preserve and embed their source text, images should continue through the Vision → Text boundary, and removing an attachment from active context must not silently erase historical conversation evidence or directly alter project data.
 
 ## Current Development Phase
 
-**v0.15.20 development candidate — broad regression safety**
+**v0.15.21 development candidate — unified Character Collaborator attachments**
 
-v0.15.20 turns regression protection into an explicit release gate. A versioned data-driven regression registry now selects representative tests across the app rather than relying on whatever feature is currently receiving manual attention. The same broad profile runs in GitHub Actions and automatically from `release.sh` when Godot is available locally, with temporary HOME/XDG/AppData isolation protecting real `user://` data during persistence tests.
+v0.15.21 generalises Character Collaborator's existing image-reference path into one attachment workflow for images and text-based source material. Authors can attach TXT/Markdown, SRT, ASS/SSA and JSON references without pasting them into the composer, see their context cost, remove them when they are no longer useful, and continue using the established Vision → Text pipeline for images. The v0.15.20 broad regression gate remains the release compatibility boundary and now includes v0.15.21 attachment coverage through a composable manifest layer.
 
-The running development build displays **v0.15.20**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.21**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.21 — Unified Character Collaborator Attachments
+
+- Added unified **Attach…** and **Attach Files…** controls so reference files can be added directly from the chat composer or Reference Context without pasting their contents into a message.
+- Added multi-file TXT, Markdown, SRT, ASS, SSA and JSON reference support while keeping raw JSON attachment distinct from the dedicated Character Card import workflow.
+- Text attachment contents are preserved verbatim and embedded in the saved Collaborator session; subtitle timing/dialogue order, ASS/SSA speaker/style fields and JSON structure remain available as source evidence even if the original file later moves or disappears.
+- Added a 4 MiB per-text-file safety limit plus empty/binary/unsupported-file rejection.
+- Folded PNG/JPG/JPEG/WebP image references into the same attachment UX while retaining the existing dedicated Vision-model analysis and the rule that the Text model receives only the Vision-derived description.
+- Unified Reference Context presentation now shows attachment filename, format, preview and estimated token cost, and overall context reporting calls out the portion consumed by attachments.
+- Existing attachments can be removed from future model context through the Reference Context list. Historical Vision Analysis cards also expose **Remove Attachment**, which removes the active image-derived reference while preserving the transcript record of the earlier analysis.
+- Kept attachments as read-only authoring source material: adding or removing them does not directly write Character, Lorebook, Alternative Greeting or other Workspace fields.
+- Added `docs/collaborator-attachments.md` documenting supported formats, persistence, removal semantics, context budgeting and the raw-JSON-versus-Character-Card distinction.
+- Advanced the broad regression runner to a composable `regression_suites_v01521.json` layer so attachment coverage joins both quick and release profiles without duplicating the v0.15.20 registry.
+- Added focused Godot 4.6.3 regression/CI coverage for text preservation, supported format routing, existing Vision behaviour, Blueprint continuity, active Workspace wiring and inherited app-shell compatibility.
 
 ### v0.15.20 — Broad Regression Safety
 
@@ -347,6 +362,8 @@ The running development build displays **v0.15.20**. Release metadata remains co
 
 ## In Progress
 
+- Runtime-test unified Collaborator attachments with real TXT/Markdown, SRT, ASS/SSA, JSON and image references; confirm text survives save/reopen, image references still route Vision → Text, attachment token costs remain visible, and removing references updates future context without erasing historical Vision Analysis messages.
+- Validate a long subtitle-script attachment as personality/dialogue reference through normal brainstorming and Blueprint handoff, checking that timestamps/dialogue evidence remain available without accidental auto-summarisation or direct project writes.
 - Runtime-test the new `python3 tools/run_regression_suite.py --profile quick` and `--profile release` commands on the normal Linux/Godot development machine and confirm they complete without touching real Character Collaborator/FileDialog/settings data.
 - Runtime-test `release.sh` and confirm the new **Running broad release regression suite** gate executes before staging/tagging and stops cleanly if any representative test fails.
 - Continue expanding the representative registry whenever a newly supported major workflow would otherwise depend primarily on manual testing.
@@ -362,6 +379,8 @@ The running development build displays **v0.15.20**. Release metadata remains co
 
 ## Next Up
 
+- Evaluate whether attachment UX should grow a true pending-message attachment strip/chips so an author can stage and remove files before Send, or whether session-level Reference Context remains the clearer default for long-lived character-development sources.
+- Consider optional per-message attachment association/display for cases where a source belongs to one specific request while retaining the current ability to keep a reference active across multiple Collaborator turns.
 - Keep the representative regression registry aligned with the actual supported feature surface as generation transparency/workflow-clarity work begins; do not let new major features remain outside the release profile.
 - Perform a deliberate canonical GDScript UID migration later: generate one stable project-wide `.gd.uid` set, commit it together, remove the temporary ignore rule, and add CI that detects unexpected UID churn rather than treating arbitrary local sidecars as source.
 - Decide whether Blueprint supplementary material should gain its own explicit review dialog before being committed, or whether the existing editable Alternative Greetings tab and Lorebook Manager provide sufficient review once the material is placed there.
@@ -390,6 +409,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Reduce inherited-shell regression fragility by testing capability/inheritance rather than exact active-version filenames.
 - Maintain the versioned representative regression registry as a release compatibility boundary across unrelated app areas; focused version tests remain useful but are not sufficient on their own.
 - Keep local regression subprocesses isolated from real HOME/XDG/AppData state so tests exercising `user://` remain safe to run automatically before releases.
+- Keep regression registry versions composable so a new patch can append representative coverage without duplicating or silently dropping the established cross-feature release surface.
 - Continue warning-as-error GDScript hygiene and CI parsing on Godot 4.6.x.
 - Keep normal Godot import/open operations checkout-clean; CI should detect repository-visible generated metadata before it reaches update/release workflows.
 - Keep the temporary `*.gd.uid` ignore narrowly scoped to the current non-canonical sidecar phase and replace it with a checked-in canonical UID set when that migration is intentionally performed.
@@ -397,6 +417,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep release/update helper executable modes under version control so Linux users can invoke them directly.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
 - Continue reducing synchronous whole-library work from interactive Collaborator paths as conversation histories grow.
+- Keep Collaborator file decoding/classification separate from UI composition; preserve attachment source provenance, embedded text and context-cost accounting without allowing attached files to bypass normal project-write boundaries.
 - Keep Generation Component semantics data-driven so new groups/components can be added without hard-coding Description or Personality behavior into the service.
 - Treat the detailed Generation Concept Blueprint as preserved authoring source, not disposable intermediate text, so later template/model changes can regenerate the card without reconstructing the Collaborator session.
 - Treat `generation.template_id` as part of character handoff continuity: any workflow creating a character from an active authoring context must deliberately carry the selected template rather than relying on the storage-layer default.
@@ -415,7 +436,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Deferred / Experimental Ideas
 
-- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.20 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
+- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.21 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
 - More elaborate graph visualisation/layout automation beyond the current draggable anchor-based system.
 - Optional advanced context compression strategies beyond the current explicit user-triggered summarisation model.
 - Experimental provider-specific optimisations should remain opt-in until they can be implemented without weakening the generic OpenAI-compatible path.

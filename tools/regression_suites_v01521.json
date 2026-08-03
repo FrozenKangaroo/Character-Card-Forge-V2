@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.21",
+  "description": "v0.15.20 broad regression coverage plus first-class unified Character Collaborator attachment coverage.",
+  "base_manifest": "regression_suites_v01520.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01521_collaborator_attachments",
+        "label": "v0.15.21 unified Character Collaborator attachments",
+        "kind": "godot",
+        "path": "tools/test_v01521_collaborator_attachments.gd",
+        "timeout_seconds": 30
+      }
+    ]
+  }
+}
