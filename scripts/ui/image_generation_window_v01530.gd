@@ -8,8 +8,12 @@ func _ready() -> void:
 
 
 func _apply_prompt_word_wrap_v01530() -> void:
-	for editor in [_prompt_edit, _negative_prompt_edit]:
-		if editor == null:
-			continue
-		editor.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
-		editor.scroll_horizontal = 0
+	_configure_prompt_editor_v01530(_prompt_edit)
+	_configure_prompt_editor_v01530(_negative_prompt_edit)
+
+
+func _configure_prompt_editor_v01530(editor: TextEdit) -> void:
+	if editor == null:
+		return
+	editor.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	editor.scroll_horizontal = 0
