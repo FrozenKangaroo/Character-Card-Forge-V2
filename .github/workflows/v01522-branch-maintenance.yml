@@ -1,0 +1,94 @@
+name: v0.15.22 branch maintenance
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: v01522-maintenance-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  patch:
+    if: github.head_ref == 'agent/v0.15.22-safe-section-diagnostics'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out feature branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Apply targeted v0.15.22 maintenance edits
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          service_path = Path('scripts/services/generation_service_v01522.gd')
+          service = service_path.read_text(encoding='utf-8')
+          replacements = {
+              '\t\t\tvar value := CCFStorageService.get_value_at_path(project, str(field.get("path", "")), "")': '\t\t\tvar value: Variant = CCFStorageService.get_value_at_path(project, str(field.get("path", "")), "")',
+              '\tvar previous := _active_job.get("safe_pending_field_value", null)': '\tvar previous: Variant = _active_job.get("safe_pending_field_value", null)',
+          }
+          for old, new in replacements.items():
+              if old in service:
+                  service = service.replace(old, new, 1)
+          service_path.write_text(service, encoding='utf-8')
+
+          roadmap_path = Path('roadmap.md')
+          roadmap = roadmap_path.read_text(encoding='utf-8')
+          old_phase = '''**v0.15.21 development candidate — unified Character Collaborator attachments**
+
+v0.15.21 generalises Character Collaborator's existing image-reference path into one attachment workflow for images and text-based source material. Authors can attach TXT/Markdown, SRT, ASS/SSA and JSON references without pasting them into the composer, see their context cost, remove them when they are no longer useful, and continue using the established Vision → Text pipeline for images. The v0.15.20 broad regression gate remains the release compatibility boundary and now includes v0.15.21 attachment coverage through a composable manifest layer.
+
+The running development build displays **v0.15.21**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.'''
+          new_phase = '''**v0.15.22 development candidate — Safe Section Build + Generation Diagnostics**
+
+v0.15.22 makes generation reliability an explicit provider-level strategy rather than overloading the existing Full/Lite/Compact Lite writing mode. **Safe Section Build** is the default/recommended path: each enabled Generation Output Group and each standalone generatable Character Card field is generated in a fresh provider request, accepted content becomes continuity context for later sections, and missing required Generation Components receive focused component-only repair requests. **Fast Full Card** remains available for authors who prefer fewer requests and lower latency while accepting a higher risk of incomplete initial output.
+
+Failed generation attempts now preserve a credential-redacted diagnostic bundle containing the request payload, raw provider response, extracted assistant text, parsed output, validation state, repair evidence, and a full trace. The Workspace exposes **View Diagnostics…** after terminal failures so provider-shape and template-completeness problems can be debugged instead of collapsing into an opaque error string.
+
+The running development build displays **v0.15.22**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.'''
+          if old_phase in roadmap:
+              roadmap = roadmap.replace(old_phase, new_phase, 1)
+          elif '**v0.15.22 development candidate — Safe Section Build + Generation Diagnostics**' not in roadmap:
+              raise SystemExit('Could not locate Current Development Phase block for v0.15.21')
+
+          completed_marker = '## Completed\n\n'
+          v01522_completed = '''### v0.15.22 — Safe Section Build + Generation Diagnostics
+
+- Added a separate **Generation Strategy** control to Character AI / AI Providers. It is intentionally independent of the existing Full/Lite/Compact Lite Generation Mode and Mode & Style controls.
+- Made **Safe Section Build** the default/recommended strategy for new and legacy settings that do not explicitly choose a strategy; retained **Fast Full Card** as the opt-in lower-request/lower-latency path.
+- Added a data-driven safe generation plan where each enabled Generation Output Group is one section and each generatable field without an Output Group—such as Scenario or First Message—is one standalone section.
+- Safe sections use fresh provider conversations while repeatedly supplying the authoritative character concept, applicable project/template context, Interview/Q&A and Builder planning guidance, Mode & Style guidance, and already accepted sections as continuity context.
+- Generation Output Group responses are validated at component level. Missing required components trigger focused requests for only the missing component instead of rewriting an accepted group or discarding the rest of the card; missing optional components are allowed to remain absent.
+- Multiple Generation Output Groups targeting the same Character Card field are assembled in template order, with group headings retained when required by the existing generation contract, so later groups append rather than overwrite earlier accepted content.
+- Safe Build delegates the assembled candidate back through the established template-contract, semantic repair, concept-fidelity, fail-closed and Generation Preview chain, preserving the restored v0.15 generation safeguards instead of creating a parallel unchecked output path.
+- Added terminal **Generation Diagnostics** capture with the actual request payload, raw API response body, extracted assistant text, parsed output, validation report, repair evidence and request/response trace.
+- Added a **View Diagnostics…** failure action plus a detachable diagnostics inspector with Copy Full Diagnostic and Save Diagnostic Bundle actions. Authentication headers, API keys, passwords, tokens and known credential values are redacted before diagnostics are exposed.
+- Advanced the composable broad regression manifest to `regression_suites_v01522.json` and added focused Godot 4.6.3 CI coverage for default strategy selection, Output Group/standalone-section planning, multi-group field assembly, diagnostics redaction, active Workspace wiring and retained generation-pipeline inheritance.
+
+'''
+          if '### v0.15.22 — Safe Section Build + Generation Diagnostics' not in roadmap:
+              if completed_marker not in roadmap:
+                  raise SystemExit('Could not locate Completed roadmap section')
+              roadmap = roadmap.replace(completed_marker, completed_marker + v01522_completed, 1)
+          roadmap_path.write_text(roadmap, encoding='utf-8')
+          PY
+
+      - name: Commit maintenance edits when needed
+        shell: bash
+        run: |
+          if [[ -z "$(git status --porcelain -- scripts/services/generation_service_v01522.gd roadmap.md)" ]]; then
+            echo "No maintenance edits needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/services/generation_service_v01522.gd roadmap.md
+          git commit -m "Fix v0.15.22 warnings and update roadmap"
+          git push origin HEAD:${{ github.head_ref }}
