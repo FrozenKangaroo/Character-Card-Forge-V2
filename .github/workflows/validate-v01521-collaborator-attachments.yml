@@ -1,0 +1,59 @@
+name: Validate v0.15.21 Collaborator attachments
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v01521-attachments-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.6.3'
+  GODOT_STATUS: stable
+
+jobs:
+  collaborator-attachments:
+    name: Unified Collaborator attachments
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project
+        run: godot --headless --path . --import
+
+      - name: Confirm import leaves checkout clean
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain --untracked-files=normal)" ]]; then
+            echo "Godot import created repository-visible changes:"
+            git status --short
+            exit 1
+          fi
+
+      - name: Test unified Collaborator attachments
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01521_collaborator_attachments.gd
+
+      - name: Recheck existing Vision attachment pipeline
+        run: timeout 30s godot --headless --path . --script res://tools/test_v0157_collaborator_vision_pipeline.gd
+
+      - name: Recheck persistent Vision Analysis messages
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01511_visible_vision_analysis.gd
+
+      - name: Recheck Blueprint materialisation and handoff continuity
+        run: timeout 30s godot --headless --path . --script res://tools/test_v01517_blueprint_materialisation.gd
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --profile quick --godot "$(command -v godot)"
