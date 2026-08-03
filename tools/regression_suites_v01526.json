@@ -8,9 +8,9 @@
       {
         "id": "v01526_concurrent_ai_scheduler",
         "label": "v0.15.26 concurrent AI scheduler and Collaborator service compatibility",
-        "kind": "godot",
-        "path": "tools/test_v01526_concurrent_ai_scheduler.gd",
-        "timeout_seconds": 45
+        "kind": "python",
+        "path": "tools/test_v01526_concurrent_ai_scheduler_strict.py",
+        "timeout_seconds": 55
       }
     ]
   }
