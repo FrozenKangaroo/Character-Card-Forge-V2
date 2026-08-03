@@ -1,0 +1,112 @@
+name: Validate v0.15.26 one-shot branch patch
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/v0.15.26-concurrent-ai-scheduler
+          fetch-depth: 0
+
+      - name: Apply idempotent v0.15.26 patch
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('scripts/services/generation_service_v01526.gd')
+          text = path.read_text(encoding='utf-8').replace(
+              'var plan_size := plan_value.size() if plan_value is Array else 1',
+              'var plan_size: int = plan_value.size() if plan_value is Array else 1',
+          )
+          path.write_text(text, encoding='utf-8')
+
+          path = Path('tools/run_regression_suite.py')
+          text = path.read_text(encoding='utf-8').replace(
+              'DEFAULT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v01525.json"',
+              'DEFAULT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v01526.json"',
+          )
+          path.write_text(text, encoding='utf-8')
+
+          path = Path('.github/workflows/validate-v01526-concurrent-ai-scheduler.yml')
+          text = path.read_text(encoding='utf-8').replace(
+              '      - name: Import and parse project\n        run: godot --headless --path . --import',
+              '''      - name: Import and parse project\n        shell: bash\n        run: |\n          set -o pipefail\n          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v01526-import.log\n          if grep -E "SCRIPT ERROR: (Parse Error|Compile Error)|Failed to load script" /tmp/ccf-v01526-import.log; then\n            echo "Godot reported a script parse/compile failure during import."\n            exit 1\n          fi''',
+          )
+          path.write_text(text, encoding='utf-8')
+
+          path = Path('tools/test_v01526_concurrent_ai_scheduler.gd')
+          text = path.read_text(encoding='utf-8')
+          if 'var _test_failed_v01526 := false' not in text:
+              text = text.replace('extends SceneTree\n', 'extends SceneTree\n\nvar _test_failed_v01526 := false\n', 1)
+          text = text.replace('assert(', '_check_v01526(')
+          text = text.replace(
+              '\tprint("v0.15.26 concurrent AI scheduler regression passed")\n\tquit(0)',
+              '\tif _test_failed_v01526:\n\t\tquit(1)\n\t\treturn\n\tprint("v0.15.26 concurrent AI scheduler regression passed")\n\tquit(0)',
+              1,
+          )
+          if 'func _check_v01526(' not in text:
+              text += '\n\nfunc _check_v01526(condition: bool, message: String) -> void:\n\tif condition:\n\t\treturn\n\t_test_failed_v01526 = true\n\tpush_error(message)\n'
+          path.write_text(text, encoding='utf-8')
+
+          path = Path('roadmap.md')
+          text = path.read_text(encoding='utf-8')
+          principle = '- Concurrent AI work must preserve isolated request/job state. Shared capacity scheduling may coordinate workers, but unrelated Character, Collaborator, Idea, Vision, authoring-tool, and Image jobs must never share one mutable `_active_job` or allow completion timing to change deterministic card assembly.\n'
+          anchor = '- Character-generation stages must not silently substitute their own smaller output-token ceilings for the active Text provider/profile setting. Interview planning, Safe Section requests, repairs and full-card generation must all respect the same configured Character Text maximum output allowance.\n'
+          if principle not in text:
+              text = text.replace(anchor, anchor + principle)
+          phase = '''## Current Development Phase
+
+**v0.15.26 development candidate — Concurrent AI Scheduler + Collaborator Service Compatibility**
+
+v0.15.26 replaces the effective application-wide one-request bottleneck with a dependency-aware capacity scheduler. Generate Character, Character Collaborator, Idea Generator, authoring tools, Vision/Attachments and Image Studio now use isolated workers that can run together up to user-configured global and role-specific limits. Overflow work remains queued instead of being rejected or forced through one mutable generation-service state machine.
+
+Safe Section Build retains Interview/Q&A as a mandatory planning barrier. After Interview completion, eligible sections run in dependency waves using one frozen context snapshot per wave. Results remain isolated until the coordinator assembles them in template and Generation Group order, so response completion timing cannot alter the final Character Card. First Message waits for Scenario, and dependent dialogue/greeting sections wait for the source scene material when those fields are present.
+
+Vision and Image roles can either count toward the global maximum or use independent role pools, supporting combinations such as cloud Text plus local Vision and Stable Diffusion. Provider-specific API pools and shared local-GPU resource pools remain planned refinements.
+
+This build also fixes the reported Character Collaborator regression where an exact v0.15.22 script comparison rejected newer compatible generation services. Collaborator now uses capability-based compatibility and its own current v0.15.26 worker.
+
+The running development build displays **v0.15.26**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+
+## Completed'''
+          text = re.sub(r'## Current Development Phase\n\n.*?\n\n## Completed', phase, text, count=1, flags=re.S)
+          section = '''
+
+### v0.15.26 — Concurrent AI Scheduler + Collaborator Service Compatibility
+
+- Added a shared, data-driven AI capacity scheduler with configurable overall, Text, Vision, Image and per-character Safe Section limits; jobs beyond capacity remain queued and are promoted fairly.
+- Kept backwards-compatible defaults equivalent to the previous single-job behaviour. Parallel execution is enabled deliberately through Character AI settings.
+- Added separate live generation-service workers for primary Character generation, Character Collaborator, Idea Generator, authoring tools, and Vision/Attachments, preventing unrelated workflows from sharing one mutable request/repair/diagnostic state machine.
+- Added scheduler-aware Image Studio execution using the same capacity manager while retaining Image Studio's existing provider flow and Cancel control.
+- Added optional Vision/Image participation in the overall maximum while retaining independent role limits.
+- Preserved Interview/Q&A as a required Safe Section planning barrier, then added dependency-wave parallel generation with frozen sibling context and deterministic template-order assembly.
+- Reused the established template contract, semantic repair, concept-fidelity correction, fail-closed validation, diagnostics and Generation Preview after parallel assembly.
+- Replaced Character Collaborator's exact v0.15.22 script comparison with capability-based compatibility and a dedicated current worker, fixing the reported activation failure.
+- Added aggregate queue status, Cancel AI Queue, scheduler documentation, v0.15.26 regression manifest, real-main-scene coverage and a strict CI parse-error gate.
+'''
+          if '### v0.15.26 — Concurrent AI Scheduler' not in text:
+              text = text.replace('## Completed\n', '## Completed\n' + section, 1)
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit patch when needed
+        shell: bash
+        run: |
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "Patch already applied."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/services/generation_service_v01526.gd tools/run_regression_suite.py tools/test_v01526_concurrent_ai_scheduler.gd .github/workflows/validate-v01526-concurrent-ai-scheduler.yml roadmap.md
+          git commit -m "Apply v0.15.26 maintenance patch"
+          git push origin HEAD:agent/v0.15.26-concurrent-ai-scheduler
