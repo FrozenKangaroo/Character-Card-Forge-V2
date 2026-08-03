@@ -1,0 +1,24 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.24",
+  "description": "v0.15.22 broad regression coverage plus the v0.15.23 token-settings regression and v0.15.24 live strategy-aware generation-service wiring coverage.",
+  "base_manifest": "regression_suites_v01522.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01523_token_settings",
+        "label": "v0.15.23 token settings inheritance regression",
+        "kind": "godot",
+        "path": "tools/test_v01523_token_settings_regression.gd",
+        "timeout_seconds": 30
+      },
+      {
+        "id": "v01524_live_generation_service",
+        "label": "v0.15.24 live strategy-aware generation-service wiring",
+        "kind": "godot",
+        "path": "tools/test_v01524_live_generation_service.gd",
+        "timeout_seconds": 30
+      }
+    ]
+  }
+}
