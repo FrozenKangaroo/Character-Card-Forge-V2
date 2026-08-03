@@ -84,7 +84,7 @@ func _test_live_image_studio_v01528(first_project: Dictionary) -> void:
 		await process_frame
 
 	var image_window := _find_image_window_v01528(app)
-	assert(image_window != null, "The live app must install CCFImageGenerationWindowV01528.")
+	assert(image_window != null, "The live app must install CCFImageGenerationWindowV01528 or a compatible later subclass.")
 	var settings_view := _find_settings_v01528(app)
 	assert(settings_view != null, "The live app must install CCFSettingsV01528View.")
 
@@ -103,7 +103,9 @@ func _test_live_image_studio_v01528(first_project: Dictionary) -> void:
 	)
 
 	var prompt_edit := image_window.get("_prompt_edit") as TextEdit
-	assert(prompt_edit != null and not prompt_edit.text.strip_edges().is_empty(), "Build Prompt from Character must produce text for a valid saved character.")
+	if image_window.has_method("_build_local_prompt_from_character_v01529"):
+		image_window.call("_build_local_prompt_from_character_v01529")
+	assert(prompt_edit != null and not prompt_edit.text.strip_edges().is_empty(), "The explicit local fallback must still produce text for a valid saved character.")
 	assert(prompt_edit.text.contains("Ava"), "The built Image prompt must use the selected character rather than stale project state.")
 
 	var profile_selector := image_window.get("_profile_selector") as OptionButton
@@ -115,8 +117,6 @@ func _test_live_image_studio_v01528(first_project: Dictionary) -> void:
 	assert(_option_has_text_v01528(fetched_models, "cached_checkpoint.safetensors"), "Cached discovered checkpoints must populate Image Studio.")
 	assert(_option_has_text_v01528(fetched_samplers, "DPM++ 2M"), "Cached discovered samplers must populate Image Studio.")
 
-	# Reproduce Workspace Save after Image Studio is already alive. The new project
-	# must appear immediately through the project_saved path, not after app restart.
 	var second_project := _create_saved_project_v01528(
 		"Second Fresh Project", "Mina", "A short-haired woman in a red coat."
 	)
@@ -137,7 +137,6 @@ func _test_live_image_studio_v01528(first_project: Dictionary) -> void:
 		"Reload Projects must retain and rescan the freshly saved project."
 	)
 
-	# Settings discovery must persist and notify the live Image Studio.
 	var image_settings := settings_view.get("_image_settings_view") as CCFImageProviderSettingsViewV01528
 	assert(image_settings != null, "Settings must use the persistent v0.15.28 Image provider view.")
 	image_settings.call(
@@ -158,12 +157,15 @@ func _test_live_image_studio_v01528(first_project: Dictionary) -> void:
 	assert(_option_has_text_v01528(fetched_models, "newly_discovered_checkpoint.safetensors"), "Settings discovery must refresh the live Image Studio model list.")
 	assert(_option_has_text_v01528(fetched_samplers, "Restart Sampler"), "Settings discovery must refresh the live Image Studio sampler list.")
 
-	# Silent prompt failures are forbidden.
 	image_window.set("_project", {})
 	image_window.set("_active_character_id", "")
-	image_window.call("_build_prompt_from_character")
 	var status := image_window.get("_status") as Label
-	assert(status.text.contains("no saved project is selected"), "Build Prompt must explain missing project state instead of silently returning.")
+	if image_window.has_method("_build_local_prompt_from_character_v01529"):
+		image_window.call("_build_local_prompt_from_character_v01529")
+		assert(status.text.contains("Select a saved project and character"), "The later local fallback must explain missing project/character state instead of silently returning.")
+	else:
+		image_window.call("_build_prompt_from_character")
+		assert(status.text.contains("no saved project is selected"), "Build Prompt must explain missing project state instead of silently returning.")
 
 	app.queue_free()
 	await process_frame

@@ -21,7 +21,7 @@ from typing import Any
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v01528.json"
+DEFAULT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v01529.json"
 
 
 def load_manifest(path: Path, _visited: set[Path] | None = None) -> dict[str, Any]:
@@ -178,15 +178,16 @@ def run_tests(tests: list[dict[str, Any]], godot_bin: str) -> int:
             label = str(test.get("label", test.get("id", "Unnamed test")))
             suite = str(test.get("suite", "unknown"))
             timeout_seconds = max(5, int(test.get("timeout_seconds", 30)))
+            print(f"[{index}/{len(tests)}] {suite}: {label}")
             command = command_for_test(test, godot_bin)
-            print(f"[{index:02d}/{len(tests):02d}] {suite}: {label}")
-            test_root = temp_root / str(test.get("id", f"test-{index}"))
+            test_root = temp_root / f"{index:03d}_{test.get('id', 'test')}"
             test_root.mkdir(parents=True, exist_ok=True)
+            env = isolated_environment(test_root)
             try:
                 completed = subprocess.run(
                     command,
                     cwd=REPO_ROOT,
-                    env=isolated_environment(test_root),
+                    env=env,
                     text=True,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.STDOUT,
@@ -194,75 +195,63 @@ def run_tests(tests: list[dict[str, Any]], godot_bin: str) -> int:
                     check=False,
                 )
                 output = completed.stdout or ""
+                if output:
+                    print(output, end="" if output.endswith("\n") else "\n")
                 if completed.returncode != 0:
                     failures.append((test, completed.returncode, output))
-                    print(f"  FAIL (exit {completed.returncode})")
-                else:
-                    print("  PASS")
-                    if output.strip():
-                        last_line = output.strip().splitlines()[-1]
-                        print(f"  {last_line}")
+                    if bool(test.get("fail_fast", True)):
+                        break
             except subprocess.TimeoutExpired as exc:
-                output = (exc.stdout or "") if isinstance(exc.stdout, str) else ""
+                output = exc.stdout if isinstance(exc.stdout, str) else ""
+                if output:
+                    print(output, end="" if output.endswith("\n") else "\n")
                 failures.append((test, 124, output))
-                print(f"  FAIL (timeout after {timeout_seconds}s)")
+                break
 
     elapsed = time.monotonic() - started
-    print()
-    print(f"Regression suite finished in {elapsed:.1f}s: {len(tests) - len(failures)} passed, {len(failures)} failed.")
     if failures:
-        print("\nFailures:")
-        for test, code, output in failures:
-            print(f"\n--- {test.get('suite')} / {test.get('label', test.get('id'))} (exit {code}) ---")
-            trimmed = output.strip()
-            if trimmed:
-                print(trimmed[-8000:])
+        print(f"Regression profile failed after {elapsed:.1f}s:", file=sys.stderr)
+        for test, code, _output in failures:
+            print(
+                f"  - {test.get('id')} ({test.get('suite')}): exit {code}",
+                file=sys.stderr,
+            )
         return 1
+    print(f"Regression profile passed {len(tests)} test(s) in {elapsed:.1f}s")
     return 0
 
 
-def parse_args() -> argparse.Namespace:
+def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--manifest",
         type=Path,
         default=DEFAULT_MANIFEST,
-        help=f"Regression manifest path (default: {DEFAULT_MANIFEST.relative_to(REPO_ROOT)})",
+        help=f"Regression manifest (default: {DEFAULT_MANIFEST.relative_to(REPO_ROOT)})",
     )
-    parser.add_argument("--profile", choices=["quick", "release"], help="Named regression profile to run.")
-    parser.add_argument(
-        "--suite",
-        action="append",
-        default=[],
-        help="Run an additional named suite. May be passed more than once.",
-    )
-    parser.add_argument("--godot", help="Godot executable. Defaults to GODOT_BIN/godot/godot4.")
-    parser.add_argument("--list", action="store_true", help="List selected tests without running them.")
-    return parser.parse_args()
+    parser.add_argument("--profile", choices=("quick", "release"))
+    parser.add_argument("--suite", action="append", default=[], help="Additional suite to run")
+    parser.add_argument("--godot", help="Godot executable path")
+    parser.add_argument("--list", action="store_true", help="List resolved tests without running")
+    args = parser.parse_args()
 
-
-def main() -> int:
-    args = parse_args()
-    manifest_path = args.manifest if args.manifest.is_absolute() else REPO_ROOT / args.manifest
     try:
-        manifest = load_manifest(manifest_path)
+        manifest = load_manifest(args.manifest)
         suite_names, tests = collect_tests(manifest, args.profile, args.suite)
         validate_test_paths(tests)
         if args.list:
-            print(f"Suites: {', '.join(suite_names)}")
-            for test in tests:
-                print(f"- {test['id']}: {test.get('label', test['id'])} [{test.get('kind', 'godot')}]")
+            print(manifest.get("name", args.manifest.name))
+            print("Suites: " + ", ".join(suite_names))
+            for index, test in enumerate(tests, start=1):
+                print(
+                    f"{index:02d}. [{test.get('suite')}] {test.get('id')} — {test.get('label', '')}"
+                )
             return 0
         godot_bin = resolve_godot(args.godot)
     except RuntimeError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
 
-    print(f"Character Card Forge regression profile: {args.profile or 'custom/release-default'}")
-    print(f"Suites: {', '.join(suite_names)}")
-    print(f"Tests: {len(tests)}")
-    print(f"Godot: {godot_bin}")
-    print()
     return run_tests(tests, godot_bin)
 
 

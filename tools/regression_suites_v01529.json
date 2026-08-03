@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.29",
+  "description": "v0.15.28 broad coverage plus embedded Image Studio navigation and restored AI-authored Character Text prompt generation with explicit local fallback.",
+  "base_manifest": "regression_suites_v01528.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01529_image_studio_regressions",
+        "label": "v0.15.29 embedded Image Studio and AI prompt regressions",
+        "kind": "python",
+        "path": "tools/test_v01529_image_studio_regressions_strict.py",
+        "timeout_seconds": 70
+      }
+    ]
+  }
+}
