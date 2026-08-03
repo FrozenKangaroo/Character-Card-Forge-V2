@@ -51,16 +51,34 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Every major supported workflow should have representative cross-feature regression coverage. A new feature is not release-ready merely because its own focused test passes; unrelated core, generation, authoring, content, Collaborator, image/Vision and release workflows must remain healthy too.
 - Automated local regression tests that exercise `user://` state must run in isolated temporary app-data directories so testing cannot overwrite real author settings, FileDialog history, or Collaborator conversations.
 - Collaborator attachments are first-class read-only source context. Text-like files should preserve and embed their source text, images should continue through the Vision → Text boundary, and removing an attachment from active context must not silently erase historical conversation evidence or directly alter project data.
+- Generation reliability strategy is independent of Generation Mode/Style: the template defines what content is needed, while the provider-level strategy defines how many requests are used to produce and validate that content.
+- Safe generation should fail narrowly. Accepted sections remain accepted, and a missing required Generation Component should trigger a focused request for that component rather than force regeneration of unrelated content.
+- Failed provider generations should remain inspectable without exposing credentials; raw response shape, extracted assistant content, parse/validation state and repair evidence are part of the debugging surface.
 
 ## Current Development Phase
 
-**v0.15.21 development candidate — unified Character Collaborator attachments**
+**v0.15.22 development candidate — Safe Section Build + Generation Diagnostics**
 
-v0.15.21 generalises Character Collaborator's existing image-reference path into one attachment workflow for images and text-based source material. Authors can attach TXT/Markdown, SRT, ASS/SSA and JSON references without pasting them into the composer, see their context cost, remove them when they are no longer useful, and continue using the established Vision → Text pipeline for images. The v0.15.20 broad regression gate remains the release compatibility boundary and now includes v0.15.21 attachment coverage through a composable manifest layer.
+v0.15.22 makes generation reliability an explicit provider-level strategy rather than overloading the existing Full/Lite/Compact Lite writing mode. **Safe Section Build** is the default/recommended path: each enabled Generation Output Group and each standalone generatable Character Card field is generated in a fresh provider request, accepted content becomes continuity context for later sections, and missing required Generation Components receive focused component-only repair requests. **Fast Full Card** remains available for authors who prefer fewer requests and lower latency while accepting a higher risk of incomplete initial output.
 
-The running development build displays **v0.15.21**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+Failed generation attempts now preserve a credential-redacted diagnostic bundle containing the request payload, raw provider response, extracted assistant text, parsed output, validation state, repair evidence, and a full trace. The Workspace exposes **View Diagnostics…** after terminal failures so provider-shape and template-completeness problems can be debugged instead of collapsing into an opaque error string.
+
+The running development build displays **v0.15.22**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.22 — Safe Section Build + Generation Diagnostics
+
+- Added a separate **Generation Strategy** control to Character AI / AI Providers. It is intentionally independent of the existing Full/Lite/Compact Lite Generation Mode and Mode & Style controls.
+- Made **Safe Section Build** the default/recommended strategy for new and legacy settings that do not explicitly choose a strategy; retained **Fast Full Card** as the opt-in lower-request/lower-latency path.
+- Added a data-driven safe generation plan where each enabled Generation Output Group is one section and each generatable field without an Output Group—such as Scenario or First Message—is one standalone section.
+- Safe sections use fresh provider conversations while repeatedly supplying the authoritative character concept, applicable project/template context, Interview/Q&A and Builder planning guidance, Mode & Style guidance, and already accepted sections as continuity context.
+- Generation Output Group responses are validated at component level. Missing required components trigger focused requests for only the missing component instead of rewriting an accepted group or discarding the rest of the card; missing optional components are allowed to remain absent.
+- Multiple Generation Output Groups targeting the same Character Card field are assembled in template order, with group headings retained when required by the existing generation contract, so later groups append rather than overwrite earlier accepted content.
+- Safe Build delegates the assembled candidate back through the established template-contract, semantic repair, concept-fidelity, fail-closed and Generation Preview chain, preserving the restored v0.15 generation safeguards instead of creating a parallel unchecked output path.
+- Added terminal **Generation Diagnostics** capture with the actual request payload, raw API response body, extracted assistant text, parsed output, validation report, repair evidence and request/response trace.
+- Added a **View Diagnostics…** failure action plus a detachable diagnostics inspector with Copy Full Diagnostic and Save Diagnostic Bundle actions. Authentication headers, API keys, passwords, tokens and known credential values are redacted before diagnostics are exposed.
+- Advanced the composable broad regression manifest to `regression_suites_v01522.json` and added focused Godot 4.6.3 CI coverage for default strategy selection, Output Group/standalone-section planning, multi-group field assembly, diagnostics redaction, active Workspace wiring and retained generation-pipeline inheritance.
 
 ### v0.15.21 — Unified Character Collaborator Attachments
 
@@ -362,6 +380,9 @@ The running development build displays **v0.15.21**. Release metadata remains co
 
 ## In Progress
 
+- Runtime-test **Safe Section Build** with a real custom template containing multiple Output Groups targeting the same Character Card field, including a separate Sexual Traits group, and confirm each group is a separate provider request while the final field is assembled in template order.
+- Deliberately provoke missing required components and provider response-shape failures to verify focused component repair and the new Generation Diagnostics inspector against real API responses.
+- Compare real-world request count, latency and completeness between Safe Section Build and Fast Full Card across cloud and local/self-hosted providers; keep Safe as the default unless evidence shows a better reliability trade-off.
 - Runtime-test unified Collaborator attachments with real TXT/Markdown, SRT, ASS/SSA, JSON and image references; confirm text survives save/reopen, image references still route Vision → Text, attachment token costs remain visible, and removing references updates future context without erasing historical Vision Analysis messages.
 - Validate a long subtitle-script attachment as personality/dialogue reference through normal brainstorming and Blueprint handoff, checking that timestamps/dialogue evidence remain available without accidental auto-summarisation or direct project writes.
 - Runtime-test the new `python3 tools/run_regression_suite.py --profile quick` and `--profile release` commands on the normal Linux/Godot development machine and confirm they complete without touching real Character Collaborator/FileDialog/settings data.
@@ -379,6 +400,8 @@ The running development build displays **v0.15.21**. Release metadata remains co
 
 ## Next Up
 
+- Consider a future **Custom Section Build** strategy that lets advanced users combine selected Output Groups/standalone fields into chosen request batches without weakening the same component-level validation and repair model.
+- Expand Generation Diagnostics from terminal-failure inspection into optional recent-attempt history/retry tooling if real provider testing shows that persistent multi-attempt traces are useful beyond the current failure dialog.
 - Evaluate whether attachment UX should grow a true pending-message attachment strip/chips so an author can stage and remove files before Send, or whether session-level Reference Context remains the clearer default for long-lived character-development sources.
 - Consider optional per-message attachment association/display for cases where a source belongs to one specific request while retaining the current ability to keep a reference active across multiple Collaborator turns.
 - Keep the representative regression registry aligned with the actual supported feature surface as generation transparency/workflow-clarity work begins; do not let new major features remain outside the release profile.
@@ -422,6 +445,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Treat the detailed Generation Concept Blueprint as preserved authoring source, not disposable intermediate text, so later template/model changes can regenerate the card without reconstructing the Collaborator session.
 - Treat `generation.template_id` as part of character handoff continuity: any workflow creating a character from an active authoring context must deliberately carry the selected template rather than relying on the storage-layer default.
 - Keep supplementary Blueprint materialisation separate from the strict template-field validation contract unless/until the template schema explicitly models those app-level data structures.
+- Treat Output Groups as safe-build section boundaries without hard-coding particular labels such as Description, Personality, Sexual Traits or Background; custom user-defined groups must participate identically.
+- Keep generation diagnostics credential-safe by redacting secret-bearing keys and known authentication values before any debug bundle reaches UI, clipboard or disk.
 
 ## Polish
 
@@ -436,7 +461,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Deferred / Experimental Ideas
 
-- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.21 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
+- The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path in v0.15.22 because it bypassed the established parity/validation pipeline. Any future revival must compose with that pipeline rather than replace it.
 - More elaborate graph visualisation/layout automation beyond the current draggable anchor-based system.
 - Optional advanced context compression strategies beyond the current explicit user-triggered summarisation model.
 - Experimental provider-specific optimisations should remain opt-in until they can be implemented without weakening the generic OpenAI-compatible path.
