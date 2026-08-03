@@ -50,10 +50,11 @@ static func load_text_attachment(path: String) -> Dictionary:
 				_format_bytes(MAX_TEXT_ATTACHMENT_BYTES)
 			]
 		}
-	var text := file.get_as_text(false)
+	var bytes := file.get_buffer(byte_size)
 	file.close()
-	if text.find(char(0)) >= 0:
+	if bytes.find(0) >= 0:
 		return {"ok": false, "error": "%s appears to contain binary data rather than readable text." % path.get_file()}
+	var text := bytes.get_string_from_utf8()
 	if text.strip_edges().is_empty():
 		return {"ok": false, "error": "%s is empty." % path.get_file()}
 
