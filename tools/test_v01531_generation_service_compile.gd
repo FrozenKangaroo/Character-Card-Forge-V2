@@ -6,6 +6,7 @@ func _init() -> void:
 	var source := FileAccess.get_file_as_string(path)
 	assert(not source.is_empty(), "v0.15.31 generation service source must be readable.")
 	var script := GDScript.new()
+	script.resource_path = path
 	script.source_code = source
 	var error := script.reload()
 	if error != OK:
