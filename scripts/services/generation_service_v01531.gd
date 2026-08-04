@@ -26,7 +26,7 @@ func job_records_v01531() -> Array:
 		if bool(_active_job.get("parallel_safe_waiting_v01526", false)):
 			records.append_array(_safe_section_records_v01531())
 
-	for queue_index: int in range(_queue.size()):
+	for queue_index in range(_queue.size()):
 		var queued_value: Variant = _queue[queue_index]
 		if not queued_value is Dictionary:
 			continue
@@ -54,7 +54,7 @@ func cancel_job_v01531(job_id: String) -> bool:
 	if not _active_job.is_empty() and str(_active_job.get("id", "")) == clean_id:
 		cancel_active_job()
 		return true
-	for index: int in range(_queue.size()):
+	for index in range(_queue.size()):
 		var queued_value: Variant = _queue[index]
 		if not queued_value is Dictionary:
 			continue
@@ -143,7 +143,7 @@ func _safe_section_records_v01531() -> Array:
 		current_wave_value if current_wave_value is Array else []
 	)
 	var running_by_index: Dictionary = {}
-	for running_record_value: Variant in running.values():
+	for running_record_value in running.values():
 		if not running_record_value is Dictionary:
 			continue
 		var running_record: Dictionary = running_record_value
@@ -151,7 +151,7 @@ func _safe_section_records_v01531() -> Array:
 		if running_section_index >= 0:
 			running_by_index[running_section_index] = running_record
 
-	for section_index: int in range(plan.size()):
+	for section_index in range(plan.size()):
 		var section_value: Variant = plan[section_index]
 		if not section_value is Dictionary:
 			continue
@@ -184,7 +184,7 @@ func _safe_section_records_v01531() -> Array:
 			var dependency_indices: Array[int] = _section_dependency_indices_v01526(
 				plan, section_index
 			)
-			for dependency_index: int in dependency_indices:
+			for dependency_index in dependency_indices:
 				if completed.has(dependency_index):
 					continue
 				if dependency_index < 0 or dependency_index >= plan.size():
@@ -244,7 +244,7 @@ func _record_stage_v01531(job: Dictionary) -> String:
 
 func _join_strings_v01531(values: Array[String], separator: String) -> String:
 	var result: String = ""
-	for index: int in range(values.size()):
+	for index in range(values.size()):
 		if index > 0:
 			result += separator
 		result += values[index]
