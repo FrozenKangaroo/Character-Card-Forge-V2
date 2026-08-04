@@ -6,6 +6,7 @@ const FORMAT_VERSION := 1
 
 const TYPE_GENERATED_IDEA := "generated_idea"
 const TYPE_SAVED_IDEA := "saved_idea"
+const TYPE_STRUCTURED_BUILDER := "structured_builder"
 const TYPE_CHARACTER := "character"
 
 
@@ -42,6 +43,57 @@ static func from_saved_idea(idea: Dictionary) -> Dictionary:
 	)
 
 
+static func from_structured_builder(
+	ingredients: Array,
+	custom_instructions: String = "",
+	builder_metadata: Dictionary = {}
+) -> Dictionary:
+	var clean_ingredients: Array[Dictionary] = []
+	var concept_lines: Array[String] = []
+	for raw in ingredients:
+		if not raw is Dictionary:
+			continue
+		var ingredient: Dictionary = raw
+		var value := str(ingredient.get("value", "")).strip_edges()
+		if value.is_empty():
+			continue
+		var label := str(ingredient.get("label", ingredient.get("id", "Field"))).strip_edges()
+		if label.is_empty():
+			label = "Field"
+		clean_ingredients.append({
+			"id": str(ingredient.get("id", "")),
+			"label": label,
+			"value": value,
+			"multi_select": bool(ingredient.get("multi_select", false))
+		})
+		concept_lines.append("%s: %s" % [label, value])
+	var extra := custom_instructions.strip_edges()
+	if not extra.is_empty():
+		concept_lines.append("Custom instructions: %s" % extra)
+	if concept_lines.is_empty():
+		return {}
+	var concept := (
+		"Create a coherent, playable character concept from these selected ingredients. Treat every listed ingredient as authoritative unless the custom instructions explicitly override it.\n\n"
+		+ "\n".join(concept_lines)
+	)
+	var snapshot := {
+		"title": "Structured Builder Idea",
+		"ingredients": clean_ingredients,
+		"custom_instructions": extra,
+		"concept": concept
+	}
+	return _build_source(
+		TYPE_STRUCTURED_BUILDER,
+		"Structured Builder Idea",
+		snapshot,
+		{
+			"origin": "structured_builder",
+			"options_format_version": int(builder_metadata.get("options_format_version", 0)),
+			"ingredient_count": clean_ingredients.size()
+		}
+	)
+
+
 static func from_character(
 	character: Dictionary,
 	project_id: String = "",
@@ -66,7 +118,7 @@ static func normalise(source: Dictionary) -> Dictionary:
 	if source.is_empty():
 		return {}
 	var source_type := str(source.get("source_type", "")).strip_edges()
-	if source_type not in [TYPE_GENERATED_IDEA, TYPE_SAVED_IDEA, TYPE_CHARACTER]:
+	if source_type not in [TYPE_GENERATED_IDEA, TYPE_SAVED_IDEA, TYPE_STRUCTURED_BUILDER, TYPE_CHARACTER]:
 		return {}
 	var snapshot_value: Variant = source.get("snapshot", {})
 	if not snapshot_value is Dictionary:
@@ -106,6 +158,8 @@ static func display_type(source: Dictionary) -> String:
 			return "Generated Idea"
 		TYPE_SAVED_IDEA:
 			return "Idea Notebook"
+		TYPE_STRUCTURED_BUILDER:
+			return "Structured Builder"
 		TYPE_CHARACTER:
 			return "Existing Character"
 		_:
@@ -118,7 +172,7 @@ static func display_summary(source: Dictionary) -> String:
 		return ""
 	var snapshot: Dictionary = clean.get("snapshot", {})
 	match str(clean.get("source_type", "")):
-		TYPE_GENERATED_IDEA, TYPE_SAVED_IDEA:
+		TYPE_GENERATED_IDEA, TYPE_SAVED_IDEA, TYPE_STRUCTURED_BUILDER:
 			var concept := str(snapshot.get("concept", "")).strip_edges().replace("\n", " ")
 			return _truncate(concept, 260)
 		TYPE_CHARACTER:

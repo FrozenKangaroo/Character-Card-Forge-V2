@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.33-hotfix1",
+  "description": "v0.15.33 broad coverage plus direct Structured Builder to Character Collaborator handoff.",
+  "base_manifest": "regression_suites_v01533.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01533_hotfix1_structured_builder_collaborator",
+        "label": "v0.15.33-hotfix1 Structured Builder Collaborator handoff",
+        "kind": "python",
+        "path": "tools/test_v01533_hotfix1_structured_builder_collaborator_strict.py",
+        "timeout_seconds": 90
+      }
+    ]
+  }
+}

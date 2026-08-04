@@ -104,7 +104,7 @@ func _run() -> void:
 	await process_frame
 	await process_frame
 	var workspace_value: Variant = app.get("_workspace")
-	assert(workspace_value is CCFWorkspaceV01533View, "The real main scene must install the v0.15.33 Workspace.")
+	assert(workspace_value is CCFWorkspaceV01533View, "The real main scene must install the v0.15.33 Workspace or a compatible hotfix subclass.")
 	var workspace := workspace_value as CCFWorkspaceV01533View
 	var live_collaborator_value: Variant = workspace.get("_character_collaborator_window")
 	assert(live_collaborator_value is CCFCharacterCollaboratorWindowV01533, "Live Workspace must install the v0.15.33 source-aware Collaborator.")
@@ -121,7 +121,10 @@ func _run() -> void:
 	for role in ["primary", "collaborator", "ideas", "tools", "vision"]:
 		var worker: Variant = services.get(role)
 		assert(worker is CCFGenerationServiceV01533, "Every live concurrent worker must use the v0.15.33 hardened provider service.")
-	assert(str(app.get_script().resource_path) == "res://scripts/main_v01533.gd", "The active scene must use the v0.15.33 app shell.")
+	assert(
+		app.has_method("_update_build_version_label_v01533"),
+		"The active scene must retain the v0.15.33 app-shell capability even when a later hotfix subclasses it."
+	)
 
 	app.queue_free()
 	collaborator.queue_free()
