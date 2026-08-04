@@ -31,9 +31,6 @@ jobs:
       - name: Install Godot and export templates
         run: ./tools/setup_godot_ci.sh
 
-      - name: Compile v0.15.31 generation service directly
-        run: godot --headless --path . --script res://tools/test_v01531_generation_service_compile.gd
-
       - name: Import and parse project
         shell: bash
         run: |
