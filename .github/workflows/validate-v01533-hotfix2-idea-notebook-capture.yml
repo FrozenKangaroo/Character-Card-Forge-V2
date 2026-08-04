@@ -1,0 +1,66 @@
+name: Validate v0.15.33-hotfix2 AI Ideas Notebook Capture
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v01533-hotfix2-idea-notebook-capture-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.6.3'
+  GODOT_STATUS: stable
+
+jobs:
+  idea-notebook-capture:
+    name: AI Ideas Notebook live capture
+    runs-on: ubuntu-24.04
+    timeout-minutes: 24
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project
+        shell: bash
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v01533-hotfix2-import.log
+          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE_BASE_CLASS" /tmp/ccf-v01533-hotfix2-import.log; then
+            echo "Godot reported a script or warning failure during import."
+            exit 1
+          fi
+
+      - name: Confirm import leaves checkout clean
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain --untracked-files=normal)" ]]; then
+            echo "Godot import created repository-visible changes:"
+            git status --short
+            exit 1
+          fi
+
+      - name: Test live AI Ideas Notebook capture
+        run: python3 ./tools/test_v01533_hotfix2_idea_notebook_capture_strict.py
+
+      - name: Recheck v0.15.33-hotfix1 Structured Builder Collaborator handoff
+        run: python3 ./tools/test_v01533_hotfix1_structured_builder_collaborator_strict.py
+
+      - name: Recheck v0.15.32 Idea Notebook
+        run: godot --headless --path . --script res://tools/test_v01532_idea_notebook.gd
+
+      - name: Recheck v0.15.32-hotfix1 AI Ideas layout
+        run: godot --headless --path . --script res://tools/test_v01532_hotfix1_ai_ideas_layout.gd
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --profile quick --godot "$(command -v godot)"
