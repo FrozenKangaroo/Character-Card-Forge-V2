@@ -46,11 +46,13 @@ func _active_shell_inherits_v01515() -> bool:
 	if end_at < 0:
 		return false
 	var path := scene_source.substr(marker_at, end_at - marker_at)
-	for _depth in range(16):
+	var visited: Dictionary = {}
+	for _depth in range(64):
 		if path == "res://scripts/main_v01515.gd":
 			return true
-		if not FileAccess.file_exists(path):
+		if path.is_empty() or visited.has(path) or not FileAccess.file_exists(path):
 			return false
+		visited[path] = true
 		var source := FileAccess.get_file_as_string(path)
 		var extends_marker := "extends \""
 		var extends_at := source.find(extends_marker)
