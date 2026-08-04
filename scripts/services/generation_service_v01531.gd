@@ -198,9 +198,10 @@ func _safe_section_records_v01531() -> Array:
 							)
 						)
 			if not dependency_names.is_empty():
-				detail = "Waiting for %s" % _join_strings_v01531(
+				var dependency_text: String = _join_strings_v01531(
 					dependency_names, ", "
 				)
+				detail = "Waiting for %s" % dependency_text
 			else:
 				detail = "Waiting for an earlier Safe Section wave"
 		records.append(
