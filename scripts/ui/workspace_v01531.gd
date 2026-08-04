@@ -31,12 +31,16 @@ func ai_jobs_panel_v01531() -> CCFAIJobsPanelV01531:
 func ai_job_records_v01531() -> Array:
 	var records: Array = []
 	for service_value in _worker_services_v01526:
-		if not service_value is CCFGenerationServiceV01531:
+		if not service_value is CCFGenerationServiceV01526:
 			continue
-		var service: CCFGenerationServiceV01531 = (
-			service_value as CCFGenerationServiceV01531
+		var service: CCFGenerationServiceV01526 = (
+			service_value as CCFGenerationServiceV01526
 		)
-		records.append_array(service.job_records_v01531())
+		if not service.has_method("job_records_v01531"):
+			continue
+		var service_records: Variant = service.call("job_records_v01531")
+		if service_records is Array:
+			records.append_array(service_records)
 	if (
 		_image_jobs_controller_v01531 != null
 		and is_instance_valid(_image_jobs_controller_v01531)
@@ -56,29 +60,38 @@ func cancel_ai_job_v01531(
 	var clean_worker: String = worker_id.strip_edges()
 	var clean_job: String = cancel_job_id.strip_edges()
 	for service_value in _worker_services_v01526:
-		if not service_value is CCFGenerationServiceV01531:
+		if not service_value is CCFGenerationServiceV01526:
 			continue
-		var service: CCFGenerationServiceV01531 = (
-			service_value as CCFGenerationServiceV01531
+		var service: CCFGenerationServiceV01526 = (
+			service_value as CCFGenerationServiceV01526
 		)
-		var identity: Dictionary = service.worker_identity_v01531()
 		if (
-			str(identity.get("worker_id", "")) == clean_worker
-			and service.cancel_job_v01531(clean_job)
+			not service.has_method("worker_identity_v01531")
+			or not service.has_method("cancel_job_v01531")
 		):
+			continue
+		var identity_value: Variant = service.call("worker_identity_v01531")
+		var identity: Dictionary = (
+			identity_value if identity_value is Dictionary else {}
+		)
+		if str(identity.get("worker_id", "")) != clean_worker:
+			continue
+		if bool(service.call("cancel_job_v01531", clean_job)):
 			if _status != null:
 				_status.text = "Cancelled the selected AI job."
 			_refresh_ai_jobs_panel_v01531()
 			return true
-	# Job IDs are allocated from separate worker ranges, so this fallback is safe
-	# when a child row points back to its parent Character build.
+	# Safe child rows point at their parent Character job. Job number ranges are
+	# distinct per live worker, so a capability-based fallback can locate it.
 	for service_value in _worker_services_v01526:
-		if not service_value is CCFGenerationServiceV01531:
+		if not service_value is CCFGenerationServiceV01526:
 			continue
-		var fallback_service: CCFGenerationServiceV01531 = (
-			service_value as CCFGenerationServiceV01531
+		var fallback_service: CCFGenerationServiceV01526 = (
+			service_value as CCFGenerationServiceV01526
 		)
-		if fallback_service.cancel_job_v01531(clean_job):
+		if not fallback_service.has_method("cancel_job_v01531"):
+			continue
+		if bool(fallback_service.call("cancel_job_v01531", clean_job)):
 			if _status != null:
 				_status.text = "Cancelled the selected AI job."
 			_refresh_ai_jobs_panel_v01531()
@@ -115,8 +128,8 @@ func show_ai_jobs_v01531(show_panel: bool = true) -> void:
 func _create_worker_service_v01526(
 	worker_id: String, worker_label: String, job_number_base: int
 ) -> CCFGenerationServiceV01526:
-	var service: CCFGenerationServiceV01531 = (
-		GENERATION_SERVICE_V01531.new() as CCFGenerationServiceV01531
+	var service: CCFGenerationServiceV01526 = (
+		GENERATION_SERVICE_V01531.new() as CCFGenerationServiceV01526
 	)
 	add_child(service)
 	service.configure_scheduler_v01526(
