@@ -78,126 +78,181 @@ def resolve_godot(explicit: str | None) -> str:
     raise RuntimeError("Godot was not found. Pass --godot /path/to/godot or set GODOT_BIN.")
 
 
-def isolated_environment(base: dict[str, str], temp_root: Path) -> dict[str, str]:
-    env = base.copy()
-    home = temp_root / "home"
-    xdg_data = temp_root / "xdg-data"
-    xdg_config = temp_root / "xdg-config"
-    xdg_cache = temp_root / "xdg-cache"
-    for directory in (home, xdg_data, xdg_config, xdg_cache):
+def collect_tests(
+    manifest: dict[str, Any], profile: str | None, selected_suites: list[str]
+) -> tuple[list[str], list[dict[str, Any]]]:
+    suites: dict[str, Any] = manifest["suites"]
+    profiles: dict[str, Any] = manifest["profiles"]
+
+    suite_names: list[str] = []
+    if profile:
+        raw_profile = profiles.get(profile)
+        if not isinstance(raw_profile, list):
+            raise RuntimeError(f"Unknown regression profile: {profile}")
+        suite_names.extend(str(item) for item in raw_profile)
+    suite_names.extend(selected_suites)
+    if not suite_names:
+        suite_names.extend(str(item) for item in profiles.get("release", []))
+
+    ordered_suites: list[str] = []
+    for suite_name in suite_names:
+        if suite_name not in suites:
+            raise RuntimeError(f"Unknown regression suite: {suite_name}")
+        if suite_name not in ordered_suites:
+            ordered_suites.append(suite_name)
+
+    tests: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+    for suite_name in ordered_suites:
+        suite = suites[suite_name]
+        raw_tests = suite.get("tests", []) if isinstance(suite, dict) else []
+        if not isinstance(raw_tests, list):
+            raise RuntimeError(f"Suite {suite_name} has an invalid tests list.")
+        for raw_test in raw_tests:
+            if not isinstance(raw_test, dict):
+                raise RuntimeError(f"Suite {suite_name} contains a non-object test entry.")
+            test_id = str(raw_test.get("id", "")).strip()
+            if not test_id:
+                raise RuntimeError(f"Suite {suite_name} contains a test without an id.")
+            if test_id in seen_ids:
+                continue
+            seen_ids.add(test_id)
+            test = dict(raw_test)
+            test["suite"] = suite_name
+            tests.append(test)
+    return ordered_suites, tests
+
+
+def validate_test_paths(tests: list[dict[str, Any]]) -> None:
+    missing: list[str] = []
+    for test in tests:
+        rel_path = str(test.get("path", "")).strip()
+        if not rel_path or not (REPO_ROOT / rel_path).is_file():
+            missing.append(f"{test.get('id', '<missing id>')}: {rel_path or '<missing path>'}")
+    if missing:
+        raise RuntimeError("Regression manifest references missing files:\n  " + "\n  ".join(missing))
+
+
+def isolated_environment(root: Path) -> dict[str, str]:
+    env = os.environ.copy()
+    home = root / "home"
+    xdg_data = root / "xdg-data"
+    xdg_config = root / "xdg-config"
+    xdg_cache = root / "xdg-cache"
+    appdata = root / "appdata"
+    localappdata = root / "localappdata"
+    for directory in (home, xdg_data, xdg_config, xdg_cache, appdata, localappdata):
         directory.mkdir(parents=True, exist_ok=True)
-    env["HOME"] = str(home)
-    env["XDG_DATA_HOME"] = str(xdg_data)
-    env["XDG_CONFIG_HOME"] = str(xdg_config)
-    env["XDG_CACHE_HOME"] = str(xdg_cache)
+    env.update(
+        {
+            "HOME": str(home),
+            "XDG_DATA_HOME": str(xdg_data),
+            "XDG_CONFIG_HOME": str(xdg_config),
+            "XDG_CACHE_HOME": str(xdg_cache),
+            "APPDATA": str(appdata),
+            "LOCALAPPDATA": str(localappdata),
+            "CCF_REGRESSION_RUN": "1",
+        }
+    )
     return env
 
 
-def run_test(test: dict[str, Any], godot: str, env: dict[str, str]) -> tuple[int, str, float]:
+def command_for_test(test: dict[str, Any], godot_bin: str) -> list[str]:
     kind = str(test.get("kind", "godot"))
-    path = str(test.get("path", "")).strip()
-    timeout = int(test.get("timeout_seconds", 45))
-    if not path:
-        return 2, "Regression entry has no path.\n", 0.0
+    rel_path = str(test.get("path", ""))
+    if kind == "godot":
+        return [godot_bin, "--headless", "--path", str(REPO_ROOT), "--script", f"res://{rel_path}"]
     if kind == "python":
-        command = [sys.executable, str(REPO_ROOT / path)]
-    elif kind == "godot":
-        command = [godot, "--headless", "--path", str(REPO_ROOT), "--script", f"res://{path}"]
-    else:
-        return 2, f"Unsupported regression kind: {kind}\n", 0.0
+        return [sys.executable, str(REPO_ROOT / rel_path)]
+    if kind == "shell":
+        return ["bash", str(REPO_ROOT / rel_path)]
+    raise RuntimeError(f"Unsupported regression test kind {kind!r} for {test.get('id')}")
+
+
+def run_tests(tests: list[dict[str, Any]], godot_bin: str) -> int:
+    failures: list[tuple[dict[str, Any], int, str]] = []
     started = time.monotonic()
-    try:
-        completed = subprocess.run(
-            command,
-            cwd=REPO_ROOT,
-            env=env,
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            timeout=timeout,
-            check=False,
-        )
-        return completed.returncode, completed.stdout or "", time.monotonic() - started
-    except subprocess.TimeoutExpired as exc:
-        output = exc.stdout if isinstance(exc.stdout, str) else ""
-        return 124, output + f"\nTimed out after {timeout}s.\n", time.monotonic() - started
+    with tempfile.TemporaryDirectory(prefix="ccf-regression-") as tmp:
+        temp_root = Path(tmp)
+        for index, test in enumerate(tests, start=1):
+            label = str(test.get("label", test.get("id", "Unnamed test")))
+            suite = str(test.get("suite", "unknown"))
+            timeout_seconds = max(5, int(test.get("timeout_seconds", 30)))
+            print(f"[{index}/{len(tests)}] {suite}: {label}")
+            command = command_for_test(test, godot_bin)
+            test_root = temp_root / f"{index:03d}_{test.get('id', 'test')}"
+            test_root.mkdir(parents=True, exist_ok=True)
+            env = isolated_environment(test_root)
+            try:
+                completed = subprocess.run(
+                    command,
+                    cwd=REPO_ROOT,
+                    env=env,
+                    text=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    timeout=timeout_seconds,
+                    check=False,
+                )
+                output = completed.stdout or ""
+                if output:
+                    print(output, end="" if output.endswith("\n") else "\n")
+                if completed.returncode != 0:
+                    failures.append((test, completed.returncode, output))
+                    if bool(test.get("fail_fast", True)):
+                        break
+            except subprocess.TimeoutExpired as exc:
+                output = exc.stdout if isinstance(exc.stdout, str) else ""
+                if output:
+                    print(output, end="" if output.endswith("\n") else "\n")
+                failures.append((test, 124, output))
+                break
 
-
-def selected_tests(manifest: dict[str, Any], profile_name: str) -> list[tuple[str, dict[str, Any]]]:
-    profiles = manifest.get("profiles", {})
-    if profile_name not in profiles:
-        raise RuntimeError(f"Unknown regression profile: {profile_name}")
-    suites = manifest.get("suites", {})
-    profile = profiles[profile_name]
-    suite_names = profile.get("suites", [])
-    if not isinstance(suite_names, list):
-        raise RuntimeError(f"Regression profile {profile_name} has invalid suites list.")
-    result: list[tuple[str, dict[str, Any]]] = []
-    for suite_name in suite_names:
-        suite = suites.get(suite_name)
-        if not isinstance(suite, dict):
-            raise RuntimeError(f"Regression profile {profile_name} references unknown suite: {suite_name}")
-        tests = suite.get("tests", [])
-        if not isinstance(tests, list):
-            raise RuntimeError(f"Regression suite {suite_name} has invalid tests list.")
-        for test in tests:
-            if isinstance(test, dict):
-                result.append((str(suite_name), test))
-    return result
+    elapsed = time.monotonic() - started
+    if failures:
+        print(f"Regression profile failed after {elapsed:.1f}s:", file=sys.stderr)
+        for test, code, _output in failures:
+            print(
+                f"  - {test.get('id')} ({test.get('suite')}): exit {code}",
+                file=sys.stderr,
+            )
+        return 1
+    print(f"Regression profile passed {len(tests)} test(s) in {elapsed:.1f}s")
+    return 0
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--profile", default="quick", help="Regression profile name from the manifest.")
-    parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
-    parser.add_argument("--godot", default=None, help="Godot executable for Godot-kind tests.")
-    parser.add_argument("--list", action="store_true", help="List selected tests without running them.")
+    parser.add_argument(
+        "--manifest",
+        type=Path,
+        default=DEFAULT_MANIFEST,
+        help=f"Regression manifest (default: {DEFAULT_MANIFEST.relative_to(REPO_ROOT)})",
+    )
+    parser.add_argument("--profile", choices=("quick", "release"))
+    parser.add_argument("--suite", action="append", default=[], help="Additional suite to run")
+    parser.add_argument("--godot", help="Godot executable path")
+    parser.add_argument("--list", action="store_true", help="List resolved tests without running")
     args = parser.parse_args()
 
     try:
         manifest = load_manifest(args.manifest)
-        tests = selected_tests(manifest, args.profile)
+        suite_names, tests = collect_tests(manifest, args.profile, args.suite)
+        validate_test_paths(tests)
+        if args.list:
+            print(manifest.get("name", args.manifest.name))
+            print("Suites: " + ", ".join(suite_names))
+            for index, test in enumerate(tests, start=1):
+                print(
+                    f"{index:02d}. [{test.get('suite')}] {test.get('id')} — {test.get('label', '')}"
+                )
+            return 0
+        godot_bin = resolve_godot(args.godot)
     except RuntimeError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
 
-    if args.list:
-        for index, (suite_name, test) in enumerate(tests, start=1):
-            print(f"{index:02d}. {suite_name}: {test.get('label', test.get('id', 'unnamed'))}")
-        return 0
-
-    try:
-        godot = resolve_godot(args.godot)
-    except RuntimeError as exc:
-        print(f"ERROR: {exc}", file=sys.stderr)
-        return 2
-
-    failures: list[str] = []
-    started_all = time.monotonic()
-    with tempfile.TemporaryDirectory(prefix="ccf-regression-") as temp_dir:
-        temp_root = Path(temp_dir)
-        env = isolated_environment(os.environ, temp_root)
-        for index, (suite_name, test) in enumerate(tests, start=1):
-            label = str(test.get("label", test.get("id", "unnamed")))
-            print(f"[{index}/{len(tests)}] {suite_name}: {label}", flush=True)
-            code, output, elapsed = run_test(test, godot, env)
-            if output:
-                print(output, end="" if output.endswith("\n") else "\n")
-            if code != 0:
-                failures.append(f"{test.get('id', label)} ({suite_name}): exit {code}")
-                if bool(test.get("fail_fast", False)):
-                    break
-            if bool(test.get("show_timing", False)):
-                print(f"  completed in {elapsed:.1f}s")
-
-    elapsed_all = time.monotonic() - started_all
-    if failures:
-        print(f"Regression profile failed after {elapsed_all:.1f}s:", file=sys.stderr)
-        for failure in failures:
-            print(f"  - {failure}", file=sys.stderr)
-        return 1
-    print(f"Regression profile '{args.profile}' passed: {len(tests)} tests in {elapsed_all:.1f}s")
-    return 0
+    return run_tests(tests, godot_bin)
 
 
 if __name__ == "__main__":
