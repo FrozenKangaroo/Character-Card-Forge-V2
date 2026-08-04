@@ -197,6 +197,7 @@ func _safe_section_records_v01531() -> Array:
 								dependency_value.get("id", "earlier section")
 							)
 						)
+					)
 			if not dependency_names.is_empty():
 				var dependency_text: String = _join_strings_v01531(
 					dependency_names, ", "
