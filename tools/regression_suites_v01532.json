@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.32",
+  "description": "v0.15.31 broad coverage plus persistent selective Idea Notebook storage, filtering, editing, archive/delete behavior and live AI Ideas capture.",
+  "base_manifest": "regression_suites_v01531.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01532_idea_notebook",
+        "label": "v0.15.32 Idea Notebook foundation",
+        "kind": "python",
+        "path": "tools/test_v01532_idea_notebook_strict.py",
+        "timeout_seconds": 85
+      }
+    ]
+  }
+}

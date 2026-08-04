@@ -21,7 +21,7 @@ from typing import Any
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v01531.json"
+DEFAULT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v01532.json"
 
 
 def load_manifest(path: Path, _visited: set[Path] | None = None) -> dict[str, Any]:

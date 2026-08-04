@@ -22,6 +22,9 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Secondary workflows belong in grouped menus instead of an ever-growing wall of top-level buttons.
 - V1 parity is judged by useful workflow capability, not literal screen-for-screen reproduction.
 - AI Ideas target interactive Character Card / SillyTavern-style roleplay by default and normally establish a meaningful relationship or opening dynamic with literal `{{user}}`.
+- Generated ideas remain disposable until the user explicitly saves them. Persistent Idea Notebook material is versioned app-level authoring data independent of Character Projects, and saving one idea must never implicitly save the rest of a generated batch.
+- Named Idea Notebooks organise saved material without replacing tags: notebook membership is one organisational axis while tags/search work across notebooks.
+- Collaborator source handoffs should preserve structured source snapshots and provenance rather than paste opaque text into private UI state. Established facts, user-requested changes, and newly invented details should remain distinguishable where practical.
 - Alternate character routes should not require full duplicate cards when only a few fields differ; Linked Variants may inherit from a base while exports always materialise normal standalone cards.
 - Visual graph layout metadata stays separate from authoritative character, relationship, and route data.
 - External authoring tools and AIs should be able to hand CCF a partial character without being forced to generate filler for fields they do not know.
@@ -57,19 +60,35 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.31 development candidate — AI Jobs Queue Visibility & Selective Cancellation**
+**v0.15.32 development candidate — Idea Notebook Foundation**
 
-v0.15.31 makes the concurrent scheduler introduced in v0.15.26 visible and controllable from the Workspace. A collapsible **AI Jobs (N)** panel reports running work, worker-local queues, scheduler-capacity waits, parallel Safe Section dependency waits, and sections already completed while a parent Character build remains active.
+v0.15.32 turns AI Ideas from disposable generation output into optional persistent authoring material without making persistence automatic. The unified Idea Generator gains an **Idea Notebook** tab, and a completed AI Ideas batch can be selectively saved with per-idea checkboxes, Select All / Select None helpers, and an optional named-notebook destination.
 
-The panel is intended to answer why an AI operation is waiting instead of reducing every state to a single aggregate count. Where available it shows the owning workflow, Text/Vision/Image role, stage, provider profile, model, queue position, and dependency explanation. Built-in Safe Section rules such as Scenario → First Message are therefore visible as explicit dependency waits.
+Saved ideas preserve the normalised structured result returned by the existing Idea worker—including title, character identity/role, source anchor, roleplay hook, generation-ready concept, and tags—rather than reconstructing an idea from visible card text. Saved entries may then be searched, filtered by tag, edited, moved between notebooks, archived/restored, deleted, or reused as the current Main Concept.
 
-Top-level jobs gain selective cancellation. Cancelling one queued Collaborator job, for example, does not clear an unrelated Idea Generator queue. Safe Section child rows deliberately cancel their parent Character build rather than leaving a half-alive coordinator. Image Prompt and Image Generation work are surfaced through the same panel and cancellation is routed back through Image Studio.
+Idea Notebook data is deliberately independent of Character Projects. It uses versioned JSON under `user://character_card_forge/idea_notebook`, with a library index plus individual saved-idea files. **All Ideas** and **Unfiled** are built-in views. Deleting a named notebook never deletes its ideas; those entries become Unfiled.
 
-The existing **Cancel AI Queue** action remains available as the explicit emergency stop for current Workspace Text/Vision work. Pause/resume, move-to-front/priority, provider/API pools, shared local-GPU pools, and restart-persistent queues remain later work.
+The planned **Develop in Collaborator** action is not implemented as a private composer/session hack in v0.15.32. v0.15.33 will establish one generic structured Collaborator Source/provenance contract for generated ideas, saved Notebook ideas, and existing characters so later workflows share one architecture.
 
-The running development build displays **v0.15.31**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.32**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.32 — Idea Notebook Foundation
+
+- Added **Idea Notebook** as a third tab in the unified Idea Generator beside AI Ideas and Structured Builder.
+- Added explicit **Save Generated Ideas…** handling for the latest completed AI Ideas batch; generated ideas remain unsaved until the user chooses which results to keep.
+- Added Select All / Select None helpers and destination-notebook selection for saving several generated ideas in one action.
+- Preserved structured generated title, character name/role, source anchor, roleplay hook, concept, tags, and available generation provenance instead of flattening saved ideas to display text.
+- Added versioned app-level storage under `user://character_card_forge/idea_notebook` with `library.json` plus individual idea JSON files.
+- Added named notebook create/rename/delete, built-in **All Ideas** and **Unfiled**, and per-notebook counts.
+- Made notebook deletion non-destructive: its saved ideas are retained and moved to Unfiled.
+- Added cross-notebook text search, case-insensitive tag filtering, and optional archived-item visibility.
+- Added editing for title, concept, private notes, tags, and notebook assignment.
+- Added archive/restore, permanent saved-idea deletion, and **Use as Main Concept**.
+- Wired the live concurrent Idea worker's normalised completed batch into the Notebook save workflow without changing AI Ideas prompts/contracts or automatically writing generated output.
+- Kept the v0.15.33 Collaborator handoff deliberately deferred until a generic structured source/provenance API exists.
+- Added `docs/v01532-idea-notebook.md`, strict persistence/live-capture regression coverage, a focused v0.15.32 workflow, and the v0.15.32 broad regression manifest.
 
 ### v0.15.31 — AI Jobs Queue Visibility & Selective Cancellation
 
@@ -329,6 +348,8 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
+- Runtime-test v0.15.32 Idea Notebook through a real AI Ideas batch: save only selected results, save several at once, restart CCF, verify named notebooks/tags/search, edit/move/archive/restore entries, and confirm unsaved generated results never appear later.
+- Verify deleting a named Idea Notebook retains every saved idea in Unfiled and that Notebook data never leaks into portable Character Projects unless explicitly used as authoring input.
 - Runtime-test v0.15.31 with real provider calls while Character generation, Character Collaborator, Idea Generator, Vision, AI image-prompt generation, and Image generation run concurrently; verify AI Jobs accurately reflects running, queued, capacity-waiting, and dependency-waiting states.
 - Exercise per-job cancellation during real provider calls and verify cancelling one workflow never clears unrelated workers or leaks scheduler capacity.
 - Runtime-test a parallel Safe Section build through Interview/Q&A, multiple Output Groups targeting one field, a separate Sexual Traits group, and deliberately varied completion order while watching child states in AI Jobs.
@@ -350,6 +371,9 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## Next Up
 
+- **v0.15.33 — Generic Collaborator Source Context:** add a structured, provenance-aware source contract shared by generated Ideas, saved Idea Notebook entries, and existing characters. Sources must remain snapshots/reference material until the user explicitly applies an outcome.
+- Add **Develop in Collaborator** from both the latest Idea Generator results and saved Idea Notebook entries once the v0.15.33 source contract exists.
+- Reuse the existing v0.14.10 Related Character / AI Variation provenance and relationship concepts where they fit rather than creating a second incompatible derivation system.
 - Add optional provider/API execution pools so profiles sharing one cloud provider can share a provider-specific concurrency/rate-limit ceiling.
 - Add optional local hardware pools so Vision and Image providers using the same GPU can share a configurable resource limit.
 - Extend AI Jobs with pause/resume, priority, move-to-front/reorder controls, richer parent/child progress, and clearer project/character names.
@@ -367,6 +391,12 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## Planned Features
 
+- **v0.15.34 — Existing Character → Collaborator:** allow an occupied/imported Workspace character to become structured Collaborator source material for refinement, alternate/future/past versions, continuation after an event, side-character promotion, relatives/descendants, connected characters, or new characters in the same setting.
+- **v0.15.35 — Collaborator Character Completion & Group Integration:** when the current Workspace character is occupied, default a completed Collaborator character to a new character in the same group rather than overwriting the current one; retain explicit Replace Current and New Group alternatives.
+- Preserve source/relationship provenance for Collaborator-created characters while ensuring each created/exported character remains a complete standalone card. Suggest appropriate Relationship Graph edges without silently making them canonical.
+- **v0.15.36 — Collaborator Refinement Compare/Apply:** compare original and proposed fields/sections and allow selective acceptance, update-original, or create-improved-copy workflows.
+- **v0.15.37 — Multi-source Collaborator:** accept several characters and/or saved/generated Ideas as simultaneous structured source context for family, relationship, cast, and scenario development.
+- Later expose derivation/lineage history such as future versions, side-character promotions, descendants, and characters created from a saved idea, while keeping exported card data independent of that authoring history.
 - Further Library organisation, search/filter polish, and large-library performance work.
 - More template authoring/validation tools and clearer documentation of generation contracts and dependencies.
 - Stronger import/export diagnostics and compatibility reporting for external Character Card ecosystems.
@@ -376,7 +406,7 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## Level and Content Tools
 
-Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable, versioned templates, `.ccfchar` interchange, project packages, lorebooks, and schema/editor tooling. Loading and saving continue to use the same data model exposed to authoring tools.
+Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable, versioned templates, `.ccfchar` interchange, project packages, lorebooks, Idea Notebook entries, and schema/editor tooling. Loading and saving continue to use the same underlying data models exposed to authoring tools.
 
 ## Technical Improvements
 
@@ -406,6 +436,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Replace the temporary `.gd.uid` ignore policy with a deliberate checked-in canonical set when that migration occurs.
 - Keep release/update helper executable modes under version control.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
+- Keep Idea Notebook persistence independent of Character Projects and version both the library index and individual saved-idea records so later source/provenance fields can evolve compatibly.
+- Build Collaborator source seeding as a public structured capability instead of directly manipulating private composer/session controls from Idea Notebook or Workspace.
 - Continue reducing synchronous whole-library work from interactive Collaborator paths.
 - Keep attachment decoding/classification separate from UI composition and project-write boundaries.
 - Keep Generation Component and section-dependency semantics data-driven.
@@ -419,12 +451,14 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Improve semantic colour/theme consistency, keyboard navigation, detachable-window behavior, multi-monitor use, resizing, and long-text editing.
 - Improve visible progress/error states for long AI operations and distinguish queue wait, local preparation, provider thinking, repair, and validation time.
 - Improve queue labels so project, character, workflow, role, provider, model, section, and dependency state are legible without opening Diagnostics.
+- Improve Idea Notebook browsing as real libraries grow, including denser cards/list options and multi-selection if runtime use shows the need.
 - Continue replacing silent button no-ops with visible actionable status messages.
 
 ## Long-Term Ideas
 
 - Expand graph tooling into richer character/route planning without contaminating exported card data.
 - Make Character Collaborator capable of increasingly sophisticated project-wide creative planning while keeping explicit brainstorming/canonical boundaries.
+- Add navigable creative lineage such as **Characters created from this Idea**, **Ideas involving this character**, future/past variants, side-character promotions, descendants/family trees, and related Collaborator sessions.
 - Continue supporting portable user-created templates/content and external AI-assisted authoring workflows.
 - Consider durable server-owned background jobs for future remote/mobile workflows while keeping generation logic shared and credentials server-side; this is separate from the current local desktop scheduler.
 
@@ -433,6 +467,6 @@ Character Card Forge is an authoring application rather than a level-based game.
 - The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path because it bypassed the established parity/validation pipeline. Any revival must compose with that pipeline.
 - Provider-specific concurrency heuristics remain opt-in until CCF can model provider limits without weakening the generic OpenAI-compatible path.
 - Shared GPU resource pools are deferred until real local Vision/Image testing establishes the necessary controls.
-- Persistent local queue recovery across application restarts is deferred; v0.15.31 queues are process-local.
+- Persistent local queue recovery across application restarts is deferred; current queues are process-local.
 - More elaborate graph layout automation beyond the current draggable anchor-based system.
 - Advanced context compression beyond explicit user-triggered summarisation.

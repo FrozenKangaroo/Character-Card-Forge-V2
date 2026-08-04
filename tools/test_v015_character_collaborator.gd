@@ -69,9 +69,13 @@ func _active_shell_inherits(target_path: String) -> bool:
 	if finish < 0:
 		return false
 	var current_path := scene.substr(start, finish + 3 - start)
-	for _depth in range(32):
+	var visited := {}
+	for _depth in range(64):
 		if current_path == target_path:
 			return true
+		if current_path.is_empty() or visited.has(current_path):
+			return false
+		visited[current_path] = true
 		if not FileAccess.file_exists(current_path):
 			return false
 		var source := FileAccess.get_file_as_string(current_path)

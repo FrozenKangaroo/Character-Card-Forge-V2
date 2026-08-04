@@ -1,0 +1,63 @@
+name: Validate v0.15.32 Idea Notebook
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v01532-idea-notebook-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.6.3'
+  GODOT_STATUS: stable
+
+jobs:
+  idea-notebook:
+    name: Idea Notebook persistence and live capture
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project
+        shell: bash
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v01532-import.log
+          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE_BASE_CLASS" /tmp/ccf-v01532-import.log; then
+            echo "Godot reported a script or warning failure during import."
+            exit 1
+          fi
+
+      - name: Confirm import leaves checkout clean
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain --untracked-files=normal)" ]]; then
+            echo "Godot import created repository-visible changes:"
+            git status --short
+            exit 1
+          fi
+
+      - name: Test Idea Notebook persistence and live capture
+        run: python3 ./tools/test_v01532_idea_notebook_strict.py
+
+      - name: Recheck v0.15.31 AI Jobs panel
+        run: python3 ./tools/test_v01531_ai_jobs_panel_strict.py
+
+      - name: Recheck v0.15.30 Image Studio wrapping
+        run: python3 ./tools/test_v01530_image_prompt_word_wrap_strict.py
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --profile quick --godot "$(command -v godot)"
