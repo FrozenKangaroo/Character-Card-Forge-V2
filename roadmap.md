@@ -29,6 +29,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Provider/model token limits remain data-driven; UI controls and generation stages must not impose obsolete hidden ceilings.
 - Every Character-generation sub-request uses the active Text profile's authoritative Maximum Output Tokens allowance unless the user changes that profile setting.
 - Concurrent AI work must preserve isolated request/job state. A shared scheduler may coordinate capacity, but unrelated Character, Collaborator, Idea, Vision, authoring-tool, and Image jobs must never share one mutable `_active_job`.
+- Concurrent AI work must also be inspectable: users should be able to see what is running, queued, waiting for capacity, or blocked by dependencies, and selective cancellation must not silently clear unrelated workflows.
 - Parallel generation must remain deterministic: dependency order and template order—not network completion timing—determine context and final assembly.
 - Character Collaborator preserves established canon by default, deepens existing material before rewriting premises, and makes alternate/rewrite directions explicit.
 - Collaborator conversations are independent local authoring documents; project association is optional metadata rather than ownership.
@@ -56,15 +57,32 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.30 development candidate — Image Prompt Word Wrapping**
+**v0.15.31 development candidate — AI Jobs Queue Visibility & Selective Cancellation**
 
-v0.15.30 is a narrow Image Studio presentation fix following the v0.15.29 embedded-page and AI-prompt restoration. The Image Prompt and Negative Prompt controls remain normal multiline `TextEdit` editors, but now use boundary word wrapping so long AI-authored or manually edited prompts flow across visible lines instead of appearing as one enormous horizontal line.
+v0.15.31 makes the concurrent scheduler introduced in v0.15.26 visible and controllable from the Workspace. A collapsible **AI Jobs (N)** panel reports running work, worker-local queues, scheduler-capacity waits, parallel Safe Section dependency waits, and sections already completed while a parent Character build remains active.
 
-The underlying prompt text is unchanged. Wrapping is presentation-only and therefore does not alter copied prompt content, negative prompts, saved defaults, or the text sent to image providers. Existing vertical scrolling remains available for long prompts, and horizontal scroll is reset when the editors are configured.
+The panel is intended to answer why an AI operation is waiting instead of reducing every state to a single aggregate count. Where available it shows the owning workflow, Text/Vision/Image role, stage, provider profile, model, queue position, and dependency explanation. Built-in Safe Section rules such as Scenario → First Message are therefore visible as explicit dependency waits.
 
-The running development build displays **v0.15.30**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+Top-level jobs gain selective cancellation. Cancelling one queued Collaborator job, for example, does not clear an unrelated Idea Generator queue. Safe Section child rows deliberately cancel their parent Character build rather than leaving a half-alive coordinator. Image Prompt and Image Generation work are surfaced through the same panel and cancellation is routed back through Image Studio.
+
+The existing **Cancel AI Queue** action remains available as the explicit emergency stop for current Workspace Text/Vision work. Pause/resume, move-to-front/priority, provider/API pools, shared local-GPU pools, and restart-persistent queues remain later work.
+
+The running development build displays **v0.15.31**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.31 — AI Jobs Queue Visibility & Selective Cancellation
+
+- Added a collapsible **AI Jobs (N)** panel beside the existing Workspace queue status and retained **Cancel AI Queue** as a separate emergency action.
+- Added inspectable records for the primary Character worker, Character Collaborator, Idea Generator, authoring tools, Vision/Attachments, Image Prompt writer, and Image Generation.
+- Added visible states for running, coordinating, worker-queued, scheduler-capacity waiting, dependency waiting, and Safe Sections completed within an active parent build.
+- Added workflow/stage, Text/Vision/Image role, provider profile, model, queue-position, and dependency detail where available.
+- Exposed parallel Safe Section child status without changing deterministic dependency-wave execution or template-order assembly.
+- Made Scenario → First Message and other declared Safe dependencies explain why later sections are waiting instead of appearing stalled.
+- Added per-job cancellation for current Text/Vision workers without clearing unrelated worker queues.
+- Made Safe child cancellation target the parent Character build so the coordinator cannot continue with a deliberately missing required section.
+- Surfaced Image Studio prompt/image work in the shared AI Jobs view and routed cancellation through Image Studio's existing service state.
+- Added `docs/v01531-ai-jobs-panel.md`, a strict real-main-scene regression, a focused v0.15.31 workflow, and the v0.15.31 broad regression manifest.
 
 ### v0.15.30 — Image Prompt Word Wrapping
 
@@ -311,11 +329,12 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
-- Runtime-test v0.15.30 with the user's real Character AI Text provider plus Stable Diffusion/Forge provider: AI-authored prompt, optional negative prompt, visible wrapping for both prompt editors, cached checkpoint/sampler lists, image generation, and restart persistence.
+- Runtime-test v0.15.31 with real provider calls while Character generation, Character Collaborator, Idea Generator, Vision, AI image-prompt generation, and Image generation run concurrently; verify AI Jobs accurately reflects running, queued, capacity-waiting, and dependency-waiting states.
+- Exercise per-job cancellation during real provider calls and verify cancelling one workflow never clears unrelated workers or leaks scheduler capacity.
+- Runtime-test a parallel Safe Section build through Interview/Q&A, multiple Output Groups targeting one field, a separate Sexual Traits group, and deliberately varied completion order while watching child states in AI Jobs.
+- Verify First Message visibly waits for Scenario and later dialogue/greeting sections wait for intended dependencies in a real custom template.
+- Runtime-test v0.15.31 with the user's real Character AI Text provider plus Stable Diffusion/Forge provider: AI-authored prompt, optional negative prompt, visible wrapping for both prompt editors, cached checkpoint/sampler lists, image generation, and shared AI Jobs visibility.
 - Compare **Generate Prompt from Character** against **Build Local Fallback** across sparse and detailed characters; AI prompting should add deliberate composition without drifting established physical identity.
-- Runtime-test v0.15.30 with real provider calls while Character generation, Character Collaborator, Idea Generator, Vision, AI image-prompt generation, and Image generation run concurrently.
-- Runtime-test parallel Safe Section Build with Interview/Q&A, multiple Output Groups targeting one field, a separate Sexual Traits group, and deliberately varied completion order.
-- Verify First Message waits for Scenario and later dialogue/greeting sections wait for intended dependencies in a real custom template.
 - Test Vision and Image global-participation toggles with cloud Text plus local Vision/Stable Diffusion.
 - Compare real-world latency, rate-limit behavior, completeness, and provider cost between sequential Safe Build, parallel Safe Build, and Fast Full Card.
 - Deliberately provoke section failure/cancellation while siblings are active and confirm successful isolated results are not cross-contaminated.
@@ -333,7 +352,7 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 - Add optional provider/API execution pools so profiles sharing one cloud provider can share a provider-specific concurrency/rate-limit ceiling.
 - Add optional local hardware pools so Vision and Image providers using the same GPU can share a configurable resource limit.
-- Add richer queue UI with parent/child jobs, per-job cancellation, pause/resume, priority, move-to-front, and section progress.
+- Extend AI Jobs with pause/resume, priority, move-to-front/reorder controls, richer parent/child progress, and clearer project/character names.
 - Consider round-robin fairness refinements so one large parent build cannot dominate all eligible Text slots.
 - Consider a future **Custom Section Build** strategy for user-defined request batches while retaining component-level validation and deterministic assembly.
 - Expand Diagnostics into optional recent-attempt history/retry tooling if real provider testing shows persistent traces are useful.
@@ -366,6 +385,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep important historical hotfix behavior as active-leaf regression invariants rather than assuming an old class remains in every later inheritance chain.
 - Maintain one authoritative Character Text output budget per queued generation job and reassert it at request time.
 - Keep each concurrent worker's request, retry, repair, Diagnostics, cancellation, and parent-state data isolated.
+- Expose scheduler/job state through stable inspectable records rather than having UI scrape visual status strings.
+- Route selective cancellation back through the owning worker/service so unrelated queues remain intact and each subsystem retains authority over its cleanup state.
 - Keep dependency graphs data-driven and detect cycles/invalid references without deadlocking a build.
 - Preserve frozen wave context and deterministic template-order assembly for parallel generation.
 - Maintain the versioned representative regression registry as a release compatibility boundary across unrelated app areas.
@@ -412,6 +433,6 @@ Character Card Forge is an authoring application rather than a level-based game.
 - The standalone v0.15.12–v0.15.14 full-Workspace synthesis shortcut is not the normal Generate Character path because it bypassed the established parity/validation pipeline. Any revival must compose with that pipeline.
 - Provider-specific concurrency heuristics remain opt-in until CCF can model provider limits without weakening the generic OpenAI-compatible path.
 - Shared GPU resource pools are deferred until real local Vision/Image testing establishes the necessary controls.
-- Persistent local queue recovery across application restarts is deferred; v0.15.30 queues are process-local.
+- Persistent local queue recovery across application restarts is deferred; v0.15.31 queues are process-local.
 - More elaborate graph layout automation beyond the current draggable anchor-based system.
 - Advanced context compression beyond explicit user-triggered summarisation.

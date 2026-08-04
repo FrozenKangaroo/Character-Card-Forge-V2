@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.31",
+  "description": "v0.15.30 broad coverage plus live AI Jobs queue visibility, Safe Section dependency status, Image Studio queue integration, and per-job cancellation.",
+  "base_manifest": "regression_suites_v01530.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01531_ai_jobs_panel",
+        "label": "v0.15.31 AI Jobs queue panel and per-job cancellation",
+        "kind": "python",
+        "path": "tools/test_v01531_ai_jobs_panel_strict.py",
+        "timeout_seconds": 70
+      }
+    ]
+  }
+}
