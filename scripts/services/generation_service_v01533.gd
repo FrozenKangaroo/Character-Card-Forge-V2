@@ -9,7 +9,7 @@ func _on_request_completed(
 		return
 
 	var body_text := body.get_string_from_utf8()
-	var safe_parse := _safe_provider_envelope_v01533(body_text)
+	var safe_parse := _safe_provider_envelope_v01533(body_text, response_code)
 	if result != HTTPRequest.RESULT_SUCCESS:
 		_record_invalid_provider_response_v01533(
 			result,
@@ -47,12 +47,12 @@ func provider_response_hardening_capabilities_v01533() -> Dictionary:
 	}
 
 
-func _safe_provider_envelope_v01533(body_text: String) -> Dictionary:
+func _safe_provider_envelope_v01533(body_text: String, response_code: int) -> Dictionary:
 	if body_text.strip_edges().is_empty():
 		return {
 			"ok": false,
 			"reason": "empty_body",
-			"detail": "Provider returned an empty response body. The request may have timed out or been interrupted."
+			"detail": "Provider returned an empty response body (HTTP %d). The request may have timed out or been interrupted." % response_code
 		}
 	var parser := JSON.new()
 	var parse_error := parser.parse(body_text)
@@ -61,7 +61,7 @@ func _safe_provider_envelope_v01533(body_text: String) -> Dictionary:
 			"ok": false,
 			"reason": "malformed_json",
 			"detail": "Provider returned an incomplete or non-JSON response (HTTP %d): %s at line %d." % [
-				int(_active_job.get("response_code_v01533", 0)),
+				response_code,
 				parser.get_error_message(),
 				parser.get_error_line()
 			]
@@ -78,7 +78,6 @@ func _record_invalid_provider_response_v01533(
 ) -> void:
 	# Store the same diagnostic keys used by v0.15.22 so the existing Diagnostics
 	# window can still explain exactly what came back from the provider.
-	_active_job["response_code_v01533"] = response_code
 	var response_snapshot := {
 		"timestamp": Time.get_datetime_string_from_system(true),
 		"stage": _diagnostic_stage_v01522(),
