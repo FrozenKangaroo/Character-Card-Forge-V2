@@ -64,21 +64,36 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.33 development candidate — Generic Collaborator Source Context**
+**v0.15.33-hotfix2 development candidate — AI Ideas Notebook Capture Reliability**
 
-v0.15.33 establishes a reusable source/provenance boundary for Character Collaborator. A source-aware conversation stores one versioned `source_context` snapshot independently from ordinary attachments and conversation messages. That snapshot is autosaved with the Collaborator session, remains read-only, and is reintroduced to every model-facing request even if older conversation messages are summarised.
+v0.15.33-hotfix2 repairs the live completion bridge between the embedded AI Ideas workflow and the v0.15.32 Idea Notebook / v0.15.33 Collaborator handoff controls. A completed AI Ideas batch that is already visible in the generator must also become available to **Save Generated Ideas…** and **Develop Generated Idea…**.
 
-The first live source workflows are **Develop Generated Idea…** from the latest completed AI Ideas batch and **Develop in Collaborator** from a saved Idea Notebook entry. Generated ideas are still not auto-saved merely because they are sent to Collaborator. Opening the Collaborator from either source is passive and does not spend another AI request until the user actually sends a message or requests a generation operation.
+The current Idea generation contract still emits the canonical job type `ideas`; the reported failure was not a job-type rename. The fragile boundary was that Notebook capture listened only to Workspace's dedicated Idea worker while the embedded legacy AI Ideas controller retains and can rebind its own compatible generation-service reference. Capture is now connected across the live Workspace generation-service topology and refreshed around service/client rebinding while still filtering unrelated job types and never auto-saving generated ideas.
 
-The source contract already defines a structured existing-character snapshot so v0.15.34 can build the Workspace **Develop in Collaborator** workflow on the same architecture. v0.15.33 does not yet expose that Workspace action, does not yet support multiple simultaneous primary sources, and does not change final Character Collaborator materialisation/group behavior.
+v0.15.33's generic Collaborator source context and v0.15.33-hotfix1's Structured Builder → Collaborator route remain intact. **v0.15.34 remains reserved for Existing Character → Collaborator** rather than being consumed by this regression repair.
 
-The current AI workers also harden provider-envelope handling. Empty, interrupted, HTML/non-JSON, or malformed API bodies are detected before historical inherited `JSON.parse_string()` handlers can emit repeated engine parse errors. HTTP status, network result, raw body, and failure reason remain available to Diagnostics and the established bounded retry policy remains authoritative.
+Provider-envelope hardening from v0.15.33 remains separate from the observed Linux/X11 GL Compatibility crash (`BadAlloc` → `glXMakeCurrent failed` → signal 11). That native crash remains under investigation and is not claimed fixed by this hotfix.
 
-This provider hardening is separate from the observed Linux/X11 GL Compatibility crash (`BadAlloc` → `glXMakeCurrent failed` → signal 11). That native crash remains under investigation and is not claimed fixed by v0.15.33.
-
-The running development build displays **v0.15.33**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.33-hotfix2**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.33-hotfix2 — AI Ideas Notebook Capture Reliability
+
+- Fixed successful AI Ideas batches being visible in the generator while Idea Notebook still reported no completed batch and kept **Save Generated Ideas…** disabled.
+- Restored **Develop Generated Idea…** availability for the same captured batch without automatically saving it.
+- Kept `ideas` as the current canonical Idea-generation job type and added only a forward-compatible alias rather than rewriting the established generation contract.
+- Made the Notebook completion bridge listen across compatible live Workspace generation services instead of assuming the embedded legacy controller can only ever complete through one worker reference.
+- Refreshes capture wiring after concurrent-client rebinding and immediately before/after opening the unified Idea Generator, where legacy controller service rebinding can occur.
+- Added a real-main-scene regression that emits `job_completed` through a second live generation service, verifies Save/Develop controls enable and the status updates, and proves capture alone does not persist anything.
+- Advanced the broad regression default to `regression_suites_v01533_hotfix2.json` and documented the corrected diagnosis in `docs/v01533-hotfix2-ai-ideas-notebook-capture.md`.
+
+### v0.15.33-hotfix1 — Structured Builder → Collaborator
+
+- Added **Develop in Collaborator** beside **Build Idea into Main Concept** in Structured Builder.
+- Preserved selected/typed ingredients, stable field IDs, labels, multi-select metadata, and custom instructions as read-only structured Collaborator source context.
+- Kept Structured Builder source distinct from generated ideas, saved Notebook ideas, and existing-character source groundwork.
+- Kept v0.15.34 reserved for the larger Existing Character → Collaborator workflow.
 
 ### v0.15.33 — Generic Collaborator Source Context
 
@@ -332,6 +347,7 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
+- Runtime-test v0.15.33-hotfix2 with a real AI Ideas batch and confirm the visible generated cards also enable **Save Generated Ideas…** and **Develop Generated Idea…**, with selective saving still opt-in only.
 - Runtime-test v0.15.33 by sending a generated unsaved Idea into Collaborator, developing it through several messages, closing/reopening CCF, and verifying the source snapshot/provenance survives independently of the original generation batch.
 - Runtime-test a saved Idea Notebook entry through **Develop in Collaborator**, confirm its Notebook entry remains unchanged, and verify Idea/notebook provenance survives session reload.
 - Exercise source-aware Collaborator context through user-triggered summarisation and attachment removal; the first-class source must remain intact and continue to inform later replies.
@@ -424,6 +440,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep release/update helper executable modes under version control.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
 - Keep Idea Notebook persistence independent of Character Projects and version both the library index and individual saved-idea records so later source/provenance fields can evolve compatibly.
+- Keep Idea Notebook completion capture bound to the live generation-service topology rather than one assumed worker reference; embedded legacy-controller rebinding must not make visible AI results unavailable to save/develop workflows.
 - Keep Collaborator source seeding as a public structured capability instead of directly manipulating private composer/session controls from Idea Notebook or Workspace.
 - Keep the primary Collaborator source separate from ordinary `context_items`; attachments may be removed or summaries rebuilt without changing the source snapshot.
 - Keep Collaborator source formats versioned and backwards-compatible so future existing-character and multi-source workflows can extend rather than replace early source-aware conversations.
