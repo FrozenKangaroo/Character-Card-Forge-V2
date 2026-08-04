@@ -30,9 +30,18 @@ func _run() -> void:
 
 	var services := workspace.concurrent_services_v01526()
 	for service_name in ["primary", "collaborator", "ideas", "tools", "vision"]:
+		var service_value: Variant = services.get(service_name)
 		assert(
-			services.get(service_name) is CCFGenerationServiceV01531,
-			"%s must use the inspectable v0.15.31 generation service." % service_name
+			service_value is CCFGenerationServiceV01526,
+			"%s must retain the scheduler-aware v0.15.26 generation base." % service_name
+		)
+		assert(
+			(service_value as Node).has_method("job_records_v01531"),
+			"%s must expose the v0.15.31 inspectable job capability." % service_name
+		)
+		assert(
+			(service_value as Node).has_method("cancel_job_v01531"),
+			"%s must expose selective v0.15.31 cancellation." % service_name
 		)
 
 	_test_independent_queued_cancel_v01531(workspace, services)
@@ -69,8 +78,10 @@ func _prepare_settings_v01531() -> void:
 func _test_independent_queued_cancel_v01531(
 	workspace: CCFWorkspaceV01531View, services: Dictionary
 ) -> void:
-	var collaborator := services.get("collaborator") as CCFGenerationServiceV01531
-	var ideas := services.get("ideas") as CCFGenerationServiceV01531
+	var collaborator := services.get("collaborator") as CCFGenerationServiceV01526
+	var ideas := services.get("ideas") as CCFGenerationServiceV01526
+	assert(collaborator != null and collaborator.has_method("job_records_v01531"))
+	assert(ideas != null and ideas.has_method("job_records_v01531"))
 	var collaborator_queue: Array = collaborator.get("_queue")
 	var ideas_queue: Array = ideas.get("_queue")
 	collaborator_queue.append(_fixture_job_v01531("job_200321", "collaborator_reply", "Collaborator reply"))
@@ -91,7 +102,8 @@ func _test_independent_queued_cancel_v01531(
 func _test_safe_section_dependency_rows_v01531(
 	workspace: CCFWorkspaceV01531View, services: Dictionary
 ) -> void:
-	var primary := services.get("primary") as CCFGenerationServiceV01531
+	var primary := services.get("primary") as CCFGenerationServiceV01526
+	assert(primary != null and primary.has_method("job_records_v01531"))
 	primary.set(
 		"_active_job",
 		{
@@ -134,7 +146,8 @@ func _test_safe_section_dependency_rows_v01531(
 		}
 	)
 	workspace.call("_refresh_ai_jobs_panel_v01531")
-	var records := primary.job_records_v01531()
+	var records_value: Variant = primary.call("job_records_v01531")
+	var records: Array = records_value if records_value is Array else []
 	var scenario := _record_by_label_v01531(records, "Scenario")
 	var first_message := _record_by_label_v01531(records, "First Message")
 	assert(scenario.get("status") == "queued", "Scenario must be visible in the eligible Safe Section wave.")
@@ -158,7 +171,8 @@ func _test_safe_section_dependency_rows_v01531(
 			"failed": false
 		}
 	)
-	records = primary.job_records_v01531()
+	records_value = primary.call("job_records_v01531")
+	records = records_value if records_value is Array else []
 	scenario = _record_by_label_v01531(records, "Scenario")
 	first_message = _record_by_label_v01531(records, "First Message")
 	assert(scenario.get("status") == "completed", "Completed Safe Sections must remain visible while the parent build is active.")
