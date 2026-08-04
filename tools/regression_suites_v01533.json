@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.33",
+  "description": "v0.15.32 broad coverage plus structured Collaborator source provenance, Idea/Notebook handoffs and malformed provider-envelope hardening.",
+  "base_manifest": "regression_suites_v01532.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01533_collaborator_source_context",
+        "label": "v0.15.33 Collaborator structured source context",
+        "kind": "python",
+        "path": "tools/test_v01533_collaborator_source_context_strict.py",
+        "timeout_seconds": 100
+      }
+    ]
+  }
+}

@@ -10,7 +10,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 - Godot-native desktop UI with detachable tool windows where useful.
 - Character project JSON/files are the source of truth; the legacy V1 database is not.
-- Versioned, externally inspectable templates, authoring schemas, lorebooks, series data, settings, project packages, and interchange formats.
+- Versioned, externally inspectable templates, authoring schemas, lorebooks, series data, settings, project packages, Idea Notebook data, Collaborator source data, and interchange formats.
 - Clear separation between character data, project-shared context, AI generation, providers, images, imports/exports, library indexing, and tooling.
 - OpenAI-compatible and local/self-hosted Text, Vision, and Image providers remain first-class targets.
 - Text/Vision provider roles and Image Generation providers stay independently configurable.
@@ -24,7 +24,9 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - AI Ideas target interactive Character Card / SillyTavern-style roleplay by default and normally establish a meaningful relationship or opening dynamic with literal `{{user}}`.
 - Generated ideas remain disposable until the user explicitly saves them. Persistent Idea Notebook material is versioned app-level authoring data independent of Character Projects, and saving one idea must never implicitly save the rest of a generated batch.
 - Named Idea Notebooks organise saved material without replacing tags: notebook membership is one organisational axis while tags/search work across notebooks.
-- Collaborator source handoffs should preserve structured source snapshots and provenance rather than paste opaque text into private UI state. Established facts, user-requested changes, and newly invented details should remain distinguishable where practical.
+- Collaborator source handoffs preserve structured source snapshots and provenance rather than paste opaque text into private UI state.
+- Collaborator source-aware reasoning should distinguish **established source facts**, **author-requested changes**, and **new/proposed details**. Existing facts stay authoritative unless the author explicitly branches, retcons, advances, rewrites, or replaces them.
+- A Collaborator source is read-only authoring context. Conversation, summarisation, or attachment removal must not silently mutate or erase the source snapshot.
 - Alternate character routes should not require full duplicate cards when only a few fields differ; Linked Variants may inherit from a base while exports always materialise normal standalone cards.
 - Visual graph layout metadata stays separate from authoritative character, relationship, and route data.
 - External authoring tools and AIs should be able to hand CCF a partial character without being forced to generate filler for fields they do not know.
@@ -43,6 +45,8 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Collaborator Blueprint handoff preserves one detailed canonical Generation Concept before template materialisation; direct field filling remains an explicit alternative.
 - Alternative Greetings and Character Lorebook material are first-class character data as well as preserved authoring source.
 - The live Workspace generation-service composition is a tested compatibility boundary. Compatibility is capability-based rather than an exact historical script filename check.
+- Malformed, empty, interrupted, or non-JSON provider envelopes should fail as normal provider/network errors with usable Diagnostics rather than emitting repeated Godot JSON parser errors.
+- Native engine/driver crashes are tracked separately from application-level provider failures and are never marked fixed without evidence.
 - Normal Godot import/open operations leave the Git checkout clean.
 - Release/update helpers prefer the repository checkout they are launched from and retain separate-copy syncing only as an explicit fallback.
 - Every major supported workflow has representative cross-feature regression coverage; a focused feature test alone is not a release gate.
@@ -60,105 +64,85 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.32 development candidate — Idea Notebook Foundation**
+**v0.15.33 development candidate — Generic Collaborator Source Context**
 
-v0.15.32 turns AI Ideas from disposable generation output into optional persistent authoring material without making persistence automatic. The unified Idea Generator gains an **Idea Notebook** tab, and a completed AI Ideas batch can be selectively saved with per-idea checkboxes, Select All / Select None helpers, and an optional named-notebook destination.
+v0.15.33 establishes a reusable source/provenance boundary for Character Collaborator. A source-aware conversation stores one versioned `source_context` snapshot independently from ordinary attachments and conversation messages. That snapshot is autosaved with the Collaborator session, remains read-only, and is reintroduced to every model-facing request even if older conversation messages are summarised.
 
-Saved ideas preserve the normalised structured result returned by the existing Idea worker—including title, character identity/role, source anchor, roleplay hook, generation-ready concept, and tags—rather than reconstructing an idea from visible card text. Saved entries may then be searched, filtered by tag, edited, moved between notebooks, archived/restored, deleted, or reused as the current Main Concept.
+The first live source workflows are **Develop Generated Idea…** from the latest completed AI Ideas batch and **Develop in Collaborator** from a saved Idea Notebook entry. Generated ideas are still not auto-saved merely because they are sent to Collaborator. Opening the Collaborator from either source is passive and does not spend another AI request until the user actually sends a message or requests a generation operation.
 
-Idea Notebook data is deliberately independent of Character Projects. It uses versioned JSON under `user://character_card_forge/idea_notebook`, with a library index plus individual saved-idea files. **All Ideas** and **Unfiled** are built-in views. Deleting a named notebook never deletes its ideas; those entries become Unfiled.
+The source contract already defines a structured existing-character snapshot so v0.15.34 can build the Workspace **Develop in Collaborator** workflow on the same architecture. v0.15.33 does not yet expose that Workspace action, does not yet support multiple simultaneous primary sources, and does not change final Character Collaborator materialisation/group behavior.
 
-The planned **Develop in Collaborator** action is not implemented as a private composer/session hack in v0.15.32. v0.15.33 will establish one generic structured Collaborator Source/provenance contract for generated ideas, saved Notebook ideas, and existing characters so later workflows share one architecture.
+The current AI workers also harden provider-envelope handling. Empty, interrupted, HTML/non-JSON, or malformed API bodies are detected before historical inherited `JSON.parse_string()` handlers can emit repeated engine parse errors. HTTP status, network result, raw body, and failure reason remain available to Diagnostics and the established bounded retry policy remains authoritative.
 
-The running development build displays **v0.15.32**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+This provider hardening is separate from the observed Linux/X11 GL Compatibility crash (`BadAlloc` → `glXMakeCurrent failed` → signal 11). That native crash remains under investigation and is not claimed fixed by v0.15.33.
+
+The running development build displays **v0.15.33**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
 
+### v0.15.33 — Generic Collaborator Source Context
+
+- Added versioned first-class Collaborator `source_context` snapshots with stable source IDs, source type, structured snapshot, provenance, capture time, and author intent.
+- Added source types for generated AI Ideas, saved Idea Notebook entries, and existing-character schema groundwork.
+- Kept source snapshots read-only and separate from removable attachments, messages, and lossy conversation summaries.
+- Added model-facing source rules that distinguish established source facts, author-requested changes, and new/proposed details.
+- Added a visible Source panel and source-specific context-token accounting to Character Collaborator.
+- Persisted source-aware conversations through the existing independent Collaborator session store without changing historical no-source sessions.
+- Added **Develop Generated Idea…** with a chooser for the latest completed AI Ideas batch; the selected idea is not automatically saved to Idea Notebook.
+- Added **Develop in Collaborator** to saved Idea Notebook entries while preserving stable Idea/Notebook provenance.
+- Made Idea/Notebook handoff passive so opening the source conversation does not immediately queue an AI request.
+- Established the existing-character source API for v0.15.34 without prematurely adding its Workspace UI or derivation-intent workflow.
+- Limited v0.15.33 to one primary source per conversation; multi-source work remains v0.15.37.
+- Added `CCFGenerationServiceV01533` across current concurrent workers to catch empty/malformed/non-JSON provider envelopes before inherited parser layers, retain raw HTTP/network diagnostics, and use existing bounded retry behavior.
+- Preserved the v0.15.32-hotfix1 AI Ideas header layout, v0.15.32 Idea Notebook, v0.15.31 AI Jobs, v0.15.26 scheduler/Safe Sections, Collaborator attachments, Vision routing, Blueprint handoff, and existing app-level/project boundaries.
+- Added `docs/v01533-collaborator-source-context.md`, strict source/provider regression coverage, a focused v0.15.33 workflow, and the v0.15.33 broad regression manifest.
+
+### v0.15.32-hotfix1 — AI Ideas Notebook Header Layout
+
+- Replaced the malformed AI Ideas `HFlowContainer` action strip with a compact button row and separate full-width batch-status row so status text cannot collapse to a one-character column or stretch the tab vertically.
+- Added screenshot-failure-specific layout regression coverage while preserving all Idea Notebook behavior.
+
 ### v0.15.32 — Idea Notebook Foundation
 
-- Added **Idea Notebook** as a third tab in the unified Idea Generator beside AI Ideas and Structured Builder.
-- Added explicit **Save Generated Ideas…** handling for the latest completed AI Ideas batch; generated ideas remain unsaved until the user chooses which results to keep.
-- Added Select All / Select None helpers and destination-notebook selection for saving several generated ideas in one action.
-- Preserved structured generated title, character name/role, source anchor, roleplay hook, concept, tags, and available generation provenance instead of flattening saved ideas to display text.
-- Added versioned app-level storage under `user://character_card_forge/idea_notebook` with `library.json` plus individual idea JSON files.
-- Added named notebook create/rename/delete, built-in **All Ideas** and **Unfiled**, and per-notebook counts.
-- Made notebook deletion non-destructive: its saved ideas are retained and moved to Unfiled.
-- Added cross-notebook text search, case-insensitive tag filtering, and optional archived-item visibility.
-- Added editing for title, concept, private notes, tags, and notebook assignment.
-- Added archive/restore, permanent saved-idea deletion, and **Use as Main Concept**.
-- Wired the live concurrent Idea worker's normalised completed batch into the Notebook save workflow without changing AI Ideas prompts/contracts or automatically writing generated output.
-- Kept the v0.15.33 Collaborator handoff deliberately deferred until a generic structured source/provenance API exists.
-- Added `docs/v01532-idea-notebook.md`, strict persistence/live-capture regression coverage, a focused v0.15.32 workflow, and the v0.15.32 broad regression manifest.
+- Added **Idea Notebook** beside AI Ideas and Structured Builder.
+- Added explicit selective saving for generated batches; generation remains disposable until the user chooses what to keep.
+- Preserved structured generated title, character identity/role, source anchor, roleplay hook, concept, tags, and available generation provenance.
+- Added versioned app-level storage under `user://character_card_forge/idea_notebook` with a library index and individual idea JSON files.
+- Added named notebook create/rename/delete, built-in **All Ideas** and **Unfiled**, notebook counts, search, tag filtering, editing, move, archive/restore, delete, and **Use as Main Concept**.
+- Made notebook deletion non-destructive: its ideas become Unfiled.
 
 ### v0.15.31 — AI Jobs Queue Visibility & Selective Cancellation
 
-- Added a collapsible **AI Jobs (N)** panel beside the existing Workspace queue status and retained **Cancel AI Queue** as a separate emergency action.
-- Added inspectable records for the primary Character worker, Character Collaborator, Idea Generator, authoring tools, Vision/Attachments, Image Prompt writer, and Image Generation.
-- Added visible states for running, coordinating, worker-queued, scheduler-capacity waiting, dependency waiting, and Safe Sections completed within an active parent build.
-- Added workflow/stage, Text/Vision/Image role, provider profile, model, queue-position, and dependency detail where available.
-- Exposed parallel Safe Section child status without changing deterministic dependency-wave execution or template-order assembly.
-- Made Scenario → First Message and other declared Safe dependencies explain why later sections are waiting instead of appearing stalled.
-- Added per-job cancellation for current Text/Vision workers without clearing unrelated worker queues.
-- Made Safe child cancellation target the parent Character build so the coordinator cannot continue with a deliberately missing required section.
-- Surfaced Image Studio prompt/image work in the shared AI Jobs view and routed cancellation through Image Studio's existing service state.
-- Added `docs/v01531-ai-jobs-panel.md`, a strict real-main-scene regression, a focused v0.15.31 workflow, and the v0.15.31 broad regression manifest.
+- Added a collapsible **AI Jobs (N)** panel with running, coordinating, queued, capacity-waiting, dependency-waiting, and completed-child states.
+- Added workflow/stage, role, provider/model, queue-position and dependency details where available.
+- Added selective per-job cancellation without clearing unrelated worker queues; Safe child cancellation targets its parent build.
+- Surfaced Image Prompt/Image Generation work through the shared jobs view while retaining subsystem-owned cleanup.
 
 ### v0.15.30 — Image Prompt Word Wrapping
 
-- Enabled `TextEdit.LINE_WRAPPING_BOUNDARY` for both the Image Prompt and Negative Prompt editors.
-- Reset horizontal scroll when those editors are configured while preserving multiline editing and vertical scrolling.
-- Kept wrapping presentation-only so prompt text passed to clipboard, settings, AI prompt workflows, and Image providers remains unchanged.
-- Preserved the v0.15.29 embedded Image Studio, Character Text-role **Generate Prompt from Character**, and deterministic **Build Local Fallback** behavior.
-- Preserved v0.15.28 Workspace-save handoff, Image-profile separation, and cached model/sampler discovery.
-- Added `docs/v01530-image-prompt-word-wrap.md`, a strict real-main-scene regression that inserts a long single paragraph into both live editors and verifies actual wrapped visual lines, a focused v0.15.30 workflow, and the v0.15.30 broad regression manifest.
+- Restored actual visual word wrapping for Image Prompt and Negative Prompt without mutating stored prompt text.
 
 ### v0.15.29 — Embedded Image Studio + AI Prompt Restoration
 
-- Restored Image Studio as an embedded main-navigation page rather than a native popup workflow.
-- Remounted the current v0.15.29 controller UI inside the established `CCFImageGenerationPage` scroll viewport while retaining the native Window only as a hidden implementation detail.
-- Made the controller `open_studio()` compatibility entry point refresh-only so normal or inherited callers cannot reopen the popup.
-- Restored **Generate Prompt from Character** as an explicit Character AI Text-role request that authors a purpose-built image prompt instead of mechanically extracting card fields.
-- Restored the established separation between the AI-authored prompt action and **Build Local Fallback**, which remains deterministic and provider-free.
-- Kept project/character loading passive so merely opening or browsing Image Studio cannot spend Text-provider tokens.
-- Preserved Description, Scenario, Personality, First Message, Generation Concept, and Additional visual direction as prompt-authoring source context, with Additional visual direction treated as authoritative for the requested image.
-- Kept Stable Diffusion-style and natural-language prompt contracts distinct and retained optional generated negative prompts.
-- Prevented a completed AI prompt from applying if the active character changed while the request was running.
-- Implemented the restored prompt writer on the current v0.15.26 scheduler/generation inheritance chain rather than reviving the old v0.13 service unchanged.
-- Preserved v0.15.28 Workspace-save handoff, correct Image-profile routing, and persistent model/sampler discovery.
-- Added `docs/v01529-image-studio-regression-restoration.md`, a real-main-scene regression, a strict wrapper, a focused v0.15.29 workflow, and the v0.15.29 broad regression manifest.
+- Restored Image Studio as a main-navigation page and restored Character Text-role **Generate Prompt from Character** alongside deterministic **Build Local Fallback**.
+- Kept passive browsing provider-free and preserved v0.15.28 project/provider-state fixes.
 
 ### v0.15.28 — Image Studio Live Project and Provider State
 
-- Added direct Workspace `project_saved` handoff into Image Studio so newly saved projects appear without app restart.
-- Made opening Image Studio prefer the current saved Workspace project and active character.
-- Made **Reload Projects** perform a real disk rescan, retain the preferred project where possible, and report how many saved projects were found.
-- Added an immediate saved-project fallback for the same-frame case where a platform directory listing has not yet exposed the new project folder.
-- Replaced Image Studio's incorrect Character `api_profiles` enumeration/lookup with `image_profiles` and `image_profile_by_id()`.
-- Corrected **Save Image Defaults** so it updates the selected Image profile rather than a Text/Vision profile.
-- Added a normalised per-Image-profile `discovered_capabilities` cache for models/checkpoints, samplers, backend flags, notes, and discovery time.
-- Made Settings **Test / Discover** save its discovered lists and notify the live Image Studio.
-- Made Image Studio discovery save to the same cache and restore cached lists whenever an Image profile is selected.
-- Added visible prompt-state errors instead of silent failures.
-- v0.15.28 also accidentally reintroduced native popup presentation and replaced the established AI-authored Character → image prompt with local extraction; both regressions are explicitly corrected in v0.15.29 without removing the v0.15.28 state fixes.
-- Added `docs/v01528-image-studio-live-state.md`, a strict real-main-scene regression, a v0.15.28 workflow, and the v0.15.28 broad regression manifest.
+- Added live Workspace-save project handoff, real project rescans, correct Image-profile routing/default storage, and persisted per-Image-profile model/sampler discovery.
 
 ### v0.15.27 — Runtime Lifecycle and Warning Cleanup
 
-- Removed the reported `Node.name` and `Node.ready` shadowing warnings without suppressing warning categories.
-- Made Character Collaborator's two-frame deferred chat scroll safe when its window leaves the SceneTree.
-- Added strict lifecycle/import coverage for the reported null-tree errors and warnings.
+- Removed reported GDScript shadow warnings and made deferred Collaborator scrolling safe when its window leaves the SceneTree.
 
 ### v0.15.26 — Concurrent AI Scheduler + Collaborator Service Compatibility
 
-- Added configurable overall, Text, Vision, Image, and per-character Safe Section concurrency with queued overflow work.
-- Added isolated workers for Character generation, Collaborator, Ideas, authoring tools, Vision/Attachments, and Image Studio.
-- Added dependency-wave parallel Safe Section generation with frozen sibling context and deterministic template-order assembly.
+- Added configurable overall/Text/Vision/Image/per-character concurrency, isolated workers, queued overflow, and dependency-wave parallel Safe Section generation.
 - Replaced Collaborator's exact historical script check with capability-based current-service compatibility.
 
 ### v0.15.25 — Character Generation Token Budget Invariant
 
-- Made the active Text profile's Maximum Output Tokens authoritative for Interview, Safe Sections, repairs, fidelity correction, and Fast Full Card.
-- Removed the historical 2,600-token Interview ceiling and added request-time enforcement plus termination/token Diagnostics.
+- Made the active Text profile Maximum Output Tokens authoritative across Interview, Safe Sections, repairs, fidelity correction, and Fast Full Card; removed the historical 2,600-token Interview ceiling.
 
 ### v0.15.24 — Live Safe Section Service Wiring
 
@@ -348,18 +332,22 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
-- Runtime-test v0.15.32 Idea Notebook through a real AI Ideas batch: save only selected results, save several at once, restart CCF, verify named notebooks/tags/search, edit/move/archive/restore entries, and confirm unsaved generated results never appear later.
-- Verify deleting a named Idea Notebook retains every saved idea in Unfiled and that Notebook data never leaks into portable Character Projects unless explicitly used as authoring input.
-- Runtime-test v0.15.31 with real provider calls while Character generation, Character Collaborator, Idea Generator, Vision, AI image-prompt generation, and Image generation run concurrently; verify AI Jobs accurately reflects running, queued, capacity-waiting, and dependency-waiting states.
-- Exercise per-job cancellation during real provider calls and verify cancelling one workflow never clears unrelated workers or leaks scheduler capacity.
-- Runtime-test a parallel Safe Section build through Interview/Q&A, multiple Output Groups targeting one field, a separate Sexual Traits group, and deliberately varied completion order while watching child states in AI Jobs.
+- Runtime-test v0.15.33 by sending a generated unsaved Idea into Collaborator, developing it through several messages, closing/reopening CCF, and verifying the source snapshot/provenance survives independently of the original generation batch.
+- Runtime-test a saved Idea Notebook entry through **Develop in Collaborator**, confirm its Notebook entry remains unchanged, and verify Idea/notebook provenance survives session reload.
+- Exercise source-aware Collaborator context through user-triggered summarisation and attachment removal; the first-class source must remain intact and continue to inform later replies.
+- Real-provider test malformed/empty/truncated API envelopes and confirm they produce one actionable provider failure/Diagnostics record rather than repeated Godot `Parse JSON failed` errors.
+- Investigate the separate Linux/X11 GL Compatibility native crash observed twice as `BadAlloc` → `glXMakeCurrent failed` → signal 11. Compare behavior under normal GL Compatibility and a deliberate Vulkan/Forward+ test before considering renderer changes; do not conflate this with API JSON failures.
+- Runtime-test v0.15.32 Idea Notebook through a real AI Ideas batch: selective save, multi-save, restart persistence, named notebooks/tags/search, edit/move/archive/restore, and non-auto-save behavior.
+- Verify deleting a named Idea Notebook retains every saved idea in Unfiled and Notebook data stays outside portable Character Projects unless explicitly used as authoring input.
+- Runtime-test v0.15.31 with real provider calls while Character generation, Collaborator, Ideas, Vision, AI image-prompt generation, and Image generation run concurrently; verify running/queued/capacity/dependency states and selective cancellation.
+- Runtime-test parallel Safe Section Build through Interview/Q&A, multiple Output Groups targeting one field, a separate Sexual Traits group, and varied completion order while watching AI Jobs.
 - Verify First Message visibly waits for Scenario and later dialogue/greeting sections wait for intended dependencies in a real custom template.
-- Runtime-test v0.15.31 with the user's real Character AI Text provider plus Stable Diffusion/Forge provider: AI-authored prompt, optional negative prompt, visible wrapping for both prompt editors, cached checkpoint/sampler lists, image generation, and shared AI Jobs visibility.
-- Compare **Generate Prompt from Character** against **Build Local Fallback** across sparse and detailed characters; AI prompting should add deliberate composition without drifting established physical identity.
+- Runtime-test the real Character AI Text provider plus Stable Diffusion/Forge provider: AI-authored image prompt, optional negative prompt, prompt wrapping, cached checkpoint/sampler lists, image generation, and shared AI Jobs visibility.
+- Compare **Generate Prompt from Character** against **Build Local Fallback** across sparse and detailed characters.
 - Test Vision and Image global-participation toggles with cloud Text plus local Vision/Stable Diffusion.
 - Compare real-world latency, rate-limit behavior, completeness, and provider cost between sequential Safe Build, parallel Safe Build, and Fast Full Card.
 - Deliberately provoke section failure/cancellation while siblings are active and confirm successful isolated results are not cross-contaminated.
-- Continue real-provider Diagnostics testing, including missing required components, malformed envelopes, content filtering, and configured output-limit exhaustion.
+- Continue real-provider Diagnostics testing, including missing required components, content filtering, output-limit exhaustion, and retry behavior.
 - Runtime-test unified Collaborator attachments with TXT/Markdown, SRT, ASS/SSA, JSON, and image references through save/reopen and Blueprint handoff.
 - Confirm generated Interview/Q&A review responses and Manual-vs-AI provenance survive generation and save/reopen.
 - Validate Blueprint supplementary compatibility materialisation without overwriting manually populated Alternative Greetings/Lorebooks.
@@ -371,9 +359,9 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## Next Up
 
-- **v0.15.33 — Generic Collaborator Source Context:** add a structured, provenance-aware source contract shared by generated Ideas, saved Idea Notebook entries, and existing characters. Sources must remain snapshots/reference material until the user explicitly applies an outcome.
-- Add **Develop in Collaborator** from both the latest Idea Generator results and saved Idea Notebook entries once the v0.15.33 source contract exists.
-- Reuse the existing v0.14.10 Related Character / AI Variation provenance and relationship concepts where they fit rather than creating a second incompatible derivation system.
+- **v0.15.34 — Existing Character → Collaborator:** expose the new structured character source from Workspace/imported cards and add author-intent starting choices such as refine, alternative version, future/past version, continue after an event, side-character promotion, relative/descendant, connected character, new character in the same setting, and open-ended development.
+- Reuse v0.14.10 Related Character / AI Variation provenance and relationship concepts where they fit rather than creating a second incompatible derivation system.
+- Prepare v0.15.35 completion routing so an occupied Workspace defaults a newly completed Collaborator character into a new character in the same group instead of silently replacing the source/current character.
 - Add optional provider/API execution pools so profiles sharing one cloud provider can share a provider-specific concurrency/rate-limit ceiling.
 - Add optional local hardware pools so Vision and Image providers using the same GPU can share a configurable resource limit.
 - Extend AI Jobs with pause/resume, priority, move-to-front/reorder controls, richer parent/child progress, and clearer project/character names.
@@ -391,8 +379,7 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## Planned Features
 
-- **v0.15.34 — Existing Character → Collaborator:** allow an occupied/imported Workspace character to become structured Collaborator source material for refinement, alternate/future/past versions, continuation after an event, side-character promotion, relatives/descendants, connected characters, or new characters in the same setting.
-- **v0.15.35 — Collaborator Character Completion & Group Integration:** when the current Workspace character is occupied, default a completed Collaborator character to a new character in the same group rather than overwriting the current one; retain explicit Replace Current and New Group alternatives.
+- **v0.15.35 — Collaborator Character Completion & Group Integration:** when the current Workspace character is occupied, default a completed Collaborator character to a new character in the same group rather than overwriting the current one; retain explicit Replace Current and New Group alternatives. When the current character slot is genuinely empty, using that empty slot remains the natural default.
 - Preserve source/relationship provenance for Collaborator-created characters while ensuring each created/exported character remains a complete standalone card. Suggest appropriate Relationship Graph edges without silently making them canonical.
 - **v0.15.36 — Collaborator Refinement Compare/Apply:** compare original and proposed fields/sections and allow selective acceptance, update-original, or create-improved-copy workflows.
 - **v0.15.37 — Multi-source Collaborator:** accept several characters and/or saved/generated Ideas as simultaneous structured source context for family, relationship, cast, and scenario development.
@@ -406,7 +393,7 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## Level and Content Tools
 
-Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable, versioned templates, `.ccfchar` interchange, project packages, lorebooks, Idea Notebook entries, and schema/editor tooling. Loading and saving continue to use the same underlying data models exposed to authoring tools.
+Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable, versioned templates, `.ccfchar` interchange, project packages, lorebooks, Idea Notebook entries, Collaborator source snapshots, and schema/editor tooling. Loading and saving should continue to use the same underlying data models exposed to authoring tools.
 
 ## Technical Improvements
 
@@ -437,7 +424,11 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep release/update helper executable modes under version control.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
 - Keep Idea Notebook persistence independent of Character Projects and version both the library index and individual saved-idea records so later source/provenance fields can evolve compatibly.
-- Build Collaborator source seeding as a public structured capability instead of directly manipulating private composer/session controls from Idea Notebook or Workspace.
+- Keep Collaborator source seeding as a public structured capability instead of directly manipulating private composer/session controls from Idea Notebook or Workspace.
+- Keep the primary Collaborator source separate from ordinary `context_items`; attachments may be removed or summaries rebuilt without changing the source snapshot.
+- Keep Collaborator source formats versioned and backwards-compatible so future existing-character and multi-source workflows can extend rather than replace early source-aware conversations.
+- Validate provider envelopes before inherited parsing/diagnostic layers, retain raw credential-safe evidence, and report network/malformed-envelope failures once through the normal retry/failure path.
+- Continue investigating the Linux/X11 GL Compatibility `BadAlloc`/`glXMakeCurrent` crash separately; do not mask it by treating application-level JSON failures as its cause.
 - Continue reducing synchronous whole-library work from interactive Collaborator paths.
 - Keep attachment decoding/classification separate from UI composition and project-write boundaries.
 - Keep Generation Component and section-dependency semantics data-driven.
@@ -452,6 +443,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Improve visible progress/error states for long AI operations and distinguish queue wait, local preparation, provider thinking, repair, and validation time.
 - Improve queue labels so project, character, workflow, role, provider, model, section, and dependency state are legible without opening Diagnostics.
 - Improve Idea Notebook browsing as real libraries grow, including denser cards/list options and multi-selection if runtime use shows the need.
+- Improve source-aware Collaborator UX with clearer source/provenance summaries and intent guidance as the v0.15.34–v0.15.37 workflows arrive.
 - Continue replacing silent button no-ops with visible actionable status messages.
 
 ## Long-Term Ideas
