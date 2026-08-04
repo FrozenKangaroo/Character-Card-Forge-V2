@@ -30,7 +30,7 @@ func ai_jobs_panel_v01531() -> CCFAIJobsPanelV01531:
 
 func ai_job_records_v01531() -> Array:
 	var records: Array = []
-	for service_value: Variant in _worker_services_v01526:
+	for service_value in _worker_services_v01526:
 		if not service_value is CCFGenerationServiceV01531:
 			continue
 		var service: CCFGenerationServiceV01531 = (
@@ -55,7 +55,7 @@ func cancel_ai_job_v01531(
 ) -> bool:
 	var clean_worker: String = worker_id.strip_edges()
 	var clean_job: String = cancel_job_id.strip_edges()
-	for service_value: Variant in _worker_services_v01526:
+	for service_value in _worker_services_v01526:
 		if not service_value is CCFGenerationServiceV01531:
 			continue
 		var service: CCFGenerationServiceV01531 = (
@@ -72,7 +72,7 @@ func cancel_ai_job_v01531(
 			return true
 	# Job IDs are allocated from separate worker ranges, so this fallback is safe
 	# when a child row points back to its parent Character build.
-	for service_value: Variant in _worker_services_v01526:
+	for service_value in _worker_services_v01526:
 		if not service_value is CCFGenerationServiceV01531:
 			continue
 		var fallback_service: CCFGenerationServiceV01531 = (
@@ -225,7 +225,7 @@ func _update_ai_jobs_toggle_v01531() -> void:
 		return
 	var records: Array = ai_job_records_v01531()
 	var live_count: int = 0
-	for raw_record: Variant in records:
+	for raw_record in records:
 		if not raw_record is Dictionary:
 			continue
 		if str(raw_record.get("status", "")) != "completed":
