@@ -1,4 +1,3 @@
-class_name CCFGenerationServiceV01531
 extends "res://scripts/services/generation_service_v01526.gd"
 
 
