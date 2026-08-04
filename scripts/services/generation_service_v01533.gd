@@ -1,5 +1,5 @@
 class_name CCFGenerationServiceV01533
-extends "res://scripts/services/generation_service_v01526.gd"
+extends "res://scripts/services/generation_service_v01531.gd"
 
 
 func _on_request_completed(
@@ -31,8 +31,9 @@ func _on_request_completed(
 		_handle_failure(detail, retryable)
 		return
 
-	# Valid provider envelopes continue through the established v0.15.25/v0.15.22
-	# diagnostics, termination metadata and normal response-processing pipeline.
+	# Valid provider envelopes continue through the established v0.15.31
+	# inspection layer and the v0.15.25/v0.15.22 diagnostics, termination
+	# metadata and normal response-processing pipeline.
 	super._on_request_completed(result, response_code, headers, body)
 
 
@@ -43,7 +44,9 @@ func provider_response_hardening_capabilities_v01533() -> Dictionary:
 		"empty_body_guard": true,
 		"malformed_body_guard": true,
 		"raw_body_diagnostics": true,
-		"http_and_network_diagnostics": true
+		"http_and_network_diagnostics": true,
+		"ai_jobs_inspection_v01531": has_method("job_records_v01531"),
+		"selective_cancel_v01531": has_method("cancel_job_v01531")
 	}
 
 
