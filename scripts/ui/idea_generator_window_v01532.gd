@@ -708,8 +708,14 @@ func _clear_editor_v01532() -> void:
 
 func _set_editor_enabled_v01532(enabled: bool) -> void:
 	for control in [_title_v01532, _concept_v01532, _notes_v01532, _tags_v01532, _idea_notebook_v01532]:
-		if control != null:
-			control.set("editable", enabled) if control is LineEdit or control is TextEdit else control.set("disabled", not enabled)
+		if control == null:
+			continue
+		if control is LineEdit:
+			(control as LineEdit).editable = enabled
+		elif control is TextEdit:
+			(control as TextEdit).editable = enabled
+		elif control is OptionButton:
+			(control as OptionButton).disabled = not enabled
 	for button in [_save_changes_button_v01532, _archive_button_v01532, _delete_idea_button_v01532, _use_idea_button_v01532]:
 		if button != null:
 			button.disabled = not enabled
