@@ -1,7 +1,7 @@
 class_name CCFWorkspaceV01532View
 extends "res://scripts/ui/workspace_v01531.gd"
 
-const IDEA_GENERATOR_V01532 = preload("res://scripts/ui/idea_generator_window_v01532.gd")
+const IDEA_GENERATOR_V01532 = preload("res://scripts/ui/idea_generator_window_v01532_hotfix1.gd")
 
 var _idea_generator_v01532: CCFIdeaGeneratorWindowV01532
 
