@@ -30,11 +30,13 @@ func ai_jobs_panel_v01531() -> CCFAIJobsPanelV01531:
 
 func ai_job_records_v01531() -> Array:
 	var records: Array = []
-	for service_value in _worker_services_v01526:
-		if service_value is CCFGenerationServiceV01531:
-			records.append_array(
-				(service_value as CCFGenerationServiceV01531).job_records_v01531()
-			)
+	for service_value: Variant in _worker_services_v01526:
+		if not service_value is CCFGenerationServiceV01531:
+			continue
+		var service: CCFGenerationServiceV01531 = (
+			service_value as CCFGenerationServiceV01531
+		)
+		records.append_array(service.job_records_v01531())
 	if (
 		_image_jobs_controller_v01531 != null
 		and is_instance_valid(_image_jobs_controller_v01531)
@@ -51,13 +53,15 @@ func ai_job_records_v01531() -> Array:
 func cancel_ai_job_v01531(
 	worker_id: String, cancel_job_id: String, _record_id: String = ""
 ) -> bool:
-	var clean_worker := worker_id.strip_edges()
-	var clean_job := cancel_job_id.strip_edges()
-	for service_value in _worker_services_v01526:
+	var clean_worker: String = worker_id.strip_edges()
+	var clean_job: String = cancel_job_id.strip_edges()
+	for service_value: Variant in _worker_services_v01526:
 		if not service_value is CCFGenerationServiceV01531:
 			continue
-		var service := service_value as CCFGenerationServiceV01531
-		var identity := service.worker_identity_v01531()
+		var service: CCFGenerationServiceV01531 = (
+			service_value as CCFGenerationServiceV01531
+		)
+		var identity: Dictionary = service.worker_identity_v01531()
 		if (
 			str(identity.get("worker_id", "")) == clean_worker
 			and service.cancel_job_v01531(clean_job)
@@ -68,21 +72,23 @@ func cancel_ai_job_v01531(
 			return true
 	# Job IDs are allocated from separate worker ranges, so this fallback is safe
 	# when a child row points back to its parent Character build.
-	for service_value in _worker_services_v01526:
-		if service_value is CCFGenerationServiceV01531:
-			if (service_value as CCFGenerationServiceV01531).cancel_job_v01531(
-				clean_job
-			):
-				if _status != null:
-					_status.text = "Cancelled the selected AI job."
-				_refresh_ai_jobs_panel_v01531()
-				return true
+	for service_value: Variant in _worker_services_v01526:
+		if not service_value is CCFGenerationServiceV01531:
+			continue
+		var fallback_service: CCFGenerationServiceV01531 = (
+			service_value as CCFGenerationServiceV01531
+		)
+		if fallback_service.cancel_job_v01531(clean_job):
+			if _status != null:
+				_status.text = "Cancelled the selected AI job."
+			_refresh_ai_jobs_panel_v01531()
+			return true
 	if (
 		_image_jobs_controller_v01531 != null
 		and is_instance_valid(_image_jobs_controller_v01531)
 		and _image_jobs_controller_v01531.has_method("cancel_ai_job_v01531")
 	):
-		var cancelled := bool(
+		var cancelled: bool = bool(
 			_image_jobs_controller_v01531.call(
 				"cancel_ai_job_v01531", clean_worker, clean_job
 			)
@@ -109,7 +115,9 @@ func show_ai_jobs_v01531(show_panel: bool = true) -> void:
 func _create_worker_service_v01526(
 	worker_id: String, worker_label: String, job_number_base: int
 ) -> CCFGenerationServiceV01526:
-	var service := GENERATION_SERVICE_V01531.new() as CCFGenerationServiceV01531
+	var service: CCFGenerationServiceV01531 = (
+		GENERATION_SERVICE_V01531.new() as CCFGenerationServiceV01531
+	)
 	add_child(service)
 	service.configure_scheduler_v01526(
 		_ai_scheduler_v01526, worker_id, worker_label, job_number_base
@@ -126,7 +134,7 @@ func _create_worker_service_v01526(
 func _install_ai_jobs_panel_v01531() -> void:
 	if _ai_jobs_panel_v01531 != null or _queue_status == null:
 		return
-	var controls_parent := _queue_status.get_parent()
+	var controls_parent: Node = _queue_status.get_parent()
 	if controls_parent != null:
 		_ai_jobs_toggle_v01531 = Button.new()
 		_ai_jobs_toggle_v01531.text = "AI Jobs"
@@ -147,7 +155,10 @@ func _install_ai_jobs_panel_v01531() -> void:
 	host.add_child(_ai_jobs_panel_v01531)
 	if host is VBoxContainer and controls_parent != null:
 		var controls_branch: Node = controls_parent
-		while controls_branch.get_parent() != host and controls_branch.get_parent() != null:
+		while (
+			controls_branch.get_parent() != host
+			and controls_branch.get_parent() != null
+		):
 			controls_branch = controls_branch.get_parent()
 		if controls_branch.get_parent() == host:
 			host.move_child(
@@ -194,7 +205,7 @@ func _refresh_aggregate_queue_status_v01526() -> void:
 func _refresh_ai_jobs_panel_v01531() -> void:
 	if _ai_jobs_panel_v01531 == null:
 		return
-	var snapshot := (
+	var snapshot: Dictionary = (
 		_ai_scheduler_v01526.snapshot()
 		if _ai_scheduler_v01526 != null
 		else {
@@ -212,9 +223,9 @@ func _refresh_ai_jobs_panel_v01531() -> void:
 func _update_ai_jobs_toggle_v01531() -> void:
 	if _ai_jobs_toggle_v01531 == null:
 		return
-	var records := ai_job_records_v01531()
-	var live_count := 0
-	for raw_record in records:
+	var records: Array = ai_job_records_v01531()
+	var live_count: int = 0
+	for raw_record: Variant in records:
 		if not raw_record is Dictionary:
 			continue
 		if str(raw_record.get("status", "")) != "completed":
