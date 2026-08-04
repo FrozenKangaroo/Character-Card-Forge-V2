@@ -1,0 +1,51 @@
+name: Validate v0.15.32-hotfix1 AI Ideas layout
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v01532-hotfix1-ai-ideas-layout-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.6.3'
+  GODOT_STATUS: stable
+
+jobs:
+  ai-ideas-layout:
+    name: AI Ideas Notebook header layout
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project
+        shell: bash
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v01532-hotfix1-import.log
+          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE_BASE_CLASS" /tmp/ccf-v01532-hotfix1-import.log; then
+            echo "Godot reported a script or warning failure during import."
+            exit 1
+          fi
+
+      - name: Test AI Ideas layout hotfix
+        run: timeout 45s godot --headless --path . --script res://tools/test_v01532_hotfix1_ai_ideas_layout.gd
+
+      - name: Recheck v0.15.32 Idea Notebook
+        run: python3 ./tools/test_v01532_idea_notebook_strict.py
+
+      - name: Recheck v0.15.31 AI Jobs panel
+        run: python3 ./tools/test_v01531_ai_jobs_panel_strict.py
