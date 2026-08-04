@@ -15,8 +15,9 @@ func _ready() -> void:
 func set_jobs_v01531(records: Array, scheduler_snapshot: Dictionary) -> void:
 	if _list == null:
 		_build_ui_v01531()
-	for child: Node in _list.get_children():
-		child.queue_free()
+	for child in _list.get_children():
+		if child is Node:
+			(child as Node).queue_free()
 	var running: int = int(scheduler_snapshot.get("running", 0))
 	var waiting: int = int(scheduler_snapshot.get("waiting", 0))
 	var counted: int = int(scheduler_snapshot.get("running_counted", 0))
@@ -29,7 +30,7 @@ func set_jobs_v01531(records: Array, scheduler_snapshot: Dictionary) -> void:
 		_empty_label.modulate = Color(0.68, 0.71, 0.8)
 		_list.add_child(_empty_label)
 		return
-	for raw_record: Variant in records:
+	for raw_record in records:
 		if raw_record is Dictionary:
 			_list.add_child(_build_job_row_v01531(raw_record))
 
@@ -162,7 +163,7 @@ func _status_colour_v01531(status: String) -> Color:
 
 func _join_strings_v01531(values: Array[String], separator: String) -> String:
 	var result: String = ""
-	for index: int in range(values.size()):
+	for index in range(values.size()):
 		if index > 0:
 			result += separator
 		result += values[index]
