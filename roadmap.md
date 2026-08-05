@@ -28,6 +28,9 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Generated ideas remain disposable until the user explicitly saves them. Persistent Idea Notebook material is versioned app-level authoring data independent of Character Projects, and saving one idea must never implicitly save the rest of a generated batch.
 - Named Idea Notebooks organise saved material without replacing tags: notebook membership is one organisational axis while tags/search work across notebooks.
 - Collaborator source handoffs preserve structured source snapshots and provenance rather than paste opaque text into private UI state.
+- Multi-source Collaborator sessions keep every character, Idea, external card, and pasted source individually identifiable rather than flattening them into one opaque prompt. At most one existing Workspace character is the explicit refinement target; all other sources remain read-only references.
+- Collaborator source ingestion preserves a raw snapshot for provenance/recovery and derives a separate AI-facing normalised snapshot. Normalisation must never destructively rewrite the author's original imported, attached, or pasted source.
+- A distinct embedded `UserPersona`, user-profile, or roleplayer-persona section found in extracted/imported source is treated as chat-session residue by default and excluded from Collaborator AI context. This rule must not remove genuine character-source facts about that character's relationship or situation with `{{user}}`; `{{user}}` remains otherwise unspecified unless the current author explicitly supplies facts.
 - Collaborator source-aware reasoning distinguishes **established source facts**, **author-requested changes**, and **new/proposed details**. Existing facts stay authoritative unless the author explicitly branches, retcons, advances, rewrites, or replaces them.
 - A Collaborator source is read-only authoring context. Conversation, summarisation, or attachment removal must not silently mutate or erase the source snapshot.
 - Collaborator completion routing is explicit: an occupied character is never overwritten by a completed Blueprint/draft without a later review/apply workflow, while genuinely empty placeholders may be safely reused.
@@ -71,21 +74,37 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.36-hotfix3 development candidate — Empty Project Save Guard**
+**v0.15.37 development candidate — Multi-source Character Collaborator**
 
-A runtime report showed a completely untouched Character Project appearing in the Library with every authored character field empty. Investigation confirmed that the active **New Character** shell explicitly saved `CCFStorageService.new_project()` before Workspace opened, so creating a placeholder guaranteed a `character.json` even if the author never entered anything.
+v0.15.37 promotes Collaborator's v0.15.33 single-source context into a versioned multi-source collection. One conversation can now keep several characters, saved/generated Ideas, pasted source material, and external Character Card JSON/PNG references distinct at the same time. Existing single-source sessions migrate into the new collection when opened rather than being abandoned or flattened.
 
-v0.15.36-hotfix3 changes the persistence boundary rather than merely hiding empty Library rows. New projects still receive stable in-memory project/character IDs and the configured application-default template immediately, but no file is written until meaningful authored content exists. Pressing **Save** on a never-saved empty project reports **Nothing to save yet** and keeps the project only in Workspace.
+At most one existing Workspace character may be the explicit **TARGET**. That target remains compatible with v0.15.36 Compare & Apply, conflict checking, Update Original, and Create Improved Copy. Every additional source is a read-only **REFERENCE** used for family, relationships, cast, scenario, setting, continuity, and ensemble reasoning without becoming an overwrite target. Per-source IDs, labels, types, roles, author intent and provenance stay individually visible, and completion lineage carries a compact summary of the full source set alongside the primary target provenance.
 
-Meaningful project content includes a deliberate project or character name, project summary/tags/series/shared context, relationships/workflows/attachments, Generation Concept, normal/template card fields, Alternative Greetings, Lorebook/extensions, or assets. UUIDs, timestamps, Workspace state, template assignment, `Untitled Project`, and untouched `Untitled Character` placeholders do not count.
+Source ingestion now uses a raw-versus-AI-facing boundary. Raw attached/pasted/extracted source is retained unchanged for provenance and recovery. A separate AI-facing snapshot is normalised before model context is assembled. Distinct `<UserPersona>`, User Persona/user-profile fields, and equivalent roleplayer-persona residue are excluded from that AI-facing copy by default so old chat-user details do not silently become the new `{{user}}` identity. Character-source statements that genuinely establish the character's relationship or situation with `{{user}}` remain valid and are not stripped simply because they mention `{{user}}`.
 
-The guard is intentionally non-destructive for existing files: once a project has been persisted, normal Save remains available even if its content is later cleared. Hotfix3 does not silently delete or hide empty projects created by older versions.
+The normal Collaborator **Attach Files…** path now promotes recognised Character Card JSON/PNG/APNG files into structured sources without importing them into the Library. Non-card JSON continues through the normal text-attachment path and non-card images continue through Vision. **Paste Source…** accepts extracted text or Character Card JSON, **Add Saved Idea…** adds an Idea Notebook entry as another reference, and Workspace can add its current character to an open Collaborator conversation as another structured reference.
 
-The running development build displays **v0.15.36-hotfix3**. **v0.15.37 Multi-source Collaborator remains the next planned feature release** after this hotfix is runtime-confirmed.
+The running development build displays **v0.15.37**. Current work is runtime validation and polish of multi-source sessions, target switching, source persistence/reopen, Character Card attachment detection, saved-Idea addition, UserPersona exclusion, completion provenance, and real provider behavior.
 
 Character Card Forge remains on Godot **4.7.1 stable** and Forward+ as the standard desktop renderer, with Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware. The previously observed Linux/X11 GL Compatibility crash remains classified as not reproduced after switching to Forward+, not universally proven fixed.
 
 ## Completed
+
+### v0.15.37 — Multi-source Character Collaborator
+
+- Extended the versioned Collaborator source model from one source to a collection of separately identified sources.
+- Added one explicit existing-character TARGET plus any number of read-only REFERENCE sources without flattening their identities or provenance.
+- Kept v0.15.36 Compare & Apply tied only to the explicit target while reference characters/Ideas/cards remain non-destructive context.
+- Added automatic migration of older single-source Collaborator sessions into the multi-source representation.
+- Added **Author → Add Current Character to Open Collaborator…** for building multi-character/family/cast reference sets from Workspace.
+- Added **Add Saved Idea…** inside Collaborator for bringing Idea Notebook material into an existing conversation.
+- Added **Paste Source…** for copied/extracted card text and Character Card JSON.
+- Promoted recognised Character Card JSON/PNG/APNG selected through normal **Attach Files…** into structured Collaborator sources without importing them into the Library; retained normal text/Vision fallback for non-card files.
+- Added raw source snapshots plus separate AI-facing normalised snapshots so source cleanup never destroys provenance.
+- Added embedded UserPersona/user-profile exclusion while preserving actual character-established facts involving `{{user}}`.
+- Added visible per-source role/type/label/exclusion reporting and explicit target switching for eligible Workspace character sources.
+- Preserved compact multi-source lineage in Collaborator completion derivation provenance while retaining the primary-source compatibility contract expected by v0.15.35/v0.15.36.
+- Added actual Character Card PNG round-trip regression coverage, isolated source-normalisation tests, broad regression inheritance, CI, and `docs/v01537-multi-source-collaborator.md`.
 
 ### v0.15.36-hotfix3 — Empty Project Save Guard
 
@@ -374,6 +393,10 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
+- Runtime-test v0.15.37 with real multi-source Collaborator sessions: target character plus additional Workspace characters, saved/generated Ideas, pasted extraction text, and Character Card JSON/PNG sources. Confirm source roles survive save/reopen and long conversations without being flattened.
+- Runtime-test embedded UserPersona exclusion against real extracted cards from JSON, PNG and copy/paste. Confirm raw source remains inspectable, AI-facing context excludes roleplayer residue, and legitimate character-to-`{{user}}` relationship/situation facts remain intact.
+- Runtime-test target switching and v0.15.36 Compare & Apply from a multi-source session; only the explicit Workspace target may be updated while reference sources remain read-only.
+- Confirm completion/refinement provenance carries the compact v0.15.37 source-set lineage and remains compatible with older derivation metadata.
 - Runtime-test v0.15.36-hotfix3 by creating and abandoning blank projects, pressing Save while blank, then adding project-level and character-level content and confirming first persistence occurs only after meaningful authoring.
 - Confirm existing saved projects remain normally saveable after content is deliberately cleared and that old empty projects are never auto-deleted by the hotfix.
 - Runtime-test v0.15.36-hotfix2 with the reported secrecy-style AI Ideas premise and additional real-provider batches. Confirm temporary scene logistics are accepted, invented durable user canon is rejected, supporting NPC roles do not falsely redefine the card subject, and valid batches do not incur unnecessary repair requests.
@@ -408,10 +431,8 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## Next Up
 
-- **v0.15.37 — Multi-source Collaborator:** allow one Collaborator conversation to accept several structured sources at once, including multiple characters and/or saved/generated Ideas, for relationship, family, cast, scenario, continuity, and ensemble development.
-- Define source precedence/conflict presentation so multiple source snapshots remain individually identifiable instead of being flattened into one opaque context block.
-- Preserve per-source IDs, provenance, author intent, and read-only semantics; completion/refinement must make it clear which source(s) a proposed character or change derives from.
-- Reuse v0.15.36 Compare & Apply where one existing character is the explicit refinement target while allowing other sources to act as continuity/reference context.
+- Improve source precedence/conflict presentation after real multi-source use: show conflicting facts and author resolutions clearly without inventing a hidden precedence order.
+- Consider multi-selection for saved Idea/source pickers and denser source-list controls if family/cast sessions make one-at-a-time addition cumbersome.
 - Add optional provider/API execution pools so profiles sharing one cloud provider can share a provider-specific concurrency/rate-limit ceiling.
 - Add optional local hardware pools so Vision and Image providers using the same GPU can share a configurable resource limit.
 - Extend AI Jobs with pause/resume, priority, move-to-front/reorder controls, richer parent/child progress, and clearer project/character names.
@@ -430,7 +451,7 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 ## Planned Features
 
 - Preserve source/relationship provenance for Collaborator-created characters while ensuring each created/exported character remains a complete standalone card. Suggest appropriate Relationship Graph edges without silently making them canonical.
-- **v0.15.37 — Multi-source Collaborator:** accept several characters and/or saved/generated Ideas as simultaneous structured source context for family, relationship, cast, and scenario development.
+- Extend multi-source Collaborator after runtime use with richer conflict-resolution/source-selection UX where it improves family, relationship, cast, scenario, continuity, and ensemble development without weakening one-target safety.
 - Later expose derivation/lineage history such as future versions, side-character promotions, descendants, and characters created from a saved idea, while keeping exported card data independent of that authoring history.
 - Further Library organisation, search/filter polish, and large-library performance work.
 - More template authoring/validation tools and clearer documentation of generation contracts and dependencies.
@@ -449,6 +470,10 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Treat runtime generation-service composition as a capability-tested compatibility boundary.
 - Keep important historical hotfix behavior as active-leaf regression invariants rather than assuming an old class remains in every later inheritance chain.
 - Keep first-save project persistence content-aware: never-saved empty shells stay in memory, while already-persisted projects are never silently deleted or blocked from ordinary Save.
+- Keep multi-source Collaborator collections versioned and backwards-compatible. Never flatten distinct source IDs/types/roles/provenance merely to fit an older single-source prompt shape.
+- Maintain a single explicit existing-character refinement target while allowing arbitrary read-only references; legacy completion/refinement APIs may receive the primary target plus compact multi-source lineage metadata rather than losing the rest of the source set.
+- Keep raw Collaborator source evidence separate from AI-facing normalised source data. Embedded user-persona cleanup happens only at the model-context boundary and remains visible/auditable through exclusion metadata.
+- Treat Character Card detection on normal attachment paths as a promotion step, not a replacement for attachments: non-card JSON must continue as text context and non-card images must continue through Vision.
 - Maintain one authoritative Character Text output budget per queued generation job and reassert it at request time.
 - Keep each concurrent worker's request, retry, repair, Diagnostics, cancellation, and parent-state data isolated.
 - Expose scheduler/job state through stable inspectable records rather than having UI scrape visual status strings.
@@ -500,7 +525,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Improve visible progress/error states for long AI operations and distinguish queue wait, local preparation, provider thinking, repair, and validation time.
 - Improve queue labels so project, character, workflow, role, provider, model, section, and dependency state are legible without opening Diagnostics.
 - Improve Idea Notebook browsing as real libraries grow, including denser cards/list options and multi-selection if runtime use shows the need.
-- Improve source-aware Collaborator UX with clearer source/provenance summaries and intent/completion/refinement guidance as the v0.15.36–v0.15.37 workflows mature.
+- Improve source-aware Collaborator UX with clearer source/provenance summaries, conflict presentation, target/reference guidance, and completion/refinement guidance as multi-source runtime use matures.
 - Continue replacing silent button no-ops with visible actionable status messages.
 
 ## Long-Term Ideas

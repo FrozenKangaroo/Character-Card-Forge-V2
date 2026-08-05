@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.37",
+  "description": "v0.15.36-hotfix3 coverage plus multi-source Collaborator, explicit target/reference semantics, Character Card source ingestion, and embedded UserPersona exclusion.",
+  "base_manifest": "regression_suites_v01536_hotfix3.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01537_multi_source_collaborator",
+        "label": "v0.15.37 multi-source Collaborator and source normalisation",
+        "kind": "python",
+        "path": "tools/test_v01537_multi_source_collaborator_strict.py",
+        "timeout_seconds": 200
+      }
+    ]
+  }
+}
