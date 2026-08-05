@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.36-hotfix1",
+  "description": "v0.15.36 coverage plus configured custom default-template inheritance for new projects, added characters and missing-template fallback.",
+  "base_manifest": "regression_suites_v01536.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01536_hotfix1_default_template",
+        "label": "v0.15.36-hotfix1 configured default template",
+        "kind": "python",
+        "path": "tools/test_v01536_hotfix1_default_template_strict.py",
+        "timeout_seconds": 140
+      }
+    ]
+  }
+}
