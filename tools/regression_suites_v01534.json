@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.34",
+  "description": "v0.15.33-hotfix3 coverage plus Existing Character → Collaborator author intents, derivation provenance, warning hygiene and Godot 4.7 baseline checks.",
+  "base_manifest": "regression_suites_v01533_hotfix3.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01534_existing_character_collaborator",
+        "label": "v0.15.34 Existing Character → Collaborator",
+        "kind": "python",
+        "path": "tools/test_v01534_existing_character_collaborator_strict.py",
+        "timeout_seconds": 90
+      }
+    ]
+  }
+}

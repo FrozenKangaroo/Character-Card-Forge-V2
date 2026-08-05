@@ -458,13 +458,13 @@ func _refresh_ideas_v01532() -> void:
 	_visible_idea_ids_v01532.clear()
 	var reselect_index := -1
 	for idea in rows:
-		var title := str(idea.get("title", "Untitled idea"))
+		var idea_title := str(idea.get("title", "Untitled idea"))
 		if bool(idea.get("archived", false)):
-			title += "  [Archived]"
+			idea_title += "  [Archived]"
 		var subtitle := str(idea.get("character_role", "")).strip_edges()
 		if subtitle.is_empty():
 			subtitle = ", ".join(idea.get("tags", []))
-		var display := title + ("\n" + subtitle if not subtitle.is_empty() else "")
+		var display := idea_title + ("\n" + subtitle if not subtitle.is_empty() else "")
 		_idea_list_v01532.add_item(display)
 		var idea_id := str(idea.get("id", ""))
 		_visible_idea_ids_v01532.append(idea_id)

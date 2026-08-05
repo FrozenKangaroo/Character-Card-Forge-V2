@@ -1,0 +1,63 @@
+name: Validate v0.15.34 Existing Character Collaborator
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v01534-existing-character-collaborator-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.7.1'
+  GODOT_STATUS: stable
+
+jobs:
+  existing-character-collaborator:
+    name: Existing Character → Collaborator
+    runs-on: ubuntu-24.04
+    timeout-minutes: 24
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot 4.7.1 and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project
+        shell: bash
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v01534-import.log
+          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE_BASE_CLASS" /tmp/ccf-v01534-import.log; then
+            echo "Godot reported a script or warning failure during import."
+            exit 1
+          fi
+
+      - name: Confirm import leaves checkout clean
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain --untracked-files=normal)" ]]; then
+            echo "Godot import created repository-visible changes:"
+            git status --short
+            exit 1
+          fi
+
+      - name: Test Existing Character → Collaborator
+        run: python3 ./tools/test_v01534_existing_character_collaborator_strict.py
+
+      - name: Recheck AI Ideas user agency contract
+        run: python3 ./tools/test_v01533_hotfix3_idea_user_agency_strict.py
+
+      - name: Recheck Collaborator source context
+        run: python3 ./tools/test_v01533_collaborator_source_context_strict.py
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --profile quick --godot "$(command -v godot)"
