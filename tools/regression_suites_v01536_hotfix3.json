@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.36-hotfix3",
+  "description": "v0.15.36-hotfix2 coverage plus deferred first-save and empty unsaved-project persistence protection.",
+  "base_manifest": "regression_suites_v01536_hotfix2.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01536_hotfix3_empty_project_save",
+        "label": "v0.15.36-hotfix3 empty project save guard",
+        "kind": "python",
+        "path": "tools/test_v01536_hotfix3_empty_project_save_strict.py",
+        "timeout_seconds": 160
+      }
+    ]
+  }
+}
