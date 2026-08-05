@@ -1,7 +1,7 @@
 extends "res://scripts/main_v01534.gd"
 
 const WORKSPACE_V01535 = preload(
-	"res://scripts/ui/workspace_v01535.gd"
+	"res://scripts/ui/workspace_v01535_project_scope.gd"
 )
 const BUILD_DISPLAY_VERSION_V01535 := "0.15.35"
 
