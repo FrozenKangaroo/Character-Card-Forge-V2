@@ -98,20 +98,28 @@ func _test_agency_validation() -> void:
 		"Character-focused uncertainty must remain valid when it leaves {{user}}'s response open."
 	)
 
-	var established_seed := "{{user}} catches Hana hiding a second phone after dinner."
+	var established_seed := "{{user}} catches Hana, their new stepsister, hiding a second phone after dinner."
 	var established := {
 		"title": "Caught With the Second Phone",
 		"character_name": "Hana",
-		"character_role": "the person {{user}} catches hiding a second phone",
-		"source_anchor": "catches Hana hiding a second phone",
+		"character_role": "{{user}}'s new stepsister",
+		"source_anchor": "new stepsister",
 		"roleplay_hook": "After {{user}} catches Hana hiding the phone, Hana must decide whether to explain why she has it or keep deflecting.",
-		"concept": "Hana is the person {{user}} catches hiding a second phone after dinner. The discovery puts pressure on Hana to protect her secret while leaving {{user}}'s response entirely open.",
+		"concept": "Hana is {{user}}'s new stepsister. {{user}} catches Hana hiding a second phone after dinner, putting pressure on Hana to protect her secret while leaving {{user}}'s response entirely open.",
 		"tags": ["secret", "family"]
 	}
+	var agency_only_issues := service._idea_user_agency_issues_v01533_hotfix3(
+		established, established_seed
+	)
+	assert(
+		agency_only_issues.is_empty(),
+		"The agency layer itself must preserve a {{user}} action explicitly established by SOURCE PREMISE."
+	)
 	var established_report := service._validate_idea_batch([established], established_seed)
 	assert(
 		(established_report.get("valid_ideas", []) as Array).size() == 1,
-		"A {{user}} action explicitly established by the source premise must be preservable as setup."
+		"A {{user}} action explicitly established by the source premise must be preservable as setup. Issues: %s"
+		% JSON.stringify(established_report.get("issues", []))
 	)
 	service.free()
 
