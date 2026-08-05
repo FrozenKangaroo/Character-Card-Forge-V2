@@ -195,6 +195,7 @@ func _rebuild_tree_v01536() -> void:
 	for row in _rows_v01536:
 		var item := _tree_v01536.create_item(root_item)
 		item.set_cell_mode(0, TreeItem.CELL_MODE_CHECK)
+		item.set_editable(0, true)
 		item.set_checked(0, bool(row.get("selected", true)))
 		item.set_metadata(0, str(row.get("path", "")))
 		item.set_text(1, str(row.get("label", row.get("path", "Field"))))
