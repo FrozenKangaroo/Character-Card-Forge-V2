@@ -1,5 +1,5 @@
 class_name CCFCharacterCollaboratorWindowV01537Sources
-extends "res://scripts/ui/character_collaborator_window_v01537.gd"
+extends "res://scripts/ui/character_collaborator_window_v01537_provenance.gd"
 
 const IDEA_NOTEBOOK_SERVICE_V01532 = preload(
 	"res://scripts/services/idea_notebook_service_v01532.gd"
