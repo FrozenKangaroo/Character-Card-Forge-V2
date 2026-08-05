@@ -86,13 +86,17 @@ func _run() -> void:
 		"Workspace must keep the custom default active after Add Character."
 	)
 
-	var generation: Dictionary = workspace.get("_project").get("generation", {}).duplicate(true)
+	var current_workspace_value: Variant = workspace.get("_project")
+	assert(current_workspace_value is Dictionary, "Workspace document must remain a dictionary.")
+	var workspace_document: Dictionary = (current_workspace_value as Dictionary).duplicate(true)
+	var generation: Dictionary = workspace_document.get("generation", {}).duplicate(true)
 	generation["template_id"] = "missing_regression_template"
-	var workspace_document: Dictionary = workspace.get("_project").duplicate(true)
 	workspace_document["generation"] = generation
 	workspace.set("_project", workspace_document)
 	workspace.call("refresh_templates")
-	var repaired_workspace: Dictionary = workspace.get("_project")
+	var repaired_workspace_value: Variant = workspace.get("_project")
+	assert(repaired_workspace_value is Dictionary, "Repaired Workspace document must remain a dictionary.")
+	var repaired_workspace: Dictionary = repaired_workspace_value
 	var repaired_generation: Dictionary = repaired_workspace.get("generation", {})
 	assert(
 		str(repaired_generation.get("template_id", "")) == CUSTOM_TEMPLATE_ID,
