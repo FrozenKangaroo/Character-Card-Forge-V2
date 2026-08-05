@@ -71,6 +71,11 @@ func selected_paths_v01536() -> Array[String]:
 	return result
 
 
+func show_status_v01536(text: String) -> void:
+	if _status_v01536 != null:
+		_status_v01536.text = text
+
+
 func _build_ui_v01536() -> void:
 	var margin := MarginContainer.new()
 	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
