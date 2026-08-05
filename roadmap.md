@@ -28,6 +28,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Collaborator source handoffs preserve structured source snapshots and provenance rather than paste opaque text into private UI state.
 - Collaborator source-aware reasoning should distinguish **established source facts**, **author-requested changes**, and **new/proposed details**. Existing facts stay authoritative unless the author explicitly branches, retcons, advances, rewrites, or replaces them.
 - A Collaborator source is read-only authoring context. Conversation, summarisation, or attachment removal must not silently mutate or erase the source snapshot.
+- Collaborator completion routing is explicit: an occupied character is never overwritten by a completed Blueprint/draft without a later review/apply workflow, while genuinely empty placeholders may be safely reused.
 - Alternate character routes should not require full duplicate cards when only a few fields differ; Linked Variants may inherit from a base while exports always materialise normal standalone cards.
 - Visual graph layout metadata stays separate from authoritative character, relationship, and route data.
 - External authoring tools and AIs should be able to hand CCF a partial character without being forced to generate filler for fields they do not know.
@@ -65,21 +66,48 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.33-hotfix3 development candidate — AI Ideas User Agency Contract**
+**v0.15.35 development candidate — Collaborator Character Completion & Project Integration**
 
-v0.15.33-hotfix3 strengthens AI Ideas so generated concepts and roleplay hooks define the generated character and situation without deciding how the future roleplayer-controlled `{{user}}` behaves. Every queued Idea request receives an explicit User Agency Contract, and the existing identity/POV semantic-validation pipeline now also checks common direct `{{user}}` actions/reactions, prescriptive `must`/`should` language, and asserted emotional states.
+v0.15.35 completes the destination-routing stage deliberately left open by v0.15.34. Character Collaborator now generates its Blueprint or Detailed Workspace Draft first, then asks where the completed character should be placed instead of immediately mutating the current Workspace.
 
-The contract deliberately preserves author-established setup. If the source premise explicitly says `{{user}}` catches, sees, leaves, confronts, or otherwise does something, the Idea Generator may carry that fact forward; it still must leave what `{{user}}` does next open. Conditional and hypothetical choices such as **whether `{{user}}` confronts her** or **if `{{user}}` chooses to investigate** remain valid because they preserve roleplayer agency.
+A genuinely untouched Workspace character defaults to **Populate Current Empty Character**, preserving the placeholder's stable character ID. An occupied Workspace defaults to **Create New Character in This Project**, preserving the source/current character unchanged while keeping the new character inside the same project context. **Create as New Project** is the non-destructive alternative.
 
-Agency violations use the existing single bounded semantic-repair pass rather than a parallel generation path. The repair request receives the same agency contract and must preserve valid source facts while reopening any AI-invented `{{user}}` behavior.
+Closing the destination chooser keeps the generated completion pending so it can be reopened from **Author → Place Pending Collaborator Completion…** without another provider request. Pending payloads are scoped to their originating project and are cleared when a different project is loaded.
 
-v0.15.33-hotfix2 Idea Notebook capture, v0.15.33-hotfix1 Structured Builder → Collaborator, v0.15.33 source context/provider hardening, v0.15.31 AI Jobs, and v0.15.26 scheduler/Safe Sections remain layered underneath. **v0.15.34 remains reserved for Existing Character → Collaborator**.
+Direct replacement of an occupied character is intentionally not part of v0.15.35. **v0.15.36 remains the Compare & Apply stage**, where original/proposed data can be inspected before selective or whole-character replacement.
 
-The separate Linux/X11 GL Compatibility crash (`BadAlloc` → `glXMakeCurrent failed` → signal 11) remains under investigation and is not claimed fixed by this hotfix.
+The Godot baseline remains **4.7.1 stable**, established by v0.15.34. The separate Linux/X11 GL Compatibility crash (`BadAlloc` → `glXMakeCurrent failed` → signal 11) remains under investigation and is not claimed fixed by the engine-version update.
 
-The running development build displays **v0.15.33-hotfix3**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.35**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.35 — Collaborator Character Completion & Project Integration
+
+- Added explicit post-generation destination routing for Collaborator Blueprint and Detailed Workspace Draft handoffs.
+- Added **Populate Current Empty Character** as the recommended destination for genuinely untouched Workspace placeholders while preserving the existing character ID/creation identity.
+- Added **Create New Character in This Project** as the recommended destination when the current character is occupied; the previous character remains unchanged.
+- Added **Create as New Project** as a non-destructive Library destination that leaves the current Workspace project untouched.
+- Added meaningful empty-slot detection across concept, metadata, configured generation fields, core card content, Alternative Greetings, Lorebook/extensions, assets and attachments.
+- Preserved Alternative Greetings and Character Lorebook material during detailed-draft materialisation.
+- Preserved v0.15.34 source/derivation provenance in completed standalone character records.
+- Added pending-completion recovery through **Author → Place Pending Collaborator Completion…** so cancelling destination selection does not require another provider call.
+- Scoped pending completions to the originating project and clear them on project changes.
+- Kept occupied-character replacement out of this release and reserved it for v0.15.36 Compare & Apply.
+- Added Godot 4.7.1-focused completion-routing regression coverage and `docs/v01535-collaborator-completion-routing.md`.
+
+### v0.15.34 — Existing Character → Collaborator + Godot 4.7.1
+
+- Added **Author → Develop Current Character in Collaborator…** for the active Workspace/imported character.
+- Captured the current character as the established v0.15.33 read-only structured character source rather than flattening it into chat text.
+- Added ten starting directions: refine, alternative route/version, future version, past version, continue after event, side-character promotion, relative/descendant, connected character, same-setting character, and open-ended development.
+- Preserved optional author direction as explicit model-facing `author_intent`.
+- Reused v0.14.10 derivation provenance vocabulary for source project/character, derivation type/prompt and workflow origin rather than creating a second lineage model.
+- Exposed the selected direction in the Collaborator source panel while leaving the source character unchanged.
+- Moved the project/CI minimum engine baseline from Godot 4.6.x to **Godot 4.7.1 stable**.
+- Fixed the Idea Notebook refresh-loop `title` shadow warning without suppressing warning categories.
+- Kept completion/apply semantics explicit for v0.15.35/v0.15.36 and did not claim the separate GLX native crash was fixed by the engine update.
+- Added focused v0.15.34 source/intent/provenance/live-wiring regression coverage and `docs/v01534-existing-character-collaborator.md`.
 
 ### v0.15.33-hotfix3 — AI Ideas User Agency Contract
 
@@ -361,6 +389,8 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
+- Runtime-test v0.15.35 completion routing with real Collaborator Blueprint and Detailed Workspace Draft generations: empty-slot reuse, occupied same-project creation, new-project Library creation, cancel/reopen pending completion, and project-switch clearing.
+- Runtime-test v0.15.34 Existing Character → Collaborator across refine, future/past, descendant, side-character, connected-character and same-setting directions; confirm source cards remain unchanged and provenance survives v0.15.35 completion.
 - Runtime-test v0.15.33-hotfix3 with real-provider AI Ideas batches and confirm generated concepts/hooks do not decide `{{user}}` behavior unless directly preserved from the source premise; verify conditional/open-ended hooks remain varied and specific rather than becoming vague.
 - Runtime-test v0.15.33-hotfix2 with a real AI Ideas batch and confirm the visible generated cards also enable **Save Generated Ideas…** and **Develop Generated Idea…**, with selective saving still opt-in only.
 - Runtime-test v0.15.33 by sending a generated unsaved Idea into Collaborator, developing it through several messages, closing/reopening CCF, and verifying the source snapshot/provenance survives independently of the original generation batch.
@@ -390,9 +420,9 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## Next Up
 
-- **v0.15.34 — Existing Character → Collaborator:** expose the new structured character source from Workspace/imported cards and add author-intent starting choices such as refine, alternative version, future/past version, continue after an event, side-character promotion, relative/descendant, connected character, new character in the same setting, and open-ended development.
-- Reuse v0.14.10 Related Character / AI Variation provenance and relationship concepts where they fit rather than creating a second incompatible derivation system.
-- Prepare v0.15.35 completion routing so an occupied Workspace defaults a newly completed Collaborator character into a new character in the same group instead of silently replacing the source/current character.
+- **v0.15.36 — Collaborator Refinement Compare/Apply:** compare an existing/source character with the Collaborator proposal before any destructive update; support selective field/section acceptance, update-original and create-improved-copy workflows.
+- Reuse v0.14.10 derivation/relationship provenance and v0.15.34 source intent rather than creating a parallel refinement history model.
+- Keep the v0.15.35 safe default for occupied Workspaces unless the user explicitly enters Compare & Apply.
 - Add optional provider/API execution pools so profiles sharing one cloud provider can share a provider-specific concurrency/rate-limit ceiling.
 - Add optional local hardware pools so Vision and Image providers using the same GPU can share a configurable resource limit.
 - Extend AI Jobs with pause/resume, priority, move-to-front/reorder controls, richer parent/child progress, and clearer project/character names.
@@ -410,7 +440,6 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## Planned Features
 
-- **v0.15.35 — Collaborator Character Completion & Group Integration:** when the current Workspace character is occupied, default a completed Collaborator character to a new character in the same group rather than overwriting the current one; retain explicit Replace Current and New Group alternatives. When the current character slot is genuinely empty, using that empty slot remains the natural default.
 - Preserve source/relationship provenance for Collaborator-created characters while ensuring each created/exported character remains a complete standalone card. Suggest appropriate Relationship Graph edges without silently making them canonical.
 - **v0.15.36 — Collaborator Refinement Compare/Apply:** compare original and proposed fields/sections and allow selective acceptance, update-original, or create-improved-copy workflows.
 - **v0.15.37 — Multi-source Collaborator:** accept several characters and/or saved/generated Ideas as simultaneous structured source context for family, relationship, cast, and scenario development.
@@ -440,7 +469,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Maintain the versioned representative regression registry as a release compatibility boundary across unrelated app areas.
 - Keep local regression subprocesses isolated from real HOME/XDG/AppData state.
 - Keep strict wrappers/import gates for Godot cases where logged script/assertion failures may not produce a nonzero exit code.
-- Continue warning-as-error GDScript hygiene on Godot 4.6.x without hiding warning categories globally.
+- Continue warning-as-error GDScript hygiene on Godot 4.7.x without hiding warning categories globally.
 - Audit awaited/deferred UI callbacks for node/tree validity whenever windows or views can be replaced dynamically.
 - Keep detached tools synchronised through explicit save/settings signals and stable IDs, not only startup scans.
 - Keep Image capability caches per Image profile and normalise them before persistence.
@@ -460,6 +489,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep Collaborator source seeding as a public structured capability instead of directly manipulating private composer/session controls from Idea Notebook or Workspace.
 - Keep the primary Collaborator source separate from ordinary `context_items`; attachments may be removed or summaries rebuilt without changing the source snapshot.
 - Keep Collaborator source formats versioned and backwards-compatible so future existing-character and multi-source workflows can extend rather than replace early source-aware conversations.
+- Keep completion payloads project-scoped, preserve already-generated payloads when destination selection is postponed, and never expose the empty-slot replacement route once meaningful authored content exists.
 - Validate provider envelopes before inherited parsing/diagnostic layers, retain raw credential-safe evidence, and report network/malformed-envelope failures once through the normal retry/failure path.
 - Continue investigating the Linux/X11 GL Compatibility `BadAlloc`/`glXMakeCurrent` crash separately; do not mask it by treating application-level JSON failures as its cause.
 - Continue reducing synchronous whole-library work from interactive Collaborator paths.
@@ -476,7 +506,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Improve visible progress/error states for long AI operations and distinguish queue wait, local preparation, provider thinking, repair, and validation time.
 - Improve queue labels so project, character, workflow, role, provider, model, section, and dependency state are legible without opening Diagnostics.
 - Improve Idea Notebook browsing as real libraries grow, including denser cards/list options and multi-selection if runtime use shows the need.
-- Improve source-aware Collaborator UX with clearer source/provenance summaries and intent guidance as the v0.15.34–v0.15.37 workflows arrive.
+- Improve source-aware Collaborator UX with clearer source/provenance summaries and intent/completion guidance as the v0.15.35–v0.15.37 workflows arrive.
 - Continue replacing silent button no-ops with visible actionable status messages.
 
 ## Long-Term Ideas
