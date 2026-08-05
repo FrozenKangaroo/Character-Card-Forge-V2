@@ -1,0 +1,73 @@
+name: Validate v0.15.36-hotfix3 Empty Project Save
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v01536-hotfix3-empty-project-save-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.7.1'
+  GODOT_STATUS: stable
+
+jobs:
+  empty-project-save:
+    name: Empty Project Save Guard
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot 4.7.1 and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project
+        shell: bash
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v01536-hotfix3-import.log
+          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE_BASE_CLASS" /tmp/ccf-v01536-hotfix3-import.log; then
+            echo "Godot reported a script or warning failure during import."
+            exit 1
+          fi
+
+      - name: Confirm Forward Plus remains the desktop default
+        shell: bash
+        run: |
+          grep -F 'config/features=PackedStringArray("4.7", "Forward Plus")' project.godot
+          grep -F 'renderer/rendering_method="forward_plus"' project.godot
+          grep -F 'rendering_device/fallback_to_opengl3=true' project.godot
+
+      - name: Confirm import leaves checkout clean
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain --untracked-files=normal)" ]]; then
+            echo "Godot import created repository-visible changes:"
+            git status --short
+            exit 1
+          fi
+
+      - name: Test empty unsaved-project persistence guard
+        run: python3 ./tools/test_v01536_hotfix3_empty_project_save_strict.py
+
+      - name: Recheck v0.15.36-hotfix2 AI Ideas agency
+        run: python3 ./tools/test_v01536_hotfix2_idea_agency_strict.py
+
+      - name: Recheck configured default template hotfix
+        run: python3 ./tools/test_v01536_hotfix1_default_template_strict.py
+
+      - name: Recheck v0.15.36 Collaborator Compare and Apply
+        run: python3 ./tools/test_v01536_collaborator_compare_apply_strict.py
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --manifest ./tools/regression_suites_v01536_hotfix3.json --profile quick --godot "$(command -v godot)"
