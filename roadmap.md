@@ -63,6 +63,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Automated tests that exercise `user://` run in isolated temporary app-data directories.
 - Generation reliability strategy is independent of Generation Mode/Style.
 - Safe generation fails narrowly: accepted sections remain accepted, and missing required components receive focused repair rather than unrelated regeneration.
+- Safe Section output must match the identity of the requested field/component as well as its JSON/type contract. A syntactically valid response must fail or receive focused repair when it returns the wrong key or high-confidence content routed from another section; Scenario, First Message, Lorebook and duplicated long-section contamination must never be silently materialised into unrelated card fields.
 - Failed provider generations remain inspectable through credential-redacted Diagnostics containing request, raw response, assistant text, parse/validation state, termination reason, token usage, repair evidence, and trace.
 - Deferred or awaited UI work must verify that its node, controls, and original `SceneTree` are still valid after every await before touching them.
 - Detached tools that consume saved project data must receive save/change notifications rather than relying only on startup scans or stale private caches.
@@ -74,21 +75,33 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.37 development candidate — Multi-source Character Collaborator**
+**v0.15.37-hotfix1 development candidate — Safe Section Field Identity & Contamination Guard**
 
-v0.15.37 promotes Collaborator's v0.15.33 single-source context into a versioned multi-source collection. One conversation can now keep several characters, saved/generated Ideas, pasted source material, and external Character Card JSON/PNG references distinct at the same time. Existing single-source sessions migrate into the new collection when opened rather than being abandoned or flattened.
+v0.15.37-hotfix1 hardens Character generation after a real exported card showed semantically corrupted but syntactically valid Safe Section output: complete Scenario text had been accepted into several unrelated Personality components, the First Message had been routed into a history component, and Lorebook-style material had been routed into Kinks.
 
-At most one existing Workspace character may be the explicit **TARGET**. That target remains compatible with v0.15.36 Compare & Apply, conflict checking, Update Original, and Create Improved Copy. Every additional source is a read-only **REFERENCE** used for family, relationships, cast, scenario, setting, continuity, and ensemble reasoning without becoming an overwrite target. Per-source IDs, labels, types, roles, author intent and provenance stay individually visible, and completion lineage carries a compact summary of the full source set alongside the primary target provenance.
+Normal standalone Safe Section responses now require exactly the requested field ID. The generic `value` response shape remains valid only for an explicitly focused repair request. Generation Groups similarly require configured component IDs rather than silently treating presentation labels or unrelated keys as equivalent identities.
 
-Source ingestion now uses a raw-versus-AI-facing boundary. Raw attached/pasted/extracted source is retained unchanged for provenance and recovery. A separate AI-facing snapshot is normalised before model context is assembled. Distinct `<UserPersona>`, User Persona/user-profile fields, and equivalent roleplayer-persona residue are excluded from that AI-facing copy by default so old chat-user details do not silently become the new `{{user}}` identity. Character-source statements that genuinely establish the character's relationship or situation with `{{user}}` remain valid and are not stripped simply because they mention `{{user}}`.
+Section validation now rejects high-confidence cross-section contamination including long exact/near-exact sibling duplication, Scenario/First Message Blueprint sections reproduced in unrelated targets, Lorebook-entry structures in unrelated fields, repeated long blocks within one assembled field, and long content duplicated across top-level fields. Sequential and parallel Safe Section builds run a final assembled contamination check before the established generation-contract/fidelity pipeline, and concurrent child workers use the same hotfix guard rather than the historical unguarded worker class.
 
-The normal Collaborator **Attach Files…** path now promotes recognised Character Card JSON/PNG/APNG files into structured sources without importing them into the Library. Non-card JSON continues through the normal text-attachment path and non-card images continue through Vision. **Paste Source…** accepts extracted text or Character Card JSON, **Add Saved Idea…** adds an Idea Notebook entry as another reference, and Workspace can add its current character to an open Collaborator conversation as another structured reference.
+Diagnostics now record requested/returned keys, acceptance route, rejection kind and content fingerprints so future valid-JSON/wrong-section provider behaviour is inspectable rather than silently accepted. The running development build displays **v0.15.37-hotfix1**.
 
-The running development build displays **v0.15.37**. Current work is runtime validation and polish of multi-source sessions, target switching, source persistence/reopen, Character Card attachment detection, saved-Idea addition, UserPersona exclusion, completion provenance, and real provider behavior.
+v0.15.37 Multi-source Collaborator remains the current feature baseline. Runtime validation of multi-source sessions, UserPersona exclusion, target/reference persistence and real-provider behaviour continues alongside this generation-reliability hotfix.
 
 Character Card Forge remains on Godot **4.7.1 stable** and Forward+ as the standard desktop renderer, with Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware. The previously observed Linux/X11 GL Compatibility crash remains classified as not reproduced after switching to Forward+, not universally proven fixed.
 
 ## Completed
+
+### v0.15.37-hotfix1 — Safe Section Field Identity & Contamination Guard
+
+- Removed permissive standalone fallback that could accept an unrelated single returned JSON key as the requested field.
+- Restricted generic `value` output to explicitly focused field/component repair requests.
+- Required configured component IDs for normal Generation Group responses instead of silently substituting labels.
+- Added high-confidence Scenario, First Message, Lorebook, sibling-duplicate, repeated-block and assembled cross-field contamination checks.
+- Added fail-closed final validation for both sequential and parallel Safe Section assembly.
+- Upgraded parallel child creation so concurrent Safe Section workers use the active hotfix guard rather than bypass it through the historical v0.15.26 worker class.
+- Added requested/returned key, acceptance-route, rejection-kind and content-fingerprint Diagnostics.
+- Added a regression fixture shaped after the reported cross-section corruption while retaining a clean correctly keyed control case.
+- Added broad regression inheritance, CI, and `docs/v01537-hotfix1-safe-section-contamination.md`.
 
 ### v0.15.37 — Multi-source Character Collaborator
 
@@ -393,6 +406,7 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
+- Runtime-test v0.15.37-hotfix1 against real provider generation after the reported cross-section contamination. Confirm wrong-key responses receive focused repair, Scenario/First Message/Lorebook echoes are rejected from unrelated components, clean long-form fields remain accepted, parallel generation uses the same guard, and exported Diagnostics expose requested/returned keys plus contamination fingerprints.
 - Runtime-test v0.15.37 with real multi-source Collaborator sessions: target character plus additional Workspace characters, saved/generated Ideas, pasted extraction text, and Character Card JSON/PNG sources. Confirm source roles survive save/reopen and long conversations without being flattened.
 - Runtime-test embedded UserPersona exclusion against real extracted cards from JSON, PNG and copy/paste. Confirm raw source remains inspectable, AI-facing context excludes roleplayer residue, and legitimate character-to-`{{user}}` relationship/situation facts remain intact.
 - Runtime-test target switching and v0.15.36 Compare & Apply from a multi-source session; only the explicit Workspace target may be updated while reference sources remain read-only.
@@ -480,6 +494,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Route selective cancellation back through the owning worker/service so unrelated queues remain intact and each subsystem retains authority over its cleanup state.
 - Keep dependency graphs data-driven and detect cycles/invalid references without deadlocking a build.
 - Preserve frozen wave context and deterministic template-order assembly for parallel generation.
+- Safe Section normal responses must require exact requested field/component identities. The generic `value` shape is reserved for explicit focused repairs, and final assembly must fail closed on high-confidence routed/duplicated section contamination rather than trusting text type/non-emptiness alone.
+- Parallel Safe Section child workers must be created through the active compatibility leaf (or an overridable factory) so later validation/security hotfixes cannot be bypassed by historical hard-coded worker classes.
 - Maintain the versioned representative regression registry as a release compatibility boundary across unrelated app areas.
 - Keep local regression subprocesses isolated from real HOME/XDG/AppData state.
 - Keep strict wrappers/import gates for Godot cases where logged script/assertion failures may not produce a nonzero exit code.
