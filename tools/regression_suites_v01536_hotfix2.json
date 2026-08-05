@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.36-hotfix2",
+  "description": "v0.15.36-hotfix1 coverage plus refined AI Ideas detached-POV, user agency, scene-setting and backstory validation.",
+  "base_manifest": "regression_suites_v01536_hotfix1.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01536_hotfix2_idea_agency",
+        "label": "v0.15.36-hotfix2 AI Ideas agency/backstory",
+        "kind": "python",
+        "path": "tools/test_v01536_hotfix2_idea_agency_strict.py",
+        "timeout_seconds": 170
+      }
+    ]
+  }
+}
