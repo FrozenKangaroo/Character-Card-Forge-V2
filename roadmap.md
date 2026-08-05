@@ -18,6 +18,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Existing character/card data must not be destroyed by unchecked preview fields, failed reviews, disabled generation components, unrelated regeneration, partial imports, exploratory AI conversation, or unreviewed Collaborator output.
 - Conversational brainstorming never becomes canonical project data until the user explicitly applies, generates, or imports it.
 - Stable internal IDs should survive user-facing renames where practical.
+- Brand-new Character Projects remain in memory until meaningful authored content exists. UUIDs, timestamps, Workspace state, configured templates, and untouched `Untitled` placeholders alone must never create a Library entry.
 - Wider desktop windows should reveal more workspace rather than scale a fixed game-style canvas.
 - Secondary workflows belong in grouped menus instead of an ever-growing wall of top-level buttons.
 - V1 parity is judged by useful workflow capability, not literal screen-for-screen reproduction.
@@ -70,21 +71,32 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.36-hotfix2 development candidate — AI Ideas Agency / Backstory / POV Validation**
+**v0.15.36-hotfix3 development candidate — Empty Project Save Guard**
 
-A real Generation Diagnostics export from AI Ideas showed that the provider had returned two successful HTTP 200 responses with normal `stop` termination and parseable JSON, but CCF rejected the batch during semantic validation. That exposed three CCF-side problems: the phrase `Without {{user}} realising...` falsely enabled detached POV; supporting NPC terms inside `character_role` could be mistaken for the card subject; and the v0.15.33-hotfix3 agency rule treated harmless scene logistics too much like substantive user canon.
+A runtime report showed a completely untouched Character Project appearing in the Library with every authored character field empty. Investigation confirmed that the active **New Character** shell explicitly saved `CCFStorageService.new_project()` before Workspace opened, so creating a placeholder guaranteed a `character.json` even if the author never entered anything.
 
-v0.15.36-hotfix2 replaces those brittle checks at the current generation-service leaf. Detached mode now requires explicit observer/narrator/world-NPC/omniscient/detached-viewpoint intent. Identity validation focuses on the actual generated card subject rather than every supporting role mentioned in the sentence. Third-person concepts may identify the supplied character by name, `the character`, or clean pronoun-led prose.
+v0.15.36-hotfix3 changes the persistence boundary rather than merely hiding empty Library rows. New projects still receive stable in-memory project/character IDs and the configured application-default template immediately, but no file is written until meaningful authored content exists. Pressing **Save** on a never-saved empty project reports **Nothing to save yet** and keeps the project only in Workspace.
 
-The `{{user}}` boundary is now intentionally split between **scene logistics** and **substantive canon**. Temporary circumstances such as `{{user}} passed out early`, `{{user}} works late`, `{{user}} is on a work call`, being asleep/in another room, arriving home, or briefly being out are allowed when they simply make the opening playable. Invented personality, long-term emotional tendencies, profession, upbringing/trauma, major family history, sexual preferences, ongoing suspicions/motives/plans, or forced meaningful reactions/dialogue/decisions remain invalid unless established by the author.
+Meaningful project content includes a deliberate project or character name, project summary/tags/series/shared context, relationships/workflows/attachments, Generation Concept, normal/template card fields, Alternative Greetings, Lorebook/extensions, or assets. UUIDs, timestamps, Workspace state, template assignment, `Untitled Project`, and untouched `Untitled Character` placeholders do not count.
 
-Idea validation now also writes the actual identity/POV/agency report into Generation Diagnostics so a future terminal failure is directly inspectable rather than exporting an empty validation report.
+The guard is intentionally non-destructive for existing files: once a project has been persisted, normal Save remains available even if its content is later cleared. Hotfix3 does not silently delete or hide empty projects created by older versions.
 
-The running development build displays **v0.15.36-hotfix2**. **v0.15.37 Multi-source Collaborator remains the next planned feature release** after this hotfix is runtime-confirmed.
+The running development build displays **v0.15.36-hotfix3**. **v0.15.37 Multi-source Collaborator remains the next planned feature release** after this hotfix is runtime-confirmed.
 
 Character Card Forge remains on Godot **4.7.1 stable** and Forward+ as the standard desktop renderer, with Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware. The previously observed Linux/X11 GL Compatibility crash remains classified as not reproduced after switching to Forward+, not universally proven fixed.
 
 ## Completed
+
+### v0.15.36-hotfix3 — Empty Project Save Guard
+
+- Removed the premature disk save from the live **New Character** path while preserving stable in-memory project/character IDs.
+- Preserved configured application-default-template assignment without making template selection alone count as authored content.
+- Added a reusable project-persistence guard that distinguishes a never-saved empty shell from meaningful authored content.
+- Added project-level content checks for names, summary/tags/series/shared context, relationships, workflows, and attachments.
+- Reused v0.15.35 effective-empty-character semantics while treating real non-placeholder character names as meaningful for persistence.
+- Changed Workspace Save so an unsaved empty project stays in memory, reports **Nothing to save yet**, emits no saved-project event, and creates no Library entry.
+- Kept already-persisted projects saveable even if later cleared; the hotfix never silently deletes existing data.
+- Added isolated real-main-scene persistence regression coverage, CI, broad manifest inheritance, and `docs/v01536-hotfix3-empty-project-save.md`.
 
 ### v0.15.36-hotfix2 — AI Ideas Agency / Backstory / POV Validation
 
@@ -362,6 +374,8 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
+- Runtime-test v0.15.36-hotfix3 by creating and abandoning blank projects, pressing Save while blank, then adding project-level and character-level content and confirming first persistence occurs only after meaningful authoring.
+- Confirm existing saved projects remain normally saveable after content is deliberately cleared and that old empty projects are never auto-deleted by the hotfix.
 - Runtime-test v0.15.36-hotfix2 with the reported secrecy-style AI Ideas premise and additional real-provider batches. Confirm temporary scene logistics are accepted, invented durable user canon is rejected, supporting NPC roles do not falsely redefine the card subject, and valid batches do not incur unnecessary repair requests.
 - Confirm failed/repaired Idea batches now retain a useful semantic validation report in Diagnostics.
 - Runtime-test v0.15.36-hotfix1 configured-default-template behavior for new projects, Add Character, and missing-template fallback with real user templates.
@@ -434,6 +448,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep generation services modular and preserve older project/card compatibility as schemas evolve.
 - Treat runtime generation-service composition as a capability-tested compatibility boundary.
 - Keep important historical hotfix behavior as active-leaf regression invariants rather than assuming an old class remains in every later inheritance chain.
+- Keep first-save project persistence content-aware: never-saved empty shells stay in memory, while already-persisted projects are never silently deleted or blocked from ordinary Save.
 - Maintain one authoritative Character Text output budget per queued generation job and reassert it at request time.
 - Keep each concurrent worker's request, retry, repair, Diagnostics, cancellation, and parent-state data isolated.
 - Expose scheduler/job state through stable inspectable records rather than having UI scrape visual status strings.
