@@ -2,7 +2,7 @@ class_name CCFWorkspaceV01537View
 extends "res://scripts/ui/workspace_v01536_hotfix3.gd"
 
 const CHARACTER_COLLABORATOR_WINDOW_V01537 = preload(
-	"res://scripts/ui/character_collaborator_window_v01537.gd"
+	"res://scripts/ui/character_collaborator_window_v01537_sources.gd"
 )
 const SOURCE_SERVICE_V01537 = preload(
 	"res://scripts/services/collaborator_source_context_service_v01537.gd"
@@ -120,6 +120,7 @@ func collaborator_source_capabilities_v01533() -> Dictionary:
 	result["multi_source"] = true
 	result["add_current_character_to_open_session"] = true
 	result["single_explicit_refinement_target"] = true
+	result["saved_idea_picker"] = true
 	return result
 
 
@@ -130,6 +131,7 @@ func multi_source_collaborator_capabilities_v01537() -> Dictionary:
 		"one_refinement_target": true,
 		"additional_character_references": true,
 		"saved_or_generated_idea_sources_supported": true,
+		"saved_idea_picker": true,
 		"pasted_source_supported": true,
 		"json_png_card_sources_supported": true,
 		"embedded_user_persona_excluded": true,
