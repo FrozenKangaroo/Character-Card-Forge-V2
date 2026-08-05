@@ -12,7 +12,7 @@ const REFINED_USER_AGENCY_PROMPT_V01536_HOTFIX2 := (
 	+ "- Minor temporary scene-setting circumstances ARE allowed when they simply make the opening playable and do not define {{user}} as a character. Examples: {{user}} passed out early, works late, is on a work call, is asleep, is in another room, is at work, arrives home, or has stepped out on an ordinary errand.\n"
 	+ "- Ordinary past logistics may also be used as setup when they do not create a durable personality/history for {{user}}.\n"
 	+ "- Describe the generated character's actions, motives, secrets, fears, plans, and pressures. Leave {{user}}'s meaningful reaction open.\n"
-	+ "- Conditional wording such as 'whether {{user}} forgives her' or 'if {{user}} chooses to investigate' is allowed because it preserves the roleplayer's choice."
+	+ "- Conditional or explicitly open wording such as 'whether {{user}} forgives her', 'if {{user}} chooses to investigate', or 'without deciding how {{user}} responds' is allowed because it preserves the roleplayer's choice."
 )
 
 const USER_FORCED_RESPONSE_PATTERN_V01536_HOTFIX2 := (
@@ -182,6 +182,21 @@ func _concept_identifies_character_v01536_hotfix2(
 		return false
 	if lowered.contains(clean_name) or lowered.contains("the character"):
 		return true
+	# Models naturally shorten a supplied full name after character_name establishes
+	# identity, e.g. character_name "Elena Voss" with concept "Elena is...".
+	var name_parts := clean_name.split(" ", false)
+	if not name_parts.is_empty():
+		var first_name := str(name_parts[0]).strip_edges()
+		var concept_start := lowered.strip_edges()
+		if (
+			not first_name.is_empty()
+			and (
+				concept_start.begins_with(first_name + " ")
+				or concept_start.begins_with(first_name + ",")
+				or lowered.contains(" " + first_name + " ")
+			)
+		):
+			return true
 	# Allow a clean pronoun-led paragraph when the object already supplies an
 	# explicit character_name. This avoids a brittle wording requirement while
 	# still rejecting second-person/generated-user POV.
@@ -304,7 +319,11 @@ func _collect_user_regex_issues_v01536_hotfix2(
 		return
 	for match_value in regex.search_all(text):
 		var match := match_value as RegExMatch
-		if allow_conditional and _match_is_conditional_user_choice_v01533_hotfix3(
+		if allow_conditional and _match_is_open_user_choice_v01536_hotfix2(
+			text, match.get_start()
+		):
+			continue
+		if _match_is_explicit_noncanon_statement_v01536_hotfix2(
 			text, match.get_start()
 		):
 			continue
@@ -313,6 +332,54 @@ func _collect_user_regex_issues_v01536_hotfix2(
 			continue
 		if not issues.has("%s ('%s')" % [reason, matched_text]):
 			issues.append("%s ('%s')" % [reason, matched_text])
+
+
+func _match_is_open_user_choice_v01536_hotfix2(
+	text: String, start_index: int
+) -> bool:
+	if _match_is_conditional_user_choice_v01533_hotfix3(text, start_index):
+		return true
+	var prefix_start := maxi(0, start_index - 64)
+	var prefix := text.substr(prefix_start, start_index - prefix_start).to_lower()
+	for marker in [
+		"without deciding how ",
+		"without deciding what ",
+		"without deciding whether ",
+		"without choosing how ",
+		"without choosing what ",
+		"without choosing whether ",
+		"without specifying how ",
+		"without specifying what ",
+		"without specifying whether ",
+		"leaving open how ",
+		"leaving open whether ",
+		"leaves open how ",
+		"leaves open whether "
+	]:
+		if prefix.ends_with(marker):
+			return true
+	return false
+
+
+func _match_is_explicit_noncanon_statement_v01536_hotfix2(
+	text: String, start_index: int
+) -> bool:
+	var prefix_start := maxi(0, start_index - 56)
+	var prefix := text.substr(prefix_start, start_index - prefix_start).to_lower()
+	for marker in [
+		"without defining ",
+		"does not define ",
+		"doesn't define ",
+		"do not define ",
+		"not defining ",
+		"rather than defining ",
+		"without establishing ",
+		"does not establish ",
+		"do not establish "
+	]:
+		if prefix.ends_with(marker):
+			return true
+	return false
 
 
 func _source_contains_user_fact_v01536_hotfix2(
