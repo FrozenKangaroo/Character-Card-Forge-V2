@@ -63,7 +63,7 @@ func validate_safe_section_candidate_v01537_hotfix1(
 	elif raw_data.size() != 1:
 		issues.append("Expected exactly one key `%s`; extra keys are not accepted." % field_id)
 	else:
-		var value := raw_data.get(field_id)
+		var value: Variant = raw_data.get(field_id)
 		for issue in _safe_value_contamination_issues_v01537_hotfix1(
 			field_id,
 			str(section.get("title", field_id)),
