@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.35",
+  "description": "v0.15.34 coverage plus explicit Collaborator completion routing, empty-slot reuse, occupied-character protection, same-project completion and new-project destination checks.",
+  "base_manifest": "regression_suites_v01534.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01535_collaborator_completion_routing",
+        "label": "v0.15.35 Collaborator completion routing",
+        "kind": "python",
+        "path": "tools/test_v01535_collaborator_completion_routing_strict.py",
+        "timeout_seconds": 100
+      }
+    ]
+  }
+}
