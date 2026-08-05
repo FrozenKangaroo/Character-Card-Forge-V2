@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.33-hotfix3",
+  "description": "v0.15.33-hotfix2 coverage plus AI Ideas user-agency prompt, validation, and repair contracts.",
+  "base_manifest": "regression_suites_v01533_hotfix2.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01533_hotfix3_idea_user_agency",
+        "label": "v0.15.33-hotfix3 AI Ideas user agency",
+        "kind": "python",
+        "path": "tools/test_v01533_hotfix3_idea_user_agency_strict.py",
+        "timeout_seconds": 90
+      }
+    ]
+  }
+}
