@@ -22,6 +22,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Secondary workflows belong in grouped menus instead of an ever-growing wall of top-level buttons.
 - V1 parity is judged by useful workflow capability, not literal screen-for-screen reproduction.
 - AI Ideas target interactive Character Card / SillyTavern-style roleplay by default and normally establish a meaningful relationship or opening dynamic with literal `{{user}}`.
+- AI Ideas preserve player agency: unless the author explicitly establishes a `{{user}}` fact/action in the source premise, generated concepts and roleplay hooks may create choices, uncertainty, tension, and pressure around `{{user}}` but must not decide `{{user}}`'s actions, dialogue, thoughts, feelings, consent, reactions, intentions, or decisions.
 - Generated ideas remain disposable until the user explicitly saves them. Persistent Idea Notebook material is versioned app-level authoring data independent of Character Projects, and saving one idea must never implicitly save the rest of a generated batch.
 - Named Idea Notebooks organise saved material without replacing tags: notebook membership is one organisational axis while tags/search work across notebooks.
 - Collaborator source handoffs preserve structured source snapshots and provenance rather than paste opaque text into private UI state.
@@ -64,19 +65,32 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.33-hotfix2 development candidate — AI Ideas Notebook Capture Reliability**
+**v0.15.33-hotfix3 development candidate — AI Ideas User Agency Contract**
 
-v0.15.33-hotfix2 repairs the live completion bridge between the embedded AI Ideas workflow and the v0.15.32 Idea Notebook / v0.15.33 Collaborator handoff controls. A completed AI Ideas batch that is already visible in the generator must also become available to **Save Generated Ideas…** and **Develop Generated Idea…**.
+v0.15.33-hotfix3 strengthens AI Ideas so generated concepts and roleplay hooks define the generated character and situation without deciding how the future roleplayer-controlled `{{user}}` behaves. Every queued Idea request receives an explicit User Agency Contract, and the existing identity/POV semantic-validation pipeline now also checks common direct `{{user}}` actions/reactions, prescriptive `must`/`should` language, and asserted emotional states.
 
-The current Idea generation contract still emits the canonical job type `ideas`; the reported failure was not a job-type rename. The fragile boundary was that Notebook capture listened only to Workspace's dedicated Idea worker while the embedded legacy AI Ideas controller retains and can rebind its own compatible generation-service reference. Capture is now connected across the live Workspace generation-service topology and refreshed around service/client rebinding while still filtering unrelated job types and never auto-saving generated ideas.
+The contract deliberately preserves author-established setup. If the source premise explicitly says `{{user}}` catches, sees, leaves, confronts, or otherwise does something, the Idea Generator may carry that fact forward; it still must leave what `{{user}}` does next open. Conditional and hypothetical choices such as **whether `{{user}}` confronts her** or **if `{{user}}` chooses to investigate** remain valid because they preserve roleplayer agency.
 
-v0.15.33's generic Collaborator source context and v0.15.33-hotfix1's Structured Builder → Collaborator route remain intact. **v0.15.34 remains reserved for Existing Character → Collaborator** rather than being consumed by this regression repair.
+Agency violations use the existing single bounded semantic-repair pass rather than a parallel generation path. The repair request receives the same agency contract and must preserve valid source facts while reopening any AI-invented `{{user}}` behavior.
 
-Provider-envelope hardening from v0.15.33 remains separate from the observed Linux/X11 GL Compatibility crash (`BadAlloc` → `glXMakeCurrent failed` → signal 11). That native crash remains under investigation and is not claimed fixed by this hotfix.
+v0.15.33-hotfix2 Idea Notebook capture, v0.15.33-hotfix1 Structured Builder → Collaborator, v0.15.33 source context/provider hardening, v0.15.31 AI Jobs, and v0.15.26 scheduler/Safe Sections remain layered underneath. **v0.15.34 remains reserved for Existing Character → Collaborator**.
 
-The running development build displays **v0.15.33-hotfix2**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The separate Linux/X11 GL Compatibility crash (`BadAlloc` → `glXMakeCurrent failed` → signal 11) remains under investigation and is not claimed fixed by this hotfix.
+
+The running development build displays **v0.15.33-hotfix3**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
+
+### v0.15.33-hotfix3 — AI Ideas User Agency Contract
+
+- Added an explicit **User Agency Contract** to AI Ideas system/user prompts so `{{user}}` remains controlled by the person roleplaying.
+- Extended the existing identity/POV semantic validator across `concept` and `roleplay_hook` to reject common AI-invented `{{user}}` actions/reactions, prescriptive behavior, and asserted feelings/states.
+- Preserved `{{user}}` actions explicitly established by the source premise as valid setup while keeping subsequent choices open.
+- Allowed conditional/hypothetical phrasing such as **whether `{{user}}` confronts her** and **if `{{user}}` chooses to investigate** so open roleplay hooks are not flattened into vague prose.
+- Fed agency violations into the existing bounded semantic-repair pass and appended the same agency rules to repair prompts.
+- Added `CCFGenerationServiceV01533Hotfix3` above the current provider-hardening / AI Jobs / scheduler stack and installed it across current Workspace AI workers.
+- Preserved v0.15.33-hotfix2 Idea Notebook completion capture and v0.15.33-hotfix1 Structured Builder → Collaborator behavior.
+- Added focused prompt/validation/repair/live-wiring regression coverage, `docs/v01533-hotfix3-ai-ideas-user-agency.md`, and `regression_suites_v01533_hotfix3.json`.
 
 ### v0.15.33-hotfix2 — AI Ideas Notebook Capture Reliability
 
@@ -347,6 +361,7 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
+- Runtime-test v0.15.33-hotfix3 with real-provider AI Ideas batches and confirm generated concepts/hooks do not decide `{{user}}` behavior unless directly preserved from the source premise; verify conditional/open-ended hooks remain varied and specific rather than becoming vague.
 - Runtime-test v0.15.33-hotfix2 with a real AI Ideas batch and confirm the visible generated cards also enable **Save Generated Ideas…** and **Develop Generated Idea…**, with selective saving still opt-in only.
 - Runtime-test v0.15.33 by sending a generated unsaved Idea into Collaborator, developing it through several messages, closing/reopening CCF, and verifying the source snapshot/provenance survives independently of the original generation batch.
 - Runtime-test a saved Idea Notebook entry through **Develop in Collaborator**, confirm its Notebook entry remains unchanged, and verify Idea/notebook provenance survives session reload.
@@ -441,6 +456,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
 - Keep Idea Notebook persistence independent of Character Projects and version both the library index and individual saved-idea records so later source/provenance fields can evolve compatibly.
 - Keep Idea Notebook completion capture bound to the live generation-service topology rather than one assumed worker reference; embedded legacy-controller rebinding must not make visible AI results unavailable to save/develop workflows.
+- Keep AI Ideas player-agency validation layered after the existing identity/POV validation, preserve explicit source-authored `{{user}}` setup, and avoid treating conditional/hypothetical choices as if the AI had already chosen them for the roleplayer.
 - Keep Collaborator source seeding as a public structured capability instead of directly manipulating private composer/session controls from Idea Notebook or Workspace.
 - Keep the primary Collaborator source separate from ordinary `context_items`; attachments may be removed or summaries rebuilt without changing the source snapshot.
 - Keep Collaborator source formats versioned and backwards-compatible so future existing-character and multi-source workflows can extend rather than replace early source-aware conversations.
