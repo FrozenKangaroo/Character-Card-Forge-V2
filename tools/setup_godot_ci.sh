@@ -1,8 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-GODOT_VERSION="${GODOT_VERSION:-4.6.3}"
+MIN_GODOT_VERSION="${CCF_MIN_GODOT_VERSION:-4.7.1}"
+REQUESTED_GODOT_VERSION="${GODOT_VERSION:-${MIN_GODOT_VERSION}}"
 GODOT_STATUS="${GODOT_STATUS:-stable}"
+
+version_lt() {
+    [[ "$1" != "$2" ]] && [[ "$(printf '%s\n%s\n' "$1" "$2" | sort -V | head -n1)" == "$1" ]]
+}
+
+if version_lt "${REQUESTED_GODOT_VERSION}" "${MIN_GODOT_VERSION}"; then
+    printf 'Requested Godot %s is older than the Character Card Forge minimum %s; using %s instead.\n' \
+        "${REQUESTED_GODOT_VERSION}" "${MIN_GODOT_VERSION}" "${MIN_GODOT_VERSION}"
+    GODOT_VERSION="${MIN_GODOT_VERSION}"
+else
+    GODOT_VERSION="${REQUESTED_GODOT_VERSION}"
+fi
+
 RELEASE_TAG="${GODOT_VERSION}-${GODOT_STATUS}"
 EDITOR_BASENAME="Godot_v${GODOT_VERSION}-${GODOT_STATUS}_linux.x86_64"
 BASE_URL="https://github.com/godotengine/godot/releases/download/${RELEASE_TAG}"
