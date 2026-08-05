@@ -86,14 +86,14 @@ func _run() -> void:
 	await process_frame
 	await process_frame
 	var workspace_value: Variant = app.get("_workspace")
-	assert(workspace_value is CCFWorkspaceV01534View, "The real main scene must install the v0.15.34 Workspace.")
+	assert(workspace_value is CCFWorkspaceV01534View, "The real main scene must install v0.15.34 or a later compatible Workspace.")
 	var workspace := workspace_value as CCFWorkspaceV01534View
 	var capabilities := workspace.collaborator_source_capabilities_v01533()
 	assert(bool(capabilities.get("existing_character_workspace_action", false)), "v0.15.34 must expose Existing Character → Collaborator from Workspace.")
 	assert(bool(capabilities.get("existing_character_author_intents", false)), "v0.15.34 must expose author-intent starting choices.")
 	assert(bool(capabilities.get("derivation_provenance_compatible_v01410", false)), "v0.15.34 must remain compatible with v0.14.10 derivation provenance concepts.")
 	var live_collaborator_value: Variant = workspace.get("_character_collaborator_window")
-	assert(live_collaborator_value is CCFCharacterCollaboratorWindowV01534, "Live Workspace must install the v0.15.34 source-aware Collaborator window.")
+	assert(live_collaborator_value is CCFCharacterCollaboratorWindowV01534, "Live Workspace must retain the v0.15.34 source-aware Collaborator capability.")
 	var live_chooser_value: Variant = workspace.get("_existing_character_collaborator_window_v01534")
 	assert(live_chooser_value is CCFExistingCharacterCollaboratorWindowV01534, "Live Workspace must install the existing-character author-intent chooser.")
 
@@ -109,7 +109,11 @@ func _run() -> void:
 	assert(found_menu_action, "Author menu must expose Develop Current Character in Collaborator…")
 
 	var main_script := app.get_script() as Script
-	assert(main_script != null and main_script.resource_path.ends_with("main_v01534.gd"), "The active app shell must be v0.15.34.")
+	assert(main_script != null, "The active app shell must have a script.")
+	assert(
+		app.has_method("_update_build_version_label_v01534"),
+		"The active app shell must retain the v0.15.34 shell capability through inheritance."
+	)
 
 	app.queue_free()
 	chooser.queue_free()
