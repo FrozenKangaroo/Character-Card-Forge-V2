@@ -22,7 +22,8 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Secondary workflows belong in grouped menus instead of an ever-growing wall of top-level buttons.
 - V1 parity is judged by useful workflow capability, not literal screen-for-screen reproduction.
 - AI Ideas target interactive Character Card / SillyTavern-style roleplay by default and normally establish a meaningful relationship or opening dynamic with literal `{{user}}`.
-- AI Ideas preserve player agency: unless the author explicitly establishes a `{{user}}` fact/action in the source premise, generated concepts and roleplay hooks may create choices, uncertainty, tension, and pressure around `{{user}}` but must not decide `{{user}}`'s actions, dialogue, thoughts, feelings, consent, reactions, intentions, or decisions.
+- AI Ideas preserve player agency without making ordinary openings unusably rigid: temporary scene logistics for `{{user}}` may be invented when they merely establish where/when the scene begins, but substantive `{{user}}` personality, backstory, profession, long-term motives/preferences, major history, or consequential reactions/decisions remain author-controlled unless explicitly established by the source premise.
+- Conditional `{{user}}` choices such as `whether {{user}} confronts her` remain valid because they preserve the roleplayer's decision; direct forced reactions such as `{{user}} confronts her immediately` remain invalid unless source-authored.
 - Generated ideas remain disposable until the user explicitly saves them. Persistent Idea Notebook material is versioned app-level authoring data independent of Character Projects, and saving one idea must never implicitly save the rest of a generated batch.
 - Named Idea Notebooks organise saved material without replacing tags: notebook membership is one organisational axis while tags/search work across notebooks.
 - Collaborator source handoffs preserve structured source snapshots and provenance rather than paste opaque text into private UI state.
@@ -69,35 +70,49 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.36 development candidate — Collaborator Refinement Compare/Apply + Forward+**
+**v0.15.36-hotfix2 development candidate — AI Ideas Agency / Backstory / POV Validation**
 
-v0.15.36 completes the existing-character refinement loop started in v0.15.34 and made safely routable in v0.15.35. When a pending Collaborator completion originated from an existing character that is still present in the same project, the destination chooser can now open **Compare & Apply to Source Character…** instead of forcing an unreviewed replacement.
+A real Generation Diagnostics export from AI Ideas showed that the provider had returned two successful HTTP 200 responses with normal `stop` termination and parseable JSON, but CCF rejected the batch during semantic validation. That exposed three CCF-side problems: the phrase `Without {{user}} realising...` falsely enabled detached POV; supporting NPC terms inside `character_role` could be mistaken for the card subject; and the v0.15.33-hotfix3 agency rule treated harmless scene logistics too much like substantive user canon.
 
-The comparison uses the exact read-only source snapshot captured when the character was sent to Collaborator and compares only explicit generated fields/sections that changed. The author can select changes independently, then choose **Update Original** or **Create Improved Copy**.
+v0.15.36-hotfix2 replaces those brittle checks at the current generation-service leaf. Detached mode now requires explicit observer/narrator/world-NPC/omniscient/detached-viewpoint intent. Identity validation focuses on the actual generated card subject rather than every supporting role mentioned in the sentence. Third-person concepts may identify the supplied character by name, `the character`, or clean pronoun-led prose.
 
-**Update Original** is deliberately limited to refinement-like directions (`refine` and `open_ended`), preserves the source character ID and all unselected/unrelated data, and blocks selected-field writes if the current source changed after Collaborator capture. Branch/related-character directions remain non-destructive. **Create Improved Copy** starts from the latest current source, applies only selected proposal changes, gives the copy a new stable ID, and preserves compatible v0.14.10/v0.15.34 provenance.
+The `{{user}}` boundary is now intentionally split between **scene logistics** and **substantive canon**. Temporary circumstances such as `{{user}} passed out early`, `{{user}} works late`, `{{user}} is on a work call`, being asleep/in another room, arriving home, or briefly being out are allowed when they simply make the opening playable. Invented personality, long-term emotional tendencies, profession, upbringing/trauma, major family history, sexual preferences, ongoing suspicions/motives/plans, or forced meaningful reactions/dialogue/decisions remain invalid unless established by the author.
 
-The v0.15.35 safe default remains unchanged: an occupied Workspace still recommends creating a new character in the same project unless the author explicitly enters Compare & Apply.
+Idea validation now also writes the actual identity/POV/agency report into Generation Diagnostics so a future terminal failure is directly inspectable rather than exporting an empty validation report.
 
-Character Card Forge now uses **Forward+** as the normal desktop renderer on the Godot **4.7.1 stable** baseline, with Godot's Compatibility/OpenGL fallback retained for hardware that cannot initialise the RenderingDevice backend. The previously observed Linux/X11 GL Compatibility crash (`BadAlloc` → `glXMakeCurrent failed` → signal 11) has not reproduced so far after switching to Forward+, but remains an observation item rather than being declared universally fixed.
+The running development build displays **v0.15.36-hotfix2**. **v0.15.37 Multi-source Collaborator remains the next planned feature release** after this hotfix is runtime-confirmed.
 
-The running development build displays **v0.15.36**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+Character Card Forge remains on Godot **4.7.1 stable** and Forward+ as the standard desktop renderer, with Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware. The previously observed Linux/X11 GL Compatibility crash remains classified as not reproduced after switching to Forward+, not universally proven fixed.
 
 ## Completed
+
+### v0.15.36-hotfix2 — AI Ideas Agency / Backstory / POV Validation
+
+- Corrected the false detached-POV trigger caused by generic `without {{user}}` secrecy wording.
+- Made detached mode require explicit observer/narrator/world-NPC/omniscient/detached-viewpoint intent.
+- Replaced broad supporting-role scanning with card-subject-focused identity validation.
+- Accepted ordinary temporary `{{user}}` scene logistics while continuing to reject invented substantive user canon and forced meaningful reactions.
+- Preserved conditional roleplayer choices.
+- Made third-person identity checks accept the supplied character name, `the character`, or clean pronoun-led prose.
+- Added semantic validation reporting to Generation Diagnostics.
+- Added real-seed regression coverage and a new broad regression layer while retaining v0.15.36-hotfix1, Compare & Apply, Forward+, and historical gates.
+- Added `docs/v01536-hotfix2-ai-ideas-agency-backstory.md`.
+
+### v0.15.36-hotfix1 — Configured Default Template
+
+- Fixed new project, Add Character, and missing-template recovery paths so the configured user-created default template wins before the built-in Default fallback.
+- Kept existing characters that explicitly use the built-in Default unchanged.
+- Hardened historical regression inheritance checks so later compatible hotfix shells remain valid.
 
 ### v0.15.36 — Collaborator Refinement Compare/Apply + Forward+
 
 - Added **Compare & Apply to Source Character…** as an explicit destination for completed existing-character Collaborator work while retaining v0.15.35's non-destructive default.
-- Added a dedicated original/proposed comparison window with independent checkboxes for changed Generation Concept, generated template fields, Alternative Greetings, and Character Lorebook material.
-- Omitted unchanged explicit fields from the review so the comparison focuses on meaningful differences.
-- Added selective **Update Original**, preserving the source character ID, unselected fields, assets, attachments, unrelated metadata/extensions, and existing provenance.
-- Added a stale-source conflict guard so a selected field manually changed after Collaborator capture cannot be silently overwritten.
-- Restricted Update Original to same-character refinement directions; branch/related-character directions must use a non-destructive route.
-- Added **Create Improved Copy**, which starts from the latest source character, applies only selected changes, assigns a new stable character identity, and leaves the original unchanged.
-- Reused existing source/derivation provenance rather than creating a parallel refinement-history model.
-- Kept pending completions recoverable after closing Compare & Apply and retained project-scoped pending-routing safety.
+- Added original/proposed comparison with independent selection for changed Generation Concept, generated template fields, Alternative Greetings, and Character Lorebook material.
+- Added selective **Update Original** with stable-ID preservation, unselected-data preservation, and stale-source conflict checks.
+- Restricted destructive update to same-character refinement directions; branch/related-character directions remain non-destructive.
+- Added **Create Improved Copy** from the latest source state with a new stable identity and compatible provenance.
 - Switched the desktop project default from GL Compatibility to **Forward+** while retaining Godot's OpenGL fallback for unsupported RenderingDevice hardware.
-- Added focused v0.15.36 regression coverage, forward-compatible v0.15.35 completion-routing coverage, CI, and `docs/v01536-collaborator-compare-apply-forward-plus.md`.
+- Added focused regression coverage and `docs/v01536-collaborator-compare-apply-forward-plus.md`.
 
 ### v0.15.35 — Collaborator Character Completion & Project Integration
 
@@ -109,7 +124,7 @@ The running development build displays **v0.15.36**. Release metadata remains co
 
 ### v0.15.33-hotfix3 — AI Ideas User Agency Contract
 
-- Prevented AI Ideas from deciding `{{user}}` actions/reactions/feelings unless explicitly established by the author, with bounded semantic repair and conditional-choice support.
+- Added the first explicit AI Ideas user-agency contract, bounded semantic repair, source-authored action preservation, and conditional-choice support. v0.15.36-hotfix2 refines this rule to distinguish temporary scene logistics from substantive user canon.
 
 ### v0.15.33-hotfix2 — AI Ideas Notebook Capture Reliability
 
@@ -347,11 +362,13 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
+- Runtime-test v0.15.36-hotfix2 with the reported secrecy-style AI Ideas premise and additional real-provider batches. Confirm temporary scene logistics are accepted, invented durable user canon is rejected, supporting NPC roles do not falsely redefine the card subject, and valid batches do not incur unnecessary repair requests.
+- Confirm failed/repaired Idea batches now retain a useful semantic validation report in Diagnostics.
+- Runtime-test v0.15.36-hotfix1 configured-default-template behavior for new projects, Add Character, and missing-template fallback with real user templates.
 - Runtime-test v0.15.36 Compare & Apply with real Collaborator Blueprint and Detailed Workspace Draft completions: selective changes, Update Original, Create Improved Copy, stale-source conflict handling, pending-completion reopen, and branch-intent safeguards.
 - Continue normal Linux/X11 use under Forward+ and treat the old `BadAlloc` / `glXMakeCurrent failed` crash as **not reproduced after renderer change** until enough runtime evidence supports closing it; verify automatic Compatibility fallback remains usable on unsupported hardware.
 - Runtime-test v0.15.35 completion routing with real Collaborator Blueprint and Detailed Workspace Draft generations: empty-slot reuse, occupied same-project creation, new-project Library creation, cancel/reopen pending completion, and project-switch clearing.
 - Runtime-test v0.15.34 Existing Character → Collaborator across refine, future/past, descendant, side-character, connected-character and same-setting directions; confirm source cards remain unchanged where appropriate and provenance survives completion/refinement.
-- Runtime-test v0.15.33-hotfix3 with real-provider AI Ideas batches and confirm generated concepts/hooks do not decide `{{user}}` behavior unless directly preserved from the source premise; verify conditional/open-ended hooks remain varied and specific rather than becoming vague.
 - Runtime-test v0.15.33-hotfix2 with a real AI Ideas batch and confirm visible generated cards enable **Save Generated Ideas…** and **Develop Generated Idea…**, with selective saving still opt-in only.
 - Runtime-test v0.15.33 generated/saved Idea Collaborator sources through long conversations, restart persistence, summarisation, and attachment removal; first-class source snapshots must remain intact and continue informing later replies.
 - Real-provider test malformed/empty/truncated API envelopes and confirm they produce one actionable provider failure/Diagnostics record rather than repeated Godot `Parse JSON failed` errors.
@@ -442,7 +459,9 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep persistent app-level state under `user://` separate from portable project/card data unless explicitly included for portability.
 - Keep Idea Notebook persistence independent of Character Projects and version both the library index and individual saved-idea records so later source/provenance fields can evolve compatibly.
 - Keep Idea Notebook completion capture bound to the live generation-service topology rather than one assumed worker reference; embedded legacy-controller rebinding must not make visible AI results unavailable to save/develop workflows.
-- Keep AI Ideas player-agency validation layered after the existing identity/POV validation, preserve explicit source-authored `{{user}}` setup, and avoid treating conditional/hypothetical choices as if the AI had already chosen them for the roleplayer.
+- Keep AI Ideas agency/backstory validation focused on durable user canon and consequential responses rather than banning harmless temporary scene logistics. Preserve explicit source-authored facts and conditional/hypothetical choices.
+- Keep detached-POV detection explicit and role-based; generic phrases such as `without {{user}} realising` must remain normal user-centric secrecy premises.
+- Keep AI Ideas card-subject validation focused on the generated character rather than supporting NPC terms mentioned in the role description.
 - Keep Collaborator source seeding as a public structured capability instead of directly manipulating private composer/session controls from Idea Notebook or Workspace.
 - Keep the primary Collaborator source separate from ordinary `context_items`; attachments may be removed or summaries rebuilt without changing the source snapshot.
 - Keep Collaborator source formats versioned and backwards-compatible so multi-source workflows extend rather than replace existing source-aware conversations.
