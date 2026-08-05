@@ -198,7 +198,7 @@ func _run() -> void:
 	await process_frame
 	await process_frame
 	var workspace_value: Variant = app.get("_workspace")
-	assert(workspace_value is CCFWorkspaceV01536View, "The real main scene must install the v0.15.36 Workspace.")
+	assert(workspace_value is CCFWorkspaceV01536View, "The real main scene must install the v0.15.36 Workspace or a compatible descendant.")
 	var workspace := workspace_value as CCFWorkspaceV01536View
 	var capabilities := workspace.collaborator_refinement_capabilities_v01536()
 	assert(bool(capabilities.get("existing_character_compare", false)), "v0.15.36 must advertise source/proposal comparison.")
@@ -241,7 +241,11 @@ func _run() -> void:
 	)
 
 	var main_script := app.get_script() as Script
-	assert(main_script != null and main_script.resource_path.ends_with("main_v01536.gd"), "The active app shell must be v0.15.36.")
+	assert(main_script != null, "The active app shell must have a script.")
+	assert(
+		app.has_method("_update_build_version_label_v01536"),
+		"The active app shell must retain the v0.15.36 shell capability through inheritance."
+	)
 
 	app.queue_free()
 	chooser.queue_free()

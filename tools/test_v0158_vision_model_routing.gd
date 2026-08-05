@@ -28,7 +28,10 @@ func _active_shell_inherits_v0158() -> bool:
 		return false
 	var script_path := scene_source.substr(marker_index, end_index + 3 - marker_index)
 	var visited: Dictionary = {}
-	for _depth in range(32):
+	# Later releases and hotfixes intentionally extend the historical shell chain.
+	# Keep a generous cycle-safe ceiling so adding one compatible leaf does not
+	# invalidate an old feature regression merely because the chain grew deeper.
+	for _depth in range(96):
 		if script_path == "res://scripts/main_v0158.gd":
 			return true
 		if script_path.is_empty() or visited.has(script_path):
