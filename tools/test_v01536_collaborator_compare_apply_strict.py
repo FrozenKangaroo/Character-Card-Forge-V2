@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the v0.15.35 Collaborator completion routing regression strictly."""
+"""Run the v0.15.36 Collaborator Compare & Apply regression strictly."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ import subprocess
 import sys
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-SUCCESS_MARKER = "v0.15.35 Collaborator completion routing regression passed"
+SUCCESS_MARKER = "v0.15.36 Collaborator Compare & Apply regression passed"
 ERROR_PATTERNS = (
     re.compile(r"SCRIPT ERROR:", re.IGNORECASE),
     re.compile(r"Assertion failed", re.IGNORECASE),
@@ -43,7 +43,7 @@ def main() -> int:
         "--path",
         str(REPO_ROOT),
         "--script",
-        "res://tools/test_v01535_collaborator_completion_routing_compat.gd",
+        "res://tools/test_v01536_collaborator_compare_apply.gd",
     ]
     try:
         completed = subprocess.run(
@@ -52,31 +52,31 @@ def main() -> int:
             text=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
-            timeout=100,
+            timeout=120,
             check=False,
         )
     except subprocess.TimeoutExpired as exc:
         output = exc.stdout if isinstance(exc.stdout, str) else ""
         if output:
             print(output, end="" if output.endswith("\n") else "\n")
-        print("ERROR: v0.15.35 Collaborator completion routing regression timed out.", file=sys.stderr)
+        print("ERROR: v0.15.36 Collaborator Compare & Apply regression timed out.", file=sys.stderr)
         return 124
 
     output = completed.stdout or ""
     if output:
         print(output, end="" if output.endswith("\n") else "\n")
     if completed.returncode != 0:
-        print(f"ERROR: v0.15.35 regression exited with {completed.returncode}.", file=sys.stderr)
+        print(f"ERROR: v0.15.36 regression exited with {completed.returncode}.", file=sys.stderr)
         return completed.returncode
     matched = [pattern.pattern for pattern in ERROR_PATTERNS if pattern.search(output)]
     if matched:
         print(
-            "ERROR: v0.15.35 regression logged a forbidden error: " + ", ".join(matched),
+            "ERROR: v0.15.36 regression logged a forbidden error: " + ", ".join(matched),
             file=sys.stderr,
         )
         return 1
     if SUCCESS_MARKER not in output:
-        print("ERROR: v0.15.35 regression did not print its success marker.", file=sys.stderr)
+        print("ERROR: v0.15.36 regression did not print its success marker.", file=sys.stderr)
         return 1
     return 0
 

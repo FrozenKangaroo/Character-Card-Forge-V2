@@ -75,7 +75,10 @@ func _run() -> void:
 	assert(chooser_ids.has("refine") and chooser_ids.has("open_ended"), "The chooser must include both focused and open-ended development.")
 
 	var project_text := FileAccess.get_file_as_string("res://project.godot")
-	assert(project_text.contains('config/features=PackedStringArray("4.7", "GL Compatibility")'), "Character Card Forge must advertise the Godot 4.7 project feature baseline.")
+	assert(
+		project_text.contains('config/features=PackedStringArray("4.7",'),
+		"Character Card Forge must retain the Godot 4.7 project feature baseline regardless of the selected renderer."
+	)
 
 	var scene := load("res://scenes/main.tscn") as PackedScene
 	assert(scene != null, "The real main scene must load for v0.15.34 regression coverage.")
