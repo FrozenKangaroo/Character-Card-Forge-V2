@@ -19,6 +19,7 @@ ERROR_PATTERNS = (
     re.compile(r"SHADOWED_VARIABLE_BASE_CLASS", re.IGNORECASE),
     re.compile(r"Parse JSON failed", re.IGNORECASE),
     re.compile(r"Invalid access", re.IGNORECASE),
+    re.compile(r"Invalid call", re.IGNORECASE),
 )
 
 
@@ -42,7 +43,7 @@ def main() -> int:
         "--path",
         str(REPO_ROOT),
         "--script",
-        "res://tools/test_v01535_collaborator_completion_routing.gd",
+        "res://tools/test_v01535_collaborator_completion_routing_compat.gd",
     ]
     try:
         completed = subprocess.run(
