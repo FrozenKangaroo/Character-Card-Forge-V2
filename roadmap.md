@@ -15,7 +15,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - OpenAI-compatible and local/self-hosted Text, Vision, and Image providers remain first-class targets.
 - Text/Vision provider roles and Image Generation providers stay independently configurable.
 - New systems extend the central project model rather than create parallel character copies.
-- Existing character/card data must not be destroyed by unchecked preview fields, failed reviews, disabled generation components, unrelated regeneration, partial imports, or exploratory AI conversation.
+- Existing character/card data must not be destroyed by unchecked preview fields, failed reviews, disabled generation components, unrelated regeneration, partial imports, exploratory AI conversation, or unreviewed Collaborator output.
 - Conversational brainstorming never becomes canonical project data until the user explicitly applies, generates, or imports it.
 - Stable internal IDs should survive user-facing renames where practical.
 - Wider desktop windows should reveal more workspace rather than scale a fixed game-style canvas.
@@ -26,9 +26,11 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Generated ideas remain disposable until the user explicitly saves them. Persistent Idea Notebook material is versioned app-level authoring data independent of Character Projects, and saving one idea must never implicitly save the rest of a generated batch.
 - Named Idea Notebooks organise saved material without replacing tags: notebook membership is one organisational axis while tags/search work across notebooks.
 - Collaborator source handoffs preserve structured source snapshots and provenance rather than paste opaque text into private UI state.
-- Collaborator source-aware reasoning should distinguish **established source facts**, **author-requested changes**, and **new/proposed details**. Existing facts stay authoritative unless the author explicitly branches, retcons, advances, rewrites, or replaces them.
+- Collaborator source-aware reasoning distinguishes **established source facts**, **author-requested changes**, and **new/proposed details**. Existing facts stay authoritative unless the author explicitly branches, retcons, advances, rewrites, or replaces them.
 - A Collaborator source is read-only authoring context. Conversation, summarisation, or attachment removal must not silently mutate or erase the source snapshot.
 - Collaborator completion routing is explicit: an occupied character is never overwritten by a completed Blueprint/draft without a later review/apply workflow, while genuinely empty placeholders may be safely reused.
+- Existing-character refinement compares against the exact captured source snapshot. Selective application must preserve unselected data and must not overwrite newer manual edits silently.
+- Branch/related-character Collaborator directions remain non-destructive by default; future/past versions, alternate routes, descendants, side-character promotions, connected characters, and same-setting characters must not casually overwrite their source.
 - Alternate character routes should not require full duplicate cards when only a few fields differ; Linked Variants may inherit from a base while exports always materialise normal standalone cards.
 - Visual graph layout metadata stays separate from authoritative character, relationship, and route data.
 - External authoring tools and AIs should be able to hand CCF a partial character without being forced to generate filler for fields they do not know.
@@ -49,6 +51,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - The live Workspace generation-service composition is a tested compatibility boundary. Compatibility is capability-based rather than an exact historical script filename check.
 - Malformed, empty, interrupted, or non-JSON provider envelopes should fail as normal provider/network errors with usable Diagnostics rather than emitting repeated Godot JSON parser errors.
 - Native engine/driver crashes are tracked separately from application-level provider failures and are never marked fixed without evidence.
+- Forward+ is the standard desktop renderer. Compatibility/OpenGL remains an automatic fallback for systems that cannot initialise a supported RenderingDevice backend rather than the normal modern-desktop path.
 - Normal Godot import/open operations leave the Git checkout clean.
 - Release/update helpers prefer the repository checkout they are launched from and retain separate-copy syncing only as an explicit fallback.
 - Every major supported workflow has representative cross-feature regression coverage; a focused feature test alone is not a release gate.
@@ -66,156 +69,111 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.35 development candidate — Collaborator Character Completion & Project Integration**
+**v0.15.36 development candidate — Collaborator Refinement Compare/Apply + Forward+**
 
-v0.15.35 completes the destination-routing stage deliberately left open by v0.15.34. Character Collaborator now generates its Blueprint or Detailed Workspace Draft first, then asks where the completed character should be placed instead of immediately mutating the current Workspace.
+v0.15.36 completes the existing-character refinement loop started in v0.15.34 and made safely routable in v0.15.35. When a pending Collaborator completion originated from an existing character that is still present in the same project, the destination chooser can now open **Compare & Apply to Source Character…** instead of forcing an unreviewed replacement.
 
-A genuinely untouched Workspace character defaults to **Populate Current Empty Character**, preserving the placeholder's stable character ID. An occupied Workspace defaults to **Create New Character in This Project**, preserving the source/current character unchanged while keeping the new character inside the same project context. **Create as New Project** is the non-destructive alternative.
+The comparison uses the exact read-only source snapshot captured when the character was sent to Collaborator and compares only explicit generated fields/sections that changed. The author can select changes independently, then choose **Update Original** or **Create Improved Copy**.
 
-Closing the destination chooser keeps the generated completion pending so it can be reopened from **Author → Place Pending Collaborator Completion…** without another provider request. Pending payloads are scoped to their originating project and are cleared when a different project is loaded.
+**Update Original** is deliberately limited to refinement-like directions (`refine` and `open_ended`), preserves the source character ID and all unselected/unrelated data, and blocks selected-field writes if the current source changed after Collaborator capture. Branch/related-character directions remain non-destructive. **Create Improved Copy** starts from the latest current source, applies only selected proposal changes, gives the copy a new stable ID, and preserves compatible v0.14.10/v0.15.34 provenance.
 
-Direct replacement of an occupied character is intentionally not part of v0.15.35. **v0.15.36 remains the Compare & Apply stage**, where original/proposed data can be inspected before selective or whole-character replacement.
+The v0.15.35 safe default remains unchanged: an occupied Workspace still recommends creating a new character in the same project unless the author explicitly enters Compare & Apply.
 
-The Godot baseline remains **4.7.1 stable**, established by v0.15.34. The separate Linux/X11 GL Compatibility crash (`BadAlloc` → `glXMakeCurrent failed` → signal 11) remains under investigation and is not claimed fixed by the engine-version update.
+Character Card Forge now uses **Forward+** as the normal desktop renderer on the Godot **4.7.1 stable** baseline, with Godot's Compatibility/OpenGL fallback retained for hardware that cannot initialise the RenderingDevice backend. The previously observed Linux/X11 GL Compatibility crash (`BadAlloc` → `glXMakeCurrent failed` → signal 11) has not reproduced so far after switching to Forward+, but remains an observation item rather than being declared universally fixed.
 
-The running development build displays **v0.15.35**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
+The running development build displays **v0.15.36**. Release metadata remains controlled by `release.sh` until a tagged release is promoted.
 
 ## Completed
 
+### v0.15.36 — Collaborator Refinement Compare/Apply + Forward+
+
+- Added **Compare & Apply to Source Character…** as an explicit destination for completed existing-character Collaborator work while retaining v0.15.35's non-destructive default.
+- Added a dedicated original/proposed comparison window with independent checkboxes for changed Generation Concept, generated template fields, Alternative Greetings, and Character Lorebook material.
+- Omitted unchanged explicit fields from the review so the comparison focuses on meaningful differences.
+- Added selective **Update Original**, preserving the source character ID, unselected fields, assets, attachments, unrelated metadata/extensions, and existing provenance.
+- Added a stale-source conflict guard so a selected field manually changed after Collaborator capture cannot be silently overwritten.
+- Restricted Update Original to same-character refinement directions; branch/related-character directions must use a non-destructive route.
+- Added **Create Improved Copy**, which starts from the latest source character, applies only selected changes, assigns a new stable character identity, and leaves the original unchanged.
+- Reused existing source/derivation provenance rather than creating a parallel refinement-history model.
+- Kept pending completions recoverable after closing Compare & Apply and retained project-scoped pending-routing safety.
+- Switched the desktop project default from GL Compatibility to **Forward+** while retaining Godot's OpenGL fallback for unsupported RenderingDevice hardware.
+- Added focused v0.15.36 regression coverage, forward-compatible v0.15.35 completion-routing coverage, CI, and `docs/v01536-collaborator-compare-apply-forward-plus.md`.
+
 ### v0.15.35 — Collaborator Character Completion & Project Integration
 
-- Added explicit post-generation destination routing for Collaborator Blueprint and Detailed Workspace Draft handoffs.
-- Added **Populate Current Empty Character** as the recommended destination for genuinely untouched Workspace placeholders while preserving the existing character ID/creation identity.
-- Added **Create New Character in This Project** as the recommended destination when the current character is occupied; the previous character remains unchanged.
-- Added **Create as New Project** as a non-destructive Library destination that leaves the current Workspace project untouched.
-- Added meaningful empty-slot detection across concept, metadata, configured generation fields, core card content, Alternative Greetings, Lorebook/extensions, assets and attachments.
-- Preserved Alternative Greetings and Character Lorebook material during detailed-draft materialisation.
-- Preserved v0.15.34 source/derivation provenance in completed standalone character records.
-- Added pending-completion recovery through **Author → Place Pending Collaborator Completion…** so cancelling destination selection does not require another provider call.
-- Scoped pending completions to the originating project and clear them on project changes.
-- Kept occupied-character replacement out of this release and reserved it for v0.15.36 Compare & Apply.
-- Added Godot 4.7.1-focused completion-routing regression coverage and `docs/v01535-collaborator-completion-routing.md`.
+- Added explicit post-generation destination routing, safe empty-slot reuse, same-project/new-project destinations, pending-completion recovery, and source/derivation provenance preservation without occupied-character overwrite.
 
 ### v0.15.34 — Existing Character → Collaborator + Godot 4.7.1
 
-- Added **Author → Develop Current Character in Collaborator…** for the active Workspace/imported character.
-- Captured the current character as the established v0.15.33 read-only structured character source rather than flattening it into chat text.
-- Added ten starting directions: refine, alternative route/version, future version, past version, continue after event, side-character promotion, relative/descendant, connected character, same-setting character, and open-ended development.
-- Preserved optional author direction as explicit model-facing `author_intent`.
-- Reused v0.14.10 derivation provenance vocabulary for source project/character, derivation type/prompt and workflow origin rather than creating a second lineage model.
-- Exposed the selected direction in the Collaborator source panel while leaving the source character unchanged.
-- Moved the project/CI minimum engine baseline from Godot 4.6.x to **Godot 4.7.1 stable**.
-- Fixed the Idea Notebook refresh-loop `title` shadow warning without suppressing warning categories.
-- Kept completion/apply semantics explicit for v0.15.35/v0.15.36 and did not claim the separate GLX native crash was fixed by the engine update.
-- Added focused v0.15.34 source/intent/provenance/live-wiring regression coverage and `docs/v01534-existing-character-collaborator.md`.
+- Added structured existing-character Collaborator sources, ten development directions, read-only source snapshots, derivation provenance, and moved the project/CI baseline to Godot 4.7.1 stable.
 
 ### v0.15.33-hotfix3 — AI Ideas User Agency Contract
 
-- Added an explicit **User Agency Contract** to AI Ideas system/user prompts so `{{user}}` remains controlled by the person roleplaying.
-- Extended the existing identity/POV semantic validator across `concept` and `roleplay_hook` to reject common AI-invented `{{user}}` actions/reactions, prescriptive behavior, and asserted feelings/states.
-- Preserved `{{user}}` actions explicitly established by the source premise as valid setup while keeping subsequent choices open.
-- Allowed conditional/hypothetical phrasing such as **whether `{{user}}` confronts her** and **if `{{user}}` chooses to investigate** so open roleplay hooks are not flattened into vague prose.
-- Fed agency violations into the existing bounded semantic-repair pass and appended the same agency rules to repair prompts.
-- Added `CCFGenerationServiceV01533Hotfix3` above the current provider-hardening / AI Jobs / scheduler stack and installed it across current Workspace AI workers.
-- Preserved v0.15.33-hotfix2 Idea Notebook completion capture and v0.15.33-hotfix1 Structured Builder → Collaborator behavior.
-- Added focused prompt/validation/repair/live-wiring regression coverage, `docs/v01533-hotfix3-ai-ideas-user-agency.md`, and `regression_suites_v01533_hotfix3.json`.
+- Prevented AI Ideas from deciding `{{user}}` actions/reactions/feelings unless explicitly established by the author, with bounded semantic repair and conditional-choice support.
 
 ### v0.15.33-hotfix2 — AI Ideas Notebook Capture Reliability
 
-- Fixed successful AI Ideas batches being visible in the generator while Idea Notebook still reported no completed batch and kept **Save Generated Ideas…** disabled.
-- Restored **Develop Generated Idea…** availability for the same captured batch without automatically saving it.
-- Kept `ideas` as the current canonical Idea-generation job type and added only a forward-compatible alias rather than rewriting the established generation contract.
-- Made the Notebook completion bridge listen across compatible live Workspace generation services instead of assuming the embedded legacy controller can only ever complete through one worker reference.
-- Refreshes capture wiring after concurrent-client rebinding and immediately before/after opening the unified Idea Generator, where legacy controller service rebinding can occur.
-- Added a real-main-scene regression that emits `job_completed` through a second live generation service, verifies Save/Develop controls enable and the status updates, and proves capture alone does not persist anything.
-- Advanced the broad regression default to `regression_suites_v01533_hotfix2.json` and documented the corrected diagnosis in `docs/v01533-hotfix2-ai-ideas-notebook-capture.md`.
+- Restored live AI Ideas completion capture for Idea Notebook save/develop actions across compatible generation-service instances.
 
 ### v0.15.33-hotfix1 — Structured Builder → Collaborator
 
-- Added **Develop in Collaborator** beside **Build Idea into Main Concept** in Structured Builder.
-- Preserved selected/typed ingredients, stable field IDs, labels, multi-select metadata, and custom instructions as read-only structured Collaborator source context.
-- Kept Structured Builder source distinct from generated ideas, saved Notebook ideas, and existing-character source groundwork.
-- Kept v0.15.34 reserved for the larger Existing Character → Collaborator workflow.
+- Added structured Builder ingredient/source handoff into Character Collaborator without flattening selected fields into opaque prose.
 
 ### v0.15.33 — Generic Collaborator Source Context
 
-- Added versioned first-class Collaborator `source_context` snapshots with stable source IDs, source type, structured snapshot, provenance, capture time, and author intent.
-- Added source types for generated AI Ideas, saved Idea Notebook entries, and existing-character schema groundwork.
-- Kept source snapshots read-only and separate from removable attachments, messages, and lossy conversation summaries.
-- Added model-facing source rules that distinguish established source facts, author-requested changes, and new/proposed details.
-- Added a visible Source panel and source-specific context-token accounting to Character Collaborator.
-- Persisted source-aware conversations through the existing independent Collaborator session store without changing historical no-source sessions.
-- Added **Develop Generated Idea…** with a chooser for the latest completed AI Ideas batch; the selected idea is not automatically saved to Idea Notebook.
-- Added **Develop in Collaborator** to saved Idea Notebook entries while preserving stable Idea/Notebook provenance.
-- Made Idea/Notebook handoff passive so opening the source conversation does not immediately queue an AI request.
-- Established the existing-character source API for v0.15.34 without prematurely adding its Workspace UI or derivation-intent workflow.
-- Limited v0.15.33 to one primary source per conversation; multi-source work remains v0.15.37.
-- Added `CCFGenerationServiceV01533` across current concurrent workers to catch empty/malformed/non-JSON provider envelopes before inherited parser layers, retain raw HTTP/network diagnostics, and use existing bounded retry behavior.
-- Preserved the v0.15.32-hotfix1 AI Ideas header layout, v0.15.32 Idea Notebook, v0.15.31 AI Jobs, v0.15.26 scheduler/Safe Sections, Collaborator attachments, Vision routing, Blueprint handoff, and existing app-level/project boundaries.
-- Added `docs/v01533-collaborator-source-context.md`, strict source/provider regression coverage, a focused v0.15.33 workflow, and the v0.15.33 broad regression manifest.
+- Added versioned read-only structured Collaborator source snapshots/provenance for generated Ideas, saved Ideas, Structured Builder, and existing-character groundwork.
 
 ### v0.15.32-hotfix1 — AI Ideas Notebook Header Layout
 
-- Replaced the malformed AI Ideas `HFlowContainer` action strip with a compact button row and separate full-width batch-status row so status text cannot collapse to a one-character column or stretch the tab vertically.
-- Added screenshot-failure-specific layout regression coverage while preserving all Idea Notebook behavior.
+- Fixed malformed AI Ideas action/status layout while preserving Idea Notebook behavior.
 
 ### v0.15.32 — Idea Notebook Foundation
 
-- Added **Idea Notebook** beside AI Ideas and Structured Builder.
-- Added explicit selective saving for generated batches; generation remains disposable until the user chooses what to keep.
-- Preserved structured generated title, character identity/role, source anchor, roleplay hook, concept, tags, and available generation provenance.
-- Added versioned app-level storage under `user://character_card_forge/idea_notebook` with a library index and individual idea JSON files.
-- Added named notebook create/rename/delete, built-in **All Ideas** and **Unfiled**, notebook counts, search, tag filtering, editing, move, archive/restore, delete, and **Use as Main Concept**.
-- Made notebook deletion non-destructive: its ideas become Unfiled.
+- Added disposable generated batches, selective saving, named notebooks, Unfiled, tags/search, editing/move/archive/restore/delete, and app-level versioned persistence.
 
 ### v0.15.31 — AI Jobs Queue Visibility & Selective Cancellation
 
-- Added a collapsible **AI Jobs (N)** panel with running, coordinating, queued, capacity-waiting, dependency-waiting, and completed-child states.
-- Added workflow/stage, role, provider/model, queue-position and dependency details where available.
-- Added selective per-job cancellation without clearing unrelated worker queues; Safe child cancellation targets its parent build.
-- Surfaced Image Prompt/Image Generation work through the shared jobs view while retaining subsystem-owned cleanup.
+- Added inspectable running/queued/waiting/dependency states and selective cancellation across shared AI work.
 
 ### v0.15.30 — Image Prompt Word Wrapping
 
-- Restored actual visual word wrapping for Image Prompt and Negative Prompt without mutating stored prompt text.
+- Restored visual wrapping for Image Prompt and Negative Prompt without mutating stored text.
 
 ### v0.15.29 — Embedded Image Studio + AI Prompt Restoration
 
-- Restored Image Studio as a main-navigation page and restored Character Text-role **Generate Prompt from Character** alongside deterministic **Build Local Fallback**.
-- Kept passive browsing provider-free and preserved v0.15.28 project/provider-state fixes.
+- Restored Image Studio as main navigation and Character Text-role **Generate Prompt from Character** beside deterministic Local Fallback.
 
 ### v0.15.28 — Image Studio Live Project and Provider State
 
-- Added live Workspace-save project handoff, real project rescans, correct Image-profile routing/default storage, and persisted per-Image-profile model/sampler discovery.
+- Added live project handoff/rescans, correct Image-profile routing, and persisted per-profile model/sampler discovery.
 
 ### v0.15.27 — Runtime Lifecycle and Warning Cleanup
 
-- Removed reported GDScript shadow warnings and made deferred Collaborator scrolling safe when its window leaves the SceneTree.
+- Removed reported GDScript shadow warnings and hardened deferred Collaborator scrolling against SceneTree/window lifecycle changes.
 
 ### v0.15.26 — Concurrent AI Scheduler + Collaborator Service Compatibility
 
-- Added configurable overall/Text/Vision/Image/per-character concurrency, isolated workers, queued overflow, and dependency-wave parallel Safe Section generation.
-- Replaced Collaborator's exact historical script check with capability-based current-service compatibility.
+- Added configurable overall/Text/Vision/Image/per-character concurrency, isolated workers, queued overflow, dependency-wave Safe Section parallelism, and capability-based Collaborator service compatibility.
 
 ### v0.15.25 — Character Generation Token Budget Invariant
 
-- Made the active Text profile Maximum Output Tokens authoritative across Interview, Safe Sections, repairs, fidelity correction, and Fast Full Card; removed the historical 2,600-token Interview ceiling.
+- Made the active Text profile Maximum Output Tokens authoritative across Interview, Safe Sections, repairs, fidelity correction, and Fast Full Card.
 
 ### v0.15.24 — Live Safe Section Service Wiring
 
-- Fixed the live Workspace retaining an old service and added real-main-scene composition coverage.
+- Fixed live Workspace service composition and added real-main-scene coverage.
 
 ### v0.15.23 — Token Settings Regression Fix
 
-- Restored Text and Vision token controls and modern large output values.
+- Restored Text/Vision token controls and modern large output values.
 
 ### v0.15.22 — Safe Section Build + Generation Diagnostics
 
-- Added recommended Safe Section Build, Fast Full Card, focused component/field repair, deterministic multi-group assembly, and credential-redacted Diagnostics.
+- Added recommended Safe Section Build, Fast Full Card, focused repair, deterministic multi-group assembly, and credential-redacted Diagnostics.
 
 ### v0.15.21 — Unified Collaborator Attachments
 
-- Added persistent text/subtitle/JSON/image references with token accounting, Vision routing, removal semantics, and documentation.
+- Added persistent text/subtitle/JSON/image reference attachments with token accounting, Vision routing, removal semantics, and documentation.
 
 ### v0.15.20 — Broad Regression Safety
 
@@ -223,7 +181,7 @@ The running development build displays **v0.15.35**. Release metadata remains co
 
 ### v0.15.19 — Release Checkout Selection
 
-- Made release/update helpers prefer the current checkout and retained explicit separate-copy syncing.
+- Made release/update helpers prefer the current checkout with explicit separate-copy fallback.
 
 ### v0.15.18 — Checkout Hygiene + Warning Cleanup
 
@@ -239,7 +197,7 @@ The running development build displays **v0.15.35**. Release metadata remains co
 
 ### v0.15.15 — Blueprint-First Collaborator Handoff
 
-- Made detailed Generation Concept Blueprint the recommended handoff while retaining Detailed Workspace Draft.
+- Made detailed Generation Concept Blueprint the recommended Collaborator handoff while retaining Detailed Workspace Draft.
 
 ### v0.15.14 — Component-Driven Full Synthesis
 
@@ -247,11 +205,11 @@ The running development build displays **v0.15.35**. Release metadata remains co
 
 ### v0.15.13 — Complete Synthesis Review + Responsiveness
 
-- Added complete-result review and improved Collaborator context preparation and autosave responsiveness.
+- Added complete-result review and improved Collaborator context preparation/autosave responsiveness.
 
 ### v0.15.12 — Full Character Synthesis from Workspace
 
-- Added full-Workspace synthesis while retaining selective tools; later normal Generate Character routing returned to the validated parity pipeline.
+- Added full-Workspace synthesis while retaining selective tools; normal Generate Character later returned to the validated parity pipeline.
 
 ### v0.15.11 — Visible Vision Analysis Messages
 
@@ -259,7 +217,7 @@ The running development build displays **v0.15.35**. Release metadata remains co
 
 ### v0.15.10 — Persistent FileDialog State
 
-- Persisted favourites, history, filesystem location, view mode, hidden-file state, and sorting across restarts.
+- Persisted favourites, history, location, view mode, hidden-file state, and sorting across restarts.
 
 ### v0.15.9 — Independent Vision Limits & Input Optimisation
 
@@ -389,15 +347,14 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## In Progress
 
+- Runtime-test v0.15.36 Compare & Apply with real Collaborator Blueprint and Detailed Workspace Draft completions: selective changes, Update Original, Create Improved Copy, stale-source conflict handling, pending-completion reopen, and branch-intent safeguards.
+- Continue normal Linux/X11 use under Forward+ and treat the old `BadAlloc` / `glXMakeCurrent failed` crash as **not reproduced after renderer change** until enough runtime evidence supports closing it; verify automatic Compatibility fallback remains usable on unsupported hardware.
 - Runtime-test v0.15.35 completion routing with real Collaborator Blueprint and Detailed Workspace Draft generations: empty-slot reuse, occupied same-project creation, new-project Library creation, cancel/reopen pending completion, and project-switch clearing.
-- Runtime-test v0.15.34 Existing Character → Collaborator across refine, future/past, descendant, side-character, connected-character and same-setting directions; confirm source cards remain unchanged and provenance survives v0.15.35 completion.
+- Runtime-test v0.15.34 Existing Character → Collaborator across refine, future/past, descendant, side-character, connected-character and same-setting directions; confirm source cards remain unchanged where appropriate and provenance survives completion/refinement.
 - Runtime-test v0.15.33-hotfix3 with real-provider AI Ideas batches and confirm generated concepts/hooks do not decide `{{user}}` behavior unless directly preserved from the source premise; verify conditional/open-ended hooks remain varied and specific rather than becoming vague.
-- Runtime-test v0.15.33-hotfix2 with a real AI Ideas batch and confirm the visible generated cards also enable **Save Generated Ideas…** and **Develop Generated Idea…**, with selective saving still opt-in only.
-- Runtime-test v0.15.33 by sending a generated unsaved Idea into Collaborator, developing it through several messages, closing/reopening CCF, and verifying the source snapshot/provenance survives independently of the original generation batch.
-- Runtime-test a saved Idea Notebook entry through **Develop in Collaborator**, confirm its Notebook entry remains unchanged, and verify Idea/notebook provenance survives session reload.
-- Exercise source-aware Collaborator context through user-triggered summarisation and attachment removal; the first-class source must remain intact and continue to inform later replies.
+- Runtime-test v0.15.33-hotfix2 with a real AI Ideas batch and confirm visible generated cards enable **Save Generated Ideas…** and **Develop Generated Idea…**, with selective saving still opt-in only.
+- Runtime-test v0.15.33 generated/saved Idea Collaborator sources through long conversations, restart persistence, summarisation, and attachment removal; first-class source snapshots must remain intact and continue informing later replies.
 - Real-provider test malformed/empty/truncated API envelopes and confirm they produce one actionable provider failure/Diagnostics record rather than repeated Godot `Parse JSON failed` errors.
-- Investigate the separate Linux/X11 GL Compatibility native crash observed twice as `BadAlloc` → `glXMakeCurrent failed` → signal 11. Compare behavior under normal GL Compatibility and a deliberate Vulkan/Forward+ test before considering renderer changes; do not conflate this with API JSON failures.
 - Runtime-test v0.15.32 Idea Notebook through a real AI Ideas batch: selective save, multi-save, restart persistence, named notebooks/tags/search, edit/move/archive/restore, and non-auto-save behavior.
 - Verify deleting a named Idea Notebook retains every saved idea in Unfiled and Notebook data stays outside portable Character Projects unless explicitly used as authoring input.
 - Runtime-test v0.15.31 with real provider calls while Character generation, Collaborator, Ideas, Vision, AI image-prompt generation, and Image generation run concurrently; verify running/queued/capacity/dependency states and selective cancellation.
@@ -420,9 +377,10 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 
 ## Next Up
 
-- **v0.15.36 — Collaborator Refinement Compare/Apply:** compare an existing/source character with the Collaborator proposal before any destructive update; support selective field/section acceptance, update-original and create-improved-copy workflows.
-- Reuse v0.14.10 derivation/relationship provenance and v0.15.34 source intent rather than creating a parallel refinement history model.
-- Keep the v0.15.35 safe default for occupied Workspaces unless the user explicitly enters Compare & Apply.
+- **v0.15.37 — Multi-source Collaborator:** allow one Collaborator conversation to accept several structured sources at once, including multiple characters and/or saved/generated Ideas, for relationship, family, cast, scenario, continuity, and ensemble development.
+- Define source precedence/conflict presentation so multiple source snapshots remain individually identifiable instead of being flattened into one opaque context block.
+- Preserve per-source IDs, provenance, author intent, and read-only semantics; completion/refinement must make it clear which source(s) a proposed character or change derives from.
+- Reuse v0.15.36 Compare & Apply where one existing character is the explicit refinement target while allowing other sources to act as continuity/reference context.
 - Add optional provider/API execution pools so profiles sharing one cloud provider can share a provider-specific concurrency/rate-limit ceiling.
 - Add optional local hardware pools so Vision and Image providers using the same GPU can share a configurable resource limit.
 - Extend AI Jobs with pause/resume, priority, move-to-front/reorder controls, richer parent/child progress, and clearer project/character names.
@@ -441,7 +399,6 @@ Detailed per-release implementation notes remain in versioned docs, pull request
 ## Planned Features
 
 - Preserve source/relationship provenance for Collaborator-created characters while ensuring each created/exported character remains a complete standalone card. Suggest appropriate Relationship Graph edges without silently making them canonical.
-- **v0.15.36 — Collaborator Refinement Compare/Apply:** compare original and proposed fields/sections and allow selective acceptance, update-original, or create-improved-copy workflows.
 - **v0.15.37 — Multi-source Collaborator:** accept several characters and/or saved/generated Ideas as simultaneous structured source context for family, relationship, cast, and scenario development.
 - Later expose derivation/lineage history such as future versions, side-character promotions, descendants, and characters created from a saved idea, while keeping exported card data independent of that authoring history.
 - Further Library organisation, search/filter polish, and large-library performance work.
@@ -488,10 +445,13 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep AI Ideas player-agency validation layered after the existing identity/POV validation, preserve explicit source-authored `{{user}}` setup, and avoid treating conditional/hypothetical choices as if the AI had already chosen them for the roleplayer.
 - Keep Collaborator source seeding as a public structured capability instead of directly manipulating private composer/session controls from Idea Notebook or Workspace.
 - Keep the primary Collaborator source separate from ordinary `context_items`; attachments may be removed or summaries rebuilt without changing the source snapshot.
-- Keep Collaborator source formats versioned and backwards-compatible so future existing-character and multi-source workflows can extend rather than replace early source-aware conversations.
+- Keep Collaborator source formats versioned and backwards-compatible so multi-source workflows extend rather than replace existing source-aware conversations.
 - Keep completion payloads project-scoped, preserve already-generated payloads when destination selection is postponed, and never expose the empty-slot replacement route once meaningful authored content exists.
+- Compare/refinement writes must be selection-based, preserve stable IDs where updating the original, and conflict-check selected fields against the captured source before destructive application.
+- Improved-copy creation must start from the latest source state so unrelated manual edits survive while selected proposal changes are layered on top.
+- Keep branch/related-character derivations non-destructive unless a future explicit migration/retcon tool defines stronger semantics.
 - Validate provider envelopes before inherited parsing/diagnostic layers, retain raw credential-safe evidence, and report network/malformed-envelope failures once through the normal retry/failure path.
-- Continue investigating the Linux/X11 GL Compatibility `BadAlloc`/`glXMakeCurrent` crash separately; do not mask it by treating application-level JSON failures as its cause.
+- Keep Forward+ as the standard desktop renderer while retaining explicit Compatibility fallback for unsupported RenderingDevice hardware; continue observing the former GLX crash separately from application/API failures.
 - Continue reducing synchronous whole-library work from interactive Collaborator paths.
 - Keep attachment decoding/classification separate from UI composition and project-write boundaries.
 - Keep Generation Component and section-dependency semantics data-driven.
@@ -506,7 +466,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Improve visible progress/error states for long AI operations and distinguish queue wait, local preparation, provider thinking, repair, and validation time.
 - Improve queue labels so project, character, workflow, role, provider, model, section, and dependency state are legible without opening Diagnostics.
 - Improve Idea Notebook browsing as real libraries grow, including denser cards/list options and multi-selection if runtime use shows the need.
-- Improve source-aware Collaborator UX with clearer source/provenance summaries and intent/completion guidance as the v0.15.35–v0.15.37 workflows arrive.
+- Improve source-aware Collaborator UX with clearer source/provenance summaries and intent/completion/refinement guidance as the v0.15.36–v0.15.37 workflows mature.
 - Continue replacing silent button no-ops with visible actionable status messages.
 
 ## Long-Term Ideas
