@@ -207,7 +207,7 @@ The running development build displays **v0.15.38**. Character Card Forge remain
 - Favourites/history/location/view/sort persistence.
 
 ### v0.15.9 — Independent Vision Limits & Input Optimisation
-- Separate Vision limits and safe oversized-image preprocessing.
+- Added separate Vision context/output limits and safe oversized-image preprocessing.
 
 ### v0.15.8 — Dedicated Vision Routing
 - Configured Vision-model routing and missing-model errors.
