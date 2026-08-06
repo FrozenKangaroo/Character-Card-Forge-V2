@@ -1,7 +1,7 @@
 extends SceneTree
 
-const IMAGE_WINDOW_V01538 = preload(
-	"res://scripts/ui/image_generation_window_v01538.gd"
+const PICKER_INDEX_SERVICE_V01538 = preload(
+	"res://scripts/services/character_picker_index_service_v01538.gd"
 )
 
 
@@ -10,16 +10,6 @@ func _init() -> void:
 
 
 func _run() -> void:
-	# The index/filter helpers are deliberately pure. Do not attach a full Image
-	# Studio Window to the SceneTree here: inherited Image Studio lifecycle work
-	# includes provider/gallery state that belongs to its own regressions.
-	var picker := IMAGE_WINDOW_V01538.new() as CCFImageGenerationWindowV01538
-	var capabilities := picker.character_picker_capabilities_v01538()
-	assert(bool(capabilities.get("searchable_character_picker", false)))
-	assert(bool(capabilities.get("direct_character_selection", false)))
-	assert(bool(capabilities.get("legacy_project_dropdown_hidden", false)))
-	assert(int(capabilities.get("max_visible_results", 0)) == 250)
-
 	var synthetic_projects: Array = []
 	for project_index in range(180):
 		var project_name := "Archive Project %03d" % project_index
@@ -54,54 +44,91 @@ func _run() -> void:
 			"characters": characters
 		})
 
-	var index_rows := picker.build_character_picker_index_v01538(synthetic_projects)
-	assert(index_rows.size() == 540, "Every synthetic character should receive one lightweight picker row.")
+	var index_rows := PICKER_INDEX_SERVICE_V01538.build_index(synthetic_projects)
+	if not _require(index_rows.size() == 540, "Every synthetic character should receive one lightweight picker row."):
+		return
 
-	var unfiltered := picker.filter_character_picker_rows_v01538(index_rows, "", 250)
-	assert(unfiltered.size() == 250, "The unfiltered picker must stay bounded even with hundreds of characters.")
+	var unfiltered := PICKER_INDEX_SERVICE_V01538.filter_rows(index_rows, "", 250)
+	if not _require(unfiltered.size() == 250, "The unfiltered picker must stay bounded even with hundreds of characters."):
+		return
 
-	var needle := picker.filter_character_picker_rows_v01538(index_rows, "Needle Star", 250)
-	assert(needle.size() == 1, "A character beyond the initial 250 rows must still be directly searchable.")
-	assert(str(needle[0].get("character_id", "")) == "char-527")
-	assert(str(needle[0].get("project_id", "")) == "project-175")
+	var needle := PICKER_INDEX_SERVICE_V01538.filter_rows(index_rows, "Needle Star", 250)
+	if not _require(needle.size() == 1, "A character beyond the initial 250 rows must still be directly searchable."):
+		return
+	if not _require(str(needle[0].get("character_id", "")) == "char-527", "Direct character search returned the wrong character ID."):
+		return
+	if not _require(str(needle[0].get("project_id", "")) == "project-175", "Direct character search returned the wrong project ID."):
+		return
 
-	var by_project := picker.filter_character_picker_rows_v01538(index_rows, "Archive Project 175", 250)
-	assert(by_project.size() == 3, "Searching a project name should expose its characters.")
+	var by_project := PICKER_INDEX_SERVICE_V01538.filter_rows(index_rows, "Archive Project 175", 250)
+	if not _require(by_project.size() == 3, "Searching a project name should expose its characters."):
+		return
 
-	var by_role := picker.filter_character_picker_rows_v01538(index_rows, "navigator", 250)
-	assert(by_role.size() == 1, "Character roles must participate in direct search.")
-	assert(str(by_role[0].get("character_name", "")) == "Needle Star")
+	var by_role := PICKER_INDEX_SERVICE_V01538.filter_rows(index_rows, "navigator", 250)
+	if not _require(by_role.size() == 1, "Character roles must participate in direct search."):
+		return
+	if not _require(str(by_role[0].get("character_name", "")) == "Needle Star", "Role search returned the wrong character."):
+		return
 
-	var by_tag := picker.filter_character_picker_rows_v01538(index_rows, "rare-tag", 250)
-	assert(by_tag.size() == 1, "Character tags must participate in direct search.")
+	var by_tag := PICKER_INDEX_SERVICE_V01538.filter_rows(index_rows, "rare-tag", 250)
+	if not _require(by_tag.size() == 1, "Character tags must participate in direct search."):
+		return
 
-	var by_series_and_folder := picker.filter_character_picker_rows_v01538(
+	var by_series_and_folder := PICKER_INDEX_SERVICE_V01538.filter_rows(
 		index_rows, "series-07 folder-04", 250
 	)
-	assert(not by_series_and_folder.is_empty(), "Series/folder terms should be combinable.")
+	if not _require(not by_series_and_folder.is_empty(), "Series/folder terms should be combinable."):
+		return
 	for row in by_series_and_folder:
-		assert(str(row.get("series_id", "")) == "series-07")
-		assert(str(row.get("folder", "")) == "folder-04")
+		if not _require(str(row.get("series_id", "")) == "series-07", "Combined search returned the wrong series."):
+			return
+		if not _require(str(row.get("folder", "")) == "folder-04", "Combined search returned the wrong folder."):
+			return
 
-	var by_collection := picker.filter_character_picker_rows_v01538(
-		index_rows, "collection-03", 250
-	)
-	assert(not by_collection.is_empty(), "Collections must participate in direct search.")
-	picker.free()
+	var by_collection := PICKER_INDEX_SERVICE_V01538.filter_rows(index_rows, "collection-03", 250)
+	if not _require(not by_collection.is_empty(), "Collections must participate in direct search."):
+		return
 
-	# Live wiring is asserted at source level here so this focused search test does
-	# not spin up provider/image-window lifecycle work. v0.15.28-v0.15.30 keep the
-	# real Image Studio runtime contracts covered in the same dedicated workflow.
+	if not _require(
+		PICKER_INDEX_SERVICE_V01538.count_matches(index_rows, "") == 540,
+		"The full lightweight index match count must remain available even when rendered results are capped."
+	):
+		return
+
+	# Confirm that the live v0.15.38 Image Studio leaf delegates to this exact
+	# reusable service while the inherited Image Studio runtime remains covered
+	# separately by the v0.15.28-v0.15.30 regressions in the same workflow.
 	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(scene_source.contains("res://scripts/main_v01538.gd"), "The current main scene must activate v0.15.38.")
+	if not _require(scene_source.contains("res://scripts/main_v01538.gd"), "The current main scene must activate v0.15.38."):
+		return
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01538.gd")
-	assert(main_source.contains("IMAGE_WINDOW_V01538"), "The v0.15.38 shell must preload the new Image Studio controller.")
-	assert(main_source.contains("func _install_image_window_v01529()"), "The active shell must install the v0.15.38 Image Studio controller.")
+	if not _require(main_source.contains("image_generation_window_v01538_indexed.gd"), "The v0.15.38 shell must install the indexed Image Studio leaf."):
+		return
+	var indexed_source := FileAccess.get_file_as_string("res://scripts/ui/image_generation_window_v01538_indexed.gd")
+	if not _require(indexed_source.contains("character_picker_index_service_v01538.gd"), "The live Image Studio picker must delegate to the reusable index service."):
+		return
+	if not _require(indexed_source.contains("build_index(project_rows)"), "The live picker must use the shared index builder."):
+		return
+	if not _require(indexed_source.contains("filter_rows(rows, query, limit)"), "The live picker must use the shared filter implementation."):
+		return
 	var image_source := FileAccess.get_file_as_string("res://scripts/ui/image_generation_window_v01538.gd")
-	assert(image_source.contains("_project_selector.visible = false"), "The unbounded Project dropdown must be hidden in the live controller.")
-	assert(image_source.contains("_character_selector.visible = false"), "The unbounded Character dropdown must be hidden in the live controller.")
-	assert(image_source.contains("ImageStudioCharacterPickerButtonV01538"), "The live controller must expose the searchable Character picker button.")
-	assert(image_source.contains("ImageStudioCharacterPickerDialogV01538"), "The live controller must build the searchable Character picker dialog.")
+	if not _require(image_source.contains("_project_selector.visible = false"), "The unbounded Project dropdown must be hidden in the live controller."):
+		return
+	if not _require(image_source.contains("_character_selector.visible = false"), "The unbounded Character dropdown must be hidden in the live controller."):
+		return
+	if not _require(image_source.contains("ImageStudioCharacterPickerButtonV01538"), "The live controller must expose the searchable Character picker button."):
+		return
+	if not _require(image_source.contains("ImageStudioCharacterPickerDialogV01538"), "The live controller must build the searchable Character picker dialog."):
+		return
 
 	print("v0.15.38 Image Studio character picker regression passed")
 	quit(0)
+
+
+func _require(condition: bool, message: String) -> bool:
+	if condition:
+		return true
+	push_error(message)
+	print("v0.15.38 picker regression failure: %s" % message)
+	quit(1)
+	return false
