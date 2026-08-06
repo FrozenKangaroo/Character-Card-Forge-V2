@@ -1,0 +1,25 @@
+name: Validate v0.15.38-hotfix1 updater
+
+on:
+  push:
+    branches:
+      - agent/v0.15.38-hotfix1-updater-project-godot
+  pull_request:
+    paths:
+      - update.sh
+      - tools/test_update_sh_project_godot.sh
+      - .github/workflows/validate-v01538-hotfix1-updater.yml
+
+jobs:
+  updater-project-godot:
+    name: Preserve local project.godot during update
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Validate updater shell syntax
+        run: bash -n update.sh
+
+      - name: Test project.godot-safe updater behaviour
+        run: bash tools/test_update_sh_project_godot.sh
