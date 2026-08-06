@@ -94,79 +94,210 @@ The running development build displays **v0.15.38**. Character Card Forge remain
 - Reused lightweight Library project/character rows instead of opening every project only to populate search results.
 - Added search across character/project names, roles, tags, series IDs, folders, collections, and available creator/version metadata.
 - Bounded rendered results to 250 while continuing to search the complete index; the regression fixture covers 540 characters and finds a target beyond the initial cutoff.
-- Kept the inherited selectors hidden as compatibility backing state and preserved Workspace live sync, gallery ownership, AI prompt generation, local fallback, and provider discovery.
+- Kept inherited selectors hidden as compatibility backing state and preserved Workspace live sync, gallery ownership, AI prompt generation, local fallback, and provider discovery.
 - Fixed the reported `mode`, `title`, and `returned_keys` GDScript warning sites without suppressing warning categories.
 - Added warning-as-error import coverage, focused large-library regression coverage, broad regression inheritance, CI, and `docs/v01538-image-studio-character-picker.md`.
 
-### Recent feature/reliability history
+### v0.15.37-hotfix1 — Safe Section Field Identity & Contamination Guard
+- Exact field/component identity, cross-section contamination checks, final assembled fail-closed validation, parallel-worker coverage, and richer Diagnostics.
 
-- **v0.15.37-hotfix1 — Safe Section Field Identity & Contamination Guard:** exact field/component identity, cross-section contamination checks, final assembled fail-closed validation, parallel-worker coverage, and richer Diagnostics.
-- **v0.15.37 — Multi-source Character Collaborator:** one explicit TARGET plus read-only REFERENCES, saved Idea/pasted/card sources, Character Card JSON/PNG/APNG promotion, raw versus AI-facing normalised snapshots, embedded UserPersona exclusion, target switching, and multi-source provenance.
-- **v0.15.36-hotfix3 — Empty Project Save Guard:** brand-new empty shells stay in memory until meaningful content exists; existing persisted projects remain safe.
-- **v0.15.36-hotfix2 — AI Ideas Agency / Backstory / POV Validation:** refined detached-POV detection, temporary scene logistics, substantive `{{user}}` canon protection, conditional choices, and semantic validation Diagnostics.
-- **v0.15.36-hotfix1 — Configured Default Template:** configured user default wins for new/add/missing-template paths without rewriting existing explicit built-in Default choices.
-- **v0.15.36 — Collaborator Refinement Compare/Apply + Forward+:** selective Update Original/Create Improved Copy with stale-source checks, plus Forward+ desktop default.
-- **v0.15.35 — Collaborator Character Completion & Project Integration:** safe completion destinations and derivation provenance without occupied-character overwrite.
-- **v0.15.34 — Existing Character → Collaborator + Godot 4.7.1:** structured character sources, ten development directions, read-only snapshots, provenance, and Godot 4.7.1 baseline.
-- **v0.15.33-hotfix3 — AI Ideas User Agency Contract:** initial agency contract, bounded repair, source-authored action preservation, and conditional-choice support.
-- **v0.15.33-hotfix2 — AI Ideas Notebook Capture Reliability:** restored live Ideas completion capture for save/develop actions.
-- **v0.15.33-hotfix1 — Structured Builder → Collaborator:** structured Builder ingredient/source handoff.
-- **v0.15.33 — Generic Collaborator Source Context:** versioned read-only structured source snapshots/provenance.
-- **v0.15.32-hotfix1 — AI Ideas Notebook Header Layout:** fixed malformed Ideas action/status layout.
-- **v0.15.32 — Idea Notebook Foundation:** disposable batches, selective saving, notebooks, Unfiled, tags/search, editing/move/archive/restore/delete, versioned app persistence.
-- **v0.15.31 — AI Jobs Queue Visibility & Selective Cancellation:** inspectable running/queued/waiting/dependency states and selective cancellation.
-- **v0.15.30 — Image Prompt Word Wrapping:** wrapped Image Prompt and Negative Prompt editors.
-- **v0.15.29 — Embedded Image Studio + AI Prompt Restoration:** Image Studio main navigation and Text-role image-prompt generation beside Local Fallback.
-- **v0.15.28 — Image Studio Live Project and Provider State:** live project handoff/rescans, Image-profile routing, cached model/sampler discovery.
-- **v0.15.27 — Runtime Lifecycle and Warning Cleanup:** warning cleanup and safer deferred Collaborator scrolling.
-- **v0.15.26 — Concurrent AI Scheduler + Collaborator Service Compatibility:** configurable AI concurrency, isolated workers, dependency-wave Safe Section parallelism, capability-based Collaborator compatibility.
-- **v0.15.25 — Character Generation Token Budget Invariant:** active Text-profile Maximum Output Tokens became authoritative across Character generation.
-- **v0.15.24 — Live Safe Section Service Wiring:** corrected live generation-service composition.
-- **v0.15.23 — Token Settings Regression Fix:** restored Text/Vision token controls and large modern output values.
-- **v0.15.22 — Safe Section Build + Generation Diagnostics:** Safe Section Build, Fast Full Card, focused repair, deterministic assembly, credential-redacted Diagnostics.
-- **v0.15.21 — Unified Collaborator Attachments:** persistent text/subtitle/JSON/image reference attachments with Vision routing and token accounting.
-- **v0.15.20 — Broad Regression Safety:** composable quick/release profiles and isolated app-data execution.
-- **v0.15.19 — Release Checkout Selection:** release/update helpers prefer the active checkout.
-- **v0.15.18 — Checkout Hygiene + Warning Cleanup:** `.gd.uid` policy, project serialisation checks, checkout-clean CI, warning cleanup.
-- **v0.15.17 — Blueprint Supplementary Materialisation:** restored Interview review metadata and Alternative Greetings/Lorebook materialisation.
-- **v0.15.16 — Generation Pipeline Restoration:** Interview/Q&A, Builder precedence, Mode & Style, template enforcement, repair, fidelity, fail-closed behaviour.
-- **v0.15.15 — Blueprint-First Collaborator Handoff:** detailed Generation Concept Blueprint became the recommended handoff.
-- **v0.15.14 — Component-Driven Full Synthesis:** Generation Group/component transformation planning.
-- **v0.15.13 — Complete Synthesis Review + Responsiveness:** complete-result review and Collaborator responsiveness work.
-- **v0.15.12 — Full Character Synthesis from Workspace:** full-Workspace synthesis groundwork; normal Generate Character later returned to the validated parity pipeline.
-- **v0.15.11 — Visible Vision Analysis Messages:** persistent/selectable provenance-aware Vision transcript content.
-- **v0.15.10 — Persistent FileDialog State:** favourites/history/location/view/sort persistence.
-- **v0.15.9 — Independent Vision Limits & Input Optimisation:** separate Vision limits and safe oversized-image preprocessing.
-- **v0.15.8 — Dedicated Vision Routing:** configured Vision-model routing and missing-model errors.
-- **v0.15.7 — Collaborator Vision Pipeline:** full-scene Vision analysis and Vision-to-Text boundary.
-- **v0.15.6 — Collaborator Rich-Text Fix:** removed synthetic bold rendering artefacts while preserving semantic display.
-- **v0.15.5 — Independent Collaborator Persistence:** versioned local chats under `user://collaborator_sessions`.
-- **v0.15.4 — Collaborator Persistence & Behaviour Contract:** autosave, rename/delete, canon preservation, proportional depth, semantic rich text.
-- **v0.15.3 — Collaborator Chat UX:** wrapped input, distinct cards, selectable text, visible work state, copying, reliable scrolling.
-- **v0.15.2 — Large Output Token Limits:** removed the old effective 131,072 output-token UI ceiling.
-- **v0.15.1 — Context Window Budgeting:** context/output reserve/headroom and unknown-context mode.
-- **v0.15.0 — Collaborator Foundation:** detachable brainstorming, reference context, summarisation, variants, Workspace handoff.
-- **v0.14.22 — Shared Graph Canvas:** reusable draggable graph cards, anchors, labelled links, Relationship Graph, Route/Timeline editing.
-- **v0.14.21 — `.ccfchar` Interchange:** versioned partial/full external authoring interchange with review-first import.
-- **v0.14.20 — Relationship Graph + Linked Variants:** labelled relationship graphs and sparse inheriting variants with standalone export.
-- **v0.14.19 — Live Idea Generator Wiring:** rebound visible Ideas to current validation/repair service.
-- **v0.14.18 — User-Centric Idea Generation:** interactive-roleplay framing and literal `{{user}}` involvement.
-- **v0.14.17 — Detachable Lorebook Manager:** non-modal multi-monitor-friendly Lorebook tool.
-- **v0.14.16 — Idea Identity + POV Validation:** identity/source anchoring and repair.
-- **v0.14.15 — Lorebook Generation + Trigger Tools:** scoped generation, activation rules, ordering, budgets, Trigger Preview, transfer tools.
-- **v0.14.14 — Focused Character Builders:** Appearance, Personality, Scene, and Full Character builders.
-- **v0.14.13 — Idea POV Safety:** neutral third-person design prose while preserving literal `{{user}}`.
-- **v0.14.12 — Unified Idea Generator:** AI Ideas and Structured Builder unified.
-- **v0.14.11 — Structured Idea Builder:** V1-style ingredients, locks, randomisation, custom values, multi-select, editable pools, reset.
-- **v0.14.10 — Related Character / AI Variation:** independent related/transformed characters with provenance.
-- **v0.14.9 — Library Assignment UX:** existing-folder/collection pickers and filter/navigation simplification.
-- **v0.14.8 — Manual Guided Alternative Greetings:** repeatable/reorderable greetings with Character Card round-trip.
-- **v0.14.7 — Manual Guided Component Parity:** Manual Guided follows active Generation Components with isolated state.
-- **v0.14.6 — Preview Selection Safety:** unchecked Preview rows write nothing; current edits remain authoritative.
-- **v0.14.5 — Grouped Navigation + Lorebook Foundation:** grouped menus and Project/Character Lorebook editing.
-- **v0.14.4 — Manual Guided:** template-aware no-AI authoring.
-- **v0.14.3 — Recoverable Generation Review:** parseable failed-review output retained for import/edit/regenerate.
-- **v0.14.2 — Character Transfer + Text Convention:** Move/Copy between projects and consistent multiline behaviour.
+### v0.15.37 — Multi-source Character Collaborator
+- One explicit TARGET plus read-only REFERENCES, saved Idea/pasted/card sources, Character Card JSON/PNG/APNG promotion, raw versus AI-facing normalised snapshots, embedded UserPersona exclusion, target switching, and multi-source provenance.
+
+### v0.15.36-hotfix3 — Empty Project Save Guard
+- Brand-new empty shells stay in memory until meaningful content exists; existing persisted projects remain safe.
+
+### v0.15.36-hotfix2 — AI Ideas Agency / Backstory / POV Validation
+- Refined detached-POV detection, temporary scene logistics, substantive `{{user}}` canon protection, conditional choices, and semantic validation Diagnostics.
+
+### v0.15.36-hotfix1 — Configured Default Template
+- Configured user default wins for new/add/missing-template paths without rewriting existing explicit built-in Default choices.
+
+### v0.15.36 — Collaborator Refinement Compare/Apply + Forward+
+- Selective Update Original/Create Improved Copy with stale-source checks, plus Forward+ desktop default.
+
+### v0.15.35 — Collaborator Character Completion & Project Integration
+- Safe completion destinations and derivation provenance without occupied-character overwrite.
+
+### v0.15.34 — Existing Character → Collaborator + Godot 4.7.1
+- Structured character sources, ten development directions, read-only snapshots, provenance, and Godot 4.7.1 baseline.
+
+### v0.15.33-hotfix3 — AI Ideas User Agency Contract
+- Initial agency contract, bounded repair, source-authored action preservation, and conditional-choice support.
+
+### v0.15.33-hotfix2 — AI Ideas Notebook Capture Reliability
+- Restored live Ideas completion capture for save/develop actions.
+
+### v0.15.33-hotfix1 — Structured Builder → Collaborator
+- Structured Builder ingredient/source handoff.
+
+### v0.15.33 — Generic Collaborator Source Context
+- Versioned read-only structured source snapshots/provenance.
+
+### v0.15.32-hotfix1 — AI Ideas Notebook Header Layout
+- Fixed malformed Ideas action/status layout.
+
+### v0.15.32 — Idea Notebook Foundation
+- Disposable batches, selective saving, notebooks, Unfiled, tags/search, editing/move/archive/restore/delete, versioned app persistence.
+
+### v0.15.31 — AI Jobs Queue Visibility & Selective Cancellation
+- Inspectable running/queued/waiting/dependency states and selective cancellation.
+
+### v0.15.30 — Image Prompt Word Wrapping
+- Wrapped Image Prompt and Negative Prompt editors.
+
+### v0.15.29 — Embedded Image Studio + AI Prompt Restoration
+- Image Studio main navigation and Text-role image-prompt generation beside Local Fallback.
+
+### v0.15.28 — Image Studio Live Project and Provider State
+- Live project handoff/rescans, Image-profile routing, cached model/sampler discovery.
+
+### v0.15.27 — Runtime Lifecycle and Warning Cleanup
+- Warning cleanup and safer deferred Collaborator scrolling.
+
+### v0.15.26 — Concurrent AI Scheduler + Collaborator Service Compatibility
+- Configurable AI concurrency, isolated workers, dependency-wave Safe Section parallelism, capability-based Collaborator compatibility.
+
+### v0.15.25 — Character Generation Token Budget Invariant
+- Active Text-profile Maximum Output Tokens became authoritative across Character generation.
+
+### v0.15.24 — Live Safe Section Service Wiring
+- Corrected live generation-service composition.
+
+### v0.15.23 — Token Settings Regression Fix
+- Restored Text/Vision token controls and large modern output values.
+
+### v0.15.22 — Safe Section Build + Generation Diagnostics
+- Safe Section Build, Fast Full Card, focused repair, deterministic assembly, credential-redacted Diagnostics.
+
+### v0.15.21 — Unified Collaborator Attachments
+- Persistent text/subtitle/JSON/image reference attachments with Vision routing and token accounting.
+
+### v0.15.20 — Broad Regression Safety
+- Composable quick/release profiles and isolated app-data execution.
+
+### v0.15.19 — Release Checkout Selection
+- Release/update helpers prefer the active checkout.
+
+### v0.15.18 — Checkout Hygiene + Warning Cleanup
+- `.gd.uid` policy, project serialisation checks, checkout-clean CI, warning cleanup.
+
+### v0.15.17 — Blueprint Supplementary Materialisation
+- Restored Interview review metadata and Alternative Greetings/Lorebook materialisation.
+
+### v0.15.16 — Generation Pipeline Restoration
+- Interview/Q&A, Builder precedence, Mode & Style, template enforcement, repair, fidelity, fail-closed behaviour.
+
+### v0.15.15 — Blueprint-First Collaborator Handoff
+- Detailed Generation Concept Blueprint became the recommended handoff.
+
+### v0.15.14 — Component-Driven Full Synthesis
+- Generation Group/component transformation planning.
+
+### v0.15.13 — Complete Synthesis Review + Responsiveness
+- Complete-result review and Collaborator responsiveness work.
+
+### v0.15.12 — Full Character Synthesis from Workspace
+- Full-Workspace synthesis groundwork; normal Generate Character later returned to the validated parity pipeline.
+
+### v0.15.11 — Visible Vision Analysis Messages
+- Persistent/selectable provenance-aware Vision transcript content.
+
+### v0.15.10 — Persistent FileDialog State
+- Favourites/history/location/view/sort persistence.
+
+### v0.15.9 — Independent Vision Limits & Input Optimisation
+- Separate Vision limits and safe oversized-image preprocessing.
+
+### v0.15.8 — Dedicated Vision Routing
+- Configured Vision-model routing and missing-model errors.
+
+### v0.15.7 — Collaborator Vision Pipeline
+- Full-scene Vision analysis and Vision-to-Text boundary.
+
+### v0.15.6 — Collaborator Rich-Text Fix
+- Removed synthetic bold rendering artefacts while preserving semantic display.
+
+### v0.15.5 — Independent Collaborator Persistence
+- Versioned local chats under `user://collaborator_sessions`.
+
+### v0.15.4 — Collaborator Persistence & Behaviour Contract
+- Autosave, rename/delete, canon preservation, proportional depth, semantic rich text.
+
+### v0.15.3 — Collaborator Chat UX
+- Wrapped input, distinct cards, selectable text, visible work state, copying, reliable scrolling.
+
+### v0.15.2 — Large Output Token Limits
+- Removed the old effective 131,072 output-token UI ceiling.
+
+### v0.15.1 — Context Window Budgeting
+- Context/output reserve/headroom and unknown-context mode.
+
+### v0.15.0 — Collaborator Foundation
+- Detachable brainstorming, reference context, summarisation, variants, Workspace handoff.
+
+### v0.14.22 — Shared Graph Canvas
+- Reusable draggable graph cards, anchors, labelled links, Relationship Graph, Route/Timeline editing.
+
+### v0.14.21 — `.ccfchar` Interchange
+- Versioned partial/full external authoring interchange with review-first import.
+
+### v0.14.20 — Relationship Graph + Linked Variants
+- Labelled relationship graphs and sparse inheriting variants with standalone export.
+
+### v0.14.19 — Live Idea Generator Wiring
+- Rebound visible Ideas to current validation/repair service.
+
+### v0.14.18 — User-Centric Idea Generation
+- Interactive-roleplay framing and literal `{{user}}` involvement.
+
+### v0.14.17 — Detachable Lorebook Manager
+- Non-modal multi-monitor-friendly Lorebook tool.
+
+### v0.14.16 — Idea Identity + POV Validation
+- Identity/source anchoring and repair.
+
+### v0.14.15 — Lorebook Generation + Trigger Tools
+- Scoped generation, activation rules, ordering, budgets, Trigger Preview, transfer tools.
+
+### v0.14.14 — Focused Character Builders
+- Appearance, Personality, Scene, and Full Character builders.
+
+### v0.14.13 — Idea POV Safety
+- Neutral third-person design prose while preserving literal `{{user}}`.
+
+### v0.14.12 — Unified Idea Generator
+- AI Ideas and Structured Builder unified.
+
+### v0.14.11 — Structured Idea Builder
+- V1-style ingredients, locks, randomisation, custom values, multi-select, editable pools, reset.
+
+### v0.14.10 — Related Character / AI Variation
+- Independent related/transformed characters with provenance.
+
+### v0.14.9 — Library Assignment UX
+- Existing-folder/collection pickers and filter/navigation simplification.
+
+### v0.14.8 — Manual Guided Alternative Greetings
+- Repeatable/reorderable greetings with Character Card round-trip.
+
+### v0.14.7 — Manual Guided Component Parity
+- Manual Guided follows active Generation Components with isolated state.
+
+### v0.14.6 — Preview Selection Safety
+- Unchecked Preview rows write nothing; current edits remain authoritative.
+
+### v0.14.5 — Grouped Navigation + Lorebook Foundation
+- Grouped menus and Project/Character Lorebook editing.
+
+### v0.14.4 — Manual Guided
+- Template-aware no-AI authoring.
+
+### v0.14.3 — Recoverable Generation Review
+- Parseable failed-review output retained for import/edit/regenerate.
+
+### v0.14.2 — Character Transfer + Text Convention
+- Move/Copy between projects and consistent multiline behaviour.
 
 Detailed implementation notes remain in versioned docs, pull requests, regression tests, and Git history.
 
