@@ -46,6 +46,8 @@ The v0.15.38 regression uses 540 synthetic characters and verifies that a charac
 
 The inherited Project and Character `OptionButton`s remain alive but hidden. Existing Image Studio code still uses them as compatibility backing state for project/character refresh, gallery ownership, Workspace synchronisation, and inherited callbacks.
 
+The v0.15.38 Image Studio layer explicitly extends the v0.15.31 Image Studio controller rather than jumping directly to v0.15.30. This preserves the shared **AI Jobs** inspection and selective-cancellation contract (`ai_job_records_v01531` / `cancel_ai_job_v01531`) while adding the new picker. A regression now guards that inheritance boundary because skipping it can make Image Studio jobs disappear from the shared AI Jobs panel even though generation itself still works.
+
 Selecting a search result:
 
 1. Loads that saved project.
@@ -84,7 +86,8 @@ The dedicated CI import gate treats `SHADOWED_VARIABLE_BASE_CLASS` and `CONFUSAB
 - project-name search returns the project's characters without unrelated term-only collisions when an exact phrase match exists;
 - role, tag, series, folder, and collection search work;
 - the current main scene installs the v0.15.38 Image Studio controller;
+- the v0.15.38 controller retains the v0.15.31 AI Jobs inheritance layer;
 - the old Project/Character dropdowns are hidden;
 - the searchable picker button/dialog exist in the live controller.
 
-Dedicated CI additionally rechecks the v0.15.28 live Image Studio state, v0.15.29 embedded/AI-prompt behaviour, v0.15.30 prompt wrapping, v0.15.37 Multi-source Collaborator, v0.15.37-hotfix1 Safe Section contamination guard, Forward+, checkout cleanliness, and the quick broad regression profile.
+Dedicated CI additionally rechecks the v0.15.28 live Image Studio state, v0.15.29 embedded/AI-prompt behaviour, v0.15.30 prompt wrapping, v0.15.31 AI Jobs compatibility, v0.15.37 Multi-source Collaborator, v0.15.37-hotfix1 Safe Section contamination guard, Forward+, checkout cleanliness, and the quick broad regression profile.
