@@ -1,5 +1,5 @@
 class_name CCFImageGenerationWindowV01538
-extends "res://scripts/ui/image_generation_window_v01530.gd"
+extends "res://scripts/ui/image_generation_window_v01531.gd"
 
 const CHARACTER_PICKER_MAX_VISIBLE_V01538 := 250
 
@@ -33,7 +33,8 @@ func character_picker_capabilities_v01538() -> Dictionary:
 		"bounded_unfiltered_results": true,
 		"max_visible_results": CHARACTER_PICKER_MAX_VISIBLE_V01538,
 		"legacy_project_dropdown_hidden": true,
-		"legacy_character_dropdown_hidden": true
+		"legacy_character_dropdown_hidden": true,
+		"ai_jobs_compatibility": true
 	}
 
 
