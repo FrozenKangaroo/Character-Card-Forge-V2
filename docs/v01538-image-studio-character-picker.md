@@ -28,7 +28,7 @@ The searchable fields include:
 - Library collections
 - Creator/version metadata where present
 
-Multiple words are ANDed, so a query can progressively narrow a large library.
+Exact contiguous phrase matches are preferred when they exist, so searching a full character or project name does not become noisy merely because its individual words appear elsewhere. If there is no phrase match, the picker falls back to AND-style multi-term matching, so queries such as `series-07 folder-04` can still progressively narrow a large library.
 
 Each result is displayed as `Character — Project`, with role information when available. The tooltip exposes additional project/tag/series/folder/collection context.
 
@@ -81,7 +81,7 @@ The dedicated CI import gate treats `SHADOWED_VARIABLE_BASE_CLASS` and `CONFUSAB
 - 540 lightweight character rows can be indexed;
 - an empty query renders at most 250 rows;
 - a character beyond that cutoff remains searchable by name;
-- project-name search returns the project's characters;
+- project-name search returns the project's characters without unrelated term-only collisions when an exact phrase match exists;
 - role, tag, series, folder, and collection search work;
 - the current main scene installs the v0.15.38 Image Studio controller;
 - the old Project/Character dropdowns are hidden;
