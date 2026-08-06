@@ -1,7 +1,7 @@
 extends "res://scripts/main_v01537_hotfix1.gd"
 
 const IMAGE_WINDOW_V01538 = preload(
-	"res://scripts/ui/image_generation_window_v01538.gd"
+	"res://scripts/ui/image_generation_window_v01538_indexed.gd"
 )
 const BUILD_DISPLAY_VERSION_V01538 := "0.15.38"
 
