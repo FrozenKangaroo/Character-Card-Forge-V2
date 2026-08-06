@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.38",
+  "description": "v0.15.37-hotfix1 coverage plus scalable Image Studio direct-character search and warning-clean import coverage.",
+  "base_manifest": "regression_suites_v01537_hotfix1.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01538_image_studio_character_picker",
+        "label": "v0.15.38 scalable Image Studio Character picker",
+        "kind": "python",
+        "path": "tools/test_v01538_image_studio_character_picker_strict.py",
+        "timeout_seconds": 200
+      }
+    ]
+  }
+}
