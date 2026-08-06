@@ -96,8 +96,7 @@ func _run() -> void:
 		return
 
 	# Confirm that the live v0.15.38 Image Studio leaf delegates to this exact
-	# reusable service while the inherited Image Studio runtime remains covered
-	# separately by the v0.15.28-v0.15.30 regressions in the same workflow.
+	# reusable service while preserving the v0.15.31 AI Jobs compatibility layer.
 	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
 	if not _require(scene_source.contains("res://scripts/main_v01538.gd"), "The current main scene must activate v0.15.38."):
 		return
@@ -112,6 +111,11 @@ func _run() -> void:
 	if not _require(indexed_source.contains("filter_rows(rows, query, limit)"), "The live picker must use the shared filter implementation."):
 		return
 	var image_source := FileAccess.get_file_as_string("res://scripts/ui/image_generation_window_v01538.gd")
+	if not _require(
+		image_source.contains("extends \"res://scripts/ui/image_generation_window_v01531.gd\""),
+		"The v0.15.38 Image Studio must preserve the v0.15.31 AI Jobs inspection/cancellation layer."
+	):
+		return
 	if not _require(image_source.contains("_project_selector.visible = false"), "The unbounded Project dropdown must be hidden in the live controller."):
 		return
 	if not _require(image_source.contains("_character_selector.visible = false"), "The unbounded Character dropdown must be hidden in the live controller."):
