@@ -72,28 +72,36 @@ static func build_index(project_rows: Array) -> Array[Dictionary]:
 
 
 static func filter_rows(rows: Array, query: String, limit: int) -> Array[Dictionary]:
-	var result: Array[Dictionary] = []
-	var terms := query.strip_edges().to_lower().split(" ", false)
+	var resolved_query := query.strip_edges().to_lower()
 	var resolved_limit := maxi(1, limit)
-	for raw_row in rows:
-		if not raw_row is Dictionary:
-			continue
-		var row: Dictionary = raw_row
-		if not matches_terms(row, terms):
-			continue
-		result.append(row.duplicate(true))
-		if result.size() >= resolved_limit:
-			break
-	return result
+	if resolved_query.is_empty():
+		return _take_matches(rows, PackedStringArray(), "", false, resolved_limit)
+	var phrase_matches := _take_matches(
+		rows,
+		PackedStringArray(),
+		resolved_query,
+		true,
+		resolved_limit
+	)
+	if not phrase_matches.is_empty():
+		return phrase_matches
+	var terms := resolved_query.split(" ", false)
+	return _take_matches(rows, terms, "", false, resolved_limit)
 
 
 static func count_matches(rows: Array, query: String) -> int:
-	var terms := query.strip_edges().to_lower().split(" ", false)
-	var count := 0
-	for raw_row in rows:
-		if raw_row is Dictionary and matches_terms(raw_row, terms):
-			count += 1
-	return count
+	var resolved_query := query.strip_edges().to_lower()
+	if resolved_query.is_empty():
+		return _count_matches_internal(rows, PackedStringArray(), "", false)
+	var phrase_count := _count_matches_internal(
+		rows,
+		PackedStringArray(),
+		resolved_query,
+		true
+	)
+	if phrase_count > 0:
+		return phrase_count
+	return _count_matches_internal(rows, resolved_query.split(" ", false), "", false)
 
 
 static func matches_terms(row: Dictionary, terms: PackedStringArray) -> bool:
@@ -114,3 +122,43 @@ static func string_array(value: Variant) -> Array[String]:
 		if not text_value.is_empty() and text_value not in result:
 			result.append(text_value)
 	return result
+
+
+static func _take_matches(
+	rows: Array,
+	terms: PackedStringArray,
+	phrase: String,
+	require_phrase: bool,
+	limit: int
+) -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	for raw_row in rows:
+		if not raw_row is Dictionary:
+			continue
+		var row: Dictionary = raw_row
+		var haystack := str(row.get("search_text", "")).to_lower()
+		var matches := haystack.contains(phrase) if require_phrase else matches_terms(row, terms)
+		if not matches:
+			continue
+		result.append(row.duplicate(true))
+		if result.size() >= limit:
+			break
+	return result
+
+
+static func _count_matches_internal(
+	rows: Array,
+	terms: PackedStringArray,
+	phrase: String,
+	require_phrase: bool
+) -> int:
+	var count := 0
+	for raw_row in rows:
+		if not raw_row is Dictionary:
+			continue
+		var row: Dictionary = raw_row
+		var haystack := str(row.get("search_text", "")).to_lower()
+		var matches := haystack.contains(phrase) if require_phrase else matches_terms(row, terms)
+		if matches:
+			count += 1
+	return count
