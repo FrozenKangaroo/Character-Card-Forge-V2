@@ -216,12 +216,12 @@ func _set_all_checked_v01536(checked: bool) -> void:
 	_status_v01536.text = ""
 
 
-func _submit_v01536(mode: String) -> void:
+func _submit_v01536(apply_mode: String) -> void:
 	var paths := selected_paths_v01536()
 	if paths.is_empty():
 		_status_v01536.text = "Select at least one changed field or section first."
 		return
-	apply_requested.emit(mode, paths)
+	apply_requested.emit(apply_mode, paths)
 
 
 func _cancel_v01536() -> void:

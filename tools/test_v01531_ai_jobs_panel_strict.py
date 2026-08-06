@@ -18,6 +18,8 @@ ERROR_PATTERNS = (
     re.compile(r"Assertion failed", re.IGNORECASE),
     re.compile(r"Failed to load script", re.IGNORECASE),
     re.compile(r"SHADOWED_VARIABLE_BASE_CLASS", re.IGNORECASE),
+    re.compile(r"CONFUSABLE_LOCAL_DECLARATION", re.IGNORECASE),
+    re.compile(r"Parse Error", re.IGNORECASE),
 )
 
 
@@ -30,6 +32,14 @@ def resolve_godot() -> str:
         if candidate:
             return candidate
     raise RuntimeError("Godot was not found in GODOT_BIN or PATH.")
+
+
+def decode_timeout_output(value: object) -> str:
+    if isinstance(value, str):
+        return value
+    if isinstance(value, bytes):
+        return value.decode("utf-8", errors="replace")
+    return ""
 
 
 def main() -> int:
@@ -58,7 +68,7 @@ def main() -> int:
             check=False,
         )
     except subprocess.TimeoutExpired as exc:
-        output = exc.stdout if isinstance(exc.stdout, str) else ""
+        output = decode_timeout_output(exc.stdout)
         if output:
             print(output, end="" if output.endswith("\n") else "\n")
         print("ERROR: v0.15.31 AI Jobs regression timed out.", file=sys.stderr)

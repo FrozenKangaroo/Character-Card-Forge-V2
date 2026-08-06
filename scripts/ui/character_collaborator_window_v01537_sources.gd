@@ -56,9 +56,9 @@ func _open_idea_source_dialog_v01537() -> void:
 	_idea_source_rows_v01537 = IDEA_NOTEBOOK_SERVICE_V01532.list_ideas()
 	_idea_source_list_v01537.clear()
 	for idea in _idea_source_rows_v01537:
-		var title := str(idea.get("title", "Untitled idea"))
+		var idea_title := str(idea.get("title", "Untitled idea"))
 		var character_name := str(idea.get("character_name", "")).strip_edges()
-		var display := title
+		var display := idea_title
 		if not character_name.is_empty():
 			display += " — %s" % character_name
 		_idea_source_list_v01537.add_item(display)

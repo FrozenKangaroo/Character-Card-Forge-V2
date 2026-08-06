@@ -33,7 +33,7 @@ func validate_safe_section_candidate_v01537_hotfix1(
 		var candidate := _unwrap_group_candidate_v01537_hotfix1(group, raw_data)
 		var accepted: Dictionary = {}
 		var missing: Array[String] = []
-		var returned_keys := _dictionary_keys_v01537_hotfix1(candidate)
+		var group_returned_keys := _dictionary_keys_v01537_hotfix1(candidate)
 		for raw_component in group.get("components", []):
 			if not raw_component is Dictionary or not bool(raw_component.get("enabled", true)):
 				continue
@@ -50,7 +50,7 @@ func validate_safe_section_candidate_v01537_hotfix1(
 			"ok": missing.is_empty() and contamination.is_empty(),
 			"kind": "output_group",
 			"requested_keys": _enabled_component_ids_v01537_hotfix1(group),
-			"returned_keys": returned_keys,
+			"returned_keys": group_returned_keys,
 			"missing_keys": missing,
 			"contamination": contamination
 		}
