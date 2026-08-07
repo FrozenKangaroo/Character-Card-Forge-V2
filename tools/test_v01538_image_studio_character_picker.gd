@@ -95,11 +95,22 @@ func _run() -> void:
 	):
 		return
 
-	# Confirm that the live v0.15.38 Image Studio leaf delegates to this exact
-	# reusable service while preserving the v0.15.31 AI Jobs compatibility layer.
+	# Confirm that the active application remains layered on the v0.15.38 Image
+	# Studio contract. Later compatible shells are valid as long as they inherit
+	# main_v01538 and keep the indexed Image Studio controller intact.
 	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	if not _require(scene_source.contains("res://scripts/main_v01538.gd"), "The current main scene must activate v0.15.38."):
+	var active_main_path := _active_main_script_path(scene_source)
+	if not _require(not active_main_path.is_empty(), "The current main scene must reference a versioned application shell."):
 		return
+	var active_main_source := FileAccess.get_file_as_string(active_main_path)
+	var has_v01538_shell := active_main_path == "res://scripts/main_v01538.gd"
+	var inherits_v01538_shell := active_main_source.contains("extends \"res://scripts/main_v01538.gd\"")
+	if not _require(
+		has_v01538_shell or inherits_v01538_shell,
+		"The current application shell must activate or directly preserve the v0.15.38 Image Studio layer."
+	):
+		return
+
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01538.gd")
 	if not _require(main_source.contains("image_generation_window_v01538_indexed.gd"), "The v0.15.38 shell must install the indexed Image Studio leaf."):
 		return
@@ -127,6 +138,18 @@ func _run() -> void:
 
 	print("v0.15.38 Image Studio character picker regression passed")
 	quit(0)
+
+
+func _active_main_script_path(scene_source: String) -> String:
+	var marker := "[ext_resource path=\""
+	var start := scene_source.find(marker)
+	if start < 0:
+		return ""
+	start += marker.length()
+	var finish := scene_source.find("\"", start)
+	if finish < 0:
+		return ""
+	return scene_source.substr(start, finish - start)
 
 
 func _require(condition: bool, message: String) -> bool:

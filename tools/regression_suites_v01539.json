@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.39",
+  "description": "v0.15.38 coverage plus Character Card PNG metadata/Vision dual ingestion and linked-source provenance.",
+  "base_manifest": "regression_suites_v01538.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01539_character_card_dual_ingestion",
+        "label": "v0.15.39 Character Card PNG metadata + Vision dual ingestion",
+        "kind": "python",
+        "path": "tools/test_v01539_character_card_dual_ingestion_strict.py",
+        "timeout_seconds": 200
+      }
+    ]
+  }
+}
