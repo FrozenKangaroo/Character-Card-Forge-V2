@@ -63,8 +63,11 @@ jobs:
       - name: Recheck Multi-source Collaborator and UserPersona exclusion
         run: python3 ./tools/test_v01537_multi_source_collaborator_strict.py
 
-      - name: Recheck Collaborator Vision attachment pipeline
-        run: python3 ./tools/test_v01521_collaborator_attachments_strict.py
+      - name: Recheck Collaborator attachments and Vision inheritance
+        run: timeout 45s godot --headless --path . --script res://tools/test_v01521_collaborator_attachments.gd
+
+      - name: Recheck visible Vision analysis pipeline
+        run: timeout 45s godot --headless --path . --script res://tools/test_v01511_visible_vision_analysis.gd
 
       - name: Recheck v0.15.38 Image Studio Character picker
         run: python3 ./tools/test_v01538_image_studio_character_picker_strict.py
