@@ -31,6 +31,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Collaborator source handoffs preserve structured source snapshots and provenance rather than paste opaque text into private UI state.
 - Multi-source Collaborator sessions keep every character, Idea, external card, and pasted source individually identifiable. At most one existing Workspace character is the explicit refinement target; all other sources remain read-only references.
 - Collaborator source ingestion preserves a raw snapshot for provenance/recovery and derives a separate AI-facing normalised snapshot. Normalisation never destructively rewrites the original imported, attached, or pasted source.
+- One physical source may expose multiple separately-provenanced Collaborator representations. For a Character Card PNG/APNG, embedded structured metadata and Vision-derived visual evidence remain linked but distinct; neither representation silently overwrites, mutates, or resolves conflicts in the other.
 - A distinct embedded `UserPersona`, user-profile, or roleplayer-persona section found in extracted/imported source is treated as chat-session residue by default and excluded from Collaborator AI context. Genuine character-source facts involving `{{user}}` remain authoritative.
 - Collaborator source-aware reasoning distinguishes established source facts, author-requested changes, and new/proposed details.
 - A Collaborator source is read-only authoring context. Conversation, summarisation, or attachment removal must not silently mutate or erase the source snapshot.
@@ -60,6 +61,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Forward+ is the standard desktop renderer. Compatibility/OpenGL remains an automatic fallback for unsupported RenderingDevice hardware.
 - Normal Godot import/open operations leave the Git checkout clean.
 - Release/update helpers prefer the repository checkout they are launched from and retain separate-copy syncing only as an explicit fallback.
+- `update.sh` may automatically preserve the known local-only `project.godot` drift case, but staged work, untracked files, and unrelated tracked edits remain fail-closed so updating never becomes an excuse to overwrite real local work.
 - Every major supported workflow has representative cross-feature regression coverage; a focused feature test alone is not a release gate.
 - Automated tests that exercise `user://` run in isolated temporary app-data directories.
 - Generation reliability strategy is independent of Generation Mode/Style.
@@ -76,17 +78,37 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.38 development candidate — Scalable Image Studio Character Picker + Warning Cleanup**
+**v0.15.39 development candidate — Character Card PNG Dual Ingestion**
 
-Image Studio now treats the character as the primary source-selection target. The visible unbounded Project and Character dropdowns are replaced by one searchable **Choose Character…** picker that indexes lightweight Library rows and searches character/project names, roles, tags, series IDs, folders, and collections. Results remain disambiguated as `Character — Project`, and the unfiltered/result rendering is bounded so libraries containing hundreds of characters do not create an enormous popup.
+Character Collaborator can now use recognised Character Card PNG/APNG files as both structured card data and optional visual evidence. When a card image is attached through the normal attachment workflow, the author chooses **Card data + Vision**, **Card data only**, or **Vision only**. Card data + Vision is the recommended default and links the existing structured source to the existing Vision-derived reference context without flattening the two representations.
 
-The inherited Project/Character selectors remain hidden compatibility backing state so existing gallery ownership, Workspace synchronisation, provider routing, prompt generation, and Image Studio callbacks continue to operate without duplicating those systems. Selecting a search result loads the exact character rather than merely the project's active character, and passive browsing remains provider-free.
+The raw Character Card snapshot remains untouched. Its separate AI-facing snapshot continues to exclude embedded `UserPersona` / user-profile residue while retaining genuine character facts involving `{{user}}`. Vision output remains supplementary evidence produced by the configured Vision role; it never overwrites the card metadata. If artwork and metadata disagree, both remain available for Collaborator to reason about explicitly.
 
-v0.15.38 also removes the three newly reported Godot 4.7.1 warnings in Collaborator Compare & Apply, the saved-Idea source picker, and the v0.15.37-hotfix1 Safe Section validator. The dedicated import gate now fails on both `SHADOWED_VARIABLE_BASE_CLASS` and `CONFUSABLE_LOCAL_DECLARATION`.
+Visual Character Card sources also expose **Analyse Image** / **Re-analyse Image**, so Vision can be added after a metadata-only attachment without removing/reimporting the card. Non-card images continue through the ordinary Vision path, non-card JSON remains ordinary text attachment content, and Character Card JSON remains a structured source.
 
-The running development build displays **v0.15.38**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
+v0.15.39 layers on v0.15.38 Image Studio, v0.15.37-hotfix1 generation validation, v0.15.37 Multi-source Collaborator, and the v0.15.38-hotfix1 updater fix. The running development build displays **v0.15.39**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
 
 ## Completed
+
+### v0.15.39 — Character Card PNG Dual Ingestion
+
+- Added three explicit Character Card PNG/APNG ingestion modes: **Card data + Vision**, **Card data only**, and **Vision only**.
+- Reused the established v0.15.37 structured-source model and v0.15.21 Vision attachment pipeline rather than creating duplicate metadata or image-analysis systems.
+- Linked Vision-derived context to its structured Character Card source through stable source provenance while keeping both representations independent.
+- Added **Analyse Image** / **Re-analyse Image** to visual Character Card source rows for post-attachment Vision analysis.
+- Preserved raw card metadata unchanged and retained v0.15.37 UserPersona exclusion only at the AI-facing source boundary.
+- Preserved legitimate character-source relationship/situation facts involving `{{user}}`.
+- Added APNG to the normal Collaborator attachment chooser.
+- Added a real Character Card PNG round-trip regression covering source linkage, UserPersona exclusion, non-destructive Vision provenance, live shell wiring, and the three-mode chooser.
+- Added `docs/v01539-character-card-png-dual-ingestion.md`, dedicated CI, and v0.15.39 broad-regression inheritance.
+
+### v0.15.38-hotfix1 — `update.sh` Local `project.godot` Preservation
+
+- Fixed the recurring updater failure when `project.godot` is the only local unstaged modification.
+- `update.sh` now temporarily stashes that one known drift case, fast-forwards `origin/main`, and restores the local modification when upstream did not change `project.godot`.
+- Staged changes, untracked files, and unrelated tracked modifications still block updates.
+- If upstream legitimately changes `project.godot`, the new upstream configuration wins and the old local copy remains recoverable in Git stash rather than being reapplied over it.
+- Added `tools/test_update_sh_project_godot.sh` using real temporary Git repositories to cover local drift, repeated updates, unrelated local work, and upstream project-file changes.
 
 ### v0.15.38 — Scalable Image Studio Character Picker + Warning Cleanup
 
@@ -94,7 +116,7 @@ The running development build displays **v0.15.38**. Character Card Forge remain
 - Reused lightweight Library project/character rows instead of opening every project only to populate search results.
 - Added search across character/project names, roles, tags, series IDs, folders, collections, and available creator/version metadata.
 - Bounded rendered results to 250 while continuing to search the complete index; the regression fixture covers 540 characters and finds a target beyond the initial cutoff.
-- Kept inherited selectors hidden as compatibility backing state and preserved Workspace live sync, gallery ownership, AI prompt generation, local fallback, and provider discovery.
+- Kept inherited selectors hidden as compatibility backing state and preserved Workspace live sync, gallery ownership, AI prompt generation, local fallback, provider discovery, and v0.15.31 AI Jobs inspection/selective cancellation.
 - Fixed the reported `mode`, `title`, and `returned_keys` GDScript warning sites without suppressing warning categories.
 - Added warning-as-error import coverage, focused large-library regression coverage, broad regression inheritance, CI, and `docs/v01538-image-studio-character-picker.md`.
 
@@ -303,12 +325,16 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 
 ## In Progress
 
+- Runtime-test v0.15.39 with real Character Card PNG/APNG sources using all three modes. Confirm **Card data + Vision** produces a structured source plus linked Vision evidence, **Card data only** spends no Vision request, and **Vision only** does not add embedded card metadata.
+- Runtime-test **Analyse Image / Re-analyse Image** on an already attached Character Card source and confirm the action remains visible after source-list refresh/save/reopen.
+- Test cards whose visible artwork conflicts with metadata and confirm Collaborator receives both separately-provenanced representations rather than silently rewriting one from the other.
+- Continue real-card UserPersona testing across PNG, JSON, and copy/paste after Vision linkage. Raw source must retain excluded residue, AI-facing card context must omit it, and genuine character-to-`{{user}}` relationship/situation facts must remain.
+- Runtime-test v0.15.38-hotfix1 `update.sh` on the normal development checkout and confirm recurring local-only `project.godot` drift no longer requires a manual restore/stash, while real unrelated local work still blocks the update.
 - Runtime-test v0.15.38 with a genuinely large personal Library: search by character/project/tag/series/folder/collection, duplicate character names across projects, exact character loading, Workspace-preferred project handoff, gallery ownership, and picker use after save/reload.
 - Confirm v0.15.38 passive character search/switching never calls Text/Vision/Image providers and that Generate Prompt / Generate remain the only provider-spending actions in this workflow.
 - Continue warning-as-error runtime observation for the three v0.15.38 cleanup sites and any additional Godot 4.7.x warnings surfaced by real use.
 - Runtime-test v0.15.37-hotfix1 against real provider generation after the reported cross-section contamination. Confirm wrong-key responses receive focused repair, Scenario/First Message/Lorebook echoes are rejected from unrelated components, clean long-form fields remain accepted, parallel generation uses the same guard, and exported Diagnostics expose requested/returned keys plus contamination fingerprints.
 - Runtime-test v0.15.37 with real multi-source Collaborator sessions: target character plus additional Workspace characters, saved/generated Ideas, pasted extraction text, and Character Card JSON/PNG sources. Confirm source roles survive save/reopen and long conversations without being flattened.
-- Runtime-test embedded UserPersona exclusion against real extracted cards from JSON, PNG and copy/paste. Confirm raw source remains inspectable, AI-facing context excludes roleplayer residue, and legitimate character-to-`{{user}}` relationship/situation facts remain intact.
 - Runtime-test target switching and v0.15.36 Compare & Apply from a multi-source session; only the explicit Workspace target may be updated while reference sources remain read-only.
 - Confirm completion/refinement provenance carries the compact v0.15.37 source-set lineage and remains compatible with older derivation metadata.
 - Runtime-test v0.15.36-hotfix3 by creating/abandoning blank projects, pressing Save while blank, then adding project/character content and confirming first persistence occurs only after meaningful authoring.
@@ -345,7 +371,7 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 
 ## Next Up
 
-- Improve source precedence/conflict presentation after real multi-source use: show conflicting facts and author resolutions clearly without inventing a hidden precedence order.
+- Improve source precedence/conflict presentation after real multi-source use, especially when structured card metadata and linked Vision evidence disagree: show conflicting facts and author resolutions clearly without inventing a hidden precedence order.
 - Consider multi-selection for saved Idea/source pickers and denser source-list controls if family/cast sessions make one-at-a-time addition cumbersome.
 - Consider extracting the v0.15.38 character-search/index behaviour into a reusable Character Picker if Image Studio runtime use proves it suitable for Collaborator, relationship tools, or other large-library workflows.
 - Add optional provider/API execution pools so profiles sharing one cloud provider can share a provider-specific concurrency/rate-limit ceiling.
@@ -388,7 +414,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep multi-source Collaborator collections versioned and backwards-compatible; never flatten distinct source IDs/types/roles/provenance to fit an older prompt shape.
 - Maintain a single explicit existing-character refinement target while allowing arbitrary read-only references.
 - Keep raw Collaborator source evidence separate from AI-facing normalised source data. Embedded user-persona cleanup happens only at the model-context boundary and remains auditable.
-- Treat Character Card detection on normal attachment paths as a promotion step, not a replacement for attachments: non-card JSON remains text context and non-card images continue through Vision.
+- A Character Card image may participate simultaneously as structured card metadata and Vision-derived evidence. Link these representations through stable source IDs/provenance; never copy Vision observations into card fields during ingestion or collapse discrepancies silently.
+- Treat Character Card detection on normal attachment paths as a promotion/branching step, not a replacement for attachments: non-card JSON remains text context, non-card images continue through Vision, and recognised card images may explicitly use metadata, Vision, or both.
 - Maintain one authoritative Character Text output budget per queued generation job and reassert it at request time.
 - Keep each concurrent worker's request, retry, repair, Diagnostics, cancellation, and parent-state data isolated.
 - Expose scheduler/job state through stable inspectable records rather than having UI scrape visual status strings.
