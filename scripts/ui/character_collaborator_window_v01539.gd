@@ -206,14 +206,15 @@ func _refresh_multi_source_list_v01537() -> void:
 	var sources := active_source_contexts_v01537()
 	var session := _active_session()
 	var context_items: Variant = session.get("context_items", [])
-	for index in range(mini(sources.size(), _multi_source_list_v01537.get_child_count())):
+	var live_rows: Array[HBoxContainer] = []
+	for child in _multi_source_list_v01537.get_children():
+		if child is HBoxContainer and not child.is_queued_for_deletion():
+			live_rows.append(child as HBoxContainer)
+	for index in range(mini(sources.size(), live_rows.size())):
 		var source: Dictionary = sources[index]
 		if not CARD_VISION_SERVICE_V01539.is_visual_card_source(source):
 			continue
-		var row_value: Variant = _multi_source_list_v01537.get_child(index)
-		if not row_value is HBoxContainer:
-			continue
-		var row := row_value as HBoxContainer
+		var row := live_rows[index]
 		var linked := CARD_VISION_SERVICE_V01539.source_has_linked_vision(source, context_items)
 		for child in row.get_children():
 			if child is Label:
