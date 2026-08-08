@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.40-hotfix4",
+  "description": "v0.15.40-hotfix3 coverage plus an explicit guard against inherited explanatory labels collapsing inside source action flows.",
+  "base_manifest": "regression_suites_v01540_hotfix3.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01540_hotfix4_source_helper_width",
+        "label": "v0.15.40-hotfix4 full-width Character Card source helper",
+        "kind": "python",
+        "path": "tools/test_v01540_hotfix4_source_helper_width_strict.py",
+        "timeout_seconds": 210
+      }
+    ]
+  }
+}
