@@ -117,7 +117,8 @@ func _run() -> void:
 	if not _require(status_label.text == "Saved at 12:34:56", "Idle cleanup must preserve a newer non-AI Workspace status message."):
 		return
 
-	# Safe Section children should not displace their top-level parent activity at equal/lower priority.
+	# Lifecycle state is primary: a genuinely running child outranks a parent that
+	# is only coordinating the build.
 	workspace.call(
 		"_reconcile_workspace_ai_activity_from_records_v01540",
 		[
@@ -125,8 +126,21 @@ func _run() -> void:
 			_record("character-2::scenario", "Scenario", "running", "safe_section", "character-2")
 		]
 	)
-	if not _require(status_label.text.begins_with("Scenario"), "A genuinely running child may outrank a coordinating parent while work is active."):
+	if not _require(status_label.text.begins_with("Scenario"), "A genuinely running child must outrank a coordinating parent while work is active."):
 		return
+
+	# At equal lifecycle state, prefer the top-level job so the general Workspace
+	# status does not flicker through internal section labels.
+	workspace.call(
+		"_reconcile_workspace_ai_activity_from_records_v01540",
+		[
+			_record("character-3", "Generating character", "running", "character_generation"),
+			_record("character-3::scenario", "Scenario", "running", "safe_section", "character-3")
+		]
+	)
+	if not _require(status_label.text == "Generating character…", "A running parent must win the tie against its running Safe Section child."):
+		return
+
 	workspace.call("_reconcile_workspace_ai_activity_from_records_v01540", [])
 	if not _require(status_label.text == "Ready.", "Final idle transition must clear the last owned AI activity message."):
 		return
