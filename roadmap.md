@@ -69,6 +69,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Safe Section output must match the identity of the requested field/component as well as its JSON/type contract. Valid JSON containing content routed from Scenario, First Message, Lorebook, or another long section must not be silently materialised into an unrelated card field.
 - Failed provider generations remain inspectable through credential-redacted Diagnostics.
 - Deferred or awaited UI work verifies node/control/SceneTree validity before touching UI after an await.
+- Modal dialogs with wrapped custom content must establish a bounded content width before minimum-size calculation and keep their user-facing action controls inside that bounded layout; native window-manager/subwindow behaviour must not be the only thing keeping a confirmation action reachable.
 - Detached tools that consume saved project data receive save/change notifications rather than relying only on startup scans or stale private caches.
 - Image provider discovery belongs to Image profiles and is never stored in or resolved through Character Text/Vision profiles.
 - Image Studio is a first-class main-navigation page. Its native `Window` controller may remain an implementation detail, but normal navigation presents the studio embedded in the main workspace.
@@ -78,21 +79,28 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.39-hotfix1 development candidate — Collaborator Window.mode Shadow Warning**
+**v0.15.39-hotfix2 development candidate — Character Card Ingestion Dialog Layout**
 
-v0.15.39-hotfix1 fixes two Godot 4.7.1 `SHADOWED_VARIABLE_BASE_CLASS` warnings in the Character Card dual-ingestion Collaborator leaf. The selected ingestion mode local and `_apply_card_ingestion_v01539()` parameter now use `ingestion_mode` rather than `mode`, avoiding collision with the inherited `Window.mode` property without changing any Character Card ingestion behaviour.
+v0.15.39-hotfix2 fixes the Character Card PNG/APNG mode chooser becoming almost desktop-height in normal Collaborator runtime and pushing its confirmation controls below the visible window. Wrapped custom content now receives a stable width before Godot calculates minimum height, and the mode chooser uses an explicit in-content **Cancel / Add** action row so the user can always confirm or cancel the selected ingestion mode.
 
-A source-level regression now checks this exact naming invariant because the existing headless warning-as-error import step did not reliably reproduce the editor/runtime warning. The hotfix keeps the full v0.15.39 dual-ingestion regression, Multi-source/UserPersona checks, Vision attachment checks, Image Studio compatibility, Safe Section protection, updater preservation, and broad regression coverage.
+The chooser targets a compact 740×300 layout, focuses **Add** when opened, and hides the displaced native ConfirmationDialog action buttons to avoid duplicate controls. **Card data + Vision**, **Card data only**, and **Vision only** remain unchanged, as do source provenance, UserPersona exclusion, linked Vision evidence, and post-attachment Analyse/Re-analyse behavior.
 
-Character Collaborator can still use recognised Character Card PNG/APNG files as both structured card data and optional visual evidence. When a card image is attached through the normal attachment workflow, the author chooses **Card data + Vision**, **Card data only**, or **Vision only**. Card data + Vision remains the recommended default and links the existing structured source to the existing Vision-derived reference context without flattening the two representations.
+A real-application layout regression uses a deliberately long Character Card label and verifies the custom actions exist, all three modes remain available, wrapped content has a bounded width, and the action controls remain inside the dialog geometry. The test deliberately does not depend on native child-window `visible` state under headless Godot because OS/window-manager subwindow visibility is not a reliable headless contract.
 
-The raw Character Card snapshot remains untouched. Its separate AI-facing snapshot continues to exclude embedded `UserPersona` / user-profile residue while retaining genuine character facts involving `{{user}}`. Vision output remains supplementary evidence produced by the configured Vision role; it never overwrites the card metadata. If artwork and metadata disagree, both remain available for Collaborator to reason about explicitly.
-
-Visual Character Card sources also expose **Analyse Image** / **Re-analyse Image**, so Vision can be added after a metadata-only attachment without removing/reimporting the card. Non-card images continue through the ordinary Vision path, non-card JSON remains ordinary text attachment content, and Character Card JSON remains a structured source.
-
-v0.15.39-hotfix1 layers on v0.15.39, v0.15.38 Image Studio, v0.15.37-hotfix1 generation validation, v0.15.37 Multi-source Collaborator, and the v0.15.38-hotfix1 updater fix. The running development build displays **v0.15.39-hotfix1**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
+v0.15.39-hotfix2 retains the v0.15.39-hotfix1 `Window.mode` naming guard, now made forward-compatible with later v0.15.39 hotfix labels. The running development build displays **v0.15.39-hotfix2**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
 
 ## Completed
+
+### v0.15.39-hotfix2 — Character Card Ingestion Dialog Layout
+
+- Gave the Character Card chooser's wrapped content and explanatory labels a stable 680-pixel minimum width before minimum-height calculation.
+- Added explicit visible **Cancel** and **Add** controls inside the custom dialog content so confirmation cannot be pushed below the desktop by an oversized native action row.
+- Hid the native ConfirmationDialog action buttons to prevent duplicates and focused the custom **Add** action when the chooser opens.
+- Reduced the popup target to a compact 740×300 layout while retaining all three card-ingestion choices.
+- Preserved metadata/Vision separation, UserPersona exclusion, linked provenance, and all v0.15.39 ingestion semantics unchanged.
+- Added a real-app long-label layout regression and strict runner, plus `tools/regression_suites_v01539_hotfix2.json` and dedicated CI coverage.
+- Made the hotfix1 shadow-warning regression accept later v0.15.39 hotfix build labels while keeping its actual `Window.mode` collision checks strict.
+- Added `docs/v01539-hotfix2-card-dialog-layout.md` and updated the running build label to `0.15.39-hotfix2`.
 
 ### v0.15.39-hotfix1 — Collaborator Window.mode Shadow Warning
 
@@ -338,6 +346,7 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 
 ## In Progress
 
+- Runtime-test v0.15.39-hotfix2 in normal desktop Collaborator use and confirm the Character Card PNG/APNG mode chooser stays compact with visible **Cancel** and **Add** controls for short and long card names.
 - Runtime-test v0.15.39-hotfix1 in the normal Godot editor/runtime and confirm the two reported `SHADOWED_VARIABLE_BASE_CLASS` warnings are gone from `character_collaborator_window_v01539.gd`.
 - Runtime-test v0.15.39 with real Character Card PNG/APNG sources using all three modes. Confirm **Card data + Vision** produces a structured source plus linked Vision evidence, **Card data only** spends no Vision request, and **Vision only** does not add embedded card metadata.
 - Runtime-test **Analyse Image / Re-analyse Image** on an already attached Character Card source and confirm the action remains visible after source-list refresh/save/reopen.
@@ -441,6 +450,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Maintain the versioned representative regression registry as a release compatibility boundary across unrelated app areas.
 - Keep local regression subprocesses isolated from real HOME/XDG/AppData state.
 - Keep strict wrappers/import gates for Godot cases where logged script/assertion failures may not produce a nonzero exit code.
+- Headless regression tests for native child windows must validate application layout/control invariants without assuming an OS/window-manager `visible` state that headless Godot cannot guarantee.
 - Continue warning-as-error GDScript hygiene on Godot 4.7.x without hiding warning categories globally. Where a warning does not reproduce reliably in headless import, add a focused source/runtime regression for the exact invariant rather than assuming the import gate is sufficient.
 - Large-library pickers should search lightweight cached/index rows, bound rendered result counts, and load full project data only after the user selects an item.
 - Keep hidden compatibility controls only where they safely reuse mature inherited logic; new user-facing selection UX should not require users to navigate those legacy controls.
