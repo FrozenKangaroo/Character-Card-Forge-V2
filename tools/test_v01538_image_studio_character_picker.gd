@@ -96,18 +96,16 @@ func _run() -> void:
 		return
 
 	# Confirm that the active application remains layered on the v0.15.38 Image
-	# Studio contract. Later compatible shells are valid as long as they inherit
-	# main_v01538 and keep the indexed Image Studio controller intact.
+	# Studio contract. Later compatible shells may inherit it through several
+	# versioned shells, so follow the actual extends chain instead of requiring a
+	# direct parent relationship.
 	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
 	var active_main_path := _active_main_script_path(scene_source)
 	if not _require(not active_main_path.is_empty(), "The current main scene must reference a versioned application shell."):
 		return
-	var active_main_source := FileAccess.get_file_as_string(active_main_path)
-	var has_v01538_shell := active_main_path == "res://scripts/main_v01538.gd"
-	var inherits_v01538_shell := active_main_source.contains("extends \"res://scripts/main_v01538.gd\"")
 	if not _require(
-		has_v01538_shell or inherits_v01538_shell,
-		"The current application shell must activate or directly preserve the v0.15.38 Image Studio layer."
+		_script_inherits_path(active_main_path, "res://scripts/main_v01538.gd", 12),
+		"The current application shell must preserve the v0.15.38 Image Studio layer somewhere in its versioned inheritance chain."
 	):
 		return
 
@@ -150,6 +148,34 @@ func _active_main_script_path(scene_source: String) -> String:
 	if finish < 0:
 		return ""
 	return scene_source.substr(start, finish - start)
+
+
+func _script_inherits_path(start_path: String, target_path: String, max_depth: int) -> bool:
+	var current_path := start_path
+	var visited: Dictionary = {}
+	for _depth in range(max_depth + 1):
+		if current_path == target_path:
+			return true
+		if current_path.is_empty() or visited.has(current_path):
+			return false
+		visited[current_path] = true
+		var source := FileAccess.get_file_as_string(current_path)
+		if source.is_empty():
+			return false
+		current_path = _extends_script_path(source)
+	return false
+
+
+func _extends_script_path(source: String) -> String:
+	var marker := "extends \""
+	var start := source.find(marker)
+	if start < 0:
+		return ""
+	start += marker.length()
+	var finish := source.find("\"", start)
+	if finish < 0:
+		return ""
+	return source.substr(start, finish - start)
 
 
 func _require(condition: bool, message: String) -> bool:

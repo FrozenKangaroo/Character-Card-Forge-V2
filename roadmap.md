@@ -46,6 +46,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Every Character-generation sub-request uses the active Text profile's authoritative Maximum Output Tokens allowance unless the user changes that profile setting.
 - Concurrent AI work must preserve isolated request/job state. A shared scheduler may coordinate capacity, but unrelated Character, Collaborator, Idea, Vision, authoring-tool, and Image jobs never share one mutable `_active_job`.
 - Concurrent AI work must be inspectable and selectively cancellable without clearing unrelated workflows.
+- Workspace AI activity text is a projection of authoritative AI Jobs/scheduler state rather than an independent workflow-local lifecycle. AI-owned status may clear when the job system becomes idle, but later unrelated Workspace status such as Save/error/result messages must not be erased by that idle transition.
 - Parallel generation remains deterministic: dependency order and template order—not network completion timing—determine context and final assembly.
 - Character Collaborator preserves established canon by default, deepens existing material before rewriting premises, and makes alternate/rewrite directions explicit.
 - Collaborator conversations are independent local authoring documents; project association is optional metadata rather than ownership.
@@ -79,17 +80,29 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.39-hotfix2 development candidate — Character Card Ingestion Dialog Layout**
+**v0.15.40 development candidate — Workspace AI Activity Lifecycle**
 
-v0.15.39-hotfix2 fixes the Character Card PNG/APNG mode chooser becoming almost desktop-height in normal Collaborator runtime and pushing its confirmation controls below the visible window. Wrapped custom content now receives a stable width before Godot calculates minimum height, and the mode chooser uses an explicit in-content **Cancel / Add** action row so the user can always confirm or cancel the selected ingestion mode.
+v0.15.40 fixes a long-standing Workspace status bug where an activity message such as **Generating ideas…** could remain visible after the owning AI job had completed even though the AI Jobs panel and aggregate queue correctly showed no running or queued work.
 
-The chooser targets a compact 740×300 layout, focuses **Add** when opened, and hides the displaced native ConfirmationDialog action buttons to avoid duplicate controls. **Card data + Vision**, **Card data only**, and **Vision only** remain unchanged, as do source provenance, UserPersona exclusion, linked Vision evidence, and post-attachment Analyse/Re-analyse behavior.
+The Workspace now reconciles AI activity against the authoritative v0.15.31 AI Job records after job start, completion, failure, cancellation, worker queue changes, and scheduler state changes. Running work takes priority over coordinating/waiting/queued work; when one of several concurrent jobs finishes, the Workspace switches to another live job instead of clearing too early or retaining the completed job's label.
 
-A real-application layout regression uses a deliberately long Character Card label and verifies the custom actions exist, all three modes remain available, wrapped content has a bounded width, and the action controls remain inside the dialog geometry. The test deliberately does not depend on native child-window `visible` state under headless Godot because OS/window-manager subwindow visibility is not a reliable headless contract.
+When no live AI records remain, an activity message is replaced with **Ready.** only if that exact text is still owned by the AI activity lifecycle. A newer unrelated Workspace message such as **Saved at…**, a result message, or an error therefore survives the idle transition. Reconciliation is deferred/coalesced so it observes settled scheduler/queue state rather than transient signal order.
 
-v0.15.39-hotfix2 retains the v0.15.39-hotfix1 `Window.mode` naming guard, now made forward-compatible with later v0.15.39 hotfix labels. The running development build displays **v0.15.39-hotfix2**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
+The active shell remains layered on v0.15.39-hotfix2 Character Card PNG dual ingestion/dialog layout, v0.15.38 Image Studio, v0.15.31 AI Jobs inspection/cancellation, v0.15.37-hotfix1 generation validation, and the v0.15.38-hotfix1 updater fix. The running development build displays **v0.15.40**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
 
 ## Completed
+
+### v0.15.40 — Workspace AI Activity Lifecycle
+
+- Made authoritative `ai_job_records_v01531()` state drive the Workspace's visible AI activity lifecycle instead of leaving start text to workflow-local callbacks.
+- Reconciled status after start, completion, failure, cancellation, worker queue changes, and scheduler state changes.
+- Cleared AI-owned stale activity to **Ready.** when no running/queued/waiting work remains.
+- Switched the visible activity to another live job when overlapping work continues after one job finishes.
+- Kept running, coordinating, capacity-waiting, queued, and dependency-waiting states distinguishable.
+- Added ownership-aware clearing so later non-AI Workspace messages such as **Saved at…** are never erased merely because AI work becomes idle.
+- Added deterministic parent/Safe Section child prioritisation for concurrent generation activity.
+- Added a real-main-scene lifecycle regression, strict runner, `tools/regression_suites_v01540.json`, dedicated CI, and `docs/v01540-workspace-ai-activity-lifecycle.md`.
+- Hardened the historical v0.15.38 Image Studio regression to follow the versioned application `extends` chain rather than rejecting compatible later shells that preserve the picker indirectly.
 
 ### v0.15.39-hotfix2 — Character Card Ingestion Dialog Layout
 
@@ -346,6 +359,8 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 
 ## In Progress
 
+- Runtime-test v0.15.40 with real AI Ideas, Generate Character, Collaborator/Vision, and other Workspace-owned AI work. Confirm active text follows the actual live job, successful completion clears stale activity when the queue becomes idle, and overlapping jobs switch to another remaining activity.
+- Runtime-test v0.15.40 failure and cancellation paths, capacity-waiting/queued states, and verify a newer non-AI status such as **Saved at…** or an actionable error/result is not erased by a later idle reconciliation.
 - Runtime-test v0.15.39-hotfix2 in normal desktop Collaborator use and confirm the Character Card PNG/APNG mode chooser stays compact with visible **Cancel** and **Add** controls for short and long card names.
 - Runtime-test v0.15.39-hotfix1 in the normal Godot editor/runtime and confirm the two reported `SHADOWED_VARIABLE_BASE_CLASS` warnings are gone from `character_collaborator_window_v01539.gd`.
 - Runtime-test v0.15.39 with real Character Card PNG/APNG sources using all three modes. Confirm **Card data + Vision** produces a structured source plus linked Vision evidence, **Card data only** spends no Vision request, and **Vision only** does not add embedded card metadata.
@@ -442,6 +457,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Maintain one authoritative Character Text output budget per queued generation job and reassert it at request time.
 - Keep each concurrent worker's request, retry, repair, Diagnostics, cancellation, and parent-state data isolated.
 - Expose scheduler/job state through stable inspectable records rather than having UI scrape visual status strings.
+- Shared Workspace status surfaces that display AI work must derive from authoritative AI Job records and track ownership of the text they write. Idle cleanup may only clear the still-owned activity text, never a newer unrelated status written by another workflow.
 - Route selective cancellation through the owning worker/service so unrelated queues remain intact.
 - Keep dependency graphs data-driven and detect cycles/invalid references without deadlocking a build.
 - Preserve frozen wave context and deterministic template-order assembly for parallel generation.
