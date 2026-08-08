@@ -18,6 +18,16 @@ func _require(condition: bool, message: String) -> bool:
 	return false
 
 
+func _control_rect_inside_window(control: Control, window: Window) -> Rect2:
+	var local_position := control.position
+	var parent := control.get_parent()
+	while parent != null and parent != window:
+		if parent is Control:
+			local_position += (parent as Control).position
+		parent = parent.get_parent()
+	return Rect2(local_position, control.size)
+
+
 func _run() -> void:
 	var scene := load("res://scenes/main.tscn") as PackedScene
 	if not _require(scene != null, "The real main scene must load."):
@@ -40,11 +50,14 @@ func _run() -> void:
 	var add_value: Variant = collaborator.get("_card_ingestion_add_button_v01539")
 	var cancel_value: Variant = collaborator.get("_card_ingestion_cancel_button_v01539")
 	var mode_value: Variant = collaborator.get("_card_ingestion_mode_v01539")
+	var hint_value: Variant = collaborator.get("_card_ingestion_hint_v01539")
 	if not _require(dialog_value is ConfirmationDialog, "Character Card ingestion must still use a ConfirmationDialog shell."):
 		return
 	if not _require(add_value is Button and cancel_value is Button, "The dialog must expose explicit Add and Cancel buttons inside its custom content."):
 		return
 	if not _require(mode_value is OptionButton and (mode_value as OptionButton).item_count == 3, "The three ingestion choices must remain available."):
+		return
+	if not _require(hint_value is Label and (hint_value as Label).custom_minimum_size.x >= 680.0, "Wrapped dialog text must have a stable width before minimum-height calculation."):
 		return
 	var dialog := dialog_value as ConfirmationDialog
 	var add_button := add_value as Button
@@ -56,7 +69,9 @@ func _run() -> void:
 	if not _require(not dialog.get_ok_button().visible and not dialog.get_cancel_button().visible, "Hidden native action buttons must not duplicate the custom action row."):
 		return
 
-	# Show the dialog with a deliberately long filename so wrapping/layout is exercised.
+	# Exercise the same long-label path as the desktop regression. Native child
+	# windows do not reliably report visible=true under --headless, so this test
+	# validates the layout geometry rather than OS/window-manager visibility state.
 	collaborator.set("_pending_card_ingestions_v01539", [{
 		"path": "/tmp/A very long Character Card filename used to reproduce the missing button layout regression.png",
 		"source": {
@@ -68,15 +83,13 @@ func _run() -> void:
 	await process_frame
 	await process_frame
 
-	if not _require(dialog.visible, "The Character Card mode dialog must become visible."):
+	if not _require(dialog.size.x >= 700 and dialog.size.y <= 520, "The mode dialog must keep a wide, bounded geometry instead of expanding to desktop height."):
 		return
-	if not _require(dialog.size.y <= 520, "The mode dialog must remain reasonably bounded instead of expanding to desktop height."):
-		return
-	var add_rect := add_button.get_global_rect()
-	var cancel_rect := cancel_button.get_global_rect()
+	var add_rect := _control_rect_inside_window(add_button, dialog)
+	var cancel_rect := _control_rect_inside_window(cancel_button, dialog)
 	if not _require(add_rect.size.y > 0.0 and cancel_rect.size.y > 0.0, "Visible action buttons must receive real layout rectangles."):
 		return
-	if not _require(add_rect.end.y <= float(dialog.size.y) + 1.0 and cancel_rect.end.y <= float(dialog.size.y) + 1.0, "Add and Cancel must remain inside the visible dialog bounds."):
+	if not _require(add_rect.end.y <= float(dialog.size.y) + 1.0 and cancel_rect.end.y <= float(dialog.size.y) + 1.0, "Add and Cancel must remain inside the dialog's bounded content geometry."):
 		return
 
 	dialog.hide()
