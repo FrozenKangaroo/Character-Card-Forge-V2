@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.39-hotfix1",
+  "description": "v0.15.39 coverage plus a source-level guard against Window.mode shadowing in the Character Card dual-ingestion Collaborator leaf.",
+  "base_manifest": "regression_suites_v01539.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01539_hotfix1_collaborator_shadowing",
+        "label": "v0.15.39-hotfix1 Collaborator Window.mode shadowing guard",
+        "kind": "python",
+        "path": "tools/test_v01539_hotfix1_collaborator_shadowing.py",
+        "timeout_seconds": 30
+      }
+    ]
+  }
+}
