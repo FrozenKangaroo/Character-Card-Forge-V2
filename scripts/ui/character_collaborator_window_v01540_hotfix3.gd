@@ -55,7 +55,7 @@ func _process(_delta: float) -> void:
 		_schedule_sidebar_final_reflow_v01540_hotfix3()
 
 
-func _on_sidebar_sessions_changed_v01540_hotfix3(_sessions: Array) -> void:
+func _on_sidebar_sessions_changed_v01540_hotfix3(_changed_sessions: Array) -> void:
 	_schedule_sidebar_final_reflow_v01540_hotfix3()
 
 

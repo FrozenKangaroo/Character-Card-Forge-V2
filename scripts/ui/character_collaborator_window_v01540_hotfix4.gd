@@ -35,13 +35,6 @@ func sidebar_layout_capabilities_v01540_hotfix4() -> Dictionary:
 	}
 
 
-# hotfix3 made the dynamic source/context rows authoritative, but the user's
-# next runtime screenshot exposed a separate inherited static label from
-# v0.15.37. That helper lived inside the same HFlowContainer as source actions.
-# At real desktop widths Godot could allocate it essentially one glyph of width,
-# producing one-character-per-line text. Keep explanatory prose and actions in
-# different layout regions permanently, and give prose a real readable minimum
-# rather than relying only on size flags.
 func _apply_sidebar_final_reflow_v01540_hotfix3() -> void:
 	super._apply_sidebar_final_reflow_v01540_hotfix3()
 	_repair_source_helper_layout_v01540_hotfix4()
@@ -51,41 +44,26 @@ func _repair_source_helper_layout_v01540_hotfix4() -> void:
 	if _source_panel_v01533 == null:
 		return
 	_source_panel_v01533.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_source_panel_v01533.custom_minimum_size.x = maxf(
-		_source_panel_v01533.custom_minimum_size.x,
-		SOURCE_HELPER_MIN_WIDTH_V01540_HOTFIX4
-	)
-
+	_source_panel_v01533.custom_minimum_size.x = maxf(_source_panel_v01533.custom_minimum_size.x, SOURCE_HELPER_MIN_WIDTH_V01540_HOTFIX4)
 	if _multi_source_list_v01537 != null:
 		_multi_source_list_v01537.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		_multi_source_list_v01537.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 		_multi_source_list_v01537.custom_minimum_size.x = SOURCE_HELPER_MIN_WIDTH_V01540_HOTFIX4
-
 	var actions := _source_actions_container_v01540_hotfix4()
 	if actions == null:
 		return
 	actions.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	actions.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	actions.custom_minimum_size.x = 0.0
-
 	var hint := _source_helper_label_v01540_hotfix4()
 	if hint == null:
 		return
-
 	if hint.get_parent() == actions:
 		var actions_index := actions.get_index()
 		actions.remove_child(hint)
 		_source_panel_v01533.add_child(hint)
-		_source_panel_v01533.move_child(
-			hint,
-			mini(actions_index + 1, _source_panel_v01533.get_child_count() - 1)
-		)
-
+		_source_panel_v01533.move_child(hint, mini(actions_index + 1, _source_panel_v01533.get_child_count() - 1))
 	_prepare_source_helper_label_v01540_hotfix4(hint)
-
-	# Source action flows are action-only. If a future inherited layer adds more
-	# descriptive labels here, move them out as well so the same collapse cannot
-	# reappear under a different helper string.
 	var extra_labels: Array[Label] = []
 	for child in actions.get_children():
 		if child is Label:
@@ -93,21 +71,17 @@ func _repair_source_helper_layout_v01540_hotfix4() -> void:
 	for extra in extra_labels:
 		actions.remove_child(extra)
 		_source_panel_v01533.add_child(extra)
-		_source_panel_v01533.move_child(
-			extra,
-			mini(actions.get_index() + 1, _source_panel_v01533.get_child_count() - 1)
-		)
+		_source_panel_v01533.move_child(extra, mini(actions.get_index() + 1, _source_panel_v01533.get_child_count() - 1))
 		_prepare_source_helper_label_v01540_hotfix4(extra)
-
 	for child in actions.get_children():
 		if child is Button:
 			_prepare_sidebar_action_button_v01540_hotfix3(child as Button)
-
 	_source_panel_v01533.update_minimum_size()
 
 
 func _prepare_source_helper_label_v01540_hotfix4(label: Label) -> void:
-	label.name = SOURCE_HELPER_LABEL_NAME_V01540_HOTFIX4 if label.text.begins_with(SOURCE_HELPER_PREFIX_V01540_HOTFIX4) else label.name
+	if label.text.begins_with(SOURCE_HELPER_PREFIX_V01540_HOTFIX4):
+		label.name = SOURCE_HELPER_LABEL_NAME_V01540_HOTFIX4
 	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	label.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	label.custom_minimum_size.x = SOURCE_HELPER_MIN_WIDTH_V01540_HOTFIX4
@@ -118,22 +92,16 @@ func _prepare_source_helper_label_v01540_hotfix4(label: Label) -> void:
 func _source_actions_container_v01540_hotfix4() -> HFlowContainer:
 	if _source_panel_v01533 == null:
 		return null
-	var found := _source_panel_v01533.find_child(
-		SOURCE_HELPER_ACTIONS_NAME_V01540_HOTFIX4,
-		true,
-		false
-	)
-	return found as HFlowContainer if found is HFlowContainer else null
+	var found := _source_panel_v01533.find_child(SOURCE_HELPER_ACTIONS_NAME_V01540_HOTFIX4, true, false)
+	if found is HFlowContainer:
+		return found as HFlowContainer
+	return null
 
 
 func _source_helper_label_v01540_hotfix4() -> Label:
 	if _source_panel_v01533 == null:
 		return null
-	var named := _source_panel_v01533.find_child(
-		SOURCE_HELPER_LABEL_NAME_V01540_HOTFIX4,
-		true,
-		false
-	)
+	var named := _source_panel_v01533.find_child(SOURCE_HELPER_LABEL_NAME_V01540_HOTFIX4, true, false)
 	if named is Label:
 		return named as Label
 	for node in _source_panel_v01533.find_children("*", "Label", true, false):
@@ -171,10 +139,15 @@ func source_helper_layout_snapshot_v01540_hotfix4() -> Dictionary:
 		for child in actions.get_children():
 			if child is Label:
 				labels_in_actions += 1
+	var hint_parent_type := ""
+	var hint_parent_name := ""
+	if hint != null and hint.get_parent() != null:
+		hint_parent_type = hint.get_parent().get_class()
+		hint_parent_name = str(hint.get_parent().name)
 	return {
 		"hint_found": hint != null,
-		"hint_parent_type": hint.get_parent().get_class() if hint != null and hint.get_parent() != null else "",
-		"hint_parent_name": hint.get_parent().name if hint != null and hint.get_parent() != null else "",
+		"hint_parent_type": hint_parent_type,
+		"hint_parent_name": hint_parent_name,
 		"hint_width": hint.size.x if hint != null else 0.0,
 		"hint_custom_min_width": hint.custom_minimum_size.x if hint != null else 0.0,
 		"hint_horizontal_flags": hint.size_flags_horizontal if hint != null else -1,
