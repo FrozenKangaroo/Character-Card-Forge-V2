@@ -129,8 +129,13 @@ func _run() -> void:
 	collaborator.popup_centered()
 	await process_frame
 	await process_frame
+	var structured_card_json := JSON.stringify({
+		"name": "Attached Character Card",
+		"description": "Established character facts remain read-only source context.",
+		"personality": "Structured-source regression character."
+	})
 	var add_result := collaborator.add_pasted_source_v01537(
-		"Character Card structured metadata reference. Established character facts remain read-only source context.",
+		structured_card_json,
 		"Attached Character Card"
 	)
 	if not _require(bool(add_result.get("ok", false)), "Structured source must be addable through the public Collaborator source API."):
