@@ -1,8 +1,6 @@
 class_name CCFCharacterCollaboratorWindowV01540Hotfix1
 extends "res://scripts/ui/character_collaborator_window_v01539.gd"
 
-const SOURCE_ROW_MAX_BUTTON_HEIGHT_V01540_HOTFIX1 := 44.0
-
 
 func collaborator_source_capabilities_v01533() -> Dictionary:
 	var result := super.collaborator_source_capabilities_v01533()
