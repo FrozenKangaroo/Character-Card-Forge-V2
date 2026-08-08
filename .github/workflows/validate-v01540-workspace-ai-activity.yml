@@ -61,7 +61,7 @@ jobs:
           fi
 
       - name: Recheck AI Jobs visibility and cancellation
-        run: python3 ./tools/test_v01531_ai_jobs_strict.py
+        run: python3 ./tools/test_v01531_ai_jobs_panel_strict.py
 
       - name: Recheck Character Card PNG dual ingestion
         run: python3 ./tools/test_v01539_character_card_dual_ingestion_strict.py
