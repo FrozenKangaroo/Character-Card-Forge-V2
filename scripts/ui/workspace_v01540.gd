@@ -126,11 +126,13 @@ func _live_ai_activity_records_v01540() -> Array:
 
 func _select_ai_activity_record_v01540(records: Array[Dictionary]) -> Dictionary:
 	var selected: Dictionary = {}
-	var selected_rank := 999
+	var selected_rank := 99999
 	for record in records:
 		var status := str(record.get("status", ""))
-		var rank := _ai_activity_status_rank_v01540(status)
-		# Prefer a parent/top-level job over a Safe Section child at the same state.
+		# Lifecycle state is authoritative. Parent/child preference is only a
+		# tie-breaker inside the same state so a genuinely running child still
+		# outranks a merely coordinating or queued parent.
+		var rank := _ai_activity_status_rank_v01540(status) * 100
 		if not str(record.get("parent_id", "")).strip_edges().is_empty():
 			rank += 10
 		if str(record.get("job_type", "")) == "safe_section":
