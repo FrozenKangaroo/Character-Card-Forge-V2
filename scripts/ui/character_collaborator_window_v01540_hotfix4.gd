@@ -103,7 +103,7 @@ func _repair_source_helper_layout_v01540_hotfix4() -> void:
 		if child is Button:
 			_prepare_sidebar_action_button_v01540_hotfix3(child as Button)
 
-	_source_panel_v01533.minimum_size_changed()
+	_source_panel_v01533.update_minimum_size()
 
 
 func _prepare_source_helper_label_v01540_hotfix4(label: Label) -> void:
@@ -112,7 +112,7 @@ func _prepare_source_helper_label_v01540_hotfix4(label: Label) -> void:
 	label.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	label.custom_minimum_size.x = SOURCE_HELPER_MIN_WIDTH_V01540_HOTFIX4
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	label.minimum_size_changed()
+	label.update_minimum_size()
 
 
 func _source_actions_container_v01540_hotfix4() -> HFlowContainer:
