@@ -41,6 +41,9 @@ jobs:
             exit 1
           fi
 
+      - name: Recheck v0.15.39-hotfix1 Collaborator shadowing guard
+        run: python3 ./tools/test_v01539_hotfix1_collaborator_shadowing.py
+
       - name: Confirm Forward Plus remains the desktop default
         shell: bash
         run: |
@@ -79,4 +82,4 @@ jobs:
         run: bash ./tools/test_update_sh_project_godot.sh
 
       - name: Run quick cross-feature regression profile
-        run: python3 ./tools/run_regression_suite.py --manifest ./tools/regression_suites_v01539.json --profile quick --godot "$(command -v godot)"
+        run: python3 ./tools/run_regression_suite.py --manifest ./tools/regression_suites_v01539_hotfix1.json --profile quick --godot "$(command -v godot)"
