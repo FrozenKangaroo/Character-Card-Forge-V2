@@ -149,9 +149,6 @@ func _composer_layout_needs_reflow_v01540_hotfix5() -> bool:
 		return false
 	var viewport_rect := get_viewport().get_visible_rect()
 	var chat_panel := _composer_panel_v01540_hotfix5()
-	if chat_panel != null and chat_panel.is_visible_in_tree():
-		if chat_panel.get_global_rect().end.y > viewport_rect.end.y + WINDOW_BOTTOM_TOLERANCE_V01540_HOTFIX6:
-			return true
 	var input_index := _input.get_index()
 	if _input.get_global_rect().end.y > viewport_rect.end.y + WINDOW_BOTTOM_TOLERANCE_V01540_HOTFIX6:
 		return true
