@@ -78,17 +78,30 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.39 development candidate — Character Card PNG Dual Ingestion**
+**v0.15.39-hotfix1 development candidate — Collaborator Window.mode Shadow Warning**
 
-Character Collaborator can now use recognised Character Card PNG/APNG files as both structured card data and optional visual evidence. When a card image is attached through the normal attachment workflow, the author chooses **Card data + Vision**, **Card data only**, or **Vision only**. Card data + Vision is the recommended default and links the existing structured source to the existing Vision-derived reference context without flattening the two representations.
+v0.15.39-hotfix1 fixes two Godot 4.7.1 `SHADOWED_VARIABLE_BASE_CLASS` warnings in the Character Card dual-ingestion Collaborator leaf. The selected ingestion mode local and `_apply_card_ingestion_v01539()` parameter now use `ingestion_mode` rather than `mode`, avoiding collision with the inherited `Window.mode` property without changing any Character Card ingestion behaviour.
+
+A source-level regression now checks this exact naming invariant because the existing headless warning-as-error import step did not reliably reproduce the editor/runtime warning. The hotfix keeps the full v0.15.39 dual-ingestion regression, Multi-source/UserPersona checks, Vision attachment checks, Image Studio compatibility, Safe Section protection, updater preservation, and broad regression coverage.
+
+Character Collaborator can still use recognised Character Card PNG/APNG files as both structured card data and optional visual evidence. When a card image is attached through the normal attachment workflow, the author chooses **Card data + Vision**, **Card data only**, or **Vision only**. Card data + Vision remains the recommended default and links the existing structured source to the existing Vision-derived reference context without flattening the two representations.
 
 The raw Character Card snapshot remains untouched. Its separate AI-facing snapshot continues to exclude embedded `UserPersona` / user-profile residue while retaining genuine character facts involving `{{user}}`. Vision output remains supplementary evidence produced by the configured Vision role; it never overwrites the card metadata. If artwork and metadata disagree, both remain available for Collaborator to reason about explicitly.
 
 Visual Character Card sources also expose **Analyse Image** / **Re-analyse Image**, so Vision can be added after a metadata-only attachment without removing/reimporting the card. Non-card images continue through the ordinary Vision path, non-card JSON remains ordinary text attachment content, and Character Card JSON remains a structured source.
 
-v0.15.39 layers on v0.15.38 Image Studio, v0.15.37-hotfix1 generation validation, v0.15.37 Multi-source Collaborator, and the v0.15.38-hotfix1 updater fix. The running development build displays **v0.15.39**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
+v0.15.39-hotfix1 layers on v0.15.39, v0.15.38 Image Studio, v0.15.37-hotfix1 generation validation, v0.15.37 Multi-source Collaborator, and the v0.15.38-hotfix1 updater fix. The running development build displays **v0.15.39-hotfix1**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
 
 ## Completed
+
+### v0.15.39-hotfix1 — Collaborator Window.mode Shadow Warning
+
+- Renamed the v0.15.39 Character Card ingestion local variable from `mode` to `ingestion_mode`.
+- Renamed the `_apply_card_ingestion_v01539()` `mode` parameter to `ingestion_mode` so it no longer shadows `Window.mode`.
+- Preserved the public result dictionary's `mode` field and all three Character Card PNG/APNG ingestion behaviours unchanged.
+- Added `tools/test_v01539_hotfix1_collaborator_shadowing.py` as a source-level guard because the existing headless import warning gate did not reliably surface this editor/runtime warning.
+- Added `tools/regression_suites_v01539_hotfix1.json`, advanced the default regression manifest, and wired the new guard into the v0.15.39 CI workflow.
+- Added `docs/v01539-hotfix1-collaborator-shadow-warning.md` and updated the running build label to `0.15.39-hotfix1`.
 
 ### v0.15.39 — Character Card PNG Dual Ingestion
 
@@ -325,6 +338,7 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 
 ## In Progress
 
+- Runtime-test v0.15.39-hotfix1 in the normal Godot editor/runtime and confirm the two reported `SHADOWED_VARIABLE_BASE_CLASS` warnings are gone from `character_collaborator_window_v01539.gd`.
 - Runtime-test v0.15.39 with real Character Card PNG/APNG sources using all three modes. Confirm **Card data + Vision** produces a structured source plus linked Vision evidence, **Card data only** spends no Vision request, and **Vision only** does not add embedded card metadata.
 - Runtime-test **Analyse Image / Re-analyse Image** on an already attached Character Card source and confirm the action remains visible after source-list refresh/save/reopen.
 - Test cards whose visible artwork conflicts with metadata and confirm Collaborator receives both separately-provenanced representations rather than silently rewriting one from the other.
@@ -332,7 +346,7 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 - Runtime-test v0.15.38-hotfix1 `update.sh` on the normal development checkout and confirm recurring local-only `project.godot` drift no longer requires a manual restore/stash, while real unrelated local work still blocks the update.
 - Runtime-test v0.15.38 with a genuinely large personal Library: search by character/project/tag/series/folder/collection, duplicate character names across projects, exact character loading, Workspace-preferred project handoff, gallery ownership, and picker use after save/reload.
 - Confirm v0.15.38 passive character search/switching never calls Text/Vision/Image providers and that Generate Prompt / Generate remain the only provider-spending actions in this workflow.
-- Continue warning-as-error runtime observation for the three v0.15.38 cleanup sites and any additional Godot 4.7.x warnings surfaced by real use.
+- Continue warning-as-error runtime observation for the v0.15.38 cleanup sites, the v0.15.39-hotfix1 Collaborator ingestion leaf, and any additional Godot 4.7.x warnings surfaced by real use.
 - Runtime-test v0.15.37-hotfix1 against real provider generation after the reported cross-section contamination. Confirm wrong-key responses receive focused repair, Scenario/First Message/Lorebook echoes are rejected from unrelated components, clean long-form fields remain accepted, parallel generation uses the same guard, and exported Diagnostics expose requested/returned keys plus contamination fingerprints.
 - Runtime-test v0.15.37 with real multi-source Collaborator sessions: target character plus additional Workspace characters, saved/generated Ideas, pasted extraction text, and Character Card JSON/PNG sources. Confirm source roles survive save/reopen and long conversations without being flattened.
 - Runtime-test target switching and v0.15.36 Compare & Apply from a multi-source session; only the explicit Workspace target may be updated while reference sources remain read-only.
@@ -427,7 +441,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Maintain the versioned representative regression registry as a release compatibility boundary across unrelated app areas.
 - Keep local regression subprocesses isolated from real HOME/XDG/AppData state.
 - Keep strict wrappers/import gates for Godot cases where logged script/assertion failures may not produce a nonzero exit code.
-- Continue warning-as-error GDScript hygiene on Godot 4.7.x without hiding warning categories globally.
+- Continue warning-as-error GDScript hygiene on Godot 4.7.x without hiding warning categories globally. Where a warning does not reproduce reliably in headless import, add a focused source/runtime regression for the exact invariant rather than assuming the import gate is sufficient.
 - Large-library pickers should search lightweight cached/index rows, bound rendered result counts, and load full project data only after the user selects an item.
 - Keep hidden compatibility controls only where they safely reuse mature inherited logic; new user-facing selection UX should not require users to navigate those legacy controls.
 - Audit awaited/deferred UI callbacks for node/tree validity whenever windows or views can be replaced dynamically.
