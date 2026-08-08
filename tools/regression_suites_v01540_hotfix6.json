@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.40-hotfix6",
+  "description": "v0.15.40-hotfix5 coverage plus shared-scroll Reference Context architecture and actual-window composer bounds.",
+  "base_manifest": "regression_suites_v01540_hotfix5.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01540_hotfix6_scrollable_source_sidebar",
+        "label": "v0.15.40-hotfix6 shared source/sidebar scroll and window-bound composer guard",
+        "kind": "python",
+        "path": "tools/test_v01540_hotfix6_scrollable_source_sidebar_strict.py",
+        "timeout_seconds": 270
+      }
+    ]
+  }
+}
