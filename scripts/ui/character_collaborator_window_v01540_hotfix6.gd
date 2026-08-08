@@ -20,6 +20,14 @@ func _refresh_all() -> void:
 	_schedule_composer_reflow_v01540_hotfix5()
 
 
+func _process(delta: float) -> void:
+	super._process(delta)
+	if not visible:
+		return
+	if _composer_window_layout_needs_reflow_v01540_hotfix6():
+		_schedule_composer_reflow_v01540_hotfix5()
+
+
 func collaborator_source_capabilities_v01533() -> Dictionary:
 	var result := super.collaborator_source_capabilities_v01533()
 	result["scrollable_source_sidebar_v01540_hotfix6"] = true
@@ -142,9 +150,7 @@ func _reference_context_scroll_v01540_hotfix6() -> ScrollContainer:
 	return null
 
 
-func _composer_layout_needs_reflow_v01540_hotfix5() -> bool:
-	if super._composer_layout_needs_reflow_v01540_hotfix5():
-		return true
+func _composer_window_layout_needs_reflow_v01540_hotfix6() -> bool:
 	if not visible or _input == null:
 		return false
 	var viewport_rect := get_viewport().get_visible_rect()
@@ -223,5 +229,5 @@ func composer_window_snapshot_v01540_hotfix6() -> Dictionary:
 	result["viewport_bottom"] = viewport_rect.end.y
 	result["input_inside_viewport"] = input_bottom <= viewport_rect.end.y + WINDOW_BOTTOM_TOLERANCE_V01540_HOTFIX6
 	result["chat_panel_inside_viewport"] = panel_bottom <= viewport_rect.end.y + WINDOW_BOTTOM_TOLERANCE_V01540_HOTFIX6
-	result["window_guard_needs_reflow"] = _composer_layout_needs_reflow_v01540_hotfix5()
+	result["window_guard_needs_reflow"] = _composer_window_layout_needs_reflow_v01540_hotfix6()
 	return result
