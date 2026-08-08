@@ -76,6 +76,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - A Collaborator Reference Context sidebar is a single user-facing layout contract even when it contains multiple independently-rendered internal surfaces such as structured sources and ordinary attachments/Vision context. Layout safety must be verified across the whole visible sidebar.
 - UI regressions involving replaceable/versioned renderers must exercise the real lifecycle/refresh path and verify the final live control tree. A helper-built component passing in isolation is not sufficient proof that runtime dispatch actually uses it.
 - When inherited/versioned UI refresh dispatch can write a stale renderer late in a lifecycle, a bounded final post-layout reconciliation may enforce the user-facing invariant; it must be idempotent and must not continuously churn already-correct controls.
+- Detached/native tool windows with a bottom composer must let the scrolling history absorb vertical resize pressure; the input/actions remain shrink-pinned inside the visible window and resize reconciliation must not require a project/session switch.
 - Detached tools that consume saved project data receive save/change notifications rather than relying only on startup scans or stale private caches.
 - Image provider discovery belongs to Image profiles and is never stored in or resolved through Character Text/Vision profiles.
 - Image Studio is a first-class main-navigation page. Its native `Window` controller may remain an implementation detail, but normal navigation presents the studio embedded in the main workspace.
@@ -85,19 +86,31 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.40-hotfix4 — Collaborator Source Helper Width**
+**v0.15.40-hotfix5 — Collaborator Composer Resize Guard + Godot 4.7.1 Warning Cleanup**
 
-Desktop runtime testing of v0.15.40-hotfix3 confirmed that its whole-sidebar reconciliation removed the previous giant full-height action columns, but the Reference Context sidebar was still not fully correct. With **Sources • 1** visible, the inherited Character Card helper sentence beginning `Character Card JSON/PNG added through Attach Files...` could collapse into a one-character-per-line vertical column.
+Desktop runtime testing found a separate Collaborator layout defect after the Reference Context sidebar work: with a long Vision Analysis visible, resizing the detached Collaborator window could push the entire bottom composer—input box, Attach/Send controls, response-variant controls and handoff actions—below the visible window. Switching to another project and back restored it, showing that the conversation data was intact and that a fuller refresh was merely repairing stale vertical layout/minimum-size state.
 
-The remaining control was not one of the dynamic Character Card source rows or ordinary Vision/reference rows guarded by hotfix1–hotfix3. It was a static v0.15.37 explanatory `Label` still living inside `CollaboratorMultiSourceActionsV01537`, an `HFlowContainer` shared with compact action controls. That allowed Godot's real desktop width negotiation to allocate almost no horizontal space to prose even after the dynamic rows themselves had been corrected.
+v0.15.40-hotfix5 makes the transcript ScrollContainer the authoritative vertical-expansion surface and keeps the composer controls shrink-pinned after it. Resize, visibility and normal Collaborator refreshes schedule a bounded deferred reconciliation that clears stale transcript minimum-height pressure, reasserts the composer sizing contract and asks the relevant container chain to sort again. A lightweight runtime guard can recover the same bad state without requiring the user's project-switch workaround.
 
-v0.15.40-hotfix4 moves explanatory labels completely out of the source action flow and into independent full-width source-panel rows. The Character Card helper now declares a 260-pixel readable minimum width; live widths below 220 pixels are treated as an unsafe layout and trigger the existing bounded final reconciliation. The source action flow is now action-only.
+The same runtime session surfaced three Godot 4.7.1 warnings. The hotfix3 sessions callback no longer uses a parameter named `_sessions`, which shadowed the base Collaborator member, and the two hotfix4 mixed-type ternaries have been replaced with explicit typed branches. The dedicated import gate treats `SHADOWED_VARIABLE_BASE_CLASS` and `INCOMPATIBLE_TERNARY` as release failures.
 
-The focused regression opens the real main scene, adds a real structured source so **Sources • 1** and the source panel are actually visible, verifies readable helper geometry, then deliberately reparents the helper back into the inherited HFlow and removes its minimum width. The normal runtime guard/final reflow must move it back out, restore expand/fill plus the readable minimum, and preserve hotfix3/hotfix2, Card + Vision, UserPersona, updater, and Workspace AI activity invariants.
+The focused regression opens the real main scene and real Collaborator, adds a long Vision-style message to the live transcript, repeatedly resizes through large and minimum-supported window sizes, and requires the composer to stay inside the visible panel without switching projects. It also deliberately injects stale transcript minimum-height/input sizing state and requires the normal resize/runtime guard to recover automatically.
 
-The active shell remains layered on v0.15.40 Workspace AI activity reconciliation, v0.15.39-hotfix2 Character Card dual ingestion/dialog layout, v0.15.38 Image Studio, v0.15.31 AI Jobs inspection/cancellation, v0.15.37-hotfix1 generation validation, and v0.15.38-hotfix1 updater preservation. The running development build displays **v0.15.40-hotfix4**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
+The active shell remains layered on v0.15.40 Workspace AI activity reconciliation, v0.15.40-hotfix4 Reference Context/sidebar safety, v0.15.39-hotfix2 Character Card dual ingestion/dialog layout, v0.15.38 Image Studio, v0.15.31 AI Jobs inspection/cancellation, v0.15.37-hotfix1 generation validation, and v0.15.38-hotfix1 updater preservation. The running development build displays **v0.15.40-hotfix5**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
 
 ## Completed
+
+### v0.15.40-hotfix5 — Collaborator Composer Resize Guard + Godot 4.7.1 Warning Cleanup
+
+- Made the Collaborator transcript ScrollContainer the vertical expansion surface while keeping the input and bottom action controls shrink-pinned inside the chat panel.
+- Added deferred composer reconciliation after window resize, visibility changes and normal Collaborator refreshes; stale transcript minimum height is cleared and parent containers are re-sorted without rebuilding conversation data.
+- Added a visible runtime invariant so a composer that leaves the chat-panel bounds is repaired without switching projects/sessions.
+- Added a real-main-scene regression with a long Vision-style transcript message, repeated large/small resizes and an injected stale-layout state; automatic recovery is required with no project-switch workaround.
+- Renamed the hotfix3 sessions callback parameter so it no longer shadows the base `_sessions` member.
+- Replaced the two reported hotfix4 incompatible ternaries with explicit typed branches/values.
+- Added a strict Godot 4.7.1 warning gate for `SHADOWED_VARIABLE_BASE_CLASS`, `CONFUSABLE_LOCAL_DECLARATION` and `INCOMPATIBLE_TERNARY`.
+- Added `tools/regression_suites_v01540_hotfix5.json`, advanced the default regression manifest, dedicated hotfix5 CI, and `docs/v01540-hotfix5-composer-resize.md`.
+- Runtime desktop verification remains required before the resize issue is considered finally closed.
 
 ### v0.15.40-hotfix4 — Collaborator Source Helper Width
 
@@ -410,6 +423,7 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 
 ## In Progress
 
+- Runtime-test v0.15.40-hotfix5 with the reported long Vision Analysis resize path: repeatedly shrink/grow and maximise/restore the Collaborator and confirm the input/action composer remains visible without switching projects. Confirm the three reported Godot 4.7.1 warnings are absent in the normal editor/runtime.
 - Runtime-test v0.15.40-hotfix4 with the user's exact real Character Card PNG/APNG **Card data + Vision** path. Confirm neither the previous giant action columns nor the inherited one-character-per-line Character Card helper returns while Vision starts, after Vision finishes, after re-analysis, after session switching/resizing, or after save/reopen.
 - Runtime-test v0.15.40 with real AI Ideas, Generate Character, Collaborator/Vision, and other Workspace-owned AI work. Confirm active text follows the actual live job, successful completion clears stale activity when the queue becomes idle, and overlapping jobs switch to another remaining activity.
 - Runtime-test v0.15.40 failure and cancellation paths, capacity-waiting/queued states, and verify a newer non-AI status such as **Saved at…** or an actionable error/result is not erased by a later idle reconciliation.
@@ -511,6 +525,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Treat the complete final live Reference Context sidebar after add/remove/Vision/session/resize refresh as the renderer contract, including both structured-source and ordinary context/attachment surfaces.
 - A late inherited renderer may not be allowed to become the stable user-visible state. Final reconciliation should be event/deferred-driven, while runtime observation only repairs genuinely stale/unsafe states rather than recreating correct controls every frame.
 - For replaceable/versioned UI controllers, regressions must cross the public entry point and normal refresh lifecycle before asserting the final live structure; direct helper construction is supplementary coverage only.
+- In detachable/native authoring windows with a fixed bottom composer, the scrolling transcript/history owns vertical expansion and may shrink to absorb window changes; input and action controls opt out of vertical expansion and remain within the visible panel after `size_changed` without a session/project refresh workaround.
 - Maintain one authoritative Character Text output budget per queued generation job and reassert it at request time.
 - Keep each concurrent worker's request, retry, repair, Diagnostics, cancellation, and parent-state data isolated.
 - Expose scheduler/job state through stable inspectable records rather than having UI scrape visual status strings.
