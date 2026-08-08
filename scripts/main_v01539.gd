@@ -3,7 +3,7 @@ extends "res://scripts/main_v01538.gd"
 const WORKSPACE_V01539 = preload(
 	"res://scripts/ui/workspace_v01539.gd"
 )
-const BUILD_DISPLAY_VERSION_V01539 := "0.15.39"
+const BUILD_DISPLAY_VERSION_V01539 := "0.15.39-hotfix1"
 
 
 func _ready() -> void:
