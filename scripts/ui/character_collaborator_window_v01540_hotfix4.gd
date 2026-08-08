@@ -4,6 +4,8 @@ extends "res://scripts/ui/character_collaborator_window_v01540_hotfix3.gd"
 const SOURCE_HELPER_ACTIONS_NAME_V01540_HOTFIX4 := "CollaboratorMultiSourceActionsV01537"
 const SOURCE_HELPER_LABEL_NAME_V01540_HOTFIX4 := "CollaboratorMultiSourceHintV01540Hotfix4"
 const SOURCE_HELPER_PREFIX_V01540_HOTFIX4 := "Character Card JSON/PNG added through Attach Files"
+const SOURCE_HELPER_MIN_WIDTH_V01540_HOTFIX4 := 260.0
+const SOURCE_HELPER_UNSAFE_WIDTH_V01540_HOTFIX4 := 220.0
 
 
 func _ready() -> void:
@@ -16,6 +18,7 @@ func collaborator_source_capabilities_v01533() -> Dictionary:
 	var result := super.collaborator_source_capabilities_v01533()
 	result["source_helper_full_width_v01540_hotfix4"] = true
 	result["source_helper_outside_action_flow_v01540_hotfix4"] = true
+	result["source_helper_readable_minimum_v01540_hotfix4"] = true
 	return result
 
 
@@ -24,6 +27,7 @@ func sidebar_layout_capabilities_v01540_hotfix4() -> Dictionary:
 		"version": "0.15.40-hotfix4",
 		"source_helper_full_width": true,
 		"source_helper_outside_action_flow": true,
+		"source_helper_minimum_width": SOURCE_HELPER_MIN_WIDTH_V01540_HOTFIX4,
 		"source_action_flow_buttons_only": true,
 		"source_list_full_width": true,
 		"inherits_whole_sidebar_final_reflow": true,
@@ -36,7 +40,8 @@ func sidebar_layout_capabilities_v01540_hotfix4() -> Dictionary:
 # v0.15.37. That helper lived inside the same HFlowContainer as source actions.
 # At real desktop widths Godot could allocate it essentially one glyph of width,
 # producing one-character-per-line text. Keep explanatory prose and actions in
-# different layout regions permanently.
+# different layout regions permanently, and give prose a real readable minimum
+# rather than relying only on size flags.
 func _apply_sidebar_final_reflow_v01540_hotfix3() -> void:
 	super._apply_sidebar_final_reflow_v01540_hotfix3()
 	_repair_source_helper_layout_v01540_hotfix4()
@@ -46,11 +51,15 @@ func _repair_source_helper_layout_v01540_hotfix4() -> void:
 	if _source_panel_v01533 == null:
 		return
 	_source_panel_v01533.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_source_panel_v01533.custom_minimum_size.x = maxf(
+		_source_panel_v01533.custom_minimum_size.x,
+		SOURCE_HELPER_MIN_WIDTH_V01540_HOTFIX4
+	)
 
 	if _multi_source_list_v01537 != null:
 		_multi_source_list_v01537.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		_multi_source_list_v01537.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
-		_multi_source_list_v01537.custom_minimum_size.x = 0.0
+		_multi_source_list_v01537.custom_minimum_size.x = SOURCE_HELPER_MIN_WIDTH_V01540_HOTFIX4
 
 	var actions := _source_actions_container_v01540_hotfix4()
 	if actions == null:
@@ -72,11 +81,7 @@ func _repair_source_helper_layout_v01540_hotfix4() -> void:
 			mini(actions_index + 1, _source_panel_v01533.get_child_count() - 1)
 		)
 
-	hint.name = SOURCE_HELPER_LABEL_NAME_V01540_HOTFIX4
-	hint.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	hint.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
-	hint.custom_minimum_size.x = 0.0
-	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_prepare_source_helper_label_v01540_hotfix4(hint)
 
 	# Source action flows are action-only. If a future inherited layer adds more
 	# descriptive labels here, move them out as well so the same collapse cannot
@@ -92,14 +97,22 @@ func _repair_source_helper_layout_v01540_hotfix4() -> void:
 			extra,
 			mini(actions.get_index() + 1, _source_panel_v01533.get_child_count() - 1)
 		)
-		extra.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		extra.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
-		extra.custom_minimum_size.x = 0.0
-		extra.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		_prepare_source_helper_label_v01540_hotfix4(extra)
 
 	for child in actions.get_children():
 		if child is Button:
 			_prepare_sidebar_action_button_v01540_hotfix3(child as Button)
+
+	_source_panel_v01533.minimum_size_changed()
+
+
+func _prepare_source_helper_label_v01540_hotfix4(label: Label) -> void:
+	label.name = SOURCE_HELPER_LABEL_NAME_V01540_HOTFIX4 if label.text.begins_with(SOURCE_HELPER_PREFIX_V01540_HOTFIX4) else label.name
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	label.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+	label.custom_minimum_size.x = SOURCE_HELPER_MIN_WIDTH_V01540_HOTFIX4
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.minimum_size_changed()
 
 
 func _source_actions_container_v01540_hotfix4() -> HFlowContainer:
@@ -143,12 +156,9 @@ func _sidebar_layout_needs_reflow_v01540_hotfix3() -> bool:
 			return true
 		if hint.size_flags_horizontal != Control.SIZE_EXPAND_FILL:
 			return true
-		if (
-			_source_panel_v01533 != null
-			and _source_panel_v01533.size.x >= 120.0
-			and hint.size.x > 0.0
-			and hint.size.x < _source_panel_v01533.size.x * 0.65
-		):
+		if hint.custom_minimum_size.x < SOURCE_HELPER_MIN_WIDTH_V01540_HOTFIX4:
+			return true
+		if hint.size.x > 0.0 and hint.size.x < SOURCE_HELPER_UNSAFE_WIDTH_V01540_HOTFIX4:
 			return true
 	return false
 
@@ -166,6 +176,7 @@ func source_helper_layout_snapshot_v01540_hotfix4() -> Dictionary:
 		"hint_parent_type": hint.get_parent().get_class() if hint != null and hint.get_parent() != null else "",
 		"hint_parent_name": hint.get_parent().name if hint != null and hint.get_parent() != null else "",
 		"hint_width": hint.size.x if hint != null else 0.0,
+		"hint_custom_min_width": hint.custom_minimum_size.x if hint != null else 0.0,
 		"hint_horizontal_flags": hint.size_flags_horizontal if hint != null else -1,
 		"source_panel_width": _source_panel_v01533.size.x if _source_panel_v01533 != null else 0.0,
 		"source_list_width": _multi_source_list_v01537.size.x if _multi_source_list_v01537 != null else 0.0,
