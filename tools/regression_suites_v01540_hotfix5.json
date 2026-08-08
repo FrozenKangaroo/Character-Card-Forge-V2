@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.40-hotfix5",
+  "description": "v0.15.40-hotfix4 coverage plus Collaborator composer resize persistence and exact Godot 4.7.1 warning cleanup.",
+  "base_manifest": "regression_suites_v01540_hotfix4.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01540_hotfix5_composer_resize",
+        "label": "v0.15.40-hotfix5 Collaborator composer resize and warning cleanup",
+        "kind": "python",
+        "path": "tools/test_v01540_hotfix5_composer_resize_strict.py",
+        "timeout_seconds": 240
+      }
+    ]
+  }
+}
