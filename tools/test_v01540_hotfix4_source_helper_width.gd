@@ -41,11 +41,34 @@ func _run() -> void:
 
 	var project := CCFStorageService.new_project()
 	var character_id := CCFStorageService.active_character_id(project)
+	var character := CCFStorageService.get_character(project, character_id)
+	CCFStorageService.set_value_at_path(character, "character.name", "Visible Source Helper Regression Character")
+	CCFStorageService.update_character(project, character)
+
 	collaborator.open_for_project(project, {}, character_id, {})
 	collaborator.size = Vector2i(1230, 1080)
 	collaborator.popup_centered()
+
+	# The runtime screenshot has Sources • 1. Earlier versions of this regression
+	# measured the helper while the entire source panel was hidden, which can leave
+	# stale/tiny Control geometry after reparenting. Add a real structured source so
+	# width assertions exercise the visible container tree that the user sees.
+	var source := CCFCollaboratorSourceContextServiceV01537.from_character(
+		character,
+		str(project.get("project_id", "")),
+		"Regression Project"
+	)
+	var added := collaborator.add_source_v01537(source, false)
+	if not _require(bool(added.get("ok", false)), "The visible source fixture must add through the real multi-source API."):
+		return
 	await process_frame
 	await process_frame
+
+	var source_panel := collaborator.get("_source_panel_v01533") as VBoxContainer
+	if not _require(source_panel != null and source_panel.visible, "The source panel must be visible before helper geometry is measured."):
+		return
+	if not _require(collaborator.active_source_contexts_v01537().size() == 1, "The regression must reproduce the user's Sources • 1 state."):
+		return
 
 	var actions := collaborator.find_child("CollaboratorMultiSourceActionsV01537", true, false) as HFlowContainer
 	if not _require(actions != null, "The inherited multi-source action flow must exist."):
@@ -55,7 +78,7 @@ func _run() -> void:
 		return
 	if not _require(hint.get_parent() != actions, "The explanatory Character Card helper must never remain inside the HFlow action container."):
 		return
-	if not _require(hint.get_parent() == collaborator.get("_source_panel_v01533"), "The helper must be a direct full-width child of the source panel."):
+	if not _require(hint.get_parent() == source_panel, "The helper must be a direct full-width child of the source panel."):
 		return
 	if not _require(hint.size_flags_horizontal == Control.SIZE_EXPAND_FILL, "The helper must expand across the source panel width."):
 		return
@@ -66,14 +89,13 @@ func _run() -> void:
 			return
 
 	# The Reference Context pane itself has a 300px minimum. A helper narrower than
-	# 220px recreates the reported near-single-glyph wrapping even if the exact
-	# headless split geometry differs from a desktop window manager.
-	if hint.size.x > 0.0:
-		if not _require(hint.size.x >= 220.0, "At desktop geometry the helper must remain readable and may not collapse toward one-glyph width."):
-			return
+	# 220px recreates the reported near-single-glyph wrapping.
+	if not _require(hint.size.x >= 220.0, "At visible desktop geometry the helper must remain readable and may not collapse toward one-glyph width."):
+		return
 
 	# Reproduce the exact inherited structure from the user's screenshot by putting
-	# the helper back in the HFlow, then require the normal final reflow to repair it.
+	# the visible helper back in the HFlow, then require the normal final reflow to
+	# repair both structure and readable width.
 	var hint_parent := hint.get_parent()
 	hint_parent.remove_child(hint)
 	actions.add_child(hint)
@@ -86,13 +108,14 @@ func _run() -> void:
 	await process_frame
 	if not _require(hint.get_parent() != actions, "Final reflow must move the helper back out of the source action flow."):
 		return
+	if not _require(hint.get_parent() == source_panel, "Recovered helper must return to the visible source panel."):
+		return
 	if not _require(hint.size_flags_horizontal == Control.SIZE_EXPAND_FILL, "Final reflow must restore full-width helper sizing."):
 		return
 	if not _require(hint.custom_minimum_size.x >= 260.0, "Final reflow must restore the readable helper minimum width."):
 		return
-	if hint.size.x > 0.0:
-		if not _require(hint.size.x >= 220.0, "Recovered helper geometry must remain readable after the final reflow."):
-			return
+	if not _require(hint.size.x >= 220.0, "Recovered helper geometry must remain readable after the final reflow."):
+		return
 
 	app.queue_free()
 	await process_frame
