@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.40",
+  "description": "v0.15.39-hotfix2 coverage plus authoritative Workspace AI activity lifecycle reconciliation.",
+  "base_manifest": "regression_suites_v01539_hotfix2.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01540_workspace_ai_activity",
+        "label": "v0.15.40 Workspace AI activity lifecycle",
+        "kind": "python",
+        "path": "tools/test_v01540_workspace_ai_activity_strict.py",
+        "timeout_seconds": 200
+      }
+    ]
+  }
+}
