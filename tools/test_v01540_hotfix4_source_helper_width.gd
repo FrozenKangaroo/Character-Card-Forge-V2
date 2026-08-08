@@ -59,22 +59,26 @@ func _run() -> void:
 		return
 	if not _require(hint.size_flags_horizontal == Control.SIZE_EXPAND_FILL, "The helper must expand across the source panel width."):
 		return
+	if not _require(hint.custom_minimum_size.x >= 260.0, "The helper must declare a readable minimum width instead of relying only on size flags."):
+		return
 	for child in actions.get_children():
 		if not _require(not child is Label, "The source action HFlow must contain actions only, never wrapped explanatory labels."):
 			return
 
-	var panel := collaborator.get("_source_panel_v01533") as VBoxContainer
-	if panel != null and panel.size.x >= 120.0 and hint.size.x > 0.0:
-		if not _require(hint.size.x >= panel.size.x * 0.65, "At desktop geometry the helper must receive most of the source-panel width instead of collapsing to one glyph."):
+	# The Reference Context pane itself has a 300px minimum. A helper narrower than
+	# 220px recreates the reported near-single-glyph wrapping even if the exact
+	# headless split geometry differs from a desktop window manager.
+	if hint.size.x > 0.0:
+		if not _require(hint.size.x >= 220.0, "At desktop geometry the helper must remain readable and may not collapse toward one-glyph width."):
 			return
 
 	# Reproduce the exact inherited structure from the user's screenshot by putting
 	# the helper back in the HFlow, then require the normal final reflow to repair it.
-	var hint_index := hint.get_index()
 	var hint_parent := hint.get_parent()
 	hint_parent.remove_child(hint)
 	actions.add_child(hint)
 	hint.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+	hint.custom_minimum_size.x = 0.0
 	if not _require(collaborator.call("_sidebar_layout_needs_reflow_v01540_hotfix3"), "A helper label inside the source action flow must be detected as invalid."):
 		return
 	collaborator.call("_schedule_sidebar_final_reflow_v01540_hotfix3")
@@ -84,8 +88,11 @@ func _run() -> void:
 		return
 	if not _require(hint.size_flags_horizontal == Control.SIZE_EXPAND_FILL, "Final reflow must restore full-width helper sizing."):
 		return
-	if panel != null and hint.get_parent() == panel and hint_index >= 0:
-		pass
+	if not _require(hint.custom_minimum_size.x >= 260.0, "Final reflow must restore the readable helper minimum width."):
+		return
+	if hint.size.x > 0.0:
+		if not _require(hint.size.x >= 220.0, "Recovered helper geometry must remain readable after the final reflow."):
+			return
 
 	app.queue_free()
 	await process_frame
