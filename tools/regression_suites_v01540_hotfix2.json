@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.40-hotfix2",
+  "description": "v0.15.40-hotfix1 coverage plus end-to-end live source-panel refresh enforcement so Card + Vision can never fall back to the inherited horizontal source row.",
+  "base_manifest": "regression_suites_v01540_hotfix1.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01540_hotfix2_live_source_refresh",
+        "label": "v0.15.40-hotfix2 live Collaborator source refresh",
+        "kind": "python",
+        "path": "tools/test_v01540_hotfix2_live_source_refresh_strict.py",
+        "timeout_seconds": 210
+      }
+    ]
+  }
+}

@@ -72,6 +72,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Deferred or awaited UI work verifies node/control/SceneTree validity before touching UI after an await.
 - Modal dialogs with wrapped custom content must establish a bounded content width before minimum-size calculation and keep their user-facing action controls inside that bounded layout; native window-manager/subwindow behaviour must not be the only thing keeping a confirmation action reachable.
 - Narrow source/reference sidebars keep descriptive text and action controls in separate layout regions. Action buttons must not consume the label's usable width or stretch vertically to the height of heavily wrapped descriptive text.
+- UI regressions involving replaceable/versioned renderers must exercise the real lifecycle/refresh path and verify the final live control tree. A helper-built component passing in isolation is not sufficient proof that runtime dispatch actually uses it.
 - Detached tools that consume saved project data receive save/change notifications rather than relying only on startup scans or stale private caches.
 - Image provider discovery belongs to Image profiles and is never stored in or resolved through Character Text/Vision profiles.
 - Image Studio is a first-class main-navigation page. Its native `Window` controller may remain an implementation detail, but normal navigation presents the studio embedded in the main workspace.
@@ -81,17 +82,27 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.40-hotfix1 development candidate — Collaborator Source Row Layout Guard**
+**v0.15.40-hotfix2 development candidate — Live Collaborator Source Refresh Guard**
 
-v0.15.40-hotfix1 fixes the narrow Collaborator source sidebar exploding into giant vertical button columns after a Character Card PNG is added with **Card data + Vision**. The metadata source and Vision job were functioning; the failure was the source-row layout.
+Runtime testing proved v0.15.40-hotfix1's stacked source-row component was not enough: after adding a Character Card PNG with **Card data + Vision**, the normal source/Vision refresh lifecycle could still finish on the inherited v0.15.39 horizontal renderer, reproducing the giant vertical controls and one-character-per-line source text.
 
-The previous row put the wrapping source label, optional **Make Target**, **Analyse Image / Re-analyse Image**, and remove action in one `HBoxContainer`. In a narrow sidebar those actions consumed most horizontal space, forcing the label to wrap into many lines. Godot then stretched the sibling buttons to the same row height, producing the full-height columns seen during runtime testing.
+v0.15.40-hotfix2 therefore treats the compact stacked renderer as a postcondition of the complete live source-panel refresh. The active Collaborator removes stale source rows from the tree immediately, rebuilds every source as a full-width descriptive card with a separate wrapping action region, and verifies that no inherited horizontal fallback survived the refresh.
 
-Source rows are now stacked cards: the descriptive label receives the full row width, while actions live in a separate wrapping `HFlowContainer` below it and explicitly shrink vertically. Existing target switching, Character Card Vision analysis, linked-Vision status, UserPersona indicators, removal, provenance, and source roles are preserved.
+The new regression no longer calls the replacement row builder as its primary proof. It opens the real main scene and a real Collaborator session, exports and loads a real Character Card PNG, adds it through the public multi-source API, stores linked Vision evidence, runs the normal `_refresh_all()` lifecycle, and checks the final live tree. It also injects the old `HBoxContainer` failure shape and requires an ordinary source-panel refresh to eliminate it.
 
-The active shell remains layered on v0.15.40 Workspace AI activity reconciliation, v0.15.39-hotfix2 Character Card dual ingestion/dialog layout, v0.15.38 Image Studio, v0.15.31 AI Jobs inspection/cancellation, v0.15.37-hotfix1 generation validation, and v0.15.38-hotfix1 updater preservation. The running development build displays **v0.15.40-hotfix1**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
+The active shell remains layered on v0.15.40 Workspace AI activity reconciliation, v0.15.39-hotfix2 Character Card dual ingestion/dialog layout, v0.15.38 Image Studio, v0.15.31 AI Jobs inspection/cancellation, v0.15.37-hotfix1 generation validation, and v0.15.38-hotfix1 updater preservation. The running development build displays **v0.15.40-hotfix2**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
 
 ## Completed
+
+### v0.15.40-hotfix2 — Live Collaborator Source Refresh Guard
+
+- Enforced compact stacked source rows at the active Collaborator refresh boundary rather than relying only on a row-builder override.
+- Added a post-refresh invariant that rebuilds the source list whenever any inherited/non-hotfix2 row survives the normal source-panel lifecycle.
+- Removed old rows from the live tree immediately before deferred freeing so stale horizontal controls cannot remain visible alongside replacements.
+- Preserved full-width source descriptions plus compact wrapping **Make Target**, **Analyse Image / Re-analyse Image**, and remove controls.
+- Preserved Character Card metadata/Vision separation, linked provenance, UserPersona exclusion, target safety, source removal, and all v0.15.40 AI activity behavior.
+- Added an end-to-end real-main-scene regression using a real exported Character Card PNG, public source addition, linked Vision evidence, `_refresh_all()`, and explicit injected-HBox recovery.
+- Added `tools/regression_suites_v01540_hotfix2.json`, advanced the default regression manifest, dedicated CI, and v0.15.40-hotfix2 design/runtime documentation.
 
 ### v0.15.40-hotfix1 — Collaborator Source Row Layout Guard
 
@@ -101,6 +112,7 @@ The active shell remains layered on v0.15.40 Workspace AI activity reconciliatio
 - Preserved Character Card metadata + Vision separation, linked-Vision indication, UserPersona exclusion status, source roles/provenance, target switching, and source removal.
 - Added a real-app regression using a deliberately long visual Character Card source with linked Vision evidence and checks for stacked structure, action preservation, vertical shrink flags, and available headless geometry.
 - Added `tools/regression_suites_v01540_hotfix1.json`, advanced the default regression manifest, dedicated CI, and `docs/v01540-hotfix1-collaborator-source-row-layout.md`.
+- Runtime testing later showed that this regression covered the replacement component directly but not the complete add-card/Vision refresh lifecycle; v0.15.40-hotfix2 supersedes the live refresh routing while retaining this layout contract.
 
 ### v0.15.40 — Workspace AI Activity Lifecycle
 
@@ -369,7 +381,7 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 
 ## In Progress
 
-- Runtime-test v0.15.40-hotfix1 with real Character Card PNG/APNG sources in the narrow Collaborator sidebar. Confirm source descriptions keep usable width, **Analyse Image / Re-analyse Image** remains compact beneath the label, remove/target controls do not become vertical columns, and source rows remain bounded while Vision runs.
+- Runtime-test v0.15.40-hotfix2 with the same real Character Card PNG/APNG **Card data + Vision** path that reproduced hotfix1's failure. Confirm the final live source list stays stacked while Vision starts, after Vision finishes, after re-analysis, and after save/reopen; no inherited horizontal row or full-height action column may reappear.
 - Runtime-test v0.15.40 with real AI Ideas, Generate Character, Collaborator/Vision, and other Workspace-owned AI work. Confirm active text follows the actual live job, successful completion clears stale activity when the queue becomes idle, and overlapping jobs switch to another remaining activity.
 - Runtime-test v0.15.40 failure and cancellation paths, capacity-waiting/queued states, and verify a newer non-AI status such as **Saved at…** or an actionable error/result is not erased by a later idle reconciliation.
 - Runtime-test v0.15.39-hotfix2 in normal desktop Collaborator use and confirm the Character Card PNG/APNG mode chooser stays compact with visible **Cancel** and **Add** controls for short and long card names.
@@ -466,6 +478,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - A Character Card image may participate simultaneously as structured card metadata and Vision-derived evidence. Link these representations through stable source IDs/provenance; never copy Vision observations into card fields during ingestion or collapse discrepancies silently.
 - Treat Character Card detection on normal attachment paths as a promotion/branching step, not a replacement for attachments: non-card JSON remains text context, non-card images continue through Vision, and recognised card images may explicitly use metadata, Vision, or both.
 - Keep narrow Collaborator source rows content-first: descriptive labels own the available width, secondary actions live in a separate wrapping region, and action controls explicitly opt out of vertical expansion caused by wrapped text.
+- Treat the final live Collaborator source tree after add/remove/Vision/session refresh as the renderer contract. Historical or ancestor-bound refresh paths may not leave an alternative horizontal row shape in the active UI.
+- For replaceable/versioned UI controllers, regressions must cross the public entry point and normal refresh lifecycle before asserting the final live structure; direct helper construction is supplementary coverage only.
 - Maintain one authoritative Character Text output budget per queued generation job and reassert it at request time.
 - Keep each concurrent worker's request, retry, repair, Diagnostics, cancellation, and parent-state data isolated.
 - Expose scheduler/job state through stable inspectable records rather than having UI scrape visual status strings.
