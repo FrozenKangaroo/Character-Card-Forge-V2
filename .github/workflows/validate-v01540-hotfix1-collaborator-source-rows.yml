@@ -1,0 +1,82 @@
+name: Validate v0.15.40-hotfix1 Collaborator Source Rows
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v01540-hotfix1-collaborator-source-rows-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.7.1'
+  GODOT_STATUS: stable
+
+jobs:
+  collaborator-source-rows:
+    name: Collaborator Source Row Layout
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot 4.7.1 and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project
+        shell: bash
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v01540-hotfix1-import.log
+          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE_BASE_CLASS|CONFUSABLE_LOCAL_DECLARATION|Parse Error" /tmp/ccf-v01540-hotfix1-import.log; then
+            echo "Godot reported a script or warning failure during import."
+            exit 1
+          fi
+
+      - name: Test compact Collaborator source rows
+        run: python3 ./tools/test_v01540_hotfix1_collaborator_source_rows_strict.py
+
+      - name: Recheck v0.15.40 Workspace AI activity lifecycle
+        run: python3 ./tools/test_v01540_workspace_ai_activity_strict.py
+
+      - name: Recheck Character Card PNG metadata + Vision ingestion
+        run: python3 ./tools/test_v01539_character_card_dual_ingestion_strict.py
+
+      - name: Recheck Character Card ingestion dialog layout
+        run: python3 ./tools/test_v01539_hotfix2_card_dialog_layout_strict.py
+
+      - name: Recheck Multi-source Collaborator and UserPersona exclusion
+        run: python3 ./tools/test_v01537_multi_source_collaborator_strict.py
+
+      - name: Recheck Safe Section contamination guard
+        run: python3 ./tools/test_v01537_hotfix1_safe_section_contamination_strict.py
+
+      - name: Recheck update.sh project.godot preservation
+        run: bash ./tools/test_update_sh_project_godot.sh
+
+      - name: Confirm Forward Plus remains the desktop default
+        shell: bash
+        run: |
+          grep -F 'config/features=PackedStringArray("4.7", "Forward Plus")' project.godot
+          grep -F 'renderer/rendering_method="forward_plus"' project.godot
+          grep -F 'rendering_device/fallback_to_opengl3=true' project.godot
+
+      - name: Confirm import leaves checkout clean
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain --untracked-files=normal)" ]]; then
+            echo "Godot import created repository-visible changes:"
+            git status --short
+            exit 1
+          fi
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --manifest ./tools/regression_suites_v01540_hotfix1.json --profile quick --godot "$(command -v godot)"
