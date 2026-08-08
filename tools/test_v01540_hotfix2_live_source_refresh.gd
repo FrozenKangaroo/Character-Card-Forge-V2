@@ -143,10 +143,16 @@ func _run() -> void:
 	if not _require(CARD_VISION_SERVICE.is_visual_card_source(source), "The fixture must be recognised as a visual Character Card source."):
 		return
 
+	# Open the Collaborator through its normal public project entry point first.
+	# add_source_v01537() intentionally rejects writes when no active session exists.
+	collaborator.open_for_project(project, {}, character_id, {})
+	await process_frame
+	await process_frame
+
 	# add_source_v01537() calls the normal _refresh_all() chain. This is the first
 	# part the hotfix1 regression skipped by calling its row builder directly.
 	var added := collaborator.add_source_v01537(source, false)
-	if not _require(bool(added.get("ok", false)), "The Character Card metadata source must add through the real Collaborator API."):
+	if not _require(bool(added.get("ok", false)), "The Character Card metadata source must add through the real Collaborator API: %s" % str(added.get("error", "unknown error"))):
 		return
 	await process_frame
 	await process_frame
