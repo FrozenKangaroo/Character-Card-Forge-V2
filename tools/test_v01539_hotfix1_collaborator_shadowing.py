@@ -34,8 +34,13 @@ def main() -> int:
         return fail("The selected Character Card ingestion mode should use the non-shadowing ingestion_mode local.")
     if "candidate: Dictionary, ingestion_mode: String" not in collaborator:
         return fail("The Character Card ingestion helper should use the non-shadowing ingestion_mode parameter.")
-    if 'BUILD_DISPLAY_VERSION_V01539 := "0.15.39-hotfix1"' not in main_source:
-        return fail("The running build label must identify v0.15.39-hotfix1.")
+
+    version_match = re.search(
+        r'BUILD_DISPLAY_VERSION_V01539\s*:=\s*"0\.15\.39-hotfix(\d+)"',
+        main_source,
+    )
+    if not version_match or int(version_match.group(1)) < 1:
+        return fail("The running build must identify v0.15.39-hotfix1 or a later v0.15.39 hotfix.")
 
     print("v0.15.39-hotfix1 Collaborator Window.mode shadowing regression passed")
     return 0

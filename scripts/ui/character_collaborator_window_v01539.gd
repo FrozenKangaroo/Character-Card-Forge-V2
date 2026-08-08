@@ -8,6 +8,8 @@ const CARD_VISION_SERVICE_V01539 = preload(
 var _card_ingestion_dialog_v01539: ConfirmationDialog
 var _card_ingestion_mode_v01539: OptionButton
 var _card_ingestion_hint_v01539: Label
+var _card_ingestion_add_button_v01539: Button
+var _card_ingestion_cancel_button_v01539: Button
 var _pending_card_ingestions_v01539: Array[Dictionary] = []
 var _pending_vision_source_ids_v01539: Dictionary = {}
 
@@ -32,17 +34,24 @@ func _build_card_ingestion_dialog_v01539() -> void:
 	_card_ingestion_dialog_v01539 = ConfirmationDialog.new()
 	_card_ingestion_dialog_v01539.visible = false
 	_card_ingestion_dialog_v01539.title = "Character Card PNG Detected"
-	_card_ingestion_dialog_v01539.min_size = Vector2i(720, 330)
+	_card_ingestion_dialog_v01539.min_size = Vector2i(720, 280)
 	_card_ingestion_dialog_v01539.ok_button_text = "Add"
 	_card_ingestion_dialog_v01539.confirmed.connect(_confirm_card_ingestion_v01539)
 	_card_ingestion_dialog_v01539.canceled.connect(_cancel_card_ingestion_v01539)
 	add_child(_card_ingestion_dialog_v01539)
 
+	# Give wrapped labels a real width before the dialog calculates its minimum size.
+	# Without this, Godot can calculate a very tall minimum height and push the
+	# ConfirmationDialog's native action row below the visible desktop area.
 	var root := VBoxContainer.new()
+	root.custom_minimum_size = Vector2(680, 0)
+	root.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	root.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	root.add_theme_constant_override("separation", 10)
 	_card_ingestion_dialog_v01539.add_child(root)
 
 	_card_ingestion_hint_v01539 = Label.new()
+	_card_ingestion_hint_v01539.custom_minimum_size = Vector2(680, 0)
 	_card_ingestion_hint_v01539.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	root.add_child(_card_ingestion_hint_v01539)
 
@@ -57,9 +66,32 @@ func _build_card_ingestion_dialog_v01539() -> void:
 	root.add_child(_card_ingestion_mode_v01539)
 
 	var note := Label.new()
+	note.custom_minimum_size = Vector2(680, 0)
 	note.text = "Card data and Vision remain separate evidence. Vision analysis never overwrites embedded Character Card metadata. Separate UserPersona/user-profile residue is still excluded from the AI-facing card source."
 	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	root.add_child(note)
+
+	# Use an explicit action row inside the custom content. This keeps Add/Cancel
+	# visible even on desktop/window-manager combinations where ConfirmationDialog's
+	# built-in row can be displaced by wrapped custom content.
+	var actions := HBoxContainer.new()
+	actions.alignment = BoxContainer.ALIGNMENT_END
+	actions.add_theme_constant_override("separation", 8)
+	root.add_child(actions)
+
+	_card_ingestion_cancel_button_v01539 = Button.new()
+	_card_ingestion_cancel_button_v01539.text = "Cancel"
+	_card_ingestion_cancel_button_v01539.pressed.connect(_cancel_card_ingestion_v01539)
+	actions.add_child(_card_ingestion_cancel_button_v01539)
+
+	_card_ingestion_add_button_v01539 = Button.new()
+	_card_ingestion_add_button_v01539.text = "Add"
+	_card_ingestion_add_button_v01539.pressed.connect(_confirm_card_ingestion_v01539)
+	actions.add_child(_card_ingestion_add_button_v01539)
+
+	# The custom action row is authoritative, so hide the native duplicates.
+	_card_ingestion_dialog_v01539.get_ok_button().hide()
+	_card_ingestion_dialog_v01539.get_cancel_button().hide()
 	_card_ingestion_dialog_v01539.hide()
 
 
@@ -124,10 +156,17 @@ func _show_next_card_ingestion_v01539() -> void:
 		% label
 	)
 	_card_ingestion_mode_v01539.select(0)
-	_card_ingestion_dialog_v01539.popup_centered(Vector2i(740, 350))
+	_card_ingestion_dialog_v01539.popup_centered(Vector2i(740, 300))
+	call_deferred("_focus_card_ingestion_add_button_v01539")
+
+
+func _focus_card_ingestion_add_button_v01539() -> void:
+	if _card_ingestion_add_button_v01539 != null and is_instance_valid(_card_ingestion_add_button_v01539):
+		_card_ingestion_add_button_v01539.grab_focus()
 
 
 func _confirm_card_ingestion_v01539() -> void:
+	_card_ingestion_dialog_v01539.hide()
 	if _pending_card_ingestions_v01539.is_empty():
 		return
 	var candidate: Dictionary = _pending_card_ingestions_v01539.pop_front()
@@ -138,6 +177,7 @@ func _confirm_card_ingestion_v01539() -> void:
 
 
 func _cancel_card_ingestion_v01539() -> void:
+	_card_ingestion_dialog_v01539.hide()
 	if not _pending_card_ingestions_v01539.is_empty():
 		_pending_card_ingestions_v01539.pop_front()
 	_status.text = "Character Card image skipped."
