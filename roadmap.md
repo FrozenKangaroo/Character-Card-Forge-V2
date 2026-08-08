@@ -72,6 +72,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Deferred or awaited UI work verifies node/control/SceneTree validity before touching UI after an await.
 - Modal dialogs with wrapped custom content must establish a bounded content width before minimum-size calculation and keep their user-facing action controls inside that bounded layout; native window-manager/subwindow behaviour must not be the only thing keeping a confirmation action reachable.
 - Narrow source/reference sidebars keep descriptive text and action controls in separate layout regions. Action buttons must not consume the label's usable width or stretch vertically to the height of heavily wrapped descriptive text.
+- Static explanatory prose in narrow source/reference sidebars must not share an action-flow container with compact controls. Source action flows are action-only; descriptive/help labels receive their own full-width row and an explicit readable minimum width where Godot container negotiation can otherwise collapse them.
 - A Collaborator Reference Context sidebar is a single user-facing layout contract even when it contains multiple independently-rendered internal surfaces such as structured sources and ordinary attachments/Vision context. Layout safety must be verified across the whole visible sidebar.
 - UI regressions involving replaceable/versioned renderers must exercise the real lifecycle/refresh path and verify the final live control tree. A helper-built component passing in isolation is not sufficient proof that runtime dispatch actually uses it.
 - When inherited/versioned UI refresh dispatch can write a stale renderer late in a lifecycle, a bounded final post-layout reconciliation may enforce the user-facing invariant; it must be idempotent and must not continuously churn already-correct controls.
@@ -84,17 +85,30 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.40-hotfix3 development candidate — Whole Reference Context Final Reflow**
+**v0.15.40-hotfix4 — Collaborator Source Helper Width**
 
-Runtime testing confirmed that v0.15.40-hotfix2 was genuinely active—the desktop itself displayed `v0.15.40-hotfix2`—yet the same **Card data + Vision** workflow could still produce two full-height action-button columns with the source label crushed into a near single-character column between them. This rules out a stale checkout as the explanation and shows that hotfix2's source-list-only proof was still narrower than the actual user-facing Reference Context sidebar lifecycle.
+Desktop runtime testing of v0.15.40-hotfix3 confirmed that its whole-sidebar reconciliation removed the previous giant full-height action columns, but the Reference Context sidebar was still not fully correct. With **Sources • 1** visible, the inherited Character Card helper sentence beginning `Character Card JSON/PNG added through Attach Files...` could collapse into a one-character-per-line vertical column.
 
-The sidebar contains more than one independently-rendered surface: structured multi-source Character Card data and ordinary reference/attachment/Vision context. v0.15.40-hotfix3 therefore makes the complete visible sidebar the invariant. After normal refresh/session/Vision work has completed, one deferred final reflow rebuilds structured sources through the known stacked source renderer and ordinary context rows through their own stacked renderer. A lightweight visible-window guard only schedules another reflow if it detects a stale row shape or an abnormally tall sidebar action; already-correct layouts are left alone.
+The remaining control was not one of the dynamic Character Card source rows or ordinary Vision/reference rows guarded by hotfix1–hotfix3. It was a static v0.15.37 explanatory `Label` still living inside `CollaboratorMultiSourceActionsV01537`, an `HFlowContainer` shared with compact action controls. That allowed Godot's real desktop width negotiation to allocate almost no horizontal space to prose even after the dynamic rows themselves had been corrected.
 
-The focused regression now injects the exact reported failure shape—an HBox with approximately 700-pixel-tall Analyse/Remove buttons and a wrapped label between them—into the real main-scene Collaborator after the normal Card + linked-Vision session state has been established. It requires the final deferred pass to replace both the source and context surfaces, then injects the failure again without mutating session data and requires the runtime guard to recover it on the following frame.
+v0.15.40-hotfix4 moves explanatory labels completely out of the source action flow and into independent full-width source-panel rows. The Character Card helper now declares a 260-pixel readable minimum width; live widths below 220 pixels are treated as an unsafe layout and trigger the existing bounded final reconciliation. The source action flow is now action-only.
 
-The active shell remains layered on v0.15.40 Workspace AI activity reconciliation, v0.15.39-hotfix2 Character Card dual ingestion/dialog layout, v0.15.38 Image Studio, v0.15.31 AI Jobs inspection/cancellation, v0.15.37-hotfix1 generation validation, and v0.15.38-hotfix1 updater preservation. The running development build displays **v0.15.40-hotfix3**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
+The focused regression opens the real main scene, adds a real structured source so **Sources • 1** and the source panel are actually visible, verifies readable helper geometry, then deliberately reparents the helper back into the inherited HFlow and removes its minimum width. The normal runtime guard/final reflow must move it back out, restore expand/fill plus the readable minimum, and preserve hotfix3/hotfix2, Card + Vision, UserPersona, updater, and Workspace AI activity invariants.
+
+The active shell remains layered on v0.15.40 Workspace AI activity reconciliation, v0.15.39-hotfix2 Character Card dual ingestion/dialog layout, v0.15.38 Image Studio, v0.15.31 AI Jobs inspection/cancellation, v0.15.37-hotfix1 generation validation, and v0.15.38-hotfix1 updater preservation. The running development build displays **v0.15.40-hotfix4**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
 
 ## Completed
+
+### v0.15.40-hotfix4 — Collaborator Source Helper Width
+
+- Identified the remaining one-character-per-line column as the inherited v0.15.37 Character Card explanatory helper rather than a dynamic source row.
+- Removed explanatory labels from `CollaboratorMultiSourceActionsV01537`; source action flows now contain compact controls only.
+- Reparented source helper prose into independent full-width source-panel rows with expand/fill sizing and a 260-pixel readable minimum width.
+- Extended the hotfix3 runtime guard so labels inside the source action HFlow, missing readable minimums, or live helper widths below 220 pixels are invalid states that schedule bounded reconciliation.
+- Preserved the whole-sidebar final reflow, Character Card metadata/Vision separation, linked provenance, UserPersona exclusion, target/source removal, Workspace AI activity, updater preservation, and all earlier Collaborator behavior.
+- Added a real-main-scene regression with a visible structured source (`Sources • 1`), then deliberately recreates the helper-inside-HFlow failure and requires normal runtime recovery to restore structure and readable width.
+- Added `tools/regression_suites_v01540_hotfix4.json`, advanced the default regression manifest, dedicated hotfix4 CI, and hotfix4 runtime/build/regression documentation.
+- The issue remains open for real desktop verification with the user's exact Character Card PNG/APNG **Card data + Vision** path; automated success is not treated as proof that the desktop result is finally correct.
 
 ### v0.15.40-hotfix3 — Whole Reference Context Final Reflow
 
@@ -106,7 +120,7 @@ The active shell remains layered on v0.15.40 Workspace AI activity reconciliatio
 - Preserves Card metadata/Vision separation, linked provenance, UserPersona exclusion, target safety, source/context removal, and all earlier Collaborator behavior.
 - Adds a real-main-scene whole-sidebar regression that injects the reported giant-button HBox failure after Card + linked-Vision state, proves deferred recovery, then proves runtime-guard recovery without a session mutation.
 - Adds `tools/regression_suites_v01540_hotfix3.json`, advances the default regression manifest, and adds dedicated hotfix3 CI.
-- Runtime desktop verification remains required before this issue is considered finally closed.
+- Runtime desktop testing confirmed the giant full-height action columns were removed, but exposed the separate inherited Character Card helper collapsing to one character per line. v0.15.40-hotfix4 supersedes that remaining gap while preserving hotfix3's whole-sidebar guard.
 
 ### v0.15.40-hotfix2 — Live Collaborator Source Refresh Guard
 
@@ -396,7 +410,7 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 
 ## In Progress
 
-- Runtime-test v0.15.40-hotfix3 with the exact real Character Card PNG/APNG **Card data + Vision** path shown in the desktop screenshot. Confirm no giant action columns appear while Vision starts, after Vision finishes, after re-analysis, after session switching/resizing, or after save/reopen; both structured source rows and ordinary Vision/reference rows must remain compact.
+- Runtime-test v0.15.40-hotfix4 with the user's exact real Character Card PNG/APNG **Card data + Vision** path. Confirm neither the previous giant action columns nor the inherited one-character-per-line Character Card helper returns while Vision starts, after Vision finishes, after re-analysis, after session switching/resizing, or after save/reopen.
 - Runtime-test v0.15.40 with real AI Ideas, Generate Character, Collaborator/Vision, and other Workspace-owned AI work. Confirm active text follows the actual live job, successful completion clears stale activity when the queue becomes idle, and overlapping jobs switch to another remaining activity.
 - Runtime-test v0.15.40 failure and cancellation paths, capacity-waiting/queued states, and verify a newer non-AI status such as **Saved at…** or an actionable error/result is not erased by a later idle reconciliation.
 - Runtime-test v0.15.39-hotfix2 in normal desktop Collaborator use and confirm the Character Card PNG/APNG mode chooser stays compact with visible **Cancel** and **Add** controls for short and long card names.
@@ -493,6 +507,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - A Character Card image may participate simultaneously as structured card metadata and Vision-derived evidence. Link these representations through stable source IDs/provenance; never copy Vision observations into card fields during ingestion or collapse discrepancies silently.
 - Treat Character Card detection on normal attachment paths as a promotion/branching step, not a replacement for attachments: non-card JSON remains text context, non-card images continue through Vision, and recognised card images may explicitly use metadata, Vision, or both.
 - Keep narrow Collaborator source rows content-first: descriptive labels own the available width, secondary actions live in a separate wrapping region, and action controls explicitly opt out of vertical expansion caused by wrapped text.
+- Keep static sidebar prose outside source action flows. Action `HFlowContainer`s contain controls only; explanatory labels live in independent full-width rows with a tested readable minimum so container sorting cannot squeeze prose to one-glyph width.
 - Treat the complete final live Reference Context sidebar after add/remove/Vision/session/resize refresh as the renderer contract, including both structured-source and ordinary context/attachment surfaces.
 - A late inherited renderer may not be allowed to become the stable user-visible state. Final reconciliation should be event/deferred-driven, while runtime observation only repairs genuinely stale/unsafe states rather than recreating correct controls every frame.
 - For replaceable/versioned UI controllers, regressions must cross the public entry point and normal refresh lifecycle before asserting the final live structure; direct helper construction is supplementary coverage only.
