@@ -132,8 +132,8 @@ func _confirm_card_ingestion_v01539() -> void:
 		return
 	var candidate: Dictionary = _pending_card_ingestions_v01539.pop_front()
 	var selected_index := _card_ingestion_mode_v01539.selected
-	var mode := str(_card_ingestion_mode_v01539.get_item_metadata(selected_index))
-	_apply_card_ingestion_v01539(candidate, mode)
+	var ingestion_mode := str(_card_ingestion_mode_v01539.get_item_metadata(selected_index))
+	_apply_card_ingestion_v01539(candidate, ingestion_mode)
 	call_deferred("_show_next_card_ingestion_v01539")
 
 
@@ -144,8 +144,8 @@ func _cancel_card_ingestion_v01539() -> void:
 	call_deferred("_show_next_card_ingestion_v01539")
 
 
-func _apply_card_ingestion_v01539(candidate: Dictionary, mode: String) -> Dictionary:
-	var plan := CARD_VISION_SERVICE_V01539.ingestion_plan(mode)
+func _apply_card_ingestion_v01539(candidate: Dictionary, ingestion_mode: String) -> Dictionary:
+	var plan := CARD_VISION_SERVICE_V01539.ingestion_plan(ingestion_mode)
 	var path := str(candidate.get("path", ""))
 	var source_value: Variant = candidate.get("source", {})
 	var source: Dictionary = source_value if source_value is Dictionary else {}
@@ -183,7 +183,7 @@ func _apply_card_ingestion_v01539(candidate: Dictionary, mode: String) -> Dictio
 		"metadata_added": metadata_added,
 		"vision_queued": vision_queued,
 		"source_context_id": source_id,
-		"mode": str(plan.get("mode", mode))
+		"mode": str(plan.get("mode", ingestion_mode))
 	}
 
 
