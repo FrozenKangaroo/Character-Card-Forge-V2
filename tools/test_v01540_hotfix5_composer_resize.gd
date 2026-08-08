@@ -87,24 +87,25 @@ func _run() -> void:
 
 	# Recreate the likely stale-layout state directly: the scrolling transcript
 	# wrongly claims a large minimum height and the input is allowed to expand.
+	# Assert the invalid state immediately, before the real process/resize guard has
+	# a chance to repair it, then require normal deferred recovery with no manual
+	# repair call and no project/session switch.
 	var chat_scroll := collaborator.get("_chat_scroll") as ScrollContainer
 	var input := collaborator.get("_input") as TextEdit
 	if not _require(chat_scroll != null and input != null, "Chat scroll and input controls must exist."):
 		return
 	chat_scroll.custom_minimum_size.y = 900.0
 	input.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	collaborator.size = Vector2i(1040, 680)
-	await process_frame
-	if not _require(collaborator.call("_composer_layout_needs_reflow_v01540_hotfix5"), "The stale composer state must be detected without switching projects."):
+	if not _require(collaborator.call("_composer_layout_needs_reflow_v01540_hotfix5"), "The stale composer state must be detected before automatic recovery."):
 		return
-	collaborator.call("_schedule_composer_reflow_v01540_hotfix5")
+	collaborator.size = Vector2i(1040, 680)
 	await process_frame
 	await process_frame
 	await process_frame
 	var recovered: Dictionary = collaborator.composer_layout_snapshot_v01540_hotfix5()
-	if not _require(float(recovered.get("chat_scroll_min_height", -1.0)) == 0.0, "Recovery must release the transcript's stale minimum height."):
+	if not _require(float(recovered.get("chat_scroll_min_height", -1.0)) == 0.0, "Automatic recovery must release the transcript's stale minimum height."):
 		return
-	if not _require(bool(recovered.get("input_visible", false)), "Recovery must keep the composer visible."):
+	if not _require(bool(recovered.get("input_visible", false)), "Automatic recovery must keep the composer visible."):
 		return
 	if not _require(float(recovered.get("input_bottom", 0.0)) <= float(recovered.get("panel_bottom", 0.0)) + 2.0, "Recovered composer must be inside the visible panel."):
 		return
