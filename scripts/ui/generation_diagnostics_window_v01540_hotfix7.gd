@@ -29,7 +29,9 @@ func show_diagnostics(bundle: Dictionary) -> void:
 	# binary-free view model first, then render only the Overview tab immediately.
 	var budget := {"remaining": VIEW_TOTAL_TEXT_BUDGET_V01540_HOTFIX7}
 	var compact_value: Variant = _compact_view_value_v01540_hotfix7(bundle, budget)
-	_bundle = compact_value if compact_value is Dictionary else {}
+	_bundle = {}
+	if compact_value is Dictionary:
+		_bundle = compact_value
 	_rendered_tabs_v01540_hotfix7.clear()
 
 	_render_overview_v01540_hotfix7()
@@ -150,13 +152,13 @@ func _render_overview_v01540_hotfix7() -> void:
 
 	var budget_value: Variant = _bundle.get("token_budget", {})
 	if budget_value is Dictionary and not budget_value.is_empty():
-		var budget: Dictionary = budget_value
+		var token_budget: Dictionary = budget_value
 		overview_lines.append("")
 		overview_lines.append("Token budget")
 		var configured := int(
-			budget.get("configured_character_max_output_tokens", 0)
+			token_budget.get("configured_character_max_output_tokens", 0)
 		)
-		var requested := int(budget.get("request_max_tokens", 0))
+		var requested := int(token_budget.get("request_max_tokens", 0))
 		if configured > 0:
 			overview_lines.append(
 				"Configured Text maximum output: %s tokens" % _format_token_count_v01525(configured)
@@ -165,7 +167,7 @@ func _render_overview_v01540_hotfix7() -> void:
 			overview_lines.append(
 				"This request max_tokens: %s" % _format_token_count_v01525(requested)
 			)
-		if bool(budget.get("hidden_stage_caps_allowed", true)) == false:
+		if bool(token_budget.get("hidden_stage_caps_allowed", true)) == false:
 			overview_lines.append("Per-stage hidden output caps: disabled")
 
 	var termination_value: Variant = _bundle.get("provider_termination", {})
@@ -309,9 +311,10 @@ func _bounded_view_string_v01540_hotfix7(
 		"\n\n[TEXT TRUNCATED FOR RESPONSIVE DIAGNOSTICS DISPLAY — original characters: %d]\n\n"
 		% original_chars
 	)
+	var fifth_of_allowed := int(floor(float(allowed) / 5.0))
 	var tail_chars := mini(
 		VIEW_TAIL_CHAR_LIMIT_V01540_HOTFIX7,
-		maxi(0, allowed / 5)
+		maxi(0, fifth_of_allowed)
 	)
 	var head_chars := maxi(0, allowed - tail_chars - marker.length())
 	var bounded := text.left(head_chars) + marker
