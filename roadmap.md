@@ -62,7 +62,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Forward+ is the standard desktop renderer. Compatibility/OpenGL remains an automatic fallback for unsupported RenderingDevice hardware.
 - Normal Godot import/open operations leave the Git checkout clean.
 - Release/update helpers prefer the repository checkout they are launched from and retain separate-copy syncing only as an explicit fallback.
-- `update.sh` may automatically preserve the known local-only `project.godot` drift case, but staged work, untracked files, and unrelated tracked edits remain fail-closed so updating never becomes an excuse to overwrite real local work.
+- `update.sh` may automatically preserve the known local-only `project.godot` drift case and may clear an interrupted release metadata bundle only when the complete dirty state is byte-for-byte reproducible from clean `HEAD` by the checked-in `tools/set_version.py`. Untracked files, unrelated edits, partial bundles, and non-reproducible staged work remain fail-closed.
 - Every major supported workflow has representative cross-feature regression coverage; a focused feature test alone is not a release gate.
 - Automated tests that exercise `user://` run in isolated temporary app-data directories.
 - Generation reliability strategy is independent of Generation Mode/Style.
@@ -90,21 +90,42 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.40-hotfix7 — Lightweight Diagnostics + Vision Failure Safety**
+**v0.15.40-hotfix9 — Interrupted Release Metadata Recovery**
 
-Desktop runtime testing exposed an unrelated failure-inspection problem after the hotfix6 sidebar/composer issue was verified resolved. A Character Card PNG was sent to the configured Vision model, the provider request eventually failed, and choosing **View Diagnostics…** from the failure dialog made every Character Card Forge window stop accepting input. Tabs could not be changed, windows could not be closed, and no useful GDScript debugger/log error appeared.
+The first v0.15.40 promotion attempt exposed two separate release/tooling weaknesses. Hotfix8 corrected the release engine gate so promotion validation now requires Godot 4.7.1 stable, separated the intended v0.15.40 promotion target from the previously synchronised release metadata, fixed nested assistant-response extraction, and made the response-shape regression fail closed.
 
-The failure path retained the Vision request's base64 `data:image/...;base64,...` image URL inside credential-redacted diagnostic request evidence. Request snapshots could then be repeated in Full Trace history. The historical Diagnostics window deep-copied the complete bundle and eagerly JSON-formatted every tab into wrapped `TextEdit` controls before showing the window, so one failed multi-megabyte image request could make Godot synchronously copy, stringify and lay out several multi-megabyte strings on the main UI thread without throwing a script exception.
+That interrupted release had already run `tools/set_version.py` before later validation stopped the promotion. As designed, the version synchroniser left six generated release metadata files modified in the local checkout. The historical updater only had one narrow exception for a single unstaged `project.godot`, so `bash update.sh` then refused to advance to hotfix8 even though the dirty state was fully generated release-tooling residue.
 
-v0.15.40-hotfix7 moves the safety boundary earlier. Every concurrent generation worker now removes embedded base64 data-URI payloads from diagnostic evidence while preserving compact MIME/encoded-size/approximate-byte information, credential redaction, useful request structure, provider/model metadata and explicit truncation markers. Individual diagnostic strings and total diagnostic text are bounded before storage.
+Hotfix9 makes that recovery explicit and safe. The updater only auto-clears the six-file release bundle when the complete dirty path set is exactly the known metadata set, there are no untracked files, and every working-tree file exactly matches what the checked-in `tools/set_version.py` produces from clean `HEAD` for the candidate `VERSION`. If the release attempt staged the generated files, the staged content must also match the same reproducible output. Any manual change, unrelated tracked edit, partial bundle, untracked file, or different staged content still blocks the update.
 
-The Diagnostics viewer also creates a second bounded, binary-free view model so older or otherwise unsanitized diagnostic bundles cannot reintroduce the stall. Only Overview renders when the window opens; Request, Raw API Response, Assistant Text, Parsed Output, Validation, Repair and Full Trace render lazily when selected. Failed Collaborator Vision jobs now use **Vision Analysis Failed** rather than the misleading generic Character Generation failure title.
+The abandoned version bundle is reset to authoritative `HEAD` before fetch/fast-forward and is not reapplied afterward. This differs intentionally from the single-`project.godot` preservation path: interrupted release metadata is generated temporary release state, while the historical project.godot exception preserves a local environment-specific drift when upstream did not change the file.
 
-The focused real-main-scene regression deliberately supplies an unsanitized failed Vision bundle containing a 4 MiB PNG data URI in both Request and Full Trace, follows the normal diagnostics-available → failure dialog → View Diagnostics path, requires the call to return within a strict timeout, checks lazy bounded tabs, and closes the Diagnostics window afterward. Hotfix6/hotfix5/hotfix4/hotfix3, Character Card metadata + Vision/UserPersona, updater, AI activity and broad compatibility coverage remain part of the release gate.
-
-The active shell remains layered on v0.15.40 Workspace AI activity reconciliation, the runtime-verified v0.15.40-hotfix6 shared-scroll Reference Context/window-bound composer fix, v0.15.40-hotfix5 composer lifecycle/warning cleanup, v0.15.40-hotfix4 Reference Context/sidebar safety, v0.15.39-hotfix2 Character Card dual ingestion/dialog layout, v0.15.38 Image Studio, v0.15.31 AI Jobs inspection/cancellation, v0.15.37-hotfix1 generation validation, and v0.15.38-hotfix1 updater preservation. The running development build displays **v0.15.40-hotfix7**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
+The active shell retains all hotfix8 release QA, hotfix7 Diagnostics safety, hotfix6 Reference Context/composer fixes, Character Card metadata + Vision ingestion, UserPersona exclusion, updater project.godot preservation, Image Studio, AI Jobs, and Safe Section validation. The running development build displays **v0.15.40-hotfix9** and remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained.
 
 ## Completed
+
+### v0.15.40-hotfix9 — Interrupted Release Metadata Recovery
+
+- Added exact recognition of the six metadata files generated by `tools/set_version.py` when a release is interrupted after version synchronisation.
+- Reconstructs clean `HEAD` copies in a temporary directory and runs the checked-in version synchroniser there before deciding the local bundle is safe to clear.
+- Requires byte-for-byte equality between the real working copy and reconstructed generated output rather than trusting filenames or a version string alone.
+- Supports exact generated staged metadata while rejecting any different staged content.
+- Keeps untracked files, unrelated tracked edits, partial bundles, and manual edits inside metadata files fail-closed.
+- Resets reproducible interrupted release metadata to authoritative `HEAD` before the normal fast-forward and deliberately does not reapply the abandoned candidate afterward.
+- Preserves the v0.15.38-hotfix1 single-`project.godot` stash/restore path unchanged.
+- Added `tools/test_update_sh_release_metadata.sh` with temporary real Git repositories covering unstaged recovery, staged recovery, modified-bundle refusal, and unrelated-work refusal.
+- Added `tools/regression_suites_v01540_hotfix9.json`, advanced the default regression manifest, dedicated hotfix9 CI, and `docs/v01540-hotfix9-update-release-metadata.md`.
+
+### v0.15.40-hotfix8 — Release QA + Godot 4.7.1 Gate
+
+- Made Godot 4.7.1 stable a hard local release prerequisite instead of allowing `release.sh` to validate under an older PATH-installed Godot.
+- Added `${HOME}/Godot/Godot_v4.7.1-stable_linux.x86_64` as the preferred portable home-relative development executable before PATH fallbacks while retaining explicit `GODOT_BIN` override support.
+- Made missing or wrong-version Godot fail closed before release import, regression, staging, push, or tagging.
+- Separated the intended v0.15.40 promotion target from the previously synchronised release metadata so development branches do not desynchronise `VERSION`, `project.godot`, export metadata, and package metadata just to change the release prompt default.
+- Fixed nested assistant-response extraction so known `{text:{value:...}}` response parts are unwrapped before the inherited fallback can stringify the wrapper object.
+- Fixed `tools/test_assistant_response_shapes.gd` so a failed expectation cannot later be overwritten by a final `quit(0)`.
+- Added `tools/regression_suites_v01540_hotfix8.json`, dedicated release QA CI, and `docs/v01540-hotfix8-release-qa.md`.
+- Generic project validation subsequently passed metadata validation, Godot 4.7.1 import, generation contracts, and assistant-response compatibility on the hotfix8 branch.
 
 ### v0.15.40-hotfix7 — Lightweight Diagnostics + Vision Failure Safety
 
@@ -455,6 +476,8 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 
 ## In Progress
 
+- Runtime-test v0.15.40-hotfix9 on the normal development checkout by reproducing the exact six-file interrupted-release metadata state and confirming `bash update.sh` identifies and clears only the generated bundle before updating.
+- Confirm hotfix9 still refuses partial/non-reproducible version metadata, manual edits inside any metadata file, unrelated tracked changes, and untracked files.
 - Runtime-test v0.15.40-hotfix7 with a real provider-side Collaborator Vision failure: open **View Diagnostics…**, confirm the Diagnostics window appears promptly, tabs remain responsive, the window can close normally, and other CCF windows continue accepting input.
 - Confirm hotfix7 Request and Full Trace retain useful failure/request structure, filename/provenance, provider/profile/model and omission/size evidence while never showing or saving the original base64 image payload.
 - Runtime-test v0.15.40-hotfix4 with the user's exact real Character Card PNG/APNG **Card data + Vision** path. Confirm neither the previous giant action columns nor the inherited one-character-per-line Character Card helper returns while Vision starts, after Vision finishes, after re-analysis, after session switching/resizing, or after save/reopen.
@@ -502,7 +525,7 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 - Validate Blueprint supplementary materialisation without overwriting manually populated Alternative Greetings/Lorebooks.
 - Continue profiling very long Collaborator sessions for preparation, rendering, autosave, Blueprint generation, and direct-draft responsiveness.
 - Runtime-test `python3 tools/run_regression_suite.py --profile quick` and `--profile release` on the normal Linux/Godot machine and confirm real `user://` data remains untouched.
-- Runtime-test `release.sh` and confirm the broad release gate runs before staging/tagging and fails closed.
+- Runtime-test `release.sh` and confirm the broad release gate runs before staging/tagging, uses Godot 4.7.1 stable, and fails closed.
 - Continue hardening forward-compatible tests so later shells/services cannot drop historical capabilities/hotfix invariants.
 - Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
 
@@ -611,6 +634,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Carry `generation.template_id` through every character-creation handoff.
 - Keep supplementary Blueprint materialisation separate from strict template-field validation unless the schema explicitly models it.
 - Keep Diagnostics credential-safe, binary-free, size-bounded and lazily rendered before UI, clipboard, or disk exposure.
+- Treat release version synchronisation as a generated transaction: `set_version.py` owns all release metadata markers together, and updater recovery may discard an abandoned transaction only when its output is exactly reproducible from the checked-in synchroniser.
 
 ## Polish
 
