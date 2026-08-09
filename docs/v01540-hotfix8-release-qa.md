@@ -4,7 +4,7 @@
 
 The first attempted promotion of v0.15.40 exposed release-tooling drift that had accumulated while development moved from Godot 4.6.3 to Godot 4.7.1.
 
-The local `release.sh` run discovered the system `godot` executable first and therefore parsed and regression-tested the project under Godot 4.6.3 even though the active CCF V2 development/CI baseline is Godot 4.7.1 stable. The same release run also showed a stale `VERSION` default of `0.15.9` and exposed an assistant-response compatibility regression whose test printed an error but subsequently overwrote its non-zero exit with `quit(0)`.
+The local `release.sh` run discovered the system `godot` executable first and therefore parsed and regression-tested the project under Godot 4.6.3 even though the active CCF V2 development/CI baseline is Godot 4.7.1 stable. The same release run also defaulted the release prompt to the last synchronised application version (`0.15.9`) instead of the intended v0.15.40 promotion, and exposed an assistant-response compatibility regression whose test printed an error but subsequently overwrote its non-zero exit with `quit(0)`.
 
 ## Release engine contract
 
@@ -23,9 +23,13 @@ The repository never hard-codes a particular username or home directory. The `${
 
 ## Release version target
 
-The canonical `VERSION` release target is corrected from the stale `0.15.9` value to `0.15.40`.
+`VERSION`, `project.godot`, package manifests and export presets remain the synchronised metadata for the currently prepared/released application version. Development work must not advance only one of those markers because the normal project validator intentionally rejects partial version drift.
 
-Development build identity remains separate: the live shell displays `0.15.40-hotfix8`, while `release.sh` defaults the promoted/tagged version to `0.15.40`.
+Hotfix8 therefore keeps those existing markers internally synchronised until promotion and gives `release.sh` a separate `DEFAULT_RELEASE_VERSION="0.15.40"`. Option 1 now shows the currently synchronised metadata for context but offers **0.15.40** as the default release choice. `CCF_RELEASE_VERSION` can override that prompt default when intentionally preparing another version.
+
+Once a release version is selected, the existing `tools/set_version.py` atomically updates `VERSION`, `project.godot`, `scripts/main.gd`, project/series package manifest versions and all four platform export version fields before validation, commit, push and tagging.
+
+Development build identity remains separate: the live shell displays `0.15.40-hotfix8`.
 
 ## Assistant response compatibility
 
@@ -47,7 +51,7 @@ The compatibility parser now processes known Chat Completions / Responses conten
 
 Hotfix8 adds:
 
-- `tools/test_v01540_hotfix8_release_qa.sh` for release-version, engine-gate, shell wiring, active-shell and parser-order invariants;
+- `tools/test_v01540_hotfix8_release_qa.sh` for synchronised release metadata, the v0.15.40 release prompt target, engine-gate, shell wiring, active-shell and parser-order invariants;
 - `tools/regression_suites_v01540_hotfix8.json` as the new default broad regression manifest;
 - dedicated Godot execution of `tools/test_assistant_response_shapes.gd` under the 4.7.1 CI environment;
 - `.github/workflows/validate-v01540-hotfix8-release-qa.yml`;
