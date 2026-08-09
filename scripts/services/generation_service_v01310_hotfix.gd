@@ -41,10 +41,11 @@ func _on_request_completed(
 
 
 func _extract_content(response: Dictionary) -> String:
-	var inherited: String = super._extract_content(response).strip_edges()
-	if not inherited.is_empty():
-		return inherited
-
+	# Prefer the compatibility parser for structured content parts before the
+	# historical parent parser. Older providers may wrap text as
+	# {"text":{"value":"..."}}; the parent can stringify that wrapper into
+	# JSON-looking text before the newer compatibility code gets a chance to
+	# extract the actual value.
 	var choices: Variant = response.get("choices", [])
 	if choices is Array:
 		for raw_choice in choices:
@@ -84,6 +85,9 @@ func _extract_content(response: Dictionary) -> String:
 				if not output_text.is_empty():
 					return output_text
 
+	var inherited: String = super._extract_content(response).strip_edges()
+	if not inherited.is_empty():
+		return inherited
 	return ""
 
 
