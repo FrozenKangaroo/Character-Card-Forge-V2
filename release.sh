@@ -4,6 +4,7 @@ set -euo pipefail
 EXPECTED_REMOTE="https://github.com/FrozenKangaroo/Character-Card-Forge-V2.git"
 REQUIRED_GODOT_VERSION="4.7.1"
 REQUIRED_GODOT_STATUS="stable"
+DEFAULT_RELEASE_VERSION="0.15.40"
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 DEFAULT_REPO_DIR="${HOME}/Projects/Character-Card-Forge-V2"
 DEFAULT_GODOT_BIN="${HOME}/Godot/Godot_v${REQUIRED_GODOT_VERSION}-${REQUIRED_GODOT_STATUS}_linux.x86_64"
@@ -351,8 +352,10 @@ read -r -p "Select option (1 or 2): " build_choice
 case "${build_choice}" in
     1)
         current_version="$(tr -d '[:space:]' < VERSION)"
-        read -r -p "Release version [${current_version}]: " new_version
-        new_version="${new_version:-${current_version}}"
+        release_default="${CCF_RELEASE_VERSION:-${DEFAULT_RELEASE_VERSION}}"
+        echo "Current synchronized release metadata: ${current_version}"
+        read -r -p "Release version [${release_default}]: " new_version
+        new_version="${new_version:-${release_default}}"
         new_version="${new_version#v}"
 
         print_status "Synchronising version ${new_version}"
