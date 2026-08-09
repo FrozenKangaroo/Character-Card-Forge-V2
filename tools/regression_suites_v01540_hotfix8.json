@@ -1,0 +1,24 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.40-hotfix8",
+  "description": "v0.15.40-hotfix7 coverage plus release-tooling Godot 4.7.1 enforcement, release-version correction, nested assistant-response compatibility, and fail-closed response-shape regression handling.",
+  "base_manifest": "regression_suites_v01540_hotfix7.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01540_hotfix8_release_qa",
+        "label": "v0.15.40-hotfix8 release version and Godot 4.7.1 gate",
+        "kind": "shell",
+        "path": "tools/test_v01540_hotfix8_release_qa.sh",
+        "timeout_seconds": 30
+      },
+      {
+        "id": "v01540_hotfix8_assistant_response_shapes",
+        "label": "v0.15.40-hotfix8 nested assistant response compatibility and fail-closed test",
+        "kind": "godot",
+        "path": "tools/test_assistant_response_shapes.gd",
+        "timeout_seconds": 45
+      }
+    ]
+  }
+}

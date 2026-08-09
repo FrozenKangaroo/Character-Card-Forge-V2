@@ -2,8 +2,12 @@
 set -euo pipefail
 
 EXPECTED_REMOTE="https://github.com/FrozenKangaroo/Character-Card-Forge-V2.git"
+REQUIRED_GODOT_VERSION="4.7.1"
+REQUIRED_GODOT_STATUS="stable"
+DEFAULT_RELEASE_VERSION="0.15.40"
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 DEFAULT_REPO_DIR="${HOME}/Projects/Character-Card-Forge-V2"
+DEFAULT_GODOT_BIN="${HOME}/Godot/Godot_v${REQUIRED_GODOT_VERSION}-${REQUIRED_GODOT_STATUS}_linux.x86_64"
 
 resolve_repository_input() {
     if [[ -n "${CCF_REPO_DIR:-}" ]]; then
@@ -220,8 +224,16 @@ sync_to_repository() {
 }
 
 find_godot() {
-    if [[ -n "${GODOT_BIN:-}" && -x "${GODOT_BIN}" ]]; then
-        printf '%s\n' "${GODOT_BIN}"
+    if [[ -n "${GODOT_BIN:-}" ]]; then
+        if [[ -x "${GODOT_BIN}" ]]; then
+            printf '%s\n' "${GODOT_BIN}"
+            return 0
+        fi
+        echo "ERROR: GODOT_BIN is set but is not an executable file: ${GODOT_BIN}" >&2
+        return 2
+    fi
+    if [[ -x "${DEFAULT_GODOT_BIN}" ]]; then
+        printf '%s\n' "${DEFAULT_GODOT_BIN}"
         return 0
     fi
     if command -v godot >/dev/null 2>&1; then
@@ -233,6 +245,22 @@ find_godot() {
         return 0
     fi
     return 1
+}
+
+validate_godot() {
+    local godot_bin="$1"
+    local version_line
+    version_line="$("${godot_bin}" --version | head -n 1 | tr -d '\r')"
+
+    if [[ "${version_line}" != "${REQUIRED_GODOT_VERSION}.${REQUIRED_GODOT_STATUS}"* ]]; then
+        echo "ERROR: Character Card Forge releases require Godot ${REQUIRED_GODOT_VERSION} ${REQUIRED_GODOT_STATUS}." >&2
+        echo "Detected: ${godot_bin}" >&2
+        echo "Version:  ${version_line:-unknown}" >&2
+        echo >&2
+        echo "Set GODOT_BIN to the correct executable, for example:" >&2
+        echo "  GODOT_BIN=/path/to/Godot_v${REQUIRED_GODOT_VERSION}-${REQUIRED_GODOT_STATUS}_linux.x86_64 bash release.sh" >&2
+        return 1
+    fi
 }
 
 validate_repository() {
@@ -263,18 +291,22 @@ run_checks() {
     python3 ./tools/validate_project.py
 
     local godot_bin
-    if godot_bin="$(find_godot)"; then
-        print_status "Parsing project with $(${godot_bin} --version | head -n 1)"
-        "${godot_bin}" --headless --path . --import
-
-        print_status "Running broad release regression suite"
-        python3 ./tools/run_regression_suite.py \
-            --profile release \
-            --godot "${godot_bin}"
-    else
-        echo "WARNING: Godot was not found in PATH; local engine validation and broad regression checks were skipped."
-        echo "GitHub Actions will still parse and regression-test the project before any release is published."
+    if ! godot_bin="$(find_godot)"; then
+        echo "ERROR: Godot ${REQUIRED_GODOT_VERSION} ${REQUIRED_GODOT_STATUS} is required for local release validation." >&2
+        echo "Expected default location:" >&2
+        echo "  ${DEFAULT_GODOT_BIN}" >&2
+        echo "Or set GODOT_BIN to the correct executable." >&2
+        exit 1
     fi
+    validate_godot "${godot_bin}"
+
+    print_status "Parsing project with $("${godot_bin}" --version | head -n 1)"
+    "${godot_bin}" --headless --path . --import
+
+    print_status "Running broad release regression suite"
+    python3 ./tools/run_regression_suite.py \
+        --profile release \
+        --godot "${godot_bin}"
 }
 
 stage_and_commit() {
@@ -320,8 +352,10 @@ read -r -p "Select option (1 or 2): " build_choice
 case "${build_choice}" in
     1)
         current_version="$(tr -d '[:space:]' < VERSION)"
-        read -r -p "Release version [${current_version}]: " new_version
-        new_version="${new_version:-${current_version}}"
+        release_default="${CCF_RELEASE_VERSION:-${DEFAULT_RELEASE_VERSION}}"
+        echo "Current synchronized release metadata: ${current_version}"
+        read -r -p "Release version [${release_default}]: " new_version
+        new_version="${new_version:-${release_default}}"
         new_version="${new_version#v}"
 
         print_status "Synchronising version ${new_version}"
