@@ -4,12 +4,20 @@ set -euo pipefail
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 cd "${repo_root}"
 
-expected_release_version="0.15.40"
-actual_release_version="$(tr -d '[:space:]' < VERSION)"
-if [[ "${actual_release_version}" != "${expected_release_version}" ]]; then
-    echo "VERSION must default release.sh to ${expected_release_version}; got ${actual_release_version}." >&2
+# Development branches keep the last synchronised release metadata internally
+# consistent. The next intended promotion is a separate release.sh default and
+# is applied atomically by tools/set_version.py only after the user chooses it.
+synchronised_version="$(tr -d '[:space:]' < VERSION)"
+project_version="$(sed -n 's/^config\/version="\([^"]*\)"$/\1/p' project.godot)"
+if [[ -z "${synchronised_version}" || "${project_version}" != "${synchronised_version}" ]]; then
+    echo "VERSION and project.godot release metadata must remain synchronised before promotion." >&2
+    echo "VERSION=${synchronised_version:-missing}, project.godot=${project_version:-missing}" >&2
     exit 1
 fi
+
+grep -F 'DEFAULT_RELEASE_VERSION="0.15.40"' release.sh >/dev/null
+grep -F 'release_default="${CCF_RELEASE_VERSION:-${DEFAULT_RELEASE_VERSION}}"' release.sh >/dev/null
+grep -F 'Release version [${release_default}]' release.sh >/dev/null
 
 grep -F 'REQUIRED_GODOT_VERSION="4.7.1"' release.sh >/dev/null
 grep -F 'REQUIRED_GODOT_STATUS="stable"' release.sh >/dev/null
