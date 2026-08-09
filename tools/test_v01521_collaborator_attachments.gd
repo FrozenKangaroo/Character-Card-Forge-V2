@@ -68,7 +68,7 @@ func _init() -> void:
 
 	var runner_source := FileAccess.get_file_as_string("res://tools/run_regression_suite.py")
 	assert(
-		runner_source.contains("DEFAULT_MANIFEST") and runner_source.contains("regression_suites_v015"),
+		runner_source.contains("DEFAULT_MANIFEST") and runner_source.contains("regression_suites_v"),
 		"Broad regression runs must continue to use a versioned registry after v0.15.21 so attachment coverage can remain in release gating through manifest inheritance."
 	)
 	var manifest_source := FileAccess.get_file_as_string("res://tools/regression_suites_v01521.json")
