@@ -2,6 +2,8 @@ extends SceneTree
 
 const SERVICE = preload("res://scripts/services/generation_service_v01310_hotfix.gd")
 
+var _failed := false
+
 
 func _init() -> void:
 	var service = SERVICE.new()
@@ -70,6 +72,9 @@ func _init() -> void:
 		_fail("Reasoning-only blank output should mention reasoning token use.")
 		return
 
+	if _failed:
+		quit(1)
+		return
 	print("Assistant response shape regression passed.")
 	quit(0)
 
@@ -80,5 +85,6 @@ func _expect_equal(actual: String, expected: String, label: String) -> void:
 
 
 func _fail(message: String) -> void:
+	_failed = true
 	push_error(message)
 	quit(1)
