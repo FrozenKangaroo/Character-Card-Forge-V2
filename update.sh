@@ -7,6 +7,14 @@ cd "$SCRIPT_DIR"
 
 AUTO_PROJECT_GODOT_STASH=""
 AUTO_PROJECT_GODOT_STASH_LABEL=""
+RELEASE_METADATA_PATHS=(
+    "VERSION"
+    "export_presets.cfg"
+    "project.godot"
+    "scripts/main.gd"
+    "scripts/services/project_package_service.gd"
+    "scripts/services/series_service.gd"
+)
 
 say() {
     printf '%s\n' "$*"
@@ -18,6 +26,7 @@ fail() {
 }
 
 command -v git >/dev/null 2>&1 || fail "git is not installed or not available in PATH."
+command -v python3 >/dev/null 2>&1 || fail "python3 is not installed or not available in PATH."
 
 git rev-parse --is-inside-work-tree >/dev/null 2>&1 \
     || fail "This copy is not a Git checkout. Clone the GitHub repository once, then run this script from that checkout."
@@ -96,7 +105,84 @@ is_only_unstaged_project_godot_change() {
     return 0
 }
 
+is_generated_release_metadata_bundle() {
+    local expected_paths changed_paths candidate_version tmp_root path index_copy
+
+    [[ -z "$(git ls-files --others --exclude-standard)" ]] || return 1
+
+    expected_paths="$(printf '%s\n' "${RELEASE_METADATA_PATHS[@]}" | sort)"
+    changed_paths="$(git diff --name-only HEAD -- | sort)"
+    [[ "$changed_paths" == "$expected_paths" ]] || return 1
+
+    candidate_version="$(tr -d '[:space:]' < VERSION)"
+    [[ -n "$candidate_version" ]] || return 1
+
+    tmp_root="$(mktemp -d)" || return 1
+    mkdir -p "$tmp_root/tools"
+
+    for path in "${RELEASE_METADATA_PATHS[@]}"; do
+        mkdir -p "$tmp_root/$(dirname "$path")"
+        if ! git show "HEAD:$path" > "$tmp_root/$path"; then
+            rm -rf "$tmp_root"
+            return 1
+        fi
+    done
+    if ! git show HEAD:tools/set_version.py > "$tmp_root/tools/set_version.py"; then
+        rm -rf "$tmp_root"
+        return 1
+    fi
+
+    if ! python3 "$tmp_root/tools/set_version.py" "$candidate_version" >/dev/null 2>&1; then
+        rm -rf "$tmp_root"
+        return 1
+    fi
+
+    # The working-tree files must exactly equal what the checked-in version
+    # synchroniser would generate from HEAD for VERSION's candidate version.
+    for path in "${RELEASE_METADATA_PATHS[@]}"; do
+        if ! cmp -s "$repo_root/$path" "$tmp_root/$path"; then
+            rm -rf "$tmp_root"
+            return 1
+        fi
+
+        # If a release attempt staged the generated files before failing, allow
+        # that exact generated index state too. Any other staged content remains
+        # fail-closed so intentional edits are never discarded automatically.
+        if ! git diff --cached --quiet HEAD -- "$path"; then
+            index_copy="$tmp_root/index-${path//\//_}"
+            if ! git show ":$path" > "$index_copy" 2>/dev/null; then
+                rm -rf "$tmp_root"
+                return 1
+            fi
+            if ! cmp -s "$index_copy" "$tmp_root/$path"; then
+                rm -rf "$tmp_root"
+                return 1
+            fi
+        fi
+    done
+
+    rm -rf "$tmp_root"
+    return 0
+}
+
+discard_generated_release_metadata_bundle() {
+    local candidate_version
+    candidate_version="$(tr -d '[:space:]' < VERSION)"
+    say "Detected release metadata left by an interrupted release attempt (v${candidate_version})."
+    say "The six generated version files exactly match tools/set_version.py output, so they can be reset safely before updating."
+    git restore --source=HEAD --staged --worktree -- "${RELEASE_METADATA_PATHS[@]}" \
+        || fail "Could not reset the interrupted release metadata bundle. Nothing was updated."
+    say "Cleared the interrupted release metadata bundle."
+}
+
 dirty_status="$(git status --porcelain --untracked-files=normal)"
+if [[ -n "$dirty_status" && "$current_branch" == "$TARGET_BRANCH" ]]; then
+    if is_generated_release_metadata_bundle; then
+        discard_generated_release_metadata_bundle
+        dirty_status="$(git status --porcelain --untracked-files=normal)"
+    fi
+fi
+
 if [[ -n "$dirty_status" ]]; then
     if [[ "$current_branch" == "$TARGET_BRANCH" ]] && is_only_unstaged_project_godot_change; then
         AUTO_PROJECT_GODOT_STASH_LABEL="ccf-update: preserve local project.godot"
