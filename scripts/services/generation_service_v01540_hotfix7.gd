@@ -138,9 +138,10 @@ func _bounded_diagnostic_string_v01540_hotfix7(
 		"\n\n[DIAGNOSTIC TEXT TRUNCATED — original characters: %d; display-safe capture limit: %d]\n\n"
 		% [original_chars, allowed]
 	)
+	var fifth_of_allowed := int(floor(float(allowed) / 5.0))
 	var tail_chars := mini(
 		DIAGNOSTIC_TAIL_CHAR_LIMIT_V01540_HOTFIX7,
-		maxi(0, allowed / 5)
+		maxi(0, fifth_of_allowed)
 	)
 	var head_chars := maxi(0, allowed - tail_chars - marker.length())
 	var bounded := text.left(head_chars) + marker
