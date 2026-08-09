@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.15.40-hotfix7",
+  "description": "v0.15.40-hotfix6 coverage plus bounded binary-free failure diagnostics and lazy Diagnostics rendering for failed Vision requests.",
+  "base_manifest": "regression_suites_v01540_hotfix6.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01540_hotfix7_lightweight_diagnostics",
+        "label": "v0.15.40-hotfix7 lightweight Vision failure diagnostics and responsive viewer",
+        "kind": "python",
+        "path": "tools/test_v01540_hotfix7_lightweight_diagnostics_strict.py",
+        "timeout_seconds": 210
+      }
+    ]
+  }
+}
