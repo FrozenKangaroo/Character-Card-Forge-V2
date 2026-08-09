@@ -33,8 +33,25 @@ if grep -F 'local engine validation and broad regression checks were skipped' re
     exit 1
 fi
 
-grep -F 'res://scripts/main_v01540_hotfix8.gd' scenes/main.tscn >/dev/null
+# Hotfix8 established the release-QA shell contract. Later hotfix shells may
+# extend it, so require an active v0.15.40 hotfix >= 8 rather than pinning the
+# main scene forever to the historical hotfix8 leaf.
 grep -F 'BUILD_DISPLAY_VERSION_V01540_HOTFIX8 := "0.15.40-hotfix8"' scripts/main_v01540_hotfix8.gd >/dev/null
+python3 - <<'PY'
+from pathlib import Path
+import re
+
+scene = Path("scenes/main.tscn").read_text(encoding="utf-8")
+match = re.search(r'res://scripts/main_v01540_hotfix(\d+)\.gd', scene)
+if match is None:
+    raise SystemExit("The main scene is not wired to a v0.15.40 hotfix shell.")
+hotfix = int(match.group(1))
+if hotfix < 8:
+    raise SystemExit(f"The active shell regressed below hotfix8: hotfix{hotfix}.")
+active_script = Path(f"scripts/main_v01540_hotfix{hotfix}.gd")
+if not active_script.is_file():
+    raise SystemExit(f"The active shell file is missing: {active_script}.")
+PY
 
 # The compatibility parser must run before the inherited fallback so nested
 # text/value response parts cannot be prematurely stringified.
