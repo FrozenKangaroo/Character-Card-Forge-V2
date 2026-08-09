@@ -69,6 +69,8 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Safe generation fails narrowly: accepted sections remain accepted, and missing required components receive focused repair rather than unrelated regeneration.
 - Safe Section output must match the identity of the requested field/component as well as its JSON/type contract. Valid JSON containing content routed from Scenario, First Message, Lorebook, or another long section must not be silently materialised into an unrelated card field.
 - Failed provider generations remain inspectable through credential-redacted Diagnostics.
+- Diagnostics never retain embedded image/binary provider payloads verbatim. Binary data is represented by compact provenance/size metadata, while unusually large textual evidence is bounded with explicit truncation markers before UI, clipboard, or disk exposure.
+- Failure inspection must remain responsive: heavy Diagnostics sections render lazily and within bounded display budgets so opening a failed request cannot monopolise the Godot UI thread.
 - Deferred or awaited UI work verifies node/control/SceneTree validity before touching UI after an await.
 - Modal dialogs with wrapped custom content must establish a bounded content width before minimum-size calculation and keep their user-facing action controls inside that bounded layout; native window-manager/subwindow behaviour must not be the only thing keeping a confirmation action reachable.
 - Narrow source/reference sidebars keep descriptive text and action controls in separate layout regions. Action buttons must not consume the label's usable width or stretch vertically to the height of heavily wrapped descriptive text.
@@ -88,21 +90,34 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.40-hotfix6 — Scrollable Source Sidebar + Window-Bound Composer Guard**
+**v0.15.40-hotfix7 — Lightweight Diagnostics + Vision Failure Safety**
 
-Further desktop A/B testing after hotfix5 isolated the remaining composer disappearance to the Reference Context sidebar rather than the chat composer itself. A project with only ordinary attachment/Vision context could survive repeated large→small resizing, while a project with a structured Collaborator source could push the split/chat layout below the native window. Once the composer disappeared, enlarging the window again could leave it off-screen until switching projects forced a fuller layout rebuild.
+Desktop runtime testing exposed an unrelated failure-inspection problem after the hotfix6 sidebar/composer issue was verified resolved. A Character Card PNG was sent to the configured Vision model, the provider request eventually failed, and choosing **View Diagnostics…** from the failure dialog made every Character Card Forge window stop accepting input. Tabs could not be changed, windows could not be closed, and no useful GDScript debugger/log error appeared.
 
-The root cause is structural: ordinary attachment/context rows already live under the Reference Context `ScrollContainer`, but the v0.15.33 structured Sources panel was inserted directly into the outer sidebar `VBoxContainer` before and outside that scroll surface. Because the sidebar and chat panel are siblings in an `HSplitContainer`, the non-scrollable Sources block could contribute fixed vertical minimum-height pressure to the entire split.
+The failure path retained the Vision request's base64 `data:image/...;base64,...` image URL inside credential-redacted diagnostic request evidence. Request snapshots could then be repeated in Full Trace history. The historical Diagnostics window deep-copied the complete bundle and eagerly JSON-formatted every tab into wrapped `TextEdit` controls before showing the window, so one failed multi-megabyte image request could make Godot synchronously copy, stringify and lay out several multi-megabyte strings on the main UI thread without throwing a script exception.
 
-v0.15.40-hotfix6 creates one shared vertical content column inside the existing Reference Context ScrollContainer and reparents both the structured Sources panel and ordinary context/attachment list into it. The fixed Reference Context heading, general help, and top-level Add/Import/Attach controls stay outside. Dynamic source count, helper text, source rows, attachment cards, and Vision summaries therefore scroll instead of increasing the split's vertical minimum.
+v0.15.40-hotfix7 moves the safety boundary earlier. Every concurrent generation worker now removes embedded base64 data-URI payloads from diagnostic evidence while preserving compact MIME/encoded-size/approximate-byte information, credential redaction, useful request structure, provider/model metadata and explicit truncation markers. Individual diagnostic strings and total diagnostic text are bounded before storage.
 
-Hotfix6 also keeps the hotfix5 panel-relative guard intact as a historical compatibility contract and adds a separate actual-window composer guard. The runtime guard checks the input and all visible composer controls against the real Collaborator viewport; the focused hotfix6 regression separately requires the overall chat panel to settle inside that viewport after the layout cycle.
+The Diagnostics viewer also creates a second bounded, binary-free view model so older or otherwise unsanitized diagnostic bundles cannot reintroduce the stall. Only Overview renders when the window opens; Request, Raw API Response, Assistant Text, Parsed Output, Validation, Repair and Full Trace render lazily when selected. Failed Collaborator Vision jobs now use **Vision Analysis Failed** rather than the misleading generic Character Generation failure title.
 
-The dedicated regression reproduces the user's A/B cases through the real main scene: attachment-only context and structured source + multiple Vision/context rows. Both repeatedly resize from large desktop dimensions to the minimum supported Collaborator size and back. It then deliberately recreates the old Sources-outside-scroll architecture and requires normal runtime reconciliation to restore the shared-scroll structure without a project switch.
+The focused real-main-scene regression deliberately supplies an unsanitized failed Vision bundle containing a 4 MiB PNG data URI in both Request and Full Trace, follows the normal diagnostics-available → failure dialog → View Diagnostics path, requires the call to return within a strict timeout, checks lazy bounded tabs, and closes the Diagnostics window afterward. Hotfix6/hotfix5/hotfix4/hotfix3, Character Card metadata + Vision/UserPersona, updater, AI activity and broad compatibility coverage remain part of the release gate.
 
-The active shell remains layered on v0.15.40 Workspace AI activity reconciliation, v0.15.40-hotfix5 composer lifecycle/warning cleanup, v0.15.40-hotfix4 Reference Context/sidebar safety, v0.15.39-hotfix2 Character Card dual ingestion/dialog layout, v0.15.38 Image Studio, v0.15.31 AI Jobs inspection/cancellation, v0.15.37-hotfix1 generation validation, and v0.15.38-hotfix1 updater preservation. The running development build displays **v0.15.40-hotfix6**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
+The active shell remains layered on v0.15.40 Workspace AI activity reconciliation, the runtime-verified v0.15.40-hotfix6 shared-scroll Reference Context/window-bound composer fix, v0.15.40-hotfix5 composer lifecycle/warning cleanup, v0.15.40-hotfix4 Reference Context/sidebar safety, v0.15.39-hotfix2 Character Card dual ingestion/dialog layout, v0.15.38 Image Studio, v0.15.31 AI Jobs inspection/cancellation, v0.15.37-hotfix1 generation validation, and v0.15.38-hotfix1 updater preservation. The running development build displays **v0.15.40-hotfix7**. Character Card Forge remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained for unsupported RenderingDevice hardware.
 
 ## Completed
+
+### v0.15.40-hotfix7 — Lightweight Diagnostics + Vision Failure Safety
+
+- Traced the application-wide no-error freeze after **View Diagnostics…** to multi-megabyte Vision image data being retained inside request/Full Trace evidence and eagerly rendered on Godot's UI thread.
+- Added `CCFGenerationServiceV01540Hotfix7` as the active service for all five concurrent workers so diagnostic safety applies consistently to Character, Collaborator, Ideas, authoring tools and Vision jobs.
+- Replaced embedded base64 data URIs with compact binary-omission evidence containing MIME type, encoded character count and approximate decoded byte count while preserving credential redaction.
+- Added a 180,000-character per-string diagnostic limit and 700,000-character total text budget with explicit head/tail truncation markers instead of silently dropping evidence.
+- Added `CCFGenerationDiagnosticsWindowV01540Hotfix7` with a bounded defensive view model for older/unsanitized bundles and lazy rendering for every heavy tab except Overview.
+- Bounded rendered tabs to 220,000 characters and made inherited Copy/Save operate on the bounded, binary-free viewer bundle.
+- Changed `collaborator_vision` failure labelling to **Vision Analysis Failed** / **Vision analysis failed** while retaining generic generation wording for non-Vision jobs.
+- Added a real-main-scene 4 MiB failed-Vision regression that duplicates the image data URI across Request and Full Trace, exercises the normal failure dialog → View Diagnostics path, validates omission/lazy rendering/bounds, and proves the window remains closable afterward.
+- Added `tools/regression_suites_v01540_hotfix7.json`, advanced the default regression manifest, dedicated hotfix7 CI, and `docs/v01540-hotfix7-lightweight-diagnostics.md`.
+- Real desktop verification remains required with an actual provider-side Vision failure and **View Diagnostics…** before this runtime freeze is considered fully closed.
 
 ### v0.15.40-hotfix6 — Scrollable Source Sidebar + Window-Bound Composer Guard
 
@@ -115,7 +130,7 @@ The active shell remains layered on v0.15.40 Workspace AI activity reconciliatio
 - Added runtime detection/repair for the old Sources-outside-scroll parent structure so the layout can recover without switching projects.
 - Added a real-main-scene A/B regression covering attachment-only and structured-source + Vision/context projects, repeated large/small resize cycles, actual viewport bounds, and deliberate old-architecture injection/recovery.
 - Added `tools/regression_suites_v01540_hotfix6.json`, advanced the default regression manifest, dedicated hotfix6 CI, and `docs/v01540-hotfix6-scrollable-source-sidebar.md`.
-- Runtime desktop verification remains required with the user's real structured Character Card + Vision project before the remaining resize issue is considered finally closed.
+- **Runtime desktop verified on 2026-08-09:** the user's real structured Character Card/Vision project now survives the previously failing resize path and behaves as intended. The resize/sidebar issue is considered resolved; the structural regression remains permanent coverage.
 
 ### v0.15.40-hotfix5 — Collaborator Composer Resize Guard + Godot 4.7.1 Warning Cleanup
 
@@ -149,7 +164,7 @@ The active shell remains layered on v0.15.40 Workspace AI activity reconciliatio
 - Explicitly applies vertical-shrink sizing to action buttons across both sidebar surfaces.
 - Preserves Card metadata/Vision separation, linked provenance, UserPersona exclusion, target safety, source/context removal, and all earlier Collaborator behavior.
 - Adds a real-main-scene whole-sidebar regression that injects the reported giant-button HBox failure after Card + linked-Vision state, proves deferred recovery, then proves runtime-guard recovery without a session mutation.
-- Adds `tools/regression_suites_v01540_hotfix3.json`, advances the default regression manifest, and adds dedicated hotfix3 CI.
+- Adds `tools/regression_suites_v01540-hotfix3.json`, advances the default regression manifest, and adds dedicated hotfix3 CI.
 - Runtime desktop testing confirmed the giant full-height action columns were removed, but exposed the separate inherited Character Card helper collapsing to one character per line. v0.15.40-hotfix4 supersedes that remaining gap while preserving hotfix3's whole-sidebar guard.
 
 ### v0.15.40-hotfix2 — Live Collaborator Source Refresh Guard
@@ -440,8 +455,8 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 
 ## In Progress
 
-- Runtime-test v0.15.40-hotfix6 with the exact desktop A/B resize path: compare an attachment-only project against a structured Character Card/Vision project, repeatedly resize large→small→large, maximise/restore, and confirm the composer remains visible without switching projects. Confirm dynamic Sources and attachments scroll together instead of increasing the outer split's vertical minimum.
-- Confirm hotfix6's actual-window composer guard catches input/action controls leaving the native/subwindow viewport even if an oversized parent chat panel would still contain them.
+- Runtime-test v0.15.40-hotfix7 with a real provider-side Collaborator Vision failure: open **View Diagnostics…**, confirm the Diagnostics window appears promptly, tabs remain responsive, the window can close normally, and other CCF windows continue accepting input.
+- Confirm hotfix7 Request and Full Trace retain useful failure/request structure, filename/provenance, provider/profile/model and omission/size evidence while never showing or saving the original base64 image payload.
 - Runtime-test v0.15.40-hotfix4 with the user's exact real Character Card PNG/APNG **Card data + Vision** path. Confirm neither the previous giant action columns nor the inherited one-character-per-line Character Card helper returns while Vision starts, after Vision finishes, after re-analysis, after session switching/resizing, or after save/reopen.
 - Runtime-test v0.15.40 with real AI Ideas, Generate Character, Collaborator/Vision, and other Workspace-owned AI work. Confirm active text follows the actual live job, successful completion clears stale activity when the queue becomes idle, and overlapping jobs switch to another remaining activity.
 - Runtime-test v0.15.40 failure and cancellation paths, capacity-waiting/queued states, and verify a newer non-AI status such as **Saved at…** or an actionable error/result is not erased by a later idle reconciliation.
@@ -595,7 +610,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Treat Generation Concept Blueprint as preserved authoring source rather than disposable intermediate text.
 - Carry `generation.template_id` through every character-creation handoff.
 - Keep supplementary Blueprint materialisation separate from strict template-field validation unless the schema explicitly models it.
-- Keep Diagnostics credential-safe before UI, clipboard, or disk exposure.
+- Keep Diagnostics credential-safe, binary-free, size-bounded and lazily rendered before UI, clipboard, or disk exposure.
 
 ## Polish
 
