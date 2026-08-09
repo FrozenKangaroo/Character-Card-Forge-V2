@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.16.0",
+  "description": "v0.15.40 release baseline plus Character Collaborator Delete From Here transcript rewind with summary invalidation and preserved independent Reference Context.",
+  "base_manifest": "regression_suites_v01540_hotfix9.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0160_collaborator_rewind",
+        "label": "v0.16.0 Character Collaborator Delete From Here rewind",
+        "kind": "godot",
+        "path": "tools/test_v0160_collaborator_rewind.gd",
+        "timeout_seconds": 40
+      }
+    ]
+  }
+}
