@@ -4,6 +4,9 @@ set -euo pipefail
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 cd "${repo_root}"
 
+bash -n ./release.sh
+python3 ./tools/validate_project.py >/dev/null
+
 # Development branches keep the last synchronised release metadata internally
 # consistent. The next intended promotion is a separate release.sh default and
 # is applied atomically by tools/set_version.py only after the user chooses it.
