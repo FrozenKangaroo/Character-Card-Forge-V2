@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: v0160-collaborator-rewind-${{ github.ref }}
@@ -27,94 +27,6 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
-        with:
-          ref: agent/v0160-collaborator-rewind
-
-      - name: Finalise v0.16.0 roadmap migration
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-
-          path = Path("roadmap.md")
-          text = path.read_text(encoding="utf-8")
-
-          principle = "- Collaborator transcript edits are chronological branch operations: deleting an author message truncates that message and every later transcript message; any derived memory summary that contains deleted history is invalidated, while independently managed Reference Context is never silently removed.\n"
-          anchor = "- Collaborator conversations are independent local authoring documents; project association is optional metadata rather than ownership.\n"
-          if principle not in text:
-              if anchor not in text:
-                  raise SystemExit("Missing Collaborator roadmap principle anchor")
-              text = text.replace(anchor, anchor + principle, 1)
-
-          start = text.index("## Current Development Phase")
-          end = text.index("## Completed", start)
-          current = '''## Current Development Phase
-
-**v0.16.0 — Character Collaborator Conversation Rewind**
-
-v0.15.40 is now the public release baseline. The successful promotion on 2026-08-09 ran the Godot 4.7.1 release gate and all 76 inherited release regressions before staging, closing the long v0.15 development cycle.
-
-v0.16.0 begins the next development phase by making established Collaborator conversations safer to edit. Every author message exposes **Delete From Here…**. Confirmation truncates that message and all later transcript messages as one chronological rewind, so assistant replies and response variants cannot remain detached from the context that produced them.
-
-The rewind operates on stored/model-facing session history rather than merely hiding UI cards. If `memory_summary` already includes the deleted branch, the derived summary is cleared and `summarized_through` resets so deleted material cannot leak back into future requests. If the summary covers only messages strictly before the rewind point, it remains valid.
-
-Structured TARGET/REFERENCE sources, Character Card metadata, attachments and Vision-derived Reference Context remain independent of transcript chronology and are preserved until explicitly removed through their existing controls. Rewind is blocked while the Collaborator worker is active, clears pending response-regeneration state, and commits through the existing independent Collaborator autosave path.
-
-The running development build displays **v0.16.0**, remains on Godot **4.7.1 stable**, keeps Forward+ as the normal desktop renderer with Compatibility/OpenGL fallback, and inherits the complete v0.15.40-hotfix9 release/update, hotfix7 Diagnostics, hotfix6 Collaborator layout, Safe Section, AI Jobs, Image Studio, multi-source, Vision and UserPersona safety baseline.
-
-'''
-          text = text[:start] + current + text[end:]
-
-          marker = "## Completed\n\n"
-          if "### v0.16.0 — Character Collaborator Conversation Rewind" not in text:
-              completed = '''### v0.16.0 — Character Collaborator Conversation Rewind
-
-- Added **Delete From Here…** to every author/user message in Character Collaborator.
-- Rewind deletes the selected author message plus every later transcript message rather than leaving assistant replies with missing context.
-- Removed assistant messages take all stored response variants with them automatically.
-- Pending response-regeneration state is cleared when its branch is abandoned.
-- Destructive rewind is blocked while the Collaborator generation worker is active so an in-flight completion cannot land against rewritten history.
-- `memory_summary` is preserved only when its `summarized_through` boundary ends before the rewind point; summaries containing deleted history are cleared and reset to prevent hidden context leakage.
-- Structured multi-source TARGET/REFERENCE material, Character Card metadata, ordinary attachments and Vision-derived Reference Context remain independently managed and survive transcript rewind.
-- Rewind persists through the existing v0.15.5 local Collaborator session store, so the truncated conversation autosaves without requiring a Character Project save.
-- Added `CCFCharacterCollaboratorWindowV0160`, `CCFWorkspaceV0160View`, the v0.16.0 application shell, `tools/test_v0160_collaborator_rewind.gd`, `tools/regression_suites_v0160.json`, dedicated Godot 4.7.1 CI and `docs/v0160-collaborator-rewind.md`.
-
-### v0.15.40 — Public Release Promotion
-
-- Promoted v0.15.40 from the hotfix9 baseline on 2026-08-09 after local metadata validation and Godot 4.7.1 import completed successfully.
-- The release gate completed all 76 inherited release regressions before staging the release commit.
-- Release metadata was synchronised to 0.15.40 as one transaction across VERSION, project/export/package/service markers before the public release commit.
-- v0.15.40 closes the v0.15 development line; subsequent feature development starts at v0.16.x while any necessary public-build emergency fixes remain release-specific hotfixes.
-
-'''
-              text = text.replace(marker, marker + completed, 1)
-
-          start = text.index("## In Progress")
-          end = text.index("## Next Up", start)
-          progress = '''## In Progress
-
-- Runtime-test v0.16.0 on the normal desktop build: submit a disposable message, use **Delete From Here…**, confirm that message and all later replies disappear immediately, restart CCF, and confirm the rewound session remains truncated.
-- Runtime-test a conversation whose older history has already been summarised, rewind from inside that summarised range, and confirm the summary is invalidated rather than reintroducing deleted facts in the next model request.
-- Confirm independent structured sources, attachments and Vision Reference Context remain attached after transcript rewind and still use their explicit remove controls.
-- Runtime-test v0.15.40-hotfix7 with a real provider-side Collaborator Vision failure: open **View Diagnostics…**, confirm the Diagnostics window appears promptly, tabs remain responsive, the window can close normally, and other CCF windows continue accepting input.
-- Continue hardening forward-compatible tests so later shells/services cannot drop historical capabilities/hotfix invariants.
-- Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
-
-'''
-          text = text[:start] + progress + text[end:]
-          path.write_text(text, encoding="utf-8")
-          PY
-
-          rm -f .github/workflows/zz-one-shot-v0160-roadmap.yml
-          if git diff --quiet -- roadmap.md .github/workflows/zz-one-shot-v0160-roadmap.yml; then
-            echo "Roadmap migration already committed."
-            exit 0
-          fi
-          git config user.name "Character Card Forge CI"
-          git config user.email "actions@users.noreply.github.com"
-          git add roadmap.md .github/workflows/zz-one-shot-v0160-roadmap.yml
-          git commit -m "Advance roadmap to v0.16.0 [skip ci]"
-          git push origin HEAD:agent/v0160-collaborator-rewind
 
       - name: Install Godot 4.7.1 and export templates
         run: ./tools/setup_godot_ci.sh
