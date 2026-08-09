@@ -50,6 +50,7 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Parallel generation remains deterministic: dependency order and template order—not network completion timing—determine context and final assembly.
 - Character Collaborator preserves established canon by default, deepens existing material before rewriting premises, and makes alternate/rewrite directions explicit.
 - Collaborator conversations are independent local authoring documents; project association is optional metadata rather than ownership.
+- Collaborator transcript edits are chronological branch operations: deleting an author message truncates that message and every later transcript message; any derived memory summary that contains deleted history is invalidated, while independently managed Reference Context is never silently removed.
 - Collaborator image attachments go through the configured Vision role first; the Text role receives a provenance-tagged description rather than the original image payload.
 - Text and Vision models may have different context/output limits and use their own role-specific settings.
 - Vision input preprocessing preserves originals and only optimises genuinely oversized files.
@@ -90,19 +91,38 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.15.40-hotfix9 — Interrupted Release Metadata Recovery**
+**v0.16.0 — Character Collaborator Conversation Rewind**
 
-The first v0.15.40 promotion attempt exposed two separate release/tooling weaknesses. Hotfix8 corrected the release engine gate so promotion validation now requires Godot 4.7.1 stable, separated the intended v0.15.40 promotion target from the previously synchronised release metadata, fixed nested assistant-response extraction, and made the response-shape regression fail closed.
+v0.15.40 is now the public release baseline. The successful promotion on 2026-08-09 ran the Godot 4.7.1 release gate and all 76 inherited release regressions before staging, closing the long v0.15 development cycle.
 
-That interrupted release had already run `tools/set_version.py` before later validation stopped the promotion. As designed, the version synchroniser left six generated release metadata files modified in the local checkout. The historical updater only had one narrow exception for a single unstaged `project.godot`, so `bash update.sh` then refused to advance to hotfix8 even though the dirty state was fully generated release-tooling residue.
+v0.16.0 begins the next development phase by making established Collaborator conversations safer to edit. Every author message exposes **Delete From Here…**. Confirmation truncates that message and all later transcript messages as one chronological rewind, so assistant replies and response variants cannot remain detached from the context that produced them.
 
-Hotfix9 makes that recovery explicit and safe. The updater only auto-clears the six-file release bundle when the complete dirty path set is exactly the known metadata set, there are no untracked files, and every working-tree file exactly matches what the checked-in `tools/set_version.py` produces from clean `HEAD` for the candidate `VERSION`. If the release attempt staged the generated files, the staged content must also match the same reproducible output. Any manual change, unrelated tracked edit, partial bundle, untracked file, or different staged content still blocks the update.
+The rewind operates on stored/model-facing session history rather than merely hiding UI cards. If `memory_summary` already includes the deleted branch, the derived summary is cleared and `summarized_through` resets so deleted material cannot leak back into future requests. If the summary covers only messages strictly before the rewind point, it remains valid.
 
-The abandoned version bundle is reset to authoritative `HEAD` before fetch/fast-forward and is not reapplied afterward. This differs intentionally from the single-`project.godot` preservation path: interrupted release metadata is generated temporary release state, while the historical project.godot exception preserves a local environment-specific drift when upstream did not change the file.
+Structured TARGET/REFERENCE sources, Character Card metadata, attachments and Vision-derived Reference Context remain independent of transcript chronology and are preserved until explicitly removed through their existing controls. Rewind is blocked while the Collaborator worker is active, clears pending response-regeneration state, and commits through the existing independent Collaborator autosave path.
 
-The active shell retains all hotfix8 release QA, hotfix7 Diagnostics safety, hotfix6 Reference Context/composer fixes, Character Card metadata + Vision ingestion, UserPersona exclusion, updater project.godot preservation, Image Studio, AI Jobs, and Safe Section validation. The running development build displays **v0.15.40-hotfix9** and remains on Godot **4.7.1 stable** with Forward+ as the normal desktop renderer and Compatibility/OpenGL fallback retained.
+The running development build displays **v0.16.0**, remains on Godot **4.7.1 stable**, keeps Forward+ as the normal desktop renderer with Compatibility/OpenGL fallback, and inherits the complete v0.15.40-hotfix9 release/update, hotfix7 Diagnostics, hotfix6 Collaborator layout, Safe Section, AI Jobs, Image Studio, multi-source, Vision and UserPersona safety baseline.
 
 ## Completed
+
+### v0.16.0 — Character Collaborator Conversation Rewind
+
+- Added **Delete From Here…** to every author/user message in Character Collaborator.
+- Rewind deletes the selected author message plus every later transcript message rather than leaving assistant replies with missing context.
+- Removed assistant messages take all stored response variants with them automatically.
+- Pending response-regeneration state is cleared when its branch is abandoned.
+- Destructive rewind is blocked while the Collaborator generation worker is active so an in-flight completion cannot land against rewritten history.
+- `memory_summary` is preserved only when its `summarized_through` boundary ends before the rewind point; summaries containing deleted history are cleared and reset to prevent hidden context leakage.
+- Structured multi-source TARGET/REFERENCE material, Character Card metadata, ordinary attachments and Vision-derived Reference Context remain independently managed and survive transcript rewind.
+- Rewind persists through the existing v0.15.5 local Collaborator session store, so the truncated conversation autosaves without requiring a Character Project save.
+- Added `CCFCharacterCollaboratorWindowV0160`, `CCFWorkspaceV0160View`, the v0.16.0 application shell, `tools/test_v0160_collaborator_rewind.gd`, `tools/regression_suites_v0160.json`, dedicated Godot 4.7.1 CI and `docs/v0160-collaborator-rewind.md`.
+
+### v0.15.40 — Public Release Promotion
+
+- Promoted v0.15.40 from the hotfix9 baseline on 2026-08-09 after local metadata validation and Godot 4.7.1 import completed successfully.
+- The release gate completed all 76 inherited release regressions before staging the release commit.
+- Release metadata was synchronised to 0.15.40 as one transaction across VERSION, project/export/package/service markers before the public release commit.
+- v0.15.40 closes the v0.15 development line; subsequent feature development starts at v0.16.x while any necessary public-build emergency fixes remain release-specific hotfixes.
 
 ### v0.15.40-hotfix9 — Interrupted Release Metadata Recovery
 
@@ -476,56 +496,10 @@ Detailed implementation notes remain in versioned docs, pull requests, regressio
 
 ## In Progress
 
-- Runtime-test v0.15.40-hotfix9 on the normal development checkout by reproducing the exact six-file interrupted-release metadata state and confirming `bash update.sh` identifies and clears only the generated bundle before updating.
-- Confirm hotfix9 still refuses partial/non-reproducible version metadata, manual edits inside any metadata file, unrelated tracked changes, and untracked files.
+- Runtime-test v0.16.0 on the normal desktop build: submit a disposable message, use **Delete From Here…**, confirm that message and all later replies disappear immediately, restart CCF, and confirm the rewound session remains truncated.
+- Runtime-test a conversation whose older history has already been summarised, rewind from inside that summarised range, and confirm the summary is invalidated rather than reintroducing deleted facts in the next model request.
+- Confirm independent structured sources, attachments and Vision Reference Context remain attached after transcript rewind and still use their explicit remove controls.
 - Runtime-test v0.15.40-hotfix7 with a real provider-side Collaborator Vision failure: open **View Diagnostics…**, confirm the Diagnostics window appears promptly, tabs remain responsive, the window can close normally, and other CCF windows continue accepting input.
-- Confirm hotfix7 Request and Full Trace retain useful failure/request structure, filename/provenance, provider/profile/model and omission/size evidence while never showing or saving the original base64 image payload.
-- Runtime-test v0.15.40-hotfix4 with the user's exact real Character Card PNG/APNG **Card data + Vision** path. Confirm neither the previous giant action columns nor the inherited one-character-per-line Character Card helper returns while Vision starts, after Vision finishes, after re-analysis, after session switching/resizing, or after save/reopen.
-- Runtime-test v0.15.40 with real AI Ideas, Generate Character, Collaborator/Vision, and other Workspace-owned AI work. Confirm active text follows the actual live job, successful completion clears stale activity when the queue becomes idle, and overlapping jobs switch to another remaining activity.
-- Runtime-test v0.15.40 failure and cancellation paths, capacity-waiting/queued states, and verify a newer non-AI status such as **Saved at…** or an actionable error/result is not erased by a later idle reconciliation.
-- Runtime-test v0.15.39-hotfix2 in normal desktop Collaborator use and confirm the Character Card PNG/APNG mode chooser stays compact with visible **Cancel** and **Add** controls for short and long card names.
-- Runtime-test v0.15.39-hotfix1 in the normal Godot editor/runtime and confirm the two reported `SHADOWED_VARIABLE_BASE_CLASS` warnings are gone from `character_collaborator_window_v01539.gd`.
-- Runtime-test v0.15.39 with real Character Card PNG/APNG sources using all three modes. Confirm **Card data + Vision** produces a structured source plus linked Vision evidence, **Card data only** spends no Vision request, and **Vision only** does not add embedded card metadata.
-- Runtime-test **Analyse Image / Re-analyse Image** on an already attached Character Card source and confirm the action remains visible after source-list refresh/save/reopen.
-- Test cards whose visible artwork conflicts with metadata and confirm Collaborator receives both separately-provenanced representations rather than silently rewriting one from the other.
-- Continue real-card UserPersona testing across PNG, JSON, and copy/paste after Vision linkage. Raw source must retain excluded residue, AI-facing card context must omit it, and genuine character-to-`{{user}}` relationship/situation facts must remain.
-- Runtime-test v0.15.38-hotfix1 `update.sh` on the normal development checkout and confirm recurring local-only `project.godot` drift no longer requires a manual restore/stash, while real unrelated local work still blocks the update.
-- Runtime-test v0.15.38 with a genuinely large personal Library: search by character/project/tag/series/folder/collection, duplicate character names across projects, exact character loading, Workspace-preferred project handoff, gallery ownership, and picker use after save/reload.
-- Confirm v0.15.38 passive character search/switching never calls Text/Vision/Image providers and that Generate Prompt / Generate remain the only provider-spending actions in this workflow.
-- Continue warning-as-error runtime observation for the v0.15.38 cleanup sites, the v0.15.39-hotfix1 Collaborator ingestion leaf, and any additional Godot 4.7.x warnings surfaced by real use.
-- Runtime-test v0.15.37-hotfix1 against real provider generation after the reported cross-section contamination. Confirm wrong-key responses receive focused repair, Scenario/First Message/Lorebook echoes are rejected from unrelated components, clean long-form fields remain accepted, parallel generation uses the same guard, and exported Diagnostics expose requested/returned keys plus contamination fingerprints.
-- Runtime-test v0.15.37 with real multi-source Collaborator sessions: target character plus additional Workspace characters, saved/generated Ideas, pasted extraction text, and Character Card JSON/PNG sources. Confirm source roles survive save/reopen and long conversations without being flattened.
-- Runtime-test target switching and v0.15.36 Compare & Apply from a multi-source session; only the explicit Workspace target may be updated while reference sources remain read-only.
-- Confirm completion/refinement provenance carries the compact v0.15.37 source-set lineage and remains compatible with older derivation metadata.
-- Runtime-test v0.15.36-hotfix3 by creating/abandoning blank projects, pressing Save while blank, then adding project/character content and confirming first persistence occurs only after meaningful authoring.
-- Confirm existing saved projects remain normally saveable after content is deliberately cleared and old empty projects are never auto-deleted.
-- Runtime-test v0.15.36-hotfix2 with real AI Ideas batches; confirm temporary logistics are accepted, invented durable user canon is rejected, supporting NPC roles do not falsely redefine the subject, and valid batches avoid unnecessary repair.
-- Confirm failed/repaired Idea batches retain useful semantic validation reports in Diagnostics.
-- Runtime-test v0.15.36-hotfix1 configured-default-template behaviour for new projects, Add Character, and missing-template fallback.
-- Runtime-test v0.15.36 Compare & Apply with real Collaborator completions: selective changes, Update Original, Create Improved Copy, stale-source conflict handling, pending completion reopen, and branch safeguards.
-- Continue normal Linux/X11 use under Forward+ and treat the old `BadAlloc` / `glXMakeCurrent failed` crash as not reproduced after renderer change until enough runtime evidence supports closing it; verify Compatibility fallback remains usable.
-- Runtime-test v0.15.35 completion routing with real Blueprint and Detailed Workspace Draft generations.
-- Runtime-test v0.15.34 Existing Character → Collaborator across refine/future/past/descendant/side-character/connected/same-setting directions.
-- Runtime-test v0.15.33-hotfix2 with a real AI Ideas batch and confirm visible cards enable save/develop while selective saving remains opt-in.
-- Runtime-test generated/saved Idea Collaborator sources through long conversations, restart persistence, summarisation, and attachment removal.
-- Real-provider test malformed/empty/truncated API envelopes and confirm one actionable provider failure/Diagnostics record rather than repeated JSON parser errors.
-- Runtime-test Idea Notebook selective save, multi-save, restart persistence, notebooks/tags/search, edit/move/archive/restore, and non-auto-save behaviour.
-- Verify deleting a named Idea Notebook retains every saved idea in Unfiled and Notebook data stays outside portable Character Projects unless explicitly used.
-- Runtime-test AI Jobs while Character generation, Collaborator, Ideas, Vision, AI image-prompt generation, and Image generation run concurrently; verify state visibility and selective cancellation.
-- Runtime-test parallel Safe Section Build with Interview/Q&A, multiple Output Groups, separate Sexual Traits group, and varied completion order.
-- Verify First Message visibly waits for Scenario and later dialogue/greeting sections wait for intended dependencies.
-- Runtime-test real Character AI Text plus Stable Diffusion/Forge: AI-authored prompt, optional negative prompt, wrapping, cached model/sampler lists, image generation, and shared AI Jobs visibility.
-- Compare **Generate Prompt from Character** against **Build Local Fallback** across sparse and detailed characters.
-- Test Vision and Image global-participation toggles with cloud Text plus local Vision/Stable Diffusion.
-- Compare latency, rate-limit behaviour, completeness, and provider cost between sequential Safe Build, parallel Safe Build, and Fast Full Card.
-- Deliberately provoke section failure/cancellation while siblings are active and confirm isolated results are not cross-contaminated.
-- Continue real-provider Diagnostics testing including missing components, filtering, output-limit exhaustion, and retry behaviour.
-- Runtime-test unified Collaborator attachments with TXT/Markdown, SRT, ASS/SSA, JSON, and image references through save/reopen and Blueprint handoff.
-- Confirm generated Interview/Q&A review responses and Manual-vs-AI provenance survive generation and save/reopen.
-- Validate Blueprint supplementary materialisation without overwriting manually populated Alternative Greetings/Lorebooks.
-- Continue profiling very long Collaborator sessions for preparation, rendering, autosave, Blueprint generation, and direct-draft responsiveness.
-- Runtime-test `python3 tools/run_regression_suite.py --profile quick` and `--profile release` on the normal Linux/Godot machine and confirm real `user://` data remains untouched.
-- Runtime-test `release.sh` and confirm the broad release gate runs before staging/tagging, uses Godot 4.7.1 stable, and fails closed.
 - Continue hardening forward-compatible tests so later shells/services cannot drop historical capabilities/hotfix invariants.
 - Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
 
