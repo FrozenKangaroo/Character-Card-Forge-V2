@@ -20,7 +20,7 @@ func _require(condition: bool, message: String) -> bool:
 
 func _run() -> void:
 	var a1111_profile := {
-		"backend": CCFSettingsService.IMAGE_BACKEND_AUTOMATIC1111,
+		"image_backend": CCFSettingsService.IMAGE_BACKEND_AUTOMATIC1111,
 		"base_url": "http://127.0.0.1:7860",
 		"model": "animeXL.safetensors"
 	}
@@ -86,7 +86,7 @@ func _run() -> void:
 		return
 
 	var generic_profile := {
-		"backend": CCFSettingsService.IMAGE_BACKEND_OPENAI,
+		"image_backend": CCFSettingsService.IMAGE_BACKEND_OPENAI,
 		"base_url": "https://example.invalid/v1",
 		"model": "unknown-image-model"
 	}
