@@ -196,9 +196,14 @@ func _run() -> void:
 		return
 	if not _require(bool(advertised.get("capability_provenance", false)), "The live Image Studio must advertise capability provenance."):
 		return
-	if not _require(image_window.find_child("ImageStudioCapabilitySummaryV0161", true, false) != null, "The live Image Studio must expose a visible capability summary."):
+	# ImageGenerationPage reparents the visible Studio MarginContainer away from
+	# the hidden controller Window. Assert visible capability controls where the
+	# user actually sees them: in the mounted live application tree.
+	if not _require(app.find_child("ImageStudioCapabilitySummaryV0161", true, false) != null, "The mounted Image Studio must expose a visible capability summary."):
 		return
-	if not _require(image_window.find_child("ImageStudioCapabilityDetailsButtonV0161", true, false) != null, "The live Image Studio must expose capability details without making an AI/provider request."):
+	if not _require(app.find_child("ImageStudioCapabilityDetailsButtonV0161", true, false) != null, "The mounted Image Studio must expose capability details without making an AI/provider request."):
+		return
+	if not _require(image_window.capability_surface_ready_v0161(), "The v0.16.1 controller must retain valid references to its mounted capability controls."):
 		return
 
 	app.queue_free()
