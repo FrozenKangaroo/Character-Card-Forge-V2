@@ -67,6 +67,24 @@ func _run() -> void:
 	if not _require((sampler_descriptor.get("values", []) as Array).has("DPM++ 2M"), "Discovered sampler values must remain available to capability-aware UI."):
 		return
 
+	# Existing v0.15.28 Image profiles may only have the legacy
+	# `discovered_capabilities` cache. v0.16.1 must upgrade that shape in memory
+	# without requiring the user to run provider discovery again.
+	var legacy_profile := a1111_profile.duplicate(true)
+	legacy_profile[CCFImageCapabilityCacheServiceV01528.CACHE_KEY] = legacy_a1111.duplicate(true)
+	var migrated := CCFImageCapabilityCacheServiceV0161.capabilities_from_profile(legacy_profile)
+	if not _require(
+		CCFImageModelCapabilityServiceV0161.operation_state(migrated, "text_to_image") == CCFImageModelCapabilityServiceV0161.STATE_SUPPORTED,
+		"A legacy v0.15.28 capability cache must normalize into supported Forge/A1111 text-to-image without rediscovery."
+	):
+		return
+	var migrated_sampler: Dictionary = (migrated.get("parameters", {}) as Dictionary).get("sampler", {})
+	if not _require(
+		(migrated_sampler.get("values", []) as Array).has("DPM++ 2M"),
+		"Legacy cached sampler choices must survive in-memory normalization."
+	):
+		return
+
 	var generic_profile := {
 		"backend": CCFSettingsService.IMAGE_BACKEND_OPENAI,
 		"base_url": "https://example.invalid/v1",
