@@ -43,7 +43,8 @@ from pathlib import Path
 import re
 
 TARGET = "res://scripts/main_v01540_hotfix8.gd"
-scene = Path("scenes/main.tscn").read_text(encoding="utf-8")n
+scene = Path("scenes/main.tscn").read_text(encoding="utf-8")
+
 match = re.search(r'\[ext_resource path="(res://scripts/main[^\"]*\.gd)" type="Script" id="1_main"\]', scene)
 if match is None:
     raise SystemExit("The main scene does not expose a versioned main-shell script.")
