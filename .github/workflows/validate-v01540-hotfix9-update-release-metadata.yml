@@ -54,6 +54,7 @@ jobs:
         shell: bash
         run: |
           python3 - <<'PY'
+          import json
           import re
           from pathlib import Path
 
@@ -81,9 +82,13 @@ jobs:
               current = parent.group(1)
           else:
               raise SystemExit(f"The active main-shell chain did not reach {target}")
+
+          manifest_path = Path("tools/regression_suites_v01540_hotfix9.json")
+          if not manifest_path.is_file():
+              raise SystemExit("Historical hotfix9 regression manifest is missing")
+          json.loads(manifest_path.read_text(encoding="utf-8"))
           PY
           grep -F 'BUILD_DISPLAY_VERSION_V01540_HOTFIX9 := "0.15.40-hotfix9"' scripts/main_v01540_hotfix9.gd
-          grep -F 'regression_suites_v01540_hotfix9.json' tools/run_regression_suite.py
 
       - name: Confirm Forward Plus remains the desktop default
         shell: bash
