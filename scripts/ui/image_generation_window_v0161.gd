@@ -9,7 +9,7 @@ var _capability_details_v0161: RichTextLabel
 
 func _ready() -> void:
 	super._ready()
-	_refresh_capability_surface_v0161()
+	ensure_capability_surface_v0161()
 	if _model_edit != null and not _model_edit.text_changed.is_connected(_on_model_text_changed_v0161):
 		_model_edit.text_changed.connect(_on_model_text_changed_v0161)
 
@@ -35,6 +35,16 @@ func image_studio_foundation_capabilities_v0161() -> Dictionary:
 		"openai_compatible_unknown_safe_defaults": true,
 		"comfyui_workflow_source_reserved": true
 	}
+
+
+func ensure_capability_surface_v0161() -> void:
+	# This method is intentionally idempotent. Image Studio can be constructed as
+	# a native Window, embedded by tests, or replaced by a later versioned shell.
+	# Calling it after the Window is attached guarantees the inherited provider
+	# controls exist even if a lifecycle path did not dispatch our _build_ui()
+	# override during construction.
+	_install_capability_surface_v0161()
+	_refresh_capability_surface_v0161()
 
 
 func capability_surface_ready_v0161() -> bool:
