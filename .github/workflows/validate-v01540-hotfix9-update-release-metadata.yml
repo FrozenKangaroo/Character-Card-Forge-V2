@@ -50,10 +50,38 @@ jobs:
       - name: Recheck hotfix8 release QA
         run: bash ./tools/test_v01540_hotfix8_release_qa.sh
 
-      - name: Confirm hotfix9 shell wiring
+      - name: Confirm hotfix9 compatibility layer remains inherited
         shell: bash
         run: |
-          grep -F 'res://scripts/main_v01540_hotfix9.gd' scenes/main.tscn
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          target = "res://scripts/main_v01540_hotfix9.gd"
+          scene = Path("scenes/main.tscn").read_text(encoding="utf-8")
+          match = re.search(r'\[ext_resource path="(res://scripts/main[^\"]*\.gd)" type="Script" id="1_main"\]', scene)
+          if not match:
+              raise SystemExit("Could not resolve the active main script from scenes/main.tscn")
+
+          current = match.group(1)
+          visited = set()
+          for _ in range(64):
+              if current == target:
+                  break
+              if current in visited:
+                  raise SystemExit("Cycle detected while following the main-shell inheritance chain")
+              visited.add(current)
+              path = Path(current.removeprefix("res://"))
+              if not path.is_file():
+                  raise SystemExit(f"Missing inherited main-shell script: {current}")
+              source = path.read_text(encoding="utf-8")
+              parent = re.search(r'^extends\s+"(res://[^\"]+\.gd)"\s*$', source, re.MULTILINE)
+              if not parent:
+                  raise SystemExit(f"The active main-shell chain ended before {target}: {current}")
+              current = parent.group(1)
+          else:
+              raise SystemExit(f"The active main-shell chain did not reach {target}")
+          PY
           grep -F 'BUILD_DISPLAY_VERSION_V01540_HOTFIX9 := "0.15.40-hotfix9"' scripts/main_v01540_hotfix9.gd
           grep -F 'regression_suites_v01540_hotfix9.json' tools/run_regression_suite.py
 
