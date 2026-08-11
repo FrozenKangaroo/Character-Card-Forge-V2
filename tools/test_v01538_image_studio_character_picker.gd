@@ -95,29 +95,46 @@ func _run() -> void:
 	):
 		return
 
-	# Confirm that the active application remains layered on the v0.15.38 Image
-	# Studio contract. Later compatible shells may inherit it through several
-	# versioned shells, so follow the actual extends chain instead of requiring a
-	# direct parent relationship.
-	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	var active_main_path := _active_main_script_path(scene_source)
-	if not _require(not active_main_path.is_empty(), "The current main scene must reference a versioned application shell."):
+	# Later application shells are allowed to replace the main-shell inheritance
+	# route as long as the real live Image Studio still uses/inherits the indexed
+	# v0.15.38 picker controller. This tests the capability boundary rather than
+	# pinning every later release to an obsolete main_v01538.gd ancestry shape.
+	var packed := load("res://scenes/main.tscn") as PackedScene
+	if not _require(packed != null, "The current main scene must load."):
 		return
+	var app := packed.instantiate()
+	root.add_child(app)
+	await process_frame
+	await process_frame
+	var live_image_window: Variant = app.get("_image_generation_window")
+	if not _require(live_image_window is Object, "The current application must install a live Image Studio controller."):
+		app.queue_free()
+		return
+	var live_script := (live_image_window as Object).get_script() as Script
 	if not _require(
-		_script_inherits_path(active_main_path, "res://scripts/main_v01538.gd", 12),
-		"The current application shell must preserve the v0.15.38 Image Studio layer somewhere in its versioned inheritance chain."
+		_script_resource_inherits_path(live_script, "res://scripts/ui/image_generation_window_v01538_indexed.gd", 12),
+		"The live Image Studio must use or inherit the v0.15.38 indexed Character picker controller."
 	):
+		app.queue_free()
 		return
+	if not _require((live_image_window as Object).find_child("ImageStudioCharacterPickerButtonV01538", true, false) != null, "The live Image Studio must expose the searchable Character picker button."):
+		app.queue_free()
+		return
+	if not _require((live_image_window as Object).find_child("ImageStudioCharacterPickerDialogV01538", true, false) != null, "The live Image Studio must build the searchable Character picker dialog."):
+		app.queue_free()
+		return
+	app.queue_free()
+	await process_frame
 
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01538.gd")
-	if not _require(main_source.contains("image_generation_window_v01538_indexed.gd"), "The v0.15.38 shell must install the indexed Image Studio leaf."):
+	if not _require(main_source.contains("image_generation_window_v01538_indexed.gd"), "The historical v0.15.38 shell must install the indexed Image Studio leaf."):
 		return
 	var indexed_source := FileAccess.get_file_as_string("res://scripts/ui/image_generation_window_v01538_indexed.gd")
-	if not _require(indexed_source.contains("character_picker_index_service_v01538.gd"), "The live Image Studio picker must delegate to the reusable index service."):
+	if not _require(indexed_source.contains("character_picker_index_service_v01538.gd"), "The indexed Image Studio picker must delegate to the reusable index service."):
 		return
-	if not _require(indexed_source.contains("build_index(project_rows)"), "The live picker must use the shared index builder."):
+	if not _require(indexed_source.contains("build_index(project_rows)"), "The indexed picker must use the shared index builder."):
 		return
-	if not _require(indexed_source.contains("filter_rows(rows, query, limit)"), "The live picker must use the shared filter implementation."):
+	if not _require(indexed_source.contains("filter_rows(rows, query, limit)"), "The indexed picker must use the shared filter implementation."):
 		return
 	var image_source := FileAccess.get_file_as_string("res://scripts/ui/image_generation_window_v01538.gd")
 	if not _require(
@@ -125,57 +142,28 @@ func _run() -> void:
 		"The v0.15.38 Image Studio must preserve the v0.15.31 AI Jobs inspection/cancellation layer."
 	):
 		return
-	if not _require(image_source.contains("_project_selector.visible = false"), "The unbounded Project dropdown must be hidden in the live controller."):
+	if not _require(image_source.contains("_project_selector.visible = false"), "The unbounded Project dropdown must be hidden in the v0.15.38 controller."):
 		return
-	if not _require(image_source.contains("_character_selector.visible = false"), "The unbounded Character dropdown must be hidden in the live controller."):
+	if not _require(image_source.contains("_character_selector.visible = false"), "The unbounded Character dropdown must be hidden in the v0.15.38 controller."):
 		return
-	if not _require(image_source.contains("ImageStudioCharacterPickerButtonV01538"), "The live controller must expose the searchable Character picker button."):
+	if not _require(image_source.contains("ImageStudioCharacterPickerButtonV01538"), "The v0.15.38 controller must define the searchable Character picker button."):
 		return
-	if not _require(image_source.contains("ImageStudioCharacterPickerDialogV01538"), "The live controller must build the searchable Character picker dialog."):
+	if not _require(image_source.contains("ImageStudioCharacterPickerDialogV01538"), "The v0.15.38 controller must define the searchable Character picker dialog."):
 		return
 
 	print("v0.15.38 Image Studio character picker regression passed")
 	quit(0)
 
 
-func _active_main_script_path(scene_source: String) -> String:
-	var marker := "[ext_resource path=\""
-	var start := scene_source.find(marker)
-	if start < 0:
-		return ""
-	start += marker.length()
-	var finish := scene_source.find("\"", start)
-	if finish < 0:
-		return ""
-	return scene_source.substr(start, finish - start)
-
-
-func _script_inherits_path(start_path: String, target_path: String, max_depth: int) -> bool:
-	var current_path := start_path
-	var visited: Dictionary = {}
+func _script_resource_inherits_path(start_script: Script, target_path: String, max_depth: int) -> bool:
+	var current := start_script
 	for _depth in range(max_depth + 1):
-		if current_path == target_path:
+		if current == null:
+			return false
+		if current.resource_path == target_path:
 			return true
-		if current_path.is_empty() or visited.has(current_path):
-			return false
-		visited[current_path] = true
-		var source := FileAccess.get_file_as_string(current_path)
-		if source.is_empty():
-			return false
-		current_path = _extends_script_path(source)
+		current = current.get_base_script()
 	return false
-
-
-func _extends_script_path(source: String) -> String:
-	var marker := "extends \""
-	var start := source.find(marker)
-	if start < 0:
-		return ""
-	start += marker.length()
-	var finish := source.find("\"", start)
-	if finish < 0:
-		return ""
-	return source.substr(start, finish - start)
 
 
 func _require(condition: bool, message: String) -> bool:
