@@ -1,0 +1,176 @@
+{
+  "format_version": 1,
+  "catalog_id": "ccf_image_prompt_creative_v1",
+  "categories": [
+    {
+      "id": "visual_style",
+      "label": "Visual Style",
+      "options": [
+        {"id": "none", "label": "None", "prompt": ""},
+        {"id": "anime", "label": "Anime", "prompt": "anime style"},
+        {"id": "realistic_photo", "label": "Realistic Photo", "prompt": "realistic photography"},
+        {"id": "hyper_real", "label": "Hyper-real", "prompt": "hyper-realistic"},
+        {"id": "cinematic", "label": "Cinematic", "prompt": "cinematic visual style"},
+        {"id": "editorial", "label": "Editorial", "prompt": "editorial photography"},
+        {"id": "illustration", "label": "Illustration", "prompt": "detailed illustration"},
+        {"id": "3d_render", "label": "3D Render", "prompt": "high-quality 3D render"},
+        {"id": "pixel_art", "label": "Pixel Art", "prompt": "pixel art"},
+        {"id": "poster", "label": "Poster", "prompt": "poster design"},
+        {"id": "claymation", "label": "Claymation", "prompt": "claymation style"},
+        {"id": "surrealism", "label": "Surrealism", "prompt": "surrealist imagery"},
+        {"id": "manga", "label": "Manga", "prompt": "manga artwork"},
+        {"id": "concept_art", "label": "Concept Art", "prompt": "concept art"},
+        {"id": "cel_shaded", "label": "Cel-shaded", "prompt": "cel-shaded rendering"},
+        {"id": "noir", "label": "Noir", "prompt": "noir visual style"},
+        {"id": "chibi", "label": "Chibi", "prompt": "chibi character style"},
+        {"id": "line_art", "label": "Line Art", "prompt": "clean line art"},
+        {"id": "sketch", "label": "Sketch", "prompt": "expressive sketch"},
+        {"id": "game_splash", "label": "Game Splash Art", "prompt": "video game splash art"},
+        {"id": "key_visual", "label": "Key Visual", "prompt": "anime key visual"}
+      ]
+    },
+    {
+      "id": "medium",
+      "label": "Medium",
+      "options": [
+        {"id": "none", "label": "None", "prompt": ""},
+        {"id": "digital_painting", "label": "Digital Painting", "prompt": "digital painting"},
+        {"id": "watercolor", "label": "Watercolor", "prompt": "watercolor painting"},
+        {"id": "oil_painting", "label": "Oil Painting", "prompt": "oil painting"},
+        {"id": "charcoal", "label": "Charcoal", "prompt": "charcoal drawing"},
+        {"id": "ink_wash", "label": "Ink Wash", "prompt": "ink wash painting"},
+        {"id": "marker", "label": "Marker Illustration", "prompt": "marker illustration"},
+        {"id": "collage", "label": "Collage", "prompt": "mixed-media collage"},
+        {"id": "mosaic", "label": "Mosaic", "prompt": "mosaic artwork"},
+        {"id": "papercraft", "label": "Papercraft", "prompt": "papercraft artwork"},
+        {"id": "stained_glass", "label": "Stained Glass", "prompt": "stained-glass artwork"},
+        {"id": "acrylic", "label": "Acrylic", "prompt": "acrylic painting"},
+        {"id": "gouache", "label": "Gouache", "prompt": "gouache painting"},
+        {"id": "pencil", "label": "Pencil", "prompt": "pencil drawing"},
+        {"id": "pastel", "label": "Pastel", "prompt": "pastel artwork"},
+        {"id": "linocut", "label": "Linocut", "prompt": "linocut print"},
+        {"id": "embroidery", "label": "Embroidery", "prompt": "embroidered textile art"},
+        {"id": "clay_sculpture", "label": "Clay Sculpture", "prompt": "clay sculpture"},
+        {"id": "voxel", "label": "Voxel Art", "prompt": "voxel art"}
+      ]
+    },
+    {
+      "id": "composition",
+      "label": "Camera / Composition",
+      "options": [
+        {"id": "none", "label": "None", "prompt": ""},
+        {"id": "eye_level", "label": "Eye-level", "prompt": "eye-level composition"},
+        {"id": "close_up", "label": "Close-up", "prompt": "close-up composition"},
+        {"id": "extreme_close_up", "label": "Extreme Close-up", "prompt": "extreme close-up"},
+        {"id": "full_body", "label": "Full Body", "prompt": "full-body composition"},
+        {"id": "wide_shot", "label": "Wide Shot", "prompt": "wide shot"},
+        {"id": "low_angle", "label": "Low Angle", "prompt": "low-angle view"},
+        {"id": "high_angle", "label": "High Angle", "prompt": "high-angle view"},
+        {"id": "birds_eye", "label": "Bird's-eye", "prompt": "bird's-eye view"},
+        {"id": "worms_eye", "label": "Worm's-eye", "prompt": "worm's-eye view"},
+        {"id": "dutch_angle", "label": "Dutch Angle", "prompt": "Dutch-angle composition"},
+        {"id": "over_shoulder", "label": "Over-the-shoulder", "prompt": "over-the-shoulder composition"},
+        {"id": "symmetrical", "label": "Symmetrical", "prompt": "symmetrical composition"},
+        {"id": "shallow_dof", "label": "Shallow Depth of Field", "prompt": "shallow depth of field"},
+        {"id": "bokeh", "label": "Bokeh", "prompt": "soft bokeh background"},
+        {"id": "long_exposure", "label": "Long Exposure", "prompt": "long-exposure photography"}
+      ]
+    },
+    {
+      "id": "lighting",
+      "label": "Lighting",
+      "options": [
+        {"id": "none", "label": "None", "prompt": ""},
+        {"id": "natural", "label": "Natural", "prompt": "natural lighting"},
+        {"id": "volumetric", "label": "Volumetric", "prompt": "volumetric lighting"},
+        {"id": "neon", "label": "Neon", "prompt": "neon lighting"},
+        {"id": "golden_hour", "label": "Golden Hour", "prompt": "golden-hour lighting"},
+        {"id": "blue_hour", "label": "Blue Hour", "prompt": "blue-hour lighting"},
+        {"id": "backlight", "label": "Backlighting", "prompt": "dramatic backlighting"},
+        {"id": "god_rays", "label": "God Rays", "prompt": "visible god rays"},
+        {"id": "studio", "label": "Studio", "prompt": "controlled studio lighting"},
+        {"id": "candlelight", "label": "Candlelight", "prompt": "warm candlelight"},
+        {"id": "street", "label": "Street Lighting", "prompt": "night street lighting"},
+        {"id": "softbox", "label": "Softbox", "prompt": "softbox lighting"},
+        {"id": "moonlight", "label": "Moonlight", "prompt": "moonlit lighting"},
+        {"id": "fairy_lights", "label": "Fairy Lights", "prompt": "fairy-light illumination"},
+        {"id": "rim", "label": "Rim Light", "prompt": "rim lighting"},
+        {"id": "overcast", "label": "Overcast", "prompt": "soft overcast daylight"},
+        {"id": "firelight", "label": "Firelight", "prompt": "flickering firelight"},
+        {"id": "bioluminescent", "label": "Bioluminescent", "prompt": "bioluminescent glow"}
+      ]
+    },
+    {
+      "id": "palette",
+      "label": "Colour Palette",
+      "options": [
+        {"id": "none", "label": "None", "prompt": ""},
+        {"id": "warm", "label": "Warm Tones", "prompt": "warm color palette"},
+        {"id": "cool", "label": "Cool Tones", "prompt": "cool color palette"},
+        {"id": "pastel", "label": "Pastels", "prompt": "soft pastel palette"},
+        {"id": "vibrant", "label": "Vibrant", "prompt": "vibrant color palette"},
+        {"id": "earth", "label": "Earth Tones", "prompt": "earth-tone palette"},
+        {"id": "duotone", "label": "Duotone", "prompt": "duotone color treatment"},
+        {"id": "monochrome", "label": "Monochromatic", "prompt": "monochromatic palette"},
+        {"id": "grayscale", "label": "Grayscale", "prompt": "grayscale palette"},
+        {"id": "sepia", "label": "Sepia", "prompt": "sepia tones"},
+        {"id": "primary", "label": "Primary Colours", "prompt": "bold primary-color palette"},
+        {"id": "rainbow", "label": "Rainbow Spectrum", "prompt": "rainbow-spectrum palette"},
+        {"id": "metallic", "label": "Metallics", "prompt": "metallic color accents"},
+        {"id": "jewel", "label": "Jewel Tones", "prompt": "rich jewel-tone palette"},
+        {"id": "cyberpunk", "label": "Cyberpunk Neon", "prompt": "cyberpunk neon palette"},
+        {"id": "autumn", "label": "Autumn Leaves", "prompt": "autumn red, orange and gold palette"},
+        {"id": "deep_sea", "label": "Deep Sea Blues", "prompt": "deep-sea blue palette"},
+        {"id": "forest", "label": "Forest Greens", "prompt": "forest-green palette"},
+        {"id": "desert", "label": "Desert Ochres", "prompt": "desert ochre palette"}
+      ]
+    },
+    {
+      "id": "material",
+      "label": "Material / Surface",
+      "options": [
+        {"id": "none", "label": "None", "prompt": ""},
+        {"id": "metal", "label": "Metal", "prompt": "metallic surfaces"},
+        {"id": "glass", "label": "Glass", "prompt": "glass surfaces"},
+        {"id": "wood", "label": "Wood", "prompt": "natural wood textures"},
+        {"id": "ceramic", "label": "Ceramic", "prompt": "ceramic surfaces"},
+        {"id": "plastic", "label": "Plastic", "prompt": "molded plastic surfaces"},
+        {"id": "crystal", "label": "Crystal", "prompt": "crystalline surfaces"},
+        {"id": "fabric", "label": "Fabric", "prompt": "detailed fabric textures"},
+        {"id": "paper", "label": "Paper", "prompt": "paper texture"},
+        {"id": "stone", "label": "Stone", "prompt": "stone surfaces"},
+        {"id": "leather", "label": "Leather", "prompt": "leather texture"},
+        {"id": "water", "label": "Water", "prompt": "water as a visual material"}
+      ]
+    },
+    {
+      "id": "atmosphere",
+      "label": "Atmosphere / Elements",
+      "options": [
+        {"id": "none", "label": "None", "prompt": ""},
+        {"id": "rain", "label": "Rain", "prompt": "falling rain"},
+        {"id": "bubbles", "label": "Bubbles", "prompt": "floating bubbles"},
+        {"id": "smoke", "label": "Smoke", "prompt": "drifting smoke"},
+        {"id": "dust", "label": "Dust", "prompt": "airborne dust particles"},
+        {"id": "fog", "label": "Fog", "prompt": "atmospheric fog"},
+        {"id": "sand", "label": "Sand", "prompt": "windblown sand"},
+        {"id": "water_splash", "label": "Water Splashes", "prompt": "dynamic water splashes"},
+        {"id": "frost", "label": "Frost", "prompt": "frost and ice crystals"},
+        {"id": "sparks", "label": "Sparks", "prompt": "flying sparks"}
+      ]
+    }
+  ],
+  "modifiers": [
+    {"id": "keep_minimal", "label": "Keep Minimal", "prompt": "minimal composition"},
+    {"id": "rich_detail", "label": "Rich Detail", "prompt": "rich fine detail"},
+    {"id": "natural_texture", "label": "Natural Texture", "prompt": "natural surface texture"},
+    {"id": "premium_materials", "label": "Premium Materials", "prompt": "premium material finish"},
+    {"id": "clean_background", "label": "Clean Background", "prompt": "clean uncluttered background"},
+    {"id": "busy_background", "label": "Busy Background", "prompt": "dense detailed background"},
+    {"id": "sharp_focus", "label": "Sharp Focus", "prompt": "sharp focus"},
+    {"id": "soft_focus", "label": "Soft Focus", "prompt": "soft focus"},
+    {"id": "motion_blur", "label": "Motion Blur", "prompt": "dynamic motion blur"},
+    {"id": "glossy", "label": "Glossy Finish", "prompt": "glossy finish"},
+    {"id": "matte", "label": "Matte Finish", "prompt": "matte finish"}
+  ]
+}
