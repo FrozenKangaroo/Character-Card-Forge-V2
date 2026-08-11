@@ -97,8 +97,9 @@ func _run() -> void:
 
 	# Later application shells are allowed to replace the main-shell inheritance
 	# route as long as the real live Image Studio still uses/inherits the indexed
-	# v0.15.38 picker controller. This tests the capability boundary rather than
-	# pinning every later release to an obsolete main_v01538.gd ancestry shape.
+	# v0.15.38 picker controller. The visible Studio MarginContainer is reparented
+	# into CCFImageGenerationPage after mounting, so visible controls are asserted
+	# in the live app tree while controller-owned dialogs stay on the Window.
 	var packed := load("res://scenes/main.tscn") as PackedScene
 	if not _require(packed != null, "The current main scene must load."):
 		return
@@ -117,10 +118,10 @@ func _run() -> void:
 	):
 		app.queue_free()
 		return
-	if not _require((live_image_window as Object).find_child("ImageStudioCharacterPickerButtonV01538", true, false) != null, "The live Image Studio must expose the searchable Character picker button."):
+	if not _require(app.find_child("ImageStudioCharacterPickerButtonV01538", true, false) != null, "The mounted Image Studio must expose the searchable Character picker button."):
 		app.queue_free()
 		return
-	if not _require((live_image_window as Object).find_child("ImageStudioCharacterPickerDialogV01538", true, false) != null, "The live Image Studio must build the searchable Character picker dialog."):
+	if not _require((live_image_window as Object).find_child("ImageStudioCharacterPickerDialogV01538", true, false) != null, "The live Image Studio controller must build the searchable Character picker dialog."):
 		app.queue_free()
 		return
 	app.queue_free()
