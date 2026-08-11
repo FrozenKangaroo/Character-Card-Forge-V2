@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.16.1",
+  "description": "v0.16.0 baseline plus Image Studio 2 normalized capability/provenance architecture and provider-record compatibility.",
+  "base_manifest": "regression_suites_v0160.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0161_image_studio_foundation",
+        "label": "v0.16.1 Image Studio 2 capability foundation",
+        "kind": "godot",
+        "path": "tools/test_v0161_image_studio_foundation.gd",
+        "timeout_seconds": 45
+      }
+    ]
+  }
+}
