@@ -33,24 +33,46 @@ if grep -F 'local engine validation and broad regression checks were skipped' re
     exit 1
 fi
 
-# Hotfix8 established the release-QA shell contract. Later hotfix shells may
-# extend it, so require an active v0.15.40 hotfix >= 8 rather than pinning the
-# main scene forever to the historical hotfix8 leaf.
+# Hotfix8 established the release-QA contract. Later shells are expected to
+# inherit that implementation, but the active scene is free to advance beyond
+# the v0.15.40 filename family. Verify the real inheritance chain rather than
+# pinning scenes/main.tscn to an obsolete versioned leaf.
 grep -F 'BUILD_DISPLAY_VERSION_V01540_HOTFIX8 := "0.15.40-hotfix8"' scripts/main_v01540_hotfix8.gd >/dev/null
 python3 - <<'PY'
 from pathlib import Path
 import re
 
-scene = Path("scenes/main.tscn").read_text(encoding="utf-8")
-match = re.search(r'res://scripts/main_v01540_hotfix(\d+)\.gd', scene)
+TARGET = "res://scripts/main_v01540_hotfix8.gd"
+scene = Path("scenes/main.tscn").read_text(encoding="utf-8")n
+match = re.search(r'\[ext_resource path="(res://scripts/main[^\"]*\.gd)" type="Script" id="1_main"\]', scene)
 if match is None:
-    raise SystemExit("The main scene is not wired to a v0.15.40 hotfix shell.")
-hotfix = int(match.group(1))
-if hotfix < 8:
-    raise SystemExit(f"The active shell regressed below hotfix8: hotfix{hotfix}.")
-active_script = Path(f"scripts/main_v01540_hotfix{hotfix}.gd")
-if not active_script.is_file():
-    raise SystemExit(f"The active shell file is missing: {active_script}.")
+    raise SystemExit("The main scene does not expose a versioned main-shell script.")
+
+current = match.group(1)
+visited = []
+for _ in range(64):
+    visited.append(current)
+    if current == TARGET:
+        break
+    local_path = Path(current.removeprefix("res://"))
+    if not local_path.is_file():
+        raise SystemExit(f"The active shell inheritance file is missing: {local_path}.")
+    text = local_path.read_text(encoding="utf-8")
+    base = re.search(r'^extends\s+"(res://[^\"]+\.gd)"\s*$', text, re.MULTILINE)
+    if base is None:
+        raise SystemExit(
+            "The active main-shell chain no longer reaches the hotfix8 release-QA layer. "
+            f"Stopped at {current}."
+        )
+    current = base.group(1)
+else:
+    raise SystemExit("The active main-shell inheritance chain exceeded 64 layers.")
+
+if TARGET not in visited:
+    raise SystemExit(
+        "The active main-shell chain no longer inherits v0.15.40-hotfix8 release QA. "
+        f"Chain: {' -> '.join(visited)}"
+    )
 PY
 
 # The compatibility parser must run before the inherited fallback so nested
