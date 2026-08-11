@@ -25,8 +25,9 @@ func _init() -> void:
 	assert(main_source.contains("WORKSPACE_V0159"), "The v0.15.9 shell must install the new Workspace.")
 	assert(_active_shell_inherits_v0159(), "The active scene must use v0.15.9 or a later shell derived from it.")
 	var roadmap_source := FileAccess.get_file_as_string("res://roadmap.md")
-	assert(roadmap_source.contains("### v0.15.9 — Independent Vision Limits & Input Optimisation"), "The roadmap must retain the v0.15.9 feature-history heading.")
-	assert(roadmap_source.contains("Added separate Vision context/output limits"), "The condensed roadmap history must still state the independent Vision token-limit capability.")
+	assert(roadmap_source.contains("v0.15.0..9"), "The condensed roadmap must retain the v0.15.0–9 historical milestone.")
+	assert(roadmap_source.contains("Vision pipeline/routing/limits"), "The condensed roadmap history must still identify the v0.15 Vision routing/limits work.")
+	assert(roadmap_source.contains("Provider/model token limits remain data-driven and role-specific."), "The current roadmap design principles must retain role-specific provider/model token limits.")
 
 	print("v0.15.9 Vision limits and input optimisation regression passed")
 	quit(0)
