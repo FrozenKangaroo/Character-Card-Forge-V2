@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.16.2",
+  "description": "v0.16.1 capability foundation plus provider-independent structured creative prompt composition.",
+  "base_manifest": "regression_suites_v0161.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0162_structured_image_prompt_composer",
+        "label": "v0.16.2 structured Image prompt composer",
+        "kind": "godot",
+        "path": "tools/test_v0162_structured_image_prompt_composer.gd",
+        "timeout_seconds": 45
+      }
+    ]
+  }
+}
