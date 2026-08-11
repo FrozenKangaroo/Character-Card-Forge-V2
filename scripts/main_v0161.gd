@@ -14,6 +14,8 @@ func _ready() -> void:
 func _install_image_window_v01529() -> void:
 	var previous := _image_generation_window
 	if previous != null and previous.get_script() == IMAGE_WINDOW_V0161:
+		if previous.has_method("ensure_capability_surface_v0161"):
+			previous.ensure_capability_surface_v0161()
 		_inject_image_scheduler_v01526()
 		return
 	if previous != null:
@@ -33,6 +35,11 @@ func _install_image_window_v01529() -> void:
 	upgraded.project_changed.connect(_on_image_project_changed)
 	_image_generation_window = upgraded
 	add_child(upgraded)
+	# add_child() completes the Window's _ready() lifecycle before returning. An
+	# explicit idempotent ensure here makes the v0.16.1 capability surface
+	# independent of inherited _build_ui() dispatch details and keeps embedded,
+	# native-window, and headless construction paths consistent.
+	upgraded.ensure_capability_surface_v0161()
 	upgraded.hide()
 	_inject_image_scheduler_v01526()
 	upgraded.update_settings_v01528(_settings)
