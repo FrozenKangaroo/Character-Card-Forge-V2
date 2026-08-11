@@ -50,13 +50,47 @@ jobs:
       - name: Recheck Character Card metadata + Vision ingestion
         run: godot --headless --path . --script res://tools/test_v01539_character_card_dual_ingestion.gd
 
-      - name: Confirm v0.16.1 shell wiring
+      - name: Confirm v0.16.1 compatibility layer remains inherited
         shell: bash
         run: |
-          grep -F 'res://scripts/main_v0161.gd' scenes/main.tscn
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          target = "res://scripts/main_v0161.gd"
+          scene = Path("scenes/main.tscn").read_text(encoding="utf-8")
+          match = re.search(r'\[ext_resource path="(res://scripts/main[^\"]*\.gd)" type="Script" id="1_main"\]', scene)
+          if not match:
+              raise SystemExit("Could not resolve the active main script from scenes/main.tscn")
+
+          current = match.group(1)
+          visited = set()
+          for _ in range(64):
+              if current == target:
+                  break
+              if current in visited:
+                  raise SystemExit("Cycle detected while following the main-shell inheritance chain")
+              visited.add(current)
+              path = Path(current.removeprefix("res://"))
+              if not path.is_file():
+                  raise SystemExit(f"Missing inherited main-shell script: {current}")
+              source = path.read_text(encoding="utf-8")
+              parent = re.search(r'^extends\s+"(res://[^\"]+\.gd)"\s*$', source, re.MULTILINE)
+              if not parent:
+                  raise SystemExit(f"The active main-shell chain ended before {target}: {current}")
+              current = parent.group(1)
+          else:
+              raise SystemExit(f"The active main-shell chain did not reach {target}")
+          PY
           grep -F 'BUILD_DISPLAY_VERSION_V0161 := "0.16.1"' scripts/main_v0161.gd
           grep -F 'image_generation_window_v0161.gd' scripts/main_v0161.gd
-          grep -F 'regression_suites_v0161.json' tools/run_regression_suite.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path("tools/regression_suites_v0161.json")
+          json.loads(path.read_text(encoding="utf-8"))
+          print(path)
+          PY
 
       - name: Confirm Forward Plus remains the desktop default
         shell: bash
