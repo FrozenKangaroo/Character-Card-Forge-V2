@@ -9,10 +9,14 @@ var _capability_details_v0161: RichTextLabel
 
 func _ready() -> void:
 	super._ready()
-	_install_capability_surface_v0161()
 	_refresh_capability_surface_v0161()
 	if _model_edit != null and not _model_edit.text_changed.is_connected(_on_model_text_changed_v0161):
 		_model_edit.text_changed.connect(_on_model_text_changed_v0161)
+
+
+func _build_ui() -> void:
+	super._build_ui()
+	_install_capability_surface_v0161()
 
 
 func image_studio_foundation_capabilities_v0161() -> Dictionary:
@@ -33,6 +37,17 @@ func image_studio_foundation_capabilities_v0161() -> Dictionary:
 	}
 
 
+func capability_surface_ready_v0161() -> bool:
+	return (
+		_capability_summary_v0161 != null
+		and is_instance_valid(_capability_summary_v0161)
+		and _capability_summary_v0161.is_inside_tree()
+		and _capability_details_button_v0161 != null
+		and is_instance_valid(_capability_details_button_v0161)
+		and _capability_details_button_v0161.is_inside_tree()
+	)
+
+
 func current_normalized_capabilities_v0161() -> Dictionary:
 	var profile := _selected_profile()
 	var capabilities := CCFImageCapabilityCacheServiceV0161.capabilities_from_profile(profile)
@@ -47,6 +62,8 @@ func current_normalized_capabilities_v0161() -> Dictionary:
 
 
 func _install_capability_surface_v0161() -> void:
+	if _capability_summary_v0161 != null and is_instance_valid(_capability_summary_v0161):
+		return
 	if _backend_label == null or _backend_label.get_parent() == null:
 		return
 	var provider_row := _backend_label.get_parent()
