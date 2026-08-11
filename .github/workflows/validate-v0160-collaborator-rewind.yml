@@ -53,10 +53,10 @@ jobs:
       - name: Recheck Character Card metadata + Vision ingestion
         run: godot --headless --path . --script res://tools/test_v01539_character_card_dual_ingestion.gd
 
-      - name: Confirm v0.16.0 shell wiring
+      - name: Confirm v0.16.0 compatibility layer remains available
         shell: bash
         run: |
-          grep -F 'res://scripts/main_v0160.gd' scenes/main.tscn
+          test -f scripts/main_v0160.gd
           grep -F 'BUILD_DISPLAY_VERSION_V0160 := "0.16.0"' scripts/main_v0160.gd
           grep -F 'character_collaborator_window_v0160.gd' scripts/ui/workspace_v0160.gd
 
