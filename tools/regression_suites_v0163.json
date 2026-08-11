@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.16.3",
+  "description": "v0.16.2 structured creative prompt composition plus tabbed progressive-disclosure Image Studio layout.",
+  "base_manifest": "regression_suites_v0162.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0163_image_studio_tabs",
+        "label": "v0.16.3 tabbed Image Studio workflow",
+        "kind": "godot",
+        "path": "tools/test_v0163_image_studio_tabs.gd",
+        "timeout_seconds": 45
+      }
+    ]
+  }
+}
