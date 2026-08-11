@@ -80,13 +80,45 @@ func _init() -> void:
 
 	var main_source := FileAccess.get_file_as_string("res://scripts/main_v01517.gd")
 	assert(main_source.contains('BUILD_DISPLAY_VERSION_V01517 := "0.15.17"'), "The v0.15.17 shell must continue to expose its own build version.")
-	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	assert(
-		scene_source.contains("res://scripts/main_v015"),
-		"The active scene must remain on the inherited v0.15 app-shell line."
-	)
+	if not _active_main_shell_inherits("res://scripts/main_v01517.gd"):
+		workspace.free()
+		service.free()
+		push_error("The active main-shell inheritance chain no longer retains the v0.15.17 Blueprint materialisation layer.")
+		quit(1)
+		return
 
 	workspace.free()
 	service.free()
 	print("v0.15.17 Blueprint materialisation regression passed")
 	quit(0)
+
+
+func _active_main_shell_inherits(target_script: String) -> bool:
+	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
+	var scene_regex := RegEx.new()
+	if scene_regex.compile('\\[ext_resource path="(res://scripts/main[^\"]*\\.gd)" type="Script" id="1_main"\\]') != OK:
+		return false
+	var scene_match := scene_regex.search(scene_source)
+	if scene_match == null:
+		return false
+
+	var extends_regex := RegEx.new()
+	if extends_regex.compile('(?m)^extends\\s+"(res://[^\"]+\\.gd)"\\s*$') != OK:
+		return false
+
+	var current := scene_match.get_string(1)
+	var visited: Dictionary = {}
+	for _index in range(64):
+		if current == target_script:
+			return true
+		if visited.has(current):
+			return false
+		visited[current] = true
+		if not FileAccess.file_exists(current):
+			return false
+		var source := FileAccess.get_file_as_string(current)
+		var extends_match := extends_regex.search(source)
+		if extends_match == null:
+			return false
+		current = extends_match.get_string(1)
+	return false
