@@ -198,11 +198,11 @@ func _install_dynamic_provider_surface_v0164() -> void:
 	var header := HBoxContainer.new()
 	header.add_theme_constant_override("separation", 8)
 	_dynamic_panel_v0164.add_child(header)
-	var title := Label.new()
-	title.text = "Dynamic model parameters"
-	title.add_theme_font_size_override("font_size", 16)
-	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	header.add_child(title)
+	var section_title := Label.new()
+	section_title.text = "Dynamic model parameters"
+	section_title.add_theme_font_size_override("font_size", 16)
+	section_title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	header.add_child(section_title)
 	_refresh_models_button_v0164 = Button.new()
 	_refresh_models_button_v0164.name = "ImageStudioRefreshModelCapabilitiesV0164"
 	_refresh_models_button_v0164.text = "Refresh"
@@ -395,7 +395,7 @@ func _format_age_v0164(seconds: int) -> String:
 	if seconds < 60:
 		return "updated just now"
 	if seconds < 3600:
-		return "updated %dm ago" % int(seconds / 60)
+		return "updated %dm ago" % int(float(seconds) / 60.0)
 	if seconds < 86400:
-		return "updated %dh ago" % int(seconds / 3600)
-	return "updated %dd ago" % int(seconds / 86400)
+		return "updated %dh ago" % int(float(seconds) / 3600.0)
+	return "updated %dd ago" % int(float(seconds) / 86400.0)
