@@ -56,17 +56,30 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.16.5 — Local Stable Diffusion / Forge / A1111 Profiles**
+**v0.16.6 — ComfyUI Workflow Generation Profiles**
 
-v0.15.40 remains the public release baseline. v0.16.0 began the current development line with Collaborator rewind, v0.16.1 introduced normalized Image capability architecture, v0.16.2 added provider-independent structured creative prompt composition, v0.16.3 reorganised Image Studio into Prompt & Results, Creative, and Advanced tabs, and v0.16.4 connected the capability model to rich provider-discovered model metadata.
+v0.15.40 remains the public release baseline. v0.16.0 began the current development line with Collaborator rewind, v0.16.1 introduced normalized Image capability architecture, v0.16.2 added provider-independent structured creative prompt composition, v0.16.3 reorganised Image Studio into Prompt & Results, Creative, and Advanced tabs, v0.16.4 connected the capability model to rich provider-discovered model metadata, and v0.16.5 added checkpoint-specific Forge/A1111 profiles and explicit local overrides.
 
-v0.16.5 makes local Forge/A1111 checkpoints first-class capability-profile targets without pretending every checkpoint is identical. Backend discovery remains authoritative for backend facts, optional model-family profiles contribute workflow defaults only, and explicit per-checkpoint author overrides can correct operation/parameter state with `user_override` provenance.
+v0.16.6 treats ComfyUI as a workflow architecture rather than an A1111-style checkpoint endpoint. A versioned Generation Profile stores the complete ComfyUI API workflow snapshot separately from explicit CCF node/input mappings for Prompt, Negative Prompt, Seed, Steps, CFG/Guidance, Width, Height, Denoise/Strength and Reference Image. Unmapped/custom workflow data remains intact.
 
-The Advanced tab now contains a Forge/A1111-only **Local checkpoint profile** surface with model-family selection, notes, preferred resolution/sampler/steps/CFG defaults, Apply Profile Defaults, checkpoint-specific capability overrides, Save and Reset. Family/default metadata is externally versioned in `data/image_local_model_families_v1.json` and does not become capability proof merely because a family was selected.
+The Advanced tab now contains a **ComfyUI Generation Profile** editor with workflow JSON, explicit node/input mappings, image-output mapping, offline validation and save support. The materialiser can deterministically produce a mapped workflow locally and capability provenance is recorded as `workflow`.
 
-The running development build displays **v0.16.5**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.4/v0.16.3/v0.16.2/v0.16.1/v0.16.0/v0.15.40 safety baseline. Release metadata remains at the last promoted public version until `release.sh` performs the next release transaction.
+Live ComfyUI queue transport is intentionally **not** claimed in v0.16.6. The saved mapping format and validation boundary are established first so later queue/upload/history transport cannot accidentally reuse OpenAI-compatible or A1111 request semantics.
+
+The running development build displays **v0.16.6**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.5/v0.16.4/v0.16.3/v0.16.2/v0.16.1/v0.16.0/v0.15.40 safety baseline. Release metadata remains at the last promoted public version until `release.sh` performs the next release transaction.
 
 ## Completed
+
+### v0.16.6 — ComfyUI Workflow Generation Profiles
+
+- Added `CCFComfyUIGenerationProfileServiceV0166` with versioned Generation Profile records stored with Image profiles.
+- Kept complete ComfyUI API workflow snapshots separate from explicit CCF node/input mappings.
+- Added mappings for Prompt, Negative Prompt, Seed, Steps, CFG, Width, Height, Denoise and Reference Image.
+- Added deterministic offline workflow materialisation with value coercion while preserving unmapped/custom nodes and unknown fields.
+- Added local validation for required prompt mapping, missing nodes, missing inputs and image-output mappings.
+- Added workflow-derived normalized capability documents with `workflow` provenance and execution readiness kept false until live queue transport exists.
+- Added Advanced-tab **ComfyUI Generation Profile** authoring, validation and save controls.
+- Added focused v0.16.6 regression coverage, inherited regression manifest, Godot 4.7.1 CI and `docs/v0166-comfyui-generation-profiles.md`.
 
 ### v0.16.5 — Local Stable Diffusion / Forge / A1111 Profiles
 
@@ -153,6 +166,9 @@ Detailed history remains preserved in versioned docs, pull requests, regression 
 
 ## In Progress
 
+- Runtime-test v0.16.6 against real ComfyUI API workflow exports and confirm explicit mappings survive custom/community nodes unchanged.
+- Implement live ComfyUI queue/upload/history transport against the saved Generation Profile boundary without reusing OpenAI/A1111 request semantics.
+- Decide the cleanest first-class ComfyUI Image-profile selector/backend representation before live transport is promoted.
 - Runtime-test v0.16.5 with real Forge/A1111 profiles containing multiple checkpoints; confirm each checkpoint keeps independent family/default/override data.
 - Confirm Apply Profile Defaults changes live generation controls without silently changing capability overrides.
 - Confirm Reset Checkpoint Profile returns to inherited backend behavior without deleting the checkpoint/provider configuration.
@@ -167,14 +183,6 @@ Detailed history remains preserved in versioned docs, pull requests, regression 
 - Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
 
 ## Next Up — v0.16.x Image Studio 2
-
-### v0.16.6 — ComfyUI Workflow Generation Profiles
-
-- Treat ComfyUI as a workflow execution backend rather than an A1111-style model endpoint.
-- Save a Generation Profile linking a ComfyUI workflow to explicit CCF inputs/outputs.
-- Map Prompt, Negative Prompt, Width/Height or Aspect Ratio, Steps, CFG/Guidance, Seed, Reference Image, Denoise/Strength and other workflow-specific inputs.
-- Allow explicit mapping even if automatic node/input discovery is later added.
-- Retain workflow provenance and unknown/additive fields.
 
 ### v0.16.7 — Image-to-Image, Reference and Inpainting
 
@@ -270,6 +278,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep local model-family defaults as workflow hints only; capability state changes require backend/provider evidence or explicit user overrides.
 - Keep checkpoint profile data keyed by stable local checkpoint ID so one provider can hold different assumptions/defaults for different installed models.
 - For ComfyUI, keep workflow parameter mapping versioned and separate from arbitrary workflow JSON.
+- Preserve unmapped/custom ComfyUI workflow nodes and fields during materialisation; explicit mappings remain the authoritative bridge to CCF controls.
+- Keep ComfyUI capability provenance as `workflow`, and do not claim execution readiness until live queue transport is actually implemented and tested.
 - Provider-specific rich discovery should be cacheable and refreshable; opening Image Studio must not block on network discovery.
 - Passive capability inspection, model browsing and preset editing must not spend generation tokens/credits.
 - Keep Character Text/Vision and Image profile lookup paths separate at every UI/service boundary.
