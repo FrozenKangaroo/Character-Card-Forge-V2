@@ -56,19 +56,29 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.16.4 — Dynamic Provider Model Capabilities**
+**v0.16.5 — Local Stable Diffusion / Forge / A1111 Profiles**
 
-v0.15.40 remains the public release baseline. v0.16.0 began the current development line with Collaborator rewind, v0.16.1 introduced normalized Image capability architecture, v0.16.2 added provider-independent structured creative prompt composition, and v0.16.3 reorganised Image Studio into Prompt & Results, Creative, and Advanced tabs.
+v0.15.40 remains the public release baseline. v0.16.0 began the current development line with Collaborator rewind, v0.16.1 introduced normalized Image capability architecture, v0.16.2 added provider-independent structured creative prompt composition, v0.16.3 reorganised Image Studio into Prompt & Results, Creative, and Advanced tabs, and v0.16.4 connected the capability model to rich provider-discovered model metadata.
 
-v0.16.4 connects the normalized capability model to real provider-discovered per-model metadata. Rich OpenAI-compatible Image profiles prefer `/api/v1/images/models`, retain `/api/v1/image-models` and generic `/models` fallbacks, cache complete model records per Image profile, preserve unknown/additive fields, and build model-specific Advanced controls from authoritative `supported_parameters`.
+v0.16.5 makes local Forge/A1111 checkpoints first-class capability-profile targets without pretending every checkpoint is identical. Backend discovery remains authoritative for backend facts, optional model-family profiles contribute workflow defaults only, and explicit per-checkpoint author overrides can correct operation/parameter state with `user_override` provenance.
 
-Provider resolution values remain opaque strings, image-count constraints update Batch, supported quality/speed/future parameters can be passed into OpenAI-compatible generation payloads, and a model that disappears from the provider catalog is retained with a visible stale/missing state rather than silently replaced.
+The Advanced tab now contains a Forge/A1111-only **Local checkpoint profile** surface with model-family selection, notes, preferred resolution/sampler/steps/CFG defaults, Apply Profile Defaults, checkpoint-specific capability overrides, Save and Reset. Family/default metadata is externally versioned in `data/image_local_model_families_v1.json` and does not become capability proof merely because a family was selected.
 
-Passive browsing remains provider-free: cached metadata is used until the author explicitly presses Refresh. Provider pricing metadata is retained without inventing unreliable cost estimates.
-
-The running development build displays **v0.16.4**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.3/v0.16.2/v0.16.1/v0.16.0/v0.15.40 safety baseline. Release metadata remains at the last promoted public version until `release.sh` performs the next release transaction.
+The running development build displays **v0.16.5**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.4/v0.16.3/v0.16.2/v0.16.1/v0.16.0/v0.15.40 safety baseline. Release metadata remains at the last promoted public version until `release.sh` performs the next release transaction.
 
 ## Completed
+
+### v0.16.5 — Local Stable Diffusion / Forge / A1111 Profiles
+
+- Added versioned external `data/image_local_model_families_v1.json` for reusable local model-family authoring defaults.
+- Added `CCFImageLocalModelProfileServiceV0165` with checkpoint-specific records stored per Image provider profile.
+- Kept family defaults separate from capability claims; selecting SD1/SDXL/Pony/Illustrious-derived authoring profiles never automatically changes support state.
+- Added checkpoint notes and preferred resolution, sampler, steps and CFG defaults.
+- Added explicit Auto / Supported / Unsupported / Unknown overrides for core operations and technical parameters.
+- Reused the v0.16.1 normalized `user_override` provenance/confidence layer.
+- Added Forge/A1111-only **Local checkpoint profile** controls to the Advanced tab with Apply Profile Defaults, Save and Reset actions.
+- Added focused v0.16.5 regression coverage, inherited regression manifest, Godot 4.7.1 CI and `docs/v0165-local-sd-profiles.md`.
+- Expanded the v0.16.5 warning gate to catch `INTEGER_DIVISION` following the v0.16.4 desktop warning cleanup.
 
 ### v0.16.4 — Dynamic Provider Model Capabilities
 
@@ -143,6 +153,9 @@ Detailed history remains preserved in versioned docs, pull requests, regression 
 
 ## In Progress
 
+- Runtime-test v0.16.5 with real Forge/A1111 profiles containing multiple checkpoints; confirm each checkpoint keeps independent family/default/override data.
+- Confirm Apply Profile Defaults changes live generation controls without silently changing capability overrides.
+- Confirm Reset Checkpoint Profile returns to inherited backend behavior without deleting the checkpoint/provider configuration.
 - Runtime-test v0.16.4 against a real rich provider Image profile and confirm model changes rebuild Advanced controls correctly without automatic network traffic.
 - Confirm provider-specific resolution strings, quality/speed options and image-count constraints match live provider metadata.
 - Confirm a model removed from live discovery remains visibly selected/stale rather than silently changing the project/profile.
@@ -154,15 +167,6 @@ Detailed history remains preserved in versioned docs, pull requests, regression 
 - Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
 
 ## Next Up — v0.16.x Image Studio 2
-
-### v0.16.5 — Local Stable Diffusion / Forge / A1111 Profiles
-
-Previously v0.16.4; moved one slot later when v0.16.3 tabbed layout was inserted.
-
-- Combine backend discovery, model-family profiles and explicit per-checkpoint user overrides rather than assuming all local checkpoints share identical capabilities.
-- Add author-facing local capability/profile overrides for unusual/community models.
-- Preserve discovered checkpoints, samplers, schedulers and LoRAs where available and expose only relevant controls.
-- Keep local generation first-class under the same normalized capability model used by rich cloud providers.
 
 ### v0.16.6 — ComfyUI Workflow Generation Profiles
 
@@ -263,6 +267,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Never silently replace a selected model merely because it vanished from the latest provider catalog.
 - Dynamic provider parameters may add to a request but must never overwrite CCF's authoritative core model/prompt/count/size fields.
 - For Forge/A1111, distinguish backend endpoint capabilities from per-checkpoint/model-family assumptions and allow explicit overrides.
+- Keep local model-family defaults as workflow hints only; capability state changes require backend/provider evidence or explicit user overrides.
+- Keep checkpoint profile data keyed by stable local checkpoint ID so one provider can hold different assumptions/defaults for different installed models.
 - For ComfyUI, keep workflow parameter mapping versioned and separate from arbitrary workflow JSON.
 - Provider-specific rich discovery should be cacheable and refreshable; opening Image Studio must not block on network discovery.
 - Passive capability inspection, model browsing and preset editing must not spend generation tokens/credits.
