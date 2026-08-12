@@ -187,19 +187,25 @@ func _refresh_comfyui_generation_profile_v0166() -> void:
 
 func _profile_from_controls_v0166() -> Dictionary:
 	var parsed: Variant = JSON.parse_string(_comfy_workflow_v0166.text)
-	var workflow: Dictionary = parsed if parsed is Dictionary else {}
+	var workflow: Dictionary = {}
+	if parsed is Dictionary:
+		workflow = (parsed as Dictionary).duplicate(true)
 	var mappings: Dictionary = {}
 	for input_name in _comfy_mapping_controls_v0166.keys():
 		var controls: Dictionary = _comfy_mapping_controls_v0166[input_name]
-		var node_id := (controls.get("node") as LineEdit).text.strip_edges()
-		var target_input := (controls.get("input") as LineEdit).text.strip_edges()
+		var node_edit := controls.get("node") as LineEdit
+		var input_edit := controls.get("input") as LineEdit
+		if node_edit == null or input_edit == null:
+			continue
+		var node_id := node_edit.text.strip_edges()
+		var target_input := input_edit.text.strip_edges()
 		if node_id.is_empty() or target_input.is_empty():
 			continue
 		mappings[input_name] = {
 			"node_id": node_id,
 			"input": target_input,
 			"value_type": _value_type_for_input_v0166(str(input_name)),
-			"required": input_name == CCFComfyUIGenerationProfileServiceV0166.INPUT_PROMPT
+			"required": str(input_name) == CCFComfyUIGenerationProfileServiceV0166.INPUT_PROMPT
 		}
 	return CCFComfyUIGenerationProfileServiceV0166.normalise_profile({
 		"id": _comfy_profile_id_v0166.text.strip_edges(),
@@ -249,20 +255,24 @@ func _save_comfyui_profile_v0166() -> void:
 
 
 func _value_type_for_input_v0166(input_name: String) -> String:
-	match input_name:
+	if input_name in [
 		CCFComfyUIGenerationProfileServiceV0166.INPUT_SEED,
 		CCFComfyUIGenerationProfileServiceV0166.INPUT_STEPS,
 		CCFComfyUIGenerationProfileServiceV0166.INPUT_WIDTH,
-		CCFComfyUIGenerationProfileServiceV0166.INPUT_HEIGHT:
-			return "integer"
+		CCFComfyUIGenerationProfileServiceV0166.INPUT_HEIGHT
+	]:
+		return "integer"
+	if input_name in [
 		CCFComfyUIGenerationProfileServiceV0166.INPUT_CFG,
-		CCFComfyUIGenerationProfileServiceV0166.INPUT_DENOISE:
-			return "number"
+		CCFComfyUIGenerationProfileServiceV0166.INPUT_DENOISE
+	]:
+		return "number"
+	if input_name in [
 		CCFComfyUIGenerationProfileServiceV0166.INPUT_PROMPT,
-		CCFComfyUIGenerationProfileServiceV0166.INPUT_NEGATIVE_PROMPT:
-			return "text"
-		_:
-			return "auto"
+		CCFComfyUIGenerationProfileServiceV0166.INPUT_NEGATIVE_PROMPT
+	]:
+		return "text"
+	return "auto"
 
 
 func _make_label_v0166(text_value: String) -> Label:
