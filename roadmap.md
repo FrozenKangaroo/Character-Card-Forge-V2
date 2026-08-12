@@ -56,37 +56,44 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 
 ## Current Development Phase
 
-**v0.16.3 — Image Studio Tabbed Workflow**
+**v0.16.4 — Dynamic Provider Model Capabilities**
 
-v0.15.40 remains the public release baseline. v0.16.0 began the current development line with Collaborator rewind, v0.16.1 introduced normalized Image capability architecture, and v0.16.2 added provider-independent structured creative prompt composition.
+v0.15.40 remains the public release baseline. v0.16.0 began the current development line with Collaborator rewind, v0.16.1 introduced normalized Image capability architecture, v0.16.2 added provider-independent structured creative prompt composition, and v0.16.3 reorganised Image Studio into Prompt & Results, Creative, and Advanced tabs.
 
-v0.16.3 reorganises the growing Image Studio into three user-facing workflow tabs:
+v0.16.4 connects the normalized capability model to real provider-discovered per-model metadata. Rich OpenAI-compatible Image profiles prefer `/api/v1/images/models`, retain `/api/v1/image-models` and generic `/models` fallbacks, cache complete model records per Image profile, preserve unknown/additive fields, and build model-specific Advanced controls from authoritative `supported_parameters`.
 
-- **Prompt & Results** — the primary prompt, negative prompt, generation actions, gallery and preview workflow.
-- **Creative** — v0.16.2 structured creative intent.
-- **Advanced** — optional backend/model controls and v0.16.1 capability inspection.
+Provider resolution values remain opaque strings, image-count constraints update Batch, supported quality/speed/future parameters can be passed into OpenAI-compatible generation payloads, and a model that disappears from the provider catalog is retained with a visible stale/missing state rather than silently replaced.
 
-Provider/model context remains globally visible above the tabs so switching workflow views does not create parallel generation state.
+Passive browsing remains provider-free: cached metadata is used until the author explicitly presses Refresh. Provider pricing metadata is retained without inventing unreliable cost estimates.
 
-The running development build displays **v0.16.3**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.2/v0.16.1/v0.16.0/v0.15.40 safety baseline. Release metadata remains at the last promoted public version until `release.sh` performs the next release transaction.
+The running development build displays **v0.16.4**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.3/v0.16.2/v0.16.1/v0.16.0/v0.15.40 safety baseline. Release metadata remains at the last promoted public version until `release.sh` performs the next release transaction.
 
 ## Completed
 
+### v0.16.4 — Dynamic Provider Model Capabilities
+
+- Added `CCFImageProviderModelCatalogServiceV0164` with versioned per-profile rich model catalogs.
+- Preferred `/api/v1/images/models`, retained `/api/v1/image-models`, then generic `/models` fallback for OpenAI-compatible Image profiles.
+- Kept Forge/A1111 discovery on its existing WebUI API path.
+- Preserved raw provider model records, capabilities, supported parameters, pricing, tags and unknown future fields.
+- Reused the v0.16.1 normalized tri-state capability model instead of introducing provider-specific model tables.
+- Added cached fetch endpoint/time metadata and passive cache browsing with explicit Refresh.
+- Added vanished-model-safe behavior so manual/cached selections are not silently replaced.
+- Added dynamic Advanced controls for provider resolution values, image-count constraints, choice/boolean/numeric/text parameters and unknown additive supported fields.
+- Added `CCFImageGenerationServiceV0164` so supported provider-specific parameters can reach OpenAI-compatible generation payloads without overwriting core `model`, `prompt`, `n` or `size` fields.
+- Added focused v0.16.4 regression coverage, inherited regression manifest, Godot 4.7.1 CI and `docs/v0164-dynamic-image-model-capabilities.md`.
+
 ### v0.16.3 — Image Studio Tabbed Workflow
 
-- Added a progressive-disclosure TabContainer to Image Studio without replacing inherited generation state.
-- Added **Prompt & Results**, **Creative**, and **Advanced** tabs.
+- Added **Prompt & Results**, **Creative**, and **Advanced** tabs without replacing inherited generation state.
 - Kept project/character/provider/model and common generation context visible outside the tabs.
 - Kept the editable prompt/results workflow primary and selected by default.
-- Moved the v0.16.2 Structured Creative Prompt Composer into its own Creative tab.
-- Moved sampler/steps/CFG/seed and capability inspection into Advanced.
-- Preserved v0.16.2 creative selections, v0.16.1 capability/provenance state, provider discovery, AI prompt generation, gallery/results and scheduler wiring.
-- Added `tools/test_v0163_image_studio_tabs.gd`, `tools/regression_suites_v0163.json`, dedicated Godot 4.7.1 CI and `docs/v0163-image-studio-tabs.md`.
+- Moved v0.16.2 creative controls into Creative and optional technical/capability controls into Advanced.
+- Preserved provider discovery, scheduler, gallery/results and all earlier Image Studio behavior.
 
 ### v0.16.2 — Structured Creative Prompt Composer
 
-- Added versioned external `data/image_prompt_catalog_v1.json`.
-- Added reusable provider-independent `CCFImagePromptComposerServiceV0162`.
+- Added versioned external `data/image_prompt_catalog_v1.json` and reusable `CCFImagePromptComposerServiceV0162`.
 - Added Visual Style, Medium, Camera / Composition, Lighting, Colour Palette, Material / Surface, Atmosphere / Elements and multi-select Modifiers.
 - Kept the final Image prompt editable and exposed structured contribution summaries.
 - Added deterministic composition ordering and duplicate-phrase protection.
@@ -136,38 +143,28 @@ Detailed history remains preserved in versioned docs, pull requests, regression 
 
 ## In Progress
 
-- Runtime-test v0.16.3 on a normal desktop build at narrow and wide window sizes; confirm the tabs remove vertical clutter without hiding common provider/character context.
+- Runtime-test v0.16.4 against a real rich provider Image profile and confirm model changes rebuild Advanced controls correctly without automatic network traffic.
+- Confirm provider-specific resolution strings, quality/speed options and image-count constraints match live provider metadata.
+- Confirm a model removed from live discovery remains visibly selected/stale rather than silently changing the project/profile.
+- Runtime-test v0.16.3 tab layout at narrow and wide window sizes.
 - Runtime-test v0.16.2 structured prompt composition across OpenAI-compatible and Forge/A1111 Image profiles.
-- Confirm legacy cached Image profile discovery still populates model/sampler controls after the normalized cache layer is present.
+- Confirm legacy cached Image profile discovery still populates model/sampler controls.
 - Runtime-test v0.16.0 rewind persistence and summary invalidation on long real Collaborator conversations.
 - Continue hardening forward-compatible tests so later shells/services cannot drop historical capabilities/hotfix invariants.
 - Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
 
 ## Next Up — v0.16.x Image Studio 2
 
-### v0.16.4 — Dynamic Provider Model Capabilities
-
-This work was previously numbered v0.16.3; it moves to v0.16.4 so the accepted tabbed-layout usability work can land first without being dropped.
-
-- Add a dedicated rich model-discovery adapter for NanoGPT/provider APIs that expose model-specific `capabilities` and `supported_parameters`.
-- Prefer provider-normalized model endpoints when available; retain compatibility fallbacks where necessary.
-- Populate resolution/aspect-ratio/quality/speed/count/reference controls dynamically from authoritative model metadata.
-- Treat provider resolution/size values as opaque model-specific strings rather than assuming `width x height` integers.
-- Cache capability documents, refresh periodically/on demand and handle disappeared/new models gracefully.
-- Preserve additive future fields and use polished known controls plus safe generic fallbacks where metadata is sufficient.
-- Add optional provider-supplied generation cost estimates where reliable pricing metadata is available.
-
 ### v0.16.5 — Local Stable Diffusion / Forge / A1111 Profiles
 
-Previously v0.16.4; moved one slot later with the v0.16.3 tab insertion.
+Previously v0.16.4; moved one slot later when v0.16.3 tabbed layout was inserted.
 
 - Combine backend discovery, model-family profiles and explicit per-checkpoint user overrides rather than assuming all local checkpoints share identical capabilities.
 - Add author-facing local capability/profile overrides for unusual/community models.
-- Preserve discovered checkpoints, samplers, schedulers/LoRAs where available and expose only relevant controls.
+- Preserve discovered checkpoints, samplers, schedulers and LoRAs where available and expose only relevant controls.
+- Keep local generation first-class under the same normalized capability model used by rich cloud providers.
 
 ### v0.16.6 — ComfyUI Workflow Generation Profiles
-
-Previously v0.16.5.
 
 - Treat ComfyUI as a workflow execution backend rather than an A1111-style model endpoint.
 - Save a Generation Profile linking a ComfyUI workflow to explicit CCF inputs/outputs.
@@ -177,15 +174,11 @@ Previously v0.16.5.
 
 ### v0.16.7 — Image-to-Image, Reference and Inpainting
 
-Previously v0.16.6.
-
 - Support distinct **Text → Image**, **Image → Image**, **Reference Image Guidance**, and **Inpainting** modes when capabilities allow them.
 - Show source-image, denoise/strength, mask, reference weight, preserve-composition or equivalent controls only when meaningful.
 - Reuse existing character/project artwork as explicit image-generation reference without conflating generation reference with Vision analysis.
 
 ### v0.16.8 — Image Style Presets
-
-Previously v0.16.7.
 
 - Add global reusable Image Style presets.
 - Add project-level visual identity presets.
@@ -193,8 +186,6 @@ Previously v0.16.7.
 - Keep creative presets portable across providers; technical provider/model settings remain separate.
 
 ### v0.16.9 — Studio Workflow & Results Polish
-
-Previously v0.16.8.
 
 - Improve generation history and preserve exact composed prompt plus provider/model/settings used for each result.
 - Add robust Reuse Settings, Regenerate, New Seed/Variation, comparison, favourites and batch-result workflows where supported.
@@ -268,6 +259,9 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep unknown capability states explicit; only explicit negative metadata/user configuration becomes `unsupported`.
 - Retain capability provenance/confidence through cache, UI and debugging paths.
 - Keep backend/model support separate from Image Studio `execution_ready`.
+- For rich provider discovery, cache full model records and retain the endpoint/fetch time so stale metadata is visible and refreshable.
+- Never silently replace a selected model merely because it vanished from the latest provider catalog.
+- Dynamic provider parameters may add to a request but must never overwrite CCF's authoritative core model/prompt/count/size fields.
 - For Forge/A1111, distinguish backend endpoint capabilities from per-checkpoint/model-family assumptions and allow explicit overrides.
 - For ComfyUI, keep workflow parameter mapping versioned and separate from arbitrary workflow JSON.
 - Provider-specific rich discovery should be cacheable and refreshable; opening Image Studio must not block on network discovery.
