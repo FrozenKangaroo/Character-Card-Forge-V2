@@ -1,0 +1,51 @@
+{
+  "format_version": 1,
+  "families": [
+    {
+      "id": "generic",
+      "name": "Generic / Unknown",
+      "description": "No family assumptions. Keep backend discovery authoritative and use checkpoint-specific overrides where needed.",
+      "preferred_defaults": {}
+    },
+    {
+      "id": "sd1",
+      "name": "Stable Diffusion 1.x family",
+      "description": "Optional authoring profile for SD 1.x-derived checkpoints. These are workflow defaults only, not capability claims.",
+      "preferred_defaults": {
+        "resolution": "512x512",
+        "steps": 28,
+        "cfg_scale": 7.0
+      }
+    },
+    {
+      "id": "sdxl",
+      "name": "SDXL family",
+      "description": "Optional authoring profile for SDXL-derived checkpoints. These are workflow defaults only, not capability claims.",
+      "preferred_defaults": {
+        "resolution": "1024x1024",
+        "steps": 30,
+        "cfg_scale": 6.5
+      }
+    },
+    {
+      "id": "pony_sdxl",
+      "name": "Pony / SDXL-derived",
+      "description": "Optional authoring profile for Pony-style SDXL-derived checkpoints. No capability is assumed solely from selecting this family.",
+      "preferred_defaults": {
+        "resolution": "1024x1024",
+        "steps": 30,
+        "cfg_scale": 6.0
+      }
+    },
+    {
+      "id": "illustrious_sdxl",
+      "name": "Illustrious / SDXL-derived",
+      "description": "Optional authoring profile for Illustrious-style SDXL-derived checkpoints. No capability is assumed solely from selecting this family.",
+      "preferred_defaults": {
+        "resolution": "1024x1024",
+        "steps": 28,
+        "cfg_scale": 5.5
+      }
+    }
+  ]
+}
