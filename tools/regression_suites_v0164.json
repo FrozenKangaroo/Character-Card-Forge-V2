@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.16.4",
+  "description": "v0.16.3 tabbed Image Studio plus rich provider-discovered per-model capabilities and dynamic provider parameters.",
+  "base_manifest": "regression_suites_v0163.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0164_dynamic_image_model_capabilities",
+        "label": "v0.16.4 dynamic provider image model capabilities",
+        "kind": "godot",
+        "path": "tools/test_v0164_dynamic_image_model_capabilities.gd",
+        "timeout_seconds": 60
+      }
+    ]
+  }
+}
