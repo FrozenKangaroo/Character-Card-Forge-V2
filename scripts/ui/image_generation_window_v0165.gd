@@ -208,7 +208,9 @@ func _refresh_local_model_profile_v0165() -> void:
 		return
 	var image_profile := _selected_profile()
 	var is_local := CCFSettingsService.image_backend(image_profile) == CCFSettingsService.IMAGE_BACKEND_AUTOMATIC1111
-	_local_profile_panel_v0165.get_parent().visible = is_local
+	var panel_parent := _local_profile_panel_v0165.get_parent() as Control
+	if panel_parent != null:
+		panel_parent.visible = is_local
 	if not is_local:
 		return
 	_loading_local_profile_v0165 = true
@@ -231,15 +233,7 @@ func _refresh_local_model_profile_v0165() -> void:
 	_loading_local_profile_v0165 = false
 
 
-func _save_local_model_profile_v0165() -> void:
-	if _loading_local_profile_v0165:
-		return
-	if _profile_selector == null or _profile_selector.selected < 0:
-		return
-	var checkpoint_id := _model_edit.text.strip_edges() if _model_edit != null else ""
-	if checkpoint_id.is_empty():
-		_status.text = "Select a local checkpoint before saving its profile."
-		return
+func _profile_from_controls_v0165(checkpoint_id: String) -> Dictionary:
 	var defaults: Dictionary = {}
 	if not _local_resolution_v0165.text.strip_edges().is_empty():
 		defaults["resolution"] = _local_resolution_v0165.text.strip_edges()
@@ -249,13 +243,25 @@ func _save_local_model_profile_v0165() -> void:
 		defaults["steps"] = int(_local_steps_v0165.value)
 	if _local_cfg_v0165.value > 0.0:
 		defaults["cfg_scale"] = _local_cfg_v0165.value
-	var profile_value := {
+	return {
 		"checkpoint_id": checkpoint_id,
 		"family_id": str(_local_family_v0165.get_selected_metadata()),
 		"notes": _local_notes_v0165.text,
 		"preferred_defaults": defaults,
 		"capability_overrides": _build_overrides_v0165()
 	}
+
+
+func _save_local_model_profile_v0165() -> void:
+	if _loading_local_profile_v0165:
+		return
+	if _profile_selector == null or _profile_selector.selected < 0:
+		return
+	var checkpoint_id := _model_edit.text.strip_edges() if _model_edit != null else ""
+	if checkpoint_id.is_empty():
+		_status.text = "Select a local checkpoint before saving its profile."
+		return
+	var profile_value := _profile_from_controls_v0165(checkpoint_id)
 	var result := CCFImageLocalModelProfileServiceV0165.store_checkpoint_profile(
 		_settings,
 		str(_profile_selector.get_selected_metadata()),
@@ -309,9 +315,8 @@ func _build_overrides_v0165() -> Dictionary:
 
 
 func _apply_local_defaults_v0165() -> void:
-	var image_profile := _selected_profile()
 	var checkpoint_id := _model_edit.text.strip_edges() if _model_edit != null else ""
-	var profile_value := CCFImageLocalModelProfileServiceV0165.checkpoint_profile(image_profile, checkpoint_id)
+	var profile_value := _profile_from_controls_v0165(checkpoint_id)
 	var defaults := CCFImageLocalModelProfileServiceV0165.effective_defaults(profile_value)
 	if defaults.has("resolution") and _image_size_edit != null:
 		_image_size_edit.text = str(defaults["resolution"])
@@ -321,7 +326,7 @@ func _apply_local_defaults_v0165() -> void:
 		_steps.value = float(defaults["steps"])
 	if defaults.has("cfg_scale") and _cfg_scale != null:
 		_cfg_scale.value = float(defaults["cfg_scale"])
-	_status.text = "Applied local checkpoint profile defaults without changing saved capability overrides."
+	_status.text = "Applied the currently selected local checkpoint family/defaults without changing saved capability overrides."
 
 
 func _on_local_checkpoint_changed_v0165(_new_text: String) -> void:
@@ -329,7 +334,7 @@ func _on_local_checkpoint_changed_v0165(_new_text: String) -> void:
 
 
 func _set_override_selector_v0165(key_text: String, raw_descriptor: Variant) -> void:
-	var selector: OptionButton = _local_override_controls_v0165.get(key_text)
+	var selector := _local_override_controls_v0165.get(key_text) as OptionButton
 	if selector == null:
 		return
 	var state := "auto"
@@ -339,7 +344,7 @@ func _set_override_selector_v0165(key_text: String, raw_descriptor: Variant) -> 
 
 
 func _selected_override_state_v0165(key_text: String) -> String:
-	var selector: OptionButton = _local_override_controls_v0165.get(key_text)
+	var selector := _local_override_controls_v0165.get(key_text) as OptionButton
 	if selector == null or selector.selected < 0:
 		return "auto"
 	return str(selector.get_selected_metadata())
