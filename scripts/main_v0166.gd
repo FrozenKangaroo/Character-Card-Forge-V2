@@ -34,7 +34,7 @@ func _install_image_window_v01529() -> void:
 		if previous.get_parent() == self:
 			remove_child(previous)
 		previous.queue_free()
-	var upgraded := IMAGE_WINDOW_V0166.new()
+	var upgraded: CCFImageGenerationWindowV0166 = IMAGE_WINDOW_V0166.new()
 	upgraded.visible = false
 	upgraded.title = "Character Card Forge — Image Generation Studio"
 	upgraded.size = Vector2i(1240, 900)
