@@ -23,7 +23,7 @@ static func endpoint_candidates(base_url: String) -> Array[String]:
 			break
 	var result: Array[String] = []
 	for suffix in [PREFERRED_ENDPOINT_SUFFIX, LEGACY_ENDPOINT_SUFFIX, GENERIC_ENDPOINT_SUFFIX]:
-		var candidate := clean + suffix
+		var candidate: String = clean + str(suffix)
 		if candidate not in result:
 			result.append(candidate)
 	return result
