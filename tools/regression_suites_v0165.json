@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.16.5",
+  "description": "v0.16.4 dynamic Image model capabilities plus checkpoint-specific Forge/A1111 model profiles and user overrides.",
+  "base_manifest": "regression_suites_v0164.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0165_local_sd_profiles",
+        "label": "v0.16.5 local Forge/A1111 checkpoint profiles",
+        "kind": "godot",
+        "path": "tools/test_v0165_local_sd_profiles.gd",
+        "timeout_seconds": 60
+      }
+    ]
+  }
+}
