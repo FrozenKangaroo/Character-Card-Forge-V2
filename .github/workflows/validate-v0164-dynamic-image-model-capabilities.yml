@@ -1,0 +1,64 @@
+name: Validate v0.16.4 Dynamic Image Model Capabilities
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v0164-dynamic-image-model-capabilities-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.7.1'
+  GODOT_STATUS: stable
+
+jobs:
+  dynamic-image-model-capabilities:
+    name: Dynamic provider image model capabilities
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot 4.7.1 and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project with warning gate
+        shell: bash
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v0164-import.log
+          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE_BASE_CLASS|CONFUSABLE_LOCAL_DECLARATION|INCOMPATIBLE_TERNARY|Parse Error" /tmp/ccf-v0164-import.log; then
+            echo "Godot reported a script or warning failure during import."
+            exit 1
+          fi
+
+      - name: Run focused v0.16.4 regression
+        run: timeout 75s godot --headless --path . --script res://tools/test_v0164_dynamic_image_model_capabilities.gd
+
+      - name: Recheck v0.16.3 tabbed workflow
+        run: timeout 60s godot --headless --path . --script res://tools/test_v0163_image_studio_tabs.gd
+
+      - name: Recheck v0.16.2 prompt composer
+        run: timeout 60s godot --headless --path . --script res://tools/test_v0162_structured_image_prompt_composer.gd
+
+      - name: Recheck v0.16.1 capability foundation
+        run: timeout 75s godot --headless --path . --script res://tools/test_v0161_image_studio_foundation.gd
+
+      - name: Confirm Forward Plus remains the desktop default
+        shell: bash
+        run: |
+          grep -F 'config/features=PackedStringArray("4.7", "Forward Plus")' project.godot
+          grep -F 'renderer/rendering_method="forward_plus"' project.godot
+          grep -F 'rendering_device/fallback_to_opengl3=true' project.godot
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --manifest ./tools/regression_suites_v0164.json --profile quick --godot "$(command -v godot)"
