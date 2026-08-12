@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.16.6",
+  "description": "v0.16.5 local SD profiles plus versioned ComfyUI workflow Generation Profiles and deterministic offline materialisation.",
+  "base_manifest": "regression_suites_v0165.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0166_comfyui_generation_profiles",
+        "label": "v0.16.6 ComfyUI workflow Generation Profiles",
+        "kind": "godot",
+        "path": "tools/test_v0166_comfyui_generation_profiles.gd",
+        "timeout_seconds": 75
+      }
+    ]
+  }
+}
