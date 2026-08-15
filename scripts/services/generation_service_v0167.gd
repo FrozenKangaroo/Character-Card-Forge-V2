@@ -1,5 +1,5 @@
 class_name CCFGenerationServiceV0167
-extends "res://scripts/services/generation_service_v01533_hotfix3.gd"
+extends "res://scripts/services/generation_service_v01540_hotfix7.gd"
 
 const DETAIL_LEVEL_SERVICE_V0167 = preload(
 	"res://scripts/services/idea_generator_detail_level_service_v0167.gd"
@@ -57,25 +57,15 @@ func _decorate_queued_idea_detail_v0167(job_id: String, detail_level_id: String)
 		var job: Dictionary = (job_value as Dictionary).duplicate(true)
 		if str(job.get("id", "")) != job_id or str(job.get("type", "")) != "ideas":
 			continue
-		_queue[index] = _decorate_idea_job_detail_v0167(job, normalised_level)
+		_queue[index] = _decorate_idea_job_v0167(job, normalised_level)
 		return
-
-	# A newly queued job may begin immediately when this worker is idle. In
-	# that case it has already moved from _queue to _active_job by the time the
-	# inherited queue call returns, so decorate the active record as well.
-	if (
-		not _active_job.is_empty()
-		and str(_active_job.get("id", "")) == job_id
-		and str(_active_job.get("type", "")) == "ideas"
-	):
-		_active_job = _decorate_idea_job_detail_v0167(
-			_active_job.duplicate(true), normalised_level
-		)
+	if not _active_job.is_empty():
+		var active_job := _active_job.duplicate(true)
+		if str(active_job.get("id", "")) == job_id and str(active_job.get("type", "")) == "ideas":
+			_active_job = _decorate_idea_job_v0167(active_job, normalised_level)
 
 
-func _decorate_idea_job_detail_v0167(
-	job: Dictionary, detail_level_id: String
-) -> Dictionary:
+func _decorate_idea_job_v0167(job: Dictionary, detail_level_id: String) -> Dictionary:
 	var normalised_level := _detail_levels_v0167.normalise_level_id(detail_level_id)
 	var instruction := _detail_levels_v0167.prompt_instruction_for(normalised_level)
 	var label := _detail_levels_v0167.label_for(normalised_level)
@@ -101,9 +91,7 @@ func _decorate_idea_job_detail_v0167(
 			break
 	payload["messages"] = messages
 	var base_max_tokens := maxi(1, int(payload.get("max_tokens", 6000)))
-	payload["max_tokens"] = maxi(
-		256, int(round(float(base_max_tokens) * budget_hint))
-	)
+	payload["max_tokens"] = maxi(256, int(round(float(base_max_tokens) * budget_hint)))
 	job["payload"] = payload
 	var metadata_value: Variant = job.get("metadata", {})
 	var metadata: Dictionary = (
