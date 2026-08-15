@@ -53,22 +53,33 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - ComfyUI is treated as a workflow execution backend; capabilities may belong to a saved Generation Profile/workflow rather than one checkpoint alone.
 - Image Studio uses progressive disclosure: common creative workflow stays prominent while optional technical/provider controls may live in dedicated tabs.
 - Cross-tool image handoffs should preserve raw image evidence and provenance rather than degrade generated images into anonymous attachments.
+- Idea Generator detail depth is author intent, not a provider-specific model feature; its definitions remain versioned/data-driven.
+- Increasing Idea Generator detail must never weaken `{{user}}` agency safeguards or invent unnecessary user backstory.
 
 ## Current Development Phase
 
-**v0.16.6 — ComfyUI Workflow Generation Profiles**
+**v0.16.7 — Idea Generator Detail Levels**
 
-v0.15.40 remains the public release baseline. v0.16.0 began the current development line with Collaborator rewind, v0.16.1 introduced normalized Image capability architecture, v0.16.2 added provider-independent structured creative prompt composition, v0.16.3 reorganised Image Studio into Prompt & Results, Creative, and Advanced tabs, v0.16.4 connected the capability model to rich provider-discovered model metadata, and v0.16.5 added checkpoint-specific Forge/A1111 profiles and explicit local overrides.
+v0.15.40 remains the public release baseline. v0.16.0 began the current development line with Collaborator rewind, v0.16.1 introduced normalized Image capability architecture, v0.16.2 added provider-independent structured creative prompt composition, v0.16.3 reorganised Image Studio into Prompt & Results, Creative and Advanced tabs, v0.16.4 connected the capability model to rich provider-discovered model metadata, v0.16.5 added checkpoint-specific Forge/A1111 profiles and explicit local overrides, and v0.16.6 established versioned ComfyUI workflow Generation Profiles.
 
-v0.16.6 treats ComfyUI as a workflow architecture rather than an A1111-style checkpoint endpoint. A versioned Generation Profile stores the complete ComfyUI API workflow snapshot separately from explicit CCF node/input mappings for Prompt, Negative Prompt, Seed, Steps, CFG/Guidance, Width, Height, Denoise/Strength and Reference Image. Unmapped/custom workflow data remains intact.
+v0.16.7 adds four data-driven Idea Generator detail modes: **Quick**, **Standard**, **Detailed**, and **Extended**. Standard is the default. The live selector controls both an explicit queued-job detail instruction and a multiplier over the Text profile's existing maximum output-token budget, while the previous user-agency validation/repair contract remains authoritative.
 
-The Advanced tab now contains a **ComfyUI Generation Profile** editor with workflow JSON, explicit node/input mappings, image-output mapping, offline validation and save support. The materialiser can deterministically produce a mapped workflow locally and capability provenance is recorded as `workflow`.
+The selected mode persists for the lifetime of the current workspace session. Unknown future/invalid IDs fall back safely to Standard. Idea Notebook, Structured Builder and Character Collaborator handoffs continue to use the same Idea Generator architecture rather than a parallel generator.
 
-Live ComfyUI queue transport is intentionally **not** claimed in v0.16.6. The saved mapping format and validation boundary are established first so later queue/upload/history transport cannot accidentally reuse OpenAI-compatible or A1111 request semantics.
-
-The running development build displays **v0.16.6**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.5/v0.16.4/v0.16.3/v0.16.2/v0.16.1/v0.16.0/v0.15.40 safety baseline. Release metadata remains at the last promoted public version until `release.sh` performs the next release transaction.
+The running development build displays **v0.16.7**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.6/v0.16.5/v0.16.4/v0.16.3/v0.16.2/v0.16.1/v0.16.0/v0.15.40 safety baseline. Release metadata remains at the last promoted public version until `release.sh` performs the next release transaction.
 
 ## Completed
+
+### v0.16.7 — Idea Generator Detail Levels
+
+- Added versioned external `data/idea_generator_detail_levels_v0167.json` defining Quick, Standard, Detailed and Extended authoring depth.
+- Added `CCFIdeaGeneratorDetailLevelServiceV0167` with ordered loading, validation, Standard fallback, prompt instructions and output-budget hints.
+- Added the live **Detail** selector beside the existing AI Ideas count control; Standard is selected for a fresh workspace and the author's selection persists for the current session.
+- Added `CCFGenerationServiceV0167` so the selected level decorates the real queued Idea job rather than creating a parallel generation path.
+- Scaled the provider `max_tokens` budget from the existing Text profile budget using the selected level's data-driven hint.
+- Preserved the v0.15.33 `{{user}}` agency contract and explicitly prevented detail expansion from inventing unnecessary `{{user}}` backstory.
+- Preserved Idea Notebook, Structured Builder, Collaborator source handoffs and inherited semantic validation/repair.
+- Added focused v0.16.7 regression coverage, inherited regression manifest, Godot 4.7.1 CI and `docs/v0167-idea-generator-detail-levels.md`.
 
 ### v0.16.6 — ComfyUI Workflow Generation Profiles
 
@@ -83,51 +94,34 @@ The running development build displays **v0.16.6**, uses Godot **4.7.1 stable**,
 
 ### v0.16.5 — Local Stable Diffusion / Forge / A1111 Profiles
 
-- Added versioned external `data/image_local_model_families_v1.json` for reusable local model-family authoring defaults.
-- Added `CCFImageLocalModelProfileServiceV0165` with checkpoint-specific records stored per Image provider profile.
-- Kept family defaults separate from capability claims; selecting SD1/SDXL/Pony/Illustrious-derived authoring profiles never automatically changes support state.
+- Added versioned external local model-family authoring defaults and checkpoint-specific records stored per Image provider profile.
+- Kept family defaults separate from capability claims and added explicit Auto / Supported / Unsupported / Unknown overrides.
 - Added checkpoint notes and preferred resolution, sampler, steps and CFG defaults.
-- Added explicit Auto / Supported / Unsupported / Unknown overrides for core operations and technical parameters.
-- Reused the v0.16.1 normalized `user_override` provenance/confidence layer.
-- Added Forge/A1111-only **Local checkpoint profile** controls to the Advanced tab with Apply Profile Defaults, Save and Reset actions.
-- Added focused v0.16.5 regression coverage, inherited regression manifest, Godot 4.7.1 CI and `docs/v0165-local-sd-profiles.md`.
-- Expanded the v0.16.5 warning gate to catch `INTEGER_DIVISION` following the v0.16.4 desktop warning cleanup.
+- Reused the normalized `user_override` provenance/confidence layer.
+- Added Forge/A1111-only **Local checkpoint profile** controls with Apply Profile Defaults, Save and Reset actions.
+- Added focused regression coverage and Godot 4.7.1 warning-gated CI.
 
 ### v0.16.4 — Dynamic Provider Model Capabilities
 
-- Added `CCFImageProviderModelCatalogServiceV0164` with versioned per-profile rich model catalogs.
-- Preferred `/api/v1/images/models`, retained `/api/v1/image-models`, then generic `/models` fallback for OpenAI-compatible Image profiles.
-- Kept Forge/A1111 discovery on its existing WebUI API path.
-- Preserved raw provider model records, capabilities, supported parameters, pricing, tags and unknown future fields.
-- Reused the v0.16.1 normalized tri-state capability model instead of introducing provider-specific model tables.
-- Added cached fetch endpoint/time metadata and passive cache browsing with explicit Refresh.
-- Added vanished-model-safe behavior so manual/cached selections are not silently replaced.
-- Added dynamic Advanced controls for provider resolution values, image-count constraints, choice/boolean/numeric/text parameters and unknown additive supported fields.
-- Added `CCFImageGenerationServiceV0164` so supported provider-specific parameters can reach OpenAI-compatible generation payloads without overwriting core `model`, `prompt`, `n` or `size` fields.
-- Added focused v0.16.4 regression coverage, inherited regression manifest, Godot 4.7.1 CI and `docs/v0164-dynamic-image-model-capabilities.md`.
+- Added versioned per-profile rich model catalogs with preferred rich endpoint and generic `/models` fallback.
+- Preserved raw provider records, capabilities, supported parameters, pricing, tags and unknown future fields.
+- Added cached fetch provenance, stale/missing model safety and dynamic Advanced controls.
+- Added provider-specific request parameters without allowing them to overwrite CCF's authoritative model/prompt/count/size fields.
 
 ### v0.16.3 — Image Studio Tabbed Workflow
 
-- Added **Prompt & Results**, **Creative**, and **Advanced** tabs without replacing inherited generation state.
-- Kept project/character/provider/model and common generation context visible outside the tabs.
-- Kept the editable prompt/results workflow primary and selected by default.
-- Moved v0.16.2 creative controls into Creative and optional technical/capability controls into Advanced.
+- Added **Prompt & Results**, **Creative**, and **Advanced** tabs while keeping common generation context globally visible.
 - Preserved provider discovery, scheduler, gallery/results and all earlier Image Studio behavior.
 
 ### v0.16.2 — Structured Creative Prompt Composer
 
-- Added versioned external `data/image_prompt_catalog_v1.json` and reusable `CCFImagePromptComposerServiceV0162`.
-- Added Visual Style, Medium, Camera / Composition, Lighting, Colour Palette, Material / Surface, Atmosphere / Elements and multi-select Modifiers.
-- Kept the final Image prompt editable and exposed structured contribution summaries.
-- Added deterministic composition ordering and duplicate-phrase protection.
+- Added versioned external creative prompt catalog and provider-independent structured composer.
+- Added style, medium, composition, lighting, palette, surface, atmosphere and modifier controls while retaining an editable final prompt.
 
 ### v0.16.1 — Image Studio 2 Capability Foundation
 
-- Added versioned normalized capability documents with `supported` / `unsupported` / `unknown` semantics.
-- Added capability provenance/confidence and operation-level `execution_ready` separate from backend/model support.
-- Added rich provider-model normalization, additive unknown parameter preservation, legacy capability-cache conversion and user-override layering.
-- Normalized Forge/A1111 discovery and kept generic OpenAI-compatible discovery unknown-safe.
-- Added passive capability summary and **Capability Details…** inspection.
+- Added normalized `supported` / `unsupported` / `unknown` capability documents with provenance/confidence and separate `execution_ready` state.
+- Added rich provider normalization, unknown-field preservation, legacy cache conversion, user overrides and passive capability inspection.
 
 ### v0.16.0 — Character Collaborator Conversation Rewind
 
@@ -137,7 +131,7 @@ The running development build displays **v0.16.6**, uses Godot **4.7.1 stable**,
 
 ### v0.15.40 — Public Release Baseline
 
-- Public release promoted on 2026-08-09 after Godot 4.7.1 validation and all inherited release regressions passed before staging.
+- Public release promoted on 2026-08-09 after Godot 4.7.1 validation and inherited release regressions passed before staging.
 - The v0.15 line delivered modern Character Collaborator, Safe Section generation, AI Jobs, Idea Notebook, multi-source provenance, Vision/Card dual ingestion, Image Studio integration, scalable character selection, release/update hardening and extensive runtime/UI regression coverage.
 
 ### Historical Milestone Index
@@ -166,12 +160,14 @@ Detailed history remains preserved in versioned docs, pull requests, regression 
 
 ## In Progress
 
+- Runtime-test v0.16.7 Quick / Standard / Detailed / Extended against representative real Text profiles and compare useful depth against token usage.
+- Confirm the selected Idea detail level remains stable through repeated open/close cycles and does not affect Structured Builder or Idea Notebook state.
 - Runtime-test v0.16.6 against real ComfyUI API workflow exports and confirm explicit mappings survive custom/community nodes unchanged.
 - Implement live ComfyUI queue/upload/history transport against the saved Generation Profile boundary without reusing OpenAI/A1111 request semantics.
 - Decide the cleanest first-class ComfyUI Image-profile selector/backend representation before live transport is promoted.
 - Runtime-test v0.16.5 with real Forge/A1111 profiles containing multiple checkpoints; confirm each checkpoint keeps independent family/default/override data.
 - Confirm Apply Profile Defaults changes live generation controls without silently changing capability overrides.
-- Confirm Reset Checkpoint Profile returns to inherited backend behavior without deleting the checkpoint/provider configuration.
+- Confirm Reset Checkpoint Profile returns to inherited backend behavior without deleting checkpoint/provider configuration.
 - Runtime-test v0.16.4 against a real rich provider Image profile and confirm model changes rebuild Advanced controls correctly without automatic network traffic.
 - Confirm provider-specific resolution strings, quality/speed options and image-count constraints match live provider metadata.
 - Confirm a model removed from live discovery remains visibly selected/stale rather than silently changing the project/profile.
@@ -182,22 +178,22 @@ Detailed history remains preserved in versioned docs, pull requests, regression 
 - Continue hardening forward-compatible tests so later shells/services cannot drop historical capabilities/hotfix invariants.
 - Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
 
-## Next Up — v0.16.x Image Studio 2
+## Next Up — v0.16.x
 
-### v0.16.7 — Image-to-Image, Reference and Inpainting
+### v0.16.8 — Image-to-Image, Reference and Inpainting
 
 - Support distinct **Text → Image**, **Image → Image**, **Reference Image Guidance**, and **Inpainting** modes when capabilities allow them.
 - Show source-image, denoise/strength, mask, reference weight, preserve-composition or equivalent controls only when meaningful.
 - Reuse existing character/project artwork as explicit image-generation reference without conflating generation reference with Vision analysis.
 
-### v0.16.8 — Image Style Presets
+### v0.16.9 — Image Style Presets
 
 - Add global reusable Image Style presets.
 - Add project-level visual identity presets.
 - Add optional per-character image defaults.
 - Keep creative presets portable across providers; technical provider/model settings remain separate.
 
-### v0.16.9 — Studio Workflow & Results Polish
+### v0.16.10 — Studio Workflow & Results Polish
 
 - Improve generation history and preserve exact composed prompt plus provider/model/settings used for each result.
 - Add robust Reuse Settings, Regenerate, New Seed/Variation, comparison, favourites and batch-result workflows where supported.
@@ -271,7 +267,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep unknown capability states explicit; only explicit negative metadata/user configuration becomes `unsupported`.
 - Retain capability provenance/confidence through cache, UI and debugging paths.
 - Keep backend/model support separate from Image Studio `execution_ready`.
-- For rich provider discovery, cache full model records and retain the endpoint/fetch time so stale metadata is visible and refreshable.
+- For rich provider discovery, cache full model records and retain endpoint/fetch time so stale metadata is visible and refreshable.
 - Never silently replace a selected model merely because it vanished from the latest provider catalog.
 - Dynamic provider parameters may add to a request but must never overwrite CCF's authoritative core model/prompt/count/size fields.
 - For Forge/A1111, distinguish backend endpoint capabilities from per-checkpoint/model-family assumptions and allow explicit overrides.
@@ -287,6 +283,8 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Preserve the explicit-action boundary for AI image prompting: passive refresh/search is provider-free, Generate Prompt uses Text AI, Local Fallback never calls a provider.
 - Keep generated-image records backwards-compatible as richer capability/settings/provenance metadata is added.
 - Keep Image Studio tab layout as presentation only; moving a control between tabs must not create duplicate generation state.
+- Keep Idea Generator detail-level data backwards-compatible and default unknown IDs to Standard.
+- Apply Idea detail output budgets as multipliers over profile configuration rather than provider/model hardcodes.
 - Keep normal Godot import/open operations checkout-clean.
 - Replace the temporary `.gd.uid` ignore policy with a deliberate canonical migration later.
 - Keep release/update executable modes under version control.
