@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.16.7",
+  "description": "v0.16.6 ComfyUI profiles plus data-driven Idea Generator detail levels with prompt and output-budget control.",
+  "base_manifest": "regression_suites_v0166.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0167_idea_generator_detail_levels",
+        "label": "v0.16.7 Idea Generator detail levels",
+        "kind": "godot",
+        "path": "tools/test_v0167_idea_generator_detail_levels.gd",
+        "timeout_seconds": 75
+      }
+    ]
+  }
+}
