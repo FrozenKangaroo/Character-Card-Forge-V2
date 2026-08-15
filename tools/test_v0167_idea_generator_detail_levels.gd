@@ -39,7 +39,7 @@ func _run() -> void:
 
 	var service := CCFGenerationServiceV0167.new()
 	root.add_child(service)
-	var fixture_job := {
+	var fixture_job: Dictionary = {
 		"id": "idea-fixture",
 		"type": "ideas",
 		"payload": {
@@ -51,7 +51,8 @@ func _run() -> void:
 		},
 		"metadata": {"idea_user_agency_contract_version": 1}
 	}
-	service.set("_queue", [fixture_job])
+	var fixture_queue: Array[Dictionary] = [fixture_job]
+	service.set("_queue", fixture_queue)
 	service.call("_decorate_queued_idea_detail_v0167", "idea-fixture", "detailed")
 	var decorated_queue: Array = service.get("_queue")
 	if not _require(decorated_queue.size() == 1, "Detail decoration must preserve the queued idea job."):
@@ -72,6 +73,31 @@ func _run() -> void:
 	if not _require(str(metadata.get("idea_detail_level", "")) == "detailed", "Queued metadata must preserve the selected detail level."):
 		return
 	if not _require(int(metadata.get("idea_user_agency_contract_version", 0)) == 1, "v0.16.7 must preserve the previous Idea Generator user-agency contract metadata."):
+		return
+
+	# Also cover the idle-worker race where a just-queued job has already moved
+	# to _active_job before the detail-level decorator runs.
+	var active_fixture := fixture_job.duplicate(true)
+	active_fixture["id"] = "active-idea-fixture"
+	service.set("_queue", [] as Array[Dictionary])
+	service.set("_active_job", active_fixture)
+	service.call(
+		"_decorate_queued_idea_detail_v0167", "active-idea-fixture", "extended"
+	)
+	var active_decorated: Dictionary = service.get("_active_job")
+	var active_payload: Dictionary = active_decorated.get("payload", {})
+	var active_messages: Array = active_payload.get("messages", [])
+	if not _require(
+		str((active_messages[0] as Dictionary).get("content", "")).contains(
+			"IDEA DETAIL LEVEL — Extended"
+		),
+		"Immediately active Idea jobs must receive the selected detail instruction."
+	):
+		return
+	if not _require(
+		int(active_payload.get("max_tokens", 0)) == 1800,
+		"Extended must scale an immediately active Idea job's output budget."
+	):
 		return
 	service.queue_free()
 	await process_frame
