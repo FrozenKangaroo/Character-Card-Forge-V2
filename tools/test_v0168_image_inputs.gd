@@ -152,8 +152,10 @@ func _run() -> void:
 	var studio := studio_value as CCFImageGenerationWindowV0168
 	if not _require(studio.image_input_surface_ready_v0168(), "The live Image Studio must expose the v0.16.8 image-input surface."):
 		return
-	var selector := studio.find_child("ImageStudioOperationSelectorV0168", true, false) as OptionButton
-	if not _require(selector != null and selector.item_count == 4, "Image Studio must expose four generation operations."):
+	if not _require(studio.image_operation_count_v0168() == 4, "Image Studio must expose four generation operations."):
+		return
+	var live_caps := studio.image_input_capabilities_v0168()
+	if not _require(int(live_caps.get("operation_count", 0)) == 4, "The live v0.16.8 capability contract must expose all four operations."):
 		return
 	if not _require(app.has_method("_update_build_version_label_v0167"), "v0.16.8 must preserve the v0.16.7 Idea Generator shell through inheritance."):
 		return
