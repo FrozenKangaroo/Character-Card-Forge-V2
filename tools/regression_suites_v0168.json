@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.16.8",
+  "description": "v0.16.7 Idea Generator detail levels plus capability-gated Image-to-Image, reference-image input and inpainting transport.",
+  "base_manifest": "regression_suites_v0167.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0168_image_inputs",
+        "label": "v0.16.8 Image Studio image inputs",
+        "kind": "godot",
+        "path": "tools/test_v0168_image_inputs.gd",
+        "timeout_seconds": 90
+      }
+    ]
+  }
+}

@@ -52,23 +52,36 @@ The original PyWebView V1 application remains a feature and behaviour reference,
 - Local Stable Diffusion / Forge / A1111 and ComfyUI remain first-class Image Studio targets alongside paid/cloud APIs.
 - ComfyUI is treated as a workflow execution backend; capabilities may belong to a saved Generation Profile/workflow rather than one checkpoint alone.
 - Image Studio uses progressive disclosure: common creative workflow stays prominent while optional technical/provider controls may live in dedicated tabs.
+- Image-input operations are explicit workflow state: source images, masks and references are never inferred from unrelated Vision attachments.
+- Non-A1111 image-input transports must be explicitly mapped by provider/profile rather than guessed from nominal API compatibility.
 - Cross-tool image handoffs should preserve raw image evidence and provenance rather than degrade generated images into anonymous attachments.
 - Idea Generator detail depth is author intent, not a provider-specific model feature; its definitions remain versioned/data-driven.
 - Increasing Idea Generator detail must never weaken `{{user}}` agency safeguards or invent unnecessary user backstory.
 
 ## Current Development Phase
 
-**v0.16.7 — Idea Generator Detail Levels**
+**v0.16.8 — Image-to-Image, Reference Images and Inpainting**
 
-v0.15.40 remains the public release baseline. v0.16.0 began the current development line with Collaborator rewind, v0.16.1 introduced normalized Image capability architecture, v0.16.2 added provider-independent structured creative prompt composition, v0.16.3 reorganised Image Studio into Prompt & Results, Creative and Advanced tabs, v0.16.4 connected the capability model to rich provider-discovered model metadata, v0.16.5 added checkpoint-specific Forge/A1111 profiles and explicit local overrides, and v0.16.6 established versioned ComfyUI workflow Generation Profiles.
+v0.15.40 remains the public release baseline. v0.16.0 began the current development line with Collaborator rewind, v0.16.1 introduced normalized Image capability architecture, v0.16.2 added provider-independent structured creative prompt composition, v0.16.3 reorganised Image Studio into Prompt & Results, Creative and Advanced tabs, v0.16.4 connected the capability model to rich provider-discovered model metadata, v0.16.5 added checkpoint-specific Forge/A1111 profiles and explicit local overrides, v0.16.6 established versioned ComfyUI workflow Generation Profiles, and v0.16.7 added data-driven Idea Generator detail levels.
 
-v0.16.7 adds four data-driven Idea Generator detail modes: **Quick**, **Standard**, **Detailed**, and **Extended**. Standard is the default. The live selector controls both an explicit queued-job detail instruction and a multiplier over the Text profile's existing maximum output-token budget, while the previous user-agency validation/repair contract remains authoritative.
+v0.16.8 makes **Text → Image**, **Image → Image**, **Inpainting**, and **Reference Images** explicit Image Studio operations. Source images can come from the selected character gallery or external PNG/JPEG/WebP files; inpainting adds a separate mask and mask-blur control, while img2img/inpainting expose denoise strength.
 
-The selected mode persists for the lifetime of the current workspace session. Unknown future/invalid IDs fall back safely to Standard. Idea Notebook, Structured Builder and Character Collaborator handoffs continue to use the same Idea Generator architecture rather than a parallel generator.
+Forge/A1111 is the first live image-input transport and uses `/sdapi/v1/img2img` with `init_images`, denoise strength and standard mask fields. Other JSON-style Image providers can become execution-ready through explicit `image_input_transport_v0168` profile mappings rather than CCF guessing endpoint or field names. ComfyUI's existing workflow mappings remain preserved but not falsely marked live until its queue/upload/history transport exists.
 
-The running development build displays **v0.16.7**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.6/v0.16.5/v0.16.4/v0.16.3/v0.16.2/v0.16.1/v0.16.0/v0.15.40 safety baseline. Release metadata remains at the last promoted public version until `release.sh` performs the next release transaction.
+The running development build displays **v0.16.8**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.7/v0.16.6/v0.16.5/v0.16.4/v0.16.3/v0.16.2/v0.16.1/v0.16.0/v0.15.40 safety baseline. Release metadata remains at the last promoted public version until `release.sh` performs the next release transaction.
 
 ## Completed
+
+### v0.16.8 — Image-to-Image, Reference Images and Inpainting
+
+- Added `CCFImageInputAssetServiceV0168` with explicit Text→Image, Image→Image, Inpainting and Reference Images operations, input validation and capability/execution-readiness augmentation.
+- Added `CCFImageGenerationServiceV0168` with live Forge/A1111 `/sdapi/v1/img2img` transport, `init_images`, denoise strength, masks, mask blur and inpainting flags.
+- Added data-driven `image_input_transport_v0168` provider-profile mappings for non-A1111 JSON image-input APIs instead of hardcoded provider assumptions.
+- Added a first-class Image Studio operation panel with gallery/external source selection, multiple references, inpaint mask, denoise strength and mask blur.
+- Kept unsupported/non-executable operations disabled through the normalized capability model.
+- Preserved ComfyUI workflow reference mappings as offline-only while live queue/upload/history transport remains deferred.
+- Extended generated-image provenance with operation, denoise strength, mask presence and reference count without breaking existing gallery records.
+- Added focused v0.16.8 regression coverage, inherited regression manifest, Godot 4.7.1 CI and `docs/v0168-image-inputs.md`.
 
 ### v0.16.7 — Idea Generator Detail Levels
 
@@ -160,6 +173,9 @@ Detailed history remains preserved in versioned docs, pull requests, regression 
 
 ## In Progress
 
+- Runtime-test v0.16.8 Image→Image and Inpainting against a real Forge/A1111 profile, including gallery-source and external-file inputs.
+- Runtime-test explicit non-A1111 `image_input_transport_v0168` mappings against representative JSON image providers before publishing any provider-specific presets.
+- Confirm source/reference/mask selection survives repeated Image Studio open/close cycles without becoming canonical project data until generation occurs.
 - Runtime-test v0.16.7 Quick / Standard / Detailed / Extended against representative real Text profiles and compare useful depth against token usage.
 - Confirm the selected Idea detail level remains stable through repeated open/close cycles and does not affect Structured Builder or Idea Notebook state.
 - Runtime-test v0.16.6 against real ComfyUI API workflow exports and confirm explicit mappings survive custom/community nodes unchanged.
@@ -179,12 +195,6 @@ Detailed history remains preserved in versioned docs, pull requests, regression 
 - Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
 
 ## Next Up — v0.16.x
-
-### v0.16.8 — Image-to-Image, Reference and Inpainting
-
-- Support distinct **Text → Image**, **Image → Image**, **Reference Image Guidance**, and **Inpainting** modes when capabilities allow them.
-- Show source-image, denoise/strength, mask, reference weight, preserve-composition or equivalent controls only when meaningful.
-- Reuse existing character/project artwork as explicit image-generation reference without conflating generation reference with Vision analysis.
 
 ### v0.16.9 — Image Style Presets
 
@@ -271,6 +281,9 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Never silently replace a selected model merely because it vanished from the latest provider catalog.
 - Dynamic provider parameters may add to a request but must never overwrite CCF's authoritative core model/prompt/count/size fields.
 - For Forge/A1111, distinguish backend endpoint capabilities from per-checkpoint/model-family assumptions and allow explicit overrides.
+- Use `/sdapi/v1/img2img` as the authoritative live Forge/A1111 transport for both img2img and standard mask-based inpainting.
+- Keep source image, reference images and inpainting masks as explicit Image Studio inputs separate from Vision-analysis attachments.
+- Require explicit `image_input_transport_v0168` mappings before a generic/non-A1111 profile is considered execution-ready for image-input operations.
 - Keep local model-family defaults as workflow hints only; capability state changes require backend/provider evidence or explicit user overrides.
 - Keep checkpoint profile data keyed by stable local checkpoint ID so one provider can hold different assumptions/defaults for different installed models.
 - For ComfyUI, keep workflow parameter mapping versioned and separate from arbitrary workflow JSON.
