@@ -1,0 +1,34 @@
+{
+  "format_version": 1,
+  "default_level": "standard",
+  "levels": [
+    {
+      "id": "quick",
+      "label": "Quick",
+      "description": "Fast ideation focused on the essential character concept.",
+      "prompt_instruction": "Keep the generated idea concise. Focus on the strongest defining traits, central premise, and immediately useful hook without expanding into unnecessary background detail.",
+      "output_budget_hint": 0.55
+    },
+    {
+      "id": "standard",
+      "label": "Standard",
+      "description": "Balanced detail for normal character ideation.",
+      "prompt_instruction": "Provide a balanced and useful character concept with enough personality, motivation, background, and story context to continue editing without over-expanding minor details.",
+      "output_budget_hint": 1.0
+    },
+    {
+      "id": "detailed",
+      "label": "Detailed",
+      "description": "Richer concepts with more motivations, hooks, and setting context.",
+      "prompt_instruction": "Develop the character in greater depth. Include nuanced motivations, distinctive traits, relevant background, setting integration, useful relationships or tensions, and several actionable story hooks where appropriate.",
+      "output_budget_hint": 1.4
+    },
+    {
+      "id": "extended",
+      "label": "Extended",
+      "description": "Maximum ideation depth for expansive character concepts.",
+      "prompt_instruction": "Produce an expansive but internally coherent character concept. Explore nuanced motivations, history, contradictions, conflicts, setting integration, important relationships, behavioural details, and multiple actionable story or roleplay hooks while avoiding repetitive filler.",
+      "output_budget_hint": 1.8
+    }
+  ]
+}

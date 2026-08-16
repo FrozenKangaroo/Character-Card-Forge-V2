@@ -70,7 +70,7 @@ func _active_shell_inherits(target_path: String) -> bool:
 		return false
 	var current_path := scene.substr(start, finish + 3 - start)
 	var visited := {}
-	for _depth in range(64):
+	while true:
 		if current_path == target_path:
 			return true
 		if current_path.is_empty() or visited.has(current_path):
