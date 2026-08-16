@@ -37,6 +37,7 @@ func image_input_capabilities_v0168() -> Dictionary:
 	return {
 		"version": "0.16.8",
 		"first_class_image_operation_selector": true,
+		"operation_count": image_operation_count_v0168(),
 		"gallery_or_external_source_image": true,
 		"multiple_reference_images": true,
 		"inpainting_mask": true,
@@ -47,6 +48,10 @@ func image_input_capabilities_v0168() -> Dictionary:
 		"capability_gated_operations": true,
 		"comfyui_live_queue_transport": false
 	}
+
+
+func image_operation_count_v0168() -> int:
+	return _operation_selector_v0168.item_count if _operation_selector_v0168 != null else 0
 
 
 func ensure_image_input_surface_v0168() -> void:
@@ -61,6 +66,7 @@ func image_input_surface_ready_v0168() -> bool:
 		and is_instance_valid(_image_input_panel_v0168)
 		and _image_input_panel_v0168.is_inside_tree()
 		and _operation_selector_v0168 != null
+		and image_operation_count_v0168() == 4
 	)
 
 
