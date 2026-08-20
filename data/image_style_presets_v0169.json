@@ -1,0 +1,91 @@
+{
+  "format_version": 1,
+  "catalog_id": "ccf_image_style_presets_v0169",
+  "presets": [
+    {
+      "id": "builtin_anime_key_visual",
+      "name": "Anime Key Visual",
+      "description": "Polished anime promotional artwork with a clean character-focused composition.",
+      "selection": {
+        "categories": {
+          "visual_style": "key_visual",
+          "medium": "digital_painting",
+          "composition": "full_body",
+          "lighting": "rim",
+          "palette": "vibrant",
+          "material": "fabric",
+          "atmosphere": "none"
+        },
+        "modifiers": ["rich_detail", "clean_background", "sharp_focus"]
+      }
+    },
+    {
+      "id": "builtin_cinematic_portrait",
+      "name": "Cinematic Portrait",
+      "description": "Character portrait framing with dramatic cinematic light and restrained detail.",
+      "selection": {
+        "categories": {
+          "visual_style": "cinematic",
+          "medium": "none",
+          "composition": "close_up",
+          "lighting": "backlight",
+          "palette": "cool",
+          "material": "none",
+          "atmosphere": "fog"
+        },
+        "modifiers": ["rich_detail", "sharp_focus"]
+      }
+    },
+    {
+      "id": "builtin_natural_photo",
+      "name": "Natural Character Photo",
+      "description": "Naturalistic photographic character treatment with soft daylight and realistic texture.",
+      "selection": {
+        "categories": {
+          "visual_style": "realistic_photo",
+          "medium": "none",
+          "composition": "eye_level",
+          "lighting": "natural",
+          "palette": "none",
+          "material": "fabric",
+          "atmosphere": "none"
+        },
+        "modifiers": ["natural_texture", "sharp_focus"]
+      }
+    },
+    {
+      "id": "builtin_fantasy_concept_art",
+      "name": "Fantasy Concept Art",
+      "description": "Detailed fantasy concept-art direction suited to characters, costumes and worldbuilding.",
+      "selection": {
+        "categories": {
+          "visual_style": "concept_art",
+          "medium": "digital_painting",
+          "composition": "full_body",
+          "lighting": "volumetric",
+          "palette": "jewel",
+          "material": "fabric",
+          "atmosphere": "dust"
+        },
+        "modifiers": ["rich_detail", "busy_background", "sharp_focus"]
+      }
+    },
+    {
+      "id": "builtin_manga_monochrome",
+      "name": "Monochrome Manga",
+      "description": "Crisp manga artwork with monochrome treatment and uncluttered presentation.",
+      "selection": {
+        "categories": {
+          "visual_style": "manga",
+          "medium": "ink_wash",
+          "composition": "eye_level",
+          "lighting": "none",
+          "palette": "grayscale",
+          "material": "paper",
+          "atmosphere": "none"
+        },
+        "modifiers": ["clean_background", "sharp_focus"]
+      }
+    }
+  ]
+}
