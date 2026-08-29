@@ -24,7 +24,8 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 - Collaborator transcript deletion is chronological rewind and never silently removes independent Reference Context.
 - Existing-character refinement remains selection-based, stale-source/conflict checked and non-destructive by default.
 - Linked Variants may remain sparse internally while exports materialise complete standalone cards.
-- Provider/model token limits remain data-driven and role-specific; concurrent AI work keeps isolated request/job state and is selectively cancellable.
+- Provider/model token limits remain data-driven and role-specific.
+- Concurrent AI work keeps isolated request/job state and is selectively cancellable.
 - Safe generation fails narrowly and preserves accepted sections. Failed attempts remain inspectable through credential-redacted, binary-free, bounded Diagnostics.
 - Forward+ is the standard desktop renderer with Compatibility/OpenGL fallback.
 - Normal Godot import/open operations leave the Git checkout clean. `update.sh` and `release.sh` fail closed around real user work.
