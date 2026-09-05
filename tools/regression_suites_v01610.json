@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.16.10",
+  "description": "v0.16.9 Image Style Presets plus exact Image result provenance, reusable settings, favourites, comparison, recovery and optional cost estimates.",
+  "base_manifest": "regression_suites_v0169.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v01610_studio_workflow_results",
+        "label": "v0.16.10 Studio Workflow and Results",
+        "kind": "godot",
+        "path": "tools/test_v01610_studio_workflow_results.gd",
+        "timeout_seconds": 120
+      }
+    ]
+  }
+}
