@@ -69,6 +69,7 @@ The running development build displays **v0.16.10**, uses Godot **4.7.1 stable**
 - Added explicit Reuse Settings, full-snapshot Regenerate/New Seed Variation, persistent favourites and two-result comparison.
 - Added explicit missing-file recovery into managed project assets while retaining the existing portrait-assignment boundary.
 - Added optional cost estimates only for explicit numeric per-image provider pricing; missing pricing remains supported.
+- Removed inherited v0.16.8 `Window.mode` / `Node.ready` shadowing warnings and added regression guards.
 - Added focused v0.16.10 regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v01610-studio-workflow-results.md`.
 
 ### v0.16.9 — Image Style Presets

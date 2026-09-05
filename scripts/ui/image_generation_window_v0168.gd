@@ -266,10 +266,10 @@ func _install_image_input_surface_v0168() -> void:
 	_refresh_image_input_summary_v0168()
 
 
-func _make_image_dialog_v0168(title_text: String, mode: FileDialog.FileMode) -> FileDialog:
+func _make_image_dialog_v0168(title_text: String, dialog_mode: FileDialog.FileMode) -> FileDialog:
 	var dialog := FileDialog.new()
 	dialog.title = title_text
-	dialog.file_mode = mode
+	dialog.file_mode = dialog_mode
 	dialog.access = FileDialog.ACCESS_FILESYSTEM
 	dialog.use_native_dialog = true
 	dialog.filters = PackedStringArray([
@@ -301,10 +301,10 @@ func _refresh_image_input_capabilities_v0168() -> void:
 		var operation := CCFImageInputAssetServiceV0168.normalise_operation(
 			str(_operation_selector_v0168.get_item_metadata(index))
 		)
-		var ready := CCFImageInputAssetServiceV0168.operation_execution_ready(
+		var execution_ready := CCFImageInputAssetServiceV0168.operation_execution_ready(
 			capabilities, operation
 		)
-		_operation_selector_v0168.set_item_disabled(index, not ready)
+		_operation_selector_v0168.set_item_disabled(index, not execution_ready)
 	if _operation_selector_v0168.is_item_disabled(_operation_selector_v0168.selected):
 		_operation_selector_v0168.select(0)
 	_refresh_image_input_summary_v0168()

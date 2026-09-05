@@ -31,5 +31,6 @@ If normalized provider metadata contains an explicit numeric `cost_per_image`, `
 - Existing projects and legacy gallery records require no migration.
 - Reuse, favourites and comparison make no provider calls.
 - Recovery requires explicit file selection and copies into managed project storage.
+- The inherited v0.16.8 image-input window no longer shadows Godot's `Window.mode` property or `Node.ready` signal.
 - Public release metadata remains v0.15.40 during the v0.16.x development line.
 - Godot remains 4.7.1 stable with Forward+ and Compatibility/OpenGL fallback.
