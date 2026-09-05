@@ -49,7 +49,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.16.9 — Image Style Presets**
+**v0.16.10 — Studio Workflow & Results Polish**
 
 v0.15.40 remains the public release baseline. The v0.16.x development line now includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -57,9 +57,19 @@ v0.16.9 adds reusable provider-independent **Image Style Presets**. A versioned 
 
 Applying a style preset populates the existing v0.16.2 Structured Creative controls and leaves the editable final Image Prompt untouched until the author explicitly composes it. Presets never store provider, model, checkpoint, sampler, steps, CFG, seed, transport or ComfyUI workflow settings.
 
-The running development build displays **v0.16.9**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.8→v0.15.40 safety baseline. Public release metadata remains at v0.15.40 until `release.sh` performs a release transaction.
+v0.16.10 adds versioned exact result provenance, full settings reuse, same-seed regeneration, new-seed variation, persistent favourites, two-result comparison, explicit missing-file recovery and optional provider-supplied cost estimates. Local providers and providers without pricing metadata remain first-class.
+
+The running development build displays **v0.16.10**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.9→v0.15.40 safety baseline. Public release metadata remains at v0.15.40 until `release.sh` performs a release transaction.
 
 ## Completed
+
+### v0.16.10 — Studio Workflow & Results Polish
+
+- Added versioned result execution snapshots with exact composed prompts and reusable provider/model/settings/image-input provenance, excluding credentials.
+- Added explicit Reuse Settings, full-snapshot Regenerate/New Seed Variation, persistent favourites and two-result comparison.
+- Added explicit missing-file recovery into managed project assets while retaining the existing portrait-assignment boundary.
+- Added optional cost estimates only for explicit numeric per-image provider pricing; missing pricing remains supported.
+- Added focused v0.16.10 regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v01610-studio-workflow-results.md`.
 
 ### v0.16.9 — Image Style Presets
 
@@ -147,6 +157,10 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
+- Runtime-test v0.16.10 settings reuse/regeneration with real cloud and local providers, including provider-specific parameters and image-input paths.
+- Runtime-test result favourites, comparison and missing-file recovery across repeated project reloads.
+- Validate optional cost presentation against representative provider pricing schemas without guessing ambiguous prices.
+
 - Runtime-test v0.16.9 built-in/Global/Project/Character style precedence with real saved projects and multiple Image providers.
 - Confirm project/character styles survive repeated Studio/project reloads and never mutate provider technical settings.
 - Runtime-test v0.16.8 Image→Image and Inpainting against a real Forge/A1111 profile, including gallery/external inputs.
@@ -160,16 +174,6 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 - Continue runtime testing of v0.16.5 local checkpoint defaults/overrides, v0.16.4 rich provider metadata, v0.16.3 layout, v0.16.2 composition and v0.16.0 rewind persistence.
 - Continue hardening forward-compatible tests so later shells/services cannot drop historical hotfix invariants.
 - Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
-
-## Next Up — v0.16.x
-
-### v0.16.10 — Studio Workflow & Results Polish
-
-- Improve generation history and preserve exact composed prompt plus provider/model/settings used for each result.
-- Add robust Reuse Settings, Regenerate, New Seed/Variation, comparison, favourites and batch-result workflows where supported.
-- Improve project/character asset assignment and recovery.
-- Surface optional cost information without making paid-provider metadata a requirement for local backends.
-- Continue refining tab/progressive-disclosure layout based on real desktop use.
 
 ## Planned — v0.17.x and Later Authoring Work
 
