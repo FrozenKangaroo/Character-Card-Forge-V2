@@ -19,6 +19,11 @@ func _require(condition: bool, message: String) -> bool:
 
 
 func _run() -> void:
+	var window_source := FileAccess.get_file_as_string("res://scripts/ui/image_generation_window_v0168.gd")
+	if not _require(not window_source.contains("title_text: String, mode: FileDialog.FileMode"), "The v0.16.8 FileDialog helper must not shadow Window.mode."):
+		return
+	if not _require(not window_source.contains("var ready :="), "The v0.16.8 capability loop must not shadow Node.ready."):
+		return
 	var source_path := "user://v0168_source.png"
 	var mask_path := "user://v0168_mask.png"
 	var image := Image.create(8, 8, false, Image.FORMAT_RGBA8)
