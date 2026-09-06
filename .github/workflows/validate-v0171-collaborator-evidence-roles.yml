@@ -33,6 +33,10 @@ jobs:
 
       - name: Import and parse project with warning gate
         shell: bash
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0171-import/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0171-import/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0171-import/config
         run: |
           set -o pipefail
           godot --headless --path . --import 2>&1 | tee /tmp/ccf-v0171-import.log
@@ -42,15 +46,31 @@ jobs:
           fi
 
       - name: Run focused v0.17.1 regression
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0171-focused/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0171-focused/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0171-focused/config
         run: timeout 150s godot --headless --path . --script res://tools/test_v0171_collaborator_source_precedence.gd
 
       - name: Recheck v0.17.0 Image Studio handoff
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0170-handoff/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0170-handoff/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0170-handoff/config
         run: timeout 150s godot --headless --path . --script res://tools/test_v0170_image_collaborator_handoff.gd
 
       - name: Recheck v0.15.39 Character Card and Vision separation
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v01539-card-vision/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v01539-card-vision/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v01539-card-vision/config
         run: timeout 120s godot --headless --path . --script res://tools/test_v01539_character_card_dual_ingestion.gd
 
       - name: Recheck v0.15.40 source row refresh and layout
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v01540-source-row/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v01540-source-row/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v01540-source-row/config
         run: timeout 120s godot --headless --path . --script res://tools/test_v01540_hotfix2_live_source_refresh.gd
 
       - name: Confirm Forward Plus remains the desktop default
