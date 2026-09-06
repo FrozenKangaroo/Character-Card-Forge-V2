@@ -1,0 +1,115 @@
+{
+  "format_version": 1,
+  "front_porch_extension_version": "2.5",
+  "greeting_seed_fields": [
+    {"id":"seed_character_emotion","key_path":"character_emotion","label":"Opening emotion","type":"line","default":"","generate":true},
+    {"id":"seed_emotion_intensity","key_path":"emotion_intensity","label":"Emotion intensity","type":"select","default":"mild","options":["mild","moderate","strong"],"generate":true},
+    {"id":"seed_short_term_bond","key_path":"short_term_bond","label":"Short-term bond","type":"number","default":0,"minimum":-300,"maximum":300,"step":1,"generate":true},
+    {"id":"seed_long_term_bond","key_path":"long_term_bond","label":"Long-term bond","type":"number","default":0,"minimum":-300,"maximum":300,"step":1,"generate":true},
+    {"id":"seed_trust_level","key_path":"trust_level","label":"Trust level","type":"number","default":0,"minimum":-100,"maximum":100,"step":1,"generate":true},
+    {"id":"seed_day_count","key_path":"day_count","label":"Story day","type":"number","default":1,"minimum":1,"maximum":99999,"step":1,"generate":true},
+    {"id":"seed_time_of_day","key_path":"time_of_day","label":"Time of day","type":"select","default":"morning","options":["dawn","morning","late_morning","afternoon","evening","night"],"generate":true},
+    {"id":"seed_story_start_date","key_path":"story_start_date","label":"Story date","type":"line","default":"","placeholder":"Optional YYYY-MM-DD","generate":true},
+    {"id":"seed_story_start_time","key_path":"story_start_time","label":"Story time","type":"line","default":"","placeholder":"Optional HH:MM","generate":true},
+    {"id":"seed_current_task","key_path":"current_task","label":"Starting task","type":"multiline","height":80,"default":"","generate":true},
+    {"id":"seed_baseline_hunger","key_path":"needs_baseline_hunger","label":"Hunger baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+    {"id":"seed_baseline_bladder","key_path":"needs_baseline_bladder","label":"Bladder baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+    {"id":"seed_baseline_energy","key_path":"needs_baseline_energy","label":"Energy baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+    {"id":"seed_baseline_social","key_path":"needs_baseline_social","label":"Social baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+    {"id":"seed_baseline_fun","key_path":"needs_baseline_fun","label":"Fun baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+    {"id":"seed_baseline_hygiene","key_path":"needs_baseline_hygiene","label":"Hygiene baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+    {"id":"seed_baseline_comfort","key_path":"needs_baseline_comfort","label":"Comfort baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+    {"id":"seed_inventory_worn","key_path":"inventory.worn","label":"Wearing override","type":"tags","default":[],"generate":true},
+    {"id":"seed_inventory_carrying","key_path":"inventory.carrying","label":"Carrying override","type":"tags","default":[],"generate":true}
+  ],
+  "groups": [
+    {
+      "id": "character_life",
+      "label": "Character Life",
+      "description": "Optional identity and everyday-life details that travel with the character card.",
+      "fields": [
+        {"id":"fp_ambitions","key_path":"ambitions","label":"Long-term ambitions","type":"tags","default":[],"generate":true,"generation_prompt":"Short long-term goals belonging to the character, one concise phrase per item. These are not a to-do list and must not prescribe {{user}}'s choices."},
+        {"id":"fp_plan_lines","key_path":"plan_lines","label":"Plan lines","type":"tags","default":[],"generate":true,"generation_prompt":"Short character-owned plan or intention sentences. Do not invent actions, feelings or history for {{user}}."},
+        {"id":"fp_occupation","key_path":"occupation","label":"Occupation","type":"line","default":"","generate":true,"placeholder":"e.g. librarian"},
+        {"id":"fp_occupation_brief","key_path":"occupationBrief","label":"What the job involves","type":"multiline","height":90,"default":"","generate":true,"generation_prompt":"Ground at-work narration in one concise description of what this job actually involves."},
+        {"id":"fp_work_hours","key_path":"hours","label":"Work hours","type":"line","default":"","generate":true,"placeholder":"e.g. 09:00–17:00"},
+        {"id":"fp_work_days","key_path":"workDays","label":"Work days","type":"integer_tags","default":[1,2,3,4,5],"generate":true,"placeholder":"1, 2, 3, 4, 5 (Monday=1, Sunday=7)","minimum":1,"maximum":7},
+        {"id":"fp_birthday","key_path":"birthday","label":"Birthday","type":"line","default":"","generate":true,"placeholder":"YYYY-MM-DD (February 29 is not supported)"},
+        {"id":"fp_likes","key_path":"likes","label":"Drawn to / likes","type":"tags","default":[],"generate":true,"generation_prompt":"Specific things this character warms to, one short phrase per item."},
+        {"id":"fp_dislikes","key_path":"dislikes","label":"Put off by / dislikes","type":"tags","default":[],"generate":true,"generation_prompt":"Specific things that make this character bristle, one short phrase per item."},
+        {"id":"fp_intimate_into","key_path":"intimate_preferences.into","label":"Intimate preferences — warms to","type":"tags","default":[],"generate":true,"adult":true,"generation_prompt":"Suggestive adult preferences only. Keep them character-owned, consensual, non-humiliating and non-prescriptive of {{user}}."},
+        {"id":"fp_intimate_not_into","key_path":"intimate_preferences.not_into","label":"Intimate preferences — not interested in","type":"tags","default":[],"generate":true,"adult":true,"generation_prompt":"Adult boundaries or disinterests only. Keep them character-owned and never prescribe {{user}}."},
+        {"id":"fp_inventory_worn","key_path":"inventory.worn","label":"Wearing","type":"tags","default":[],"generate":true,"generation_prompt":"Up to eight starting wardrobe items. A condition may be written in parentheses, for example: sundress (rain-soaked)."},
+        {"id":"fp_inventory_carrying","key_path":"inventory.carrying","label":"Carrying","type":"tags","default":[],"generate":true,"generation_prompt":"Up to eight objects the character carries when a new conversation starts."}
+      ]
+    },
+    {
+      "id": "opening_state",
+      "label": "Opening State",
+      "description": "Optional starting values for new Front Porch conversations. Existing conversations keep their living state.",
+      "fields": [
+        {"id":"fp_enabled","key_path":"enabled","label":"Realism Engine default","type":"checkbox","default":false,"generate":true},
+        {"id":"fp_short_term_bond","key_path":"short_term_bond","label":"Short-term bond","type":"number","default":0,"minimum":-300,"maximum":300,"step":1,"generate":true},
+        {"id":"fp_long_term_bond","key_path":"long_term_bond","label":"Long-term bond","type":"number","default":0,"minimum":-300,"maximum":300,"step":1,"generate":true},
+        {"id":"fp_trust_level","key_path":"trust_level","label":"Trust level","type":"number","default":0,"minimum":-100,"maximum":100,"step":1,"generate":true},
+        {"id":"fp_day_count","key_path":"day_count","label":"Starting story day","type":"number","default":1,"minimum":1,"maximum":99999,"step":1,"generate":true},
+        {"id":"fp_time_of_day","key_path":"time_of_day","label":"Starting time of day","type":"select","default":"morning","options":["dawn","morning","late_morning","afternoon","evening","night"],"generate":true},
+        {"id":"fp_story_start_date","key_path":"story_start_date","label":"Story start date","type":"line","default":"","placeholder":"Optional YYYY-MM-DD","generate":true},
+        {"id":"fp_story_start_time","key_path":"story_start_time","label":"Story start time","type":"line","default":"","placeholder":"Optional HH:MM","generate":true},
+        {"id":"fp_character_emotion","key_path":"character_emotion","label":"Starting emotion","type":"line","default":"","generate":true,"placeholder":"e.g. amused confidence masking nervousness"},
+        {"id":"fp_emotion_intensity","key_path":"emotion_intensity","label":"Emotion intensity","type":"select","default":"mild","options":["mild","moderate","strong"],"generate":true},
+        {"id":"fp_nsfw_cooldown","key_path":"nsfw_cooldown_enabled","label":"NSFW cooldown default","type":"checkbox","default":false,"generate":true},
+        {"id":"fp_passage_of_time","key_path":"passage_of_time_enabled","label":"Automatic passage of time","type":"checkbox","default":true,"generate":true},
+        {"id":"fp_chaos_mode","key_path":"chaos_mode_enabled","label":"Chaos Mode default","type":"checkbox","default":false,"generate":true}
+      ]
+    },
+    {
+      "id": "needs_inventory",
+      "label": "Needs Simulation",
+      "description": "Optional per-character starting needs and decay rates for new conversations.",
+      "fields": [
+        {"id":"fp_needs_enabled","key_path":"needs_sim_enabled","label":"Needs Simulation default","type":"checkbox","default":true,"generate":true},
+        {"id":"fp_enjoys_low_hygiene","key_path":"enjoys_low_hygiene","label":"Enjoys low hygiene","type":"checkbox","default":false,"generate":true},
+        {"id":"fp_needs_strength","key_path":"needs_sim_strength","label":"Needs delta strength","type":"number","default":1,"minimum":1,"maximum":5,"step":1,"generate":true},
+        {"id":"fp_baseline_hunger","key_path":"needs_baseline_hunger","label":"Hunger baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+        {"id":"fp_decay_hunger","key_path":"needs_decay_hunger","label":"Hunger decay / turn","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":true},
+        {"id":"fp_baseline_bladder","key_path":"needs_baseline_bladder","label":"Bladder baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+        {"id":"fp_decay_bladder","key_path":"needs_decay_bladder","label":"Bladder decay / turn","type":"number","default":3,"minimum":0,"maximum":10,"step":1,"generate":true},
+        {"id":"fp_baseline_energy","key_path":"needs_baseline_energy","label":"Energy baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+        {"id":"fp_decay_energy","key_path":"needs_decay_energy","label":"Energy decay / turn","type":"number","default":3,"minimum":0,"maximum":10,"step":1,"generate":true},
+        {"id":"fp_baseline_social","key_path":"needs_baseline_social","label":"Social baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+        {"id":"fp_decay_social","key_path":"needs_decay_social","label":"Social decay / turn","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":true},
+        {"id":"fp_baseline_fun","key_path":"needs_baseline_fun","label":"Fun baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+        {"id":"fp_decay_fun","key_path":"needs_decay_fun","label":"Fun decay / turn","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":true},
+        {"id":"fp_baseline_hygiene","key_path":"needs_baseline_hygiene","label":"Hygiene baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+        {"id":"fp_decay_hygiene","key_path":"needs_decay_hygiene","label":"Hygiene decay / turn","type":"number","default":1,"minimum":0,"maximum":10,"step":1,"generate":true},
+        {"id":"fp_baseline_comfort","key_path":"needs_baseline_comfort","label":"Comfort baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
+        {"id":"fp_decay_comfort","key_path":"needs_decay_comfort","label":"Comfort decay / turn","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":true}
+      ]
+    },
+    {
+      "id": "advanced",
+      "label": "Advanced Front Porch",
+      "description": "Optional verification, identity, avatar and presentation settings. IDs and appearance values are manual-only.",
+      "fields": [
+        {"id":"fp_verification_enabled","key_path":"realism_verification_enabled","label":"Realism verification","type":"checkbox","default":false,"generate":true},
+        {"id":"fp_verification_reprocesses","key_path":"realism_verification_max_reprocesses","label":"Maximum verification reprocesses","type":"number","default":1,"minimum":1,"maximum":5,"step":1,"generate":true},
+        {"id":"fp_verification_strictness","key_path":"realism_verification_strictness","label":"Verification strictness","type":"number","default":3,"minimum":1,"maximum":5,"step":1,"generate":true},
+        {"id":"fp_director_authority","key_path":"realism_needs_director_authority","label":"Director authority over needs","type":"checkbox","default":false,"generate":true},
+        {"id":"fp_current_task","key_path":"current_task","label":"Starting task / objective","type":"multiline","height":90,"default":"","generate":true,"generation_prompt":"An optional character-owned starting objective. Do not make {{user}} responsible for completing it."},
+        {"id":"fp_stable_id","key_path":"stable_id","label":"Stable character ID","type":"line","default":"","generate":false,"placeholder":"Optional UUID supplied by Front Porch"},
+        {"id":"fp_tier","key_path":"tier","label":"Character tier","type":"select","default":"lite","options":["lite"],"generate":false},
+        {"id":"fp_avatar_locked","key_path":"avatar_locked","label":"Lock avatar width","type":"checkbox","default":false,"generate":false},
+        {"id":"fp_favorite_avatar","key_path":"favorite_avatar_id","label":"Favourite avatar ID","type":"line","default":"","generate":false},
+        {"id":"fp_user_bubble_color","key_path":"user_bubble_color","label":"User bubble colour","type":"color_value","default":"","generate":false,"placeholder":"Optional #AARRGGBB or integer"},
+        {"id":"fp_user_text_color","key_path":"user_text_color","label":"User text colour","type":"color_value","default":"","generate":false,"placeholder":"Optional #AARRGGBB or integer"},
+        {"id":"fp_ai_bubble_color","key_path":"ai_bubble_color","label":"AI bubble colour","type":"color_value","default":"","generate":false,"placeholder":"Optional #AARRGGBB or integer"},
+        {"id":"fp_ai_text_color","key_path":"ai_text_color","label":"AI text colour","type":"color_value","default":"","generate":false,"placeholder":"Optional #AARRGGBB or integer"},
+        {"id":"fp_dialogue_color","key_path":"dialogue_color","label":"Dialogue colour","type":"color_value","default":"","generate":false,"placeholder":"Optional #AARRGGBB or integer"},
+        {"id":"fp_action_color","key_path":"action_color","label":"Action colour","type":"color_value","default":"","generate":false,"placeholder":"Optional #AARRGGBB or integer"},
+        {"id":"fp_chat_font","key_path":"chat_font_family","label":"Chat font family","type":"line","default":"","generate":false},
+        {"id":"fp_tts_voice","card_path":"character.tts_voice","label":"TTS voice","type":"line","default":"","generate":false,"placeholder":"Optional Front Porch voice identifier"}
+      ]
+    }
+  ]
+}

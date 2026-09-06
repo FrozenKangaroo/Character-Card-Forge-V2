@@ -97,7 +97,8 @@ static func new_character_record(character_name: String = "Untitled Character") 
 			"post_history_instructions": "",
 			"alternate_greetings": [],
 			"character_book": {},
-			"card_extensions": {}
+			"card_extensions": {},
+			"tts_voice": ""
 		},
 		"generation": {
 			"template_id": "default",

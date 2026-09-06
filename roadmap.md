@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.17.1 — Collaborator Evidence Roles & Conflict Review**
+**v0.17.2 — Front Porch Character Extensions**
 
 v0.15.40 remains the public release baseline. The v0.16.x development line now includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -65,9 +65,23 @@ v0.17.0 adds a first-class **Send to Character Collaborator** action for generat
 
 v0.17.1 adds explicit evidence roles across multi-source Collaborator sessions: **Target Canon**, **Structured Facts**, **Author Reference**, **Creative Intent** and separately linked **Vision Observation**. A dedicated panel maps every source to its role, surfaces review notices for structured metadata/Image prompts paired with Vision, and opens a side-by-side evidence review without resolving discrepancies automatically.
 
-The running development build displays **v0.17.1**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.17.0→v0.15.40 safety baseline. Public release metadata remains at v0.15.40 until `release.sh` performs a release transaction.
+v0.17.2 adds a dedicated optional Front Porch authoring surface backed by a versioned Front Porch 2.5 field catalog. Known character-life, opening-state, Needs, verification and presentation fields can be set manually or proposed by AI through the existing editable review boundary. Per-alternative-greeting opening seeds live beside Alternative Greetings. Imported future extension versions and unknown fields remain lossless, while untouched new characters emit no Front Porch extension.
+
+The running development build displays **v0.17.2**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.17.1→v0.15.40 safety baseline. Public release metadata remains at v0.15.40 until `release.sh` performs a release transaction.
 
 ## Completed
+
+### v0.17.2 — Front Porch Character Extensions
+
+- Added a versioned external Front Porch 2.5 catalog covering more than 50 optional character-life, opening-state, Needs and advanced fields.
+- Added a dedicated **Front Porch — Optional** Workspace tab with four focused internal tabs, explicit per-field inclusion, validation and clear actions.
+- Added manual editing, per-field AI Suggest, section generation, selected regeneration and whole-tab enabled-field generation through the existing editable Generation Preview.
+- Added session-only adult-field opt-in that preserves imported hidden values and keeps adult preferences separate from ordinary likes/dislikes.
+- Added sparse, per-alternative-greeting Front Porch opening seeds beside the existing Alternative Greetings workflow, with manual and review-first AI authoring.
+- Added Character Card V2 `data.tts_voice` import/export while retaining Front Porch data under `data.extensions.front_porch`.
+- Preserved imported future extension versions and unknown top-level, nested and greeting-seed fields while known fields are edited.
+- Added date/time/range/colour normalisation, `{{user}}` agency rules and an explicit no-SQLite boundary.
+- Added focused v0.17.2 regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0172-front-porch-character-extensions.md`.
 
 ### v0.17.1 — Collaborator Evidence Roles & Conflict Review
 
@@ -183,6 +197,10 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
+- Runtime-test v0.17.2 with Front Porch Rawhide card imports/exports, especially future extension keys, alternative greeting seeds, colour integers and TTS identifiers.
+- Validate dense Front Porch tab layout across supported desktop window sizes and refine grouping/tooltips without moving optional data into core Character tabs.
+- Confirm Front Porch 2.5 card behaviour with real new conversations while keeping existing conversation state out of Character Card Forge's write boundary.
+
 - Runtime-test v0.17.1 evidence-role labels and review layout with large card metadata, long Vision analyses and dense multi-source sessions.
 - Evaluate optional author-confirmed conflict annotations after real-world use; keep automatic semantic conflict claims out of the deterministic presentation layer.
 
@@ -218,16 +236,9 @@ All Front Porch fields are optional. A visible **Front Porch — Optional** Work
 
 Manual authoring and AI assistance are equal first-class paths. Each group supports **Generate Section**, **AI Suggest**, **Regenerate Selected**, **Clear** and per-field include/exclude review, plus one **Generate Enabled Front Porch Fields** action. AI output is always reviewable before application. Relationship values must not invent prior history with `{{user}}`; intimate preferences require explicit adult-content opt-in. These values seed new Front Porch conversations and do not retroactively rewrite existing chats.
 
-#### v0.17.2 — Front Porch Character Extensions
+#### v0.17.2 — completed
 
-- Add a versioned adapter for Front Porch `data.extensions.front_porch` character data, initially targeting the current 2.5 extension shape while preserving unknown keys.
-- Add **Character Life** controls for ambitions, occupation/work brief, work hours and days, birthday, likes/drawn-to traits, dislikes/put-off-by traits and optional intimate preferences.
-- Add **Opening State** controls for short-term bond, long-term bond, trust, starting emotion/intensity, story date/time, passage of time, chaos and enabled/cooldown settings.
-- Add **Needs & Inventory** controls for the seven optional needs, starting values, decay rates, needs-delta strength, low-hygiene preference, wearing and carrying items.
-- Add **Advanced Front Porch** controls for verification/director settings, plan lines/current task, tier, stable identity, avatar locking/favourite avatar, chat colours/font and optional TTS voice.
-- Keep per-alternative-greeting Front Porch seeds beside their greetings in the existing Alternative Greetings workflow rather than duplicating them in the new tab.
-- Provide manual editing, selective AI generation, validation, review, reset and safe partial-regeneration flows for every group.
-- Preserve imported-but-unknown Front Porch fields, omit untouched optional data and add schema migration, round-trip, agency and adult-content regression coverage.
+The versioned Front Porch 2.5 character extension editor, selective manual/AI workflows, Alternative Greeting seeds, TTS interchange and unknown-field preservation are implemented and recorded under **Completed** above. The direct-install boundary remains assigned to v0.17.3.
 
 #### v0.17.3 — Direct Front Porch Install
 
