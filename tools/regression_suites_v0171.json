@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.17.1",
+  "description": "v0.17.0 structured Image Studio handoff plus explicit Collaborator evidence roles and structured metadata/Vision conflict review.",
+  "base_manifest": "regression_suites_v0170.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0171_collaborator_source_precedence",
+        "label": "v0.17.1 Collaborator Evidence Roles and Conflict Review",
+        "kind": "godot",
+        "path": "tools/test_v0171_collaborator_source_precedence.gd",
+        "timeout_seconds": 120
+      }
+    ]
+  }
+}
