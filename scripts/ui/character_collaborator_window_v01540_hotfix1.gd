@@ -95,7 +95,7 @@ func _build_source_row_v01540_hotfix1(source: Dictionary, context_items: Variant
 	if CARD_VISION_SERVICE_V01539.is_visual_card_source(source):
 		var analyse := Button.new()
 		analyse.text = "Re-analyse Image" if linked_vision else "Analyse Image"
-		analyse.tooltip_text = "Analyse the visible Character Card image with the configured Vision model. The result stays separate from embedded card metadata."
+		analyse.tooltip_text = "Analyse the structured source image with the configured Vision model. The result stays separate from raw image and source metadata."
 		_prepare_source_action_button_v01540_hotfix1(analyse)
 		analyse.pressed.connect(
 			_on_analyse_card_source_v01539.bind(

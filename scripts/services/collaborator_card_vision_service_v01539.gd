@@ -19,6 +19,7 @@ static func capabilities() -> Dictionary:
 		"vision_only_mode": true,
 		"analyse_attached_card_later": true,
 		"vision_context_linked_to_structured_source": true,
+		"image_studio_result_vision": true,
 		"vision_does_not_overwrite_card_metadata": true,
 		"raw_card_source_preserved": true,
 		"embedded_user_persona_excluded": true
@@ -48,10 +49,13 @@ static func ingestion_plan(mode: String) -> Dictionary:
 
 
 static func is_visual_card_source(source: Dictionary) -> bool:
-	if str(source.get("source_type", "")) != SOURCE_SERVICE_V01537.TYPE_EXTERNAL_CARD:
+	if str(source.get("source_type", "")) not in [
+		SOURCE_SERVICE_V01537.TYPE_EXTERNAL_CARD,
+		SOURCE_SERVICE_V01537.TYPE_IMAGE_STUDIO_RESULT
+	]:
 		return false
 	var path := source_image_path(source)
-	return path.get_extension().to_lower() in ["png", "apng"]
+	return path.get_extension().to_lower() in ["png", "apng", "jpg", "jpeg", "webp"]
 
 
 static func source_image_path(source: Dictionary) -> String:
@@ -63,15 +67,20 @@ static func source_image_path(source: Dictionary) -> String:
 
 static func annotate_vision_context(
 	context_item: Dictionary,
-	source_context_id: String
+	source_context_id: String,
+	source_type: String = ""
 ) -> Dictionary:
 	var result := context_item.duplicate(true)
 	var clean_id := source_context_id.strip_edges()
 	if clean_id.is_empty():
 		return result
 	result["linked_source_context_id"] = clean_id
-	result["linked_source_kind"] = "character_card_image"
-	result["context_provenance"] = "vision_description_linked_to_character_card_source"
+	if source_type == SOURCE_SERVICE_V01537.TYPE_IMAGE_STUDIO_RESULT:
+		result["linked_source_kind"] = "image_studio_result"
+		result["context_provenance"] = "vision_description_linked_to_image_studio_result"
+	else:
+		result["linked_source_kind"] = "character_card_image"
+		result["context_provenance"] = "vision_description_linked_to_character_card_source"
 	return result
 
 

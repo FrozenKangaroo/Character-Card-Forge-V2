@@ -49,7 +49,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.16.10 — Studio Workflow & Results Polish**
+**v0.17.0 — Structured Image Studio → Collaborator Handoff**
 
 v0.15.40 remains the public release baseline. The v0.16.x development line now includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -59,9 +59,21 @@ Applying a style preset populates the existing v0.16.2 Structured Creative contr
 
 v0.16.10 adds versioned exact result provenance, full settings reuse, same-seed regeneration, new-seed variation, persistent favourites, two-result comparison, explicit missing-file recovery and optional provider-supplied cost estimates. Local providers and providers without pricing metadata remain first-class.
 
-The running development build displays **v0.16.10**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.9→v0.15.40 safety baseline. Public release metadata remains at v0.15.40 until `release.sh` performs a release transaction.
+v0.17.0 adds a first-class **Send to Character Collaborator** action for generated Image Studio results. The raw managed image, exact prompt and credential-redacted model/profile/settings provenance enter Collaborator as a structured read-only source. Authors can use the current character as the sole explicit target or start a new image-led conversation, and may optionally queue Vision as separate supplementary evidence.
+
+The running development build displays **v0.17.0**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.10→v0.15.40 safety baseline. Public release metadata remains at v0.15.40 until `release.sh` performs a release transaction.
 
 ## Completed
+
+### v0.17.0 — Structured Image Studio → Collaborator Handoff
+
+- Added **Send to Character Collaborator** to the selected Image Studio result workflow, with missing-file recovery required before handoff.
+- Added a dedicated `image_studio_result` Collaborator source type preserving the managed image path/ID/dimensions and exact v0.16.10 generation snapshot.
+- Added credential redaction for additive provider parameters while retaining useful model/profile/prompt/negative prompt/seed/sampler/steps/CFG/image-operation provenance.
+- Added two explicit workflows: current Workspace character as the only Compare & Apply target, or a new image-led Collaborator conversation with the image as Reference Context.
+- Added optional Vision queueing and later re-analysis while keeping Vision descriptions separate from raw image evidence and generation metadata.
+- Kept all canonical character writes behind existing explicit Collaborator review/apply actions.
+- Added focused v0.17.0 regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0170-image-collaborator-handoff.md`.
 
 ### v0.16.10 — Studio Workflow & Results Polish
 
@@ -158,6 +170,9 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
+- Runtime-test v0.17.0 existing-target and image-led handoffs with real saved projects, including optional Vision success/failure and repeated session reloads.
+- Confirm generated PNG/JPEG/WebP recovery and handoff paths remain portable across supported desktop platforms.
+
 - Runtime-test v0.16.10 settings reuse/regeneration with real cloud and local providers, including provider-specific parameters and image-input paths.
 - Runtime-test result favourites, comparison and missing-file recovery across repeated project reloads.
 - Validate optional cost presentation against representative provider pricing schemas without guessing ambiguous prices.
@@ -177,15 +192,6 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 - Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
 
 ## Planned — v0.17.x and Later Authoring Work
-
-### Structured Image Studio → Collaborator handoff
-
-- Add **Send to Character Collaborator** from an Image Studio result.
-- Treat the generated image as a structured Collaborator source rather than an anonymous attachment.
-- Preserve raw image provenance plus useful generation prompt/model/profile/settings metadata.
-- Optionally run/use Vision analysis while keeping Vision-derived evidence distinct from the image itself.
-- Allow the image to become Reference Context for an existing target or seed a new Collaborator workflow.
-- Keep all canonical character writes explicit.
 
 ### Other accepted v0.17.x+ work
 

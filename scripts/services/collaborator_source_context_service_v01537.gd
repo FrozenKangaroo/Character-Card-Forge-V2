@@ -17,6 +17,7 @@ const TYPE_STRUCTURED_BUILDER := "structured_builder"
 const TYPE_CHARACTER := "character"
 const TYPE_PASTED_TEXT := "pasted_text"
 const TYPE_EXTERNAL_CARD := "external_character_card"
+const TYPE_IMAGE_STUDIO_RESULT := "image_studio_result"
 
 const LEGACY_TYPES := [
 	TYPE_GENERATED_IDEA,
@@ -153,7 +154,11 @@ static func upgrade_source(
 	var base: Dictionary = {}
 	if source_type in LEGACY_TYPES:
 		base = LEGACY_SOURCE_SERVICE.normalise(source)
-	elif source_type in [TYPE_PASTED_TEXT, TYPE_EXTERNAL_CARD]:
+	elif source_type in [
+		TYPE_PASTED_TEXT,
+		TYPE_EXTERNAL_CARD,
+		TYPE_IMAGE_STUDIO_RESULT
+	]:
 		var snapshot_value: Variant = source.get("snapshot", {})
 		if not snapshot_value is Dictionary:
 			return {}
@@ -310,6 +315,8 @@ static func display_type(source: Dictionary) -> String:
 			return "Pasted Source"
 		TYPE_EXTERNAL_CARD:
 			return "Attached Character Card"
+		TYPE_IMAGE_STUDIO_RESULT:
+			return "Image Studio Result"
 		_:
 			return "Source"
 
@@ -332,6 +339,15 @@ static func display_summary(source: Dictionary) -> String:
 				if text.is_empty():
 					text = str(data.get("personality", "")).strip_edges()
 				return _truncate(text.replace("\n", " "), 260)
+	if source_type == TYPE_IMAGE_STUDIO_RESULT:
+		var generation_value: Variant = ai_snapshot.get("generation", {})
+		if generation_value is Dictionary:
+			var prompt := str(
+				(generation_value as Dictionary).get("composed_prompt", "")
+			).strip_edges()
+			if not prompt.is_empty():
+				return _truncate(prompt.replace("\n", " "), 260)
+		return "Generated image with preserved Image Studio provenance."
 	return LEGACY_SOURCE_SERVICE.display_summary(legacy_primary_source([clean]))
 
 
@@ -352,6 +368,8 @@ static func model_context_block(sources: Array[Dictionary]) -> String:
 		"- A separate embedded UserPersona/user-profile section is extraction or chat-session residue by default. Its contents are excluded and must not define {{user}}.",
 		"- {{user}} remains an unspecified roleplayer except for relationship/situation facts established by the actual character source or facts explicitly supplied by the author.",
 		"- Character-source statements about that character's relationship to {{user}} remain valid; only the separate roleplayer-persona residue is excluded.",
+		"- For an Image Studio Result, generation prompts/settings describe creative intent and provenance; they are not proof that every described detail is visibly present in the pixels.",
+		"- The Text Collaborator cannot inspect raw image pixels. Treat only a separately linked Vision reference as visual observation, and keep that Vision-derived evidence distinct from the image and its generation record.",
 		""
 	]
 	for index in range(clean.size()):
@@ -398,6 +416,7 @@ static func capabilities() -> Dictionary:
 		"pasted_text_sources": true,
 		"json_character_card_sources": true,
 		"png_character_card_sources": true,
+		"image_studio_result_sources": true,
 		"raw_source_preserved": true,
 		"ai_facing_normalised_source": true,
 		"embedded_user_persona_exclusion": true,

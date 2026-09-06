@@ -263,7 +263,7 @@ func _refresh_multi_source_list_v01537() -> void:
 				break
 		var analyse := Button.new()
 		analyse.text = "Re-analyse Image" if linked else "Analyse Image"
-		analyse.tooltip_text = "Analyse the visible Character Card image with the configured Vision model. The result stays separate from embedded card metadata."
+		analyse.tooltip_text = "Analyse the structured source image with the configured Vision model. The result stays separate from raw image and source metadata."
 		analyse.pressed.connect(
 			_on_analyse_card_source_v01539.bind(
 				str(source.get("source_context_id", "")),
@@ -278,7 +278,7 @@ func _refresh_multi_source_list_v01537() -> void:
 func _on_analyse_card_source_v01539(source_context_id: String, path: String) -> void:
 	var result := _queue_card_image_vision_v01539(path, source_context_id)
 	if bool(result.get("ok", false)):
-		_status.text = "Character Card image queued for Vision analysis. Existing structured metadata remains unchanged."
+		_status.text = "Source image queued for Vision analysis. Existing raw image and structured metadata remain unchanged."
 	else:
 		_status.text = str(result.get("error", "Could not queue Character Card Vision analysis."))
 
@@ -295,6 +295,12 @@ func _apply_vision_summary_v01511(summary: String, metadata: Dictionary) -> void
 	var session := _active_session().duplicate(true)
 	var items_value: Variant = session.get("context_items", [])
 	var items: Array = items_value.duplicate(true) if items_value is Array else []
+	var sources := active_source_contexts_v01537()
+	var linked_source_type := ""
+	for source in sources:
+		if str(source.get("source_context_id", "")) == linked_source_id:
+			linked_source_type = str(source.get("source_type", ""))
+			break
 	var linked_context: Dictionary = {}
 	for index in range(items.size()):
 		if not items[index] is Dictionary:
@@ -307,14 +313,15 @@ func _apply_vision_summary_v01511(summary: String, metadata: Dictionary) -> void
 			continue
 		if str(item.get("source_path", "")) != image_path:
 			continue
-		item = CARD_VISION_SERVICE_V01539.annotate_vision_context(item, linked_source_id)
+		item = CARD_VISION_SERVICE_V01539.annotate_vision_context(
+			item, linked_source_id, linked_source_type
+		)
 		items[index] = item
 		linked_context = item
 		break
 	if linked_context.is_empty():
 		return
 
-	var sources := active_source_contexts_v01537()
 	for index in range(sources.size()):
 		if str(sources[index].get("source_context_id", "")) != linked_source_id:
 			continue
@@ -328,4 +335,4 @@ func _apply_vision_summary_v01511(summary: String, metadata: Dictionary) -> void
 	_store_sources_in_session_v01537(session, sources)
 	_store_active_session(session)
 	_refresh_all()
-	_status.text = "Vision analysis linked to the Character Card source as separate visual evidence. Embedded metadata was not overwritten."
+	_status.text = "Vision analysis linked to the structured image source as separate visual evidence. Raw image and source metadata were not overwritten."
