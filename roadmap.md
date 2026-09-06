@@ -49,7 +49,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.16.10 — Studio Workflow & Results Polish**
+**v0.17.1 — Collaborator Evidence Roles & Conflict Review**
 
 v0.15.40 remains the public release baseline. The v0.16.x development line now includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -59,9 +59,32 @@ Applying a style preset populates the existing v0.16.2 Structured Creative contr
 
 v0.16.10 adds versioned exact result provenance, full settings reuse, same-seed regeneration, new-seed variation, persistent favourites, two-result comparison, explicit missing-file recovery and optional provider-supplied cost estimates. Local providers and providers without pricing metadata remain first-class.
 
-The running development build displays **v0.16.10**, uses Godot **4.7.1 stable**, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.16.9→v0.15.40 safety baseline. Public release metadata remains at v0.15.40 until `release.sh` performs a release transaction.
+v0.17.0 adds a first-class **Send to Character Collaborator** action for generated Image Studio results. The raw managed image, exact prompt and credential-redacted model/profile/settings provenance enter Collaborator as a structured read-only source. Authors can use the current character as the sole explicit target or start a new image-led conversation, and may optionally queue Vision as separate supplementary evidence.
+
+v0.17.1 adds explicit evidence roles across multi-source Collaborator sessions: **Target Canon**, **Structured Facts**, **Author Reference**, **Creative Intent** and separately linked **Vision Observation**. A dedicated panel maps every source to its role, surfaces review notices for structured metadata/Image prompts paired with Vision, and opens a side-by-side evidence review without resolving discrepancies automatically.
+
+The running development build displays **v0.17.1**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.17.0→v0.15.40 safety baseline. Public release metadata remains at v0.15.40 until `release.sh` performs a release transaction.
 
 ## Completed
+
+### v0.17.1 — Collaborator Evidence Roles & Conflict Review
+
+- Added a deterministic evidence-role service distinguishing target canon, structured character/card facts, author references, Image Studio creative intent and supplementary Vision observation.
+- Added a live **Evidence roles & conflict review** panel with per-source explanations and explicit notices when Character Card metadata or Image Studio prompts have linked Vision evidence.
+- Added **Review Evidence…** actions that present the immutable source snapshot and separately linked Vision descriptions together without merging or resolving them.
+- Added a model-facing precedence/conflict contract so target safety and evidence distinctions remain active during Collaborator replies and generation.
+- Kept source snapshots, Vision context and canonical character fields unchanged by presentation/review actions.
+- Added focused v0.17.1 regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0171-collaborator-evidence-roles.md`.
+
+### v0.17.0 — Structured Image Studio → Collaborator Handoff
+
+- Added **Send to Character Collaborator** to the selected Image Studio result workflow, with missing-file recovery required before handoff.
+- Added a dedicated `image_studio_result` Collaborator source type preserving the managed image path/ID/dimensions and exact v0.16.10 generation snapshot.
+- Added credential redaction for additive provider parameters while retaining useful model/profile/prompt/negative prompt/seed/sampler/steps/CFG/image-operation provenance.
+- Added two explicit workflows: current Workspace character as the only Compare & Apply target, or a new image-led Collaborator conversation with the image as Reference Context.
+- Added optional Vision queueing and later re-analysis while keeping Vision descriptions separate from raw image evidence and generation metadata.
+- Kept all canonical character writes behind existing explicit Collaborator review/apply actions.
+- Added focused v0.17.0 regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0170-image-collaborator-handoff.md`.
 
 ### v0.16.10 — Studio Workflow & Results Polish
 
@@ -158,6 +181,12 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
+- Runtime-test v0.17.1 evidence-role labels and review layout with large card metadata, long Vision analyses and dense multi-source sessions.
+- Evaluate optional author-confirmed conflict annotations after real-world use; keep automatic semantic conflict claims out of the deterministic presentation layer.
+
+- Runtime-test v0.17.0 existing-target and image-led handoffs with real saved projects, including optional Vision success/failure and repeated session reloads.
+- Confirm generated PNG/JPEG/WebP recovery and handoff paths remain portable across supported desktop platforms.
+
 - Runtime-test v0.16.10 settings reuse/regeneration with real cloud and local providers, including provider-specific parameters and image-input paths.
 - Runtime-test result favourites, comparison and missing-file recovery across repeated project reloads.
 - Validate optional cost presentation against representative provider pricing schemas without guessing ambiguous prices.
@@ -178,18 +207,8 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## Planned — v0.17.x and Later Authoring Work
 
-### Structured Image Studio → Collaborator handoff
-
-- Add **Send to Character Collaborator** from an Image Studio result.
-- Treat the generated image as a structured Collaborator source rather than an anonymous attachment.
-- Preserve raw image provenance plus useful generation prompt/model/profile/settings metadata.
-- Optionally run/use Vision analysis while keeping Vision-derived evidence distinct from the image itself.
-- Allow the image to become Reference Context for an existing target or seed a new Collaborator workflow.
-- Keep all canonical character writes explicit.
-
 ### Other accepted v0.17.x+ work
 
-- Improve multi-source precedence/conflict presentation, especially Card metadata vs linked Vision evidence.
 - Add denser/multi-selection source controls for family/cast/ensemble Collaborator sessions if runtime use confirms need.
 - Extract the v0.15.38 character-search/index behaviour into a reusable Character Picker for Collaborator, relationship tools, Image Studio and other large-library workflows.
 - Preserve source/relationship provenance for Collaborator-created characters while keeping exports standalone.
