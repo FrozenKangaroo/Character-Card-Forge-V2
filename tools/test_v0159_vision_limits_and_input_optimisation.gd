@@ -43,7 +43,7 @@ func _active_shell_inherits_v0159() -> bool:
 	if finish < 0:
 		return false
 	var current_path := scene_source.substr(start, finish - start + 3)
-	for _depth in range(64):
+	for _depth in range(256):
 		if current_path == "res://scripts/main_v0159.gd":
 			return true
 		if not FileAccess.file_exists(current_path):

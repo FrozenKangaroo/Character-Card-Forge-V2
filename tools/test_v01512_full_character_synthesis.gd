@@ -37,7 +37,7 @@ func _active_shell_inherits_v01512() -> bool:
 	var script_path := scene_source.substr(start, end - start + 3)
 	# Keep historical feature-shell checks forward-compatible as later releases
 	# add thin composition layers above v0.15.12.
-	for _depth in range(64):
+	for _depth in range(256):
 		if script_path == "res://scripts/main_v01512.gd":
 			return true
 		if not FileAccess.file_exists(script_path):

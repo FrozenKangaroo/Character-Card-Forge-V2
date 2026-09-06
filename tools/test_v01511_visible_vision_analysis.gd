@@ -32,7 +32,7 @@ func _active_shell_inherits_v01511() -> bool:
 	# Later releases add thin inherited shell layers. Keep the historical feature
 	# check bounded but comfortably forward-compatible instead of failing once the
 	# version chain becomes one level longer than its original fixed depth.
-	for _depth in range(64):
+	for _depth in range(256):
 		if script_path == "res://scripts/main_v01511.gd":
 			return true
 		if not FileAccess.file_exists(script_path):

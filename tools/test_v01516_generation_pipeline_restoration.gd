@@ -109,7 +109,7 @@ func _active_shell_inherits_v01516() -> bool:
 		return false
 	var path := scene_source.substr(marker_at, end_at - marker_at)
 	var visited: Dictionary = {}
-	for _depth in range(64):
+	for _depth in range(256):
 		if path == "res://scripts/main_v01516.gd":
 			return true
 		if path.is_empty() or visited.has(path) or not FileAccess.file_exists(path):
