@@ -46,6 +46,8 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 - Image Style Presets contain creative intent only; provider/model/checkpoint/workflow execution settings remain separate.
 - Cross-tool image handoffs preserve raw image evidence and provenance.
 - Idea Generator detail depth is author intent, remains versioned/data-driven, and must never weaken `{{user}}` agency safeguards or invent unnecessary user backstory.
+- Front Porch interoperability uses versioned portable formats or a documented supported local API; Character Card Forge never writes directly into Front Porch's SQLite database.
+- Front Porch-specific authoring remains optional, preserves unknown future extension fields and never changes live conversation state unless the user explicitly runs a supported exchange workflow.
 
 ## Current Development Phase
 
@@ -204,8 +206,65 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 - Continue runtime testing of v0.16.5 local checkpoint defaults/overrides, v0.16.4 rich provider metadata, v0.16.3 layout, v0.16.2 composition and v0.16.0 rewind persistence.
 - Continue hardening forward-compatible tests so later shells/services cannot drop historical hotfix invariants.
 - Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
+- Maintain a read-only compatibility inventory against current Front Porch Rawhide character, group, world and chat formats before implementing each interoperability stage.
 
 ## Planned — v0.17.x and Later Authoring Work
+
+### Front Porch interoperability track — accepted
+
+Restore and substantially expand the useful V1-to-Front-Porch workflow without restoring its obsolete raw SQLite writer. Front Porch's supported local API and portable interchange formats are the integration boundary. The intended user experience can still be direct and convenient, but database ownership, migrations and live state remain Front Porch's responsibility.
+
+All Front Porch fields are optional. A visible **Front Porch — Optional** Workspace tab groups them without crowding the core Character or Advanced tabs. Leaving every field unset emits no `extensions.front_porch` data. Imported Front Porch data must round-trip losslessly, including unknown future fields.
+
+Manual authoring and AI assistance are equal first-class paths. Each group supports **Generate Section**, **AI Suggest**, **Regenerate Selected**, **Clear** and per-field include/exclude review, plus one **Generate Enabled Front Porch Fields** action. AI output is always reviewable before application. Relationship values must not invent prior history with `{{user}}`; intimate preferences require explicit adult-content opt-in. These values seed new Front Porch conversations and do not retroactively rewrite existing chats.
+
+#### v0.17.2 — Front Porch Character Extensions
+
+- Add a versioned adapter for Front Porch `data.extensions.front_porch` character data, initially targeting the current 2.5 extension shape while preserving unknown keys.
+- Add **Character Life** controls for ambitions, occupation/work brief, work hours and days, birthday, likes/drawn-to traits, dislikes/put-off-by traits and optional intimate preferences.
+- Add **Opening State** controls for short-term bond, long-term bond, trust, starting emotion/intensity, story date/time, passage of time, chaos and enabled/cooldown settings.
+- Add **Needs & Inventory** controls for the seven optional needs, starting values, decay rates, needs-delta strength, low-hygiene preference, wearing and carrying items.
+- Add **Advanced Front Porch** controls for verification/director settings, plan lines/current task, tier, stable identity, avatar locking/favourite avatar, chat colours/font and optional TTS voice.
+- Keep per-alternative-greeting Front Porch seeds beside their greetings in the existing Alternative Greetings workflow rather than duplicating them in the new tab.
+- Provide manual editing, selective AI generation, validation, review, reset and safe partial-regeneration flows for every group.
+- Preserve imported-but-unknown Front Porch fields, omit untouched optional data and add schema migration, round-trip, agency and adult-content regression coverage.
+
+#### v0.17.3 — Direct Front Porch Install
+
+- Add explicit Front Porch connection/setup and capability detection in Import/Export.
+- Install or update characters through Front Porch's supported local character import/update API, never by opening or modifying its SQLite files.
+- Use stable identity where supported and present explicit choices for collisions: create a copy, update the matched character or cancel.
+- Provide a portable card/package fallback whenever Front Porch is unavailable, incompatible or declines the request.
+- Report exactly what Front Porch accepted, changed or rejected; never imply success from a file copy alone.
+- Keep direct install user-initiated and leave existing Front Porch conversations and evolving character state untouched.
+
+#### v0.17.4 — Front Porch Expressions & Avatar Galleries
+
+- Add Front Porch expression/looks authoring and import/export around the existing Image Studio and Gallery workflows.
+- Support expression labels, multiple looks, canonical/favourite avatar selection and clear character-to-image provenance.
+- Keep portrait assignment, card embedding and Front Porch expression-pack installation as separate explicit actions.
+- Provide a portable expression-pack export when direct installation is unavailable.
+
+#### v0.18.0 — Front Porch Group Cards
+
+- Add import, authoring, validation and export for Front Porch `fpa_group` PNG metadata using the current `front_porch_group_card` 1.0 contract.
+- Preserve complete members, raw member data and avatars, stable/remapped identities, turn order/auto-advance, Director settings, scenario/first message/system prompt, per-character prompts and group lorebook/world references.
+- Support group chaos, objectives, inheritance settings and default/per-member realism settings without forcing those values onto the source character projects.
+- Integrate group composition with Card Workflows, Relationships and future ensemble Collaborator tools rather than creating a disconnected second character library.
+- Keep group packages portable and prevent imports/exports from mutating live Front Porch group or conversation state.
+
+#### v0.18.1 — Front Porch Worlds and The Stoop Preparation
+
+- Add lossless import/export and validation for `.fpworld` packages, including lore, metadata, assets and unknown future fields.
+- Add optional publishing metadata needed by The Stoop, such as creator, tags, adult-content declaration, stable update identity and preview assets.
+- Keep portable packages as the baseline; add direct publishing only when Front Porch exposes a documented, authenticated publishing contract.
+- Require an explicit review before packaging or publishing material that may contain private project context or adult content.
+
+#### v0.18.2 — Front Porch Chat Exchange
+
+- Add explicit `.fpchat` and compatible SillyTavern JSON/JSONL import/export workflows with validation and provenance.
+- Keep chat history and evolving simulation state separate from ordinary character authoring data.
+- Make all chat transfer user-initiated, previewable and recoverable; never manipulate Front Porch's live database to perform an exchange.
 
 ### Other accepted v0.17.x+ work
 
@@ -228,7 +287,7 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## Level and Content Tools
 
-Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable/versioned templates, `.ccfchar` interchange, project packages, lorebooks, Idea Notebook entries, Collaborator source snapshots, Image creative catalogs/presets/Generation Profiles and schema/editor tooling. Loading and saving should use the same underlying models exposed to authoring tools.
+Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable/versioned templates, `.ccfchar` interchange, project packages, lorebooks, Idea Notebook entries, Collaborator source snapshots, Image creative catalogs/presets/Generation Profiles, Front Porch character extensions, expression packs, `fpa_group` cards, `.fpworld`/`.fpchat` packages and schema/editor tooling. Loading and saving should use the same underlying models exposed to authoring tools.
 
 ## Technical Improvements
 
@@ -258,6 +317,9 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep persistent app state under `user://` separate from portable project/card data unless deliberately included.
 - Keep Idea Notebook independent of Character Project persistence and generation-service topology.
 - Keep Collaborator source seeding public/structured and completion/refinement project-scoped/stale-source checked/non-destructive.
+- Keep the Front Porch schema adapter versioned and capability-aware; preserve unknown `extensions.front_porch` data rather than dropping fields introduced by newer Front Porch versions.
+- Separate authored Front Porch starting values from imported live/evolving state, and keep both out of ordinary Character Card fields unless the user explicitly maps them.
+- Treat direct Front Porch installation as an API/interchange operation with explicit status and collision handling; raw database writes are never a supported fallback.
 - Validate provider envelopes before parsing layers and report malformed failures once through bounded Diagnostics.
 - Continue reducing synchronous whole-library work from interactive paths.
 - Keep attachment decoding/classification separate from UI composition/project-write boundaries.
