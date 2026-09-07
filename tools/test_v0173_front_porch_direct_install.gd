@@ -46,6 +46,24 @@ func _require(condition: bool, message: String) -> bool:
 
 
 func _run() -> void:
+	var extension_source := FileAccess.get_file_as_string(
+		"res://scripts/services/front_porch_extension_service_v0172.gd"
+	)
+	var install_source := FileAccess.get_file_as_string(
+		"res://scripts/services/front_porch_install_service_v0173.gd"
+	)
+	var window_source := FileAccess.get_file_as_string(
+		"res://scripts/ui/import_export_window_v0173.gd"
+	)
+	if not _require(
+		not extension_source.contains("var seed: Dictionary")
+		and not install_source.contains("func configure(base_url:")
+		and not window_source.contains("var title :=")
+		and not window_source.contains("var name := str(result.get"),
+		"v0.17.2/v0.17.3 source must avoid the reported Godot built-in and base-class shadow warnings."
+	):
+		return
+
 	var service := CCFFrontPorchInstallServiceV0173.new()
 	var capabilities := service.capabilities()
 	if not _require(
@@ -244,6 +262,22 @@ func _run() -> void:
 		"The PNG upload regression fixture must be writable."
 	):
 		return
+	var artwork_document := CCFStorageService.character_workspace_document(
+		project, character_id
+	)
+	CCFStorageService.set_value_at_path(
+		artwork_document,
+		"assets.generated_images",
+		[{
+			"image_id": "generated-artwork-v0173",
+			"path": portrait_path,
+			"created_at": "2026-09-07T12:00:00"
+		}]
+	)
+	CCFStorageService.set_value_at_path(
+		artwork_document, "assets.portrait", ""
+	)
+	CCFStorageService.update_character(project, artwork_document)
 	var png_card := CCFCardFormatService.build_png_card_bytes(
 		portrait_path, project, character_id
 	)
@@ -284,8 +318,6 @@ func _run() -> void:
 	):
 		return
 	capture_client.free()
-	DirAccess.remove_absolute(ProjectSettings.globalize_path(portrait_path))
-	DirAccess.remove_absolute(ProjectSettings.globalize_path(card_path))
 
 	var packed := load("res://scenes/main.tscn") as PackedScene
 	if not _require(packed != null, "The v0.17.3 main scene must load."):
@@ -308,21 +340,29 @@ func _run() -> void:
 	var workspace := workspace_value as CCFWorkspaceV0173View
 	workspace.load_project(project, CCFTemplateService.load_template("default"), {})
 	await process_frame
+	workspace.call("_open_import_export_studio")
+	await process_frame
 	var live_capabilities := workspace.front_porch_direct_install_capabilities_v0173()
 	if not _require(
 		bool(live_capabilities.get("install_tab", false))
 		and bool(live_capabilities.get("collision_controls", false))
+		and bool(live_capabilities.get("artwork_picker", false))
+		and bool(live_capabilities.get("selected_artwork_available", false))
+		and str(live_capabilities.get("selected_artwork_kind", "")) == "generated"
 		and bool(live_capabilities.get("character_card_png_upload", false))
 		and bool(live_capabilities.get("portrait_included_when_available", false))
 		and bool(live_capabilities.get("portable_json_fallback", false))
 		and not bool(live_capabilities.get("connected", true))
 		and not bool(live_capabilities.get("raw_database_writes", true)),
-		"The live Import/Export Studio must expose direct install, explicit collision controls and portable fallback without automatic connection or SQLite access."
+		"The live Import/Export Studio must expose direct install, generated-artwork selection, explicit collision controls and portable fallback without automatic connection or SQLite access. Capabilities: %s"
+		% JSON.stringify(live_capabilities)
 	):
 		return
 	app.queue_free()
 	service.free()
 	await process_frame
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(portrait_path))
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(card_path))
 	print("v0.17.3 Front Porch direct install regression passed")
 	quit(0)
 

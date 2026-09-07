@@ -269,7 +269,7 @@ func apply_greeting_seed_values(
 		seeds[greeting_index] = null
 	else:
 		var existing_seed_value: Variant = seeds[greeting_index]
-		var seed: Dictionary = (
+		var greeting_seed: Dictionary = (
 			(existing_seed_value as Dictionary).duplicate(true)
 			if existing_seed_value is Dictionary
 			else {}
@@ -280,12 +280,12 @@ func apply_greeting_seed_values(
 			if bool(enabled_fields.get(field_id, false)):
 				var normalised := _normalise_value(field, values.get(field_id))
 				if bool(normalised.get("ok", false)):
-					_set_nested(seed, key_path, normalised.get("value"))
+					_set_nested(greeting_seed, key_path, normalised.get("value"))
 				else:
 					errors.append("%s: %s" % [str(field.get("label", field_id)), str(normalised.get("error", "Invalid value."))])
 			else:
-				_erase_nested(seed, key_path)
-		seeds[greeting_index] = seed
+				_erase_nested(greeting_seed, key_path)
+		seeds[greeting_index] = greeting_seed
 	while not seeds.is_empty() and seeds[-1] == null:
 		seeds.pop_back()
 	if seeds.is_empty():

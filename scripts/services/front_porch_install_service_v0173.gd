@@ -222,8 +222,8 @@ static func classify_import_response(raw: Dictionary) -> Dictionary:
 	return _http_failure(code, payload, "Front Porch declined the character import.")
 
 
-func configure(base_url: String) -> Dictionary:
-	var validation := validate_base_url(base_url)
+func configure(requested_base_url: String) -> Dictionary:
+	var validation := validate_base_url(requested_base_url)
 	if not bool(validation.get("ok", false)):
 		return validation
 	var next_url := str(validation.get("base_url", DEFAULT_BASE_URL))

@@ -26,7 +26,7 @@ CCF first exports the active character in memory as a validated Character Card V
 
 `POST /api/characters/import?filename=<card.png>&collision=ask`
 
-This gives Front Porch both the authored definition and the portrait it needs for the library card. If no portrait is assigned, CCF deliberately falls back to definition-only JSON using `filename=<card.json>` and says so in the result report.
+This gives Front Porch both the authored definition and the artwork it needs for the library card. The **Card artwork** picker defaults to the assigned active portrait. When no portrait is assigned but Image Studio results exist, it defaults to the newest available generated image. Choosing a generated image for this upload does not silently assign it as the CCF character portrait. The picker also provides an explicit **No artwork** option; only that choice falls back to definition-only JSON using `filename=<card.json>`, and CCF says so before and after the request.
 
 Front Porch remains responsible for parsing the card, matching stable identity and committing its own library changes.
 
@@ -57,6 +57,7 @@ The fallback is an exported interchange file, not proof that Front Porch install
 ## Safety boundaries
 
 - Every install and collision resolution is initiated by the user.
+- The chosen card artwork is visible and changeable before upload; generated-image fallback does not mutate the character's portrait assignment.
 - No background install or synchronisation runs when a project is opened or saved.
 - CCF never reads or writes Front Porch database files.
 - CCF does not create the Front Porch web account or store its password.

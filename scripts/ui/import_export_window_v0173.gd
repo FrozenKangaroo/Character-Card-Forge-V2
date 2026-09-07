@@ -13,6 +13,8 @@ var _front_porch_totp_v0173: LineEdit
 var _front_porch_connect_v0173: Button
 var _front_porch_disconnect_v0173: Button
 var _front_porch_install_v0173: Button
+var _front_porch_artwork_choice_v0173: OptionButton
+var _front_porch_artwork_status_v0173: Label
 var _front_porch_status_v0173: Label
 var _front_porch_report_v0173: RichTextLabel
 var _front_porch_collision_panel_v0173: VBoxContainer
@@ -28,6 +30,7 @@ var _pending_front_porch_bytes_v0173 := PackedByteArray()
 var _pending_front_porch_filename_v0173 := ""
 var _pending_front_porch_content_type_v0173 := ""
 var _pending_front_porch_payload_label_v0173 := ""
+var _front_porch_artwork_context_v0173 := ""
 
 
 func _ready() -> void:
@@ -48,6 +51,7 @@ func open_for_project(
 ) -> void:
 	super.open_for_project(project, settings, character_id)
 	_load_front_porch_connection_v0173()
+	_refresh_front_porch_artwork_options_v0173()
 	_refresh_front_porch_install_state_v0173()
 
 
@@ -55,6 +59,7 @@ func update_project_context(
 	project: Dictionary, settings: Dictionary, character_id: String
 ) -> void:
 	super.update_project_context(project, settings, character_id)
+	_refresh_front_porch_artwork_options_v0173()
 	_refresh_front_porch_install_state_v0173()
 
 
@@ -82,10 +87,10 @@ func _build_front_porch_install_tab_v0173(tabs: TabContainer) -> void:
 	page.add_theme_constant_override("separation", 12)
 	scroll.add_child(page)
 
-	var title := Label.new()
-	title.text = "Direct Front Porch Install"
-	title.add_theme_font_size_override("font_size", 22)
-	page.add_child(title)
+	var page_title := Label.new()
+	page_title.text = "Direct Front Porch Install"
+	page_title.add_theme_font_size_override("font_size", 22)
+	page.add_child(page_title)
 
 	var intro := Label.new()
 	intro.text = (
@@ -172,6 +177,22 @@ func _build_front_porch_install_tab_v0173(tabs: TabContainer) -> void:
 	install_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	install_hint.modulate = Color(0.68, 0.72, 0.82)
 	install.add_child(install_hint)
+
+	var artwork_label := Label.new()
+	artwork_label.text = "Card artwork"
+	install.add_child(artwork_label)
+	_front_porch_artwork_choice_v0173 = OptionButton.new()
+	_front_porch_artwork_choice_v0173.tooltip_text = (
+		"Choose the image to embed in this Front Porch card. This does not change "
+		+ "the character's assigned portrait."
+	)
+	_front_porch_artwork_choice_v0173.item_selected.connect(
+		func(_item_index: int): _refresh_front_porch_artwork_status_v0173()
+	)
+	install.add_child(_front_porch_artwork_choice_v0173)
+	_front_porch_artwork_status_v0173 = Label.new()
+	_front_porch_artwork_status_v0173.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	install.add_child(_front_porch_artwork_status_v0173)
 
 	var install_actions := HFlowContainer.new()
 	install_actions.add_theme_constant_override("separation", 8)
@@ -367,6 +388,142 @@ func _clear_front_porch_credentials_v0173() -> void:
 		_front_porch_totp_v0173.text = ""
 
 
+func _refresh_front_porch_artwork_options_v0173() -> void:
+	if _front_porch_artwork_choice_v0173 == null:
+		return
+	var context_key := "%s:%s" % [
+		str(_project.get("project_id", "")), _active_character_id
+	]
+	var preserve_selection := context_key == _front_porch_artwork_context_v0173
+	var previous_metadata: Variant = null
+	if preserve_selection and _front_porch_artwork_choice_v0173.selected >= 0:
+		previous_metadata = _front_porch_artwork_choice_v0173.get_selected_metadata()
+	_front_porch_artwork_choice_v0173.clear()
+	_front_porch_artwork_choice_v0173.add_item("No artwork — install definition-only JSON")
+	_front_porch_artwork_choice_v0173.set_item_metadata(
+		0, {"kind": "json", "path": ""}
+	)
+
+	var options: Array[Dictionary] = []
+	var active_portrait := _active_portrait_source_path()
+	if not active_portrait.is_empty():
+		options.append({
+			"kind": "portrait",
+			"path": active_portrait,
+			"created_at": "",
+			"label": "Active portrait — %s" % active_portrait.get_file()
+		})
+	var character := CCFStorageService.get_character(
+		_project, _active_character_id
+	)
+	var assets_value: Variant = character.get("assets", {})
+	if assets_value is Dictionary:
+		var generated_value: Variant = (assets_value as Dictionary).get(
+			"generated_images", []
+		)
+		if generated_value is Array:
+			for record_value in generated_value:
+				if not record_value is Dictionary:
+					continue
+				var record := record_value as Dictionary
+				var resolved_path := _resolve_front_porch_artwork_path_v0173(
+					str(record.get("path", ""))
+				)
+				if resolved_path.is_empty() or resolved_path == active_portrait:
+					continue
+				var duplicate := false
+				for existing in options:
+					if str(existing.get("path", "")) == resolved_path:
+						duplicate = true
+						break
+				if duplicate:
+					continue
+				var created_at := str(record.get("created_at", "")).strip_edges()
+				var detail := " — %s" % created_at if not created_at.is_empty() else ""
+				options.append({
+					"kind": "generated",
+					"path": resolved_path,
+					"created_at": created_at,
+					"label": "Generated image — %s%s" % [resolved_path.get_file(), detail]
+				})
+
+	options.sort_custom(_front_porch_artwork_option_before_v0173)
+	var selected_index := 0
+	for option in options:
+		_front_porch_artwork_choice_v0173.add_item(str(option.get("label", "Artwork")))
+		var option_index := _front_porch_artwork_choice_v0173.item_count - 1
+		_front_porch_artwork_choice_v0173.set_item_metadata(
+			option_index,
+			{"kind": option.get("kind", "generated"), "path": option.get("path", "")}
+		)
+		if selected_index == 0:
+			selected_index = option_index
+		if preserve_selection and previous_metadata is Dictionary:
+			if str((previous_metadata as Dictionary).get("path", "")) == str(option.get("path", "")):
+				selected_index = option_index
+	if preserve_selection and previous_metadata is Dictionary:
+		if str((previous_metadata as Dictionary).get("kind", "")) == "json":
+			selected_index = 0
+	_front_porch_artwork_choice_v0173.select(selected_index)
+	_front_porch_artwork_context_v0173 = context_key
+	_refresh_front_porch_artwork_status_v0173()
+
+
+func _front_porch_artwork_option_before_v0173(
+	left_option: Dictionary, right_option: Dictionary
+) -> bool:
+	var left_kind := str(left_option.get("kind", "generated"))
+	var right_kind := str(right_option.get("kind", "generated"))
+	if left_kind == "portrait":
+		return right_kind != "portrait"
+	if right_kind == "portrait":
+		return false
+	return str(left_option.get("created_at", "")) > str(
+		right_option.get("created_at", "")
+	)
+
+
+func _resolve_front_porch_artwork_path_v0173(stored_path: String) -> String:
+	var clean_path := stored_path.strip_edges()
+	if clean_path.is_empty():
+		return ""
+	var resolved_path := clean_path
+	if not clean_path.begins_with("user://") and not clean_path.is_absolute_path() and not clean_path.begins_with("res://"):
+		resolved_path = CCFStorageService.project_folder(
+			str(_project.get("project_id", ""))
+		).path_join(clean_path)
+	return resolved_path if FileAccess.file_exists(resolved_path) else ""
+
+
+func _selected_front_porch_artwork_v0173() -> Dictionary:
+	if _front_porch_artwork_choice_v0173 == null or _front_porch_artwork_choice_v0173.selected < 0:
+		return {"kind": "json", "path": ""}
+	var metadata: Variant = _front_porch_artwork_choice_v0173.get_selected_metadata()
+	return (metadata as Dictionary).duplicate(true) if metadata is Dictionary else {"kind": "json", "path": ""}
+
+
+func _refresh_front_porch_artwork_status_v0173() -> void:
+	if _front_porch_artwork_status_v0173 == null:
+		return
+	var artwork := _selected_front_porch_artwork_v0173()
+	var artwork_path := str(artwork.get("path", ""))
+	var artwork_kind := str(artwork.get("kind", "json"))
+	if artwork_path.is_empty():
+		_front_porch_artwork_status_v0173.text = (
+			"No artwork selected. Front Porch will receive the character definition as JSON."
+		)
+		_front_porch_artwork_status_v0173.modulate = Color(0.88, 0.73, 0.42)
+		return
+	_front_porch_artwork_status_v0173.text = (
+		"Ready to embed %s as the Front Porch card artwork%s."
+		% [
+			artwork_path.get_file(),
+			" (active portrait)" if artwork_kind == "portrait" else " (generated image)"
+		]
+	)
+	_front_porch_artwork_status_v0173.modulate = Color(0.56, 0.84, 0.64)
+
+
 func _install_active_character_v0173() -> void:
 	if _front_porch_busy_v0173 or not _front_porch_connected_v0173:
 		return
@@ -384,10 +541,11 @@ func _install_active_character_v0173() -> void:
 			"The card is not valid for installation: %s" % "; ".join(errors)
 		)
 		return
-	var portrait_path := _active_portrait_source_path()
-	if not portrait_path.is_empty():
+	var selected_artwork := _selected_front_porch_artwork_v0173()
+	var artwork_path := str(selected_artwork.get("path", ""))
+	if not artwork_path.is_empty():
 		var png_card := CCFCardFormatService.build_png_card_bytes(
-			portrait_path, _project, _active_character_id
+			artwork_path, _project, _active_character_id
 		)
 		if not bool(png_card.get("ok", false)):
 			_show_front_porch_install_error_v0173(
@@ -465,7 +623,7 @@ func _handle_front_porch_install_result_v0173(
 			action = "updated"
 		elif requested_policy == "keepBoth":
 			action = "installed as a copy"
-		var name := str(result.get("name", "Untitled Character"))
+		var accepted_name := str(result.get("name", "Untitled Character"))
 		var character_id := str(result.get("character_id", ""))
 		_front_porch_report_v0173.text = (
 			"[color=#8ed6a3]Front Porch %s the character.[/color]\n"
@@ -473,11 +631,11 @@ func _handle_front_porch_install_result_v0173(
 			+ "Existing conversations were not edited by Character Card Forge."
 		) % [
 			action,
-			_escape_bbcode_v0173(name),
+			_escape_bbcode_v0173(accepted_name),
 			_escape_bbcode_v0173(character_id),
 			_escape_bbcode_v0173(payload_label)
 		]
-		_status.text = "Front Porch %s %s." % [action, name]
+		_status.text = "Front Porch %s %s." % [action, accepted_name]
 		_clear_pending_front_porch_collision_v0173()
 		return
 	if bool(result.get("collision", false)):
@@ -601,5 +759,11 @@ func front_porch_install_capabilities_v0173() -> Dictionary:
 		and _front_porch_collision_update_v0173 != null
 		and _front_porch_collision_cancel_v0173 != null
 	)
+	var selected_artwork := _selected_front_porch_artwork_v0173()
+	result["artwork_picker"] = _front_porch_artwork_choice_v0173 != null
+	result["selected_artwork_kind"] = str(selected_artwork.get("kind", "json"))
+	result["selected_artwork_available"] = not str(
+		selected_artwork.get("path", "")
+	).is_empty()
 	result["connected"] = _front_porch_connected_v0173
 	return result
