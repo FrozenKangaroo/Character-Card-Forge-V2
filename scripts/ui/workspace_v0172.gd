@@ -233,8 +233,8 @@ func _build_front_porch_tab_v0172() -> void:
 
 	var boundary := Label.new()
 	boundary.text = (
-		"Direct database writing is intentionally unsupported. A later version will install "
-		+ "through Front Porch's supported local API."
+		"Direct database writing remains intentionally unsupported. Use Import / Export → "
+		+ "Install to Front Porch for supported local API installation."
 	)
 	boundary.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	boundary.modulate = Color(0.72, 0.66, 0.48)

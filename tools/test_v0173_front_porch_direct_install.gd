@@ -55,12 +55,24 @@ func _run() -> void:
 	var window_source := FileAccess.get_file_as_string(
 		"res://scripts/ui/import_export_window_v0173.gd"
 	)
+	var workspace_source := FileAccess.get_file_as_string(
+		"res://scripts/ui/workspace_v0172.gd"
+	)
 	if not _require(
 		not extension_source.contains("var seed: Dictionary")
 		and not install_source.contains("func configure(base_url:")
 		and not window_source.contains("var title :=")
 		and not window_source.contains("var name := str(result.get"),
 		"v0.17.2/v0.17.3 source must avoid the reported Godot built-in and base-class shadow warnings."
+	):
+		return
+	if not _require(
+		not workspace_source.contains("A later version will install")
+		and workspace_source.contains("Use Import / Export → ")
+		and workspace_source.contains(
+			"Install to Front Porch for supported local API installation."
+		),
+		"The live Front Porch workspace must point to the shipped direct-install workflow rather than describing it as future work."
 	):
 		return
 

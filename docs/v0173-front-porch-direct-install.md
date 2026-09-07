@@ -1,6 +1,6 @@
 # v0.17.3 — Front Porch Direct Install
 
-v0.17.3 adds a user-initiated **Install to Front Porch** workflow to the Import / Export Studio. When an active portrait is available, it sends a real Character Card V2 PNG containing both the artwork and embedded card metadata through Front Porch's supported web character-import API. A character without a portrait is sent as Character Card V2 JSON. Character Card Forge does not inspect, open, migrate or modify Front Porch's SQLite database.
+v0.17.3 adds a user-initiated **Install to Front Porch** workflow to the Import / Export Studio. When artwork is selected, it sends a real Character Card V2 PNG containing both the artwork and embedded card metadata through Front Porch's supported web character-import API. The artwork picker prefers the active portrait or, when no portrait is assigned, the newest generated image. An explicit no-artwork selection sends Character Card V2 JSON. Character Card Forge does not inspect, open, migrate or modify Front Porch's SQLite database.
 
 ## Front Porch setup
 
