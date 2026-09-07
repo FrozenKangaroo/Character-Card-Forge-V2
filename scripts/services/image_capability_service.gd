@@ -127,9 +127,18 @@ func _on_request_completed(
 
 
 func _finish_openai() -> void:
+	var is_openrouter := (
+		CCFImageProviderTransportServiceV0173Hotfix1.is_openrouter_base_url(
+			str(_profile.get("base_url", ""))
+		)
+	)
 	var capabilities := {
 		"backend": BACKEND_OPENAI,
-		"backend_label": "OpenAI-compatible Images API",
+		"backend_label": (
+			"OpenRouter Images API"
+			if is_openrouter
+			else "OpenAI-compatible Images API"
+		),
 		"models": _models.duplicate(),
 		"samplers": [],
 		"supports_negative_prompt": false,
@@ -138,7 +147,11 @@ func _finish_openai() -> void:
 		"supports_steps": false,
 		"supports_cfg_scale": false,
 		"supports_batch": true,
-		"discovery_note": "The provider exposed /models. OpenAI-compatible model listings do not reliably identify which entries support image generation."
+		"discovery_note": (
+			"OpenRouter exposed its image-only /images/models catalog."
+			if is_openrouter
+			else "The provider exposed /models. OpenAI-compatible model listings do not reliably identify which entries support image generation."
+		)
 	}
 	_reset()
 	capabilities_loaded.emit(capabilities)
@@ -212,6 +225,10 @@ func _request_headers(profile: Dictionary) -> PackedStringArray:
 
 
 func _openai_models_url(base_url: String) -> String:
+	if CCFImageProviderTransportServiceV0173Hotfix1.is_openrouter_base_url(base_url):
+		return CCFImageProviderTransportServiceV0173Hotfix1.openrouter_models_url(
+			base_url
+		)
 	var clean_url := _trim_url(base_url)
 	if clean_url.ends_with("/images/generations"):
 		clean_url = clean_url.trim_suffix("/images/generations")

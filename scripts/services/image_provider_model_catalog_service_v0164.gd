@@ -13,16 +13,19 @@ static func endpoint_candidates(base_url: String) -> Array[String]:
 	if clean.is_empty():
 		return []
 	# Profiles sometimes store the generation endpoint rather than API root.
-	for suffix in ["/images/generations", "/api/v1/images/generations"]:
+	for suffix in ["/images/generations", "/images/models", "/image-models", "/models"]:
 		if clean.ends_with(suffix):
 			clean = clean.trim_suffix(suffix)
 			break
-	for known in [PREFERRED_ENDPOINT_SUFFIX, LEGACY_ENDPOINT_SUFFIX, GENERIC_ENDPOINT_SUFFIX]:
-		if clean.ends_with(known):
-			clean = clean.trim_suffix(known)
-			break
 	var result: Array[String] = []
-	for suffix in [PREFERRED_ENDPOINT_SUFFIX, LEGACY_ENDPOINT_SUFFIX, GENERIC_ENDPOINT_SUFFIX]:
+	var suffixes: Array[String] = [
+		PREFERRED_ENDPOINT_SUFFIX,
+		LEGACY_ENDPOINT_SUFFIX,
+		GENERIC_ENDPOINT_SUFFIX
+	]
+	if clean.ends_with("/api/v1"):
+		suffixes = ["/images/models", "/image-models", "/models"]
+	for suffix in suffixes:
 		var candidate: String = clean + str(suffix)
 		if candidate not in result:
 			result.append(candidate)

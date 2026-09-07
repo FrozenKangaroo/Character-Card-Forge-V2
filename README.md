@@ -61,7 +61,7 @@ Supported image backends currently include:
 
 Current image capabilities include:
 
-- `/images/generations` and `/sdapi/v1/txt2img` generation;
+- `/images/generations`, OpenRouter `/api/v1/images`, and `/sdapi/v1/txt2img` generation;
 - OpenAI model discovery through `/models`;
 - Forge/A1111 checkpoint and sampler discovery;
 - natural-language and Stable Diffusion-style character prompt builders;

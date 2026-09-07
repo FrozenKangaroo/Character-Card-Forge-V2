@@ -107,6 +107,12 @@ OpenAI-compatible image routes have no universal negative-prompt field, so exclu
 
 The adapter accepts common response shapes including OpenAI-style base64 data, other common base64 fields, data URLs, downloadable image URLs, and raw PNG/JPEG/WebP responses. Received images are decoded by Godot and normalised to PNG.
 
+### OpenRouter Images
+
+OpenRouter profiles use the same **OpenAI-compatible Images API** backend selection with API base URL `https://openrouter.ai/api/v1`. CCF detects the exact OpenRouter host and sends Text to Image requests to its native `POST /api/v1/images` route instead of appending `/images/generations`. Other providers retain the normal OpenAI-compatible route.
+
+OpenRouter model refresh uses its image-only `/api/v1/images/models` catalog. Buffered `data[].b64_json` responses use the normal CCF decoding and managed-gallery path.
+
 ### OpenAI model discovery
 
 Image Studio can query `<base URL>/models`. OpenAI-compatible model lists do not reliably identify which entries support image generation, so discovery is a convenience list rather than a capability guarantee.
