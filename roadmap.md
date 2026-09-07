@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.17.2 — Front Porch Character Extensions**
+**v0.17.3 — Direct Front Porch Install**
 
 v0.15.40 remains the public release baseline. The v0.16.x development line now includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -67,9 +67,23 @@ v0.17.1 adds explicit evidence roles across multi-source Collaborator sessions: 
 
 v0.17.2 adds a dedicated optional Front Porch authoring surface backed by a versioned Front Porch 2.5 field catalog. Known character-life, opening-state, Needs, verification and presentation fields can be set manually or proposed by AI through the existing editable review boundary. Per-alternative-greeting opening seeds live beside Alternative Greetings. Imported future extension versions and unknown fields remain lossless, while untouched new characters emit no Front Porch extension.
 
-The running development build displays **v0.17.2**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.17.1→v0.15.40 safety baseline. Public release metadata remains at v0.15.40 until `release.sh` performs a release transaction.
+v0.17.3 adds an authenticated, user-initiated **Install to Front Porch** workflow in Import / Export. It detects Front Porch through its supported health/auth endpoints, keeps credentials and session cookies out of persistent storage, verifies the character API, uploads a validated Character Card V2 JSON document and presents explicit create-copy/update/cancel choices for name collisions. Portable JSON remains available whenever direct installation cannot complete.
+
+The running development build displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.17.2→v0.15.40 safety baseline. Public release metadata remains at v0.15.40 until `release.sh` performs a release transaction.
 
 ## Completed
+
+### v0.17.3 — Direct Front Porch Install
+
+- Added a dedicated **Install to Front Porch** tab to Import / Export with connection instructions, endpoint validation and explicit capability reporting.
+- Added supported `GET /api/health`, `GET /api/auth/state`, `POST /api/auth/login`, `GET /api/characters` and `POST /api/characters/import` integration for Front Porch 1.3.x-compatible servers.
+- Added cookie-session authentication with session-only password, two-factor code and session cookie; only the endpoint and optional username can be remembered.
+- Allowed plain HTTP only for loopback Front Porch addresses and required HTTPS before credentials can be sent to a remote host.
+- Added validated Character Card V2 JSON installation with Front Porch-owned stable-ID matching and exact accepted name/character-ID reporting.
+- Added explicit name-collision choices for **Create Copy**, **Update Selected** and **Cancel**, using Front Porch's supported `ask`, `keepBoth` and `replace` policies.
+- Kept **Export Portable JSON Instead…** available for unavailable, incompatible, unauthenticated or declining Front Porch instances.
+- Preserved the no-SQLite, no-background-sync and no-conversation-mutation boundaries.
+- Added focused v0.17.3 regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0173-front-porch-direct-install.md`.
 
 ### v0.17.2 — Front Porch Character Extensions
 
@@ -197,6 +211,10 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
+- Runtime-test v0.17.3 against a configured Front Porch 1.3.x web server with password-only and 2FA accounts, stable-ID updates and multi-candidate name collisions.
+- Confirm direct-install reporting against later Front Porch releases and extend behavior-based capability detection only when their supported API contract changes.
+- Validate HTTPS remote-host setup while keeping loopback HTTP as the simplest same-computer path.
+
 - Runtime-test v0.17.2 with Front Porch Rawhide card imports/exports, especially future extension keys, alternative greeting seeds, colour integers and TTS identifiers.
 - Validate dense Front Porch tab layout across supported desktop window sizes and refine grouping/tooltips without moving optional data into core Character tabs.
 - Confirm Front Porch 2.5 card behaviour with real new conversations while keeping existing conversation state out of Character Card Forge's write boundary.
@@ -240,14 +258,9 @@ Manual authoring and AI assistance are equal first-class paths. Each group suppo
 
 The versioned Front Porch 2.5 character extension editor, selective manual/AI workflows, Alternative Greeting seeds, TTS interchange and unknown-field preservation are implemented and recorded under **Completed** above. The direct-install boundary remains assigned to v0.17.3.
 
-#### v0.17.3 — Direct Front Porch Install
+#### v0.17.3 — completed
 
-- Add explicit Front Porch connection/setup and capability detection in Import/Export.
-- Install or update characters through Front Porch's supported local character import/update API, never by opening or modifying its SQLite files.
-- Use stable identity where supported and present explicit choices for collisions: create a copy, update the matched character or cancel.
-- Provide a portable card/package fallback whenever Front Porch is unavailable, incompatible or declines the request.
-- Report exactly what Front Porch accepted, changed or rejected; never imply success from a file copy alone.
-- Keep direct install user-initiated and leave existing Front Porch conversations and evolving character state untouched.
+Authenticated supported-API connection, capability detection, user-initiated Character Card V2 installation, Front Porch-owned stable identity, explicit name-collision choices, exact result reporting and portable JSON fallback are implemented and recorded under **Completed** above. Expression/avatar gallery interchange remains assigned to v0.17.4.
 
 #### v0.17.4 — Front Porch Expressions & Avatar Galleries
 
