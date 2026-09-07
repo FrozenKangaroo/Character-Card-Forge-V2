@@ -51,9 +51,9 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.17.3 — Direct Front Porch Install**
+**v0.17.4 — Front Porch Multi-Character Group Cards**
 
-v0.15.40 remains the public release baseline. The v0.16.x development line now includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
+v0.17.3 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
 v0.16.9 adds reusable provider-independent **Image Style Presets**. A versioned external built-in catalog provides starter styles; user-created **Global** presets are reusable across projects; **Project Visual Identity** supplies a project-level default; and **Character Default** provides an optional per-character override. Character defaults take precedence over project identity.
 
@@ -69,7 +69,9 @@ v0.17.2 adds a dedicated optional Front Porch authoring surface backed by a vers
 
 v0.17.3 adds an authenticated, user-initiated **Install to Front Porch** workflow in Import / Export. It detects Front Porch through its supported health/auth endpoints, keeps credentials and session cookies out of persistent storage, verifies the character API, provides a visible card-artwork picker that prefers the active portrait and otherwise the newest generated image, uploads a validated Character Card V2 PNG when artwork is selected (or definition-only JSON when explicitly chosen) and presents explicit create-copy/update/cancel choices for name collisions. Portable JSON remains available whenever direct installation cannot complete.
 
-The running development build displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete v0.17.2→v0.15.40 safety baseline. Public release metadata remains at v0.15.40 until `release.sh` performs a release transaction.
+v0.17.4 makes Front Porch's custom multi-character card format the next implementation goal. One portable group card will be able to contain multiple complete characters plus group-level opening, turn-order, Director, realism, objective and lore/world settings without merging those characters into one ordinary Character Card definition.
+
+The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. Development now targets v0.17.4 without changing published release metadata until the next release transaction.
 
 ## Completed
 
@@ -260,37 +262,47 @@ The versioned Front Porch 2.5 character extension editor, selective manual/AI wo
 
 #### v0.17.3 — completed
 
-Authenticated supported-API connection, capability detection, user-initiated Character Card V2 installation, Front Porch-owned stable identity, explicit name-collision choices, exact result reporting and portable JSON fallback are implemented and recorded under **Completed** above. Expression/avatar gallery interchange remains assigned to v0.17.4.
+Authenticated supported-API connection, capability detection, user-initiated Character Card V2 installation, Front Porch-owned stable identity, explicit name-collision choices, exact result reporting and portable JSON fallback are implemented and recorded under **Completed** above. Multi-character group cards are now the immediate v0.17.4 goal; expression/avatar gallery interchange follows in v0.17.5.
 
-#### v0.17.4 — Front Porch Expressions & Avatar Galleries
+#### v0.17.4 — Front Porch Multi-Character Group Cards — next
+
+- Add import, authoring, validation and export for Front Porch's custom multi-character `fpa_group` PNG metadata using the current `front_porch_group_card` 1.0 contract.
+- Let one group card contain multiple complete character definitions while preserving each member's raw card data, avatar, stable identity and remapping provenance.
+- Preserve turn order/auto-advance, Director settings, scenario, first message, system prompt, per-character prompts and group lorebook/world references.
+- Support group chaos, objectives, inheritance settings and default/per-member realism settings without forcing group-only values onto the source character projects.
+- Integrate group composition with Card Workflows, Relationships and future ensemble Collaborator tools rather than creating a disconnected second character library.
+- Keep group packages portable and make import/export non-destructive. Direct installation may be added only through a verified supported Front Porch API; no database writes or live-conversation mutation.
+
+#### v0.17.5 — Front Porch Expressions & Avatar Galleries
 
 - Add Front Porch expression/looks authoring and import/export around the existing Image Studio and Gallery workflows.
 - Support expression labels, multiple looks, canonical/favourite avatar selection and clear character-to-image provenance.
 - Keep portrait assignment, card embedding and Front Porch expression-pack installation as separate explicit actions.
 - Provide a portable expression-pack export when direct installation is unavailable.
 
-#### v0.18.0 — Front Porch Group Cards
-
-- Add import, authoring, validation and export for Front Porch `fpa_group` PNG metadata using the current `front_porch_group_card` 1.0 contract.
-- Preserve complete members, raw member data and avatars, stable/remapped identities, turn order/auto-advance, Director settings, scenario/first message/system prompt, per-character prompts and group lorebook/world references.
-- Support group chaos, objectives, inheritance settings and default/per-member realism settings without forcing those values onto the source character projects.
-- Integrate group composition with Card Workflows, Relationships and future ensemble Collaborator tools rather than creating a disconnected second character library.
-- Keep group packages portable and prevent imports/exports from mutating live Front Porch group or conversation state.
-
-#### v0.18.1 — Front Porch Worlds and The Stoop Preparation
+#### v0.18.0 — Front Porch Worlds and The Stoop Preparation
 
 - Add lossless import/export and validation for `.fpworld` packages, including lore, metadata, assets and unknown future fields.
 - Add optional publishing metadata needed by The Stoop, such as creator, tags, adult-content declaration, stable update identity and preview assets.
 - Keep portable packages as the baseline; add direct publishing only when Front Porch exposes a documented, authenticated publishing contract.
 - Require an explicit review before packaging or publishing material that may contain private project context or adult content.
 
-#### v0.18.2 — Front Porch Chat Exchange
+#### v0.18.1 — Front Porch Chat Exchange
 
 - Add explicit `.fpchat` and compatible SillyTavern JSON/JSONL import/export workflows with validation and provenance.
 - Keep chat history and evolving simulation state separate from ordinary character authoring data.
 - Make all chat transfer user-initiated, previewable and recoverable; never manipulate Front Porch's live database to perform an exchange.
 
 ### Other accepted v0.17.x+ work
+
+#### Character Revision History & Diff — accepted later milestone
+
+- Save immutable, timestamped character revisions at meaningful author actions such as explicit checkpoints, accepted AI changes, imports and restores rather than recording every keystroke.
+- Provide a revision timeline with optional notes and provenance describing how each revision was created.
+- Compare any two revisions with a field-aware diff covering core fields, alternative greetings, lorebook data, Front Porch extensions and other versioned character content.
+- Let authors preview, restore, fork or export an earlier revision. Restoring creates a new current revision so newer history is never silently destroyed.
+- Keep large image assets content-addressed/referenced where practical instead of duplicating the same binary into every revision.
+- Make history retention, pruning and portable-project inclusion explicit so storage use and private drafting history remain under author control.
 
 - Add denser/multi-selection source controls for family/cast/ensemble Collaborator sessions if runtime use confirms need.
 - Extract the v0.15.38 character-search/index behaviour into a reusable Character Picker for Collaborator, relationship tools, Image Studio and other large-library workflows.
