@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.17.3",
+  "description": "v0.17.2 Front Porch character authoring plus authenticated supported-API direct install, collision review and portable fallback.",
+  "base_manifest": "regression_suites_v0172.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0173_front_porch_direct_install",
+        "label": "v0.17.3 Front Porch Direct Install",
+        "kind": "godot",
+        "path": "tools/test_v0173_front_porch_direct_install.gd",
+        "timeout_seconds": 150
+      }
+    ]
+  }
+}
