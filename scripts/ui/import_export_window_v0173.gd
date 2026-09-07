@@ -24,8 +24,10 @@ var _front_porch_collision_cancel_v0173: Button
 var _front_porch_busy_v0173 := false
 var _front_porch_connected_v0173 := false
 var _front_porch_version_v0173 := ""
-var _pending_front_porch_json_v0173 := ""
+var _pending_front_porch_bytes_v0173 := PackedByteArray()
 var _pending_front_porch_filename_v0173 := ""
+var _pending_front_porch_content_type_v0173 := ""
+var _pending_front_porch_payload_label_v0173 := ""
 
 
 func _ready() -> void:
@@ -160,7 +162,10 @@ func _build_front_porch_install_tab_v0173(tabs: TabContainer) -> void:
 
 	var install_hint := Label.new()
 	install_hint.text = (
-		"The first request asks Front Porch to detect a stable-ID or name collision. "
+		"When the character has a portrait, CCF installs a real Character Card PNG "
+		+ "containing both the artwork and embedded V2 metadata. Without a portrait, "
+		+ "it installs the V2 JSON definition. The first request asks Front Porch to "
+		+ "detect a stable-ID or name collision. "
 		+ "For a name collision, choose Create Copy, Update Selected, or Cancel. "
 		+ "Updating keeps Front Porch conversations but replaces that library card's authored definition."
 	)
@@ -379,15 +384,37 @@ func _install_active_character_v0173() -> void:
 			"The card is not valid for installation: %s" % "; ".join(errors)
 		)
 		return
-	_pending_front_porch_json_v0173 = JSON.stringify(card, "  ")
-	_pending_front_porch_filename_v0173 = CCFCardFormatService.suggested_filename(
-		_project, _active_character_id, "json"
-	)
+	var portrait_path := _active_portrait_source_path()
+	if not portrait_path.is_empty():
+		var png_card := CCFCardFormatService.build_png_card_bytes(
+			portrait_path, _project, _active_character_id
+		)
+		if not bool(png_card.get("ok", false)):
+			_show_front_porch_install_error_v0173(
+				str(png_card.get("error", "The portrait PNG card could not be built."))
+			)
+			return
+		_pending_front_porch_bytes_v0173 = png_card.get(
+			"bytes", PackedByteArray()
+		)
+		_pending_front_porch_filename_v0173 = CCFCardFormatService.suggested_filename(
+			_project, _active_character_id, "png"
+		)
+		_pending_front_porch_content_type_v0173 = "image/png"
+		_pending_front_porch_payload_label_v0173 = "Character Card PNG with portrait"
+	else:
+		_pending_front_porch_bytes_v0173 = JSON.stringify(card, "  ").to_utf8_buffer()
+		_pending_front_porch_filename_v0173 = CCFCardFormatService.suggested_filename(
+			_project, _active_character_id, "json"
+		)
+		_pending_front_porch_content_type_v0173 = "application/json; charset=utf-8"
+		_pending_front_porch_payload_label_v0173 = "Character Card JSON (no portrait available)"
 	_set_front_porch_busy_v0173(true)
-	_front_porch_report_v0173.text = "Sending the character to Front Porch for collision review…"
-	var result := await _front_porch_client_v0173.install_json_card(
-		_pending_front_porch_json_v0173,
+	_front_porch_report_v0173.text = "Sending %s to Front Porch for collision review…" % _pending_front_porch_payload_label_v0173
+	var result := await _front_porch_client_v0173.install_card_bytes(
+		_pending_front_porch_bytes_v0173,
 		_pending_front_porch_filename_v0173,
+		_pending_front_porch_content_type_v0173,
 		"ask"
 	)
 	_set_front_porch_busy_v0173(false)
@@ -414,12 +441,13 @@ func _resolve_front_porch_update_v0173() -> void:
 func _send_front_porch_collision_choice_v0173(
 	policy: String, replace_id: String
 ) -> void:
-	if _front_porch_busy_v0173 or _pending_front_porch_json_v0173.is_empty():
+	if _front_porch_busy_v0173 or _pending_front_porch_bytes_v0173.is_empty():
 		return
 	_set_front_porch_busy_v0173(true)
-	var result := await _front_porch_client_v0173.install_json_card(
-		_pending_front_porch_json_v0173,
+	var result := await _front_porch_client_v0173.install_card_bytes(
+		_pending_front_porch_bytes_v0173,
 		_pending_front_porch_filename_v0173,
+		_pending_front_porch_content_type_v0173,
 		policy,
 		replace_id
 	)
@@ -431,6 +459,7 @@ func _handle_front_porch_install_result_v0173(
 	result: Dictionary, requested_policy: String
 ) -> void:
 	if bool(result.get("ok", false)):
+		var payload_label := _pending_front_porch_payload_label_v0173
 		var action := "accepted"
 		if bool(result.get("replaced", false)) or requested_policy == "replace":
 			action = "updated"
@@ -440,12 +469,13 @@ func _handle_front_porch_install_result_v0173(
 		var character_id := str(result.get("character_id", ""))
 		_front_porch_report_v0173.text = (
 			"[color=#8ed6a3]Front Porch %s the character.[/color]\n"
-			+ "Name: %s\nFront Porch character ID: %s\n"
+			+ "Name: %s\nFront Porch character ID: %s\nInstalled: %s\n"
 			+ "Existing conversations were not edited by Character Card Forge."
 		) % [
 			action,
 			_escape_bbcode_v0173(name),
-			_escape_bbcode_v0173(character_id)
+			_escape_bbcode_v0173(character_id),
+			_escape_bbcode_v0173(payload_label)
 		]
 		_status.text = "Front Porch %s %s." % [action, name]
 		_clear_pending_front_porch_collision_v0173()
@@ -498,8 +528,10 @@ func _cancel_front_porch_collision_v0173() -> void:
 
 
 func _clear_pending_front_porch_collision_v0173() -> void:
-	_pending_front_porch_json_v0173 = ""
+	_pending_front_porch_bytes_v0173 = PackedByteArray()
 	_pending_front_porch_filename_v0173 = ""
+	_pending_front_porch_content_type_v0173 = ""
+	_pending_front_porch_payload_label_v0173 = ""
 	if _front_porch_collision_panel_v0173 != null:
 		_front_porch_collision_panel_v0173.visible = false
 	if _front_porch_collision_choice_v0173 != null:

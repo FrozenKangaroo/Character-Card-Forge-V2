@@ -419,16 +419,41 @@ static func write_png_card(
 	project: Dictionary,
 	character_id: String
 ) -> Dictionary:
+	var built := build_png_card_bytes(source_png_path, project, character_id)
+	if not bool(built.get("ok", false)):
+		return built
+	var destination := FileAccess.open(destination_path, FileAccess.WRITE)
+	if destination == null:
+		return {"ok": false, "error": "Could not open the destination PNG for writing."}
+	destination.store_buffer(built.get("bytes", PackedByteArray()))
+	destination.close()
+	return {"ok": true, "path": destination_path}
+
+
+static func build_png_card_bytes(
+	source_image_path: String,
+	project: Dictionary,
+	character_id: String
+) -> Dictionary:
 	var card := export_character_v2(project, character_id)
 	if card.is_empty():
 		return {"ok": false, "error": "The selected character could not be found."}
-	var source := FileAccess.open(source_png_path, FileAccess.READ)
+	var source := FileAccess.open(source_image_path, FileAccess.READ)
 	if source == null:
-		return {"ok": false, "error": "Could not open the source PNG image."}
+		return {"ok": false, "error": "Could not open the source portrait image."}
 	var bytes := source.get_buffer(source.get_length())
 	source.close()
 	if not _has_png_signature(bytes):
-		return {"ok": false, "error": "The source image is not a valid PNG/APNG file."}
+		var source_image := Image.new()
+		var load_error := source_image.load(source_image_path)
+		if load_error != OK or source_image.is_empty():
+			return {
+				"ok": false,
+				"error": "The active portrait could not be converted to a PNG card."
+			}
+		bytes = source_image.save_png_to_buffer()
+		if not _has_png_signature(bytes):
+			return {"ok": false, "error": "The portrait PNG conversion failed."}
 	var output := PackedByteArray()
 	output.append_array(PNG_SIGNATURE)
 	var offset := 8
@@ -454,12 +479,7 @@ static func write_png_card(
 		offset += 12 + length
 	if not inserted:
 		return {"ok": false, "error": "The source PNG does not contain a valid IEND chunk."}
-	var destination := FileAccess.open(destination_path, FileAccess.WRITE)
-	if destination == null:
-		return {"ok": false, "error": "Could not open the destination PNG for writing."}
-	destination.store_buffer(output)
-	destination.close()
-	return {"ok": true, "path": destination_path}
+	return {"ok": true, "bytes": output, "format": "png"}
 
 
 static func suggested_filename(project: Dictionary, character_id: String, extension: String = "json") -> String:
