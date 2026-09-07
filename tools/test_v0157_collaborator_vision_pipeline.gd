@@ -43,7 +43,7 @@ func _active_main_shell_inherits(target_script: String) -> bool:
 		return false
 	var current := scene_match.get_string(1)
 	var visited: Dictionary = {}
-	for _index in range(64):
+	for _index in range(256):
 		if current == target_script:
 			return true
 		if visited.has(current) or not FileAccess.file_exists(current):

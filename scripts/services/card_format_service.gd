@@ -29,6 +29,7 @@ const CANONICAL_FIELD_MAP := {
 	"data.post_history_instructions": "character.post_history_instructions",
 	"data.alternate_greetings": "character.alternate_greetings",
 	"data.character_book": "character.character_book",
+	"data.tts_voice": "character.tts_voice",
 	"data.tags": "metadata.tags",
 	"data.creator": "metadata.creator",
 	"data.character_version": "metadata.character_version",
@@ -82,6 +83,9 @@ static func export_character_v2(project: Dictionary, character_id: String) -> Di
 		"character_version": str(metadata.get("character_version", "")),
 		"extensions": extensions
 	}
+	var tts_voice := str(card_data.get("tts_voice", "")).strip_edges()
+	if not tts_voice.is_empty():
+		data["tts_voice"] = tts_voice
 	var character_book := _dictionary_copy(card_data.get("character_book", {}))
 	if not character_book.is_empty():
 		data["character_book"] = character_book
@@ -194,6 +198,7 @@ static func import_card_to_project(card: Dictionary, source_format: String = "js
 	card_data["alternate_greetings"] = _string_array(data.get("alternate_greetings", []))
 	card_data["character_book"] = _dictionary_copy(data.get("character_book", {}))
 	card_data["card_extensions"] = _dictionary_copy(data.get("extensions", {}))
+	card_data["tts_voice"] = str(data.get("tts_voice", ""))
 	metadata["name"] = str(data.get("name", "Untitled Character"))
 	metadata["tags"] = _string_array(data.get("tags", []))
 	metadata["creator"] = str(data.get("creator", ""))
@@ -303,6 +308,8 @@ static func validate_card(card: Dictionary) -> Dictionary:
 			warnings.append("Required V2 field data.%s is missing; import will supply an empty string." % field_name)
 		elif not data_dict.get(field_name) is String:
 			warnings.append("data.%s is not a string and will be converted to text on import." % field_name)
+	if data_dict.has("tts_voice") and not data_dict.get("tts_voice") is String:
+		warnings.append("data.tts_voice is not a string and will be converted to text on import.")
 	if not data_dict.has("alternate_greetings"):
 		warnings.append("Required V2 field data.alternate_greetings is missing; import will supply an empty list.")
 	elif not data_dict.get("alternate_greetings") is Array:

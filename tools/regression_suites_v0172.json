@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.17.2",
+  "description": "v0.17.1 Collaborator evidence roles plus optional Front Porch 2.5 character-extension authoring and round-trip safety.",
+  "base_manifest": "regression_suites_v0171.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0172_front_porch_extensions",
+        "label": "v0.17.2 Front Porch Character Extensions",
+        "kind": "godot",
+        "path": "tools/test_v0172_front_porch_extensions.gd",
+        "timeout_seconds": 150
+      }
+    ]
+  }
+}

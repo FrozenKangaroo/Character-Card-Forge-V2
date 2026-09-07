@@ -51,7 +51,7 @@ if match is None:
 
 current = match.group(1)
 visited = []
-for _ in range(64):
+for _ in range(256):
     visited.append(current)
     if current == TARGET:
         break
@@ -67,7 +67,7 @@ for _ in range(64):
         )
     current = base.group(1)
 else:
-    raise SystemExit("The active main-shell inheritance chain exceeded 64 layers.")
+    raise SystemExit("The active main-shell inheritance chain exceeded 256 layers.")
 
 if TARGET not in visited:
     raise SystemExit(
