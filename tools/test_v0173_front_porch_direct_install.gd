@@ -1,6 +1,33 @@
 extends SceneTree
 
 
+class CapturingFrontPorchClient:
+	extends CCFFrontPorchInstallServiceV0173
+
+	var captured_path := ""
+	var captured_body := PackedByteArray()
+	var captured_headers := PackedStringArray()
+
+	func is_authenticated() -> bool:
+		return true
+
+	func _perform_raw_request(
+		_method: HTTPClient.Method,
+		path: String,
+		body: PackedByteArray,
+		headers := PackedStringArray()
+	) -> Dictionary:
+		captured_path = path
+		captured_body = body.duplicate()
+		captured_headers = headers.duplicate()
+		return {
+			"network_result": 0,
+			"response_code": 200,
+			"headers": PackedStringArray(),
+			"body": JSON.stringify({"id": "front-png-17", "name": "Mara"})
+		}
+
+
 func _init() -> void:
 	call_deferred("_run")
 
@@ -25,6 +52,9 @@ func _run() -> void:
 		bool(capabilities.get("health_detection", false))
 		and bool(capabilities.get("cookie_session_auth", false))
 		and bool(capabilities.get("character_import", false))
+		and bool(capabilities.get("character_card_png_upload", false))
+		and bool(capabilities.get("portrait_included_when_available", false))
+		and bool(capabilities.get("json_definition_fallback", false))
 		and bool(capabilities.get("collision_ask", false))
 		and bool(capabilities.get("collision_keep_both", false))
 		and bool(capabilities.get("collision_replace", false))
@@ -33,7 +63,7 @@ func _run() -> void:
 		and not bool(capabilities.get("password_persisted", true))
 		and not bool(capabilities.get("totp_persisted", true))
 		and not bool(capabilities.get("raw_database_writes", true)),
-		"Direct install must use the supported API, explicit collision policies, session-only secrets and no SQLite writes."
+		"Direct install must upload portrait-bearing PNG cards, retain a JSON fallback, use explicit collision policies, keep secrets session-only and avoid SQLite writes."
 	):
 		return
 
@@ -205,6 +235,58 @@ func _run() -> void:
 	):
 		return
 
+	var portrait_path := "res://.v0173_front_porch_portrait_test.png"
+	var card_path := "res://.v0173_front_porch_card_test.png"
+	var portrait := Image.create(3, 2, false, Image.FORMAT_RGBA8)
+	portrait.fill(Color(0.18, 0.42, 0.76, 1.0))
+	if not _require(
+		portrait.save_png(portrait_path) == OK,
+		"The PNG upload regression fixture must be writable."
+	):
+		return
+	var png_card := CCFCardFormatService.build_png_card_bytes(
+		portrait_path, project, character_id
+	)
+	if not _require(
+		bool(png_card.get("ok", false))
+		and (png_card.get("bytes", PackedByteArray()) as PackedByteArray).size() > 8,
+		"Direct install must build a binary Character Card PNG from the active portrait."
+	):
+		return
+	var card_file := FileAccess.open(card_path, FileAccess.WRITE)
+	if not _require(card_file != null, "The generated PNG card fixture must be writable."):
+		return
+	card_file.store_buffer(png_card.get("bytes", PackedByteArray()))
+	card_file.close()
+	var embedded := CCFCardFormatService.read_png_card(card_path)
+	if not _require(
+		bool(embedded.get("ok", false))
+		and str(CCFStorageService.get_value_at_path(
+			embedded.get("data", {}), "data.name", ""
+		)) == "Mara",
+		"The uploaded PNG bytes must retain valid embedded Character Card V2 metadata."
+	):
+		return
+	var capture_client := CapturingFrontPorchClient.new()
+	var upload_result := await capture_client.install_card_bytes(
+		png_card.get("bytes", PackedByteArray()),
+		"Mara.png",
+		"image/png",
+		"ask"
+	)
+	if not _require(
+		bool(upload_result.get("ok", false))
+		and capture_client.captured_path.contains("filename=Mara.png")
+		and capture_client.captured_path.contains("collision=ask")
+		and capture_client.captured_body == png_card.get("bytes", PackedByteArray())
+		and capture_client.captured_headers.has("Content-Type: image/png"),
+		"The Front Porch client must send the complete PNG as raw binary bytes with a .png filename and image/png content type."
+	):
+		return
+	capture_client.free()
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(portrait_path))
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(card_path))
+
 	var packed := load("res://scenes/main.tscn") as PackedScene
 	if not _require(packed != null, "The v0.17.3 main scene must load."):
 		return
@@ -230,6 +312,8 @@ func _run() -> void:
 	if not _require(
 		bool(live_capabilities.get("install_tab", false))
 		and bool(live_capabilities.get("collision_controls", false))
+		and bool(live_capabilities.get("character_card_png_upload", false))
+		and bool(live_capabilities.get("portrait_included_when_available", false))
 		and bool(live_capabilities.get("portable_json_fallback", false))
 		and not bool(live_capabilities.get("connected", true))
 		and not bool(live_capabilities.get("raw_database_writes", true)),

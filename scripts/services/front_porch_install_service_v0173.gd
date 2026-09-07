@@ -311,16 +311,34 @@ func install_json_card(
 	collision := "ask",
 	replace_id := ""
 ) -> Dictionary:
-	if not is_authenticated():
-		return {"ok": false, "auth_required": true, "error": "Connect to Front Porch first."}
 	if card_json.strip_edges().is_empty():
 		return {"ok": false, "error": "The character card is empty."}
+	return await install_card_bytes(
+		card_json.to_utf8_buffer(),
+		filename,
+		"application/json; charset=utf-8",
+		collision,
+		replace_id
+	)
+
+
+func install_card_bytes(
+	card_bytes: PackedByteArray,
+	filename: String,
+	content_type: String,
+	collision := "ask",
+	replace_id := ""
+) -> Dictionary:
+	if not is_authenticated():
+		return {"ok": false, "auth_required": true, "error": "Connect to Front Porch first."}
+	if card_bytes.is_empty():
+		return {"ok": false, "error": "The character card is empty."}
 	var headers := _session_headers()
-	headers.append("Content-Type: application/json; charset=utf-8")
-	var raw := await _perform_request(
+	headers.append("Content-Type: %s" % content_type)
+	var raw := await _perform_raw_request(
 		HTTPClient.METHOD_POST,
 		import_path(filename, collision, replace_id),
-		card_json,
+		card_bytes,
 		headers
 	)
 	var result := classify_import_response(raw)
@@ -335,6 +353,9 @@ func capabilities() -> Dictionary:
 		"health_detection": true,
 		"cookie_session_auth": true,
 		"character_import": true,
+		"character_card_png_upload": true,
+		"portrait_included_when_available": true,
+		"json_definition_fallback": true,
 		"collision_ask": true,
 		"collision_keep_both": true,
 		"collision_replace": true,
@@ -365,6 +386,46 @@ func _perform_request(
 	request.use_threads = true
 	add_child(request)
 	var start_error := request.request(_base_url + path, headers, method, body)
+	if start_error != OK:
+		request.queue_free()
+		return {
+			"network_result": -1,
+			"response_code": 0,
+			"headers": PackedStringArray(),
+			"body": "",
+			"error": "Could not start the Front Porch request (%s)." % error_string(start_error)
+		}
+	var completed: Array = await request.request_completed
+	request.queue_free()
+	return {
+		"network_result": int(completed[0]),
+		"response_code": int(completed[1]),
+		"headers": completed[2],
+		"body": (completed[3] as PackedByteArray).get_string_from_utf8()
+	}
+
+
+func _perform_raw_request(
+	method: HTTPClient.Method,
+	path: String,
+	body: PackedByteArray,
+	headers := PackedStringArray()
+) -> Dictionary:
+	if not is_inside_tree():
+		return {
+			"network_result": -1,
+			"response_code": 0,
+			"headers": PackedStringArray(),
+			"body": "",
+			"error": "Front Porch client is not attached to the running app."
+		}
+	var request := HTTPRequest.new()
+	request.timeout = REQUEST_TIMEOUT_SECONDS
+	request.use_threads = true
+	add_child(request)
+	var start_error := request.request_raw(
+		_base_url + path, headers, method, body
+	)
 	if start_error != OK:
 		request.queue_free()
 		return {

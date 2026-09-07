@@ -1,6 +1,6 @@
 # v0.17.3 — Front Porch Direct Install
 
-v0.17.3 adds a user-initiated **Install to Front Porch** workflow to the Import / Export Studio. It sends a normal Character Card V2 JSON document through Front Porch's supported web character-import API. Character Card Forge does not inspect, open, migrate or modify Front Porch's SQLite database.
+v0.17.3 adds a user-initiated **Install to Front Porch** workflow to the Import / Export Studio. When an active portrait is available, it sends a real Character Card V2 PNG containing both the artwork and embedded card metadata through Front Porch's supported web character-import API. A character without a portrait is sent as Character Card V2 JSON. Character Card Forge does not inspect, open, migrate or modify Front Porch's SQLite database.
 
 ## Front Porch setup
 
@@ -22,9 +22,11 @@ CCF does not infer compatibility from a running process, a folder on disk or a c
 
 ## Character installation
 
-CCF exports the active character in memory as a validated Character Card V2 JSON document, including optional `data.extensions.front_porch`, stable identity and `data.tts_voice`. It uploads the JSON bytes to:
+CCF first exports the active character in memory as a validated Character Card V2 document, including optional `data.extensions.front_porch`, stable identity and `data.tts_voice`. If the character has an active portrait, CCF converts it to PNG when necessary, embeds the V2 document in its `chara` metadata chunk and uploads the binary PNG bytes to:
 
-`POST /api/characters/import?filename=<card.json>&collision=ask`
+`POST /api/characters/import?filename=<card.png>&collision=ask`
+
+This gives Front Porch both the authored definition and the portrait it needs for the library card. If no portrait is assigned, CCF deliberately falls back to definition-only JSON using `filename=<card.json>` and says so in the result report.
 
 Front Porch remains responsible for parsing the card, matching stable identity and committing its own library changes.
 
@@ -58,7 +60,7 @@ The fallback is an exported interchange file, not proof that Front Porch install
 - No background install or synchronisation runs when a project is opened or saved.
 - CCF never reads or writes Front Porch database files.
 - CCF does not create the Front Porch web account or store its password.
-- CCF preserves the v0.17.2 optional-field and unknown-extension round-trip rules.
+- CCF preserves the v0.17.2 optional-field and unknown-extension round-trip rules in both JSON and embedded PNG metadata.
 - Existing Front Porch chats, Needs progression and evolving conversation state remain under Front Porch ownership.
 
 ## Audited Front Porch contract
