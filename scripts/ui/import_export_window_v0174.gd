@@ -228,8 +228,8 @@ func _preview_group_import_v0174(path: String) -> void:
 		_pending_group_payload_v0174.clear()
 		_pending_group_source_v0174 = ""
 		_group_import_button_v0174.disabled = true
-		var report: Dictionary = loaded.get("report", {})
-		var messages: Array = report.get("errors", [])
+		var failure_report: Dictionary = loaded.get("report", {})
+		var messages: Array = failure_report.get("errors", [])
 		_group_import_summary_v0174.text = "[color=#ff9b9b]%s[/color]" % (
 			"\n".join(PackedStringArray(messages)) if not messages.is_empty()
 			else str(loaded.get("error", "Could not read this group card."))
@@ -238,15 +238,15 @@ func _preview_group_import_v0174(path: String) -> void:
 	_pending_group_payload_v0174 = loaded.get("payload", {}).duplicate(true)
 	_pending_group_source_v0174 = path
 	_group_import_button_v0174.disabled = false
-	var report: Dictionary = loaded.get("report", {})
+	var import_report: Dictionary = loaded.get("report", {})
 	var lines: Array[String] = [
 		"[font_size=20]%s[/font_size]" % str(_pending_group_payload_v0174.get("name", "Untitled Group")),
 		"Front Porch group card %s • %d members" % [
 			str(_pending_group_payload_v0174.get("spec_version", "?")),
-			int(report.get("member_count", 0))
+			int(import_report.get("member_count", 0))
 		]
 	]
-	for warning in report.get("warnings", []):
+	for warning in import_report.get("warnings", []):
 		lines.append("[color=#e6c57a]• %s[/color]" % str(warning))
 	_group_import_summary_v0174.text = "\n".join(lines)
 	_status.text = "Front Porch group card loaded for import preview."

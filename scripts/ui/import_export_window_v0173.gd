@@ -431,12 +431,12 @@ func _refresh_front_porch_artwork_options_v0173() -> void:
 				)
 				if resolved_path.is_empty() or resolved_path == active_portrait:
 					continue
-				var duplicate := false
+				var already_listed := false
 				for existing in options:
 					if str(existing.get("path", "")) == resolved_path:
-						duplicate = true
+						already_listed = true
 						break
-				if duplicate:
+				if already_listed:
 					continue
 				var created_at := str(record.get("created_at", "")).strip_edges()
 				var detail := " — %s" % created_at if not created_at.is_empty() else ""
