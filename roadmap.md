@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.17.4 — Front Porch Multi-Character Group Cards**
+**v0.17.5 — Front Porch Expressions & Avatar Galleries**
 
 v0.17.3 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -71,11 +71,22 @@ v0.17.3 adds an authenticated, user-initiated **Install to Front Porch** workflo
 
 v0.17.3-hotfix1 adds native OpenRouter Images routing and image-only model discovery. OpenRouter profiles use `/api/v1/images` and `/api/v1/images/models`; unrelated OpenAI-compatible providers retain `/images/generations`. Failed Image Studio requests expose a credential-safe route/transport summary.
 
-v0.17.4 makes Front Porch's custom multi-character card format the next implementation goal. One portable group card will be able to contain multiple complete characters plus group-level opening, turn-order, Director, realism, objective and lore/world settings without merging those characters into one ordinary Character Card definition.
+v0.17.4 adds Front Porch's custom multi-character card format. One portable group PNG can contain multiple complete characters plus group-level opening, turn-order, Director, realism, objective and lore/world settings without merging those characters into one ordinary Character Card definition. Card Workflow Studio provides manual fields and review-first AI writing assistance; Import / Export validates, builds a collage, preserves complete member card PNGs and remaps stable IDs on non-destructive import.
 
-The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. Development now targets v0.17.4 without changing published release metadata until the next release transaction.
+The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.17.4 source candidate is complete; development next targets v0.17.5 without changing published release metadata until a release transaction.
 
 ## Completed
+
+### v0.17.4 — Front Porch Multi-Character Group Cards
+
+- Added exact `front_porch_group_card` 1.0 import/export through portable PNG `fpa_group` metadata.
+- Added optional Front Porch group fields to Group-card plans, including turn order, auto-advance, Director, prompts, lore/world references, chaos, objectives, inheritance and baseline/per-member realism.
+- Added editable manual authoring plus review-first AI drafting for group prompts, lorebook and objectives, with deterministic neutral realism restoration.
+- Embedded every complete flattened character definition and full avatar PNG with Character Card V2 `chara` metadata; text-only members receive portable placeholders.
+- Added automatic group-cover collage generation, validation preview and duplicate stable-ID rejection.
+- Added non-destructive import into a new multi-character CCF project with fresh UUIDs, complete member-keyed setting remapping, managed portrait recovery and unknown future field preservation.
+- Kept direct group installation disabled until a verified supported API exists; no Front Porch database writes or live-conversation mutation were introduced.
+- Added focused regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0174-front-porch-group-cards.md`.
 
 ### v0.17.3-hotfix1 — OpenRouter Images Routing
 
@@ -273,16 +284,11 @@ The versioned Front Porch 2.5 character extension editor, selective manual/AI wo
 
 #### v0.17.3 — completed
 
-Authenticated supported-API connection, capability detection, user-initiated Character Card V2 installation, Front Porch-owned stable identity, explicit name-collision choices, exact result reporting and portable JSON fallback are implemented and recorded under **Completed** above. Multi-character group cards are now the immediate v0.17.4 goal; expression/avatar gallery interchange follows in v0.17.5.
+Authenticated supported-API connection, capability detection, user-initiated Character Card V2 installation, Front Porch-owned stable identity, explicit name-collision choices, exact result reporting and portable JSON fallback are implemented and recorded under **Completed** above.
 
-#### v0.17.4 — Front Porch Multi-Character Group Cards — next
+#### v0.17.4 — completed
 
-- Add import, authoring, validation and export for Front Porch's custom multi-character `fpa_group` PNG metadata using the current `front_porch_group_card` 1.0 contract.
-- Let one group card contain multiple complete character definitions while preserving each member's raw card data, avatar, stable identity and remapping provenance.
-- Preserve turn order/auto-advance, Director settings, scenario, first message, system prompt, per-character prompts and group lorebook/world references.
-- Support group chaos, objectives, inheritance settings and default/per-member realism settings without forcing group-only values onto the source character projects.
-- Integrate group composition with Card Workflows, Relationships and future ensemble Collaborator tools rather than creating a disconnected second character library.
-- Keep group packages portable and make import/export non-destructive. Direct installation may be added only through a verified supported Front Porch API; no database writes or live-conversation mutation.
+Portable `fpa_group` authoring, validation, embedded-member PNG export, non-destructive multi-character import, stable-ID remapping, unknown-field preservation and the no-database-write boundary are implemented and recorded under **Completed** above.
 
 #### v0.17.5 — Front Porch Expressions & Avatar Galleries
 

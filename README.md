@@ -1,14 +1,14 @@
 # Character Card Forge — Godot Rewrite
 
-Character Card Forge is being rebuilt from scratch as a native Godot 4.6 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
+Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.13 Generation Parity Core
+## Current development candidate: v0.17.4 Front Porch Group Cards
 
-The v0.12 source milestone has been merged into `main`, including local Stable Diffusion Forge / Automatic1111 image generation and the first V1-inspired character-generation prompt/template corrections.
+v0.17.4 adds portable Front Porch multi-character `fpa_group` PNG authoring, validation, import and export on top of the v0.17.3-hotfix1 OpenRouter Images correction.
 
-Release/application metadata intentionally remains at v0.11.0 until a coordinated release promotion is performed. A merged source milestone is not automatically treated as a published release.
+The current public release baseline remains v0.17.3 until a coordinated release promotion is performed. A source milestone is not automatically treated as a published release.
 
-v0.13 begins moving Generation Parity from prompt wording into the engine.
+See `docs/v0174-front-porch-group-cards.md` for the group format, editing workflow, stable-ID remapping and no-database-write boundary.
 
 ### Semantic character-generation validation and repair
 
@@ -114,6 +114,7 @@ See `docs/vision_attachments.md` for details.
 - Group Scene Generator.
 - Structured directional Relationship Matrix with AI drafting.
 - Card Workflow Studio for multi-character single-card, split-card, and group-card plans.
+- Front Porch 1.0 multi-character group-card authoring with manual or review-first AI writing fields.
 
 ### Import/export
 
@@ -122,6 +123,7 @@ See `docs/vision_attachments.md` for details.
 - PNG/APNG `chara` metadata reading.
 - V2 PNG export using existing artwork.
 - Split-workflow batch JSON export.
+- Portable Front Porch `fpa_group` PNG import/export with embedded member artwork and fresh-ID remapping.
 - Portable `.ccfproject` renamed-ZIP packages with assets, templates, and assigned series.
 
 ### Character Library 2.0
