@@ -4,7 +4,13 @@ Character Card Forge v0.7 introduces a dedicated interoperability layer. Externa
 
 ## Import / Export Studio
 
-Open **Import / Export** from the Character Workspace. The studio is a detachable native window and has four tabs.
+Open **Import / Export** from the Character Workspace. The studio is a detachable native window with separate tabs for ordinary cards, portable projects, batch workflows and optional Front Porch interoperability.
+
+## Front Porch avatar galleries
+
+v0.17.5 adds an **Avatar Gallery** tab for alternate looks and labelled expressions. It can link existing portrait/Image Studio assets, import manual images, import/export Front Porch-compatible expression ZIPs, choose a canonical favourite independently from the CCF portrait and install selected or complete galleries through Front Porch's authenticated supported API. None of these actions silently changes ordinary Character Card artwork.
+
+See `v0175-front-porch-avatar-galleries.md` for the complete role, provenance, filename and safety contracts.
 
 ## Export Card
 

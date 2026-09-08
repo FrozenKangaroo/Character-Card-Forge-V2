@@ -2,13 +2,13 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.17.4 Front Porch Group Cards
+## Current development candidate: v0.17.5 Front Porch Avatar Galleries
 
-v0.17.4 adds portable Front Porch multi-character `fpa_group` PNG authoring, validation, import and export on top of the v0.17.3-hotfix1 OpenRouter Images correction.
+v0.17.5 adds Front Porch alternate looks and labelled expressions from Image Studio results or manual images, independent canonical favourites and portrait assignment, Front Porch-compatible expression ZIPs, and authenticated installation through Front Porch 1.3.2+'s supported avatar/look API. It retains v0.17.4 portable multi-character group cards and the v0.17.3-hotfix1 OpenRouter Images correction.
 
 The current public release baseline remains v0.17.3 until a coordinated release promotion is performed. A source milestone is not automatically treated as a published release.
 
-See `docs/v0174-front-porch-group-cards.md` for the group format, editing workflow, stable-ID remapping and no-database-write boundary.
+See `docs/v0175-front-porch-avatar-galleries.md` for gallery authoring, exact expression labels, portable packs, supported API installation and the no-database-write boundary.
 
 ### Semantic character-generation validation and repair
 
@@ -124,6 +124,7 @@ See `docs/vision_attachments.md` for details.
 - V2 PNG export using existing artwork.
 - Split-workflow batch JSON export.
 - Portable Front Porch `fpa_group` PNG import/export with embedded member artwork and fresh-ID remapping.
+- Front Porch expression/alternate-look galleries from Image Studio or manual images, with portable ZIP and supported API installation.
 - Portable `.ccfproject` renamed-ZIP packages with assets, templates, and assigned series.
 
 ### Character Library 2.0
@@ -159,7 +160,7 @@ Template format 2 remains active in the current v0.13 slice. Rich generation com
 
 ## Running
 
-Open the project in Godot 4.6.x and run it.
+Open the project in Godot 4.7.x and run it.
 
 No Python runtime, web server, PyWebView, Node.js, or browser frontend is required by the application.
 
@@ -216,7 +217,7 @@ The release path can synchronise version metadata, validate, commit/push, create
 
 A pushed `vX.Y.Z` tag triggers GitHub Actions to:
 
-- install Godot 4.6.3 and matching export templates;
+- install Godot 4.7.1 and matching export templates;
 - validate release metadata and bundled JSON;
 - import and parse the Godot project headlessly;
 - export Windows x86-64, Linux x86-64, and unsigned macOS Universal builds;

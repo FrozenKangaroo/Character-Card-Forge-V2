@@ -212,13 +212,19 @@ Older v1 dictionary records and string-only path entries remain displayable. Ass
 
 Generated images live in the existing character project tree, so `.ccfproject` packaging includes them automatically alongside other assets. Character Card PNG export can continue using `assets.portrait` as selected card artwork.
 
+## Front Porch gallery handoff
+
+v0.17.5 adds two explicit actions to a selected Image Studio result: **Add as Front Porch Look** and **Add as Expression…**. They create a versioned gallery association retaining the source image ID and credential-safe generation provenance. They do not change the portrait, embed card metadata, call Front Porch or spend provider tokens. The complete gallery, portable expression ZIP and authenticated Front Porch installation workflow live in Import / Export's **Avatar Gallery** tab.
+
+See `v0175-front-porch-avatar-galleries.md` for expression labels, portability and direct-install boundaries.
+
 ## Current limitations and next expansion
 
 Still planned after the v0.12 local text-to-image path:
 
 - image-to-image/reference-image generation;
-- emotion-image generation and regeneration using `emotion_images/`;
-- per-emotion prompt editing;
+- dedicated batch emotion generation/regeneration beyond the v0.17.5 Image Studio-result labelling workflow;
+- per-emotion prompt templates beyond ordinary Image Studio prompts;
 - reusable prompt/style presets;
 - richer gallery cleanup and intentional file deletion;
 - provider-specific quality/aspect controls;

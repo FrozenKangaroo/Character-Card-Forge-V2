@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.17.5 — Front Porch Expressions & Avatar Galleries**
+**v0.18.0 — Front Porch Worlds and The Stoop Preparation**
 
 v0.17.3 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -73,9 +73,21 @@ v0.17.3-hotfix1 adds native OpenRouter Images routing and image-only model disco
 
 v0.17.4 adds Front Porch's custom multi-character card format. One portable group PNG can contain multiple complete characters plus group-level opening, turn-order, Director, realism, objective and lore/world settings without merging those characters into one ordinary Character Card definition. Card Workflow Studio provides manual fields and review-first AI writing assistance; Import / Export validates, builds a collage, preserves complete member card PNGs and remaps stable IDs on non-destructive import.
 
-The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.17.4 source candidate is complete; development next targets v0.17.5 without changing published release metadata until a release transaction.
+v0.17.5 connects the existing Image Studio result gallery and manual image import to a versioned Front Porch avatar-gallery model. Authors can assign multiple alternate looks or exact expression labels, choose a canonical favourite independently from the CCF portrait, exchange Front Porch-compatible expression ZIPs and explicitly install a selected image or complete gallery through Front Porch 1.3.2+'s supported authenticated API.
+
+The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.17.5 source candidate is complete; development next targets v0.18.0 without changing published release metadata until a release transaction.
 
 ## Completed
+
+### v0.17.5 — Front Porch Expressions & Avatar Galleries
+
+- Added a versioned per-character avatar-gallery model for multiple alternate looks, exact Front Porch expression labels, one canonical favourite and image provenance.
+- Added Image Studio **Add as Front Porch Look** and **Add as Expression…** actions plus manual PNG/JPEG/WebP import in Import / Export.
+- Added Front Porch/SillyTavern-compatible expression ZIP import/export with exact label/separator matching, nested-folder support, managed PNG conversion, a versioned CCF manifest and the 30-expression cap.
+- Kept gallery association, canonical favourite, CCF portrait assignment, Character Card artwork embedding and Front Porch installation as separate explicit actions.
+- Added authenticated character selection and selected/complete-gallery installation through Front Porch 1.3.2+'s supported avatar, look and favourite endpoints.
+- Preserved the session-only credential boundary, no background sync, no live-conversation mutation and no direct Front Porch database writes.
+- Added focused regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0175-front-porch-avatar-galleries.md`.
 
 ### v0.17.4 — Front Porch Multi-Character Group Cards
 
@@ -290,12 +302,9 @@ Authenticated supported-API connection, capability detection, user-initiated Cha
 
 Portable `fpa_group` authoring, validation, embedded-member PNG export, non-destructive multi-character import, stable-ID remapping, unknown-field preservation and the no-database-write boundary are implemented and recorded under **Completed** above.
 
-#### v0.17.5 — Front Porch Expressions & Avatar Galleries
+#### v0.17.5 — completed
 
-- Add Front Porch expression/looks authoring and import/export around the existing Image Studio and Gallery workflows.
-- Support expression labels, multiple looks, canonical/favourite avatar selection and clear character-to-image provenance.
-- Keep portrait assignment, card embedding and Front Porch expression-pack installation as separate explicit actions.
-- Provide a portable expression-pack export when direct installation is unavailable.
+Image Studio/manual gallery sources, exact expression labels, multiple looks, independent canonical favourite and portrait actions, portable sprite ZIPs, authenticated supported-API installation and provenance are implemented and recorded under **Completed** above.
 
 #### v0.18.0 — Front Porch Worlds and The Stoop Preparation
 
@@ -304,22 +313,111 @@ Portable `fpa_group` authoring, validation, embedded-member PNG export, non-dest
 - Keep portable packages as the baseline; add direct publishing only when Front Porch exposes a documented, authenticated publishing contract.
 - Require an explicit review before packaging or publishing material that may contain private project context or adult content.
 
-#### v0.18.1 — Front Porch Chat Exchange
+### Accepted idea backlog — dependency ordered
 
-- Add explicit `.fpchat` and compatible SillyTavern JSON/JSONL import/export workflows with validation and provenance.
-- Keep chat history and evolving simulation state separate from ordinary character authoring data.
-- Make all chat transfer user-initiated, previewable and recoverable; never manipulate Front Porch's live database to perform an exchange.
+The ideas in the living **Character Card Forge Ideas** document are grouped here by implementation dependency rather than their source numbering. Existing capabilities are extended instead of rebuilt, and speculative integrations remain behind verified API/capability checks.
 
-### Other accepted v0.17.x+ work
+#### v0.18.1 — Revision Safety, Diff and Recovery
 
-#### Character Revision History & Diff — accepted later milestone
+- Save immutable, timestamped character revisions at meaningful actions: explicit checkpoints, accepted AI changes, imports, migrations, merges and restores rather than every keystroke.
+- Add milestone labels/notes, creation provenance and a field-aware side-by-side diff for core fields, greetings, lorebooks, metadata, custom/vendor extensions and other versioned content.
+- Allow preview, restore, fork and export of an earlier revision. A restore creates a new current revision so later history is never silently destroyed.
+- Add selective field merge between revisions or related cards, using the same comparison/apply boundary rather than a second rewriting system.
+- Create recoverable backup snapshots before migrations, bulk edits, format upgrades and large imports; expose retention/pruning and portable-project inclusion controls.
+- Use revision checkpoints as the durable cross-session recovery model. Normal editor undo remains short-lived and is not presented as a substitute for saved history.
+- Preserve derivation/source lineage for variations, scenario copies, imports, side-character promotions and descendants without exporting private provenance by default.
+- Keep large assets content-addressed or referenced where practical instead of copying identical binaries into every revision.
 
-- Save immutable, timestamped character revisions at meaningful author actions such as explicit checkpoints, accepted AI changes, imports and restores rather than recording every keystroke.
-- Provide a revision timeline with optional notes and provenance describing how each revision was created.
-- Compare any two revisions with a field-aware diff covering core fields, alternative greetings, lorebook data, Front Porch extensions and other versioned character content.
-- Let authors preview, restore, fork or export an earlier revision. Restoring creates a new current revision so newer history is never silently destroyed.
-- Keep large image assets content-addressed/referenced where practical instead of duplicating the same binary into every revision.
-- Make history retention, pruning and portable-project inclusion explicit so storage use and private drafting history remain under author control.
+#### v0.18.2 — Card Health, Token and Interchange Inspection
+
+- Add a deterministic **Character Health Checker** for missing/malformed fields, duplicated material, unsupported metadata, broken references and suspiciously oversized sections. Findings warn by default and do not block unusual intentional cards.
+- Add token-budget analysis for the whole card and each contributing section, including lorebooks, examples, scenarios, greetings and system text.
+- Add a compiled-prompt preview that clearly identifies which parts are CCF approximations and which depend on a target frontend/runtime.
+- Add a technical metadata inspector plus a separate expert Raw JSON mode. Raw edits require schema/format validation and an explicit reviewed apply step.
+- Expand import preview with portrait, detected format/version, token size, validation, duplicate evidence and loss/preservation mapping before Replace, Merge, Import as Copy or Cancel.
+- Add a format-migration assistant that explains preserved, transformed, namespaced and potentially lossy fields before conversion.
+- Add a Missing Asset Finder with relink/repair actions for portraits, generated images, attachments and group members.
+- Add a customisable character quality checklist covering authored fields, portrait, lore, token budget, review and optional test status.
+
+#### v0.18.3 — AI Review, Rating and Selective Improvement
+
+- Add AI consistency review for contradictions across identity, appearance, personality, scenario, greetings and lore, built on the deterministic health report rather than replacing it.
+- Offer an optional **AI Review Score** with a visible, versioned rubric for consistency, clarity, depth, scenario/greeting/lore quality, prompt efficiency and roleplay readiness. Never present it as objective quality.
+- Store the reviewed content hash, model/profile, rubric version, timestamp, findings and score; mark the result stale after relevant card changes instead of rerunning on library open.
+- Present every proposed improvement field-by-field with old/new comparison and **Approve**, **Reject** or **Edit Before Applying**. Approve All is allowed only after the complete change set is visible.
+- Keep review history, including intentionally dismissed findings, so repeated reviews can distinguish accepted design choices from unresolved issues.
+- Create a revision checkpoint for every accepted review batch and allow a later re-review without silently applying model output.
+
+#### v0.18.4 — Library Workflow, Duplicate and Batch Tools
+
+- Add private non-exported character notes and explicit workflow states such as Draft, Needs Review, Testing, Stable, Published and Archived.
+- Add Archive mode that removes superseded/rare cards from the default library without deleting them; archived cards remain searchable and recoverable.
+- Extend the existing search/index and favourites foundations with saved searches, rule-based Smart Collections, workflow/review/install/token filters and opt-in library statistics.
+- Add a Recently Used view backed by bounded activity metadata for opens, edits, exports, reviews and installs; keep it distinct from simple updated-time sorting.
+- Add exact duplicate detection first (stable IDs, content/image hashes), then explainable probable matches using normalized metadata/text similarity. Merge, replace, ignore and keep-both always require an explicit choice.
+- Add a reusable multi-selection/batch action layer for validation, tagging, collections, moving, export and safe format conversion. Integration installs remain capability-gated and report per-item outcomes.
+- Add a character-card context menu and selected-item quick actions for Open, Export, Review, Front Porch Install/Update, Duplicate/Variation, Collection, Rename, Show Location, Archive and Delete.
+- Allow direct export from the library by reusing Import / Export services; later **Export Selected** uses the same batch layer rather than a separate implementation.
+- Surface bounded informational notices such as stale reviews, local changes to installed cards, missing assets or import warnings without turning the library into an intrusive notification feed.
+
+#### v0.18.5 — Front Porch Connection, Sync and Deployment Reliability
+
+- Add a non-technical connection diagnostics panel for reachability, authentication/session state, reported version, portrait access and supported endpoints, with copyable credential-safe results.
+- Expand behavior-based capability detection so Front Porch actions are enabled only when the connected version proves the required supported contract.
+- Add authenticated portrait fetching and bounded local caching; keep original card assets distinct from disposable thumbnails.
+- Track explicit install identity and last exchanged content fingerprints to show Not Installed, Installed, Modified Locally, Changed in Front Porch or Diverged states without background database access.
+- Offer Compare, Install, Update, Reinstall or Import Front Porch Changes only after previewing the relevant differences. Never overwrite locally customised cards automatically.
+- Add a sequential install/update queue and a persistent deployment report with succeeded, failed, skipped and warning outcomes. Reuse the existing AI Jobs presentation patterns where practical without mixing AI requests and deployments.
+- Add group-card direct installation only if a verified supported group endpoint exists; never send `fpa_group` packages through a plain-character bulk route.
+- Add opt-in update checks only for imported sources that provide a stable public ID or URL. Remote changes are advisory until explicitly imported or merged.
+
+#### v0.19.0 — Rich Scenario, Greeting, World and Ensemble Authoring
+
+- Add versioned Scenario Presets/alternate setups that reference one character without requiring duplicated full cards; define export materialisation rules for targets that support only one scenario.
+- Expand Alternative Greetings into a manager with categories, tags, weights, randomisation, favourites, Front Porch opening seeds and preview/test entry points.
+- Add a coordinated Multi-Character Workspace for casts, families, teams and group cards using the existing project characters, Relationships and Card Workflows as the source of truth.
+- Add a Shared World Manager on top of the v0.18.0 `.fpworld` foundation so characters/groups reference common world data instead of silently duplicating it.
+- Add dependency inspection for characters, worlds, lorebooks, groups, images and collections, including warnings before deleting referenced content.
+- Add optional lorebook/world graph views after the underlying references are explicit; the graph is a view/editor of real data, not a separate canonical store.
+- Extend lineage views for variants, alternate timelines, family trees and derived characters using v0.18.1 provenance.
+- Add private custom metadata fields with explicit export-profile mappings; unknown user fields remain CCF-private unless the author maps them.
+
+#### v0.19.1 — Export Profiles and Integration Adapters
+
+- Add versioned export profiles for Character Card V2, Front Porch, SillyTavern and future targets, including explicit include/omit/rename/transform rules and a before-export preview.
+- Extract a shared internal adapter contract for detection, import, export, validation, capability reporting, install/update and preservation notes.
+- Migrate existing Front Porch and standard Character Card behavior behind the internal contract without breaking file formats or duplicating UI/business logic.
+- Preserve unknown fields and produce visible loss/preservation reports when a target cannot express a source feature.
+- Keep third-party executable plugins and a public extension SDK deferred until the internal adapter boundary is stable, permission-aware and testable.
+
+#### v0.19.2 — Test Chat and Explicit Chat Exchange
+
+- First verify whether Front Porch's supported web/API mode exposes the required create-chat, character selection, send, stream, history and model/preset contracts; do not infer chat support from server reachability.
+- Add Local Test Profiles that store model/runtime test settings separately from card data so behavior can be compared without mutating the character.
+- If the verified contract is sufficient, add a lightweight CCF test-chat client using Front Porch as the runtime backend rather than recreating its simulation engine.
+- Add explicit `.fpchat` and compatible SillyTavern JSON/JSONL import/export with validation, provenance and separation between authored card data, chat history and evolving simulation state.
+- Make chat creation, transfer and deletion user-initiated, previewable and recoverable; never manipulate Front Porch's live database.
+- Extend to multi-character/group scenario testing only after single-character lifecycle, streaming/cancellation and privacy boundaries are reliable.
+
+#### v0.20.0 — Very-Large and Portable Library Architecture
+
+- Virtualise library tiles/rows so only visible and nearby characters/thumbnails are instantiated for libraries containing hundreds or thousands of entries.
+- Formalise the thumbnail cache with separate optimized derivatives, size/age limits, rebuild and safe cleanup while preserving original artwork.
+- Add an optional portable/network-library location for NAS/shared-folder use while keeping disposable indexes/thumbnails local.
+- Define locking, atomic writes, conflict detection, unavailable-share behavior and single-writer expectations before claiming multi-computer safety.
+- Keep collaborative multi-user editing and automatic cloud sync outside this milestone; a shared filesystem is not treated as a conflict-resolution system.
+
+#### v0.20.1 — Discoverability and Power-User Workflow Pass
+
+- Add a **New Project** creation-method chooser for Manual, Idea Generator, Character Collaborator, Idea Notebook, Import, Template and other supported paths, with concise explanations and direct expert shortcuts.
+- Add keyboard-first actions for save, search, review, field navigation, compare, export/install and lorebook tools with discoverable shortcut labels.
+- Add workspace-layout presets for Editing, Review, Lorebook, Front Porch Deployment and Group Card work, respecting detachable-window and multi-monitor behavior.
+- Run a dedicated new-user discoverability pass over navigation, labels, tooltips, grouping and common-action entry points; prefer incremental improvements over a disruptive redesign.
+- Add an optional first-run/Getting Started guide that can be skipped and reopened, without slowing experienced users.
+
+### Existing capabilities and cross-cutting accepted work
+
+The current Relationship Matrix, group-card builder/import/export, Interview/Q&A and Character Builder, full-text library search and favourites already cover the core of several source-document ideas. Future milestones extend those implementations rather than adding competing systems.
 
 - Add denser/multi-selection source controls for family/cast/ensemble Collaborator sessions if runtime use confirms need.
 - Extract the v0.15.38 character-search/index behaviour into a reusable Character Picker for Collaborator, relationship tools, Image Studio and other large-library workflows.
@@ -398,6 +496,10 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Let Image Studio presets/Generation Profiles become portable authoring assets where doing so does not expose credentials/machine-specific paths.
 - Consider richer automatic ComfyUI workflow inspection after explicit mapping is stable.
 - Consider durable server-owned background jobs for future remote/mobile workflows while keeping generation logic shared and credentials server-side.
+- Consider a secure self-hosted/headless server mode only after core editing, library, revision, review and integration contracts are mature. The Godot desktop application remains the primary client.
+- If server mode proceeds, target the existing information-dense desktop browser workflow first; tablet refinement can follow, while a dedicated phone UI remains lower priority.
+- Require authenticated secure sessions, explicit remote-access enablement, HTTPS/reverse-proxy support, scoped filesystem/provider permissions, audit-friendly operations and safe shutdown/recovery before remote access is considered supported.
+- Let a future browser client access the same library, Idea Notebook and creation tools through documented service boundaries rather than directly reading project files.
 
 ## Deferred / Experimental Ideas
 
@@ -408,3 +510,6 @@ Character Card Forge is an authoring application rather than a level-based game.
 - More elaborate graph-layout automation beyond the current draggable anchor system.
 - Advanced context compression beyond explicit user-triggered summarisation.
 - Fully automatic arbitrary-ComfyUI-workflow interpretation remains experimental; explicit Generation Profile mapping comes first.
+- Collaborative multi-user libraries and automatic cloud/self-hosted sync remain experimental until revision identity, locking, merge/conflict handling and privacy controls exist.
+- A public third-party extension SDK remains deferred until the internal v0.19.1 adapter contract is stable and a permission/sandbox/update model has been designed.
+- Full phone-optimised remote editing remains deferred; dense card, lorebook, review and multi-window workflows make desktop-first browser access the more realistic initial target.
