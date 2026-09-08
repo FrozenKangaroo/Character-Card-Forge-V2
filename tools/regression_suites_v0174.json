@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.17.4",
+  "description": "v0.17.3-hotfix1 plus portable Front Porch multi-character group-card authoring, import, export and stable-ID remapping.",
+  "base_manifest": "regression_suites_v0173_hotfix1.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0174_front_porch_group_cards",
+        "label": "v0.17.4 Front Porch group cards",
+        "kind": "godot",
+        "path": "tools/test_v0174_front_porch_group_cards.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}

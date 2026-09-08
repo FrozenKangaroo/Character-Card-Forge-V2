@@ -367,6 +367,9 @@ static func duplicate_project(project_id: String) -> Dictionary:
 				member["character_id"] = str(old_to_new_ids[old_member_id])
 			members.append(member)
 		workflow["members"] = members
+		workflow = _remap_front_porch_group_workflow_v0174(
+			workflow, old_to_new_ids
+		)
 		duplicated_workflows.append(workflow)
 	copy["card_workflows"] = duplicated_workflows
 	var workspace: Dictionary = copy.get("workspace", {}).duplicate(true)
@@ -954,6 +957,58 @@ static func _normalise_card_workflows(project: Dictionary, raw_workflows: Varian
 		workflow["members"] = members
 		result.append(workflow)
 	return result
+
+
+static func _remap_front_porch_group_workflow_v0174(
+	workflow: Dictionary, old_to_new_ids: Dictionary
+) -> Dictionary:
+	var options_value = workflow.get("front_porch_group", {})
+	if not options_value is Dictionary:
+		return workflow
+	var options: Dictionary = options_value.duplicate(true)
+	for field_name in ["character_system_prompts", "member_objectives"]:
+		var keyed_value = options.get(field_name, {})
+		if keyed_value is Dictionary:
+			options[field_name] = _remap_front_porch_group_value_v0174(
+				keyed_value, old_to_new_ids
+			)
+	for field_name in ["baseline_realism_state", "default_member_realism_state"]:
+		var encoded := str(options.get(field_name, "")).strip_edges()
+		var parsed = JSON.parse_string(encoded)
+		if parsed is Dictionary:
+			options[field_name] = JSON.stringify(
+				_remap_front_porch_group_value_v0174(parsed, old_to_new_ids)
+			)
+	if options.get("extensions", {}) is Dictionary:
+		options["extensions"] = _remap_front_porch_group_value_v0174(
+			options.get("extensions", {}), old_to_new_ids
+		)
+	workflow["front_porch_group"] = options
+	return workflow
+
+
+static func _remap_front_porch_group_value_v0174(
+	value: Variant, old_to_new_ids: Dictionary
+) -> Variant:
+	if value is Dictionary:
+		var remapped: Dictionary = {}
+		for raw_key in value:
+			var source_key := str(raw_key)
+			var target_key := str(old_to_new_ids.get(source_key, source_key))
+			remapped[target_key] = _remap_front_porch_group_value_v0174(
+				value[raw_key], old_to_new_ids
+			)
+		return remapped
+	if value is Array:
+		var remapped_array: Array = []
+		for item in value:
+			remapped_array.append(
+				_remap_front_porch_group_value_v0174(item, old_to_new_ids)
+			)
+		return remapped_array
+	if value is String:
+		return str(old_to_new_ids.get(value, value))
+	return value
 
 
 static func _sync_all_character_names(project: Dictionary) -> void:

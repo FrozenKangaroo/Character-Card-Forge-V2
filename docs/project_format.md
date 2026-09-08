@@ -120,9 +120,12 @@ shared_scenario
 opening_message
 notes
 members[]
+front_porch_group{}
 ```
 
 Member entries reference stable character UUIDs and contain output-specific directions rather than copies of the source character. Current modes are `multi_single`, `split_batch`, and `group_card`.
+
+For a v0.17.4 `group_card` workflow, `front_porch_group` may contain optional Front Porch 1.0 group settings. Its per-character prompt/objective maps and encoded realism objects are keyed by the workflow's CCF character UUIDs. Project duplication remaps these keys together with normal workflow member references. Imported unknown fields are retained under `preserved_fields`; imported raw member fields are retained in each character's `interoperability.front_porch_group_raw_member` record without duplicating its large avatar payload.
 
 See `card_workflows.md` for details.
 

@@ -16,7 +16,7 @@ Plans a coordinated set of separate character cards generated from one shared pr
 
 ### Group-card plan
 
-Plans an output centred on the collective group, shared premise, and interaction structure while retaining per-character identity.
+Plans an output centred on the collective group, shared premise, and interaction structure while retaining per-character identity. In v0.17.4 this mode also exposes an optional Front Porch group-card editor and can be exported as a portable `fpa_group` PNG.
 
 ## Stored workflow draft
 
@@ -35,6 +35,7 @@ shared_scenario
 opening_message
 notes
 members[]
+front_porch_group{}
 ```
 
 Each member entry contains:
@@ -49,6 +50,8 @@ opening_direction
 
 Workflow drafts are stored under `card_workflows[]` in the project JSON.
 
+`front_porch_group` is populated for Front Porch group-card authoring. It stores turn behavior, Director/chaos switches, system prompts, lore/world references, objectives, realism JSON and forward-compatible extension fields. Member-keyed maps use the selected CCF character UUIDs and are remapped when a project is duplicated or a Front Porch group is imported.
+
 ## AI-assisted planning
 
 The Card Workflow Studio can generate a workflow draft from:
@@ -62,13 +65,13 @@ The Card Workflow Studio can generate a workflow draft from:
 
 The generated result is editable and remains unsaved until **Save Draft** is used. Saving a draft updates the in-memory project; the main workspace **Save** action still controls writing the project file to disk.
 
-## Current scope
+## Export connections
 
-v0.7 connects saved **Split-card batch plan** workflows to the Import / Export Studio. A selected split workflow can now export every valid member as an individual Character Card V2 JSON file in one operation.
+v0.7 connects saved **Split-card batch plan** workflows to the Import / Export Studio. A selected split workflow can export every valid member as an individual Character Card V2 JSON file in one operation.
 
-The workflow remains a planning layer: v0.7 does **not** yet automatically run full-card generation for every member, batch-create PNG cards, or define a dedicated ecosystem format for combined/group cards.
+v0.17.4 connects saved **Group-card plan** workflows to Front Porch's `front_porch_group_card` 1.0 format. The export is one PNG containing the group configuration, complete flattened character data, full member avatar/card PNGs and stable-ID provenance. Import creates a new multi-character project and remaps member-keyed settings to fresh CCF UUIDs.
 
-Later generation/export systems can continue consuming these workflow drafts as a stable specification instead of inventing their own parallel multi-character configuration format.
+Multi-character single-card plans remain planning data. Workflow generation does not silently overwrite individual source characters.
 
 ## Character removal and project duplication
 
