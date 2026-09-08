@@ -190,6 +190,25 @@ v0.5 creates project-level asset directories and per-character directories ready
 
 Existing asset references remain preserved during migration.
 
+### Front Porch avatar galleries (v0.17.5)
+
+Each character may carry an optional versioned gallery descriptor at:
+
+```text
+characters[].assets.front_porch_avatar_gallery
+├── format_version
+├── favourite_gallery_id
+└── entries[]
+    ├── gallery_id
+    ├── kind                 # look | expression
+    ├── label                # exact Front Porch emotion; blank for looks
+    ├── path                 # project-relative managed image path
+    ├── created_at
+    └── provenance{}
+```
+
+The favourite is a stable pointer and does not replace `assets.portrait`. Image Studio sources retain their source image ID and credential-safe generation snapshot. Manual/sprite-pack imports are copied below `characters/<character UUID>/avatar_gallery/`. Removing an entry removes only this association, not the underlying file. `.ccfproject` packaging includes these images through the existing recursive project-asset boundary.
+
 ## Template-defined custom data
 
 Templates may still expose arbitrary dot-separated paths inside a character record. Custom fields should normally live below `character.custom`, for example:

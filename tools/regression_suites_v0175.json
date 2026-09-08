@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.17.5",
+  "description": "v0.17.4 plus Front Porch expression/alternate-look galleries, portable packs and supported API installation.",
+  "base_manifest": "regression_suites_v0174.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0175_front_porch_avatar_galleries",
+        "label": "v0.17.5 Front Porch avatar galleries",
+        "kind": "godot",
+        "path": "tools/test_v0175_front_porch_avatar_galleries.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}

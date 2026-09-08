@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.17.5 — Front Porch Expressions & Avatar Galleries**
+**v0.18.0 — Front Porch Worlds and The Stoop Preparation**
 
 v0.17.3 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -73,9 +73,21 @@ v0.17.3-hotfix1 adds native OpenRouter Images routing and image-only model disco
 
 v0.17.4 adds Front Porch's custom multi-character card format. One portable group PNG can contain multiple complete characters plus group-level opening, turn-order, Director, realism, objective and lore/world settings without merging those characters into one ordinary Character Card definition. Card Workflow Studio provides manual fields and review-first AI writing assistance; Import / Export validates, builds a collage, preserves complete member card PNGs and remaps stable IDs on non-destructive import.
 
-The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.17.4 source candidate is complete; development next targets v0.17.5 without changing published release metadata until a release transaction.
+v0.17.5 connects the existing Image Studio result gallery and manual image import to a versioned Front Porch avatar-gallery model. Authors can assign multiple alternate looks or exact expression labels, choose a canonical favourite independently from the CCF portrait, exchange Front Porch-compatible expression ZIPs and explicitly install a selected image or complete gallery through Front Porch 1.3.2+'s supported authenticated API.
+
+The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.17.5 source candidate is complete; development next targets v0.18.0 without changing published release metadata until a release transaction.
 
 ## Completed
+
+### v0.17.5 — Front Porch Expressions & Avatar Galleries
+
+- Added a versioned per-character avatar-gallery model for multiple alternate looks, exact Front Porch expression labels, one canonical favourite and image provenance.
+- Added Image Studio **Add as Front Porch Look** and **Add as Expression…** actions plus manual PNG/JPEG/WebP import in Import / Export.
+- Added Front Porch/SillyTavern-compatible expression ZIP import/export with exact label/separator matching, nested-folder support, managed PNG conversion, a versioned CCF manifest and the 30-expression cap.
+- Kept gallery association, canonical favourite, CCF portrait assignment, Character Card artwork embedding and Front Porch installation as separate explicit actions.
+- Added authenticated character selection and selected/complete-gallery installation through Front Porch 1.3.2+'s supported avatar, look and favourite endpoints.
+- Preserved the session-only credential boundary, no background sync, no live-conversation mutation and no direct Front Porch database writes.
+- Added focused regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0175-front-porch-avatar-galleries.md`.
 
 ### v0.17.4 — Front Porch Multi-Character Group Cards
 
@@ -290,12 +302,9 @@ Authenticated supported-API connection, capability detection, user-initiated Cha
 
 Portable `fpa_group` authoring, validation, embedded-member PNG export, non-destructive multi-character import, stable-ID remapping, unknown-field preservation and the no-database-write boundary are implemented and recorded under **Completed** above.
 
-#### v0.17.5 — Front Porch Expressions & Avatar Galleries
+#### v0.17.5 — completed
 
-- Add Front Porch expression/looks authoring and import/export around the existing Image Studio and Gallery workflows.
-- Support expression labels, multiple looks, canonical/favourite avatar selection and clear character-to-image provenance.
-- Keep portrait assignment, card embedding and Front Porch expression-pack installation as separate explicit actions.
-- Provide a portable expression-pack export when direct installation is unavailable.
+Image Studio/manual gallery sources, exact expression labels, multiple looks, independent canonical favourite and portrait actions, portable sprite ZIPs, authenticated supported-API installation and provenance are implemented and recorded under **Completed** above.
 
 #### v0.18.0 — Front Porch Worlds and The Stoop Preparation
 
