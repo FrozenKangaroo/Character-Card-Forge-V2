@@ -69,11 +69,22 @@ v0.17.2 adds a dedicated optional Front Porch authoring surface backed by a vers
 
 v0.17.3 adds an authenticated, user-initiated **Install to Front Porch** workflow in Import / Export. It detects Front Porch through its supported health/auth endpoints, keeps credentials and session cookies out of persistent storage, verifies the character API, provides a visible card-artwork picker that prefers the active portrait and otherwise the newest generated image, uploads a validated Character Card V2 PNG when artwork is selected (or definition-only JSON when explicitly chosen) and presents explicit create-copy/update/cancel choices for name collisions. Portable JSON remains available whenever direct installation cannot complete.
 
+v0.17.3-hotfix1 adds native OpenRouter Images routing and image-only model discovery. OpenRouter profiles use `/api/v1/images` and `/api/v1/images/models`; unrelated OpenAI-compatible providers retain `/images/generations`. Failed Image Studio requests expose a credential-safe route/transport summary.
+
 v0.17.4 makes Front Porch's custom multi-character card format the next implementation goal. One portable group card will be able to contain multiple complete characters plus group-level opening, turn-order, Director, realism, objective and lore/world settings without merging those characters into one ordinary Character Card definition.
 
 The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. Development now targets v0.17.4 without changing published release metadata until the next release transaction.
 
 ## Completed
+
+### v0.17.3-hotfix1 — OpenRouter Images Routing
+
+- Added exact-host OpenRouter transport detection with lookalike-domain rejection.
+- Added native `POST /api/v1/images` Text to Image routing and `GET /api/v1/images/models` discovery for existing standard OpenRouter profiles.
+- Preserved `/images/generations` for other OpenAI-compatible providers and all Forge/A1111 behavior.
+- Reused the existing `data[].b64_json` decoder and provider-neutral generation payload.
+- Added credential-safe request route/transport detail to visible Image Studio failures.
+- Added focused regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0173-hotfix1-openrouter-images.md`.
 
 ### v0.17.3 — Direct Front Porch Install
 

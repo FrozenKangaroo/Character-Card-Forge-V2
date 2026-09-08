@@ -59,9 +59,18 @@ func _on_request_completed(
 		_fail_v0164(str(catalog_result.get("error", "Image model catalog could not be parsed.")))
 		return
 	var catalog := CCFImageProviderModelCatalogServiceV0164.with_fetch_metadata(catalog_result, endpoint)
+	var is_openrouter := (
+		CCFImageProviderTransportServiceV0173Hotfix1.is_openrouter_base_url(
+			str(_profile.get("base_url", ""))
+		)
+	)
 	var capabilities := {
 		"backend": BACKEND_OPENAI,
-		"backend_label": "OpenAI-compatible Images API",
+		"backend_label": (
+			"OpenRouter Images API"
+			if is_openrouter
+			else "OpenAI-compatible Images API"
+		),
 		"models": catalog.get("model_ids", []),
 		"samplers": [],
 		"model_records": catalog.get("records", []),
@@ -72,6 +81,11 @@ func _on_request_completed(
 		"supports_steps": false,
 		"supports_cfg_scale": false,
 		"supports_batch": true,
+		"transport": (
+			CCFImageProviderTransportServiceV0173Hotfix1.TRANSPORT_OPENROUTER_IMAGES
+			if is_openrouter
+			else CCFImageProviderTransportServiceV0173Hotfix1.TRANSPORT_OPENAI_IMAGES
+		),
 		"discovery_note": (
 			"Provider supplied rich image-model metadata."
 			if bool(catalog.get("rich_metadata", false))

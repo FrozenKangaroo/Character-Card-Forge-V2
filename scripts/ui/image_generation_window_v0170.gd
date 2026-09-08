@@ -6,6 +6,9 @@ signal collaborator_handoff_requested(source: Dictionary, options: Dictionary)
 const HANDOFF_SERVICE_V0170 = preload(
 	"res://scripts/services/image_collaborator_handoff_service_v0170.gd"
 )
+const IMAGE_SERVICE_V0173_HOTFIX1 = preload(
+	"res://scripts/services/image_generation_service_v0173_hotfix1.gd"
+)
 
 var _send_to_collaborator_button_v0170: Button
 var _handoff_dialog_v0170: ConfirmationDialog
@@ -17,6 +20,7 @@ var _pending_handoff_entry_v0170: Dictionary = {}
 
 func _ready() -> void:
 	super._ready()
+	_install_image_service_v0173_hotfix1()
 	ensure_collaborator_handoff_surface_v0170()
 
 
@@ -27,6 +31,51 @@ func _build_ui() -> void:
 
 func collaborator_handoff_capabilities_v0170() -> Dictionary:
 	return HANDOFF_SERVICE_V0170.capabilities()
+
+
+func openrouter_transport_capabilities_v0173_hotfix1() -> Dictionary:
+	if (
+		_image_service != null
+		and _image_service.has_method(
+			"openrouter_transport_capabilities_v0173_hotfix1"
+		)
+	):
+		return _image_service.call(
+			"openrouter_transport_capabilities_v0173_hotfix1"
+		) as Dictionary
+	return {}
+
+
+func _install_image_service_v0173_hotfix1() -> void:
+	if _image_service is CCFImageGenerationServiceV0173Hotfix1:
+		return
+	var previous := _image_service
+	if previous != null:
+		if previous.generation_started.is_connected(_on_generation_started):
+			previous.generation_started.disconnect(_on_generation_started)
+		if previous.generation_batch_completed.is_connected(
+			_on_generation_batch_completed
+		):
+			previous.generation_batch_completed.disconnect(
+				_on_generation_batch_completed
+			)
+		if previous.generation_failed.is_connected(_on_generation_failed):
+			previous.generation_failed.disconnect(_on_generation_failed)
+		if previous.generation_cancelled.is_connected(_on_generation_cancelled):
+			previous.generation_cancelled.disconnect(_on_generation_cancelled)
+		if previous.get_parent() == self:
+			remove_child(previous)
+		previous.queue_free()
+	var upgraded := IMAGE_SERVICE_V0173_HOTFIX1.new()
+	add_child(upgraded)
+	upgraded.generation_started.connect(_on_generation_started)
+	upgraded.generation_batch_completed.connect(_on_generation_batch_completed)
+	upgraded.generation_failed.connect(_on_generation_failed)
+	upgraded.generation_cancelled.connect(_on_generation_cancelled)
+	upgraded.generation_queued.connect(_on_image_generation_queued_v01526)
+	_image_service = upgraded
+	if _scheduler_for_image_v01526 != null:
+		upgraded.configure_scheduler_v01526(_scheduler_for_image_v01526)
 
 
 func ensure_collaborator_handoff_surface_v0170() -> void:

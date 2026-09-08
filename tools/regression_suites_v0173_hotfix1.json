@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.17.3-hotfix1",
+  "description": "v0.17.3 plus native OpenRouter image generation/model discovery routing and visible safe request diagnostics.",
+  "base_manifest": "regression_suites_v0173.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0173_hotfix1_openrouter_images",
+        "label": "v0.17.3-hotfix1 OpenRouter Images routing",
+        "kind": "godot",
+        "path": "tools/test_v0173_hotfix1_openrouter_images.gd",
+        "timeout_seconds": 150
+      }
+    ]
+  }
+}
