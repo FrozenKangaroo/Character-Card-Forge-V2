@@ -54,4 +54,6 @@ Passwords, two-factor codes and session cookies remain memory-only. CCF does not
 
 v0.17.5 is additive. Existing projects without `front_porch_avatar_gallery` load with an empty gallery. Ordinary Character Card V2 JSON/PNG export is unchanged; Front Porch gallery images are not silently embedded into universal card formats that do not define them. Full `.ccfproject` packages already include the referenced managed images.
 
-`tools/test_v0175_front_porch_avatar_galleries.gd` verifies generated-image provenance, independent favourite/portrait actions, portable ZIP export/import, exact Front Porch filename matching, supported API routes/response handling, live v0.17.5 UI wiring and retention of the v0.17.4 shell.
+Character Life's field-level **AI Suggest** now gives Work days an exact `1`–`7` integer-array contract and Birthday an exact valid non-February-29 `YYYY-MM-DD` contract. Integer day proposals use a one-line editable review. If a one-field proposal matches the current value, the review window still opens and explains that result instead of appearing to do nothing.
+
+`tools/test_v0175_front_porch_avatar_galleries.gd` verifies generated-image provenance, independent favourite/portrait actions, portable ZIP export/import, exact Front Porch filename matching, supported API routes/response handling, typed Work-day/Birthday AI Suggest requests and unchanged-value review, live v0.17.5 UI wiring and retention of the v0.17.4 shell.

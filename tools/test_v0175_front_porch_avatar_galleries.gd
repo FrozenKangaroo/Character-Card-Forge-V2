@@ -151,6 +151,99 @@ func _run() -> void:
 	):
 		return
 
+	var extension_service := CCFFrontPorchExtensionServiceV0172.new()
+	var work_days_field := extension_service.field_by_id("fp_work_days")
+	var birthday_field := extension_service.field_by_id("fp_birthday")
+	var suggestion_generator := CCFGenerationServiceV0175.new()
+	var suggestion_document := CCFStorageService.character_workspace_document(
+		project, character_id
+	)
+	CCFStorageService.set_value_at_path(
+		suggestion_document,
+		"concept.prompt",
+		"An experienced archivist balancing a strange public library with a private supernatural investigation."
+	)
+	var work_queue_result := suggestion_generator.queue_front_porch_fields_v0172(
+		suggestion_document,
+		[work_days_field],
+		{
+			"name": "Offline regression",
+			"base_url": "http://127.0.0.1:1/v1",
+			"model": "front-porch-regression",
+			"max_output_tokens": 2048
+		},
+		0,
+		"Work days"
+	)
+	var suggestion_queue_value: Variant = suggestion_generator.get("_queue")
+	var suggestion_queue: Array = (
+		suggestion_queue_value if suggestion_queue_value is Array else []
+	)
+	var work_job: Dictionary = (
+		suggestion_queue[0] if not suggestion_queue.is_empty() else {}
+	)
+	var work_payload_value: Variant = work_job.get("payload", {})
+	var work_payload: Dictionary = (
+		work_payload_value if work_payload_value is Dictionary else {}
+	)
+	var work_prompt := JSON.stringify(work_payload.get("messages", []))
+	if not _require(
+		bool(work_queue_result.get("ok", false))
+		and work_prompt.contains("Monday is 1 and Sunday is 7")
+		and work_prompt.contains("explicit one-field AI Suggest request")
+		and work_prompt.contains("propose a reasonable alternative"),
+		"Work-days AI Suggest must queue a typed, one-field proposal instead of an ambiguous generic array."
+	):
+		return
+	suggestion_generator.free()
+
+	var birthday_generator := CCFGenerationServiceV0175.new()
+	var birthday_queue_result := birthday_generator.queue_front_porch_fields_v0172(
+		suggestion_document,
+		[birthday_field],
+		{
+			"name": "Offline regression",
+			"base_url": "http://127.0.0.1:1/v1",
+			"model": "front-porch-regression",
+			"max_output_tokens": 2048
+		},
+		0,
+		"Birthday"
+	)
+	var birthday_queue_value: Variant = birthday_generator.get("_queue")
+	var birthday_queue: Array = (
+		birthday_queue_value if birthday_queue_value is Array else []
+	)
+	var birthday_job: Dictionary = (
+		birthday_queue[0] if not birthday_queue.is_empty() else {}
+	)
+	var birthday_payload_value: Variant = birthday_job.get("payload", {})
+	var birthday_payload: Dictionary = (
+		birthday_payload_value if birthday_payload_value is Dictionary else {}
+	)
+	var birthday_prompt := JSON.stringify(birthday_payload.get("messages", []))
+	if not _require(
+		bool(birthday_queue_result.get("ok", false))
+		and birthday_prompt.contains("exact YYYY-MM-DD form")
+		and birthday_prompt.contains("must not be February 29")
+		and birthday_prompt.contains("do not return an age, prose, null, or an empty value"),
+		"Birthday AI Suggest must request a concrete Front Porch-compatible date."
+	):
+		return
+	birthday_generator.free()
+
+	CCFStorageService.set_value_at_path(
+		suggestion_document,
+		"character.card_extensions.front_porch.realism_engine.workDays",
+		[1, 2, 3, 4, 5]
+	)
+	CCFStorageService.set_value_at_path(
+		suggestion_document,
+		"character.card_extensions.front_porch.realism_engine.birthday",
+		"1990-10-12"
+	)
+	CCFStorageService.update_character(project, suggestion_document)
+
 	var packed := load("res://scenes/main.tscn") as PackedScene
 	if not _require(packed != null, "The v0.17.5 main scene must load."):
 		return
@@ -183,6 +276,64 @@ func _run() -> void:
 		project, CCFTemplateService.load_template("default"), {}
 	)
 	await process_frame
+	if not _require(
+		workspace.get("_generation_service") is CCFGenerationServiceV0175,
+		"The live v0.17.5 workspace must use the typed Front Porch generation service."
+	):
+		return
+	workspace.call(
+		"_show_generation_preview",
+		{"fp_work_days": [1, 2, 3, 4, 5]},
+		{
+			"project_id": str(workspace.get("_project").get("project_id", "")),
+			"field_ids": ["fp_work_days"],
+			"preview_fields": [work_days_field],
+			"front_porch_generation_contract": 1,
+			"front_porch_scope": "Work days",
+			"output_policy": {"unexpected_fields": "ignore"}
+		},
+		"Front Porch — Work days"
+	)
+	var work_preview_rows_value: Variant = workspace.get("_preview_rows")
+	var work_preview_rows: Array = (
+		work_preview_rows_value if work_preview_rows_value is Array else []
+	)
+	var work_preview_editor: Variant = (
+		work_preview_rows[0].get("editor") if not work_preview_rows.is_empty() else null
+	)
+	if not _require(
+		work_preview_rows.size() == 1
+		and work_preview_editor is LineEdit
+		and str(workspace.get("_preview_summary").text).contains("matches the current value"),
+		"An unchanged Work-days suggestion must still open a visible, editable one-line preview."
+	):
+		return
+	workspace.call("_hide_preview")
+	workspace.call(
+		"_show_generation_preview",
+		{"fp_birthday": "1990-10-12"},
+		{
+			"project_id": str(workspace.get("_project").get("project_id", "")),
+			"field_ids": ["fp_birthday"],
+			"preview_fields": [birthday_field],
+			"front_porch_generation_contract": 1,
+			"front_porch_scope": "Birthday",
+			"output_policy": {"unexpected_fields": "ignore"}
+		},
+		"Front Porch — Birthday"
+	)
+	var birthday_preview_rows_value: Variant = workspace.get("_preview_rows")
+	var birthday_preview_rows: Array = (
+		birthday_preview_rows_value if birthday_preview_rows_value is Array else []
+	)
+	if not _require(
+		birthday_preview_rows.size() == 1
+		and birthday_preview_rows[0].get("editor") is LineEdit
+		and str(workspace.get("_preview_summary").text).contains("matches the current value"),
+		"An unchanged Birthday suggestion must still open a visible, editable preview."
+	):
+		return
+	workspace.call("_hide_preview")
 	workspace.call("_open_import_export_studio")
 	await process_frame
 	var import_export_value: Variant = workspace.get("_import_export_window")
