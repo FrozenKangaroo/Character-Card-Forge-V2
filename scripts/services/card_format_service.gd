@@ -7,6 +7,12 @@ const SPEC_VERSION_V2 := "2.0"
 const CCF_EXTENSION_KEY := "character_card_forge/v1"
 static var PNG_SIGNATURE: PackedByteArray = PackedByteArray([137, 80, 78, 71, 13, 10, 26, 10])
 const PNG_CARD_KEY := "chara"
+const EXPORT_CONTENT_FIELDS := [
+	{"key": "description", "label": "Description"},
+	{"key": "personality", "label": "Personality"},
+	{"key": "scenario", "label": "Scenario"},
+	{"key": "first_message", "label": "First Message"}
+]
 
 const REQUIRED_V1_FIELDS: Array[String] = [
 	"name",
@@ -96,7 +102,132 @@ static func export_character_v2(project: Dictionary, character_id: String) -> Di
 	}
 
 
+static func export_safety_report(
+	project: Dictionary, character_id: String
+) -> Dictionary:
+	var character_record := CCFStorageService.get_character(project, character_id)
+	if character_record.is_empty():
+		return {
+			"ok": false,
+			"can_export": false,
+			"errors": ["The selected character could not be found."],
+			"warnings": [],
+			"all_core_fields_empty": true,
+			"has_image": false
+		}
+	var card_value: Variant = character_record.get("character", {})
+	var card: Dictionary = card_value if card_value is Dictionary else {}
+	var populated_fields: Array[String] = []
+	for field in EXPORT_CONTENT_FIELDS:
+		if not str(card.get(str(field.get("key", "")), "")).strip_edges().is_empty():
+			populated_fields.append(str(field.get("label", "")))
+	var all_core_fields_empty := populated_fields.is_empty()
+	var has_image := character_has_export_image(project, character_id)
+	var errors: Array[String] = []
+	var warnings: Array[String] = []
+	if all_core_fields_empty:
+		errors.append(
+			"Description, Personality, Scenario, and First Message are all empty. "
+			+ "This usually means the Generation Concept was filled in but Generate Character was not run. "
+			+ "Generate the character or manually complete at least one of those fields before exporting."
+		)
+	if not has_image:
+		warnings.append(
+			"No usable character image is attached, assigned as the portrait, or present in generated images. "
+			+ "You can continue with a text-only export after confirming this warning."
+		)
+	return {
+		"ok": errors.is_empty(),
+		"can_export": errors.is_empty(),
+		"errors": errors,
+		"warnings": warnings,
+		"all_core_fields_empty": all_core_fields_empty,
+		"has_image": has_image,
+		"populated_core_fields": populated_fields
+	}
+
+
+static func character_has_export_image(
+	project: Dictionary, character_id: String
+) -> bool:
+	var character_record := CCFStorageService.get_character(project, character_id)
+	if character_record.is_empty():
+		return false
+	var assets_value: Variant = character_record.get("assets", {})
+	var assets: Dictionary = assets_value if assets_value is Dictionary else {}
+	if _stored_project_image_exists(project, str(assets.get("portrait", ""))):
+		return true
+	for collection_name in ["generated_images", "emotion_images"]:
+		var collection_value: Variant = assets.get(collection_name, [])
+		if not collection_value is Array:
+			continue
+		for record_value in collection_value:
+			var stored_path := (
+				str((record_value as Dictionary).get("path", ""))
+				if record_value is Dictionary
+				else str(record_value)
+			)
+			if _stored_project_image_exists(project, stored_path):
+				return true
+	var gallery_value: Variant = assets.get("front_porch_avatar_gallery", {})
+	if gallery_value is Dictionary:
+		var entries_value: Variant = (gallery_value as Dictionary).get("entries", [])
+		if entries_value is Array:
+			for entry_value in entries_value:
+				if (
+					entry_value is Dictionary
+					and _stored_project_image_exists(
+						project, str((entry_value as Dictionary).get("path", ""))
+					)
+				):
+					return true
+	for attachments_value in [
+		character_record.get("attachments", []), project.get("attachments", [])
+	]:
+		if not attachments_value is Array:
+			continue
+		for attachment_value in attachments_value:
+			if not attachment_value is Dictionary:
+				continue
+			var attachment := CCFAttachmentService.normalise_attachment(
+				attachment_value as Dictionary
+			)
+			if str(attachment.get("kind", "")) not in ["image", "gif"]:
+				continue
+			var attachment_path := CCFAttachmentService.resolve_absolute_path(
+				str(project.get("project_id", "")), attachment
+			)
+			if not attachment_path.is_empty() and FileAccess.file_exists(attachment_path):
+				return true
+	return false
+
+
+static func _stored_project_image_exists(
+	project: Dictionary, stored_path: String
+) -> bool:
+	var clean_path := stored_path.strip_edges()
+	if clean_path.is_empty():
+		return false
+	var resolved_path := clean_path
+	if (
+		not clean_path.begins_with("user://")
+		and not clean_path.begins_with("res://")
+		and not clean_path.is_absolute_path()
+	):
+		resolved_path = CCFStorageService.project_folder(
+			str(project.get("project_id", ""))
+		).path_join(clean_path)
+	return FileAccess.file_exists(resolved_path)
+
+
 static func export_json(project: Dictionary, character_id: String, destination_path: String) -> Dictionary:
+	var safety := export_safety_report(project, character_id)
+	if not bool(safety.get("can_export", false)):
+		return {
+			"ok": false,
+			"error": "; ".join(safety.get("errors", [])),
+			"safety": safety
+		}
 	var card := export_character_v2(project, character_id)
 	if card.is_empty():
 		return {"ok": false, "error": "The selected character could not be found."}
@@ -334,6 +465,15 @@ static func validate_card(card: Dictionary) -> Dictionary:
 static func compatibility_report(project: Dictionary, character_id: String) -> Dictionary:
 	var card := export_character_v2(project, character_id)
 	var validation := validate_card(card)
+	var safety := export_safety_report(project, character_id)
+	var validation_errors: Array = validation.get("errors", [])
+	for safety_error in safety.get("errors", []):
+		validation_errors.append(str(safety_error))
+	validation["errors"] = validation_errors
+	var validation_warnings: Array = validation.get("warnings", [])
+	for safety_warning in safety.get("warnings", []):
+		validation_warnings.append(str(safety_warning))
+	validation["warnings"] = validation_warnings
 	var rows: Array[Dictionary] = []
 	for target_path in CANONICAL_FIELD_MAP:
 		var internal_path := str(CANONICAL_FIELD_MAP[target_path])
@@ -377,6 +517,7 @@ static func compatibility_report(project: Dictionary, character_id: String) -> D
 	return {
 		"card": card,
 		"validation": validation,
+		"safety": safety,
 		"rows": rows,
 		"target": "Character Card V2 / SillyTavern-compatible JSON"
 	}
@@ -435,6 +576,13 @@ static func build_png_card_bytes(
 	project: Dictionary,
 	character_id: String
 ) -> Dictionary:
+	var safety := export_safety_report(project, character_id)
+	if not bool(safety.get("can_export", false)):
+		return {
+			"ok": false,
+			"error": "; ".join(safety.get("errors", [])),
+			"safety": safety
+		}
 	var card := export_character_v2(project, character_id)
 	if card.is_empty():
 		return {"ok": false, "error": "The selected character could not be found."}

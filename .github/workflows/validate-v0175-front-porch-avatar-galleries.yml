@@ -52,6 +52,13 @@ jobs:
           XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0175-focused/config
         run: timeout 240s godot --headless --path . --script res://tools/test_v0175_front_porch_avatar_galleries.gd
 
+      - name: Run export-readiness safety regression
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0175-export-safety/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0175-export-safety/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0175-export-safety/config
+        run: timeout 240s godot --headless --path . --script res://tools/test_v0175_hotfix2_export_safety.gd
+
       - name: Recheck Front Porch group cards
         env:
           XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0174/data

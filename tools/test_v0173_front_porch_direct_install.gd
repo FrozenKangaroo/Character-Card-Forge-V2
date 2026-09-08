@@ -247,6 +247,11 @@ func _run() -> void:
 	CCFStorageService.set_value_at_path(document, "character.name", "Mara")
 	CCFStorageService.set_value_at_path(
 		document,
+		"character.description",
+		"A completed direct-install regression character."
+	)
+	CCFStorageService.set_value_at_path(
+		document,
 		"character.card_extensions.front_porch",
 		{
 			"version": "2.5",

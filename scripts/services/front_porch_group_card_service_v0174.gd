@@ -55,10 +55,35 @@ static func build_group_payload(
 	var selected_ids := _workflow_character_ids(project, workflow)
 	var members: Array = []
 	var raw_members: Array = []
+	var export_safety_warnings: Array[String] = []
 	for character_id in selected_ids:
 		var character_record := CCFStorageService.get_character(project, character_id)
 		if character_record.is_empty():
 			continue
+		var safety := CCFCardFormatService.export_safety_report(
+			project, character_id
+		)
+		var display_name := CCFStorageService.character_display_name(character_record)
+		if not bool(safety.get("can_export", false)):
+			return {
+				"ok": false,
+				"error": "%s cannot be exported: %s" % [
+					display_name, "; ".join(safety.get("errors", []))
+				],
+				"report": {
+					"ok": false,
+					"errors": ["%s: %s" % [
+						display_name, "; ".join(safety.get("errors", []))
+					]],
+					"warnings": export_safety_warnings,
+					"member_count": members.size()
+				}
+			}
+		if not bool(safety.get("has_image", false)):
+			export_safety_warnings.append(
+				"%s has no attached, assigned or generated image; the group export will use a placeholder avatar."
+				% display_name
+			)
 		var card := CCFCardFormatService.export_character_v2(project, character_id)
 		var current_data = card.get("data", {})
 		if not current_data is Dictionary:
@@ -115,7 +140,12 @@ static func build_group_payload(
 	)
 	var extensions = options.get("extensions", {})
 	payload["extensions"] = extensions.duplicate(true) if extensions is Dictionary else {}
-	return {"ok": true, "payload": payload, "report": validate_group_payload(payload)}
+	var report := validate_group_payload(payload)
+	var report_warnings: Array = report.get("warnings", [])
+	for safety_warning in export_safety_warnings:
+		report_warnings.append(safety_warning)
+	report["warnings"] = report_warnings
+	return {"ok": true, "payload": payload, "report": report}
 
 
 static func validate_group_payload(payload: Dictionary) -> Dictionary:

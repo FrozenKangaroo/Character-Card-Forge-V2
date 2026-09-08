@@ -24,6 +24,14 @@ Before export, CCF builds a compatibility report showing:
 - a summary of the current value;
 - explanatory notes for fields without a direct standard-card equivalent.
 
+### Export readiness safety
+
+CCF blocks ordinary card export when **Description**, **Personality**, **Scenario** and **First Message** are all empty. This commonly means a Generation Concept was written but **Generate Character** was never run. Generate the character or manually complete at least one of those four fields before exporting.
+
+If no usable image is attached, assigned as the portrait or available in generated images, CCF shows a confirmation warning. Authors can deliberately continue with a text-only JSON card or placeholder artwork after acknowledging it.
+
+The same readiness rules cover single-card JSON/PNG export, split-card batches, Front Porch group cards and direct Front Porch character installation. Portable `.ccfproject` backups and expression-gallery ZIPs remain available for incomplete drafts because they are project preservation and asset-exchange formats rather than finished character exports.
+
 The direct mapping currently includes:
 
 | Character Card V2 | CCF project path |

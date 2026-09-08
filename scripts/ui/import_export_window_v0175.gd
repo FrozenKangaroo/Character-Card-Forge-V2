@@ -29,6 +29,10 @@ var _front_porch_gallery_install_all_v0175: Button
 var _front_porch_gallery_remote_favourite_v0175: CheckBox
 var _front_porch_gallery_remote_status_v0175: RichTextLabel
 var _gallery_busy_v0175 := false
+var _export_safety_warning_v0175: ConfirmationDialog
+var _export_safety_block_v0175: AcceptDialog
+var _pending_export_action_v0175 := ""
+var _export_safety_bypass_v0175 := ""
 
 
 func _ready() -> void:
@@ -47,6 +51,235 @@ func _ready() -> void:
 	upgraded.configure(previous_url)
 	add_child(upgraded)
 	_front_porch_client_v0173 = upgraded
+	_build_export_safety_dialogs_v0175()
+
+
+func _build_export_safety_dialogs_v0175() -> void:
+	_export_safety_warning_v0175 = ConfirmationDialog.new()
+	_export_safety_warning_v0175.visible = false
+	_export_safety_warning_v0175.title = "Export without character artwork?"
+	_export_safety_warning_v0175.ok_button_text = "Continue Without Image"
+	_export_safety_warning_v0175.cancel_button_text = "Go Back"
+	_export_safety_warning_v0175.confirmed.connect(
+		_confirm_export_safety_v0175
+	)
+	_export_safety_warning_v0175.canceled.connect(
+		_clear_pending_export_safety_v0175
+	)
+	_export_safety_warning_v0175.close_requested.connect(
+		_clear_pending_export_safety_v0175
+	)
+	add_child(_export_safety_warning_v0175)
+	_export_safety_warning_v0175.hide()
+
+	_export_safety_block_v0175 = AcceptDialog.new()
+	_export_safety_block_v0175.visible = false
+	_export_safety_block_v0175.title = "Character is not ready to export"
+	_export_safety_block_v0175.ok_button_text = "Return to Character"
+	add_child(_export_safety_block_v0175)
+	_export_safety_block_v0175.hide()
+
+
+func _refresh_export_preview() -> void:
+	super._refresh_export_preview()
+	if _validation_label == null or _project.is_empty() or _active_character_id.is_empty():
+		return
+	var safety := CCFCardFormatService.export_safety_report(
+		_project, _active_character_id
+	)
+	var safety_lines: Array[String] = []
+	for safety_error in safety.get("errors", []):
+		safety_lines.append("[color=#ff9b9b]• %s[/color]" % str(safety_error))
+	for safety_warning in safety.get("warnings", []):
+		safety_lines.append("[color=#e6c57a]• %s[/color]" % str(safety_warning))
+	if not safety_lines.is_empty():
+		_validation_label.text += "\n" + "\n".join(safety_lines)
+
+
+func _request_json_export() -> void:
+	if _consume_export_safety_bypass_v0175("json"):
+		super._request_json_export()
+		return
+	project_refresh_requested.emit()
+	if _begin_character_export_safety_v0175("json", "Character Card V2 JSON"):
+		super._request_json_export()
+
+
+func _request_png_source() -> void:
+	if _consume_export_safety_bypass_v0175("png"):
+		super._request_png_source()
+		return
+	project_refresh_requested.emit()
+	if _begin_character_export_safety_v0175("png", "Character Card V2 PNG"):
+		super._request_png_source()
+
+
+func _request_batch_directory() -> void:
+	if _consume_export_safety_bypass_v0175("batch"):
+		super._request_batch_directory()
+		return
+	project_refresh_requested.emit()
+	var workflow := _selected_split_workflow()
+	if workflow.is_empty():
+		super._request_batch_directory()
+		return
+	var character_ids: Array[String] = []
+	for raw_id in workflow.get("selected_character_ids", []):
+		character_ids.append(str(raw_id))
+	if _begin_multi_character_export_safety_v0175(
+		"batch", "Split-card batch", character_ids
+	):
+		super._request_batch_directory()
+
+
+func _request_group_export_v0174() -> void:
+	if _consume_export_safety_bypass_v0175("group"):
+		super._request_group_export_v0174()
+		return
+	project_refresh_requested.emit()
+	var workflow := _selected_group_workflow_v0174()
+	if workflow.is_empty():
+		super._request_group_export_v0174()
+		return
+	var character_ids: Array[String] = []
+	for raw_member in workflow.get("members", []):
+		if raw_member is Dictionary:
+			character_ids.append(str((raw_member as Dictionary).get("character_id", "")))
+	if character_ids.is_empty():
+		for raw_id in workflow.get("selected_character_ids", []):
+			character_ids.append(str(raw_id))
+	if _begin_multi_character_export_safety_v0175(
+		"group", "Front Porch group card", character_ids
+	):
+		super._request_group_export_v0174()
+
+
+func _install_active_character_v0173() -> void:
+	if _consume_export_safety_bypass_v0175("front_porch_install"):
+		await super._install_active_character_v0173()
+		return
+	project_refresh_requested.emit()
+	if _begin_character_export_safety_v0175(
+		"front_porch_install", "Front Porch installation"
+	):
+		await super._install_active_character_v0173()
+
+
+func _begin_character_export_safety_v0175(
+	action: String, destination_label: String
+) -> bool:
+	var safety := CCFCardFormatService.export_safety_report(
+		_project, _active_character_id
+	)
+	if not bool(safety.get("can_export", false)):
+		_show_export_safety_block_v0175(
+			destination_label, safety.get("errors", [])
+		)
+		return false
+	if not bool(safety.get("has_image", false)):
+		_show_export_safety_warning_v0175(
+			action,
+			destination_label,
+			[
+				"No usable image is attached, assigned as the portrait, or present in generated images.",
+				"The export can continue without character artwork, but the resulting card may appear without an avatar until one is added."
+			]
+		)
+		return false
+	return true
+
+
+func _begin_multi_character_export_safety_v0175(
+	action: String, destination_label: String, character_ids: Array[String]
+) -> bool:
+	var blocked: Array[String] = []
+	var missing_images: Array[String] = []
+	for character_id in character_ids:
+		var character := CCFStorageService.get_character(_project, character_id)
+		if character.is_empty():
+			continue
+		var character_name := CCFStorageService.character_display_name(character)
+		var safety := CCFCardFormatService.export_safety_report(
+			_project, character_id
+		)
+		if not bool(safety.get("can_export", false)):
+			blocked.append("%s — %s" % [
+				character_name, "; ".join(safety.get("errors", []))
+			])
+		elif not bool(safety.get("has_image", false)):
+			missing_images.append(character_name)
+	if not blocked.is_empty():
+		_show_export_safety_block_v0175(destination_label, blocked)
+		return false
+	if not missing_images.is_empty():
+		_show_export_safety_warning_v0175(
+			action,
+			destination_label,
+			[
+				"No usable image is attached or generated for: %s." % ", ".join(missing_images),
+				"Continue only if text-only or placeholder artwork is intentional."
+			]
+		)
+		return false
+	return true
+
+
+func _show_export_safety_block_v0175(
+	destination_label: String, messages: Array
+) -> void:
+	_pending_export_action_v0175 = ""
+	_export_safety_bypass_v0175 = ""
+	var message_text := "\n\n• ".join(PackedStringArray(messages))
+	_export_safety_block_v0175.dialog_text = (
+		"%s was blocked.\n\n• %s\n\nRun Generate Character, or manually complete at least one core field, then try again."
+		% [destination_label, message_text]
+	)
+	_status.text = "%s blocked: %s" % [destination_label, "; ".join(messages)]
+	_export_safety_block_v0175.popup_centered(Vector2i(720, 360))
+
+
+func _show_export_safety_warning_v0175(
+	action: String, destination_label: String, messages: Array[String]
+) -> void:
+	_pending_export_action_v0175 = action
+	_export_safety_warning_v0175.dialog_text = (
+		"%s has no confirmed character artwork.\n\n• %s\n\nDo you want to continue?"
+		% [destination_label, "\n\n• ".join(messages)]
+	)
+	_status.text = "%s paused because no image is available. Confirm to continue without artwork." % destination_label
+	_export_safety_warning_v0175.popup_centered(Vector2i(700, 330))
+
+
+func _confirm_export_safety_v0175() -> void:
+	var action := _pending_export_action_v0175
+	_pending_export_action_v0175 = ""
+	_export_safety_warning_v0175.hide()
+	if action.is_empty():
+		return
+	_export_safety_bypass_v0175 = action
+	match action:
+		"json":
+			_request_json_export()
+		"png":
+			_request_png_source()
+		"batch":
+			_request_batch_directory()
+		"group":
+			_request_group_export_v0174()
+		"front_porch_install":
+			_install_active_character_v0173()
+
+
+func _clear_pending_export_safety_v0175() -> void:
+	_pending_export_action_v0175 = ""
+	_export_safety_bypass_v0175 = ""
+
+
+func _consume_export_safety_bypass_v0175(action: String) -> bool:
+	if _export_safety_bypass_v0175 != action:
+		return false
+	_export_safety_bypass_v0175 = ""
+	return true
 
 
 func _build_ui() -> void:

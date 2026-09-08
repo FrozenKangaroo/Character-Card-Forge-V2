@@ -73,7 +73,7 @@ v0.17.3-hotfix1 adds native OpenRouter Images routing and image-only model disco
 
 v0.17.4 adds Front Porch's custom multi-character card format. One portable group PNG can contain multiple complete characters plus group-level opening, turn-order, Director, realism, objective and lore/world settings without merging those characters into one ordinary Character Card definition. Card Workflow Studio provides manual fields and review-first AI writing assistance; Import / Export validates, builds a collage, preserves complete member card PNGs and remaps stable IDs on non-destructive import.
 
-v0.17.5 connects the existing Image Studio result gallery and manual image import to a versioned Front Porch avatar-gallery model. Authors can assign multiple alternate looks or exact expression labels, choose a canonical favourite independently from the CCF portrait, exchange Front Porch-compatible expression ZIPs and explicitly install a selected image or complete gallery through Front Porch 1.3.2+'s supported authenticated API.
+v0.17.5 connects the existing Image Studio result gallery and manual image import to a versioned Front Porch avatar-gallery model. Authors can assign multiple alternate looks or exact expression labels, choose a canonical favourite independently from the CCF portrait, exchange Front Porch-compatible expression ZIPs and explicitly install a selected image or complete gallery through Front Porch 1.3.2+'s supported authenticated API. Its second hotfix adds a shared export-readiness gate for unfinished concept-only characters and an explicit missing-artwork confirmation across finished-card export paths.
 
 The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.17.5 source candidate is complete; development next targets v0.18.0 without changing published release metadata until a release transaction.
 
@@ -87,6 +87,8 @@ The released application displays **v0.17.3**, uses the Godot **4.7.x stable** p
 - Kept gallery association, canonical favourite, CCF portrait assignment, Character Card artwork embedding and Front Porch installation as separate explicit actions.
 - Added authenticated character selection and selected/complete-gallery installation through Front Porch 1.3.2+'s supported avatar, look and favourite endpoints.
 - Fixed Character Life **AI Suggest** for Work days and Birthday with exact typed output contracts, an editable one-line day-array preview and a visible review when the proposed value matches the current value.
+- Added shared export readiness checks across JSON/PNG, split-batch, group-card and direct Front Porch exports: all-empty Description, Personality, Scenario and First Message fields block export, while missing artwork requires explicit confirmation.
+- Kept `.ccfproject` draft backups and expression-gallery ZIP exchange available for unfinished work.
 - Preserved the session-only credential boundary, no background sync, no live-conversation mutation and no direct Front Porch database writes.
 - Added focused regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0175-front-porch-avatar-galleries.md`.
 

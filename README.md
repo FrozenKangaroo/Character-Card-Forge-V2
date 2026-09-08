@@ -4,7 +4,7 @@ Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop
 
 ## Current development candidate: v0.17.5 Front Porch Avatar Galleries
 
-v0.17.5 adds Front Porch alternate looks and labelled expressions from Image Studio results or manual images, independent canonical favourites and portrait assignment, Front Porch-compatible expression ZIPs, and authenticated installation through Front Porch 1.3.2+'s supported avatar/look API. Character Life AI Suggest also provides exact Work-day and Birthday contracts and visibly reviews unchanged suggestions. It retains v0.17.4 portable multi-character group cards and the v0.17.3-hotfix1 OpenRouter Images correction.
+v0.17.5 adds Front Porch alternate looks and labelled expressions from Image Studio results or manual images, independent canonical favourites and portrait assignment, Front Porch-compatible expression ZIPs, and authenticated installation through Front Porch 1.3.2+'s supported avatar/look API. Character Life AI Suggest also provides exact Work-day and Birthday contracts and visibly reviews unchanged suggestions. Export readiness safety blocks concept-only drafts whose Description, Personality, Scenario and First Message are all empty, while missing artwork requires explicit confirmation. It retains v0.17.4 portable multi-character group cards and the v0.17.3-hotfix1 OpenRouter Images correction.
 
 The current public release baseline remains v0.17.3 until a coordinated release promotion is performed. A source milestone is not automatically treated as a published release.
 
@@ -120,6 +120,7 @@ See `docs/vision_attachments.md` for details.
 
 - Character Card V1 and V2 JSON import.
 - Character Card V2 JSON export.
+- Export-readiness protection for concept-only drafts, with an explicit missing-artwork confirmation for text-only cards.
 - PNG/APNG `chara` metadata reading.
 - V2 PNG export using existing artwork.
 - Split-workflow batch JSON export.
