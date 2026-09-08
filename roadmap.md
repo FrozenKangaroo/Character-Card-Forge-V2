@@ -86,6 +86,7 @@ The released application displays **v0.17.3**, uses the Godot **4.7.x stable** p
 - Added Front Porch/SillyTavern-compatible expression ZIP import/export with exact label/separator matching, nested-folder support, managed PNG conversion, a versioned CCF manifest and the 30-expression cap.
 - Kept gallery association, canonical favourite, CCF portrait assignment, Character Card artwork embedding and Front Porch installation as separate explicit actions.
 - Added authenticated character selection and selected/complete-gallery installation through Front Porch 1.3.2+'s supported avatar, look and favourite endpoints.
+- Fixed Character Life **AI Suggest** for Work days and Birthday with exact typed output contracts, an editable one-line day-array preview and a visible review when the proposed value matches the current value.
 - Preserved the session-only credential boundary, no background sync, no live-conversation mutation and no direct Front Porch database writes.
 - Added focused regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0175-front-porch-avatar-galleries.md`.
 
