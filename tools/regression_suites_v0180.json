@@ -1,7 +1,7 @@
 {
   "format_version": 1,
-  "name": "Character Card Forge broad regression suites — v0.18.0-hotfix1",
-  "description": "v0.18.0 plus model-tolerant Safe Section text recovery, exact repair schemas and strict typed-field boundaries.",
+  "name": "Character Card Forge broad regression suites — v0.18.0-hotfix2",
+  "description": "v0.18.0-hotfix1 plus disclosed, rate-limited GitHub Release update checks and safe platform download handoff.",
   "base_manifest": "regression_suites_v0175.json",
   "suite_additions": {
     "current_wiring": [
@@ -17,6 +17,13 @@
         "label": "v0.18.0-hotfix1 Safe Section text recovery",
         "kind": "godot",
         "path": "tools/test_v0180_hotfix1_safe_text_recovery.gd",
+        "timeout_seconds": 120
+      },
+      {
+        "id": "v0180_hotfix2_github_update_checks",
+        "label": "v0.18.0-hotfix2 GitHub update checks",
+        "kind": "godot",
+        "path": "tools/test_v0180_hotfix2_github_update_checks.gd",
         "timeout_seconds": 120
       }
     ]

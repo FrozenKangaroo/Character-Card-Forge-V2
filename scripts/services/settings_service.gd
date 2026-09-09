@@ -2,7 +2,7 @@ class_name CCFSettingsService
 extends RefCounted
 
 const SETTINGS_FILE := CCFStorageService.SETTINGS_DIR + "/app_settings.json"
-const SETTINGS_FORMAT_VERSION := 6
+const SETTINGS_FORMAT_VERSION := 7
 const ROLE_TEXT := "text"
 const ROLE_VISION := "vision"
 const ROLE_IMAGE := "image"
@@ -30,6 +30,9 @@ static func default_settings() -> Dictionary:
 			"attachment_context_character_limit": 24000,
 			"default_image_size": "1024x1024",
 			"default_image_prompt_style": "auto"
+		},
+		"updates": {
+			"automatic_checks": true
 		},
 		"ui": {"last_view": "dashboard"}
 	}
@@ -334,6 +337,15 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 		image_prompt_style = "auto"
 	generation_settings["default_image_prompt_style"] = image_prompt_style
 	result["generation"] = generation_settings
+
+	var update_settings: Dictionary = defaults.get("updates", {}).duplicate(true)
+	var incoming_updates = settings.get("updates", {})
+	if incoming_updates is Dictionary:
+		update_settings.merge(incoming_updates, true)
+	update_settings["automatic_checks"] = bool(
+		update_settings.get("automatic_checks", true)
+	)
+	result["updates"] = update_settings
 
 	var ui_settings: Dictionary = defaults.get("ui", {}).duplicate(true)
 	var incoming_ui = settings.get("ui", {})
