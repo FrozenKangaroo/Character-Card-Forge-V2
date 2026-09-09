@@ -12,6 +12,14 @@ v0.17.5 adds an **Avatar Gallery** tab for alternate looks and labelled expressi
 
 See `v0175-front-porch-avatar-galleries.md` for the complete role, provenance, filename and safety contracts.
 
+## Front Porch worlds
+
+v0.18.0 adds a **Front Porch Worlds** tab for manual world identity, embedded covers, optional climate/place traits, primary-lorebook entries and Stoop submission preparation. It imports and exports portable JSON `.fpworld` envelopes, accepts bare lorebooks and preserves unknown future fields plus additional lorebooks.
+
+Every world export requires an explicit private-context review. Adult worlds require a second declaration confirmation. Stoop metadata can be prepared and checked locally, but v0.18.0 performs no direct publishing, network calls or Front Porch database writes.
+
+See `v0180-front-porch-worlds.md` for the exact round-trip, editing and safety contracts.
+
 ## Export Card
 
 The active character can be exported as Character Card V2 JSON.

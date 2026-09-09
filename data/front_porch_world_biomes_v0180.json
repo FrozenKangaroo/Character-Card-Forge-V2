@@ -1,0 +1,16 @@
+{
+  "format_version": 1,
+  "biomes": [
+    {"id": "temperate", "name": "Temperate", "description": "Mild seasons, regular rain and broadly comfortable conditions.", "baseTemp": 15.0, "diurnalAmplitude": 8.0},
+    {"id": "rainforest", "name": "Rainforest", "description": "Warm, wet and humid with frequent rainfall.", "baseTemp": 26.0, "diurnalAmplitude": 4.0},
+    {"id": "desert", "name": "Desert", "description": "Hot and dry with large day-to-night temperature swings.", "baseTemp": 29.0, "diurnalAmplitude": 16.0},
+    {"id": "continental", "name": "Continental", "description": "Strong seasons with warm summers and cold winters.", "baseTemp": 10.0, "diurnalAmplitude": 11.0},
+    {"id": "tropical", "name": "Tropical", "description": "Consistently warm, with distinct wet and dry periods.", "baseTemp": 27.0, "diurnalAmplitude": 5.0},
+    {"id": "mediterranean", "name": "Mediterranean", "description": "Dry summers and mild, wetter winters.", "baseTemp": 19.0, "diurnalAmplitude": 9.0},
+    {"id": "highland", "name": "Highland", "description": "Cooler elevated terrain with quickly changing weather.", "baseTemp": 8.0, "diurnalAmplitude": 10.0}
+  ],
+  "place_traits": {
+    "atmosphere": ["breathable", "thin", "unbreathable", "hostile"],
+    "gravity": ["earth", "low", "high", "micro"]
+  }
+}

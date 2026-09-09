@@ -2,13 +2,13 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.17.5 Front Porch Avatar Galleries
+## Current development candidate: v0.18.0 Front Porch Worlds
 
-v0.17.5 adds Front Porch alternate looks and labelled expressions from Image Studio results or manual images, independent canonical favourites and portrait assignment, Front Porch-compatible expression ZIPs, and authenticated installation through Front Porch 1.3.2+'s supported avatar/look API. Character Life AI Suggest also provides exact Work-day and Birthday contracts and visibly reviews unchanged suggestions. Export readiness safety blocks concept-only drafts whose Description, Personality, Scenario and First Message are all empty, while missing artwork requires explicit confirmation. The third hotfix removes Godot 4.7.2 shadowing, integer-division, confusable-local and incompatible-ternary warnings from the Front Porch workflows. It retains v0.17.4 portable multi-character group cards and the v0.17.3-hotfix1 OpenRouter Images correction.
+v0.18.0 adds a project-level Front Porch World Studio with lossless `.fpworld` import/export, bare-lorebook compatibility, manual world/lore/climate authoring, embedded cover preparation and optional Stoop metadata. Imported unknown fields and additional lorebooks survive known-field edits. Every world export requires a private-context review and adult worlds require an additional declaration confirmation. Stoop preparation is local only: this version performs no direct publishing, network calls or Front Porch database writes. It retains the v0.17.5 avatar-gallery, Character Life suggestion, export-safety and Godot 4.7.2 warning fixes.
 
 The current public release baseline remains v0.17.3 until a coordinated release promotion is performed. A source milestone is not automatically treated as a published release.
 
-See `docs/v0175-front-porch-avatar-galleries.md` for gallery authoring, exact expression labels, portable packs, supported API installation and the no-database-write boundary.
+See `docs/v0180-front-porch-worlds.md` for the `.fpworld` round-trip contract, authoring controls, Stoop preparation and required review boundary.
 
 ### Semantic character-generation validation and repair
 
