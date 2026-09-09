@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.18.0 — Front Porch Worlds and The Stoop Preparation**
+**v0.18.1 — Revision Safety, Diff and Recovery**
 
 v0.17.3 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -75,9 +75,23 @@ v0.17.4 adds Front Porch's custom multi-character card format. One portable grou
 
 v0.17.5 connects the existing Image Studio result gallery and manual image import to a versioned Front Porch avatar-gallery model. Authors can assign multiple alternate looks or exact expression labels, choose a canonical favourite independently from the CCF portrait, exchange Front Porch-compatible expression ZIPs and explicitly install a selected image or complete gallery through Front Porch 1.3.2+'s supported authenticated API. Its second hotfix adds a shared export-readiness gate for unfinished concept-only characters and an explicit missing-artwork confirmation across finished-card export paths.
 
-The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.17.5 source candidate is complete; development next targets v0.18.0 without changing published release metadata until a release transaction.
+v0.18.0 adds a project-level **Front Porch World Studio**. It creates, imports and exports portable JSON `.fpworld` packages, accepts bare lorebooks, provides manual primary-lorebook and optional climate/place-trait authoring, prepares bounded embedded covers and stores optional Stoop submission metadata. The raw imported envelope is retained and edited by merge so unknown future fields, additional lorebooks, metadata and assets survive round trips. Every package export requires private-context review, adult worlds require a second declaration confirmation, and no Stoop network call or Front Porch database write is introduced.
+
+The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.18.0 source candidate is complete; development next targets v0.18.1 without changing published release metadata until a release transaction.
 
 ## Completed
+
+### v0.18.0 — Front Porch Worlds and The Stoop Preparation
+
+- Added a project-level Front Porch World Studio for multiple reusable worlds per CCF project.
+- Added lossless `.fpworld` JSON v1 import/export plus bare-lorebook compatibility and future-version warnings.
+- Preserved unknown top-level, metadata, biome, place-trait, lorebook and lore-entry fields by merging visible edits into the retained raw envelope.
+- Added manual world identity, primary lorebook, climate, built-in data-driven biome, atmosphere and gravity authoring while retaining additional imported lorebooks.
+- Added bounded JPEG data-URL cover preparation with a 1024-pixel longest edge and 350 KiB soft target.
+- Added local Stoop preparation for summary, creator/original creator, tags, adult declaration, comments preference and stable update identity, with readiness reporting.
+- Required explicit private-context review before every package export and an additional confirmation for adult worlds.
+- Kept portable packages as the independent baseline; direct Stoop publishing, network calls, raw database writes and live-conversation mutation remain disabled.
+- Added focused lossless/future-field/cover/live-UI regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0180-front-porch-worlds.md`.
 
 ### v0.17.5 — Front Porch Expressions & Avatar Galleries
 
@@ -310,12 +324,9 @@ Portable `fpa_group` authoring, validation, embedded-member PNG export, non-dest
 
 Image Studio/manual gallery sources, exact expression labels, multiple looks, independent canonical favourite and portrait actions, portable sprite ZIPs, authenticated supported-API installation and provenance are implemented and recorded under **Completed** above.
 
-#### v0.18.0 — Front Porch Worlds and The Stoop Preparation
+#### v0.18.0 — completed
 
-- Add lossless import/export and validation for `.fpworld` packages, including lore, metadata, assets and unknown future fields.
-- Add optional publishing metadata needed by The Stoop, such as creator, tags, adult-content declaration, stable update identity and preview assets.
-- Keep portable packages as the baseline; add direct publishing only when Front Porch exposes a documented, authenticated publishing contract.
-- Require an explicit review before packaging or publishing material that may contain private project context or adult content.
+Lossless `.fpworld` exchange, bare-lorebook compatibility, world/lore/climate authoring, embedded cover preparation, Stoop metadata/readiness and mandatory private/adult review are implemented and recorded under **Completed** above. Direct Stoop publishing remains disabled until its authenticated contract is implemented and tested independently.
 
 ### Accepted idea backlog — dependency ordered
 

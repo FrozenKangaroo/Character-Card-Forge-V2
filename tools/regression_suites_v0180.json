@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.18.0",
+  "description": "v0.17.5 plus lossless Front Porch Worlds, climate/lore authoring and reviewed Stoop preparation.",
+  "base_manifest": "regression_suites_v0175.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0180_front_porch_worlds",
+        "label": "v0.18.0 Front Porch Worlds and Stoop preparation",
+        "kind": "godot",
+        "path": "tools/test_v0180_front_porch_worlds.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}
