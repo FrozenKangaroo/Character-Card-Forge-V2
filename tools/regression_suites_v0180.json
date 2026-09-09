@@ -1,7 +1,7 @@
 {
   "format_version": 1,
-  "name": "Character Card Forge broad regression suites — v0.18.0",
-  "description": "v0.17.5 plus lossless Front Porch Worlds, climate/lore authoring and reviewed Stoop preparation.",
+  "name": "Character Card Forge broad regression suites — v0.18.0-hotfix1",
+  "description": "v0.18.0 plus model-tolerant Safe Section text recovery, exact repair schemas and strict typed-field boundaries.",
   "base_manifest": "regression_suites_v0175.json",
   "suite_additions": {
     "current_wiring": [
@@ -11,6 +11,13 @@
         "kind": "godot",
         "path": "tools/test_v0180_front_porch_worlds.gd",
         "timeout_seconds": 180
+      },
+      {
+        "id": "v0180_hotfix1_safe_text_recovery",
+        "label": "v0.18.0-hotfix1 Safe Section text recovery",
+        "kind": "godot",
+        "path": "tools/test_v0180_hotfix1_safe_text_recovery.gd",
+        "timeout_seconds": 120
       }
     ]
   }

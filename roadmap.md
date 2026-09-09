@@ -77,9 +77,22 @@ v0.17.5 connects the existing Image Studio result gallery and manual image impor
 
 v0.18.0 adds a project-level **Front Porch World Studio**. It creates, imports and exports portable JSON `.fpworld` packages, accepts bare lorebooks, provides manual primary-lorebook and optional climate/place-trait authoring, prepares bounded embedded covers and stores optional Stoop submission metadata. The raw imported envelope is retained and edited by merge so unknown future fields, additional lorebooks, metadata and assets survive round trips. Every package export requires private-context review, adult worlds require a second declaration confirmation, and no Stoop network call or Front Porch database write is introduced.
 
-The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.18.0 source candidate is complete; development next targets v0.18.1 without changing published release metadata until a release transaction.
+v0.18.0-hotfix1 hardens the shared Safe Section transport boundary after a model returned valid First Message prose without the requested object wrapper and then produced a nearly valid repair response with one missing outer quote. Plain or JSON-string replies can now be mapped only for an unambiguous standalone text field, focused text-field repair or focused text component. Existing semantic, agency and contamination validation still decides acceptance. Structured types and object/group shapes remain strict, and remote repair receives the exact requested schema.
+
+The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.18.0-hotfix1 source candidate is complete; development next targets v0.18.1 without changing published release metadata until a release transaction.
 
 ## Completed
+
+### v0.18.0-hotfix1 — Safe Section Text Recovery
+
+- Added local recovery for usable plain prose, valid JSON strings and complete text code fences returned for unambiguous standalone line/multiline Safe Section fields.
+- Applied the same recovery boundary to focused text-field and focused output-component repairs.
+- Routed every recovered value through the existing exact-field, semantic, agency and cross-section contamination checks rather than accepting transport recovery as content approval.
+- Kept tags, numbers, checkboxes, selects, output groups and malformed object/array-shaped replies on the strict JSON path.
+- Added exact field/type or component-key guidance to bounded remote JSON repairs.
+- Added conservative local recovery for an otherwise valid root JSON string missing only its outer closing quote.
+- Updated both workspace workers and their parallel Safe Section children so sequential and concurrent generation use the same behavior.
+- Added focused regression coverage, inherited manifest and `docs/v0180-hotfix1-safe-section-text-recovery.md`.
 
 ### v0.18.0 — Front Porch Worlds and The Stoop Preparation
 
@@ -328,6 +341,10 @@ Image Studio/manual gallery sources, exact expression labels, multiple looks, in
 
 Lossless `.fpworld` exchange, bare-lorebook compatibility, world/lore/climate authoring, embedded cover preparation, Stoop metadata/readiness and mandatory private/adult review are implemented and recorded under **Completed** above. Direct Stoop publishing remains disabled until its authenticated contract is implemented and tested independently.
 
+#### v0.18.0-hotfix1 — completed
+
+Safe Section plain-text recovery, exact typed repair schemas, conservative missing-quote repair and parallel-worker wiring are implemented and recorded under **Completed** above.
+
 ### Accepted idea backlog — dependency ordered
 
 The ideas in the living **Character Card Forge Ideas** document are grouped here by implementation dependency rather than their source numbering. Existing capabilities are extended instead of rebuilt, and speculative integrations remain behind verified API/capability checks.
@@ -461,6 +478,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Treat runtime generation-service composition as a capability-tested compatibility boundary; historical hotfix behaviour should be active-leaf invariants rather than exact filename/inheritance-depth assumptions.
 - Keep first-save persistence content-aware, source collections versioned/backwards-compatible and raw evidence distinct from normalized AI-facing context.
 - Keep AI worker request/retry/repair/Diagnostics/cancellation state isolated and Safe Section dependency/context/template order deterministic.
+- Treat Safe Section transport recovery as a narrow shape correction: only unambiguous text targets may accept plain prose, while typed values and multi-key structures require valid JSON and all recovered text still passes normal content validation.
 - Maintain the versioned regression registry as a release compatibility boundary and Godot 4.7.x warning-as-error hygiene.
 - Keep large-library pickers index-based/bounded and audit deferred UI callbacks for node/tree validity.
 - Keep detached tools synchronized through explicit signals/stable IDs.
