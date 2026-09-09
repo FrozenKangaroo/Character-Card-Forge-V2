@@ -89,6 +89,7 @@ The released application displays **v0.17.3**, uses the Godot **4.7.x stable** p
 - Fixed Character Life **AI Suggest** for Work days and Birthday with exact typed output contracts, an editable one-line day-array preview and a visible review when the proposed value matches the current value.
 - Added shared export readiness checks across JSON/PNG, split-batch, group-card and direct Front Porch exports: all-empty Description, Personality, Scenario and First Message fields block export, while missing artwork requires explicit confirmation.
 - Kept `.ccfproject` draft backups and expression-gallery ZIP exchange available for unfinished work.
+- Removed Godot 4.7.2 shadowing, integer-division, confusable-local and incompatible-ternary warnings from direct install, group-card layout/import and Character Life unchanged-value review paths.
 - Preserved the session-only credential boundary, no background sync, no live-conversation mutation and no direct Front Porch database writes.
 - Added focused regression coverage, inherited manifest, Godot 4.7.1 CI and `docs/v0175-front-porch-avatar-galleries.md`.
 

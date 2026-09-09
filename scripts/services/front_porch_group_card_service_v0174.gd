@@ -460,8 +460,8 @@ static func _build_group_cover(payload: Dictionary) -> Dictionary:
 	var rows := ceili(float(count) / float(columns))
 	var cover := Image.create(1024, 1024, false, Image.FORMAT_RGBA8)
 	cover.fill(Color("172033"))
-	var cell_width := 1024 / columns
-	var cell_height := 1024 / rows
+	var cell_width := floori(1024.0 / float(columns))
+	var cell_height := floori(1024.0 / float(rows))
 	for index in range(count):
 		var raw_member: Dictionary = raw_members[index]
 		var portrait := Image.new()
@@ -471,7 +471,10 @@ static func _build_group_cover(payload: Dictionary) -> Dictionary:
 		cover.blit_rect(
 			portrait,
 			Rect2i(0, 0, cell_width, cell_height),
-			Vector2i((index % columns) * cell_width, int(index / columns) * cell_height)
+			Vector2i(
+				(index % columns) * cell_width,
+				floori(float(index) / float(columns)) * cell_height
+			)
 		)
 	return {"ok": true, "bytes": cover.save_png_to_buffer()}
 

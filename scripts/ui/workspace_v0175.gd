@@ -85,7 +85,9 @@ func _show_unchanged_front_porch_suggestion_v0175(
 				break
 	if field.is_empty():
 		return false
-	var default_value: Variant = [] if str(field.get("type", "")) == "tags" else ""
+	var default_value: Variant = ""
+	if str(field.get("type", "")) == "tags":
+		default_value = []
 	var current_value: Variant = CCFStorageService.get_value_at_path(
 		_project, str(field.get("path", "")), default_value
 	)

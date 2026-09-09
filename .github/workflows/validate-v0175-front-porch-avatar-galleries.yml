@@ -40,7 +40,7 @@ jobs:
         run: |
           set -o pipefail
           godot --headless --path . --import 2>&1 | tee /tmp/ccf-v0175-import.log
-          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE_BASE_CLASS|SHADOWED_GLOBAL_IDENTIFIER|CONFUSABLE_LOCAL_DECLARATION|INCOMPATIBLE_TERNARY|INTEGER_DIVISION|Parse Error" /tmp/ccf-v0175-import.log; then
+          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE|SHADOWED_GLOBAL_IDENTIFIER|CONFUSABLE_LOCAL_DECLARATION|INCOMPATIBLE_TERNARY|INTEGER_DIVISION|Parse Error" /tmp/ccf-v0175-import.log; then
             echo "Godot reported a script or warning failure during import."
             exit 1
           fi
@@ -58,6 +58,13 @@ jobs:
           XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0175-export-safety/cache
           XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0175-export-safety/config
         run: timeout 240s godot --headless --path . --script res://tools/test_v0175_hotfix2_export_safety.gd
+
+      - name: Run Godot 4.7.2 warning-cleanup regression
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0175-warning-cleanup/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0175-warning-cleanup/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0175-warning-cleanup/config
+        run: timeout 120s godot --headless --path . --script res://tools/test_v0175_hotfix3_warning_cleanup.gd
 
       - name: Recheck Front Porch group cards
         env:
