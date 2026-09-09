@@ -2,7 +2,9 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.18.0-hotfix1 Safe Section Text Recovery
+## Current development candidate: v0.18.0-hotfix2 GitHub Update Checks
+
+v0.18.0-hotfix2 adds a dedicated **Settings → Updates** page, a manual **Check Now** action and an optional automatic check in packaged builds. The automatic check is enabled by default, runs at startup no more than once every 24 hours and makes one unauthenticated request to this repository's public latest-release endpoint. It sends no AI-provider credentials or character/project data. When a newer stable release exists, CCF shows a sidebar notice, release notes and the exact published package for the current platform. Download remains an explicit browser handoff: CCF never silently replaces its running executable or edits user projects during an update check.
 
 v0.18.0-hotfix1 makes Safe Section generation tolerant of models that return usable prose for a text field instead of the requested one-key JSON object. Standalone line/multiline text, focused text-field repair and focused output-component repair can recover locally, then pass through the same field validation, agency and cross-section contamination guards as normal JSON. Tags, numbers, checkboxes, selects, output groups and malformed object-shaped replies remain strict. When a remote JSON repair is still needed, the request now identifies the exact field or component shape instead of asking for an unspecified object. A conservative local repair also covers the captured missing outer-string quote failure.
 
@@ -10,7 +12,7 @@ The underlying v0.18.0 candidate adds a project-level Front Porch World Studio w
 
 The current public release baseline remains v0.17.3 until a coordinated release promotion is performed. A source milestone is not automatically treated as a published release.
 
-See `docs/v0180-hotfix1-safe-section-text-recovery.md` for the recovery boundary and `docs/v0180-front-porch-worlds.md` for the `.fpworld` round-trip contract, authoring controls, Stoop preparation and required review boundary.
+See `docs/v0180-hotfix2-github-update-checks.md` for the update-check privacy and install boundary, `docs/v0180-hotfix1-safe-section-text-recovery.md` for the recovery boundary and `docs/v0180-front-porch-worlds.md` for the `.fpworld` round-trip contract, authoring controls, Stoop preparation and required review boundary.
 
 ### Semantic character-generation validation and repair
 

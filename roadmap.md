@@ -79,9 +79,23 @@ v0.18.0 adds a project-level **Front Porch World Studio**. It creates, imports a
 
 v0.18.0-hotfix1 hardens the shared Safe Section transport boundary after a model returned valid First Message prose without the requested object wrapper and then produced a nearly valid repair response with one missing outer quote. Plain or JSON-string replies can now be mapped only for an unambiguous standalone text field, focused text-field repair or focused text component. Existing semantic, agency and contamination validation still decides acceptance. Structured types and object/group shapes remain strict, and remote repair receives the exact requested schema.
 
-The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.18.0-hotfix1 source candidate is complete; development next targets v0.18.1 without changing published release metadata until a release transaction.
+v0.18.0-hotfix2 adds a disclosed GitHub Release update checker. Packaged builds can check automatically at startup no more than once per 24 hours, and Settings provides manual checking plus an opt-out. A newer stable release produces a sidebar notice, bounded plain-text release notes and the exact repository-hosted platform package. Checks are unauthenticated and send no provider credentials or project data. Download/install remains explicit; CCF does not silently replace a running executable.
+
+The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.18.0-hotfix2 source candidate is complete; development next targets v0.18.1 without changing published release metadata until a release transaction.
 
 ## Completed
+
+### v0.18.0-hotfix2 — GitHub Release Update Checks
+
+- Added a dedicated **Settings → Updates** tab with the installed/comparison version, latest published release, release notes and status.
+- Added an automatic packaged-build startup check enabled by default, limited to once per 24 hours and independently disableable while **Check Now** remains available.
+- Used GitHub's public latest stable Release endpoint without authentication or any CCF/provider credential.
+- Added conditional ETag reuse, a bounded response size/cache and fail-quiet handling for offline, unavailable and rate-limited checks.
+- Added strict semantic/hotfix version comparison plus exact Windows, Linux and unsigned macOS release-asset selection.
+- Added a visible sidebar update notice and explicit GitHub release/platform-download actions.
+- Kept installation non-destructive: no silent executable replacement, project write, release-note rich-text execution or source/editor startup network request.
+- Bumped the backwards-compatible settings document to format 7 for the automatic-check preference.
+- Added focused regression coverage, inherited manifest and `docs/v0180-hotfix2-github-update-checks.md`.
 
 ### v0.18.0-hotfix1 — Safe Section Text Recovery
 
@@ -345,6 +359,10 @@ Lossless `.fpworld` exchange, bare-lorebook compatibility, world/lore/climate au
 
 Safe Section plain-text recovery, exact typed repair schemas, conservative missing-quote repair and parallel-worker wiring are implemented and recorded under **Completed** above.
 
+#### v0.18.0-hotfix2 — completed
+
+Disclosed, rate-limited GitHub Release checks, a dedicated Updates page, stable version comparison, exact platform-download handoff and the no-silent-install boundary are implemented and recorded under **Completed** above.
+
 ### Accepted idea backlog — dependency ordered
 
 The ideas in the living **Character Card Forge Ideas** document are grouped here by implementation dependency rather than their source numbering. Existing capabilities are extended instead of rebuilt, and speculative integrations remain behind verified API/capability checks.
@@ -498,6 +516,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep Idea Detail data backwards-compatible, unknown IDs falling back to Standard, and output budgets based on profile/model limits rather than hardcoded provider assumptions.
 - Keep normal Godot import/open checkout-clean; revisit canonical `.gd.uid` migration later.
 - Keep release/update executable modes version-controlled and release version synchronization owned by `set_version.py`.
+- Keep in-app release checks unauthenticated, rate-limited, repository-pinned and separate from provider credentials, project data and executable replacement.
 - Keep persistent app state under `user://` separate from portable project/card data unless deliberately included.
 - Keep Idea Notebook independent of Character Project persistence and generation-service topology.
 - Keep Collaborator source seeding public/structured and completion/refinement project-scoped/stale-source checked/non-destructive.
