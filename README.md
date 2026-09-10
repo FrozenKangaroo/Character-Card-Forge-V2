@@ -13,7 +13,10 @@ Every proposed field is shown with its current and replacement value, defaults t
 Reject, and can be approved or edited only through the complete visible change set.
 Rejected proposals and intentionally dismissed findings remain recorded. Accepted
 batches create revision recovery checkpoints and AI Review history stays out of
-ordinary Character Card exports.
+ordinary Character Card exports. Long findings now open in a wrapped detail pane,
+each selective change uses a spacious card with a permanently visible decision menu
+and full current/proposed editors, and a complete text-only report can be viewed or
+exported as `.txt`.
 
 v0.18.2 adds a consolidated **Card Inspector** with advisory health findings,
 per-section token estimates, an explicitly approximate compiled-prompt view, technical

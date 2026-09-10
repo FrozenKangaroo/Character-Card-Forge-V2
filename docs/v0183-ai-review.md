@@ -24,6 +24,18 @@ Reject is the default. The author may approve, reject, or edit a proposed value
 before applying it. **Approve All Visible Changes** is enabled only after the full
 proposal set is rendered.
 
+Long findings use a selectable list plus a wrapped, scrollable detail pane rather
+than relying on hover text. Selective changes use stacked review cards: the
+Approve/Reject selector stays in the card header while the complete current and
+proposed values have independent wrapped editors and scrolling. This keeps the
+decision control usable even for very large lore, greeting or description changes.
+
+The **Full Report** tab presents a text-only copy of the selected review with its
+provenance, staleness, rubric, complete explanations, old/new values and recorded
+decisions. **Export Full Report…** writes that same visible report as a plain `.txt`
+file without changing the character or review history. **Copy Full Report** provides
+the same text directly through the system clipboard.
+
 Rejected proposals and intentionally dismissed findings remain in private review
 history so later reviews can distinguish an accepted design choice from an
 unresolved suggestion. Applying an accepted batch creates recovery checkpoints

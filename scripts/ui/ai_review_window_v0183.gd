@@ -20,12 +20,17 @@ var _stale_label: Label
 var _summary: TextEdit
 var _rubric_tree: Tree
 var _findings_tree: Tree
-var _proposal_tree: Tree
+var _finding_detail: TextEdit
+var _proposal_list: VBoxContainer
+var _proposal_rows: Array[Dictionary] = []
+var _report_text: TextEdit
+var _report_export_button: Button
 var _run_button: Button
 var _approve_all_button: Button
 var _apply_button: Button
 var _status: Label
 var _apply_confirm: ConfirmationDialog
+var _report_dialog: FileDialog
 
 
 func _ready() -> void:
@@ -170,6 +175,7 @@ func _build_ui() -> void:
 	_build_overview_tab(tabs)
 	_build_findings_tab(tabs)
 	_build_changes_tab(tabs)
+	_build_report_tab(tabs)
 	var actions := HBoxContainer.new()
 	page.add_child(actions)
 	_approve_all_button = Button.new()
@@ -216,6 +222,9 @@ func _build_findings_tab(tabs: TabContainer) -> void:
 	var explanation := Label.new()
 	explanation.text = "Check Dismiss for an intentional choice you want retained in review history."
 	page.add_child(explanation)
+	var split := VSplitContainer.new()
+	split.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	page.add_child(split)
 	_findings_tree = Tree.new()
 	_findings_tree.columns = 4
 	_findings_tree.column_titles_visible = true
@@ -226,7 +235,15 @@ func _build_findings_tab(tabs: TabContainer) -> void:
 	_findings_tree.set_column_expand(2, true)
 	_findings_tree.hide_root = true
 	_findings_tree.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	page.add_child(_findings_tree)
+	_findings_tree.custom_minimum_size.y = 180
+	_findings_tree.item_selected.connect(_show_selected_finding)
+	split.add_child(_findings_tree)
+	_finding_detail = TextEdit.new()
+	_finding_detail.editable = false
+	_finding_detail.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	_finding_detail.custom_minimum_size.y = 180
+	_finding_detail.placeholder_text = "Select a finding above to read its complete explanation and affected fields."
+	split.add_child(_finding_detail)
 
 
 func _build_changes_tab(tabs: TabContainer) -> void:
@@ -241,18 +258,43 @@ func _build_changes_tab(tabs: TabContainer) -> void:
 	)
 	explanation.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	page.add_child(explanation)
-	_proposal_tree = Tree.new()
-	_proposal_tree.columns = 4
-	_proposal_tree.column_titles_visible = true
-	_proposal_tree.set_column_title(0, "Decision")
-	_proposal_tree.set_column_title(1, "Field")
-	_proposal_tree.set_column_title(2, "Current value")
-	_proposal_tree.set_column_title(3, "Proposed / editable value")
-	_proposal_tree.set_column_expand(2, true)
-	_proposal_tree.set_column_expand(3, true)
-	_proposal_tree.hide_root = true
-	_proposal_tree.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	page.add_child(_proposal_tree)
+	var scroll := ScrollContainer.new()
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	page.add_child(scroll)
+	_proposal_list = VBoxContainer.new()
+	_proposal_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_proposal_list.add_theme_constant_override("separation", 12)
+	scroll.add_child(_proposal_list)
+
+
+func _build_report_tab(tabs: TabContainer) -> void:
+	var page := VBoxContainer.new()
+	page.name = "FullReport"
+	tabs.add_child(page)
+	tabs.set_tab_title(tabs.get_tab_count() - 1, "Full Report")
+	var explanation := Label.new()
+	explanation.text = (
+		"Complete text-only record of the selected review, including provenance, rubric, "
+		+ "full findings, complete current/proposed values and recorded decisions."
+	)
+	explanation.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	page.add_child(explanation)
+	_report_text = TextEdit.new()
+	_report_text.editable = false
+	_report_text.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	_report_text.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	page.add_child(_report_text)
+	var report_actions := HBoxContainer.new()
+	page.add_child(report_actions)
+	_report_export_button = Button.new()
+	_report_export_button.text = "Export Full Report…"
+	_report_export_button.pressed.connect(_request_report_export)
+	report_actions.add_child(_report_export_button)
+	var copy_report_button := Button.new()
+	copy_report_button.text = "Copy Full Report"
+	copy_report_button.pressed.connect(_copy_report)
+	report_actions.add_child(copy_report_button)
 
 
 func _build_dialog() -> void:
@@ -264,6 +306,13 @@ func _build_dialog() -> void:
 	)
 	_apply_confirm.confirmed.connect(_apply_decisions)
 	add_child(_apply_confirm)
+	_report_dialog = FileDialog.new()
+	_report_dialog.title = "Export AI Review Report"
+	_report_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+	_report_dialog.access = FileDialog.ACCESS_FILESYSTEM
+	_report_dialog.filters = PackedStringArray(["*.txt ; Plain-text AI Review report"])
+	_report_dialog.file_selected.connect(_save_report)
+	add_child(_report_dialog)
 
 
 func _request_review() -> void:
@@ -313,14 +362,16 @@ func _select_history(index: int) -> void:
 func _render_review(review: Dictionary) -> void:
 	_rubric_tree.clear()
 	_findings_tree.clear()
-	_proposal_tree.clear()
+	_finding_detail.clear()
+	_clear_proposal_rows()
 	var rubric_root := _rubric_tree.create_item()
 	var finding_root := _findings_tree.create_item()
-	var proposal_root := _proposal_tree.create_item()
 	if review.is_empty():
 		_score_label.text = "No score"
 		_stale_label.text = ""
 		_summary.text = "Run AI Review when you want an advisory consistency check."
+		_report_text.text = "No AI Review is selected."
+		_report_export_button.disabled = true
 		_approve_all_button.disabled = true
 		_apply_button.disabled = true
 		return
@@ -329,6 +380,10 @@ func _render_review(review: Dictionary) -> void:
 	_stale_label.text = "STALE" if stale else "Current"
 	_stale_label.modulate = Color(1.0, 0.55, 0.25) if stale else Color(0.45, 0.9, 0.62)
 	_summary.text = str(review.get("summary", "No summary supplied."))
+	_report_text.text = REVIEW_SERVICE.full_report_text(
+		_project_data, _character_id, review
+	)
+	_report_export_button.disabled = false
 	var scores: Dictionary = review.get("scores", {})
 	for category in REVIEW_SERVICE.rubric():
 		var item := _rubric_tree.create_item(rubric_root)
@@ -343,25 +398,22 @@ func _render_review(review: Dictionary) -> void:
 		item.set_text(0, str(finding.get("severity", "info")).capitalize())
 		item.set_text(1, str(finding.get("category", "")))
 		item.set_text(2, str(finding.get("title", "Review note")))
-		item.set_tooltip_text(2, str(finding.get("explanation", "")))
+		item.set_tooltip_text(2, "Select this row to read the complete finding below.")
 		item.set_cell_mode(3, TreeItem.CELL_MODE_CHECK)
 		item.set_editable(3, str(review.get("status", "reviewed")) == "reviewed" and not stale)
 		item.set_checked(3, dismissed.has(str(finding.get("id", ""))))
 		item.set_metadata(3, str(finding.get("id", "")))
+		item.set_metadata(2, finding.duplicate(true))
 	for proposal_value in review.get("proposals", []):
 		var proposal: Dictionary = proposal_value
-		var item := _proposal_tree.create_item(proposal_root)
-		item.set_cell_mode(0, TreeItem.CELL_MODE_RANGE)
-		item.set_text(0, "Reject,Approve")
-		item.set_range(0, 0.0)
-		item.set_editable(0, str(review.get("status", "reviewed")) == "reviewed" and not stale)
-		item.set_text(1, str(proposal.get("label", proposal.get("path", "Field"))))
-		item.set_text(2, _display_value(proposal.get("current_value")))
-		item.set_text(3, _display_value(proposal.get("new_value")))
-		item.set_editable(3, str(review.get("status", "reviewed")) == "reviewed" and not stale)
-		item.set_tooltip_text(1, str(proposal.get("reason", "")))
-		item.set_metadata(0, str(proposal.get("path", "")))
-		item.set_metadata(3, typeof(proposal.get("new_value")))
+		_add_proposal_row(
+			proposal,
+			str(review.get("status", "reviewed")) == "reviewed" and not stale
+		)
+	var first_finding := finding_root.get_first_child()
+	if first_finding != null:
+		first_finding.select(2)
+		_show_finding(first_finding.get_metadata(2))
 	var editable := str(review.get("status", "reviewed")) == "reviewed" and not stale
 	var proposal_count := int(review.get("proposals", []).size())
 	_approve_all_button.disabled = not editable or proposal_count == 0
@@ -371,13 +423,10 @@ func _render_review(review: Dictionary) -> void:
 
 
 func _approve_all() -> void:
-	var root := _proposal_tree.get_root()
-	if root == null:
-		return
-	var item := root.get_first_child()
-	while item != null:
-		item.set_range(0, 1.0)
-		item = item.get_next()
+	for row in _proposal_rows:
+		var decision_value: Variant = row.get("decision")
+		if decision_value is OptionButton and not (decision_value as OptionButton).disabled:
+			(decision_value as OptionButton).select(1)
 
 
 func _request_apply() -> void:
@@ -388,19 +437,20 @@ func _request_apply() -> void:
 
 func _apply_decisions() -> void:
 	var decisions: Array = []
-	var root := _proposal_tree.get_root()
-	var item := root.get_first_child() if root != null else null
-	while item != null:
-		var action := "approve" if int(item.get_range(0)) == 1 else "reject"
-		var decision := {"path": str(item.get_metadata(0)), "action": action}
+	for row in _proposal_rows:
+		var selector := row.get("decision") as OptionButton
+		var editor := row.get("proposed") as TextEdit
+		var action := "approve" if selector != null and selector.selected == 1 else "reject"
+		var decision := {"path": str(row.get("path", "")), "action": action}
 		if action == "approve":
-			var parsed := _parse_edited_value(item.get_text(3), int(item.get_metadata(3)))
+			var parsed := _parse_edited_value(
+				editor.text if editor != null else "", int(row.get("value_type", TYPE_STRING))
+			)
 			if not bool(parsed.get("ok", false)):
 				_status.text = str(parsed.get("error", "An edited proposal is invalid."))
 				return
 			decision["value"] = parsed.get("value")
 		decisions.append(decision)
-		item = item.get_next()
 	var finding_root := _findings_tree.get_root()
 	var finding_item := finding_root.get_first_child() if finding_root != null else null
 	while finding_item != null:
@@ -427,6 +477,151 @@ func _apply_decisions() -> void:
 	)
 	_status.text = message
 	project_changed_v0183.emit(_project_data.duplicate(true), _character_id, message)
+
+
+func _add_proposal_row(proposal: Dictionary, editable: bool) -> void:
+	var panel := PanelContainer.new()
+	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_proposal_list.add_child(panel)
+	var margin := MarginContainer.new()
+	margin.add_theme_constant_override("margin_left", 10)
+	margin.add_theme_constant_override("margin_right", 10)
+	margin.add_theme_constant_override("margin_top", 8)
+	margin.add_theme_constant_override("margin_bottom", 10)
+	panel.add_child(margin)
+	var content := VBoxContainer.new()
+	content.add_theme_constant_override("separation", 7)
+	margin.add_child(content)
+	var header := HBoxContainer.new()
+	content.add_child(header)
+	var field_label := Label.new()
+	field_label.text = str(proposal.get("label", proposal.get("path", "Field")))
+	field_label.add_theme_font_size_override("font_size", 17)
+	field_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	header.add_child(field_label)
+	var path_label := Label.new()
+	path_label.text = str(proposal.get("path", ""))
+	path_label.modulate = Color(0.68, 0.72, 0.8)
+	header.add_child(path_label)
+	var decision := OptionButton.new()
+	decision.add_item("Reject")
+	decision.add_item("Approve")
+	decision.select(0)
+	decision.disabled = not editable
+	decision.custom_minimum_size.x = 125
+	header.add_child(decision)
+	var reason := Label.new()
+	reason.text = "Reason: %s" % str(proposal.get("reason", "No reason supplied."))
+	reason.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	content.add_child(reason)
+	var comparison := HBoxContainer.new()
+	comparison.add_theme_constant_override("separation", 10)
+	content.add_child(comparison)
+	var current_column := VBoxContainer.new()
+	current_column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	comparison.add_child(current_column)
+	var current_label := Label.new()
+	current_label.text = "Current value"
+	current_column.add_child(current_label)
+	var current_editor := TextEdit.new()
+	current_editor.text = _display_value(proposal.get("current_value"))
+	current_editor.editable = false
+	current_editor.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	current_editor.custom_minimum_size.y = 190
+	current_editor.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	current_column.add_child(current_editor)
+	var proposed_column := VBoxContainer.new()
+	proposed_column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	comparison.add_child(proposed_column)
+	var proposed_label := Label.new()
+	proposed_label.text = "Proposed value — editable before approval"
+	proposed_column.add_child(proposed_label)
+	var proposed_editor := TextEdit.new()
+	proposed_editor.text = _display_value(proposal.get("new_value"))
+	proposed_editor.editable = editable
+	proposed_editor.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	proposed_editor.custom_minimum_size.y = 190
+	proposed_editor.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	proposed_column.add_child(proposed_editor)
+	_proposal_rows.append({
+		"path": str(proposal.get("path", "")),
+		"value_type": typeof(proposal.get("new_value")),
+		"decision": decision,
+		"current": current_editor,
+		"proposed": proposed_editor,
+		"panel": panel
+	})
+
+
+func _clear_proposal_rows() -> void:
+	_proposal_rows.clear()
+	if _proposal_list == null:
+		return
+	for child in _proposal_list.get_children():
+		_proposal_list.remove_child(child)
+		child.queue_free()
+
+
+func _show_selected_finding() -> void:
+	var selected := _findings_tree.get_selected()
+	if selected == null:
+		return
+	_show_finding(selected.get_metadata(2))
+
+
+func _show_finding(finding_value: Variant) -> void:
+	if not finding_value is Dictionary:
+		_finding_detail.clear()
+		return
+	var finding: Dictionary = finding_value
+	var paths: Array[String] = []
+	for path_value in finding.get("field_paths", []):
+		paths.append(str(path_value))
+	_finding_detail.text = "%s\n\nSeverity: %s\nCategory: %s\nAffected fields: %s\n\n%s" % [
+		str(finding.get("title", "Review note")),
+		str(finding.get("severity", "info")).capitalize(),
+		str(finding.get("category", "")),
+		", ".join(paths) if not paths.is_empty() else "None specified",
+		str(finding.get("explanation", "No explanation supplied."))
+	]
+
+
+func _request_report_export() -> void:
+	if _selected_review_id.is_empty() or _report_text.text.is_empty():
+		return
+	var record := CCFStorageService.get_character(_project_data, _character_id)
+	var base_name := CCFStorageService.character_display_name(record)
+	_report_dialog.current_file = "%s-ai-review.txt" % _safe_filename(base_name)
+	_report_dialog.popup_centered_ratio(0.74)
+
+
+func _copy_report() -> void:
+	if _report_text.text.is_empty() or _selected_review_id.is_empty():
+		return
+	DisplayServer.clipboard_set(_report_text.text)
+	_status.text = "Full AI Review report copied to the clipboard."
+
+
+func _save_report(destination_path: String) -> void:
+	var target := destination_path.strip_edges()
+	if target.is_empty():
+		return
+	if not target.to_lower().ends_with(".txt"):
+		target += ".txt"
+	var file := FileAccess.open(target, FileAccess.WRITE)
+	if file == null:
+		_status.text = "Could not export the AI Review report."
+		return
+	file.store_string(_report_text.text)
+	file.close()
+	_status.text = "Full AI Review report exported."
+
+
+func _safe_filename(value: String) -> String:
+	var result := value.strip_edges()
+	for character in ["/", "\\", ":", "*", "?", '"', "<", ">", "|"]:
+		result = result.replace(character, "_")
+	return result if not result.is_empty() else "character"
 
 
 func _display_value(value: Variant) -> String:

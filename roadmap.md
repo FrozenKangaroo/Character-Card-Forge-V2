@@ -124,6 +124,7 @@ Tools; published release metadata remains unchanged until a release transaction.
 - Added reviewed-content hashes and visible stale state so old proposals cannot overwrite later card, shared-context or lore edits.
 - Stored bounded private review history with rubric version, model/profile, timestamp, findings, score, complete proposals and author decisions.
 - Added separated Score & Rubric, Findings and Selective Changes views with old/new values and Reject-by-default decisions.
+- Added readable long-content review cards, a wrapped full-finding detail pane and a complete text-only report with plain-text export.
 - Added explicit Approve, Reject, Edit Before Applying and complete-set-only Approve All behavior; no review result silently changes character data.
 - Preserved rejected proposals and intentionally dismissed findings as author decisions for later review context.
 - Added recovery checkpoints before and after every accepted AI Review batch, while keeping review history out of ordinary card export and recursive revision snapshots.
