@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.18.0-hotfix3 — Lorebook Word Wrapping**
+**v0.18.1 — Revision Safety, Diff and Recovery**
 
 v0.18.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -83,9 +83,35 @@ v0.18.0-hotfix2 adds a disclosed GitHub Release update checker. Packaged builds 
 
 v0.18.0-hotfix3 enables automatic boundary word wrapping in the Lorebook Manager's Lore content and Trigger Preview multiline inputs. This changes only visual layout: saved lore text and explicit paragraph breaks remain unchanged.
 
-The released application displays **v0.18.0**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. After the small v0.18.0-hotfix3 source candidate, development resumes with v0.18.1 Revision Safety, Diff and Recovery without changing published release metadata until a release transaction.
+v0.18.1 adds immutable per-character checkpoints at meaningful boundaries, including
+Save, accepted AI previews, imports, merges, forks and restores. The Revision History
+window provides milestone labels and notes, field-aware comparison, full value
+inspection, selective field application from revisions or related project characters,
+non-destructive restore, fork and standard
+Character Card V2 JSON export for earlier revisions. Per-character retention and
+portable-package controls bound storage, while large assets remain references and
+private derivation lineage stays out of ordinary revision export.
+
+The released application displays **v0.18.0**. The source development candidate
+displays **v0.18.1**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
+with Compatibility/OpenGL fallback and retains the complete historical regression
+baseline. The next planned milestone is v0.18.2 Card Health, Token and Interchange
+Inspection; published release metadata remains unchanged until a release transaction.
 
 ## Completed
+
+### v0.18.1 — Revision Safety, Diff and Recovery
+
+- Added immutable timestamped character checkpoints with labels, notes, reason and bounded provenance at meaningful authoring actions rather than every keystroke.
+- Added a live Revision History workspace window with checkpoint/current selectors, field-aware before/after comparison and full structured-value inspection.
+- Added checked-field selective merge, with a recovery checkpoint before the merge and a new merge result checkpoint afterward.
+- Added non-destructive restore that preserves the displaced current state and appends the restored state instead of truncating history.
+- Added earlier-revision forks with fresh character IDs and private derivation lineage.
+- Added standard Character Card V2 JSON export for earlier revisions while excluding revision history and private lineage.
+- Added automatic checkpoints for meaningful Save, accepted AI preview changes and imported projects, with identical automatic saves deduplicated.
+- Added per-character retention/pruning from 5 to 500 revisions and a choice to include or omit each character's history from portable `.ccfproject` packages.
+- Kept portraits, generated images and attachments as stable path/content references rather than duplicating large binary data in each snapshot.
+- Added focused service/live-UI regression coverage, an inherited manifest, Godot 4.7.1 CI and `docs/v0181-revision-safety.md`.
 
 ### v0.18.0-hotfix3 — Lorebook Word Wrapping
 
@@ -380,16 +406,13 @@ Automatic visual word wrapping for Lore content and Trigger Preview multiline in
 
 The ideas in the living **Character Card Forge Ideas** document are grouped here by implementation dependency rather than their source numbering. Existing capabilities are extended instead of rebuilt, and speculative integrations remain behind verified API/capability checks.
 
-#### v0.18.1 — Revision Safety, Diff and Recovery
+#### v0.18.1 — completed
 
-- Save immutable, timestamped character revisions at meaningful actions: explicit checkpoints, accepted AI changes, imports, migrations, merges and restores rather than every keystroke.
-- Add milestone labels/notes, creation provenance and a field-aware side-by-side diff for core fields, greetings, lorebooks, metadata, custom/vendor extensions and other versioned content.
-- Allow preview, restore, fork and export of an earlier revision. A restore creates a new current revision so later history is never silently destroyed.
-- Add selective field merge between revisions or related cards, using the same comparison/apply boundary rather than a second rewriting system.
-- Create recoverable backup snapshots before migrations, bulk edits, format upgrades and large imports; expose retention/pruning and portable-project inclusion controls.
-- Use revision checkpoints as the durable cross-session recovery model. Normal editor undo remains short-lived and is not presented as a substitute for saved history.
-- Preserve derivation/source lineage for variations, scenario copies, imports, side-character promotions and descendants without exporting private provenance by default.
-- Keep large assets content-addressed or referenced where practical instead of copying identical binaries into every revision.
+Durable checkpoints, comparison, selective recovery, non-destructive restore, forks,
+earlier-revision export, automatic Save/AI/import boundaries, retention and package
+controls are implemented and recorded under **Completed** above. Applying this model
+to future format migrations and the v0.18.4 batch-action layer remains an integration
+requirement for those milestones rather than a reason to duplicate revision storage.
 
 #### v0.18.2 — Card Health, Token and Interchange Inspection
 

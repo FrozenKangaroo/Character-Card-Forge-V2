@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.18.1",
+  "description": "v0.18.0-hotfix3 plus durable revision safety, comparison and recovery.",
+  "base_manifest": "regression_suites_v0180_hotfix3.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0181_revision_safety",
+        "label": "v0.18.1 revision safety, diff and recovery",
+        "kind": "godot",
+        "path": "tools/test_v0181_revision_safety.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}

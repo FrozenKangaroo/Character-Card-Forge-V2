@@ -19,23 +19,26 @@ static func export_project(project: Dictionary, destination_path: String) -> Dic
 	if open_error != OK:
 		return {"ok": false, "error": "Could not create project package (error %s)." % open_error}
 
-	var metadata = project.get("metadata", {})
+	var packaged_project := CCFRevisionServiceV0181.project_for_package(project)
+	var metadata = packaged_project.get("metadata", {})
 	var project_name := "Untitled Project"
 	if metadata is Dictionary:
 		project_name = str(metadata.get("name", project_name))
-	var template_ids := _referenced_template_ids(project)
-	var series_id := CCFSeriesService.series_id_for_project(project)
+	var template_ids := _referenced_template_ids(packaged_project)
+	var series_id := CCFSeriesService.series_id_for_project(packaged_project)
+	var revision_character_count := _revision_character_count(packaged_project)
 	var manifest := {
 		"package_type": PACKAGE_TYPE,
 		"package_format_version": PACKAGE_FORMAT_VERSION,
 		"created_at": Time.get_datetime_string_from_system(true),
 		"application": "Character Card Forge",
 		"application_version": "0.18.0",
-		"project_format_version": int(project.get("format_version", 2)),
+		"project_format_version": int(packaged_project.get("format_version", 2)),
 		"project_id": project_id,
 		"project_name": project_name,
 		"project_file": PROJECT_ENTRY,
-		"character_count": project.get("characters", []).size(),
+		"character_count": packaged_project.get("characters", []).size(),
+		"revision_history_character_count": revision_character_count,
 		"included_template_ids": template_ids,
 		"included_series_id": series_id
 	}
@@ -43,7 +46,11 @@ static func export_project(project: Dictionary, destination_path: String) -> Dic
 	if manifest_error != OK:
 		writer.close()
 		return {"ok": false, "error": "Could not write the package manifest."}
-	var project_error := _write_zip_entry(writer, PROJECT_ENTRY, JSON.stringify(project, "  ").to_utf8_buffer())
+	var project_error := _write_zip_entry(
+		writer,
+		PROJECT_ENTRY,
+		JSON.stringify(packaged_project, "  ").to_utf8_buffer()
+	)
 	if project_error != OK:
 		writer.close()
 		return {"ok": false, "error": "Could not write the project data into the package."}
@@ -78,6 +85,19 @@ static func export_project(project: Dictionary, destination_path: String) -> Dic
 			return {"ok": false, "error": "Could not add one or more project assets to the package (error %s)." % asset_error}
 	writer.close()
 	return {"ok": true, "path": destination_path, "manifest": manifest}
+
+
+static func _revision_character_count(project: Dictionary) -> int:
+	var count := 0
+	for character_value in project.get("characters", []):
+		if (
+			character_value is Dictionary
+			and (character_value as Dictionary).has(
+				CCFRevisionServiceV0181.HISTORY_KEY
+			)
+		):
+			count += 1
+	return count
 
 
 static func import_project(source_path: String) -> Dictionary:

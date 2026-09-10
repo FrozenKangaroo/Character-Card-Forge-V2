@@ -2,7 +2,19 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.18.0-hotfix3 Lorebook Word Wrapping
+## Current development candidate: v0.18.1 Revision Safety, Diff and Recovery
+
+v0.18.1 adds durable per-character revision history. **Revision History** can create
+named checkpoints, compare any checkpoint with the current character or another
+checkpoint, inspect full before/after values, selectively apply checked fields,
+restore without deleting later work, fork an earlier revision into a new character
+or compare/copy selected fields from another project character, and export an earlier
+revision as standard Character Card V2 JSON. Save, accepted AI
+changes, imports, selective merges, forks and restores create meaningful recovery
+points; unchanged automatic saves are deduplicated. Per-character retention and
+portable-project inclusion controls prevent unbounded history. Image assets remain
+references rather than being copied into every checkpoint, and private fork lineage
+is omitted from ordinary earlier-revision card export.
 
 v0.18.0-hotfix3 enables automatic visual word wrapping in the Lorebook Manager's **Lore content** editor and **Trigger Preview** sample-text box. Long paragraphs now flow across visible lines without requiring manual line breaks. Wrapping does not insert newline characters or change saved lore and trigger matching.
 
@@ -12,9 +24,13 @@ v0.18.0-hotfix1 makes Safe Section generation tolerant of models that return usa
 
 The underlying v0.18.0 candidate adds a project-level Front Porch World Studio with lossless `.fpworld` import/export, bare-lorebook compatibility, manual world/lore/climate authoring, embedded cover preparation and optional Stoop metadata. Imported unknown fields and additional lorebooks survive known-field edits. Every world export requires a private-context review and adult worlds require an additional declaration confirmation. Stoop preparation is local only: this version performs no direct publishing, network calls or Front Porch database writes. It retains the v0.17.5 avatar-gallery, Character Life suggestion, export-safety and Godot 4.7.2 warning fixes.
 
-The current public release baseline is v0.18.0. A source hotfix candidate is not automatically treated as a published release.
+The current public release baseline is v0.18.0. A source development candidate is not automatically treated as a published release.
 
-See `docs/v0180-hotfix3-lorebook-word-wrap.md` for the wrapping behavior, `docs/v0180-hotfix2-github-update-checks.md` for the update-check privacy and install boundary, `docs/v0180-hotfix1-safe-section-text-recovery.md` for the recovery boundary and `docs/v0180-front-porch-worlds.md` for the `.fpworld` round-trip contract, authoring controls, Stoop preparation and required review boundary.
+See `docs/v0181-revision-safety.md` for the revision model and recovery boundaries,
+`docs/v0180-hotfix3-lorebook-word-wrap.md` for the wrapping behavior,
+`docs/v0180-hotfix2-github-update-checks.md` for the update-check privacy and install
+boundary, `docs/v0180-hotfix1-safe-section-text-recovery.md` for the recovery boundary
+and `docs/v0180-front-porch-worlds.md` for the `.fpworld` round-trip contract.
 
 ### Semantic character-generation validation and repair
 
