@@ -454,10 +454,12 @@ for v0.18.3 rather than being mixed into deterministic diagnostics.
 
 - Add private non-exported character notes and explicit workflow states such as Draft, Needs Review, Testing, Stable, Published and Archived.
 - Add Archive mode that removes superseded/rare cards from the default library without deleting them; archived cards remain searchable and recoverable.
+- Add configurable adult/private marker tags and a local Library presentation policy with **Show**, **Blur Artwork** and **Hide** modes. Hidden cards remain available only through an explicit adult/private filter; this preference never rewrites or exports card content.
 - Extend the existing search/index and favourites foundations with saved searches, rule-based Smart Collections, workflow/review/install/token filters and opt-in library statistics.
 - Add a Recently Used view backed by bounded activity metadata for opens, edits, exports, reviews and installs; keep it distinct from simple updated-time sorting.
 - Add exact duplicate detection first (stable IDs, content/image hashes), then explainable probable matches using normalized metadata/text similarity. Merge, replace, ignore and keep-both always require an explicit choice.
 - Add a reusable multi-selection/batch action layer for validation, tagging, collections, moving, export and safe format conversion. Integration installs remain capability-gated and report per-item outcomes.
+- Add **Create Multi-Character Project / Group from Selected** to the same Library multi-selection layer, reusing project characters, searchable pickers and v0.19.0 group-assembly services rather than inventing a second group model.
 - Add a character-card context menu and selected-item quick actions for Open, Export, Review, Front Porch Install/Update, Duplicate/Variation, Collection, Rename, Show Location, Archive and Delete.
 - Allow direct export from the library by reusing Import / Export services; later **Export Selected** uses the same batch layer rather than a separate implementation.
 - Surface bounded informational notices such as stale reviews, local changes to installed cards, missing assets or import warnings without turning the library into an intrusive notification feed.
@@ -471,13 +473,29 @@ for v0.18.3 rather than being mixed into deterministic diagnostics.
 - Offer Compare, Install, Update, Reinstall or Import Front Porch Changes only after previewing the relevant differences. Never overwrite locally customised cards automatically.
 - Add a sequential install/update queue and a persistent deployment report with succeeded, failed, skipped and warning outcomes. Reuse the existing AI Jobs presentation patterns where practical without mixing AI requests and deployments.
 - Add group-card direct installation only if a verified supported group endpoint exists; never send `fpa_group` packages through a plain-character bulk route.
+- Add **Remove from Front Porch…** only when capability detection proves a supported authenticated deletion endpoint. Preview the exact remote identity and require confirmation; never fall back to direct SQLite access.
 - Add opt-in update checks only for imported sources that provide a stable public ID or URL. Remote changes are advisory until explicitly imported or merged.
+
+#### v0.18.6 — Compact/Lite Derivatives from Existing Characters
+
+- Add a discoverable **Create Compact/Lite Derivative…** action for an already-finished character; this is separate from choosing a compact template during initial generation.
+- Always create a new independent character with private lineage to the source character and source revision/content hash. Never overwrite or compress the source in place.
+- Offer a target token budget plus Gentle, Balanced, Aggressive and Extreme compression levels, with estimated before/after counts from Card Inspector.
+- Add preservation controls for lorebook material, greetings, examples, Front Porch/state fields, adult traits, tags and image-prompt material.
+- Present the complete derivative as an editable field-by-field comparison before save, using the existing generation/review and revision-safety boundaries.
+- Record the producing model/profile and compression choices as private provenance that does not enter ordinary Character Card exports.
 
 #### v0.19.0 — Rich Scenario, Greeting, World and Ensemble Authoring
 
 - Add versioned Scenario Presets/alternate setups that reference one character without requiring duplicated full cards; define export materialisation rules for targets that support only one scenario.
 - Expand Alternative Greetings into a manager with categories, tags, weights, randomisation, favourites, Front Porch opening seeds and preview/test entry points.
 - Add a coordinated Multi-Character Workspace for casts, families, teams and group cards using the existing project characters, Relationships and Card Workflows as the source of truth.
+- Add **New Multi-Character / Group Project** plus **Add Existing Library Character** entry points. Authors can create new members, select existing members or mix both without first understanding internal project hierarchy.
+- Materialise a valid Multi-Character Single Card workflow into a reviewed combined runtime/export artifact without modifying or silently merging the independent source characters. Preserve distinct member voices and warn where the target format cannot express ensemble semantics.
+- Generate a **Split Character Set** from one shared concept or project plan: seed independent member records, reuse shared setting/relationship/series/world context, run focused per-character generation and review/save each result separately.
+- Give split generation a parent AI job with recoverable per-character results and partial failure/retry; keep per-character Interview/Q&A separate and retain other cast members only as supporting context unless a group card is explicitly requested.
+- Make ordinary group-card controls—name, members, shared scenario, opening, system/group prompt, turn behavior, supported Director/chaos settings, objectives, opening state and lore/world references—the primary surface. Keep raw group JSON Expert-only.
+- Model the persistent group roster separately from the members active/present in a particular scenario or opening whenever the target runtime supports that distinction.
 - Add a Shared World Manager on top of the v0.18.0 `.fpworld` foundation so characters/groups reference common world data instead of silently duplicating it.
 - Add dependency inspection for characters, worlds, lorebooks, groups, images and collections, including warnings before deleting referenced content.
 - Add optional lorebook/world graph views after the underlying references are explicit; the graph is a view/editor of real data, not a separate canonical store.
@@ -501,6 +519,30 @@ for v0.18.3 rather than being mixed into deterministic diagnostics.
 - Make chat creation, transfer and deletion user-initiated, previewable and recoverable; never manipulate Front Porch's live database.
 - Extend to multi-character/group scenario testing only after single-character lifecycle, streaming/cancellation and privacy boundaries are reliable.
 
+#### v0.19.3 — Expression Set Generation
+
+- Add **Generate Expression Set…** to Image Studio/Avatar Gallery with multi-selection of supported expression labels and an explicit visual identity/source baseline.
+- Run each expression through the existing managed Image Studio queue, preserving its exact prompt, settings, seed and provider/model provenance.
+- Route accepted results into the existing avatar gallery with their requested exact labels; do not create a parallel expression store.
+- Allow per-expression review, retry and replacement without regenerating successful members of the set.
+- Finish through the existing supported outputs: direct Front Porch gallery installation or portable expression ZIP export.
+
+#### v0.19.4 — PDF and Remote Reference Ingestion
+
+- Add deterministic local PDF text extraction when a text layer exists while retaining the original PDF as the managed source attachment.
+- Store extracted text as derived preprocessing data with page, character, token, status and truncation metadata; preview it and let the author explicitly choose whether it enters context.
+- Keep scanned/image-only PDF OCR as a separate explicit future option rather than silently invoking an expensive service.
+- Add **Add from URL…** for bounded HTTPS document/image/reference ingestion with download-size, timeout, redirect and content-type limits plus a preview before acceptance.
+- Copy accepted remote content into managed project storage and record source URL/fetch time provenance. Treat remote content as untrusted data and make refresh an explicit action rather than background mutation.
+- Reuse the existing attachment context-budget and preprocessing pipeline for both sources.
+
+#### v0.19.5 — Task-Specific Text Routing and Fallback
+
+- Extend provider profiles with optional **Fast/Suggestion Text**, **Deep Review Text** and **Fallback Text** roles while keeping **Use Primary** as every task's default.
+- Route small field suggestions/light transforms and deep consistency review independently without changing the established Text, Vision and Image separation.
+- Permit bounded automatic fallback only for explicitly enabled technical failures such as unavailable models/endpoints; refusals and content failures do not silently switch models by default.
+- Prevent retry chains, report every fallback visibly and retain the actual producing profile/model in accepted-result provenance.
+
 #### v0.20.0 — Very-Large and Portable Library Architecture
 
 - Virtualise library tiles/rows so only visible and nearby characters/thumbnails are instantiated for libraries containing hundreds or thousands of entries.
@@ -521,6 +563,13 @@ for v0.18.3 rather than being mixed into deterministic diagnostics.
 
 The current Relationship Matrix, group-card builder/import/export, Interview/Q&A and Character Builder, full-text library search and favourites already cover the core of several source-document ideas. Future milestones extend those implementations rather than adding competing systems.
 
+The September 2026 V1-versus-V2 feature audit is accepted as a roadmap correction,
+not a compatibility rewrite. A parity item is complete only when the action is
+discoverable, preserves or exceeds the useful V1 workflow, uses V2's canonical data
+model, previews and recovers destructive changes, retains AI provenance, keeps private
+state out of standard card fields, respects supported Front Porch APIs/formats and has
+focused plus inherited regression coverage.
+
 - Add denser/multi-selection source controls for family/cast/ensemble Collaborator sessions if runtime use confirms need.
 - Extract the v0.15.38 character-search/index behaviour into a reusable Character Picker for Collaborator, relationship tools, Image Studio and other large-library workflows.
 - Preserve source/relationship provenance for Collaborator-created characters while keeping exports standalone.
@@ -537,6 +586,7 @@ The current Relationship Matrix, group-card builder/import/export, Interview/Q&A
 - Improve Generation Group/component participation reporting and clarify Blueprint/Detailed Draft/Generate Character/Controlled Build/AI Suggest/manual authoring boundaries.
 - Continue Relationship Graph, Route Graph, Linked Variant, Library/search/filter, template tooling and import/export diagnostics work.
 - Continue V1 parity only where it improves V2 rather than reproducing obsolete architecture.
+- Require new derivative, materialisation, batch and remote-ingestion actions to be explicit and reviewable; preserve source characters and integrate with Revision History, Card Inspector, AI Review, AI Jobs, managed attachments and indexed/searchable character pickers.
 
 ## Level and Content Tools
 
@@ -617,3 +667,6 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Collaborative multi-user libraries and automatic cloud/self-hosted sync remain experimental until revision identity, locking, merge/conflict handling and privacy controls exist.
 - A public third-party extension SDK remains deferred until the internal v0.19.1 adapter contract is stable and a permission/sandbox/update model has been designed.
 - Full phone-optimised remote editing remains deferred; dense card, lorebook, review and multi-window workflows make desktop-first browser access the more realistic initial target.
+- Provider text streaming remains low priority and presentation-only if revisited; partial streamed text must never become accepted project data.
+- A self-installing updater remains optional future work. The current explicit GitHub Release notification/download handoff satisfies the useful V1 update-discovery workflow.
+- Direct Stoop publishing remains deferred until a mature supported authenticated contract exists.
