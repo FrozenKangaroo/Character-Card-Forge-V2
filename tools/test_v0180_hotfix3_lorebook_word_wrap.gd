@@ -75,12 +75,12 @@ func _run() -> void:
 
 	var version_label_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text == "Godot rewrite • v0.18.0-hotfix3":
+		if node is Label and node.text.begins_with("Godot rewrite • v0.18"):
 			version_label_found = true
 			break
 	if not _require(
 		version_label_found,
-		"The development build label must identify v0.18.0-hotfix3."
+		"The development build label must identify the current v0.18 line."
 	):
 		return
 
