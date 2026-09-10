@@ -59,6 +59,7 @@ func _install_activation_tester() -> void:
 	_activation_input = TextEdit.new()
 	_activation_input.custom_minimum_size = Vector2(480, 76)
 	_activation_input.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_activation_input.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
 	_activation_input.placeholder_text = "Example: {{user}} arrives at the Railway Museum and asks Mika about the old signal box…"
 	row.add_child(_activation_input)
 	var test_button := Button.new()

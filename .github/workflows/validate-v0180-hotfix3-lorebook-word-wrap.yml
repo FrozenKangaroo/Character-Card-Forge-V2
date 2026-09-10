@@ -1,0 +1,65 @@
+name: Validate v0.18.0-hotfix3 Lorebook Word Wrap
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v0180-hotfix3-lorebook-word-wrap-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.7.1'
+  GODOT_STATUS: stable
+
+jobs:
+  lorebook-word-wrap:
+    name: Multiline Controls, Text Preservation and Live UI
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot 4.7.1 and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project with warning gate
+        shell: bash
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0180-hotfix3-import/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0180-hotfix3-import/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0180-hotfix3-import/config
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v0180-hotfix3-import.log
+          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE|SHADOWED_GLOBAL_IDENTIFIER|CONFUSABLE_LOCAL_DECLARATION|INCOMPATIBLE_TERNARY|INTEGER_DIVISION|Parse Error" /tmp/ccf-v0180-hotfix3-import.log; then
+            echo "Godot reported a script or warning failure during import."
+            exit 1
+          fi
+
+      - name: Run focused Lorebook wrapping regression
+        env:
+          CCF_REGRESSION_RUN: '1'
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0180-hotfix3-focused/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0180-hotfix3-focused/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0180-hotfix3-focused/config
+        run: timeout 180s godot --headless --path . --script res://tools/test_v0180_hotfix3_lorebook_word_wrap.gd
+
+      - name: Recheck GitHub update checks
+        env:
+          CCF_REGRESSION_RUN: '1'
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0180-hotfix2/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0180-hotfix2/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0180-hotfix2/config
+        run: timeout 180s godot --headless --path . --script res://tools/test_v0180_hotfix2_github_update_checks.gd
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --manifest ./tools/regression_suites_v0180_hotfix3.json --profile quick --godot "$(command -v godot)"

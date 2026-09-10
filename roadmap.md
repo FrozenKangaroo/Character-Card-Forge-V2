@@ -51,9 +51,9 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.18.1 — Revision Safety, Diff and Recovery**
+**v0.18.0-hotfix3 — Lorebook Word Wrapping**
 
-v0.17.3 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
+v0.18.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
 v0.16.9 adds reusable provider-independent **Image Style Presets**. A versioned external built-in catalog provides starter styles; user-created **Global** presets are reusable across projects; **Project Visual Identity** supplies a project-level default; and **Character Default** provides an optional per-character override. Character defaults take precedence over project identity.
 
@@ -81,9 +81,18 @@ v0.18.0-hotfix1 hardens the shared Safe Section transport boundary after a model
 
 v0.18.0-hotfix2 adds a disclosed GitHub Release update checker. Packaged builds can check automatically at startup no more than once per 24 hours, and Settings provides manual checking plus an opt-out. A newer stable release produces a sidebar notice, bounded plain-text release notes and the exact repository-hosted platform package. Checks are unauthenticated and send no provider credentials or project data. Download/install remains explicit; CCF does not silently replace a running executable.
 
-The released application displays **v0.17.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. The v0.18.0-hotfix2 source candidate is complete; development next targets v0.18.1 without changing published release metadata until a release transaction.
+v0.18.0-hotfix3 enables automatic boundary word wrapping in the Lorebook Manager's Lore content and Trigger Preview multiline inputs. This changes only visual layout: saved lore text and explicit paragraph breaks remain unchanged.
+
+The released application displays **v0.18.0**, uses the Godot **4.7.x stable** project baseline, keeps Forward+ with Compatibility/OpenGL fallback and retains the complete historical regression baseline. After the small v0.18.0-hotfix3 source candidate, development resumes with v0.18.1 Revision Safety, Diff and Recovery without changing published release metadata until a release transaction.
 
 ## Completed
+
+### v0.18.0-hotfix3 — Lorebook Word Wrapping
+
+- Enabled boundary word wrapping in the Lorebook Manager's main Lore content editor.
+- Enabled the same wrapping in the multiline Trigger Preview sample-text input.
+- Kept wrapping visual-only so saved lore and trigger text are not rewritten with inserted newlines.
+- Added focused live-UI regression coverage, an inherited manifest, Godot 4.7.1 CI and `docs/v0180-hotfix3-lorebook-word-wrap.md`.
 
 ### v0.18.0-hotfix2 — GitHub Release Update Checks
 
@@ -362,6 +371,10 @@ Safe Section plain-text recovery, exact typed repair schemas, conservative missi
 #### v0.18.0-hotfix2 — completed
 
 Disclosed, rate-limited GitHub Release checks, a dedicated Updates page, stable version comparison, exact platform-download handoff and the no-silent-install boundary are implemented and recorded under **Completed** above.
+
+#### v0.18.0-hotfix3 — completed
+
+Automatic visual word wrapping for Lore content and Trigger Preview multiline inputs is implemented and recorded under **Completed** above. Stored lore text and explicit paragraph breaks remain unchanged.
 
 ### Accepted idea backlog — dependency ordered
 
