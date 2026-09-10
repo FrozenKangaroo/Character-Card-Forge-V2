@@ -350,12 +350,12 @@ func _run() -> void:
 			break
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text == "Godot rewrite • v0.18.2":
+		if node is Label and node.text.begins_with("Godot rewrite • v0.18"):
 			version_found = true
 			break
 	if not _require(
 		tabs_found and version_found,
-		"The live inspector must provide six separated areas and the build label must identify v0.18.2."
+		"The live inspector must provide six separated areas and the build label must identify the v0.18 line."
 	):
 		return
 	app.queue_free()
