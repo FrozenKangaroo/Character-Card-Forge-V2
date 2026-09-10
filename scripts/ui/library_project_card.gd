@@ -4,6 +4,7 @@ extends PanelContainer
 signal primary_requested(project_id: String, additive: bool)
 signal selection_changed(project_id: String, selected: bool)
 signal open_requested(project_id: String)
+signal context_requested(project_id: String, screen_position: Vector2)
 
 var _project_id := ""
 var _selection_box: CheckBox
@@ -50,7 +51,11 @@ func configure(row: Dictionary, selected: bool) -> void:
 	portrait_panel.add_child(portrait)
 	if portrait.texture == null:
 		var fallback := Label.new()
-		fallback.text = _initials(str(row.get("name", "Untitled Project")))
+		fallback.text = (
+			"Artwork\nblurred"
+			if bool(row.get("artwork_blurred", false))
+			else _initials(str(row.get("name", "Untitled Project")))
+		)
 		fallback.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		fallback.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		fallback.add_theme_font_size_override("font_size", 42)
@@ -87,6 +92,17 @@ func configure(row: Dictionary, selected: bool) -> void:
 	count_label.modulate = Color(0.67, 0.69, 0.78)
 	count_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	content.add_child(count_label)
+	var workflow_state := str(row.get("workflow_state", "")).strip_edges()
+	if not workflow_state.is_empty():
+		var workflow_label := Label.new()
+		workflow_label.text = workflow_state.replace("_", " ").capitalize()
+		if bool(row.get("archived", false)):
+			workflow_label.text += " • Archived"
+		if bool(row.get("sensitive", false)):
+			workflow_label.text += " • Sensitive"
+		workflow_label.modulate = Color(0.91, 0.69, 0.39)
+		workflow_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		content.add_child(workflow_label)
 
 	var summary_label := Label.new()
 	var summary_text := str(row.get("summary", "")).strip_edges()
@@ -136,7 +152,13 @@ func _on_gui_input(event: InputEvent) -> void:
 	if not event is InputEventMouseButton:
 		return
 	var mouse_event: InputEventMouseButton = event
-	if mouse_event.button_index != MOUSE_BUTTON_LEFT or not mouse_event.pressed:
+	if not mouse_event.pressed:
+		return
+	if mouse_event.button_index == MOUSE_BUTTON_RIGHT:
+		context_requested.emit(_project_id, get_screen_position() + mouse_event.position)
+		accept_event()
+		return
+	if mouse_event.button_index != MOUSE_BUTTON_LEFT:
 		return
 	if mouse_event.double_click:
 		open_requested.emit(_project_id)

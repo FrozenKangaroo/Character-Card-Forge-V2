@@ -213,7 +213,9 @@ func _run() -> void:
 	var worker_value: Variant = workspace.get("_generation_service")
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text == "Godot rewrite • v0.18.3":
+		if node is Label and node.text in [
+			"Godot rewrite • v0.18.3", "Godot rewrite • v0.18.4"
+		]:
 			version_found = true
 			break
 	if not _require(
@@ -222,7 +224,7 @@ func _run() -> void:
 		and (button_value as Button).text == "AI Review"
 		and worker_value is CCFGenerationServiceV0183
 		and version_found,
-		"The live Workspace must expose AI Review, use the current generation service and identify v0.18.3."
+		"The live v0.18.3-or-later Workspace must retain AI Review and its generation service."
 	):
 		return
 	var tabs_found := false

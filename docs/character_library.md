@@ -2,6 +2,11 @@
 
 Character Card Forge v0.8 replaces the original basic project list with a richer project-and-character library while keeping saved `character.json` projects as the source of truth.
 
+v0.18.4 adds private workflow, Archive, sensitive presentation, Smart Collections,
+recent activity, duplicate review and batch/group actions. See
+[`v0184-library-workflow.md`](v0184-library-workflow.md) for the current workflow and
+safety contract.
+
 ## Browsing modes
 
 The library supports two views:
@@ -21,6 +26,7 @@ The disposable index searches across:
 - description, personality, scenario, first-message, and creator-note text;
 - virtual folder and collection names;
 - recorded Character Card import format/spec metadata.
+- private Library workflow notes and states (visible only inside CCF).
 
 Available filters are derived from the current project files:
 
@@ -29,6 +35,8 @@ Available filters are derived from the current project files:
 - collections;
 - tags;
 - unfiled projects.
+- workflow state, AI Review state, token-size band and local Front Porch data;
+- archived/recent projects and optional sensitive-card reveal.
 
 Sorting currently includes update time, creation time, name, character count, and favourites-first ordering.
 

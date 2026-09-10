@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.18.3 — AI Review, Rating and Selective Improvement**
+**v0.18.4 — Library Workflow, Duplicate and Batch Tools**
 
 v0.18.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -109,13 +109,38 @@ All becomes available; each proposal defaults to Reject and remains editable bef
 explicit application. Rejections and intentionally dismissed findings remain in
 private history, while accepted batches create revision recovery checkpoints.
 
+v0.18.4 adds private project notes and workflow states, recoverable Archive mode,
+optional Adult/Private markers and local Show/Blur Artwork/Hide presentation policy.
+Saved Smart Collections, review/workflow/token/Front-Porch-data filters, optional
+statistics and bounded Recently Used activity extend the existing Library index.
+Explainable exact/probable duplicate review never
+acts automatically; Merge and Replace archive the non-preferred project. Reusable
+multi-selection supports validation, organisation, project-package export and group
+creation through the established multi-character and Front Porch workflow formats,
+with context menus, quick actions, bounded notices and explicit per-item reports.
+
 The released application displays **v0.18.0**. The source development candidate
-displays **v0.18.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
+displays **v0.18.4**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
 with Compatibility/OpenGL fallback and retains the complete historical regression
-baseline. The next planned milestone is v0.18.4 Library Workflow, Duplicate and Batch
-Tools; published release metadata remains unchanged until a release transaction.
+baseline. The next planned milestone is v0.18.5 Front Porch Connection, Sync and
+Deployment Reliability; published release metadata remains unchanged until a release
+transaction.
 
 ## Completed
+
+### v0.18.4 — Library Workflow, Duplicate and Batch Tools
+
+- Added private project notes and Draft, Needs Review, Testing, Stable, Published and Archived workflow states without adding those values to ordinary Character Card exports.
+- Added recoverable Archive mode plus optional Adult/Private markers and a local Show, Blur Artwork or Hide presentation policy with explicit reveal for hidden cards.
+- Added workflow, review, token-size and local Front Porch-data filters, saved rule-backed Smart Collections, opt-in aggregate statistics and a bounded Recently Used view distinct from updated-time sorting.
+- Added bounded open, edit, export, review, install, validation and group-creation activity metadata stored in local Library state.
+- Added explainable exact duplicate evidence from stable IDs, normalized content and artwork hashes, followed by probable name/text similarity evidence.
+- Added explicit Merge, Replace, Ignore and Keep Both decisions; Merge and Replace archive the non-preferred project rather than permanently deleting it.
+- Extended the existing multi-selection layer with deterministic batch validation, workflow changes, archive/restore, direct `.ccfproject` export and export-safety-gated Character Card V2 conversion with per-item reports.
+- Added Create Multi-Character Project / Group from Selected using the existing project character model, private source lineage and Front Porch group workflow options.
+- Added grid/list context menus and selected-project quick actions for Open, Export, Review, Front Porch, Duplicate, Collection, Rename, Show Location, Archive and Delete.
+- Added bounded stale-review, missing-asset and artwork notices without background AI or Front Porch requests.
+- Added focused service/live-UI regression coverage, an inherited manifest, Godot 4.7.1 CI and `docs/v0184-library-workflow.md`.
 
 ### v0.18.3 — AI Review, Rating and Selective Improvement
 
@@ -472,19 +497,14 @@ implemented and recorded under **Completed** above. Library-level review filters
 batch workflows remain assigned to v0.18.4 so no batch action bypasses these explicit
 review and recovery boundaries.
 
-#### v0.18.4 — Library Workflow, Duplicate and Batch Tools
+#### v0.18.4 — completed
 
-- Add private non-exported character notes and explicit workflow states such as Draft, Needs Review, Testing, Stable, Published and Archived.
-- Add Archive mode that removes superseded/rare cards from the default library without deleting them; archived cards remain searchable and recoverable.
-- Add configurable adult/private marker tags and a local Library presentation policy with **Show**, **Blur Artwork** and **Hide** modes. Hidden cards remain available only through an explicit adult/private filter; this preference never rewrites or exports card content.
-- Extend the existing search/index and favourites foundations with saved searches, rule-based Smart Collections, workflow/review/install/token filters and opt-in library statistics.
-- Add a Recently Used view backed by bounded activity metadata for opens, edits, exports, reviews and installs; keep it distinct from simple updated-time sorting.
-- Add exact duplicate detection first (stable IDs, content/image hashes), then explainable probable matches using normalized metadata/text similarity. Merge, replace, ignore and keep-both always require an explicit choice.
-- Add a reusable multi-selection/batch action layer for validation, tagging, collections, moving, export and safe format conversion. Integration installs remain capability-gated and report per-item outcomes.
-- Add **Create Multi-Character Project / Group from Selected** to the same Library multi-selection layer, reusing project characters, searchable pickers and v0.19.0 group-assembly services rather than inventing a second group model.
-- Add a character-card context menu and selected-item quick actions for Open, Export, Review, Front Porch Install/Update, Duplicate/Variation, Collection, Rename, Show Location, Archive and Delete.
-- Allow direct export from the library by reusing Import / Export services; later **Export Selected** uses the same batch layer rather than a separate implementation.
-- Surface bounded informational notices such as stale reviews, local changes to installed cards, missing assets or import warnings without turning the library into an intrusive notification feed.
+Private workflow metadata, recoverable archives, local sensitive-card presentation,
+saved Smart Collections, recent activity, explainable duplicate decisions, reusable
+batch validation/export, multi-project group creation, quick actions and bounded notices
+are implemented and recorded under **Completed** above. Front Porch remote-state and
+deployment-queue filters remain assigned to v0.18.5 because they require verified
+server capabilities rather than inferred local state.
 
 #### v0.18.5 — Front Porch Connection, Sync and Deployment Reliability
 

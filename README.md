@@ -2,7 +2,25 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.18.3 AI Review, Rating and Selective Improvement
+## Current development candidate: v0.18.4 Library Workflow, Duplicate and Batch Tools
+
+v0.18.4 turns the existing Character Library into an authoring workflow hub. Projects
+can carry private notes, Draft/Needs Review/Testing/Stable/Published states, recoverable
+Archive status and optional Adult/Private markers that stay outside ordinary Character
+Card exports. A local Show/Blur Artwork/Hide policy controls sensitive presentation,
+with an explicit reveal required for hidden cards. Saved searches and rule-backed Smart
+Collections, token-size and local Front Porch-data filters build on the existing search,
+tag, folder, collection, series and favourite index; optional aggregate statistics and
+Recently Used are backed by bounded open/edit/export/review/install activity.
+
+Multi-selection now supports deterministic validation, project-package and safe
+Character Card V2 export, workflow changes, archive/restore and multi-character
+project/group creation. Duplicate review
+uses stable IDs, normalized content and artwork hashes before explainable text similarity,
+and never acts automatically: Merge and Replace archive the non-preferred project for
+recovery. Grid/list context menus and detail-panel quick actions provide direct Open,
+Export, Review, Front Porch, Duplicate, Collection, Rename, Show Location, Archive and
+Delete routes with per-item reports for batch work.
 
 v0.18.3 adds an optional **AI Review** workspace tool beside the deterministic Card
 Inspector. It checks consistency across identity, appearance, personality, scenario,
