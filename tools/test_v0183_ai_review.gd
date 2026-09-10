@@ -75,7 +75,10 @@ func _run() -> void:
 				"category": "depth",
 				"severity": "warning",
 				"title": "Personality could be more specific",
-				"explanation": "One behavioral detail would improve scene consistency.",
+				"explanation": (
+					"One behavioral detail would improve scene consistency. "
+					+ "This deliberately long explanation must remain readable outside a tooltip. ".repeat(12)
+				),
 				"field_paths": ["character.personality"]
 			},
 			{
@@ -226,12 +229,49 @@ func _run() -> void:
 	for node in (window_value as CCFAIReviewWindowV0183).find_children(
 		"*", "TabContainer", true, false
 	):
-		if node is TabContainer and node.get_tab_count() == 3:
+		if node is TabContainer and node.get_tab_count() == 4:
 			tabs_found = true
 			break
 	if not _require(
 		tabs_found,
-		"AI Review must separate score/rubric, findings and the complete selective change set."
+		"AI Review must separate score/rubric, findings, selective changes and the full report."
+	):
+		return
+	var review_window := window_value as CCFAIReviewWindowV0183
+	review_window.set("_project_data", project.duplicate(true))
+	review_window.set("_character_id", character_id)
+	review_window.call("_refresh_history")
+	var finding_detail_value: Variant = review_window.get("_finding_detail")
+	var proposal_rows_value: Variant = review_window.get("_proposal_rows")
+	var report_text_value: Variant = review_window.get("_report_text")
+	var report_dialog_value: Variant = review_window.get("_report_dialog")
+	if not _require(
+		finding_detail_value is TextEdit
+		and (finding_detail_value as TextEdit).text.contains(
+			"deliberately long explanation"
+		)
+		and proposal_rows_value is Array
+		and (proposal_rows_value as Array).size() == 2
+		and (proposal_rows_value as Array)[0].get("decision") is OptionButton
+		and (proposal_rows_value as Array)[0].get("current") is TextEdit
+		and (proposal_rows_value as Array)[0].get("proposed") is TextEdit
+		and report_text_value is TextEdit
+		and (report_text_value as TextEdit).text.contains("SELECTIVE CHANGES (2)")
+		and (report_text_value as TextEdit).text.contains(
+			"This deliberately long explanation"
+		)
+		and report_dialog_value is FileDialog,
+		"Long findings need a wrapped detail pane, selective changes need full-height editors with visible decision menus, and a complete exportable text report must be available."
+	):
+		return
+	var report_path := "/tmp/ccf_v0183_ai_review_report_test.txt"
+	review_window.call("_save_report", report_path)
+	if not _require(
+		FileAccess.file_exists(report_path)
+		and FileAccess.get_file_as_string(report_path).contains(
+			"CHARACTER CARD FORGE — AI REVIEW REPORT"
+		),
+		"The complete text-only AI Review report must export as a readable .txt file."
 	):
 		return
 	app.queue_free()

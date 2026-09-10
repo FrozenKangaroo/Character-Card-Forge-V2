@@ -46,6 +46,8 @@ static func capabilities() -> Dictionary:
 		"field_by_field_review": true,
 		"editable_before_apply": true,
 		"complete_change_set_before_approve_all": true,
+		"long_content_detail_views": true,
+		"full_text_report_export": true,
 		"dismissal_history": true,
 		"revision_checkpoint_per_accepted_batch": true,
 		"silent_apply": false,
@@ -278,6 +280,101 @@ static func review_is_stale(
 	)
 
 
+static func full_report_text(
+	project: Dictionary, character_id: String, review: Dictionary
+) -> String:
+	if review.is_empty():
+		return "No AI Review is selected."
+	var record := CCFStorageService.get_character(project, character_id)
+	var lines: Array[String] = []
+	lines.append("CHARACTER CARD FORGE — AI REVIEW REPORT")
+	lines.append("Advisory assessment; the score is not an objective measure of quality.")
+	lines.append("")
+	lines.append("Character: %s" % CCFStorageService.character_display_name(record))
+	lines.append("Review ID: %s" % str(review.get("review_id", "")))
+	lines.append("Created: %s" % str(review.get("created_at", "")))
+	lines.append("Status: %s" % str(review.get("status", "reviewed")).capitalize())
+	lines.append("Current state: %s" % (
+		"STALE — relevant content changed after this review"
+		if review_is_stale(project, character_id, review)
+		else "Current"
+	))
+	lines.append("Model: %s" % str(review.get("model", "Not recorded")))
+	lines.append("Profile: %s" % str(review.get("profile_name", "Not recorded")))
+	lines.append("Rubric version: %d" % int(review.get("rubric_version", 0)))
+	lines.append("Reviewed content hash: %s" % str(review.get("content_hash", "")))
+	lines.append("Overall advisory score: %.1f / 10" % float(review.get("overall_score", 0.0)))
+	lines.append("")
+	lines.append("RUBRIC SCORES")
+	var scores: Dictionary = _dictionary(review.get("scores", {}))
+	for category in RUBRIC:
+		var category_id := str(category.get("id", ""))
+		lines.append("- %s: %.1f / 10 (weight %d%%)" % [
+			str(category.get("label", category_id)),
+			float(scores.get(category_id, 0.0)),
+			int(category.get("weight", 0))
+		])
+	lines.append("")
+	lines.append("SUMMARY")
+	lines.append(str(review.get("summary", "No summary supplied.")))
+	lines.append("")
+	var dismissed: Array = _array(review.get("dismissed_finding_ids", []))
+	var findings: Array = _array(review.get("findings", []))
+	lines.append("FINDINGS (%d)" % findings.size())
+	if findings.is_empty():
+		lines.append("No findings were returned.")
+	for index in range(findings.size()):
+		var finding: Dictionary = findings[index]
+		var finding_id := str(finding.get("id", ""))
+		lines.append("")
+		lines.append("%d. [%s] %s" % [
+			index + 1,
+			str(finding.get("severity", "info")).to_upper(),
+			str(finding.get("title", "Review note"))
+		])
+		lines.append("   Category: %s" % str(finding.get("category", "")))
+		var field_paths := _string_array(finding.get("field_paths", []))
+		lines.append("   Fields: %s" % (
+			", ".join(field_paths) if not field_paths.is_empty() else "None specified"
+		))
+		lines.append("   Author decision: %s" % (
+			"Intentionally dismissed" if dismissed.has(finding_id) else "Not dismissed"
+		))
+		lines.append("   Explanation:")
+		lines.append(_indent_text(str(finding.get("explanation", "")), "      "))
+	lines.append("")
+	var decision_by_path: Dictionary = {}
+	for decision_value in review.get("decisions", []):
+		if decision_value is Dictionary:
+			var decision: Dictionary = decision_value
+			var decision_path := str(decision.get("path", ""))
+			if not decision_path.is_empty():
+				decision_by_path[decision_path] = decision
+	var proposals: Array = _array(review.get("proposals", []))
+	lines.append("SELECTIVE CHANGES (%d)" % proposals.size())
+	if proposals.is_empty():
+		lines.append("No field changes were proposed.")
+	for index in range(proposals.size()):
+		var proposal: Dictionary = proposals[index]
+		var field_path := str(proposal.get("path", ""))
+		var decision: Dictionary = decision_by_path.get(field_path, {})
+		var action := str(decision.get("action", "pending")).capitalize()
+		lines.append("")
+		lines.append("%d. %s" % [index + 1, str(proposal.get("label", field_path))])
+		lines.append("   Path: %s" % field_path)
+		lines.append("   Decision: %s" % action)
+		lines.append("   Reason:")
+		lines.append(_indent_text(str(proposal.get("reason", "")), "      "))
+		lines.append("   Current value:")
+		lines.append(_indent_text(_report_value(proposal.get("current_value")), "      "))
+		lines.append("   Proposed value:")
+		lines.append(_indent_text(_report_value(proposal.get("new_value")), "      "))
+		if str(decision.get("action", "")) == "approve" and decision.has("value"):
+			lines.append("   Applied/edited value:")
+			lines.append(_indent_text(_report_value(decision.get("value")), "      "))
+	return "\n".join(lines).strip_edges() + "\n"
+
+
 static func apply_review_decisions(
 	project: Dictionary,
 	character_id: String,
@@ -462,6 +559,17 @@ static func _compatible_value(path: String, current_value: Variant, proposed_val
 
 static func _label_for_path(path: String) -> String:
 	return path.replace("_", " ").replace(".", " › ").capitalize()
+
+
+static func _report_value(value: Variant) -> String:
+	if value is Dictionary or value is Array:
+		return JSON.stringify(value, "  ")
+	return str(value)
+
+
+static func _indent_text(value: String, prefix: String) -> String:
+	var text := value if not value.is_empty() else "(empty)"
+	return prefix + text.replace("\n", "\n" + prefix)
 
 
 static func _severity(value: String) -> String:
