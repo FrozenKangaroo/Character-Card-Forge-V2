@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.18.2",
+  "description": "v0.18.1 plus deterministic card health, token, interchange, import, asset and checklist inspection.",
+  "base_manifest": "regression_suites_v0181.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0182_card_health_inspection",
+        "label": "v0.18.2 Card Health, Token and Interchange Inspection",
+        "kind": "godot",
+        "path": "tools/test_v0182_card_health_inspection.gd",
+        "timeout_seconds": 240
+      }
+    ]
+  }
+}

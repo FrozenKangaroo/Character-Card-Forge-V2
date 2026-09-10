@@ -2,7 +2,16 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.18.1 Revision Safety, Diff and Recovery
+## Current development candidate: v0.18.2 Card Health, Token and Interchange Inspection
+
+v0.18.2 adds a consolidated **Card Inspector** with advisory health findings,
+per-section token estimates, an explicitly approximate compiled-prompt view, technical
+metadata, validated expert Raw JSON editing, missing-file relinking, group-member
+reference repair and a private configurable quality checklist. Import preview now
+shows the source portrait, detected format/version, estimated size, validation,
+duplicate evidence and migration/loss mapping before explicit Copy, Merge, Replace
+or Cancel choices. Content-changing expert and import actions use v0.18.1 recovery
+checkpoints; no health or checklist result blocks unusual intentional cards.
 
 v0.18.1 adds durable per-character revision history. **Revision History** can create
 named checkpoints, compare any checkpoint with the current character or another
@@ -26,7 +35,8 @@ The underlying v0.18.0 candidate adds a project-level Front Porch World Studio w
 
 The current public release baseline is v0.18.0. A source development candidate is not automatically treated as a published release.
 
-See `docs/v0181-revision-safety.md` for the revision model and recovery boundaries,
+See `docs/v0182-card-health-inspection.md` for inspection and reviewed import
+boundaries, `docs/v0181-revision-safety.md` for the revision model and recovery boundaries,
 `docs/v0180-hotfix3-lorebook-word-wrap.md` for the wrapping behavior,
 `docs/v0180-hotfix2-github-update-checks.md` for the update-check privacy and install
 boundary, `docs/v0180-hotfix1-safe-section-text-recovery.md` for the recovery boundary

@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.18.1 — Revision Safety, Diff and Recovery**
+**v0.18.2 — Card Health, Token and Interchange Inspection**
 
 v0.18.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -92,13 +92,32 @@ Character Card V2 JSON export for earlier revisions. Per-character retention and
 portable-package controls bound storage, while large assets remain references and
 private derivation lineage stays out of ordinary revision export.
 
+v0.18.2 adds a consolidated Card Inspector with deterministic advisory health checks,
+whole-card and per-section token estimates, an explicitly approximate compiled-prompt
+view, technical metadata, validated expert Raw JSON editing, missing asset/group-member
+repair and a private configurable quality checklist. Import preview now exposes the
+portrait, detected format/version, token size, validation, exact duplicate evidence
+and migration/loss mapping before explicit Copy, Merge, Replace or Cancel choices.
+
 The released application displays **v0.18.0**. The source development candidate
-displays **v0.18.1**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
+displays **v0.18.2**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
 with Compatibility/OpenGL fallback and retains the complete historical regression
-baseline. The next planned milestone is v0.18.2 Card Health, Token and Interchange
-Inspection; published release metadata remains unchanged until a release transaction.
+baseline. The next planned milestone is v0.18.3 AI Review, Rating and Selective
+Improvement; published release metadata remains unchanged until a release transaction.
 
 ## Completed
+
+### v0.18.2 — Card Health, Token and Interchange Inspection
+
+- Added one Card Inspector with six separated areas for health, tokens/prompt, technical metadata, expert Raw JSON, missing references and the quality checklist.
+- Added deterministic advisory findings for empty/malformed fields, duplicates, custom metadata, broken references and suspiciously large sections or cards.
+- Added whole-card/per-section token estimates plus an approximate compiled-prompt view that identifies runtime-dependent lore and frontend behavior.
+- Added read-only technical identity/extension/revision metadata and schema-validated Raw JSON apply behind an explicit confirmation and recovery checkpoints.
+- Expanded import preview with portrait, format/version, token size, validation, exact duplicate evidence and migration/loss mapping before Copy, Merge, Replace or Cancel.
+- Added migration explanations for preserved, transformed, defaulted, namespaced, review-required and potentially lossy data.
+- Added managed-file relinking for portraits, generated images and attachments, plus explicit replacement of missing group members.
+- Added a private configurable checklist for core fields, artwork, lore, token budget, manual review and optional roleplay testing; it does not enter ordinary card export.
+- Added focused service/live-UI regression coverage, an inherited manifest, Godot 4.7.1 CI and `docs/v0182-card-health-inspection.md`.
 
 ### v0.18.1 — Revision Safety, Diff and Recovery
 
@@ -414,16 +433,13 @@ controls are implemented and recorded under **Completed** above. Applying this m
 to future format migrations and the v0.18.4 batch-action layer remains an integration
 requirement for those milestones rather than a reason to duplicate revision storage.
 
-#### v0.18.2 — Card Health, Token and Interchange Inspection
+#### v0.18.2 — completed
 
-- Add a deterministic **Character Health Checker** for missing/malformed fields, duplicated material, unsupported metadata, broken references and suspiciously oversized sections. Findings warn by default and do not block unusual intentional cards.
-- Add token-budget analysis for the whole card and each contributing section, including lorebooks, examples, scenarios, greetings and system text.
-- Add a compiled-prompt preview that clearly identifies which parts are CCF approximations and which depend on a target frontend/runtime.
-- Add a technical metadata inspector plus a separate expert Raw JSON mode. Raw edits require schema/format validation and an explicit reviewed apply step.
-- Expand import preview with portrait, detected format/version, token size, validation, duplicate evidence and loss/preservation mapping before Replace, Merge, Import as Copy or Cancel.
-- Add a format-migration assistant that explains preserved, transformed, namespaced and potentially lossy fields before conversion.
-- Add a Missing Asset Finder with relink/repair actions for portraits, generated images, attachments and group members.
-- Add a customisable character quality checklist covering authored fields, portrait, lore, token budget, review and optional test status.
+Deterministic health/token/prompt inspection, separated technical and validated Raw
+JSON views, reviewed import actions with migration/loss and duplicate evidence,
+missing file/group-member repair and a private configurable checklist are implemented
+and recorded under **Completed** above. AI interpretation remains deliberately reserved
+for v0.18.3 rather than being mixed into deterministic diagnostics.
 
 #### v0.18.3 — AI Review, Rating and Selective Improvement
 

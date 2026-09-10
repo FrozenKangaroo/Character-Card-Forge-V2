@@ -676,7 +676,12 @@ static func _normalise_project(project: Dictionary) -> Dictionary:
 	defaults["relationships"] = relationships.duplicate(true) if relationships is Array else []
 	defaults["relationships"] = _normalise_relationships(defaults, defaults["relationships"])
 	var card_workflows = project.get("card_workflows", [])
-	defaults["card_workflows"] = _normalise_card_workflows(defaults, card_workflows)
+	# Preserve externally introduced stale member IDs on load so Card Inspector can
+	# explain and repair them. Explicit character deletion still uses the default
+	# cleanup behavior and removes references to the deleted character.
+	defaults["card_workflows"] = _normalise_card_workflows(
+		defaults, card_workflows, true
+	)
 	defaults["attachments"] = CCFAttachmentService.normalise_list(project.get("attachments", []))
 	for key in project:
 		if not defaults.has(key):
@@ -918,7 +923,11 @@ static func _normalise_relationships(project: Dictionary, raw_relationships: Var
 	return result
 
 
-static func _normalise_card_workflows(project: Dictionary, raw_workflows: Variant) -> Array:
+static func _normalise_card_workflows(
+	project: Dictionary,
+	raw_workflows: Variant,
+	preserve_missing_members: bool = false
+) -> Array:
 	var result: Array = []
 	if not raw_workflows is Array:
 		return result
@@ -939,7 +948,11 @@ static func _normalise_card_workflows(project: Dictionary, raw_workflows: Varian
 		var selected_ids: Array[String] = []
 		for raw_id in workflow.get("selected_character_ids", []):
 			var character_id := str(raw_id)
-			if valid_ids.has(character_id) and not selected_ids.has(character_id):
+			if (
+				not character_id.is_empty()
+				and (valid_ids.has(character_id) or preserve_missing_members)
+				and not selected_ids.has(character_id)
+			):
 				selected_ids.append(character_id)
 		if selected_ids.size() < 2:
 			continue
