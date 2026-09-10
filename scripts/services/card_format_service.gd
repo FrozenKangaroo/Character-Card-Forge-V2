@@ -754,7 +754,8 @@ static func _collect_ccf_custom_data(character_record: Dictionary) -> Dictionary
 			"interoperability",
 			"revision_history",
 			"revision_lineage",
-			"card_inspection_v0182"
+			"card_inspection_v0182",
+			"ai_review_v0183"
 		]:
 			continue
 		top_level[str(key)] = _duplicate_variant(character_record.get(key))

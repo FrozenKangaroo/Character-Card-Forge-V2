@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.18.2 — Card Health, Token and Interchange Inspection**
+**v0.18.3 — AI Review, Rating and Selective Improvement**
 
 v0.18.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -99,13 +99,35 @@ repair and a private configurable quality checklist. Import preview now exposes 
 portrait, detected format/version, token size, validation, exact duplicate evidence
 and migration/loss mapping before explicit Copy, Merge, Replace or Cancel choices.
 
+v0.18.3 adds an optional AI Review layer built on those deterministic reports. A
+visible versioned rubric produces a locally calculated advisory score for consistency,
+clarity, depth, scenario/greeting/lore quality, prompt efficiency and roleplay
+readiness. Reviews retain their content hash, model/profile, timestamp, findings,
+proposals and decisions, become stale after relevant edits, and never run simply by
+opening the library. The complete field-by-field change set is visible before Approve
+All becomes available; each proposal defaults to Reject and remains editable before
+explicit application. Rejections and intentionally dismissed findings remain in
+private history, while accepted batches create revision recovery checkpoints.
+
 The released application displays **v0.18.0**. The source development candidate
-displays **v0.18.2**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
+displays **v0.18.3**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
 with Compatibility/OpenGL fallback and retains the complete historical regression
-baseline. The next planned milestone is v0.18.3 AI Review, Rating and Selective
-Improvement; published release metadata remains unchanged until a release transaction.
+baseline. The next planned milestone is v0.18.4 Library Workflow, Duplicate and Batch
+Tools; published release metadata remains unchanged until a release transaction.
 
 ## Completed
+
+### v0.18.3 — AI Review, Rating and Selective Improvement
+
+- Added explicit user-triggered AI consistency review across identity, appearance, personality, scenario, greetings and lore, seeded with the deterministic Card Inspector evidence.
+- Added a visible eight-category rubric and locally calculated advisory score without presenting model judgment as objective quality.
+- Added reviewed-content hashes and visible stale state so old proposals cannot overwrite later card, shared-context or lore edits.
+- Stored bounded private review history with rubric version, model/profile, timestamp, findings, score, complete proposals and author decisions.
+- Added separated Score & Rubric, Findings and Selective Changes views with old/new values and Reject-by-default decisions.
+- Added explicit Approve, Reject, Edit Before Applying and complete-set-only Approve All behavior; no review result silently changes character data.
+- Preserved rejected proposals and intentionally dismissed findings as author decisions for later review context.
+- Added recovery checkpoints before and after every accepted AI Review batch, while keeping review history out of ordinary card export and recursive revision snapshots.
+- Added focused service/live-UI regression coverage, an inherited manifest, Godot 4.7.1 CI and `docs/v0183-ai-review.md`.
 
 ### v0.18.2 — Card Health, Token and Interchange Inspection
 
@@ -441,14 +463,13 @@ missing file/group-member repair and a private configurable checklist are implem
 and recorded under **Completed** above. AI interpretation remains deliberately reserved
 for v0.18.3 rather than being mixed into deterministic diagnostics.
 
-#### v0.18.3 — AI Review, Rating and Selective Improvement
+#### v0.18.3 — completed
 
-- Add AI consistency review for contradictions across identity, appearance, personality, scenario, greetings and lore, built on the deterministic health report rather than replacing it.
-- Offer an optional **AI Review Score** with a visible, versioned rubric for consistency, clarity, depth, scenario/greeting/lore quality, prompt efficiency and roleplay readiness. Never present it as objective quality.
-- Store the reviewed content hash, model/profile, rubric version, timestamp, findings and score; mark the result stale after relevant card changes instead of rerunning on library open.
-- Present every proposed improvement field-by-field with old/new comparison and **Approve**, **Reject** or **Edit Before Applying**. Approve All is allowed only after the complete change set is visible.
-- Keep review history, including intentionally dismissed findings, so repeated reviews can distinguish accepted design choices from unresolved issues.
-- Create a revision checkpoint for every accepted review batch and allow a later re-review without silently applying model output.
+AI consistency review, visible rubric scoring, content-hash staleness, private decision
+history, complete field-by-field review and revision-safe selective application are
+implemented and recorded under **Completed** above. Library-level review filters and
+batch workflows remain assigned to v0.18.4 so no batch action bypasses these explicit
+review and recovery boundaries.
 
 #### v0.18.4 — Library Workflow, Duplicate and Batch Tools
 

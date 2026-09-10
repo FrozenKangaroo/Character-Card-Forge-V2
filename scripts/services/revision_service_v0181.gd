@@ -87,6 +87,9 @@ static func create_checkpoint(
 static func snapshot_character(character_record: Dictionary) -> Dictionary:
 	var snapshot := character_record.duplicate(true)
 	snapshot.erase(HISTORY_KEY)
+	# AI Review history is private workflow evidence and may itself refer to
+	# revisions. Keeping it out prevents recursive checkpoint growth.
+	snapshot.erase("ai_review_v0183")
 	snapshot.erase("updated_at")
 	return snapshot
 

@@ -2,7 +2,18 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.18.2 Card Health, Token and Interchange Inspection
+## Current development candidate: v0.18.3 AI Review, Rating and Selective Improvement
+
+v0.18.3 adds an optional **AI Review** workspace tool beside the deterministic Card
+Inspector. It checks consistency across identity, appearance, personality, scenario,
+greetings and lore, then shows a locally calculated advisory score using a visible
+eight-part rubric. Reviews store their content hash, model/profile and private history;
+they become stale after relevant edits and never rerun just because the library opens.
+Every proposed field is shown with its current and replacement value, defaults to
+Reject, and can be approved or edited only through the complete visible change set.
+Rejected proposals and intentionally dismissed findings remain recorded. Accepted
+batches create revision recovery checkpoints and AI Review history stays out of
+ordinary Character Card exports.
 
 v0.18.2 adds a consolidated **Card Inspector** with advisory health findings,
 per-section token estimates, an explicitly approximate compiled-prompt view, technical
@@ -35,7 +46,8 @@ The underlying v0.18.0 candidate adds a project-level Front Porch World Studio w
 
 The current public release baseline is v0.18.0. A source development candidate is not automatically treated as a published release.
 
-See `docs/v0182-card-health-inspection.md` for inspection and reviewed import
+See `docs/v0183-ai-review.md` for the AI Review rubric, staleness and explicit-apply
+boundary, `docs/v0182-card-health-inspection.md` for inspection and reviewed import
 boundaries, `docs/v0181-revision-safety.md` for the revision model and recovery boundaries,
 `docs/v0180-hotfix3-lorebook-word-wrap.md` for the wrapping behavior,
 `docs/v0180-hotfix2-github-update-checks.md` for the update-check privacy and install
