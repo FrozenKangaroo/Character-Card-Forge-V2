@@ -305,29 +305,37 @@ static func apply_review_decisions(
 	for proposal_value in review.get("proposals", []):
 		if proposal_value is Dictionary:
 			proposal_by_path[str((proposal_value as Dictionary).get("path", ""))] = proposal_value
-	var accepted: Array[String] = []
-	var recorded_decisions: Array = []
+	var supplied_decisions: Dictionary = {}
 	var dismissed_findings: Array[String] = []
 	for decision_value in decisions:
 		if not decision_value is Dictionary:
 			continue
-		var decision: Dictionary = decision_value
-		if str(decision.get("action", "")) == "dismiss_finding":
-			var finding_id := str(decision.get("finding_id", "")).strip_edges()
-			if not finding_id.is_empty() and not dismissed_findings.has(finding_id):
-				dismissed_findings.append(finding_id)
-				recorded_decisions.append({
-					"action": "dismiss_finding", "finding_id": finding_id
-				})
+		var supplied: Dictionary = decision_value
+		if str(supplied.get("action", "")) == "dismiss_finding":
+			var supplied_finding_id := str(supplied.get("finding_id", "")).strip_edges()
+			if not supplied_finding_id.is_empty() and not dismissed_findings.has(supplied_finding_id):
+				dismissed_findings.append(supplied_finding_id)
 			continue
-		var field_path := str(decision.get("path", ""))
-		if not proposal_by_path.has(field_path):
+		var supplied_path := str(supplied.get("path", ""))
+		if proposal_by_path.has(supplied_path):
+			supplied_decisions[supplied_path] = supplied.duplicate(true)
+	var accepted: Array[String] = []
+	var recorded_decisions: Array = []
+	for proposal_value in review.get("proposals", []):
+		if not proposal_value is Dictionary:
 			continue
+		var proposal: Dictionary = proposal_value
+		var field_path := str(proposal.get("path", ""))
+		var decision: Dictionary = supplied_decisions.get(
+			field_path, {"path": field_path, "action": "reject"}
+		)
 		var action := str(decision.get("action", "reject"))
+		if action != "approve":
+			action = "reject"
 		var recorded := {"path": field_path, "action": action}
 		if action == "approve":
 			var proposed_value: Variant = decision.get(
-				"value", (proposal_by_path[field_path] as Dictionary).get("new_value")
+				"value", proposal.get("new_value")
 			)
 			var current_value: Variant = CCFStorageService.get_value_at_path(record, field_path, null)
 			if not _compatible_value(field_path, current_value, proposed_value):
@@ -335,6 +343,10 @@ static func apply_review_decisions(
 			recorded["value"] = _duplicate(proposed_value)
 			accepted.append(field_path)
 		recorded_decisions.append(recorded)
+	for finding_id in dismissed_findings:
+		recorded_decisions.append({
+			"action": "dismiss_finding", "finding_id": finding_id
+		})
 	if not accepted.is_empty():
 		CCFRevisionServiceV0181.create_checkpoint(
 			record,
@@ -394,16 +406,39 @@ static func _prior_author_decisions(record: Dictionary) -> Array:
 		if not review_value is Dictionary:
 			continue
 		var review: Dictionary = review_value
+		var proposal_by_path: Dictionary = {}
+		for proposal_value in review.get("proposals", []):
+			if proposal_value is Dictionary:
+				proposal_by_path[str((proposal_value as Dictionary).get("path", ""))] = proposal_value
+		var finding_by_id: Dictionary = {}
+		for finding_value in review.get("findings", []):
+			if finding_value is Dictionary:
+				finding_by_id[str((finding_value as Dictionary).get("id", ""))] = finding_value
 		var decisions: Array = []
 		for decision_value in review.get("decisions", []):
 			if not decision_value is Dictionary:
 				continue
 			var decision: Dictionary = decision_value
-			decisions.append({
+			var decision_context := {
 				"action": str(decision.get("action", "")),
 				"path": str(decision.get("path", "")),
 				"finding_id": str(decision.get("finding_id", ""))
-			})
+			}
+			var decision_path := str(decision.get("path", ""))
+			if proposal_by_path.has(decision_path):
+				var proposal: Dictionary = proposal_by_path[decision_path]
+				decision_context["proposal_reason"] = str(proposal.get("reason", ""))
+				decision_context["finding_ids"] = _string_array(
+					proposal.get("finding_ids", [])
+				)
+			var decision_finding_id := str(decision.get("finding_id", ""))
+			if finding_by_id.has(decision_finding_id):
+				var finding: Dictionary = finding_by_id[decision_finding_id]
+				decision_context["finding_title"] = str(finding.get("title", ""))
+				decision_context["finding_explanation"] = str(
+					finding.get("explanation", "")
+				)
+			decisions.append(decision_context)
 		if decisions.is_empty():
 			continue
 		context.append({

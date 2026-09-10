@@ -95,6 +95,12 @@ func _run() -> void:
 				"finding_ids": ["personality_specificity"]
 			},
 			{
+				"path": "character.scenario",
+				"new_value": "Mira and {{user}} maintain a remote observatory during a winter storm.",
+				"reason": "Adds pressure, but the author may prefer the quiet original.",
+				"finding_ids": ["intentional_isolation"]
+			},
+			{
 				"path": "character.character_id",
 				"new_value": "unsafe-id",
 				"reason": "This forbidden proposal must be ignored."
@@ -108,7 +114,7 @@ func _run() -> void:
 		bool(validated.get("ok", false))
 		and float(validated.get("overall_score", 0.0)) == 7.5
 		and validated.get("findings", []).size() == 2
-		and validated.get("proposals", []).size() == 1
+		and validated.get("proposals", []).size() == 2
 		and str(validated.get("proposals", [])[0].get("path", "")) == "character.personality",
 		"Rubric scoring must be computed locally and proposals must be restricted to reviewed editable paths."
 	):
@@ -155,6 +161,8 @@ func _run() -> void:
 		and int(applied.get("accepted_count", 0)) == 1
 		and str(record.get("character", {}).get("personality", "")).contains("counts seconds")
 		and applied_review.get("dismissed_finding_ids", []).has("intentional_isolation")
+		and applied_review.get("decisions", []).size() == 3
+		and str(applied_review.get("decisions", [])[1].get("action", "")) == "reject"
 		and str(applied_review.get("status", "")) == "applied"
 		and CCFRevisionServiceV0181.list_revisions(record).size() == 2,
 		"Only explicit approvals may change fields, dismissed findings must remain recorded and each accepted batch must create recovery checkpoints."
