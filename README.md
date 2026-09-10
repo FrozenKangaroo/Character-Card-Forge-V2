@@ -2,7 +2,9 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.18.0-hotfix2 GitHub Update Checks
+## Current development candidate: v0.18.0-hotfix3 Lorebook Word Wrapping
+
+v0.18.0-hotfix3 enables automatic visual word wrapping in the Lorebook Manager's **Lore content** editor and **Trigger Preview** sample-text box. Long paragraphs now flow across visible lines without requiring manual line breaks. Wrapping does not insert newline characters or change saved lore and trigger matching.
 
 v0.18.0-hotfix2 adds a dedicated **Settings → Updates** page, a manual **Check Now** action and an optional automatic check in packaged builds. The automatic check is enabled by default, runs at startup no more than once every 24 hours and makes one unauthenticated request to this repository's public latest-release endpoint. It sends no AI-provider credentials or character/project data. When a newer stable release exists, CCF shows a sidebar notice, release notes and the exact published package for the current platform. Download remains an explicit browser handoff: CCF never silently replaces its running executable or edits user projects during an update check.
 
@@ -10,9 +12,9 @@ v0.18.0-hotfix1 makes Safe Section generation tolerant of models that return usa
 
 The underlying v0.18.0 candidate adds a project-level Front Porch World Studio with lossless `.fpworld` import/export, bare-lorebook compatibility, manual world/lore/climate authoring, embedded cover preparation and optional Stoop metadata. Imported unknown fields and additional lorebooks survive known-field edits. Every world export requires a private-context review and adult worlds require an additional declaration confirmation. Stoop preparation is local only: this version performs no direct publishing, network calls or Front Porch database writes. It retains the v0.17.5 avatar-gallery, Character Life suggestion, export-safety and Godot 4.7.2 warning fixes.
 
-The current public release baseline remains v0.17.3 until a coordinated release promotion is performed. A source milestone is not automatically treated as a published release.
+The current public release baseline is v0.18.0. A source hotfix candidate is not automatically treated as a published release.
 
-See `docs/v0180-hotfix2-github-update-checks.md` for the update-check privacy and install boundary, `docs/v0180-hotfix1-safe-section-text-recovery.md` for the recovery boundary and `docs/v0180-front-porch-worlds.md` for the `.fpworld` round-trip contract, authoring controls, Stoop preparation and required review boundary.
+See `docs/v0180-hotfix3-lorebook-word-wrap.md` for the wrapping behavior, `docs/v0180-hotfix2-github-update-checks.md` for the update-check privacy and install boundary, `docs/v0180-hotfix1-safe-section-text-recovery.md` for the recovery boundary and `docs/v0180-front-porch-worlds.md` for the `.fpworld` round-trip contract, authoring controls, Stoop preparation and required review boundary.
 
 ### Semantic character-generation validation and repair
 

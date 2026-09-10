@@ -183,12 +183,20 @@ func _run() -> void:
 		return
 	var version_label_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text == "Godot rewrite • v0.18.0-hotfix2":
-			version_label_found = true
-			break
+		if not node is Label or not node.text.begins_with("Godot rewrite • v"):
+			continue
+		var displayed_version: String = str(node.text).trim_prefix(
+			"Godot rewrite • v"
+		)
+		version_label_found = (
+			CCFUpdateServiceV0180Hotfix2.compare_versions_v0180_hotfix2(
+				displayed_version, "0.18.0-hotfix2"
+			) >= 0
+		)
+		break
 	if not _require(
 		version_label_found,
-		"The development build label must identify v0.18.0-hotfix2."
+		"The development build label must identify hotfix2 or a newer compatible build."
 	):
 		return
 

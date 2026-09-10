@@ -157,6 +157,7 @@ func _build_ui() -> void:
 	_content_edit = TextEdit.new()
 	_content_edit.custom_minimum_size.y = 300
 	_content_edit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_content_edit.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
 	_content_edit.placeholder_text = "Write the world, location, person, rule, background, or supporting information that should become available when this lore entry is active."
 	editor.add_child(_content_edit)
 
