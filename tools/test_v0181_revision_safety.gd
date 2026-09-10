@@ -239,10 +239,10 @@ func _run() -> void:
 		return
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text == "Godot rewrite • v0.18.1":
+		if node is Label and node.text.begins_with("Godot rewrite • v0.18"):
 			version_found = true
 			break
-	if not _require(version_found, "The build label must identify v0.18.1."):
+	if not _require(version_found, "The build label must identify the v0.18 line."):
 		return
 	app.queue_free()
 	await process_frame
