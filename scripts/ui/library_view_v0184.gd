@@ -165,9 +165,13 @@ func _build_dialogs() -> void:
 	_report_window.title = "Library Batch Report"
 	_report_window.size = Vector2i(900, 680)
 	_report_window.min_size = Vector2i(680, 480)
+	_report_window.visible = false
+	_report_window.force_native = true
+	_report_window.exclusive = false
 	_report_window.transient = true
 	_report_window.close_requested.connect(_report_window.hide)
 	add_child(_report_window)
+	_report_window.hide()
 	var report_margin := MarginContainer.new()
 	report_margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	report_margin.add_theme_constant_override("margin_left", 16)
@@ -670,9 +674,13 @@ func _build_duplicate_window_v0184() -> void:
 	_duplicate_window.title = "Explainable Duplicate Review"
 	_duplicate_window.size = Vector2i(980, 680)
 	_duplicate_window.min_size = Vector2i(760, 520)
+	_duplicate_window.visible = false
+	_duplicate_window.force_native = true
+	_duplicate_window.exclusive = false
 	_duplicate_window.transient = true
 	_duplicate_window.close_requested.connect(_duplicate_window.hide)
 	add_child(_duplicate_window)
+	_duplicate_window.hide()
 	var margin := MarginContainer.new()
 	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	margin.add_theme_constant_override("margin_left", 16)
