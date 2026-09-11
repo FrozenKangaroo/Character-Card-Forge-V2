@@ -55,6 +55,13 @@ func _find_menu(root: Node, label_text: String) -> MenuButton:
 	return null
 
 
+func _find_label(root: Node, label_text: String) -> Label:
+	for node in root.find_children("*", "Label", true, false):
+		if node is Label and node.text == label_text:
+			return node
+	return null
+
+
 func _run() -> void:
 	var capabilities := CCFLibraryWorkflowServiceV0184.capabilities()
 	if not _require(
@@ -222,11 +229,17 @@ func _run() -> void:
 		return
 
 	var library_view := CCFLibraryV0184View.new()
+	library_view.size = Vector2(1600, 900)
 	get_root().add_child(library_view)
 	await process_frame
 	await process_frame
 	var batch_menu := _find_menu(library_view, "Selected Project Actions")
 	var quick_menu := _find_menu(library_view, "Quick Actions…")
+	var batch_safety := _find_label(
+		library_view,
+		"Each item reports an outcome; merge, replace and install are never automatic."
+	)
+	var grid_scroll_value: Variant = library_view.get("_grid_scroll")
 	var report_window_value: Variant = library_view.get("_report_window")
 	var duplicate_window_value: Variant = library_view.get("_duplicate_window")
 	if not _require(
@@ -238,6 +251,16 @@ func _run() -> void:
 		and _find_button(library_view, "Save Private Workflow") != null
 		and _find_button(library_view, "Save Smart Collection…") != null,
 		"The live Library must expose workflow editing, saved views, batch actions and quick actions."
+	):
+		return
+	if not _require(
+		batch_safety != null
+		and batch_safety.size.x >= 360.0
+		and batch_safety.size.y <= 72.0
+		and grid_scroll_value is ScrollContainer
+		and (grid_scroll_value as ScrollContainer).visible
+		and (grid_scroll_value as ScrollContainer).size.y >= 180.0,
+		"The Library batch explanation must keep a readable width without pushing the project grid out of view."
 	):
 		return
 	if not _require(
