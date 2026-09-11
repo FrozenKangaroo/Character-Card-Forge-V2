@@ -92,7 +92,13 @@ func _build_bulk_toolbar() -> Control:
 	popup.id_pressed.connect(_on_batch_action_v0184)
 	batch_row.add_child(batch_actions)
 	var safety := Label.new()
-	safety.text = "Every item produces an outcome; no batch merge, replace or install is automatic."
+	safety.text = "Each item reports an outcome; merge, replace and install are never automatic."
+	safety.tooltip_text = (
+		"Every selected item produces its own visible outcome. "
+		+ "Batch merge, replace and Front Porch installation always require an explicit action."
+	)
+	safety.custom_minimum_size.x = 360
+	safety.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	safety.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	safety.modulate = Color(0.66, 0.69, 0.78)
 	batch_row.add_child(safety)
