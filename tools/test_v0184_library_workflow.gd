@@ -227,6 +227,8 @@ func _run() -> void:
 	await process_frame
 	var batch_menu := _find_menu(library_view, "Selected Project Actions")
 	var quick_menu := _find_menu(library_view, "Quick Actions…")
+	var report_window_value: Variant = library_view.get("_report_window")
+	var duplicate_window_value: Variant = library_view.get("_duplicate_window")
 	if not _require(
 		library_view is CCFLibraryV0184View
 		and batch_menu != null
@@ -236,6 +238,16 @@ func _run() -> void:
 		and _find_button(library_view, "Save Private Workflow") != null
 		and _find_button(library_view, "Save Smart Collection…") != null,
 		"The live Library must expose workflow editing, saved views, batch actions and quick actions."
+	):
+		return
+	if not _require(
+		report_window_value is Window
+		and duplicate_window_value is Window
+		and not (report_window_value as Window).visible
+		and not (duplicate_window_value as Window).visible
+		and (report_window_value as Window).force_native
+		and (duplicate_window_value as Window).force_native,
+		"Library report and duplicate-review windows must start closed and remain freely movable native windows."
 	):
 		return
 	library_view.queue_free()
