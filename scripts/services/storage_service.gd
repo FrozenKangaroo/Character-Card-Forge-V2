@@ -41,7 +41,11 @@ static func new_project() -> Dictionary:
 			"favorite": false,
 			"library": {
 				"folder": "",
-				"collections": []
+				"collections": [],
+				"workflow_state": "draft",
+				"notes": "",
+				"archived": false,
+				"privacy_markers": []
 			}
 		},
 		"shared_context": {
@@ -802,10 +806,26 @@ static func _collect_search_strings(
 
 
 static func _normalise_library_metadata(raw_value: Variant) -> Dictionary:
-	var result := {"folder": "", "collections": []}
+	var result := {
+		"folder": "",
+		"collections": [],
+		"workflow_state": "draft",
+		"notes": "",
+		"archived": false,
+		"privacy_markers": []
+	}
 	if raw_value is Dictionary:
 		result["folder"] = str(raw_value.get("folder", "")).strip_edges()
 		result["collections"] = _normalise_string_array(raw_value.get("collections", []))
+		var workflow_state := str(raw_value.get("workflow_state", "draft")).strip_edges().to_lower()
+		if workflow_state not in ["draft", "needs_review", "testing", "stable", "published", "archived"]:
+			workflow_state = "draft"
+		result["workflow_state"] = workflow_state
+		result["notes"] = str(raw_value.get("notes", ""))
+		result["archived"] = bool(raw_value.get("archived", false)) or workflow_state == "archived"
+		result["privacy_markers"] = _normalise_string_array(
+			raw_value.get("privacy_markers", [])
+		)
 	return result
 
 
