@@ -2,7 +2,20 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.19.0 Rich Authoring
+## Current development candidate: v0.19.1 Export Profiles and Integration Adapters
+
+v0.19.1 adds versioned export profiles for full-fidelity Character Card V2, Front Porch
+and clean SillyTavern output. Import / Export now shows the exact target JSON together
+with a visible mapped/preserved/transformed/omitted report before writing JSON or PNG.
+Unknown extension namespaces remain lossless unless a profile explicitly omits one.
+
+A shared internal adapter contract now owns detection, import, export, validation,
+capability reporting and Front Porch install/update payload preparation. Existing card
+formats, Front Porch authenticated transport and collision review remain compatible;
+the adapter preview performs no network request and never modifies the project. Public
+third-party executable plugins remain deliberately deferred.
+
+### Previous candidate: v0.19.0 Rich Authoring
 
 v0.19.0 adds a dedicated **Rich Authoring** workspace for reusable scenario presets,
 full weighted Alternative Greeting records, coordinated ensemble projects, recoverable
@@ -122,9 +135,10 @@ v0.18.0-hotfix1 makes Safe Section generation tolerant of models that return usa
 
 The underlying v0.18.0 candidate adds a project-level Front Porch World Studio with lossless `.fpworld` import/export, bare-lorebook compatibility, manual world/lore/climate authoring, embedded cover preparation and optional Stoop metadata. Imported unknown fields and additional lorebooks survive known-field edits. Every world export requires a private-context review and adult worlds require an additional declaration confirmation. Stoop preparation is local only: this version performs no direct publishing, network calls or Front Porch database writes. It retains the v0.17.5 avatar-gallery, Character Life suggestion, export-safety and Godot 4.7.2 warning fixes.
 
-The current public release baseline is v0.18.0. A source development candidate is not automatically treated as a published release.
+The current public release baseline is v0.19.0. A source development candidate is not automatically treated as a published release.
 
-See `docs/v0190-rich-authoring.md` for scenario, greeting, ensemble, world, lineage and
+See `docs/v0191-export-profiles-adapters.md` for the profile schema, exact-preview,
+preservation and adapter boundaries, `docs/v0190-rich-authoring.md` for scenario, greeting, ensemble, world, lineage and
 custom-metadata boundaries, `docs/v0186-compact-lite-derivatives.md` for the compact derivative review and
 lineage boundary, `docs/v0185-front-porch-reliability.md` for the Front Porch diagnostics, identity,
 compare-first and deployment boundaries, `docs/v0183-ai-review.md` for the AI Review rubric, staleness and explicit-apply

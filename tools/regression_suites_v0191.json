@@ -1,7 +1,7 @@
 {
   "format_version": 1,
   "name": "Character Card Forge broad regression suites — v0.19.1",
-  "description": "v0.19.0 plus the branded native-resolution Character Card Forge startup splash.",
+  "description": "v0.19.0 plus the branded startup splash, versioned export profiles, exact preview, integration adapters and preservation reporting.",
   "base_manifest": "regression_suites_v0190.json",
   "suite_additions": {
     "current_wiring": [
@@ -11,6 +11,13 @@
         "kind": "python",
         "path": "tools/test_v0191_splash_screen.py",
         "timeout_seconds": 30
+      },
+      {
+        "id": "v0191_export_adapters",
+        "label": "v0.19.1 Export Profiles and Integration Adapters",
+        "kind": "godot",
+        "path": "tools/test_v0191_export_adapters.gd",
+        "timeout_seconds": 300
       }
     ]
   }

@@ -528,45 +528,22 @@ func _install_active_character_v0173() -> void:
 	if _front_porch_busy_v0173 or not _front_porch_connected_v0173:
 		return
 	project_refresh_requested.emit()
-	var card := CCFCardFormatService.export_character_v2(
-		_project, _active_character_id
-	)
-	if card.is_empty():
-		_show_front_porch_install_error_v0173("The active character could not be found.")
-		return
-	var validation := CCFCardFormatService.validate_card(card)
-	var errors: Array = validation.get("errors", [])
-	if not errors.is_empty():
-		_show_front_porch_install_error_v0173(
-			"The card is not valid for installation: %s" % "; ".join(errors)
-		)
-		return
 	var selected_artwork := _selected_front_porch_artwork_v0173()
 	var artwork_path := str(selected_artwork.get("path", ""))
-	if not artwork_path.is_empty():
-		var png_card := CCFCardFormatService.build_png_card_bytes(
-			artwork_path, _project, _active_character_id
+	var payload := _front_porch_install_payload_v0173(artwork_path)
+	if not bool(payload.get("ok", false)):
+		_show_front_porch_install_error_v0173(
+			str(payload.get("error", "The Front Porch card payload could not be built."))
 		)
-		if not bool(png_card.get("ok", false)):
-			_show_front_porch_install_error_v0173(
-				str(png_card.get("error", "The portrait PNG card could not be built."))
-			)
-			return
-		_pending_front_porch_bytes_v0173 = png_card.get(
-			"bytes", PackedByteArray()
-		)
-		_pending_front_porch_filename_v0173 = CCFCardFormatService.suggested_filename(
-			_project, _active_character_id, "png"
-		)
-		_pending_front_porch_content_type_v0173 = "image/png"
-		_pending_front_porch_payload_label_v0173 = "Character Card PNG with portrait"
-	else:
-		_pending_front_porch_bytes_v0173 = JSON.stringify(card, "  ").to_utf8_buffer()
-		_pending_front_porch_filename_v0173 = CCFCardFormatService.suggested_filename(
-			_project, _active_character_id, "json"
-		)
-		_pending_front_porch_content_type_v0173 = "application/json; charset=utf-8"
-		_pending_front_porch_payload_label_v0173 = "Character Card JSON (no portrait available)"
+		return
+	_pending_front_porch_bytes_v0173 = payload.get("bytes", PackedByteArray())
+	_pending_front_porch_filename_v0173 = str(payload.get("filename", "card.json"))
+	_pending_front_porch_content_type_v0173 = str(payload.get(
+		"content_type", "application/json; charset=utf-8"
+	))
+	_pending_front_porch_payload_label_v0173 = str(payload.get(
+		"label", "Character Card JSON"
+	))
 	_set_front_porch_busy_v0173(true)
 	_front_porch_report_v0173.text = "Sending %s to Front Porch for collision review…" % _pending_front_porch_payload_label_v0173
 	var result := await _front_porch_client_v0173.install_card_bytes(
@@ -577,6 +554,45 @@ func _install_active_character_v0173() -> void:
 	)
 	_set_front_porch_busy_v0173(false)
 	_handle_front_porch_install_result_v0173(result, "ask")
+
+
+func _front_porch_install_payload_v0173(artwork_path: String) -> Dictionary:
+	var card := CCFCardFormatService.export_character_v2(
+		_project, _active_character_id
+	)
+	if card.is_empty():
+		return {"ok": false, "error": "The active character could not be found."}
+	var validation := CCFCardFormatService.validate_card(card)
+	var errors: Array = validation.get("errors", [])
+	if not errors.is_empty():
+		return {
+			"ok": false,
+			"error": "The card is not valid for installation: %s" % "; ".join(errors)
+		}
+	if not artwork_path.is_empty():
+		var png_card := CCFCardFormatService.build_png_card_bytes(
+			artwork_path, _project, _active_character_id
+		)
+		if not bool(png_card.get("ok", false)):
+			return png_card
+		return {
+			"ok": true,
+			"bytes": png_card.get("bytes", PackedByteArray()),
+			"filename": CCFCardFormatService.suggested_filename(
+				_project, _active_character_id, "png"
+			),
+			"content_type": "image/png",
+			"label": "Character Card PNG with portrait"
+		}
+	return {
+		"ok": true,
+		"bytes": JSON.stringify(card, "  ").to_utf8_buffer(),
+		"filename": CCFCardFormatService.suggested_filename(
+			_project, _active_character_id, "json"
+		),
+		"content_type": "application/json; charset=utf-8",
+		"label": "Character Card JSON (no portrait available)"
+	}
 
 
 func _resolve_front_porch_copy_v0173() -> void:

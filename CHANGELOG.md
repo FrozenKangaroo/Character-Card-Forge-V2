@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.19.1
+
+- Added versioned full-fidelity Character Card V2, Front Porch and clean SillyTavern export profiles.
+- Added exact JSON before-export preview with mapped, preserved, transformed and omitted field reporting.
+- Added a shared internal adapter contract for detection, import, export, validation, capabilities and install/update payloads.
+- Routed Front Porch install, comparison, update and queued deployment documents through the new adapter boundary without changing its supported authenticated API transport.
+- Added profile-aware JSON and PNG output while retaining unknown extension namespaces unless a profile explicitly omits one.
+- Replaced the default Godot startup screen with original Character Card Forge branding.
+
 ## 0.19.0
 
 ### Added
