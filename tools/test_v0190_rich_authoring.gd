@@ -361,7 +361,8 @@ func _run() -> void:
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
 		if node is Label and node.text in [
-			"Godot rewrite • v0.19.0", "Godot rewrite • v0.19.1"
+			"Godot rewrite • v0.19.0", "Godot rewrite • v0.19.1",
+			"Godot rewrite • v0.19.2"
 		]:
 			version_found = true
 			break

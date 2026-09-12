@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "verified_against": {
+    "project": "Front Porch AI",
+    "release_line": "1.3.x",
+    "repository": "https://github.com/linux4life1/front-porch-AI"
+  },
+  "runtime": {
+    "state": {"method": "GET", "path": "/api/chat/state"},
+    "sessions": {"method": "GET", "path": "/api/chat/sessions"},
+    "select_character": {"method": "POST", "path": "/api/chat/select"},
+    "start_fresh": {"method": "POST", "path": "/api/chat/start-fresh"},
+    "select_session": {"method": "POST", "path": "/api/chat/session"},
+    "send": {"method": "POST", "path": "/api/chat/send"},
+    "stop": {"method": "POST", "path": "/api/chat/stop"},
+    "personas": {"method": "GET", "path": "/api/personas"},
+    "stream": {"method": "WEBSOCKET", "path": "/api/ws"}
+  },
+  "exchange": {
+    "export_fpchat": {"method": "GET", "path": "/api/chat/export.fpchat"},
+    "export_jsonl": {"method": "GET", "path": "/api/chat/export.jsonl"},
+    "import": {"method": "POST", "path": "/api/chat/import"},
+    "fpchat_format": "fpai_chat",
+    "fpchat_version": 1,
+    "sillytavern_jsonl": true,
+    "max_upload_bytes": 268435456
+  },
+  "boundaries": {
+    "per_chat_model_selection": false,
+    "per_chat_preset_selection": false,
+    "raw_database_writes": false,
+    "credentials_persisted": false,
+    "automatic_chat_creation": false,
+    "group_test_chat": false
+  }
+}
