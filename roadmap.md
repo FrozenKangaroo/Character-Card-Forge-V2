@@ -51,9 +51,9 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.19.0 — Rich Scenario, Greeting, World and Ensemble Authoring**
+**v0.19.1 — Export Profiles and Integration Adapters**
 
-v0.18.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
+v0.19.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
 v0.16.9 adds reusable provider-independent **Image Style Presets**. A versioned external built-in catalog provides starter styles; user-created **Global** presets are reusable across projects; **Project Visual Identity** supplies a project-level default; and **Character Default** provides an optional per-character override. Character defaults take precedence over project identity.
 
@@ -158,12 +158,10 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The released application displays **v0.18.0**. The source development candidate
-displays **v0.19.0**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
-with Compatibility/OpenGL fallback and retains the complete historical regression
-baseline. The next planned milestone is v0.19.1 Export Profiles and Integration
-Adapters; published release metadata remains unchanged until a release
-transaction.
+The released application and current source display **v0.19.0**, use the Godot
+**4.7.x stable** project baseline, keep Forward+ with Compatibility/OpenGL fallback
+and retain the complete historical regression baseline. The next planned milestone
+is v0.19.1 Export Profiles and Integration Adapters.
 
 ## Completed
 

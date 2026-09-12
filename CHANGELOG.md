@@ -1,5 +1,40 @@
 # Changelog
 
+## 0.19.0
+
+### Added
+
+- Added durable per-character revision checkpoints with comparison, selective recovery, non-destructive restore, forks and earlier-revision Character Card V2 export.
+- Added the consolidated Card Inspector for deterministic health findings, token estimates, compiled-prompt previews, technical metadata, validated raw JSON editing, asset/reference repair and private quality checklists.
+- Added optional AI Review with a visible rubric, content-hash staleness, private decision history, full-field selective changes, revision-safe application and exportable text reports.
+- Expanded Character Library into a workflow hub with private notes, workflow states, recoverable archives, sensitive-card presentation controls, Smart Collections, recent activity, batch tools and explainable duplicate review.
+- Added reliable Front Porch connection diagnostics, authenticated portrait caching, compare-first two-way sync, private exchange identity/fingerprints and a persistent deployment queue without direct database access.
+- Added Compact/Lite Derivatives with target-token and compression controls, editable field-by-field preview, preservation options, source-hash protection and private lineage/provenance.
+- Added reusable Scenario Presets, weighted and categorised Alternative Greetings, coordinated ensemble authoring, separate persistent roster and active cast, combined-card materialisation and recoverable Split Character Set generation.
+- Added shared `.fpworld` linking, dependency and lineage views, deletion warnings and private custom metadata with explicit export mappings.
+
+### Changed
+
+- Long AI Review findings and selective changes now use wrapped, spacious views with permanently visible decisions; complete reports can be viewed or exported as text.
+- Character Library startup and responsive layout were corrected after the v0.18.4 workflow expansion.
+- Rich Authoring split results merge into the newest active project snapshot, preserve successful siblings across retries and retain per-member validation failures.
+- Independent library-character and Compact/Lite copies no longer inherit Front Porch remote identity.
+- Legacy alternate greetings receive stable identities when opened in the richer greeting manager.
+
+### Fixed
+
+- Prevented hidden library report and duplicate-review windows from appearing at application startup.
+- Prevented completed split-generation jobs from overwriting edits made while a job was queued.
+- Corrected cumulative split-batch completion and retained all-invalid provider responses for review and retry.
+- Removed Card Inspector unused/confusable local declarations and extended the current warning gate to reject future unused-variable diagnostics.
+
+### Compatibility and safety
+
+- Character project format remains version 2; the new records are additive and existing projects continue to load without a destructive migration.
+- Character Card V2, portable `.ccfproject`, Front Porch `fpa_group` and `.fpworld` boundaries remain supported.
+- AI review, generation, import, materialisation, sync and deployment actions remain explicit and review-first.
+- Character Card Forge continues to use supported Front Porch APIs and portable formats only; it never writes directly to Front Porch's database.
+
 ## 0.10.0
 
 ### Added
