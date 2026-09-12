@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "profiles": [
+    {
+      "id": "character_card_v2_full",
+      "name": "Character Card V2 — Full Fidelity",
+      "description": "Standard Character Card V2 with lorebook and all extension namespaces preserved.",
+      "adapter_id": "character_card_v2",
+      "output_extensions": ["json", "png"],
+      "rules": {
+        "include_paths": ["*"],
+        "omit_paths": [],
+        "rename_paths": {},
+        "transformations": []
+      },
+      "preserve_unknown_extensions": true,
+      "supports_install": false
+    },
+    {
+      "id": "front_porch",
+      "name": "Front Porch — Complete Character",
+      "description": "Character Card V2 prepared for Front Porch, retaining optional Character Life data and unknown extensions.",
+      "adapter_id": "front_porch",
+      "output_extensions": ["json", "png"],
+      "rules": {
+        "include_paths": ["*"],
+        "omit_paths": [],
+        "rename_paths": {},
+        "transformations": []
+      },
+      "preserve_unknown_extensions": true,
+      "supports_install": true
+    },
+    {
+      "id": "sillytavern_clean",
+      "name": "SillyTavern — Clean Card",
+      "description": "SillyTavern-compatible Character Card V2 without Character Card Forge private round-trip metadata.",
+      "adapter_id": "sillytavern",
+      "output_extensions": ["json", "png"],
+      "rules": {
+        "include_paths": ["*"],
+        "omit_paths": ["data.extensions.character_card_forge/v1"],
+        "rename_paths": {},
+        "transformations": ["remove_empty_optional_fields"]
+      },
+      "preserve_unknown_extensions": true,
+      "supports_install": false
+    }
+  ]
+}

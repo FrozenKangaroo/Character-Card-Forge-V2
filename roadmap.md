@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.19.1 — Export Profiles and Integration Adapters**
+**v0.19.2 — Test Chat and Explicit Chat Exchange**
 
 v0.19.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -158,12 +158,22 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The released application and current source display **v0.19.0**, use the Godot
-**4.7.x stable** project baseline, keep Forward+ with Compatibility/OpenGL fallback
-and retain the complete historical regression baseline. The next planned milestone
-is v0.19.1 Export Profiles and Integration Adapters.
+The released application displays **v0.19.0** and the current source candidate displays
+**v0.19.1**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+Compatibility/OpenGL fallback and retain the complete historical regression baseline.
+The next planned milestone is v0.19.2 Test Chat and Explicit Chat Exchange.
 
 ## Completed
+
+### v0.19.1 — Export Profiles and Integration Adapters
+
+- Added data-driven, versioned profiles for full-fidelity Character Card V2, Front Porch and clean SillyTavern output.
+- Added exact JSON preview plus visible mapped, preserved, transformed and omitted field reporting before JSON or PNG export.
+- Added one internal adapter contract for detection, import, export, validation, capability reporting and install/update payload preparation.
+- Routed Front Porch install, comparison, update and queued deployment documents through the adapter boundary while keeping the supported authenticated transport and collision review unchanged.
+- Preserved unknown extension namespaces by default and kept omitted/private data recoverable in the source project.
+- Added an original native-resolution Character Card Forge startup splash without an artificial delay.
+- Kept public executable plugins deferred pending a permission, sandbox and update model.
 
 ### v0.19.0 — Rich Scenario, Greeting, World and Ensemble Authoring
 
@@ -597,8 +607,8 @@ import endpoint is advertised; `fpa_group` is never sent through character impor
 Independent Compact/Lite derivation, four compression intents, token targets,
 preservation controls, source-hash protection, complete editable comparison, private
 lineage/model provenance and the first derivative revision are implemented and recorded
-under **Completed** above. Rich scenario, greeting, world and ensemble authoring remains
-the next major v0.19.0 milestone.
+under **Completed** above. The later rich-authoring and export-adapter milestones are
+also complete.
 
 #### v0.19.0 — completed
 
@@ -617,7 +627,7 @@ the next major v0.19.0 milestone.
 - Extend lineage views for variants, alternate timelines, family trees and derived characters using v0.18.1 provenance.
 - Add private custom metadata fields with explicit export-profile mappings; unknown user fields remain CCF-private unless the author maps them.
 
-#### v0.19.1 — Export Profiles and Integration Adapters
+#### v0.19.1 — completed
 
 - Replace the default Godot startup image with an original, version-independent Character Card Forge splash screen sized to the application's native 16:9 viewport.
 - Add versioned export profiles for Character Card V2, Front Porch, SillyTavern and future targets, including explicit include/omit/rename/transform rules and a before-export preview.

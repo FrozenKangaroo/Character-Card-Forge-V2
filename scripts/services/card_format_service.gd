@@ -572,6 +572,24 @@ static func write_png_card(
 	return {"ok": true, "path": destination_path}
 
 
+static func write_png_card_from_document(
+	source_png_path: String,
+	destination_path: String,
+	card_document: Dictionary
+) -> Dictionary:
+	var built := build_png_card_bytes_from_document(
+		source_png_path, card_document
+	)
+	if not bool(built.get("ok", false)):
+		return built
+	var destination := FileAccess.open(destination_path, FileAccess.WRITE)
+	if destination == null:
+		return {"ok": false, "error": "Could not open the destination PNG for writing."}
+	destination.store_buffer(built.get("bytes", PackedByteArray()))
+	destination.close()
+	return {"ok": true, "path": destination_path}
+
+
 static func build_png_card_bytes(
 	source_image_path: String,
 	project: Dictionary,
@@ -587,6 +605,21 @@ static func build_png_card_bytes(
 	var card := export_character_v2(project, character_id)
 	if card.is_empty():
 		return {"ok": false, "error": "The selected character could not be found."}
+	return build_png_card_bytes_from_document(source_image_path, card)
+
+
+static func build_png_card_bytes_from_document(
+	source_image_path: String, card_document: Dictionary
+) -> Dictionary:
+	var validation := validate_card(card_document)
+	if not validation.get("errors", []).is_empty():
+		return {
+			"ok": false,
+			"error": "The mapped card document is invalid: %s" % "; ".join(
+				validation.get("errors", [])
+			),
+			"report": validation
+		}
 	var source := FileAccess.open(source_image_path, FileAccess.READ)
 	if source == null:
 		return {"ok": false, "error": "Could not open the source portrait image."}
@@ -619,7 +652,10 @@ static func build_png_card_bytes(
 			var parsed_text := _parse_text_chunk(chunk_data)
 			skip_chunk = str(parsed_text.get("keyword", "")).to_lower() == PNG_CARD_KEY
 		if chunk_type == "IEND" and not inserted:
-			output.append_array(_make_png_text_chunk(PNG_CARD_KEY, Marshalls.utf8_to_base64(JSON.stringify(card))))
+			output.append_array(_make_png_text_chunk(
+				PNG_CARD_KEY,
+				Marshalls.utf8_to_base64(JSON.stringify(card_document))
+			))
 			inserted = true
 		if not skip_chunk:
 			output.append_array(bytes.slice(offset, offset + 12 + length))

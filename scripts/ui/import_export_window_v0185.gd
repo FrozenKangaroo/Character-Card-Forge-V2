@@ -307,7 +307,9 @@ func _compare_selected_remote_v0185() -> void:
 		_sync_busy = false
 		return
 	var remote_card: Dictionary = fetched.get("card", {})
-	var local_card := CCFCardFormatService.export_character_v2(_project, _active_character_id)
+	var local_card := _front_porch_export_document_v0185(
+		_project, _active_character_id
+	)
 	_sync_pending_remote_id = remote_id
 	_sync_pending_remote_card = remote_card.duplicate(true)
 	_sync_pending_remote_fingerprint = SYNC_SERVICE.card_fingerprint(remote_card)
@@ -355,7 +357,9 @@ func _perform_confirmed_sync_action_v0185() -> void:
 func _update_remote_after_preview_v0185() -> void:
 	if _sync_busy:
 		return
-	var card := CCFCardFormatService.export_character_v2(_project, _active_character_id)
+	var card := _front_porch_export_document_v0185(
+		_project, _active_character_id
+	)
 	_sync_busy = true
 	var result := await _sync_client.install_json_card(JSON.stringify(card, "  "), CCFCardFormatService.suggested_filename(_project, _active_character_id, "json"), "replace", _sync_pending_remote_id)
 	_sync_busy = false
@@ -450,7 +454,9 @@ func _run_deployment_queue_v0185() -> void:
 		var project: Dictionary = loaded.get("data", {})
 		var character := CCFStorageService.get_character(project, character_id)
 		var character_name := CCFStorageService.character_display_name(character)
-		var card := CCFCardFormatService.export_character_v2(project, character_id)
+		var card := _front_porch_export_document_v0185(
+			project, character_id
+		)
 		if card.is_empty():
 			outcomes.append({"status": "failed", "name": character_name, "message": "Character card could not be built."})
 			continue
@@ -473,6 +479,12 @@ func _run_deployment_queue_v0185() -> void:
 	SYNC_SERVICE.append_deployment_report({"summary": "%d queued item(s) completed" % queue.size(), "outcomes": outcomes})
 	_sync_busy = false
 	_refresh_queue_ui_v0185()
+
+
+func _front_porch_export_document_v0185(
+	project: Dictionary, character_id: String
+) -> Dictionary:
+	return CCFCardFormatService.export_character_v2(project, character_id)
 
 
 func _refresh_queue_ui_v0185() -> void:
