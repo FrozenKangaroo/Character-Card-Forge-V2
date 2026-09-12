@@ -8,6 +8,8 @@
 - Routed Front Porch install, comparison, update and queued deployment documents through the new adapter boundary without changing its supported authenticated API transport.
 - Added profile-aware JSON and PNG output while retaining unknown extension namespaces unless a profile explicitly omits one.
 - Replaced the default Godot startup screen with original Character Card Forge branding.
+- Reclaimed Character Library grid space with collapsible Active Project tools and a persistent four-level card-size slider.
+- Added responsive project cards that progressively hide secondary metadata and overlay the name on artwork at the smallest size.
 
 ## 0.19.0
 

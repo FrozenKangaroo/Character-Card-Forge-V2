@@ -12,9 +12,13 @@ var _normal_style: StyleBoxFlat
 var _selected_style: StyleBoxFlat
 
 
-func configure(row: Dictionary, selected: bool) -> void:
+func configure(row: Dictionary, selected: bool, density_level: int = 3) -> void:
 	_project_id = str(row.get("project_id", ""))
-	custom_minimum_size = Vector2(230, 330)
+	var density := clampi(density_level, 0, 3)
+	var card_widths := [130.0, 160.0, 195.0, 230.0]
+	var card_heights := [170.0, 226.0, 286.0, 330.0]
+	var portrait_heights := [146.0, 145.0, 164.0, 180.0]
+	custom_minimum_size = Vector2(card_widths[density], card_heights[density])
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	gui_input.connect(_on_gui_input)
@@ -30,17 +34,19 @@ func configure(row: Dictionary, selected: bool) -> void:
 	_selected_style.set_border_width_all(2)
 
 	var margin := MarginContainer.new()
-	margin.add_theme_constant_override("margin_left", 12)
-	margin.add_theme_constant_override("margin_right", 12)
-	margin.add_theme_constant_override("margin_top", 12)
-	margin.add_theme_constant_override("margin_bottom", 12)
+	var card_margin := 7 if density <= 1 else (9 if density == 2 else 12)
+	margin.add_theme_constant_override("margin_left", card_margin)
+	margin.add_theme_constant_override("margin_right", card_margin)
+	margin.add_theme_constant_override("margin_top", card_margin)
+	margin.add_theme_constant_override("margin_bottom", card_margin)
 	add_child(margin)
 	var content := VBoxContainer.new()
-	content.add_theme_constant_override("separation", 8)
+	content.add_theme_constant_override("separation", 5 if density <= 2 else 8)
 	margin.add_child(content)
 
 	var portrait_panel := PanelContainer.new()
-	portrait_panel.custom_minimum_size.y = 180
+	portrait_panel.name = "CardPortraitPanel"
+	portrait_panel.custom_minimum_size.y = portrait_heights[density]
 	portrait_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	content.add_child(portrait_panel)
 	var portrait := TextureRect.new()
@@ -62,20 +68,59 @@ func configure(row: Dictionary, selected: bool) -> void:
 		fallback.modulate = Color(0.68, 0.64, 0.86)
 		fallback.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		portrait_panel.add_child(fallback)
+	if density == 0:
+		var overlay_layer := Control.new()
+		overlay_layer.name = "CardOverlayLayer"
+		overlay_layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		portrait_panel.add_child(overlay_layer)
+		_selection_box = CheckBox.new()
+		_selection_box.name = "CardSelectionOverlay"
+		_selection_box.button_pressed = selected
+		_selection_box.tooltip_text = "Select this project for bulk actions"
+		_selection_box.set_anchors_preset(Control.PRESET_TOP_LEFT)
+		_selection_box.position = Vector2(5, 5)
+		_selection_box.toggled.connect(_on_checkbox_toggled)
+		overlay_layer.add_child(_selection_box)
+		var overlay_panel := PanelContainer.new()
+		overlay_panel.name = "CardTitleOverlay"
+		overlay_panel.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
+		overlay_panel.offset_top = -38.0
+		overlay_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var overlay_style := StyleBoxFlat.new()
+		overlay_style.bg_color = Color(0.035, 0.035, 0.055, 0.88)
+		overlay_style.content_margin_left = 7.0
+		overlay_style.content_margin_right = 7.0
+		overlay_style.content_margin_top = 5.0
+		overlay_style.content_margin_bottom = 5.0
+		overlay_panel.add_theme_stylebox_override("panel", overlay_style)
+		overlay_layer.add_child(overlay_panel)
+		var overlay_title := Label.new()
+		overlay_title.text = "%s%s" % [
+			"★ " if bool(row.get("favorite", false)) else "",
+			str(row.get("name", "Untitled Project"))
+		]
+		overlay_title.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		overlay_title.add_theme_font_size_override("font_size", 14)
+		overlay_title.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		overlay_panel.add_child(overlay_title)
 
 	var title_row := HBoxContainer.new()
+	title_row.name = "CardTitleRow"
+	title_row.visible = density > 0
 	title_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	content.add_child(title_row)
-	_selection_box = CheckBox.new()
-	_selection_box.button_pressed = selected
-	_selection_box.tooltip_text = "Select this project for bulk actions"
-	_selection_box.toggled.connect(_on_checkbox_toggled)
-	title_row.add_child(_selection_box)
+	if density > 0:
+		_selection_box = CheckBox.new()
+		_selection_box.button_pressed = selected
+		_selection_box.tooltip_text = "Select this project for bulk actions"
+		_selection_box.toggled.connect(_on_checkbox_toggled)
+		title_row.add_child(_selection_box)
 	var title_label := Label.new()
 	title_label.text = str(row.get("name", "Untitled Project"))
 	title_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	title_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	title_label.add_theme_font_size_override("font_size", 18)
+	title_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART if density >= 2 else TextServer.AUTOWRAP_OFF
+	title_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	title_label.add_theme_font_size_override("font_size", 16 if density <= 2 else 18)
 	title_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	title_row.add_child(title_label)
 	if bool(row.get("favorite", false)):
@@ -87,6 +132,8 @@ func configure(row: Dictionary, selected: bool) -> void:
 		title_row.add_child(favorite_label)
 
 	var count_label := Label.new()
+	count_label.name = "CardCharacterCount"
+	count_label.visible = density >= 2
 	var character_count := int(row.get("character_count", 0))
 	count_label.text = "%d character%s" % [character_count, "" if character_count == 1 else "s"]
 	count_label.modulate = Color(0.67, 0.69, 0.78)
@@ -95,6 +142,8 @@ func configure(row: Dictionary, selected: bool) -> void:
 	var workflow_state := str(row.get("workflow_state", "")).strip_edges()
 	if not workflow_state.is_empty():
 		var workflow_label := Label.new()
+		workflow_label.name = "CardWorkflow"
+		workflow_label.visible = density >= 1
 		workflow_label.text = workflow_state.replace("_", " ").capitalize()
 		if bool(row.get("archived", false)):
 			workflow_label.text += " • Archived"
@@ -105,6 +154,8 @@ func configure(row: Dictionary, selected: bool) -> void:
 		content.add_child(workflow_label)
 
 	var summary_label := Label.new()
+	summary_label.name = "CardSummary"
+	summary_label.visible = density >= 2
 	var summary_text := str(row.get("summary", "")).strip_edges()
 	if summary_text.is_empty():
 		summary_text = _join_values(row.get("character_names", []), ", ")
@@ -112,7 +163,7 @@ func configure(row: Dictionary, selected: bool) -> void:
 		summary_text = "No summary yet."
 	summary_label.text = summary_text.left(170)
 	summary_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	summary_label.max_lines_visible = 3
+	summary_label.max_lines_visible = 2 if density == 2 else 3
 	summary_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	summary_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	content.add_child(summary_label)
@@ -129,6 +180,8 @@ func configure(row: Dictionary, selected: bool) -> void:
 		organisation_parts.append("Collections: %s" % _join_values(collections, ", "))
 	if not organisation_parts.is_empty():
 		var organisation_label := Label.new()
+		organisation_label.name = "CardOrganisation"
+		organisation_label.visible = density >= 3
 		organisation_label.text = _join_values(organisation_parts, " • ")
 		organisation_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		organisation_label.modulate = Color(0.7, 0.64, 0.86)
