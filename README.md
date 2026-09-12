@@ -15,6 +15,12 @@ formats, Front Porch authenticated transport and collision review remain compati
 the adapter preview performs no network request and never modifies the project. Public
 third-party executable plugins remain deliberately deferred.
 
+The Character Library now keeps its Active Project tools behind a compact, persistent
+disclosure so another row of projects can remain visible. A persistent four-step card
+size slider adjusts grid density: lower-priority metadata disappears progressively,
+and the smallest cards place the project name directly over the artwork. The existing
+Compact List remains unchanged.
+
 ### Previous candidate: v0.19.0 Rich Authoring
 
 v0.19.0 adds a dedicated **Rich Authoring** workspace for reusable scenario presets,

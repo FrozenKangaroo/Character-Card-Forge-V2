@@ -173,6 +173,8 @@ The next planned milestone is v0.19.2 Test Chat and Explicit Chat Exchange.
 - Routed Front Porch install, comparison, update and queued deployment documents through the adapter boundary while keeping the supported authenticated transport and collision review unchanged.
 - Preserved unknown extension namespaces by default and kept omitted/private data recoverable in the source project.
 - Added an original native-resolution Character Card Forge startup splash without an artificial delay.
+- Made the Character Library Active Project tools collapsible and compact by default, while retaining selection, Favourite and Actions access in the header.
+- Added a persistent four-level card-size slider with progressive metadata reduction and an artwork name overlay at the smallest size; Compact List remains unchanged.
 - Kept public executable plugins deferred pending a permission, sandbox and update model.
 
 ### v0.19.0 — Rich Scenario, Greeting, World and Ensemble Authoring
@@ -634,6 +636,7 @@ also complete.
 - Extract a shared internal adapter contract for detection, import, export, validation, capability reporting, install/update and preservation notes.
 - Migrate existing Front Porch and standard Character Card behavior behind the internal contract without breaking file formats or duplicating UI/business logic.
 - Preserve unknown fields and produce visible loss/preservation reports when a target cannot express a source feature.
+- Reclaim Character Library grid space with compact-by-default Active Project tools and a persistent card-density slider whose smaller sizes progressively hide metadata and finally overlay the name on the artwork.
 - Keep third-party executable plugins and a public extension SDK deferred until the internal adapter boundary is stable, permission-aware and testable.
 
 #### v0.19.2 — Test Chat and Explicit Chat Exchange

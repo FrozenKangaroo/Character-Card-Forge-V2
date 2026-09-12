@@ -53,6 +53,14 @@ jobs:
           XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0191-focused/config
         run: timeout 360s godot --headless --path . --script res://tools/test_v0191_export_adapters.gd
 
+      - name: Run focused Character Library density regression
+        env:
+          CCF_REGRESSION_RUN: '1'
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0191-library/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0191-library/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0191-library/config
+        run: timeout 360s godot --headless --path . --script res://tools/test_v0191_library_density.gd
+
       - name: Recheck Front Porch direct install
         env:
           CCF_REGRESSION_RUN: '1'

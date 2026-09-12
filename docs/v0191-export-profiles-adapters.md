@@ -55,3 +55,18 @@ visible warning because JSON export can be intentionally text-only.
 v0.19.1 is an internal adapter foundation, not a public executable-plugin SDK. Loading
 untrusted third-party code remains deferred until permissions, sandboxing, updates and
 compatibility boundaries have a dedicated design.
+
+## Character Library density
+
+The Active Project panel keeps its selection summary, Favourite action and Actions menu
+visible while its organisation and batch tools are collapsed by default. Expansion is
+remembered locally. Thumbnail Grid adds a remembered four-step card-size slider:
+
+- Large preserves the existing full card presentation.
+- Medium hides organisation text while retaining the summary and core status.
+- Compact keeps only the title and workflow state beneath the artwork.
+- Mini moves the project name and favourite marker onto the artwork and hides secondary
+  facts.
+
+This only changes presentation. It does not alter card/project content, filters,
+selection, sensitive-artwork policy, or the existing Compact List mode.
