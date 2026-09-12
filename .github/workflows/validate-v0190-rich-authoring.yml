@@ -40,7 +40,7 @@ jobs:
         run: |
           set -o pipefail
           godot --headless --path . --import 2>&1 | tee /tmp/ccf-v0190-import.log
-          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE|SHADOWED_GLOBAL_IDENTIFIER|CONFUSABLE_LOCAL_DECLARATION|INCOMPATIBLE_TERNARY|INTEGER_DIVISION|Parse Error" /tmp/ccf-v0190-import.log; then
+          if grep -E "SCRIPT ERROR:|Failed to load script|UNUSED_VARIABLE|SHADOWED_VARIABLE|SHADOWED_GLOBAL_IDENTIFIER|CONFUSABLE_LOCAL_DECLARATION|INCOMPATIBLE_TERNARY|INTEGER_DIVISION|Parse Error" /tmp/ccf-v0190-import.log; then
             echo "Godot reported a script or warning failure during import."
             exit 1
           fi
