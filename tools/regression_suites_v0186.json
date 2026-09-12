@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.18.6",
+  "description": "v0.18.5 plus independent compact/lite derivatives, preservation choices, editable comparison, private provenance and revision safety.",
+  "base_manifest": "regression_suites_v0185.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0186_compact_derivatives",
+        "label": "v0.18.6 Compact/Lite Derivatives",
+        "kind": "godot",
+        "path": "tools/test_v0186_compact_derivatives.gd",
+        "timeout_seconds": 300
+      }
+    ]
+  }
+}

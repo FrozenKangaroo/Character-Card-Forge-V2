@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.18.5 — Front Porch Connection, Sync and Deployment Reliability**
+**v0.18.6 — Compact/Lite Derivatives from Existing Characters**
 
 v0.18.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -129,14 +129,35 @@ outcomes, while Library filters expose remote and queued state without backgroun
 traffic. Delete and group-card install remain disabled unless the connected server
 explicitly proves a supported endpoint, with no raw-database fallback.
 
+v0.18.6 adds a discoverable Compact/Lite derivative workflow for finished characters.
+Authors choose an approximate target token budget, one of four compression levels and
+independent preservation controls. The configured Text profile produces a complete
+field-by-field preview whose replacements remain editable and individually selectable.
+Creation rechecks the source hash, requires confirmation and appends a new character with
+a fresh ID, private source revision/content-hash lineage, private model/profile provenance
+and its own revision checkpoint. The source is never overwritten, and private derivation
+or Front Porch install identity does not enter ordinary Character Card exports.
+
 The released application displays **v0.18.0**. The source development candidate
-displays **v0.18.5**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
+displays **v0.18.6**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
 with Compatibility/OpenGL fallback and retains the complete historical regression
-baseline. The next planned milestone is v0.18.6 Compact/Lite Derivatives from Existing
-Characters; published release metadata remains unchanged until a release
+baseline. The next planned milestone is v0.19.0 Rich Scenario, Greeting, World and
+Ensemble Authoring; published release metadata remains unchanged until a release
 transaction.
 
 ## Completed
+
+### v0.18.6 — Compact/Lite Derivatives from Existing Characters
+
+- Added a discoverable Workspace action for creating a derivative from an already-finished character, separate from initial template selection.
+- Added approximate target-token controls and Gentle, Balanced, Aggressive and Extreme compression intents using Card Inspector's deterministic estimate.
+- Added independent preservation controls for lorebook material, greetings, examples, Front Porch/state fields, adult traits, tags and image-prompt material.
+- Routed compression through the configured Text profile and shared AI scheduler with source project, character and content-hash guards.
+- Added a complete side-by-side field review with wrapped full values, editable candidate text and a per-field choice to retain the source value.
+- Kept creation disabled until a valid preview is displayed and required final confirmation before appending a new character.
+- Added fresh stable identity, private source revision/content-hash lineage, private model/profile and compression provenance and an initial revision checkpoint.
+- Prevented source overwrite, automatic save, copied Front Porch install identity and private provenance leakage into ordinary Character Card exports.
+- Added focused service/live-UI regression coverage, an inherited manifest, Godot 4.7.1 CI and `docs/v0186-compact-lite-derivatives.md`.
 
 ### v0.18.5 — Front Porch Connection, Sync and Deployment Reliability
 
@@ -538,14 +559,13 @@ and stable-public-source update opt-in are implemented and recorded under **Comp
 above. Group-card direct install remains capability-gated because no supported group-card
 import endpoint is advertised; `fpa_group` is never sent through character import.
 
-#### v0.18.6 — Compact/Lite Derivatives from Existing Characters
+#### v0.18.6 — completed
 
-- Add a discoverable **Create Compact/Lite Derivative…** action for an already-finished character; this is separate from choosing a compact template during initial generation.
-- Always create a new independent character with private lineage to the source character and source revision/content hash. Never overwrite or compress the source in place.
-- Offer a target token budget plus Gentle, Balanced, Aggressive and Extreme compression levels, with estimated before/after counts from Card Inspector.
-- Add preservation controls for lorebook material, greetings, examples, Front Porch/state fields, adult traits, tags and image-prompt material.
-- Present the complete derivative as an editable field-by-field comparison before save, using the existing generation/review and revision-safety boundaries.
-- Record the producing model/profile and compression choices as private provenance that does not enter ordinary Character Card exports.
+Independent Compact/Lite derivation, four compression intents, token targets,
+preservation controls, source-hash protection, complete editable comparison, private
+lineage/model provenance and the first derivative revision are implemented and recorded
+under **Completed** above. Rich scenario, greeting, world and ensemble authoring remains
+the next major v0.19.0 milestone.
 
 #### v0.19.0 — Rich Scenario, Greeting, World and Ensemble Authoring
 
