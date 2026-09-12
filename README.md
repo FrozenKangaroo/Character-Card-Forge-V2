@@ -2,7 +2,20 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.18.5 Front Porch Connection, Sync and Deployment Reliability
+## Current development candidate: v0.18.6 Compact/Lite Derivatives
+
+v0.18.6 adds **Create Compact/Lite Derivative…** for an already-finished character.
+The author chooses a target token estimate, Gentle/Balanced/Aggressive/Extreme intent
+and independent preservation controls for lorebook material, greetings, examples,
+Front Porch/state fields, adult traits, tags and image-prompt material. Generation uses
+the configured Text profile and shared AI queue but cannot modify the source.
+
+The complete result is shown field by field beside the source. Every compact value is
+editable and can be deselected to retain its source value; creation stays disabled until
+that review is visible and a final confirmation is given. The result is a new character
+with a fresh ID, private source revision/content-hash lineage, private producing-model
+provenance and its own initial recovery checkpoint. None of that private provenance or
+the source character's Front Porch install identity enters an ordinary card export.
 
 v0.18.5 adds a dedicated **Front Porch Sync** workflow with credential-safe connection
 diagnostics, behavior-proven endpoint capabilities and authenticated bounded portrait
@@ -82,7 +95,8 @@ The underlying v0.18.0 candidate adds a project-level Front Porch World Studio w
 
 The current public release baseline is v0.18.0. A source development candidate is not automatically treated as a published release.
 
-See `docs/v0185-front-porch-reliability.md` for the Front Porch diagnostics, identity,
+See `docs/v0186-compact-lite-derivatives.md` for the compact derivative review and
+lineage boundary, `docs/v0185-front-porch-reliability.md` for the Front Porch diagnostics, identity,
 compare-first and deployment boundaries, `docs/v0183-ai-review.md` for the AI Review rubric, staleness and explicit-apply
 boundary, `docs/v0182-card-health-inspection.md` for inspection and reviewed import
 boundaries, `docs/v0181-revision-safety.md` for the revision model and recovery boundaries,
