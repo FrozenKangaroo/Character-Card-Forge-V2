@@ -619,6 +619,7 @@ the next major v0.19.0 milestone.
 
 #### v0.19.1 — Export Profiles and Integration Adapters
 
+- Replace the default Godot startup image with an original, version-independent Character Card Forge splash screen sized to the application's native 16:9 viewport.
 - Add versioned export profiles for Character Card V2, Front Porch, SillyTavern and future targets, including explicit include/omit/rename/transform rules and a before-export preview.
 - Extract a shared internal adapter contract for detection, import, export, validation, capability reporting, install/update and preservation notes.
 - Migrate existing Front Porch and standard Character Card behavior behind the internal contract without breaking file formats or duplicating UI/business logic.
