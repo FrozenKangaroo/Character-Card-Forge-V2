@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.19.1",
+  "description": "v0.19.0 plus the branded native-resolution Character Card Forge startup splash.",
+  "base_manifest": "regression_suites_v0190.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0191_splash_screen",
+        "label": "v0.19.1 Branded Startup Splash",
+        "kind": "python",
+        "path": "tools/test_v0191_splash_screen.py",
+        "timeout_seconds": 30
+      }
+    ]
+  }
+}
