@@ -2,7 +2,36 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.18.6 Compact/Lite Derivatives
+## Current development candidate: v0.19.0 Rich Authoring
+
+v0.19.0 adds a dedicated **Rich Authoring** workspace for reusable scenario presets,
+full weighted Alternative Greeting records, coordinated ensemble projects, recoverable
+Split Character Sets, shared-world links, dependency inspection, lineage views and
+private custom metadata with explicit export mappings. Existing simple
+`alternate_greetings`, Card Workflow, Relationship, Front Porch group-card and `.fpworld`
+data remain the compatible sources of truth rather than being replaced.
+
+Scenario presets can carry alternate setups, openings, active cast, tags and world
+references. A complete single-scenario card preview materialises a chosen setup for
+targets that support only one scenario without changing the character. The greeting
+manager adds category, tags, weight, favourite state and optional Front Porch opening
+seed while continuously synchronising the standard Character Card V2 greeting array.
+
+Card Workflow Studio now separates a persistent roster from the members active in a
+particular opening and previews a valid combined runtime card with explicit format-loss
+warnings. A discoverable new-group-project action, new-member action and independent
+library-character copy avoid hidden project-hierarchy knowledge. Split generation seeds
+independent records first, then runs a recoverable parent AI job whose completed members
+remain saved when another member fails and can be retried separately.
+
+Shared `.fpworld` records are linked rather than silently copied. Dependency reports
+cover characters, workflows, worlds, scenario references, images and collections;
+lineage includes library copies, split sets and existing derivatives. Custom fields stay
+private unless the author maps an individual key to a named export extension, with a
+preview before export. Rich Authoring performs no automatic network calls or database
+writes.
+
+### Previous candidate: v0.18.6 Compact/Lite Derivatives
 
 v0.18.6 adds **Create Compact/Lite Derivative…** for an already-finished character.
 The author chooses a target token estimate, Gentle/Balanced/Aggressive/Extreme intent
@@ -95,7 +124,8 @@ The underlying v0.18.0 candidate adds a project-level Front Porch World Studio w
 
 The current public release baseline is v0.18.0. A source development candidate is not automatically treated as a published release.
 
-See `docs/v0186-compact-lite-derivatives.md` for the compact derivative review and
+See `docs/v0190-rich-authoring.md` for scenario, greeting, ensemble, world, lineage and
+custom-metadata boundaries, `docs/v0186-compact-lite-derivatives.md` for the compact derivative review and
 lineage boundary, `docs/v0185-front-porch-reliability.md` for the Front Porch diagnostics, identity,
 compare-first and deployment boundaries, `docs/v0183-ai-review.md` for the AI Review rubric, staleness and explicit-apply
 boundary, `docs/v0182-card-health-inspection.md` for inspection and reviewed import

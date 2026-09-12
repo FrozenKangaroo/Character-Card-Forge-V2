@@ -1,0 +1,65 @@
+name: Validate v0.19.0 Rich Authoring
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v0190-rich-authoring-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.7.1'
+  GODOT_STATUS: stable
+
+jobs:
+  rich-authoring:
+    name: Scenarios, Greetings, Ensembles, Worlds and Privacy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot 4.7.1 and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project with warning gate
+        shell: bash
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0190-import/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0190-import/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0190-import/config
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v0190-import.log
+          if grep -E "SCRIPT ERROR:|Failed to load script|SHADOWED_VARIABLE|SHADOWED_GLOBAL_IDENTIFIER|CONFUSABLE_LOCAL_DECLARATION|INCOMPATIBLE_TERNARY|INTEGER_DIVISION|Parse Error" /tmp/ccf-v0190-import.log; then
+            echo "Godot reported a script or warning failure during import."
+            exit 1
+          fi
+
+      - name: Run focused Rich Authoring regression
+        env:
+          CCF_REGRESSION_RUN: '1'
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0190-focused/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0190-focused/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0190-focused/config
+        run: timeout 360s godot --headless --path . --script res://tools/test_v0190_rich_authoring.gd
+
+      - name: Recheck Compact/Lite derivative boundary
+        env:
+          CCF_REGRESSION_RUN: '1'
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0186/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0186/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0186/config
+        run: timeout 360s godot --headless --path . --script res://tools/test_v0186_compact_derivatives.gd
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --manifest ./tools/regression_suites_v0190.json --profile quick --godot "$(command -v godot)"

@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.18.6 — Compact/Lite Derivatives from Existing Characters**
+**v0.19.0 — Rich Scenario, Greeting, World and Ensemble Authoring**
 
 v0.18.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -138,14 +138,49 @@ a fresh ID, private source revision/content-hash lineage, private model/profile 
 and its own revision checkpoint. The source is never overwritten, and private derivation
 or Front Porch install identity does not enter ordinary Character Card exports.
 
+v0.19.0 adds reusable per-character Scenario Presets with alternate openings, active
+cast, tags and shared-world references plus explicit single-scenario materialisation for
+targets that cannot carry multiple setups. Alternative Greetings now have a compatible
+manager for categories, tags, weights, favourites and Front Porch opening seeds while the
+ordinary Character Card V2 array remains synchronised.
+
+The coordinated Multi-Character Workspace builds on Card Workflows, Relationships and
+Front Porch group cards. It adds discoverable new-group, new-member and independent
+library-character-copy entry points, separates persistent roster from active/present
+cast and previews a valid combined runtime card without modifying source characters.
+Split Character Sets seed independent records before a parent AI job, retain successful
+members after partial failure and retry only failed/pending members.
+
+Shared `.fpworld` records are referenced rather than duplicated. Dependency inspection
+covers characters, groups/workflows, worlds, scenarios, images and collections; lineage
+views include variants, library copies, split sets and existing derivatives. Private
+custom metadata remains out of ordinary exports unless an author creates an explicit
+key-to-extension mapping, and the mapping has a visible preview. No automatic network
+traffic or raw database access is introduced.
+
 The released application displays **v0.18.0**. The source development candidate
-displays **v0.18.6**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
+displays **v0.19.0**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
 with Compatibility/OpenGL fallback and retains the complete historical regression
-baseline. The next planned milestone is v0.19.0 Rich Scenario, Greeting, World and
-Ensemble Authoring; published release metadata remains unchanged until a release
+baseline. The next planned milestone is v0.19.1 Export Profiles and Integration
+Adapters; published release metadata remains unchanged until a release
 transaction.
 
 ## Completed
+
+### v0.19.0 — Rich Scenario, Greeting, World and Ensemble Authoring
+
+- Added versioned reusable Scenario Presets with alternate scenario, opening, active-cast, world-reference, category/tag and favourite data.
+- Added explicit single-scenario Character Card V2 materialisation with a complete preview and no source-character mutation.
+- Expanded Alternative Greetings with category, tags, weights, random preview, favourites and optional Front Porch opening seeds while preserving the standard export array.
+- Added a dedicated Rich Authoring window and upgraded Card Workflow Studio with separate persistent-roster and active/present-cast controls.
+- Added discoverable New Multi-Character / Group Project, Add New Member and Add Existing Library Character actions; library intake makes a fresh revisioned copy and never cross-links managed files.
+- Added reviewed combined-card materialisation that preserves distinct member voices and reports target-format limitations.
+- Added Split Character Set seeding from a shared concept, a recoverable parent AI job, independent per-character revisions, partial success and failed-member-only retry.
+- Kept ordinary group-card controls and existing Relationships/Card Workflows/Front Porch group data canonical; raw JSON remains expert material.
+- Added shared `.fpworld` linking, dependency inspection and pre-delete warning data for characters, workflows, worlds, scenarios, images and collections.
+- Added lineage rows for variants, alternate timelines, family roles, library copies, split sets and existing derivatives.
+- Added private custom metadata with explicit key-to-extension mappings and preview; unmapped fields remain absent from ordinary card exports.
+- Added focused live-UI/service regression coverage, an inherited manifest, Godot 4.7.1 CI and `docs/v0190-rich-authoring.md`.
 
 ### v0.18.6 — Compact/Lite Derivatives from Existing Characters
 
@@ -567,7 +602,7 @@ lineage/model provenance and the first derivative revision are implemented and r
 under **Completed** above. Rich scenario, greeting, world and ensemble authoring remains
 the next major v0.19.0 milestone.
 
-#### v0.19.0 — Rich Scenario, Greeting, World and Ensemble Authoring
+#### v0.19.0 — completed
 
 - Add versioned Scenario Presets/alternate setups that reference one character without requiring duplicated full cards; define export materialisation rules for targets that support only one scenario.
 - Expand Alternative Greetings into a manager with categories, tags, weights, randomisation, favourites, Front Porch opening seeds and preview/test entry points.
