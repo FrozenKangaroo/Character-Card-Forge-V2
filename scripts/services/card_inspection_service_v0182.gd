@@ -45,9 +45,7 @@ static func health_report(
 		}
 	var findings: Array[Dictionary] = []
 	var card_value: Variant = character_record.get("character", {})
-	var card: Dictionary = card_value if card_value is Dictionary else {}
 	var metadata_value: Variant = character_record.get("metadata", {})
-	var metadata: Dictionary = metadata_value if metadata_value is Dictionary else {}
 	if not card_value is Dictionary:
 		findings.append(_finding(
 			"error", "malformed_character", "character", "Character content must be an object."
@@ -449,9 +447,9 @@ static func apply_import_to_current_project(
 		CCFRevisionServiceV0181.create_checkpoint(
 			copy_record, "Imported as copy", "Import baseline.", "import", {}, true
 		)
-		var characters: Array = updated.get("characters", []).duplicate(true)
-		characters.append(copy_record)
-		updated["characters"] = characters
+		var copied_characters: Array = updated.get("characters", []).duplicate(true)
+		copied_characters.append(copy_record)
+		updated["characters"] = copied_characters
 		return {"ok": true, "project": updated, "active_character_id": new_character_id}
 	var index := CCFStorageService.character_index(updated, active_character_id)
 	if index < 0:
