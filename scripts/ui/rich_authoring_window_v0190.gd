@@ -93,19 +93,27 @@ func save_window_state() -> void:
 
 
 func handle_split_completed(
-	job_id: String, data: Variant, metadata: Dictionary
+	job_id: String,
+	data: Variant,
+	metadata: Dictionary,
+	current_project: Dictionary
 ) -> bool:
 	if str(metadata.get("project_id", "")) != _project_id:
 		return false
+	if str(current_project.get("project_id", "")) != _project_id:
+		return false
 	var batch_id := str(metadata.get("batch_id", ""))
 	var result := AUTHORING_SERVICE.apply_split_result(
-		_project,
+		current_project,
 		batch_id,
 		data,
 		{
 			"model": str(metadata.get("model", "")),
 			"profile_id": str(metadata.get("profile_id", "")),
-			"job_id": job_id
+			"job_id": job_id,
+			"requested_character_ids": metadata.get(
+				"requested_character_ids", []
+			).duplicate(true)
 		}
 	)
 	if not bool(result.get("ok", false)):

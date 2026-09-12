@@ -189,8 +189,20 @@ func _on_job_completed(
 		job_type == "split_character_set_v0190"
 		and _rich_authoring_window_v0190 != null
 	):
+		if (
+			str(metadata.get("project_id", ""))
+			!= str(_project_container.get("project_id", ""))
+		):
+			_rich_authoring_window_v0190.handle_split_failed(
+				"Split result discarded because its source project is no longer active."
+			)
+			_status.text = "Split result discarded because its source project is no longer active."
+			return
+		# Capture any text currently being edited before merging the generated members.
+		# The result handler then starts from this newest container snapshot.
+		_commit_active_character_to_container()
 		if _rich_authoring_window_v0190.handle_split_completed(
-			job_id, data, metadata
+			job_id, data, metadata, _project_container
 		):
 			_status.text = "Split character set completed. Review and save every independent member."
 			return

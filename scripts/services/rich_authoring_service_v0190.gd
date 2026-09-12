@@ -5,6 +5,7 @@ const VERSION := "0.19.0"
 const PROJECT_KEY := "rich_authoring_v0190"
 const CHARACTER_KEY := "rich_authoring_v0190"
 const FORMAT_VERSION := 1
+const FRONT_PORCH_BINDING_KEY := "front_porch_sync_v0185"
 const REVISION_SERVICE = preload("res://scripts/services/revision_service_v0181.gd")
 
 
@@ -300,6 +301,11 @@ static func add_existing_library_character(
 		"source_character_id": old_id,
 		"copied_at": copy["created_at"]
 	}
+	# A library copy is a new local identity. Retaining the source binding would make
+	# Front Porch updates target the original remote character.
+	var copied_workspace: Dictionary = copy.get("workspace", {}).duplicate(true)
+	copied_workspace.erase(FRONT_PORCH_BINDING_KEY)
+	copy["workspace"] = copied_workspace
 	# Managed files belong to the source project. Do not create broken cross-project paths.
 	copy["assets"] = {"portrait": "", "generated_images": [], "emotion_images": []}
 	copy["attachments"] = []
@@ -516,14 +522,31 @@ static func apply_split_result(
 	for raw_member in batch.get("members", []):
 		if raw_member is Dictionary:
 			expected[str(raw_member.get("character_id", ""))] = true
+	var requested: Dictionary = {}
+	var requested_value: Variant = provenance.get("requested_character_ids", [])
+	if requested_value is Array:
+		for requested_id_value in requested_value:
+			var requested_id := str(requested_id_value)
+			if expected.has(requested_id):
+				requested[requested_id] = true
+	if requested.is_empty():
+		for raw_output in response.get("members", []):
+			if raw_output is Dictionary:
+				var output_id := str(raw_output.get("character_id", ""))
+				if expected.has(output_id):
+					requested[output_id] = true
+	if requested.is_empty():
+		return {"ok": false, "error": "The split result did not identify any requested batch members."}
 	var completed: Array[String] = []
 	var failures: Dictionary = {}
+	var responded: Dictionary = {}
 	for raw_output in response.get("members", []):
 		if not raw_output is Dictionary:
 			continue
 		var character_id := str(raw_output.get("character_id", ""))
-		if not expected.has(character_id) or character_id in completed:
+		if not requested.has(character_id) or responded.has(character_id):
 			continue
+		responded[character_id] = true
 		var missing: Array[String] = []
 		for field_name in ["description", "personality", "scenario", "first_message"]:
 			if str(raw_output.get(field_name, "")).strip_edges().is_empty():
@@ -549,12 +572,18 @@ static func apply_split_result(
 		)
 		CCFStorageService.update_character(result, character)
 		completed.append(character_id)
+	for requested_id_value in requested:
+		var requested_id := str(requested_id_value)
+		if not responded.has(requested_id):
+			failures[requested_id] = "The provider response omitted this requested member."
 	var batches: Array = ensure_project_data(result).get("split_batches", []).duplicate(true)
+	var batch_completed := false
 	for batch_index in range(batches.size()):
 		if not batches[batch_index] is Dictionary or str(batches[batch_index].get("batch_id", "")) != batch_id:
 			continue
 		var updated_batch: Dictionary = batches[batch_index].duplicate(true)
 		var updated_members: Array = []
+		batch_completed = true
 		for raw_member in updated_batch.get("members", []):
 			var member: Dictionary = raw_member.duplicate(true)
 			var character_id := str(member.get("character_id", ""))
@@ -564,10 +593,13 @@ static func apply_split_result(
 			elif failures.has(character_id):
 				member["status"] = "failed"
 				member["error"] = str(failures[character_id])
-			member["attempts"] = int(member.get("attempts", 0)) + 1
+			if requested.has(character_id):
+				member["attempts"] = int(member.get("attempts", 0)) + 1
+			if str(member.get("status", "")) != "completed":
+				batch_completed = false
 			updated_members.append(member)
 		updated_batch["members"] = updated_members
-		updated_batch["status"] = "completed" if completed.size() == expected.size() else "partial"
+		updated_batch["status"] = "completed" if batch_completed else "partial"
 		updated_batch["updated_at"] = Time.get_datetime_string_from_system(true)
 		batches[batch_index] = updated_batch
 		break
@@ -575,11 +607,11 @@ static func apply_split_result(
 	project_data["split_batches"] = batches
 	result[PROJECT_KEY] = project_data
 	return {
-		"ok": not completed.is_empty(),
+		"ok": true,
 		"project": result,
 		"completed_character_ids": completed,
 		"failures": failures,
-		"partial": completed.size() != expected.size()
+		"partial": not batch_completed
 	}
 
 
@@ -718,9 +750,15 @@ static func _normalise_scenario(value: Dictionary) -> Dictionary:
 static func _normalise_greetings(value: Variant, character_record: Dictionary) -> Array:
 	var records: Array = []
 	if value is Array:
-		for raw_record in value:
+		for record_index in range(value.size()):
+			var raw_record: Variant = value[record_index]
 			if raw_record is Dictionary:
-				records.append(_normalise_greeting(raw_record))
+				var record_value: Dictionary = raw_record.duplicate(true)
+				if str(record_value.get("greeting_id", "")).is_empty():
+					record_value["greeting_id"] = _stable_greeting_id(
+						"record", str(record_value.get("text", "")), record_index
+					)
+				records.append(_normalise_greeting(record_value))
 	var existing_text: Dictionary = {}
 	for record in records:
 		existing_text[str(record.get("text", ""))] = true
@@ -728,12 +766,23 @@ static func _normalise_greetings(value: Variant, character_record: Dictionary) -
 	if card_value is Dictionary:
 		var alternatives: Variant = (card_value as Dictionary).get("alternate_greetings", [])
 		if alternatives is Array:
-			for raw_text in alternatives:
+			for greeting_index in range(alternatives.size()):
+				var raw_text: Variant = alternatives[greeting_index]
 				var greeting_text := str(raw_text)
 				if greeting_text.strip_edges().is_empty() or existing_text.has(greeting_text):
 					continue
-				records.append(_normalise_greeting({"text": greeting_text}))
+				records.append(_normalise_greeting({
+					"greeting_id": _stable_greeting_id(
+						"alternate", greeting_text, greeting_index
+					),
+					"text": greeting_text
+				}))
 	return records
+
+
+static func _stable_greeting_id(source_kind: String, greeting_text: String, source_index: int) -> String:
+	var identity := "%s|%d|%s" % [source_kind, source_index, greeting_text]
+	return "greeting_%s" % identity.sha256_text().substr(0, 24)
 
 
 static func _normalise_greeting(value: Dictionary) -> Dictionary:
