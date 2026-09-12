@@ -6,6 +6,22 @@ Character Card Forge v0.7 introduces a dedicated interoperability layer. Externa
 
 Open **Import / Export** from the Character Workspace. The studio is a detachable native window with separate tabs for ordinary cards, portable projects, batch workflows and optional Front Porch interoperability.
 
+## Front Porch connection, sync and deployment
+
+v0.18.5 adds a **Front Porch Sync** tab beside the original direct-install surface. It
+provides a copyable credential-safe diagnostic, authenticated remote-card and portrait
+access, private install identity/fingerprints, complete authored-field comparison and
+explicit Update/Reinstall or Import Front Porch Changes actions. Imports use the inspected
+import and revision-recovery path; neither direction overwrites automatically.
+
+A persistent sequential queue reports every install/update as succeeded, failed, skipped
+or warning. The Library can filter private remote states and queued deployments without
+making background network requests. Remote deletion and group-card direct install stay
+disabled until the connected server explicitly proves the relevant supported endpoint.
+There is never a direct Front Porch database fallback.
+
+See `v0185-front-porch-reliability.md` for the complete state and safety contract.
+
 ## Front Porch avatar galleries
 
 v0.17.5 adds an **Avatar Gallery** tab for alternate looks and labelled expressions. It can link existing portrait/Image Studio assets, import manual images, import/export Front Porch-compatible expression ZIPs, choose a canonical favourite independently from the CCF portrait and install selected or complete galleries through Front Porch's authenticated supported API. None of these actions silently changes ordinary Character Card artwork.
