@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.19.2 — Test Chat and Explicit Chat Exchange**
+**v0.19.3 — Expression Set Generation**
 
 v0.19.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -159,11 +159,22 @@ key-to-extension mapping, and the mapping has a visible preview. No automatic ne
 traffic or raw database access is introduced.
 
 The released application displays **v0.19.0** and the current source candidate displays
-**v0.19.1**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+**v0.19.2**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
-The next planned milestone is v0.19.2 Test Chat and Explicit Chat Exchange.
+The next planned milestone is v0.19.3 Expression Set Generation.
 
 ## Completed
+
+### v0.19.2 — Test Chat and Explicit Chat Exchange
+
+- Verified Front Porch's supported state, character/session selection, fresh-chat, send, stop, persona, WebSocket stream, `.fpchat` and JSONL endpoints against its current public implementation.
+- Added a detachable Front Porch-backed single-character Test Chat rather than recreating Front Porch's simulation engine.
+- Added explicit resume, session selection, fresh-chat, send and stop actions with canonical history refresh after streamed output.
+- Added Local Test Profiles for persona, expected runtime and notes outside card data; credentials and cookies are never persisted and global Front Porch settings are never silently changed.
+- Added preview and managed preservation for `.fpchat`, raw Front Porch chat JSON and compatible SillyTavern JSON/JSONL with bounded input, traversal rejection and SHA-256 provenance.
+- Added supported Front Porch chat import/export, including mismatch policies and managed recovery copies before transfer.
+- Made session deletion recoverable by requiring an exact `.fpchat` backup before calling Front Porch's supported delete action.
+- Kept group test chat deferred until this single-character lifecycle receives real-world validation.
 
 ### v0.19.1 — Export Profiles and Integration Adapters
 
@@ -639,7 +650,7 @@ also complete.
 - Reclaim Character Library grid space with compact-by-default Active Project tools and a persistent card-density slider whose smaller sizes progressively hide metadata and finally overlay the name on the artwork.
 - Keep third-party executable plugins and a public extension SDK deferred until the internal adapter boundary is stable, permission-aware and testable.
 
-#### v0.19.2 — Test Chat and Explicit Chat Exchange
+#### v0.19.2 — completed
 
 - First verify whether Front Porch's supported web/API mode exposes the required create-chat, character selection, send, stream, history and model/preset contracts; do not infer chat support from server reachability.
 - Add Local Test Profiles that store model/runtime test settings separately from card data so behavior can be compared without mutating the character.

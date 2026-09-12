@@ -2,24 +2,32 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.19.1 Export Profiles and Integration Adapters
+## Current development candidate: v0.19.2 Test Chat and Explicit Chat Exchange
 
-v0.19.1 adds versioned export profiles for full-fidelity Character Card V2, Front Porch
-and clean SillyTavern output. Import / Export now shows the exact target JSON together
-with a visible mapped/preserved/transformed/omitted report before writing JSON or PNG.
+v0.19.2 adds a detachable **Test Chat** workspace that uses Front Porch as the runtime
+instead of recreating its simulation engine. Connection and supported chat endpoints
+are verified before use; selecting a linked character, opening or creating a session,
+sending, stopping, importing and deleting are all explicit author actions. Live output
+uses Front Porch's supported WebSocket stream, while canonical history stays owned by
+Front Porch.
+
+Local Test Profiles remember a Front Porch persona, the expected provider/model/preset
+being compared and private test notes without adding anything to the card or changing
+Front Porch's global runtime settings. Passwords, two-factor codes, cookies and API keys
+are never persisted.
+
+The Chat Exchange tab previews Front Porch `.fpchat` packages and compatible
+SillyTavern JSON/JSONL before transfer. Managed copies retain exact source bytes plus a
+SHA-256 provenance record outside character projects. Current chat export retains a
+recovery copy, and session deletion is blocked until a recoverable `.fpchat` backup has
+been created. Character Card Forge uses supported Front Porch APIs and portable files
+only; it never reads or writes the Front Porch database.
+
+### Previous candidate: v0.19.1 Export Profiles and Integration Adapters
+
+v0.19.1 added versioned export profiles, exact before-export previews, a shared adapter
+contract, a branded startup splash and responsive Character Library density controls.
 Unknown extension namespaces remain lossless unless a profile explicitly omits one.
-
-A shared internal adapter contract now owns detection, import, export, validation,
-capability reporting and Front Porch install/update payload preparation. Existing card
-formats, Front Porch authenticated transport and collision review remain compatible;
-the adapter preview performs no network request and never modifies the project. Public
-third-party executable plugins remain deliberately deferred.
-
-The Character Library now keeps its Active Project tools behind a compact, persistent
-disclosure so another row of projects can remain visible. A persistent four-step card
-size slider adjusts grid density: lower-priority metadata disappears progressively,
-and the smallest cards place the project name directly over the artwork. The existing
-Compact List remains unchanged.
 
 ### Previous candidate: v0.19.0 Rich Authoring
 

@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.19.2
+
+### Added
+
+- Added a detachable single-character Test Chat backed by Front Porch's supported authenticated web API and WebSocket stream.
+- Added explicit linked-character selection, session resume/selection, fresh-chat creation, send, stop and canonical history refresh.
+- Added Local Test Profiles for persona choice, expected runtime and test notes, stored outside card/project data.
+- Added preview and managed import for Front Porch `.fpchat`, raw Front Porch chat JSON and compatible SillyTavern JSON/JSONL.
+- Added supported Front Porch `.fpchat` and JSONL export with automatic managed recovery copies.
+- Added recoverable session deletion that must create a `.fpchat` backup before the supported delete request is sent.
+- Added a versioned Front Porch chat contract catalog and dedicated v0.19.2 regression workflow.
+
+### Safety and compatibility
+
+- Passwords, two-factor codes, session cookies and API keys are never written to Test Profiles or projects.
+- Opening Test Chat performs no network request and never creates a chat automatically.
+- CCF records the runtime a profile expects but does not mutate Front Porch's global model/preset settings because no safe per-chat switch is exposed.
+- Imported Front Porch-private state remains opaque and exact in managed copies; chat history and evolving simulation state never become character-card fields.
+- Character Card Forge continues to use supported Front Porch APIs and portable formats only, with no direct database access.
+- Group Test Chat remains deliberately deferred until the single-character lifecycle has real-world coverage.
+
 ## 0.19.1
 
 - Added versioned full-fidelity Character Card V2, Front Porch and clean SillyTavern export profiles.

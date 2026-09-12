@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.19.2",
+  "description": "v0.19.1 plus explicit Front Porch-backed single-character Test Chat, local Test Profiles, live stream/cancellation and safe .fpchat/SillyTavern chat exchange.",
+  "base_manifest": "regression_suites_v0191.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0192_test_chat_exchange",
+        "label": "v0.19.2 Test Chat and Explicit Chat Exchange",
+        "kind": "godot",
+        "path": "tools/test_v0192_test_chat_exchange.gd",
+        "timeout_seconds": 300
+      }
+    ]
+  }
+}

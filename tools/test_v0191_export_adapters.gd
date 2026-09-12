@@ -293,11 +293,19 @@ func _run() -> void:
 	await process_frame
 
 	var scene_text := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	var main_text := FileAccess.get_file_as_string("res://scripts/main_v0191.gd")
+	var v0191_main_text := FileAccess.get_file_as_string("res://scripts/main_v0191.gd")
+	var v0192_main_text := FileAccess.get_file_as_string("res://scripts/main_v0192.gd")
 	if not _require(
-		scene_text.contains("scripts/main_v0191.gd")
-		and main_text.contains("WORKSPACE_V0191")
-		and main_text.contains("0.19.1"),
+		(
+			scene_text.contains("scripts/main_v0191.gd")
+			and v0191_main_text.contains("WORKSPACE_V0191")
+			and v0191_main_text.contains("0.19.1")
+		)
+		or (
+			scene_text.contains("scripts/main_v0192.gd")
+			and v0192_main_text.contains("WORKSPACE_V0192")
+			and v0192_main_text.contains("0.19.2")
+		),
 		"The live application must mount the v0.19.1 workspace and display its version."
 	):
 		return
