@@ -57,6 +57,7 @@ static func export_character_v2(project: Dictionary, character_id: String) -> Di
 		var assigned_series := CCFSeriesService.series_by_id(series_id)
 		series_name = str(assigned_series.get("name", ""))
 	var extensions := _dictionary_copy(card_data.get("card_extensions", {}))
+	_apply_rich_authoring_export_mappings_v0190(extensions, character_record)
 	var ccf_extension := {
 		"format_version": 1,
 		"project_id": str(project.get("project_id", "")),
@@ -756,7 +757,8 @@ static func _collect_ccf_custom_data(character_record: Dictionary) -> Dictionary
 			"revision_lineage",
 			"card_inspection_v0182",
 			"ai_review_v0183",
-			"compact_derivative_v0186"
+			"compact_derivative_v0186",
+			"rich_authoring_v0190"
 		]:
 			continue
 		top_level[str(key)] = _duplicate_variant(character_record.get(key))
@@ -765,6 +767,33 @@ static func _collect_ccf_custom_data(character_record: Dictionary) -> Dictionary
 	if character_data is Dictionary and character_data.get("custom", null) is Dictionary:
 		result["character_custom"] = _duplicate_variant(character_data.get("custom"))
 	return result
+
+
+static func _apply_rich_authoring_export_mappings_v0190(
+	extensions: Dictionary, character_record: Dictionary
+) -> void:
+	var rich_value: Variant = character_record.get("rich_authoring_v0190", {})
+	if not rich_value is Dictionary:
+		return
+	var rich: Dictionary = rich_value
+	var custom_value: Variant = rich.get("custom_metadata", {})
+	var mappings_value: Variant = rich.get("export_mappings", [])
+	if not custom_value is Dictionary or not mappings_value is Array:
+		return
+	var custom: Dictionary = custom_value
+	for raw_mapping in mappings_value:
+		if not raw_mapping is Dictionary:
+			continue
+		var source_key := str(raw_mapping.get("source_key", "")).strip_edges()
+		var target_key := str(raw_mapping.get("target_key", "")).strip_edges()
+		if (
+			source_key.is_empty()
+			or target_key.is_empty()
+			or target_key == CCF_EXTENSION_KEY
+			or not custom.has(source_key)
+		):
+			continue
+		extensions[target_key] = _duplicate_variant(custom[source_key])
 
 
 static func _mapped_internal_value(project: Dictionary, character_id: String, internal_path: String) -> Variant:

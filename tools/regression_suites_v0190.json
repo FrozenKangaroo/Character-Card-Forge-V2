@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.19.0",
+  "description": "v0.18.6 plus scenario and greeting management, ensemble materialisation, split-set recovery, shared-world dependencies, lineage and private export mappings.",
+  "base_manifest": "regression_suites_v0186.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0190_rich_authoring",
+        "label": "v0.19.0 Rich Scenario, Greeting, World and Ensemble Authoring",
+        "kind": "godot",
+        "path": "tools/test_v0190_rich_authoring.gd",
+        "timeout_seconds": 300
+      }
+    ]
+  }
+}
