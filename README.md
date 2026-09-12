@@ -2,7 +2,22 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.18.4 Library Workflow, Duplicate and Batch Tools
+## Current development candidate: v0.18.5 Front Porch Connection, Sync and Deployment Reliability
+
+v0.18.5 adds a dedicated **Front Porch Sync** workflow with credential-safe connection
+diagnostics, behavior-proven endpoint capabilities and authenticated bounded portrait
+caching. Successful exchanges privately retain the exact Front Porch character ID plus
+local, remote and last-exchanged authored-card fingerprints, producing Not Installed,
+Installed, Modified Locally, Changed in Front Porch and Diverged states without reading
+Front Porch's database or making network requests while browsing the Library.
+
+Compare shows the complete authored-field difference report before Update/Reinstall or
+Import Front Porch Changes becomes available. Every direction requires an explicit
+confirmation; imports reuse inspected import and revision recovery. A persistent queue
+runs installs and updates sequentially and reports each success, failure, skip or warning.
+The Library adds remote-state and queued-deployment filters. Removal and group-card direct
+install remain disabled unless the connected server explicitly proves those supported
+endpoints; CCF never falls back to SQLite or sends an `fpa_group` through character import.
 
 v0.18.4 turns the existing Character Library into an authoring workflow hub. Projects
 can carry private notes, Draft/Needs Review/Testing/Stable/Published states, recoverable
@@ -67,7 +82,8 @@ The underlying v0.18.0 candidate adds a project-level Front Porch World Studio w
 
 The current public release baseline is v0.18.0. A source development candidate is not automatically treated as a published release.
 
-See `docs/v0183-ai-review.md` for the AI Review rubric, staleness and explicit-apply
+See `docs/v0185-front-porch-reliability.md` for the Front Porch diagnostics, identity,
+compare-first and deployment boundaries, `docs/v0183-ai-review.md` for the AI Review rubric, staleness and explicit-apply
 boundary, `docs/v0182-card-health-inspection.md` for inspection and reviewed import
 boundaries, `docs/v0181-revision-safety.md` for the revision model and recovery boundaries,
 `docs/v0180-hotfix3-lorebook-word-wrap.md` for the wrapping behavior,

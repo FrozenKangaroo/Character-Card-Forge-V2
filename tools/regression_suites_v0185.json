@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.18.5",
+  "description": "v0.18.4 plus Front Porch diagnostics, private sync identity, compare-first exchange, deployment reporting and Library remote-state filters.",
+  "base_manifest": "regression_suites_v0184.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0185_front_porch_reliability",
+        "label": "v0.18.5 Front Porch Connection, Sync and Deployment Reliability",
+        "kind": "godot",
+        "path": "tools/test_v0185_front_porch_reliability.gd",
+        "timeout_seconds": 300
+      }
+    ]
+  }
+}

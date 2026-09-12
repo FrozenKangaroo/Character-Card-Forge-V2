@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.18.4 — Library Workflow, Duplicate and Batch Tools**
+**v0.18.5 — Front Porch Connection, Sync and Deployment Reliability**
 
 v0.18.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -119,14 +119,37 @@ multi-selection supports validation, organisation, project-package export and gr
 creation through the established multi-character and Front Porch workflow formats,
 with context menus, quick actions, bounded notices and explicit per-item reports.
 
+v0.18.5 adds credential-safe connection diagnostics, behavior-proven endpoint
+capabilities and authenticated bounded portrait caching. Private Front Porch identity,
+last-exchanged and last-observed fingerprints expose Not Installed, Installed, Modified
+Locally, Changed in Front Porch and Diverged states. Compare-first Update/Reinstall and
+Import Front Porch Changes actions require confirmation; imports reuse revision recovery.
+A persistent sequential deployment queue records success, failure, skipped and warning
+outcomes, while Library filters expose remote and queued state without background network
+traffic. Delete and group-card install remain disabled unless the connected server
+explicitly proves a supported endpoint, with no raw-database fallback.
+
 The released application displays **v0.18.0**. The source development candidate
-displays **v0.18.4**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
+displays **v0.18.5**, uses the Godot **4.7.x stable** project baseline, keeps Forward+
 with Compatibility/OpenGL fallback and retains the complete historical regression
-baseline. The next planned milestone is v0.18.5 Front Porch Connection, Sync and
-Deployment Reliability; published release metadata remains unchanged until a release
+baseline. The next planned milestone is v0.18.6 Compact/Lite Derivatives from Existing
+Characters; published release metadata remains unchanged until a release
 transaction.
 
 ## Completed
+
+### v0.18.5 — Front Porch Connection, Sync and Deployment Reliability
+
+- Added credential-safe reachability, authentication, version, library, export and portrait diagnostics with copyable plain-text results.
+- Added behavior-based capability evidence and kept destructive delete and group-card import disabled unless explicitly proven by the connected server.
+- Added authenticated portrait fetching in a disposable cache bounded separately from authored artwork.
+- Added private Front Porch character identity plus last-exchanged and remote fingerprints with five visible sync states.
+- Added complete authored-field comparison before confirmed Update/Reinstall, Import Front Porch Changes or supported Remove actions.
+- Reused inspected import and revision recovery for remote-to-local changes; no automatic overwrite or database access was introduced.
+- Added a persistent sequential install/update queue with per-item success, failure, skipped and warning history.
+- Added Library remote-state and queued-deployment filters that make no network requests while browsing.
+- Limited advisory source-update opt-in to imported records with a stable public source ID or URL.
+- Added focused service/live-UI regression coverage, an inherited manifest, Godot 4.7.1 CI and `docs/v0185-front-porch-reliability.md`.
 
 ### v0.18.4 — Library Workflow, Duplicate and Batch Tools
 
@@ -506,17 +529,14 @@ are implemented and recorded under **Completed** above. Front Porch remote-state
 deployment-queue filters remain assigned to v0.18.5 because they require verified
 server capabilities rather than inferred local state.
 
-#### v0.18.5 — Front Porch Connection, Sync and Deployment Reliability
+#### v0.18.5 — completed
 
-- Add a non-technical connection diagnostics panel for reachability, authentication/session state, reported version, portrait access and supported endpoints, with copyable credential-safe results.
-- Expand behavior-based capability detection so Front Porch actions are enabled only when the connected version proves the required supported contract.
-- Add authenticated portrait fetching and bounded local caching; keep original card assets distinct from disposable thumbnails.
-- Track explicit install identity and last exchanged content fingerprints to show Not Installed, Installed, Modified Locally, Changed in Front Porch or Diverged states without background database access.
-- Offer Compare, Install, Update, Reinstall or Import Front Porch Changes only after previewing the relevant differences. Never overwrite locally customised cards automatically.
-- Add a sequential install/update queue and a persistent deployment report with succeeded, failed, skipped and warning outcomes. Reuse the existing AI Jobs presentation patterns where practical without mixing AI requests and deployments.
-- Add group-card direct installation only if a verified supported group endpoint exists; never send `fpa_group` packages through a plain-character bulk route.
-- Add **Remove from Front Porch…** only when capability detection proves a supported authenticated deletion endpoint. Preview the exact remote identity and require confirmation; never fall back to direct SQLite access.
-- Add opt-in update checks only for imported sources that provide a stable public ID or URL. Remote changes are advisory until explicitly imported or merged.
+Credential-safe diagnostics, behavior-proven capabilities, authenticated bounded portrait
+caching, private exchange identity/fingerprints, compare-first two-way actions, confirmed
+supported removal, a persistent sequential deployment queue, Library remote/queue filters
+and stable-public-source update opt-in are implemented and recorded under **Completed**
+above. Group-card direct install remains capability-gated because no supported group-card
+import endpoint is advertised; `fpa_group` is never sent through character import.
 
 #### v0.18.6 — Compact/Lite Derivatives from Existing Characters
 
