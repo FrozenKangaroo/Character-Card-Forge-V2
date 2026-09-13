@@ -2,7 +2,15 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.20.0 Very-Large and Portable Library Architecture
+## Current development candidate: v0.20.0-hotfix1 Library Panel Controls
+
+v0.20.0-hotfix1 adds slim, always-recoverable edge arrows for the Library Filters and
+Project Details side panels. A unified **Panels** menu also controls the existing
+Project Tools section, offers one-click **Show all panels** and **Focus card area**
+layouts, and provides opt-in side-panel auto-hide. Layout and density choices now
+reliably persist between sessions.
+
+### Previous candidate: v0.20.0 Very-Large and Portable Library Architecture
 
 v0.20.0 keeps Character Library responsive as collections grow by rendering only the
 visible and nearby grid cards. The native compact list remains a lightweight drawn
