@@ -53,9 +53,10 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 **v0.19.4 — PDF and Remote Reference Ingestion**
 
-The v0.19.3 release is followed by v0.19.3-hotfix1, which corrects Test Chat's
-Front Porch WebSocket event-envelope handling and restores live terminal updates.
-The planned v0.19.4 scope is unchanged.
+v0.19.4 adds local PDF text-layer extraction and review-first HTTPS reference
+ingestion to the existing managed attachment pipeline. The original source remains
+portable, extracted text and provenance are inspectable, context inclusion is explicit,
+and remote refresh never occurs in the background. v0.19.5 is next.
 
 v0.19.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -689,7 +690,7 @@ also complete.
 - Reconcile reconnects through Front Porch's `generating`, `isGenerating` and
   `isSettlingTurn` state without adding background chat creation or database access.
 
-#### v0.19.4 — PDF and Remote Reference Ingestion
+#### v0.19.4 — completed
 
 - Add deterministic local PDF text extraction when a text layer exists while retaining the original PDF as the managed source attachment.
 - Store extracted text as derived preprocessing data with page, character, token, status and truncation metadata; preview it and let the author explicitly choose whether it enters context.

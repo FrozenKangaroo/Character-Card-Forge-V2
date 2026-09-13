@@ -96,7 +96,9 @@ The manager shows a preprocessing summary and a combined prompt-budget estimate 
 - Subtitle and transcript files are treated as text.
 - Text preprocessing currently has a 4 MB per-file safety limit.
 - Images and GIFs contribute descriptive file metadata and user notes to ordinary text prompts; actual pixels are sent only during an explicit vision-analysis job. PNG, JPEG, WebP, and GIF data is sent directly, while other Godot-readable image formats are converted to PNG in memory when possible.
-- PDFs are stored and summarised by file metadata in v0.10.0. Native PDF text extraction is not yet included.
+- PDFs with a readable text layer are extracted locally in v0.19.4. The original PDF remains the managed source, while derived preprocessing records page, character, estimated-token, status and truncation metadata. Extracted text is previewable and does not enter generation context until explicitly enabled.
+- **Add from URL…** accepts bounded HTTPS PDFs, readable text/HTML/JSON and PNG/JPEG/WebP images after a visible preview. Accepted bytes become an ordinary managed project file with source/final URL, fetch time, content type and SHA-256 provenance.
+- Remote refresh is explicit and previewed. It retains the previous managed file for recovery and never runs merely because the attachment manager opens.
 - Generic files contribute stored metadata and user notes.
 
 The default combined limit is 24,000 characters and can be changed in Settings from 2,000 to 120,000 characters. Context is assembled deterministically in project-attachment order followed by character-attachment order. Entries beyond the limit are omitted or truncated and reported in the summary.
@@ -116,7 +118,8 @@ Removing an attachment currently removes its metadata entry but deliberately kee
 
 ## Current limitations
 
-- PDF text extraction and document page rendering are not included yet.
+- Scanned/image-only PDF OCR and PDF page rendering are not included. Such PDFs remain stored and report that no readable text layer was found rather than silently invoking a service.
+- Remote references are limited to HTTPS, 16 MB, 20 seconds and four HTTPS-only redirects. Unsupported response types are rejected before acceptance.
 - GIF frame selection is delegated to the provider; local preprocessing may only report stored file metadata.
 - Remote image URLs are not yet attachment records; v0.10.0 imports local files.
 - Vision capability detection is not automatic. The selected Vision model must support OpenAI-compatible multimodal requests.

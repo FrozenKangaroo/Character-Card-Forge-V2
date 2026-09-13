@@ -2,7 +2,22 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.19.3 Expression Set Generation
+## Current development candidate: v0.19.4 PDF and Remote Reference Ingestion
+
+v0.19.4 upgrades **Vision and Attachments** with deterministic local extraction for
+PDFs that contain a readable text layer. The original PDF stays in managed project
+storage, while derived page, character, token, status and truncation metadata—and a
+read-only extracted-text preview—make the preprocessing inspectable. Extracted text
+does not enter generation context until the author explicitly enables it. Scanned or
+image-only PDFs remain stored without silently invoking OCR.
+
+**Add from URL…** fetches only bounded HTTPS PDFs, readable documents/web pages and
+PNG/JPEG/WebP images. Redirect, timeout, size and content-type limits are enforced
+before a preview is accepted. Accepted content becomes a normal managed project copy
+with URL, fetch-time and hash provenance; refresh is always an explicit previewed
+action and never a background mutation.
+
+### Previous candidate: v0.19.3 Expression Set Generation
 
 v0.19.3 adds **Generate Expression Set…** to Image Studio. Authors select any
 subset of Front Porch's exact expression labels and explicitly choose the current
@@ -263,7 +278,10 @@ The v0.10 foundation supports:
 - attachment context in character, controlled-build, group, relationship, and card-workflow generation;
 - review-first image/GIF Concept Extraction and Full-card Suggestions through the Vision role.
 
-PDF files are currently stored portably with metadata; native PDF text extraction remains planned.
+PDFs with readable text layers are extracted locally and previewed while retaining the
+original managed file. Image-only PDFs remain stored without automatic OCR. Bounded
+HTTPS references can be previewed before acceptance and are copied into project storage
+with provenance; remote refresh is explicit.
 
 See `docs/vision_attachments.md` for details.
 

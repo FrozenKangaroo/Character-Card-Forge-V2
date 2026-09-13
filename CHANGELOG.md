@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.19.4
+
+### Added
+
+- Added deterministic local PDF text-layer extraction with page, character, estimated-token, status and truncation metadata while retaining the original PDF as the managed source.
+- Added an extracted-text preview and an explicit per-attachment choice before PDF or remote text enters generation context.
+- Added **Add from URL…** for review-first HTTPS ingestion of bounded PDFs, readable text/HTML/JSON and PNG/JPEG/WebP images.
+- Added explicit **Refresh Remote…** with a new preview, stable attachment identity, bounded refresh provenance and recoverable prior managed files.
+
+### Safety and compatibility
+
+- HTTPS fetching is limited to 16 MB, 20 seconds and four HTTPS-only redirects; unsupported content is rejected before acceptance.
+- Accepted remote sources are copied into ordinary managed project storage with source/final URL, fetch time, content type and SHA-256 provenance.
+- Remote reference text is labelled as untrusted data when assembled through the existing attachment context budget.
+- Opening Vision and Attachments performs no network request, remote references never refresh in the background, and scanned/image-only PDF OCR remains an explicit future option.
+
 ## 0.19.3-hotfix1
 
 ### Fixed
