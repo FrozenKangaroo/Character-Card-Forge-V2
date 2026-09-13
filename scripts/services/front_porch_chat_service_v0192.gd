@@ -6,6 +6,7 @@ signal stream_token_v0192(text: String)
 signal stream_done_v0192
 signal stream_error_v0192(message_text: String)
 signal stream_chat_updated_v0192
+signal stream_generating_v0193_hotfix1
 
 const CONTRACT_PATH := "res://data/front_porch_chat_contract_v0192.json"
 const MAX_IMPORT_BYTES := 256 * 1024 * 1024
@@ -71,6 +72,22 @@ static func classify_chat_response(raw: Dictionary, fallback: String) -> Diction
 			"error": "Front Porch login expired. Connect again and retry."
 		}
 	return _http_failure(response_code, payload, fallback)
+
+
+static func stream_event_name_v0193_hotfix1(stream_event: Dictionary) -> String:
+	# Front Porch's supported multiplexed stream uses `event`. Keep `type` as a
+	# compatibility fallback for early development builds of the endpoint.
+	return str(
+		stream_event.get("event", stream_event.get("type", ""))
+	).strip_edges().to_lower()
+
+
+static func stream_error_text_v0193_hotfix1(stream_event: Dictionary) -> String:
+	for key in ["message", "error", "data"]:
+		var value := str(stream_event.get(key, "")).strip_edges()
+		if not value.is_empty():
+			return value
+	return "Front Porch generation failed."
 
 
 func verify_chat_contract() -> Dictionary:
@@ -263,16 +280,20 @@ func poll_stream() -> void:
 		var parsed: Variant = JSON.parse_string(packet_text)
 		if not parsed is Dictionary:
 			continue
-		var event := parsed as Dictionary
-		match str(event.get("type", "")):
+		var stream_event := parsed as Dictionary
+		match stream_event_name_v0193_hotfix1(stream_event):
 			"token":
-				stream_token_v0192.emit(str(event.get("data", "")))
+				stream_token_v0192.emit(str(stream_event.get("data", "")))
 			"done":
 				stream_done_v0192.emit()
 			"error":
-				stream_error_v0192.emit(str(event.get("message", event.get("error", "Front Porch generation failed."))))
+				stream_error_v0192.emit(
+					stream_error_text_v0193_hotfix1(stream_event)
+				)
 			"chat_updated":
 				stream_chat_updated_v0192.emit()
+			"generating":
+				stream_generating_v0193_hotfix1.emit()
 
 
 func disconnect_stream() -> void:

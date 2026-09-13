@@ -14,7 +14,12 @@
     "send": {"method": "POST", "path": "/api/chat/send"},
     "stop": {"method": "POST", "path": "/api/chat/stop"},
     "personas": {"method": "GET", "path": "/api/personas"},
-    "stream": {"method": "WEBSOCKET", "path": "/api/ws"}
+    "stream": {
+      "method": "WEBSOCKET",
+      "path": "/api/ws",
+      "event_field": "event",
+      "events": ["connected", "generating", "token", "done", "error", "chat_updated"]
+    }
   },
   "exchange": {
     "export_fpchat": {"method": "GET", "path": "/api/chat/export.fpchat"},

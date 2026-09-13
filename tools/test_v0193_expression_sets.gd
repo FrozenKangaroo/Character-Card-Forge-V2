@@ -137,7 +137,10 @@ func _run() -> void:
 	var open_button_value: Variant = image_window_value.get("_expression_set_button_v0193") if image_window_value is CCFImageGenerationWindowV0193 else null
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text == "Godot rewrite • v0.19.3":
+		if node is Label and node.text in [
+			"Godot rewrite • v0.19.3",
+			"Godot rewrite • v0.19.3-hotfix1"
+		]:
 			version_found = true
 			break
 	if not _require(
