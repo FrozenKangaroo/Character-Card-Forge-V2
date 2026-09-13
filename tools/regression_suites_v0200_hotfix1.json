@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.20.0-hotfix1",
+  "description": "v0.20.0 plus persistent collapsible and auto-hide Library panels.",
+  "base_manifest": "regression_suites_v0200.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0200_hotfix1_library_panels",
+        "label": "v0.20.0-hotfix1 Library Panel Controls",
+        "kind": "godot",
+        "path": "tools/test_v0200_hotfix1_library_panels.gd",
+        "timeout_seconds": 300
+      }
+    ]
+  }
+}
