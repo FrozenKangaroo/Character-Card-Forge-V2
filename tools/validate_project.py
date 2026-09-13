@@ -95,8 +95,8 @@ def main() -> None:
 
     settings_text = (ROOT / "scripts/services/settings_service.gd").read_text(encoding="utf-8")
     require(
-        "const SETTINGS_FORMAT_VERSION := 8" in settings_text,
-        "Settings schema must be version 8 for separated providers, task routing and update preferences.",
+        "const SETTINGS_FORMAT_VERSION := 9" in settings_text,
+        "Settings schema must be version 9 for provider routing, updates and library storage.",
     )
     for marker_text in (
         'const ROLE_TEXT := "text"',

@@ -310,7 +310,7 @@ static func auto_assign_unassigned_projects() -> Dictionary:
 	var ambiguous := 0
 	var unmatched := 0
 	var failures: Array[String] = []
-	for project_id in DirAccess.get_directories_at(CCFStorageService.CHARACTERS_DIR):
+	for project_id in DirAccess.get_directories_at(CCFStorageService.characters_dir()):
 		var loaded := CCFStorageService.load_project(project_id)
 		if not loaded.get("ok", false):
 			failures.append(project_id)
@@ -344,7 +344,7 @@ static func auto_assign_unassigned_projects() -> Dictionary:
 
 static func usage_counts() -> Dictionary:
 	var counts: Dictionary = {}
-	for project_id in DirAccess.get_directories_at(CCFStorageService.CHARACTERS_DIR):
+	for project_id in DirAccess.get_directories_at(CCFStorageService.characters_dir()):
 		var loaded := CCFStorageService.load_project(project_id)
 		if not loaded.get("ok", false):
 			continue
@@ -396,7 +396,7 @@ static func export_pack(series_ids: Array[String], destination_path: String) -> 
 		"package_format_version": PACKAGE_FORMAT_VERSION,
 		"created_at": Time.get_datetime_string_from_system(true),
 		"application": "Character Card Forge",
-		"application_version": "0.19.5",
+		"application_version": "0.20.0",
 		"series_format_version": FORMAT_VERSION,
 		"series_count": included.size(),
 		"series": manifest_series

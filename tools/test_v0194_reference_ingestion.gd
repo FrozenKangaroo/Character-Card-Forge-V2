@@ -238,7 +238,8 @@ func _test_active_ui_wiring() -> bool:
 			refresh_found = true
 	for node in app.find_children("*", "Label", true, false):
 		if node is Label and node.text in [
-			"Godot rewrite • v0.19.4", "Godot rewrite • v0.19.5"
+			"Godot rewrite • v0.19.4", "Godot rewrite • v0.19.5",
+			"Godot rewrite • v0.20.0"
 		]:
 			version_found = true
 	if not _require(

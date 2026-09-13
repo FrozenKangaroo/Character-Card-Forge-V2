@@ -10,12 +10,73 @@ const TEMPLATES_DIR := ROOT_DIR + "/templates"
 const SERIES_DIR := ROOT_DIR + "/series"
 const PROJECT_FILE := "character.json"
 const CURRENT_FORMAT_VERSION := 2
+const LIBRARY_MANIFEST_FILE_V0200 := ".ccf-library.json"
+const LIBRARY_LOCK_FILE_V0200 := ".ccf-library.lock"
+const LIBRARY_LOCK_SECONDS_V0200 := 300
+
+static var _active_library_root_v0200 := ROOT_DIR
+static var _library_mode_v0200 := "local"
+static var _writer_id_v0200 := ""
+static var _loaded_project_origins_v0200: Dictionary = {}
+static var _loaded_project_fingerprints_v0200: Dictionary = {}
+
+
+static func configure_library_storage_v0200(settings: Dictionary) -> void:
+	var storage_value: Variant = settings.get("library_storage", {})
+	var storage: Dictionary = storage_value if storage_value is Dictionary else {}
+	var requested_mode := str(storage.get("mode", "local")).strip_edges().to_lower()
+	var requested_root := str(storage.get("portable_root", "")).strip_edges()
+	if requested_mode == "portable" and requested_root.is_absolute_path():
+		_library_mode_v0200 = "portable"
+		_active_library_root_v0200 = requested_root.simplify_path()
+	else:
+		_library_mode_v0200 = "local"
+		_active_library_root_v0200 = ROOT_DIR
+	_writer_id_v0200 = str(storage.get("writer_id", "")).strip_edges()
+	if _writer_id_v0200.is_empty():
+		_writer_id_v0200 = _new_uuid()
+
+
+static func active_library_root_v0200() -> String:
+	return _active_library_root_v0200
+
+
+static func characters_dir() -> String:
+	return _active_library_root_v0200.path_join("characters")
+
+
+static func library_mode_v0200() -> String:
+	return _library_mode_v0200
+
+
+static func library_storage_status_v0200() -> Dictionary:
+	var root_path := active_library_root_v0200()
+	var absolute_root := ProjectSettings.globalize_path(root_path)
+	var available := DirAccess.dir_exists_absolute(absolute_root)
+	var characters_available := DirAccess.dir_exists_absolute(
+		ProjectSettings.globalize_path(characters_dir())
+	)
+	var manifest: Dictionary = {}
+	var manifest_path := root_path.path_join(LIBRARY_MANIFEST_FILE_V0200)
+	if FileAccess.file_exists(manifest_path):
+		var loaded := _read_json(manifest_path)
+		if bool(loaded.get("ok", false)) and loaded.get("data", {}) is Dictionary:
+			manifest = loaded.get("data", {})
+	return {
+		"mode": _library_mode_v0200,
+		"root": root_path,
+		"absolute_root": absolute_root,
+		"available": available and characters_available,
+		"manifest_present": not manifest.is_empty(),
+		"library_id": str(manifest.get("library_id", "")),
+		"single_writer": true,
+		"automatic_cloud_sync": false
+	}
 
 
 static func ensure_directories() -> void:
 	for path in [
 		ROOT_DIR,
-		CHARACTERS_DIR,
 		SETTINGS_DIR,
 		CACHE_DIR,
 		EXPORTS_DIR,
@@ -23,6 +84,12 @@ static func ensure_directories() -> void:
 		SERIES_DIR
 	]:
 		DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(path))
+	if _library_mode_v0200 == "local" or DirAccess.dir_exists_absolute(
+		ProjectSettings.globalize_path(_active_library_root_v0200)
+	):
+		DirAccess.make_dir_recursive_absolute(
+			ProjectSettings.globalize_path(characters_dir())
+		)
 
 
 static func new_project() -> Dictionary:
@@ -130,9 +197,19 @@ static func save_project(project: Dictionary) -> Dictionary:
 	if project_id.is_empty():
 		project_id = _new_uuid()
 		normalised["project_id"] = project_id
-	normalised["updated_at"] = Time.get_datetime_string_from_system(true)
+	var origin_root := str(_loaded_project_origins_v0200.get(project_id, ""))
+	if not origin_root.is_empty() and origin_root != active_library_root_v0200():
+		return {
+			"ok": false,
+			"storage_origin_changed": true,
+			"error": "The active library changed after this project was opened. Reopen it from the current library before saving."
+		}
+	var incoming_updated_at := str(normalised.get("updated_at", ""))
 	_sync_all_character_names(normalised)
 	_sync_project_name(normalised)
+	var lock_result := _acquire_library_write_lock_v0200()
+	if not bool(lock_result.get("ok", false)):
+		return lock_result
 
 	var folder := project_folder(project_id)
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(folder + "/assets"))
@@ -157,11 +234,38 @@ static func save_project(project: Dictionary) -> Dictionary:
 		)
 
 	var path := folder + "/" + PROJECT_FILE
-	var result := _write_json(path, normalised)
+	if FileAccess.file_exists(path):
+		var remembered_fingerprint := str(
+			_loaded_project_fingerprints_v0200.get(project_id, "")
+		)
+		var disk_fingerprint := _storage_file_fingerprint_v0200(path)
+		if not remembered_fingerprint.is_empty() and disk_fingerprint != remembered_fingerprint:
+			_release_library_write_lock_v0200()
+			return {
+				"ok": false,
+				"conflict": true,
+				"error": "This project changed on disk after it was opened. Reopen it and compare the other writer's changes before saving."
+			}
+		var disk_result := _read_json(path)
+		if bool(disk_result.get("ok", false)) and disk_result.get("data", {}) is Dictionary:
+			var disk_data: Dictionary = disk_result.get("data", {})
+			var disk_updated_at := str(disk_data.get("updated_at", ""))
+			if not incoming_updated_at.is_empty() and disk_updated_at != incoming_updated_at:
+				_release_library_write_lock_v0200()
+				return {
+					"ok": false,
+					"conflict": true,
+					"error": "This project changed on disk after it was opened. Reopen it and compare the other writer's changes before saving."
+				}
+	normalised["updated_at"] = Time.get_datetime_string_from_system(true)
+	var result := _write_json_atomic_v0200(path, normalised)
+	_release_library_write_lock_v0200()
 	if not result.get("ok", false):
 		return result
 	project.clear()
 	project.merge(normalised, true)
+	_loaded_project_origins_v0200[project_id] = active_library_root_v0200()
+	_loaded_project_fingerprints_v0200[project_id] = _storage_file_fingerprint_v0200(path)
 	return {"ok": true, "path": path, "project_id": project_id}
 
 
@@ -173,13 +277,17 @@ static func load_project(project_id: String) -> Dictionary:
 	var project = loaded.get("data", {})
 	if not project is Dictionary:
 		return {"ok": false, "error": "Character project is not a JSON object."}
+	_loaded_project_origins_v0200[project_id] = active_library_root_v0200()
+	_loaded_project_fingerprints_v0200[project_id] = _storage_file_fingerprint_v0200(path)
 	return {"ok": true, "data": _normalise_project(project)}
 
 
 static func list_projects() -> Array:
 	ensure_directories()
 	var rows: Array[Dictionary] = []
-	for folder_project_id in DirAccess.get_directories_at(CHARACTERS_DIR):
+	if not bool(library_storage_status_v0200().get("available", false)):
+		return rows
+	for folder_project_id in DirAccess.get_directories_at(characters_dir()):
 		var loaded := load_project(folder_project_id)
 		if not loaded.get("ok", false):
 			continue
@@ -425,17 +533,26 @@ static func _remap_duplicate_attachments(
 
 
 static func delete_project(project_id: String) -> Dictionary:
+	var origin_root := str(_loaded_project_origins_v0200.get(project_id, ""))
+	if not origin_root.is_empty() and origin_root != active_library_root_v0200():
+		return {"ok": false, "error": "The active library changed. Refresh before deleting this project."}
 	var absolute := ProjectSettings.globalize_path(project_folder(project_id))
 	if not DirAccess.dir_exists_absolute(absolute):
 		return {"ok": false, "error": "Character project folder does not exist."}
+	var lock_result := _acquire_library_write_lock_v0200()
+	if not bool(lock_result.get("ok", false)):
+		return lock_result
 	var error := _remove_tree(absolute)
+	_release_library_write_lock_v0200()
 	if error != OK:
 		return {"ok": false, "error": "Could not delete character project folder (error %s)." % error}
+	_loaded_project_origins_v0200.erase(project_id)
+	_loaded_project_fingerprints_v0200.erase(project_id)
 	return {"ok": true}
 
 
 static func project_folder(project_id: String) -> String:
-	return CHARACTERS_DIR + "/" + project_id
+	return characters_dir().path_join(project_id)
 
 
 static func user_data_path() -> String:
@@ -1090,6 +1207,107 @@ static func _write_json(path: String, data: Variant) -> Dictionary:
 	file.store_string(JSON.stringify(data, "  "))
 	file.close()
 	return {"ok": true}
+
+
+static func _storage_file_fingerprint_v0200(path: String) -> String:
+	if not FileAccess.file_exists(path):
+		return "missing"
+	var file := FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		return "unreadable:%d:%d" % [
+			FileAccess.get_modified_time(path), FileAccess.get_size(path)
+		]
+	var digest := file.get_as_text().sha256_text()
+	file.close()
+	return digest
+
+
+static func _write_json_atomic_v0200(path: String, data: Variant) -> Dictionary:
+	var absolute_path := ProjectSettings.globalize_path(path)
+	DirAccess.make_dir_recursive_absolute(absolute_path.get_base_dir())
+	var temporary_path := "%s.ccf-writing-%s" % [absolute_path, _writer_id_v0200]
+	var backup_path := "%s.ccf-previous" % absolute_path
+	var file := FileAccess.open(temporary_path, FileAccess.WRITE)
+	if file == null:
+		return {"ok": false, "error": "Could not create a safe temporary project file."}
+	file.store_string(JSON.stringify(data, "  "))
+	file.flush()
+	file.close()
+	var verification := _read_json(temporary_path)
+	if not bool(verification.get("ok", false)):
+		DirAccess.remove_absolute(temporary_path)
+		return {"ok": false, "error": "The safely written project copy did not pass JSON verification."}
+	if FileAccess.file_exists(backup_path):
+		DirAccess.remove_absolute(backup_path)
+	if FileAccess.file_exists(absolute_path):
+		var backup_error := DirAccess.rename_absolute(absolute_path, backup_path)
+		if backup_error != OK:
+			DirAccess.remove_absolute(temporary_path)
+			return {"ok": false, "error": "Could not prepare the previous project file for safe replacement."}
+	var replace_error := DirAccess.rename_absolute(temporary_path, absolute_path)
+	if replace_error != OK:
+		if FileAccess.file_exists(backup_path):
+			DirAccess.rename_absolute(backup_path, absolute_path)
+		DirAccess.remove_absolute(temporary_path)
+		return {"ok": false, "error": "Could not atomically replace the project file."}
+	if FileAccess.file_exists(backup_path):
+		DirAccess.remove_absolute(backup_path)
+	return {"ok": true}
+
+
+static func _acquire_library_write_lock_v0200() -> Dictionary:
+	if _library_mode_v0200 != "portable":
+		return {"ok": true, "locked": false}
+	var status := library_storage_status_v0200()
+	if not bool(status.get("available", false)):
+		return {
+			"ok": false,
+			"library_unavailable": true,
+			"error": "The portable library is unavailable. CCF did not fall back to a different library."
+		}
+	var now := int(Time.get_unix_time_from_system())
+	var lock_path := active_library_root_v0200().path_join(LIBRARY_LOCK_FILE_V0200)
+	if FileAccess.file_exists(lock_path):
+		var existing_result := _read_json(lock_path)
+		if bool(existing_result.get("ok", false)) and existing_result.get("data", {}) is Dictionary:
+			var existing: Dictionary = existing_result.get("data", {})
+			var owner := str(existing.get("writer_id", ""))
+			var expires_at := int(existing.get("expires_at_unix", 0))
+			if not owner.is_empty() and owner != _writer_id_v0200 and expires_at > now:
+				return {
+					"ok": false,
+					"library_locked": true,
+					"lock_owner": owner,
+					"expires_at_unix": expires_at,
+					"error": "Another Character Card Forge writer is using this portable library. Try again after that save finishes."
+				}
+	var lock_result := _write_json(
+		lock_path,
+		{
+			"format_version": 1,
+			"writer_id": _writer_id_v0200,
+			"acquired_at_unix": now,
+			"expires_at_unix": now + LIBRARY_LOCK_SECONDS_V0200,
+			"expectation": "cooperative-single-writer"
+		}
+	)
+	if not bool(lock_result.get("ok", false)):
+		return {"ok": false, "error": "Could not acquire the portable library write lock."}
+	return {"ok": true, "locked": true}
+
+
+static func _release_library_write_lock_v0200() -> void:
+	if _library_mode_v0200 != "portable":
+		return
+	var lock_path := active_library_root_v0200().path_join(LIBRARY_LOCK_FILE_V0200)
+	if not FileAccess.file_exists(lock_path):
+		return
+	var existing_result := _read_json(lock_path)
+	if bool(existing_result.get("ok", false)) and existing_result.get("data", {}) is Dictionary:
+		var existing: Dictionary = existing_result.get("data", {})
+		if str(existing.get("writer_id", "")) != _writer_id_v0200:
+			return
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(lock_path))
 
 
 static func _read_json(path: String) -> Dictionary:

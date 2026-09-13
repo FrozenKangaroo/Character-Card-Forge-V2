@@ -2,7 +2,7 @@ class_name CCFSettingsService
 extends RefCounted
 
 const SETTINGS_FILE := CCFStorageService.SETTINGS_DIR + "/app_settings.json"
-const SETTINGS_FORMAT_VERSION := 8
+const SETTINGS_FORMAT_VERSION := 9
 const ROLE_TEXT := "text"
 const ROLE_TEXT_FAST := "text_fast"
 const ROLE_TEXT_DEEP := "text_deep"
@@ -45,6 +45,14 @@ static func default_settings() -> Dictionary:
 		"updates": {
 			"automatic_checks": true
 		},
+		"library_storage": {
+			"mode": "local",
+			"portable_root": "",
+			"writer_id": _new_profile_id("writer"),
+			"thumbnail_cache_max_mb": 512,
+			"thumbnail_cache_max_age_days": 90,
+			"virtualization_buffer_rows": 2
+		},
 		"ui": {"last_view": "dashboard"}
 	}
 
@@ -54,24 +62,33 @@ static func load_settings() -> Dictionary:
 	if not FileAccess.file_exists(SETTINGS_FILE):
 		var defaults: Dictionary = default_settings()
 		save_settings(defaults)
+		CCFStorageService.configure_library_storage_v0200(defaults)
 		return defaults
 	var file := FileAccess.open(SETTINGS_FILE, FileAccess.READ)
 	if file == null:
-		return default_settings()
+		var defaults: Dictionary = default_settings()
+		CCFStorageService.configure_library_storage_v0200(defaults)
+		return defaults
 	var parsed = JSON.parse_string(file.get_as_text())
 	file.close()
 	if not parsed is Dictionary:
-		return default_settings()
-	return _normalise(parsed)
+		var defaults: Dictionary = default_settings()
+		CCFStorageService.configure_library_storage_v0200(defaults)
+		return defaults
+	var normalised := _normalise(parsed)
+	CCFStorageService.configure_library_storage_v0200(normalised)
+	return normalised
 
 
 static func save_settings(settings: Dictionary) -> Dictionary:
 	CCFStorageService.ensure_directories()
+	var normalised := _normalise(settings)
 	var file := FileAccess.open(SETTINGS_FILE, FileAccess.WRITE)
 	if file == null:
 		return {"ok": false, "error": "Could not save application settings."}
-	file.store_string(JSON.stringify(_normalise(settings), "  "))
+	file.store_string(JSON.stringify(normalised, "  "))
 	file.close()
+	CCFStorageService.configure_library_storage_v0200(normalised)
 	return {"ok": true}
 
 
@@ -423,6 +440,32 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 		update_settings.get("automatic_checks", true)
 	)
 	result["updates"] = update_settings
+
+	var library_storage: Dictionary = defaults.get("library_storage", {}).duplicate(true)
+	var incoming_library_storage: Variant = settings.get("library_storage", {})
+	if incoming_library_storage is Dictionary:
+		library_storage.merge(incoming_library_storage, true)
+	var storage_mode := str(library_storage.get("mode", "local")).strip_edges().to_lower()
+	if storage_mode not in ["local", "portable"]:
+		storage_mode = "local"
+	library_storage["mode"] = storage_mode
+	library_storage["portable_root"] = str(
+		library_storage.get("portable_root", "")
+	).strip_edges()
+	var writer_id := str(library_storage.get("writer_id", "")).strip_edges()
+	if writer_id.is_empty():
+		writer_id = _new_profile_id("writer")
+	library_storage["writer_id"] = writer_id
+	library_storage["thumbnail_cache_max_mb"] = clampi(
+		int(library_storage.get("thumbnail_cache_max_mb", 512)), 64, 4096
+	)
+	library_storage["thumbnail_cache_max_age_days"] = clampi(
+		int(library_storage.get("thumbnail_cache_max_age_days", 90)), 7, 3650
+	)
+	library_storage["virtualization_buffer_rows"] = clampi(
+		int(library_storage.get("virtualization_buffer_rows", 2)), 1, 8
+	)
+	result["library_storage"] = library_storage
 
 	var ui_settings: Dictionary = defaults.get("ui", {}).duplicate(true)
 	var incoming_ui = settings.get("ui", {})

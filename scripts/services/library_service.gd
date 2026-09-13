@@ -13,6 +13,7 @@ const THUMBNAIL_HEIGHT := 400
 static func refresh_index(force_rebuild: bool = false) -> Dictionary:
 	CCFStorageService.ensure_directories()
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(THUMBNAIL_DIR))
+	var library_cache_key := _active_library_cache_key_v0200()
 	if force_rebuild:
 		_clear_thumbnail_cache()
 	var cached_entries: Dictionary = {}
@@ -20,7 +21,10 @@ static func refresh_index(force_rebuild: bool = false) -> Dictionary:
 		var cached_index := _read_json(INDEX_FILE)
 		if cached_index.get("ok", false):
 			var cached_data: Dictionary = cached_index.get("data", {})
-			if int(cached_data.get("format_version", 0)) == INDEX_FORMAT_VERSION:
+			if (
+				int(cached_data.get("format_version", 0)) == INDEX_FORMAT_VERSION
+				and str(cached_data.get("library_cache_key_v0200", "")) == library_cache_key
+			):
 				var raw_entries: Variant = cached_data.get("entries", {})
 				if raw_entries is Dictionary:
 					cached_entries = raw_entries
@@ -30,7 +34,14 @@ static func refresh_index(force_rebuild: bool = false) -> Dictionary:
 	var reused_count := 0
 	var refreshed_count := 0
 	var skipped_count := 0
-	for folder_project_id in DirAccess.get_directories_at(CCFStorageService.CHARACTERS_DIR):
+	if not bool(CCFStorageService.library_storage_status_v0200().get("available", false)):
+		return {
+			"ok": false,
+			"library_unavailable": true,
+			"rows": [],
+			"error": "The selected portable library is unavailable. Reconnect it or choose another location in Settings."
+		}
+	for folder_project_id in DirAccess.get_directories_at(CCFStorageService.characters_dir()):
 		var project_path := CCFStorageService.project_folder(folder_project_id).path_join(
 			CCFStorageService.PROJECT_FILE
 		)
@@ -57,7 +68,8 @@ static func refresh_index(force_rebuild: bool = false) -> Dictionary:
 			var project: Dictionary = loaded.get("data", {})
 			row = CCFStorageService.project_library_row(project, folder_project_id)
 			refreshed_count += 1
-		row["thumbnail_path"] = _ensure_thumbnail(row, force_rebuild)
+		row["library_cache_key_v0200"] = library_cache_key
+		row["thumbnail_path"] = _existing_thumbnail_path_v0200(row)
 		var cached_base_row: Dictionary = row.duplicate(true)
 		cached_base_row.erase("series_name")
 		cached_base_row.erase("series_missing")
@@ -71,10 +83,11 @@ static func refresh_index(force_rebuild: bool = false) -> Dictionary:
 	var index_data := {
 		"format_version": INDEX_FORMAT_VERSION,
 		"generated_at": Time.get_datetime_string_from_system(true),
+		"library_cache_key_v0200": library_cache_key,
 		"entries": next_entries
 	}
 	_write_json(INDEX_FILE, index_data)
-	_remove_stale_thumbnails(next_entries.keys())
+	_remove_stale_thumbnails(next_entries.keys(), library_cache_key)
 	return {
 		"ok": true,
 		"rows": rows,
@@ -223,7 +236,7 @@ static func merge_tag(old_tag: String, replacement_tag: String) -> Dictionary:
 	if source_tag.is_empty() or target_tag.is_empty():
 		return {"ok": false, "error": "Enter both the old tag and replacement tag."}
 	var project_ids: Array[String] = []
-	for folder_project_id in DirAccess.get_directories_at(CCFStorageService.CHARACTERS_DIR):
+	for folder_project_id in DirAccess.get_directories_at(CCFStorageService.characters_dir()):
 		project_ids.append(folder_project_id)
 	var touched_projects := 0
 	var touched_values := 0
@@ -367,49 +380,46 @@ static func _clear_thumbnail_cache() -> void:
 		DirAccess.remove_absolute(ProjectSettings.globalize_path(THUMBNAIL_DIR.path_join(file_name)))
 
 
-static func _remove_stale_thumbnails(raw_project_ids: Array) -> void:
+static func _remove_stale_thumbnails(
+	raw_project_ids: Array, library_cache_key: String
+) -> void:
 	var valid_names: Dictionary = {}
 	for raw_project_id in raw_project_ids:
-		valid_names["%s.png" % str(raw_project_id)] = true
+		valid_names["%s_%s.png" % [library_cache_key, str(raw_project_id)]] = true
 	for file_name in DirAccess.get_files_at(THUMBNAIL_DIR):
 		if file_name.get_extension().to_lower() != "png":
 			continue
-		if not valid_names.has(file_name):
+		if file_name.begins_with(library_cache_key + "_") and not valid_names.has(file_name):
 			DirAccess.remove_absolute(ProjectSettings.globalize_path(THUMBNAIL_DIR.path_join(file_name)))
 
 
-static func _ensure_thumbnail(row: Dictionary, force_rebuild: bool) -> String:
+static func _existing_thumbnail_path_v0200(row: Dictionary) -> String:
 	var project_id := str(row.get("project_id", "")).strip_edges()
 	var source_path := str(row.get("portrait_source_path", "")).strip_edges()
 	if project_id.is_empty() or source_path.is_empty():
 		return ""
 	if not FileAccess.file_exists(source_path):
 		return ""
-	var cache_path := THUMBNAIL_DIR.path_join("%s.png" % project_id)
-	if not force_rebuild and FileAccess.file_exists(cache_path):
+	var library_cache_key := str(
+		row.get("library_cache_key_v0200", _active_library_cache_key_v0200())
+	)
+	var cache_path := THUMBNAIL_DIR.path_join(
+		"%s_%s.png" % [library_cache_key, project_id]
+	)
+	if FileAccess.file_exists(cache_path):
 		var source_time := FileAccess.get_modified_time(source_path)
 		var cache_time := FileAccess.get_modified_time(cache_path)
 		if cache_time >= source_time:
 			return cache_path
-	var image := Image.new()
-	var load_error := image.load(ProjectSettings.globalize_path(source_path))
-	if load_error != OK or image.is_empty():
-		return ""
-	var image_width := image.get_width()
-	var image_height := image.get_height()
-	if image_width <= 0 or image_height <= 0:
-		return ""
-	var width_scale := float(THUMBNAIL_WIDTH) / float(image_width)
-	var height_scale := float(THUMBNAIL_HEIGHT) / float(image_height)
-	var scale_factor := minf(width_scale, height_scale)
-	if scale_factor > 1.0:
-		scale_factor = 1.0
-	var target_width := maxi(1, int(round(float(image_width) * scale_factor)))
-	var target_height := maxi(1, int(round(float(image_height) * scale_factor)))
-	if target_width != image_width or target_height != image_height:
-		image.resize(target_width, target_height, Image.INTERPOLATE_LANCZOS)
-	var save_error := image.save_png(ProjectSettings.globalize_path(cache_path))
-	return cache_path if save_error == OK else ""
+	return ""
+
+
+static func _active_library_cache_key_v0200() -> String:
+	var status := CCFStorageService.library_storage_status_v0200()
+	var library_id := str(status.get("library_id", "")).strip_edges()
+	if library_id.is_empty():
+		library_id = str(status.get("absolute_root", "local"))
+	return library_id.sha256_text().left(16)
 
 
 static func _file_fingerprint(file_path: String) -> String:

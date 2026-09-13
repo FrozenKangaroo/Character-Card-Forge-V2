@@ -2,7 +2,24 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.19.5 Task-Specific Text Routing and Fallback
+## Current development candidate: v0.20.0 Very-Large and Portable Library Architecture
+
+v0.20.0 keeps Character Library responsive as collections grow by rendering only the
+visible and nearby grid cards. The native compact list remains a lightweight drawn
+view. Visible cards can use smaller local WebP derivatives, while a versioned cache
+manifest enforces configurable size and unused-age limits. Rebuild and cleanup actions
+operate only inside the disposable local thumbnail cache and never remove original art.
+
+**Settings → Library Storage** adds an optional portable/shared-folder location. The
+normal local library remains the default. Selecting a portable location is explicit,
+initializes a versioned manifest, and never moves or merges existing projects. Project
+JSON uses verified temporary writes, replace/recovery handling, cooperative short-lived
+locks and external-change fingerprints. If a share disappears, CCF reports it as
+unavailable and never silently opens or writes to a different library. Shared-folder
+mode is deliberately single-writer; it is not multi-user editing or automatic cloud
+sync. Indexes and optimized thumbnails always stay local to each computer.
+
+### Previous candidate: v0.19.5 Task-Specific Text Routing and Fallback
 
 v0.19.5 keeps **Primary Text** as the default for every character-writing task and
 adds optional **Fast / Suggestion Text**, **Deep Review Text** and **Fallback Text**
