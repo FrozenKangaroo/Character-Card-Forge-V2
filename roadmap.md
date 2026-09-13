@@ -51,12 +51,13 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.19.4 — PDF and Remote Reference Ingestion**
+**v0.19.5 — Task-Specific Text Routing and Fallback**
 
-v0.19.4 adds local PDF text-layer extraction and review-first HTTPS reference
-ingestion to the existing managed attachment pipeline. The original source remains
-portable, extracted text and provenance are inspectable, context inclusion is explicit,
-and remote refresh never occurs in the background. v0.19.5 is next.
+v0.19.5 keeps Primary Text as the universal default while allowing optional Fast /
+Suggestion Text and Deep Review Text profiles for focused work. An explicitly enabled,
+distinct Fallback Text profile may make one final attempt after eligible technical
+failures; content failures and refusals never switch models, and accepted results retain
+the actual producing profile and model. v0.20.0 is next.
 
 v0.19.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -164,9 +165,9 @@ key-to-extension mapping, and the mapping has a visible preview. No automatic ne
 traffic or raw database access is introduced.
 
 The released application displays **v0.19.0** and the current source candidate displays
-**v0.19.3**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+**v0.19.5**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
-The next planned milestone is v0.19.4 PDF and Remote Reference Ingestion.
+The next planned milestone is v0.20.0 Very-Large and Portable Library Architecture.
 
 ## Completed
 
@@ -699,7 +700,7 @@ also complete.
 - Copy accepted remote content into managed project storage and record source URL/fetch time provenance. Treat remote content as untrusted data and make refresh an explicit action rather than background mutation.
 - Reuse the existing attachment context-budget and preprocessing pipeline for both sources.
 
-#### v0.19.5 — Task-Specific Text Routing and Fallback
+#### v0.19.5 — completed
 
 - Extend provider profiles with optional **Fast/Suggestion Text**, **Deep Review Text** and **Fallback Text** roles while keeping **Use Primary** as every task's default.
 - Route small field suggestions/light transforms and deep consistency review independently without changing the established Text, Vision and Image separation.
