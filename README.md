@@ -28,6 +28,12 @@ sending, stopping, importing and deleting are all explicit author actions. Live 
 uses Front Porch's supported WebSocket stream, while canonical history stays owned by
 Front Porch.
 
+v0.19.3-hotfix1 restores Test Chat's live Front Porch completion lifecycle. CCF
+now reads the supported `/api/ws` `event` envelope, so streamed tokens, terminal
+completion/errors and canonical history refresh no longer leave the interface
+stuck on **Generating in Front Porch…**. A reconnect-safe state check also clears
+the indicator once Front Porch reports generation and turn settlement complete.
+
 Local Test Profiles remember a Front Porch persona, the expected provider/model/preset
 being compared and private test notes without adding anything to the card or changing
 Front Porch's global runtime settings. Passwords, two-factor codes, cookies and API keys

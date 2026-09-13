@@ -68,7 +68,12 @@ func _run() -> void:
 	if not _require(
 		CCFFrontPorchChatServiceV0192.sessions_path("char a") == "/api/chat/sessions?characterId=char%20a"
 		and CCFFrontPorchChatServiceV0192.import_chat_path("full") == "/api/chat/import?mismatch=full"
-		and CCFFrontPorchChatServiceV0192.import_chat_path("unknown") == "/api/chat/import",
+		and CCFFrontPorchChatServiceV0192.import_chat_path("unknown") == "/api/chat/import"
+		and CCFFrontPorchChatServiceV0192.stream_event_name_v0193_hotfix1({"event": "done"}) == "done"
+		and CCFFrontPorchChatServiceV0192.stream_event_name_v0193_hotfix1({"event": "chat_updated"}) == "chat_updated"
+		and CCFFrontPorchChatServiceV0192.stream_event_name_v0193_hotfix1({"type": "token"}) == "token"
+		and CCFFrontPorchChatServiceV0192.stream_error_text_v0193_hotfix1({"event": "error", "data": "Provider stopped"}) == "Provider stopped"
+		and str(contract.get("runtime", {}).get("stream", {}).get("event_field", "")) == "event",
 		"Front Porch session and mismatch paths must be deterministic and encoded."
 	):
 		return
@@ -206,7 +211,11 @@ func _run() -> void:
 	var test_window_value: Variant = workspace_value.get("_test_chat_window_v0192") if workspace_value is CCFWorkspaceV0192View else null
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text in ["Godot rewrite • v0.19.2", "Godot rewrite • v0.19.3"]:
+		if node is Label and node.text in [
+			"Godot rewrite • v0.19.2",
+			"Godot rewrite • v0.19.3",
+			"Godot rewrite • v0.19.3-hotfix1"
+		]:
 			version_found = true
 			break
 	if not _require(

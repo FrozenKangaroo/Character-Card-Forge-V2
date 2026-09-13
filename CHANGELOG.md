@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.19.3-hotfix1
+
+### Fixed
+
+- Corrected the Front Porch Test Chat WebSocket decoder to read the supported `event` discriminator instead of the unrelated client-command `type` field.
+- Restored live token display, completion/error handling and canonical history refresh after a Front Porch generation settles.
+- Added reconnect-safe `generating` handling and a chat-state fallback that clears a stranded generation indicator once Front Porch reports both generation and turn settlement are complete.
+
 ## 0.19.3
 
 ### Added

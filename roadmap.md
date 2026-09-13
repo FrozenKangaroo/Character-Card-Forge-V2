@@ -53,6 +53,10 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 **v0.19.4 — PDF and Remote Reference Ingestion**
 
+The v0.19.3 release is followed by v0.19.3-hotfix1, which corrects Test Chat's
+Front Porch WebSocket event-envelope handling and restores live terminal updates.
+The planned v0.19.4 scope is unchanged.
+
 v0.19.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
 v0.16.9 adds reusable provider-independent **Image Style Presets**. A versioned external built-in catalog provides starter styles; user-created **Global** presets are reusable across projects; **Project Visual Identity** supplies a project-level default; and **Character Default** provides an optional per-character override. Character defaults take precedence over project identity.
@@ -676,6 +680,14 @@ also complete.
 - Route accepted results into the existing avatar gallery with their requested exact labels; do not create a parallel expression store.
 - Allow per-expression review, retry and replacement without regenerating successful members of the set.
 - Finish through the existing supported outputs: direct Front Porch gallery installation or portable expression ZIP export.
+
+#### v0.19.3-hotfix1 — completed
+
+- Decode Front Porch `/api/ws` server frames through their documented `event`
+  discriminator while retaining the early-development `type` fallback.
+- Restore token, completion, error and canonical chat-history updates in Test Chat.
+- Reconcile reconnects through Front Porch's `generating`, `isGenerating` and
+  `isSettlingTurn` state without adding background chat creation or database access.
 
 #### v0.19.4 — PDF and Remote Reference Ingestion
 

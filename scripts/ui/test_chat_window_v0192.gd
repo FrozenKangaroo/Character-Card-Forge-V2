@@ -41,6 +41,7 @@ var _transcript: TextEdit
 var _composer: TextEdit
 var _chat_status: Label
 var _streaming_text := ""
+var _generation_pending_v0193_hotfix1 := false
 
 var _exchange_preview: TextEdit
 var _exchange_status: Label
@@ -76,6 +77,7 @@ func _ready() -> void:
 	_service.stream_done_v0192.connect(_on_stream_done)
 	_service.stream_error_v0192.connect(_on_stream_error)
 	_service.stream_chat_updated_v0192.connect(_on_stream_chat_updated)
+	_service.stream_generating_v0193_hotfix1.connect(_on_stream_generating_v0193_hotfix1)
 	set_process(false)
 	_load_connection()
 	_refresh_personas()
@@ -423,6 +425,7 @@ func _send_message() -> void:
 	if bool(result.get("ok", false)):
 		_composer.text = ""
 		_busy = false
+		_generation_pending_v0193_hotfix1 = true
 		_chat_status.text = "Generating in Front Porch… Stop remains available."
 	else:
 		_finish_chat_request(result)
@@ -513,6 +516,14 @@ func _render_state(payload: Dictionary) -> void:
 		])
 	_transcript.text = "\n".join(lines)
 	_transcript.scroll_vertical = maxi(0, _transcript.get_line_count() - 1)
+	var is_still_working := (
+		bool(payload.get("isGenerating", false))
+		or bool(payload.get("isSettlingTurn", false))
+	)
+	if _generation_pending_v0193_hotfix1 and not is_still_working:
+		_generation_pending_v0193_hotfix1 = false
+		_streaming_text = ""
+		_chat_status.text = "Generation complete."
 
 
 func _on_stream_token(token_text: String) -> void:
@@ -524,6 +535,7 @@ func _on_stream_token(token_text: String) -> void:
 
 
 func _on_stream_done() -> void:
+	_generation_pending_v0193_hotfix1 = false
 	_streaming_text = ""
 	_chat_status.text = "Generation complete; refreshing canonical Front Porch history…"
 	await _load_chat_state()
@@ -531,6 +543,7 @@ func _on_stream_done() -> void:
 
 
 func _on_stream_error(message_text: String) -> void:
+	_generation_pending_v0193_hotfix1 = false
 	_streaming_text = ""
 	_chat_status.text = message_text
 
@@ -538,6 +551,12 @@ func _on_stream_error(message_text: String) -> void:
 func _on_stream_chat_updated() -> void:
 	if not _busy:
 		await _load_chat_state()
+
+
+func _on_stream_generating_v0193_hotfix1() -> void:
+	_generation_pending_v0193_hotfix1 = true
+	if not _busy:
+		_chat_status.text = "Generating in Front Porch… Stop remains available."
 
 
 func _export_fpchat() -> void:

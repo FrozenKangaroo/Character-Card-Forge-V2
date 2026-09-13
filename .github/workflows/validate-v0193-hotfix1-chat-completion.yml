@@ -1,0 +1,65 @@
+name: Validate v0.19.3-hotfix1 Front Porch Chat Completion
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v0193-hotfix1-chat-completion-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.7.1'
+  GODOT_STATUS: stable
+
+jobs:
+  chat-completion:
+    name: Front Porch Stream Completion Lifecycle
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot 4.7.1 and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Import and parse project with warning gate
+        shell: bash
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0193-hotfix1-import/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0193-hotfix1-import/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0193-hotfix1-import/config
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee /tmp/ccf-v0193-hotfix1-import.log
+          if grep -E "SCRIPT ERROR:|Failed to load script|UNUSED_VARIABLE|SHADOWED_VARIABLE|SHADOWED_GLOBAL_IDENTIFIER|CONFUSABLE_LOCAL_DECLARATION|INCOMPATIBLE_TERNARY|INTEGER_DIVISION|Parse Error" /tmp/ccf-v0193-hotfix1-import.log; then
+            echo "Godot reported a script or warning failure during import."
+            exit 1
+          fi
+
+      - name: Run focused Front Porch completion regression
+        env:
+          CCF_REGRESSION_RUN: '1'
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0193-hotfix1-focused/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0193-hotfix1-focused/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0193-hotfix1-focused/config
+        run: timeout 360s godot --headless --path . --script res://tools/test_v0193_hotfix1_chat_completion.gd
+
+      - name: Recheck Test Chat and Chat Exchange
+        env:
+          CCF_REGRESSION_RUN: '1'
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-v0192/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-v0192/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-v0192/config
+        run: timeout 360s godot --headless --path . --script res://tools/test_v0192_test_chat_exchange.gd
+
+      - name: Run quick cross-feature regression profile
+        run: python3 ./tools/run_regression_suite.py --manifest ./tools/regression_suites_v0193_hotfix1.json --profile quick --godot "$(command -v godot)"
