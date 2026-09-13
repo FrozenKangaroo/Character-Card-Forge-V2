@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.19.3",
+  "description": "v0.19.2 plus managed, review-first Image Studio expression-set generation and canonical Avatar Gallery acceptance.",
+  "base_manifest": "regression_suites_v0192.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0193_expression_sets",
+        "label": "v0.19.3 Expression Set Generation",
+        "kind": "godot",
+        "path": "tools/test_v0193_expression_sets.gd",
+        "timeout_seconds": 300
+      }
+    ]
+  }
+}

@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.19.3
+
+### Added
+
+- Added **Generate Expression Set…** to Image Studio with multi-selection across all 30 exact Front Porch expression labels.
+- Added explicit prompt/style, current-portrait reference and selected-result Image-to-Image baselines, capability-gated by the active Generation Profile.
+- Added sequential per-expression execution through the existing managed Image Studio queue with one normal generated result per request.
+- Added a detachable batch review window with full prompts/settings, image preview, pause/resume, failed-member-only retry and individual acceptance.
+- Added bounded per-character expression-batch history and data-driven visible expression directions.
+
+### Integration and safety
+
+- Accepted results enter the existing Avatar Gallery; no second expression image store was added.
+- Exact Image Studio execution snapshots now continue into accepted Avatar Gallery provenance.
+- Existing-label collisions require the separate **Replace Existing Label…** action; replacement keeps the older PNG recoverable.
+- Existing portable expression ZIP export and supported authenticated Front Porch gallery installation remain the final delivery paths.
+- Expression generation never contacts Front Porch, changes the character portrait, installs results automatically or writes Front Porch's database.
+
 ## 0.19.2
 
 ### Added

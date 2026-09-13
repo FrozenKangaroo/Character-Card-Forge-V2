@@ -51,7 +51,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.19.3 — Expression Set Generation**
+**v0.19.4 — PDF and Remote Reference Ingestion**
 
 v0.19.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -159,11 +159,21 @@ key-to-extension mapping, and the mapping has a visible preview. No automatic ne
 traffic or raw database access is introduced.
 
 The released application displays **v0.19.0** and the current source candidate displays
-**v0.19.2**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+**v0.19.3**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
-The next planned milestone is v0.19.3 Expression Set Generation.
+The next planned milestone is v0.19.4 PDF and Remote Reference Ingestion.
 
 ## Completed
+
+### v0.19.3 — Expression Set Generation
+
+- Added **Generate Expression Set…** to Image Studio with multi-selection across all exact Front Porch expression labels and an explicit prompt/style, portrait-reference or selected-result visual baseline.
+- Capability-gated reference and Image-to-Image baselines so generic provider compatibility is never guessed.
+- Routed one image per expression through the existing managed Image Studio queue with exact prompt/settings/seed/profile/model snapshots.
+- Added detachable batch review with saved progress, pause/resume, per-expression preview, failed-member-only retry and individual acceptance.
+- Routed accepted results into the existing Avatar Gallery and retained existing Front Porch gallery install and expression ZIP output paths.
+- Required explicit replacement for an existing exact label while retaining old PNG files as recoverable generated assets.
+- Added bounded workflow history, external data-driven directions, focused/live-UI regression coverage, inherited quick regression coverage and Godot 4.7.1 CI.
 
 ### v0.19.2 — Test Chat and Explicit Chat Exchange
 
@@ -659,7 +669,7 @@ also complete.
 - Make chat creation, transfer and deletion user-initiated, previewable and recoverable; never manipulate Front Porch's live database.
 - Extend to multi-character/group scenario testing only after single-character lifecycle, streaming/cancellation and privacy boundaries are reliable.
 
-#### v0.19.3 — Expression Set Generation
+#### v0.19.3 — completed
 
 - Add **Generate Expression Set…** to Image Studio/Avatar Gallery with multi-selection of supported expression labels and an explicit visual identity/source baseline.
 - Run each expression through the existing managed Image Studio queue, preserving its exact prompt, settings, seed and provider/model provenance.
