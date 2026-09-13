@@ -2,7 +2,7 @@ class_name CCFLibraryService
 extends RefCounted
 
 const INDEX_FORMAT_VERSION := 2
-const VIEW_STATE_FORMAT_VERSION := 2
+const VIEW_STATE_FORMAT_VERSION := 3
 const INDEX_FILE := CCFStorageService.CACHE_DIR + "/library_index.json"
 const VIEW_STATE_FILE := CCFStorageService.SETTINGS_DIR + "/library_view.json"
 const THUMBNAIL_DIR := CCFStorageService.CACHE_DIR + "/library_thumbnails"
@@ -106,15 +106,18 @@ static func load_view_state() -> Dictionary:
 		"folder_filter": "",
 		"collection_filter": "",
 		"tag_filter": "",
-		"series_filter": ""
+		"series_filter": "",
+		"active_project_expanded_v0191": false,
+		"card_density_v0191": 2,
+		"library_filters_expanded_v0200_hotfix1": true,
+		"library_details_expanded_v0200_hotfix1": true,
+		"library_side_auto_hide_v0200_hotfix1": false
 	}
 	var loaded := _read_json(VIEW_STATE_FILE)
 	if not loaded.get("ok", false):
 		return defaults
 	var data: Dictionary = loaded.get("data", {})
-	for key in defaults:
-		if data.has(key):
-			defaults[key] = data.get(key)
+	defaults.merge(data, true)
 	defaults["format_version"] = VIEW_STATE_FORMAT_VERSION
 	return defaults
 

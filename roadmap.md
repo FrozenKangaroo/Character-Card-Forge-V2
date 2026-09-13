@@ -51,14 +51,13 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.20.0 — Very-Large and Portable Library Architecture**
+**v0.20.0-hotfix1 — Library Panel Controls**
 
-v0.20.0 virtualizes Character Library grid cards, keeps list rendering lightweight,
-adds density-aware optimized thumbnail derivatives and enforces local cache size/age
-limits. Authors may explicitly select a portable/shared-folder project library while
-indexes and thumbnails remain local. Verified temporary writes, cooperative locks,
-external-change fingerprints, origin guards and explicit unavailable-share behavior
-define a single-writer safety contract. v0.20.1 is next.
+v0.20.0-hotfix1 adds independently collapsible Library Filters and Project Details
+side panels with always-visible edge arrows, a unified Panels menu for Filters,
+Project Tools and Details, one-click full/focused layouts and opt-in side-panel
+auto-hide. Library layout and density preferences now reliably survive restarts.
+v0.20.1 remains next.
 
 v0.19.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -166,11 +165,20 @@ key-to-extension mapping, and the mapping has a visible preview. No automatic ne
 traffic or raw database access is introduced.
 
 The released application displays **v0.19.0** and the current source candidate displays
-**v0.20.0**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+**v0.20.0-hotfix1**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
 The next planned milestone is v0.20.1 Discoverability and Power-User Workflow Pass.
 
 ## Completed
+
+### v0.20.0-hotfix1 — Library Panel Controls
+
+- Added slim edge-arrow controls that independently collapse or reveal Library Filters and Project Details while remaining accessible in the focused card layout.
+- Added a unified **Panels** menu for Filters, the existing Project Tools section and Details, plus **Show all panels** and **Focus card area** actions.
+- Added opt-in side-panel auto-hide that reveals from the edge and collapses only after interaction returns to the central card area; Project Tools remains explicitly controlled so batch menus are not interrupted.
+- Preserved the familiar all-visible side-panel default and retained current selection, filtering and virtualized-card behavior through layout changes.
+- Upgraded Library view-state loading so panel visibility, Project Tools visibility and card density genuinely persist between sessions.
+- Added focused live UI, persistence, recovery-handle and inherited large-library regression coverage.
 
 ### v0.20.0 — Very-Large and Portable Library Architecture
 
