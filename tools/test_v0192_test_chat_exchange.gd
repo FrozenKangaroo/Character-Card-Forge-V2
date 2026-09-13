@@ -206,7 +206,7 @@ func _run() -> void:
 	var test_window_value: Variant = workspace_value.get("_test_chat_window_v0192") if workspace_value is CCFWorkspaceV0192View else null
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text == "Godot rewrite • v0.19.2":
+		if node is Label and node.text in ["Godot rewrite • v0.19.2", "Godot rewrite • v0.19.3"]:
 			version_found = true
 			break
 	if not _require(
@@ -220,7 +220,7 @@ func _run() -> void:
 		and _find_button(test_window_value, "Delete with Backup…") != null
 		and _find_button(test_window_value, "Choose & Preview Chat…") != null
 		and version_found,
-		"The live v0.19.2 app must install a hidden detachable Test Chat with explicit runtime and exchange actions."
+		"The current app must retain the hidden detachable v0.19.2 Test Chat with explicit runtime and exchange actions."
 	):
 		return
 	var service_source := FileAccess.get_file_as_string(

@@ -506,7 +506,8 @@ static func _provenance_from_source(source: Dictionary) -> Dictionary:
 	var generation_keys := [
 		"created_at", "provider", "backend", "profile_id", "profile_name", "model",
 		"size", "prompt_style", "prompt", "negative_prompt", "sampler", "steps",
-		"cfg_scale", "seed", "generation_mode", "source_image_id", "width", "height"
+		"cfg_scale", "seed", "generation_mode", "source_image_id", "width", "height",
+		"execution_snapshot_v01610"
 	]
 	var generation: Dictionary = {}
 	for key in generation_keys:

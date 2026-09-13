@@ -2,7 +2,24 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.19.2 Test Chat and Explicit Chat Exchange
+## Current development candidate: v0.19.3 Expression Set Generation
+
+v0.19.3 adds **Generate Expression Set…** to Image Studio. Authors select any
+subset of Front Porch's exact expression labels and explicitly choose the current
+prompt/style, current portrait, or a selected generated result as the visual identity
+baseline. Image-input baselines appear only when the active Generation Profile proves
+that operation can execute.
+
+Every expression runs as its own standard managed Image Studio job and keeps the
+exact prompt, model/profile, settings and seed. Successful results remain ordinary
+generated assets until individually accepted into the existing Avatar Gallery.
+Failed or rejected members can be retried without regenerating successful siblings,
+and an existing label requires an explicit replacement action that leaves the old
+PNG recoverable. The established Front Porch gallery installer and expression ZIP
+export remain the delivery paths; no parallel image store or direct database access
+is introduced.
+
+### Previous candidate: v0.19.2 Test Chat and Explicit Chat Exchange
 
 v0.19.2 adds a detachable **Test Chat** workspace that uses Front Porch as the runtime
 instead of recreating its simulation engine. Connection and supported chat endpoints
@@ -23,7 +40,7 @@ recovery copy, and session deletion is blocked until a recoverable `.fpchat` bac
 been created. Character Card Forge uses supported Front Porch APIs and portable files
 only; it never reads or writes the Front Porch database.
 
-### Previous candidate: v0.19.1 Export Profiles and Integration Adapters
+### Earlier candidate: v0.19.1 Export Profiles and Integration Adapters
 
 v0.19.1 added versioned export profiles, exact before-export previews, a shared adapter
 contract, a branded startup splash and responsive Character Library density controls.
