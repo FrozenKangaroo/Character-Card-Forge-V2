@@ -140,7 +140,8 @@ func _run() -> void:
 		if node is Label and node.text in [
 			"Godot rewrite • v0.19.3",
 			"Godot rewrite • v0.19.3-hotfix1",
-			"Godot rewrite • v0.19.4", "Godot rewrite • v0.19.5"
+			"Godot rewrite • v0.19.4", "Godot rewrite • v0.19.5",
+			"Godot rewrite • v0.20.0"
 		]:
 			version_found = true
 			break

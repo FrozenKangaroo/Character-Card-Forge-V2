@@ -320,7 +320,7 @@ static func row_matches_rules(row: Dictionary, rules: Dictionary) -> bool:
 static func scan_duplicates(project_ids: Array[String] = []) -> Dictionary:
 	var target_ids := project_ids.duplicate()
 	if target_ids.is_empty():
-		for folder_project_id in DirAccess.get_directories_at(CCFStorageService.CHARACTERS_DIR):
+		for folder_project_id in DirAccess.get_directories_at(CCFStorageService.characters_dir()):
 			target_ids.append(folder_project_id)
 	var fingerprints: Array[Dictionary] = []
 	for project_id in target_ids:

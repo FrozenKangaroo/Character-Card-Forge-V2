@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.20.0",
+  "description": "v0.19.5 plus very-large and portable library architecture.",
+  "base_manifest": "regression_suites_v0195.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0200_large_portable_library",
+        "label": "v0.20.0 Very-Large and Portable Library Architecture",
+        "kind": "godot",
+        "path": "tools/test_v0200_large_portable_library.gd",
+        "timeout_seconds": 300
+      }
+    ]
+  }
+}

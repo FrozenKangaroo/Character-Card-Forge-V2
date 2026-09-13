@@ -609,7 +609,7 @@ static func _destination_relative_path(
 
 
 static func _project_folder(project_id: String) -> String:
-	return "user://character_card_forge/characters/%s" % project_id
+	return CCFStorageService.project_folder(project_id)
 
 
 static func _get_character(project: Dictionary, character_id: String) -> Dictionary:

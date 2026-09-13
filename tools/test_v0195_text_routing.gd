@@ -35,7 +35,7 @@ func _test_settings_and_routes() -> bool:
 		settings, CCFSettingsService.TEXT_TASK_PRIMARY
 	).get("_ccf_text_routing_v0195", {})
 	if not _require(
-		int(settings.get("format_version", 0)) == 8
+		int(settings.get("format_version", 0)) >= 8
 		and CCFSettingsService.role_profile_id(
 			settings, CCFSettingsService.ROLE_TEXT_FAST
 		) == CCFSettingsService.USE_PRIMARY_PROFILE_ID
@@ -256,10 +256,12 @@ func _test_active_ui_wiring() -> bool:
 		return false
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text == "Godot rewrite • v0.19.5":
+		if node is Label and node.text in [
+			"Godot rewrite • v0.19.5", "Godot rewrite • v0.20.0"
+		]:
 			version_found = true
 			break
-	if not _require(version_found, "The application shell must display v0.19.5."):
+	if not _require(version_found, "The application shell must display v0.19.5 or a later compatible version."):
 		return false
 	var settings_view := settings_value as CCFSettingsV0195View
 	if not _require(

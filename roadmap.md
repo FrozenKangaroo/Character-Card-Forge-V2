@@ -51,13 +51,14 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.19.5 — Task-Specific Text Routing and Fallback**
+**v0.20.0 — Very-Large and Portable Library Architecture**
 
-v0.19.5 keeps Primary Text as the universal default while allowing optional Fast /
-Suggestion Text and Deep Review Text profiles for focused work. An explicitly enabled,
-distinct Fallback Text profile may make one final attempt after eligible technical
-failures; content failures and refusals never switch models, and accepted results retain
-the actual producing profile and model. v0.20.0 is next.
+v0.20.0 virtualizes Character Library grid cards, keeps list rendering lightweight,
+adds density-aware optimized thumbnail derivatives and enforces local cache size/age
+limits. Authors may explicitly select a portable/shared-folder project library while
+indexes and thumbnails remain local. Verified temporary writes, cooperative locks,
+external-change fingerprints, origin guards and explicit unavailable-share behavior
+define a single-writer safety contract. v0.20.1 is next.
 
 v0.19.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -165,11 +166,24 @@ key-to-extension mapping, and the mapping has a visible preview. No automatic ne
 traffic or raw database access is introduced.
 
 The released application displays **v0.19.0** and the current source candidate displays
-**v0.19.5**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+**v0.20.0**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
-The next planned milestone is v0.20.0 Very-Large and Portable Library Architecture.
+The next planned milestone is v0.20.1 Discoverability and Power-User Workflow Pass.
 
 ## Completed
+
+### v0.20.0 — Very-Large and Portable Library Architecture
+
+- Virtualized the thumbnail grid so only visible and nearby buffered rows instantiate cards and load artwork, while the native compact list retains lightweight drawn-row behavior.
+- Added density-specific local WebP thumbnail derivatives plus a versioned cache manifest, configurable size and unused-age limits, rebuild/cleanup controls and path-bounded deletion that preserves original artwork.
+- Namespaced local indexes and thumbnails by library identity so libraries with matching project IDs cannot reuse each other's cached presentation.
+- Added an optional **Library Storage** settings page for inspecting, initializing and selecting a portable/shared-folder project library without automatically moving, merging or deleting existing projects.
+- Kept settings, indexes and thumbnail derivatives local while storing only portable projects, assets and a minimal versioned library manifest in the selected location.
+- Added verified temporary project writes, previous-file recovery, cooperative short-lived save locks and content fingerprints that reject external changes instead of silently overwriting them.
+- Blocked an already-open project from being saved into a newly selected library; authors must reopen it from the active location.
+- Made unavailable shares an explicit read/write failure with no silent fallback to the local library and documented the supported single-writer expectation.
+- Kept multi-user collaboration and automatic cloud sync outside the milestone.
+- Added focused storage, cache, thousand-card virtualization and live settings regressions plus Godot 4.7.1 warning-gated CI.
 
 ### v0.19.3 — Expression Set Generation
 
@@ -707,13 +721,12 @@ also complete.
 - Permit bounded automatic fallback only for explicitly enabled technical failures such as unavailable models/endpoints; refusals and content failures do not silently switch models by default.
 - Prevent retry chains, report every fallback visibly and retain the actual producing profile/model in accepted-result provenance.
 
-#### v0.20.0 — Very-Large and Portable Library Architecture
+#### v0.20.0 — completed
 
-- Virtualise library tiles/rows so only visible and nearby characters/thumbnails are instantiated for libraries containing hundreds or thousands of entries.
-- Formalise the thumbnail cache with separate optimized derivatives, size/age limits, rebuild and safe cleanup while preserving original artwork.
-- Add an optional portable/network-library location for NAS/shared-folder use while keeping disposable indexes/thumbnails local.
-- Define locking, atomic writes, conflict detection, unavailable-share behavior and single-writer expectations before claiming multi-computer safety.
-- Keep collaborative multi-user editing and automatic cloud sync outside this milestone; a shared filesystem is not treated as a conflict-resolution system.
+Virtualized tiles, local bounded thumbnail derivatives, optional portable/shared-folder
+storage, verified replacement writes, cooperative locks, conflict/origin checks and
+explicit unavailable-share behavior are implemented and recorded under **Completed**
+above. Multi-user editing and automatic cloud sync remain explicitly out of scope.
 
 #### v0.20.1 — Discoverability and Power-User Workflow Pass
 

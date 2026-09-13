@@ -353,12 +353,13 @@ func _run() -> void:
 		if node is Label and (
 			node.text.begins_with("Godot rewrite • v0.18")
 			or node.text.begins_with("Godot rewrite • v0.19")
+			or node.text.begins_with("Godot rewrite • v0.20")
 		):
 			version_found = true
 			break
 	if not _require(
 		tabs_found and version_found,
-		"The live inspector must provide six separated areas and a supported v0.18/v0.19 build label."
+		"The live inspector must provide six separated areas and a supported v0.18/v0.19/v0.20 build label."
 	):
 		return
 	app.queue_free()
