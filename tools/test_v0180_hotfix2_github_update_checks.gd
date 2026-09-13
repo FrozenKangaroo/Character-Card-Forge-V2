@@ -131,9 +131,9 @@ func _run() -> void:
 
 	var default_settings := CCFSettingsService.default_settings()
 	if not _require(
-		int(default_settings.get("format_version", 0)) == 7
+		int(default_settings.get("format_version", 0)) >= 7
 		and bool(default_settings.get("updates", {}).get("automatic_checks", false)),
-		"Settings format 7 must enable the disclosed automatic check by default."
+		"Settings format 7 or later must enable the disclosed automatic check by default."
 	):
 		return
 

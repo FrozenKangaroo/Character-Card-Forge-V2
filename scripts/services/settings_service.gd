@@ -2,10 +2,17 @@ class_name CCFSettingsService
 extends RefCounted
 
 const SETTINGS_FILE := CCFStorageService.SETTINGS_DIR + "/app_settings.json"
-const SETTINGS_FORMAT_VERSION := 7
+const SETTINGS_FORMAT_VERSION := 8
 const ROLE_TEXT := "text"
+const ROLE_TEXT_FAST := "text_fast"
+const ROLE_TEXT_DEEP := "text_deep"
+const ROLE_TEXT_FALLBACK := "text_fallback"
 const ROLE_VISION := "vision"
 const ROLE_IMAGE := "image"
+const TEXT_TASK_PRIMARY := "primary"
+const TEXT_TASK_FAST := "fast"
+const TEXT_TASK_DEEP := "deep"
+const USE_PRIMARY_PROFILE_ID := "__use_primary__"
 const PROFILE_KIND_AI := "ai"
 const PROFILE_KIND_IMAGE := "image"
 const IMAGE_BACKEND_OPENAI := "openai_compatible"
@@ -18,6 +25,9 @@ static func default_settings() -> Dictionary:
 		"active_api_profile_id": "default",
 		"provider_roles": {
 			"text_profile_id": "default",
+			"text_fast_profile_id": USE_PRIMARY_PROFILE_ID,
+			"text_deep_profile_id": USE_PRIMARY_PROFILE_ID,
+			"text_fallback_profile_id": USE_PRIMARY_PROFILE_ID,
 			"vision_profile_id": "default",
 			"image_profile_id": "image_default"
 		},
@@ -28,6 +38,7 @@ static func default_settings() -> Dictionary:
 			"retry_count": 1,
 			"default_idea_count": 6,
 			"attachment_context_character_limit": 24000,
+			"text_fallback_enabled": false,
 			"default_image_size": "1024x1024",
 			"default_image_prompt_style": "auto"
 		},
@@ -71,6 +82,8 @@ static func active_profile(settings: Dictionary) -> Dictionary:
 static func profile_for_role(settings: Dictionary, role: String) -> Dictionary:
 	if role == ROLE_IMAGE:
 		return image_profile_by_id(settings, role_profile_id(settings, ROLE_IMAGE))
+	if role == ROLE_TEXT:
+		return profile_for_text_task(settings, TEXT_TASK_PRIMARY)
 	var role_key := "%s_profile_id" % role
 	var provider_roles = settings.get("provider_roles", {})
 	var profile_id := ""
@@ -81,7 +94,45 @@ static func profile_for_role(settings: Dictionary, role: String) -> Dictionary:
 	return profile_by_id(settings, profile_id)
 
 
+static func profile_for_text_task(settings: Dictionary, task: String) -> Dictionary:
+	var requested_task := task.strip_edges().to_lower()
+	if requested_task not in [TEXT_TASK_PRIMARY, TEXT_TASK_FAST, TEXT_TASK_DEEP]:
+		requested_task = TEXT_TASK_PRIMARY
+	var primary_id := _primary_text_profile_id(settings)
+	var selected_id := primary_id
+	var requested_role := ROLE_TEXT
+	if requested_task == TEXT_TASK_FAST:
+		requested_role = ROLE_TEXT_FAST
+	elif requested_task == TEXT_TASK_DEEP:
+		requested_role = ROLE_TEXT_DEEP
+	if requested_role != ROLE_TEXT:
+		var optional_id := _optional_text_role_profile_id(settings, requested_role)
+		if optional_id != USE_PRIMARY_PROFILE_ID:
+			selected_id = optional_id
+
+	var profile := profile_by_id(settings, selected_id).duplicate(true)
+	var generation: Dictionary = settings.get("generation", {})
+	var fallback_enabled := bool(generation.get("text_fallback_enabled", false))
+	var fallback_id := _optional_text_role_profile_id(settings, ROLE_TEXT_FALLBACK)
+	var fallback_profile: Dictionary = {}
+	if fallback_enabled and fallback_id != USE_PRIMARY_PROFILE_ID and fallback_id != selected_id:
+		fallback_profile = profile_by_id(settings, fallback_id).duplicate(true)
+	profile["_ccf_text_routing_v0195"] = {
+		"format_version": 1,
+		"requested_task": requested_task,
+		"requested_role": requested_role,
+		"primary_profile_id": primary_id,
+		"selected_profile_id": selected_id,
+		"inherited_primary": requested_role != ROLE_TEXT and selected_id == primary_id,
+		"fallback_enabled": fallback_enabled,
+		"fallback_profile": fallback_profile
+	}
+	return profile
+
+
 static func role_profile_id(settings: Dictionary, role: String) -> String:
+	if role in [ROLE_TEXT_FAST, ROLE_TEXT_DEEP, ROLE_TEXT_FALLBACK]:
+		return _optional_text_role_profile_id(settings, role)
 	var role_key := "%s_profile_id" % role
 	var provider_roles = settings.get("provider_roles", {})
 	var requested := ""
@@ -100,6 +151,12 @@ static func set_role_profile(settings: Dictionary, role: String, profile_id: Str
 	var resolved_id := profile_id
 	if role == ROLE_IMAGE:
 		resolved_id = str(image_profile_by_id(settings, profile_id).get("id", "image_default"))
+	elif role in [ROLE_TEXT_FAST, ROLE_TEXT_DEEP, ROLE_TEXT_FALLBACK]:
+		resolved_id = profile_id.strip_edges()
+		if resolved_id != USE_PRIMARY_PROFILE_ID and not _profile_id_exists(
+			settings.get("api_profiles", []), resolved_id
+		):
+			resolved_id = USE_PRIMARY_PROFILE_ID
 	else:
 		resolved_id = str(profile_by_id(settings, profile_id).get("id", "default"))
 	var provider_roles: Dictionary = settings.get("provider_roles", {}).duplicate(true)
@@ -218,6 +275,11 @@ static func delete_active_profile(settings: Dictionary) -> Dictionary:
 	for role_key in ["text_profile_id", "vision_profile_id"]:
 		if str(provider_roles.get(role_key, "")) == active_id:
 			provider_roles[role_key] = fallback_id
+	for role_key in [
+		"text_fast_profile_id", "text_deep_profile_id", "text_fallback_profile_id"
+	]:
+		if str(provider_roles.get(role_key, "")) == active_id:
+			provider_roles[role_key] = USE_PRIMARY_PROFILE_ID
 	settings["provider_roles"] = provider_roles
 	return {"ok": true}
 
@@ -305,6 +367,18 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 	for role_key in ["text_profile_id", "vision_profile_id"]:
 		if not _profile_id_exists(ai_profiles, str(provider_roles.get(role_key, ""))):
 			provider_roles[role_key] = str(result["active_api_profile_id"])
+	for role_key in [
+		"text_fast_profile_id", "text_deep_profile_id", "text_fallback_profile_id"
+	]:
+		var optional_id := str(
+			provider_roles.get(role_key, USE_PRIMARY_PROFILE_ID)
+		).strip_edges()
+		if optional_id.is_empty() or (
+			optional_id != USE_PRIMARY_PROFILE_ID
+			and not _profile_id_exists(ai_profiles, optional_id)
+		):
+			optional_id = USE_PRIMARY_PROFILE_ID
+		provider_roles[role_key] = optional_id
 
 	var image_profile_list: Array = []
 	if incoming_format >= 6:
@@ -330,6 +404,9 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 	generation_settings["retry_count"] = clampi(int(generation_settings.get("retry_count", 1)), 0, 5)
 	generation_settings["default_idea_count"] = clampi(int(generation_settings.get("default_idea_count", 6)), 1, 12)
 	generation_settings["attachment_context_character_limit"] = clampi(int(generation_settings.get("attachment_context_character_limit", 24000)), 2000, 120000)
+	generation_settings["text_fallback_enabled"] = bool(
+		generation_settings.get("text_fallback_enabled", false)
+	)
 	var image_size_text := str(generation_settings.get("default_image_size", "1024x1024")).strip_edges()
 	generation_settings["default_image_size"] = image_size_text if not image_size_text.is_empty() else "1024x1024"
 	var image_prompt_style := str(generation_settings.get("default_image_prompt_style", "auto")).strip_edges().to_lower()
@@ -466,6 +543,30 @@ static func _profile_id_exists(profiles: Array, profile_id: String) -> bool:
 		if profile is Dictionary and str(profile.get("id", "")) == profile_id:
 			return true
 	return false
+
+
+static func _primary_text_profile_id(settings: Dictionary) -> String:
+	var provider_roles = settings.get("provider_roles", {})
+	var requested := ""
+	if provider_roles is Dictionary:
+		requested = str(provider_roles.get("text_profile_id", "")).strip_edges()
+	if requested.is_empty():
+		requested = str(settings.get("active_api_profile_id", "default"))
+	return str(profile_by_id(settings, requested).get("id", "default"))
+
+
+static func _optional_text_role_profile_id(settings: Dictionary, role: String) -> String:
+	var provider_roles = settings.get("provider_roles", {})
+	var requested := USE_PRIMARY_PROFILE_ID
+	if provider_roles is Dictionary:
+		requested = str(
+			provider_roles.get("%s_profile_id" % role, USE_PRIMARY_PROFILE_ID)
+		).strip_edges()
+	if requested.is_empty() or requested == USE_PRIMARY_PROFILE_ID:
+		return USE_PRIMARY_PROFILE_ID
+	if not _profile_id_exists(settings.get("api_profiles", []), requested):
+		return USE_PRIMARY_PROFILE_ID
+	return requested
 
 
 static func _new_profile_id(prefix: String) -> String:

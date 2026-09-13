@@ -2,7 +2,22 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.19.4 PDF and Remote Reference Ingestion
+## Current development candidate: v0.19.5 Task-Specific Text Routing and Fallback
+
+v0.19.5 keeps **Primary Text** as the default for every character-writing task and
+adds optional **Fast / Suggestion Text**, **Deep Review Text** and **Fallback Text**
+assignments in Settings. Single-field AI Suggest actions—including individual Front
+Porch fields—use the Fast route, while the full AI Review uses the Deep route. Either
+route inherits Primary Text until the author assigns another profile.
+
+Fallback remains off by default. When an author enables it and assigns a distinct
+profile, Character Card Forge may make one final fallback attempt after normal retries
+are exhausted for a network, unavailable endpoint/model, rate-limit or service failure.
+Refusals, invalid output, parsing failures and validation failures never silently switch
+models. The running status reports the switch, and completed metadata records the actual
+producing profile/model plus the failed source route.
+
+### Previous candidate: v0.19.4 PDF and Remote Reference Ingestion
 
 v0.19.4 upgrades **Vision and Attachments** with deterministic local extraction for
 PDFs that contain a readable text layer. The original PDF stays in managed project
@@ -17,7 +32,7 @@ before a preview is accepted. Accepted content becomes a normal managed project 
 with URL, fetch-time and hash provenance; refresh is always an explicit previewed
 action and never a background mutation.
 
-### Previous candidate: v0.19.3 Expression Set Generation
+### Earlier candidate: v0.19.3 Expression Set Generation
 
 v0.19.3 adds **Generate Expression Set…** to Image Studio. Authors select any
 subset of Front Porch's exact expression labels and explicitly choose the current
