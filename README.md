@@ -4,7 +4,7 @@ Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop
 
 ## Current development candidate: v0.20.1 Discoverability and Power-User Workflow
 
-v0.20.1 adds one explained **New Project** chooser for Blank Workspace, Manual Guided,
+v0.20.1 adds one explained, explicitly confirmed **New Project** chooser for Blank Workspace, Manual Guided,
 Idea Generator, Character Collaborator, Idea Notebook, Import and Template Start paths.
 The sidebar now exposes searchable **Quick Actions** with visible keyboard shortcuts,
 including save, full-library search, field navigation, review, compare, export/install

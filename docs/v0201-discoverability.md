@@ -6,7 +6,8 @@ underlying character data or duplicating existing tools.
 ## New Project
 
 Every New Project entry point now opens the same creation-method chooser. Choose a
-starting template, then continue in Blank Workspace, Manual Guided, Idea Generator,
+starting template and creation method, then press **Create Project** (or double-click
+the method) to continue in Blank Workspace, Manual Guided, Idea Generator,
 Character Collaborator, Idea Notebook, Import, or a clean Template Start. The chosen
 route opens the existing tool after creating the ordinary editable project.
 
