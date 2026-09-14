@@ -2,6 +2,9 @@ class_name CCFWorkspaceV01517View
 extends "res://scripts/ui/workspace_v01516.gd"
 
 const GENERATION_SERVICE_V01517 = preload("res://scripts/services/generation_service_v01517.gd")
+const LOREBOOK_ENTRY_NAMING_V0204 = preload(
+	"res://scripts/services/lorebook_entry_naming_service_v0204.gd"
+)
 
 
 func _install_generation_service_v015() -> void:
@@ -84,7 +87,9 @@ func _apply_collaborator_blueprint_v01515(payload: Dictionary, session_title: St
 	CCFStorageService.set_value_at_path(
 		created, "character.alternate_greetings", alternatives
 	)
-	var lorebook := _normalise_lorebook_v01517(payload.get("lorebook", {}))
+	var lorebook := _normalise_lorebook_v01517(
+		payload.get("lorebook", {}), concept_prompt
+	)
 	CCFStorageService.set_value_at_path(created, "character.character_book", lorebook)
 	var lore_count := _lorebook_entry_count_v01515(lorebook)
 
@@ -158,7 +163,9 @@ func _apply_collaborator_detailed_draft_v01515(payload: Dictionary, session_titl
 	CCFStorageService.set_value_at_path(
 		created, "character.alternate_greetings", alternatives
 	)
-	var lorebook := _normalise_lorebook_v01517(payload.get("lorebook", {}))
+	var lorebook := _normalise_lorebook_v01517(
+		payload.get("lorebook", {}), concept_prompt
+	)
 	CCFStorageService.set_value_at_path(created, "character.character_book", lorebook)
 	var lore_count := _lorebook_entry_count_v01515(lorebook)
 
@@ -347,7 +354,9 @@ func _normalise_alternative_greetings_v01517(value: Variant) -> Array[String]:
 	return result
 
 
-func _normalise_lorebook_v01517(value: Variant) -> Dictionary:
+func _normalise_lorebook_v01517(
+	value: Variant, source_concept: String = ""
+) -> Dictionary:
 	var lorebook: Dictionary = value.duplicate(true) if value is Dictionary else {}
 	var book_name := str(lorebook.get("name", "Character Lorebook")).strip_edges()
 	if book_name.is_empty():
@@ -356,7 +365,17 @@ func _normalise_lorebook_v01517(value: Variant) -> Dictionary:
 	var entries_value: Variant = lorebook.get("entries", [])
 	if not entries_value is Array:
 		lorebook["entries"] = []
-	return lorebook
+	var blueprint := source_concept.strip_edges()
+	if blueprint.is_empty():
+		blueprint = str(CCFStorageService.get_value_at_path(
+			_project, "concept.prompt", ""
+		))
+	var planned_entries := LOREBOOK_ENTRY_NAMING_V0204.planned_entries_from_blueprint(
+		blueprint
+	)
+	return LOREBOOK_ENTRY_NAMING_V0204.normalise_book_names(
+		lorebook, planned_entries, true
+	)
 
 
 func _alternative_greeting_count_v01517(value: Variant) -> int:

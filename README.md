@@ -13,6 +13,11 @@ automatically generated notes.
 The candidate also fixes the Expression Set editor opening as a black native window
 on Linux/Wayland and keeps its managed-batch confirmation actions visible.
 
+Collaborator-generated Lorebooks now retain exact planned entry names from the Generation
+Concept. Existing unnamed entries otherwise use a concise title-like comment or primary
+key, while content warnings remain separate author notes and every name remains manually
+editable.
+
 See [the v0.20.4 release-readiness guide](docs/v0204-release-readiness.md) and the
 [release process](docs/releasing.md).
 

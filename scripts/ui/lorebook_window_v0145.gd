@@ -5,6 +5,9 @@ signal lorebooks_saved(project_book: Dictionary, character_book: Dictionary)
 
 const SCOPE_PROJECT := 0
 const SCOPE_CHARACTER := 1
+const ENTRY_NAMING = preload(
+	"res://scripts/services/lorebook_entry_naming_service_v0204.gd"
+)
 
 var _project_book: Dictionary = {}
 var _character_book: Dictionary = {}
@@ -41,7 +44,16 @@ func _ready() -> void:
 func open_for_project(project: Dictionary, active_character: Dictionary) -> void:
 	_project_book = _normalise_book(project.get("lorebook", {}), "Project Lorebook")
 	var character_data: Dictionary = active_character.get("character", {}) if active_character.get("character", {}) is Dictionary else {}
-	_character_book = _normalise_book(character_data.get("character_book", {}), "Character Lorebook")
+	var concept_value: Variant = active_character.get("concept", {})
+	var concept: Dictionary = concept_value if concept_value is Dictionary else {}
+	var planned_entries := ENTRY_NAMING.planned_entries_from_blueprint(
+		str(concept.get("prompt", ""))
+	)
+	_character_book = _normalise_book(
+		character_data.get("character_book", {}),
+		"Character Lorebook",
+		planned_entries
+	)
 	_scope = SCOPE_CHARACTER
 	_selected_index = -1
 	if _scope_select != null:
@@ -216,11 +228,7 @@ func _refresh_entries() -> void:
 		if not raw is Dictionary:
 			continue
 		var entry: Dictionary = raw
-		var entry_name := str(entry.get("name", "")).strip_edges()
-		if entry_name.is_empty():
-			entry_name = str(entry.get("comment", "")).strip_edges()
-		if entry_name.is_empty():
-			entry_name = "Lore Entry %d" % (index + 1)
+		var entry_name := ENTRY_NAMING.entry_name(entry, index)
 		var prefix := "" if bool(entry.get("enabled", true)) else "[Off] "
 		_entry_list.add_item(prefix + entry_name)
 	if _selected_index >= 0 and _selected_index < _entry_list.item_count:
@@ -370,8 +378,14 @@ func _save_lorebooks() -> void:
 	_status.text = "Lorebooks applied to the project draft. Save the Character Project to persist them."
 
 
-func _normalise_book(raw: Variant, fallback_name: String) -> Dictionary:
+func _normalise_book(
+	raw: Variant,
+	fallback_name: String,
+	planned_entries: Array[Dictionary] = []
+) -> Dictionary:
 	var source: Dictionary = raw.duplicate(true) if raw is Dictionary else {}
+	if not planned_entries.is_empty():
+		source = ENTRY_NAMING.normalise_book_names(source, planned_entries)
 	var entries: Array = []
 	var raw_entries: Variant = source.get("entries", [])
 	if raw_entries is Array:
@@ -389,14 +403,24 @@ func _normalise_book(raw: Variant, fallback_name: String) -> Dictionary:
 	}
 
 
-func _normalise_entry(raw: Dictionary, index: int) -> Dictionary:
+func _normalise_entry(
+	raw: Dictionary, index: int, planned_name: String = ""
+) -> Dictionary:
+	var keys := _normalise_string_array(raw.get("keys", []))
+	var secondary_keys := _normalise_string_array(raw.get("secondary_keys", []))
+	var comment := str(raw.get("comment", ""))
 	return {
 		"id": str(raw.get("id", _new_entry_id())),
-		"name": str(raw.get("name", raw.get("comment", ""))),
-		"keys": _normalise_string_array(raw.get("keys", [])),
-		"secondary_keys": _normalise_string_array(raw.get("secondary_keys", [])),
+		"name": ENTRY_NAMING.entry_name({
+			"name": raw.get("name", ""),
+			"comment": comment,
+			"keys": keys,
+			"secondary_keys": secondary_keys
+		}, index, planned_name),
+		"keys": keys,
+		"secondary_keys": secondary_keys,
 		"content": str(raw.get("content", "")),
-		"comment": str(raw.get("comment", "")),
+		"comment": comment,
 		"enabled": bool(raw.get("enabled", true)),
 		"constant": bool(raw.get("constant", false)),
 		"selective": bool(raw.get("selective", false)),

@@ -190,7 +190,8 @@ broad feature family merely to continue version expansion.
 - Made the local release default follow synchronized version metadata and moved remote tag-collision detection before the release commit is pushed.
 - Corrected release documentation to consistently require Godot 4.7.1 stable.
 - Fixed the Expression Set editor's black native client area on Linux/Wayland and kept its large-batch Confirm/Cancel actions visibly inside the confirmation dialog.
-- Added focused release-contract, tampered-package and live Expression Set window coverage to the complete 150-test inherited release profile.
+- Required meaningful AI-generated Lorebook entry names, preserved exact planned names from Generation Concepts and added deterministic fallbacks for unnamed existing entries without promoting content warnings into titles.
+- Added focused release-contract, tampered-package, live Expression Set window and Lorebook naming coverage to the complete 151-test inherited release profile.
 
 ### v0.20.3 — Searchable Offline Help Center
 
@@ -581,7 +582,7 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
-- Prove the consolidated metadata/import warning check and complete 150-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
+- Prove the consolidated metadata/import warning check and complete 151-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
 - Publish the post-v0.20.4 build through the deterministic release gate and use its offline Help Center plus privacy-safe support report during the bake period.
 - Expand the 12 verified in-app guides into the GitHub Wiki described by [`docs/user-documentation-plan.md`](docs/user-documentation-plan.md), then shorten README into the product front door once current screenshots are available.
 - Complete and record the real-world evidence in [`docs/pre-1.0-release-readiness.md`](docs/pre-1.0-release-readiness.md), including Front Porch, providers, shared/NAS storage, updates and recovery.

@@ -88,7 +88,7 @@ def main() -> int:
     suite_names, tests = runner.collect_tests(manifest, "release", [])
     runner.validate_test_paths(tests)
     paths = {str(test["path"]) for test in tests}
-    require(len(tests) >= 150, f"Release profile lost historical coverage: {len(tests)} tests.")
+    require(len(tests) >= 151, f"Release profile lost historical coverage: {len(tests)} tests.")
     require(
         LEGACY_WORKFLOW_TESTS.issubset(paths),
         "Tests formerly owned only by milestone workflows are missing from the manifest: "

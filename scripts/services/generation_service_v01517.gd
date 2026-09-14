@@ -87,7 +87,7 @@ BLUEPRINT RULES:
 
 SUPPLEMENTARY MATERIALISATION RULES:
 - alternate_greetings must contain complete playable alternative first messages when the collaboration contains developed alternate openings or explicit alternate-opening plans. Preserve exact/developed wording where appropriate and expand only what is needed to make a planned opening playable. Return an empty array if there is genuinely no alternative-opening material.
-- lorebook must be a Character Card-compatible Character Book object with `name` and `entries`. Preserve explicit trigger keys and named facts. Each useful entry may contain keys, secondary_keys, content, comment, enabled, constant, selective, case_sensitive, priority, insertion_order, and position. Use an empty entries array only when there truly is no useful lorebook material.
+- lorebook must be a Character Card-compatible Character Book object with `name` and `entries`. Every useful entry must contain a concise, distinct, human-readable `name`, `keys`, and `content`; never omit the entry name or use a content/trigger warning as its name. Preserve the Blueprint's planned entry name exactly when one is supplied. Put an optional content warning in `comment`, separate from `name`. Entries may also contain secondary_keys, enabled, constant, selective, case_sensitive, priority, insertion_order, and position. Use an empty entries array only when there truly is no useful lorebook material.
 - The supplementary arrays/object are structured copies of material that also remains represented in the canonical concept_prompt. They are not a replacement for the detailed blueprint.
 
 Use clear internal headings such as CHARACTER IDENTITY, RELATIONSHIP TO {{user}}, APPEARANCE, PERSONALITY & BEHAVIOUR, HISTORY, SETTING / WORLD FACTS, ROLEPLAY SCENARIO, FIRST MESSAGE REQUIREMENTS, EXAMPLE DIALOGUE / VOICE, ALTERNATIVE GREETINGS, LOREBOOK, SYSTEM / BEHAVIOURAL RULES, and OPTIONAL / ALTERNATE DIRECTIONS where relevant.
@@ -117,7 +117,7 @@ Do not return the normal Character Card template fields separately. Do not retur
 		[
 			{
 				"role": "system",
-				"content": "You are Character Card Forge's continuity editor. Convert a long creative collaboration into an exhaustive canonical generation blueprint while also returning structured Alternative Greetings and Character Lorebook material when present. Preserve concrete accepted detail and final author intent rather than aggressively summarising it. Return valid JSON only."
+			"content": "You are Character Card Forge's continuity editor. Convert a long creative collaboration into an exhaustive canonical generation blueprint while also returning structured Alternative Greetings and Character Lorebook material when present. Every lorebook entry requires a distinct human-readable name separate from keys, content and warnings. Preserve concrete accepted detail and final author intent rather than aggressively summarising it. Return valid JSON only."
 			},
 			{"role": "user", "content": prompt}
 		],
@@ -152,7 +152,7 @@ func queue_blueprint_supplemental_material(
 		)
 	if fill_lorebook:
 		requested.append(
-			"LOREBOOK: extract the Blueprint's planned triggerable lore into a Character Card-compatible Character Book. Preserve names, trigger keys, side-character facts, locations, secrets, terminology and other explicit lore rather than replacing them with generic summaries."
+			"LOREBOOK: extract the Blueprint's planned triggerable lore into a Character Card-compatible Character Book. Every entry must have a concise, distinct human-readable name plus keys and content. Preserve each explicitly planned entry name exactly. Put content/trigger warnings only in the optional comment field, never in name. Preserve trigger keys, side-character facts, locations, secrets, terminology and other explicit lore rather than replacing them with generic summaries."
 		)
 
 	var prompt := """Materialise the missing supplementary character data from this authoritative Character Card Forge Generation Blueprint.
@@ -169,7 +169,7 @@ Return one valid JSON object with exactly these keys:
 - alternate_greetings: an array of complete playable alternate first messages. Return [] when this scope was not requested or the Blueprint genuinely contains no alternative-opening material.
 - lorebook: a Character Card-compatible Character Book object with `name` and `entries`. Return an object with an empty entries array when this scope was not requested or no useful lorebook material exists.
 
-For lorebook entries, preserve explicit keys where the Blueprint supplies them. Entries may contain keys, secondary_keys, content, comment, enabled, constant, selective, case_sensitive, priority, insertion_order, and position. Return JSON only.
+For lorebook entries, `name`, `keys`, and `content` are required. `name` must be a concise human-readable title, not a warning or a copy of the content. Preserve explicit Blueprint entry names and keys. Entries may also contain secondary_keys, comment, enabled, constant, selective, case_sensitive, priority, insertion_order, and position. Keep content/trigger warnings in comment. Return JSON only.
 """ % [_join_values(requested, "\n"), concept]
 
 	return _queue_chat_job(
@@ -179,7 +179,7 @@ For lorebook entries, preserve explicit keys where the Blueprint supplies them. 
 		[
 			{
 				"role": "system",
-				"content": "You are Character Card Forge's Blueprint supplementary-material extractor. Materialise only the requested Alternative Greetings and Character Lorebook data from the supplied authoritative blueprint. Preserve established detail. Return valid JSON only."
+				"content": "You are Character Card Forge's Blueprint supplementary-material extractor. Materialise only the requested Alternative Greetings and Character Lorebook data from the supplied authoritative blueprint. Every lorebook entry requires a distinct human-readable name separate from keys, content and warnings. Preserve established detail. Return valid JSON only."
 			},
 			{"role": "user", "content": prompt}
 		],
