@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge broad regression suites — v0.20.1",
+  "description": "v0.20.0-hotfix1 plus discoverability and keyboard-first workflow tools.",
+  "base_manifest": "regression_suites_v0200_hotfix1.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0201_discoverability",
+        "label": "v0.20.1 Discoverability and Power-User Workflow Pass",
+        "kind": "godot",
+        "path": "tools/test_v0201_discoverability.gd",
+        "timeout_seconds": 300
+      }
+    ]
+  }
+}

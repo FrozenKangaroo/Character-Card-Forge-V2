@@ -51,13 +51,12 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.20.0-hotfix1 — Library Panel Controls**
+**v0.20.1 — Discoverability and Power-User Workflow Pass**
 
-v0.20.0-hotfix1 adds independently collapsible Library Filters and Project Details
-side panels with always-visible edge arrows, a unified Panels menu for Filters,
-Project Tools and Details, one-click full/focused layouts and opt-in side-panel
-auto-hide. Library layout and density preferences now reliably survive restarts.
-v0.20.1 remains next.
+v0.20.1 adds a single explained New Project chooser, searchable Quick Actions,
+discoverable keyboard-first commands, five task-focused Workspace layouts and a
+skippable first-run guide that remains available from the sidebar. Existing authoring,
+review, lorebook, Front Porch and group-card surfaces remain the canonical tools.
 
 v0.19.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -165,11 +164,20 @@ key-to-extension mapping, and the mapping has a visible preview. No automatic ne
 traffic or raw database access is introduced.
 
 The released application displays **v0.19.0** and the current source candidate displays
-**v0.20.0-hotfix1**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+**v0.20.1**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
-The next planned milestone is v0.20.1 Discoverability and Power-User Workflow Pass.
+The next numbered milestone will be selected from the accepted cross-cutting work below.
 
 ## Completed
+
+### v0.20.1 — Discoverability and Power-User Workflow Pass
+
+- Added a template-aware New Project chooser for Blank Workspace, Manual Guided, Idea Generator, Character Collaborator, Idea Notebook, Import and Template Start workflows.
+- Added searchable Quick Actions in permanent sidebar navigation with keyboard labels and direct routing into existing canonical tools.
+- Added global shortcuts for project creation, Library search, save, visible-field navigation, AI Review, compare, export/install and lorebooks.
+- Added Editing, Review, Lorebook, Front Porch Deployment and Group Card Workspace layouts while retaining detachable-window and multi-monitor behavior.
+- Added a skippable first-run guide that explains optional AI setup and can always be reopened from the sidebar or F1.
+- Added focused live UI, data-driven capability and inherited Library/workflow regression coverage.
 
 ### v0.20.0-hotfix1 — Library Panel Controls
 
@@ -736,13 +744,11 @@ storage, verified replacement writes, cooperative locks, conflict/origin checks 
 explicit unavailable-share behavior are implemented and recorded under **Completed**
 above. Multi-user editing and automatic cloud sync remain explicitly out of scope.
 
-#### v0.20.1 — Discoverability and Power-User Workflow Pass
+#### v0.20.1 — completed
 
-- Add a **New Project** creation-method chooser for Manual, Idea Generator, Character Collaborator, Idea Notebook, Import, Template and other supported paths, with concise explanations and direct expert shortcuts.
-- Add keyboard-first actions for save, search, review, field navigation, compare, export/install and lorebook tools with discoverable shortcut labels.
-- Add workspace-layout presets for Editing, Review, Lorebook, Front Porch Deployment and Group Card work, respecting detachable-window and multi-monitor behavior.
-- Run a dedicated new-user discoverability pass over navigation, labels, tooltips, grouping and common-action entry points; prefer incremental improvements over a disruptive redesign.
-- Add an optional first-run/Getting Started guide that can be skipped and reopened, without slowing experienced users.
+The explained creation chooser, Quick Actions palette, shortcuts, task-focused Workspace
+layouts and reopenable Getting Started guide are implemented and recorded under
+**Completed** above. They reuse existing canonical tools and preserve expert direct paths.
 
 ### Existing capabilities and cross-cutting accepted work
 
