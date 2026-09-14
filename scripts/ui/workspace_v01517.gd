@@ -370,11 +370,11 @@ func _normalise_lorebook_v01517(
 		blueprint = str(CCFStorageService.get_value_at_path(
 			_project, "concept.prompt", ""
 		))
-	var planned_names := LOREBOOK_ENTRY_NAMING_V0204.planned_names_from_blueprint(
+	var planned_entries := LOREBOOK_ENTRY_NAMING_V0204.planned_entries_from_blueprint(
 		blueprint
 	)
 	return LOREBOOK_ENTRY_NAMING_V0204.normalise_book_names(
-		lorebook, planned_names
+		lorebook, planned_entries, true
 	)
 
 

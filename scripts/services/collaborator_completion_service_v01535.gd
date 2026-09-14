@@ -184,11 +184,11 @@ static func materialise_character(
 
 		var lorebook_value: Variant = payload.get("lorebook", {})
 		if lorebook_value is Dictionary:
-			var planned_names := LOREBOOK_ENTRY_NAMING_V0204.planned_names_from_blueprint(
+			var planned_entries := LOREBOOK_ENTRY_NAMING_V0204.planned_entries_from_blueprint(
 				str(payload.get("concept_prompt", ""))
 			)
 			var lorebook := LOREBOOK_ENTRY_NAMING_V0204.normalise_book_names(
-				lorebook_value as Dictionary, planned_names
+				lorebook_value as Dictionary, planned_entries, true
 			)
 			if not lorebook.get("entries", []) is Array:
 				lorebook["entries"] = []

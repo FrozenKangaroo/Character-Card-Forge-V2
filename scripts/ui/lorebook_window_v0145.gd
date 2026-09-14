@@ -46,13 +46,13 @@ func open_for_project(project: Dictionary, active_character: Dictionary) -> void
 	var character_data: Dictionary = active_character.get("character", {}) if active_character.get("character", {}) is Dictionary else {}
 	var concept_value: Variant = active_character.get("concept", {})
 	var concept: Dictionary = concept_value if concept_value is Dictionary else {}
-	var planned_names := ENTRY_NAMING.planned_names_from_blueprint(
+	var planned_entries := ENTRY_NAMING.planned_entries_from_blueprint(
 		str(concept.get("prompt", ""))
 	)
 	_character_book = _normalise_book(
 		character_data.get("character_book", {}),
 		"Character Lorebook",
-		planned_names
+		planned_entries
 	)
 	_scope = SCOPE_CHARACTER
 	_selected_index = -1
@@ -379,22 +379,19 @@ func _save_lorebooks() -> void:
 
 
 func _normalise_book(
-	raw: Variant, fallback_name: String, planned_names: Array[String] = []
+	raw: Variant,
+	fallback_name: String,
+	planned_entries: Array[Dictionary] = []
 ) -> Dictionary:
 	var source: Dictionary = raw.duplicate(true) if raw is Dictionary else {}
+	if not planned_entries.is_empty():
+		source = ENTRY_NAMING.normalise_book_names(source, planned_entries)
 	var entries: Array = []
 	var raw_entries: Variant = source.get("entries", [])
 	if raw_entries is Array:
 		for index in range(raw_entries.size()):
 			if raw_entries[index] is Dictionary:
-				var planned_name := (
-					planned_names[index]
-					if planned_names.size() == raw_entries.size()
-					else ""
-				)
-				entries.append(_normalise_entry(
-					raw_entries[index], index, planned_name
-				))
+				entries.append(_normalise_entry(raw_entries[index], index))
 	return {
 		"name": str(source.get("name", fallback_name)),
 		"description": str(source.get("description", "")),

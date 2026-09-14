@@ -83,7 +83,7 @@ func _fixture_blueprint() -> String:
 	return """CHARACTER IDENTITY
 - Full name: Saionji Iori
 
-LOREBOOK
+## LOREBOOK
 - The following lorebook entries are planned:
   1. Saionji Iori (keywords: Iori, Saionji Iori)
   2. Rouge L'Amour (keywords: Rouge L'Amour, club)
@@ -109,13 +109,23 @@ func _entry_names(book: Dictionary) -> Array[String]:
 	return result
 
 
+func _shuffled_fixture_book() -> Dictionary:
+	var fixture := _fixture_book()
+	var source: Array = fixture.get("entries", [])
+	var shuffled: Array = []
+	for source_index in [7, 1, 9, 4, 0, 8, 3, 6, 2, 5]:
+		shuffled.append((source[source_index] as Dictionary).duplicate(true))
+	fixture["entries"] = shuffled
+	return fixture
+
+
 func _run() -> void:
 	var fixture := _fixture_book()
-	var planned_names := CCFLorebookEntryNamingServiceV0204.planned_names_from_blueprint(
+	var planned_entries := CCFLorebookEntryNamingServiceV0204.planned_entries_from_blueprint(
 		_fixture_blueprint()
 	)
 	var named := CCFLorebookEntryNamingServiceV0204.normalise_book_names(
-		fixture, planned_names
+		fixture, planned_entries, true
 	)
 	var expected: Array[String] = [
 		"Saionji Iori",
@@ -134,6 +144,39 @@ func _run() -> void:
 		and str((named.get("entries", []) as Array)[7].get("comment", ""))
 		== "Content warning: underage backstory",
 		"Missing names must use title-like comments or primary keys while warnings remain separate."
+	):
+		return
+
+	var shuffled_named := CCFLorebookEntryNamingServiceV0204.normalise_book_names(
+		_shuffled_fixture_book(), planned_entries, true
+	)
+	var shuffled_expected: Array[String] = [
+		"Compensated Dating Backstory",
+		"Rouge L'Amour",
+		"Karaoke Guy",
+		"Open Day Café",
+		"Saionji Iori",
+		"Saionji Iori's Family",
+		"IORI / IORI MODE",
+		"Agejo Gyaru Style",
+		"Aya",
+		"Makeover Process"
+	]
+	if not _require(
+		_entry_names(shuffled_named) == shuffled_expected,
+		"Planned names must follow entry identity when generated entries are reordered."
+	):
+		return
+
+	var manually_named := _fixture_book()
+	var manual_entries: Array = manually_named.get("entries", [])
+	(manual_entries[0] as Dictionary)["name"] = "Custom Iori Notes"
+	var reopened := CCFLorebookEntryNamingServiceV0204.normalise_book_names(
+		manually_named, planned_entries
+	)
+	if not _require(
+		_entry_names(reopened)[0] == "Custom Iori Notes",
+		"Opening an existing Lorebook must preserve manually edited entry names."
 	):
 		return
 
