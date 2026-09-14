@@ -53,10 +53,10 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 **Pre-1.0 Release Maturity — public bake, documentation, repository hardening and technical consolidation**
 
-v0.20.1 is complete and adds a single explained New Project chooser, searchable Quick Actions,
-discoverable keyboard-first commands, five task-focused Workspace layouts and a
-skippable first-run guide that remains available from the sidebar. Existing authoring,
-review, lorebook, Front Porch and group-card surfaces remain the canonical tools.
+v0.20.2 is complete and adds a permanent privacy-safe Support & Diagnostics center
+for public-bake bug reports. It exposes an inspectable technical summary through the
+sidebar and Quick Actions, omits private content and credentials by construction,
+makes model identifiers opt-in and never sends a report automatically.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -171,13 +171,22 @@ key-to-extension mapping, and the mapping has a visible preview. No automatic ne
 traffic or raw database access is introduced.
 
 The released application displays **v0.19.0** and the current source candidate displays
-**v0.20.1**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+**v0.20.2**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
 The next numbered product milestone will be selected from evidence gathered during the
 public bake period. Pre-1.0 hardening work should remain focused and must not create a new
 broad feature family merely to continue version expansion.
 
 ## Completed
+
+### v0.20.2 — Public Bake Supportability
+
+- Added a permanent **Support & Diagnostics** center to the sidebar and searchable Quick Actions.
+- Added a previewed environment report covering application/engine versions, OS/renderer/display state, categorical Library state and categorical AI-role configuration.
+- Omitted character/project content, prompts, conversations, credentials, session data, endpoint addresses, custom profile names, paths and internal library identifiers from every report.
+- Kept model identifiers excluded by default behind a visible user opt-in without weakening the hard privacy exclusions.
+- Added explicit clipboard copy, local JSON export and repository bug-report handoff; no report is uploaded or submitted automatically.
+- Added focused live UI/privacy regression coverage to the complete 147-test inherited release profile.
 
 ### v0.20.1 — Discoverability and Power-User Workflow Pass
 
@@ -549,8 +558,8 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
-- Prove the consolidated metadata/import warning check and complete manifest-driven regression check on pull requests and `main` without removing historical test scripts.
-- Publish the post-v0.20.1 build and use the bake period for reproducible bugs, confusing task paths and supported external-configuration testing.
+- Prove the consolidated metadata/import warning check and complete 147-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
+- Publish the post-v0.20.2 build and use its privacy-safe support report during the bake period for reproducible bugs, confusing task paths and supported external-configuration testing.
 - Build the GitHub Wiki from [`docs/user-documentation-plan.md`](docs/user-documentation-plan.md) as the task-oriented user manual, then shorten README into the product front door once current screenshots are available.
 - Complete and record the real-world evidence in [`docs/pre-1.0-release-readiness.md`](docs/pre-1.0-release-readiness.md), including Front Porch, providers, shared/NAS storage, updates and recovery.
 - Enable a practical `main` ruleset after the two consolidated checks have stable names on `main`: require pull requests and those checks, block force pushes and branch deletion, and avoid a mandatory human reviewer for this single-maintainer repository.
@@ -563,7 +572,7 @@ permanently active milestone work.
 
 ## Pre-1.0 Sequence
 
-1. **Release and bake:** ship the completed v0.20.1 line and prioritise defects and workflow friction.
+1. **Release and bake:** ship the completed v0.20.2 line and prioritise defects and workflow friction using the privacy-safe support report where useful.
 2. **Documentation:** publish Getting Started, core authoring, Library, images, import/export, Front Porch, advanced settings and help/troubleshooting Wiki sections.
 3. **Repository hardening:** prove consolidated CI, enable `main` protection and keep release metadata/package generation deterministic.
 4. **Technical consolidation:** replace deep runtime version inheritance incrementally with semantic current implementations and service composition, preserving compatibility wrappers until equivalence is proven.
@@ -848,7 +857,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Deferred / Experimental Ideas
 
-- A broad visual redesign remains deferred until v0.20.1 bake feedback demonstrates repeated friction that incremental discoverability and progressive disclosure cannot solve.
+- A broad visual redesign remains deferred until v0.20.2 bake feedback demonstrates repeated friction that incremental discoverability and progressive disclosure cannot solve.
 - The v0.15.12–v0.15.14 full-Workspace synthesis shortcut remains outside the normal Generate Character path unless it can compose through the validated parity pipeline.
 - Provider-specific concurrency heuristics remain opt-in until limits can be modeled safely.
 - Shared GPU resource pools remain deferred until real local Vision/Image testing establishes useful controls.

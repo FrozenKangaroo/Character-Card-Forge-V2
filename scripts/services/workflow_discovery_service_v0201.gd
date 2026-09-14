@@ -69,6 +69,7 @@ static func quick_actions() -> Array[Dictionary]:
 		{"id": "image_studio", "label": "Open Image Studio", "group": "Navigate", "shortcut": ""},
 		{"id": "settings", "label": "Open Settings", "group": "Navigate", "shortcut": ""},
 		{"id": "getting_started", "label": "Getting Started Guide", "group": "Help", "shortcut": "F1"},
+		{"id": "support_diagnostics", "label": "Support & Diagnostics", "group": "Help", "shortcut": ""},
 	]
 
 
