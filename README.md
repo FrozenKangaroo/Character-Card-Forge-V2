@@ -10,6 +10,9 @@ incomplete changelog sections, mismatched tags, missing/extra/empty packages or 
 SHA-256 checksums. GitHub Releases use the reviewed changelog section instead of
 automatically generated notes.
 
+The candidate also fixes the Expression Set editor opening as a black native window
+on Linux/Wayland.
+
 See [the v0.20.4 release-readiness guide](docs/v0204-release-readiness.md) and the
 [release process](docs/releasing.md).
 

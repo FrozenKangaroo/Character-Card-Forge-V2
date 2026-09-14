@@ -16,6 +16,7 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 ### Changes
 
 - Added a reusable non-publishing `release.sh --preflight-only` path.
+- Fixed **Generate Expression Set…** opening a black, empty native window on Linux/Wayland by giving it the application window rather than Image Studio as its native owner.
 - The local release version now defaults to synchronized `VERSION` metadata instead of the historical v0.15.40 value.
 - Remote tag collisions are checked before a release commit can be pushed to `main`.
 - Updated release documentation to consistently require Godot 4.7.1 stable.
@@ -26,7 +27,7 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Added very-large Library virtualization, bounded thumbnail derivatives, optional portable/shared-folder storage and collapsible/auto-hide panels.
 - Added guided New Project creation, searchable Quick Actions, keyboard shortcuts and task-focused Workspace layouts.
 - Added the privacy-safe Support & Diagnostics center and searchable offline Help Center.
-- Retained the complete historical regression baseline, now containing 149 release-profile tests.
+- Retained the complete historical regression baseline, now containing 150 release-profile tests.
 
 ### Migration notes
 

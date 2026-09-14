@@ -11,6 +11,13 @@
         "kind": "python",
         "path": "tools/test_v0204_release_readiness.py",
         "timeout_seconds": 30
+      },
+      {
+        "id": "v0204_expression_set_window",
+        "label": "v0.20.4 visible Expression Set native window",
+        "kind": "godot",
+        "path": "tools/test_v0204_expression_set_window.gd",
+        "timeout_seconds": 90
       }
     ]
   }

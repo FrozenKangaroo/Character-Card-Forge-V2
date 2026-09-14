@@ -76,8 +76,25 @@ func _install_expression_set_surface_v0193() -> void:
 		_expression_window_v0193.pause_requested.connect(_pause_expression_batch_v0193)
 		_expression_window_v0193.retry_requested.connect(_retry_expression_item_v0193)
 		_expression_window_v0193.accept_requested.connect(_accept_expression_item_v0193)
-		add_child(_expression_window_v0193)
+		# Keep this native tool window beside Image Studio in the application tree.
+		# Making a native Window the child of another native Window can leave the
+		# nested window's client surface black on Linux/Wayland even though its
+		# Control tree is alive and correctly laid out.
+		var expression_window_host := get_parent()
+		if expression_window_host == null:
+			expression_window_host = self
+		expression_window_host.add_child(_expression_window_v0193)
+		tree_exiting.connect(_release_expression_window_v0193)
 		_expression_window_v0193.hide()
+
+
+func _release_expression_window_v0193() -> void:
+	if (
+		_expression_window_v0193 != null
+		and is_instance_valid(_expression_window_v0193)
+		and not _expression_window_v0193.is_queued_for_deletion()
+	):
+		_expression_window_v0193.queue_free()
 
 
 func _open_expression_set_v0193() -> void:
