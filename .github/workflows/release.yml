@@ -52,7 +52,10 @@ jobs:
         run: ./tools/setup_godot_ci.sh
 
       - name: Validate tag, metadata, and JSON
-        run: python3 ./tools/validate_project.py --tag "${{ steps.release_tag.outputs.tag }}"
+        run: |
+          python3 ./tools/validate_project.py --tag "${{ steps.release_tag.outputs.tag }}"
+          python3 ./tools/release_readiness_v0204.py \
+            --tag "${{ steps.release_tag.outputs.tag }}"
 
       - name: Import and parse the Godot project
         run: godot --headless --path . --import
@@ -82,6 +85,13 @@ jobs:
       - name: Package downloads and checksums
         run: ./tools/package_release.sh
 
+      - name: Verify packages and prepare reviewed release notes
+        run: |
+          python3 ./tools/release_readiness_v0204.py \
+            --tag "${{ steps.release_tag.outputs.tag }}" \
+            --artifacts dist \
+            --write-notes "${RUNNER_TEMP}/release-notes.md"
+
       - name: Upload build artifacts for diagnostics
         uses: actions/upload-artifact@v4
         with:
@@ -98,5 +108,5 @@ jobs:
           gh release create "${RELEASE_TAG}" dist/* \
             --repo "${GITHUB_REPOSITORY}" \
             --title "Character Card Forge ${RELEASE_TAG}" \
-            --generate-notes \
+            --notes-file "${RUNNER_TEMP}/release-notes.md" \
             --verify-tag

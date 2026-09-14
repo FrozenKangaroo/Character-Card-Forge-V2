@@ -4,7 +4,6 @@ set -euo pipefail
 EXPECTED_REMOTE="https://github.com/FrozenKangaroo/Character-Card-Forge-V2.git"
 REQUIRED_GODOT_VERSION="4.7.1"
 REQUIRED_GODOT_STATUS="stable"
-DEFAULT_RELEASE_VERSION="0.15.40"
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 DEFAULT_REPO_DIR="${HOME}/Projects/Character-Card-Forge-V2"
 DEFAULT_GODOT_BIN="${HOME}/Godot/Godot_v${REQUIRED_GODOT_VERSION}-${REQUIRED_GODOT_STATUS}_linux.x86_64"
@@ -287,6 +286,15 @@ validate_repository() {
 }
 
 run_checks() {
+    local release_tag="${1:-}"
+
+    print_status "Checking deterministic release contract"
+    if [[ -n "${release_tag}" ]]; then
+        python3 ./tools/release_readiness_v0204.py --tag "${release_tag}"
+    else
+        python3 ./tools/release_readiness_v0204.py
+    fi
+
     print_status "Validating project metadata and bundled data"
     python3 ./tools/validate_project.py
 
@@ -344,6 +352,12 @@ ensure_tag_available() {
 sync_to_repository "$@"
 validate_repository
 
+if [[ "${1:-}" == "--preflight-only" ]]; then
+    run_checks
+    echo "SUCCESS: Release preflight completed without committing, pushing, tagging, or publishing."
+    exit 0
+fi
+
 print_status "Deployment strategy"
 echo "  [1] Commit, push, tag, and trigger Windows/Linux/macOS builds"
 echo "  [2] Commit and push source changes only"
@@ -352,23 +366,23 @@ read -r -p "Select option (1 or 2): " build_choice
 case "${build_choice}" in
     1)
         current_version="$(tr -d '[:space:]' < VERSION)"
-        release_default="${CCF_RELEASE_VERSION:-${DEFAULT_RELEASE_VERSION}}"
+        release_default="${CCF_RELEASE_VERSION:-${current_version}}"
         echo "Current synchronized release metadata: ${current_version}"
         read -r -p "Release version [${release_default}]: " new_version
         new_version="${new_version:-${release_default}}"
         new_version="${new_version#v}"
 
+        tag="v${new_version}"
+        git fetch origin --tags --quiet
+        ensure_tag_available "${tag}"
+
         print_status "Synchronising version ${new_version}"
         python3 ./tools/set_version.py "${new_version}"
-        run_checks
+        run_checks "${tag}"
         stage_and_commit "Prepare Character Card Forge v${new_version}"
 
         print_status "Pushing main"
         git push origin main
-
-        tag="v${new_version}"
-        git fetch origin --tags --quiet
-        ensure_tag_available "${tag}"
 
         print_status "Creating release tag ${tag}"
         git tag -a "${tag}" -m "Character Card Forge ${tag}"

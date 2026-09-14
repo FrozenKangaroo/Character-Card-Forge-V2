@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.20.4 complete regression suites",
+  "description": "v0.20.3 complete pre-1.0 baseline plus deterministic release-readiness validation.",
+  "base_manifest": "regression_suites_v0203.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0204_release_readiness",
+        "label": "v0.20.4 deterministic release readiness",
+        "kind": "python",
+        "path": "tools/test_v0204_release_readiness.py",
+        "timeout_seconds": 30
+      }
+    ]
+  }
+}
