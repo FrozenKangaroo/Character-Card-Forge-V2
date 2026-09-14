@@ -120,7 +120,9 @@ func _run() -> void:
 	) as CCFSupportCenterWindowV0202
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text == "Godot rewrite • v0.20.2":
+		if node is Label and node.text in [
+			"Godot rewrite • v0.20.2", "Godot rewrite • v0.20.3"
+		]:
 			version_found = true
 			break
 	if not _require(

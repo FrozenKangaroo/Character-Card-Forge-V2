@@ -1,6 +1,6 @@
 # Character Card Forge Pre-1.0 Release Readiness
 
-This checklist is the shared release contract for the v0.20.2 public bake period and the eventual 1.0 release candidate. It records evidence that must exist; it is not permission to bypass a failed check or silently narrow supported behaviour.
+This checklist is the shared release contract for the v0.20.3 public bake period and the eventual 1.0 release candidate. It records evidence that must exist; it is not permission to bypass a failed check or silently narrow supported behaviour.
 
 ## Status convention
 
@@ -12,6 +12,7 @@ This checklist is the shared release contract for the v0.20.2 public bake period
 
 - [x] v0.20.1 discoverability and power-user workflow pass is complete.
 - [x] v0.20.2 provides a previewed privacy-safe support report with explicit copy/export and no automatic submission.
+- [x] v0.20.3 provides a searchable offline Help Center with versioned task guides and direct routes to existing tools.
 - [x] New Project creation has an explained selection and explicit confirmation action.
 - [ ] Complete a human task-path pass at ordinary 1080p and an ultrawide size:
   - create a first character;
@@ -65,6 +66,7 @@ This checklist is the shared release contract for the v0.20.2 public bake period
 
 - [ ] Reduce README to a user-facing product front door with installation and first-character guidance.
 - [ ] Publish the task-oriented GitHub Wiki described in `roadmap.md`.
+- [x] Add searchable offline help for first launch, core workflows, recovery and troubleshooting.
 - [ ] Add current screenshots after navigation and labels are frozen.
 - [ ] Document troubleshooting, diagnostics, privacy, backup and recovery.
 - [x] Add structured Bug Report, Feature Request and Front Porch Integration issue forms.
@@ -73,7 +75,7 @@ This checklist is the shared release contract for the v0.20.2 public bake period
 ## Repository and release
 
 - [x] Use a small stable GitHub Actions surface driven by the versioned regression manifest.
-- [x] Preserve all historical regression test scripts, including 28 tests migrated from workflow-only enforcement into the 147-test release profile.
+- [x] Preserve all historical regression test scripts, including 28 tests migrated from workflow-only enforcement into the 148-test release profile.
 - [ ] Let the consolidated validation checks prove stable on `main`.
 - [ ] Protect `main`: require pull requests and the consolidated validation checks, block force pushes and block deletion.
 - [ ] Keep an explicit emergency maintainer bypass only if operationally necessary.

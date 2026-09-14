@@ -15,7 +15,7 @@ EXPECTED_WORKFLOWS = {
     "validate-regression-suite.yml",
     "validate.yml",
 }
-CURRENT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v0202.json"
+CURRENT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v0203.json"
 LEGACY_WORKFLOW_TESTS = {
     "tools/test_alternative_greetings.gd",
     "tools/test_generation_diagnostics.gd",
@@ -78,7 +78,7 @@ def main() -> int:
     require("name: Validate Godot project" in validate_text, "Stable validation name changed.")
     require("name: Validate regression suite" in regression_text, "Stable regression name changed.")
     for text, label in ((validate_text, "validation"), (regression_text, "regression")):
-        require("regression_suites_v0202.json" in text, f"{label} workflow uses a stale manifest.")
+        require("regression_suites_v0203.json" in text, f"{label} workflow uses a stale manifest.")
         require("pull_request:" in text, f"{label} workflow must run on pull requests.")
         require("branches:\n      - main" in text, f"{label} workflow must run on main.")
 
@@ -88,7 +88,7 @@ def main() -> int:
     suite_names, tests = runner.collect_tests(manifest, "release", [])
     runner.validate_test_paths(tests)
     paths = {str(test["path"]) for test in tests}
-    require(len(tests) >= 147, f"Release profile lost historical coverage: {len(tests)} tests.")
+    require(len(tests) >= 148, f"Release profile lost historical coverage: {len(tests)} tests.")
     require(
         LEGACY_WORKFLOW_TESTS.issubset(paths),
         "Tests formerly owned only by milestone workflows are missing from the manifest: "

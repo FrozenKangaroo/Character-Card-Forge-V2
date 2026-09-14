@@ -2,22 +2,29 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.20.2 Public Bake Supportability
+## Current development candidate: v0.20.3 Searchable Offline Help Center
+
+v0.20.3 adds a permanent **Help Center** with 12 task-oriented guides covering first
+launch, character creation, providers, Library work, images, import/export, Front Porch,
+recovery and troubleshooting. Search and category filtering are fully offline, and each
+guide can route directly into the existing app tool without changing project data.
+
+See [the v0.20.3 Help Center guide](docs/v0203-help-center.md) for its content and
+offline/privacy boundary.
+
+The current development focus is now pre-1.0 release maturity: real-world validation,
+user documentation, repository hardening and incremental technical consolidation rather
+than another broad feature expansion. See the [release-readiness checklist](docs/pre-1.0-release-readiness.md)
+and [project roadmap](roadmap.md).
+
+### Previous candidate: v0.20.2 Public Bake Supportability
 
 v0.20.2 adds a permanent **Support & Diagnostics** center for the pre-1.0 public
 bake period. It previews a privacy-safe technical report that omits character and
 project content, prompts, conversations, credentials, session data, endpoint addresses,
 custom profile names and file paths. Model identifiers are a visible opt-in. Copy,
 JSON export and opening the repository bug-report page are all explicit actions;
-nothing is submitted automatically.
-
-See [the v0.20.2 support guide](docs/v0202-supportability.md) for the exact privacy
-boundary.
-
-The current development focus is now pre-1.0 release maturity: real-world validation,
-user documentation, repository hardening and incremental technical consolidation rather
-than another broad feature expansion. See the [release-readiness checklist](docs/pre-1.0-release-readiness.md)
-and [project roadmap](roadmap.md).
+nothing is submitted automatically. See [the support guide](docs/v0202-supportability.md).
 
 ### Previous candidate: v0.20.1 Discoverability and Power-User Workflow
 

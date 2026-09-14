@@ -1,0 +1,249 @@
+{
+  "format_version": 1,
+  "categories": [
+    {"id": "getting_started", "label": "Getting Started"},
+    {"id": "authoring", "label": "Creating & Editing"},
+    {"id": "library", "label": "Library"},
+    {"id": "images", "label": "Images"},
+    {"id": "sharing", "label": "Import, Export & Front Porch"},
+    {"id": "help", "label": "Help & Recovery"}
+  ],
+  "articles": [
+    {
+      "id": "first_launch",
+      "category": "getting_started",
+      "title": "First launch",
+      "summary": "Start manually or configure optional AI providers.",
+      "keywords": ["welcome", "start", "manual", "offline", "api"],
+      "steps": [
+        "Choose New Project to see every supported starting path.",
+        "Manual editing and Manual Guided work without an AI provider.",
+        "Open Settings only if you want to configure Text, Vision or Image generation.",
+        "Use Quick Actions from the sidebar or Ctrl+K to find commands by name."
+      ],
+      "notes": [
+        "Character Card Forge does not contact an AI provider until you explicitly request an AI action."
+      ],
+      "actions": [
+        {"id": "new_project", "label": "Choose New Project…"},
+        {"id": "settings", "label": "Open Settings"}
+      ],
+      "related": ["provider_setup", "first_character", "import_character"]
+    },
+    {
+      "id": "provider_setup",
+      "category": "getting_started",
+      "title": "Set up AI providers",
+      "summary": "Configure Text, Vision and Image roles independently.",
+      "keywords": ["provider", "model", "openai", "openrouter", "local", "vision", "image"],
+      "steps": [
+        "Open Settings and configure a Primary Text profile for character writing.",
+        "Assign Fast Text or Deep Review only when you want a different profile for those tasks; Use Primary is the default.",
+        "Configure Vision separately for image analysis and Image Generation separately for artwork.",
+        "Use each profile's connection or discovery controls before starting important work."
+      ],
+      "notes": [
+        "Fallback is optional and should use a distinct profile. It handles bounded technical failures, not refusals or invalid content.",
+        "API keys stay in local app settings and are omitted from support reports and exported cards."
+      ],
+      "actions": [{"id": "settings", "label": "Open Provider Settings"}],
+      "related": ["first_character", "image_studio", "troubleshooting"]
+    },
+    {
+      "id": "first_character",
+      "category": "getting_started",
+      "title": "Create your first character",
+      "summary": "Choose a creation route, review the draft and export deliberately.",
+      "keywords": ["new", "character", "generate", "idea", "collaborator", "template"],
+      "steps": [
+        "Choose New Project and select Blank Workspace, Manual Guided, Idea Generator, Character Collaborator, Idea Notebook or Template Start.",
+        "Select the starting template and confirm Create Project.",
+        "For AI routes, review proposed content before accepting it into the editable Workspace.",
+        "Check Description, Personality, Scenario and First Message, then save the project.",
+        "Add or generate artwork before PNG export when you want a visual card."
+      ],
+      "notes": [
+        "Filling in Generation Concept alone does not create the finished character fields. Run Generate Character and review the result first."
+      ],
+      "actions": [
+        {"id": "new_project", "label": "Create a Character…"},
+        {"id": "getting_started", "label": "Open Short Guide"}
+      ],
+      "related": ["workspace_quality", "image_studio", "export_character"]
+    },
+    {
+      "id": "import_character",
+      "category": "getting_started",
+      "title": "Import an existing character",
+      "summary": "Preview supported card or project files before copying, merging or replacing.",
+      "keywords": ["import", "png", "json", "apng", "ccfproject", "card"],
+      "steps": [
+        "Choose New Project, select Import Card or Project and confirm.",
+        "Select a supported Character Card PNG/APNG/JSON or Character Card Forge project package.",
+        "Review the detected format, portrait, validation, duplicate evidence and loss mapping.",
+        "Choose Copy, Merge or Replace only after the preview matches your intent."
+      ],
+      "notes": [
+        "Merge and Replace retain recovery information where the workflow supports it; they are never automatic."
+      ],
+      "actions": [{"id": "new_project", "label": "Open Import Start…"}],
+      "related": ["export_character", "library_basics", "backup_recovery"]
+    },
+    {
+      "id": "workspace_quality",
+      "category": "authoring",
+      "title": "Edit, inspect and improve a character",
+      "summary": "Use the Workspace, Card Inspector, AI Review and Revision History safely.",
+      "keywords": ["edit", "workspace", "review", "inspector", "revision", "quality", "diff"],
+      "steps": [
+        "Edit canonical fields directly in the Workspace and save meaningful progress.",
+        "Use Card Inspector for deterministic health checks, token estimates and export-facing metadata.",
+        "Run AI Review only when wanted; inspect every finding and proposed replacement.",
+        "Approve fields selectively. Rejected changes remain rejected and the accepted batch creates a recovery checkpoint.",
+        "Use Revision History to compare, restore, fork or selectively recover earlier values."
+      ],
+      "notes": [
+        "AI scores are advisory, not objective measures of character quality."
+      ],
+      "actions": [{"id": "ai_review", "label": "Open AI Review"}],
+      "related": ["backup_recovery", "export_character", "first_character"]
+    },
+    {
+      "id": "library_basics",
+      "category": "library",
+      "title": "Find and organise characters",
+      "summary": "Search, filter, group and resize the Character Library.",
+      "keywords": ["library", "search", "filter", "tag", "collection", "folder", "density", "archive"],
+      "steps": [
+        "Open Character Library and search across projects, characters, card text and metadata.",
+        "Use workflow, review, token, Front Porch, privacy and deployment filters to narrow results.",
+        "Assign series, tags, folders and collections from Project Tools or batch actions.",
+        "Use Panels to collapse Filters, Project Tools or Details, and adjust card density for the available space.",
+        "Archive recoverably instead of deleting work you may need later."
+      ],
+      "notes": [
+        "Portable/shared-folder libraries use a documented single-writer model; they are not automatic cloud sync."
+      ],
+      "actions": [
+        {"id": "library", "label": "Open Character Library"},
+        {"id": "library_search", "label": "Focus Library Search"}
+      ],
+      "related": ["backup_recovery", "import_character", "troubleshooting"]
+    },
+    {
+      "id": "image_studio",
+      "category": "images",
+      "title": "Create and manage artwork",
+      "summary": "Compose creative intent separately from provider execution settings.",
+      "keywords": ["image", "portrait", "art", "style", "preset", "expression", "inpainting", "comfyui", "forge"],
+      "steps": [
+        "Open Image Studio and choose the active project and character.",
+        "Write or generate a character-aware prompt, then apply creative style controls or a reusable style preset.",
+        "Choose the Image profile, model or workflow and only the operations that its discovered capabilities support.",
+        "Run generation explicitly, compare results and accept the chosen image into managed project assets.",
+        "Use Avatar Gallery or Generate Expression Set for Front Porch alternate looks and expressions."
+      ],
+      "notes": [
+        "Browsing results, editing presets and composing prompts do not call an Image provider.",
+        "Reference, Image-to-Image and Inpainting inputs are explicit and never inferred from unrelated Vision attachments."
+      ],
+      "actions": [{"id": "image_studio", "label": "Open Image Studio"}],
+      "related": ["provider_setup", "export_character", "front_porch"]
+    },
+    {
+      "id": "export_character",
+      "category": "sharing",
+      "title": "Export a character",
+      "summary": "Preview the target format and artwork before writing a card.",
+      "keywords": ["export", "png", "json", "sillytavern", "profile", "install"],
+      "steps": [
+        "Open Export or Install from a saved Workspace project.",
+        "Choose the target export profile and inspect the exact mapped, preserved, transformed and omitted fields.",
+        "Resolve the unfinished-character safety check if all core roleplay fields are empty.",
+        "Choose artwork for PNG output, or explicitly confirm a definition-only export when supported.",
+        "Select a destination and complete the local export."
+      ],
+      "notes": [
+        "Character Card Forge warns about missing artwork because a successful JSON definition can otherwise look like a failed PNG export."
+      ],
+      "actions": [{"id": "export_install", "label": "Open Export or Install"}],
+      "related": ["front_porch", "workspace_quality", "import_character"]
+    },
+    {
+      "id": "front_porch",
+      "category": "sharing",
+      "title": "Connect and install to Front Porch",
+      "summary": "Use supported APIs and portable formats without direct database writes.",
+      "keywords": ["front porch", "install", "sync", "login", "2fa", "group", "world", "chat"],
+      "steps": [
+        "Open Export or Install and configure the Front Porch address for the current session.",
+        "Run Connection Diagnostics to verify reachability, authentication and supported endpoints.",
+        "Sign in when required; passwords, two-factor codes and cookies are not persisted.",
+        "Preview collisions and remote differences before Create Copy, Update or Replace actions.",
+        "Use supported APIs or portable files for characters, groups, worlds, galleries and chats."
+      ],
+      "notes": [
+        "Character Card Forge never reads or writes the Front Porch SQLite database.",
+        "Optional Front Porch character-life fields do not enter ordinary cards unless the target format carries that extension."
+      ],
+      "actions": [{"id": "export_install", "label": "Open Front Porch Tools"}],
+      "related": ["export_character", "troubleshooting", "privacy_diagnostics"]
+    },
+    {
+      "id": "backup_recovery",
+      "category": "help",
+      "title": "Back up and recover work",
+      "summary": "Protect projects, revisions and portable libraries before risky changes.",
+      "keywords": ["backup", "restore", "recovery", "revision", "archive", "portable", "nas"],
+      "steps": [
+        "Keep backups of the active Character Card Forge library or portable library folder while the app is closed.",
+        "Use Revision History checkpoints for field-level comparison, selective recovery, restore or fork.",
+        "Use Archive for recoverable Library removal and project packages for portable project copies.",
+        "If a portable share is unavailable, reconnect it and reopen the project from that library; do not create a substitute path.",
+        "Resolve external-change conflicts by reviewing both copies instead of overwriting blindly."
+      ],
+      "notes": [
+        "Portable/shared folders are single-writer. Close the project on one computer before editing it on another."
+      ],
+      "actions": [{"id": "library", "label": "Open Character Library"}],
+      "related": ["library_basics", "workspace_quality", "troubleshooting"]
+    },
+    {
+      "id": "troubleshooting",
+      "category": "help",
+      "title": "Troubleshoot a problem",
+      "summary": "Capture the narrowest useful evidence without exposing private content.",
+      "keywords": ["error", "failure", "bug", "stuck", "404", "diagnostic", "support"],
+      "steps": [
+        "Repeat the smallest action that shows the problem and record what you expected and what happened.",
+        "For generation failures, open that job's Generation Diagnostics and review the credential-redacted request summary.",
+        "For Front Porch problems, run Connection Diagnostics and note which supported capability failed.",
+        "Open Support & Diagnostics for the app/environment summary; model identifiers remain optional.",
+        "Create a bug report with reproducible steps, the app version and only the diagnostic files you reviewed."
+      ],
+      "notes": [
+        "Never post API keys, passwords, cookies, private character text or private chat transcripts in a public issue."
+      ],
+      "actions": [{"id": "support_diagnostics", "label": "Open Support & Diagnostics"}],
+      "related": ["privacy_diagnostics", "provider_setup", "front_porch"]
+    },
+    {
+      "id": "privacy_diagnostics",
+      "category": "help",
+      "title": "Diagnostics and privacy",
+      "summary": "Understand what the general support report includes and excludes.",
+      "keywords": ["privacy", "diagnostics", "report", "credentials", "model", "issue"],
+      "steps": [
+        "Open Support & Diagnostics and read the complete report preview.",
+        "Leave model identifiers disabled unless the provider/model is relevant to the problem.",
+        "Copy or export the report only after reviewing it.",
+        "Use Open Bug Report only when ready; the app never submits the report automatically."
+      ],
+      "notes": [
+        "The general report always omits character/project content, prompts, conversations, credentials, sessions, endpoint addresses, custom profile names and file paths."
+      ],
+      "actions": [{"id": "support_diagnostics", "label": "Review Support Report"}],
+      "related": ["troubleshooting", "provider_setup", "backup_recovery"]
+    }
+  ]
+}
