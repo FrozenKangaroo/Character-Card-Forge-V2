@@ -89,14 +89,32 @@ func _run() -> void:
 
 	app.call("_open_new_project_chooser_v0201")
 	await process_frame
+	var method_list := chooser.get("_method_list") as ItemList
+	var confirm_button := chooser.get("_confirm_button") as Button
+	var method_description := chooser.get("_method_description") as Label
 	if not _require(
 		chooser.visible
 		and chooser.get("_template_selector") is OptionButton
-		and chooser.find_children("*", "Button", true, false).size() >= methods.size(),
-		"New Project must open a template-aware creation-method chooser instead of silently selecting a path."
+		and method_list != null
+		and method_list.item_count == methods.size()
+		and method_list.get_selected_items().size() == 1
+		and confirm_button != null
+		and confirm_button.text == "Create Project"
+		and not confirm_button.disabled
+		and method_description != null
+		and not method_description.text.is_empty(),
+		"New Project must visibly select a method and require an explicit Create Project confirmation."
 	):
 		return
-	chooser.hide()
+	confirm_button.pressed.emit()
+	await process_frame
+	await process_frame
+	if not _require(
+		not chooser.visible
+		and not workspace.current_project().is_empty(),
+		"Create Project must confirm the selected method and open its editable Workspace project."
+	):
+		return
 
 	app.call("_open_quick_actions_v0201")
 	await process_frame
@@ -121,11 +139,6 @@ func _run() -> void:
 		return
 	palette.hide()
 
-	var project := CCFStorageService.new_project()
-	workspace.load_project(
-		project, CCFTemplateService.load_default_template(), CCFSettingsService.default_settings()
-	)
-	await process_frame
 	var workspace_capabilities := workspace.workflow_capabilities_v0201()
 	var layout_menu := workspace.get("_layout_menu_v0201") as MenuButton
 	if not _require(
