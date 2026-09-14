@@ -2,22 +2,30 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.20.1 Discoverability and Power-User Workflow
+## Current development candidate: v0.20.2 Public Bake Supportability
 
-v0.20.1 adds one explained, explicitly confirmed **New Project** chooser for Blank Workspace, Manual Guided,
-Idea Generator, Character Collaborator, Idea Notebook, Import and Template Start paths.
-The sidebar now exposes searchable **Quick Actions** with visible keyboard shortcuts,
-including save, full-library search, field navigation, review, compare, export/install
-and lorebook tools. Editing, Review, Lorebook, Front Porch Deployment and Group Card
-workspace layouts route into the existing detachable tools without duplicating them.
-A skippable first-run guide can always be reopened from the sidebar or with F1.
+v0.20.2 adds a permanent **Support & Diagnostics** center for the pre-1.0 public
+bake period. It previews a privacy-safe technical report that omits character and
+project content, prompts, conversations, credentials, session data, endpoint addresses,
+custom profile names and file paths. Model identifiers are a visible opt-in. Copy,
+JSON export and opening the repository bug-report page are all explicit actions;
+nothing is submitted automatically.
 
-See [the v0.20.1 workflow guide](docs/v0201-discoverability.md) for the shortcut list.
+See [the v0.20.2 support guide](docs/v0202-supportability.md) for the exact privacy
+boundary.
 
 The current development focus is now pre-1.0 release maturity: real-world validation,
 user documentation, repository hardening and incremental technical consolidation rather
 than another broad feature expansion. See the [release-readiness checklist](docs/pre-1.0-release-readiness.md)
 and [project roadmap](roadmap.md).
+
+### Previous candidate: v0.20.1 Discoverability and Power-User Workflow
+
+v0.20.1 adds one explained, explicitly confirmed **New Project** chooser for Blank
+Workspace, Manual Guided, Idea Generator, Character Collaborator, Idea Notebook,
+Import and Template Start paths. Searchable **Quick Actions**, keyboard shortcuts,
+task-focused Workspace layouts and a reopenable Getting Started guide route into the
+existing canonical tools. See [the workflow guide](docs/v0201-discoverability.md).
 
 ### Previous candidate: v0.20.0-hotfix1 Library Panel Controls
 
