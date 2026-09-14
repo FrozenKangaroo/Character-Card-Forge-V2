@@ -15,14 +15,14 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  GODOT_VERSION: 4.6.3
+  GODOT_VERSION: '4.7.1'
   GODOT_STATUS: stable
 
 jobs:
   validate:
     name: Parse and validate
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
 
     steps:
       - name: Check out source
@@ -34,131 +34,26 @@ jobs:
       - name: Validate release metadata and JSON
         run: python3 ./tools/validate_project.py
 
-      - name: Import and parse the Godot project
-        run: godot --headless --path . --import
+      - name: Validate consolidated CI and retained coverage
+        run: python3 ./tools/test_ci_consolidation.py
 
-      - name: Test generation contract dispatch
-        run: godot --headless --path . --script res://tools/test_generation_contract_dispatch.gd
+      - name: Validate the regression registry
+        run: >-
+          python3 ./tools/run_regression_suite.py
+          --manifest ./tools/regression_suites_v0201_pre1.json
+          --profile release
+          --list
 
-      - name: Test concept fidelity
-        run: timeout 30s godot --headless --path . --script res://tools/test_concept_fidelity.gd
-
-      - name: Test project draft lifecycle
-        run: timeout 30s godot --headless --path . --script res://tools/test_project_lifecycle.gd
-
-      - name: Test generation diagnostics
-        run: timeout 30s godot --headless --path . --script res://tools/test_generation_diagnostics.gd
-
-      - name: Test alternative greetings export
-        run: timeout 30s godot --headless --path . --script res://tools/test_alternative_greetings.gd
-
-      - name: Test multi-group output composition
-        run: timeout 30s godot --headless --path . --script res://tools/test_multi_group_output_composition.gd
-
-      - name: Test quiet malformed JSON handling
-        run: timeout 30s godot --headless --path . --script res://tools/test_quiet_json_parser.gd
-
-      - name: Test concise image prompt construction
-        run: timeout 30s godot --headless --path . --script res://tools/test_image_prompt_concision.gd
-
-      - name: Test default template selection
-        run: timeout 30s godot --headless --path . --script res://tools/test_default_template_selection.gd
-
-      - name: Test assistant response compatibility
-        run: timeout 30s godot --headless --path . --script res://tools/test_assistant_response_shapes.gd
-
-      - name: Test v0.13.11 vision and model capabilities
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01311_vision_capabilities.gd
-
-      - name: Test v0.13.11 creative vision hotfix
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01311_creative_vision_hotfix.gd
-
-      - name: Test v0.13.11 seed identifier naming
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01311_seed_warning_name.gd
-
-      - name: Test v0.13.12 AI image prompt planning
-        run: timeout 30s godot --headless --path . --script res://tools/test_image_prompt_generation_v01312.gd
-
-      - name: Test v0.13.12 Image Studio startup prompt behavior
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01312_image_prompt_startup.gd
-
-      - name: Test v0.14 authoring option foundation
-        run: timeout 30s godot --headless --path . --script res://tools/test_v014_authoring_options.gd
-
-      - name: Test v0.14 private interview output budget
-        run: timeout 30s godot --headless --path . --script res://tools/test_v014_interview_output_budget.gd
-
-      - name: Test v0.14 Image Studio scroll layout
-        run: timeout 30s godot --headless --path . --script res://tools/test_v014_image_studio_scroll_layout.gd
-
-      - name: Test v0.14.1 desktop layout and interview review
-        run: timeout 30s godot --headless --path . --script res://tools/test_v0141_desktop_layout_interview_review.gd
-
-      - name: Test v0.14.2 character transfer and text input
-        run: timeout 30s godot --headless --path . --script res://tools/test_v0142_character_transfer_input.gd
-
-      - name: Test v0.14.6 preview selection safety
-        run: timeout 30s godot --headless --path . --script res://tools/test_v0146_preview_selection_safety.gd
-
-      - name: Test v0.14.7 Manual Guided components and state isolation
-        run: timeout 30s godot --headless --path . --script res://tools/test_v0147_manual_guided_components.gd
-
-      - name: Test v0.14.8 Manual Guided alternative greetings
-        run: timeout 30s godot --headless --path . --script res://tools/test_v0148_manual_guided_alternative_greetings.gd
-
-      - name: Test v0.14.9 Library assignment UX
-        run: timeout 30s godot --headless --path . --script res://tools/test_v0149_library_ux.gd
-
-      - name: Test v0.14.10 related character and AI variation
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01410_character_derivation.gd
-
-      - name: Test v0.14.11 Idea workflows and editable options
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01411_concept_studio.gd
-
-      - name: Test v0.14.12 unified Idea Generator
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01412_unified_idea_generator.gd
-
-      - name: Test v0.14.13 Idea Generator point of view
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01413_idea_generator_pov.gd
-
-      - name: Test v0.14.14 focused Character Builders
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01414_focused_builders.gd
-
-      - name: Test v0.14.15 lorebook generation and triggers
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01415_lorebook_support.gd
-
-      - name: Test v0.14.16 Idea Generator identity and POV contract
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01416_idea_identity_pov.gd
-
-      - name: Test v0.14.17 detachable Lorebook Manager
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01417_detachable_lorebook.gd
-
-      - name: Test v0.14.18 user-centric Idea Generator
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01418_user_centric_ideas.gd
-
-      - name: Test v0.14.19 live Idea Generator service wiring
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01419_idea_generator_live_service.gd
-
-      - name: Test v0.14.20 Relationship Graph and linked variants
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01420_relationship_variants.gd
-
-      - name: Test v0.14.21 CCFCHAR authoring import
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01421_ccfchar_import.gd
-
-      - name: Test v0.14.22 shared graph canvas and flowchart
-        run: timeout 30s godot --headless --path . --script res://tools/test_v01422_graph_canvas.gd
-
-      - name: Test v0.15 Character Collaborator
-        run: timeout 30s godot --headless --path . --script res://tools/test_v015_character_collaborator.gd
-
-      - name: Test v0.15.1 Character Collaborator context budgeting
-        run: timeout 30s godot --headless --path . --script res://tools/test_v0151_context_budgeting.gd
-
-      - name: Test v0.15.2 large output tokens and Collaborator live wiring
-        run: timeout 30s godot --headless --path . --script res://tools/test_v0152_large_output_and_collaborator_wiring.gd
-
-      - name: Test v0.15.3 Character Collaborator chat UX
-        run: timeout 30s godot --headless --path . --script res://tools/test_v0153_collaborator_chat_ux.gd
-
-      - name: Test v0.15.4 Collaborator management and rich text
-        run: timeout 30s godot --headless --path . --script res://tools/test_v0154_collaborator_management_rich_text.gd
+      - name: Import and parse with the warning gate
+        shell: bash
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-import/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-import/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-import/config
+        run: |
+          set -o pipefail
+          godot --headless --path . --import 2>&1 | tee "${RUNNER_TEMP}/ccf-import.log"
+          if grep -E "SCRIPT ERROR:|Failed to load script|UNUSED_VARIABLE|SHADOWED_VARIABLE|SHADOWED_GLOBAL_IDENTIFIER|CONFUSABLE_LOCAL_DECLARATION|INCOMPATIBLE_TERNARY|INTEGER_DIVISION|Parse Error" "${RUNNER_TEMP}/ccf-import.log"; then
+            echo "Godot reported a script or warning failure during import."
+            exit 1
+          fi

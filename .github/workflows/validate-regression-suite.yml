@@ -1,0 +1,39 @@
+name: Validate regression suite
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: regression-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: '4.7.1'
+  GODOT_STATUS: stable
+
+jobs:
+  regression:
+    name: Complete inherited compatibility baseline
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Godot and export templates
+        run: ./tools/setup_godot_ci.sh
+
+      - name: Run the complete versioned regression profile
+        run: >-
+          python3 ./tools/run_regression_suite.py
+          --manifest ./tools/regression_suites_v0201_pre1.json
+          --profile release
+          --godot "$(command -v godot)"

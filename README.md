@@ -14,6 +14,11 @@ A skippable first-run guide can always be reopened from the sidebar or with F1.
 
 See [the v0.20.1 workflow guide](docs/v0201-discoverability.md) for the shortcut list.
 
+The current development focus is now pre-1.0 release maturity: real-world validation,
+user documentation, repository hardening and incremental technical consolidation rather
+than another broad feature expansion. See the [release-readiness checklist](docs/pre-1.0-release-readiness.md)
+and [project roadmap](roadmap.md).
+
 ### Previous candidate: v0.20.0-hotfix1 Library Panel Controls
 
 v0.20.0-hotfix1 adds slim, always-recoverable edge arrows for the Library Filters and
