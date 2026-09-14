@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.20.3 complete regression suites",
+  "description": "v0.20.2 complete pre-1.0 baseline plus the searchable offline Help Center.",
+  "base_manifest": "regression_suites_v0202.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0203_help_center",
+        "label": "v0.20.3 searchable offline Help Center",
+        "kind": "godot",
+        "path": "tools/test_v0203_help_center.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}

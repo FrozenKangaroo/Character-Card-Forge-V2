@@ -40,7 +40,7 @@ jobs:
       - name: Validate the regression registry
         run: >-
           python3 ./tools/run_regression_suite.py
-          --manifest ./tools/regression_suites_v0202.json
+          --manifest ./tools/regression_suites_v0203.json
           --profile release
           --list
 

@@ -53,10 +53,11 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 **Pre-1.0 Release Maturity — public bake, documentation, repository hardening and technical consolidation**
 
-v0.20.2 is complete and adds a permanent privacy-safe Support & Diagnostics center
-for public-bake bug reports. It exposes an inspectable technical summary through the
-sidebar and Quick Actions, omits private content and credentials by construction,
-makes model identifiers opt-in and never sends a report automatically.
+v0.20.3 is complete and adds a searchable offline Help Center backed by a versioned
+external catalog. Its first 12 task-oriented guides cover starting, authoring, Library,
+images, import/export, Front Porch, recovery and troubleshooting; guide actions route
+into existing canonical tools without changing project data. Browsing help makes no AI
+or network request.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -171,13 +172,23 @@ key-to-extension mapping, and the mapping has a visible preview. No automatic ne
 traffic or raw database access is introduced.
 
 The released application displays **v0.19.0** and the current source candidate displays
-**v0.20.2**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+**v0.20.3**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
 The next numbered product milestone will be selected from evidence gathered during the
 public bake period. Pre-1.0 hardening work should remain focused and must not create a new
 broad feature family merely to continue version expansion.
 
 ## Completed
+
+### v0.20.3 — Searchable Offline Help Center
+
+- Added a permanent **Help Center** to the sidebar and searchable Quick Actions.
+- Added 12 task-oriented guides across Getting Started, Creating & Editing, Library, Images, Import/Export/Front Porch and Help/Recovery categories.
+- Added deterministic local full-catalog search, category filtering, related-topic navigation and readable long-form task steps.
+- Routed optional guide actions into existing New Project, Settings, Library, Image Studio, AI Review, Export/Install and Support tools rather than duplicating workflows.
+- Stored help as a versioned external JSON catalog suitable for continued in-app documentation and planned GitHub Wiki reuse.
+- Kept browsing entirely offline with no AI calls, network requests or project-data transmission.
+- Added catalog, routing, offline-boundary and live UI coverage to the complete 148-test inherited release profile.
 
 ### v0.20.2 — Public Bake Supportability
 
@@ -558,9 +569,9 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
-- Prove the consolidated metadata/import warning check and complete 147-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
-- Publish the post-v0.20.2 build and use its privacy-safe support report during the bake period for reproducible bugs, confusing task paths and supported external-configuration testing.
-- Build the GitHub Wiki from [`docs/user-documentation-plan.md`](docs/user-documentation-plan.md) as the task-oriented user manual, then shorten README into the product front door once current screenshots are available.
+- Prove the consolidated metadata/import warning check and complete 148-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
+- Publish the post-v0.20.3 build and use its offline Help Center plus privacy-safe support report during the bake period for confusing task paths and reproducible bugs.
+- Expand the 12 verified in-app guides into the GitHub Wiki described by [`docs/user-documentation-plan.md`](docs/user-documentation-plan.md), then shorten README into the product front door once current screenshots are available.
 - Complete and record the real-world evidence in [`docs/pre-1.0-release-readiness.md`](docs/pre-1.0-release-readiness.md), including Front Porch, providers, shared/NAS storage, updates and recovery.
 - Enable a practical `main` ruleset after the two consolidated checks have stable names on `main`: require pull requests and those checks, block force pushes and branch deletion, and avoid a mandatory human reviewer for this single-maintainer repository.
 - Begin version-layer consolidation only after the bake release, one subsystem and one reviewable PR at a time, with the complete inherited release profile required for every migration.
@@ -572,8 +583,8 @@ permanently active milestone work.
 
 ## Pre-1.0 Sequence
 
-1. **Release and bake:** ship the completed v0.20.2 line and prioritise defects and workflow friction using the privacy-safe support report where useful.
-2. **Documentation:** publish Getting Started, core authoring, Library, images, import/export, Front Porch, advanced settings and help/troubleshooting Wiki sections.
+1. **Release and bake:** ship the completed v0.20.3 line and prioritise defects and workflow friction using the offline Help Center and privacy-safe support report where useful.
+2. **Documentation:** expand the verified in-app guide catalog and publish Getting Started, core authoring, Library, images, import/export, Front Porch, advanced settings and help/troubleshooting Wiki sections.
 3. **Repository hardening:** prove consolidated CI, enable `main` protection and keep release metadata/package generation deterministic.
 4. **Technical consolidation:** replace deep runtime version inheritance incrementally with semantic current implementations and service composition, preserving compatibility wrappers until equivalence is proven.
 5. **1.0 release candidate:** complete or explicitly scope every readiness item, freeze stability-sensitive contracts and publish an RC before final 1.0.
@@ -857,7 +868,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Deferred / Experimental Ideas
 
-- A broad visual redesign remains deferred until v0.20.2 bake feedback demonstrates repeated friction that incremental discoverability and progressive disclosure cannot solve.
+- A broad visual redesign remains deferred until v0.20.3 bake feedback demonstrates repeated friction that incremental discoverability and progressive disclosure cannot solve.
 - The v0.15.12–v0.15.14 full-Workspace synthesis shortcut remains outside the normal Generate Character path unless it can compose through the validated parity pipeline.
 - Provider-specific concurrency heuristics remain opt-in until limits can be modeled safely.
 - Shared GPU resource pools remain deferred until real local Vision/Image testing establishes useful controls.
