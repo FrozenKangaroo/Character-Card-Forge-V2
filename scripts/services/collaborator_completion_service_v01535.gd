@@ -1,6 +1,10 @@
 class_name CCFCollaboratorCompletionServiceV01535
 extends RefCounted
 
+const LOREBOOK_ENTRY_NAMING_V0204 = preload(
+	"res://scripts/services/lorebook_entry_naming_service_v0204.gd"
+)
+
 const DEST_CURRENT_EMPTY := "current_empty_character"
 const DEST_SAME_PROJECT_NEW := "same_project_new_character"
 const DEST_NEW_PROJECT := "new_project"
@@ -180,7 +184,12 @@ static func materialise_character(
 
 		var lorebook_value: Variant = payload.get("lorebook", {})
 		if lorebook_value is Dictionary:
-			var lorebook: Dictionary = (lorebook_value as Dictionary).duplicate(true)
+			var planned_names := LOREBOOK_ENTRY_NAMING_V0204.planned_names_from_blueprint(
+				str(payload.get("concept_prompt", ""))
+			)
+			var lorebook := LOREBOOK_ENTRY_NAMING_V0204.normalise_book_names(
+				lorebook_value as Dictionary, planned_names
+			)
 			if not lorebook.get("entries", []) is Array:
 				lorebook["entries"] = []
 			CCFStorageService.set_value_at_path(record, "character.character_book", lorebook)
