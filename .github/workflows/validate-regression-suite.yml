@@ -31,6 +31,13 @@ jobs:
       - name: Install Godot and export templates
         run: ./tools/setup_godot_ci.sh
 
+      - name: Import project classes for isolated regression job
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/ccf-regression-import/data
+          XDG_CACHE_HOME: ${{ runner.temp }}/ccf-regression-import/cache
+          XDG_CONFIG_HOME: ${{ runner.temp }}/ccf-regression-import/config
+        run: godot --headless --path . --import
+
       - name: Run the complete versioned regression profile
         run: >-
           python3 ./tools/run_regression_suite.py
