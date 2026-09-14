@@ -16,7 +16,7 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 ### Changes
 
 - Added a reusable non-publishing `release.sh --preflight-only` path.
-- Fixed **Generate Expression Set…** opening a black, empty native window on Linux/Wayland by giving it the application window rather than Image Studio as its native owner.
+- Fixed **Generate Expression Set…** opening a black, empty native window on Linux/Wayland and restored visible Confirm/Cancel actions when reviewing large expression batches.
 - The local release version now defaults to synchronized `VERSION` metadata instead of the historical v0.15.40 value.
 - Remote tag collisions are checked before a release commit can be pushed to `main`.
 - Updated release documentation to consistently require Godot 4.7.1 stable.

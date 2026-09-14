@@ -28,9 +28,7 @@ var _retry_button: Button
 var _accept_button: Button
 var _replace_button: Button
 var _create_confirm: ConfirmationDialog
-var _create_confirm_text: Label
 var _replace_confirm: ConfirmationDialog
-var _replace_confirm_text: Label
 var _pending_create_labels: Array = []
 var _pending_create_baseline := "prompt"
 var _pending_replace_label := ""
@@ -309,7 +307,7 @@ func _request_create() -> void:
 		return
 	_pending_create_labels = selected_labels.duplicate()
 	_pending_create_baseline = str(_baseline_selector.get_selected_metadata())
-	_create_confirm_text.text = "Generate %d separate provider requests for:\n\n%s\n\nBaseline: %s\n\nEvery result will wait for individual review; nothing is installed automatically." % [
+	_create_confirm.dialog_text = "Generate %d separate provider requests for:\n\n%s\n\nBaseline: %s\n\nEvery result will wait for individual review; nothing is installed automatically." % [
 		_pending_create_labels.size(), ", ".join(_pending_create_labels),
 		_baseline_label(_pending_create_baseline)
 	]
@@ -343,7 +341,7 @@ func _request_replace() -> void:
 	if not item.is_empty():
 		_pending_replace_label = str(item.get("label", ""))
 		_pending_replace_batch_id = _selected_batch_id
-		_replace_confirm_text.text = "Replace the current Avatar Gallery association for %s with this reviewed result?\n\nThe previous generated image file will remain in Image Studio for recovery." % _pending_replace_label.capitalize()
+		_replace_confirm.dialog_text = "Replace the current Avatar Gallery association for %s with this reviewed result?\n\nThe previous generated image file will remain in Image Studio for recovery." % _pending_replace_label.capitalize()
 		_replace_confirm.popup_centered(Vector2i(560, 260))
 
 
@@ -381,20 +379,18 @@ func _build_confirmations() -> void:
 	_create_confirm = ConfirmationDialog.new()
 	_create_confirm.title = "Confirm Expression Set"
 	_create_confirm.ok_button_text = "Start Managed Batch"
+	_create_confirm.cancel_button_text = "Cancel"
+	_create_confirm.dialog_autowrap = true
 	_create_confirm.min_size = Vector2i(600, 320)
-	_create_confirm_text = Label.new()
-	_create_confirm_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_create_confirm.add_child(_create_confirm_text)
 	_create_confirm.confirmed.connect(_confirm_create)
 	add_child(_create_confirm)
 	_create_confirm.hide()
 	_replace_confirm = ConfirmationDialog.new()
 	_replace_confirm.title = "Replace Existing Expression Label"
 	_replace_confirm.ok_button_text = "Replace Association"
+	_replace_confirm.cancel_button_text = "Cancel"
+	_replace_confirm.dialog_autowrap = true
 	_replace_confirm.min_size = Vector2i(520, 230)
-	_replace_confirm_text = Label.new()
-	_replace_confirm_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_replace_confirm.add_child(_replace_confirm_text)
 	_replace_confirm.confirmed.connect(_confirm_replace)
 	add_child(_replace_confirm)
 	_replace_confirm.hide()

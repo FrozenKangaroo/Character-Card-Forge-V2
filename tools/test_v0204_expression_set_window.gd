@@ -25,6 +25,13 @@ func _label_with_text(parent: Node, label_text: String) -> Label:
 	return null
 
 
+func _button_with_text(parent: Node, button_text: String) -> Button:
+	for node in parent.find_children("*", "Button", true, false):
+		if node is Button and (node as Button).text == button_text:
+			return node as Button
+	return null
+
+
 func _run() -> void:
 	var packed := load("res://scenes/main.tscn") as PackedScene
 	var app := packed.instantiate()
@@ -85,6 +92,49 @@ func _run() -> void:
 		"Expression Set must open as an application-level native window with visible, laid-out content."
 	):
 		return
+
+	var labels := expression_window.find_child(
+		"ExpressionSetLabelsV0193", true, false
+	) as ItemList
+	var generate_button := _button_with_text(
+		expression_window, "Generate Selected Expressions…"
+	)
+	if not _require(
+		labels != null and generate_button != null and labels.item_count == 30,
+		"The live Expression Set editor must expose all selectable labels and its generation action."
+	):
+		return
+	for label_index in range(labels.item_count):
+		labels.select(label_index, false)
+	generate_button.pressed.emit()
+	await process_frame
+	await process_frame
+	var create_confirm_value: Variant = expression_window.get("_create_confirm")
+	if not _require(
+		create_confirm_value is ConfirmationDialog,
+		"Selecting expressions must open the managed-batch confirmation dialog."
+	):
+		return
+	var create_confirm := create_confirm_value as ConfirmationDialog
+	var confirm_button := create_confirm.get_ok_button()
+	var cancel_button := create_confirm.get_cancel_button()
+	if not _require(
+		create_confirm.visible
+		and create_confirm.dialog_text.contains("Generate 30 separate provider requests")
+		and confirm_button != null
+		and confirm_button.is_visible_in_tree()
+		and confirm_button.size.x > 0.0
+		and confirm_button.size.y > 0.0
+		and confirm_button.position.y + confirm_button.size.y <= create_confirm.size.y
+		and cancel_button != null
+		and cancel_button.is_visible_in_tree()
+		and cancel_button.size.x > 0.0
+		and cancel_button.size.y > 0.0
+		and cancel_button.position.y + cancel_button.size.y <= create_confirm.size.y,
+		"The 30-expression confirmation must keep visible Confirm and Cancel buttons inside the dialog."
+	):
+		return
+	create_confirm.hide()
 
 	expression_window.hide()
 	image_window.hide()

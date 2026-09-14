@@ -189,7 +189,7 @@ broad feature family merely to continue version expansion.
 - Added `release.sh --preflight-only` for complete validation without commit, push, tag or publication side effects.
 - Made the local release default follow synchronized version metadata and moved remote tag-collision detection before the release commit is pushed.
 - Corrected release documentation to consistently require Godot 4.7.1 stable.
-- Fixed the Expression Set editor's black native client area on Linux/Wayland by mounting it beside Image Studio instead of nesting one native window inside another.
+- Fixed the Expression Set editor's black native client area on Linux/Wayland and kept its large-batch Confirm/Cancel actions visibly inside the confirmation dialog.
 - Added focused release-contract, tampered-package and live Expression Set window coverage to the complete 150-test inherited release profile.
 
 ### v0.20.3 — Searchable Offline Help Center
