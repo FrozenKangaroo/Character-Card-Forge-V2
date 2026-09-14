@@ -51,12 +51,19 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 ## Current Development Phase
 
-**v0.20.1 — Discoverability and Power-User Workflow Pass**
+**Pre-1.0 Release Maturity — public bake, documentation, repository hardening and technical consolidation**
 
-v0.20.1 adds a single explained New Project chooser, searchable Quick Actions,
+v0.20.1 is complete and adds a single explained New Project chooser, searchable Quick Actions,
 discoverable keyboard-first commands, five task-focused Workspace layouts and a
 skippable first-run guide that remains available from the sidebar. Existing authoring,
 review, lorebook, Front Porch and group-card surfaces remain the canonical tools.
+
+The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
+active priorities are a public bake period, real-world Front Porch/provider/shared-storage
+validation, task-oriented user documentation, a smaller manifest-driven CI surface,
+practical `main` protection and incremental subsystem-by-subsystem inheritance cleanup.
+The detailed evidence gate is maintained in
+[`docs/pre-1.0-release-readiness.md`](docs/pre-1.0-release-readiness.md).
 
 v0.19.0 is the current public release baseline. The v0.16.x development line includes Collaborator rewind (v0.16.0), normalized Image capability architecture (v0.16.1), structured creative prompt composition (v0.16.2), tabbed Image Studio workflow (v0.16.3), dynamic provider model capabilities (v0.16.4), local Forge/A1111 checkpoint profiles (v0.16.5), ComfyUI workflow Generation Profiles (v0.16.6), Idea Generator detail levels (v0.16.7), and explicit Image-to-Image / Reference / Inpainting operations (v0.16.8).
 
@@ -166,7 +173,9 @@ traffic or raw database access is introduced.
 The released application displays **v0.19.0** and the current source candidate displays
 **v0.20.1**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
-The next numbered milestone will be selected from the accepted cross-cutting work below.
+The next numbered product milestone will be selected from evidence gathered during the
+public bake period. Pre-1.0 hardening work should remain focused and must not create a new
+broad feature family merely to continue version expansion.
 
 ## Completed
 
@@ -540,40 +549,28 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
-- Runtime-test v0.17.3 against a configured Front Porch 1.3.x web server with password-only and 2FA accounts, stable-ID updates and multi-candidate name collisions.
-- Confirm direct-install reporting against later Front Porch releases and extend behavior-based capability detection only when their supported API contract changes.
-- Validate HTTPS remote-host setup while keeping loopback HTTP as the simplest same-computer path.
+- Prove the consolidated metadata/import warning check and complete manifest-driven regression check on pull requests and `main` without removing historical test scripts.
+- Publish the post-v0.20.1 build and use the bake period for reproducible bugs, confusing task paths and supported external-configuration testing.
+- Build the GitHub Wiki from [`docs/user-documentation-plan.md`](docs/user-documentation-plan.md) as the task-oriented user manual, then shorten README into the product front door once current screenshots are available.
+- Complete and record the real-world evidence in [`docs/pre-1.0-release-readiness.md`](docs/pre-1.0-release-readiness.md), including Front Porch, providers, shared/NAS storage, updates and recovery.
+- Enable a practical `main` ruleset after the two consolidated checks have stable names on `main`: require pull requests and those checks, block force pushes and branch deletion, and avoid a mandatory human reviewer for this single-maintainer repository.
+- Begin version-layer consolidation only after the bake release, one subsystem and one reviewable PR at a time, with the complete inherited release profile required for every migration.
 
-- Runtime-test v0.17.2 with Front Porch Rawhide card imports/exports, especially future extension keys, alternative greeting seeds, colour integers and TTS identifiers.
-- Validate dense Front Porch tab layout across supported desktop window sizes and refine grouping/tooltips without moving optional data into core Character tabs.
-- Confirm Front Porch 2.5 card behaviour with real new conversations while keeping existing conversation state out of Character Card Forge's write boundary.
+The previous version-by-version runtime-testing list has been consolidated into the
+release-readiness checklist. Items remain required where they describe a supported
+configuration; speculative provider combinations are now explicit backlog rather than
+permanently active milestone work.
 
-- Runtime-test v0.17.1 evidence-role labels and review layout with large card metadata, long Vision analyses and dense multi-source sessions.
-- Evaluate optional author-confirmed conflict annotations after real-world use; keep automatic semantic conflict claims out of the deterministic presentation layer.
+## Pre-1.0 Sequence
 
-- Runtime-test v0.17.0 existing-target and image-led handoffs with real saved projects, including optional Vision success/failure and repeated session reloads.
-- Confirm generated PNG/JPEG/WebP recovery and handoff paths remain portable across supported desktop platforms.
+1. **Release and bake:** ship the completed v0.20.1 line and prioritise defects and workflow friction.
+2. **Documentation:** publish Getting Started, core authoring, Library, images, import/export, Front Porch, advanced settings and help/troubleshooting Wiki sections.
+3. **Repository hardening:** prove consolidated CI, enable `main` protection and keep release metadata/package generation deterministic.
+4. **Technical consolidation:** replace deep runtime version inheritance incrementally with semantic current implementations and service composition, preserving compatibility wrappers until equivalence is proven.
+5. **1.0 release candidate:** complete or explicitly scope every readiness item, freeze stability-sensitive contracts and publish an RC before final 1.0.
+6. **Post-1.0:** let Front Porch changes, user evidence and carefully bounded integrations drive development.
 
-- Runtime-test v0.16.10 settings reuse/regeneration with real cloud and local providers, including provider-specific parameters and image-input paths.
-- Runtime-test result favourites, comparison and missing-file recovery across repeated project reloads.
-- Validate optional cost presentation against representative provider pricing schemas without guessing ambiguous prices.
-
-- Runtime-test v0.16.9 built-in/Global/Project/Character style precedence with real saved projects and multiple Image providers.
-- Confirm project/character styles survive repeated Studio/project reloads and never mutate provider technical settings.
-- Runtime-test v0.16.8 Image→Image and Inpainting against a real Forge/A1111 profile, including gallery/external inputs.
-- Runtime-test explicit non-A1111 `image_input_transport_v0168` mappings against representative JSON Image providers.
-- Confirm source/reference/mask selection remains non-canonical until generation occurs.
-- Runtime-test v0.16.7 Quick/Standard/Detailed/Extended against representative Text profiles and compare useful depth/token use.
-- Follow up Idea Generator diagnostics: clamp detail-expanded output budgets against known model/provider output ceilings and reduce false-positive agency repair triggers such as genuinely conditional `if {{user}} prefers...` wording.
-- Preserve usable first-pass Idea results when a semantic repair request fails transiently, with clear warning/retry UX rather than unnecessarily losing the whole batch.
-- Runtime-test v0.16.6 against real ComfyUI API workflow exports; implement live ComfyUI queue/upload/history transport without reusing A1111/OpenAI request semantics.
-- Decide the cleanest first-class ComfyUI Image-profile/backend representation before live transport promotion.
-- Continue runtime testing of v0.16.5 local checkpoint defaults/overrides, v0.16.4 rich provider metadata, v0.16.3 layout, v0.16.2 composition and v0.16.0 rewind persistence.
-- Continue hardening forward-compatible tests so later shells/services cannot drop historical hotfix invariants.
-- Continue V1 parity review where V1 still has useful workflows V2 has not surpassed.
-- Maintain a read-only compatibility inventory against current Front Porch Rawhide character, group, world and chat formats before implementing each interoperability stage.
-
-## Planned — v0.17.x and Later Authoring Work
+## Implemented Authoring Plan and Accepted Backlog
 
 ### Front Porch interoperability track — accepted
 
@@ -834,6 +831,9 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Long-Term Ideas
 
+- Consider an optional DataCat discovery adapter only after official API access and contract review; use preview/import, respect creator visibility/deletion controls and never depend on unsupported scraping.
+- Consider natural-language Character Matchmaker for large Libraries using bounded indexed summaries, positive/negative requirements and explainable ranked candidates; never silently send private full cards to an external model.
+- Expand Front Porch-backed Test Chat to groups only after the single-character lifecycle has enough real-world evidence, reusing Front Porch runtime behavior rather than implementing a parallel simulator.
 - Expand graph tooling into richer character/route planning without contaminating exported card data.
 - Make Collaborator increasingly capable of project-wide creative planning while keeping brainstorming/canonical boundaries explicit.
 - Add navigable creative lineage across Ideas, characters, variants, side-character promotions, descendants/family trees and Collaborator sessions.
@@ -848,6 +848,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 ## Deferred / Experimental Ideas
 
+- A broad visual redesign remains deferred until v0.20.1 bake feedback demonstrates repeated friction that incremental discoverability and progressive disclosure cannot solve.
 - The v0.15.12–v0.15.14 full-Workspace synthesis shortcut remains outside the normal Generate Character path unless it can compose through the validated parity pipeline.
 - Provider-specific concurrency heuristics remain opt-in until limits can be modeled safely.
 - Shared GPU resource pools remain deferred until real local Vision/Image testing establishes useful controls.

@@ -1,0 +1,80 @@
+name: Front Porch integration report
+description: Report an interoperability, installation, sync, world, group-card or Test Chat problem.
+title: "[Front Porch]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include passwords, session cookies, API keys or unredacted private character/chat content.
+  - type: input
+    id: ccf-version
+    attributes:
+      label: Character Card Forge version
+    validations:
+      required: true
+  - type: input
+    id: front-porch-version
+    attributes:
+      label: Front Porch version
+    validations:
+      required: true
+  - type: dropdown
+    id: connection-mode
+    attributes:
+      label: Connection mode
+      options:
+        - Same-computer loopback HTTP
+        - Remote HTTPS
+        - Portable file interchange only
+        - Not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: operation
+    attributes:
+      label: Operation
+      options:
+        - Connect or authenticate
+        - Install or update character
+        - Import Front Porch changes
+        - Group card
+        - World
+        - Expressions or avatar gallery
+        - Test Chat or chat exchange
+        - Deployment queue
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: capability-summary
+    attributes:
+      label: Redacted capability or diagnostic summary
+      description: Include the reported endpoints/capabilities and status, but remove credentials and private content.
+      render: shell
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy-confirmation
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I removed passwords, cookies, API keys and private character/chat content.
+          required: true

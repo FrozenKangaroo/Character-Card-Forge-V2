@@ -1,0 +1,49 @@
+name: Feature request
+description: Propose a user problem or workflow improvement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: user-goal
+    attributes:
+      label: User problem or goal
+      description: Describe what you are trying to accomplish, rather than only the proposed control.
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Current workaround
+      description: Explain how you handle this today, if possible.
+  - type: textarea
+    id: proposed-workflow
+    attributes:
+      label: Proposed workflow
+      description: Describe the expected user-visible flow and result.
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Primary area
+      options:
+        - Standard Character Card authoring or interchange
+        - Character Card Forge private authoring data
+        - Front Porch integration
+        - Image Studio or provider integration
+        - Library, storage or organisation
+        - Accessibility, navigation or usability
+        - Another integration or area
+    validations:
+      required: true
+  - type: textarea
+    id: existing-gap
+    attributes:
+      label: Why existing tools do not solve it
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context or examples

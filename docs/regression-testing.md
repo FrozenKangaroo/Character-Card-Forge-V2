@@ -54,11 +54,22 @@ The regression runner creates temporary HOME/XDG/AppData directories for every r
 
 The temporary test data is deleted when the run finishes.
 
+## Consolidated GitHub Actions
+
+Historical milestone tests remain as individual scripts and versioned manifest entries, but their one-workflow-per-milestone wrappers have been retired. Pull requests and `main` now expose two stable checks:
+
+- **Validate Godot project / Parse and validate** verifies release metadata and JSON, resolves the current release manifest and performs a Godot import with the warning gate.
+- **Validate regression suite / Complete inherited compatibility baseline** runs the manifest's complete `release` profile.
+
+This reduces CI orchestration from dozens of independently queued workflows to two understandable checks without removing historical regression coverage. New milestones extend the manifest and tests rather than creating another permanent workflow file.
+
+`tools/test_ci_consolidation.py` prevents milestone workflow sprawl from returning, verifies both stable checks still target pull requests and `main`, and confirms the inherited release profile retains all 146 tests present at consolidation. That total includes 28 tests which previously ran only from historical workflow wrappers and are now first-class manifest entries.
+
 ## Release gate
 
 `release.sh` automatically runs the full `release` regression profile after project validation/import whenever Godot is available locally. A failed representative regression prevents the release script from reaching commit/tag creation.
 
-GitHub Actions also runs the same broad release profile on every pull request and on `main`, so a new feature is checked against unrelated major workflows even when manual testing is focused only on that new feature.
+GitHub Actions also runs the complete inherited release profile on every pull request and on `main`, so a new feature is checked against unrelated major workflows even when manual testing is focused only on that new feature.
 
 ## Adding a major feature
 
@@ -66,9 +77,9 @@ When a new major feature becomes part of the supported app surface:
 
 1. Add or extend a focused regression test for the feature.
 2. Add a new versioned manifest layer that inherits the current registry and appends the representative test to the appropriate suite.
-3. Advance `DEFAULT_MANIFEST` in `tools/run_regression_suite.py` to the new manifest layer.
+3. Advance `DEFAULT_MANIFEST` in `tools/run_regression_suite.py` and the two consolidated workflow references to the new manifest layer.
 4. Prefer testing the current live service/workspace composition rather than only instantiating an isolated historical helper.
 5. Make historical shell/version tests inheritance-aware where later versions are expected to extend them.
 6. Keep tests deterministic and offline; provider calls should be mocked, inspected, or validated at the request/response boundary rather than requiring live API credentials.
 
-The broad suite is not intended to replace focused tests. It is a cross-feature release gate that makes it much harder for development focus on one area to hide regressions somewhere else.
+The broad suite is not intended to replace focused local testing. It is a cross-feature release gate that makes it much harder for development focus on one area to hide regressions somewhere else.

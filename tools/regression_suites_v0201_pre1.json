@@ -1,0 +1,216 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge complete pre-1.0 regression suites",
+  "description": "v0.20.1 plus every historical test formerly enforced only by milestone-specific GitHub Actions wrappers.",
+  "base_manifest": "regression_suites_v0201.json",
+  "suite_additions": {
+    "generation": [
+      {
+        "id": "legacy_generation_diagnostics",
+        "label": "Historical generation diagnostics",
+        "kind": "godot",
+        "path": "tools/test_generation_diagnostics.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v014_interview_output_budget",
+        "label": "Historical interview output budget",
+        "kind": "godot",
+        "path": "tools/test_v014_interview_output_budget.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v01512_full_character_synthesis",
+        "label": "Historical full-character synthesis",
+        "kind": "godot",
+        "path": "tools/test_v01512_full_character_synthesis.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v01514_component_synthesis",
+        "label": "Historical component-driven synthesis",
+        "kind": "godot",
+        "path": "tools/test_v01514_component_driven_synthesis.gd",
+        "timeout_seconds": 60
+      }
+    ],
+    "authoring": [
+      {
+        "id": "legacy_v014_authoring_options",
+        "label": "Historical authoring option foundation",
+        "kind": "godot",
+        "path": "tools/test_v014_authoring_options.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v0142_character_transfer",
+        "label": "Historical character transfer and text input",
+        "kind": "godot",
+        "path": "tools/test_v0142_character_transfer_input.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v01412_unified_idea_generator",
+        "label": "Historical unified Idea Generator",
+        "kind": "godot",
+        "path": "tools/test_v01412_unified_idea_generator.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v01413_idea_pov",
+        "label": "Historical Idea Generator point of view",
+        "kind": "godot",
+        "path": "tools/test_v01413_idea_generator_pov.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v01416_idea_identity_pov",
+        "label": "Historical Idea Generator identity and POV",
+        "kind": "godot",
+        "path": "tools/test_v01416_idea_identity_pov.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v01418_user_centric_ideas",
+        "label": "Historical user-centric Idea Generator",
+        "kind": "godot",
+        "path": "tools/test_v01418_user_centric_ideas.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v01419_live_idea_service",
+        "label": "Historical live Idea Generator service wiring",
+        "kind": "godot",
+        "path": "tools/test_v01419_idea_generator_live_service.gd",
+        "timeout_seconds": 60
+      }
+    ],
+    "content": [
+      {
+        "id": "legacy_alternative_greetings",
+        "label": "Historical alternative greetings export",
+        "kind": "godot",
+        "path": "tools/test_alternative_greetings.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v01417_detachable_lorebook",
+        "label": "Historical detachable Lorebook Manager",
+        "kind": "godot",
+        "path": "tools/test_v01417_detachable_lorebook.gd",
+        "timeout_seconds": 60
+      }
+    ],
+    "collaborator": [
+      {
+        "id": "legacy_v0152_large_output_wiring",
+        "label": "Historical large output and Collaborator live wiring",
+        "kind": "godot",
+        "path": "tools/test_v0152_large_output_and_collaborator_wiring.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v0153_collaborator_chat_ux",
+        "label": "Historical Collaborator chat UX",
+        "kind": "godot",
+        "path": "tools/test_v0153_collaborator_chat_ux.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v0154_collaborator_management",
+        "label": "Historical Collaborator management and rich text",
+        "kind": "godot",
+        "path": "tools/test_v0154_collaborator_management_rich_text.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v0156_collaborator_artifacts",
+        "label": "Historical Collaborator rich-text artifacts",
+        "kind": "godot",
+        "path": "tools/test_v0156_collaborator_rich_text_artifacts.gd",
+        "timeout_seconds": 60
+      }
+    ],
+    "image_and_vision": [
+      {
+        "id": "legacy_image_prompt_generation",
+        "label": "Historical AI image prompt planning",
+        "kind": "godot",
+        "path": "tools/test_image_prompt_generation_v01312.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v01311_vision_capabilities",
+        "label": "Historical Vision and model capabilities",
+        "kind": "godot",
+        "path": "tools/test_v01311_vision_capabilities.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v01311_creative_vision",
+        "label": "Historical creative Vision hotfix",
+        "kind": "godot",
+        "path": "tools/test_v01311_creative_vision_hotfix.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v01311_seed_identifier",
+        "label": "Historical seed identifier naming",
+        "kind": "godot",
+        "path": "tools/test_v01311_seed_warning_name.gd",
+        "timeout_seconds": 60
+      },
+      {
+        "id": "legacy_v014_image_studio_layout",
+        "label": "Historical Image Studio scroll layout",
+        "kind": "godot",
+        "path": "tools/test_v014_image_studio_scroll_layout.gd",
+        "timeout_seconds": 60
+      }
+    ],
+    "current_wiring": [
+      {
+        "id": "legacy_v01532_idea_notebook_direct",
+        "label": "Historical direct Idea Notebook UI regression",
+        "kind": "godot",
+        "path": "tools/test_v01532_idea_notebook.gd",
+        "timeout_seconds": 180
+      },
+      {
+        "id": "legacy_v01532_ai_ideas_layout",
+        "label": "Historical AI Ideas layout regression",
+        "kind": "godot",
+        "path": "tools/test_v01532_hotfix1_ai_ideas_layout.gd",
+        "timeout_seconds": 180
+      },
+      {
+        "id": "legacy_v01539_dual_ingestion_direct",
+        "label": "Historical direct Character Card dual-ingestion regression",
+        "kind": "godot",
+        "path": "tools/test_v01539_character_card_dual_ingestion.gd",
+        "timeout_seconds": 180
+      },
+      {
+        "id": "legacy_v01540_live_source_refresh_direct",
+        "label": "Historical direct Collaborator source-refresh regression",
+        "kind": "godot",
+        "path": "tools/test_v01540_hotfix2_live_source_refresh.gd",
+        "timeout_seconds": 180
+      },
+      {
+        "id": "legacy_v01540_scrollable_sidebar_direct",
+        "label": "Historical direct Collaborator scroll regression",
+        "kind": "godot",
+        "path": "tools/test_v01540_hotfix6_scrollable_source_sidebar.gd",
+        "timeout_seconds": 180
+      },
+      {
+        "id": "legacy_v01540_diagnostics_direct",
+        "label": "Historical direct lightweight diagnostics regression",
+        "kind": "godot",
+        "path": "tools/test_v01540_hotfix7_lightweight_diagnostics.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}

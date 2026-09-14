@@ -1,0 +1,83 @@
+name: Bug report
+description: Report reproducible Character Card Forge behaviour.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Character Card Forge. Remove API keys, passwords, cookies and private character content before submitting logs or diagnostics.
+  - type: input
+    id: ccf-version
+    attributes:
+      label: Character Card Forge version
+      placeholder: e.g. v0.20.1
+    validations:
+      required: true
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating system
+      placeholder: e.g. Windows 11, Fedora 42, macOS 15
+    validations:
+      required: true
+  - type: input
+    id: build-type
+    attributes:
+      label: Build type
+      description: State whether this is an official release, development build or Godot editor run.
+    validations:
+      required: true
+  - type: dropdown
+    id: storage-mode
+    attributes:
+      label: Project or Library storage
+      options:
+        - Local/default storage
+        - Portable or shared-folder storage
+        - Not sure / not relevant
+    validations:
+      required: true
+  - type: checkboxes
+    id: integrations
+    attributes:
+      label: Integrations involved
+      options:
+        - label: Front Porch
+        - label: Cloud text, vision or image provider
+        - label: Local image provider
+        - label: Shared folder or NAS
+        - label: None
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: List the smallest reliable sequence that produces the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted diagnostics or log excerpt
+      description: Attach a diagnostic file or paste only the relevant, non-secret excerpt. Screenshots are welcome.
+      render: shell
+  - type: checkboxes
+    id: privacy-confirmation
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I removed API keys, passwords, cookies and private character content from the material above.
+          required: true
