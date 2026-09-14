@@ -1,5 +1,50 @@
 # Changelog
 
+Release notes are written before a release tag is created. Each release explicitly
+records migration needs, breaking changes and known limitations, even when there are
+none. GitHub Releases use the matching reviewed section instead of generated notes.
+
+## [0.20.4] - 2026-09-14
+
+### Highlights
+
+- Added deterministic, fail-closed source and package release preflight checks.
+- GitHub Releases now use reviewed version-matched notes from this changelog.
+- Exact Windows, Linux and unsigned macOS package names, non-empty payloads and SHA-256 checksums are verified before publication.
+- Includes the complete accumulated development line since the v0.19.0 public release baseline.
+
+### Changes
+
+- Added a reusable non-publishing `release.sh --preflight-only` path.
+- Fixed **Generate Expression Set…** opening a black, empty native window on Linux/Wayland by giving it the application window rather than Image Studio as its native owner.
+- The local release version now defaults to synchronized `VERSION` metadata instead of the historical v0.15.40 value.
+- Remote tag collisions are checked before a release commit can be pushed to `main`.
+- Updated release documentation to consistently require Godot 4.7.1 stable.
+- Added full-fidelity export profiles, deterministic previews, integration adapters, branded startup and responsive Library card density.
+- Added supported-API Front Porch Test Chat, explicit chat interchange, expression-set generation and settled-generation status recovery.
+- Added deterministic PDF text extraction, review-first bounded URL ingestion and explicit remote-source refresh.
+- Added task-specific Primary/Fast/Deep/Fallback Text routing with bounded, visible fallback behavior.
+- Added very-large Library virtualization, bounded thumbnail derivatives, optional portable/shared-folder storage and collapsible/auto-hide panels.
+- Added guided New Project creation, searchable Quick Actions, keyboard shortcuts and task-focused Workspace layouts.
+- Added the privacy-safe Support & Diagnostics center and searchable offline Help Center.
+- Retained the complete historical regression baseline, now containing 150 release-profile tests.
+
+### Migration notes
+
+- No character, project, settings, library or portable-package migration is required.
+- Release maintainers must add a complete dated changelog section before creating each future release tag.
+
+### Breaking changes
+
+- None for application users or supported interchange formats.
+- Release publication now stops when reviewed notes are missing or packaged checksums do not verify.
+
+### Known limitations
+
+- macOS packages remain unsigned and are not notarised.
+- Real-world Front Porch, provider and shared/NAS-library bake coverage remains in progress.
+- The full release regression profile remains intentionally comprehensive and can take several minutes locally.
+
 ## 0.19.4
 
 ### Added

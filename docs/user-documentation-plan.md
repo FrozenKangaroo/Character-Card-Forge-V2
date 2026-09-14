@@ -1,6 +1,6 @@
 # Character Card Forge User Documentation Plan
 
-The GitHub Wiki will be the primary expanded task-oriented user manual after the v0.20.3 public bake period. Repository `docs/` remains the home of schemas, architectural contracts, milestone implementation notes and regression details.
+The GitHub Wiki will be the primary expanded task-oriented user manual during the v0.20.4 public bake period. Repository `docs/` remains the home of schemas, architectural contracts, milestone implementation notes and regression details.
 
 v0.20.3 establishes the first verified documentation set inside the app: 12 searchable
 offline guides covering first launch, core creation and editing, Library, images,

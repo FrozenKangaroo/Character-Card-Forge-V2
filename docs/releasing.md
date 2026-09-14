@@ -17,7 +17,7 @@ https://github.com/FrozenKangaroo/Character-Card-Forge-V2
 
 - Git and GitHub CLI (`gh`) authenticated for the repository.
 - Python 3.
-- Godot 4.6.3 available as `godot`, `godot4`, or through `GODOT_BIN` for local engine validation.
+- Godot 4.7.1 stable available as `godot`, `godot4`, or through `GODOT_BIN` for local engine validation.
 - A local clone on the `main` branch at `~/Projects/Character-Card-Forge-V2`, or another location supplied through `CCF_REPO_DIR`.
 - `rsync` when running the helper from a separate development project directory.
 
@@ -54,6 +54,25 @@ CCF_REPO_DIR=/path/to/Character-Card-Forge-V2 ./release.sh
 
 The helper stops before synchronising when the destination is missing, is not a Git repository, is on a branch other than `main`, or has uncommitted changes that the operator declines to overwrite. Running the helper directly inside the Git checkout skips synchronisation.
 
+## Non-publishing preflight
+
+Before a release, run:
+
+```bash
+./release.sh --preflight-only
+```
+
+This performs the same source, Godot import and complete regression validation used by
+the interactive helper, then stops without committing, pushing, tagging or publishing.
+For the fast source/release-notes contract alone, run:
+
+```bash
+python3 tools/release_readiness_v0204.py
+```
+
+Both paths fail when the synchronized version lacks a complete dated section in
+`CHANGELOG.md`.
+
 ## Source-only update
 
 Run:
@@ -74,13 +93,14 @@ Run:
 
 Choose option `1`, then confirm the semantic version. The script:
 
-1. synchronises all application-version markers;
-2. validates project metadata and runtime JSON;
-3. parses the project with local Godot when available;
-4. commits outstanding changes;
-5. pushes `main`;
-6. creates an annotated `vX.Y.Z` tag;
-7. pushes the tag to trigger `.github/workflows/release.yml`.
+1. checks that the proposed remote tag is still unused;
+2. synchronises all application-version markers;
+3. validates the matching reviewed changelog notes, project metadata and runtime JSON;
+4. parses the project with Godot 4.7.1 stable;
+5. runs the complete inherited regression profile;
+6. commits outstanding changes and pushes `main`;
+7. creates an annotated `vX.Y.Z` tag;
+8. pushes the tag to trigger `.github/workflows/release.yml`.
 
 Do not delete or recreate a published release tag. Use a new patch version when a correction is required.
 
@@ -89,14 +109,21 @@ Do not delete or recreate a published release tag. Use a new patch version when 
 The tagged workflow:
 
 1. checks out the exact tag;
-2. installs the official Godot 4.6.3 Linux editor and export templates;
+2. installs the official Godot 4.7.1 stable Linux editor and export templates;
 3. checks that the tag matches `VERSION`;
 4. validates all bundled JSON and version markers;
 5. imports and parses the project headlessly;
 6. exports all three committed presets;
 7. packages the downloads and writes SHA-256 checksums;
-8. retains a short-lived workflow artifact for diagnostics;
-9. creates the GitHub Release using the repository `GITHUB_TOKEN`.
+8. verifies the exact three expected package names, non-empty payloads and every SHA-256 checksum;
+9. extracts the exact version-matched reviewed section from `CHANGELOG.md`;
+10. retains a short-lived workflow artifact for diagnostics;
+11. creates the GitHub Release using those reviewed notes and the repository `GITHUB_TOKEN`.
+
+GitHub's automatically generated notes are not used. Each changelog release section
+must contain **Highlights**, **Changes**, **Migration notes**, **Breaking changes** and
+**Known limitations**, with an explicit `None` where appropriate. This keeps release
+communication complete and reviewable before a tag exists.
 
 The repository must allow Actions **Read and write permissions** so the workflow can publish releases.
 

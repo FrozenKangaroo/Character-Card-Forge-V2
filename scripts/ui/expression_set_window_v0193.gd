@@ -74,6 +74,7 @@ func capabilities_v0193() -> Dictionary:
 
 func _build_ui() -> void:
 	var margin := MarginContainer.new()
+	margin.name = "ExpressionSetContentV0204"
 	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	margin.add_theme_constant_override("margin_left", 14)
 	margin.add_theme_constant_override("margin_right", 14)

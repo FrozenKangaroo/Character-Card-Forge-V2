@@ -2,20 +2,32 @@
 
 Character Card Forge is being rebuilt from scratch as a native Godot 4.7 desktop application. The original PyWebView application remains a feature and generation-behaviour reference; its legacy database, frontend architecture, and interface are not compatibility targets.
 
-## Current development candidate: v0.20.3 Searchable Offline Help Center
+## Current development candidate: v0.20.4 Deterministic Release Readiness
 
-v0.20.3 adds a permanent **Help Center** with 12 task-oriented guides covering first
-launch, character creation, providers, Library work, images, import/export, Front Porch,
-recovery and troubleshooting. Search and category filtering are fully offline, and each
-guide can route directly into the existing app tool without changing project data.
+v0.20.4 adds a fail-closed release preflight, version-matched reviewed notes and exact
+platform-package verification. Local and hosted release paths now stop on missing or
+incomplete changelog sections, mismatched tags, missing/extra/empty packages or invalid
+SHA-256 checksums. GitHub Releases use the reviewed changelog section instead of
+automatically generated notes.
 
-See [the v0.20.3 Help Center guide](docs/v0203-help-center.md) for its content and
-offline/privacy boundary.
+The candidate also fixes the Expression Set editor opening as a black native window
+on Linux/Wayland.
+
+See [the v0.20.4 release-readiness guide](docs/v0204-release-readiness.md) and the
+[release process](docs/releasing.md).
 
 The current development focus is now pre-1.0 release maturity: real-world validation,
 user documentation, repository hardening and incremental technical consolidation rather
 than another broad feature expansion. See the [release-readiness checklist](docs/pre-1.0-release-readiness.md)
 and [project roadmap](roadmap.md).
+
+### Previous candidate: v0.20.3 Searchable Offline Help Center
+
+v0.20.3 adds a permanent **Help Center** with 12 task-oriented guides covering first
+launch, character creation, providers, Library work, images, import/export, Front Porch,
+recovery and troubleshooting. Search and category filtering are fully offline, and each
+guide can route directly into the existing app tool without changing project data. See
+[the Help Center guide](docs/v0203-help-center.md).
 
 ### Previous candidate: v0.20.2 Public Bake Supportability
 

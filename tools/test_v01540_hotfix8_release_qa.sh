@@ -18,9 +18,14 @@ if [[ -z "${synchronised_version}" || "${project_version}" != "${synchronised_ve
     exit 1
 fi
 
-grep -F 'DEFAULT_RELEASE_VERSION="0.15.40"' release.sh >/dev/null
-grep -F 'release_default="${CCF_RELEASE_VERSION:-${DEFAULT_RELEASE_VERSION}}"' release.sh >/dev/null
+if grep -F 'DEFAULT_RELEASE_VERSION="0.15.40"' release.sh >/dev/null; then
+    echo "release.sh must not default future releases to the historical v0.15.40 version." >&2
+    exit 1
+fi
+grep -F 'release_default="${CCF_RELEASE_VERSION:-${current_version}}"' release.sh >/dev/null
 grep -F 'Release version [${release_default}]' release.sh >/dev/null
+grep -F 'python3 ./tools/release_readiness_v0204.py' release.sh >/dev/null
+grep -F -- '--preflight-only' release.sh >/dev/null
 
 grep -F 'REQUIRED_GODOT_VERSION="4.7.1"' release.sh >/dev/null
 grep -F 'REQUIRED_GODOT_STATUS="stable"' release.sh >/dev/null

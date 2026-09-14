@@ -320,6 +320,9 @@ func _run() -> void:
 	var v0203_main_text := FileAccess.get_file_as_string(
 		"res://scripts/main_v0203.gd"
 	)
+	var v0204_main_text := FileAccess.get_file_as_string(
+		"res://scripts/main_v0204.gd"
+	)
 	if not _require(
 		(
 			scene_text.contains("scripts/main_v0191.gd")
@@ -382,6 +385,11 @@ func _run() -> void:
 					and v0203_main_text.contains("scripts/main_v0202.gd")
 					and v0203_main_text.contains("HELP_CENTER_V0203")
 					and v0203_main_text.contains("0.20.3")
+				)
+				or (
+					scene_text.contains("scripts/main_v0204.gd")
+					and v0204_main_text.contains("scripts/main_v0203.gd")
+					and v0204_main_text.contains("0.20.4")
 				),
 		"The live application must mount the v0.19.1 workspace and display its version."
 	):
