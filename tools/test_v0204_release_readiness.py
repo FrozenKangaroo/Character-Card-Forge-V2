@@ -28,13 +28,18 @@ def load_module():
 
 def main() -> int:
     readiness = load_module()
-    report = readiness.source_report(ROOT, "v0.20.4")
-    require(report["ok"] and report["version"] == "0.20.4", "Current source preflight failed.")
+    current_version = readiness.read_version(ROOT)
+    report = readiness.source_report(ROOT, f"v{current_version}")
+    require(
+        report["ok"] and report["version"] == current_version,
+        "Current source preflight failed.",
+    )
     require(len(report["expected_artifacts"]) == 3, "Exactly three platform packages are required.")
 
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
     require("## 0.1.0" in changelog, "Historical changelog entries must remain intact.")
-    notes = readiness.extract_release_notes(changelog, "0.20.4")
+    require("## [0.20.4]" in changelog, "v0.20.4 release notes must remain intact.")
+    notes = readiness.extract_release_notes(changelog, current_version)
     require("### Migration notes" in notes, "Migration notes must be explicit.")
     require("### Breaking changes" in notes, "Breaking changes must be explicit.")
     require("### Known limitations" in notes, "Known limitations must be explicit.")
@@ -43,20 +48,20 @@ def main() -> int:
     with tempfile.TemporaryDirectory(prefix="ccf-v0204-artifacts-") as temp_dir:
         dist = Path(temp_dir)
         checksum_lines: list[str] = []
-        for index, name in enumerate(readiness.expected_artifact_names("0.20.4"), start=1):
+        for index, name in enumerate(readiness.expected_artifact_names(current_version), start=1):
             payload = f"artifact-{index}".encode("utf-8")
             (dist / name).write_bytes(payload)
             checksum_lines.append(f"{hashlib.sha256(payload).hexdigest()}  {name}")
         (dist / "SHA256SUMS.txt").write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
-        artifact_report = readiness.artifact_report(dist, "0.20.4")
+        artifact_report = readiness.artifact_report(dist, current_version)
         require(
             artifact_report["artifact_count"] == 3 and artifact_report["checksums_verified"],
             "Complete artifact fixtures must verify.",
         )
-        first_name = readiness.expected_artifact_names("0.20.4")[0]
+        first_name = readiness.expected_artifact_names(current_version)[0]
         (dist / first_name).write_bytes(b"tampered")
         try:
-            readiness.artifact_report(dist, "0.20.4")
+            readiness.artifact_report(dist, current_version)
         except readiness.ReadinessError as exc:
             require("Checksum mismatch" in str(exc), "Tampering must fail specifically on checksum.")
         else:

@@ -1,0 +1,24 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.20.5 complete regression suites",
+  "description": "v0.20.4 complete pre-1.0 baseline plus expanded offline manual and deterministic Wiki export.",
+  "base_manifest": "regression_suites_v0204.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0205_user_documentation",
+        "label": "v0.20.5 expanded offline user manual",
+        "kind": "godot",
+        "path": "tools/test_v0205_user_documentation.gd",
+        "timeout_seconds": 90
+      },
+      {
+        "id": "v0205_wiki_export",
+        "label": "v0.20.5 deterministic GitHub Wiki export",
+        "kind": "python",
+        "path": "tools/test_v0205_wiki_export.py",
+        "timeout_seconds": 30
+      }
+    ]
+  }
+}

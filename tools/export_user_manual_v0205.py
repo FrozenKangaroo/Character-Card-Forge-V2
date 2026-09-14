@@ -1,0 +1,199 @@
+#!/usr/bin/env python3
+"""Validate the offline Help catalog and export deterministic GitHub Wiki Markdown."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+import re
+import sys
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parent.parent
+CATALOG_PATH = ROOT / "data/help_articles_v1.json"
+
+
+class ManualError(RuntimeError):
+    """The user-manual source or requested output is invalid."""
+
+
+def require(condition: bool, message: str) -> None:
+    if not condition:
+        raise ManualError(message)
+
+
+def load_catalog(path: Path = CATALOG_PATH) -> dict[str, Any]:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    require(isinstance(data, dict), "Help catalog root must be an object.")
+    return data
+
+
+def page_slug(value: str) -> str:
+    words = re.findall(r"[A-Za-z0-9]+", value)
+    require(bool(words), f"Cannot create a Wiki slug for {value!r}.")
+    return "-".join(word.capitalize() for word in words)
+
+
+def validate_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
+    categories = catalog.get("categories", [])
+    articles = catalog.get("articles", [])
+    require(catalog.get("format_version") == 1, "Unsupported Help catalog format.")
+    require(isinstance(categories, list) and categories, "Help categories are missing.")
+    require(isinstance(articles, list) and articles, "Help articles are missing.")
+
+    category_ids: set[str] = set()
+    category_slugs: set[str] = set()
+    for category in categories:
+        require(isinstance(category, dict), "Every Help category must be an object.")
+        category_id = str(category.get("id", "")).strip()
+        label = str(category.get("label", "")).strip()
+        require(category_id and category_id not in category_ids, "Category IDs must be unique.")
+        require(bool(label), f"Help category {category_id!r} needs a label.")
+        slug = page_slug(label)
+        require(slug not in category_slugs, f"Duplicate Wiki category slug: {slug}")
+        category_ids.add(category_id)
+        category_slugs.add(slug)
+
+    article_ids: set[str] = set()
+    article_slugs: set[str] = set()
+    action_count = 0
+    for article in articles:
+        require(isinstance(article, dict), "Every Help article must be an object.")
+        article_id = str(article.get("id", "")).strip()
+        title = str(article.get("title", "")).strip()
+        require(article_id and article_id not in article_ids, "Article IDs must be unique.")
+        require(str(article.get("category", "")) in category_ids, f"Unknown category on {article_id}.")
+        require(bool(title), f"Help article {article_id!r} needs a title.")
+        require(bool(article.get("steps", [])), f"Help article {article_id!r} needs steps.")
+        slug = page_slug(title)
+        require(slug not in article_slugs, f"Duplicate Wiki article slug: {slug}")
+        article_ids.add(article_id)
+        article_slugs.add(slug)
+        action_count += len(article.get("actions", []))
+
+    for article in articles:
+        for related_id in article.get("related", []):
+            require(
+                str(related_id) in article_ids,
+                f"{article.get('id')} links to unknown article {related_id!r}.",
+            )
+    return {
+        "category_count": len(categories),
+        "article_count": len(articles),
+        "action_count": action_count,
+    }
+
+
+def _article_lookup(catalog: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    return {str(article["id"]): article for article in catalog["articles"]}
+
+
+def render_article(article: dict[str, Any], lookup: dict[str, dict[str, Any]]) -> str:
+    lines = [
+        f"# {article['title']}",
+        "",
+        str(article.get("summary", "")),
+        "",
+        "## Steps",
+        "",
+    ]
+    for index, step in enumerate(article.get("steps", []), start=1):
+        lines.append(f"{index}. {step}")
+    notes = article.get("notes", [])
+    if notes:
+        lines.extend(["", "## Good to know", ""])
+        lines.extend(f"- {note}" for note in notes)
+    actions = article.get("actions", [])
+    if actions:
+        lines.extend(["", "## Open in Character Card Forge", ""])
+        lines.extend(f"- **{action['label']}**" for action in actions)
+    related = article.get("related", [])
+    if related:
+        lines.extend(["", "## Related pages", ""])
+        for related_id in related:
+            related_article = lookup[str(related_id)]
+            lines.append(
+                f"- [{related_article['title']}]({page_slug(str(related_article['title']))})"
+            )
+    lines.extend(["", "---", "", "Generated from the versioned offline Help catalog.", ""])
+    return "\n".join(lines)
+
+
+def rendered_pages(catalog: dict[str, Any]) -> dict[str, str]:
+    validate_catalog(catalog)
+    lookup = _article_lookup(catalog)
+    pages: dict[str, str] = {}
+    home = [
+        "# Character Card Forge User Manual",
+        "",
+        "Task-oriented guidance generated from the same validated catalog shipped in the app.",
+        "",
+    ]
+    sidebar = ["**[Home](Home)**", ""]
+    for category in catalog["categories"]:
+        category_id = str(category["id"])
+        label = str(category["label"])
+        category_slug = page_slug(label)
+        category_articles = [
+            article for article in catalog["articles"] if article["category"] == category_id
+        ]
+        home.extend([f"## [{label}]({category_slug})", ""])
+        category_lines = [f"# {label}", ""]
+        sidebar.extend([f"**[{label}]({category_slug})**", ""])
+        for article in category_articles:
+            title = str(article["title"])
+            slug = page_slug(title)
+            summary = str(article.get("summary", ""))
+            home.append(f"- [{title}]({slug}) — {summary}")
+            category_lines.append(f"- [{title}]({slug}) — {summary}")
+            sidebar.append(f"- [{title}]({slug})")
+            pages[f"{slug}.md"] = render_article(article, lookup)
+        home.append("")
+        category_lines.append("")
+        pages[f"{category_slug}.md"] = "\n".join(category_lines)
+        sidebar.append("")
+    pages["Home.md"] = "\n".join(home)
+    pages["_Sidebar.md"] = "\n".join(sidebar)
+    return dict(sorted(pages.items()))
+
+
+def export_pages(output: Path, pages: dict[str, str]) -> None:
+    output.mkdir(parents=True, exist_ok=True)
+    for name, content in pages.items():
+        destination = output / name
+        temporary = output / f".{name}.tmp"
+        temporary.write_text(content, encoding="utf-8")
+        temporary.replace(destination)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, help="Optional directory for Wiki Markdown pages.")
+    parser.add_argument("--json", action="store_true", help="Print the validation report as JSON.")
+    args = parser.parse_args()
+    try:
+        catalog = load_catalog()
+        report = validate_catalog(catalog)
+        pages = rendered_pages(catalog)
+        report["page_count"] = len(pages)
+        if args.output is not None:
+            export_pages(args.output, pages)
+            report["output"] = str(args.output)
+    except (OSError, json.JSONDecodeError, ManualError) as exc:
+        print(f"User manual export failed: {exc}", file=sys.stderr)
+        return 1
+    if args.json:
+        print(json.dumps(report, indent=2, sort_keys=True))
+    else:
+        print(
+            "User manual validated: "
+            f"{report['article_count']} articles, {report['category_count']} categories, "
+            f"{report['page_count']} deterministic Wiki pages."
+        )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
