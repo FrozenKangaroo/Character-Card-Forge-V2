@@ -368,13 +368,16 @@ func _run() -> void:
 			"Godot rewrite • v0.20.0-hotfix1", "Godot rewrite • v0.20.1",
 			"Godot rewrite • v0.20.2", "Godot rewrite • v0.20.3",
 			"Godot rewrite • v0.20.4", "Godot rewrite • v0.20.5",
-			"Godot rewrite • v0.20.6"
+			"Godot rewrite • v0.20.6", "Godot rewrite • v0.20.7"
 		]:
 			version_found = true
 			break
 	if not _require(
 		workspace_value is CCFWorkspaceV0190View
-		and workspace_value.get("_generation_service") is CCFGenerationServiceV0190
+		and (
+			workspace_value.get("_generation_service") is CCFGenerationServiceV0190
+			or workspace_value.get("_generation_service") is CCFGenerationServiceCurrent
+		)
 		and workspace_value.get("_card_workflow_window") is CCFCardWorkflowWindowV0190
 		and _find_button(workspace_value, "Rich Authoring") != null
 		and _find_button(workspace_value, "Card Workflows") != null

@@ -1,15 +1,15 @@
 class_name CCFWorkspaceV0195View
 extends "res://scripts/ui/workspace_v0194.gd"
 
-const GENERATION_SERVICE_V0195 = preload(
-	"res://scripts/services/generation_service_v0195.gd"
+const GENERATION_SERVICE_CURRENT = preload(
+	"res://scripts/services/generation_service_current.gd"
 )
 
 
 func _create_worker_service_v01526(
 	worker_id: String, worker_label: String, job_number_base: int
 ) -> CCFGenerationServiceV01526:
-	var service := GENERATION_SERVICE_V0195.new() as CCFGenerationServiceV01526
+	var service := GENERATION_SERVICE_CURRENT.new() as CCFGenerationServiceV01526
 	add_child(service)
 	service.configure_scheduler_v01526(
 		_ai_scheduler_v01526, worker_id, worker_label, job_number_base
@@ -91,9 +91,9 @@ func _queue_ai_review_v0183() -> void:
 	var profile := CCFSettingsService.profile_for_text_task(
 		_settings, CCFSettingsService.TEXT_TASK_DEEP
 	)
-	var service := _generation_service as CCFGenerationServiceV0195
+	var service := _generation_service as CCFGenerationServiceCurrent
 	if service == null:
-		_status.text = "The v0.19.5 AI Review routing service is unavailable."
+		_status.text = "The current AI Review routing service is unavailable."
 		return
 	var result := service.queue_ai_review_v0183(
 		_project_container,
@@ -113,7 +113,7 @@ func _queue_ai_review_v0183() -> void:
 
 
 func text_routing_capabilities_v0195() -> Dictionary:
-	var service := _generation_service as CCFGenerationServiceV0195
+	var service := _generation_service as CCFGenerationServiceCurrent
 	if service == null:
 		return {}
 	var capabilities := service.text_routing_capabilities_v0195()

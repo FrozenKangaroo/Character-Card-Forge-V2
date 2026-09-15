@@ -41,6 +41,6 @@ jobs:
       - name: Run the complete versioned regression profile
         run: >-
           python3 ./tools/run_regression_suite.py
-          --manifest ./tools/regression_suites_v0206.json
+          --manifest ./tools/regression_suites_v0207.json
           --profile release
           --godot "$(command -v godot)"

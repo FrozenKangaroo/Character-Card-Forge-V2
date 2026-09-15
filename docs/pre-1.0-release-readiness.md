@@ -1,6 +1,6 @@
 # Character Card Forge Pre-1.0 Release Readiness
 
-This checklist is the shared release contract for the v0.20.6 public bake period and the eventual 1.0 release candidate. It records evidence that must exist; it is not permission to bypass a failed check or silently narrow supported behaviour.
+This checklist is the shared release contract for the v0.20.7 public bake period and the eventual 1.0 release candidate. It records evidence that must exist; it is not permission to bypass a failed check or silently narrow supported behaviour.
 
 ## Status convention
 
@@ -16,6 +16,7 @@ This checklist is the shared release contract for the v0.20.6 public bake period
 - [x] v0.20.4 provides deterministic source/package preflight and reviewed version-matched release notes.
 - [x] v0.20.5 provides a complete structured offline manual and deterministic reviewed Wiki export source.
 - [x] v0.20.6 begins measured semantic runtime consolidation without removing compatibility history.
+- [x] v0.20.7 consolidates the recent generation-service layers while preserving review, derivative, split-set and task-routing behavior.
 - [x] New Project creation has an explained selection and explicit confirmation action.
 - [ ] Complete a human task-path pass at ordinary 1080p and an ultrawide size:
   - create a first character;
@@ -78,7 +79,7 @@ This checklist is the shared release contract for the v0.20.6 public bake period
 ## Repository and release
 
 - [x] Use a small stable GitHub Actions surface driven by the versioned regression manifest.
-- [x] Preserve all historical regression test scripts, including 28 tests migrated from workflow-only enforcement into the 156-test release profile.
+- [x] Preserve all historical regression test scripts, including 28 tests migrated from workflow-only enforcement into the 158-test release profile.
 - [ ] Let the consolidated validation checks prove stable on `main`.
 - [ ] Protect `main`: require pull requests and the consolidated validation checks, block force pushes and block deletion.
 - [ ] Keep an explicit emergency maintainer bypass only if operationally necessary.
@@ -90,7 +91,7 @@ This checklist is the shared release contract for the v0.20.6 public bake period
 ## Technical consolidation
 
 - [x] Inventory and measure the active application-shell implementation chain; inventory the remaining runtime subsystems incrementally.
-- [x] Consolidate the first bounded subsystem into a semantically named current implementation; continue one subsystem per focused PR.
+- [x] Consolidate the first two bounded subsystems into semantically named current implementations; continue one subsystem per focused PR.
 - [ ] Preserve public signals, service contracts, project/card schemas and external APIs.
 - [ ] Prefer service composition for independent responsibilities over new version-layer inheritance.
 - [ ] Retire compatibility wrappers only after the complete inherited regression profile proves equivalence.

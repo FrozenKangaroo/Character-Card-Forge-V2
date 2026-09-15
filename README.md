@@ -11,11 +11,12 @@ interface architecture.
 
 ## Current status
 
-The current development candidate is **v0.20.6 — Runtime Consolidation Phase 1**.
-It replaces four release-specific application-shell layers with one semantic current
-layer while retaining the complete Help Center, Support & Diagnostics behavior and all
-historical compatibility files. A deterministic report measures the active inheritance
-reduction and prevents later releases from silently restarting shell stacking.
+The current development candidate is **v0.20.7 — Runtime Consolidation Phase 2**.
+It replaces four recent generation-service layers with one semantic current service
+while retaining AI Review, Compact/Lite derivatives, Split Character Sets, task-specific
+Text routing and all historical compatibility files. A deterministic report measures the
+active inheritance reduction and prevents later releases from silently restarting service
+stacking.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental

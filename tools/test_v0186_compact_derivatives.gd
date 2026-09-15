@@ -273,13 +273,17 @@ func _run() -> void:
 			"Godot rewrite • v0.20.0", "Godot rewrite • v0.20.0-hotfix1",
 			"Godot rewrite • v0.20.1", "Godot rewrite • v0.20.2",
 			"Godot rewrite • v0.20.3", "Godot rewrite • v0.20.4",
-			"Godot rewrite • v0.20.5", "Godot rewrite • v0.20.6"
+			"Godot rewrite • v0.20.5", "Godot rewrite • v0.20.6",
+			"Godot rewrite • v0.20.7"
 		]:
 			version_found = true
 			break
 	if not _require(
 		workspace_value is CCFWorkspaceV0186View
-		and workspace_value.get("_generation_service") is CCFGenerationServiceV0186
+		and (
+			workspace_value.get("_generation_service") is CCFGenerationServiceV0186
+			or workspace_value.get("_generation_service") is CCFGenerationServiceCurrent
+		)
 		and _find_button(workspace_value, "Create Compact/Lite Derivative…") != null
 		and version_found,
 		"The live v0.18.6 app must install the derivative tool and current generation service."
