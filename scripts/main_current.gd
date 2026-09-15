@@ -9,7 +9,7 @@ const SUPPORT_CENTER_CURRENT = preload(
 const HELP_CENTER_CURRENT = preload(
 	"res://scripts/ui/help_center_window_v0203.gd"
 )
-const CURRENT_BUILD_VERSION := "0.20.6"
+const CURRENT_BUILD_VERSION := "0.20.7"
 
 var _support_center_v0202: CCFSupportCenterWindowV0202
 var _help_center_v0203: CCFHelpCenterWindowV0203
@@ -116,8 +116,8 @@ func _update_current_build_label() -> void:
 		if node is Label and node.text.begins_with("Godot rewrite • v"):
 			node.text = "Godot rewrite • v%s" % CURRENT_BUILD_VERSION
 			node.tooltip_text = (
-				"v0.20.6 begins measured runtime consolidation by replacing four "
-				+ "release-specific main-shell layers with one semantic current layer, "
-				+ "while retaining the complete compatibility baseline."
+				"v0.20.7 continues measured runtime consolidation by composing recent "
+				+ "AI Review, Compact Derivative, Split Character Set and Text-routing "
+				+ "behavior in one semantic current generation service."
 			)
 			return

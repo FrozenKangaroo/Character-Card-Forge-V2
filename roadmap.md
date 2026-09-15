@@ -53,11 +53,12 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 **Pre-1.0 Release Maturity — public bake, documentation, repository hardening and technical consolidation**
 
-v0.20.6 begins measured technical consolidation with one deliberately bounded runtime
-boundary. The active application shell now composes Help Center, Support & Diagnostics
-and current-build presentation in one semantic `main_current.gd` layer. Historical
-implementations remain available for compatibility evidence, while deterministic tooling
-proves the active depth fell from 132 to 129 scripts and prevents renewed shell stacking.
+v0.20.7 continues measured technical consolidation with a second deliberately bounded
+runtime boundary. The active generation service now composes AI Review, Compact/Lite
+derivatives, Split Character Sets and task-specific Text routing in one semantic
+`generation_service_current.gd` implementation. Historical implementations remain
+available for compatibility evidence, while deterministic tooling proves the active
+generation-service depth fell from 34 to 31 scripts and prevents renewed service stacking.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -172,14 +173,23 @@ key-to-extension mapping, and the mapping has a visible preview. No automatic ne
 traffic or raw database access is introduced.
 
 The released application displays **v0.19.0** and the current source candidate displays
-**v0.20.6**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+**v0.20.7**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
-After the first shell consolidation is reviewed, the next numbered product milestone
-will be selected from bake evidence or the next separately measured subsystem boundary.
+After the first two bounded consolidations, the next numbered product milestone will be
+selected from bake evidence or the next separately measured subsystem boundary.
 Pre-1.0 work must not create a new broad feature family merely to continue version
 expansion.
 
 ## Completed
+
+### v0.20.7 — Runtime Consolidation Phase 2
+
+- Replaced the four active v0.18.3, v0.18.6, v0.19.0 and v0.19.5 generation-service layers with one semantic current implementation extending the stable v0.18.0-hotfix1 boundary.
+- Preserved AI Review, Compact/Lite derivative, Split Character Set and task-specific Text routing/fallback behavior without deleting historical implementation files.
+- Preserved existing job metadata, provenance fields, failure categories, signals and service contracts.
+- Routed every active isolated Workspace AI worker through `generation_service_current.gd`.
+- Added deterministic generation inheritance tracing with cycle, missing-resource, boundary and reactivated-layer validation.
+- Reduced the measured active generation-service depth from 34 scripts to 31 and added static, live and historical routing-equivalence checks to the complete 158-test inherited release profile.
 
 ### v0.20.6 — Runtime Consolidation Phase 1
 
@@ -188,7 +198,7 @@ expansion.
 - Corrected privacy-safe support reports to identify the actual current application version.
 - Added deterministic inheritance tracing with cycle, missing-resource, boundary and reactivated-layer validation.
 - Reduced the measured active main-shell depth from 132 scripts to 129 and established `main_current.gd` as the update point for later releases.
-- Added static structure and live Godot behavior checks to the complete 155-test inherited release profile.
+- Added static structure and live Godot behavior checks to the complete 156-test inherited release profile.
 
 ### v0.20.5 — Expanded User Manual and Wiki Export
 
@@ -602,8 +612,8 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
-- Prove the consolidated metadata/import warning check and complete 155-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
-- Publish the post-v0.20.6 build through the deterministic release gate and use its expanded offline manual plus privacy-safe support report during the bake period.
+- Prove the consolidated metadata/import warning check and complete 158-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
+- Publish the post-v0.20.7 build through the deterministic release gate and use its expanded offline manual plus privacy-safe support report during the bake period.
 - Review the 61 generated Wiki pages against packaged builds, capture current platform screenshots and publish the approved manual described by [`docs/user-documentation-plan.md`](docs/user-documentation-plan.md).
 - Complete and record the real-world evidence in [`docs/pre-1.0-release-readiness.md`](docs/pre-1.0-release-readiness.md), including Front Porch, providers, shared/NAS storage, updates and recovery.
 - Enable a practical `main` ruleset after the two consolidated checks have stable names on `main`: require pull requests and those checks, block force pushes and branch deletion, and avoid a mandatory human reviewer for this single-maintainer repository.
@@ -616,7 +626,7 @@ permanently active milestone work.
 
 ## Pre-1.0 Sequence
 
-1. **Release and bake:** ship the completed v0.20.6 line through the deterministic release gate and prioritise defects and workflow friction using the offline Help Center and privacy-safe support report where useful.
+1. **Release and bake:** ship the completed v0.20.7 line through the deterministic release gate and prioritise defects and workflow friction using the offline Help Center and privacy-safe support report where useful.
 2. **Documentation:** review the completed 49-article catalog and publish its generated Getting Started, core authoring, Library, images, import/export, Front Porch, advanced settings and help/recovery Wiki sections with current screenshots.
 3. **Repository hardening:** prove consolidated CI, enable `main` protection and keep release metadata/package generation deterministic.
 4. **Technical consolidation:** continue replacing deep runtime version inheritance incrementally with semantic current implementations and service composition, preserving compatibility wrappers until equivalence is proven.

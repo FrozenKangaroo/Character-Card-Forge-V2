@@ -26,9 +26,10 @@ func _run() -> void:
 	await process_frame
 
 	var app_script := app.get_script() as Script
+	var expected_version := FileAccess.get_file_as_string("res://VERSION").strip_edges()
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text == "Godot rewrite • v0.20.6":
+		if node is Label and node.text == "Godot rewrite • v%s" % expected_version:
 			version_found = true
 			break
 	var support_button := app.find_child(
@@ -59,7 +60,7 @@ func _run() -> void:
 	if not _require(
 		support_window.visible
 		and report_editor != null
-		and report_editor.text.contains('"version": "0.20.6"'),
+		and report_editor.text.contains('"version": "%s"' % expected_version),
 		"The consolidated shell must report the actual current build version."
 	):
 		return

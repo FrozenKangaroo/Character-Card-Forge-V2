@@ -223,7 +223,7 @@ func _run() -> void:
 			"Godot rewrite • v0.20.0-hotfix1", "Godot rewrite • v0.20.1",
 			"Godot rewrite • v0.20.2", "Godot rewrite • v0.20.3",
 			"Godot rewrite • v0.20.4", "Godot rewrite • v0.20.5",
-			"Godot rewrite • v0.20.6"
+			"Godot rewrite • v0.20.6", "Godot rewrite • v0.20.7"
 		]:
 			version_found = true
 			break
@@ -231,7 +231,10 @@ func _run() -> void:
 		window_value is CCFAIReviewWindowV0183
 		and button_value is Button
 		and (button_value as Button).text == "AI Review"
-		and worker_value is CCFGenerationServiceV0183
+		and (
+			worker_value is CCFGenerationServiceV0183
+			or worker_value is CCFGenerationServiceCurrent
+		)
 		and version_found,
 		"The live v0.18.3-or-later Workspace must retain AI Review and its generation service."
 	):

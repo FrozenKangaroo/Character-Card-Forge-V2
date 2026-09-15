@@ -33,7 +33,10 @@ def main() -> int:
     require(report["depth_reduction"] == 3, "Phase 1 must remove three active inheritance hops.")
     require(report["historical_layers_preserved"], "Historical compatibility layers must remain available.")
     require(not (ROOT / "scripts/main_v0206.gd").exists(), "New releases must not restart version-shell stacking.")
-    require((ROOT / "VERSION").read_text(encoding="utf-8").strip() == "0.20.6", "VERSION is stale.")
+    require(
+        (ROOT / "VERSION").read_text(encoding="utf-8").strip() in {"0.20.6", "0.20.7"},
+        "Phase 1 must remain active in a compatible candidate.",
+    )
     print("V0206_RUNTIME_CONSOLIDATION_OK")
     return 0
 

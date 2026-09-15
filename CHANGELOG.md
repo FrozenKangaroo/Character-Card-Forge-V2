@@ -4,6 +4,38 @@ Release notes are written before a release tag is created. Each release explicit
 records migration needs, breaking changes and known limitations, even when there are
 none. GitHub Releases use the matching reviewed section instead of generated notes.
 
+## [0.20.7] - 2026-09-15
+
+### Highlights
+
+- Continued incremental runtime consolidation with the generation-service boundary.
+- Replaced the active v0.18.3, v0.18.6, v0.19.0 and v0.19.5 generation-service layers with one semantic `generation_service_current.gd` implementation based on the stable v0.18.0-hotfix1 boundary.
+- Reduced the measured active generation-service inheritance depth from 34 layers to 31 without deleting historical compatibility implementations.
+
+### Changes
+
+- Preserved AI Review, Compact/Lite derivatives, Split Character Sets and task-specific Text profile routing with bounded visible fallback behavior.
+- Preserved existing generation metadata, job records, provenance fields, failure categories and public service contracts.
+- Updated every active isolated Workspace AI worker to use the semantic current generation service.
+- Added a deterministic generation inheritance reporter that detects cycles, missing resources, reactivated consolidated layers and loss of the semantic service boundary.
+- Added static consolidation, live current-service and historical v0.19.5 routing-equivalence checks to the complete 158-test inherited release profile.
+- Established `generation_service_current.gd` as the generation-service update point for later releases so ordinary changes do not require another inheritance layer.
+
+### Migration notes
+
+- No character, project, settings, provider, generation-job, library or portable-package migration is required.
+- Historical generation-service files remain present for regression evidence and compatibility tracing.
+
+### Breaking changes
+
+- None for application users, provider profiles, service consumers or supported interchange formats.
+
+### Known limitations
+
+- This phase consolidates only four recent generation-service layers; the active service still inherits 31 historical layers.
+- Workspace, Image Studio, Library and other versioned subsystem chains remain unchanged and will be evaluated separately.
+- macOS packages remain unsigned and are not notarised.
+
 ## [0.20.6] - 2026-09-15
 
 ### Highlights
