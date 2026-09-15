@@ -11,10 +11,11 @@ interface architecture.
 
 ## Current status
 
-The current development candidate is **v0.20.5 — Expanded User Manual and Wiki Export**.
-It expands the searchable offline Help Center from 12 overview guides to 49 focused
-articles across ten task sections. The same validated catalog can produce a deterministic
-61-page GitHub Wiki source set, preventing the in-app and online manuals from drifting.
+The current development candidate is **v0.20.6 — Runtime Consolidation Phase 1**.
+It replaces four release-specific application-shell layers with one semantic current
+layer while retaining the complete Help Center, Support & Diagnostics behavior and all
+historical compatibility files. A deterministic report measures the active inheritance
+reduction and prevents later releases from silently restarting shell stacking.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental

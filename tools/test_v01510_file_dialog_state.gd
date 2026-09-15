@@ -25,7 +25,7 @@ func _init() -> void:
 
 func _active_shell_inherits_v01510() -> bool:
 	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	var marker := "res://scripts/main_v"
+	var marker := "res://scripts/main"
 	var start := scene_source.find(marker)
 	if start < 0:
 		return false
@@ -34,7 +34,7 @@ func _active_shell_inherits_v01510() -> bool:
 		return false
 	var script_path := scene_source.substr(start, end - start + 3)
 	# Keep historical feature-shell checks forward-compatible as later releases
-	# add thin inherited composition layers above v0.15.10.
+	# add inherited or semantic composition layers above v0.15.10.
 	for _depth in range(256):
 		if script_path == "res://scripts/main_v01510.gd":
 			return true

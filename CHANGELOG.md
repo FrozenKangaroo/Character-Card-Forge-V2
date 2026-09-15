@@ -4,6 +4,37 @@ Release notes are written before a release tag is created. Each release explicit
 records migration needs, breaking changes and known limitations, even when there are
 none. GitHub Releases use the matching reviewed section instead of generated notes.
 
+## [0.20.6] - 2026-09-15
+
+### Highlights
+
+- Began incremental runtime consolidation with one bounded application-shell migration.
+- Replaced the active v0.20.2 through v0.20.5 shell sequence with one semantic `main_current.gd` layer based on the stable v0.20.1 boundary.
+- Reduced the measured active main-shell inheritance depth from 132 layers to 129 without deleting historical compatibility implementations.
+
+### Changes
+
+- Preserved permanent Help Center and Support & Diagnostics navigation, Quick Action routing and offline behavior in the semantic current shell.
+- Corrected Support & Diagnostics to report the actual current application version rather than the historical v0.20.2 implementation version.
+- Added a deterministic inheritance reporter that detects cycles, missing resources, reactivated consolidated layers and loss of the semantic shell boundary.
+- Added live current-shell and static consolidation checks to the complete 155-test inherited release profile.
+- Established `main_current.gd` as the application-shell update point for later releases so version bumps do not require another inheritance layer.
+
+### Migration notes
+
+- No character, project, settings, library, provider, Help catalog or portable-package migration is required.
+- Historical versioned shell files remain present for regression evidence and compatibility tracing.
+
+### Breaking changes
+
+- None for application users, extension data or supported interchange formats.
+
+### Known limitations
+
+- This first phase consolidates only the recent Help, Support and release-label shell layers; the active shell still inherits 129 historical layers.
+- Workspace, generation, Image Studio, Library and other versioned subsystem chains remain unchanged and will be evaluated separately.
+- macOS packages remain unsigned and are not notarised.
+
 ## [0.20.5] - 2026-09-15
 
 ### Highlights
