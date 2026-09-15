@@ -160,7 +160,7 @@ func _filter_topics() -> void:
 	if _visible_articles.is_empty():
 		_selected_article_id = ""
 		_content.text = (
-			"[font_size=22][b]No matching help topics[/b][/font_size]\n\n"
+			"[font_size=22]No matching help topics[/font_size]\n\n"
 			+ "Try a shorter search or choose All topics."
 		)
 		_clear_container(_actions)

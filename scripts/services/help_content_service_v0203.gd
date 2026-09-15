@@ -82,20 +82,23 @@ static func render_article(article: Dictionary) -> String:
 	if article.is_empty():
 		return "[font_size=22]No help topic selected[/font_size]"
 	var lines := PackedStringArray([
-		"[font_size=26][b]%s[/b][/font_size]" % _escape_bbcode(str(article.get("title", "Help"))),
+		# RichTextLabel's synthetic bold path can leave duplicated or offset glyphs
+		# on some Linux font stacks. Font size provides the heading hierarchy without
+		# invoking that renderer.
+		"[font_size=26]%s[/font_size]" % _escape_bbcode(str(article.get("title", "Help"))),
 		"",
 		"%s" % _escape_bbcode(str(article.get("summary", ""))),
 		"",
-		"[font_size=19][b]Steps[/b][/font_size]",
+		"[font_size=19]Steps[/font_size]",
 	])
 	var step_number := 1
 	for step_value in article.get("steps", []):
-		lines.append("[b]%d.[/b] %s" % [step_number, _escape_bbcode(str(step_value))])
+		lines.append("%d. %s" % [step_number, _escape_bbcode(str(step_value))])
 		lines.append("")
 		step_number += 1
 	var notes_value: Variant = article.get("notes", [])
 	if notes_value is Array and not (notes_value as Array).is_empty():
-		lines.append("[font_size=19][b]Good to know[/b][/font_size]")
+		lines.append("[font_size=19]Good to know[/font_size]")
 		for note_value in notes_value:
 			lines.append("• %s" % _escape_bbcode(str(note_value)))
 		lines.append("")
