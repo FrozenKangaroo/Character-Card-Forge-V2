@@ -142,4 +142,4 @@ Each page should be verified against the current packaged build before publicati
 - [x] Validate article/category identities, related links and Wiki slug uniqueness.
 - [x] Restructure README as the product and first-use front door.
 - [ ] Capture and review current Windows, Linux and macOS package screenshots.
-- [ ] Publish the generated pages to the GitHub Wiki after packaged-build verification.
+- [x] Publish the generated 61-page manual to the GitHub Wiki.

@@ -614,7 +614,7 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 - Prove the consolidated metadata/import warning check and complete 158-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
 - Publish the post-v0.20.7 build through the deterministic release gate and use its expanded offline manual plus privacy-safe support report during the bake period.
-- Review the 61 generated Wiki pages against packaged builds, capture current platform screenshots and publish the approved manual described by [`docs/user-documentation-plan.md`](docs/user-documentation-plan.md).
+- Maintain the published 61-page Wiki from the validated Help catalog, review it against packaged builds and add current platform screenshots as navigation and labels stabilise.
 - Complete and record the real-world evidence in [`docs/pre-1.0-release-readiness.md`](docs/pre-1.0-release-readiness.md), including Front Porch, providers, shared/NAS storage, updates and recovery.
 - Enable a practical `main` ruleset after the two consolidated checks have stable names on `main`: require pull requests and those checks, block force pushes and branch deletion, and avoid a mandatory human reviewer for this single-maintainer repository.
 - Continue version-layer consolidation one measured subsystem and one reviewable PR at a time, with the complete inherited release profile required for every migration.

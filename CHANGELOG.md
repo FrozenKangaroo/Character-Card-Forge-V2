@@ -20,6 +20,7 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Added a deterministic generation inheritance reporter that detects cycles, missing resources, reactivated consolidated layers and loss of the semantic service boundary.
 - Added static consolidation, live current-service and historical v0.19.5 routing-equivalence checks to the complete 158-test inherited release profile.
 - Established `generation_service_current.gd` as the generation-service update point for later releases so ordinary changes do not require another inheritance layer.
+- Published the validated 61-page task-oriented manual to the repository's GitHub Wiki from the same catalog shipped in the application.
 
 ### Migration notes
 

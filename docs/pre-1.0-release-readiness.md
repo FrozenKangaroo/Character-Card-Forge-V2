@@ -69,7 +69,7 @@ This checklist is the shared release contract for the v0.20.7 public bake period
 ## Documentation and support
 
 - [x] Reduce README to a user-facing product front door with installation and first-character guidance.
-- [ ] Publish the task-oriented GitHub Wiki described in `roadmap.md`.
+- [x] Publish the task-oriented 61-page GitHub Wiki described in `roadmap.md`.
 - [x] Add searchable offline help for first launch, core workflows, recovery and troubleshooting.
 - [ ] Add current screenshots after navigation and labels are frozen.
 - [ ] Document troubleshooting, diagnostics, privacy, backup and recovery.
