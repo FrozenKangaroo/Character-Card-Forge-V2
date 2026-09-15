@@ -54,7 +54,8 @@ func _run() -> void:
 		and not image_topics.is_empty()
 		and str(image_topics[0].get("category", "")) == "images"
 		and rendered.contains("Create your first character")
-		and rendered.contains("[b]1.[/b]"),
+		and rendered.contains("1. ")
+		and not rendered.contains("[b]"),
 		"Search, category filtering and task rendering must remain deterministic."
 	):
 		return

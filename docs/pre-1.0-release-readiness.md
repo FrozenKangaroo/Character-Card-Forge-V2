@@ -78,7 +78,7 @@ This checklist is the shared release contract for the v0.20.6 public bake period
 ## Repository and release
 
 - [x] Use a small stable GitHub Actions surface driven by the versioned regression manifest.
-- [x] Preserve all historical regression test scripts, including 28 tests migrated from workflow-only enforcement into the 155-test release profile.
+- [x] Preserve all historical regression test scripts, including 28 tests migrated from workflow-only enforcement into the 156-test release profile.
 - [ ] Let the consolidated validation checks prove stable on `main`.
 - [ ] Protect `main`: require pull requests and the consolidated validation checks, block force pushes and block deletion.
 - [ ] Keep an explicit emergency maintainer bypass only if operationally necessary.

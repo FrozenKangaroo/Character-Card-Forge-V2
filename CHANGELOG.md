@@ -17,8 +17,9 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Preserved permanent Help Center and Support & Diagnostics navigation, Quick Action routing and offline behavior in the semantic current shell.
 - Corrected Support & Diagnostics to report the actual current application version rather than the historical v0.20.2 implementation version.
 - Added a deterministic inheritance reporter that detects cycles, missing resources, reactivated consolidated layers and loss of the semantic shell boundary.
-- Added live current-shell and static consolidation checks to the complete 155-test inherited release profile.
+- Added live current-shell, static consolidation and Help-heading artifact checks to the complete 156-test inherited release profile.
 - Established `main_current.gd` as the application-shell update point for later releases so version bumps do not require another inheritance layer.
+- Removed synthetic bold rendering from Help Center article headings, section headings, step numbers and empty-search messages to prevent duplicated or offset glyph artifacts on affected Linux font stacks.
 
 ### Migration notes
 
