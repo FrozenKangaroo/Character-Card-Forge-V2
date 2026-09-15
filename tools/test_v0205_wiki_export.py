@@ -54,8 +54,11 @@ def main() -> int:
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     scene = (ROOT / "scenes/main.tscn").read_text(encoding="utf-8")
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    require(version == "0.20.5", "VERSION must identify the v0.20.5 candidate.")
-    require("main_v0205.gd" in scene, "The live scene must use the v0.20.5 application layer.")
+    require(version in {"0.20.5", "0.20.6"}, "The v0.20.5 manual must remain in a compatible candidate.")
+    require(
+        "main_v0205.gd" in scene or "main_current.gd" in scene,
+        "The live scene must retain the v0.20.5 manual through a compatible application shell.",
+    )
     require(
         "## Install" in readme and "## Create your first character" in readme,
         "README must be a task-focused product front door.",

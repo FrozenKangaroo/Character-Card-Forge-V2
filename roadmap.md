@@ -53,11 +53,11 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 **Pre-1.0 Release Maturity — public bake, documentation, repository hardening and technical consolidation**
 
-v0.20.5 completes the structured user-manual source for the public bake. The searchable
-offline Help Center now provides 49 focused articles across ten user-facing sections,
-and the same validated catalog deterministically exports a complete 61-page GitHub Wiki
-source set. README is now the concise product, installation and first-character front
-door instead of a growing version-history archive.
+v0.20.6 begins measured technical consolidation with one deliberately bounded runtime
+boundary. The active application shell now composes Help Center, Support & Diagnostics
+and current-build presentation in one semantic `main_current.gd` layer. Historical
+implementations remain available for compatibility evidence, while deterministic tooling
+proves the active depth fell from 132 to 129 scripts and prevents renewed shell stacking.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -172,14 +172,23 @@ key-to-extension mapping, and the mapping has a visible preview. No automatic ne
 traffic or raw database access is introduced.
 
 The released application displays **v0.19.0** and the current source candidate displays
-**v0.20.5**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+**v0.20.6**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
-After the documentation package is reviewed and published, the next numbered product
-milestone will be selected from bake evidence or the repository-hardening and technical-
-consolidation sequence. Pre-1.0 work must not create a new broad feature family merely
-to continue version expansion.
+After the first shell consolidation is reviewed, the next numbered product milestone
+will be selected from bake evidence or the next separately measured subsystem boundary.
+Pre-1.0 work must not create a new broad feature family merely to continue version
+expansion.
 
 ## Completed
+
+### v0.20.6 — Runtime Consolidation Phase 1
+
+- Replaced the four active v0.20.2–v0.20.5 application-shell layers with one semantic current shell extending the stable v0.20.1 boundary.
+- Preserved the Help Center, Support & Diagnostics, permanent navigation, Quick Actions and update-comparison behavior without deleting historical implementation files.
+- Corrected privacy-safe support reports to identify the actual current application version.
+- Added deterministic inheritance tracing with cycle, missing-resource, boundary and reactivated-layer validation.
+- Reduced the measured active main-shell depth from 132 scripts to 129 and established `main_current.gd` as the update point for later releases.
+- Added static structure and live Godot behavior checks to the complete 155-test inherited release profile.
 
 ### v0.20.5 — Expanded User Manual and Wiki Export
 
@@ -593,12 +602,12 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
-- Prove the consolidated metadata/import warning check and complete 153-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
-- Publish the post-v0.20.5 build through the deterministic release gate and use its expanded offline manual plus privacy-safe support report during the bake period.
+- Prove the consolidated metadata/import warning check and complete 155-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
+- Publish the post-v0.20.6 build through the deterministic release gate and use its expanded offline manual plus privacy-safe support report during the bake period.
 - Review the 61 generated Wiki pages against packaged builds, capture current platform screenshots and publish the approved manual described by [`docs/user-documentation-plan.md`](docs/user-documentation-plan.md).
 - Complete and record the real-world evidence in [`docs/pre-1.0-release-readiness.md`](docs/pre-1.0-release-readiness.md), including Front Porch, providers, shared/NAS storage, updates and recovery.
 - Enable a practical `main` ruleset after the two consolidated checks have stable names on `main`: require pull requests and those checks, block force pushes and branch deletion, and avoid a mandatory human reviewer for this single-maintainer repository.
-- Begin version-layer consolidation only after the bake release, one subsystem and one reviewable PR at a time, with the complete inherited release profile required for every migration.
+- Continue version-layer consolidation one measured subsystem and one reviewable PR at a time, with the complete inherited release profile required for every migration.
 
 The previous version-by-version runtime-testing list has been consolidated into the
 release-readiness checklist. Items remain required where they describe a supported
@@ -607,10 +616,10 @@ permanently active milestone work.
 
 ## Pre-1.0 Sequence
 
-1. **Release and bake:** ship the completed v0.20.5 line through the deterministic release gate and prioritise defects and workflow friction using the offline Help Center and privacy-safe support report where useful.
+1. **Release and bake:** ship the completed v0.20.6 line through the deterministic release gate and prioritise defects and workflow friction using the offline Help Center and privacy-safe support report where useful.
 2. **Documentation:** review the completed 49-article catalog and publish its generated Getting Started, core authoring, Library, images, import/export, Front Porch, advanced settings and help/recovery Wiki sections with current screenshots.
 3. **Repository hardening:** prove consolidated CI, enable `main` protection and keep release metadata/package generation deterministic.
-4. **Technical consolidation:** replace deep runtime version inheritance incrementally with semantic current implementations and service composition, preserving compatibility wrappers until equivalence is proven.
+4. **Technical consolidation:** continue replacing deep runtime version inheritance incrementally with semantic current implementations and service composition, preserving compatibility wrappers until equivalence is proven.
 5. **1.0 release candidate:** complete or explicitly scope every readiness item, freeze stability-sensitive contracts and publish an RC before final 1.0.
 6. **Post-1.0:** let Front Porch changes, user evidence and carefully bounded integrations drive development.
 

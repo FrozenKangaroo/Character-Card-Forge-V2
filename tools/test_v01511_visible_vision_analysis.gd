@@ -21,7 +21,7 @@ func _init() -> void:
 
 func _active_shell_inherits_v01511() -> bool:
 	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	var marker := "res://scripts/main_v"
+	var marker := "res://scripts/main"
 	var start := scene_source.find(marker)
 	if start < 0:
 		return false
@@ -29,7 +29,7 @@ func _active_shell_inherits_v01511() -> bool:
 	if end < 0:
 		return false
 	var script_path := scene_source.substr(start, end - start + 3)
-	# Later releases add thin inherited shell layers. Keep the historical feature
+	# Later releases add inherited or semantic shell layers. Keep the historical feature
 	# check bounded but comfortably forward-compatible instead of failing once the
 	# version chain becomes one level longer than its original fixed depth.
 	for _depth in range(256):

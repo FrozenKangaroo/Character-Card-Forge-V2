@@ -19,7 +19,7 @@ func _init() -> void:
 
 func _active_shell_inherits_v0158() -> bool:
 	var scene_source := FileAccess.get_file_as_string("res://scenes/main.tscn")
-	var marker := "res://scripts/main_v"
+	var marker := "res://scripts/main"
 	var marker_index := scene_source.find(marker)
 	if marker_index < 0:
 		return false

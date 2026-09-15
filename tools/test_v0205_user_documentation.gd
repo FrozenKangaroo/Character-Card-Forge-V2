@@ -56,7 +56,9 @@ func _run() -> void:
 	await process_frame
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
-		if node is Label and node.text == "Godot rewrite • v0.20.5":
+		if node is Label and node.text in [
+			"Godot rewrite • v0.20.5", "Godot rewrite • v0.20.6"
+		]:
 			version_found = true
 			break
 	var help_window := app.get("_help_center_v0203") as CCFHelpCenterWindowV0203
