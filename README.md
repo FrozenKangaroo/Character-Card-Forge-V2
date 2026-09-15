@@ -9,9 +9,13 @@ The Godot application is a ground-up successor to the original PyWebView version
 preserves useful workflows and portable content rather than the legacy database or web
 interface architecture.
 
+![Character Card Forge Workspace with a populated character project](docs/images/user-manual/workspace-overview.png)
+
+*The v0.20.7 Workspace keeps canonical character fields and task-specific tools in one project view.*
+
 ## Current status
 
-The current development candidate is **v0.20.7 — Runtime Consolidation Phase 2**.
+The current public release is **v0.20.7 — Runtime Consolidation Phase 2**.
 It replaces four recent generation-service layers with one semantic current service
 while retaining AI Review, Compact/Lite derivatives, Split Character Sets, task-specific
 Text routing and all historical compatibility files. A deterministic report measures the
@@ -114,6 +118,8 @@ The Wiki source can be validated locally or exported to a directory with:
 python3 tools/export_user_manual_v0205.py
 python3 tools/export_user_manual_v0205.py --output /path/to/wiki-checkout
 ```
+
+The export includes the reviewed screenshot assets referenced by the generated pages.
 
 ## Run from source
 

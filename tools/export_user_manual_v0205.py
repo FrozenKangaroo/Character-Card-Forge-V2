@@ -7,12 +7,15 @@ import argparse
 import json
 from pathlib import Path
 import re
+import shutil
 import sys
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG_PATH = ROOT / "data/help_articles_v1.json"
+SCREENSHOT_CATALOG_PATH = ROOT / "data/help_screenshots_v1.json"
+SCREENSHOT_SOURCE_DIR = ROOT / "docs/images/user-manual"
 
 
 class ManualError(RuntimeError):
@@ -27,6 +30,12 @@ def require(condition: bool, message: str) -> None:
 def load_catalog(path: Path = CATALOG_PATH) -> dict[str, Any]:
     data = json.loads(path.read_text(encoding="utf-8"))
     require(isinstance(data, dict), "Help catalog root must be an object.")
+    return data
+
+
+def load_screenshot_catalog(path: Path = SCREENSHOT_CATALOG_PATH) -> dict[str, Any]:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    require(isinstance(data, dict), "Screenshot catalog root must be an object.")
     return data
 
 
@@ -86,19 +95,71 @@ def validate_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def validate_screenshot_catalog(
+    catalog: dict[str, Any], screenshot_catalog: dict[str, Any]
+) -> dict[str, Any]:
+    require(screenshot_catalog.get("format_version") == 1, "Unsupported screenshot catalog format.")
+    mappings = screenshot_catalog.get("article_screenshots", {})
+    require(isinstance(mappings, dict), "Screenshot article mappings must be an object.")
+    article_ids = {str(article["id"]) for article in catalog["articles"]}
+    unique_files: set[str] = set()
+    usage_count = 0
+    for article_id, screenshots in mappings.items():
+        require(article_id in article_ids, f"Screenshots reference unknown article {article_id!r}.")
+        require(isinstance(screenshots, list) and screenshots, f"{article_id} needs screenshot entries.")
+        article_files: set[str] = set()
+        for screenshot in screenshots:
+            require(isinstance(screenshot, dict), f"Invalid screenshot entry for {article_id}.")
+            file_name = str(screenshot.get("file", "")).strip()
+            source = SCREENSHOT_SOURCE_DIR / file_name
+            require(
+                file_name
+                and Path(file_name).name == file_name
+                and Path(file_name).suffix.lower() == ".png",
+                f"Screenshot file for {article_id} must be a plain PNG filename.",
+            )
+            require(file_name not in article_files, f"Duplicate screenshot {file_name} on {article_id}.")
+            require(source.is_file(), f"Missing documentation screenshot: {source.relative_to(ROOT)}")
+            require(bool(str(screenshot.get("alt", "")).strip()), f"{file_name} needs alternative text.")
+            require(bool(str(screenshot.get("caption", "")).strip()), f"{file_name} needs a caption.")
+            article_files.add(file_name)
+            unique_files.add(file_name)
+            usage_count += 1
+    return {
+        "screenshot_article_count": len(mappings),
+        "screenshot_count": len(unique_files),
+        "screenshot_usage_count": usage_count,
+    }
+
+
 def _article_lookup(catalog: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return {str(article["id"]): article for article in catalog["articles"]}
 
 
-def render_article(article: dict[str, Any], lookup: dict[str, dict[str, Any]]) -> str:
+def render_article(
+    article: dict[str, Any],
+    lookup: dict[str, dict[str, Any]],
+    screenshot_catalog: dict[str, Any],
+) -> str:
     lines = [
         f"# {article['title']}",
         "",
         str(article.get("summary", "")),
         "",
-        "## Steps",
-        "",
     ]
+    screenshots = screenshot_catalog.get("article_screenshots", {}).get(str(article["id"]), [])
+    if screenshots:
+        lines.extend(["## Screenshot" if len(screenshots) == 1 else "## Screenshots", ""])
+        for screenshot in screenshots:
+            lines.extend(
+                [
+                    f"![{screenshot['alt']}](images/user-manual/{screenshot['file']})",
+                    "",
+                    f"*{screenshot['caption']}*",
+                    "",
+                ]
+            )
+    lines.extend(["## Steps", ""])
     for index, step in enumerate(article.get("steps", []), start=1):
         lines.append(f"{index}. {step}")
     notes = article.get("notes", [])
@@ -121,8 +182,13 @@ def render_article(article: dict[str, Any], lookup: dict[str, dict[str, Any]]) -
     return "\n".join(lines)
 
 
-def rendered_pages(catalog: dict[str, Any]) -> dict[str, str]:
+def rendered_pages(
+    catalog: dict[str, Any], screenshot_catalog: dict[str, Any] | None = None
+) -> dict[str, str]:
     validate_catalog(catalog)
+    if screenshot_catalog is None:
+        screenshot_catalog = load_screenshot_catalog()
+    validate_screenshot_catalog(catalog, screenshot_catalog)
     lookup = _article_lookup(catalog)
     pages: dict[str, str] = {}
     home = [
@@ -149,7 +215,7 @@ def rendered_pages(catalog: dict[str, Any]) -> dict[str, str]:
             home.append(f"- [{title}]({slug}) — {summary}")
             category_lines.append(f"- [{title}]({slug}) — {summary}")
             sidebar.append(f"- [{title}]({slug})")
-            pages[f"{slug}.md"] = render_article(article, lookup)
+            pages[f"{slug}.md"] = render_article(article, lookup, screenshot_catalog)
         home.append("")
         category_lines.append("")
         pages[f"{category_slug}.md"] = "\n".join(category_lines)
@@ -159,13 +225,28 @@ def rendered_pages(catalog: dict[str, Any]) -> dict[str, str]:
     return dict(sorted(pages.items()))
 
 
-def export_pages(output: Path, pages: dict[str, str]) -> None:
+def export_pages(
+    output: Path,
+    pages: dict[str, str],
+    screenshot_catalog: dict[str, Any] | None = None,
+) -> None:
     output.mkdir(parents=True, exist_ok=True)
     for name, content in pages.items():
         destination = output / name
         temporary = output / f".{name}.tmp"
         temporary.write_text(content, encoding="utf-8")
         temporary.replace(destination)
+    if screenshot_catalog is None:
+        screenshot_catalog = load_screenshot_catalog()
+    asset_output = output / "images/user-manual"
+    asset_output.mkdir(parents=True, exist_ok=True)
+    file_names = {
+        str(screenshot["file"])
+        for screenshots in screenshot_catalog.get("article_screenshots", {}).values()
+        for screenshot in screenshots
+    }
+    for file_name in sorted(file_names):
+        shutil.copyfile(SCREENSHOT_SOURCE_DIR / file_name, asset_output / file_name)
 
 
 def main() -> int:
@@ -176,10 +257,12 @@ def main() -> int:
     try:
         catalog = load_catalog()
         report = validate_catalog(catalog)
-        pages = rendered_pages(catalog)
+        screenshot_catalog = load_screenshot_catalog()
+        report.update(validate_screenshot_catalog(catalog, screenshot_catalog))
+        pages = rendered_pages(catalog, screenshot_catalog)
         report["page_count"] = len(pages)
         if args.output is not None:
-            export_pages(args.output, pages)
+            export_pages(args.output, pages, screenshot_catalog)
             report["output"] = str(args.output)
     except (OSError, json.JSONDecodeError, ManualError) as exc:
         print(f"User manual export failed: {exc}", file=sys.stderr)
@@ -190,7 +273,8 @@ def main() -> int:
         print(
             "User manual validated: "
             f"{report['article_count']} articles, {report['category_count']} categories, "
-            f"{report['page_count']} deterministic Wiki pages."
+            f"{report['page_count']} deterministic Wiki pages and "
+            f"{report['screenshot_count']} reviewed screenshots."
         )
     return 0
 

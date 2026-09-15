@@ -53,7 +53,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 **Pre-1.0 Release Maturity — public bake, documentation, repository hardening and technical consolidation**
 
-v0.20.7 continues measured technical consolidation with a second deliberately bounded
+The public v0.20.7 release continues measured technical consolidation with a second deliberately bounded
 runtime boundary. The active generation service now composes AI Review, Compact/Lite
 derivatives, Split Character Sets and task-specific Text routing in one semantic
 `generation_service_current.gd` implementation. Historical implementations remain
@@ -172,8 +172,8 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The released application displays **v0.19.0** and the current source candidate displays
-**v0.20.7**. Both use the Godot **4.7.x stable** project baseline, keep Forward+ with
+The released application and current source display **v0.20.7**. They use the Godot
+**4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
 selected from bake evidence or the next separately measured subsystem boundary.
@@ -613,8 +613,8 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 ## In Progress
 
 - Prove the consolidated metadata/import warning check and complete 158-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
-- Publish the post-v0.20.7 build through the deterministic release gate and use its expanded offline manual plus privacy-safe support report during the bake period.
-- Maintain the published 61-page Wiki from the validated Help catalog, review it against packaged builds and add current platform screenshots as navigation and labels stabilise.
+- Use the published v0.20.7 packages, expanded offline manual and privacy-safe support report during the bake period.
+- Maintain the published 61-page Wiki from the validated Help catalog, publish the integrated 19-image Linux screenshot set and add Windows/macOS comparison captures where platform presentation differs.
 - Complete and record the real-world evidence in [`docs/pre-1.0-release-readiness.md`](docs/pre-1.0-release-readiness.md), including Front Porch, providers, shared/NAS storage, updates and recovery.
 - Enable a practical `main` ruleset after the two consolidated checks have stable names on `main`: require pull requests and those checks, block force pushes and branch deletion, and avoid a mandatory human reviewer for this single-maintainer repository.
 - Continue version-layer consolidation one measured subsystem and one reviewable PR at a time, with the complete inherited release profile required for every migration.
@@ -626,8 +626,8 @@ permanently active milestone work.
 
 ## Pre-1.0 Sequence
 
-1. **Release and bake:** ship the completed v0.20.7 line through the deterministic release gate and prioritise defects and workflow friction using the offline Help Center and privacy-safe support report where useful.
-2. **Documentation:** review the completed 49-article catalog and publish its generated Getting Started, core authoring, Library, images, import/export, Front Porch, advanced settings and help/recovery Wiki sections with current screenshots.
+1. **Release and bake:** use the published v0.20.7 line to prioritise defects and workflow friction through the offline Help Center and privacy-safe support report where useful.
+2. **Documentation:** maintain the published 49-article Wiki, publish the first reviewed Linux screenshot set and add Windows/macOS comparison captures where the packaged UI differs.
 3. **Repository hardening:** prove consolidated CI, enable `main` protection and keep release metadata/package generation deterministic.
 4. **Technical consolidation:** continue replacing deep runtime version inheritance incrementally with semantic current implementations and service composition, preserving compatibility wrappers until equivalence is proven.
 5. **1.0 release candidate:** complete or explicitly scope every readiness item, freeze stability-sensitive contracts and publish an RC before final 1.0.

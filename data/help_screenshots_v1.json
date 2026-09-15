@@ -1,0 +1,171 @@
+{
+  "format_version": 1,
+  "article_screenshots": {
+    "first_launch": [
+      {
+        "file": "home.png",
+        "alt": "Character Card Forge Home screen with the main navigation and recent projects",
+        "caption": "The Home screen keeps creation, Library, Help Center and support tools within the main navigation."
+      }
+    ],
+    "first_character": [
+      {
+        "file": "new-project.png",
+        "alt": "New Project chooser with creation routes, template selection and Create Project button",
+        "caption": "Choose a creation route and template, then confirm with Create Project."
+      }
+    ],
+    "manual_editing": [
+      {
+        "file": "workspace-overview.png",
+        "alt": "Character Workspace showing the primary editing tabs and populated character fields",
+        "caption": "The Workspace keeps canonical character fields and task-specific tools in one project view."
+      }
+    ],
+    "character_builder": [
+      {
+        "file": "character-builder.png",
+        "alt": "Character Builder with editable Foundation fields and AI-assisted actions",
+        "caption": "Character Builder supports manual answers, AI suggestions and reviewable application to the character."
+      }
+    ],
+    "idea_generator_notebook": [
+      {
+        "file": "idea-generator.png",
+        "alt": "Idea Generator with a concept prompt, detail selector and generated character idea",
+        "caption": "Idea Generator turns configurable ingredients into reviewable concepts."
+      },
+      {
+        "file": "idea-notebook.png",
+        "alt": "Idea Notebook with saved ideas and the selected idea details",
+        "caption": "Idea Notebook stores promising concepts independently from Character Projects."
+      }
+    ],
+    "character_collaborator": [
+      {
+        "file": "character-collaborator.png",
+        "alt": "Character Collaborator conversation with source controls and generation actions",
+        "caption": "Character Collaborator keeps the target, reference sources and generated handoff explicit."
+      }
+    ],
+    "templates_generation_modes": [
+      {
+        "file": "structured-builder.png",
+        "alt": "Structured Builder showing configurable character ingredients and lock controls",
+        "caption": "Structured creation modes let you configure and lock ingredients before generation."
+      }
+    ],
+    "workspace_quality": [
+      {
+        "file": "workspace-overview.png",
+        "alt": "Populated Character Workspace with editing tabs and quality tools",
+        "caption": "Use the Workspace as the canonical editing surface before inspection, review and export."
+      }
+    ],
+    "greetings_scenarios": [
+      {
+        "file": "scenarios-and-greetings.png",
+        "alt": "Character Workspace with the Scenario Presets and Alternative Greetings tools",
+        "caption": "Scenario Presets and Alternative Greetings provide reviewable alternate openings without replacing the canonical card silently."
+      }
+    ],
+    "lorebooks_relationships": [
+      {
+        "file": "lorebook-manager.png",
+        "alt": "Lorebook Manager with named entries, trigger keys, lore content and Trigger Preview",
+        "caption": "Named lore entries combine editable content with explicit activation keys and trigger testing."
+      }
+    ],
+    "card_inspector": [
+      {
+        "file": "card-inspector.png",
+        "alt": "Card Inspector showing token estimates, health checks and card metadata",
+        "caption": "Card Inspector provides deterministic health, token and interchange information before AI review or export."
+      }
+    ],
+    "ai_review": [
+      {
+        "file": "ai-review.png",
+        "alt": "AI Review window showing the score, rubric and review report controls",
+        "caption": "AI Review is advisory and keeps the complete report and proposed changes visible before application."
+      }
+    ],
+    "revision_history": [
+      {
+        "file": "revision-history.png",
+        "alt": "Revision History comparison showing selectable revisions and field-level differences",
+        "caption": "Revision History compares saved states and supports selective, non-destructive recovery."
+      }
+    ],
+    "library_basics": [
+      {
+        "file": "character-library.png",
+        "alt": "Character Library with search, filters, scalable card grid and project details",
+        "caption": "The Library combines indexed search, workflow filters, privacy presentation and scalable cards."
+      }
+    ],
+    "library_layout": [
+      {
+        "file": "character-library.png",
+        "alt": "Character Library showing card density and collapsible side panels",
+        "caption": "Adjust card density and collapse either side panel to prioritise the grid or project details."
+      }
+    ],
+    "multi_projects": [
+      {
+        "file": "multi-character-workspace.png",
+        "alt": "Multi-Character Workspace showing a roster and combined workflow draft",
+        "caption": "Multi-character projects separate the persistent roster from the active cast and combined output."
+      }
+    ],
+    "image_studio": [
+      {
+        "file": "image-inputs.png",
+        "alt": "Image Studio with prompt controls, reference inputs and managed results",
+        "caption": "Image Studio keeps creative intent, provider execution settings, source images and accepted results distinct."
+      }
+    ],
+    "image_inputs": [
+      {
+        "file": "image-inputs.png",
+        "alt": "Image Studio Inputs tab with image-to-image, reference and inpainting controls",
+        "caption": "Reference, image-to-image and inpainting inputs remain explicit and operation-specific."
+      }
+    ],
+    "avatar_expressions": [
+      {
+        "file": "avatar-expression-gallery.png",
+        "alt": "Avatar Gallery and Expression Set workflow with labelled generated images",
+        "caption": "Accepted alternate looks and exact expression labels share the managed Avatar Gallery."
+      }
+    ],
+    "import_character": [
+      {
+        "file": "import-preview.png",
+        "alt": "Character import preview with portrait, detected format, validation and import choices",
+        "caption": "Import preview identifies the format, validates the card and presents explicit import choices before writing a project."
+      }
+    ],
+    "export_character": [
+      {
+        "file": "export-front-porch.png",
+        "alt": "Export and Front Porch window showing the Direct Front Porch Install workflow",
+        "caption": "Export and installation actions show their target, validation state and result instead of writing silently."
+      }
+    ],
+    "front_porch": [
+      {
+        "file": "export-front-porch.png",
+        "alt": "Direct Front Porch Install screen with connection and active-character status",
+        "caption": "Front Porch integration uses explicit supported-API connection, validation and install actions."
+      }
+    ],
+    "front_porch_install_sync": [
+      {
+        "file": "export-front-porch.png",
+        "alt": "Front Porch install and synchronization screen showing connection and card readiness",
+        "caption": "Connection, card readiness and supported install or synchronization actions remain visible to the author."
+      }
+    ]
+  }
+}

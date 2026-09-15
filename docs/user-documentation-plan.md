@@ -133,6 +133,10 @@ Version-by-version history belongs in `CHANGELOG.md`, `roadmap.md` and milestone
 6. Recovery, known limitations and FAQ.
 
 Each page should be verified against the current packaged build before publication.
+The first screenshot pass maps 19 reviewed v0.20.7 Linux captures across the core
+creation, editing, Library, multi-character, image, import/export and Front Porch pages.
+Windows and macOS captures are still required for platform-specific visual comparison;
+the Wiki does not need duplicate platform images where the application UI is identical.
 
 ## v0.20.5 implementation status
 
@@ -141,5 +145,6 @@ Each page should be verified against the current packaged build before publicati
 - [x] Generate deterministic Wiki Home, sidebar, category and article pages.
 - [x] Validate article/category identities, related links and Wiki slug uniqueness.
 - [x] Restructure README as the product and first-use front door.
-- [ ] Capture and review current Windows, Linux and macOS package screenshots.
+- [x] Capture, review and integrate the first current Linux package screenshot set.
+- [ ] Capture Windows and macOS comparison screenshots for platform-specific differences.
 - [x] Publish the generated 61-page manual to the GitHub Wiki.
