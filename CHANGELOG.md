@@ -4,6 +4,37 @@ Release notes are written before a release tag is created. Each release explicit
 records migration needs, breaking changes and known limitations, even when there are
 none. GitHub Releases use the matching reviewed section instead of generated notes.
 
+## [0.20.5] - 2026-09-15
+
+### Highlights
+
+- Expanded the searchable offline Help Center from 12 overview guides to 49 focused task articles across ten user-facing sections.
+- Added deterministic GitHub Wiki Markdown export from the same validated catalog used inside the application.
+- Reworked README into a concise product, installation and first-character front door instead of a version-history archive.
+
+### Changes
+
+- Added focused guidance for manual and AI authoring, quality and revisions, Library organisation, multi-character work, images, import/export, Front Porch, advanced settings and recovery.
+- Added stable Home, category, article and sidebar generation for a complete 61-page Wiki source set.
+- Kept Help browsing and Wiki generation local and deterministic with no provider calls, network requests or project-data access.
+- Added forward-compatible Help Center regression expectations so later catalog sections do not invalidate the original v0.20.3 contract.
+- Added live v0.20.5 Help UI and deterministic Wiki-output coverage to the complete 153-test inherited release profile.
+
+### Migration notes
+
+- No character, project, settings, library, provider or portable-package migration is required.
+- Existing Help article IDs remain stable; the catalog adds new categories and articles without removing prior topics.
+
+### Breaking changes
+
+- None for application users or supported interchange formats.
+
+### Known limitations
+
+- GitHub Wiki pages are generated for review and publication; the application does not publish or overwrite the repository Wiki automatically.
+- Current screenshots still need to be captured from reviewed platform packages during the public bake.
+- macOS packages remain unsigned and are not notarised.
+
 ## [0.20.4] - 2026-09-14
 
 ### Highlights

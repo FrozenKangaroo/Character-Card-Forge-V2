@@ -218,7 +218,8 @@ func _run() -> void:
 			"Godot rewrite • v0.19.4", "Godot rewrite • v0.19.5",
 			"Godot rewrite • v0.20.0", "Godot rewrite • v0.20.0-hotfix1",
 			"Godot rewrite • v0.20.1", "Godot rewrite • v0.20.2",
-			"Godot rewrite • v0.20.3", "Godot rewrite • v0.20.4"
+			"Godot rewrite • v0.20.3", "Godot rewrite • v0.20.4",
+			"Godot rewrite • v0.20.5"
 		]:
 			version_found = true
 			break

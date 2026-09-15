@@ -2,10 +2,14 @@
   "format_version": 1,
   "categories": [
     {"id": "getting_started", "label": "Getting Started"},
-    {"id": "authoring", "label": "Creating & Editing"},
-    {"id": "library", "label": "Library"},
+    {"id": "authoring", "label": "Creating Characters"},
+    {"id": "quality", "label": "Editing & Quality"},
+    {"id": "library", "label": "Library & Organisation"},
+    {"id": "multi_character", "label": "Multi-Character Work"},
     {"id": "images", "label": "Images"},
-    {"id": "sharing", "label": "Import, Export & Front Porch"},
+    {"id": "sharing", "label": "Import & Export"},
+    {"id": "front_porch", "label": "Front Porch"},
+    {"id": "advanced", "label": "Settings & Advanced"},
     {"id": "help", "label": "Help & Recovery"}
   ],
   "articles": [
@@ -91,7 +95,7 @@
     },
     {
       "id": "workspace_quality",
-      "category": "authoring",
+      "category": "quality",
       "title": "Edit, inspect and improve a character",
       "summary": "Use the Workspace, Card Inspector, AI Review and Revision History safely.",
       "keywords": ["edit", "workspace", "review", "inspector", "revision", "quality", "diff"],
@@ -171,7 +175,7 @@
     },
     {
       "id": "front_porch",
-      "category": "sharing",
+      "category": "front_porch",
       "title": "Connect and install to Front Porch",
       "summary": "Use supported APIs and portable formats without direct database writes.",
       "keywords": ["front porch", "install", "sync", "login", "2fa", "group", "world", "chat"],
@@ -244,6 +248,594 @@
       ],
       "actions": [{"id": "support_diagnostics", "label": "Review Support Report"}],
       "related": ["troubleshooting", "provider_setup", "backup_recovery"]
+    },
+    {
+      "id": "installation",
+      "category": "getting_started",
+      "title": "Install Character Card Forge",
+      "summary": "Choose the correct package, extract it and keep your projects separate from the application folder.",
+      "keywords": ["install", "windows", "linux", "macos", "download", "release", "package"],
+      "steps": [
+        "Download the package for your platform from the official GitHub Release.",
+        "Verify the published checksum when you need independent package-integrity confirmation.",
+        "Extract the complete archive to a writable application folder and launch Character Card Forge.",
+        "On unsigned macOS builds, review the documented platform warning before choosing whether to open the app."
+      ],
+      "notes": ["Updates never silently replace a running installation. Project libraries remain separate from application files."],
+      "actions": [{"id": "getting_started", "label": "Open Getting Started"}],
+      "related": ["first_launch", "storage_updates", "known_limits_reporting"]
+    },
+    {
+      "id": "manual_editing",
+      "category": "authoring",
+      "title": "Manual editing and Manual Guided",
+      "summary": "Create complete cards without an AI provider or use a step-by-step manual flow.",
+      "keywords": ["manual", "guided", "offline", "fields", "edit", "without ai"],
+      "steps": [
+        "Choose New Project, then select Blank Workspace for direct editing or Manual Guided for a stepped workflow.",
+        "Choose a template and confirm Create Project.",
+        "Fill the canonical character fields and optional sections at your own pace.",
+        "Save the project, inspect it and export only when the preview matches your intent."
+      ],
+      "notes": ["Manual authoring does not require provider configuration or network access."],
+      "actions": [{"id": "new_project", "label": "Start Manual Project…"}],
+      "related": ["first_character", "character_builder", "workspace_layouts"]
+    },
+    {
+      "id": "character_builder",
+      "category": "authoring",
+      "title": "Use Character Builder",
+      "summary": "Assemble appearance, personality and scene direction from editable structured choices.",
+      "keywords": ["builder", "appearance", "personality", "scene", "structured", "preset"],
+      "steps": [
+        "Open the Builder from a character project and choose the section you want to develop.",
+        "Select, edit or add options instead of accepting a preset as fixed content.",
+        "Review the assembled result before applying it to canonical character fields.",
+        "Use normal Workspace editing for any final prose or continuity adjustments."
+      ],
+      "notes": ["Builder presets are starting structures and never prevent manual changes."],
+      "actions": [{"id": "new_project", "label": "Choose a Creation Route…"}],
+      "related": ["manual_editing", "templates_generation_modes", "workspace_quality"]
+    },
+    {
+      "id": "idea_generator_notebook",
+      "category": "authoring",
+      "title": "Idea Generator and Idea Notebook",
+      "summary": "Generate several concepts, keep useful ideas and deliberately choose what becomes a project.",
+      "keywords": ["idea", "generator", "notebook", "concept", "brainstorm", "capture"],
+      "steps": [
+        "Choose Idea Generator when you want several candidate concepts from explicit options.",
+        "Review the complete results and save promising ideas to Idea Notebook.",
+        "Edit saved ideas or combine your own notes before starting a character.",
+        "Create a project only from the idea you intentionally choose."
+      ],
+      "notes": ["Idea generation preserves user agency and does not make brainstorming canonical automatically."],
+      "actions": [{"id": "new_project", "label": "Open Idea Workflows…"}],
+      "related": ["character_collaborator", "templates_generation_modes", "first_character"]
+    },
+    {
+      "id": "character_collaborator",
+      "category": "authoring",
+      "title": "Develop a character with Character Collaborator",
+      "summary": "Brainstorm conversationally, manage evidence and create a reviewed Blueprint handoff.",
+      "keywords": ["collaborator", "conversation", "blueprint", "evidence", "source", "rewind"],
+      "steps": [
+        "Start Character Collaborator from New Project or send one explicit existing character for refinement.",
+        "Add reference sources and assign evidence roles when several sources have different authority.",
+        "Develop the character until the conversation contains the detail you want preserved.",
+        "Create the Generation Blueprint, review its supplementary greetings and Lorebook, then choose the destination draft.",
+        "Use rewind when you need to remove later conversation turns without deleting independent references."
+      ],
+      "notes": ["Conversation remains non-canonical until you explicitly create or apply a draft."],
+      "actions": [{"id": "new_project", "label": "Start Character Collaborator…"}],
+      "related": ["idea_generator_notebook", "reference_sources", "lorebooks_relationships"]
+    },
+    {
+      "id": "templates_generation_modes",
+      "category": "authoring",
+      "title": "Templates and generation modes",
+      "summary": "Choose field structure and generation depth without mixing templates with character content.",
+      "keywords": ["template", "mode", "extended", "standard", "component", "generation"],
+      "steps": [
+        "Choose a template when creating the project; confirm it before the project is created.",
+        "Use the generation mode that matches the desired depth and available model limits.",
+        "Review generated sections before applying them, especially after changing models or providers.",
+        "Keep reusable structural defaults in templates and character-specific facts in the project."
+      ],
+      "notes": ["A larger generation mode never bypasses the configured model output ceiling."],
+      "actions": [{"id": "new_project", "label": "Choose Template Start…"}],
+      "related": ["provider_setup", "manual_editing", "character_builder"]
+    },
+    {
+      "id": "workspace_layouts",
+      "category": "quality",
+      "title": "Workspace and task layouts",
+      "summary": "Keep the editor focused by opening the controls needed for the current task.",
+      "keywords": ["workspace", "layout", "editing", "review", "lorebook", "group", "focus"],
+      "steps": [
+        "Use the Editing layout for normal character fields.",
+        "Switch to Review, Lorebook, Front Porch Deployment or Group Card when that is the active task.",
+        "Use the field navigation shortcuts for long templates.",
+        "Save before closing when the Workspace reports unsaved changes."
+      ],
+      "actions": [{"id": "layout_editing", "label": "Use Editing Layout"}],
+      "related": ["workspace_quality", "lorebooks_relationships", "front_porch_optional_fields"]
+    },
+    {
+      "id": "greetings_scenarios",
+      "category": "quality",
+      "title": "Alternative Greetings and Scenario Presets",
+      "summary": "Manage alternate openings and reusable setups without duplicating the full character.",
+      "keywords": ["greeting", "first message", "scenario", "preset", "opening", "weight", "favourite"],
+      "steps": [
+        "Open the Alternative Greetings manager to add, edit, categorize, weight or favourite openings.",
+        "Create Scenario Presets for alternate setups, active cast, tags and shared-world references.",
+        "Preview the selected scenario and opening together before export or testing.",
+        "Materialise one explicit scenario when the target format cannot carry multiple setups."
+      ],
+      "notes": ["The standard Character Card alternative-greetings array remains synchronized."],
+      "actions": [{"id": "layout_editing", "label": "Open Editing Layout"}],
+      "related": ["lorebooks_relationships", "multi_projects", "export_profiles"]
+    },
+    {
+      "id": "lorebooks_relationships",
+      "category": "quality",
+      "title": "Lorebooks and Relationships",
+      "summary": "Author triggerable context and explicit character links without creating a second source of truth.",
+      "keywords": ["lorebook", "entry", "trigger", "keys", "relationship", "graph", "linked variant"],
+      "steps": [
+        "Open Lorebook Manager and choose Project or Character scope.",
+        "Give every entry a meaningful editable name, primary keys and focused lore content.",
+        "Use Trigger Preview with sample scene text to check which entries activate.",
+        "Create Relationships or Linked Variants only when the connection is intentional and inspectable."
+      ],
+      "notes": ["Content and trigger warnings belong in author notes, not in the entry name."],
+      "actions": [{"id": "lorebook", "label": "Open Lorebook Manager"}],
+      "related": ["character_collaborator", "greetings_scenarios", "roster_worlds"]
+    },
+    {
+      "id": "card_inspector",
+      "category": "quality",
+      "title": "Inspect card health and metadata",
+      "summary": "Run deterministic checks, inspect token size and repair structural problems before export.",
+      "keywords": ["inspector", "health", "token", "prompt", "metadata", "raw json", "repair"],
+      "steps": [
+        "Open Card Inspector from the saved character project.",
+        "Review deterministic health findings and whole-card or section token estimates.",
+        "Inspect compiled-prompt and technical views with their stated limitations.",
+        "Use validated Raw JSON or repair actions only when you understand the affected structure."
+      ],
+      "notes": ["Card Inspector does not call an AI model and its compiled prompt is explicitly approximate."],
+      "actions": [{"id": "compare", "label": "Open Inspection Tools"}],
+      "related": ["ai_review", "revision_history", "export_character"]
+    },
+    {
+      "id": "ai_review",
+      "category": "quality",
+      "title": "Run AI Review safely",
+      "summary": "Treat ratings as advisory and approve proposed field changes individually.",
+      "keywords": ["ai review", "score", "finding", "selective change", "report", "approve", "reject"],
+      "steps": [
+        "Save the current character, then explicitly run AI Review.",
+        "Read the full findings report and inspect each proposed before-and-after field value.",
+        "Keep every proposal rejected until you deliberately approve it.",
+        "Apply the selected batch only after the source hash is still current."
+      ],
+      "notes": ["The score uses a visible rubric and is not an objective measure of character quality."],
+      "actions": [{"id": "ai_review", "label": "Open AI Review"}],
+      "related": ["card_inspector", "revision_history", "text_routes"]
+    },
+    {
+      "id": "revision_history",
+      "category": "quality",
+      "title": "Compare and recover revisions",
+      "summary": "Use immutable checkpoints to inspect, restore, fork or selectively recover earlier character values.",
+      "keywords": ["revision", "history", "checkpoint", "diff", "restore", "fork", "recover"],
+      "steps": [
+        "Open Revision History and select two meaningful checkpoints to compare.",
+        "Inspect complete field values instead of relying only on shortened summaries.",
+        "Apply selected earlier fields, create a fork or restore non-destructively.",
+        "Export an earlier revision as ordinary Character Card V2 JSON when needed."
+      ],
+      "notes": ["Large assets remain managed references and private revision lineage stays out of ordinary card exports."],
+      "actions": [{"id": "compare", "label": "Open Compare Tools"}],
+      "related": ["workspace_quality", "compact_derivatives", "backup_recovery"]
+    },
+    {
+      "id": "compact_derivatives",
+      "category": "quality",
+      "title": "Create Compact or Lite derivatives",
+      "summary": "Produce a smaller independent character while protecting the full source card.",
+      "keywords": ["compact", "lite", "derivative", "tokens", "compression", "smaller card"],
+      "steps": [
+        "Choose the target token budget, compression intent and fields that must be preserved.",
+        "Review every proposed replacement and edit or reject individual changes.",
+        "Confirm only while the source content hash is still current.",
+        "Save the new independent character and retain its private source lineage."
+      ],
+      "notes": ["Compact/Lite never overwrites the source character or reuses its Front Porch identity."],
+      "actions": [{"id": "compare", "label": "Open Improvement Tools"}],
+      "related": ["revision_history", "card_inspector", "text_routes"]
+    },
+    {
+      "id": "search_saved_views",
+      "category": "library",
+      "title": "Search, filters and saved views",
+      "summary": "Combine full-library search with explainable filters and reusable views.",
+      "keywords": ["search", "filter", "saved view", "smart collection", "review", "tokens", "remote"],
+      "steps": [
+        "Search by project, character, series, card text, tags, creators or import metadata.",
+        "Add workflow, review, token, Front Porch, privacy or deployment filters.",
+        "Save a named view when the combination supports a repeated task.",
+        "Use a Smart Collection only when membership should follow saved criteria."
+      ],
+      "actions": [{"id": "library_search", "label": "Search Character Library"}],
+      "related": ["library_basics", "collections_workflow", "library_layout"]
+    },
+    {
+      "id": "collections_workflow",
+      "category": "library",
+      "title": "Collections, tags and workflow states",
+      "summary": "Organise projects without changing their exported character definitions.",
+      "keywords": ["collection", "tag", "folder", "series", "workflow", "draft", "stable"],
+      "steps": [
+        "Select one or more projects in Character Library.",
+        "Assign series, folders, collections and concise tags from Project Tools or batch actions.",
+        "Use workflow states such as Draft or Stable to reflect authoring status.",
+        "Review each batch outcome instead of assuming every project changed."
+      ],
+      "notes": ["Private Library organisation is separate from ordinary Character Card exports."],
+      "actions": [{"id": "library", "label": "Open Character Library"}],
+      "related": ["search_saved_views", "duplicates_archive", "sensitive_controls"]
+    },
+    {
+      "id": "duplicates_archive",
+      "category": "library",
+      "title": "Handle duplicates and archived projects",
+      "summary": "Review duplicate evidence and keep removed projects recoverable.",
+      "keywords": ["duplicate", "merge", "replace", "archive", "restore", "hash", "probable match"],
+      "steps": [
+        "Open duplicate review and compare exact IDs, hashes or normalized-text evidence.",
+        "Choose Merge, Replace, Keep Both or Ignore only after inspecting both projects.",
+        "Use Archive for recoverable removal from normal Library views.",
+        "Enable Show archived when you need to inspect or restore archived work."
+      ],
+      "notes": ["Duplicate detection and archive actions never run automatically."],
+      "actions": [{"id": "library", "label": "Open Character Library"}],
+      "related": ["collections_workflow", "revision_history", "backup_recovery"]
+    },
+    {
+      "id": "sensitive_controls",
+      "category": "library",
+      "title": "Adult and private presentation controls",
+      "summary": "Mark sensitive projects and choose how artwork appears locally.",
+      "keywords": ["adult", "private", "sensitive", "blur", "hide", "artwork", "reveal"],
+      "steps": [
+        "Set Adult or Private markers in project workflow metadata when appropriate.",
+        "Choose Show, Blur Artwork or Hide as the local presentation policy.",
+        "Use Library sensitivity filters to control what is visible during browsing.",
+        "Explicitly reveal hidden content only when the current setting allows it."
+      ],
+      "notes": ["Presentation controls reduce accidental display; they are not encryption or access control."],
+      "actions": [{"id": "library", "label": "Review Library Privacy"}],
+      "related": ["collections_workflow", "privacy_diagnostics", "known_limits_reporting"]
+    },
+    {
+      "id": "portable_storage",
+      "category": "library",
+      "title": "Portable, shared-folder and NAS libraries",
+      "summary": "Use a shared location with explicit single-writer and recovery boundaries.",
+      "keywords": ["portable", "shared folder", "nas", "storage", "library", "single writer", "lock"],
+      "steps": [
+        "Open Settings → Library Storage and inspect the current library before changing it.",
+        "Initialize or select the intended portable folder explicitly.",
+        "Close the project on one computer before editing it from another.",
+        "If the share disappears or changes externally, reconnect and review the conflict instead of substituting another path."
+      ],
+      "notes": ["Shared-folder mode is not concurrent multi-user editing or automatic cloud synchronization."],
+      "actions": [{"id": "settings", "label": "Open Library Storage"}],
+      "related": ["backup_recovery", "storage_updates", "library_layout"]
+    },
+    {
+      "id": "library_layout",
+      "category": "library",
+      "title": "Library panels, auto-hide and card density",
+      "summary": "Recover card space while keeping every Library panel easy to restore.",
+      "keywords": ["panel", "autohide", "arrow", "density", "thumbnail", "details", "project tools"],
+      "steps": [
+        "Use the edge arrows to collapse or reveal Library Filters and Project Details.",
+        "Open Panels for Show all panels or Focus card area presets.",
+        "Enable side-panel auto-hide only when you want panels to collapse after returning to the card area.",
+        "Adjust card density; smaller cards progressively hide metadata and overlay the name on artwork."
+      ],
+      "actions": [{"id": "library", "label": "Open Character Library"}],
+      "related": ["library_basics", "search_saved_views", "portable_storage"]
+    },
+    {
+      "id": "multi_projects",
+      "category": "multi_character",
+      "title": "Create a multi-character project",
+      "summary": "Build a cast from new members, Library copies or both.",
+      "keywords": ["multi-character", "group project", "cast", "member", "existing library character"],
+      "steps": [
+        "Choose New Multi-Character / Group Project from the supported creation surface.",
+        "Add a new member or copy an existing Library character into the project.",
+        "Edit each member as an independent character while sharing explicit project context.",
+        "Use Card Workflow Studio when you want a combined runtime or Front Porch group card."
+      ],
+      "notes": ["Adding an existing Library character creates an independent project member rather than silently editing the source."],
+      "actions": [{"id": "layout_group_card", "label": "Open Group Card Layout"}],
+      "related": ["group_cards_split_sets", "roster_worlds", "greetings_scenarios"]
+    },
+    {
+      "id": "group_cards_split_sets",
+      "category": "multi_character",
+      "title": "Group cards and Split Character Sets",
+      "summary": "Choose between one ensemble artifact and several independently generated cards.",
+      "keywords": ["group card", "split character set", "ensemble", "generation", "retry", "member"],
+      "steps": [
+        "Use a group card when the target runtime should coordinate several characters in one artifact.",
+        "Use Split Character Set when each planned member needs an independent complete card.",
+        "Review group prompts, opening state and member voices before materialising the combined artifact.",
+        "For split generation, retain successful members and retry only failed or pending members."
+      ],
+      "notes": ["Group materialisation never silently merges or overwrites the independent source characters."],
+      "actions": [{"id": "layout_group_card", "label": "Open Card Workflow Studio"}],
+      "related": ["multi_projects", "roster_worlds", "front_porch_groups_worlds"]
+    },
+    {
+      "id": "roster_worlds",
+      "category": "multi_character",
+      "title": "Persistent rosters, active cast and shared worlds",
+      "summary": "Keep project membership separate from who appears in a particular opening or scenario.",
+      "keywords": ["roster", "active cast", "present", "world", "shared lore", "dependency"],
+      "steps": [
+        "Maintain the complete persistent roster in the multi-character project.",
+        "Select only the active or present cast for a scenario when the target supports that distinction.",
+        "Reference shared world records instead of copying their lore into every character.",
+        "Inspect dependencies before removing referenced characters, worlds, images or workflows."
+      ],
+      "actions": [{"id": "layout_group_card", "label": "Open Multi-Character Tools"}],
+      "related": ["multi_projects", "group_cards_split_sets", "lorebooks_relationships"]
+    },
+    {
+      "id": "image_styles_profiles",
+      "category": "images",
+      "title": "Image styles and Generation Profiles",
+      "summary": "Separate reusable creative direction from provider and workflow execution settings.",
+      "keywords": ["style preset", "visual identity", "generation profile", "model", "sampler", "comfyui"],
+      "steps": [
+        "Choose or edit a Global, Project Visual Identity or Character Default style preset.",
+        "Compose the editable Image Prompt from structured creative controls when ready.",
+        "Choose a Generation Profile for provider, model, checkpoint or ComfyUI workflow execution.",
+        "Review discovered capabilities and explicit overrides before generating."
+      ],
+      "notes": ["Style presets never store credentials, model choices, sampler settings, seeds or ComfyUI workflows."],
+      "actions": [{"id": "image_studio", "label": "Open Image Studio"}],
+      "related": ["image_studio", "image_inputs", "vision_image_profiles"]
+    },
+    {
+      "id": "image_inputs",
+      "category": "images",
+      "title": "Image-to-Image, references and Inpainting",
+      "summary": "Attach explicit image inputs only to operations the selected profile can perform.",
+      "keywords": ["image-to-image", "reference", "inpaint", "mask", "strength", "source image"],
+      "steps": [
+        "Choose Image-to-Image, Reference or Inpainting as the explicit operation.",
+        "Select the managed source image and a mask where Inpainting requires one.",
+        "Set operation-specific strength or influence without changing unrelated Vision attachments.",
+        "Generate only after the active profile reports executable support for that operation."
+      ],
+      "notes": ["Unknown capability metadata is not treated as proven support, and image inputs are never inferred."],
+      "actions": [{"id": "image_studio", "label": "Open Image Inputs"}],
+      "related": ["image_styles_profiles", "avatar_expressions", "vision_image_profiles"]
+    },
+    {
+      "id": "avatar_expressions",
+      "category": "images",
+      "title": "Portraits, Avatar Gallery and Expression Sets",
+      "summary": "Manage a canonical portrait, alternate looks and reviewable expression batches.",
+      "keywords": ["portrait", "avatar", "gallery", "expression", "batch", "zip", "front porch"],
+      "steps": [
+        "Accept or import images into the managed Avatar Gallery.",
+        "Choose the canonical favourite independently from the Character Card portrait.",
+        "Generate an Expression Set by selecting exact labels and one explicit visual baseline.",
+        "Review, retry or replace each expression independently before ZIP export or Front Porch installation."
+      ],
+      "notes": ["Expression generation creates separate provider jobs and never installs results automatically."],
+      "actions": [{"id": "image_studio", "label": "Open Avatar Gallery"}],
+      "related": ["image_studio", "image_inputs", "front_porch_install_sync"]
+    },
+    {
+      "id": "export_profiles",
+      "category": "sharing",
+      "title": "Export profiles and target previews",
+      "summary": "Inspect how each target maps, transforms, preserves or omits project data.",
+      "keywords": ["export profile", "character card v2", "sillytavern", "mapping", "preview", "loss report"],
+      "steps": [
+        "Choose the Character Card V2, Front Porch, SillyTavern or another available export profile.",
+        "Review the exact before-export mapping and preservation report.",
+        "Resolve unsupported or omitted fields before writing the file.",
+        "Export JSON or image-embedded card data only after confirming the final target preview."
+      ],
+      "notes": ["Unknown imported fields remain preserved where the adapter contract supports lossless round trips."],
+      "actions": [{"id": "export_install", "label": "Open Export Profiles"}],
+      "related": ["export_character", "project_packages", "front_porch_install_sync"]
+    },
+    {
+      "id": "project_packages",
+      "category": "sharing",
+      "title": "Export and import project packages",
+      "summary": "Move complete Character Card Forge projects with their managed assets and private authoring data.",
+      "keywords": ["ccfproject", "project package", "zip", "portable", "assets", "import", "export"],
+      "steps": [
+        "Save the project and open Import / Export.",
+        "Export a project package when you need more than an ordinary runtime character card.",
+        "Keep the complete package archive intact while transferring it.",
+        "On import, review validation, duplicate evidence and the proposed Copy, Merge or Replace action."
+      ],
+      "notes": ["Project packages can contain private authoring state that ordinary Character Card exports intentionally omit."],
+      "actions": [{"id": "export_install", "label": "Open Project Packages"}],
+      "related": ["export_profiles", "backup_recovery", "import_character"]
+    },
+    {
+      "id": "reference_sources",
+      "category": "sharing",
+      "title": "Add PDF and URL reference sources",
+      "summary": "Preview bounded local extraction or HTTPS downloads before they enter AI context.",
+      "keywords": ["pdf", "url", "web", "reference", "attachment", "extract", "refresh"],
+      "steps": [
+        "Add a PDF or use Add from URL for a supported bounded HTTPS source.",
+        "Review detected type, extracted text, image or readable document preview.",
+        "Explicitly choose whether accepted text becomes AI-facing context.",
+        "Use Refresh Remote only when you want a new preview; references never refresh in the background."
+      ],
+      "notes": ["Remote text is untrusted data. Scanned PDFs remain stored without silently invoking OCR."],
+      "actions": [{"id": "layout_editing", "label": "Open Workspace"}],
+      "related": ["character_collaborator", "privacy_diagnostics", "troubleshooting"]
+    },
+    {
+      "id": "front_porch_install_sync",
+      "category": "front_porch",
+      "title": "Install, update and sync Front Porch characters",
+      "summary": "Compare local and remote state before using supported authenticated APIs.",
+      "keywords": ["front porch", "install", "update", "sync", "remote", "diverged", "deployment queue"],
+      "steps": [
+        "Run Connection Diagnostics and authenticate for the current session.",
+        "Review Not Installed, Installed, Modified Locally, Changed in Front Porch or Diverged state.",
+        "Compare local and remote data before Update, Reinstall or Import Front Porch Changes.",
+        "Use the deployment queue for explicit sequential work and inspect every result."
+      ],
+      "notes": ["CCF uses supported APIs and never falls back to direct database access."],
+      "actions": [{"id": "export_install", "label": "Open Front Porch Sync"}],
+      "related": ["front_porch", "front_porch_optional_fields", "avatar_expressions"]
+    },
+    {
+      "id": "front_porch_optional_fields",
+      "category": "front_porch",
+      "title": "Author optional Front Porch character-life fields",
+      "summary": "Set character-life, Needs, relationship and opening-state extensions manually or with reviewed AI suggestions.",
+      "keywords": ["front porch", "optional", "ambition", "work", "birthday", "needs", "relationship", "wardrobe"],
+      "steps": [
+        "Open the Front Porch — Optional Workspace tab.",
+        "Enter fields manually or use AI Suggest for the selected field or enabled group.",
+        "Review every proposal before including it in the project.",
+        "Leave all fields empty when the character should emit no Front Porch extension."
+      ],
+      "notes": ["Relationship history is not invented for the user, and intimate preferences require adult-content opt-in."],
+      "actions": [{"id": "layout_front_porch", "label": "Open Front Porch Fields"}],
+      "related": ["front_porch_install_sync", "greetings_scenarios", "sensitive_controls"]
+    },
+    {
+      "id": "front_porch_groups_worlds",
+      "category": "front_porch",
+      "title": "Exchange Front Porch group cards and worlds",
+      "summary": "Use portable group PNG and world packages while preserving unknown future data.",
+      "keywords": ["front porch", "group card", "fpa_group", "world", "fpworld", "lorebook", "stoop"],
+      "steps": [
+        "Build and validate the group workflow or world record before export.",
+        "Review member cards, shared opening, world lore and private-context warnings.",
+        "Export the supported portable group PNG or .fpworld package.",
+        "Use direct installation only when Front Porch proves the required supported endpoint."
+      ],
+      "notes": ["Stoop publishing and unsupported group endpoints remain disabled; unknown imported fields are preserved."],
+      "actions": [{"id": "layout_group_card", "label": "Open Group Card Tools"}],
+      "related": ["group_cards_split_sets", "roster_worlds", "front_porch_install_sync"]
+    },
+    {
+      "id": "front_porch_chat_exchange",
+      "category": "front_porch",
+      "title": "Test Chat and chat exchange",
+      "summary": "Test a saved character through Front Porch and transfer chat history separately from authored card data.",
+      "keywords": ["front porch", "test chat", "fpchat", "history", "stream", "cancel", "jsonl"],
+      "steps": [
+        "Create or choose an explicit Local Test Profile without changing the character definition.",
+        "Start Test Chat only after Front Porch proves the required chat capabilities.",
+        "Send, stream, cancel and refresh history through the supported API.",
+        "Import or export .fpchat or compatible JSON/JSONL with validation and provenance."
+      ],
+      "notes": ["Chat history and evolving simulation state remain separate from authored card data."],
+      "actions": [{"id": "export_install", "label": "Open Front Porch Tools"}],
+      "related": ["front_porch", "front_porch_install_sync", "troubleshooting"]
+    },
+    {
+      "id": "text_routes",
+      "category": "advanced",
+      "title": "Primary, Fast, Deep Review and Fallback Text routes",
+      "summary": "Assign task-specific Text profiles while retaining one clear default.",
+      "keywords": ["primary text", "fast", "suggestion", "deep review", "fallback", "profile", "route"],
+      "steps": [
+        "Configure Primary Text as the default character-writing route.",
+        "Assign Fast / Suggestion Text or Deep Review Text only when those tasks need another profile.",
+        "Enable Fallback only with a distinct profile and review the bounded failure types it can handle.",
+        "Inspect completed job metadata to see the profile and model that actually produced the result."
+      ],
+      "notes": ["Fallback never switches models for refusals, invalid output, parsing errors or validation failures."],
+      "actions": [{"id": "settings", "label": "Open Text Routes"}],
+      "related": ["provider_setup", "ai_review", "troubleshooting"]
+    },
+    {
+      "id": "vision_image_profiles",
+      "category": "advanced",
+      "title": "Configure Vision and Image profiles",
+      "summary": "Keep image analysis and artwork generation independent from Text generation.",
+      "keywords": ["vision", "image profile", "provider", "model", "capability", "openrouter", "local"],
+      "steps": [
+        "Configure Vision for explicit image analysis and choose its independent model limits.",
+        "Configure Image Generation profiles for cloud, local Forge/A1111 or ComfyUI workflows.",
+        "Run discovery or connection tests before important work.",
+        "Review capability provenance and explicit overrides rather than assuming OpenAI-compatible servers support identical routes."
+      ],
+      "actions": [{"id": "settings", "label": "Open Vision and Image Settings"}],
+      "related": ["provider_setup", "image_styles_profiles", "image_inputs"]
+    },
+    {
+      "id": "storage_updates",
+      "category": "advanced",
+      "title": "Manage storage and application updates",
+      "summary": "Choose Library storage deliberately and keep update installation explicit.",
+      "keywords": ["storage", "update", "github release", "download", "portable", "cache", "thumbnail"],
+      "steps": [
+        "Use Settings → Library Storage to inspect or select the active project library.",
+        "Use cache controls only for disposable local thumbnails; original artwork is never a cache target.",
+        "Choose Check for Updates manually or keep the disclosed daily check enabled.",
+        "Review release notes and download the exact platform package; installation remains manual."
+      ],
+      "notes": ["Update checks send no provider credentials or project data and never replace a running executable."],
+      "actions": [{"id": "settings", "label": "Open Storage and Updates"}],
+      "related": ["installation", "portable_storage", "backup_recovery"]
+    },
+    {
+      "id": "diagnostics_expert",
+      "category": "advanced",
+      "title": "Diagnostics and expert functions",
+      "summary": "Use technical views for evidence and repair without bypassing normal validation boundaries.",
+      "keywords": ["diagnostics", "expert", "raw json", "generation diagnostic", "capability", "metadata"],
+      "steps": [
+        "Open the narrow diagnostic surface for the failed provider job, import or Front Porch action.",
+        "Review the complete credential-redacted preview before copying or exporting it.",
+        "Use expert Raw JSON only through its validator and keep a revision or project backup.",
+        "Return to the normal editor to confirm the repaired data still behaves as expected."
+      ],
+      "notes": ["Expert controls do not weaken credential, path, validation or confirmation safeguards."],
+      "actions": [{"id": "support_diagnostics", "label": "Open Support & Diagnostics"}],
+      "related": ["privacy_diagnostics", "card_inspector", "troubleshooting"]
+    },
+    {
+      "id": "known_limits_reporting",
+      "category": "help",
+      "title": "Known limitations and reporting a bug",
+      "summary": "Check the current support boundary and send a reproducible privacy-reviewed report.",
+      "keywords": ["known limitation", "bug", "issue", "report", "support", "macos", "nas", "provider"],
+      "steps": [
+        "Check the current release notes and Help Center for a stated limitation or supported configuration.",
+        "Reproduce the problem with the smallest safe sequence and record expected versus actual behavior.",
+        "Generate and review the privacy-safe support report and any relevant per-job diagnostic.",
+        "Open the GitHub bug report and attach only the evidence you intentionally reviewed."
+      ],
+      "notes": ["Current macOS packages are unsigned; third-party providers and shared/NAS storage still require real-world compatibility evidence."],
+      "actions": [{"id": "support_diagnostics", "label": "Prepare Bug Report"}],
+      "related": ["troubleshooting", "privacy_diagnostics", "installation"]
     }
   ]
 }

@@ -1,11 +1,16 @@
 # Character Card Forge User Documentation Plan
 
-The GitHub Wiki will be the primary expanded task-oriented user manual during the v0.20.4 public bake period. Repository `docs/` remains the home of schemas, architectural contracts, milestone implementation notes and regression details.
+The GitHub Wiki will be the primary expanded task-oriented user manual during the pre-1.0 public bake period. Repository `docs/` remains the home of schemas, architectural contracts, milestone implementation notes and regression details.
 
 v0.20.3 establishes the first verified documentation set inside the app: 12 searchable
 offline guides covering first launch, core creation and editing, Library, images,
 import/export, Front Porch, backup, troubleshooting and privacy. Those guides are the
 starting source for the corresponding Wiki pages, not a substitute for the full manual.
+
+v0.20.5 completes the structured manual source: 49 focused articles cover the ten
+sections below, while a deterministic exporter produces Home, sidebar, category and
+article Markdown from the same validated catalog. Publication remains an explicit
+reviewed maintainer action, so generated pages cannot overwrite the Wiki automatically.
 
 ## README: product front door
 
@@ -128,3 +133,13 @@ Version-by-version history belongs in `CHANGELOG.md`, `roadmap.md` and milestone
 6. Recovery, known limitations and FAQ.
 
 Each page should be verified against the current packaged build before publication.
+
+## v0.20.5 implementation status
+
+- [x] Expand the offline catalog into all ten manual sections.
+- [x] Preserve the original stable article IDs and canonical in-app action routes.
+- [x] Generate deterministic Wiki Home, sidebar, category and article pages.
+- [x] Validate article/category identities, related links and Wiki slug uniqueness.
+- [x] Restructure README as the product and first-use front door.
+- [ ] Capture and review current Windows, Linux and macOS package screenshots.
+- [ ] Publish the generated pages to the GitHub Wiki after packaged-build verification.

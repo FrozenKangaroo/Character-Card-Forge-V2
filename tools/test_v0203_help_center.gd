@@ -37,7 +37,7 @@ func _run() -> void:
 		and bool(capabilities.get("searchable", false))
 		and bool(capabilities.get("task_oriented", false))
 		and int(capabilities.get("article_count", 0)) >= 12
-		and int(capabilities.get("category_count", 0)) == 6
+		and int(capabilities.get("category_count", 0)) >= 6
 		and bool(capabilities.get("routes_to_existing_tools", false)),
 		"The versioned help catalog must be valid, task-oriented and offline. %s"
 		% str(problems)
@@ -81,7 +81,9 @@ func _run() -> void:
 	var version_found := false
 	for node in app.find_children("*", "Label", true, false):
 		if node is Label and node.text in [
-			"Godot rewrite • v0.20.3", "Godot rewrite • v0.20.4"
+			"Godot rewrite • v0.20.3",
+			"Godot rewrite • v0.20.4",
+			"Godot rewrite • v0.20.5"
 		]:
 			version_found = true
 			break
@@ -105,7 +107,7 @@ func _run() -> void:
 		help_window.visible
 		and search != null
 		and category != null
-		and category.item_count == 7
+		and category.item_count == int(capabilities.get("category_count", 0)) + 1
 		and topics != null
 		and topics.item_count >= 12
 		and article_view != null
