@@ -26,18 +26,20 @@ privacy-safe bug reporting.
 
 ## One documentation source
 
-`data/help_articles_v1.json` remains the canonical structured source. The v0.20.5
-exporter validates category/article IDs, related links, steps and Wiki slug uniqueness,
-then creates:
+`data/help_articles_v1.json` remains the canonical structured article source.
+`data/help_screenshots_v1.json` maps reviewed release-build captures to those stable
+article IDs. The v0.20.5 exporter validates category/article IDs, related links, steps,
+Wiki slug uniqueness, screenshot filenames, alternative text, captions and local source
+assets, then creates:
 
 - one Home page;
 - one sidebar;
 - ten category pages;
 - 49 article pages.
 
-All 61 pages are rendered deterministically. Export writes only the expected Markdown
-files into the selected directory and does not publish, delete remote content or contact
-GitHub.
+All 61 pages are rendered deterministically. Export writes the expected Markdown files
+and reviewed `images/user-manual/` assets into the selected directory; it does not
+publish, delete remote content or contact GitHub.
 
 ```bash
 python3 tools/export_user_manual_v0205.py
@@ -51,8 +53,10 @@ platforms, installation, the first-character workflow, Front Porch boundaries, H
 developer references. Detailed version history remains in `CHANGELOG.md`, `roadmap.md`
 and milestone documents.
 
-Current screenshots are intentionally left for the reviewed packaged-build bake rather
-than presenting development-editor captures as release evidence.
+The first reviewed screenshot set contains 19 v0.20.7 Linux captures. Outer desktop
+chrome and debug title bars are removed from documentation copies while the supplied
+source captures remain untouched. Windows and macOS comparison captures remain part of
+the public-bake evidence rather than being implied by this set.
 
 ## Safety and compatibility
 
@@ -60,6 +64,8 @@ than presenting development-editor captures as release evidence.
 - No AI provider, Front Porch or GitHub request occurs while reading or exporting Help.
 - No character, project, prompt, conversation, credential or file-path data enters the
   manual.
+- Screenshot assets are repository-owned, locally validated and copied byte-for-byte by
+  the exporter rather than fetched from an external host.
 - Existing stable article IDs, direct app routes and related links remain valid.
 - The Help UI still routes actions through existing canonical Quick Actions instead of
   creating parallel workflows.

@@ -71,7 +71,8 @@ This checklist is the shared release contract for the v0.20.7 public bake period
 - [x] Reduce README to a user-facing product front door with installation and first-character guidance.
 - [x] Publish the task-oriented 61-page GitHub Wiki described in `roadmap.md`.
 - [x] Add searchable offline help for first launch, core workflows, recovery and troubleshooting.
-- [ ] Add current screenshots after navigation and labels are frozen.
+- [x] Add the first reviewed current Linux screenshot set after navigation and labels stabilised.
+- [ ] Add Windows and macOS comparison screenshots where platform presentation differs.
 - [ ] Document troubleshooting, diagnostics, privacy, backup and recovery.
 - [x] Add structured Bug Report, Feature Request and Front Porch Integration issue forms.
 - [x] Add an in-app Support & Diagnostics entry and document its hard privacy exclusions.
