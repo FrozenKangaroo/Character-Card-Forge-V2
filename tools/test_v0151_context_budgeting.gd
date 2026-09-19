@@ -16,15 +16,17 @@ func _init() -> void:
 	var collaborator_source := FileAccess.get_file_as_string("res://scripts/ui/character_collaborator_window_v0151.gd")
 	for marker in [
 		"context limit unknown",
-		"response reserve",
+		"reply request",
 		"headroom",
-		"configured_output",
 		"available_input",
 		"context_window <= 0",
 		"return true"
 	]:
 		assert(collaborator_source.contains(marker), "v0.15.1 Collaborator budgeting is missing %s." % marker)
-	assert(collaborator_source.contains("mini(configured_output, maximum_reserve)"), "Output reserve must be clamped below the total context window.")
+	var budget_source := FileAccess.get_file_as_string("res://scripts/services/collaborator_token_budget_current.gd")
+	assert(collaborator_source.contains("CCFCollaboratorTokenBudgetCurrent.budget"), "The Collaborator must use the current shared budget calculation.")
+	assert(budget_source.contains("return mini(chosen, model_maximum)"), "The requested reply output must never exceed the model output ceiling.")
+	assert(budget_source.contains("context_window - reserve"), "The input allowance must match the actual requested reply output.")
 	assert(collaborator_source.contains("CONTEXT_WARNING_PERCENT_V0151"), "Collaborator should warn before the context is fully exhausted.")
 	assert(collaborator_source.contains("CONTEXT_CRITICAL_PERCENT_V0151"), "Collaborator should expose a critical near-limit warning.")
 

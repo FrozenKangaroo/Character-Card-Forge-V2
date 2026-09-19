@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.20.8 complete regression suites",
+  "description": "v0.20.7 complete baseline plus separate Character Collaborator input/output budgeting.",
+  "base_manifest": "regression_suites_v0207.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0208_collaborator_token_budget",
+        "label": "v0.20.8 separate Collaborator output request and input allowance",
+        "kind": "godot",
+        "path": "tools/test_v0208_collaborator_token_budget.gd",
+        "timeout_seconds": 90
+      }
+    ]
+  }
+}

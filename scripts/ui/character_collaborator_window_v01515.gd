@@ -69,7 +69,9 @@ func _generate_character() -> void:
 	var session := _active_session()
 	if session.is_empty():
 		return
-	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
+	var profile := CCFCollaboratorTokenBudgetCurrent.request_profile(
+		CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
+	)
 	var retry_count := int((_settings.get("generation", {}) as Dictionary).get("retry_count", 1))
 	var selected_mode := HANDOFF_BLUEPRINT_V01515
 	if _handoff_mode_v01515 != null:

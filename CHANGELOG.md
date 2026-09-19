@@ -4,6 +4,34 @@ Release notes are written before a release tag is created. Each release explicit
 records migration needs, breaking changes and known limitations, even when there are
 none. GitHub Releases use the matching reviewed section instead of generated notes.
 
+## [0.20.8] - 2026-09-19
+
+### Highlights
+
+- Separated Character Collaborator's per-request output budget from the Text model's maximum output capability, restoring usable input space for large reference attachments.
+
+### Changes
+
+- Added an editable per-profile Collaborator reply output request, defaulting to 16,384 tokens and capped at the model/profile maximum output.
+- Showed the derived Collaborator input allowance in Character AI settings and aligned the live Collaborator meter and pre-send check with the exact requested output limit.
+- Applied the same request limit to normal replies, summaries, blueprint and detailed Workspace handoffs, and technical fallback requests.
+- Added a large-attachment regression case matching the reported 1,384,448-token context and 1,000,064-token model output configuration.
+
+### Migration notes
+
+- Existing profiles receive the new 16,384-token Collaborator request default without changing their saved model output capability or context window. The effective request is capped by the model output value.
+- No character, project, library or portable-package migration is required.
+
+### Breaking changes
+
+- None for saved conversations, provider profiles or supported interchange formats.
+
+### Known limitations
+
+- Local input estimates are approximate; a provider's tokenizer or hidden overhead can still differ. An unknown context window remains non-blocking.
+- Other Text generation tasks retain their existing output-limit behavior; this release scopes the new per-request control to Character Collaborator.
+- macOS packages remain unsigned and are not notarised.
+
 ## [0.20.7] - 2026-09-15
 
 ### Highlights
