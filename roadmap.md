@@ -60,6 +60,11 @@ derivatives, Split Character Sets and task-specific Text routing in one semantic
 available for compatibility evidence, while deterministic tooling proves the active
 generation-service depth fell from 34 to 31 scripts and prevents renewed service stacking.
 
+The v0.20.8 development candidate addresses bake feedback: Character Collaborator
+now requests a separate, author-editable reply output budget instead of reserving
+the Text model's entire maximum output capability against every input. Settings
+show the derived input allowance, and request construction uses the same limit.
+
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
 validation, task-oriented user documentation, a smaller manifest-driven CI surface,
@@ -172,7 +177,8 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The released application and current source display **v0.20.7**. They use the Godot
+The public release displays **v0.20.7**; the current source candidate displays
+**v0.20.8**. Both use the Godot
 **4.7.x stable** project baseline, keep Forward+ with
 Compatibility/OpenGL fallback and retain the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -181,6 +187,13 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.20.8 — Collaborator Context Budget Correction (candidate)
+
+- Added an editable per-profile Collaborator output request, defaulting to 16,384 tokens and capped by the Text model output setting.
+- Showed the derived input allowance in Settings; used that same effective output value in the Collaborator meter, overflow gate and provider request.
+- Applied the limit to replies, summaries, Workspace handoffs and technical fallbacks without reducing the model's saved maximum output capability.
+- Added regression coverage for the reported large-attachment case; local token counts remain estimates and unknown context limits remain non-blocking.
 
 ### v0.20.7 — Runtime Consolidation Phase 2
 

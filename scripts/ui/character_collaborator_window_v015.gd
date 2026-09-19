@@ -474,7 +474,9 @@ func _queue_reply(regenerate: bool) -> void:
 	if _generation_service == null or not _generation_service.has_method("queue_collaborator_reply"):
 		_status.text = "The active generation service does not support Character Collaborator yet."
 		return
-	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
+	var profile := CCFCollaboratorTokenBudgetCurrent.request_profile(
+		CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
+	)
 	var retry_count := int((_settings.get("generation", {}) as Dictionary).get("retry_count", 1))
 	var session := _active_session()
 	var result: Dictionary = _generation_service.call(
@@ -548,7 +550,9 @@ func _summarise_older_messages() -> void:
 	var chunk: Array = []
 	for index in range(current_through + 1, target_through + 1):
 		chunk.append(messages[index])
-	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
+	var profile := CCFCollaboratorTokenBudgetCurrent.request_profile(
+		CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
+	)
 	var retry_count := int((_settings.get("generation", {}) as Dictionary).get("retry_count", 1))
 	var result: Dictionary = _generation_service.call(
 		"queue_collaborator_summary",
@@ -670,7 +674,9 @@ func _generate_character() -> void:
 	if not _can_send_with_context_budget():
 		return
 	var session := _active_session()
-	var profile := CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
+	var profile := CCFCollaboratorTokenBudgetCurrent.request_profile(
+		CCFSettingsService.profile_for_role(_settings, CCFSettingsService.ROLE_TEXT)
+	)
 	var retry_count := int((_settings.get("generation", {}) as Dictionary).get("retry_count", 1))
 	var result: Dictionary = _generation_service.call(
 		"queue_collaborator_character",

@@ -9,7 +9,8 @@ const SUPPORT_CENTER_CURRENT = preload(
 const HELP_CENTER_CURRENT = preload(
 	"res://scripts/ui/help_center_window_v0203.gd"
 )
-const CURRENT_BUILD_VERSION := "0.20.7"
+const SETTINGS_VIEW_CURRENT = preload("res://scripts/ui/settings_view_v0208.gd")
+const CURRENT_BUILD_VERSION := "0.20.8"
 
 var _support_center_v0202: CCFSupportCenterWindowV0202
 var _help_center_v0203: CCFHelpCenterWindowV0203
@@ -22,6 +23,28 @@ func _ready() -> void:
 	_build_help_center_current()
 	_install_help_navigation_current()
 	_update_current_build_label()
+
+
+func _install_settings_view_v01528() -> void:
+	if _content == null:
+		return
+	var previous_settings: CCFSettingsView = _settings_view
+	if previous_settings != null and previous_settings.get_script() == SETTINGS_VIEW_CURRENT:
+		previous_settings.load_settings(_settings)
+		return
+	var should_be_visible := _current_view == "settings"
+	if previous_settings != null:
+		if previous_settings.settings_saved.is_connected(_on_settings_saved):
+			previous_settings.settings_saved.disconnect(_on_settings_saved)
+		if previous_settings.get_parent() == _content:
+			_content.remove_child(previous_settings)
+		previous_settings.queue_free()
+	var upgraded: CCFSettingsView = SETTINGS_VIEW_CURRENT.new()
+	upgraded.visible = should_be_visible
+	upgraded.settings_saved.connect(_on_settings_saved)
+	_settings_view = upgraded
+	_content.add_child(upgraded)
+	upgraded.load_settings(_settings)
 
 
 func _build_support_center_current() -> void:
@@ -116,8 +139,7 @@ func _update_current_build_label() -> void:
 		if node is Label and node.text.begins_with("Godot rewrite • v"):
 			node.text = "Godot rewrite • v%s" % CURRENT_BUILD_VERSION
 			node.tooltip_text = (
-				"v0.20.7 continues measured runtime consolidation by composing recent "
-				+ "AI Review, Compact Derivative, Split Character Set and Text-routing "
-				+ "behavior in one semantic current generation service."
+				"v0.20.8 separates Character Collaborator's requested reply output "
+				+ "from the Text model's maximum output capability and shows the resulting input allowance."
 			)
 			return

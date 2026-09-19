@@ -16,6 +16,8 @@ interface architecture.
 ## Current status
 
 The current public release is **v0.20.7 — Runtime Consolidation Phase 2**.
+The v0.20.8 source candidate separately budgets Character Collaborator reply output
+and shows the resulting input allowance, including for large reference attachments.
 It replaces four recent generation-service layers with one semantic current service
 while retaining AI Review, Compact/Lite derivatives, Split Character Sets, task-specific
 Text routing and all historical compatibility files. A deterministic report measures the

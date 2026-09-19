@@ -244,6 +244,8 @@ func _start_fallback_v0195(category: String, failure_message: String) -> void:
 	_release_scheduler_lease_v01526()
 	var routing := _routing_from_active_job_v0195()
 	var fallback_profile: Dictionary = routing.get("fallback_profile", {}).duplicate(true)
+	if str(_active_job.get("type", "")).begins_with("collaborator_"):
+		fallback_profile = CCFCollaboratorTokenBudgetCurrent.request_profile(fallback_profile)
 	var previous_profile := {
 		"profile_id": str(routing.get("selected_profile_id", "")),
 		"profile_name": str(_active_job.get("profile_name", "")),

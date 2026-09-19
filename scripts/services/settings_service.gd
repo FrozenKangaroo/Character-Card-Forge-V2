@@ -516,6 +516,9 @@ static func _normalise_ai_profile(profile: Dictionary) -> Dictionary:
 	result["name"] = display_name if not display_name.is_empty() else "Profile"
 	result["temperature"] = clampf(float(result.get("temperature", 0.8)), 0.0, 2.0)
 	result["max_output_tokens"] = maxi(128, int(result.get("max_output_tokens", 6000)))
+	result["collaborator_reply_output_tokens"] = maxi(
+		128, int(result.get("collaborator_reply_output_tokens", 16384))
+	)
 	result["vision_detail"] = str(result.get("vision_detail", "auto"))
 	if result["vision_detail"] not in ["auto", "low", "high"]:
 		result["vision_detail"] = "auto"
@@ -564,6 +567,7 @@ static func _default_ai_profile() -> Dictionary:
 		"model": "",
 		"temperature": 0.8,
 		"max_output_tokens": 6000,
+		"collaborator_reply_output_tokens": 16384,
 		"vision_detail": "auto"
 	}
 
