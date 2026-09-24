@@ -60,10 +60,10 @@ derivatives, Split Character Sets and task-specific Text routing in one semantic
 available for compatibility evidence, while deterministic tooling proves the active
 generation-service depth fell from 34 to 31 scripts and prevents renewed service stacking.
 
-The v0.20.8 development candidate addresses bake feedback: Character Collaborator
-now requests a separate, author-editable reply output budget instead of reserving
-the Text model's entire maximum output capability against every input. Settings
-show the derived input allowance, and request construction uses the same limit.
+The v0.20.9 development candidate addresses Front Porch authoring feedback. Generated
+Work Days now persist as integer arrays, work hours use Front Porch-compatible separate
+Start/End inputs and serialized clock ranges, every Front Porch tab has bulk selection,
+and malformed trailing JSON wrappers cannot contaminate generated First Messages.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -177,10 +177,9 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The public release displays **v0.20.7**; the current source candidate displays
-**v0.20.8**. Both use the Godot
-**4.7.x stable** project baseline, keep Forward+ with
-Compatibility/OpenGL fallback and retain the complete historical regression baseline.
+The current source candidate displays **v0.20.9** and uses the Godot
+**4.7.x stable** project baseline, keeps Forward+ with
+Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
 selected from bake evidence or the next separately measured subsystem boundary.
 Pre-1.0 work must not create a new broad feature family merely to continue version
@@ -188,7 +187,16 @@ expansion.
 
 ## Completed
 
-### v0.20.8 — Collaborator Context Budget Correction (candidate)
+### v0.20.9 — Front Porch Field Reliability (candidate)
+
+- Fixed generated Work Days application by restoring canonical integer-array values before the Front Porch extension write.
+- Replaced the free-form Work Hours box with separate Start and End `HH:MM` controls that serialize to Front Porch's `9am–5pm` / `9:30am–5:15pm` card format.
+- Added strict work-range validation and generation guidance so availability or holiday prose cannot masquerade as clock hours.
+- Added Select All Fields and Select None actions to every Front Porch tab while preserving the explicit adult-field reveal boundary.
+- Removed a trailing raw first-message JSON wrapper at the safe generated-text boundary without changing unrelated fields or ordinary authored content.
+- Added focused service, prompt, live UI and Mika-shaped regression coverage.
+
+### v0.20.8 — Collaborator Context Budget Correction
 
 - Added an editable per-profile Collaborator output request, defaulting to 16,384 tokens and capped by the Text model output setting.
 - Showed the derived input allowance in Settings; used that same effective output value in the Collaborator meter, overflow gate and provider request.

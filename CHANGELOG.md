@@ -4,6 +4,39 @@ Release notes are written before a release tag is created. Each release explicit
 records migration needs, breaking changes and known limitations, even when there are
 none. GitHub Releases use the matching reviewed section instead of generated notes.
 
+## [0.20.9] - 2026-09-24
+
+### Highlights
+
+- Corrected Front Porch Work Days and Work Hours authoring and generation application.
+- Added per-tab bulk field selection and guarded generated First Messages against trailing JSON-wrapper contamination.
+
+### Changes
+
+- Restored generated Work Days to canonical integer arrays before writing the Front Porch extension.
+- Replaced the single Work Hours text field with separate Start and End `HH:MM` controls that serialize to Front Porch's own compact clock-range format.
+- Added compatible parsing for existing `9am–5pm`, `9:30am–5:15pm` and 24-hour ranges, plus validation that rejects prose as a work schedule.
+- Tightened Work Hours generation instructions to require actual start and end times.
+- Added Select All Fields and Select None actions to every Front Porch tab; hidden adult fields still require explicit reveal.
+- Added a bounded standalone First Message cleanup for provider output that appends a second raw JSON wrapper after valid prose.
+- Added focused service, prompt and live UI regression coverage based on the reported Work Days and Mika-card failures without retaining private character content.
+
+### Migration notes
+
+- Existing valid Front Porch `hours` strings and `workDays` arrays require no migration.
+- An imported non-clock Work Hours value is shown as invalid and retained until the author replaces it or turns Include off.
+- Existing First Messages are not silently rewritten; the wrapper cleanup applies to newly generated standalone First Message output.
+
+### Breaking changes
+
+- None for valid Character Card V2, Front Porch 2.5 or Character Card Forge project data.
+
+### Known limitations
+
+- Work Hours continues to use Front Porch's one-range-per-day card contract; different hours for different weekdays are not represented by Front Porch 2.5.
+- Existing cards already containing appended JSON in First Message must be manually corrected or regenerate that field.
+- macOS packages remain unsigned and are not notarised.
+
 ## [0.20.8] - 2026-09-19
 
 ### Highlights

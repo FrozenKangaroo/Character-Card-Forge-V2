@@ -19,6 +19,100 @@ const ROUTING_FORMAT_VERSION_V0195 := 1
 const ROUTING_PROFILE_KEY_V0195 := "_ccf_text_routing_v0195"
 
 
+func recover_safe_text_candidate_v0180_hotfix1(
+	section: Dictionary, content: String
+) -> Dictionary:
+	var recovered := super.recover_safe_text_candidate_v0180_hotfix1(
+		section, content
+	)
+	if not bool(recovered.get("ok", false)):
+		return recovered
+	var field_id := str(
+		section.get(
+			"field_id",
+			(section.get("field", {}) as Dictionary).get("id", "")
+		)
+	)
+	var cleaned := clean_generated_text_v0209(
+		field_id, str(recovered.get("value", ""))
+	)
+	recovered["value"] = str(cleaned.get("value", ""))
+	if bool(cleaned.get("removed_trailing_wrapper", false)):
+		recovered["source"] = (
+			str(recovered.get("source", "plain_text"))
+			+ "_trailing_wrapper_removed"
+		)
+	return recovered
+
+
+func clean_generated_text_v0209(
+	field_id: String, generated_text: String
+) -> Dictionary:
+	var cleaned := generated_text.strip_edges()
+	if field_id not in ["first_message", "first_mes", "greeting"]:
+		return {"value": cleaned, "removed_trailing_wrapper": false}
+	var expression := RegEx.new()
+	var compiled := expression.compile(
+		"(?s)\\n\\s*\\{\\s*\"(?:first_message|first_mes|greeting)\"\\s*:"
+	)
+	if compiled != OK:
+		return {"value": cleaned, "removed_trailing_wrapper": false}
+	var matched := expression.search(cleaned)
+	if matched == null:
+		return {"value": cleaned, "removed_trailing_wrapper": false}
+	var authored_prefix := cleaned.substr(0, matched.get_start()).strip_edges()
+	if authored_prefix.is_empty():
+		return {"value": cleaned, "removed_trailing_wrapper": false}
+	return {"value": authored_prefix, "removed_trailing_wrapper": true}
+
+
+func _accept_safe_field_v01522(
+	section: Dictionary, value: Variant, has_value: bool
+) -> void:
+	var field_id := str(
+		section.get(
+			"field_id",
+			(section.get("field", {}) as Dictionary).get("id", "")
+		)
+	)
+	var accepted_value: Variant = value
+	if has_value and value is String:
+		accepted_value = clean_generated_text_v0209(
+			field_id, str(value)
+		).get("value", value)
+	super._accept_safe_field_v01522(section, accepted_value, has_value)
+
+
+func _front_porch_type_instruction_v0172(field: Dictionary) -> String:
+	if str(field.get("id", "")) == "fp_work_hours":
+		return (
+			"one exact Front Porch clock range string such as 9am–5pm "
+			+ "or 9:30am–5:15pm; use actual start and end times, never prose"
+		)
+	return super._front_porch_type_instruction_v0172(field)
+
+
+func _prepare_front_porch_fields_v0175(
+	fields: Array[Dictionary]
+) -> Array[Dictionary]:
+	var prepared := super._prepare_front_porch_fields_v0175(fields)
+	for index in range(prepared.size()):
+		var field := prepared[index]
+		if str(field.get("id", "")) != "fp_work_hours":
+			continue
+		var guidance := str(field.get("generation_prompt", "")).strip_edges()
+		if not guidance.is_empty():
+			guidance += " "
+		guidance += (
+			"Return only a real start–end clock range compatible with Front Porch, "
+			+ "for example 9am–5pm or 9:30am–5:15pm. Do not describe holidays, "
+			+ "availability, flexible schedules or days off in this field."
+		)
+		field["generation_prompt"] = guidance
+		prepared[index] = field
+	return prepared
+
+
 func queue_ai_review_v0183(
 	project: Dictionary,
 	character_id: String,

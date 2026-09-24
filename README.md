@@ -11,18 +11,15 @@ interface architecture.
 
 ![Character Card Forge Workspace with a populated character project](docs/images/user-manual/workspace-overview.png)
 
-*The v0.20.7 Workspace keeps canonical character fields and task-specific tools in one project view.*
+*The Workspace keeps canonical character fields and task-specific tools in one project view.*
 
 ## Current status
 
-The current public release is **v0.20.7 — Runtime Consolidation Phase 2**.
-The v0.20.8 source candidate separately budgets Character Collaborator reply output
-and shows the resulting input allowance, including for large reference attachments.
-It replaces four recent generation-service layers with one semantic current service
-while retaining AI Review, Compact/Lite derivatives, Split Character Sets, task-specific
-Text routing and all historical compatibility files. A deterministic report measures the
-active inheritance reduction and prevents later releases from silently restarting service
-stacking.
+The current source candidate is **v0.20.9 — Front Porch Field Reliability**. It fixes
+generated Work Days application, matches Front Porch's separate Start/End work-hour
+authoring and exact stored range format, adds Select All / Select None actions to every
+Front Porch tab and prevents trailing JSON wrappers from contaminating generated First
+Messages. v0.20.8 separately corrected Character Collaborator input/output budgeting.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental
