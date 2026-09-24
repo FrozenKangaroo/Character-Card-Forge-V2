@@ -15,11 +15,10 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.20.9 — Front Porch Field Reliability**. It fixes
-generated Work Days application, matches Front Porch's separate Start/End work-hour
-authoring and exact stored range format, adds Select All / Select None actions to every
-Front Porch tab and prevents trailing JSON wrappers from contaminating generated First
-Messages. v0.20.8 separately corrected Character Collaborator input/output budgeting.
+The current source candidate is **v0.21.0 — Structured Idea Packs**. It adds versioned
+`.ccfideas.json` import and export for reusable Series, scenario/card Seeds and character
+notes. Imports are validated and previewed before atomic Idea Notebook updates, with
+explicit stable-ID conflict choices and lossless preservation of future fields.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental
@@ -29,6 +28,8 @@ and [changelog](CHANGELOG.md).
 ## Major capabilities
 
 - Manual, guided, structured and AI-assisted character creation.
+- Structured Idea Pack import/export with semantic rules, guardrails, cross-links,
+  provenance, arbitrary labelled sections and duplicate-safe re-import.
 - Character Collaborator conversations with explicit sources, evidence roles and
   reviewable Generation Blueprint handoff.
 - Editable canonical Character Card fields, Alternative Greetings, Scenario Presets,

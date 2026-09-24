@@ -1,0 +1,69 @@
+{
+  "format": "character-card-forge-ideas",
+  "schema_version": 1,
+  "pack": {
+    "id": "series-bible-iii-v0.2-sample",
+    "title": "Character Card Forge — Series Bible III Sample",
+    "description": "Import-ready sample Idea Pack for Character Card Forge.",
+    "source_version": "0.2",
+    "created_at": null,
+    "source": "Character Card Forge v0.21.0 example"
+  },
+  "entries": [
+    {
+      "id": "III-SC-24",
+      "kind": "seed",
+      "title": "Japan by Rail Roommates",
+      "status": {
+        "saved": true,
+        "implemented": false
+      },
+      "classification": {
+        "bible": "III",
+        "series_number": null,
+        "primary_series": [
+          "Our Trip Together"
+        ],
+        "secondary_series": [],
+        "cross_links": [
+          "Only One Bed"
+        ]
+      },
+      "summary": "",
+      "core_premise": "",
+      "setup": "{{user}}, an adult otaku who has long wanted to visit Japan, joins a multi-week guided Japan by Rail tour. During registration, both {{user}} and {{char}} independently select the accommodation option allowing a random adult roommate of any gender, and the tour company pairs them.",
+      "opening_beat": "",
+      "character_engine": "The same roommate pairing persists as the group travels through several regions of Japan and stays in different kinds of accommodation.",
+      "ground_truth": "",
+      "hidden_motive": "",
+      "core_variables": [
+        "Why {{char}} is visiting Japan",
+        "Her interests compared with {{user}}'s otaku interests",
+        "Length of stays in major destinations",
+        "Hotel versus ryokan accommodation",
+        "Whether either person ever requests reassignment"
+      ],
+      "flagship_seeds": [],
+      "generation_rules": [
+        "Selecting gender-neutral room allocation does not establish attraction or sexual availability.",
+        "Do not force an Only One Bed scenario.",
+        "The tour lasts multiple weeks rather than being a single-week trip."
+      ],
+      "guardrails": [],
+      "tags": [
+        "travel",
+        "Japan",
+        "rail",
+        "roommate",
+        "tour"
+      ],
+      "notes": [],
+      "sections": [
+        {
+          "label": "Transport rule",
+          "content": "International flights are used only to enter and leave Japan. Once in Japan there are no domestic flights. Intercity travel is overwhelmingly by rail, with local trains, subways, trams, buses, ferries and other public transport used where appropriate."
+        }
+      ]
+    }
+  ]
+}

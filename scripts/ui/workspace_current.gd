@@ -7,10 +7,28 @@ const FRONT_PORCH_SERVICE_CURRENT = preload(
 const FRONT_PORCH_WORK_HOURS_CONTROL_V0209 = preload(
 	"res://scripts/ui/front_porch_work_hours_control_v0209.gd"
 )
+const IDEA_GENERATOR_CURRENT = preload(
+	"res://scripts/ui/idea_generator_window_current.gd"
+)
 
 
 func _init() -> void:
 	_front_porch_service_v0172 = FRONT_PORCH_SERVICE_CURRENT.new()
+
+
+func _build_concept_studio() -> void:
+	_idea_generator_v01532 = IDEA_GENERATOR_CURRENT.new()
+	_idea_generator_v01532.visible = false
+	_idea_generator_v01532.concept_selected.connect(_on_structured_concept_selected)
+	if _idea_generator_v01532.has_signal("collaborator_source_requested"):
+		_idea_generator_v01532.connect(
+			"collaborator_source_requested",
+			Callable(self, "_on_collaborator_source_requested_v01533")
+		)
+	add_child(_idea_generator_v01532)
+	_idea_generator_v01532.hide()
+	_idea_generator_v01412 = _idea_generator_v01532
+	_concept_studio = _idea_generator_v01532
 
 
 func _build_front_porch_group_v0172(group: Dictionary) -> void:

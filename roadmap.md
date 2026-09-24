@@ -60,10 +60,10 @@ derivatives, Split Character Sets and task-specific Text routing in one semantic
 available for compatibility evidence, while deterministic tooling proves the active
 generation-service depth fell from 34 to 31 scripts and prevents renewed service stacking.
 
-The v0.20.9 development candidate addresses Front Porch authoring feedback. Generated
-Work Days now persist as integer arrays, work hours use Front Porch-compatible separate
-Start/End inputs and serialized clock ranges, every Front Porch tab has bulk selection,
-and malformed trailing JSON wrappers cannot contaminate generated First Messages.
+The v0.21.0 development candidate adds versioned structured Idea Packs. Reusable Series,
+scenario/card Seeds and character notes can be validated, previewed, conflict-resolved
+and atomically imported into the existing Idea Notebook, then exported without flattening
+rules, guardrails, cross-links or arbitrary labelled sections into unstructured prose.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -177,7 +177,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.20.9** and uses the Godot
+The current source candidate displays **v0.21.0** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -187,7 +187,17 @@ expansion.
 
 ## Completed
 
-### v0.20.9 — Front Porch Field Reliability (candidate)
+### v0.21.0 — Structured Idea Packs (candidate)
+
+- Added schema-version-1 `.ccfideas.json` parsing and content validation independent of filename extension.
+- Added review-first Idea Notebook import with pack counts, warnings/errors, entry inspection, selection and explicit confirmation.
+- Added stable imported-ID conflict handling for Skip, Replace/update and Keep both; similar titles warn without being merged automatically.
+- Preserved complete semantic entries, unknown future fields and pack provenance additively inside existing Idea Notebook records.
+- Added staged multi-record writes with rollback so malformed or interrupted preparation cannot partially import a pack.
+- Added selected/all/Bible/Series export and semantic generation context for rules, guardrails, variables, links and custom sections.
+- Added an immediately importable example pack and complete parser, conflict, re-import, Unicode, token, round-trip and live UI regression coverage.
+
+### v0.20.9 — Front Porch Field Reliability
 
 - Fixed generated Work Days application by restoring canonical integer-array values before the Front Porch extension write.
 - Replaced the free-form Work Hours box with separate Start and End `HH:MM` controls that serialize to Front Porch's `9am–5pm` / `9:30am–5:15pm` card format.
@@ -633,7 +643,7 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
-- Prove the consolidated metadata/import warning check and complete 158-test manifest-driven regression check on pull requests and `main` without removing historical test scripts.
+- Prove the consolidated metadata/import warning check and complete manifest-driven regression check on pull requests and `main` without removing historical test scripts.
 - Use the published v0.20.7 packages, expanded offline manual and privacy-safe support report during the bake period.
 - Maintain the published 61-page Wiki from the validated Help catalog, publish the integrated 19-image Linux screenshot set and add Windows/macOS comparison captures where platform presentation differs.
 - Complete and record the real-world evidence in [`docs/pre-1.0-release-readiness.md`](docs/pre-1.0-release-readiness.md), including Front Porch, providers, shared/NAS storage, updates and recovery.
@@ -862,7 +872,7 @@ focused plus inherited regression coverage.
 
 ## Level and Content Tools
 
-Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable/versioned templates, `.ccfchar` interchange, project packages, lorebooks, Idea Notebook entries, Collaborator source snapshots, Image creative catalogs/presets/Generation Profiles, Front Porch character extensions, expression packs, `fpa_group` cards, `.fpworld`/`.fpchat` packages and schema/editor tooling. Loading and saving should use the same underlying models exposed to authoring tools.
+Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable/versioned templates, `.ccfchar` interchange, project packages, lorebooks, `.ccfideas.json` Idea Packs, Idea Notebook entries, Collaborator source snapshots, Image creative catalogs/presets/Generation Profiles, Front Porch character extensions, expression packs, `fpa_group` cards, `.fpworld`/`.fpchat` packages and schema/editor tooling. Loading and saving should use the same underlying models exposed to authoring tools.
 
 ## Technical Improvements
 
@@ -893,6 +903,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep in-app release checks unauthenticated, rate-limited, repository-pinned and separate from provider credentials, project data and executable replacement.
 - Keep persistent app state under `user://` separate from portable project/card data unless deliberately included.
 - Keep Idea Notebook independent of Character Project persistence and generation-service topology.
+- Keep Idea Pack parsing and validation outside the UI; preserve stable source IDs, unknown future fields and semantic generator guidance across import/export.
 - Keep Collaborator source seeding public/structured and completion/refinement project-scoped/stale-source checked/non-destructive.
 - Keep the Front Porch schema adapter versioned and capability-aware; preserve unknown `extensions.front_porch` data rather than dropping fields introduced by newer Front Porch versions.
 - Separate authored Front Porch starting values from imported live/evolving state, and keep both out of ordinary Character Card fields unless the user explicitly maps them.
