@@ -1,0 +1,24 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.0 complete regression suites",
+  "description": "v0.20.9 complete baseline plus versioned structured Idea Pack import, conflict-safe persistence, generator context and round-trip export.",
+  "base_manifest": "regression_suites_v0209.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0210_idea_pack_service",
+        "label": "v0.21.0 structured Idea Pack parser, conflicts and round trip",
+        "kind": "godot",
+        "path": "tools/test_v0210_idea_packs.gd",
+        "timeout_seconds": 120
+      },
+      {
+        "id": "v0210_idea_pack_ui",
+        "label": "v0.21.0 live Idea Notebook import and export workflow",
+        "kind": "godot",
+        "path": "tools/test_v0210_idea_pack_ui.gd",
+        "timeout_seconds": 120
+      }
+    ]
+  }
+}

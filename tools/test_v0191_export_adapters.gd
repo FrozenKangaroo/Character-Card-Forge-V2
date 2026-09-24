@@ -407,7 +407,12 @@ func _run() -> void:
 					and current_main_text.contains("scripts/main_v0201.gd")
 					and current_main_text.contains("HELP_CENTER_CURRENT")
 					and current_main_text.contains("SUPPORT_CENTER_CURRENT")
-					and (current_main_text.contains("0.20.7") or current_main_text.contains("0.20.8") or current_main_text.contains("0.20.9"))
+					and (
+						current_main_text.contains("0.20.7")
+						or current_main_text.contains("0.20.8")
+						or current_main_text.contains("0.20.9")
+						or current_main_text.contains("0.21.0")
+					)
 				),
 		"The live application must mount the v0.19.1 workspace and display its version."
 	):

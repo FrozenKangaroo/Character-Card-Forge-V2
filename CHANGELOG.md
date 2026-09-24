@@ -4,6 +4,42 @@ Release notes are written before a release tag is created. Each release explicit
 records migration needs, breaking changes and known limitations, even when there are
 none. GitHub Releases use the matching reviewed section instead of generated notes.
 
+## [0.21.0] - 2026-09-25
+
+### Highlights
+
+- Added versioned `.ccfideas.json` Idea Packs for semantic Series, Seed and character-note exchange.
+- Added review-first import with validation, duplicate handling and atomic Idea Notebook updates.
+- Added selective Idea Pack export with Bible and Series scopes.
+
+### Changes
+
+- Added one schema-aware parser/validator for format identity, schema versions, required fields, optional defaults, arbitrary labelled sections, unknown fields and cross-link warnings.
+- Preserved complete structured entries and source-pack provenance inside the existing Idea Notebook record model instead of creating a parallel database.
+- Added Import Idea Pack to the live Idea Notebook with file selection, pack counts, fatal errors, warnings, per-entry inspection, Select All/None and explicit confirmation.
+- Added stable imported-ID conflict choices: Skip existing, Replace/update existing or Keep both as a new local copy. Likely title duplicates warn without being treated as identity matches.
+- Staged selected entries before committing the batch and restored previous files if a multi-record commit could not complete.
+- Made imported generation rules, guardrails, variables, links and custom sections part of the concept sent from Idea Notebook into character generation.
+- Added Export Idea Pack for individual selections, all ideas, one Bible or one Series while retaining unknown entry fields and `{{user}}` / `{{char}}` tokens.
+- Added an import-ready Japan by Rail Roommates example and focused parser, conflict, persistence, round-trip and live UI regressions.
+
+### Migration notes
+
+- Existing Idea Notebook files remain format version 1 and require no migration. Structured Idea Pack data is stored additively in `structured_idea` and `source.idea_pack` fields that older readers safely preserve.
+- Existing ordinary saved ideas can be exported; they map to schema-version-1 Seed entries with their concept as the summary.
+- Re-import uses the pack entry ID as stable source identity while retaining a separate local Idea Notebook ID.
+
+### Breaking changes
+
+- None for existing ideas, notebooks, character projects, provider profiles or supported card formats.
+
+### Known limitations
+
+- Schema versions newer than 1 are available for read-only preview but cannot be imported until their interpretation is supported.
+- Version 1 edits imported semantic fields through the existing concept/notes surface; a manually changed concept is retained as a labelled author override during export.
+- Drag-and-drop and recent-pack history are deferred; file selection is the primary import route.
+- macOS packages remain unsigned and are not notarised.
+
 ## [0.20.9] - 2026-09-24
 
 ### Highlights
