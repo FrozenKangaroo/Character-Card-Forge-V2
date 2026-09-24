@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.20.9 complete regression suites",
+  "description": "v0.20.8 complete baseline plus Front Porch work schedule, bulk selection and generated greeting cleanup.",
+  "base_manifest": "regression_suites_v0208.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0209_front_porch_field_fixes",
+        "label": "v0.20.9 Front Porch field reliability and first-message cleanup",
+        "kind": "godot",
+        "path": "tools/test_v0209_front_porch_field_fixes.gd",
+        "timeout_seconds": 120
+      }
+    ]
+  }
+}

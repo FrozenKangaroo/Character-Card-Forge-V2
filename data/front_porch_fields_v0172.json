@@ -1,5 +1,5 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "front_porch_extension_version": "2.5",
   "greeting_seed_fields": [
     {"id":"seed_character_emotion","key_path":"character_emotion","label":"Opening emotion","type":"line","default":"","generate":true},
@@ -32,7 +32,7 @@
         {"id":"fp_plan_lines","key_path":"plan_lines","label":"Plan lines","type":"tags","default":[],"generate":true,"generation_prompt":"Short character-owned plan or intention sentences. Do not invent actions, feelings or history for {{user}}."},
         {"id":"fp_occupation","key_path":"occupation","label":"Occupation","type":"line","default":"","generate":true,"placeholder":"e.g. librarian"},
         {"id":"fp_occupation_brief","key_path":"occupationBrief","label":"What the job involves","type":"multiline","height":90,"default":"","generate":true,"generation_prompt":"Ground at-work narration in one concise description of what this job actually involves."},
-        {"id":"fp_work_hours","key_path":"hours","label":"Work hours","type":"line","default":"","generate":true,"placeholder":"e.g. 09:00–17:00"},
+        {"id":"fp_work_hours","key_path":"hours","label":"Work hours","type":"work_hours","default":"","generate":true,"placeholder":"Set separate Start and End times"},
         {"id":"fp_work_days","key_path":"workDays","label":"Work days","type":"integer_tags","default":[1,2,3,4,5],"generate":true,"placeholder":"1, 2, 3, 4, 5 (Monday=1, Sunday=7)","minimum":1,"maximum":7},
         {"id":"fp_birthday","key_path":"birthday","label":"Birthday","type":"line","default":"","generate":true,"placeholder":"YYYY-MM-DD (February 29 is not supported)"},
         {"id":"fp_likes","key_path":"likes","label":"Drawn to / likes","type":"tags","default":[],"generate":true,"generation_prompt":"Specific things this character warms to, one short phrase per item."},
