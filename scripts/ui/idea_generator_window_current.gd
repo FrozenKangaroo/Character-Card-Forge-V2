@@ -37,24 +37,30 @@ func _build_notebook_tab_v01532() -> void:
 	super._build_notebook_tab_v01532()
 	if _notebook_tab_v01532 == null:
 		return
-	var toolbar := HFlowContainer.new()
+	var toolbar := VBoxContainer.new()
 	toolbar.name = "IdeaPackActionsV0210"
 	toolbar.add_theme_constant_override("separation", 8)
+	var action_row := HFlowContainer.new()
+	action_row.name = "IdeaPackActionButtonsV0210"
+	action_row.add_theme_constant_override("separation", 8)
+	toolbar.add_child(action_row)
 	var import_button := Button.new()
 	import_button.name = "ImportIdeaPackV0210"
 	import_button.text = "Import Idea Pack…"
 	import_button.tooltip_text = "Validate and preview a .ccfideas.json file before adding selected entries to Idea Notebook."
 	import_button.pressed.connect(_open_import_dialog_v0210)
-	toolbar.add_child(import_button)
+	action_row.add_child(import_button)
 	var export_button := Button.new()
 	export_button.name = "ExportIdeaPackV0210"
 	export_button.text = "Export Idea Pack…"
 	export_button.tooltip_text = "Export selected ideas, a Bible, a Series or the complete notebook as a structured Idea Pack."
 	export_button.pressed.connect(_open_export_window_v0210)
-	toolbar.add_child(export_button)
+	action_row.add_child(export_button)
 	var explanation := Label.new()
+	explanation.name = "IdeaPackExplanationV0210"
 	explanation.text = "Idea Packs preserve Series, Seeds, rules, guardrails, links and custom sections."
 	explanation.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	explanation.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	explanation.modulate = Color(0.72, 0.76, 0.86)
 	toolbar.add_child(explanation)
 	_notebook_tab_v01532.add_child(toolbar)

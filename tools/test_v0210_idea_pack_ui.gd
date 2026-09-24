@@ -26,6 +26,44 @@ func _run() -> void:
 	var export_button := generator.find_child("ExportIdeaPackV0210", true, false) as Button
 	if not _require(import_button != null and export_button != null, "Idea Notebook must expose Import and Export Idea Pack actions."):
 		return
+	var toolbar := generator.find_child("IdeaPackActionsV0210", true, false)
+	var action_row := generator.find_child("IdeaPackActionButtonsV0210", true, false)
+	var explanation := generator.find_child("IdeaPackExplanationV0210", true, false)
+	if not _require(
+		toolbar is VBoxContainer
+		and action_row is HFlowContainer
+		and explanation is Label
+		and import_button.get_parent() == action_row
+		and export_button.get_parent() == action_row
+		and explanation.get_parent() == toolbar,
+		"Idea Pack actions and wrapping help text must use separate rows so the notebook cannot collapse horizontally."
+	):
+		return
+	generator.open_notebook_v01532()
+	await process_frame
+	await process_frame
+	var notebook_value: Variant = generator.get("_notebook_tab_v01532")
+	var notebook_splits: Array[Node] = []
+	if notebook_value is VBoxContainer:
+		notebook_splits = (notebook_value as VBoxContainer).find_children("*", "HSplitContainer", true, false)
+	var notebook_split := notebook_splits[0] as HSplitContainer if not notebook_splits.is_empty() else null
+	var layout_measurements := "toolbar=%s action_row=%s explanation=%s split=%s" % [
+		str((toolbar as VBoxContainer).size),
+		str((action_row as HFlowContainer).size),
+		str((explanation as Label).size),
+		str(notebook_split.size) if notebook_split != null else "missing"
+	]
+	if not _require(
+		(toolbar as VBoxContainer).size.y < 140.0
+		and (action_row as HFlowContainer).size.y < 80.0
+		and (explanation as Label).size.x > 400.0
+		and notebook_split != null
+		and notebook_split.size.x > 650.0
+		and notebook_split.size.y > 140.0,
+		"The visible Idea Notebook must retain a compact action toolbar and usable full-width editor split (%s)." % layout_measurements
+	):
+		return
+	generator.hide()
 	var structured_details := generator.find_child("StructuredIdeaDetailsV0210", true, false)
 	if not _require(structured_details != null, "Idea Notebook must expose structured semantic details for imported entries."):
 		return
