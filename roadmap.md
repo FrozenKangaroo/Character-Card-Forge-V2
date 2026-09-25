@@ -60,10 +60,11 @@ derivatives, Split Character Sets and task-specific Text routing in one semantic
 available for compatibility evidence, while deterministic tooling proves the active
 generation-service depth fell from 34 to 31 scripts and prevents renewed service stacking.
 
-The v0.21.0 development candidate adds versioned structured Idea Packs. Reusable Series,
-scenario/card Seeds and character notes can be validated, previewed, conflict-resolved
-and atomically imported into the existing Idea Notebook, then exported without flattening
-rules, guardrails, cross-links or arbitrary labelled sections into unstructured prose.
+The v0.21.1 development candidate adds a fifth, optional Custom Idea Generator detail
+mode. Authors choose an approximate text-character target for each concept while Quick,
+Standard, Detailed and Extended retain their existing behavior. CCF derives and caps the
+request budget, then reports the model's actual result lengths without treating a soft
+target miss as invalid content.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -177,7 +178,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.0** and uses the Godot
+The current source candidate displays **v0.21.1** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -186,6 +187,14 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.1 — Custom Idea Length Targets (candidate)
+
+- Added Custom after the four existing Idea Generator detail presets with a bounded approximate character target per concept.
+- Kept length guidance soft so schema, coherence, requested idea count and `{{user}}` agency remain higher-priority constraints.
+- Derived the request output allowance from target and batch size while respecting the configured Text profile maximum.
+- Added actual minimum, maximum, average and within-guide reporting without rejecting useful off-target results.
+- Added offline help, implementation notes and focused service/live-UI regression coverage.
 
 ### v0.21.0 — Structured Idea Packs (candidate)
 

@@ -14,9 +14,200 @@ const COMPACT_DERIVATIVE_SERVICE_CURRENT = preload(
 const RICH_AUTHORING_SERVICE_CURRENT = preload(
 	"res://scripts/services/rich_authoring_service_v0190.gd"
 )
+const IDEA_CUSTOM_LENGTH_V0211 = preload(
+	"res://scripts/services/idea_generator_custom_length_v0211.gd"
+)
 
 const ROUTING_FORMAT_VERSION_V0195 := 1
 const ROUTING_PROFILE_KEY_V0195 := "_ccf_text_routing_v0195"
+
+
+func queue_idea_generation_with_custom_length_v0211(
+	seed_text: String,
+	profile: Dictionary,
+	idea_count: int,
+	retry_count: int,
+	project_id: String = "",
+	series_context: String = "",
+	target_characters: int = CCFIdeaGeneratorCustomLengthV0211.DEFAULT_TARGET_CHARACTERS
+) -> Dictionary:
+	var target := IDEA_CUSTOM_LENGTH_V0211.normalise_target_characters(
+		target_characters
+	)
+	var result := super.queue_idea_generation(
+		seed_text,
+		profile,
+		idea_count,
+		retry_count,
+		project_id,
+		series_context
+	)
+	if not bool(result.get("ok", false)):
+		return result
+	var budget := _decorate_queued_idea_custom_length_v0211(
+		str(result.get("job_id", "")), target
+	)
+	result["target_characters_per_idea"] = target
+	result["request_max_tokens"] = int(budget.get("effective_output_tokens", 0))
+	result["budget_limited"] = bool(budget.get("budget_limited", false))
+	return result
+
+
+func idea_custom_length_capabilities_v0211() -> Dictionary:
+	return {
+		"contract_version": IDEA_CUSTOM_LENGTH_V0211.CONTRACT_VERSION,
+		"minimum_target_characters": IDEA_CUSTOM_LENGTH_V0211.MIN_TARGET_CHARACTERS,
+		"maximum_target_characters": IDEA_CUSTOM_LENGTH_V0211.MAX_TARGET_CHARACTERS,
+		"default_target_characters": IDEA_CUSTOM_LENGTH_V0211.DEFAULT_TARGET_CHARACTERS,
+		"tolerance_percent": IDEA_CUSTOM_LENGTH_V0211.TARGET_TOLERANCE_PERCENT,
+		"profile_output_cap_preserved": true,
+		"advisory_not_validation_failure": true,
+		"actual_counts_in_metadata": true
+	}
+
+
+func _decorate_queued_idea_custom_length_v0211(
+	job_id: String, target_characters: int
+) -> Dictionary:
+	if job_id.is_empty():
+		return {}
+	for index in range(_queue.size()):
+		var job_value: Variant = _queue[index]
+		if not job_value is Dictionary:
+			continue
+		var job: Dictionary = job_value
+		if str(job.get("id", "")) != job_id or str(job.get("type", "")) != "ideas":
+			continue
+		var queued_decoration := _idea_job_with_custom_length_v0211(
+			job, target_characters
+		)
+		_queue[index] = queued_decoration.get("job", job)
+		return queued_decoration.get("budget", {})
+	if (
+		not _active_job.is_empty()
+		and str(_active_job.get("id", "")) == job_id
+		and str(_active_job.get("type", "")) == "ideas"
+	):
+		var active_decoration := _idea_job_with_custom_length_v0211(
+			_active_job, target_characters
+		)
+		_active_job = active_decoration.get("job", _active_job)
+		return active_decoration.get("budget", {})
+	return {}
+
+
+func _idea_job_with_custom_length_v0211(
+	job_value: Dictionary, target_characters: int
+) -> Dictionary:
+	var job := job_value.duplicate(true)
+	var payload_value: Variant = job.get("payload", {})
+	var payload: Dictionary = (
+		(payload_value as Dictionary).duplicate(true)
+		if payload_value is Dictionary
+		else {}
+	)
+	var metadata_value: Variant = job.get("metadata", {})
+	var metadata: Dictionary = (
+		(metadata_value as Dictionary).duplicate(true)
+		if metadata_value is Dictionary
+		else {}
+	)
+	var profile_limit := int(metadata.get(
+		"idea_custom_profile_max_output_tokens",
+		payload.get("max_tokens", 6000)
+	))
+	var budget := IDEA_CUSTOM_LENGTH_V0211.output_budget(
+		target_characters,
+		int(metadata.get("idea_count", 1)),
+		profile_limit
+	)
+	var instruction := IDEA_CUSTOM_LENGTH_V0211.prompt_instruction(
+		target_characters
+	)
+	var messages_value: Variant = payload.get("messages", [])
+	var messages: Array = (
+		messages_value.duplicate(true) if messages_value is Array else []
+	)
+	for message_index in range(messages.size()):
+		if not messages[message_index] is Dictionary:
+			continue
+		var message: Dictionary = (messages[message_index] as Dictionary).duplicate(true)
+		if str(message.get("role", "")) != "system":
+			continue
+		var content := str(message.get("content", ""))
+		if not content.contains("CUSTOM IDEA LENGTH TARGET:"):
+			message["content"] = content + "\n\n" + instruction
+			messages[message_index] = message
+		break
+	payload["messages"] = messages
+	payload["max_tokens"] = int(budget.get("effective_output_tokens", profile_limit))
+	job["payload"] = payload
+	metadata["idea_detail_contract_version"] = 2
+	metadata["idea_detail_level"] = "custom"
+	metadata["idea_detail_label"] = "Custom"
+	metadata["idea_custom_length_contract_version"] = (
+		IDEA_CUSTOM_LENGTH_V0211.CONTRACT_VERSION
+	)
+	metadata["idea_custom_target_characters"] = int(
+		budget.get("target_characters_per_idea", target_characters)
+	)
+	metadata["idea_custom_tolerance_percent"] = (
+		IDEA_CUSTOM_LENGTH_V0211.TARGET_TOLERANCE_PERCENT
+	)
+	metadata["idea_custom_requested_output_tokens"] = int(
+		budget.get("requested_output_tokens", 0)
+	)
+	metadata["idea_custom_profile_max_output_tokens"] = int(
+		budget.get("profile_max_output_tokens", profile_limit)
+	)
+	metadata["idea_output_max_tokens"] = int(
+		budget.get("effective_output_tokens", profile_limit)
+	)
+	metadata["idea_custom_budget_limited"] = bool(
+		budget.get("budget_limited", false)
+	)
+	job["metadata"] = metadata
+	return {"job": job, "budget": budget}
+
+
+func _start_idea_semantic_repair(ideas: Array, issues: Array) -> void:
+	var metadata_value: Variant = _active_job.get("metadata", {})
+	var metadata: Dictionary = (
+		metadata_value if metadata_value is Dictionary else {}
+	)
+	var target := int(metadata.get("idea_custom_target_characters", 0))
+	super._start_idea_semantic_repair(ideas, issues)
+	if target <= 0 or _active_job.is_empty():
+		return
+	var decorated := _idea_job_with_custom_length_v0211(
+		_active_job, target
+	)
+	_active_job = decorated.get("job", _active_job)
+
+
+func _validate_idea_batch(ideas: Array, idea_seed_text: String) -> Dictionary:
+	var result := super._validate_idea_batch(ideas, idea_seed_text)
+	if _active_job.is_empty():
+		return result
+	var metadata_value: Variant = _active_job.get("metadata", {})
+	if not metadata_value is Dictionary:
+		return result
+	var metadata: Dictionary = (metadata_value as Dictionary).duplicate(true)
+	var target := int(metadata.get("idea_custom_target_characters", 0))
+	if target <= 0:
+		return result
+	var accepted_value: Variant = result.get("valid_ideas", [])
+	var accepted: Array = accepted_value if accepted_value is Array else []
+	var counts := IDEA_CUSTOM_LENGTH_V0211.actual_counts(accepted)
+	var target_met := 0
+	for actual_count in counts:
+		if IDEA_CUSTOM_LENGTH_V0211.count_within_target(actual_count, target):
+			target_met += 1
+	metadata["idea_actual_character_counts"] = counts
+	metadata["idea_custom_target_met_count"] = target_met
+	metadata["idea_custom_result_count"] = counts.size()
+	_active_job["metadata"] = metadata
+	return result
 
 
 func recover_safe_text_candidate_v0180_hotfix1(

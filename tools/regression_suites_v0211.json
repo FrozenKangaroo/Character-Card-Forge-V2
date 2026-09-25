@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.1 complete regression suites",
+  "description": "v0.21.0 complete baseline plus bounded custom per-idea character targets, preserved detail presets and visible actual-length reporting.",
+  "base_manifest": "regression_suites_v0210.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0211_custom_idea_length",
+        "label": "v0.21.1 custom Idea Generator length targets",
+        "kind": "godot",
+        "path": "tools/test_v0211_custom_idea_length.gd",
+        "timeout_seconds": 120
+      }
+    ]
+  }
+}

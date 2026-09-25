@@ -11,7 +11,7 @@ const HELP_CENTER_CURRENT = preload(
 )
 const SETTINGS_VIEW_CURRENT = preload("res://scripts/ui/settings_view_v0208.gd")
 const WORKSPACE_CURRENT = preload("res://scripts/ui/workspace_current.gd")
-const CURRENT_BUILD_VERSION := "0.21.0"
+const CURRENT_BUILD_VERSION := "0.21.1"
 
 var _support_center_v0202: CCFSupportCenterWindowV0202
 var _help_center_v0203: CCFHelpCenterWindowV0203
@@ -178,7 +178,7 @@ func _update_current_build_label() -> void:
 		if node is Label and node.text.begins_with("Godot rewrite • v"):
 			node.text = "Godot rewrite • v%s" % CURRENT_BUILD_VERSION
 			node.tooltip_text = (
-				"v0.21.0 adds versioned structured Idea Pack import, review, conflict handling, "
-				+ "atomic Idea Notebook updates and round-trip export."
+				"v0.21.1 adds a Custom Idea Generator detail mode with an approximate "
+				+ "per-idea character target, bounded output budgeting and visible actual lengths."
 			)
 			return

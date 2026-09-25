@@ -302,16 +302,17 @@
       "category": "authoring",
       "title": "Idea Generator and Idea Notebook",
       "summary": "Generate several concepts, keep useful ideas and deliberately choose what becomes a project.",
-      "keywords": ["idea", "generator", "notebook", "concept", "brainstorm", "capture", "pack", "ccfideas", "import", "export"],
+      "keywords": ["idea", "generator", "notebook", "concept", "brainstorm", "capture", "pack", "ccfideas", "import", "export", "custom", "length", "characters", "detail"],
       "steps": [
         "Choose Idea Generator when you want several candidate concepts from explicit options.",
+        "Choose Quick, Standard, Detailed or Extended for a preset depth, or Custom to enter an approximate character target for each idea's concept.",
         "Review the complete results and save promising ideas to Idea Notebook.",
         "Choose Import Idea Pack to validate and preview a .ccfideas.json file; resolve stable-ID conflicts before confirming the atomic import.",
         "Edit saved ideas or combine your own notes before starting a character.",
         "Choose Export Idea Pack to share selected entries, a Bible, a Series or the complete notebook while retaining structured rules and custom sections.",
         "Create a project only from the idea you intentionally choose."
       ],
-      "notes": ["Idea generation preserves user agency and does not make brainstorming canonical automatically.", "Newer unsupported Idea Pack schemas may be previewed but are not imported silently."],
+      "notes": ["Idea generation preserves user agency and does not make brainstorming canonical automatically.", "A Custom character target is a model-guided request, not a guarantee. The completion status reports actual minimum, maximum and average concept lengths.", "Large Custom requests are capped by the configured Text model/profile maximum output; an off-target but otherwise valid idea remains reviewable.", "Newer unsupported Idea Pack schemas may be previewed but are not imported silently."],
       "actions": [{"id": "new_project", "label": "Open Idea Workflows…"}],
       "related": ["character_collaborator", "templates_generation_modes", "first_character"]
     },

@@ -593,7 +593,7 @@ func _write_export_v0210(path: String) -> void:
 		"description": _export_description_v0210.text,
 		"source_version": _export_version_v0210.text,
 		"created_at": Time.get_datetime_string_from_system(true),
-		"source": "Character Card Forge v0.21.0"
+		"source": "Character Card Forge v0.21.1"
 	}
 	var result := _idea_pack_service_v0210.export_to_file(path, _pending_export_ideas_v0210, metadata)
 	if not bool(result.get("ok", false)):

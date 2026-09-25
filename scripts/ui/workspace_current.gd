@@ -10,6 +10,12 @@ const FRONT_PORCH_WORK_HOURS_CONTROL_V0209 = preload(
 const IDEA_GENERATOR_CURRENT = preload(
 	"res://scripts/ui/idea_generator_window_current.gd"
 )
+const IDEA_CUSTOM_LENGTH_V0211 = preload(
+	"res://scripts/services/idea_generator_custom_length_v0211.gd"
+)
+
+var _idea_custom_length_panel_v0211: VBoxContainer
+var _idea_custom_target_v0211: SpinBox
 
 
 func _init() -> void:
@@ -29,6 +35,240 @@ func _build_concept_studio() -> void:
 	_idea_generator_v01532.hide()
 	_idea_generator_v01412 = _idea_generator_v01532
 	_concept_studio = _idea_generator_v01532
+
+
+func _install_idea_detail_selector_v0167() -> void:
+	super._install_idea_detail_selector_v0167()
+	if _idea_detail_selector_v0167 == null:
+		return
+	var custom_index := _idea_detail_selector_v0167.item_count
+	_idea_detail_selector_v0167.add_item("Custom")
+	_idea_detail_selector_v0167.set_item_metadata(custom_index, "custom")
+	_idea_detail_selector_v0167.tooltip_text += (
+		" Custom adds an approximate text-character target for each idea's concept."
+	)
+	var controls := _idea_detail_selector_v0167.get_parent() as HBoxContainer
+	if controls == null or not controls.get_parent() is VBoxContainer:
+		return
+	var root := controls.get_parent() as VBoxContainer
+	_idea_custom_length_panel_v0211 = VBoxContainer.new()
+	_idea_custom_length_panel_v0211.name = "IdeaCustomLengthPanelV0211"
+	_idea_custom_length_panel_v0211.add_theme_constant_override("separation", 4)
+	root.add_child(_idea_custom_length_panel_v0211)
+	root.move_child(
+		_idea_custom_length_panel_v0211, controls.get_index() + 1
+	)
+	var target_row := HFlowContainer.new()
+	target_row.name = "IdeaCustomLengthControlsV0211"
+	target_row.add_theme_constant_override("separation", 8)
+	_idea_custom_length_panel_v0211.add_child(target_row)
+	var target_label := Label.new()
+	target_label.text = "Target characters per idea"
+	target_row.add_child(target_label)
+	_idea_custom_target_v0211 = SpinBox.new()
+	_idea_custom_target_v0211.name = "IdeaCustomTargetCharactersV0211"
+	_idea_custom_target_v0211.min_value = (
+		IDEA_CUSTOM_LENGTH_V0211.MIN_TARGET_CHARACTERS
+	)
+	_idea_custom_target_v0211.max_value = (
+		IDEA_CUSTOM_LENGTH_V0211.MAX_TARGET_CHARACTERS
+	)
+	_idea_custom_target_v0211.step = 250
+	_idea_custom_target_v0211.value = (
+		IDEA_CUSTOM_LENGTH_V0211.DEFAULT_TARGET_CHARACTERS
+	)
+	_idea_custom_target_v0211.allow_greater = false
+	_idea_custom_target_v0211.allow_lesser = false
+	_idea_custom_target_v0211.suffix = " chars/idea"
+	_idea_custom_target_v0211.custom_minimum_size.x = 210
+	_idea_custom_target_v0211.tooltip_text = (
+		"Approximate Unicode text-character target for each generated idea's concept field. Model compliance varies."
+	)
+	_idea_custom_target_v0211.value_changed.connect(
+		_on_idea_custom_target_changed_v0211
+	)
+	target_row.add_child(_idea_custom_target_v0211)
+	var guidance := Label.new()
+	guidance.name = "IdeaCustomLengthGuidanceV0211"
+	guidance.text = (
+		"This is a soft target. CCF requests enough output capacity when possible, but the selected model controls the final length."
+	)
+	guidance.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	guidance.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	guidance.modulate = Color(0.64, 0.68, 0.82)
+	_idea_custom_length_panel_v0211.add_child(guidance)
+	_idea_custom_length_panel_v0211.hide()
+
+
+func _on_idea_detail_selected_v0167(index: int) -> void:
+	var selected_id := ""
+	if (
+		_idea_detail_selector_v0167 != null
+		and index >= 0
+		and index < _idea_detail_selector_v0167.item_count
+	):
+		selected_id = str(
+			_idea_detail_selector_v0167.get_item_metadata(index)
+		)
+	if selected_id == "custom":
+		_selected_idea_detail_level_v0167 = "custom"
+		if _idea_custom_length_panel_v0211 != null:
+			_idea_custom_length_panel_v0211.show()
+		_refresh_idea_detail_hint_v0167()
+		return
+	super._on_idea_detail_selected_v0167(index)
+	if _idea_custom_length_panel_v0211 != null:
+		_idea_custom_length_panel_v0211.hide()
+
+
+func _on_idea_custom_target_changed_v0211(_value: float) -> void:
+	if _selected_idea_detail_level_v0167 == "custom":
+		_refresh_idea_detail_hint_v0167()
+
+
+func _refresh_idea_detail_hint_v0167() -> void:
+	if _selected_idea_detail_level_v0167 != "custom":
+		super._refresh_idea_detail_hint_v0167()
+		return
+	if _idea_detail_hint_v0167 == null:
+		return
+	var target := _idea_custom_target_characters_v0211()
+	_idea_detail_hint_v0167.text = (
+		"Custom — aim for approximately %s text characters in each idea's concept. This is model-guided, not guaranteed."
+		% _format_integer_v0211(target)
+	)
+
+
+func _generate_ideas() -> void:
+	if _selected_idea_detail_level_v0167 != "custom":
+		super._generate_ideas()
+		return
+	var profile := CCFSettingsService.profile_for_role(
+		_settings, CCFSettingsService.ROLE_TEXT
+	)
+	if (
+		_generation_service == null
+		or not _generation_service.has_method(
+			"queue_idea_generation_with_custom_length_v0211"
+		)
+	):
+		_idea_status.text = "The Custom Idea length service is unavailable."
+		return
+	var target := _idea_custom_target_characters_v0211()
+	var result := _generation_service.call(
+		"queue_idea_generation_with_custom_length_v0211",
+		_idea_seed.text,
+		profile,
+		int(_idea_count.value),
+		int(_generation_settings().get("retry_count", 1)),
+		str(_project.get("project_id", "")),
+		CCFSeriesService.generation_context_for_project(_project),
+		target
+	) as Dictionary
+	if not bool(result.get("ok", false)):
+		_idea_status.text = str(
+			result.get("error", "Could not queue custom-length ideas.")
+		)
+		return
+	_idea_job_id = str(result.get("job_id", ""))
+	_idea_generate_button.disabled = true
+	var queued_ahead := int(result.get("queued_ahead", 0))
+	var capped_note := (
+		" • capped by model/profile output maximum"
+		if bool(result.get("budget_limited", false))
+		else ""
+	)
+	_idea_status.text = (
+		"Queued • Custom ~%s characters/idea • request %s output tokens%s%s"
+		% [
+			_format_integer_v0211(target),
+			_format_integer_v0211(int(result.get("request_max_tokens", 0))),
+			capped_note,
+			(" • behind %d job(s)" % queued_ahead if queued_ahead > 0 else "")
+		]
+	)
+
+
+func _on_job_completed(
+	job_id: String, job_type: String, data: Variant, metadata: Dictionary
+) -> void:
+	super._on_job_completed(job_id, job_type, data, metadata)
+	if (
+		job_type != "ideas"
+		or str(metadata.get("idea_detail_level", "")) != "custom"
+	):
+		return
+	var counts_value: Variant = metadata.get(
+		"idea_actual_character_counts", []
+	)
+	if not counts_value is Array or (counts_value as Array).is_empty():
+		return
+	var minimum_actual := 2147483647
+	var maximum_actual := 0
+	var total_actual := 0
+	for count_value in counts_value:
+		var actual := maxi(0, int(count_value))
+		minimum_actual = mini(minimum_actual, actual)
+		maximum_actual = maxi(maximum_actual, actual)
+		total_actual += actual
+	var average_actual := int(round(
+		float(total_actual) / float((counts_value as Array).size())
+	))
+	var target := int(metadata.get("idea_custom_target_characters", 0))
+	var target_met := int(metadata.get("idea_custom_target_met_count", 0))
+	_idea_status.text = (
+		"Generated %d idea(s) • target ~%s characters each • actual %s–%s (average %s) • %d within the guide range."
+		% [
+			(counts_value as Array).size(),
+			_format_integer_v0211(target),
+			_format_integer_v0211(minimum_actual),
+			_format_integer_v0211(maximum_actual),
+			_format_integer_v0211(average_actual),
+			target_met
+		]
+	)
+
+
+func idea_custom_length_capabilities_v0211() -> Dictionary:
+	var service_capabilities := {}
+	if (
+		_generation_service != null
+		and _generation_service.has_method(
+			"idea_custom_length_capabilities_v0211"
+		)
+	):
+		service_capabilities = _generation_service.call(
+			"idea_custom_length_capabilities_v0211"
+		) as Dictionary
+	return {
+		"custom_selector": true,
+		"presets_preserved": true,
+		"selected_level": _selected_idea_detail_level_v0167,
+		"target_characters": _idea_custom_target_characters_v0211(),
+		"custom_controls_visible": (
+			_idea_custom_length_panel_v0211 != null
+			and _idea_custom_length_panel_v0211.visible
+		),
+		"service": service_capabilities
+	}
+
+
+func _idea_custom_target_characters_v0211() -> int:
+	if _idea_custom_target_v0211 == null:
+		return IDEA_CUSTOM_LENGTH_V0211.DEFAULT_TARGET_CHARACTERS
+	return IDEA_CUSTOM_LENGTH_V0211.normalise_target_characters(
+		int(_idea_custom_target_v0211.value)
+	)
+
+
+func _format_integer_v0211(value: int) -> String:
+	var digits := str(maxi(0, value))
+	var formatted := ""
+	for index in range(digits.length()):
+		if index > 0 and (digits.length() - index) % 3 == 0:
+			formatted += ","
+		formatted += digits[index]
+	return formatted
 
 
 func _build_front_porch_group_v0172(group: Dictionary) -> void:
