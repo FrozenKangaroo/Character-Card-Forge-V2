@@ -194,6 +194,7 @@ expansion.
 - Kept length guidance soft so schema, coherence, requested idea count and `{{user}}` agency remain higher-priority constraints.
 - Derived the request output allowance from target and batch size while respecting the configured Text profile maximum.
 - Added actual minimum, maximum, average and within-guide reporting without rejecting useful off-target results.
+- Added direct new-notebook creation from Save Generated Ideas plus searchable/sortable notebook and idea views for large collections.
 - Added offline help, implementation notes and focused service/live-UI regression coverage.
 
 ### v0.21.0 — Structured Idea Packs (candidate)

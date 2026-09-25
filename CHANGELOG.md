@@ -11,6 +11,7 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Added a Custom Idea Generator detail mode with an editable approximate text-character target for every generated idea.
 - Kept Quick, Standard, Detailed and Extended unchanged and in their established order.
 - Added visible actual-length reporting so authors can judge how closely the selected model followed the request.
+- Added direct New Notebook creation while saving a generated batch and scalable notebook/idea organization controls.
 
 ### Changes
 
@@ -19,12 +20,16 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Derived an appropriate request output budget from target length and idea count, then capped it to the configured Text model/profile maximum output instead of exceeding provider limits.
 - Recorded the requested target, derived and effective budgets, actual concept lengths and within-guide count in private generation-job metadata.
 - Reported result minimum, maximum and average character counts after generation; missing the soft target never rejects or automatically repairs an otherwise valid idea.
+- Added **New Notebook…** beside the Save Generated Ideas destination so authors can create, select and save into a notebook without leaving the batch-review window.
+- Added notebook-name search, notebook ordering by name/count/recent change, six idea sort modes, visible result counts and notebook names on cross-notebook results.
+- Kept organization controls inside the saved-ideas sidebar so the full-width editor and Idea Pack toolbar retain their minimum-window layout.
 - Updated the offline Help Center and added focused live-UI, prompt, budget-cap and result-measurement regression coverage.
 
 ### Migration notes
 
 - Existing provider profiles, projects, saved ideas and Idea Packs require no migration.
 - Existing detail presets remain data-driven and retain their previous prompts and budget multipliers.
+- Existing notebook and saved-idea files remain format version 1; the new organization features are views over the current data.
 
 ### Breaking changes
 

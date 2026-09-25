@@ -19,7 +19,9 @@ The current source candidate is **v0.21.1 — Custom Idea Length Targets**. It k
 Quick, Standard, Detailed and Extended Idea Generator presets and adds an optional Custom
 mode with an approximate per-idea text-character target. CCF derives a bounded output
 request, reports actual result lengths and treats model compliance as advisory rather
-than discarding a useful concept.
+than discarding a useful concept. Generated batches can also create and select a new
+destination notebook in-place, while notebook search, sorting and cross-notebook labels
+keep large idea collections manageable.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental

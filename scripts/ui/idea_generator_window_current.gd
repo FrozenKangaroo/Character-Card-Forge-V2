@@ -27,16 +27,25 @@ var _export_status_v0210: Label
 var _pending_export_ideas_v0210: Array[Dictionary] = []
 var _structured_detail_v0210: TextEdit
 
+var _notebook_search_v0211: LineEdit
+var _notebook_sort_v0211: OptionButton
+var _idea_sort_v0211: OptionButton
+var _idea_result_summary_v0211: Label
+var _save_new_notebook_dialog_v0211: ConfirmationDialog
+var _save_new_notebook_name_v0211: LineEdit
+
 
 func _ready() -> void:
 	super._ready()
 	_build_idea_pack_dialogs_v0210()
+	_build_save_new_notebook_dialog_v0211()
 
 
 func _build_notebook_tab_v01532() -> void:
 	super._build_notebook_tab_v01532()
 	if _notebook_tab_v01532 == null:
 		return
+	_install_notebook_organization_v0211()
 	var toolbar := VBoxContainer.new()
 	toolbar.name = "IdeaPackActionsV0210"
 	toolbar.add_theme_constant_override("separation", 8)
@@ -86,6 +95,338 @@ func _build_notebook_tab_v01532() -> void:
 	structured_box.add_child(_structured_detail_v0210)
 	(editor as VBoxContainer).add_child(structured_box)
 	(editor as VBoxContainer).move_child(structured_box, notebook_box.get_index() + 1)
+
+
+func _install_notebook_organization_v0211() -> void:
+	if _notebook_filter_v01532 == null or _idea_list_v01532 == null:
+		return
+	var filters := _notebook_filter_v01532.get_parent() as HFlowContainer
+	if filters == null:
+		return
+	_notebook_search_v0211 = LineEdit.new()
+	_notebook_search_v0211.name = "NotebookSearchV0211"
+	_notebook_search_v0211.placeholder_text = "Find notebook…"
+	_notebook_search_v0211.custom_minimum_size.x = 170
+	_notebook_search_v0211.tooltip_text = (
+		"Filter the notebook picker by name. All Ideas, Unfiled and the currently selected notebook remain available."
+	)
+	_notebook_search_v0211.text_changed.connect(
+		func(_text: String) -> void: _refresh_notebook_v01532()
+	)
+
+	_notebook_sort_v0211 = OptionButton.new()
+	_notebook_sort_v0211.name = "NotebookSortV0211"
+	_notebook_sort_v0211.tooltip_text = "Choose how named notebooks are ordered in the picker."
+	_add_option_v01532(_notebook_sort_v0211, "Notebooks: A–Z", "name")
+	_add_option_v01532(_notebook_sort_v0211, "Notebooks: Most Ideas", "count")
+	_add_option_v01532(_notebook_sort_v0211, "Notebooks: Recent Activity", "recent")
+	_notebook_sort_v0211.item_selected.connect(
+		func(_index: int) -> void: _refresh_notebook_v01532()
+	)
+
+	_idea_sort_v0211 = OptionButton.new()
+	_idea_sort_v0211.name = "IdeaSortV0211"
+	_idea_sort_v0211.tooltip_text = "Choose how ideas matching the current filters are ordered."
+	_add_option_v01532(_idea_sort_v0211, "Ideas: Updated Newest", "updated_newest")
+	_add_option_v01532(_idea_sort_v0211, "Ideas: Updated Oldest", "updated_oldest")
+	_add_option_v01532(_idea_sort_v0211, "Ideas: Created Newest", "created_newest")
+	_add_option_v01532(_idea_sort_v0211, "Ideas: Title A–Z", "title_az")
+	_add_option_v01532(_idea_sort_v0211, "Ideas: Title Z–A", "title_za")
+	_add_option_v01532(_idea_sort_v0211, "Ideas: Notebook then Title", "notebook_title")
+	_idea_sort_v0211.item_selected.connect(
+		func(_index: int) -> void: _refresh_ideas_v01532()
+	)
+
+	var list_panel := _idea_list_v01532.get_parent() as VBoxContainer
+	if list_panel != null:
+		var organization := VBoxContainer.new()
+		organization.name = "IdeaNotebookOrganizationV0211"
+		organization.add_theme_constant_override("separation", 4)
+		_notebook_search_v0211.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		_notebook_sort_v0211.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		_idea_sort_v0211.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		organization.add_child(_notebook_search_v0211)
+		organization.add_child(_notebook_sort_v0211)
+		organization.add_child(_idea_sort_v0211)
+		list_panel.add_child(organization)
+		list_panel.move_child(organization, _idea_list_v01532.get_index())
+		_idea_result_summary_v0211 = Label.new()
+		_idea_result_summary_v0211.name = "IdeaResultSummaryV0211"
+		_idea_result_summary_v0211.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		_idea_result_summary_v0211.modulate = Color(0.64, 0.68, 0.82)
+		list_panel.add_child(_idea_result_summary_v0211)
+		list_panel.move_child(
+			_idea_result_summary_v0211, organization.get_index() + 1
+		)
+
+
+func _open_save_generated_v01532() -> void:
+	super._open_save_generated_v01532()
+	if _save_generated_notebook_v01532 == null:
+		return
+	var target_row := _save_generated_notebook_v01532.get_parent() as HBoxContainer
+	if target_row == null:
+		return
+	var create_button := Button.new()
+	create_button.name = "NewNotebookWhileSavingV0211"
+	create_button.text = "New Notebook…"
+	create_button.tooltip_text = (
+		"Create a notebook and select it as the destination without leaving this save window."
+	)
+	create_button.pressed.connect(_open_new_notebook_while_saving_v0211)
+	target_row.add_child(create_button)
+	target_row.move_child(
+		create_button, _save_generated_notebook_v01532.get_index() + 1
+	)
+
+
+func _build_save_new_notebook_dialog_v0211() -> void:
+	_save_new_notebook_dialog_v0211 = ConfirmationDialog.new()
+	_save_new_notebook_dialog_v0211.name = "SaveNewNotebookDialogV0211"
+	_save_new_notebook_dialog_v0211.visible = false
+	_save_new_notebook_dialog_v0211.title = "Create Destination Notebook"
+	_save_new_notebook_dialog_v0211.dialog_text = (
+		"Name the notebook that should receive the selected generated ideas."
+	)
+	_save_new_notebook_dialog_v0211.ok_button_text = "Create and Select"
+	_save_new_notebook_name_v0211 = LineEdit.new()
+	_save_new_notebook_name_v0211.name = "SaveNewNotebookNameV0211"
+	_save_new_notebook_name_v0211.placeholder_text = "Notebook name"
+	_save_new_notebook_name_v0211.custom_minimum_size.x = 400
+	_save_new_notebook_dialog_v0211.add_child(_save_new_notebook_name_v0211)
+	_save_new_notebook_dialog_v0211.confirmed.connect(
+		_create_notebook_while_saving_v0211
+	)
+	add_child(_save_new_notebook_dialog_v0211)
+	_save_new_notebook_dialog_v0211.hide()
+
+
+func _open_new_notebook_while_saving_v0211() -> void:
+	if _save_new_notebook_dialog_v0211 == null:
+		return
+	_save_new_notebook_name_v0211.text = ""
+	_save_new_notebook_dialog_v0211.popup_centered()
+	_save_new_notebook_name_v0211.grab_focus()
+
+
+func _create_notebook_while_saving_v0211() -> void:
+	var result := NOTEBOOK_SERVICE.create_notebook(
+		_save_new_notebook_name_v0211.text
+	)
+	if not bool(result.get("ok", false)):
+		if _save_generated_status_v01532 != null:
+			_save_generated_status_v01532.text = str(
+				result.get("error", "Could not create the destination notebook.")
+			)
+		return
+	var notebook_value: Variant = result.get("notebook", {})
+	var notebook: Dictionary = (
+		notebook_value if notebook_value is Dictionary else {}
+	)
+	var notebook_id := str(notebook.get("id", ""))
+	_fill_destination_notebooks_v01532(
+		_save_generated_notebook_v01532, notebook_id
+	)
+	_refresh_notebook_v01532()
+	if _save_generated_status_v01532 != null:
+		_save_generated_status_v01532.text = (
+			"Created and selected notebook ‘%s’. Choose Save Selected when ready."
+			% str(notebook.get("name", "Notebook"))
+		)
+
+
+func _refresh_notebook_v01532() -> void:
+	if _notebook_filter_v01532 == null:
+		return
+	var selected_filter := _selected_metadata_v01532(
+		_notebook_filter_v01532, "__all__"
+	)
+	var selected_tag := _selected_metadata_v01532(_tag_filter_v01532, "")
+	var include_archived := (
+		_show_archived_v01532 != null
+		and _show_archived_v01532.button_pressed
+	)
+	var counts := NOTEBOOK_SERVICE.notebook_counts(include_archived)
+	var notebook_query := (
+		_notebook_search_v0211.text.strip_edges().to_lower()
+		if _notebook_search_v0211 != null
+		else ""
+	)
+	var notebook_sort := _selected_metadata_v01532(
+		_notebook_sort_v0211, "name"
+	)
+	var notebooks := NOTEBOOK_SERVICE.list_notebooks()
+	var notebook_activity := {}
+	for notebook in notebooks:
+		notebook_activity[str(notebook.get("id", ""))] = str(
+			notebook.get("updated_at", "")
+		)
+	for idea in NOTEBOOK_SERVICE.list_ideas({"include_archived": true}):
+		var activity_notebook_id := str(idea.get("notebook_id", ""))
+		if activity_notebook_id.is_empty():
+			continue
+		var idea_updated := str(idea.get("updated_at", ""))
+		if idea_updated > str(notebook_activity.get(activity_notebook_id, "")):
+			notebook_activity[activity_notebook_id] = idea_updated
+	notebooks.sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
+		var first_name := str(first.get("name", "")).to_lower()
+		var second_name := str(second.get("name", "")).to_lower()
+		if notebook_sort == "count":
+			var first_count := int(counts.get(str(first.get("id", "")), 0))
+			var second_count := int(counts.get(str(second.get("id", "")), 0))
+			if first_count != second_count:
+				return first_count > second_count
+		elif notebook_sort == "recent":
+			var first_updated := str(notebook_activity.get(
+				str(first.get("id", "")), first.get("updated_at", "")
+			))
+			var second_updated := str(notebook_activity.get(
+				str(second.get("id", "")), second.get("updated_at", "")
+			))
+			if first_updated != second_updated:
+				return first_updated > second_updated
+		return first_name < second_name
+	)
+	_notebook_filter_v01532.clear()
+	_add_option_v01532(
+		_notebook_filter_v01532,
+		"All Ideas (%d)" % int(counts.get("__all__", 0)),
+		"__all__"
+	)
+	_add_option_v01532(
+		_notebook_filter_v01532,
+		"Unfiled (%d)" % int(counts.get("__unfiled__", 0)),
+		"__unfiled__"
+	)
+	for notebook in notebooks:
+		var notebook_id := str(notebook.get("id", ""))
+		var notebook_name := str(notebook.get("name", "Notebook"))
+		if (
+			not notebook_query.is_empty()
+			and not notebook_name.to_lower().contains(notebook_query)
+			and notebook_id != selected_filter
+		):
+			continue
+		_add_option_v01532(
+			_notebook_filter_v01532,
+			"%s (%d)" % [notebook_name, int(counts.get(notebook_id, 0))],
+			notebook_id
+		)
+	_select_metadata_v01532(
+		_notebook_filter_v01532, selected_filter, "__all__"
+	)
+	_tag_filter_v01532.clear()
+	_add_option_v01532(_tag_filter_v01532, "All Tags", "")
+	for tag in NOTEBOOK_SERVICE.all_tags(include_archived):
+		_add_option_v01532(_tag_filter_v01532, tag, tag)
+	_select_metadata_v01532(_tag_filter_v01532, selected_tag, "")
+	_refresh_ideas_v01532()
+
+
+func _refresh_ideas_v01532() -> void:
+	if _idea_list_v01532 == null:
+		return
+	var selected_notebook := _selected_metadata_v01532(
+		_notebook_filter_v01532, "__all__"
+	)
+	var filters := {
+		"notebook_id": selected_notebook,
+		"tag": _selected_metadata_v01532(_tag_filter_v01532, ""),
+		"search": _search_v01532.text if _search_v01532 != null else "",
+		"include_archived": (
+			_show_archived_v01532 != null
+			and _show_archived_v01532.button_pressed
+		)
+	}
+	var rows := NOTEBOOK_SERVICE.list_ideas(filters)
+	var notebook_names := {"": "Unfiled"}
+	for notebook in NOTEBOOK_SERVICE.list_notebooks():
+		notebook_names[str(notebook.get("id", ""))] = str(
+			notebook.get("name", "Notebook")
+		)
+	var sort_mode := _selected_metadata_v01532(
+		_idea_sort_v0211, "updated_newest"
+	)
+	rows.sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
+		var first_title := str(first.get("title", "")).to_lower()
+		var second_title := str(second.get("title", "")).to_lower()
+		if sort_mode == "updated_oldest":
+			return str(first.get("updated_at", "")) < str(second.get("updated_at", ""))
+		if sort_mode == "created_newest":
+			return str(first.get("created_at", "")) > str(second.get("created_at", ""))
+		if sort_mode == "title_az":
+			return first_title < second_title
+		if sort_mode == "title_za":
+			return first_title > second_title
+		if sort_mode == "notebook_title":
+			var first_notebook := str(notebook_names.get(
+				str(first.get("notebook_id", "")), "Unfiled"
+			)).to_lower()
+			var second_notebook := str(notebook_names.get(
+				str(second.get("notebook_id", "")), "Unfiled"
+			)).to_lower()
+			if first_notebook != second_notebook:
+				return first_notebook < second_notebook
+			return first_title < second_title
+		return str(first.get("updated_at", "")) > str(second.get("updated_at", ""))
+	)
+	_idea_list_v01532.clear()
+	_visible_idea_ids_v01532.clear()
+	var reselect_index := -1
+	for idea in rows:
+		var idea_title := str(idea.get("title", "Untitled idea"))
+		if bool(idea.get("archived", false)):
+			idea_title += "  [Archived]"
+		var subtitle_parts: Array[String] = []
+		if selected_notebook == "__all__":
+			subtitle_parts.append(str(notebook_names.get(
+				str(idea.get("notebook_id", "")), "Unfiled"
+			)))
+		var role := str(idea.get("character_role", "")).strip_edges()
+		if not role.is_empty():
+			subtitle_parts.append(role)
+		elif not (idea.get("tags", []) as Array).is_empty():
+			subtitle_parts.append(", ".join(idea.get("tags", [])))
+		var display := idea_title
+		if not subtitle_parts.is_empty():
+			display += "\n" + " • ".join(subtitle_parts)
+		_idea_list_v01532.add_item(display)
+		var idea_id := str(idea.get("id", ""))
+		_visible_idea_ids_v01532.append(idea_id)
+		if idea_id == _selected_idea_id_v01532:
+			reselect_index = _visible_idea_ids_v01532.size() - 1
+	if _idea_result_summary_v0211 != null:
+		var view_label := _selected_notebook_name_for_summary_v0211(
+			selected_notebook, notebook_names
+		)
+		_idea_result_summary_v0211.text = (
+			"Showing %d idea%s in %s"
+			% [rows.size(), "" if rows.size() == 1 else "s", view_label]
+		)
+	if reselect_index >= 0:
+		_idea_list_v01532.select(reselect_index)
+		_load_selected_idea_v01532(_selected_idea_id_v01532)
+	elif not rows.is_empty():
+		_idea_list_v01532.select(0)
+		_selected_idea_id_v01532 = _visible_idea_ids_v01532[0]
+		_load_selected_idea_v01532(_selected_idea_id_v01532)
+	else:
+		_selected_idea_id_v01532 = ""
+		_clear_editor_v01532()
+		_set_editor_enabled_v01532(false)
+		_status_v01532.text = (
+			"No saved ideas match the current notebook, tag and search filters."
+		)
+
+
+func _selected_notebook_name_for_summary_v0211(
+	notebook_id: String, notebook_names: Dictionary
+) -> String:
+	if notebook_id == "__all__":
+		return "All Ideas"
+	if notebook_id == "__unfiled__":
+		return "Unfiled"
+	return str(notebook_names.get(notebook_id, "the selected notebook"))
 
 
 func _load_selected_idea_v01532(idea_id: String) -> void:
