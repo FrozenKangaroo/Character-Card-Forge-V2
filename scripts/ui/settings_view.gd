@@ -222,7 +222,7 @@ func _build_character_ai_settings(parent: VBoxContainer) -> void:
 	generation_grid.add_child(_label("Default idea count"))
 	_idea_count = SpinBox.new()
 	_idea_count.min_value = 1
-	_idea_count.max_value = 12
+	_idea_count.max_value = 50
 	_idea_count.step = 1
 	_idea_count.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	generation_grid.add_child(_idea_count)

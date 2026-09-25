@@ -179,6 +179,6 @@ func _update_current_build_label() -> void:
 			node.text = "Godot rewrite • v%s" % CURRENT_BUILD_VERSION
 			node.tooltip_text = (
 				"v0.21.1 adds a Custom Idea Generator detail mode with an approximate "
-				+ "per-idea character target, plus scalable Idea Notebook saving and organization."
+				+ "per-idea character target, optional small-model request batching and scalable Idea Notebook organization."
 			)
 			return

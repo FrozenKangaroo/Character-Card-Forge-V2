@@ -195,6 +195,7 @@ expansion.
 - Derived the request output allowance from target and batch size while respecting the configured Text profile maximum.
 - Added actual minimum, maximum, average and within-guide reporting without rejecting useful off-target results.
 - Added direct new-notebook creation from Save Generated Ideas plus searchable/sortable notebook and idea views for large collections.
+- Raised the bounded total to 50 ideas and added optional 1–12 idea request batching, ordered aggregation and partial-success retention for smaller models.
 - Added offline help, implementation notes and focused service/live-UI regression coverage.
 
 ### v0.21.0 — Structured Idea Packs (candidate)

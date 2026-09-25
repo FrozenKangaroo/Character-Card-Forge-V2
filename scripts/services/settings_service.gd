@@ -419,7 +419,7 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 	if incoming_generation is Dictionary:
 		generation_settings.merge(incoming_generation, true)
 	generation_settings["retry_count"] = clampi(int(generation_settings.get("retry_count", 1)), 0, 5)
-	generation_settings["default_idea_count"] = clampi(int(generation_settings.get("default_idea_count", 6)), 1, 12)
+	generation_settings["default_idea_count"] = clampi(int(generation_settings.get("default_idea_count", 6)), 1, 50)
 	generation_settings["attachment_context_character_limit"] = clampi(int(generation_settings.get("attachment_context_character_limit", 24000)), 2000, 120000)
 	generation_settings["text_fallback_enabled"] = bool(
 		generation_settings.get("text_fallback_enabled", false)

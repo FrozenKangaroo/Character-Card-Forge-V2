@@ -17,6 +17,9 @@ const RICH_AUTHORING_SERVICE_CURRENT = preload(
 const IDEA_CUSTOM_LENGTH_V0211 = preload(
 	"res://scripts/services/idea_generator_custom_length_v0211.gd"
 )
+const IDEA_BATCHING_V0211 = preload(
+	"res://scripts/services/idea_generator_batching_v0211.gd"
+)
 
 const ROUTING_FORMAT_VERSION_V0195 := 1
 const ROUTING_PROFILE_KEY_V0195 := "_ccf_text_routing_v0195"
@@ -64,6 +67,97 @@ func idea_custom_length_capabilities_v0211() -> Dictionary:
 		"advisory_not_validation_failure": true,
 		"actual_counts_in_metadata": true
 	}
+
+
+func decorate_idea_batch_job_v0211(
+	job_id: String,
+	group_id: String,
+	batch_index: int,
+	request_count: int,
+	requested_total: int
+) -> bool:
+	if job_id.is_empty() or group_id.is_empty():
+		return false
+	for index in range(_queue.size()):
+		var job_value: Variant = _queue[index]
+		if not job_value is Dictionary:
+			continue
+		var job: Dictionary = job_value
+		if str(job.get("id", "")) != job_id or str(job.get("type", "")) != "ideas":
+			continue
+		_queue[index] = _idea_job_with_batch_metadata_v0211(
+			job, group_id, batch_index, request_count, requested_total
+		)
+		return true
+	if (
+		not _active_job.is_empty()
+		and str(_active_job.get("id", "")) == job_id
+		and str(_active_job.get("type", "")) == "ideas"
+	):
+		_active_job = _idea_job_with_batch_metadata_v0211(
+			_active_job, group_id, batch_index, request_count, requested_total
+		)
+		return true
+	return false
+
+
+func idea_batching_capabilities_v0211() -> Dictionary:
+	return IDEA_BATCHING_V0211.capabilities()
+
+
+func _idea_job_with_batch_metadata_v0211(
+	job_value: Dictionary,
+	group_id: String,
+	batch_index: int,
+	request_count: int,
+	requested_total: int
+) -> Dictionary:
+	var job := job_value.duplicate(true)
+	var payload_value: Variant = job.get("payload", {})
+	var payload: Dictionary = (
+		(payload_value as Dictionary).duplicate(true)
+		if payload_value is Dictionary
+		else {}
+	)
+	var messages_value: Variant = payload.get("messages", [])
+	var messages: Array = (
+		messages_value.duplicate(true) if messages_value is Array else []
+	)
+	var instruction := IDEA_BATCHING_V0211.prompt_instruction(
+		batch_index, request_count, requested_total
+	)
+	for message_index in range(messages.size()):
+		if not messages[message_index] is Dictionary:
+			continue
+		var message: Dictionary = (
+			messages[message_index] as Dictionary
+		).duplicate(true)
+		if str(message.get("role", "")) != "system":
+			continue
+		message["content"] = str(message.get("content", "")) + "\n\n" + instruction
+		messages[message_index] = message
+		break
+	payload["messages"] = messages
+	job["payload"] = payload
+	var metadata_value: Variant = job.get("metadata", {})
+	var metadata: Dictionary = (
+		(metadata_value as Dictionary).duplicate(true)
+		if metadata_value is Dictionary
+		else {}
+	)
+	metadata["idea_batch_contract_version"] = IDEA_BATCHING_V0211.CONTRACT_VERSION
+	metadata["idea_batch_group_id"] = group_id
+	metadata["idea_batch_index"] = batch_index
+	metadata["idea_batch_request_count"] = request_count
+	metadata["idea_batch_requested_total"] = requested_total
+	metadata["idea_batch_request_size"] = int(metadata.get("idea_count", 1))
+	job["metadata"] = metadata
+	job["label"] = "%s • request %d/%d" % [
+		str(job.get("label", "Generate character ideas")),
+		batch_index + 1,
+		request_count
+	]
+	return job
 
 
 func _decorate_queued_idea_custom_length_v0211(

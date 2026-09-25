@@ -21,7 +21,9 @@ mode with an approximate per-idea text-character target. CCF derives a bounded o
 request, reports actual result lengths and treats model compliance as advisory rather
 than discarding a useful concept. Generated batches can also create and select a new
 destination notebook in-place, while notebook search, sorting and cross-notebook labels
-keep large idea collections manageable.
+keep large idea collections manageable. Authors can request up to 50 ideas and choose
+1–12 ideas per sequential provider request, including one-at-a-time generation for
+smaller models with the exact request count shown before starting.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental

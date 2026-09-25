@@ -306,6 +306,7 @@
       "steps": [
         "Choose Idea Generator when you want several candidate concepts from explicit options.",
         "Choose Quick, Standard, Detailed or Extended for a preset depth, or Custom to enter an approximate character target for each idea's concept.",
+        "Set the total Ideas up to 50, then choose 1–12 Ideas per provider request; use 1 for smaller models and review the disclosed request count before generating.",
         "Review the complete results and save promising ideas to Idea Notebook; choose New Notebook beside the destination when the batch needs its own notebook.",
         "Choose Import Idea Pack to validate and preview a .ccfideas.json file; resolve stable-ID conflicts before confirming the atomic import.",
         "Use notebook-name search, notebook and idea sorting, tags, idea text search and archive visibility to manage large collections.",
@@ -314,7 +315,7 @@
         "Choose Export Idea Pack to share selected entries, a Bible, a Series or the complete notebook while retaining structured rules and custom sections.",
         "Create a project only from the idea you intentionally choose."
       ],
-      "notes": ["Idea generation preserves user agency and does not make brainstorming canonical automatically.", "A Custom character target is a model-guided request, not a guarantee. The completion status reports actual minimum, maximum and average concept lengths.", "Large Custom requests are capped by the configured Text model/profile maximum output; an off-target but otherwise valid idea remains reviewable.", "Newer unsupported Idea Pack schemas may be previewed but are not imported silently."],
+      "notes": ["Idea generation preserves user agency and does not make brainstorming canonical automatically.", "The default remains up to 12 ideas per request, so the ordinary six-idea workflow still makes one provider call. Smaller request sizes increase the number of calls and may increase usage.", "Successful request batches are combined in order; if one request fails, completed ideas remain available instead of being discarded.", "A Custom character target is a model-guided request, not a guarantee. The completion status reports actual minimum, maximum and average concept lengths.", "Large Custom requests are capped by the configured Text model/profile maximum output; an off-target but otherwise valid idea remains reviewable.", "Newer unsupported Idea Pack schemas may be previewed but are not imported silently."],
       "actions": [{"id": "new_project", "label": "Open Idea Workflows…"}],
       "related": ["character_collaborator", "templates_generation_modes", "first_character"]
     },
