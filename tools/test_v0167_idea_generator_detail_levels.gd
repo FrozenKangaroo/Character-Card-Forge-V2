@@ -119,7 +119,7 @@ func _run() -> void:
 	var selector := workspace.find_child("IdeaDetailLevelSelectorV0167", true, false) as OptionButton
 	if not _require(selector != null, "The live Idea Generator controller must expose the v0.16.7 detail selector."):
 		return
-	if not _require(selector.item_count == 4, "The live selector must expose all four data-driven detail levels."):
+	if not _require(selector.item_count >= 4, "The live selector must retain all four data-driven detail levels."):
 		return
 	if not _require(str(selector.get_selected_metadata()) == "standard", "The live selector must open on Standard."):
 		return

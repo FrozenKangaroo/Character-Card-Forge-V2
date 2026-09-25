@@ -4,6 +4,39 @@ Release notes are written before a release tag is created. Each release explicit
 records migration needs, breaking changes and known limitations, even when there are
 none. GitHub Releases use the matching reviewed section instead of generated notes.
 
+## [0.21.1] - 2026-09-25
+
+### Highlights
+
+- Added a Custom Idea Generator detail mode with an editable approximate text-character target for every generated idea.
+- Kept Quick, Standard, Detailed and Extended unchanged and in their established order.
+- Added visible actual-length reporting so authors can judge how closely the selected model followed the request.
+
+### Changes
+
+- Added a bounded 500–50,000-character target for each idea's `concept` body, separate from titles, tags and JSON structure.
+- Added a soft ±15% guide to the model prompt while preserving schema, requested idea count and `{{user}}` agency requirements.
+- Derived an appropriate request output budget from target length and idea count, then capped it to the configured Text model/profile maximum output instead of exceeding provider limits.
+- Recorded the requested target, derived and effective budgets, actual concept lengths and within-guide count in private generation-job metadata.
+- Reported result minimum, maximum and average character counts after generation; missing the soft target never rejects or automatically repairs an otherwise valid idea.
+- Updated the offline Help Center and added focused live-UI, prompt, budget-cap and result-measurement regression coverage.
+
+### Migration notes
+
+- Existing provider profiles, projects, saved ideas and Idea Packs require no migration.
+- Existing detail presets remain data-driven and retain their previous prompts and budget multipliers.
+
+### Breaking changes
+
+- None for existing Idea Generator workflows, saved projects or supported interchange formats.
+
+### Known limitations
+
+- The target is advisory because providers and models ultimately control response length; the result report shows actual compliance.
+- Character counts use Godot string length rather than a provider-specific tokenizer and therefore do not correspond exactly to tokens.
+- Very large targets or multiple long ideas may be visibly capped by the configured model/profile output maximum.
+- macOS packages remain unsigned and are not notarised.
+
 ## [0.21.0] - 2026-09-25
 
 ### Highlights

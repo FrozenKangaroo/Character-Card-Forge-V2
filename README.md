@@ -15,10 +15,11 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.0 — Structured Idea Packs**. It adds versioned
-`.ccfideas.json` import and export for reusable Series, scenario/card Seeds and character
-notes. Imports are validated and previewed before atomic Idea Notebook updates, with
-explicit stable-ID conflict choices and lossless preservation of future fields.
+The current source candidate is **v0.21.1 — Custom Idea Length Targets**. It keeps the
+Quick, Standard, Detailed and Extended Idea Generator presets and adds an optional Custom
+mode with an approximate per-idea text-character target. CCF derives a bounded output
+request, reports actual result lengths and treats model compliance as advisory rather
+than discarding a useful concept.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental
@@ -30,6 +31,8 @@ and [changelog](CHANGELOG.md).
 - Manual, guided, structured and AI-assisted character creation.
 - Structured Idea Pack import/export with semantic rules, guardrails, cross-links,
   provenance, arbitrary labelled sections and duplicate-safe re-import.
+- Idea Generator presets plus bounded Custom per-idea character targets with visible
+  requested-versus-actual reporting.
 - Character Collaborator conversations with explicit sources, evidence roles and
   reviewable Generation Blueprint handoff.
 - Editable canonical Character Card fields, Alternative Greetings, Scenario Presets,
