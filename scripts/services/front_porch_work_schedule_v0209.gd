@@ -16,14 +16,14 @@ static func normalise(raw_value: Variant) -> Dictionary:
 		end_text = str((raw_value as Dictionary).get("end", "")).strip_edges()
 		if start_text.is_empty() and end_text.is_empty():
 			return {"ok": true, "value": "", "start": "", "end": ""}
-		var start_minutes := _parse_clock_value(start_text)
-		var end_minutes := _parse_clock_value(end_text)
-		if start_minutes < 0 or end_minutes < 0:
+		var dictionary_start_minutes := _parse_clock_value(start_text)
+		var dictionary_end_minutes := _parse_clock_value(end_text)
+		if dictionary_start_minutes < 0 or dictionary_end_minutes < 0:
 			return {
 				"ok": false,
 				"error": "Set both Start and End using 24-hour HH:MM times."
 			}
-		return _result(start_minutes, end_minutes)
+		return _result(dictionary_start_minutes, dictionary_end_minutes)
 
 	var text := str(raw_value).strip_edges().to_lower()
 	if text.is_empty():

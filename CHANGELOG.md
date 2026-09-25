@@ -22,6 +22,7 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Made imported generation rules, guardrails, variables, links and custom sections part of the concept sent from Idea Notebook into character generation.
 - Added Export Idea Pack for individual selections, all ideas, one Bible or one Series while retaining unknown entry fields and `{{user}}` / `{{char}}` tokens.
 - Added an import-ready Japan by Rail Roommates example and focused parser, conflict, persistence, round-trip and live UI regressions.
+- Kept the Idea Pack action help text on its own wrapping row so Idea Notebook remains usable at the minimum window size, and removed three pre-existing GDScript local-name collision warnings found during hands-on testing.
 
 ### Migration notes
 
