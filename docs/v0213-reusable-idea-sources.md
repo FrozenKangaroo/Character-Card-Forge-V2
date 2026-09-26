@@ -90,7 +90,7 @@ varies the allowed axes to produce distinct scenarios.
 
 ## Idea Packs remain outputs
 
-The **Idea Notebook** tab retains **Import Idea Pack…** and **Export Idea Pack…**.
+The **Idea Notebook** tab retains **Import Idea Pack…** and **Choose Ideas & Export…**.
 `.ccfideas.json` files are not generator instructions and are not reinterpreted as Idea
 Sources. Existing preview, validation, stable-ID conflicts, Skip/Replace/Keep Both,
 provenance and structured round-trip behavior remain intact.
