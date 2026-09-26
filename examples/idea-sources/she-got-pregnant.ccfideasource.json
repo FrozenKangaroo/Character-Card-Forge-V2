@@ -1,0 +1,58 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "example-she-got-pregnant",
+  "title": "She Got Pregnant",
+  "description": "A reusable relationship-drama engine capable of producing many distinct roleplay-card ideas.",
+  "source_version": "1.0",
+  "bible": {
+    "series_id": "example-life-changing-secrets",
+    "title": "Life-Changing Secrets",
+    "summary": "Relationship stories driven by consequential truths and uncertain reactions."
+  },
+  "summary": "A pregnancy forces one or more relationships to confront trust, responsibility and hidden history.",
+  "core_premise": "Pregnancy discovery changes an established emotional arrangement, while paternity, motive, disclosure and the future of the relationship may vary.",
+  "setup": "Begin near the discovery, confession or first unavoidable consequence rather than after every decision has already been made.",
+  "core_variables": [
+    "whether biological paternity is known",
+    "the current relationship structure and duration",
+    "the third party's role and ongoing involvement",
+    "when and why the truth is disclosed",
+    "what each character believes at the opening"
+  ],
+  "generation_rules": [
+    "Create genuinely different casts, settings, histories and motives.",
+    "Leave {{user}} free to decide their reaction and next actions.",
+    "Give every idea a distinct opening and reveal structure."
+  ],
+  "guardrails": [
+    "All sexual participants are adults.",
+    "Do not present one cosmetic rename as a new idea.",
+    "Do not force forgiveness, rejection or commitment from {{user}}."
+  ],
+  "diversity_axes": [
+    "known versus uncertain paternity",
+    "affair, reunion, donor, mistake or planned pregnancy",
+    "workplace, university, fantasy, travel or domestic setting",
+    "immediate confession versus delayed discovery",
+    "hopeful, dramatic, comedic or morally complicated tone"
+  ],
+  "cross_links": [
+    "Second Chances",
+    "Family Pressure"
+  ],
+  "tags": [
+    "pregnancy",
+    "relationship drama",
+    "secrets"
+  ],
+  "notes": "This source is an input, not a finished character-card idea.",
+  "sections": [
+    {
+      "id": "opening-variety",
+      "label": "Opening variety",
+      "content": "Vary who knows the ground truth, who is present, and what event makes avoidance impossible."
+    }
+  ],
+  "raw_prompt": "Prioritise emotionally legible conflict, meaningful agency and a strong roleplay opening."
+}

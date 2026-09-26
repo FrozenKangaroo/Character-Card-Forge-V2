@@ -60,12 +60,12 @@ derivatives, Split Character Sets and task-specific Text routing in one semantic
 available for compatibility evidence, while deterministic tooling proves the active
 generation-service depth fell from 34 to 31 scripts and prevents renewed service stacking.
 
-The v0.21.2 development candidate adds a visual-only readable Personality view. CCF
-recognises active-template section labels and conservative common headings, inserts
-display spacing for review, and always keeps the exact authored text authoritative for
-editing, saving, exporting and token estimates. It also restores deferred first-save
-behaviour for the New Project chooser so empty single-character tool drafts do not
-become Library entries.
+The v0.21.3 development candidate adds reusable **Idea Sources** one stage before the
+existing Idea Generator. Portable `.ccfideasource.json` files and a separate internal
+Source Library preserve structured Series/premise context across batching without
+creating Idea Notebook outputs automatically. Existing cards can extract an editable
+reusable engine for **Generate Similar Ideas**, distinct from Alternative Version and
+without modifying the source card.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -179,7 +179,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.2** and uses the Godot
+The current source candidate displays **v0.21.3** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -188,6 +188,17 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.3 — Reusable Idea Sources (candidate)
+
+- Added a versioned portable `.ccfideasource.json` format for reusable Series, scenario engines, premises and custom prompts, preserving stable IDs, Unicode, card placeholders, arbitrary sections and unknown future fields.
+- Added a separate Idea Source Library with explicit load, save, export, edit, rename, duplicate, delete and **Use in Idea Generator** actions; external files remain temporary until explicitly saved.
+- Kept `.ccfideas.json` strictly as finished Idea Pack output for the existing Idea Notebook import/export workflow.
+- Added labelled source context for Bible/Series metadata, premise, setup, variables, rules, guardrails, diversity axes, cross-links, notes, custom sections and raw prompts, reused identically across every batch request.
+- Added non-blocking editable source-name fallback behavior when a source has no title.
+- Added **Generate Similar Ideas** for finished cards with Close, Balanced and Loose controls, editable extraction, direct generation and save-as-source paths.
+- Kept Generate Similar Ideas distinct from Alternative Version: it changes characters and surface circumstances, rejects cosmetic renames and never mutates the source card.
+- Documented the complete Source → Idea → Notebook → Generation Concept → card pipeline and added focused parser, storage, round-trip, compatibility, UI, batching and immutability regression coverage.
 
 ### v0.21.2 — Readable Personality View (candidate)
 

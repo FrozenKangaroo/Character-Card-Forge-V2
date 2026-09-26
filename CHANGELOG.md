@@ -4,6 +4,42 @@ Release notes are written before a release tag is created. Each release explicit
 records migration needs, breaking changes and known limitations, even when there are
 none. GitHub Releases use the matching reviewed section instead of generated notes.
 
+## [0.21.3] - 2026-09-26
+
+### Highlights
+
+- Added reusable **Idea Sources** as a distinct stage before generated Ideas and Workspace Generation Concepts.
+- Added portable `.ccfideasource.json` files and a separate internal Idea Source Library without changing `.ccfideas.json` Idea Packs or Idea Notebook.
+- Added **Generate Similar Ideas** for extracting a reusable engine from an existing card and producing genuinely new concepts rather than cosmetic variants.
+
+### Changes
+
+- Added schema-version-1 Idea Source parsing for stable IDs, optional titles, descriptions, Bible/Series data, source versions, summaries, premises, setup, variables, rules, guardrails, diversity axes, cross-links, tags, notes, arbitrary sections and raw prompts.
+- Preserved Unicode, `{{user}}`/`{{char}}` placeholders, arbitrary section data and unknown future fields through internal save and portable export/import round trips.
+- Treated newer source schemas as read-only previews rather than silently assuming compatibility.
+- Added explicit New, Load, Save, Export, Duplicate, Rename, Delete and Use actions in an **Idea Sources** tab separate from Idea Notebook.
+- Kept externally loaded sources temporary until **Save Current Source** is chosen; loading or using one never creates an Idea Notebook record.
+- Added labelled structured source context to every Idea Generator request, including all requests in an optional multi-request batch.
+- Added editable non-blocking fallback naming for untitled sources while preserving user-supplied titles.
+- Added Close, Balanced and Loose similarity controls plus Generate Now, Edit Extracted Source and Save as Idea Source paths for existing cards.
+- Marked exact names, appearance, dialogue, biography, incidental hobbies, workplaces, ages and scene prose as normally disposable during card-to-engine extraction.
+- Added an importable example source and focused parser, storage, round-trip, compatibility, UI, batching and source-card immutability coverage.
+
+### Migration notes
+
+- Existing projects, cards, Idea Notebook data and `.ccfideas.json` Idea Packs require no migration.
+- Idea Sources use a new additive storage directory and format. No source is stored there until the user explicitly saves it.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- AI models ultimately determine how closely generated Ideas follow similarity and diversity instructions.
+- Untitled-source naming uses the configured Text model when available and falls back to a deliberately simple local suggestion; authors can edit either result at any time.
+- Recent temporary-source history is deferred; portable sources can be loaded directly and explicitly saved when they should persist.
+
 ## [0.21.2] - 2026-09-26
 
 ### Highlights

@@ -25,6 +25,46 @@ const ROUTING_FORMAT_VERSION_V0195 := 1
 const ROUTING_PROFILE_KEY_V0195 := "_ccf_text_routing_v0195"
 
 
+func queue_idea_source_title_v0213(
+	source_context: String,
+	profile: Dictionary,
+	retry_count: int,
+	project_id: String = "",
+	source_id: String = ""
+) -> Dictionary:
+	var clean_context := source_context.strip_edges()
+	if clean_context.is_empty():
+		return {"ok": false, "error": "Idea Source context is required for naming."}
+	var messages := [
+		{
+			"role": "system",
+			"content": (
+				"You name reusable character-idea Series and scenario engines. Return JSON only as an object with exactly one key, title. The title must be concise, distinctive and describe the reusable engine rather than one generated character."
+			)
+		},
+		{
+			"role": "user",
+			"content": (
+				"Suggest one editable reusable Idea Source name for this structured input. Do not generate an Idea or rename any existing user title.\n\n%s"
+				% clean_context
+			)
+		}
+	]
+	return _queue_chat_job(
+		"idea_source_title",
+		"Suggest Idea Source name",
+		profile,
+		messages,
+		"object",
+		{
+			"project_id": project_id,
+			"idea_source_id": source_id,
+			"idea_source_title_contract": 1
+		},
+		retry_count
+	)
+
+
 func queue_idea_generation_with_custom_length_v0211(
 	seed_text: String,
 	profile: Dictionary,
