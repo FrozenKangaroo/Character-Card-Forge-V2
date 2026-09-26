@@ -22,6 +22,9 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Added labelled structured source context to every Idea Generator request, including all requests in an optional multi-request batch.
 - Added a prominent AI Ideas source-state panel with View/Edit, Change and Clear actions, plus dynamic **Additional Direction** guidance that makes one-off prompts distinct from the reusable structured source.
 - Kept source clearing non-destructive and added regression coverage proving the structured context is injected exactly once across blank, directed and batched requests.
+- Fixed Idea Pack export scope controls so **Select All** and **Select None** affect only the active All, selected-idea, Bible or Series scope; non-matching rows are filtered from the checklist and manual checkbox choices remain available.
+- Refreshed Idea Pack export context from the live Notebook selection whenever the window opens, preventing a previous selected idea, Series or Bible from leaking into the next export.
+- Made Idea Pack and Idea Source file pickers independently movable, resizable native desktop dialogs without forcing them globally always-on-top.
 - Added editable non-blocking fallback naming for untitled sources while preserving user-supplied titles.
 - Added Close, Balanced and Loose similarity controls plus Generate Now, Edit Extracted Source and Save as Idea Source paths for existing cards.
 - Marked exact names, appearance, dialogue, biography, incidental hobbies, workplaces, ages and scene prose as normally disposable during card-to-engine extraction.

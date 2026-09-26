@@ -108,8 +108,8 @@ func _build_notebook_tab_v01532() -> void:
 	action_row.add_child(import_button)
 	var export_button := Button.new()
 	export_button.name = "ExportIdeaPackV0210"
-	export_button.text = "Export Idea Pack…"
-	export_button.tooltip_text = "Export selected ideas, a Bible, a Series or the complete notebook as a structured Idea Pack."
+	export_button.text = "Choose Ideas & Export…"
+	export_button.tooltip_text = "Choose checked ideas from the whole notebook, one Bible, one Series or the currently selected idea, then export a structured Idea Pack."
 	export_button.pressed.connect(_open_export_window_v0210)
 	action_row.add_child(export_button)
 	var explanation := Label.new()
@@ -529,6 +529,7 @@ func _build_idea_pack_dialogs_v0210() -> void:
 	_import_dialog_v0210 = FileDialog.new()
 	_import_dialog_v0210.visible = false
 	_import_dialog_v0210.title = "Import Character Card Forge Idea Pack"
+	_configure_independent_file_dialog_v0213(_import_dialog_v0210)
 	_import_dialog_v0210.access = FileDialog.ACCESS_FILESYSTEM
 	_import_dialog_v0210.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 	_import_dialog_v0210.filters = PackedStringArray([
@@ -566,6 +567,7 @@ func _build_idea_pack_dialogs_v0210() -> void:
 	_export_dialog_v0210 = FileDialog.new()
 	_export_dialog_v0210.visible = false
 	_export_dialog_v0210.title = "Save Idea Pack"
+	_configure_independent_file_dialog_v0213(_export_dialog_v0210)
 	_export_dialog_v0210.access = FileDialog.ACCESS_FILESYSTEM
 	_export_dialog_v0210.file_mode = FileDialog.FILE_MODE_SAVE_FILE
 	_export_dialog_v0210.filters = PackedStringArray([
@@ -821,15 +823,18 @@ func _format_issues_v0210(errors_value: Variant, warnings_value: Variant) -> Str
 
 
 func _open_export_window_v0210() -> void:
+	_sync_notebook_selection_for_export_v0210()
 	_build_export_window_v0210()
 	_export_window_v0210.popup_centered()
 
 
 func _build_export_window_v0210() -> void:
 	for child in _export_window_v0210.get_children():
+		_export_window_v0210.remove_child(child)
 		child.queue_free()
 	_export_rows_v0210.clear()
 	var ideas := _idea_pack_service_v0210.list_local_ideas(true)
+	var preferred_scope := _preferred_export_scope_v0210(ideas)
 	var margin := MarginContainer.new()
 	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	margin.add_theme_constant_override("margin_left", 14)
@@ -902,6 +907,8 @@ func _build_export_window_v0210() -> void:
 		check.button_pressed = true
 		list.add_child(check)
 		_export_rows_v0210.append({"check": check, "idea": idea})
+	_select_export_scope_v0210(preferred_scope)
+	_apply_export_scope_v0210(_export_scope_v0210.selected)
 	_export_status_v0210 = Label.new()
 	_export_status_v0210.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	root.add_child(_export_status_v0210)
@@ -915,7 +922,7 @@ func _build_export_window_v0210() -> void:
 	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	actions.add_child(spacer)
 	var save := Button.new()
-	save.text = "Export Selected…"
+	save.text = "Export Checked Ideas…"
 	save.pressed.connect(_choose_export_path_v0210)
 	actions.add_child(save)
 
@@ -931,33 +938,130 @@ func _add_export_scope_v0210(label: String, metadata: Dictionary) -> void:
 	_export_scope_v0210.set_item_metadata(_export_scope_v0210.item_count - 1, metadata)
 
 
+func _sync_notebook_selection_for_export_v0210() -> void:
+	if _idea_list_v01532 == null:
+		return
+	var selected_indices := _idea_list_v01532.get_selected_items()
+	if selected_indices.is_empty():
+		if not _selected_idea_id_v01532 in _visible_idea_ids_v01532:
+			_selected_idea_id_v01532 = ""
+		return
+	var selected_index := int(selected_indices[0])
+	if selected_index >= 0 and selected_index < _visible_idea_ids_v01532.size():
+		_selected_idea_id_v01532 = _visible_idea_ids_v01532[selected_index]
+
+
+func _preferred_export_scope_v0210(ideas: Array) -> Dictionary:
+	if _selected_idea_id_v01532.is_empty():
+		return {"kind": "all", "value": ""}
+	var selected_idea: Dictionary = {}
+	for idea_value in ideas:
+		if (
+			idea_value is Dictionary
+			and str((idea_value as Dictionary).get("id", ""))
+			== _selected_idea_id_v01532
+		):
+			selected_idea = idea_value as Dictionary
+			break
+	if selected_idea.is_empty():
+		return {"kind": "all", "value": ""}
+	var entry := _idea_pack_service_v0210.idea_to_entry(selected_idea)
+	if str(entry.get("kind", "")).strip_edges().to_lower() == "series":
+		var classification_value: Variant = entry.get("classification", {})
+		var classification: Dictionary = (
+			classification_value if classification_value is Dictionary else {}
+		)
+		var series_candidates: Array[String] = []
+		for field_id in ["primary_series", "secondary_series"]:
+			var values: Variant = classification.get(field_id, [])
+			if values is Array:
+				for value in values as Array:
+					var clean := str(value).strip_edges()
+					if not clean.is_empty() and not clean in series_candidates:
+						series_candidates.append(clean)
+		var entry_title := str(entry.get("title", "")).strip_edges()
+		if not entry_title.is_empty() and not entry_title in series_candidates:
+			series_candidates.append(entry_title)
+		for series_name in series_candidates:
+			for idea_value in ideas:
+				if (
+					idea_value is Dictionary
+					and _idea_pack_service_v0210.idea_matches_export_scope(
+						idea_value as Dictionary, "series", series_name
+					)
+				):
+					return {"kind": "series", "value": series_name}
+		var bible := str(classification.get("bible", "")).strip_edges()
+		if not bible.is_empty():
+			return {"kind": "bible", "value": bible}
+	return {"kind": "selected", "value": _selected_idea_id_v01532}
+
+
+func _select_export_scope_v0210(preferred_scope: Dictionary) -> void:
+	if _export_scope_v0210 == null:
+		return
+	var preferred_kind := str(preferred_scope.get("kind", "all"))
+	var preferred_value := str(preferred_scope.get("value", ""))
+	var all_index := 0
+	for index in range(_export_scope_v0210.item_count):
+		var metadata_value: Variant = _export_scope_v0210.get_item_metadata(index)
+		if not metadata_value is Dictionary:
+			continue
+		var metadata: Dictionary = metadata_value
+		if str(metadata.get("kind", "")) == "all":
+			all_index = index
+		if (
+			str(metadata.get("kind", "")) == preferred_kind
+			and str(metadata.get("value", "")) == preferred_value
+		):
+			_export_scope_v0210.select(index)
+			return
+	_export_scope_v0210.select(all_index)
+
+
 func _apply_export_scope_v0210(_selected_index: int) -> void:
-	if _export_scope_v0210.selected < 0:
-		return
-	var metadata_value: Variant = _export_scope_v0210.get_item_metadata(_export_scope_v0210.selected)
-	if not metadata_value is Dictionary:
-		return
-	var metadata: Dictionary = metadata_value
-	var kind := str(metadata.get("kind", "all"))
-	var value := str(metadata.get("value", ""))
 	for row in _export_rows_v0210:
 		var check_value: Variant = row.get("check")
 		var idea_value: Variant = row.get("idea")
 		if not check_value is CheckBox or not idea_value is Dictionary:
 			continue
-		var selected := false
-		if kind == "selected":
-			selected = str((idea_value as Dictionary).get("id", "")) == value
-		else:
-			selected = _idea_pack_service_v0210.idea_matches_export_scope(idea_value as Dictionary, kind, value)
-		(check_value as CheckBox).button_pressed = selected
+		var matches_scope := _idea_matches_current_export_scope_v0210(
+			idea_value as Dictionary
+		)
+		(check_value as CheckBox).button_pressed = matches_scope
+		(check_value as CheckBox).visible = matches_scope
 
 
 func _set_export_selection_v0210(selected: bool) -> void:
 	for row in _export_rows_v0210:
 		var check_value: Variant = row.get("check")
-		if check_value is CheckBox:
+		var idea_value: Variant = row.get("idea")
+		if (
+			check_value is CheckBox
+			and idea_value is Dictionary
+			and _idea_matches_current_export_scope_v0210(
+				idea_value as Dictionary
+			)
+		):
 			(check_value as CheckBox).button_pressed = selected
+
+
+func _idea_matches_current_export_scope_v0210(idea: Dictionary) -> bool:
+	if _export_scope_v0210 == null or _export_scope_v0210.selected < 0:
+		return false
+	var metadata_value: Variant = _export_scope_v0210.get_item_metadata(
+		_export_scope_v0210.selected
+	)
+	if not metadata_value is Dictionary:
+		return false
+	var metadata: Dictionary = metadata_value
+	var kind := str(metadata.get("kind", "all"))
+	var value := str(metadata.get("value", ""))
+	if kind == "selected":
+		return str(idea.get("id", "")) == value
+	return _idea_pack_service_v0210.idea_matches_export_scope(
+		idea, kind, value
+	)
 
 
 func _choose_export_path_v0210() -> void:
@@ -1107,6 +1211,7 @@ func _build_idea_source_dialogs_v0213() -> void:
 	_source_load_dialog_v0213 = FileDialog.new()
 	_source_load_dialog_v0213.visible = false
 	_source_load_dialog_v0213.title = "Load Character Card Forge Idea Source"
+	_configure_independent_file_dialog_v0213(_source_load_dialog_v0213)
 	_source_load_dialog_v0213.access = FileDialog.ACCESS_FILESYSTEM
 	_source_load_dialog_v0213.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 	_source_load_dialog_v0213.filters = PackedStringArray([
@@ -1119,6 +1224,7 @@ func _build_idea_source_dialogs_v0213() -> void:
 	_source_export_dialog_v0213 = FileDialog.new()
 	_source_export_dialog_v0213.visible = false
 	_source_export_dialog_v0213.title = "Export Character Card Forge Idea Source"
+	_configure_independent_file_dialog_v0213(_source_export_dialog_v0213)
 	_source_export_dialog_v0213.access = FileDialog.ACCESS_FILESYSTEM
 	_source_export_dialog_v0213.file_mode = FileDialog.FILE_MODE_SAVE_FILE
 	_source_export_dialog_v0213.filters = PackedStringArray([
@@ -1135,6 +1241,16 @@ func _build_idea_source_dialogs_v0213() -> void:
 	_source_delete_dialog_v0213.confirmed.connect(_delete_source_v0213)
 	add_child(_source_delete_dialog_v0213)
 	_source_delete_dialog_v0213.hide()
+
+
+func _configure_independent_file_dialog_v0213(dialog: FileDialog) -> void:
+	if dialog == null:
+		return
+	dialog.use_native_dialog = true
+	dialog.force_native = true
+	dialog.exclusive = false
+	dialog.always_on_top = false
+	dialog.unresizable = false
 
 
 func _install_active_source_banner_v0213() -> void:

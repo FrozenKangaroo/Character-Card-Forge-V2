@@ -70,13 +70,38 @@ entry remains intact for export.
 
 ## Export workflow
 
-Choose **Export Idea Pack…** from Idea Notebook. Selection scopes include all ideas, the
-current selected idea, one Bible and one Series, followed by per-entry selection. Pack
-title, ID, description and source version remain editable before choosing the file.
+Choose **Choose Ideas & Export…** from Idea Notebook. Opening the export window reads the
+Notebook's current selection and its latest Series/Bible classification instead of
+reusing context from a previous export. Selection scopes include all ideas, the current
+selected idea, one Bible and one Series, followed by per-entry selection.
+
+The active scope filters the checklist. **Select All** and **Select None** affect only the
+ideas in that scope, while individual checkboxes remain editable. Changing scope
+initialises the matching selection; it does not make later manual checkbox changes
+automatic. Pack title, ID, description and source version remain editable before
+choosing **Export Checked Ideas…**.
 
 Imported structured entries retain semantic and unknown fields. Ordinary saved ideas map
 to Seed entries with their concept as `summary`. `{{user}}`, `{{char}}`, Unicode text and
 arbitrary sections round-trip unchanged.
+
+## Desktop file-dialog verification
+
+The Idea Pack and Idea Source file pickers use independently movable native desktop
+dialogs. They remain owned by CCF, but are resizable, are not globally always-on-top and
+are not confined to the Idea Generator window.
+
+Before a desktop release, manually verify each of these actions:
+
+1. **Import Idea Pack…**
+2. **Export Checked Ideas…**
+3. **Load Idea Source…**
+4. **Export Idea Source…**
+
+For every picker, drag it beyond the Idea Generator and onto another monitor when one is
+available, resize it, cancel it, reopen it, then complete a file selection. Confirm that
+it neither becomes globally always-on-top nor reopens with stale Idea Notebook export
+context.
 
 ## Validation coverage
 
