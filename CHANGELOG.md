@@ -4,6 +4,35 @@ Release notes are written before a release tag is created. Each release explicit
 records migration needs, breaking changes and known limitations, even when there are
 none. GitHub Releases use the matching reviewed section instead of generated notes.
 
+## [0.21.2] - 2026-09-26
+
+### Highlights
+
+- Added an automatic readable view for structured Personality output so long generated profiles no longer appear as one dense wall of text.
+- Kept the exact authored Personality text canonical; visual spacing does not enter saved projects, exported cards or token estimates.
+
+### Changes
+
+- Recognised active-template Personality group and component labels plus conservative common headings such as Mind, Moral Alignment, Sexual Traits and Background.
+- Inserted display-only blank lines before recognised headings, including known headings returned inline after a completed sentence.
+- Added **Edit text** and **Readable view** controls to both the Workspace Personality field and the generated-field review.
+- Kept ordinary prose colons inline instead of treating every colon as a section boundary.
+- Added explicit in-app guidance that readable spacing is visual only.
+- Added focused formatter, live Workspace, generation-review, raw-edit and token-invariance regression coverage.
+
+### Migration notes
+
+- Existing projects, cards, templates and exports require no migration because no stored content format changes.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Automatic spacing is intentionally conservative. Unlabelled prose remains unchanged, and unusual inline headings may require a template component label or a manual line break before CCF recognises them.
+- The readable view adds spacing rather than rewriting or summarising model output.
+
 ## [0.21.1] - 2026-09-25
 
 ### Highlights

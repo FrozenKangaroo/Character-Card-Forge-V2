@@ -60,11 +60,10 @@ derivatives, Split Character Sets and task-specific Text routing in one semantic
 available for compatibility evidence, while deterministic tooling proves the active
 generation-service depth fell from 34 to 31 scripts and prevents renewed service stacking.
 
-The v0.21.1 development candidate adds a fifth, optional Custom Idea Generator detail
-mode. Authors choose an approximate text-character target for each concept while Quick,
-Standard, Detailed and Extended retain their existing behavior. CCF derives and caps the
-request budget, then reports the model's actual result lengths without treating a soft
-target miss as invalid content.
+The v0.21.2 development candidate adds a visual-only readable Personality view. CCF
+recognises active-template section labels and conservative common headings, inserts
+display spacing for review, and always keeps the exact authored text authoritative for
+editing, saving, exporting and token estimates.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -178,7 +177,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.1** and uses the Godot
+The current source candidate displays **v0.21.2** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -187,6 +186,14 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.2 — Readable Personality View (candidate)
+
+- Added automatic display-only spacing before recognised Personality section headings in Workspace and generation review.
+- Added an exact-text editing toggle so authors can move between readable review and canonical content without conversion.
+- Derived recognised headings from active template groups/components while retaining conservative common-heading support.
+- Kept stored project text, exports, card interchange and authored-token estimates byte-for-byte unaffected by visual spacing.
+- Added focused formatter, live UI, generation-review and token-invariance regression coverage.
 
 ### v0.21.1 — Custom Idea Length Targets (candidate)
 

@@ -15,15 +15,13 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.1 — Custom Idea Length Targets**. It keeps the
-Quick, Standard, Detailed and Extended Idea Generator presets and adds an optional Custom
-mode with an approximate per-idea text-character target. CCF derives a bounded output
-request, reports actual result lengths and treats model compliance as advisory rather
-than discarding a useful concept. Generated batches can also create and select a new
-destination notebook in-place, while notebook search, sorting and cross-notebook labels
-keep large idea collections manageable. Authors can request up to 50 ideas and choose
-1–12 ideas per sequential provider request, including one-at-a-time generation for
-smaller models with the exact request count shown before starting.
+The current source candidate is **v0.21.2 — Readable Personality View**. Structured
+Personality output is shown with visual spacing before recognised section headings in
+both Workspace and generation review, while **Edit text** reveals the exact canonical
+content. The spacing never changes saved projects, exported cards or token estimates.
+The v0.21.1 Idea Generator improvements remain available: Custom per-idea length targets,
+up to 50 ideas, optional one-at-a-time provider requests and scalable Idea Notebook
+organization.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental
@@ -37,6 +35,7 @@ and [changelog](CHANGELOG.md).
   provenance, arbitrary labelled sections and duplicate-safe re-import.
 - Idea Generator presets plus bounded Custom per-idea character targets with visible
   requested-versus-actual reporting.
+- Visual-only Personality section spacing with an exact-text editing toggle.
 - Character Collaborator conversations with explicit sources, evidence roles and
   reviewable Generation Blueprint handoff.
 - Editable canonical Character Card fields, Alternative Greetings, Scenario Presets,
