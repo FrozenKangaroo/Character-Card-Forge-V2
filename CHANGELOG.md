@@ -11,6 +11,7 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Added an automatic readable view for structured Personality output so long generated profiles no longer appear as one dense wall of text.
 - Kept the exact authored Personality text canonical; visual spacing does not enter saved projects, exported cards or token estimates.
 - Kept a new one-character project in memory while it is still empty, so opening Idea Generator, Character Collaborator or another Workspace tool no longer creates a blank Library card.
+- Fixed Library card-density changes so the grid immediately uses the correct number of columns without waiting for a window resize.
 
 ### Changes
 
@@ -23,6 +24,8 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Removed the eager save from the New Project creation-route chooser. The selected template still applies immediately, while the project enters the Library only after meaningful content is added and saved.
 - Preserved existing projects and normal first-save behaviour for authored names, character content and project-level context.
 - Added focused live-app coverage for both Idea Generator and Character Collaborator empty-draft starts followed by a meaningful first save.
+- Recalculated virtualized-grid columns before every card rebuild, preserving virtualization while preventing Large-card column counts from carrying into Mini, Compact or Medium layouts.
+- Added a fixed-window Large → Mini regression that verifies both the visible grid and virtualized column state reflow immediately.
 
 ### Migration notes
 
