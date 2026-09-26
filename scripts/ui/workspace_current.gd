@@ -16,6 +16,9 @@ const IDEA_CUSTOM_LENGTH_V0211 = preload(
 const IDEA_BATCHING_V0211 = preload(
 	"res://scripts/services/idea_generator_batching_v0211.gd"
 )
+const PERSONALITY_READABILITY_V0212 = preload(
+	"res://scripts/services/personality_readability_service_v0212.gd"
+)
 
 var _idea_custom_length_panel_v0211: VBoxContainer
 var _idea_custom_target_v0211: SpinBox
@@ -49,6 +52,217 @@ func _build_concept_studio() -> void:
 	_idea_generator_v01532.hide()
 	_idea_generator_v01412 = _idea_generator_v01532
 	_concept_studio = _idea_generator_v01532
+
+
+func _add_field(parent: VBoxContainer, field: Dictionary) -> void:
+	var first_added_index := parent.get_child_count()
+	super._add_field(parent, field)
+	if str(field.get("path", "")) != "character.personality":
+		return
+	var row_value: Variant = _field_controls.get("character.personality", {})
+	if not row_value is Dictionary:
+		return
+	var editor_value: Variant = (row_value as Dictionary).get("control")
+	if not editor_value is TextEdit:
+		return
+	var heading_row: HBoxContainer = null
+	if (
+		first_added_index >= 0
+		and first_added_index < parent.get_child_count()
+		and parent.get_child(first_added_index) is HBoxContainer
+	):
+		heading_row = parent.get_child(first_added_index) as HBoxContainer
+	if heading_row == null:
+		return
+	_install_personality_readable_view_v0212(
+		editor_value as TextEdit,
+		parent,
+		heading_row,
+		"PersonalityReadablePreviewV0212"
+	)
+
+
+func _add_preview_row(
+	field: Dictionary, current_value: Variant, proposed_value: Variant
+) -> void:
+	var previous_count := _preview_rows.size()
+	super._add_preview_row(field, current_value, proposed_value)
+	if (
+		str(field.get("path", "")) != "character.personality"
+		or _preview_rows.size() <= previous_count
+	):
+		return
+	var row_value: Variant = _preview_rows[-1]
+	if not row_value is Dictionary:
+		return
+	var editor_value: Variant = (row_value as Dictionary).get("editor")
+	if not editor_value is TextEdit:
+		return
+	var editor := editor_value as TextEdit
+	if not editor.get_parent() is VBoxContainer:
+		return
+	var content := editor.get_parent() as VBoxContainer
+	var toolbar := HBoxContainer.new()
+	toolbar.add_theme_constant_override("separation", 8)
+	content.add_child(toolbar)
+	content.move_child(toolbar, editor.get_index())
+	var label := Label.new()
+	label.text = "Personality display"
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	label.modulate = Color(0.68, 0.71, 0.82)
+	toolbar.add_child(label)
+	_install_personality_readable_view_v0212(
+		editor,
+		content,
+		toolbar,
+		"PersonalityGeneratedReadablePreviewV0212"
+	)
+
+
+func _install_personality_readable_view_v0212(
+	editor: TextEdit,
+	parent: VBoxContainer,
+	toolbar: HBoxContainer,
+	preview_name: String
+) -> void:
+	editor.name = "%sRawEditor" % preview_name
+	var toggle := Button.new()
+	toggle.name = "%sToggle" % preview_name
+	toggle.tooltip_text = (
+		"Switch between visual section spacing and the exact stored text. Readable spacing never changes the card, exports or token estimate."
+	)
+	toolbar.add_child(toggle)
+	var preview := TextEdit.new()
+	preview.name = preview_name
+	preview.editable = false
+	preview.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	preview.custom_minimum_size.y = editor.custom_minimum_size.y
+	preview.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	preview.tooltip_text = (
+		"Display-only spacing before Personality section headings. The underlying card text is unchanged."
+	)
+	parent.add_child(preview)
+	var hint := Label.new()
+	hint.name = "%sHint" % preview_name
+	hint.text = (
+		"Readable spacing is visual only — saved cards, exports and token estimates use the unchanged text."
+	)
+	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	hint.modulate = Color(0.62, 0.66, 0.77)
+	parent.add_child(hint)
+	var headings := _personality_heading_labels_v0212()
+	toggle.pressed.connect(
+		_toggle_personality_readable_view_v0212.bind(
+			editor, preview, toggle, hint, headings
+		)
+	)
+	editor.text_changed.connect(
+		_refresh_personality_readable_view_v0212.bind(
+			editor, preview, toggle, hint, headings
+		)
+	)
+	_refresh_personality_readable_view_v0212(
+		editor, preview, toggle, hint, headings
+	)
+	var result := PERSONALITY_READABILITY_V0212.format_for_display(
+		editor.text, headings
+	)
+	_set_personality_readable_mode_v0212(
+		editor,
+		preview,
+		toggle,
+		hint,
+		bool(result.get("readable_view_recommended", false))
+	)
+
+
+func _refresh_personality_readable_view_v0212(
+	editor: TextEdit,
+	preview: TextEdit,
+	toggle: Button,
+	hint: Label,
+	headings: Array
+) -> void:
+	if not is_instance_valid(editor) or not is_instance_valid(preview):
+		return
+	var result := PERSONALITY_READABILITY_V0212.format_for_display(
+		editor.text, headings
+	)
+	preview.text = str(result.get("display_text", editor.text))
+	var structured := bool(result.get("readable_view_recommended", false))
+	toggle.disabled = not structured
+	if not structured and preview.visible:
+		_set_personality_readable_mode_v0212(
+			editor, preview, toggle, hint, false
+		)
+
+
+func _toggle_personality_readable_view_v0212(
+	editor: TextEdit,
+	preview: TextEdit,
+	toggle: Button,
+	hint: Label,
+	headings: Array
+) -> void:
+	if preview.visible:
+		_set_personality_readable_mode_v0212(
+			editor, preview, toggle, hint, false
+		)
+		editor.grab_focus()
+		return
+	_refresh_personality_readable_view_v0212(
+		editor, preview, toggle, hint, headings
+	)
+	if not toggle.disabled:
+		_set_personality_readable_mode_v0212(
+			editor, preview, toggle, hint, true
+		)
+
+
+func _set_personality_readable_mode_v0212(
+	editor: TextEdit,
+	preview: TextEdit,
+	toggle: Button,
+	hint: Label,
+	readable: bool
+) -> void:
+	editor.visible = not readable
+	preview.visible = readable
+	hint.visible = readable
+	toggle.text = "Edit text" if readable else "Readable view"
+
+
+func _personality_heading_labels_v0212() -> Array:
+	var headings: Array = []
+	var groups_value: Variant = _template.get("generation_groups", [])
+	if not groups_value is Array:
+		return headings
+	for group_value in groups_value as Array:
+		if not group_value is Dictionary:
+			continue
+		var group := group_value as Dictionary
+		if str(group.get("output_field_id", "")) != "personality":
+			continue
+		headings.append(str(group.get("title", "")))
+		var components_value: Variant = group.get("components", [])
+		if not components_value is Array:
+			continue
+		for component_value in components_value as Array:
+			if component_value is Dictionary:
+				headings.append(
+					str((component_value as Dictionary).get("label", ""))
+				)
+	return headings
+
+
+func personality_readability_capabilities_v0212() -> Dictionary:
+	var result := PERSONALITY_READABILITY_V0212.capabilities()
+	result["workspace_readable_view"] = true
+	result["generation_preview_readable_view"] = true
+	result["template_heading_count"] = (
+		_personality_heading_labels_v0212().size()
+	)
+	return result
 
 
 func _install_idea_detail_selector_v0167() -> void:

@@ -11,7 +11,7 @@ const HELP_CENTER_CURRENT = preload(
 )
 const SETTINGS_VIEW_CURRENT = preload("res://scripts/ui/settings_view_v0208.gd")
 const WORKSPACE_CURRENT = preload("res://scripts/ui/workspace_current.gd")
-const CURRENT_BUILD_VERSION := "0.21.1"
+const CURRENT_BUILD_VERSION := "0.21.2"
 
 var _support_center_v0202: CCFSupportCenterWindowV0202
 var _help_center_v0203: CCFHelpCenterWindowV0203
@@ -84,6 +84,38 @@ func _install_workspace_v01526() -> void:
 	_content.add_child(upgraded)
 	upgraded.update_settings(_settings)
 	_wire_ai_jobs_controller_v01531()
+
+
+func _on_new_project_method_v0201(method_id: String, template_id: String) -> void:
+	# The v0.20.1 chooser used to save here merely to apply the selected template.
+	# Keep the draft in memory instead: Idea Generator, Collaborator and the other
+	# Workspace tools have their own durable state and must not create empty Library
+	# projects as a side effect of being opened.
+	if _workspace == null:
+		return
+	var project := CCFStorageService.new_project()
+	var character_id := CCFStorageService.active_character_id(project)
+	CCFTemplatePreferenceService.assign_character_template(
+		project, character_id, template_id
+	)
+	_workspace.load_project(
+		project, CCFTemplateService.load_template(template_id), _settings
+	)
+	_show_view("workspace")
+	_global_status.text = (
+		"New character draft ready — it will enter the Library after you add content and Save"
+	)
+	_refresh_home_and_library()
+	call_deferred("_route_new_project_method_v0201", method_id)
+
+
+func empty_draft_persistence_capabilities_v0212() -> Dictionary:
+	return {
+		"single_empty_character_stays_in_memory": true,
+		"workspace_tools_do_not_persist_drafts": true,
+		"meaningful_save_still_supported": true,
+		"existing_projects_unchanged": true,
+	}
 
 
 func _build_support_center_current() -> void:
@@ -178,7 +210,7 @@ func _update_current_build_label() -> void:
 		if node is Label and node.text.begins_with("Godot rewrite • v"):
 			node.text = "Godot rewrite • v%s" % CURRENT_BUILD_VERSION
 			node.tooltip_text = (
-				"v0.21.1 adds a Custom Idea Generator detail mode with an approximate "
-				+ "per-idea character target, optional small-model request batching and scalable Idea Notebook organization."
+				"v0.21.2 adds a visual-only readable Personality view with section spacing "
+				+ "while preserving exact card text, exports and token estimates."
 			)
 			return

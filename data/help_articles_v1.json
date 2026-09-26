@@ -67,7 +67,8 @@
         "Add or generate artwork before PNG export when you want a visual card."
       ],
       "notes": [
-        "Filling in Generation Concept alone does not create the finished character fields. Run Generate Character and review the result first."
+        "Filling in Generation Concept alone does not create the finished character fields. Run Generate Character and review the result first.",
+        "A new one-character draft stays out of Character Library while it is empty. Opening Idea Generator, Character Collaborator or another Workspace tool does not save it by itself."
       ],
       "actions": [
         {"id": "new_project", "label": "Create a Character…"},
@@ -101,13 +102,15 @@
       "keywords": ["edit", "workspace", "review", "inspector", "revision", "quality", "diff"],
       "steps": [
         "Edit canonical fields directly in the Workspace and save meaningful progress.",
+        "For structured Personality output, use Readable view to add visual spacing between labelled sections; choose Edit text to see and change the exact stored content.",
         "Use Card Inspector for deterministic health checks, token estimates and export-facing metadata.",
         "Run AI Review only when wanted; inspect every finding and proposed replacement.",
         "Approve fields selectively. Rejected changes remain rejected and the accepted batch creates a recovery checkpoint.",
         "Use Revision History to compare, restore, fork or selectively recover earlier values."
       ],
       "notes": [
-        "AI scores are advisory, not objective measures of character quality."
+        "AI scores are advisory, not objective measures of character quality.",
+        "Readable Personality spacing is display-only. It does not add blank lines to the card, exports or token estimate."
       ],
       "actions": [{"id": "ai_review", "label": "Open AI Review"}],
       "related": ["backup_recovery", "export_character", "first_character"]

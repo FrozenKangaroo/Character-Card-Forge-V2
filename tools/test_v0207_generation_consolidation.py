@@ -35,7 +35,7 @@ def main() -> int:
     require(report["depth_reduction"] == 3, "Phase 2 must remove three active inheritance hops.")
     require(report["historical_layers_preserved"], "Historical generation layers must remain available.")
     require(not (ROOT / "scripts/main_v0207.gd").exists(), "v0.20.7 must retain the semantic shell.")
-    require((ROOT / "VERSION").read_text(encoding="utf-8").strip() in {"0.20.7", "0.20.8", "0.20.9", "0.21.0", "0.21.1"}, "Phase 2 must remain active in a compatible candidate.")
+    require((ROOT / "VERSION").read_text(encoding="utf-8").strip() in {"0.20.7", "0.20.8", "0.20.9", "0.21.0", "0.21.1", "0.21.2"}, "Phase 2 must remain active in a compatible candidate.")
     print("V0207_GENERATION_CONSOLIDATION_OK")
     return 0
 
