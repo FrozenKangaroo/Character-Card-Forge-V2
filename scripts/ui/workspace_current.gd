@@ -50,12 +50,14 @@ var _similar_source_card_v0213: Dictionary = {}
 var _similar_extracted_source_v0213: Dictionary = {}
 var _idea_source_title_job_id_v0213 := ""
 var _idea_source_title_id_v0213 := ""
+var _idea_prompt_hint_v0213: Label
 
 
 func _ready() -> void:
 	super._ready()
 	_build_similar_ideas_window_v0213()
 	_add_generate_similar_ideas_action_v0213()
+	_install_idea_prompt_presentation_v0213()
 
 
 func _init() -> void:
@@ -77,6 +79,13 @@ func _build_concept_studio() -> void:
 		_idea_generator_v01532.connect(
 			"idea_source_title_requested_v0213",
 			Callable(self, "_on_idea_source_title_requested_v0213")
+		)
+	if _idea_generator_v01532.has_signal(
+		"active_idea_source_changed_v0213"
+	):
+		_idea_generator_v01532.connect(
+			"active_idea_source_changed_v0213",
+			Callable(self, "_on_active_idea_source_changed_v0213")
 		)
 	add_child(_idea_generator_v01532)
 	_idea_generator_v01532.hide()
@@ -1161,23 +1170,43 @@ func _idea_seed_with_source_v0213() -> String:
 	var ordinary_seed := _idea_seed.text.strip_edges() if _idea_seed != null else ""
 	if (
 		_idea_generator_v01532 == null
-		or not _idea_generator_v01532.has_method(
-			"active_idea_source_context_v0213"
-		)
+		or not _idea_generator_v01532.has_method("prepared_generation_input_v0213")
 	):
 		return ordinary_seed
-	var source_context := str(_idea_generator_v01532.call(
-		"active_idea_source_context_v0213"
-	)).strip_edges()
-	if source_context.is_empty():
-		return ordinary_seed
-	var blocks: Array[String] = [source_context]
-	if not ordinary_seed.is_empty():
-		blocks.append(
-			"CURRENT IDEA-GENERATOR PROMPT / ADDITIONAL DIRECTION:\n%s"
-			% ordinary_seed
-		)
-	return "\n\n".join(blocks)
+	return str(_idea_generator_v01532.call(
+		"prepared_generation_input_v0213", ordinary_seed
+	))
+
+
+func _install_idea_prompt_presentation_v0213() -> void:
+	if _idea_seed == null or _idea_seed.get_parent() == null:
+		return
+	var parent := _idea_seed.get_parent()
+	for child in parent.get_children():
+		if (
+			child is Label
+			and child.get_index() < _idea_seed.get_index()
+			and (child as Label).text.begins_with("Give the AI")
+		):
+			_idea_prompt_hint_v0213 = child as Label
+	_update_idea_prompt_presentation_v0213()
+
+
+func _on_active_idea_source_changed_v0213(_source: Dictionary) -> void:
+	_update_idea_prompt_presentation_v0213()
+
+
+func _update_idea_prompt_presentation_v0213() -> void:
+	if _idea_seed == null or _idea_generator_v01532 == null:
+		return
+	if not _idea_generator_v01532.has_method("prompt_presentation_v0213"):
+		return
+	var presentation: Dictionary = _idea_generator_v01532.call(
+		"prompt_presentation_v0213"
+	)
+	if _idea_prompt_hint_v0213 != null:
+		_idea_prompt_hint_v0213.text = str(presentation.get("label", ""))
+	_idea_seed.placeholder_text = str(presentation.get("placeholder", ""))
 
 
 func _on_idea_source_title_requested_v0213(

@@ -15,6 +15,9 @@ const NOTEBOOK_SERVICE = preload(
 const IDEA_WINDOW = preload(
 	"res://scripts/ui/idea_generator_window_current.gd"
 )
+const WORKSPACE_CURRENT = preload(
+	"res://scripts/ui/workspace_current.gd"
+)
 const ALTERNATIVE_WORKSPACE = preload(
 	"res://scripts/ui/workspace_v01410.gd"
 )
@@ -38,6 +41,8 @@ func _run() -> void:
 	_test_similar_idea_extraction()
 	if not _failed:
 		await _test_live_ui_and_active_source()
+	if not _failed:
+		await _test_live_prompt_presentation()
 	_remove_tree(_root_dir)
 	if _failed:
 		quit(1)
@@ -316,10 +321,11 @@ func _test_similar_idea_extraction() -> void:
 
 
 func _test_live_ui_and_active_source() -> void:
+	var live_service := SOURCE_SERVICE.new(_root_dir.path_join("live-ui"))
 	var window := IDEA_WINDOW.new()
 	window.set(
 		"_idea_source_service_v0213",
-		SOURCE_SERVICE.new(_root_dir.path_join("live-ui"))
+		live_service
 	)
 	root.add_child(window)
 	await process_frame
@@ -331,25 +337,142 @@ func _test_live_ui_and_active_source() -> void:
 		and window.find_child("ExportIdeaPackV0210", true, false) != null,
 		"Idea Source Library must be a separate UI while existing Idea Pack actions remain available."
 	)
-	var source := _sample_source("")
-	window.load_temporary_source_v0213(source, false, true)
+	var inactive_banner := window.find_child(
+		"ActiveIdeaSourceBannerV0213", true, false
+	) as Label
+	var source_actions := window.find_child(
+		"ActiveIdeaSourceActionsV0213", true, false
+	) as HFlowContainer
+	var inactive_prompt := window.prompt_presentation_v0213()
+	_require(
+		inactive_banner != null
+		and inactive_banner.text == "Idea Source: None"
+		and source_actions != null
+		and not source_actions.visible
+		and str(inactive_prompt.get("mode", "")) == "primary_prompt",
+		"15a. With no source active, AI Ideas must show a clear inactive state and primary-prompt guidance."
+	)
+
+	var source := _sample_source()
+	var saved := live_service.save_source(source)
+	_require(bool(saved.get("ok", false)), "The source-state UI test fixture must save.")
+	window.load_saved_source_v0213("source-pregnancy-series", false)
+	window.call("_use_source_v0213", false)
 	var first_context := window.active_idea_source_context_v0213()
 	var second_context := window.active_idea_source_context_v0213()
+	var active_prompt := window.prompt_presentation_v0213()
+	var additional := "Make this batch mostly university or workplace settings."
+	var prepared := window.prepared_generation_input_v0213(additional)
+	var blank_prepared := window.prepared_generation_input_v0213("")
 	_require(
 		first_context == second_context
 		and first_context.contains("source-pregnancy-series") == false
 		and first_context.contains("Keep {{user}} agency open")
-		and not str(window.active_idea_source_v0213().get("title", "")).is_empty(),
-		"15. The same active structured source must remain unchanged across batched request preparation, with optional naming non-blocking."
+		and str(window.active_idea_source_v0213().get("title", "")) == "She Got Pregnant"
+		and inactive_banner.text == "Active Idea Source: She Got Pregnant"
+		and source_actions.visible,
+		"15b. Activating a source must immediately expose its title, controls and stable batch context in AI Ideas."
+	)
+	_require(
+		str(active_prompt.get("mode", "")) == "additional_direction"
+		and str(active_prompt.get("label", "")).contains("Additional Direction (optional)")
+		and str(active_prompt.get("placeholder", "")).contains("Focus on scenarios")
+		and prepared.contains(additional)
+		and prepared.contains(first_context)
+		and prepared.count(first_context) == 1
+		and blank_prepared == first_context
+		and window.prepared_generation_input_v0213(additional) == prepared,
+		"15c. Additional Direction must supplement one source injection; blank and repeated batch preparation must retain the same source."
+	)
+
+	window.call("_view_active_source_v0213")
+	var tabs := window.get("_tabs") as TabContainer
+	_require(
+		str((window.get("_source_editor_base_v0213") as Dictionary).get("id", "")) == "source-pregnancy-series"
+		and bool(window.get("_source_saved_v0213"))
+		and tabs.get_tab_title(tabs.current_tab) == "Idea Sources",
+		"15d. View/Edit Source must open the active saved source without duplicating or changing its library status."
+	)
+	window.clear_active_idea_source_v0213()
+	var still_saved := live_service.load_source("source-pregnancy-series")
+	_require(
+		window.active_idea_source_v0213().is_empty()
+		and bool(still_saved.get("ok", false))
+		and window.prepared_generation_input_v0213("prompt only") == "prompt only"
+		and inactive_banner.text == "Idea Source: None",
+		"15e. Clear Source must remove only active generation state, preserve saved sources and restore prompt-only behavior."
+	)
+
+	var external := _sample_source("External Temporary Source")
+	external["id"] = "external-temporary-source"
+	var external_snapshot := JSON.stringify(external)
+	var external_path := _root_dir.path_join("external-source.ccfideasource.json")
+	_write_text(external_path, external_snapshot)
+	window.call("_load_source_file_v0213", external_path)
+	window.call("_use_source_v0213", false)
+	window.clear_active_idea_source_v0213()
+	_require(
+		FileAccess.file_exists(external_path)
+		and FileAccess.get_file_as_string(external_path) == external_snapshot
+		and not bool(live_service.load_source("external-temporary-source").get("ok", false)),
+		"15f. Clearing a temporary external source must neither alter/delete its file nor save it to the library."
+	)
+
+	window.call("_change_active_source_v0213")
+	_require(
+		tabs.get_tab_title(tabs.current_tab) == "Idea Sources",
+		"15g. Change Source must navigate to the existing Idea Sources selection workflow."
+	)
+	var replacement := _sample_source("Replacement Source")
+	replacement["id"] = "replacement-source"
+	window.load_temporary_source_v0213(replacement, false, true)
+	_require(
+		str(window.active_idea_source_v0213().get("id", "")) == "replacement-source"
+		and str(window.active_idea_source_v0213().get("title", "")) == "Replacement Source",
+		"15h. Choosing and activating another source must replace active generation state."
 	)
 	var capabilities := window.idea_source_capabilities_v0213()
 	_require(
 		bool(capabilities.get("source_library_ui", false))
 		and bool(capabilities.get("idea_pack_actions_preserved", false))
-		and str(capabilities.get("active_source_id", "")) == "source-pregnancy-series",
+		and str(capabilities.get("active_source_id", "")) == "replacement-source",
 		"The live Idea Generator must expose the separate source pipeline and active source identity."
 	)
 	window.queue_free()
+	await process_frame
+
+
+func _test_live_prompt_presentation() -> void:
+	var workspace := WORKSPACE_CURRENT.new()
+	root.add_child(workspace)
+	await process_frame
+	await process_frame
+	var generator: Variant = workspace.get("_idea_generator_v01532")
+	var seed: Variant = workspace.get("_idea_seed")
+	var hint: Variant = workspace.get("_idea_prompt_hint_v0213")
+	if not _require(
+		generator is IDEA_WINDOW and seed is TextEdit and hint is Label,
+		"15i. The live Workspace must expose the Idea prompt and its dynamic guidance."
+	):
+		workspace.queue_free()
+		return
+	(generator as IDEA_WINDOW).load_temporary_source_v0213(
+		_sample_source("Live Prompt Source"), false, true
+	)
+	await process_frame
+	_require(
+		(hint as Label).text.contains("Additional Direction (optional)")
+		and (seed as TextEdit).placeholder_text.contains("Focus on scenarios"),
+		"15j. The live prompt label and placeholder must switch to optional Additional Direction while a source is active."
+	)
+	(generator as IDEA_WINDOW).clear_active_idea_source_v0213()
+	await process_frame
+	_require(
+		(hint as Label).text.begins_with("Give the AI")
+		and (seed as TextEdit).placeholder_text.begins_with("Example:"),
+		"15k. Clearing the source must immediately restore the ordinary primary-prompt presentation."
+	)
+	workspace.queue_free()
 	await process_frame
 
 
