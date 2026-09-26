@@ -1,8 +1,14 @@
 class_name CCFIdeaGeneratorWindowCurrent
 extends "res://scripts/ui/idea_generator_window_v01533_hotfix1.gd"
 
+signal active_idea_source_changed_v0213(source: Dictionary)
+signal idea_source_title_requested_v0213(source: Dictionary, context: String)
+
 const IDEA_PACK_SERVICE_V0210 = preload(
 	"res://scripts/services/idea_pack_service_v0210.gd"
+)
+const IDEA_SOURCE_SERVICE_V0213 = preload(
+	"res://scripts/services/idea_source_service_v0213.gd"
 )
 
 var _idea_pack_service_v0210 := IDEA_PACK_SERVICE_V0210.new()
@@ -34,11 +40,46 @@ var _idea_result_summary_v0211: Label
 var _save_new_notebook_dialog_v0211: ConfirmationDialog
 var _save_new_notebook_name_v0211: LineEdit
 
+var _idea_source_service_v0213 := IDEA_SOURCE_SERVICE_V0213.new()
+var _active_idea_source_v0213: Dictionary = {}
+var _source_editor_base_v0213: Dictionary = {}
+var _source_saved_v0213 := false
+var _source_external_path_v0213 := ""
+var _source_tab_v0213: VBoxContainer
+var _source_list_v0213: ItemList
+var _source_visible_ids_v0213: Array[String] = []
+var _source_title_v0213: LineEdit
+var _source_description_v0213: TextEdit
+var _source_version_v0213: LineEdit
+var _source_bible_v0213: TextEdit
+var _source_summary_v0213: TextEdit
+var _source_premise_v0213: TextEdit
+var _source_setup_v0213: TextEdit
+var _source_variables_v0213: TextEdit
+var _source_rules_v0213: TextEdit
+var _source_guardrails_v0213: TextEdit
+var _source_diversity_v0213: TextEdit
+var _source_links_v0213: TextEdit
+var _source_tags_v0213: LineEdit
+var _source_notes_v0213: TextEdit
+var _source_sections_v0213: TextEdit
+var _source_raw_prompt_v0213: TextEdit
+var _source_status_v0213: Label
+var _active_source_banner_v0213: Label
+var _source_load_dialog_v0213: FileDialog
+var _source_export_dialog_v0213: FileDialog
+var _source_pending_export_v0213: Dictionary = {}
+var _source_delete_dialog_v0213: ConfirmationDialog
+
 
 func _ready() -> void:
 	super._ready()
 	_build_idea_pack_dialogs_v0210()
 	_build_save_new_notebook_dialog_v0211()
+	_build_idea_source_tab_v0213()
+	_build_idea_source_dialogs_v0213()
+	_install_active_source_banner_v0213()
+	_refresh_source_library_v0213()
 
 
 func _build_notebook_tab_v01532() -> void:
@@ -946,3 +987,590 @@ func _write_export_v0210(path: String) -> void:
 		"y" if int(result.get("entry_count", 0)) == 1 else "ies",
 		str(result.get("path", path))
 	]
+
+
+func _build_idea_source_tab_v0213() -> void:
+	_source_tab_v0213 = VBoxContainer.new()
+	_source_tab_v0213.name = "Idea Sources"
+	_source_tab_v0213.add_theme_constant_override("separation", 8)
+	_tabs.add_child(_source_tab_v0213)
+	var intro := Label.new()
+	intro.text = (
+		"Idea Sources are reusable inputs that create many Ideas. They are separate from generated Ideas in Idea Notebook and from Workspace Generation Concepts."
+	)
+	intro.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_source_tab_v0213.add_child(intro)
+	var toolbar := HFlowContainer.new()
+	toolbar.add_theme_constant_override("separation", 8)
+	_source_tab_v0213.add_child(toolbar)
+	_add_source_button_v0213(toolbar, "New Source", _new_source_v0213)
+	_add_source_button_v0213(toolbar, "Load Idea Source…", _open_source_file_v0213)
+	_add_source_button_v0213(toolbar, "Save Current Source", _save_current_source_v0213)
+	_add_source_button_v0213(toolbar, "Export Idea Source…", _choose_source_export_v0213)
+	_add_source_button_v0213(toolbar, "Duplicate", _duplicate_source_v0213)
+	_add_source_button_v0213(toolbar, "Rename", _focus_source_title_v0213)
+	_add_source_button_v0213(toolbar, "Delete…", _request_delete_source_v0213)
+	var use_button := _add_source_button_v0213(toolbar, "Use in Idea Generator", _use_source_v0213)
+	use_button.tooltip_text = "Activate this reusable source without creating an Idea Notebook entry."
+
+	var split := HSplitContainer.new()
+	split.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	split.split_offset = 300
+	_source_tab_v0213.add_child(split)
+	var library_panel := VBoxContainer.new()
+	library_panel.custom_minimum_size.x = 260
+	library_panel.add_theme_constant_override("separation", 6)
+	split.add_child(library_panel)
+	var library_heading := Label.new()
+	library_heading.text = "Saved Idea Source Library"
+	library_heading.add_theme_font_size_override("font_size", 17)
+	library_panel.add_child(library_heading)
+	var library_hint := Label.new()
+	library_hint.text = "Only sources you explicitly save appear here. Loading an external file remains temporary."
+	library_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	library_hint.modulate = Color(0.66, 0.70, 0.82)
+	library_panel.add_child(library_hint)
+	_source_list_v0213 = ItemList.new()
+	_source_list_v0213.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_source_list_v0213.allow_reselect = true
+	_source_list_v0213.item_selected.connect(_load_selected_source_v0213)
+	library_panel.add_child(_source_list_v0213)
+
+	var editor_scroll := ScrollContainer.new()
+	editor_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	editor_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	split.add_child(editor_scroll)
+	var editor := VBoxContainer.new()
+	editor.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	editor.add_theme_constant_override("separation", 7)
+	editor_scroll.add_child(editor)
+	var editor_heading := Label.new()
+	editor_heading.text = "Reusable Generator Source"
+	editor_heading.add_theme_font_size_override("font_size", 17)
+	editor.add_child(editor_heading)
+	_source_title_v0213 = LineEdit.new()
+	_source_title_v0213.placeholder_text = "Optional — for example, She Got Pregnant"
+	editor.add_child(_labelled_control_v01532("Title (optional)", _source_title_v0213))
+	var title_actions := HFlowContainer.new()
+	title_actions.add_theme_constant_override("separation", 8)
+	editor.add_child(title_actions)
+	var suggest := _add_source_button_v0213(title_actions, "Suggest Name", _suggest_source_title_v0213)
+	suggest.tooltip_text = "Provides a local fallback suggestion. A blank title also asks the generation model to infer a concise reusable name without blocking generation."
+	_source_description_v0213 = _source_text_edit_v0213(75)
+	editor.add_child(_labelled_control_v01532("Description", _source_description_v0213))
+	_source_version_v0213 = LineEdit.new()
+	_source_version_v0213.placeholder_text = "Optional source/Bible version"
+	editor.add_child(_labelled_control_v01532("Source version", _source_version_v0213))
+	_source_bible_v0213 = _source_text_edit_v0213(90)
+	_source_bible_v0213.placeholder_text = "Optional JSON object with Series/Bible metadata"
+	editor.add_child(_labelled_control_v01532("Source Bible / Series (JSON)", _source_bible_v0213))
+	_source_summary_v0213 = _source_text_edit_v0213(100)
+	editor.add_child(_labelled_control_v01532("Summary", _source_summary_v0213))
+	_source_premise_v0213 = _source_text_edit_v0213(150)
+	editor.add_child(_labelled_control_v01532("Core premise / reusable engine", _source_premise_v0213))
+	_source_setup_v0213 = _source_text_edit_v0213(110)
+	editor.add_child(_labelled_control_v01532("Setup / framing", _source_setup_v0213))
+	_source_variables_v0213 = _source_text_edit_v0213(110)
+	editor.add_child(_labelled_control_v01532("Core variables (one per line)", _source_variables_v0213))
+	_source_rules_v0213 = _source_text_edit_v0213(110)
+	editor.add_child(_labelled_control_v01532("Generation rules (one per line)", _source_rules_v0213))
+	_source_guardrails_v0213 = _source_text_edit_v0213(110)
+	editor.add_child(_labelled_control_v01532("Guardrails (one per line)", _source_guardrails_v0213))
+	_source_diversity_v0213 = _source_text_edit_v0213(100)
+	editor.add_child(_labelled_control_v01532("Suggested diversity axes (one per line)", _source_diversity_v0213))
+	_source_links_v0213 = _source_text_edit_v0213(90)
+	editor.add_child(_labelled_control_v01532("Cross-links / related Series (one per line)", _source_links_v0213))
+	_source_tags_v0213 = LineEdit.new()
+	_source_tags_v0213.placeholder_text = "romance, drama, university"
+	editor.add_child(_labelled_control_v01532("Tags (comma separated)", _source_tags_v0213))
+	_source_notes_v0213 = _source_text_edit_v0213(90)
+	editor.add_child(_labelled_control_v01532("Notes", _source_notes_v0213))
+	_source_sections_v0213 = _source_text_edit_v0213(130)
+	_source_sections_v0213.placeholder_text = '[{"label":"Relationship engine","content":"..."}]'
+	editor.add_child(_labelled_control_v01532("Arbitrary labelled sections (JSON array)", _source_sections_v0213))
+	_source_raw_prompt_v0213 = _source_text_edit_v0213(130)
+	editor.add_child(_labelled_control_v01532("Raw / custom prompt", _source_raw_prompt_v0213))
+	_source_status_v0213 = Label.new()
+	_source_status_v0213.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_source_status_v0213.modulate = Color(0.72, 0.76, 0.86)
+	_source_tab_v0213.add_child(_source_status_v0213)
+	_new_source_v0213()
+
+
+func _build_idea_source_dialogs_v0213() -> void:
+	_source_load_dialog_v0213 = FileDialog.new()
+	_source_load_dialog_v0213.visible = false
+	_source_load_dialog_v0213.title = "Load Character Card Forge Idea Source"
+	_source_load_dialog_v0213.access = FileDialog.ACCESS_FILESYSTEM
+	_source_load_dialog_v0213.file_mode = FileDialog.FILE_MODE_OPEN_FILE
+	_source_load_dialog_v0213.filters = PackedStringArray([
+		"*.ccfideasource.json ; Character Card Forge Idea Source",
+		"*.json ; JSON files"
+	])
+	_source_load_dialog_v0213.file_selected.connect(_load_source_file_v0213)
+	add_child(_source_load_dialog_v0213)
+	_source_load_dialog_v0213.hide()
+	_source_export_dialog_v0213 = FileDialog.new()
+	_source_export_dialog_v0213.visible = false
+	_source_export_dialog_v0213.title = "Export Character Card Forge Idea Source"
+	_source_export_dialog_v0213.access = FileDialog.ACCESS_FILESYSTEM
+	_source_export_dialog_v0213.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+	_source_export_dialog_v0213.filters = PackedStringArray([
+		"*.ccfideasource.json ; Character Card Forge Idea Source"
+	])
+	_source_export_dialog_v0213.file_selected.connect(_export_source_file_v0213)
+	add_child(_source_export_dialog_v0213)
+	_source_export_dialog_v0213.hide()
+	_source_delete_dialog_v0213 = ConfirmationDialog.new()
+	_source_delete_dialog_v0213.visible = false
+	_source_delete_dialog_v0213.title = "Delete Saved Idea Source"
+	_source_delete_dialog_v0213.dialog_text = "Delete this source from the internal Idea Source Library? Portable files and generated Ideas are unaffected."
+	_source_delete_dialog_v0213.ok_button_text = "Delete Source"
+	_source_delete_dialog_v0213.confirmed.connect(_delete_source_v0213)
+	add_child(_source_delete_dialog_v0213)
+	_source_delete_dialog_v0213.hide()
+
+
+func _install_active_source_banner_v0213() -> void:
+	var ai_tab := _tabs.get_node_or_null("AI Ideas") as VBoxContainer
+	if ai_tab == null:
+		return
+	_active_source_banner_v0213 = Label.new()
+	_active_source_banner_v0213.name = "ActiveIdeaSourceBannerV0213"
+	_active_source_banner_v0213.text = "Idea Source: none — the prompt below is the only generator input."
+	_active_source_banner_v0213.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_active_source_banner_v0213.modulate = Color(0.72, 0.76, 0.90)
+	ai_tab.add_child(_active_source_banner_v0213)
+	if _ai_ideas_host != null:
+		ai_tab.move_child(_active_source_banner_v0213, _ai_ideas_host.get_index())
+
+
+func _add_source_button_v0213(parent: Control, text_value: String, callback: Callable) -> Button:
+	var button := Button.new()
+	button.text = text_value
+	button.pressed.connect(callback)
+	parent.add_child(button)
+	return button
+
+
+func _source_text_edit_v0213(minimum_height: int) -> TextEdit:
+	var editor := TextEdit.new()
+	editor.custom_minimum_size.y = minimum_height
+	editor.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	editor.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	return editor
+
+
+func _new_source_v0213() -> void:
+	_source_editor_base_v0213 = _idea_source_service_v0213.blank_source()
+	_source_saved_v0213 = false
+	_source_external_path_v0213 = ""
+	_populate_source_editor_v0213(_source_editor_base_v0213)
+	if _source_status_v0213 != null:
+		_source_status_v0213.text = "New temporary source. It will not enter the library until Save Current Source is pressed."
+
+
+func _open_source_file_v0213() -> void:
+	_source_load_dialog_v0213.popup_centered_ratio(0.8)
+
+
+func _load_source_file_v0213(path: String) -> void:
+	var result := _idea_source_service_v0213.parse_file(path)
+	if not bool(result.get("load_allowed", false)):
+		_source_status_v0213.text = _source_result_message_v0213(result)
+		return
+	_source_editor_base_v0213 = (result.get("source", {}) as Dictionary).duplicate(true)
+	_source_saved_v0213 = false
+	_source_external_path_v0213 = path
+	_populate_source_editor_v0213(_source_editor_base_v0213)
+	_source_status_v0213.text = "Loaded external source temporarily from %s. It has not been saved to the Idea Source Library or Idea Notebook." % path
+
+
+func _load_selected_source_v0213(index: int) -> void:
+	if index < 0 or index >= _source_visible_ids_v0213.size():
+		return
+	var result := _idea_source_service_v0213.load_source(_source_visible_ids_v0213[index])
+	if not bool(result.get("ok", false)):
+		_source_status_v0213.text = str(result.get("error", "Could not load Idea Source."))
+		return
+	_source_editor_base_v0213 = (result.get("source", {}) as Dictionary).duplicate(true)
+	_source_saved_v0213 = true
+	_source_external_path_v0213 = ""
+	_populate_source_editor_v0213(_source_editor_base_v0213)
+	_source_status_v0213.text = "Loaded saved Idea Source. Edit and save explicitly when ready."
+
+
+func load_temporary_source_v0213(source: Dictionary, open_editor: bool = true, activate: bool = false) -> void:
+	_source_editor_base_v0213 = source.duplicate(true)
+	if str(_source_editor_base_v0213.get("id", "")).is_empty():
+		_source_editor_base_v0213["id"] = str(_idea_source_service_v0213.blank_source().get("id", ""))
+	_source_editor_base_v0213["format"] = IDEA_SOURCE_SERVICE_V0213.FORMAT_ID
+	_source_editor_base_v0213["schema_version"] = IDEA_SOURCE_SERVICE_V0213.SCHEMA_VERSION
+	_source_saved_v0213 = false
+	_source_external_path_v0213 = ""
+	_populate_source_editor_v0213(_source_editor_base_v0213)
+	if activate:
+		_use_source_v0213(false)
+	if open_editor:
+		open_studio()
+		_show_source_tab_v0213()
+	_source_status_v0213.text = "Extracted source is temporary and editable. Generate, save or export it when ready."
+
+
+func _save_current_source_v0213() -> void:
+	var captured := _capture_source_editor_v0213()
+	if not bool(captured.get("ok", false)):
+		_source_status_v0213.text = str(captured.get("error", "Could not read source fields."))
+		return
+	var result := _idea_source_service_v0213.save_source(captured.get("source", {}))
+	if not bool(result.get("ok", false)):
+		_source_status_v0213.text = str(result.get("error", "Could not save Idea Source."))
+		return
+	_source_editor_base_v0213 = (result.get("source", {}) as Dictionary).duplicate(true)
+	_source_saved_v0213 = true
+	_source_external_path_v0213 = ""
+	_populate_source_editor_v0213(_source_editor_base_v0213)
+	_refresh_source_library_v0213(str(_source_editor_base_v0213.get("id", "")))
+	_source_status_v0213.text = "Saved to the Idea Source Library. No Idea Notebook entry was created."
+
+
+func _choose_source_export_v0213() -> void:
+	var captured := _capture_source_editor_v0213()
+	if not bool(captured.get("ok", false)):
+		_source_status_v0213.text = str(captured.get("error", "Could not read source fields."))
+		return
+	_source_pending_export_v0213 = (captured.get("source", {}) as Dictionary).duplicate(true)
+	var file_stem := str(_source_pending_export_v0213.get("title", "idea-source")).strip_edges()
+	if file_stem.is_empty():
+		file_stem = "idea-source"
+	_source_export_dialog_v0213.current_file = "%s.ccfideasource.json" % file_stem.validate_filename()
+	_source_export_dialog_v0213.popup_centered_ratio(0.8)
+
+
+func _export_source_file_v0213(path: String) -> void:
+	var result := _idea_source_service_v0213.export_to_file(path, _source_pending_export_v0213)
+	if not bool(result.get("ok", false)):
+		_source_status_v0213.text = str(result.get("error", "Could not export Idea Source."))
+		return
+	_source_status_v0213.text = "Exported Idea Source to %s" % str(result.get("path", path))
+
+
+func _duplicate_source_v0213() -> void:
+	if not _source_saved_v0213:
+		_source_status_v0213.text = "Save this temporary source before duplicating it in the library."
+		return
+	var result := _idea_source_service_v0213.duplicate_source(str(_source_editor_base_v0213.get("id", "")))
+	if not bool(result.get("ok", false)):
+		_source_status_v0213.text = str(result.get("error", "Could not duplicate Idea Source."))
+		return
+	_source_editor_base_v0213 = (result.get("source", {}) as Dictionary).duplicate(true)
+	_source_saved_v0213 = true
+	_populate_source_editor_v0213(_source_editor_base_v0213)
+	_refresh_source_library_v0213(str(_source_editor_base_v0213.get("id", "")))
+	_source_status_v0213.text = "Duplicated as a separate saved Idea Source."
+
+
+func _focus_source_title_v0213() -> void:
+	_source_title_v0213.grab_focus()
+	_source_title_v0213.select_all()
+	_source_status_v0213.text = "Edit the title, then choose Save Current Source. The stable source ID is unchanged."
+
+
+func _request_delete_source_v0213() -> void:
+	if not _source_saved_v0213:
+		_source_status_v0213.text = "This source is temporary and has no library copy to delete."
+		return
+	_source_delete_dialog_v0213.popup_centered()
+
+
+func _delete_source_v0213() -> void:
+	var source_id := str(_source_editor_base_v0213.get("id", ""))
+	var result := _idea_source_service_v0213.delete_source(source_id)
+	if not bool(result.get("ok", false)):
+		_source_status_v0213.text = str(result.get("error", "Could not delete Idea Source."))
+		return
+	if str(_active_idea_source_v0213.get("id", "")) == source_id:
+		_active_idea_source_v0213.clear()
+		_refresh_active_source_banner_v0213()
+	_new_source_v0213()
+	_refresh_source_library_v0213()
+	_source_status_v0213.text = "Deleted the saved Idea Source. Generated Ideas and portable files were not changed."
+
+
+func _use_source_v0213(switch_to_generator: bool = true) -> void:
+	var captured := _capture_source_editor_v0213()
+	if not bool(captured.get("ok", false)):
+		_source_status_v0213.text = str(captured.get("error", "Could not activate Idea Source."))
+		return
+	_active_idea_source_v0213 = (captured.get("source", {}) as Dictionary).duplicate(true)
+	_refresh_active_source_banner_v0213()
+	active_idea_source_changed_v0213.emit(_active_idea_source_v0213.duplicate(true))
+	_source_status_v0213.text = "Idea Source activated. It will remain identical across every request in an Idea Generator batch."
+	if str(_active_idea_source_v0213.get("title", "")).strip_edges().is_empty():
+		_request_ai_source_title_v0213()
+	if switch_to_generator:
+		for index in range(_tabs.get_tab_count()):
+			if _tabs.get_tab_title(index) == "AI Ideas":
+				_tabs.current_tab = index
+				break
+
+
+func clear_active_idea_source_v0213() -> void:
+	_active_idea_source_v0213.clear()
+	_refresh_active_source_banner_v0213()
+	active_idea_source_changed_v0213.emit({})
+
+
+func active_idea_source_v0213() -> Dictionary:
+	return _active_idea_source_v0213.duplicate(true)
+
+
+func active_idea_source_context_v0213() -> String:
+	if _active_idea_source_v0213.is_empty():
+		return ""
+	return _idea_source_service_v0213.generation_context(_active_idea_source_v0213)
+
+
+func open_source_library_v0213() -> void:
+	open_studio()
+	_show_source_tab_v0213()
+
+
+func load_saved_source_v0213(source_id: String, open_library: bool = true) -> bool:
+	var result := _idea_source_service_v0213.load_source(source_id)
+	if not bool(result.get("ok", false)):
+		if _source_status_v0213 != null:
+			_source_status_v0213.text = str(result.get("error", "Could not load saved Idea Source."))
+		return false
+	_source_editor_base_v0213 = (result.get("source", {}) as Dictionary).duplicate(true)
+	_source_saved_v0213 = true
+	_source_external_path_v0213 = ""
+	_populate_source_editor_v0213(_source_editor_base_v0213)
+	_refresh_source_library_v0213(source_id)
+	if open_library:
+		open_source_library_v0213()
+	_source_status_v0213.text = "Loaded the saved Idea Source."
+	return true
+
+
+func _show_source_tab_v0213() -> void:
+	_refresh_source_library_v0213(str(_source_editor_base_v0213.get("id", "")))
+	for index in range(_tabs.get_tab_count()):
+		if _tabs.get_tab_title(index) == "Idea Sources":
+			_tabs.current_tab = index
+			return
+
+
+func _suggest_source_title_v0213() -> void:
+	var captured := _capture_source_editor_v0213()
+	if not bool(captured.get("ok", false)):
+		_source_status_v0213.text = str(captured.get("error", "Could not read source fields."))
+		return
+	var source: Dictionary = captured.get("source", {})
+	if not _source_title_v0213.text.strip_edges().is_empty():
+		_source_status_v0213.text = "The existing user-supplied title was preserved."
+		return
+	_request_ai_source_title_v0213(source)
+
+
+func _request_ai_source_title_v0213(source_override: Dictionary = {}) -> void:
+	var source := source_override.duplicate(true)
+	if source.is_empty():
+		var captured := _capture_source_editor_v0213()
+		if not bool(captured.get("ok", false)):
+			_source_status_v0213.text = str(captured.get("error", "Could not read source fields."))
+			return
+		source = (captured.get("source", {}) as Dictionary).duplicate(true)
+	if not str(source.get("title", "")).strip_edges().is_empty():
+		_source_status_v0213.text = "The existing user-supplied title was preserved."
+		return
+	if get_signal_connection_list("idea_source_title_requested_v0213").is_empty():
+		apply_idea_source_title_fallback_v0213()
+		return
+	_source_status_v0213.text = "Asking the configured Text model for an editable source name; generation does not wait for it."
+	idea_source_title_requested_v0213.emit(
+		source,
+		_idea_source_service_v0213.generation_context(source)
+	)
+
+
+func apply_idea_source_title_suggestion_v0213(
+	title_suggestion: String, source_id: String = ""
+) -> void:
+	var clean_title := title_suggestion.strip_edges()
+	if clean_title.is_empty():
+		apply_idea_source_title_fallback_v0213(source_id)
+		return
+	if not source_id.is_empty() and str(_source_editor_base_v0213.get("id", "")) != source_id:
+		return
+	if not _source_title_v0213.text.strip_edges().is_empty():
+		return
+	_source_title_v0213.text = clean_title
+	_source_editor_base_v0213["title"] = clean_title
+	if str(_active_idea_source_v0213.get("id", "")) == str(_source_editor_base_v0213.get("id", "")):
+		_active_idea_source_v0213["title"] = clean_title
+		_refresh_active_source_banner_v0213()
+	_source_status_v0213.text = "The Text model suggested an editable source name. Save explicitly if you want to keep it."
+
+
+func apply_idea_source_title_fallback_v0213(source_id: String = "") -> void:
+	if not source_id.is_empty() and str(_source_editor_base_v0213.get("id", "")) != source_id:
+		return
+	if not _source_title_v0213.text.strip_edges().is_empty():
+		return
+	var captured := _capture_source_editor_v0213()
+	var source: Dictionary = (
+		captured.get("source", {}) if bool(captured.get("ok", false)) else _source_editor_base_v0213
+	)
+	var fallback := _idea_source_service_v0213.suggested_title_fallback(source)
+	_source_title_v0213.text = fallback
+	_source_editor_base_v0213["title"] = fallback
+	if str(_active_idea_source_v0213.get("id", "")) == str(_source_editor_base_v0213.get("id", "")):
+		_active_idea_source_v0213["title"] = fallback
+		_refresh_active_source_banner_v0213()
+	_source_status_v0213.text = "AI naming was unavailable, so CCF supplied an editable local fallback. Idea generation was not blocked."
+
+
+func _refresh_source_library_v0213(selected_id: String = "") -> void:
+	if _source_list_v0213 == null:
+		return
+	_source_list_v0213.clear()
+	_source_visible_ids_v0213.clear()
+	var select_index := -1
+	for source in _idea_source_service_v0213.list_sources():
+		var title_text := str(source.get("title", "")).strip_edges()
+		if title_text.is_empty():
+			title_text = "Untitled Idea Source"
+		var subtitle := str(source.get("description", "")).strip_edges().replace("\n", " ")
+		if subtitle.length() > 90:
+			subtitle = subtitle.left(89) + "…"
+		_source_list_v0213.add_item(title_text + ("\n" + subtitle if not subtitle.is_empty() else ""))
+		var source_id := str(source.get("id", ""))
+		_source_visible_ids_v0213.append(source_id)
+		if source_id == selected_id:
+			select_index = _source_visible_ids_v0213.size() - 1
+	if select_index >= 0:
+		_source_list_v0213.select(select_index)
+
+
+func _populate_source_editor_v0213(source: Dictionary) -> void:
+	if _source_title_v0213 == null:
+		return
+	_source_title_v0213.text = str(source.get("title", ""))
+	_source_description_v0213.text = str(source.get("description", ""))
+	_source_version_v0213.text = str(source.get("source_version", ""))
+	var bible_value: Variant = source.get("bible", {})
+	_source_bible_v0213.text = JSON.stringify(bible_value, "  ") if bible_value is Dictionary and not (bible_value as Dictionary).is_empty() else ""
+	_source_summary_v0213.text = str(source.get("summary", ""))
+	_source_premise_v0213.text = str(source.get("core_premise", ""))
+	_source_setup_v0213.text = str(source.get("setup", ""))
+	_source_variables_v0213.text = _source_list_text_v0213(source.get("core_variables", []))
+	_source_rules_v0213.text = _source_list_text_v0213(source.get("generation_rules", []))
+	_source_guardrails_v0213.text = _source_list_text_v0213(source.get("guardrails", []))
+	_source_diversity_v0213.text = _source_list_text_v0213(source.get("diversity_axes", []))
+	_source_links_v0213.text = _source_list_text_v0213(source.get("cross_links", []))
+	_source_tags_v0213.text = ", ".join(source.get("tags", []))
+	_source_notes_v0213.text = str(source.get("notes", ""))
+	var sections_value: Variant = source.get("sections", [])
+	_source_sections_v0213.text = JSON.stringify(sections_value, "  ") if sections_value is Array and not (sections_value as Array).is_empty() else ""
+	_source_raw_prompt_v0213.text = str(source.get("raw_prompt", ""))
+
+
+func _capture_source_editor_v0213() -> Dictionary:
+	var source := _source_editor_base_v0213.duplicate(true)
+	if str(source.get("id", "")).is_empty():
+		source["id"] = str(_idea_source_service_v0213.blank_source().get("id", ""))
+	source["format"] = IDEA_SOURCE_SERVICE_V0213.FORMAT_ID
+	source["schema_version"] = IDEA_SOURCE_SERVICE_V0213.SCHEMA_VERSION
+	source["title"] = _source_title_v0213.text.strip_edges()
+	source["description"] = _source_description_v0213.text.strip_edges()
+	source["source_version"] = _source_version_v0213.text.strip_edges()
+	source["summary"] = _source_summary_v0213.text.strip_edges()
+	source["core_premise"] = _source_premise_v0213.text.strip_edges()
+	source["setup"] = _source_setup_v0213.text.strip_edges()
+	source["core_variables"] = _source_lines_v0213(_source_variables_v0213.text)
+	source["generation_rules"] = _source_lines_v0213(_source_rules_v0213.text)
+	source["guardrails"] = _source_lines_v0213(_source_guardrails_v0213.text)
+	source["diversity_axes"] = _source_lines_v0213(_source_diversity_v0213.text)
+	source["cross_links"] = _source_lines_v0213(_source_links_v0213.text)
+	source["tags"] = _source_tags_v0213.text.split(",", false)
+	source["notes"] = _source_notes_v0213.text.strip_edges()
+	source["raw_prompt"] = _source_raw_prompt_v0213.text.strip_edges()
+	var bible_text := _source_bible_v0213.text.strip_edges()
+	if bible_text.is_empty():
+		source["bible"] = {}
+	else:
+		var bible_json := JSON.new()
+		if bible_json.parse(bible_text) != OK or not bible_json.data is Dictionary:
+			return {"ok": false, "error": "Source Bible / Series must be a valid JSON object."}
+		source["bible"] = (bible_json.data as Dictionary).duplicate(true)
+	var sections_text := _source_sections_v0213.text.strip_edges()
+	if sections_text.is_empty():
+		source["sections"] = []
+	else:
+		var sections_json := JSON.new()
+		if sections_json.parse(sections_text) != OK or not sections_json.data is Array:
+			return {"ok": false, "error": "Arbitrary labelled sections must be a valid JSON array."}
+		source["sections"] = (sections_json.data as Array).duplicate(true)
+	var validation := _idea_source_service_v0213.parse_text(JSON.stringify(source))
+	if not bool(validation.get("load_allowed", false)):
+		return {"ok": false, "error": _source_result_message_v0213(validation)}
+	return {"ok": true, "source": (validation.get("source", {}) as Dictionary).duplicate(true)}
+
+
+func _source_lines_v0213(text_value: String) -> Array[String]:
+	var result: Array[String] = []
+	for line in text_value.split("\n", false):
+		var clean := str(line).strip_edges().trim_prefix("- ").strip_edges()
+		if not clean.is_empty():
+			result.append(clean)
+	return result
+
+
+func _source_list_text_v0213(value: Variant) -> String:
+	if not value is Array:
+		return ""
+	var result: Array[String] = []
+	for item in value as Array:
+		var clean := str(item).strip_edges()
+		if not clean.is_empty():
+			result.append(clean)
+	return "\n".join(result)
+
+
+func _source_result_message_v0213(result: Dictionary) -> String:
+	var messages: Array[String] = []
+	for key in ["errors", "warnings"]:
+		var values: Variant = result.get(key, [])
+		if not values is Array:
+			continue
+		for issue_value in values as Array:
+			if issue_value is Dictionary:
+				messages.append(str((issue_value as Dictionary).get("message", "Invalid Idea Source.")))
+	return " ".join(messages) if not messages.is_empty() else "The Idea Source could not be loaded."
+
+
+func _refresh_active_source_banner_v0213() -> void:
+	if _active_source_banner_v0213 == null:
+		return
+	if _active_idea_source_v0213.is_empty():
+		_active_source_banner_v0213.text = "Idea Source: none — the prompt below is the only generator input."
+		return
+	var source_title := str(_active_idea_source_v0213.get("title", "")).strip_edges()
+	if source_title.is_empty():
+		source_title = "Untitled reusable source"
+	_active_source_banner_v0213.text = (
+		"Active Idea Source: %s — structured source context will be reused unchanged for every batch request."
+		% source_title
+	)
+
+
+func idea_source_capabilities_v0213() -> Dictionary:
+	var capabilities := _idea_source_service_v0213.capabilities()
+	capabilities["source_library_ui"] = _source_tab_v0213 != null
+	capabilities["idea_pack_actions_preserved"] = (
+		_import_dialog_v0210 != null and _export_dialog_v0210 != null
+	)
+	capabilities["active_source_id"] = str(_active_idea_source_v0213.get("id", ""))
+	capabilities["active_source_context"] = active_idea_source_context_v0213()
+	return capabilities

@@ -15,16 +15,17 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.2 — Readable Personality View**. Structured
-Personality output is shown with visual spacing before recognised section headings in
-both Workspace and generation review, while **Edit text** reveals the exact canonical
-content. The spacing never changes saved projects, exported cards or token estimates.
-New one-character drafts also remain in memory while empty, so opening an authoring tool
-does not add an unused project to the Library. Character Library card-density changes
-now reflow immediately at the current window size.
-The v0.21.1 Idea Generator improvements remain available: Custom per-idea length targets,
-up to 50 ideas, optional one-at-a-time provider requests and scalable Idea Notebook
-organization.
+The current source candidate is **v0.21.3 — Reusable Idea Sources**. A separate Idea
+Source Library stores reusable generator inputs, while portable
+`.ccfideasource.json` files can be loaded temporarily without adding anything to the
+library or Idea Notebook. Structured source fields remain labelled across every request
+in a batch. Finished cards can also use **Generate Similar Ideas** to extract an editable
+reusable engine for genuinely new concepts without changing the source card or the
+existing Alternative Version workflow.
+
+The v0.21.2 readable Personality view, deferred empty-draft persistence and immediate
+Library density reflow remain available, as do v0.21.1 custom idea lengths, up to 50
+ideas, optional one-at-a-time requests and scalable Idea Notebook organization.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental
@@ -36,6 +37,8 @@ and [changelog](CHANGELOG.md).
 - Manual, guided, structured and AI-assisted character creation.
 - Structured Idea Pack import/export with semantic rules, guardrails, cross-links,
   provenance, arbitrary labelled sections and duplicate-safe re-import.
+- Reusable portable Idea Sources with their own library, structured batch context and
+  card-to-similar-Ideas extraction distinct from Alternative Version.
 - Idea Generator presets plus bounded Custom per-idea character targets with visible
   requested-versus-actual reporting.
 - Visual-only Personality section spacing with an exact-text editing toggle.

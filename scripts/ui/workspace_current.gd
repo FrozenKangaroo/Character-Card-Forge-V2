@@ -19,6 +19,14 @@ const IDEA_BATCHING_V0211 = preload(
 const PERSONALITY_READABILITY_V0212 = preload(
 	"res://scripts/services/personality_readability_service_v0212.gd"
 )
+const IDEA_SOURCE_SERVICE_V0213 = preload(
+	"res://scripts/services/idea_source_service_v0213.gd"
+)
+const SIMILAR_IDEA_SOURCE_V0213 = preload(
+	"res://scripts/services/similar_idea_source_service_v0213.gd"
+)
+
+const GENERATE_SIMILAR_IDEAS_MENU_ID_V0213 := 21300
 
 var _idea_custom_length_panel_v0211: VBoxContainer
 var _idea_custom_target_v0211: SpinBox
@@ -33,6 +41,21 @@ var _idea_batch_results_v0211: Dictionary = {}
 var _idea_batch_metadata_v0211: Dictionary = {}
 var _idea_batch_errors_v0211: Array[String] = []
 var _idea_batch_cancelling_v0211 := false
+var _similar_ideas_window_v0213: Window
+var _similarity_mode_v0213: OptionButton
+var _similar_source_title_v0213: LineEdit
+var _similar_source_preview_v0213: TextEdit
+var _similar_source_status_v0213: Label
+var _similar_source_card_v0213: Dictionary = {}
+var _similar_extracted_source_v0213: Dictionary = {}
+var _idea_source_title_job_id_v0213 := ""
+var _idea_source_title_id_v0213 := ""
+
+
+func _ready() -> void:
+	super._ready()
+	_build_similar_ideas_window_v0213()
+	_add_generate_similar_ideas_action_v0213()
 
 
 func _init() -> void:
@@ -47,6 +70,13 @@ func _build_concept_studio() -> void:
 		_idea_generator_v01532.connect(
 			"collaborator_source_requested",
 			Callable(self, "_on_collaborator_source_requested_v01533")
+		)
+	if _idea_generator_v01532.has_signal(
+		"idea_source_title_requested_v0213"
+	):
+		_idea_generator_v01532.connect(
+			"idea_source_title_requested_v0213",
+			Callable(self, "_on_idea_source_title_requested_v0213")
 		)
 	add_child(_idea_generator_v01532)
 	_idea_generator_v01532.hide()
@@ -465,6 +495,7 @@ func _queue_idea_request_v0211(request_size: int) -> Dictionary:
 	var profile := CCFSettingsService.profile_for_role(
 		_settings, CCFSettingsService.ROLE_TEXT
 	)
+	var idea_seed := _idea_seed_with_source_v0213()
 	if _selected_idea_detail_level_v0167 == "custom":
 		if (
 			_generation_service == null
@@ -478,7 +509,7 @@ func _queue_idea_request_v0211(request_size: int) -> Dictionary:
 			}
 		return _generation_service.call(
 			"queue_idea_generation_with_custom_length_v0211",
-			_idea_seed.text,
+			idea_seed,
 			profile,
 			request_size,
 			int(_generation_settings().get("retry_count", 1)),
@@ -497,7 +528,7 @@ func _queue_idea_request_v0211(request_size: int) -> Dictionary:
 	):
 		return _generation_service.call(
 			"queue_idea_generation_with_detail_v0167",
-			_idea_seed.text,
+			idea_seed,
 			profile,
 			request_size,
 			int(_generation_settings().get("retry_count", 1)),
@@ -506,7 +537,7 @@ func _queue_idea_request_v0211(request_size: int) -> Dictionary:
 			clean_level
 		) as Dictionary
 	return _generation_service.queue_idea_generation(
-		_idea_seed.text,
+		idea_seed,
 		profile,
 		request_size,
 		int(_generation_settings().get("retry_count", 1)),
@@ -614,6 +645,9 @@ func _queue_batched_ideas_v0211(total: int, plan: Array[int]) -> void:
 func _on_job_completed(
 	job_id: String, job_type: String, data: Variant, metadata: Dictionary
 ) -> void:
+	if job_type == "idea_source_title" and job_id == _idea_source_title_job_id_v0213:
+		_handle_idea_source_title_completed_v0213(data, metadata)
+		return
 	if job_type == "ideas" and _idea_batch_job_indices_v0211.has(job_id):
 		_handle_completed_idea_batch_v0211(job_id, data, metadata)
 		return
@@ -655,6 +689,9 @@ func _on_job_completed(
 
 
 func _on_job_failed(job_id: String, job_type: String, message: String) -> void:
+	if job_type == "idea_source_title" and job_id == _idea_source_title_job_id_v0213:
+		_handle_idea_source_title_failed_v0213(message)
+		return
 	if job_type == "ideas" and _idea_batch_job_indices_v0211.has(job_id):
 		_mark_idea_batch_terminal_v0211(job_id, "failed")
 		var batch_index := int(_idea_batch_job_indices_v0211.get(job_id, 0))
@@ -668,6 +705,9 @@ func _on_job_failed(job_id: String, job_type: String, message: String) -> void:
 
 
 func _on_job_cancelled(job_id: String, job_type: String) -> void:
+	if job_type == "idea_source_title" and job_id == _idea_source_title_job_id_v0213:
+		_handle_idea_source_title_failed_v0213("The name suggestion was cancelled.")
+		return
 	if job_type == "ideas" and _idea_batch_job_indices_v0211.has(job_id):
 		_mark_idea_batch_terminal_v0211(job_id, "cancelled")
 		var batch_index := int(_idea_batch_job_indices_v0211.get(job_id, 0))
@@ -1115,3 +1155,339 @@ func front_porch_current_capabilities_v0209() -> Dictionary:
 		"typed_work_hours": true,
 		"work_days_apply_normalisation": true
 	}
+
+
+func _idea_seed_with_source_v0213() -> String:
+	var ordinary_seed := _idea_seed.text.strip_edges() if _idea_seed != null else ""
+	if (
+		_idea_generator_v01532 == null
+		or not _idea_generator_v01532.has_method(
+			"active_idea_source_context_v0213"
+		)
+	):
+		return ordinary_seed
+	var source_context := str(_idea_generator_v01532.call(
+		"active_idea_source_context_v0213"
+	)).strip_edges()
+	if source_context.is_empty():
+		return ordinary_seed
+	var blocks: Array[String] = [source_context]
+	if not ordinary_seed.is_empty():
+		blocks.append(
+			"CURRENT IDEA-GENERATOR PROMPT / ADDITIONAL DIRECTION:\n%s"
+			% ordinary_seed
+		)
+	return "\n\n".join(blocks)
+
+
+func _on_idea_source_title_requested_v0213(
+	source: Dictionary, source_context: String
+) -> void:
+	if (
+		_generation_service == null
+		or not _generation_service.has_method("queue_idea_source_title_v0213")
+	):
+		_apply_idea_source_title_fallback_v0213(str(source.get("id", "")))
+		return
+	var profile := CCFSettingsService.profile_for_role(
+		_settings, CCFSettingsService.ROLE_TEXT
+	)
+	var result := _generation_service.call(
+		"queue_idea_source_title_v0213",
+		source_context,
+		profile,
+		int(_generation_settings().get("retry_count", 1)),
+		str(_project.get("project_id", "")),
+		str(source.get("id", ""))
+	) as Dictionary
+	if not bool(result.get("ok", false)):
+		_apply_idea_source_title_fallback_v0213(str(source.get("id", "")))
+		return
+	_idea_source_title_job_id_v0213 = str(result.get("job_id", ""))
+	_idea_source_title_id_v0213 = str(source.get("id", ""))
+
+
+func _handle_idea_source_title_completed_v0213(
+	data: Variant, metadata: Dictionary
+) -> void:
+	var suggestion := ""
+	if data is Dictionary:
+		suggestion = str((data as Dictionary).get("title", "")).strip_edges()
+	var source_id := str(metadata.get(
+		"idea_source_id", _idea_source_title_id_v0213
+	))
+	if suggestion.is_empty():
+		_apply_idea_source_title_fallback_v0213(source_id)
+	elif _idea_generator_v01532 != null and _idea_generator_v01532.has_method(
+		"apply_idea_source_title_suggestion_v0213"
+	):
+		_idea_generator_v01532.call(
+			"apply_idea_source_title_suggestion_v0213",
+			suggestion,
+			source_id
+		)
+	_idea_source_title_job_id_v0213 = ""
+	_idea_source_title_id_v0213 = ""
+
+
+func _handle_idea_source_title_failed_v0213(_message: String) -> void:
+	_apply_idea_source_title_fallback_v0213(_idea_source_title_id_v0213)
+	_idea_source_title_job_id_v0213 = ""
+	_idea_source_title_id_v0213 = ""
+
+
+func _apply_idea_source_title_fallback_v0213(source_id: String) -> void:
+	if _idea_generator_v01532 != null and _idea_generator_v01532.has_method(
+		"apply_idea_source_title_fallback_v0213"
+	):
+		_idea_generator_v01532.call(
+			"apply_idea_source_title_fallback_v0213", source_id
+		)
+
+
+func _build_similar_ideas_window_v0213() -> void:
+	_similar_ideas_window_v0213 = Window.new()
+	_similar_ideas_window_v0213.visible = false
+	_similar_ideas_window_v0213.title = "Generate Similar Ideas"
+	_similar_ideas_window_v0213.size = Vector2i(900, 760)
+	_similar_ideas_window_v0213.min_size = Vector2i(720, 580)
+	_similar_ideas_window_v0213.force_native = true
+	_similar_ideas_window_v0213.transient = false
+	_similar_ideas_window_v0213.exclusive = false
+	_similar_ideas_window_v0213.close_requested.connect(
+		_similar_ideas_window_v0213.hide
+	)
+	add_child(_similar_ideas_window_v0213)
+	_similar_ideas_window_v0213.hide()
+	var margin := MarginContainer.new()
+	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	margin.add_theme_constant_override("margin_left", 18)
+	margin.add_theme_constant_override("margin_right", 18)
+	margin.add_theme_constant_override("margin_top", 16)
+	margin.add_theme_constant_override("margin_bottom", 16)
+	_similar_ideas_window_v0213.add_child(margin)
+	var root_box := VBoxContainer.new()
+	root_box.add_theme_constant_override("separation", 9)
+	margin.add_child(root_box)
+	var heading := Label.new()
+	heading.text = "Extract a reusable engine for new ideas"
+	heading.add_theme_font_size_override("font_size", 21)
+	root_box.add_child(heading)
+	var intro := Label.new()
+	intro.text = (
+		"This is different from Alternative Version: it discards character-specific surface details and creates entirely new characters and scenarios from the underlying engine. The source card is never changed."
+	)
+	intro.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	intro.modulate = Color(0.70, 0.74, 0.84)
+	root_box.add_child(intro)
+	var controls := HFlowContainer.new()
+	controls.add_theme_constant_override("separation", 8)
+	root_box.add_child(controls)
+	var similarity_label := Label.new()
+	similarity_label.text = "Similarity"
+	controls.add_child(similarity_label)
+	_similarity_mode_v0213 = OptionButton.new()
+	_similarity_mode_v0213.custom_minimum_size.x = 190
+	_add_similarity_option_v0213("Close", "close")
+	_add_similarity_option_v0213("Balanced", "balanced")
+	_add_similarity_option_v0213("Loose", "loose")
+	_similarity_mode_v0213.select(1)
+	_similarity_mode_v0213.item_selected.connect(
+		func(_index: int) -> void: _refresh_similar_source_v0213()
+	)
+	controls.add_child(_similarity_mode_v0213)
+	var similarity_hint := Label.new()
+	similarity_hint.text = "Balanced preserves the main concept while changing several structural axes."
+	similarity_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	similarity_hint.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	controls.add_child(similarity_hint)
+	var title_label := Label.new()
+	title_label.text = "Extracted source title (optional and editable)"
+	root_box.add_child(title_label)
+	_similar_source_title_v0213 = LineEdit.new()
+	_similar_source_title_v0213.placeholder_text = "Leave blank to let the generator infer a concise reusable name"
+	root_box.add_child(_similar_source_title_v0213)
+	var preview_label := Label.new()
+	preview_label.text = "Extracted reusable source preview"
+	root_box.add_child(preview_label)
+	_similar_source_preview_v0213 = TextEdit.new()
+	_similar_source_preview_v0213.editable = false
+	_similar_source_preview_v0213.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	_similar_source_preview_v0213.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	root_box.add_child(_similar_source_preview_v0213)
+	_similar_source_status_v0213 = Label.new()
+	_similar_source_status_v0213.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_similar_source_status_v0213.modulate = Color(0.76, 0.72, 0.50)
+	root_box.add_child(_similar_source_status_v0213)
+	var actions := HFlowContainer.new()
+	actions.add_theme_constant_override("separation", 8)
+	root_box.add_child(actions)
+	var cancel := Button.new()
+	cancel.text = "Cancel"
+	cancel.pressed.connect(_similar_ideas_window_v0213.hide)
+	actions.add_child(cancel)
+	var spacer := Control.new()
+	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	actions.add_child(spacer)
+	var edit_source := Button.new()
+	edit_source.text = "Edit Extracted Source"
+	edit_source.pressed.connect(_edit_similar_source_v0213)
+	actions.add_child(edit_source)
+	var save_source := Button.new()
+	save_source.text = "Save as Idea Source"
+	save_source.pressed.connect(_save_similar_source_v0213)
+	actions.add_child(save_source)
+	var generate_now := Button.new()
+	generate_now.text = "Generate Now"
+	generate_now.tooltip_text = "Activate the extracted source and start generation with the current Idea Generator settings."
+	generate_now.pressed.connect(_generate_similar_now_v0213)
+	actions.add_child(generate_now)
+
+
+func _add_similarity_option_v0213(label: String, value: String) -> void:
+	_similarity_mode_v0213.add_item(label)
+	_similarity_mode_v0213.set_item_metadata(
+		_similarity_mode_v0213.item_count - 1, value
+	)
+
+
+func _add_generate_similar_ideas_action_v0213() -> void:
+	for node in find_children("*", "MenuButton", true, false):
+		if not node is MenuButton or (node as MenuButton).text != "Character":
+			continue
+		var popup := (node as MenuButton).get_popup()
+		popup.add_separator()
+		popup.add_item(
+			"Generate Similar Ideas…",
+			GENERATE_SIMILAR_IDEAS_MENU_ID_V0213
+		)
+		popup.id_pressed.connect(_on_generate_similar_menu_v0213)
+		return
+
+
+func _on_generate_similar_menu_v0213(id: int) -> void:
+	if id == GENERATE_SIMILAR_IDEAS_MENU_ID_V0213:
+		_open_generate_similar_v0213()
+
+
+func _open_generate_similar_v0213() -> void:
+	if _project_container.is_empty() or _active_character_id.is_empty():
+		_status.text = "Open a finished character card before generating similar ideas."
+		return
+	_capture_all_fields()
+	_commit_active_character_to_container()
+	_similar_source_card_v0213 = CCFStorageService.get_character(
+		_project_container, _active_character_id
+	).duplicate(true)
+	if _similar_source_card_v0213.is_empty():
+		_status.text = "The source character could not be found."
+		return
+	_similarity_mode_v0213.select(1)
+	_similar_source_title_v0213.text = ""
+	_refresh_similar_source_v0213()
+	_similar_source_status_v0213.text = (
+		"Review the extraction. Generate, edit or save it without altering the original card."
+	)
+	_similar_ideas_window_v0213.popup_centered()
+
+
+func _refresh_similar_source_v0213() -> void:
+	if _similar_source_card_v0213.is_empty():
+		return
+	var mode := _selected_similarity_mode_v0213()
+	_similar_extracted_source_v0213 = SIMILAR_IDEA_SOURCE_V0213.extract_source(
+		_similar_source_card_v0213, _project_container, mode
+	)
+	var edited_title := _similar_source_title_v0213.text.strip_edges()
+	if not edited_title.is_empty():
+		_similar_extracted_source_v0213["title"] = edited_title
+	_similar_source_preview_v0213.text = IDEA_SOURCE_SERVICE_V0213.new().generation_context(
+		_similar_extracted_source_v0213, mode
+	)
+
+
+func _captured_similar_source_v0213() -> Dictionary:
+	var source := _similar_extracted_source_v0213.duplicate(true)
+	source["title"] = _similar_source_title_v0213.text.strip_edges()
+	source["similarity_mode"] = _selected_similarity_mode_v0213()
+	return source
+
+
+func _edit_similar_source_v0213() -> void:
+	var source := _captured_similar_source_v0213()
+	_similar_ideas_window_v0213.hide()
+	if _idea_generator_v01532 != null and _idea_generator_v01532.has_method(
+		"load_temporary_source_v0213"
+	):
+		_idea_generator_v01532.call(
+			"load_temporary_source_v0213", source, true, false
+		)
+	_status.text = "Extracted reusable engine opened as a temporary, editable Idea Source."
+
+
+func _save_similar_source_v0213() -> void:
+	var source := _captured_similar_source_v0213()
+	var service := IDEA_SOURCE_SERVICE_V0213.new()
+	var result := service.save_source(source)
+	if not bool(result.get("ok", false)):
+		_similar_source_status_v0213.text = str(
+			result.get("error", "Could not save the extracted Idea Source.")
+		)
+		return
+	_similar_ideas_window_v0213.hide()
+	if _idea_generator_v01532 != null:
+		if _idea_generator_v01532.has_method("load_saved_source_v0213"):
+			_idea_generator_v01532.call(
+				"load_saved_source_v0213",
+				str((result.get("source", {}) as Dictionary).get("id", "")),
+				true
+			)
+		elif _idea_generator_v01532.has_method("open_source_library_v0213"):
+			_idea_generator_v01532.call("open_source_library_v0213")
+	_status.text = "Extracted engine saved to the Idea Source Library. The source card was not changed."
+
+
+func _generate_similar_now_v0213() -> void:
+	var source := _captured_similar_source_v0213()
+	_similar_ideas_window_v0213.hide()
+	if _idea_generator_v01532 != null and _idea_generator_v01532.has_method(
+		"load_temporary_source_v0213"
+	):
+		_idea_generator_v01532.call(
+			"load_temporary_source_v0213", source, false, true
+		)
+		_idea_generator_v01532.open_generator()
+	_status.text = "Generating new Ideas from the extracted reusable engine. The original card remains unchanged."
+	call_deferred("_generate_ideas")
+
+
+func _selected_similarity_mode_v0213() -> String:
+	if _similarity_mode_v0213 == null or _similarity_mode_v0213.selected < 0:
+		return "balanced"
+	return str(_similarity_mode_v0213.get_selected_metadata())
+
+
+func idea_source_capabilities_v0213() -> Dictionary:
+	var generator_capabilities := {}
+	if _idea_generator_v01532 != null and _idea_generator_v01532.has_method(
+		"idea_source_capabilities_v0213"
+	):
+		generator_capabilities = _idea_generator_v01532.call(
+			"idea_source_capabilities_v0213"
+		) as Dictionary
+	return {
+		"version": "0.21.3",
+		"idea_source_pipeline": true,
+		"batch_source_reuse": true,
+		"custom_lengths_preserved": true,
+		"generate_similar_ideas": true,
+		"alternative_version_unchanged": true,
+		"similarity": SIMILAR_IDEA_SOURCE_V0213.capabilities(),
+		"generator": generator_capabilities
+	}
+
+
+func _close_tool_windows_for_project_change() -> void:
+	if _similar_ideas_window_v0213 != null and _similar_ideas_window_v0213.visible:
+		_similar_ideas_window_v0213.hide()
+	super._close_tool_windows_for_project_change()
