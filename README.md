@@ -20,7 +20,8 @@ Personality output is shown with visual spacing before recognised section headin
 both Workspace and generation review, while **Edit text** reveals the exact canonical
 content. The spacing never changes saved projects, exported cards or token estimates.
 New one-character drafts also remain in memory while empty, so opening an authoring tool
-does not add an unused project to the Library.
+does not add an unused project to the Library. Character Library card-density changes
+now reflow immediately at the current window size.
 The v0.21.1 Idea Generator improvements remain available: Custom per-idea length targets,
 up to 50 ideas, optional one-at-a-time provider requests and scalable Idea Notebook
 organization.
@@ -39,6 +40,7 @@ and [changelog](CHANGELOG.md).
   requested-versus-actual reporting.
 - Visual-only Personality section spacing with an exact-text editing toggle.
 - Deferred first save for empty one-character drafts opened through Workspace tools.
+- Immediate virtualized Library grid reflow when card density changes.
 - Character Collaborator conversations with explicit sources, evidence roles and
   reviewable Generation Blueprint handoff.
 - Editable canonical Character Card fields, Alternative Greetings, Scenario Presets,

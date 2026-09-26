@@ -198,6 +198,7 @@ expansion.
 - Added focused formatter, live UI, generation-review and token-invariance regression coverage.
 - Kept new one-character drafts in memory while empty, including Idea Generator and Character Collaborator starts, without changing the selected template or tool state.
 - Preserved explicit first save once character or project content becomes meaningful, with live-app regression coverage.
+- Fixed virtualized Library card-density changes to recalculate columns before rebuilding, so Large → Mini and every other transition reflow without a window resize.
 
 ### v0.21.1 — Custom Idea Length Targets (candidate)
 
