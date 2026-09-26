@@ -58,6 +58,26 @@ Open **Idea Generator → Idea Sources**.
 5. Generate normally.
 6. Optionally choose **Save Current Source** or **Export Idea Source…**.
 
+### Active source and one-off direction
+
+After **Use in Idea Generator**, the AI Ideas tab shows a prominent active-source panel.
+The source remains active across every request in a batch until it is cleared or
+replaced.
+
+- **Active Idea Source** is the reusable structured generator input.
+- **Additional Direction** is optional, one-off guidance for the current generation
+  or batch. Leaving it blank generates directly from the active source.
+- **View/Edit Source** opens that same saved or temporary source in the existing
+  source editor without copying or saving it automatically.
+- **Change Source** returns to the Idea Sources workflow so another source can be
+  selected, loaded or created and activated.
+- **Clear Source** only stops using the source for generation. It does not delete a
+  saved library entry, remove an external file or alter generated Ideas.
+
+The structured source remains internal context and is injected once. CCF never copies
+the rendered source into the Additional Direction field, so using both does not
+duplicate the source context.
+
 Loading an external file is temporary. It does not fill the Source Library and does not
 create an Idea Notebook record. Only **Save Current Source** makes an internal durable
 copy. Saved sources can be edited, renamed without changing their stable ID, duplicated

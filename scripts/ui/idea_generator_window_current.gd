@@ -42,6 +42,8 @@ var _save_new_notebook_name_v0211: LineEdit
 
 var _idea_source_service_v0213 := IDEA_SOURCE_SERVICE_V0213.new()
 var _active_idea_source_v0213: Dictionary = {}
+var _active_source_saved_v0213 := false
+var _active_source_external_path_v0213 := ""
 var _source_editor_base_v0213: Dictionary = {}
 var _source_saved_v0213 := false
 var _source_external_path_v0213 := ""
@@ -65,7 +67,11 @@ var _source_notes_v0213: TextEdit
 var _source_sections_v0213: TextEdit
 var _source_raw_prompt_v0213: TextEdit
 var _source_status_v0213: Label
+var _active_source_panel_v0213: PanelContainer
 var _active_source_banner_v0213: Label
+var _active_source_explanation_v0213: Label
+var _active_source_actions_v0213: HFlowContainer
+var _active_source_view_button_v0213: Button
 var _source_load_dialog_v0213: FileDialog
 var _source_export_dialog_v0213: FileDialog
 var _source_pending_export_v0213: Dictionary = {}
@@ -1135,14 +1141,49 @@ func _install_active_source_banner_v0213() -> void:
 	var ai_tab := _tabs.get_node_or_null("AI Ideas") as VBoxContainer
 	if ai_tab == null:
 		return
+	_active_source_panel_v0213 = PanelContainer.new()
+	_active_source_panel_v0213.name = "ActiveIdeaSourcePanelV0213"
+	var panel_style := StyleBoxFlat.new()
+	panel_style.bg_color = Color(0.10, 0.12, 0.20, 0.96)
+	panel_style.border_color = Color(0.38, 0.43, 0.68, 0.95)
+	panel_style.set_border_width_all(1)
+	panel_style.set_corner_radius_all(7)
+	panel_style.content_margin_left = 12
+	panel_style.content_margin_right = 12
+	panel_style.content_margin_top = 10
+	panel_style.content_margin_bottom = 10
+	_active_source_panel_v0213.add_theme_stylebox_override("panel", panel_style)
+	var content := VBoxContainer.new()
+	content.add_theme_constant_override("separation", 6)
+	_active_source_panel_v0213.add_child(content)
 	_active_source_banner_v0213 = Label.new()
 	_active_source_banner_v0213.name = "ActiveIdeaSourceBannerV0213"
-	_active_source_banner_v0213.text = "Idea Source: none — the prompt below is the only generator input."
+	_active_source_banner_v0213.add_theme_font_size_override("font_size", 17)
 	_active_source_banner_v0213.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_active_source_banner_v0213.modulate = Color(0.72, 0.76, 0.90)
-	ai_tab.add_child(_active_source_banner_v0213)
+	content.add_child(_active_source_banner_v0213)
+	_active_source_explanation_v0213 = Label.new()
+	_active_source_explanation_v0213.name = "ActiveIdeaSourceExplanationV0213"
+	_active_source_explanation_v0213.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_active_source_explanation_v0213.modulate = Color(0.76, 0.79, 0.90)
+	content.add_child(_active_source_explanation_v0213)
+	_active_source_actions_v0213 = HFlowContainer.new()
+	_active_source_actions_v0213.name = "ActiveIdeaSourceActionsV0213"
+	_active_source_actions_v0213.add_theme_constant_override("separation", 8)
+	content.add_child(_active_source_actions_v0213)
+	_active_source_view_button_v0213 = _add_source_button_v0213(
+		_active_source_actions_v0213, "View/Edit Source", _view_active_source_v0213
+	)
+	_add_source_button_v0213(
+		_active_source_actions_v0213, "Change Source", _change_active_source_v0213
+	)
+	var clear_button := _add_source_button_v0213(
+		_active_source_actions_v0213, "Clear Source", _clear_active_source_from_panel_v0213
+	)
+	clear_button.tooltip_text = "Stop using this source for generation. The saved or external source is not deleted."
+	ai_tab.add_child(_active_source_panel_v0213)
 	if _ai_ideas_host != null:
-		ai_tab.move_child(_active_source_banner_v0213, _ai_ideas_host.get_index())
+		ai_tab.move_child(_active_source_panel_v0213, _ai_ideas_host.get_index())
+	_refresh_active_source_banner_v0213()
 
 
 func _add_source_button_v0213(parent: Control, text_value: String, callback: Callable) -> Button:
@@ -1229,6 +1270,9 @@ func _save_current_source_v0213() -> void:
 	_source_editor_base_v0213 = (result.get("source", {}) as Dictionary).duplicate(true)
 	_source_saved_v0213 = true
 	_source_external_path_v0213 = ""
+	if str(_active_idea_source_v0213.get("id", "")) == str(_source_editor_base_v0213.get("id", "")):
+		_active_source_saved_v0213 = true
+		_active_source_external_path_v0213 = ""
 	_populate_source_editor_v0213(_source_editor_base_v0213)
 	_refresh_source_library_v0213(str(_source_editor_base_v0213.get("id", "")))
 	_source_status_v0213.text = "Saved to the Idea Source Library. No Idea Notebook entry was created."
@@ -1290,8 +1334,7 @@ func _delete_source_v0213() -> void:
 		_source_status_v0213.text = str(result.get("error", "Could not delete Idea Source."))
 		return
 	if str(_active_idea_source_v0213.get("id", "")) == source_id:
-		_active_idea_source_v0213.clear()
-		_refresh_active_source_banner_v0213()
+		clear_active_idea_source_v0213()
 	_new_source_v0213()
 	_refresh_source_library_v0213()
 	_source_status_v0213.text = "Deleted the saved Idea Source. Generated Ideas and portable files were not changed."
@@ -1303,6 +1346,8 @@ func _use_source_v0213(switch_to_generator: bool = true) -> void:
 		_source_status_v0213.text = str(captured.get("error", "Could not activate Idea Source."))
 		return
 	_active_idea_source_v0213 = (captured.get("source", {}) as Dictionary).duplicate(true)
+	_active_source_saved_v0213 = _source_saved_v0213
+	_active_source_external_path_v0213 = _source_external_path_v0213
 	_refresh_active_source_banner_v0213()
 	active_idea_source_changed_v0213.emit(_active_idea_source_v0213.duplicate(true))
 	_source_status_v0213.text = "Idea Source activated. It will remain identical across every request in an Idea Generator batch."
@@ -1312,11 +1357,14 @@ func _use_source_v0213(switch_to_generator: bool = true) -> void:
 		for index in range(_tabs.get_tab_count()):
 			if _tabs.get_tab_title(index) == "AI Ideas":
 				_tabs.current_tab = index
+				call_deferred("_focus_active_source_panel_v0213")
 				break
 
 
 func clear_active_idea_source_v0213() -> void:
 	_active_idea_source_v0213.clear()
+	_active_source_saved_v0213 = false
+	_active_source_external_path_v0213 = ""
 	_refresh_active_source_banner_v0213()
 	active_idea_source_changed_v0213.emit({})
 
@@ -1329,6 +1377,67 @@ func active_idea_source_context_v0213() -> String:
 	if _active_idea_source_v0213.is_empty():
 		return ""
 	return _idea_source_service_v0213.generation_context(_active_idea_source_v0213)
+
+
+func prepared_generation_input_v0213(additional_direction: String) -> String:
+	var ordinary_prompt := additional_direction.strip_edges()
+	var source_context := active_idea_source_context_v0213().strip_edges()
+	if source_context.is_empty():
+		return ordinary_prompt
+	var blocks: Array[String] = [source_context]
+	if not ordinary_prompt.is_empty():
+		blocks.append(
+			"CURRENT IDEA-GENERATOR PROMPT / ADDITIONAL DIRECTION:\n%s"
+			% ordinary_prompt
+		)
+	return "\n\n".join(blocks)
+
+
+func prompt_presentation_v0213() -> Dictionary:
+	if _active_idea_source_v0213.is_empty():
+		return {
+			"label": "Give the AI a theme, fragments, constraints, or leave it blank for varied character concepts.",
+			"placeholder": "Example: cyberpunk Australia, reluctant healer, enemies-to-allies dynamic…",
+			"mode": "primary_prompt"
+		}
+	return {
+		"label": "Additional Direction (optional)\nLeave blank to generate directly from the active Idea Source, or add instructions to narrow this batch.",
+		"placeholder": "For example: Focus on scenarios where paternity is already known.",
+		"mode": "additional_direction"
+	}
+
+
+func _view_active_source_v0213() -> void:
+	if _active_idea_source_v0213.is_empty():
+		return
+	_source_editor_base_v0213 = _active_idea_source_v0213.duplicate(true)
+	_source_saved_v0213 = _active_source_saved_v0213
+	_source_external_path_v0213 = _active_source_external_path_v0213
+	_populate_source_editor_v0213(_source_editor_base_v0213)
+	_refresh_source_library_v0213(
+		str(_source_editor_base_v0213.get("id", "")) if _source_saved_v0213 else ""
+	)
+	_source_status_v0213.text = (
+		"Editing the active saved source. Changes are not saved automatically; press Use in Idea Generator to apply edits to generation."
+		if _source_saved_v0213 else
+		"Editing the active temporary source. It has not been added to the library; press Use in Idea Generator to apply edits."
+	)
+	_show_source_tab_v0213()
+
+
+func _change_active_source_v0213() -> void:
+	_show_source_tab_v0213()
+	if _source_status_v0213 != null:
+		_source_status_v0213.text = "Choose, load or create a source, then press Use in Idea Generator to replace the active source."
+
+
+func _clear_active_source_from_panel_v0213() -> void:
+	clear_active_idea_source_v0213()
+
+
+func _focus_active_source_panel_v0213() -> void:
+	if _active_source_view_button_v0213 != null and not _active_idea_source_v0213.is_empty():
+		_active_source_view_button_v0213.grab_focus()
 
 
 func open_source_library_v0213() -> void:
@@ -1354,7 +1463,9 @@ func load_saved_source_v0213(source_id: String, open_library: bool = true) -> bo
 
 
 func _show_source_tab_v0213() -> void:
-	_refresh_source_library_v0213(str(_source_editor_base_v0213.get("id", "")))
+	_refresh_source_library_v0213(
+		str(_source_editor_base_v0213.get("id", "")) if _source_saved_v0213 else ""
+	)
 	for index in range(_tabs.get_tab_count()):
 		if _tabs.get_tab_title(index) == "Idea Sources":
 			_tabs.current_tab = index
@@ -1551,18 +1662,23 @@ func _source_result_message_v0213(result: Dictionary) -> String:
 
 
 func _refresh_active_source_banner_v0213() -> void:
-	if _active_source_banner_v0213 == null:
+	if (
+		_active_source_banner_v0213 == null
+		or _active_source_explanation_v0213 == null
+		or _active_source_actions_v0213 == null
+	):
 		return
 	if _active_idea_source_v0213.is_empty():
-		_active_source_banner_v0213.text = "Idea Source: none — the prompt below is the only generator input."
+		_active_source_banner_v0213.text = "Idea Source: None"
+		_active_source_explanation_v0213.text = "The normal prompt is the primary generator input. Choose a reusable source from the Idea Sources tab when needed."
+		_active_source_actions_v0213.hide()
 		return
 	var source_title := str(_active_idea_source_v0213.get("title", "")).strip_edges()
 	if source_title.is_empty():
 		source_title = "Untitled reusable source"
-	_active_source_banner_v0213.text = (
-		"Active Idea Source: %s — structured source context will be reused unchanged for every batch request."
-		% source_title
-	)
+	_active_source_banner_v0213.text = "Active Idea Source: %s" % source_title
+	_active_source_explanation_v0213.text = "This structured source will be included in every Idea generation request until cleared or replaced. The prompt below is optional Additional Direction for this batch."
+	_active_source_actions_v0213.show()
 
 
 func idea_source_capabilities_v0213() -> Dictionary:
