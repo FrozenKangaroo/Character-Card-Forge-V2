@@ -11,6 +11,7 @@ const HELP_CENTER_CURRENT = preload(
 )
 const SETTINGS_VIEW_CURRENT = preload("res://scripts/ui/settings_view_v0208.gd")
 const WORKSPACE_CURRENT = preload("res://scripts/ui/workspace_current.gd")
+const LIBRARY_CURRENT = preload("res://scripts/ui/library_view_current.gd")
 const CURRENT_BUILD_VERSION := "0.21.2"
 
 var _support_center_v0202: CCFSupportCenterWindowV0202
@@ -84,6 +85,36 @@ func _install_workspace_v01526() -> void:
 	_content.add_child(upgraded)
 	upgraded.update_settings(_settings)
 	_wire_ai_jobs_controller_v01531()
+
+
+func _install_library_v0185() -> void:
+	if _content == null:
+		return
+	var previous_library: CCFLibraryView = _library
+	if previous_library != null and previous_library.get_script() == LIBRARY_CURRENT:
+		return
+	var should_be_visible := _current_view == "library"
+	if previous_library != null:
+		if previous_library.new_character_requested.is_connected(_create_new_character):
+			previous_library.new_character_requested.disconnect(_create_new_character)
+		if previous_library.open_project_requested.is_connected(_open_project):
+			previous_library.open_project_requested.disconnect(_open_project)
+		if previous_library.project_changed.is_connected(_refresh_home_and_library):
+			previous_library.project_changed.disconnect(_refresh_home_and_library)
+		if previous_library.get_parent() == _content:
+			_content.remove_child(previous_library)
+		previous_library.queue_free()
+	var upgraded: CCFLibraryView = LIBRARY_CURRENT.new()
+	upgraded.visible = should_be_visible
+	upgraded.new_character_requested.connect(_create_new_character)
+	upgraded.open_project_requested.connect(_open_project)
+	upgraded.project_changed.connect(_refresh_home_and_library)
+	upgraded.ai_review_requested_v0184.connect(_open_library_ai_review_v0184)
+	upgraded.front_porch_requested_v0184.connect(_open_library_front_porch_v0184)
+	_library = upgraded
+	_content.add_child(upgraded)
+	if should_be_visible:
+		upgraded.refresh_projects(false)
 
 
 func _on_new_project_method_v0201(method_id: String, template_id: String) -> void:
@@ -211,6 +242,7 @@ func _update_current_build_label() -> void:
 			node.text = "Godot rewrite • v%s" % CURRENT_BUILD_VERSION
 			node.tooltip_text = (
 				"v0.21.2 adds a visual-only readable Personality view with section spacing "
-				+ "while preserving exact card text, exports and token estimates."
+				+ "while preserving exact card text, defers empty draft persistence and "
+				+ "reflows Library cards immediately when density changes."
 			)
 			return
