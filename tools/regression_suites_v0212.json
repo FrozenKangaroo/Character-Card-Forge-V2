@@ -1,7 +1,7 @@
 {
   "format_version": 1,
   "name": "Character Card Forge v0.21.2 complete regression suites",
-  "description": "v0.21.1 complete baseline plus visual-only Personality section spacing, exact-text editing and token invariance.",
+  "description": "v0.21.1 complete baseline plus visual-only Personality section spacing, exact-text editing, token invariance and deferred persistence for empty Workspace tool drafts.",
   "base_manifest": "regression_suites_v0211.json",
   "suite_additions": {
     "current_wiring": [
@@ -10,6 +10,13 @@
         "label": "v0.21.2 visual-only readable Personality view",
         "kind": "godot",
         "path": "tools/test_v0212_personality_readability.gd",
+        "timeout_seconds": 120
+      },
+      {
+        "id": "v0212_empty_tool_drafts",
+        "label": "v0.21.2 empty Workspace tool drafts stay out of the Library",
+        "kind": "godot",
+        "path": "tools/test_v0212_empty_tool_drafts.gd",
         "timeout_seconds": 120
       }
     ]

@@ -19,6 +19,8 @@ The current source candidate is **v0.21.2 — Readable Personality View**. Struc
 Personality output is shown with visual spacing before recognised section headings in
 both Workspace and generation review, while **Edit text** reveals the exact canonical
 content. The spacing never changes saved projects, exported cards or token estimates.
+New one-character drafts also remain in memory while empty, so opening an authoring tool
+does not add an unused project to the Library.
 The v0.21.1 Idea Generator improvements remain available: Custom per-idea length targets,
 up to 50 ideas, optional one-at-a-time provider requests and scalable Idea Notebook
 organization.
@@ -36,6 +38,7 @@ and [changelog](CHANGELOG.md).
 - Idea Generator presets plus bounded Custom per-idea character targets with visible
   requested-versus-actual reporting.
 - Visual-only Personality section spacing with an exact-text editing toggle.
+- Deferred first save for empty one-character drafts opened through Workspace tools.
 - Character Collaborator conversations with explicit sources, evidence roles and
   reviewable Generation Blueprint handoff.
 - Editable canonical Character Card fields, Alternative Greetings, Scenario Presets,
@@ -93,6 +96,10 @@ silently replaces a running installation.
 Manual editing and Manual Guided work without an AI provider. Text, Vision and Image
 profiles are configured independently in Settings and are contacted only by an explicit
 AI action.
+
+An empty one-character draft is not added to Character Library merely because Idea
+Generator, Character Collaborator or another Workspace tool was opened. It remains an
+in-memory working draft until meaningful character or project content is saved.
 
 ## Front Porch integration
 

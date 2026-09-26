@@ -63,7 +63,9 @@ generation-service depth fell from 34 to 31 scripts and prevents renewed service
 The v0.21.2 development candidate adds a visual-only readable Personality view. CCF
 recognises active-template section labels and conservative common headings, inserts
 display spacing for review, and always keeps the exact authored text authoritative for
-editing, saving, exporting and token estimates.
+editing, saving, exporting and token estimates. It also restores deferred first-save
+behaviour for the New Project chooser so empty single-character tool drafts do not
+become Library entries.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -194,6 +196,8 @@ expansion.
 - Derived recognised headings from active template groups/components while retaining conservative common-heading support.
 - Kept stored project text, exports, card interchange and authored-token estimates byte-for-byte unaffected by visual spacing.
 - Added focused formatter, live UI, generation-review and token-invariance regression coverage.
+- Kept new one-character drafts in memory while empty, including Idea Generator and Character Collaborator starts, without changing the selected template or tool state.
+- Preserved explicit first save once character or project content becomes meaningful, with live-app regression coverage.
 
 ### v0.21.1 — Custom Idea Length Targets (candidate)
 

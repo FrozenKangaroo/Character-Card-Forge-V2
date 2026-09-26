@@ -67,7 +67,8 @@
         "Add or generate artwork before PNG export when you want a visual card."
       ],
       "notes": [
-        "Filling in Generation Concept alone does not create the finished character fields. Run Generate Character and review the result first."
+        "Filling in Generation Concept alone does not create the finished character fields. Run Generate Character and review the result first.",
+        "A new one-character draft stays out of Character Library while it is empty. Opening Idea Generator, Character Collaborator or another Workspace tool does not save it by itself."
       ],
       "actions": [
         {"id": "new_project", "label": "Create a Character…"},
