@@ -410,9 +410,33 @@ func _validate_idea_batch(ideas: Array, idea_seed_text: String) -> Dictionary:
 func _record_idea_validation_ledger_v0214(
 	raw_ideas: Array, validation: Dictionary, metadata: Dictionary
 ) -> void:
-	metadata["idea_diversity_raw_candidate_count"] = int(
-		metadata.get("idea_diversity_raw_candidate_count", 0)
+	var semantic_attempts := int(metadata.get("semantic_repair_attempts", 0))
+	metadata["idea_diversity_validation_candidate_count"] = int(
+		metadata.get("idea_diversity_validation_candidate_count", 0)
 	) + raw_ideas.size()
+	if semantic_attempts <= 0:
+		metadata["idea_diversity_initial_generated_candidate_count"] = int(
+			metadata.get("idea_diversity_initial_generated_candidate_count", 0)
+		) + raw_ideas.size()
+	else:
+		metadata["idea_diversity_semantic_repair_candidate_count"] = int(
+			metadata.get("idea_diversity_semantic_repair_candidate_count", 0)
+		) + raw_ideas.size()
+		var recorded_repairs := int(metadata.get(
+			"idea_diversity_recorded_semantic_repair_attempts", 0
+		))
+		if semantic_attempts > recorded_repairs:
+			metadata["idea_diversity_semantic_repair_pass_count"] = int(
+				metadata.get("idea_diversity_semantic_repair_pass_count", 0)
+			) + (semantic_attempts - recorded_repairs)
+			metadata["idea_diversity_recorded_semantic_repair_attempts"] = (
+				semantic_attempts
+			)
+	# Retain the original metadata key for diagnostic/backwards compatibility.
+	# It now explicitly aliases validation-pass candidates and is not shown as raw.
+	metadata["idea_diversity_raw_candidate_count"] = int(
+		metadata.get("idea_diversity_validation_candidate_count", 0)
+	)
 	var accepted_signatures: Dictionary = {}
 	var valid_value: Variant = validation.get("valid_ideas", [])
 	if valid_value is Array:

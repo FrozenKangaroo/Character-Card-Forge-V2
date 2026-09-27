@@ -535,6 +535,38 @@ func list_local_ideas(include_archived: bool = true) -> Array[Dictionary]:
 	return result
 
 
+func list_local_notebooks() -> Array[Dictionary]:
+	var loaded := _read_json(_root_dir.path_join("library.json"))
+	if not bool(loaded.get("ok", false)):
+		return []
+	var data_value: Variant = loaded.get("data", {})
+	if not data_value is Dictionary:
+		return []
+	var notebooks_value: Variant = (data_value as Dictionary).get(
+		"notebooks", []
+	)
+	if not notebooks_value is Array:
+		return []
+	var result: Array[Dictionary] = []
+	for notebook_value in notebooks_value as Array:
+		if not notebook_value is Dictionary:
+			continue
+		var notebook: Dictionary = (notebook_value as Dictionary).duplicate(true)
+		var notebook_id := str(notebook.get("id", "")).strip_edges()
+		var notebook_name := str(notebook.get("name", "")).strip_edges()
+		if notebook_id.is_empty() or notebook_name.is_empty():
+			continue
+		notebook["id"] = notebook_id
+		notebook["name"] = notebook_name
+		result.append(notebook)
+	result.sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
+		return str(first.get("name", "")).to_lower() < str(
+			second.get("name", "")
+		).to_lower()
+	)
+	return result
+
+
 func load_local_idea(local_id: String) -> Dictionary:
 	return _read_json(_idea_path(local_id))
 
@@ -583,6 +615,8 @@ func export_filter_values(ideas: Array) -> Dictionary:
 func idea_matches_export_scope(idea: Dictionary, scope: String, value: String = "") -> bool:
 	if scope == "all":
 		return true
+	if scope == "notebook":
+		return str(idea.get("notebook_id", "")) == value
 	var entry := idea_to_entry(idea)
 	var classification: Dictionary = entry.get("classification", {})
 	if scope == "bible":

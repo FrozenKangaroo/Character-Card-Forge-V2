@@ -46,6 +46,12 @@ static func create_session(
 		"normal_request_limit": normal_request_limit,
 		"normal_requests_started": 0,
 		"normal_requests_completed": 0,
+		"initial_generated_candidate_count": 0,
+		"semantic_repair_pass_count": 0,
+		"semantic_repair_candidate_count": 0,
+		"validation_candidate_count": 0,
+		# Compatibility alias for diagnostics written by the first v0.21.4 build.
+		# User-facing text must call this validation candidates, never simply raw.
 		"raw_count": 0,
 		"accepted": [],
 		"rejected": [],
@@ -118,12 +124,34 @@ static func record_batch(
 	ideas: Array,
 	validation_rejections: Array = [],
 	request_kind: String = "normal",
-	raw_count_hint: int = -1
+	raw_count_hint: int = -1,
+	telemetry: Dictionary = {}
 ) -> Dictionary:
-	var raw_count := raw_count_hint
-	if raw_count < 0:
-		raw_count = ideas.size() + validation_rejections.size()
-	session["raw_count"] = int(session.get("raw_count", 0)) + maxi(0, raw_count)
+	var validation_count := int(telemetry.get(
+		"validation_candidate_count", raw_count_hint
+	))
+	if validation_count < 0:
+		validation_count = ideas.size() + validation_rejections.size()
+	var initial_count := int(telemetry.get(
+		"initial_generated_candidate_count", validation_count
+	))
+	var repair_passes := int(telemetry.get("semantic_repair_pass_count", 0))
+	var repair_candidates := int(telemetry.get(
+		"semantic_repair_candidate_count", 0
+	))
+	session["initial_generated_candidate_count"] = int(session.get(
+		"initial_generated_candidate_count", 0
+	)) + maxi(0, initial_count)
+	session["semantic_repair_pass_count"] = int(session.get(
+		"semantic_repair_pass_count", 0
+	)) + maxi(0, repair_passes)
+	session["semantic_repair_candidate_count"] = int(session.get(
+		"semantic_repair_candidate_count", 0
+	)) + maxi(0, repair_candidates)
+	session["validation_candidate_count"] = int(session.get(
+		"validation_candidate_count", 0
+	)) + maxi(0, validation_count)
+	session["raw_count"] = int(session.get("validation_candidate_count", 0))
 	if request_kind == "normal":
 		session["normal_requests_completed"] = int(
 			session.get("normal_requests_completed", 0)
@@ -187,7 +215,19 @@ static func record_batch(
 		"rejected": newly_rejected,
 		"accepted_count": accepted_count(session),
 		"rejected_count": rejected_count(session),
-		"raw_count": int(session.get("raw_count", 0)),
+		"initial_generated_candidate_count": int(session.get(
+			"initial_generated_candidate_count", 0
+		)),
+		"semantic_repair_pass_count": int(session.get(
+			"semantic_repair_pass_count", 0
+		)),
+		"semantic_repair_candidate_count": int(session.get(
+			"semantic_repair_candidate_count", 0
+		)),
+		"validation_candidate_count": int(session.get(
+			"validation_candidate_count", 0
+		)),
+		"raw_count": int(session.get("validation_candidate_count", 0)),
 		"remaining": remaining_count(session)
 	}
 
@@ -460,9 +500,25 @@ static func accepted_ideas(session: Dictionary) -> Array:
 
 
 static func summary(session: Dictionary) -> Dictionary:
+	var generation_batches := int(session.get("normal_requests_started", 0))
+	if bool(session.get("final_top_up_started", false)):
+		generation_batches += 1
 	return {
 		"target_count": int(session.get("target_count", 0)),
-		"raw_count": int(session.get("raw_count", 0)),
+		"generation_batch_count": generation_batches,
+		"initial_generated_candidate_count": int(session.get(
+			"initial_generated_candidate_count", 0
+		)),
+		"semantic_repair_pass_count": int(session.get(
+			"semantic_repair_pass_count", 0
+		)),
+		"semantic_repair_candidate_count": int(session.get(
+			"semantic_repair_candidate_count", 0
+		)),
+		"validation_candidate_count": int(session.get(
+			"validation_candidate_count", 0
+		)),
+		"raw_count": int(session.get("validation_candidate_count", 0)),
 		"accepted_count": accepted_count(session),
 		"rejected_count": rejected_count(session),
 		"remaining": remaining_count(session),

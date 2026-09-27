@@ -385,7 +385,7 @@ func _install_idea_batch_controls_v0211(
 	_idea_count.max_value = IDEA_BATCHING_V0211.MAX_TOTAL_IDEAS
 	_idea_count.allow_greater = false
 	_idea_count.tooltip_text = (
-		"Total ideas to generate. CCF can combine several sequential provider requests up to a maximum of %d ideas."
+		"Accepted-idea target. CCF can combine several sequential generation batches up to a maximum of %d ideas."
 		% IDEA_BATCHING_V0211.MAX_TOTAL_IDEAS
 	)
 	var panel := VBoxContainer.new()
@@ -397,7 +397,7 @@ func _install_idea_batch_controls_v0211(
 	row.add_theme_constant_override("separation", 8)
 	panel.add_child(row)
 	var label := Label.new()
-	label.text = "Ideas per provider request"
+	label.text = "Ideas per generation batch"
 	row.add_child(label)
 	_idea_batch_size_v0211 = SpinBox.new()
 	_idea_batch_size_v0211.name = "IdeasPerRequestV0211"
@@ -409,7 +409,7 @@ func _install_idea_batch_controls_v0211(
 	_idea_batch_size_v0211.allow_lesser = false
 	_idea_batch_size_v0211.custom_minimum_size.x = 100
 	_idea_batch_size_v0211.tooltip_text = (
-		"Use 1 for one idea per request on smaller models. Higher values reduce the number of provider calls."
+		"Use 1 for one idea per generation batch on smaller models. Higher values usually reduce the number of generation batches."
 	)
 	row.add_child(_idea_batch_size_v0211)
 	var diversity_row := HFlowContainer.new()
@@ -472,9 +472,9 @@ func _refresh_idea_batch_plan_v0211() -> void:
 	var per_request := _idea_batch_size_value_v0211()
 	var plan := IDEA_BATCHING_V0211.request_plan(total, per_request)
 	var request_phrase := (
-		"provider request"
+		"generation batch"
 		if plan.size() == 1
-		else "sequential provider requests"
+		else "sequential generation batches"
 	)
 	var small_model_note := (
 		" • one idea at a time for smaller models"
@@ -493,8 +493,9 @@ func _build_idea_similarity_review_window_v0214() -> void:
 	_idea_similarity_review_window_v0214.size = Vector2i(820, 620)
 	_idea_similarity_review_window_v0214.min_size = Vector2i(560, 400)
 	_idea_similarity_review_window_v0214.visible = false
+	_idea_similarity_review_window_v0214.force_native = true
 	_idea_similarity_review_window_v0214.exclusive = false
-	_idea_similarity_review_window_v0214.transient = true
+	_idea_similarity_review_window_v0214.transient = false
 	add_child(_idea_similarity_review_window_v0214)
 	var margin := MarginContainer.new()
 	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -719,6 +720,20 @@ func _queue_batched_ideas_v0211(total: int, plan: Array[int]) -> void:
 		and _idea_final_top_up_v0214.button_pressed
 	)
 	_idea_diversity_session_v0214["seed_snapshot"] = _idea_seed_with_source_v0213()
+	if (
+		_idea_generator_v01532 != null
+		and _idea_generator_v01532.has_method("active_idea_source_v0213")
+	):
+		var source_value: Variant = _idea_generator_v01532.call(
+			"active_idea_source_v0213"
+		)
+		if source_value is Dictionary:
+			_idea_diversity_session_v0214["idea_source_id_snapshot"] = str(
+				(source_value as Dictionary).get("id", "")
+			)
+			_idea_diversity_session_v0214["idea_source_title_snapshot"] = str(
+				(source_value as Dictionary).get("title", "")
+			)
 	_idea_diversity_session_v0214["series_context_snapshot"] = (
 		CCFSeriesService.generation_context_for_project(_project)
 	)
@@ -742,7 +757,7 @@ func _queue_batched_ideas_v0211(total: int, plan: Array[int]) -> void:
 	_idea_job_id = _idea_batch_group_id_v0211
 	_idea_generate_button.disabled = true
 	_idea_status.text = (
-		"Starting generation session • target %d accepted ideas • up to %d adaptive provider requests • %s detail."
+		"Starting generation session • target %d accepted ideas • up to %d adaptive generation batches • %s detail."
 		% [
 			total,
 			plan.size(),
@@ -983,15 +998,33 @@ func _handle_completed_idea_batch_v0211(
 	var validation_rejections: Array = (
 		rejected_value if rejected_value is Array else []
 	)
-	var raw_count_hint := int(metadata.get(
-		"idea_diversity_raw_candidate_count", ideas.size() + validation_rejections.size()
+	var validation_count_hint := int(metadata.get(
+		"idea_diversity_validation_candidate_count",
+		metadata.get(
+			"idea_diversity_raw_candidate_count",
+			ideas.size() + validation_rejections.size()
+		)
 	))
+	var telemetry := {
+		"initial_generated_candidate_count": int(metadata.get(
+			"idea_diversity_initial_generated_candidate_count",
+			validation_count_hint
+		)),
+		"semantic_repair_pass_count": int(metadata.get(
+			"idea_diversity_semantic_repair_pass_count", 0
+		)),
+		"semantic_repair_candidate_count": int(metadata.get(
+			"idea_diversity_semantic_repair_candidate_count", 0
+		)),
+		"validation_candidate_count": validation_count_hint
+	}
 	var reviewed := IDEA_DIVERSITY_V0214.record_batch(
 		_idea_diversity_session_v0214,
 		ideas,
 		validation_rejections,
 		request_kind,
-		raw_count_hint
+		validation_count_hint,
+		telemetry
 	)
 	var accepted_ideas: Array = []
 	for record_value in reviewed.get("accepted", []):
@@ -1003,12 +1036,12 @@ func _handle_completed_idea_batch_v0211(
 	_idea_batch_metadata_v0211[batch_index] = metadata.duplicate(true)
 	_mark_idea_batch_terminal_v0211(job_id, "completed")
 	_idea_status.text = (
-		"Checking batch for repeats… %d/%d unique ideas accepted • %d raw • %d rejected."
+		"Checking batch for repeats… %d/%d unique ideas accepted • %d rejected candidates • %d similarity warnings."
 		% [
 			int(reviewed.get("accepted_count", 0)),
 			_idea_batch_requested_total_v0211,
-			int(reviewed.get("raw_count", 0)),
-			int(reviewed.get("rejected_count", 0))
+			int(reviewed.get("rejected_count", 0)),
+			(_idea_diversity_session_v0214.get("title_warnings", []) as Array).size()
 		]
 	)
 	if request_kind == "top_up":
@@ -1246,8 +1279,11 @@ func _finalize_idea_generation_session_v0214() -> void:
 	aggregate_metadata["idea_batch_group_id"] = _idea_batch_group_id_v0211
 	aggregate_metadata["idea_batch_requested_total"] = _idea_batch_requested_total_v0211
 	aggregate_metadata["idea_batch_request_count"] = int(
-		diversity_summary.get("normal_requests_started", 0)
-	) + (1 if bool(diversity_summary.get("final_top_up_started", false)) else 0)
+		diversity_summary.get("generation_batch_count", 0)
+	)
+	aggregate_metadata["idea_generation_batch_count"] = int(
+		diversity_summary.get("generation_batch_count", 0)
+	)
 	aggregate_metadata["idea_batch_successful_requests"] = _idea_batch_results_v0211.size()
 	aggregate_metadata["idea_batch_result_count"] = combined.size()
 	aggregate_metadata["idea_batch_errors"] = _idea_batch_errors_v0211.duplicate()
@@ -1259,6 +1295,12 @@ func _finalize_idea_generation_session_v0214() -> void:
 	aggregate_metadata["idea_similarity_clusters"] = (
 		_idea_diversity_session_v0214.get("final_review_clusters", []) as Array
 	).duplicate(true)
+	aggregate_metadata["idea_source_id"] = str(
+		_idea_diversity_session_v0214.get("idea_source_id_snapshot", "")
+	)
+	aggregate_metadata["idea_source_title"] = str(
+		_idea_diversity_session_v0214.get("idea_source_title_snapshot", "")
+	)
 	if str(aggregate_metadata.get("idea_detail_level", "")) == "custom":
 		var counts := IDEA_CUSTOM_LENGTH_V0211.actual_counts(combined)
 		var target := int(aggregate_metadata.get("idea_custom_target_characters", 0))
@@ -1345,48 +1387,73 @@ func _set_completed_idea_batch_status_v0211(
 		if bool(diversity.get("final_top_up_started", false))
 		else ""
 	)
-	var rejected_note := " • %d rejected from %d raw" % [
-		int(diversity.get("rejected_count", 0)),
-		int(diversity.get("raw_count", combined.size()))
-	]
-	var warning_note := (
-		" • %d title-similarity warning%s"
-		% [
-			int(diversity.get("title_warning_count", 0)),
-			"" if int(diversity.get("title_warning_count", 0)) == 1 else "s"
-		]
-		if int(diversity.get("title_warning_count", 0)) > 0
-		else ""
-	)
+	var rejected_count := int(diversity.get("rejected_count", 0))
+	var warning_count := int(diversity.get("title_warning_count", 0))
+	var generation_batches := int(diversity.get(
+		"generation_batch_count",
+		aggregate_metadata.get("idea_generation_batch_count", 0)
+	))
 	_idea_status.text = (
-		"%d/%d unique ideas accepted%s across %d provider requests%s%s%s%s."
+		"%d/%d unique ideas accepted%s across %d generation batch%s • %d rejected candidate%s • %d similarity warning%s%s%s."
 		% [
 			combined.size(),
 			_idea_batch_requested_total_v0211,
 			recovery_note,
-			int(aggregate_metadata.get("idea_batch_request_count", 0)),
-			rejected_note,
-			warning_note,
+			generation_batches,
+			"" if generation_batches == 1 else "es",
+			rejected_count,
+			"" if rejected_count == 1 else "s",
+			warning_count,
+			"" if warning_count == 1 else "s",
 			custom_note,
 			error_note
 		]
 	)
+	var final_review_label := "Off"
+	match str(diversity.get("final_review_mode", "off")):
+		IDEA_DIVERSITY_V0214.FINAL_REVIEW_FLAG:
+			final_review_label = "Flag Similar Ideas"
+		IDEA_DIVERSITY_V0214.FINAL_REVIEW_REJECT:
+			final_review_label = "Reject Clear Duplicates"
+	var detail_lines: Array[String] = [
+		"Generation details",
+		"Requested: %d" % _idea_batch_requested_total_v0211,
+		"Accepted: %d" % combined.size(),
+		"Generation batches: %d" % generation_batches,
+		"Initial generated candidates: %d" % int(diversity.get(
+			"initial_generated_candidate_count", 0
+		)),
+		"Semantic repair passes: %d" % int(diversity.get(
+			"semantic_repair_pass_count", 0
+		)),
+		"Repaired candidates processed: %d" % int(diversity.get(
+			"semantic_repair_candidate_count", 0
+		)),
+		"Total validation-pass candidates: %d" % int(diversity.get(
+			"validation_candidate_count", 0
+		)),
+		"Rejected candidates: %d" % rejected_count,
+		"Similarity warnings: %d" % warning_count,
+		"Final similarity review: %s" % final_review_label,
+		"Final top-up used: %s" % (
+			"Yes" if bool(diversity.get("final_top_up_started", false)) else "No"
+		)
+	]
 	var warnings_value: Variant = aggregate_metadata.get(
 		"idea_title_duplicate_warnings", []
 	)
 	if warnings_value is Array and not (warnings_value as Array).is_empty():
-		var warning_lines: Array[String] = [
+		detail_lines.append("")
+		detail_lines.append(
 			"Title similarity is a review signal, not an automatic duplicate verdict:"
-		]
+		)
 		for warning_value in warnings_value as Array:
 			if warning_value is Dictionary:
-				warning_lines.append("• %s ↔ %s" % [
+				detail_lines.append("• %s ↔ %s" % [
 					str((warning_value as Dictionary).get("existing_title", "Untitled idea")),
 					str((warning_value as Dictionary).get("candidate_title", "Untitled idea"))
 				])
-		_idea_status.tooltip_text = "\n".join(warning_lines)
-	else:
-		_idea_status.tooltip_text = ""
+	_idea_status.tooltip_text = "\n".join(detail_lines)
 
 
 func _idea_batch_received_count_v0211() -> int:

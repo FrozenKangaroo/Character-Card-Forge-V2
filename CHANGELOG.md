@@ -8,12 +8,20 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ### Changes
 
-- Added **Multi-Batch Diversity Guardrails** so a split Idea Generator run shares a temporary accepted/rejected scenario ledger across sequential provider requests.
+- Added **Multi-Batch Diversity Guardrails** so a split Idea Generator run shares a temporary accepted/rejected scenario ledger across sequential generation batches.
 - Changed multi-request planning to target accepted usable ideas: every next request is recalculated from the accepted count while the normal request count remains bounded.
 - Added conservative title-similarity warnings and structural duplicate checks that ignore cosmetic renaming while preserving meaningfully different Series variants.
 - Added optional **Flag Similar Ideas** and **Reject Clear Duplicates** final AI review modes; both are off by default unless explicitly selected.
 - Added an optional one-shot final top-up request with full anti-repeat context and a hard no-second-recovery stopping rule.
-- Added accepted/raw/rejected progress reporting and a readable final similarity report.
+- Replaced the ambiguous raw/provider-request completion wording with accepted-target,
+  generation-batch, rejected-candidate and similarity-warning results, plus detailed
+  initial/repair/validation processing telemetry in the status tooltip.
+- Added counted **Notebook** and multi-item **Selected Ideas** export scopes while keeping
+  Notebook membership separate from structured Bible/Series classification.
+- Enabled standard Idea Notebook multi-selection without changing the single focused
+  Idea Details editor target; export now reads the live selected ID set each time.
+- Made the Final AI Similarity Review an independently movable, resizable native desktop
+  window without changing its conservative classification or rejection behavior.
 
 ### Migration notes
 
@@ -26,7 +34,9 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 ### Known limitations
 
 - Semantic novelty ultimately depends on the configured model. Local rejection is intentionally conservative, and the stronger final AI review consumes one additional request when enabled.
-- Real provider behavior, cancellation and desktop review layout still require the documented hands-on verification pass.
+- Real provider behavior, cancellation, standard Ctrl/Shift selection on each desktop
+  platform and moving the native review window between monitors still require the
+  documented hands-on verification pass.
 
 ## [0.21.3] - 2026-09-26
 

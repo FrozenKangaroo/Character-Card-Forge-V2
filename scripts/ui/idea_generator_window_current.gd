@@ -32,6 +32,7 @@ var _export_version_v0210: LineEdit
 var _export_status_v0210: Label
 var _pending_export_ideas_v0210: Array[Dictionary] = []
 var _structured_detail_v0210: TextEdit
+var _export_selected_idea_ids_v0214: Array[String] = []
 
 var _notebook_search_v0211: LineEdit
 var _notebook_sort_v0211: OptionButton
@@ -92,6 +93,10 @@ func _build_notebook_tab_v01532() -> void:
 	super._build_notebook_tab_v01532()
 	if _notebook_tab_v01532 == null:
 		return
+	_idea_list_v01532.select_mode = ItemList.SELECT_MULTI
+	var multi_select_callback := Callable(self, "_on_idea_multi_selected_v0214")
+	if not _idea_list_v01532.multi_selected.is_connected(multi_select_callback):
+		_idea_list_v01532.multi_selected.connect(multi_select_callback)
 	_install_notebook_organization_v0211()
 	var toolbar := VBoxContainer.new()
 	toolbar.name = "IdeaPackActionsV0210"
@@ -109,7 +114,7 @@ func _build_notebook_tab_v01532() -> void:
 	var export_button := Button.new()
 	export_button.name = "ExportIdeaPackV0210"
 	export_button.text = "Choose Ideas & Export…"
-	export_button.tooltip_text = "Choose checked ideas from the whole notebook, one Bible, one Series or the currently selected idea, then export a structured Idea Pack."
+	export_button.tooltip_text = "Choose checked ideas from all saved ideas, the live multi-selection, one Notebook, one Bible or one semantic Series, then export a structured Idea Pack."
 	export_button.pressed.connect(_open_export_window_v0210)
 	action_row.add_child(export_button)
 	var explanation := Label.new()
@@ -373,6 +378,7 @@ func _refresh_notebook_v01532() -> void:
 func _refresh_ideas_v01532() -> void:
 	if _idea_list_v01532 == null:
 		return
+	var selected_ids_before := _live_notebook_selected_ids_v0214()
 	var selected_notebook := _selected_metadata_v01532(
 		_notebook_filter_v01532, "__all__"
 	)
@@ -450,12 +456,22 @@ func _refresh_ideas_v01532() -> void:
 			"Showing %d idea%s in %s"
 			% [rows.size(), "" if rows.size() == 1 else "s", view_label]
 		)
+	var restored_selection := false
+	for index in range(_visible_idea_ids_v01532.size()):
+		if _visible_idea_ids_v01532[index] in selected_ids_before:
+			_idea_list_v01532.select(index, false)
+			restored_selection = true
 	if reselect_index >= 0:
-		_idea_list_v01532.select(reselect_index)
 		_load_selected_idea_v01532(_selected_idea_id_v01532)
 	elif not rows.is_empty():
-		_idea_list_v01532.select(0)
-		_selected_idea_id_v01532 = _visible_idea_ids_v01532[0]
+		var next_active_index := 0
+		if restored_selection:
+			var selected_indices := _idea_list_v01532.get_selected_items()
+			if not selected_indices.is_empty():
+				next_active_index = int(selected_indices[-1])
+		else:
+			_idea_list_v01532.select(0, false)
+		_selected_idea_id_v01532 = _visible_idea_ids_v01532[next_active_index]
 		_load_selected_idea_v01532(_selected_idea_id_v01532)
 	else:
 		_selected_idea_id_v01532 = ""
@@ -464,6 +480,27 @@ func _refresh_ideas_v01532() -> void:
 		_status_v01532.text = (
 			"No saved ideas match the current notebook, tag and search filters."
 		)
+
+
+func _on_idea_multi_selected_v0214(index: int, selected: bool) -> void:
+	if not selected or index < 0 or index >= _visible_idea_ids_v01532.size():
+		return
+	_selected_idea_id_v01532 = _visible_idea_ids_v01532[index]
+	_load_selected_idea_v01532(_selected_idea_id_v01532)
+
+
+func _live_notebook_selected_ids_v0214() -> Array[String]:
+	var result: Array[String] = []
+	if _idea_list_v01532 == null:
+		return result
+	for index_value in _idea_list_v01532.get_selected_items():
+		var index := int(index_value)
+		if index < 0 or index >= _visible_idea_ids_v01532.size():
+			continue
+		var idea_id := _visible_idea_ids_v01532[index]
+		if not idea_id.is_empty() and not idea_id in result:
+			result.append(idea_id)
+	return result
 
 
 func _selected_notebook_name_for_summary_v0211(
@@ -875,14 +912,43 @@ func _build_export_window_v0210() -> void:
 	controls.add_child(_simple_label_v0210("Selection scope"))
 	_export_scope_v0210 = OptionButton.new()
 	_export_scope_v0210.custom_minimum_size.x = 260
-	_add_export_scope_v0210("All ideas", {"kind": "all", "value": ""})
-	if not _selected_idea_id_v01532.is_empty():
-		_add_export_scope_v0210("Selected idea", {"kind": "selected", "value": _selected_idea_id_v01532})
+	_add_export_scope_with_count_v0214(
+		"All Ideas", {"kind": "all", "value": ""}, ideas
+	)
+	_add_export_scope_with_count_v0214(
+		"Selected Ideas",
+		{
+			"kind": "selected",
+			"value": (
+				_export_selected_idea_ids_v0214[0]
+				if not _export_selected_idea_ids_v0214.is_empty()
+				else ""
+			),
+			"values": _export_selected_idea_ids_v0214.duplicate()
+		},
+		ideas
+	)
+	for notebook in _idea_pack_service_v0210.list_local_notebooks():
+		var notebook_id := str(notebook.get("id", ""))
+		var notebook_name := str(notebook.get("name", "Notebook"))
+		_add_export_scope_with_count_v0214(
+			"Notebook: %s" % notebook_name,
+			{"kind": "notebook", "value": notebook_id},
+			ideas
+		)
 	var filter_values := _idea_pack_service_v0210.export_filter_values(ideas)
 	for bible in filter_values.get("bibles", []):
-		_add_export_scope_v0210("Bible: %s" % str(bible), {"kind": "bible", "value": str(bible)})
+		_add_export_scope_with_count_v0214(
+			"Bible: %s" % str(bible),
+			{"kind": "bible", "value": str(bible)},
+			ideas
+		)
 	for series_name in filter_values.get("series", []):
-		_add_export_scope_v0210("Series: %s" % str(series_name), {"kind": "series", "value": str(series_name)})
+		_add_export_scope_with_count_v0214(
+			"Series: %s" % str(series_name),
+			{"kind": "series", "value": str(series_name)},
+			ideas
+		)
 	_export_scope_v0210.item_selected.connect(_apply_export_scope_v0210)
 	controls.add_child(_export_scope_v0210)
 	var select_all := Button.new()
@@ -938,28 +1004,41 @@ func _add_export_scope_v0210(label: String, metadata: Dictionary) -> void:
 	_export_scope_v0210.set_item_metadata(_export_scope_v0210.item_count - 1, metadata)
 
 
+func _add_export_scope_with_count_v0214(
+	label: String, metadata: Dictionary, ideas: Array
+) -> void:
+	var count := 0
+	for idea_value in ideas:
+		if (
+			idea_value is Dictionary
+			and _idea_matches_export_scope_metadata_v0214(
+				idea_value as Dictionary, metadata
+			)
+		):
+			count += 1
+	_add_export_scope_v0210("%s (%d)" % [label, count], metadata)
+
+
 func _sync_notebook_selection_for_export_v0210() -> void:
-	if _idea_list_v01532 == null:
-		return
-	var selected_indices := _idea_list_v01532.get_selected_items()
-	if selected_indices.is_empty():
-		if not _selected_idea_id_v01532 in _visible_idea_ids_v01532:
-			_selected_idea_id_v01532 = ""
-		return
-	var selected_index := int(selected_indices[0])
-	if selected_index >= 0 and selected_index < _visible_idea_ids_v01532.size():
-		_selected_idea_id_v01532 = _visible_idea_ids_v01532[selected_index]
+	_export_selected_idea_ids_v0214 = _live_notebook_selected_ids_v0214()
 
 
 func _preferred_export_scope_v0210(ideas: Array) -> Dictionary:
-	if _selected_idea_id_v01532.is_empty():
+	if _export_selected_idea_ids_v0214.is_empty():
 		return {"kind": "all", "value": ""}
+	if _export_selected_idea_ids_v0214.size() > 1:
+		return {
+			"kind": "selected",
+			"value": _export_selected_idea_ids_v0214[0],
+			"values": _export_selected_idea_ids_v0214.duplicate()
+		}
+	var selected_id := _export_selected_idea_ids_v0214[0]
 	var selected_idea: Dictionary = {}
 	for idea_value in ideas:
 		if (
 			idea_value is Dictionary
 			and str((idea_value as Dictionary).get("id", ""))
-			== _selected_idea_id_v01532
+			== selected_id
 		):
 			selected_idea = idea_value as Dictionary
 			break
@@ -994,7 +1073,11 @@ func _preferred_export_scope_v0210(ideas: Array) -> Dictionary:
 		var bible := str(classification.get("bible", "")).strip_edges()
 		if not bible.is_empty():
 			return {"kind": "bible", "value": bible}
-	return {"kind": "selected", "value": _selected_idea_id_v01532}
+	return {
+		"kind": "selected",
+		"value": selected_id,
+		"values": _export_selected_idea_ids_v0214.duplicate()
+	}
 
 
 func _select_export_scope_v0210(preferred_scope: Dictionary) -> void:
@@ -1054,11 +1137,21 @@ func _idea_matches_current_export_scope_v0210(idea: Dictionary) -> bool:
 	)
 	if not metadata_value is Dictionary:
 		return false
-	var metadata: Dictionary = metadata_value
+	return _idea_matches_export_scope_metadata_v0214(
+		idea, metadata_value as Dictionary
+	)
+
+
+func _idea_matches_export_scope_metadata_v0214(
+	idea: Dictionary, metadata: Dictionary
+) -> bool:
 	var kind := str(metadata.get("kind", "all"))
 	var value := str(metadata.get("value", ""))
 	if kind == "selected":
-		return str(idea.get("id", "")) == value
+		var values_value: Variant = metadata.get("values", [])
+		if values_value is Array and not (values_value as Array).is_empty():
+			return str(idea.get("id", "")) in (values_value as Array)
+		return not value.is_empty() and str(idea.get("id", "")) == value
 	return _idea_pack_service_v0210.idea_matches_export_scope(
 		idea, kind, value
 	)
@@ -1069,7 +1162,14 @@ func _choose_export_path_v0210() -> void:
 	for row in _export_rows_v0210:
 		var check_value: Variant = row.get("check")
 		var idea_value: Variant = row.get("idea")
-		if check_value is CheckBox and (check_value as CheckBox).button_pressed and idea_value is Dictionary:
+		if (
+			check_value is CheckBox
+			and (check_value as CheckBox).button_pressed
+			and idea_value is Dictionary
+			and _idea_matches_current_export_scope_v0210(
+				idea_value as Dictionary
+			)
+		):
 			_pending_export_ideas_v0210.append((idea_value as Dictionary).duplicate(true))
 	if _pending_export_ideas_v0210.is_empty():
 		_export_status_v0210.text = "Select at least one idea to export."

@@ -75,6 +75,7 @@ func _run() -> void:
 	_test_title_and_structural_signals()
 	_test_anti_repeat_prompt_and_job_decoration()
 	_test_validation_ledger_metadata()
+	_test_reporting_telemetry()
 	_test_final_review_modes()
 	_test_one_shot_top_up()
 	_test_contract_compatibility()
@@ -136,10 +137,13 @@ func _test_adaptive_batch_sizes() -> void:
 	)
 	var summary := DIVERSITY.summary(one_rejected)
 	_require(
-		int(summary.get("raw_count", 0)) == 12
+		int(summary.get("initial_generated_candidate_count", 0)) == 12
+		and int(summary.get("semantic_repair_pass_count", 0)) == 0
+		and int(summary.get("semantic_repair_candidate_count", 0)) == 0
+		and int(summary.get("validation_candidate_count", 0)) == 12
 		and int(summary.get("accepted_count", 0)) == 11
 		and int(summary.get("rejected_count", 0)) == 1,
-		"Raw, accepted and rejected counts must remain separate."
+		"Initial, repair, validation, accepted and rejected counts must remain separate."
 	)
 
 
@@ -285,10 +289,90 @@ func _test_validation_ledger_metadata() -> void:
 	_require(
 		(validation.get("valid_ideas", []) as Array).size() == 1
 		and int(metadata.get("idea_diversity_raw_candidate_count", 0)) == 2
+		and int(metadata.get("idea_diversity_initial_generated_candidate_count", 0)) == 2
+		and int(metadata.get("idea_diversity_semantic_repair_pass_count", 0)) == 0
+		and int(metadata.get("idea_diversity_semantic_repair_candidate_count", 0)) == 0
+		and int(metadata.get("idea_diversity_validation_candidate_count", 0)) == 2
 		and rejections_value is Array
 		and (rejections_value as Array).size() == 1
 		and str(((rejections_value as Array)[0] as Dictionary).get("reason", "")).contains("Idea 2"),
 		"Generation validation must expose only rejected candidates to the temporary diversity ledger while retaining raw count."
+	)
+	service.queue_free()
+
+
+func _test_reporting_telemetry() -> void:
+	var service := GENERATION_CURRENT.new()
+	root.add_child(service)
+	service.set("_active_job", {
+		"id": "reporting-telemetry",
+		"type": "ideas",
+		"metadata": {"seed": "fixture {{user}}"}
+	})
+	var first_candidates := _ideas("Initial", 12)
+	service.call("_validate_idea_batch", first_candidates, "fixture {{user}}")
+	var active: Dictionary = service.get("_active_job")
+	var metadata: Dictionary = active.get("metadata", {}).duplicate(true)
+	metadata["semantic_repair_attempts"] = 1
+	active["metadata"] = metadata
+	service.set("_active_job", active)
+	var repaired_candidates := _ideas("Repaired", 12)
+	service.call("_validate_idea_batch", repaired_candidates, "fixture {{user}}")
+	active = service.get("_active_job")
+	metadata = active.get("metadata", {})
+	_require(
+		int(metadata.get("idea_diversity_initial_generated_candidate_count", 0)) == 12
+		and int(metadata.get("idea_diversity_semantic_repair_pass_count", 0)) == 1
+		and int(metadata.get("idea_diversity_semantic_repair_candidate_count", 0)) == 12
+		and int(metadata.get("idea_diversity_validation_candidate_count", 0)) == 24,
+		"One 12-candidate generation batch plus one full repair must report 12 initial, one repair pass, 12 repaired and 24 validation candidates."
+	)
+	var repaired_session := DIVERSITY.create_session(12, 12)
+	DIVERSITY.mark_request_started(repaired_session, 12, "normal")
+	DIVERSITY.record_batch(
+		repaired_session,
+		repaired_candidates,
+		[],
+		"normal",
+		24,
+		{
+			"initial_generated_candidate_count": 12,
+			"semantic_repair_pass_count": 1,
+			"semantic_repair_candidate_count": 12,
+			"validation_candidate_count": 24
+		}
+	)
+	var repaired_summary := DIVERSITY.summary(repaired_session)
+	_require(
+		int(repaired_summary.get("generation_batch_count", 0)) == 1
+		and int(repaired_summary.get("validation_candidate_count", 0)) == 24,
+		"A semantic repair must not be counted as a second generation batch."
+	)
+	var real_shape := DIVERSITY.create_session(36, 12, true, "reject", true)
+	for index in range(4):
+		var request_kind := "top_up" if index == 3 else "normal"
+		DIVERSITY.mark_request_started(real_shape, 12, request_kind)
+		DIVERSITY.record_batch(
+			real_shape,
+			_ideas("Telemetry %d" % index, 12),
+			[],
+			request_kind,
+			24 if index < 3 else 12,
+			{
+				"initial_generated_candidate_count": 12,
+				"semantic_repair_pass_count": 1 if index < 3 else 0,
+				"semantic_repair_candidate_count": 12 if index < 3 else 0,
+				"validation_candidate_count": 24 if index < 3 else 12
+			}
+		)
+	var real_summary := DIVERSITY.summary(real_shape)
+	_require(
+		int(real_summary.get("generation_batch_count", 0)) == 4
+		and int(real_summary.get("initial_generated_candidate_count", 0)) == 48
+		and int(real_summary.get("semantic_repair_pass_count", 0)) == 3
+		and int(real_summary.get("semantic_repair_candidate_count", 0)) == 36
+		and int(real_summary.get("validation_candidate_count", 0)) == 84,
+		"The real-world telemetry shape must report four batches, 48 initial, three repairs, 36 repaired and 84 validation candidates."
 	)
 	service.queue_free()
 
@@ -436,16 +520,57 @@ func _test_live_controls() -> void:
 	var final_review := workspace.find_child("FinalAISimilarityCheckV0214", true, false) as OptionButton
 	var top_up := workspace.find_child("FinalIdeaTopUpV0214", true, false) as CheckButton
 	var report := workspace.find_child("IdeaSimilarityReviewReportV0214", true, false) as TextEdit
+	var report_window := workspace.get("_idea_similarity_review_window_v0214") as Window
 	_require(
 		prevent != null and prevent.button_pressed
 		and final_review != null and final_review.item_count == 3 and final_review.selected == 0
 		and top_up != null and not top_up.button_pressed
-		and report != null,
-		"The live UI must default repeat prevention on, additional AI calls off, and expose a review report."
+		and report != null
+		and report_window != null
+		and report_window.force_native
+		and not report_window.transient
+		and not report_window.exclusive,
+		"The live UI must default extra AI calls off and expose an independently movable native review report."
 	)
+	_test_live_completion_reporting(workspace)
 	_test_live_adaptive_sequence(workspace)
 	app.queue_free()
 	await process_frame
+
+
+func _test_live_completion_reporting(workspace: CCFWorkspaceCurrent) -> void:
+	workspace.set("_idea_batch_requested_total_v0211", 36)
+	workspace.call(
+		"_set_completed_idea_batch_status_v0211",
+		_ideas("Reported", 24),
+		{
+			"idea_diversity_summary": {
+				"generation_batch_count": 4,
+				"initial_generated_candidate_count": 48,
+				"semantic_repair_pass_count": 3,
+				"semantic_repair_candidate_count": 36,
+				"validation_candidate_count": 84,
+				"rejected_count": 31,
+				"title_warning_count": 25,
+				"final_review_mode": "reject",
+				"final_top_up_started": true
+			},
+			"idea_title_duplicate_warnings": []
+		}
+	)
+	var status := workspace.get("_idea_status") as Label
+	_require(
+		status.text == (
+			"24/36 unique ideas accepted after final recovery across 4 generation batches • 31 rejected candidates • 25 similarity warnings."
+		)
+		and status.tooltip_text.contains("Initial generated candidates: 48")
+		and status.tooltip_text.contains("Semantic repair passes: 3")
+		and status.tooltip_text.contains("Repaired candidates processed: 36")
+		and status.tooltip_text.contains("Total validation-pass candidates: 84")
+		and not status.text.contains(" raw")
+		and not status.text.contains("provider request"),
+		"The real-world completion shape must use concise outcome wording while retaining clearly labelled 84-candidate diagnostics."
+	)
 
 
 func _test_live_adaptive_sequence(workspace: CCFWorkspaceCurrent) -> void:
@@ -507,6 +632,12 @@ func _test_live_adaptive_sequence(workspace: CCFWorkspaceCurrent) -> void:
 	_require(
 		captured.size() == 21
 		and status.text.contains("21/21 unique ideas accepted")
+		and status.text.contains("2 generation batches")
+		and status.text.contains("1 rejected candidate")
+		and not status.text.contains(" raw")
+		and not status.text.contains("provider request")
+		and status.tooltip_text.contains("Initial generated candidates: 22")
+		and status.tooltip_text.contains("Total validation-pass candidates: 22")
 		and fake.requests == [12, 10],
 		"The live session must finish at the accepted target without prequeuing or making an uncontrolled extra request (captured=%d status=%s requests=%s)."
 		% [captured.size(), status.text, str(fake.requests)]

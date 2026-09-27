@@ -140,9 +140,9 @@ func _test_live_workspace_aggregation() -> void:
 	_require(
 		plan_value is Array
 		and (plan_value as Array).size() == 25
-		and plan_hint.text.contains("25 sequential provider requests")
+		and plan_hint.text.contains("25 sequential generation batches")
 		and plan_hint.text.contains("one idea at a time"),
-		"The UI must disclose the exact provider request count before one-at-a-time generation."
+		"The UI must disclose the maximum generation-batch count before one-at-a-time generation."
 	)
 	var service_capabilities: Dictionary = capabilities.get("service", {})
 	_require(

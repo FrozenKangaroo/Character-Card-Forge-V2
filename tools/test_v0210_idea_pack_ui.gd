@@ -96,6 +96,8 @@ func _run() -> void:
 		return
 	if not _test_export_context_freshness(generator):
 		return
+	if not _test_notebook_multi_select_and_scope(generator):
+		return
 	if not _test_independent_file_dialogs(generator):
 		return
 	app.queue_free()
@@ -234,10 +236,9 @@ func _test_export_scope_selection(
 	generator.call("_choose_export_path_v0210")
 	var pending: Array = generator.get("_pending_export_ideas_v0210")
 	if not _require(
-		pending.size() == 2
-		and str((pending[0] as Dictionary).get("id", "")) == "local-a1"
-		and str((pending[1] as Dictionary).get("id", "")) == "local-b1",
-		"Export must include exactly the checked rows and no unchecked rows."
+		pending.size() == 1
+		and str((pending[0] as Dictionary).get("id", "")) == "local-a1",
+		"Export must include exactly the checked rows visible in the active scope."
 	):
 		return false
 	var pack_service := generator.get("_idea_pack_service_v0210") as CCFIdeaPackServiceV0210
@@ -252,7 +253,7 @@ func _test_export_scope_selection(
 		str(pack.get("format", "")) == CCFIdeaPackServiceV0210.FORMAT_ID
 		and int(pack.get("schema_version", 0)) == CCFIdeaPackServiceV0210.SCHEMA_VERSION
 		and str((pack.get("pack", {}) as Dictionary).get("description", "")) == "Selection-only regression metadata"
-		and (pack.get("entries", []) as Array).size() == 2
+		and (pack.get("entries", []) as Array).size() == 1
 		and bool(reparsed.get("import_allowed", false)),
 		"Idea Pack format, metadata and import compatibility must remain unchanged."
 	)
@@ -333,7 +334,11 @@ func _test_export_context_freshness(
 	var idea_a_scope := generator.get("_export_scope_v0210") as OptionButton
 	if not _require(
 		_scope_metadata(idea_a_scope)
-		== {"kind": "selected", "value": str(local_ids.get("idea-a", ""))},
+		== {
+			"kind": "selected",
+			"value": str(local_ids.get("idea-a", "")),
+			"values": [str(local_ids.get("idea-a", ""))]
+		},
 		"Selected idea context must reference the current Idea A local ID."
 	):
 		_remove_tree(test_root)
@@ -345,7 +350,11 @@ func _test_export_context_freshness(
 	var idea_b_scope := generator.get("_export_scope_v0210") as OptionButton
 	if not _require(
 		_scope_metadata(idea_b_scope)
-		== {"kind": "selected", "value": str(local_ids.get("idea-b", ""))}
+		== {
+			"kind": "selected",
+			"value": str(local_ids.get("idea-b", "")),
+			"values": [str(local_ids.get("idea-b", ""))]
+		}
 		and _scope_metadata(idea_b_scope) != _scope_metadata(idea_a_scope),
 		"Reopening after selecting Idea B must not retain Idea A as the selected-idea scope."
 	):
@@ -359,6 +368,182 @@ func _test_export_context_freshness(
 	var result := _require(
 		_scope_metadata(bible_scope) == {"kind": "bible", "value": "Bible C"},
 		"A current Bible-classified Series item with no Series value must initialise its Bible scope."
+	)
+	(generator.get("_export_window_v0210") as Window).hide()
+	_remove_tree(test_root)
+	return result
+
+
+func _test_notebook_multi_select_and_scope(
+	generator: CCFIdeaGeneratorWindowCurrent
+) -> bool:
+	var test_root := "user://ccf_v0214_notebook_scope_%d" % Time.get_ticks_usec()
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(test_root))
+	var library := {
+		"format": "character_card_forge_idea_notebook",
+		"format_version": 1,
+		"notebooks": [
+			{"id": "pregnant-notebook", "name": "She Got Pregnant"},
+			{"id": "other-notebook", "name": "Other Ideas"}
+		]
+	}
+	var library_file := FileAccess.open(
+		test_root.path_join("library.json"), FileAccess.WRITE
+	)
+	if not _require(library_file != null, "Notebook scope fixture library must be writable."):
+		_remove_tree(test_root)
+		return false
+	library_file.store_string(JSON.stringify(library))
+	library_file.close()
+	var service := CCFIdeaPackServiceV0210.new(test_root)
+	var entries: Array[Dictionary] = []
+	for index in range(67):
+		var series_values: Array[String] = []
+		if index == 0:
+			series_values.append("She Got Pregnant")
+		entries.append(_export_test_entry(
+			"pregnant-%02d" % index,
+			"seed",
+			"Pregnancy Idea %02d" % index,
+			"Bible I",
+			series_values
+		))
+	var preview := service.parse_text(JSON.stringify({
+		"format": CCFIdeaPackServiceV0210.FORMAT_ID,
+		"schema_version": CCFIdeaPackServiceV0210.SCHEMA_VERSION,
+		"pack": {"id": "notebook-scope", "title": "Notebook Scope"},
+		"entries": entries
+	}))
+	var selections: Array[Dictionary] = []
+	for index in range(entries.size()):
+		selections.append({"index": index, "selected": true, "action": "import"})
+	var imported := service.import_preview(preview, selections, "pregnant-notebook")
+	var outside_entry := _export_test_entry(
+		"outside", "seed", "Outside Idea", "Bible II", ["Other Series"]
+	)
+	var outside_preview := service.parse_text(JSON.stringify({
+		"format": CCFIdeaPackServiceV0210.FORMAT_ID,
+		"schema_version": CCFIdeaPackServiceV0210.SCHEMA_VERSION,
+		"pack": {"id": "outside-scope", "title": "Outside Scope"},
+		"entries": [outside_entry]
+	}))
+	var outside_import := service.import_preview(
+		outside_preview,
+		[{"index": 0, "selected": true, "action": "import"}],
+		"other-notebook"
+	)
+	if not _require(
+		bool(imported.get("ok", false))
+		and int(imported.get("imported", 0)) == 67
+		and bool(outside_import.get("ok", false)),
+		"The Notebook-vs-Series fixture must import 67 notebook members plus one outside idea."
+	):
+		_remove_tree(test_root)
+		return false
+	var local_ids := {}
+	for idea in service.list_local_ideas(true):
+		local_ids[service.original_import_id(idea)] = str(idea.get("id", ""))
+	var ordered_ids: Array[String] = []
+	for index in range(67):
+		ordered_ids.append(str(local_ids.get("pregnant-%02d" % index, "")))
+	ordered_ids.append(str(local_ids.get("outside", "")))
+	generator.set("_idea_pack_service_v0210", service)
+	var notebook_list := generator.get("_idea_list_v01532") as ItemList
+	notebook_list.clear()
+	for index in range(ordered_ids.size()):
+		notebook_list.add_item("Idea %d" % index)
+	generator.set("_visible_idea_ids_v01532", ordered_ids)
+	notebook_list.deselect_all()
+	for index in [0, 2, 5, 6]:
+		notebook_list.select(index, false)
+	generator.call("_on_idea_multi_selected_v0214", 6, true)
+	var focused_id := str(generator.get("_selected_idea_id_v01532"))
+	generator.call("_open_export_window_v0210")
+	var scope := generator.get("_export_scope_v0210") as OptionButton
+	var selected_index := _scope_index(scope, "selected", "")
+	var notebook_index := _scope_index(scope, "notebook", "pregnant-notebook")
+	var series_index := _scope_index(scope, "series", "She Got Pregnant")
+	if not _require(
+		notebook_list.select_mode == ItemList.SELECT_MULTI
+		and focused_id == ordered_ids[6]
+		and str(generator.get("_selected_idea_id_v01532")) == focused_id
+		and selected_index >= 0
+		and scope.get_item_text(selected_index) == "Selected Ideas (4)"
+		and notebook_index >= 0
+		and scope.get_item_text(notebook_index) == "Notebook: She Got Pregnant (67)"
+		and series_index >= 0
+		and scope.get_item_text(series_index) == "Series: She Got Pregnant (1)",
+		"Multi-selection must remain independent from the focused editor item, while Notebook and semantic Series expose different matcher-derived counts."
+	):
+		_remove_tree(test_root)
+		return false
+	_apply_scope(generator, scope, selected_index)
+	var rows: Array = generator.get("_export_rows_v0210")
+	if not _require(
+		_visible_count(rows) == 4,
+		"Selected Ideas must show every live selected ID and no unrelated row."
+	):
+		_remove_tree(test_root)
+		return false
+	generator.call("_choose_export_path_v0210")
+	var pending: Array = generator.get("_pending_export_ideas_v0210")
+	if not _require(
+		pending.size() == 4,
+		"Selected Ideas export must include all four checked selected-set members."
+	):
+		_remove_tree(test_root)
+		return false
+	_apply_scope(generator, scope, notebook_index)
+	if not _require(
+		_visible_count(rows) == 67,
+		"Notebook scope must show all 67 stable-ID notebook members."
+	):
+		_remove_tree(test_root)
+		return false
+	generator.call("_set_export_selection_v0210", false)
+	if not _require(
+		_checked_visible_count(rows) == 0,
+		"Notebook Select None must affect every visible notebook member."
+	):
+		_remove_tree(test_root)
+		return false
+	generator.call("_set_export_selection_v0210", true)
+	if not _require(
+		_checked_visible_count(rows) == 67,
+		"Notebook Select All must affect every visible notebook member only."
+	):
+		_remove_tree(test_root)
+		return false
+	_apply_scope(generator, scope, series_index)
+	if not _require(
+		_visible_count(rows) == 1,
+		"Semantic Series scope must remain independent and show its one classified idea."
+	):
+		_remove_tree(test_root)
+		return false
+	(generator.get("_export_window_v0210") as Window).hide()
+	notebook_list.deselect_all()
+	notebook_list.select(67, false)
+	generator.call("_on_idea_multi_selected_v0214", 67, true)
+	generator.call("_open_export_window_v0210")
+	scope = generator.get("_export_scope_v0210") as OptionButton
+	selected_index = _scope_index(scope, "selected", "")
+	if not _require(
+		scope.get_item_text(selected_index) == "Selected Ideas (1)",
+		"Reopening export must read the changed live selection rather than stale IDs."
+	):
+		_remove_tree(test_root)
+		return false
+	(generator.get("_export_window_v0210") as Window).hide()
+	notebook_list.deselect_all()
+	generator.call("_open_export_window_v0210")
+	scope = generator.get("_export_scope_v0210") as OptionButton
+	selected_index = _scope_index(scope, "selected", "")
+	var result := _require(
+		selected_index >= 0
+		and scope.get_item_text(selected_index) == "Selected Ideas (0)"
+		and str(_scope_metadata(scope).get("kind", "")) == "all",
+		"Zero selection must be safe, visibly counted and must not reuse a stale selected idea."
 	)
 	(generator.get("_export_window_v0210") as Window).hide()
 	_remove_tree(test_root)
@@ -437,6 +622,21 @@ func _scope_metadata(scope: OptionButton) -> Dictionary:
 	return (metadata_value as Dictionary).duplicate(true) if metadata_value is Dictionary else {}
 
 
+func _scope_index(scope: OptionButton, kind: String, value: String) -> int:
+	if scope == null:
+		return -1
+	for index in range(scope.item_count):
+		var metadata_value: Variant = scope.get_item_metadata(index)
+		if not metadata_value is Dictionary:
+			continue
+		var metadata := metadata_value as Dictionary
+		if str(metadata.get("kind", "")) != kind:
+			continue
+		if value.is_empty() or str(metadata.get("value", "")) == value:
+			return index
+	return -1
+
+
 func _export_test_idea(
 	local_id: String,
 	entry_id: String,
@@ -483,6 +683,33 @@ func _visible(rows: Array[Dictionary]) -> Array[bool]:
 	for row in rows:
 		result.append((row.get("check") as CheckBox).visible)
 	return result
+
+
+func _visible_count(rows: Array) -> int:
+	var count := 0
+	for row_value in rows:
+		if (
+			row_value is Dictionary
+			and (row_value as Dictionary).get("check") is CheckBox
+			and ((row_value as Dictionary).get("check") as CheckBox).visible
+		):
+			count += 1
+	return count
+
+
+func _checked_visible_count(rows: Array) -> int:
+	var count := 0
+	for row_value in rows:
+		if not row_value is Dictionary:
+			continue
+		var check_value: Variant = (row_value as Dictionary).get("check")
+		if (
+			check_value is CheckBox
+			and (check_value as CheckBox).visible
+			and (check_value as CheckBox).button_pressed
+		):
+			count += 1
+	return count
 
 
 func _remove_tree(path: String) -> void:
