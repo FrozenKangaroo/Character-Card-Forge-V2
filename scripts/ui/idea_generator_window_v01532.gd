@@ -393,6 +393,8 @@ func _save_selected_generated_v01532() -> void:
 		"seed_prompt": str(_last_generation_metadata_v01532.get("seed", "")),
 		"idea_contract_version": str(_last_generation_metadata_v01532.get("idea_contract_version", "")),
 		"project_id": str(_last_generation_metadata_v01532.get("project_id", "")),
+		"idea_source_id": str(_last_generation_metadata_v01532.get("idea_source_id", "")),
+		"idea_source_title": str(_last_generation_metadata_v01532.get("idea_source_title", "")),
 		"captured_at": Time.get_datetime_string_from_system(true)
 	}
 	var saved_count := 0

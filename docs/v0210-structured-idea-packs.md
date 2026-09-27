@@ -71,12 +71,31 @@ entry remains intact for export.
 ## Export workflow
 
 Choose **Choose Ideas & Export…** from Idea Notebook. Opening the export window reads the
-Notebook's current selection and its latest Series/Bible classification instead of
-reusing context from a previous export. Selection scopes include all ideas, the current
-selected idea, one Bible and one Series, followed by per-entry selection.
+Notebook's live multi-selection and its latest Notebook/Series/Bible context instead of
+reusing context from a previous export. Selection scopes show matcher-derived counts and
+include **All Ideas**, **Selected Ideas**, each named **Notebook**, one semantic Bible and
+one semantic Series, followed by per-entry selection.
+
+Notebook membership and Series classification are intentionally different. A Notebook
+is the user's saved-idea container, identified internally by its stable notebook ID. A
+semantic Series comes only from structured `classification.primary_series` and
+`classification.secondary_series` data. A Notebook containing 67 ideas can therefore
+correctly coexist with a same-named semantic Series containing only one classified idea.
+No existing records are rewritten to make those counts match.
+
+Newly saved generated ideas also retain the active Idea Source's stable ID and title in
+their existing source-provenance dictionary when one was active. This is additive
+metadata; older notebook records require no migration and Notebook scope relies only on
+their existing stable `notebook_id`.
+
+Idea Notebook uses standard desktop multi-selection. The most recently focused idea
+remains the single editable Idea Details target, while the complete selected set feeds
+**Selected Ideas**. Reopening export reads the live selected IDs; zero selection is shown
+as **Selected Ideas (0)** and never falls back to stale context.
 
 The active scope filters the checklist. **Select All** and **Select None** affect only the
-ideas in that scope, while individual checkboxes remain editable. Changing scope
+ideas in that scope, while individual checkboxes remain editable. Only checked rows in
+the visible active scope are exported. Changing scope
 initialises the matching selection; it does not make later manual checkbox changes
 automatic. Pack title, ID, description and source version remain editable before
 choosing **Export Checked Ideas…**.

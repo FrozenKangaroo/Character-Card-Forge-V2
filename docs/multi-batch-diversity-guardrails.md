@@ -15,11 +15,11 @@ After each normal request, CCF recalculates:
 `remaining = requested target - accepted count`
 
 The next request asks for the smaller of that remaining count and the configured **Ideas
-per provider request** limit. A 21-idea run using 12 per request therefore normally asks
+per generation batch** limit. A 21-idea run using 12 per batch therefore normally asks
 for 12 and 9. If only 11 ideas from the first response survive, the next request asks for
 10 instead.
 
-The number of normal provider requests remains bounded by the original plan. CCF does
+The number of normal generation batches remains bounded by the original plan. CCF does
 not keep retrying until the target is filled.
 
 ## Temporary diversity ledger
@@ -82,6 +82,10 @@ The review sends compact IDs, titles and scenario fingerprints rather than full
 character-card-sized records. Its report explains each cluster. Reject mode is explicit
 and conservative; it never rewrites ideas already saved in Idea Notebook.
 
+The report opens as an independent native desktop window. It can be moved outside CCF,
+resized and placed on another monitor without becoming globally always-on-top. Closing
+the report does not discard the generated results.
+
 ## Optional one-shot top-up
 
 **One final top-up request if short** is also off by default. After normal requests,
@@ -97,9 +101,25 @@ ideas, the session ends at 29/30 and reports that result.
 
 ## Progress and usage
 
-Status messages report accepted ideas against the target, along with raw and rejected
-counts. They also identify batch generation, final similarity review and the one-shot
-recovery phase. Raw rejected responses are never presented as completed target ideas.
+The concise status reports accepted ideas against the target, generation batches,
+rejected candidates and similarity warnings. A generation batch is a top-level Idea
+Generator request, including the optional one-shot top-up; it is not an estimate of all
+model/API calls.
+
+The status tooltip provides diagnostic processing counts with distinct meanings:
+
+- **Initial generated candidates** are candidates returned by top-level generation
+  batches before semantic repair.
+- **Semantic repair passes** count full-array semantic repair operations.
+- **Repaired candidates processed** count candidate objects returned by those passes.
+- **Total validation-pass candidates** counts initial plus repaired candidate objects
+  processed by validation. It does not mean that many distinct ideas were generated.
+
+For example, four 12-candidate generation batches with three full 12-candidate repairs
+report 48 initial candidates, three repair passes, 36 repaired candidates and 84 total
+validation-pass candidates. The main status still correctly says four generation
+batches. CCF does not currently claim an all-inclusive model-call total because retries,
+repairs and optional review calls are not centrally accounted as one reliable metric.
 
 Repeat prevention itself adds prompt context but no extra request. **Final AI similarity
 check** can add one model call. **One final top-up request if short** can add one more.
