@@ -262,7 +262,7 @@ func _test_export_scope_selection(
 func _test_export_context_freshness(
 	generator: CCFIdeaGeneratorWindowCurrent
 ) -> bool:
-	var test_root := "user://ccf_v0210_export_context_%d" % Time.get_ticks_usec()
+	var test_root := "/tmp/ccf_v0210_export_context_%d" % Time.get_ticks_usec()
 	var service := CCFIdeaPackServiceV0210.new(test_root)
 	var entries: Array[Dictionary] = [
 		_export_test_entry("series-a", "series", "Series A", "Bible A", ["Series A"]),
@@ -377,7 +377,7 @@ func _test_export_context_freshness(
 func _test_notebook_multi_select_and_scope(
 	generator: CCFIdeaGeneratorWindowCurrent
 ) -> bool:
-	var test_root := "user://ccf_v0214_notebook_scope_%d" % Time.get_ticks_usec()
+	var test_root := "/tmp/ccf_v0214_notebook_scope_%d" % Time.get_ticks_usec()
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(test_root))
 	var library := {
 		"format": "character_card_forge_idea_notebook",

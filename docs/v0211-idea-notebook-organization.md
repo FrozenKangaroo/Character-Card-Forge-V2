@@ -25,8 +25,15 @@ These controls compose with the existing idea text search, tag filter and archiv
 visibility. For example, an author can search all notebooks for a tag, order matching
 ideas by notebook then title and still see exactly where every result is filed.
 
+## Superseded navigation
+
+v0.21.5 replaces the flat Notebook picker described above with a persistent nested folder
+tree. The idea sorting, filtering, multi-selection and explicit generated-Idea save
+semantics remain in place. See [v0.21.5 Idea Notebook Folder Tree](v0215-idea-notebook-folder-tree.md).
+
 ## Compatibility
 
-Notebook and saved-idea storage remain format version 1. No migration, new index or
-parallel database is introduced; organization is computed from the existing files.
-Deleting a notebook still preserves its ideas by moving them to Unfiled.
+Saved Idea files remain format version 1. v0.21.5 upgrades only `library.json` metadata to
+format version 2 so Notebook parent-folder IDs and folder records can be stored. Existing
+Notebook and Idea IDs remain unchanged. Deleting a notebook still preserves its ideas by
+moving them to Unfiled.

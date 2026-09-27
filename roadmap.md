@@ -60,12 +60,11 @@ derivatives, Split Character Sets and task-specific Text routing in one semantic
 available for compatibility evidence, while deterministic tooling proves the active
 generation-service depth fell from 34 to 31 scripts and prevents renewed service stacking.
 
-The v0.21.3 development candidate adds reusable **Idea Sources** one stage before the
-existing Idea Generator. Portable `.ccfideasource.json` files and a separate internal
-Source Library preserve structured Series/premise context across batching without
-creating Idea Notebook outputs automatically. Existing cards can extract an editable
-reusable engine for **Generate Similar Ideas**, distinct from Alternative Version and
-without modifying the source card.
+The v0.21.5 development candidate adds a nested **Idea Notebook Folder Tree** over the
+existing stable Notebook/Idea model. Organisational folders may nest, folder selection
+recursively includes descendant Notebooks, and path-aware save/export controls retain
+stable IDs. Folder names never acquire Bible, Series, tag, priority or source semantics.
+The v0.21.4 diversity/telemetry follow-up and v0.21.3 reusable Idea Sources remain intact.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -179,7 +178,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.3** and uses the Godot
+The current source candidate displays **v0.21.5** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -188,6 +187,20 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.5 — Idea Notebook Folder Tree (candidate)
+
+- Replaced the flat Notebook picker with a persistent, resizable hierarchy of folders,
+  subfolders and Notebook leaves beside Saved Ideas and Idea Details.
+- Added recursive folder selection/counts, path-preserving tree search, folder-first
+  sibling sorting, local expanded-state persistence and stable selection restoration.
+- Added stable-ID Folder/Notebook create, rename and drag/drop moves with cycle prevention,
+  invalid-parent recovery and safe folder deletion that reparents contents without
+  rewriting or deleting Ideas.
+- Preserved All Ideas, Unfiled, Saved Ideas multi-selection, focused Idea Details,
+  Notebook/Bible/Series export semantics and added optional recursive Folder export.
+- Added automatic format-v1 to format-v2 library normalisation without changing existing
+  Notebook IDs, Idea IDs or individual saved Idea files.
 
 ### v0.21.3 — Reusable Idea Sources (candidate)
 
@@ -960,7 +973,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 - Improve semantic colour/theme consistency, keyboard navigation, detachable-window behaviour, multi-monitor use, resizing and long-text editing.
 - Improve visible progress/error states for long AI operations and queue labels for project/character/workflow/role/provider/model/section/dependency state.
-- Improve Idea Notebook browsing and source-aware Collaborator provenance/conflict/target/reference/completion guidance.
+- Continue improving source-aware Collaborator provenance/conflict/target/reference/completion guidance; the scalable Idea Notebook folder browser is complete in v0.21.5.
 - Keep Image Studio creative controls compact through progressive disclosure and provider-specific controls visible only when relevant.
 - Continue replacing silent button no-ops with visible actionable status messages.
 

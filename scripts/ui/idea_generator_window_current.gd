@@ -10,6 +10,9 @@ const IDEA_PACK_SERVICE_V0210 = preload(
 const IDEA_SOURCE_SERVICE_V0213 = preload(
 	"res://scripts/services/idea_source_service_v0213.gd"
 )
+const IDEA_NOTEBOOK_TREE_V0215 = preload(
+	"res://scripts/ui/idea_notebook_tree_v0215.gd"
+)
 
 var _idea_pack_service_v0210 := IDEA_PACK_SERVICE_V0210.new()
 var _import_dialog_v0210: FileDialog
@@ -33,6 +36,7 @@ var _export_status_v0210: Label
 var _pending_export_ideas_v0210: Array[Dictionary] = []
 var _structured_detail_v0210: TextEdit
 var _export_selected_idea_ids_v0214: Array[String] = []
+var _export_folder_notebook_ids_v0215: Dictionary = {}
 
 var _notebook_search_v0211: LineEdit
 var _notebook_sort_v0211: OptionButton
@@ -40,6 +44,20 @@ var _idea_sort_v0211: OptionButton
 var _idea_result_summary_v0211: Label
 var _save_new_notebook_dialog_v0211: ConfirmationDialog
 var _save_new_notebook_name_v0211: LineEdit
+var _save_new_notebook_folder_v0215: OptionButton
+
+var _notebook_tree_v0215: Tree
+var _notebook_tree_popup_v0215: PopupMenu
+var _notebook_tree_selection_kind_v0215 := "special"
+var _notebook_tree_selection_id_v0215 := "__all__"
+var _notebook_tree_items_v0215: Dictionary = {}
+var _notebook_tree_rebuilding_v0215 := false
+var _notebook_tree_name_action_v0215 := ""
+var _notebook_tree_pending_delete_kind_v0215 := ""
+var _notebook_tree_context_metadata_v0215: Dictionary = {}
+var _notebook_tree_root_v0215: TreeItem
+var _notebook_tree_last_query_v0215 := ""
+var _notebook_tree_expanded_before_search_v0215: Array[String] = []
 
 var _idea_source_service_v0213 := IDEA_SOURCE_SERVICE_V0213.new()
 var _active_idea_source_v0213: Dictionary = {}
@@ -98,6 +116,7 @@ func _build_notebook_tab_v01532() -> void:
 	if not _idea_list_v01532.multi_selected.is_connected(multi_select_callback):
 		_idea_list_v01532.multi_selected.connect(multi_select_callback)
 	_install_notebook_organization_v0211()
+	_install_notebook_folder_tree_v0215()
 	var toolbar := VBoxContainer.new()
 	toolbar.name = "IdeaPackActionsV0210"
 	toolbar.add_theme_constant_override("separation", 8)
@@ -212,6 +231,259 @@ func _install_notebook_organization_v0211() -> void:
 		)
 
 
+func _install_notebook_folder_tree_v0215() -> void:
+	if _idea_list_v01532 == null or _notebook_filter_v01532 == null:
+		return
+	_notebook_filter_v01532.visible = false
+	var legacy_filters := _notebook_filter_v01532.get_parent()
+	if legacy_filters != null:
+		for child in legacy_filters.get_children():
+			if child is Button and (child as Button).text in [
+				"New Notebook…", "Rename…", "Delete Notebook…"
+			]:
+				(child as Button).visible = false
+	var ideas_panel := _idea_list_v01532.get_parent() as VBoxContainer
+	if ideas_panel == null:
+		return
+	var outer_split := ideas_panel.get_parent() as HSplitContainer
+	if outer_split == null or outer_split.get_child_count() < 2:
+		return
+	var editor_panel := outer_split.get_child(1) as Control
+	if editor_panel == null:
+		return
+	outer_split.remove_child(ideas_panel)
+	outer_split.remove_child(editor_panel)
+	outer_split.split_offset = 280
+
+	var tree_panel := VBoxContainer.new()
+	tree_panel.name = "IdeaNotebookTreePanelV0215"
+	tree_panel.custom_minimum_size.x = 220
+	tree_panel.add_theme_constant_override("separation", 5)
+	outer_split.add_child(tree_panel)
+	var tree_heading := Label.new()
+	tree_heading.text = "Folders & Notebooks"
+	tree_heading.add_theme_font_size_override("font_size", 17)
+	tree_panel.add_child(tree_heading)
+	var toolbar := HFlowContainer.new()
+	toolbar.name = "IdeaNotebookTreeToolbarV0215"
+	toolbar.add_theme_constant_override("separation", 5)
+	tree_panel.add_child(toolbar)
+	_add_tree_toolbar_button_v0215(toolbar, "+ Folder", "Create a folder inside the selected folder.", "new_folder")
+	_add_tree_toolbar_button_v0215(toolbar, "+ Notebook", "Create a notebook in the selected folder.", "new_notebook")
+	_add_tree_toolbar_button_v0215(toolbar, "Rename", "Rename the selected folder or notebook.", "rename")
+	_add_tree_toolbar_button_v0215(toolbar, "Delete", "Safely delete the selected folder or notebook.", "delete")
+
+	var organization := ideas_panel.get_node_or_null("IdeaNotebookOrganizationV0211") as VBoxContainer
+	if organization != null:
+		if _notebook_search_v0211.get_parent() == organization:
+			organization.remove_child(_notebook_search_v0211)
+			tree_panel.add_child(_notebook_search_v0211)
+		if _notebook_sort_v0211.get_parent() == organization:
+			organization.remove_child(_notebook_sort_v0211)
+			tree_panel.add_child(_notebook_sort_v0211)
+	_notebook_search_v0211.placeholder_text = "Find folder or notebook…"
+	_notebook_search_v0211.tooltip_text = "Search the hierarchy while retaining matching items and their ancestor path."
+	_notebook_sort_v0211.tooltip_text = "Sort notebook siblings inside every folder. Folders remain grouped first."
+
+	_notebook_tree_v0215 = IDEA_NOTEBOOK_TREE_V0215.new()
+	_notebook_tree_v0215.name = "IdeaNotebookFolderTreeV0215"
+	_notebook_tree_v0215.hide_root = true
+	_notebook_tree_v0215.columns = 1
+	_notebook_tree_v0215.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_notebook_tree_v0215.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_notebook_tree_v0215.allow_reselect = true
+	_notebook_tree_v0215.set_column_expand(0, true)
+	_notebook_tree_v0215.set_column_custom_minimum_width(0, 220)
+	_notebook_tree_v0215.item_selected.connect(_on_notebook_tree_selected_v0215)
+	_notebook_tree_v0215.item_collapsed.connect(_on_notebook_tree_collapsed_v0215)
+	_notebook_tree_v0215.gui_input.connect(_on_notebook_tree_gui_input_v0215)
+	(_notebook_tree_v0215 as CCFIdeaNotebookTreeV0215).hierarchy_drop.connect(
+		_on_notebook_tree_drop_v0215
+	)
+	tree_panel.add_child(_notebook_tree_v0215)
+
+	var inner_split := HSplitContainer.new()
+	inner_split.name = "IdeaNotebookIdeasAndDetailsV0215"
+	inner_split.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	inner_split.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	inner_split.split_offset = 360
+	outer_split.add_child(inner_split)
+	inner_split.add_child(ideas_panel)
+	inner_split.add_child(editor_panel)
+	ideas_panel.custom_minimum_size.x = 280
+	editor_panel.custom_minimum_size.x = 380
+
+	_notebook_tree_popup_v0215 = PopupMenu.new()
+	_notebook_tree_popup_v0215.name = "IdeaNotebookTreeContextV0215"
+	_notebook_tree_popup_v0215.id_pressed.connect(_on_notebook_tree_context_action_v0215)
+	add_child(_notebook_tree_popup_v0215)
+
+
+func _add_tree_toolbar_button_v0215(
+	parent: Control, label: String, tooltip: String, action: String
+) -> void:
+	var button := Button.new()
+	button.text = label
+	button.tooltip_text = tooltip
+	button.pressed.connect(_on_notebook_tree_toolbar_v0215.bind(action))
+	parent.add_child(button)
+
+
+func _on_notebook_tree_toolbar_v0215(action: String) -> void:
+	match action:
+		"new_folder": _open_tree_name_dialog_v0215("new_folder")
+		"new_notebook": _open_tree_name_dialog_v0215("new_notebook")
+		"rename": _open_tree_name_dialog_v0215("rename")
+		"delete": _request_tree_delete_v0215()
+
+
+func _open_tree_name_dialog_v0215(action: String) -> void:
+	_notebook_tree_name_action_v0215 = action
+	_name_action_v01532 = action
+	var metadata := _selected_tree_metadata_v0215()
+	var kind := str(metadata.get("kind", "special"))
+	var target_parent := _tree_creation_parent_v0215()
+	var target_path := NOTEBOOK_SERVICE.folder_path(target_parent)
+	var location := "root" if target_path.is_empty() else "‘%s’" % target_path
+	if action == "rename":
+		if kind != "folder" and kind != "notebook":
+			_status_v01532.text = "All Ideas and Unfiled are built-in views and cannot be renamed."
+			return
+		_name_input_v01532.text = str(metadata.get("name", ""))
+		_name_dialog_v01532.dialog_text = "Rename the selected %s. Its stable ID and contents will not change." % kind
+		_name_dialog_v01532.ok_button_text = "Rename"
+	elif action == "new_folder":
+		_name_input_v01532.text = ""
+		_name_dialog_v01532.dialog_text = "Create a new folder inside %s." % location
+		_name_dialog_v01532.ok_button_text = "Create Folder"
+	else:
+		_name_input_v01532.text = ""
+		_name_dialog_v01532.dialog_text = "Create a new notebook inside %s." % location
+		_name_dialog_v01532.ok_button_text = "Create Notebook"
+	_name_dialog_v01532.popup_centered()
+	_name_input_v01532.grab_focus()
+
+
+func _open_name_dialog_v01532(action: String) -> void:
+	_open_tree_name_dialog_v0215("rename" if action == "rename" else "new_notebook")
+
+
+func _apply_name_dialog_v01532() -> void:
+	var metadata := _selected_tree_metadata_v0215()
+	var result: Dictionary
+	match _notebook_tree_name_action_v0215:
+		"new_folder":
+			result = NOTEBOOK_SERVICE.create_folder(
+				_name_input_v01532.text, _tree_creation_parent_v0215()
+			)
+			if bool(result.get("ok", false)):
+				var folder: Dictionary = result.get("folder", {})
+				_notebook_tree_selection_kind_v0215 = "folder"
+				_notebook_tree_selection_id_v0215 = str(folder.get("id", ""))
+		"new_notebook":
+			result = NOTEBOOK_SERVICE.create_notebook(
+				_name_input_v01532.text, _tree_creation_parent_v0215()
+			)
+			if bool(result.get("ok", false)):
+				var notebook: Dictionary = result.get("notebook", {})
+				_notebook_tree_selection_kind_v0215 = "notebook"
+				_notebook_tree_selection_id_v0215 = str(notebook.get("id", ""))
+		"rename":
+			var kind := str(metadata.get("kind", ""))
+			if kind == "folder":
+				result = NOTEBOOK_SERVICE.rename_folder(
+					str(metadata.get("id", "")), _name_input_v01532.text
+				)
+			elif kind == "notebook":
+				result = NOTEBOOK_SERVICE.rename_notebook(
+					str(metadata.get("id", "")), _name_input_v01532.text
+				)
+			else:
+				result = {"ok": false, "error": "Select a folder or notebook to rename."}
+		_:
+			result = {"ok": false, "error": "Unknown notebook action."}
+	if not bool(result.get("ok", false)):
+		_status_v01532.text = str(result.get("error", "Could not update the notebook hierarchy."))
+		return
+	_refresh_notebook_v01532()
+	_status_v01532.text = "Idea Notebook hierarchy updated."
+
+
+func _request_tree_delete_v0215() -> void:
+	var metadata := _selected_tree_metadata_v0215()
+	var kind := str(metadata.get("kind", "special"))
+	var item_name := str(metadata.get("name", ""))
+	if kind == "folder":
+		_notebook_tree_pending_delete_kind_v0215 = "folder"
+		_delete_notebook_dialog_v01532.title = "Delete Idea Notebook Folder"
+		_delete_notebook_dialog_v01532.ok_button_text = "Delete Folder"
+		_delete_notebook_dialog_v01532.dialog_text = (
+			"Delete folder ‘%s’? Its subfolders and notebooks will be kept and moved to the parent level. No ideas will be deleted."
+			% item_name
+		)
+	elif kind == "notebook":
+		_notebook_tree_pending_delete_kind_v0215 = "notebook"
+		_delete_notebook_dialog_v01532.title = "Delete Idea Notebook"
+		_delete_notebook_dialog_v01532.ok_button_text = "Delete Notebook"
+		_delete_notebook_dialog_v01532.dialog_text = (
+			"Delete notebook ‘%s’? Its saved ideas will be kept and moved to Unfiled."
+			% item_name
+		)
+	else:
+		_status_v01532.text = "All Ideas and Unfiled are built-in views and cannot be deleted."
+		return
+	_delete_notebook_dialog_v01532.popup_centered()
+
+
+func _request_delete_notebook_v01532() -> void:
+	_request_tree_delete_v0215()
+
+
+func _delete_selected_notebook_v01532() -> void:
+	var metadata := _selected_tree_metadata_v0215()
+	var item_id := str(metadata.get("id", ""))
+	var result: Dictionary
+	if _notebook_tree_pending_delete_kind_v0215 == "folder":
+		result = NOTEBOOK_SERVICE.delete_folder(item_id)
+	else:
+		result = NOTEBOOK_SERVICE.delete_notebook(item_id)
+	if not bool(result.get("ok", false)):
+		_status_v01532.text = str(result.get("error", "Could not delete the selected item."))
+		return
+	_notebook_tree_selection_kind_v0215 = "special"
+	_notebook_tree_selection_id_v0215 = "__all__"
+	_refresh_notebook_v01532()
+	_status_v01532.text = (
+		"Folder deleted; its contents were kept at the parent level."
+		if _notebook_tree_pending_delete_kind_v0215 == "folder"
+		else "Notebook deleted; its ideas are now Unfiled."
+	)
+
+
+func _tree_creation_parent_v0215() -> String:
+	var metadata := _selected_tree_metadata_v0215()
+	var kind := str(metadata.get("kind", "special"))
+	if kind == "folder":
+		return str(metadata.get("id", ""))
+	if kind == "notebook":
+		return str(metadata.get("parent_folder_id", ""))
+	return ""
+
+
+func _selected_tree_metadata_v0215() -> Dictionary:
+	if _notebook_tree_v0215 != null:
+		var item := _notebook_tree_v0215.get_selected()
+		if item != null:
+			var value: Variant = item.get_metadata(0)
+			if value is Dictionary:
+				return (value as Dictionary).duplicate(true)
+	return {
+		"kind": _notebook_tree_selection_kind_v0215,
+		"id": _notebook_tree_selection_id_v0215,
+		"name": ""
+	}
+
+
 func _open_save_generated_v01532() -> void:
 	super._open_save_generated_v01532()
 	if _save_generated_notebook_v01532 == null:
@@ -241,11 +513,18 @@ func _build_save_new_notebook_dialog_v0211() -> void:
 		"Name the notebook that should receive the selected generated ideas."
 	)
 	_save_new_notebook_dialog_v0211.ok_button_text = "Create and Select"
+	var content := VBoxContainer.new()
+	content.add_theme_constant_override("separation", 6)
+	_save_new_notebook_dialog_v0211.add_child(content)
 	_save_new_notebook_name_v0211 = LineEdit.new()
 	_save_new_notebook_name_v0211.name = "SaveNewNotebookNameV0211"
 	_save_new_notebook_name_v0211.placeholder_text = "Notebook name"
 	_save_new_notebook_name_v0211.custom_minimum_size.x = 400
-	_save_new_notebook_dialog_v0211.add_child(_save_new_notebook_name_v0211)
+	content.add_child(_save_new_notebook_name_v0211)
+	_save_new_notebook_folder_v0215 = OptionButton.new()
+	_save_new_notebook_folder_v0215.name = "SaveNewNotebookFolderV0215"
+	_save_new_notebook_folder_v0215.tooltip_text = "Choose the organisational folder for the new notebook."
+	content.add_child(_save_new_notebook_folder_v0215)
 	_save_new_notebook_dialog_v0211.confirmed.connect(
 		_create_notebook_while_saving_v0211
 	)
@@ -257,13 +536,17 @@ func _open_new_notebook_while_saving_v0211() -> void:
 	if _save_new_notebook_dialog_v0211 == null:
 		return
 	_save_new_notebook_name_v0211.text = ""
+	_fill_folder_destinations_v0215(
+		_save_new_notebook_folder_v0215, _tree_creation_parent_v0215()
+	)
 	_save_new_notebook_dialog_v0211.popup_centered()
 	_save_new_notebook_name_v0211.grab_focus()
 
 
 func _create_notebook_while_saving_v0211() -> void:
 	var result := NOTEBOOK_SERVICE.create_notebook(
-		_save_new_notebook_name_v0211.text
+		_save_new_notebook_name_v0211.text,
+		_selected_metadata_v01532(_save_new_notebook_folder_v0215, "")
 	)
 	if not bool(result.get("ok", false)):
 		if _save_generated_status_v01532 != null:
@@ -283,90 +566,68 @@ func _create_notebook_while_saving_v0211() -> void:
 	if _save_generated_status_v01532 != null:
 		_save_generated_status_v01532.text = (
 			"Created and selected notebook ‘%s’. Choose Save Selected when ready."
-			% str(notebook.get("name", "Notebook"))
+			% NOTEBOOK_SERVICE.notebook_path(notebook_id)
 		)
+
+
+func _fill_destination_notebooks_v01532(
+	selector: OptionButton, selected_id: String
+) -> void:
+	if selector == null:
+		return
+	selector.clear()
+	_add_option_v01532(selector, "Unfiled", "")
+	var notebooks := NOTEBOOK_SERVICE.list_notebooks()
+	notebooks.sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
+		return NOTEBOOK_SERVICE.notebook_path(str(first.get("id", ""))).to_lower() < NOTEBOOK_SERVICE.notebook_path(str(second.get("id", ""))).to_lower()
+	)
+	for notebook in notebooks:
+		var notebook_id := str(notebook.get("id", ""))
+		_add_option_v01532(
+			selector, NOTEBOOK_SERVICE.notebook_path(notebook_id), notebook_id
+		)
+	_select_metadata_v01532(selector, selected_id, "")
+
+
+func _fill_folder_destinations_v0215(
+	selector: OptionButton, selected_id: String
+) -> void:
+	if selector == null:
+		return
+	selector.clear()
+	_add_option_v01532(selector, "Root level", "")
+	var folders := NOTEBOOK_SERVICE.list_folders()
+	folders.sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
+		return NOTEBOOK_SERVICE.folder_path(str(first.get("id", ""))).to_lower() < NOTEBOOK_SERVICE.folder_path(str(second.get("id", ""))).to_lower()
+	)
+	for folder in folders:
+		var folder_id := str(folder.get("id", ""))
+		_add_option_v01532(
+			selector, NOTEBOOK_SERVICE.folder_path(folder_id), folder_id
+		)
+	_select_metadata_v01532(selector, selected_id, "")
+
+
+func _selected_named_notebook_v01532() -> String:
+	return (
+		_notebook_tree_selection_id_v0215
+		if _notebook_tree_selection_kind_v0215 == "notebook"
+		else ""
+	)
+
+
+func _selected_notebook_name_v01532() -> String:
+	if _notebook_tree_selection_kind_v0215 != "notebook":
+		return ""
+	return NOTEBOOK_SERVICE.notebook_path(_notebook_tree_selection_id_v0215)
 
 
 func _refresh_notebook_v01532() -> void:
 	if _notebook_filter_v01532 == null:
 		return
-	var selected_filter := _selected_metadata_v01532(
-		_notebook_filter_v01532, "__all__"
-	)
 	var selected_tag := _selected_metadata_v01532(_tag_filter_v01532, "")
-	var include_archived := (
-		_show_archived_v01532 != null
-		and _show_archived_v01532.button_pressed
-	)
-	var counts := NOTEBOOK_SERVICE.notebook_counts(include_archived)
-	var notebook_query := (
-		_notebook_search_v0211.text.strip_edges().to_lower()
-		if _notebook_search_v0211 != null
-		else ""
-	)
-	var notebook_sort := _selected_metadata_v01532(
-		_notebook_sort_v0211, "name"
-	)
-	var notebooks := NOTEBOOK_SERVICE.list_notebooks()
-	var notebook_activity := {}
-	for notebook in notebooks:
-		notebook_activity[str(notebook.get("id", ""))] = str(
-			notebook.get("updated_at", "")
-		)
-	for idea in NOTEBOOK_SERVICE.list_ideas({"include_archived": true}):
-		var activity_notebook_id := str(idea.get("notebook_id", ""))
-		if activity_notebook_id.is_empty():
-			continue
-		var idea_updated := str(idea.get("updated_at", ""))
-		if idea_updated > str(notebook_activity.get(activity_notebook_id, "")):
-			notebook_activity[activity_notebook_id] = idea_updated
-	notebooks.sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
-		var first_name := str(first.get("name", "")).to_lower()
-		var second_name := str(second.get("name", "")).to_lower()
-		if notebook_sort == "count":
-			var first_count := int(counts.get(str(first.get("id", "")), 0))
-			var second_count := int(counts.get(str(second.get("id", "")), 0))
-			if first_count != second_count:
-				return first_count > second_count
-		elif notebook_sort == "recent":
-			var first_updated := str(notebook_activity.get(
-				str(first.get("id", "")), first.get("updated_at", "")
-			))
-			var second_updated := str(notebook_activity.get(
-				str(second.get("id", "")), second.get("updated_at", "")
-			))
-			if first_updated != second_updated:
-				return first_updated > second_updated
-		return first_name < second_name
-	)
-	_notebook_filter_v01532.clear()
-	_add_option_v01532(
-		_notebook_filter_v01532,
-		"All Ideas (%d)" % int(counts.get("__all__", 0)),
-		"__all__"
-	)
-	_add_option_v01532(
-		_notebook_filter_v01532,
-		"Unfiled (%d)" % int(counts.get("__unfiled__", 0)),
-		"__unfiled__"
-	)
-	for notebook in notebooks:
-		var notebook_id := str(notebook.get("id", ""))
-		var notebook_name := str(notebook.get("name", "Notebook"))
-		if (
-			not notebook_query.is_empty()
-			and not notebook_name.to_lower().contains(notebook_query)
-			and notebook_id != selected_filter
-		):
-			continue
-		_add_option_v01532(
-			_notebook_filter_v01532,
-			"%s (%d)" % [notebook_name, int(counts.get(notebook_id, 0))],
-			notebook_id
-		)
-	_select_metadata_v01532(
-		_notebook_filter_v01532, selected_filter, "__all__"
-	)
+	var include_archived := _show_archived_v01532 != null and _show_archived_v01532.button_pressed
+	_refresh_notebook_tree_v0215(include_archived)
 	_tag_filter_v01532.clear()
 	_add_option_v01532(_tag_filter_v01532, "All Tags", "")
 	for tag in NOTEBOOK_SERVICE.all_tags(include_archived):
@@ -375,15 +636,402 @@ func _refresh_notebook_v01532() -> void:
 	_refresh_ideas_v01532()
 
 
+func _refresh_notebook_tree_v0215(include_archived: bool) -> void:
+	if _notebook_tree_v0215 == null:
+		return
+	var query := _notebook_search_v0211.text.strip_edges().to_lower() if _notebook_search_v0211 != null else ""
+	var live_expanded := _live_expanded_folder_ids_v0215()
+	if _notebook_tree_last_query_v0215.is_empty() and _notebook_tree_v0215.get_root() != null:
+		NOTEBOOK_SERVICE.save_expanded_folder_ids(live_expanded)
+		if not query.is_empty():
+			_notebook_tree_expanded_before_search_v0215 = live_expanded.duplicate()
+	elif not _notebook_tree_last_query_v0215.is_empty() and query.is_empty():
+		NOTEBOOK_SERVICE.save_expanded_folder_ids(
+			_notebook_tree_expanded_before_search_v0215
+		)
+	var expanded := NOTEBOOK_SERVICE.expanded_folder_ids()
+	if (
+		not query.is_empty()
+		and _notebook_tree_last_query_v0215.is_empty()
+		and _notebook_tree_v0215.get_root() == null
+	):
+		_notebook_tree_expanded_before_search_v0215 = expanded.duplicate()
+	_notebook_tree_last_query_v0215 = query
+	var folders := NOTEBOOK_SERVICE.list_folders()
+	var notebooks := NOTEBOOK_SERVICE.list_notebooks()
+	var counts := NOTEBOOK_SERVICE.notebook_counts(include_archived)
+	var folder_counts := NOTEBOOK_SERVICE.folder_counts(include_archived)
+	var all_ideas := NOTEBOOK_SERVICE.list_ideas({"include_archived": true})
+	var activity := {}
+	for notebook in notebooks:
+		activity[str(notebook.get("id", ""))] = str(notebook.get("updated_at", ""))
+	for idea in all_ideas:
+		var notebook_id := str(idea.get("notebook_id", ""))
+		var updated := str(idea.get("updated_at", ""))
+		if not notebook_id.is_empty() and updated > str(activity.get(notebook_id, "")):
+			activity[notebook_id] = updated
+	var folder_by_id := {}
+	var folder_children := {}
+	var notebooks_by_parent := {}
+	for folder in folders:
+		var folder_id := str(folder.get("id", ""))
+		var parent_id := str(folder.get("parent_folder_id", ""))
+		folder_by_id[folder_id] = folder
+		if not folder_children.has(parent_id):
+			folder_children[parent_id] = []
+		(folder_children[parent_id] as Array).append(folder)
+	for notebook in notebooks:
+		var parent_id := str(notebook.get("parent_folder_id", ""))
+		if not notebooks_by_parent.has(parent_id):
+			notebooks_by_parent[parent_id] = []
+		(notebooks_by_parent[parent_id] as Array).append(notebook)
+	for values in folder_children.values():
+		(values as Array).sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
+			return str(first.get("name", "")).to_lower() < str(second.get("name", "")).to_lower()
+		)
+	var notebook_sort := _selected_metadata_v01532(_notebook_sort_v0211, "name")
+	for values in notebooks_by_parent.values():
+		(values as Array).sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
+			return _notebook_tree_sort_less_v0215(first, second, notebook_sort, counts, activity)
+		)
+	var visible_folders := {}
+	var visible_notebooks := {}
+	if query.is_empty():
+		for folder in folders:
+			visible_folders[str(folder.get("id", ""))] = true
+		for notebook in notebooks:
+			visible_notebooks[str(notebook.get("id", ""))] = true
+	else:
+		for folder in folders:
+			if str(folder.get("name", "")).to_lower().contains(query):
+				_mark_folder_subtree_visible_v0215(
+					str(folder.get("id", "")), folder_by_id, folder_children,
+					notebooks_by_parent, visible_folders, visible_notebooks
+				)
+		for notebook in notebooks:
+			if str(notebook.get("name", "")).to_lower().contains(query):
+				visible_notebooks[str(notebook.get("id", ""))] = true
+				_mark_folder_ancestors_visible_v0215(
+					str(notebook.get("parent_folder_id", "")), folder_by_id, visible_folders
+				)
+	_mark_selected_tree_path_visible_v0215(folder_by_id, visible_folders, visible_notebooks)
+	var selected_parent := ""
+	if _notebook_tree_selection_kind_v0215 == "folder" and folder_by_id.has(_notebook_tree_selection_id_v0215):
+		selected_parent = str((folder_by_id[_notebook_tree_selection_id_v0215] as Dictionary).get("parent_folder_id", ""))
+	elif _notebook_tree_selection_kind_v0215 == "notebook":
+		for notebook in notebooks:
+			if str(notebook.get("id", "")) == _notebook_tree_selection_id_v0215:
+				selected_parent = str(notebook.get("parent_folder_id", ""))
+				break
+	var expand_cursor := selected_parent
+	var expand_visited := {}
+	while not expand_cursor.is_empty() and folder_by_id.has(expand_cursor) and not expand_visited.has(expand_cursor):
+		expand_visited[expand_cursor] = true
+		if not expand_cursor in expanded:
+			expanded.append(expand_cursor)
+		expand_cursor = str((folder_by_id[expand_cursor] as Dictionary).get("parent_folder_id", ""))
+
+	_notebook_tree_rebuilding_v0215 = true
+	_notebook_tree_v0215.clear()
+	_notebook_tree_items_v0215.clear()
+	_notebook_tree_root_v0215 = _notebook_tree_v0215.create_item()
+	_add_tree_item_v0215(
+		_notebook_tree_root_v0215, "All Ideas (%d)" % int(counts.get("__all__", 0)),
+		{"kind": "special", "id": "__all__", "name": "All Ideas"}, "All saved ideas"
+	)
+	_add_tree_item_v0215(
+		_notebook_tree_root_v0215, "Unfiled (%d)" % int(counts.get("__unfiled__", 0)),
+		{"kind": "special", "id": "__unfiled__", "name": "Unfiled"}, "Ideas not assigned to a notebook"
+	)
+	_add_tree_children_v0215(
+		_notebook_tree_root_v0215, "", folder_children, notebooks_by_parent,
+		visible_folders, visible_notebooks, counts, folder_counts, expanded, not query.is_empty()
+	)
+	var selected_key := "%s:%s" % [
+		_notebook_tree_selection_kind_v0215,
+		_notebook_tree_selection_id_v0215
+	]
+	var selected_item: TreeItem = _notebook_tree_items_v0215.get(selected_key)
+	if selected_item == null:
+		selected_item = _notebook_tree_items_v0215.get("special:__all__")
+		_notebook_tree_selection_kind_v0215 = "special"
+		_notebook_tree_selection_id_v0215 = "__all__"
+	if selected_item != null:
+		selected_item.select(0)
+	_notebook_tree_rebuilding_v0215 = false
+	_refresh_legacy_notebook_filter_v0215(notebooks, counts, query)
+
+
+func _add_tree_children_v0215(
+	parent: TreeItem,
+	parent_id: String,
+	folder_children: Dictionary,
+	notebooks_by_parent: Dictionary,
+	visible_folders: Dictionary,
+	visible_notebooks: Dictionary,
+	counts: Dictionary,
+	folder_counts: Dictionary,
+	expanded: Array[String],
+	force_expand: bool
+) -> void:
+	for folder_value in folder_children.get(parent_id, []):
+		var folder: Dictionary = folder_value
+		var folder_id := str(folder.get("id", ""))
+		if not visible_folders.has(folder_id):
+			continue
+		var path := NOTEBOOK_SERVICE.folder_path(folder_id)
+		var item := _add_tree_item_v0215(
+			parent,
+			"%s (%d)" % [str(folder.get("name", "Folder")), int(folder_counts.get(folder_id, 0))],
+			{
+				"kind": "folder", "id": folder_id,
+				"name": str(folder.get("name", "Folder")),
+				"parent_folder_id": str(folder.get("parent_folder_id", ""))
+			},
+			path
+		)
+		item.collapsed = not force_expand and not folder_id in expanded
+		_add_tree_children_v0215(
+			item, folder_id, folder_children, notebooks_by_parent,
+			visible_folders, visible_notebooks, counts, folder_counts, expanded, force_expand
+		)
+	for notebook_value in notebooks_by_parent.get(parent_id, []):
+		var notebook: Dictionary = notebook_value
+		var notebook_id := str(notebook.get("id", ""))
+		if not visible_notebooks.has(notebook_id):
+			continue
+		_add_tree_item_v0215(
+			parent,
+			"%s (%d)" % [str(notebook.get("name", "Notebook")), int(counts.get(notebook_id, 0))],
+			{
+				"kind": "notebook", "id": notebook_id,
+				"name": str(notebook.get("name", "Notebook")),
+				"parent_folder_id": str(notebook.get("parent_folder_id", ""))
+			},
+			NOTEBOOK_SERVICE.notebook_path(notebook_id)
+		)
+
+
+func _add_tree_item_v0215(
+	parent: TreeItem, label: String, metadata: Dictionary, tooltip: String
+) -> TreeItem:
+	var item := _notebook_tree_v0215.create_item(parent)
+	item.set_text(0, label)
+	item.set_metadata(0, metadata)
+	item.set_tooltip_text(0, tooltip)
+	_notebook_tree_items_v0215["%s:%s" % [metadata.get("kind", ""), metadata.get("id", "")]] = item
+	return item
+
+
+func _notebook_tree_sort_less_v0215(
+	first: Dictionary, second: Dictionary, mode: String,
+	counts: Dictionary, activity: Dictionary
+) -> bool:
+	if mode == "count":
+		var first_count := int(counts.get(str(first.get("id", "")), 0))
+		var second_count := int(counts.get(str(second.get("id", "")), 0))
+		if first_count != second_count:
+			return first_count > second_count
+	elif mode == "recent":
+		var first_updated := str(activity.get(str(first.get("id", "")), first.get("updated_at", "")))
+		var second_updated := str(activity.get(str(second.get("id", "")), second.get("updated_at", "")))
+		if first_updated != second_updated:
+			return first_updated > second_updated
+	return str(first.get("name", "")).to_lower() < str(second.get("name", "")).to_lower()
+
+
+func _mark_folder_ancestors_visible_v0215(
+	folder_id: String, folder_by_id: Dictionary, visible_folders: Dictionary
+) -> void:
+	var cursor := folder_id
+	var visited := {}
+	while not cursor.is_empty() and folder_by_id.has(cursor) and not visited.has(cursor):
+		visited[cursor] = true
+		visible_folders[cursor] = true
+		cursor = str((folder_by_id[cursor] as Dictionary).get("parent_folder_id", ""))
+
+
+func _mark_folder_subtree_visible_v0215(
+	folder_id: String, folder_by_id: Dictionary, folder_children: Dictionary,
+	notebooks_by_parent: Dictionary, visible_folders: Dictionary,
+	visible_notebooks: Dictionary
+) -> void:
+	_mark_folder_ancestors_visible_v0215(folder_id, folder_by_id, visible_folders)
+	var pending: Array[String] = [folder_id]
+	var visited := {}
+	while not pending.is_empty():
+		var current: String = pending.pop_back()
+		if visited.has(current):
+			continue
+		visited[current] = true
+		visible_folders[current] = true
+		for notebook_value in notebooks_by_parent.get(current, []):
+			visible_notebooks[str((notebook_value as Dictionary).get("id", ""))] = true
+		for child_value in folder_children.get(current, []):
+			pending.append(str((child_value as Dictionary).get("id", "")))
+
+
+func _mark_selected_tree_path_visible_v0215(
+	folder_by_id: Dictionary, visible_folders: Dictionary, visible_notebooks: Dictionary
+) -> void:
+	if _notebook_tree_selection_kind_v0215 == "folder":
+		_mark_folder_ancestors_visible_v0215(
+			_notebook_tree_selection_id_v0215, folder_by_id, visible_folders
+		)
+	elif _notebook_tree_selection_kind_v0215 == "notebook":
+		visible_notebooks[_notebook_tree_selection_id_v0215] = true
+		for notebook in NOTEBOOK_SERVICE.list_notebooks():
+			if str(notebook.get("id", "")) == _notebook_tree_selection_id_v0215:
+				_mark_folder_ancestors_visible_v0215(
+					str(notebook.get("parent_folder_id", "")), folder_by_id, visible_folders
+				)
+				break
+
+
+func _refresh_legacy_notebook_filter_v0215(
+	notebooks: Array[Dictionary], counts: Dictionary, query: String
+) -> void:
+	_notebook_filter_v01532.clear()
+	_add_option_v01532(_notebook_filter_v01532, "All Ideas (%d)" % int(counts.get("__all__", 0)), "__all__")
+	_add_option_v01532(_notebook_filter_v01532, "Unfiled (%d)" % int(counts.get("__unfiled__", 0)), "__unfiled__")
+	for notebook in notebooks:
+		var notebook_id := str(notebook.get("id", ""))
+		var path := NOTEBOOK_SERVICE.notebook_path(notebook_id)
+		if not query.is_empty() and not path.to_lower().contains(query):
+			continue
+		_add_option_v01532(
+			_notebook_filter_v01532,
+			"%s (%d)" % [path, int(counts.get(notebook_id, 0))], notebook_id
+		)
+	var legacy_value := _notebook_tree_selection_id_v0215
+	if _notebook_tree_selection_kind_v0215 == "folder":
+		legacy_value = "__all__"
+	_select_metadata_v01532(_notebook_filter_v01532, legacy_value, "__all__")
+
+
+func _on_notebook_tree_selected_v0215() -> void:
+	if _notebook_tree_rebuilding_v0215:
+		return
+	var metadata := _selected_tree_metadata_v0215()
+	_notebook_tree_selection_kind_v0215 = str(metadata.get("kind", "special"))
+	_notebook_tree_selection_id_v0215 = str(metadata.get("id", "__all__"))
+	var legacy_value := _notebook_tree_selection_id_v0215
+	if _notebook_tree_selection_kind_v0215 == "folder":
+		legacy_value = "__all__"
+	_select_metadata_v01532(_notebook_filter_v01532, legacy_value, "__all__")
+	_refresh_ideas_v01532()
+
+
+func _on_notebook_tree_collapsed_v0215(_item: TreeItem) -> void:
+	if _notebook_tree_rebuilding_v0215:
+		return
+	NOTEBOOK_SERVICE.save_expanded_folder_ids(_live_expanded_folder_ids_v0215())
+
+
+func _live_expanded_folder_ids_v0215() -> Array[String]:
+	var result: Array[String] = []
+	if _notebook_tree_v0215 == null:
+		return result
+	var root_item := _notebook_tree_v0215.get_root()
+	if root_item == null:
+		return result
+	var pending: Array[TreeItem] = []
+	var child: TreeItem = root_item.get_first_child()
+	while child != null:
+		pending.append(child)
+		child = child.get_next()
+	while not pending.is_empty():
+		var item: TreeItem = pending.pop_back()
+		var metadata_value: Variant = item.get_metadata(0)
+		if metadata_value is Dictionary:
+			var metadata: Dictionary = metadata_value
+			if str(metadata.get("kind", "")) == "folder" and not item.collapsed:
+				result.append(str(metadata.get("id", "")))
+		var nested: TreeItem = item.get_first_child()
+		while nested != null:
+			pending.append(nested)
+			nested = nested.get_next()
+	return result
+
+
+func _on_notebook_tree_gui_input_v0215(event: InputEvent) -> void:
+	if not event is InputEventMouseButton:
+		return
+	var mouse_event := event as InputEventMouseButton
+	if not mouse_event.pressed or mouse_event.button_index != MOUSE_BUTTON_RIGHT:
+		return
+	var item := _notebook_tree_v0215.get_item_at_position(mouse_event.position)
+	if item != null:
+		item.select(0)
+		_on_notebook_tree_selected_v0215()
+		var metadata_value: Variant = item.get_metadata(0)
+		_notebook_tree_context_metadata_v0215 = (
+			(metadata_value as Dictionary).duplicate(true)
+			if metadata_value is Dictionary else {}
+		)
+	else:
+		_notebook_tree_context_metadata_v0215 = {
+			"kind": "special", "id": "__all__", "name": "All Ideas"
+		}
+		_notebook_tree_selection_kind_v0215 = "special"
+		_notebook_tree_selection_id_v0215 = "__all__"
+		var all_item: TreeItem = _notebook_tree_items_v0215.get("special:__all__")
+		if all_item != null:
+			all_item.select(0)
+	_notebook_tree_popup_v0215.clear()
+	_notebook_tree_popup_v0215.add_item("New Folder…", 1)
+	_notebook_tree_popup_v0215.add_item("New Notebook…", 2)
+	var kind := str(_notebook_tree_context_metadata_v0215.get("kind", "special"))
+	if kind == "folder" or kind == "notebook":
+		_notebook_tree_popup_v0215.add_separator()
+		_notebook_tree_popup_v0215.add_item("Rename…", 3)
+		_notebook_tree_popup_v0215.add_item(
+			"Delete Folder…" if kind == "folder" else "Delete Notebook…", 4
+		)
+	_notebook_tree_popup_v0215.position = Vector2i(
+		_notebook_tree_v0215.get_screen_position() + mouse_event.position
+	)
+	_notebook_tree_popup_v0215.popup()
+
+
+func _on_notebook_tree_context_action_v0215(action_id: int) -> void:
+	match action_id:
+		1: _open_tree_name_dialog_v0215("new_folder")
+		2: _open_tree_name_dialog_v0215("new_notebook")
+		3: _open_tree_name_dialog_v0215("rename")
+		4: _request_tree_delete_v0215()
+
+
+func _on_notebook_tree_drop_v0215(
+	kind: String, item_id: String, destination_folder_id: String
+) -> void:
+	var result := (
+		NOTEBOOK_SERVICE.move_folder(item_id, destination_folder_id)
+		if kind == "folder"
+		else NOTEBOOK_SERVICE.move_notebook(item_id, destination_folder_id)
+	)
+	if not bool(result.get("ok", false)):
+		_status_v01532.text = str(result.get("error", "Could not move the selected item."))
+		return
+	_notebook_tree_selection_kind_v0215 = kind
+	_notebook_tree_selection_id_v0215 = item_id
+	_refresh_notebook_v01532()
+	var destination_path := NOTEBOOK_SERVICE.folder_path(destination_folder_id)
+	_status_v01532.text = "Moved to %s." % (
+		"the root level" if destination_path.is_empty() else destination_path
+	)
+
+
 func _refresh_ideas_v01532() -> void:
 	if _idea_list_v01532 == null:
 		return
 	var selected_ids_before := _live_notebook_selected_ids_v0214()
-	var selected_notebook := _selected_metadata_v01532(
-		_notebook_filter_v01532, "__all__"
-	)
+	var selected_notebook := _notebook_tree_selection_id_v0215
+	var selected_kind := _notebook_tree_selection_kind_v0215
 	var filters := {
-		"notebook_id": selected_notebook,
+		"notebook_id": (
+			selected_notebook if selected_kind != "folder" else "__all__"
+		),
 		"tag": _selected_metadata_v01532(_tag_filter_v01532, ""),
 		"search": _search_v01532.text if _search_v01532 != null else "",
 		"include_archived": (
@@ -391,11 +1039,15 @@ func _refresh_ideas_v01532() -> void:
 			and _show_archived_v01532.button_pressed
 		)
 	}
+	if selected_kind == "folder":
+		filters["notebook_ids"] = NOTEBOOK_SERVICE.notebook_ids_in_folder(
+			selected_notebook, true
+		)
 	var rows := NOTEBOOK_SERVICE.list_ideas(filters)
 	var notebook_names := {"": "Unfiled"}
 	for notebook in NOTEBOOK_SERVICE.list_notebooks():
 		notebook_names[str(notebook.get("id", ""))] = str(
-			notebook.get("name", "Notebook")
+			NOTEBOOK_SERVICE.notebook_path(str(notebook.get("id", "")))
 		)
 	var sort_mode := _selected_metadata_v01532(
 		_idea_sort_v0211, "updated_newest"
@@ -431,7 +1083,7 @@ func _refresh_ideas_v01532() -> void:
 		if bool(idea.get("archived", false)):
 			idea_title += "  [Archived]"
 		var subtitle_parts: Array[String] = []
-		if selected_notebook == "__all__":
+		if selected_kind == "special" and selected_notebook == "__all__":
 			subtitle_parts.append(str(notebook_names.get(
 				str(idea.get("notebook_id", "")), "Unfiled"
 			)))
@@ -449,9 +1101,7 @@ func _refresh_ideas_v01532() -> void:
 		if idea_id == _selected_idea_id_v01532:
 			reselect_index = _visible_idea_ids_v01532.size() - 1
 	if _idea_result_summary_v0211 != null:
-		var view_label := _selected_notebook_name_for_summary_v0211(
-			selected_notebook, notebook_names
-		)
+		var view_label := _selected_tree_scope_name_v0215(notebook_names)
 		_idea_result_summary_v0211.text = (
 			"Showing %d idea%s in %s"
 			% [rows.size(), "" if rows.size() == 1 else "s", view_label]
@@ -511,6 +1161,15 @@ func _selected_notebook_name_for_summary_v0211(
 	if notebook_id == "__unfiled__":
 		return "Unfiled"
 	return str(notebook_names.get(notebook_id, "the selected notebook"))
+
+
+func _selected_tree_scope_name_v0215(notebook_names: Dictionary) -> String:
+	if _notebook_tree_selection_kind_v0215 == "folder":
+		var path := NOTEBOOK_SERVICE.folder_path(_notebook_tree_selection_id_v0215)
+		return "Folder: %s" % (path if not path.is_empty() else "root")
+	return _selected_notebook_name_for_summary_v0211(
+		_notebook_tree_selection_id_v0215, notebook_names
+	)
 
 
 func _load_selected_idea_v01532(idea_id: String) -> void:
@@ -870,6 +1529,7 @@ func _build_export_window_v0210() -> void:
 		_export_window_v0210.remove_child(child)
 		child.queue_free()
 	_export_rows_v0210.clear()
+	_export_folder_notebook_ids_v0215.clear()
 	var ideas := _idea_pack_service_v0210.list_local_ideas(true)
 	var preferred_scope := _preferred_export_scope_v0210(ideas)
 	var margin := MarginContainer.new()
@@ -930,10 +1590,22 @@ func _build_export_window_v0210() -> void:
 	)
 	for notebook in _idea_pack_service_v0210.list_local_notebooks():
 		var notebook_id := str(notebook.get("id", ""))
-		var notebook_name := str(notebook.get("name", "Notebook"))
+		var notebook_name := NOTEBOOK_SERVICE.notebook_path(notebook_id)
+		if notebook_name.is_empty():
+			notebook_name = str(notebook.get("name", "Notebook"))
 		_add_export_scope_with_count_v0214(
 			"Notebook: %s" % notebook_name,
 			{"kind": "notebook", "value": notebook_id},
+			ideas
+		)
+	for folder in NOTEBOOK_SERVICE.list_folders():
+		var folder_id := str(folder.get("id", ""))
+		_export_folder_notebook_ids_v0215[folder_id] = NOTEBOOK_SERVICE.notebook_ids_in_folder(
+			folder_id, true
+		)
+		_add_export_scope_with_count_v0214(
+			"Folder: %s" % NOTEBOOK_SERVICE.folder_path(folder_id),
+			{"kind": "folder", "value": folder_id},
 			ideas
 		)
 	var filter_values := _idea_pack_service_v0210.export_filter_values(ideas)
@@ -1025,6 +1697,16 @@ func _sync_notebook_selection_for_export_v0210() -> void:
 
 func _preferred_export_scope_v0210(ideas: Array) -> Dictionary:
 	if _export_selected_idea_ids_v0214.is_empty():
+		if _notebook_tree_selection_kind_v0215 == "folder":
+			return {
+				"kind": "folder",
+				"value": _notebook_tree_selection_id_v0215
+			}
+		if _notebook_tree_selection_kind_v0215 == "notebook":
+			return {
+				"kind": "notebook",
+				"value": _notebook_tree_selection_id_v0215
+			}
 		return {"kind": "all", "value": ""}
 	if _export_selected_idea_ids_v0214.size() > 1:
 		return {
@@ -1152,6 +1834,10 @@ func _idea_matches_export_scope_metadata_v0214(
 		if values_value is Array and not (values_value as Array).is_empty():
 			return str(idea.get("id", "")) in (values_value as Array)
 		return not value.is_empty() and str(idea.get("id", "")) == value
+	if kind == "folder":
+		var notebook_ids_value: Variant = _export_folder_notebook_ids_v0215.get(value, [])
+		var notebook_ids: Array = notebook_ids_value if notebook_ids_value is Array else []
+		return str(idea.get("notebook_id", "")) in notebook_ids
 	return _idea_pack_service_v0210.idea_matches_export_scope(
 		idea, kind, value
 	)

@@ -7,6 +7,8 @@ const NOTEBOOK_SERVICE = preload(
 var _failed := false
 var _created_idea_ids: Array[String] = []
 var _created_notebook_ids: Array[String] = []
+var _test_root := ""
+var _cleaned := false
 
 
 func _init() -> void:
@@ -14,6 +16,8 @@ func _init() -> void:
 
 
 func _run() -> void:
+	_test_root = "/tmp/ccf_v0211_notebook_organization_%d" % Time.get_ticks_usec()
+	NOTEBOOK_SERVICE.set_storage_root_for_testing(_test_root)
 	var packed := load("res://scenes/main.tscn") as PackedScene
 	if not _require(packed != null, "The current application scene must load."):
 		_finish()
@@ -212,12 +216,37 @@ func _selector_contains_text(selector: OptionButton, text: String) -> bool:
 
 
 func _cleanup() -> void:
+	if _cleaned:
+		return
+	_cleaned = true
 	for idea_id in _created_idea_ids:
 		if not idea_id.is_empty():
 			NOTEBOOK_SERVICE.delete_idea(idea_id)
 	for notebook_id in _created_notebook_ids:
 		if not notebook_id.is_empty():
 			NOTEBOOK_SERVICE.delete_notebook(notebook_id)
+	NOTEBOOK_SERVICE.reset_storage_root_after_testing()
+	_remove_tree(_test_root)
+
+
+func _remove_tree(path: String) -> void:
+	if path.is_empty() or not DirAccess.dir_exists_absolute(path):
+		return
+	var directory := DirAccess.open(path)
+	if directory == null:
+		return
+	directory.list_dir_begin()
+	var entry := directory.get_next()
+	while not entry.is_empty():
+		if entry != "." and entry != "..":
+			var child_path := path.path_join(entry)
+			if directory.current_is_dir():
+				_remove_tree(child_path)
+			else:
+				DirAccess.remove_absolute(child_path)
+		entry = directory.get_next()
+	directory.list_dir_end()
+	DirAccess.remove_absolute(path)
 
 
 func _finish() -> void:

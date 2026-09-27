@@ -8,7 +8,7 @@ var _root := ""
 
 
 func _init() -> void:
-	_root = "user://ccf_v0210_idea_pack_test_%d" % Time.get_ticks_usec()
+	_root = "/tmp/ccf_v0210_idea_pack_test_%d" % Time.get_ticks_usec()
 	var service := IDEA_PACK_SERVICE.new(_root)
 	_run_parser_checks(service)
 	if not _failed:
