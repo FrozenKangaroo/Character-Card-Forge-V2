@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.5 complete regression suites",
+  "description": "v0.21.4 complete baseline plus the versioned Idea Notebook folder hierarchy, recursive folder views and tree interaction coverage.",
+  "base_manifest": "regression_suites_v0213.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0215_idea_notebook_folder_tree",
+        "label": "v0.21.5 Idea Notebook folder tree",
+        "kind": "godot",
+        "path": "tools/test_v0215_idea_notebook_folder_tree.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}

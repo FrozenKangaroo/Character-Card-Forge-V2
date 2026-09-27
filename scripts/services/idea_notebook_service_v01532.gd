@@ -7,29 +7,56 @@ const LIBRARY_FILE := ROOT_DIR + "/library.json"
 const LIBRARY_FORMAT := "character_card_forge_idea_notebook"
 const IDEA_FORMAT := "character_card_forge_saved_idea"
 const FORMAT_VERSION := 1
+const LIBRARY_FORMAT_VERSION := 2
+
+static var _storage_root_override := ""
+
+
+static func set_storage_root_for_testing(root_path: String) -> void:
+	_storage_root_override = root_path.strip_edges().trim_suffix("/")
+
+
+static func reset_storage_root_after_testing() -> void:
+	_storage_root_override = ""
 
 
 static func ensure_directories() -> void:
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(ROOT_DIR))
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(IDEAS_DIR))
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(_root_dir()))
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(_ideas_dir()))
 
 
 static func load_library() -> Dictionary:
 	ensure_directories()
-	if not FileAccess.file_exists(LIBRARY_FILE):
+	if not FileAccess.file_exists(_library_file()):
 		var fresh := _new_library()
-		var write_result := _write_json(LIBRARY_FILE, fresh)
+		var write_result := _write_json(_library_file(), fresh)
 		if not bool(write_result.get("ok", false)):
 			return write_result
 		return {"ok": true, "data": fresh}
-	var loaded := _read_json(LIBRARY_FILE)
+	var loaded := _read_json(_library_file())
 	if not bool(loaded.get("ok", false)):
 		return loaded
 	var value: Variant = loaded.get("data", {})
 	if not value is Dictionary:
 		return {"ok": false, "error": "Idea Notebook library.json is not a JSON object."}
 	var normalised := _normalise_library(value as Dictionary)
+	if JSON.stringify(value) != JSON.stringify(normalised):
+		var migrated := _write_json(_library_file(), normalised)
+		if not bool(migrated.get("ok", false)):
+			return migrated
 	return {"ok": true, "data": normalised}
+
+
+static func list_folders() -> Array[Dictionary]:
+	var loaded := load_library()
+	if not bool(loaded.get("ok", false)):
+		return []
+	var library: Dictionary = loaded.get("data", {})
+	var rows: Array[Dictionary] = []
+	for value in library.get("folders", []):
+		if value is Dictionary:
+			rows.append((value as Dictionary).duplicate(true))
+	return rows
 
 
 static func list_notebooks() -> Array[Dictionary]:
@@ -44,7 +71,7 @@ static func list_notebooks() -> Array[Dictionary]:
 	return rows
 
 
-static func create_notebook(display_name: String) -> Dictionary:
+static func create_notebook(display_name: String, parent_folder_id: String = "") -> Dictionary:
 	var clean_name := display_name.strip_edges()
 	if clean_name.is_empty():
 		return {"ok": false, "error": "Notebook name cannot be empty."}
@@ -52,21 +79,29 @@ static func create_notebook(display_name: String) -> Dictionary:
 	if not bool(loaded.get("ok", false)):
 		return loaded
 	var library: Dictionary = loaded.get("data", {})
+	var clean_parent := _valid_folder_id_or_empty_from_library(parent_folder_id, library)
+	if not parent_folder_id.strip_edges().is_empty() and clean_parent.is_empty():
+		return {"ok": false, "error": "Destination folder was not found."}
 	var notebooks: Array = library.get("notebooks", []).duplicate(true)
 	for value in notebooks:
-		if value is Dictionary and str((value as Dictionary).get("name", "")).nocasecmp_to(clean_name) == 0:
+		if (
+			value is Dictionary
+			and str((value as Dictionary).get("parent_folder_id", "")) == clean_parent
+			and str((value as Dictionary).get("name", "")).nocasecmp_to(clean_name) == 0
+		):
 			return {"ok": false, "error": "A notebook named '%s' already exists." % clean_name}
 	var now := _now()
 	var row := {
 		"id": _new_id(),
 		"name": clean_name,
+		"parent_folder_id": clean_parent,
 		"created_at": now,
 		"updated_at": now
 	}
 	notebooks.append(row)
 	library["notebooks"] = notebooks
 	library["updated_at"] = now
-	var saved := _write_json(LIBRARY_FILE, library)
+	var saved := _write_json(_library_file(), library)
 	if not bool(saved.get("ok", false)):
 		return saved
 	return {"ok": true, "notebook": row.duplicate(true)}
@@ -82,11 +117,20 @@ static func rename_notebook(notebook_id: String, display_name: String) -> Dictio
 		return loaded
 	var library: Dictionary = loaded.get("data", {})
 	var notebooks: Array = library.get("notebooks", []).duplicate(true)
+	var target_parent := ""
+	for value in notebooks:
+		if value is Dictionary and str((value as Dictionary).get("id", "")) == clean_id:
+			target_parent = str((value as Dictionary).get("parent_folder_id", ""))
+			break
 	for value in notebooks:
 		if not value is Dictionary:
 			continue
 		var row: Dictionary = value
-		if str(row.get("id", "")) != clean_id and str(row.get("name", "")).nocasecmp_to(clean_name) == 0:
+		if (
+			str(row.get("id", "")) != clean_id
+			and str(row.get("parent_folder_id", "")) == target_parent
+			and str(row.get("name", "")).nocasecmp_to(clean_name) == 0
+		):
 			return {"ok": false, "error": "A notebook named '%s' already exists." % clean_name}
 	var found := false
 	for index in range(notebooks.size()):
@@ -104,7 +148,230 @@ static func rename_notebook(notebook_id: String, display_name: String) -> Dictio
 		return {"ok": false, "error": "Notebook was not found."}
 	library["notebooks"] = notebooks
 	library["updated_at"] = _now()
-	return _write_json(LIBRARY_FILE, library)
+	return _write_json(_library_file(), library)
+
+
+static func create_folder(display_name: String, parent_folder_id: String = "") -> Dictionary:
+	var clean_name := display_name.strip_edges()
+	if clean_name.is_empty():
+		return {"ok": false, "error": "Folder name cannot be empty."}
+	var loaded := load_library()
+	if not bool(loaded.get("ok", false)):
+		return loaded
+	var library: Dictionary = loaded.get("data", {})
+	var clean_parent := _valid_folder_id_or_empty_from_library(parent_folder_id, library)
+	if not parent_folder_id.strip_edges().is_empty() and clean_parent.is_empty():
+		return {"ok": false, "error": "Parent folder was not found."}
+	var folders: Array = library.get("folders", []).duplicate(true)
+	for value in folders:
+		if not value is Dictionary:
+			continue
+		var row: Dictionary = value
+		if (
+			str(row.get("parent_folder_id", "")) == clean_parent
+			and str(row.get("name", "")).nocasecmp_to(clean_name) == 0
+		):
+			return {"ok": false, "error": "A folder named '%s' already exists here." % clean_name}
+	var now := _now()
+	var folder := {
+		"id": _new_id(),
+		"name": clean_name,
+		"parent_folder_id": clean_parent,
+		"created_at": now,
+		"updated_at": now
+	}
+	folders.append(folder)
+	library["folders"] = folders
+	library["updated_at"] = now
+	var saved := _write_json(_library_file(), library)
+	if not bool(saved.get("ok", false)):
+		return saved
+	return {"ok": true, "folder": folder.duplicate(true)}
+
+
+static func rename_folder(folder_id: String, display_name: String) -> Dictionary:
+	var clean_id := folder_id.strip_edges()
+	var clean_name := display_name.strip_edges()
+	if clean_id.is_empty() or clean_name.is_empty():
+		return {"ok": false, "error": "Folder ID and name are required."}
+	var loaded := load_library()
+	if not bool(loaded.get("ok", false)):
+		return loaded
+	var library: Dictionary = loaded.get("data", {})
+	var folders: Array = library.get("folders", []).duplicate(true)
+	var parent_id := ""
+	var found := false
+	for value in folders:
+		if value is Dictionary and str((value as Dictionary).get("id", "")) == clean_id:
+			parent_id = str((value as Dictionary).get("parent_folder_id", ""))
+			found = true
+			break
+	if not found:
+		return {"ok": false, "error": "Folder was not found."}
+	for value in folders:
+		if not value is Dictionary:
+			continue
+		var row: Dictionary = value
+		if (
+			str(row.get("id", "")) != clean_id
+			and str(row.get("parent_folder_id", "")) == parent_id
+			and str(row.get("name", "")).nocasecmp_to(clean_name) == 0
+		):
+			return {"ok": false, "error": "A folder named '%s' already exists here." % clean_name}
+	for index in range(folders.size()):
+		if not folders[index] is Dictionary:
+			continue
+		var row: Dictionary = (folders[index] as Dictionary).duplicate(true)
+		if str(row.get("id", "")) != clean_id:
+			continue
+		row["name"] = clean_name
+		row["updated_at"] = _now()
+		folders[index] = row
+		break
+	library["folders"] = folders
+	library["updated_at"] = _now()
+	return _write_json(_library_file(), library)
+
+
+static func move_notebook(notebook_id: String, parent_folder_id: String = "") -> Dictionary:
+	var clean_id := notebook_id.strip_edges()
+	if clean_id.is_empty():
+		return {"ok": false, "error": "Notebook ID is required."}
+	var loaded := load_library()
+	if not bool(loaded.get("ok", false)):
+		return loaded
+	var library: Dictionary = loaded.get("data", {})
+	var clean_parent := _valid_folder_id_or_empty_from_library(parent_folder_id, library)
+	if not parent_folder_id.strip_edges().is_empty() and clean_parent.is_empty():
+		return {"ok": false, "error": "Destination folder was not found."}
+	var notebooks: Array = library.get("notebooks", []).duplicate(true)
+	var moving_name := ""
+	for value in notebooks:
+		if value is Dictionary and str((value as Dictionary).get("id", "")) == clean_id:
+			moving_name = str((value as Dictionary).get("name", ""))
+			break
+	for value in notebooks:
+		if not value is Dictionary:
+			continue
+		var existing: Dictionary = value
+		if (
+			str(existing.get("id", "")) != clean_id
+			and str(existing.get("parent_folder_id", "")) == clean_parent
+			and str(existing.get("name", "")).nocasecmp_to(moving_name) == 0
+		):
+			return {"ok": false, "error": "A notebook named '%s' already exists in the destination." % moving_name}
+	var found := false
+	for index in range(notebooks.size()):
+		if not notebooks[index] is Dictionary:
+			continue
+		var row: Dictionary = (notebooks[index] as Dictionary).duplicate(true)
+		if str(row.get("id", "")) != clean_id:
+			continue
+		row["parent_folder_id"] = clean_parent
+		row["updated_at"] = _now()
+		notebooks[index] = row
+		found = true
+		break
+	if not found:
+		return {"ok": false, "error": "Notebook was not found."}
+	library["notebooks"] = notebooks
+	library["updated_at"] = _now()
+	return _write_json(_library_file(), library)
+
+
+static func move_folder(folder_id: String, parent_folder_id: String = "") -> Dictionary:
+	var clean_id := folder_id.strip_edges()
+	var requested_parent := parent_folder_id.strip_edges()
+	if clean_id.is_empty():
+		return {"ok": false, "error": "Folder ID is required."}
+	if clean_id == requested_parent:
+		return {"ok": false, "error": "A folder cannot be moved into itself."}
+	var loaded := load_library()
+	if not bool(loaded.get("ok", false)):
+		return loaded
+	var library: Dictionary = loaded.get("data", {})
+	var clean_parent := _valid_folder_id_or_empty_from_library(requested_parent, library)
+	if not requested_parent.is_empty() and clean_parent.is_empty():
+		return {"ok": false, "error": "Destination folder was not found."}
+	if clean_parent in descendant_folder_ids(clean_id):
+		return {"ok": false, "error": "A folder cannot be moved into one of its descendants."}
+	var folders: Array = library.get("folders", []).duplicate(true)
+	var moving_name := ""
+	for value in folders:
+		if value is Dictionary and str((value as Dictionary).get("id", "")) == clean_id:
+			moving_name = str((value as Dictionary).get("name", ""))
+			break
+	for value in folders:
+		if not value is Dictionary:
+			continue
+		var existing: Dictionary = value
+		if (
+			str(existing.get("id", "")) != clean_id
+			and str(existing.get("parent_folder_id", "")) == clean_parent
+			and str(existing.get("name", "")).nocasecmp_to(moving_name) == 0
+		):
+			return {"ok": false, "error": "A folder named '%s' already exists in the destination." % moving_name}
+	var found := false
+	for index in range(folders.size()):
+		if not folders[index] is Dictionary:
+			continue
+		var row: Dictionary = (folders[index] as Dictionary).duplicate(true)
+		if str(row.get("id", "")) != clean_id:
+			continue
+		row["parent_folder_id"] = clean_parent
+		row["updated_at"] = _now()
+		folders[index] = row
+		found = true
+		break
+	if not found:
+		return {"ok": false, "error": "Folder was not found."}
+	library["folders"] = folders
+	library["updated_at"] = _now()
+	return _write_json(_library_file(), library)
+
+
+static func delete_folder(folder_id: String) -> Dictionary:
+	var clean_id := folder_id.strip_edges()
+	if clean_id.is_empty():
+		return {"ok": false, "error": "Folder ID is required."}
+	var loaded := load_library()
+	if not bool(loaded.get("ok", false)):
+		return loaded
+	var library: Dictionary = loaded.get("data", {})
+	var folders: Array = library.get("folders", []).duplicate(true)
+	var parent_id := ""
+	var found := false
+	for value in folders:
+		if value is Dictionary and str((value as Dictionary).get("id", "")) == clean_id:
+			parent_id = str((value as Dictionary).get("parent_folder_id", ""))
+			found = true
+			break
+	if not found:
+		return {"ok": false, "error": "Folder was not found."}
+	for index in range(folders.size() - 1, -1, -1):
+		if not folders[index] is Dictionary:
+			continue
+		var row: Dictionary = (folders[index] as Dictionary).duplicate(true)
+		if str(row.get("id", "")) == clean_id:
+			folders.remove_at(index)
+		elif str(row.get("parent_folder_id", "")) == clean_id:
+			row["parent_folder_id"] = parent_id
+			row["updated_at"] = _now()
+			folders[index] = row
+	var notebooks: Array = library.get("notebooks", []).duplicate(true)
+	for index in range(notebooks.size()):
+		if not notebooks[index] is Dictionary:
+			continue
+		var row: Dictionary = (notebooks[index] as Dictionary).duplicate(true)
+		if str(row.get("parent_folder_id", "")) != clean_id:
+			continue
+		row["parent_folder_id"] = parent_id
+		row["updated_at"] = _now()
+		notebooks[index] = row
+	library["folders"] = folders
+	library["notebooks"] = notebooks
+	library["updated_at"] = _now()
+	return _write_json(_library_file(), library)
 
 
 static func delete_notebook(notebook_id: String) -> Dictionary:
@@ -125,7 +392,7 @@ static func delete_notebook(notebook_id: String) -> Dictionary:
 		return {"ok": false, "error": "Notebook was not found."}
 	library["notebooks"] = notebooks
 	library["updated_at"] = _now()
-	var saved := _write_json(LIBRARY_FILE, library)
+	var saved := _write_json(_library_file(), library)
 	if not bool(saved.get("ok", false)):
 		return saved
 	# Deleting a notebook never deletes its ideas. They become Unfiled.
@@ -207,14 +474,19 @@ static func delete_idea(idea_id: String) -> Dictionary:
 static func list_ideas(filters: Dictionary = {}) -> Array[Dictionary]:
 	ensure_directories()
 	var notebook_filter := str(filters.get("notebook_id", "__all__"))
+	var has_notebook_ids := filters.has("notebook_ids")
+	var notebook_ids_value: Variant = filters.get("notebook_ids", [])
+	var notebook_ids: Array = (
+		notebook_ids_value as Array if notebook_ids_value is Array else []
+	)
 	var search_text := str(filters.get("search", "")).strip_edges().to_lower()
 	var tag_filter := str(filters.get("tag", "")).strip_edges().to_lower()
 	var include_archived := bool(filters.get("include_archived", false))
 	var rows: Array[Dictionary] = []
-	for file_name in DirAccess.get_files_at(IDEAS_DIR):
+	for file_name in DirAccess.get_files_at(_ideas_dir()):
 		if not file_name.to_lower().ends_with(".json"):
 			continue
-		var loaded := _read_json(IDEAS_DIR + "/" + file_name)
+		var loaded := _read_json(_ideas_dir() + "/" + file_name)
 		if not bool(loaded.get("ok", false)):
 			continue
 		var value: Variant = loaded.get("data", {})
@@ -227,6 +499,8 @@ static func list_ideas(filters: Dictionary = {}) -> Array[Dictionary]:
 		if notebook_filter == "__unfiled__" and not idea_notebook.is_empty():
 			continue
 		if notebook_filter != "__all__" and notebook_filter != "__unfiled__" and idea_notebook != notebook_filter:
+			continue
+		if has_notebook_ids and not idea_notebook in notebook_ids:
 			continue
 		if not tag_filter.is_empty():
 			var tag_match := false
@@ -286,13 +560,138 @@ static func notebook_counts(include_archived: bool = false) -> Dictionary:
 	return counts
 
 
+static func folder_counts(include_archived: bool = false) -> Dictionary:
+	var direct_counts := notebook_counts(include_archived)
+	var result := {}
+	var parent_by_folder := {}
+	for folder in list_folders():
+		var folder_id := str(folder.get("id", ""))
+		result[folder_id] = 0
+		parent_by_folder[folder_id] = str(folder.get("parent_folder_id", ""))
+	for notebook in list_notebooks():
+		var count := int(direct_counts.get(str(notebook.get("id", "")), 0))
+		var cursor := str(notebook.get("parent_folder_id", ""))
+		var visited := {}
+		while not cursor.is_empty() and result.has(cursor) and not visited.has(cursor):
+			visited[cursor] = true
+			result[cursor] = int(result.get(cursor, 0)) + count
+			cursor = str(parent_by_folder.get(cursor, ""))
+	return result
+
+
+static func folder_path(folder_id: String) -> String:
+	var clean_id := folder_id.strip_edges()
+	if clean_id.is_empty():
+		return ""
+	var by_id := _folder_map()
+	var names: Array[String] = []
+	var cursor := clean_id
+	var visited := {}
+	while not cursor.is_empty() and by_id.has(cursor) and not visited.has(cursor):
+		visited[cursor] = true
+		var row: Dictionary = by_id[cursor]
+		names.push_front(str(row.get("name", "Folder")))
+		cursor = str(row.get("parent_folder_id", ""))
+	return " / ".join(names)
+
+
+static func notebook_path(notebook_id: String) -> String:
+	var clean_id := notebook_id.strip_edges()
+	for notebook in list_notebooks():
+		if str(notebook.get("id", "")) != clean_id:
+			continue
+		var name := str(notebook.get("name", "Notebook"))
+		var parent_path := folder_path(str(notebook.get("parent_folder_id", "")))
+		return name if parent_path.is_empty() else parent_path + " / " + name
+	return ""
+
+
+static func descendant_folder_ids(folder_id: String, include_self: bool = false) -> Array[String]:
+	var clean_id := folder_id.strip_edges()
+	var result: Array[String] = []
+	if clean_id.is_empty():
+		return result
+	var children := {}
+	for folder in list_folders():
+		var parent_id := str(folder.get("parent_folder_id", ""))
+		if not children.has(parent_id):
+			children[parent_id] = []
+		(children[parent_id] as Array).append(str(folder.get("id", "")))
+	var pending: Array[String] = [clean_id]
+	var visited := {}
+	while not pending.is_empty():
+		var current: String = pending.pop_back()
+		if current.is_empty() or visited.has(current):
+			continue
+		visited[current] = true
+		if current != clean_id or include_self:
+			result.append(current)
+		for child_value in children.get(current, []):
+			pending.append(str(child_value))
+	return result
+
+
+static func notebook_ids_in_folder(folder_id: String, recursive: bool = true) -> Array[String]:
+	var clean_id := folder_id.strip_edges()
+	var folder_ids: Array[String] = [clean_id]
+	if recursive:
+		folder_ids.append_array(descendant_folder_ids(clean_id))
+	var result: Array[String] = []
+	for notebook in list_notebooks():
+		if str(notebook.get("parent_folder_id", "")) in folder_ids:
+			result.append(str(notebook.get("id", "")))
+	return result
+
+
+static func expanded_folder_ids() -> Array[String]:
+	var loaded := load_library()
+	if not bool(loaded.get("ok", false)):
+		return []
+	var library: Dictionary = loaded.get("data", {})
+	var ui_value: Variant = library.get("ui_state", {})
+	var ui: Dictionary = ui_value if ui_value is Dictionary else {}
+	var valid := _folder_map()
+	var result: Array[String] = []
+	var ids_value: Variant = ui.get("expanded_folder_ids", [])
+	if ids_value is Array:
+		for value in ids_value as Array:
+			var folder_id := str(value)
+			if valid.has(folder_id) and not folder_id in result:
+				result.append(folder_id)
+	return result
+
+
+static func save_expanded_folder_ids(folder_ids: Array[String]) -> Dictionary:
+	var loaded := load_library()
+	if not bool(loaded.get("ok", false)):
+		return loaded
+	var library: Dictionary = loaded.get("data", {})
+	var valid := {}
+	for folder in library.get("folders", []):
+		if folder is Dictionary:
+			valid[str((folder as Dictionary).get("id", ""))] = true
+	var clean_ids: Array[String] = []
+	for folder_id in folder_ids:
+		if valid.has(folder_id) and not folder_id in clean_ids:
+			clean_ids.append(folder_id)
+	var ui_value: Variant = library.get("ui_state", {})
+	var ui: Dictionary = (
+		(ui_value as Dictionary).duplicate(true) if ui_value is Dictionary else {}
+	)
+	ui["expanded_folder_ids"] = clean_ids
+	library["ui_state"] = ui
+	return _write_json(_library_file(), library)
+
+
 static func _new_library() -> Dictionary:
 	var now := _now()
 	return {
 		"format": LIBRARY_FORMAT,
-		"format_version": FORMAT_VERSION,
+		"format_version": LIBRARY_FORMAT_VERSION,
 		"created_at": now,
 		"updated_at": now,
+		"folders": [],
+		"ui_state": {"expanded_folder_ids": []},
 		"notebooks": []
 	}
 
@@ -300,9 +699,56 @@ static func _new_library() -> Dictionary:
 static func _normalise_library(raw: Dictionary) -> Dictionary:
 	var result := raw.duplicate(true)
 	result["format"] = LIBRARY_FORMAT
-	result["format_version"] = FORMAT_VERSION
+	result["format_version"] = LIBRARY_FORMAT_VERSION
 	if str(result.get("created_at", "")).is_empty():
 		result["created_at"] = _now()
+	if str(result.get("updated_at", "")).is_empty():
+		result["updated_at"] = str(result.get("created_at", _now()))
+	var folders: Array = []
+	var folder_ids := {}
+	for value in result.get("folders", []):
+		if not value is Dictionary:
+			continue
+		var row: Dictionary = (value as Dictionary).duplicate(true)
+		var folder_id := str(row.get("id", "")).strip_edges()
+		var folder_name := str(row.get("name", "")).strip_edges()
+		if folder_id.is_empty() or folder_name.is_empty() or folder_ids.has(folder_id):
+			continue
+		folder_ids[folder_id] = true
+		row["id"] = folder_id
+		row["name"] = folder_name
+		row["parent_folder_id"] = str(row.get("parent_folder_id", "")).strip_edges()
+		if str(row.get("created_at", "")).is_empty():
+			row["created_at"] = str(result.get("created_at", _now()))
+		if str(row.get("updated_at", "")).is_empty():
+			row["updated_at"] = str(row.get("created_at", _now()))
+		folders.append(row)
+	# Missing parents, self-parenting and cycles all recover to root.
+	for index in range(folders.size()):
+		var row: Dictionary = (folders[index] as Dictionary).duplicate(true)
+		var folder_id := str(row.get("id", ""))
+		var parent_id := str(row.get("parent_folder_id", ""))
+		if parent_id == folder_id or (not parent_id.is_empty() and not folder_ids.has(parent_id)):
+			row["parent_folder_id"] = ""
+			folders[index] = row
+	var parent_by_id := {}
+	for value in folders:
+		var row: Dictionary = value
+		parent_by_id[str(row.get("id", ""))] = str(row.get("parent_folder_id", ""))
+	for index in range(folders.size()):
+		var row: Dictionary = (folders[index] as Dictionary).duplicate(true)
+		var start_id := str(row.get("id", ""))
+		var cursor := str(row.get("parent_folder_id", ""))
+		var visited := {start_id: true}
+		while not cursor.is_empty():
+			if visited.has(cursor):
+				row["parent_folder_id"] = ""
+				folders[index] = row
+				parent_by_id[start_id] = ""
+				break
+			visited[cursor] = true
+			cursor = str(parent_by_id.get(cursor, ""))
+	result["folders"] = folders
 	var notebooks: Array = []
 	var seen_ids := {}
 	for value in result.get("notebooks", []):
@@ -316,8 +762,25 @@ static func _normalise_library(raw: Dictionary) -> Dictionary:
 		seen_ids[notebook_id] = true
 		row["id"] = notebook_id
 		row["name"] = notebook_name
+		var parent_id := str(row.get("parent_folder_id", "")).strip_edges()
+		row["parent_folder_id"] = parent_id if folder_ids.has(parent_id) else ""
+		if str(row.get("created_at", "")).is_empty():
+			row["created_at"] = str(result.get("created_at", _now()))
+		if str(row.get("updated_at", "")).is_empty():
+			row["updated_at"] = str(row.get("created_at", _now()))
 		notebooks.append(row)
 	result["notebooks"] = notebooks
+	var ui_value: Variant = result.get("ui_state", {})
+	var ui: Dictionary = ui_value if ui_value is Dictionary else {}
+	var expanded: Array[String] = []
+	var expanded_value: Variant = ui.get("expanded_folder_ids", [])
+	if expanded_value is Array:
+		for value in expanded_value as Array:
+			var folder_id := str(value)
+			if folder_ids.has(folder_id) and not folder_id in expanded:
+				expanded.append(folder_id)
+	ui["expanded_folder_ids"] = expanded
+	result["ui_state"] = ui
 	return result
 
 
@@ -377,8 +840,39 @@ static func _valid_notebook_id_or_empty(notebook_id: String) -> String:
 	return ""
 
 
+static func _valid_folder_id_or_empty_from_library(
+	folder_id: String, library: Dictionary
+) -> String:
+	var clean_id := folder_id.strip_edges()
+	if clean_id.is_empty():
+		return ""
+	for folder in library.get("folders", []):
+		if folder is Dictionary and str((folder as Dictionary).get("id", "")) == clean_id:
+			return clean_id
+	return ""
+
+
+static func _folder_map() -> Dictionary:
+	var result := {}
+	for folder in list_folders():
+		result[str(folder.get("id", ""))] = folder
+	return result
+
+
+static func _root_dir() -> String:
+	return ROOT_DIR if _storage_root_override.is_empty() else _storage_root_override
+
+
+static func _ideas_dir() -> String:
+	return _root_dir() + "/ideas"
+
+
+static func _library_file() -> String:
+	return _root_dir() + "/library.json"
+
+
 static func _idea_path(idea_id: String) -> String:
-	return IDEAS_DIR + "/" + idea_id.validate_filename() + ".json"
+	return _ideas_dir() + "/" + idea_id.validate_filename() + ".json"
 
 
 static func _read_json(path: String) -> Dictionary:

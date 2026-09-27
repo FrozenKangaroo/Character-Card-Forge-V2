@@ -6,8 +6,30 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.5] - 2026-09-27
+
+### Highlights
+
+- Replaced the flat Idea Notebook navigation with a scalable Folder → subfolder and/or
+  Notebook → Ideas tree while preserving stable Notebook and Idea identities.
+- Added safe recursive organisation, search, drag-and-drop and path-aware save/import/
+  export workflows without conflating folders with Series, Bible, tags or priority.
+- Preserved the v0.21.4 multi-selection, export-scope, diversity and generation-telemetry
+  improvements throughout the new three-pane Notebook interface.
+
 ### Changes
 
+- Replaced the flat Idea Notebook picker with a resizable file-browser-style folder tree
+  alongside the Saved Ideas list and focused Idea Details editor.
+- Added nested organisational folders, recursive folder views/counts, tree search,
+  sibling notebook sorting, expanded-state persistence and stable-ID folder/notebook
+  drag-and-drop.
+- Added safe folder deletion that reparents direct child folders and notebooks without
+  deleting ideas; existing Notebook deletion still moves ideas to Unfiled.
+- Added path-aware Notebook choices throughout Idea Details, generated-Idea saving,
+  Idea Pack import and export, plus an optional recursive Folder export scope.
+- Migrated Idea Notebook library metadata to format version 2 while preserving every
+  existing Notebook ID, Idea ID and saved Idea file.
 - Added **Multi-Batch Diversity Guardrails** so a split Idea Generator run shares a temporary accepted/rejected scenario ledger across sequential generation batches.
 - Changed multi-request planning to target accepted usable ideas: every next request is recalculated from the accepted count while the normal request count remains bounded.
 - Added conservative title-similarity warnings and structural duplicate checks that ignore cosmetic renaming while preserving meaningfully different Series variants.
@@ -25,7 +47,11 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ### Migration notes
 
-- None. Diversity ledgers are temporary runtime state; Idea Notebook, Idea Packs and Idea Sources retain their existing formats.
+- Existing Idea Notebook `library.json` files are normalised automatically. Format-v1
+  notebooks become root-level format-v2 notebooks; individual saved Idea files are not
+  rewritten.
+- Diversity ledgers remain temporary runtime state; Idea Packs and Idea Sources retain
+  their existing formats.
 
 ### Breaking changes
 
@@ -34,6 +60,9 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 ### Known limitations
 
 - Semantic novelty ultimately depends on the configured model. Local rejection is intentionally conservative, and the stronger final AI review consumes one additional request when enabled.
+- Folder-tree drag/drop and right-click placement should receive a final hands-on pass
+  across supported desktop environments; the service and live headless interaction paths
+  are covered automatically.
 - Real provider behavior, cancellation, standard Ctrl/Shift selection on each desktop
   platform and moving the native review window between monitors still require the
   documented hands-on verification pass.

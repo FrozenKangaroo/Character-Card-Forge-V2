@@ -15,17 +15,16 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.3 — Reusable Idea Sources**. A separate Idea
-Source Library stores reusable generator inputs, while portable
-`.ccfideasource.json` files can be loaded temporarily without adding anything to the
-library or Idea Notebook. Structured source fields remain labelled across every request
-in a batch. Finished cards can also use **Generate Similar Ideas** to extract an editable
-reusable engine for genuinely new concepts without changing the source card or the
-existing Alternative Version workflow.
+The current source candidate is **v0.21.5 — Idea Notebook Folder Tree**. Idea Notebook
+now uses a file-browser-style hierarchy where folders may contain subfolders and
+notebooks, notebooks contain ideas, and selecting a folder shows all ideas in descendant
+notebooks. Moves and renames retain stable IDs, while deleting a folder safely reparents
+its contents and never deletes ideas. Folder organisation remains separate from semantic
+Bible and Series classification.
 
-The v0.21.2 readable Personality view, deferred empty-draft persistence and immediate
-Library density reflow remain available, as do v0.21.1 custom idea lengths, up to 50
-ideas, optional one-at-a-time requests and scalable Idea Notebook organization.
+The v0.21.4 multi-batch diversity controls and clearer generation telemetry remain
+available, as do reusable v0.21.3 Idea Sources, v0.21.2 readable Personality view and
+v0.21.1 custom idea lengths and request batching.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental
@@ -39,6 +38,8 @@ and [changelog](CHANGELOG.md).
   provenance, arbitrary labelled sections and duplicate-safe re-import.
 - Reusable portable Idea Sources with their own library, structured batch context and
   card-to-similar-Ideas extraction distinct from Alternative Version.
+- Nested Idea Notebook folders with recursive views, counts, search, safe drag/drop and
+  path-aware save/export destinations.
 - Idea Generator presets plus bounded Custom per-idea character targets with visible
   requested-versus-actual reporting.
 - Visual-only Personality section spacing with an exact-text editing toggle.

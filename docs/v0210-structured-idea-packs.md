@@ -73,11 +73,14 @@ entry remains intact for export.
 Choose **Choose Ideas & Export…** from Idea Notebook. Opening the export window reads the
 Notebook's live multi-selection and its latest Notebook/Series/Bible context instead of
 reusing context from a previous export. Selection scopes show matcher-derived counts and
-include **All Ideas**, **Selected Ideas**, each named **Notebook**, one semantic Bible and
-one semantic Series, followed by per-entry selection.
+include **All Ideas**, **Selected Ideas**, each named **Notebook**, each organisational
+**Folder** recursively, one semantic Bible and one semantic Series, followed by per-entry
+selection. Notebook labels show their full folder path while matching by stable ID.
 
 Notebook membership and Series classification are intentionally different. A Notebook
 is the user's saved-idea container, identified internally by its stable notebook ID. A
+Folder is an organisational parent whose export scope resolves descendant Notebook IDs.
+A Folder does not become a Series or Bible. A
 semantic Series comes only from structured `classification.primary_series` and
 `classification.secondary_series` data. A Notebook containing 67 ideas can therefore
 correctly coexist with a same-named semantic Series containing only one classified idea.
