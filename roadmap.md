@@ -60,11 +60,13 @@ derivatives, Split Character Sets and task-specific Text routing in one semantic
 available for compatibility evidence, while deterministic tooling proves the active
 generation-service depth fell from 34 to 31 scripts and prevents renewed service stacking.
 
-The v0.21.5 development candidate adds a nested **Idea Notebook Folder Tree** over the
-existing stable Notebook/Idea model. Organisational folders may nest, folder selection
-recursively includes descendant Notebooks, and path-aware save/export controls retain
-stable IDs. Folder names never acquire Bible, Series, tag, priority or source semantics.
-The v0.21.4 diversity/telemetry follow-up and v0.21.3 reusable Idea Sources remain intact.
+The v0.21.5-hotfix1 development candidate makes the unified **Idea Generator / Idea
+Notebook** native-window lifecycle deterministic and removes the selection-path I/O
+amplification exposed by large Ctrl/Shift selections. It retains the v0.21.5 nested Idea
+Notebook Folder Tree, stable Notebook/Idea IDs, recursive folder views and path-aware
+save/export controls. Folder names never acquire Bible, Series, tag, priority or source
+semantics, and the v0.21.4 diversity/telemetry follow-up and v0.21.3 reusable Idea Sources
+remain intact.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -178,7 +180,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.5** and uses the Godot
+The current source candidate displays **v0.21.5-hotfix1** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -187,6 +189,17 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.5-hotfix1 — Idea Window and Selection Reliability (candidate)
+
+- Unified all Idea Generator and direct Idea Notebook entry points behind one prepared,
+  reusable native window that selects its destination tab before one show/focus request.
+- Replaced heuristic legacy-window discovery with the exact legacy AI controller and
+  kept its compatibility embedding hidden and idempotent.
+- Separated live multi-selection from focused Idea Details loading so Ctrl/Shift ranges
+  do not trigger one saved-Idea read and editor rebuild per selected row.
+- Added per-refresh hierarchy snapshots and reused loaded Idea data to eliminate repeated
+  library parsing in path sorting, tree refreshes, export labels and structured details.
 
 ### v0.21.5 — Idea Notebook Folder Tree (candidate)
 

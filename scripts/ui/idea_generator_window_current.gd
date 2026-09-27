@@ -58,6 +58,9 @@ var _notebook_tree_context_metadata_v0215: Dictionary = {}
 var _notebook_tree_root_v0215: TreeItem
 var _notebook_tree_last_query_v0215 := ""
 var _notebook_tree_expanded_before_search_v0215: Array[String] = []
+var _hierarchy_snapshot_v0215: Dictionary = {}
+var _focused_idea_load_count_v0215_hotfix := 0
+var _notebook_tree_refresh_count_v0215_hotfix := 0
 
 var _idea_source_service_v0213 := IDEA_SOURCE_SERVICE_V0213.new()
 var _active_idea_source_v0213: Dictionary = {}
@@ -577,14 +580,16 @@ func _fill_destination_notebooks_v01532(
 		return
 	selector.clear()
 	_add_option_v01532(selector, "Unfiled", "")
-	var notebooks := NOTEBOOK_SERVICE.list_notebooks()
+	var snapshot := NOTEBOOK_SERVICE.hierarchy_snapshot()
+	var notebook_paths: Dictionary = snapshot.get("notebook_paths", {})
+	var notebooks: Array = snapshot.get("notebooks", []).duplicate(true)
 	notebooks.sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
-		return NOTEBOOK_SERVICE.notebook_path(str(first.get("id", ""))).to_lower() < NOTEBOOK_SERVICE.notebook_path(str(second.get("id", ""))).to_lower()
+		return str(notebook_paths.get(str(first.get("id", "")), "")).to_lower() < str(notebook_paths.get(str(second.get("id", "")), "")).to_lower()
 	)
 	for notebook in notebooks:
 		var notebook_id := str(notebook.get("id", ""))
 		_add_option_v01532(
-			selector, NOTEBOOK_SERVICE.notebook_path(notebook_id), notebook_id
+			selector, str(notebook_paths.get(notebook_id, notebook.get("name", "Notebook"))), notebook_id
 		)
 	_select_metadata_v01532(selector, selected_id, "")
 
@@ -596,14 +601,16 @@ func _fill_folder_destinations_v0215(
 		return
 	selector.clear()
 	_add_option_v01532(selector, "Root level", "")
-	var folders := NOTEBOOK_SERVICE.list_folders()
+	var snapshot := NOTEBOOK_SERVICE.hierarchy_snapshot()
+	var folder_paths: Dictionary = snapshot.get("folder_paths", {})
+	var folders: Array = snapshot.get("folders", []).duplicate(true)
 	folders.sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
-		return NOTEBOOK_SERVICE.folder_path(str(first.get("id", ""))).to_lower() < NOTEBOOK_SERVICE.folder_path(str(second.get("id", ""))).to_lower()
+		return str(folder_paths.get(str(first.get("id", "")), "")).to_lower() < str(folder_paths.get(str(second.get("id", "")), "")).to_lower()
 	)
 	for folder in folders:
 		var folder_id := str(folder.get("id", ""))
 		_add_option_v01532(
-			selector, NOTEBOOK_SERVICE.folder_path(folder_id), folder_id
+			selector, str(folder_paths.get(folder_id, folder.get("name", "Folder"))), folder_id
 		)
 	_select_metadata_v01532(selector, selected_id, "")
 
@@ -619,7 +626,10 @@ func _selected_named_notebook_v01532() -> String:
 func _selected_notebook_name_v01532() -> String:
 	if _notebook_tree_selection_kind_v0215 != "notebook":
 		return ""
-	return NOTEBOOK_SERVICE.notebook_path(_notebook_tree_selection_id_v0215)
+	var snapshot := NOTEBOOK_SERVICE.hierarchy_snapshot()
+	return NOTEBOOK_SERVICE.notebook_path_from_snapshot(
+		_notebook_tree_selection_id_v0215, snapshot
+	)
 
 
 func _refresh_notebook_v01532() -> void:
@@ -627,18 +637,57 @@ func _refresh_notebook_v01532() -> void:
 		return
 	var selected_tag := _selected_metadata_v01532(_tag_filter_v01532, "")
 	var include_archived := _show_archived_v01532 != null and _show_archived_v01532.button_pressed
-	_refresh_notebook_tree_v0215(include_archived)
+	_hierarchy_snapshot_v0215 = NOTEBOOK_SERVICE.hierarchy_snapshot()
+	var all_ideas := NOTEBOOK_SERVICE.list_ideas({"include_archived": true})
+	_refresh_notebook_tree_v0215(
+		include_archived, _hierarchy_snapshot_v0215, all_ideas
+	)
 	_tag_filter_v01532.clear()
 	_add_option_v01532(_tag_filter_v01532, "All Tags", "")
-	for tag in NOTEBOOK_SERVICE.all_tags(include_archived):
+	for tag in _all_tags_from_ideas_v0215(all_ideas, include_archived):
 		_add_option_v01532(_tag_filter_v01532, tag, tag)
 	_select_metadata_v01532(_tag_filter_v01532, selected_tag, "")
-	_refresh_ideas_v01532()
+	_refresh_ideas_v01532(_hierarchy_snapshot_v0215)
 
 
-func _refresh_notebook_tree_v0215(include_archived: bool) -> void:
+func _all_tags_from_ideas_v0215(
+	ideas: Array, include_archived: bool
+) -> Array[String]:
+	var seen := {}
+	var result: Array[String] = []
+	for idea_value in ideas:
+		if not idea_value is Dictionary:
+			continue
+		var idea: Dictionary = idea_value
+		if not include_archived and bool(idea.get("archived", false)):
+			continue
+		for raw_tag in idea.get("tags", []):
+			var tag := str(raw_tag).strip_edges()
+			var key := tag.to_lower()
+			if tag.is_empty() or seen.has(key):
+				continue
+			seen[key] = true
+			result.append(tag)
+	result.sort_custom(func(first: String, second: String) -> bool:
+		return first.to_lower() < second.to_lower()
+	)
+	return result
+
+
+func _refresh_notebook_tree_v0215(
+	include_archived: bool,
+	snapshot: Dictionary = {},
+	all_ideas: Array = []
+) -> void:
 	if _notebook_tree_v0215 == null:
 		return
+	_notebook_tree_refresh_count_v0215_hotfix += 1
+	var snapshot_supplied := not snapshot.is_empty()
+	if not snapshot_supplied:
+		snapshot = NOTEBOOK_SERVICE.hierarchy_snapshot()
+	if all_ideas.is_empty() and not snapshot_supplied:
+		all_ideas = NOTEBOOK_SERVICE.list_ideas({"include_archived": true})
+	_hierarchy_snapshot_v0215 = snapshot
 	var query := _notebook_search_v0211.text.strip_edges().to_lower() if _notebook_search_v0211 != null else ""
 	var live_expanded := _live_expanded_folder_ids_v0215()
 	if _notebook_tree_last_query_v0215.is_empty() and _notebook_tree_v0215.get_root() != null:
@@ -657,11 +706,13 @@ func _refresh_notebook_tree_v0215(include_archived: bool) -> void:
 	):
 		_notebook_tree_expanded_before_search_v0215 = expanded.duplicate()
 	_notebook_tree_last_query_v0215 = query
-	var folders := NOTEBOOK_SERVICE.list_folders()
-	var notebooks := NOTEBOOK_SERVICE.list_notebooks()
-	var counts := NOTEBOOK_SERVICE.notebook_counts(include_archived)
-	var folder_counts := NOTEBOOK_SERVICE.folder_counts(include_archived)
-	var all_ideas := NOTEBOOK_SERVICE.list_ideas({"include_archived": true})
+	var folders: Array = snapshot.get("folders", [])
+	var notebooks: Array = snapshot.get("notebooks", [])
+	var count_snapshot := NOTEBOOK_SERVICE.hierarchy_counts_from_snapshot(
+		snapshot, all_ideas, include_archived
+	)
+	var counts: Dictionary = count_snapshot.get("notebook_counts", {})
+	var folder_counts: Dictionary = count_snapshot.get("folder_counts", {})
 	var activity := {}
 	for notebook in notebooks:
 		activity[str(notebook.get("id", ""))] = str(notebook.get("updated_at", ""))
@@ -714,7 +765,9 @@ func _refresh_notebook_tree_v0215(include_archived: bool) -> void:
 				_mark_folder_ancestors_visible_v0215(
 					str(notebook.get("parent_folder_id", "")), folder_by_id, visible_folders
 				)
-	_mark_selected_tree_path_visible_v0215(folder_by_id, visible_folders, visible_notebooks)
+	_mark_selected_tree_path_visible_v0215(
+		folder_by_id, notebooks, visible_folders, visible_notebooks
+	)
 	var selected_parent := ""
 	if _notebook_tree_selection_kind_v0215 == "folder" and folder_by_id.has(_notebook_tree_selection_id_v0215):
 		selected_parent = str((folder_by_id[_notebook_tree_selection_id_v0215] as Dictionary).get("parent_folder_id", ""))
@@ -779,7 +832,9 @@ func _add_tree_children_v0215(
 		var folder_id := str(folder.get("id", ""))
 		if not visible_folders.has(folder_id):
 			continue
-		var path := NOTEBOOK_SERVICE.folder_path(folder_id)
+		var path := NOTEBOOK_SERVICE.folder_path_from_snapshot(
+			folder_id, _hierarchy_snapshot_v0215
+		)
 		var item := _add_tree_item_v0215(
 			parent,
 			"%s (%d)" % [str(folder.get("name", "Folder")), int(folder_counts.get(folder_id, 0))],
@@ -808,7 +863,9 @@ func _add_tree_children_v0215(
 				"name": str(notebook.get("name", "Notebook")),
 				"parent_folder_id": str(notebook.get("parent_folder_id", ""))
 			},
-			NOTEBOOK_SERVICE.notebook_path(notebook_id)
+			NOTEBOOK_SERVICE.notebook_path_from_snapshot(
+				notebook_id, _hierarchy_snapshot_v0215
+			)
 		)
 
 
@@ -872,7 +929,8 @@ func _mark_folder_subtree_visible_v0215(
 
 
 func _mark_selected_tree_path_visible_v0215(
-	folder_by_id: Dictionary, visible_folders: Dictionary, visible_notebooks: Dictionary
+	folder_by_id: Dictionary, notebooks: Array,
+	visible_folders: Dictionary, visible_notebooks: Dictionary
 ) -> void:
 	if _notebook_tree_selection_kind_v0215 == "folder":
 		_mark_folder_ancestors_visible_v0215(
@@ -880,7 +938,7 @@ func _mark_selected_tree_path_visible_v0215(
 		)
 	elif _notebook_tree_selection_kind_v0215 == "notebook":
 		visible_notebooks[_notebook_tree_selection_id_v0215] = true
-		for notebook in NOTEBOOK_SERVICE.list_notebooks():
+		for notebook in notebooks:
 			if str(notebook.get("id", "")) == _notebook_tree_selection_id_v0215:
 				_mark_folder_ancestors_visible_v0215(
 					str(notebook.get("parent_folder_id", "")), folder_by_id, visible_folders
@@ -896,7 +954,9 @@ func _refresh_legacy_notebook_filter_v0215(
 	_add_option_v01532(_notebook_filter_v01532, "Unfiled (%d)" % int(counts.get("__unfiled__", 0)), "__unfiled__")
 	for notebook in notebooks:
 		var notebook_id := str(notebook.get("id", ""))
-		var path := NOTEBOOK_SERVICE.notebook_path(notebook_id)
+		var path := NOTEBOOK_SERVICE.notebook_path_from_snapshot(
+			notebook_id, _hierarchy_snapshot_v0215
+		)
 		if not query.is_empty() and not path.to_lower().contains(query):
 			continue
 		_add_option_v01532(
@@ -1022,9 +1082,12 @@ func _on_notebook_tree_drop_v0215(
 	)
 
 
-func _refresh_ideas_v01532() -> void:
+func _refresh_ideas_v01532(snapshot: Dictionary = {}) -> void:
 	if _idea_list_v01532 == null:
 		return
+	if snapshot.is_empty():
+		snapshot = NOTEBOOK_SERVICE.hierarchy_snapshot()
+	_hierarchy_snapshot_v0215 = snapshot
 	var selected_ids_before := _live_notebook_selected_ids_v0214()
 	var selected_notebook := _notebook_tree_selection_id_v0215
 	var selected_kind := _notebook_tree_selection_kind_v0215
@@ -1040,14 +1103,16 @@ func _refresh_ideas_v01532() -> void:
 		)
 	}
 	if selected_kind == "folder":
-		filters["notebook_ids"] = NOTEBOOK_SERVICE.notebook_ids_in_folder(
-			selected_notebook, true
+		filters["notebook_ids"] = NOTEBOOK_SERVICE.notebook_ids_in_folder_from_snapshot(
+			selected_notebook, snapshot, true
 		)
 	var rows := NOTEBOOK_SERVICE.list_ideas(filters)
 	var notebook_names := {"": "Unfiled"}
-	for notebook in NOTEBOOK_SERVICE.list_notebooks():
+	var notebook_paths: Dictionary = snapshot.get("notebook_paths", {})
+	for notebook in snapshot.get("notebooks", []):
+		var notebook_id := str(notebook.get("id", ""))
 		notebook_names[str(notebook.get("id", ""))] = str(
-			NOTEBOOK_SERVICE.notebook_path(str(notebook.get("id", "")))
+			notebook_paths.get(notebook_id, notebook.get("name", "Notebook"))
 		)
 	var sort_mode := _selected_metadata_v01532(
 		_idea_sort_v0211, "updated_newest"
@@ -1133,10 +1198,15 @@ func _refresh_ideas_v01532() -> void:
 
 
 func _on_idea_multi_selected_v0214(index: int, selected: bool) -> void:
-	if not selected or index < 0 or index >= _visible_idea_ids_v01532.size():
+	# Multi-selection is the batch/export set, not the Idea Details focus. Godot
+	# emits this once per changed row during Shift selection, so loading here made
+	# a range selection perform N disk reads and N full editor rebuilds. Keep the
+	# lightweight focus identity in step with the last selected row for existing
+	# keyboard/export semantics; item_selected owns the one actual details load.
+	if index < 0 or index >= _visible_idea_ids_v01532.size():
 		return
-	_selected_idea_id_v01532 = _visible_idea_ids_v01532[index]
-	_load_selected_idea_v01532(_selected_idea_id_v01532)
+	if selected:
+		_selected_idea_id_v01532 = _visible_idea_ids_v01532[index]
 
 
 func _live_notebook_selected_ids_v0214() -> Array[String]:
@@ -1165,7 +1235,14 @@ func _selected_notebook_name_for_summary_v0211(
 
 func _selected_tree_scope_name_v0215(notebook_names: Dictionary) -> String:
 	if _notebook_tree_selection_kind_v0215 == "folder":
-		var path := NOTEBOOK_SERVICE.folder_path(_notebook_tree_selection_id_v0215)
+		var snapshot := (
+			_hierarchy_snapshot_v0215
+			if not _hierarchy_snapshot_v0215.is_empty()
+			else NOTEBOOK_SERVICE.hierarchy_snapshot()
+		)
+		var path := NOTEBOOK_SERVICE.folder_path_from_snapshot(
+			_notebook_tree_selection_id_v0215, snapshot
+		)
 		return "Folder: %s" % (path if not path.is_empty() else "root")
 	return _selected_notebook_name_for_summary_v0211(
 		_notebook_tree_selection_id_v0215, notebook_names
@@ -1173,18 +1250,14 @@ func _selected_tree_scope_name_v0215(notebook_names: Dictionary) -> String:
 
 
 func _load_selected_idea_v01532(idea_id: String) -> void:
+	_focused_idea_load_count_v0215_hotfix += 1
 	super._load_selected_idea_v01532(idea_id)
 	if _structured_detail_v0210 == null:
 		return
-	var loaded := _idea_pack_service_v0210.load_local_idea(idea_id)
-	if not bool(loaded.get("ok", false)):
+	if _loaded_idea_v01532.is_empty() or str(_loaded_idea_v01532.get("id", "")) != idea_id:
 		_structured_detail_v0210.text = ""
 		return
-	var idea_value: Variant = loaded.get("data", {})
-	if not idea_value is Dictionary:
-		_structured_detail_v0210.text = ""
-		return
-	var idea: Dictionary = idea_value
+	var idea := _loaded_idea_v01532
 	var structured_value: Variant = idea.get("structured_idea", {})
 	if not structured_value is Dictionary or (structured_value as Dictionary).is_empty():
 		_structured_detail_v0210.text = ""
@@ -1588,9 +1661,12 @@ func _build_export_window_v0210() -> void:
 		},
 		ideas
 	)
+	var hierarchy := NOTEBOOK_SERVICE.hierarchy_snapshot()
+	var notebook_paths: Dictionary = hierarchy.get("notebook_paths", {})
+	var folder_paths: Dictionary = hierarchy.get("folder_paths", {})
 	for notebook in _idea_pack_service_v0210.list_local_notebooks():
 		var notebook_id := str(notebook.get("id", ""))
-		var notebook_name := NOTEBOOK_SERVICE.notebook_path(notebook_id)
+		var notebook_name := str(notebook_paths.get(notebook_id, ""))
 		if notebook_name.is_empty():
 			notebook_name = str(notebook.get("name", "Notebook"))
 		_add_export_scope_with_count_v0214(
@@ -1598,13 +1674,13 @@ func _build_export_window_v0210() -> void:
 			{"kind": "notebook", "value": notebook_id},
 			ideas
 		)
-	for folder in NOTEBOOK_SERVICE.list_folders():
+	for folder in hierarchy.get("folders", []):
 		var folder_id := str(folder.get("id", ""))
-		_export_folder_notebook_ids_v0215[folder_id] = NOTEBOOK_SERVICE.notebook_ids_in_folder(
-			folder_id, true
+		_export_folder_notebook_ids_v0215[folder_id] = NOTEBOOK_SERVICE.notebook_ids_in_folder_from_snapshot(
+			folder_id, hierarchy, true
 		)
 		_add_export_scope_with_count_v0214(
-			"Folder: %s" % NOTEBOOK_SERVICE.folder_path(folder_id),
+			"Folder: %s" % str(folder_paths.get(folder_id, folder.get("name", "Folder"))),
 			{"kind": "folder", "value": folder_id},
 			ideas
 		)
@@ -2155,8 +2231,8 @@ func load_temporary_source_v0213(source: Dictionary, open_editor: bool = true, a
 	if activate:
 		_use_source_v0213(false)
 	if open_editor:
-		open_studio()
 		_show_source_tab_v0213()
+		open_studio()
 	_source_status_v0213.text = "Extracted source is temporary and editable. Generate, save or export it when ready."
 
 
@@ -2343,8 +2419,8 @@ func _focus_active_source_panel_v0213() -> void:
 
 
 func open_source_library_v0213() -> void:
-	open_studio()
 	_show_source_tab_v0213()
+	open_studio()
 
 
 func load_saved_source_v0213(source_id: String, open_library: bool = true) -> bool:

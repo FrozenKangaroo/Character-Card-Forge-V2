@@ -17,11 +17,17 @@ func _install_generation_service_v01418() -> void:
 
 
 func _finish_opening_unified_idea_generator() -> void:
-	# Rebind immediately before every open as well. This covers project reloads,
-	# service replacement, and an already-embedded legacy controller.
-	_wire_ai_idea_controller_to_current_service()
 	super._finish_opening_unified_idea_generator()
+
+
+func _prepare_unified_idea_generator() -> bool:
+	# Rebind immediately before every requested destination. This covers project
+	# reloads, service replacement and direct Idea Notebook opening without
+	# forcing an intermediate AI Ideas window open.
 	_wire_ai_idea_controller_to_current_service()
+	var prepared := super._prepare_unified_idea_generator()
+	_wire_ai_idea_controller_to_current_service()
+	return prepared
 
 
 func _wire_ai_idea_controller_to_current_service() -> void:

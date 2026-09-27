@@ -47,28 +47,54 @@ func _route_existing_idea_generator_button() -> void:
 
 
 func _on_unified_idea_generator_pressed() -> void:
-	call_deferred("_finish_opening_unified_idea_generator")
+	call_deferred("_open_idea_generator")
+
+
+func _open_idea_generator() -> void:
+	# Preserve the original AI Ideas input preparation, but route every caller —
+	# including New Project — into the unified four-tab Window.
+	_capture_all_fields()
+	var existing_concept := str(
+		CCFStorageService.get_value_at_path(_project, "concept.prompt", "")
+	).strip_edges()
+	if _idea_seed != null and _idea_seed.text.strip_edges().is_empty() and not existing_concept.is_empty():
+		_idea_seed.text = existing_concept
+	if _idea_count != null:
+		_idea_count.value = int(_generation_settings().get("default_idea_count", 6))
+	_finish_opening_unified_idea_generator()
 
 
 func _finish_opening_unified_idea_generator() -> void:
+	if not _prepare_unified_idea_generator():
+		return
+	_idea_generator_v01412.open_generator()
+	_status.text = "Idea Generator opened. Choose AI Ideas or Structured Builder."
+
+
+func _prepare_unified_idea_generator() -> bool:
+	if _idea_generator_v01412 == null or not is_instance_valid(_idea_generator_v01412):
+		return false
 	if not _legacy_ai_ideas_attached:
 		var legacy_window := _find_legacy_ai_idea_window()
 		if legacy_window != null:
 			_idea_generator_v01412.attach_ai_idea_window(legacy_window)
 			_legacy_ai_ideas_attached = true
-	_idea_generator_v01412.open_generator()
-	_status.text = "Idea Generator opened. Choose AI Ideas or Structured Builder."
+	var attached_value: Variant = _idea_generator_v01412.get("_embedded_ai_window")
+	if attached_value is Window and is_instance_valid(attached_value):
+		(attached_value as Window).hide()
+	return true
 
 
 func _find_legacy_ai_idea_window() -> Window:
-	for node in find_children("*", "Window", true, false):
-		if not node is Window:
-			continue
-		var candidate := node as Window
-		if candidate == _idea_generator_v01412:
-			continue
-		if candidate.title == "Idea Generator" or candidate.name.to_lower().contains("idea"):
-			return candidate
+	# The legacy controller is the original Workspace Idea Generator Window.
+	# Do not search by title/name: the unified tool now owns several unrelated
+	# notebook/source/import/export Windows that also contain "idea".
+	if (
+		_idea_window != null
+		and is_instance_valid(_idea_window)
+		and _idea_window != _idea_generator_v01412
+	):
+		return _idea_window
 	return null
 
 

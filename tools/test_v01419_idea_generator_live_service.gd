@@ -23,6 +23,7 @@ func _init() -> void:
 	var legacy := FakeLegacyIdeaWindow.new()
 	legacy.title = "Idea Generator"
 	workspace.add_child(legacy)
+	workspace._idea_window = legacy
 	workspace._generation_service = service
 	workspace._wire_ai_idea_controller_to_current_service()
 	assert(legacy.received_service == service, "Embedded AI Ideas controller must receive the workspace's live generation service.")

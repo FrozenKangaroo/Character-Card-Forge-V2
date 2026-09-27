@@ -1,6 +1,6 @@
 extends Control
 
-const APP_VERSION := "0.21.5"
+const APP_VERSION := "0.21.5-hotfix1"
 
 var _settings: Dictionary
 var _content: MarginContainer

@@ -17,6 +17,7 @@ var _option_text: TextEdit
 var _multi_toggle: CheckBox
 var _max_random: SpinBox
 var _options_status: Label
+var _open_studio_request_count_v0215_hotfix := 0
 
 
 func _ready() -> void:
@@ -33,9 +34,14 @@ func _ready() -> void:
 
 
 func open_studio() -> void:
+	_open_studio_request_count_v0215_hotfix += 1
 	_options = OPTION_SERVICE.load_options()
 	_rebuild_structured_fields()
-	popup_centered()
+	if visible:
+		show()
+	else:
+		popup_centered()
+	grab_focus()
 
 
 func _build_ui() -> void:

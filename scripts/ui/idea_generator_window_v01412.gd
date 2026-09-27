@@ -40,6 +40,12 @@ func _build_ai_tab() -> void:
 func attach_ai_idea_window(legacy_window: Window) -> void:
 	if legacy_window == null or legacy_window == self:
 		return
+	if _embedded_ai_window == legacy_window:
+		legacy_window.hide()
+		return
+	if _embedded_ai_window != null:
+		_embedded_ai_window.hide()
+		return
 	_embedded_ai_window = legacy_window
 	legacy_window.hide()
 	for child in _ai_ideas_host.get_children():
@@ -56,7 +62,9 @@ func attach_ai_idea_window(legacy_window: Window) -> void:
 	# The legacy Window remains alive because its controls' callbacks belong to
 	# it, but it must stay permanently hidden now that it only acts as the
 	# controller behind the embedded AI Ideas tab.
-	legacy_window.close_requested.connect(_on_embedded_ai_close_requested)
+	var close_callback := Callable(self, "_on_embedded_ai_close_requested")
+	if not legacy_window.close_requested.is_connected(close_callback):
+		legacy_window.close_requested.connect(close_callback)
 
 
 func _hide_embedded_close_buttons(root: Control) -> void:
@@ -72,8 +80,8 @@ func _hide_embedded_close_buttons(root: Control) -> void:
 func open_generator() -> void:
 	if _embedded_ai_window != null:
 		_embedded_ai_window.hide()
-	open_studio()
 	_tabs.current_tab = 0
+	open_studio()
 
 
 func _on_embedded_ai_close_requested() -> void:
