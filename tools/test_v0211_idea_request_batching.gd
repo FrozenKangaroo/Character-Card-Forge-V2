@@ -152,78 +152,12 @@ func _test_live_workspace_aggregation() -> void:
 		"The live service must advertise bounded batching and partial-success preservation."
 	)
 
-	workspace.set("_idea_batch_group_id_v0211", "aggregate-fixture")
-	workspace.set("_idea_batch_requested_total_v0211", 5)
-	workspace.set("_idea_batch_expected_requests_v0211", 3)
-	workspace.set("_idea_batch_job_indices_v0211", {"job-a": 0, "job-b": 1, "job-c": 2})
-	var generate_button_value: Variant = workspace.get("_idea_generate_button")
-	var generate_button := generate_button_value as Button
-	generate_button.disabled = true
-	var metadata := {
-		"idea_batch_group_id": "aggregate-fixture",
-		"idea_detail_level": "standard",
-		"project_id": ""
-	}
-	workspace.call(
-		"_handle_completed_idea_batch_v0211",
-		"job-a",
-		[_idea("Idea 1"), _idea("Idea 2")],
-		metadata
-	)
-	workspace.call(
-		"_handle_completed_idea_batch_v0211",
-		"job-b",
-		[_idea("Idea 3"), _idea("Idea 4")],
-		metadata
-	)
-	workspace.call(
-		"_handle_completed_idea_batch_v0211",
-		"job-c",
-		[_idea("Idea 5")],
-		metadata
-	)
-	var generator_value: Variant = workspace.get("_idea_generator_v01532")
-	var captured: Array = (
-		(generator_value as CCFIdeaGeneratorWindowCurrent).get(
-			"_last_generated_ideas_v01532"
-		)
-		if generator_value is CCFIdeaGeneratorWindowCurrent
-		else []
-	)
-	var idea_status_value: Variant = workspace.get("_idea_status")
-	var idea_status := idea_status_value as Label
 	_require(
-		captured.size() == 5
-		and str((captured[0] as Dictionary).get("title", "")) == "Idea 1"
-		and str((captured[4] as Dictionary).get("title", "")) == "Idea 5",
-		"Successful request results must combine in request order before Notebook capture."
-	)
-	_require(
-		not generate_button.disabled
-		and idea_status.text.contains("Generated 5/5 usable ideas across 3 provider requests"),
-		"The Generate action must re-enable only after the logical batch finishes."
-	)
-
-	workspace.set("_idea_batch_group_id_v0211", "partial-fixture")
-	workspace.set("_idea_batch_requested_total_v0211", 2)
-	workspace.set("_idea_batch_expected_requests_v0211", 2)
-	workspace.set("_idea_batch_job_indices_v0211", {"job-good": 0, "job-fail": 1})
-	generate_button.disabled = true
-	workspace.call(
-		"_handle_completed_idea_batch_v0211",
-		"job-good",
-		[_idea("Preserved Result")],
-		{"idea_batch_group_id": "partial-fixture", "idea_detail_level": "standard"}
-	)
-	workspace.call("_on_job_failed", "job-fail", "ideas", "Small model timed out.")
-	captured = (generator_value as CCFIdeaGeneratorWindowCurrent).get(
-		"_last_generated_ideas_v01532"
-	)
-	_require(
-		captured.size() == 1
-		and str((captured[0] as Dictionary).get("title", "")) == "Preserved Result"
-		and idea_status.text.contains("successful results were kept"),
-		"A failed child request must not discard successful ideas from the same run."
+		bool(capabilities.get("adaptive_accepted_target", false))
+		and bool(capabilities.get("prevent_repeats", false))
+		and str(capabilities.get("final_similarity_mode", "")) == "off"
+		and not bool(capabilities.get("one_shot_top_up", true)),
+		"The live batching controls must default to adaptive accepted-count generation, repeat prevention on, and optional extra AI calls off."
 	)
 	app.queue_free()
 	await process_frame

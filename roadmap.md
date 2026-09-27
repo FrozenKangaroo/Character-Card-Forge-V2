@@ -677,6 +677,7 @@ Detailed history remains preserved in versioned docs, PRs, tests/manifests and G
 
 ## In Progress
 
+- Complete hands-on provider verification for **Multi-Batch Diversity Guardrails**: accepted-count adaptive requests, temporary accepted/rejected anti-repeat memory, deterministic title warnings, optional final AI similarity review and the one-shot top-up stopping rule. No Idea Pack or Idea Source schema change is planned.
 - Prove the consolidated metadata/import warning check and complete manifest-driven regression check on pull requests and `main` without removing historical test scripts.
 - Use the published v0.20.7 packages, expanded offline manual and privacy-safe support report during the bake period.
 - Maintain the published 61-page Wiki from the validated Help catalog, publish the integrated 19-image Linux screenshot set and add Windows/macOS comparison captures where platform presentation differs.

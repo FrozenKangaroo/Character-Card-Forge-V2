@@ -20,6 +20,9 @@ const IDEA_CUSTOM_LENGTH_V0211 = preload(
 const IDEA_BATCHING_V0211 = preload(
 	"res://scripts/services/idea_generator_batching_v0211.gd"
 )
+const IDEA_DIVERSITY_V0214 = preload(
+	"res://scripts/services/idea_diversity_guardrails_v0214.gd"
+)
 
 const ROUTING_FORMAT_VERSION_V0195 := 1
 const ROUTING_PROFILE_KEY_V0195 := "_ccf_text_routing_v0195"
@@ -114,7 +117,9 @@ func decorate_idea_batch_job_v0211(
 	group_id: String,
 	batch_index: int,
 	request_count: int,
-	requested_total: int
+	requested_total: int,
+	anti_repeat_context: String = "",
+	request_kind: String = "normal"
 ) -> bool:
 	if job_id.is_empty() or group_id.is_empty():
 		return false
@@ -126,7 +131,8 @@ func decorate_idea_batch_job_v0211(
 		if str(job.get("id", "")) != job_id or str(job.get("type", "")) != "ideas":
 			continue
 		_queue[index] = _idea_job_with_batch_metadata_v0211(
-			job, group_id, batch_index, request_count, requested_total
+			job, group_id, batch_index, request_count, requested_total,
+			anti_repeat_context, request_kind
 		)
 		return true
 	if (
@@ -135,7 +141,8 @@ func decorate_idea_batch_job_v0211(
 		and str(_active_job.get("type", "")) == "ideas"
 	):
 		_active_job = _idea_job_with_batch_metadata_v0211(
-			_active_job, group_id, batch_index, request_count, requested_total
+			_active_job, group_id, batch_index, request_count, requested_total,
+			anti_repeat_context, request_kind
 		)
 		return true
 	return false
@@ -150,7 +157,9 @@ func _idea_job_with_batch_metadata_v0211(
 	group_id: String,
 	batch_index: int,
 	request_count: int,
-	requested_total: int
+	requested_total: int,
+	anti_repeat_context: String = "",
+	request_kind: String = "normal"
 ) -> Dictionary:
 	var job := job_value.duplicate(true)
 	var payload_value: Variant = job.get("payload", {})
@@ -166,6 +175,16 @@ func _idea_job_with_batch_metadata_v0211(
 	var instruction := IDEA_BATCHING_V0211.prompt_instruction(
 		batch_index, request_count, requested_total
 	)
+	var clean_anti_repeat := anti_repeat_context.strip_edges()
+	if not clean_anti_repeat.is_empty():
+		instruction += "\n\n" + clean_anti_repeat
+	if request_kind == "top_up":
+		instruction += (
+			"\n\nFINAL ONE-SHOT RECOVERY REQUEST:\n"
+			+ "- These are replacement ideas for still-unfilled accepted slots.\n"
+			+ "- Make every replacement materially distinct from both accepted and rejected ledger entries.\n"
+			+ "- This recovery is attempted once; prioritize usable, structurally novel results."
+		)
 	for message_index in range(messages.size()):
 		if not messages[message_index] is Dictionary:
 			continue
@@ -191,13 +210,55 @@ func _idea_job_with_batch_metadata_v0211(
 	metadata["idea_batch_request_count"] = request_count
 	metadata["idea_batch_requested_total"] = requested_total
 	metadata["idea_batch_request_size"] = int(metadata.get("idea_count", 1))
+	metadata["idea_batch_request_kind"] = request_kind
+	metadata["idea_diversity_context_injected"] = not clean_anti_repeat.is_empty()
 	job["metadata"] = metadata
-	job["label"] = "%s • request %d/%d" % [
+	job["label"] = "%s • %s %d/%d" % [
 		str(job.get("label", "Generate character ideas")),
+		"recovery" if request_kind == "top_up" else "request",
 		batch_index + 1,
 		request_count
 	]
 	return job
+
+
+func queue_idea_similarity_review_v0214(
+	session: Dictionary,
+	profile: Dictionary,
+	retry_count: int,
+	project_id: String = ""
+) -> Dictionary:
+	var accepted_value: Variant = session.get("accepted", [])
+	if not accepted_value is Array or (accepted_value as Array).size() < 2:
+		return {"ok": false, "error": "At least two accepted ideas are required for similarity review."}
+	var prompt := IDEA_DIVERSITY_V0214.final_review_prompt(session)
+	var result := _queue_chat_job(
+		"idea_similarity_review",
+		"Review generated ideas for structural similarity",
+		profile,
+		[
+			{
+				"role": "system",
+				"content": (
+					"You review generated roleplay ideas for scenario-level duplication. Distinguish clear duplicates, near-duplicates, and related but meaningfully distinct variants. Err toward preserving variants. Return valid JSON only."
+				)
+			},
+			{"role": "user", "content": prompt}
+		],
+		"object",
+		{
+			"project_id": project_id,
+			"idea_diversity_contract_version": IDEA_DIVERSITY_V0214.CONTRACT_VERSION,
+			"idea_similarity_review_mode": str(session.get("final_review_mode", "off")),
+			"idea_similarity_review_count": (accepted_value as Array).size()
+		},
+		retry_count
+	)
+	return result
+
+
+func idea_diversity_capabilities_v0214() -> Dictionary:
+	return IDEA_DIVERSITY_V0214.capabilities()
 
 
 func _decorate_queued_idea_custom_length_v0211(
@@ -327,8 +388,10 @@ func _validate_idea_batch(ideas: Array, idea_seed_text: String) -> Dictionary:
 	if not metadata_value is Dictionary:
 		return result
 	var metadata: Dictionary = (metadata_value as Dictionary).duplicate(true)
+	_record_idea_validation_ledger_v0214(ideas, result, metadata)
 	var target := int(metadata.get("idea_custom_target_characters", 0))
 	if target <= 0:
+		_active_job["metadata"] = metadata
 		return result
 	var accepted_value: Variant = result.get("valid_ideas", [])
 	var accepted: Array = accepted_value if accepted_value is Array else []
@@ -342,6 +405,72 @@ func _validate_idea_batch(ideas: Array, idea_seed_text: String) -> Dictionary:
 	metadata["idea_custom_result_count"] = counts.size()
 	_active_job["metadata"] = metadata
 	return result
+
+
+func _record_idea_validation_ledger_v0214(
+	raw_ideas: Array, validation: Dictionary, metadata: Dictionary
+) -> void:
+	metadata["idea_diversity_raw_candidate_count"] = int(
+		metadata.get("idea_diversity_raw_candidate_count", 0)
+	) + raw_ideas.size()
+	var accepted_signatures: Dictionary = {}
+	var valid_value: Variant = validation.get("valid_ideas", [])
+	if valid_value is Array:
+		for accepted_value in valid_value as Array:
+			if accepted_value is Dictionary:
+				var signature := _idea_validation_signature_v0214(
+					accepted_value as Dictionary
+				)
+				accepted_signatures[signature] = int(accepted_signatures.get(signature, 0)) + 1
+	var issues_value: Variant = validation.get("issues", [])
+	var issues: Array = issues_value if issues_value is Array else []
+	var rejected_value: Variant = metadata.get(
+		"idea_diversity_validation_rejections", []
+	)
+	var rejected: Array = (
+		(rejected_value as Array).duplicate(true)
+		if rejected_value is Array
+		else []
+	)
+	for index in range(raw_ideas.size()):
+		var idea_value: Variant = raw_ideas[index]
+		if not idea_value is Dictionary:
+			rejected.append({
+				"summary": str(idea_value),
+				"reason": _validation_issue_for_index_v0214(issues, index)
+			})
+			continue
+		var signature := _idea_validation_signature_v0214(
+			idea_value as Dictionary
+		)
+		var accepted_remaining := int(accepted_signatures.get(signature, 0))
+		if accepted_remaining > 0:
+			accepted_signatures[signature] = accepted_remaining - 1
+			continue
+		rejected.append({
+			"idea": (idea_value as Dictionary).duplicate(true),
+			"reason": _validation_issue_for_index_v0214(issues, index)
+		})
+	metadata["idea_diversity_validation_rejections"] = rejected
+
+
+func _idea_validation_signature_v0214(idea: Dictionary) -> String:
+	var parts: Array[String] = []
+	for field_id in [
+		"title", "character_name", "character_role", "source_anchor",
+		"roleplay_hook", "concept"
+	]:
+		parts.append(str(idea.get(field_id, "")).strip_edges())
+	return "\u001f".join(parts)
+
+
+func _validation_issue_for_index_v0214(issues: Array, index: int) -> String:
+	var prefix := "Idea %d" % (index + 1)
+	for issue_value in issues:
+		var issue := str(issue_value)
+		if issue.begins_with(prefix):
+			return issue
+	return "Rejected by generation validation."
 
 
 func recover_safe_text_candidate_v0180_hotfix1(
