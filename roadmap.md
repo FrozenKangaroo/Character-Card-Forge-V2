@@ -60,13 +60,12 @@ derivatives, Split Character Sets and task-specific Text routing in one semantic
 available for compatibility evidence, while deterministic tooling proves the active
 generation-service depth fell from 34 to 31 scripts and prevents renewed service stacking.
 
-The v0.21.5-hotfix1 development candidate makes the unified **Idea Generator / Idea
-Notebook** native-window lifecycle deterministic and removes the selection-path I/O
-amplification exposed by large Ctrl/Shift selections. It retains the v0.21.5 nested Idea
-Notebook Folder Tree, stable Notebook/Idea IDs, recursive folder views and path-aware
-save/export controls. Folder names never acquire Bible, Series, tag, priority or source
-semantics, and the v0.21.4 diversity/telemetry follow-up and v0.21.3 reusable Idea Sources
-remain intact.
+The v0.21.6 development candidate makes the **Idea Notebook Folder Tree** immediately
+legible and completes selection-based Saved Idea deletion. Folders, Notebooks and built-in
+views retain distinct identities even when empty; hierarchy dialogs and scope summaries
+name the real object and full path; and one confirmation can delete the current live
+Ctrl/Shift selection with one final refresh. The v0.21.5-hotfix1 unified-window lifecycle
+and selection-path I/O improvements remain intact.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -180,7 +179,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.5-hotfix1** and uses the Godot
+The current source candidate displays **v0.21.6** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -189,6 +188,19 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.6 — Idea Notebook Usability (candidate)
+
+- Added persistent, shape-distinct Folder, Notebook and built-in-view icons plus semantic
+  tooltips and testable presentation metadata; empty Folders retain full Folder identity.
+- Made Create Folder, Create Notebook, Rename Folder and Rename Notebook dialogs update
+  their title, destination description, placeholder and confirmation wording completely.
+- Added Folder/Notebook/All Ideas/Unfiled scope summaries with full paths, recursive idea
+  counts and descendant Notebook counts where applicable.
+- Made Delete selection-aware for one or many live Saved Ideas, with one confirmation,
+  partial-failure reporting, one final refresh and sensible surviving focus.
+- Added a Delete-key shortcut scoped strictly to the focused Saved Ideas list so text
+  editing and hierarchy-name dialogs retain normal Delete behavior.
 
 ### v0.21.5-hotfix1 — Idea Window and Selection Reliability (candidate)
 
