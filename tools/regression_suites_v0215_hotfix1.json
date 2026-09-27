@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.5-hotfix1 complete regression suites",
+  "description": "v0.21.5 complete baseline plus deterministic unified Idea window lifecycle and responsive Notebook selection coverage.",
+  "base_manifest": "regression_suites_v0215.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0215_hotfix1_idea_window_selection",
+        "label": "v0.21.5-hotfix1 Idea window lifecycle and selection",
+        "kind": "godot",
+        "path": "tools/test_v0215_hotfix1_idea_window_selection.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}

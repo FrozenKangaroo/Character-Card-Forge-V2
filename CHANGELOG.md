@@ -6,6 +6,43 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.5-hotfix1] - 2026-09-27
+
+### Highlights
+
+- Made every Idea Generator, Idea Notebook and Idea Sources route reuse one unified
+  native window, select its requested tab before showing and perform one logical show/
+  focus request.
+- Removed the severe Ctrl/Shift multi-selection slowdown by separating the live batch
+  selection from the one focused Idea Details load.
+
+### Changes
+
+- Replaced broad title/name-based legacy Idea Generator discovery with the exact legacy
+  controller reference and made its one-time embedding idempotent.
+- Fixed New Project → Idea Generator using the obsolete native window and removed the
+  New Project → Idea Notebook AI-Ideas-first double-open path.
+- Added short-lived hierarchy snapshots containing stable folder/notebook maps and
+  precomputed paths for Notebook tree refreshes, selectors and export scope labels.
+- Reused the already-loaded saved Idea for structured details instead of parsing the same
+  Idea file twice, and removed storage reads from destination sort comparators.
+- Added lightweight I/O/lifecycle counters and focused regression coverage for repeated
+  close/reopen cycles, strict legacy attachment, multi-selection and hierarchy freshness.
+
+### Migration notes
+
+- None. Existing projects, Idea Notebook folders, saved Ideas, Idea Packs and Idea Sources
+  retain their current formats and stable IDs.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Native multi-monitor placement and physical Ctrl/Shift mouse/keyboard interaction still
+  require the documented hands-on desktop verification pass.
+
 ## [0.21.5] - 2026-09-27
 
 ### Highlights

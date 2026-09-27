@@ -10,6 +10,8 @@ const FORMAT_VERSION := 1
 const LIBRARY_FORMAT_VERSION := 2
 
 static var _storage_root_override := ""
+static var _library_load_count_for_testing := 0
+static var _idea_read_count_for_testing := 0
 
 
 static func set_storage_root_for_testing(root_path: String) -> void:
@@ -20,12 +22,25 @@ static func reset_storage_root_after_testing() -> void:
 	_storage_root_override = ""
 
 
+static func reset_io_counters_for_testing() -> void:
+	_library_load_count_for_testing = 0
+	_idea_read_count_for_testing = 0
+
+
+static func io_counters_for_testing() -> Dictionary:
+	return {
+		"library_loads": _library_load_count_for_testing,
+		"idea_reads": _idea_read_count_for_testing
+	}
+
+
 static func ensure_directories() -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(_root_dir()))
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(_ideas_dir()))
 
 
 static func load_library() -> Dictionary:
+	_library_load_count_for_testing += 1
 	ensure_directories()
 	if not FileAccess.file_exists(_library_file()):
 		var fresh := _new_library()
@@ -69,6 +84,131 @@ static func list_notebooks() -> Array[Dictionary]:
 		if value is Dictionary:
 			rows.append((value as Dictionary).duplicate(true))
 	return rows
+
+
+static func hierarchy_snapshot() -> Dictionary:
+	var loaded := load_library()
+	if not bool(loaded.get("ok", false)):
+		return loaded
+	var library: Dictionary = loaded.get("data", {})
+	var folders: Array[Dictionary] = []
+	var notebooks: Array[Dictionary] = []
+	var folder_by_id := {}
+	var notebook_by_id := {}
+	for value in library.get("folders", []):
+		if not value is Dictionary:
+			continue
+		var folder: Dictionary = (value as Dictionary).duplicate(true)
+		var folder_id := str(folder.get("id", ""))
+		folders.append(folder)
+		folder_by_id[folder_id] = folder
+	for value in library.get("notebooks", []):
+		if not value is Dictionary:
+			continue
+		var notebook: Dictionary = (value as Dictionary).duplicate(true)
+		var notebook_id := str(notebook.get("id", ""))
+		notebooks.append(notebook)
+		notebook_by_id[notebook_id] = notebook
+	var folder_paths := {}
+	for folder in folders:
+		var folder_id := str(folder.get("id", ""))
+		folder_paths[folder_id] = _folder_path_from_records_v0215(
+			folder_id, folder_by_id
+		)
+	var notebook_paths := {}
+	for notebook in notebooks:
+		var notebook_id := str(notebook.get("id", ""))
+		var notebook_name := str(notebook.get("name", "Notebook"))
+		var parent_path := str(folder_paths.get(
+			str(notebook.get("parent_folder_id", "")), ""
+		))
+		notebook_paths[notebook_id] = (
+			notebook_name if parent_path.is_empty()
+			else parent_path + " / " + notebook_name
+		)
+	return {
+		"ok": true,
+		"folders": folders,
+		"notebooks": notebooks,
+		"folder_by_id": folder_by_id,
+		"notebook_by_id": notebook_by_id,
+		"folder_paths": folder_paths,
+		"notebook_paths": notebook_paths
+	}
+
+
+static func hierarchy_counts_from_snapshot(
+	snapshot: Dictionary, ideas: Array, include_archived: bool = false
+) -> Dictionary:
+	var notebook_counts := {"__all__": 0, "__unfiled__": 0}
+	var folder_counts := {}
+	var parent_by_folder := {}
+	for notebook_value in snapshot.get("notebooks", []):
+		var notebook: Dictionary = notebook_value
+		notebook_counts[str(notebook.get("id", ""))] = 0
+	for folder_value in snapshot.get("folders", []):
+		var folder: Dictionary = folder_value
+		var folder_id := str(folder.get("id", ""))
+		folder_counts[folder_id] = 0
+		parent_by_folder[folder_id] = str(folder.get("parent_folder_id", ""))
+	for idea_value in ideas:
+		if not idea_value is Dictionary:
+			continue
+		var idea: Dictionary = idea_value
+		if not include_archived and bool(idea.get("archived", false)):
+			continue
+		notebook_counts["__all__"] = int(notebook_counts.get("__all__", 0)) + 1
+		var notebook_id := str(idea.get("notebook_id", ""))
+		if notebook_id.is_empty() or not notebook_counts.has(notebook_id):
+			notebook_counts["__unfiled__"] = int(
+				notebook_counts.get("__unfiled__", 0)
+			) + 1
+		else:
+			notebook_counts[notebook_id] = int(notebook_counts.get(notebook_id, 0)) + 1
+	for notebook_value in snapshot.get("notebooks", []):
+		var notebook: Dictionary = notebook_value
+		var count := int(notebook_counts.get(str(notebook.get("id", "")), 0))
+		var cursor := str(notebook.get("parent_folder_id", ""))
+		var visited := {}
+		while not cursor.is_empty() and folder_counts.has(cursor) and not visited.has(cursor):
+			visited[cursor] = true
+			folder_counts[cursor] = int(folder_counts.get(cursor, 0)) + count
+			cursor = str(parent_by_folder.get(cursor, ""))
+	return {"notebook_counts": notebook_counts, "folder_counts": folder_counts}
+
+
+static func folder_path_from_snapshot(folder_id: String, snapshot: Dictionary) -> String:
+	return str((snapshot.get("folder_paths", {}) as Dictionary).get(folder_id, ""))
+
+
+static func notebook_path_from_snapshot(notebook_id: String, snapshot: Dictionary) -> String:
+	return str((snapshot.get("notebook_paths", {}) as Dictionary).get(notebook_id, ""))
+
+
+static func notebook_ids_in_folder_from_snapshot(
+	folder_id: String, snapshot: Dictionary, recursive: bool = true
+) -> Array[String]:
+	var clean_id := folder_id.strip_edges()
+	var allowed_folders := {clean_id: true}
+	if recursive:
+		var pending: Array[String] = [clean_id]
+		while not pending.is_empty():
+			var current: String = pending.pop_back()
+			for folder_value in snapshot.get("folders", []):
+				var folder: Dictionary = folder_value
+				var child_id := str(folder.get("id", ""))
+				if (
+					str(folder.get("parent_folder_id", "")) == current
+					and not allowed_folders.has(child_id)
+				):
+					allowed_folders[child_id] = true
+					pending.append(child_id)
+	var result: Array[String] = []
+	for notebook_value in snapshot.get("notebooks", []):
+		var notebook: Dictionary = notebook_value
+		if allowed_folders.has(str(notebook.get("parent_folder_id", ""))):
+			result.append(str(notebook.get("id", "")))
+	return result
 
 
 static func create_notebook(display_name: String, parent_folder_id: String = "") -> Dictionary:
@@ -452,6 +592,7 @@ static func load_idea(idea_id: String) -> Dictionary:
 	var clean_id := idea_id.strip_edges()
 	if clean_id.is_empty():
 		return {"ok": false, "error": "Idea ID is required."}
+	_idea_read_count_for_testing += 1
 	var loaded := _read_json(_idea_path(clean_id))
 	if not bool(loaded.get("ok", false)):
 		return loaded
@@ -486,6 +627,7 @@ static func list_ideas(filters: Dictionary = {}) -> Array[Dictionary]:
 	for file_name in DirAccess.get_files_at(_ideas_dir()):
 		if not file_name.to_lower().ends_with(".json"):
 			continue
+		_idea_read_count_for_testing += 1
 		var loaded := _read_json(_ideas_dir() + "/" + file_name)
 		if not bool(loaded.get("ok", false)):
 			continue
@@ -583,27 +725,11 @@ static func folder_path(folder_id: String) -> String:
 	var clean_id := folder_id.strip_edges()
 	if clean_id.is_empty():
 		return ""
-	var by_id := _folder_map()
-	var names: Array[String] = []
-	var cursor := clean_id
-	var visited := {}
-	while not cursor.is_empty() and by_id.has(cursor) and not visited.has(cursor):
-		visited[cursor] = true
-		var row: Dictionary = by_id[cursor]
-		names.push_front(str(row.get("name", "Folder")))
-		cursor = str(row.get("parent_folder_id", ""))
-	return " / ".join(names)
+	return folder_path_from_snapshot(clean_id, hierarchy_snapshot())
 
 
 static func notebook_path(notebook_id: String) -> String:
-	var clean_id := notebook_id.strip_edges()
-	for notebook in list_notebooks():
-		if str(notebook.get("id", "")) != clean_id:
-			continue
-		var name := str(notebook.get("name", "Notebook"))
-		var parent_path := folder_path(str(notebook.get("parent_folder_id", "")))
-		return name if parent_path.is_empty() else parent_path + " / " + name
-	return ""
+	return notebook_path_from_snapshot(notebook_id.strip_edges(), hierarchy_snapshot())
 
 
 static func descendant_folder_ids(folder_id: String, include_self: bool = false) -> Array[String]:
@@ -828,6 +954,24 @@ static func _normalise_tags(raw: Variant) -> Array[String]:
 		seen[key] = true
 		result.append(clean)
 	return result
+
+
+static func _folder_path_from_records_v0215(
+	folder_id: String, folder_by_id: Dictionary
+) -> String:
+	var names: Array[String] = []
+	var cursor := folder_id.strip_edges()
+	var visited := {}
+	while (
+		not cursor.is_empty()
+		and folder_by_id.has(cursor)
+		and not visited.has(cursor)
+	):
+		visited[cursor] = true
+		var row: Dictionary = folder_by_id[cursor]
+		names.push_front(str(row.get("name", "Folder")))
+		cursor = str(row.get("parent_folder_id", ""))
+	return " / ".join(names)
 
 
 static func _valid_notebook_id_or_empty(notebook_id: String) -> String:

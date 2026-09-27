@@ -15,12 +15,12 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.5 — Idea Notebook Folder Tree**. Idea Notebook
-now uses a file-browser-style hierarchy where folders may contain subfolders and
-notebooks, notebooks contain ideas, and selecting a folder shows all ideas in descendant
-notebooks. Moves and renames retain stable IDs, while deleting a folder safely reparents
-its contents and never deletes ideas. Folder organisation remains separate from semantic
-Bible and Series classification.
+The current source candidate is **v0.21.5-hotfix1 — Idea Window and Selection
+Reliability**. The unified Idea Generator now opens the requested AI Ideas or Idea
+Notebook tab through one reusable native window, while Notebook multi-selection avoids
+per-row detail loads and repeated hierarchy reads. The v0.21.5 file-browser-style Folder
+Tree remains intact, including recursive views, stable IDs, path-aware destinations and
+safe reparenting.
 
 The v0.21.4 multi-batch diversity controls and clearer generation telemetry remain
 available, as do reusable v0.21.3 Idea Sources, v0.21.2 readable Personality view and

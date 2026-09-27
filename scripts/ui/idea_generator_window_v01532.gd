@@ -38,6 +38,7 @@ var _save_generated_window_v01532: Window
 var _save_generated_checks_v01532: Array[CheckBox] = []
 var _save_generated_notebook_v01532: OptionButton
 var _save_generated_status_v01532: Label
+var _loaded_idea_v01532: Dictionary = {}
 
 
 func _ready() -> void:
@@ -94,8 +95,8 @@ func set_last_generated_ideas_v01532(ideas: Array, metadata: Dictionary = {}) ->
 
 
 func open_notebook_v01532() -> void:
-	open_studio()
 	_show_notebook_tab_v01532()
+	open_studio()
 
 
 func _show_notebook_tab_v01532() -> void:
@@ -496,9 +497,11 @@ func _on_idea_selected_v01532(index: int) -> void:
 func _load_selected_idea_v01532(idea_id: String) -> void:
 	var loaded := NOTEBOOK_SERVICE.load_idea(idea_id)
 	if not bool(loaded.get("ok", false)):
+		_loaded_idea_v01532.clear()
 		_status_v01532.text = str(loaded.get("error", "Could not load saved idea."))
 		return
 	var idea: Dictionary = loaded.get("data", {})
+	_loaded_idea_v01532 = idea.duplicate(true)
 	_title_v01532.text = str(idea.get("title", ""))
 	_concept_v01532.text = str(idea.get("concept", ""))
 	_notes_v01532.text = str(idea.get("notes", ""))
@@ -694,6 +697,7 @@ func _select_metadata_v01532(selector: OptionButton, value: String, fallback: St
 
 
 func _clear_editor_v01532() -> void:
+	_loaded_idea_v01532.clear()
 	if _title_v01532 != null:
 		_title_v01532.text = ""
 	if _concept_v01532 != null:

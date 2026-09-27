@@ -54,6 +54,8 @@ func _finish_opening_unified_idea_generator() -> void:
 
 
 func open_idea_notebook_v01532() -> void:
-	_finish_opening_unified_idea_generator()
-	if _idea_generator_v01532 != null:
-		_idea_generator_v01532.open_notebook_v01532()
+	if not _prepare_unified_idea_generator():
+		return
+	_idea_generator_v01532.open_notebook_v01532()
+	if _status != null:
+		_status.text = "Idea Notebook opened in the unified Idea Generator."
