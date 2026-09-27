@@ -1,7 +1,7 @@
 {
   "format_version": 1,
   "name": "Character Card Forge v0.21.3 complete regression suites",
-  "description": "v0.21.2 complete baseline plus portable reusable Idea Sources, a separate Idea Source Library, structured source-aware batching and card-to-similar-Ideas extraction.",
+  "description": "v0.21.2 complete baseline plus portable reusable Idea Sources, a separate Idea Source Library, card-to-similar-Ideas extraction and accepted-count Multi-Batch Diversity Guardrails.",
   "base_manifest": "regression_suites_v0212.json",
   "suite_additions": {
     "current_wiring": [
@@ -10,6 +10,13 @@
         "label": "v0.21.3 reusable Idea Sources and Generate Similar Ideas",
         "kind": "godot",
         "path": "tools/test_v0213_idea_sources.gd",
+        "timeout_seconds": 180
+      },
+      {
+        "id": "v0214_multi_batch_diversity",
+        "label": "Multi-Batch Diversity Guardrails",
+        "kind": "godot",
+        "path": "tools/test_v0214_multi_batch_diversity.gd",
         "timeout_seconds": 180
       }
     ]

@@ -4,6 +4,30 @@ Release notes are written before a release tag is created. Each release explicit
 records migration needs, breaking changes and known limitations, even when there are
 none. GitHub Releases use the matching reviewed section instead of generated notes.
 
+## [Unreleased]
+
+### Changes
+
+- Added **Multi-Batch Diversity Guardrails** so a split Idea Generator run shares a temporary accepted/rejected scenario ledger across sequential provider requests.
+- Changed multi-request planning to target accepted usable ideas: every next request is recalculated from the accepted count while the normal request count remains bounded.
+- Added conservative title-similarity warnings and structural duplicate checks that ignore cosmetic renaming while preserving meaningfully different Series variants.
+- Added optional **Flag Similar Ideas** and **Reject Clear Duplicates** final AI review modes; both are off by default unless explicitly selected.
+- Added an optional one-shot final top-up request with full anti-repeat context and a hard no-second-recovery stopping rule.
+- Added accepted/raw/rejected progress reporting and a readable final similarity report.
+
+### Migration notes
+
+- None. Diversity ledgers are temporary runtime state; Idea Notebook, Idea Packs and Idea Sources retain their existing formats.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Semantic novelty ultimately depends on the configured model. Local rejection is intentionally conservative, and the stronger final AI review consumes one additional request when enabled.
+- Real provider behavior, cancellation and desktop review layout still require the documented hands-on verification pass.
+
 ## [0.21.3] - 2026-09-26
 
 ### Highlights

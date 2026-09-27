@@ -16,6 +16,9 @@ const IDEA_CUSTOM_LENGTH_V0211 = preload(
 const IDEA_BATCHING_V0211 = preload(
 	"res://scripts/services/idea_generator_batching_v0211.gd"
 )
+const IDEA_DIVERSITY_V0214 = preload(
+	"res://scripts/services/idea_diversity_guardrails_v0214.gd"
+)
 const PERSONALITY_READABILITY_V0212 = preload(
 	"res://scripts/services/personality_readability_service_v0212.gd"
 )
@@ -41,6 +44,13 @@ var _idea_batch_results_v0211: Dictionary = {}
 var _idea_batch_metadata_v0211: Dictionary = {}
 var _idea_batch_errors_v0211: Array[String] = []
 var _idea_batch_cancelling_v0211 := false
+var _idea_prevent_repeats_v0214: CheckButton
+var _idea_final_similarity_v0214: OptionButton
+var _idea_final_top_up_v0214: CheckButton
+var _idea_diversity_session_v0214: Dictionary = {}
+var _idea_diversity_review_job_id_v0214 := ""
+var _idea_similarity_review_window_v0214: Window
+var _idea_similarity_review_text_v0214: TextEdit
 var _similar_ideas_window_v0213: Window
 var _similarity_mode_v0213: OptionButton
 var _similar_source_title_v0213: LineEdit
@@ -56,6 +66,7 @@ var _idea_prompt_hint_v0213: Label
 func _ready() -> void:
 	super._ready()
 	_build_similar_ideas_window_v0213()
+	_build_idea_similarity_review_window_v0214()
 	_add_generate_similar_ideas_action_v0213()
 	_install_idea_prompt_presentation_v0213()
 
@@ -401,6 +412,42 @@ func _install_idea_batch_controls_v0211(
 		"Use 1 for one idea per request on smaller models. Higher values reduce the number of provider calls."
 	)
 	row.add_child(_idea_batch_size_v0211)
+	var diversity_row := HFlowContainer.new()
+	diversity_row.name = "IdeaDiversityControlsV0214"
+	diversity_row.add_theme_constant_override("separation", 10)
+	panel.add_child(diversity_row)
+	_idea_prevent_repeats_v0214 = CheckButton.new()
+	_idea_prevent_repeats_v0214.name = "PreventRepeatsAcrossBatchesV0214"
+	_idea_prevent_repeats_v0214.text = "Prevent repeats across batches"
+	_idea_prevent_repeats_v0214.button_pressed = true
+	_idea_prevent_repeats_v0214.tooltip_text = (
+		"Later batches receive compact summaries of ideas already generated so the model can explore different concepts."
+	)
+	diversity_row.add_child(_idea_prevent_repeats_v0214)
+	var review_label := Label.new()
+	review_label.text = "Final AI similarity check"
+	diversity_row.add_child(review_label)
+	_idea_final_similarity_v0214 = OptionButton.new()
+	_idea_final_similarity_v0214.name = "FinalAISimilarityCheckV0214"
+	_idea_final_similarity_v0214.add_item("Off")
+	_idea_final_similarity_v0214.set_item_metadata(0, IDEA_DIVERSITY_V0214.FINAL_REVIEW_OFF)
+	_idea_final_similarity_v0214.add_item("Flag Similar Ideas")
+	_idea_final_similarity_v0214.set_item_metadata(1, IDEA_DIVERSITY_V0214.FINAL_REVIEW_FLAG)
+	_idea_final_similarity_v0214.add_item("Reject Clear Duplicates")
+	_idea_final_similarity_v0214.set_item_metadata(2, IDEA_DIVERSITY_V0214.FINAL_REVIEW_REJECT)
+	_idea_final_similarity_v0214.select(0)
+	_idea_final_similarity_v0214.tooltip_text = (
+		"Optionally compare the completed set for scenario-level duplicates that use different wording or names. This uses one additional model request. Reject mode is conservative and must be selected explicitly."
+	)
+	diversity_row.add_child(_idea_final_similarity_v0214)
+	_idea_final_top_up_v0214 = CheckButton.new()
+	_idea_final_top_up_v0214.name = "FinalIdeaTopUpV0214"
+	_idea_final_top_up_v0214.text = "One final top-up request if short"
+	_idea_final_top_up_v0214.button_pressed = false
+	_idea_final_top_up_v0214.tooltip_text = (
+		"If rejected ideas leave the result below the requested count, make one final request for the missing number, up to the provider-request limit. This occurs at most once."
+	)
+	diversity_row.add_child(_idea_final_top_up_v0214)
 	_idea_batch_plan_hint_v0211 = Label.new()
 	_idea_batch_plan_hint_v0211.name = "IdeaBatchPlanHintV0211"
 	_idea_batch_plan_hint_v0211.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -435,8 +482,58 @@ func _refresh_idea_batch_plan_v0211() -> void:
 		else ""
 	)
 	_idea_batch_plan_hint_v0211.text = (
-		"Plan: %d ideas across %d %s%s. Successful requests are combined in order."
+		"Plan: target %d accepted ideas across up to %d %s%s. Each next request is recalculated from accepted results."
 		% [total, plan.size(), request_phrase, small_model_note]
+	)
+
+
+func _build_idea_similarity_review_window_v0214() -> void:
+	_idea_similarity_review_window_v0214 = Window.new()
+	_idea_similarity_review_window_v0214.title = "Idea Similarity Review"
+	_idea_similarity_review_window_v0214.size = Vector2i(820, 620)
+	_idea_similarity_review_window_v0214.min_size = Vector2i(560, 400)
+	_idea_similarity_review_window_v0214.visible = false
+	_idea_similarity_review_window_v0214.exclusive = false
+	_idea_similarity_review_window_v0214.transient = true
+	add_child(_idea_similarity_review_window_v0214)
+	var margin := MarginContainer.new()
+	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	margin.add_theme_constant_override("margin_left", 14)
+	margin.add_theme_constant_override("margin_top", 14)
+	margin.add_theme_constant_override("margin_right", 14)
+	margin.add_theme_constant_override("margin_bottom", 14)
+	_idea_similarity_review_window_v0214.add_child(margin)
+	var root := VBoxContainer.new()
+	root.add_theme_constant_override("separation", 8)
+	margin.add_child(root)
+	var heading := Label.new()
+	heading.text = "Final AI Similarity Review"
+	heading.add_theme_font_size_override("font_size", 22)
+	root.add_child(heading)
+	var explanation := Label.new()
+	explanation.text = (
+		"This report compares scenario structure, not just titles or shared tropes. Flag mode never removes ideas; Reject Clear Duplicates keeps the first representative of a clear duplicate cluster."
+	)
+	explanation.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	root.add_child(explanation)
+	_idea_similarity_review_text_v0214 = TextEdit.new()
+	_idea_similarity_review_text_v0214.name = "IdeaSimilarityReviewReportV0214"
+	_idea_similarity_review_text_v0214.editable = false
+	_idea_similarity_review_text_v0214.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	_idea_similarity_review_text_v0214.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	root.add_child(_idea_similarity_review_text_v0214)
+	var actions := HBoxContainer.new()
+	root.add_child(actions)
+	var keep_note := Label.new()
+	keep_note.text = "Related but distinct ideas are retained."
+	keep_note.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	actions.add_child(keep_note)
+	var close := Button.new()
+	close.text = "Close"
+	close.pressed.connect(_idea_similarity_review_window_v0214.hide)
+	actions.add_child(close)
+	_idea_similarity_review_window_v0214.close_requested.connect(
+		_idea_similarity_review_window_v0214.hide
 	)
 
 
@@ -486,26 +583,38 @@ func _generate_ideas() -> void:
 	)
 	var per_request := _idea_batch_size_value_v0211()
 	var plan := IDEA_BATCHING_V0211.request_plan(total, per_request)
-	if plan.size() == 1:
-		var result := _queue_idea_request_v0211(plan[0])
-		if not bool(result.get("ok", false)):
-			_idea_status.text = str(
-				result.get("error", "Could not queue idea generation.")
-			)
-			return
-		_idea_job_id = str(result.get("job_id", ""))
-		_idea_generate_button.disabled = true
-		_set_single_idea_queue_status_v0211(result)
-		return
 	_queue_batched_ideas_v0211(total, plan)
 
 
 func _queue_idea_request_v0211(request_size: int) -> Dictionary:
-	var profile := CCFSettingsService.profile_for_role(
+	var default_profile := CCFSettingsService.profile_for_role(
 		_settings, CCFSettingsService.ROLE_TEXT
 	)
-	var idea_seed := _idea_seed_with_source_v0213()
-	if _selected_idea_detail_level_v0167 == "custom":
+	var profile_value: Variant = _idea_diversity_session_v0214.get(
+		"profile_snapshot", default_profile
+	)
+	var profile: Dictionary = (
+		(profile_value as Dictionary).duplicate(true)
+		if profile_value is Dictionary
+		else default_profile
+	)
+	var idea_seed := str(_idea_diversity_session_v0214.get(
+		"seed_snapshot", _idea_seed_with_source_v0213()
+	))
+	var series_context := str(_idea_diversity_session_v0214.get(
+		"series_context_snapshot",
+		CCFSeriesService.generation_context_for_project(_project)
+	))
+	var detail_level := str(_idea_diversity_session_v0214.get(
+		"detail_level_snapshot", _selected_idea_detail_level_v0167
+	))
+	var retry_count := int(_idea_diversity_session_v0214.get(
+		"retry_count_snapshot", int(_generation_settings().get("retry_count", 1))
+	))
+	var project_id := str(_idea_diversity_session_v0214.get(
+		"project_id_snapshot", str(_project.get("project_id", ""))
+	))
+	if detail_level == "custom":
 		if (
 			_generation_service == null
 			or not _generation_service.has_method(
@@ -521,13 +630,15 @@ func _queue_idea_request_v0211(request_size: int) -> Dictionary:
 			idea_seed,
 			profile,
 			request_size,
-			int(_generation_settings().get("retry_count", 1)),
-			str(_project.get("project_id", "")),
-			CCFSeriesService.generation_context_for_project(_project),
-			_idea_custom_target_characters_v0211()
+			retry_count,
+			project_id,
+			series_context,
+			int(_idea_diversity_session_v0214.get(
+				"custom_target_snapshot", _idea_custom_target_characters_v0211()
+			))
 		) as Dictionary
 	var clean_level := _idea_detail_service_v0167.normalise_level_id(
-		_selected_idea_detail_level_v0167
+		detail_level
 	)
 	if (
 		_generation_service != null
@@ -540,18 +651,18 @@ func _queue_idea_request_v0211(request_size: int) -> Dictionary:
 			idea_seed,
 			profile,
 			request_size,
-			int(_generation_settings().get("retry_count", 1)),
-			str(_project.get("project_id", "")),
-			CCFSeriesService.generation_context_for_project(_project),
+			retry_count,
+			project_id,
+			series_context,
 			clean_level
 		) as Dictionary
 	return _generation_service.queue_idea_generation(
 		idea_seed,
 		profile,
 		request_size,
-		int(_generation_settings().get("retry_count", 1)),
-		str(_project.get("project_id", "")),
-		CCFSeriesService.generation_context_for_project(_project)
+		retry_count,
+		project_id,
+		series_context
 	)
 
 
@@ -598,55 +709,110 @@ func _queue_batched_ideas_v0211(total: int, plan: Array[int]) -> void:
 	]
 	_idea_batch_requested_total_v0211 = total
 	_idea_batch_expected_requests_v0211 = plan.size()
-	var queued_count := 0
-	for batch_index in range(plan.size()):
-		var result := _queue_idea_request_v0211(plan[batch_index])
-		if not bool(result.get("ok", false)):
-			var pseudo_id := "%s-unqueued-%d" % [
-				_idea_batch_group_id_v0211, batch_index
-			]
-			_idea_batch_job_indices_v0211[pseudo_id] = batch_index
-			_idea_batch_terminal_jobs_v0211[pseudo_id] = "failed"
-			_idea_batch_errors_v0211.append(
-				"Request %d/%d could not be queued: %s"
-				% [
-					batch_index + 1,
-					plan.size(),
-					str(result.get("error", "Unknown queue error."))
-				]
-			)
-			continue
-		var job_id := str(result.get("job_id", ""))
-		_idea_batch_job_indices_v0211[job_id] = batch_index
-		var decorated := bool(_generation_service.call(
-			"decorate_idea_batch_job_v0211",
-			job_id,
-			_idea_batch_group_id_v0211,
-			batch_index,
-			plan.size(),
-			total
-		))
-		if not decorated:
-			_idea_batch_errors_v0211.append(
-				"Request %d/%d could not be marked for safe aggregation."
-				% [batch_index + 1, plan.size()]
-			)
-			if _generation_service.has_method("cancel_job_v01531"):
-				_generation_service.call("cancel_job_v01531", job_id)
-			continue
-		queued_count += 1
+	_idea_diversity_session_v0214 = IDEA_DIVERSITY_V0214.create_session(
+		total,
+		_idea_batch_size_value_v0211(),
+		_idea_prevent_repeats_v0214 == null
+		or _idea_prevent_repeats_v0214.button_pressed,
+		_idea_final_review_mode_v0214(),
+		_idea_final_top_up_v0214 != null
+		and _idea_final_top_up_v0214.button_pressed
+	)
+	_idea_diversity_session_v0214["seed_snapshot"] = _idea_seed_with_source_v0213()
+	_idea_diversity_session_v0214["series_context_snapshot"] = (
+		CCFSeriesService.generation_context_for_project(_project)
+	)
+	_idea_diversity_session_v0214["profile_snapshot"] = (
+		CCFSettingsService.profile_for_role(
+			_settings, CCFSettingsService.ROLE_TEXT
+		).duplicate(true)
+	)
+	_idea_diversity_session_v0214["retry_count_snapshot"] = int(
+		_generation_settings().get("retry_count", 1)
+	)
+	_idea_diversity_session_v0214["project_id_snapshot"] = str(
+		_project.get("project_id", "")
+	)
+	_idea_diversity_session_v0214["detail_level_snapshot"] = (
+		_selected_idea_detail_level_v0167
+	)
+	_idea_diversity_session_v0214["custom_target_snapshot"] = (
+		_idea_custom_target_characters_v0211()
+	)
 	_idea_job_id = _idea_batch_group_id_v0211
-	_idea_generate_button.disabled = queued_count > 0
-	if queued_count == 0:
-		_maybe_finish_idea_batch_v0211()
-		return
+	_idea_generate_button.disabled = true
 	_idea_status.text = (
-		"Queued %d ideas across %d sequential provider requests • up to %d ideas/request • %s detail."
+		"Starting generation session • target %d accepted ideas • up to %d adaptive provider requests • %s detail."
 		% [
 			total,
 			plan.size(),
-			_idea_batch_size_value_v0211(),
 			_idea_detail_label_v0211()
+		]
+	)
+	_queue_next_normal_idea_batch_v0214()
+
+
+func _queue_next_normal_idea_batch_v0214() -> void:
+	if _idea_diversity_session_v0214.is_empty():
+		return
+	var request_size := IDEA_DIVERSITY_V0214.next_normal_request_size(
+		_idea_diversity_session_v0214
+	)
+	if request_size <= 0:
+		_finish_normal_idea_batches_v0214()
+		return
+	var batch_index := int(
+		_idea_diversity_session_v0214.get("normal_requests_started", 0)
+	)
+	IDEA_DIVERSITY_V0214.mark_request_started(
+		_idea_diversity_session_v0214, request_size, "normal"
+	)
+	var result := _queue_idea_request_v0211(request_size)
+	if not bool(result.get("ok", false)):
+		_idea_batch_errors_v0211.append(
+			"Request %d/%d could not be queued: %s"
+			% [
+				batch_index + 1,
+				_idea_batch_expected_requests_v0211,
+				str(result.get("error", "Unknown queue error."))
+			]
+		)
+		call_deferred("_queue_next_normal_idea_batch_v0214")
+		return
+	var job_id := str(result.get("job_id", ""))
+	_idea_batch_job_indices_v0211[job_id] = batch_index
+	_idea_batch_metadata_v0211[batch_index] = {
+		"idea_batch_request_kind": "normal"
+	}
+	var anti_repeat := IDEA_DIVERSITY_V0214.anti_repeat_prompt(
+		_idea_diversity_session_v0214
+	)
+	var decorated := bool(_generation_service.call(
+		"decorate_idea_batch_job_v0211",
+		job_id,
+		_idea_batch_group_id_v0211,
+		batch_index,
+		_idea_batch_expected_requests_v0211,
+		_idea_batch_requested_total_v0211,
+		anti_repeat,
+		"normal"
+	))
+	if not decorated:
+		_idea_batch_errors_v0211.append(
+			"Request %d/%d could not be marked for safe aggregation."
+			% [batch_index + 1, _idea_batch_expected_requests_v0211]
+		)
+		if _generation_service.has_method("cancel_job_v01531"):
+			_generation_service.call("cancel_job_v01531", job_id)
+		return
+	_idea_status.text = (
+		"Generating batch %d/%d… %d/%d unique ideas accepted • requesting %d."
+		% [
+			batch_index + 1,
+			_idea_batch_expected_requests_v0211,
+			IDEA_DIVERSITY_V0214.accepted_count(_idea_diversity_session_v0214),
+			_idea_batch_requested_total_v0211,
+			request_size
 		]
 	)
 
@@ -656,6 +822,15 @@ func _on_job_completed(
 ) -> void:
 	if job_type == "idea_source_title" and job_id == _idea_source_title_job_id_v0213:
 		_handle_idea_source_title_completed_v0213(data, metadata)
+		return
+	if (
+		job_type == "idea_similarity_review"
+		and job_id == _idea_diversity_review_job_id_v0214
+	):
+		if not _idea_session_project_is_current_v0214():
+			_discard_idea_session_for_project_change_v0214()
+			return
+		_handle_idea_similarity_review_completed_v0214(data)
 		return
 	if job_type == "ideas" and _idea_batch_job_indices_v0211.has(job_id):
 		_handle_completed_idea_batch_v0211(job_id, data, metadata)
@@ -701,14 +876,39 @@ func _on_job_failed(job_id: String, job_type: String, message: String) -> void:
 	if job_type == "idea_source_title" and job_id == _idea_source_title_job_id_v0213:
 		_handle_idea_source_title_failed_v0213(message)
 		return
+	if (
+		job_type == "idea_similarity_review"
+		and job_id == _idea_diversity_review_job_id_v0214
+	):
+		if not _idea_session_project_is_current_v0214():
+			_discard_idea_session_for_project_change_v0214()
+			return
+		_idea_batch_errors_v0211.append(
+			"Final AI similarity review failed: %s" % message
+		)
+		_idea_diversity_review_job_id_v0214 = ""
+		_idea_diversity_session_v0214["final_review_completed"] = true
+		_maybe_queue_final_top_up_v0214()
+		return
 	if job_type == "ideas" and _idea_batch_job_indices_v0211.has(job_id):
 		_mark_idea_batch_terminal_v0211(job_id, "failed")
 		var batch_index := int(_idea_batch_job_indices_v0211.get(job_id, 0))
+		var request_kind := "normal"
+		if _idea_batch_metadata_v0211.get(batch_index, {}) is Dictionary:
+			request_kind = str(
+				(_idea_batch_metadata_v0211.get(batch_index, {}) as Dictionary).get(
+					"idea_batch_request_kind", "normal"
+				)
+			)
 		_idea_batch_errors_v0211.append(
-			"Request %d/%d failed: %s"
-			% [batch_index + 1, _idea_batch_expected_requests_v0211, message]
+			"%s request %d failed: %s"
+			% ["Recovery" if request_kind == "top_up" else "Generation", batch_index + 1, message]
 		)
-		_maybe_finish_idea_batch_v0211()
+		if request_kind == "top_up":
+			_idea_diversity_session_v0214["final_top_up_completed"] = true
+			_finalize_idea_generation_session_v0214()
+		else:
+			_queue_next_normal_idea_batch_v0214()
 		return
 	super._on_job_failed(job_id, job_type, message)
 
@@ -717,6 +917,18 @@ func _on_job_cancelled(job_id: String, job_type: String) -> void:
 	if job_type == "idea_source_title" and job_id == _idea_source_title_job_id_v0213:
 		_handle_idea_source_title_failed_v0213("The name suggestion was cancelled.")
 		return
+	if (
+		job_type == "idea_similarity_review"
+		and job_id == _idea_diversity_review_job_id_v0214
+	):
+		if not _idea_session_project_is_current_v0214():
+			_discard_idea_session_for_project_change_v0214()
+			return
+		_idea_batch_errors_v0211.append("Final AI similarity review was cancelled.")
+		_idea_diversity_review_job_id_v0214 = ""
+		_idea_diversity_session_v0214["final_review_completed"] = true
+		_finalize_idea_generation_session_v0214()
+		return
 	if job_type == "ideas" and _idea_batch_job_indices_v0211.has(job_id):
 		_mark_idea_batch_terminal_v0211(job_id, "cancelled")
 		var batch_index := int(_idea_batch_job_indices_v0211.get(job_id, 0))
@@ -724,9 +936,7 @@ func _on_job_cancelled(job_id: String, job_type: String) -> void:
 			"Request %d/%d was cancelled."
 			% [batch_index + 1, _idea_batch_expected_requests_v0211]
 		)
-		if not _idea_batch_cancelling_v0211:
-			_cancel_remaining_idea_batches_v0211()
-		_maybe_finish_idea_batch_v0211()
+		_finalize_idea_generation_session_v0214()
 		return
 	super._on_job_cancelled(job_id, job_type)
 
@@ -759,27 +969,52 @@ func _handle_completed_idea_batch_v0211(
 			% [batch_index + 1, _idea_batch_expected_requests_v0211]
 		)
 		_mark_idea_batch_terminal_v0211(job_id, "discarded")
-		_maybe_finish_idea_batch_v0211()
+		_finalize_idea_generation_session_v0214()
 		return
 	var ideas: Array = []
 	if data is Array:
 		for idea_value in data as Array:
 			if idea_value is Dictionary:
 				ideas.append((idea_value as Dictionary).duplicate(true))
-	_idea_batch_results_v0211[batch_index] = ideas
+	var request_kind := str(metadata.get("idea_batch_request_kind", "normal"))
+	var rejected_value: Variant = metadata.get(
+		"idea_diversity_validation_rejections", []
+	)
+	var validation_rejections: Array = (
+		rejected_value if rejected_value is Array else []
+	)
+	var raw_count_hint := int(metadata.get(
+		"idea_diversity_raw_candidate_count", ideas.size() + validation_rejections.size()
+	))
+	var reviewed := IDEA_DIVERSITY_V0214.record_batch(
+		_idea_diversity_session_v0214,
+		ideas,
+		validation_rejections,
+		request_kind,
+		raw_count_hint
+	)
+	var accepted_ideas: Array = []
+	for record_value in reviewed.get("accepted", []):
+		if record_value is Dictionary:
+			var idea_value: Variant = (record_value as Dictionary).get("idea", {})
+			if idea_value is Dictionary:
+				accepted_ideas.append((idea_value as Dictionary).duplicate(true))
+	_idea_batch_results_v0211[batch_index] = accepted_ideas
 	_idea_batch_metadata_v0211[batch_index] = metadata.duplicate(true)
 	_mark_idea_batch_terminal_v0211(job_id, "completed")
-	var received := _idea_batch_received_count_v0211()
 	_idea_status.text = (
-		"Idea request %d/%d finished • %d/%d usable ideas received so far."
+		"Checking batch for repeats… %d/%d unique ideas accepted • %d raw • %d rejected."
 		% [
-			batch_index + 1,
-			_idea_batch_expected_requests_v0211,
-			received,
-			_idea_batch_requested_total_v0211
+			int(reviewed.get("accepted_count", 0)),
+			_idea_batch_requested_total_v0211,
+			int(reviewed.get("raw_count", 0)),
+			int(reviewed.get("rejected_count", 0))
 		]
 	)
-	_maybe_finish_idea_batch_v0211()
+	if request_kind == "top_up":
+		_finalize_idea_generation_session_v0214()
+	else:
+		_queue_next_normal_idea_batch_v0214()
 
 
 func _mark_idea_batch_terminal_v0211(job_id: String, outcome: String) -> void:
@@ -802,54 +1037,234 @@ func _cancel_remaining_idea_batches_v0211() -> void:
 
 
 func _maybe_finish_idea_batch_v0211() -> void:
-	if _idea_batch_group_id_v0211.is_empty() or _idea_batch_cancelling_v0211:
+	# Compatibility entry point retained for historical callers. v0.21.4 queues
+	# one request at a time, so completion is driven by the session phase methods.
+	if not _idea_diversity_session_v0214.is_empty():
+		_finish_normal_idea_batches_v0214()
+
+
+func _finish_normal_idea_batches_v0214() -> void:
+	if _idea_diversity_session_v0214.is_empty():
 		return
+	if not _idea_session_project_is_current_v0214():
+		_discard_idea_session_for_project_change_v0214()
+		return
+	var review_mode := str(
+		_idea_diversity_session_v0214.get("final_review_mode", "off")
+	)
 	if (
-		_idea_batch_terminal_jobs_v0211.size()
-		< _idea_batch_expected_requests_v0211
+		review_mode != IDEA_DIVERSITY_V0214.FINAL_REVIEW_OFF
+		and IDEA_DIVERSITY_V0214.accepted_count(_idea_diversity_session_v0214) >= 2
+		and not bool(_idea_diversity_session_v0214.get("final_review_started", false))
+	):
+		_queue_final_idea_similarity_review_v0214()
+		return
+	_maybe_queue_final_top_up_v0214()
+
+
+func _queue_final_idea_similarity_review_v0214() -> void:
+	_idea_diversity_session_v0214["final_review_started"] = true
+	if (
+		_generation_service == null
+		or not _generation_service.has_method("queue_idea_similarity_review_v0214")
+	):
+		_idea_batch_errors_v0211.append(
+			"Final AI similarity review is unavailable in this generation service."
+		)
+		_idea_diversity_session_v0214["final_review_completed"] = true
+		_maybe_queue_final_top_up_v0214()
+		return
+	var profile_value: Variant = _idea_diversity_session_v0214.get(
+		"profile_snapshot",
+		CCFSettingsService.profile_for_role(
+			_settings, CCFSettingsService.ROLE_TEXT
+		)
+	)
+	var profile: Dictionary = (
+		(profile_value as Dictionary).duplicate(true)
+		if profile_value is Dictionary
+		else {}
+	)
+	var result := _generation_service.call(
+		"queue_idea_similarity_review_v0214",
+		_idea_diversity_session_v0214,
+		profile,
+		int(_idea_diversity_session_v0214.get(
+			"retry_count_snapshot", int(_generation_settings().get("retry_count", 1))
+		)),
+		str(_idea_diversity_session_v0214.get("project_id_snapshot", ""))
+	) as Dictionary
+	if not bool(result.get("ok", false)):
+		_idea_batch_errors_v0211.append(
+			"Final AI similarity review could not be queued: %s"
+			% str(result.get("error", "Unknown queue error."))
+		)
+		_idea_diversity_session_v0214["final_review_completed"] = true
+		_maybe_queue_final_top_up_v0214()
+		return
+	_idea_diversity_review_job_id_v0214 = str(result.get("job_id", ""))
+	_idea_status.text = "Running final similarity review…"
+
+
+func _handle_idea_similarity_review_completed_v0214(data: Variant) -> void:
+	var clusters := IDEA_DIVERSITY_V0214.normalise_review_clusters(
+		data, _idea_diversity_session_v0214
+	)
+	IDEA_DIVERSITY_V0214.apply_final_review(
+		_idea_diversity_session_v0214, clusters
+	)
+	_idea_diversity_review_job_id_v0214 = ""
+	_show_idea_similarity_review_v0214(clusters)
+	_maybe_queue_final_top_up_v0214()
+
+
+func _show_idea_similarity_review_v0214(clusters: Array[Dictionary]) -> void:
+	if (
+		_idea_similarity_review_window_v0214 == null
+		or _idea_similarity_review_text_v0214 == null
 	):
 		return
-	var combined: Array = []
-	var aggregate_metadata: Dictionary = {}
-	for batch_index in range(_idea_batch_expected_requests_v0211):
-		var metadata_value: Variant = _idea_batch_metadata_v0211.get(
-			batch_index, {}
+	var lines: Array[String] = []
+	var mode := str(_idea_diversity_session_v0214.get("final_review_mode", "off"))
+	lines.append("Mode: %s" % (
+		"Reject Clear Duplicates" if mode == IDEA_DIVERSITY_V0214.FINAL_REVIEW_REJECT else "Flag Similar Ideas"
+	))
+	lines.append("")
+	if clusters.is_empty():
+		lines.append("No duplicate or near-duplicate clusters were reported.")
+	else:
+		for index in range(clusters.size()):
+			var cluster := clusters[index]
+			lines.append("Group %d — %s" % [
+				index + 1,
+				str(cluster.get("classification", "")).replace("_", " ").capitalize()
+			])
+			for idea_id_value in cluster.get("idea_ids", []):
+				var idea_id := str(idea_id_value)
+				lines.append("  • %s — %s" % [
+					idea_id, _idea_ledger_title_v0214(idea_id)
+				])
+			lines.append("  %s" % str(cluster.get("reason", "")))
+			lines.append("")
+	if mode == IDEA_DIVERSITY_V0214.FINAL_REVIEW_FLAG:
+		lines.append("Flag mode kept every idea. No generated result was removed.")
+	else:
+		lines.append("Reject mode removed only later members of clusters classified as clear duplicates. Near-duplicates and related variants were kept.")
+	_idea_similarity_review_text_v0214.text = "\n".join(lines)
+	_idea_similarity_review_window_v0214.popup_centered()
+
+
+func _idea_ledger_title_v0214(idea_id: String) -> String:
+	for category in ["accepted", "rejected"]:
+		for record_value in _idea_diversity_session_v0214.get(category, []):
+			if (
+				record_value is Dictionary
+				and str((record_value as Dictionary).get("id", "")) == idea_id
+			):
+				return str((record_value as Dictionary).get("title", "Untitled idea"))
+	return "Untitled idea"
+
+
+func _maybe_queue_final_top_up_v0214() -> void:
+	if not _idea_session_project_is_current_v0214():
+		_discard_idea_session_for_project_change_v0214()
+		return
+	var request_size := IDEA_DIVERSITY_V0214.next_top_up_request_size(
+		_idea_diversity_session_v0214
+	)
+	if request_size <= 0:
+		_finalize_idea_generation_session_v0214()
+		return
+	IDEA_DIVERSITY_V0214.mark_request_started(
+		_idea_diversity_session_v0214, request_size, "top_up"
+	)
+	var result := _queue_idea_request_v0211(request_size)
+	if not bool(result.get("ok", false)):
+		_idea_batch_errors_v0211.append(
+			"The one-shot recovery request could not be queued: %s"
+			% str(result.get("error", "Unknown queue error."))
 		)
-		if aggregate_metadata.is_empty() and metadata_value is Dictionary:
+		_idea_diversity_session_v0214["final_top_up_completed"] = true
+		_finalize_idea_generation_session_v0214()
+		return
+	var job_id := str(result.get("job_id", ""))
+	var batch_index := _idea_batch_expected_requests_v0211
+	_idea_batch_job_indices_v0211[job_id] = batch_index
+	_idea_batch_metadata_v0211[batch_index] = {"idea_batch_request_kind": "top_up"}
+	var anti_repeat := IDEA_DIVERSITY_V0214.anti_repeat_prompt(
+		_idea_diversity_session_v0214
+	)
+	var decorated := bool(_generation_service.call(
+		"decorate_idea_batch_job_v0211",
+		job_id,
+		_idea_batch_group_id_v0211,
+		batch_index,
+		_idea_batch_expected_requests_v0211 + 1,
+		_idea_batch_requested_total_v0211,
+		anti_repeat,
+		"top_up"
+	))
+	if not decorated:
+		_idea_batch_errors_v0211.append(
+			"The one-shot recovery request could not be marked for safe aggregation."
+		)
+		if _generation_service.has_method("cancel_job_v01531"):
+			_generation_service.call("cancel_job_v01531", job_id)
+		return
+	_idea_status.text = (
+		"Making one final recovery request for %d missing idea%s… %d/%d accepted."
+		% [
+			request_size,
+			"" if request_size == 1 else "s",
+			IDEA_DIVERSITY_V0214.accepted_count(_idea_diversity_session_v0214),
+			_idea_batch_requested_total_v0211
+		]
+	)
+
+
+func _finalize_idea_generation_session_v0214() -> void:
+	if _idea_diversity_session_v0214.is_empty():
+		return
+	if not _idea_session_project_is_current_v0214():
+		_discard_idea_session_for_project_change_v0214()
+		return
+	var combined := IDEA_DIVERSITY_V0214.accepted_ideas(
+		_idea_diversity_session_v0214
+	)
+	var aggregate_metadata: Dictionary = {}
+	var metadata_keys := _idea_batch_metadata_v0211.keys()
+	metadata_keys.sort()
+	for key_value in metadata_keys:
+		var metadata_value: Variant = _idea_batch_metadata_v0211.get(key_value, {})
+		if metadata_value is Dictionary and not (metadata_value as Dictionary).is_empty():
 			aggregate_metadata = (metadata_value as Dictionary).duplicate(true)
-		var ideas_value: Variant = _idea_batch_results_v0211.get(batch_index, [])
-		if not ideas_value is Array:
-			continue
-		for idea_value in ideas_value as Array:
-			if combined.size() >= _idea_batch_requested_total_v0211:
-				break
-			if idea_value is Dictionary:
-				combined.append((idea_value as Dictionary).duplicate(true))
-	aggregate_metadata["idea_batch_contract_version"] = (
-		IDEA_BATCHING_V0211.CONTRACT_VERSION
+			break
+	var diversity_summary := IDEA_DIVERSITY_V0214.summary(
+		_idea_diversity_session_v0214
 	)
+	aggregate_metadata["idea_batch_contract_version"] = IDEA_BATCHING_V0211.CONTRACT_VERSION
 	aggregate_metadata["idea_batch_group_id"] = _idea_batch_group_id_v0211
-	aggregate_metadata["idea_batch_requested_total"] = (
-		_idea_batch_requested_total_v0211
-	)
-	aggregate_metadata["idea_batch_request_count"] = (
-		_idea_batch_expected_requests_v0211
-	)
-	aggregate_metadata["idea_batch_successful_requests"] = (
-		_idea_batch_results_v0211.size()
-	)
+	aggregate_metadata["idea_batch_requested_total"] = _idea_batch_requested_total_v0211
+	aggregate_metadata["idea_batch_request_count"] = int(
+		diversity_summary.get("normal_requests_started", 0)
+	) + (1 if bool(diversity_summary.get("final_top_up_started", false)) else 0)
+	aggregate_metadata["idea_batch_successful_requests"] = _idea_batch_results_v0211.size()
 	aggregate_metadata["idea_batch_result_count"] = combined.size()
 	aggregate_metadata["idea_batch_errors"] = _idea_batch_errors_v0211.duplicate()
+	aggregate_metadata["idea_diversity_contract_version"] = IDEA_DIVERSITY_V0214.CONTRACT_VERSION
+	aggregate_metadata["idea_diversity_summary"] = diversity_summary
+	aggregate_metadata["idea_title_duplicate_warnings"] = (
+		_idea_diversity_session_v0214.get("title_warnings", []) as Array
+	).duplicate(true)
+	aggregate_metadata["idea_similarity_clusters"] = (
+		_idea_diversity_session_v0214.get("final_review_clusters", []) as Array
+	).duplicate(true)
 	if str(aggregate_metadata.get("idea_detail_level", "")) == "custom":
 		var counts := IDEA_CUSTOM_LENGTH_V0211.actual_counts(combined)
-		var target := int(aggregate_metadata.get(
-			"idea_custom_target_characters", 0
-		))
+		var target := int(aggregate_metadata.get("idea_custom_target_characters", 0))
 		var target_met := 0
 		for actual_count in counts:
-			if IDEA_CUSTOM_LENGTH_V0211.count_within_target(
-				actual_count, target
-			):
+			if IDEA_CUSTOM_LENGTH_V0211.count_within_target(actual_count, target):
 				target_met += 1
 		aggregate_metadata["idea_actual_character_counts"] = counts
 		aggregate_metadata["idea_custom_target_met_count"] = target_met
@@ -861,6 +1276,24 @@ func _maybe_finish_idea_batch_v0211() -> void:
 			combined, aggregate_metadata
 		)
 	_set_completed_idea_batch_status_v0211(combined, aggregate_metadata)
+	_reset_idea_batch_state_v0211()
+
+
+func _idea_session_project_is_current_v0214() -> bool:
+	if _idea_diversity_session_v0214.is_empty():
+		return true
+	var origin := str(_idea_diversity_session_v0214.get(
+		"project_id_snapshot", ""
+	))
+	return origin.is_empty() or origin == str(_project.get("project_id", ""))
+
+
+func _discard_idea_session_for_project_change_v0214() -> void:
+	_idea_job_id = ""
+	_idea_generate_button.disabled = false
+	_idea_status.text = (
+		"Idea generation result was discarded because the active project changed."
+	)
 	_reset_idea_batch_state_v0211()
 
 
@@ -879,6 +1312,12 @@ func _set_completed_idea_batch_status_v0211(
 	if combined.is_empty():
 		_idea_status.text = "No usable ideas completed.%s" % error_note
 		return
+	var diversity_value: Variant = aggregate_metadata.get(
+		"idea_diversity_summary", {}
+	)
+	var diversity: Dictionary = (
+		diversity_value if diversity_value is Dictionary else {}
+	)
 	var custom_note := ""
 	if str(aggregate_metadata.get("idea_detail_level", "")) == "custom":
 		var counts_value: Variant = aggregate_metadata.get(
@@ -901,16 +1340,53 @@ func _set_completed_idea_batch_status_v0211(
 				_format_integer_v0211(maximum_actual),
 				_format_integer_v0211(average_actual)
 			]
+	var recovery_note := (
+		" after final recovery"
+		if bool(diversity.get("final_top_up_started", false))
+		else ""
+	)
+	var rejected_note := " • %d rejected from %d raw" % [
+		int(diversity.get("rejected_count", 0)),
+		int(diversity.get("raw_count", combined.size()))
+	]
+	var warning_note := (
+		" • %d title-similarity warning%s"
+		% [
+			int(diversity.get("title_warning_count", 0)),
+			"" if int(diversity.get("title_warning_count", 0)) == 1 else "s"
+		]
+		if int(diversity.get("title_warning_count", 0)) > 0
+		else ""
+	)
 	_idea_status.text = (
-		"Generated %d/%d usable ideas across %d provider requests%s%s."
+		"%d/%d unique ideas accepted%s across %d provider requests%s%s%s%s."
 		% [
 			combined.size(),
 			_idea_batch_requested_total_v0211,
-			_idea_batch_expected_requests_v0211,
+			recovery_note,
+			int(aggregate_metadata.get("idea_batch_request_count", 0)),
+			rejected_note,
+			warning_note,
 			custom_note,
 			error_note
 		]
 	)
+	var warnings_value: Variant = aggregate_metadata.get(
+		"idea_title_duplicate_warnings", []
+	)
+	if warnings_value is Array and not (warnings_value as Array).is_empty():
+		var warning_lines: Array[String] = [
+			"Title similarity is a review signal, not an automatic duplicate verdict:"
+		]
+		for warning_value in warnings_value as Array:
+			if warning_value is Dictionary:
+				warning_lines.append("• %s ↔ %s" % [
+					str((warning_value as Dictionary).get("existing_title", "Untitled idea")),
+					str((warning_value as Dictionary).get("candidate_title", "Untitled idea"))
+				])
+		_idea_status.tooltip_text = "\n".join(warning_lines)
+	else:
+		_idea_status.tooltip_text = ""
 
 
 func _idea_batch_received_count_v0211() -> int:
@@ -931,6 +1407,8 @@ func _reset_idea_batch_state_v0211() -> void:
 	_idea_batch_metadata_v0211.clear()
 	_idea_batch_errors_v0211.clear()
 	_idea_batch_cancelling_v0211 = false
+	_idea_diversity_session_v0214.clear()
+	_idea_diversity_review_job_id_v0214 = ""
 
 
 func _idea_batch_size_value_v0211() -> int:
@@ -998,8 +1476,32 @@ func idea_batching_capabilities_v0211() -> Dictionary:
 		"ideas_per_request": per_request,
 		"request_plan": IDEA_BATCHING_V0211.request_plan(total, per_request),
 		"request_plan_visible": _idea_batch_plan_hint_v0211 != null,
+		"adaptive_accepted_target": true,
+		"prevent_repeats": (
+			_idea_prevent_repeats_v0214 != null
+			and _idea_prevent_repeats_v0214.button_pressed
+		),
+		"final_similarity_mode": _idea_final_review_mode_v0214(),
+		"one_shot_top_up": (
+			_idea_final_top_up_v0214 != null
+			and _idea_final_top_up_v0214.button_pressed
+		),
+		"diversity": IDEA_DIVERSITY_V0214.capabilities(),
 		"service": service_capabilities
 	}
+
+
+func _idea_final_review_mode_v0214() -> String:
+	if (
+		_idea_final_similarity_v0214 == null
+		or _idea_final_similarity_v0214.selected < 0
+	):
+		return IDEA_DIVERSITY_V0214.FINAL_REVIEW_OFF
+	return IDEA_DIVERSITY_V0214.normalise_final_review_mode(
+		_idea_final_similarity_v0214.get_item_metadata(
+			_idea_final_similarity_v0214.selected
+		)
+	)
 
 
 func _idea_custom_target_characters_v0211() -> int:
