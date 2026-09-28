@@ -112,6 +112,10 @@ func _test_safe_folder_delete(
 	)
 
 func _test_current_ui(parent_id: String, folder_id: String) -> void:
+	var duplicate_parent_id := _folder_id(IDEA_SERVICE.create_folder("Other Parent"))
+	var duplicate_folder_id := _folder_id(
+		IDEA_SERVICE.create_folder("Priority", duplicate_parent_id)
+	)
 	var packed := load("res://scenes/main.tscn") as PackedScene
 	if not _require(packed != null, "The current application scene must load."):
 		return
@@ -174,12 +178,20 @@ func _test_current_ui(parent_id: String, folder_id: String) -> void:
 	var folder_scope_ids := IDEA_SERVICE.folder_ids_in_folder(parent_id, true)
 	_require(folder_scope_ids.has(parent_id) and folder_scope_ids.has(folder_id),
 		"A recursive export Folder scope must include its selected parent and descendants.")
-	await _test_save_folder_dialog_parenting(generator, folder_id)
+	await _test_save_folder_dialog_parenting(
+		generator, parent_id, folder_id, duplicate_parent_id, duplicate_folder_id
+	)
 	selector.queue_free()
 	app.queue_free()
 	await process_frame
 
-func _test_save_folder_dialog_parenting(generator: Node, parent_folder_id: String) -> void:
+func _test_save_folder_dialog_parenting(
+	generator: Node,
+	parent_folder_id: String,
+	nested_folder_id: String,
+	duplicate_parent_id: String,
+	duplicate_folder_id: String
+) -> void:
 	generator.call("set_last_generated_ideas_v01532", [
 		{"title": "Window parent fixture", "concept": "Keep the save workflow open."}
 	])
@@ -188,30 +200,105 @@ func _test_save_folder_dialog_parenting(generator: Node, parent_folder_id: Strin
 	await process_frame
 	var save_window := generator.get("_save_generated_window_v01532") as Window
 	var dialog := generator.get("_save_new_notebook_dialog_v0211") as ConfirmationDialog
+	var destination_picker: Variant = generator.get(
+		"_save_generated_folder_picker_v0217"
+	)
+	var hidden_destination := generator.get(
+		"_save_generated_notebook_v01532"
+	) as OptionButton
 	_require(
 		save_window != null and dialog != null and dialog.get_parent() == save_window
 		and dialog.force_native and dialog.transient and dialog.exclusive,
 		"Create Destination Folder must be a native exclusive transient child of Save Generated Ideas."
 	)
+	_require(
+		destination_picker != null and destination_picker is VBoxContainer
+		and hidden_destination != null and not hidden_destination.visible,
+		"Save Generated Ideas must present a hierarchy-capable Folder picker instead of its flat compatibility selector."
+	)
+	var destination_tree := destination_picker.call("tree_control_v0217") as Tree
+	var parent_item := destination_picker.call(
+		"item_for_folder_id_v0217", parent_folder_id
+	) as TreeItem
+	var nested_item := destination_picker.call(
+		"item_for_folder_id_v0217", nested_folder_id
+	) as TreeItem
+	var duplicate_parent_item := destination_picker.call(
+		"item_for_folder_id_v0217", duplicate_parent_id
+	) as TreeItem
+	var duplicate_item := destination_picker.call(
+		"item_for_folder_id_v0217", duplicate_folder_id
+	) as TreeItem
+	var unfiled_item := destination_picker.call(
+		"item_for_kind_v0217", "unfiled"
+	) as TreeItem
+	var all_item := destination_picker.call(
+		"item_for_kind_v0217", "all"
+	) as TreeItem
+	_require(
+		destination_tree != null and parent_item != null and nested_item != null
+		and nested_item.get_parent() == parent_item
+		and duplicate_parent_item != null and duplicate_item != null
+		and duplicate_item.get_parent() == duplicate_parent_item
+		and str((nested_item.get_metadata(0) as Dictionary).get("id", "")) == nested_folder_id
+		and str((duplicate_item.get_metadata(0) as Dictionary).get("id", "")) == duplicate_folder_id
+		and nested_item.get_text(0) == duplicate_item.get_text(0)
+		and unfiled_item != null and all_item == null,
+		"The destination picker must preserve nested stable-ID structure, distinguish duplicate names by hierarchy, offer Unfiled and omit All Ideas."
+	)
+	parent_item.collapsed = true
+	_require(parent_item.collapsed, "Folder picker branches must be collapsible.")
+	parent_item.collapsed = false
+	_require(not parent_item.collapsed, "Folder picker branches must be expandable.")
+	var destination_search := destination_picker.call(
+		"search_control_v0217"
+	) as LineEdit
+	destination_search.text = "characters / priority"
+	destination_picker.call("_on_search_changed_v0217", destination_search.text)
+	parent_item = destination_picker.call(
+		"item_for_folder_id_v0217", parent_folder_id
+	) as TreeItem
+	nested_item = destination_picker.call(
+		"item_for_folder_id_v0217", nested_folder_id
+	) as TreeItem
+	_require(
+		parent_item != null and nested_item != null and nested_item.get_parent() == parent_item,
+		"Folder search must retain matching descendants and their visible ancestor path."
+	)
+	destination_search.text = ""
+	destination_picker.call("_on_search_changed_v0217", "")
 	var dialog_instance_id := dialog.get_instance_id() if dialog != null else 0
 	generator.call("_open_new_notebook_while_saving_v0211")
 	await process_frame
+	var parent_picker: Variant = generator.get(
+		"_save_new_folder_parent_picker_v0217"
+	)
 	_require(
 		dialog.get_parent() == save_window and dialog.visible,
 		"Opening Create Destination Folder must preserve its Save Generated Ideas parent."
+	)
+	_require(
+		parent_picker != null
+		and parent_picker.call("item_for_kind_v0217", "root") != null
+		and parent_picker.call("item_for_kind_v0217", "unfiled") == null
+		and dialog.size.x >= 600 and dialog.size.y >= 500
+		and dialog.min_size.x >= 600 and dialog.min_size.y >= 500,
+		"Create Destination Folder must provide a useful-size hierarchy with Root level but never Unfiled as a parent."
 	)
 	var folder_name := generator.get("_save_new_notebook_name_v0211") as LineEdit
 	var parent_selector := generator.get("_save_new_notebook_folder_v0215") as OptionButton
 	if _require(folder_name != null and parent_selector != null,
 		"The destination Folder dialog controls must remain available."):
 		folder_name.text = "Window Parent Child"
-		generator.call("_select_metadata_v01532", parent_selector, parent_folder_id, "")
+		parent_picker.call(
+			"select_folder_id_v0217", nested_folder_id, "folder"
+		)
 		generator.call("_create_notebook_while_saving_v0211")
 		var created_id := ""
 		for folder in IDEA_SERVICE.list_folders():
 			if (
 				str(folder.get("name", "")) == "Window Parent Child"
-				and str(folder.get("parent_folder_id", "")) == parent_folder_id
+				and str(folder.get("parent_folder_id", "")) == nested_folder_id
 			):
 				created_id = str(folder.get("id", ""))
 				break
@@ -220,6 +307,11 @@ func _test_save_folder_dialog_parenting(generator: Node, parent_folder_id: Strin
 			not created_id.is_empty() and destination != null
 			and str(destination.get_item_metadata(destination.selected)) == created_id,
 			"Creating a nested Folder must immediately select it as the save destination."
+		)
+		_require(
+			str(destination_picker.call("selected_folder_id_v0217")) == created_id
+			and destination_picker.call("item_for_folder_id_v0217", created_id) != null,
+			"Creating a Folder must refresh the hierarchy and select the new Folder visibly."
 		)
 	dialog.hide()
 	save_window.hide()
@@ -231,8 +323,10 @@ func _test_save_folder_dialog_parenting(generator: Node, parent_folder_id: Strin
 		reopened_dialog != null and reopened_dialog.get_instance_id() == dialog_instance_id
 		and reopened_dialog.get_parent() == save_window
 		and _count_descendants_named(save_window, "NewFolderWhileSavingV0217") == 1
+		and _count_descendants_named(save_window, "SaveGeneratedFolderPickerV0217") == 1
+		and _count_descendants_named(dialog, "SaveNewFolderParentPickerV0217") == 1
 		and reopened_dialog.confirmed.get_connections().size() == 1,
-		"Repeated Save Generated Ideas opens must reuse one dialog, button and confirmed handler."
+		"Repeated Save Generated Ideas opens must reuse one dialog/parent picker and create one destination picker, button and confirmed handler."
 	)
 	save_window.hide()
 

@@ -6,6 +6,15 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+### Fixes
+
+- Made final AI Idea similarity review aware of the immutable prompt, Idea Source and
+  Series context that produced the batch, so requested shared constraints are treated as
+  invariants instead of automatic duplicate evidence.
+- Replaced the flat Save Generated Ideas destination and Create Destination Folder parent
+  lists with searchable, expandable Folder trees that retain stable Folder IDs, expose
+  full paths and automatically select newly created destinations.
+
 ## [0.21.7] - 2026-09-28
 
 ### Highlights

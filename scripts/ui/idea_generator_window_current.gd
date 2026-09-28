@@ -16,6 +16,9 @@ const IDEA_NOTEBOOK_TREE_V0215 = preload(
 const IDEA_LIBRARY_LIST_V0217 = preload(
 	"res://scripts/ui/idea_library_list_v0217.gd"
 )
+const IDEA_FOLDER_PICKER_V0217 = preload(
+	"res://scripts/ui/idea_folder_picker_v0217.gd"
+)
 const IDEA_FOLDER_ICON_V0216 = preload(
 	"res://assets/icons/idea_folder_v0216.svg"
 )
@@ -54,6 +57,8 @@ var _idea_result_summary_v0211: Label
 var _save_new_notebook_dialog_v0211: ConfirmationDialog
 var _save_new_notebook_name_v0211: LineEdit
 var _save_new_notebook_folder_v0215: OptionButton
+var _save_generated_folder_picker_v0217
+var _save_new_folder_parent_picker_v0217
 
 var _notebook_tree_v0215: Tree
 var _notebook_tree_popup_v0215: PopupMenu
@@ -533,6 +538,13 @@ func _open_save_generated_v01532() -> void:
 	var target_row := _save_generated_notebook_v01532.get_parent() as HBoxContainer
 	if target_row == null:
 		return
+	var preferred_folder_id := _selected_metadata_v01532(
+		_save_generated_notebook_v01532, ""
+	)
+	_save_generated_notebook_v01532.hide()
+	var target_label := target_row.get_child(0) as Label
+	if target_label != null:
+		target_label.text = "Destination Folder"
 	var create_button := Button.new()
 	create_button.name = "NewFolderWhileSavingV0217"
 	create_button.text = "New Folder…"
@@ -543,6 +555,23 @@ func _open_save_generated_v01532() -> void:
 	target_row.add_child(create_button)
 	target_row.move_child(
 		create_button, _save_generated_notebook_v01532.get_index() + 1
+	)
+	var content := target_row.get_parent() as VBoxContainer
+	if content == null:
+		return
+	_save_generated_folder_picker_v0217 = IDEA_FOLDER_PICKER_V0217.new()
+	_save_generated_folder_picker_v0217.name = "SaveGeneratedFolderPickerV0217"
+	content.add_child(_save_generated_folder_picker_v0217)
+	content.move_child(
+		_save_generated_folder_picker_v0217, target_row.get_index() + 1
+	)
+	_save_generated_folder_picker_v0217.configure_v0217(true, false, true)
+	_save_generated_folder_picker_v0217.refresh_v0217(
+		preferred_folder_id,
+		"folder" if not preferred_folder_id.is_empty() else "unfiled"
+	)
+	_save_generated_folder_picker_v0217.folder_selected.connect(
+		_on_save_generated_folder_selected_v0217
 	)
 
 
@@ -558,7 +587,10 @@ func _build_save_new_notebook_dialog_v0211() -> void:
 	_save_new_notebook_dialog_v0211.force_native = true
 	_save_new_notebook_dialog_v0211.transient = true
 	_save_new_notebook_dialog_v0211.exclusive = true
+	_save_new_notebook_dialog_v0211.size = Vector2i(660, 560)
+	_save_new_notebook_dialog_v0211.min_size = Vector2i(600, 500)
 	var content := VBoxContainer.new()
+	content.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	content.add_theme_constant_override("separation", 6)
 	_save_new_notebook_dialog_v0211.add_child(content)
 	_save_new_notebook_name_v0211 = LineEdit.new()
@@ -566,10 +598,22 @@ func _build_save_new_notebook_dialog_v0211() -> void:
 	_save_new_notebook_name_v0211.placeholder_text = "Folder name"
 	_save_new_notebook_name_v0211.custom_minimum_size.x = 400
 	content.add_child(_save_new_notebook_name_v0211)
+	var parent_label := Label.new()
+	parent_label.text = "Create under:"
+	content.add_child(parent_label)
 	_save_new_notebook_folder_v0215 = OptionButton.new()
 	_save_new_notebook_folder_v0215.name = "SaveNewNotebookFolderV0215"
 	_save_new_notebook_folder_v0215.tooltip_text = "Choose the parent Folder for the new Folder."
+	_save_new_notebook_folder_v0215.hide()
 	content.add_child(_save_new_notebook_folder_v0215)
+	_save_new_folder_parent_picker_v0217 = IDEA_FOLDER_PICKER_V0217.new()
+	_save_new_folder_parent_picker_v0217.name = "SaveNewFolderParentPickerV0217"
+	_save_new_folder_parent_picker_v0217.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	content.add_child(_save_new_folder_parent_picker_v0217)
+	_save_new_folder_parent_picker_v0217.configure_v0217(false, true, true)
+	_save_new_folder_parent_picker_v0217.folder_selected.connect(
+		_on_save_new_folder_parent_selected_v0217
+	)
 	_save_new_notebook_dialog_v0211.confirmed.connect(
 		_create_notebook_while_saving_v0211
 	)
@@ -584,14 +628,26 @@ func _open_new_notebook_while_saving_v0211() -> void:
 	_fill_folder_destinations_v0215(
 		_save_new_notebook_folder_v0215, _tree_creation_parent_v0215()
 	)
-	_save_new_notebook_dialog_v0211.popup_centered()
+	var preferred_parent_id := _selected_metadata_v01532(
+		_save_new_notebook_folder_v0215, ""
+	)
+	_save_new_folder_parent_picker_v0217.refresh_v0217(
+		preferred_parent_id,
+		"folder" if not preferred_parent_id.is_empty() else "root"
+	)
+	_save_new_notebook_dialog_v0211.popup_centered(Vector2i(660, 560))
 	_save_new_notebook_name_v0211.grab_focus()
 
 
 func _create_notebook_while_saving_v0211() -> void:
+	var parent_folder_id: String = str(
+		_save_new_folder_parent_picker_v0217.selected_folder_id_v0217()
+		if _save_new_folder_parent_picker_v0217 != null
+		else _selected_metadata_v01532(_save_new_notebook_folder_v0215, "")
+	)
 	var result := NOTEBOOK_SERVICE.create_folder(
 		_save_new_notebook_name_v0211.text,
-		_selected_metadata_v01532(_save_new_notebook_folder_v0215, "")
+		parent_folder_id
 	)
 	if not bool(result.get("ok", false)):
 		if _save_generated_status_v01532 != null:
@@ -607,12 +663,38 @@ func _create_notebook_while_saving_v0211() -> void:
 	_fill_destination_notebooks_v01532(
 		_save_generated_notebook_v01532, folder_id
 	)
+	if _save_generated_folder_picker_v0217 != null:
+		_save_generated_folder_picker_v0217.refresh_v0217(folder_id, "folder")
 	_refresh_notebook_v01532()
 	if _save_generated_status_v01532 != null:
 		_save_generated_status_v01532.text = (
 			"Created and selected Folder ‘%s’. Choose Save Selected when ready."
 			% NOTEBOOK_SERVICE.folder_path(folder_id)
 		)
+
+
+func _on_save_generated_folder_selected_v0217(
+	folder_id: String, selection_kind: String
+) -> void:
+	if _save_generated_notebook_v01532 == null:
+		return
+	_select_metadata_v01532(
+		_save_generated_notebook_v01532,
+		folder_id if selection_kind == "folder" else "",
+		""
+	)
+
+
+func _on_save_new_folder_parent_selected_v0217(
+	folder_id: String, selection_kind: String
+) -> void:
+	if _save_new_notebook_folder_v0215 == null:
+		return
+	_select_metadata_v01532(
+		_save_new_notebook_folder_v0215,
+		folder_id if selection_kind == "folder" else "",
+		""
+	)
 
 
 func _fill_destination_notebooks_v01532(

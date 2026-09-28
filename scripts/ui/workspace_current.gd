@@ -710,6 +710,7 @@ func _queue_batched_ideas_v0211(total: int, plan: Array[int]) -> void:
 	]
 	_idea_batch_requested_total_v0211 = total
 	_idea_batch_expected_requests_v0211 = plan.size()
+	var generation_context := _idea_generation_context_snapshot_v0217()
 	_idea_diversity_session_v0214 = IDEA_DIVERSITY_V0214.create_session(
 		total,
 		_idea_batch_size_value_v0211(),
@@ -717,25 +718,18 @@ func _queue_batched_ideas_v0211(total: int, plan: Array[int]) -> void:
 		or _idea_prevent_repeats_v0214.button_pressed,
 		_idea_final_review_mode_v0214(),
 		_idea_final_top_up_v0214 != null
-		and _idea_final_top_up_v0214.button_pressed
+		and _idea_final_top_up_v0214.button_pressed,
+		generation_context
 	)
 	_idea_diversity_session_v0214["seed_snapshot"] = _idea_seed_with_source_v0213()
-	if (
-		_idea_generator_v01532 != null
-		and _idea_generator_v01532.has_method("active_idea_source_v0213")
-	):
-		var source_value: Variant = _idea_generator_v01532.call(
-			"active_idea_source_v0213"
-		)
-		if source_value is Dictionary:
-			_idea_diversity_session_v0214["idea_source_id_snapshot"] = str(
-				(source_value as Dictionary).get("id", "")
-			)
-			_idea_diversity_session_v0214["idea_source_title_snapshot"] = str(
-				(source_value as Dictionary).get("title", "")
-			)
-	_idea_diversity_session_v0214["series_context_snapshot"] = (
-		CCFSeriesService.generation_context_for_project(_project)
+	_idea_diversity_session_v0214["idea_source_id_snapshot"] = str(
+		generation_context.get("idea_source_id", "")
+	)
+	_idea_diversity_session_v0214["idea_source_title_snapshot"] = str(
+		generation_context.get("idea_source_title", "")
+	)
+	_idea_diversity_session_v0214["series_context_snapshot"] = str(
+		generation_context.get("series_context", "")
 	)
 	_idea_diversity_session_v0214["profile_snapshot"] = (
 		CCFSettingsService.profile_for_role(
@@ -1745,6 +1739,43 @@ func _idea_seed_with_source_v0213() -> String:
 	return str(_idea_generator_v01532.call(
 		"prepared_generation_input_v0213", ordinary_seed
 	))
+
+
+func _idea_generation_context_snapshot_v0217() -> Dictionary:
+	var context := {
+		"prompt_mode": "primary_prompt",
+		"seed_text": _idea_seed.text.strip_edges() if _idea_seed != null else "",
+		"series_context": CCFSeriesService.generation_context_for_project(_project),
+		"idea_source_id": "",
+		"idea_source_title": "",
+		"idea_source_context": ""
+	}
+	if _idea_generator_v01532 == null:
+		return IDEA_DIVERSITY_V0214.normalise_generation_context(context)
+	if _idea_generator_v01532.has_method("prompt_presentation_v0213"):
+		var presentation_value: Variant = _idea_generator_v01532.call(
+			"prompt_presentation_v0213"
+		)
+		if presentation_value is Dictionary:
+			context["prompt_mode"] = str(
+				(presentation_value as Dictionary).get("mode", "primary_prompt")
+			)
+	if _idea_generator_v01532.has_method("active_idea_source_v0213"):
+		var source_value: Variant = _idea_generator_v01532.call(
+			"active_idea_source_v0213"
+		)
+		if source_value is Dictionary:
+			context["idea_source_id"] = str(
+				(source_value as Dictionary).get("id", "")
+			)
+			context["idea_source_title"] = str(
+				(source_value as Dictionary).get("title", "")
+			)
+	if _idea_generator_v01532.has_method("active_idea_source_context_v0213"):
+		context["idea_source_context"] = str(
+			_idea_generator_v01532.call("active_idea_source_context_v0213")
+		)
+	return IDEA_DIVERSITY_V0214.normalise_generation_context(context)
 
 
 func _install_idea_prompt_presentation_v0213() -> void:

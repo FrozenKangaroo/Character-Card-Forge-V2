@@ -34,7 +34,8 @@ static func create_session(
 	batch_limit: int,
 	prevent_repeats: bool = true,
 	final_review_mode: String = FINAL_REVIEW_OFF,
-	final_top_up: bool = false
+	final_top_up: bool = false,
+	generation_context: Dictionary = {}
 ) -> Dictionary:
 	var target := maxi(1, target_count)
 	var limit := maxi(1, batch_limit)
@@ -65,8 +66,40 @@ static func create_session(
 		"final_top_up_started": false,
 		"final_top_up_completed": false,
 		"prevent_repeats": prevent_repeats,
+		"generation_context": normalise_generation_context(generation_context),
 		"next_ledger_id": 1
 	}
+
+
+static func normalise_generation_context(value: Variant) -> Dictionary:
+	if not value is Dictionary:
+		return {}
+	var source: Dictionary = value
+	var result := {
+		"prompt_mode": str(source.get("prompt_mode", "primary_prompt")).strip_edges(),
+		"seed_text": str(source.get("seed_text", "")).strip_edges(),
+		"series_context": str(source.get("series_context", "")).strip_edges(),
+		"idea_source_id": str(source.get("idea_source_id", "")).strip_edges(),
+		"idea_source_title": str(source.get("idea_source_title", "")).strip_edges(),
+		"idea_source_context": str(source.get("idea_source_context", "")).strip_edges()
+	}
+	if str(result.get("prompt_mode", "")) not in [
+		"primary_prompt", "additional_direction"
+	]:
+		result["prompt_mode"] = (
+			"additional_direction"
+			if not str(result.get("idea_source_context", "")).is_empty()
+			else "primary_prompt"
+		)
+	var has_context := false
+	for field_id in [
+		"seed_text", "series_context", "idea_source_id", "idea_source_title",
+		"idea_source_context"
+	]:
+		if not str(result.get(field_id, "")).is_empty():
+			has_context = true
+			break
+	return result if has_context else {}
 
 
 static func normalise_final_review_mode(value: Variant) -> String:
@@ -403,11 +436,47 @@ static func final_review_prompt(session: Dictionary) -> String:
 					str(record.get("fingerprint", ""))
 				]
 			)
-	return (
-		"Review this complete generated Idea set for scenario-level duplication. Compare underlying structure rather than wording, names, cosmetic occupations or locations. Shared Series, genres and tropes are not enough. Meaningful differences in relationship structure, motivation, consent/secrecy, initiating event, complication, reveal, uncertainty, opening situation, consequences or ongoing tension should survive.\n\n"
-		+ "Classify each candidate group as exactly one of: duplicate, near_duplicate, related_distinct. Be conservative: duplicate means materially the same roleplay engine. Return JSON only as {\"clusters\":[{\"idea_ids\":[\"idea-001\",\"idea-002\"],\"classification\":\"duplicate\",\"reason\":\"concise structural reason\"}]}. Omit unrelated ideas.\n\nIDEAS:\n"
-		+ "\n".join(records)
-	)
+	var context := normalise_generation_context(session.get("generation_context", {}))
+	var context_lines: Array[String] = []
+	if context.is_empty():
+		context_lines.append("No stored generation context is available for this legacy session.")
+	else:
+		context_lines.append("Prompt mode: %s" % (
+			"Additional Direction"
+			if str(context.get("prompt_mode", "")) == "additional_direction"
+			else "Primary prompt"
+		))
+		var seed_text := str(context.get("seed_text", ""))
+		if not seed_text.is_empty():
+			context_lines.append("Original user / batch direction:\n%s" % seed_text)
+		var source_title := str(context.get("idea_source_title", ""))
+		if not source_title.is_empty():
+			context_lines.append("Active Idea Source: %s" % source_title)
+		var source_context := str(context.get("idea_source_context", ""))
+		if not source_context.is_empty():
+			context_lines.append(
+				"Active Idea Source / canonical source context:\n%s" % source_context
+			)
+		var series_context := str(context.get("series_context", ""))
+		if not series_context.is_empty():
+			context_lines.append("Series context:\n%s" % series_context)
+	return "\n\n".join([
+		"SIMILARITY REVIEW",
+		"GENERATION CONTEXT\n\n" + "\n\n".join(context_lines),
+		(
+			"IMPORTANT:\n"
+			+ "The requirements above intentionally constrain every generated Idea. "
+			+ "Do not classify Ideas as duplicates merely because they satisfy the same explicit generation requirements. Treat those requested traits as shared invariants.\n\n"
+			+ "After accounting for those requested invariants, compare the discretionary narrative choices made by each Idea. A clear duplicate means that, after accounting for requested invariants, the Ideas remain materially interchangeable at the scenario/roleplay-engine level.\n\n"
+			+ "Cosmetic changes to names, occupation labels, locations, scenery or wording are not meaningful differences when motivation, relationship, boundaries, progression and consequences remain essentially the same.\n\n"
+			+ "Differences in relationship to a third party, prior history, motivation, how a person enters the scenario, permission or consent structure, secrecy versus openness, boundaries, which boundary is crossed, initiating event, power dynamic, progression, emotional stakes, reveal mechanism, uncertainty, consequences or ongoing tension are substantive and should normally prevent a duplicate classification.\n\n"
+			+ "When uncertain between duplicate and near_duplicate, prefer near_duplicate. Preserve a genuinely distinct variation."
+		),
+		(
+			"Classify each candidate group as exactly one of: duplicate, near_duplicate, related_distinct. Return JSON only as {\"clusters\":[{\"idea_ids\":[\"idea-001\",\"idea-002\"],\"classification\":\"duplicate\",\"reason\":\"concise structural reason\"}]}. Omit unrelated ideas."
+		),
+		"IDEAS:\n" + "\n".join(records)
+	])
 
 
 static func normalise_review_clusters(
@@ -649,6 +718,7 @@ static func capabilities() -> Dictionary:
 		"accepted_and_rejected_prompt_memory": true,
 		"deterministic_title_warnings": true,
 		"structural_duplicate_comparison": true,
+		"context_aware_final_review": true,
 		"final_review_modes": FINAL_REVIEW_MODES.duplicate(),
 		"one_shot_top_up": true,
 		"schema_changes": false

@@ -43,3 +43,25 @@ merges same-named records or discards inaccessible data.
 
 Historical internal method names remain as narrow compatibility aliases while active UI
 and canonical writes use Folder terminology and fields.
+
+## Hierarchical save destinations
+
+Save Generated Ideas now uses a searchable Folder tree instead of a flat list of complete
+paths. It supports nested expansion, **Unfiled**, duplicate Folder names and a clear
+selected-path indicator while retaining stable Folder IDs internally. **All Ideas** is
+never offered because it is a view rather than a destination.
+
+**New Folder…** uses the same reusable picker for its parent, with **Root level** as an
+explicit choice. The native, transient dialog opens at 660 × 560 pixels with a 600 × 500
+minimum; after creation, the new Folder is refreshed into the hierarchy and selected as
+the save destination.
+
+## Context-aware similarity review
+
+The optional final AI similarity pass now receives a frozen snapshot of the primary
+prompt or Additional Direction, canonical active Idea Source context and Series context
+from the start of the generation session. Explicitly requested common traits are treated
+as shared invariants. The reviewer instead compares discretionary relationship,
+motivation, consent, boundary, progression, reveal, consequence and ongoing-tension
+choices, while preserving the existing `duplicate`, `near_duplicate` and
+`related_distinct` result contract and Reject-mode behavior.

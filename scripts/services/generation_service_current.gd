@@ -232,6 +232,9 @@ func queue_idea_similarity_review_v0214(
 	if not accepted_value is Array or (accepted_value as Array).size() < 2:
 		return {"ok": false, "error": "At least two accepted ideas are required for similarity review."}
 	var prompt := IDEA_DIVERSITY_V0214.final_review_prompt(session)
+	var generation_context := IDEA_DIVERSITY_V0214.normalise_generation_context(
+		session.get("generation_context", {})
+	)
 	var result := _queue_chat_job(
 		"idea_similarity_review",
 		"Review generated ideas for structural similarity",
@@ -250,7 +253,12 @@ func queue_idea_similarity_review_v0214(
 			"project_id": project_id,
 			"idea_diversity_contract_version": IDEA_DIVERSITY_V0214.CONTRACT_VERSION,
 			"idea_similarity_review_mode": str(session.get("final_review_mode", "off")),
-			"idea_similarity_review_count": (accepted_value as Array).size()
+			"idea_similarity_review_count": (accepted_value as Array).size(),
+			"idea_similarity_context_present": not generation_context.is_empty(),
+			"idea_similarity_context_mode": str(generation_context.get("prompt_mode", "")),
+			"idea_similarity_source_context_present": not str(
+				generation_context.get("idea_source_context", "")
+			).is_empty()
 		},
 		retry_count
 	)
