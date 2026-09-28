@@ -555,6 +555,9 @@ func _build_save_new_notebook_dialog_v0211() -> void:
 		"Create a Folder under Root or another Folder, then select it as the destination."
 	)
 	_save_new_notebook_dialog_v0211.ok_button_text = "Create and Select"
+	_save_new_notebook_dialog_v0211.force_native = true
+	_save_new_notebook_dialog_v0211.transient = true
+	_save_new_notebook_dialog_v0211.exclusive = true
 	var content := VBoxContainer.new()
 	content.add_theme_constant_override("separation", 6)
 	_save_new_notebook_dialog_v0211.add_child(content)
@@ -570,7 +573,7 @@ func _build_save_new_notebook_dialog_v0211() -> void:
 	_save_new_notebook_dialog_v0211.confirmed.connect(
 		_create_notebook_while_saving_v0211
 	)
-	add_child(_save_new_notebook_dialog_v0211)
+	_save_generated_window_v01532.add_child(_save_new_notebook_dialog_v0211)
 	_save_new_notebook_dialog_v0211.hide()
 
 

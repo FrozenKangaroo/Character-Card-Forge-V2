@@ -297,6 +297,10 @@ func _open_save_generated_v01532() -> void:
 	if _last_generated_ideas_v01532.is_empty():
 		return
 	for child in _save_generated_window_v01532.get_children():
+		# Workflow-specific dialogs may be persistent native children of the Save
+		# Generated Ideas window. Rebuild only its ordinary content controls.
+		if child is Window:
+			continue
 		child.queue_free()
 	_save_generated_checks_v01532.clear()
 	var margin := MarginContainer.new()
