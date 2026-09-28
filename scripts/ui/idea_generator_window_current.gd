@@ -13,6 +13,15 @@ const IDEA_SOURCE_SERVICE_V0213 = preload(
 const IDEA_NOTEBOOK_TREE_V0215 = preload(
 	"res://scripts/ui/idea_notebook_tree_v0215.gd"
 )
+const IDEA_FOLDER_ICON_V0216 = preload(
+	"res://assets/icons/idea_folder_v0216.svg"
+)
+const IDEA_NOTEBOOK_ICON_V0216 = preload(
+	"res://assets/icons/idea_notebook_v0216.svg"
+)
+const IDEA_SPECIAL_VIEW_ICON_V0216 = preload(
+	"res://assets/icons/idea_special_view_v0216.svg"
+)
 
 var _idea_pack_service_v0210 := IDEA_PACK_SERVICE_V0210.new()
 var _import_dialog_v0210: FileDialog
@@ -61,6 +70,8 @@ var _notebook_tree_expanded_before_search_v0215: Array[String] = []
 var _hierarchy_snapshot_v0215: Dictionary = {}
 var _focused_idea_load_count_v0215_hotfix := 0
 var _notebook_tree_refresh_count_v0215_hotfix := 0
+var _pending_delete_idea_ids_v0216: Array[String] = []
+var _idea_delete_batch_refresh_count_v0216 := 0
 
 var _idea_source_service_v0213 := IDEA_SOURCE_SERVICE_V0213.new()
 var _active_idea_source_v0213: Dictionary = {}
@@ -102,12 +113,23 @@ var _source_delete_dialog_v0213: ConfirmationDialog
 
 func _ready() -> void:
 	super._ready()
+	var delete_key_callback := Callable(self, "_on_idea_list_gui_input_v0216")
+	if (
+		_idea_list_v01532 != null
+		and not _idea_list_v01532.gui_input.is_connected(delete_key_callback)
+	):
+		_idea_list_v01532.gui_input.connect(delete_key_callback)
+	if _delete_idea_dialog_v01532 != null:
+		var cancel_callback := Callable(self, "_cancel_delete_ideas_v0216")
+		if not _delete_idea_dialog_v01532.canceled.is_connected(cancel_callback):
+			_delete_idea_dialog_v01532.canceled.connect(cancel_callback)
 	_build_idea_pack_dialogs_v0210()
 	_build_save_new_notebook_dialog_v0211()
 	_build_idea_source_tab_v0213()
 	_build_idea_source_dialogs_v0213()
 	_install_active_source_banner_v0213()
 	_refresh_source_library_v0213()
+	_update_delete_idea_action_v0216()
 
 
 func _build_notebook_tab_v01532() -> void:
@@ -345,26 +367,67 @@ func _open_tree_name_dialog_v0215(action: String) -> void:
 	_name_action_v01532 = action
 	var metadata := _selected_tree_metadata_v0215()
 	var kind := str(metadata.get("kind", "special"))
-	var target_parent := _tree_creation_parent_v0215()
-	var target_path := NOTEBOOK_SERVICE.folder_path(target_parent)
-	var location := "root" if target_path.is_empty() else "‘%s’" % target_path
 	if action == "rename":
 		if kind != "folder" and kind != "notebook":
 			_status_v01532.text = "All Ideas and Unfiled are built-in views and cannot be renamed."
 			return
-		_name_input_v01532.text = str(metadata.get("name", ""))
-		_name_dialog_v01532.dialog_text = "Rename the selected %s. Its stable ID and contents will not change." % kind
-		_name_dialog_v01532.ok_button_text = "Rename"
-	elif action == "new_folder":
-		_name_input_v01532.text = ""
-		_name_dialog_v01532.dialog_text = "Create a new folder inside %s." % location
-		_name_dialog_v01532.ok_button_text = "Create Folder"
-	else:
-		_name_input_v01532.text = ""
-		_name_dialog_v01532.dialog_text = "Create a new notebook inside %s." % location
-		_name_dialog_v01532.ok_button_text = "Create Notebook"
+	var dialog_state := _tree_name_dialog_state_v0216(
+		action, metadata, _tree_creation_parent_v0215()
+	)
+	_name_dialog_v01532.title = str(dialog_state.get("title", "Idea Notebook"))
+	_name_dialog_v01532.dialog_text = str(dialog_state.get("description", ""))
+	_name_dialog_v01532.ok_button_text = str(dialog_state.get("confirm", "Continue"))
+	_name_input_v01532.placeholder_text = str(dialog_state.get("placeholder", "Name"))
+	_name_input_v01532.text = str(dialog_state.get("value", ""))
 	_name_dialog_v01532.popup_centered()
 	_name_input_v01532.grab_focus()
+
+
+func _tree_name_dialog_state_v0216(
+	action: String, metadata: Dictionary, target_parent_id: String
+) -> Dictionary:
+	var kind := str(metadata.get("kind", ""))
+	if action == "rename" and kind == "folder":
+		return {
+			"title": "Rename Folder",
+			"description": "Rename this folder. Its stable ID and contents will not change.",
+			"placeholder": "Folder name",
+			"confirm": "Rename Folder",
+			"value": str(metadata.get("name", ""))
+		}
+	if action == "rename" and kind == "notebook":
+		return {
+			"title": "Rename Notebook",
+			"description": "Rename this notebook. Its stable ID and saved ideas will not change.",
+			"placeholder": "Notebook name",
+			"confirm": "Rename Notebook",
+			"value": str(metadata.get("name", ""))
+		}
+	var target_path := NOTEBOOK_SERVICE.folder_path_from_snapshot(
+		target_parent_id, _current_hierarchy_snapshot_v0216()
+	)
+	var location := "Root" if target_path.is_empty() else target_path
+	if action == "new_folder":
+		return {
+			"title": "Create Folder",
+			"description": "Create a new folder inside:\n%s" % location,
+			"placeholder": "Folder name",
+			"confirm": "Create Folder",
+			"value": ""
+		}
+	return {
+		"title": "Create Notebook",
+		"description": "Create a new notebook inside:\n%s" % location,
+		"placeholder": "Notebook name",
+		"confirm": "Create Notebook",
+		"value": ""
+	}
+
+
+func _current_hierarchy_snapshot_v0216() -> Dictionary:
+	if _hierarchy_snapshot_v0215.is_empty():
+		_hierarchy_snapshot_v0215 = NOTEBOOK_SERVICE.hierarchy_snapshot()
+	return _hierarchy_snapshot_v0215
 
 
 func _open_name_dialog_v01532(action: String) -> void:
@@ -873,11 +936,57 @@ func _add_tree_item_v0215(
 	parent: TreeItem, label: String, metadata: Dictionary, tooltip: String
 ) -> TreeItem:
 	var item := _notebook_tree_v0215.create_item(parent)
+	var presentation := _tree_presentation_descriptor_v0216(
+		str(metadata.get("kind", "special")), str(metadata.get("id", ""))
+	)
+	var item_metadata := metadata.duplicate(true)
+	item_metadata["presentation_kind"] = str(presentation.get("kind", "special"))
+	item_metadata["presentation_label"] = str(
+		presentation.get("label", "Built-in view")
+	)
 	item.set_text(0, label)
-	item.set_metadata(0, metadata)
-	item.set_tooltip_text(0, tooltip)
+	item.set_metadata(0, item_metadata)
+	var icon_value: Variant = presentation.get("icon")
+	if icon_value is Texture2D:
+		item.set_icon(0, icon_value as Texture2D)
+		item.set_icon_max_width(0, 18)
+	var semantic_tooltip := str(presentation.get("tooltip", ""))
+	item.set_tooltip_text(
+		0,
+		semantic_tooltip if tooltip.is_empty()
+		else "%s\n%s" % [semantic_tooltip, tooltip]
+	)
 	_notebook_tree_items_v0215["%s:%s" % [metadata.get("kind", ""), metadata.get("id", "")]] = item
 	return item
+
+
+func _tree_presentation_descriptor_v0216(kind: String, item_id: String = "") -> Dictionary:
+	match kind:
+		"folder":
+			return {
+				"kind": "folder",
+				"label": "Folder",
+				"icon": IDEA_FOLDER_ICON_V0216,
+				"tooltip": "Folder — contains subfolders and notebooks. Selecting it shows ideas from descendant notebooks."
+			}
+		"notebook":
+			return {
+				"kind": "notebook",
+				"label": "Notebook",
+				"icon": IDEA_NOTEBOOK_ICON_V0216,
+				"tooltip": "Notebook — contains saved ideas."
+			}
+		_:
+			return {
+				"kind": "special",
+				"label": "Built-in view",
+				"icon": IDEA_SPECIAL_VIEW_ICON_V0216,
+				"tooltip": (
+					"Built-in view — ideas not assigned to a notebook."
+					if item_id == "__unfiled__"
+					else "Built-in view — all saved ideas."
+				)
+			}
 
 
 func _notebook_tree_sort_less_v0215(
@@ -1166,10 +1275,8 @@ func _refresh_ideas_v01532(snapshot: Dictionary = {}) -> void:
 		if idea_id == _selected_idea_id_v01532:
 			reselect_index = _visible_idea_ids_v01532.size() - 1
 	if _idea_result_summary_v0211 != null:
-		var view_label := _selected_tree_scope_name_v0215(notebook_names)
-		_idea_result_summary_v0211.text = (
-			"Showing %d idea%s in %s"
-			% [rows.size(), "" if rows.size() == 1 else "s", view_label]
+		_idea_result_summary_v0211.text = _scope_summary_v0216(
+			rows.size(), notebook_names
 		)
 	var restored_selection := false
 	for index in range(_visible_idea_ids_v01532.size()):
@@ -1195,6 +1302,7 @@ func _refresh_ideas_v01532(snapshot: Dictionary = {}) -> void:
 		_status_v01532.text = (
 			"No saved ideas match the current notebook, tag and search filters."
 		)
+	_update_delete_idea_action_v0216()
 
 
 func _on_idea_multi_selected_v0214(index: int, selected: bool) -> void:
@@ -1207,6 +1315,166 @@ func _on_idea_multi_selected_v0214(index: int, selected: bool) -> void:
 		return
 	if selected:
 		_selected_idea_id_v01532 = _visible_idea_ids_v01532[index]
+	_update_delete_idea_action_v0216()
+
+
+func _on_idea_selected_v01532(index: int) -> void:
+	super._on_idea_selected_v01532(index)
+	_update_delete_idea_action_v0216()
+
+
+func _set_editor_enabled_v01532(enabled: bool) -> void:
+	super._set_editor_enabled_v01532(enabled)
+	_update_delete_idea_action_v0216()
+
+
+func _update_delete_idea_action_v0216() -> void:
+	if _delete_idea_button_v01532 == null:
+		return
+	var selected_count := _live_notebook_selected_ids_v0214().size()
+	_delete_idea_button_v01532.disabled = selected_count == 0
+	if selected_count == 0:
+		_delete_idea_button_v01532.text = "Delete Selected…"
+	elif selected_count == 1:
+		_delete_idea_button_v01532.text = "Delete Idea…"
+	else:
+		_delete_idea_button_v01532.text = "Delete %d Ideas…" % selected_count
+
+
+func _request_delete_idea_v01532() -> void:
+	var selected_ids := _live_notebook_selected_ids_v0214()
+	if selected_ids.is_empty():
+		_status_v01532.text = "Select one or more saved ideas to delete."
+		_update_delete_idea_action_v0216()
+		return
+	_pending_delete_idea_ids_v0216 = selected_ids.duplicate()
+	var count := _pending_delete_idea_ids_v0216.size()
+	_delete_idea_dialog_v01532.title = (
+		"Delete Saved Idea" if count == 1 else "Delete Saved Ideas"
+	)
+	_delete_idea_dialog_v01532.ok_button_text = (
+		"Delete Idea" if count == 1 else "Delete %d Ideas" % count
+	)
+	var preview := _selected_idea_delete_preview_v0216(
+		_pending_delete_idea_ids_v0216
+	)
+	_delete_idea_dialog_v01532.dialog_text = (
+		"You are about to permanently delete %d saved idea%s.\n\n"
+		+ "This does not affect Character Projects or characters already created from %s.%s"
+	) % [
+		count,
+		"" if count == 1 else "s",
+		"this idea" if count == 1 else "these ideas",
+		preview
+	]
+	_delete_idea_dialog_v01532.popup_centered()
+
+
+func _selected_idea_delete_preview_v0216(idea_ids: Array[String]) -> String:
+	if _idea_list_v01532 == null or idea_ids.size() > 20:
+		return ""
+	var lines: Array[String] = []
+	var preview_limit := mini(5, idea_ids.size())
+	for index_value in _idea_list_v01532.get_selected_items():
+		var index := int(index_value)
+		if index < 0 or index >= _visible_idea_ids_v01532.size():
+			continue
+		if not _visible_idea_ids_v01532[index] in idea_ids:
+			continue
+		var item_text := _idea_list_v01532.get_item_text(index)
+		lines.append("• %s" % item_text.get_slice("\n", 0))
+		if lines.size() >= preview_limit:
+			break
+	if lines.is_empty():
+		return ""
+	if idea_ids.size() > lines.size():
+		lines.append("• …")
+	return "\n\nSelected:\n%s" % "\n".join(lines)
+
+
+func _cancel_delete_ideas_v0216() -> void:
+	_pending_delete_idea_ids_v0216.clear()
+
+
+func _delete_selected_idea_v01532() -> void:
+	if _pending_delete_idea_ids_v0216.is_empty():
+		return
+	var selected_ids := _pending_delete_idea_ids_v0216.duplicate()
+	_pending_delete_idea_ids_v0216.clear()
+	var first_selected_index := _visible_idea_ids_v01532.size()
+	for idea_id in selected_ids:
+		var visible_index := _visible_idea_ids_v01532.find(idea_id)
+		if visible_index >= 0:
+			first_selected_index = mini(first_selected_index, visible_index)
+	var deleted_ids := {}
+	var failures: Array[String] = []
+	for idea_id in selected_ids:
+		var result := NOTEBOOK_SERVICE.delete_idea(idea_id)
+		if bool(result.get("ok", false)):
+			deleted_ids[idea_id] = true
+		else:
+			failures.append("%s: %s" % [
+				idea_id, str(result.get("error", "Could not delete saved idea."))
+			])
+	var next_focus := _selected_idea_id_v01532
+	if deleted_ids.has(next_focus):
+		next_focus = _surviving_idea_near_v0216(first_selected_index, deleted_ids)
+	_selected_idea_id_v01532 = next_focus
+	_idea_delete_batch_refresh_count_v0216 += 1
+	_refresh_notebook_v01532()
+	if not next_focus.is_empty():
+		var next_index := _visible_idea_ids_v01532.find(next_focus)
+		if next_index >= 0:
+			_idea_list_v01532.select(next_index, false)
+	_update_delete_idea_action_v0216()
+	var deleted_count := deleted_ids.size()
+	if failures.is_empty():
+		_status_v01532.text = "Deleted %d saved idea%s." % [
+			deleted_count, "" if deleted_count == 1 else "s"
+		]
+	else:
+		var failure_summary := "; ".join(failures.slice(0, 3))
+		_status_v01532.text = (
+			"Deleted %d saved idea%s. %d could not be deleted. %s"
+			% [
+				deleted_count,
+				"" if deleted_count == 1 else "s",
+				failures.size(),
+				failure_summary
+			]
+		)
+
+
+func _surviving_idea_near_v0216(start_index: int, deleted_ids: Dictionary) -> String:
+	if _visible_idea_ids_v01532.is_empty():
+		return ""
+	var safe_start := clampi(start_index, 0, _visible_idea_ids_v01532.size() - 1)
+	for index in range(safe_start, _visible_idea_ids_v01532.size()):
+		var idea_id := _visible_idea_ids_v01532[index]
+		if not deleted_ids.has(idea_id):
+			return idea_id
+	for index in range(safe_start - 1, -1, -1):
+		var idea_id := _visible_idea_ids_v01532[index]
+		if not deleted_ids.has(idea_id):
+			return idea_id
+	return ""
+
+
+func _on_idea_list_gui_input_v0216(event: InputEvent) -> void:
+	if not event is InputEventKey or _idea_list_v01532 == null:
+		return
+	var key_event := event as InputEventKey
+	if (
+		not key_event.pressed
+		or key_event.echo
+		or key_event.keycode != KEY_DELETE
+		or not _idea_list_v01532.has_focus()
+	):
+		return
+	if _live_notebook_selected_ids_v0214().is_empty():
+		return
+	_request_delete_idea_v01532()
+	_idea_list_v01532.accept_event()
 
 
 func _live_notebook_selected_ids_v0214() -> Array[String]:
@@ -1247,6 +1515,34 @@ func _selected_tree_scope_name_v0215(notebook_names: Dictionary) -> String:
 	return _selected_notebook_name_for_summary_v0211(
 		_notebook_tree_selection_id_v0215, notebook_names
 	)
+
+
+func _scope_summary_v0216(idea_count: int, notebook_names: Dictionary) -> String:
+	var idea_text := "%d idea%s" % [idea_count, "" if idea_count == 1 else "s"]
+	if _notebook_tree_selection_kind_v0215 == "folder":
+		var snapshot := _current_hierarchy_snapshot_v0216()
+		var folder_path := NOTEBOOK_SERVICE.folder_path_from_snapshot(
+			_notebook_tree_selection_id_v0215, snapshot
+		)
+		var notebook_count := NOTEBOOK_SERVICE.notebook_ids_in_folder_from_snapshot(
+			_notebook_tree_selection_id_v0215, snapshot, true
+		).size()
+		return "Folder: %s\n%s across %d notebook%s" % [
+			folder_path if not folder_path.is_empty() else "Root",
+			idea_text,
+			notebook_count,
+			"" if notebook_count == 1 else "s"
+		]
+	if _notebook_tree_selection_kind_v0215 == "notebook":
+		return "Notebook: %s\n%s" % [
+			str(notebook_names.get(
+				_notebook_tree_selection_id_v0215, "the selected notebook"
+			)),
+			idea_text
+		]
+	if _notebook_tree_selection_id_v0215 == "__unfiled__":
+		return "Unfiled\n%s" % idea_text
+	return "All Ideas\n%s" % idea_text
 
 
 func _load_selected_idea_v01532(idea_id: String) -> void:

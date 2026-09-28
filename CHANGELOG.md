@@ -6,6 +6,42 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.6] - 2026-09-28
+
+### Highlights
+
+- Made Folder, Notebook and built-in Idea Notebook tree rows unmistakable through
+  persistent shape-distinct icons, semantic metadata and concise tooltips.
+- Added selection-aware permanent deletion for one or many Saved Ideas, including a
+  Delete-key shortcut active only while the Saved Ideas list has focus.
+
+### Changes
+
+- Empty Folders now retain the same Folder icon and behavior as populated Folders without
+  fake children or altered hierarchy semantics.
+- Create/Rename dialogs now update the complete title, destination description, input
+  placeholder and confirmation action for Folder versus Notebook operations.
+- Scope summaries now explicitly identify Folder, Notebook, All Ideas and Unfiled views,
+  with full paths and recursive descendant Notebook counts where applicable.
+- Batch deletion captures stable IDs from the live Ctrl/Shift selection, attempts every
+  item, reports partial failures, refreshes tree/counts/tags/list once and restores a
+  sensible surviving focus without changing navigation scope.
+- Preserved the v0.21.5-hotfix1 separation between live multi-selection and focused Idea
+  Details, including one final detail load instead of per-row range-selection work.
+
+### Migration notes
+
+- None. Folder, Notebook, Idea, Idea Pack and Idea Source formats are unchanged.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Final icon appearance, native confirmation placement and physical keyboard behavior
+  should receive the documented hands-on pass across supported desktop themes.
+
 ## [0.21.5-hotfix1] - 2026-09-27
 
 ### Highlights

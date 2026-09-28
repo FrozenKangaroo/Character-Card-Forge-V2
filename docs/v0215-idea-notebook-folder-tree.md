@@ -37,6 +37,10 @@ Saved Ideas multi-selection is independent from tree navigation. Ctrl/Shift sele
 still chooses the complete **Selected Ideas** export set, while the most recently focused
 Idea remains the sole Idea Details editing target.
 
+See [v0.21.6 Idea Notebook Usability](v0216-idea-notebook-usability.md) for persistent
+Folder/Notebook icons, context-aware hierarchy dialogs, semantic scope summaries and
+single/batch Saved Idea deletion.
+
 ## Tree actions
 
 The visible toolbar and right-click menu support Folder and Notebook creation, rename and

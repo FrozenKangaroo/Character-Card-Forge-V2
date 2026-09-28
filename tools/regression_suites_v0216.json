@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.6 complete regression suites",
+  "description": "v0.21.5-hotfix1 complete baseline plus unmistakable Idea hierarchy presentation, context-aware dialogs and safe selection-based deletion coverage.",
+  "base_manifest": "regression_suites_v0215_hotfix1.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0216_idea_notebook_usability",
+        "label": "v0.21.6 Idea Notebook hierarchy and deletion usability",
+        "kind": "godot",
+        "path": "tools/test_v0216_idea_notebook_usability.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}

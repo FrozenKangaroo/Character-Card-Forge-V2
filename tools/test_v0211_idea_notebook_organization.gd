@@ -166,8 +166,8 @@ func _run() -> void:
 		"Notebook search must narrow large notebook pickers by name."
 	)
 	_require(
-		result_summary.text.begins_with("Showing ")
-		and result_summary.text.contains("All Ideas"),
+		result_summary.text.begins_with("All Ideas\n")
+		and result_summary.text.contains(" ideas"),
 		"The notebook list must keep a visible result count and scope."
 	)
 

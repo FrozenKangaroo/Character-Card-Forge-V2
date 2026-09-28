@@ -15,12 +15,12 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.5-hotfix1 — Idea Window and Selection
-Reliability**. The unified Idea Generator now opens the requested AI Ideas or Idea
-Notebook tab through one reusable native window, while Notebook multi-selection avoids
-per-row detail loads and repeated hierarchy reads. The v0.21.5 file-browser-style Folder
-Tree remains intact, including recursive views, stable IDs, path-aware destinations and
-safe reparenting.
+The current source candidate is **v0.21.6 — Idea Notebook Usability**. Folder, Notebook
+and built-in tree rows now use distinct persistent icons and semantic tooltips, including
+empty Folders. Create/Rename dialogs always describe the actual hierarchy item and full
+destination path. Saved Ideas supports one-confirmation batch deletion from its live
+Ctrl/Shift selection, including a Delete-key shortcut that is active only while the list
+has focus. The v0.21.5-hotfix1 lifecycle and selection-performance fixes remain intact.
 
 The v0.21.4 multi-batch diversity controls and clearer generation telemetry remain
 available, as do reusable v0.21.3 Idea Sources, v0.21.2 readable Personality view and
@@ -38,8 +38,9 @@ and [changelog](CHANGELOG.md).
   provenance, arbitrary labelled sections and duplicate-safe re-import.
 - Reusable portable Idea Sources with their own library, structured batch context and
   card-to-similar-Ideas extraction distinct from Alternative Version.
-- Nested Idea Notebook folders with recursive views, counts, search, safe drag/drop and
-  path-aware save/export destinations.
+- Shape-distinct Idea Notebook folders, Notebooks and built-in views with recursive
+  counts, context-aware dialogs, safe drag/drop, path-aware destinations and selection-
+  based single/batch Idea deletion.
 - Idea Generator presets plus bounded Custom per-idea character targets with visible
   requested-versus-actual reporting.
 - Visual-only Personality section spacing with an exact-text editing toggle.
