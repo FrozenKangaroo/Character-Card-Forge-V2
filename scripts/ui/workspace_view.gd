@@ -1866,7 +1866,9 @@ func _build_idea_window() -> void:
 	controls.add_child(_idea_status)
 
 	var scroll := ScrollContainer.new()
+	scroll.name = "IdeaResultsScrollV0217"
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.custom_minimum_size.y = 220
 	root.add_child(scroll)
 
 	_idea_result_box = VBoxContainer.new()

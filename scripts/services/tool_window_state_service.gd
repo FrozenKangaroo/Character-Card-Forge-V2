@@ -41,17 +41,50 @@ static func _restore_geometry(window: Window, window_id: String) -> bool:
         return false
 
     var saved_size := _vector_from_array(entry.get("size", []), window.size)
-    saved_size.x = maxi(saved_size.x, window.min_size.x)
-    saved_size.y = maxi(saved_size.y, window.min_size.y)
-    window.size = saved_size
-
     var saved_position := _vector_from_array(entry.get("position", []), window.position)
     var saved_rect := Rect2(saved_position, saved_size)
-    if DisplayServer.get_screen_from_rect(saved_rect) < 0:
+    var screen := DisplayServer.get_screen_from_rect(saved_rect)
+    if screen < 0:
         return false
-
-    window.position = saved_position
+    var usable_rect := DisplayServer.screen_get_usable_rect(screen)
+    if usable_rect.size.x <= 0 or usable_rect.size.y <= 0:
+        return false
+    var geometry := clamp_geometry_to_usable_rect(
+        saved_position, saved_size, window.min_size, usable_rect
+    )
+    window.size = geometry.get("size", saved_size)
+    window.position = geometry.get("position", saved_position)
     return true
+
+static func clamp_geometry_to_usable_rect(
+    desired_position: Vector2i,
+    desired_size: Vector2i,
+    minimum_size: Vector2i,
+    usable_rect: Rect2i,
+    margin: int = 24
+) -> Dictionary:
+    var safe_margin := maxi(0, margin)
+    var available_size := Vector2i(
+        maxi(1, usable_rect.size.x - safe_margin * 2),
+        maxi(1, usable_rect.size.y - safe_margin * 2)
+    )
+    var effective_minimum := Vector2i(
+        mini(maxi(1, minimum_size.x), available_size.x),
+        mini(maxi(1, minimum_size.y), available_size.y)
+    )
+    var safe_size := Vector2i(
+        clampi(desired_size.x, effective_minimum.x, available_size.x),
+        clampi(desired_size.y, effective_minimum.y, available_size.y)
+    )
+    var minimum_position := usable_rect.position + Vector2i(safe_margin, safe_margin)
+    var maximum_position := usable_rect.end - safe_size - Vector2i(
+        safe_margin, safe_margin
+    )
+    var safe_position := Vector2i(
+        clampi(desired_position.x, minimum_position.x, maximum_position.x),
+        clampi(desired_position.y, minimum_position.y, maximum_position.y)
+    )
+    return {"position": safe_position, "size": safe_size}
 
 static func _load_state() -> Dictionary:
     CCFStorageService.ensure_directories()
