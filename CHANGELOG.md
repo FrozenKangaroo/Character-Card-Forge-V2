@@ -6,29 +6,41 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
-### Fixes
-
-- Made final AI Idea similarity review aware of the immutable prompt, Idea Source and
-  Series context that produced the batch, so requested shared constraints are treated as
-  invariants instead of automatic duplicate evidence.
-- Replaced the flat Save Generated Ideas destination and Create Destination Folder parent
-  lists with searchable, expandable Folder trees that retain stable Folder IDs, expose
-  full paths and automatically select newly created destinations.
-- Increased the Idea Generator and Save Generated Ideas working areas, reserved visible
-  space for generated results, kept primary save actions in a width-safe layout and
-  clamped remembered tool-window geometry to the current usable screen.
-
-## [0.21.7] - 2026-09-28
+## [0.21.7] - 2026-09-29
 
 ### Highlights
 
+- Added reusable **Idea Sources** with portable `.ccfideasource.json` files, structured
+  source context and **Generate Similar Ideas** for extracting a reusable creative engine
+  from an existing card without copying its disposable character details.
+- Added multi-request Idea generation with accepted-target planning, cross-batch diversity
+  guardrails, optional final AI similarity review and clearer generation telemetry.
 - Simplified Idea organisation to one nested Folder model: Folders can contain Ideas
   directly and no current workflow requires a second Notebook container.
 - Added stable single/multi-Idea drag-and-drop to Folders or Unfiled, plus recursive
   Folder export and full-path Folder destinations throughout save and import workflows.
+- Improved Idea Generator and Idea Library usability with one reusable native window,
+  scalable hierarchy navigation, multi-selection, batch deletion, scoped export controls
+  and screen-safe remembered window sizes.
 
 ### Changes
 
+- Added schema-version-1 Idea Source parsing, internal storage and explicit New, Load,
+  Save, Export, Duplicate, Rename, Delete and Use actions while preserving Unicode,
+  placeholders, arbitrary sections and unknown future fields through round trips.
+- Added Close, Balanced and Loose card-to-source extraction controls, editable fallback
+  naming for untitled sources and an importable example source.
+- Recalculated split generation requests from the accepted usable-Idea count, shared an
+  accepted/rejected scenario ledger across requests and added an optional one-shot top-up
+  with a hard no-second-recovery stopping rule.
+- Added conservative local duplicate detection and optional **Flag Similar Ideas** and
+  **Reject Clear Duplicates** final AI review modes, both disabled by default.
+- Made final AI similarity review aware of the immutable prompt, Idea Source and Series
+  context that produced the batch, so requested shared constraints are treated as
+  invariants instead of automatic duplicate evidence.
+- Fixed Idea Pack export scopes so Select All and Select None affect only the active All,
+  selected-Idea, Bible, Series or Folder scope; manual checkbox choices remain available
+  and export includes exactly the checked Ideas.
 - Advanced the canonical Idea Library to format v3 and saved Ideas to format v2 using
   `folder_id`; legacy v1/v2 Notebook records migrate automatically into Folders.
 - Preserved legacy Folder/Notebook ID collisions defensively by assigning a deterministic
@@ -37,11 +49,26 @@ none. GitHub Releases use the matching reviewed section instead of generated not
   direct Ideas become Unfiled. Descendant Ideas are never deleted.
 - Renamed current user-facing Idea Notebook surfaces to Idea Library while keeping narrow
   internal compatibility aliases for historical callers and regression evidence.
+- Added searchable, expandable Folder trees to the Idea Library, generated-Idea saving,
+  import and export workflows, with full paths and stable Folder IDs throughout.
+- Added selection-aware permanent deletion, Delete-key support, persistent type-distinct
+  hierarchy icons, path-aware scope summaries and safe Folder deletion that reparents
+  children without deleting Ideas.
+- Unified all Idea Generator, Idea Library and Idea Sources entry routes onto one native
+  window, removed obsolete/double-open paths and separated live multi-selection from the
+  focused Idea Details load to eliminate severe Ctrl/Shift selection slowdown.
+- Increased the Idea Generator and Save Generated Ideas working areas, reserved visible
+  space for generated results, kept primary save actions in a width-safe layout and
+  clamped remembered tool-window geometry to the current usable screen.
 
 ### Migration notes
 
-- Existing Idea libraries migrate on first load. Back up `library.json` and the `ideas`
-  directory before manually editing either file; normal in-app use needs no action.
+- Existing Idea libraries migrate automatically on first load from legacy Notebook-based
+  formats to the Folder-only model while preserving stable Idea identities. Back up
+  `library.json` and the `ideas` directory before manually editing either file; normal
+  in-app use needs no action.
+- Idea Sources use a new additive storage directory and format. Sources remain temporary
+  until explicitly saved, so existing projects, cards and Idea Packs need no migration.
 
 ### Breaking changes
 
@@ -50,8 +77,12 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ### Known limitations
 
-- Drag-and-drop should receive a final hands-on check across Windows, Linux and macOS
-  themes, including Ctrl/Shift multi-selection and native window scaling.
+- Semantic novelty and adherence ultimately depend on the configured model; the stronger
+  final AI review consumes one additional request when enabled.
+- Drag-and-drop, native window placement/scaling and Ctrl/Shift mouse/keyboard selection
+  should receive a final hands-on check across Windows, Linux and macOS themes.
+- Real-provider cancellation and multi-monitor movement still require the documented
+  hands-on desktop verification pass.
 
 ## [0.21.6] - 2026-09-28
 
