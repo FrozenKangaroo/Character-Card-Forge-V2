@@ -1,5 +1,9 @@
 # v0.21.6 Idea Notebook Usability
 
+> Historical design note: v0.21.7 keeps the deletion and performance improvements below
+> while replacing Folder/Notebook presentation with the
+> [Folder-only Idea Library](v0217-folder-only-idea-library.md).
+
 ## Clear hierarchy identity
 
 Every hierarchy row now carries a persistent semantic icon and tooltip:

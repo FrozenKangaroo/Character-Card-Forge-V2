@@ -15,12 +15,11 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.6 — Idea Notebook Usability**. Folder, Notebook
-and built-in tree rows now use distinct persistent icons and semantic tooltips, including
-empty Folders. Create/Rename dialogs always describe the actual hierarchy item and full
-destination path. Saved Ideas supports one-confirmation batch deletion from its live
-Ctrl/Shift selection, including a Delete-key shortcut that is active only while the list
-has focus. The v0.21.5-hotfix1 lifecycle and selection-performance fixes remain intact.
+The current source candidate is **v0.21.7 — Folder-only Idea Library**. The former
+Folder → Notebook hierarchy is now one familiar tree of nested Folders that can contain
+Ideas directly. Existing Notebooks migrate automatically to Folders without losing Idea
+membership or stable IDs. Full-path save/import destinations, recursive Folder export,
+safe deletion and single/multi-Idea drag-and-drop all use the same model.
 
 The v0.21.4 multi-batch diversity controls and clearer generation telemetry remain
 available, as do reusable v0.21.3 Idea Sources, v0.21.2 readable Personality view and
@@ -38,9 +37,8 @@ and [changelog](CHANGELOG.md).
   provenance, arbitrary labelled sections and duplicate-safe re-import.
 - Reusable portable Idea Sources with their own library, structured batch context and
   card-to-similar-Ideas extraction distinct from Alternative Version.
-- Shape-distinct Idea Notebook folders, Notebooks and built-in views with recursive
-  counts, context-aware dialogs, safe drag/drop, path-aware destinations and selection-
-  based single/batch Idea deletion.
+- A Folder-only Idea Library with nested organisation, recursive counts/export, full-path
+  destinations, safe hierarchy and multi-Idea drag/drop, and selection-based batch deletion.
 - Idea Generator presets plus bounded Custom per-idea character targets with visible
   requested-versus-actual reporting.
 - Visual-only Personality section spacing with an exact-text editing toggle.
@@ -93,7 +91,7 @@ silently replaces a running installation.
 
 1. Choose **New Project**.
 2. Select Blank Workspace, Manual Guided, Idea Generator, Character Collaborator, Idea
-   Notebook, Import Card or Project, or Template Start.
+   Library, Import Card or Project, or Template Start.
 3. Choose the template and confirm **Create Project**.
 4. Edit manually or review any AI-produced draft before applying it.
 5. Check Description, Personality, Scenario and First Message, then save the project.

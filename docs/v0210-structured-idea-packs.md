@@ -1,5 +1,9 @@
 # v0.21.0 — Structured Idea Packs
 
+> Current organisation note: v0.21.7 replaces Notebook destinations/scopes described
+> below with recursive Folders. The portable Idea Pack schema remains unchanged; see
+> [Folder-only Idea Library](v0217-folder-only-idea-library.md).
+
 Character Card Forge v0.21.0 adds a versioned interchange format for reusable Series,
 scenario/card Seeds, character notes and future Idea Generator material. The primary
 extension is `.ccfideas.json`, but validation relies on the JSON content rather than the

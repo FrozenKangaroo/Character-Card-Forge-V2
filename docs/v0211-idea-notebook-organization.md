@@ -1,5 +1,9 @@
 # v0.21.1 Idea Notebook Organization
 
+> Current organisation note: v0.21.7 supersedes the named-Notebook workflow below with
+> nested Folders that contain Ideas directly. See
+> [Folder-only Idea Library](v0217-folder-only-idea-library.md).
+
 ## Save a batch into a new notebook
 
 **Save Generated Ideas…** retains its review-first behavior: every generated idea is

@@ -306,7 +306,7 @@ static func display_type(source: Dictionary) -> String:
 		TYPE_GENERATED_IDEA:
 			return "Generated Idea"
 		TYPE_SAVED_IDEA:
-			return "Idea Notebook"
+			return "Idea Library"
 		TYPE_STRUCTURED_BUILDER:
 			return "Structured Builder"
 		TYPE_CHARACTER:

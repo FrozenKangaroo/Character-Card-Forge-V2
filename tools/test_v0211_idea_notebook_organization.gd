@@ -80,11 +80,11 @@ func _run() -> void:
 	generator.call("_open_save_generated_v01532")
 	await process_frame
 	var create_button := generator.find_child(
-		"NewNotebookWhileSavingV0211", true, false
+		"NewFolderWhileSavingV0217", true, false
 	) as Button
 	_require(
 		create_button != null,
-		"Save Generated Ideas must offer New Notebook without leaving the save window."
+		"Save Generated Ideas must offer New Folder without leaving the save window."
 	)
 	generator.call("_open_new_notebook_while_saving_v0211")
 	var name_input := generator.find_child(
@@ -111,7 +111,7 @@ func _run() -> void:
 		_created_idea_ids.append(saved_middle)
 		var middle_loaded := NOTEBOOK_SERVICE.load_idea(saved_middle)
 		_require(
-			str((middle_loaded.get("data", {}) as Dictionary).get("notebook_id", ""))
+			str((middle_loaded.get("data", {}) as Dictionary).get("folder_id", ""))
 			== first_id,
 			"The generated idea must retain the new destination notebook ID."
 		)

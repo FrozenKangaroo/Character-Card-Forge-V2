@@ -1,5 +1,9 @@
 # v0.21.5 Idea Notebook Folder Tree
 
+> Historical design note: v0.21.7 supersedes this two-container model with the
+> [Folder-only Idea Library](v0217-folder-only-idea-library.md). Existing Notebooks are
+> migrated to Folders automatically.
+
 ## Organisation model
 
 Idea Notebook now follows a file-browser model:

@@ -6,6 +6,41 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.7] - 2026-09-28
+
+### Highlights
+
+- Simplified Idea organisation to one nested Folder model: Folders can contain Ideas
+  directly and no current workflow requires a second Notebook container.
+- Added stable single/multi-Idea drag-and-drop to Folders or Unfiled, plus recursive
+  Folder export and full-path Folder destinations throughout save and import workflows.
+
+### Changes
+
+- Advanced the canonical Idea Library to format v3 and saved Ideas to format v2 using
+  `folder_id`; legacy v1/v2 Notebook records migrate automatically into Folders.
+- Preserved legacy Folder/Notebook ID collisions defensively by assigning a deterministic
+  migration alias instead of merging or discarding either record.
+- Folder deletion moves direct Ideas and direct child Folders to the parent; root-level
+  direct Ideas become Unfiled. Descendant Ideas are never deleted.
+- Renamed current user-facing Idea Notebook surfaces to Idea Library while keeping narrow
+  internal compatibility aliases for historical callers and regression evidence.
+
+### Migration notes
+
+- Existing Idea libraries migrate on first load. Back up `library.json` and the `ideas`
+  directory before manually editing either file; normal in-app use needs no action.
+
+### Breaking changes
+
+- Current UI no longer exposes Notebooks as a separate container type. Portable Idea Pack
+  structure and semantic Bible/Series metadata are unchanged.
+
+### Known limitations
+
+- Drag-and-drop should receive a final hands-on check across Windows, Linux and macOS
+  themes, including Ctrl/Shift multi-selection and native window scaling.
+
 ## [0.21.6] - 2026-09-28
 
 ### Highlights

@@ -61,7 +61,7 @@ func _run() -> void:
 	_require(
 		tab_names.has("AI Ideas")
 		and tab_names.has("Structured Builder")
-		and tab_names.has("Idea Notebook")
+		and tab_names.has("Idea Library")
 		and tab_names.has("Idea Sources"),
 		"The reused unified Window must retain all four expected tabs."
 	)
@@ -90,7 +90,7 @@ func _run() -> void:
 	await process_frame
 	_require(
 		int(generator.get("_open_studio_request_count_v0215_hotfix")) == open_count + 1
-		and tabs.get_tab_title(tabs.current_tab) == "Idea Notebook"
+		and tabs.get_tab_title(tabs.current_tab) == "Idea Library"
 		and generator.visible
 		and not legacy.visible,
 		"Direct Idea Notebook routing must select its tab first and show one unified Window once."
@@ -107,7 +107,7 @@ func _run() -> void:
 		workspace.open_idea_notebook_v01532()
 		await process_frame
 		_require(
-			tabs.get_tab_title(tabs.current_tab) == "Idea Notebook" and generator.visible,
+			tabs.get_tab_title(tabs.current_tab) == "Idea Library" and generator.visible,
 			"Alternating close/reopen cycles must reliably restore Idea Notebook."
 		)
 	_require(
@@ -115,7 +115,7 @@ func _run() -> void:
 		"Each logical open request must result in exactly one native Window show/focus request."
 	)
 
-	generator.set("_notebook_tree_selection_kind_v0215", "notebook")
+	generator.set("_notebook_tree_selection_kind_v0215", "folder")
 	generator.set("_notebook_tree_selection_id_v0215", notebook_id)
 	generator.call("_refresh_ideas_v01532")
 	var idea_list := generator.get("_idea_list_v01532") as ItemList

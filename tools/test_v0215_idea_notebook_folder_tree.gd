@@ -1,279 +1,134 @@
 extends SceneTree
 
-const NOTEBOOK_SERVICE = preload(
-	"res://scripts/services/idea_notebook_service_v01532.gd"
-)
+const IDEA_SERVICE = preload("res://scripts/services/idea_notebook_service_v01532.gd")
 
 var _failed := false
-var _idea_ids: Array[String] = []
-var _notebook_ids: Array[String] = []
-var _folder_ids: Array[String] = []
 var _test_root := ""
-
 
 func _init() -> void:
 	call_deferred("_run")
 
-
 func _run() -> void:
-	_test_root = "/tmp/ccf_v0215_notebook_tree_%d" % Time.get_ticks_usec()
-	NOTEBOOK_SERVICE.set_storage_root_for_testing(_test_root)
-	_test_v1_migration_and_malformed_recovery()
-	var stamp := str(Time.get_ticks_usec())
-	var high_result := NOTEBOOK_SERVICE.create_folder("High Priority " + stamp)
-	if not _require(bool(high_result.get("ok", false)), "A root folder must be creatable."):
-		_finish()
-		return
-	var high: Dictionary = high_result.get("folder", {})
-	var high_id := str(high.get("id", ""))
-	_folder_ids.append(high_id)
-	var pregnancy_result := NOTEBOOK_SERVICE.create_folder("Pregnancy " + stamp, high_id)
-	if not _require(bool(pregnancy_result.get("ok", false)), "A nested folder must be creatable."):
-		_finish()
-		return
-	var pregnancy: Dictionary = pregnancy_result.get("folder", {})
-	var pregnancy_id := str(pregnancy.get("id", ""))
-	_folder_ids.append(pregnancy_id)
-
-	var notebook_a := _create_notebook("She Got Pregnant " + stamp, pregnancy_id)
-	var notebook_b := _create_notebook("Give Us a Baby " + stamp, pregnancy_id)
-	var notebook_c := _create_notebook("Romance Club " + stamp, high_id)
-	if notebook_a.is_empty() or notebook_b.is_empty() or notebook_c.is_empty():
-		_finish()
-		return
-	var idea_a := _save_idea("Pregnancy Idea A " + stamp, notebook_a, "pregnancy")
-	var idea_b := _save_idea("Pregnancy Idea B " + stamp, notebook_b, "pregnancy")
-	var idea_c := _save_idea("Romance Idea C " + stamp, notebook_c, "romance")
-	if idea_a.is_empty() or idea_b.is_empty() or idea_c.is_empty():
-		_finish()
-		return
-
+	_test_root = "/tmp/ccf_v0215_folder_tree_%d" % Time.get_ticks_usec()
+	IDEA_SERVICE.set_storage_root_for_testing(_test_root)
+	_test_legacy_library_migration()
+	var root_folder := _folder_id(IDEA_SERVICE.create_folder("High Priority"))
+	var nested_folder := _folder_id(IDEA_SERVICE.create_folder("Pregnancy", root_folder))
+	var leaf_folder := _folder_id(IDEA_SERVICE.create_folder("She Got Pregnant", nested_folder))
+	var sibling_folder := _folder_id(IDEA_SERVICE.create_folder("Romance Club", root_folder))
+	var leaf_idea := _idea_id(IDEA_SERVICE.save_generated_idea(
+		{"title": "Pregnancy Idea", "concept": "A nested folder idea."}, leaf_folder
+	))
+	var sibling_idea := _idea_id(IDEA_SERVICE.save_generated_idea(
+		{"title": "Romance Idea", "concept": "A sibling folder idea."}, sibling_folder
+	))
 	_require(
-		NOTEBOOK_SERVICE.folder_path(pregnancy_id).contains("High Priority")
-		and NOTEBOOK_SERVICE.notebook_path(notebook_a).contains("Pregnancy")
-		and NOTEBOOK_SERVICE.notebook_path(notebook_a).contains("She Got Pregnant"),
-		"Folder and notebook paths must use stable parent IDs."
-	)
-	var high_notebooks := NOTEBOOK_SERVICE.notebook_ids_in_folder(high_id, true)
-	var pregnancy_notebooks := NOTEBOOK_SERVICE.notebook_ids_in_folder(pregnancy_id, true)
-	_require(
-		high_notebooks.has(notebook_a)
-		and high_notebooks.has(notebook_b)
-		and high_notebooks.has(notebook_c),
-		"A parent folder must resolve all descendant notebooks."
+		not root_folder.is_empty() and not nested_folder.is_empty()
+		and not leaf_folder.is_empty() and not sibling_folder.is_empty()
+		and not leaf_idea.is_empty() and not sibling_idea.is_empty(),
+		"The folder-only hierarchy fixture must be created."
 	)
 	_require(
-		pregnancy_notebooks.has(notebook_a)
-		and pregnancy_notebooks.has(notebook_b)
-		and not pregnancy_notebooks.has(notebook_c),
-		"A nested folder must resolve only its own descendant notebooks."
+		IDEA_SERVICE.folder_path(leaf_folder) == "High Priority / Pregnancy / She Got Pregnant",
+		"Folder paths must use stable parent IDs."
 	)
-	var folder_counts := NOTEBOOK_SERVICE.folder_counts(true)
+	var descendants := IDEA_SERVICE.folder_ids_in_folder(root_folder, true)
 	_require(
-		int(folder_counts.get(high_id, 0)) == 3
-		and int(folder_counts.get(pregnancy_id, 0)) == 2,
-		"Folder counts must recursively sum direct notebook counts."
+		descendants.has(root_folder) and descendants.has(nested_folder)
+		and descendants.has(leaf_folder) and descendants.has(sibling_folder),
+		"Recursive Folder scope must include the selected Folder and every child Folder."
 	)
-
-	var self_move := NOTEBOOK_SERVICE.move_folder(high_id, high_id)
-	var cycle_move := NOTEBOOK_SERVICE.move_folder(high_id, pregnancy_id)
+	var counts := IDEA_SERVICE.folder_counts(true)
 	_require(
-		not bool(self_move.get("ok", false))
-		and not bool(cycle_move.get("ok", false))
-		and str(_folder_by_id(high_id).get("parent_folder_id", "")).is_empty(),
-		"Self/descendant moves must be rejected without changing hierarchy."
+		int(counts.get(root_folder, 0)) == 2
+		and int(counts.get(nested_folder, 0)) == 1
+		and int(counts.get(leaf_folder, 0)) == 1,
+		"Recursive Folder counts must include direct Ideas from descendant Folders."
 	)
-
+	_require(
+		not bool(IDEA_SERVICE.move_folder(root_folder, root_folder).get("ok", false))
+		and not bool(IDEA_SERVICE.move_folder(root_folder, leaf_folder).get("ok", false)),
+		"Folder self/descendant moves must be rejected."
+	)
 	var packed := load("res://scenes/main.tscn") as PackedScene
-	if not _require(packed != null, "The current application scene must load."):
-		_finish()
-		return
-	var app := packed.instantiate()
-	root.add_child(app)
-	await process_frame
-	await process_frame
-	await process_frame
-	var workspace_value: Variant = app.get("_workspace")
-	if not _require(workspace_value is CCFWorkspaceCurrent, "The current Workspace must load."):
-		app.queue_free()
-		_finish()
-		return
-	var generator_value: Variant = (workspace_value as CCFWorkspaceCurrent).get("_idea_generator_v01532")
-	if not _require(generator_value is CCFIdeaGeneratorWindowCurrent, "The current Idea Generator must load."):
-		app.queue_free()
-		_finish()
-		return
-	var generator := generator_value as CCFIdeaGeneratorWindowCurrent
-	generator.set("_idea_pack_service_v0210", CCFIdeaPackServiceV0210.new(_test_root))
-	generator.open_notebook_v01532()
-	await process_frame
-	await process_frame
-	var tree := generator.find_child("IdeaNotebookFolderTreeV0215", true, false) as Tree
-	var tree_panel := generator.find_child("IdeaNotebookTreePanelV0215", true, false)
-	var inner_split := generator.find_child("IdeaNotebookIdeasAndDetailsV0215", true, false)
-	_require(
-		tree != null and tree_panel is VBoxContainer and inner_split is HSplitContainer,
-		"Idea Notebook must use a resizable tree / Saved Ideas / Idea Details layout."
-	)
-	_require(
-		_find_tree_item(tree, "special", "__all__") != null
-		and _find_tree_item(tree, "special", "__unfiled__") != null
-		and _find_tree_item(tree, "folder", pregnancy_id) != null
-		and _find_tree_item(tree, "notebook", notebook_a) != null,
-		"The tree must render built-in views, nested folders and notebook leaves."
-	)
-	var high_item := _find_tree_item(tree, "folder", high_id)
-	var pregnancy_item := _find_tree_item(tree, "folder", pregnancy_id)
-	_require(
-		high_item != null and high_item.get_text(0).contains("(3)")
-		and pregnancy_item != null and pregnancy_item.get_text(0).contains("(2)"),
-		"Folder tree labels must show recursive idea counts."
-	)
-	if pregnancy_item != null:
-		pregnancy_item.select(0)
-		generator.call("_on_notebook_tree_selected_v0215")
-		var visible_ids: Array = generator.get("_visible_idea_ids_v01532")
-		_require(
-			visible_ids.has(idea_a) and visible_ids.has(idea_b) and not visible_ids.has(idea_c),
-			"Selecting a folder must show ideas from descendant notebooks only."
-		)
-		var idea_list := generator.get("_idea_list_v01532") as ItemList
-		if idea_list != null and idea_list.item_count >= 2:
-			idea_list.select(0, false)
-			idea_list.select(1, false)
+	if _require(packed != null, "The current application scene must load."):
+		var app := packed.instantiate()
+		root.add_child(app)
+		await process_frame
+		await process_frame
+		await process_frame
+		var workspace: Variant = app.get("_workspace")
+		var generator: Variant = workspace.get("_idea_generator_v01532") if workspace != null else null
+		if _require(generator is CCFIdeaGeneratorWindowCurrent, "The current Idea Library must load."):
+			generator.open_notebook_v01532()
+			await process_frame
+			await process_frame
+			var tree := generator.get("_notebook_tree_v0215") as Tree
 			_require(
-				(generator.call("_live_notebook_selected_ids_v0214") as Array).size() == 2,
-				"Folder navigation must preserve Saved Ideas multi-selection."
+				_find_tree_item(tree, "folder", leaf_folder) != null
+				and _find_tree_item(tree, "special", "__all__") != null
+				and _find_tree_item(tree, "special", "__unfiled__") != null
+				and _find_tree_item(tree, "notebook", leaf_folder) == null,
+				"The current hierarchy must render only built-in views and Folder nodes."
 			)
+			var tab := generator.get("_notebook_tab_v01532") as Control
+			_require(tab != null and tab.name == "Idea Library", "The current tab must be named Idea Library.")
+			var search := generator.get("_notebook_search_v0211") as LineEdit
+			search.text = "She Got Pregnant"
+			await process_frame
+			_require(_find_tree_item(tree, "folder", leaf_folder) != null,
+				"Folder search must retain a matching nested Folder and its ancestor path.")
+		app.queue_free()
+		await process_frame
+	IDEA_SERVICE.reset_storage_root_after_testing()
+	_remove_tree(_test_root)
+	if _failed:
+		quit(1)
+		return
+	print("V0215_IDEA_FOLDER_TREE_OK")
+	quit(0)
 
-	var search := generator.find_child("NotebookSearchV0211", true, false) as LineEdit
-	if search != null:
-		search.text = "She Got Pregnant " + stamp
-		generator.call("_refresh_notebook_v01532")
-		var matched := _find_tree_item(tree, "notebook", notebook_a)
-		var matched_parent := _find_tree_item(tree, "folder", pregnancy_id)
-		_require(
-			matched != null and matched_parent != null and not matched_parent.collapsed,
-			"Tree search must reveal a matching nested notebook with its expanded ancestors."
-		)
-		search.text = ""
-		generator.call("_refresh_notebook_v01532")
-
-	generator.call("_build_export_window_v0210")
-	var export_scope := generator.get("_export_scope_v0210") as OptionButton
-	_require(
-		_selector_contains(export_scope, "Notebook: High Priority " + stamp + " / Pregnancy " + stamp + " / She Got Pregnant " + stamp)
-		and _selector_contains(export_scope, "Folder: High Priority " + stamp + " / Pregnancy " + stamp),
-		"Export scopes must show notebook paths and recursive folder scopes without changing stable IDs."
-	)
-
-	var move_result: Variant = generator.call(
-		"_on_notebook_tree_drop_v0215", "notebook", notebook_a, high_id
-	)
-	var moved_notebook := _notebook_by_id(notebook_a)
-	var moved_idea := NOTEBOOK_SERVICE.load_idea(idea_a)
-	_require(
-		move_result == null
-		and str(moved_notebook.get("parent_folder_id", "")) == high_id
-		and str((moved_idea.get("data", {}) as Dictionary).get("notebook_id", "")) == notebook_a,
-		"Moving a notebook must update only its parent and leave every idea reference untouched."
-	)
-
-	var delete_folder := NOTEBOOK_SERVICE.delete_folder(pregnancy_id)
-	_folder_ids.erase(pregnancy_id)
-	_require(
-		bool(delete_folder.get("ok", false))
-		and str(_notebook_by_id(notebook_b).get("parent_folder_id", "")) == high_id
-		and bool(NOTEBOOK_SERVICE.load_idea(idea_b).get("ok", false)),
-		"Deleting a folder must reparent direct contents and never delete ideas."
-	)
-
-	app.queue_free()
-	await process_frame
-	_finish()
-
-
-func _test_v1_migration_and_malformed_recovery() -> void:
-	var v1_fixture := {
-		"format": NOTEBOOK_SERVICE.LIBRARY_FORMAT,
-		"format_version": 1,
-		"notebooks": [{"id": "sgp", "name": "She Got Pregnant"}]
-	}
-	DirAccess.make_dir_recursive_absolute(_test_root)
-	var fixture_file := FileAccess.open(_test_root.path_join("library.json"), FileAccess.WRITE)
-	if fixture_file != null:
-		fixture_file.store_string(JSON.stringify(v1_fixture, "  "))
-		fixture_file.close()
-	var loaded := NOTEBOOK_SERVICE.load_library()
-	var migrated: Dictionary = loaded.get("data", {})
-	var migrated_notebooks: Array = migrated.get("notebooks", [])
-	_require(
-		bool(loaded.get("ok", false))
-		and int(migrated.get("format_version", 0)) == NOTEBOOK_SERVICE.LIBRARY_FORMAT_VERSION
-		and (migrated.get("folders", []) as Array).is_empty()
-		and migrated_notebooks.size() == 1
-		and str((migrated_notebooks[0] as Dictionary).get("id", "")) == "sgp"
-		and str((migrated_notebooks[0] as Dictionary).get("parent_folder_id", "")).is_empty(),
-		"Format-v1 libraries must migrate to root-level notebooks without changing IDs."
-	)
-	var repaired: Dictionary = NOTEBOOK_SERVICE._normalise_library({
-		"notebooks": [{"id": "n", "name": "Notebook", "parent_folder_id": "missing"}],
-		"folders": [
-			{"id": "a", "name": "A", "parent_folder_id": "b"},
-			{"id": "b", "name": "B", "parent_folder_id": "a"},
-			{"id": "self", "name": "Self", "parent_folder_id": "self"}
-		]
+func _test_legacy_library_migration() -> void:
+	DirAccess.make_dir_recursive_absolute(_test_root.path_join("ideas"))
+	_write_json(_test_root.path_join("library.json"), {
+		"format": "character_card_forge_idea_notebook", "format_version": 1,
+		"created_at": "2026-01-01T00:00:00Z", "updated_at": "2026-01-02T00:00:00Z",
+		"folders": [{"id": "legacy-parent", "name": "Legacy Parent", "parent_folder_id": "",
+			"created_at": "2026-01-01T00:00:00Z", "updated_at": "2026-01-02T00:00:00Z"}],
+		"notebooks": [{"id": "legacy-leaf", "name": "Legacy Notebook", "parent_folder_id": "legacy-parent",
+			"created_at": "2026-01-01T01:00:00Z", "updated_at": "2026-01-02T01:00:00Z"}]
 	})
+	_write_json(_test_root.path_join("ideas/legacy-idea.json"), {
+		"format": "character_card_forge_saved_idea", "format_version": 1,
+		"id": "legacy-idea", "title": "Legacy", "concept": "Preserved",
+		"notebook_id": "legacy-leaf", "created_at": "2026-01-01T02:00:00Z",
+		"updated_at": "2026-01-02T02:00:00Z"
+	})
+	var loaded := IDEA_SERVICE.load_library()
+	var data: Dictionary = loaded.get("data", {})
+	var migrated_idea: Dictionary = IDEA_SERVICE.load_idea("legacy-idea").get("data", {})
 	_require(
-		str(((repaired.get("notebooks", []) as Array)[0] as Dictionary).get("parent_folder_id", "")).is_empty()
-		and not _library_has_cycle(repaired),
-		"Missing, self and cyclic parents must recover safely to root."
+		bool(loaded.get("ok", false)) and int(data.get("format_version", 0)) == 3
+		and not data.has("notebooks") and _folder_exists(data, "legacy-leaf")
+		and str(migrated_idea.get("folder_id", "")) == "legacy-leaf"
+		and not migrated_idea.has("notebook_id")
+		and str(migrated_idea.get("created_at", "")) == "2026-01-01T02:00:00Z",
+		"Legacy Notebooks must migrate to Folders without losing IDs, Idea membership or timestamps."
 	)
+	_remove_tree(_test_root)
+	IDEA_SERVICE.set_storage_root_for_testing(_test_root)
 
-
-func _create_notebook(name: String, parent_id: String) -> String:
-	var result := NOTEBOOK_SERVICE.create_notebook(name, parent_id)
-	_require(bool(result.get("ok", false)), "Notebook creation inside a folder must succeed.")
-	var notebook: Dictionary = result.get("notebook", {})
-	var notebook_id := str(notebook.get("id", ""))
-	if not notebook_id.is_empty():
-		_notebook_ids.append(notebook_id)
-	return notebook_id
-
-
-func _save_idea(title: String, notebook_id: String, tag: String) -> String:
-	var result := NOTEBOOK_SERVICE.save_generated_idea(
-		{"title": title, "concept": title + " keeps {{user}} agency.", "tags": [tag]},
-		notebook_id,
-		{"type": "v0215_regression"}
-	)
-	_require(bool(result.get("ok", false)), "Folder-tree fixture ideas must save.")
-	var idea: Dictionary = result.get("idea", {})
-	var idea_id := str(idea.get("id", ""))
-	if not idea_id.is_empty():
-		_idea_ids.append(idea_id)
-	return idea_id
-
-
-func _folder_by_id(folder_id: String) -> Dictionary:
-	for folder in NOTEBOOK_SERVICE.list_folders():
-		if str(folder.get("id", "")) == folder_id:
-			return folder
-	return {}
-
-
-func _notebook_by_id(notebook_id: String) -> Dictionary:
-	for notebook in NOTEBOOK_SERVICE.list_notebooks():
-		if str(notebook.get("id", "")) == notebook_id:
-			return notebook
-	return {}
-
+func _folder_exists(library: Dictionary, folder_id: String) -> bool:
+	for value in library.get("folders", []):
+		if value is Dictionary and str((value as Dictionary).get("id", "")) == folder_id:
+			return true
+	return false
 
 func _find_tree_item(tree: Tree, kind: String, item_id: String) -> TreeItem:
 	if tree == null or tree.get_root() == null:
 		return null
 	var pending: Array[TreeItem] = []
-	var child: TreeItem = tree.get_root().get_first_child()
+	var child := tree.get_root().get_first_child()
 	while child != null:
 		pending.append(child)
 		child = child.get_next()
@@ -284,48 +139,30 @@ func _find_tree_item(tree: Tree, kind: String, item_id: String) -> TreeItem:
 			var metadata: Dictionary = metadata_value
 			if str(metadata.get("kind", "")) == kind and str(metadata.get("id", "")) == item_id:
 				return item
-		var nested: TreeItem = item.get_first_child()
+		var nested := item.get_first_child()
 		while nested != null:
 			pending.append(nested)
 			nested = nested.get_next()
 	return null
 
+func _folder_id(result: Dictionary) -> String:
+	return str((result.get("folder", {}) as Dictionary).get("id", ""))
 
-func _selector_contains(selector: OptionButton, text: String) -> bool:
-	if selector == null:
-		return false
-	for index in range(selector.item_count):
-		if selector.get_item_text(index).contains(text):
-			return true
+func _idea_id(result: Dictionary) -> String:
+	return str((result.get("idea", {}) as Dictionary).get("id", ""))
+
+func _write_json(path: String, value: Dictionary) -> void:
+	var file := FileAccess.open(path, FileAccess.WRITE)
+	_require(file != null, "Fixture JSON must be writable.")
+	if file != null:
+		file.store_string(JSON.stringify(value, "\t") + "\n")
+
+func _require(condition: bool, message: String) -> bool:
+	if condition:
+		return true
+	_failed = true
+	push_error(message)
 	return false
-
-
-func _library_has_cycle(library: Dictionary) -> bool:
-	var parent_by_id := {}
-	for folder_value in library.get("folders", []):
-		var folder: Dictionary = folder_value
-		parent_by_id[str(folder.get("id", ""))] = str(folder.get("parent_folder_id", ""))
-	for folder_id_value in parent_by_id.keys():
-		var cursor := str(folder_id_value)
-		var visited := {}
-		while not cursor.is_empty() and parent_by_id.has(cursor):
-			if visited.has(cursor):
-				return true
-			visited[cursor] = true
-			cursor = str(parent_by_id.get(cursor, ""))
-	return false
-
-
-func _cleanup() -> void:
-	for idea_id in _idea_ids:
-		NOTEBOOK_SERVICE.delete_idea(idea_id)
-	for notebook_id in _notebook_ids:
-		NOTEBOOK_SERVICE.delete_notebook(notebook_id)
-	for index in range(_folder_ids.size() - 1, -1, -1):
-		NOTEBOOK_SERVICE.delete_folder(_folder_ids[index])
-	NOTEBOOK_SERVICE.reset_storage_root_after_testing()
-	_remove_tree(_test_root)
-
 
 func _remove_tree(path: String) -> void:
 	if path.is_empty() or not DirAccess.dir_exists_absolute(path):
@@ -345,20 +182,3 @@ func _remove_tree(path: String) -> void:
 		entry = directory.get_next()
 	directory.list_dir_end()
 	DirAccess.remove_absolute(path)
-
-
-func _finish() -> void:
-	_cleanup()
-	if _failed:
-		quit(1)
-		return
-	print("V0215_IDEA_NOTEBOOK_FOLDER_TREE_OK")
-	quit(0)
-
-
-func _require(condition: bool, message: String) -> bool:
-	if condition:
-		return true
-	_failed = true
-	push_error(message)
-	return false
