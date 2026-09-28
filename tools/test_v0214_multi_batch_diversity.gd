@@ -19,6 +19,7 @@ class FakeGenerationService:
 	var requests: Array[int] = []
 	var seeds: Array[String] = []
 	var decorations: Array[Dictionary] = []
+	var review_sessions: Array[Dictionary] = []
 	var review_requests := 0
 	var next_id := 1
 
@@ -63,6 +64,7 @@ class FakeGenerationService:
 		_project_id: String = ""
 	) -> Dictionary:
 		review_requests += 1
+		review_sessions.append(_session.duplicate(true))
 		return {"ok": true, "job_id": "fake-review-%d" % review_requests}
 
 
@@ -76,6 +78,7 @@ func _run() -> void:
 	_test_anti_repeat_prompt_and_job_decoration()
 	_test_validation_ledger_metadata()
 	_test_reporting_telemetry()
+	_test_generation_context_review_prompt()
 	_test_final_review_modes()
 	_test_one_shot_top_up()
 	_test_contract_compatibility()
@@ -386,6 +389,10 @@ func _test_final_review_modes() -> void:
 		"idea_ids": ["idea-002", "idea-003"],
 		"classification": "near_duplicate",
 		"reason": "Shared trope but different consent structure."
+	}, {
+		"idea_ids": ["idea-001", "idea-003"],
+		"classification": "related_distinct",
+		"reason": "Requested premise is shared, but the relationship and consequences differ."
 	}]
 	var off := DIVERSITY.create_session(3, 3, true, "off")
 	DIVERSITY.record_batch(off, _ideas("Off", 3))
@@ -399,7 +406,7 @@ func _test_final_review_modes() -> void:
 	DIVERSITY.apply_final_review(flag, clusters)
 	_require(
 		DIVERSITY.accepted_count(flag) == 3
-		and (flag.get("final_review_clusters", []) as Array).size() == 2,
+		and (flag.get("final_review_clusters", []) as Array).size() == 3,
 		"Flag mode must report clusters without deleting ideas."
 	)
 	var review_service := GENERATION_CURRENT.new()
@@ -418,12 +425,19 @@ func _test_final_review_modes() -> void:
 	var review_queue: Array = review_service.get("_queue")
 	var review_job: Dictionary = review_queue[0] if not review_queue.is_empty() else {}
 	var review_messages: Array = (review_job.get("payload", {}) as Dictionary).get("messages", [])
+	var review_metadata: Dictionary = review_job.get("metadata", {})
 	_require(
 		bool(queued_review.get("ok", false))
 		and str(review_job.get("type", "")) == "idea_similarity_review"
 		and str(review_job.get("parse_mode", "")) == "object"
 		and str((review_messages[1] as Dictionary).get("content", "")).contains("related_distinct"),
 		"Enabled final review must use one compact structured comparison request with three-way classifications."
+	)
+	_require(
+		not bool(review_metadata.get("idea_similarity_context_present", true))
+		and str(review_metadata.get("idea_similarity_context_mode", "")).is_empty()
+		and not bool(review_metadata.get("idea_similarity_source_context_present", true)),
+		"Legacy sessions without captured context must queue safely with lightweight context diagnostics."
 	)
 	review_service.queue_free()
 	var reject := DIVERSITY.create_session(3, 3, true, "reject")
@@ -442,6 +456,92 @@ func _test_final_review_modes() -> void:
 	_require(
 		"Reject 3" in retained_titles,
 		"Near-duplicate and related-but-distinct ideas must survive conservative rejection."
+	)
+
+
+func _test_generation_context_review_prompt() -> void:
+	var additional_direction := (
+		"Focus on bride-to-be scenarios with one final pre-wedding experience, "
+		+ "consensual submission to another dominant person, a temporary arrangement, "
+		+ "marriage to {{user}} afterward, and pregnancy discovered afterward."
+	)
+	var source_context := (
+		"IDEA SOURCE: She Got Pregnant\n"
+		+ "Core premise: explore consequences and relationship uncertainty.\n"
+		+ "Diversity axes: prior history, permission, boundaries, reveal, consequences."
+	)
+	var context := {
+		"prompt_mode": "additional_direction",
+		"seed_text": additional_direction,
+		"series_context": "SERIES CONTEXT: pre-wedding relationship stories",
+		"idea_source_id": "source-pregnancy",
+		"idea_source_title": "She Got Pregnant",
+		"idea_source_context": source_context
+	}
+	var session := DIVERSITY.create_session(4, 2, true, "reject", false, context)
+	DIVERSITY.mark_request_started(session, 2, "normal")
+	DIVERSITY.record_batch(session, [
+		_idea(
+			"The Trainer's Rules",
+			"Her established personal trainer proposes the permitted final weekend; negotiated boundaries, long trust and an open post-wedding reveal shape the consequences."
+		),
+		_idea(
+			"The Online Dominant Arrives",
+			"A long-term online dominant meets her physically for the first time; remote history, cautious permission and uncertainty about disclosure shape the consequences."
+		)
+	])
+	DIVERSITY.mark_request_started(session, 2, "normal")
+	DIVERSITY.record_batch(session, [
+		_idea(
+			"The Gallery Weekend",
+			"An artist enters through a private commission, with explicit limits and a delayed reveal that changes the marriage."
+		),
+		_idea(
+			"The Resort Weekend",
+			"A resort acquaintance enters through a spontaneous invitation, with public permission and immediate emotional consequences."
+		)
+	])
+	var prompt := DIVERSITY.final_review_prompt(session)
+	_require(
+		prompt.contains("Prompt mode: Additional Direction")
+		and prompt.contains(additional_direction)
+		and prompt.contains("Active Idea Source: She Got Pregnant")
+		and prompt.contains(source_context)
+		and prompt.contains("SERIES CONTEXT")
+		and prompt.contains("requested traits as shared invariants")
+		and prompt.contains("After accounting for those requested invariants")
+		and prompt.contains("relationship to a third party")
+		and prompt.contains("prefer near_duplicate")
+		and prompt.contains("occupation labels")
+		and prompt.contains("The Trainer's Rules")
+		and prompt.contains("The Online Dominant Arrives"),
+		"Final review must preserve Additional Direction and canonical source context while distinguishing requested invariants from discretionary structure."
+	)
+	var stored_context: Dictionary = session.get("generation_context", {})
+	_require(
+		str(stored_context.get("seed_text", "")) == additional_direction
+		and str(stored_context.get("idea_source_context", "")) == source_context
+		and int(session.get("normal_requests_completed", 0)) == 2,
+		"The same frozen Additional Direction and Idea Source context must survive multiple batches."
+	)
+	var primary := DIVERSITY.create_session(2, 2, true, "flag", false, {
+		"prompt_mode": "primary_prompt",
+		"seed_text": "Generate ten ideas about detectives trapped overnight in an abandoned hotel."
+	})
+	DIVERSITY.record_batch(primary, _ideas("Detective", 2))
+	var primary_prompt := DIVERSITY.final_review_prompt(primary)
+	_require(
+		primary_prompt.contains("Prompt mode: Primary prompt")
+		and primary_prompt.contains("detectives trapped overnight in an abandoned hotel"),
+		"Ordinary generation must carry its original primary prompt into final review."
+	)
+	var legacy := DIVERSITY.create_session(2, 2)
+	DIVERSITY.record_batch(legacy, _ideas("Legacy", 2))
+	_require(
+		DIVERSITY.final_review_prompt(legacy).contains(
+			"No stored generation context is available for this legacy session."
+		),
+		"A session without generation context must still produce a valid review prompt."
 	)
 
 
@@ -707,13 +807,17 @@ func _test_live_final_review(
 	fake.requests.clear()
 	fake.seeds.clear()
 	fake.decorations.clear()
+	fake.review_sessions.clear()
 	fake.review_requests = 0
 	fake.next_id = 1
 	var review := workspace.find_child("FinalAISimilarityCheckV0214", true, false) as OptionButton
 	review.select(1)
+	var seed_editor := workspace.get("_idea_seed") as TextEdit
+	seed_editor.text = "Detectives trapped overnight in an abandoned hotel"
 	workspace.call("_reset_idea_batch_state_v0211")
 	var plan: Array[int] = [2]
 	workspace.call("_queue_batched_ideas_v0211", 2, plan)
+	seed_editor.text = "Mutable UI text changed after generation began"
 	workspace.call(
 		"_handle_completed_idea_batch_v0211",
 		"fake-idea-1",
@@ -728,8 +832,12 @@ func _test_live_final_review(
 	)
 	_require(
 		fake.review_requests == 1
+		and fake.review_sessions.size() == 1
+		and str((fake.review_sessions[0].get("generation_context", {}) as Dictionary).get(
+			"seed_text", ""
+		)) == "Detectives trapped overnight in an abandoned hotel"
 		and str(workspace.get("_idea_diversity_review_job_id_v0214")) == "fake-review-1",
-		"Flag mode must queue exactly one final AI comparison after normal generation."
+		"Flag mode must queue exactly one final AI comparison using the generation-start context snapshot rather than mutable UI text."
 	)
 	workspace.call(
 		"_on_job_completed",
