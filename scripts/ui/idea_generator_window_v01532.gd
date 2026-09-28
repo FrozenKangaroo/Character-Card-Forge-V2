@@ -43,7 +43,7 @@ var _loaded_idea_v01532: Dictionary = {}
 
 func _ready() -> void:
 	super._ready()
-	title = "Idea Generator + Notebook"
+	title = "Idea Generator + Library"
 	_build_notebook_tab_v01532()
 	_build_notebook_dialogs_v01532()
 	_refresh_notebook_v01532()
@@ -60,11 +60,11 @@ func _build_ai_tab() -> void:
 	_save_generated_button_v01532 = Button.new()
 	_save_generated_button_v01532.text = "Save Generated Ideas…"
 	_save_generated_button_v01532.disabled = true
-	_save_generated_button_v01532.tooltip_text = "Choose which ideas from the latest completed AI Ideas batch to keep in Idea Notebook. Generated ideas are never saved automatically."
+	_save_generated_button_v01532.tooltip_text = "Choose which Ideas from the latest completed AI Ideas batch to keep in the Idea Library. Generated Ideas are never saved automatically."
 	_save_generated_button_v01532.pressed.connect(_open_save_generated_v01532)
 	toolbar.add_child(_save_generated_button_v01532)
 	var open_notebook := Button.new()
-	open_notebook.text = "Open Idea Notebook"
+	open_notebook.text = "Open Idea Library"
 	open_notebook.pressed.connect(_show_notebook_tab_v01532)
 	toolbar.add_child(open_notebook)
 	_last_batch_label_v01532 = Label.new()
@@ -102,19 +102,19 @@ func open_notebook_v01532() -> void:
 func _show_notebook_tab_v01532() -> void:
 	_refresh_notebook_v01532()
 	for index in range(_tabs.get_tab_count()):
-		if _tabs.get_tab_title(index) == "Idea Notebook":
+		if _tabs.get_tab_title(index) == "Idea Library":
 			_tabs.current_tab = index
 			return
 
 
 func _build_notebook_tab_v01532() -> void:
 	_notebook_tab_v01532 = VBoxContainer.new()
-	_notebook_tab_v01532.name = "Idea Notebook"
+	_notebook_tab_v01532.name = "Idea Library"
 	_notebook_tab_v01532.add_theme_constant_override("separation", 8)
 	_tabs.add_child(_notebook_tab_v01532)
 
 	var intro := Label.new()
-	intro.text = "Keep only the ideas you want. Named notebooks organise ideas; tags and search work across notebooks. Saved ideas live independently of Character Projects."
+	intro.text = "Keep only the Ideas you want. Nested Folders organise Ideas directly; tags and search work across the whole Library. Saved Ideas live independently of Character Projects."
 	intro.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_notebook_tab_v01532.add_child(intro)
 
@@ -126,7 +126,7 @@ func _build_notebook_tab_v01532() -> void:
 	_notebook_filter_v01532.item_selected.connect(func(_index: int) -> void: _refresh_ideas_v01532())
 	filters.add_child(_notebook_filter_v01532)
 	var new_notebook := Button.new()
-	new_notebook.text = "New Notebook…"
+	new_notebook.text = "New Folder…"
 	new_notebook.pressed.connect(func() -> void: _open_name_dialog_v01532("new"))
 	filters.add_child(new_notebook)
 	var rename_notebook := Button.new()
@@ -134,8 +134,8 @@ func _build_notebook_tab_v01532() -> void:
 	rename_notebook.pressed.connect(func() -> void: _open_name_dialog_v01532("rename"))
 	filters.add_child(rename_notebook)
 	var delete_notebook := Button.new()
-	delete_notebook.text = "Delete Notebook…"
-	delete_notebook.tooltip_text = "Deletes the notebook only. Its ideas move to Unfiled."
+	delete_notebook.text = "Delete Folder…"
+	delete_notebook.tooltip_text = "Deletes the Folder only. Its direct Ideas and child Folders move to the parent level."
 	delete_notebook.pressed.connect(_request_delete_notebook_v01532)
 	filters.add_child(delete_notebook)
 	var spacer := Control.new()
@@ -209,7 +209,7 @@ func _build_notebook_tab_v01532() -> void:
 	_tags_v01532.placeholder_text = "university, romance, roommates"
 	editor.add_child(_labelled_control_v01532("Tags (comma separated)", _tags_v01532))
 	_idea_notebook_v01532 = OptionButton.new()
-	editor.add_child(_labelled_control_v01532("Notebook", _idea_notebook_v01532))
+	editor.add_child(_labelled_control_v01532("Folder", _idea_notebook_v01532))
 
 	var actions := HFlowContainer.new()
 	actions.add_theme_constant_override("separation", 8)
@@ -255,9 +255,9 @@ func _labelled_control_v01532(label_text: String, control: Control) -> VBoxConta
 func _build_notebook_dialogs_v01532() -> void:
 	_name_dialog_v01532 = ConfirmationDialog.new()
 	_name_dialog_v01532.visible = false
-	_name_dialog_v01532.title = "Idea Notebook"
+	_name_dialog_v01532.title = "Idea Library Folder"
 	_name_input_v01532 = LineEdit.new()
-	_name_input_v01532.placeholder_text = "Notebook name"
+	_name_input_v01532.placeholder_text = "Folder name"
 	_name_input_v01532.custom_minimum_size.x = 360
 	_name_dialog_v01532.add_child(_name_input_v01532)
 	_name_dialog_v01532.confirmed.connect(_apply_name_dialog_v01532)
@@ -266,8 +266,8 @@ func _build_notebook_dialogs_v01532() -> void:
 
 	_delete_notebook_dialog_v01532 = ConfirmationDialog.new()
 	_delete_notebook_dialog_v01532.visible = false
-	_delete_notebook_dialog_v01532.title = "Delete Idea Notebook"
-	_delete_notebook_dialog_v01532.ok_button_text = "Delete Notebook"
+	_delete_notebook_dialog_v01532.title = "Delete Idea Library Folder"
+	_delete_notebook_dialog_v01532.ok_button_text = "Delete Folder"
 	_delete_notebook_dialog_v01532.confirmed.connect(_delete_selected_notebook_v01532)
 	add_child(_delete_notebook_dialog_v01532)
 	_delete_notebook_dialog_v01532.hide()
@@ -316,7 +316,7 @@ func _open_save_generated_v01532() -> void:
 	var target_row := HBoxContainer.new()
 	root.add_child(target_row)
 	var target_label := Label.new()
-	target_label.text = "Save to:"
+	target_label.text = "Save to Folder:"
 	target_row.add_child(target_label)
 	_save_generated_notebook_v01532 = OptionButton.new()
 	_save_generated_notebook_v01532.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -388,7 +388,7 @@ func _open_save_generated_v01532() -> void:
 
 
 func _save_selected_generated_v01532() -> void:
-	var notebook_id := _selected_metadata_v01532(_save_generated_notebook_v01532, "")
+	var folder_id := _selected_metadata_v01532(_save_generated_notebook_v01532, "")
 	var source := {
 		"type": "idea_generator",
 		"seed_prompt": str(_last_generation_metadata_v01532.get("seed", "")),
@@ -409,7 +409,7 @@ func _save_selected_generated_v01532() -> void:
 		var idea_value: Variant = _last_generated_ideas_v01532[index]
 		if not idea_value is Dictionary:
 			continue
-		var result := NOTEBOOK_SERVICE.save_generated_idea(idea_value as Dictionary, notebook_id, source)
+		var result := NOTEBOOK_SERVICE.save_generated_idea(idea_value as Dictionary, folder_id, source)
 		if bool(result.get("ok", false)):
 			saved_count += 1
 		else:
@@ -423,7 +423,7 @@ func _save_selected_generated_v01532() -> void:
 		return
 	_save_generated_window_v01532.hide()
 	_refresh_notebook_v01532()
-	_status_v01532.text = "Saved %d generated idea%s to Idea Notebook." % [saved_count, "" if saved_count == 1 else "s"]
+	_status_v01532.text = "Saved %d generated Idea%s to the Idea Library." % [saved_count, "" if saved_count == 1 else "s"]
 
 
 func _refresh_notebook_v01532() -> void:
@@ -435,9 +435,9 @@ func _refresh_notebook_v01532() -> void:
 	_notebook_filter_v01532.clear()
 	_add_option_v01532(_notebook_filter_v01532, "All Ideas (%d)" % int(counts.get("__all__", 0)), "__all__")
 	_add_option_v01532(_notebook_filter_v01532, "Unfiled (%d)" % int(counts.get("__unfiled__", 0)), "__unfiled__")
-	for notebook in NOTEBOOK_SERVICE.list_notebooks():
-		var notebook_id := str(notebook.get("id", ""))
-		_add_option_v01532(_notebook_filter_v01532, "%s (%d)" % [str(notebook.get("name", "Notebook")), int(counts.get(notebook_id, 0))], notebook_id)
+	for folder in NOTEBOOK_SERVICE.list_folders():
+		var folder_id := str(folder.get("id", ""))
+		_add_option_v01532(_notebook_filter_v01532, "%s (%d)" % [str(folder.get("name", "Folder")), int(counts.get(folder_id, 0))], folder_id)
 	_select_metadata_v01532(_notebook_filter_v01532, selected_filter, "__all__")
 	_tag_filter_v01532.clear()
 	_add_option_v01532(_tag_filter_v01532, "All Tags", "")
@@ -451,7 +451,7 @@ func _refresh_ideas_v01532() -> void:
 	if _idea_list_v01532 == null:
 		return
 	var filters := {
-		"notebook_id": _selected_metadata_v01532(_notebook_filter_v01532, "__all__"),
+		"folder_id": _selected_metadata_v01532(_notebook_filter_v01532, "__all__"),
 		"tag": _selected_metadata_v01532(_tag_filter_v01532, ""),
 		"search": _search_v01532.text if _search_v01532 != null else "",
 		"include_archived": _show_archived_v01532 != null and _show_archived_v01532.button_pressed
@@ -484,7 +484,7 @@ func _refresh_ideas_v01532() -> void:
 		_selected_idea_id_v01532 = ""
 		_clear_editor_v01532()
 		_set_editor_enabled_v01532(false)
-		_status_v01532.text = "No saved ideas match the current notebook, tag and search filters."
+		_status_v01532.text = "No saved Ideas match the current Folder, tag and search filters."
 
 
 func _on_idea_selected_v01532(index: int) -> void:
@@ -516,10 +516,10 @@ func _load_selected_idea_v01532(idea_id: String) -> void:
 	_identity_v01532.text = "Generated character: %s" % " • ".join(identity_parts) if not identity_parts.is_empty() else ""
 	var hook := str(idea.get("roleplay_hook", "")).strip_edges()
 	_hook_v01532.text = "Roleplay hook: %s" % hook if not hook.is_empty() else ""
-	_fill_destination_notebooks_v01532(_idea_notebook_v01532, str(idea.get("notebook_id", "")))
+	_fill_destination_notebooks_v01532(_idea_notebook_v01532, str(idea.get("folder_id", idea.get("notebook_id", ""))))
 	_archive_button_v01532.text = "Restore" if bool(idea.get("archived", false)) else "Archive"
 	_set_editor_enabled_v01532(true)
-	_status_v01532.text = "Saved idea loaded. Changes remain local to Idea Notebook until you explicitly use the concept."
+	_status_v01532.text = "Saved Idea loaded. Changes remain local to the Idea Library until you explicitly use the concept."
 
 
 func _save_selected_idea_v01532() -> void:
@@ -532,7 +532,7 @@ func _save_selected_idea_v01532() -> void:
 			"concept": _concept_v01532.text,
 			"notes": _notes_v01532.text,
 			"tags": _tags_v01532.text,
-			"notebook_id": _selected_metadata_v01532(_idea_notebook_v01532, "")
+			"folder_id": _selected_metadata_v01532(_idea_notebook_v01532, "")
 		}
 	)
 	if not bool(result.get("ok", false)):
@@ -596,13 +596,13 @@ func _open_name_dialog_v01532(action: String) -> void:
 	if action == "rename":
 		var notebook_id := _selected_named_notebook_v01532()
 		if notebook_id.is_empty():
-			_status_v01532.text = "Select a named notebook before renaming it. All Ideas and Unfiled are built-in views."
+			_status_v01532.text = "Select a Folder before renaming it. All Ideas and Unfiled are built-in views."
 			return
-		_name_dialog_v01532.dialog_text = "Rename the selected notebook."
+		_name_dialog_v01532.dialog_text = "Rename the selected Folder."
 		_name_input_v01532.text = _selected_notebook_name_v01532()
 		_name_dialog_v01532.ok_button_text = "Rename"
 	else:
-		_name_dialog_v01532.dialog_text = "Create a named notebook for organising saved ideas."
+		_name_dialog_v01532.dialog_text = "Create a Folder for organising saved Ideas."
 		_name_input_v01532.text = ""
 		_name_dialog_v01532.ok_button_text = "Create"
 	_name_dialog_v01532.popup_centered()
@@ -612,14 +612,14 @@ func _open_name_dialog_v01532(action: String) -> void:
 func _apply_name_dialog_v01532() -> void:
 	if _name_action_v01532 == "rename":
 		var notebook_id := _selected_named_notebook_v01532()
-		var result := NOTEBOOK_SERVICE.rename_notebook(notebook_id, _name_input_v01532.text)
+		var result := NOTEBOOK_SERVICE.rename_folder(notebook_id, _name_input_v01532.text)
 		if not bool(result.get("ok", false)):
-			_status_v01532.text = str(result.get("error", "Could not rename notebook."))
+			_status_v01532.text = str(result.get("error", "Could not rename Folder."))
 			return
 	else:
-		var result := NOTEBOOK_SERVICE.create_notebook(_name_input_v01532.text)
+		var result := NOTEBOOK_SERVICE.create_folder(_name_input_v01532.text)
 		if not bool(result.get("ok", false)):
-			_status_v01532.text = str(result.get("error", "Could not create notebook."))
+			_status_v01532.text = str(result.get("error", "Could not create Folder."))
 			return
 	_refresh_notebook_v01532()
 
@@ -627,9 +627,9 @@ func _apply_name_dialog_v01532() -> void:
 func _request_delete_notebook_v01532() -> void:
 	var notebook_id := _selected_named_notebook_v01532()
 	if notebook_id.is_empty():
-		_status_v01532.text = "Select a named notebook before deleting it. All Ideas and Unfiled cannot be deleted."
+		_status_v01532.text = "Select a Folder before deleting it. All Ideas and Unfiled cannot be deleted."
 		return
-	_delete_notebook_dialog_v01532.dialog_text = "Delete notebook '%s'? Its saved ideas will be kept and moved to Unfiled." % _selected_notebook_name_v01532()
+	_delete_notebook_dialog_v01532.dialog_text = "Delete Folder '%s'? Direct Ideas and child Folders move to the parent level; no Ideas are deleted." % _selected_notebook_name_v01532()
 	_delete_notebook_dialog_v01532.popup_centered()
 
 
@@ -637,12 +637,12 @@ func _delete_selected_notebook_v01532() -> void:
 	var notebook_id := _selected_named_notebook_v01532()
 	if notebook_id.is_empty():
 		return
-	var result := NOTEBOOK_SERVICE.delete_notebook(notebook_id)
+	var result := NOTEBOOK_SERVICE.delete_folder(notebook_id)
 	if not bool(result.get("ok", false)):
-		_status_v01532.text = str(result.get("error", "Could not delete notebook."))
+		_status_v01532.text = str(result.get("error", "Could not delete Folder."))
 		return
 	_refresh_notebook_v01532()
-	_status_v01532.text = "Notebook deleted; its ideas are now Unfiled."
+	_status_v01532.text = "Folder deleted; its Ideas and child Folders were kept at the parent level."
 
 
 func _fill_destination_notebooks_v01532(selector: OptionButton, selected_id: String) -> void:
@@ -650,8 +650,8 @@ func _fill_destination_notebooks_v01532(selector: OptionButton, selected_id: Str
 		return
 	selector.clear()
 	_add_option_v01532(selector, "Unfiled", "")
-	for notebook in NOTEBOOK_SERVICE.list_notebooks():
-		_add_option_v01532(selector, str(notebook.get("name", "Notebook")), str(notebook.get("id", "")))
+	for folder in NOTEBOOK_SERVICE.list_folders():
+		_add_option_v01532(selector, str(folder.get("name", "Folder")), str(folder.get("id", "")))
 	_select_metadata_v01532(selector, selected_id, "")
 
 

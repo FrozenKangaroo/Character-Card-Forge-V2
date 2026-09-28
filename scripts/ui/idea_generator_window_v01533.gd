@@ -43,7 +43,7 @@ func _install_collaborator_handoffs_v01533() -> void:
 		_develop_generated_button_v01533.name = "DevelopGeneratedIdeaV01533"
 		_develop_generated_button_v01533.text = "Develop Generated Idea…"
 		_develop_generated_button_v01533.tooltip_text = (
-			"Choose one idea from the latest completed batch and start a new Character Collaborator conversation from a read-only structured snapshot. This does not save the idea to Idea Notebook."
+			"Choose one idea from the latest completed batch and start a new Character Collaborator conversation from a read-only structured snapshot. This does not save the idea to Idea Library."
 		)
 		_develop_generated_button_v01533.pressed.connect(
 			_open_generated_source_dialog_v01533
@@ -62,7 +62,7 @@ func _install_collaborator_handoffs_v01533() -> void:
 		_develop_saved_button_v01533.name = "DevelopSavedIdeaV01533"
 		_develop_saved_button_v01533.text = "Develop in Collaborator"
 		_develop_saved_button_v01533.tooltip_text = (
-			"Start a new source-aware Character Collaborator conversation from this saved idea. The Notebook entry remains unchanged."
+			"Start a new source-aware Character Collaborator conversation from this saved idea. The Idea Library entry remains unchanged."
 		)
 		_develop_saved_button_v01533.pressed.connect(_develop_saved_idea_v01533)
 		saved_actions.add_child(_develop_saved_button_v01533)
@@ -78,7 +78,7 @@ func _build_generated_source_dialog_v01533() -> void:
 	_generated_source_dialog_v01533.title = "Develop Generated Idea in Collaborator"
 	_generated_source_dialog_v01533.ok_button_text = "Develop in Collaborator"
 	_generated_source_dialog_v01533.dialog_text = (
-		"Choose one idea from the latest completed batch. The idea is passed as a read-only structured source snapshot and is not automatically saved to Idea Notebook."
+		"Choose one idea from the latest completed batch. The idea is passed as a read-only structured source snapshot and is not automatically saved to Idea Library."
 	)
 	_generated_source_dialog_v01533.confirmed.connect(_develop_generated_idea_v01533)
 	add_child(_generated_source_dialog_v01533)
@@ -141,7 +141,7 @@ func _develop_saved_idea_v01533() -> void:
 		return
 	var idea_value: Variant = loaded.get("data", {})
 	if not idea_value is Dictionary:
-		_status_v01532.text = "The selected Notebook idea is not a valid structured idea."
+		_status_v01532.text = "The selected Idea Library entry is not a valid structured idea."
 		return
 	var source := SOURCE_SERVICE_V01533.from_saved_idea(idea_value as Dictionary)
 	collaborator_source_requested.emit(source)

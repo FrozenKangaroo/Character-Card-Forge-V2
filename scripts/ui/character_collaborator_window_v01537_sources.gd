@@ -28,7 +28,7 @@ func _install_saved_idea_source_button_v01537() -> void:
 		return
 	var button := Button.new()
 	button.text = "Add Saved Idea…"
-	button.tooltip_text = "Add an Idea Notebook entry to this conversation as another read-only reference source."
+	button.tooltip_text = "Add an Idea Library entry to this conversation as another read-only reference source."
 	button.pressed.connect(_open_idea_source_dialog_v01537)
 	actions.add_child(button)
 
@@ -43,7 +43,7 @@ func _build_idea_source_dialog_v01537() -> void:
 	var root := VBoxContainer.new()
 	_idea_source_dialog_v01537.add_child(root)
 	var hint := Label.new()
-	hint.text = "Choose a saved Idea Notebook entry. It remains a read-only reference and does not replace the explicit character target."
+	hint.text = "Choose a saved Idea Library entry. It remains a read-only reference and does not replace the explicit character target."
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	root.add_child(hint)
 	_idea_source_list_v01537 = ItemList.new()
@@ -63,7 +63,7 @@ func _open_idea_source_dialog_v01537() -> void:
 			display += " — %s" % character_name
 		_idea_source_list_v01537.add_item(display)
 	if _idea_source_rows_v01537.is_empty():
-		_status.text = "Idea Notebook has no saved ideas to add."
+		_status.text = "Idea Library has no saved ideas to add."
 		return
 	_idea_source_list_v01537.select(0)
 	_idea_source_dialog_v01537.popup_centered(Vector2i(780, 580))

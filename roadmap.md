@@ -10,7 +10,7 @@ The original PyWebView V1 application remains a feature/behaviour reference rath
 
 - Godot-native desktop UI with detachable tool windows where useful.
 - Character project JSON/files are the source of truth; the legacy V1 database is not.
-- Versioned, externally inspectable templates, authoring schemas, lorebooks, series data, settings, project packages, Idea Notebook data, Collaborator source data, Image creative catalogs/presets and interchange formats.
+- Versioned, externally inspectable templates, authoring schemas, lorebooks, series data, settings, project packages, Idea Library data, Collaborator source data, Image creative catalogs/presets and interchange formats.
 - Clear separation between character data, project-shared context, AI generation, providers, images, imports/exports, library indexing and tooling.
 - OpenAI-compatible and local/self-hosted Text, Vision and Image providers remain first-class targets; Text/Vision roles and Image Generation remain independently configurable.
 - New systems extend the central project model rather than create parallel character copies.
@@ -60,12 +60,10 @@ derivatives, Split Character Sets and task-specific Text routing in one semantic
 available for compatibility evidence, while deterministic tooling proves the active
 generation-service depth fell from 34 to 31 scripts and prevents renewed service stacking.
 
-The v0.21.6 development candidate makes the **Idea Notebook Folder Tree** immediately
-legible and completes selection-based Saved Idea deletion. Folders, Notebooks and built-in
-views retain distinct identities even when empty; hierarchy dialogs and scope summaries
-name the real object and full path; and one confirmation can delete the current live
-Ctrl/Shift selection with one final refresh. The v0.21.5-hotfix1 unified-window lifecycle
-and selection-path I/O improvements remain intact.
+The v0.21.7 development candidate simplifies the **Idea Library** to nested Folders that
+contain Ideas directly. It migrates existing Notebook leaves without losing stable IDs or
+Idea membership, adds single/multi-Idea Folder drag/drop, keeps recursive export and
+full-path destinations, and makes Folder deletion explicitly non-destructive.
 
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
@@ -179,7 +177,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.6** and uses the Godot
+The current source candidate displays **v0.21.7** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -188,6 +186,19 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.7 — Folder-only Idea Library (candidate)
+
+- Replaced the current Folder → Notebook hierarchy with one nested Folder tree where
+  every Folder may contain Ideas directly; All Ideas and Unfiled remain built-in views.
+- Added automatic canonical library-v3 and saved-Idea-v2 migration, preserving former
+  Notebook IDs, parents, names, timestamps and Idea membership with collision-safe aliases.
+- Added direct and multi-selected Idea drag/drop to any Folder or Unfiled, with one final
+  refresh and no per-row hierarchy rebuild.
+- Added full-path Folder destinations to generated saves, Idea Details and Idea Pack
+  import, plus recursive Folder export without changing portable Idea Pack semantics.
+- Made Folder deletion move direct Ideas and child Folders to the parent (or Unfiled at
+  root) while leaving descendant Ideas intact.
 
 ### v0.21.6 — Idea Notebook Usability (candidate)
 
@@ -950,7 +961,7 @@ focused plus inherited regression coverage.
 
 ## Level and Content Tools
 
-Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable/versioned templates, `.ccfchar` interchange, project packages, lorebooks, `.ccfideas.json` Idea Packs, Idea Notebook entries, Collaborator source snapshots, Image creative catalogs/presets/Generation Profiles, Front Porch character extensions, expression packs, `fpa_group` cards, `.fpworld`/`.fpchat` packages and schema/editor tooling. Loading and saving should use the same underlying models exposed to authoring tools.
+Character Card Forge is an authoring application rather than a level-based game. The equivalent content-tool priority is externally editable/versioned templates, `.ccfchar` interchange, project packages, lorebooks, `.ccfideas.json` Idea Packs, Idea Library entries, Collaborator source snapshots, Image creative catalogs/presets/Generation Profiles, Front Porch character extensions, expression packs, `fpa_group` cards, `.fpworld`/`.fpchat` packages and schema/editor tooling. Loading and saving should use the same underlying models exposed to authoring tools.
 
 ## Technical Improvements
 
@@ -980,7 +991,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Keep release/update executable modes version-controlled and release version synchronization owned by `set_version.py`.
 - Keep in-app release checks unauthenticated, rate-limited, repository-pinned and separate from provider credentials, project data and executable replacement.
 - Keep persistent app state under `user://` separate from portable project/card data unless deliberately included.
-- Keep Idea Notebook independent of Character Project persistence and generation-service topology.
+- Keep Idea Library independent of Character Project persistence and generation-service topology.
 - Keep Idea Pack parsing and validation outside the UI; preserve stable source IDs, unknown future fields and semantic generator guidance across import/export.
 - Keep Collaborator source seeding public/structured and completion/refinement project-scoped/stale-source checked/non-destructive.
 - Keep the Front Porch schema adapter versioned and capability-aware; preserve unknown `extensions.front_porch` data rather than dropping fields introduced by newer Front Porch versions.
@@ -998,7 +1009,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 
 - Improve semantic colour/theme consistency, keyboard navigation, detachable-window behaviour, multi-monitor use, resizing and long-text editing.
 - Improve visible progress/error states for long AI operations and queue labels for project/character/workflow/role/provider/model/section/dependency state.
-- Continue improving source-aware Collaborator provenance/conflict/target/reference/completion guidance; the scalable Idea Notebook folder browser is complete in v0.21.5.
+- Continue improving source-aware Collaborator provenance/conflict/target/reference/completion guidance; the scalable Folder-only Idea Library browser is complete in v0.21.7.
 - Keep Image Studio creative controls compact through progressive disclosure and provider-specific controls visible only when relevant.
 - Continue replacing silent button no-ops with visible actionable status messages.
 
@@ -1017,7 +1028,7 @@ Character Card Forge is an authoring application rather than a level-based game.
 - Consider a secure self-hosted/headless server mode only after core editing, library, revision, review and integration contracts are mature. The Godot desktop application remains the primary client.
 - If server mode proceeds, target the existing information-dense desktop browser workflow first; tablet refinement can follow, while a dedicated phone UI remains lower priority.
 - Require authenticated secure sessions, explicit remote-access enablement, HTTPS/reverse-proxy support, scoped filesystem/provider permissions, audit-friendly operations and safe shutdown/recovery before remote access is considered supported.
-- Let a future browser client access the same library, Idea Notebook and creation tools through documented service boundaries rather than directly reading project files.
+- Let a future browser client access the same character library, Idea Library and creation tools through documented service boundaries rather than directly reading project files.
 
 ## Deferred / Experimental Ideas
 

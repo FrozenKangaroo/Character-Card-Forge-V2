@@ -15,7 +15,7 @@ EXPECTED_WORKFLOWS = {
     "validate-regression-suite.yml",
     "validate.yml",
 }
-CURRENT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v0216.json"
+CURRENT_MANIFEST = REPO_ROOT / "tools" / "regression_suites_v0217.json"
 LEGACY_WORKFLOW_TESTS = {
     "tools/test_alternative_greetings.gd",
     "tools/test_generation_diagnostics.gd",
@@ -79,7 +79,7 @@ def main() -> int:
     require("name: Validate regression suite" in regression_text, "Stable regression name changed.")
     for text, label in ((validate_text, "validation"), (regression_text, "regression")):
         require(
-            "regression_suites_v0216.json" in text,
+            "regression_suites_v0217.json" in text,
             f"{label} workflow uses a stale manifest.",
         )
         require("pull_request:" in text, f"{label} workflow must run on pull requests.")

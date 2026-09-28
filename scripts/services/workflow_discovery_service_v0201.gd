@@ -30,7 +30,7 @@ static func new_project_methods() -> Array[Dictionary]:
 		},
 		{
 			"id": "idea_notebook",
-			"label": "Idea Notebook",
+			"label": "Idea Library",
 			"description": "Open saved ideas and turn one into a new character.",
 			"shortcut": "",
 		},

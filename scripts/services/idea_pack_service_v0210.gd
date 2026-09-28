@@ -4,7 +4,7 @@ extends RefCounted
 const FORMAT_ID := "character-card-forge-ideas"
 const SCHEMA_VERSION := 1
 const IDEA_FORMAT := "character_card_forge_saved_idea"
-const IDEA_FORMAT_VERSION := 1
+const IDEA_FORMAT_VERSION := 2
 const DEFAULT_ROOT := "user://character_card_forge/idea_notebook"
 
 const SUPPORTED_KINDS := ["series", "seed", "character_note"]
@@ -278,7 +278,7 @@ func analyse_conflicts(preview: Dictionary) -> Dictionary:
 func import_preview(
 	preview: Dictionary,
 	selections: Array,
-	notebook_id: String = ""
+	folder_id: String = ""
 ) -> Dictionary:
 	if not bool(preview.get("ok", false)):
 		return {"ok": false, "error": "The Idea Pack has fatal validation errors."}
@@ -324,7 +324,7 @@ func import_preview(
 			local_id = str(row.get("existing_local_id", ""))
 			var loaded := load_local_idea(local_id)
 			if not bool(loaded.get("ok", false)):
-				return {"ok": false, "error": "An existing Idea Notebook record changed after preview. Refresh the import."}
+				return {"ok": false, "error": "An existing Idea Library record changed after preview. Refresh the import."}
 			existing = loaded.get("data", {})
 		else:
 			local_id = _new_unique_local_id(occupied_ids)
@@ -333,7 +333,7 @@ func import_preview(
 		plans.append({
 			"action": action,
 			"local_id": local_id,
-			"record": _idea_record(entry, pack, schema_version, local_id, notebook_id, existing)
+			"record": _idea_record(entry, pack, schema_version, local_id, folder_id, existing)
 		})
 	if plans.is_empty():
 		return {
@@ -525,7 +525,9 @@ func list_local_ideas(include_archived: bool = true) -> Array[Dictionary]:
 		var data_value: Variant = loaded.get("data", {})
 		if not data_value is Dictionary:
 			continue
-		var idea: Dictionary = data_value
+		var idea: Dictionary = (data_value as Dictionary).duplicate(true)
+		if not idea.has("folder_id"):
+			idea["folder_id"] = str(idea.get("notebook_id", ""))
 		if not include_archived and bool(idea.get("archived", false)):
 			continue
 		result.append(idea.duplicate(true))
@@ -536,29 +538,33 @@ func list_local_ideas(include_archived: bool = true) -> Array[Dictionary]:
 
 
 func list_local_notebooks() -> Array[Dictionary]:
+	return list_local_folders()
+
+
+func list_local_folders() -> Array[Dictionary]:
 	var loaded := _read_json(_root_dir.path_join("library.json"))
 	if not bool(loaded.get("ok", false)):
 		return []
 	var data_value: Variant = loaded.get("data", {})
 	if not data_value is Dictionary:
 		return []
-	var notebooks_value: Variant = (data_value as Dictionary).get(
-		"notebooks", []
+	var folders_value: Variant = (data_value as Dictionary).get(
+		"folders", []
 	)
-	if not notebooks_value is Array:
+	if not folders_value is Array:
 		return []
 	var result: Array[Dictionary] = []
-	for notebook_value in notebooks_value as Array:
-		if not notebook_value is Dictionary:
+	for folder_value in folders_value as Array:
+		if not folder_value is Dictionary:
 			continue
-		var notebook: Dictionary = (notebook_value as Dictionary).duplicate(true)
-		var notebook_id := str(notebook.get("id", "")).strip_edges()
-		var notebook_name := str(notebook.get("name", "")).strip_edges()
-		if notebook_id.is_empty() or notebook_name.is_empty():
+		var folder: Dictionary = (folder_value as Dictionary).duplicate(true)
+		var folder_id := str(folder.get("id", "")).strip_edges()
+		var folder_name := str(folder.get("name", "")).strip_edges()
+		if folder_id.is_empty() or folder_name.is_empty():
 			continue
-		notebook["id"] = notebook_id
-		notebook["name"] = notebook_name
-		result.append(notebook)
+		folder["id"] = folder_id
+		folder["name"] = folder_name
+		result.append(folder)
 	result.sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
 		return str(first.get("name", "")).to_lower() < str(
 			second.get("name", "")
@@ -615,8 +621,10 @@ func export_filter_values(ideas: Array) -> Dictionary:
 func idea_matches_export_scope(idea: Dictionary, scope: String, value: String = "") -> bool:
 	if scope == "all":
 		return true
-	if scope == "notebook":
-		return str(idea.get("notebook_id", "")) == value
+	if scope == "folder" or scope == "notebook":
+		# Historical callers may still use the old scope name; current UI emits
+		# Folder scopes exclusively.
+		return str(idea.get("folder_id", idea.get("notebook_id", ""))) == value
 	var entry := idea_to_entry(idea)
 	var classification: Dictionary = entry.get("classification", {})
 	if scope == "bible":
@@ -678,7 +686,7 @@ func _idea_record(
 	pack: Dictionary,
 	schema_version: int,
 	local_id: String,
-	notebook_id: String,
+	folder_id: String,
 	existing: Dictionary
 ) -> Dictionary:
 	var now := Time.get_datetime_string_from_system(true)
@@ -694,14 +702,16 @@ func _idea_record(
 	record["character_role"] = _kind_label(str(entry.get("kind", "seed")))
 	record["source_anchor"] = str(pack.get("title", "Idea Pack"))
 	record["roleplay_hook"] = _first_nonempty(entry, ["opening_beat", "setup", "core_premise", "summary"])
+	record["folder_id"] = str(record.get("folder_id", record.get("notebook_id", "")))
 	if existing.is_empty():
 		record["created_at"] = now
 		record["archived"] = false
-		record["notebook_id"] = notebook_id
+		record["folder_id"] = folder_id
 	else:
 		record["created_at"] = str(existing.get("created_at", now))
-		if not notebook_id.is_empty():
-			record["notebook_id"] = notebook_id
+		if not folder_id.is_empty():
+			record["folder_id"] = folder_id
+	record.erase("notebook_id")
 	record["updated_at"] = now
 	var classification: Dictionary = entry.get("classification", {})
 	record["source"] = {
@@ -773,7 +783,7 @@ func _commit_atomic(plans: Array[Dictionary]) -> Dictionary:
 				DirAccess.rename_absolute(backup_absolute, target_absolute)
 			_rollback(committed)
 			_remove_tree(transaction_root)
-			return {"ok": false, "error": "CCF could not commit the complete Idea Pack. The previous notebook was restored."}
+			return {"ok": false, "error": "CCF could not commit the complete Idea Pack. The previous Idea Library state was restored."}
 		committed.append(item)
 	var imported := 0
 	var replaced := 0

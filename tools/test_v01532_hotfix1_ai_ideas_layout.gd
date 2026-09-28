@@ -38,10 +38,10 @@ func _run() -> void:
 	for child in action_row.get_children():
 		if child is Button and child.text == "Save Generated Ideas…":
 			save_button = child
-		elif child is Button and child.text == "Open Idea Notebook":
+		elif child is Button and child.text == "Open Idea Library":
 			open_button = child
 	assert(save_button != null, "Save Generated Ideas must remain available after the layout repair.")
-	assert(open_button != null, "Open Idea Notebook must remain available after the layout repair.")
+	assert(open_button != null, "Open Idea Library must remain available after the layout repair.")
 
 	window.queue_free()
 	await process_frame

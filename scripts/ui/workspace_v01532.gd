@@ -50,7 +50,7 @@ func _on_idea_job_completed_v01532(
 func _finish_opening_unified_idea_generator() -> void:
 	super._finish_opening_unified_idea_generator()
 	if _status != null:
-		_status.text = "Idea Generator opened. Choose AI Ideas, Structured Builder or Idea Notebook."
+		_status.text = "Idea Generator opened. Choose AI Ideas, Structured Builder or Idea Library."
 
 
 func open_idea_notebook_v01532() -> void:
@@ -58,4 +58,4 @@ func open_idea_notebook_v01532() -> void:
 		return
 	_idea_generator_v01532.open_notebook_v01532()
 	if _status != null:
-		_status.text = "Idea Notebook opened in the unified Idea Generator."
+		_status.text = "Idea Library opened in the unified Idea Generator."

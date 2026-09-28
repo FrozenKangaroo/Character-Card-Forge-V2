@@ -381,10 +381,10 @@ func _test_notebook_multi_select_and_scope(
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(test_root))
 	var library := {
 		"format": "character_card_forge_idea_notebook",
-		"format_version": 1,
-		"notebooks": [
-			{"id": "pregnant-notebook", "name": "She Got Pregnant"},
-			{"id": "other-notebook", "name": "Other Ideas"}
+		"format_version": 3,
+		"folders": [
+			{"id": "pregnant-notebook", "name": "She Got Pregnant", "parent_folder_id": ""},
+			{"id": "other-notebook", "name": "Other Ideas", "parent_folder_id": ""}
 		]
 	}
 	var library_file := FileAccess.open(
@@ -461,7 +461,7 @@ func _test_notebook_multi_select_and_scope(
 	generator.call("_open_export_window_v0210")
 	var scope := generator.get("_export_scope_v0210") as OptionButton
 	var selected_index := _scope_index(scope, "selected", "")
-	var notebook_index := _scope_index(scope, "notebook", "pregnant-notebook")
+	var notebook_index := _scope_index(scope, "folder", "pregnant-notebook")
 	var series_index := _scope_index(scope, "series", "She Got Pregnant")
 	if not _require(
 		notebook_list.select_mode == ItemList.SELECT_MULTI
@@ -470,10 +470,10 @@ func _test_notebook_multi_select_and_scope(
 		and selected_index >= 0
 		and scope.get_item_text(selected_index) == "Selected Ideas (4)"
 		and notebook_index >= 0
-		and scope.get_item_text(notebook_index) == "Notebook: She Got Pregnant (67)"
+		and scope.get_item_text(notebook_index) == "Folder: She Got Pregnant (67)"
 		and series_index >= 0
 		and scope.get_item_text(series_index) == "Series: She Got Pregnant (1)",
-		"Multi-selection must remain independent from the focused editor item, while Notebook and semantic Series expose different matcher-derived counts."
+		"Multi-selection must remain independent from the focused editor item, while Folder and semantic Series expose different matcher-derived counts."
 	):
 		_remove_tree(test_root)
 		return false
@@ -496,21 +496,21 @@ func _test_notebook_multi_select_and_scope(
 	_apply_scope(generator, scope, notebook_index)
 	if not _require(
 		_visible_count(rows) == 67,
-		"Notebook scope must show all 67 stable-ID notebook members."
+		"Folder scope must show all 67 stable-ID Folder members."
 	):
 		_remove_tree(test_root)
 		return false
 	generator.call("_set_export_selection_v0210", false)
 	if not _require(
 		_checked_visible_count(rows) == 0,
-		"Notebook Select None must affect every visible notebook member."
+		"Folder Select None must affect every visible Folder member."
 	):
 		_remove_tree(test_root)
 		return false
 	generator.call("_set_export_selection_v0210", true)
 	if not _require(
 		_checked_visible_count(rows) == 67,
-		"Notebook Select All must affect every visible notebook member only."
+		"Folder Select All must affect every visible Folder member only."
 	):
 		_remove_tree(test_root)
 		return false

@@ -91,7 +91,7 @@ func _run() -> void:
 	var generator_value: Variant = workspace.get("_idea_generator_v01532")
 	assert(generator_value is CCFIdeaGeneratorWindowV01532, "The live Workspace must install the v0.15.32 unified Idea Generator.")
 	var generator := generator_value as CCFIdeaGeneratorWindowV01532
-	assert(generator.get_node_or_null("MarginContainer/VBoxContainer/TabContainer/Idea Notebook") != null or _has_named_tab(generator, "Idea Notebook"), "The live Idea Generator must contain an Idea Notebook tab.")
+	assert(generator.get_node_or_null("MarginContainer/VBoxContainer/TabContainer/Idea Library") != null or _has_named_tab(generator, "Idea Library"), "The live Idea Generator must contain an Idea Library tab.")
 	var before_capture := NOTEBOOK_SERVICE.list_ideas({"include_archived": true}).size()
 	workspace.call(
 		"_on_idea_job_completed_v01532",
@@ -110,7 +110,7 @@ func _run() -> void:
 	assert(bool(deleted_notebook.get("ok", false)), "Named notebooks must be deletable.")
 	var unfiled := NOTEBOOK_SERVICE.load_idea(idea_id)
 	assert(bool(unfiled.get("ok", false)), "Deleting a notebook must retain its ideas.")
-	assert(str((unfiled.get("data", {}) as Dictionary).get("notebook_id", "")).is_empty(), "Deleting a notebook must move its ideas to Unfiled.")
+	assert(str((unfiled.get("data", {}) as Dictionary).get("folder_id", "")).is_empty(), "Deleting the compatibility Folder must move its ideas to Unfiled.")
 	assert(_contains_idea(NOTEBOOK_SERVICE.list_ideas({"notebook_id": "__unfiled__", "include_archived": true}), idea_id), "Built-in Unfiled must expose ideas whose notebook was deleted.")
 
 	var deleted_idea := NOTEBOOK_SERVICE.delete_idea(idea_id)

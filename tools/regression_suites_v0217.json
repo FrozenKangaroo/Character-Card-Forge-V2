@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.7 complete regression suites",
+  "description": "v0.21.6 complete baseline plus canonical Folder-only Idea Library migration, movement, deletion, destination and recursive export coverage.",
+  "base_manifest": "regression_suites_v0216.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0217_folder_only_idea_library",
+        "label": "v0.21.7 Folder-only Idea Library and v3 migration",
+        "kind": "godot",
+        "path": "tools/test_v0217_folder_only_idea_library.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}
