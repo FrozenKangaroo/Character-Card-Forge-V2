@@ -174,9 +174,77 @@ func _test_current_ui(parent_id: String, folder_id: String) -> void:
 	var folder_scope_ids := IDEA_SERVICE.folder_ids_in_folder(parent_id, true)
 	_require(folder_scope_ids.has(parent_id) and folder_scope_ids.has(folder_id),
 		"A recursive export Folder scope must include its selected parent and descendants.")
+	await _test_save_folder_dialog_parenting(generator, folder_id)
 	selector.queue_free()
 	app.queue_free()
 	await process_frame
+
+func _test_save_folder_dialog_parenting(generator: Node, parent_folder_id: String) -> void:
+	generator.call("set_last_generated_ideas_v01532", [
+		{"title": "Window parent fixture", "concept": "Keep the save workflow open."}
+	])
+	generator.call("_open_save_generated_v01532")
+	await process_frame
+	await process_frame
+	var save_window := generator.get("_save_generated_window_v01532") as Window
+	var dialog := generator.get("_save_new_notebook_dialog_v0211") as ConfirmationDialog
+	_require(
+		save_window != null and dialog != null and dialog.get_parent() == save_window
+		and dialog.force_native and dialog.transient and dialog.exclusive,
+		"Create Destination Folder must be a native exclusive transient child of Save Generated Ideas."
+	)
+	var dialog_instance_id := dialog.get_instance_id() if dialog != null else 0
+	generator.call("_open_new_notebook_while_saving_v0211")
+	await process_frame
+	_require(
+		dialog.get_parent() == save_window and dialog.visible,
+		"Opening Create Destination Folder must preserve its Save Generated Ideas parent."
+	)
+	var folder_name := generator.get("_save_new_notebook_name_v0211") as LineEdit
+	var parent_selector := generator.get("_save_new_notebook_folder_v0215") as OptionButton
+	if _require(folder_name != null and parent_selector != null,
+		"The destination Folder dialog controls must remain available."):
+		folder_name.text = "Window Parent Child"
+		generator.call("_select_metadata_v01532", parent_selector, parent_folder_id, "")
+		generator.call("_create_notebook_while_saving_v0211")
+		var created_id := ""
+		for folder in IDEA_SERVICE.list_folders():
+			if (
+				str(folder.get("name", "")) == "Window Parent Child"
+				and str(folder.get("parent_folder_id", "")) == parent_folder_id
+			):
+				created_id = str(folder.get("id", ""))
+				break
+		var destination := generator.get("_save_generated_notebook_v01532") as OptionButton
+		_require(
+			not created_id.is_empty() and destination != null
+			and str(destination.get_item_metadata(destination.selected)) == created_id,
+			"Creating a nested Folder must immediately select it as the save destination."
+		)
+	dialog.hide()
+	save_window.hide()
+	generator.call("_open_save_generated_v01532")
+	await process_frame
+	await process_frame
+	var reopened_dialog := generator.get("_save_new_notebook_dialog_v0211") as ConfirmationDialog
+	_require(
+		reopened_dialog != null and reopened_dialog.get_instance_id() == dialog_instance_id
+		and reopened_dialog.get_parent() == save_window
+		and _count_descendants_named(save_window, "NewFolderWhileSavingV0217") == 1
+		and reopened_dialog.confirmed.get_connections().size() == 1,
+		"Repeated Save Generated Ideas opens must reuse one dialog, button and confirmed handler."
+	)
+	save_window.hide()
+
+func _count_descendants_named(parent: Node, child_name: String) -> int:
+	if parent == null:
+		return 0
+	var count := 0
+	for child in parent.get_children():
+		if str(child.name) == child_name:
+			count += 1
+		count += _count_descendants_named(child, child_name)
+	return count
 
 func _tree_accepts_drop(tree: Tree, item: TreeItem, payload: Dictionary) -> bool:
 	if tree == null or item == null:
