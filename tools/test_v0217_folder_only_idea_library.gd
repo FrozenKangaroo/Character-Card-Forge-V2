@@ -1,6 +1,9 @@
 extends SceneTree
 
 const IDEA_SERVICE = preload("res://scripts/services/idea_notebook_service_v01532.gd")
+const WINDOW_STATE_SERVICE = preload(
+	"res://scripts/services/tool_window_state_service.gd"
+)
 
 var _failed := false
 var _test_root := ""
@@ -129,9 +132,11 @@ func _test_current_ui(parent_id: String, folder_id: String) -> void:
 	if not _require(generator is CCFIdeaGeneratorWindowCurrent, "The current Idea Library window must load."):
 		app.queue_free()
 		return
+	workspace.call("_prepare_unified_idea_generator")
 	generator.open_notebook_v01532()
 	await process_frame
 	await process_frame
+	_test_idea_generator_sizing(generator)
 	var selector := OptionButton.new()
 	generator.call("_fill_destination_notebooks_v01532", selector, folder_id)
 	var texts: Array[String] = []
@@ -185,6 +190,39 @@ func _test_current_ui(parent_id: String, folder_id: String) -> void:
 	app.queue_free()
 	await process_frame
 
+func _test_idea_generator_sizing(
+	generator: CCFIdeaGeneratorWindowCurrent
+) -> void:
+	var result_scroll := generator.find_child(
+		"IdeaResultsScrollV0217", true, false
+	) as ScrollContainer
+	var host := generator.get("_ai_ideas_host") as MarginContainer
+	_require(
+		generator.IDEA_GENERATOR_PREFERRED_SIZE_V0217 == Vector2i(1280, 900)
+		and generator.min_size == Vector2i(880, 680),
+		"The current Idea Generator must replace the legacy 980×820 default with a 1280×900 preferred size and a laptop-safe minimum."
+	)
+	_require(
+		host != null and host.custom_minimum_size.y >= 420
+		and result_scroll != null and result_scroll.custom_minimum_size.y >= 220,
+		"The AI Ideas host and generated-results scroller must retain useful vertical space instead of structurally collapsing."
+	)
+	var clamped := WINDOW_STATE_SERVICE.clamp_geometry_to_usable_rect(
+		Vector2i(1800, 1000),
+		Vector2i(1600, 1000),
+		Vector2i(880, 680),
+		Rect2i(0, 0, 1366, 768)
+	)
+	var clamped_position: Vector2i = clamped.get("position", Vector2i.ZERO)
+	var clamped_size: Vector2i = clamped.get("size", Vector2i.ZERO)
+	_require(
+		clamped_size.x <= 1318 and clamped_size.y <= 720
+		and clamped_position.x >= 24 and clamped_position.y >= 24
+		and clamped_position.x + clamped_size.x <= 1342
+		and clamped_position.y + clamped_size.y <= 744,
+		"Restored tool-window geometry must be clamped inside the usable work area with desktop margins."
+	)
+
 func _test_save_folder_dialog_parenting(
 	generator: Node,
 	parent_folder_id: String,
@@ -206,6 +244,18 @@ func _test_save_folder_dialog_parenting(
 	var hidden_destination := generator.get(
 		"_save_generated_notebook_v01532"
 	) as OptionButton
+	var save_button := save_window.find_child(
+		"SaveGeneratedConfirmV0217", true, false
+	) as Button
+	var cancel_button := save_window.find_child(
+		"SaveGeneratedCancelV0217", true, false
+	) as Button
+	var selection_actions := save_window.find_child(
+		"SaveGeneratedSelectionActionsV0217", true, false
+	) as HFlowContainer
+	var idea_list := save_window.find_child(
+		"SaveGeneratedIdeaListV0217", true, false
+	) as ScrollContainer
 	_require(
 		save_window != null and dialog != null and dialog.get_parent() == save_window
 		and dialog.force_native and dialog.transient and dialog.exclusive,
@@ -216,6 +266,32 @@ func _test_save_folder_dialog_parenting(
 		and hidden_destination != null and not hidden_destination.visible,
 		"Save Generated Ideas must present a hierarchy-capable Folder picker instead of its flat compatibility selector."
 	)
+	_require(
+		save_window.min_size == Vector2i(720, 560)
+		and save_window.size.x >= 720 and save_window.size.y >= 560
+		and save_button != null and save_button.visible
+		and cancel_button != null and cancel_button.visible
+		and selection_actions != null and idea_list != null
+		and idea_list.custom_minimum_size.y >= 110,
+		"Save Generated Ideas must use its wider screen-aware layout with visible primary actions, wrapping selection controls and a usable Idea list."
+	)
+	var opened_size := save_window.size
+	save_window.size = save_window.min_size
+	await process_frame
+	await process_frame
+	var action_row := save_button.get_parent() as HBoxContainer
+	var action_root: VBoxContainer = null
+	if action_row != null:
+		action_root = action_row.get_parent() as VBoxContainer
+	_require(
+		save_button.is_visible_in_tree() and cancel_button.is_visible_in_tree()
+		and save_button.size.x > 0 and save_button.size.y > 0
+		and cancel_button.size.x > 0 and cancel_button.size.y > 0
+		and action_root != null
+		and action_row.get_index() == action_root.get_child_count() - 1,
+		"Save Selected and Cancel must remain laid out in the dedicated visible bottom action row at the minimum supported size."
+	)
+	save_window.size = opened_size
 	var destination_tree := destination_picker.call("tree_control_v0217") as Tree
 	var parent_item := destination_picker.call(
 		"item_for_folder_id_v0217", parent_folder_id

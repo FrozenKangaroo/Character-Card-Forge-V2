@@ -14,6 +14,9 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Replaced the flat Save Generated Ideas destination and Create Destination Folder parent
   lists with searchable, expandable Folder trees that retain stable Folder IDs, expose
   full paths and automatically select newly created destinations.
+- Increased the Idea Generator and Save Generated Ideas working areas, reserved visible
+  space for generated results, kept primary save actions in a width-safe layout and
+  clamped remembered tool-window geometry to the current usable screen.
 
 ## [0.21.7] - 2026-09-28
 

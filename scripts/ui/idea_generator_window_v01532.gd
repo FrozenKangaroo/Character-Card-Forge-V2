@@ -283,8 +283,8 @@ func _build_notebook_dialogs_v01532() -> void:
 	_save_generated_window_v01532 = Window.new()
 	_save_generated_window_v01532.visible = false
 	_save_generated_window_v01532.title = "Save Generated Ideas"
-	_save_generated_window_v01532.size = Vector2i(760, 650)
-	_save_generated_window_v01532.min_size = Vector2i(620, 480)
+	_save_generated_window_v01532.size = Vector2i(1040, 760)
+	_save_generated_window_v01532.min_size = Vector2i(720, 560)
 	_save_generated_window_v01532.force_native = true
 	_save_generated_window_v01532.transient = false
 	_save_generated_window_v01532.exclusive = false
@@ -326,22 +326,32 @@ func _open_save_generated_v01532() -> void:
 	_save_generated_notebook_v01532.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	target_row.add_child(_save_generated_notebook_v01532)
 	_fill_destination_notebooks_v01532(_save_generated_notebook_v01532, "")
+	var selection_row := HFlowContainer.new()
+	selection_row.name = "SaveGeneratedSelectionActionsV0217"
+	selection_row.add_theme_constant_override("h_separation", 8)
+	selection_row.add_theme_constant_override("v_separation", 6)
+	root.add_child(selection_row)
+	var selection_label := Label.new()
+	selection_label.text = "Selection:"
+	selection_row.add_child(selection_label)
 	var select_all := Button.new()
 	select_all.text = "Select All"
 	select_all.pressed.connect(func() -> void:
 		for check in _save_generated_checks_v01532:
 			check.button_pressed = true
 	)
-	target_row.add_child(select_all)
+	selection_row.add_child(select_all)
 	var select_none := Button.new()
 	select_none.text = "Select None"
 	select_none.pressed.connect(func() -> void:
 		for check in _save_generated_checks_v01532:
 			check.button_pressed = false
 	)
-	target_row.add_child(select_none)
+	selection_row.add_child(select_none)
 	var scroll := ScrollContainer.new()
+	scroll.name = "SaveGeneratedIdeaListV0217"
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.custom_minimum_size.y = 110
 	root.add_child(scroll)
 	var list := VBoxContainer.new()
 	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -378,6 +388,7 @@ func _open_save_generated_v01532() -> void:
 	var actions := HBoxContainer.new()
 	root.add_child(actions)
 	var cancel := Button.new()
+	cancel.name = "SaveGeneratedCancelV0217"
 	cancel.text = "Cancel"
 	cancel.pressed.connect(_save_generated_window_v01532.hide)
 	actions.add_child(cancel)
@@ -385,10 +396,13 @@ func _open_save_generated_v01532() -> void:
 	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	actions.add_child(spacer)
 	var save := Button.new()
+	save.name = "SaveGeneratedConfirmV0217"
 	save.text = "Save Selected"
 	save.pressed.connect(_save_selected_generated_v01532)
 	actions.add_child(save)
-	_save_generated_window_v01532.popup_centered()
+	_save_generated_window_v01532.popup_centered_clamped(
+		Vector2i(1040, 760), 0.92
+	)
 
 
 func _save_selected_generated_v01532() -> void:

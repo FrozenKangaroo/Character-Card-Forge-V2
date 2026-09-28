@@ -65,3 +65,18 @@ as shared invariants. The reviewer instead compares discretionary relationship,
 motivation, consent, boundary, progression, reveal, consequence and ongoing-tension
 choices, while preserving the existing `duplicate`, `near_duplicate` and
 `related_distinct` result contract and Reject-mode behavior.
+
+## Usable default window sizes
+
+The current Idea Generator now prefers 1280 × 900 pixels instead of inheriting the old
+980 × 820 Concept Studio size. It keeps an 880 × 680 minimum, reserves useful vertical
+space for the AI Ideas host and generated-results scroller, and remembers the user's
+resized geometry. Restored dimensions and positions are clamped to the current monitor's
+usable work area, so a saved layout from a larger or differently arranged display does
+not reopen off-screen.
+
+Save Generated Ideas now prefers a screen-clamped 1040 × 760 layout with a 720 × 560
+minimum, a separate wrapping Select All/Select None row, an expanding Idea list and a
+dedicated bottom action row that keeps **Cancel** and **Save Selected** reachable. Create
+Destination Folder retains its 660 × 560 preferred and 600 × 500 minimum hierarchy size,
+now opened through the same screen-clamped native dialog behavior.

@@ -26,6 +26,10 @@ const IDEA_SPECIAL_VIEW_ICON_V0216 = preload(
 	"res://assets/icons/idea_special_view_v0216.svg"
 )
 
+const IDEA_GENERATOR_WINDOW_STATE_ID_V0217 := "unified_idea_generator_v0217"
+const IDEA_GENERATOR_PREFERRED_SIZE_V0217 := Vector2i(1280, 900)
+const IDEA_GENERATOR_MINIMUM_SIZE_V0217 := Vector2i(880, 680)
+
 var _idea_pack_service_v0210 := IDEA_PACK_SERVICE_V0210.new()
 var _import_dialog_v0210: FileDialog
 var _import_preview_v0210: Window
@@ -114,10 +118,20 @@ var _source_load_dialog_v0213: FileDialog
 var _source_export_dialog_v0213: FileDialog
 var _source_pending_export_v0213: Dictionary = {}
 var _source_delete_dialog_v0213: ConfirmationDialog
+var _idea_generator_geometry_active_v0217 := false
 
 
 func _ready() -> void:
 	super._ready()
+	min_size = IDEA_GENERATOR_MINIMUM_SIZE_V0217
+	size = IDEA_GENERATOR_PREFERRED_SIZE_V0217
+	if _ai_ideas_host != null:
+		_ai_ideas_host.custom_minimum_size.y = 420
+	var visibility_callback := Callable(
+		self, "_on_idea_generator_visibility_changed_v0217"
+	)
+	if not visibility_changed.is_connected(visibility_callback):
+		visibility_changed.connect(visibility_callback)
 	var delete_key_callback := Callable(self, "_on_idea_list_gui_input_v0216")
 	if (
 		_idea_list_v01532 != null
@@ -135,6 +149,26 @@ func _ready() -> void:
 	_install_active_source_banner_v0213()
 	_refresh_source_library_v0213()
 	_update_delete_idea_action_v0216()
+
+
+func open_studio() -> void:
+	_open_studio_request_count_v0215_hotfix += 1
+	_options = OPTION_SERVICE.load_options()
+	_rebuild_structured_fields()
+	_idea_generator_geometry_active_v0217 = true
+	CCFToolWindowStateService.show_window(
+		self,
+		IDEA_GENERATOR_WINDOW_STATE_ID_V0217,
+		IDEA_GENERATOR_PREFERRED_SIZE_V0217
+	)
+	grab_focus()
+
+
+func _on_idea_generator_visibility_changed_v0217() -> void:
+	if _idea_generator_geometry_active_v0217 and not visible:
+		CCFToolWindowStateService.save_window(
+			self, IDEA_GENERATOR_WINDOW_STATE_ID_V0217
+		)
 
 
 func _build_notebook_tab_v01532() -> void:
@@ -635,7 +669,9 @@ func _open_new_notebook_while_saving_v0211() -> void:
 		preferred_parent_id,
 		"folder" if not preferred_parent_id.is_empty() else "root"
 	)
-	_save_new_notebook_dialog_v0211.popup_centered(Vector2i(660, 560))
+	_save_new_notebook_dialog_v0211.popup_centered_clamped(
+		Vector2i(660, 560), 0.92
+	)
 	_save_new_notebook_name_v0211.grab_focus()
 
 
