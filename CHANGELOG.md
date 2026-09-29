@@ -6,6 +6,48 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.10] - 2026-09-29
+
+### Highlights
+
+- Made every Final Idea Review candidate inspectable in place through a collapsed,
+  read-only **Show Idea** view containing the actual generated Concept and other
+  populated Idea fields.
+- Rebuilt **Generate More Ideas…** as an Idea-Generator-owned, screen-safe tool window
+  whose Cancel and Generate & Append actions remain visible at constrained heights.
+
+### Changes
+
+- Added per-Idea Show/Hide controls plus Expand All and Collapse All without changing
+  the independent Keep checkboxes or advisory review semantics.
+- Presented Concept prominently and included non-empty Character Name, Character Role,
+  Source Anchor, Roleplay Hook, Tags and additional meaningful generated fields directly
+  from each review record's stored Idea.
+- Added reusable contextual tool-window placement that respects valid remembered
+  geometry, rejects fully off-screen positions and falls back to the display containing
+  the Idea Generator.
+- Kept Final Idea Review independently movable and resizable after contextual placement.
+- Moved Generate More's form into a scrollable body with a fixed action footer, kept it
+  transient above the Idea Generator and constrained restored placement to the same
+  monitor as its owner.
+- Preserved v0.21.9 Prompt / Additional Direction editing, frozen Idea Source and Series
+  context, batching, one-shot top-up, anti-repeat memory and extension-only review scope.
+
+### Migration notes
+
+- None. Existing projects, Idea Libraries, Idea Sources, curation sessions, saved tool
+  geometry and Idea Packs require no migration.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Native window-manager decoration sizes and always-on-top behavior remain platform
+  controlled. The application clamps client geometry and uses native transient ownership,
+  but individual desktop environments may render title bars differently.
+
 ## [0.21.9] - 2026-09-29
 
 ### Highlights

@@ -78,6 +78,12 @@ Source, Series context and complete anti-repeat ledger remain frozen. Final Idea
 applies adherence only to the new extension candidates and uses older retained Ideas as
 similarity references without forcing them through another checklist.
 
+The v0.21.10 development candidate makes those review and extension decisions usable on
+real multi-window desktops. Final Idea Review can expand the complete stored Idea before
+the author decides whether to keep it, while contextual placement recovers safely from
+missing displays. Generate More is owned by Idea Generator and keeps its actions visible
+through a scrollable body and fixed footer at constrained screen heights.
+
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
 validation, task-oriented user documentation, a smaller manifest-driven CI surface,
@@ -190,7 +196,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.9** and uses the Godot
+The current source candidate displays **v0.21.10** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -199,6 +205,21 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.10 — Idea Review and Generate More Window Usability (candidate)
+
+- Added collapsed read-only Idea details to every Final Idea Review candidate, presenting
+  Concept first plus all populated standard and meaningful additional generated fields.
+- Added per-card Show/Hide and batch Expand All/Collapse All controls that never mutate
+  the independent Keep selection.
+- Added reusable reference-window placement with remembered-geometry validation,
+  multi-monitor fallback and usable-display clamping for native tools.
+- Positioned an unsaved/off-screen Final Idea Review from the Idea Generator's display
+  while preserving normal independent movement, resizing and valid saved geometry.
+- Made Generate More a transient Idea Generator child with a scrollable context/editor
+  body and fixed Cancel / Generate & Append footer that survives short displays.
+- Preserved the complete v0.21.9 frozen-context, batching, top-up, curation and
+  extension-only review behavior.
 
 ### v0.21.9 — Editable Generate More Instructions (candidate)
 
