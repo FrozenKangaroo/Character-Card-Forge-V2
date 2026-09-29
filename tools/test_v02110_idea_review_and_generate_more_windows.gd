@@ -16,6 +16,7 @@ func _init() -> void:
 
 func _run() -> void:
 	_test_presentation_and_contextual_geometry()
+	await _test_window_minimum_geometry_application()
 	await _test_live_review_and_generate_more_windows()
 	if _failed:
 		quit(1)
@@ -76,6 +77,43 @@ func _test_presentation_and_contextual_geometry() -> void:
 		short_screen.encloses(short_rect) and short_rect.size.y <= 312,
 		"Contextual geometry must shrink safely when the usable display height is smaller than the preferred dialog."
 	)
+
+
+func _test_window_minimum_geometry_application() -> void:
+	var window := Window.new()
+	window.force_native = true
+	window.min_size = Vector2i(480, 320)
+	window.size = Vector2i(720, 520)
+	root.add_child(window)
+	window.show()
+	await process_frame
+	WINDOW_STATE._apply_window_geometry_v02110(
+		window,
+		{"position": Vector2i(20, 20), "size": Vector2i(520, 280)},
+		Vector2i(720, 520),
+		Vector2i.ZERO
+	)
+	await process_frame
+	_require(
+		window.min_size == Vector2i(480, 280)
+		and window.size == Vector2i(520, 280),
+		"Applying constrained geometry must lower the effective Window minimum before assigning a below-minimum size."
+	)
+	WINDOW_STATE._apply_window_geometry_v02110(
+		window,
+		{"position": Vector2i(20, 20), "size": Vector2i(720, 520)},
+		Vector2i(720, 520),
+		Vector2i.ZERO
+	)
+	await process_frame
+	_require(
+		window.min_size == Vector2i(480, 320)
+		and window.size == Vector2i(720, 520),
+		"Applying larger geometry must restore the Window's originally declared minimum size."
+	)
+	window.hide()
+	window.queue_free()
+	await process_frame
 
 
 func _test_live_review_and_generate_more_windows() -> void:
