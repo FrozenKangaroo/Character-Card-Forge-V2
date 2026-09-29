@@ -23,6 +23,9 @@ const IDEA_BATCHING_V0211 = preload(
 const IDEA_DIVERSITY_V0214 = preload(
 	"res://scripts/services/idea_diversity_guardrails_v0214.gd"
 )
+const IDEA_FINAL_REVIEW_V0218 = preload(
+	"res://scripts/services/idea_final_review_service_v0218.gd"
+)
 
 const ROUTING_FORMAT_VERSION_V0195 := 1
 const ROUTING_PROFILE_KEY_V0195 := "_ccf_text_routing_v0195"
@@ -229,21 +232,27 @@ func queue_idea_similarity_review_v0214(
 	project_id: String = ""
 ) -> Dictionary:
 	var accepted_value: Variant = session.get("accepted", [])
-	if not accepted_value is Array or (accepted_value as Array).size() < 2:
-		return {"ok": false, "error": "At least two accepted ideas are required for similarity review."}
-	var prompt := IDEA_DIVERSITY_V0214.final_review_prompt(session)
+	if not accepted_value is Array or (accepted_value as Array).is_empty():
+		return {"ok": false, "error": "At least one accepted idea is required for final review."}
+	var check_adherence := bool(session.get("final_review_check_adherence", false))
+	var check_similarity := bool(session.get("final_review_check_similarity", false))
+	if not check_adherence and not check_similarity:
+		check_similarity = str(session.get("final_review_mode", "off")) != "off"
+	if check_similarity and not check_adherence and (accepted_value as Array).size() < 2:
+		return {"ok": false, "error": "At least two accepted ideas are required for similarity-only review."}
+	var prompt := IDEA_FINAL_REVIEW_V0218.final_review_prompt(session)
 	var generation_context := IDEA_DIVERSITY_V0214.normalise_generation_context(
 		session.get("generation_context", {})
 	)
 	var result := _queue_chat_job(
 		"idea_similarity_review",
-		"Review generated ideas for structural similarity",
+		"Final advisory review of generated ideas",
 		profile,
 		[
 			{
 				"role": "system",
 				"content": (
-					"You review generated roleplay ideas for scenario-level duplication. Distinguish clear duplicates, near-duplicates, and related but meaningfully distinct variants. Err toward preserving variants. Return valid JSON only."
+					"You provide an advisory final review of generated roleplay ideas. Check only the requested dimensions: adherence to frozen user requirements and/or scenario-level similarity. Requested invariants are not duplicate evidence. Never choose a winner, reject an Idea or imply that a finding must be followed. Return valid JSON only."
 				)
 			},
 			{"role": "user", "content": prompt}
@@ -253,6 +262,9 @@ func queue_idea_similarity_review_v0214(
 			"project_id": project_id,
 			"idea_diversity_contract_version": IDEA_DIVERSITY_V0214.CONTRACT_VERSION,
 			"idea_similarity_review_mode": str(session.get("final_review_mode", "off")),
+			"idea_final_review_contract_version": IDEA_FINAL_REVIEW_V0218.CONTRACT_VERSION,
+			"idea_review_check_adherence": check_adherence,
+			"idea_review_check_similarity": check_similarity,
 			"idea_similarity_review_count": (accepted_value as Array).size(),
 			"idea_similarity_context_present": not generation_context.is_empty(),
 			"idea_similarity_context_mode": str(generation_context.get("prompt_mode", "")),
@@ -266,7 +278,9 @@ func queue_idea_similarity_review_v0214(
 
 
 func idea_diversity_capabilities_v0214() -> Dictionary:
-	return IDEA_DIVERSITY_V0214.capabilities()
+	var capabilities := IDEA_DIVERSITY_V0214.capabilities()
+	capabilities["final_idea_review"] = IDEA_FINAL_REVIEW_V0218.capabilities()
+	return capabilities
 
 
 func _decorate_queued_idea_custom_length_v0211(

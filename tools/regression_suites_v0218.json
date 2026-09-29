@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.8 complete regression suites",
+  "description": "v0.21.7 complete baseline plus advisory Final Idea Review, post-review one-shot recovery, temporary generated-Idea deletion and repeatable append-only Generate More curation.",
+  "base_manifest": "regression_suites_v0217.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v0218_final_idea_review_curation",
+        "label": "v0.21.8 advisory Final Idea Review and generated-Idea curation",
+        "kind": "godot",
+        "path": "tools/test_v0218_final_idea_review_curation.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}

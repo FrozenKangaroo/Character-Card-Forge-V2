@@ -6,6 +6,48 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.8] - 2026-09-29
+
+### Highlights
+
+- Replaced automatic final-review rejection with one optional, combined **Final AI Idea
+  Review** for request adherence and similarity. Findings are advisory, every valid Idea
+  starts checked and only the author's explicit review choices remove results.
+- Added a project-scoped generated-Idea working batch with **Delete This Idea** and
+  repeatable **Generate More Ideas…** actions that preserve frozen creative context and
+  anti-repeat memory while appending new results.
+
+### Changes
+
+- Delayed the optional one-shot shortfall top-up until the author applies Final Idea
+  Review, using unchecked Ideas as compact anti-repeat guidance and preventing review /
+  recovery loops.
+- Kept the previous completed generated batch visible while a new review is pending, and
+  added a resumable **Open Final Idea Review…** action when the review window is closed.
+- Added a scrollable, screen-aware native review window with Keep All, Select None and
+  per-Idea Keep controls; malformed or unknown provider review IDs are ignored safely.
+- Synchronized temporary deletion and appended generation with Save Generated Ideas and
+  Develop Generated Idea without changing the Idea Library or portable Idea Pack format.
+- Separated active provider-job state from lightweight completed-batch curation state so
+  every manual extension gets fresh cancellation and stale-callback protection.
+
+### Migration notes
+
+- None. Existing projects, Idea Libraries, Idea Sources and Idea Packs require no
+  migration.
+
+### Breaking changes
+
+- The former automatic **Reject Clear Duplicates** mode no longer removes Ideas based on
+  an AI judgement. Authors now make the final Keep decision in Final Idea Review.
+
+### Known limitations
+
+- AI adherence and similarity findings remain model-dependent advice; local validation
+  and conservative structural duplicate checks remain the authoritative automatic layer.
+- Real-provider cancellation timing and native-window placement still benefit from
+  cross-platform public-bake testing.
+
 ## [0.21.7] - 2026-09-29
 
 ### Highlights
