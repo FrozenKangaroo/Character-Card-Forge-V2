@@ -3,6 +3,7 @@ extends RefCounted
 
 const STATE_FILE := CCFStorageService.SETTINGS_DIR + "/tool_windows.json"
 const FORMAT_VERSION := 1
+const DECLARED_MIN_SIZE_META_V02110 := "_ccf_declared_tool_window_min_size_v02110"
 
 static func show_window(
     window: Window,
@@ -30,6 +31,7 @@ static func show_window(
     ):
         return
 
+    _restore_declared_minimum_size_v02110(window)
     window.popup_centered_clamped(default_size, 0.90)
 
 static func save_window(window: Window, window_id: String) -> void:
@@ -68,12 +70,14 @@ static func _restore_geometry(
     var usable_rect: Rect2i = usable_rects[screen]
     if usable_rect.size.x <= 0 or usable_rect.size.y <= 0:
         return false
+    var declared_minimum := _declared_minimum_size_v02110(window)
     var geometry := clamp_geometry_to_usable_rect(
-        saved_position, saved_size, window.min_size, usable_rect
+        saved_position, saved_size, declared_minimum, usable_rect
     )
     window.current_screen = screen
-    window.size = geometry.get("size", saved_size)
-    window.position = geometry.get("position", saved_position)
+    _apply_window_geometry_v02110(
+        window, geometry, saved_size, saved_position
+    )
     return true
 
 static func screen_for_saved_geometry(
@@ -154,18 +158,54 @@ static func _show_on_reference_screen(
     var screen := _reference_screen(reference_window, usable_rects)
     if screen < 0:
         screen = 0
+    var declared_minimum := _declared_minimum_size_v02110(window)
     var geometry := contextual_geometry(
         default_size,
-        window.min_size,
+        declared_minimum,
         reference_rect,
         usable_rects[screen]
     )
     window.current_screen = screen
-    window.size = geometry.get("size", default_size)
-    window.position = geometry.get("position", usable_rects[screen].position)
+    _apply_window_geometry_v02110(
+        window,
+        geometry,
+        default_size,
+        usable_rects[screen].position
+    )
     window.show()
     window.grab_focus()
     return true
+
+static func _apply_window_geometry_v02110(
+    window: Window,
+    geometry: Dictionary,
+    fallback_size: Vector2i,
+    fallback_position: Vector2i
+) -> void:
+    var safe_size: Vector2i = geometry.get("size", fallback_size)
+    var safe_position: Vector2i = geometry.get("position", fallback_position)
+    var declared_minimum := _declared_minimum_size_v02110(window)
+    window.min_size = Vector2i(
+        mini(maxi(0, declared_minimum.x), maxi(1, safe_size.x)),
+        mini(maxi(0, declared_minimum.y), maxi(1, safe_size.y))
+    )
+    window.size = safe_size
+    window.position = safe_position
+
+
+static func _declared_minimum_size_v02110(window: Window) -> Vector2i:
+    if window.has_meta(DECLARED_MIN_SIZE_META_V02110):
+        var stored: Variant = window.get_meta(DECLARED_MIN_SIZE_META_V02110)
+        if stored is Vector2i:
+            return stored
+    var declared := window.min_size
+    window.set_meta(DECLARED_MIN_SIZE_META_V02110, declared)
+    return declared
+
+
+static func _restore_declared_minimum_size_v02110(window: Window) -> void:
+    window.min_size = _declared_minimum_size_v02110(window)
+
 
 static func _reference_screen(
     reference_window: Window, usable_rects: Array[Rect2i] = []
