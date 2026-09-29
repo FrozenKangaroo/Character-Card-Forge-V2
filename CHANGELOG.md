@@ -6,6 +6,47 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.9] - 2026-09-29
+
+### Highlights
+
+- Expanded **Generate More Ideas…** with an editable multiline **Prompt** or
+  **Additional Direction**, prefilled from the most recent successfully completed
+  generation in the current working batch.
+- Kept an Idea Source and Series context frozen for the lifetime of the working batch
+  while allowing each manual extension to be steered independently.
+
+### Changes
+
+- Rebuilt every provider batch and the optional one-shot replacement request from the
+  same confirmed extension instruction, without reading the main Idea Generator text
+  box or its currently active Idea Source.
+- Made a blank Additional Direction generate directly from the frozen Idea Source,
+  without adding an empty direction block.
+- Scoped Final Idea Review checkboxes and request-adherence findings to the new Ideas
+  from the current extension. Existing retained Ideas remain automatically kept and are
+  included only as similarity references when a cluster also contains a new Idea.
+- Preserved retained, unchecked, validation-rejected and later-deleted Ideas as shared
+  anti-repeat memory across differently directed extensions.
+- Kept the prior completed instruction and visible working batch intact when the dialog
+  or an active extension is cancelled, fails to retain a new Idea or is discarded after
+  a project change.
+
+### Migration notes
+
+- None. Existing projects, Idea Libraries, Idea Sources, curation sessions and Idea
+  Packs require no migration.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Prompt adherence and similarity findings remain model-dependent advice. CCF filters
+  returned review IDs to the intended extension scope, but cannot guarantee the
+  provider's qualitative judgement.
+
 ## [0.21.8] - 2026-09-29
 
 ### Highlights

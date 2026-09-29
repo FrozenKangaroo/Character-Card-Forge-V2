@@ -1,7 +1,7 @@
 class_name CCFIdeaFinalReviewServiceV0218
 extends RefCounted
 
-const CONTRACT_VERSION := 1
+const CONTRACT_VERSION := 2
 const ADHERENCE_MATCH := "match"
 const ADHERENCE_PARTIAL := "partial_mismatch"
 const ADHERENCE_CLEAR := "clear_mismatch"
@@ -10,6 +10,8 @@ const SIMILARITY_VALUES := ["duplicate", "near_duplicate", "related_distinct"]
 
 
 static func review_requested(session: Dictionary) -> bool:
+	if review_scope_ids(session).is_empty():
+		return false
 	if bool(session.get("final_review_check_adherence", false)):
 		return true
 	if bool(session.get("final_review_check_similarity", false)):
@@ -40,28 +42,48 @@ static func final_review_prompt(session: Dictionary) -> String:
 		var value := str(context.get(str(pair[1]), "")).strip_edges()
 		if not value.is_empty():
 			context_lines.append("%s:\n%s" % [str(pair[0]), value])
+	var scope_ids := _review_scope_id_set(session)
+	var is_extension := bool(session.get("manual_extension", false))
 	var records: Array[String] = []
 	for record_value in session.get("accepted", []):
 		if not record_value is Dictionary:
 			continue
 		var record: Dictionary = record_value
-		records.append("- %s | %s | %s" % [
+		var review_role := (
+			"CURRENT EXTENSION CANDIDATE"
+			if scope_ids.has(str(record.get("id", "")))
+			else "EXISTING RETAINED IDEA — similarity reference only"
+		)
+		records.append("- %s | %s | %s | %s" % [
 			str(record.get("id", "")),
 			str(record.get("title", "Untitled idea")),
-			str(record.get("fingerprint", ""))
+			str(record.get("fingerprint", "")),
+			review_role
 		])
 	var requested: Array[String] = []
 	if check_adherence:
 		requested.append(
-			"For every Idea, classify request adherence as match, partial_mismatch or clear_mismatch. "
+			(
+				"For every CURRENT EXTENSION CANDIDATE only, "
+				if is_extension else "For every Idea, "
+			)
+			+ "classify request adherence as match, partial_mismatch or clear_mismatch. "
 			+ "A mismatch contradicts or omits an explicit central requirement, relationship, participant role or scenario structure. "
 			+ "Do not penalise discretionary variation. When uncertain, prefer partial_mismatch."
+			+ (
+				" Do not judge EXISTING RETAINED IDEAS against the current extension instruction; they were generated under earlier instructions."
+				if is_extension else ""
+			)
 		)
 	if check_similarity:
 		requested.append(
 			"Identify scenario-level groups as duplicate, near_duplicate or related_distinct. "
 			+ "Requested shared traits are invariants, not duplicate evidence. Cosmetic renaming is not novelty. "
 			+ "When uncertain, prefer near_duplicate and preserve genuinely distinct variants."
+			+ (
+				" Compare current extension candidates with one another and with existing retained Ideas, but report only clusters containing at least one CURRENT EXTENSION CANDIDATE."
+				if is_extension else ""
+			)
 		)
 	return "\n\n".join([
 		"FINAL IDEA REVIEW — ADVISORY ONLY",
@@ -79,6 +101,7 @@ static func final_review_prompt(session: Dictionary) -> String:
 
 static func normalise_review(data: Variant, session: Dictionary) -> Dictionary:
 	var known_ids := _known_ids(session)
+	var scope_ids := _review_scope_id_set(session)
 	var adherence: Array[Dictionary] = []
 	var clusters: Array[Dictionary] = []
 	if not data is Dictionary:
@@ -92,7 +115,7 @@ static func normalise_review(data: Variant, session: Dictionary) -> Dictionary:
 			var finding: Dictionary = finding_value
 			var idea_id := str(finding.get("idea_id", "")).strip_edges()
 			var classification := str(finding.get("adherence", "")).strip_edges().to_lower()
-			if not known_ids.has(idea_id) or seen.has(idea_id):
+			if not known_ids.has(idea_id) or not scope_ids.has(idea_id) or seen.has(idea_id):
 				continue
 			if classification not in ADHERENCE_VALUES:
 				continue
@@ -122,6 +145,14 @@ static func normalise_review(data: Variant, session: Dictionary) -> Dictionary:
 						ids.append(idea_id)
 			if ids.size() < 2:
 				continue
+			if bool(session.get("manual_extension", false)):
+				var contains_extension_candidate := false
+				for idea_id in ids:
+					if scope_ids.has(idea_id):
+						contains_extension_candidate = true
+						break
+				if not contains_extension_candidate:
+					continue
 			clusters.append({
 				"idea_ids": ids,
 				"classification": classification,
@@ -153,13 +184,19 @@ static func apply_user_selection(session: Dictionary, kept_ids_value: Variant) -
 		kept_ids = (kept_ids_value as Dictionary).duplicate()
 	var retained: Array = []
 	var rejected_ids: Array[String] = []
+	var scope_ids := _review_scope_id_set(session)
+	var reviewed_kept_count := 0
 	for record_value in session.get("accepted", []):
 		if not record_value is Dictionary:
 			continue
 		var record: Dictionary = (record_value as Dictionary).duplicate(true)
 		var idea_id := str(record.get("id", ""))
+		if not scope_ids.has(idea_id):
+			retained.append(record)
+			continue
 		if kept_ids.has(idea_id):
 			retained.append(record)
+			reviewed_kept_count += 1
 			continue
 		record["state"] = "rejected"
 		record["rejection_reason"] = "rejected_by_user_review"
@@ -172,7 +209,9 @@ static func apply_user_selection(session: Dictionary, kept_ids_value: Variant) -
 		session.get("user_review_rejected_count", 0)
 	) + rejected_ids.size()
 	return {
-		"kept_count": retained.size(),
+		"kept_count": reviewed_kept_count,
+		"total_kept_count": retained.size(),
+		"reviewed_count": scope_ids.size(),
 		"rejected_count": rejected_ids.size(),
 		"rejected_ids": rejected_ids
 	}
@@ -249,26 +288,41 @@ static func create_curation_session(
 
 
 static func create_extension_session(
-	curation: Dictionary, additional_count: int, batch_limit: int
+	curation: Dictionary,
+	additional_count: int,
+	batch_limit: int,
+	edited_instruction: Variant = null
 ) -> Dictionary:
 	var visible_value: Variant = curation.get("visible_ideas", [])
 	var visible: Array = visible_value if visible_value is Array else []
 	var additional := maxi(1, additional_count)
 	var limit := maxi(1, batch_limit)
 	var target := visible.size() + additional
+	var has_edited_instruction := edited_instruction != null
+	var instruction := (
+		extension_instruction(curation)
+		if not has_edited_instruction else str(edited_instruction)
+	)
+	var generation_context := build_extension_generation_context(curation, instruction)
 	var session := CCFIdeaDiversityGuardrailsV0214.create_session(
 		target,
 		limit,
 		bool(curation.get("prevent_repeats", true)),
 		"flag" if bool(curation.get("review_similarity", false)) else "off",
 		bool(curation.get("final_top_up_enabled", false)),
-		curation.get("generation_context", {}) as Dictionary
+		generation_context
 	)
+	session["manual_extension"] = true
 	session["normal_request_limit"] = int(ceil(float(additional) / float(limit)))
 	session["final_review_check_adherence"] = bool(curation.get("review_adherence", false))
 	session["final_review_check_similarity"] = bool(curation.get("review_similarity", false))
-	session["seed_snapshot"] = str(curation.get("seed_snapshot", ""))
-	session["series_context_snapshot"] = str(curation.get("series_context_snapshot", ""))
+	session["seed_snapshot"] = (
+		build_extension_seed(curation, instruction)
+		if has_edited_instruction else str(curation.get("seed_snapshot", ""))
+	)
+	session["series_context_snapshot"] = str(generation_context.get("series_context", ""))
+	session["idea_source_id_snapshot"] = str(generation_context.get("idea_source_id", ""))
+	session["idea_source_title_snapshot"] = str(generation_context.get("idea_source_title", ""))
 	session["profile_snapshot"] = (curation.get("profile_snapshot", {}) as Dictionary).duplicate(true)
 	session["retry_count_snapshot"] = int(curation.get("retry_count_snapshot", 1))
 	session["project_id_snapshot"] = str(curation.get("project_id", ""))
@@ -284,12 +338,105 @@ static func create_extension_session(
 				idea_value as Dictionary, ledger_id, "accepted", ""
 			)
 		)
+	session["extension_baseline_ids"] = review_scope_ids(session)
 	for rejected_value in curation.get("rejected", []):
 		if rejected_value is Dictionary:
 			(session.get("rejected", []) as Array).append(
 				(rejected_value as Dictionary).duplicate(true)
 			)
 	return session
+
+
+static func extension_instruction(curation: Dictionary) -> String:
+	var context_value: Variant = curation.get("generation_context", {})
+	if not context_value is Dictionary:
+		return ""
+	return str((context_value as Dictionary).get("seed_text", ""))
+
+
+static func extension_prompt_mode(curation: Dictionary) -> String:
+	var context_value: Variant = curation.get("generation_context", {})
+	var context: Dictionary = context_value if context_value is Dictionary else {}
+	if not str(context.get("idea_source_context", "")).strip_edges().is_empty():
+		return "additional_direction"
+	return "primary_prompt"
+
+
+static func build_extension_generation_context(
+	curation: Dictionary, edited_instruction: String
+) -> Dictionary:
+	var context_value: Variant = curation.get("generation_context", {})
+	var context: Dictionary = (
+		(context_value as Dictionary).duplicate(true)
+		if context_value is Dictionary else {}
+	)
+	context["prompt_mode"] = extension_prompt_mode(curation)
+	context["seed_text"] = edited_instruction.strip_edges()
+	# These are intentionally copied from curation. Never consult active generator UI.
+	for key in [
+		"idea_source_id", "idea_source_title", "idea_source_context", "series_context"
+	]:
+		context[key] = str(context.get(key, ""))
+	if str(context.get("series_context", "")).is_empty():
+		context["series_context"] = str(curation.get("series_context_snapshot", ""))
+	return context
+
+
+static func build_extension_seed(
+	curation: Dictionary, edited_instruction: String
+) -> String:
+	var context := build_extension_generation_context(curation, edited_instruction)
+	return CCFIdeaSourceServiceV0213.compose_generation_input(
+		str(context.get("idea_source_context", "")),
+		str(context.get("seed_text", ""))
+	)
+
+
+static func review_scope_ids(session: Dictionary) -> Array[String]:
+	var baseline: Dictionary = {}
+	if bool(session.get("manual_extension", false)):
+		var baseline_value: Variant = session.get("extension_baseline_ids", [])
+		if baseline_value is Array:
+			for id_value in baseline_value as Array:
+				baseline[str(id_value)] = true
+	var result: Array[String] = []
+	for record_value in session.get("accepted", []):
+		if not record_value is Dictionary:
+			continue
+		var idea_id := str((record_value as Dictionary).get("id", ""))
+		if not idea_id.is_empty() and not baseline.has(idea_id):
+			result.append(idea_id)
+	return result
+
+
+static func review_records(session: Dictionary) -> Array[Dictionary]:
+	var scope_ids := _review_scope_id_set(session)
+	var result: Array[Dictionary] = []
+	for record_value in session.get("accepted", []):
+		if (
+			record_value is Dictionary
+			and scope_ids.has(str((record_value as Dictionary).get("id", "")))
+		):
+			result.append((record_value as Dictionary).duplicate(true))
+	return result
+
+
+static func merge_extension_rejected_memory(
+	curation: Dictionary, extension_session: Dictionary
+) -> void:
+	var existing: Dictionary = {}
+	for record_value in curation.get("rejected", []):
+		if record_value is Dictionary:
+			existing[_rejected_memory_key(record_value as Dictionary)] = true
+	for record_value in extension_session.get("rejected", []):
+		if not record_value is Dictionary:
+			continue
+		var record: Dictionary = record_value
+		var key := _rejected_memory_key(record)
+		if existing.has(key):
+			continue
+		(curation.get("rejected", []) as Array).append(record.duplicate(true))
+		existing[key] = true
 
 
 static func _known_ids(session: Dictionary) -> Dictionary:
@@ -302,6 +449,21 @@ static func _known_ids(session: Dictionary) -> Dictionary:
 	return result
 
 
+static func _review_scope_id_set(session: Dictionary) -> Dictionary:
+	var result: Dictionary = {}
+	for idea_id in review_scope_ids(session):
+		result[idea_id] = true
+	return result
+
+
+static func _rejected_memory_key(record: Dictionary) -> String:
+	return "%s\n%s\n%s" % [
+		str(record.get("fingerprint", "")),
+		str(record.get("rejection_reason", "")),
+		str(record.get("title", ""))
+	]
+
+
 static func capabilities() -> Dictionary:
 	return {
 		"contract_version": CONTRACT_VERSION,
@@ -312,5 +474,7 @@ static func capabilities() -> Dictionary:
 		"post_review_top_up": true,
 		"temporary_delete": true,
 		"repeatable_generate_more": true,
-		"project_scoped_curation": true
+		"project_scoped_curation": true,
+		"editable_extension_instruction": true,
+		"extension_only_adherence_review": true
 	}
