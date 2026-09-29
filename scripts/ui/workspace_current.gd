@@ -22,6 +22,9 @@ const IDEA_DIVERSITY_V0214 = preload(
 const IDEA_FINAL_REVIEW_V0218 = preload(
 	"res://scripts/services/idea_final_review_service_v0218.gd"
 )
+const IDEA_REVIEW_PRESENTATION_V02110 = preload(
+	"res://scripts/services/idea_review_presentation_service_v02110.gd"
+)
 const PERSONALITY_READABILITY_V0212 = preload(
 	"res://scripts/services/personality_readability_service_v0212.gd"
 )
@@ -58,9 +61,11 @@ var _idea_similarity_review_window_v0214: Window
 var _idea_similarity_review_text_v0214: TextEdit
 var _idea_review_list_v0218: VBoxContainer
 var _idea_review_checks_v0218: Array[CheckBox] = []
+var _idea_review_detail_panels_v02110: Array[Control] = []
+var _idea_review_detail_buttons_v02110: Array[Button] = []
 var _idea_review_resume_v0218: Button
 var _idea_generate_more_v0218: Button
-var _idea_generate_more_dialog_v0218: ConfirmationDialog
+var _idea_generate_more_dialog_v0218: Window
 var _idea_generate_more_count_v0218: SpinBox
 var _idea_generate_more_instruction_v0219: TextEdit
 var _idea_generate_more_instruction_label_v0219: Label
@@ -598,6 +603,16 @@ func _build_idea_similarity_review_window_v0214() -> void:
 	select_none.text = "Select None"
 	select_none.pressed.connect(_set_final_review_checks_v0218.bind(false))
 	actions.add_child(select_none)
+	var expand_all := Button.new()
+	expand_all.name = "ExpandAllFinalIdeasV02110"
+	expand_all.text = "Expand All"
+	expand_all.pressed.connect(_set_final_review_details_expanded_v02110.bind(true))
+	actions.add_child(expand_all)
+	var collapse_all := Button.new()
+	collapse_all.name = "CollapseAllFinalIdeasV02110"
+	collapse_all.text = "Collapse All"
+	collapse_all.pressed.connect(_set_final_review_details_expanded_v02110.bind(false))
+	actions.add_child(collapse_all)
 	var spacer := Control.new()
 	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	actions.add_child(spacer)
@@ -613,25 +628,42 @@ func _build_idea_similarity_review_window_v0214() -> void:
 
 
 func _build_generate_more_dialog_v0218() -> void:
-	_idea_generate_more_dialog_v0218 = ConfirmationDialog.new()
+	_idea_generate_more_dialog_v0218 = Window.new()
 	_idea_generate_more_dialog_v0218.title = "Generate More Ideas"
-	_idea_generate_more_dialog_v0218.ok_button_text = "Generate & Append"
-	_idea_generate_more_dialog_v0218.dialog_text = ""
-	_idea_generate_more_dialog_v0218.min_size = Vector2i(560, 420)
-	_idea_generate_more_dialog_v0218.confirmed.connect(_generate_more_ideas_v0218)
-	_idea_generate_more_dialog_v0218.canceled.connect(
-		_cancel_generate_more_dialog_v0219
+	_idea_generate_more_dialog_v0218.size = Vector2i(720, 520)
+	_idea_generate_more_dialog_v0218.min_size = Vector2i(480, 320)
+	_idea_generate_more_dialog_v0218.visible = false
+	_idea_generate_more_dialog_v0218.force_native = true
+	_idea_generate_more_dialog_v0218.transient = true
+	_idea_generate_more_dialog_v0218.exclusive = false
+	_idea_generate_more_dialog_v0218.close_requested.connect(
+		_dismiss_generate_more_dialog_v02110
 	)
-	add_child(_idea_generate_more_dialog_v0218)
+	if _idea_generator_v01532 != null:
+		_idea_generator_v01532.add_child(_idea_generate_more_dialog_v0218)
+	else:
+		add_child(_idea_generate_more_dialog_v0218)
+	var margin := MarginContainer.new()
+	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	margin.add_theme_constant_override("margin_left", 20)
+	margin.add_theme_constant_override("margin_top", 18)
+	margin.add_theme_constant_override("margin_right", 20)
+	margin.add_theme_constant_override("margin_bottom", 16)
+	_idea_generate_more_dialog_v0218.add_child(margin)
+	var root := VBoxContainer.new()
+	root.name = "GenerateMoreLayoutV02110"
+	root.add_theme_constant_override("separation", 10)
+	margin.add_child(root)
+	var body_scroll := ScrollContainer.new()
+	body_scroll.name = "GenerateMoreBodyScrollV02110"
+	body_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	body_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	root.add_child(body_scroll)
 	var content := VBoxContainer.new()
 	content.name = "GenerateMoreContentV0219"
-	content.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	content.offset_left = 20.0
-	content.offset_top = 18.0
-	content.offset_right = -20.0
-	content.offset_bottom = -62.0
+	content.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	content.add_theme_constant_override("separation", 8)
-	_idea_generate_more_dialog_v0218.add_child(content)
+	body_scroll.add_child(content)
 	var count_label := Label.new()
 	count_label.text = "Number of additional Ideas"
 	content.add_child(count_label)
@@ -667,6 +699,23 @@ func _build_generate_more_dialog_v0218() -> void:
 	_idea_generate_more_context_hint_v0219.name = "GenerateMoreContextHintV0219"
 	_idea_generate_more_context_hint_v0219.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	content.add_child(_idea_generate_more_context_hint_v0219)
+	var footer := HBoxContainer.new()
+	footer.name = "GenerateMoreActionFooterV02110"
+	footer.add_theme_constant_override("separation", 8)
+	root.add_child(footer)
+	var cancel := Button.new()
+	cancel.name = "CancelGenerateMoreV02110"
+	cancel.text = "Cancel"
+	cancel.pressed.connect(_dismiss_generate_more_dialog_v02110)
+	footer.add_child(cancel)
+	var spacer := Control.new()
+	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	footer.add_child(spacer)
+	var generate := Button.new()
+	generate.name = "ConfirmGenerateMoreV02110"
+	generate.text = "Generate & Append"
+	generate.pressed.connect(_confirm_generate_more_dialog_v02110)
+	footer.add_child(generate)
 
 
 func _on_idea_detail_selected_v0167(index: int) -> void:
@@ -1312,6 +1361,8 @@ func _show_idea_similarity_review_v0214(clusters: Array[Dictionary]) -> void:
 		return
 	_clear_children(_idea_review_list_v0218)
 	_idea_review_checks_v0218.clear()
+	_idea_review_detail_panels_v02110.clear()
+	_idea_review_detail_buttons_v02110.clear()
 	var report_lines: Array[String] = [
 		"Final Idea Review — advisory only",
 		(
@@ -1389,13 +1440,76 @@ func _show_idea_similarity_review_v0214(clusters: Array[Dictionary]) -> void:
 				]
 				similarity.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 				content.add_child(similarity)
+		_append_final_idea_details_v02110(content, record, idea_id)
 	if _idea_similarity_review_text_v0214 != null:
 		_idea_similarity_review_text_v0214.text = "\n".join(report_lines)
 	CCFToolWindowStateService.show_window(
 		_idea_similarity_review_window_v0214,
 		"final_idea_review_v0218",
-		Vector2i(980, 760)
+		Vector2i(980, 760),
+		_idea_generator_v01532
 	)
+
+
+func _append_final_idea_details_v02110(
+	content: VBoxContainer, record: Dictionary, idea_id: String
+) -> void:
+	var sections := IDEA_REVIEW_PRESENTATION_V02110.detail_sections(record)
+	if sections.is_empty():
+		return
+	var toggle := Button.new()
+	toggle.name = "ToggleFinalIdeaDetailsV02110_%s" % idea_id
+	toggle.text = "Show Idea"
+	toggle.toggle_mode = true
+	toggle.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	content.add_child(toggle)
+	var detail_panel := PanelContainer.new()
+	detail_panel.name = "FinalIdeaDetailsV02110_%s" % idea_id
+	detail_panel.visible = false
+	content.add_child(detail_panel)
+	var detail_margin := MarginContainer.new()
+	detail_margin.add_theme_constant_override("margin_left", 10)
+	detail_margin.add_theme_constant_override("margin_right", 10)
+	detail_margin.add_theme_constant_override("margin_top", 8)
+	detail_margin.add_theme_constant_override("margin_bottom", 8)
+	detail_panel.add_child(detail_margin)
+	var detail_content := VBoxContainer.new()
+	detail_content.add_theme_constant_override("separation", 8)
+	detail_margin.add_child(detail_content)
+	for section_value in sections:
+		var section: Dictionary = section_value
+		var label := Label.new()
+		label.text = "%s\n%s" % [
+			str(section.get("label", "Detail")),
+			str(section.get("text", ""))
+		]
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		if bool(section.get("prominent", false)):
+			label.add_theme_font_size_override("font_size", 17)
+		detail_content.add_child(label)
+	toggle.toggled.connect(
+		_set_one_final_idea_detail_expanded_v02110.bind(toggle, detail_panel)
+	)
+	_idea_review_detail_buttons_v02110.append(toggle)
+	_idea_review_detail_panels_v02110.append(detail_panel)
+
+
+func _set_one_final_idea_detail_expanded_v02110(
+	expanded: bool, toggle: Button, detail_panel: Control
+) -> void:
+	detail_panel.visible = expanded
+	toggle.set_pressed_no_signal(expanded)
+	toggle.text = "Hide Idea" if expanded else "Show Idea"
+
+
+func _set_final_review_details_expanded_v02110(expanded: bool) -> void:
+	for index in range(_idea_review_detail_panels_v02110.size()):
+		var detail_panel := _idea_review_detail_panels_v02110[index]
+		var toggle := _idea_review_detail_buttons_v02110[index]
+		if is_instance_valid(detail_panel) and is_instance_valid(toggle):
+			_set_one_final_idea_detail_expanded_v02110(
+				expanded, toggle, detail_panel
+			)
 
 
 func _set_final_review_checks_v0218(pressed: bool) -> void:
@@ -1420,7 +1534,8 @@ func _reopen_final_idea_review_v0218() -> void:
 	CCFToolWindowStateService.show_window(
 		_idea_similarity_review_window_v0214,
 		"final_idea_review_v0218",
-		Vector2i(980, 760)
+		Vector2i(980, 760),
+		_idea_generator_v01532
 	)
 
 
@@ -1694,8 +1809,12 @@ func _open_generate_more_dialog_v0218() -> void:
 		_idea_generate_more_context_hint_v0219.text = (
 			"New Ideas will be appended to the current working batch and will avoid retained, rejected and deleted concepts."
 		)
-	_idea_generate_more_dialog_v0218.popup_centered_clamped(
-		Vector2i(720, 520), 0.9
+	CCFToolWindowStateService.show_window(
+		_idea_generate_more_dialog_v0218,
+		"generate_more_ideas_v02110",
+		Vector2i(720, 520),
+		_idea_generator_v01532,
+		true
 	)
 	_idea_generate_more_instruction_v0219.grab_focus()
 
@@ -1851,6 +1970,26 @@ func _clear_idea_curation_session_v0218() -> void:
 
 func _cancel_generate_more_dialog_v0219() -> void:
 	_idea_generate_more_dialog_prepared_v0219 = false
+
+
+func _dismiss_generate_more_dialog_v02110() -> void:
+	if _idea_generate_more_dialog_v0218 != null:
+		CCFToolWindowStateService.save_window(
+			_idea_generate_more_dialog_v0218,
+			"generate_more_ideas_v02110"
+		)
+		_idea_generate_more_dialog_v0218.hide()
+	_cancel_generate_more_dialog_v0219()
+
+
+func _confirm_generate_more_dialog_v02110() -> void:
+	if _idea_generate_more_dialog_v0218 != null:
+		CCFToolWindowStateService.save_window(
+			_idea_generate_more_dialog_v0218,
+			"generate_more_ideas_v02110"
+		)
+		_idea_generate_more_dialog_v0218.hide()
+	_generate_more_ideas_v0218()
 
 
 func _restore_completed_curation_after_extension_v0219(

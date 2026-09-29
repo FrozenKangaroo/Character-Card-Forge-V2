@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.10 complete regression suites",
+  "description": "v0.21.9 complete baseline plus inspectable Final Idea Review records, contextual multi-display placement and screen-safe Idea-Generator-owned Generate More actions.",
+  "base_manifest": "regression_suites_v0219.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v02110_idea_review_and_generate_more_windows",
+        "label": "v0.21.10 Final Idea Review details and Generate More window usability",
+        "kind": "godot",
+        "path": "tools/test_v02110_idea_review_and_generate_more_windows.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}
