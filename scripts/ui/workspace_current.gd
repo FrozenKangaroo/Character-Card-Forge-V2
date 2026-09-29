@@ -62,6 +62,12 @@ var _idea_review_resume_v0218: Button
 var _idea_generate_more_v0218: Button
 var _idea_generate_more_dialog_v0218: ConfirmationDialog
 var _idea_generate_more_count_v0218: SpinBox
+var _idea_generate_more_instruction_v0219: TextEdit
+var _idea_generate_more_instruction_label_v0219: Label
+var _idea_generate_more_source_row_v0219: VBoxContainer
+var _idea_generate_more_source_value_v0219: Label
+var _idea_generate_more_context_hint_v0219: Label
+var _idea_generate_more_dialog_prepared_v0219 := false
 var _idea_curation_session_v0218: Dictionary = {}
 var _idea_review_awaiting_user_v0218 := false
 var _idea_manual_extension_active_v0218 := false
@@ -610,19 +616,57 @@ func _build_generate_more_dialog_v0218() -> void:
 	_idea_generate_more_dialog_v0218 = ConfirmationDialog.new()
 	_idea_generate_more_dialog_v0218.title = "Generate More Ideas"
 	_idea_generate_more_dialog_v0218.ok_button_text = "Generate & Append"
-	_idea_generate_more_dialog_v0218.dialog_text = (
-		"Choose how many additional Ideas to generate. CCF will preserve the completed batch's original prompt, Idea Source, Series context and detail settings, and will avoid retained and rejected concepts."
-	)
+	_idea_generate_more_dialog_v0218.dialog_text = ""
+	_idea_generate_more_dialog_v0218.min_size = Vector2i(560, 420)
 	_idea_generate_more_dialog_v0218.confirmed.connect(_generate_more_ideas_v0218)
+	_idea_generate_more_dialog_v0218.canceled.connect(
+		_cancel_generate_more_dialog_v0219
+	)
 	add_child(_idea_generate_more_dialog_v0218)
+	var content := VBoxContainer.new()
+	content.name = "GenerateMoreContentV0219"
+	content.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	content.offset_left = 20.0
+	content.offset_top = 18.0
+	content.offset_right = -20.0
+	content.offset_bottom = -62.0
+	content.add_theme_constant_override("separation", 8)
+	_idea_generate_more_dialog_v0218.add_child(content)
+	var count_label := Label.new()
+	count_label.text = "Number of additional Ideas"
+	content.add_child(count_label)
 	_idea_generate_more_count_v0218 = SpinBox.new()
 	_idea_generate_more_count_v0218.name = "GenerateMoreIdeaCountV0218"
 	_idea_generate_more_count_v0218.min_value = 1
 	_idea_generate_more_count_v0218.max_value = IDEA_BATCHING_V0211.MAX_TOTAL_IDEAS
 	_idea_generate_more_count_v0218.step = 1
 	_idea_generate_more_count_v0218.value = 4
-	_idea_generate_more_count_v0218.custom_minimum_size = Vector2(220, 40)
-	_idea_generate_more_dialog_v0218.add_child(_idea_generate_more_count_v0218)
+	_idea_generate_more_count_v0218.custom_minimum_size = Vector2(220, 38)
+	content.add_child(_idea_generate_more_count_v0218)
+	_idea_generate_more_source_row_v0219 = VBoxContainer.new()
+	_idea_generate_more_source_row_v0219.name = "GenerateMoreIdeaSourceV0219"
+	var source_label := Label.new()
+	source_label.text = "Idea Source"
+	_idea_generate_more_source_row_v0219.add_child(source_label)
+	_idea_generate_more_source_value_v0219 = Label.new()
+	_idea_generate_more_source_value_v0219.name = "GenerateMoreIdeaSourceValueV0219"
+	_idea_generate_more_source_value_v0219.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_idea_generate_more_source_value_v0219.add_theme_font_size_override("font_size", 18)
+	_idea_generate_more_source_row_v0219.add_child(_idea_generate_more_source_value_v0219)
+	content.add_child(_idea_generate_more_source_row_v0219)
+	_idea_generate_more_instruction_label_v0219 = Label.new()
+	_idea_generate_more_instruction_label_v0219.name = "GenerateMoreInstructionLabelV0219"
+	content.add_child(_idea_generate_more_instruction_label_v0219)
+	_idea_generate_more_instruction_v0219 = TextEdit.new()
+	_idea_generate_more_instruction_v0219.name = "GenerateMoreInstructionV0219"
+	_idea_generate_more_instruction_v0219.custom_minimum_size = Vector2(0, 150)
+	_idea_generate_more_instruction_v0219.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_idea_generate_more_instruction_v0219.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	content.add_child(_idea_generate_more_instruction_v0219)
+	_idea_generate_more_context_hint_v0219 = Label.new()
+	_idea_generate_more_context_hint_v0219.name = "GenerateMoreContextHintV0219"
+	_idea_generate_more_context_hint_v0219.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	content.add_child(_idea_generate_more_context_hint_v0219)
 
 
 func _on_idea_detail_selected_v0167(index: int) -> void:
@@ -687,13 +731,18 @@ func _queue_idea_request_v0211(request_size: int) -> Dictionary:
 		if profile_value is Dictionary
 		else default_profile
 	)
-	var idea_seed := str(_idea_diversity_session_v0214.get(
-		"seed_snapshot", _idea_seed_with_source_v0213()
-	))
-	var series_context := str(_idea_diversity_session_v0214.get(
-		"series_context_snapshot",
-		CCFSeriesService.generation_context_for_project(_project)
-	))
+	var idea_seed := ""
+	if _idea_diversity_session_v0214.has("seed_snapshot"):
+		idea_seed = str(_idea_diversity_session_v0214.get("seed_snapshot", ""))
+	else:
+		idea_seed = _idea_seed_with_source_v0213()
+	var series_context := ""
+	if _idea_diversity_session_v0214.has("series_context_snapshot"):
+		series_context = str(_idea_diversity_session_v0214.get(
+			"series_context_snapshot", ""
+		))
+	else:
+		series_context = CCFSeriesService.generation_context_for_project(_project)
 	var detail_level := str(_idea_diversity_session_v0214.get(
 		"detail_level_snapshot", _selected_idea_detail_level_v0167
 	))
@@ -1032,9 +1081,14 @@ func _on_job_cancelled(job_id: String, job_type: String) -> void:
 			return
 		_idea_batch_errors_v0211.append("Final AI Idea Review was cancelled.")
 		_idea_diversity_review_job_id_v0214 = ""
-		_idea_diversity_session_v0214["final_review_completed"] = true
 		_idea_review_awaiting_user_v0218 = false
-		_finalize_idea_generation_session_v0214()
+		if _idea_manual_extension_active_v0218:
+			_restore_completed_curation_after_extension_v0219(
+				"Generate More was cancelled. The completed working batch and its previous instruction were preserved."
+			)
+		else:
+			_idea_diversity_session_v0214["final_review_completed"] = true
+			_finalize_idea_generation_session_v0214()
 		return
 	if job_type == "ideas" and _idea_batch_job_indices_v0211.has(job_id):
 		_mark_idea_batch_terminal_v0211(job_id, "cancelled")
@@ -1043,7 +1097,12 @@ func _on_job_cancelled(job_id: String, job_type: String) -> void:
 			"Request %d/%d was cancelled."
 			% [batch_index + 1, _idea_batch_expected_requests_v0211]
 		)
-		_finalize_idea_generation_session_v0214()
+		if _idea_manual_extension_active_v0218:
+			_restore_completed_curation_after_extension_v0219(
+				"Generate More was cancelled. The completed working batch and its previous instruction were preserved."
+			)
+		else:
+			_finalize_idea_generation_session_v0214()
 		return
 	super._on_job_cancelled(job_id, job_type)
 
@@ -1255,7 +1314,11 @@ func _show_idea_similarity_review_v0214(clusters: Array[Dictionary]) -> void:
 	_idea_review_checks_v0218.clear()
 	var report_lines: Array[String] = [
 		"Final Idea Review — advisory only",
-		"All valid Ideas begin checked. User selection determines retention."
+		(
+			"Only Ideas from this Generate More request are shown. Earlier Ideas remain retained automatically; similarity findings may reference them."
+			if bool(_idea_diversity_session_v0214.get("manual_extension", false))
+			else "All valid Ideas begin checked. User selection determines retention."
+		)
 	]
 	for cluster in clusters:
 		report_lines.append("%s — %s — %s" % [
@@ -1263,7 +1326,9 @@ func _show_idea_similarity_review_v0214(clusters: Array[Dictionary]) -> void:
 			", ".join(cluster.get("idea_ids", []) as Array),
 			str(cluster.get("reason", ""))
 		])
-	for record_value in _idea_diversity_session_v0214.get("accepted", []):
+	for record_value in IDEA_FINAL_REVIEW_V0218.review_records(
+		_idea_diversity_session_v0214
+	):
 		if not record_value is Dictionary:
 			continue
 		var record: Dictionary = record_value
@@ -1380,9 +1445,9 @@ func _apply_final_idea_review_v0218() -> void:
 			_idea_similarity_review_window_v0214, "final_idea_review_v0218"
 		)
 		_idea_similarity_review_window_v0214.hide()
-	_idea_status.text = "Review applied — %d/%d kept." % [
+	_idea_status.text = "Review applied — %d/%d reviewed Ideas kept." % [
 		int(result.get("kept_count", 0)),
-		int(_idea_diversity_session_v0214.get("target_count", 0))
+		int(result.get("reviewed_count", 0))
 	]
 	_maybe_queue_final_top_up_v0214()
 
@@ -1461,6 +1526,17 @@ func _finalize_idea_generation_session_v0214() -> void:
 	if not _idea_session_project_is_current_v0214():
 		_discard_idea_session_for_project_change_v0214()
 		return
+	if (
+		_idea_manual_extension_active_v0218
+		and IDEA_FINAL_REVIEW_V0218.review_scope_ids(
+			_idea_diversity_session_v0214
+		).is_empty()
+	):
+		_restore_completed_curation_after_extension_v0219(
+			"Generate More completed without any retained new Ideas. The previous instruction remains the next prefill; rejected candidates remain repeat-prevention memory.",
+			true
+		)
+		return
 	var combined := IDEA_DIVERSITY_V0214.accepted_ideas(
 		_idea_diversity_session_v0214
 	)
@@ -1516,6 +1592,15 @@ func _finalize_idea_generation_session_v0214() -> void:
 	aggregate_metadata["idea_user_review_rejected_count"] = int(
 		_idea_diversity_session_v0214.get("user_review_rejected_count", 0)
 	)
+	if _idea_manual_extension_active_v0218:
+		aggregate_metadata["idea_last_extension_retained_count"] = (
+			IDEA_FINAL_REVIEW_V0218.review_scope_ids(
+				_idea_diversity_session_v0214
+			).size()
+		)
+		aggregate_metadata["idea_last_extension_errors"] = (
+			_idea_batch_errors_v0211.duplicate()
+		)
 	aggregate_metadata["idea_source_id"] = str(
 		_idea_diversity_session_v0214.get("idea_source_id_snapshot", "")
 	)
@@ -1578,7 +1663,41 @@ func _open_generate_more_dialog_v0218() -> void:
 		return
 	_idea_generate_more_count_v0218.max_value = remaining_capacity
 	_idea_generate_more_count_v0218.value = mini(4, remaining_capacity)
-	_idea_generate_more_dialog_v0218.popup_centered(Vector2i(620, 250))
+	var prompt_mode := IDEA_FINAL_REVIEW_V0218.extension_prompt_mode(
+		_idea_curation_session_v0218
+	)
+	var uses_source := prompt_mode == "additional_direction"
+	_idea_generate_more_instruction_label_v0219.text = (
+		"Additional Direction" if uses_source else "Prompt"
+	)
+	_idea_generate_more_instruction_v0219.text = (
+		IDEA_FINAL_REVIEW_V0218.extension_instruction(
+			_idea_curation_session_v0218
+		)
+	)
+	_idea_generate_more_dialog_prepared_v0219 = true
+	_idea_generate_more_source_row_v0219.visible = uses_source
+	if uses_source:
+		var context_value: Variant = _idea_curation_session_v0218.get(
+			"generation_context", {}
+		)
+		var context: Dictionary = context_value if context_value is Dictionary else {}
+		var source_title := str(context.get("idea_source_title", "")).strip_edges()
+		_idea_generate_more_source_value_v0219.text = (
+			source_title if not source_title.is_empty() else "Untitled frozen Idea Source"
+		)
+		_idea_generate_more_context_hint_v0219.text = (
+			"The Idea Source remains fixed for this working batch. Edit or clear Additional Direction to steer only these new Ideas. Retained, rejected and deleted concepts remain repeat-prevention memory."
+		)
+	else:
+		_idea_generate_more_source_value_v0219.text = ""
+		_idea_generate_more_context_hint_v0219.text = (
+			"New Ideas will be appended to the current working batch and will avoid retained, rejected and deleted concepts."
+		)
+	_idea_generate_more_dialog_v0218.popup_centered_clamped(
+		Vector2i(720, 520), 0.9
+	)
+	_idea_generate_more_instruction_v0219.grab_focus()
 
 
 func _generate_more_ideas_v0218() -> void:
@@ -1601,8 +1720,19 @@ func _generate_more_ideas_v0218() -> void:
 		"batch_limit", _idea_batch_size_value_v0211()
 	))
 	per_request = IDEA_BATCHING_V0211.normalise_ideas_per_request(per_request)
+	var edited_instruction := (
+		_idea_generate_more_instruction_v0219.text
+		if _idea_generate_more_dialog_prepared_v0219
+		else IDEA_FINAL_REVIEW_V0218.extension_instruction(
+			_idea_curation_session_v0218
+		)
+	)
+	_idea_generate_more_dialog_prepared_v0219 = false
 	_idea_diversity_session_v0214 = IDEA_FINAL_REVIEW_V0218.create_extension_session(
-		_idea_curation_session_v0218, additional, per_request
+		_idea_curation_session_v0218,
+		additional,
+		per_request,
+		edited_instruction
 	)
 	_idea_batch_group_id_v0211 = "idea-more-%d-%d" % [
 		Time.get_ticks_usec(), get_instance_id()
@@ -1714,8 +1844,55 @@ func _clear_idea_curation_session_v0218() -> void:
 	_idea_curation_session_v0218.clear()
 	_idea_last_completed_metadata_v0218.clear()
 	_idea_manual_extension_active_v0218 = false
+	_idea_generate_more_dialog_prepared_v0219 = false
 	if _idea_generate_more_v0218 != null:
 		_idea_generate_more_v0218.disabled = true
+
+
+func _cancel_generate_more_dialog_v0219() -> void:
+	_idea_generate_more_dialog_prepared_v0219 = false
+
+
+func _restore_completed_curation_after_extension_v0219(
+	message: String, count_completed_request: bool = false
+) -> void:
+	IDEA_FINAL_REVIEW_V0218.merge_extension_rejected_memory(
+		_idea_curation_session_v0218, _idea_diversity_session_v0214
+	)
+	var visible_value: Variant = _idea_curation_session_v0218.get(
+		"visible_ideas", []
+	)
+	var visible: Array = (
+		(visible_value as Array).duplicate(true)
+		if visible_value is Array else []
+	)
+	var metadata_value: Variant = _idea_curation_session_v0218.get("metadata", {})
+	var metadata: Dictionary = (
+		(metadata_value as Dictionary).duplicate(true)
+		if metadata_value is Dictionary else {}
+	)
+	if count_completed_request:
+		_idea_curation_session_v0218["manual_generate_more_count"] = int(
+			_idea_curation_session_v0218.get("manual_generate_more_count", 0)
+		) + 1
+		metadata["idea_manual_generate_more_count"] = int(
+			_idea_curation_session_v0218.get("manual_generate_more_count", 0)
+		)
+		metadata["idea_last_extension_retained_count"] = 0
+		metadata["idea_last_extension_errors"] = _idea_batch_errors_v0211.duplicate()
+		_idea_curation_session_v0218["metadata"] = metadata.duplicate(true)
+	_render_ideas(visible)
+	if _idea_generator_v01532 != null:
+		_idea_generator_v01532.set_last_generated_ideas_v01532(visible, metadata)
+	if _idea_generate_more_v0218 != null:
+		_idea_generate_more_v0218.disabled = false
+	if _idea_similarity_review_window_v0214 != null:
+		_idea_similarity_review_window_v0214.hide()
+	_idea_job_id = ""
+	_idea_generate_button.disabled = false
+	_idea_status.text = message
+	_reset_idea_batch_state_v0211()
+	_idea_manual_extension_active_v0218 = false
 
 
 func _idea_session_project_is_current_v0214() -> bool:

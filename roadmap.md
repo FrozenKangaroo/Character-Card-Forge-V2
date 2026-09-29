@@ -71,6 +71,13 @@ review. Completed generated results become a temporary project-scoped working ba
 safe deletion, repeatable append-only Generate More requests and retained anti-repeat
 memory without changing saved Ideas or portable formats.
 
+The v0.21.9 development candidate makes each manual **Generate More Ideas…** extension
+independently steerable through an editable Prompt or Additional Direction. The most
+recent successful instruction becomes the next prefill, while the working batch's Idea
+Source, Series context and complete anti-repeat ledger remain frozen. Final Idea Review
+applies adherence only to the new extension candidates and uses older retained Ideas as
+similarity references without forcing them through another checklist.
+
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
 validation, task-oriented user documentation, a smaller manifest-driven CI surface,
@@ -183,7 +190,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.8** and uses the Godot
+The current source candidate displays **v0.21.9** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -192,6 +199,20 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.9 — Editable Generate More Instructions (candidate)
+
+- Added a screen-safe multiline Prompt / Additional Direction editor to Generate More,
+  with the frozen Idea Source title shown read-only when applicable.
+- Prefilled the first extension from the completed batch and subsequent extensions from
+  the most recent successfully retained extension; cancel and no-result paths preserve
+  the prior value.
+- Centralized deterministic seed composition so a source-backed extension always uses
+  the working batch's frozen source and Series context, never current generator UI state.
+- Applied one confirmed instruction to every provider split and one-shot replacement in
+  the manual extension while retaining the complete cross-extension anti-repeat ledger.
+- Scoped adherence findings and review checkboxes to new extension candidates, while
+  allowing new-versus-old similarity references and preserving older Ideas automatically.
 
 ### v0.21.8 — Final Idea Review and Generated-Idea Curation (candidate)
 

@@ -2714,17 +2714,9 @@ func active_idea_source_context_v0213() -> String:
 
 
 func prepared_generation_input_v0213(additional_direction: String) -> String:
-	var ordinary_prompt := additional_direction.strip_edges()
-	var source_context := active_idea_source_context_v0213().strip_edges()
-	if source_context.is_empty():
-		return ordinary_prompt
-	var blocks: Array[String] = [source_context]
-	if not ordinary_prompt.is_empty():
-		blocks.append(
-			"CURRENT IDEA-GENERATOR PROMPT / ADDITIONAL DIRECTION:\n%s"
-			% ordinary_prompt
-		)
-	return "\n\n".join(blocks)
+	return IDEA_SOURCE_SERVICE_V0213.compose_generation_input(
+		active_idea_source_context_v0213(), additional_direction
+	)
 
 
 func prompt_presentation_v0213() -> Dictionary:

@@ -265,7 +265,13 @@ func queue_idea_similarity_review_v0214(
 			"idea_final_review_contract_version": IDEA_FINAL_REVIEW_V0218.CONTRACT_VERSION,
 			"idea_review_check_adherence": check_adherence,
 			"idea_review_check_similarity": check_similarity,
-			"idea_similarity_review_count": (accepted_value as Array).size(),
+			"idea_similarity_review_count": IDEA_FINAL_REVIEW_V0218.review_scope_ids(
+				session
+			).size(),
+			"idea_similarity_reference_count": (
+				(accepted_value as Array).size()
+				- IDEA_FINAL_REVIEW_V0218.review_scope_ids(session).size()
+			),
 			"idea_similarity_context_present": not generation_context.is_empty(),
 			"idea_similarity_context_mode": str(generation_context.get("prompt_mode", "")),
 			"idea_similarity_source_context_present": not str(

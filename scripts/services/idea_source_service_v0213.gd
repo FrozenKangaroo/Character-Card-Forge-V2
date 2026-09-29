@@ -271,6 +271,20 @@ func generation_context(raw_source: Dictionary, similarity_mode: String = "") ->
 	return "\n\n".join(lines)
 
 
+static func compose_generation_input(
+	idea_source_context: String, prompt_or_direction: String
+) -> String:
+	var source_context := idea_source_context.strip_edges()
+	var instruction := prompt_or_direction.strip_edges()
+	if source_context.is_empty():
+		return instruction
+	if instruction.is_empty():
+		return source_context
+	return "%s\n\nCURRENT IDEA-GENERATOR PROMPT / ADDITIONAL DIRECTION:\n%s" % [
+		source_context, instruction
+	]
+
+
 func similarity_instruction(mode: String) -> String:
 	match mode.strip_edges().to_lower():
 		"close":
