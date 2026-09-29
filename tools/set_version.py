@@ -51,6 +51,13 @@ def sync_version(version: str) -> None:
         r'^const APP_VERSION := "[^"]+"$',
         f'const APP_VERSION := "{version}"',
     )
+    current_main = ROOT / "scripts/main_current.gd"
+    if current_main.exists():
+        replace_once(
+            current_main,
+            r'^const CURRENT_BUILD_VERSION := "[^"]+"$',
+            f'const CURRENT_BUILD_VERSION := "{version}"',
+        )
     replace_once(
         ROOT / "scripts/services/project_package_service.gd",
         r'^(\s*"application_version":\s*)"[^"]+"(,?)$',

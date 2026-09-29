@@ -65,6 +65,12 @@ contain Ideas directly. It migrates existing Notebook leaves without losing stab
 Idea membership, adds single/multi-Idea Folder drag/drop, keeps recursive export and
 full-path destinations, and makes Folder deletion explicitly non-destructive.
 
+The v0.21.8 development candidate makes optional final AI Idea review advisory and
+author-controlled, combining request-adherence and similarity findings in one resumable
+review. Completed generated results become a temporary project-scoped working batch with
+safe deletion, repeatable append-only Generate More requests and retained anti-repeat
+memory without changing saved Ideas or portable formats.
+
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
 validation, task-oriented user documentation, a smaller manifest-driven CI surface,
@@ -177,7 +183,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.7** and uses the Godot
+The current source candidate displays **v0.21.8** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -186,6 +192,21 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.8 — Final Idea Review and Generated-Idea Curation (candidate)
+
+- Combined optional request-adherence and similarity analysis into one advisory Final AI
+  Idea Review grounded in the immutable generation context.
+- Made every valid Idea checked by default and required the author to apply review before
+  any Idea is removed or an optional one-shot shortfall top-up is calculated.
+- Added a scrollable, resumable native review window; closing it pauses the pending
+  generation without replacing the previous completed result.
+- Added temporary **Delete This Idea** controls that synchronize Save/Develop workflows
+  while retaining deleted concepts as compact anti-repeat memory.
+- Added repeatable **Generate More Ideas…** extensions that append results, reuse frozen
+  context and preserved ledgers, respect existing limits and create fresh provider jobs.
+- Kept active provider-job state separate from lightweight, project-scoped curation state
+  and preserved all existing Idea Library, Idea Source and Idea Pack formats.
 
 ### v0.21.7 — Folder-only Idea Library (candidate)
 

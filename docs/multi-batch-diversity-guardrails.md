@@ -32,8 +32,10 @@ During one Generate action, CCF keeps an in-memory ledger containing:
 
 The fingerprint is derived at generation time from the idea's premise, hook and other
 available structural text. Character names are excluded from the inexpensive structural
-comparison. The ledger is discarded when the generation session finishes and does not
-change Idea Notebook, `.ccfideas.json` Idea Packs or `.ccfideasource.json` Idea Sources.
+comparison. When generation finishes, the active provider-job session is discarded and
+a lightweight project-scoped curation snapshot retains the visible, rejected and later
+deleted concepts. That snapshot does not change the Idea Library, `.ccfideas.json` Idea
+Packs or `.ccfideasource.json` Idea Sources.
 
 ## Later request guidance
 
@@ -67,34 +69,35 @@ variants remain valid when their intent, consent, knowledge, duration, reveal,
 uncertainty, consequences or ongoing roleplay engine materially differ. Different titles
 do not protect an otherwise identical premise.
 
-## Optional final AI similarity check
+## Optional final AI review
 
-The **Final AI similarity check** control defaults to **Off** because it uses one extra
-model request.
+**Check request adherence** and **Check similarity / duplicates** both default to off
+because enabling either uses one extra model request. When one or both are enabled, CCF
+sends one combined review grounded in the immutable prompt, Idea Source and Series
+context captured at the start of generation.
 
-- **Off** performs no final AI comparison.
-- **Flag Similar Ideas** shows clusters classified as duplicate, near-duplicate or
-  related-but-distinct and keeps every result.
-- **Reject Clear Duplicates** keeps the first representative of clusters classified as
-  clear duplicates. Near-duplicates and related-but-distinct variants remain.
+The model may flag partial or clear request mismatches, duplicates, near-duplicates and
+related-but-distinct concepts. These findings are advisory: they never remove or uncheck
+an Idea. Every valid result starts checked in the scrollable **Final Idea Review**, and
+only the author's choices determine which Ideas remain.
 
-The review sends compact IDs, titles and scenario fingerprints rather than full
-character-card-sized records. Its report explains each cluster. Reject mode is explicit
-and conservative; it never rewrites ideas already saved in Idea Notebook.
-
-The report opens as an independent native desktop window. It can be moved outside CCF,
+The review opens as an independent native desktop window. It can be moved outside CCF,
 resized and placed on another monitor without becoming globally always-on-top. Closing
-the report does not discard the generated results.
+it pauses the pending generation and exposes **Open Final Idea Review…**; it does not
+silently accept, reject or discard the pending results.
 
 ## Optional one-shot top-up
 
 **One final top-up request if short** is also off by default. After normal requests,
-validation and any final AI rejection, it can make exactly one additional request for
-the missing count, bounded by the configured provider-request limit.
+validation and the author applies the Final Idea Review, it can make exactly one
+additional request for the missing count, bounded by the configured provider-request
+limit.
 
-The recovery request receives the accepted and rejected ledger, original source and
-Additional Direction, and explicit replacement/novelty guidance. Recovery results still
-undergo validation, title warnings and structural duplicate checks.
+The recovery request receives the accepted and rejected ledger, including Ideas the
+author unchecked during review, plus the original source and Additional Direction and
+explicit replacement/novelty guidance. Recovery results still undergo validation, title
+warnings and structural duplicate checks. Recovery is not reviewed again, so it cannot
+create a review/recovery loop. Cancelling generation never starts automatic recovery.
 
 There is no retry loop. If a request for three replacements produces only two usable
 ideas, the session ends at 29/30 and reports that result.
@@ -121,10 +124,23 @@ validation-pass candidates. The main status still correctly says four generation
 batches. CCF does not currently claim an all-inclusive model-call total because retries,
 repairs and optional review calls are not centrally accounted as one reliable metric.
 
-Repeat prevention itself adds prompt context but no extra request. **Final AI similarity
-check** can add one model call. **One final top-up request if short** can add one more.
+Repeat prevention itself adds prompt context but no extra request. **Final AI Idea
+Review** can add one model call. **One final top-up request if short** can add one more.
 Enabling both may therefore add up to two provider calls beyond the bounded normal batch
 plan.
+
+## Curating and extending a completed batch
+
+Completed results expose **Use This Idea** and **Delete This Idea**. Delete changes only
+the temporary generated batch; it never deletes a saved Idea or source card. Save
+Generated Ideas and Develop Generated Idea remain synchronized with the surviving
+results. Deleted concepts remain compact anti-repeat memory for the session.
+
+**Generate More Ideas…** appends to the surviving batch and can be used repeatedly. Each
+manual extension reuses the original frozen creative context, includes retained,
+review-rejected and deleted concepts in its anti-repeat guidance, respects the normal
+per-request and total limits, and creates a fresh provider-job session. A fresh Generate
+action or project change clears the lightweight curation snapshot.
 
 ## Manual verification
 

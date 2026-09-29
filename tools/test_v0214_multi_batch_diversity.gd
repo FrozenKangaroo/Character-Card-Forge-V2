@@ -851,14 +851,21 @@ func _test_live_final_review(
 		{}
 	)
 	var generator := workspace.get("_idea_generator_v01532") as CCFIdeaGeneratorWindowCurrent
-	var captured: Array = generator.get("_last_generated_ideas_v01532")
 	var report := workspace.find_child("IdeaSimilarityReviewReportV0214", true, false) as TextEdit
 	_require(
 		fake.review_requests == 1
-		and captured.size() == 2
+		and bool(workspace.get("_idea_review_awaiting_user_v0218"))
 		and report.text.contains("Near Duplicate")
-		and report.text.contains("Flag mode kept every idea"),
-		"Flag review must show the classified cluster, keep every idea and make no second review call."
+		and report.text.contains("advisory only"),
+		"Compatibility flag review must show the classified cluster and pause for advisory user selection without making a second review call."
+	)
+	workspace.call("_apply_final_idea_review_v0218")
+	var captured: Array = generator.get("_last_generated_ideas_v01532")
+	_require(
+		captured.size() == 2
+		and not bool(workspace.get("_idea_review_awaiting_user_v0218"))
+		and fake.review_requests == 1,
+		"Applying the compatibility review with every default checkbox retained must keep both Ideas and finalize once."
 	)
 	review.select(0)
 
