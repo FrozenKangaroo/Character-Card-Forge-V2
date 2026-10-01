@@ -71,7 +71,7 @@ func _run() -> void:
 	var defaults := CCFSettingsService.default_settings()
 	var default_storage: Dictionary = defaults.get("library_storage", {})
 	if not _require(
-		int(defaults.get("format_version", 0)) == 9
+		int(defaults.get("format_version", 0)) >= 9
 		and str(default_storage.get("mode", "")) == "local"
 		and int(default_storage.get("thumbnail_cache_max_mb", 0)) == 512
 		and int(default_storage.get("thumbnail_cache_max_age_days", 0)) == 90,

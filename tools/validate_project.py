@@ -97,8 +97,8 @@ def main() -> None:
 
     settings_text = (ROOT / "scripts/services/settings_service.gd").read_text(encoding="utf-8")
     require(
-        "const SETTINGS_FORMAT_VERSION := 9" in settings_text,
-        "Settings schema must be version 9 for provider routing, updates and library storage.",
+        "const SETTINGS_FORMAT_VERSION := 10" in settings_text,
+        "Settings schema must be version 10 for provider routing, streaming, updates and library storage.",
     )
     for marker_text in (
         'const ROLE_TEXT := "text"',
@@ -120,6 +120,10 @@ def main() -> None:
     require(
         '"attachment_context_character_limit": 24000' in settings_text,
         "The default attachment context budget is missing.",
+    )
+    require(
+        '"stream_ai_responses": false' in settings_text,
+        "The conservative global streaming default is missing.",
     )
     require(
         '"default_image_size": "1024x1024"' in settings_text

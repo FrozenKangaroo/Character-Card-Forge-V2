@@ -46,6 +46,8 @@ and [changelog](CHANGELOG.md).
 - Immediate virtualized Library grid reflow when card density changes.
 - Character Collaborator conversations with explicit sources, evidence roles and
   reviewable Generation Blueprint handoff.
+- Optional global AI response streaming with provider fallback, provisional Collaborator
+  prose, complete provisional Idea objects and final-validation safety.
 - Editable canonical Character Card fields, Alternative Greetings, Scenario Presets,
   Lorebooks, Relationships and optional Front Porch character-life fields.
 - Card Inspector, AI Review, selective changes, revision comparison and non-destructive
@@ -101,6 +103,11 @@ silently replaces a running installation.
 Manual editing and Manual Guided work without an AI provider. Text, Vision and Image
 profiles are configured independently in Settings and are contacted only by an explicit
 AI action.
+
+**Settings → AI / Generation** includes an opt-in **Stream AI responses** preference.
+Eligible providers can show useful output while they reply; unsupported endpoints fall
+back to the normal completed response. Anything shown early is provisional and cannot be
+saved or applied until the complete response passes normal parsing and validation.
 
 An empty one-character draft is not added to Character Library merely because Idea
 Generator, Character Collaborator or another Workspace tool was opened. It remains an

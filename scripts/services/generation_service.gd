@@ -6,15 +6,39 @@ signal job_completed(job_id: String, job_type: String, data: Variant, metadata: 
 signal job_failed(job_id: String, job_type: String, message: String)
 signal job_cancelled(job_id: String, job_type: String)
 signal queue_changed(pending_count: int, active_job_id: String, active_label: String)
+signal job_stream_started(job_id: String, job_type: String, metadata: Dictionary)
+signal job_stream_delta(job_id: String, job_type: String, text_delta: String, metadata: Dictionary)
+signal job_stream_item(job_id: String, job_type: String, provisional_item: Variant, metadata: Dictionary)
+signal job_stream_finished(job_id: String, job_type: String, metadata: Dictionary)
+signal job_stream_reset(job_id: String, job_type: String, metadata: Dictionary)
+signal job_phase_changed(job_id: String, job_type: String, phase: String, metadata: Dictionary)
+
+const HTTP_STREAM_TRANSPORT_V02112 = preload(
+	"res://scripts/services/http_stream_transport_v02112.gd"
+)
+const OPENAI_STREAM_DECODER_V02112 = preload(
+	"res://scripts/services/openai_stream_decoder_v02112.gd"
+)
+const INCREMENTAL_JSON_STREAM_V02112 = preload(
+	"res://scripts/services/incremental_json_stream_v02112.gd"
+)
 
 var _request: HTTPRequest
 var _queue: Array[Dictionary] = []
 var _active_job: Dictionary = {}
 var _next_job_number := 1
+var _stream_transport_v02112: CCFHTTPStreamTransportV02112
+var _stream_decoder_v02112 := CCFOpenAIStreamDecoderV02112.new()
+var _structured_stream_v02112 := CCFIncrementalJSONStreamV02112.new()
+var _stream_request_serial_v02112 := 0
 
 
 func _ready() -> void:
 	_create_request_node()
+	_create_stream_transport_v02112()
+	job_completed.connect(_on_internal_job_completed_v02112)
+	job_failed.connect(_on_internal_job_failed_v02112)
+	job_cancelled.connect(_on_internal_job_cancelled_v02112)
 
 
 func queue_character_generation(
@@ -1004,11 +1028,15 @@ func queue_series_generation(
 
 
 func cancel_active_job() -> void:
-	if _active_job.is_empty() or _request == null:
+	if _active_job.is_empty():
 		return
 	var cancelled_id := str(_active_job.get("id", ""))
 	var cancelled_type := str(_active_job.get("type", ""))
-	_request.cancel_request()
+	if _request != null:
+		_request.cancel_request()
+	if _stream_transport_v02112 != null:
+		_stream_transport_v02112.cancel()
+	_reset_stream_attempt_v02112("cancelled")
 	_active_job.clear()
 	_create_request_node()
 	job_cancelled.emit(cancelled_id, cancelled_type)
@@ -1054,6 +1082,20 @@ func _create_request_node() -> void:
 	_request.request_completed.connect(_on_request_completed)
 
 
+func _create_stream_transport_v02112() -> void:
+	if _stream_transport_v02112 != null:
+		_stream_transport_v02112.cancel()
+		if _stream_transport_v02112.get_parent() == self:
+			remove_child(_stream_transport_v02112)
+		_stream_transport_v02112.queue_free()
+	_stream_transport_v02112 = HTTP_STREAM_TRANSPORT_V02112.new()
+	add_child(_stream_transport_v02112)
+	_stream_transport_v02112.stream_opened.connect(_on_stream_opened_v02112)
+	_stream_transport_v02112.body_chunk.connect(_on_stream_body_chunk_v02112)
+	_stream_transport_v02112.request_finished.connect(_on_stream_request_finished_v02112)
+	_stream_transport_v02112.request_failed.connect(_on_stream_request_failed_v02112)
+
+
 func _queue_chat_job(
 	job_type: String,
 	label: String,
@@ -1093,6 +1135,23 @@ func _queue_chat_job(
 		"attempt": 0,
 		"repair_attempts": 0
 	}
+	var current_settings := CCFSettingsService.load_settings()
+	var generation_value: Variant = current_settings.get("generation", {})
+	var generation_settings: Dictionary = (
+		generation_value if generation_value is Dictionary else {}
+	)
+	job["stream_preferred_v02112"] = bool(
+		generation_settings.get("stream_ai_responses", false)
+	)
+	job["stream_supported_v02112"] = _endpoint_can_stream_v02112(
+		str(job.get("url", "")), profile
+	)
+	job["stream_force_nonstream_v02112"] = false
+	job["stream_fallback_used_v02112"] = false
+	var job_metadata: Dictionary = job.get("metadata", {}).duplicate(true)
+	job_metadata["streaming_preference"] = bool(job.get("stream_preferred_v02112", false))
+	job_metadata["streaming_endpoint_eligible"] = bool(job.get("stream_supported_v02112", false))
+	job["metadata"] = job_metadata
 	_queue.append(job)
 	var queued_ahead := _queue.size() - 1
 	if not _active_job.is_empty():
@@ -1111,6 +1170,7 @@ func _start_next_job() -> void:
 		str(_active_job.get("type", "")),
 		str(_active_job.get("label", "Generation"))
 	)
+	_emit_phase_v02112("generating")
 	_emit_queue_changed()
 	_start_active_request()
 
@@ -1118,7 +1178,17 @@ func _start_next_job() -> void:
 func _start_active_request() -> void:
 	if _active_job.is_empty():
 		return
+	if bool(_active_job.get("stream_attempt_open_v02112", false)):
+		_reset_stream_attempt_v02112("retry")
 	_active_job["attempt"] = int(_active_job.get("attempt", 0)) + 1
+	if _should_stream_active_job_v02112():
+		_start_streaming_active_request_v02112()
+		return
+	_set_active_stream_metadata_v02112(
+		"completed_request",
+		false,
+		bool(_active_job.get("stream_fallback_used_v02112", false))
+	)
 	var request_error := _request.request(
 		str(_active_job.get("url", "")),
 		_active_job.get("headers", PackedStringArray()),
@@ -1136,7 +1206,12 @@ func _on_request_completed(
 		return
 
 	if result != HTTPRequest.RESULT_SUCCESS:
-		_handle_failure("Network request failed (result %s)." % result, true)
+		var transport_detail := str(
+			_active_job.get("stream_transport_error_v02112", "")
+		).strip_edges()
+		if transport_detail.is_empty():
+			transport_detail = "Network request failed (result %s)." % result
+		_handle_failure(transport_detail, true)
 		return
 
 	var body_text := body.get_string_from_utf8()
@@ -1160,6 +1235,7 @@ func _on_request_completed(
 		_handle_failure("The API response did not contain assistant text.", false)
 		return
 
+	_emit_phase_v02112("checking")
 	_process_completed_content(content)
 
 
@@ -1209,14 +1285,325 @@ func _handle_failure(message: String, retryable: bool) -> void:
 	var attempt := int(_active_job.get("attempt", 1))
 	var max_retries := int(_active_job.get("max_retries", 0))
 	if retryable and attempt <= max_retries:
+		_reset_stream_attempt_v02112("retry")
 		call_deferred("_start_active_request")
 		return
 
+	_reset_stream_attempt_v02112("failed")
 	var failed_job := _active_job.duplicate(true)
 	_active_job.clear()
 	job_failed.emit(str(failed_job.get("id", "")), str(failed_job.get("type", "")), message)
 	_emit_queue_changed()
 	call_deferred("_start_next_job")
+
+
+func _endpoint_can_stream_v02112(url: String, profile: Dictionary) -> bool:
+	if profile.has("streaming_supported") and not bool(profile.get("streaming_supported")):
+		return false
+	var clean := url.strip_edges().to_lower()
+	return (
+		(clean.begins_with("https://") or clean.begins_with("http://"))
+		and clean.contains("/chat/completions")
+	)
+
+
+func _should_stream_active_job_v02112() -> bool:
+	return (
+		bool(_active_job.get("stream_preferred_v02112", false))
+		and bool(_active_job.get("stream_supported_v02112", false))
+		and not bool(_active_job.get("stream_force_nonstream_v02112", false))
+	)
+
+
+func _start_streaming_active_request_v02112() -> void:
+	if _stream_transport_v02112 == null:
+		_create_stream_transport_v02112()
+	_stream_request_serial_v02112 += 1
+	var request_token := _stream_request_serial_v02112
+	_active_job["stream_request_token_v02112"] = request_token
+	_active_job["stream_attempt_open_v02112"] = true
+	_active_job["stream_provisional_emitted_v02112"] = false
+	_active_job["stream_content_v02112"] = ""
+	_active_job["stream_response_code_v02112"] = 0
+	_active_job["stream_response_headers_v02112"] = PackedStringArray()
+	_set_active_stream_metadata_v02112("stream", true, false)
+	_stream_decoder_v02112.reset()
+	_structured_stream_v02112.reset()
+	var payload: Dictionary = _active_job.get("payload", {}).duplicate(true)
+	payload["stream"] = true
+	var headers: PackedStringArray = _active_job.get("headers", PackedStringArray()).duplicate()
+	var has_accept := false
+	for header in headers:
+		if str(header).to_lower().begins_with("accept:"):
+			has_accept = true
+			break
+	if not has_accept:
+		headers.append("Accept: text/event-stream")
+	var start_error := _stream_transport_v02112.start_request(
+		str(_active_job.get("url", "")),
+		headers,
+		JSON.stringify(payload),
+		300.0,
+		request_token
+	)
+	if start_error != OK:
+		_active_job["stream_attempt_open_v02112"] = false
+		_handle_failure("Could not start streaming API request (error %s)." % start_error, true)
+
+
+func _on_stream_opened_v02112(
+	request_token: int, response_code: int, headers: PackedStringArray
+) -> void:
+	if not _stream_event_is_current_v02112(request_token):
+		return
+	_active_job["stream_response_code_v02112"] = response_code
+	_active_job["stream_response_headers_v02112"] = headers
+	var metadata := _stream_metadata_v02112()
+	metadata["response_code"] = response_code
+	job_stream_started.emit(
+		str(_active_job.get("id", "")), str(_active_job.get("type", "")), metadata
+	)
+	_emit_phase_v02112("streaming")
+
+
+func _on_stream_body_chunk_v02112(request_token: int, chunk: PackedByteArray) -> void:
+	if not _stream_event_is_current_v02112(request_token):
+		return
+	var decoded := _stream_decoder_v02112.feed_bytes(chunk)
+	var error_text := str(decoded.get("error", ""))
+	if not error_text.is_empty():
+		_on_stream_protocol_error_v02112(error_text)
+		return
+	_emit_stream_deltas_v02112(decoded.get("deltas", []))
+
+
+func _on_stream_request_finished_v02112(
+	request_token: int, response_code: int, headers: PackedStringArray
+) -> void:
+	if not _stream_event_is_current_v02112(request_token):
+		return
+	var tail := _stream_decoder_v02112.finish()
+	var error_text := str(tail.get("error", ""))
+	if not error_text.is_empty():
+		_on_stream_protocol_error_v02112(error_text)
+		return
+	_emit_stream_deltas_v02112(tail.get("deltas", []))
+	if response_code < 200 or response_code >= 300:
+		var raw_error := _stream_decoder_v02112.raw_text()
+		if _stream_rejection_allows_fallback_v02112(response_code, raw_error):
+			_fallback_to_completed_transport_v02112("provider_unsupported")
+			return
+		_active_job["stream_attempt_open_v02112"] = false
+		_on_request_completed(
+			HTTPRequest.RESULT_SUCCESS,
+			response_code,
+			headers,
+			_stream_decoder_v02112.raw_body()
+		)
+		return
+	if not _stream_decoder_v02112.saw_sse_event():
+		# Some compatible endpoints accept stream=true but reply with a normal JSON
+		# envelope. Preserve the established completed-response path unchanged.
+		_active_job["stream_attempt_open_v02112"] = false
+		_set_active_stream_metadata_v02112("completed_body_fallback", false, true)
+		_on_request_completed(
+			HTTPRequest.RESULT_SUCCESS,
+			response_code,
+			headers,
+			_stream_decoder_v02112.raw_body()
+		)
+		return
+	if not _stream_decoder_v02112.done_received():
+		_on_stream_protocol_error_v02112("The streaming response ended before a completion event.")
+		return
+	var content := str(_active_job.get("stream_content_v02112", ""))
+	if content.is_empty():
+		_on_stream_protocol_error_v02112("The streaming response did not contain assistant text.")
+		return
+	_active_job["stream_attempt_open_v02112"] = false
+	job_stream_finished.emit(
+		str(_active_job.get("id", "")),
+		str(_active_job.get("type", "")),
+		_stream_metadata_v02112()
+	)
+	_emit_phase_v02112("checking")
+	var envelope := {"choices": [{"message": {"content": content}}]}
+	_on_request_completed(
+		HTTPRequest.RESULT_SUCCESS,
+		response_code,
+		headers,
+		JSON.stringify(envelope).to_utf8_buffer()
+	)
+
+
+func _on_stream_request_failed_v02112(
+	request_token: int, message: String, _retryable: bool
+) -> void:
+	if not _stream_event_is_current_v02112(request_token):
+		return
+	_active_job["stream_transport_error_v02112"] = message
+	_active_job["stream_attempt_open_v02112"] = false
+	_on_request_completed(
+		HTTPRequest.RESULT_CONNECTION_ERROR, 0, PackedStringArray(), PackedByteArray()
+	)
+
+
+func _on_stream_protocol_error_v02112(message: String) -> void:
+	if _stream_transport_v02112 != null:
+		_stream_transport_v02112.cancel()
+	_active_job["stream_attempt_open_v02112"] = false
+	_reset_stream_attempt_v02112("malformed_stream")
+	_handle_failure(message, true)
+
+
+func _emit_stream_deltas_v02112(deltas_value: Variant) -> void:
+	if not deltas_value is Array:
+		return
+	for raw_delta in deltas_value:
+		var delta := str(raw_delta)
+		if delta.is_empty():
+			continue
+		_active_job["stream_content_v02112"] = (
+			str(_active_job.get("stream_content_v02112", "")) + delta
+		)
+		_active_job["stream_provisional_emitted_v02112"] = true
+		var metadata := _stream_metadata_v02112()
+		metadata["provisional"] = true
+		job_stream_delta.emit(
+			str(_active_job.get("id", "")),
+			str(_active_job.get("type", "")),
+			delta,
+			metadata
+		)
+		if str(_active_job.get("parse_mode", "object")) == "collaborator_text":
+			continue
+		var units := _structured_stream_v02112.feed(delta)
+		for item in units.get("items", []):
+			var item_metadata := metadata.duplicate(true)
+			item_metadata["unit_kind"] = "array_item"
+			job_stream_item.emit(
+				str(_active_job.get("id", "")),
+				str(_active_job.get("type", "")),
+				item,
+				item_metadata
+			)
+		for field_value in units.get("fields", []):
+			var field_metadata := metadata.duplicate(true)
+			field_metadata["unit_kind"] = "object_field"
+			field_metadata["field_name"] = str(field_value.get("name", ""))
+			job_stream_item.emit(
+				str(_active_job.get("id", "")),
+				str(_active_job.get("type", "")),
+				field_value,
+				field_metadata
+			)
+
+
+func _stream_rejection_allows_fallback_v02112(response_code: int, body_text: String) -> bool:
+	if bool(_active_job.get("stream_fallback_used_v02112", false)):
+		return false
+	if response_code not in [400, 404, 405, 415, 422, 501]:
+		return false
+	var lower := body_text.to_lower()
+	return lower.contains("stream") and (
+		lower.contains("unsupported")
+		or lower.contains("not support")
+		or lower.contains("not available")
+		or lower.contains("unknown")
+	)
+
+
+func _fallback_to_completed_transport_v02112(reason: String) -> void:
+	if _stream_transport_v02112 != null:
+		_stream_transport_v02112.cancel()
+	_reset_stream_attempt_v02112(reason)
+	_before_transport_fallback_v02112()
+	_active_job["stream_force_nonstream_v02112"] = true
+	_active_job["stream_fallback_used_v02112"] = true
+	_set_active_stream_metadata_v02112("completed_request_fallback", false, true)
+	_active_job["attempt"] = maxi(0, int(_active_job.get("attempt", 1)) - 1)
+	call_deferred("_start_active_request")
+
+
+func _before_transport_fallback_v02112() -> void:
+	pass
+
+
+func _reset_stream_attempt_v02112(reason: String) -> void:
+	if _active_job.is_empty():
+		return
+	var had_stream := (
+		bool(_active_job.get("stream_attempt_open_v02112", false))
+		or bool(_active_job.get("stream_provisional_emitted_v02112", false))
+	)
+	_active_job["stream_attempt_open_v02112"] = false
+	_active_job["stream_provisional_emitted_v02112"] = false
+	_active_job["stream_content_v02112"] = ""
+	_stream_decoder_v02112.reset()
+	_structured_stream_v02112.reset()
+	if not had_stream:
+		return
+	var metadata := _stream_metadata_v02112()
+	metadata["reason"] = reason
+	job_stream_reset.emit(
+		str(_active_job.get("id", "")), str(_active_job.get("type", "")), metadata
+	)
+
+
+func _stream_event_is_current_v02112(request_token: int) -> bool:
+	return (
+		not _active_job.is_empty()
+		and request_token == int(_active_job.get("stream_request_token_v02112", -1))
+		and bool(_active_job.get("stream_attempt_open_v02112", false))
+	)
+
+
+func _stream_metadata_v02112() -> Dictionary:
+	return {
+		"attempt": int(_active_job.get("attempt", 1)),
+		"request_token": int(_active_job.get("stream_request_token_v02112", 0)),
+		"provisional": bool(_active_job.get("stream_provisional_emitted_v02112", false)),
+		"transport": "stream",
+		"profile_name": str(_active_job.get("profile_name", "")),
+		"model": str(_active_job.get("model", ""))
+	}
+
+
+func _set_active_stream_metadata_v02112(
+	transport: String, streaming_used: bool, fallback_used: bool
+) -> void:
+	if _active_job.is_empty():
+		return
+	var metadata: Dictionary = _active_job.get("metadata", {}).duplicate(true)
+	metadata["response_transport"] = transport
+	metadata["streaming_used"] = streaming_used
+	metadata["streaming_fallback_used"] = fallback_used
+	_active_job["metadata"] = metadata
+
+
+func _emit_phase_v02112(phase: String) -> void:
+	if _active_job.is_empty():
+		return
+	job_phase_changed.emit(
+		str(_active_job.get("id", "")),
+		str(_active_job.get("type", "")),
+		phase,
+		_stream_metadata_v02112()
+	)
+
+
+func _on_internal_job_completed_v02112(
+	job_id: String, job_type: String, _data: Variant, metadata: Dictionary
+) -> void:
+	job_phase_changed.emit(job_id, job_type, "ready", metadata.duplicate(true))
+
+
+func _on_internal_job_failed_v02112(job_id: String, job_type: String, _message: String) -> void:
+	job_phase_changed.emit(job_id, job_type, "failed", {})
+
+
+func _on_internal_job_cancelled_v02112(job_id: String, job_type: String) -> void:
+	job_phase_changed.emit(job_id, job_type, "cancelled", {})
 
 
 func _parse_job_output_with_diagnostics(content: String, parse_mode: String) -> Dictionary:

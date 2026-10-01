@@ -4,7 +4,7 @@ Character Card Forge has a large inherited feature surface. A new feature can wo
 
 ## Broad regression profiles
 
-The regression registry is versioned and composable. `tools/regression_suites_v01520.json` remains the broad baseline introduced in v0.15.20, while later manifests such as `tools/regression_suites_v01521.json` inherit that baseline and append representative tests for newly supported major features.
+The regression registry is versioned and composable. `tools/regression_suites_v01520.json` remains the broad baseline introduced in v0.15.20, while the current `tools/regression_suites_v02112.json` inherits that baseline and appends representative tests for newer supported features.
 
 The resulting merged registry groups representative tests by user-facing area:
 
