@@ -9,10 +9,10 @@ const SUPPORT_CENTER_CURRENT = preload(
 const HELP_CENTER_CURRENT = preload(
 	"res://scripts/ui/help_center_window_v0203.gd"
 )
-const SETTINGS_VIEW_CURRENT = preload("res://scripts/ui/settings_view_v0208.gd")
+const SETTINGS_VIEW_CURRENT = preload("res://scripts/ui/settings_view_current.gd")
 const WORKSPACE_CURRENT = preload("res://scripts/ui/workspace_current.gd")
 const LIBRARY_CURRENT = preload("res://scripts/ui/library_view_current.gd")
-const CURRENT_BUILD_VERSION := "0.21.11"
+const CURRENT_BUILD_VERSION := "0.21.12"
 
 var _support_center_v0202: CCFSupportCenterWindowV0202
 var _help_center_v0203: CCFHelpCenterWindowV0203

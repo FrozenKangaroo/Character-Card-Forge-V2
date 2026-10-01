@@ -11,6 +11,92 @@ var _precedence_roles_v0171: VBoxContainer
 var _precedence_notices_v0171: Label
 var _evidence_review_dialog_v0171: AcceptDialog
 var _evidence_review_text_v0171: TextEdit
+var _stream_job_id_v02112 := ""
+var _stream_reply_v02112 := ""
+var _stream_phase_v02112 := ""
+
+
+func set_generation_service(service: CCFGenerationService) -> void:
+	var previous := _generation_service
+	if previous != null:
+		if previous.job_stream_delta.is_connected(_on_stream_delta_v02112):
+			previous.job_stream_delta.disconnect(_on_stream_delta_v02112)
+		if previous.job_stream_reset.is_connected(_on_stream_reset_v02112):
+			previous.job_stream_reset.disconnect(_on_stream_reset_v02112)
+		if previous.job_phase_changed.is_connected(_on_stream_phase_v02112):
+			previous.job_phase_changed.disconnect(_on_stream_phase_v02112)
+	super.set_generation_service(service)
+	if _generation_service != null:
+		_generation_service.job_stream_delta.connect(_on_stream_delta_v02112)
+		_generation_service.job_stream_reset.connect(_on_stream_reset_v02112)
+		_generation_service.job_phase_changed.connect(_on_stream_phase_v02112)
+
+
+func _on_generation_started(job_id: String, job_type: String, label: String) -> void:
+	if job_type == "collaborator_reply":
+		_stream_job_id_v02112 = job_id
+		_stream_reply_v02112 = ""
+		_stream_phase_v02112 = "generating"
+	super._on_generation_started(job_id, job_type, label)
+
+
+func _on_generation_completed(
+	job_id: String, job_type: String, data: Variant, metadata: Dictionary
+) -> void:
+	_clear_stream_reply_v02112(job_id)
+	super._on_generation_completed(job_id, job_type, data, metadata)
+
+
+func _on_generation_failed(job_id: String, job_type: String, message: String) -> void:
+	_clear_stream_reply_v02112(job_id)
+	super._on_generation_failed(job_id, job_type, message)
+
+
+func _working_text_v0153() -> String:
+	if (
+		_active_collaborator_job_type_v0153 == "collaborator_reply"
+		and not _stream_reply_v02112.is_empty()
+	):
+		var state := "Checking completed reply…" if _stream_phase_v02112 == "checking" else "Character Collaborator is writing…"
+		return "%s\n\n%s\n\nProvisional — not yet saved" % [state, _stream_reply_v02112]
+	return super._working_text_v0153()
+
+
+func _on_stream_delta_v02112(
+	job_id: String, job_type: String, text_delta: String, _metadata: Dictionary
+) -> void:
+	if job_id != _stream_job_id_v02112 or job_type != "collaborator_reply":
+		return
+	_stream_reply_v02112 += text_delta
+	_refresh_chat()
+
+
+func _on_stream_reset_v02112(
+	job_id: String, job_type: String, _metadata: Dictionary
+) -> void:
+	if job_id != _stream_job_id_v02112 or job_type != "collaborator_reply":
+		return
+	_stream_reply_v02112 = ""
+	_stream_phase_v02112 = "generating"
+	_refresh_chat()
+
+
+func _on_stream_phase_v02112(
+	job_id: String, job_type: String, phase: String, _metadata: Dictionary
+) -> void:
+	if job_id != _stream_job_id_v02112 or job_type != "collaborator_reply":
+		return
+	_stream_phase_v02112 = phase
+	if phase in ["checking", "streaming"]:
+		_refresh_chat()
+
+
+func _clear_stream_reply_v02112(job_id: String) -> void:
+	if job_id != _stream_job_id_v02112:
+		return
+	_stream_job_id_v02112 = ""
+	_stream_reply_v02112 = ""
+	_stream_phase_v02112 = ""
 
 
 func _ready() -> void:

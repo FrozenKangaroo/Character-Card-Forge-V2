@@ -6,6 +6,47 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.12] - 2026-10-01
+
+### Highlights
+
+- Added an opt-in global **Stream AI responses** setting backed by a real chunked HTTP
+  and OpenAI-compatible SSE transport shared by all text-generation jobs.
+- Added progressive Character Collaborator prose and complete provisional AI Idea cards,
+  with clear Generating, Checking and Ready lifecycle states.
+
+### Changes
+
+- Kept existing completion, queue, retry, repair, validation and final-result signals
+  compatible while adding job/attempt-scoped stream lifecycle events.
+- Added conservative incremental JSON framing for complete top-level object fields and
+  array members, including nested values, escapes, Unicode and hostile chunk boundaries.
+- Added automatic completed-response handling when a compatible endpoint ignores the
+  stream parameter, plus one safe non-stream fallback for recognizable unsupported-stream
+  responses.
+- Discarded all provisional output on cancellation, retry or terminal failure and blocked
+  delayed old-attempt events from mutating the active job.
+- Kept every final response on the established full parser, local repair, semantic
+  validation and review path; provisional output is never committed to project data.
+- Advanced the application settings schema to version 10 and the inherited regression
+  manifest to v0.21.12.
+
+### Migration notes
+
+- None. The new preference defaults off, and existing provider profiles, projects, cards,
+  Idea Sources, Idea Packs and Front Porch data remain valid.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Real streaming is attempted for eligible OpenAI-compatible chat-completions endpoints;
+  provider and custom-endpoint support varies. The initial progressive UI emphasizes
+  Collaborator prose and complete AI Idea objects, while other structured workflows keep
+  their established final preview/application surfaces.
+
 ## [0.21.11] - 2026-10-01
 
 ### Highlights

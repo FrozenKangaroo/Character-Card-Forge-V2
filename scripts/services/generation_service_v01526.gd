@@ -122,6 +122,11 @@ func cancel_active_job() -> void:
 	super.cancel_active_job()
 
 
+func _before_transport_fallback_v02112() -> void:
+	_release_scheduler_lease_v01526()
+	super._before_transport_fallback_v02112()
+
+
 func _prepare_character_stage(job_value: Dictionary) -> Dictionary:
 	var job := super._prepare_character_stage(job_value)
 	if _parallel_child_mode_v01526:

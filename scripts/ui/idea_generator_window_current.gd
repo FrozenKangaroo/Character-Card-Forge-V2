@@ -132,6 +132,11 @@ var _source_export_dialog_v0213: FileDialog
 var _source_pending_export_v0213: Dictionary = {}
 var _source_delete_dialog_v0213: ConfirmationDialog
 var _idea_generator_geometry_active_v0217 := false
+var _provisional_ideas_panel_v02112: PanelContainer
+var _provisional_ideas_list_v02112: VBoxContainer
+var _provisional_ideas_status_v02112: Label
+var _provisional_idea_job_v02112 := ""
+var _provisional_idea_count_v02112 := 0
 
 
 func _ready() -> void:
@@ -162,6 +167,97 @@ func _ready() -> void:
 	_install_active_source_banner_v0213()
 	_refresh_source_library_v0213()
 	_update_delete_idea_action_v0216()
+	_install_provisional_ideas_v02112()
+
+
+func _install_provisional_ideas_v02112() -> void:
+	var ai_tab := _tabs.get_node_or_null("AI Ideas") as VBoxContainer
+	if ai_tab == null or _ai_ideas_host == null:
+		return
+	_provisional_ideas_panel_v02112 = PanelContainer.new()
+	_provisional_ideas_panel_v02112.name = "ProvisionalIdeasV02112"
+	_provisional_ideas_panel_v02112.visible = false
+	var margin := MarginContainer.new()
+	margin.add_theme_constant_override("margin_left", 10)
+	margin.add_theme_constant_override("margin_right", 10)
+	margin.add_theme_constant_override("margin_top", 8)
+	margin.add_theme_constant_override("margin_bottom", 8)
+	_provisional_ideas_panel_v02112.add_child(margin)
+	var root := VBoxContainer.new()
+	root.add_theme_constant_override("separation", 7)
+	margin.add_child(root)
+	_provisional_ideas_status_v02112 = Label.new()
+	_provisional_ideas_status_v02112.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_provisional_ideas_status_v02112.modulate = Color(0.88, 0.72, 1.0)
+	root.add_child(_provisional_ideas_status_v02112)
+	_provisional_ideas_list_v02112 = VBoxContainer.new()
+	_provisional_ideas_list_v02112.add_theme_constant_override("separation", 7)
+	root.add_child(_provisional_ideas_list_v02112)
+	ai_tab.add_child(_provisional_ideas_panel_v02112)
+	ai_tab.move_child(
+		_provisional_ideas_panel_v02112, _ai_ideas_host.get_index()
+	)
+
+
+func begin_provisional_ideas_v02112(job_id: String) -> void:
+	if _provisional_ideas_panel_v02112 == null:
+		return
+	clear_provisional_ideas_v02112()
+	_provisional_idea_job_v02112 = job_id
+	_provisional_idea_count_v02112 = 0
+	_provisional_ideas_panel_v02112.visible = true
+	_provisional_ideas_status_v02112.text = (
+		"● Generating… Complete Ideas will appear here provisionally. Final actions stay disabled until checking finishes."
+	)
+
+
+func append_provisional_idea_v02112(job_id: String, idea: Dictionary) -> void:
+	if job_id != _provisional_idea_job_v02112 or _provisional_ideas_list_v02112 == null:
+		return
+	_provisional_idea_count_v02112 += 1
+	var panel := VBoxContainer.new()
+	panel.add_theme_constant_override("separation", 3)
+	var title_label := Label.new()
+	title_label.text = "%d. %s" % [
+		_provisional_idea_count_v02112,
+		str(idea.get("title", "Untitled Idea"))
+	]
+	title_label.add_theme_font_size_override("font_size", 16)
+	panel.add_child(title_label)
+	var concept := Label.new()
+	concept.text = str(idea.get("concept", idea.get("description", "")))
+	concept.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	concept.modulate = Color(0.75, 0.78, 0.87)
+	panel.add_child(concept)
+	var provisional := Label.new()
+	provisional.text = "Provisional — awaiting complete response and validation"
+	provisional.modulate = Color(0.88, 0.66, 0.42)
+	panel.add_child(provisional)
+	_provisional_ideas_list_v02112.add_child(panel)
+
+
+func set_provisional_ideas_checking_v02112(job_id: String) -> void:
+	if job_id != _provisional_idea_job_v02112 or _provisional_ideas_status_v02112 == null:
+		return
+	_provisional_ideas_status_v02112.text = (
+		"◌ Checking… The complete response is being parsed and validated."
+	)
+
+
+func clear_provisional_ideas_v02112(job_id: String = "") -> void:
+	if (
+		not job_id.is_empty()
+		and not _provisional_idea_job_v02112.is_empty()
+		and job_id != _provisional_idea_job_v02112
+	):
+		return
+	if _provisional_ideas_list_v02112 != null:
+		for child in _provisional_ideas_list_v02112.get_children():
+			child.queue_free()
+	if _provisional_ideas_panel_v02112 != null:
+		_provisional_ideas_panel_v02112.visible = false
+	_provisional_idea_job_v02112 = ""
+	_provisional_idea_count_v02112 = 0
 
 
 func open_studio() -> void:

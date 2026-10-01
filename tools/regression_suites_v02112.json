@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.12 complete regression suites",
+  "description": "v0.21.11 baseline plus global AI response streaming, safe incremental structured output, attempt isolation, cancellation and provider fallback.",
+  "base_manifest": "regression_suites_v02111.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v02112_global_ai_streaming",
+        "label": "v0.21.12 global AI streaming and progressive generation",
+        "kind": "godot",
+        "path": "tools/test_v02112_global_ai_streaming.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}

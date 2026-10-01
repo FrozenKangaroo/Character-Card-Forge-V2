@@ -312,7 +312,10 @@ Repairing missing content
 Ready for review
 ```
 
-The current v0.13 slice already exposes the repair stage through the existing queue label; richer per-stage reporting is still planned.
+The current runtime now exposes provider-independent Generating, Streaming, Checking and
+Ready phases. Character Collaborator prose and complete AI Idea objects can appear
+provisionally while final parsing and validation remain authoritative. Additional
+workflow-specific phase detail is still planned.
 
 Generation Preview should also surface the semantic contract report and repair history more clearly.
 
@@ -320,7 +323,8 @@ Generation Preview should also surface the semantic contract report and repair h
 
 After the core validator/component model is stable:
 
-- add provider-aware streaming where worthwhile;
+- extend the shared provider-aware streaming events into richer per-field presentation
+  where that can remain clearly provisional and review-first;
 - add Full/Lite/Compact-Lite or equivalent multi-pass strategies for smaller context windows;
 - consider section-by-section generation/continuation and progress;
 - make greeting counts and similar output rules configurable contracts;

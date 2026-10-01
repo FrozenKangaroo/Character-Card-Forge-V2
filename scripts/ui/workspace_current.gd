@@ -90,6 +90,7 @@ var _idea_prompt_hint_v0213: Label
 var _idea_preset_autofill_text_v02111 := ""
 var _idea_preset_autofill_source_v02111 := ""
 var _idea_preset_text_update_v02111 := false
+var _stream_complete_units_v02112: Dictionary = {}
 
 
 func _ready() -> void:
@@ -103,6 +104,89 @@ func _ready() -> void:
 
 func _init() -> void:
 	_front_porch_service_v0172 = FRONT_PORCH_SERVICE_CURRENT.new()
+
+
+func _create_worker_service_v01526(
+	worker_id: String, worker_label: String, job_number_base: int
+) -> CCFGenerationServiceV01526:
+	var service := super._create_worker_service_v01526(
+		worker_id, worker_label, job_number_base
+	)
+	service.job_stream_started.connect(_on_job_stream_started_v02112)
+	service.job_stream_item.connect(_on_job_stream_item_v02112)
+	service.job_stream_finished.connect(_on_job_stream_finished_v02112)
+	service.job_stream_reset.connect(_on_job_stream_reset_v02112)
+	service.job_phase_changed.connect(_on_job_phase_changed_v02112)
+	return service
+
+
+func _on_job_stream_started_v02112(
+	job_id: String, job_type: String, _metadata: Dictionary
+) -> void:
+	_stream_complete_units_v02112[job_id] = 0
+	if (
+		job_type == "ideas"
+		and _idea_batch_job_indices_v0211.has(job_id)
+		and _idea_generator_v01532 != null
+	):
+		_idea_generator_v01532.call("begin_provisional_ideas_v02112", job_id)
+	_status.text = "● Generating… receiving AI output."
+
+
+func _on_job_stream_item_v02112(
+	job_id: String, job_type: String, provisional_item: Variant, metadata: Dictionary
+) -> void:
+	var count := int(_stream_complete_units_v02112.get(job_id, 0)) + 1
+	_stream_complete_units_v02112[job_id] = count
+	if (
+		job_type == "ideas"
+		and _idea_batch_job_indices_v0211.has(job_id)
+		and provisional_item is Dictionary
+		and str(metadata.get("unit_kind", "")) == "array_item"
+		and _idea_generator_v01532 != null
+	):
+		_idea_generator_v01532.call(
+			"append_provisional_idea_v02112", job_id, provisional_item
+		)
+		return
+	_status.text = "● Generating… %d complete structured unit%s received provisionally." % [
+		count, "" if count == 1 else "s"
+	]
+
+
+func _on_job_stream_finished_v02112(
+	job_id: String, job_type: String, _metadata: Dictionary
+) -> void:
+	if (
+		job_type == "ideas"
+		and _idea_batch_job_indices_v0211.has(job_id)
+		and _idea_generator_v01532 != null
+	):
+		_idea_generator_v01532.call("set_provisional_ideas_checking_v02112", job_id)
+	_status.text = "◌ Checking… parsing and validating the completed AI response."
+
+
+func _on_job_stream_reset_v02112(
+	job_id: String, job_type: String, _metadata: Dictionary
+) -> void:
+	_stream_complete_units_v02112.erase(job_id)
+	if job_type == "ideas" and _idea_generator_v01532 != null:
+		_idea_generator_v01532.call("clear_provisional_ideas_v02112", job_id)
+
+
+func _on_job_phase_changed_v02112(
+	job_id: String, job_type: String, phase: String, _metadata: Dictionary
+) -> void:
+	if phase == "checking":
+		_status.text = "◌ Checking… parsing and validating the completed AI response."
+	elif phase == "ready":
+		_stream_complete_units_v02112.erase(job_id)
+		if job_type == "ideas" and _idea_generator_v01532 != null:
+			_idea_generator_v01532.call("clear_provisional_ideas_v02112", job_id)
+	elif phase in ["failed", "cancelled"]:
+		_stream_complete_units_v02112.erase(job_id)
+		if job_type == "ideas" and _idea_generator_v01532 != null:
+			_idea_generator_v01532.call("clear_provisional_ideas_v02112", job_id)
 
 
 func _build_concept_studio() -> void:

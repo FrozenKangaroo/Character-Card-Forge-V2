@@ -2,7 +2,7 @@ class_name CCFSettingsService
 extends RefCounted
 
 const SETTINGS_FILE := CCFStorageService.SETTINGS_DIR + "/app_settings.json"
-const SETTINGS_FORMAT_VERSION := 9
+const SETTINGS_FORMAT_VERSION := 10
 const ROLE_TEXT := "text"
 const ROLE_TEXT_FAST := "text_fast"
 const ROLE_TEXT_DEEP := "text_deep"
@@ -37,6 +37,7 @@ static func default_settings() -> Dictionary:
 			"include_existing_fields": true,
 			"retry_count": 1,
 			"default_idea_count": 6,
+			"stream_ai_responses": false,
 			"attachment_context_character_limit": 24000,
 			"text_fallback_enabled": false,
 			"default_image_size": "1024x1024",
@@ -423,6 +424,9 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 	generation_settings["attachment_context_character_limit"] = clampi(int(generation_settings.get("attachment_context_character_limit", 24000)), 2000, 120000)
 	generation_settings["text_fallback_enabled"] = bool(
 		generation_settings.get("text_fallback_enabled", false)
+	)
+	generation_settings["stream_ai_responses"] = bool(
+		generation_settings.get("stream_ai_responses", false)
 	)
 	var image_size_text := str(generation_settings.get("default_image_size", "1024x1024")).strip_edges()
 	generation_settings["default_image_size"] = image_size_text if not image_size_text.is_empty() else "1024x1024"

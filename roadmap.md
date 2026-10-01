@@ -196,7 +196,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.11** and uses the Godot
+The current source candidate displays **v0.21.12** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -205,6 +205,19 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.12 — Global AI Response Streaming (candidate)
+
+- Added one opt-in application-wide streaming preference with real chunked HTTP/SSE
+  delivery, ordinary-response fallback and unchanged non-streaming behavior.
+- Added stable job/attempt stream events, strict retry/cancel buffer clearing and delayed
+  event isolation without replacing the established completion/error queue API.
+- Added safe incremental JSON framing for complete array members and object fields while
+  retaining the mature final parser, repair, validation and review pipeline.
+- Added provisional Collaborator prose, complete provisional AI Idea cards and clear
+  Generating / Checking / Ready presentation without enabling final actions early.
+- Preserved Idea Source, Direction Preset, Generate More, Front Porch, card format and
+  provider-profile semantics with no project migration.
 
 ### v0.21.11 — Idea Source Direction Presets and Work Days Hardening (candidate)
 
