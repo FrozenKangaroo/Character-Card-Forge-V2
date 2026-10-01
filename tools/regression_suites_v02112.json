@@ -1,7 +1,7 @@
 {
   "format_version": 1,
   "name": "Character Card Forge v0.21.12 complete regression suites",
-  "description": "v0.21.11 baseline plus global AI response streaming, safe incremental structured output, attempt isolation, cancellation and provider fallback.",
+  "description": "v0.21.11 baseline plus global AI response streaming, safe incremental structured output, attempt isolation, cancellation, provider fallback and settings persistence safety.",
   "base_manifest": "regression_suites_v02111.json",
   "suite_additions": {
     "current_wiring": [
@@ -11,6 +11,13 @@
         "kind": "godot",
         "path": "tools/test_v02112_global_ai_streaming.gd",
         "timeout_seconds": 180
+      },
+      {
+        "id": "v02112_settings_data_loss_hotfix",
+        "label": "v0.21.12 atomic settings persistence and direct-test isolation",
+        "kind": "godot",
+        "path": "tools/test_v02112_settings_data_loss_hotfix.gd",
+        "timeout_seconds": 120
       }
     ]
   }

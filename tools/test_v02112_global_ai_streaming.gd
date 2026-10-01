@@ -1,5 +1,8 @@
 extends SceneTree
 
+const TEST_USER_DATA_ISOLATION = preload("res://tools/test_user_data_isolation.gd")
+var _test_user_data_isolation := TEST_USER_DATA_ISOLATION.activate("v02112-global-ai-streaming")
+
 const DECODER = preload(
 	"res://scripts/services/openai_stream_decoder_v02112.gd"
 )
@@ -23,6 +26,10 @@ const IDEA_WINDOW = preload(
 )
 
 var _failed := false
+var _settings_test_path_v02112 := OS.get_temp_dir().path_join(
+	"ccf-v02112-streaming-settings-%d-%d.json"
+	% [OS.get_process_id(), Time.get_ticks_usec()]
+)
 
 
 func _init() -> void:
@@ -47,20 +54,42 @@ func _run() -> void:
 
 
 func _test_settings_persistence() -> void:
+	var production_absolute := ProjectSettings.globalize_path(
+		CCFSettingsService.SETTINGS_FILE
+	)
+	var isolated_absolute := ProjectSettings.globalize_path(
+		_settings_test_path_v02112
+	)
+	_require(
+		isolated_absolute != production_absolute
+		and isolated_absolute.begins_with(OS.get_temp_dir()),
+		"The streaming persistence regression must refuse the production settings file."
+	)
+	_remove_settings_fixture_v02112()
 	var settings := CCFSettingsService.default_settings()
 	_require(
 		not bool((settings.get("generation", {}) as Dictionary).get("stream_ai_responses", true)),
 		"Streaming must default off for compatibility."
 	)
 	(settings["generation"] as Dictionary)["stream_ai_responses"] = true
-	var saved := CCFSettingsService.save_settings(settings)
-	var loaded := CCFSettingsService.load_settings()
+	var saved := CCFSettingsService.save_settings_to_path(
+		settings, _settings_test_path_v02112
+	)
+	var loaded := CCFSettingsService.load_settings_from_path(
+		_settings_test_path_v02112
+	)
 	_require(
 		bool(saved.get("ok", false))
 		and bool((loaded.get("generation", {}) as Dictionary).get("stream_ai_responses", false)),
 		"The global streaming preference must persist through the normal settings service."
 	)
 	var enabled_service := GENERATION.new()
+	_require(
+		enabled_service.set_settings_path_for_test_v02112(
+			_settings_test_path_v02112
+		),
+		"The generation-service test override must accept only the isolated fixture path."
+	)
 	var enabled_queue: Dictionary = enabled_service.call(
 		"_queue_chat_job",
 		"test",
@@ -79,8 +108,14 @@ func _test_settings_persistence() -> void:
 	)
 	enabled_service.free()
 	(loaded["generation"] as Dictionary)["stream_ai_responses"] = false
-	CCFSettingsService.save_settings(loaded)
+	CCFSettingsService.save_settings_to_path(loaded, _settings_test_path_v02112)
 	var disabled_service := GENERATION.new()
+	_require(
+		disabled_service.set_settings_path_for_test_v02112(
+			_settings_test_path_v02112
+		),
+		"The disabled-stream test must use the isolated fixture path."
+	)
 	disabled_service.call(
 		"_queue_chat_job",
 		"test",
@@ -97,6 +132,17 @@ func _test_settings_persistence() -> void:
 		"Streaming off must preserve the completed-response request path."
 	)
 	disabled_service.free()
+	_remove_settings_fixture_v02112()
+
+
+func _remove_settings_fixture_v02112() -> void:
+	for path in [
+		_settings_test_path_v02112,
+		CCFSettingsService.settings_backup_path(_settings_test_path_v02112)
+	]:
+		var absolute := ProjectSettings.globalize_path(path)
+		if FileAccess.file_exists(absolute):
+			DirAccess.remove_absolute(absolute)
 
 
 func _test_sse_reconstruction_and_completed_body() -> void:

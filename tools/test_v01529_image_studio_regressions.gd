@@ -1,5 +1,8 @@
 extends SceneTree
 
+const TEST_USER_DATA_ISOLATION = preload("res://tools/test_user_data_isolation.gd")
+var _test_user_data_isolation := TEST_USER_DATA_ISOLATION.activate("v01529-image-studio")
+
 
 func _init() -> void:
 	call_deferred("_run")

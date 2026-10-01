@@ -3,6 +3,9 @@
 
 The runner deliberately isolates HOME/app-data directories so tests that exercise
 ``user://`` persistence cannot modify the author's real Character Card Forge data.
+This process-level barrier is defense in depth: every persistence-writing Godot test
+must also activate intrinsic direct-run isolation and must remain safe when launched
+without this Python wrapper.
 """
 
 from __future__ import annotations

@@ -222,6 +222,9 @@ expansion.
 - Added a transparent all-checks-off Idea fast path that avoids semantic repair, review,
   top-up and duplicate-comparison work while preserving structural parsing and configured
   transport/JSON-repair recovery.
+- Hardened application settings with atomic verified writes, last-known-good recovery and
+  corrupt-file preservation; direct persistence regressions now isolate their own
+  `user://` data even outside the official runner.
 - Preserved Idea Source, Direction Preset, Generate More, Front Porch, card format and
   provider-profile semantics with no project migration.
 

@@ -1,5 +1,8 @@
 extends SceneTree
 
+const TEST_USER_DATA_ISOLATION = preload("res://tools/test_user_data_isolation.gd")
+var _test_user_data_isolation := TEST_USER_DATA_ISOLATION.activate("v0213-idea-sources")
+
 const SOURCE_SERVICE = preload(
 	"res://scripts/services/idea_source_service_v0213.gd"
 )

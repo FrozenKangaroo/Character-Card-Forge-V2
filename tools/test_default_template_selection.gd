@@ -1,5 +1,8 @@
 extends SceneTree
 
+const TEST_USER_DATA_ISOLATION = preload("res://tools/test_user_data_isolation.gd")
+var _test_user_data_isolation := TEST_USER_DATA_ISOLATION.activate("default-template-selection")
+
 const TEMPLATE_PREFERENCES = preload("res://scripts/services/template_preference_service.gd")
 
 var _created_template_id := ""
