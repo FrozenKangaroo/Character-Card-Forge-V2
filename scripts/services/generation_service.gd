@@ -22,6 +22,9 @@ const OPENAI_STREAM_DECODER_V02112 = preload(
 const INCREMENTAL_JSON_STREAM_V02112 = preload(
 	"res://scripts/services/incremental_json_stream_v02112.gd"
 )
+const STREAM_CONTENT_CLASSIFIER_V02112 = preload(
+	"res://scripts/services/stream_content_classifier_v02112.gd"
+)
 
 var _request: HTTPRequest
 var _queue: Array[Dictionary] = []
@@ -30,6 +33,7 @@ var _next_job_number := 1
 var _stream_transport_v02112: CCFHTTPStreamTransportV02112
 var _stream_decoder_v02112 := CCFOpenAIStreamDecoderV02112.new()
 var _structured_stream_v02112 := CCFIncrementalJSONStreamV02112.new()
+var _stream_content_classifier_v02112 := CCFStreamContentClassifierV02112.new()
 var _stream_request_serial_v02112 := 0
 
 
@@ -1267,6 +1271,9 @@ func _process_completed_content(content: String) -> void:
 	completed_metadata["model"] = str(finished_job.get("model", ""))
 	completed_metadata["profile_name"] = str(finished_job.get("profile_name", ""))
 	completed_metadata["attempts"] = int(finished_job.get("attempt", 1))
+	completed_metadata["stream_retries"] = maxi(
+		0, int(finished_job.get("attempt", 1)) - 1
+	)
 	completed_metadata["response_repair_attempts"] = int(finished_job.get("repair_attempts", 0))
 	completed_metadata["parse_strategy"] = str(parse_result.get("strategy", "direct"))
 	job_completed.emit(
@@ -1285,6 +1292,7 @@ func _handle_failure(message: String, retryable: bool) -> void:
 	var attempt := int(_active_job.get("attempt", 1))
 	var max_retries := int(_active_job.get("max_retries", 0))
 	if retryable and attempt <= max_retries:
+		_emit_phase_v02112("retrying")
 		_reset_stream_attempt_v02112("retry")
 		call_deferred("_start_active_request")
 		return
@@ -1326,9 +1334,12 @@ func _start_streaming_active_request_v02112() -> void:
 	_active_job["stream_content_v02112"] = ""
 	_active_job["stream_response_code_v02112"] = 0
 	_active_job["stream_response_headers_v02112"] = PackedStringArray()
+	_active_job["stream_final_started_v02112"] = false
 	_set_active_stream_metadata_v02112("stream", true, false)
 	_stream_decoder_v02112.reset()
 	_structured_stream_v02112.reset()
+	_stream_content_classifier_v02112.reset()
+	_emit_phase_v02112("connecting")
 	var payload: Dictionary = _active_job.get("payload", {}).duplicate(true)
 	payload["stream"] = true
 	var headers: PackedStringArray = _active_job.get("headers", PackedStringArray()).duplicate()
@@ -1374,7 +1385,7 @@ func _on_stream_body_chunk_v02112(request_token: int, chunk: PackedByteArray) ->
 	if not error_text.is_empty():
 		_on_stream_protocol_error_v02112(error_text)
 		return
-	_emit_stream_deltas_v02112(decoded.get("deltas", []))
+	_consume_decoded_stream_v02112(decoded)
 
 
 func _on_stream_request_finished_v02112(
@@ -1387,7 +1398,8 @@ func _on_stream_request_finished_v02112(
 	if not error_text.is_empty():
 		_on_stream_protocol_error_v02112(error_text)
 		return
-	_emit_stream_deltas_v02112(tail.get("deltas", []))
+	_consume_decoded_stream_v02112(tail)
+	_consume_classified_stream_v02112(_stream_content_classifier_v02112.finish())
 	if response_code < 200 or response_code >= 300:
 		var raw_error := _stream_decoder_v02112.raw_text()
 		if _stream_rejection_allows_fallback_v02112(response_code, raw_error):
@@ -1421,6 +1433,7 @@ func _on_stream_request_finished_v02112(
 		_on_stream_protocol_error_v02112("The streaming response did not contain assistant text.")
 		return
 	_active_job["stream_attempt_open_v02112"] = false
+	_set_active_stream_metadata_v02112("stream", true, false)
 	job_stream_finished.emit(
 		str(_active_job.get("id", "")),
 		str(_active_job.get("type", "")),
@@ -1454,6 +1467,43 @@ func _on_stream_protocol_error_v02112(message: String) -> void:
 	_active_job["stream_attempt_open_v02112"] = false
 	_reset_stream_attempt_v02112("malformed_stream")
 	_handle_failure(message, true)
+
+
+func _consume_decoded_stream_v02112(decoded: Dictionary) -> void:
+	if bool(decoded.get("reasoning_detected", false)):
+		var transports_value: Variant = decoded.get("reasoning_transports", [])
+		var transports: Array = transports_value if transports_value is Array else []
+		_register_reasoning_v02112(transports)
+	for delta_value in decoded.get("deltas", []):
+		var classified := _stream_content_classifier_v02112.feed_content(
+			str(delta_value)
+		)
+		_consume_classified_stream_v02112(classified)
+
+
+func _consume_classified_stream_v02112(classified: Dictionary) -> void:
+	if bool(classified.get("reasoning_detected", false)):
+		var transport := str(classified.get("reasoning_transport", "tagged_content"))
+		_register_reasoning_v02112([transport])
+	if bool(classified.get("final_started", false)) and not bool(
+		_active_job.get("stream_final_started_v02112", false)
+	):
+		_active_job["stream_final_started_v02112"] = true
+		_emit_phase_v02112("generating_final")
+	_emit_stream_deltas_v02112(classified.get("final_deltas", []))
+
+
+func _register_reasoning_v02112(transports: Array) -> void:
+	_active_job["reasoning_detected_v02112"] = true
+	var existing_value: Variant = _active_job.get("reasoning_transports_v02112", [])
+	var existing: Array = existing_value.duplicate() if existing_value is Array else []
+	for transport_value in transports:
+		var transport := str(transport_value).strip_edges()
+		if not transport.is_empty() and not transport in existing:
+			existing.append(transport)
+	_active_job["reasoning_transports_v02112"] = existing
+	if not bool(_active_job.get("stream_final_started_v02112", false)):
+		_emit_phase_v02112("thinking")
 
 
 func _emit_stream_deltas_v02112(deltas_value: Variant) -> void:
@@ -1516,6 +1566,7 @@ func _stream_rejection_allows_fallback_v02112(response_code: int, body_text: Str
 func _fallback_to_completed_transport_v02112(reason: String) -> void:
 	if _stream_transport_v02112 != null:
 		_stream_transport_v02112.cancel()
+	_emit_phase_v02112("transport_fallback")
 	_reset_stream_attempt_v02112(reason)
 	_before_transport_fallback_v02112()
 	_active_job["stream_force_nonstream_v02112"] = true
@@ -1539,8 +1590,10 @@ func _reset_stream_attempt_v02112(reason: String) -> void:
 	_active_job["stream_attempt_open_v02112"] = false
 	_active_job["stream_provisional_emitted_v02112"] = false
 	_active_job["stream_content_v02112"] = ""
+	_active_job["stream_final_started_v02112"] = false
 	_stream_decoder_v02112.reset()
 	_structured_stream_v02112.reset()
+	_stream_content_classifier_v02112.reset()
 	if not had_stream:
 		return
 	var metadata := _stream_metadata_v02112()
@@ -1559,14 +1612,30 @@ func _stream_event_is_current_v02112(request_token: int) -> bool:
 
 
 func _stream_metadata_v02112() -> Dictionary:
-	return {
+	var metadata := {
 		"attempt": int(_active_job.get("attempt", 1)),
 		"request_token": int(_active_job.get("stream_request_token_v02112", 0)),
 		"provisional": bool(_active_job.get("stream_provisional_emitted_v02112", false)),
 		"transport": "stream",
 		"profile_name": str(_active_job.get("profile_name", "")),
-		"model": str(_active_job.get("model", ""))
+		"model": str(_active_job.get("model", "")),
+		"reasoning_detected": bool(_active_job.get("reasoning_detected_v02112", false)),
+		"reasoning_transport": ", ".join(
+			_active_job.get("reasoning_transports_v02112", []) as Array
+		)
 	}
+	var job_metadata_value: Variant = _active_job.get("metadata", {})
+	var job_metadata: Dictionary = (
+		job_metadata_value if job_metadata_value is Dictionary else {}
+	)
+	for field_id in [
+		"idea_batch_group_id", "idea_batch_index", "idea_batch_request_count",
+		"idea_batch_request_size", "idea_batch_requested_total",
+		"idea_batch_request_kind"
+	]:
+		if job_metadata.has(field_id):
+			metadata[field_id] = job_metadata[field_id]
+	return metadata
 
 
 func _set_active_stream_metadata_v02112(
@@ -1578,6 +1647,13 @@ func _set_active_stream_metadata_v02112(
 	metadata["response_transport"] = transport
 	metadata["streaming_used"] = streaming_used
 	metadata["streaming_fallback_used"] = fallback_used
+	metadata["stream_retries"] = maxi(0, int(_active_job.get("attempt", 1)) - 1)
+	metadata["reasoning_detected"] = bool(
+		_active_job.get("reasoning_detected_v02112", false)
+	)
+	metadata["reasoning_transport"] = ", ".join(
+		_active_job.get("reasoning_transports_v02112", []) as Array
+	)
 	_active_job["metadata"] = metadata
 
 
@@ -1728,6 +1804,8 @@ func _repair_common_json(text: String) -> String:
 func _start_json_repair(malformed_content: String, parse_mode: String) -> bool:
 	if int(_active_job.get("repair_attempts", 0)) >= 1:
 		return false
+	_emit_phase_v02112("json_repair")
+	_reset_stream_attempt_v02112("json_repair")
 	_active_job["repair_attempts"] = int(_active_job.get("repair_attempts", 0)) + 1
 	var payload: Dictionary = _active_job.get("payload", {}).duplicate(true)
 	payload["temperature"] = 0.0

@@ -225,6 +225,37 @@ func _idea_job_with_batch_metadata_v0211(
 	return job
 
 
+func set_idea_job_fast_path_v02112(job_id: String, enabled: bool) -> bool:
+	if job_id.is_empty():
+		return false
+	for index in range(_queue.size()):
+		var job: Dictionary = _queue[index]
+		if str(job.get("id", "")) != job_id:
+			continue
+		_queue[index] = _idea_job_with_fast_path_v02112(job, enabled)
+		return true
+	if (
+		not _active_job.is_empty()
+		and str(_active_job.get("id", "")) == job_id
+	):
+		_active_job = _idea_job_with_fast_path_v02112(_active_job, enabled)
+		return true
+	return false
+
+
+func _idea_job_with_fast_path_v02112(
+	job_value: Dictionary, enabled: bool
+) -> Dictionary:
+	var job := job_value.duplicate(true)
+	var metadata_value: Variant = job.get("metadata", {})
+	var metadata: Dictionary = (
+		metadata_value.duplicate(true) if metadata_value is Dictionary else {}
+	)
+	metadata["idea_fast_path_v02112"] = enabled
+	job["metadata"] = metadata
+	return job
+
+
 func queue_idea_similarity_review_v0214(
 	session: Dictionary,
 	profile: Dictionary,
@@ -406,6 +437,70 @@ func _start_idea_semantic_repair(ideas: Array, issues: Array) -> void:
 		_active_job, target
 	)
 	_active_job = decorated.get("job", _active_job)
+
+
+func _process_completed_content(content: String) -> void:
+	if (
+		str(_active_job.get("type", "")) != "ideas"
+		or not bool(
+			(_active_job.get("metadata", {}) as Dictionary).get(
+				"idea_fast_path_v02112", false
+			)
+		)
+	):
+		super._process_completed_content(content)
+		return
+	var parse_result := _parse_job_output_with_diagnostics(content, "ideas")
+	if not bool(parse_result.get("ok", false)):
+		# Malformed JSON still uses the established one-shot JSON repair/error path.
+		super._process_completed_content(content)
+		return
+	var parsed_value: Variant = parse_result.get("data", [])
+	if not parsed_value is Array:
+		super._process_completed_content(content)
+		return
+	var usable: Array = []
+	for idea_value in parsed_value as Array:
+		if not idea_value is Dictionary:
+			continue
+		var concept := str((idea_value as Dictionary).get("concept", "")).strip_edges()
+		if concept.is_empty():
+			continue
+		usable.append((idea_value as Dictionary).duplicate(true))
+	if usable.is_empty():
+		_handle_failure(
+			"The generated response contained no structurally usable Idea objects. No Ideas were shown.",
+			false
+		)
+		return
+	var finished_job := _active_job.duplicate(true)
+	_active_job.clear()
+	var completed_metadata: Dictionary = finished_job.get("metadata", {}).duplicate(true)
+	completed_metadata["model"] = str(finished_job.get("model", ""))
+	completed_metadata["profile_name"] = str(finished_job.get("profile_name", ""))
+	completed_metadata["attempts"] = int(finished_job.get("attempt", 1))
+	completed_metadata["stream_retries"] = maxi(
+		0, int(finished_job.get("attempt", 1)) - 1
+	)
+	completed_metadata["response_repair_attempts"] = int(
+		finished_job.get("repair_attempts", 0)
+	)
+	completed_metadata["semantic_repair_attempts"] = 0
+	completed_metadata["idea_fast_path_used_v02112"] = true
+	completed_metadata["idea_diversity_initial_generated_candidate_count"] = (
+		(parsed_value as Array).size()
+	)
+	completed_metadata["idea_diversity_validation_candidate_count"] = usable.size()
+	completed_metadata["idea_diversity_validation_rejections"] = []
+	completed_metadata["parse_strategy"] = str(parse_result.get("strategy", "direct"))
+	job_completed.emit(
+		str(finished_job.get("id", "")),
+		str(finished_job.get("type", "")),
+		usable,
+		completed_metadata
+	)
+	_emit_queue_changed()
+	call_deferred("_start_next_job")
 
 
 func _validate_idea_batch(ideas: Array, idea_seed_text: String) -> Dictionary:

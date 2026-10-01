@@ -216,6 +216,12 @@ expansion.
   retaining the mature final parser, repair, validation and review pipeline.
 - Added provisional Collaborator prose, complete provisional AI Idea cards and clear
   Generating / Checking / Ready presentation without enabling final actions early.
+- Separated reasoning/thinking channels from final content before incremental parsing, and
+  added bounded provisional-Idea scrolling with split-batch progress and explicit
+  retry/fallback/repair transitions.
+- Added a transparent all-checks-off Idea fast path that avoids semantic repair, review,
+  top-up and duplicate-comparison work while preserving structural parsing and configured
+  transport/JSON-repair recovery.
 - Preserved Idea Source, Direction Preset, Generate More, Front Porch, card format and
   provider-profile semantics with no project migration.
 

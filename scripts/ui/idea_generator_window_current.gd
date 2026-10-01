@@ -133,10 +133,17 @@ var _source_pending_export_v0213: Dictionary = {}
 var _source_delete_dialog_v0213: ConfirmationDialog
 var _idea_generator_geometry_active_v0217 := false
 var _provisional_ideas_panel_v02112: PanelContainer
+var _provisional_ideas_scroll_v02112: ScrollContainer
 var _provisional_ideas_list_v02112: VBoxContainer
 var _provisional_ideas_status_v02112: Label
+var _provisional_ideas_notice_v02112: Label
 var _provisional_idea_job_v02112 := ""
+var _provisional_idea_group_v02112 := ""
 var _provisional_idea_count_v02112 := 0
+var _provisional_batch_index_v02112 := 0
+var _provisional_batch_count_v02112 := 1
+var _provisional_batch_target_v02112 := 0
+var _provisional_provider_label_v02112 := ""
 
 
 func _ready() -> void:
@@ -190,58 +197,249 @@ func _install_provisional_ideas_v02112() -> void:
 	_provisional_ideas_status_v02112.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_provisional_ideas_status_v02112.modulate = Color(0.88, 0.72, 1.0)
 	root.add_child(_provisional_ideas_status_v02112)
+	_provisional_ideas_notice_v02112 = Label.new()
+	_provisional_ideas_notice_v02112.name = "ProvisionalIdeasNoticeV02112"
+	_provisional_ideas_notice_v02112.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_provisional_ideas_notice_v02112.modulate = Color(0.95, 0.72, 0.43)
+	_provisional_ideas_notice_v02112.hide()
+	root.add_child(_provisional_ideas_notice_v02112)
+	_provisional_ideas_scroll_v02112 = ScrollContainer.new()
+	_provisional_ideas_scroll_v02112.name = "ProvisionalIdeasScrollV02112"
+	_provisional_ideas_scroll_v02112.custom_minimum_size = Vector2(0, 280)
+	_provisional_ideas_scroll_v02112.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_provisional_ideas_scroll_v02112.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_provisional_ideas_scroll_v02112.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	root.add_child(_provisional_ideas_scroll_v02112)
 	_provisional_ideas_list_v02112 = VBoxContainer.new()
+	_provisional_ideas_list_v02112.name = "ProvisionalIdeasListV02112"
+	_provisional_ideas_list_v02112.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_provisional_ideas_list_v02112.add_theme_constant_override("separation", 7)
-	root.add_child(_provisional_ideas_list_v02112)
+	_provisional_ideas_scroll_v02112.add_child(_provisional_ideas_list_v02112)
 	ai_tab.add_child(_provisional_ideas_panel_v02112)
 	ai_tab.move_child(
 		_provisional_ideas_panel_v02112, _ai_ideas_host.get_index()
 	)
 
 
-func begin_provisional_ideas_v02112(job_id: String) -> void:
+func begin_provisional_ideas_v02112(job_id: String, metadata: Dictionary = {}) -> void:
 	if _provisional_ideas_panel_v02112 == null:
 		return
-	clear_provisional_ideas_v02112()
+	var group_id := str(metadata.get("idea_batch_group_id", job_id))
+	if group_id.is_empty():
+		group_id = job_id
+	if group_id != _provisional_idea_group_v02112:
+		_clear_provisional_cards_v02112()
+		_provisional_idea_group_v02112 = group_id
+	_remove_provisional_job_cards_v02112(job_id)
 	_provisional_idea_job_v02112 = job_id
 	_provisional_idea_count_v02112 = 0
-	_provisional_ideas_panel_v02112.visible = true
-	_provisional_ideas_status_v02112.text = (
-		"● Generating… Complete Ideas will appear here provisionally. Final actions stay disabled until checking finishes."
+	_provisional_batch_index_v02112 = int(metadata.get("idea_batch_index", 0))
+	_provisional_batch_count_v02112 = maxi(
+		1, int(metadata.get("idea_batch_request_count", 1))
 	)
+	_provisional_batch_target_v02112 = maxi(
+		0, int(metadata.get("idea_batch_request_size", 0))
+	)
+	var provider_parts: Array[String] = []
+	for provider_value in [metadata.get("profile_name", ""), metadata.get("model", "")]:
+		var provider_part := str(provider_value).strip_edges()
+		if not provider_part.is_empty() and not provider_part in provider_parts:
+			provider_parts.append(provider_part)
+	_provisional_provider_label_v02112 = " • ".join(provider_parts)
+	_provisional_ideas_panel_v02112.visible = true
+	_set_provisional_status_v02112("● Connecting…")
 
 
 func append_provisional_idea_v02112(job_id: String, idea: Dictionary) -> void:
 	if job_id != _provisional_idea_job_v02112 or _provisional_ideas_list_v02112 == null:
 		return
+	var follow_output := provisional_should_follow_v02112()
 	_provisional_idea_count_v02112 += 1
-	var panel := VBoxContainer.new()
-	panel.add_theme_constant_override("separation", 3)
-	var title_label := Label.new()
-	title_label.text = "%d. %s" % [
-		_provisional_idea_count_v02112,
-		str(idea.get("title", "Untitled Idea"))
-	]
-	title_label.add_theme_font_size_override("font_size", 16)
-	panel.add_child(title_label)
-	var concept := Label.new()
-	concept.text = str(idea.get("concept", idea.get("description", "")))
-	concept.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	concept.modulate = Color(0.75, 0.78, 0.87)
-	panel.add_child(concept)
-	var provisional := Label.new()
-	provisional.text = "Provisional — awaiting complete response and validation"
-	provisional.modulate = Color(0.88, 0.66, 0.42)
-	panel.add_child(provisional)
-	_provisional_ideas_list_v02112.add_child(panel)
+	_provisional_ideas_list_v02112.add_child(
+		_build_provisional_idea_card_v02112(
+			idea,
+			_provisional_idea_count_v02112,
+			"Provisional — awaiting the complete response and validation",
+			true,
+			job_id
+		)
+	)
+	_set_provisional_status_v02112("● Generating final response…")
+	if follow_output:
+		call_deferred("_scroll_provisional_to_bottom_v02112")
 
 
 func set_provisional_ideas_checking_v02112(job_id: String) -> void:
 	if job_id != _provisional_idea_job_v02112 or _provisional_ideas_status_v02112 == null:
 		return
 	_provisional_ideas_status_v02112.text = (
-		"◌ Checking… The complete response is being parsed and validated."
+		"◌ Checking/parsing… The complete response is being validated."
 	)
+
+
+func set_provisional_phase_v02112(
+	job_id: String, phase: String, metadata: Dictionary = {}
+) -> void:
+	if job_id != _provisional_idea_job_v02112:
+		return
+	match phase:
+		"connecting":
+			_set_provisional_status_v02112("● Connecting…")
+		"thinking":
+			_set_provisional_status_v02112("● Thinking…")
+		"generating_final", "streaming":
+			_set_provisional_status_v02112("● Generating final response…")
+		"checking":
+			set_provisional_ideas_checking_v02112(job_id)
+		"retrying":
+			discard_provisional_attempt_v02112(job_id, "retry", metadata)
+		"json_repair":
+			discard_provisional_attempt_v02112(job_id, "json_repair", metadata)
+		"transport_fallback":
+			discard_provisional_attempt_v02112(job_id, "provider_unsupported", metadata)
+
+
+func discard_provisional_attempt_v02112(
+	job_id: String, reason: String, _metadata: Dictionary = {}
+) -> void:
+	if job_id != _provisional_idea_job_v02112:
+		return
+	_remove_provisional_job_cards_v02112(job_id)
+	_provisional_idea_count_v02112 = 0
+	if _provisional_ideas_notice_v02112 != null:
+		_provisional_ideas_notice_v02112.show()
+		match reason:
+			"retry", "malformed_stream":
+				_provisional_ideas_notice_v02112.text = (
+					"Stream interrupted — retrying. Provisional Ideas from the abandoned attempt were discarded."
+				)
+			"provider_unsupported", "transport_fallback":
+				_provisional_ideas_notice_v02112.text = (
+					"Streaming unavailable for this attempt — continuing normally. Final Ideas will appear when generation finishes."
+				)
+			"json_repair":
+				_provisional_ideas_notice_v02112.text = (
+					"Generated response needs JSON repair — requesting corrected output. Provisional Ideas from the malformed response were discarded."
+				)
+			_:
+				_provisional_ideas_notice_v02112.text = (
+					"The provisional attempt was discarded: %s." % reason.replace("_", " ")
+				)
+	_provisional_ideas_panel_v02112.show()
+
+
+func retain_completed_provisional_batch_v02112(
+	job_id: String, ideas: Array, metadata: Dictionary = {}
+) -> void:
+	if job_id != _provisional_idea_job_v02112:
+		return
+	_remove_provisional_job_cards_v02112(job_id)
+	var batch_number := int(metadata.get("idea_batch_index", _provisional_batch_index_v02112)) + 1
+	var follow_output := provisional_should_follow_v02112()
+	for idea_value in ideas:
+		if not idea_value is Dictionary:
+			continue
+		_provisional_ideas_list_v02112.add_child(
+			_build_provisional_idea_card_v02112(
+				idea_value,
+				_provisional_ideas_list_v02112.get_child_count() + 1,
+				"Batch %d received — retained while the generation session continues" % batch_number,
+				false,
+				job_id
+			)
+		)
+	_provisional_idea_job_v02112 = ""
+	_provisional_idea_count_v02112 = 0
+	if follow_output:
+		call_deferred("_scroll_provisional_to_bottom_v02112")
+
+
+func provisional_should_follow_v02112() -> bool:
+	if _provisional_ideas_scroll_v02112 == null:
+		return true
+	var bar := _provisional_ideas_scroll_v02112.get_v_scroll_bar()
+	if bar == null or bar.max_value <= bar.page:
+		return true
+	return bar.value >= bar.max_value - bar.page - 24.0
+
+
+func _set_provisional_status_v02112(state_text: String) -> void:
+	if _provisional_ideas_status_v02112 == null:
+		return
+	var received_target := (
+		str(_provisional_batch_target_v02112)
+		if _provisional_batch_target_v02112 > 0
+		else "?"
+	)
+	_provisional_ideas_status_v02112.text = (
+		"%s%s\nBatch %d of %d • Ideas received: %d / %s"
+		% [
+			(
+				_provisional_provider_label_v02112 + "\n"
+				if not _provisional_provider_label_v02112.is_empty()
+				else ""
+			),
+			state_text,
+			_provisional_batch_index_v02112 + 1,
+			_provisional_batch_count_v02112,
+			_provisional_idea_count_v02112,
+			received_target
+		]
+	)
+
+
+func _build_provisional_idea_card_v02112(
+	idea: Dictionary,
+	display_index: int,
+	state_text: String,
+	provisional: bool,
+	job_id: String
+) -> VBoxContainer:
+	var card := VBoxContainer.new()
+	card.set_meta("stream_job_id_v02112", job_id)
+	card.set_meta("stream_provisional_v02112", provisional)
+	card.add_theme_constant_override("separation", 3)
+	var title_label := Label.new()
+	title_label.text = "%d. %s" % [display_index, str(idea.get("title", "Untitled Idea"))]
+	title_label.add_theme_font_size_override("font_size", 16)
+	card.add_child(title_label)
+	var concept := Label.new()
+	concept.text = str(idea.get("concept", idea.get("description", "")))
+	concept.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	concept.modulate = Color(0.75, 0.78, 0.87)
+	card.add_child(concept)
+	var state_label := Label.new()
+	state_label.text = state_text
+	state_label.modulate = (
+		Color(0.88, 0.66, 0.42) if provisional else Color(0.55, 0.82, 0.64)
+	)
+	card.add_child(state_label)
+	return card
+
+
+func _remove_provisional_job_cards_v02112(job_id: String) -> void:
+	if _provisional_ideas_list_v02112 == null:
+		return
+	for child in _provisional_ideas_list_v02112.get_children():
+		if (
+			bool(child.get_meta("stream_provisional_v02112", false))
+			and str(child.get_meta("stream_job_id_v02112", "")) == job_id
+		):
+			child.queue_free()
+
+
+func _scroll_provisional_to_bottom_v02112() -> void:
+	if _provisional_ideas_scroll_v02112 == null:
+		return
+	var bar := _provisional_ideas_scroll_v02112.get_v_scroll_bar()
+	if bar != null:
+		_provisional_ideas_scroll_v02112.scroll_vertical = int(bar.max_value)
+
+
+func _clear_provisional_cards_v02112() -> void:
+	if _provisional_ideas_list_v02112 != null:
+		for child in _provisional_ideas_list_v02112.get_children():
+			child.queue_free()
 
 
 func clear_provisional_ideas_v02112(job_id: String = "") -> void:
@@ -251,13 +449,16 @@ func clear_provisional_ideas_v02112(job_id: String = "") -> void:
 		and job_id != _provisional_idea_job_v02112
 	):
 		return
-	if _provisional_ideas_list_v02112 != null:
-		for child in _provisional_ideas_list_v02112.get_children():
-			child.queue_free()
+	_clear_provisional_cards_v02112()
 	if _provisional_ideas_panel_v02112 != null:
 		_provisional_ideas_panel_v02112.visible = false
+	if _provisional_ideas_notice_v02112 != null:
+		_provisional_ideas_notice_v02112.hide()
+		_provisional_ideas_notice_v02112.text = ""
 	_provisional_idea_job_v02112 = ""
+	_provisional_idea_group_v02112 = ""
 	_provisional_idea_count_v02112 = 0
+	_provisional_provider_label_v02112 = ""
 
 
 func open_studio() -> void:

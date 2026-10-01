@@ -17,7 +17,7 @@ func reset() -> void:
 
 
 func feed_bytes(chunk: PackedByteArray) -> Dictionary:
-	var result := {"deltas": [], "done": _done, "error": ""}
+	var result := _empty_result()
 	if chunk.is_empty() or not _malformed_error.is_empty():
 		return result
 	_raw_body.append_array(chunk)
@@ -39,7 +39,7 @@ func feed_bytes(chunk: PackedByteArray) -> Dictionary:
 
 
 func finish() -> Dictionary:
-	var result := {"deltas": [], "done": _done, "error": ""}
+	var result := _empty_result()
 	if not _pending_bytes.is_empty() and _saw_sse_event:
 		_process_line(_pending_bytes.get_string_from_utf8(), result)
 	_pending_bytes = PackedByteArray()
@@ -99,6 +99,9 @@ func _process_line(line: String, result: Dictionary) -> void:
 		_done = true
 	if not delta_value is Dictionary:
 		return
+	for reasoning_key in ["reasoning", "reasoning_content", "reasoning_details", "thinking"]:
+		if _has_reasoning_value((delta_value as Dictionary).get(reasoning_key)):
+			_mark_reasoning(result, "structured_field:%s" % reasoning_key)
 	var content_value: Variant = delta_value.get("content", "")
 	if content_value is String:
 		if not content_value.is_empty():
@@ -106,10 +109,44 @@ func _process_line(line: String, result: Dictionary) -> void:
 		return
 	if content_value is Array:
 		for part in content_value:
-			if part is Dictionary and str(part.get("type", "")) in ["text", "output_text"]:
+			if not part is Dictionary:
+				continue
+			var part_type := str(part.get("type", "")).strip_edges().to_lower()
+			if part_type in ["reasoning", "reasoning_text", "thinking", "analysis"]:
+				_mark_reasoning(result, "content_block:%s" % part_type)
+				continue
+			if part_type in ["text", "output_text"]:
 				var text := str(part.get("text", ""))
 				if not text.is_empty():
 					(result["deltas"] as Array).append(text)
+
+
+func _empty_result() -> Dictionary:
+	return {
+		"deltas": [],
+		"done": _done,
+		"error": "",
+		"reasoning_detected": false,
+		"reasoning_transports": []
+	}
+
+
+func _has_reasoning_value(value: Variant) -> bool:
+	if value == null:
+		return false
+	if value is String:
+		return not value.is_empty()
+	if value is Array or value is Dictionary:
+		return not value.is_empty()
+	return true
+
+
+func _mark_reasoning(result: Dictionary, transport: String) -> void:
+	result["reasoning_detected"] = true
+	var transports: Array = result.get("reasoning_transports", [])
+	if not transport in transports:
+		transports.append(transport)
+	result["reasoning_transports"] = transports
 
 
 func _error_text(value: Variant) -> String:
