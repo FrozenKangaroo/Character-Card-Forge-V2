@@ -74,6 +74,21 @@ func _sample_source(title_value: String = "She Got Pregnant") -> Dictionary:
 		"cross_links": ["Family Pressure", "Second Chances"],
 		"tags": ["drama", "romance", "日本語"],
 		"notes": "Keep {{char}} varied across outputs.",
+		"direction_presets": [
+			{
+				"id": "workplace",
+				"group": "Setting",
+				"title": "Workplace pressure",
+				"direction": "Focus on workplace-related scenarios.",
+				"future_preset_option": {"preserve": true}
+			},
+			{
+				"id": "isolated",
+				"group": "Setting",
+				"title": "Isolated setting",
+				"direction": "Set these at an isolated Antarctic research station."
+			}
+		],
 		"sections": [{
 			"id": "truth",
 			"label": "Ground truth",
@@ -133,6 +148,14 @@ func _test_parser_contract() -> void:
 		and str((untitled_result.get("source", {}) as Dictionary).get("title", "")).is_empty(),
 		"6. A title must remain optional."
 	)
+	var legacy_source := source.duplicate(true)
+	legacy_source.erase("direction_presets")
+	var legacy_result := service.parse_text(JSON.stringify(legacy_source))
+	_require(
+		bool(legacy_result.get("load_allowed", false))
+		and service.direction_presets(legacy_result.get("source", {})).is_empty(),
+		"6b. Existing schema-v1 sources without presets must load unchanged with an empty preset list."
+	)
 	var suggested := service.suggested_title_fallback(untitled)
 	var generation_service := GENERATION_SERVICE.new()
 	var naming_job := generation_service.queue_idea_source_title_v0213(
@@ -183,8 +206,29 @@ func _test_parser_contract() -> void:
 		and context.contains("Suggested diversity axes")
 		and context.contains("Cross-links / related Series")
 		and context.contains("Custom section — Ground truth")
-		and context.contains("Raw / custom prompt"),
+		and context.contains("Raw / custom prompt")
+		and not context.contains("Focus on workplace-related scenarios")
+		and not context.contains("Antarctic research station"),
 		"14. Generation context must retain every structured source dimension as labelled context."
+	)
+	var presets := service.direction_presets(reparsed)
+	_require(
+		presets.size() == 2
+		and str(presets[0].get("id", "")) == "workplace"
+		and bool((presets[0].get("future_preset_option", {}) as Dictionary).get("preserve", false))
+		and service.compose_generation_input(context, str(presets[0].get("direction", ""))).count("Focus on workplace-related scenarios.") == 1,
+		"14b. Direction presets must preserve order/future fields, stay out of source context and enter generation only through Additional Direction."
+	)
+	var duplicate_ids := source.duplicate(true)
+	(duplicate_ids["direction_presets"] as Array)[1]["id"] = "workplace"
+	var duplicate_result := service.parse_text(JSON.stringify(duplicate_ids))
+	var missing_id := source.duplicate(true)
+	(missing_id["direction_presets"] as Array)[0].erase("id")
+	var missing_preset_result := service.parse_text(JSON.stringify(missing_id))
+	_require(
+		_has_issue(duplicate_result, "duplicate_direction_preset_id")
+		and _has_issue(missing_preset_result, "missing_direction_preset_id"),
+		"14c. Duplicate and missing preset IDs must be rejected explicitly."
 	)
 
 
@@ -228,8 +272,9 @@ func _test_storage_and_round_trip() -> void:
 	var duplicated := service.duplicate_source("source-pregnancy-series")
 	_require(
 		bool(duplicated.get("ok", false))
-		and str((duplicated.get("source", {}) as Dictionary).get("id", "")) != "source-pregnancy-series",
-		"Saved sources must be duplicable with a new stable identity."
+		and str((duplicated.get("source", {}) as Dictionary).get("id", "")) != "source-pregnancy-series"
+		and str((((duplicated.get("source", {}) as Dictionary).get("direction_presets", []) as Array)[0] as Dictionary).get("id", "")) == "workplace",
+		"Saved sources must duplicate with a new source identity while preset IDs remain stable."
 	)
 
 
@@ -435,6 +480,8 @@ func _test_live_ui_and_active_source() -> void:
 	_require(
 		bool(capabilities.get("source_library_ui", false))
 		and bool(capabilities.get("idea_pack_actions_preserved", false))
+		and bool(capabilities.get("direction_preset_editor", false))
+		and bool(capabilities.get("direction_preset_selector", false))
 		and str(capabilities.get("active_source_id", "")) == "replacement-source",
 		"The live Idea Generator must expose the separate source pipeline and active source identity."
 	)
@@ -460,16 +507,40 @@ func _test_live_prompt_presentation() -> void:
 		_sample_source("Live Prompt Source"), false, true
 	)
 	await process_frame
+	var preset_selector := (generator as IDEA_WINDOW).find_child(
+		"DirectionPresetControlsV02111", true, false
+	)
 	_require(
 		(hint as Label).text.contains("Additional Direction (optional)")
-		and (seed as TextEdit).placeholder_text.contains("Focus on scenarios"),
+		and (seed as TextEdit).placeholder_text.contains("Focus on scenarios")
+		and preset_selector != null
+		and preset_selector.visible,
 		"15j. The live prompt label and placeholder must switch to optional Additional Direction while a source is active."
+	)
+	(generator as IDEA_WINDOW).call("_active_preset_selected_v02111", 1)
+	await process_frame
+	var frozen_context: Dictionary = workspace.call(
+		"_idea_generation_context_snapshot_v0217"
+	)
+	_require(
+		(seed as TextEdit).text == "Focus on workplace-related scenarios."
+		and (generator as IDEA_WINDOW).prepared_generation_input_v0213((seed as TextEdit).text).count("Focus on workplace-related scenarios.") == 1
+		and str(frozen_context.get("seed_text", "")) == "Focus on workplace-related scenarios.",
+		"15j2. Selecting a preset must copy its exact text once into the editable Additional Direction field."
+	)
+	(seed as TextEdit).text += " Keep the cast small."
+	await process_frame
+	(generator as IDEA_WINDOW).call("_active_preset_selected_v02111", 0)
+	_require(
+		(seed as TextEdit).text.contains("Keep the cast small"),
+		"15j3. None/Custom must not erase manually edited direction text."
 	)
 	(generator as IDEA_WINDOW).clear_active_idea_source_v0213()
 	await process_frame
 	_require(
 		(hint as Label).text.begins_with("Give the AI")
-		and (seed as TextEdit).placeholder_text.begins_with("Example:"),
+		and (seed as TextEdit).placeholder_text.begins_with("Example:")
+		and (seed as TextEdit).text.contains("Keep the cast small"),
 		"15k. Clearing the source must immediately restore the ordinary primary-prompt presentation."
 	)
 	workspace.queue_free()

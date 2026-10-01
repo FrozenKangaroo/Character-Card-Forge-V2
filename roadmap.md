@@ -196,7 +196,7 @@ custom metadata remains out of ordinary exports unless an author creates an expl
 key-to-extension mapping, and the mapping has a visible preview. No automatic network
 traffic or raw database access is introduced.
 
-The current source candidate displays **v0.21.10** and uses the Godot
+The current source candidate displays **v0.21.11** and uses the Godot
 **4.7.x stable** project baseline, keeps Forward+ with
 Compatibility/OpenGL fallback and retains the complete historical regression baseline.
 After the first two bounded consolidations, the next numbered product milestone will be
@@ -205,6 +205,17 @@ Pre-1.0 work must not create a new broad feature family merely to continue versi
 expansion.
 
 ## Completed
+
+### v0.21.11 — Idea Source Direction Presets and Work Days Hardening (candidate)
+
+- Added optional ordered, grouped direction presets to schema-v1 Idea Sources while
+  preserving stable preset IDs and unknown future fields.
+- Added a scalable preset editor and compact AI Ideas selectors that copy exact text into
+  the existing editable Additional Direction field without hidden prompt injection.
+- Added canonical Front Porch Work Days prompt guidance plus conservative normalization
+  of common provider formats into sorted Monday=1 through Sunday=7 IDs.
+- Corrected Front Porch preview paths and apply reporting so accepted Work Days enable
+  and persist while invalid proposals are reported rather than claimed as applied.
 
 ### v0.21.10 — Idea Review and Generate More Window Usability (candidate)
 

@@ -3,6 +3,7 @@ extends "res://scripts/ui/idea_generator_window_v01533_hotfix1.gd"
 
 signal active_idea_source_changed_v0213(source: Dictionary)
 signal idea_source_title_requested_v0213(source: Dictionary, context: String)
+signal direction_preset_selected_v02111(preset: Dictionary, source_id: String)
 
 const IDEA_PACK_SERVICE_V0210 = preload(
 	"res://scripts/services/idea_pack_service_v0210.gd"
@@ -114,6 +115,18 @@ var _active_source_banner_v0213: Label
 var _active_source_explanation_v0213: Label
 var _active_source_actions_v0213: HFlowContainer
 var _active_source_view_button_v0213: Button
+var _source_direction_presets_v02111: Array[Dictionary] = []
+var _source_preset_list_v02111: ItemList
+var _source_preset_group_v02111: LineEdit
+var _source_preset_title_v02111: LineEdit
+var _source_preset_direction_v02111: TextEdit
+var _source_preset_selected_v02111 := -1
+var _source_preset_updating_v02111 := false
+var _active_source_preset_controls_v02111: VBoxContainer
+var _active_source_preset_group_v02111: OptionButton
+var _active_source_preset_choice_v02111: OptionButton
+var _active_source_preset_updating_v02111 := false
+var _active_source_preset_id_v02111 := ""
 var _source_load_dialog_v0213: FileDialog
 var _source_export_dialog_v0213: FileDialog
 var _source_pending_export_v0213: Dictionary = {}
@@ -2413,6 +2426,7 @@ func _build_idea_source_tab_v0213() -> void:
 	editor.add_child(_labelled_control_v01532("Tags (comma separated)", _source_tags_v0213))
 	_source_notes_v0213 = _source_text_edit_v0213(90)
 	editor.add_child(_labelled_control_v01532("Notes", _source_notes_v0213))
+	_build_direction_preset_editor_v02111(editor)
 	_source_sections_v0213 = _source_text_edit_v0213(130)
 	_source_sections_v0213.placeholder_text = '[{"label":"Relationship engine","content":"..."}]'
 	editor.add_child(_labelled_control_v01532("Arbitrary labelled sections (JSON array)", _source_sections_v0213))
@@ -2500,6 +2514,7 @@ func _install_active_source_banner_v0213() -> void:
 	_active_source_explanation_v0213.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_active_source_explanation_v0213.modulate = Color(0.76, 0.79, 0.90)
 	content.add_child(_active_source_explanation_v0213)
+	_build_active_source_preset_controls_v02111(content)
 	_active_source_actions_v0213 = HFlowContainer.new()
 	_active_source_actions_v0213.name = "ActiveIdeaSourceActionsV0213"
 	_active_source_actions_v0213.add_theme_constant_override("separation", 8)
@@ -2682,6 +2697,7 @@ func _use_source_v0213(switch_to_generator: bool = true) -> void:
 	_active_idea_source_v0213 = (captured.get("source", {}) as Dictionary).duplicate(true)
 	_active_source_saved_v0213 = _source_saved_v0213
 	_active_source_external_path_v0213 = _source_external_path_v0213
+	_active_source_preset_id_v02111 = ""
 	_refresh_active_source_banner_v0213()
 	active_idea_source_changed_v0213.emit(_active_idea_source_v0213.duplicate(true))
 	_source_status_v0213.text = "Idea Source activated. It will remain identical across every request in an Idea Generator batch."
@@ -2699,6 +2715,7 @@ func clear_active_idea_source_v0213() -> void:
 	_active_idea_source_v0213.clear()
 	_active_source_saved_v0213 = false
 	_active_source_external_path_v0213 = ""
+	_active_source_preset_id_v02111 = ""
 	_refresh_active_source_banner_v0213()
 	active_idea_source_changed_v0213.emit({})
 
@@ -2908,12 +2925,15 @@ func _populate_source_editor_v0213(source: Dictionary) -> void:
 	_source_links_v0213.text = _source_list_text_v0213(source.get("cross_links", []))
 	_source_tags_v0213.text = ", ".join(source.get("tags", []))
 	_source_notes_v0213.text = str(source.get("notes", ""))
+	_source_direction_presets_v02111 = _idea_source_service_v0213.direction_presets(source)
+	_rebuild_source_preset_list_v02111(0 if not _source_direction_presets_v02111.is_empty() else -1)
 	var sections_value: Variant = source.get("sections", [])
 	_source_sections_v0213.text = JSON.stringify(sections_value, "  ") if sections_value is Array and not (sections_value as Array).is_empty() else ""
 	_source_raw_prompt_v0213.text = str(source.get("raw_prompt", ""))
 
 
 func _capture_source_editor_v0213() -> Dictionary:
+	_commit_source_preset_fields_v02111()
 	var source := _source_editor_base_v0213.duplicate(true)
 	if str(source.get("id", "")).is_empty():
 		source["id"] = str(_idea_source_service_v0213.blank_source().get("id", ""))
@@ -2932,6 +2952,7 @@ func _capture_source_editor_v0213() -> Dictionary:
 	source["cross_links"] = _source_lines_v0213(_source_links_v0213.text)
 	source["tags"] = _source_tags_v0213.text.split(",", false)
 	source["notes"] = _source_notes_v0213.text.strip_edges()
+	source["direction_presets"] = _source_direction_presets_v02111.duplicate(true)
 	source["raw_prompt"] = _source_raw_prompt_v0213.text.strip_edges()
 	var bible_text := _source_bible_v0213.text.strip_edges()
 	if bible_text.is_empty():
@@ -2998,6 +3019,7 @@ func _refresh_active_source_banner_v0213() -> void:
 		_active_source_banner_v0213.text = "Idea Source: None"
 		_active_source_explanation_v0213.text = "The normal prompt is the primary generator input. Choose a reusable source from the Idea Sources tab when needed."
 		_active_source_actions_v0213.hide()
+		_refresh_active_source_preset_controls_v02111()
 		return
 	var source_title := str(_active_idea_source_v0213.get("title", "")).strip_edges()
 	if source_title.is_empty():
@@ -3005,6 +3027,7 @@ func _refresh_active_source_banner_v0213() -> void:
 	_active_source_banner_v0213.text = "Active Idea Source: %s" % source_title
 	_active_source_explanation_v0213.text = "This structured source will be included in every Idea generation request until cleared or replaced. The prompt below is optional Additional Direction for this batch."
 	_active_source_actions_v0213.show()
+	_refresh_active_source_preset_controls_v02111()
 
 
 func idea_source_capabilities_v0213() -> Dictionary:
@@ -3015,4 +3038,281 @@ func idea_source_capabilities_v0213() -> Dictionary:
 	)
 	capabilities["active_source_id"] = str(_active_idea_source_v0213.get("id", ""))
 	capabilities["active_source_context"] = active_idea_source_context_v0213()
+	capabilities["direction_preset_editor"] = _source_preset_list_v02111 != null
+	capabilities["direction_preset_selector"] = _active_source_preset_choice_v02111 != null
 	return capabilities
+
+
+func _build_direction_preset_editor_v02111(parent: VBoxContainer) -> void:
+	var heading := Label.new()
+	heading.text = "Reusable Additional Direction Presets"
+	heading.add_theme_font_size_override("font_size", 17)
+	parent.add_child(heading)
+	var hint := Label.new()
+	hint.text = "Optional grouped shortcuts. Selecting one later copies its exact text into Additional Direction; it is never injected into every generation."
+	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	hint.modulate = Color(0.68, 0.72, 0.84)
+	parent.add_child(hint)
+	var split := HSplitContainer.new()
+	split.custom_minimum_size.y = 310
+	split.split_offset = 310
+	parent.add_child(split)
+	var left := VBoxContainer.new()
+	left.custom_minimum_size.x = 260
+	split.add_child(left)
+	_source_preset_list_v02111 = ItemList.new()
+	_source_preset_list_v02111.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_source_preset_list_v02111.allow_reselect = true
+	_source_preset_list_v02111.item_selected.connect(_select_source_preset_v02111)
+	left.add_child(_source_preset_list_v02111)
+	var actions := HFlowContainer.new()
+	actions.add_theme_constant_override("separation", 6)
+	left.add_child(actions)
+	_add_source_button_v0213(actions, "Add", _add_source_preset_v02111)
+	_add_source_button_v0213(actions, "Duplicate", _duplicate_source_preset_v02111)
+	_add_source_button_v0213(actions, "Delete", _delete_source_preset_v02111)
+	_add_source_button_v0213(actions, "Move Up", _move_source_preset_v02111.bind(-1))
+	_add_source_button_v0213(actions, "Move Down", _move_source_preset_v02111.bind(1))
+	var fields := VBoxContainer.new()
+	fields.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	split.add_child(fields)
+	_source_preset_group_v02111 = LineEdit.new()
+	_source_preset_group_v02111.placeholder_text = "Optional category, for example Setting"
+	_source_preset_group_v02111.text_changed.connect(_source_preset_field_changed_v02111)
+	fields.add_child(_labelled_control_v01532("Group", _source_preset_group_v02111))
+	_source_preset_title_v02111 = LineEdit.new()
+	_source_preset_title_v02111.placeholder_text = "Required selector title"
+	_source_preset_title_v02111.text_changed.connect(_source_preset_field_changed_v02111)
+	fields.add_child(_labelled_control_v01532("Title", _source_preset_title_v02111))
+	_source_preset_direction_v02111 = _source_text_edit_v0213(155)
+	_source_preset_direction_v02111.placeholder_text = "Required reusable Additional Direction text"
+	_source_preset_direction_v02111.text_changed.connect(_source_preset_field_changed_v02111)
+	fields.add_child(_labelled_control_v01532("Direction", _source_preset_direction_v02111))
+	_set_source_preset_fields_enabled_v02111(false)
+
+
+func _preset_list_label_v02111(preset: Dictionary) -> String:
+	var title := str(preset.get("title", "")).strip_edges()
+	if title.is_empty():
+		title = "Untitled direction"
+	var group := str(preset.get("group", "")).strip_edges()
+	return "%s  ·  %s" % [group, title] if not group.is_empty() else title
+
+
+func _rebuild_source_preset_list_v02111(selected_index: int = -1) -> void:
+	if _source_preset_list_v02111 == null:
+		return
+	_source_preset_updating_v02111 = true
+	_source_preset_list_v02111.clear()
+	for preset in _source_direction_presets_v02111:
+		_source_preset_list_v02111.add_item(_preset_list_label_v02111(preset))
+	_source_preset_updating_v02111 = false
+	if selected_index >= 0 and selected_index < _source_direction_presets_v02111.size():
+		_source_preset_list_v02111.select(selected_index)
+		_select_source_preset_v02111(selected_index)
+	else:
+		_source_preset_selected_v02111 = -1
+		_set_source_preset_fields_enabled_v02111(false)
+
+
+func _select_source_preset_v02111(index: int) -> void:
+	if index < 0 or index >= _source_direction_presets_v02111.size():
+		return
+	_commit_source_preset_fields_v02111()
+	_source_preset_selected_v02111 = index
+	var preset := _source_direction_presets_v02111[index]
+	_source_preset_updating_v02111 = true
+	_source_preset_group_v02111.text = str(preset.get("group", ""))
+	_source_preset_title_v02111.text = str(preset.get("title", ""))
+	_source_preset_direction_v02111.text = str(preset.get("direction", ""))
+	_source_preset_updating_v02111 = false
+	_set_source_preset_fields_enabled_v02111(true)
+
+
+func _set_source_preset_fields_enabled_v02111(enabled: bool) -> void:
+	if _source_preset_group_v02111 != null:
+		_source_preset_group_v02111.editable = enabled
+		_source_preset_title_v02111.editable = enabled
+		_source_preset_direction_v02111.editable = enabled
+
+
+func _commit_source_preset_fields_v02111() -> void:
+	var index := _source_preset_selected_v02111
+	if _source_preset_updating_v02111 or index < 0 or index >= _source_direction_presets_v02111.size():
+		return
+	var preset := _source_direction_presets_v02111[index].duplicate(true)
+	preset["group"] = _source_preset_group_v02111.text.strip_edges()
+	preset["title"] = _source_preset_title_v02111.text.strip_edges()
+	preset["direction"] = _source_preset_direction_v02111.text.strip_edges()
+	_source_direction_presets_v02111[index] = preset
+	if _source_preset_list_v02111 != null and index < _source_preset_list_v02111.item_count:
+		_source_preset_list_v02111.set_item_text(index, _preset_list_label_v02111(preset))
+
+
+func _source_preset_field_changed_v02111(_value: String = "") -> void:
+	_commit_source_preset_fields_v02111()
+
+
+func _add_source_preset_v02111() -> void:
+	_commit_source_preset_fields_v02111()
+	var source := _source_editor_base_v0213.duplicate(true)
+	source["direction_presets"] = _source_direction_presets_v02111
+	_source_direction_presets_v02111.append({
+		"id": _idea_source_service_v0213.unique_direction_preset_id(source),
+		"group": "", "title": "New Direction", "direction": ""
+	})
+	_rebuild_source_preset_list_v02111(_source_direction_presets_v02111.size() - 1)
+	_source_preset_title_v02111.grab_focus()
+	_source_preset_title_v02111.select_all()
+
+
+func _duplicate_source_preset_v02111() -> void:
+	_commit_source_preset_fields_v02111()
+	var index := _source_preset_selected_v02111
+	if index < 0 or index >= _source_direction_presets_v02111.size():
+		return
+	var source := _source_editor_base_v0213.duplicate(true)
+	source["direction_presets"] = _source_direction_presets_v02111
+	var preset := _source_direction_presets_v02111[index].duplicate(true)
+	preset["id"] = _idea_source_service_v0213.unique_direction_preset_id(
+		source, str(preset.get("id", "direction"))
+	)
+	preset["title"] = "%s Copy" % str(preset.get("title", "Direction"))
+	_source_direction_presets_v02111.insert(index + 1, preset)
+	_rebuild_source_preset_list_v02111(index + 1)
+
+
+func _delete_source_preset_v02111() -> void:
+	var index := _source_preset_selected_v02111
+	if index < 0 or index >= _source_direction_presets_v02111.size():
+		return
+	_source_direction_presets_v02111.remove_at(index)
+	_rebuild_source_preset_list_v02111(mini(index, _source_direction_presets_v02111.size() - 1))
+
+
+func _move_source_preset_v02111(offset: int) -> void:
+	_commit_source_preset_fields_v02111()
+	var index := _source_preset_selected_v02111
+	var target := index + offset
+	if index < 0 or target < 0 or target >= _source_direction_presets_v02111.size():
+		return
+	var preset := _source_direction_presets_v02111[index]
+	_source_direction_presets_v02111.remove_at(index)
+	_source_direction_presets_v02111.insert(target, preset)
+	_rebuild_source_preset_list_v02111(target)
+
+
+func _build_active_source_preset_controls_v02111(parent: VBoxContainer) -> void:
+	_active_source_preset_controls_v02111 = VBoxContainer.new()
+	_active_source_preset_controls_v02111.name = "DirectionPresetControlsV02111"
+	var row := HFlowContainer.new()
+	row.add_theme_constant_override("separation", 8)
+	_active_source_preset_controls_v02111.add_child(row)
+	var group_label := Label.new()
+	group_label.text = "Preset group"
+	row.add_child(group_label)
+	_active_source_preset_group_v02111 = OptionButton.new()
+	_active_source_preset_group_v02111.custom_minimum_size.x = 190
+	_active_source_preset_group_v02111.item_selected.connect(_active_preset_group_selected_v02111)
+	row.add_child(_active_source_preset_group_v02111)
+	var preset_label := Label.new()
+	preset_label.text = "Direction"
+	row.add_child(preset_label)
+	_active_source_preset_choice_v02111 = OptionButton.new()
+	_active_source_preset_choice_v02111.custom_minimum_size.x = 260
+	_active_source_preset_choice_v02111.item_selected.connect(_active_preset_selected_v02111)
+	row.add_child(_active_source_preset_choice_v02111)
+	var hint := Label.new()
+	hint.text = "Choosing a preset copies its text into Additional Direction. Edit the copied text freely; the saved preset is unchanged."
+	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	hint.modulate = Color(0.68, 0.72, 0.84)
+	_active_source_preset_controls_v02111.add_child(hint)
+	parent.add_child(_active_source_preset_controls_v02111)
+	_active_source_preset_controls_v02111.hide()
+
+
+func _refresh_active_source_preset_controls_v02111() -> void:
+	if _active_source_preset_controls_v02111 == null:
+		return
+	var presets := _idea_source_service_v0213.direction_presets(_active_idea_source_v0213)
+	if _active_idea_source_v0213.is_empty() or presets.is_empty():
+		_active_source_preset_controls_v02111.hide()
+		return
+	_active_source_preset_controls_v02111.show()
+	_active_source_preset_updating_v02111 = true
+	_active_source_preset_group_v02111.clear()
+	_active_source_preset_group_v02111.add_item("All groups")
+	_active_source_preset_group_v02111.set_item_metadata(0, "__all__")
+	var groups: Array[String] = []
+	var has_ungrouped := false
+	for preset in presets:
+		var group := str(preset.get("group", "")).strip_edges()
+		if group.is_empty():
+			has_ungrouped = true
+		elif group not in groups:
+			groups.append(group)
+	if has_ungrouped:
+		_active_source_preset_group_v02111.add_item("Ungrouped / General")
+		_active_source_preset_group_v02111.set_item_metadata(
+			_active_source_preset_group_v02111.item_count - 1, ""
+		)
+	for group in groups:
+		_active_source_preset_group_v02111.add_item(group)
+		_active_source_preset_group_v02111.set_item_metadata(
+			_active_source_preset_group_v02111.item_count - 1, group
+		)
+	_active_source_preset_group_v02111.select(0)
+	_rebuild_active_preset_choices_v02111("__all__")
+	_active_source_preset_updating_v02111 = false
+
+
+func _rebuild_active_preset_choices_v02111(group: String) -> void:
+	_active_source_preset_choice_v02111.clear()
+	_active_source_preset_choice_v02111.add_item("None / Custom")
+	_active_source_preset_choice_v02111.set_item_metadata(0, "")
+	for preset in _idea_source_service_v0213.direction_presets(_active_idea_source_v0213):
+		if group != "__all__" and str(preset.get("group", "")).strip_edges() != group:
+			continue
+		_active_source_preset_choice_v02111.add_item(str(preset.get("title", "Untitled")))
+		_active_source_preset_choice_v02111.set_item_metadata(
+			_active_source_preset_choice_v02111.item_count - 1,
+			str(preset.get("id", ""))
+		)
+	_active_source_preset_choice_v02111.select(0)
+
+
+func _active_preset_group_selected_v02111(index: int) -> void:
+	if _active_source_preset_updating_v02111:
+		return
+	var group := str(_active_source_preset_group_v02111.get_item_metadata(index))
+	_active_source_preset_updating_v02111 = true
+	_rebuild_active_preset_choices_v02111(group)
+	_active_source_preset_updating_v02111 = false
+	_active_source_preset_id_v02111 = ""
+
+
+func _active_preset_selected_v02111(index: int) -> void:
+	if _active_source_preset_updating_v02111:
+		return
+	var preset_id := str(_active_source_preset_choice_v02111.get_item_metadata(index))
+	_active_source_preset_id_v02111 = preset_id
+	if preset_id.is_empty():
+		direction_preset_selected_v02111.emit(
+			{}, str(_active_idea_source_v0213.get("id", ""))
+		)
+		return
+	for preset in _idea_source_service_v0213.direction_presets(_active_idea_source_v0213):
+		if str(preset.get("id", "")) == preset_id:
+			direction_preset_selected_v02111.emit(
+				preset.duplicate(true), str(_active_idea_source_v0213.get("id", ""))
+			)
+			return
+
+
+func mark_direction_preset_custom_v02111() -> void:
+	_active_source_preset_id_v02111 = ""
+	if _active_source_preset_choice_v02111 == null:
+		return
+	_active_source_preset_updating_v02111 = true
+	_active_source_preset_choice_v02111.select(0)
+	_active_source_preset_updating_v02111 = false

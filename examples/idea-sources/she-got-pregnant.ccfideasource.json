@@ -47,6 +47,20 @@
     "secrets"
   ],
   "notes": "This source is an input, not a finished character-card idea.",
+  "direction_presets": [
+    {
+      "id": "workplace-pressure",
+      "group": "Setting",
+      "title": "Workplace pressure",
+      "direction": "Focus on workplace-related scenarios where professional consequences make the truth harder to avoid."
+    },
+    {
+      "id": "hopeful-reconciliation",
+      "group": "Tone",
+      "title": "Hopeful reconciliation",
+      "direction": "Use a hopeful tone while preserving uncertainty and leaving every response from {{user}} open."
+    }
+  ],
   "sections": [
     {
       "id": "opening-variety",
