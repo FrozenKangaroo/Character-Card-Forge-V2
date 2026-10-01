@@ -796,9 +796,25 @@ func _on_job_completed(
 			_status.text = "Front Porch proposal discarded because its originating character is no longer active."
 			return
 		if data is Dictionary:
+			var preview_metadata := metadata.duplicate(true)
+			var preview_fields: Array[Dictionary] = []
+			var fields_value: Variant = preview_metadata.get("preview_fields", [])
+			if fields_value is Array:
+				for field_value in fields_value:
+					if not field_value is Dictionary:
+						continue
+					var field := (field_value as Dictionary).duplicate(true)
+					var canonical := _front_porch_service_v0172.field_by_id(
+						str(field.get("id", ""))
+					)
+					if not canonical.is_empty():
+						field = canonical
+					field["path"] = _front_porch_service_v0172.full_project_path(field)
+					preview_fields.append(field)
+			preview_metadata["preview_fields"] = preview_fields
 			_show_generation_preview(
 				data as Dictionary,
-				metadata,
+				preview_metadata,
 				"Front Porch — %s" % str(metadata.get("front_porch_scope", "Proposal"))
 			)
 			_status.text = "Front Porch generation finished. Review the proposed fields before applying them."
@@ -832,6 +848,7 @@ func _apply_front_porch_fields_preview_v0172() -> void:
 	var enabled := _front_porch_enabled_map_v0172()
 	var values := _front_porch_value_map_v0172()
 	var applied_ids: Array[String] = []
+	var rejected: Array[String] = []
 	for preview_row in _preview_rows:
 		var selected_value: Variant = preview_row.get("checkbox")
 		if (
@@ -843,13 +860,28 @@ func _apply_front_porch_fields_preview_v0172() -> void:
 		var field_id := str(field.get("id", ""))
 		if not _front_porch_controls_v0172.has(field_id):
 			continue
-		enabled[field_id] = true
-		values[field_id] = _front_porch_input_value_v0172(
+		var proposed_value: Variant = _front_porch_input_value_v0172(
 			preview_row.get("editor"), field
 		)
+		if _front_porch_service_v0172.has_method("normalise_preview_value_v0209"):
+			var normalised: Dictionary = _front_porch_service_v0172.call(
+				"normalise_preview_value_v0209", field, proposed_value
+			)
+			if not bool(normalised.get("ok", false)):
+				rejected.append("%s: %s" % [
+					str(field.get("label", field_id)),
+					str(normalised.get("error", "Invalid value."))
+				])
+				continue
+			proposed_value = normalised.get("value", proposed_value)
+		enabled[field_id] = true
+		values[field_id] = proposed_value
 		applied_ids.append(field_id)
 	if applied_ids.is_empty():
-		_status.text = "No Front Porch fields were applied."
+		_status.text = (
+			"No Front Porch fields were applied. %s" % "; ".join(rejected)
+			if not rejected.is_empty() else "No Front Porch fields were applied."
+		)
 		_hide_preview()
 		return
 	var result := _front_porch_service_v0172.apply_control_values(
@@ -864,15 +896,20 @@ func _apply_front_porch_fields_preview_v0172() -> void:
 	_dirty = true
 	_rebuild_form()
 	_update_header()
-	if bool(result.get("ok", false)):
+	if bool(result.get("ok", false)) and rejected.is_empty():
 		_status.text = (
 			"Applied %d Front Porch field(s). Review them, then Save when ready."
 			% applied_ids.size()
 		)
 	else:
+		var errors: Array[String] = []
+		for message in rejected:
+			errors.append(message)
+		for message in result.get("errors", []):
+			errors.append(str(message))
 		_status.text = (
 			"Applied valid Front Porch proposals; rejected invalid values: %s"
-			% "; ".join(result.get("errors", []))
+			% "; ".join(errors)
 		)
 	_hide_preview()
 

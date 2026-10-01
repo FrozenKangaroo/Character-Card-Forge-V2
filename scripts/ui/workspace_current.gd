@@ -87,6 +87,9 @@ var _similar_extracted_source_v0213: Dictionary = {}
 var _idea_source_title_job_id_v0213 := ""
 var _idea_source_title_id_v0213 := ""
 var _idea_prompt_hint_v0213: Label
+var _idea_preset_autofill_text_v02111 := ""
+var _idea_preset_autofill_source_v02111 := ""
+var _idea_preset_text_update_v02111 := false
 
 
 func _ready() -> void:
@@ -124,6 +127,11 @@ func _build_concept_studio() -> void:
 		_idea_generator_v01532.connect(
 			"active_idea_source_changed_v0213",
 			Callable(self, "_on_active_idea_source_changed_v0213")
+		)
+	if _idea_generator_v01532.has_signal("direction_preset_selected_v02111"):
+		_idea_generator_v01532.connect(
+			"direction_preset_selected_v02111",
+			Callable(self, "_on_direction_preset_selected_v02111")
 		)
 	add_child(_idea_generator_v01532)
 	_idea_generator_v01532.hide()
@@ -2541,11 +2549,60 @@ func _install_idea_prompt_presentation_v0213() -> void:
 			and (child as Label).text.begins_with("Give the AI")
 		):
 			_idea_prompt_hint_v0213 = child as Label
+	var changed_callback := Callable(self, "_on_idea_seed_text_changed_v02111")
+	if not _idea_seed.text_changed.is_connected(changed_callback):
+		_idea_seed.text_changed.connect(changed_callback)
 	_update_idea_prompt_presentation_v0213()
 
 
-func _on_active_idea_source_changed_v0213(_source: Dictionary) -> void:
+func _on_active_idea_source_changed_v0213(source: Dictionary) -> void:
+	var next_source_id := str(source.get("id", ""))
+	if (
+		not _idea_preset_autofill_source_v02111.is_empty()
+		and next_source_id != _idea_preset_autofill_source_v02111
+	):
+		if _idea_seed != null and _idea_seed.text == _idea_preset_autofill_text_v02111:
+			_idea_preset_text_update_v02111 = true
+			_idea_seed.text = ""
+			_idea_preset_text_update_v02111 = false
+		_idea_preset_autofill_text_v02111 = ""
+		_idea_preset_autofill_source_v02111 = ""
 	_update_idea_prompt_presentation_v0213()
+
+
+func _on_direction_preset_selected_v02111(
+	preset: Dictionary, source_id: String
+) -> void:
+	if _idea_seed == null:
+		return
+	if preset.is_empty():
+		if _idea_seed.text == _idea_preset_autofill_text_v02111:
+			_idea_preset_text_update_v02111 = true
+			_idea_seed.text = ""
+			_idea_preset_text_update_v02111 = false
+		_idea_preset_autofill_text_v02111 = ""
+		_idea_preset_autofill_source_v02111 = ""
+		return
+	var direction := str(preset.get("direction", ""))
+	_idea_preset_text_update_v02111 = true
+	_idea_seed.text = direction
+	_idea_preset_text_update_v02111 = false
+	_idea_preset_autofill_text_v02111 = direction
+	_idea_preset_autofill_source_v02111 = source_id
+
+
+func _on_idea_seed_text_changed_v02111() -> void:
+	if _idea_preset_text_update_v02111 or _idea_preset_autofill_text_v02111.is_empty():
+		return
+	if _idea_seed.text == _idea_preset_autofill_text_v02111:
+		return
+	_idea_preset_autofill_text_v02111 = ""
+	_idea_preset_autofill_source_v02111 = ""
+	if (
+		_idea_generator_v01532 != null
+		and _idea_generator_v01532.has_method("mark_direction_preset_custom_v02111")
+	):
+		_idea_generator_v01532.call("mark_direction_preset_custom_v02111")
 
 
 func _update_idea_prompt_presentation_v0213() -> void:

@@ -590,6 +590,12 @@ func _accept_safe_field_v01522(
 
 
 func _front_porch_type_instruction_v0172(field: Dictionary) -> String:
+	if str(field.get("id", "")) == "fp_work_days":
+		return (
+			"one JSON integer array using Monday=1, Tuesday=2, Wednesday=3, "
+			+ "Thursday=4, Friday=5, Saturday=6, Sunday=7; for a normal "
+			+ "weekday schedule return exactly [1,2,3,4,5], never day-name prose"
+		)
 	if str(field.get("id", "")) == "fp_work_hours":
 		return (
 			"one exact Front Porch clock range string such as 9am–5pm "
@@ -604,16 +610,24 @@ func _prepare_front_porch_fields_v0175(
 	var prepared := super._prepare_front_porch_fields_v0175(fields)
 	for index in range(prepared.size()):
 		var field := prepared[index]
-		if str(field.get("id", "")) != "fp_work_hours":
+		var field_id := str(field.get("id", ""))
+		if field_id not in ["fp_work_days", "fp_work_hours"]:
 			continue
 		var guidance := str(field.get("generation_prompt", "")).strip_edges()
 		if not guidance.is_empty():
 			guidance += " "
-		guidance += (
-			"Return only a real start–end clock range compatible with Front Porch, "
-			+ "for example 9am–5pm or 9:30am–5:15pm. Do not describe holidays, "
-			+ "availability, flexible schedules or days off in this field."
-		)
+		if field_id == "fp_work_days":
+			guidance += (
+				"Return only a JSON integer array where Monday=1, Tuesday=2, "
+				+ "Wednesday=3, Thursday=4, Friday=5, Saturday=6 and Sunday=7. "
+				+ "Example weekday schedule: [1,2,3,4,5]. Never return day-name prose."
+			)
+		else:
+			guidance += (
+				"Return only a real start–end clock range compatible with Front Porch, "
+				+ "for example 9am–5pm or 9:30am–5:15pm. Do not describe holidays, "
+				+ "availability, flexible schedules or days off in this field."
+			)
 		field["generation_prompt"] = guidance
 		prepared[index] = field
 	return prepared

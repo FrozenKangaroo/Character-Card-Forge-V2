@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.11 complete regression suites",
+  "description": "v0.21.10 baseline plus grouped Idea Source direction presets and hardened Front Porch Work Days generation/application.",
+  "base_manifest": "regression_suites_v02110.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v02111_direction_presets_work_days",
+        "label": "v0.21.11 Idea Source direction presets and Front Porch Work Days",
+        "kind": "godot",
+        "path": "tools/test_v02111_direction_presets_work_days.gd",
+        "timeout_seconds": 180
+      }
+    ]
+  }
+}

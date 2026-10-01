@@ -6,6 +6,45 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.11] - 2026-10-01
+
+### Highlights
+
+- Added optional grouped Additional Direction presets to reusable Idea Sources, with a
+  scalable ordered editor and compact AI Ideas selectors.
+- Hardened Front Porch Work Days generation, preview and application so supported model
+  variations normalize to Front Porch's canonical Monday=1 through Sunday=7 IDs.
+
+### Changes
+
+- Kept Idea Source schema version 1 while preserving preset order, stable per-source IDs
+  and unknown future fields through save, duplicate, export and import.
+- Made presets explicit shortcuts: selecting one copies its exact text into the existing
+  editable Additional Direction field, while generation includes only that visible text
+  once and never injects the whole preset library.
+- Preserved manual edits when switching to None/Custom and cleared old auto-filled text
+  only when it remained untouched during a source change.
+- Added field-specific Work Days prompt guidance and tolerant handling for numeric IDs,
+  day-name arrays, clear ranges, weekdays and weekends.
+- Ensured accepted Work Days previews enable the field and store sorted unique integers;
+  ambiguous input is rejected and no longer reported as successfully applied.
+- Canonicalized Front Porch preview field paths so current-value comparisons use the
+  real extension location.
+
+### Migration notes
+
+- None. Existing Idea Sources without `direction_presets`, projects and Front Porch data
+  remain valid.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Presets are selected manually and remain source-local. They are not a direction-history
+  system and model adherence to the copied direction remains provider-dependent.
+
 ## [0.21.10] - 2026-09-29
 
 ### Highlights

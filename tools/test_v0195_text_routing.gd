@@ -263,7 +263,7 @@ func _test_active_ui_wiring() -> bool:
 			"Godot rewrite • v0.20.4", "Godot rewrite • v0.20.5",
 			"Godot rewrite • v0.20.6", "Godot rewrite • v0.20.7",
 			"Godot rewrite • v0.20.8", "Godot rewrite • v0.20.9",
-			"Godot rewrite • v0.21.0", "Godot rewrite • v0.21.1", "Godot rewrite • v0.21.2", "Godot rewrite • v0.21.3", "Godot rewrite • v0.21.5", "Godot rewrite • v0.21.5-hotfix1", "Godot rewrite • v0.21.6", "Godot rewrite • v0.21.7", "Godot rewrite • v0.21.8", "Godot rewrite • v0.21.9", "Godot rewrite • v0.21.10"
+			"Godot rewrite • v0.21.0", "Godot rewrite • v0.21.1", "Godot rewrite • v0.21.2", "Godot rewrite • v0.21.3", "Godot rewrite • v0.21.5", "Godot rewrite • v0.21.5-hotfix1", "Godot rewrite • v0.21.6", "Godot rewrite • v0.21.7", "Godot rewrite • v0.21.8", "Godot rewrite • v0.21.9", "Godot rewrite • v0.21.10", "Godot rewrite • v0.21.11"
 		]:
 			version_found = true
 			break

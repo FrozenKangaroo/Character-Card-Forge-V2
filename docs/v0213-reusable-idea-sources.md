@@ -42,6 +42,24 @@ diversity axes, cross-links, tags, notes, arbitrary labelled sections and raw pr
 text. Unknown future fields are preserved. Files from a newer schema can be inspected
 read-only but are not used as if the older app understood them.
 
+As of v0.21.11, schema-v1 sources may also contain optional grouped Direction Presets:
+
+```json
+"direction_presets": [
+  {
+    "id": "workplace-pressure",
+    "group": "Setting",
+    "title": "Workplace pressure",
+    "direction": "Focus on workplace-related scenarios."
+  }
+]
+```
+
+Preset IDs are stable and unique within their source. Group is optional; title and
+direction are required. Source order and unknown future fields inside each preset are
+preserved. Existing schema-v1 sources need no migration and normalize to an empty
+preset list.
+
 The stable `id` is required. The title is optional. If it is blank, CCF asks the
 configured Text model for a concise reusable name when the source is activated or the
 author chooses **Suggest Name**. The response is editable. A failed or unavailable
@@ -67,6 +85,9 @@ replaced.
 - **Active Idea Source** is the reusable structured generator input.
 - **Additional Direction** is optional, one-off guidance for the current generation
   or batch. Leaving it blank generates directly from the active source.
+- **Preset group / Direction** appears when the source defines presets. Choosing one
+  copies its exact text into Additional Direction. The copied text stays editable and
+  does not mutate the saved preset.
 - **View/Edit Source** opens that same saved or temporary source in the existing
   source editor without copying or saving it automatically.
 - **Change Source** returns to the Idea Sources workflow so another source can be
@@ -77,6 +98,17 @@ replaced.
 The structured source remains internal context and is injected once. CCF never copies
 the rendered source into the Additional Direction field, so using both does not
 duplicate the source context.
+
+Direction Presets are shortcuts, not a second prompt layer. The base source context
+does not contain the full preset library. Only the text currently visible in Additional
+Direction enters `compose_generation_input()`, exactly once. Generation snapshots and
+Generate More therefore freeze the actual author-visible text rather than looking up a
+possibly changed preset later.
+
+The source editor includes an ordered, scrollable preset list with Add, Duplicate,
+Delete, Move Up and Move Down actions plus structured Group, Title and Direction fields.
+Duplicating a whole source creates a new source ID while retaining its source-local
+preset IDs.
 
 Loading an external file is temporary. It does not fill the Source Library and does not
 create an Idea Notebook record. Only **Save Current Source** makes an internal durable

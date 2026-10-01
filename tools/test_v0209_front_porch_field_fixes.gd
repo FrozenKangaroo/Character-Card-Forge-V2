@@ -1,5 +1,9 @@
 extends SceneTree
 
+const WORK_DAYS_V02111 = preload(
+	"res://scripts/services/front_porch_work_days_v02111.gd"
+)
+
 
 func _init() -> void:
 	call_deferred("_run")
@@ -15,6 +19,23 @@ func _require(condition: bool, message_text: String) -> bool:
 
 
 func _run() -> void:
+	var named_days: Dictionary = WORK_DAYS_V02111.normalise(
+		["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+	)
+	var ranged_days: Dictionary = WORK_DAYS_V02111.normalise("Mon-Fri")
+	var weekend_days: Dictionary = WORK_DAYS_V02111.normalise("weekends")
+	var invalid_days: Dictionary = WORK_DAYS_V02111.normalise(
+		"Usually Monday to Friday except holidays"
+	)
+	if not _require(
+		bool(named_days.get("ok", false))
+		and named_days.get("value", []) == [1, 2, 3, 4, 5]
+		and ranged_days.get("value", []) == [1, 2, 3, 4, 5]
+		and weekend_days.get("value", []) == [6, 7]
+		and not bool(invalid_days.get("ok", true)),
+		"Work Days must accept canonical names/ranges but reject ambiguous prose."
+	):
+		return
 	var standard := CCFFrontPorchWorkScheduleV0209.normalise({
 		"start": "09:00", "end": "17:00"
 	})
@@ -92,9 +113,10 @@ func _run() -> void:
 		document, "concept.prompt", "A librarian with a fixed weekday schedule."
 	)
 	var work_hours_field := extension.field_by_id("fp_work_hours")
+	var work_days_field := extension.field_by_id("fp_work_days")
 	var queued := generator.queue_front_porch_fields_v0172(
 		document,
-		[work_hours_field],
+		[work_hours_field, work_days_field],
 		{
 			"name": "Offline regression",
 			"base_url": "http://127.0.0.1:1/v1",
@@ -114,8 +136,11 @@ func _run() -> void:
 		bool(queued.get("ok", false))
 		and prompt_text.contains("actual start and end times")
 		and prompt_text.contains("9am–5pm")
-		and prompt_text.contains("Do not describe holidays"),
-		"Work-hours generation must request Front Porch clock values instead of prose."
+		and prompt_text.contains("Do not describe holidays")
+		and prompt_text.contains("Monday=1")
+		and prompt_text.contains("[1,2,3,4,5]")
+		and prompt_text.contains("Never return day-name prose"),
+		"Work generation must request Front Porch clock values and canonical day IDs instead of prose."
 	):
 		return
 	generator.free()
@@ -148,7 +173,7 @@ func _run() -> void:
 
 	workspace.call(
 		"_show_generation_preview",
-		{"fp_work_days": [2, 4, 6]},
+		{"fp_work_days": ["Monday", "Wednesday", "Friday"]},
 		{
 			"project_id": str(workspace.get("_project").get("project_id", "")),
 			"field_ids": ["fp_work_days"],
@@ -175,8 +200,65 @@ func _run() -> void:
 			live_document,
 			"character.card_extensions.front_porch.realism_engine.workDays",
 			[]
-		) == [2, 4, 6],
-		"Applying a Work Days preview must immediately fill the Front Porch field."
+		) == [1, 3, 5]
+		and extension.is_included(
+			live_document, extension.field_by_id("fp_work_days")
+		),
+		"Applying a day-name Work Days preview must enable and store canonical Front Porch IDs."
+	):
+		return
+
+	workspace.call(
+		"_on_job_completed",
+		"preview-path-test",
+		"front_porch_fields",
+		{"fp_work_days": [1, 3, 5]},
+		{
+			"project_id": str(workspace.get("_project").get("project_id", "")),
+			"field_ids": ["fp_work_days"],
+			"preview_fields": [{
+				"id": "fp_work_days", "key_path": "workDays",
+				"label": "Work days", "type": "integer_tags"
+			}],
+			"front_porch_generation_contract": 1,
+			"front_porch_scope": "Work days",
+			"output_policy": {"unexpected_fields": "ignore"}
+		}
+	)
+	preview_rows = workspace.get("_preview_rows")
+	if not _require(
+		preview_rows.size() == 1
+		and str((preview_rows[0].get("field", {}) as Dictionary).get("path", ""))
+		== "character.card_extensions.front_porch.realism_engine.workDays",
+		"Front Porch preview metadata must use the canonical full project path."
+	):
+		return
+	workspace.call("_hide_preview")
+
+	workspace.call(
+		"_show_generation_preview",
+		{"fp_work_days": "Usually weekdays except public holidays"},
+		{
+			"project_id": str(workspace.get("_project").get("project_id", "")),
+			"field_ids": ["fp_work_days"],
+			"preview_fields": [extension.field_by_id("fp_work_days")],
+			"front_porch_generation_contract": 1,
+			"front_porch_scope": "Work days",
+			"output_policy": {"unexpected_fields": "ignore"}
+		},
+		"Front Porch — Work days"
+	)
+	workspace.call("_apply_preview")
+	var invalid_status := str((workspace.get("_status") as Label).text)
+	if not _require(
+		CCFStorageService.get_value_at_path(
+			workspace.get("_project"),
+			"character.card_extensions.front_porch.realism_engine.workDays",
+			[]
+		) == [1, 3, 5]
+		and invalid_status.contains("No Front Porch fields were applied")
+		and invalid_status.contains("Use day IDs 1–7"),
+		"Invalid Work Days text must preserve the previous value and report a clear rejection."
 	):
 		return
 

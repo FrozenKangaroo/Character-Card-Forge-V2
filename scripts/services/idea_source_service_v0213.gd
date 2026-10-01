@@ -45,6 +45,7 @@ func blank_source() -> Dictionary:
 		"cross_links": [],
 		"tags": [],
 		"notes": "",
+		"direction_presets": [],
 		"sections": [],
 		"raw_prompt": ""
 	}
@@ -93,6 +94,7 @@ func parse_text(text: String) -> Dictionary:
 		))
 	if str(raw.get("id", "")).strip_edges().is_empty():
 		errors.append(_issue("missing_id", "id is required and must be a stable non-empty string."))
+	_validate_direction_presets(raw.get("direction_presets", []), errors)
 	var source := _normalise_source(raw, true)
 	if not _has_generator_content(source):
 		errors.append(_issue(
@@ -116,6 +118,10 @@ func parse_text(text: String) -> Dictionary:
 
 
 func save_source(raw_source: Dictionary) -> Dictionary:
+	var preset_errors: Array[Dictionary] = []
+	_validate_direction_presets(raw_source.get("direction_presets", []), preset_errors)
+	if not preset_errors.is_empty():
+		return {"ok": false, "error": _issues_text(preset_errors)}
 	var source := _normalise_source(raw_source, true)
 	if str(source.get("id", "")).is_empty():
 		source["id"] = _new_id()
@@ -207,6 +213,10 @@ func delete_source(source_id: String) -> Dictionary:
 
 
 func export_to_file(path: String, raw_source: Dictionary) -> Dictionary:
+	var preset_errors: Array[Dictionary] = []
+	_validate_direction_presets(raw_source.get("direction_presets", []), preset_errors)
+	if not preset_errors.is_empty():
+		return {"ok": false, "error": _issues_text(preset_errors)}
 	var source := _normalise_source(raw_source, true)
 	if str(source.get("id", "")).is_empty():
 		source["id"] = _new_id()
@@ -327,6 +337,9 @@ func capabilities() -> Dictionary:
 		"external_load_is_temporary": true,
 		"notebook_separate": true,
 		"title_optional": true,
+		"direction_presets": true,
+		"direction_presets_grouped": true,
+		"direction_presets_transient_selection": true,
 		"structured_generation_context": true,
 		"similarity_modes": ["close", "balanced", "loose"]
 	}
@@ -354,7 +367,90 @@ func _normalise_source(raw: Dictionary, preserve_identity: bool) -> Dictionary:
 				section["content"] = str(section.get("content", "")).strip_edges()
 				sections.append(section)
 	result["sections"] = sections
+	var presets: Array[Dictionary] = []
+	var presets_value: Variant = result.get("direction_presets", [])
+	if presets_value is Array:
+		for preset_value in presets_value:
+			if not preset_value is Dictionary:
+				continue
+			var preset := (preset_value as Dictionary).duplicate(true)
+			preset["id"] = str(preset.get("id", "")).strip_edges()
+			preset["group"] = str(preset.get("group", "")).strip_edges()
+			preset["title"] = str(preset.get("title", "")).strip_edges()
+			preset["direction"] = str(preset.get("direction", "")).strip_edges()
+			presets.append(preset)
+	result["direction_presets"] = presets
 	return result
+
+
+func direction_presets(raw_source: Dictionary) -> Array[Dictionary]:
+	var source := _normalise_source(raw_source, true)
+	var result: Array[Dictionary] = []
+	for value in source.get("direction_presets", []):
+		if value is Dictionary:
+			result.append((value as Dictionary).duplicate(true))
+	return result
+
+
+func unique_direction_preset_id(
+	raw_source: Dictionary, preferred_stem: String = "direction"
+) -> String:
+	var used := {}
+	for preset in direction_presets(raw_source):
+		used[str(preset.get("id", ""))] = true
+	var stem := preferred_stem.strip_edges().to_lower().replace(" ", "-")
+	if stem.is_empty():
+		stem = "direction"
+	var candidate := stem
+	var suffix := 2
+	while used.has(candidate):
+		candidate = "%s-%d" % [stem, suffix]
+		suffix += 1
+	return candidate
+
+
+func _validate_direction_presets(value: Variant, errors: Array[Dictionary]) -> void:
+	if value == null:
+		return
+	if not value is Array:
+		errors.append(_issue(
+			"invalid_direction_presets",
+			"direction_presets must be an array."
+		))
+		return
+	var seen := {}
+	for index in range((value as Array).size()):
+		var preset_value: Variant = (value as Array)[index]
+		if not preset_value is Dictionary:
+			errors.append(_issue(
+				"invalid_direction_preset",
+				"Direction preset %d must be an object." % (index + 1)
+			))
+			continue
+		var preset := preset_value as Dictionary
+		var preset_id := str(preset.get("id", "")).strip_edges()
+		if preset_id.is_empty():
+			errors.append(_issue(
+				"missing_direction_preset_id",
+				"Direction preset %d needs a stable non-empty id." % (index + 1)
+			))
+		elif seen.has(preset_id):
+			errors.append(_issue(
+				"duplicate_direction_preset_id",
+				"Direction preset id '%s' is duplicated." % preset_id
+			))
+		else:
+			seen[preset_id] = true
+		if str(preset.get("title", "")).strip_edges().is_empty():
+			errors.append(_issue(
+				"missing_direction_preset_title",
+				"Direction preset %d needs a title." % (index + 1)
+			))
+		if str(preset.get("direction", "")).strip_edges().is_empty():
+			errors.append(_issue(
+				"missing_direction_preset_direction",
+				"Direction preset %d needs reusable direction text." % (index + 1)
+			))
 
 
 func _has_generator_content(source: Dictionary) -> bool:
