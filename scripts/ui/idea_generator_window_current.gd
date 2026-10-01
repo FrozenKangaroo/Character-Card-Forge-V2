@@ -3103,6 +3103,10 @@ func _rebuild_source_preset_list_v02111(selected_index: int = -1) -> void:
 	if _source_preset_list_v02111 == null:
 		return
 	_source_preset_updating_v02111 = true
+	# The array may already have been deleted, moved or replaced. Invalidate the
+	# previous row before selecting from the new layout so _select_source_preset
+	# cannot commit stale editor fields into whichever preset inherited its index.
+	_source_preset_selected_v02111 = -1
 	_source_preset_list_v02111.clear()
 	for preset in _source_direction_presets_v02111:
 		_source_preset_list_v02111.add_item(_preset_list_label_v02111(preset))

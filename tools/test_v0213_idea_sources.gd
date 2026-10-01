@@ -382,6 +382,38 @@ func _test_live_ui_and_active_source() -> void:
 		and window.find_child("ExportIdeaPackV0210", true, false) != null,
 		"Idea Source Library must be a separate UI while existing Idea Pack actions remain available."
 	)
+	var editor_source := _sample_source()
+	window.call("_populate_source_editor_v0213", editor_source)
+	window.call("_delete_source_preset_v02111")
+	var delete_presets: Array = window.get("_source_direction_presets_v02111")
+	_require(
+		delete_presets.size() == 1
+		and str((delete_presets[0] as Dictionary).get("id", "")) == "isolated"
+		and str((delete_presets[0] as Dictionary).get("title", "")) == "Isolated setting",
+		"Preset deletion must not commit the deleted row's editor values into its neighbour."
+	)
+	window.call("_populate_source_editor_v0213", editor_source)
+	window.call("_move_source_preset_v02111", 1)
+	var moved_presets: Array = window.get("_source_direction_presets_v02111")
+	_require(
+		moved_presets.size() == 2
+		and str((moved_presets[0] as Dictionary).get("id", "")) == "isolated"
+		and str((moved_presets[0] as Dictionary).get("title", "")) == "Isolated setting"
+		and str((moved_presets[1] as Dictionary).get("id", "")) == "workplace"
+		and str((moved_presets[1] as Dictionary).get("title", "")) == "Workplace pressure",
+		"Preset reordering must preserve every row's own fields."
+	)
+	var replacement_editor_source := _sample_source("Replacement editor source")
+	(replacement_editor_source["direction_presets"] as Array)[0]["title"] = "Replacement title"
+	(replacement_editor_source["direction_presets"] as Array)[0]["direction"] = "Replacement direction text."
+	window.call("_populate_source_editor_v0213", replacement_editor_source)
+	var loaded_presets: Array = window.get("_source_direction_presets_v02111")
+	_require(
+		str((loaded_presets[0] as Dictionary).get("title", "")) == "Replacement title"
+		and str((loaded_presets[0] as Dictionary).get("direction", "")) == "Replacement direction text.",
+		"Loading another source must not overwrite its first preset with stale editor values."
+	)
+	window.call("_populate_source_editor_v0213", editor_source)
 	var inactive_banner := window.find_child(
 		"ActiveIdeaSourceBannerV0213", true, false
 	) as Label
