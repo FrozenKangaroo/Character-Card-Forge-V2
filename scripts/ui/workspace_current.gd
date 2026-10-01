@@ -121,7 +121,7 @@ func _create_worker_service_v01526(
 
 
 func _on_job_stream_started_v02112(
-	job_id: String, job_type: String, _metadata: Dictionary
+	job_id: String, job_type: String, metadata: Dictionary
 ) -> void:
 	_stream_complete_units_v02112[job_id] = 0
 	if (
@@ -129,8 +129,8 @@ func _on_job_stream_started_v02112(
 		and _idea_batch_job_indices_v0211.has(job_id)
 		and _idea_generator_v01532 != null
 	):
-		_idea_generator_v01532.call("begin_provisional_ideas_v02112", job_id)
-	_status.text = "● Generating… receiving AI output."
+		_idea_generator_v01532.call("begin_provisional_ideas_v02112", job_id, metadata)
+	_status.text = "● Streaming… waiting for provider output."
 
 
 func _on_job_stream_item_v02112(
@@ -167,26 +167,48 @@ func _on_job_stream_finished_v02112(
 
 
 func _on_job_stream_reset_v02112(
-	job_id: String, job_type: String, _metadata: Dictionary
+	job_id: String, job_type: String, metadata: Dictionary
 ) -> void:
 	_stream_complete_units_v02112.erase(job_id)
 	if job_type == "ideas" and _idea_generator_v01532 != null:
-		_idea_generator_v01532.call("clear_provisional_ideas_v02112", job_id)
+		_idea_generator_v01532.call(
+			"discard_provisional_attempt_v02112",
+			job_id,
+			str(metadata.get("reason", "stream reset")),
+			metadata
+		)
 
 
 func _on_job_phase_changed_v02112(
-	job_id: String, job_type: String, phase: String, _metadata: Dictionary
+	job_id: String, job_type: String, phase: String, metadata: Dictionary
 ) -> void:
-	if phase == "checking":
-		_status.text = "◌ Checking… parsing and validating the completed AI response."
-	elif phase == "ready":
+	if job_type == "ideas" and _idea_generator_v01532 != null:
+		_idea_generator_v01532.call(
+			"set_provisional_phase_v02112", job_id, phase, metadata
+		)
+	match phase:
+		"connecting":
+			_status.text = "● Connecting to AI provider…"
+		"thinking":
+			_status.text = "● Thinking… private reasoning is not shown or retained."
+		"generating_final":
+			_status.text = "● Generating final response…"
+		"retrying":
+			_status.text = "Stream interrupted — retrying with provisional output discarded."
+		"json_repair":
+			_status.text = "Generated response needs JSON repair — requesting corrected output."
+		"transport_fallback":
+			_status.text = "Streaming unavailable — continuing with a completed response."
+		"checking":
+			_status.text = "◌ Checking/parsing the completed AI response…"
+	if phase == "ready":
 		_stream_complete_units_v02112.erase(job_id)
-		if job_type == "ideas" and _idea_generator_v01532 != null:
-			_idea_generator_v01532.call("clear_provisional_ideas_v02112", job_id)
 	elif phase in ["failed", "cancelled"]:
 		_stream_complete_units_v02112.erase(job_id)
 		if job_type == "ideas" and _idea_generator_v01532 != null:
-			_idea_generator_v01532.call("clear_provisional_ideas_v02112", job_id)
+			_idea_generator_v01532.call(
+				"discard_provisional_attempt_v02112", job_id, phase, metadata
+			)
 
 
 func _build_concept_studio() -> void:
@@ -1008,6 +1030,9 @@ func _queue_batched_ideas_v0211(total: int, plan: Array[int]) -> void:
 		and _idea_review_similarity_v0218.button_pressed)
 		or _idea_final_review_mode_v0214() != IDEA_DIVERSITY_V0214.FINAL_REVIEW_OFF
 	)
+	_idea_diversity_session_v0214["fast_path_v02112"] = (
+		_idea_fast_path_enabled_v02112(_idea_diversity_session_v0214)
+	)
 	_idea_diversity_session_v0214["seed_snapshot"] = _idea_seed_with_source_v0213()
 	_idea_diversity_session_v0214["idea_source_id_snapshot"] = str(
 		generation_context.get("idea_source_id", "")
@@ -1090,9 +1115,9 @@ func _queue_next_normal_idea_batch_v0214() -> void:
 		batch_index,
 		_idea_batch_expected_requests_v0211,
 		_idea_batch_requested_total_v0211,
-		anti_repeat,
-		"normal"
-	))
+			anti_repeat,
+			"normal"
+		))
 	if not decorated:
 		_idea_batch_errors_v0211.append(
 			"Request %d/%d could not be marked for safe aggregation."
@@ -1101,6 +1126,15 @@ func _queue_next_normal_idea_batch_v0214() -> void:
 		if _generation_service.has_method("cancel_job_v01531"):
 			_generation_service.call("cancel_job_v01531", job_id)
 		return
+	if bool(_idea_diversity_session_v0214.get("fast_path_v02112", false)):
+		if _generation_service.has_method("set_idea_job_fast_path_v02112"):
+			var fast_marked := bool(_generation_service.call(
+				"set_idea_job_fast_path_v02112", job_id, true
+			))
+			if not fast_marked:
+				_idea_diversity_session_v0214["fast_path_v02112"] = false
+		else:
+			_idea_diversity_session_v0214["fast_path_v02112"] = false
 	_idea_status.text = (
 		"Generating batch %d/%d… %d/%d unique ideas accepted • requesting %d."
 		% [
@@ -1327,15 +1361,35 @@ func _handle_completed_idea_batch_v0211(
 	_idea_batch_results_v0211[batch_index] = accepted_ideas
 	_idea_batch_metadata_v0211[batch_index] = metadata.duplicate(true)
 	_mark_idea_batch_terminal_v0211(job_id, "completed")
-	_idea_status.text = (
-		"Checking batch for repeats… %d/%d unique ideas accepted • %d rejected candidates • %d similarity warnings."
-		% [
-			int(reviewed.get("accepted_count", 0)),
-			_idea_batch_requested_total_v0211,
-			int(reviewed.get("rejected_count", 0)),
-			(_idea_diversity_session_v0214.get("title_warnings", []) as Array).size()
-		]
-	)
+	if _idea_generator_v01532 != null:
+		_idea_generator_v01532.call(
+			"retain_completed_provisional_batch_v02112",
+			job_id,
+			accepted_ideas,
+			metadata
+		)
+	if bool(_idea_diversity_session_v0214.get("fast_path_v02112", false)):
+		_idea_status.text = (
+			"Batch %d/%d accepted immediately • %d/%d Ideas ready so far."
+			% [
+				batch_index + 1,
+				_idea_batch_expected_requests_v0211,
+				int(reviewed.get("accepted_count", 0)),
+				_idea_batch_requested_total_v0211
+			]
+		)
+	else:
+		_idea_status.text = (
+			"Batch %d/%d checked • %d/%d unique Ideas accepted • %d rejected candidates • %d similarity warnings."
+			% [
+				batch_index + 1,
+				_idea_batch_expected_requests_v0211,
+				int(reviewed.get("accepted_count", 0)),
+				_idea_batch_requested_total_v0211,
+				int(reviewed.get("rejected_count", 0)),
+				(_idea_diversity_session_v0214.get("title_warnings", []) as Array).size()
+			]
+		)
 	if request_kind == "top_up":
 		_finalize_idea_generation_session_v0214()
 	else:
@@ -1706,9 +1760,9 @@ func _maybe_queue_final_top_up_v0214() -> void:
 		batch_index,
 		_idea_batch_expected_requests_v0211 + 1,
 		_idea_batch_requested_total_v0211,
-		anti_repeat,
-		"top_up"
-	))
+			anti_repeat,
+			"top_up"
+		))
 	if not decorated:
 		_idea_batch_errors_v0211.append(
 			"The one-shot recovery request could not be marked for safe aggregation."
@@ -1748,13 +1802,45 @@ func _finalize_idea_generation_session_v0214() -> void:
 		_idea_diversity_session_v0214
 	)
 	var aggregate_metadata: Dictionary = {}
+	var streaming_used := false
+	var streaming_fallback_used := false
+	var reasoning_detected := false
+	var reasoning_transports: Array[String] = []
+	var stream_retries := 0
+	var json_repairs := 0
 	var metadata_keys := _idea_batch_metadata_v0211.keys()
 	metadata_keys.sort()
 	for key_value in metadata_keys:
 		var metadata_value: Variant = _idea_batch_metadata_v0211.get(key_value, {})
 		if metadata_value is Dictionary and not (metadata_value as Dictionary).is_empty():
-			aggregate_metadata = (metadata_value as Dictionary).duplicate(true)
-			break
+			var batch_metadata: Dictionary = metadata_value as Dictionary
+			if aggregate_metadata.is_empty():
+				aggregate_metadata = batch_metadata.duplicate(true)
+			streaming_used = streaming_used or bool(batch_metadata.get("streaming_used", false))
+			streaming_fallback_used = (
+				streaming_fallback_used
+				or bool(batch_metadata.get("streaming_fallback_used", false))
+			)
+			reasoning_detected = reasoning_detected or bool(
+				batch_metadata.get("reasoning_detected", false)
+			)
+			for transport_value in str(
+				batch_metadata.get("reasoning_transport", "")
+			).split(",", false):
+				var reasoning_transport := str(transport_value).strip_edges()
+				if (
+					not reasoning_transport.is_empty()
+					and not reasoning_transport in reasoning_transports
+				):
+					reasoning_transports.append(reasoning_transport)
+			stream_retries += int(batch_metadata.get("stream_retries", 0))
+			json_repairs += int(batch_metadata.get("response_repair_attempts", 0))
+	aggregate_metadata["streaming_used"] = streaming_used
+	aggregate_metadata["streaming_fallback_used"] = streaming_fallback_used
+	aggregate_metadata["reasoning_detected"] = reasoning_detected
+	aggregate_metadata["reasoning_transport"] = ", ".join(reasoning_transports)
+	aggregate_metadata["stream_retries"] = stream_retries
+	aggregate_metadata["response_repair_attempts"] = json_repairs
 	var diversity_summary := IDEA_DIVERSITY_V0214.summary(
 		_idea_diversity_session_v0214
 	)
@@ -1772,6 +1858,9 @@ func _finalize_idea_generation_session_v0214() -> void:
 	).size()
 	diversity_summary["user_review_rejected_count"] = int(
 		_idea_diversity_session_v0214.get("user_review_rejected_count", 0)
+	)
+	diversity_summary["fast_path_v02112"] = bool(
+		_idea_diversity_session_v0214.get("fast_path_v02112", false)
 	)
 	aggregate_metadata["idea_batch_contract_version"] = IDEA_BATCHING_V0211.CONTRACT_VERSION
 	aggregate_metadata["idea_batch_group_id"] = _idea_batch_group_id_v0211
@@ -1845,6 +1934,7 @@ func _finalize_idea_generation_session_v0214() -> void:
 	_idea_curation_session_v0218["metadata"] = aggregate_metadata.duplicate(true)
 	_render_ideas(combined)
 	if _idea_generator_v01532 != null:
+		_idea_generator_v01532.call("clear_provisional_ideas_v02112")
 		_idea_generator_v01532.set_last_generated_ideas_v01532(
 			combined, aggregate_metadata
 		)
@@ -1944,6 +2034,9 @@ func _generate_more_ideas_v0218() -> void:
 		additional,
 		per_request,
 		edited_instruction
+	)
+	_idea_diversity_session_v0214["fast_path_v02112"] = (
+		_idea_fast_path_enabled_v02112(_idea_diversity_session_v0214)
 	)
 	_idea_batch_group_id_v0211 = "idea-more-%d-%d" % [
 		Time.get_ticks_usec(), get_instance_id()
@@ -2199,22 +2292,35 @@ func _set_completed_idea_batch_status_v0211(
 		"generation_batch_count",
 		aggregate_metadata.get("idea_generation_batch_count", 0)
 	))
-	_idea_status.text = (
-		"%d/%d unique ideas accepted%s across %d generation batch%s • %d rejected candidate%s • %d similarity warning%s%s%s."
-		% [
-			combined.size(),
-			_idea_batch_requested_total_v0211,
-			recovery_note,
-			generation_batches,
-			"" if generation_batches == 1 else "es",
-			rejected_count,
-			"" if rejected_count == 1 else "s",
-			warning_count,
-			"" if warning_count == 1 else "s",
-			custom_note,
-			error_note
-		]
-	)
+	if bool(diversity.get("fast_path_v02112", false)):
+		_idea_status.text = (
+			"%d/%d Ideas accepted immediately across %d generation batch%s%s%s."
+			% [
+				combined.size(),
+				_idea_batch_requested_total_v0211,
+				generation_batches,
+				"" if generation_batches == 1 else "es",
+				custom_note,
+				error_note
+			]
+		)
+	else:
+		_idea_status.text = (
+			"%d/%d unique ideas accepted%s across %d generation batch%s • %d rejected candidate%s • %d similarity warning%s%s%s."
+			% [
+				combined.size(),
+				_idea_batch_requested_total_v0211,
+				recovery_note,
+				generation_batches,
+				"" if generation_batches == 1 else "es",
+				rejected_count,
+				"" if rejected_count == 1 else "s",
+				warning_count,
+				"" if warning_count == 1 else "s",
+				custom_note,
+				error_note
+			]
+		)
 	var final_review_label := "Off"
 	if bool(diversity.get("final_review_check_adherence", false)) or bool(
 		diversity.get("final_review_check_similarity", false)
@@ -2235,6 +2341,20 @@ func _set_completed_idea_batch_status_v0211(
 		"Requested: %d" % _idea_batch_requested_total_v0211,
 		"Accepted: %d" % combined.size(),
 		"Generation batches: %d" % generation_batches,
+		"Transport: %s" % (
+			"Completed-response fallback"
+			if bool(aggregate_metadata.get("streaming_fallback_used", false))
+			else (
+				"Streaming"
+				if bool(aggregate_metadata.get("streaming_used", false))
+				else "Completed response"
+			)
+		),
+		"Stream retries: %d" % int(aggregate_metadata.get("stream_retries", 0)),
+		"JSON repairs: %d" % int(aggregate_metadata.get("response_repair_attempts", 0)),
+		"Reasoning detected: %s" % (
+			"Yes" if bool(aggregate_metadata.get("reasoning_detected", false)) else "No"
+		),
 		"Initial generated candidates: %d" % int(diversity.get(
 			"initial_generated_candidate_count", 0
 		)),
@@ -2250,6 +2370,9 @@ func _set_completed_idea_batch_status_v0211(
 		"Rejected candidates: %d" % rejected_count,
 		"Similarity warnings: %d" % warning_count,
 		"Final Idea Review: %s" % final_review_label,
+		"All-options-off fast path: %s" % (
+			"Yes" if bool(diversity.get("fast_path_v02112", false)) else "No"
+		),
 		"User-rejected during final review: %d" % user_review_rejected,
 		"User-deleted after generation: %d" % user_deleted,
 		"Manual Generate More requests: %d" % manual_more,
@@ -2257,6 +2380,12 @@ func _set_completed_idea_batch_status_v0211(
 			"Yes" if bool(diversity.get("final_top_up_started", false)) else "No"
 		)
 	]
+	if bool(aggregate_metadata.get("reasoning_detected", false)):
+		var reasoning_transport := str(
+			aggregate_metadata.get("reasoning_transport", "")
+		).strip_edges()
+		if not reasoning_transport.is_empty():
+			detail_lines.append("Reasoning signal: %s" % reasoning_transport)
 	var warnings_value: Variant = aggregate_metadata.get(
 		"idea_title_duplicate_warnings", []
 	)
@@ -2280,6 +2409,17 @@ func _idea_batch_received_count_v0211() -> int:
 		if ideas_value is Array:
 			count += (ideas_value as Array).size()
 	return mini(count, _idea_batch_requested_total_v0211)
+
+
+func _idea_fast_path_enabled_v02112(session: Dictionary) -> bool:
+	return (
+		not bool(session.get("prevent_repeats", true))
+		and not bool(session.get("final_review_check_adherence", false))
+		and not bool(session.get("final_review_check_similarity", false))
+		and str(session.get("final_review_mode", "off"))
+		== IDEA_DIVERSITY_V0214.FINAL_REVIEW_OFF
+		and not bool(session.get("final_top_up_enabled", false))
+	)
 
 
 func _reset_idea_batch_state_v0211() -> void:

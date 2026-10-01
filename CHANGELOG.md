@@ -14,6 +14,10 @@ none. GitHub Releases use the matching reviewed section instead of generated not
   and OpenAI-compatible SSE transport shared by all text-generation jobs.
 - Added progressive Character Collaborator prose and complete provisional AI Idea cards,
   with clear Generating, Checking and Ready lifecycle states.
+- Separated provider reasoning/thinking channels from final answer content so thinking
+  cannot become a provisional Idea or enter incremental JSON parsing.
+- Added a bounded, user-respecting provisional Idea scroller with split-batch progress and
+  visible retry, fallback and JSON-repair explanations.
 
 ### Changes
 
@@ -26,8 +30,14 @@ none. GitHub Releases use the matching reviewed section instead of generated not
   responses.
 - Discarded all provisional output on cancellation, retry or terminal failure and blocked
   delayed old-attempt events from mutating the active job.
-- Kept every final response on the established full parser, local repair, semantic
-  validation and review path; provisional output is never committed to project data.
+- Kept every final response on the established full parser and local repair path;
+  provisional output is never committed to project data. Checked Idea workflows retain
+  semantic validation and review.
+- Added a genuine all-checks-off Idea fast path that skips semantic repair calls, final
+  review/top-up and local duplicate fingerprint/comparison work for structurally valid
+  Idea arrays.
+- Added non-sensitive generation details for transport, retries, JSON repair, fallback and
+  detected reasoning-signal type without retaining reasoning text or credentials.
 - Advanced the application settings schema to version 10 and the inherited regression
   manifest to v0.21.12.
 

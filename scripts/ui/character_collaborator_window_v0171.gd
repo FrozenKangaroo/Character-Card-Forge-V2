@@ -53,12 +53,27 @@ func _on_generation_failed(job_id: String, job_type: String, message: String) ->
 
 
 func _working_text_v0153() -> String:
-	if (
-		_active_collaborator_job_type_v0153 == "collaborator_reply"
-		and not _stream_reply_v02112.is_empty()
-	):
-		var state := "Checking completed reply…" if _stream_phase_v02112 == "checking" else "Character Collaborator is writing…"
-		return "%s\n\n%s\n\nProvisional — not yet saved" % [state, _stream_reply_v02112]
+	if _active_collaborator_job_type_v0153 == "collaborator_reply":
+		var state := ""
+		match _stream_phase_v02112:
+			"connecting":
+				state = "Connecting to AI provider…"
+			"thinking":
+				state = "Character Collaborator is thinking…"
+			"generating_final", "streaming":
+				state = "Character Collaborator is writing…"
+			"checking":
+				state = "Checking completed reply…"
+			"retrying":
+				state = "Stream interrupted — retrying…"
+			"json_repair":
+				state = "Repairing the completed response…"
+			"transport_fallback":
+				state = "Streaming unavailable — continuing normally…"
+		if not state.is_empty():
+			if _stream_reply_v02112.is_empty():
+				return state
+			return "%s\n\n%s\n\nProvisional — not yet saved" % [state, _stream_reply_v02112]
 	return super._working_text_v0153()
 
 
@@ -87,7 +102,10 @@ func _on_stream_phase_v02112(
 	if job_id != _stream_job_id_v02112 or job_type != "collaborator_reply":
 		return
 	_stream_phase_v02112 = phase
-	if phase in ["checking", "streaming"]:
+	if phase in [
+		"connecting", "thinking", "generating_final", "checking", "streaming",
+		"retrying", "json_repair", "transport_fallback"
+	]:
 		_refresh_chat()
 
 

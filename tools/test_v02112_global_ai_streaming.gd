@@ -6,8 +6,20 @@ const DECODER = preload(
 const STRUCTURED = preload(
 	"res://scripts/services/incremental_json_stream_v02112.gd"
 )
+const CLASSIFIER = preload(
+	"res://scripts/services/stream_content_classifier_v02112.gd"
+)
 const GENERATION = preload(
 	"res://scripts/services/generation_service_current.gd"
+)
+const DIVERSITY = preload(
+	"res://scripts/services/idea_diversity_guardrails_v0214.gd"
+)
+const BATCHING = preload(
+	"res://scripts/services/idea_generator_batching_v0211.gd"
+)
+const IDEA_WINDOW = preload(
+	"res://scripts/ui/idea_generator_window_current.gd"
 )
 
 var _failed := false
@@ -20,9 +32,12 @@ func _init() -> void:
 func _run() -> void:
 	_test_settings_persistence()
 	_test_sse_reconstruction_and_completed_body()
+	_test_reasoning_separation()
 	_test_structured_hostile_boundaries()
 	_test_malformed_and_incomplete_streams()
 	await _test_job_attempt_isolation_and_cancellation()
+	await _test_fast_path_and_optional_comparison()
+	await _test_provisional_idea_scrolling_and_resets()
 	_test_final_parser_and_provider_policy()
 	if _failed:
 		quit(1)
@@ -188,6 +203,73 @@ func _test_structured_hostile_boundaries() -> void:
 	)
 
 
+func _test_reasoning_separation() -> void:
+	var decoder := DECODER.new()
+	var reasoning_event := "data: %s\n\n" % JSON.stringify({
+		"choices": [{
+			"delta": {
+				"reasoning_content": "private reasoning with [{\"title\":\"False Idea\"}]"
+			},
+			"finish_reason": null
+		}]
+	})
+	var decoded := decoder.feed_bytes(reasoning_event.to_utf8_buffer())
+	_require(
+		bool(decoded.get("reasoning_detected", false))
+		and (decoded.get("deltas", []) as Array).is_empty(),
+		"Dedicated provider reasoning must be detected without becoming final content."
+	)
+	var block_decoder := DECODER.new()
+	var block_event := "data: %s\n\n" % JSON.stringify({
+		"choices": [{
+			"delta": {"content": [
+				{"type": "thinking", "text": "private"},
+				{"type": "output_text", "text": "final"}
+			]},
+			"finish_reason": null
+		}]
+	})
+	var block_result := block_decoder.feed_bytes(block_event.to_utf8_buffer())
+	_require(
+		bool(block_result.get("reasoning_detected", false))
+		and block_result.get("deltas", []) == ["final"],
+		"Reasoning content blocks must be suppressed while final text blocks remain."
+	)
+
+	var classifier := CLASSIFIER.new()
+	var final_text := ""
+	var reasoning_seen := false
+	for piece in [
+		"  <thi",
+		"nk>Planning [{\"title\":\"Reasoning Idea\",\"concept\":\"Never show\"}]",
+		"</thi",
+		"nk>\n[{\"title\":\"Final Idea\",\"concept\":\"Safe final\"}]"
+	]:
+		var classified := classifier.feed_content(piece)
+		reasoning_seen = reasoning_seen or bool(classified.get("reasoning_detected", false))
+		for final_delta in classified.get("final_deltas", []):
+			final_text += str(final_delta)
+	var finish_result := classifier.finish()
+	for final_delta in finish_result.get("final_deltas", []):
+		final_text += str(final_delta)
+	var parser := STRUCTURED.new()
+	var units := parser.feed(final_text)
+	_require(
+		reasoning_seen
+		and not final_text.contains("Reasoning Idea")
+		and (units.get("items", []) as Array).size() == 1
+		and str(((units.get("items", []) as Array)[0] as Dictionary).get("title", ""))
+		== "Final Idea",
+		"A reasoning tag split across arbitrary chunks must not leak valid-looking reasoning JSON into provisional Ideas."
+	)
+
+	var literal_classifier := CLASSIFIER.new()
+	var literal := "[{\"title\":\"Literal\",\"concept\":\"Mentions <think> as text\"}]"
+	var literal_result := literal_classifier.feed_content(literal)
+	_require(
+		literal_result.get("final_deltas", []) == [literal],
+		"Tag heuristics must not strip tag-like text after the final JSON answer has begun."
+	)
 func _test_malformed_and_incomplete_streams() -> void:
 	var malformed := DECODER.new()
 	var result := malformed.feed_bytes("data: {not valid json}\n\n".to_utf8_buffer())
@@ -292,6 +374,134 @@ func _test_job_attempt_isolation_and_cancellation() -> void:
 	)
 	service.set("_active_job", {})
 	service.queue_free()
+
+
+func _test_fast_path_and_optional_comparison() -> void:
+	var service := GENERATION.new()
+	root.add_child(service)
+	await process_frame
+	var completions: Array = []
+	service.job_completed.connect(func(
+		_job_id: String, _job_type: String, data: Variant, metadata: Dictionary
+	) -> void:
+		completions.append({"data": data, "metadata": metadata})
+	)
+	service.set("_active_job", {
+		"id": "fast_ideas",
+		"type": "ideas",
+		"attempt": 1,
+		"repair_attempts": 0,
+		"model": "fake",
+		"profile_name": "fake",
+		"metadata": {"idea_fast_path_v02112": true}
+	})
+	service.call(
+		"_process_completed_content",
+		"[{\"title\":\"Fast\",\"concept\":\"Structurally usable immediately\"}]"
+	)
+	_require(
+		completions.size() == 1
+		and bool((completions[0] as Dictionary).get("metadata", {}).get(
+			"idea_fast_path_used_v02112", false
+		))
+		and int((completions[0] as Dictionary).get("metadata", {}).get(
+			"semantic_repair_attempts", -1
+		)) == 0
+		and not service.has_active_job(),
+		"All-options-off Idea JSON must complete directly without semantic repair or another AI job."
+	)
+	service.queue_free()
+
+	var duplicate_idea := {
+		"title": "Same title",
+		"character_name": "Rika",
+		"concept": "Rika finds the same locked room twice."
+	}
+	var fast_session := DIVERSITY.create_session(2, 2, false, "off", false, {})
+	fast_session["final_review_check_adherence"] = false
+	fast_session["final_review_check_similarity"] = false
+	var fast_result := DIVERSITY.record_batch(
+		fast_session, [duplicate_idea, duplicate_idea], [], "normal"
+	)
+	var fast_records: Array = fast_session.get("accepted", [])
+	_require(
+		int(fast_result.get("accepted_count", 0)) == 2
+		and (fast_records[0] as Dictionary).get("structural_tokens", []) == []
+		and str((fast_records[0] as Dictionary).get("fingerprint", "")).is_empty(),
+		"When every optional check is off, local fingerprints, tokens, and duplicate comparisons must be skipped."
+	)
+	var guarded_session := DIVERSITY.create_session(2, 2, true, "off", false, {})
+	var guarded_result := DIVERSITY.record_batch(
+		guarded_session, [duplicate_idea, duplicate_idea], [], "normal"
+	)
+	_require(
+		int(guarded_result.get("accepted_count", 0)) == 1
+		and int(guarded_result.get("rejected_count", 0)) == 1,
+		"Prevent Repeats must retain its existing duplicate rejection behavior."
+	)
+	_require(
+		BATCHING.request_plan(20, 12) == [12, 8],
+		">12 Ideas must retain sequential 12-plus-remainder batching."
+	)
+
+
+func _test_provisional_idea_scrolling_and_resets() -> void:
+	var window := IDEA_WINDOW.new()
+	window.size = Vector2i(1000, 760)
+	root.add_child(window)
+	window.show()
+	await process_frame
+	await process_frame
+	var scroll := window.find_child("ProvisionalIdeasScrollV02112", true, false) as ScrollContainer
+	var list := window.find_child("ProvisionalIdeasListV02112", true, false) as VBoxContainer
+	_require(
+		scroll != null and list != null and list.get_parent() == scroll,
+		"Provisional Ideas must live inside a bounded ScrollContainer."
+	)
+	window.call("begin_provisional_ideas_v02112", "batch_1", {
+		"idea_batch_group_id": "group",
+		"idea_batch_index": 0,
+		"idea_batch_request_count": 2,
+		"idea_batch_request_size": 12
+	})
+	for index in range(13):
+		window.call("append_provisional_idea_v02112", "batch_1", {
+			"title": "Idea %d" % (index + 1),
+			"concept": "A deliberately long provisional concept %d that ensures the scroll region contains more content than its visible page." % (index + 1)
+		})
+	await process_frame
+	await process_frame
+	var bar := scroll.get_v_scroll_bar()
+	scroll.scroll_vertical = int(bar.max_value)
+	await process_frame
+	_require(
+		bool(window.call("provisional_should_follow_v02112")),
+		"Provisional output should follow new Ideas while the user is already near the bottom."
+	)
+	scroll.scroll_vertical = 0
+	await process_frame
+	_require(
+		bar.max_value <= bar.page
+		or not bool(window.call("provisional_should_follow_v02112")),
+		"Provisional output must not yank a user who deliberately scrolled upward."
+	)
+	window.call("discard_provisional_attempt_v02112", "batch_1", "retry", {})
+	await process_frame
+	var notice := window.find_child("ProvisionalIdeasNoticeV02112", true, false) as Label
+	_require(
+		notice != null
+		and notice.visible
+		and notice.text.contains("retrying")
+		and notice.text.contains("discarded"),
+		"Retry/reset must clear abandoned provisional cards and explain why."
+	)
+	window.call("discard_provisional_attempt_v02112", "batch_1", "provider_unsupported", {})
+	_require(
+		notice.text.contains("continuing normally"),
+		"Transport fallback must remain visible instead of silently clearing provisional output."
+	)
+	window.hide()
+	window.queue_free()
 
 
 func _test_final_parser_and_provider_policy() -> void:

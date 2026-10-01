@@ -7,8 +7,10 @@ falls back to the established completed-response path when the endpoint opts out
 streaming in a recognizable way, or returns an ordinary response envelope.
 
 Streaming changes delivery and presentation only. It does not add prompt instructions,
-change generated schemas, move Idea Source or Direction Preset context, or bypass the
-existing parser, repair, semantic validation, review and application stages.
+change generated schemas, or move Idea Source or Direction Preset context. Every response
+still uses the established structural parser and repair path. The normal checked path also
+retains semantic validation and review; the explicit all-checks-off fast path is documented
+below.
 
 ## Provisional and final content
 
@@ -25,6 +27,17 @@ result. The visible lifecycle distinguishes **Generating**, **Checking** and **R
 - Other structured generation surfaces report complete provisional units and generation
   phase without inserting incomplete JSON into project data.
 - Small background tasks use the same transport but do not add intrusive animation.
+
+Provider reasoning/thinking channels are separated from final answer content. Recognized
+reasoning fields and leading `<think>`, `<reasoning>` or `<analysis>` blocks are never sent
+to the incremental JSON parser and are never shown as provisional Ideas. CCF reports only
+that reasoning was detected, not the reasoning text.
+
+The provisional AI Ideas list is bounded and scrollable. It follows new Ideas only while
+the user is already near the bottom, so reading an earlier Idea is not interrupted. For a
+split request, the panel shows the current batch and cumulative Idea count and keeps
+completed earlier batches visible. Retry, stream fallback and JSON repair replace a failed
+attempt's provisional cards with an explanation instead of silently clearing them.
 
 ## Structured output safety
 
@@ -50,12 +63,29 @@ retry/failure system. A successful endpoint that ignores `stream=true` is proces
 ordinary completed response. No existing project, provider profile, card, Idea Source,
 Idea Pack or Front Porch data requires migration.
 
+## Idea Generator fast path
+
+When Prevent Repeats, Final Request-Adherence Review, Final Similarity Review, the legacy
+Final Idea Review and automatic top-up are all disabled, a structurally valid Idea array is
+accepted after parsing and normalization. CCF does not compute duplicate fingerprints,
+compare candidates, run semantic curation/repair, open final review or top up the batch in
+that mode. This is useful for small or local models and avoids hidden extra model calls.
+
+The fast path can still make another request when the response is malformed and the
+existing one-shot JSON repair is required, when a configured network/HTTP retry runs, or
+when a rejected/unsupported stream is retried through the completed-response fallback.
+Turning any optional Idea check back on restores its established checked workflow.
+
 ## Provider scope and current limitations
 
 Streaming is currently attempted for HTTP(S) OpenAI-compatible `/chat/completions`
 endpoints unless a profile explicitly reports `streaming_supported: false`. Compatibility
 varies across custom endpoints; fallback preserves ordinary generation, but the app does
 not claim that every provider supports SSE.
+
+Generation diagnostics record the transport used, stream retry count, JSON repair count,
+fallback state and the kind of reasoning signal detected. Diagnostics never store or
+display reasoning text, API keys or authorization headers.
 
 The first progressive UI pass prioritizes readable prose in Character Collaborator and
 complete objects in AI Ideas. Structured card, AI Fill, Front Porch and evaluator jobs

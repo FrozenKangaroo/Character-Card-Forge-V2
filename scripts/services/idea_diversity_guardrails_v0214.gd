@@ -194,6 +194,7 @@ static func record_batch(
 
 	var newly_accepted: Array[Dictionary] = []
 	var newly_rejected: Array[Dictionary] = []
+	var comparison_enabled := local_comparison_required(session)
 	for idea_value in ideas:
 		if not idea_value is Dictionary:
 			var malformed := _normalise_rejected_record(
@@ -204,7 +205,7 @@ static func record_batch(
 			continue
 		var idea: Dictionary = (idea_value as Dictionary).duplicate(true)
 		var candidate := ledger_record_for_idea(
-			idea, _take_ledger_id(session), "accepted", ""
+			idea, _take_ledger_id(session), "accepted", "", comparison_enabled
 		)
 		if accepted_count(session) >= int(session.get("target_count", 0)):
 			candidate["state"] = "rejected"
@@ -212,7 +213,15 @@ static func record_batch(
 			_append_rejected(session, candidate)
 			newly_rejected.append(candidate)
 			continue
-		var comparison := compare_against_session(candidate, session)
+		var comparison := (
+			compare_against_session(candidate, session)
+			if comparison_enabled
+			else {
+				"clear_duplicate": false,
+				"title_warnings": [],
+				"duplicate_candidates": []
+			}
+		)
 		for warning_value in comparison.get("title_warnings", []):
 			var warning: Dictionary = warning_value
 			(session.get("title_warnings", []) as Array).append(warning)
@@ -266,7 +275,11 @@ static func record_batch(
 
 
 static func ledger_record_for_idea(
-	idea: Dictionary, ledger_id: String, state: String, reason: String
+	idea: Dictionary,
+	ledger_id: String,
+	state: String,
+	reason: String,
+	include_comparison_data: bool = true
 ) -> Dictionary:
 	var title := str(idea.get("title", "Untitled idea")).strip_edges()
 	var summary := _idea_summary(idea)
@@ -274,13 +287,22 @@ static func ledger_record_for_idea(
 		"id": ledger_id,
 		"title": title if not title.is_empty() else "Untitled idea",
 		"summary": summary,
-		"fingerprint": semantic_fingerprint(idea),
-		"structural_tokens": structural_tokens(idea),
-		"normalised_title": normalise_title(title),
+		"fingerprint": semantic_fingerprint(idea) if include_comparison_data else "",
+		"structural_tokens": structural_tokens(idea) if include_comparison_data else [],
+		"normalised_title": normalise_title(title) if include_comparison_data else "",
 		"state": state,
 		"rejection_reason": reason,
 		"idea": idea.duplicate(true)
 	}
+
+
+static func local_comparison_required(session: Dictionary) -> bool:
+	return (
+		bool(session.get("prevent_repeats", true))
+		or bool(session.get("final_review_check_similarity", false))
+		or normalise_final_review_mode(session.get("final_review_mode", "off"))
+		!= FINAL_REVIEW_OFF
+	)
 
 
 static func semantic_fingerprint(idea: Dictionary) -> String:
