@@ -27,6 +27,8 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Load a chosen public source as a temporary editable source and activate it immediately;
   the local Source Library is never overwritten unless the author explicitly presses
   **Save Current Source**.
+- Open the public-source chooser as a native independent window so it can be moved outside
+  the main application without being clipped or disappearing.
 - Added deterministic catalog-building and public-source directory validation tools plus
   focused browser, integrity and path-safety regression coverage.
 

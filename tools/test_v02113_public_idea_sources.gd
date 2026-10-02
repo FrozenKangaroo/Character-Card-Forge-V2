@@ -125,6 +125,7 @@ func _test_live_browser_wiring() -> void:
 		and button.text == "Browse Public Sources…"
 		and browser is Window
 		and (browser as Window).get_script() == PUBLIC_BROWSER
+		and (browser as Window).force_native
 		and not (browser as Window).transient,
 		"Idea Sources must expose a screen-safe independent public catalog window."
 	)

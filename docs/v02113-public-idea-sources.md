@@ -6,8 +6,9 @@ Character Card Forge can browse an official public collection of reusable Idea S
 without bundling that content into the executable or treating remote JSON as trusted.
 
 The **Idea Generator → Idea Sources → Browse Public Sources…** action opens a searchable,
-independent tool window. Choosing **Use Selected Source** downloads and verifies the source,
-loads it into the normal Idea Source editor and activates it for generation.
+native independent tool window that can move outside the main application window. Choosing
+**Use Selected Source** downloads and verifies the source, loads it into the normal Idea Source
+editor and activates it for generation.
 
 ## Publishing layout
 

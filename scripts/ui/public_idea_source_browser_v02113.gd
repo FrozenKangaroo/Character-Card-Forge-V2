@@ -30,6 +30,7 @@ func _ready() -> void:
 	min_size = Vector2i(760, 560)
 	size = Vector2i(1040, 720)
 	initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_MAIN_WINDOW_SCREEN
+	force_native = true
 	transient = false
 	exclusive = false
 	unresizable = false
