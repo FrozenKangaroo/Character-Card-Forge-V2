@@ -84,3 +84,49 @@ normal local Idea Source behavior works without internet access.
 directory. `tools/validate_public_idea_source_directory_v02113.gd` runs every candidate
 file through the production Idea Source parser. Upload source objects before publishing
 the new manifest.
+
+
+## GitHub Actions R2 publishing
+
+The repository includes `.github/workflows/publish-public-idea-sources.yml` and
+`tools/publish_public_idea_sources_r2.py` as a publishing bridge for catalog updates.
+
+Public source snapshots are committed under:
+
+```text
+.github/public-idea-source-publish/<number>-<name>.ccfideasource.txt
+```
+
+The `.txt` extension is intentional. The snapshot bytes are the exact Idea Source JSON
+bytes that will be published, but keeping the repository copy out of `*.json` prevents
+Godot's JSON export include filter from bundling the public catalog into the executable.
+The publisher changes only the object filename extension back to
+`.ccfideasource.json`.
+
+A push that adds or updates one of those snapshots automatically:
+
+1. reads the existing live `manifest.json` directly from R2;
+2. validates the staged Idea Source and calculates its exact SHA-256 and byte size;
+3. creates `idea-sources/<first-16-sha256>/<number>-<name>.ccfideasource.json`
+   if that immutable object does not already exist;
+4. replaces or adds the source entry in the manifest by stable source `id`;
+5. uploads `manifest.json` last; and
+6. re-downloads the R2 objects and verifies the source through the public custom domain.
+
+The workflow uses the bucket `charactercardforge` and public root
+`https://charactercardforge.damee.info/`.
+
+### Required GitHub Actions secrets
+
+Configure these repository Actions secrets before publishing:
+
+- `CLOUDFLARE_ACCOUNT_ID`
+- `R2_ACCESS_KEY_ID`
+- `R2_SECRET_ACCESS_KEY`
+
+Create the R2 credentials with **Object Read & Write** access scoped only to the
+`charactercardforge` bucket. Do not commit credentials to the repository.
+
+The workflow can also be run manually with `workflow_dispatch` by supplying one or more
+repo-relative `.ccfideasource.txt` snapshot paths. This is useful for retrying a publish
+after fixing credentials without modifying the source content.
