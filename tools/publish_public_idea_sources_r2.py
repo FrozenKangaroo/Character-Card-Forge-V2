@@ -2,9 +2,10 @@
 """Publish one or more public Character Card Forge Idea Sources to Cloudflare R2.
 
 Source snapshots are stored in GitHub as *.ccfideasource.txt so they are not
-picked up by Character Card Forge's *.json export include filter. The bytes in
-those files are the exact JSON bytes published to R2; only the object filename
-extension changes to *.ccfideasource.json.
+picked up by Character Card Forge's *.json export include filter. A snapshot
+may contain the exact JSON bytes or a CCF_GZIP_BASE64_V1 envelope. Envelopes
+are decoded back to the exact JSON bytes before hashing and publishing; only
+the object filename extension changes to *.ccfideasource.json.
 
 Publishing order is deliberate:
 1. Load and validate the current live manifest directly from R2.
@@ -18,7 +19,9 @@ Publishing order is deliberate:
 from __future__ import annotations
 
 import argparse
+import base64
 from datetime import datetime, timezone
+import gzip
 import hashlib
 import json
 import os
@@ -39,6 +42,7 @@ MANIFEST_KEY = "manifest.json"
 MAX_SOURCE_BYTES = 2 * 1024 * 1024
 IMMUTABLE_CACHE_CONTROL = "public, max-age=31536000, immutable"
 MANIFEST_CACHE_CONTROL = "public, max-age=60, must-revalidate"
+COMPRESSED_ENVELOPE_PREFIX = b"CCF_GZIP_BASE64_V1\n"
 
 
 def _sha256(data: bytes) -> str:
@@ -54,11 +58,24 @@ def _published_filename(snapshot: Path) -> str:
 
 
 def _source_entry(snapshot: Path) -> tuple[dict[str, Any], bytes]:
-    raw = snapshot.read_bytes()
-    if not raw:
+    stored = snapshot.read_bytes()
+    if not stored:
         raise ValueError(f"{snapshot}: file is empty")
+
+    if stored.startswith(COMPRESSED_ENVELOPE_PREFIX):
+        encoded = stored[len(COMPRESSED_ENVELOPE_PREFIX):].strip()
+        try:
+            compressed = base64.b64decode(encoded, validate=True)
+            raw = gzip.decompress(compressed)
+        except Exception as exc:
+            raise ValueError(f"{snapshot}: invalid CCF_GZIP_BASE64_V1 envelope: {exc}") from exc
+    else:
+        raw = stored
+
+    if not raw:
+        raise ValueError(f"{snapshot}: decoded source is empty")
     if len(raw) > MAX_SOURCE_BYTES:
-        raise ValueError(f"{snapshot}: file exceeds {MAX_SOURCE_BYTES} bytes")
+        raise ValueError(f"{snapshot}: decoded source exceeds {MAX_SOURCE_BYTES} bytes")
 
     try:
         source = json.loads(raw.decode("utf-8"))
