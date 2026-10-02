@@ -43,6 +43,8 @@ MAX_SOURCE_BYTES = 2 * 1024 * 1024
 IMMUTABLE_CACHE_CONTROL = "public, max-age=31536000, immutable"
 MANIFEST_CACHE_CONTROL = "public, max-age=60, must-revalidate"
 COMPRESSED_ENVELOPE_PREFIX = b"CCF_GZIP_BASE64_V1\n"
+PARTS_ENVELOPE_PREFIX = b"CCF_GZIP_BASE64_PARTS_V1\n"
+PARTS_ROOT = Path(".github/public-idea-source-publish-data")
 
 
 def _sha256(data: bytes) -> str:
@@ -62,7 +64,31 @@ def _source_entry(snapshot: Path) -> tuple[dict[str, Any], bytes]:
     if not stored:
         raise ValueError(f"{snapshot}: file is empty")
 
-    if stored.startswith(COMPRESSED_ENVELOPE_PREFIX):
+    if stored.startswith(PARTS_ENVELOPE_PREFIX):
+        try:
+            part_lines = stored[len(PARTS_ENVELOPE_PREFIX):].decode("utf-8").splitlines()
+        except UnicodeDecodeError as exc:
+            raise ValueError(f"{snapshot}: invalid CCF_GZIP_BASE64_PARTS_V1 envelope") from exc
+        part_paths = [line.strip() for line in part_lines if line.strip()]
+        if not part_paths:
+            raise ValueError(f"{snapshot}: parts envelope contains no part paths")
+        encoded_parts: list[str] = []
+        for part_text in part_paths:
+            part = Path(part_text)
+            try:
+                part.relative_to(PARTS_ROOT)
+            except ValueError as exc:
+                raise ValueError(f"{snapshot}: unsafe part path {part_text!r}") from exc
+            if ".." in part.parts or not part.is_file():
+                raise ValueError(f"{snapshot}: missing or unsafe part path {part_text!r}")
+            encoded_parts.append("".join(part.read_text(encoding="ascii").split()))
+        encoded = "".join(encoded_parts).encode("ascii")
+        try:
+            compressed = base64.b64decode(encoded, validate=True)
+            raw = gzip.decompress(compressed)
+        except Exception as exc:
+            raise ValueError(f"{snapshot}: invalid compressed part data: {exc}") from exc
+    elif stored.startswith(COMPRESSED_ENVELOPE_PREFIX):
         encoded = stored[len(COMPRESSED_ENVELOPE_PREFIX):].strip()
         try:
             compressed = base64.b64decode(encoded, validate=True)
