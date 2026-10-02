@@ -97,11 +97,13 @@ Public source snapshots are committed under:
 .github/public-idea-source-publish/<number>-<name>.ccfideasource.txt
 ```
 
-The `.txt` extension is intentional. The snapshot bytes are the exact Idea Source JSON
-bytes that will be published, but keeping the repository copy out of `*.json` prevents
-Godot's JSON export include filter from bundling the public catalog into the executable.
-The publisher changes only the object filename extension back to
-`.ccfideasource.json`.
+The `.txt` extension is intentional. A snapshot can contain either the exact Idea Source
+JSON bytes or a compact `CCF_GZIP_BASE64_V1` envelope containing gzip-compressed,
+base64-encoded JSON. The publisher reconstructs the exact JSON bytes before calculating
+size, SHA-256, manifest metadata and the immutable R2 object path. Keeping the repository
+copy out of `*.json` prevents Godot's JSON export include filter from bundling the public
+catalog into the executable. The publisher changes only the object filename extension back
+to `.ccfideasource.json`.
 
 A push that adds or updates one of those snapshots automatically:
 
