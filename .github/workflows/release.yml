@@ -226,7 +226,7 @@ jobs:
       - name: Publish immutable objects and manifest
         shell: bash
         env:
-          R2_ENDPOINT_URL: https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com
+          R2_ENDPOINT_URL: https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.us.r2.cloudflarestorage.com
         run: |
           set -euo pipefail
           mapfile -t source_files < "${{ steps.sources.outputs.list_file }}"
