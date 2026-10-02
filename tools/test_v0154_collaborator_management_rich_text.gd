@@ -1,5 +1,8 @@
 extends SceneTree
 
+const TEST_USER_DATA_ISOLATION = preload("res://tools/test_user_data_isolation.gd")
+var _test_user_data_isolation := TEST_USER_DATA_ISOLATION.activate("v0154-collaborator-management")
+
 
 func _init() -> void:
 	var service_source := FileAccess.get_file_as_string("res://scripts/services/generation_service_v0154.gd")

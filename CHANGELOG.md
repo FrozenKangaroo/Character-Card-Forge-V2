@@ -18,6 +18,8 @@ none. GitHub Releases use the matching reviewed section instead of generated not
   cannot become a provisional Idea or enter incremental JSON parsing.
 - Added a bounded, user-respecting provisional Idea scroller with split-batch progress and
   visible retry, fallback and JSON-repair explanations.
+- Fixed a direct-regression settings-loss path and added intrinsic user-data isolation to
+  every persistence-writing Godot test, including tests launched without the Python runner.
 
 ### Changes
 
@@ -38,6 +40,12 @@ none. GitHub Releases use the matching reviewed section instead of generated not
   Idea arrays.
 - Added non-sensitive generation details for transport, retries, JSON repair, fallback and
   detected reasoning-signal type without retaining reasoning text or credentials.
+- Replaced direct settings truncation with verified staged writes, a last-known-good `.bak`,
+  backup recovery, corrupt-file preservation and fail-closed handling when both copies are
+  invalid.
+- Preserved format-9 provider profiles, role routing, image settings, library preferences,
+  UI state and `getting_started_seen_v0201` while adding the format-10 streaming default.
+- Stopped rewriting the complete settings file when navigation does not change `last_view`.
 - Advanced the application settings schema to version 10 and the inherited regression
   manifest to v0.21.12.
 

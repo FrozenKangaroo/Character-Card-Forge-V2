@@ -1,5 +1,8 @@
 extends SceneTree
 
+const TEST_USER_DATA_ISOLATION = preload("res://tools/test_user_data_isolation.gd")
+var _test_user_data_isolation := TEST_USER_DATA_ISOLATION.activate("v0175-export-safety")
+
 const OUTPUT_PATH := "user://v0175_hotfix2_export_safety.json"
 
 

@@ -35,6 +35,7 @@ var _stream_decoder_v02112 := CCFOpenAIStreamDecoderV02112.new()
 var _structured_stream_v02112 := CCFIncrementalJSONStreamV02112.new()
 var _stream_content_classifier_v02112 := CCFStreamContentClassifierV02112.new()
 var _stream_request_serial_v02112 := 0
+var _settings_path_override_v02112 := ""
 
 
 func _ready() -> void:
@@ -1139,7 +1140,11 @@ func _queue_chat_job(
 		"attempt": 0,
 		"repair_attempts": 0
 	}
-	var current_settings := CCFSettingsService.load_settings()
+	var current_settings := (
+		CCFSettingsService.load_settings_from_path(_settings_path_override_v02112)
+		if not _settings_path_override_v02112.is_empty()
+		else CCFSettingsService.load_settings()
+	)
 	var generation_value: Variant = current_settings.get("generation", {})
 	var generation_settings: Dictionary = (
 		generation_value if generation_value is Dictionary else {}
@@ -1163,6 +1168,20 @@ func _queue_chat_job(
 	_emit_queue_changed()
 	call_deferred("_start_next_job")
 	return {"ok": true, "job_id": job_id, "queued_ahead": queued_ahead}
+
+
+func set_settings_path_for_test_v02112(path: String) -> bool:
+	var clean_path := path.strip_edges()
+	if clean_path.is_empty():
+		_settings_path_override_v02112 = ""
+		return true
+	if (
+		ProjectSettings.globalize_path(clean_path)
+		== ProjectSettings.globalize_path(CCFSettingsService.SETTINGS_FILE)
+	):
+		return false
+	_settings_path_override_v02112 = clean_path
+	return true
 
 
 func _start_next_job() -> void:

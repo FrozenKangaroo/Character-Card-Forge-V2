@@ -2,6 +2,7 @@ class_name CCFSettingsService
 extends RefCounted
 
 const SETTINGS_FILE := CCFStorageService.SETTINGS_DIR + "/app_settings.json"
+const SETTINGS_BACKUP_SUFFIX := ".bak"
 const SETTINGS_FORMAT_VERSION := 10
 const ROLE_TEXT := "text"
 const ROLE_TEXT_FAST := "text_fast"
@@ -17,6 +18,13 @@ const PROFILE_KIND_AI := "ai"
 const PROFILE_KIND_IMAGE := "image"
 const IMAGE_BACKEND_OPENAI := "openai_compatible"
 const IMAGE_BACKEND_AUTOMATIC1111 := "automatic1111"
+
+static var _last_load_status := {
+	"source": "not_loaded",
+	"recovered_from_backup": false,
+	"degraded": false,
+	"recovery_needed": false
+}
 
 
 static func default_settings() -> Dictionary:
@@ -60,37 +68,291 @@ static func default_settings() -> Dictionary:
 
 static func load_settings() -> Dictionary:
 	CCFStorageService.ensure_directories()
-	if not FileAccess.file_exists(SETTINGS_FILE):
-		var defaults: Dictionary = default_settings()
-		save_settings(defaults)
-		CCFStorageService.configure_library_storage_v0200(defaults)
-		return defaults
-	var file := FileAccess.open(SETTINGS_FILE, FileAccess.READ)
-	if file == null:
-		var defaults: Dictionary = default_settings()
-		CCFStorageService.configure_library_storage_v0200(defaults)
-		return defaults
-	var parsed = JSON.parse_string(file.get_as_text())
-	file.close()
-	if not parsed is Dictionary:
-		var defaults: Dictionary = default_settings()
-		CCFStorageService.configure_library_storage_v0200(defaults)
-		return defaults
-	var normalised := _normalise(parsed)
-	CCFStorageService.configure_library_storage_v0200(normalised)
-	return normalised
+	var result := load_settings_result_from_path(SETTINGS_FILE, true)
+	_last_load_status = _load_status_without_data(result)
+	var loaded_value: Variant = result.get("data", default_settings())
+	var loaded: Dictionary = (
+		loaded_value if loaded_value is Dictionary else default_settings()
+	)
+	CCFStorageService.configure_library_storage_v0200(loaded)
+	return loaded
 
 
 static func save_settings(settings: Dictionary) -> Dictionary:
 	CCFStorageService.ensure_directories()
+	var result := save_settings_to_path(settings, SETTINGS_FILE)
+	if bool(result.get("ok", false)):
+		var normalised_value: Variant = result.get("data", {})
+		if normalised_value is Dictionary:
+			CCFStorageService.configure_library_storage_v0200(normalised_value)
+		_last_load_status = {
+			"source": "saved",
+			"recovered_from_backup": false,
+			"degraded": false,
+			"recovery_needed": false
+		}
+	return _result_without_data(result)
+
+
+static func load_settings_from_path(path: String) -> Dictionary:
+	var result := load_settings_result_from_path(path, false)
+	var loaded_value: Variant = result.get("data", default_settings())
+	return loaded_value if loaded_value is Dictionary else default_settings()
+
+
+static func load_settings_result_from_path(
+	path: String, create_if_missing: bool = false
+) -> Dictionary:
+	var clean_path := path.strip_edges()
+	if clean_path.is_empty():
+		return _degraded_defaults_result("Settings path is empty.", "invalid_path")
+	var primary := _read_settings_dictionary(clean_path)
+	if bool(primary.get("ok", false)):
+		return {
+			"ok": true,
+			"data": _normalise(primary.get("data", {})),
+			"source": "primary",
+			"recovered_from_backup": false,
+			"degraded": false,
+			"recovery_needed": false
+		}
+
+	var backup_path := settings_backup_path(clean_path)
+	var backup := _read_settings_dictionary(backup_path)
+	if bool(backup.get("ok", false)):
+		push_warning(
+			"Application settings could not be read from the primary file; the last-known-good backup was loaded."
+		)
+		return {
+			"ok": true,
+			"data": _normalise(backup.get("data", {})),
+			"source": "backup",
+			"recovered_from_backup": true,
+			"degraded": false,
+			"recovery_needed": true,
+			"primary_error": str(primary.get("error", "Primary settings are unavailable."))
+		}
+
+	var primary_exists := bool(primary.get("exists", false))
+	var backup_exists := bool(backup.get("exists", false))
+	if not primary_exists and not backup_exists:
+		var defaults := default_settings()
+		if create_if_missing:
+			var saved := save_settings_to_path(defaults, clean_path)
+			if bool(saved.get("ok", false)):
+				return {
+					"ok": true,
+					"data": defaults,
+					"source": "created_defaults",
+					"recovered_from_backup": false,
+					"degraded": false,
+					"recovery_needed": false
+				}
+		return {
+			"ok": true,
+			"data": defaults,
+			"source": "defaults_in_memory",
+			"recovered_from_backup": false,
+			"degraded": false,
+			"recovery_needed": false
+		}
+
+	push_warning(
+		"Application settings and their backup are unreadable. Defaults are active in memory; existing files were preserved and automatic replacement is blocked."
+	)
+	return _degraded_defaults_result(
+		"Application settings need manual recovery before they can be replaced.",
+		"defaults_in_memory"
+	)
+
+
+static func save_settings_to_path(settings: Dictionary, path: String) -> Dictionary:
+	var clean_path := path.strip_edges()
+	if clean_path.is_empty():
+		return {"ok": false, "error": "Settings path is empty."}
+	var absolute_path := ProjectSettings.globalize_path(clean_path)
+	DirAccess.make_dir_recursive_absolute(absolute_path.get_base_dir())
+
+	var existing := _read_settings_dictionary(clean_path)
+	var backup_path := settings_backup_path(clean_path)
+	var backup := _read_settings_dictionary(backup_path)
+	if (
+		bool(existing.get("exists", false))
+		and not bool(existing.get("ok", false))
+		and not bool(backup.get("ok", false))
+	):
+		return {
+			"ok": false,
+			"recovery_needed": true,
+			"error": "Existing application settings are unreadable. They were preserved instead of being overwritten."
+		}
+	if (
+		not bool(existing.get("exists", false))
+		and bool(backup.get("exists", false))
+		and not bool(backup.get("ok", false))
+	):
+		return {
+			"ok": false,
+			"recovery_needed": true,
+			"error": "The settings backup is unreadable. It was preserved instead of being overwritten."
+		}
+
 	var normalised := _normalise(settings)
-	var file := FileAccess.open(SETTINGS_FILE, FileAccess.WRITE)
+	var json_text := JSON.stringify(normalised, "  ")
+	var parsed_verification: Variant = JSON.parse_string(json_text)
+	if not parsed_verification is Dictionary:
+		return {"ok": false, "error": "The new application settings could not be serialized safely."}
+
+	var stage_path := "%s.ccf-writing-%d-%d" % [
+		absolute_path, OS.get_process_id(), Time.get_ticks_usec()
+	]
+	var staged := _write_verified_settings_stage(stage_path, json_text)
+	if not bool(staged.get("ok", false)):
+		return staged
+
+	if bool(existing.get("ok", false)):
+		var backup_result := _stage_last_known_good_backup(
+			absolute_path, ProjectSettings.globalize_path(backup_path)
+		)
+		if not bool(backup_result.get("ok", false)):
+			DirAccess.remove_absolute(stage_path)
+			return backup_result
+	elif bool(existing.get("exists", false)):
+		var corrupt_copy := "%s.corrupt-%d" % [absolute_path, Time.get_ticks_usec()]
+		var preserve_error := DirAccess.copy_absolute(absolute_path, corrupt_copy)
+		if preserve_error != OK:
+			DirAccess.remove_absolute(stage_path)
+			return {
+				"ok": false,
+				"recovery_needed": true,
+				"error": "Could not preserve the unreadable settings file, so it was not replaced."
+			}
+
+	var replaced := _replace_staged_file(stage_path, absolute_path)
+	if not bool(replaced.get("ok", false)):
+		return replaced
+	var installed := _read_settings_dictionary(clean_path)
+	if not bool(installed.get("ok", false)):
+		return {
+			"ok": false,
+			"recovery_needed": true,
+			"error": "The installed settings file failed verification; the last-known-good backup was preserved."
+		}
+	return {
+		"ok": true,
+		"path": clean_path,
+		"backup_path": backup_path,
+		"data": normalised
+	}
+
+
+static func settings_backup_path(path: String = SETTINGS_FILE) -> String:
+	return path + SETTINGS_BACKUP_SUFFIX
+
+
+static func last_load_status() -> Dictionary:
+	return _last_load_status.duplicate(true)
+
+
+static func _read_settings_dictionary(path: String) -> Dictionary:
+	if not FileAccess.file_exists(path):
+		return {"ok": false, "exists": false, "error": "Settings file is missing."}
+	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null:
-		return {"ok": false, "error": "Could not save application settings."}
-	file.store_string(JSON.stringify(normalised, "  "))
+		return {"ok": false, "exists": true, "error": "Settings file could not be opened."}
+	var text := file.get_as_text()
 	file.close()
-	CCFStorageService.configure_library_storage_v0200(normalised)
+	var parser := JSON.new()
+	if parser.parse(text) != OK or not parser.data is Dictionary:
+		return {"ok": false, "exists": true, "error": "Settings file is not valid JSON."}
+	return {"ok": true, "exists": true, "data": parser.data}
+
+
+static func _write_verified_settings_stage(path: String, json_text: String) -> Dictionary:
+	var file := FileAccess.open(path, FileAccess.WRITE)
+	if file == null:
+		return {"ok": false, "error": "Could not create a safe temporary settings file."}
+	file.store_string(json_text)
+	file.flush()
+	var write_error := file.get_error()
+	file.close()
+	if write_error != OK:
+		DirAccess.remove_absolute(path)
+		return {"ok": false, "error": "Could not finish writing the temporary settings file."}
+	var verified := _read_settings_dictionary(path)
+	if not bool(verified.get("ok", false)):
+		DirAccess.remove_absolute(path)
+		return {"ok": false, "error": "The temporary settings file failed JSON verification."}
 	return {"ok": true}
+
+
+static func _stage_last_known_good_backup(
+	primary_absolute: String, backup_absolute: String
+) -> Dictionary:
+	var stage_path := "%s.ccf-writing-%d-%d" % [
+		backup_absolute, OS.get_process_id(), Time.get_ticks_usec()
+	]
+	var source := FileAccess.open(primary_absolute, FileAccess.READ)
+	if source == null:
+		return {"ok": false, "error": "Could not read the current settings for backup."}
+	var source_text := source.get_as_text()
+	source.close()
+	var staged := _write_verified_settings_stage(stage_path, source_text)
+	if not bool(staged.get("ok", false)):
+		return {"ok": false, "error": "Could not prepare the last-known-good settings backup."}
+	var installed := _replace_staged_file(stage_path, backup_absolute)
+	if not bool(installed.get("ok", false)):
+		return {"ok": false, "error": "Could not install the last-known-good settings backup."}
+	return {"ok": true}
+
+
+static func _replace_staged_file(staged_absolute: String, target_absolute: String) -> Dictionary:
+	if not FileAccess.file_exists(staged_absolute):
+		return {"ok": false, "error": "The verified replacement file is missing."}
+	var direct_error := DirAccess.rename_absolute(staged_absolute, target_absolute)
+	if direct_error == OK:
+		return {"ok": true}
+	if not FileAccess.file_exists(target_absolute):
+		DirAccess.remove_absolute(staged_absolute)
+		return {"ok": false, "error": "Could not install the verified settings file."}
+	var rollback_path := "%s.ccf-rollback-%d-%d" % [
+		target_absolute, OS.get_process_id(), Time.get_ticks_usec()
+	]
+	var move_old_error := DirAccess.rename_absolute(target_absolute, rollback_path)
+	if move_old_error != OK:
+		DirAccess.remove_absolute(staged_absolute)
+		return {"ok": false, "error": "Could not preserve the current settings during replacement."}
+	var install_error := DirAccess.rename_absolute(staged_absolute, target_absolute)
+	if install_error != OK:
+		DirAccess.rename_absolute(rollback_path, target_absolute)
+		DirAccess.remove_absolute(staged_absolute)
+		return {"ok": false, "error": "Could not atomically replace the settings file."}
+	DirAccess.remove_absolute(rollback_path)
+	return {"ok": true}
+
+
+static func _degraded_defaults_result(error: String, source: String) -> Dictionary:
+	return {
+		"ok": false,
+		"data": default_settings(),
+		"source": source,
+		"recovered_from_backup": false,
+		"degraded": true,
+		"recovery_needed": true,
+		"error": error
+	}
+
+
+static func _result_without_data(result: Dictionary) -> Dictionary:
+	var copy := result.duplicate(true)
+	copy.erase("data")
+	return copy
+
+
+static func _load_status_without_data(result: Dictionary) -> Dictionary:
+	var status := result.duplicate(true)
+	status.erase("data")
+	return status
 
 
 static func active_profile(settings: Dictionary) -> Dictionary:
@@ -359,6 +621,10 @@ static func image_settings(profile: Dictionary) -> Dictionary:
 static func _normalise(settings: Dictionary) -> Dictionary:
 	var defaults: Dictionary = default_settings()
 	var result: Dictionary = defaults.duplicate(true)
+	# Preserve unknown future top-level fields while normalising every field this
+	# version understands. Nested dictionaries already use the same merge-first
+	# behaviour, so a format upgrade adds defaults without erasing user data.
+	result.merge(settings, true)
 	var incoming_format := int(settings.get("format_version", 2))
 	result["format_version"] = SETTINGS_FORMAT_VERSION
 

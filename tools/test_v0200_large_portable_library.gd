@@ -1,5 +1,8 @@
 extends SceneTree
 
+const TEST_USER_DATA_ISOLATION = preload("res://tools/test_user_data_isolation.gd")
+var _test_user_data_isolation := TEST_USER_DATA_ISOLATION.activate("v0200-portable-library")
+
 const PORTABLE_LIBRARY_SERVICE = preload(
 	"res://scripts/services/portable_library_service_v0200.gd"
 )

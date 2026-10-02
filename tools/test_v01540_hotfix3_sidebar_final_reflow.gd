@@ -1,5 +1,8 @@
 extends SceneTree
 
+const TEST_USER_DATA_ISOLATION = preload("res://tools/test_user_data_isolation.gd")
+var _test_user_data_isolation := TEST_USER_DATA_ISOLATION.activate("v01540-sidebar-reflow")
+
 const SOURCE_SERVICE = preload(
 	"res://scripts/services/collaborator_source_context_service_v01537.gd"
 )

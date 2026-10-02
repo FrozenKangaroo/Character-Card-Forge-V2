@@ -292,9 +292,10 @@ func _show_view(view_id: String) -> void:
 		_settings_view.load_settings(_settings)
 
 	var ui: Dictionary = _settings.get("ui", {})
-	ui["last_view"] = view_id
-	_settings["ui"] = ui
-	CCFSettingsService.save_settings(_settings)
+	if str(ui.get("last_view", "")) != view_id:
+		ui["last_view"] = view_id
+		_settings["ui"] = ui
+		CCFSettingsService.save_settings(_settings)
 
 
 func _create_new_character() -> void:

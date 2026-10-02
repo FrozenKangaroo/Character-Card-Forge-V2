@@ -1,5 +1,8 @@
 extends SceneTree
 
+const TEST_USER_DATA_ISOLATION = preload("res://tools/test_user_data_isolation.gd")
+var _test_user_data_isolation := TEST_USER_DATA_ISOLATION.activate("v01536-empty-project-save")
+
 const PERSISTENCE_SERVICE = preload(
 	"res://scripts/services/project_persistence_service_v01536_hotfix3.gd"
 )

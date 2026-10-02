@@ -54,6 +54,15 @@ The regression runner creates temporary HOME/XDG/AppData directories for every r
 
 The temporary test data is deleted when the run finishes.
 
+The runner is not the only safety boundary. Every Godot regression that writes settings,
+projects, templates, notebooks, sessions, presets, caches or fixtures must activate
+`tools/test_user_data_isolation.gd` before its first persistence call. A test launched
+directly with `godot --headless --path . --script res://tools/test_….gd` is then moved to
+a separate direct-test `user://` directory. Settings serialization tests should prefer
+`CCFSettingsService.save_settings_to_path()` and `load_settings_from_path()` with an
+explicit disposable path. Tests must never rely solely on `CCF_REGRESSION_RUN` or the
+Python wrapper to protect production data.
+
 ## Consolidated GitHub Actions
 
 Historical milestone tests remain as individual scripts and versioned manifest entries, but their one-workflow-per-milestone wrappers have been retired. Pull requests and `main` now expose two stable checks:
