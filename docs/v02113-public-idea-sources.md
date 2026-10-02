@@ -88,7 +88,7 @@ the new manifest.
 
 ## GitHub Actions R2 publishing
 
-The repository includes `.github/workflows/publish-public-idea-sources.yml` and
+The repository's consolidated `.github/workflows/release.yml` deployment workflow uses
 `tools/publish_public_idea_sources_r2.py` as a publishing bridge for catalog updates.
 
 Public source snapshots are committed under:
@@ -127,6 +127,7 @@ Configure these repository Actions secrets before publishing:
 Create the R2 credentials with **Object Read & Write** access scoped only to the
 `charactercardforge` bucket. Do not commit credentials to the repository.
 
-The workflow can also be run manually with `workflow_dispatch` by supplying one or more
-repo-relative `.ccfideasource.txt` snapshot paths. This is useful for retrying a publish
-after fixing credentials without modifying the source content.
+The release workflow can also be run manually with `workflow_dispatch`: choose
+`publish-public-idea-sources` and supply one or more repo-relative `.ccfideasource.txt`
+snapshot paths. This is useful for retrying a publish after fixing credentials without
+modifying the source content.

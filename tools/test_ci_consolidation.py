@@ -75,6 +75,7 @@ def main() -> int:
     regression_text = (WORKFLOW_ROOT / "validate-regression-suite.yml").read_text(
         encoding="utf-8"
     )
+    release_text = (WORKFLOW_ROOT / "release.yml").read_text(encoding="utf-8")
     require("name: Validate Godot project" in validate_text, "Stable validation name changed.")
     require("name: Validate regression suite" in regression_text, "Stable regression name changed.")
     for text, label in ((validate_text, "validation"), (regression_text, "regression")):
@@ -84,6 +85,12 @@ def main() -> int:
         )
         require("pull_request:" in text, f"{label} workflow must run on pull requests.")
         require("branches:\n      - main" in text, f"{label} workflow must run on main.")
+    require(
+        "publish-public-idea-sources" in release_text
+        and ".github/public-idea-source-publish/*.ccfideasource.txt" in release_text
+        and "tools/publish_public_idea_sources_r2.py" in release_text,
+        "The consolidated release workflow lost public Idea Source publishing.",
+    )
 
     runner = load_runner()
     require(runner.DEFAULT_MANIFEST.resolve() == CURRENT_MANIFEST.resolve(), "Default manifest is stale.")
