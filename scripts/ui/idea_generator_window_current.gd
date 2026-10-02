@@ -11,6 +11,9 @@ const IDEA_PACK_SERVICE_V0210 = preload(
 const IDEA_SOURCE_SERVICE_V0213 = preload(
 	"res://scripts/services/idea_source_service_v0213.gd"
 )
+const PUBLIC_IDEA_SOURCE_BROWSER_V02113 = preload(
+	"res://scripts/ui/public_idea_source_browser_v02113.gd"
+)
 const IDEA_NOTEBOOK_TREE_V0215 = preload(
 	"res://scripts/ui/idea_notebook_tree_v0215.gd"
 )
@@ -131,6 +134,7 @@ var _source_load_dialog_v0213: FileDialog
 var _source_export_dialog_v0213: FileDialog
 var _source_pending_export_v0213: Dictionary = {}
 var _source_delete_dialog_v0213: ConfirmationDialog
+var _public_source_browser_v02113: Window
 var _idea_generator_geometry_active_v0217 := false
 var _provisional_ideas_panel_v02112: PanelContainer
 var _provisional_ideas_scroll_v02112: ScrollContainer
@@ -171,6 +175,7 @@ func _ready() -> void:
 	_build_save_new_notebook_dialog_v0211()
 	_build_idea_source_tab_v0213()
 	_build_idea_source_dialogs_v0213()
+	_build_public_source_browser_v02113()
 	_install_active_source_banner_v0213()
 	_refresh_source_library_v0213()
 	_update_delete_idea_action_v0216()
@@ -2643,6 +2648,11 @@ func _build_idea_source_tab_v0213() -> void:
 	_source_tab_v0213.add_child(toolbar)
 	_add_source_button_v0213(toolbar, "New Source", _new_source_v0213)
 	_add_source_button_v0213(toolbar, "Load Idea Source…", _open_source_file_v0213)
+	var public_button := _add_source_button_v0213(
+		toolbar, "Browse Public Sources…", _open_public_sources_v02113
+	)
+	public_button.name = "PublicIdeaSourcesButtonV02113"
+	public_button.tooltip_text = "Browse the verified public Idea Source catalog hosted by Character Card Forge."
 	_add_source_button_v0213(toolbar, "Save Current Source", _save_current_source_v0213)
 	_add_source_button_v0213(toolbar, "Export Idea Source…", _choose_source_export_v0213)
 	_add_source_button_v0213(toolbar, "Duplicate", _duplicate_source_v0213)
@@ -2770,6 +2780,38 @@ func _build_idea_source_dialogs_v0213() -> void:
 	_source_delete_dialog_v0213.confirmed.connect(_delete_source_v0213)
 	add_child(_source_delete_dialog_v0213)
 	_source_delete_dialog_v0213.hide()
+
+
+func _build_public_source_browser_v02113() -> void:
+	_public_source_browser_v02113 = PUBLIC_IDEA_SOURCE_BROWSER_V02113.new()
+	_public_source_browser_v02113.visible = false
+	_public_source_browser_v02113.source_chosen.connect(
+		_on_public_source_chosen_v02113
+	)
+	add_child(_public_source_browser_v02113)
+	_public_source_browser_v02113.hide()
+
+
+func _open_public_sources_v02113() -> void:
+	if _public_source_browser_v02113 == null:
+		return
+	_public_source_browser_v02113.open_browser()
+
+
+func _on_public_source_chosen_v02113(
+	source: Dictionary, catalog_entry: Dictionary
+) -> void:
+	_source_editor_base_v0213 = source.duplicate(true)
+	_source_saved_v0213 = false
+	_source_external_path_v0213 = ""
+	_populate_source_editor_v0213(_source_editor_base_v0213)
+	_use_source_v0213(false)
+	_show_source_tab_v0213()
+	var source_title := str(catalog_entry.get("title", source.get("title", "Public Idea Source")))
+	_source_status_v0213.text = (
+		"Downloaded, verified and activated %s. It is temporary until Save Current Source is pressed."
+		% source_title
+	)
 
 
 func _configure_independent_file_dialog_v0213(dialog: FileDialog) -> void:

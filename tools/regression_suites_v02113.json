@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.13 complete regression suites",
+  "description": "v0.21.12 baseline plus the checksummed public Idea Source catalog, independent browser and temporary verified source activation.",
+  "base_manifest": "regression_suites_v02112.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v02113_public_idea_sources",
+        "label": "v0.21.13 public Idea Source catalog and browser",
+        "kind": "godot",
+        "path": "tools/test_v02113_public_idea_sources.gd",
+        "timeout_seconds": 120
+      }
+    ]
+  }
+}

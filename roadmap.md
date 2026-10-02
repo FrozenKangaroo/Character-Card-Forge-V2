@@ -84,6 +84,13 @@ the author decides whether to keep it, while contextual placement recovers safel
 missing displays. Generate More is owned by Idea Generator and keeps its actions visible
 through a scrollable body and fixed footer at constrained screen heights.
 
+The v0.21.13 development candidate adds an official public Idea Source catalog without
+turning remote data into trusted application content. A searchable independent chooser
+downloads sources from the Character Card Forge Cloudflare R2 custom domain, then verifies
+bounded manifest metadata, safe relative paths, exact size, SHA-256 checksum, stable source
+identity and the existing production schema. Chosen sources remain temporary and editable
+until the author explicitly saves them into the local Source Library.
+
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
 validation, task-oriented user documentation, a smaller manifest-driven CI surface,

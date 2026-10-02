@@ -339,7 +339,8 @@
       "summary": "Keep reusable generation rules separate from the specific Ideas they produce.",
       "keywords": ["idea source", "ccfideasource", "direction preset", "additional direction", "series", "reusable", "json", "similar ideas"],
       "steps": [
-        "Open Idea Generator → Idea Sources and choose New Source or Load Idea Source….",
+        "Open Idea Generator → Idea Sources and choose New Source, Load Idea Source… or Browse Public Sources….",
+        "In the public browser, search by title, description or tag, inspect the selected source and choose Use Selected Source. CCF verifies the download before activating it.",
         "Describe the reusable premise, variables, rules, guardrails and diversity axes; an Idea Source is an instruction set, not a finished Idea.",
         "Optionally add ordered Direction Presets. Selecting one later copies its exact text into the visible, editable Additional Direction field.",
         "Choose Use in Idea Generator, set the normal count, request size and detail level, then generate.",
@@ -348,7 +349,8 @@
       ],
       "notes": [
         "The stable id is required; title is optional. At least one premise, setup, prompt, rule, variable or custom section is required.",
-        "Loading an external file is temporary until you explicitly save it to the Idea Source Library.",
+        "Loading an external file or choosing a public source is temporary until you explicitly save it to the Idea Source Library.",
+        "The public catalog uses internet access only while browsing or choosing a source. Each download must match the catalog's size, SHA-256 checksum, stable ID and supported Idea Source schema.",
         "Idea Sources remain separate from generated Ideas, .ccfideas.json Idea Packs and Workspace Generation Concepts.",
         "Direction Presets are convenience text, not hidden prompt layers. Only the text visible in Additional Direction is sent with the active source."
       ],
