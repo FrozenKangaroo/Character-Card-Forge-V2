@@ -58,6 +58,14 @@ def main() -> int:
         and '"series_id": "astral-courier-guild"' in format_page,
         "Portable format guidance must render fenced, valid-format examples.",
     )
+    require(
+        "Series Manager validates and saves a valid Series import directly" in format_page,
+        "Portable format guidance must describe the Series import path accurately.",
+    )
+    require(
+        "Open Import Start" not in format_page,
+        "The multi-format guide must not route every format through New Project.",
+    )
     require(screenshot_report["screenshot_count"] == 19, "The reviewed screenshot set is incomplete.")
     require(
         screenshot_report["screenshot_article_count"] >= 20,

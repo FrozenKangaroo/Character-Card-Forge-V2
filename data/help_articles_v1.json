@@ -761,7 +761,8 @@
         "Choose the format that matches the job: .ccfchar for one authoring source, .ccfideasource.json for reusable generator instructions, .ccfideas.json for generated Idea outputs, or Series JSON for a reusable local continuity definition.",
         "Keep the documented format identity, version field and required stable IDs exactly as shown.",
         "Omit optional properties you do not know instead of inventing filler; preserve {{user}} and {{char}} placeholders literally.",
-        "Use the matching in-app Load or Import action so CCF validates and previews the document before applying it.",
+        "Use the format's matching in-app action: Workspace's Character menu for .ccfchar, Idea Generator or Idea Library for Idea Sources and Idea Packs, and Series Manager for Series JSON.",
+        "CCF validates every imported document. Review the import preview when that workflow provides one; Series Manager validates and saves a valid Series import directly.",
         "Prefer CCF's Export action when editing an existing record because exports preserve supported future fields and provenance."
       ],
       "notes": [
@@ -795,7 +796,6 @@
           "content": "{\n  \"format_version\": 1,\n  \"series_id\": \"astral-courier-guild\",\n  \"name\": \"Astral Courier Guild\",\n  \"aliases\": [\"ACG\"],\n  \"description\": \"Couriers cross unstable star roads.\",\n  \"setting_guidance\": \"Travel uses ritual gates maintained by guild navigators.\",\n  \"canon_notes\": \"The Obsidian Route has been closed for twelve years.\",\n  \"generation_rules\": \"Keep guild ranks and route rules consistent.\",\n  \"default_tags\": [\"science fantasy\", \"courier\"]\n}"
         }
       ],
-      "actions": [{"id": "new_project", "label": "Open Import Start…"}],
       "related": ["idea_sources", "idea_generator_notebook", "project_packages", "import_character"]
     },
     {
