@@ -6,6 +6,43 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.13] - 2026-10-02
+
+### Highlights
+
+- Added **Browse Public Sources…** to the Idea Sources workspace, with a searchable,
+  independent chooser backed by the official Character Card Forge public catalog.
+- Published the initial 33 reusable Idea Sources through the
+  `charactercardforge.damee.info` Cloudflare R2 custom domain.
+
+### Changes
+
+- Added a versioned `manifest.json` catalog with stable source identity, display metadata,
+  content rating, relative object path, exact byte size and SHA-256 digest for every entry.
+- Made public source objects content-addressed and immutable, while allowing the small
+  manifest to refresh as sources are added or updated.
+- Validate manifest bounds, duplicate IDs, relative paths, file sizes, checksums, source
+  identity and the existing production Idea Source schema before any public source can be
+  used.
+- Load a chosen public source as a temporary editable source and activate it immediately;
+  the local Source Library is never overwritten unless the author explicitly presses
+  **Save Current Source**.
+- Added deterministic catalog-building and public-source directory validation tools plus
+  focused browser, integrity and path-safety regression coverage.
+
+### Migration notes
+
+- None. Existing local Idea Sources and portable `.ccfideasource.json` files are unchanged.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Browsing or choosing a public source requires internet access. Once chosen, the temporary
+  source can be saved locally and used offline through the existing Source Library.
+
 ## [0.21.12] - 2026-10-02
 
 ### Highlights
