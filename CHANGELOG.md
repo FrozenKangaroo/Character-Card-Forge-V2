@@ -6,32 +6,55 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
-### Documentation
-
-- Expanded the shared in-app Help Center and GitHub Wiki source from 49 to 53 articles
-  with current Idea Source, Final Idea Review/Generate More and global streaming guidance.
-- Added validated, copyable JSON examples for `.ccfideasource.json`, `.ccfideas.json`,
-  concept-only `.ccfchar` and standalone Series definitions.
-- Added structured example rendering to the offline Help Center and deterministic fenced
-  code blocks to the Wiki exporter so both documentation surfaces use one canonical source.
-
-## [0.21.12] - 2026-10-01
+## [0.21.12] - 2026-10-02
 
 ### Highlights
 
+- Added an author-controlled **Final AI Idea Review** and persistent generated-Idea
+  working batch with **Delete This Idea** and repeatable **Generate More Ideas…** actions.
+- Made Generate More independently steerable through an editable Prompt or Additional
+  Direction while preserving the batch's frozen Idea Source, Series context and
+  retained/rejected/deleted anti-repeat memory.
+- Made Final Idea Review candidates inspectable in place and rebuilt its review and
+  Generate More windows to remain usable on constrained or restored displays.
+- Added optional grouped Additional Direction presets to reusable Idea Sources and
+  hardened Front Porch Work Days generation, preview and canonical application.
 - Added an opt-in global **Stream AI responses** setting backed by a real chunked HTTP
   and OpenAI-compatible SSE transport shared by all text-generation jobs.
 - Added progressive Character Collaborator prose and complete provisional AI Idea cards,
   with clear Generating, Checking and Ready lifecycle states.
-- Separated provider reasoning/thinking channels from final answer content so thinking
-  cannot become a provisional Idea or enter incremental JSON parsing.
-- Added a bounded, user-respecting provisional Idea scroller with split-batch progress and
-  visible retry, fallback and JSON-repair explanations.
 - Fixed a direct-regression settings-loss path and added intrinsic user-data isolation to
   every persistence-writing Godot test, including tests launched without the Python runner.
+- Expanded the in-app Help Center and GitHub Wiki with current workflow guidance and
+  validated JSON examples for Idea Sources, Idea Packs, `.ccfchar` and Series definitions.
 
 ### Changes
 
+- Replaced automatic AI review rejection with advisory request-adherence and similarity
+  findings. Every structurally valid Idea starts checked and only the author's review
+  choices remove it from the working batch.
+- Delayed the optional one-shot shortfall top-up until Final Idea Review is applied and
+  kept unchecked, validation-rejected and deleted Ideas as compact repeat-prevention
+  guidance without creating review/recovery loops.
+- Rebuilt each Generate More provider batch and optional replacement request from one
+  confirmed instruction. Blank Additional Direction now generates directly from the
+  frozen Idea Source, and cancelling or failing an extension leaves the completed batch
+  and last successful instruction intact.
+- Scoped extension adherence review to the newly generated Ideas while retaining older
+  Ideas as similarity references; Save Generated Ideas and Develop Generated Idea remain
+  synchronized with deletions and appended results.
+- Added Show/Hide Idea, Expand All and Collapse All controls to Final Idea Review, with
+  Concept and other populated Idea fields presented read-only beside independent Keep
+  choices.
+- Added reusable screen-aware tool-window placement, scrollable Generate More content and
+  a fixed action footer so review actions remain reachable on smaller screens.
+- Kept Idea Source schema version 1 while preserving ordered Direction Presets, stable
+  source-local IDs and unknown future fields through save, duplicate, export and import.
+- Made Direction Presets transparent shortcuts that copy exact text into the visible,
+  editable Additional Direction field rather than adding hidden prompt context.
+- Normalized Front Porch Work Days from numeric IDs, names, clear ranges, weekdays or
+  weekends to sorted unique Monday=1 through Sunday=7 values; ambiguous results are
+  rejected instead of being reported as applied.
 - Kept existing completion, queue, retry, repair, validation and final-result signals
   compatible while adding job/attempt-scoped stream lifecycle events.
 - Added conservative incremental JSON framing for complete top-level object fields and
@@ -41,6 +64,10 @@ none. GitHub Releases use the matching reviewed section instead of generated not
   responses.
 - Discarded all provisional output on cancellation, retry or terminal failure and blocked
   delayed old-attempt events from mutating the active job.
+- Separated provider reasoning/thinking channels from final answer content so thinking
+  cannot become a provisional Idea or enter incremental JSON parsing.
+- Added a bounded provisional Idea scroller with split-batch progress and visible retry,
+  fallback and JSON-repair explanations.
 - Kept every final response on the established full parser and local repair path;
   provisional output is never committed to project data. Checked Idea workflows retain
   semantic validation and review.
@@ -57,15 +84,20 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - Stopped rewriting the complete settings file when navigation does not change `last_view`.
 - Advanced the application settings schema to version 10 and the inherited regression
   manifest to v0.21.12.
+- Expanded the shared Help catalog from 49 to 53 articles and added structured examples
+  rendered as readable code in-app and deterministic fenced JSON on the GitHub Wiki.
 
 ### Migration notes
 
-- None. The new preference defaults off, and existing provider profiles, projects, cards,
-  Idea Sources, Idea Packs and Front Porch data remain valid.
+- None. Streaming defaults off, and existing provider profiles, projects, cards, Idea
+  Sources without Direction Presets, Idea Packs, curation data and Front Porch fields
+  remain valid.
 
 ### Breaking changes
 
-- None.
+- The former automatic **Reject Clear Duplicates** review mode no longer removes Ideas
+  based on an AI judgement. Final AI Idea Review is advisory and the author makes the
+  final Keep decision.
 
 ### Known limitations
 
@@ -73,6 +105,10 @@ none. GitHub Releases use the matching reviewed section instead of generated not
   provider and custom-endpoint support varies. The initial progressive UI emphasizes
   Collaborator prose and complete AI Idea objects, while other structured workflows keep
   their established final preview/application surfaces.
+- AI request-adherence, similarity and Direction Preset compliance remain model-dependent;
+  local structural validation is still the authoritative automatic layer.
+- Native window-manager decorations and always-on-top behavior remain platform controlled,
+  although CCF constrains client geometry and restored placement to usable displays.
 
 ## [0.21.11] - 2026-10-01
 
