@@ -99,7 +99,11 @@ Public source snapshots are committed under:
 
 The `.txt` extension is intentional. A snapshot can contain either the exact Idea Source
 JSON bytes or a compact `CCF_GZIP_BASE64_V1` envelope containing gzip-compressed,
-base64-encoded JSON. The publisher reconstructs the exact JSON bytes before calculating
+base64-encoded JSON. Large connector-driven publishes may use a small
+`CCF_GZIP_BASE64_PARTS_V1` marker that references base64 chunks under
+`.github/public-idea-source-publish-data/`; chunk changes do not match the deployment
+trigger, so publishing begins only when the final source marker is committed. The publisher
+reconstructs the exact JSON bytes before calculating
 size, SHA-256, manifest metadata and the immutable R2 object path. Keeping the repository
 copy out of `*.json` prevents Godot's JSON export include filter from bundling the public
 catalog into the executable. The publisher changes only the object filename extension back
