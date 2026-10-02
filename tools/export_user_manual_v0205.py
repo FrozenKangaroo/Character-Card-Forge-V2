@@ -76,6 +76,21 @@ def validate_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
         require(str(article.get("category", "")) in category_ids, f"Unknown category on {article_id}.")
         require(bool(title), f"Help article {article_id!r} needs a title.")
         require(bool(article.get("steps", [])), f"Help article {article_id!r} needs steps.")
+        examples = article.get("examples", [])
+        require(isinstance(examples, list), f"Help article {article_id!r} examples must be a list.")
+        for index, example in enumerate(examples, start=1):
+            require(
+                isinstance(example, dict),
+                f"Help article {article_id!r} example {index} must be an object.",
+            )
+            require(
+                bool(str(example.get("title", "")).strip()),
+                f"Help article {article_id!r} example {index} needs a title.",
+            )
+            require(
+                bool(str(example.get("content", "")).strip()),
+                f"Help article {article_id!r} example {index} needs content.",
+            )
         slug = page_slug(title)
         require(slug not in article_slugs, f"Duplicate Wiki article slug: {slug}")
         article_ids.add(article_id)
@@ -166,6 +181,18 @@ def render_article(
     if notes:
         lines.extend(["", "## Good to know", ""])
         lines.extend(f"- {note}" for note in notes)
+    examples = article.get("examples", [])
+    if examples:
+        lines.extend(["", "## Examples", ""])
+        for example in examples:
+            title = str(example["title"])
+            description = str(example.get("description", "")).strip()
+            language = str(example.get("language", "text")).strip() or "text"
+            content = str(example["content"]).strip()
+            lines.extend([f"### {title}", ""])
+            if description:
+                lines.extend([description, ""])
+            lines.extend([f"```{language}", content, "```", ""])
     actions = article.get("actions", [])
     if actions:
         lines.extend(["", "## Open in Character Card Forge", ""])

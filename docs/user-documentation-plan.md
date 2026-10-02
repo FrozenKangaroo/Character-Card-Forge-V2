@@ -12,6 +12,12 @@ sections below, while a deterministic exporter produces Home, sidebar, category 
 article Markdown from the same validated catalog. Publication remains an explicit
 reviewed maintainer action, so generated pages cannot overwrite the Wiki automatically.
 
+The v0.21.12 documentation refresh extends that same source to 53 articles. It adds
+reusable Idea Sources and Direction Presets, Final Idea Review and Generate More,
+application-wide response streaming, and portable JSON examples. Optional structured
+example blocks render as safe offline code in the app and fenced code in the Wiki; the
+examples are validated as part of the catalog instead of being maintained separately.
+
 ## README: product front door
 
 The final pre-1.0 README should contain only:
@@ -42,6 +48,8 @@ Version-by-version history belongs in `CHANGELOG.md`, `roadmap.md` and milestone
 - Manual Editing and Manual Guided
 - Character Builder
 - Idea Generator
+- Reusable Idea Sources and Direction Presets
+- Final Idea Review and Generate More
 - Character Collaborator
 - Idea Notebook
 - Templates and Generation Modes
@@ -87,6 +95,7 @@ Version-by-version history belongs in `CHANGELOG.md`, `roadmap.md` and milestone
 - Character Card V2 JSON and PNG
 - SillyTavern and Export Profiles
 - Project Packages
+- Portable JSON Format Examples
 - PDF and URL Reference Sources
 
 ### Front Porch
@@ -102,6 +111,7 @@ Version-by-version history belongs in `CHANGELOG.md`, `roadmap.md` and milestone
 ### Settings and Advanced
 
 - Primary, Fast, Deep Review and Fallback Text Routes
+- Global AI Response Streaming
 - Vision and Image Profiles
 - Storage and Updates
 - Diagnostics

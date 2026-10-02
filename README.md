@@ -127,7 +127,8 @@ Porch's SQLite database.
 ## Help and documentation
 
 - Press **F1** for the short Getting Started guide.
-- Open **Help Center** for the 49-article searchable offline manual.
+- Open **Help Center** for the 53-article searchable offline manual, including current
+  Idea Source, curation, streaming and portable JSON format examples.
 - Browse the published [GitHub Wiki](https://github.com/FrozenKangaroo/Character-Card-Forge-V2/wiki)
   for the same task-oriented manual outside the application.
 - Read the [user-documentation plan](docs/user-documentation-plan.md) for the maintained
