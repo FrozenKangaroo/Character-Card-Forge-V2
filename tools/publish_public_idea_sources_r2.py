@@ -154,16 +154,41 @@ def _source_entry(snapshot: Path) -> tuple[dict[str, Any], bytes]:
     return entry, raw
 
 
-def _load_manifest(s3: Any, bucket: str) -> dict[str, Any]:
+def _load_manifest(
+    s3: Any, bucket: str, public_root_url: str
+) -> dict[str, Any]:
     try:
         response = s3.get_object(Bucket=bucket, Key=MANIFEST_KEY)
+        raw = response["Body"].read()
     except ClientError as exc:
         code = str(exc.response.get("Error", {}).get("Code", ""))
-        raise RuntimeError(
-            f"Could not read existing {MANIFEST_KEY} from R2 (error {code or 'unknown'})."
-        ) from exc
+        if code != "AccessDenied":
+            raise RuntimeError(
+                f"Could not read existing {MANIFEST_KEY} from R2 (error {code or 'unknown'})."
+            ) from exc
 
-    raw = response["Body"].read()
+        # Some narrowly scoped R2 credentials may be able to publish objects while
+        # authenticated reads are denied. The catalog is public by design, so use
+        # the custom domain as a safe read fallback and continue to require write
+        # access for publication.
+        url = public_root_url.rstrip("/") + "/" + MANIFEST_KEY
+        try:
+            request = Request(
+                url,
+                headers={
+                    "Accept": "application/json",
+                    "Cache-Control": "no-cache",
+                    "User-Agent": "Character-Card-Forge-R2-Publisher/1",
+                },
+            )
+            with urlopen(request, timeout=20) as public_response:
+                raw = public_response.read()
+        except Exception as public_exc:
+            raise RuntimeError(
+                "Authenticated R2 manifest read was denied and the public "
+                f"manifest fallback also failed: {public_exc}"
+            ) from public_exc
+        print("Authenticated R2 read denied; loaded live manifest via public catalog URL.")
     try:
         manifest = json.loads(raw.decode("utf-8"))
     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
@@ -250,7 +275,7 @@ def _object_bytes(s3: Any, bucket: str, key: str) -> bytes | None:
         response = s3.get_object(Bucket=bucket, Key=key)
     except ClientError as exc:
         code = str(exc.response.get("Error", {}).get("Code", ""))
-        if code in {"NoSuchKey", "404", "NotFound"}:
+        if code in {"NoSuchKey", "404", "NotFound", "AccessDenied"}:
             return None
         raise
     return response["Body"].read()
@@ -327,7 +352,7 @@ def main() -> int:
         region_name="auto",
     )
 
-    manifest = _load_manifest(s3, args.bucket)
+    manifest = _load_manifest(s3, args.bucket, args.public_root_url)
 
     source_entries: list[dict[str, Any]] = []
     source_payloads: list[tuple[dict[str, Any], bytes]] = []
@@ -382,22 +407,57 @@ def main() -> int:
 
     # Verify exact R2 bytes after publication.
     verified_manifest = _object_bytes(s3, args.bucket, MANIFEST_KEY)
-    if verified_manifest != manifest_bytes:
+    if verified_manifest is not None and verified_manifest != manifest_bytes:
         raise RuntimeError("R2 manifest verification failed: stored bytes differ.")
 
     for entry, raw in source_payloads:
         key = str(entry["path"])
         stored = _object_bytes(s3, args.bucket, key)
-        if stored != raw:
-            raise RuntimeError(f"R2 source verification failed for {key!r}.")
-        if len(stored) != int(entry["size_bytes"]):
-            raise RuntimeError(f"R2 source size verification failed for {key!r}.")
-        if _sha256(stored) != str(entry["sha256"]):
-            raise RuntimeError(f"R2 source SHA-256 verification failed for {key!r}.")
+        if stored is not None:
+            if stored != raw:
+                raise RuntimeError(f"R2 source verification failed for {key!r}.")
+            if len(stored) != int(entry["size_bytes"]):
+                raise RuntimeError(f"R2 source size verification failed for {key!r}.")
+            if _sha256(stored) != str(entry["sha256"]):
+                raise RuntimeError(f"R2 source SHA-256 verification failed for {key!r}.")
         _verify_public_url(args.public_root_url, key, str(entry["sha256"]))
-        print(f"Verified R2 and public URL: {key}")
+        print(f"Verified published source URL: {key}")
 
     manifest_sha = _sha256(manifest_bytes)
+    # Query-string cache busting is safe here because this is publisher-only
+    # verification; catalog source paths themselves remain strict relative paths.
+    manifest_verify_url = (
+        args.public_root_url.rstrip("/")
+        + "/"
+        + MANIFEST_KEY
+        + "?verify="
+        + manifest_sha
+    )
+    last_manifest_error: Exception | None = None
+    for attempt in range(1, 6):
+        try:
+            request = Request(
+                manifest_verify_url,
+                headers={
+                    "Accept": "application/json",
+                    "Cache-Control": "no-cache",
+                    "User-Agent": "Character-Card-Forge-R2-Publisher/1",
+                },
+            )
+            with urlopen(request, timeout=20) as response:
+                public_manifest = response.read()
+            if _sha256(public_manifest) != manifest_sha:
+                raise RuntimeError("public manifest hash has not updated yet")
+            last_manifest_error = None
+            break
+        except Exception as exc:
+            last_manifest_error = exc
+            if attempt < 5:
+                time.sleep(2 * attempt)
+    if last_manifest_error is not None:
+        raise RuntimeError(
+            f"Could not verify published manifest through custom domain: {last_manifest_error}"
+        )
     _write_step_summary(
         source_entries,
         int(updated_manifest["source_count"]),
