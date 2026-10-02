@@ -225,6 +225,9 @@ expansion.
 - Hardened application settings with atomic verified writes, last-known-good recovery and
   corrupt-file preservation; direct persistence regressions now isolate their own
   `user://` data even outside the official runner.
+- Refreshed the shared in-app manual and GitHub Wiki source to 53 articles with current
+  Idea Source, Final Review/Generate More, streaming, settings recovery and validated
+  portable JSON examples.
 - Preserved Idea Source, Direction Preset, Generate More, Front Porch, card format and
   provider-profile semantics with no project migration.
 
@@ -843,7 +846,7 @@ permanently active milestone work.
 ## Pre-1.0 Sequence
 
 1. **Release and bake:** use the published v0.20.7 line to prioritise defects and workflow friction through the offline Help Center and privacy-safe support report where useful.
-2. **Documentation:** maintain the published 49-article Wiki, publish the first reviewed Linux screenshot set and add Windows/macOS comparison captures where the packaged UI differs.
+2. **Documentation:** maintain the published 53-article Wiki, keep in-app and Wiki JSON examples synchronized, publish the first reviewed Linux screenshot set and add Windows/macOS comparison captures where the packaged UI differs.
 3. **Repository hardening:** prove consolidated CI, enable `main` protection and keep release metadata/package generation deterministic.
 4. **Technical consolidation:** continue replacing deep runtime version inheritance incrementally with semantic current implementations and service composition, preserving compatibility wrappers until equivalence is proven.
 5. **1.0 release candidate:** complete or explicitly scope every readiness item, freeze stability-sensitive contracts and publish an RC before final 1.0.

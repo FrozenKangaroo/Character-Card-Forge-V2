@@ -6,6 +6,15 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+### Documentation
+
+- Expanded the shared in-app Help Center and GitHub Wiki source from 49 to 53 articles
+  with current Idea Source, Final Idea Review/Generate More and global streaming guidance.
+- Added validated, copyable JSON examples for `.ccfideasource.json`, `.ccfideas.json`,
+  concept-only `.ccfchar` and standalone Series definitions.
+- Added structured example rendering to the offline Help Center and deterministic fenced
+  code blocks to the Wiki exporter so both documentation surfaces use one canonical source.
+
 ## [0.21.12] - 2026-10-01
 
 ### Highlights

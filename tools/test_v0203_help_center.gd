@@ -36,7 +36,8 @@ func _run() -> void:
 		and not bool(capabilities.get("automatic_network", true))
 		and bool(capabilities.get("searchable", false))
 		and bool(capabilities.get("task_oriented", false))
-		and int(capabilities.get("article_count", 0)) >= 12
+		and bool(capabilities.get("structured_examples", false))
+		and int(capabilities.get("article_count", 0)) >= 53
 		and int(capabilities.get("category_count", 0)) >= 6
 		and bool(capabilities.get("routes_to_existing_tools", false)),
 		"The versioned help catalog must be valid, task-oriented and offline. %s"
@@ -46,16 +47,25 @@ func _run() -> void:
 
 	var troubleshooting := CCFHelpContentServiceV0203.search("404")
 	var image_topics := CCFHelpContentServiceV0203.search("image", "images")
+	var idea_source_topics := CCFHelpContentServiceV0203.search("ccfideasource")
 	var first_character := CCFHelpContentServiceV0203.article_by_id("first_character")
+	var idea_source := CCFHelpContentServiceV0203.article_by_id("idea_sources")
 	var rendered := CCFHelpContentServiceV0203.render_article(first_character)
+	var rendered_source := CCFHelpContentServiceV0203.render_article(idea_source)
 	if not _require(
 		troubleshooting.size() == 1
 		and str(troubleshooting[0].get("id", "")) == "troubleshooting"
 		and not image_topics.is_empty()
 		and str(image_topics[0].get("category", "")) == "images"
+		and not idea_source_topics.is_empty()
 		and rendered.contains("Create your first character")
 		and rendered.contains("1. ")
-		and not rendered.contains("[b]"),
+		and not rendered.contains("[b]")
+		and rendered_source.contains("[font_size=19]Examples[/font_size]")
+		and rendered_source.contains("[code]")
+		and rendered_source.contains("[lb]")
+		and rendered_source.contains("character-card-forge-idea-source")
+		and not rendered_source.contains("[b]"),
 		"Search, category filtering and task rendering must remain deterministic."
 	):
 		return

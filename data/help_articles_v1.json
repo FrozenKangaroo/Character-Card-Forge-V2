@@ -44,14 +44,16 @@
         "Open Settings and configure a Primary Text profile for character writing.",
         "Assign Fast Text or Deep Review only when you want a different profile for those tasks; Use Primary is the default.",
         "Configure Vision separately for image analysis and Image Generation separately for artwork.",
-        "Use each profile's connection or discovery controls before starting important work."
+        "Use each profile's connection or discovery controls before starting important work.",
+        "Optionally enable Stream AI responses under AI / Generation. Unsupported endpoints fall back to the completed-response path."
       ],
       "notes": [
         "Fallback is optional and should use a distinct profile. It handles bounded technical failures, not refusals or invalid content.",
+        "Streaming is a global preference and is off by default. Provisional output cannot be applied or saved as final content.",
         "API keys stay in local app settings and are omitted from support reports and exported cards."
       ],
       "actions": [{"id": "settings", "label": "Open Provider Settings"}],
-      "related": ["first_character", "image_studio", "troubleshooting"]
+      "related": ["streaming_generation", "text_routes", "troubleshooting"]
     },
     {
       "id": "first_character",
@@ -206,11 +208,13 @@
         "Keep backups of the active Character Card Forge library or portable library folder while the app is closed.",
         "Use Revision History checkpoints for field-level comparison, selective recovery, restore or fork.",
         "Use Archive for recoverable Library removal and project packages for portable project copies.",
+        "If settings recovery is reported, keep app_settings.json and app_settings.json.bak together until you have reviewed or copied both files.",
         "If a portable share is unavailable, reconnect it and reopen the project from that library; do not create a substitute path.",
         "Resolve external-change conflicts by reviewing both copies instead of overwriting blindly."
       ],
       "notes": [
-        "Portable/shared folders are single-writer. Close the project on one computer before editing it on another."
+        "Portable/shared folders are single-writer. Close the project on one computer before editing it on another.",
+        "CCF keeps a last-known-good settings backup. When both settings copies are unreadable, defaults may run in memory but the broken files are preserved instead of being silently replaced."
       ],
       "actions": [{"id": "library", "label": "Open Character Library"}],
       "related": ["library_basics", "workspace_quality", "troubleshooting"]
@@ -304,13 +308,15 @@
       "id": "idea_generator_notebook",
       "category": "authoring",
       "title": "Idea Generator and Idea Library",
-      "summary": "Generate several concepts, keep useful ideas and deliberately choose what becomes a project.",
-      "keywords": ["idea", "generator", "notebook", "concept", "brainstorm", "capture", "pack", "ccfideas", "import", "export", "custom", "length", "characters", "detail"],
+      "summary": "Generate, review, extend and organise concepts before deliberately choosing what becomes a project.",
+      "keywords": ["idea", "generator", "notebook", "library", "concept", "brainstorm", "capture", "pack", "ccfideas", "import", "export", "custom", "length", "characters", "detail", "source", "review", "generate more"],
       "steps": [
         "Choose Idea Generator when you want several candidate concepts from explicit options.",
+        "Use a normal Prompt, or activate a reusable Idea Source and enter optional visible Additional Direction; Direction Presets copy editable text into that same field.",
         "Choose Quick, Standard, Detailed or Extended for a preset depth, or Custom to enter an approximate character target for each idea's concept.",
         "Set the total Ideas up to 50, then choose 1–12 Ideas per provider request; use 1 for smaller models and review the disclosed request count before generating.",
-        "Review the complete results and save promising ideas to Idea Library; choose New Folder beside the destination when the batch needs its own location.",
+        "Use Final Idea Review to accept or reject the completed batch, then Delete This Idea or Generate More Ideas while keeping the same anti-repeat history.",
+        "Save promising results to Idea Library; choose New Folder beside the destination when the batch needs its own location.",
         "Choose Import Idea Pack to validate and preview a .ccfideas.json file; resolve stable-ID conflicts before confirming the atomic import.",
         "Use the Folder tree to organise Ideas directly; every Folder may also contain child Folders, and empty Folders remain valid destinations.",
         "Selecting a Folder shows its direct and descendant Ideas, while the scope summary names the full path and subfolder count.",
@@ -322,9 +328,63 @@
         "Choose Export Idea Pack to share selected entries, a Folder recursively, a Bible, a Series or all Ideas while retaining structured rules and custom sections.",
         "Create a project only from the idea you intentionally choose."
       ],
-      "notes": ["Folders are organisational only: they never change Bible, Series, tags, priority or Idea Source semantics.", "All Ideas and Unfiled are built-in views and cannot be renamed, moved or deleted.", "Idea generation preserves user agency and does not make brainstorming canonical automatically.", "The default remains up to 12 ideas per request, so the ordinary six-idea workflow still makes one provider call. Smaller request sizes increase the number of calls and may increase usage.", "Successful request batches are combined in order; if one request fails, completed ideas remain available instead of being discarded.", "A Custom character target is a model-guided request, not a guarantee. The completion status reports actual minimum, maximum and average concept lengths.", "Large Custom requests are capped by the configured Text model/profile maximum output; an off-target but otherwise valid idea remains reviewable.", "Newer unsupported Idea Pack schemas may be previewed but are not imported silently."],
+      "notes": ["Folders are organisational only: they never change Bible, Series, tags, priority or Idea Source semantics.", "All Ideas and Unfiled are built-in views and cannot be renamed, moved or deleted.", "Idea generation preserves user agency and does not make brainstorming canonical automatically.", "The default remains up to 12 ideas per request, so the ordinary six-idea workflow still makes one provider call. Smaller request sizes increase the number of calls and may increase usage.", "Successful request batches are combined in order; if one request fails, completed ideas remain available instead of being discarded.", "A Custom character target is a model-guided request, not a guarantee. The completion status reports actual minimum, maximum and average concept lengths.", "Generate More freezes the working batch's Idea Source and Series context. Only its visible Prompt or Additional Direction may be edited for the extension.", "With response streaming enabled, complete Ideas may appear provisionally, but Save, Develop and other final-batch actions remain unavailable until checking finishes.", "Large Custom requests are capped by the configured Text model/profile maximum output; an off-target but otherwise valid idea remains reviewable.", "Newer unsupported Idea Pack schemas may be previewed but are not imported silently."],
       "actions": [{"id": "new_project", "label": "Open Idea Workflows…"}],
-      "related": ["character_collaborator", "templates_generation_modes", "first_character"]
+      "related": ["idea_sources", "idea_review_curation", "portable_json_formats", "character_collaborator"]
+    },
+    {
+      "id": "idea_sources",
+      "category": "authoring",
+      "title": "Use reusable Idea Sources and Direction Presets",
+      "summary": "Keep reusable generation rules separate from the specific Ideas they produce.",
+      "keywords": ["idea source", "ccfideasource", "direction preset", "additional direction", "series", "reusable", "json", "similar ideas"],
+      "steps": [
+        "Open Idea Generator → Idea Sources and choose New Source or Load Idea Source….",
+        "Describe the reusable premise, variables, rules, guardrails and diversity axes; an Idea Source is an instruction set, not a finished Idea.",
+        "Optionally add ordered Direction Presets. Selecting one later copies its exact text into the visible, editable Additional Direction field.",
+        "Choose Use in Idea Generator, set the normal count, request size and detail level, then generate.",
+        "Use Save Current Source for the internal Source Library or Export Idea Source… for a portable .ccfideasource.json file.",
+        "Use Generate Similar Ideas on an existing card when you want CCF to extract a temporary reusable scenario engine before generating new concepts."
+      ],
+      "notes": [
+        "The stable id is required; title is optional. At least one premise, setup, prompt, rule, variable or custom section is required.",
+        "Loading an external file is temporary until you explicitly save it to the Idea Source Library.",
+        "Idea Sources remain separate from generated Ideas, .ccfideas.json Idea Packs and Workspace Generation Concepts.",
+        "Direction Presets are convenience text, not hidden prompt layers. Only the text visible in Additional Direction is sent with the active source."
+      ],
+      "examples": [
+        {
+          "title": "Portable Idea Source with one Direction Preset",
+          "description": "Save as a UTF-8 .ccfideasource.json file. Optional fields may be omitted; stable IDs should remain unchanged when editing the same source.",
+          "language": "json",
+          "content": "{\n  \"format\": \"character-card-forge-idea-source\",\n  \"schema_version\": 1,\n  \"id\": \"old-friend-returns\",\n  \"title\": \"Old Friend Returns\",\n  \"description\": \"Reusable reunion scenarios with unresolved history.\",\n  \"core_premise\": \"Someone important from a character's past returns unexpectedly.\",\n  \"setup\": \"Create standalone character-card concepts that begin near the reunion.\",\n  \"core_variables\": [\n    \"Why the person left\",\n    \"Why they returned\",\n    \"What remains unresolved\"\n  ],\n  \"generation_rules\": [\n    \"Keep {{user}}'s prior relationship and choices open\",\n    \"Make each Idea usable without knowledge of the others\"\n  ],\n  \"guardrails\": [\n    \"Do not assume {{user}} previously agreed to romance\"\n  ],\n  \"diversity_axes\": [\"setting\", \"relationship history\", \"reason for return\"],\n  \"tags\": [\"reunion\", \"past connection\"],\n  \"direction_presets\": [\n    {\n      \"id\": \"workplace\",\n      \"group\": \"Setting\",\n      \"title\": \"Workplace reunion\",\n      \"direction\": \"Set the reunion in or around the character's workplace.\"\n    }\n  ],\n  \"sections\": [\n    {\"label\": \"Tone\", \"content\": \"Grounded, emotionally tense and open-ended.\"}\n  ]\n}"
+        }
+      ],
+      "actions": [{"id": "new_project", "label": "Open Idea Workflows…"}],
+      "related": ["idea_generator_notebook", "idea_review_curation", "portable_json_formats"]
+    },
+    {
+      "id": "idea_review_curation",
+      "category": "authoring",
+      "title": "Review and extend generated Ideas",
+      "summary": "Curate one working batch, remove weak concepts and request more without losing repeat-prevention memory.",
+      "keywords": ["final idea review", "generate more", "delete idea", "curation", "request adherence", "similarity", "top up", "anti repeat"],
+      "steps": [
+        "Configure request-adherence, similarity, repeat-prevention and optional top-up checks before generation.",
+        "In Final Idea Review, read findings and leave checked only the new Ideas you want to retain; the review remains advisory until you apply it.",
+        "Use Delete This Idea on the completed working batch to remove an Idea and keep it in anti-repeat memory.",
+        "Choose Generate More Ideas…, set an exact additional count and edit the prefilled Prompt or Additional Direction for that extension.",
+        "Review only the new extension Ideas for adherence to the new instruction; older retained Ideas remain accepted while still participating in new-versus-old similarity checks.",
+        "Save or develop Ideas only after the current generation and checking phase reaches Ready."
+      ],
+      "notes": [
+        "Generate More appends accepted Ideas; it does not replace the working batch.",
+        "When an Idea Source was used, its saved ID, title, content and Series context stay frozen for the batch. Changing the main generator's active source does not alter that batch.",
+        "The most recently successful extension instruction becomes the next Generate More prefill. Cancelling or failing does not replace it.",
+        "Rejecting an extension Idea may trigger one configured replacement request, but never an unlimited review/recovery loop."
+      ],
+      "actions": [{"id": "new_project", "label": "Open Idea Workflows…"}],
+      "related": ["idea_generator_notebook", "idea_sources", "streaming_generation"]
     },
     {
       "id": "character_collaborator",
@@ -689,7 +749,54 @@
       ],
       "notes": ["Project packages can contain private authoring state that ordinary Character Card exports intentionally omit."],
       "actions": [{"id": "export_install", "label": "Open Project Packages"}],
-      "related": ["export_profiles", "backup_recovery", "import_character"]
+      "related": ["export_profiles", "portable_json_formats", "backup_recovery"]
+    },
+    {
+      "id": "portable_json_formats",
+      "category": "sharing",
+      "title": "Portable JSON format examples",
+      "summary": "Recognise the supported authoring JSON formats and start from minimal valid examples.",
+      "keywords": ["json", "schema", "format", "ccfchar", "ccfideas", "ccfideasource", "idea pack", "idea source", "series", "example"],
+      "steps": [
+        "Choose the format that matches the job: .ccfchar for one authoring source, .ccfideasource.json for reusable generator instructions, .ccfideas.json for generated Idea outputs, or Series JSON for a reusable local continuity definition.",
+        "Keep the documented format identity, version field and required stable IDs exactly as shown.",
+        "Omit optional properties you do not know instead of inventing filler; preserve {{user}} and {{char}} placeholders literally.",
+        "Use the format's matching in-app action: Workspace's Character menu for .ccfchar, Idea Generator or Idea Library for Idea Sources and Idea Packs, and Series Manager for Series JSON.",
+        "CCF validates every imported document. Review the import preview when that workflow provides one; Series Manager validates and saves a valid Series import directly.",
+        "Prefer CCF's Export action when editing an existing record because exports preserve supported future fields and provenance."
+      ],
+      "notes": [
+        "These are intentionally small examples, not every optional field. The linked feature pages explain the complete behavior.",
+        "Idea Sources are reusable inputs; Idea Packs contain finished Ideas. Changing the format label does not convert one into the other.",
+        "Do not manually edit application settings, the internal Idea Library database or project storage as if they were portable interchange formats."
+      ],
+      "examples": [
+        {
+          "title": "Concept-only .ccfchar",
+          "description": "Imports one editable Generation Concept without inventing completed card fields.",
+          "language": "json",
+          "content": "{\n  \"format\": \"character_card_forge_character_source\",\n  \"format_version\": 1,\n  \"metadata\": {\n    \"name\": \"Mika\",\n    \"tags\": [\"racing\", \"university\"]\n  },\n  \"concept\": {\n    \"prompt\": \"A competitive racing fan pulls {{user}} into a local track rivalry.\",\n    \"notes\": \"Keep {{user}}'s history and decisions open.\"\n  }\n}"
+        },
+        {
+          "title": "Minimal .ccfideasource.json",
+          "description": "A reusable generator input. See Use reusable Idea Sources and Direction Presets for a fuller example.",
+          "language": "json",
+          "content": "{\n  \"format\": \"character-card-forge-idea-source\",\n  \"schema_version\": 1,\n  \"id\": \"unexpected-reunion\",\n  \"title\": \"Unexpected Reunion\",\n  \"core_premise\": \"Someone important from the character's past returns unexpectedly.\",\n  \"generation_rules\": [\"Keep {{user}}'s past choices open\"],\n  \"diversity_axes\": [\"setting\", \"reason for return\"]\n}"
+        },
+        {
+          "title": "Minimal .ccfideas.json Idea Pack",
+          "description": "A portable output pack containing one completed seed Idea.",
+          "language": "json",
+          "content": "{\n  \"format\": \"character-card-forge-ideas\",\n  \"schema_version\": 1,\n  \"pack\": {\n    \"id\": \"reunion-pack-01\",\n    \"title\": \"Unexpected Reunion Ideas\",\n    \"description\": \"Reviewed scenario seeds\",\n    \"source_version\": \"1.0\"\n  },\n  \"entries\": [\n    {\n      \"id\": \"reunion-at-closing-time\",\n      \"kind\": \"seed\",\n      \"title\": \"Closing Time\",\n      \"summary\": \"A former friend appears just as the character closes the shop.\",\n      \"setup\": \"The return is unexpected and their reason is initially unclear.\",\n      \"generation_rules\": [\"Leave {{user}}'s prior relationship undefined\"],\n      \"guardrails\": [\"Do not force reconciliation\"],\n      \"tags\": [\"reunion\", \"workplace\"]\n    }\n  ]\n}"
+        },
+        {
+          "title": "Series definition JSON",
+          "description": "A reusable continuity definition stored separately from projects that reference its stable series_id.",
+          "language": "json",
+          "content": "{\n  \"format_version\": 1,\n  \"series_id\": \"astral-courier-guild\",\n  \"name\": \"Astral Courier Guild\",\n  \"aliases\": [\"ACG\"],\n  \"description\": \"Couriers cross unstable star roads.\",\n  \"setting_guidance\": \"Travel uses ritual gates maintained by guild navigators.\",\n  \"canon_notes\": \"The Obsidian Route has been closed for twelve years.\",\n  \"generation_rules\": \"Keep guild ranks and route rules consistent.\",\n  \"default_tags\": [\"science fantasy\", \"courier\"]\n}"
+        }
+      ],
+      "related": ["idea_sources", "idea_generator_notebook", "project_packages", "import_character"]
     },
     {
       "id": "reference_sources",
@@ -731,11 +838,12 @@
       "keywords": ["front porch", "optional", "ambition", "work", "birthday", "needs", "relationship", "wardrobe"],
       "steps": [
         "Open the Front Porch — Optional Workspace tab.",
-        "Enter fields manually or use AI Suggest for the selected field or enabled group.",
+        "Enter fields manually, choose Select All in a Front Porch section, or use AI Suggest for the selected field or enabled group.",
+        "For Work, enter separate start and end times and choose Work Days. AI results accept Monday=1 through Sunday=7, day names, clear ranges, weekdays or weekends before normalising to numeric IDs.",
         "Review every proposal before including it in the project.",
         "Leave all fields empty when the character should emit no Front Porch extension."
       ],
-      "notes": ["Relationship history is not invented for the user, and intimate preferences require adult-content opt-in."],
+      "notes": ["Relationship history is not invented for the user, and intimate preferences require adult-content opt-in.", "Ambiguous Work Days prose is rejected instead of being reported as successfully applied."],
       "actions": [{"id": "layout_front_porch", "label": "Open Front Porch Fields"}],
       "related": ["front_porch_install_sync", "greetings_scenarios", "sensitive_controls"]
     },
@@ -785,7 +893,30 @@
       ],
       "notes": ["Fallback never switches models for refusals, invalid output, parsing errors or validation failures."],
       "actions": [{"id": "settings", "label": "Open Text Routes"}],
-      "related": ["provider_setup", "ai_review", "troubleshooting"]
+      "related": ["provider_setup", "streaming_generation", "ai_review"]
+    },
+    {
+      "id": "streaming_generation",
+      "category": "advanced",
+      "title": "Stream AI responses safely",
+      "summary": "Receive supported AI responses progressively while keeping provisional content separate from validated results.",
+      "keywords": ["stream", "streaming", "sse", "provisional", "checking", "ready", "cancel", "retry", "fallback", "provider"],
+      "steps": [
+        "Open Settings → AI / Generation and enable Stream AI responses; the preference is global and remains off by default.",
+        "Start a normal AI action. Eligible OpenAI-compatible chat-completions endpoints are asked to stream; unsupported or ordinary-response endpoints fall back automatically.",
+        "Treat content labelled Provisional as readable progress only. Wait for Checking to finish and the job to reach Ready before applying, saving or developing it.",
+        "For Character Collaborator, prose can appear as it arrives. For AI Ideas, only complete safely parsed Idea objects appear provisionally.",
+        "Cancel normally when needed. CCF discards partial content rather than silently promoting it to a final result.",
+        "Open Generation Diagnostics when a provider rejects streaming, terminates early or retries; credentials and reasoning text are excluded."
+      ],
+      "notes": [
+        "Streaming changes delivery, not prompts, schemas, Idea Source context or validation rules.",
+        "A retry clears the failed attempt's provisional content; delayed chunks cannot enter the retry or another queued job.",
+        "Structured card, AI Fill, Front Porch and review jobs use the same safe transport but keep their established final preview/apply screens as the authority.",
+        "Provider compatibility varies. Enabling the preference does not imply that every custom endpoint supports SSE."
+      ],
+      "actions": [{"id": "settings", "label": "Open AI Generation Settings"}],
+      "related": ["provider_setup", "troubleshooting", "idea_review_curation", "character_collaborator"]
     },
     {
       "id": "vision_image_profiles",

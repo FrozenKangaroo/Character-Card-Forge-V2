@@ -33,14 +33,39 @@ def main() -> int:
     screenshot_report = exporter.validate_screenshot_catalog(catalog, screenshot_catalog)
     pages = exporter.rendered_pages(catalog, screenshot_catalog)
     require(report["category_count"] == 10, "The manual must expose ten roadmap sections.")
-    require(report["article_count"] >= 49, "The expanded manual lost required task coverage.")
+    require(report["article_count"] >= 53, "The expanded manual lost required task coverage.")
     require(
         len(pages) == report["article_count"] + report["category_count"] + 2,
         "Wiki page set is incomplete.",
     )
     require("Home.md" in pages and "_Sidebar.md" in pages, "Wiki navigation pages are required.")
     require("Character Collaborator" in pages["Home.md"], "Home must index core authoring guidance.")
+    require("Use reusable Idea Sources and Direction Presets" in pages["Home.md"], "Home must index reusable Idea Sources.")
+    require("Portable JSON format examples" in pages["Home.md"], "Home must index JSON format guidance.")
+    require("Stream AI responses safely" in pages["Home.md"], "Home must index current streaming guidance.")
     require("Front Porch" in pages["_Sidebar.md"], "Sidebar must expose Front Porch guidance.")
+    idea_source_page = pages["Use-Reusable-Idea-Sources-And-Direction-Presets.md"]
+    format_page = pages["Portable-Json-Format-Examples.md"]
+    require(
+        '"format": "character-card-forge-idea-source"' in idea_source_page
+        and '"direction_presets": [' in idea_source_page,
+        "Idea Source Wiki guidance must include a complete schema-v1 JSON example.",
+    )
+    require(
+        "```json" in format_page
+        and '"format": "character-card-forge-ideas"' in format_page
+        and '"format": "character_card_forge_character_source"' in format_page
+        and '"series_id": "astral-courier-guild"' in format_page,
+        "Portable format guidance must render fenced, valid-format examples.",
+    )
+    require(
+        "Series Manager validates and saves a valid Series import directly" in format_page,
+        "Portable format guidance must describe the Series import path accurately.",
+    )
+    require(
+        "Open Import Start" not in format_page,
+        "The multi-format guide must not route every format through New Project.",
+    )
     require(screenshot_report["screenshot_count"] == 19, "The reviewed screenshot set is incomplete.")
     require(
         screenshot_report["screenshot_article_count"] >= 20,

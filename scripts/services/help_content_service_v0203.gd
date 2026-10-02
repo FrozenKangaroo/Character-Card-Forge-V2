@@ -16,6 +16,7 @@ static func capabilities() -> Dictionary:
 		"task_oriented": true,
 		"article_count": articles(catalog).size(),
 		"category_count": categories(catalog).size(),
+		"structured_examples": true,
 		"routes_to_existing_tools": true,
 	}
 
@@ -102,6 +103,27 @@ static func render_article(article: Dictionary) -> String:
 		for note_value in notes_value:
 			lines.append("• %s" % _escape_bbcode(str(note_value)))
 		lines.append("")
+	var examples_value: Variant = article.get("examples", [])
+	if examples_value is Array and not (examples_value as Array).is_empty():
+		lines.append("[font_size=19]Examples[/font_size]")
+		lines.append("")
+		for example_value in examples_value:
+			if not example_value is Dictionary:
+				continue
+			var example: Dictionary = example_value
+			lines.append(
+				"[font_size=17]%s[/font_size]"
+				% _escape_bbcode(str(example.get("title", "Example")))
+			)
+			var description := str(example.get("description", "")).strip_edges()
+			if not description.is_empty():
+				lines.append(_escape_bbcode(description))
+				lines.append("")
+			lines.append(
+				"[code]%s[/code]"
+				% _escape_bbcode_code(str(example.get("content", "")).strip_edges())
+			)
+			lines.append("")
 	return "\n".join(lines)
 
 
@@ -133,6 +155,29 @@ static func validate_catalog() -> Array[String]:
 		var steps_value: Variant = article.get("steps", [])
 		if not steps_value is Array or (steps_value as Array).is_empty():
 			problems.append("Help article %s needs at least one step." % article_id)
+		var examples_value: Variant = article.get("examples", [])
+		if not examples_value is Array:
+			problems.append("Help article %s examples must be an array." % article_id)
+		else:
+			for example_index in range((examples_value as Array).size()):
+				var example_value: Variant = (examples_value as Array)[example_index]
+				if not example_value is Dictionary:
+					problems.append(
+						"Help article %s example %d must be an object."
+						% [article_id, example_index + 1]
+					)
+					continue
+				var example: Dictionary = example_value
+				if str(example.get("title", "")).strip_edges().is_empty():
+					problems.append(
+						"Help article %s example %d needs a title."
+						% [article_id, example_index + 1]
+					)
+				if str(example.get("content", "")).strip_edges().is_empty():
+					problems.append(
+						"Help article %s example %d needs content."
+						% [article_id, example_index + 1]
+					)
 	for article in articles(catalog):
 		for related_value in article.get("related", []):
 			if str(related_value) not in article_ids:
@@ -154,8 +199,23 @@ static func _search_text(article: Dictionary) -> String:
 		if values is Array:
 			for value in values:
 				parts.append(str(value))
+	var examples_value: Variant = article.get("examples", [])
+	if examples_value is Array:
+		for example_value in examples_value:
+			if not example_value is Dictionary:
+				continue
+			var example: Dictionary = example_value
+			parts.append(str(example.get("title", "")))
+			parts.append(str(example.get("description", "")))
+			parts.append(str(example.get("content", "")))
 	return " ".join(parts).to_lower()
 
 
 static func _escape_bbcode(value: String) -> String:
 	return value.replace("[", "[​")
+
+
+static func _escape_bbcode_code(value: String) -> String:
+	# [lb] is RichTextLabel's copy-safe literal opening bracket. It keeps JSON
+	# arrays visible without allowing example text to inject BBCode tags.
+	return value.replace("[", "[lb]")
