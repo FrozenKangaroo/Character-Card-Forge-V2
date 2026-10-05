@@ -6,6 +6,86 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.15] - 2026-10-05
+
+### Highlights
+
+- Added a dedicated **Character Collaborator → Workspace** build strategy in
+  **Settings → AI / Generation**, independent of the ordinary Generate Character strategy.
+- Collaborator Safe Section Build creates a fixed, loss-minimising Generation Concept one
+  complete section at a time. Detailed Workspace Draft then reuses the established
+  template-aware, validated field-by-field Safe Section engine.
+- Collaborator handoffs now detect incomplete Generation Concepts and make one bounded
+  repair beginning at the first malformed or missing section. Single Response preserves
+  the exact accepted text prefix; Safe Section Build preserves its accepted section prefix
+  and rebuilds only that section onward.
+
+### Changes
+
+- Freeze the active Collaborator transcript, source-precedence context and memory snapshot
+  for every section in one handoff so unrelated UI changes cannot alter later sections.
+- Require all canonical blueprint headings in a stable order, using `None established.`
+  when a section genuinely has no source material.
+- Recover a safely decoded partial `concept_prompt` from truncated JSON, including escaped
+  quotes, backslashes and Unicode, without treating braces inside strings as structure.
+- Give tail repair the original Collaborator evidence so facts beyond a truncated provider
+  response can be reconstructed without regenerating accepted earlier sections.
+- Keep completed Safe Section content provisional until the whole handoff and its validation
+  chain finish; failed detailed fields or supplementary material do not partially apply.
+- Added focused regression coverage for strategy separation, section completeness, exact
+  prefix preservation, hostile JSON chunk boundaries, settings UI and live runtime wiring.
+
+### Migration notes
+
+- None. Existing settings default Collaborator handoffs to Safe Section Build; authors who
+  prefer the previous lower-request workflow can select **Single Response**.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Safe Section Collaborator handoffs use substantially more provider requests than Single
+  Response. Supplementary Alternative Greetings and Lorebook material is still finalised as
+  one bounded structured extraction after the canonical concept and Workspace fields.
+
+## [0.21.14] - 2026-10-04
+
+### Highlights
+
+- Ideas saved from AI generation now retain the exact prompt used for their own request,
+  rather than relying only on one aggregate batch prompt.
+- Added an **Original AI prompt** panel and **Send Prompt to Generator** action in Idea
+  Library so a successful prompt can be reused, edited and generated again.
+
+### Changes
+
+- Carry per-Idea prompt provenance through Final Idea Review, deletion and append-only
+  Generate More sessions. Earlier Ideas keep their earlier prompt while newly appended
+  Ideas retain the extension prompt that actually produced them.
+- Store the complete provider seed as `source.generation_prompt` and retain
+  `source.seed_prompt` as a compatibility alias for earlier CCF builds and tools.
+- Export the prompt as optional `generation_prompt` metadata in Idea Pack entries and
+  restore it on import without injecting provenance into the Idea's conceptual text.
+- Clear any currently active Idea Source before restoring a complete saved prompt, which
+  prevents unrelated source context from being silently applied twice.
+- Added focused service, storage, Idea Pack and live Idea Library regression coverage.
+
+### Migration notes
+
+- None. Existing saved Ideas and Idea Packs without prompt metadata continue to load,
+  edit, generate and export normally.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- CCF cannot reconstruct prompts that were never stored in older manually created or
+  imported Ideas; their prompt panel remains empty and the reuse action is disabled.
+
 ## [0.21.13] - 2026-10-02
 
 ### Highlights

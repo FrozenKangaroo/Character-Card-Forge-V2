@@ -15,15 +15,16 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.13 — Public Idea Sources**. Idea Generator can
-browse a searchable official catalog, verify each download against its catalog checksum
-and production schema, and activate the chosen source without silently changing the local
-Source Library. The initial catalog contains 33 reusable sources hosted through the
-Character Card Forge Cloudflare R2 custom domain.
+The current source candidate is **v0.21.15 — Collaborator Safe Handoffs**. Character
+Collaborator now has its own Workspace handoff strategy, independent of normal Generate
+Character. Safe Section Build creates a canonical Generation Concept one complete section
+at a time and uses the existing validated field-by-field engine for Detailed Workspace
+Drafts. Both paths detect incomplete concepts and perform one bounded repair from the first
+malformed section onward without rewriting accepted earlier sections.
 
-The v0.21.12 global streaming and settings-safety work, v0.21.8–v0.21.11 Idea review,
-Generate More and Direction Preset workflows, and v0.21.7 Folder-only Idea Library all
-remain available.
+The v0.21.13 public Idea Source catalog, v0.21.12 global streaming and settings-safety
+work, v0.21.8–v0.21.11 Idea review, Generate More and Direction Preset workflows, and
+v0.21.7 Folder-only Idea Library all remain available.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental
@@ -41,13 +42,16 @@ and [changelog](CHANGELOG.md).
   verification before a source becomes available to generation.
 - A Folder-only Idea Library with nested organisation, recursive counts/export, full-path
   destinations, safe hierarchy and multi-Idea drag/drop, and selection-based batch deletion.
+- Per-Idea AI prompt provenance with a visible **Send Prompt to Generator** action and
+  optional Idea Pack round-trip support.
 - Idea Generator presets plus bounded Custom per-idea character targets with visible
   requested-versus-actual reporting.
 - Visual-only Personality section spacing with an exact-text editing toggle.
 - Deferred first save for empty one-character drafts opened through Workspace tools.
 - Immediate virtualized Library grid reflow when card density changes.
 - Character Collaborator conversations with explicit sources, evidence roles and
-  reviewable Generation Blueprint handoff.
+  reviewable Generation Blueprint handoff, a dedicated Safe Section strategy and bounded
+  incomplete-concept tail recovery.
 - Optional global AI response streaming with provider fallback, provisional Collaborator
   prose, complete provisional Idea objects and final-validation safety.
 - Editable canonical Character Card fields, Alternative Greetings, Scenario Presets,
@@ -110,6 +114,13 @@ AI action.
 Eligible providers can show useful output while they reply; unsupported endpoints fall
 back to the normal completed response. Anything shown early is provisional and cannot be
 saved or applied until the complete response passes normal parsing and validation.
+
+The same page contains **Character Collaborator → Workspace**, a setting separate from
+the ordinary Generate Character strategy. **Safe Section Build** is recommended for long
+Collaborator sessions: it builds each fixed blueprint section independently, preserves
+accepted earlier sections, and uses validated field sections for Detailed Workspace Draft.
+**Single Response** uses fewer requests. Both strategies automatically attempt one bounded
+tail-only repair if the returned Generation Concept is incomplete.
 
 An empty one-character draft is not added to Character Library merely because Idea
 Generator, Character Collaborator or another Workspace tool was opened. It remains an

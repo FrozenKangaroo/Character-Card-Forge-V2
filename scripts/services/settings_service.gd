@@ -46,6 +46,7 @@ static func default_settings() -> Dictionary:
 			"retry_count": 1,
 			"default_idea_count": 6,
 			"stream_ai_responses": false,
+			"collaborator_handoff_strategy": "safe_section",
 			"attachment_context_character_limit": 24000,
 			"text_fallback_enabled": false,
 			"default_image_size": "1024x1024",
@@ -693,6 +694,14 @@ static func _normalise(settings: Dictionary) -> Dictionary:
 	)
 	generation_settings["stream_ai_responses"] = bool(
 		generation_settings.get("stream_ai_responses", false)
+	)
+	var collaborator_handoff_strategy := str(
+		generation_settings.get("collaborator_handoff_strategy", "safe_section")
+	).strip_edges().to_lower()
+	if collaborator_handoff_strategy != "single_response":
+		collaborator_handoff_strategy = "safe_section"
+	generation_settings["collaborator_handoff_strategy"] = (
+		collaborator_handoff_strategy
 	)
 	var image_size_text := str(generation_settings.get("default_image_size", "1024x1024")).strip_edges()
 	generation_settings["default_image_size"] = image_size_text if not image_size_text.is_empty() else "1024x1024"

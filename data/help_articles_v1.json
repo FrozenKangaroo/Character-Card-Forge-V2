@@ -317,6 +317,7 @@
         "Set the total Ideas up to 50, then choose 1–12 Ideas per provider request; use 1 for smaller models and review the disclosed request count before generating.",
         "Use Final Idea Review to accept or reject the completed batch, then Delete This Idea or Generate More Ideas while keeping the same anti-repeat history.",
         "Save promising results to Idea Library; choose New Folder beside the destination when the batch needs its own location.",
+        "Select a saved AI Idea to inspect its Original AI prompt, then choose Send Prompt to Generator to reuse or edit that instruction in AI Ideas.",
         "Choose Import Idea Pack to validate and preview a .ccfideas.json file; resolve stable-ID conflicts before confirming the atomic import.",
         "Use the Folder tree to organise Ideas directly; every Folder may also contain child Folders, and empty Folders remain valid destinations.",
         "Selecting a Folder shows its direct and descendant Ideas, while the scope summary names the full path and subfolder count.",
@@ -328,7 +329,7 @@
         "Choose Export Idea Pack to share selected entries, a Folder recursively, a Bible, a Series or all Ideas while retaining structured rules and custom sections.",
         "Create a project only from the idea you intentionally choose."
       ],
-      "notes": ["Folders are organisational only: they never change Bible, Series, tags, priority or Idea Source semantics.", "All Ideas and Unfiled are built-in views and cannot be renamed, moved or deleted.", "Idea generation preserves user agency and does not make brainstorming canonical automatically.", "The default remains up to 12 ideas per request, so the ordinary six-idea workflow still makes one provider call. Smaller request sizes increase the number of calls and may increase usage.", "Successful request batches are combined in order; if one request fails, completed ideas remain available instead of being discarded.", "A Custom character target is a model-guided request, not a guarantee. The completion status reports actual minimum, maximum and average concept lengths.", "Generate More freezes the working batch's Idea Source and Series context. Only its visible Prompt or Additional Direction may be edited for the extension.", "With response streaming enabled, complete Ideas may appear provisionally, but Save, Develop and other final-batch actions remain unavailable until checking finishes.", "Large Custom requests are capped by the configured Text model/profile maximum output; an off-target but otherwise valid idea remains reviewable.", "Newer unsupported Idea Pack schemas may be previewed but are not imported silently."],
+      "notes": ["Folders are organisational only: they never change Bible, Series, tags, priority or Idea Source semantics.", "All Ideas and Unfiled are built-in views and cannot be renamed, moved or deleted.", "Idea generation preserves user agency and does not make brainstorming canonical automatically.", "The default remains up to 12 ideas per request, so the ordinary six-idea workflow still makes one provider call. Smaller request sizes increase the number of calls and may increase usage.", "Successful request batches are combined in order; if one request fails, completed ideas remain available instead of being discarded.", "A Custom character target is a model-guided request, not a guarantee. The completion status reports actual minimum, maximum and average concept lengths.", "Generate More freezes the working batch's Idea Source and Series context. Only its visible Prompt or Additional Direction may be edited for the extension.", "Each newly saved AI Idea keeps the prompt from the request that produced it. Older or manually created Ideas without prompt provenance remain supported and simply cannot offer prompt reuse.", "Idea Packs may carry optional generation_prompt provenance; it is never injected into the Idea's conceptual text.", "With response streaming enabled, complete Ideas may appear provisionally, but Save, Develop and other final-batch actions remain unavailable until checking finishes.", "Large Custom requests are capped by the configured Text model/profile maximum output; an off-target but otherwise valid idea remains reviewable.", "Newer unsupported Idea Pack schemas may be previewed but are not imported silently."],
       "actions": [{"id": "new_project", "label": "Open Idea Workflows…"}],
       "related": ["idea_sources", "idea_review_curation", "portable_json_formats", "character_collaborator"]
     },
@@ -392,16 +393,23 @@
       "id": "character_collaborator",
       "category": "authoring",
       "title": "Develop a character with Character Collaborator",
-      "summary": "Brainstorm conversationally, manage evidence and create a reviewed Blueprint handoff.",
-      "keywords": ["collaborator", "conversation", "blueprint", "evidence", "source", "rewind"],
+      "summary": "Brainstorm conversationally, manage evidence and create a reviewed Blueprint or Detailed Workspace handoff with an independent Safe Section strategy.",
+      "keywords": ["collaborator", "conversation", "blueprint", "evidence", "source", "rewind", "safe section", "incomplete", "repair"],
       "steps": [
         "Start Character Collaborator from New Project or send one explicit existing character for refinement.",
         "Add reference sources and assign evidence roles when several sources have different authority.",
         "Develop the character until the conversation contains the detail you want preserved.",
-        "Create the Generation Blueprint, review its supplementary greetings and Lorebook, then choose the destination draft.",
+        "Choose Blueprint or Detailed Workspace Draft as the handoff destination.",
+        "In Settings → AI / Generation, choose the separate Collaborator handoff strategy. Safe Section Build is recommended for long sessions; Single Response uses fewer provider requests.",
+        "Create the handoff and review the resulting Generation Concept, fields, supplementary greetings and Lorebook before saving.",
         "Use rewind when you need to remove later conversation turns without deleting independent references."
       ],
-      "notes": ["Conversation remains non-canonical until you explicitly create or apply a draft."],
+      "notes": [
+        "Conversation remains non-canonical until you explicitly create or apply a draft.",
+        "Safe Section Build freezes the current conversation and evidence snapshot, then builds every canonical concept section independently. Detailed Workspace Draft reuses validated template field sections.",
+        "Both strategies detect a missing, empty or apparently truncated Generation Concept section and perform one bounded rebuild from that section onward. Complete earlier sections are preserved.",
+        "The Collaborator handoff setting is independent of the ordinary Generate Character strategy."
+      ],
       "actions": [{"id": "new_project", "label": "Start Character Collaborator…"}],
       "related": ["idea_generator_notebook", "reference_sources", "lorebooks_relationships"]
     },
@@ -789,7 +797,7 @@
           "title": "Minimal .ccfideas.json Idea Pack",
           "description": "A portable output pack containing one completed seed Idea.",
           "language": "json",
-          "content": "{\n  \"format\": \"character-card-forge-ideas\",\n  \"schema_version\": 1,\n  \"pack\": {\n    \"id\": \"reunion-pack-01\",\n    \"title\": \"Unexpected Reunion Ideas\",\n    \"description\": \"Reviewed scenario seeds\",\n    \"source_version\": \"1.0\"\n  },\n  \"entries\": [\n    {\n      \"id\": \"reunion-at-closing-time\",\n      \"kind\": \"seed\",\n      \"title\": \"Closing Time\",\n      \"summary\": \"A former friend appears just as the character closes the shop.\",\n      \"setup\": \"The return is unexpected and their reason is initially unclear.\",\n      \"generation_rules\": [\"Leave {{user}}'s prior relationship undefined\"],\n      \"guardrails\": [\"Do not force reconciliation\"],\n      \"tags\": [\"reunion\", \"workplace\"]\n    }\n  ]\n}"
+          "content": "{\n  \"format\": \"character-card-forge-ideas\",\n  \"schema_version\": 1,\n  \"pack\": {\n    \"id\": \"reunion-pack-01\",\n    \"title\": \"Unexpected Reunion Ideas\",\n    \"description\": \"Reviewed scenario seeds\",\n    \"source_version\": \"1.0\"\n  },\n  \"entries\": [\n    {\n      \"id\": \"reunion-at-closing-time\",\n      \"kind\": \"seed\",\n      \"title\": \"Closing Time\",\n      \"summary\": \"A former friend appears just as the character closes the shop.\",\n      \"setup\": \"The return is unexpected and their reason is initially unclear.\",\n      \"generation_prompt\": \"Generate grounded reunion scenarios in ordinary workplaces.\",\n      \"generation_rules\": [\"Leave {{user}}'s prior relationship undefined\"],\n      \"guardrails\": [\"Do not force reconciliation\"],\n      \"tags\": [\"reunion\", \"workplace\"]\n    }\n  ]\n}"
         },
         {
           "title": "Series definition JSON",

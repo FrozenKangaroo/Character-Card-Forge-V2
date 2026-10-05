@@ -8,6 +8,9 @@ const LIBRARY_FORMAT := "character_card_forge_idea_notebook"
 const IDEA_FORMAT := "character_card_forge_saved_idea"
 const FORMAT_VERSION := 2
 const LIBRARY_FORMAT_VERSION := 3
+const IDEA_PROMPT_PROVENANCE_V02114 = preload(
+	"res://scripts/services/idea_prompt_provenance_v02114.gd"
+)
 
 static var _storage_root_override := ""
 static var _library_load_count_for_testing := 0
@@ -412,7 +415,12 @@ static func delete_notebook(notebook_id: String) -> Dictionary:
 
 static func save_generated_idea(raw_idea: Dictionary, folder_id: String = "", source: Dictionary = {}) -> Dictionary:
 	var now := _now()
-	var idea := _normalise_idea(raw_idea)
+	var saved_source := IDEA_PROMPT_PROVENANCE_V02114.source_for_saved_idea(
+		raw_idea, source
+	)
+	var idea := _normalise_idea(
+		IDEA_PROMPT_PROVENANCE_V02114.clean_idea_for_save(raw_idea)
+	)
 	if str(idea.get("concept", "")).strip_edges().is_empty():
 		return {"ok": false, "error": "An idea needs concept text before it can be saved."}
 	idea["id"] = _new_id()
@@ -421,7 +429,7 @@ static func save_generated_idea(raw_idea: Dictionary, folder_id: String = "", so
 	idea["created_at"] = now
 	idea["updated_at"] = now
 	idea["archived"] = false
-	idea["source"] = _normalise_source(source)
+	idea["source"] = _normalise_source(saved_source)
 	idea["format"] = IDEA_FORMAT
 	idea["format_version"] = FORMAT_VERSION
 	var saved := _write_json(_idea_path(str(idea.get("id", ""))), idea)
@@ -914,7 +922,17 @@ static func _migrate_legacy_idea_files_v0217(aliases: Dictionary) -> void:
 static func _normalise_source(raw: Dictionary) -> Dictionary:
 	var result := raw.duplicate(true)
 	result["type"] = str(result.get("type", "idea_generator")).strip_edges()
-	result["seed_prompt"] = str(result.get("seed_prompt", "")).strip_edges()
+	var generation_prompt := str(result.get(
+		"generation_prompt", result.get("seed_prompt", "")
+	)).strip_edges()
+	var seed_prompt := str(result.get("seed_prompt", generation_prompt)).strip_edges()
+	result["generation_prompt"] = generation_prompt if not generation_prompt.is_empty() else seed_prompt
+	result["seed_prompt"] = seed_prompt if not seed_prompt.is_empty() else generation_prompt
+	for field_id in [
+		"visible_instruction", "prompt_mode", "idea_source_id", "idea_source_title"
+	]:
+		if result.has(field_id):
+			result[field_id] = str(result.get(field_id, "")).strip_edges()
 	return result
 
 

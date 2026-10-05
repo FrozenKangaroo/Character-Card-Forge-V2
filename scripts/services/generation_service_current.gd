@@ -26,9 +26,192 @@ const IDEA_DIVERSITY_V0214 = preload(
 const IDEA_FINAL_REVIEW_V0218 = preload(
 	"res://scripts/services/idea_final_review_service_v0218.gd"
 )
+const COLLABORATOR_SAFE_HANDOFF_V02115 = preload(
+	"res://scripts/services/collaborator_safe_handoff_service_v02115.gd"
+)
 
 const ROUTING_FORMAT_VERSION_V0195 := 1
 const ROUTING_PROFILE_KEY_V0195 := "_ccf_text_routing_v0195"
+
+
+func queue_collaborator_blueprint(
+	conversation_messages: Array,
+	context_blocks: Array[String],
+	memory_summary: String,
+	profile: Dictionary,
+	retry_count: int,
+	session_id: String
+) -> Dictionary:
+	var result := super.queue_collaborator_blueprint(
+		conversation_messages,
+		context_blocks,
+		memory_summary,
+		profile,
+		retry_count,
+		session_id
+	)
+	if not bool(result.get("ok", false)):
+		return result
+	_decorate_collaborator_job_v02115(
+		str(result.get("job_id", "")),
+		{
+			"collaborator_blueprint_completeness_v02115": true,
+			"collaborator_source_context_v02115": (
+				COLLABORATOR_SAFE_HANDOFF_V02115.source_context(
+					conversation_messages, context_blocks, memory_summary
+				)
+			),
+		}
+	)
+	_append_blueprint_completeness_contract_v02115(str(result.get("job_id", "")))
+	return result
+
+
+func queue_collaborator_blueprint_section_v02115(
+	conversation_messages: Array,
+	context_blocks: Array[String],
+	memory_summary: String,
+	section_index: int,
+	accepted_sections: String,
+	profile: Dictionary,
+	retry_count: int,
+	session_id: String,
+	handoff_mode: String
+) -> Dictionary:
+	var heading := COLLABORATOR_SAFE_HANDOFF_V02115.section_heading(section_index)
+	if heading.is_empty():
+		return {"ok": false, "error": "The requested Collaborator blueprint section is invalid."}
+	var source := COLLABORATOR_SAFE_HANDOFF_V02115.source_context(
+		conversation_messages, context_blocks, memory_summary
+	)
+	if source.strip_edges().is_empty():
+		return {"ok": false, "error": "Develop the character in the Collaborator before creating a Workspace handoff."}
+	return _queue_chat_job(
+		"collaborator_blueprint_section_v02115",
+		"Build Collaborator blueprint section %d/%d" % [
+			section_index + 1,
+			COLLABORATOR_SAFE_HANDOFF_V02115.BLUEPRINT_SECTIONS.size(),
+		],
+		profile,
+		[
+			{
+				"role": "system",
+				"content": (
+					"You are Character Card Forge's loss-minimising continuity editor. "
+					+ "Build only the requested canonical blueprint section. Return valid JSON only."
+				),
+			},
+			{
+				"role": "user",
+				"content": COLLABORATOR_SAFE_HANDOFF_V02115.section_request_prompt(
+					heading, source, accepted_sections
+				),
+			},
+		],
+		"object",
+		{
+			"session_id": session_id,
+			"handoff_mode": handoff_mode,
+			"collaborator_safe_section_v02115": true,
+			"collaborator_section_index_v02115": section_index,
+			"collaborator_section_heading_v02115": heading,
+		},
+		retry_count
+	)
+
+
+func queue_collaborator_detailed_draft(
+	conversation_messages: Array,
+	context_blocks: Array[String],
+	memory_summary: String,
+	template: Dictionary,
+	profile: Dictionary,
+	retry_count: int,
+	session_id: String,
+	alternate_greeting_count: int = 3
+) -> Dictionary:
+	var result := super.queue_collaborator_detailed_draft(
+		conversation_messages,
+		context_blocks,
+		memory_summary,
+		template,
+		profile,
+		retry_count,
+		session_id,
+		alternate_greeting_count
+	)
+	if not bool(result.get("ok", false)):
+		return result
+	_decorate_collaborator_job_v02115(
+		str(result.get("job_id", "")),
+		{
+			"collaborator_blueprint_completeness_v02115": true,
+			"collaborator_source_context_v02115": (
+				COLLABORATOR_SAFE_HANDOFF_V02115.source_context(
+					conversation_messages, context_blocks, memory_summary
+				)
+			),
+		}
+	)
+	_append_blueprint_completeness_contract_v02115(str(result.get("job_id", "")))
+	return result
+
+
+func queue_collaborator_safe_detailed_v02115(
+	concept_prompt: String,
+	template: Dictionary,
+	profile: Dictionary,
+	retry_count: int,
+	session_id: String
+) -> Dictionary:
+	var concept := concept_prompt.strip_edges()
+	if concept.is_empty():
+		return {"ok": false, "error": "A completed Collaborator blueprint is required for Detailed Workspace Draft."}
+	var draft := CCFStorageService.new_character_record()
+	CCFStorageService.set_value_at_path(draft, "concept.prompt", concept)
+	var result := queue_character_generation_with_strategy(
+		draft,
+		template,
+		profile,
+		false,
+		retry_count,
+		GENERATION_STRATEGY_SAFE_SECTION
+	)
+	if not bool(result.get("ok", false)):
+		return result
+	_decorate_collaborator_job_v02115(
+		str(result.get("job_id", "")),
+		{
+			"collaborator_safe_detailed_v02115": true,
+			"collaborator_concept_prompt_v02115": concept,
+			"session_id": session_id,
+		}
+	)
+	return result
+
+
+func queue_collaborator_safe_supplement_v02115(
+	concept_prompt: String,
+	profile: Dictionary,
+	retry_count: int,
+	session_id: String
+) -> Dictionary:
+	var draft := CCFStorageService.new_character_record()
+	CCFStorageService.set_value_at_path(draft, "concept.prompt", concept_prompt)
+	var result := queue_blueprint_supplemental_material(
+		draft, profile, retry_count, true, true
+	)
+	if not bool(result.get("ok", false)):
+		return result
+	_decorate_collaborator_job_v02115(
+		str(result.get("job_id", "")),
+		{
+			"collaborator_safe_supplement_v02115": true,
+			"session_id": session_id,
+		},
+		"collaborator_safe_supplement_v02115"
+	)
+	return result
 
 
 func queue_idea_source_title_v0213(
@@ -439,7 +622,53 @@ func _start_idea_semantic_repair(ideas: Array, issues: Array) -> void:
 	_active_job = decorated.get("job", _active_job)
 
 
+func _finish_safe_build_v01522() -> void:
+	var metadata_value: Variant = _active_job.get("metadata", {})
+	var metadata: Dictionary = (
+		metadata_value.duplicate(true) if metadata_value is Dictionary else {}
+	)
+	if not bool(metadata.get("collaborator_safe_detailed_v02115", false)):
+		super._finish_safe_build_v01522()
+		return
+	var state := _dictionary_copy_v01522(_active_job.get("safe_build_state", {}))
+	state["accepted_fields"] = _assembled_safe_fields_v01522(state)
+	var final_fields := _dictionary_copy_v01522(state.get("accepted_fields", {}))
+	var contract_value: Variant = metadata.get("generation_contract", {})
+	if contract_value is Dictionary and not contract_value.is_empty():
+		var report := CCFGenerationContractService.validate_generated_data(
+			final_fields, contract_value
+		)
+		if not bool(report.get("ok", false)):
+			_handle_failure(
+				"Collaborator Safe Section Build did not satisfy the active template contract. No Workspace data was changed.",
+				false
+			)
+			return
+	metadata["generation_strategy"] = GENERATION_STRATEGY_SAFE_SECTION
+	metadata["collaborator_handoff_strategy_v02115"] = (
+		COLLABORATOR_SAFE_HANDOFF_V02115.STRATEGY_SAFE_SECTION
+	)
+	metadata["safe_completed_sections"] = _array_copy_v01522(
+		state.get("completed_sections", [])
+	)
+	metadata["safe_completed_section_count"] = (
+		metadata["safe_completed_sections"] as Array
+	).size()
+	_complete_active_job_v02115(
+		"collaborator_safe_detailed_fields_v02115",
+		{
+			"concept_prompt": str(
+				metadata.get("collaborator_concept_prompt_v02115", "")
+			),
+			"fields": final_fields,
+		},
+		metadata
+	)
+
+
 func _process_completed_content(content: String) -> void:
+	if _process_collaborator_blueprint_v02115(content):
+		return
 	if (
 		str(_active_job.get("type", "")) != "ideas"
 		or not bool(
@@ -501,6 +730,280 @@ func _process_completed_content(content: String) -> void:
 	)
 	_emit_queue_changed()
 	call_deferred("_start_next_job")
+
+
+func _process_collaborator_blueprint_v02115(content: String) -> bool:
+	if str(_active_job.get("type", "")) not in [
+		"collaborator_blueprint", "collaborator_character_detailed"
+	]:
+		return false
+	var metadata_value: Variant = _active_job.get("metadata", {})
+	var metadata: Dictionary = (
+		metadata_value if metadata_value is Dictionary else {}
+	)
+	if not bool(metadata.get("collaborator_blueprint_completeness_v02115", false)):
+		return false
+	if bool(metadata.get("collaborator_tail_repair_active_v02115", false)):
+		_process_collaborator_tail_repair_v02115(content, metadata)
+		return true
+
+	var parse_result := _parse_job_output_with_diagnostics(content, "object")
+	var parsed: Dictionary = {}
+	var concept := ""
+	if bool(parse_result.get("ok", false)) and parse_result.get("data") is Dictionary:
+		parsed = (parse_result.get("data") as Dictionary).duplicate(true)
+		concept = str(parsed.get("concept_prompt", "")).strip_edges()
+	else:
+		concept = COLLABORATOR_SAFE_HANDOFF_V02115.extract_partial_concept_from_json(
+			content
+		)
+
+	if not concept.is_empty():
+		var assessment := COLLABORATOR_SAFE_HANDOFF_V02115.assess_blueprint(concept)
+		if not bool(assessment.get("complete", false)):
+			_start_collaborator_tail_repair_v02115(
+				concept, assessment, parsed, metadata
+			)
+			return true
+	if parsed.is_empty():
+		# If no safe section boundary can be recovered, retain the established generic
+		# one-shot JSON repair path rather than guessing at malformed content.
+		return false
+	if concept.is_empty():
+		_handle_failure(
+			"Character Collaborator returned an empty Generation Concept. No Workspace data was changed.",
+			false
+		)
+		return true
+	return false
+
+
+func _start_collaborator_tail_repair_v02115(
+	concept: String,
+	assessment: Dictionary,
+	original_payload: Dictionary,
+	metadata: Dictionary
+) -> void:
+	if bool(metadata.get("collaborator_tail_repair_attempted_v02115", false)):
+		_handle_failure(
+			"Character Collaborator could not complete the Generation Concept after one bounded tail repair. Earlier complete sections were not applied.",
+			false
+		)
+		return
+	var prefix := COLLABORATOR_SAFE_HANDOFF_V02115.accepted_prefix(
+		concept, assessment
+	)
+	var updated_metadata := metadata.duplicate(true)
+	updated_metadata["collaborator_tail_repair_active_v02115"] = true
+	updated_metadata["collaborator_tail_repair_attempted_v02115"] = true
+	updated_metadata["collaborator_tail_repair_prefix_v02115"] = prefix
+	updated_metadata["collaborator_tail_repair_original_v02115"] = (
+		original_payload.duplicate(true)
+	)
+	updated_metadata["collaborator_tail_repair_problem_v02115"] = (
+		assessment.duplicate(true)
+	)
+	_active_job["metadata"] = updated_metadata
+	_active_job["attempt"] = 0
+	_active_job["repair_attempts"] = 0
+	_active_job["parse_mode"] = "object"
+	_active_job["label"] = "Repair incomplete Collaborator blueprint tail"
+	var payload: Dictionary = _active_job.get("payload", {}).duplicate(true)
+	payload["temperature"] = 0.2
+	payload["messages"] = [
+		{
+			"role": "system",
+			"content": (
+				"You repair only the incomplete tail of a Character Card Forge Generation Concept. "
+				+ "Never rewrite the accepted prefix. Return valid JSON only."
+			),
+		},
+		{
+			"role": "user",
+			"content": COLLABORATOR_SAFE_HANDOFF_V02115.tail_repair_prompt(
+				concept,
+				assessment,
+				str(metadata.get("collaborator_source_context_v02115", ""))
+			),
+		},
+	]
+	_active_job["payload"] = payload
+	_emit_phase_v02112("json_repair")
+	call_deferred("_start_active_request")
+
+
+func _process_collaborator_tail_repair_v02115(
+	content: String, metadata: Dictionary
+) -> void:
+	var parse_result := _parse_job_output_with_diagnostics(content, "object")
+	if not bool(parse_result.get("ok", false)):
+		if _start_json_repair(content, "object"):
+			return
+		_handle_failure(
+			"Character Collaborator's bounded tail repair was not valid JSON. Earlier complete sections were not applied.",
+			false
+		)
+		return
+	var repaired_value: Variant = parse_result.get("data", {})
+	if not repaired_value is Dictionary:
+		_handle_failure("Character Collaborator returned an invalid blueprint-tail repair.", false)
+		return
+	var repaired: Dictionary = repaired_value
+	var prefix := str(metadata.get("collaborator_tail_repair_prefix_v02115", ""))
+	var tail := str(repaired.get("replacement_tail", "")).strip_edges()
+	var stitched := COLLABORATOR_SAFE_HANDOFF_V02115.stitch_replacement_tail(
+		prefix, tail
+	)
+	var final_assessment := COLLABORATOR_SAFE_HANDOFF_V02115.assess_blueprint(stitched)
+	if not bool(final_assessment.get("complete", false)):
+		_handle_failure(
+			"Character Collaborator's repaired Generation Concept is still incomplete at %s. No Workspace data was changed."
+			% str(final_assessment.get("first_problem_heading", "an unknown section")),
+			false
+		)
+		return
+	var original_value: Variant = metadata.get(
+		"collaborator_tail_repair_original_v02115", {}
+	)
+	var final_payload: Dictionary = (
+		original_value.duplicate(true) if original_value is Dictionary else {}
+	)
+	final_payload["concept_prompt"] = stitched
+	for key in ["suggested_name", "alternate_greetings", "lorebook"]:
+		if repaired.has(key):
+			final_payload[key] = repaired.get(key)
+	if not final_payload.has("suggested_name"):
+		final_payload["suggested_name"] = ""
+	if not final_payload.has("alternate_greetings"):
+		final_payload["alternate_greetings"] = []
+	if not final_payload.has("lorebook"):
+		final_payload["lorebook"] = {"name": "", "entries": []}
+	var completed_metadata := metadata.duplicate(true)
+	completed_metadata.erase("collaborator_tail_repair_original_v02115")
+	completed_metadata["collaborator_tail_repair_succeeded_v02115"] = true
+	completed_metadata["collaborator_tail_repair_boundary_v02115"] = str(
+		(metadata.get("collaborator_tail_repair_problem_v02115", {}) as Dictionary).get(
+			"first_problem_heading", ""
+		)
+	)
+	_complete_active_job_v02115(
+		str(_active_job.get("type", "collaborator_blueprint")),
+		final_payload,
+		completed_metadata
+	)
+
+
+func _complete_active_job_v02115(
+	job_type: String,
+	data: Variant,
+	metadata_override: Dictionary = {}
+) -> void:
+	var finished_job := _active_job.duplicate(true)
+	_active_job.clear()
+	var completed_metadata: Dictionary = (
+		metadata_override.duplicate(true)
+		if not metadata_override.is_empty()
+		else finished_job.get("metadata", {}).duplicate(true)
+	)
+	completed_metadata["model"] = str(finished_job.get("model", ""))
+	completed_metadata["profile_name"] = str(finished_job.get("profile_name", ""))
+	completed_metadata["attempts"] = int(finished_job.get("attempt", 1))
+	completed_metadata["stream_retries"] = maxi(
+		0, int(finished_job.get("attempt", 1)) - 1
+	)
+	completed_metadata["response_repair_attempts"] = int(
+		finished_job.get("repair_attempts", 0)
+	)
+	job_completed.emit(
+		str(finished_job.get("id", "")), job_type, data, completed_metadata
+	)
+	_emit_queue_changed()
+	call_deferred("_start_next_job")
+
+
+func _decorate_collaborator_job_v02115(
+	job_id: String,
+	metadata_additions: Dictionary,
+	job_type_override: String = ""
+) -> bool:
+	for index in range(_queue.size()):
+		var job_value: Variant = _queue[index]
+		if not job_value is Dictionary:
+			continue
+		var job: Dictionary = (job_value as Dictionary).duplicate(true)
+		if str(job.get("id", "")) != job_id:
+			continue
+		_queue[index] = _collaborator_job_with_metadata_v02115(
+			job, metadata_additions, job_type_override
+		)
+		return true
+	if not _active_job.is_empty() and str(_active_job.get("id", "")) == job_id:
+		_active_job = _collaborator_job_with_metadata_v02115(
+			_active_job, metadata_additions, job_type_override
+		)
+		return true
+	return false
+
+
+func _collaborator_job_with_metadata_v02115(
+	job_value: Dictionary,
+	metadata_additions: Dictionary,
+	job_type_override: String
+) -> Dictionary:
+	var job := job_value.duplicate(true)
+	var metadata_value: Variant = job.get("metadata", {})
+	var metadata: Dictionary = (
+		metadata_value.duplicate(true) if metadata_value is Dictionary else {}
+	)
+	metadata.merge(metadata_additions, true)
+	job["metadata"] = metadata
+	if not job_type_override.is_empty():
+		job["type"] = job_type_override
+	return job
+
+
+func _append_blueprint_completeness_contract_v02115(job_id: String) -> void:
+	var instruction := (
+		"\n\nCOMPLETENESS CONTRACT: concept_prompt must contain every canonical heading "
+		+ "listed above, in that exact order. If no material is established for a heading, "
+		+ "write `None established.` beneath it. Never end partway through a heading or sentence."
+	)
+	for index in range(_queue.size()):
+		var job_value: Variant = _queue[index]
+		if not job_value is Dictionary:
+			continue
+		var job: Dictionary = (job_value as Dictionary).duplicate(true)
+		if str(job.get("id", "")) != job_id:
+			continue
+		_queue[index] = _job_with_appended_user_instruction_v02115(job, instruction)
+		return
+	if not _active_job.is_empty() and str(_active_job.get("id", "")) == job_id:
+		_active_job = _job_with_appended_user_instruction_v02115(
+			_active_job, instruction
+		)
+
+
+func _job_with_appended_user_instruction_v02115(
+	job_value: Dictionary, instruction: String
+) -> Dictionary:
+	var job := job_value.duplicate(true)
+	var payload: Dictionary = job.get("payload", {}).duplicate(true)
+	var messages_value: Variant = payload.get("messages", [])
+	var messages: Array = (
+		messages_value.duplicate(true) if messages_value is Array else []
+	)
+	for index in range(messages.size() - 1, -1, -1):
+		if not messages[index] is Dictionary:
+			continue
+		var message: Dictionary = (messages[index] as Dictionary).duplicate(true)
+		if str(message.get("role", "")) != "user":
+			continue
+		message["content"] = str(message.get("content", "")) + instruction
+		messages[index] = message
+		break
+	payload["messages"] = messages
+	job["payload"] = payload
+	return job
 
 
 func _validate_idea_batch(ideas: Array, idea_seed_text: String) -> Dictionary:

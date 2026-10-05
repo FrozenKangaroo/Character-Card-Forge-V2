@@ -12,6 +12,9 @@ const FINAL_REVIEW_MODES := [
 ]
 const MAX_FINGERPRINT_CHARACTERS := 360
 const MAX_LEDGER_PROMPT_ITEMS := 60
+const IDEA_PROMPT_PROVENANCE_V02114 = preload(
+	"res://scripts/services/idea_prompt_provenance_v02114.gd"
+)
 
 const STRUCTURAL_STOP_WORDS := {
 	"a": true, "an": true, "and": true, "are": true, "as": true,
@@ -203,7 +206,11 @@ static func record_batch(
 			_append_rejected(session, malformed)
 			newly_rejected.append(malformed)
 			continue
-		var idea: Dictionary = (idea_value as Dictionary).duplicate(true)
+		var idea := IDEA_PROMPT_PROVENANCE_V02114.attach_to_idea(
+			idea_value as Dictionary,
+			session.get("generation_context", {}) as Dictionary,
+			str(session.get("seed_snapshot", ""))
+		)
 		var candidate := ledger_record_for_idea(
 			idea, _take_ledger_id(session), "accepted", "", comparison_enabled
 		)
