@@ -91,6 +91,12 @@ bounded manifest metadata, safe relative paths, exact size, SHA-256 checksum, st
 identity and the existing production schema. Chosen sources remain temporary and editable
 until the author explicitly saves them into the local Source Library.
 
+The v0.21.14 development candidate adds per-Idea generation provenance. Every newly saved
+AI Idea records the complete prompt from the request that produced it, including distinct
+Generate More extensions. Idea Library can display and return that prompt to AI Ideas,
+and optional Idea Pack metadata carries it across installations without changing older
+pack compatibility or the Idea text used for downstream generation.
+
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
 validation, task-oriented user documentation, a smaller manifest-driven CI surface,

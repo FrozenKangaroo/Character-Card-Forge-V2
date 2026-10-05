@@ -4,6 +4,7 @@ extends "res://scripts/ui/idea_generator_window_v01533_hotfix1.gd"
 signal active_idea_source_changed_v0213(source: Dictionary)
 signal idea_source_title_requested_v0213(source: Dictionary, context: String)
 signal direction_preset_selected_v02111(preset: Dictionary, source_id: String)
+signal original_prompt_requested_v02114(prompt: String)
 
 const IDEA_PACK_SERVICE_V0210 = preload(
 	"res://scripts/services/idea_pack_service_v0210.gd"
@@ -25,6 +26,9 @@ const IDEA_FOLDER_PICKER_V0217 = preload(
 )
 const IDEA_FOLDER_ICON_V0216 = preload(
 	"res://assets/icons/idea_folder_v0216.svg"
+)
+const IDEA_PROMPT_PROVENANCE_V02114 = preload(
+	"res://scripts/services/idea_prompt_provenance_v02114.gd"
 )
 const IDEA_SPECIAL_VIEW_ICON_V0216 = preload(
 	"res://assets/icons/idea_special_view_v0216.svg"
@@ -55,6 +59,8 @@ var _export_version_v0210: LineEdit
 var _export_status_v0210: Label
 var _pending_export_ideas_v0210: Array[Dictionary] = []
 var _structured_detail_v0210: TextEdit
+var _original_prompt_v02114: TextEdit
+var _reuse_prompt_button_v02114: Button
 var _export_selected_idea_ids_v0214: Array[String] = []
 var _export_folder_ids_v0217: Dictionary = {}
 
@@ -537,6 +543,37 @@ func _build_notebook_tab_v01532() -> void:
 	var editor := notebook_box.get_parent()
 	if not editor is VBoxContainer:
 		return
+	var prompt_box := VBoxContainer.new()
+	prompt_box.name = "OriginalIdeaPromptV02114"
+	prompt_box.add_theme_constant_override("separation", 3)
+	var prompt_header := HBoxContainer.new()
+	var prompt_label := Label.new()
+	prompt_label.text = "Original AI prompt"
+	prompt_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	prompt_header.add_child(prompt_label)
+	_reuse_prompt_button_v02114 = Button.new()
+	_reuse_prompt_button_v02114.name = "ReuseOriginalPromptV02114"
+	_reuse_prompt_button_v02114.text = "Send Prompt to Generator"
+	_reuse_prompt_button_v02114.tooltip_text = (
+		"Load the prompt that generated this Idea into AI Ideas so it can create more."
+	)
+	_reuse_prompt_button_v02114.disabled = true
+	_reuse_prompt_button_v02114.pressed.connect(
+		_send_original_prompt_to_generator_v02114
+	)
+	prompt_header.add_child(_reuse_prompt_button_v02114)
+	prompt_box.add_child(prompt_header)
+	_original_prompt_v02114 = TextEdit.new()
+	_original_prompt_v02114.name = "OriginalIdeaPromptTextV02114"
+	_original_prompt_v02114.custom_minimum_size.y = 110
+	_original_prompt_v02114.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	_original_prompt_v02114.editable = false
+	_original_prompt_v02114.placeholder_text = (
+		"No original AI prompt is stored for this older, imported or manually created Idea."
+	)
+	prompt_box.add_child(_original_prompt_v02114)
+	(editor as VBoxContainer).add_child(prompt_box)
+	(editor as VBoxContainer).move_child(prompt_box, notebook_box.get_index() + 1)
 	var structured_box := VBoxContainer.new()
 	structured_box.name = "StructuredIdeaDetailsV0210"
 	structured_box.add_theme_constant_override("separation", 3)
@@ -550,7 +587,7 @@ func _build_notebook_tab_v01532() -> void:
 	_structured_detail_v0210.placeholder_text = "Ordinary saved ideas have no additional structured fields."
 	structured_box.add_child(_structured_detail_v0210)
 	(editor as VBoxContainer).add_child(structured_box)
-	(editor as VBoxContainer).move_child(structured_box, notebook_box.get_index() + 1)
+	(editor as VBoxContainer).move_child(structured_box, prompt_box.get_index() + 1)
 
 
 func _install_notebook_organization_v0211() -> void:
@@ -1697,6 +1734,7 @@ func _on_idea_selected_v01532(index: int) -> void:
 func _set_editor_enabled_v01532(enabled: bool) -> void:
 	super._set_editor_enabled_v01532(enabled)
 	_update_delete_idea_action_v0216()
+	_update_original_prompt_v02114(enabled)
 
 
 func _update_delete_idea_action_v0216() -> void:
@@ -1912,6 +1950,7 @@ func _scope_summary_v0216(idea_count: int, _folder_names: Dictionary) -> String:
 func _load_selected_idea_v01532(idea_id: String) -> void:
 	_focused_idea_load_count_v0215_hotfix += 1
 	super._load_selected_idea_v01532(idea_id)
+	_update_original_prompt_v02114(not _loaded_idea_v01532.is_empty())
 	if _structured_detail_v0210 == null:
 		return
 	if _loaded_idea_v01532.is_empty() or str(_loaded_idea_v01532.get("id", "")) != idea_id:
@@ -1927,8 +1966,31 @@ func _load_selected_idea_v01532(idea_id: String) -> void:
 
 func _clear_editor_v01532() -> void:
 	super._clear_editor_v01532()
+	_update_original_prompt_v02114(false)
 	if _structured_detail_v0210 != null:
 		_structured_detail_v0210.text = ""
+
+
+func _update_original_prompt_v02114(editor_enabled: bool) -> void:
+	var prompt := (
+		IDEA_PROMPT_PROVENANCE_V02114.reusable_prompt(_loaded_idea_v01532)
+		if editor_enabled else ""
+	)
+	if _original_prompt_v02114 != null:
+		_original_prompt_v02114.text = prompt
+	if _reuse_prompt_button_v02114 != null:
+		_reuse_prompt_button_v02114.disabled = prompt.is_empty()
+
+
+func _send_original_prompt_to_generator_v02114() -> void:
+	var prompt := IDEA_PROMPT_PROVENANCE_V02114.reusable_prompt(
+		_loaded_idea_v01532
+	)
+	if prompt.is_empty():
+		_status_v01532.text = "This saved Idea does not include its original AI prompt."
+		return
+	original_prompt_requested_v02114.emit(prompt)
+	_status_v01532.text = "Original AI prompt loaded into AI Ideas."
 
 
 func _use_selected_idea_v01532() -> void:

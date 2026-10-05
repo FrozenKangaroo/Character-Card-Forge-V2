@@ -239,6 +239,11 @@ func _build_concept_studio() -> void:
 			"direction_preset_selected_v02111",
 			Callable(self, "_on_direction_preset_selected_v02111")
 		)
+	if _idea_generator_v01532.has_signal("original_prompt_requested_v02114"):
+		_idea_generator_v01532.connect(
+			"original_prompt_requested_v02114",
+			Callable(self, "_on_original_idea_prompt_requested_v02114")
+		)
 	add_child(_idea_generator_v01532)
 	_idea_generator_v01532.hide()
 	_idea_generator_v01412 = _idea_generator_v01532
@@ -2813,6 +2818,19 @@ func _on_direction_preset_selected_v02111(
 	_idea_preset_text_update_v02111 = false
 	_idea_preset_autofill_text_v02111 = direction
 	_idea_preset_autofill_source_v02111 = source_id
+
+
+func _on_original_idea_prompt_requested_v02114(prompt: String) -> void:
+	var clean_prompt := prompt.strip_edges()
+	if clean_prompt.is_empty() or _idea_seed == null or _idea_generator_v01532 == null:
+		return
+	# The stored generation prompt is already complete. Clear the current source
+	# so its context cannot be silently added to the restored prompt a second time.
+	_idea_generator_v01532.clear_active_idea_source_v0213()
+	_idea_seed.text = clean_prompt
+	_idea_generator_v01532.open_generator()
+	if _idea_status != null:
+		_idea_status.text = "Original saved prompt restored. Edit it or generate new Ideas."
 
 
 func _on_idea_seed_text_changed_v02111() -> void:

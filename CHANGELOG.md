@@ -6,6 +6,42 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.14] - 2026-10-04
+
+### Highlights
+
+- Ideas saved from AI generation now retain the exact prompt used for their own request,
+  rather than relying only on one aggregate batch prompt.
+- Added an **Original AI prompt** panel and **Send Prompt to Generator** action in Idea
+  Library so a successful prompt can be reused, edited and generated again.
+
+### Changes
+
+- Carry per-Idea prompt provenance through Final Idea Review, deletion and append-only
+  Generate More sessions. Earlier Ideas keep their earlier prompt while newly appended
+  Ideas retain the extension prompt that actually produced them.
+- Store the complete provider seed as `source.generation_prompt` and retain
+  `source.seed_prompt` as a compatibility alias for earlier CCF builds and tools.
+- Export the prompt as optional `generation_prompt` metadata in Idea Pack entries and
+  restore it on import without injecting provenance into the Idea's conceptual text.
+- Clear any currently active Idea Source before restoring a complete saved prompt, which
+  prevents unrelated source context from being silently applied twice.
+- Added focused service, storage, Idea Pack and live Idea Library regression coverage.
+
+### Migration notes
+
+- None. Existing saved Ideas and Idea Packs without prompt metadata continue to load,
+  edit, generate and export normally.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- CCF cannot reconstruct prompts that were never stored in older manually created or
+  imported Ideas; their prompt panel remains empty and the reuse action is disabled.
+
 ## [0.21.13] - 2026-10-02
 
 ### Highlights

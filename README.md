@@ -15,15 +15,15 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.13 — Public Idea Sources**. Idea Generator can
-browse a searchable official catalog, verify each download against its catalog checksum
-and production schema, and activate the chosen source without silently changing the local
-Source Library. The initial catalog contains 33 reusable sources hosted through the
-Character Card Forge Cloudflare R2 custom domain.
+The current source candidate is **v0.21.14 — Reusable Idea Prompts**. Ideas saved from AI
+generation now retain the exact prompt used for that individual request, including Ideas
+appended later through Generate More. Idea Library shows the stored prompt and can send it
+back to AI Ideas for reuse or editing. Idea Packs preserve the prompt as optional metadata,
+while older saved Ideas and packs without it remain fully supported.
 
-The v0.21.12 global streaming and settings-safety work, v0.21.8–v0.21.11 Idea review,
-Generate More and Direction Preset workflows, and v0.21.7 Folder-only Idea Library all
-remain available.
+The v0.21.13 public Idea Source catalog, v0.21.12 global streaming and settings-safety
+work, v0.21.8–v0.21.11 Idea review, Generate More and Direction Preset workflows, and
+v0.21.7 Folder-only Idea Library all remain available.
 
 The project is in a pre-1.0 public-bake phase. The current priorities are real-world
 compatibility evidence, user documentation, repository hardening and incremental
@@ -41,6 +41,8 @@ and [changelog](CHANGELOG.md).
   verification before a source becomes available to generation.
 - A Folder-only Idea Library with nested organisation, recursive counts/export, full-path
   destinations, safe hierarchy and multi-Idea drag/drop, and selection-based batch deletion.
+- Per-Idea AI prompt provenance with a visible **Send Prompt to Generator** action and
+  optional Idea Pack round-trip support.
 - Idea Generator presets plus bounded Custom per-idea character targets with visible
   requested-versus-actual reporting.
 - Visual-only Personality section spacing with an exact-text editing toggle.

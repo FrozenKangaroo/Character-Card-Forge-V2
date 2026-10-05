@@ -6,6 +6,9 @@ const SCHEMA_VERSION := 1
 const IDEA_FORMAT := "character_card_forge_saved_idea"
 const IDEA_FORMAT_VERSION := 2
 const DEFAULT_ROOT := "user://character_card_forge/idea_notebook"
+const IDEA_PROMPT_PROVENANCE_V02114 = preload(
+	"res://scripts/services/idea_prompt_provenance_v02114.gd"
+)
 
 const SUPPORTED_KINDS := ["series", "seed", "character_note"]
 const ENTRY_FIELDS := [
@@ -27,6 +30,7 @@ const ENTRY_FIELDS := [
 	"guardrails",
 	"tags",
 	"notes",
+	"generation_prompt",
 	"sections"
 ]
 const STRING_FIELDS := [
@@ -446,6 +450,9 @@ func idea_to_entry(idea: Dictionary) -> Dictionary:
 				"content": edited_concept
 			})
 		entry["sections"] = sections
+	var generation_prompt := IDEA_PROMPT_PROVENANCE_V02114.reusable_prompt(idea)
+	if not generation_prompt.is_empty():
+		entry["generation_prompt"] = generation_prompt
 	return entry
 
 
@@ -665,6 +672,8 @@ func _normalise_entry(raw: Dictionary) -> Dictionary:
 	entry["classification"] = classification
 	for field_id in STRING_FIELDS:
 		entry[field_id] = str(entry.get(field_id, "")).strip_edges()
+	if entry.has("generation_prompt"):
+		entry["generation_prompt"] = str(entry.get("generation_prompt", "")).strip_edges()
 	for field_id in LIST_FIELDS:
 		entry[field_id] = _string_list(entry.get(field_id, []))
 	var sections: Array[Dictionary] = []
@@ -714,9 +723,11 @@ func _idea_record(
 	record.erase("notebook_id")
 	record["updated_at"] = now
 	var classification: Dictionary = entry.get("classification", {})
+	var generation_prompt := str(entry.get("generation_prompt", "")).strip_edges()
 	record["source"] = {
 		"type": "idea_pack",
-		"seed_prompt": "",
+		"seed_prompt": generation_prompt,
+		"generation_prompt": generation_prompt,
 		"idea_pack": {
 			"pack_id": str(pack.get("id", "")),
 			"pack_title": str(pack.get("title", "")),

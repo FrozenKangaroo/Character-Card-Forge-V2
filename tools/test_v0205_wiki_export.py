@@ -106,7 +106,7 @@ def main() -> int:
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     scene = (ROOT / "scenes/main.tscn").read_text(encoding="utf-8")
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    require(version in {"0.20.5", "0.20.6", "0.20.7", "0.20.8", "0.20.9", "0.21.0", "0.21.1", "0.21.2", "0.21.3", "0.21.5", "0.21.5-hotfix1", "0.21.6", "0.21.7", "0.21.8", "0.21.9", "0.21.10", "0.21.11", "0.21.12", "0.21.13"}, "The v0.20.5 manual must remain in a compatible candidate.")
+    require(version in {"0.20.5", "0.20.6", "0.20.7", "0.20.8", "0.20.9", "0.21.0", "0.21.1", "0.21.2", "0.21.3", "0.21.5", "0.21.5-hotfix1", "0.21.6", "0.21.7", "0.21.8", "0.21.9", "0.21.10", "0.21.11", "0.21.12", "0.21.13", "0.21.14"}, "The v0.20.5 manual must remain in a compatible candidate.")
     require(
         "main_v0205.gd" in scene or "main_current.gd" in scene,
         "The live scene must retain the v0.20.5 manual through a compatible application shell.",
