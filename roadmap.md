@@ -97,6 +97,13 @@ Generate More extensions. Idea Library can display and return that prompt to AI 
 and optional Idea Pack metadata carries it across installations without changing older
 pack compatibility or the Idea text used for downstream generation.
 
+The v0.21.15 development candidate adds a Collaborator-specific Workspace handoff strategy
+without changing ordinary Generate Character. Safe Section Build freezes the current
+conversation/evidence snapshot, creates a canonical Generation Concept section-by-section,
+and routes Detailed Workspace Draft fields through the established template-aware Safe
+Section engine. Both strategies detect incomplete concepts and perform one bounded rebuild
+from the first malformed section onward, retaining every complete earlier section.
+
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
 validation, task-oriented user documentation, a smaller manifest-driven CI surface,

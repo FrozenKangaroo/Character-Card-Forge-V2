@@ -393,16 +393,23 @@
       "id": "character_collaborator",
       "category": "authoring",
       "title": "Develop a character with Character Collaborator",
-      "summary": "Brainstorm conversationally, manage evidence and create a reviewed Blueprint handoff.",
-      "keywords": ["collaborator", "conversation", "blueprint", "evidence", "source", "rewind"],
+      "summary": "Brainstorm conversationally, manage evidence and create a reviewed Blueprint or Detailed Workspace handoff with an independent Safe Section strategy.",
+      "keywords": ["collaborator", "conversation", "blueprint", "evidence", "source", "rewind", "safe section", "incomplete", "repair"],
       "steps": [
         "Start Character Collaborator from New Project or send one explicit existing character for refinement.",
         "Add reference sources and assign evidence roles when several sources have different authority.",
         "Develop the character until the conversation contains the detail you want preserved.",
-        "Create the Generation Blueprint, review its supplementary greetings and Lorebook, then choose the destination draft.",
+        "Choose Blueprint or Detailed Workspace Draft as the handoff destination.",
+        "In Settings → AI / Generation, choose the separate Collaborator handoff strategy. Safe Section Build is recommended for long sessions; Single Response uses fewer provider requests.",
+        "Create the handoff and review the resulting Generation Concept, fields, supplementary greetings and Lorebook before saving.",
         "Use rewind when you need to remove later conversation turns without deleting independent references."
       ],
-      "notes": ["Conversation remains non-canonical until you explicitly create or apply a draft."],
+      "notes": [
+        "Conversation remains non-canonical until you explicitly create or apply a draft.",
+        "Safe Section Build freezes the current conversation and evidence snapshot, then builds every canonical concept section independently. Detailed Workspace Draft reuses validated template field sections.",
+        "Both strategies detect a missing, empty or apparently truncated Generation Concept section and perform one bounded rebuild from that section onward. Complete earlier sections are preserved.",
+        "The Collaborator handoff setting is independent of the ordinary Generate Character strategy."
+      ],
       "actions": [{"id": "new_project", "label": "Start Character Collaborator…"}],
       "related": ["idea_generator_notebook", "reference_sources", "lorebooks_relationships"]
     },

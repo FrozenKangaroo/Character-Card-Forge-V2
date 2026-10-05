@@ -34,6 +34,9 @@ const IDEA_SOURCE_SERVICE_V0213 = preload(
 const SIMILAR_IDEA_SOURCE_V0213 = preload(
 	"res://scripts/services/similar_idea_source_service_v0213.gd"
 )
+const CHARACTER_COLLABORATOR_CURRENT = preload(
+	"res://scripts/ui/character_collaborator_window_current.gd"
+)
 
 const GENERATE_SIMILAR_IDEAS_MENU_ID_V0213 := 21300
 
@@ -91,6 +94,23 @@ var _idea_preset_autofill_text_v02111 := ""
 var _idea_preset_autofill_source_v02111 := ""
 var _idea_preset_text_update_v02111 := false
 var _stream_complete_units_v02112: Dictionary = {}
+
+
+func _build_character_collaborator_window_v015() -> void:
+	_character_collaborator_window = CHARACTER_COLLABORATOR_CURRENT.new()
+	_character_collaborator_window.visible = false
+	_character_collaborator_window.force_native = true
+	_character_collaborator_window.transient = false
+	_character_collaborator_window.exclusive = false
+	_character_collaborator_window.set_generation_service(_generation_service)
+	_character_collaborator_window.sessions_changed.connect(
+		_on_collaborator_sessions_changed_v015
+	)
+	_character_collaborator_window.character_draft_ready.connect(
+		_on_collaborator_character_draft_ready_v015
+	)
+	add_child(_character_collaborator_window)
+	_character_collaborator_window.hide()
 
 
 func _ready() -> void:
