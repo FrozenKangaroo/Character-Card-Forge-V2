@@ -60,7 +60,7 @@
         {"id":"fp_emotion_intensity","key_path":"emotion_intensity","label":"Emotion intensity","type":"select","default":"mild","options":["mild","moderate","strong"],"generate":true},
         {"id":"fp_nsfw_cooldown","key_path":"nsfw_cooldown_enabled","label":"NSFW cooldown default","type":"checkbox","default":false,"generate":true},
         {"id":"fp_passage_of_time","key_path":"passage_of_time_enabled","label":"Automatic passage of time","type":"checkbox","default":true,"generate":true},
-        {"id":"fp_chaos_mode","key_path":"chaos_mode_enabled","label":"Chaos Mode default","type":"checkbox","default":false,"generate":true}
+        {"id":"fp_chaos_mode","key_path":"chaos_frequency","label":"Chaos Mode","type":"select","default":"disabled","options":["disabled","rare","normal","wild"],"option_labels":{"disabled":"Disabled","rare":"Rare","normal":"Normal","wild":"Wild"},"generate":true,"generation_prompt":"Choose exactly one Chaos Mode value: disabled, rare, normal or wild."}
       ]
     },
     {

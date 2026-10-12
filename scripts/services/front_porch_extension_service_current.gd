@@ -4,9 +4,72 @@ extends "res://scripts/services/front_porch_extension_service_v0172.gd"
 const WORK_DAYS_V02111 = preload(
 	"res://scripts/services/front_porch_work_days_v02111.gd"
 )
+const CHAOS_MODE_V02116 = preload(
+	"res://scripts/services/front_porch_chaos_mode_v02116.gd"
+)
+
+const CHAOS_FIELD_ID_V02116 := "fp_chaos_mode"
+
+
+func is_included(document: Dictionary, field: Dictionary) -> bool:
+	if str(field.get("id", "")) != CHAOS_FIELD_ID_V02116:
+		return super.is_included(document, field)
+	return CHAOS_MODE_V02116.is_present(_chaos_realism_v02116(document))
+
+
+func value_for(document: Dictionary, field: Dictionary) -> Variant:
+	if str(field.get("id", "")) != CHAOS_FIELD_ID_V02116:
+		return super.value_for(document, field)
+	return CHAOS_MODE_V02116.mode_from_realism(_chaos_realism_v02116(document))
+
+
+func apply_control_values(
+	document: Dictionary,
+	enabled_fields: Dictionary,
+	values: Dictionary,
+	adult_fields_unlocked: bool
+) -> Dictionary:
+	var result := super.apply_control_values(
+		document, enabled_fields, values, adult_fields_unlocked
+	)
+	var included := bool(enabled_fields.get(CHAOS_FIELD_ID_V02116, false))
+	var realism := _chaos_realism_v02116(document)
+	var chaos_result := CHAOS_MODE_V02116.apply_mode(
+		realism, included, values.get(CHAOS_FIELD_ID_V02116, "disabled")
+	)
+	if bool(chaos_result.get("ok", false)):
+		_write_chaos_realism_v02116(document, realism)
+	else:
+		var errors: Array = result.get("errors", [])
+		var chaos_error := (
+			"Chaos Mode: %s"
+			% str(chaos_result.get("error", "Invalid mode."))
+		)
+		if not errors.has(chaos_error):
+			errors.append(chaos_error)
+		result["errors"] = errors
+	var validation := validate_document(document)
+	var final_errors: Array = result.get("errors", [])
+	for error_text in validation.get("errors", []):
+		if not final_errors.has(str(error_text)):
+			final_errors.append(str(error_text))
+	var final_warnings: Array = result.get("warnings", [])
+	for warning_text in validation.get("warnings", []):
+		if not final_warnings.has(str(warning_text)):
+			final_warnings.append(str(warning_text))
+	result["errors"] = final_errors
+	result["warnings"] = final_warnings
+	result["ok"] = final_errors.is_empty()
+	result["included_count"] = included_field_count(document)
+	result["has_extension"] = _path_exists(
+		document, "character.card_extensions.front_porch"
+	)
+	return result
 
 
 func _normalise_value(field: Dictionary, raw_value: Variant) -> Dictionary:
+	if str(field.get("id", "")) == CHAOS_FIELD_ID_V02116:
+		return CHAOS_MODE_V02116.normalise_control_value(raw_value)
 	if str(field.get("id", "")) == "fp_work_days":
 		return WORK_DAYS_V02111.normalise(raw_value)
 	if str(field.get("id", "")) == "fp_work_hours":
@@ -51,11 +114,57 @@ func validate_document(document: Dictionary) -> Dictionary:
 
 func capabilities() -> Dictionary:
 	var result := super.capabilities()
-	result["version"] = "0.21.11"
+	result["version"] = "0.21.16"
 	result["typed_work_hours"] = true
 	result["work_days_preview_normalisation"] = true
 	result["work_days_tolerant_generation_formats"] = [
 		"integer array", "comma-separated IDs", "day-name array",
 		"day-name range", "weekdays", "weekends"
 	]
+	result["chaos_modes"] = CHAOS_MODE_V02116.ENABLED_MODES.duplicate()
+	result["chaos_legacy_boolean_compatibility"] = true
 	return result
+
+
+func _chaos_realism_v02116(document: Dictionary) -> Dictionary:
+	var value: Variant = CCFStorageService.get_value_at_path(
+		document,
+		"character.card_extensions.front_porch.realism_engine",
+		{}
+	)
+	return (value as Dictionary).duplicate(true) if value is Dictionary else {}
+
+
+func _write_chaos_realism_v02116(
+	document: Dictionary, realism: Dictionary
+) -> void:
+	var extensions_value: Variant = CCFStorageService.get_value_at_path(
+		document, "character.card_extensions", {}
+	)
+	var extensions: Dictionary = (
+		(extensions_value as Dictionary).duplicate(true)
+		if extensions_value is Dictionary else {}
+	)
+	var extension_value: Variant = extensions.get(EXTENSION_KEY, {})
+	var extension: Dictionary = (
+		(extension_value as Dictionary).duplicate(true)
+		if extension_value is Dictionary else {}
+	)
+	if realism.is_empty():
+		extension.erase(REALISM_KEY)
+	else:
+		extension[REALISM_KEY] = realism
+		if not extension.has("version"):
+			extension["version"] = TARGET_EXTENSION_VERSION
+	var has_payload := false
+	for raw_key in extension:
+		if str(raw_key) != "version":
+			has_payload = true
+			break
+	if has_payload:
+		extensions[EXTENSION_KEY] = extension
+	else:
+		extensions.erase(EXTENSION_KEY)
+	CCFStorageService.set_value_at_path(
+		document, "character.card_extensions", extensions
+	)

@@ -6,6 +6,40 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.16] - 2026-10-12
+
+### Highlights
+
+- Expanded the existing optional Front Porch **Chaos Mode** control from a boolean into
+  **Disabled**, **Rare**, **Normal** and **Wild**, matching the current Rawhide frequency
+  names.
+
+### Changes
+
+- Export the established `chaos_mode_enabled` flag for existing Front Porch compatibility
+  and the selected `chaos_frequency` value for multi-mode preservation.
+- Import current frequency values through the same Front Porch field and preserve them
+  through Character Card V2 export/import round trips.
+- Added focused regression coverage for every mode, legacy projects, legacy cards,
+  unknown-value fallback and preservation of unrelated future extension data.
+
+### Migration notes
+
+- None. Legacy `chaos_mode_enabled: false` loads as Disabled; legacy `true` loads as
+  Normal, which is Rawhide's default Chaos frequency.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Rawhide currently stores frequency as a global Porch Life preference while portable
+  character and group schemas still formally expose the boolean enable flag. CCF includes
+  both keys on character-card export so existing builds honor enablement and newer schema
+  consumers can preserve the selected frequency. Group-card Chaos remains boolean because
+  Rawhide's current group-card schema has no frequency field.
+
 ## [0.21.15] - 2026-10-05
 
 ### Highlights

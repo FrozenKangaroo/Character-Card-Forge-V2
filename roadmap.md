@@ -104,6 +104,13 @@ and routes Detailed Workspace Draft fields through the established template-awar
 Section engine. Both strategies detect incomplete concepts and perform one bounded rebuild
 from the first malformed section onward, retaining every complete earlier section.
 
+The v0.21.16 development candidate updates the existing Front Porch opening-state Chaos
+control for Rawhide's Rare, Normal and Wild frequencies. Character exports keep the
+established boolean enable flag alongside the selected frequency, while older boolean-only
+Forge projects and Front Porch cards load without migration (`true` becomes Normal and
+`false` remains Disabled). Group-card Chaos remains on its current boolean contract until
+Front Porch defines a portable group frequency field.
+
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
 validation, task-oriented user documentation, a smaller manifest-driven CI surface,

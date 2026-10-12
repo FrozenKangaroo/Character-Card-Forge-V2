@@ -15,12 +15,11 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.15 — Collaborator Safe Handoffs**. Character
-Collaborator now has its own Workspace handoff strategy, independent of normal Generate
-Character. Safe Section Build creates a canonical Generation Concept one complete section
-at a time and uses the existing validated field-by-field engine for Detailed Workspace
-Drafts. Both paths detect incomplete concepts and perform one bounded repair from the first
-malformed section onward without rewriting accepted earlier sections.
+The current source candidate is **v0.21.16 — Front Porch Chaos Modes**. The existing
+Front Porch Chaos control now supports Disabled plus Rawhide's Rare, Normal and Wild
+frequencies. Legacy boolean projects and cards remain compatible: enabled maps to Normal
+and disabled remains Disabled, while current exports retain the portable enable flag and
+the selected frequency.
 
 The v0.21.13 public Idea Source catalog, v0.21.12 global streaming and settings-safety
 work, v0.21.8–v0.21.11 Idea review, Generate More and Direction Preset workflows, and
@@ -132,6 +131,11 @@ Front Porch support is optional. Character Card Forge can use Front Porch's supp
 authenticated APIs and portable formats for character installation and comparison,
 optional character-life data, group cards, worlds, avatar galleries, expressions and
 Test Chat.
+
+The optional Front Porch opening-state editor exposes Chaos Mode as **Disabled**, **Rare**,
+**Normal** or **Wild**. Older cards that contain only `chaos_mode_enabled: true` open as
+Normal, matching Rawhide's default frequency; `false` remains Disabled. Current exports
+write both the established boolean enable flag and, when enabled, `chaos_frequency`.
 
 Passwords, two-factor codes and session cookies are not persisted. Network actions are
 user-initiated and capability-gated. Character Card Forge never reads or writes Front

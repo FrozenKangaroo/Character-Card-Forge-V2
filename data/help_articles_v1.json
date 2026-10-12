@@ -845,11 +845,12 @@
       "category": "front_porch",
       "title": "Author optional Front Porch character-life fields",
       "summary": "Set character-life, Needs, relationship and opening-state extensions manually or with reviewed AI suggestions.",
-      "keywords": ["front porch", "optional", "ambition", "work", "birthday", "needs", "relationship", "wardrobe"],
+      "keywords": ["front porch", "optional", "ambition", "work", "birthday", "needs", "relationship", "wardrobe", "chaos", "rawhide"],
       "steps": [
         "Open the Front Porch — Optional Workspace tab.",
         "Enter fields manually, choose Select All in a Front Porch section, or use AI Suggest for the selected field or enabled group.",
         "For Work, enter separate start and end times and choose Work Days. AI results accept Monday=1 through Sunday=7, day names, clear ranges, weekdays or weekends before normalising to numeric IDs.",
+        "Under Opening State, choose Chaos Mode Disabled, Rare, Normal or Wild. Legacy enabled cards open as Normal and legacy disabled cards remain Disabled.",
         "Review every proposal before including it in the project.",
         "Leave all fields empty when the character should emit no Front Porch extension."
       ],
