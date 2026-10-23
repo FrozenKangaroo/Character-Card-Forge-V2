@@ -1,1 +1,641 @@
-{"format": "character-card-forge-idea-source", "schema_version": 1, "id": "you-got-her-pregnant", "NOTE": "CONTENT TOO LARGE - WILL FIX"}
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "you-got-her-pregnant",
+  "title": "You Got Her Pregnant",
+  "description": "Reusable adult pregnancy-and-relationship-consequence engine where {{user}} is the biological father, or is ultimately established as the biological father, of {{char}}'s pregnancy. Includes grouped Direction Presets for the fleshed-out You Got Her Pregnant sub-series.",
+  "source_version": "1.2",
+  "bible": {},
+  "summary": "An adult {{char}} becomes pregnant and {{user}} is the biological father, or is ultimately confirmed to be the biological father. Unlike She Got Pregnant, {{char}} and {{user}} do not need to begin as an established couple: they may be friends, friends with benefits, strangers, rivals, coworkers, affair partners, people already attached to others, participants in a consensual non-monogamous arrangement, donor participants, or people connected through a speculative mechanism. The pregnancy creates or transforms a lasting biological, social and emotional connection.",
+  "core_premise": "{{char}} and {{user}} are adults. {{user}} is the biological father of {{char}}'s pregnancy, or a selected direction may begin with genuine uncertainty that later establishes {{user}} as the father. Their prior relationship can range from close friendship or casual sex to an affair, one-time encounter, consensual partner-sharing arrangement, deliberate donor plan, professional or university connection, rivalry, distance relationship, or compatible speculative setup. The pregnancy must materially change the relationship or social situation rather than functioning as a disposable twist.",
+  "setup": "Begin near the discovery, confession, paternity confirmation, reunion, first unavoidable consequence, or another strong roleplay opening. Establish enough of {{char}} and {{user}}'s prior connection for the pregnancy to matter, but do not pre-decide {{user}}'s reaction, romantic commitment, parenting choice or relationship outcome.",
+  "core_variables": [
+    "{{char}}'s relationship to {{user}} before conception: friend, FWB, stranger, rival, coworker, classmate, affair partner, outside partner, donor recipient, public figure, or another compatible role.",
+    "Whether {{char}}, {{user}}, both, or neither already has another adult partner.",
+    "Whether conception comes from a casual encounter, recurring relationship, affair, consensual non-monogamy, cuckolding/cuckqueen setup, deliberate donor plan, partner swap, travel event, fake relationship, or speculative mechanism.",
+    "Whether paternity is immediately certain, only likely, genuinely uncertain, or established later by testing or evidence.",
+    "What each adult knew about other relationships, non-exclusivity, contraception, fertility and pregnancy risk beforehand.",
+    "Whether the conception itself was accidental, an accepted risk, deliberately attempted, or an unforeseen result of a speculative mechanism.",
+    "When {{char}} discovers the pregnancy and when {{user}} learns he may be or is the father.",
+    "Whether the reveal occurs directly, remotely, after separation, through testing, through a visible pregnancy, or during a public/professional complication.",
+    "What {{char}} wants from {{user}} after the pregnancy: romance, co-parenting, limited involvement, secrecy, distance, support, or an unresolved conversation.",
+    "How existing partners, friends, family, workplaces, public audiences or other social relationships complicate the new biological connection."
+  ],
+  "generation_rules": [
+    "Create genuinely different casts, settings, histories, motives and reveal structures rather than cosmetic variations.",
+    "All explicit romantic or sexual participants must be adults.",
+    "{{user}} must be the biological father, the likely/plausible father in a genuinely uncertain-paternity opening, or ultimately established as the biological father when the selected direction specifically uses later confirmation.",
+    "Do not turn the source into She Got Pregnant by establishing another man as the biological father while {{user}} is merely the betrayed or social partner.",
+    "Do not require {{char}} and {{user}} to begin in an established romantic relationship; one defining strength of this source is that pregnancy can create the permanent connection.",
+    "Leave {{user}} free to decide his reaction, romantic commitment, parenting involvement, disclosure choices and next actions.",
+    "Do not write {{user}}'s dialogue, feelings, intentions, consent or future decisions as settled facts unless a selected preset explicitly supplies a prior factual action.",
+    "Do not assume cheating when the selected direction defines an open relationship, cuckolding/cuckqueen dynamic, partner swap, donor arrangement or another mutually agreed route.",
+    "Do not assume consent between existing partners when the selected direction explicitly involves secrecy or an affair.",
+    "Treat uncertain paternity as genuinely uncertain until the selected direction establishes a result.",
+    "Pregnancy and biological fatherhood do not automatically require romance, marriage, cohabitation or a specific parenting arrangement.",
+    "If a preset supplies a narrower defining condition, preserve that condition while varying the remaining axes."
+  ],
+  "guardrails": [
+    "All sexual participants are adults.",
+    "Do not sexualize minors. Existing or future children may appear only in ordinary family, parenting, household or parentage-related context.",
+    "Do not force romance, forgiveness, rejection, co-parenting, marriage, abortion, adoption, secrecy, disclosure or any other major decision from {{user}}.",
+    "Clearly distinguish consensual non-monogamy, cuckolding/cuckqueen arrangements, partner swapping and donor plans from cheating.",
+    "Clearly distinguish pressure, professional leverage and coercion from voluntary consent; do not treat employment, grades, housing, travel, fame, payment or social pressure as automatic consent.",
+    "Alcohol or parties may alter the social setting but must not be used to erase capacity to consent.",
+    "Do not assume that biological fatherhood automatically gives {{user}} control over {{char}}'s body, pregnancy decisions, relationships or living arrangements.",
+    "Do not present one cosmetic rename, occupation swap or location change as a genuinely new idea."
+  ],
+  "diversity_axes": [
+    "Friends, FWB, strangers, rivals, coworkers, classmates, affair partners, outside partners, donors or speculative connections",
+    "Neither attached, {{char}} attached, {{user}} attached, or both attached",
+    "Secret betrayal versus consensual non-monogamy versus deliberate conception versus one-time circumstance",
+    "Known fatherhood versus initially uncertain paternity versus later test confirmation",
+    "One-time encounter versus recurring casual relationship versus developing romance",
+    "Local everyday setting versus university, workplace, travel, public-figure, family-social or speculative setting",
+    "Immediate reveal versus delayed message versus reunion versus visible pregnancy versus test-result reveal",
+    "{{char}} wants romance, co-parenting, limited involvement, continued independence, secrecy or has not decided",
+    "Existing partners stay, leave, cooperate, remain unaware or become part of a negotiated multi-adult family structure",
+    "Hopeful, awkward, dramatic, scandalous, emotionally complicated, comedic or speculative tone",
+    "Pregnancy creates a romance, creates only a parenting link, exposes an affair, restructures an existing arrangement or leaves the future unresolved"
+  ],
+  "cross_links": [
+    "She Got Pregnant"
+  ],
+  "tags": [
+    "adult",
+    "pregnancy",
+    "biological father",
+    "paternity",
+    "relationship drama",
+    "friends with benefits",
+    "affair",
+    "consensual non-monogamy",
+    "cuckolding",
+    "cuckqueen",
+    "donor",
+    "co-parenting",
+    "reveal",
+    "speculative pregnancy"
+  ],
+  "notes": "Direction Presets are derived from the You Got Her Pregnant Series Folder Structure & Idea Generator Directions guide. Selecting a preset should copy its exact text into the visible Additional Direction field. The main source is intentionally broader than She Got Pregnant because {{char}} and {{user}} do not need to begin as partners; pregnancy itself may create the lasting connection. The guide's Standalone / Source-Exception ideas and Quick Narrowing Examples are intentionally not duplicated as presets: use them as hand-authored exceptions or as short visible edits to an existing preset.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied You Got Her Pregnant concepts where {{user}} is the biological father. Deliberately vary {{char}}'s prior relationship to {{user}}, whether either person already has another partner, whether conception is casual, secret, permitted, deliberate, or unexpected, and what permanent social or emotional connection the pregnancy creates. Avoid producing several ideas that differ only by occupation, location, or character names."
+    },
+    {
+      "id": "g02-childhood-friend",
+      "group": "02 Friends / Familiar People",
+      "title": "Childhood Friend",
+      "direction": "{{char}} and {{user}} are adult childhood friends with years of familiarity but no established romantic relationship. A consensual encounter, brief casual phase, or moment of long-suppressed attraction results in {{char}} becoming pregnant by {{user}}. Vary whether it happens only once or more than once, whether either had hidden feelings beforehand, whether the friendship survives unchanged for a time, and whether pregnancy forces them to confront feelings they had avoided."
+    },
+    {
+      "id": "g02-best-friend-close-friend",
+      "group": "02 Friends / Familiar People",
+      "title": "Best Friend / Close Friend",
+      "direction": "{{char}} is one of {{user}}'s closest adult friends. They cross the line into consensual sex without necessarily agreeing that they are dating, and {{char}} later becomes pregnant by him. Vary whether it was impulsive, a recurring casual arrangement, comfort after an emotional event, or something both secretly wanted. Keep the tension between an established friendship and a newly permanent family connection central."
+    },
+    {
+      "id": "g02-former-classmate-old-crush",
+      "group": "02 Friends / Familiar People",
+      "title": "Former Classmate / Old Crush",
+      "direction": "{{user}} reconnects with an adult former classmate, old crush, or familiar woman from an earlier stage of life. The reconnection becomes consensually intimate and results in pregnancy. Vary how much unresolved attraction existed, whether either expected to stay in contact, and how pregnancy changes what might otherwise have been a brief reunion."
+    },
+    {
+      "id": "g02-online-friend-first-in-person-meeting",
+      "group": "02 Friends / Familiar People",
+      "title": "Online Friend → First In-Person Meeting",
+      "direction": "{{char}} and {{user}} are adult online friends who know each other through gaming, fandom, social media, or another shared interest but have never previously met in person. They finally meet at a convention, concert, holiday, or planned visit, become consensually intimate, and {{char}} later discovers she is pregnant by {{user}}. Vary how long they knew each other online, how different the in-person chemistry is, and whether distance makes the aftermath harder."
+    },
+    {
+      "id": "g03-she-insists-it-s-only-sex",
+      "group": "03 Friends With Benefits / Just Sex",
+      "title": "She Insists It's Only Sex",
+      "direction": "{{char}} and {{user}} are adult friends with benefits, and {{char}} repeatedly insists that the arrangement is only physical and should not become a relationship. She becomes pregnant by {{user}}, forcing both of them to decide whether 'just sex' can remain their definition when they now share a permanent connection. Vary who catches feelings first, whether she still resists romance, what practical decisions they face, and whether the pregnancy brings them closer or simply makes the casual arrangement more complicated."
+    },
+    {
+      "id": "g03-long-running-fwb",
+      "group": "03 Friends With Benefits / Just Sex",
+      "title": "Long-Running FWB",
+      "direction": "{{char}} and {{user}} have maintained a casual sexual relationship for an extended period without formally dating. Pregnancy interrupts a routine they both assumed could continue indefinitely. Vary how emotionally close they already are, whether either is also dating other people, how they handled contraception, and whether the pregnancy exposes that their relationship was already more significant than either admitted."
+    },
+    {
+      "id": "g03-former-fwb-reconnection",
+      "group": "03 Friends With Benefits / Just Sex",
+      "title": "Former FWB Reconnection",
+      "direction": "{{char}} and {{user}} used to have a casual relationship that ended without becoming serious. They reconnect as adults, sleep together again, and the renewed encounter results in pregnancy. Vary why the original arrangement ended, why they reconnect, and whether the pregnancy revives old feelings or old problems."
+    },
+    {
+      "id": "g04-boyfriend-secret-affair",
+      "group": "04 She Already Has a Partner",
+      "title": "Boyfriend / Secret Affair",
+      "direction": "{{char}} is an adult woman with an established boyfriend but begins a consensual secret sexual relationship with {{user}}. She becomes pregnant and {{user}} is the biological father. Vary how the affair began, whether she regards {{user}} as only a casual outlet or someone she increasingly prefers, whether she intends to remain with her boyfriend, and when each person learns the truth."
+    },
+    {
+      "id": "g04-married-woman-secret-affair",
+      "group": "04 She Already Has a Partner",
+      "title": "Married Woman / Secret Affair",
+      "direction": "{{char}} is an adult married woman who begins an affair with {{user}} and becomes pregnant by him. Vary whether her marriage is otherwise happy, emotionally distant, sexually unsatisfying, or simply complicated; whether she still loves her husband; how long the affair has existed; and whether {{user}} expected any lasting commitment. Keep the pregnancy's effect on an existing household and marriage central."
+    },
+    {
+      "id": "g04-she-says-user-is-only-fwb",
+      "group": "04 She Already Has a Partner",
+      "title": "She Says {{user}} Is Only FWB",
+      "direction": "{{char}} has another boyfriend or partner and insists that {{user}} is only a friend-with-benefits relationship that will never replace her serious partner. Pregnancy by {{user}} undermines that neat separation. Vary whether she genuinely still prioritizes her partner, whether she privately likes {{user}} more than she admits, and whether the pregnancy forces a choice she had avoided."
+    },
+    {
+      "id": "g04-dissatisfied-at-home-recurring-affair",
+      "group": "04 She Already Has a Partner",
+      "title": "Dissatisfied at Home → Recurring Affair",
+      "direction": "{{char}} still cares about or loves her existing adult partner but is dissatisfied with some aspect of their relationship and seeks a recurring consensual affair with {{user}} rather than immediately leaving. She becomes pregnant by {{user}}. Vary what drew her to {{user}}, how she rationalizes staying in both relationships, whether she intended the affair to remain purely physical, and what changes once pregnancy makes secrecy difficult."
+    },
+    {
+      "id": "g05-secret-affair",
+      "group": "05 {{user}} Already Has a Partner",
+      "title": "Secret Affair",
+      "direction": "{{user}} is already in an established adult relationship when he becomes secretly involved with {{char}} and gets her pregnant. Vary whether {{char}} knows about his partner from the beginning, whether the affair is one-time or ongoing, what {{user}} intended, and how the pregnancy affects both relationships. Keep the focus on consequences and relationship choices rather than treating deception as consequence-free."
+    },
+    {
+      "id": "g05-open-relationship",
+      "group": "05 {{user}} Already Has a Partner",
+      "title": "Open Relationship",
+      "direction": "{{user}} and his adult partner have an agreed open relationship that allows outside partners. {{user}} becomes involved with {{char}} within those rules and gets her pregnant. The conflict should arise primarily from an unexpected pregnancy and the responsibilities it creates rather than from cheating. Vary the couple's rules, {{char}}'s expectations, and whether she wants a relationship, co-parenting arrangement, or independence from {{user}}."
+    },
+    {
+      "id": "g05-cuckqueen-girlfriend",
+      "group": "05 {{user}} Already Has a Partner",
+      "title": "Cuckqueen Girlfriend",
+      "direction": "{{user}}'s adult girlfriend consensually enjoys or encourages him being intimate with another adult woman. {{char}} becomes pregnant by {{user}}, turning a recreational cuckqueen or partner-sharing dynamic into a permanent family complication. Vary how involved the girlfriend was in arranging or observing the connection, how she reacts to pregnancy, and whether all three adults consider an ongoing relationship, co-parenting, or separate roles."
+    },
+    {
+      "id": "g05-girlfriend-invites-her-adult-best-friend",
+      "group": "05 {{user}} Already Has a Partner",
+      "title": "Girlfriend Invites Her Adult Best Friend",
+      "direction": "{{user}}'s adult girlfriend voluntarily invites her adult female best friend to have a consensual sexual experience with {{user}}, perhaps because the friend is curious, inexperienced, newly single, or simply trusted by both of them. The best friend later becomes pregnant by {{user}}. Vary whether it was intended to happen only once, how the girlfriend feels afterward, whether the friend develops feelings, and how the pregnancy alters the friendship and the couple."
+    },
+    {
+      "id": "g05-partner-swap-crossed-paternity",
+      "group": "05 {{user}} Already Has a Partner",
+      "title": "Partner Swap / Crossed Paternity",
+      "direction": "{{user}}, his adult partner, and another adult couple consensually swap partners or maintain a mutually agreed couple-exchange arrangement. The defining twist is that {{user}} gets the other woman pregnant while {{user}}'s partner becomes pregnant by the other man within the same general period. Vary whether both pregnancies are discovered together, what each couple expected, whether the arrangement continues, and how four adults negotiate biological and social parenthood."
+    },
+    {
+      "id": "g06-boyfriend-husband-invites-user-as-bull",
+      "group": "06 Cuckold / Bull / Invited by Her Partner",
+      "title": "Boyfriend / Husband Invites {{user}} as Bull",
+      "direction": "{{char}} has an adult boyfriend or husband who consensually invites or permits {{user}} to become her outside partner within a cuckolding arrangement. {{user}} eventually becomes the biological father of her pregnancy. Vary whether {{user}} is a one-time guest or recurring bull, how involved the partner is, what pregnancy rules existed beforehand, and whether the pregnancy was an accepted risk or an outcome nobody expected."
+    },
+    {
+      "id": "g06-regular-bull",
+      "group": "06 Cuckold / Bull / Invited by Her Partner",
+      "title": "Regular Bull",
+      "direction": "{{user}} is already a recurring consensual outside partner for {{char}} and her adult cuckold partner. A pregnancy by {{user}} changes the arrangement from recreational to permanent. Vary how long the dynamic has existed, whether the partner wants to help raise the child, whether {{char}}'s relationship with {{user}} becomes more emotionally important, and whether future conception is discussed."
+    },
+    {
+      "id": "g06-couple-deliberately-chooses-user-as-father",
+      "group": "06 Cuckold / Bull / Invited by Her Partner",
+      "title": "Couple Deliberately Chooses {{user}} as Father",
+      "direction": "An adult couple deliberately asks or allows {{user}} to biologically father {{char}}'s child within an established consensual cuckolding or donor-style arrangement. Vary why they choose {{user}}, whether conception is intended to remain separate from romance, how many attempts occur, and what paternal role {{user}} is expected to have after the pregnancy succeeds."
+    },
+    {
+      "id": "g07-rival-woman-user-clashes-with",
+      "group": "07 Rivals / Enemies / Friction",
+      "title": "Rival / Woman {{user}} Clashes With",
+      "direction": "{{char}} and {{user}} are adults who regularly clash, compete, or dislike each other. Despite the friction, they have a consensual encounter or brief casual relationship that results in pregnancy. Vary whether the attraction was always underneath the rivalry, whether alcohol or a party lowers inhibitions without removing consent, whether the encounter is regretted, and how pregnancy forces two people who normally avoid cooperation to deal with each other."
+    },
+    {
+      "id": "g07-competitive-classmate-coworker",
+      "group": "07 Rivals / Enemies / Friction",
+      "title": "Competitive Classmate / Coworker",
+      "direction": "{{char}} and {{user}} compete academically or professionally and are used to measuring themselves against each other. A consensual off-hours relationship develops and pregnancy creates a problem neither can solve by simply 'winning.' Vary whether the rivalry is playful or serious, who initiates the relationship, and whether the pregnancy softens or intensifies their competition."
+    },
+    {
+      "id": "g08-best-friend-s-girlfriend",
+      "group": "08 Connected to Someone You Know",
+      "title": "Best Friend's Girlfriend",
+      "direction": "{{char}} is the adult girlfriend of {{user}}'s best friend. She and {{user}} become consensually involved and she becomes pregnant by {{user}}, creating a direct conflict between paternity, friendship, and her existing relationship. Vary whether it was one-time or recurring, whether she intends to stay with her boyfriend, and whether {{user}} prioritizes honesty, secrecy, romance, or future parenting."
+    },
+    {
+      "id": "g08-friend-s-adult-sister",
+      "group": "08 Connected to Someone You Know",
+      "title": "Friend's Adult Sister",
+      "direction": "{{char}} is an adult sister of one of {{user}}'s close friends. A casual, secret, or developing relationship results in pregnancy. Vary whether the friend is protective, supportive, shocked, or unaware, whether {{char}} and {{user}} had been quietly seeing each other, and whether the pregnancy reveals a relationship nobody knew existed."
+    },
+    {
+      "id": "g08-friend-s-adult-mother",
+      "group": "08 Connected to Someone You Know",
+      "title": "Friend's Adult Mother",
+      "direction": "{{char}} is the adult mother of one of {{user}}'s adult friends, creating a meaningful age and social-gap complication. {{char}} and {{user}} become consensually involved and she becomes pregnant by him. Vary whether she is single, divorced, or married; how the friend reacts; whether the relationship was intended to remain private; and how the pregnancy changes family and friendship dynamics."
+    },
+    {
+      "id": "g08-rival-bully-s-adult-sister",
+      "group": "08 Connected to Someone You Know",
+      "title": "Rival / Bully's Adult Sister",
+      "direction": "{{char}} is the adult sister of a man who is a rival, bully, or adversary of {{user}}. She and {{user}} form their own consensual connection independent of that conflict and she becomes pregnant by him. Vary whether she knows the history, whether her brother tries to interfere, and whether the relationship began from genuine attraction, rebellion, curiosity, or coincidence."
+    },
+    {
+      "id": "g08-boss-s-adult-daughter",
+      "group": "08 Connected to Someone You Know",
+      "title": "Boss's Adult Daughter",
+      "direction": "{{char}} is the adult daughter of {{user}}'s boss or another important professional superior and is roughly within {{user}}'s adult peer group. A consensual casual or romantic connection results in pregnancy. Vary whether the boss knew they were seeing each other, how protective or controlling the parent is, whether workplace consequences follow, and whether {{char}} and {{user}} ever intended to become a serious couple."
+    },
+    {
+      "id": "g09-wild-gyaru-type-adult-classmate",
+      "group": "09 University / Campus",
+      "title": "Wild / Gyaru-Type Adult Classmate",
+      "direction": "{{char}} is an adult university classmate with a bold, socially active, openly sexual or gyaru-like personality. She and {{user}} become casually involved after class, at a party, during study sessions, or through mutual friends, and she becomes pregnant by him. Vary whether she initially treats {{user}} as one casual partner among many, whether paternity is immediately certain, and whether pregnancy changes how seriously she views him."
+    },
+    {
+      "id": "g09-study-partner-lab-partner",
+      "group": "09 University / Campus",
+      "title": "Study Partner / Lab Partner",
+      "direction": "{{char}} and {{user}} are adult university students repeatedly paired through study, labs, projects, or a shared course. Familiarity develops into consensual intimacy and pregnancy. Vary whether the relationship grows slowly or happens unexpectedly after a late study session, whether classmates notice their closeness, and how academic obligations continue while their personal lives change."
+    },
+    {
+      "id": "g09-adult-tutor-tutee",
+      "group": "09 University / Campus",
+      "title": "Adult Tutor / Tutee",
+      "direction": "{{char}} and {{user}} are adults in a tutoring relationship outside any coercive grading authority. Their repeated private study time develops into a consensual personal relationship and {{char}} becomes pregnant by {{user}}. Keep sex separate from grades, academic progression, access to education, or formal leverage; vary the subject, who tutors whom, and whether the relationship remains secret from classmates or colleagues."
+    },
+    {
+      "id": "g10-coworker",
+      "group": "10 Workplace / Professional",
+      "title": "Coworker",
+      "direction": "{{char}} and {{user}} are adult coworkers whose work friendship, overtime, travel, or after-work socializing develops into a consensual sexual or romantic relationship. {{char}} becomes pregnant by {{user}}. Vary whether they intended to keep work and personal life separate, whether workplace policy matters, and whether pregnancy makes secrecy impossible."
+    },
+    {
+      "id": "g10-boss-supervisor",
+      "group": "10 Workplace / Professional",
+      "title": "Boss / Supervisor",
+      "direction": "{{char}} is an adult supervisor, manager, or professional superior to {{user}} and they consensually become involved outside formal job requirements. She becomes pregnant by {{user}}. Keep consent genuine and do not make intimacy a condition of employment, promotion, scheduling, pay, or professional opportunity. Vary secrecy, workplace consequences, and whether the relationship continues after pregnancy."
+    },
+    {
+      "id": "g10-client-customer",
+      "group": "10 Workplace / Professional",
+      "title": "Client / Customer",
+      "direction": "{{char}} is an adult client, customer, contractor, or professional contact {{user}} meets through work. Their connection moves outside the professional setting and becomes consensually intimate, resulting in pregnancy. Vary whether it is one-time, recurring, travel-related, or a developing relationship, and how they handle professional boundaries afterward."
+    },
+    {
+      "id": "g11-one-night-stand",
+      "group": "11 One-Time Encounter / Party / Travel",
+      "title": "One Night Stand",
+      "direction": "{{char}} and {{user}} are consenting adults who expect their encounter to happen only once. {{char}} later discovers she is pregnant by him. Vary whether they are strangers, acquaintances, friends-of-friends, coworkers away from home, or people who met through an event, and vary whether either expected to exchange contact details afterward."
+    },
+    {
+      "id": "g11-party-celebration",
+      "group": "11 One-Time Encounter / Party / Travel",
+      "title": "Party / Celebration",
+      "direction": "{{char}} and {{user}} become consensually intimate after an adult party, birthday, wedding, graduation, work celebration, or similar social event. The pregnancy turns what seemed like one memorable night into an ongoing connection. Vary how well they knew each other beforehand, what prompted the encounter, and whether either was already involved with someone else."
+    },
+    {
+      "id": "g11-holiday-travel-encounter",
+      "group": "11 One-Time Encounter / Party / Travel",
+      "title": "Holiday / Travel Encounter",
+      "direction": "{{user}} meets or reconnects with {{char}} during a trip, holiday, excursion, convention, concert weekend, festival, or other travel context. A consensual encounter results in pregnancy. Vary whether {{char}} lives far away, whether they expected never to meet again, how they stay in contact, and whether the pregnancy is discovered only after both have returned home."
+    },
+    {
+      "id": "g11-stranded-together-shared-accommodation",
+      "group": "11 One-Time Encounter / Party / Travel",
+      "title": "Stranded Together / Shared Accommodation",
+      "direction": "Travel disruption, severe weather, booking problems, or another non-dangerous circumstance leaves adult {{char}} and {{user}} sharing temporary private accommodation. Any intimacy must remain voluntary. Vary whether they already know each other, how attraction develops, whether the encounter is impulsive or long anticipated, and how the pregnancy changes a situation that began as simple practical necessity."
+    },
+    {
+      "id": "g12-fake-boyfriend-to-deter-an-unwanted-suitor",
+      "group": "12 Fake Dating / Circumstantial Relationship",
+      "title": "Fake Boyfriend to Deter an Unwanted Suitor",
+      "direction": "{{char}}, an adult, asks {{user}} to pretend to be her boyfriend to discourage a persistent unwanted suitor or simplify an awkward social situation. Repeated public closeness and private time make the fake relationship increasingly convincing, and they eventually become consensually intimate. {{char}} becomes pregnant by {{user}}, forcing them to decide how much of the relationship is still pretend. Vary how long the deception lasts, who knows the truth, and whether either had feelings before the arrangement."
+    },
+    {
+      "id": "g12-fake-date-for-family",
+      "group": "12 Fake Dating / Circumstantial Relationship",
+      "title": "Fake Date for Family",
+      "direction": "{{char}} asks {{user}} to pose as her adult boyfriend or date for family, a reunion, wedding, holiday gathering, or another social obligation. The temporary performance creates genuine intimacy and pregnancy. Vary why she needs the fake relationship, how convincing they become, whether family members push them together, and when they admit the relationship changed."
+    },
+    {
+      "id": "g12-shared-hotel-love-hotel-by-circumstance",
+      "group": "12 Fake Dating / Circumstantial Relationship",
+      "title": "Shared Hotel / Love Hotel by Circumstance",
+      "direction": "Adult {{char}} and {{user}} unexpectedly need private accommodation because of travel disruption, weather, missed transport, overbooking, or another practical problem and end up sharing a hotel or similar room. Their eventual intimacy must be a voluntary choice rather than a consequence of being trapped. Pregnancy later makes the improvised overnight stay far more important than either expected."
+    },
+    {
+      "id": "g13-older-married-woman",
+      "group": "13 Age Gap / Older Woman",
+      "title": "Older Married Woman",
+      "direction": "{{char}} is a significantly older adult woman, potentially married and already established in a family or career, who becomes consensually involved with younger adult {{user}} and becomes pregnant by him. Vary whether the relationship is a one-time encounter or affair, whether her spouse knows, how the age and life-stage difference affects expectations, and how existing family responsibilities complicate the pregnancy. Any children in her household may appear only in ordinary family or parenting context and must never be sexualized."
+    },
+    {
+      "id": "g13-older-divorced-single-woman",
+      "group": "13 Age Gap / Older Woman",
+      "title": "Older Divorced / Single Woman",
+      "direction": "{{char}} is an older divorced, widowed, or single adult woman who does not initially expect a serious relationship with younger adult {{user}}. A casual or developing relationship results in pregnancy. Vary whether she thought this stage of her life was behind her, how confident she is about the age gap, and whether {{user}} is more interested in commitment than she expected."
+    },
+    {
+      "id": "g14-idol-singer-actress-influencer",
+      "group": "14 Public Figure / High-Status Woman",
+      "title": "Idol / Singer / Actress / Influencer",
+      "direction": "{{char}} is an adult public figure such as an idol, singer, actress, streamer, influencer, or entertainer. Through work, fandom, mutual acquaintances, travel, or coincidence she becomes consensually involved with {{user}} and later learns he is the father of her pregnancy. Vary how private the relationship was, whether a management contract or public image creates pressure, whether {{user}} is anonymous or publicly known, and how or whether the pregnancy becomes public."
+    },
+    {
+      "id": "g14-athlete",
+      "group": "14 Public Figure / High-Status Woman",
+      "title": "Athlete",
+      "direction": "{{char}} is an adult professional or high-profile athlete who becomes pregnant by {{user}} after a consensual relationship or encounter. Vary how they meet, whether the pregnancy affects competition or sponsorship plans, how much public scrutiny exists, and whether {{user}} fits easily into her highly scheduled life."
+    },
+    {
+      "id": "g14-reality-show-relationship-experiment",
+      "group": "14 Public Figure / High-Status Woman",
+      "title": "Reality Show / Relationship Experiment",
+      "direction": "{{char}} and {{user}} meet or are paired through an adult reality show, dating experiment, travel program, or relationship competition where cameras and producers create unusual opportunities for intimacy. {{char}} becomes pregnant by {{user}}. Vary whether they were contestants, whether one had another partner entering the show, whether pregnancy is discovered during filming or afterward, and how contracts, editing, producers, and audience reaction complicate a private biological connection."
+    },
+    {
+      "id": "g15-user-is-one-of-several-casual-partners",
+      "group": "15 Promiscuous / Multiple Possible Fathers",
+      "title": "{{user}} Is One of Several Casual Partners",
+      "direction": "{{char}} is an adult woman who openly or privately has several casual partners during the likely conception window, including {{user}}. She becomes pregnant and initially cannot know which man is the biological father. Vary how honest everyone was about non-exclusivity, how many plausible fathers exist, whether {{user}} expects to be one of them, and what each possible result would change."
+    },
+    {
+      "id": "g15-paternity-test-says-user",
+      "group": "15 Promiscuous / Multiple Possible Fathers",
+      "title": "Paternity Test Says {{user}}",
+      "direction": "{{char}} is pregnant with uncertain paternity and may even believe another man is more likely to be the father. A paternity test establishes that {{user}} is the biological father. Make the result itself a turning point. Vary {{user}}'s prior relationship to {{char}}, the other possible fathers, whether anyone hoped for a different result, and what practical or emotional obligations begin once uncertainty ends."
+    },
+    {
+      "id": "g15-she-thought-someone-else-was-the-father",
+      "group": "15 Promiscuous / Multiple Possible Fathers",
+      "title": "She Thought Someone Else Was the Father",
+      "direction": "{{char}} spends part of the pregnancy believing another adult man is the likely father, only for later timing, medical evidence, or testing to reveal that {{user}} is actually the biological father. Vary whether {{user}} knew he was a possibility, how much the presumed father became involved, and what relationships must be renegotiated after the correction."
+    },
+    {
+      "id": "g16-friend-asks-user-to-be-donor",
+      "group": "16 Planned Pregnancy / Donor / Deliberate",
+      "title": "Friend Asks {{user}} to Be Donor",
+      "direction": "An adult female friend asks {{user}} to be the biological father of a planned child. Vary whether she intends to parent alone, whether they expect {{user}} to have no role, a limited role, or full co-parenting involvement, whether conception is clinical or through a mutually agreed natural method, and whether the arrangement becomes emotionally more personal after pregnancy succeeds."
+    },
+    {
+      "id": "g16-single-woman-wants-a-child",
+      "group": "16 Planned Pregnancy / Donor / Deliberate",
+      "title": "Single Woman Wants a Child",
+      "direction": "{{char}} is an adult single woman who wants a child without necessarily wanting a conventional romantic relationship and chooses {{user}} as the biological father. Vary why she chooses him, how formal or informal the arrangement is, what boundaries they establish, and whether pregnancy leads to friendship, romance, co-parenting, or conflict over expectations."
+    },
+    {
+      "id": "g16-couple-chooses-user-as-known-donor",
+      "group": "16 Planned Pregnancy / Donor / Deliberate",
+      "title": "Couple Chooses {{user}} as Known Donor",
+      "direction": "{{char}} and her adult partner want a child but cannot or do not wish to conceive genetically with the partner, so they mutually choose {{user}} as a known biological donor. Vary why {{user}} is selected, the conception method, what future role he is expected to have, and whether pregnancy creates emotional connections that the original agreement did not anticipate."
+    },
+    {
+      "id": "g16-repeat-attempts-until-pregnant",
+      "group": "16 Planned Pregnancy / Donor / Deliberate",
+      "title": "Repeat Attempts Until Pregnant",
+      "direction": "{{char}} and {{user}} deliberately attempt conception more than once under a mutually agreed plan rather than treating pregnancy as an accident. Vary whether the arrangement is between friends, a couple using {{user}} as donor, an unconventional co-parenting plan, or a romantic relationship. Keep the repeated attempts purposeful and explore how familiarity or feelings change before pregnancy is finally confirmed."
+    },
+    {
+      "id": "g17-moving-away-final-encounter",
+      "group": "17 Leaving / Separation / Last Chance",
+      "title": "Moving Away / Final Encounter",
+      "direction": "Adult {{char}} is about to move away, relocate for work, return to another country, finish an exchange program, or otherwise leave {{user}}'s daily life. Before she goes, they share a consensual final encounter that they assume will close an unfinished connection. She discovers the pregnancy only after the separation. Vary the reason for leaving, whether they had feelings beforehand, how far away she moves, and whether pregnancy causes her to return or forces a long-distance future."
+    },
+    {
+      "id": "g17-pregnancy-discovered-after-she-leaves",
+      "group": "17 Leaving / Separation / Last Chance",
+      "title": "Pregnancy Discovered After She Leaves",
+      "direction": "{{char}} and {{user}} separate geographically before either knows conception occurred. The pregnancy reveal arrives later by message, call, surprise visit, or mutual acquaintance. Vary how long they have been apart, whether contact had faded, whether either entered a new relationship, and how suddenly the news restores a permanent connection."
+    },
+    {
+      "id": "g18-direct-confession",
+      "group": "18 Pregnancy Reveal / Discovery",
+      "title": "Direct Confession",
+      "direction": "{{char}} tells {{user}} directly that she is pregnant and believes or knows he is the biological father. Vary how certain paternity is, what their relationship was before the reveal, whether she is excited, frightened, practical, conflicted, or matter-of-fact, and what she wants from {{user}}."
+    },
+    {
+      "id": "g18-text-call-weeks-later",
+      "group": "18 Pregnancy Reveal / Discovery",
+      "title": "Text / Call Weeks Later",
+      "direction": "After a casual, distant, travel, or one-time connection, {{user}} unexpectedly receives a message or call from {{char}} weeks later saying she is pregnant. Vary how little contact they had after the encounter, whether she initially tried to handle the situation alone, and whether the reveal is the first sign that their supposedly temporary connection will continue."
+    },
+    {
+      "id": "g18-paternity-test-confirmation",
+      "group": "18 Pregnancy Reveal / Discovery",
+      "title": "Paternity Test Confirmation",
+      "direction": "The pregnancy is already known but biological paternity has been uncertain until testing confirms {{user}} is the father. Vary who else was a possible father, whether {{user}} wanted certainty, whether {{char}} expected the result, and how the confirmed paternity changes relationships or plans."
+    },
+    {
+      "id": "g18-she-returns-visibly-pregnant",
+      "group": "18 Pregnancy Reveal / Discovery",
+      "title": "She Returns Visibly Pregnant",
+      "direction": "{{char}} and {{user}} have been apart long enough that when she next appears in person she is visibly pregnant. The opening situation should make the visual discovery important. Vary whether {{user}} already knew she might be pregnant, whether she deliberately waited to tell him face-to-face, and whether paternity is immediately stated or revealed during the conversation."
+    },
+    {
+      "id": "g19-casual-connection-becomes-a-relationship",
+      "group": "19 Pregnancy Aftermath",
+      "title": "Casual Connection Becomes a Relationship",
+      "direction": "{{char}} and {{user}} did not consider themselves a couple before pregnancy, but the pregnancy pushes them into spending more time together and reconsidering what they are to each other. Vary whether romance grows naturally, one person wants commitment while the other prefers co-parenting, or they attempt a relationship primarily because of the child and later discover whether it genuinely works."
+    },
+    {
+      "id": "g19-co-parenting-without-romance",
+      "group": "19 Pregnancy Aftermath",
+      "title": "Co-Parenting Without Romance",
+      "direction": "{{char}} and {{user}} agree that being biological parents does not automatically mean they should become a romantic couple. Focus on building a workable adult co-parenting relationship from a friendship, FWB, one-night encounter, affair, or donor arrangement. Vary living arrangements, boundaries, other partners, family expectations, and whether romantic feelings later appear."
+    },
+    {
+      "id": "g19-her-existing-partner-stays",
+      "group": "19 Pregnancy Aftermath",
+      "title": "Her Existing Partner Stays",
+      "direction": "{{char}} was already in an adult relationship when she became pregnant by {{user}}, and her partner chooses to remain with her. Explore how {{user}}'s biological fatherhood coexists with the partner's social or parental role. Vary whether {{user}} is welcomed, tolerated, restricted, or becomes part of an unconventional cooperative family arrangement."
+    },
+    {
+      "id": "g19-user-s-existing-partner-stays",
+      "group": "19 Pregnancy Aftermath",
+      "title": "{{user}}'s Existing Partner Stays",
+      "direction": "{{user}} already has an adult partner who chooses to remain with him after another woman becomes pregnant by him. Vary whether the conception occurred through cheating, ENM, cuckqueen dynamics, donation, or a mutually agreed arrangement, and how {{char}}, {{user}}, and his partner negotiate future involvement."
+    },
+    {
+      "id": "g20-full-dive-vr-never-met-physically",
+      "group": "20 Sci-Fi / Speculative Pregnancy",
+      "title": "Full-Dive VR → Never Met Physically",
+      "direction": "{{char}} and {{user}} are adults who know each other through an advanced full-dive VR platform that can reproduce convincing bodily sensation by reading and stimulating the nervous system. They become virtually intimate despite never meeting physically. Weeks later {{char}} discovers she is genuinely pregnant and genetic testing identifies {{user}} as the father. Make the impossible pregnancy the mystery: the interface's biomedical calibration agents, nanotechnology, or another fictional mechanism translated their virtual interaction into real reproductive biology. Prefer an unintended technological consequence over simple malicious deception."
+    },
+    {
+      "id": "g20-first-contact-alien-mind-sharing-reproduction",
+      "group": "20 Sci-Fi / Speculative Pregnancy",
+      "title": "First Contact → Alien Mind-Sharing Reproduction",
+      "direction": "{{user}} is part of a scientific first-contact mission and meets {{char}}, an adult woman of a previously unknown humanoid species. They consensually use a mind-sharing ability that both sides understand as intimate communication, but neither expects cross-species reproduction to be possible. {{char}} later becomes pregnant and analysis shows {{user}} is the biological father. The alien species normally exchanges genetic material through the mind-link rather than human-style intercourse, and both sides are genuinely surprised that human and alien biology are compatible."
+    },
+    {
+      "id": "g20-time-traveler-future-pregnancy",
+      "group": "20 Sci-Fi / Speculative Pregnancy",
+      "title": "Time Traveler → Future Pregnancy",
+      "direction": "An adult {{char}} arrives from the near future and tells {{user}} that she is pregnant by him even though, from his perspective, the encounter that causes conception has not happened yet. Vary whether she came back to prevent a disaster, ask for help, protect the future child, or change the circumstances of their relationship. Keep {{user}}'s future biological fatherhood as a paradox and relationship hook rather than treating time travel as mere decoration."
+    },
+    {
+      "id": "g20-colony-cryoship-reproductive-protocol",
+      "group": "20 Sci-Fi / Speculative Pregnancy",
+      "title": "Colony / Cryoship Reproductive Protocol",
+      "direction": "{{char}} and {{user}} are adults on a colony ship, isolated settlement, or long-duration mission where advanced reproductive systems preserve genetic material and can make conception possible without an ordinary physical relationship. A protocol, emergency population plan, software decision, or consented reproductive program results in {{char}} becoming pregnant with {{user}} as the biological father. Vary how much either person expected, what consent process existed, and whether the pregnancy creates a personal relationship between people who may barely have known each other."
+    },
+    {
+      "id": "g03-raw-fwb-creampie-routine",
+      "group": "03 Friends With Benefits / Just Sex",
+      "title": "Raw FWB / Creampie Routine",
+      "direction": "{{char}} and {{user}} are adult friends with benefits who have stopped using protection. Finishing inside her has become normal or expected. She becomes pregnant by him. Vary how long the raw arrangement existed, whether pregnancy was an accepted risk or something they avoided discussing, how she reacts to the positive test, and whether the casual dynamic can survive a permanent biological connection."
+    },
+    {
+      "id": "g03-she-begs-him-to-finish-inside",
+      "group": "03 Friends With Benefits / Just Sex",
+      "title": "She Begs Him to Finish Inside",
+      "direction": "During a casual or FWB encounter, {{char}} explicitly begs {{user}} to come inside her. It may start as dirty talk and become genuine. The pregnancy is the direct result. Vary whether this was a one-time request or a recurring pattern, how much either of them expected consequences, and how the pregnancy changes the 'just sex' framing."
+    },
+    {
+      "id": "g04-affair-creampie-escalation",
+      "group": "04 She Already Has a Partner",
+      "title": "Affair Creampie Escalation",
+      "direction": "{{char}} is in an established relationship with another adult man but is having a secret affair with {{user}}. At first she insists on protection or withdrawal, but over time she starts letting {{user}} finish inside her. She becomes pregnant by him. Vary how long the boundary held, what made her break it, and whether she already suspected the pregnancy when the truth comes out."
+    },
+    {
+      "id": "g04-she-sends-him-creampie-proof",
+      "group": "04 She Already Has a Partner",
+      "title": "She Sends Him Creampie Proof",
+      "direction": "During a secret affair, {{char}} begins sending {{user}} explicit photos or videos of herself after he has finished inside her. One of these messages, or the phone itself, eventually leads to discovery of both the affair and the pregnancy. Vary how deliberate the risk of discovery was and how the pregnancy is confirmed."
+    },
+    {
+      "id": "g05-cuckqueen-breeding-kink",
+      "group": "05 {{user}} Already Has a Partner",
+      "title": "Cuckqueen Breeding Kink",
+      "direction": "{{user}}'s adult girlfriend or wife consensually encourages him to breed another adult woman ({{char}}). The dynamic includes explicit breeding talk, unprotected sex, and the shared knowledge that pregnancy is a possible or desired outcome. {{char}} becomes pregnant by {{user}}. Vary how involved the existing partner is, whether {{char}} wanted a relationship or only the experience, and how the three adults handle the permanent consequence."
+    },
+    {
+      "id": "g05-girlfriend-watches-him-fill-her",
+      "group": "05 {{user}} Already Has a Partner",
+      "title": "Girlfriend Watches Him Fill Her",
+      "direction": "{{user}}'s adult partner is present and consensually watches or participates while he has unprotected sex with {{char}} and finishes inside her. The pregnancy that follows turns a recreational or kinky encounter into a lasting family complication. Vary the existing partner's level of involvement, emotional reaction, and whether an ongoing three-person arrangement is considered."
+    },
+    {
+      "id": "g06-bull-breeds-her-for-the-couple",
+      "group": "06 Cuckold / Bull / Invited by Her Partner",
+      "title": "Bull Breeds Her for the Couple",
+      "direction": "{{char}}'s adult boyfriend or husband consensually invites {{user}} to impregnate her. The arrangement is framed as breeding rather than purely recreational sex. {{user}} is the biological father. Vary how formal the agreement was, whether {{char}} wanted it for kink, for a child, or both, and what role each man is expected to have after the pregnancy is confirmed."
+    },
+    {
+      "id": "g06-she-asks-the-bull-to-knock-her-up",
+      "group": "06 Cuckold / Bull / Invited by Her Partner",
+      "title": "She Asks the Bull to Knock Her Up",
+      "direction": "Within a consensual cuckold arrangement where {{user}} is the invited bull, {{char}} begins explicitly asking or begging him to get her pregnant. The dirty talk escalates into deliberate unprotected sex timed to her fertile window. She becomes pregnant by {{user}}. Vary whether her partner knows the breeding request was serious, how the couple reacts once she is pregnant, and what {{user}} wants afterward."
+    },
+    {
+      "id": "g11-one-night-raw-and-pregnant",
+      "group": "11 One-Time Encounter / Party / Travel",
+      "title": "One Night Raw and Pregnant",
+      "direction": "{{char}} and {{user}} have a single consensual encounter that was never meant to be repeated. Protection is either never used, removed, or abandoned in the moment, and he finishes inside her. She later discovers she is pregnant by him. Vary how much they knew each other beforehand, whether either expected to stay in contact, and how the pregnancy forces a permanent connection neither planned for."
+    },
+    {
+      "id": "g11-drunk-creampie-morning-after",
+      "group": "11 One-Time Encounter / Party / Travel",
+      "title": "Drunk Creampie / Morning After",
+      "direction": "After a party, night out, or holiday, {{char}} and {{user}} have consensual sex while intoxicated. Protection is forgotten or ignored and he comes inside her. The next morning (or days later) the reality of the risk becomes clear, and weeks later she is pregnant. Vary how much each remembers, whether they already had chemistry, and how they handle the news."
+    },
+    {
+      "id": "g11-travel-stranded-unprotected",
+      "group": "11 One-Time Encounter / Party / Travel",
+      "title": "Travel / Stranded Unprotected",
+      "direction": "During travel or an unexpected disruption, {{char}} and {{user}} are isolated together. A consensual encounter occurs without contraception available or with a deliberate decision to go unprotected. She becomes pregnant by him. Vary the setting, how attraction develops under pressure, and how the eventual pregnancy is revealed after they return to ordinary life."
+    },
+    {
+      "id": "g15-gangbang-multiple-loads-user-father",
+      "group": "15 Promiscuous / Multiple Possible Fathers",
+      "title": "Gangbang / Multiple Loads → {{user}} Is Father",
+      "direction": "{{char}} participates in a consensual group encounter involving several adult men including {{user}}. Multiple men finish inside her. Paternity is initially uncertain, but testing or timing later establishes that {{user}} is the biological father. Vary how planned the group sex was, what {{char}} wanted from the experience, and how the confirmation that {{user}} is the father changes the situation."
+    },
+    {
+      "id": "g15-party-multiple-partners-user-confirmed",
+      "group": "15 Promiscuous / Multiple Possible Fathers",
+      "title": "Party Multiple Partners → {{user}} Confirmed",
+      "direction": "Over one night or short period {{char}} has consensual sex with more than one adult man, including {{user}}. She becomes pregnant and initially cannot be sure who the father is. Later evidence or a paternity test establishes that {{user}} is the father. Keep the initial uncertainty genuine and make the confirmation a turning point."
+    },
+    {
+      "id": "g16-deliberate-breeding-session",
+      "group": "16 Planned Pregnancy / Donor / Deliberate",
+      "title": "Deliberate Breeding Session",
+      "direction": "{{char}} and {{user}} mutually decide that she will deliberately become pregnant by him. They schedule unprotected sex during her fertile window, often with explicit breeding talk and the shared goal of conception. Vary whether this is framed as a romantic step, a kink, a practical arrangement, or a mix, and what each expects after the positive test."
+    },
+    {
+      "id": "g16-she-keeps-his-load",
+      "group": "16 Planned Pregnancy / Donor / Deliberate",
+      "title": "She Keeps His Load",
+      "direction": "{{char}} is actively trying to get pregnant by {{user}}. After each encounter she deliberately tries to keep his semen inside her. The pregnancy is the intended result of this focused effort. Vary how open she is about the method, whether {{user}} fully understands the intensity of her intent, and how both react once she succeeds."
+    },
+    {
+      "id": "g16-breeding-marathon-weekend",
+      "group": "16 Planned Pregnancy / Donor / Deliberate",
+      "title": "Breeding Marathon Weekend",
+      "direction": "{{char}} and {{user}} set aside a weekend or multi-day period specifically to try to get her pregnant. Repeated unprotected sex is the plan. Vary emotional tone (romantic, purely practical, highly sexual/kinky), how they communicate during the attempts, and what changes the moment the pregnancy is confirmed."
+    },
+    {
+      "id": "g18-creampie-photo-reveal",
+      "group": "18 Pregnancy Reveal / Discovery",
+      "title": "Creampie Photo / Video Reveal",
+      "direction": "{{char}} reveals the pregnancy to {{user}} by showing him a photo or short video of herself immediately after he finished inside her, combined with a positive test or ultrasound. The explicit evidence and the pregnancy news arrive together. Vary whether the media was originally private, sent in the heat of the moment, or created specifically for the reveal."
+    },
+    {
+      "id": "g18-she-shows-him-the-mess",
+      "group": "18 Pregnancy Reveal / Discovery",
+      "title": "She Shows Him the Mess",
+      "direction": "After {{user}} has finished inside her, {{char}} deliberately shows him the physical result (leaking, on her body, on the sheets, etc.) and later uses that same intimacy or a related photo when she tells him she is pregnant. Keep the reveal emotionally legible and leave his reaction open."
+    },
+    {
+      "id": "g19-pregnant-and-still-wants-him-raw",
+      "group": "19 Pregnancy Aftermath",
+      "title": "Pregnant and Still Wants Him Raw",
+      "direction": "Even after {{char}} is confirmed pregnant by {{user}}, she continues wanting unprotected sex with him and letting him finish inside her. Vary whether this is for pleasure, emotional closeness, a sense of ownership over the pregnancy, or because the pregnancy has intensified the kink. Leave {{user}}'s ongoing involvement and feelings open."
+    },
+    {
+      "id": "g19-he-keeps-filling-her-during-pregnancy",
+      "group": "19 Pregnancy Aftermath",
+      "title": "He Keeps Filling Her During Pregnancy",
+      "direction": "{{char}} is visibly or known to be pregnant by {{user}}, yet they continue a sexual relationship that includes him finishing inside her. The dynamic may include him claiming the pregnancy, talking about the baby while fucking her, or treating her body as still available. Vary tone from affectionate to dominant to purely physical, and keep {{user}}'s longer-term choices open."
+    },
+    {
+      "id": "g03-she-stops-pulling-him-out",
+      "group": "03 Friends With Benefits / Just Sex",
+      "title": "She Stops Pulling Him Out",
+      "direction": "{{char}} and {{user}} have a casual sexual relationship where withdrawal was previously the rule. Over time {{char}} starts holding him inside or asking him not to pull out. She becomes pregnant. Vary whether the change was gradual or sudden, how much {{user}} resisted or welcomed it, and how the pregnancy forces them to redefine the arrangement."
+    },
+    {
+      "id": "g04-married-woman-lets-him-breed-her",
+      "group": "04 She Already Has a Partner",
+      "title": "Married Woman Lets Him Breed Her",
+      "direction": "{{char}} is an adult married woman having an affair with {{user}}. What begins as protected or careful sex becomes deliberate unprotected sex with the shared or private knowledge that pregnancy is possible. She becomes pregnant by {{user}}. Vary how much her husband suspects, whether she wanted the pregnancy, and what she expects from {{user}} once the child is real."
+    },
+    {
+      "id": "g11-hotel-room-no-condoms",
+      "group": "11 One-Time Encounter / Party / Travel",
+      "title": "Hotel Room / No Condoms",
+      "direction": "{{char}} and {{user}} end up in a hotel room (travel, conference, night out, spontaneous decision). Neither has protection, or they decide not to use it. He finishes inside her. She later discovers she is pregnant by him. Vary how well they knew each other, whether the night was meant to be a one-off, and how the pregnancy is revealed."
+    },
+    {
+      "id": "g16-fertile-window-only",
+      "group": "16 Planned Pregnancy / Donor / Deliberate",
+      "title": "Fertile Window Only",
+      "direction": "{{char}} and {{user}} agree that they will only have sex during her fertile window specifically to achieve pregnancy. Outside those days they may abstain or use protection. The focused breeding effort succeeds. Vary emotional context, how clinical or erotic the timed encounters feel, and what each person wants after conception is confirmed."
+    }
+  ],
+  "sections": [
+    {
+      "id": "source-boundary",
+      "label": "Series scope vs main source",
+      "content": "The You Got Her Pregnant main source is deliberately broad about the starting relationship, but it still has one defining invariant: {{user}} is the biological father, a genuinely plausible father before confirmation, or ultimately established as the biological father. If another man is established as the father and {{user}} is only the betrayed or social partner, use She Got Pregnant instead. Very unusual premises whose conception logic cannot be expressed cleanly should be hand-authored or moved to a future companion source rather than weakening the main source."
+    },
+    {
+      "id": "paternity-handling",
+      "label": "Paternity handling",
+      "content": "Known, likely and uncertain paternity are different story states. Do not convert uncertainty into certainty without the selected direction calling for testing or later evidence. When a preset such as Paternity Test Says {{user}} or She Thought Someone Else Was the Father is selected, the eventual result must establish {{user}} as the biological father."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Use the narrowest relevant Direction Preset. For an even narrower leaf variation, edit the populated Additional Direction with one short visible sentence, such as making a childhood-friend pregnancy come from their first and only encounter, setting fake dating at a family wedding, or specifying that a public figure is an idol."
+    }
+  ],
+  "raw_prompt": "Prioritise a strong open-ended roleplay starting situation, meaningful player agency, genuine scenario variety and a consequential biological connection. Preserve the selected Direction Preset and do not decide {{user}}'s reaction or future."
+}
