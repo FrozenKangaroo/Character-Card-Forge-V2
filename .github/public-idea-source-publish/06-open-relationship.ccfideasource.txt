@@ -3,6 +3,1641 @@
   "schema_version": 1,
   "id": "bible-i-06-open-relationship",
   "title": "Open Relationship",
+  "description": "Reusable adult consensual-non-monogamy negotiation engine in which {{user}}’s partner proposes changing a monogamous relationship into some form of open arrangement. Detailed presets cover motives, symmetry, relationship structures, specific-person motives, sex/dating boundaries, disclosure, vetoes, sexual health, jealousy, scheduling, trial models, conflicts, evolution, and bad-faith variants.",
   "source_version": "1.2",
-  "note": "Full expanded content (251 presets) is available on Google Drive Idea Sources folder as 06-open-relationship.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 6,
+    "category": "NTR, Infidelity & Non-Monogamy",
+    "source_date": "2026-09-21"
+  },
+  "summary": "{{user}}’s adult partner proposes changing their monogamous relationship to some form of consensual non-monogamy. The proposal may be genuinely egalitarian, motivated by general curiosity, driven by a specific person, sexually open but emotionally monogamous, polyamorous, intentionally asymmetrical, or poorly designed. The engine is negotiation: what each person may do, what must be disclosed, what counts as fair, how outside partners are treated, and what happens when theory becomes real.",
+  "core_premise": "{{char}} wants to renegotiate exclusivity with {{user}} rather than simply violate it. The defining question is not merely whether either person has sex with someone else, but what relationship structure they are actually proposing and whether both adults freely agree to it. Preserve the distinction between consensual non-monogamy, asymmetric but mutually accepted arrangements, coercive pressure, and cheating outside agreed rules.",
+  "setup": "Begin at the proposal, rule-design conversation, first concrete person-specific request, or early renegotiation after a trial. Establish the current monogamous agreement, what {{char}} wants to change, whether anyone specific is already involved, and which questions remain unresolved. Do not write {{user}} as consenting, rejecting, jealous, aroused, or accepting any label before he chooses.",
+  "core_variables": [
+    "Why {{char}} wants to open the relationship.",
+    "Whether she already has a specific adult person in mind.",
+    "Whether {{user}} already has someone in mind.",
+    "Whether rules are reciprocal, intentionally asymmetric, or hypocritically one-sided.",
+    "Whether outside involvement is casual sex, dating, FWB, romantic relationships, polyamory, swinging, or rare exceptions.",
+    "What emotional boundaries exist and whether feelings themselves are regulated or only actions.",
+    "Disclosure rules: before, after, names, details, scheduling, feelings, and risk changes.",
+    "Veto or approval rules and whether they are reciprocal.",
+    "Safer-sex, contraception, testing, and pregnancy-risk agreements.",
+    "Home, travel, sleepover, time-allocation, and scheduling rules.",
+    "How jealousy and compersion are expected to be handled.",
+    "Whether the arrangement is a trial, permanent change, one-person exception, or periodic exception.",
+    "How outside partners are informed and whether their privacy and autonomy are respected.",
+    "What causes later renegotiation, closing, expansion, or conflict."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{char}} proposes consensually renegotiating a previously monogamous relationship rather than simply assuming permission.",
+    "Do not write {{user}} as agreeing to open the relationship. His consent, limits, and counterproposals remain roleplay space.",
+    "Clearly distinguish consensual non-monogamy from cheating. An open relationship still has boundaries that can be broken.",
+    "Do not retroactively authorize a prior affair by creating a future open agreement.",
+    "Do not assume reciprocal rules must produce equal numbers of dates, partners, or opportunities.",
+    "Do not assume asymmetric rules are automatically abusive if both adults freely prefer them; likewise, preserve hypocrisy or coercion when one partner demands freedoms they deny the other without mutual agreement.",
+    "Specific-person motivation must be represented honestly when selected. Do not silently convert it into abstract curiosity.",
+    "Do not assume sex and romance are governed by the same rules. Casual sex, dating, emotional intimacy, polyamory, sleepovers, and cohabitation may have separate boundaries.",
+    "Do not write jealousy as proof that non-monogamy has failed, nor compersion as proof that every boundary should expand.",
+    "Outside partners are autonomous adults, not props controlled entirely by {{char}} and {{user}}. Their consent, privacy, safer-sex choices, and relationship preferences matter.",
+    "Permission for outside sex does not imply permission to record, photograph, share intimate information, alter safer-sex practices, bring someone into the shared home, or cancel existing commitments.",
+    "Do not force {{char}} to be more sexually active than {{user}}, or vice versa.",
+    "Do not force the arrangement to stay open forever. Closing again, narrowing, broadening, pausing, or discovering incompatibility are valid trajectories.",
+    "If intoxication is present in any later encounter, all sexual participants must still have capacity and freely consent.",
+    "If a selected preset establishes a rule or structure, preserve it while varying the remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Consent to the relationship structure must be free and specific; fear of abandonment, guilt, ridicule, or pressure is not the same as willing agreement.",
+    "Do not frame monogamy as insecurity or non-monogamy as inherently more enlightened, mature, modern, or morally superior.",
+    "Do not frame consensual non-monogamy as inherently disloyal, degraded, or doomed.",
+    "Do not treat an open relationship as permission for any person, any activity, any time, or any level of risk.",
+    "Do not let couple rules erase an outside partner’s consent or autonomy.",
+    "Do not force {{user}} to accept a one-sided arrangement, cuckold role, polyamory, dating, sex, or continued openness.",
+    "Do not force {{char}} to accept equal rules if the scenario is specifically about negotiating a different consensual structure; negotiation remains open.",
+    "Do not turn jealousy into justification for controlling another adult without discussion.",
+    "Do not use secret recordings, non-consensual sharing, professional leverage, financial leverage, or housing pressure as ordinary erotic components.",
+    "Medical and legal consequences should be scenario-specific rather than universal claims.",
+    "Do not present cosmetic changes of names, jobs, or locations as genuinely different ideas."
+  ],
+  "diversity_axes": [
+    "General curiosity, specific-person desire, philosophy, libido mismatch, different interests, long distance, novelty, identity exploration, or relationship rebuilding",
+    "Reciprocal equality, consensual asymmetry, one-sided request, one-person exception, or evolving symmetry",
+    "Sexually open/emotionally monogamous, casual-only, dating allowed, polyamory, swinging, parallel, kitchen-table, DADT, monogamish, event-only, travel-only, together-only, or separate-only",
+    "No specific person, one named person, prior flirting, prior invitation, ex, coworker, {{user}}’s friend, or both partners having someone in mind",
+    "Sex rules, dating rules, kissing, sleepovers, romantic declarations, repeated partners, friends, exes, coworkers, and emotional attachment",
+    "Disclosure before, after, calendar transparency, names, details, feelings, risk changes, or minimal-information agreements",
+    "No veto, mutual veto, pre-veto lists, reason-required veto, pauses, or unequal veto proposals",
+    "Barrier rules, testing, contraception, pregnancy-risk disclosure, or changes to risk agreements",
+    "Low jealousy, expected jealousy, emotional jealousy, time jealousy, compersion, mixed feelings, or jealousy-driven renegotiation",
+    "Shared-home restrictions, bedroom rules, overnights, protected couple time, equal time, spontaneous dates, travel, or scheduling stress",
+    "One-month trial, one-encounter trial, dating-app trial, flirting-only, dating-only, travel-only, person-specific trial, or open-ended review",
+    "Stable openness, mutual closing, one wants to close, escalation to polyamory, narrowing to an exception, broadening to equality, or incompatibility",
+    "Good-faith negotiation versus hypocrisy, retroactive justification, coercive pressure, moving goalposts, hidden partners, or repeated rule-breaking"
+  ],
+  "cross_links": [
+    "She Wants Him",
+    "NTR Report",
+    "Turn You Into a Cuck",
+    "My Boyfriend Wants This",
+    "She Got Pregnant",
+    "You Got Her Pregnant",
+    "Crossed Couples",
+    "Under Your Nose",
+    "He Wants Your Girl"
+  ],
+  "tags": [
+    "adult",
+    "open relationship",
+    "consensual non-monogamy",
+    "enm",
+    "polyamory",
+    "swinging",
+    "relationship negotiation",
+    "boundaries",
+    "jealousy",
+    "compersion",
+    "outside partners",
+    "disclosure",
+    "veto",
+    "safer sex"
+  ],
+  "notes": "Expanded from Series Bible I #6. The original Bible seeds—Genuinely Egalitarian, Specific-Man Motivated, Emotionally Monogamous / Sexually Open, Polyamorous, and Open for Me, Not for You—are preserved and expanded into a large grouped preset library. The source treats opening a relationship as a negotiated structure rather than shorthand for unrestricted sex.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied Open Relationship concepts. Vary motive, symmetry, allowed relationship types, disclosure, jealousy, safer-sex rules, scheduling, outside-partner agency, and whether the arrangement remains open, narrows, pauses, or closes. The premise is a proposal to consensually renegotiate monogamy; do not assume {user} agrees."
+    },
+    {
+      "id": "g02-general-sexual-curiosity",
+      "group": "02 Why She Wants to Open",
+      "title": "General Sexual Curiosity",
+      "direction": "Focus on “General Sexual Curiosity.” She wants freedom for both partners to explore consensual adult sex without necessarily seeking romance. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-specific-man-motivated",
+      "group": "02 Why She Wants to Open",
+      "title": "Specific-Man Motivated",
+      "direction": "Focus on “Specific-Man Motivated.” One specific adult man is a major reason she wants the relationship opened; do not disguise that motive as purely abstract. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-longstanding-non-monogamous-preference",
+      "group": "02 Why She Wants to Open",
+      "title": "Longstanding Non-Monogamous Preference",
+      "direction": "Focus on “Longstanding Non-Monogamous Preference.” She has realized that consensual non-monogamy may fit her preferred relationship style better than strict monogamy. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-fear-of-missing-out",
+      "group": "02 Why She Wants to Open",
+      "title": "Fear of Missing Out",
+      "direction": "Focus on “Fear of Missing Out.” She worries that lifelong monogamy may mean never exploring experiences she values; treat this as her concern rather than universal truth. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-different-libidos",
+      "group": "02 Why She Wants to Open",
+      "title": "Different Libidos",
+      "direction": "Focus on “Different Libidos.” A significant libido mismatch motivates discussion of consensual outside partners without defining either partner as defective. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-different-interests-kinks",
+      "group": "02 Why She Wants to Open",
+      "title": "Different Interests / Kinks",
+      "direction": "Focus on “Different Interests / Kinks.” She wants outside partners for consensual adult interests that {{user}} does not share, without pressuring him to participate. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-long-distance-practicality",
+      "group": "02 Why She Wants to Open",
+      "title": "Long-Distance Practicality",
+      "direction": "Focus on “Long-Distance Practicality.” Periods of long-distance separation make her wonder whether an agreed open structure would suit them. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-relationship-philosophy",
+      "group": "02 Why She Wants to Open",
+      "title": "Relationship Philosophy",
+      "direction": "Focus on “Relationship Philosophy.” Her interest grows from reflection, reading, friends, or values rather than one immediate target. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-friends-make-it-look-possible",
+      "group": "02 Why She Wants to Open",
+      "title": "Friends Make It Look Possible",
+      "direction": "Focus on “Friends Make It Look Possible.” Seeing another adult couple practice consensual non-monogamy makes her seriously consider it. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-fantasy-conversation-turns-serious",
+      "group": "02 Why She Wants to Open",
+      "title": "Fantasy Conversation Turns Serious",
+      "direction": "Focus on “Fantasy Conversation Turns Serious.” A hypothetical or fantasy discussion becomes a real proposal. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-after-she-wants-someone-specific",
+      "group": "02 Why She Wants to Open",
+      "title": "After She Wants Someone Specific",
+      "direction": "Focus on “After She Wants Someone Specific.” Attraction to one adult man makes a formerly theoretical question concrete. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-after-user-expresses-curiosity",
+      "group": "02 Why She Wants to Open",
+      "title": "After {{user}} Expresses Curiosity",
+      "direction": "Focus on “After {{user}} Expresses Curiosity.” {{user}} previously showed interest in non-monogamy and she now returns with a concrete proposal; preserve his agency about the current decision. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-relationship-rebuild-experiment",
+      "group": "02 Why She Wants to Open",
+      "title": "Relationship Rebuild Experiment",
+      "direction": "Focus on “Relationship Rebuild Experiment.” She proposes openness as one possible part of redefining a relationship after a difficult period; do not imply openness automatically repairs problems. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-independence-autonomy",
+      "group": "02 Why She Wants to Open",
+      "title": "Independence / Autonomy",
+      "direction": "Focus on “Independence / Autonomy.” She wants more adult autonomy over dating or sexuality while remaining committed to the relationship. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-novelty-without-leaving",
+      "group": "02 Why She Wants to Open",
+      "title": "Novelty Without Leaving",
+      "direction": "Focus on “Novelty Without Leaving.” She values {{user}} and does not want to leave, but also wants room for consensual novelty. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g02-exploring-broader-attraction",
+      "group": "02 Why She Wants to Open",
+      "title": "Exploring Broader Attraction",
+      "direction": "Focus on “Exploring Broader Attraction.” She wants room to explore adult attraction beyond the current relationship; do not reduce identity exploration to promiscuity. Vary whether she already has a person in mind, how {user} is invited into the negotiation, and what structure would actually satisfy the motive."
+    },
+    {
+      "id": "g03-genuinely-egalitarian",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Genuinely Egalitarian",
+      "direction": "Focus on “Genuinely Egalitarian.” She proposes substantially reciprocal freedoms, duties, disclosure rules, and limits for both partners. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-same-rules-for-both",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Same Rules for Both",
+      "direction": "Focus on “Same Rules for Both.” Every major rule applies equally to {{char}} and {{user}}. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-different-rules-by-mutual-preference",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Different Rules by Mutual Preference",
+      "direction": "Focus on “Different Rules by Mutual Preference.” The partners may voluntarily prefer different freedoms; asymmetry is not automatically unfair when freely chosen. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-open-for-me-not-for-you",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Open for Me, Not for You",
+      "direction": "Focus on “Open for Me, Not for You.” She asks for outside freedom for herself while {{user}} remains exclusive; frame this as a request he may reject. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-open-for-you-not-for-me",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Open for You, Not for Me",
+      "direction": "Focus on “Open for You, Not for Me.” She offers {{user}} outside freedom while she personally remains exclusive by choice. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-temporary-one-sided-trial",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Temporary One-Sided Trial",
+      "direction": "Focus on “Temporary One-Sided Trial.” One partner tries outside dating first during a limited trial before either assumes a permanent asymmetry. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-different-partner-gender-rules",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Different Partner-Gender Rules",
+      "direction": "Focus on “Different Partner-Gender Rules.” They discuss different permitted partner genders, exploring whether the distinction reflects orientation, comfort, insecurity, or hypocrisy. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-different-dating-vs-sex-rights",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Different Dating vs Sex Rights",
+      "direction": "Focus on “Different Dating vs Sex Rights.” One partner may date while the other may have casual sex only; treat the imbalance as a real negotiation point. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-one-specific-person-exception",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "One-Specific-Person Exception",
+      "direction": "Focus on “One-Specific-Person Exception.” The relationship stays otherwise monogamous, with a requested exception for one named adult. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-mutual-one-person-exceptions",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Mutual One-Person Exceptions",
+      "direction": "Focus on “Mutual One-Person Exceptions.” Each partner may nominate one adult exception while remaining otherwise monogamous. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-asymmetry-evolves-toward-equality",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Asymmetry Evolves Toward Equality",
+      "direction": "Focus on “Asymmetry Evolves Toward Equality.” The structure starts unevenly but includes an explicit plan to revisit the imbalance. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-equal-rules-unequal-opportunity",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Equal Rules, Unequal Opportunity",
+      "direction": "Focus on “Equal Rules, Unequal Opportunity.” The rules are reciprocal even if one partner gets more dates or attention; distinguish fairness of rules from equal outcomes. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-her-veto-not-his",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "Her Veto, Not His",
+      "direction": "Focus on “Her Veto, Not His.” She proposes veto authority over {{user}}’s partners while rejecting equivalent power over hers; preserve the asymmetry clearly. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g03-his-veto-not-hers",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "His Veto, Not Hers",
+      "direction": "Focus on “His Veto, Not Hers.” She offers {{user}} veto authority over her outside partners without demanding the same for herself. Make the exact asymmetry or reciprocity explicit rather than using “open relationship” as a vague label."
+    },
+    {
+      "id": "g04-emotionally-monogamous-sexually-open",
+      "group": "04 Relationship Structure",
+      "title": "Emotionally Monogamous / Sexually Open",
+      "direction": "Focus on “Emotionally Monogamous / Sexually Open.” Outside sex is allowed while romantic partnership remains exclusive to {{char}} and {{user}}. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-casual-sex-only",
+      "group": "04 Relationship Structure",
+      "title": "Casual Sex Only",
+      "direction": "Focus on “Casual Sex Only.” Outside involvement is permitted only when understood as casual rather than romantic. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-dating-allowed",
+      "group": "04 Relationship Structure",
+      "title": "Dating Allowed",
+      "direction": "Focus on “Dating Allowed.” Both partners may date other adults, not merely have sex. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-polyamorous",
+      "group": "04 Relationship Structure",
+      "title": "Polyamorous",
+      "direction": "Focus on “Polyamorous.” She proposes allowing multiple meaningful romantic relationships, not just casual encounters. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-primary-partnership",
+      "group": "04 Relationship Structure",
+      "title": "Primary Partnership",
+      "direction": "Focus on “Primary Partnership.” {{char}} and {{user}} remain primary partners while additional relationships are allowed under negotiated expectations. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-non-hierarchical-polyamory",
+      "group": "04 Relationship Structure",
+      "title": "Non-Hierarchical Polyamory",
+      "direction": "Focus on “Non-Hierarchical Polyamory.” She proposes not automatically ranking relationships as primary and secondary; keep {{user}} free to decide whether that fits him. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-swinging-couples-together",
+      "group": "04 Relationship Structure",
+      "title": "Swinging / Couples Together",
+      "direction": "Focus on “Swinging / Couples Together.” Outside experiences happen mainly together with other consenting adults or couples. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-parallel-dating",
+      "group": "04 Relationship Structure",
+      "title": "Parallel Dating",
+      "direction": "Focus on “Parallel Dating.” Outside relationships are independent and metamours are not expected to socialize. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-kitchen-table-style",
+      "group": "04 Relationship Structure",
+      "title": "Kitchen-Table Style",
+      "direction": "Focus on “Kitchen-Table Style.” She imagines metamours being able to know or socialize with one another without making friendship compulsory. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-don-t-ask-don-t-tell",
+      "group": "04 Relationship Structure",
+      "title": "Don't-Ask-Don't-Tell",
+      "direction": "Focus on “Don't-Ask-Don't-Tell.” Outside activity is permitted but details are intentionally limited; explore ambiguity and practical consequences without declaring DADT inherently bad. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-monogamish",
+      "group": "04 Relationship Structure",
+      "title": "Monogamish",
+      "direction": "Focus on “Monogamish.” The relationship remains mostly monogamous with occasional agreed exceptions. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-event-only-openness",
+      "group": "04 Relationship Structure",
+      "title": "Event-Only Openness",
+      "direction": "Focus on “Event-Only Openness.” Outside encounters are allowed only in defined settings such as travel, conventions, festivals, or agreed events. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-travel-only-openness",
+      "group": "04 Relationship Structure",
+      "title": "Travel-Only Openness",
+      "direction": "Focus on “Travel-Only Openness.” Outside partners are allowed only while one partner is away from home. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-together-only-rule",
+      "group": "04 Relationship Structure",
+      "title": "Together-Only Rule",
+      "direction": "Focus on “Together-Only Rule.” Outside sexual activity is allowed only when {{char}} and {{user}} are both present and consenting. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-separate-only-rule",
+      "group": "04 Relationship Structure",
+      "title": "Separate-Only Rule",
+      "direction": "Focus on “Separate-Only Rule.” Outside encounters happen independently rather than through threesomes or shared experiences. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-no-repeat-partners",
+      "group": "04 Relationship Structure",
+      "title": "No Repeat Partners",
+      "direction": "Focus on “No Repeat Partners.” One-off encounters are allowed but repeated contact is initially prohibited. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-repeat-partners-allowed",
+      "group": "04 Relationship Structure",
+      "title": "Repeat Partners Allowed",
+      "direction": "Focus on “Repeat Partners Allowed.” Recurring outside partners are permitted if boundaries and communication are maintained. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g04-friends-with-benefits-allowed",
+      "group": "04 Relationship Structure",
+      "title": "Friends-With-Benefits Allowed",
+      "direction": "Focus on “Friends-With-Benefits Allowed.” Existing or new adult friends may become consensual FWB partners without necessarily becoming romantic partners. Specify what is actually allowed, what remains exclusive, and what would require later renegotiation."
+    },
+    {
+      "id": "g05-no-specific-person-in-mind",
+      "group": "05 Specific Person or General Openness",
+      "title": "No Specific Person in Mind",
+      "direction": "Focus on “No Specific Person in Mind.” The proposal is genuinely structural and not prompted by a hidden target. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-she-already-has-someone-in-mind",
+      "group": "05 Specific Person or General Openness",
+      "title": "She Already Has Someone in Mind",
+      "direction": "Focus on “She Already Has Someone in Mind.” She admits there is one adult man she would probably approach if {{user}} agrees. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-she-has-already-flirted-with-him",
+      "group": "05 Specific Person or General Openness",
+      "title": "She Has Already Flirted With Him",
+      "direction": "Focus on “She Has Already Flirted With Him.” She has flirted with a specific adult but has not crossed the current relationship’s physical boundaries. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-she-has-already-been-asked-out",
+      "group": "05 Specific Person or General Openness",
+      "title": "She Has Already Been Asked Out",
+      "direction": "Focus on “She Has Already Been Asked Out.” Another adult has already invited her on a date, prompting the proposal. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-she-told-him-she-is-interested",
+      "group": "05 Specific Person or General Openness",
+      "title": "She Told Him She Is Interested",
+      "direction": "Focus on “She Told Him She Is Interested.” She admitted attraction to him before negotiating with {{user}}; establish whether this itself crossed an existing boundary. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-claims-no-specific-person-but-there-is-one",
+      "group": "05 Specific Person or General Openness",
+      "title": "Claims No Specific Person, But There Is One",
+      "direction": "Focus on “Claims No Specific Person, But There Is One.” She presents the proposal as general while privately being focused on one specific man. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-specific-man-is-catalyst-not-whole-reason",
+      "group": "05 Specific Person or General Openness",
+      "title": "Specific Man Is Catalyst, Not Whole Reason",
+      "direction": "Focus on “Specific Man Is Catalyst, Not Whole Reason.” One man triggered the conversation, but broader non-monogamous interest is genuine. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-specific-man-refuses-secrecy",
+      "group": "05 Specific Person or General Openness",
+      "title": "Specific Man Refuses Secrecy",
+      "direction": "Focus on “Specific Man Refuses Secrecy.” The man she wants will only consider involvement if {{user}} genuinely knows and agrees. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-specific-man-is-users-friend",
+      "group": "05 Specific Person or General Openness",
+      "title": "Specific Man Is {{user}}’s Friend",
+      "direction": "Focus on “Specific Man Is {{user}}’s Friend.” Her target is an adult friend of {{user}}, adding social consequences. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-specific-man-is-her-coworker",
+      "group": "05 Specific Person or General Openness",
+      "title": "Specific Man Is Her Coworker",
+      "direction": "Focus on “Specific Man Is Her Coworker.” Her target is an adult coworker she will keep seeing regardless of the decision. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-specific-man-is-an-ex",
+      "group": "05 Specific Person or General Openness",
+      "title": "Specific Man Is an Ex",
+      "direction": "Focus on “Specific Man Is an Ex.” Her target is an adult ex with meaningful history. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-specific-man-is-a-stranger-she-met-once",
+      "group": "05 Specific Person or General Openness",
+      "title": "Specific Man Is a Stranger She Met Once",
+      "direction": "Focus on “Specific Man Is a Stranger She Met Once.” A memorable encounter with an adult stranger prompts her to ask for openness. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-both-already-have-someone-in-mind",
+      "group": "05 Specific Person or General Openness",
+      "title": "Both Already Have Someone in Mind",
+      "direction": "Focus on “Both Already Have Someone in Mind.” Neither partner is negotiating purely in the abstract; both can name someone they may want to pursue. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g05-user-has-someone-in-mind-she-does-not",
+      "group": "05 Specific Person or General Openness",
+      "title": "{{user}} Has Someone in Mind, She Does Not",
+      "direction": "Focus on “{{user}} Has Someone in Mind, She Does Not.” Her proposal unexpectedly reveals that {{user}} already has a potential outside partner in mind; do not predefine her reaction. Keep motive transparency and existing actions distinct from what permission may be granted later."
+    },
+    {
+      "id": "g06-sex-allowed-dating-not-allowed",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Sex Allowed, Dating Not Allowed",
+      "direction": "Focus on “Sex Allowed, Dating Not Allowed.” Outside sex is permitted while conventional romantic dating is not. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-dating-allowed-sex-needs-extra-discussion",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Dating Allowed, Sex Needs Extra Discussion",
+      "direction": "Focus on “Dating Allowed, Sex Needs Extra Discussion.” Dates are allowed but sex requires a separate explicit check-in. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-kissing-allowed-sex-not-yet",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Kissing Allowed, Sex Not Yet",
+      "direction": "Focus on “Kissing Allowed, Sex Not Yet.” The initial trial permits kissing or making out with other adults but stops short of sex. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-sex-allowed-sleepovers-not-allowed",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Sex Allowed, Sleepovers Not Allowed",
+      "direction": "Focus on “Sex Allowed, Sleepovers Not Allowed.” Outside sex is permitted while overnight stays are not. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-sleepovers-allowed",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Sleepovers Allowed",
+      "direction": "Focus on “Sleepovers Allowed.” Overnight stays are explicitly allowed under agreed conditions. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-no-romantic-declarations",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "No Romantic Declarations",
+      "direction": "Focus on “No Romantic Declarations.” The couple permits outside intimacy but initially reserves explicit romantic commitment for their own relationship. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-romance-allowed-cohabitation-not-allowed",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Romance Allowed, Cohabitation Not Allowed",
+      "direction": "Focus on “Romance Allowed, Cohabitation Not Allowed.” Outside romantic relationships may grow, but shared housing requires separate negotiation. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-casual-first-romance-needs-renegotiation",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Casual First, Romance Needs Renegotiation",
+      "direction": "Focus on “Casual First, Romance Needs Renegotiation.” Outside connections begin casual and emotional escalation requires a new conversation. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-rules-on-actions-not-feelings",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Rules on Actions, Not Feelings",
+      "direction": "Focus on “Rules on Actions, Not Feelings.” They accept that feelings cannot simply be forbidden, so rules focus on behavior, time, disclosure, and commitments. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-emotional-monogamy-tested-by-reality",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Emotional Monogamy Tested by Reality",
+      "direction": "Focus on “Emotional Monogamy Tested by Reality.” A supposedly casual outside connection becomes emotionally significant and forces reconsideration of the rule. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-physical-intimacy-with-activity-limits",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Physical Intimacy With Activity Limits",
+      "direction": "Focus on “Physical Intimacy With Activity Limits.” The trial allows some forms of adult physical intimacy while excluding others; keep consent activity-specific and non-graphic. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-full-sexual-freedom-within-health-rules",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Full Sexual Freedom Within Health Rules",
+      "direction": "Focus on “Full Sexual Freedom Within Health Rules.” Consensual adult sex is broadly allowed provided agreed safer-sex and disclosure rules are followed. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-romantic-dates-without-sex",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Romantic Dates Without Sex",
+      "direction": "Focus on “Romantic Dates Without Sex.” They try dating other adults while keeping sex exclusive at first. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-friends-off-limits",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Friends Off-Limits",
+      "direction": "Focus on “Friends Off-Limits.” Existing friends are initially excluded as outside partners to protect the social network. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-exes-off-limits",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Exes Off-Limits",
+      "direction": "Focus on “Exes Off-Limits.” Former partners are initially excluded because of emotional history. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g06-coworkers-off-limits",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Coworkers Off-Limits",
+      "direction": "Focus on “Coworkers Off-Limits.” Coworkers are initially excluded to reduce professional complications. Distinguish sexual, romantic, emotional, sleepover, repeat-partner, and social-circle boundaries instead of treating them as one rule."
+    },
+    {
+      "id": "g07-tell-before-every-date",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Tell Before Every Date",
+      "direction": "Focus on “Tell Before Every Date.” Every outside date must be disclosed before it happens. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-tell-after-not-before",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Tell After, Not Before",
+      "direction": "Focus on “Tell After, Not Before.” Partners may act within standing rules without case-by-case permission but disclose afterward. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-general-awareness-only",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "General Awareness Only",
+      "direction": "Focus on “General Awareness Only.” They disclose that outside dating is occurring without reporting every meeting. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-full-calendar-transparency",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Full Calendar Transparency",
+      "direction": "Focus on “Full Calendar Transparency.” Outside dates are scheduled openly on a shared calendar or equivalent system. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-names-required",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Names Required",
+      "direction": "Focus on “Names Required.” Outside partners are identified by name. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-names-optional",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Names Optional",
+      "direction": "Focus on “Names Optional.” Outside partners may remain unnamed unless practical circumstances require identification. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-details-welcome",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Details Welcome",
+      "direction": "Focus on “Details Welcome.” Both partners currently want substantial post-date discussion while respecting outside partners’ privacy. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-basic-facts-only",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Basic Facts Only",
+      "direction": "Focus on “Basic Facts Only.” They share only practical facts such as who, when, whether risk status changed, and whether another date is planned. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-no-sexual-details",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "No Sexual Details",
+      "direction": "Focus on “No Sexual Details.” They agree not to share explicit sexual details. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-ask-before-sharing-intimate-details",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Ask Before Sharing Intimate Details",
+      "direction": "Focus on “Ask Before Sharing Intimate Details.” Consent from the outside partner matters before intimate information is shared. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-immediate-first-encounter-check-in",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Immediate First-Encounter Check-In",
+      "direction": "Focus on “Immediate First-Encounter Check-In.” The first outside sexual encounter is followed by a prompt relationship check-in. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-weekly-relationship-check-in",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Weekly Relationship Check-In",
+      "direction": "Focus on “Weekly Relationship Check-In.” They reserve recurring time to discuss jealousy, scheduling, rule changes, and emotional developments. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-disclose-developing-feelings",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Disclose Developing Feelings",
+      "direction": "Focus on “Disclose Developing Feelings.” Casual encounters may need little reporting, but meaningful romantic feelings must be disclosed. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-disclose-risk-changes",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Disclose Risk Changes",
+      "direction": "Focus on “Disclose Risk Changes.” Changes relevant to sexual health or pregnancy risk must be reported promptly. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-no-secret-partners",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "No Secret Partners",
+      "direction": "Focus on “No Secret Partners.” Outside partners must know that {{char}} or {{user}} is in a consensually open relationship. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g07-privacy-for-metamours",
+      "group": "07 Disclosure / Transparency Rules",
+      "title": "Privacy for Metamours",
+      "direction": "Focus on “Privacy for Metamours.” Transparency within the couple does not create entitlement to outside partners’ private messages, photos, or personal details. Make the information rule operational and preserve the privacy and autonomy of outside partners."
+    },
+    {
+      "id": "g08-no-veto-power",
+      "group": "08 Veto / Approval Rules",
+      "title": "No Veto Power",
+      "direction": "Focus on “No Veto Power.” Neither partner can unilaterally end the other’s outside relationship, though either may raise concerns or renegotiate the overall structure. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g08-mutual-veto-power",
+      "group": "08 Veto / Approval Rules",
+      "title": "Mutual Veto Power",
+      "direction": "Focus on “Mutual Veto Power.” Both have equal veto authority under defined conditions. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g08-veto-before-not-after-attachment",
+      "group": "08 Veto / Approval Rules",
+      "title": "Veto Before, Not After Attachment",
+      "direction": "Focus on “Veto Before, Not After Attachment.” Potential partners can be vetoed before dating begins, but established attachment changes the ethical stakes. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g08-specific-people-pre-vetoed",
+      "group": "08 Veto / Approval Rules",
+      "title": "Specific People Pre-Vetoed",
+      "direction": "Focus on “Specific People Pre-Vetoed.” Named adults or categories such as close friends, relatives, exes, or coworkers are agreed off-limits in advance. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g08-reason-required-for-veto",
+      "group": "08 Veto / Approval Rules",
+      "title": "Reason Required for Veto",
+      "direction": "Focus on “Reason Required for Veto.” A veto needs a concrete stated concern rather than merely unexplained discomfort. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g08-temporary-pause-instead-of-veto",
+      "group": "08 Veto / Approval Rules",
+      "title": "Temporary Pause Instead of Veto",
+      "direction": "Focus on “Temporary Pause Instead of Veto.” Either partner may request a short pause for discussion without permanently banning someone. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g08-emergency-stop-rule",
+      "group": "08 Veto / Approval Rules",
+      "title": "Emergency Stop Rule",
+      "direction": "Focus on “Emergency Stop Rule.” New outside activity can pause during a genuine relationship or health crisis. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g08-no-retroactive-veto",
+      "group": "08 Veto / Approval Rules",
+      "title": "No Retroactive Veto",
+      "direction": "Focus on “No Retroactive Veto.” A previously permitted encounter is not reclassified as wrongdoing solely because jealousy appears afterward. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g08-veto-becomes-controlling",
+      "group": "08 Veto / Approval Rules",
+      "title": "Veto Becomes Controlling",
+      "direction": "Focus on “Veto Becomes Controlling.” One partner uses vetoes so broadly that openness exists mostly in name. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g08-she-wants-veto-power-over-user-only",
+      "group": "08 Veto / Approval Rules",
+      "title": "She Wants Veto Power Over {{user}} Only",
+      "direction": "Focus on “She Wants Veto Power Over {{user}} Only.” She asks for unilateral veto authority over {{user}}’s partners while refusing equivalent control over hers. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g08-user-gets-veto-power-over-her-only",
+      "group": "08 Veto / Approval Rules",
+      "title": "{{user}} Gets Veto Power Over Her Only",
+      "direction": "Focus on “{{user}} Gets Veto Power Over Her Only.” She offers {{user}} unilateral veto authority over her outside partners without demanding the same. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g08-outside-partners-retain-agency",
+      "group": "08 Veto / Approval Rules",
+      "title": "Outside Partners Retain Agency",
+      "direction": "Focus on “Outside Partners Retain Agency.” No veto agreement between {{char}} and {{user}} can erase an outside adult’s autonomy, commitments, or consent. Treat vetoes as relationship rules to negotiate, not magical ownership over other adults."
+    },
+    {
+      "id": "g09-barrier-use-required",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Barrier Use Required",
+      "direction": "Focus on “Barrier Use Required.” Agreed barrier use is required with outside sexual partners, subject to each participant’s consent. Keep health agreements specific, consensual, and distinct from moral judgment about non-monogamy."
+    },
+    {
+      "id": "g09-regular-testing-schedule",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Regular Testing Schedule",
+      "direction": "Focus on “Regular Testing Schedule.” They agree on regular sexual-health testing appropriate to their activities and local medical guidance. Keep health agreements specific, consensual, and distinct from moral judgment about non-monogamy."
+    },
+    {
+      "id": "g09-discuss-before-changing-barrier-rules",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Discuss Before Changing Barrier Rules",
+      "direction": "Focus on “Discuss Before Changing Barrier Rules.” Changing safer-sex practices with a recurring partner requires updated information and discussion. Keep health agreements specific, consensual, and distinct from moral judgment about non-monogamy."
+    },
+    {
+      "id": "g09-contraception-rule",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Contraception Rule",
+      "direction": "Focus on “Contraception Rule.” They agree on contraception expectations for potentially reproductive sex while recognizing no method is perfect. Keep health agreements specific, consensual, and distinct from moral judgment about non-monogamy."
+    },
+    {
+      "id": "g09-pregnancy-risk-must-be-reported",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Pregnancy Risk Must Be Reported",
+      "direction": "Focus on “Pregnancy Risk Must Be Reported.” Any plausible pregnancy risk involving an outside partner must be disclosed promptly. Keep health agreements specific, consensual, and distinct from moral judgment about non-monogamy."
+    },
+    {
+      "id": "g09-higher-risk-practices-reserved",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Higher-Risk Practices Reserved",
+      "direction": "Focus on “Higher-Risk Practices Reserved.” Certain higher-risk sexual practices remain exclusive to the primary relationship unless renegotiated. Keep health agreements specific, consensual, and distinct from moral judgment about non-monogamy."
+    },
+    {
+      "id": "g09-health-rule-is-the-main-non-negotiable",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Health Rule Is the Main Non-Negotiable",
+      "direction": "Focus on “Health Rule Is the Main Non-Negotiable.” Most other rules are flexible, but sexual-health boundaries are strict commitments. Keep health agreements specific, consensual, and distinct from moral judgment about non-monogamy."
+    },
+    {
+      "id": "g09-outside-partner-wants-different-risk-rules",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Outside Partner Wants Different Risk Rules",
+      "direction": "Focus on “Outside Partner Wants Different Risk Rules.” A recurring outside partner requests different safer-sex practices, requiring fresh negotiation rather than assuming the couple’s rules control them. Keep health agreements specific, consensual, and distinct from moral judgment about non-monogamy."
+    },
+    {
+      "id": "g09-accidental-barrier-failure",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Accidental Barrier Failure",
+      "direction": "Focus on “Accidental Barrier Failure.” An agreed barrier fails during consensual sex; treat it as a practical risk issue rather than automatic betrayal if the rule itself was followed. Keep health agreements specific, consensual, and distinct from moral judgment about non-monogamy."
+    },
+    {
+      "id": "g09-intentional-health-rule-breach",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Intentional Health-Rule Breach",
+      "direction": "Focus on “Intentional Health-Rule Breach.” One partner knowingly violates an agreed safer-sex rule; permission for outside sex does not excuse the breach. Keep health agreements specific, consensual, and distinct from moral judgment about non-monogamy."
+    },
+    {
+      "id": "g10-both-expect-jealousy",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Both Expect Jealousy",
+      "direction": "Focus on “Both Expect Jealousy.” They enter the arrangement expecting some jealousy and plan to discuss it rather than treating it as proof of failure. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-she-thinks-she-wont-be-jealous",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "She Thinks She Won’t Be Jealous",
+      "direction": "Focus on “She Thinks She Won’t Be Jealous.” She confidently expects {{user}} dating others will not bother her, but reality may test that assumption. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-jealous-but-still-supports-it",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Jealous but Still Supports It",
+      "direction": "Focus on “Jealous but Still Supports It.” She experiences jealousy while still supporting the consensual agreement. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-jealousy-triggers-renegotiation",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Jealousy Triggers Renegotiation",
+      "direction": "Focus on “Jealousy Triggers Renegotiation.” A specific reaction reveals that one rule or expectation needs revision. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-compersion",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Compersion",
+      "direction": "Focus on “Compersion.” She genuinely enjoys seeing {{user}} happy with another consenting adult while still having her own needs and limits. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-mixed-jealousy-and-compersion",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Mixed Jealousy and Compersion",
+      "direction": "Focus on “Mixed Jealousy and Compersion.” She feels pleased for {{user}} and insecure at the same time. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-jealous-of-emotional-intimacy",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Jealous of Emotional Intimacy",
+      "direction": "Focus on “Jealous of Emotional Intimacy.” Outside sex bothers her less than emotional closeness. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-jealous-of-repeat-partners",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Jealous of Repeat Partners",
+      "direction": "Focus on “Jealous of Repeat Partners.” One-off encounters feel manageable while recurring partners feel more threatening. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-jealous-of-time-allocation",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Jealous of Time Allocation",
+      "direction": "Focus on “Jealous of Time Allocation.” The main trigger is time, attention, weekends, or holidays rather than sex. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-jealous-when-user-gets-more-interest",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Jealous When {{user}} Gets More Interest",
+      "direction": "Focus on “Jealous When {{user}} Gets More Interest.” Equal rules produce unequal dating success and she struggles with that difference. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-jealous-when-she-gets-more-interest",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Jealous When She Gets More Interest",
+      "direction": "Focus on “Jealous When She Gets More Interest.” She worries that her greater outside attention is making the arrangement feel uneven. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-unexpectedly-little-jealousy",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Unexpectedly Little Jealousy",
+      "direction": "Focus on “Unexpectedly Little Jealousy.” The first real outside experiences create less jealousy than either expected. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g10-jealousy-used-to-control",
+      "group": "10 Jealousy / Emotional Processing",
+      "title": "Jealousy Used to Control",
+      "direction": "Focus on “Jealousy Used to Control.” One partner starts converting every uncomfortable feeling into demands that the other stop, creating a conflict about boundaries and autonomy. Treat jealousy as information and emotion, not automatic authority or proof that the relationship structure has failed."
+    },
+    {
+      "id": "g11-no-dates-in-shared-home",
+      "group": "11 Time / Home / Scheduling",
+      "title": "No Dates in Shared Home",
+      "direction": "Focus on “No Dates in Shared Home.” Outside dates and sex do not happen in the home {{char}} and {{user}} share. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-shared-home-allowed-by-agreement",
+      "group": "11 Time / Home / Scheduling",
+      "title": "Shared Home Allowed by Agreement",
+      "direction": "Focus on “Shared Home Allowed by Agreement.” Outside partners may visit the shared home only under clearly negotiated conditions. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-bedroom-off-limits",
+      "group": "11 Time / Home / Scheduling",
+      "title": "Bedroom Off-Limits",
+      "direction": "Focus on “Bedroom Off-Limits.” The shared bedroom remains exclusive even if outside partners can enter the home. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-no-special-bedroom-rule",
+      "group": "11 Time / Home / Scheduling",
+      "title": "No Special Bedroom Rule",
+      "direction": "Focus on “No Special Bedroom Rule.” They do not attach exclusivity to a particular room or bed. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-no-cancelling-couple-plans",
+      "group": "11 Time / Home / Scheduling",
+      "title": "No Cancelling Couple Plans",
+      "direction": "Focus on “No Cancelling Couple Plans.” Pre-existing plans between {{char}} and {{user}} take priority over newly arranged outside dates. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-protected-couple-night",
+      "group": "11 Time / Home / Scheduling",
+      "title": "Protected Couple Night",
+      "direction": "Focus on “Protected Couple Night.” They reserve recurring time that outside dating normally cannot displace. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-equal-time-budget",
+      "group": "11 Time / Home / Scheduling",
+      "title": "Equal Time Budget",
+      "direction": "Focus on “Equal Time Budget.” They attempt to keep outside dating time roughly balanced. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-no-scorekeeping",
+      "group": "11 Time / Home / Scheduling",
+      "title": "No Scorekeeping",
+      "direction": "Focus on “No Scorekeeping.” They reject one-for-one accounting and focus on equal freedom rather than matching outcomes. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-overnights-need-notice",
+      "group": "11 Time / Home / Scheduling",
+      "title": "Overnights Need Notice",
+      "direction": "Focus on “Overnights Need Notice.” Overnight stays are allowed but require advance notice. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-travel-requires-discussion",
+      "group": "11 Time / Home / Scheduling",
+      "title": "Travel Requires Discussion",
+      "direction": "Focus on “Travel Requires Discussion.” Trips or multi-day stays with outside partners require separate negotiation. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-holidays-reserved-for-primary-couple",
+      "group": "11 Time / Home / Scheduling",
+      "title": "Holidays Reserved for Primary Couple",
+      "direction": "Focus on “Holidays Reserved for Primary Couple.” Major holidays remain reserved for {{char}} and {{user}} initially. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-holidays-can-be-shared-or-alternated",
+      "group": "11 Time / Home / Scheduling",
+      "title": "Holidays Can Be Shared or Alternated",
+      "direction": "Focus on “Holidays Can Be Shared or Alternated.” Important dates may be divided among multiple relationships if all involved consent. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-last-minute-dates-allowed",
+      "group": "11 Time / Home / Scheduling",
+      "title": "Last-Minute Dates Allowed",
+      "direction": "Focus on “Last-Minute Dates Allowed.” Spontaneous outside dates are permitted as long as existing commitments are respected. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g11-scheduling-is-the-real-problem",
+      "group": "11 Time / Home / Scheduling",
+      "title": "Scheduling Is the Real Problem",
+      "direction": "Focus on “Scheduling Is the Real Problem.” The arrangement works emotionally but becomes difficult because of work, household duties, transport, or limited free time. Make logistics part of the relationship design rather than assuming time and shared space solve themselves."
+    },
+    {
+      "id": "g12-one-month-trial",
+      "group": "12 Trial / Transition Models",
+      "title": "One-Month Trial",
+      "direction": "Focus on “One-Month Trial.” They consider a defined one-month experiment followed by review. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-one-encounter-trial-each",
+      "group": "12 Trial / Transition Models",
+      "title": "One-Encounter Trial Each",
+      "direction": "Focus on “One-Encounter Trial Each.” Each partner may have one agreed outside encounter before reassessment. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-her-first-then-review",
+      "group": "12 Trial / Transition Models",
+      "title": "Her First, Then Review",
+      "direction": "Focus on “Her First, Then Review.” {{char}} has the first outside encounter and they review before deciding anything further. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-user-first-then-review",
+      "group": "12 Trial / Transition Models",
+      "title": "{{user}} First, Then Review",
+      "direction": "Focus on “{{user}} First, Then Review.” She proposes {{user}} try an outside encounter first, with his choice left open. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-dating-app-trial",
+      "group": "12 Trial / Transition Models",
+      "title": "Dating-App Trial",
+      "direction": "Focus on “Dating-App Trial.” They begin only by making profiles or browsing before deciding whether to meet anyone. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-flirting-only-trial",
+      "group": "12 Trial / Transition Models",
+      "title": "Flirting-Only Trial",
+      "direction": "Focus on “Flirting-Only Trial.” The first stage permits consensual flirting but no dates or sex. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-dating-only-trial",
+      "group": "12 Trial / Transition Models",
+      "title": "Dating-Only Trial",
+      "direction": "Focus on “Dating-Only Trial.” Dates are allowed but sex is not during the first stage. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-travel-only-trial",
+      "group": "12 Trial / Transition Models",
+      "title": "Travel-Only Trial",
+      "direction": "Focus on “Travel-Only Trial.” They test openness only during a planned period apart. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-specific-man-trial",
+      "group": "12 Trial / Transition Models",
+      "title": "Specific-Man Trial",
+      "direction": "Focus on “Specific-Man Trial.” The first experiment concerns the one adult man who motivated the proposal. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-open-ended-with-mandatory-review",
+      "group": "12 Trial / Transition Models",
+      "title": "Open-Ended With Mandatory Review",
+      "direction": "Focus on “Open-Ended With Mandatory Review.” There is no hard expiry, but review is required after the first significant outside experience. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-pause-anytime-for-discussion",
+      "group": "12 Trial / Transition Models",
+      "title": "Pause Anytime for Discussion",
+      "direction": "Focus on “Pause Anytime for Discussion.” Either partner can request a temporary pause on new outside activity for review. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-trial-works-better-than-expected",
+      "group": "12 Trial / Transition Models",
+      "title": "Trial Works Better Than Expected",
+      "direction": "Focus on “Trial Works Better Than Expected.” Early experience makes the arrangement feel more sustainable than expected without making permanence automatic. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-trial-closes-again",
+      "group": "12 Trial / Transition Models",
+      "title": "Trial Closes Again",
+      "direction": "Focus on “Trial Closes Again.” The experiment is consensual but one or both discover they prefer monogamy. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g12-trial-reveals-different-preferences",
+      "group": "12 Trial / Transition Models",
+      "title": "Trial Reveals Different Preferences",
+      "direction": "Focus on “Trial Reveals Different Preferences.” One likes casual openness while the other wants polyamory, creating a real compatibility question. Preserve the temporary or transitional nature of the arrangement and keep the later decision open."
+    },
+    {
+      "id": "g13-she-brings-it-up-from-nowhere",
+      "group": "13 Strong Roleplay Openings",
+      "title": "She Brings It Up From Nowhere",
+      "direction": "Focus on “She Brings It Up From Nowhere.” Open with {{char}} introducing the idea without first revealing a specific target. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-she-says-there-is-someone",
+      "group": "13 Strong Roleplay Openings",
+      "title": "She Says There Is Someone",
+      "direction": "Focus on “She Says There Is Someone.” Open with her admitting that one specific adult is part of why she wants to discuss openness. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-she-has-written-proposed-rules",
+      "group": "13 Strong Roleplay Openings",
+      "title": "She Has Written Proposed Rules",
+      "direction": "Focus on “She Has Written Proposed Rules.” Open with her presenting a thoughtful draft rule set, making negotiation itself the scene. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-she-asks-what-open-means-to-user",
+      "group": "13 Strong Roleplay Openings",
+      "title": "She Asks What “Open” Means to {{user}}",
+      "direction": "Focus on “She Asks What “Open” Means to {{user}}.” Open with an exploratory question rather than a fixed proposal. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-she-wants-a-trial-not-permanent-change",
+      "group": "13 Strong Roleplay Openings",
+      "title": "She Wants a Trial, Not Permanent Change",
+      "direction": "Focus on “She Wants a Trial, Not Permanent Change.” Open with a limited experiment because she is uncertain how either partner will feel. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-friends-open-relationship-sparks-it",
+      "group": "13 Strong Roleplay Openings",
+      "title": "Friends’ Open Relationship Sparks It",
+      "direction": "Focus on “Friends’ Open Relationship Sparks It.” Discussion of another adult couple’s arrangement prompts her to ask whether {{user}} has considered it. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-fantasy-conversation-turns-serious",
+      "group": "13 Strong Roleplay Openings",
+      "title": "Fantasy Conversation Turns Serious",
+      "direction": "Focus on “Fantasy Conversation Turns Serious.” Open immediately after playful hypothetical talk becomes sincere negotiation. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-she-has-been-asked-out",
+      "group": "13 Strong Roleplay Openings",
+      "title": "She Has Been Asked Out",
+      "direction": "Focus on “She Has Been Asked Out.” Open after another adult asks her on a date and she talks to {{user}} before answering. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-she-wants-to-download-a-dating-app",
+      "group": "13 Strong Roleplay Openings",
+      "title": "She Wants to Download a Dating App",
+      "direction": "Focus on “She Wants to Download a Dating App.” Open before she creates a profile, asking what would actually be acceptable. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-she-already-downloaded-the-app",
+      "group": "13 Strong Roleplay Openings",
+      "title": "She Already Downloaded the App",
+      "direction": "Focus on “She Already Downloaded the App.” Open after she created a profile but has not met anyone; define whether profile creation itself crossed an existing boundary. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-user-previously-suggested-it",
+      "group": "13 Strong Roleplay Openings",
+      "title": "{{user}} Previously Suggested It",
+      "direction": "Focus on “{{user}} Previously Suggested It.” Open when she returns to a past suggestion from {{user}} with a concrete proposal of her own. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-one-exception-raises-a-bigger-question",
+      "group": "13 Strong Roleplay Openings",
+      "title": "One Exception Raises a Bigger Question",
+      "direction": "Focus on “One Exception Raises a Bigger Question.” Open after a previously agreed one-off exception creates the question of whether exceptions should become a structure. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-affair-exposed-future-openness-proposed",
+      "group": "13 Strong Roleplay Openings",
+      "title": "Affair Exposed, Future Openness Proposed",
+      "direction": "Focus on “Affair Exposed, Future Openness Proposed.” Open after a boundary violation is revealed and she proposes non-monogamy going forward; future consent does not erase the earlier breach. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g13-already-open-rules-need-updating",
+      "group": "13 Strong Roleplay Openings",
+      "title": "Already Open, Rules Need Updating",
+      "direction": "Focus on “Already Open, Rules Need Updating.” Open during an established arrangement when a new situation exposes ambiguity in the current rules. Start close enough to the negotiation that {user} has meaningful choices immediately."
+    },
+    {
+      "id": "g14-casual-vs-polyamory",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Casual vs Polyamory",
+      "direction": "Focus on “Casual vs Polyamory.” They agree monogamy may not fit but disagree over casual sex versus meaningful outside romance. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-transparency-vs-privacy",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Transparency vs Privacy",
+      "direction": "Focus on “Transparency vs Privacy.” They disagree over how much information should be exchanged about outside relationships. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-vetoes-vs-no-vetoes",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Vetoes vs No Vetoes",
+      "direction": "Focus on “Vetoes vs No Vetoes.” They disagree over unilateral veto power. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-friends-off-limits-dispute",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Friends Off-Limits Dispute",
+      "direction": "Focus on “Friends Off-Limits Dispute.” They disagree over whether existing friends can become outside partners. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-exes-off-limits-dispute",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Exes Off-Limits Dispute",
+      "direction": "Focus on “Exes Off-Limits Dispute.” They disagree over whether former partners are eligible. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-coworkers-off-limits-dispute",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Coworkers Off-Limits Dispute",
+      "direction": "Focus on “Coworkers Off-Limits Dispute.” They disagree over workplace partners. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-repeat-partners-dispute",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Repeat Partners Dispute",
+      "direction": "Focus on “Repeat Partners Dispute.” One sees repeat partners as emotionally risky while the other prefers familiarity and trust. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-overnight-stay-dispute",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Overnight-Stay Dispute",
+      "direction": "Focus on “Overnight-Stay Dispute.” They disagree over sleepovers. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-shared-home-dispute",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Shared-Home Dispute",
+      "direction": "Focus on “Shared-Home Dispute.” They disagree over whether outside partners may enter the shared home. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-equal-number-of-dates-dispute",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Equal Number of Dates Dispute",
+      "direction": "Focus on “Equal Number of Dates Dispute.” One wants numerical parity while the other defines fairness as equal opportunity. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-permission-every-time-dispute",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Permission Every Time Dispute",
+      "direction": "Focus on “Permission Every Time Dispute.” They disagree over case-by-case approval versus standing rules. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-mid-date-rule-change",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Mid-Date Rule Change",
+      "direction": "Focus on “Mid-Date Rule Change.” Jealousy appears during an already-permitted date and one partner wants to revoke permission immediately. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-rule-too-vague",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Rule Too Vague",
+      "direction": "Focus on “Rule Too Vague.” A phrase such as “nothing serious” proves too ambiguous once a real person is involved. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-rules-cover-sex-not-feelings",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Rules Cover Sex, Not Feelings",
+      "direction": "Focus on “Rules Cover Sex, Not Feelings.” The agreement is precise about physical activity but silent about emotional attachment. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g14-rules-ignore-metamours",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "Rules Ignore Metamours",
+      "direction": "Focus on “Rules Ignore Metamours.” They realize some couple-centered rules treat outside partners as disposable or voiceless. Preserve the original agreement, identify the exact ambiguity or disagreement, and leave the renegotiated outcome open."
+    },
+    {
+      "id": "g15-arrangement-works-long-term",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Arrangement Works Long-Term",
+      "direction": "Focus on “Arrangement Works Long-Term.” The open structure becomes stable without implying it is conflict-free. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-closes-again-mutually",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Closes Again Mutually",
+      "direction": "Focus on “Closes Again Mutually.” Both later choose to return to monogamy. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-one-wants-to-close-one-wants-to-stay-open",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "One Wants to Close, One Wants to Stay Open",
+      "direction": "Focus on “One Wants to Close, One Wants to Stay Open.” Real experience reveals a serious preference mismatch. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-casual-openness-becomes-polyamory",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Casual Openness Becomes Polyamory",
+      "direction": "Focus on “Casual Openness Becomes Polyamory.” An outside relationship develops meaningful romantic attachment and requires renegotiation. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-broad-open-narrows-to-one-exception",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Broad Open Narrows to One Exception",
+      "direction": "Focus on “Broad Open Narrows to One Exception.” General openness proves too complicated, but one specific outside relationship remains acceptable. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-one-exception-broadens-to-equality",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "One Exception Broadens to Equality",
+      "direction": "Focus on “One Exception Broadens to Equality.” A person-specific exception leads to discussion of equal outside freedom for both partners. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-settles-into-monogamish",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Settles Into Monogamish",
+      "direction": "Focus on “Settles Into Monogamish.” The couple keeps rare agreed exceptions rather than regular dating. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-one-stops-dating-others-voluntarily",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "One Stops Dating Others Voluntarily",
+      "direction": "Focus on “One Stops Dating Others Voluntarily.” One partner loses interest in outside dating while still supporting the agreed freedom of the other. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-both-have-regular-outside-partners",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Both Have Regular Outside Partners",
+      "direction": "Focus on “Both Have Regular Outside Partners.” The structure becomes a network of recurring adult relationships with negotiated scheduling. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-jealousy-improves-with-experience",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Jealousy Improves With Experience",
+      "direction": "Focus on “Jealousy Improves With Experience.” Jealousy remains real but becomes easier to understand and manage. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-jealousy-gets-worse",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Jealousy Gets Worse",
+      "direction": "Focus on “Jealousy Gets Worse.” Reality is emotionally harder than fantasy and forces reconsideration. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-opening-exposes-existing-problems",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Opening Exposes Existing Problems",
+      "direction": "Focus on “Opening Exposes Existing Problems.” The arrangement makes pre-existing trust or communication issues harder to ignore without being the sole cause. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-opening-is-not-the-problem",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Opening Is Not the Problem",
+      "direction": "Focus on “Opening Is Not the Problem.” The couple has unrelated conflict while the consensual open arrangement itself functions well. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-relationship-structure-incompatibility",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Relationship-Structure Incompatibility",
+      "direction": "Focus on “Relationship-Structure Incompatibility.” A later route may reveal fundamentally incompatible preferences about monogamy and non-monogamy; do not pre-write {{user}}’s final choice. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-outside-relationship-ends-primary-remains",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Outside Relationship Ends, Primary Remains",
+      "direction": "Focus on “Outside Relationship Ends, Primary Remains.” An outside connection ends without automatically closing the relationship. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g15-primary-ends-outside-continues",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Primary Ends, Outside Continues",
+      "direction": "Focus on “Primary Ends, Outside Continues.” A later possible trajectory exists where the original partnership ends while an outside relationship remains; do not predetermine this at proposal stage. Treat this as a possible trajectory or later-stage variant, not a guaranteed ending unless the preset is intentionally used for aftermath."
+    },
+    {
+      "id": "g16-retroactive-affair-justification",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Retroactive Affair Justification",
+      "direction": "Focus on “Retroactive Affair Justification.” She proposes openness after cheating has begun and tries to treat future permission as if it erases the earlier violation. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-specific-man-ultimatum",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Specific-Man Ultimatum",
+      "direction": "Focus on “Specific-Man Ultimatum.” She effectively says she will pursue one adult man regardless and labels the demand “open”; frame this as coercive pressure, not consensual non-monogamy. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-rules-for-thee-not-for-me",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Rules for Thee, Not for Me",
+      "direction": "Focus on “Rules for Thee, Not for Me.” She wants broad freedom for herself but rejects equivalent freedom for {{user}} without mutual agreement. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-moves-the-goalposts",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Moves the Goalposts",
+      "direction": "Focus on “Moves the Goalposts.” She repeatedly changes rules after {{user}} follows them so his outside involvement remains effectively impossible. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-secret-partner-outside-the-rules",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Secret Partner Outside the Rules",
+      "direction": "Focus on “Secret Partner Outside the Rules.” Even within an open relationship, she conceals a partner or activity that violates the agreed structure. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-vetoes-every-realistic-partner",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Vetoes Every Realistic Partner",
+      "direction": "Focus on “Vetoes Every Realistic Partner.” She technically grants {{user}} freedom but vetoes everyone he might realistically date. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-withholds-required-risk-information",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Withholds Required Risk Information",
+      "direction": "Focus on “Withholds Required Risk Information.” She violates an agreed sexual-health disclosure requirement. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-outside-partner-was-misled",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Outside Partner Was Misled",
+      "direction": "Focus on “Outside Partner Was Misled.” An outside adult was falsely told the relationship was separated, monogamous, or unrestricted; their informed consent matters too. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-pressure-disguised-as-progressiveness",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Pressure Disguised as Progressiveness",
+      "direction": "Focus on “Pressure Disguised as Progressiveness.” She implies {{user}} is insecure or unenlightened if he does not agree; treat this as pressure rather than proof he should consent. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-agreement-under-fear-of-losing-her",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Agreement Under Fear of Losing Her",
+      "direction": "Focus on “Agreement Under Fear of Losing Her.” {{user}} may feel pressured to agree because he fears the relationship will end; do not write his consent as enthusiastic or settled. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-one-partner-never-wanted-it",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "One Partner Never Wanted It",
+      "direction": "Focus on “One Partner Never Wanted It.” A later route may reveal that one partner agreed reluctantly and suppressed discomfort; do not assume this in good-faith scenarios unless selected. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-opening-used-to-avoid-breakup",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Opening Used to Avoid Breakup",
+      "direction": "Focus on “Opening Used to Avoid Breakup.” The proposal is partly an attempt to avoid confronting deeper incompatibility. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g16-rule-breaking-becomes-a-pattern",
+      "group": "16 Bad-Faith / Boundary-Failure Variants",
+      "title": "Rule-Breaking Becomes a Pattern",
+      "direction": "Focus on “Rule-Breaking Becomes a Pattern.” Repeated violations show that the problem is unwillingness to honor negotiated agreements rather than non-monogamy itself. Preserve the distinction between consensual structure and coercion, deception, hypocrisy, or boundary violation."
+    },
+    {
+      "id": "g17-bridge-to-she-wants-him",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to She Wants Him",
+      "direction": "Focus on “Bridge to She Wants Him.” The proposal is driven by {{char}}’s meaningful attraction to one specific adult man; openness is not yet agreed. Use the cross-link only when the selected direction naturally reaches that engine; do not force it."
+    },
+    {
+      "id": "g17-bridge-to-ntr-report",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to NTR Report",
+      "direction": "Focus on “Bridge to NTR Report.” A first permitted outside encounter occurs and a debrief/report becomes the next engine. Use the cross-link only when the selected direction naturally reaches that engine; do not force it."
+    },
+    {
+      "id": "g17-bridge-to-turn-you-into-a-cuck",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Turn You Into a Cuck",
+      "direction": "Focus on “Bridge to Turn You Into a Cuck.” {{char}} specifically wants an asymmetrical cuckold-style arrangement rather than general reciprocal openness; do not assume {{user}} agrees. Use the cross-link only when the selected direction naturally reaches that engine; do not force it."
+    },
+    {
+      "id": "g17-bridge-to-my-boyfriend-wants-this",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to My Boyfriend Wants This",
+      "direction": "Focus on “Bridge to My Boyfriend Wants This.” {{user}} originally suggested or actively wants the consensual experiment; preserve {{char}}’s independent limits and desires. Use the cross-link only when the selected direction naturally reaches that engine; do not force it."
+    },
+    {
+      "id": "g17-bridge-to-she-got-pregnant-later",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to She Got Pregnant — Later",
+      "direction": "Focus on “Bridge to She Got Pregnant — Later.” An outside sexual relationship could later lead to pregnancy, but only with realistic timing and evidence. Use the cross-link only when the selected direction naturally reaches that engine; do not force it."
+    },
+    {
+      "id": "g17-bridge-to-you-got-her-pregnant",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to You Got Her Pregnant",
+      "direction": "Focus on “Bridge to You Got Her Pregnant.” Reciprocal openness could later result in {{user}} impregnating another adult woman; keep it a future possibility. Use the cross-link only when the selected direction naturally reaches that engine; do not force it."
+    },
+    {
+      "id": "g17-bridge-to-crossed-couples",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Crossed Couples",
+      "direction": "Focus on “Bridge to Crossed Couples.” Two adult couples negotiate reciprocal outside pairings or swapping within explicit consent. Use the cross-link only when the selected direction naturally reaches that engine; do not force it."
+    },
+    {
+      "id": "g17-bridge-to-under-your-nose",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Under Your Nose",
+      "direction": "Focus on “Bridge to Under Your Nose.” One partner secretly violates even an open agreement, creating hidden activity outside the consensual rules. Use the cross-link only when the selected direction naturally reaches that engine; do not force it."
+    },
+    {
+      "id": "g17-bridge-to-he-wants-your-girl",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to He Wants Your Girl",
+      "direction": "Focus on “Bridge to He Wants Your Girl.” A specific outside man actively pursues {{char}}, but the open agreement does not erase her agency or its rules. Use the cross-link only when the selected direction naturally reaches that engine; do not force it."
+    },
+    {
+      "id": "g17-no-escalation-needed",
+      "group": "17 Cross-Series Bridges",
+      "title": "No Escalation Needed",
+      "direction": "Focus on “No Escalation Needed.” Keep the entire roleplay centered on designing and negotiating the relationship structure before any outside encounter happens. Use the cross-link only when the selected direction naturally reaches that engine; do not force it."
+    },
+    {
+      "id": "g06-raw-sex-allowed-with-outside-partners",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Raw Sex Allowed With Outside Partners",
+      "direction": "The proposed or existing open arrangement explicitly allows unprotected sex with outside partners. Vary whether this is a blanket rule, limited to specific people, or only after testing; how pregnancy and STI risk are addressed; and how {{char}} presents the request or the existing practice to {{user}}."
+    },
+    {
+      "id": "g06-creampie-permission-negotiated",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Creampie Permission Negotiated",
+      "direction": "{{char}} wants (or already has) a specific negotiated permission for outside partners to finish inside her. This is more precise than a general ‘sex is allowed’ rule. Vary whether the permission is for one man, any man, or under conditions; how she frames the desire; and what reassurances or rules she offers {{user}}."
+    },
+    {
+      "id": "g06-breeding-kink-inside-the-open-rules",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Breeding Kink Inside the Open Rules",
+      "direction": "Within a consensual open or ENM framework, {{char}} wants the arrangement to include deliberate breeding play or real pregnancy risk with an outside partner. Vary whether this is framed as kink only, as a possible path to a child, or as something she is still clarifying; keep mutual consent central."
+    },
+    {
+      "id": "g06-no-condoms-with-one-specific-man",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "No Condoms With One Specific Man",
+      "direction": "The open rules are otherwise careful about protection, but {{char}} is asking for (or has already negotiated) an exception: one particular outside man may take her raw. Vary why that man is the exception, how the risk is managed, and how the asymmetry is justified to {{user}}."
+    },
+    {
+      "id": "g09-safer-sex-rules-she-wants-to-relax",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Safer-Sex Rules She Wants to Relax",
+      "direction": "The couple already has safer-sex rules for outside partners. {{char}} wants to loosen them — less barrier use, more internal finishes, or higher pregnancy risk acceptance. Vary her reasons, how she presents the change, and whether the request is tied to a specific person or to general preference."
+    },
+    {
+      "id": "g09-pregnancy-is-an-accepted-risk",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "Pregnancy Is an Accepted Risk",
+      "direction": "Under the proposed or existing open structure, pregnancy by an outside partner is treated as an accepted possible outcome rather than a catastrophe to be avoided at all costs. Vary how explicitly this is stated, what happens if it occurs, and how parenting or paternity would be handled."
+    },
+    {
+      "id": "g09-she-wants-to-try-for-pregnancy-with-him",
+      "group": "09 Safer Sex / Pregnancy Risk",
+      "title": "She Wants to Try for Pregnancy With Him",
+      "direction": "{{char}} wants the open arrangement to include deliberate attempts to become pregnant by a specific outside man (or by outside partners in general). This is intentional conception, not accidental risk. Vary motive, the other man’s role, and how she negotiates it with {{user}}."
+    },
+    {
+      "id": "g07-she-will-report-every-creampie",
+      "group": "07 Disclosure / Information Rules",
+      "title": "She Will Report Every Creampie",
+      "direction": "The disclosure rules include that {{char}} must tell {{user}} whenever an outside partner finishes inside her. Vary timing (immediate, same day, weekly), level of detail, and whether the rule was her idea, his request, or a mutual compromise."
+    },
+    {
+      "id": "g07-explicit-play-by-play-required",
+      "group": "07 Disclosure / Information Rules",
+      "title": "Explicit Play-by-Play Required",
+      "direction": "The open arrangement requires {{char}} to give {{user}} detailed, sexually explicit reports of outside encounters rather than vague summaries. Vary how much detail is expected, whether recordings or photos are part of it, and how she feels about the reporting obligation."
+    },
+    {
+      "id": "g07-she-sends-proof-after-each-encounter",
+      "group": "07 Disclosure / Information Rules",
+      "title": "She Sends Proof After Each Encounter",
+      "direction": "Part of the negotiated structure is that {{char}} sends {{user}} evidence after outside sex — photos, short videos, or messages confirming what happened (including internal finishes if relevant). Vary consent of the other people depicted, frequency, and whether the proof is for reassurance, arousal, or both."
+    },
+    {
+      "id": "g04-one-penis-policy-with-creampie-exception",
+      "group": "04 Relationship Structure",
+      "title": "One-Penis Policy With Creampie Exception",
+      "direction": "The structure is a one-penis policy ({{user}} is the only male partner for penetrative sex) except for a negotiated exception that allows one outside man to have penetrative sex and finish inside her. Vary how the exception was chosen and what emotional boundaries still apply."
+    },
+    {
+      "id": "g04-hotwife-style-with-full-internal-access",
+      "group": "04 Relationship Structure",
+      "title": "Hotwife Style With Full Internal Access",
+      "direction": "The proposed structure is hotwife / cuckold-adjacent: {{char}} may have outside male partners, and finishing inside her is allowed or encouraged. Vary how much {{user}} is involved in choosing partners, watching, or receiving reports, and keep the arrangement consensual rather than coercive."
+    },
+    {
+      "id": "g03-she-wants-asymmetry-he-stays-monogamous",
+      "group": "03 Symmetry / Asymmetry",
+      "title": "She Wants Asymmetry — He Stays Monogamous",
+      "direction": "{{char}} is proposing that she may have outside sexual partners (including unprotected or internal finishes) while {{user}} remains exclusive to her. Vary her justification, how she addresses fairness, and whether the asymmetry is temporary or intended as permanent."
+    },
+    {
+      "id": "g02-she-wants-open-so-she-can-be-filled-by-others",
+      "group": "02 Why She Wants to Open",
+      "title": "She Wants Open So She Can Be Filled by Others",
+      "direction": "A primary stated or private motive for opening the relationship is {{char}}’s desire to have other men finish inside her. The sexual goal is specific. Vary how directly she admits this, whether she softens it with other reasons, and how {{user}} is invited to respond."
+    },
+    {
+      "id": "g02-specific-man-she-already-wants-raw",
+      "group": "02 Why She Wants to Open",
+      "title": "Specific Man She Already Wants Raw",
+      "direction": "{{char}} is motivated by one particular adult man and already knows she wants him without protection. The open-relationship proposal is the path to making that possible with {{user}}’s knowledge. Vary how much she has already interacted with the man and how honest she is about the intensity of the desire."
+    },
+    {
+      "id": "g13-she-proposes-the-rules-while-aroused",
+      "group": "13 Strong Roleplay Openings",
+      "title": "She Proposes the Rules While Aroused",
+      "direction": "Open the scene with {{char}} negotiating or proposing open-relationship rules (including explicit sexual permissions such as raw sex or creampies) while she is turned on — during sex, right after, or while touching herself. The arousal is part of the negotiation energy. Leave {{user}}’s answers open."
+    },
+    {
+      "id": "g13-she-asks-for-creampie-permission-in-bed",
+      "group": "13 Strong Roleplay Openings",
+      "title": "She Asks for Creampie Permission in Bed",
+      "direction": "During or immediately after sex with {{user}}, {{char}} asks for permission for an outside man to finish inside her. The timing makes the request charged and specific. Vary how much detail she gives about who and when, and keep {{user}}’s response undecided."
+    },
+    {
+      "id": "g14-she-broke-the-protection-rule",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "She Broke the Protection Rule",
+      "direction": "Outside sex was permitted, but protection was required. {{char}} has already had unprotected sex or allowed an internal finish in violation of that rule. The scene is the disclosure or the discovery. Vary whether she is apologetic, defiant, or asking to change the rule after the fact."
+    },
+    {
+      "id": "g14-she-wants-to-renegotiate-after-the-first-creampie",
+      "group": "14 Rule Conflicts / Renegotiation",
+      "title": "She Wants to Renegotiate After the First Creampie",
+      "direction": "An outside encounter that stayed within the original rules still changed something for {{char}}. After the first time an outside man finished inside her, she wants to renegotiate — more freedom, less reporting, or the opposite. Vary what she now wants and how she approaches {{user}}."
+    },
+    {
+      "id": "g15-open-relationship-leads-to-pregnancy",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "Open Relationship Leads to Pregnancy",
+      "direction": "The open arrangement is already in place and functioning when {{char}} becomes pregnant by an outside partner (with or without prior acceptance of that risk). Focus on how the existing structure handles the pregnancy rather than treating it as pure betrayal. Vary the outside man’s expected role and the couple’s options."
+    },
+    {
+      "id": "g15-they-decide-he-will-father-a-child",
+      "group": "15 Possible Evolution / Outcomes",
+      "title": "They Decide He Will Father a Child",
+      "direction": "Within a stable open or ENM relationship, {{char}} and {{user}} mutually decide that a specific outside man will deliberately father her child. Vary motive, the man’s involvement afterward, and how the decision is reached and documented between the adults."
+    },
+    {
+      "id": "g06-she-wants-group-sex-with-internal-finishes",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "She Wants Group Sex With Internal Finishes",
+      "direction": "The open proposal includes group or multi-partner sex in which more than one man may finish inside her. Vary whether {{user}} is expected to participate, watch, or stay home, and how paternity risk and disclosure are handled if that becomes relevant."
+    },
+    {
+      "id": "g07-live-updates-during-the-encounter",
+      "group": "07 Disclosure / Information Rules",
+      "title": "Live Updates During the Encounter",
+      "direction": "The negotiated rules require {{char}} to send {{user}} live or near-live updates while she is with the outside partner — texts, photos, or short clips, including when the man finishes inside her. Vary how practical this is, the other man’s consent to being reported on, and the emotional effect on both partners."
+    },
+    {
+      "id": "g16-she-presents-a-written-raw-sex-addendum",
+      "group": "13 Strong Roleplay Openings",
+      "title": "She Presents a Written Raw-Sex Addendum",
+      "direction": "{{char}} comes to {{user}} with a written or clearly prepared addendum to their open-relationship rules that specifically addresses unprotected sex and internal finishes. The formality of the request is part of the scene. Vary tone (practical, erotic, nervous) and leave his response open."
+    },
+    {
+      "id": "g06-overnight-stays-with-no-protection-required",
+      "group": "06 Sex / Dating / Emotional Boundaries",
+      "title": "Overnight Stays With No Protection Required",
+      "direction": "The structure allows overnight or multi-day stays with outside partners and does not require barrier protection during those stays. Vary how pregnancy and STI risk are discussed, whether testing schedules exist, and how {{char}} justifies the combination of time and raw access."
+    }
+  ],
+  "sections": [
+    {
+      "id": "consent-to-structure",
+      "label": "Consent to the relationship structure",
+      "content": "Opening a relationship requires an actual agreement. {{char}} may propose, argue, negotiate, or explain what she wants, but {{user}}’s consent cannot be assumed. A later agreement also does not retroactively authorize earlier cheating."
+    },
+    {
+      "id": "symmetry-vs-fairness",
+      "label": "Symmetry, asymmetry and fairness",
+      "content": "Equal rules and equal outcomes are different. A reciprocal arrangement may produce very unequal dating success, while an intentionally asymmetric arrangement can still be consensual if both adults genuinely prefer it. Preserve hypocrisy when someone demands freedoms they deny the other without mutual agreement."
+    },
+    {
+      "id": "outside-partner-agency",
+      "label": "Outside partners are people, not permissions",
+      "content": "An outside partner’s consent, privacy, safer-sex boundaries, emotional goals, and existing relationships matter independently of what {{char}} and {{user}} agree between themselves. Couple rules cannot grant access to another person or authorize sharing that person’s private information."
+    },
+    {
+      "id": "rules-need-specificity",
+      "label": "Rules must be specific enough to use",
+      "content": "Separate sex, dating, romance, repeat partners, sleepovers, home access, disclosure, safer sex, travel, time allocation, and emotional escalation. Vague rules such as “nothing serious” can deliberately become a source of later conflict."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Use the narrowest relevant Direction Preset. Presets from different groups can be combined through one short visible Additional Direction—for example: Genuinely Egalitarian + Emotionally Monogamous / Sexually Open + Tell Before Every Date + No Dates in Shared Home, or Specific-Man Motivated + One-Specific-Person Exception + One-Month Trial."
+    }
+  ],
+  "raw_prompt": "Prioritise believable adult negotiation, clear consent to the relationship structure, specific usable rules, outside-partner agency, meaningful player choice, and genuine scenario variety. Preserve the selected Direction Preset and do not decide {{user}}’s consent or reaction."
 }
