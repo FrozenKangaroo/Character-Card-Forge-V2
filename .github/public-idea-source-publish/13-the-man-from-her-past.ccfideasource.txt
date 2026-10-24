@@ -3,6 +3,1797 @@
   "schema_version": 1,
   "id": "bible-i-13-the-man-from-her-past",
   "title": "The Man From Her Past",
+  "description": "Reusable adult reunion engine in which {{user}}’s partner unexpectedly encounters a man with whom she once had a romantic, sexual, compensated-dating, or near-romantic history. Detailed presets vary what he was to her, why it ended, how they reunite, what {{user}} knows, what feelings return, what the former man wants, what has changed, secrecy and disclosure, boundaries, strong openings, and outcomes from closure or friendship to renewed romance or hidden involvement.",
   "source_version": "1.2",
-  "note": "Full expanded content (277 presets) is available on Google Drive Idea Sources folder as 13-the-man-from-her-past.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 13,
+    "category": "NTR, Infidelity & Non-Monogamy",
+    "source_date": "2026-09-21"
+  },
+  "summary": "{{user}}’s adult partner unexpectedly encounters an adult man from a meaningful romantic or sexual part of her past. He may be an ex-boyfriend, former FWB, compensated-dating regular, old crush, first love, almost-partner, or someone whose significance was never fully explained. The reunion may revive nothing, nostalgia, chemistry, regret, temptation, anger, love, or unfinished questions. What happens next depends on their present-day choices rather than the past automatically reclaiming them.",
+  "core_premise": "The engine is the collision between an old adult relationship and {{char}}’s present life with {{user}}. Shared history creates familiarity and emotional weight but does not establish present-day entitlement, attraction, consent, or destiny. Keep the old relationship, the reason it ended, current feelings, current intentions, and what {{user}} knows as separate layers. The former man can be important without being better, and nostalgia can be accurate, distorted, painful, or ultimately clarifying.",
+  "setup": "Begin at or immediately around the unexpected reunion, the first message after years of silence, the first revelation to {{user}}, or another tightly related opening. Establish what the man once was to {{char}}, why that connection ended, how long they have been apart, what {{user}} already knows, and what each former partner currently wants or feels. Do not pre-write {{user}}’s reaction, {{char}}’s final choice, or whether the past relationship resumes.",
+  "core_variables": [
+    "What the old relationship actually was: ex-boyfriend, former FWB, compensated-dating regular, old crush, first love, casual partner, affair partner, or almost-relationship.",
+    "Why the old connection ended and whether that reason still matters.",
+    "How the adults unexpectedly reunite.",
+    "How long they have been apart and how much each has changed.",
+    "What {{user}} already knows about the man and the old relationship.",
+    "What {{char}} actually feels on seeing him again: none, nostalgia, chemistry, regret, temptation, love, anger, relief, grief, or mixed feelings.",
+    "What the former man currently feels and wants.",
+    "Whether either adult is currently partnered and what those relationships permit.",
+    "Whether renewed contact is open, minimized, delayed, or secret.",
+    "Whether the adults seek closure, friendship, one date, sex, romance, an affair, or no further contact.",
+    "How nostalgia differs from present-day compatibility.",
+    "What social overlap, family memory, work contact, or mutual friends complicate the reunion.",
+    "Whether the reunion strengthens {{char}}’s current relationship, exposes problems, creates temptation, or simply resolves unfinished history."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{user}}’s adult partner unexpectedly encounters an adult man with whom she once had romantic, sexual, compensated-dating, or near-romantic history.",
+    "Preserve the selected historical relationship type. An Old Crush should not silently become an ex-boyfriend; a Former FWB should not automatically become a lost soulmate.",
+    "Keep past history separate from present-day attraction. The fact they once loved or slept with each other does not establish what either wants now.",
+    "Keep nostalgia separate from compatibility. Familiarity and memory can feel intense without proving a renewed relationship would work.",
+    "Do not write {{user}}’s jealousy, anger, insecurity, forgiveness, breakup, confrontation, dialogue, or future behavior as settled fact.",
+    "Do not write {{char}} as destined to return to the former man merely because he was important, first, sexually memorable, or the one who got away.",
+    "Do not treat the former man as objectively superior to {{user}}. Any comparison belongs to a character perspective or concrete compatibility difference.",
+    "If The One Who Got Away is selected, preserve the defining reason: the first love ended because distance or circumstances made it impossible, not because love simply vanished.",
+    "If Compensated-Dating Regular is selected, preserve the transactional history without assuming either exploitation or romance unless the scenario establishes it.",
+    "Do not treat past sexual access as present consent. Every new adult intimate act requires present consent.",
+    "If either adult has a current partner, that relationship’s boundaries remain independently relevant.",
+    "Do not assume {{char}} concealed the past. Vary honestly disclosed, partially disclosed, forgotten, minimized, or secret histories.",
+    "If secrecy begins after the reunion, distinguish an innocent delayed disclosure from active deception and from an established hidden relationship.",
+    "Do not use a reunion as automatic proof that {{char}}’s current relationship is weak or unsatisfying.",
+    "Allow closure, friendship, indifference, and reinforcement of the current relationship as genuine outcomes rather than forcing romantic escalation.",
+    "Pregnancy cannot be known immediately after renewed sex; use plausible timing and evidence.",
+    "If a selected preset narrows the old relationship, reunion mechanism, knowledge state, or outcome, preserve it while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Consent must be present-day and activity-specific; past relationships, past sex, nostalgia, money, or emotional history do not create present consent.",
+    "Neither {{user}} nor the former man owns {{char}} or has authority to decide which relationship she must choose.",
+    "Do not use professional authority, financial dependence, housing leverage, threats, blackmail, intoxication, or fear as substitutes for consent.",
+    "Do not frame persistence after a clear rejection as romantic destiny.",
+    "Do not force {{char}} to choose either man, maintain contact, end contact, cheat, confess, open the relationship, or leave.",
+    "Do not force {{user}} to accept renewed contact, forgive deception, compete, or remain in the relationship.",
+    "Do not force the former man to pursue {{char}} merely because they have shared history.",
+    "Historical intimate media cannot be shared, displayed, or reused without current consent.",
+    "Do not use cosmetic changes of names, occupations, or locations as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Ex-boyfriend, former FWB, compensated-dating regular, old crush, first love, first boyfriend, first sexual partner, summer romance, university ex, coworker, old friend, former affair partner, almost-boyfriend, one-night stand, recurring casual partner, online love, or travel romance",
+    "Distance, relocation, career split, family pressure, life goals, commitment timing, immaturity, mutual breakup, one-sided breakup, infidelity, control, sexual mismatch, emotional mismatch, crisis, drifting apart, ambiguity, or FWB feelings",
+    "Street encounter, workplace, mutual event, reunion, message, social media, convention, travel, return to town, hometown visit, practical contact, family event, or {{user}} unknowingly reconnecting them",
+    "{{user}} knows everything, broad history, name only, seriousness unknown, sexual history known, friendship-only version, sanitized version, no knowledge, knows the one who got away, knows him independently, or learns in the moment",
+    "No feelings, warm nostalgia, awkwardness, physical chemistry, emotional chemistry, old love, regret, curiosity, temptation, resentment, relief, jealousy, grief for unrealized future, or first-love intensity",
+    "Closure, friendship, apology, forgiveness, romance, one date, casual sex, FWB, affair, exclusivity, no romantic interest, politeness, conflict, current partner, or respectful distance",
+    "Both changed, neither changed, old obstacle gone, old obstacle remains, greater maturity, new success, hardship, children, divorce, new singleness, current partnership, real growth, claimed growth, or unfinished growth",
+    "One conversation, exchanged numbers, group contact, private friendship, messages, daily contact, coffee, dinner, old place, meeting current partners, meeting {{user}}, secret contact, physical escalation, or stopping contact",
+    "Open disclosure, honest feelings, minimization, hidden messages, deleted messages, literal friendship, cover-story friendship, half-truth, delayed disclosure, other man refusing secrecy, or accidental discovery",
+    "No comparison, sexual chemistry comparison, emotional safety comparison, shared-history comparison, stability comparison, idealized past, remembered failure, rivalry, refusal to compete, appreciation of current relationship, or clearer existing problems",
+    "One-who-got-away variants involving distance gone/still present, mutual memory, asymmetrical memory, what-if questions, old promises, reality puncturing fantasy, or true present compatibility",
+    "Compensated-dating variants involving strict transactional boundaries, friendship, real feelings, hidden past, known past, public recognition, ordinary reacquaintance, renewed paid contact, normal dating, closure, or changed power dynamics",
+    "Work overlap, mutual friends, friend dating ex, old FWB at event, unspoken crush, mutual old crush, family reactions, shared secrets, or resurfaced historical material",
+    "Clear boundaries, private catch-up, ordinary conversation, flirting, kiss, one encounter, affair, breakup first, ENM proposal, no contact, or boundaries changing over time",
+    "Closure, friendship, strengthened current relationship, renewed romance, breakup-before-romance, hidden affair, consensual non-monogamy, no escalation, or past stays past"
+  ],
+  "cross_links": [
+    "She Wants Him",
+    "Her Secret Past",
+    "You Two Know Each Other?",
+    "Under Your Nose",
+    "He Wants Your Girl",
+    "NTR Report",
+    "Open Relationship",
+    "I’m Going to Bang Another Man",
+    "She Got Pregnant"
+  ],
+  "tags": [
+    "adult",
+    "ex-boyfriend",
+    "former fwb",
+    "old crush",
+    "first love",
+    "one who got away",
+    "past relationship",
+    "reunion",
+    "nostalgia",
+    "unresolved feelings",
+    "other man",
+    "relationship history",
+    "ntr"
+  ],
+  "notes": "Expanded from Series Bible I #13. The original seeds—Ex-Boyfriend, Former FWB, Compensated-Dating Regular, Old Crush, and The One Who Got Away—are preserved. The source explicitly separates shared history, present-day feelings, present-day compatibility, and present-day intent so the model does not treat an important past relationship as automatic destiny.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied The Man From Her Past concepts in which {{user}}’s adult partner unexpectedly encounters an adult man with whom she once had a romantic, sexual, or near-romantic history. Vary what their old relationship actually was, why it ended, how they reunite, what {{user}} already knows, what feelings return (including none), what the former man wants now, and whether the reunion leads to closure, nostalgia, temptation, renewed friendship, romance, secrecy, or proof that the past is truly over. Do not pre-decide {{char}}’s choice or {{user}}’s response."
+    },
+    {
+      "id": "g02-ex-boyfriend",
+      "group": "02 What He Was to Her",
+      "title": "Ex-Boyfriend",
+      "direction": "The returning adult man is {{char}}’s ex-boyfriend. Vary whether the relationship was serious, casual, first love, turbulent, or simply incompatible."
+    },
+    {
+      "id": "g02-former-fwb",
+      "group": "02 What He Was to Her",
+      "title": "Former FWB",
+      "direction": "The returning man was an adult friend-with-benefits. Their old bond may have been mostly sexual, genuinely friendly, emotionally ambiguous, or uneven."
+    },
+    {
+      "id": "g02-compensated-dating-regular",
+      "group": "02 What He Was to Her",
+      "title": "Compensated-Dating Regular",
+      "direction": "The returning adult man was once a recurring compensated-dating partner or client. Preserve the transactional history without assuming there was no real attachment."
+    },
+    {
+      "id": "g02-old-crush",
+      "group": "02 What He Was to Her",
+      "title": "Old Crush",
+      "direction": "The man is an adult old crush whom {{char}} strongly wanted but never fully dated or slept with."
+    },
+    {
+      "id": "g02-the-one-who-got-away",
+      "group": "02 What He Was to Her",
+      "title": "The One Who Got Away",
+      "direction": "The man was {{char}}’s first love, and the relationship ended only because distance or circumstances made staying together impossible rather than because either stopped loving the other."
+    },
+    {
+      "id": "g02-first-boyfriend",
+      "group": "02 What He Was to Her",
+      "title": "First Boyfriend",
+      "direction": "He was {{char}}’s first serious adult boyfriend and remains linked to many formative relationship memories."
+    },
+    {
+      "id": "g02-first-sexual-partner",
+      "group": "02 What He Was to Her",
+      "title": "First Sexual Partner",
+      "direction": "He was {{char}}’s first adult sexual partner, creating strong memory without assuming she still loves him."
+    },
+    {
+      "id": "g02-summer-romance",
+      "group": "02 What He Was to Her",
+      "title": "Summer Romance",
+      "direction": "They had a brief but intense adult holiday or summer relationship that ended when one had to leave."
+    },
+    {
+      "id": "g02-university-ex",
+      "group": "02 What He Was to Her",
+      "title": "University Ex",
+      "direction": "They dated as adults during university or training, then separated as their lives diverged."
+    },
+    {
+      "id": "g02-coworker-from-years-ago",
+      "group": "02 What He Was to Her",
+      "title": "Coworker From Years Ago",
+      "direction": "He was an adult coworker with whom {{char}} had a hidden or open romance in the past."
+    },
+    {
+      "id": "g02-old-friend-who-became-more",
+      "group": "02 What He Was to Her",
+      "title": "Old Friend Who Became More",
+      "direction": "They were close friends before briefly becoming romantic or sexual."
+    },
+    {
+      "id": "g02-former-affair-partner",
+      "group": "02 What He Was to Her",
+      "title": "Former Affair Partner",
+      "direction": "He was an adult affair partner from a previous relationship or an earlier stage of {{char}}’s life. Do not assume the same pattern will repeat."
+    },
+    {
+      "id": "g02-almost-boyfriend",
+      "group": "02 What He Was to Her",
+      "title": "Almost-Boyfriend",
+      "direction": "They dated or came close to becoming a couple but never formally defined the relationship."
+    },
+    {
+      "id": "g02-one-night-stand-she-remembered",
+      "group": "02 What He Was to Her",
+      "title": "One-Night Stand She Remembered",
+      "direction": "He was a single consensual adult encounter that remained unusually memorable."
+    },
+    {
+      "id": "g02-recurring-casual-partner",
+      "group": "02 What He Was to Her",
+      "title": "Recurring Casual Partner",
+      "direction": "They had a recurring casual sexual relationship without formal romance."
+    },
+    {
+      "id": "g02-online-love-from-the-past",
+      "group": "02 What He Was to Her",
+      "title": "Online Love From the Past",
+      "direction": "They built a serious adult online relationship or long-distance bond that never fully became an ordinary local relationship."
+    },
+    {
+      "id": "g02-travel-romance",
+      "group": "02 What He Was to Her",
+      "title": "Travel Romance",
+      "direction": "They met while travelling and had an adult relationship that ended when the trip or posting ended."
+    },
+    {
+      "id": "g02-someone-user-knows",
+      "group": "02 What He Was to Her",
+      "title": "Someone {{user}} Knows",
+      "direction": "The returning man is also known independently to {{user}}, creating recognition and social complications."
+    },
+    {
+      "id": "g03-distance-made-it-impossible",
+      "group": "03 Why It Ended",
+      "title": "Distance Made It Impossible",
+      "direction": "They ended despite caring for each other because long distance became unsustainable."
+    },
+    {
+      "id": "g03-one-moved-away",
+      "group": "03 Why It Ended",
+      "title": "One Moved Away",
+      "direction": "A relocation ended the relationship without a major betrayal or loss of affection."
+    },
+    {
+      "id": "g03-career-paths-split",
+      "group": "03 Why It Ended",
+      "title": "Career Paths Split",
+      "direction": "Jobs, study, or ambitions pulled them into incompatible locations or schedules."
+    },
+    {
+      "id": "g03-family-pressure",
+      "group": "03 Why It Ended",
+      "title": "Family Pressure",
+      "direction": "Adult family expectations or circumstances contributed to the breakup."
+    },
+    {
+      "id": "g03-different-life-goals",
+      "group": "03 Why It Ended",
+      "title": "Different Life Goals",
+      "direction": "They cared for each other but wanted incompatible futures."
+    },
+    {
+      "id": "g03-one-wanted-commitment-the-other-didnt",
+      "group": "03 Why It Ended",
+      "title": "One Wanted Commitment, the Other Didn’t",
+      "direction": "Their timing for commitment did not align."
+    },
+    {
+      "id": "g03-too-young-for-the-relationship",
+      "group": "03 Why It Ended",
+      "title": "Too Young for the Relationship",
+      "direction": "They were adults but emotionally unprepared for the seriousness of the relationship."
+    },
+    {
+      "id": "g03-relationship-became-routine",
+      "group": "03 Why It Ended",
+      "title": "Relationship Became Routine",
+      "direction": "Attraction remained but the relationship gradually stopped working day-to-day."
+    },
+    {
+      "id": "g03-mutual-breakup",
+      "group": "03 Why It Ended",
+      "title": "Mutual Breakup",
+      "direction": "Both agreed ending it was the right decision."
+    },
+    {
+      "id": "g03-he-ended-it",
+      "group": "03 Why It Ended",
+      "title": "He Ended It",
+      "direction": "The former man ended the relationship, leaving {{char}} with unresolved hurt, relief, questions, or acceptance."
+    },
+    {
+      "id": "g03-char-ended-it",
+      "group": "03 Why It Ended",
+      "title": "{{char}} Ended It",
+      "direction": "{{char}} ended the relationship and may or may not still feel guilt, curiosity, or regret."
+    },
+    {
+      "id": "g03-infidelity-ended-it",
+      "group": "03 Why It Ended",
+      "title": "Infidelity Ended It",
+      "direction": "Past cheating by either adult ended the relationship. Preserve who did what and do not flatten all present-day trust into the old betrayal."
+    },
+    {
+      "id": "g03-jealousy-control-ended-it",
+      "group": "03 Why It Ended",
+      "title": "Jealousy / Control Ended It",
+      "direction": "The relationship became unhealthy because of jealousy, possessiveness, or control."
+    },
+    {
+      "id": "g03-sexual-incompatibility",
+      "group": "03 Why It Ended",
+      "title": "Sexual Incompatibility",
+      "direction": "They ended partly because their adult sexual preferences or needs did not align."
+    },
+    {
+      "id": "g03-emotional-incompatibility",
+      "group": "03 Why It Ended",
+      "title": "Emotional Incompatibility",
+      "direction": "They had chemistry but poor communication or emotional compatibility."
+    },
+    {
+      "id": "g03-external-crisis",
+      "group": "03 Why It Ended",
+      "title": "External Crisis",
+      "direction": "Illness, caregiving, financial crisis, or another life event ended the relationship without a clean emotional resolution."
+    },
+    {
+      "id": "g03-they-drifted-apart",
+      "group": "03 Why It Ended",
+      "title": "They Drifted Apart",
+      "direction": "No dramatic event ended it; contact simply faded as their lives changed."
+    },
+    {
+      "id": "g03-never-properly-ended",
+      "group": "03 Why It Ended",
+      "title": "Never Properly Ended",
+      "direction": "They stopped seeing each other without a clear final conversation, leaving ambiguity."
+    },
+    {
+      "id": "g03-fwb-ended-when-one-caught-feelings",
+      "group": "03 Why It Ended",
+      "title": "FWB Ended When One Caught Feelings",
+      "direction": "The casual relationship ended because feelings became unequal or complicated."
+    },
+    {
+      "id": "g03-transactional-arrangement-ended-naturally",
+      "group": "03 Why It Ended",
+      "title": "Transactional Arrangement Ended Naturally",
+      "direction": "The compensated-dating relationship ended when circumstances or boundaries changed rather than through a dramatic breakup."
+    },
+    {
+      "id": "g04-random-street-encounter",
+      "group": "04 How They Reunite",
+      "title": "Random Street Encounter",
+      "direction": "They unexpectedly see each other in public after years apart."
+    },
+    {
+      "id": "g04-runs-into-him-at-work",
+      "group": "04 How They Reunite",
+      "title": "Runs Into Him at Work",
+      "direction": "The man appears through {{char}}’s current workplace or professional setting."
+    },
+    {
+      "id": "g04-new-coworker-is-her-ex",
+      "group": "04 How They Reunite",
+      "title": "New Coworker Is Her Ex",
+      "direction": "He unexpectedly joins the same workplace or organization."
+    },
+    {
+      "id": "g04-mutual-friends-event",
+      "group": "04 How They Reunite",
+      "title": "Mutual Friend’s Event",
+      "direction": "A wedding, party, reunion, birthday, or gathering puts them together again."
+    },
+    {
+      "id": "g04-class-training-reunion",
+      "group": "04 How They Reunite",
+      "title": "Class / Training Reunion",
+      "direction": "An alumni event or professional course reconnects them."
+    },
+    {
+      "id": "g04-neighbourhood-surprise",
+      "group": "04 How They Reunite",
+      "title": "Neighbourhood Surprise",
+      "direction": "He moves nearby or already lives near the couple."
+    },
+    {
+      "id": "g04-online-message-after-years",
+      "group": "04 How They Reunite",
+      "title": "Online Message After Years",
+      "direction": "He sends an unexpected but ordinary message after a long silence."
+    },
+    {
+      "id": "g04-social-media-reconnection",
+      "group": "04 How They Reunite",
+      "title": "Social Media Reconnection",
+      "direction": "A follow, comment, or friend request restarts contact."
+    },
+    {
+      "id": "g04-convention-festival",
+      "group": "04 How They Reunite",
+      "title": "Convention / Festival",
+      "direction": "A shared hobby event unexpectedly puts them face-to-face."
+    },
+    {
+      "id": "g04-travel-encounter",
+      "group": "04 How They Reunite",
+      "title": "Travel Encounter",
+      "direction": "They meet again while travelling, at an airport, hotel, station, or destination."
+    },
+    {
+      "id": "g04-he-returns-to-town",
+      "group": "04 How They Reunite",
+      "title": "He Returns to Town",
+      "direction": "The former man moves back after years away."
+    },
+    {
+      "id": "g04-she-returns-to-her-hometown",
+      "group": "04 How They Reunite",
+      "title": "She Returns to Her Hometown",
+      "direction": "A visit to {{char}}’s old home area makes reunion likely."
+    },
+    {
+      "id": "g04-mutual-friend-reintroduces-them",
+      "group": "04 How They Reunite",
+      "title": "Mutual Friend Reintroduces Them",
+      "direction": "A friend knowingly reconnects them without necessarily understanding the old history."
+    },
+    {
+      "id": "g04-he-contacts-her-for-closure",
+      "group": "04 How They Reunite",
+      "title": "He Contacts Her for Closure",
+      "direction": "He deliberately reaches out because he wants to resolve unfinished history."
+    },
+    {
+      "id": "g04-he-contacts-her-for-practical-reason",
+      "group": "04 How They Reunite",
+      "title": "He Contacts Her for Practical Reason",
+      "direction": "An old item, account, shared acquaintance, funeral, document, or other practical matter creates contact."
+    },
+    {
+      "id": "g04-medical-family-event",
+      "group": "04 How They Reunite",
+      "title": "Medical / Family Event",
+      "direction": "A serious event involving an old mutual connection brings them together."
+    },
+    {
+      "id": "g04-user-introduces-them-without-knowing",
+      "group": "04 How They Reunite",
+      "title": "{{user}} Introduces Them Without Knowing",
+      "direction": "{{user}} innocently introduces or mentions the man without realizing their history."
+    },
+    {
+      "id": "g04-he-is-already-in-users-social-circle",
+      "group": "04 How They Reunite",
+      "title": "He Is Already in {{user}}’s Social Circle",
+      "direction": "The past connection becomes relevant because the man now overlaps with {{user}}’s friends, work, or hobbies."
+    },
+    {
+      "id": "g05-user-knows-everything",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Knows Everything",
+      "direction": "{{user}} already knows who the man is and the broad truth of their history."
+    },
+    {
+      "id": "g05-user-knows-she-had-an-ex",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Knows She Had an Ex",
+      "direction": "{{user}} knows about the relationship in general but does not know this returning man is that ex at first."
+    },
+    {
+      "id": "g05-user-knows-the-name-not-the-face",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Knows the Name, Not the Face",
+      "direction": "The man’s identity is familiar from past conversations but recognition is delayed."
+    },
+    {
+      "id": "g05-user-knows-they-dated-not-how-serious-it-was",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Knows They Dated, Not How Serious It Was",
+      "direction": "The relationship was more emotionally important than {{user}} realizes."
+    },
+    {
+      "id": "g05-user-knows-they-had-sex",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Knows They Had Sex",
+      "direction": "The sexual history is already known, reducing the reveal but not the present-day tension."
+    },
+    {
+      "id": "g05-user-thinks-they-were-only-friends",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Thinks They Were Only Friends",
+      "direction": "A past romantic or sexual layer was omitted or minimized."
+    },
+    {
+      "id": "g05-user-has-never-heard-of-him",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Has Never Heard of Him",
+      "direction": "The returning man is entirely new information to {{user}}."
+    },
+    {
+      "id": "g05-user-knows-a-sanitized-version",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Knows a Sanitized Version",
+      "direction": "{{char}} previously gave a simplified or incomplete account of the relationship."
+    },
+    {
+      "id": "g05-user-knows-he-was-the-one-who-got-away",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Knows He Was “The One Who Got Away”",
+      "direction": "The emotional significance is not a secret even before the reunion."
+    },
+    {
+      "id": "g05-user-knows-about-old-crush-only",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Knows About Old Crush Only",
+      "direction": "{{user}} knows {{char}} once liked him but not that anything more happened."
+    },
+    {
+      "id": "g05-user-knows-him-personally-but-not-the-history",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Knows Him Personally but Not the History",
+      "direction": "{{user}} already knows the man independently without knowing he and {{char}} were involved."
+    },
+    {
+      "id": "g05-user-was-told-the-relationship-ended-badly",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Was Told the Relationship Ended Badly",
+      "direction": "{{user}} expects hostility or indifference but the reunion may not match that expectation."
+    },
+    {
+      "id": "g05-user-was-told-she-was-completely-over-him",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Was Told She Was Completely Over Him",
+      "direction": "The reunion tests whether that statement remains true without assuming it was dishonest."
+    },
+    {
+      "id": "g05-user-learns-in-the-moment",
+      "group": "05 What {{user}} Already Knows",
+      "title": "{{user}} Learns in the Moment",
+      "direction": "The past relationship is revealed during the reunion itself."
+    },
+    {
+      "id": "g06-no-feelings-return",
+      "group": "06 What Feelings Return",
+      "title": "No Feelings Return",
+      "direction": "{{char}} feels no romantic or sexual pull toward him now, even if the memories are vivid."
+    },
+    {
+      "id": "g06-warm-nostalgia-only",
+      "group": "06 What Feelings Return",
+      "title": "Warm Nostalgia Only",
+      "direction": "She remembers the relationship fondly without wanting it back."
+    },
+    {
+      "id": "g06-awkward-nostalgia",
+      "group": "06 What Feelings Return",
+      "title": "Awkward Nostalgia",
+      "direction": "Old memories return alongside embarrassment or discomfort rather than desire."
+    },
+    {
+      "id": "g06-physical-chemistry-returns",
+      "group": "06 What Feelings Return",
+      "title": "Physical Chemistry Returns",
+      "direction": "She unexpectedly notices strong adult sexual attraction again without yet wanting a relationship."
+    },
+    {
+      "id": "g06-emotional-chemistry-returns",
+      "group": "06 What Feelings Return",
+      "title": "Emotional Chemistry Returns",
+      "direction": "Conversation feels immediately intimate or familiar again."
+    },
+    {
+      "id": "g06-old-love-returns",
+      "group": "06 What Feelings Return",
+      "title": "Old Love Returns",
+      "direction": "She realizes some romantic feelings were never entirely gone."
+    },
+    {
+      "id": "g06-regret-returns",
+      "group": "06 What Feelings Return",
+      "title": "Regret Returns",
+      "direction": "She wonders whether ending the relationship was a mistake."
+    },
+    {
+      "id": "g06-curiosity-returns",
+      "group": "06 What Feelings Return",
+      "title": "Curiosity Returns",
+      "direction": "She mainly wants to know who he became and whether they would still connect."
+    },
+    {
+      "id": "g06-temptation-without-love",
+      "group": "06 What Feelings Return",
+      "title": "Temptation Without Love",
+      "direction": "She is sexually tempted despite not wanting a future with him."
+    },
+    {
+      "id": "g06-love-without-sexual-pull",
+      "group": "06 What Feelings Return",
+      "title": "Love Without Sexual Pull",
+      "direction": "She still cares deeply but does not experience renewed sexual attraction."
+    },
+    {
+      "id": "g06-mixed-love-and-resentment",
+      "group": "06 What Feelings Return",
+      "title": "Mixed Love and Resentment",
+      "direction": "Strong affection coexists with unresolved hurt."
+    },
+    {
+      "id": "g06-anger-returns",
+      "group": "06 What Feelings Return",
+      "title": "Anger Returns",
+      "direction": "The reunion reactivates resentment rather than desire."
+    },
+    {
+      "id": "g06-relief-she-left",
+      "group": "06 What Feelings Return",
+      "title": "Relief She Left",
+      "direction": "Seeing him again reinforces that ending the relationship was right."
+    },
+    {
+      "id": "g06-she-feels-nothing-and-is-surprised",
+      "group": "06 What Feelings Return",
+      "title": "She Feels Nothing and Is Surprised",
+      "direction": "The person who once mattered enormously now feels emotionally distant."
+    },
+    {
+      "id": "g06-jealousy-about-his-new-life",
+      "group": "06 What Feelings Return",
+      "title": "Jealousy About His New Life",
+      "direction": "She reacts to his current partner, success, family, or apparent happiness in a way she did not expect."
+    },
+    {
+      "id": "g06-grief-for-the-life-they-never-had",
+      "group": "06 What Feelings Return",
+      "title": "Grief for the Life They Never Had",
+      "direction": "She mourns an unrealized future without necessarily wanting to recreate it now."
+    },
+    {
+      "id": "g06-first-love-intensity",
+      "group": "06 What Feelings Return",
+      "title": "First-Love Intensity",
+      "direction": "The reunion produces unusually strong memory and emotion because he was her first love."
+    },
+    {
+      "id": "g06-old-sexual-habits-reactivate",
+      "group": "06 What Feelings Return",
+      "title": "Old Sexual Habits Reactivate",
+      "direction": "Familiar flirtation or chemistry returns quickly, but actions remain separately chosen."
+    },
+    {
+      "id": "g07-he-wants-closure",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants Closure",
+      "direction": "The former man wants one honest conversation about the past and no renewed relationship."
+    },
+    {
+      "id": "g07-he-wants-friendship",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants Friendship",
+      "direction": "He hopes they can reconnect platonically as adults."
+    },
+    {
+      "id": "g07-he-wants-to-apologize",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants to Apologize",
+      "direction": "He wants to own past wrongdoing without expecting forgiveness or reunion."
+    },
+    {
+      "id": "g07-he-wants-forgiveness",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants Forgiveness",
+      "direction": "He actively hopes {{char}} will forgive him, though forgiveness is hers to decide."
+    },
+    {
+      "id": "g07-he-wants-her-back",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants Her Back",
+      "direction": "He wants a renewed romantic relationship with {{char}}."
+    },
+    {
+      "id": "g07-he-wants-one-date",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants One Date",
+      "direction": "He asks for a chance to see whether present-day chemistry exists."
+    },
+    {
+      "id": "g07-he-wants-casual-sex",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants Casual Sex",
+      "direction": "He is interested in renewed adult sexual contact but not a relationship."
+    },
+    {
+      "id": "g07-he-wants-to-resume-fwb",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants to Resume FWB",
+      "direction": "A former casual partner proposes returning to their old arrangement."
+    },
+    {
+      "id": "g07-he-wants-an-affair",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants an Affair",
+      "direction": "He is willing to pursue secret involvement while {{char}} remains partnered."
+    },
+    {
+      "id": "g07-he-wants-her-to-leave-user",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants Her to Leave {{user}}",
+      "direction": "He openly wants exclusivity and believes she should end her current relationship."
+    },
+    {
+      "id": "g07-he-wants-nothing-romantic",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants Nothing Romantic",
+      "direction": "He is genuinely content with his own life and does not intend to interfere with {{char}}’s relationship."
+    },
+    {
+      "id": "g07-he-is-just-being-polite",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Is Just Being Polite",
+      "direction": "The reunion is more emotionally significant to {{char}} than to him."
+    },
+    {
+      "id": "g07-he-is-also-conflicted",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Is Also Conflicted",
+      "direction": "He has feelings but is unsure whether acting on them would be wise."
+    },
+    {
+      "id": "g07-he-is-married-partnered",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Is Married / Partnered",
+      "direction": "His own adult relationship creates another independent set of boundaries."
+    },
+    {
+      "id": "g07-he-is-single-but-cautious",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Is Single but Cautious",
+      "direction": "He is available but does not want to repeat past mistakes."
+    },
+    {
+      "id": "g07-he-thinks-she-is-still-single",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Thinks She Is Still Single",
+      "direction": "He initially does not know {{char}} is with {{user}}."
+    },
+    {
+      "id": "g07-he-knows-about-user-and-respects-it",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Knows About {{user}} and Respects It",
+      "direction": "He acknowledges the current relationship and does not push beyond {{char}}’s boundaries."
+    },
+    {
+      "id": "g07-he-knows-about-user-and-pursues-anyway",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Knows About {{user}} and Pursues Anyway",
+      "direction": "He deliberately tests whether {{char}} will choose him or cross existing boundaries."
+    },
+    {
+      "id": "g08-he-has-changed-dramatically",
+      "group": "08 What Has Changed Since Then",
+      "title": "He Has Changed Dramatically",
+      "direction": "The former man’s personality, priorities, maturity, or lifestyle is meaningfully different."
+    },
+    {
+      "id": "g08-he-has-barely-changed",
+      "group": "08 What Has Changed Since Then",
+      "title": "He Has Barely Changed",
+      "direction": "The reunion feels uncanny because he is recognizably the same person."
+    },
+    {
+      "id": "g08-char-has-changed-more",
+      "group": "08 What Has Changed Since Then",
+      "title": "{{char}} Has Changed More",
+      "direction": "He is surprised by how different {{char}} has become."
+    },
+    {
+      "id": "g08-both-are-more-mature",
+      "group": "08 What Has Changed Since Then",
+      "title": "Both Are More Mature",
+      "direction": "Old incompatibilities may no longer apply, though that does not automatically mean they should reunite."
+    },
+    {
+      "id": "g08-old-problem-is-gone",
+      "group": "08 What Has Changed Since Then",
+      "title": "Old Problem Is Gone",
+      "direction": "The specific circumstance that ended them—such as distance—no longer exists."
+    },
+    {
+      "id": "g08-old-problem-still-exists",
+      "group": "08 What Has Changed Since Then",
+      "title": "Old Problem Still Exists",
+      "direction": "The same incompatibility remains despite nostalgia."
+    },
+    {
+      "id": "g08-he-is-more-successful-now",
+      "group": "08 What Has Changed Since Then",
+      "title": "He Is More Successful Now",
+      "direction": "His life circumstances improved, but success is not evidence he is a better partner."
+    },
+    {
+      "id": "g08-he-is-struggling-now",
+      "group": "08 What Has Changed Since Then",
+      "title": "He Is Struggling Now",
+      "direction": "He returns during a difficult period and may seek comfort, closure, or familiarity."
+    },
+    {
+      "id": "g08-he-has-children",
+      "group": "08 What Has Changed Since Then",
+      "title": "He Has Children",
+      "direction": "He now has adult life responsibilities that meaningfully alter what reunion could mean."
+    },
+    {
+      "id": "g08-he-is-divorced",
+      "group": "08 What Has Changed Since Then",
+      "title": "He Is Divorced",
+      "direction": "A later marriage or long relationship has ended, changing his availability and perspective."
+    },
+    {
+      "id": "g08-he-recently-became-single",
+      "group": "08 What Has Changed Since Then",
+      "title": "He Recently Became Single",
+      "direction": "The timing of his return makes romantic possibility more salient."
+    },
+    {
+      "id": "g08-he-is-happily-partnered",
+      "group": "08 What Has Changed Since Then",
+      "title": "He Is Happily Partnered",
+      "direction": "Both adults may experience nostalgia despite neither being available for a conventional reunion."
+    },
+    {
+      "id": "g08-he-has-worked-on-old-problems",
+      "group": "08 What Has Changed Since Then",
+      "title": "He Has Worked on Old Problems",
+      "direction": "He has genuinely addressed behavior that contributed to the old breakup."
+    },
+    {
+      "id": "g08-he-claims-he-has-changed",
+      "group": "08 What Has Changed Since Then",
+      "title": "He Claims He Has Changed",
+      "direction": "His claimed growth may or may not be supported by present behavior."
+    },
+    {
+      "id": "g08-char-is-the-one-with-unfinished-growth",
+      "group": "08 What Has Changed Since Then",
+      "title": "{{char}} Is the One With Unfinished Growth",
+      "direction": "The reunion reveals that some unresolved issue belongs more to {{char}} than to him."
+    },
+    {
+      "id": "g09-one-conversation-only",
+      "group": "09 What Happens After the Reunion",
+      "title": "One Conversation Only",
+      "direction": "The reunion centers on a single emotionally significant conversation."
+    },
+    {
+      "id": "g09-exchange-numbers",
+      "group": "09 What Happens After the Reunion",
+      "title": "Exchange Numbers",
+      "direction": "They choose to remain in contact afterward."
+    },
+    {
+      "id": "g09-group-contact-only",
+      "group": "09 What Happens After the Reunion",
+      "title": "Group Contact Only",
+      "direction": "They see each other only in shared social contexts."
+    },
+    {
+      "id": "g09-private-friendship-resumes",
+      "group": "09 What Happens After the Reunion",
+      "title": "Private Friendship Resumes",
+      "direction": "They begin talking one-on-one as friends."
+    },
+    {
+      "id": "g09-occasional-messages",
+      "group": "09 What Happens After the Reunion",
+      "title": "Occasional Messages",
+      "direction": "Contact remains infrequent but meaningful."
+    },
+    {
+      "id": "g09-daily-messaging",
+      "group": "09 What Happens After the Reunion",
+      "title": "Daily Messaging",
+      "direction": "The reconnection rapidly becomes part of {{char}}’s daily life."
+    },
+    {
+      "id": "g09-coffee-catch-up",
+      "group": "09 What Happens After the Reunion",
+      "title": "Coffee Catch-Up",
+      "direction": "They arrange a normal adult catch-up with no pre-agreed romance."
+    },
+    {
+      "id": "g09-dinner-alone",
+      "group": "09 What Happens After the Reunion",
+      "title": "Dinner Alone",
+      "direction": "A private dinner becomes emotionally charged but not inherently sexual."
+    },
+    {
+      "id": "g09-revisit-an-old-place",
+      "group": "09 What Happens After the Reunion",
+      "title": "Revisit an Old Place",
+      "direction": "They return to a location associated with their past."
+    },
+    {
+      "id": "g09-meet-his-current-partner",
+      "group": "09 What Happens After the Reunion",
+      "title": "Meet His Current Partner",
+      "direction": "The reunion expands to include the former man’s current adult partner."
+    },
+    {
+      "id": "g09-he-meets-user",
+      "group": "09 What Happens After the Reunion",
+      "title": "He Meets {{user}}",
+      "direction": "The former man and {{user}} interact directly rather than remaining abstract rivals."
+    },
+    {
+      "id": "g09-three-way-conversation",
+      "group": "09 What Happens After the Reunion",
+      "title": "Three-Way Conversation",
+      "direction": "All three adults discuss the history and present situation openly."
+    },
+    {
+      "id": "g09-secret-contact-begins",
+      "group": "09 What Happens After the Reunion",
+      "title": "Secret Contact Begins",
+      "direction": "{{char}} keeps renewed contact from {{user}}, naturally creating a bridge toward Under Your Nose."
+    },
+    {
+      "id": "g09-contact-becomes-physical",
+      "group": "09 What Happens After the Reunion",
+      "title": "Contact Becomes Physical",
+      "direction": "Kissing or consensual adult intimacy eventually occurs; do not skip the decisions leading there."
+    },
+    {
+      "id": "g09-contact-stops-again",
+      "group": "09 What Happens After the Reunion",
+      "title": "Contact Stops Again",
+      "direction": "One or both decide the reunion should remain a memory rather than an ongoing connection."
+    },
+    {
+      "id": "g10-open-about-the-reunion",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Open About the Reunion",
+      "direction": "{{char}} tells {{user}} promptly that she ran into him."
+    },
+    {
+      "id": "g10-open-about-continued-contact",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Open About Continued Contact",
+      "direction": "She tells {{user}} when she and the former man decide to stay in touch."
+    },
+    {
+      "id": "g10-honest-about-returning-feelings",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Honest About Returning Feelings",
+      "direction": "She admits that the reunion affected her emotionally or sexually."
+    },
+    {
+      "id": "g10-minimizes-the-history",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Minimizes the History",
+      "direction": "She describes him as less important than he really was."
+    },
+    {
+      "id": "g10-minimizes-current-contact",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Minimizes Current Contact",
+      "direction": "She understates how often they are now talking."
+    },
+    {
+      "id": "g10-hides-the-first-message",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Hides the First Message",
+      "direction": "She keeps a seemingly small reconnection secret."
+    },
+    {
+      "id": "g10-deletes-messages",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Deletes Messages",
+      "direction": "She begins actively concealing evidence of contact."
+    },
+    {
+      "id": "g10-uses-just-friends-literally",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Uses “Just Friends” Literally",
+      "direction": "They genuinely are friends now and {{char}} is frustrated that the history makes the friendship look suspicious."
+    },
+    {
+      "id": "g10-uses-just-friends-as-cover",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Uses “Just Friends” as Cover",
+      "direction": "She describes a relationship as platonic even while attraction or emotional intimacy is growing."
+    },
+    {
+      "id": "g10-tells-half-the-truth",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Tells Half the Truth",
+      "direction": "She reveals the reunion but omits the strongest emotional or physical details."
+    },
+    {
+      "id": "g10-plans-to-tell-user-later",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Plans to Tell {{user}} Later",
+      "direction": "She delays disclosure because she wants time to understand her own feelings first."
+    },
+    {
+      "id": "g10-former-man-refuses-secrecy",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Former Man Refuses Secrecy",
+      "direction": "He is unwilling to continue if {{char}} hides their contact from {{user}}."
+    },
+    {
+      "id": "g10-former-man-encourages-secrecy",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Former Man Encourages Secrecy",
+      "direction": "He sees secrecy as the easiest way to explore their chemistry."
+    },
+    {
+      "id": "g10-accidental-discovery",
+      "group": "10 Disclosure / Secrecy",
+      "title": "Accidental Discovery",
+      "direction": "{{user}} learns of the reconnection through ordinary evidence or another person rather than a confession."
+    },
+    {
+      "id": "g11-no-comparison-to-user",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "No Comparison to {{user}}",
+      "direction": "{{char}} can remember the past without turning the two relationships into a ranking."
+    },
+    {
+      "id": "g11-she-compares-familiarity",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "She Compares Familiarity",
+      "direction": "The former man understands an earlier version of her in ways {{user}} cannot, while {{user}} knows who she is now."
+    },
+    {
+      "id": "g11-she-compares-sexual-chemistry",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "She Compares Sexual Chemistry",
+      "direction": "Old sexual compatibility becomes salient without establishing who is objectively better."
+    },
+    {
+      "id": "g11-she-compares-emotional-safety",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "She Compares Emotional Safety",
+      "direction": "She notices differences in how each man makes her feel emotionally."
+    },
+    {
+      "id": "g11-she-compares-shared-history",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "She Compares Shared History",
+      "direction": "Years of memories create an advantage of familiarity rather than objective compatibility."
+    },
+    {
+      "id": "g11-she-compares-present-stability",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "She Compares Present Stability",
+      "direction": "{{user}} represents present-day reliability while the former man represents unfinished possibility."
+    },
+    {
+      "id": "g11-she-idealizes-the-past",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "She Idealizes the Past",
+      "direction": "Nostalgia filters out problems and exaggerates what the relationship once was."
+    },
+    {
+      "id": "g11-she-remembers-why-it-failed",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "She Remembers Why It Failed",
+      "direction": "Contact quickly restores forgotten frustrations alongside good memories."
+    },
+    {
+      "id": "g11-former-man-compares-himself-to-user",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "Former Man Compares Himself to {{user}}",
+      "direction": "He treats {{user}} as a rival and argues that he understands {{char}} better."
+    },
+    {
+      "id": "g11-former-man-refuses-competition",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "Former Man Refuses Competition",
+      "direction": "He says {{char}} should decide what she wants rather than have two men compete for her."
+    },
+    {
+      "id": "g11-char-resents-being-asked-to-choose",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "{{char}} Resents Being Asked to Choose",
+      "direction": "She refuses to reduce complicated feelings to an immediate binary choice."
+    },
+    {
+      "id": "g11-comparison-makes-her-appreciate-user-more",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "Comparison Makes Her Appreciate {{user}} More",
+      "direction": "The reunion clarifies strengths of her current relationship."
+    },
+    {
+      "id": "g11-comparison-makes-existing-problems-clearer",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "Comparison Makes Existing Problems Clearer",
+      "direction": "The reunion highlights genuine issues {{char}} had already been avoiding."
+    },
+    {
+      "id": "g12-the-one-who-got-away-distance-is-gone",
+      "group": "12 The One Who Got Away Variants",
+      "title": "The One Who Got Away — Distance Is Gone",
+      "direction": "The specific barrier that ended the first-love relationship no longer exists, making the reunion genuinely consequential."
+    },
+    {
+      "id": "g12-the-one-who-got-away-distance-still-exists",
+      "group": "12 The One Who Got Away Variants",
+      "title": "The One Who Got Away — Distance Still Exists",
+      "direction": "The emotional connection returns, but the same practical barrier remains."
+    },
+    {
+      "id": "g12-first-love-never-properly-replaced",
+      "group": "12 The One Who Got Away Variants",
+      "title": "First Love Never Properly Replaced",
+      "direction": "{{char}} built a good life afterward but never fully stopped wondering about him."
+    },
+    {
+      "id": "g12-first-love-became-a-benchmark",
+      "group": "12 The One Who Got Away Variants",
+      "title": "First Love Became a Benchmark",
+      "direction": "She unconsciously compares later relationships with the intensity of that first love."
+    },
+    {
+      "id": "g12-he-also-never-forgot-her",
+      "group": "12 The One Who Got Away Variants",
+      "title": "He Also Never Forgot Her",
+      "direction": "The former man reveals that the old relationship remained emotionally significant to him."
+    },
+    {
+      "id": "g12-he-moved-on-completely",
+      "group": "12 The One Who Got Away Variants",
+      "title": "He Moved On Completely",
+      "direction": "The painful twist is that {{char}} feels the old intensity while he does not."
+    },
+    {
+      "id": "g12-both-wonder-what-if",
+      "group": "12 The One Who Got Away Variants",
+      "title": "Both Wonder “What If?”",
+      "direction": "Neither is immediately trying to cheat or leave, but both acknowledge the unrealized life they once imagined."
+    },
+    {
+      "id": "g12-old-promise-resurfaces",
+      "group": "12 The One Who Got Away Variants",
+      "title": "Old Promise Resurfaces",
+      "direction": "A youthful adult promise about reconnecting someday becomes unexpectedly relevant."
+    },
+    {
+      "id": "g12-they-revisit-the-breakup-decision",
+      "group": "12 The One Who Got Away Variants",
+      "title": "They Revisit the Breakup Decision",
+      "direction": "They discuss whether ending things was necessary or simply the only choice available at the time."
+    },
+    {
+      "id": "g12-the-fantasy-is-better-than-the-reality",
+      "group": "12 The One Who Got Away Variants",
+      "title": "The Fantasy Is Better Than the Reality",
+      "direction": "The myth of the one who got away weakens once they actually spend time together again."
+    },
+    {
+      "id": "g12-present-day-compatibility-is-real",
+      "group": "12 The One Who Got Away Variants",
+      "title": "Present-Day Compatibility Is Real",
+      "direction": "They discover that the traits that once made them work still exist, creating genuine conflict."
+    },
+    {
+      "id": "g12-they-get-closure-at-last",
+      "group": "12 The One Who Got Away Variants",
+      "title": "They Get Closure at Last",
+      "direction": "The reunion allows both to mourn and release the old future rather than restart it."
+    },
+    {
+      "id": "g13-transactional-past-was-strictly-bounded",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "Transactional Past Was Strictly Bounded",
+      "direction": "The compensated-dating relationship was clearly transactional and emotionally compartmentalized."
+    },
+    {
+      "id": "g13-transactional-past-became-genuine-friendship",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "Transactional Past Became Genuine Friendship",
+      "direction": "Repeated meetings created real trust or friendship without necessarily becoming romance."
+    },
+    {
+      "id": "g13-transactional-past-included-real-feelings",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "Transactional Past Included Real Feelings",
+      "direction": "One or both developed feelings despite the paid context."
+    },
+    {
+      "id": "g13-char-hid-the-transactional-past",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "{{char}} Hid the Transactional Past",
+      "direction": "{{user}} does not know she previously had compensated-dating arrangements."
+    },
+    {
+      "id": "g13-user-knows-the-transactional-past-generally",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "{{user}} Knows the Transactional Past Generally",
+      "direction": "{{user}} knows about that period but not this particular man."
+    },
+    {
+      "id": "g13-former-regular-recognizes-her-publicly",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "Former Regular Recognizes Her Publicly",
+      "direction": "An unexpected recognition forces the past into the present."
+    },
+    {
+      "id": "g13-former-regular-is-now-an-ordinary-acquaintance",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "Former Regular Is Now an Ordinary Acquaintance",
+      "direction": "Their old transactional roles no longer define the current interaction."
+    },
+    {
+      "id": "g13-former-regular-wants-to-restart-the-arrangement",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "Former Regular Wants to Restart the Arrangement",
+      "direction": "He proposes adult compensated contact again; {{char}} remains free to refuse."
+    },
+    {
+      "id": "g13-former-regular-wants-a-normal-date",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "Former Regular Wants a Normal Date",
+      "direction": "He now wants a conventional romantic connection rather than a paid arrangement."
+    },
+    {
+      "id": "g13-former-regular-wants-only-closure",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "Former Regular Wants Only Closure",
+      "direction": "He simply remembers her fondly and has no present agenda."
+    },
+    {
+      "id": "g13-power-dynamics-have-changed",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "Power Dynamics Have Changed",
+      "direction": "Their current social or financial positions differ substantially from the past; do not treat money as sexual leverage."
+    },
+    {
+      "id": "g13-char-reassesses-what-the-past-meant",
+      "group": "13 Compensated-Dating Past Variants",
+      "title": "{{char}} Reassesses What the Past Meant",
+      "direction": "The reunion prompts her to reconsider whether that old relationship felt empowering, neutral, exploitative, affectionate, or complicated."
+    },
+    {
+      "id": "g14-ex-is-now-users-coworker",
+      "group": "14 Social / History Complications",
+      "title": "Ex Is Now {{user}}’s Coworker",
+      "direction": "The former man enters {{user}}’s everyday professional life."
+    },
+    {
+      "id": "g14-ex-becomes-a-mutual-friend",
+      "group": "14 Social / History Complications",
+      "title": "Ex Becomes a Mutual Friend",
+      "direction": "Current circumstances make ongoing group contact unavoidable."
+    },
+    {
+      "id": "g14-ex-is-dating-chars-friend",
+      "group": "14 Social / History Complications",
+      "title": "Ex Is Dating {{char}}’s Friend",
+      "direction": "The former man returns as someone else’s current partner."
+    },
+    {
+      "id": "g14-ex-is-dating-users-friend",
+      "group": "14 Social / History Complications",
+      "title": "Ex Is Dating {{user}}’s Friend",
+      "direction": "The social circles overlap in an unexpected way."
+    },
+    {
+      "id": "g14-former-fwb-is-invited-to-the-same-event",
+      "group": "14 Social / History Complications",
+      "title": "Former FWB Is Invited to the Same Event",
+      "direction": "Old sexual history sits beneath an otherwise normal social encounter."
+    },
+    {
+      "id": "g14-old-crush-never-knew",
+      "group": "14 Social / History Complications",
+      "title": "Old Crush Never Knew",
+      "direction": "The returning man learns for the first time that {{char}} once wanted him."
+    },
+    {
+      "id": "g14-old-crush-knew-but-did-nothing",
+      "group": "14 Social / History Complications",
+      "title": "Old Crush Knew but Did Nothing",
+      "direction": "He was aware of her attraction and deliberately did not pursue it at the time."
+    },
+    {
+      "id": "g14-old-crush-wanted-her-too",
+      "group": "14 Social / History Complications",
+      "title": "Old Crush Wanted Her Too",
+      "direction": "The reunion reveals that their feelings were once mutual but badly timed."
+    },
+    {
+      "id": "g14-someone-recognizes-them-together",
+      "group": "14 Social / History Complications",
+      "title": "Someone Recognizes Them Together",
+      "direction": "An old acquaintance remembers the former relationship and assumes they are reunited."
+    },
+    {
+      "id": "g14-family-remembers-him-fondly",
+      "group": "14 Social / History Complications",
+      "title": "Family Remembers Him Fondly",
+      "direction": "{{char}}’s family or old friends are enthusiastic to see him again, creating social pressure."
+    },
+    {
+      "id": "g14-family-disliked-him",
+      "group": "14 Social / History Complications",
+      "title": "Family Disliked Him",
+      "direction": "Old warnings or conflicts return with him."
+    },
+    {
+      "id": "g14-shared-secret-from-the-past",
+      "group": "14 Social / History Complications",
+      "title": "Shared Secret From the Past",
+      "direction": "They share non-criminal personal history that neither normally discusses, creating intimacy without automatically implying romance."
+    },
+    {
+      "id": "g14-old-photos-messages-resurface",
+      "group": "14 Social / History Complications",
+      "title": "Old Photos / Messages Resurface",
+      "direction": "A reunion prompts rediscovery of historical material that changes how the past is remembered."
+    },
+    {
+      "id": "g15-clear-boundaries-no-problem",
+      "group": "15 Boundaries / Escalation",
+      "title": "Clear Boundaries, No Problem",
+      "direction": "{{char}} and the former man acknowledge attraction or history but keep contact within boundaries both consider appropriate."
+    },
+    {
+      "id": "g15-she-asks-user-before-a-private-catch-up",
+      "group": "15 Boundaries / Escalation",
+      "title": "She Asks {{user}} Before a Private Catch-Up",
+      "direction": "{{char}} discusses a one-on-one meeting rather than hiding it, while {{user}} remains free to have his own boundaries."
+    },
+    {
+      "id": "g15-she-does-not-ask-permission-to-speak",
+      "group": "15 Boundaries / Escalation",
+      "title": "She Does Not Ask Permission to Speak",
+      "direction": "{{char}} treats ordinary conversation as her own choice while still recognizing relationship agreements about dating or sex."
+    },
+    {
+      "id": "g15-they-flirt-but-stop-there",
+      "group": "15 Boundaries / Escalation",
+      "title": "They Flirt but Stop There",
+      "direction": "Mutual attraction surfaces without immediate escalation."
+    },
+    {
+      "id": "g15-they-kiss",
+      "group": "15 Boundaries / Escalation",
+      "title": "They Kiss",
+      "direction": "A consensual adult kiss crosses a relationship boundary if exclusivity applies."
+    },
+    {
+      "id": "g15-they-have-a-one-time-encounter",
+      "group": "15 Boundaries / Escalation",
+      "title": "They Have a One-Time Encounter",
+      "direction": "A later consensual sexual encounter occurs after plausible decisions and circumstances."
+    },
+    {
+      "id": "g15-they-start-an-affair",
+      "group": "15 Boundaries / Escalation",
+      "title": "They Start an Affair",
+      "direction": "Renewed contact develops into ongoing secret emotional or sexual involvement."
+    },
+    {
+      "id": "g15-she-leaves-before-pursuing-him",
+      "group": "15 Boundaries / Escalation",
+      "title": "She Leaves Before Pursuing Him",
+      "direction": "{{char}} decides she cannot honestly explore the old relationship while remaining with {{user}} and ends or pauses the current relationship first."
+    },
+    {
+      "id": "g15-she-proposes-non-monogamy",
+      "group": "15 Boundaries / Escalation",
+      "title": "She Proposes Non-Monogamy",
+      "direction": "The reunion prompts a genuine discussion about consensual openness rather than secret cheating."
+    },
+    {
+      "id": "g15-she-chooses-no-contact",
+      "group": "15 Boundaries / Escalation",
+      "title": "She Chooses No Contact",
+      "direction": "She decides the emotional risk is not worth maintaining the reconnection."
+    },
+    {
+      "id": "g15-former-man-chooses-no-contact",
+      "group": "15 Boundaries / Escalation",
+      "title": "Former Man Chooses No Contact",
+      "direction": "He recognizes the risk to his own life or {{char}}’s current relationship and steps back."
+    },
+    {
+      "id": "g15-boundary-changes-over-time",
+      "group": "15 Boundaries / Escalation",
+      "title": "Boundary Changes Over Time",
+      "direction": "A friendship that initially feels safe gradually becomes more emotionally intimate, requiring new decisions."
+    },
+    {
+      "id": "g16-safer-sex-conversation-before-any-encounter",
+      "group": "16 Sexual Health / Privacy",
+      "title": "Safer-Sex Conversation Before Any Encounter",
+      "direction": "If renewed contact becomes sexual, the adults discuss appropriate safer-sex boundaries first."
+    },
+    {
+      "id": "g16-testing-expectations",
+      "group": "16 Sexual Health / Privacy",
+      "title": "Testing Expectations",
+      "direction": "Past familiarity does not eliminate present-day testing or health conversations."
+    },
+    {
+      "id": "g16-contraception-discussed",
+      "group": "16 Sexual Health / Privacy",
+      "title": "Contraception Discussed",
+      "direction": "Potentially reproductive sex includes realistic contraception discussion; no method is perfect."
+    },
+    {
+      "id": "g16-pregnancy-risk-is-possible-later",
+      "group": "16 Sexual Health / Privacy",
+      "title": "Pregnancy Risk Is Possible Later",
+      "direction": "A later sexual reunion may create pregnancy risk, but pregnancy is not immediately knowable."
+    },
+    {
+      "id": "g16-no-intimate-media",
+      "group": "16 Sexual Health / Privacy",
+      "title": "No Intimate Media",
+      "direction": "Old familiarity does not imply consent to new photos or recordings."
+    },
+    {
+      "id": "g16-old-intimate-media-still-exists",
+      "group": "16 Sexual Health / Privacy",
+      "title": "Old Intimate Media Still Exists",
+      "direction": "Historical intimate media may exist, but it cannot be shared or reused without present consent."
+    },
+    {
+      "id": "g16-privacy-from-friends-family",
+      "group": "16 Sexual Health / Privacy",
+      "title": "Privacy From Friends / Family",
+      "direction": "The adults decide what parts of the old relationship or current reunion are private."
+    },
+    {
+      "id": "g16-former-man-has-his-own-partner",
+      "group": "16 Sexual Health / Privacy",
+      "title": "Former Man Has His Own Partner",
+      "direction": "His current adult partner’s agreements and informed consent matter independently."
+    },
+    {
+      "id": "g16-past-sti-health-history-is-not-assumed-current",
+      "group": "16 Sexual Health / Privacy",
+      "title": "Past STI / Health History Is Not Assumed Current",
+      "direction": "Do not treat old sexual-health information as permanently valid years later."
+    },
+    {
+      "id": "g16-emotional-privacy-matters-too",
+      "group": "16 Sexual Health / Privacy",
+      "title": "Emotional Privacy Matters Too",
+      "direction": "{{char}} may want some private reflection without automatically hiding conduct that affects relationship agreements."
+    },
+    {
+      "id": "g17-you-two-know-each-other",
+      "group": "17 Strong Roleplay Openings",
+      "title": "You Two Know Each Other?",
+      "direction": "Open when {{user}} innocently realizes {{char}} and the man recognize each other, naturally bridging to the related series."
+    },
+    {
+      "id": "g17-unexpected-name-recognition",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Unexpected Name Recognition",
+      "direction": "Open when {{char}} hears a name from her past and immediately reacts before {{user}} knows why."
+    },
+    {
+      "id": "g17-he-walks-into-her-workplace",
+      "group": "17 Strong Roleplay Openings",
+      "title": "He Walks Into Her Workplace",
+      "direction": "Open with the former man unexpectedly appearing in {{char}}’s present-day environment."
+    },
+    {
+      "id": "g17-old-message-arrives",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Old Message Arrives",
+      "direction": "Open with a simple message from someone {{char}} has not heard from in years."
+    },
+    {
+      "id": "g17-mutual-friend-says-hes-back",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Mutual Friend Says He’s Back",
+      "direction": "Open just before the first reunion, when {{char}} learns the former man has returned."
+    },
+    {
+      "id": "g17-ex-meets-user-first",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Ex Meets {{user}} First",
+      "direction": "Open with {{user}} encountering the man before realizing the connection to {{char}}."
+    },
+    {
+      "id": "g17-the-one-who-got-away-returns",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The One Who Got Away Returns",
+      "direction": "Open when the first love separated only by distance unexpectedly becomes geographically available again."
+    },
+    {
+      "id": "g17-former-fwb-makes-a-casual-joke",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Former FWB Makes a Casual Joke",
+      "direction": "Open with an easy familiarity that immediately reveals there is more history than {{user}} expected."
+    },
+    {
+      "id": "g17-old-crush-says-he-liked-her-too",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Old Crush Says He Liked Her Too",
+      "direction": "Open when the former crush reveals their attraction was mutual all along."
+    },
+    {
+      "id": "g17-compensated-dating-regular-recognizes-her",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Compensated-Dating Regular Recognizes Her",
+      "direction": "Open when an old recurring adult compensated-dating contact unexpectedly recognizes {{char}} in her current life."
+    },
+    {
+      "id": "g17-he-asks-for-coffee",
+      "group": "17 Strong Roleplay Openings",
+      "title": "He Asks for Coffee",
+      "direction": "Open with a seemingly ordinary invitation that carries heavy history."
+    },
+    {
+      "id": "g17-she-tells-user-immediately",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Tells {{user}} Immediately",
+      "direction": "Open with {{char}} coming home or messaging {{user}} to explain who she just ran into."
+    },
+    {
+      "id": "g17-she-hides-the-reunion-at-first",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Hides the Reunion at First",
+      "direction": "Open after {{char}} has chosen not to mention a seemingly minor encounter and is still deciding what it means."
+    },
+    {
+      "id": "g17-all-three-meet",
+      "group": "17 Strong Roleplay Openings",
+      "title": "All Three Meet",
+      "direction": "Open with {{char}}, {{user}}, and the former man in the same room before the full history has been discussed."
+    },
+    {
+      "id": "g17-old-place-new-lives",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Old Place, New Lives",
+      "direction": "Open when {{char}} unexpectedly meets him at a location strongly associated with their former relationship."
+    },
+    {
+      "id": "g18-bridge-to-she-wants-him",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to She Wants Him",
+      "direction": "The reunion creates meaningful present-day attraction to the former man and the focus shifts to what {{char}} wants now."
+    },
+    {
+      "id": "g18-bridge-to-her-secret-past",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Her Secret Past",
+      "direction": "The former man reveals a significant part of {{char}}’s adult past that {{user}} did not know."
+    },
+    {
+      "id": "g18-bridge-to-you-two-know-each-other",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to You Two Know Each Other?",
+      "direction": "The initial dramatic engine is simply discovering that two people in {{user}}’s life have unexpected shared history."
+    },
+    {
+      "id": "g18-bridge-to-under-your-nose",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Under Your Nose",
+      "direction": "Renewed contact becomes a hidden ongoing emotional or sexual relationship."
+    },
+    {
+      "id": "g18-bridge-to-he-wants-your-girl",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to He Wants Your Girl",
+      "direction": "The former man openly decides he wants {{char}} back and tells or challenges {{user}} directly."
+    },
+    {
+      "id": "g18-bridge-to-ntr-report",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to NTR Report",
+      "direction": "A later outside encounter can become a disclosure/report-focused aftermath."
+    },
+    {
+      "id": "g18-bridge-to-open-relationship",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Open Relationship",
+      "direction": "Rather than hide renewed attraction, {{char}} raises consensual non-monogamy."
+    },
+    {
+      "id": "g18-bridge-to-im-going-to-bang-another-man",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to I’m Going to Bang Another Man",
+      "direction": "{{char}} eventually decides she will have sex with the former man regardless of whether the relationship remains exclusive."
+    },
+    {
+      "id": "g18-bridge-to-she-got-pregnant-later",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to She Got Pregnant — Later",
+      "direction": "If renewed sexual contact occurs, pregnancy may later become a separate consequence after plausible timing and evidence."
+    },
+    {
+      "id": "g18-closure-ending",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Closure Ending",
+      "direction": "The reunion resolves old questions and leaves {{char}} more certain about her present life."
+    },
+    {
+      "id": "g18-friendship-ending",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Friendship Ending",
+      "direction": "The adults rebuild a genuine platonic friendship while respecting current relationships."
+    },
+    {
+      "id": "g18-breakup-before-reunion-romance",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Breakup Before Reunion Romance",
+      "direction": "{{char}} ends her current relationship before seriously pursuing the former man."
+    },
+    {
+      "id": "g18-past-stays-past",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Past Stays Past",
+      "direction": "The encounter is meaningful but does not produce ongoing contact."
+    },
+    {
+      "id": "g18-no-forced-escalation",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "No Forced Escalation",
+      "direction": "Keep the roleplay centered on the reunion, history reveal, and emotional uncertainty without forcing sex, cheating, breakup, or reconciliation."
+    },
+    {
+      "id": "g06-the-old-raw-chemistry-comes-back",
+      "group": "06 What Feelings Return",
+      "title": "The Old Raw Chemistry Comes Back",
+      "direction": "What returns is not only emotional nostalgia but the specific sexual chemistry they used to have — including the ease of going unprotected and the way he used to finish inside her. Vary how quickly that physical memory surfaces and how {{char}} handles it relative to her present relationship."
+    },
+    {
+      "id": "g06-she-remembers-how-he-filled-her",
+      "group": "06 What Feelings Return",
+      "title": "She Remembers How He Filled Her",
+      "direction": "A core part of what the reunion stirs is the memory of him finishing inside her — the sensation, the frequency, the way it felt afterward. Vary whether the memory is welcome, intrusive, or shameful, and whether she has ever described that history to {{user}}."
+    },
+    {
+      "id": "g06-she-gets-wet-from-the-old-dynamic",
+      "group": "06 What Feelings Return",
+      "title": "She Gets Wet from the Old Dynamic",
+      "direction": "Contact with the man from her past produces immediate physical arousal tied to how they used to be together sexually. Vary how obvious the reaction is and whether she tries to hide it from both men."
+    },
+    {
+      "id": "g07-he-wants-to-finish-inside-her-again",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants to Finish Inside Her Again",
+      "direction": "The former man’s present desire is specific: he wants to have her unprotected and finish inside her the way he used to (or the way they never quite got to). Vary how directly he states this and whether the want is nostalgic, possessive, or purely sexual."
+    },
+    {
+      "id": "g07-he-wants-to-reclaim-her-body",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Wants to Reclaim Her Body",
+      "direction": "The former man frames his interest as reclaiming what was once his — her body, her orgasms, the right to finish inside her. Vary how much of this is ego versus genuine feeling, and keep {{char}}’s present autonomy central."
+    },
+    {
+      "id": "g07-he-still-talks-to-her-like-she-is-his-to-breed",
+      "group": "07 What the Former Man Wants Now",
+      "title": "He Still Talks to Her Like She Is His to Breed",
+      "direction": "Whether or not they resume a full relationship, the former man slips back into breeding or ownership language he used with her before. Vary {{char}}’s reaction to hearing that old register again."
+    },
+    {
+      "id": "g02-ex-who-used-to-finish-inside-her-regularly",
+      "group": "02 What He Was to Her",
+      "title": "Ex Who Used to Finish Inside Her Regularly",
+      "direction": "In the past relationship he regularly came inside her. That sexual history is a concrete part of what ‘ex’ means here. Vary how much {{user}} already knows about that detail and how central it becomes after the reunion."
+    },
+    {
+      "id": "g02-former-fwb-built-on-raw-sex",
+      "group": "02 What He Was to Her",
+      "title": "Former FWB Built on Raw Sex",
+      "direction": "Their past was primarily friends-with-benefits with a strong pattern of unprotected sex and internal finishes. The reunion reopens that specific sexual contract. Vary whether either of them wants to resume it as-is."
+    },
+    {
+      "id": "g03-it-ended-after-a-pregnancy-scare",
+      "group": "03 Why It Ended",
+      "title": "It Ended After a Pregnancy Scare",
+      "direction": "The past relationship ended (or paused) after a pregnancy scare caused by him finishing inside her. The reunion forces that history back into the open. Vary how resolved the scare was and what each person learned from it."
+    },
+    {
+      "id": "g03-it-ended-because-she-wanted-exclusivity-he-did-not",
+      "group": "03 Why It Ended",
+      "title": "It Ended Because She Wanted Exclusivity, He Did Not",
+      "direction": "She left or was left because she wanted a closed relationship and he did not (or the reverse). The sexual openness of the past becomes relevant again when they reunite. Vary who holds which position now."
+    },
+    {
+      "id": "g09-they-have-sex-and-he-finishes-inside-her-again",
+      "group": "09 What Happens After the Reunion",
+      "title": "They Have Sex and He Finishes Inside Her Again",
+      "direction": "After the reunion they have consensual sex and he finishes inside her, re-establishing that specific act. Vary whether this was planned, impulsive, or a slip relative to any rules with {{user}}, and leave {{user}}’s knowledge state open."
+    },
+    {
+      "id": "g09-one-night-reopens-the-old-raw-pattern",
+      "group": "09 What Happens After the Reunion",
+      "title": "One Night Reopens the Old Raw Pattern",
+      "direction": "A single night together is enough to fall back into the old pattern of unprotected sex and internal finishes. Vary how both of them feel the next day and what they decide about continuing."
+    },
+    {
+      "id": "g10-she-hides-that-he-finished-inside-her",
+      "group": "10 Disclosure / Secrecy",
+      "title": "She Hides That He Finished Inside Her",
+      "direction": "{{char}} has sex with the man from her past and lets him finish inside her, then conceals that specific fact from {{user}} (while possibly admitting contact or even sex). Vary her motives for the selective honesty."
+    },
+    {
+      "id": "g10-she-confesses-the-creampie-from-the-past-man",
+      "group": "10 Disclosure / Secrecy",
+      "title": "She Confesses the Creampie from the Past Man",
+      "direction": "{{char}} tells {{user}} not only that she saw or slept with the man from her past, but that he finished inside her. The disclosure is explicit. Vary timing, tone, and what she wants from {{user}} afterward."
+    },
+    {
+      "id": "g11-the-old-sex-was-rougher-or-more-intense",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "The Old Sex Was Rougher or More Intense",
+      "direction": "A source of tension is that sex with the man from her past was rougher, longer, more frequent, or more focused on him finishing inside her than her present sex life with {{user}}. Vary whether she frames this as nostalgia, comparison, or a problem she does not want to name."
+    },
+    {
+      "id": "g11-she-never-told-user-how-sexual-the-past-was",
+      "group": "11 Past vs Present Relationship Tension",
+      "title": "She Never Told {{user}} How Sexual the Past Was",
+      "direction": "{{user}} knows there was an ex or former partner, but not the extent of the raw/creampie history. The reunion risks exposing how sexually intense that past actually was. Vary how {{char}} manages the gap in what {{user}} knows."
+    },
+    {
+      "id": "g16-unfinished-pregnancy-risk-from-the-past",
+      "group": "16 Sexual Health / Privacy",
+      "title": "Unfinished Pregnancy Risk from the Past",
+      "direction": "There is unresolved sexual-health or pregnancy-risk history with the former man (scare, terminated pregnancy, near-miss, or ongoing risk if they resume). The reunion brings that unfinished business forward. Handle with care and keep outcomes open."
+    },
+    {
+      "id": "g16-they-never-used-protection-then-and-slip-again",
+      "group": "16 Sexual Health / Privacy",
+      "title": "They Never Used Protection Then and Slip Again",
+      "direction": "Historically they almost never used protection. On reunion the same pattern reasserts itself quickly. Vary how conscious the ‘slip’ is and what each person does about the risk afterward."
+    },
+    {
+      "id": "g17-he-greets-her-with-the-old-sexual-familiarity",
+      "group": "17 Strong Roleplay Openings",
+      "title": "He Greets Her With the Old Sexual Familiarity",
+      "direction": "Open with the reunion itself: the former man greets {{char}} with physical or verbal familiarity that assumes the old sexual dynamic (touch, tone, a private joke about how he used to finish in her). Leave her response and {{user}}’s presence or knowledge open."
+    },
+    {
+      "id": "g17-she-comes-home-different-after-seeing-him",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Comes Home Different After Seeing Him",
+      "direction": "Open with {{char}} returning to {{user}} after contact with the man from her past. Something is different — scent, mood, arousal, a mark, or a careful distance. The secret or partial truth of what happened is still settling. Leave confrontation open."
+    },
+    {
+      "id": "g17-user-finds-old-explicit-messages-or-photos",
+      "group": "17 Strong Roleplay Openings",
+      "title": "{{user}} Finds Old Explicit Messages or Photos",
+      "direction": "Open with {{user}} discovering old (or newly resumed) explicit messages or photos between {{char}} and the man from her past — including references to raw sex or him finishing inside her. The history becomes visible at once."
+    },
+    {
+      "id": "g15-she-sets-a-rule-no-finishing-inside-then-breaks-it",
+      "group": "15 Boundaries / Escalation",
+      "title": "She Sets a Rule — No Finishing Inside — Then Breaks It",
+      "direction": "{{char}} agrees to see the former man with a boundary that he will not finish inside her (or that they will use protection). In the moment the boundary fails. Vary whether the failure is mutual heat, his pressure, or her choice, and how she handles it afterward with {{user}}."
+    },
+    {
+      "id": "g04-reunion-at-a-place-that-used-to-mean-sex",
+      "group": "04 How They Reunite",
+      "title": "Reunion at a Place That Used to Mean Sex",
+      "direction": "They reunite in a location that was previously tied to their sexual history (his old place, a hotel they used, a private spot). The setting itself pulls the old raw pattern closer. Vary how intentional the location choice was."
+    },
+    {
+      "id": "g08-he-is-still-the-best-she-ever-had-at-that",
+      "group": "08 What Has Changed Since Then",
+      "title": "He Is Still the Best She Ever Had at That",
+      "direction": "Despite time and her current relationship, {{char}} still privately ranks the former man as the best she has had at a specific sexual thing — making her come, lasting, finishing inside her, intensity. Vary whether this ranking is stable or shaken by the reunion."
+    },
+    {
+      "id": "g09-they-fall-back-into-multiple-loads-in-one-night",
+      "group": "09 What Happens After the Reunion",
+      "title": "They Fall Back Into Multiple Loads in One Night",
+      "direction": "Once they cross the line again, the night looks like the old nights: he finishes inside her more than once. Vary emotional aftermath and what either of them decides this means for the future."
+    }
+  ],
+  "sections": [
+    {
+      "id": "past-vs-present",
+      "label": "Past history vs present reality",
+      "content": "Track separately what the relationship once was, why it ended, what each person remembers, what each feels now, and whether the old reason for separation still applies. Strong history can matter without controlling the present."
+    },
+    {
+      "id": "nostalgia-vs-compatibility",
+      "label": "Nostalgia is not compatibility",
+      "content": "A reunion can produce intense familiarity, grief, excitement, or sexual memory. Those feelings do not prove that the former relationship would work today. Conversely, old problems may genuinely have changed. Let the scenario establish both rather than assuming either."
+    },
+    {
+      "id": "user-knowledge",
+      "label": "What {{user}} knows matters",
+      "content": "Vary whether the former man is a known ex, a name without a face, someone presented only as a friend, an entirely undisclosed history, or someone {{user}} already knows independently. Do not give {{user}} knowledge the setup has not established."
+    },
+    {
+      "id": "one-who-got-away",
+      "label": "The One Who Got Away",
+      "content": "For this subtype, preserve the Bible’s key distinction: the first-love relationship ended because distance or circumstances made it impossible, not because one person simply stopped caring. The reunion becomes meaningful because the external obstacle may have changed."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Use the narrowest relevant Direction Preset. Presets from separate groups can be combined through one short visible Additional Direction—for example: Former FWB + They Drifted Apart + Warm Nostalgia Only + He Wants Friendship, or The One Who Got Away + Distance Is Gone + {{user}} Knows Everything + Old Love Returns, or Compensated-Dating Regular + {{user}} Has Never Heard of Him + Former Regular Wants Only Closure."
+    }
+  ],
+  "raw_prompt": "Prioritise meaningful shared adult history, clear separation between past and present, {{char}} and {{user}} agency, believable reunion circumstances, uncertainty about present-day feelings, and genuine scenario variety. Preserve the selected Direction Preset and do not decide {{user}}’s reaction or {{char}}’s final choice."
 }
