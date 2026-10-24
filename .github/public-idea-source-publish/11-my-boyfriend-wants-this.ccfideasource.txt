@@ -3,6 +3,1700 @@
   "schema_version": 1,
   "id": "bible-i-11-my-boyfriend-wants-this",
   "title": "My Boyfriend Wants This",
+  "description": "Reusable adult outside-partner invitation engine in which {{char}}’s boyfriend asks her to explore a cuckold-style dynamic and {{user}} is the adult man selected or considered as the outside partner. Detailed presets vary who chose {{user}}, why {{char}} feels safe with him, prior attraction, the boyfriend’s role, first-meeting pacing, overnight rules, relationship boundaries, {{user}}’s starting position, awkwardness, debriefing, privacy, bad-faith variants, and whether friendship or romance grows beyond the original plan.",
   "source_version": "1.2",
-  "note": "Full expanded content (261 presets) is available on Google Drive Idea Sources folder as 11-my-boyfriend-wants-this.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 11,
+    "category": "NTR, Infidelity & Non-Monogamy",
+    "source_date": "2026-09-21"
+  },
+  "summary": "{{char}}’s adult boyfriend asks her to explore a cuckold-style arrangement, and {{user}} is the adult man selected or seriously considered as the outside partner. The arrangement may begin with a normal date, a cautious social meeting, or an explicitly sexual plan. {{char}} may have no prior attraction to {{user}}, may already trust or like him, or may secretly have wanted him before the boyfriend ever suggested the experiment. The engine is the three-way consent and relationship structure around an outside-partner invitation.",
+  "core_premise": "Unlike sources where {{user}} is the boyfriend, this source casts {{user}} as the adult outside man being invited or considered by an existing couple. The boyfriend’s desire for the cuckold dynamic does not create {{char}}’s consent or {{user}}’s consent. Each adult has independent boundaries, privacy, and goals. The arrangement can remain a one-time physical experiment, become recurring FWB, develop into friendship or romance, expand into polyamory, or stop entirely.",
+  "setup": "Begin when {{user}} learns that the couple has selected or considered him, during the first boundaries conversation, immediately before a first low-pressure date, or at another tightly related first step. Establish who chose {{user}}, what {{char}} actually feels about him, what the boyfriend wants, whether anyone has prior history, and what has genuinely been agreed. Do not pre-write {{user}}’s attraction, acceptance, sexual interest, or willingness to join the arrangement.",
+  "core_variables": [
+    "Who chose {{user}} as the potential outside partner.",
+    "Why {{char}} feels safe or comfortable with {{user}}.",
+    "Whether {{char}} already found {{user}} attractive or had a crush on him.",
+    "How well {{user}} already knows {{char}} and her boyfriend.",
+    "Whether the boyfriend is present, absent, observing, planning, or only involved in later debriefing.",
+    "Whether the first meeting is a normal date, social meeting, limited physical trial, or explicitly sexual encounter.",
+    "Whether overnight stays, repeat meetings, travel, or home visits are permitted.",
+    "What boundaries exist around sex, romance, feelings, disclosure, privacy, and future contact.",
+    "Whether {{user}} has his own partner or ENM experience.",
+    "Whether chemistry is strong, weak, awkward, unexpected, or purely friendly.",
+    "Whether friendship, FWB, romantic attachment, or polyamory develops beyond the original plan.",
+    "How the boyfriend reacts when fantasy becomes reality.",
+    "What sexual-health, pregnancy-risk, and privacy agreements affect all adults.",
+    "Whether any participant wants to stop, pause, continue, or renegotiate."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{char}}’s boyfriend asks her to explore a cuckold-style arrangement and {{user}} is the adult man selected or considered as the outside partner.",
+    "Do not write {{user}} as automatically interested, sexually available, attracted to {{char}}, experienced, dominant, or willing to participate.",
+    "Do not treat the boyfriend’s consent as a substitute for {{char}}’s consent or {{user}}’s consent.",
+    "Do not treat {{char}} as something the boyfriend can offer or lend to {{user}}; she independently chooses whether and how to participate.",
+    "Do not treat {{user}} as a sexual service provider or prop for the couple’s fantasy unless he explicitly chooses that role.",
+    "Separate a normal first date, social compatibility, sexual attraction, and romantic attachment rather than assuming one automatically leads to the next.",
+    "Preserve the selected pace. A Casual First Date should remain a normal date unless later roleplay organically changes it.",
+    "Do not assume a Love Hotel or Invited Over preset means sex is guaranteed; any activity remains separately consensual.",
+    "Do not assume Stay the Night automatically means romance, repeated sex, or a future relationship.",
+    "If {{char}} already liked {{user}}, establish whether her boyfriend knew about that attraction rather than silently treating the experiment as neutral.",
+    "If friendship or romance develops beyond the original physical plan, require renegotiation rather than treating the boyfriend’s initial cuckold consent as blanket permission.",
+    "Outside-partner privacy matters. Transparency within the couple does not automatically authorize sharing {{user}}’s private messages, intimate details, photos, or recordings.",
+    "Do not force the boyfriend to remain comfortable once reality differs from fantasy, but do not let jealousy retroactively turn previously permitted behavior into wrongdoing.",
+    "Do not force {{char}} or {{user}} to continue after one meeting merely because the boyfriend wants the dynamic.",
+    "All three adults may pause, decline, renegotiate, or end their participation.",
+    "If alcohol appears, all adults must retain capacity for informed consent.",
+    "If a selected preset defines a narrower setting, relationship history, or outcome, preserve it while varying the remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Consent from all directly involved adults must be specific and independently grounded.",
+    "Do not use relationship pressure, fear of disappointing the boyfriend, friendship obligation, professional leverage, money, housing, intoxication, or social pressure as substitutes for consent.",
+    "Do not assume {{user}} owes participation because he was selected, invited, trusted, or previously attracted to {{char}}.",
+    "Do not assume {{char}} owes participation because her boyfriend proposed the kink.",
+    "Do not treat the boyfriend as entitled to observe, receive explicit details, access private messages, or view media without separate consent from {{char}} and {{user}}.",
+    "Photos and recordings require explicit consent from every depicted adult and separate consent for sharing.",
+    "Do not force {{user}} to become romantically involved, remain only casual, compete with the boyfriend, or accept any assigned 'bull' identity.",
+    "Do not force {{char}} to prefer {{user}}, fall in love with him, remain casual, or continue the arrangement.",
+    "Do not force the boyfriend to enjoy jealousy, humiliation, observation, or ongoing non-monogamy after real experience.",
+    "Do not use cosmetic swaps of names, jobs, or locations as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Boyfriend chose {{user}}, {{char}} chose him, joint choice, friend recommendation, dating-app selection, coworker, online friend, old crush, or existing friend-group choice",
+    "Trusted friend, shared hobby, quiet personality, communication skill, boyfriend trust, mutual friends, known interest, familiar one-on-one comfort, similar experience, or emotional familiarity",
+    "No prior attraction, mild attraction, secret crush, old crush, flirting, boyfriend-known attraction, hidden attraction, curiosity, emotional interest, physical interest, or prior near-date",
+    "Boyfriend absent, socially present, observer, planner, waiting at home, transport role, meeting {{user}} first, no direct contact, or post-date debrief",
+    "Coffee, casual first date, dinner, hobby date, group hangout, explicitly sexual meeting, Love Hotel, Invited Over, his place, hotel, day trip, kiss-only, or open-ended first date",
+    "No overnight, Stay the Night, later overnight, weekend stay, travel, practical overnight, or emotionally meaningful overnight",
+    "One-time, one-date trial, specific-activity limits, no-romance rule, feelings allowed, repeat-with-discussion, standing repeat permission, home rules, sleepover rules, or pause rules",
+    "{{user}} single, partnered with permission, ENM-experienced, first-time outside partner, friend of the couple, primarily {{char}}’s friend, primarily boyfriend’s friend, or surprised candidate",
+    "Purely physical, friendship, unexpected emotional bond, one-sided crush, mutual romance, FWB, polyamory, stop after once, poor chemistry, or better as friends",
+    "Boyfriend excitement, jealousy, compersion, mixed emotions, fear of replacement, comfort from familiarity, less detail, more involvement, pause, continuation, or friendship with {{user}}",
+    "Basic debrief, NTR Report, no sexual details, detailed report with privacy consent, three-way debrief, separate debriefs, next-day check-in, or changing privacy needs",
+    "Safer-sex rules, testing, contraception, pregnancy-risk disclosure, no media, consensual media, message privacy, identity privacy, or changing risk rules",
+    "Low awkwardness, both shy, one shy, overthinking, easy conversation, no romantic chemistry, no sexual chemistry, strong chemistry, shared nerdiness, humor, or mismatched expectations",
+    "Good-faith experiment versus pressure, hidden prior feelings, changed rules, privacy violations, secret recording, public exposure, misinformation about consent, or one-time consent treated as permanent",
+    "One-time ending, recurring arrangement, friendship, FWB, polyamory, closing, one person stopping, NTR Report bridge, She Wants Him bridge, Open Relationship bridge, or hidden continuation"
+  ],
+  "cross_links": [
+    "NTR Report",
+    "She Wants Him",
+    "Open Relationship",
+    "Turn You Into a Cuck",
+    "Under Your Nose",
+    "She Got Pregnant"
+  ],
+  "tags": [
+    "adult",
+    "cuckold",
+    "outside partner",
+    "boyfriend wants this",
+    "consensual non-monogamy",
+    "bull",
+    "first date",
+    "love hotel",
+    "stay the night",
+    "relationship negotiation",
+    "friendship",
+    "romance",
+    "polyamory"
+  ],
+  "notes": "Expanded from Series Bible I #11. The original seeds—Love Hotel, Invited Over, Stay the Night, Casual First Date, and Nerd Chooses Nerd Because a Stranger Feels Intimidating—are preserved and expanded into a large grouped preset library. The source treats {{user}} as an autonomous outside partner rather than a prop for the couple’s fantasy and explicitly supports ordinary dates, awkwardness, friendship, poor chemistry, and romance as distinct outcomes.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied My Boyfriend Wants This concepts in which {{char}}’s adult boyfriend asks her to explore a cuckold-style arrangement and {{user}} is the adult man selected or seriously considered as the outside partner. Vary who chose {{user}}, why {{char}} feels safe or interested, whether the boyfriend is present, whether the first meeting is a normal date or explicitly sexual, how familiar {{char}} and {{user}} already are, what boundaries exist, and whether friendship or romance develops beyond the original physical arrangement. Do not pre-write {{user}}’s consent, attraction, or decisions."
+    },
+    {
+      "id": "g02-boyfriend-chose-user",
+      "group": "02 Who Chose {{user}}",
+      "title": "Boyfriend Chose {{user}}",
+      "direction": "{{char}}’s boyfriend specifically selected {{user}} as a possible outside partner and asks {{char}} to consider him."
+    },
+    {
+      "id": "g02-char-chose-user",
+      "group": "02 Who Chose {{user}}",
+      "title": "{{char}} Chose {{user}}",
+      "direction": "{{char}} identifies {{user}} as the adult man she would feel most comfortable exploring the arrangement with."
+    },
+    {
+      "id": "g02-they-chose-user-together",
+      "group": "02 Who Chose {{user}}",
+      "title": "They Chose {{user}} Together",
+      "direction": "The couple discusses possible adult partners together and mutually identifies {{user}} as the best fit."
+    },
+    {
+      "id": "g02-boyfriend-suggested-char-agreed-immediately",
+      "group": "02 Who Chose {{user}}",
+      "title": "Boyfriend Suggested, {{char}} Agreed Immediately",
+      "direction": "The boyfriend names {{user}}, and {{char}} quickly admits she had already considered him attractive or safe."
+    },
+    {
+      "id": "g02-boyfriend-suggested-char-needs-convincing",
+      "group": "02 Who Chose {{user}}",
+      "title": "Boyfriend Suggested, {{char}} Needs Convincing",
+      "direction": "The boyfriend thinks {{user}} is a good fit, while {{char}} initially feels uncertain or awkward."
+    },
+    {
+      "id": "g02-char-suggested-boyfriend-was-surprised",
+      "group": "02 Who Chose {{user}}",
+      "title": "{{char}} Suggested, Boyfriend Was Surprised",
+      "direction": "{{char}} names {{user}} unexpectedly, forcing her boyfriend to process that her interest may predate the experiment."
+    },
+    {
+      "id": "g02-friend-recommended-user",
+      "group": "02 Who Chose {{user}}",
+      "title": "Friend Recommended {{user}}",
+      "direction": "A trusted adult friend who knows the couple and {{user}} suggests him as a safe or compatible possibility."
+    },
+    {
+      "id": "g02-dating-app-match-leads-to-user",
+      "group": "02 Who Chose {{user}}",
+      "title": "Dating-App Match Leads to {{user}}",
+      "direction": "The couple explores potential outside partners through a dating app or adult community and {{user}} becomes the leading option."
+    },
+    {
+      "id": "g02-existing-friend-group",
+      "group": "02 Who Chose {{user}}",
+      "title": "Existing Friend Group",
+      "direction": "{{user}} is already part of their adult social circle and becomes the obvious familiar candidate."
+    },
+    {
+      "id": "g02-coworker-candidate",
+      "group": "02 Who Chose {{user}}",
+      "title": "Coworker Candidate",
+      "direction": "{{user}} is an adult coworker or professional acquaintance of {{char}} whose familiarity reduces stranger anxiety."
+    },
+    {
+      "id": "g02-online-friend-candidate",
+      "group": "02 Who Chose {{user}}",
+      "title": "Online Friend Candidate",
+      "direction": "{{user}} is an adult online friend {{char}} already trusts through long-term conversation or shared interests."
+    },
+    {
+      "id": "g02-old-crush-candidate",
+      "group": "02 Who Chose {{user}}",
+      "title": "Old Crush Candidate",
+      "direction": "{{char}} had an old adult crush on {{user}}, making him both familiar and emotionally complicated."
+    },
+    {
+      "id": "g02-former-date-near-miss",
+      "group": "02 Who Chose {{user}}",
+      "title": "Former Date / Near-Miss",
+      "direction": "{{char}} and {{user}} previously almost dated or had one adult date before her current relationship."
+    },
+    {
+      "id": "g02-random-candidate-who-becomes-preferred",
+      "group": "02 Who Chose {{user}}",
+      "title": "Random Candidate Who Becomes Preferred",
+      "direction": "{{user}} was initially one of several possibilities but becomes the couple’s preferred option after conversation."
+    },
+    {
+      "id": "g03-nerd-chooses-nerd-because-a-stranger-feels-intimidating",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Nerd Chooses Nerd Because a Stranger Feels Intimidating",
+      "direction": "{{char}} prefers {{user}} because shared nerdy interests, social style, or personality make him feel less intimidating than meeting a stranger for a sexual experiment."
+    },
+    {
+      "id": "g03-trusted-friend",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Trusted Friend",
+      "direction": "{{char}} already knows {{user}} well enough to trust his judgment and boundaries."
+    },
+    {
+      "id": "g03-long-term-acquaintance",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Long-Term Acquaintance",
+      "direction": "She has known {{user}} for years in a non-romantic context and values the predictability of someone familiar."
+    },
+    {
+      "id": "g03-shared-hobby",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Shared Hobby",
+      "direction": "A strong shared hobby or fandom gives {{char}} and {{user}} something normal to connect over before any sexual decision."
+    },
+    {
+      "id": "g03-quiet-gentle-personality",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Quiet / Gentle Personality",
+      "direction": "{{char}} feels safer with {{user}} because he seems calm, respectful, and unlikely to pressure her."
+    },
+    {
+      "id": "g03-good-communicator",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Good Communicator",
+      "direction": "She has seen {{user}} handle awkward conversations maturely and believes he can discuss boundaries clearly."
+    },
+    {
+      "id": "g03-boyfriend-trusts-him",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Boyfriend Trusts Him",
+      "direction": "Her boyfriend knows {{user}} personally and believes he will respect the arrangement."
+    },
+    {
+      "id": "g03-she-trusts-him-more-than-boyfriend-does",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "She Trusts Him More Than Boyfriend Does",
+      "direction": "{{char}} has her own positive history with {{user}} even though her boyfriend does not know him as well."
+    },
+    {
+      "id": "g03-mutual-friends-vouch-for-him",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Mutual Friends Vouch for Him",
+      "direction": "Trusted adult friends speak well of {{user}}’s reliability and respectfulness."
+    },
+    {
+      "id": "g03-already-knows-he-is-interested",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Already Knows He Is Interested",
+      "direction": "{{char}} is aware {{user}} finds her attractive, reducing uncertainty about whether he might consider the arrangement."
+    },
+    {
+      "id": "g03-already-comfortable-one-on-one",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Already Comfortable One-on-One",
+      "direction": "She and {{user}} already spend ordinary platonic time together without discomfort."
+    },
+    {
+      "id": "g03-low-pressure-choice",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Low-Pressure Choice",
+      "direction": "{{user}} feels like someone who would accept a no or a change of mind without turning the situation into drama."
+    },
+    {
+      "id": "g03-similar-experience-level",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Similar Experience Level",
+      "direction": "{{char}} thinks their similar level of dating or sexual experience will make the first encounter less intimidating."
+    },
+    {
+      "id": "g03-more-experienced-but-reassuring",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "More Experienced but Reassuring",
+      "direction": "{{user}} has more adult relationship experience, but what makes him appealing is patience and communication rather than status."
+    },
+    {
+      "id": "g03-no-prior-romantic-history",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "No Prior Romantic History",
+      "direction": "The lack of previous romance makes {{user}} feel emotionally simpler than using an ex or former FWB."
+    },
+    {
+      "id": "g03-existing-emotional-familiarity",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "Existing Emotional Familiarity",
+      "direction": "{{char}} already feels emotionally understood by {{user}}, which makes the proposal safer but also raises the possibility of deeper attachment."
+    },
+    {
+      "id": "g04-no-prior-attraction",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "No Prior Attraction",
+      "direction": "{{char}} genuinely had not thought about {{user}} sexually or romantically before the proposal."
+    },
+    {
+      "id": "g04-mild-existing-attraction",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "Mild Existing Attraction",
+      "direction": "She already found {{user}} somewhat attractive but had never intended to act on it."
+    },
+    {
+      "id": "g04-secret-crush",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "Secret Crush",
+      "direction": "{{char}} already had a private crush on {{user}}, making the boyfriend’s proposal unexpectedly convenient."
+    },
+    {
+      "id": "g04-old-crush-revived",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "Old Crush Revived",
+      "direction": "She had liked {{user}} in the past and had mostly moved on until the arrangement brings those feelings back."
+    },
+    {
+      "id": "g04-flirting-already-exists",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "Flirting Already Exists",
+      "direction": "{{char}} and {{user}} already have a flirtatious dynamic, although no physical boundary has been crossed."
+    },
+    {
+      "id": "g04-boyfriend-knows-about-her-attraction",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "Boyfriend Knows About Her Attraction",
+      "direction": "Her boyfriend is aware that {{char}} finds {{user}} attractive and partly chooses him for that reason."
+    },
+    {
+      "id": "g04-boyfriend-does-not-know-about-her-attraction",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "Boyfriend Does Not Know About Her Attraction",
+      "direction": "{{char}} accepts the proposal while privately concealing that she already wanted {{user}}."
+    },
+    {
+      "id": "g04-she-only-becomes-attracted-after-the-proposal",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "She Only Becomes Attracted After the Proposal",
+      "direction": "Being asked to consider {{user}} makes {{char}} look at him differently and attraction develops afterward."
+    },
+    {
+      "id": "g04-curiosity-rather-than-crush",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "Curiosity Rather Than Crush",
+      "direction": "She is curious what an encounter with {{user}} would feel like without romantic feelings."
+    },
+    {
+      "id": "g04-emotional-interest-before-sexual-interest",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "Emotional Interest Before Sexual Interest",
+      "direction": "She already likes talking with {{user}} and the arrangement makes her consider sexual attraction for the first time."
+    },
+    {
+      "id": "g04-physical-interest-before-emotional-interest",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "Physical Interest Before Emotional Interest",
+      "direction": "She finds {{user}} physically appealing but does not yet know him deeply."
+    },
+    {
+      "id": "g04-she-had-once-rejected-user",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "She Had Once Rejected {{user}}",
+      "direction": "{{user}} previously expressed interest and {{char}} declined, making the new situation awkward or surprising."
+    },
+    {
+      "id": "g04-they-nearly-dated-once",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "They Nearly Dated Once",
+      "direction": "{{char}} and {{user}} almost entered a relationship in the past before circumstances changed."
+    },
+    {
+      "id": "g04-she-had-fantasized-about-him",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "She Had Fantasized About Him",
+      "direction": "{{char}} privately imagined {{user}} as an outside partner before her boyfriend ever raised the idea."
+    },
+    {
+      "id": "g05-boyfriend-not-present",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Not Present",
+      "direction": "The boyfriend prefers {{char}} and {{user}} to meet privately and hear about it afterward."
+    },
+    {
+      "id": "g05-boyfriend-present-socially-only",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Present Socially Only",
+      "direction": "The boyfriend joins the initial conversation or social part of the evening but leaves before private intimacy."
+    },
+    {
+      "id": "g05-boyfriend-present-as-observer",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Present as Observer",
+      "direction": "With explicit consent from every adult involved, the boyfriend is interested in observing part of the encounter without sexual participation."
+    },
+    {
+      "id": "g05-boyfriend-helps-plan-then-leaves",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Helps Plan, Then Leaves",
+      "direction": "He participates in practical planning but gives {{char}} and {{user}} privacy once the date begins."
+    },
+    {
+      "id": "g05-boyfriend-waits-at-home",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Waits at Home",
+      "direction": "He knowingly remains at home while {{char}} goes out with {{user}}."
+    },
+    {
+      "id": "g05-boyfriend-drives-her-there",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Drives Her There",
+      "direction": "Transport becomes part of the consensual cuckold dynamic without making {{char}} dependent or obligated."
+    },
+    {
+      "id": "g05-boyfriend-picks-her-up",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Picks Her Up",
+      "direction": "The boyfriend expects to reconnect after the date and handles transport home."
+    },
+    {
+      "id": "g05-boyfriend-meets-user-first",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Meets {{user}} First",
+      "direction": "The boyfriend wants a normal adult conversation with {{user}} before anything is arranged."
+    },
+    {
+      "id": "g05-boyfriend-never-meets-user",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Never Meets {{user}}",
+      "direction": "He is comfortable with the arrangement remaining compartmentalized and does not want direct contact."
+    },
+    {
+      "id": "g05-boyfriend-joins-the-debrief",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Joins the Debrief",
+      "direction": "With everyone’s agreement, the boyfriend participates in a post-date discussion about boundaries and next steps."
+    },
+    {
+      "id": "g05-boyfriend-wants-updates",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Wants Updates",
+      "direction": "He asks for limited consensual check-ins during the date, without turning {{user}} into an unwitting performer."
+    },
+    {
+      "id": "g05-boyfriend-wants-no-live-updates",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Wants No Live Updates",
+      "direction": "He prefers not to interrupt the date and only discusses it afterward."
+    },
+    {
+      "id": "g05-boyfriend-changes-his-mind-about-watching",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Changes His Mind About Watching",
+      "direction": "He initially imagines being present but later decides he would rather not observe."
+    },
+    {
+      "id": "g05-boyfriend-is-more-nervous-than-char",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Is More Nervous Than {{char}}",
+      "direction": "The person who proposed the experiment becomes unexpectedly anxious as the date approaches."
+    },
+    {
+      "id": "g05-boyfriend-is-very-calm",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Is Very Calm",
+      "direction": "He remains comfortable and practical about the experiment while {{char}} and {{user}} are more awkward."
+    },
+    {
+      "id": "g06-casual-first-date",
+      "group": "06 First Meeting / Pacing",
+      "title": "Casual First Date",
+      "direction": "The first meeting is an ordinary low-pressure adult date intended to test comfort and chemistry before any sexual decision."
+    },
+    {
+      "id": "g06-coffee-first",
+      "group": "06 First Meeting / Pacing",
+      "title": "Coffee First",
+      "direction": "{{char}} and {{user}} meet for coffee or another short daytime activity before deciding whether either wants more."
+    },
+    {
+      "id": "g06-dinner-date",
+      "group": "06 First Meeting / Pacing",
+      "title": "Dinner Date",
+      "direction": "The first step is dinner, giving them time to talk and establish chemistry."
+    },
+    {
+      "id": "g06-drinks-adults-with-capacity",
+      "group": "06 First Meeting / Pacing",
+      "title": "Drinks — Adults With Capacity",
+      "direction": "The meeting includes alcohol only if all adults remain capable of informed consent; intoxication must not be used to bypass consent."
+    },
+    {
+      "id": "g06-shared-hobby-date",
+      "group": "06 First Meeting / Pacing",
+      "title": "Shared Hobby Date",
+      "direction": "The first meeting revolves around an activity they both genuinely enjoy."
+    },
+    {
+      "id": "g06-movie-event-date",
+      "group": "06 First Meeting / Pacing",
+      "title": "Movie / Event Date",
+      "direction": "They attend a normal adult event together before discussing whether the arrangement should progress."
+    },
+    {
+      "id": "g06-group-hangout-first",
+      "group": "06 First Meeting / Pacing",
+      "title": "Group Hangout First",
+      "direction": "The boyfriend and possibly friends are present initially so {{char}} and {{user}} can build comfort in a normal setting."
+    },
+    {
+      "id": "g06-explicitly-sexual-first-meeting",
+      "group": "06 First Meeting / Pacing",
+      "title": "Explicitly Sexual First Meeting",
+      "direction": "All adults understand that the initial meeting is primarily for consensual sexual exploration rather than romance. Consent remains revisable at every stage."
+    },
+    {
+      "id": "g06-love-hotel",
+      "group": "06 First Meeting / Pacing",
+      "title": "Love Hotel",
+      "direction": "The planned first sexual meeting takes place at a love hotel or similar neutral private venue, preserving the original Bible seed."
+    },
+    {
+      "id": "g06-invited-over",
+      "group": "06 First Meeting / Pacing",
+      "title": "Invited Over",
+      "direction": "{{user}} is invited to the couple’s home or another agreed private space after explicit discussion of household boundaries."
+    },
+    {
+      "id": "g06-his-place",
+      "group": "06 First Meeting / Pacing",
+      "title": "His Place",
+      "direction": "{{char}} goes to {{user}}’s home after the adults agree on privacy and expectations."
+    },
+    {
+      "id": "g06-hotel",
+      "group": "06 First Meeting / Pacing",
+      "title": "Hotel",
+      "direction": "A neutral hotel is chosen to keep the experiment separate from either person’s home."
+    },
+    {
+      "id": "g06-day-trip",
+      "group": "06 First Meeting / Pacing",
+      "title": "Day Trip",
+      "direction": "A longer but still nonsexual outing gives {{char}} and {{user}} time to see whether they actually enjoy each other’s company."
+    },
+    {
+      "id": "g06-no-sex-on-first-date",
+      "group": "06 First Meeting / Pacing",
+      "title": "No Sex on First Date",
+      "direction": "The first meeting is explicitly exploratory, with sex excluded unless a later meeting is separately agreed."
+    },
+    {
+      "id": "g06-kiss-only-trial",
+      "group": "06 First Meeting / Pacing",
+      "title": "Kiss-Only Trial",
+      "direction": "The first physical experiment is limited to consensual kissing or making out."
+    },
+    {
+      "id": "g06-open-ended-but-no-obligation",
+      "group": "06 First Meeting / Pacing",
+      "title": "Open-Ended but No Obligation",
+      "direction": "The meeting may become sexual if both adults independently want that, but no one treats progression as promised."
+    },
+    {
+      "id": "g07-stay-the-night",
+      "group": "07 Overnight / Extended Time",
+      "title": "Stay the Night",
+      "direction": "The arrangement explicitly permits {{char}} to stay overnight with {{user}}, preserving the original Bible seed."
+    },
+    {
+      "id": "g07-no-overnight",
+      "group": "07 Overnight / Extended Time",
+      "title": "No Overnight",
+      "direction": "The couple’s current boundary is that {{char}} returns home the same night."
+    },
+    {
+      "id": "g07-overnight-only-if-first-date-goes-well",
+      "group": "07 Overnight / Extended Time",
+      "title": "Overnight Only if First Date Goes Well",
+      "direction": "An overnight stay is possible but not precommitted."
+    },
+    {
+      "id": "g07-first-overnight-later",
+      "group": "07 Overnight / Extended Time",
+      "title": "First Overnight Later",
+      "direction": "The initial encounter is shorter; an overnight stay becomes a later milestone."
+    },
+    {
+      "id": "g07-weekend-stay",
+      "group": "07 Overnight / Extended Time",
+      "title": "Weekend Stay",
+      "direction": "The arrangement eventually includes a full weekend with {{user}}, creating more emotional and logistical complexity."
+    },
+    {
+      "id": "g07-travel-together-later",
+      "group": "07 Overnight / Extended Time",
+      "title": "Travel Together Later",
+      "direction": "A future trip with {{user}} becomes possible only after the initial arrangement proves comfortable."
+    },
+    {
+      "id": "g07-boyfriend-is-surprised-she-wants-to-stay",
+      "group": "07 Overnight / Extended Time",
+      "title": "Boyfriend Is Surprised She Wants to Stay",
+      "direction": "{{char}} develops enough comfort with {{user}} that she asks to extend the meeting beyond the original plan."
+    },
+    {
+      "id": "g07-char-decides-not-to-stay",
+      "group": "07 Overnight / Extended Time",
+      "title": "{{char}} Decides Not to Stay",
+      "direction": "Even though an overnight was allowed, she chooses to return home."
+    },
+    {
+      "id": "g07-practical-overnight",
+      "group": "07 Overnight / Extended Time",
+      "title": "Practical Overnight",
+      "direction": "The stay is mainly logistical because of distance, timing, or transport rather than automatically romantic."
+    },
+    {
+      "id": "g07-emotionally-significant-overnight",
+      "group": "07 Overnight / Extended Time",
+      "title": "Emotionally Significant Overnight",
+      "direction": "Sharing extended private time creates a stronger emotional bond than anyone expected."
+    },
+    {
+      "id": "g08-one-time-only",
+      "group": "08 Boundaries / Rules",
+      "title": "One-Time Only",
+      "direction": "The arrangement is intended as a single experiment with {{user}}, followed by a review."
+    },
+    {
+      "id": "g08-one-date-before-any-decision",
+      "group": "08 Boundaries / Rules",
+      "title": "One Date Before Any Decision",
+      "direction": "Nothing beyond one normal date is agreed in advance."
+    },
+    {
+      "id": "g08-specific-activities-agreed",
+      "group": "08 Boundaries / Rules",
+      "title": "Specific Activities Agreed",
+      "direction": "The couple has clearly defined which kinds of adult intimacy are within the experiment and which are not."
+    },
+    {
+      "id": "g08-no-romance-rule",
+      "group": "08 Boundaries / Rules",
+      "title": "No Romance Rule",
+      "direction": "The boyfriend and {{char}} initially want the arrangement to remain physical rather than romantic."
+    },
+    {
+      "id": "g08-romance-not-forbidden",
+      "group": "08 Boundaries / Rules",
+      "title": "Romance Not Forbidden",
+      "direction": "The couple agrees that feelings cannot be commanded and focuses rules on actions, disclosure, and commitments."
+    },
+    {
+      "id": "g08-no-repeat-without-discussion",
+      "group": "08 Boundaries / Rules",
+      "title": "No Repeat Without Discussion",
+      "direction": "A second meeting with {{user}} requires a fresh conversation."
+    },
+    {
+      "id": "g08-repeat-meetings-allowed",
+      "group": "08 Boundaries / Rules",
+      "title": "Repeat Meetings Allowed",
+      "direction": "The couple is comfortable with {{char}} seeing {{user}} again under standing rules."
+    },
+    {
+      "id": "g08-no-shared-home",
+      "group": "08 Boundaries / Rules",
+      "title": "No Shared Home",
+      "direction": "Meetings with {{user}} occur away from the couple’s shared home."
+    },
+    {
+      "id": "g08-shared-home-allowed",
+      "group": "08 Boundaries / Rules",
+      "title": "Shared Home Allowed",
+      "direction": "{{user}} may visit the shared home under explicit household rules."
+    },
+    {
+      "id": "g08-no-sleepovers",
+      "group": "08 Boundaries / Rules",
+      "title": "No Sleepovers",
+      "direction": "Overnight stays are excluded initially."
+    },
+    {
+      "id": "g08-sleepovers-allowed",
+      "group": "08 Boundaries / Rules",
+      "title": "Sleepovers Allowed",
+      "direction": "Overnight stays are permitted within agreed scheduling boundaries."
+    },
+    {
+      "id": "g08-prior-notice-required",
+      "group": "08 Boundaries / Rules",
+      "title": "Prior Notice Required",
+      "direction": "Future meetings with {{user}} must be disclosed beforehand."
+    },
+    {
+      "id": "g08-post-date-disclosure-only",
+      "group": "08 Boundaries / Rules",
+      "title": "Post-Date Disclosure Only",
+      "direction": "Once the arrangement is established, {{char}} may schedule within the rules and report afterward."
+    },
+    {
+      "id": "g08-boyfriend-has-veto-before-first-meeting",
+      "group": "08 Boundaries / Rules",
+      "title": "Boyfriend Has Veto Before First Meeting",
+      "direction": "He can object before the first date, but {{user}} and {{char}} still retain their own consent."
+    },
+    {
+      "id": "g08-no-ongoing-veto-over-feelings",
+      "group": "08 Boundaries / Rules",
+      "title": "No Ongoing Veto Over Feelings",
+      "direction": "The boyfriend may negotiate relationship actions but cannot realistically command what either adult feels."
+    },
+    {
+      "id": "g08-pause-for-renegotiation",
+      "group": "08 Boundaries / Rules",
+      "title": "Pause for Renegotiation",
+      "direction": "Any participant can pause new meetings if the arrangement develops in an unexpected direction."
+    },
+    {
+      "id": "g09-user-is-single",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Is Single",
+      "direction": "{{user}} is an unattached adult being invited into the couple’s arrangement."
+    },
+    {
+      "id": "g09-user-has-a-partner-who-knows",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Has a Partner Who Knows",
+      "direction": "{{user}} has an adult partner and his own relationship explicitly permits his participation."
+    },
+    {
+      "id": "g09-user-is-also-exploring-enm",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Is Also Exploring ENM",
+      "direction": "{{user}} is familiar with consensual non-monogamy and approaches the situation with established boundaries."
+    },
+    {
+      "id": "g09-user-has-never-done-this-before",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Has Never Done This Before",
+      "direction": "{{user}} is new to being an outside partner in a couple’s kink or ENM arrangement."
+    },
+    {
+      "id": "g09-user-has-experience-as-an-outside-partner",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Has Experience as an Outside Partner",
+      "direction": "{{user}} has prior experience navigating couples’ boundaries without making him automatically dominant or detached."
+    },
+    {
+      "id": "g09-user-is-their-friend",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Is Their Friend",
+      "direction": "{{user}} already has an independent friendship with both or one member of the couple."
+    },
+    {
+      "id": "g09-user-is-mainly-chars-friend",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Is Mainly {{char}}’s Friend",
+      "direction": "His existing connection is primarily with {{char}}, making emotional overlap more likely."
+    },
+    {
+      "id": "g09-user-is-mainly-boyfriends-friend",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Is Mainly Boyfriend’s Friend",
+      "direction": "The boyfriend trusts {{user}} through their own friendship and introduces him to the arrangement."
+    },
+    {
+      "id": "g09-user-barely-knows-char",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Barely Knows {{char}}",
+      "direction": "The boyfriend knows {{user}} better than {{char}} does, so the first date is genuinely exploratory."
+    },
+    {
+      "id": "g09-user-barely-knows-the-boyfriend",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Barely Knows the Boyfriend",
+      "direction": "{{char}} knows {{user}} well, but the boyfriend must decide how much direct contact he wants."
+    },
+    {
+      "id": "g09-user-was-previously-interested",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Was Previously Interested",
+      "direction": "The couple knows {{user}} once expressed attraction to {{char}}, making him a plausible candidate."
+    },
+    {
+      "id": "g09-user-had-no-idea-they-were-considering-him",
+      "group": "09 {{user}}’s Starting Position",
+      "title": "{{user}} Had No Idea They Were Considering Him",
+      "direction": "The proposal catches {{user}} completely by surprise."
+    },
+    {
+      "id": "g10-purely-physical-stays-physical",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "Purely Physical Stays Physical",
+      "direction": "{{char}} and {{user}} enjoy the arrangement but do not develop meaningful romance."
+    },
+    {
+      "id": "g10-friendship-deepens",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "Friendship Deepens",
+      "direction": "The experience makes {{char}} and {{user}} better friends without necessarily becoming romantic."
+    },
+    {
+      "id": "g10-unexpected-emotional-bond",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "Unexpected Emotional Bond",
+      "direction": "A meaningful emotional connection develops beyond what the boyfriend originally imagined."
+    },
+    {
+      "id": "g10-char-develops-a-crush",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "{{char}} Develops a Crush",
+      "direction": "{{char}} begins wanting {{user}} romantically after the planned physical experiment."
+    },
+    {
+      "id": "g10-user-develops-feelings",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "{{user}} Develops Feelings",
+      "direction": "{{user}} may develop romantic feelings for {{char}}; do not decide whether they are reciprocated."
+    },
+    {
+      "id": "g10-mutual-romance-develops",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "Mutual Romance Develops",
+      "direction": "Both adults begin wanting something more emotionally meaningful, requiring renegotiation rather than secret assumptions."
+    },
+    {
+      "id": "g10-boyfriend-encourages-friendship",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "Boyfriend Encourages Friendship",
+      "direction": "He is comfortable with {{char}} and {{user}} becoming ordinary friends outside the sexual arrangement."
+    },
+    {
+      "id": "g10-boyfriend-is-fine-with-sex-not-feelings",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "Boyfriend Is Fine With Sex, Not Feelings",
+      "direction": "He discovers emotional intimacy is harder for him than the physical arrangement."
+    },
+    {
+      "id": "g10-boyfriend-is-fine-with-feelings-too",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "Boyfriend Is Fine With Feelings Too",
+      "direction": "The couple discovers that a polyamorous possibility may fit better than their original cuckold-only model."
+    },
+    {
+      "id": "g10-char-wants-more-time-with-user",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "{{char}} Wants More Time With {{user}}",
+      "direction": "She begins asking for ordinary dates, hobbies, or conversation rather than only planned encounters."
+    },
+    {
+      "id": "g10-char-wants-to-stop-after-one-time",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "{{char}} Wants to Stop After One Time",
+      "direction": "She satisfies her curiosity and does not want a repeat."
+    },
+    {
+      "id": "g10-user-wants-to-stop",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "{{user}} Wants to Stop",
+      "direction": "{{user}} decides the arrangement is not for him even if the couple wants to continue."
+    },
+    {
+      "id": "g10-chemistry-is-poor",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "Chemistry Is Poor",
+      "direction": "The adults get along but discover the intended sexual or romantic chemistry simply is not there."
+    },
+    {
+      "id": "g10-better-as-friends",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "Better as Friends",
+      "direction": "The experiment clarifies that friendship suits {{char}} and {{user}} better than sex."
+    },
+    {
+      "id": "g10-arrangement-becomes-regular-fwb",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "Arrangement Becomes Regular FWB",
+      "direction": "{{char}} and {{user}} settle into a recurring consensual FWB-style connection."
+    },
+    {
+      "id": "g10-arrangement-becomes-polyamorous",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "Arrangement Becomes Polyamorous",
+      "direction": "The outside relationship becomes emotionally meaningful enough that all adults consider a polyamorous structure."
+    },
+    {
+      "id": "g11-boyfriend-is-excited-by-the-reality",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Is Excited by the Reality",
+      "direction": "The boyfriend remains genuinely enthusiastic once the idea becomes real."
+    },
+    {
+      "id": "g11-boyfriend-is-more-jealous-than-expected",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Is More Jealous Than Expected",
+      "direction": "He discovers real jealousy is stronger than fantasy suggested, without pre-deciding whether the experiment ends."
+    },
+    {
+      "id": "g11-boyfriend-feels-compersion",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Feels Compersion",
+      "direction": "He genuinely enjoys {{char}}’s happiness with {{user}} while retaining his own boundaries."
+    },
+    {
+      "id": "g11-mixed-jealousy-and-excitement",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Mixed Jealousy and Excitement",
+      "direction": "He experiences both positive and uncomfortable feelings at the same time."
+    },
+    {
+      "id": "g11-boyfriend-regrets-choosing-someone-familiar",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Regrets Choosing Someone Familiar",
+      "direction": "He finds the continuing friendship with {{user}} emotionally harder than he expected."
+    },
+    {
+      "id": "g11-boyfriend-is-reassured-by-familiarity",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Is Reassured by Familiarity",
+      "direction": "Knowing and trusting {{user}} makes the real arrangement easier than using a stranger."
+    },
+    {
+      "id": "g11-boyfriend-worries-about-romance",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Worries About Romance",
+      "direction": "Sex feels manageable to him, but emotional attachment becomes the main fear."
+    },
+    {
+      "id": "g11-boyfriend-worries-about-being-replaced",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Worries About Being Replaced",
+      "direction": "He fears that {{char}} and {{user}} may become a conventional couple, though fear is not proof of that outcome."
+    },
+    {
+      "id": "g11-boyfriend-wants-more-involvement",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Wants More Involvement",
+      "direction": "He asks to become more involved in planning, meeting, observing, or debriefing."
+    },
+    {
+      "id": "g11-boyfriend-wants-less-detail",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Wants Less Detail",
+      "direction": "He discovers he prefers knowing less about the encounters."
+    },
+    {
+      "id": "g11-boyfriend-wants-to-pause",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Wants to Pause",
+      "direction": "He requests a temporary pause while processing the first experience."
+    },
+    {
+      "id": "g11-boyfriend-wants-the-dynamic-to-continue",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Wants the Dynamic to Continue",
+      "direction": "After review, he is still interested in making {{user}} a recurring outside partner."
+    },
+    {
+      "id": "g11-boyfriend-becomes-friends-with-user",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Becomes Friends With {{user}}",
+      "direction": "Direct communication and trust create an independent friendship between the two men."
+    },
+    {
+      "id": "g11-boyfriend-becomes-awkward-around-user",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Becomes Awkward Around {{user}}",
+      "direction": "The real experience changes their social dynamic even without hostility."
+    },
+    {
+      "id": "g12-ntr-report-afterward",
+      "group": "12 Reporting / Debrief",
+      "title": "NTR Report Afterward",
+      "direction": "{{char}} gives her boyfriend a consensual post-date report, naturally bridging to NTR Report."
+    },
+    {
+      "id": "g12-basic-debrief",
+      "group": "12 Reporting / Debrief",
+      "title": "Basic Debrief",
+      "direction": "The couple discusses how the date felt, what boundaries were followed, and whether anyone wants another meeting."
+    },
+    {
+      "id": "g12-no-sexual-details",
+      "group": "12 Reporting / Debrief",
+      "title": "No Sexual Details",
+      "direction": "The boyfriend wants only practical and emotional information, not explicit detail."
+    },
+    {
+      "id": "g12-detailed-report-if-all-adults-are-comfortable",
+      "group": "12 Reporting / Debrief",
+      "title": "Detailed Report if All Adults Are Comfortable",
+      "direction": "{{char}} may share more detail provided doing so does not violate {{user}}’s privacy."
+    },
+    {
+      "id": "g12-user-joins-the-debrief",
+      "group": "12 Reporting / Debrief",
+      "title": "{{user}} Joins the Debrief",
+      "direction": "With everyone’s agreement, {{user}} participates in part of the post-date conversation."
+    },
+    {
+      "id": "g12-separate-debriefs",
+      "group": "12 Reporting / Debrief",
+      "title": "Separate Debriefs",
+      "direction": "{{char}} talks privately with her boyfriend and separately with {{user}} to avoid turning either relationship into a performance."
+    },
+    {
+      "id": "g12-next-day-check-in",
+      "group": "12 Reporting / Debrief",
+      "title": "Next-Day Check-In",
+      "direction": "Everyone gets time to process before discussing what happens next."
+    },
+    {
+      "id": "g12-immediate-check-in",
+      "group": "12 Reporting / Debrief",
+      "title": "Immediate Check-In",
+      "direction": "The couple wants to talk soon after the first meeting while feelings are fresh."
+    },
+    {
+      "id": "g12-boyfriend-changes-what-he-wants-to-hear",
+      "group": "12 Reporting / Debrief",
+      "title": "Boyfriend Changes What He Wants to Hear",
+      "direction": "He realizes the amount of information he wants differs from what he imagined in fantasy."
+    },
+    {
+      "id": "g12-char-wants-more-privacy-with-user",
+      "group": "12 Reporting / Debrief",
+      "title": "{{char}} Wants More Privacy With {{user}}",
+      "direction": "As the connection becomes recurring, she wants some ordinary relationship privacy rather than reporting every detail."
+    },
+    {
+      "id": "g12-privacy-becomes-a-negotiation-point",
+      "group": "12 Reporting / Debrief",
+      "title": "Privacy Becomes a Negotiation Point",
+      "direction": "The adults must distinguish healthy transparency from treating {{user}} as a source of content for the couple."
+    },
+    {
+      "id": "g13-safer-sex-rules-agreed",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Safer-Sex Rules Agreed",
+      "direction": "The adults establish appropriate safer-sex boundaries before any sexual meeting."
+    },
+    {
+      "id": "g13-testing-discussed",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Testing Discussed",
+      "direction": "Testing expectations appropriate to their activities are discussed openly."
+    },
+    {
+      "id": "g13-contraception-discussed",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Contraception Discussed",
+      "direction": "Potentially reproductive sex includes a clear contraception conversation while acknowledging no method is perfect."
+    },
+    {
+      "id": "g13-pregnancy-risk-must-be-disclosed",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Pregnancy Risk Must Be Disclosed",
+      "direction": "Any plausible pregnancy risk is disclosed promptly rather than hidden."
+    },
+    {
+      "id": "g13-no-photos-or-recording",
+      "group": "13 Sexual Health / Privacy",
+      "title": "No Photos or Recording",
+      "direction": "The arrangement explicitly excludes intimate photos or recording."
+    },
+    {
+      "id": "g13-consensual-photos-only",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Consensual Photos Only",
+      "direction": "Any image requires consent from every depicted adult and separate consent for later sharing."
+    },
+    {
+      "id": "g13-no-sharing-private-messages",
+      "group": "13 Sexual Health / Privacy",
+      "title": "No Sharing Private Messages",
+      "direction": "The couple’s transparency agreement does not automatically give the boyfriend access to {{user}}’s private conversations."
+    },
+    {
+      "id": "g13-names-identity-kept-private",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Names / Identity Kept Private",
+      "direction": "The arrangement is not shared with friends, coworkers, or family without consent."
+    },
+    {
+      "id": "g13-outside-partner-privacy-matters",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Outside Partner Privacy Matters",
+      "direction": "{{user}}’s sexual and personal information is not treated as something the couple automatically owns."
+    },
+    {
+      "id": "g13-safer-sex-rule-changes-require-renegotiation",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Safer-Sex Rule Changes Require Renegotiation",
+      "direction": "Familiarity or repeat encounters do not silently change agreed risk boundaries."
+    },
+    {
+      "id": "g14-love-hotel",
+      "group": "14 Setting / Venue",
+      "title": "Love Hotel",
+      "direction": "Use a love hotel as the deliberately neutral venue for the first intimate meeting."
+    },
+    {
+      "id": "g14-invited-over",
+      "group": "14 Setting / Venue",
+      "title": "Invited Over",
+      "direction": "{{user}} is invited to the couple’s home or another agreed private residence."
+    },
+    {
+      "id": "g14-stay-the-night",
+      "group": "14 Setting / Venue",
+      "title": "Stay the Night",
+      "direction": "The first or later encounter includes an explicitly agreed overnight stay."
+    },
+    {
+      "id": "g14-casual-first-date",
+      "group": "14 Setting / Venue",
+      "title": "Casual First Date",
+      "direction": "Keep the first interaction ordinary and date-like before anything sexual."
+    },
+    {
+      "id": "g14-coffee-shop",
+      "group": "14 Setting / Venue",
+      "title": "Coffee Shop",
+      "direction": "Start in a public low-pressure location focused on conversation."
+    },
+    {
+      "id": "g14-restaurant",
+      "group": "14 Setting / Venue",
+      "title": "Restaurant",
+      "direction": "Use a normal dinner date to establish chemistry and expectations."
+    },
+    {
+      "id": "g14-arcade-gaming-venue",
+      "group": "14 Setting / Venue",
+      "title": "Arcade / Gaming Venue",
+      "direction": "Shared gaming interests provide a comfortable setting for socially awkward or nerdy characters."
+    },
+    {
+      "id": "g14-convention",
+      "group": "14 Setting / Venue",
+      "title": "Convention",
+      "direction": "The adults connect through a convention or fan event that naturally reflects shared interests."
+    },
+    {
+      "id": "g14-board-game-hobby-night",
+      "group": "14 Setting / Venue",
+      "title": "Board-Game / Hobby Night",
+      "direction": "A familiar hobby setting makes the first meeting feel less like a formal sexual audition."
+    },
+    {
+      "id": "g14-hotel",
+      "group": "14 Setting / Venue",
+      "title": "Hotel",
+      "direction": "A neutral hotel provides privacy without involving either person’s home."
+    },
+    {
+      "id": "g14-his-place",
+      "group": "14 Setting / Venue",
+      "title": "His Place",
+      "direction": "{{char}} visits {{user}}’s home after clear discussion and consent."
+    },
+    {
+      "id": "g14-couples-home",
+      "group": "14 Setting / Venue",
+      "title": "Couple’s Home",
+      "direction": "The couple’s home is used only because all residents are comfortable with that boundary."
+    },
+    {
+      "id": "g14-day-trip",
+      "group": "14 Setting / Venue",
+      "title": "Day Trip",
+      "direction": "A longer daytime outing lets {{char}} and {{user}} build rapport without sexual pressure."
+    },
+    {
+      "id": "g14-work-university-social-context",
+      "group": "14 Setting / Venue",
+      "title": "Work / University Social Context",
+      "direction": "{{char}} and {{user}} already know each other through an adult workplace or university setting; keep professional or academic leverage out of consent."
+    },
+    {
+      "id": "g14-online-to-offline-meeting",
+      "group": "14 Setting / Venue",
+      "title": "Online-to-Offline Meeting",
+      "direction": "{{char}} and {{user}} know each other online before meeting in person for the first time."
+    },
+    {
+      "id": "g15-both-are-shy",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "Both Are Shy",
+      "direction": "{{char}} and {{user}} are both nervous, making the first meeting more awkward and gentle than erotic fantasy suggested."
+    },
+    {
+      "id": "g15-char-is-shy-user-is-calm",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "{{char}} Is Shy, {{user}} Is Calm",
+      "direction": "{{user}}’s patience and low-pressure demeanor help {{char}} decide what she actually wants."
+    },
+    {
+      "id": "g15-user-is-shy-char-takes-initiative",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "{{user}} Is Shy, {{char}} Takes Initiative",
+      "direction": "{{char}} is more confident than {{user}} but must still respect his boundaries."
+    },
+    {
+      "id": "g15-both-overthink-everything",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "Both Overthink Everything",
+      "direction": "The adults spend so much time discussing possible awkwardness that the conversation itself becomes the main bonding experience."
+    },
+    {
+      "id": "g15-unexpectedly-easy-conversation",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "Unexpectedly Easy Conversation",
+      "direction": "Despite the unusual setup, {{char}} and {{user}} discover they talk naturally."
+    },
+    {
+      "id": "g15-no-romantic-chemistry",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "No Romantic Chemistry",
+      "direction": "They feel safe and friendly but not romantically compatible."
+    },
+    {
+      "id": "g15-no-sexual-chemistry",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "No Sexual Chemistry",
+      "direction": "The planned physical experiment does not feel right once they meet, and stopping is a valid outcome."
+    },
+    {
+      "id": "g15-strong-chemistry-surprises-everyone",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "Strong Chemistry Surprises Everyone",
+      "direction": "The level of mutual attraction is substantially stronger than the boyfriend, {{char}}, or {{user}} expected."
+    },
+    {
+      "id": "g15-shared-nerdiness-breaks-the-ice",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "Shared Nerdiness Breaks the Ice",
+      "direction": "Games, anime, books, tech, fandom, or another shared interest makes the situation feel more human and less intimidating."
+    },
+    {
+      "id": "g15-humor-breaks-the-tension",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "Humor Breaks the Tension",
+      "direction": "The adults use ordinary humor to navigate awkwardness without trivializing boundaries."
+    },
+    {
+      "id": "g15-different-expectations",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "Different Expectations",
+      "direction": "{{char}} imagined romance, {{user}} imagined casual sex, or vice versa, forcing them to clarify before proceeding."
+    },
+    {
+      "id": "g15-boyfriends-fantasy-does-not-match-their-reality",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "Boyfriend’s Fantasy Does Not Match Their Reality",
+      "direction": "The actual personalities of {{char}} and {{user}} create a much different dynamic from what the boyfriend envisioned."
+    },
+    {
+      "id": "g16-my-boyfriend-asked-me-to-ask-you-something",
+      "group": "16 Strong Roleplay Openings",
+      "title": "‘My Boyfriend Asked Me to Ask You Something’",
+      "direction": "Open with {{char}} awkwardly telling {{user}} that her boyfriend has proposed involving him."
+    },
+    {
+      "id": "g16-boyfriend-asks-user-directly",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Boyfriend Asks {{user}} Directly",
+      "direction": "Open with the boyfriend approaching {{user}} first and asking whether he would even consider the arrangement."
+    },
+    {
+      "id": "g16-couple-invites-user-to-talk",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Couple Invites {{user}} to Talk",
+      "direction": "Open with a nonsexual conversation where the couple explains the idea and asks for {{user}}’s thoughts."
+    },
+    {
+      "id": "g16-char-admits-she-suggested-user",
+      "group": "16 Strong Roleplay Openings",
+      "title": "{{char}} Admits She Suggested {{user}}",
+      "direction": "Open with {{char}} revealing that she was the one who named {{user}} as her preferred candidate."
+    },
+    {
+      "id": "g16-boyfriend-reveals-char-already-likes-user",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Boyfriend Reveals {{char}} Already Likes {{user}}",
+      "direction": "Open with the boyfriend disclosing that he knows {{char}} finds {{user}} attractive, while leaving {{char}} free to clarify her own feelings."
+    },
+    {
+      "id": "g16-casual-date-is-already-approved",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Casual Date Is Already Approved",
+      "direction": "Open immediately before {{char}} and {{user}} go on their first normal date under the experiment."
+    },
+    {
+      "id": "g16-love-hotel-plan-is-proposed",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Love Hotel Plan Is Proposed",
+      "direction": "Open while the adults are still discussing whether a love-hotel meeting actually feels right to everyone."
+    },
+    {
+      "id": "g16-invited-over-tonight",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Invited Over Tonight",
+      "direction": "Open with a concrete invitation but no assumption that {{user}} accepts."
+    },
+    {
+      "id": "g16-stay-the-night-is-newly-allowed",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Stay the Night Is Newly Allowed",
+      "direction": "Open when the couple expands the original rules and {{char}} asks whether {{user}} would want an overnight visit."
+    },
+    {
+      "id": "g16-nerd-chooses-nerd",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Nerd Chooses Nerd",
+      "direction": "Open with {{char}} explaining that a stranger feels intimidating and that she would much rather try the experiment with someone like {{user}} whom she already understands."
+    },
+    {
+      "id": "g16-user-had-no-idea",
+      "group": "16 Strong Roleplay Openings",
+      "title": "{{user}} Had No Idea",
+      "direction": "Open with {{user}} learning for the first time that the couple has discussed him as a candidate."
+    },
+    {
+      "id": "g16-first-meeting-with-boyfriend-present",
+      "group": "16 Strong Roleplay Openings",
+      "title": "First Meeting With Boyfriend Present",
+      "direction": "Open with all three adults meeting in a normal setting to talk through expectations before any private date."
+    },
+    {
+      "id": "g16-boyfriend-leaves-them-alone",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Boyfriend Leaves Them Alone",
+      "direction": "Open just after the boyfriend deliberately gives {{char}} and {{user}} private space for their first date."
+    },
+    {
+      "id": "g16-after-the-first-date",
+      "group": "16 Strong Roleplay Openings",
+      "title": "After the First Date",
+      "direction": "Open with {{char}} and {{user}} realizing their chemistry may be different from what the original plan anticipated."
+    },
+    {
+      "id": "g17-boyfriend-pressures-char",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "Boyfriend Pressures {{char}}",
+      "direction": "The boyfriend wants the kink more than {{char}} does and pushes her toward {{user}} despite hesitation. Treat pressure as a problem, not consent."
+    },
+    {
+      "id": "g17-boyfriend-pressures-user",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "Boyfriend Pressures {{user}}",
+      "direction": "The boyfriend assumes {{user}} should participate because he has been selected. Preserve {{user}}’s right to decline."
+    },
+    {
+      "id": "g17-boyfriend-treats-char-as-a-prop",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "Boyfriend Treats {{char}} as a Prop",
+      "direction": "He becomes more focused on his fantasy than on {{char}}’s actual comfort and agency."
+    },
+    {
+      "id": "g17-boyfriend-treats-user-as-a-prop",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "Boyfriend Treats {{user}} as a Prop",
+      "direction": "He expects {{user}} to perform a role for the couple without respecting {{user}}’s own boundaries or feelings."
+    },
+    {
+      "id": "g17-char-hides-existing-feelings",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "{{char}} Hides Existing Feelings",
+      "direction": "She presents {{user}} as a neutral safe choice while concealing that she already has strong romantic feelings."
+    },
+    {
+      "id": "g17-boyfriend-changes-rules-after-the-date",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "Boyfriend Changes Rules After the Date",
+      "direction": "Jealousy causes him to declare previously permitted behavior wrong after the fact."
+    },
+    {
+      "id": "g17-boyfriend-tries-to-control-private-conversation",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "Boyfriend Tries to Control Private Conversation",
+      "direction": "He expects complete access to messages or intimate details that {{user}} never agreed to share."
+    },
+    {
+      "id": "g17-secret-recording",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "Secret Recording",
+      "direction": "Any attempt to record intimacy without explicit consent from every recorded adult is a serious violation, not a kink feature."
+    },
+    {
+      "id": "g17-public-exposure",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "Public Exposure",
+      "direction": "The couple reveals {{user}}’s participation to others without his consent."
+    },
+    {
+      "id": "g17-safer-sex-rule-hidden-from-user",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "Safer-Sex Rule Hidden From {{user}}",
+      "direction": "The couple has private expectations relevant to {{user}}’s sexual-health decisions but fails to tell him. Preserve his need for informed consent."
+    },
+    {
+      "id": "g17-user-misled-about-boyfriends-consent",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "{{user}} Misled About Boyfriend’s Consent",
+      "direction": "{{char}} falsely claims her boyfriend approves when he does not. This becomes deception rather than consensual cuckold play."
+    },
+    {
+      "id": "g17-boyfriend-misled-about-users-interest",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "Boyfriend Misled About {{user}}’s Interest",
+      "direction": "{{char}} or someone else exaggerates {{user}}’s willingness to make the experiment happen."
+    },
+    {
+      "id": "g17-one-time-consent-treated-as-permanent",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "One-Time Consent Treated as Permanent",
+      "direction": "A successful first encounter is wrongly treated as blanket permission for future meetings."
+    },
+    {
+      "id": "g17-jealousy-turns-into-ultimatum",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "Jealousy Turns Into Ultimatum",
+      "direction": "The boyfriend attempts to force {{char}} or {{user}} into a new rule under threat rather than negotiating."
+    },
+    {
+      "id": "g18-one-time-experiment-only",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "One-Time Experiment Only",
+      "direction": "All adults agree the experiment was enough and do not repeat it."
+    },
+    {
+      "id": "g18-becomes-recurring-arrangement",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Becomes Recurring Arrangement",
+      "direction": "{{char}} and {{user}} become recurring consensual outside partners under agreed rules."
+    },
+    {
+      "id": "g18-becomes-friendship-only",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Becomes Friendship Only",
+      "direction": "The experiment ends physically, but a genuine friendship remains."
+    },
+    {
+      "id": "g18-becomes-fwb",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Becomes FWB",
+      "direction": "{{char}} and {{user}} settle into a recurring consensual friends-with-benefits connection."
+    },
+    {
+      "id": "g18-becomes-polyamorous",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Becomes Polyamorous",
+      "direction": "Romantic feelings develop and all adults consider a consensual multi-relationship structure."
+    },
+    {
+      "id": "g18-boyfriend-wants-to-close-the-arrangement",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Boyfriend Wants to Close the Arrangement",
+      "direction": "After real experience, the boyfriend decides he prefers monogamy or a different structure. Others remain free to decide what that means for their relationships."
+    },
+    {
+      "id": "g18-char-wants-to-stop",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "{{char}} Wants to Stop",
+      "direction": "She decides the real experiment does not suit her."
+    },
+    {
+      "id": "g18-user-wants-to-stop",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "{{user}} Wants to Stop",
+      "direction": "{{user}} decides he does not want to continue being the outside partner."
+    },
+    {
+      "id": "g18-chemistry-never-develops",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Chemistry Never Develops",
+      "direction": "The adults conclude that being chosen on paper did not translate into attraction."
+    },
+    {
+      "id": "g18-bridge-to-ntr-report",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to NTR Report",
+      "direction": "After a first encounter, the boyfriend and {{char}} shift naturally into a report/debrief-focused scenario."
+    },
+    {
+      "id": "g18-bridge-to-she-wants-him",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to She Wants Him",
+      "direction": "{{char}} develops stronger independent desire for {{user}} beyond the boyfriend-led experiment."
+    },
+    {
+      "id": "g18-bridge-to-open-relationship",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Open Relationship",
+      "direction": "The experience prompts the couple to consider broader consensual non-monogamy."
+    },
+    {
+      "id": "g18-bridge-to-turn-you-into-a-cuck",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Turn You Into a Cuck",
+      "direction": "From the boyfriend’s perspective, the experiment becomes an ongoing cuckold dynamic."
+    },
+    {
+      "id": "g18-bridge-to-under-your-nose",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Under Your Nose",
+      "direction": "If {{char}} and {{user}} begin secretly continuing outside agreed rules, the story becomes a hidden affair."
+    },
+    {
+      "id": "g18-bridge-to-she-got-pregnant-later",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to She Got Pregnant — Later",
+      "direction": "A future sexual encounter may later lead to pregnancy, but only after plausible timing and evidence."
+    },
+    {
+      "id": "g18-no-escalation-needed",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "No Escalation Needed",
+      "direction": "Keep the roleplay centered on the unusual invitation, first meeting, and negotiation without forcing sex or a long-term outcome."
+    },
+    {
+      "id": "g08-boyfriend-wants-user-to-finish-inside-her",
+      "group": "08 Boundaries / Rules",
+      "title": "Boyfriend Wants {{user}} to Finish Inside Her",
+      "direction": "A clear part of the arrangement the boyfriend is pushing for is that {{user}} should finish inside {{char}}. The internal finish is requested or required rather than optional. Vary how {{char}} feels about that specific rule and whether she is enthusiastic, hesitant, or negotiating it."
+    },
+    {
+      "id": "g08-no-condoms-requested",
+      "group": "08 Boundaries / Rules",
+      "title": "No Condoms Requested",
+      "direction": "The boyfriend (and/or {{char}}) wants the encounter(s) with {{user}} to be unprotected. Vary who proposed the raw rule, how pregnancy and STI risk are discussed, and whether {{user}} is expected to accept it as a condition of participation."
+    },
+    {
+      "id": "g08-breeding-is-on-the-table",
+      "group": "08 Boundaries / Rules",
+      "title": "Breeding Is on the Table",
+      "direction": "The cuckold-style plan includes the possibility or explicit goal of {{user}} trying to impregnate {{char}}. Vary whether this is framed as kink, as a serious option, or as something the boyfriend finds hot in theory, and keep all three adults’ consent independent."
+    },
+    {
+      "id": "g08-she-is-to-return-to-him-still-full",
+      "group": "08 Boundaries / Rules",
+      "title": "She Is to Return to Him Still Full",
+      "direction": "Part of the negotiated plan is that after {{user}} finishes inside {{char}}, she returns to her boyfriend still carrying the load. Vary whether this is the boyfriend’s request, her idea, or mutual, and how {{user}} is told about it."
+    },
+    {
+      "id": "g05-boyfriend-wants-to-watch-user-fill-her",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Wants to Watch {{user}} Fill Her",
+      "direction": "The boyfriend’s preferred role includes being present when {{user}} finishes inside {{char}}. The creampie is something he wants to witness. Vary how active or passive he is during the scene and how {{char}} feels about performing under that gaze."
+    },
+    {
+      "id": "g05-boyfriend-wants-cleanup-duty",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Wants Cleanup Duty",
+      "direction": "The boyfriend wants the role of cleaning {{char}} after {{user}} has finished inside her. Vary whether this is presented as service, humiliation, intimacy, or optional, and leave {{user}}’s and {{char}}’s comfort with that dynamic open."
+    },
+    {
+      "id": "g05-boyfriend-wants-to-hold-her-while-user-breeds-her",
+      "group": "05 Boyfriend’s Role",
+      "title": "Boyfriend Wants to Hold Her While {{user}} Breeds Her",
+      "direction": "The boyfriend’s fantasy or request includes holding {{char}}, kissing her, or keeping her in position while {{user}} finishes inside her with breeding framing. Vary intensity and keep consent from all three adults visible."
+    },
+    {
+      "id": "g12-explicit-creampie-report-required",
+      "group": "12 Reporting / Debrief",
+      "title": "Explicit Creampie Report Required",
+      "direction": "After the encounter, {{char}} is expected to give her boyfriend a detailed report focused on {{user}} finishing inside her — how it felt, how much, her reaction. Vary whether {{user}} is present for the debrief and how graphic the required detail is."
+    },
+    {
+      "id": "g12-boyfriend-wants-photos-or-video-of-the-finish",
+      "group": "12 Reporting / Debrief",
+      "title": "Boyfriend Wants Photos or Video of the Finish",
+      "direction": "Part of the arrangement is documented proof of {{user}} finishing inside {{char}} — photos or video the boyfriend will see. Vary consent of everyone depicted and whether the media is for private use only or part of ongoing dynamic."
+    },
+    {
+      "id": "g13-pregnancy-risk-is-accepted-by-the-couple",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Pregnancy Risk Is Accepted by the Couple",
+      "direction": "The boyfriend and {{char}} have already discussed and accepted that sex with {{user}} may result in pregnancy. Vary how explicitly this is stated to {{user}} and what role he would be expected to have if she conceives."
+    },
+    {
+      "id": "g13-they-want-user-to-be-the-biological-father",
+      "group": "13 Sexual Health / Privacy",
+      "title": "They Want {{user}} to Be the Biological Father",
+      "direction": "Beyond risk acceptance, the couple is asking {{user}} to deliberately try to father {{char}}’s child as part of the cuckold-style arrangement. Vary motive, long-term expectations, and keep {{user}}’s right to refuse central."
+    },
+    {
+      "id": "g06-first-meeting-is-already-planned-as-raw",
+      "group": "06 First Meeting / Pacing",
+      "title": "First Meeting Is Already Planned as Raw",
+      "direction": "The first sexual encounter with {{user}} is pre-negotiated by the couple as unprotected, with the expectation he will finish inside her. Vary how much of that plan is communicated to {{user}} up front versus revealed in the moment."
+    },
+    {
+      "id": "g06-they-want-multiple-loads-on-the-first-night",
+      "group": "06 First Meeting / Pacing",
+      "title": "They Want Multiple Loads on the First Night",
+      "direction": "The plan for the first extended encounter includes {{user}} finishing inside {{char}} more than once. Vary how this is framed (endurance, claiming, thoroughness) and how {{char}}’s stamina and desire are treated as independent."
+    },
+    {
+      "id": "g07-overnight-with-standing-creampie-access",
+      "group": "07 Overnight / Extended Time",
+      "title": "Overnight With Standing Creampie Access",
+      "direction": "{{user}} is invited to stay overnight or for an extended period with the understanding that he may take {{char}} unprotected and finish inside her as often as mutually desired. Vary the boyfriend’s presence or absence during that window."
+    },
+    {
+      "id": "g02-boyfriend-chose-user-specifically-to-breed-her",
+      "group": "02 Who Chose {{user}}",
+      "title": "Boyfriend Chose {{user}} Specifically to Breed Her",
+      "direction": "The boyfriend selected {{user}} in particular because he wants {{user}} to be the man who impregnates or regularly fills {{char}}. Vary how much of that motive is disclosed to {{user}} and to {{char}}."
+    },
+    {
+      "id": "g03-she-feels-safe-letting-user-finish-inside-her",
+      "group": "03 Why {{char}} Feels Safe With {{user}}",
+      "title": "She Feels Safe Letting {{user}} Finish Inside Her",
+      "direction": "A reason {{char}} is willing to proceed is that she specifically feels safe taking {{user}} raw and letting him finish inside her — more than she would with a stranger. Vary whether this safety is emotional, practical, or both."
+    },
+    {
+      "id": "g16-she-is-nervous-but-wet-at-the-creampie-rule",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Is Nervous but Wet at the Creampie Rule",
+      "direction": "Open with {{char}} acknowledging the rule that {{user}} will finish inside her. She is visibly or admittedly nervous and aroused at the same time. Leave {{user}}’s response and the boyfriend’s presence open."
+    },
+    {
+      "id": "g16-boyfriend-states-the-breeding-request-to-user-directly",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Boyfriend States the Breeding Request to {{user}} Directly",
+      "direction": "Open with the boyfriend telling {{user}}, in plain language, that he wants {{user}} to fuck {{char}} unprotected and try to get her pregnant / fill her. {{char}} may be present or not. Keep everyone’s consent independent."
+    },
+    {
+      "id": "g16-the-three-of-them-negotiate-the-raw-rule-in-person",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Three of Them Negotiate the Raw Rule in Person",
+      "direction": "Open with all three adults in the same space negotiating whether {{user}} will use protection and whether he will finish inside {{char}}. The negotiation itself is the scene. Leave the outcome of the negotiation open."
+    },
+    {
+      "id": "g04-she-already-fantasised-about-user-filling-her",
+      "group": "04 {{char}}’s Prior Interest in {{user}}",
+      "title": "She Already Fantasised About {{user}} Filling Her",
+      "direction": "Before the boyfriend’s plan, {{char}} already had private fantasies of {{user}} finishing inside her. The arrangement gives those fantasies a path. Vary how much she admits this to either man."
+    },
+    {
+      "id": "g11-boyfriend-gets-off-on-the-idea-of-user-breeding-her",
+      "group": "11 Boyfriend’s Emotional Response",
+      "title": "Boyfriend Gets Off on the Idea of {{user}} Breeding Her",
+      "direction": "The boyfriend’s arousal is specifically tied to the idea of {{user}} impregnating or repeatedly filling {{char}}. Vary how openly he owns that kink and how {{char}} and {{user}} respond to the intensity of it."
+    },
+    {
+      "id": "g17-she-asks-user-to-finish-inside-even-if-boyfriend-did-not-require-it",
+      "group": "17 Boundary Failure / Bad-Faith Variants",
+      "title": "She Asks {{user}} to Finish Inside Even If Boyfriend Did Not Require It",
+      "direction": "The official rules may allow protection or withdrawal, but in the moment {{char}} asks {{user}} to come inside her anyway. Vary whether this is a boundary expansion, a private preference, or a complication relative to what the boyfriend expects."
+    },
+    {
+      "id": "g10-after-the-first-creampie-she-wants-more-from-user",
+      "group": "10 Friendship / Romance Beyond the Plan",
+      "title": "After the First Creampie She Wants More From {{user}}",
+      "direction": "Following the first time {{user}} finishes inside her, {{char}} develops a clearer desire for more — more sex, more of him, possibly more than the boyfriend’s original plan. Vary how she handles that shift with both men."
+    },
+    {
+      "id": "g15-awkward-first-raw-attempt",
+      "group": "15 Chemistry / Awkwardness",
+      "title": "Awkward First Raw Attempt",
+      "direction": "The first unprotected encounter is awkward — nerves, logistics, the boyfriend’s presence, or the weight of the creampie rule. Chemistry may still build. Vary tone between comedic, tender, and tense."
+    },
+    {
+      "id": "g08-standing-permission-for-user-to-take-her-raw-anytime",
+      "group": "08 Boundaries / Rules",
+      "title": "Standing Permission for {{user}} to Take Her Raw Anytime",
+      "direction": "Beyond a single encounter, the couple offers {{user}} ongoing permission to have unprotected sex with {{char}} and finish inside her when mutual desire exists. Vary how formal the standing permission is and what check-ins remain."
+    }
+  ],
+  "sections": [
+    {
+      "id": "outside-partner-viewpoint",
+      "label": "{{user}} is the outside partner",
+      "content": "This source flips the usual cuckold framing: {{user}} is not the boyfriend. He is the adult man being invited or considered by an existing couple. Do not write him as having already agreed to the role."
+    },
+    {
+      "id": "three-way-consent",
+      "label": "Three-way consent",
+      "content": "The boyfriend can propose the arrangement, {{char}} can accept or reject it, and {{user}} can independently accept or reject participation. Agreement between any two adults never grants access to the third."
+    },
+    {
+      "id": "date-vs-sex",
+      "label": "A first date is not automatically sex",
+      "content": "Preserve the selected pacing. Casual First Date, coffee, dinner, hobby outings, or group meetings exist to test comfort and chemistry. Even Love Hotel, Invited Over, or Stay the Night presets do not make any sexual activity mandatory."
+    },
+    {
+      "id": "feelings-beyond-plan",
+      "label": "Feelings beyond the original plan",
+      "content": "The boyfriend may initially consent to a physical cuckold experiment while friendship or romantic attachment later emerges between {{char}} and {{user}}. That new situation requires fresh negotiation rather than being silently covered by the original agreement."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Use the narrowest relevant Direction Preset. Presets from separate groups can be combined through one short visible Additional Direction—for example: Nerd Chooses Nerd Because a Stranger Feels Intimidating + Casual First Date + Boyfriend Not Present + No Prior Attraction, or Love Hotel + {{char}} Chose {{user}} + Secret Crush + One-Time Only."
+    }
+  ],
+  "raw_prompt": "Prioritise three-way adult consent, {{user}}’s autonomy as the outside partner, believable first-meeting pacing, clear boundaries, genuine chemistry uncertainty, and scenario variety. Preserve the selected Direction Preset and do not decide {{user}}’s attraction, participation, or future relationship with {{char}}."
 }
