@@ -3,6 +3,2931 @@
   "schema_version": 1,
   "id": "bible-i-29-workplace-stories",
   "title": "Workplace Stories",
+  "description": "Broad reusable adult workplace engine about {{user}} and adult {{char}} whose relationship develops through a shared workplace. Detailed presets vary who is new, relative seniority, industry, job roles, time working together, friendship/rivalry/mentoring/attraction/professional dependence, shifts and rosters, workplace episodes, after-work contact, boss/mentor power dynamics, trainee train-driver scenarios, professional boundaries, strong openings, career outcomes, and cross-series transitions.",
   "source_version": "1.2",
-  "note": "Full expanded content (466 presets) is available on Google Drive Idea Sources folder as 29-workplace-stories.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 29,
+    "category": "Setting & Slice of Life",
+    "source_date": "2026-09-21"
+  },
+  "summary": "A broad workplace umbrella for adult {{user}} and adult {{char}}. One may be a new hire, transfer, long-time coworker, rival, boss, trainee, mentor, or partner on different shifts. Their connection can remain professional, become friendship, rivalry, mentoring, mutual dependence, or potentially romance. The source treats industry, role, hierarchy, schedule, workplace policy, career goals, and conflicts of interest as real structural variables rather than background decoration.",
+  "core_premise": "The engine is repeated adult contact through work. The workplace creates routines, dependence, hierarchy, shared problems, training, handovers, travel, overtime, and career consequences that shape how two people know each other. Personal closeness may change work, but work remains a real institution with safety, fairness, privacy, and power boundaries. Romance is one possible trajectory, not the default destination.",
+  "setup": "Begin close to a meaningful workplace moment: a new-hire introduction, first shift together, transfer, handover, rivalry result, overtime period, trip departure, training assignment, roster change, promotion, resignation, or after-work transition. Establish job roles, hierarchy, industry, and enough workplace context for the relationship dynamic to make sense. Do not pre-write {{user}}'s attraction, friendship, consent, promotion choice, resignation, confrontation, or career decision.",
+  "core_variables": [
+    "Who is newly hired, transferred, promoted, returning, contracted, or otherwise entering the shared workplace context.",
+    "Relative seniority and whether any direct reporting, training, assessment, roster, pay, or disciplinary authority exists.",
+    "Industry, workplace type, site structure, and job roles.",
+    "How long {{user}} and {{char}} have worked together and how often they actually overlap.",
+    "Whether their starting dynamic is professional dependence, friendship, rivalry, mentoring, attraction, prior personal history, or simple collegial familiarity.",
+    "What workplace situations repeatedly bring them together.",
+    "Whether they work the same shift, different shifts, different sites, remotely, or through handovers.",
+    "How much contact occurs after work and whether it remains group-based, practical, friendly, or more personal.",
+    "How a personal relationship change affects teamwork, hierarchy, policy, gossip, scheduling, and career choices.",
+    "Whether professional power creates a conflict that requires boundaries, disclosure, reassignment, or delay.",
+    "What career goals each adult has independently of the relationship.",
+    "Whether the story ends in continued coworking, friendship, rivalry, romance, transfer, promotion, resignation, qualification, or no personal change."
+  ],
+  "generation_rules": [
+    "Preserve the broad workplace umbrella: adult {{user}} and adult {{char}} know each other through shared work, and the workplace materially shapes the scenario.",
+    "If New Hire is selected, clearly establish who is new and who already knows the workplace.",
+    "If Department Transfer is selected, preserve that one adult already knows the organization but is new to the immediate team/site/role.",
+    "If Long-Time Coworkers is selected, use accumulated professional history, routines, trust, or assumptions rather than treating them like strangers.",
+    "If Office Rival is selected, define the actual professional competition and avoid turning rivalry into automatic romance.",
+    "If My Boss is selected, make managerial power real and preserve a strict separation between employment decisions and romantic/sexual consent.",
+    "If After Work is selected, move meaningful personal interaction outside active work duties without assuming romance.",
+    "If Business Trip is selected, preserve work purpose, travel logistics, separate consent, and ordinary accommodation/privacy boundaries.",
+    "If Overtime is selected, explain why extra work is happening and avoid treating an unlocked workplace as forced confinement.",
+    "If Different Shifts is selected, make handovers, rare overlap, rosters, and schedule changes central.",
+    "If Trainee Train Drivers / Training Together is selected, preserve adult trainee status, rules/safety learning, assessments, simulations, route knowledge, and formal instructors/assessors.",
+    "Do not force romance, sexual tension, dating, marriage, rivalry, friendship, or breakup as the inevitable trajectory.",
+    "Do not write {{user}}'s attraction, consent, dialogue, career decision, resignation, promotion response, or personal boundaries as settled fact.",
+    "Treat workplace gossip and coworker assumptions as perspective rather than truth.",
+    "Keep professional competence and career goals intact even when romance develops.",
+    "If a selected preset narrows industry, hierarchy, role, schedule, dynamic, or outcome, preserve it while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic or sexual participants are adults.",
+    "Employment benefits, hiring, hours, shifts, pay, bonuses, promotions, references, performance reviews, discipline, contract renewal, and job security must never be exchanged for romantic or sexual compliance.",
+    "Rejecting personal interest must not trigger workplace retaliation.",
+    "Do not treat managerial, trainer, assessor, owner, client, or senior-specialist authority as romantic consent.",
+    "If direct reporting or assessment creates a conflict of interest, allow disclosure, reassignment, delay, or non-pursuit as valid outcomes.",
+    "Do not sexualize safety-critical work duties, active train driving, patient/client care, machinery operation, emergency response, or other tasks requiring full attention.",
+    "Protect customer, patient, client, employee, and business confidentiality.",
+    "Business travel, overtime, night shifts, and empty offices do not imply sexual availability or forced proximity.",
+    "Alcohol at work functions or after-work drinks does not substitute for consent.",
+    "Do not normalize stalking through rosters, work systems, cameras, access logs, location tools, or employee records.",
+    "Do not force public disclosure of a relationship beyond legitimate workplace policy needs.",
+    "Do not use cosmetic changes of company, job title, or industry as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "New hire, returning worker, transfer, contractor, temporary worker, seasonal hire, graduate, external expert, new manager, new team, merger, secondment, relief worker, remote worker, or roster change",
+    "Peers, informal seniority, team leader, manager, separate managers, project authority, mentor, trainer, trainee peers, specialist/junior, shift supervisor, owner/employee, client/contractor, or temporary hierarchy",
+    "Office, IT, software, cybersecurity, retail, supermarket, hospitality, cleaning/facilities, government, warehouse, manufacturing, trades, rail, bus/coach, aviation, healthcare, education, research, legal, finance, call centre, media, game studio, automotive, agriculture, utilities, security, nonprofit, startup, remote-first, or multi-site work",
+    "Same role, complementary roles, technical/nontechnical pair, front/back of house, operations/admin, trainer/trainee, mentor/mentee, project lead/specialist, dispatcher/driver, developer/QA, manager/specialist, researcher/technician, or different-site peers",
+    "First day, first week, first month, months, year, several years, decade, former coworkers, rare monthly contact, seasonal contact, project-only, daily collaboration, different shifts, remote-before-in-person, or personal history predating work",
+    "Professional dependence, friendly coworkers, work friends, close friends, mentorship, mutual mentoring, rivalry, friendly rivalry, quiet respect, admiration, crush from {{char}}, platonic work-spouse dynamic, former dates, former couple, secret current couple, or no personal change",
+    "Morning setup, closing, lunch, commute, deadline, incident, outage, shortage, busy season, audit, stocktake, office move, training, conference, business trip, overtime, night shift, weekend, holiday, remote day, promotion, resignation, transfer, or restructure",
+    "Same shift, short handover, alternating shifts, day/night, weekday/weekend, relief overlap, shift swaps, overtime bridge, digital handovers, first full shift together, roster separation, or permanent schedule change",
+    "No outside contact, coffee, dinner, commute, carpool, gaming, shared hobby, group socials, one-on-one friendship, certification study, conference evening, private messaging, weekend event, or relationship only after one leaves",
+    "Remain coworkers, friends, close friends, rivals, successful mentorship, dating after reassignment, peer dating, transfer, promotion, resignation, professional breakup, qualification, separate depots, remote-to-local transition, or no forced outcome"
+  ],
+  "cross_links": [
+    "Forced Proximity",
+    "She Wants You",
+    "Please Bang Me",
+    "Her Hidden Side",
+    "Just a Prank!",
+    "My New Neighbour",
+    "Come With Me",
+    "Fake Relationship",
+    "Open Relationship",
+    "Not That Kind of Cheating"
+  ],
+  "tags": [
+    "adult",
+    "workplace",
+    "coworkers",
+    "new hire",
+    "department transfer",
+    "office rival",
+    "boss",
+    "after work",
+    "business trip",
+    "overtime",
+    "different shifts",
+    "training",
+    "trainee train drivers",
+    "mentoring",
+    "professional boundaries",
+    "career",
+    "slice of life"
+  ],
+  "notes": "Expanded from Series Bible I #29. The original ten seeds—New Hire, Department Transfer, Long-Time Coworkers, Office Rival, My Boss, After Work, Business Trip, Overtime, Different Shifts, and Trainee Train Drivers / Training Together—are preserved with their original preset IDs. The source treats workplace structure, hierarchy, safety, career goals, and professional fairness as real constraints and allows fully platonic trajectories.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied Workplace Stories concepts about adult {{user}} and adult {{char}} whose relationship develops through a shared workplace. Vary who is new, relative seniority, industry, job roles, time working together, whether the bond is friendship, rivalry, mentoring, attraction, professional dependence, or simple teamwork, and how work changes if the personal relationship changes. Preserve professional boundaries, make workplace power materially relevant, and do not force romance, sex, promotion, retaliation, or {{user}}'s response."
+    },
+    {
+      "id": "new-hire",
+      "group": "02 Original Bible Seeds",
+      "title": "New Hire",
+      "direction": "Either adult {{user}} or adult {{char}} is newly hired and must learn the workplace, team, and routines while the other becomes one of the first important coworkers."
+    },
+    {
+      "id": "department-transfer",
+      "group": "02 Original Bible Seeds",
+      "title": "Department Transfer",
+      "direction": "One adult transfers into the other's department, team, site, branch, depot, or work area, bringing existing company knowledge but new local relationships."
+    },
+    {
+      "id": "long-time-coworkers",
+      "group": "02 Original Bible Seeds",
+      "title": "Long-Time Coworkers",
+      "direction": "{{user}} and {{char}} have worked together for a substantial period before the scenario begins, so routines, trust, history, and accumulated assumptions matter."
+    },
+    {
+      "id": "office-rival",
+      "group": "02 Original Bible Seeds",
+      "title": "Office Rival",
+      "direction": "{{user}} and {{char}} compete professionally over performance, recognition, assignments, ideas, clients, or status without assuming hostility outside work."
+    },
+    {
+      "id": "my-boss",
+      "group": "02 Original Bible Seeds",
+      "title": "My Boss",
+      "direction": "Adult {{char}} is {{user}}'s manager, supervisor, team leader, or otherwise professionally senior. Keep evaluation, pay, scheduling, discipline, and job security separate from personal consent."
+    },
+    {
+      "id": "after-work",
+      "group": "02 Original Bible Seeds",
+      "title": "After Work",
+      "direction": "The relationship develops through time immediately after shifts: walking out together, meals, drinks, errands, transport, debriefing, or simply talking once professional pressure drops."
+    },
+    {
+      "id": "business-trip",
+      "group": "02 Original Bible Seeds",
+      "title": "Business Trip",
+      "direction": "A work trip changes the normal environment and creates more shared time, logistical dependence, and blurred work/personal boundaries without removing professional rules."
+    },
+    {
+      "id": "overtime",
+      "group": "02 Original Bible Seeds",
+      "title": "Overtime",
+      "direction": "Adult {{user}} and {{char}} spend unusual extra time together because of overtime, deadlines, staffing shortages, incidents, shutdowns, maintenance, or end-of-day work."
+    },
+    {
+      "id": "different-shifts",
+      "group": "02 Original Bible Seeds",
+      "title": "Different Shifts",
+      "direction": "They work different or partially overlapping shifts, making handovers, rare overlap, schedule changes, and missed timing central to the relationship."
+    },
+    {
+      "id": "trainee-train-drivers-training-together",
+      "group": "02 Original Bible Seeds",
+      "title": "Trainee Train Drivers / Training Together",
+      "direction": "Adult {{user}} and {{char}} are trainee train drivers or equivalent transport trainees learning together, with rules, assessments, route knowledge, simulations, practical training, and shared pressure shaping the relationship."
+    },
+    {
+      "id": "g03-char-is-new-hire",
+      "group": "03 Entry Point / Who Is New",
+      "title": "{{char}} Is New Hire",
+      "direction": "{{char}} has just joined the workplace and {{user}} is already established."
+    },
+    {
+      "id": "g03-user-is-new-hire",
+      "group": "03 Entry Point / Who Is New",
+      "title": "{{user}} Is New Hire",
+      "direction": "{{user}} is the newcomer and {{char}} already understands the workplace."
+    },
+    {
+      "id": "g03-both-start-same-day",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Both Start Same Day",
+      "direction": "Both adults join at roughly the same time and learn together."
+    },
+    {
+      "id": "g03-char-returns-after-years-away",
+      "group": "03 Entry Point / Who Is New",
+      "title": "{{char}} Returns After Years Away",
+      "direction": "{{char}} comes back to a former employer or industry after a long absence."
+    },
+    {
+      "id": "g03-user-returns-after-leave",
+      "group": "03 Entry Point / Who Is New",
+      "title": "{{user}} Returns After Leave",
+      "direction": "{{user}} returns after extended leave and finds {{char}} now part of the team."
+    },
+    {
+      "id": "g03-contractor-arrives",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Contractor Arrives",
+      "direction": "One adult joins temporarily as a contractor, consultant, specialist, cleaner, technician, or project worker."
+    },
+    {
+      "id": "g03-temporary-worker",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Temporary Worker",
+      "direction": "One adult is only expected to stay for a short assignment."
+    },
+    {
+      "id": "g03-seasonal-hire",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Seasonal Hire",
+      "direction": "The job exists because of a seasonal peak, event, harvest, holiday, or tourism period."
+    },
+    {
+      "id": "g03-graduate-entry-level-hire",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Graduate / Entry-Level Hire",
+      "direction": "One adult is beginning a professional career."
+    },
+    {
+      "id": "g03-experienced-external-hire",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Experienced External Hire",
+      "direction": "One adult is new to the company but highly experienced elsewhere."
+    },
+    {
+      "id": "g03-internal-promotion-into-team",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Internal Promotion Into Team",
+      "direction": "A familiar coworker becomes newly senior inside the same team."
+    },
+    {
+      "id": "g03-new-manager-from-outside",
+      "group": "03 Entry Point / Who Is New",
+      "title": "New Manager From Outside",
+      "direction": "A new manager arrives without established social ties."
+    },
+    {
+      "id": "g03-new-team-formed",
+      "group": "03 Entry Point / Who Is New",
+      "title": "New Team Formed",
+      "direction": "Both adults are reassigned into a newly created team."
+    },
+    {
+      "id": "g03-merger-brings-teams-together",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Merger Brings Teams Together",
+      "direction": "A company merger or restructure places previously separate adults together."
+    },
+    {
+      "id": "g03-site-consolidation",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Site Consolidation",
+      "direction": "Two branches/sites combine and force new working relationships."
+    },
+    {
+      "id": "g03-project-team-only",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Project Team Only",
+      "direction": "They normally work elsewhere but are assigned to a temporary cross-functional project."
+    },
+    {
+      "id": "g03-secondment",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Secondment",
+      "direction": "One adult is temporarily seconded into the other's work area."
+    },
+    {
+      "id": "g03-relief-cover-worker",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Relief / Cover Worker",
+      "direction": "One adult covers leave or vacancy and may not stay permanently."
+    },
+    {
+      "id": "g03-new-shift-pattern",
+      "group": "03 Entry Point / Who Is New",
+      "title": "New Shift Pattern",
+      "direction": "Neither is new to the employer, but a roster change creates regular contact for the first time."
+    },
+    {
+      "id": "g03-remote-worker-comes-onsite",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Remote Worker Comes Onsite",
+      "direction": "A mostly remote adult begins working physically with the team."
+    },
+    {
+      "id": "g03-onsite-worker-goes-remote",
+      "group": "03 Entry Point / Who Is New",
+      "title": "Onsite Worker Goes Remote",
+      "direction": "A role change pushes much of the relationship into chat, calls, and scheduled visits."
+    },
+    {
+      "id": "g04-same-level-peers",
+      "group": "04 Relative Seniority / Power",
+      "title": "Same Level Peers",
+      "direction": "{{user}} and {{char}} hold broadly equivalent roles."
+    },
+    {
+      "id": "g04-char-slightly-senior",
+      "group": "04 Relative Seniority / Power",
+      "title": "{{char}} Slightly Senior",
+      "direction": "{{char}} has more experience or informal status but no direct authority over {{user}}."
+    },
+    {
+      "id": "g04-user-slightly-senior",
+      "group": "04 Relative Seniority / Power",
+      "title": "{{user}} Slightly Senior",
+      "direction": "{{user}} has more experience or informal status but no direct authority over {{char}}."
+    },
+    {
+      "id": "g04-char-team-leader",
+      "group": "04 Relative Seniority / Power",
+      "title": "{{char}} Team Leader",
+      "direction": "{{char}} coordinates work and may allocate tasks."
+    },
+    {
+      "id": "g04-user-team-leader",
+      "group": "04 Relative Seniority / Power",
+      "title": "{{user}} Team Leader",
+      "direction": "{{user}} coordinates work while {{char}} reports within the same team."
+    },
+    {
+      "id": "g04-char-direct-manager",
+      "group": "04 Relative Seniority / Power",
+      "title": "{{char}} Direct Manager",
+      "direction": "{{char}} directly manages {{user}} and may influence formal evaluation or scheduling."
+    },
+    {
+      "id": "g04-user-direct-manager",
+      "group": "04 Relative Seniority / Power",
+      "title": "{{user}} Direct Manager",
+      "direction": "{{user}} directly manages {{char}}; do not pre-write how {{user}} handles any personal feelings."
+    },
+    {
+      "id": "g04-different-managers",
+      "group": "04 Relative Seniority / Power",
+      "title": "Different Managers",
+      "direction": "They work together but report to separate supervisors."
+    },
+    {
+      "id": "g04-matrix-reporting",
+      "group": "04 Relative Seniority / Power",
+      "title": "Matrix Reporting",
+      "direction": "One adult has project authority but not full line-management authority."
+    },
+    {
+      "id": "g04-mentor-without-formal-authority",
+      "group": "04 Relative Seniority / Power",
+      "title": "Mentor Without Formal Authority",
+      "direction": "One adult teaches and supports the other without controlling employment decisions."
+    },
+    {
+      "id": "g04-formal-trainer",
+      "group": "04 Relative Seniority / Power",
+      "title": "Formal Trainer",
+      "direction": "One adult is assigned as workplace trainer/assessor; attraction must remain separate from assessment."
+    },
+    {
+      "id": "g04-trainees-together",
+      "group": "04 Relative Seniority / Power",
+      "title": "Trainees Together",
+      "direction": "Both adults are being trained and assessed by third parties."
+    },
+    {
+      "id": "g04-senior-specialist-and-junior-specialist",
+      "group": "04 Relative Seniority / Power",
+      "title": "Senior Specialist and Junior Specialist",
+      "direction": "Expertise creates dependence without necessarily creating managerial power."
+    },
+    {
+      "id": "g04-shift-supervisor-and-worker",
+      "group": "04 Relative Seniority / Power",
+      "title": "Shift Supervisor and Worker",
+      "direction": "Roster/shift authority is materially relevant."
+    },
+    {
+      "id": "g04-owner-and-employee",
+      "group": "04 Relative Seniority / Power",
+      "title": "Owner and Employee",
+      "direction": "One adult owns the small business. Personal interest cannot be tied to continued employment."
+    },
+    {
+      "id": "g04-family-business-coworkers",
+      "group": "04 Relative Seniority / Power",
+      "title": "Family Business Coworkers",
+      "direction": "One adult belongs to the owning family while both work together."
+    },
+    {
+      "id": "g04-client-side-and-contractor-side",
+      "group": "04 Relative Seniority / Power",
+      "title": "Client-Side and Contractor-Side",
+      "direction": "They collaborate across organizations rather than sharing an employer."
+    },
+    {
+      "id": "g04-vendor-and-customer-team",
+      "group": "04 Relative Seniority / Power",
+      "title": "Vendor and Customer Team",
+      "direction": "Professional dependence exists without direct management."
+    },
+    {
+      "id": "g04-union-delegate-coworker",
+      "group": "04 Relative Seniority / Power",
+      "title": "Union Delegate / Coworker",
+      "direction": "One adult has a representative role rather than managerial authority."
+    },
+    {
+      "id": "g04-acting-manager-temporarily",
+      "group": "04 Relative Seniority / Power",
+      "title": "Acting Manager Temporarily",
+      "direction": "A peer temporarily gains formal authority, complicating an existing personal dynamic."
+    },
+    {
+      "id": "g04-promotion-changes-hierarchy",
+      "group": "04 Relative Seniority / Power",
+      "title": "Promotion Changes Hierarchy",
+      "direction": "They begin as peers and later one becomes the other's manager."
+    },
+    {
+      "id": "g04-transfer-removes-hierarchy",
+      "group": "04 Relative Seniority / Power",
+      "title": "Transfer Removes Hierarchy",
+      "direction": "A personal relationship becomes easier to consider only after reporting lines change."
+    },
+    {
+      "id": "g05-office-administration",
+      "group": "05 Industry / Workplace Type",
+      "title": "Office Administration",
+      "direction": "Use a general office/admin workplace with recurring teamwork and routine contact."
+    },
+    {
+      "id": "g05-it-help-desk",
+      "group": "05 Industry / Workplace Type",
+      "title": "IT / Help Desk",
+      "direction": "Use IT support, infrastructure, networking, sysadmin, software, or help-desk work."
+    },
+    {
+      "id": "g05-software-development",
+      "group": "05 Industry / Workplace Type",
+      "title": "Software Development",
+      "direction": "Use developers, QA, designers, product staff, or technical project work."
+    },
+    {
+      "id": "g05-cybersecurity-noc",
+      "group": "05 Industry / Workplace Type",
+      "title": "Cybersecurity / NOC",
+      "direction": "Use operations, monitoring, incidents, on-call work, and technical handovers."
+    },
+    {
+      "id": "g05-retail",
+      "group": "05 Industry / Workplace Type",
+      "title": "Retail",
+      "direction": "Use adult retail staff, supervisors, deliveries, customers, and shift rosters."
+    },
+    {
+      "id": "g05-supermarket",
+      "group": "05 Industry / Workplace Type",
+      "title": "Supermarket",
+      "direction": "Use a supermarket environment with departments, registers, nightfill, and shift overlap."
+    },
+    {
+      "id": "g05-hospitality",
+      "group": "05 Industry / Workplace Type",
+      "title": "Hospitality",
+      "direction": "Use restaurant, café, hotel, bar, or event hospitality work with adult staff."
+    },
+    {
+      "id": "g05-cleaning-facilities",
+      "group": "05 Industry / Workplace Type",
+      "title": "Cleaning / Facilities",
+      "direction": "Use cleaning, facilities, site access, checklists, after-hours work, and multiple client locations."
+    },
+    {
+      "id": "g05-council-local-government",
+      "group": "05 Industry / Workplace Type",
+      "title": "Council / Local Government",
+      "direction": "Use adult local-government staff, operations, administration, facilities, planning, or community services."
+    },
+    {
+      "id": "g05-warehouse-logistics",
+      "group": "05 Industry / Workplace Type",
+      "title": "Warehouse / Logistics",
+      "direction": "Use picking, dispatch, inventory, forklifts, loading, and shift coordination."
+    },
+    {
+      "id": "g05-manufacturing",
+      "group": "05 Industry / Workplace Type",
+      "title": "Manufacturing",
+      "direction": "Use production lines, quality control, maintenance, safety, and shift teams."
+    },
+    {
+      "id": "g05-construction-trades",
+      "group": "05 Industry / Workplace Type",
+      "title": "Construction / Trades",
+      "direction": "Use adult trades, site coordination, apprenticeships, safety, and project deadlines."
+    },
+    {
+      "id": "g05-rail-operations",
+      "group": "05 Industry / Workplace Type",
+      "title": "Rail Operations",
+      "direction": "Use drivers, conductors, controllers, station staff, maintenance, or operations."
+    },
+    {
+      "id": "g05-trainee-train-drivers",
+      "group": "05 Industry / Workplace Type",
+      "title": "Trainee Train Drivers",
+      "direction": "Use adult trainee drivers learning rules, routes, traction, safety systems, and practical operation."
+    },
+    {
+      "id": "g05-bus-coach-operations",
+      "group": "05 Industry / Workplace Type",
+      "title": "Bus / Coach Operations",
+      "direction": "Use drivers, dispatch, depot work, route rosters, and passenger operations."
+    },
+    {
+      "id": "g05-aviation",
+      "group": "05 Industry / Workplace Type",
+      "title": "Aviation",
+      "direction": "Use ground staff, cabin crew, operations, maintenance, or airport work without assuming pilot roles."
+    },
+    {
+      "id": "g05-healthcare",
+      "group": "05 Industry / Workplace Type",
+      "title": "Healthcare",
+      "direction": "Use adult clinical or administrative staff while keeping professional ethics and patient privacy central."
+    },
+    {
+      "id": "g05-aged-care",
+      "group": "05 Industry / Workplace Type",
+      "title": "Aged Care",
+      "direction": "Use adult care workers, nurses, hospitality, cleaning, or administration with privacy and duty of care."
+    },
+    {
+      "id": "g05-disability-services",
+      "group": "05 Industry / Workplace Type",
+      "title": "Disability Services",
+      "direction": "Use adult workers in support/admin roles with client privacy and safeguarding."
+    },
+    {
+      "id": "g05-education-staff",
+      "group": "05 Industry / Workplace Type",
+      "title": "Education Staff",
+      "direction": "Use adult university, TAFE, school, or training staff; do not use students as romantic targets."
+    },
+    {
+      "id": "g05-university-staff",
+      "group": "05 Industry / Workplace Type",
+      "title": "University Staff",
+      "direction": "Use researchers, administrators, librarians, technicians, or lecturers as adult coworkers."
+    },
+    {
+      "id": "g05-research-lab",
+      "group": "05 Industry / Workplace Type",
+      "title": "Research Lab",
+      "direction": "Use adult researchers, technicians, lab managers, and project pressure."
+    },
+    {
+      "id": "g05-legal-office",
+      "group": "05 Industry / Workplace Type",
+      "title": "Legal Office",
+      "direction": "Use lawyers, paralegals, admin, and confidentiality."
+    },
+    {
+      "id": "g05-accounting-finance-office",
+      "group": "05 Industry / Workplace Type",
+      "title": "Accounting / Finance Office",
+      "direction": "Use accounting or finance staff without turning romance into financial leverage."
+    },
+    {
+      "id": "g05-bank-branch-staff",
+      "group": "05 Industry / Workplace Type",
+      "title": "Bank / Branch Staff",
+      "direction": "Use branch or operations coworkers; protect customer privacy."
+    },
+    {
+      "id": "g05-insurance",
+      "group": "05 Industry / Workplace Type",
+      "title": "Insurance",
+      "direction": "Use claims, customer service, assessment, or operations teams."
+    },
+    {
+      "id": "g05-call-centre",
+      "group": "05 Industry / Workplace Type",
+      "title": "Call Centre",
+      "direction": "Use phone queues, metrics, coaching, breaks, and shift patterns."
+    },
+    {
+      "id": "g05-media-publishing",
+      "group": "05 Industry / Workplace Type",
+      "title": "Media / Publishing",
+      "direction": "Use editors, writers, producers, designers, or production staff."
+    },
+    {
+      "id": "g05-game-studio",
+      "group": "05 Industry / Workplace Type",
+      "title": "Game Studio",
+      "direction": "Use developers, artists, QA, producers, and crunch/deadline culture."
+    },
+    {
+      "id": "g05-film-tv-production",
+      "group": "05 Industry / Workplace Type",
+      "title": "Film / TV Production",
+      "direction": "Use crew, production, post-production, logistics, and temporary teams."
+    },
+    {
+      "id": "g05-music-events",
+      "group": "05 Industry / Workplace Type",
+      "title": "Music / Events",
+      "direction": "Use venues, touring, production, event management, or festival work."
+    },
+    {
+      "id": "g05-museum-gallery",
+      "group": "05 Industry / Workplace Type",
+      "title": "Museum / Gallery",
+      "direction": "Use curators, guides, security, technicians, and event work."
+    },
+    {
+      "id": "g05-library",
+      "group": "05 Industry / Workplace Type",
+      "title": "Library",
+      "direction": "Use adult librarians, assistants, archivists, and community programming."
+    },
+    {
+      "id": "g05-bookshop",
+      "group": "05 Industry / Workplace Type",
+      "title": "Bookshop",
+      "direction": "Use retail/bookselling work and literary interests."
+    },
+    {
+      "id": "g05-automotive-workshop",
+      "group": "05 Industry / Workplace Type",
+      "title": "Automotive Workshop",
+      "direction": "Use mechanics, service advisors, parts staff, or workshop admin."
+    },
+    {
+      "id": "g05-dealership",
+      "group": "05 Industry / Workplace Type",
+      "title": "Dealership",
+      "direction": "Use sales, service, detailing, finance, and reception roles."
+    },
+    {
+      "id": "g05-agriculture",
+      "group": "05 Industry / Workplace Type",
+      "title": "Agriculture",
+      "direction": "Use farm, processing, agronomy, logistics, or seasonal work with adult coworkers."
+    },
+    {
+      "id": "g05-food-production",
+      "group": "05 Industry / Workplace Type",
+      "title": "Food Production",
+      "direction": "Use bakery, kitchen, factory, packaging, or QA work."
+    },
+    {
+      "id": "g05-utilities",
+      "group": "05 Industry / Workplace Type",
+      "title": "Utilities",
+      "direction": "Use power, water, telecom, field operations, or control-room work."
+    },
+    {
+      "id": "g05-telecommunications",
+      "group": "05 Industry / Workplace Type",
+      "title": "Telecommunications",
+      "direction": "Use technicians, network operations, callout work, or customer projects."
+    },
+    {
+      "id": "g05-security",
+      "group": "05 Industry / Workplace Type",
+      "title": "Security",
+      "direction": "Use adult security guards, control rooms, patrols, and handovers."
+    },
+    {
+      "id": "g05-emergency-dispatch-support",
+      "group": "05 Industry / Workplace Type",
+      "title": "Emergency Dispatch / Support",
+      "direction": "Use non-romantic adult coworkers in dispatch/support; do not exploit emergencies for romance."
+    },
+    {
+      "id": "g05-nonprofit-charity",
+      "group": "05 Industry / Workplace Type",
+      "title": "Nonprofit / Charity",
+      "direction": "Use adult staff and volunteers with mission-driven work."
+    },
+    {
+      "id": "g05-church-administration-facilities",
+      "group": "05 Industry / Workplace Type",
+      "title": "Church Administration / Facilities",
+      "direction": "Use adult workplace-style church admin/facilities roles while avoiding religious pressure as romantic leverage."
+    },
+    {
+      "id": "g05-government-agency",
+      "group": "05 Industry / Workplace Type",
+      "title": "Government Agency",
+      "direction": "Use adult public-sector teams, policy, operations, or service delivery."
+    },
+    {
+      "id": "g05-freelance-coworking",
+      "group": "05 Industry / Workplace Type",
+      "title": "Freelance / Coworking",
+      "direction": "Two adults work independently but repeatedly share a coworking environment."
+    },
+    {
+      "id": "g05-startup",
+      "group": "05 Industry / Workplace Type",
+      "title": "Startup",
+      "direction": "Use a small fast-changing company where roles overlap heavily."
+    },
+    {
+      "id": "g05-small-family-business",
+      "group": "05 Industry / Workplace Type",
+      "title": "Small Family Business",
+      "direction": "Use a tiny workplace where personal and professional boundaries are unusually visible."
+    },
+    {
+      "id": "g05-remote-first-company",
+      "group": "05 Industry / Workplace Type",
+      "title": "Remote-First Company",
+      "direction": "Most connection happens through chat/video before in-person meetings."
+    },
+    {
+      "id": "g05-multi-site-employer",
+      "group": "05 Industry / Workplace Type",
+      "title": "Multi-Site Employer",
+      "direction": "The adults normally work at different sites and meet through relief, training, or projects."
+    },
+    {
+      "id": "g06-same-job-role",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Same Job Role",
+      "direction": "Both adults perform essentially the same work."
+    },
+    {
+      "id": "g06-complementary-roles",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Complementary Roles",
+      "direction": "Their jobs depend on one another for smooth workflow."
+    },
+    {
+      "id": "g06-technical-and-nontechnical-pair",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Technical and Nontechnical Pair",
+      "direction": "One works technical problems while the other handles users/clients/operations."
+    },
+    {
+      "id": "g06-front-of-house-back-of-house",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Front-of-House / Back-of-House",
+      "direction": "Different work areas repeatedly coordinate."
+    },
+    {
+      "id": "g06-operations-administration",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Operations / Administration",
+      "direction": "Practical operations and office administration intersect."
+    },
+    {
+      "id": "g06-sales-service",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Sales / Service",
+      "direction": "One sells or books while the other delivers ongoing service."
+    },
+    {
+      "id": "g06-trainer-trainee",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Trainer / Trainee",
+      "direction": "One is responsible for practical learning but not personal compliance."
+    },
+    {
+      "id": "g06-mentor-mentee",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Mentor / Mentee",
+      "direction": "Professional development drives repeated contact."
+    },
+    {
+      "id": "g06-project-lead-specialist",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Project Lead / Specialist",
+      "direction": "A project creates temporary dependence."
+    },
+    {
+      "id": "g06-dispatcher-driver",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Dispatcher / Driver",
+      "direction": "One coordinates routes while the other works in the field."
+    },
+    {
+      "id": "g06-driver-driver",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Driver / Driver",
+      "direction": "Both adults perform the same transport role."
+    },
+    {
+      "id": "g06-driver-station-staff",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Driver / Station Staff",
+      "direction": "Operational handovers create repeated encounters."
+    },
+    {
+      "id": "g06-cleaner-site-contact",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Cleaner / Site Contact",
+      "direction": "A facilities worker repeatedly interacts with the site's adult representative."
+    },
+    {
+      "id": "g06-technician-operator",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Technician / Operator",
+      "direction": "One maintains systems the other relies on."
+    },
+    {
+      "id": "g06-developer-qa",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Developer / QA",
+      "direction": "Frequent bug disputes, testing, and releases shape the relationship."
+    },
+    {
+      "id": "g06-developer-designer",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Developer / Designer",
+      "direction": "Technical and creative priorities create collaboration or rivalry."
+    },
+    {
+      "id": "g06-sysadmin-help-desk",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Sysadmin / Help Desk",
+      "direction": "Escalations and outages bring them together."
+    },
+    {
+      "id": "g06-manager-specialist",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Manager / Specialist",
+      "direction": "The relationship mixes authority with subject-matter dependence."
+    },
+    {
+      "id": "g06-reception-field-worker",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Reception / Field Worker",
+      "direction": "Brief repeated handovers build familiarity."
+    },
+    {
+      "id": "g06-cook-server",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Cook / Server",
+      "direction": "Fast-paced service requires trust and timing."
+    },
+    {
+      "id": "g06-warehouse-picker-dispatcher",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Warehouse Picker / Dispatcher",
+      "direction": "Workflow and deadlines create practical dependence."
+    },
+    {
+      "id": "g06-mechanic-service-advisor",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Mechanic / Service Advisor",
+      "direction": "Customer expectations and repair realities require coordination."
+    },
+    {
+      "id": "g06-researcher-technician",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Researcher / Technician",
+      "direction": "Experimental work makes each role essential."
+    },
+    {
+      "id": "g06-editor-writer",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Editor / Writer",
+      "direction": "Creative disagreement and revision create tension or trust."
+    },
+    {
+      "id": "g06-producer-creator",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Producer / Creator",
+      "direction": "One organizes while the other creates."
+    },
+    {
+      "id": "g06-security-facilities",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Security / Facilities",
+      "direction": "After-hours work overlaps around access and incidents."
+    },
+    {
+      "id": "g06-different-departments-same-project",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Different Departments, Same Project",
+      "direction": "The project matters more than job similarity."
+    },
+    {
+      "id": "g06-different-sites-same-role",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Different Sites, Same Role",
+      "direction": "They meet through training, relief, or regional coordination."
+    },
+    {
+      "id": "g06-different-shifts-same-role",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Different Shifts, Same Role",
+      "direction": "Handovers become their main recurring contact."
+    },
+    {
+      "id": "g06-remote-onsite-pair",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Remote / Onsite Pair",
+      "direction": "One works remotely while the other handles physical tasks."
+    },
+    {
+      "id": "g06-job-share",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Job Share",
+      "direction": "Two adults split one position or coverage responsibility."
+    },
+    {
+      "id": "g06-relief-pair",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Relief Pair",
+      "direction": "They often cover for each other without sharing normal shifts."
+    },
+    {
+      "id": "g07-first-day",
+      "group": "07 How Long They Have Worked Together",
+      "title": "First Day",
+      "direction": "The relationship begins on one adult's first day."
+    },
+    {
+      "id": "g07-first-week",
+      "group": "07 How Long They Have Worked Together",
+      "title": "First Week",
+      "direction": "They are still forming basic workplace impressions."
+    },
+    {
+      "id": "g07-first-month",
+      "group": "07 How Long They Have Worked Together",
+      "title": "First Month",
+      "direction": "Routine is beginning but personal familiarity is limited."
+    },
+    {
+      "id": "g07-three-months",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Three Months",
+      "direction": "They know each other's work style but not necessarily personal life."
+    },
+    {
+      "id": "g07-six-months",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Six Months",
+      "direction": "A dependable coworker bond has formed."
+    },
+    {
+      "id": "g07-one-year",
+      "group": "07 How Long They Have Worked Together",
+      "title": "One Year",
+      "direction": "The relationship has enough history for patterns and inside jokes."
+    },
+    {
+      "id": "g07-several-years",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Several Years",
+      "direction": "Long-standing habits and assumptions matter."
+    },
+    {
+      "id": "g07-a-decade-together",
+      "group": "07 How Long They Have Worked Together",
+      "title": "A Decade Together",
+      "direction": "They know each other's professional history unusually well."
+    },
+    {
+      "id": "g07-used-to-work-together",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Used to Work Together",
+      "direction": "They reunite at a new employer or after years apart."
+    },
+    {
+      "id": "g07-only-cross-paths-monthly",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Only Cross Paths Monthly",
+      "direction": "Contact is rare but recurring."
+    },
+    {
+      "id": "g07-only-during-busy-season",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Only During Busy Season",
+      "direction": "The relationship reactivates each seasonal peak."
+    },
+    {
+      "id": "g07-only-during-projects",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Only During Projects",
+      "direction": "They repeatedly work together on temporary assignments."
+    },
+    {
+      "id": "g07-daily-close-collaboration",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Daily Close Collaboration",
+      "direction": "They spend much of every shift coordinating."
+    },
+    {
+      "id": "g07-same-site-rare-contact",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Same Site, Rare Contact",
+      "direction": "They know of each other long before speaking much."
+    },
+    {
+      "id": "g07-different-shifts-for-years",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Different Shifts for Years",
+      "direction": "Familiarity comes through notes and handovers rather than shared hours."
+    },
+    {
+      "id": "g07-remote-for-years-first-in-person-meeting",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Remote for Years, First In-Person Meeting",
+      "direction": "A long digital coworker relationship finally becomes physical workplace contact."
+    },
+    {
+      "id": "g07-newly-reassigned-together",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Newly Reassigned Together",
+      "direction": "Old coworkers suddenly have much more direct contact."
+    },
+    {
+      "id": "g07-former-rivals-now-same-team",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Former Rivals, Now Same Team",
+      "direction": "History from separate teams shapes current collaboration."
+    },
+    {
+      "id": "g07-former-manager-former-report",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Former Manager / Former Report",
+      "direction": "A past hierarchy still influences behavior even after roles equalize."
+    },
+    {
+      "id": "g07-relationship-predates-job",
+      "group": "07 How Long They Have Worked Together",
+      "title": "Relationship Predates Job",
+      "direction": "They knew each other personally before becoming coworkers."
+    },
+    {
+      "id": "g08-simple-professional-dependence",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Simple Professional Dependence",
+      "direction": "The core bond is practical trust rather than friendship or attraction."
+    },
+    {
+      "id": "g08-friendly-coworkers",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Friendly Coworkers",
+      "direction": "They enjoy each other at work without automatically socializing outside it."
+    },
+    {
+      "id": "g08-work-friends",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Work Friends",
+      "direction": "They regularly talk beyond immediate tasks."
+    },
+    {
+      "id": "g08-close-friends",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Close Friends",
+      "direction": "The workplace created a real adult friendship."
+    },
+    {
+      "id": "g08-mentor-bond",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Mentor Bond",
+      "direction": "One adult genuinely invests in the other's professional growth."
+    },
+    {
+      "id": "g08-mutual-mentoring",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Mutual Mentoring",
+      "direction": "Each teaches the other different skills."
+    },
+    {
+      "id": "g08-office-rivalry",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Office Rivalry",
+      "direction": "They compete for performance or recognition."
+    },
+    {
+      "id": "g08-friendly-rivalry",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Friendly Rivalry",
+      "direction": "Competition is motivating rather than hostile."
+    },
+    {
+      "id": "g08-hostile-rivalry-cooling",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Hostile Rivalry Cooling",
+      "direction": "A poor start gradually becomes respect."
+    },
+    {
+      "id": "g08-opposite-work-styles",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Opposite Work Styles",
+      "direction": "One is structured and one improvisational."
+    },
+    {
+      "id": "g08-same-work-style",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Same Work Style",
+      "direction": "Their compatibility makes projects unusually easy."
+    },
+    {
+      "id": "g08-reliable-pair",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Reliable Pair",
+      "direction": "Managers deliberately schedule them together because they work well."
+    },
+    {
+      "id": "g08-constant-bickering-high-competence",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Constant Bickering, High Competence",
+      "direction": "They argue often while still delivering strong work."
+    },
+    {
+      "id": "g08-quiet-mutual-respect",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Quiet Mutual Respect",
+      "direction": "Neither is especially expressive, but trust is obvious in practice."
+    },
+    {
+      "id": "g08-one-sided-crush-from-char",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "One-Sided Crush From {{char}}",
+      "direction": "{{char}} develops feelings while {{user}}'s response remains open."
+    },
+    {
+      "id": "g08-mutual-attraction-possible",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Mutual Attraction Possible",
+      "direction": "Chemistry may exist without being established as fact for {{user}}."
+    },
+    {
+      "id": "g08-no-initial-attraction",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "No Initial Attraction",
+      "direction": "The source can remain fully platonic or allow later change."
+    },
+    {
+      "id": "g08-professional-admiration",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Professional Admiration",
+      "direction": "Respect for competence precedes personal interest."
+    },
+    {
+      "id": "g08-protective-teammates",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Protective Teammates",
+      "direction": "They watch each other's workload and safety without implying romance."
+    },
+    {
+      "id": "g08-competitive-friends",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Competitive Friends",
+      "direction": "They are friends who still try to outperform each other."
+    },
+    {
+      "id": "g08-confidants",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Confidants",
+      "direction": "Work stress leads to unusually honest private conversations."
+    },
+    {
+      "id": "g08-lunch-break-friends",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Lunch-Break Friends",
+      "direction": "Most personal connection happens during breaks."
+    },
+    {
+      "id": "g08-commute-friends",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Commute Friends",
+      "direction": "They regularly share part of the trip to/from work."
+    },
+    {
+      "id": "g08-after-shift-friends",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "After-Shift Friends",
+      "direction": "The bond becomes strongest once they clock off."
+    },
+    {
+      "id": "g08-work-spouses-platonic",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Work Spouses—Platonic",
+      "direction": "Coworkers jokingly call them a work couple while the relationship remains platonic unless roleplay changes it."
+    },
+    {
+      "id": "g08-former-dates-now-coworkers",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Former Dates Now Coworkers",
+      "direction": "A small amount of prior romantic history complicates professionalism."
+    },
+    {
+      "id": "g08-former-couple",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Former Couple",
+      "direction": "They must work together after an adult breakup."
+    },
+    {
+      "id": "g08-current-couple-secret-at-work",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Current Couple, Secret at Work",
+      "direction": "They are already dating privately and managing workplace boundaries."
+    },
+    {
+      "id": "g08-current-couple-openly-known",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Current Couple, Openly Known",
+      "direction": "The workplace knows about the relationship and policies matter."
+    },
+    {
+      "id": "g08-friends-becoming-something-else",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Friends Becoming Something Else",
+      "direction": "The personal relationship may change slowly without forcing a romantic outcome."
+    },
+    {
+      "id": "g09-morning-setup",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Morning Setup",
+      "direction": "Routine opening tasks create quiet shared time."
+    },
+    {
+      "id": "g09-closing-shift",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Closing Shift",
+      "direction": "End-of-day work leaves them among the last staff onsite."
+    },
+    {
+      "id": "g09-lunch-break",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Lunch Break",
+      "direction": "A recurring break becomes the main personal conversation window."
+    },
+    {
+      "id": "g09-coffee-run",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Coffee Run",
+      "direction": "Small favors gradually become routine."
+    },
+    {
+      "id": "g09-shared-commute",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Shared Commute",
+      "direction": "Travel to or from work creates a separate conversational space."
+    },
+    {
+      "id": "g09-carpool",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Carpool",
+      "direction": "A practical ride arrangement increases time together."
+    },
+    {
+      "id": "g09-shift-handover",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Shift Handover",
+      "direction": "Short structured handovers slowly become more personal."
+    },
+    {
+      "id": "g09-deadline-week",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Deadline Week",
+      "direction": "A major deadline intensifies collaboration."
+    },
+    {
+      "id": "g09-major-incident",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Major Incident",
+      "direction": "A technical or operational incident reveals how they work under pressure."
+    },
+    {
+      "id": "g09-system-outage",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "System Outage",
+      "direction": "Unexpected downtime or crisis work requires coordination."
+    },
+    {
+      "id": "g09-staff-shortage",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Staff Shortage",
+      "direction": "Covering absent coworkers creates extra dependence."
+    },
+    {
+      "id": "g09-busy-season",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Busy Season",
+      "direction": "High workload changes the normal relationship."
+    },
+    {
+      "id": "g09-audit-inspection",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Audit / Inspection",
+      "direction": "Preparation requires careful teamwork."
+    },
+    {
+      "id": "g09-stocktake-inventory",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Stocktake / Inventory",
+      "direction": "A repetitive after-hours task creates unusual shared time."
+    },
+    {
+      "id": "g09-office-move",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Office Move",
+      "direction": "Packing and relocation disrupt normal roles."
+    },
+    {
+      "id": "g09-site-opening",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Site Opening",
+      "direction": "A new workplace/site must be set up from scratch."
+    },
+    {
+      "id": "g09-site-closure",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Site Closure",
+      "direction": "Uncertainty about transfers or future roles affects the relationship."
+    },
+    {
+      "id": "g09-restructure",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Restructure",
+      "direction": "Organizational change may move them together or apart."
+    },
+    {
+      "id": "g09-new-software-rollout",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "New Software Rollout",
+      "direction": "One adult helps the other adapt to changed systems."
+    },
+    {
+      "id": "g09-training-day",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Training Day",
+      "direction": "Formal training creates new pairings."
+    },
+    {
+      "id": "g09-conference",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Conference",
+      "direction": "A professional event provides different social context."
+    },
+    {
+      "id": "g09-trade-show-expo",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Trade Show / Expo",
+      "direction": "Long event days blur normal routines."
+    },
+    {
+      "id": "g09-team-building-event",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Team-Building Event",
+      "direction": "A planned workplace social activity changes interactions."
+    },
+    {
+      "id": "g09-christmas-end-of-year-function",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Christmas / End-of-Year Function",
+      "direction": "A social work event reveals personalities outside normal shifts."
+    },
+    {
+      "id": "g09-after-work-meal",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "After-Work Meal",
+      "direction": "The team or pair eats together after a shift."
+    },
+    {
+      "id": "g09-friday-drinks-adults-only",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Friday Drinks—Adults Only",
+      "direction": "A casual adult social setting follows work; alcohol never substitutes for consent."
+    },
+    {
+      "id": "g09-business-trip-flight-train",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Business Trip Flight / Train",
+      "direction": "Travel logistics create extended shared time."
+    },
+    {
+      "id": "g09-shared-rental-car",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Shared Rental Car",
+      "direction": "Transport dependence makes collaboration unavoidable."
+    },
+    {
+      "id": "g09-hotel-check-in",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Hotel Check-In",
+      "direction": "Work travel creates adjacent but separate private spaces unless explicitly changed."
+    },
+    {
+      "id": "g09-unexpected-overtime",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Unexpected Overtime",
+      "direction": "A short task turns into hours of extra work."
+    },
+    {
+      "id": "g09-planned-overtime",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Planned Overtime",
+      "direction": "They knowingly volunteer or roster together."
+    },
+    {
+      "id": "g09-night-shift",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Night Shift",
+      "direction": "Low staffing and unusual hours create a distinct atmosphere."
+    },
+    {
+      "id": "g09-early-shift",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Early Shift",
+      "direction": "Pre-dawn routines create repeated quiet contact."
+    },
+    {
+      "id": "g09-split-shift",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Split Shift",
+      "direction": "They repeatedly leave and return in the same day."
+    },
+    {
+      "id": "g09-on-call-rotation",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "On-Call Rotation",
+      "direction": "One adult may call the other during incidents."
+    },
+    {
+      "id": "g09-weekend-work",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Weekend Work",
+      "direction": "A normally weekday workplace feels different when mostly empty."
+    },
+    {
+      "id": "g09-public-holiday-shift",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Public Holiday Shift",
+      "direction": "Reduced staffing creates an unusual team."
+    },
+    {
+      "id": "g09-remote-day",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Remote Day",
+      "direction": "Most communication occurs through chat or video."
+    },
+    {
+      "id": "g09-hybrid-office-day",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Hybrid Office Day",
+      "direction": "A rare shared onsite day matters more because normal work is remote."
+    },
+    {
+      "id": "g09-performance-review-period",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Performance Review Period",
+      "direction": "If hierarchy exists, keep personal feelings out of formal evaluation."
+    },
+    {
+      "id": "g09-promotion-application",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Promotion Application",
+      "direction": "Both may apply, or one may support the other, without romance deciding the outcome."
+    },
+    {
+      "id": "g09-job-interview-panel",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Job Interview Panel",
+      "direction": "If one participates in hiring, personal interest cannot influence fair evaluation."
+    },
+    {
+      "id": "g09-resignation-notice",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Resignation Notice",
+      "direction": "One adult plans to leave, changing what feels possible after reporting ties end."
+    },
+    {
+      "id": "g09-transfer-offer",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Transfer Offer",
+      "direction": "A role elsewhere may separate the pair."
+    },
+    {
+      "id": "g09-redundancy-risk",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Redundancy Risk",
+      "direction": "Job uncertainty creates stress; never use job vulnerability as romantic leverage."
+    },
+    {
+      "id": "g10-five-minute-handover",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Five-Minute Handover",
+      "direction": "Their entire routine may begin with brief overlap."
+    },
+    {
+      "id": "g10-half-hour-overlap",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Half-Hour Overlap",
+      "direction": "A regular short overlap supports a slow-burn relationship."
+    },
+    {
+      "id": "g10-alternating-shifts",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Alternating Shifts",
+      "direction": "They repeatedly replace each other on the roster."
+    },
+    {
+      "id": "g10-morning-vs-evening",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Morning vs Evening",
+      "direction": "One adult starts as the other finishes."
+    },
+    {
+      "id": "g10-day-vs-night",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Day vs Night",
+      "direction": "They inhabit the same workplace at completely different times."
+    },
+    {
+      "id": "g10-weekday-vs-weekend",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Weekday vs Weekend",
+      "direction": "They mostly communicate through notes and occasional overlap."
+    },
+    {
+      "id": "g10-relief-shift-creates-rare-day-together",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Relief Shift Creates Rare Day Together",
+      "direction": "A roster change unexpectedly places them on the same shift."
+    },
+    {
+      "id": "g10-shift-swap-for-practical-reason",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Shift Swap for Practical Reason",
+      "direction": "One adult swaps with another, creating new contact."
+    },
+    {
+      "id": "g10-covering-sick-leave",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Covering Sick Leave",
+      "direction": "Temporary coverage changes the usual pairings."
+    },
+    {
+      "id": "g10-overtime-bridges-shifts",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Overtime Bridges Shifts",
+      "direction": "One stays late enough to meet the other."
+    },
+    {
+      "id": "g10-early-arrival",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Early Arrival",
+      "direction": "One regularly arrives before required time and catches the previous shift."
+    },
+    {
+      "id": "g10-late-departure",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Late Departure",
+      "direction": "One lingers after shift and creates accidental overlap."
+    },
+    {
+      "id": "g10-digital-handover-notes",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Digital Handover Notes",
+      "direction": "Personality emerges through written handovers."
+    },
+    {
+      "id": "g10-inside-jokes-in-handover-notes",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Inside Jokes in Handover Notes",
+      "direction": "Work notes develop a harmless personal layer."
+    },
+    {
+      "id": "g10-never-met-for-months",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Never Met for Months",
+      "direction": "They know each other's work before meeting in person."
+    },
+    {
+      "id": "g10-first-full-shift-together",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "First Full Shift Together",
+      "direction": "A rare roster coincidence becomes the opening."
+    },
+    {
+      "id": "g10-different-sites-and-shifts",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Different Sites and Shifts",
+      "direction": "Contact is extremely limited until a project combines them."
+    },
+    {
+      "id": "g10-roster-change-becomes-permanent",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Roster Change Becomes Permanent",
+      "direction": "A temporary overlap turns into a new normal."
+    },
+    {
+      "id": "g10-shift-change-separates-them",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Shift Change Separates Them",
+      "direction": "Just as they become close, a roster change reduces contact."
+    },
+    {
+      "id": "g10-one-takes-promotion-on-opposite-shift",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "One Takes Promotion on Opposite Shift",
+      "direction": "Career progress complicates personal availability."
+    },
+    {
+      "id": "g11-boss-keeps-it-strictly-professional",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Boss Keeps It Strictly Professional",
+      "direction": "{{char}} has personal warmth but does not blur evaluation or employment decisions."
+    },
+    {
+      "id": "g11-boss-develops-feelings-but-does-nothing-at-work",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Boss Develops Feelings but Does Nothing at Work",
+      "direction": "{{char}} privately notices attraction while preserving professional boundaries."
+    },
+    {
+      "id": "g11-feelings-only-discussed-after-transfer",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Feelings Only Discussed After Transfer",
+      "direction": "Personal possibilities are deferred until direct reporting ends."
+    },
+    {
+      "id": "g11-mutual-interest-reporting-line-problem",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Mutual Interest, Reporting Line Problem",
+      "direction": "The workplace structure is the obstacle rather than lack of chemistry."
+    },
+    {
+      "id": "g11-company-requires-disclosure",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Company Requires Disclosure",
+      "direction": "A relationship may be permitted only with formal disclosure or reassignment."
+    },
+    {
+      "id": "g11-company-prohibits-direct-report-relationships",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Company Prohibits Direct-Report Relationships",
+      "direction": "The adults must change structure or not pursue romance."
+    },
+    {
+      "id": "g11-mentor-encourages-career-growth",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Mentor Encourages Career Growth",
+      "direction": "Professional support is sincere and not contingent on personal interest."
+    },
+    {
+      "id": "g11-mentor-becomes-friend-after-program-ends",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Mentor Becomes Friend After Program Ends",
+      "direction": "The relationship changes once formal mentorship concludes."
+    },
+    {
+      "id": "g11-trainer-must-assess-user",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Trainer Must Assess {{user}}",
+      "direction": "Personal rapport cannot influence assessment outcome."
+    },
+    {
+      "id": "g11-trainee-has-crush-on-trainer",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Trainee Has Crush on Trainer",
+      "direction": "The trainer's professional duty remains separate from the trainee's feelings."
+    },
+    {
+      "id": "g11-manager-gives-fair-feedback",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Manager Gives Fair Feedback",
+      "direction": "Positive or negative review is based on work performance."
+    },
+    {
+      "id": "g11-manager-must-discipline-user",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Manager Must Discipline {{user}}",
+      "direction": "Existing friendship or attraction cannot erase a real performance/safety issue."
+    },
+    {
+      "id": "g11-user-must-evaluate-char",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "{{user}} Must Evaluate {{char}}",
+      "direction": "If {{user}} has authority, do not pre-write how he uses it."
+    },
+    {
+      "id": "g11-promotion-creates-conflict-of-interest",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Promotion Creates Conflict of Interest",
+      "direction": "One adult's candidacy forces clearer professional separation."
+    },
+    {
+      "id": "g11-scheduling-authority-matters",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Scheduling Authority Matters",
+      "direction": "The person controlling shifts must not use preferred schedules as romantic leverage."
+    },
+    {
+      "id": "g11-pay-authority-matters",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Pay Authority Matters",
+      "direction": "Raises, bonuses, commissions, or hours cannot be exchanged for dates or intimacy."
+    },
+    {
+      "id": "g11-reference-authority-matters",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Reference Authority Matters",
+      "direction": "Future references cannot be threatened or promised for personal compliance."
+    },
+    {
+      "id": "g11-probation-period",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Probation Period",
+      "direction": "A new worker's job vulnerability makes boundaries especially important."
+    },
+    {
+      "id": "g11-contract-renewal",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Contract Renewal",
+      "direction": "Renewal decisions remain professional."
+    },
+    {
+      "id": "g11-after-one-leaves-company",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "After One Leaves Company",
+      "direction": "A former boss/report relationship may become personally simpler once employment ties genuinely end."
+    },
+    {
+      "id": "g11-informal-power-still-matters",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Informal Power Still Matters",
+      "direction": "Even without formal authority, reputation and influence can affect workplace comfort."
+    },
+    {
+      "id": "g11-third-party-hr-manager-support",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Third-Party HR / Manager Support",
+      "direction": "If a relationship begins, neutral workplace handling can reduce conflicts of interest."
+    },
+    {
+      "id": "g12-friendship-improves-teamwork",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Friendship Improves Teamwork",
+      "direction": "Knowing each other better makes coordination easier."
+    },
+    {
+      "id": "g12-friendship-creates-distraction",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Friendship Creates Distraction",
+      "direction": "Conversation sometimes interferes with focus."
+    },
+    {
+      "id": "g12-rivalry-improves-performance",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Rivalry Improves Performance",
+      "direction": "Competition motivates both adults."
+    },
+    {
+      "id": "g12-rivalry-becomes-counterproductive",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Rivalry Becomes Counterproductive",
+      "direction": "Competition begins harming collaboration."
+    },
+    {
+      "id": "g12-dating-makes-work-awkward",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Dating Makes Work Awkward",
+      "direction": "New personal intimacy creates self-consciousness onsite."
+    },
+    {
+      "id": "g12-dating-makes-work-easier",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Dating Makes Work Easier",
+      "direction": "Existing trust can help teamwork if boundaries remain professional."
+    },
+    {
+      "id": "g12-secret-dating-requires-compartmentalization",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Secret Dating Requires Compartmentalization",
+      "direction": "They deliberately keep personal communication out of work tasks."
+    },
+    {
+      "id": "g12-openly-dating-requires-policy-compliance",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Openly Dating Requires Policy Compliance",
+      "direction": "Coworkers know, but conflict-of-interest rules still apply."
+    },
+    {
+      "id": "g12-breakup-requires-professional-reset",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Breakup Requires Professional Reset",
+      "direction": "They must continue working together after a relationship ends."
+    },
+    {
+      "id": "g12-argument-at-home-follows-them-to-work",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Argument at Home Follows Them to Work",
+      "direction": "They need to avoid turning personal conflict into workplace behavior."
+    },
+    {
+      "id": "g12-work-conflict-follows-them-home",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Work Conflict Follows Them Home",
+      "direction": "Professional disagreement affects a personal relationship."
+    },
+    {
+      "id": "g12-one-gets-promoted",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "One Gets Promoted",
+      "direction": "The hierarchy change forces reassessment of boundaries."
+    },
+    {
+      "id": "g12-one-transfers-away",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "One Transfers Away",
+      "direction": "The relationship loses daily workplace contact."
+    },
+    {
+      "id": "g12-one-resigns",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "One Resigns",
+      "direction": "Personal contact becomes independent of work."
+    },
+    {
+      "id": "g12-one-is-made-redundant",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "One Is Made Redundant",
+      "direction": "Support matters, but job loss must not create romantic obligation."
+    },
+    {
+      "id": "g12-one-changes-career",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "One Changes Career",
+      "direction": "The shared workplace may no longer be the foundation of the relationship."
+    },
+    {
+      "id": "g12-team-notices-chemistry",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Team Notices Chemistry",
+      "direction": "Coworker speculation creates social pressure without establishing actual attraction."
+    },
+    {
+      "id": "g12-coworkers-ship-them",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Coworkers Ship Them",
+      "direction": "Friends tease them, but workplace gossip is not narrator truth."
+    },
+    {
+      "id": "g12-coworkers-disapprove",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Coworkers Disapprove",
+      "direction": "Team dynamics become awkward even if the relationship is allowed."
+    },
+    {
+      "id": "g12-manager-supports-reassignment",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Manager Supports Reassignment",
+      "direction": "A neutral structural change avoids direct reporting."
+    },
+    {
+      "id": "g12-one-requests-different-shift",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "One Requests Different Shift",
+      "direction": "Scheduling may be used to reduce conflict, not as punishment."
+    },
+    {
+      "id": "g12-performance-remains-separate",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Performance Remains Separate",
+      "direction": "Personal changes do not alter objective work standards."
+    },
+    {
+      "id": "g12-professional-boundaries-strengthen",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Professional Boundaries Strengthen",
+      "direction": "The adults become more deliberate about separating contexts."
+    },
+    {
+      "id": "g12-workplace-becomes-source-of-shared-stories",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Workplace Becomes Source of Shared Stories",
+      "direction": "Even after a relationship changes, day-to-day work remains central."
+    },
+    {
+      "id": "g12-personal-relationship-never-changes",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Personal Relationship Never Changes",
+      "direction": "Keep a fully platonic trajectory valid."
+    },
+    {
+      "id": "g13-lunch-only",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Lunch Only",
+      "direction": "Personal contact stays inside work breaks."
+    },
+    {
+      "id": "g13-walk-to-car-park",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Walk to Car Park",
+      "direction": "Five minutes after work becomes their regular debrief."
+    },
+    {
+      "id": "g13-shared-bus-train",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Shared Bus / Train",
+      "direction": "They travel part of the commute together."
+    },
+    {
+      "id": "g13-carpool-home",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Carpool Home",
+      "direction": "Practical transport creates regular outside-work conversation."
+    },
+    {
+      "id": "g13-coffee-after-shift",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Coffee After Shift",
+      "direction": "A casual café stop becomes routine."
+    },
+    {
+      "id": "g13-dinner-after-late-shift",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Dinner After Late Shift",
+      "direction": "Food after work becomes a friendship ritual."
+    },
+    {
+      "id": "g13-gym-after-work",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Gym After Work",
+      "direction": "They discover a shared fitness routine."
+    },
+    {
+      "id": "g13-gaming-online",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Gaming Online",
+      "direction": "Coworkers become friends through games after hours."
+    },
+    {
+      "id": "g13-shared-hobby",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Shared Hobby",
+      "direction": "A non-work interest deepens the relationship."
+    },
+    {
+      "id": "g13-group-social-events-only",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Group Social Events Only",
+      "direction": "They socialize only with coworkers around."
+    },
+    {
+      "id": "g13-one-on-one-friendship",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "One-on-One Friendship",
+      "direction": "They begin meeting outside work independently."
+    },
+    {
+      "id": "g13-study-certification-together",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Study / Certification Together",
+      "direction": "Professional exams or licenses create after-hours collaboration."
+    },
+    {
+      "id": "g13-route-procedure-study",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Route / Procedure Study",
+      "direction": "Transport trainees study rules, routes, or systems together."
+    },
+    {
+      "id": "g13-conference-evening",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Conference Evening",
+      "direction": "A business trip includes voluntary off-duty social time."
+    },
+    {
+      "id": "g13-tourist-evening-on-trip",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Tourist Evening on Trip",
+      "direction": "They explore a destination after work obligations are complete."
+    },
+    {
+      "id": "g13-no-outside-contact",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "No Outside Contact",
+      "direction": "The relationship remains meaningful but entirely workplace-based."
+    },
+    {
+      "id": "g13-texting-after-work",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Texting After Work",
+      "direction": "Conversation continues outside rostered hours."
+    },
+    {
+      "id": "g13-work-chat-only",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Work Chat Only",
+      "direction": "They keep communication on professional channels."
+    },
+    {
+      "id": "g13-private-messaging-begins",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Private Messaging Begins",
+      "direction": "A friendship migrates to personal messaging by mutual choice."
+    },
+    {
+      "id": "g13-weekend-hobby-meet",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Weekend Hobby Meet",
+      "direction": "They discover the same event or community outside work."
+    },
+    {
+      "id": "g13-coworker-party",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Coworker Party",
+      "direction": "A private social gathering changes how they see each other."
+    },
+    {
+      "id": "g13-helping-move-house",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Helping Move House",
+      "direction": "Practical friendship extends beyond work."
+    },
+    {
+      "id": "g13-pet-sitting-small-favor",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Pet-Sitting / Small Favor",
+      "direction": "A normal personal favor signals growing trust."
+    },
+    {
+      "id": "g13-airport-station-pickup",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Airport / Station Pickup",
+      "direction": "Travel logistics create an outside-work favor."
+    },
+    {
+      "id": "g13-relationship-starts-only-after-one-leaves",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "Relationship Starts Only After One Leaves",
+      "direction": "They avoid overlapping romance and direct workplace dependence."
+    },
+    {
+      "id": "g14-classroom-rules-training",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Classroom Rules Training",
+      "direction": "Adult trainees learn operating rules and procedures together."
+    },
+    {
+      "id": "g14-simulator-pair",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Simulator Pair",
+      "direction": "They rotate through simulations and debrief performance."
+    },
+    {
+      "id": "g14-route-knowledge-study",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Route Knowledge Study",
+      "direction": "They learn route geography, stations, signals, gradients, and restrictions."
+    },
+    {
+      "id": "g14-cab-observation",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Cab Observation",
+      "direction": "Supervised observation shifts expose real operational routines."
+    },
+    {
+      "id": "g14-practical-driving-under-instructor",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Practical Driving Under Instructor",
+      "direction": "Each trainee performs under formal supervision; the instructor, not either trainee, assesses them."
+    },
+    {
+      "id": "g14-safety-system-study",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Safety-System Study",
+      "direction": "They compare notes on vigilance, signaling, protection, or train-safety systems."
+    },
+    {
+      "id": "g14-traction-rolling-stock-training",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Traction / Rolling Stock Training",
+      "direction": "They learn specific train types and faults."
+    },
+    {
+      "id": "g14-coupling-preparation-training",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Coupling / Preparation Training",
+      "direction": "Practical preparation tasks require careful teamwork."
+    },
+    {
+      "id": "g14-emergency-procedure-drill",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Emergency Procedure Drill",
+      "direction": "A controlled training scenario tests communication under pressure."
+    },
+    {
+      "id": "g14-assessment-week",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Assessment Week",
+      "direction": "Stress around exams and practical checks shapes their friendship."
+    },
+    {
+      "id": "g14-one-passes-first",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "One Passes First",
+      "direction": "Different assessment timing tests the relationship without implying superiority."
+    },
+    {
+      "id": "g14-one-needs-a-resit",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "One Needs a Resit",
+      "direction": "Support can exist without doing the assessment for them."
+    },
+    {
+      "id": "g14-different-strengths",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Different Strengths",
+      "direction": "One excels at rules knowledge while the other is stronger in practical handling."
+    },
+    {
+      "id": "g14-same-depot-placement",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Same Depot Placement",
+      "direction": "They hope or expect to be posted to the same depot."
+    },
+    {
+      "id": "g14-different-depot-placement",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Different Depot Placement",
+      "direction": "Career placement may separate them."
+    },
+    {
+      "id": "g14-early-sign-on-training",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Early-Sign-On Training",
+      "direction": "Pre-dawn starts create shared routines."
+    },
+    {
+      "id": "g14-long-training-days",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Long Training Days",
+      "direction": "Fatigue makes breaks and mutual support important."
+    },
+    {
+      "id": "g14-study-group",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Study Group",
+      "direction": "Adult trainees build a group rather than a two-person bubble."
+    },
+    {
+      "id": "g14-friendly-simulator-rivalry",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Friendly Simulator Rivalry",
+      "direction": "They compare scores or smoothness without unsafe real-world competition."
+    },
+    {
+      "id": "g14-first-independent-qualification",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "First Independent Qualification",
+      "direction": "The relationship changes once both are qualified and no longer classmates."
+    },
+    {
+      "id": "g14-qualified-driver-trainee-later",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Qualified Driver / Trainee Later",
+      "direction": "One qualifies earlier and becomes an informal source of advice, not an assessor."
+    },
+    {
+      "id": "g14-roster-separation-after-training",
+      "group": "14 Trainee Train Drivers / Training Together",
+      "title": "Roster Separation After Training",
+      "direction": "Different shifts create a natural transition into Different Shifts."
+    },
+    {
+      "id": "g15-first-day-introduction",
+      "group": "15 Strong Roleplay Openings",
+      "title": "First-Day Introduction",
+      "direction": "Open as the newcomer is introduced to the team."
+    },
+    {
+      "id": "g15-youre-training-her-today",
+      "group": "15 Strong Roleplay Openings",
+      "title": "‘You’re Training Her Today’",
+      "direction": "Open when one adult is assigned to show the other the job."
+    },
+    {
+      "id": "g15-desk-workstation-beside-mine",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Desk / Workstation Beside Mine",
+      "direction": "Open when a seating or workstation assignment places them together."
+    },
+    {
+      "id": "g15-department-transfer-arrival",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Department Transfer Arrival",
+      "direction": "Open as {{char}} arrives at the new department."
+    },
+    {
+      "id": "g15-first-shift-together",
+      "group": "15 Strong Roleplay Openings",
+      "title": "First Shift Together",
+      "direction": "They have worked at the employer but never shared a full shift before."
+    },
+    {
+      "id": "g15-handover-note-with-personality",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Handover Note With Personality",
+      "direction": "Open when a routine handover note becomes unexpectedly personal or funny."
+    },
+    {
+      "id": "g15-last-two-in-the-building",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Last Two in the Building",
+      "direction": "Open during a harmless late shift or overtime period with clear exit access."
+    },
+    {
+      "id": "g15-unexpected-overtime",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Unexpected Overtime",
+      "direction": "Open when a short job expands into hours of work."
+    },
+    {
+      "id": "g15-coffee-after-closing",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Coffee After Closing",
+      "direction": "Open just after they clock off and one suggests decompressing nearby."
+    },
+    {
+      "id": "g15-business-trip-gate-station",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Business Trip Gate / Station",
+      "direction": "Open at the beginning of shared work travel."
+    },
+    {
+      "id": "g15-hotel-lobby-after-work",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Hotel Lobby After Work",
+      "direction": "Work obligations are finished and a voluntary social evening is possible."
+    },
+    {
+      "id": "g15-rental-car-assignment",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Rental Car Assignment",
+      "direction": "Open when logistics pair them together for a trip."
+    },
+    {
+      "id": "g15-conference-badge-mix-up",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Conference Badge Mix-Up",
+      "direction": "A harmless event problem forces collaboration."
+    },
+    {
+      "id": "g15-office-rival-scoreboard",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Office Rival Scoreboard",
+      "direction": "Open after one narrowly beats the other on a work metric."
+    },
+    {
+      "id": "g15-promotion-announcement",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Promotion Announcement",
+      "direction": "Open when one becomes senior to the other."
+    },
+    {
+      "id": "g15-resignation-notice",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Resignation Notice",
+      "direction": "Open when one reveals they are leaving the company."
+    },
+    {
+      "id": "g15-roster-change",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Roster Change",
+      "direction": "Open when new shifts create or destroy overlap."
+    },
+    {
+      "id": "g15-night-shift-handover",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Night-Shift Handover",
+      "direction": "Open during a quiet handover with minimal staff."
+    },
+    {
+      "id": "g15-first-remote-video-call",
+      "group": "15 Strong Roleplay Openings",
+      "title": "First Remote Video Call",
+      "direction": "They know names from chat but have barely spoken face-to-face."
+    },
+    {
+      "id": "g15-remote-coworkers-meet-in-person",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Remote Coworkers Meet In Person",
+      "direction": "Open at the first physical meeting after months/years online."
+    },
+    {
+      "id": "g15-incident-response",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Incident Response",
+      "direction": "Open during a real work problem requiring cooperation, without romanticizing danger."
+    },
+    {
+      "id": "g15-trainee-simulator-pairing",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Trainee Simulator Pairing",
+      "direction": "Open when adult trainees are paired for a simulator exercise."
+    },
+    {
+      "id": "g15-assessment-results",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Assessment Results",
+      "direction": "Open after training results create relief, disappointment, or changing schedules."
+    },
+    {
+      "id": "g15-route-study-session",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Route Study Session",
+      "direction": "Open when train-driver trainees choose to study together after class."
+    },
+    {
+      "id": "g15-after-work-confession-from-char",
+      "group": "15 Strong Roleplay Openings",
+      "title": "After-Work Confession From {{char}}",
+      "direction": "Open with {{char}} raising a personal subject only after both are off duty; {{user}}'s response remains open."
+    },
+    {
+      "id": "g15-coworker-asks-if-they-are-dating",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Coworker Asks If They Are Dating",
+      "direction": "Open with gossip forcing both adults to clarify what they actually are."
+    },
+    {
+      "id": "g15-relationship-disclosed-to-manager",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Relationship Disclosed to Manager",
+      "direction": "Open after a couple decides to handle workplace conflict-of-interest rules properly."
+    },
+    {
+      "id": "g15-breakup-morning",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Breakup Morning",
+      "direction": "Open when former partners must return to ordinary work and re-establish professionalism."
+    },
+    {
+      "id": "g15-last-day-working-together",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Last Day Working Together",
+      "direction": "Open on the final shift before a transfer or resignation."
+    },
+    {
+      "id": "g15-new-site-opening-day",
+      "group": "15 Strong Roleplay Openings",
+      "title": "New Site Opening Day",
+      "direction": "Open amid chaotic setup where they immediately depend on one another."
+    },
+    {
+      "id": "g16-no-quid-pro-quo",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "No Quid Pro Quo",
+      "direction": "Employment benefits, hours, shifts, promotions, references, pay, and evaluations are never exchanged for romance or sex."
+    },
+    {
+      "id": "g16-no-retaliation-for-rejection",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "No Retaliation for Rejection",
+      "direction": "Rejecting personal interest must not cause adverse scheduling, evaluation, discipline, or career consequences."
+    },
+    {
+      "id": "g16-no-favoritism",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "No Favoritism",
+      "direction": "Dating or friendship must not create unfair work advantages."
+    },
+    {
+      "id": "g16-no-punitive-scheduling",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "No Punitive Scheduling",
+      "direction": "Rosters are not used to pressure or punish personal choices."
+    },
+    {
+      "id": "g16-no-performance-review-leverage",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "No Performance-Review Leverage",
+      "direction": "Formal evaluation remains based on work."
+    },
+    {
+      "id": "g16-no-promotion-leverage",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "No Promotion Leverage",
+      "direction": "Advancement is not promised or threatened for intimacy."
+    },
+    {
+      "id": "g16-no-reference-leverage",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "No Reference Leverage",
+      "direction": "Future recommendations are not contingent on personal compliance."
+    },
+    {
+      "id": "g16-no-probation-leverage",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "No Probation Leverage",
+      "direction": "A new worker's insecure status is not exploited."
+    },
+    {
+      "id": "g16-trainer-assessor-separation",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Trainer / Assessor Separation",
+      "direction": "If possible, personal interest should not be combined with formal assessment authority."
+    },
+    {
+      "id": "g16-reassignment-can-solve-conflict",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Reassignment Can Solve Conflict",
+      "direction": "Changing reporting lines can be a practical response rather than a romantic obstacle to defeat."
+    },
+    {
+      "id": "g16-disclosure-policies-matter",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Disclosure Policies Matter",
+      "direction": "If company policy requires disclosure of relationships, preserve that process."
+    },
+    {
+      "id": "g16-privacy-at-work-matters",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Privacy at Work Matters",
+      "direction": "Coworkers are not entitled to intimate details."
+    },
+    {
+      "id": "g16-customer-patient-client-privacy-matters",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Customer / Patient / Client Privacy Matters",
+      "direction": "Workplace romance never overrides confidentiality obligations."
+    },
+    {
+      "id": "g16-no-sexual-activity-in-unsafe-work-areas",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "No Sexual Activity in Unsafe Work Areas",
+      "direction": "Do not turn operational, industrial, clinical, transport, or public-facing workspaces into casual sexual settings."
+    },
+    {
+      "id": "g16-safety-critical-roles-stay-focused",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Safety-Critical Roles Stay Focused",
+      "direction": "Drivers, operators, technicians, healthcare staff, and similar roles prioritize safety while on duty."
+    },
+    {
+      "id": "g16-alcohol-does-not-replace-consent",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Alcohol Does Not Replace Consent",
+      "direction": "After-work drinks do not imply romantic or sexual agreement."
+    },
+    {
+      "id": "g16-business-travel-does-not-imply-sharing-rooms",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Business Travel Does Not Imply Sharing Rooms",
+      "direction": "Adults have separate accommodation unless explicitly arranged otherwise for legitimate reasons."
+    },
+    {
+      "id": "g16-overtime-is-not-forced-proximity-by-default",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Overtime Is Not Forced Proximity by Default",
+      "direction": "Staying late for work does not mean doors are locked or exit is impossible."
+    },
+    {
+      "id": "g16-remote-monitoring-is-not-romantic-surveillance",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Remote Monitoring Is Not Romantic Surveillance",
+      "direction": "Work systems, presence indicators, and logs are professional tools, not excuses to monitor private life."
+    },
+    {
+      "id": "g16-no-workplace-stalking",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "No Workplace Stalking",
+      "direction": "Repeated proximity must come from real job overlap, not misuse of schedules or systems."
+    },
+    {
+      "id": "g16-gossip-is-not-ground-truth",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Gossip Is Not Ground Truth",
+      "direction": "Coworker rumors about attraction or relationships remain rumors until established."
+    },
+    {
+      "id": "g16-friendship-can-stay-platonic",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Friendship Can Stay Platonic",
+      "direction": "Do not force every close coworker relationship into romance."
+    },
+    {
+      "id": "g16-romance-can-wait-until-structure-changes",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Romance Can Wait Until Structure Changes",
+      "direction": "A valid trajectory is to delay dating until reporting or assessment conflicts end."
+    },
+    {
+      "id": "g16-breakups-do-not-justify-retaliation",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Breakups Do Not Justify Retaliation",
+      "direction": "Former partners still deserve fair treatment at work."
+    },
+    {
+      "id": "g16-hr-is-not-villain-by-default",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "HR Is Not Villain by Default",
+      "direction": "Workplace policy can be neutral, practical, or protective rather than automatically antagonistic."
+    },
+    {
+      "id": "g16-company-policy-is-context-specific",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Company Policy Is Context-Specific",
+      "direction": "Do not invent a universal ban on coworker relationships."
+    },
+    {
+      "id": "g16-union-employment-rights-stay-separate",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Union / Employment Rights Stay Separate",
+      "direction": "Professional rights are not bargaining chips in personal relationships."
+    },
+    {
+      "id": "g16-no-forced-disclosure-beyond-policy",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "No Forced Disclosure Beyond Policy",
+      "direction": "Adults can keep personal relationships private from coworkers when lawful/policy-compliant."
+    },
+    {
+      "id": "g16-all-romantic-participants-are-adults",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "All Romantic Participants Are Adults",
+      "direction": "Keep workplace romance between adults; students, patients, clients, or dependent service recipients are not automatic romantic targets."
+    },
+    {
+      "id": "g17-remain-excellent-coworkers",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Remain Excellent Coworkers",
+      "direction": "No personal relationship change is required."
+    },
+    {
+      "id": "g17-become-friends",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Become Friends",
+      "direction": "Workplace familiarity becomes ordinary friendship."
+    },
+    {
+      "id": "g17-become-close-friends",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Become Close Friends",
+      "direction": "They build a lasting bond without romance."
+    },
+    {
+      "id": "g17-friendly-rivals",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Friendly Rivals",
+      "direction": "Competition remains healthy and motivating."
+    },
+    {
+      "id": "g17-mentorship-ends-successfully",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Mentorship Ends Successfully",
+      "direction": "The trainee becomes independent and the professional relationship evolves."
+    },
+    {
+      "id": "g17-dating-begins-after-reassignment",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Dating Begins After Reassignment",
+      "direction": "Romance starts only once direct authority is removed."
+    },
+    {
+      "id": "g17-dating-begins-while-peers",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Dating Begins While Peers",
+      "direction": "Two peers choose to date and handle policy appropriately."
+    },
+    {
+      "id": "g17-relationship-stays-secret-from-coworkers",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Relationship Stays Secret From Coworkers",
+      "direction": "They preserve privacy while meeting policy requirements."
+    },
+    {
+      "id": "g17-relationship-becomes-openly-known",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Relationship Becomes Openly Known",
+      "direction": "Coworkers know and the adults keep work professional."
+    },
+    {
+      "id": "g17-one-transfers",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "One Transfers",
+      "direction": "A career move changes daily contact."
+    },
+    {
+      "id": "g17-one-gets-promoted",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "One Gets Promoted",
+      "direction": "Hierarchy changes force new boundaries."
+    },
+    {
+      "id": "g17-one-leaves-company",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "One Leaves Company",
+      "direction": "The relationship becomes independent of workplace structure."
+    },
+    {
+      "id": "g17-long-distance-friendship-after-transfer",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Long-Distance Friendship After Transfer",
+      "direction": "They stay close after separating professionally."
+    },
+    {
+      "id": "g17-breakup-but-professional",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Breakup but Professional",
+      "direction": "A former couple successfully continues working together."
+    },
+    {
+      "id": "g17-breakup-requires-team-change",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Breakup Requires Team Change",
+      "direction": "One requests a transfer or roster change to make work manageable."
+    },
+    {
+      "id": "g17-rivalry-ends-in-respect",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Rivalry Ends in Respect",
+      "direction": "Competition becomes mutual professional regard."
+    },
+    {
+      "id": "g17-rivalry-stays-rivalry",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Rivalry Stays Rivalry",
+      "direction": "No friendship or romance is required."
+    },
+    {
+      "id": "g17-start-shared-project",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Start Shared Project",
+      "direction": "Trust leads to more collaboration."
+    },
+    {
+      "id": "g17-career-opportunity-separates-them",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Career Opportunity Separates Them",
+      "direction": "One accepts a better role elsewhere."
+    },
+    {
+      "id": "g17-career-opportunity-brings-them-together",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Career Opportunity Brings Them Together",
+      "direction": "A new project/site gives them more overlap."
+    },
+    {
+      "id": "g17-trainees-qualify-together",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Trainees Qualify Together",
+      "direction": "Training friendship becomes peer coworker life."
+    },
+    {
+      "id": "g17-trainees-assigned-different-depots",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Trainees Assigned Different Depots",
+      "direction": "Their shared training ends but personal contact may continue."
+    },
+    {
+      "id": "g17-remote-coworkers-become-local",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Remote Coworkers Become Local",
+      "direction": "A relocation makes in-person friendship possible."
+    },
+    {
+      "id": "g17-personal-relationship-never-develops",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Personal Relationship Never Develops",
+      "direction": "Keep a work-only outcome valid."
+    },
+    {
+      "id": "g17-no-forced-outcome",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "No Forced Outcome",
+      "direction": "Leave {{user}}'s personal and career choices open."
+    },
+    {
+      "id": "g18-bridge-to-forced-proximity",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Forced Proximity",
+      "direction": "A legitimate work assignment, outage, travel disruption, or overnight duty creates unusual proximity without assuming they are trapped."
+    },
+    {
+      "id": "g18-bridge-to-she-wants-you",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to She Wants You",
+      "direction": "{{char}} develops feelings for {{user}} while respecting workplace boundaries and any existing relationship."
+    },
+    {
+      "id": "g18-bridge-to-please-bang-me",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Please Bang Me",
+      "direction": "After professional authority conflicts are absent or resolved, {{char}} may make a direct adult proposition outside work."
+    },
+    {
+      "id": "g18-bridge-to-her-hidden-side",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Her Hidden Side",
+      "direction": "Coworkers discover unexpected private hobbies or identities."
+    },
+    {
+      "id": "g18-bridge-to-just-a-prank",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Just a Prank!",
+      "direction": "A workplace-safe prank reveals a mischievous side without risking jobs or clients."
+    },
+    {
+      "id": "g18-bridge-to-my-new-neighbour",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to My New Neighbour",
+      "direction": "A coworker unexpectedly moves next door to {{user}}."
+    },
+    {
+      "id": "g18-bridge-to-come-with-me",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Come With Me",
+      "direction": "{{char}} invites {{user}} to a work event, conference, after-work outing, or hobby connected to colleagues."
+    },
+    {
+      "id": "g18-bridge-to-fake-relationship",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Fake Relationship",
+      "direction": "A workplace social event creates a reason for a consensual fake-date setup."
+    },
+    {
+      "id": "g18-bridge-to-open-relationship",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Open Relationship",
+      "direction": "A workplace attraction prompts an honest relationship-boundary discussion outside work."
+    },
+    {
+      "id": "g18-bridge-to-not-that-kind-of-cheating",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Not That Kind of Cheating",
+      "direction": "A coworker reports {{char}} 'cheating' in a workplace contest, game, or metric rather than romantically."
+    },
+    {
+      "id": "g18-bridge-to-business-trip-forced-proximity",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Business Trip / Forced Proximity",
+      "direction": "A work trip creates a natural transition into extended travel proximity."
+    },
+    {
+      "id": "g18-keep-workplace-stories-pure",
+      "group": "18 Cross-Series Bridges",
+      "title": "Keep Workplace Stories Pure",
+      "direction": "Do not bridge; focus on work, friendship, rivalry, mentoring, or professional growth."
+    },
+    {
+      "id": "g09-after-hours-raw-sex-in-the-office",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "After-Hours Raw Sex in the Office",
+      "direction": "An episode centres on consensual unprotected sex between {{user}} and {{char}} on work premises after hours. The workplace setting is part of the charge. Keep power, policy, and ongoing consent visible."
+    },
+    {
+      "id": "g09-creampie-before-a-shift-handover",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Creampie Before a Shift Handover",
+      "direction": "They have sex ending in an internal finish shortly before one of them must appear professional for a handover, meeting, or public-facing duty. Timing and composure are part of the scene."
+    },
+    {
+      "id": "g09-locked-room-during-overtime",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Locked Room During Overtime",
+      "direction": "Overtime or a quiet building creates opportunity. They use a locked office, storage room, or similar for sex that may include finishing inside her. Discovery risk is real."
+    },
+    {
+      "id": "g09-business-trip-hotel-creampie",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "Business Trip Hotel Creampie",
+      "direction": "A work trip puts them in adjoining or shared hotel space. Consensual sex including an internal finish happens away from the usual workplace but still under the work umbrella."
+    },
+    {
+      "id": "g09-she-goes-back-on-the-floor-still-full",
+      "group": "09 Workplace Situations / Episodes",
+      "title": "She Goes Back on the Floor Still Full",
+      "direction": "After an internal finish, {{char}} returns to professional duties still carrying physical aftermath. Composure under residual sensation is part of the episode."
+    },
+    {
+      "id": "g13-they-keep-a-secret-creampie-arrangement-outside-work",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "They Keep a Secret Creampie Arrangement Outside Work",
+      "direction": "Outside formal hours they maintain a private sexual pattern — regular unprotected sex and internal finishes — while remaining colleagues by day. Workplace and private tracks run in parallel."
+    },
+    {
+      "id": "g13-fwb-coworkers-who-finish-inside",
+      "group": "13 After Work / Outside-Work Contact",
+      "title": "FWB Coworkers Who Finish Inside",
+      "direction": "Their outside-work dynamic is explicitly friends-with-benefits with creampies as a normal part of the arrangement. Career consequences if exposed remain a live risk."
+    },
+    {
+      "id": "g11-boss-subordinate-creampie-complication",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Boss–Subordinate Creampie Complication",
+      "direction": "If a hierarchy exists, consensual sex including internal finishes creates intensified ethical and policy problems. Emphasise that power imbalance affects how free consent can be; do not treat hierarchy as automatic erotic justification."
+    },
+    {
+      "id": "g11-mentor-crosses-into-raw-sex",
+      "group": "11 Boss / Mentor / Power-Dynamic Variants",
+      "title": "Mentor Crosses Into Raw Sex",
+      "direction": "A mentoring relationship develops a sexual component that includes unprotected sex. Track whether both adults genuinely want it and how training/evaluation duties are affected."
+    },
+    {
+      "id": "g08-professional-rivals-who-fuck-raw",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Professional Rivals Who Fuck Raw",
+      "direction": "Their public dynamic is competitive or adversarial, while privately they have intense unprotected sex. The split between workplace face and sexual reality is the tension."
+    },
+    {
+      "id": "g08-quiet-coworkers-secret-breeding-kink",
+      "group": "08 Starting Relationship / Dynamic",
+      "title": "Quiet Coworkers — Secret Breeding Kink",
+      "direction": "Outwardly low-key colleagues; privately they share a breeding or creampie-focused sexual dynamic. Discovery by the workplace would be catastrophic for both."
+    },
+    {
+      "id": "g12-pregnancy-scare-affects-the-job",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "Pregnancy Scare Affects the Job",
+      "direction": "A possible pregnancy from workplace-adjacent sex (including internal finishes) forces practical and emotional consequences on scheduling, disclosure, and professional plans."
+    },
+    {
+      "id": "g12-they-can-barely-stay-professional-after-the-creampie",
+      "group": "12 How Personal Changes Affect Work",
+      "title": "They Can Barely Stay Professional After the Creampie",
+      "direction": "Immediately after an internal finish, they must interact in a professional setting. Body language, focus, and near-slips become the drama."
+    },
+    {
+      "id": "g16-workplace-policy-forbids-relationships-they-do-it-anyway",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "Workplace Policy Forbids Relationships — They Do It Anyway",
+      "direction": "Formal rules ban dating or sexual relationships between these roles. They pursue raw/creampie sex regardless. Policy risk is part of the stakes; consent between the two adults is still required."
+    },
+    {
+      "id": "g16-hr-complaint-risk-after-office-sex",
+      "group": "16 Workplace Boundaries / Consent / Fairness",
+      "title": "HR Complaint Risk After Office Sex",
+      "direction": "Someone may have seen or suspected sex on premises. Fear of reporting, uneven power, and reputational harm hang over both characters without requiring the complaint to actually land."
+    },
+    {
+      "id": "g15-open-on-her-whispering-come-inside-me-in-the-supply-room",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Open on Her Whispering ‘Come Inside Me’ in the Supply Room",
+      "direction": "Open mid-escalation in a workplace side space: {{char}} explicitly asks {{user}} to finish inside her. Professional context is feet away. Leave whether they continue open."
+    },
+    {
+      "id": "g15-open-when-she-returns-to-her-desk-still-full",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Open When She Returns to Her Desk Still Full",
+      "direction": "Open with {{char}} sitting back down in a shared or semi-public work area immediately after receiving an internal finish. The contrast between body and job is the hook."
+    },
+    {
+      "id": "g15-open-on-a-calendar-invite-that-is-really-for-sex",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Open on a Calendar Invite That Is Really for Sex",
+      "direction": "Open with a work-looking meeting or room booking that both of them know is a pretext for an encounter that may include raw sex and a creampie."
+    },
+    {
+      "id": "g05-healthcare-or-lab-setting-heightens-stakes",
+      "group": "05 Industry / Workplace Type",
+      "title": "Healthcare or Lab Setting Heightens Stakes",
+      "direction": "Industry is clinical, lab, or similarly regulated. Any on-site sexual activity (especially unprotected) carries heightened professional and safety implications. Use for tension, not for ignoring real ethics."
+    },
+    {
+      "id": "g05-hospitality-late-shift-creampie",
+      "group": "05 Industry / Workplace Type",
+      "title": "Hospitality Late-Shift Creampie",
+      "direction": "Hotel, bar, or restaurant late shift creates empty rooms and blurred clock-out boundaries. Consensual sex including internal finishes can happen in the margins of the job."
+    },
+    {
+      "id": "g04-she-is-his-report-and-still-wants-his-load",
+      "group": "04 Relative Seniority / Power",
+      "title": "She Is His Report and Still Wants His Load",
+      "direction": "{{char}} reports to {{user}} (or the reverse) and expresses clear desire for unprotected sex and an internal finish. Power imbalance must be treated as a consent complication, not ignored or automatically eroticised."
+    },
+    {
+      "id": "g17-secret-office-relationship-goes-public-via-pregnancy",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "Secret Office Relationship Goes Public via Pregnancy",
+      "direction": "A possible trajectory: pregnancy from their workplace-adjacent sex forces disclosure to employer and colleagues. Career outcomes remain open."
+    },
+    {
+      "id": "g17-they-transfer-to-keep-the-creampies-secret",
+      "group": "17 Outcomes / Career Trajectories",
+      "title": "They Transfer to Keep the Creampies Secret",
+      "direction": "To reduce detection risk while continuing the sexual arrangement, one or both pursue a transfer, shift change, or role move. Logistics of secrecy become career decisions."
+    },
+    {
+      "id": "g06-trainer-and-trainee-cross-the-line",
+      "group": "06 Job Roles / Professional Dependence",
+      "title": "Trainer and Trainee Cross the Line",
+      "direction": "Training relationship develops into consensual sex including internal finishes. Dependence and evaluation power make ethics sharper; do not treat ‘training’ as a free pass."
+    },
+    {
+      "id": "g10-different-shifts-mean-she-arrives-still-full-from-him",
+      "group": "10 Different Shifts / Roster Dynamics",
+      "title": "Different Shifts Mean She Arrives Still Full From Him",
+      "direction": "Roster timing means {{char}} sometimes begins a shift shortly after sex with {{user}} in which he finished inside her. The physical carry-over into work is recurring."
+    }
+  ],
+  "sections": [
+    {
+      "id": "workplace-is-not-wallpaper",
+      "label": "The workplace must materially shape the story",
+      "content": "Industry, role, hierarchy, schedules, policies, safety, handovers, travel, training, and career goals should affect the scenario rather than serving as a cosmetic office backdrop."
+    },
+    {
+      "id": "power-vs-consent",
+      "label": "Professional authority is separate from personal consent",
+      "content": "A manager, trainer, assessor, owner, or senior coworker may be personally interested, but employment decisions and professional opportunities cannot be used to obtain dates, affection, or sex."
+    },
+    {
+      "id": "platonic-valid",
+      "label": "Close workplace relationships can remain platonic",
+      "content": "Friendship, rivalry, mentorship, mutual dependence, and professional respect are complete trajectories. Do not force every coworker story toward romance."
+    },
+    {
+      "id": "career-agency",
+      "label": "Both adults have careers independent of the relationship",
+      "content": "Promotions, transfers, training, qualifications, resignations, and career changes should reflect each person's own goals as well as any personal relationship consequences."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Combine groups for specificity—for example: New Hire + Cleaning / Facilities + Different Shifts + Friendly Coworkers; My Boss + IT / Help Desk + Company Requires Disclosure + Dating Begins After Reassignment; or Trainee Train Drivers / Training Together + Simulator Pair + Different Strengths + Trainees Assigned Different Depots."
+    }
+  ],
+  "raw_prompt": "Prioritise believable adult workplace structure, job roles, seniority, schedules, professional dependence, career agency, and clear separation between workplace power and personal consent. Preserve the selected Direction Preset. Do not pre-write {{user}}'s attraction, friendship, rivalry, consent, career decision, or relationship outcome."
 }
