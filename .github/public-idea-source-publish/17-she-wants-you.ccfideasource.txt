@@ -3,6 +3,1918 @@
   "schema_version": 1,
   "id": "bible-i-17-she-wants-you",
   "title": "She Wants You",
+  "description": "Reusable adult romantic-rival engine in which {{user}} already has a girlfriend, fiancée, wife, or other serious partner, but another adult woman wants him anyway. Detailed presets vary who the pursuing woman is, her relationship to {{user}} and his partner, how much she respects the existing relationship, what she wants from {{user}}, why she wants him, whether her feelings are love or desire, how she pursues him, how patient or manipulative she is, what she knows about the current relationship, secrecy, her own relationship status, strong openings, boundaries, outcomes, and cross-series bridges.",
   "source_version": "1.2",
-  "note": "Full expanded content (296 presets) is available on Google Drive Idea Sources folder as 17-she-wants-you.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 17,
+    "category": "Desire Focused on {{user}}",
+    "source_date": "2026-09-21"
+  },
+  "summary": "{{user}} is already in a serious adult relationship, but another adult woman wants him. She may be a respectful rival, persistent flirt, patient schemer, active homewrecker, his partner’s best friend, someone willing to wait until he is single, or someone who says he does not have to leave his partner. Her desire can be romantic, sexual, competitive, lonely, idealized, or mixed, and her pursuit can range from honest restraint to covert manipulation.",
+  "core_premise": "The engine is unreciprocated-or-not-yet-established desire directed at {{user}} while an existing serious relationship creates a real boundary and social consequence. {{char}}’s feelings and intentions belong to her; {{user}}’s attraction, consent, loyalty, and decisions remain open. Keep wanting, pursuing, being reciprocated, entering an affair, leaving a partner, negotiating non-monogamy, and beginning a later relationship as separate stages rather than collapsing them into one inevitable trajectory.",
+  "setup": "Begin when {{char}}’s attraction becomes immediately relevant: a confession, unmistakable flirtation, private message, request for one chance, promise to wait, offer to remain secondary, confrontation by the current partner, or another reveal close to the hook. Establish who {{char}} is to {{user}} and his partner, what she knows about the existing relationship, what she actually wants, and how willing she is to respect boundaries. Do not pre-write {{user}}’s attraction, dialogue, consent, infidelity, breakup, or final choice.",
+  "core_variables": [
+    "Who {{char}} is to {{user}} and to his current adult partner.",
+    "Whether {{char}} knew {{user}} was taken before her feelings developed.",
+    "How serious and established {{user}}’s current relationship is.",
+    "Whether {{char}} respects, tolerates, ignores, or actively undermines the existing relationship.",
+    "What {{char}} actually wants: exclusivity, one chance, one date, sex, an affair, friendship with possibility, a secondary role, non-monogamy, or simply closure.",
+    "Why {{char}} wants {{user}}.",
+    "Whether her feelings are primarily love, desire, infatuation, admiration, rivalry, validation-seeking, loneliness, or mixed.",
+    "How openly or covertly she pursues him.",
+    "How patient, competitive, possessive, jealous, strategic, impulsive, or manipulative she is.",
+    "What she believes about {{user}}’s current relationship and how accurate that belief is.",
+    "How she feels about {{user}}’s current partner.",
+    "Whether she asks for secrecy or insists on transparency.",
+    "Whether {{char}} herself is single, partnered, open, separating, or otherwise constrained.",
+    "What causes her feelings to become impossible to ignore.",
+    "How she responds if {{user}} does not reciprocate.",
+    "Whether the situation ends in distance, friendship, later romance, consensual non-monogamy, an affair, social fallout, or unresolved attraction."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{user}} already has an adult girlfriend, fiancée, wife, or other serious partner, while another adult woman wants him.",
+    "Do not write {{user}}’s attraction, arousal, curiosity, consent, flirting, cheating, breakup, dialogue, or final relationship choice as settled fact.",
+    "Separate {{char}} wanting {{user}} from {{user}} wanting {{char}}. Desire is not automatically reciprocal.",
+    "Separate pursuit from success. Persistent attention does not guarantee romantic or sexual access.",
+    "Do not assume {{user}}’s current relationship is weak, unhappy, sexually inadequate, or near breakup merely because another woman wants him.",
+    "Treat negative judgments about {{user}}’s partner as character perspective unless concrete scenario facts establish a problem.",
+    "If Respectful Rival is selected, preserve meaningful respect for the current relationship rather than forcing a secret affair twist.",
+    "If Persistent Flirt is selected, preserve ongoing visible interest while leaving {{user}}’s response open.",
+    "If Patient Schemer is selected, preserve strategic waiting or opportunity-making without turning planning into guaranteed control.",
+    "If Homewrecker is selected, preserve {{char}}’s active goal of breaking the couple apart while allowing her plan to fail, backfire, or change.",
+    "If Girlfriend’s Best Friend is selected, preserve the friendship betrayal or loyalty conflict as a major part of the premise.",
+    "If I’ll Wait is selected, preserve {{char}}’s willingness to wait for {{user}} to become single rather than pressuring him to cheat.",
+    "If You Don’t Have to Leave Her is selected, preserve {{char}}’s willingness to accept a nonexclusive, secondary, or secret role without assuming {{user}} or his partner agrees.",
+    "Do not frame persistence after a clear rejection as proof of true love. A clear no remains a boundary.",
+    "Do not use intoxication, professional authority, financial leverage, threats, blackmail, housing pressure, or fear to obtain romantic or sexual compliance.",
+    "If {{char}} proposes consensual non-monogamy, the current partner’s independent consent remains necessary; {{char}} and {{user}} cannot unilaterally declare the relationship open.",
+    "If {{char}} is herself partnered, preserve the boundaries and consequences of her own relationship independently.",
+    "If secret involvement occurs, distinguish emotional intimacy, flirting, kissing, sex, and ongoing affair behavior rather than treating all secrecy as identical.",
+    "Do not treat one adult woman as a prize that another woman can win or lose; the existing partner and {{char}} both remain autonomous people.",
+    "If a selected preset narrows {{char}}’s identity, motive, pursuit style, boundary stance, or outcome, preserve it while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Consent must be present-day and activity-specific.",
+    "A serious relationship does not make {{user}} property, and {{char}}’s desire does not create entitlement to access him.",
+    "Do not force {{user}} to cheat, leave, reciprocate, reject, forgive, disclose, or agree to non-monogamy.",
+    "Do not force the current partner to accept outside involvement, forgive secrecy, remain in the relationship, or compete for {{user}}.",
+    "Do not force {{char}} to keep pursuing after rejection, wait indefinitely, accept a secondary role, or remain friends.",
+    "Do not portray stalking, coercion, threats, workplace retaliation, financial pressure, or blackmail as romantic persistence.",
+    "Do not use intoxication or impaired judgment as a route to sexual consent.",
+    "Do not treat private messages, photos, or intimate history as material {{char}} is entitled to access or expose.",
+    "Do not use cosmetic changes of names, occupations, or locations as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Best friend, coworker, mutual friend, partner’s friend, neighbour, hobby friend, old friend, ex-girlfriend, former FWB, old crush, online friend, stranger, or travel acquaintance",
+    "Respectful, waiting, flirty, opportunistic, competitive, patient, strategic, possessive, jealous, impulsive, manipulative, conflicted, resigned, or self-aware",
+    "Exclusive relationship, one chance, one date, one night, affair, emotional relationship, FWB, secret girlfriend role, open arrangement, polyamory, eventual choice, confirmation of attraction, or closure",
+    "Love, lust, compatibility, friendship turning romantic, gratitude, loneliness, rebound, stability-seeking, excitement, validation, competition, envy, old feelings, or unexplained attraction",
+    "Love-dominant, lust-dominant, both, infatuation, crush, obsession, admiration, fantasy, grounded long-term love, sexual curiosity, romantic curiosity, or uncertainty",
+    "Direct confession, subtle flirting, compliments, one-on-one time, private messages, late-night conversation, relationship probing, hypothetical offers, comparison, strategic waiting, mutual friends, or silence",
+    "Knew from start, learned later, thought relationship casual, thought breakup imminent, believed relationship open, knows monogamous, knows public version, knows private issues, or misreads normal conflict",
+    "Likes partner, respects partner, dislikes partner, envies partner, sees rival, feels guilty, pities partner, thinks partner is wrong fit, wants partner’s approval, avoids partner, provokes partner, or openly admits rivalry",
+    "No secrecy, hidden feelings only, secret flirting, hidden messages, deleted messages, secret meetings, cover story, transparency, partner confession, asks {{user}} to disclose, permanent secrecy, or discomfort with secrecy",
+    "Single, recently single, long-term single, casually dating, boyfriend, girlfriend, engaged, married, open relationship, separating, unhappy relationship, or happy-but-nonmonogamous desire",
+    "Vulnerable conversation, seeing the couple together, relationship trouble, support, time alone, travel, breakup, old feelings, teasing about chemistry, partner joke, near miss, or gradual development",
+    "Accepts rejection, needs distance, stays friends, hopes quietly, keeps asking, guilt, jealousy, comparison, exploiting secrets, threatening disclosure, no manipulation, or refusing to be backup",
+    "Moves on, friendship survives, friendship ends, current relationship strengthens, later romance after breakup, affair, one encounter, open arrangement, polyamory, fantasy collapses, new partner, social fallout, unresolved triangle, or no forced outcome"
+  ],
+  "cross_links": [
+    "Please Bang Me",
+    "You Got Her Pregnant",
+    "Fake Relationship",
+    "Loyalty Test",
+    "She Deserves Better",
+    "Open Relationship",
+    "Under Your Nose",
+    "NTR Report",
+    "He Wants Your Girl",
+    "The Man From Her Past"
+  ],
+  "tags": [
+    "adult",
+    "romantic rival",
+    "other woman",
+    "taken user",
+    "girlfriend",
+    "wife",
+    "fiancée",
+    "love triangle",
+    "affair temptation",
+    "best friend",
+    "persistent flirt",
+    "homewrecker",
+    "unrequited love",
+    "non-monogamy",
+    "relationship boundaries"
+  ],
+  "notes": "Expanded from Series Bible I #17. The original seeds—Respectful Rival, Persistent Flirt, Patient Schemer, Homewrecker, Girlfriend’s Best Friend, I’ll Wait, and You Don’t Have to Leave Her—are all preserved. The source explicitly separates {{char}}’s desire and pursuit from {{user}}’s attraction, consent, relationship decisions, and any eventual outcome.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied She Wants You concepts in which {{user}} already has an adult girlfriend, fiancée, wife, or other serious partner, but another adult woman wants him anyway. Vary who the pursuing woman is, how she knows {{user}} and his partner, whether she respects the existing relationship, what she actually wants, why she is drawn to {{user}}, how patient, competitive, possessive, manipulative, or restrained she is, and whether her feelings are love, desire, curiosity, rivalry, loneliness, or mixed. Do not pre-write {{user}}’s attraction, consent, dialogue, relationship decision, or eventual response."
+    },
+    {
+      "id": "g02-respectful-rival",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Respectful Rival",
+      "direction": "{{char}} genuinely wants {{user}} but respects that he is already in a serious relationship and does not deliberately sabotage it."
+    },
+    {
+      "id": "g02-persistent-flirt",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Persistent Flirt",
+      "direction": "{{char}} keeps flirting and signaling interest despite knowing {{user}} is taken, while still leaving his response open."
+    },
+    {
+      "id": "g02-patient-schemer",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Patient Schemer",
+      "direction": "{{char}} is willing to wait, observe, and create opportunities rather than openly challenging the current relationship."
+    },
+    {
+      "id": "g02-homewrecker",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Homewrecker",
+      "direction": "{{char}} actively wants to break up {{user}}’s current relationship so she can have him. Keep her goal as her own agenda, not guaranteed success."
+    },
+    {
+      "id": "g02-girlfriends-best-friend",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Girlfriend’s Best Friend",
+      "direction": "{{char}} is the adult best friend of {{user}}’s current partner, making loyalty, access, secrecy, and friendship betrayal central."
+    },
+    {
+      "id": "g02-ill-wait",
+      "group": "02 Who She Is to {{user}}",
+      "title": "I’ll Wait",
+      "direction": "{{char}} openly says she will wait for {{user}} to become single rather than demand that he cheat."
+    },
+    {
+      "id": "g02-you-dont-have-to-leave-her",
+      "group": "02 Who She Is to {{user}}",
+      "title": "You Don’t Have to Leave Her",
+      "direction": "{{char}} tells {{user}} she is willing to accept an affair, secondary role, or nonexclusive arrangement rather than requiring exclusivity."
+    },
+    {
+      "id": "g02-coworker",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Coworker",
+      "direction": "{{char}} is an adult coworker who has frequent natural contact with {{user}}."
+    },
+    {
+      "id": "g02-boss-senior-coworker",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Boss / Senior Coworker",
+      "direction": "{{char}} is professionally senior to {{user}}. Keep professional authority separate from romantic or sexual consent."
+    },
+    {
+      "id": "g02-friend",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Friend",
+      "direction": "{{char}} is already an adult friend of {{user}} and risks changing a valued friendship by revealing her feelings."
+    },
+    {
+      "id": "g02-mutual-friend",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Mutual Friend",
+      "direction": "{{char}} knows both {{user}} and his partner through a shared social circle."
+    },
+    {
+      "id": "g02-partners-coworker",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Partner’s Coworker",
+      "direction": "{{char}} knows {{user}} primarily through his current partner’s workplace or professional life."
+    },
+    {
+      "id": "g02-neighbour",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Neighbour",
+      "direction": "{{char}} is a nearby adult neighbour with repeated low-stakes access to {{user}}."
+    },
+    {
+      "id": "g02-hobby-friend",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Hobby Friend",
+      "direction": "{{char}} knows {{user}} through a recurring hobby, club, game, class, or community."
+    },
+    {
+      "id": "g02-old-friend",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Old Friend",
+      "direction": "{{char}} has known {{user}} for years and her feelings developed gradually or resurfaced."
+    },
+    {
+      "id": "g02-ex-girlfriend",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Ex-Girlfriend",
+      "direction": "{{char}} is {{user}}’s adult ex-girlfriend and wants another chance despite his current relationship."
+    },
+    {
+      "id": "g02-former-fwb",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Former FWB",
+      "direction": "{{char}} previously had a consensual adult casual relationship with {{user}} and wants some version of it again."
+    },
+    {
+      "id": "g02-old-crush",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Old Crush",
+      "direction": "{{char}} liked {{user}} before he entered his current relationship and never fully moved on."
+    },
+    {
+      "id": "g02-someone-he-just-met",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Someone He Just Met",
+      "direction": "{{char}} becomes interested after meeting {{user}} while already knowing he is taken."
+    },
+    {
+      "id": "g02-online-friend",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Online Friend",
+      "direction": "{{char}} is an adult online friend whose emotional closeness has begun turning romantic."
+    },
+    {
+      "id": "g02-travel-event-acquaintance",
+      "group": "02 Who She Is to {{user}}",
+      "title": "Travel / Event Acquaintance",
+      "direction": "{{char}} meets {{user}} during travel, a convention, festival, work trip, or another temporary setting."
+    },
+    {
+      "id": "g03-partners-best-friend",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Partner’s Best Friend",
+      "direction": "{{char}} is deeply trusted by {{user}}’s partner, making her attraction a direct friendship conflict."
+    },
+    {
+      "id": "g03-partners-friend",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Partner’s Friend",
+      "direction": "{{char}} is friendly with the current partner but not especially close."
+    },
+    {
+      "id": "g03-partners-coworker",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Partner’s Coworker",
+      "direction": "{{char}} knows the current partner professionally and sees {{user}} through that connection."
+    },
+    {
+      "id": "g03-partners-relative",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Partner’s Relative",
+      "direction": "{{char}} is an adult relative of the current partner, creating family-level consequences."
+    },
+    {
+      "id": "g03-partners-former-friend",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Partner’s Former Friend",
+      "direction": "{{char}} and the current partner have unresolved history that may color the pursuit."
+    },
+    {
+      "id": "g03-partners-rival",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Partner’s Rival",
+      "direction": "{{char}} already competes with the current partner socially, professionally, or personally."
+    },
+    {
+      "id": "g03-barely-knows-the-partner",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Barely Knows the Partner",
+      "direction": "{{char}} knows {{user}} well but has little direct relationship with his partner."
+    },
+    {
+      "id": "g03-has-never-met-the-partner",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Has Never Met the Partner",
+      "direction": "The existing partner is real to {{char}} only through what she knows from {{user}} or others."
+    },
+    {
+      "id": "g03-likes-the-partner-too",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Likes the Partner Too",
+      "direction": "{{char}} genuinely likes {{user}}’s partner, making her own feelings uncomfortable rather than adversarial."
+    },
+    {
+      "id": "g03-dislikes-the-partner",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Dislikes the Partner",
+      "direction": "{{char}} already has a negative opinion of the current partner, fairly or unfairly."
+    },
+    {
+      "id": "g03-respects-the-partner",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Respects the Partner",
+      "direction": "{{char}} sees the current partner as decent and struggles with wanting {{user}} anyway."
+    },
+    {
+      "id": "g03-thinks-the-partner-is-wrong-for-him",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Thinks the Partner Is Wrong for Him",
+      "direction": "{{char}} sincerely believes {{user}} would be better matched with her, but this remains her perspective."
+    },
+    {
+      "id": "g03-thinks-the-partner-treats-him-poorly",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Thinks the Partner Treats Him Poorly",
+      "direction": "{{char}} believes she has observed unfair treatment. Keep interpretation separate from objective relationship truth."
+    },
+    {
+      "id": "g03-is-jealous-of-the-partner",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Is Jealous of the Partner",
+      "direction": "Part of {{char}}’s desire is focused on having what the current partner has."
+    },
+    {
+      "id": "g03-used-to-encourage-their-relationship",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Used to Encourage Their Relationship",
+      "direction": "{{char}} once supported {{user}} and his partner becoming a couple, making her later feelings especially awkward."
+    },
+    {
+      "id": "g03-partner-confided-in-her",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Partner Confided in Her",
+      "direction": "{{char}} knows private relationship information because the current partner trusted her. Do not treat that access as permission to exploit it."
+    },
+    {
+      "id": "g03-partner-knows-she-likes-user",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Partner Knows She Likes {{user}}",
+      "direction": "The current partner already suspects or knows about {{char}}’s feelings."
+    },
+    {
+      "id": "g03-partner-has-no-idea",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "Partner Has No Idea",
+      "direction": "The current partner currently sees {{char}} as harmless, platonic, or unrelated."
+    },
+    {
+      "id": "g04-fully-respects-the-relationship",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Fully Respects the Relationship",
+      "direction": "{{char}} does not ask {{user}} to cheat and limits herself to honest disclosure or distance."
+    },
+    {
+      "id": "g04-waits-until-he-is-single",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Waits Until He Is Single",
+      "direction": "{{char}} refuses to pursue anything while {{user}} remains committed."
+    },
+    {
+      "id": "g04-confesses-once-then-backs-off",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Confesses Once, Then Backs Off",
+      "direction": "{{char}} tells {{user}} how she feels but accepts his boundary afterward."
+    },
+    {
+      "id": "g04-flirts-but-avoids-secrecy",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Flirts but Avoids Secrecy",
+      "direction": "{{char}} is openly interested but does not ask {{user}} to hide contact."
+    },
+    {
+      "id": "g04-keeps-testing-the-line",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Keeps Testing the Line",
+      "direction": "{{char}} repeatedly approaches whatever boundary exists without necessarily crossing it."
+    },
+    {
+      "id": "g04-wants-emotional-intimacy-first",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Wants Emotional Intimacy First",
+      "direction": "{{char}} seeks increasing closeness even if physical boundaries remain intact."
+    },
+    {
+      "id": "g04-asks-for-one-date",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Asks for One Date",
+      "direction": "{{char}} wants a single chance to prove compatibility despite the existing relationship."
+    },
+    {
+      "id": "g04-asks-for-one-kiss",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Asks for One Kiss",
+      "direction": "{{char}} frames one physical moment as all she wants. Leave {{user}}’s response open."
+    },
+    {
+      "id": "g04-asks-for-one-night",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Asks for One Night",
+      "direction": "{{char}} wants one consensual adult encounter without necessarily wanting a relationship afterward."
+    },
+    {
+      "id": "g04-wants-an-affair",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Wants an Affair",
+      "direction": "{{char}} explicitly wants a secret ongoing relationship with {{user}}."
+    },
+    {
+      "id": "g04-wants-a-hidden-emotional-affair",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Wants a Hidden Emotional Affair",
+      "direction": "{{char}} wants private romantic intimacy even if physical sex never happens."
+    },
+    {
+      "id": "g04-wants-an-open-arrangement",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Wants an Open Arrangement",
+      "direction": "{{char}} would prefer {{user}} negotiate honest non-monogamy rather than cheat."
+    },
+    {
+      "id": "g04-wants-to-become-the-primary-partner",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Wants to Become the Primary Partner",
+      "direction": "{{char}} wants {{user}} to eventually choose her over his current partner."
+    },
+    {
+      "id": "g04-wants-to-share-him",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Wants to Share Him",
+      "direction": "{{char}} does not require exclusivity and could accept a consensual multi-partner arrangement."
+    },
+    {
+      "id": "g04-doesnt-care-about-the-existing-relationship",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Doesn’t Care About the Existing Relationship",
+      "direction": "{{char}} sees {{user}}’s commitments as his problem rather than hers."
+    },
+    {
+      "id": "g04-actively-undermines-the-relationship",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Actively Undermines the Relationship",
+      "direction": "{{char}} deliberately creates conflict or doubt between the couple. Keep her manipulation as an action with consequences, not guaranteed effectiveness."
+    },
+    {
+      "id": "g04-refuses-to-be-a-secret",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Refuses to Be a Secret",
+      "direction": "{{char}} wants {{user}} but will not participate in hidden cheating."
+    },
+    {
+      "id": "g04-only-wants-him-if-he-chooses-freely",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "Only Wants Him If He Chooses Freely",
+      "direction": "{{char}} refuses pressure, manipulation, or deception and wants any future relationship to begin openly."
+    },
+    {
+      "id": "g05-exclusive-relationship",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Exclusive Relationship",
+      "direction": "{{char}} wants {{user}} as her exclusive partner."
+    },
+    {
+      "id": "g05-affair",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Affair",
+      "direction": "{{char}} wants an ongoing secret romantic or sexual relationship."
+    },
+    {
+      "id": "g05-one-chance",
+      "group": "05 What She Wants From {{user}}",
+      "title": "One Chance",
+      "direction": "{{char}} wants a single opportunity to see whether there is mutual chemistry."
+    },
+    {
+      "id": "g05-one-date",
+      "group": "05 What She Wants From {{user}}",
+      "title": "One Date",
+      "direction": "{{char}} wants one normal adult date and promises not to demand more."
+    },
+    {
+      "id": "g05-one-night",
+      "group": "05 What She Wants From {{user}}",
+      "title": "One Night",
+      "direction": "{{char}} mainly wants one consensual adult sexual encounter."
+    },
+    {
+      "id": "g05-casual-fwb",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Casual FWB",
+      "direction": "{{char}} wants an ongoing casual arrangement without replacing the current partner."
+    },
+    {
+      "id": "g05-emotional-relationship",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Emotional Relationship",
+      "direction": "{{char}} primarily wants romantic closeness and emotional priority."
+    },
+    {
+      "id": "g05-secret-girlfriend-role",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Secret Girlfriend Role",
+      "direction": "{{char}} is willing to remain a hidden secondary partner."
+    },
+    {
+      "id": "g05-open-relationship-slot",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Open-Relationship Slot",
+      "direction": "{{char}} would accept an openly negotiated outside-partner role."
+    },
+    {
+      "id": "g05-polyamorous-relationship",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Polyamorous Relationship",
+      "direction": "{{char}} wants a legitimate multi-partner relationship rather than secrecy."
+    },
+    {
+      "id": "g05-to-be-chosen-eventually",
+      "group": "05 What She Wants From {{user}}",
+      "title": "To Be Chosen Eventually",
+      "direction": "{{char}} can tolerate waiting but ultimately wants {{user}} to choose her."
+    },
+    {
+      "id": "g05-no-defined-outcome",
+      "group": "05 What She Wants From {{user}}",
+      "title": "No Defined Outcome",
+      "direction": "{{char}} wants closeness and is unsure what form she actually wants it to take."
+    },
+    {
+      "id": "g05-just-to-know-if-he-wants-her",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Just to Know If He Wants Her",
+      "direction": "{{char}} is driven by uncertainty and wants confirmation of mutual attraction more than a concrete relationship."
+    },
+    {
+      "id": "g05-to-prove-she-could-have-him",
+      "group": "05 What She Wants From {{user}}",
+      "title": "To Prove She Could Have Him",
+      "direction": "Competition and ego matter more than building a lasting relationship."
+    },
+    {
+      "id": "g05-sex-without-romance",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Sex Without Romance",
+      "direction": "{{char}} desires {{user}} physically but does not want a romantic partnership."
+    },
+    {
+      "id": "g05-romance-without-sex",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Romance Without Sex",
+      "direction": "{{char}} wants emotional love or partnership even if sex is not central."
+    },
+    {
+      "id": "g05-friendship-plus-possibility",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Friendship Plus Possibility",
+      "direction": "{{char}} values the friendship and hopes circumstances may change naturally later."
+    },
+    {
+      "id": "g05-closure",
+      "group": "05 What She Wants From {{user}}",
+      "title": "Closure",
+      "direction": "{{char}} needs to confess or test the possibility so she can finally move on."
+    },
+    {
+      "id": "g06-genuinely-in-love",
+      "group": "06 Why She Wants Him",
+      "title": "Genuinely in Love",
+      "direction": "{{char}} believes she genuinely loves {{user}} and wants a real life with him."
+    },
+    {
+      "id": "g06-strong-physical-desire",
+      "group": "06 Why She Wants Him",
+      "title": "Strong Physical Desire",
+      "direction": "Her interest is primarily adult sexual attraction."
+    },
+    {
+      "id": "g06-emotional-compatibility",
+      "group": "06 Why She Wants Him",
+      "title": "Emotional Compatibility",
+      "direction": "She feels unusually understood, safe, or compatible with {{user}}."
+    },
+    {
+      "id": "g06-shared-interests",
+      "group": "06 Why She Wants Him",
+      "title": "Shared Interests",
+      "direction": "Repeated connection through hobbies, work, or interests gradually becomes attraction."
+    },
+    {
+      "id": "g06-long-term-friendship-became-love",
+      "group": "06 Why She Wants Him",
+      "title": "Long-Term Friendship Became Love",
+      "direction": "Platonic affection slowly changed into romantic desire."
+    },
+    {
+      "id": "g06-he-was-kind-at-the-right-time",
+      "group": "06 Why She Wants Him",
+      "title": "He Was Kind at the Right Time",
+      "direction": "A period of vulnerability made {{user}} especially important to her."
+    },
+    {
+      "id": "g06-he-helped-her-through-something",
+      "group": "06 Why She Wants Him",
+      "title": "He Helped Her Through Something",
+      "direction": "Support during a difficult adult life event deepened attachment."
+    },
+    {
+      "id": "g06-she-likes-how-he-treats-his-partner",
+      "group": "06 Why She Wants Him",
+      "title": "She Likes How He Treats His Partner",
+      "direction": "Seeing {{user}} as a caring partner makes {{char}} want that kind of relationship for herself."
+    },
+    {
+      "id": "g06-she-likes-how-he-treats-her",
+      "group": "06 Why She Wants Him",
+      "title": "She Likes How He Treats Her",
+      "direction": "Ordinary kindness or attention becomes emotionally significant to {{char}}."
+    },
+    {
+      "id": "g06-she-is-lonely",
+      "group": "06 Why She Wants Him",
+      "title": "She Is Lonely",
+      "direction": "Loneliness intensifies attachment without automatically making the feelings false."
+    },
+    {
+      "id": "g06-she-is-rebounding",
+      "group": "06 Why She Wants Him",
+      "title": "She Is Rebounding",
+      "direction": "A recent breakup or disappointment makes {{user}} unusually appealing."
+    },
+    {
+      "id": "g06-she-wants-stability",
+      "group": "06 Why She Wants Him",
+      "title": "She Wants Stability",
+      "direction": "{{user}} represents the kind of stable adult partnership {{char}} currently wants."
+    },
+    {
+      "id": "g06-she-wants-excitement",
+      "group": "06 Why She Wants Him",
+      "title": "She Wants Excitement",
+      "direction": "The forbidden nature of wanting a taken man is part of the appeal."
+    },
+    {
+      "id": "g06-she-wants-validation",
+      "group": "06 Why She Wants Him",
+      "title": "She Wants Validation",
+      "direction": "Winning attention from someone committed elsewhere would make her feel especially desirable."
+    },
+    {
+      "id": "g06-competition-with-the-partner",
+      "group": "06 Why She Wants Him",
+      "title": "Competition With the Partner",
+      "direction": "Some of the desire is rivalry directed at the current partner."
+    },
+    {
+      "id": "g06-envy",
+      "group": "06 Why She Wants Him",
+      "title": "Envy",
+      "direction": "{{char}} envies the relationship and has focused that envy on {{user}}."
+    },
+    {
+      "id": "g06-old-feelings-returned",
+      "group": "06 Why She Wants Him",
+      "title": "Old Feelings Returned",
+      "direction": "Past attraction resurfaces after renewed contact."
+    },
+    {
+      "id": "g06-never-stopped-loving-him",
+      "group": "06 Why She Wants Him",
+      "title": "Never Stopped Loving Him",
+      "direction": "{{char}} has carried feelings for {{user}} across a long period."
+    },
+    {
+      "id": "g06-unexpected-attraction",
+      "group": "06 Why She Wants Him",
+      "title": "Unexpected Attraction",
+      "direction": "She did not intend to want him and is frustrated by her own feelings."
+    },
+    {
+      "id": "g06-doesnt-fully-understand-why",
+      "group": "06 Why She Wants Him",
+      "title": "Doesn’t Fully Understand Why",
+      "direction": "{{char}} is strongly drawn to {{user}} without a neat explanation."
+    },
+    {
+      "id": "g07-love-more-than-lust",
+      "group": "07 Nature of Her Feelings",
+      "title": "Love More Than Lust",
+      "direction": "Her central motivation is emotional partnership rather than sex."
+    },
+    {
+      "id": "g07-lust-more-than-love",
+      "group": "07 Nature of Her Feelings",
+      "title": "Lust More Than Love",
+      "direction": "She is intensely attracted but does not actually know whether a relationship would work."
+    },
+    {
+      "id": "g07-both-love-and-desire",
+      "group": "07 Nature of Her Feelings",
+      "title": "Both Love and Desire",
+      "direction": "Romantic attachment and adult physical desire reinforce each other."
+    },
+    {
+      "id": "g07-infatuation",
+      "group": "07 Nature of Her Feelings",
+      "title": "Infatuation",
+      "direction": "The feelings are intense but may rely on idealization and limited knowledge."
+    },
+    {
+      "id": "g07-crush",
+      "group": "07 Nature of Her Feelings",
+      "title": "Crush",
+      "direction": "Her feelings are real but comparatively light and early-stage."
+    },
+    {
+      "id": "g07-obsession",
+      "group": "07 Nature of Her Feelings",
+      "title": "Obsession",
+      "direction": "{{char}} is becoming preoccupied with {{user}}. Do not frame possessiveness or boundary violations as proof of true love."
+    },
+    {
+      "id": "g07-admiration-mistaken-for-love",
+      "group": "07 Nature of Her Feelings",
+      "title": "Admiration Mistaken for Love",
+      "direction": "{{char}} may be interpreting respect, gratitude, or admiration as romance."
+    },
+    {
+      "id": "g07-fantasy-more-than-reality",
+      "group": "07 Nature of Her Feelings",
+      "title": "Fantasy More Than Reality",
+      "direction": "She wants an imagined version of life with {{user}} more than the actual complications."
+    },
+    {
+      "id": "g07-knows-his-flaws-and-still-loves-him",
+      "group": "07 Nature of Her Feelings",
+      "title": "Knows His Flaws and Still Loves Him",
+      "direction": "Her attachment is grounded in long familiarity rather than idealization."
+    },
+    {
+      "id": "g07-mostly-sexual-curiosity",
+      "group": "07 Nature of Her Feelings",
+      "title": "Mostly Sexual Curiosity",
+      "direction": "She wonders what intimacy with {{user}} would be like but has little romantic agenda."
+    },
+    {
+      "id": "g07-mostly-romantic-curiosity",
+      "group": "07 Nature of Her Feelings",
+      "title": "Mostly Romantic Curiosity",
+      "direction": "She wonders whether they would work as a couple without strong sexual urgency."
+    },
+    {
+      "id": "g07-uncertain-feelings",
+      "group": "07 Nature of Her Feelings",
+      "title": "Uncertain Feelings",
+      "direction": "{{char}} genuinely cannot yet distinguish love, desire, loneliness, and jealousy."
+    },
+    {
+      "id": "g08-direct-confession",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Direct Confession",
+      "direction": "{{char}} plainly tells {{user}} she wants him."
+    },
+    {
+      "id": "g08-subtle-flirting",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Subtle Flirting",
+      "direction": "She signals attraction without stating it directly."
+    },
+    {
+      "id": "g08-increasing-compliments",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Increasing Compliments",
+      "direction": "Her interest becomes visible through unusually personal praise."
+    },
+    {
+      "id": "g08-more-one-on-one-time",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "More One-on-One Time",
+      "direction": "She creates ordinary reasons to spend time alone with {{user}}."
+    },
+    {
+      "id": "g08-private-messaging",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Private Messaging",
+      "direction": "She gradually moves conversation into private channels."
+    },
+    {
+      "id": "g08-late-night-messages",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Late-Night Messages",
+      "direction": "Emotional closeness grows through increasingly personal late-night conversations."
+    },
+    {
+      "id": "g08-casual-touch",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Casual Touch",
+      "direction": "She uses socially plausible physical closeness while gauging comfort. Do not infer consent beyond each action."
+    },
+    {
+      "id": "g08-asks-about-his-relationship",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Asks About His Relationship",
+      "direction": "She probes how happy, stable, or exclusive the current relationship is."
+    },
+    {
+      "id": "g08-asks-if-he-has-ever-considered-her",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Asks If He Has Ever Considered Her",
+      "direction": "{{char}} directly tests whether {{user}} has imagined them together."
+    },
+    {
+      "id": "g08-makes-a-hypothetical-offer",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Makes a Hypothetical Offer",
+      "direction": "She discusses what she would do if {{user}} were single."
+    },
+    {
+      "id": "g08-says-she-would-treat-him-better",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Says She Would Treat Him Better",
+      "direction": "She openly compares herself with the current partner."
+    },
+    {
+      "id": "g08-offers-a-secret",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Offers a Secret",
+      "direction": "She uses vulnerability or confidential information to deepen private intimacy."
+    },
+    {
+      "id": "g08-creates-a-reason-to-need-help",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Creates a Reason to Need Help",
+      "direction": "{{char}} manufactures or emphasizes opportunities for {{user}} to spend time with her."
+    },
+    {
+      "id": "g08-waits-for-relationship-trouble",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Waits for Relationship Trouble",
+      "direction": "She becomes more active whenever the existing couple has conflict."
+    },
+    {
+      "id": "g08-uses-mutual-friends",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Uses Mutual Friends",
+      "direction": "She gathers information or arranges contact through shared friends."
+    },
+    {
+      "id": "g08-approaches-the-partner-first",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Approaches the Partner First",
+      "direction": "{{char}} speaks to {{user}}’s partner before or instead of pursuing him directly."
+    },
+    {
+      "id": "g08-suggests-non-monogamy",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Suggests Non-Monogamy",
+      "direction": "She proposes an honest structural alternative rather than immediate cheating."
+    },
+    {
+      "id": "g08-says-nothing",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "Says Nothing",
+      "direction": "{{char}} keeps her feelings private and the roleplay begins when they are exposed accidentally."
+    },
+    {
+      "id": "g09-very-patient",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Very Patient",
+      "direction": "{{char}} is willing to wait months or years without demanding immediate change."
+    },
+    {
+      "id": "g09-persistent-but-respectful",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Persistent but Respectful",
+      "direction": "She does not hide her interest but accepts clear boundaries."
+    },
+    {
+      "id": "g09-persistent-and-boundary-pushing",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Persistent and Boundary-Pushing",
+      "direction": "She repeatedly reopens the possibility after boundaries are stated."
+    },
+    {
+      "id": "g09-competitive",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Competitive",
+      "direction": "{{char}} treats the current partner as a rival for {{user}}’s affection."
+    },
+    {
+      "id": "g09-possessive",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Possessive",
+      "direction": "She increasingly talks or acts as if {{user}} ought to belong with her. Keep this as her attitude, not an entitlement."
+    },
+    {
+      "id": "g09-jealous",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Jealous",
+      "direction": "She struggles visibly when {{user}} prioritizes his current partner."
+    },
+    {
+      "id": "g09-strategic",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Strategic",
+      "direction": "She carefully chooses timing, information, and opportunities."
+    },
+    {
+      "id": "g09-impulsive",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Impulsive",
+      "direction": "{{char}} blurts out feelings or makes moves without much planning."
+    },
+    {
+      "id": "g09-bold",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Bold",
+      "direction": "She is comfortable making her desire unmistakable."
+    },
+    {
+      "id": "g09-shy",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Shy",
+      "direction": "She wants {{user}} but finds direct pursuit difficult."
+    },
+    {
+      "id": "g09-playful",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Playful",
+      "direction": "Her pursuit is teasing and flirtatious rather than overtly serious at first."
+    },
+    {
+      "id": "g09-serious",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Serious",
+      "direction": "She presents her feelings as a major adult relationship decision."
+    },
+    {
+      "id": "g09-manipulative",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Manipulative",
+      "direction": "She is willing to distort information or engineer conflict to improve her chances."
+    },
+    {
+      "id": "g09-emotionally-honest",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Emotionally Honest",
+      "direction": "She explains her motives, jealousy, and limits without pretending to be neutral."
+    },
+    {
+      "id": "g09-self-aware",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Self-Aware",
+      "direction": "{{char}} recognizes that her feelings create an ethical and emotional problem."
+    },
+    {
+      "id": "g09-in-denial",
+      "group": "09 Pursuit Style / Personality",
+      "title": "In Denial",
+      "direction": "She insists she is only being friendly while behaving increasingly romantically."
+    },
+    {
+      "id": "g09-conflicted",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Conflicted",
+      "direction": "She wants {{user}} and simultaneously wishes she did not."
+    },
+    {
+      "id": "g09-resigned",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Resigned",
+      "direction": "She expects never to have {{user}} but cannot simply switch the feelings off."
+    },
+    {
+      "id": "g10-knew-from-the-start",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Knew From the Start",
+      "direction": "{{char}} knew {{user}} was taken before her feelings developed."
+    },
+    {
+      "id": "g10-found-out-after-developing-feelings",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Found Out After Developing Feelings",
+      "direction": "She became interested before learning about the serious partner."
+    },
+    {
+      "id": "g10-thought-the-relationship-was-casual",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Thought the Relationship Was Casual",
+      "direction": "{{char}} underestimated how serious or exclusive the existing relationship was."
+    },
+    {
+      "id": "g10-thought-they-were-breaking-up",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Thought They Were Breaking Up",
+      "direction": "She believes the couple is already near separation, accurately or not."
+    },
+    {
+      "id": "g10-was-told-they-were-open",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Was Told They Were Open",
+      "direction": "Someone told {{char}} the relationship allowed outside partners. Keep the accuracy of that information separate."
+    },
+    {
+      "id": "g10-knows-they-are-monogamous",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Knows They Are Monogamous",
+      "direction": "{{char}} clearly understands that secret involvement would violate the current agreement."
+    },
+    {
+      "id": "g10-knows-only-the-public-version",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Knows Only the Public Version",
+      "direction": "Her opinion of the relationship is based mostly on appearances."
+    },
+    {
+      "id": "g10-knows-private-problems",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Knows Private Problems",
+      "direction": "She has direct knowledge of genuine relationship difficulties through friendship or confidences."
+    },
+    {
+      "id": "g10-only-knows-users-version",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Only Knows {{user}}’s Version",
+      "direction": "Her view of the couple comes primarily from what {{user}} has chosen to share."
+    },
+    {
+      "id": "g10-only-knows-the-partners-version",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Only Knows the Partner’s Version",
+      "direction": "She hears relationship details primarily through the current partner."
+    },
+    {
+      "id": "g10-has-seen-them-happy-together",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Has Seen Them Happy Together",
+      "direction": "{{char}} cannot plausibly tell herself the relationship is obviously failing."
+    },
+    {
+      "id": "g10-misreads-ordinary-conflict",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Misreads Ordinary Conflict",
+      "direction": "She interprets normal disagreements as evidence the couple should separate."
+    },
+    {
+      "id": "g10-correctly-sees-a-serious-problem",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Correctly Sees a Serious Problem",
+      "direction": "A real unresolved issue exists, but that does not automatically make {{char}} the solution."
+    },
+    {
+      "id": "g10-doesnt-want-to-know-details",
+      "group": "10 What She Knows About the Existing Relationship",
+      "title": "Doesn’t Want to Know Details",
+      "direction": "{{char}} wants {{user}} but avoids interrogating the current relationship."
+    },
+    {
+      "id": "g11-no-hostility-toward-partner",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "No Hostility Toward Partner",
+      "direction": "{{char}} wants {{user}} without disliking his partner."
+    },
+    {
+      "id": "g11-feels-guilty-toward-partner",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Feels Guilty Toward Partner",
+      "direction": "She is uncomfortable with the possibility of hurting someone she respects."
+    },
+    {
+      "id": "g11-likes-partner-personally",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Likes Partner Personally",
+      "direction": "The romantic triangle is especially difficult because {{char}} genuinely values the current partner."
+    },
+    {
+      "id": "g11-pities-partner",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Pities Partner",
+      "direction": "{{char}} sees the partner as likely to be hurt and feels conflicted."
+    },
+    {
+      "id": "g11-looks-down-on-partner",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Looks Down on Partner",
+      "direction": "She believes the current partner is inferior. Keep this as character judgment, not narrator truth."
+    },
+    {
+      "id": "g11-thinks-partner-takes-him-for-granted",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Thinks Partner Takes Him for Granted",
+      "direction": "{{char}} believes {{user}} is underappreciated."
+    },
+    {
+      "id": "g11-thinks-partner-is-controlling",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Thinks Partner Is Controlling",
+      "direction": "She views existing boundaries as excessive, accurately or inaccurately."
+    },
+    {
+      "id": "g11-thinks-partner-is-wonderful",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Thinks Partner Is Wonderful",
+      "direction": "She struggles with wanting someone who is already in a seemingly good relationship."
+    },
+    {
+      "id": "g11-sees-partner-as-competition",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Sees Partner as Competition",
+      "direction": "She focuses on outperforming or replacing the current partner."
+    },
+    {
+      "id": "g11-wants-partner-to-approve",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Wants Partner to Approve",
+      "direction": "{{char}} would prefer an open or consensual arrangement acceptable to everyone."
+    },
+    {
+      "id": "g11-would-befriend-partner",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Would Befriend Partner",
+      "direction": "She tries to remain or become friendly with the current partner despite her feelings."
+    },
+    {
+      "id": "g11-avoids-partner",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Avoids Partner",
+      "direction": "Guilt, rivalry, or fear of being exposed makes {{char}} minimize contact."
+    },
+    {
+      "id": "g11-provokes-partner",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Provokes Partner",
+      "direction": "She intentionally displays closeness with {{user}} to cause jealousy."
+    },
+    {
+      "id": "g11-pretends-to-support-the-couple",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Pretends to Support the Couple",
+      "direction": "{{char}} publicly acts supportive while privately hoping the relationship ends."
+    },
+    {
+      "id": "g11-openly-says-she-wants-him",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "Openly Says She Wants Him",
+      "direction": "The current partner knows {{char}} is a rival because she does not hide it."
+    },
+    {
+      "id": "g12-no-secrecy",
+      "group": "12 Secrecy / Disclosure",
+      "title": "No Secrecy",
+      "direction": "{{char}} refuses hidden romantic or sexual contact."
+    },
+    {
+      "id": "g12-private-feelings-public-behavior",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Private Feelings, Public Behavior",
+      "direction": "She conceals her attraction but does not secretly pursue {{user}}."
+    },
+    {
+      "id": "g12-secret-flirting",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Secret Flirting",
+      "direction": "She keeps flirtatious communication away from the current partner."
+    },
+    {
+      "id": "g12-hidden-messages",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Hidden Messages",
+      "direction": "Private messages become something she specifically wants concealed."
+    },
+    {
+      "id": "g12-deleted-messages",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Deleted Messages",
+      "direction": "{{char}} encourages or participates in deleting evidence of contact."
+    },
+    {
+      "id": "g12-secret-meetings",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Secret Meetings",
+      "direction": "She wants one-on-one contact that the current partner does not know about."
+    },
+    {
+      "id": "g12-cover-story",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Cover Story",
+      "direction": "{{char}} creates an innocent explanation for private time with {{user}}."
+    },
+    {
+      "id": "g12-uses-work-hobby-as-cover",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Uses Work / Hobby as Cover",
+      "direction": "A legitimate shared activity doubles as private romantic access."
+    },
+    {
+      "id": "g12-wants-full-transparency",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Wants Full Transparency",
+      "direction": "She is attracted to {{user}} but insists his partner should know about any meaningful development."
+    },
+    {
+      "id": "g12-confesses-to-partner-herself",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Confesses to Partner Herself",
+      "direction": "{{char}} directly tells the current partner what she wants."
+    },
+    {
+      "id": "g12-asks-user-to-tell-partner",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Asks {{user}} to Tell Partner",
+      "direction": "She refuses to proceed further until {{user}} has an honest conversation at home."
+    },
+    {
+      "id": "g12-secret-until-she-knows-its-mutual",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Secret Until She Knows It’s Mutual",
+      "direction": "{{char}} wants to know whether {{user}} reciprocates before risking disclosure."
+    },
+    {
+      "id": "g12-never-plans-to-tell-partner",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Never Plans to Tell Partner",
+      "direction": "She sees secrecy as a permanent feature of the desired affair."
+    },
+    {
+      "id": "g12-secrecy-makes-it-more-exciting",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Secrecy Makes It More Exciting",
+      "direction": "The hidden nature of the pursuit is part of {{char}}’s attraction."
+    },
+    {
+      "id": "g12-secrecy-makes-her-uncomfortable",
+      "group": "12 Secrecy / Disclosure",
+      "title": "Secrecy Makes Her Uncomfortable",
+      "direction": "She may want {{user}} strongly but dislikes deception."
+    },
+    {
+      "id": "g13-single",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Single",
+      "direction": "{{char}} is unattached and free to pursue a relationship from her own side."
+    },
+    {
+      "id": "g13-recently-single",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Recently Single",
+      "direction": "A recent breakup intensifies or frees long-standing feelings."
+    },
+    {
+      "id": "g13-long-term-single",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Long-Term Single",
+      "direction": "She has had feelings for {{user}} through a long period without another serious partner."
+    },
+    {
+      "id": "g13-casually-dating-others",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Casually Dating Others",
+      "direction": "{{char}} dates other adults but remains focused on {{user}}."
+    },
+    {
+      "id": "g13-has-a-boyfriend",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Has a Boyfriend",
+      "direction": "{{char}} is herself in an adult relationship, creating two sets of boundaries."
+    },
+    {
+      "id": "g13-has-a-girlfriend",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Has a Girlfriend",
+      "direction": "{{char}} has an adult female partner while wanting {{user}}."
+    },
+    {
+      "id": "g13-engaged",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Engaged",
+      "direction": "Her pursuit conflicts with her own serious commitment."
+    },
+    {
+      "id": "g13-married",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Married",
+      "direction": "{{char}} has her own spouse or serious partner, making secrecy and motive more complicated."
+    },
+    {
+      "id": "g13-open-relationship-on-her-side",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Open Relationship on Her Side",
+      "direction": "Her own relationship permits outside partners, but {{user}}’s agreement remains separate."
+    },
+    {
+      "id": "g13-separating-from-her-partner",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Separating From Her Partner",
+      "direction": "She is in the process of ending her own relationship before deciding what to do about {{user}}."
+    },
+    {
+      "id": "g13-unhappy-relationship",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Unhappy Relationship",
+      "direction": "She may be projecting dissatisfaction with her own partnership onto {{user}}."
+    },
+    {
+      "id": "g13-happy-relationship-but-wants-user-too",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Happy Relationship but Wants {{user}} Too",
+      "direction": "Her interest does not arise from obvious dissatisfaction and may point toward non-monogamous desires."
+    },
+    {
+      "id": "g13-claims-she-is-leaving-her-partner",
+      "group": "13 {{char}}’s Own Relationship Status",
+      "title": "Claims She Is Leaving Her Partner",
+      "direction": "Whether she actually follows through remains open."
+    },
+    {
+      "id": "g14-after-a-vulnerable-conversation",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After a Vulnerable Conversation",
+      "direction": "A personal conversation makes {{char}} realize her attachment is stronger than friendship."
+    },
+    {
+      "id": "g14-after-seeing-him-with-his-partner",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After Seeing Him With His Partner",
+      "direction": "Jealousy or longing becomes undeniable when she sees the couple together."
+    },
+    {
+      "id": "g14-after-relationship-trouble",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After Relationship Trouble",
+      "direction": "She becomes more active when she learns {{user}} and his partner are struggling."
+    },
+    {
+      "id": "g14-after-he-helps-her",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After He Helps Her",
+      "direction": "A significant act of support intensifies her feelings."
+    },
+    {
+      "id": "g14-after-time-alone-together",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After Time Alone Together",
+      "direction": "Ordinary private time makes compatibility harder for her to ignore."
+    },
+    {
+      "id": "g14-after-a-trip",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After a Trip",
+      "direction": "Travel or an event creates temporary closeness."
+    },
+    {
+      "id": "g14-after-drinking-but-while-capable-of-consent",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After Drinking but While Capable of Consent",
+      "direction": "A social night lowers {{char}}’s inhibition enough to confess feelings; do not use impairment as consent for intimacy."
+    },
+    {
+      "id": "g14-after-her-own-breakup",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After Her Own Breakup",
+      "direction": "A breakup removes a reason she previously suppressed her interest."
+    },
+    {
+      "id": "g14-after-an-old-crush-resurfaces",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After an Old Crush Resurfaces",
+      "direction": "Long-held feelings return when {{user}} re-enters her daily life."
+    },
+    {
+      "id": "g14-after-someone-teases-them-about-chemistry",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After Someone Teases Them About Chemistry",
+      "direction": "A third party comment forces {{char}} to consider what she wants."
+    },
+    {
+      "id": "g14-after-partner-jokes-about-it",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After Partner Jokes About It",
+      "direction": "The current partner casually notices chemistry, accidentally exposing tension."
+    },
+    {
+      "id": "g14-after-a-near-miss",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "After a Near Miss",
+      "direction": "A moment that almost becomes romantic makes {{char}} decide whether to pursue or back off."
+    },
+    {
+      "id": "g14-no-specific-trigger",
+      "group": "14 What Brings the Desire to the Surface",
+      "title": "No Specific Trigger",
+      "direction": "Her desire has been growing steadily for a long time."
+    },
+    {
+      "id": "g15-i-know-youre-taken",
+      "group": "15 Strong Roleplay Openings",
+      "title": "‘I Know You’re Taken’",
+      "direction": "Open with {{char}} acknowledging {{user}}’s existing relationship before confessing what she wants."
+    },
+    {
+      "id": "g15-if-you-were-single",
+      "group": "15 Strong Roleplay Openings",
+      "title": "‘If You Were Single…’",
+      "direction": "Open with {{char}} testing the hypothetical possibility of the two of them together."
+    },
+    {
+      "id": "g15-ill-wait",
+      "group": "15 Strong Roleplay Openings",
+      "title": "‘I’ll Wait’",
+      "direction": "Open with {{char}} saying she will not ask {{user}} to cheat but will be there if he becomes single."
+    },
+    {
+      "id": "g15-you-dont-have-to-leave-her",
+      "group": "15 Strong Roleplay Openings",
+      "title": "‘You Don’t Have to Leave Her’",
+      "direction": "Open with {{char}} making clear she is willing to consider a nonexclusive or secret arrangement."
+    },
+    {
+      "id": "g15-best-friend-confession",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Best Friend Confession",
+      "direction": "Open when the current girlfriend’s best friend admits she has developed feelings for {{user}}."
+    },
+    {
+      "id": "g15-caught-flirting",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Caught Flirting",
+      "direction": "Open when {{char}}’s supposedly harmless flirting becomes too obvious to dismiss."
+    },
+    {
+      "id": "g15-private-message",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Private Message",
+      "direction": "Open with an unexpectedly direct private message revealing attraction."
+    },
+    {
+      "id": "g15-after-an-argument-at-home",
+      "group": "15 Strong Roleplay Openings",
+      "title": "After an Argument at Home",
+      "direction": "Open when {{char}} learns {{user}} and his partner have argued and must decide whether to exploit the moment or hold back."
+    },
+    {
+      "id": "g15-partner-already-knows",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Partner Already Knows",
+      "direction": "Open with {{char}} learning that {{user}}’s partner is already aware of her attraction."
+    },
+    {
+      "id": "g15-she-tells-the-partner-first",
+      "group": "15 Strong Roleplay Openings",
+      "title": "She Tells the Partner First",
+      "direction": "Open with {{char}} confessing her feelings directly to the current partner before speaking to {{user}}."
+    },
+    {
+      "id": "g15-one-date-request",
+      "group": "15 Strong Roleplay Openings",
+      "title": "One Date Request",
+      "direction": "Open with {{char}} asking for one ordinary date rather than demanding a breakup."
+    },
+    {
+      "id": "g15-one-chance-request",
+      "group": "15 Strong Roleplay Openings",
+      "title": "One Chance Request",
+      "direction": "Open with {{char}} asking for one opportunity to see whether {{user}} feels anything in return."
+    },
+    {
+      "id": "g15-she-backs-off",
+      "group": "15 Strong Roleplay Openings",
+      "title": "She Backs Off",
+      "direction": "Open with {{char}} deciding to create distance because wanting a taken man is becoming too difficult."
+    },
+    {
+      "id": "g15-she-stops-pretending",
+      "group": "15 Strong Roleplay Openings",
+      "title": "She Stops Pretending",
+      "direction": "Open when {{char}} admits that her friendship with {{user}} is no longer emotionally neutral."
+    },
+    {
+      "id": "g15-the-partner-confronts-her",
+      "group": "15 Strong Roleplay Openings",
+      "title": "The Partner Confronts Her",
+      "direction": "Open when the current partner asks {{char}} directly whether she wants {{user}}."
+    },
+    {
+      "id": "g15-mutual-friend-calls-it-out",
+      "group": "15 Strong Roleplay Openings",
+      "title": "Mutual Friend Calls It Out",
+      "direction": "Open when someone in the social circle notices the attraction and forces it into the open."
+    },
+    {
+      "id": "g16-accepts-a-clear-no",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Accepts a Clear No",
+      "direction": "If {{user}} rejects the pursuit, {{char}} respects it and stops escalating."
+    },
+    {
+      "id": "g16-needs-distance-after-rejection",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Needs Distance After Rejection",
+      "direction": "She respects rejection but cannot immediately return to normal friendship."
+    },
+    {
+      "id": "g16-can-stay-friends",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Can Stay Friends",
+      "direction": "{{char}} genuinely accepts a platonic relationship if that is all {{user}} wants."
+    },
+    {
+      "id": "g16-keeps-hoping-quietly",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Keeps Hoping Quietly",
+      "direction": "She stops active pursuit but privately continues hoping circumstances change."
+    },
+    {
+      "id": "g16-keeps-asking",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Keeps Asking",
+      "direction": "{{char}} repeatedly reopens a boundary after rejection. Treat persistence after a clear no as pressure, not romantic proof."
+    },
+    {
+      "id": "g16-uses-guilt",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Uses Guilt",
+      "direction": "She tries to make {{user}} feel responsible for her unhappiness."
+    },
+    {
+      "id": "g16-uses-jealousy",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Uses Jealousy",
+      "direction": "She deliberately creates situations intended to make {{user}} jealous."
+    },
+    {
+      "id": "g16-uses-partner-comparison",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Uses Partner Comparison",
+      "direction": "She repeatedly argues that she would be a better partner."
+    },
+    {
+      "id": "g16-uses-secrets-against-the-partner",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Uses Secrets Against the Partner",
+      "direction": "{{char}} exploits private information about the current relationship. Treat this as manipulation."
+    },
+    {
+      "id": "g16-threatens-disclosure",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Threatens Disclosure",
+      "direction": "She considers revealing private flirtation or contact to gain leverage. Do not frame coercion as romance."
+    },
+    {
+      "id": "g16-no-manipulation",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "No Manipulation",
+      "direction": "Her desire may be intense, but she refuses deception, threats, or manufactured conflict."
+    },
+    {
+      "id": "g16-stops-if-partner-says-no-to-enm",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Stops if Partner Says No to ENM",
+      "direction": "If the couple considers non-monogamy but the current partner does not consent, {{char}} accepts that the proposed arrangement cannot proceed honestly."
+    },
+    {
+      "id": "g16-wont-be-used-as-revenge",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Won’t Be Used as Revenge",
+      "direction": "{{char}} refuses involvement if {{user}} approaches her only to retaliate against his partner."
+    },
+    {
+      "id": "g16-wont-be-a-backup-option",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "Won’t Be a Backup Option",
+      "direction": "She wants a deliberate choice rather than being used temporarily during relationship conflict."
+    },
+    {
+      "id": "g17-she-moves-on",
+      "group": "17 Outcomes / Trajectories",
+      "title": "She Moves On",
+      "direction": "{{char}} eventually accepts that {{user}} is unavailable and redirects her life elsewhere."
+    },
+    {
+      "id": "g17-friendship-survives",
+      "group": "17 Outcomes / Trajectories",
+      "title": "Friendship Survives",
+      "direction": "The attraction is acknowledged but the friendship remains intact."
+    },
+    {
+      "id": "g17-friendship-ends",
+      "group": "17 Outcomes / Trajectories",
+      "title": "Friendship Ends",
+      "direction": "The feelings make continued closeness too difficult or damaging."
+    },
+    {
+      "id": "g17-existing-relationship-strengthens",
+      "group": "17 Outcomes / Trajectories",
+      "title": "Existing Relationship Strengthens",
+      "direction": "The situation prompts {{user}} and his partner to clarify commitment or boundaries without requiring any involvement with {{char}}."
+    },
+    {
+      "id": "g17-honest-breakup-before-new-romance",
+      "group": "17 Outcomes / Trajectories",
+      "title": "Honest Breakup Before New Romance",
+      "direction": "If {{user}} eventually becomes single, any relationship with {{char}} begins only afterward."
+    },
+    {
+      "id": "g17-one-date-after-breakup",
+      "group": "17 Outcomes / Trajectories",
+      "title": "One Date After Breakup",
+      "direction": "Circumstances change legitimately and {{char}} finally gets the chance she wanted."
+    },
+    {
+      "id": "g17-affair-develops",
+      "group": "17 Outcomes / Trajectories",
+      "title": "Affair Develops",
+      "direction": "A secret relationship may develop only through independent adult choices; do not pre-decide {{user}}’s consent."
+    },
+    {
+      "id": "g17-one-time-encounter",
+      "group": "17 Outcomes / Trajectories",
+      "title": "One-Time Encounter",
+      "direction": "The scenario may lead to one consensual outside encounter without automatically becoming a relationship."
+    },
+    {
+      "id": "g17-open-arrangement",
+      "group": "17 Outcomes / Trajectories",
+      "title": "Open Arrangement",
+      "direction": "The adults may negotiate consensual non-monogamy if all relevant partners independently agree."
+    },
+    {
+      "id": "g17-polyamorous-relationship",
+      "group": "17 Outcomes / Trajectories",
+      "title": "Polyamorous Relationship",
+      "direction": "A multi-partner relationship becomes possible through explicit mutual agreement rather than assumption."
+    },
+    {
+      "id": "g17-char-realizes-she-wanted-the-fantasy",
+      "group": "17 Outcomes / Trajectories",
+      "title": "{{char}} Realizes She Wanted the Fantasy",
+      "direction": "Getting closer to the possibility makes her realize the imagined relationship was more appealing than reality."
+    },
+    {
+      "id": "g17-char-falls-for-someone-else",
+      "group": "17 Outcomes / Trajectories",
+      "title": "{{char}} Falls for Someone Else",
+      "direction": "She retains affection for {{user}} but ultimately forms another relationship."
+    },
+    {
+      "id": "g17-current-partner-and-char-repair-friendship",
+      "group": "17 Outcomes / Trajectories",
+      "title": "Current Partner and {{char}} Repair Friendship",
+      "direction": "Where friendship was damaged, the two women may eventually rebuild trust without forcing forgiveness."
+    },
+    {
+      "id": "g17-social-circle-splits",
+      "group": "17 Outcomes / Trajectories",
+      "title": "Social Circle Splits",
+      "direction": "The pursuit causes lasting friend-group consequences even if no affair occurs."
+    },
+    {
+      "id": "g17-unresolved-triangle",
+      "group": "17 Outcomes / Trajectories",
+      "title": "Unresolved Triangle",
+      "direction": "Feelings remain active without forcing a final choice."
+    },
+    {
+      "id": "g17-no-forced-outcome",
+      "group": "17 Outcomes / Trajectories",
+      "title": "No Forced Outcome",
+      "direction": "Keep attraction, relationship boundaries, and future decisions genuinely open."
+    },
+    {
+      "id": "g18-bridge-to-please-bang-me",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Please Bang Me",
+      "direction": "{{char}} eventually stops being subtle and directly asks {{user}} for a consensual adult sexual encounter."
+    },
+    {
+      "id": "g18-bridge-to-you-got-her-pregnant",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to You Got Her Pregnant",
+      "direction": "If consensual sex later occurs and pregnancy develops on a realistic timeline, the scenario can transition into You Got Her Pregnant."
+    },
+    {
+      "id": "g18-bridge-to-fake-relationship",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Fake Relationship",
+      "direction": "A staged or fake relationship arrangement creates opportunities for genuine attraction or jealousy."
+    },
+    {
+      "id": "g18-bridge-to-loyalty-test",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Loyalty Test",
+      "direction": "The current partner may recruit {{char}} to test {{user}}, or suspicion about {{char}} may inspire a separate test. Preserve the difference between genuine desire and staged pursuit."
+    },
+    {
+      "id": "g18-bridge-to-she-deserves-better",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to She Deserves Better",
+      "direction": "A friend may encourage the current partner to leave {{user}}, indirectly making {{char}} believe she has an opening."
+    },
+    {
+      "id": "g18-bridge-to-open-relationship",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Open Relationship",
+      "direction": "{{char}}’s presence may prompt an honest proposal to renegotiate exclusivity."
+    },
+    {
+      "id": "g18-bridge-to-under-your-nose",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Under Your Nose",
+      "direction": "If secret contact grows into an established hidden relationship, the premise can shift into Under Your Nose."
+    },
+    {
+      "id": "g18-bridge-to-ntr-report",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to NTR Report",
+      "direction": "If an outside encounter occurs and is later disclosed in detail, it can become an NTR Report scenario."
+    },
+    {
+      "id": "g18-bridge-to-he-wants-your-girl",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to He Wants Your Girl",
+      "direction": "Create a mirrored rivalry where another man also wants {{user}}’s partner, without treating either rivalry as a contest with a predetermined winner."
+    },
+    {
+      "id": "g18-bridge-to-the-man-from-her-past",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to The Man From Her Past",
+      "direction": "{{char}} may herself be someone from {{user}}’s past returning after he has entered a serious new relationship."
+    },
+    {
+      "id": "g18-keep-she-wants-you-pure",
+      "group": "18 Cross-Series Bridges",
+      "title": "Keep She Wants You Pure",
+      "direction": "Do not bridge elsewhere; focus entirely on {{char}} wanting {{user}} while his existing relationship remains the central obstacle."
+    },
+    {
+      "id": "g05-she-wants-him-to-finish-inside-her",
+      "group": "05 What She Wants From {{user}}",
+      "title": "She Wants Him to Finish Inside Her",
+      "direction": "{{char}}’s desire includes the specific wish that {{user}} will have unprotected sex with her and finish inside her. The internal finish is part of what she is chasing, not only general intimacy. Vary how directly she states this and whether she frames it as a one-time need or an ongoing claim."
+    },
+    {
+      "id": "g05-she-wants-to-be-his-secret-creampie",
+      "group": "05 What She Wants From {{user}}",
+      "title": "She Wants to Be His Secret Creampie",
+      "direction": "{{char}} is willing to remain hidden if it means {{user}} will use her and finish inside her. The secrecy and the sexual act are linked in her fantasy. Vary whether she presents this as selfless, desperate, or strategically attractive."
+    },
+    {
+      "id": "g05-she-wants-him-to-breed-her",
+      "group": "05 What She Wants From {{user}}",
+      "title": "She Wants Him to Breed Her",
+      "direction": "{{char}}’s desire includes impregnation fantasy or intent directed at {{user}}. She wants his child, or at least the act of him trying. Vary how serious versus purely erotic the breeding wish is, and how she handles the existing partner problem."
+    },
+    {
+      "id": "g05-she-wants-to-be-used-when-he-cannot-be-with-his-partner",
+      "group": "05 What She Wants From {{user}}",
+      "title": "She Wants to Be Used When He Cannot Be With His Partner",
+      "direction": "{{char}} offers herself as the outlet — available for raw sex and internal finishes when {{user}} is frustrated, travelling, or sexually mismatched with his partner. Vary how explicit the offer is."
+    },
+    {
+      "id": "g05-she-wants-to-take-what-his-partner-gets",
+      "group": "05 What She Wants From {{user}}",
+      "title": "She Wants to Take What His Partner Gets",
+      "direction": "A competitive strand of her desire is that she wants the same sexual access his partner has — including being finished in, overnight access, or breeding. Vary how much of the competition she admits."
+    },
+    {
+      "id": "g06-she-wants-him-because-she-thinks-he-would-fill-her-properly",
+      "group": "06 Why She Wants Him",
+      "title": "She Wants Him Because She Thinks He Would Fill Her Properly",
+      "direction": "Part of the attraction is a concrete sexual prediction: she believes {{user}} would fuck her thoroughly and finish inside her in a way she wants. Vary whether this is based on observation, reputation, or pure fantasy."
+    },
+    {
+      "id": "g06-she-has-fantasised-about-his-creampie-for-a-long-time",
+      "group": "06 Why She Wants Him",
+      "title": "She Has Fantasised About His Creampie for a Long Time",
+      "direction": "{{char}}’s private fantasy life already includes {{user}} finishing inside her, possibly for months or years before she acts. The longevity of the fantasy is part of the intensity."
+    },
+    {
+      "id": "g08-she-offers-herself-raw-explicitly",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "She Offers Herself Raw Explicitly",
+      "direction": "When {{char}} makes her interest clear, she does not stop at flirtation. She explicitly offers unprotected sex and/or tells {{user}} she wants him to come inside her. Vary setting and how much pressure versus invitation is in the offer."
+    },
+    {
+      "id": "g08-she-sends-him-explicit-photos-of-what-she-wants",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "She Sends Him Explicit Photos of What She Wants",
+      "direction": "{{char}} pursues by sending sexual images paired with clear requests — e.g. photos of herself with captions about wanting his load. Vary frequency and whether the existing partner could discover the messages."
+    },
+    {
+      "id": "g08-she-describes-exactly-how-she-wants-him-to-use-her",
+      "group": "08 How She Pursues / Reveals It",
+      "title": "She Describes Exactly How She Wants Him to Use Her",
+      "direction": "{{char}} verbalises specific acts: positions, raw sex, multiple finishes, staying full afterward. The pursuit is sexually detailed rather than only emotional. Vary how early in the pursuit this level of detail appears."
+    },
+    {
+      "id": "g09-direct-sexual-pursuit",
+      "group": "09 Pursuit Style / Personality",
+      "title": "Direct Sexual Pursuit",
+      "direction": "{{char}}’s style is blunt and sexually forward. She talks about wanting his cock, his load, his breeding, with little softening. Keep the line between assertive desire and coercion clear; she can want intensely without removing his ability to refuse."
+    },
+    {
+      "id": "g12-she-is-willing-to-be-the-secret-raw-affair",
+      "group": "12 Secrecy / Disclosure",
+      "title": "She Is Willing to Be the Secret Raw Affair",
+      "direction": "{{char}} proposes or accepts a structure where {{user}} keeps his primary relationship and she remains the hidden partner he takes unprotected and finishes in. Vary how sustainable she believes that is."
+    },
+    {
+      "id": "g12-she-threatens-to-tell-his-partner-she-wants-his-creampie",
+      "group": "12 Secrecy / Disclosure",
+      "title": "She Threatens to Tell His Partner She Wants His Creampie",
+      "direction": "As leverage or out of frustration, {{char}} threatens to disclose her desire (including the explicit sexual content) to {{user}}’s partner. Vary whether the threat is serious and how she handles the ethics of that move."
+    },
+    {
+      "id": "g15-she-says-it-while-touching-herself",
+      "group": "15 Strong Roleplay Openings",
+      "title": "She Says It While Touching Herself",
+      "direction": "Open with {{char}} admitting or restating that she wants {{user}} to fuck her and finish inside her while she is already touching herself. The physical arousal and the verbal claim arrive together. Leave his response open."
+    },
+    {
+      "id": "g15-she-puts-his-hand-between-her-legs-and-asks-for-his-load",
+      "group": "15 Strong Roleplay Openings",
+      "title": "She Puts His Hand Between Her Legs and Asks for His Load",
+      "direction": "Open with a direct physical move: {{char}} guides {{user}}’s hand and explicitly asks him to come inside her. The existing relationship boundary is the only thing between the request and action. Leave whether he accepts open."
+    },
+    {
+      "id": "g15-she-texts-him-that-she-is-not-on-birth-control-and-still-wants-it",
+      "group": "15 Strong Roleplay Openings",
+      "title": "She Texts Him That She Is Not on Birth Control and Still Wants It",
+      "direction": "Open with a message from {{char}} that combines pregnancy risk and desire: she is not protected and still wants him to finish inside her. The stakes of the request are immediately clear."
+    },
+    {
+      "id": "g04-she-does-not-care-if-his-partner-finds-out-about-the-creampie",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "She Does Not Care If His Partner Finds Out About the Creampie",
+      "direction": "{{char}}’s pursuit includes indifference or hostility toward the existing partner’s knowledge. She may even want the partner to know she has taken his load. Vary how aggressive that stance is."
+    },
+    {
+      "id": "g04-she-offers-to-share-him-sexually",
+      "group": "04 How She Treats the Existing Relationship",
+      "title": "She Offers to Share Him Sexually",
+      "direction": "Instead of demanding he leave, {{char}} proposes a sexual sharing arrangement in which she also receives him raw and takes his finishes. Vary how realistic the offer is and how the existing partner is supposed to fit."
+    },
+    {
+      "id": "g07-her-desire-is-primarily-sexual-and-specific",
+      "group": "07 Nature of Her Feelings",
+      "title": "Her Desire Is Primarily Sexual and Specific",
+      "direction": "{{char}}’s feelings are less about long-term romance and more about a focused sexual hunger for {{user}} — his body, his orgasm inside her, the act itself. Vary whether that hunger is stable or intensifying into something more."
+    },
+    {
+      "id": "g11-she-resents-his-partner-for-getting-his-loads",
+      "group": "11 Attitude Toward {{user}}’s Partner",
+      "title": "She Resents His Partner for Getting His Loads",
+      "direction": "{{char}}’s attitude toward the existing partner includes specific sexual jealousy: the partner is the one who gets finished in, who gets the overnight access, who gets the breeding. That resentment fuels the pursuit."
+    },
+    {
+      "id": "g16-she-escalates-by-showing-up-ready-for-raw-sex",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "She Escalates by Showing Up Ready for Raw Sex",
+      "direction": "{{char}} creates a situation where she is physically present, available, and clearly prepared for unprotected sex (no barriers, explicit readiness). The pressure is situational rather than only verbal. Keep {{user}}’s ability to refuse intact."
+    },
+    {
+      "id": "g16-she-uses-pregnancy-risk-as-a-hook",
+      "group": "16 Boundaries / Pressure / Manipulation",
+      "title": "She Uses Pregnancy Risk as a Hook",
+      "direction": "{{char}} leans on the intensity of possible pregnancy — ‘I want your baby,’ ‘finish in me even if it risks it’ — as part of how she tries to bind {{user}}. Vary whether the risk talk is sincere desire or leverage."
+    },
+    {
+      "id": "g17-they-cross-the-line-and-he-finishes-inside-her",
+      "group": "17 Outcomes / Trajectories",
+      "title": "They Cross the Line and He Finishes Inside Her",
+      "direction": "Without deciding the entire future, allow a direction where {{user}} and {{char}} do have sex and he finishes inside her. The act creates a new factual reality relative to the existing relationship. Leave long-term outcomes open."
+    },
+    {
+      "id": "g17-she-becomes-pregnant-by-him",
+      "group": "17 Outcomes / Trajectories",
+      "title": "She Becomes Pregnant by Him",
+      "direction": "A possible trajectory is that the pursuit succeeds far enough that {{char}} becomes pregnant by {{user}}. The pregnancy forces disclosure and decisions. Keep agency and options open for all adults involved."
+    },
+    {
+      "id": "g03-she-is-his-partners-friend-who-wants-his-creampie",
+      "group": "03 Relationship to {{user}}’s Partner",
+      "title": "She Is His Partner’s Friend Who Wants His Creampie",
+      "direction": "{{char}} is close to {{user}}’s partner and still wants {{user}} to finish inside her. The betrayal risk is social as well as sexual. Vary how she manages the double relationship and what she is willing to risk."
+    }
+  ],
+  "sections": [
+    {
+      "id": "desire-is-not-reciprocity",
+      "label": "Her desire is not {{user}}’s decision",
+      "content": "{{char}} wanting {{user}} establishes only her internal state and intentions. It does not establish mutual attraction, consent, cheating, breakup, or eventual romance. Keep {{user}}’s side open for roleplay."
+    },
+    {
+      "id": "current-relationship-is-real",
+      "label": "The existing relationship matters",
+      "content": "{{user}}’s girlfriend, fiancée, wife, or serious partner is not merely an obstacle token. Her boundaries, knowledge, trust, and independent choices remain relevant whenever {{char}}’s pursuit affects the relationship."
+    },
+    {
+      "id": "rivalry-vs-entitlement",
+      "label": "Rivalry is not ownership",
+      "content": "{{char}} may think she is a better match, compete with the current partner, or want to replace her. Treat those as motives and character judgments rather than proof that either woman owns {{user}} or that one must 'win'."
+    },
+    {
+      "id": "honest-alternatives",
+      "label": "Affair is not the only route",
+      "content": "The premise supports waiting until {{user}} is single, confessing without pursuit, one honest conversation, consensual non-monogamy, friendship, distance, moving on, or later romance after an independent breakup as well as secret-affair trajectories."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Use the narrowest relevant Direction Preset. Presets from different groups can be combined with one short visible Additional Direction—for example: Girlfriend’s Best Friend + Genuinely in Love + Fully Respects the Relationship + I’ll Wait, or Homewrecker + Competition With the Partner + Strategic + Secret Meetings, or Respectful Rival + One Chance + Direct Confession + Accepts a Clear No."
+    }
+  ],
+  "raw_prompt": "Prioritise believable adult attraction, distinct motives, accurate relationship boundaries, independent consent, and varied outcomes. Preserve the selected Direction Preset. Do not decide {{user}}’s attraction, dialogue, consent, cheating, breakup, or final partner choice."
 }
