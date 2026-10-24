@@ -3,6 +3,2555 @@
   "schema_version": 1,
   "id": "bible-i-23-you-two-know-each-other",
   "title": "You Two Know Each Other?",
+  "description": "Reusable adult hidden-shared-history engine in which {{user}} introduces his partner {{char}} to an important adult man in his life, unaware that the two already share a romantic or sexual history. Detailed presets vary who the man is to {{user}}, what relationship he had with {{char}}, seriousness/duration, how recognition occurs, what each previously disclosed or lied about, who wants secrecy, lingering feelings, current contact, why the old relationship ended, what each person wants now, introduction setting, awkward behavioral clues, disclosure/privacy rules, strong openings, and outcomes ranging from harmless historical coincidence to renewed attraction or an ongoing secret affair.",
   "source_version": "1.2",
-  "note": "Full expanded content (403 presets) is available on Google Drive Idea Sources folder as 23-you-two-know-each-other.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 23,
+    "category": "Hidden Past, Identity & Recognition",
+    "source_date": "2026-09-21"
+  },
+  "summary": "{{user}} brings {{char}} together with an important adult man—such as his father, adult brother, best friend, boss, friend, coworker, mentor, or family connection—and discovers the two already know each other through an adult romantic, sexual, compensated-dating, work, or emotionally significant history. Recognition may be immediate or delayed; disclosure may have been honest, incomplete, private, misleading, or explicitly false; and the old relationship may be completely finished, socially awkward, emotionally unresolved, or secretly active again.",
+  "core_premise": "The engine is an unexpected collision between two parts of {{user}}’s adult life that he believed were separate. The reveal is not merely 'they had sex'; it is that the partner and important man already share history whose identity, significance, or present relevance {{user}} did not understand. Keep historical relationship, prior disclosure, current contact, lingering feelings, secrecy, and present behavior as separate axes. A past consensual relationship is not current infidelity, while a direct lie or ongoing hidden affair remains its own trust issue.",
+  "setup": "Begin at or immediately around the introduction: the instant recognition appears, a name/photo gives one person advance warning, one adult tries to act like a stranger, one pulls {{user}} aside, or an old nickname or shared detail exposes familiarity. Establish who the man is to {{user}}, what he and {{char}} were to each other as adults, what {{user}} already knew, and whether either person wants disclosure now. Do not pre-write {{user}}’s emotional response, confrontation, forgiveness, family decisions, friendship decisions, or relationship outcome.",
+  "core_variables": [
+    "Who the important adult man is to {{user}}.",
+    "What adult romantic, sexual, compensated, professional, or emotional history he shares with {{char}}.",
+    "How serious, long-lasting, recent, or formative the old relationship was.",
+    "Why the old relationship ended.",
+    "How and when the two adults recognize each other.",
+    "What {{char}} previously told {{user}} about this man or that period.",
+    "What the man previously told {{user}} about {{char}} or his past.",
+    "Whether either person directly lied, selectively disclosed, protected privacy, or simply never had reason to mention the other.",
+    "Who wants the history disclosed or kept quiet now.",
+    "Whether old romantic or sexual feelings remain.",
+    "Whether the adults had any current contact before the introduction.",
+    "What the man wants from {{char}} now.",
+    "What {{char}} wants from the man now.",
+    "What visible awkwardness, familiarity, or contradictory details alert {{user}}.",
+    "Whether the current issue is historical coincidence, privacy, direct deception, family/friend/work fallout, rekindled feelings, or an active affair."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{user}} introduces his adult partner {{char}} to an important adult man in his life without realizing that the two already share meaningful history.",
+    "All romantic and sexual history in this source involves adults at the time it occurred.",
+    "If Father is selected, preserve the adult father connection and its family/social consequences without introducing incestuous framing.",
+    "If Adult Brother is selected, the brother and {{char}} were adults during any romantic/sexual history.",
+    "If Best Friend is selected, make the effect on {{user}}’s friendship materially relevant rather than treating the man as a generic ex.",
+    "If Boss is selected, keep professional authority and workplace consequences separate from sexual consent.",
+    "If Former FWB is selected, preserve a recurring casual adult history rather than silently converting it into a serious romance.",
+    "If Compensated-Dating History is selected, distinguish transaction, companionship, sex, affection, and present feelings instead of assuming they were identical.",
+    "If One-Night Stand is selected, preserve the possibility that the encounter was genuinely isolated and minor.",
+    "Do not assume that not naming every former partner is a lie. Establish what {{user}} asked, what each adult said, and what they deliberately concealed.",
+    "If either person directly denied knowing the other, preserve that as a concrete deception.",
+    "Do not assume old feelings remain merely because recognition is awkward.",
+    "Do not assume current contact merely because the two adults have extensive past history.",
+    "Do not turn current friendship with a former partner into infidelity without evidence of violated relationship boundaries.",
+    "Do not write {{user}}’s jealousy, anger, approval, confrontation, dialogue, forgiveness, breakup, family estrangement, or future choices as settled fact.",
+    "Do not frame {{char}} as a prize between {{user}} and the former partner.",
+    "Do not rank the men by sexual ability, wealth, status, age, authority, or experience as an objective conclusion.",
+    "If the old relationship involved infidelity, establish whose relationship boundaries were violated at that time.",
+    "If current romantic or sexual involvement exists, establish current relationship agreements separately from the historical reveal.",
+    "If a selected preset narrows identity, history, recognition, secrecy, feelings, current contact, or outcome, preserve it while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults, including during any historical encounter.",
+    "Past consensual adult sex does not create present sexual entitlement.",
+    "Privacy is not automatically deception; direct false statements are separate and should remain consequential when established.",
+    "Neither {{char}} nor the man is required to provide graphic sexual details or expose unrelated adults to explain the broad truth.",
+    "Do not romanticize blackmail, threats, workplace retaliation, financial leverage, family coercion, or professional authority.",
+    "Do not force {{char}} to resume contact with a former partner or force {{user}} to accept that contact.",
+    "Do not force {{user}} to forgive a direct lie, approve renewed attraction, end the relationship, or sever an important family/friend/work relationship.",
+    "Do not treat father/brother variants as incest; the man’s family relationship is to {{user}}, not to {{char}}.",
+    "Do not use age difference itself as proof of manipulation or superiority; if a power imbalance mattered, establish the concrete adult circumstances.",
+    "Do not use cosmetic changes of names, jobs, or locations as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Father, stepfather, adult brother, brother-in-law, best friend, childhood friend, long-term friend, roommate, boss, coworker, business partner, mentor, family friend, community leader, hobby friend, online friend, neighbour, or other important adult man",
+    "Former boyfriend, fiancé, husband, FWB, one-night stand, fling, holiday romance, workplace relationship, compensated dating, adult-work history, content collaboration, kink partner, ENM connection, friendship-to-lovers, emotional affair, or platonic secret history",
+    "One night, weekend, few dates, weeks, months, year, years, on-and-off, intense brief relationship, long-running casual arrangement, first serious partner, first adult sexual partner, or minor historical encounter",
+    "Immediate mutual recognition, {{char}} first, man first, delayed recognition, voice, name, old place, nickname, photograph, alias, pretending not to recognize, or {{user}} noticing familiarity first",
+    "No disclosure, unnamed ex, nickname/alias, broad honest disclosure, selective truth, just-friends story, denial of knowing, denial of sex, timing lie, duration lie, current-contact lie, privacy protection, or planned disclosure",
+    "Neither wants secrecy, {{char}} wants secrecy, man wants secrecy, both want secrecy, conflicting disclosure goals, temporary privacy, family/work/adult-work consequences, overlap concerns, lingering-feelings concern, or accidental delay",
+    "No feelings, nostalgia, awkward neutrality, one-sided love, mutual love, sexual attraction, rekindled chemistry, anger, regret, guilt, gratitude, indifference, idealized memory, or one-that-got-away feelings",
+    "No contact, social media, rare messages, friendship, close friendship, coworkers, social circle, hobby community, recently reconnected, secretly reconnected, emotional affair, sexual affair, consensual outside relationship, or unavoidable family/professional contact",
+    "Mutual breakup, distance, career, life goals, commitment mismatch, casual arrangement ending, new partner, infidelity, family pressure, workplace complications, adult life-stage difference, ENM mismatch, ghosting, drift, or no relationship to end",
+    "Man wants nothing, friendship, distance, closure, apology, renewed romance, sex, FWB, disclosure, secrecy, family peace, professional boundaries, or unclear goals",
+    "{{char}} wants nothing, friendship, distance, closure, apology, renewed romance, sex, FWB, disclosure, privacy, protection of {{user}}, new boundaries, or unclear goals",
+    "Family dinner, meeting parents, brother visit, best-friend drinks, party, wedding, workplace, work dinner, cafe, home, holiday, travel, convention, video call, photo/name before meeting, or surprise encounter",
+    "Historical clarification, privacy disagreement, direct-lie reveal, family fallout, friendship fallout, workplace fallout, rekindled feelings, current friendship, current affair, or no forced outcome"
+  ],
+  "cross_links": [
+    "Her Secret Past",
+    "The Man From Her Past",
+    "He Trained Your Girlfriend",
+    "Under Your Nose",
+    "Open Relationship",
+    "Reformed Slut",
+    "NTR Report"
+  ],
+  "tags": [
+    "adult",
+    "hidden shared history",
+    "former partner",
+    "ex",
+    "best friend",
+    "father",
+    "adult brother",
+    "boss",
+    "former fwb",
+    "compensated dating",
+    "one-night stand",
+    "recognition",
+    "relationship trust",
+    "secret history"
+  ],
+  "notes": "Expanded from Series Bible I #23. The original seven seeds—Father, Adult Brother, Best Friend, Boss, Former FWB, Compensated-Dating History, and One-Night Stand—are preserved with their original preset IDs. The source explicitly separates past consensual history, prior disclosure, current contact, lingering feelings, and present-day deception, and treats recognition as potentially asymmetric.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied You Two Know Each Other? concepts in which {{user}} introduces his adult partner {{char}} to an important adult man in his life, unaware that the two already share a romantic or sexual history. Vary who the man is to {{user}}, what he and {{char}} were to each other, how serious and long-lasting the history was, why it ended, whether either person previously lied or merely never disclosed it, who recognizes whom first, who wants the history kept quiet, what each person wants now, whether old feelings remain, and whether current contact is innocent, awkward, tempting, or actively deceptive. Do not pre-write {{user}}’s reaction or decisions."
+    },
+    {
+      "id": "father",
+      "group": "02 Original Bible Seeds",
+      "title": "Father",
+      "direction": "The important man is {{user}}’s adult father, and he and {{char}} share a past adult romantic or sexual history. All romantic/sexual contact must have occurred when {{char}} was an adult."
+    },
+    {
+      "id": "adult-brother",
+      "group": "02 Original Bible Seeds",
+      "title": "Adult Brother",
+      "direction": "The important man is {{user}}’s adult brother, who previously had an adult romantic or sexual history with {{char}}."
+    },
+    {
+      "id": "best-friend",
+      "group": "02 Original Bible Seeds",
+      "title": "Best Friend",
+      "direction": "The important man is {{user}}’s adult best friend, who already knows {{char}} far more intimately than {{user}} realizes."
+    },
+    {
+      "id": "boss",
+      "group": "02 Original Bible Seeds",
+      "title": "Boss",
+      "direction": "The important man is {{user}}’s adult boss or senior workplace contact. Keep any past workplace authority separate from consent and do not assume professional leverage."
+    },
+    {
+      "id": "former-fwb",
+      "group": "02 Original Bible Seeds",
+      "title": "Former FWB",
+      "direction": "The man and {{char}} previously had a consensual adult friends-with-benefits or recurring casual relationship."
+    },
+    {
+      "id": "compensated-dating-history",
+      "group": "02 Original Bible Seeds",
+      "title": "Compensated-Dating History",
+      "direction": "The man and {{char}} share a past consensual adult compensated-dating arrangement. Distinguish transaction, affection, friendship, and present motives."
+    },
+    {
+      "id": "one-night-stand",
+      "group": "02 Original Bible Seeds",
+      "title": "One-Night Stand",
+      "direction": "The man and {{char}} once had a consensual adult one-night stand that neither expected to matter again until the introduction."
+    },
+    {
+      "id": "g03-father",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Father",
+      "direction": "The man is {{user}}’s adult father."
+    },
+    {
+      "id": "g03-stepfather",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Stepfather",
+      "direction": "The man is {{user}}’s adult stepfather; no biological or adoptive relation exists between him and {{char}}."
+    },
+    {
+      "id": "g03-adult-brother",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Adult Brother",
+      "direction": "The man is {{user}}’s adult brother."
+    },
+    {
+      "id": "g03-older-adult-brother",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Older Adult Brother",
+      "direction": "The man is an older adult brother with an established independent life."
+    },
+    {
+      "id": "g03-younger-adult-brother",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Younger Adult Brother",
+      "direction": "The man is a younger but clearly adult brother."
+    },
+    {
+      "id": "g03-brother-in-law",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Brother-in-Law",
+      "direction": "The man is an adult brother-in-law important to {{user}}."
+    },
+    {
+      "id": "g03-best-friend",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Best Friend",
+      "direction": "The man is {{user}}’s closest adult friend."
+    },
+    {
+      "id": "g03-childhood-friend",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Childhood Friend",
+      "direction": "The man has known {{user}} since childhood and remains important in adulthood."
+    },
+    {
+      "id": "g03-long-term-friend",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Long-Term Friend",
+      "direction": "The man is a trusted friend of many years."
+    },
+    {
+      "id": "g03-new-close-friend",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "New Close Friend",
+      "direction": "The man only recently became important to {{user}}."
+    },
+    {
+      "id": "g03-roommate",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Roommate",
+      "direction": "The man is {{user}}’s adult roommate or housemate."
+    },
+    {
+      "id": "g03-former-roommate",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Former Roommate",
+      "direction": "The man once lived with {{user}} and remains close."
+    },
+    {
+      "id": "g03-boss",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Boss",
+      "direction": "The man is {{user}}’s boss."
+    },
+    {
+      "id": "g03-senior-coworker",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Senior Coworker",
+      "direction": "The man is a senior adult colleague or team lead."
+    },
+    {
+      "id": "g03-coworker",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Coworker",
+      "direction": "The man is an adult coworker whom {{user}} considers a friend."
+    },
+    {
+      "id": "g03-business-partner",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Business Partner",
+      "direction": "The man is {{user}}’s adult business partner."
+    },
+    {
+      "id": "g03-mentor",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Mentor",
+      "direction": "The man is an adult mentor in {{user}}’s professional or personal life; do not imply authority over {{char}}."
+    },
+    {
+      "id": "g03-former-teacher-lecturer",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Former Teacher / Lecturer",
+      "direction": "The man was once {{user}}’s teacher or lecturer but the present relationship is between adults."
+    },
+    {
+      "id": "g03-coach-trainer",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Coach / Trainer",
+      "direction": "The man is an adult coach or trainer important to {{user}}."
+    },
+    {
+      "id": "g03-neighbour",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Neighbour",
+      "direction": "The man is a trusted adult neighbour."
+    },
+    {
+      "id": "g03-family-friend",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Family Friend",
+      "direction": "The man is a long-standing adult family friend."
+    },
+    {
+      "id": "g03-fathers-best-friend",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Father’s Best Friend",
+      "direction": "The man is an older adult family friend closely connected to {{user}}’s father."
+    },
+    {
+      "id": "g03-uncle-by-marriage-family-connection",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Uncle by Marriage / Family Connection",
+      "direction": "The man is an adult family connection without any romantic/sexual relation to {{char}} by family status."
+    },
+    {
+      "id": "g03-pastor-community-leader",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Pastor / Community Leader",
+      "direction": "The man is an adult community or religious leader known personally to {{user}}; do not use authority as sexual leverage."
+    },
+    {
+      "id": "g03-club-hobby-friend",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Club / Hobby Friend",
+      "direction": "The man is important to {{user}} through a shared adult hobby or club."
+    },
+    {
+      "id": "g03-gaming-friend",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Gaming Friend",
+      "direction": "The man is an adult gaming friend now meeting {{char}} in person."
+    },
+    {
+      "id": "g03-online-friend",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Online Friend",
+      "direction": "The man is a long-term adult online friend whom {{user}} finally introduces to {{char}}."
+    },
+    {
+      "id": "g03-old-school-friend",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Old School Friend",
+      "direction": "The man is an adult friend from {{user}}’s school years."
+    },
+    {
+      "id": "g03-travel-friend",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Travel Friend",
+      "direction": "The man became close to {{user}} through travel or an event."
+    },
+    {
+      "id": "g03-doctor-professional-acquaintance",
+      "group": "03 Who the Man Is to {{user}}",
+      "title": "Doctor / Professional Acquaintance",
+      "direction": "The man is an adult professional acquaintance important to {{user}}; keep professional ethics and prior relationships distinct."
+    },
+    {
+      "id": "g04-former-boyfriend",
+      "group": "04 What Past Relationship They Had",
+      "title": "Former Boyfriend",
+      "direction": "The man and {{char}} had a genuine adult boyfriend/girlfriend relationship."
+    },
+    {
+      "id": "g04-former-fianc",
+      "group": "04 What Past Relationship They Had",
+      "title": "Former Fiancé",
+      "direction": "The pair were once engaged as adults but never married."
+    },
+    {
+      "id": "g04-former-husband",
+      "group": "04 What Past Relationship They Had",
+      "title": "Former Husband",
+      "direction": "The man is {{char}}’s former husband, and {{user}} did not realize who he was."
+    },
+    {
+      "id": "g04-former-fwb",
+      "group": "04 What Past Relationship They Had",
+      "title": "Former FWB",
+      "direction": "They maintained a recurring consensual adult friends-with-benefits arrangement."
+    },
+    {
+      "id": "g04-one-night-stand",
+      "group": "04 What Past Relationship They Had",
+      "title": "One-Night Stand",
+      "direction": "They had one consensual adult sexual encounter."
+    },
+    {
+      "id": "g04-brief-fling",
+      "group": "04 What Past Relationship They Had",
+      "title": "Brief Fling",
+      "direction": "They had a short adult romantic/sexual fling."
+    },
+    {
+      "id": "g04-summer-holiday-romance",
+      "group": "04 What Past Relationship They Had",
+      "title": "Summer / Holiday Romance",
+      "direction": "They shared a temporary adult romance during travel or a holiday."
+    },
+    {
+      "id": "g04-workplace-affair",
+      "group": "04 What Past Relationship They Had",
+      "title": "Workplace Affair",
+      "direction": "They had a secret adult workplace relationship. Establish whether either was partnered at the time rather than assuming."
+    },
+    {
+      "id": "g04-coworker-romance",
+      "group": "04 What Past Relationship They Had",
+      "title": "Coworker Romance",
+      "direction": "They dated while working together without necessarily hiding it."
+    },
+    {
+      "id": "g04-compensated-dating",
+      "group": "04 What Past Relationship They Had",
+      "title": "Compensated Dating",
+      "direction": "Their history involved consensual adult compensated dating."
+    },
+    {
+      "id": "g04-escort-client-history",
+      "group": "04 What Past Relationship They Had",
+      "title": "Escort / Client History",
+      "direction": "Where lawful, the history involved adult paid companionship or escort/client contact; distinguish work from romance."
+    },
+    {
+      "id": "g04-adult-content-collaboration",
+      "group": "04 What Past Relationship They Had",
+      "title": "Adult-Content Collaboration",
+      "direction": "They created consensual adult content together without necessarily being a couple."
+    },
+    {
+      "id": "g04-kink-partner",
+      "group": "04 What Past Relationship They Had",
+      "title": "Kink Partner",
+      "direction": "They were adult kink/BDSM partners under negotiated boundaries."
+    },
+    {
+      "id": "g04-swinging-enm-connection",
+      "group": "04 What Past Relationship They Had",
+      "title": "Swinging / ENM Connection",
+      "direction": "They met through consensual non-monogamy, swinging, or an open-relationship community."
+    },
+    {
+      "id": "g04-friend-who-became-lover",
+      "group": "04 What Past Relationship They Had",
+      "title": "Friend Who Became Lover",
+      "direction": "A friendship became sexual or romantic for a period."
+    },
+    {
+      "id": "g04-lovers-who-became-friends",
+      "group": "04 What Past Relationship They Had",
+      "title": "Lovers Who Became Friends",
+      "direction": "Their adult sexual/romantic relationship ended, but friendship survived."
+    },
+    {
+      "id": "g04-secret-crush-became-one-encounter",
+      "group": "04 What Past Relationship They Had",
+      "title": "Secret Crush Became One Encounter",
+      "direction": "Longstanding attraction led to one adult encounter."
+    },
+    {
+      "id": "g04-unrequited-past",
+      "group": "04 What Past Relationship They Had",
+      "title": "Unrequited Past",
+      "direction": "Only one of them had romantic feelings; any sexual history is absent unless separately selected."
+    },
+    {
+      "id": "g04-almost-dated",
+      "group": "04 What Past Relationship They Had",
+      "title": "Almost Dated",
+      "direction": "They came close to dating or kissing but never actually became a couple."
+    },
+    {
+      "id": "g04-kissed-once",
+      "group": "04 What Past Relationship They Had",
+      "title": "Kissed Once",
+      "direction": "Their physical history is limited to a consensual kiss or brief romantic moment."
+    },
+    {
+      "id": "g04-dates-but-no-sex",
+      "group": "04 What Past Relationship They Had",
+      "title": "Dates but No Sex",
+      "direction": "They had adult dates or romance without sexual involvement."
+    },
+    {
+      "id": "g04-sex-but-no-romance",
+      "group": "04 What Past Relationship They Had",
+      "title": "Sex but No Romance",
+      "direction": "Their adult sexual history was explicitly casual."
+    },
+    {
+      "id": "g04-long-emotional-affair",
+      "group": "04 What Past Relationship They Had",
+      "title": "Long Emotional Affair",
+      "direction": "They had a concealed emotional relationship; physical sex may or may not have occurred."
+    },
+    {
+      "id": "g04-past-cheating-partner",
+      "group": "04 What Past Relationship They Had",
+      "title": "Past Cheating Partner",
+      "direction": "Their history involved infidelity in a previous relationship. Keep that past violation separate from current behavior."
+    },
+    {
+      "id": "g04-open-relationship-outside-partner",
+      "group": "04 What Past Relationship They Had",
+      "title": "Open-Relationship Outside Partner",
+      "direction": "They were legitimate outside partners under a consensual adult ENM agreement."
+    },
+    {
+      "id": "g04-anonymous-hookup-later-recognized",
+      "group": "04 What Past Relationship They Had",
+      "title": "Anonymous Hookup Later Recognized",
+      "direction": "They first met in an adult anonymous/casual setting and later learned more about each other."
+    },
+    {
+      "id": "g04-recurring-customer-worker-relationship",
+      "group": "04 What Past Relationship They Had",
+      "title": "Recurring Customer / Worker Relationship",
+      "direction": "They knew each other through adult work or compensated services without necessarily being personally close."
+    },
+    {
+      "id": "g04-platonic-secret-history",
+      "group": "04 What Past Relationship They Had",
+      "title": "Platonic Secret History",
+      "direction": "They actually share an important nonsexual history, and {{user}} initially mistakes their awkwardness for romantic history."
+    },
+    {
+      "id": "g05-one-night-only",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "One Night Only",
+      "direction": "The entire adult sexual history consists of a single encounter."
+    },
+    {
+      "id": "g05-one-weekend",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "One Weekend",
+      "direction": "Their history was limited to one short period or trip."
+    },
+    {
+      "id": "g05-a-few-dates",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "A Few Dates",
+      "direction": "They saw each other a handful of times."
+    },
+    {
+      "id": "g05-several-weeks",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Several Weeks",
+      "direction": "The relationship was brief but sustained for weeks."
+    },
+    {
+      "id": "g05-several-months",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Several Months",
+      "direction": "They had a meaningful adult relationship lasting months."
+    },
+    {
+      "id": "g05-about-a-year",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "About a Year",
+      "direction": "Their relationship lasted roughly a year."
+    },
+    {
+      "id": "g05-several-years",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Several Years",
+      "direction": "The pair were together or repeatedly involved for several years."
+    },
+    {
+      "id": "g05-on-and-off-for-years",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "On-and-Off for Years",
+      "direction": "They repeatedly separated and reconnected over a long adult period."
+    },
+    {
+      "id": "g05-long-relationship-little-sex",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Long Relationship, Little Sex",
+      "direction": "The history was emotionally serious but not especially sexual."
+    },
+    {
+      "id": "g05-mostly-sexual-little-romance",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Mostly Sexual, Little Romance",
+      "direction": "The relationship was recurring but emotionally casual."
+    },
+    {
+      "id": "g05-intense-but-brief",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Intense but Brief",
+      "direction": "A short period was unusually emotionally or sexually significant."
+    },
+    {
+      "id": "g05-casual-but-long-running",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Casual but Long-Running",
+      "direction": "The arrangement lasted a long time without becoming a conventional relationship."
+    },
+    {
+      "id": "g05-first-serious-relationship",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "First Serious Relationship",
+      "direction": "The man was {{char}}’s first serious adult partner."
+    },
+    {
+      "id": "g05-first-adult-sexual-partner",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "First Adult Sexual Partner",
+      "direction": "The man was {{char}}’s first adult sexual partner."
+    },
+    {
+      "id": "g05-most-important-ex",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Most Important Ex",
+      "direction": "He was one of the most significant adult relationships in {{char}}’s past."
+    },
+    {
+      "id": "g05-one-of-many-exes",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "One of Many Exes",
+      "direction": "The history is real but not uniquely important to {{char}}."
+    },
+    {
+      "id": "g05-hardly-remembered",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Hardly Remembered",
+      "direction": "One or both regard the old encounter as minor enough that recognition takes time."
+    },
+    {
+      "id": "g05-ended-years-ago",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Ended Years Ago",
+      "direction": "The relationship is distant history."
+    },
+    {
+      "id": "g05-ended-shortly-before-user",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Ended Shortly Before {{user}}",
+      "direction": "The relationship ended only shortly before {{char}} met or dated {{user}}."
+    },
+    {
+      "id": "g05-overlapped-with-early-dating",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Overlapped With Early Dating",
+      "direction": "The timing overlaps with {{char}} and {{user}} beginning to date; establish when exclusivity actually started."
+    },
+    {
+      "id": "g05-ended-before-exclusivity",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Ended Before Exclusivity",
+      "direction": "Their final contact occurred before {{char}} and {{user}} agreed to be exclusive."
+    },
+    {
+      "id": "g05-continued-after-exclusivity",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Continued After Exclusivity",
+      "direction": "Some contact continued after a monogamous agreement, creating a distinct present/past deception issue."
+    },
+    {
+      "id": "g05-history-is-hard-to-define",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "History Is Hard to Define",
+      "direction": "The pair disagree about whether they were dating, FWB, or merely hooking up."
+    },
+    {
+      "id": "g06-both-recognize-immediately",
+      "group": "06 How Recognition Happens",
+      "title": "Both Recognize Immediately",
+      "direction": "{{char}} and the man identify each other the moment they meet."
+    },
+    {
+      "id": "g06-char-recognizes-first",
+      "group": "06 How Recognition Happens",
+      "title": "{{char}} Recognizes First",
+      "direction": "She immediately knows who he is while he needs more context."
+    },
+    {
+      "id": "g06-man-recognizes-first",
+      "group": "06 How Recognition Happens",
+      "title": "Man Recognizes First",
+      "direction": "He recognizes {{char}} before she recognizes him."
+    },
+    {
+      "id": "g06-neither-recognizes-at-first",
+      "group": "06 How Recognition Happens",
+      "title": "Neither Recognizes at First",
+      "direction": "Changes in age, appearance, surname, or context delay recognition for both."
+    },
+    {
+      "id": "g06-voice-triggers-recognition",
+      "group": "06 How Recognition Happens",
+      "title": "Voice Triggers Recognition",
+      "direction": "A familiar voice or manner of speaking causes the realization."
+    },
+    {
+      "id": "g06-name-triggers-recognition",
+      "group": "06 How Recognition Happens",
+      "title": "Name Triggers Recognition",
+      "direction": "A full name, nickname, former surname, or alias suddenly connects the dots."
+    },
+    {
+      "id": "g06-shared-place-mentioned",
+      "group": "06 How Recognition Happens",
+      "title": "Shared Place Mentioned",
+      "direction": "Mentioning an old workplace, university, city, venue, or trip triggers recognition."
+    },
+    {
+      "id": "g06-inside-joke-slips-out",
+      "group": "06 How Recognition Happens",
+      "title": "Inside Joke Slips Out",
+      "direction": "One person accidentally references something only they should share."
+    },
+    {
+      "id": "g06-old-nickname",
+      "group": "06 How Recognition Happens",
+      "title": "Old Nickname",
+      "direction": "The man uses a nickname {{user}} has never heard."
+    },
+    {
+      "id": "g06-too-familiar-greeting",
+      "group": "06 How Recognition Happens",
+      "title": "Too-Familiar Greeting",
+      "direction": "Their greeting is noticeably warmer or more awkward than strangers would be."
+    },
+    {
+      "id": "g06-handshake-turns-into-recognition",
+      "group": "06 How Recognition Happens",
+      "title": "Handshake Turns Into Recognition",
+      "direction": "A formal introduction becomes visibly uncomfortable as memory catches up."
+    },
+    {
+      "id": "g06-photograph-recognition",
+      "group": "06 How Recognition Happens",
+      "title": "Photograph Recognition",
+      "direction": "One recognizes the other from an old photo before the in-person meeting."
+    },
+    {
+      "id": "g06-social-media-recognition",
+      "group": "06 How Recognition Happens",
+      "title": "Social Media Recognition",
+      "direction": "A profile or tagged photo revealed the identity shortly before meeting."
+    },
+    {
+      "id": "g06-changed-appearance-delays-it",
+      "group": "06 How Recognition Happens",
+      "title": "Changed Appearance Delays It",
+      "direction": "Weight, hair, age, style, or facial hair makes recognition slower."
+    },
+    {
+      "id": "g06-stage-name-vs-real-name",
+      "group": "06 How Recognition Happens",
+      "title": "Stage Name vs Real Name",
+      "direction": "They knew each other under a pseudonym or adult-work name."
+    },
+    {
+      "id": "g06-different-surname",
+      "group": "06 How Recognition Happens",
+      "title": "Different Surname",
+      "direction": "A changed surname prevented earlier name recognition."
+    },
+    {
+      "id": "g06-anonymous-past-context",
+      "group": "06 How Recognition Happens",
+      "title": "Anonymous Past Context",
+      "direction": "They knew each other in a setting where real identities were minimized."
+    },
+    {
+      "id": "g06-only-recognizes-after-conversation",
+      "group": "06 How Recognition Happens",
+      "title": "Only Recognizes After Conversation",
+      "direction": "Several minutes of ordinary conversation are needed before certainty develops."
+    },
+    {
+      "id": "g06-pretends-not-to-recognize",
+      "group": "06 How Recognition Happens",
+      "title": "Pretends Not to Recognize",
+      "direction": "One or both identify each other immediately but deliberately act like strangers."
+    },
+    {
+      "id": "g06-recognition-is-mistaken-at-first",
+      "group": "06 How Recognition Happens",
+      "title": "Recognition Is Mistaken at First",
+      "direction": "One person thinks they know the other but initially has the wrong history."
+    },
+    {
+      "id": "g06-third-party-mentions-the-connection",
+      "group": "06 How Recognition Happens",
+      "title": "Third Party Mentions the Connection",
+      "direction": "Someone else realizes the pair have met before."
+    },
+    {
+      "id": "g06-user-notices-before-they-admit-it",
+      "group": "06 How Recognition Happens",
+      "title": "{{user}} Notices Before They Admit It",
+      "direction": "Their body language makes {{user}} suspect familiarity before either speaks."
+    },
+    {
+      "id": "g07-char-never-mentioned-him",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Never Mentioned Him",
+      "direction": "She never brought up this particular man."
+    },
+    {
+      "id": "g07-char-mentioned-an-ex-without-naming-him",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Mentioned an Ex Without Naming Him",
+      "direction": "{{user}} knew there was a former partner but not his identity."
+    },
+    {
+      "id": "g07-char-used-a-first-name-only",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Used a First Name Only",
+      "direction": "She told stories about him without enough information for {{user}} to connect them."
+    },
+    {
+      "id": "g07-char-used-a-nickname-alias",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Used a Nickname / Alias",
+      "direction": "The man was described under a nickname or pseudonym."
+    },
+    {
+      "id": "g07-char-gave-a-sanitized-version",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Gave a Sanitized Version",
+      "direction": "She acknowledged knowing him but understated the romantic or sexual history."
+    },
+    {
+      "id": "g07-char-said-they-were-just-friends",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Said They Were Just Friends",
+      "direction": "She explicitly described a past sexual/romantic partner as platonic."
+    },
+    {
+      "id": "g07-char-denied-knowing-him",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Denied Knowing Him",
+      "direction": "She previously said she had never met him."
+    },
+    {
+      "id": "g07-char-denied-sleeping-with-him",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Denied Sleeping With Him",
+      "direction": "She admitted knowing him but explicitly denied sexual history."
+    },
+    {
+      "id": "g07-char-denied-dating-him",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Denied Dating Him",
+      "direction": "She admitted friendship or sex but denied a romantic relationship."
+    },
+    {
+      "id": "g07-char-lied-about-duration",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Lied About Duration",
+      "direction": "She made the relationship sound much shorter than it was."
+    },
+    {
+      "id": "g07-char-lied-about-timing",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Lied About Timing",
+      "direction": "She changed when the history supposedly ended."
+    },
+    {
+      "id": "g07-char-lied-about-current-contact",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Lied About Current Contact",
+      "direction": "She claimed there had been no contact when some continued."
+    },
+    {
+      "id": "g07-char-told-user-broadly",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Told {{user}} Broadly",
+      "direction": "She disclosed the important facts, but {{user}} never realized the man being introduced was that person."
+    },
+    {
+      "id": "g07-char-told-user-everything-except-identity",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Told {{user}} Everything Except Identity",
+      "direction": "The history was honestly discussed while the man’s identity remained private."
+    },
+    {
+      "id": "g07-char-thought-it-was-irrelevant",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Thought It Was Irrelevant",
+      "direction": "She saw the history as finished and did not think every former partner needed naming."
+    },
+    {
+      "id": "g07-char-protected-his-privacy",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Protected His Privacy",
+      "direction": "She deliberately avoided identifying him to respect the other adult’s privacy."
+    },
+    {
+      "id": "g07-char-planned-to-tell-user-before-meeting",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Planned to Tell {{user}} Before Meeting",
+      "direction": "She intended to disclose the connection but the introduction happens before she gets the chance."
+    },
+    {
+      "id": "g07-char-realizes-too-late-who-user-means",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Realizes Too Late Who {{user}} Means",
+      "direction": "She did not know which person {{user}} planned to introduce."
+    },
+    {
+      "id": "g07-char-asked-not-to-meet-him",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Asked Not to Meet Him",
+      "direction": "She previously resisted an introduction without explaining why."
+    },
+    {
+      "id": "g07-char-warned-user-they-had-history",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "{{char}} Warned {{user}} They Had History",
+      "direction": "The introduction is awkward but not actually a secret from {{user}}."
+    },
+    {
+      "id": "g07-never-asked-never-told",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "Never Asked / Never Told",
+      "direction": "The couple never discussed names or detailed histories at all."
+    },
+    {
+      "id": "g08-man-never-mentioned-char",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Never Mentioned {{char}}",
+      "direction": "The man never told {{user}} he knew her."
+    },
+    {
+      "id": "g08-man-mentioned-an-ex-without-naming-her",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Mentioned an Ex Without Naming Her",
+      "direction": "{{user}} has heard stories but never knew the woman was {{char}}."
+    },
+    {
+      "id": "g08-man-used-a-nickname-alias",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Used a Nickname / Alias",
+      "direction": "He discussed her under a name {{user}} would not connect to {{char}}."
+    },
+    {
+      "id": "g08-man-said-they-were-just-friends",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Said They Were Just Friends",
+      "direction": "He deliberately minimized a romantic/sexual history."
+    },
+    {
+      "id": "g08-man-denied-knowing-her",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Denied Knowing Her",
+      "direction": "He previously said he had never met {{char}}."
+    },
+    {
+      "id": "g08-man-denied-sleeping-with-her",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Denied Sleeping With Her",
+      "direction": "He admitted knowing her but denied sexual history."
+    },
+    {
+      "id": "g08-man-lied-about-duration",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Lied About Duration",
+      "direction": "He substantially minimized how long the relationship lasted."
+    },
+    {
+      "id": "g08-man-lied-about-timing",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Lied About Timing",
+      "direction": "He shifted dates to hide overlap or context."
+    },
+    {
+      "id": "g08-man-protected-chars-privacy",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Protected {{char}}’s Privacy",
+      "direction": "He intentionally did not expose an ex-partner’s identity to {{user}}."
+    },
+    {
+      "id": "g08-man-thought-it-was-irrelevant",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Thought It Was Irrelevant",
+      "direction": "He had no reason to expect {{user}} would ever date her."
+    },
+    {
+      "id": "g08-man-did-not-know-she-was-users-partner",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Did Not Know She Was {{user}}’s Partner",
+      "direction": "He had heard {{user}} had a partner but did not know her identity."
+    },
+    {
+      "id": "g08-man-knew-but-waited-for-her-to-tell",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Knew but Waited for Her to Tell",
+      "direction": "He recognized the connection earlier but believed disclosure belonged to {{char}}."
+    },
+    {
+      "id": "g08-man-planned-to-tell-user",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Planned to Tell {{user}}",
+      "direction": "He intended to disclose the history before the meeting but lost the opportunity."
+    },
+    {
+      "id": "g08-man-told-user-broadly",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Told {{user}} Broadly",
+      "direction": "The important past was mentioned, but {{user}} failed to connect the identity."
+    },
+    {
+      "id": "g08-man-boasted-about-her-in-the-past",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Boasted About Her in the Past",
+      "direction": "{{user}} has heard intimate stories without knowing they involved his current partner."
+    },
+    {
+      "id": "g08-man-shared-photos-without-recognition",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Shared Photos Without Recognition",
+      "direction": "Old non-intimate pictures were shown but {{user}} did not connect them."
+    },
+    {
+      "id": "g08-man-never-knew-her-real-name",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Never Knew Her Real Name",
+      "direction": "Their adult history used aliases or limited personal information."
+    },
+    {
+      "id": "g08-man-forgot-her-surname",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Forgot Her Surname",
+      "direction": "He remembers the person but not enough details to connect her beforehand."
+    },
+    {
+      "id": "g08-man-thought-she-had-moved-away",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "Man Thought She Had Moved Away",
+      "direction": "He had no expectation she would reappear in his social life."
+    },
+    {
+      "id": "g08-no-previous-opportunity-to-tell",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "No Previous Opportunity to Tell",
+      "direction": "The connection genuinely never came up before the introduction."
+    },
+    {
+      "id": "g09-neither-wants-a-secret",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Neither Wants a Secret",
+      "direction": "Both adults prefer to explain the history promptly."
+    },
+    {
+      "id": "g09-char-wants-it-kept-quiet",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "{{char}} Wants It Kept Quiet",
+      "direction": "She wants the man to act like a stranger and not tell {{user}}."
+    },
+    {
+      "id": "g09-man-wants-it-kept-quiet",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Man Wants It Kept Quiet",
+      "direction": "He wants to avoid telling {{user}} about the past."
+    },
+    {
+      "id": "g09-both-want-it-kept-quiet",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Both Want It Kept Quiet",
+      "direction": "They silently agree to conceal the history."
+    },
+    {
+      "id": "g09-char-wants-to-tell-man-doesnt",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "{{char}} Wants to Tell, Man Doesn’t",
+      "direction": "Their goals diverge immediately after recognition."
+    },
+    {
+      "id": "g09-man-wants-to-tell-char-doesnt",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Man Wants to Tell, {{char}} Doesn’t",
+      "direction": "He believes {{user}} deserves to know while she wants privacy."
+    },
+    {
+      "id": "g09-both-need-time",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Both Need Time",
+      "direction": "Neither wants permanent secrecy, but both prefer not to disclose in the middle of the introduction."
+    },
+    {
+      "id": "g09-only-sexual-details-stay-private",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Only Sexual Details Stay Private",
+      "direction": "They agree the relationship can be acknowledged without graphic detail."
+    },
+    {
+      "id": "g09-only-identity-was-previously-private",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Only Identity Was Previously Private",
+      "direction": "The broad history was known; the surprise is who the former partner was."
+    },
+    {
+      "id": "g09-secret-because-of-family-consequences",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Secret Because of Family Consequences",
+      "direction": "The father/brother/family-connected variant creates wider family fallout."
+    },
+    {
+      "id": "g09-secret-because-of-workplace-consequences",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Secret Because of Workplace Consequences",
+      "direction": "A boss/coworker connection could affect professional relationships."
+    },
+    {
+      "id": "g09-secret-because-of-adult-work",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Secret Because of Adult Work",
+      "direction": "Compensated dating or adult-work history creates privacy concerns."
+    },
+    {
+      "id": "g09-secret-because-one-cheated-back-then",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Secret Because One Cheated Back Then",
+      "direction": "Their old relationship involved infidelity they do not want revisited."
+    },
+    {
+      "id": "g09-secret-because-timing-overlapped-user",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Secret Because Timing Overlapped {{user}}",
+      "direction": "The adults want to hide possible overlap with the current relationship."
+    },
+    {
+      "id": "g09-secret-because-they-still-talk",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Secret Because They Still Talk",
+      "direction": "Current contact is the most sensitive part."
+    },
+    {
+      "id": "g09-secret-because-feelings-remain",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Secret Because Feelings Remain",
+      "direction": "One or both fears current attraction will become obvious."
+    },
+    {
+      "id": "g09-secret-to-protect-another-former-partner",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Secret to Protect Another Former Partner",
+      "direction": "Disclosure would reveal information about a third adult."
+    },
+    {
+      "id": "g09-secret-is-accidental-not-planned",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Secret Is Accidental, Not Planned",
+      "direction": "They simply freeze and fail to explain immediately."
+    },
+    {
+      "id": "g09-one-person-blurts-it-out",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "One Person Blurts It Out",
+      "direction": "Any attempt at secrecy collapses almost at once."
+    },
+    {
+      "id": "g09-user-already-knows-more-than-they-think",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "{{user}} Already Knows More Than They Think",
+      "direction": "Their efforts to hide it are unnecessary because {{user}} has enough prior context."
+    },
+    {
+      "id": "g10-no-feelings-remain",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "No Feelings Remain",
+      "direction": "Both regard the old relationship as finished history."
+    },
+    {
+      "id": "g10-warm-nostalgia",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Warm Nostalgia",
+      "direction": "They remember the past fondly without wanting it back."
+    },
+    {
+      "id": "g10-awkward-but-neutral",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Awkward but Neutral",
+      "direction": "The discomfort comes from the introduction, not lingering attraction."
+    },
+    {
+      "id": "g10-char-still-has-feelings",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "{{char}} Still Has Feelings",
+      "direction": "She retains adult romantic attachment to the man."
+    },
+    {
+      "id": "g10-man-still-has-feelings",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Man Still Has Feelings",
+      "direction": "He still cares romantically for {{char}}."
+    },
+    {
+      "id": "g10-both-still-have-feelings",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Both Still Have Feelings",
+      "direction": "Mutual attachment remains despite the passage of time."
+    },
+    {
+      "id": "g10-residual-physical-attraction",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Residual Physical Attraction",
+      "direction": "Sexual chemistry remains without romantic intent."
+    },
+    {
+      "id": "g10-char-still-wants-him-physically",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "{{char}} Still Wants Him Physically",
+      "direction": "She feels current adult sexual attraction but may have no intention to act."
+    },
+    {
+      "id": "g10-man-still-wants-her-physically",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Man Still Wants Her Physically",
+      "direction": "He remains attracted and may or may not pursue."
+    },
+    {
+      "id": "g10-mutual-chemistry-returns",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Mutual Chemistry Returns",
+      "direction": "Seeing each other again revives familiar attraction."
+    },
+    {
+      "id": "g10-one-misses-the-relationship-dynamic",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "One Misses the Relationship Dynamic",
+      "direction": "A former way of relating is missed more than the person."
+    },
+    {
+      "id": "g10-one-misses-the-person-not-the-sex",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "One Misses the Person, Not the Sex",
+      "direction": "Emotional attachment remains while sexual interest has faded."
+    },
+    {
+      "id": "g10-unresolved-anger",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Unresolved Anger",
+      "direction": "Past hurt dominates over attraction."
+    },
+    {
+      "id": "g10-embarrassment",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Embarrassment",
+      "direction": "They mainly wish this part of their history were not intersecting with {{user}}."
+    },
+    {
+      "id": "g10-regret",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Regret",
+      "direction": "One or both regrets how the old relationship ended."
+    },
+    {
+      "id": "g10-guilt",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Guilt",
+      "direction": "A past betrayal or lie makes the reunion uncomfortable."
+    },
+    {
+      "id": "g10-gratitude",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Gratitude",
+      "direction": "They appreciate what they once meant to each other without wanting reunion."
+    },
+    {
+      "id": "g10-indifference",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Indifference",
+      "direction": "One or both barely cares about the old connection now."
+    },
+    {
+      "id": "g10-old-love-was-idealized",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Old Love Was Idealized",
+      "direction": "Reunion makes one realize the memory was more powerful than present compatibility."
+    },
+    {
+      "id": "g10-the-one-who-got-away-feeling",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "The One Who Got Away Feeling",
+      "direction": "One or both wonders what might have happened if circumstances had been different."
+    },
+    {
+      "id": "g10-feelings-return-only-after-meeting",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Feelings Return Only After Meeting",
+      "direction": "There were no active feelings before the introduction, but seeing each other again changes that."
+    },
+    {
+      "id": "g10-feelings-are-misread-by-user",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Feelings Are Misread by {{user}}",
+      "direction": "Their awkwardness looks romantic even though no attraction remains."
+    },
+    {
+      "id": "g11-no-contact-since-breakup",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "No Contact Since Breakup",
+      "direction": "The introduction is their first contact in years."
+    },
+    {
+      "id": "g11-occasional-social-media-contact",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Occasional Social Media Contact",
+      "direction": "They have passive or rare online contact."
+    },
+    {
+      "id": "g11-rare-friendly-messages",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Rare Friendly Messages",
+      "direction": "They exchange occasional platonic messages."
+    },
+    {
+      "id": "g11-still-friends",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Still Friends",
+      "direction": "They maintain a genuine current friendship."
+    },
+    {
+      "id": "g11-close-friends",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Close Friends",
+      "direction": "They remain emotionally close despite the old sexual/romantic history."
+    },
+    {
+      "id": "g11-coworkers",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Coworkers",
+      "direction": "They are currently connected through work."
+    },
+    {
+      "id": "g11-same-social-circle",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Same Social Circle",
+      "direction": "They already overlap in a friend group."
+    },
+    {
+      "id": "g11-same-hobby-community",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Same Hobby Community",
+      "direction": "They see each other through a shared adult hobby."
+    },
+    {
+      "id": "g11-same-small-town",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Same Small Town",
+      "direction": "Geographic proximity makes occasional encounters normal."
+    },
+    {
+      "id": "g11-recently-reconnected",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Recently Reconnected",
+      "direction": "Contact resumed shortly before {{user}} introduces them."
+    },
+    {
+      "id": "g11-secretly-reconnected",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Secretly Reconnected",
+      "direction": "They have resumed contact without telling {{user}}."
+    },
+    {
+      "id": "g11-current-emotional-affair",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Current Emotional Affair",
+      "direction": "Their present relationship has become secretly emotionally intimate."
+    },
+    {
+      "id": "g11-current-sexual-affair",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Current Sexual Affair",
+      "direction": "They have resumed sexual contact in violation of a monogamous agreement."
+    },
+    {
+      "id": "g11-current-consensual-outside-relationship",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Current Consensual Outside Relationship",
+      "direction": "Their present sexual/romantic contact is allowed under a consensual arrangement."
+    },
+    {
+      "id": "g11-professional-contact-only",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Professional Contact Only",
+      "direction": "They interact for work but not socially."
+    },
+    {
+      "id": "g11-family-contact-only",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "Family Contact Only",
+      "direction": "Family connections create unavoidable contact without romance."
+    },
+    {
+      "id": "g11-no-current-contact-until-today",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "No Current Contact Until Today",
+      "direction": "The meeting genuinely comes out of nowhere."
+    },
+    {
+      "id": "g11-one-has-been-avoiding-the-other",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "One Has Been Avoiding the Other",
+      "direction": "Past history led one person to avoid settings where they might meet."
+    },
+    {
+      "id": "g11-they-have-been-secretly-friendly",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "They Have Been Secretly Friendly",
+      "direction": "The present contact is innocent but undisclosed."
+    },
+    {
+      "id": "g11-they-already-knew-about-the-introduction",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "They Already Knew About the Introduction",
+      "direction": "One or both recognized the name and anticipated the meeting."
+    },
+    {
+      "id": "g12-mutual-breakup",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Mutual Breakup",
+      "direction": "They ended the adult relationship by mutual agreement."
+    },
+    {
+      "id": "g12-distance",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Distance",
+      "direction": "Geography made the relationship impractical."
+    },
+    {
+      "id": "g12-career-move",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Career Move",
+      "direction": "Work or study moved one person away."
+    },
+    {
+      "id": "g12-different-life-goals",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Different Life Goals",
+      "direction": "They wanted incompatible futures."
+    },
+    {
+      "id": "g12-wanted-different-commitment-levels",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Wanted Different Commitment Levels",
+      "direction": "One wanted seriousness while the other did not."
+    },
+    {
+      "id": "g12-casual-arrangement-ran-its-course",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Casual Arrangement Ran Its Course",
+      "direction": "The FWB/casual relationship simply ended."
+    },
+    {
+      "id": "g12-one-fell-for-someone-else",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "One Fell for Someone Else",
+      "direction": "Another relationship became more important."
+    },
+    {
+      "id": "g12-infidelity",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Infidelity",
+      "direction": "Past cheating ended the relationship; establish who cheated rather than assuming."
+    },
+    {
+      "id": "g12-family-disapproval",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Family Disapproval",
+      "direction": "Family pressure contributed to the breakup."
+    },
+    {
+      "id": "g12-workplace-complications",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Workplace Complications",
+      "direction": "Professional consequences made the relationship unsustainable."
+    },
+    {
+      "id": "g12-age-life-stage-difference",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Age / Life-Stage Difference",
+      "direction": "Both were adults, but different adult life stages created incompatibility."
+    },
+    {
+      "id": "g12-compensated-arrangement-ended",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Compensated Arrangement Ended",
+      "direction": "The transactional relationship ended when circumstances or boundaries changed."
+    },
+    {
+      "id": "g12-client-worker-boundary-reasserted",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Client / Worker Boundary Reasserted",
+      "direction": "An adult-work relationship ended without romance."
+    },
+    {
+      "id": "g12-argument-betrayal",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Argument / Betrayal",
+      "direction": "A specific conflict broke trust."
+    },
+    {
+      "id": "g12-too-intense",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Too Intense",
+      "direction": "The relationship became emotionally overwhelming."
+    },
+    {
+      "id": "g12-one-wanted-monogamy",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "One Wanted Monogamy",
+      "direction": "Different relationship-structure preferences ended things."
+    },
+    {
+      "id": "g12-one-wanted-non-monogamy",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "One Wanted Non-Monogamy",
+      "direction": "They disagreed about exclusivity."
+    },
+    {
+      "id": "g12-one-was-not-ready",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "One Was Not Ready",
+      "direction": "An adult partner ended it because they were not ready for commitment."
+    },
+    {
+      "id": "g12-external-circumstances",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "External Circumstances",
+      "direction": "Housing, health, family obligations, or travel ended a relationship that otherwise worked."
+    },
+    {
+      "id": "g12-never-properly-ended",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Never Properly Ended",
+      "direction": "They drifted apart without clear closure."
+    },
+    {
+      "id": "g12-ghosted",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Ghosted",
+      "direction": "One adult abruptly ended contact."
+    },
+    {
+      "id": "g12-still-dont-agree-why",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "Still Don’t Agree Why",
+      "direction": "The pair retain different explanations for the breakup."
+    },
+    {
+      "id": "g12-no-relationship-to-end",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "No Relationship to End",
+      "direction": "For one-night stands or isolated encounters, there was never an ongoing relationship."
+    },
+    {
+      "id": "g13-nothing-romantic",
+      "group": "13 What the Man Wants Now",
+      "title": "Nothing Romantic",
+      "direction": "He wants no renewed romance or sex."
+    },
+    {
+      "id": "g13-ordinary-friendship",
+      "group": "13 What the Man Wants Now",
+      "title": "Ordinary Friendship",
+      "direction": "He would like a normal platonic friendship."
+    },
+    {
+      "id": "g13-polite-distance",
+      "group": "13 What the Man Wants Now",
+      "title": "Polite Distance",
+      "direction": "He prefers to keep the past buried and interactions civil."
+    },
+    {
+      "id": "g13-closure",
+      "group": "13 What the Man Wants Now",
+      "title": "Closure",
+      "direction": "He wants one honest conversation about how things ended."
+    },
+    {
+      "id": "g13-apology",
+      "group": "13 What the Man Wants Now",
+      "title": "Apology",
+      "direction": "He wants to apologize for something from the past."
+    },
+    {
+      "id": "g13-an-apology-from-char",
+      "group": "13 What the Man Wants Now",
+      "title": "An Apology From {{char}}",
+      "direction": "He feels {{char}} owes him an apology."
+    },
+    {
+      "id": "g13-wants-char-back",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants {{char}} Back",
+      "direction": "He hopes to resume a romantic relationship."
+    },
+    {
+      "id": "g13-wants-sex-again",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants Sex Again",
+      "direction": "He wants renewed adult sexual contact without necessarily seeking romance."
+    },
+    {
+      "id": "g13-wants-fwb-again",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants FWB Again",
+      "direction": "He proposes returning to a casual recurring arrangement."
+    },
+    {
+      "id": "g13-wants-to-see-if-chemistry-remains",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants to See If Chemistry Remains",
+      "direction": "He is curious rather than committed to an outcome."
+    },
+    {
+      "id": "g13-wants-to-protect-user",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants to Protect {{user}}",
+      "direction": "He prioritizes his relationship with {{user}} over any old attraction."
+    },
+    {
+      "id": "g13-wants-to-tell-user-immediately",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants to Tell {{user}} Immediately",
+      "direction": "He refuses to participate in secrecy."
+    },
+    {
+      "id": "g13-wants-char-to-tell-user",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants {{char}} to Tell {{user}}",
+      "direction": "He gives her the opportunity to disclose first."
+    },
+    {
+      "id": "g13-wants-the-secret-buried",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants the Secret Buried",
+      "direction": "He believes disclosure would only create harm."
+    },
+    {
+      "id": "g13-wants-to-boast",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants to Boast",
+      "direction": "He enjoys having intimate history with {{user}}’s partner. Treat boasting as ego, not proof of superiority."
+    },
+    {
+      "id": "g13-wants-to-tease-char",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants to Tease {{char}}",
+      "direction": "He playfully references old history without necessarily wanting her back."
+    },
+    {
+      "id": "g13-wants-to-avoid-her",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants to Avoid Her",
+      "direction": "He would prefer not to re-enter her life at all."
+    },
+    {
+      "id": "g13-wants-professional-boundaries",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants Professional Boundaries",
+      "direction": "If he is {{user}}’s boss/coworker, he wants the old relationship kept separate from work."
+    },
+    {
+      "id": "g13-wants-family-peace",
+      "group": "13 What the Man Wants Now",
+      "title": "Wants Family Peace",
+      "direction": "If he is father/brother/family-connected, avoiding family damage is his priority."
+    },
+    {
+      "id": "g13-doesnt-know-what-he-wants",
+      "group": "13 What the Man Wants Now",
+      "title": "Doesn’t Know What He Wants",
+      "direction": "The reunion unsettles him enough that his goals are not yet clear."
+    },
+    {
+      "id": "g14-nothing-romantic",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Nothing Romantic",
+      "direction": "{{char}} considers the old relationship fully finished."
+    },
+    {
+      "id": "g14-ordinary-friendship",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Ordinary Friendship",
+      "direction": "She would be comfortable with platonic contact."
+    },
+    {
+      "id": "g14-polite-distance",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Polite Distance",
+      "direction": "She wants minimal interaction."
+    },
+    {
+      "id": "g14-closure",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Closure",
+      "direction": "She wants to finally discuss how the old relationship ended."
+    },
+    {
+      "id": "g14-to-apologize",
+      "group": "14 What {{char}} Wants Now",
+      "title": "To Apologize",
+      "direction": "She feels she owes the man an apology."
+    },
+    {
+      "id": "g14-an-apology-from-him",
+      "group": "14 What {{char}} Wants Now",
+      "title": "An Apology From Him",
+      "direction": "She still wants acknowledgment of past hurt."
+    },
+    {
+      "id": "g14-wants-him-back",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Wants Him Back",
+      "direction": "She still or newly wants renewed romance."
+    },
+    {
+      "id": "g14-wants-sex-again",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Wants Sex Again",
+      "direction": "She is interested in renewed adult sexual contact without necessarily wanting romance."
+    },
+    {
+      "id": "g14-wants-fwb-again",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Wants FWB Again",
+      "direction": "She would consider resuming a casual arrangement."
+    },
+    {
+      "id": "g14-curious-about-chemistry",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Curious About Chemistry",
+      "direction": "She wonders whether the old attraction still exists."
+    },
+    {
+      "id": "g14-protect-user",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Protect {{user}}",
+      "direction": "Her priority is her current relationship and avoiding unnecessary harm."
+    },
+    {
+      "id": "g14-tell-user-immediately",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Tell {{user}} Immediately",
+      "direction": "She does not want the introduction to proceed under a false impression."
+    },
+    {
+      "id": "g14-tell-user-privately-later",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Tell {{user}} Privately Later",
+      "direction": "She wants to avoid a public disclosure scene."
+    },
+    {
+      "id": "g14-keep-the-past-private",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Keep the Past Private",
+      "direction": "She considers the history irrelevant and personal."
+    },
+    {
+      "id": "g14-hide-current-feelings",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Hide Current Feelings",
+      "direction": "She is more concerned about present attraction than historical sex."
+    },
+    {
+      "id": "g14-avoid-the-man",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Avoid the Man",
+      "direction": "She would rather not reopen the relationship at all."
+    },
+    {
+      "id": "g14-reclaim-ordinary-friendship",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Reclaim Ordinary Friendship",
+      "direction": "She wants him integrated into {{user}}’s life without romantic tension."
+    },
+    {
+      "id": "g14-set-new-boundaries",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Set New Boundaries",
+      "direction": "The surprise meeting makes her clarify distance from the former partner."
+    },
+    {
+      "id": "g14-wants-user-and-the-man-to-remain-close",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Wants {{user}} and the Man to Remain Close",
+      "direction": "She does not want their friendship/family/work relationship destroyed by the old history."
+    },
+    {
+      "id": "g14-doesnt-know-what-she-wants",
+      "group": "14 What {{char}} Wants Now",
+      "title": "Doesn’t Know What She Wants",
+      "direction": "Recognition produces conflicting nostalgia, fear, and attraction."
+    },
+    {
+      "id": "g15-family-dinner",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Family Dinner",
+      "direction": "{{user}} introduces {{char}} at an adult family dinner."
+    },
+    {
+      "id": "g15-meeting-the-parents",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Meeting the Parents",
+      "direction": "The connection surfaces during {{char}}’s first substantial meeting with {{user}}’s family."
+    },
+    {
+      "id": "g15-brother-visits",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Brother Visits",
+      "direction": "An adult brother visits and unexpectedly recognizes {{char}}."
+    },
+    {
+      "id": "g15-best-friend-drinks",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Best Friend Drinks",
+      "direction": "{{user}} brings {{char}} to meet his best friend over drinks."
+    },
+    {
+      "id": "g15-house-party",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "House Party",
+      "direction": "A social gathering produces the introduction."
+    },
+    {
+      "id": "g15-birthday-party",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Birthday Party",
+      "direction": "The meeting happens during an adult birthday celebration."
+    },
+    {
+      "id": "g15-wedding-engagement-event",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Wedding / Engagement Event",
+      "direction": "A relationship milestone creates a particularly awkward reunion."
+    },
+    {
+      "id": "g15-workplace-introduction",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Workplace Introduction",
+      "direction": "{{user}} introduces {{char}} to his boss or colleagues."
+    },
+    {
+      "id": "g15-work-dinner",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Work Dinner",
+      "direction": "The connection emerges at a professional dinner or event."
+    },
+    {
+      "id": "g15-office-party",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Office Party",
+      "direction": "An adult workplace social function puts them together."
+    },
+    {
+      "id": "g15-coffee-cafe-meeting",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Coffee / Cafe Meeting",
+      "direction": "A low-key planned meeting suddenly becomes tense."
+    },
+    {
+      "id": "g15-restaurant-dinner",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Restaurant Dinner",
+      "direction": "The recognition happens across a normal meal."
+    },
+    {
+      "id": "g15-at-users-home",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "At {{user}}’s Home",
+      "direction": "{{user}} invites the important man into the home he shares or spends time in with {{char}}."
+    },
+    {
+      "id": "g15-at-the-mans-home",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "At the Man’s Home",
+      "direction": "{{char}} enters the former partner’s home without knowing whose it is."
+    },
+    {
+      "id": "g15-holiday-gathering",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Holiday Gathering",
+      "direction": "A family or social holiday creates unavoidable time together."
+    },
+    {
+      "id": "g15-road-trip",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Road Trip",
+      "direction": "The introduction occurs before or during shared travel."
+    },
+    {
+      "id": "g15-convention-festival",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Convention / Festival",
+      "direction": "A mutual event unexpectedly brings all three adults together."
+    },
+    {
+      "id": "g15-hobby-club",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Hobby Club",
+      "direction": "{{user}} brings {{char}} into an adult hobby space where the man is already present."
+    },
+    {
+      "id": "g15-online-video-call",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Online Video Call",
+      "direction": "The recognition happens during a video call before an in-person meeting."
+    },
+    {
+      "id": "g15-photo-before-meeting",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Photo Before Meeting",
+      "direction": "{{char}} recognizes the man from a photo {{user}} shows her."
+    },
+    {
+      "id": "g15-name-before-meeting",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Name Before Meeting",
+      "direction": "The full name alone is enough to make {{char}} realize who {{user}} means."
+    },
+    {
+      "id": "g15-surprise-drop-in",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Surprise Drop-In",
+      "direction": "The man arrives unexpectedly, preventing either adult from preparing."
+    },
+    {
+      "id": "g15-hospital-emergency-context",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Hospital / Emergency Context",
+      "direction": "An unrelated adult emergency or family event forces the introduction; do not exploit vulnerability for sexual pressure."
+    },
+    {
+      "id": "g15-funeral-memorial",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Funeral / Memorial",
+      "direction": "A serious adult family/social event creates an emotionally constrained reunion."
+    },
+    {
+      "id": "g15-casual-street-encounter",
+      "group": "15 Where / How the Introduction Happens",
+      "title": "Casual Street Encounter",
+      "direction": "{{user}} unexpectedly meets the important man while already out with {{char}}."
+    },
+    {
+      "id": "g16-awkward-silence",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Awkward Silence",
+      "direction": "Both adults go unusually quiet on recognizing each other."
+    },
+    {
+      "id": "g16-too-fast-denial",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Too-Fast Denial",
+      "direction": "One immediately says they have never met before without being asked."
+    },
+    {
+      "id": "g16-long-eye-contact",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Long Eye Contact",
+      "direction": "A moment of recognition lingers visibly."
+    },
+    {
+      "id": "g16-avoids-eye-contact",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Avoids Eye Contact",
+      "direction": "One person becomes conspicuously unable to look at the other."
+    },
+    {
+      "id": "g16-uses-old-nickname",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Uses Old Nickname",
+      "direction": "A historical nickname slips out."
+    },
+    {
+      "id": "g16-almost-uses-old-nickname",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Almost Uses Old Nickname",
+      "direction": "One catches themselves mid-word."
+    },
+    {
+      "id": "g16-knows-personal-detail",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Knows Personal Detail",
+      "direction": "The man knows something about {{char}} that a stranger should not know."
+    },
+    {
+      "id": "g16-char-knows-his-preferences",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "{{char}} Knows His Preferences",
+      "direction": "She casually knows his drink, food, hobby, or routine."
+    },
+    {
+      "id": "g16-shared-joke",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Shared Joke",
+      "direction": "An old joke appears before either can explain it."
+    },
+    {
+      "id": "g16-mirrored-awkward-laugh",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Mirrored Awkward Laugh",
+      "direction": "Their synchronized reaction suggests familiarity."
+    },
+    {
+      "id": "g16-overly-formal-behavior",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Overly Formal Behavior",
+      "direction": "They compensate by behaving like exaggerated strangers."
+    },
+    {
+      "id": "g16-overly-friendly-behavior",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Overly Friendly Behavior",
+      "direction": "They attempt to normalize the moment by acting too relaxed."
+    },
+    {
+      "id": "g16-sudden-subject-change",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Sudden Subject Change",
+      "direction": "One repeatedly redirects conversation away from the past."
+    },
+    {
+      "id": "g16-contradictory-first-meeting-story",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Contradictory First-Meeting Story",
+      "direction": "Details do not fit the claim that they have never met."
+    },
+    {
+      "id": "g16-old-photo-mention",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Old Photo Mention",
+      "direction": "Conversation references a time or place connecting them."
+    },
+    {
+      "id": "g16-body-language-changes",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Body Language Changes",
+      "direction": "Either adult’s posture or tone changes sharply after recognition."
+    },
+    {
+      "id": "g16-leaves-the-room",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Leaves the Room",
+      "direction": "One needs a moment away from the introduction."
+    },
+    {
+      "id": "g16-private-whisper-requested",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Private Whisper Requested",
+      "direction": "One asks to speak privately with the other."
+    },
+    {
+      "id": "g16-private-talk-with-user-requested",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Private Talk With {{user}} Requested",
+      "direction": "One asks {{user}} for a private conversation immediately."
+    },
+    {
+      "id": "g16-phones-start-buzzing",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Phones Start Buzzing",
+      "direction": "One sends a message to the other or to {{user}} soon after recognition."
+    },
+    {
+      "id": "g16-friend-family-member-notices-too",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Friend / Family Member Notices Too",
+      "direction": "Another adult sees the tension and comments on it."
+    },
+    {
+      "id": "g16-no-visible-awkwardness",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "No Visible Awkwardness",
+      "direction": "Both adults handle the reunion calmly and disclose naturally."
+    },
+    {
+      "id": "g16-one-person-is-genuinely-delighted",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "One Person Is Genuinely Delighted",
+      "direction": "A warm reunion initially looks suspicious even when the old history is harmless."
+    },
+    {
+      "id": "g16-one-person-is-genuinely-upset",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "One Person Is Genuinely Upset",
+      "direction": "Past hurt makes the reunion tense without implying current attraction."
+    },
+    {
+      "id": "g17-past-consensual-adult-history-is-not-current-infidelity",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Past Consensual Adult History Is Not Current Infidelity",
+      "direction": "Do not treat a pre-relationship adult history as cheating merely because {{user}} dislikes discovering the identity."
+    },
+    {
+      "id": "g17-all-historical-sexual-contact-was-adult",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "All Historical Sexual Contact Was Adult",
+      "direction": "Every romantic or sexual interaction in the backstory occurred when all participants were adults."
+    },
+    {
+      "id": "g17-privacy-is-not-automatically-lying",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Privacy Is Not Automatically Lying",
+      "direction": "Not naming every former adult partner is distinct from making a false statement."
+    },
+    {
+      "id": "g17-direct-lies-still-matter",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Direct Lies Still Matter",
+      "direction": "If either person explicitly denied knowing the other, preserve that deception as a separate trust issue."
+    },
+    {
+      "id": "g17-third-party-privacy-matters",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Third-Party Privacy Matters",
+      "direction": "Neither {{char}} nor the man must reveal graphic details about the other to prove the broad truth."
+    },
+    {
+      "id": "g17-no-forced-graphic-disclosure",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "No Forced Graphic Disclosure",
+      "direction": "Relationship-relevant facts can be discussed without sexual play-by-play."
+    },
+    {
+      "id": "g17-family-connection-needs-extra-boundaries",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Family Connection Needs Extra Boundaries",
+      "direction": "Father/brother variants should focus on adult relationship history and family/social consequences, not incestuous framing."
+    },
+    {
+      "id": "g17-workplace-authority-needs-separation",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Workplace Authority Needs Separation",
+      "direction": "Boss/mentor variants must distinguish consensual adult history from professional pressure."
+    },
+    {
+      "id": "g17-adult-work-is-not-automatic-romance",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Adult Work Is Not Automatic Romance",
+      "direction": "Compensated-dating or adult-work history may have been transactional, affectionate, sexual, romantic, or mixed."
+    },
+    {
+      "id": "g17-past-access-gives-no-present-entitlement",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Past Access Gives No Present Entitlement",
+      "direction": "A former partner has no automatic right to renewed sexual or romantic access."
+    },
+    {
+      "id": "g17-old-feelings-do-not-equal-action",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Old Feelings Do Not Equal Action",
+      "direction": "Lingering attraction is separate from intent and behavior."
+    },
+    {
+      "id": "g17-recognition-does-not-prove-ongoing-contact",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Recognition Does Not Prove Ongoing Contact",
+      "direction": "Knowing each other well in the past does not establish a present affair."
+    },
+    {
+      "id": "g17-current-contact-must-be-established-separately",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Current Contact Must Be Established Separately",
+      "direction": "Friendship, work contact, secret messages, emotional affair, and sex are different present states."
+    },
+    {
+      "id": "g17-no-forced-rivalry",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "No Forced Rivalry",
+      "direction": "Do not automatically turn {{user}} and the man into competitors."
+    },
+    {
+      "id": "g17-no-forced-forgiveness",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "No Forced Forgiveness",
+      "direction": "{{user}} may reasonably care about a lie or overlap without being forced to accept it."
+    },
+    {
+      "id": "g17-no-forced-breakup",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "No Forced Breakup",
+      "direction": "Do not dictate the relationship ending."
+    },
+    {
+      "id": "g17-no-ownership-framing",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "No Ownership Framing",
+      "direction": "Neither man owns {{char}}, and {{char}} is not a prize transferred between them."
+    },
+    {
+      "id": "g17-no-status-ranking",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "No Status Ranking",
+      "direction": "Do not present the former partner as objectively superior because of age, money, authority, experience, or history."
+    },
+    {
+      "id": "g17-if-past-cheating-occurred-name-the-actual-boundary",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "If Past Cheating Occurred, Name the Actual Boundary",
+      "direction": "Distinguish old infidelity from consensual past sex."
+    },
+    {
+      "id": "g17-if-current-affair-exists-separate-it-from-the-reveal",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "If Current Affair Exists, Separate It From the Reveal",
+      "direction": "The serious issue is current deception, not simply that the adults once had history."
+    },
+    {
+      "id": "g17-no-blackmail-threats-as-romance",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "No Blackmail / Threats as Romance",
+      "direction": "If either person uses the secret as leverage, treat that as coercive misconduct."
+    },
+    {
+      "id": "g17-let-user-decide-what-matters",
+      "group": "17 Disclosure / Consent / Interpretation Rules",
+      "title": "Let {{user}} Decide What Matters",
+      "direction": "Do not pre-write his judgment of privacy, deception, family awkwardness, or current attraction."
+    },
+    {
+      "id": "g18-wait-you-two-know-each-other",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "‘Wait… You Two Know Each Other?’",
+      "direction": "Open on {{user}} noticing immediate recognition between {{char}} and the man."
+    },
+    {
+      "id": "g18-the-old-nickname-slip",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "The Old Nickname Slip",
+      "direction": "Open when one adult accidentally uses a name that reveals prior familiarity."
+    },
+    {
+      "id": "g18-father-freezes-at-the-door",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Father Freezes at the Door",
+      "direction": "Open as {{user}}’s adult father and {{char}} recognize each other during a first family meeting."
+    },
+    {
+      "id": "g18-brother-says-her-name-first",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Brother Says Her Name First",
+      "direction": "Open when {{user}}’s adult brother recognizes {{char}} before introduction."
+    },
+    {
+      "id": "g18-best-friend-goes-silent",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Best Friend Goes Silent",
+      "direction": "Open with {{user}}’s normally talkative best friend abruptly losing composure."
+    },
+    {
+      "id": "g18-boss-recognizes-her",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Boss Recognizes Her",
+      "direction": "Open during a professional introduction where {{user}}’s boss clearly knows {{char}} personally."
+    },
+    {
+      "id": "g18-both-pretend-to-be-strangers",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Both Pretend to Be Strangers",
+      "direction": "Open with a knowingly false first introduction."
+    },
+    {
+      "id": "g18-char-pulls-user-aside",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "{{char}} Pulls {{user}} Aside",
+      "direction": "Open when she recognizes the man and decides disclosure cannot wait."
+    },
+    {
+      "id": "g18-man-pulls-user-aside",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Man Pulls {{user}} Aside",
+      "direction": "Open when the important man asks for a private conversation immediately."
+    },
+    {
+      "id": "g18-they-both-tell-the-truth",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "They Both Tell the Truth",
+      "direction": "Open with immediate mutual acknowledgment of an old relationship."
+    },
+    {
+      "id": "g18-only-one-tells-the-truth",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Only One Tells the Truth",
+      "direction": "Open with conflicting accounts about whether they know each other."
+    },
+    {
+      "id": "g18-compensated-dating-recognition",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Compensated-Dating Recognition",
+      "direction": "Open when a seemingly respectable social introduction reveals a past compensated-dating connection."
+    },
+    {
+      "id": "g18-one-night-stand-recognition",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "One-Night Stand Recognition",
+      "direction": "Open with both adults realizing a forgotten casual encounter has returned in the most awkward social context."
+    },
+    {
+      "id": "g18-former-fwb-recognition",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Former FWB Recognition",
+      "direction": "Open with old casual chemistry suddenly becoming socially relevant."
+    },
+    {
+      "id": "g18-bridge-to-her-secret-past",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Her Secret Past",
+      "direction": "If this man is only one part of a much larger undisclosed sexual history, expand into Her Secret Past."
+    },
+    {
+      "id": "g18-bridge-to-the-man-from-her-past",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Bridge to The Man From Her Past",
+      "direction": "If his return and lingering feelings become the main engine, shift into The Man From Her Past."
+    },
+    {
+      "id": "g18-bridge-to-he-trained-your-girlfriend",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Bridge to He Trained Your Girlfriend",
+      "direction": "If the man’s formative influence on {{char}} becomes central, shift into He Trained Your Girlfriend."
+    },
+    {
+      "id": "g18-bridge-to-under-your-nose",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Under Your Nose",
+      "direction": "If the pair secretly resumed a current affair, shift into Under Your Nose."
+    },
+    {
+      "id": "g18-bridge-to-open-relationship",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Open Relationship",
+      "direction": "If the current relationship allows or begins negotiating renewed contact, shift into Open Relationship."
+    },
+    {
+      "id": "g18-historical-clarification",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Historical Clarification",
+      "direction": "They had a real adult history, neither lied, and the awkwardness resolves mainly through explanation."
+    },
+    {
+      "id": "g18-privacy-disagreement",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Privacy Disagreement",
+      "direction": "The core conflict becomes whether identities of past partners should have been disclosed."
+    },
+    {
+      "id": "g18-direct-lie-reveal",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Direct-Lie Reveal",
+      "direction": "One or both previously made a clear false statement, making present honesty central."
+    },
+    {
+      "id": "g18-family-fallout",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Family Fallout",
+      "direction": "Father/brother/family variants create broader adult family consequences."
+    },
+    {
+      "id": "g18-friendship-fallout",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Friendship Fallout",
+      "direction": "Best-friend variants test the current friendship independently of {{char}}’s current relationship."
+    },
+    {
+      "id": "g18-workplace-fallout",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Workplace Fallout",
+      "direction": "Boss/coworker variants create professional awkwardness or boundary decisions."
+    },
+    {
+      "id": "g18-old-feelings-rekindle",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Old Feelings Rekindle",
+      "direction": "Mutual or one-sided attraction returns without pre-deciding whether anyone acts on it."
+    },
+    {
+      "id": "g18-no-feelings-remain",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "No Feelings Remain",
+      "direction": "The history is genuinely finished; only secrecy or surprise matters."
+    },
+    {
+      "id": "g18-current-friendship-becomes-transparent",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Current Friendship Becomes Transparent",
+      "direction": "The adults can acknowledge a former sexual relationship while maintaining platonic present contact."
+    },
+    {
+      "id": "g18-current-affair-revealed",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Current Affair Revealed",
+      "direction": "New evidence establishes ongoing hidden sexual/romantic involvement."
+    },
+    {
+      "id": "g18-no-forced-resolution",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "No Forced Resolution",
+      "direction": "Leave the historical facts and present motives clear while keeping {{user}}’s reaction and future relationships open."
+    },
+    {
+      "id": "g04-they-used-to-fuck-raw",
+      "group": "04 What Past Relationship They Had",
+      "title": "They Used to Fuck Raw",
+      "direction": "The shared history includes regular unprotected sex. Condoms were not the norm between {{char}} and the man. That detail surfaces as part of what {{user}} learns about their past."
+    },
+    {
+      "id": "g04-he-used-to-finish-inside-her",
+      "group": "04 What Past Relationship They Had",
+      "title": "He Used to Finish Inside Her",
+      "direction": "A concrete part of the past is that the important man regularly came inside {{char}}. The creampie history is not abstract — it is a specific sexual fact {{user}} now has to hold."
+    },
+    {
+      "id": "g04-they-had-a-breeding-dynamic",
+      "group": "04 What Past Relationship They Had",
+      "title": "They Had a Breeding Dynamic",
+      "direction": "Their past included breeding talk or intent — he wanted to get her pregnant, or they played with that risk. The dynamic may or may not have produced a pregnancy. Vary how much of that history is admitted."
+    },
+    {
+      "id": "g04-she-was-his-regular-creampie-partner",
+      "group": "04 What Past Relationship They Had",
+      "title": "She Was His Regular Creampie Partner",
+      "direction": "For a period {{char}} was the woman this man finished in most often — FWB, affair, or relationship. Frequency and exclusivity-of-loads are part of the revealed scale."
+    },
+    {
+      "id": "g04-one-night-that-included-multiple-loads",
+      "group": "04 What Past Relationship They Had",
+      "title": "One Night That Included Multiple Loads",
+      "direction": "Even if the past was brief, at least one encounter involved him finishing inside her more than once. Intensity of that single night becomes a focal detail when the history comes out."
+    },
+    {
+      "id": "g07-she-never-mentioned-he-used-to-come-inside-her",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "She Never Mentioned He Used to Come Inside Her",
+      "direction": "{{char}} may have admitted knowing the man, or even sleeping with him, but omitted the unprotected / creampie specifics. The gap between ‘we dated’ and ‘he used to finish in me’ is the new disclosure."
+    },
+    {
+      "id": "g07-she-described-the-past-as-casual-it-was-raw-and-frequent",
+      "group": "07 What {{char}} Previously Told {{user}}",
+      "title": "She Described the Past as Casual — It Was Raw and Frequent",
+      "direction": "Prior disclosure framed the history as light or limited. The truth includes regular raw sex and internal finishes. Softening vs lying becomes a live question."
+    },
+    {
+      "id": "g08-the-man-casually-mentions-finishing-in-her",
+      "group": "08 What the Man Previously Told {{user}}",
+      "title": "The Man Casually Mentions Finishing in Her",
+      "direction": "In front of {{user}} or in a context that reaches him, the important man refers to having come inside {{char}} — as a joke, a brag, a slip, or a deliberate probe. The casual delivery is part of the impact."
+    },
+    {
+      "id": "g13-he-wants-to-finish-inside-her-again",
+      "group": "13 What the Man Wants Now",
+      "title": "He Wants to Finish Inside Her Again",
+      "direction": "The man’s present interest is not only social. He wants to resume the sexual pattern, specifically including unprotected sex and internal finishes. Vary how openly he signals this."
+    },
+    {
+      "id": "g13-he-still-thinks-of-her-as-his-to-fill",
+      "group": "13 What the Man Wants Now",
+      "title": "He Still Thinks of Her as His to Fill",
+      "direction": "Lingering possessiveness shows up as an assumption that he could still have her raw and finish in her. The assumption may be delusional or grounded in recent contact."
+    },
+    {
+      "id": "g14-she-still-gets-wet-remembering-his-creampies",
+      "group": "14 What {{char}} Wants Now",
+      "title": "She Still Gets Wet Remembering His Creampies",
+      "direction": "{{char}}’s present body still responds to the memory of this man finishing inside her. Private arousal does not equal intent to resume, but it complicates the ‘it’s over’ narrative."
+    },
+    {
+      "id": "g14-she-wants-one-more-load-from-him",
+      "group": "14 What {{char}} Wants Now",
+      "title": "She Wants One More Load From Him",
+      "direction": "After the recognition, or before it is fully public, {{char}} has a private wish for one more encounter in which he finishes inside her. Vary whether she acts on it."
+    },
+    {
+      "id": "g10-old-raw-chemistry-is-still-there",
+      "group": "10 Do Old Feelings Remain?",
+      "title": "Old Raw Chemistry Is Still There",
+      "direction": "When they are in the same room, the specific sexual charge around unprotected sex and how he used to take her is still palpable. Chemistry is not the same as action, but it is visible."
+    },
+    {
+      "id": "g11-they-have-already-had-a-secret-creampie-since-user",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "They Have Already Had a Secret Creampie Since {{user}}",
+      "direction": "Before the formal ‘introduction’ or recognition moment, {{char}} and the man have already resumed sex at least once, including him finishing inside her. The history is not only past."
+    },
+    {
+      "id": "g11-they-still-message-about-old-loads",
+      "group": "11 Current Contact Before the Introduction",
+      "title": "They Still Message About Old Loads",
+      "direction": "Ongoing private contact includes sexual reminiscence — jokes or explicit messages about times he came inside her. The digital trail is part of what can surface."
+    },
+    {
+      "id": "g16-awkward-creampie-subtext-in-conversation",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "Awkward Creampie Subtext in Conversation",
+      "direction": "In front of {{user}}, small comments, glances, or silences carry subtext about the man having finished in her. The room knows something {{user}} is only starting to grasp."
+    },
+    {
+      "id": "g16-she-flinches-when-breeding-or-raw-sex-is-mentioned",
+      "group": "16 Tells / Awkward Interaction Clues",
+      "title": "She Flinches When Breeding or Raw Sex Is Mentioned",
+      "direction": "A conversational reference to unprotected sex or creampies produces a visible reaction from {{char}} when the important man is present. The tell is bodily."
+    },
+    {
+      "id": "g18-recognition-lands-with-the-creampie-detail",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Recognition Lands With the Creampie Detail",
+      "direction": "Open at the moment {{user}} learns not only that they know each other sexually, but that the man used to finish inside her. The specific sexual fact is the opening beat."
+    },
+    {
+      "id": "g18-the-man-says-i-used-to-come-in-her-to-users-face",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "The Man Says ‘I Used to Come in Her’ to {{user}}’s Face",
+      "direction": "Open with the important man stating the creampie history directly to {{user}} — drunk, cruel, honest, or testing. {{char}}’s presence or absence changes the charge."
+    },
+    {
+      "id": "g18-she-confesses-how-often-he-filled-her",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "She Confesses How Often He Filled Her",
+      "direction": "Open with {{char}} giving {{user}} the unsoftened frequency: how often the man finished inside her during their past. Numbers or duration make the history concrete."
+    },
+    {
+      "id": "g06-recognition-through-a-shared-sexual-joke",
+      "group": "06 How Recognition Happens",
+      "title": "Recognition Through a Shared Sexual Joke",
+      "direction": "The history surfaces when {{char}} and the man share a reference only two people who had raw/creampie sex would understand. {{user}} is the third person hearing it."
+    },
+    {
+      "id": "g05-the-creampie-history-was-recent",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "The Creampie History Was Recent",
+      "direction": "Their period of unprotected sex and internal finishes was not long ago — months, not years. Proximity in time intensifies the collision with {{user}}’s present relationship."
+    },
+    {
+      "id": "g05-years-of-him-finishing-in-her",
+      "group": "05 Seriousness / Duration / Timing",
+      "title": "Years of Him Finishing in Her",
+      "direction": "The sexual pattern lasted years. The important man was a long-term source of regular creampies. Duration is part of what makes the history heavy."
+    },
+    {
+      "id": "g12-it-ended-after-a-pregnancy-scare-from-his-load",
+      "group": "12 Why the Old Relationship Ended",
+      "title": "It Ended After a Pregnancy Scare From His Load",
+      "direction": "The past relationship or arrangement ended (or paused) after a pregnancy scare caused by him finishing inside her. That unresolved risk history resurfaces with the recognition."
+    },
+    {
+      "id": "g09-both-want-the-creampie-history-hidden-from-user",
+      "group": "09 Who Wants the History Kept Secret?",
+      "title": "Both Want the Creampie History Hidden From {{user}}",
+      "direction": "{{char}} and the man are aligned on not telling {{user}} the full sexual specifics — especially that he used to come inside her. Shared secrecy becomes its own bond and risk."
+    }
+  ],
+  "sections": [
+    {
+      "id": "shared-history-engine",
+      "label": "The hidden shared history is the core engine",
+      "content": "The memorable hook is that two people {{user}} believed were unrelated already know each other intimately or significantly. Preserve the surprise created by the intersection of {{user}}’s current partner and an important man in his own life."
+    },
+    {
+      "id": "privacy-vs-lie",
+      "label": "Privacy, omission and direct lies differ",
+      "content": "Not naming an ex is not automatically deception. Establish what {{user}} asked and what each adult actually said. A direct denial of knowing or sleeping with the other person is materially different from a past that never came up."
+    },
+    {
+      "id": "past-vs-present",
+      "label": "Past history does not prove current involvement",
+      "content": "A former relationship can be fully over, friendly, emotionally unresolved, recently reconnected, or secretly active. Generate present contact and feelings independently from the historical relationship."
+    },
+    {
+      "id": "family-work-boundary",
+      "label": "Family and workplace variants carry different consequences",
+      "content": "Father/brother variants create adult family and trust complications without incest framing. Boss/mentor variants create professional consequences without using authority as consent or attraction."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Combine presets across groups for specificity—for example: Father + Former Boyfriend + Both Recognize Immediately + Neither Wants a Secret; Best Friend + Former FWB + Both Pretend to Be Strangers + Mutual Chemistry Returns; or Boss + Compensated-Dating History + {{char}} Recognizes First + Professional Contact Only."
+    }
+  ],
+  "raw_prompt": "Prioritise believable adult shared history, asymmetric recognition, accurate disclosure boundaries, independent present-day motives, and separation between historical sex and current behavior. Preserve the selected Direction Preset. Do not pre-write {{user}}’s reaction, confrontation, forgiveness, breakup, family decisions, friendship decisions, or future choices."
 }
