@@ -3,6 +3,2200 @@
   "schema_version": 1,
   "id": "bible-i-22-on-the-other-side-of-the-wall",
   "title": "On the Other Side of the Wall",
+  "description": "Reusable adult audio-recognition engine in which {{user}} overhears an intimate encounter nearby but cannot initially identify the woman, then gradually or suddenly suspects she is his girlfriend, fiancée, wife, or another adult woman close to him. Detailed presets vary location, the other adult, recognizable voice/mannerism clues, certainty, whether {{char}} knows she was overheard, relationship agreements, how the encounter began, whether it is isolated or ongoing, post-event confirmation, acoustic false positives, privacy/listener boundaries, strong openings, and outcomes ranging from mistaken identity or consensual non-monogamy to one-time cheating or an ongoing affair.",
   "source_version": "1.2",
-  "note": "Full expanded content (345 presets) is available on Google Drive Idea Sources folder as 22-on-the-other-side-of-the-wall.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 22,
+    "category": "Hidden Past, Identity & Recognition",
+    "source_date": "2026-09-21"
+  },
+  "summary": "{{user}} hears an intimate adult encounter through a wall, door, vent, hallway, nearby room, or other acoustically connected space. The woman is not initially identifiable, but voice, laughter, phrases, names, timing, location, and post-event clues may point toward {{char}}. The source keeps auditory recognition separate from certainty, relationship boundaries, privacy, whether the encounter is live at all, and whether any outside involvement is cheating or consensually permitted.",
+  "core_premise": "The engine is recognition by sound under uncertainty. {{user}} hears enough to suspect that a close adult woman is involved in a nearby intimate encounter, but incomplete audio can distort identity, source location, timing, consent context, and relationship meaning. A familiar voice does not automatically prove identity; correct identity does not automatically prove cheating; and a real encounter does not make accidental or deliberate audience involvement consensual.",
+  "setup": "Begin as the encounter becomes audible, when the first familiar clue appears, when several clues accumulate, when {{char}} or the other adult emerges afterward, or later when a separate piece of evidence causes {{user}} to reinterpret what he heard. Establish location and acoustic conditions, who the hidden woman is, relationship rules, and whether anyone knows {{user}} is nearby. Do not pre-write {{user}}’s reaction, confrontation, eavesdropping choices, forgiveness, or relationship decision.",
+  "core_variables": [
+    "Where the encounter occurs and why sound carries.",
+    "Who the other adult is.",
+    "Which voice, phrase, laugh, name, mannerism, or contextual clues point toward {{char}}.",
+    "How certainty develops and whether recognition is ever mistaken.",
+    "Whether {{char}} knows {{user}} is within hearing range.",
+    "Whether the other adult knows about {{user}}, the relationship, or the listener’s presence.",
+    "Whether the encounter is cheating, consensual non-monogamy, pre-exclusivity, separation, or a misunderstanding.",
+    "How the encounter came about.",
+    "Whether this is one encounter, recurring FWB, a current affair, an open-relationship partner, or something nonsexual.",
+    "What evidence appears immediately afterward.",
+    "How {{char}} responds once she realizes what {{user}} heard.",
+    "Whether sounds were distorted by walls, vents, music, media playback, or multiple sources.",
+    "Whether {{user}} accidentally overhears or deliberately continues listening.",
+    "Whether deliberate audible exposure was agreed or non-consensual.",
+    "Whether the main issue becomes fidelity, recognition, privacy, boundaries, or misunderstanding."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{user}} hears an intimate adult encounter nearby and cannot initially identify the woman, who is his partner or another adult woman close to him.",
+    "Keep this source audio-centered. If a visual recording becomes the main evidence, cross-link to The Girl in the Video.",
+    "If Neighbour Through the Wall is selected, preserve a genuinely adjacent acoustic setting.",
+    "If Hotel Room is selected, make the hotel/accommodation context materially relevant.",
+    "If Workplace Storage Room is selected, preserve workplace privacy and power-dynamic considerations.",
+    "If Party Bedroom is selected, preserve the social ambiguity and multiple plausible adults created by the party setting.",
+    "If User Realises Only Later is selected, do not make identity obvious during the original overhearing.",
+    "Do not treat a familiar voice, laugh, name, or phrase as absolute proof by itself.",
+    "Do not treat correct identification as automatic proof of cheating; establish relationship boundaries.",
+    "Do not assume the other adult knew {{char}} was taken or knew {{user}} was nearby.",
+    "Do not treat accidental overhearing as deliberate voyeurism unless {{user}} chooses to keep listening or seek more access.",
+    "Do not write {{user}}’s emotional reaction, confrontation, dialogue, recording behavior, forgiveness, breakup, or future choices as settled fact.",
+    "If deliberate audible exposure is part of a kink or arrangement, establish {{user}}’s consent to being included as an audience.",
+    "If the sounds come from media, voice acting, roleplay recording, exercise, massage, or another false positive, preserve that explanation rather than forcing a sexual encounter.",
+    "If current infidelity is established, keep that relationship violation separate from any privacy issue around eavesdropping or disclosure.",
+    "If a selected preset narrows location, identity clue, agreement state, other adult, certainty, or outcome, preserve it while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Audible sounds alone do not prove consent, lack of consent, identity, cheating, or relationship structure.",
+    "Do not normalize hidden audio recording of intimate activity, revenge sharing, blackmail, stalking, or public humiliation.",
+    "Hearing a possible sexual encounter does not automatically authorize forced entry into a private room.",
+    "Do not infer danger solely from sexual sounds; if genuine evidence of harm exists, distinguish safety intervention from jealousy-driven intrusion.",
+    "Do not imply that open relationships remove privacy rights or that cheating removes privacy rights.",
+    "Do not force {{user}} to keep listening, confront immediately, forgive, retaliate, or end the relationship.",
+    "Do not force {{char}} to disclose graphic sexual details to establish the broad facts relevant to the relationship.",
+    "Do not treat prior exhibitionist interests as consent to involve {{user}} as an audience without agreement.",
+    "Do not use cosmetic changes of names, occupations, or locations as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Apartment, house, hotel, motel, student housing, workplace, storage room, staff area, conference hotel, party house, friend’s house, holiday rental, cabin, convention hotel, vehicle, hallway, vent, window, or unknown source",
+    "Unknown adult, ex, FWB, coworker, boss, friend, neighbour, classmate, travel acquaintance, compensated partner, content collaborator, someone {{user}} knows, woman, multiple adults, or consensual outside partner",
+    "Voice, laugh, phrase, name, accent, speech rhythm, verbal tic, reaction pattern, story detail, friend name, notification sound, or multiple small auditory clues",
+    "No suspicion, faint familiarity, one clue, multiple clues, gradual certainty, sudden realization, visual confirmation afterward, self-confirmation, denial, wrong room, similar voice, misheard phrase, impossible timing, or unresolved ambiguity",
+    "No awareness, thinks {{user}} absent, knows he is nearby, realizes midway, other adult warns her, intentionally audible, tries to stay quiet, stops, continues, plans explanation, or hopes he heard nothing",
+    "Cheating, open relationship, hall pass, hotwife/cuckold arrangement, partner-aware encounter, DADT, disclosure-rule violation, off-limits partner, break, separation, nonexclusive dating, ambiguous agreement, historical recording, media playback, or innocent misunderstanding",
+    "Planned date, spontaneous hookup, ex reunion, coworker meeting, party hookup, travel, hotel meet, neighbor visit, FWB, open date, affair, one-time mistake, revenge, emotional affair, compensated arrangement, content collaboration, kink experiment, or partner-arranged encounter",
+    "One time, first time, recurring FWB, affair, long secret relationship, open-relationship regular, occasional encounters, history-only, friendship-only present, or unclear duration",
+    "Admission, calm explanation, embarrassment, apology, privacy anger, denial, context correction, timing correction, minimization, trickle-truth, ongoing-affair admission, or relief",
+    "Thin wall, open door/window, vent, party noise, music, water, hallway echo, phone call, recorded audio, adult media, voice acting, benign false positive, wrong room, or sound from another floor",
+    "Mistaken identity, historical clarification, allowed encounter, rule violation, current affair, one-time cheating, privacy conflict, unwanted audience boundary, relationship repair, breakup, ENM renegotiation, or no forced outcome"
+  ],
+  "cross_links": [
+    "The Girl in the Video",
+    "NTR Report",
+    "Under Your Nose",
+    "The Man From Her Past",
+    "You Two Know Each Other?",
+    "Open Relationship",
+    "Her Secret Past"
+  ],
+  "tags": [
+    "adult",
+    "overheard encounter",
+    "audio recognition",
+    "through the wall",
+    "hotel room",
+    "neighbour",
+    "voice recognition",
+    "hidden identity",
+    "relationship boundaries",
+    "infidelity",
+    "non-monogamy",
+    "privacy",
+    "misunderstanding"
+  ],
+  "notes": "Expanded from Series Bible I #22. The original seeds—Neighbour Through the Wall, Hotel Room, Workplace Storage Room, Party Bedroom, and User Realises Only Later—are preserved with their original preset IDs. The source treats auditory recognition as evidence that can strengthen, weaken, or prove mistaken, and separates identity from relationship context, live-vs-recorded ambiguity, and listener privacy.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied On the Other Side of the Wall concepts in which {{user}} hears an intimate encounter nearby but cannot initially identify the adult woman. The hidden woman is his adult girlfriend, fiancée, wife, or another adult woman close to him. Vary the location, who the other adult is, how recognizable the woman’s voice or mannerisms are, how certainty develops, whether {{char}} knows {{user}} overheard, whether the encounter is historical/current or happening in real time, and whether it is cheating, consensual non-monogamy, a misunderstanding, or another arrangement. Do not pre-write {{user}}’s reaction or confrontation."
+    },
+    {
+      "id": "neighbour-through-the-wall",
+      "group": "02 Original Bible Seeds",
+      "title": "Neighbour Through the Wall",
+      "direction": "{{user}} hears an intimate adult encounter through a shared wall or adjoining residence and gradually suspects the woman is {{char}}."
+    },
+    {
+      "id": "hotel-room",
+      "group": "02 Original Bible Seeds",
+      "title": "Hotel Room",
+      "direction": "{{user}} hears an adult encounter from a nearby hotel room and begins recognizing clues that point toward {{char}}."
+    },
+    {
+      "id": "workplace-storage-room",
+      "group": "02 Original Bible Seeds",
+      "title": "Workplace Storage Room",
+      "direction": "The overheard adult encounter occurs in or near a workplace back room, storage area, office, or other semi-private adult setting. Keep workplace authority separate from consent."
+    },
+    {
+      "id": "party-bedroom",
+      "group": "02 Original Bible Seeds",
+      "title": "Party Bedroom",
+      "direction": "At an adult party or gathering, {{user}} hears an intimate encounter from a bedroom or nearby room and begins to identify the woman."
+    },
+    {
+      "id": "user-realises-only-later",
+      "group": "02 Original Bible Seeds",
+      "title": "User Realises Only Later",
+      "direction": "{{user}} does not understand the woman’s identity while overhearing the encounter; later evidence causes him to reinterpret what he heard."
+    },
+    {
+      "id": "g03-apartment-next-door",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Apartment Next Door",
+      "direction": "The sounds come from an immediately adjoining apartment or unit."
+    },
+    {
+      "id": "g03-same-house-next-bedroom",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Same House, Next Bedroom",
+      "direction": "The encounter is in another bedroom within the same adult household."
+    },
+    {
+      "id": "g03-shared-wall-in-hotel",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Shared Wall in Hotel",
+      "direction": "Thin hotel walls make the encounter clearly audible."
+    },
+    {
+      "id": "g03-room-across-the-hall",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Room Across the Hall",
+      "direction": "The sound carries from a nearby room rather than directly through a wall."
+    },
+    {
+      "id": "g03-airbnb-holiday-rental",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Airbnb / Holiday Rental",
+      "direction": "A shared or adjoining holiday rental creates an unexpected overhearing situation."
+    },
+    {
+      "id": "g03-motel",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Motel",
+      "direction": "A small motel or roadside stop produces limited acoustic privacy."
+    },
+    {
+      "id": "g03-dorm-student-housing",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Dorm / Student Housing",
+      "direction": "Adult university or student accommodation makes neighboring rooms easy to hear."
+    },
+    {
+      "id": "g03-workplace-office",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Workplace Office",
+      "direction": "The sounds come from a closed office after hours or during a private interval."
+    },
+    {
+      "id": "g03-workplace-storage-area",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Workplace Storage Area",
+      "direction": "A back room or storage space provides poor sound insulation."
+    },
+    {
+      "id": "g03-staff-room-break-area",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Staff Room / Break Area",
+      "direction": "The overheard event is near a staff-only adult space."
+    },
+    {
+      "id": "g03-conference-business-hotel",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Conference / Business Hotel",
+      "direction": "A work trip or professional event creates adjacent hotel rooms."
+    },
+    {
+      "id": "g03-party-house",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Party House",
+      "direction": "Music, guests, and many rooms make identification initially difficult."
+    },
+    {
+      "id": "g03-friends-house",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Friend’s House",
+      "direction": "{{user}} is visiting another adult’s home when he overhears the encounter."
+    },
+    {
+      "id": "g03-shared-holiday-house",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Shared Holiday House",
+      "direction": "A group of adults is staying together and privacy is limited."
+    },
+    {
+      "id": "g03-cabin-caravan",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Cabin / Caravan",
+      "direction": "A small travel accommodation makes sounds carry easily."
+    },
+    {
+      "id": "g03-cruise-ferry-cabin",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Cruise / Ferry Cabin",
+      "direction": "Adjoining cabins create an overheard encounter while travelling."
+    },
+    {
+      "id": "g03-train-sleeper-private-compartment",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Train Sleeper / Private Compartment",
+      "direction": "An adult travel setting with imperfect sound isolation creates the scenario."
+    },
+    {
+      "id": "g03-convention-hotel",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Convention Hotel",
+      "direction": "A convention or festival hotel produces plausible room-neighbor ambiguity."
+    },
+    {
+      "id": "g03-backstage-event-area",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Backstage / Event Area",
+      "direction": "The encounter is heard near a private event or backstage space."
+    },
+    {
+      "id": "g03-gym-club-back-room",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Gym / Club Back Room",
+      "direction": "A private adult back area creates unexpected acoustic exposure."
+    },
+    {
+      "id": "g03-neighbours-backyard-balcony",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Neighbour’s Backyard / Balcony",
+      "direction": "The sounds carry outdoors without anyone realizing how audible they are."
+    },
+    {
+      "id": "g03-car-nearby",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Car Nearby",
+      "direction": "{{user}} hears voices/sounds from a nearby parked vehicle rather than a room."
+    },
+    {
+      "id": "g03-stairwell-hallway",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Stairwell / Hallway",
+      "direction": "Sound carries through a corridor or stairwell before the source is obvious."
+    },
+    {
+      "id": "g03-vent-duct",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Vent / Duct",
+      "direction": "Building ventilation carries sound from another room."
+    },
+    {
+      "id": "g03-open-window",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Open Window",
+      "direction": "An open window makes a private encounter audible from nearby."
+    },
+    {
+      "id": "g03-bathroom-adjoining-wall",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Bathroom Adjoining Wall",
+      "direction": "Plumbing and thin walls amplify sounds from an adjacent room."
+    },
+    {
+      "id": "g03-unknown-source-at-first",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Unknown Source at First",
+      "direction": "{{user}} can hear an encounter but initially cannot tell exactly which room or residence it comes from."
+    },
+    {
+      "id": "g04-unknown-man",
+      "group": "04 Who the Other Adult Is",
+      "title": "Unknown Man",
+      "direction": "The other adult is initially completely unknown to {{user}}."
+    },
+    {
+      "id": "g04-former-boyfriend",
+      "group": "04 Who the Other Adult Is",
+      "title": "Former Boyfriend",
+      "direction": "The other adult is a former boyfriend from {{char}}’s past."
+    },
+    {
+      "id": "g04-former-fwb",
+      "group": "04 Who the Other Adult Is",
+      "title": "Former FWB",
+      "direction": "The other adult is a former friend-with-benefits."
+    },
+    {
+      "id": "g04-coworker",
+      "group": "04 Who the Other Adult Is",
+      "title": "Coworker",
+      "direction": "The other adult is a coworker of {{char}}."
+    },
+    {
+      "id": "g04-boss-senior-coworker",
+      "group": "04 Who the Other Adult Is",
+      "title": "Boss / Senior Coworker",
+      "direction": "The other adult has workplace seniority; do not treat authority as consent."
+    },
+    {
+      "id": "g04-friend",
+      "group": "04 Who the Other Adult Is",
+      "title": "Friend",
+      "direction": "The other adult is an adult friend of {{char}}."
+    },
+    {
+      "id": "g04-best-friend",
+      "group": "04 Who the Other Adult Is",
+      "title": "Best Friend",
+      "direction": "The other adult is someone {{char}} considers a close adult friend."
+    },
+    {
+      "id": "g04-neighbour",
+      "group": "04 Who the Other Adult Is",
+      "title": "Neighbour",
+      "direction": "The other adult is a nearby neighbor."
+    },
+    {
+      "id": "g04-classmate",
+      "group": "04 Who the Other Adult Is",
+      "title": "Classmate",
+      "direction": "The other adult is an adult classmate or fellow trainee."
+    },
+    {
+      "id": "g04-travel-acquaintance",
+      "group": "04 Who the Other Adult Is",
+      "title": "Travel Acquaintance",
+      "direction": "The other adult was met during travel or an event."
+    },
+    {
+      "id": "g04-one-night-stand",
+      "group": "04 Who the Other Adult Is",
+      "title": "One-Night Stand",
+      "direction": "The other adult is a casual adult hookup."
+    },
+    {
+      "id": "g04-compensated-dating-partner",
+      "group": "04 Who the Other Adult Is",
+      "title": "Compensated-Dating Partner",
+      "direction": "The other adult comes from a compensated-dating arrangement."
+    },
+    {
+      "id": "g04-adult-content-collaborator",
+      "group": "04 Who the Other Adult Is",
+      "title": "Adult-Content Collaborator",
+      "direction": "The other adult is a consensual content collaborator."
+    },
+    {
+      "id": "g04-someone-user-knows",
+      "group": "04 Who the Other Adult Is",
+      "title": "Someone {{user}} Knows",
+      "direction": "The other adult is independently familiar to {{user}}."
+    },
+    {
+      "id": "g04-users-friend",
+      "group": "04 Who the Other Adult Is",
+      "title": "{{user}}’s Friend",
+      "direction": "The other adult is one of {{user}}’s adult friends."
+    },
+    {
+      "id": "g04-users-coworker",
+      "group": "04 Who the Other Adult Is",
+      "title": "{{user}}’s Coworker",
+      "direction": "The other adult is connected to {{user}} through work."
+    },
+    {
+      "id": "g04-adult-relative-of-user",
+      "group": "04 Who the Other Adult Is",
+      "title": "Adult Relative of {{user}}",
+      "direction": "The other adult is an adult relative of {{user}}."
+    },
+    {
+      "id": "g04-woman",
+      "group": "04 Who the Other Adult Is",
+      "title": "Woman",
+      "direction": "The other adult is an adult woman rather than a man."
+    },
+    {
+      "id": "g04-multiple-adults",
+      "group": "04 Who the Other Adult Is",
+      "title": "Multiple Adults",
+      "direction": "More than two consenting adults are involved in the encounter."
+    },
+    {
+      "id": "g04-current-open-relationship-partner",
+      "group": "04 Who the Other Adult Is",
+      "title": "Current Open-Relationship Partner",
+      "direction": "The other adult is a known or legitimate outside partner under a consensual arrangement."
+    },
+    {
+      "id": "g04-secret-affair-partner",
+      "group": "04 Who the Other Adult Is",
+      "title": "Secret Affair Partner",
+      "direction": "The other adult is part of an ongoing hidden relationship."
+    },
+    {
+      "id": "g04-old-lover-newly-reconnected",
+      "group": "04 Who the Other Adult Is",
+      "title": "Old Lover Newly Reconnected",
+      "direction": "A former lover has recently returned to {{char}}’s life."
+    },
+    {
+      "id": "g05-voice-is-immediately-familiar",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Voice Is Immediately Familiar",
+      "direction": "{{user}} notices the woman’s speaking voice sounds strongly like {{char}}."
+    },
+    {
+      "id": "g05-voice-only-slightly-familiar",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Voice Only Slightly Familiar",
+      "direction": "The voice triggers recognition without immediate certainty."
+    },
+    {
+      "id": "g05-distinctive-laugh",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Distinctive Laugh",
+      "direction": "A familiar laugh becomes the first major clue."
+    },
+    {
+      "id": "g05-specific-phrase",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Specific Phrase",
+      "direction": "The woman uses a phrase strongly associated with {{char}}."
+    },
+    {
+      "id": "g05-pet-name",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Pet Name",
+      "direction": "A recognizable pet name or nickname is heard."
+    },
+    {
+      "id": "g05-other-adult-says-her-name",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Other Adult Says Her Name",
+      "direction": "The other adult uses a first name or nickname that narrows identity."
+    },
+    {
+      "id": "g05-speech-rhythm",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Speech Rhythm",
+      "direction": "Cadence and speaking rhythm feel unmistakably familiar."
+    },
+    {
+      "id": "g05-accent",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Accent",
+      "direction": "A distinctive accent or regional speech pattern creates suspicion."
+    },
+    {
+      "id": "g05-vocal-mannerism",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Vocal Mannerism",
+      "direction": "A habitual sound, verbal tic, or expression resembles {{char}}."
+    },
+    {
+      "id": "g05-reaction-pattern",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Reaction Pattern",
+      "direction": "{{user}} recognizes a characteristic way {{char}} reacts to surprise, teasing, or affection."
+    },
+    {
+      "id": "g05-conversation-topic",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Conversation Topic",
+      "direction": "A fragment of conversation references something only {{char}} would plausibly know."
+    },
+    {
+      "id": "g05-job-detail",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Job Detail",
+      "direction": "A work detail mentioned aloud links the woman to {{char}}."
+    },
+    {
+      "id": "g05-travel-detail",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Travel Detail",
+      "direction": "A personal travel/event reference becomes a clue."
+    },
+    {
+      "id": "g05-friend-name",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Friend Name",
+      "direction": "A mutual friend’s name is mentioned."
+    },
+    {
+      "id": "g05-unique-story",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Unique Story",
+      "direction": "The woman tells an anecdote {{user}} recognizes from {{char}}."
+    },
+    {
+      "id": "g05-phone-notification-sound",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Phone Notification Sound",
+      "direction": "A distinctive device sound or ringtone from the room matches {{char}}’s phone."
+    },
+    {
+      "id": "g05-music-choice",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Music Choice",
+      "direction": "Music or media playing in the room is associated with {{char}}, though not proof by itself."
+    },
+    {
+      "id": "g05-perfume-scent-afterward",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Perfume / Scent Afterward",
+      "direction": "A familiar scent later supports the auditory suspicion."
+    },
+    {
+      "id": "g05-footsteps-movement",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Footsteps / Movement",
+      "direction": "Recognizable movement or footsteps add weak contextual support."
+    },
+    {
+      "id": "g05-no-clear-voice",
+      "group": "05 How Recognisable She Sounds",
+      "title": "No Clear Voice",
+      "direction": "The woman is mostly quiet or muffled, making identification difficult."
+    },
+    {
+      "id": "g05-voice-is-deliberately-suppressed",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Voice Is Deliberately Suppressed",
+      "direction": "The woman seems to be trying not to be recognized or overheard."
+    },
+    {
+      "id": "g05-background-noise-obscures-her",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Background Noise Obscures Her",
+      "direction": "Music, traffic, appliances, or crowd noise makes clues intermittent."
+    },
+    {
+      "id": "g05-wall-distorts-the-voice",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Wall Distorts the Voice",
+      "direction": "The acoustics make a familiar voice sound uncertain."
+    },
+    {
+      "id": "g05-several-small-sound-clues",
+      "group": "05 How Recognisable She Sounds",
+      "title": "Several Small Sound Clues",
+      "direction": "No single clue is decisive, but multiple auditory details accumulate."
+    },
+    {
+      "id": "g06-no-suspicion-at-first",
+      "group": "06 How Certainty Develops",
+      "title": "No Suspicion at First",
+      "direction": "{{user}} hears the encounter without initially connecting it to {{char}}."
+    },
+    {
+      "id": "g06-faint-familiarity",
+      "group": "06 How Certainty Develops",
+      "title": "Faint Familiarity",
+      "direction": "Something sounds familiar but remains vague."
+    },
+    {
+      "id": "g06-one-clue-creates-suspicion",
+      "group": "06 How Certainty Develops",
+      "title": "One Clue Creates Suspicion",
+      "direction": "A single phrase, laugh, or name makes {{user}} wonder."
+    },
+    {
+      "id": "g06-two-independent-clues",
+      "group": "06 How Certainty Develops",
+      "title": "Two Independent Clues",
+      "direction": "Separate auditory clues make coincidence less likely."
+    },
+    {
+      "id": "g06-certainty-builds-gradually",
+      "group": "06 How Certainty Develops",
+      "title": "Certainty Builds Gradually",
+      "direction": "Recognition becomes stronger over time as more clues emerge."
+    },
+    {
+      "id": "g06-sudden-realisation",
+      "group": "06 How Certainty Develops",
+      "title": "Sudden Realisation",
+      "direction": "One unmistakable clue causes an abrupt recognition."
+    },
+    {
+      "id": "g06-almost-certain",
+      "group": "06 How Certainty Develops",
+      "title": "Almost Certain",
+      "direction": "The evidence strongly points to {{char}} without absolute confirmation."
+    },
+    {
+      "id": "g06-certain-after-seeing-her-leave",
+      "group": "06 How Certainty Develops",
+      "title": "Certain After Seeing Her Leave",
+      "direction": "Visual confirmation occurs only after the encounter ends."
+    },
+    {
+      "id": "g06-certain-after-seeing-other-adult",
+      "group": "06 How Certainty Develops",
+      "title": "Certain After Seeing Other Adult",
+      "direction": "The identity of the other adult makes the woman’s identity much more likely."
+    },
+    {
+      "id": "g06-char-confirms-later",
+      "group": "06 How Certainty Develops",
+      "title": "{{char}} Confirms Later",
+      "direction": "She later acknowledges that it was her."
+    },
+    {
+      "id": "g06-other-adult-confirms-later",
+      "group": "06 How Certainty Develops",
+      "title": "Other Adult Confirms Later",
+      "direction": "The other person confirms {{char}} was present."
+    },
+    {
+      "id": "g06-third-party-confirms",
+      "group": "06 How Certainty Develops",
+      "title": "Third Party Confirms",
+      "direction": "Another adult independently verifies the identity."
+    },
+    {
+      "id": "g06-char-denies-it",
+      "group": "06 How Certainty Develops",
+      "title": "{{char}} Denies It",
+      "direction": "She says the woman was not her; preserve uncertainty until context resolves."
+    },
+    {
+      "id": "g06-wrong-room",
+      "group": "06 How Certainty Develops",
+      "title": "Wrong Room",
+      "direction": "{{user}} initially attributes the sounds to the wrong room."
+    },
+    {
+      "id": "g06-lookalike-voice",
+      "group": "06 How Certainty Develops",
+      "title": "Lookalike Voice",
+      "direction": "Another adult woman genuinely sounds very similar to {{char}}."
+    },
+    {
+      "id": "g06-name-coincidence",
+      "group": "06 How Certainty Develops",
+      "title": "Name Coincidence",
+      "direction": "A common first name creates false confidence."
+    },
+    {
+      "id": "g06-misheard-phrase",
+      "group": "06 How Certainty Develops",
+      "title": "Misheard Phrase",
+      "direction": "A distorted phrase was interpreted incorrectly."
+    },
+    {
+      "id": "g06-timing-makes-it-impossible",
+      "group": "06 How Certainty Develops",
+      "title": "Timing Makes It Impossible",
+      "direction": "Later evidence shows {{char}} could not have been there."
+    },
+    {
+      "id": "g06-correct-identity-wrong-assumption",
+      "group": "06 How Certainty Develops",
+      "title": "Correct Identity, Wrong Assumption",
+      "direction": "It is {{char}}, but assumptions about cheating or secrecy are wrong."
+    },
+    {
+      "id": "g06-correct-identity-open-arrangement",
+      "group": "06 How Certainty Develops",
+      "title": "Correct Identity, Open Arrangement",
+      "direction": "The woman is {{char}} and the encounter is legitimate under a consensual agreement."
+    },
+    {
+      "id": "g06-correct-identity-historical-audio",
+      "group": "06 How Certainty Develops",
+      "title": "Correct Identity, Historical Audio",
+      "direction": "{{user}} eventually learns the sounds came from a recording rather than a live encounter."
+    },
+    {
+      "id": "g06-unresolved-uncertainty",
+      "group": "06 How Certainty Develops",
+      "title": "Unresolved Uncertainty",
+      "direction": "The scenario remains genuinely ambiguous."
+    },
+    {
+      "id": "g07-no-idea-user-is-nearby",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "No Idea {{user}} Is Nearby",
+      "direction": "{{char}} does not know {{user}} is within hearing range."
+    },
+    {
+      "id": "g07-thinks-user-is-elsewhere",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "Thinks {{user}} Is Elsewhere",
+      "direction": "She believes {{user}} is at work, home, asleep, travelling, or otherwise absent."
+    },
+    {
+      "id": "g07-knows-he-is-nearby-thinks-walls-are-thick",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "Knows He Is Nearby, Thinks Walls Are Thick",
+      "direction": "{{char}} knows {{user}} is close but assumes the encounter cannot be heard."
+    },
+    {
+      "id": "g07-realises-midway",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "Realises Midway",
+      "direction": "A sound or interruption makes {{char}} suspect {{user}} may be nearby."
+    },
+    {
+      "id": "g07-other-adult-warns-her",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "Other Adult Warns Her",
+      "direction": "The other adult realizes {{user}} is present and tells {{char}}."
+    },
+    {
+      "id": "g07-she-hears-user-outside",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Hears {{user}} Outside",
+      "direction": "{{char}} becomes aware that he may have overheard."
+    },
+    {
+      "id": "g07-she-sees-user-afterwards",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Sees {{user}} Afterwards",
+      "direction": "His unexpected presence tells her immediately that he could have heard."
+    },
+    {
+      "id": "g07-she-suspects-from-his-behaviour",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Suspects From His Behaviour",
+      "direction": "{{char}} later infers he knows from questions or changed behavior."
+    },
+    {
+      "id": "g07-she-knows-exactly",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Knows Exactly",
+      "direction": "{{char}} is fully aware {{user}} can hear."
+    },
+    {
+      "id": "g07-intentional-exhibitionism-within-agreement",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "Intentional Exhibitionism Within Agreement",
+      "direction": "In a consensual arrangement, {{char}} knowingly allows {{user}} to overhear as part of an agreed fantasy."
+    },
+    {
+      "id": "g07-intentional-humiliation-without-consent",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "Intentional Humiliation Without Consent",
+      "direction": "{{char}} or the other adult deliberately exposes {{user}} to the encounter without prior agreement. Treat this as a boundary violation, not assumed kink."
+    },
+    {
+      "id": "g07-she-wants-him-to-hear",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Wants Him to Hear",
+      "direction": "{{char}} intentionally positions the encounter to be audible; preserve motive and consent implications."
+    },
+    {
+      "id": "g07-she-tries-to-stay-quiet",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Tries to Stay Quiet",
+      "direction": "{{char}} knows sound could carry and deliberately tries to reduce it."
+    },
+    {
+      "id": "g07-she-stops-when-she-realizes",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Stops When She Realizes",
+      "direction": "Awareness of the unintended listener causes {{char}} to stop or move."
+    },
+    {
+      "id": "g07-she-continues-despite-realizing",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Continues Despite Realizing",
+      "direction": "She becomes aware {{user}} may hear and chooses to continue; do not infer {{user}} consents to being involved as an audience."
+    },
+    {
+      "id": "g07-she-plans-to-explain-later",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Plans to Explain Later",
+      "direction": "{{char}} realizes what happened and decides she needs to talk with {{user}} afterward."
+    },
+    {
+      "id": "g07-she-hopes-he-didnt-hear",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Hopes He Didn’t Hear",
+      "direction": "She leaves without knowing how much {{user}} caught."
+    },
+    {
+      "id": "g08-clearly-cheating",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Clearly Cheating",
+      "direction": "The encounter violates a known monogamous agreement."
+    },
+    {
+      "id": "g08-clearly-consensual-non-monogamy",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Clearly Consensual Non-Monogamy",
+      "direction": "The encounter is permitted under an established open/poly arrangement."
+    },
+    {
+      "id": "g08-hall-pass",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Hall Pass",
+      "direction": "{{char}} has a specific negotiated exception."
+    },
+    {
+      "id": "g08-hotwife-cuckold-arrangement",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Hotwife / Cuckold Arrangement",
+      "direction": "The couple has an established consensual arrangement involving outside partners."
+    },
+    {
+      "id": "g08-partner-aware-encounter",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Partner-Aware Encounter",
+      "direction": "{{user}} already knew {{char}} might meet the other adult, but not necessarily when or where."
+    },
+    {
+      "id": "g08-dont-ask-dont-tell-agreement",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Don’t-Ask-Don’t-Tell Agreement",
+      "direction": "Outside encounters are allowed under limited-information rules."
+    },
+    {
+      "id": "g08-open-but-with-disclosure-rules",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Open but With Disclosure Rules",
+      "direction": "Sex is permitted, but {{char}} may have violated a rule about timing or disclosure rather than exclusivity."
+    },
+    {
+      "id": "g08-open-but-other-adult-is-off-limits",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Open but Other Adult Is Off-Limits",
+      "direction": "The encounter violates a specific partner boundary despite general openness."
+    },
+    {
+      "id": "g08-on-a-genuine-break",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "On a Genuine Break",
+      "direction": "The couple had explicitly paused exclusivity."
+    },
+    {
+      "id": "g08-separated",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Separated",
+      "direction": "They were genuinely separated when the encounter occurred."
+    },
+    {
+      "id": "g08-relationship-status-ambiguous",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Relationship Status Ambiguous",
+      "direction": "The couple never clearly defined exclusivity."
+    },
+    {
+      "id": "g08-dating-but-not-exclusive",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Dating but Not Exclusive",
+      "direction": "{{char}} and {{user}} are romantically involved but have not agreed to monogamy."
+    },
+    {
+      "id": "g08-misunderstood-rules",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Misunderstood Rules",
+      "direction": "{{char}} and {{user}} have different sincere interpretations of what was allowed."
+    },
+    {
+      "id": "g08-she-claims-it-was-allowed",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "She Claims It Was Allowed",
+      "direction": "{{char}} says the encounter fits their agreement; preserve whether that claim is accurate."
+    },
+    {
+      "id": "g08-other-adult-thinks-it-was-allowed",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Other Adult Thinks It Was Allowed",
+      "direction": "The outside partner believes the relationship was open."
+    },
+    {
+      "id": "g08-user-had-agreed-earlier-and-forgotten-context",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "{{user}} Had Agreed Earlier and Forgotten Context",
+      "direction": "Past discussion changes the meaning of what is overheard."
+    },
+    {
+      "id": "g08-encounter-predates-relationship",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Encounter Predates Relationship",
+      "direction": "The sounds are later revealed to come from historical audio or a recording."
+    },
+    {
+      "id": "g08-roleplay-audio-recording",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Roleplay / Audio Recording",
+      "direction": "The overheard sounds are not a live sexual encounter at all."
+    },
+    {
+      "id": "g08-porn-media-playback",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Porn / Media Playback",
+      "direction": "What sounded like a nearby encounter was actually media playing in another room."
+    },
+    {
+      "id": "g08-nonsexual-misunderstanding",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Nonsexual Misunderstanding",
+      "direction": "The sounds or dialogue were misinterpreted; preserve a plausible innocent explanation."
+    },
+    {
+      "id": "g09-believes-char-is-single",
+      "group": "09 What the Other Adult Knows",
+      "title": "Believes {{char}} Is Single",
+      "direction": "The other adult thinks {{char}} is unattached."
+    },
+    {
+      "id": "g09-knows-about-user",
+      "group": "09 What the Other Adult Knows",
+      "title": "Knows About {{user}}",
+      "direction": "The other adult knows she has a serious partner."
+    },
+    {
+      "id": "g09-knows-user-personally",
+      "group": "09 What the Other Adult Knows",
+      "title": "Knows {{user}} Personally",
+      "direction": "The other adult knows exactly who {{user}} is."
+    },
+    {
+      "id": "g09-was-told-relationship-is-open",
+      "group": "09 What the Other Adult Knows",
+      "title": "Was Told Relationship Is Open",
+      "direction": "{{char}} says outside sex is allowed."
+    },
+    {
+      "id": "g09-verified-open-arrangement",
+      "group": "09 What the Other Adult Knows",
+      "title": "Verified Open Arrangement",
+      "direction": "The other adult has credible reason to know the arrangement is consensual."
+    },
+    {
+      "id": "g09-was-told-they-are-separated",
+      "group": "09 What the Other Adult Knows",
+      "title": "Was Told They Are Separated",
+      "direction": "The other adult believes the couple is on a break or separated."
+    },
+    {
+      "id": "g09-was-lied-to",
+      "group": "09 What the Other Adult Knows",
+      "title": "Was Lied To",
+      "direction": "{{char}} falsely described her relationship status."
+    },
+    {
+      "id": "g09-never-asked",
+      "group": "09 What the Other Adult Knows",
+      "title": "Never Asked",
+      "direction": "The other adult does not know whether {{char}} is partnered."
+    },
+    {
+      "id": "g09-suspects-she-is-taken",
+      "group": "09 What the Other Adult Knows",
+      "title": "Suspects She Is Taken",
+      "direction": "The other adult has doubts about her relationship status."
+    },
+    {
+      "id": "g09-finds-out-midway",
+      "group": "09 What the Other Adult Knows",
+      "title": "Finds Out Midway",
+      "direction": "The other adult learns about {{user}} during or immediately after the encounter."
+    },
+    {
+      "id": "g09-finds-out-afterwards",
+      "group": "09 What the Other Adult Knows",
+      "title": "Finds Out Afterwards",
+      "direction": "The truth emerges only later."
+    },
+    {
+      "id": "g09-thinks-user-is-aware",
+      "group": "09 What the Other Adult Knows",
+      "title": "Thinks {{user}} Is Aware",
+      "direction": "The other adult believes {{user}} knows and accepts the encounter."
+    },
+    {
+      "id": "g09-knows-user-is-nearby",
+      "group": "09 What the Other Adult Knows",
+      "title": "Knows {{user}} Is Nearby",
+      "direction": "The other adult knows the current partner may overhear."
+    },
+    {
+      "id": "g09-does-not-know-user-is-nearby",
+      "group": "09 What the Other Adult Knows",
+      "title": "Does Not Know {{user}} Is Nearby",
+      "direction": "He or she has no idea {{user}} is within earshot."
+    },
+    {
+      "id": "g09-wants-user-to-hear",
+      "group": "09 What the Other Adult Knows",
+      "title": "Wants {{user}} to Hear",
+      "direction": "The other adult intentionally makes the encounter audible."
+    },
+    {
+      "id": "g09-tries-to-protect-privacy",
+      "group": "09 What the Other Adult Knows",
+      "title": "Tries to Protect Privacy",
+      "direction": "The other adult reduces noise or relocates once they realize someone may hear."
+    },
+    {
+      "id": "g09-encounter-predates-user",
+      "group": "09 What the Other Adult Knows",
+      "title": "Encounter Predates {{user}}",
+      "direction": "Knowledge of the current relationship is irrelevant because no relationship existed yet."
+    },
+    {
+      "id": "g10-planned-date",
+      "group": "10 How the Encounter Came About",
+      "title": "Planned Date",
+      "direction": "{{char}} deliberately arranged to meet the other adult."
+    },
+    {
+      "id": "g10-spontaneous-hookup",
+      "group": "10 How the Encounter Came About",
+      "title": "Spontaneous Hookup",
+      "direction": "The encounter developed unexpectedly between consenting adults."
+    },
+    {
+      "id": "g10-former-lover-reunion",
+      "group": "10 How the Encounter Came About",
+      "title": "Former Lover Reunion",
+      "direction": "Reconnection with a former partner led to the encounter."
+    },
+    {
+      "id": "g10-coworker-after-work",
+      "group": "10 How the Encounter Came About",
+      "title": "Coworker After Work",
+      "direction": "The encounter follows adult workplace socializing."
+    },
+    {
+      "id": "g10-party-hookup",
+      "group": "10 How the Encounter Came About",
+      "title": "Party Hookup",
+      "direction": "The adults met or reconnected during a party."
+    },
+    {
+      "id": "g10-travel-encounter",
+      "group": "10 How the Encounter Came About",
+      "title": "Travel Encounter",
+      "direction": "The meeting happens during a trip or temporary stay."
+    },
+    {
+      "id": "g10-hotel-meet-up",
+      "group": "10 How the Encounter Came About",
+      "title": "Hotel Meet-Up",
+      "direction": "{{char}} intentionally arranged a hotel meeting."
+    },
+    {
+      "id": "g10-neighbour-visit",
+      "group": "10 How the Encounter Came About",
+      "title": "Neighbour Visit",
+      "direction": "A visit to a nearby adult’s home turns sexual."
+    },
+    {
+      "id": "g10-fwb-routine",
+      "group": "10 How the Encounter Came About",
+      "title": "FWB Routine",
+      "direction": "The encounter comes from an established recurring casual arrangement."
+    },
+    {
+      "id": "g10-open-relationship-date",
+      "group": "10 How the Encounter Came About",
+      "title": "Open-Relationship Date",
+      "direction": "{{char}} is on a legitimate outside date."
+    },
+    {
+      "id": "g10-affair-meet-up",
+      "group": "10 How the Encounter Came About",
+      "title": "Affair Meet-Up",
+      "direction": "The encounter is part of an ongoing secret affair."
+    },
+    {
+      "id": "g10-one-time-mistake",
+      "group": "10 How the Encounter Came About",
+      "title": "One-Time Mistake",
+      "direction": "The scenario establishes a single boundary-crossing encounter rather than a recurring relationship."
+    },
+    {
+      "id": "g10-revenge-retaliation",
+      "group": "10 How the Encounter Came About",
+      "title": "Revenge / Retaliation",
+      "direction": "{{char}} seeks the encounter partly in response to perceived betrayal. Do not treat revenge as justification."
+    },
+    {
+      "id": "g10-emotional-affair-turns-physical",
+      "group": "10 How the Encounter Came About",
+      "title": "Emotional Affair Turns Physical",
+      "direction": "A pre-existing hidden emotional relationship becomes sexual."
+    },
+    {
+      "id": "g10-compensated-arrangement",
+      "group": "10 How the Encounter Came About",
+      "title": "Compensated Arrangement",
+      "direction": "The encounter is part of consensual adult compensated dating/work where lawful."
+    },
+    {
+      "id": "g10-content-collaboration",
+      "group": "10 How the Encounter Came About",
+      "title": "Content Collaboration",
+      "direction": "The adults are recording consensual adult content rather than having a private romantic encounter."
+    },
+    {
+      "id": "g10-experiment-kink-scene",
+      "group": "10 How the Encounter Came About",
+      "title": "Experiment / Kink Scene",
+      "direction": "The encounter is part of a consensual negotiated adult experiment."
+    },
+    {
+      "id": "g10-partner-arranged-encounter",
+      "group": "10 How the Encounter Came About",
+      "title": "Partner-Arranged Encounter",
+      "direction": "{{user}} or another partner helped arrange it under consensual rules."
+    },
+    {
+      "id": "g10-misunderstood-activity",
+      "group": "10 How the Encounter Came About",
+      "title": "Misunderstood Activity",
+      "direction": "The sounds came from a nonsexual activity that plausibly mimics intimacy."
+    },
+    {
+      "id": "g10-recorded-audio-voice-acting",
+      "group": "10 How the Encounter Came About",
+      "title": "Recorded Audio / Voice Acting",
+      "direction": "The woman is recording adult audio or roleplay rather than having sex."
+    },
+    {
+      "id": "g11-one-time-encounter",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "One-Time Encounter",
+      "direction": "The event is isolated."
+    },
+    {
+      "id": "g11-first-time-with-this-person",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "First Time With This Person",
+      "direction": "{{char}} has no prior sexual history with the other adult."
+    },
+    {
+      "id": "g11-former-partners-reconnect-once",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Former Partners Reconnect Once",
+      "direction": "Two former lovers briefly reconnect without an ongoing affair."
+    },
+    {
+      "id": "g11-recurring-fwb",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Recurring FWB",
+      "direction": "The encounter is part of a recurring casual arrangement."
+    },
+    {
+      "id": "g11-ongoing-affair",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Ongoing Affair",
+      "direction": "The overheard event is one episode of a continuing secret relationship."
+    },
+    {
+      "id": "g11-long-term-secret-relationship",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Long-Term Secret Relationship",
+      "direction": "A sustained hidden romance or sexual partnership exists."
+    },
+    {
+      "id": "g11-open-relationship-regular",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Open-Relationship Regular",
+      "direction": "The other adult is a recurring consensual outside partner."
+    },
+    {
+      "id": "g11-occasional-encounters",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Occasional Encounters",
+      "direction": "The adults meet irregularly rather than maintaining a full relationship."
+    },
+    {
+      "id": "g11-many-previous-encounters",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Many Previous Encounters",
+      "direction": "The overheard event reveals a much longer history."
+    },
+    {
+      "id": "g11-only-emotional-before-tonight",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Only Emotional Before Tonight",
+      "direction": "This is the first sexual encounter after a period of emotional intimacy."
+    },
+    {
+      "id": "g11-relationship-already-ended-afterwards",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Relationship Already Ended Afterwards",
+      "direction": "The overheard event is the last or only encounter, not proof of future continuation."
+    },
+    {
+      "id": "g11-current-friendship-only-afterwards",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Current Friendship Only Afterwards",
+      "direction": "The sexual relationship stops but friendship remains."
+    },
+    {
+      "id": "g11-no-current-contact-afterwards",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "No Current Contact Afterwards",
+      "direction": "The other adult disappears from {{char}}’s life after the event."
+    },
+    {
+      "id": "g11-history-predates-user",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "History Predates {{user}}",
+      "direction": "The encounter is ultimately revealed as old recorded audio or remembered context."
+    },
+    {
+      "id": "g11-unclear-whether-it-is-ongoing",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Unclear Whether It Is Ongoing",
+      "direction": "The overheard material alone cannot establish duration."
+    },
+    {
+      "id": "g12-char-leaves-the-room",
+      "group": "12 What Happens Immediately After",
+      "title": "{{char}} Leaves the Room",
+      "direction": "Seeing her emerge becomes strong confirmation."
+    },
+    {
+      "id": "g12-other-adult-leaves-first",
+      "group": "12 What Happens Immediately After",
+      "title": "Other Adult Leaves First",
+      "direction": "The other adult’s identity becomes visible before the woman’s."
+    },
+    {
+      "id": "g12-they-leave-separately",
+      "group": "12 What Happens Immediately After",
+      "title": "They Leave Separately",
+      "direction": "Separate departures create ambiguity about whether they were together."
+    },
+    {
+      "id": "g12-char-returns-to-user-shortly-after",
+      "group": "12 What Happens Immediately After",
+      "title": "{{char}} Returns to {{user}} Shortly After",
+      "direction": "Timing connects her to the overheard room."
+    },
+    {
+      "id": "g12-clothing-detail-matches",
+      "group": "12 What Happens Immediately After",
+      "title": "Clothing Detail Matches",
+      "direction": "A clothing detail seen afterward supports recognition."
+    },
+    {
+      "id": "g12-hair-makeup-changed",
+      "group": "12 What Happens Immediately After",
+      "title": "Hair / Makeup Changed",
+      "direction": "Her appearance suggests where she has been without proving anything alone."
+    },
+    {
+      "id": "g12-familiar-scent",
+      "group": "12 What Happens Immediately After",
+      "title": "Familiar Scent",
+      "direction": "A recognizable scent supports the identification."
+    },
+    {
+      "id": "g12-phone-location-timing",
+      "group": "12 What Happens Immediately After",
+      "title": "Phone Location / Timing",
+      "direction": "Legitimate shared location/timing information corroborates where she was."
+    },
+    {
+      "id": "g12-room-key-receipt",
+      "group": "12 What Happens Immediately After",
+      "title": "Room Key / Receipt",
+      "direction": "A document or ordinary object connects {{char}} to the location."
+    },
+    {
+      "id": "g12-message-arrives-from-other-adult",
+      "group": "12 What Happens Immediately After",
+      "title": "Message Arrives From Other Adult",
+      "direction": "A later message links the two adults."
+    },
+    {
+      "id": "g12-conversation-references-it",
+      "group": "12 What Happens Immediately After",
+      "title": "Conversation References It",
+      "direction": "{{char}} or the other adult later mentions a detail {{user}} overheard."
+    },
+    {
+      "id": "g12-friend-makes-a-comment",
+      "group": "12 What Happens Immediately After",
+      "title": "Friend Makes a Comment",
+      "direction": "A third party accidentally corroborates the meeting."
+    },
+    {
+      "id": "g12-no-physical-clues",
+      "group": "12 What Happens Immediately After",
+      "title": "No Physical Clues",
+      "direction": "The case rests entirely on what {{user}} heard."
+    },
+    {
+      "id": "g12-clues-contradict-recognition",
+      "group": "12 What Happens Immediately After",
+      "title": "Clues Contradict Recognition",
+      "direction": "Later evidence suggests the woman was someone else."
+    },
+    {
+      "id": "g12-other-woman-appears",
+      "group": "12 What Happens Immediately After",
+      "title": "Other Woman Appears",
+      "direction": "A different woman emerges, undermining the initial assumption."
+    },
+    {
+      "id": "g12-char-was-elsewhere",
+      "group": "12 What Happens Immediately After",
+      "title": "{{char}} Was Elsewhere",
+      "direction": "Reliable evidence shows she could not have been the woman."
+    },
+    {
+      "id": "g12-char-confesses",
+      "group": "12 What Happens Immediately After",
+      "title": "{{char}} Confesses",
+      "direction": "She directly acknowledges the encounter."
+    },
+    {
+      "id": "g12-other-adult-confesses",
+      "group": "12 What Happens Immediately After",
+      "title": "Other Adult Confesses",
+      "direction": "The other person confirms what happened."
+    },
+    {
+      "id": "g12-open-relationship-context-appears",
+      "group": "12 What Happens Immediately After",
+      "title": "Open-Relationship Context Appears",
+      "direction": "Evidence reveals the encounter was previously agreed."
+    },
+    {
+      "id": "g12-recording-equipment-revealed",
+      "group": "12 What Happens Immediately After",
+      "title": "Recording Equipment Revealed",
+      "direction": "The sounds came from content production, voice acting, or media playback rather than a hidden live encounter."
+    },
+    {
+      "id": "g13-immediate-admission",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Immediate Admission",
+      "direction": "{{char}} confirms she was the woman."
+    },
+    {
+      "id": "g13-calm-explanation",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Calm Explanation",
+      "direction": "She explains the context and relationship agreement without panic."
+    },
+    {
+      "id": "g13-embarrassed-admission",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Embarrassed Admission",
+      "direction": "She admits it but is uncomfortable that {{user}} overheard."
+    },
+    {
+      "id": "g13-apologises-for-cheating",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Apologises for Cheating",
+      "direction": "Where a genuine boundary violation occurred, she acknowledges it."
+    },
+    {
+      "id": "g13-apologises-for-not-warning-user",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Apologises for Not Warning {{user}}",
+      "direction": "In an allowed arrangement, the issue is unexpected exposure rather than sex itself."
+    },
+    {
+      "id": "g13-angry-about-being-overheard",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Angry About Being Overheard",
+      "direction": "She feels her privacy was invaded even if {{user}} did nothing deliberate."
+    },
+    {
+      "id": "g13-understands-it-was-accidental",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Understands It Was Accidental",
+      "direction": "{{char}} recognizes that {{user}} could not reasonably avoid hearing."
+    },
+    {
+      "id": "g13-denies-it-was-her",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Denies It Was Her",
+      "direction": "She disputes the identification."
+    },
+    {
+      "id": "g13-corrects-the-identity",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Corrects the Identity",
+      "direction": "She explains who the woman actually was."
+    },
+    {
+      "id": "g13-corrects-the-context",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Corrects the Context",
+      "direction": "She confirms identity but explains that the encounter was allowed."
+    },
+    {
+      "id": "g13-corrects-the-timing",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Corrects the Timing",
+      "direction": "She explains the audio or encounter predates the relationship."
+    },
+    {
+      "id": "g13-admits-ongoing-affair",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Admits Ongoing Affair",
+      "direction": "The overheard event exposes a current hidden relationship."
+    },
+    {
+      "id": "g13-minimises-the-duration",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Minimises the Duration",
+      "direction": "She admits one encounter while denying or downplaying a longer pattern."
+    },
+    {
+      "id": "g13-trickle-truth",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Trickle-Truth",
+      "direction": "Additional details emerge over time."
+    },
+    {
+      "id": "g13-protects-other-adults-privacy",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Protects Other Adult’s Privacy",
+      "direction": "She discusses her own choices without volunteering unnecessary intimate details about the other adult."
+    },
+    {
+      "id": "g13-asks-what-user-heard",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Asks What {{user}} Heard",
+      "direction": "She wants to understand how much information was audible."
+    },
+    {
+      "id": "g13-was-hoping-he-didnt-hear",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Was Hoping He Didn’t Hear",
+      "direction": "Her first reaction is embarrassment or concern about accidental exposure."
+    },
+    {
+      "id": "g13-was-intentionally-letting-him-hear",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Was Intentionally Letting Him Hear",
+      "direction": "She confirms deliberate exposure; preserve whether such audience involvement was consensual."
+    },
+    {
+      "id": "g13-needs-time-to-explain",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Needs Time to Explain",
+      "direction": "{{char}} is willing to talk but not immediately."
+    },
+    {
+      "id": "g13-relieved-the-secret-is-out",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "Relieved the Secret Is Out",
+      "direction": "She had been anxious about hiding the encounter or relationship."
+    },
+    {
+      "id": "g14-girlfriend",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Girlfriend",
+      "direction": "The hidden woman is {{user}}’s adult girlfriend."
+    },
+    {
+      "id": "g14-fianc-e",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Fiancée",
+      "direction": "The hidden woman is {{user}}’s adult fiancée."
+    },
+    {
+      "id": "g14-wife",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Wife",
+      "direction": "The hidden woman is {{user}}’s adult wife."
+    },
+    {
+      "id": "g14-casual-partner",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Casual Partner",
+      "direction": "The hidden woman is someone {{user}} is dating or sleeping with without a fully defined exclusive relationship."
+    },
+    {
+      "id": "g14-ex-girlfriend",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Ex-Girlfriend",
+      "direction": "The hidden woman is an adult ex who remains close to {{user}}."
+    },
+    {
+      "id": "g14-close-female-friend",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Close Female Friend",
+      "direction": "The woman is a close adult friend rather than a current partner."
+    },
+    {
+      "id": "g14-best-friend",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Best Friend",
+      "direction": "The hidden woman is {{user}}’s adult best friend."
+    },
+    {
+      "id": "g14-roommate",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Roommate",
+      "direction": "The woman is an adult roommate with emotional or sexual tension."
+    },
+    {
+      "id": "g14-coworker",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Coworker",
+      "direction": "The woman is an adult coworker close to {{user}}."
+    },
+    {
+      "id": "g14-neighbour",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Neighbour",
+      "direction": "The woman is an adult neighbour {{user}} knows well."
+    },
+    {
+      "id": "g14-crush",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Crush",
+      "direction": "The woman is someone {{user}} has feelings for but is not dating."
+    },
+    {
+      "id": "g14-former-fwb",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Former FWB",
+      "direction": "The hidden woman is a former casual partner still in {{user}}’s life."
+    },
+    {
+      "id": "g14-open-relationship-partner",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Open-Relationship Partner",
+      "direction": "The woman is {{user}}’s partner within an explicitly non-monogamous relationship."
+    },
+    {
+      "id": "g14-someone-user-recently-started-dating",
+      "group": "14 Who the Hidden Woman Is to {{user}}",
+      "title": "Someone {{user}} Recently Started Dating",
+      "direction": "The relationship is new enough that boundaries may still be unclear."
+    },
+    {
+      "id": "g15-thin-walls",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Thin Walls",
+      "direction": "Ordinary poor sound insulation explains why private sounds carry."
+    },
+    {
+      "id": "g15-open-door",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Open Door",
+      "direction": "A door left partly open makes the encounter unusually audible."
+    },
+    {
+      "id": "g15-open-window",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Open Window",
+      "direction": "Sound carries through open windows."
+    },
+    {
+      "id": "g15-shared-vent",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Shared Vent",
+      "direction": "Ventilation transmits voices between rooms."
+    },
+    {
+      "id": "g15-quiet-building",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Quiet Building",
+      "direction": "Low ambient noise makes small sounds travel farther."
+    },
+    {
+      "id": "g15-loud-music-masks-some-clues",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Loud Music Masks Some Clues",
+      "direction": "Music both conceals and distorts the encounter."
+    },
+    {
+      "id": "g15-party-noise-creates-fragments",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Party Noise Creates Fragments",
+      "direction": "{{user}} hears only intermittent pieces through other sound."
+    },
+    {
+      "id": "g15-water-shower-noise",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Water / Shower Noise",
+      "direction": "Running water alters the acoustic evidence."
+    },
+    {
+      "id": "g15-television-in-background",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Television in Background",
+      "direction": "A television or media source complicates interpretation."
+    },
+    {
+      "id": "g15-echoing-hallway",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Echoing Hallway",
+      "direction": "The source location is difficult to pinpoint."
+    },
+    {
+      "id": "g15-phone-call-through-wall",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Phone Call Through Wall",
+      "direction": "Part of what {{user}} hears is a call or speakerphone rather than a second person physically present."
+    },
+    {
+      "id": "g15-recorded-audio-playing",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Recorded Audio Playing",
+      "direction": "A recording creates the illusion of a live encounter."
+    },
+    {
+      "id": "g15-adult-movie-playing",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Adult Movie Playing",
+      "direction": "Media is mistaken for real nearby activity."
+    },
+    {
+      "id": "g15-voice-acting-content-recording",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Voice Acting / Content Recording",
+      "direction": "{{char}} is performing adult audio/roleplay content."
+    },
+    {
+      "id": "g15-workout-massage-misheard",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Workout / Massage Misheard",
+      "direction": "Nonsexual sounds are plausibly mistaken for intimacy."
+    },
+    {
+      "id": "g15-medical-physical-therapy-misread",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Medical / Physical-Therapy Misread",
+      "direction": "A benign adult situation produces misleading sounds or phrases."
+    },
+    {
+      "id": "g15-furniture-building-noise",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Furniture / Building Noise",
+      "direction": "Some sounds attributed to sex have a mundane source."
+    },
+    {
+      "id": "g15-two-separate-conversations-overlap",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Two Separate Conversations Overlap",
+      "direction": "Audio from different sources combines into a misleading narrative."
+    },
+    {
+      "id": "g15-wrong-room-attribution",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Wrong Room Attribution",
+      "direction": "{{user}} correctly hears an encounter but wrongly identifies which room it is in."
+    },
+    {
+      "id": "g15-sound-travels-from-floor-above-below",
+      "group": "15 Acoustic Ambiguity / False Positives",
+      "title": "Sound Travels From Floor Above / Below",
+      "direction": "The apparent adjacent room is not the actual source."
+    },
+    {
+      "id": "g16-accidental-overhearing",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Accidental Overhearing",
+      "direction": "{{user}} unintentionally hears private adult activity without seeking it out."
+    },
+    {
+      "id": "g16-does-not-move-closer",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Does Not Move Closer",
+      "direction": "Keep the scenario as accidental exposure rather than turning it into deliberate eavesdropping."
+    },
+    {
+      "id": "g16-moves-away-once-recognized",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Moves Away Once Recognized",
+      "direction": "{{user}} may choose to preserve privacy; do not pre-write this decision."
+    },
+    {
+      "id": "g16-intentional-eavesdropping",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Intentional Eavesdropping",
+      "direction": "If {{user}} deliberately listens, treat that as a separate privacy choice rather than neutral observation."
+    },
+    {
+      "id": "g16-no-secret-recording",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "No Secret Recording",
+      "direction": "Do not assume {{user}} records the sounds."
+    },
+    {
+      "id": "g16-recording-would-require-separate-consent",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Recording Would Require Separate Consent",
+      "direction": "Audio capture of intimate activity raises additional privacy/consent issues."
+    },
+    {
+      "id": "g16-no-right-to-share-what-was-heard",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "No Right to Share What Was Heard",
+      "direction": "Accidental knowledge does not authorize public disclosure of intimate details."
+    },
+    {
+      "id": "g16-no-right-to-enter-the-room",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "No Right to Enter the Room",
+      "direction": "Hearing a possible encounter does not by itself authorize forced entry into private space."
+    },
+    {
+      "id": "g16-emergency-exception-only-for-real-safety-concern",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Emergency Exception Only for Real Safety Concern",
+      "direction": "If there is genuine evidence of danger, distinguish safety intervention from jealousy-driven intrusion."
+    },
+    {
+      "id": "g16-audible-enthusiasm-is-not-blanket-consent",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Audible Enthusiasm Is Not Blanket Consent",
+      "direction": "Sounds alone do not prove consent to every act or to being overheard."
+    },
+    {
+      "id": "g16-silence-is-not-proof-of-consent-or-harm",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Silence Is Not Proof of Consent or Harm",
+      "direction": "Do not infer consent status solely from limited audio."
+    },
+    {
+      "id": "g16-known-kink-does-not-imply-consent-to-audience",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Known Kink Does Not Imply Consent to Audience",
+      "direction": "Even if {{char}} enjoys exhibitionism, {{user}}’s inclusion as an audience must be separately agreed."
+    },
+    {
+      "id": "g16-open-relationship-does-not-mean-no-privacy",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Open Relationship Does Not Mean No Privacy",
+      "direction": "Consensual non-monogamy does not automatically grant the primary partner a right to overhear every encounter."
+    },
+    {
+      "id": "g16-cheating-does-not-erase-privacy-rights",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Cheating Does Not Erase Privacy Rights",
+      "direction": "A relationship boundary violation does not automatically justify recording, leaking, or humiliating intimate audio."
+    },
+    {
+      "id": "g16-no-forced-confrontation",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "No Forced Confrontation",
+      "direction": "Do not dictate when or how {{user}} confronts {{char}}."
+    },
+    {
+      "id": "g16-no-forced-forgiveness-or-breakup",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "No Forced Forgiveness or Breakup",
+      "direction": "Leave the relationship outcome open."
+    },
+    {
+      "id": "g16-other-adults-privacy-matters",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "Other Adult’s Privacy Matters",
+      "direction": "The outside adult also has privacy rights independent of {{char}}."
+    },
+    {
+      "id": "g16-no-third-party-humiliation",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "No Third-Party Humiliation",
+      "direction": "Do not default to exposing the overheard encounter to friends, coworkers, or family."
+    },
+    {
+      "id": "g16-if-deliberately-made-audible-without-consent-treat-as-boundary-issue",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "If Deliberately Made Audible Without Consent, Treat as Boundary Issue",
+      "direction": "Intentionally involving someone as an unwilling audience can itself violate boundaries."
+    },
+    {
+      "id": "g17-the-laugh-through-the-wall",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Laugh Through the Wall",
+      "direction": "Open when a familiar laugh cuts through otherwise muffled sounds."
+    },
+    {
+      "id": "g17-someone-says-her-name",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Someone Says Her Name",
+      "direction": "Open when the other adult uses a name that makes {{user}} suddenly pay attention."
+    },
+    {
+      "id": "g17-the-familiar-phrase",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Familiar Phrase",
+      "direction": "Open with a phrase {{char}} says often, heard unexpectedly through the wall."
+    },
+    {
+      "id": "g17-the-hotel-room-next-door",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Hotel Room Next Door",
+      "direction": "Open with {{user}} checking into a room beside an already-audible adult encounter."
+    },
+    {
+      "id": "g17-party-bedroom-door",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Party Bedroom Door",
+      "direction": "Open when {{user}} passes a closed bedroom and hears a voice that sounds familiar."
+    },
+    {
+      "id": "g17-storage-room-after-hours",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Storage Room After Hours",
+      "direction": "Open at work when unexpected sounds come from a supposedly empty back room."
+    },
+    {
+      "id": "g17-neighbours-apartment",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Neighbour’s Apartment",
+      "direction": "Open with repeated sounds from next door that become recognizable only gradually."
+    },
+    {
+      "id": "g17-she-walks-out-afterwards",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Walks Out Afterwards",
+      "direction": "Open at the point when uncertain audio is suddenly connected to {{char}} by her emergence from the room."
+    },
+    {
+      "id": "g17-other-adult-walks-out-first",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Other Adult Walks Out First",
+      "direction": "Open with recognition of the outside partner before certainty about the woman."
+    },
+    {
+      "id": "g17-char-texts-user-while-he-hears-her",
+      "group": "17 Strong Roleplay Openings",
+      "title": "{{char}} Texts {{user}} While He Hears Her",
+      "direction": "A message from {{char}} conflicts with what {{user}} thinks he is hearing."
+    },
+    {
+      "id": "g17-wrong-room-twist",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Wrong Room Twist",
+      "direction": "Open with strong suspicion that later becomes complicated by room/source ambiguity."
+    },
+    {
+      "id": "g17-recorded-audio-twist",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Recorded Audio Twist",
+      "direction": "Open with seemingly live intimacy that is eventually revealed as adult audio or media playback."
+    },
+    {
+      "id": "g17-consensual-arrangement-twist",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Consensual Arrangement Twist",
+      "direction": "Open with clear recognition but later context showing the outside encounter was permitted."
+    },
+    {
+      "id": "g17-real-cheating-twist",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Real Cheating Twist",
+      "direction": "Open with ambiguous recognition that later timing/context confirms violated monogamy."
+    },
+    {
+      "id": "g17-user-realises-only-later",
+      "group": "17 Strong Roleplay Openings",
+      "title": "User Realises Only Later",
+      "direction": "Open after the fact, when a later phrase, person, or detail makes {{user}} reinterpret what he heard earlier."
+    },
+    {
+      "id": "g17-char-knows-he-heard",
+      "group": "17 Strong Roleplay Openings",
+      "title": "{{char}} Knows He Heard",
+      "direction": "Open when {{char}} approaches {{user}} first because she realizes he was nearby."
+    },
+    {
+      "id": "g17-char-hopes-he-didnt-hear",
+      "group": "17 Strong Roleplay Openings",
+      "title": "{{char}} Hopes He Didn’t Hear",
+      "direction": "Open with awkward post-encounter interaction and uncertainty about what {{user}} knows."
+    },
+    {
+      "id": "g17-intentional-audible-encounter",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Intentional Audible Encounter",
+      "direction": "Open with {{char}} knowingly allowing the sounds to carry; establish whether {{user}} agreed to be involved this way."
+    },
+    {
+      "id": "g18-historical-harmless-misunderstanding",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Historical / Harmless Misunderstanding",
+      "direction": "The event proves unrelated to current fidelity."
+    },
+    {
+      "id": "g18-mistaken-identity",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Mistaken Identity",
+      "direction": "The woman was not {{char}}."
+    },
+    {
+      "id": "g18-correct-identity-allowed-encounter",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Correct Identity, Allowed Encounter",
+      "direction": "{{char}} was the woman, but the encounter fit an agreed non-monogamous arrangement."
+    },
+    {
+      "id": "g18-correct-identity-rule-violation",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Correct Identity, Rule Violation",
+      "direction": "The encounter violated a specific relationship rule."
+    },
+    {
+      "id": "g18-current-affair-revealed",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Current Affair Revealed",
+      "direction": "The overheard event exposes an ongoing hidden relationship."
+    },
+    {
+      "id": "g18-one-time-cheating-revealed",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "One-Time Cheating Revealed",
+      "direction": "The event is a single current boundary violation rather than a long affair."
+    },
+    {
+      "id": "g18-ambiguous-boundaries",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Ambiguous Boundaries",
+      "direction": "The adults discover they never clearly defined exclusivity or disclosure expectations."
+    },
+    {
+      "id": "g18-privacy-conflict",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Privacy Conflict",
+      "direction": "The key conflict becomes accidental or deliberate eavesdropping rather than the encounter itself."
+    },
+    {
+      "id": "g18-unwanted-audience-boundary",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Unwanted Audience Boundary",
+      "direction": "{{char}} or the other adult intentionally made {{user}} an audience without consent."
+    },
+    {
+      "id": "g18-relationship-survives",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Relationship Survives",
+      "direction": "The adults may continue together after clarification or repair; do not force this outcome."
+    },
+    {
+      "id": "g18-relationship-ends",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Relationship Ends",
+      "direction": "The encounter or deception may end the relationship; do not force this outcome."
+    },
+    {
+      "id": "g18-open-relationship-renegotiation",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Open Relationship Renegotiation",
+      "direction": "The event leads into discussion of consensual non-monogamy."
+    },
+    {
+      "id": "g18-bridge-to-the-girl-in-the-video",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to The Girl in the Video",
+      "direction": "A recording or visual later appears and becomes the main recognition evidence."
+    },
+    {
+      "id": "g18-bridge-to-ntr-report",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to NTR Report",
+      "direction": "{{char}} later gives {{user}} a detailed account of the encounter."
+    },
+    {
+      "id": "g18-bridge-to-under-your-nose",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Under Your Nose",
+      "direction": "If the encounter is one piece of a long secret affair happening nearby, shift toward Under Your Nose."
+    },
+    {
+      "id": "g18-bridge-to-the-man-from-her-past",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to The Man From Her Past",
+      "direction": "If the other adult is an important former lover, his return becomes central."
+    },
+    {
+      "id": "g18-bridge-to-you-two-know-each-other",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to You Two Know Each Other?",
+      "direction": "If the outside partner is someone important in {{user}}’s life, shift toward hidden shared history."
+    },
+    {
+      "id": "g18-bridge-to-open-relationship",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Open Relationship",
+      "direction": "If the encounter is legitimate or prompts negotiation, cross-link to Open Relationship."
+    },
+    {
+      "id": "g18-no-forced-resolution",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "No Forced Resolution",
+      "direction": "Leave the facts increasingly clear while keeping {{user}}’s eventual response and relationship choice open."
+    },
+    {
+      "id": "g05-he-hears-her-ask-to-be-filled",
+      "group": "05 How Recognisable She Sounds",
+      "title": "He Hears Her Ask to Be Filled",
+      "direction": "Through the wall or door {{user}} hears the woman clearly ask the man to come inside her / fill her. If the voice is {{char}}’s, the request itself is part of what he recognises. Vary how distinct the phrasing is."
+    },
+    {
+      "id": "g05-he-hears-breeding-talk",
+      "group": "05 How Recognisable She Sounds",
+      "title": "He Hears Breeding Talk",
+      "direction": "Audible dialogue includes breeding language — ‘get me pregnant,’ ‘breed me,’ ‘put a baby in me’ — in a voice that may be {{char}}’s. The kink content and the recognition problem arrive together."
+    },
+    {
+      "id": "g05-he-hears-the-moment-she-takes-the-load",
+      "group": "05 How Recognisable She Sounds",
+      "title": "He Hears the Moment She Takes the Load",
+      "direction": "The acoustic peak is the internal finish: her reaction, his, the change in rhythm, verbal confirmation. {{user}} is listening at the exact moment of creampie. Recognition certainty may lock in then."
+    },
+    {
+      "id": "g05-she-says-his-name-while-being-filled",
+      "group": "05 How Recognisable She Sounds",
+      "title": "She Says His Name While Being Filled",
+      "direction": "During the encounter the woman says a name — {{user}}’s, the other man’s, or someone else’s — at the moment of climax or internal finish. The name is a recognition and emotional landmine."
+    },
+    {
+      "id": "g03-thin-hotel-wall-during-raw-sex",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Thin Hotel Wall During Raw Sex",
+      "direction": "Setting is a hotel with thin walls. The encounter next door (or in the adjoining room) includes clear sounds of unprotected sex and an internal finish. Location makes both privacy and recognition acute."
+    },
+    {
+      "id": "g03-shared-apartment-wall-creampie",
+      "group": "03 Location / Acoustic Setting",
+      "title": "Shared Apartment Wall — Creampie",
+      "direction": "They share a wall in an apartment or dorm-like setting. {{user}} hears a full encounter ending in what is unmistakably an internal finish. Proximity means he may also hear the aftermath."
+    },
+    {
+      "id": "g04-the-man-is-someone-who-wanted-to-breed-her",
+      "group": "04 Who the Other Adult Is",
+      "title": "The Man Is Someone Who Wanted to Breed Her",
+      "direction": "Once identity is clearer, the male partner is revealed as someone who had previously expressed breeding interest in {{char}}. Hearing the creampie lands differently with that history."
+    },
+    {
+      "id": "g04-neighbour-who-finishes-inside-her",
+      "group": "04 Who the Other Adult Is",
+      "title": "Neighbour Who Finishes Inside Her",
+      "direction": "The other adult is a neighbour. The acoustic leak is local and ongoing-possible. The internal finish {{user}} overheard may not be the only one."
+    },
+    {
+      "id": "g08-allowed-creampie-he-was-not-meant-to-hear",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Allowed Creampie He Was Not Meant to Hear",
+      "direction": "The encounter including the internal finish was within an existing agreement (open relationship, hall pass, etc.), but {{user}} was not supposed to be an audience. Privacy breach and recognition are the issues, not automatic betrayal."
+    },
+    {
+      "id": "g08-cheating-creampie-through-the-wall",
+      "group": "08 Is It Cheating, Allowed, or Misunderstood?",
+      "title": "Cheating Creampie Through the Wall",
+      "direction": "The overheard internal finish is outside the relationship agreement. Acoustic evidence of the creampie becomes the form of discovery. Keep certainty of identity separate from certainty of cheating until both are established."
+    },
+    {
+      "id": "g11-this-is-not-the-first-creampie-he-has-overheard",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "This Is Not the First Creampie He Has Overheard",
+      "direction": "{{user}} has heard similar encounters — including internal finishes — before. Pattern recognition is part of what makes identity and meaning feel certain."
+    },
+    {
+      "id": "g11-ongoing-arrangement-to-take-loads-next-door",
+      "group": "11 One Encounter or Ongoing Relationship?",
+      "title": "Ongoing Arrangement to Take Loads Next Door",
+      "direction": "What he overheard is part of a repeated arrangement: she regularly meets someone on the other side of the wall (or in an adjacent space) for raw sex and creampies. One night’s audio is a sample."
+    },
+    {
+      "id": "g12-she-comes-out-still-full",
+      "group": "12 What Happens Immediately After",
+      "title": "She Comes Out Still Full",
+      "direction": "After the overheard encounter, {{char}} reappears in {{user}}’s space still carrying physical evidence of the internal finish — gait, scent, dampness, careful movement. Acoustic evidence meets bodily evidence."
+    },
+    {
+      "id": "g12-he-hears-them-talk-about-the-creampie-afterward",
+      "group": "12 What Happens Immediately After",
+      "title": "He Hears Them Talk About the Creampie Afterward",
+      "direction": "Post-sex conversation is still audible: jokes or comments about him finishing inside her, whether she will clean up, whether she will go home to {{user}} still full. The aftermath talk confirms what the sounds meant."
+    },
+    {
+      "id": "g07-she-knows-he-heard-her-take-the-load",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Knows He Heard Her Take the Load",
+      "direction": "{{char}} realises (during or after) that {{user}} was on the other side of the wall for the internal finish. Her knowledge of being overheard shapes her next move — shame, defiance, confession, or denial."
+    },
+    {
+      "id": "g07-she-does-not-know-he-heard-the-creampie",
+      "group": "07 Does {{char}} Know {{user}} Overheard?",
+      "title": "She Does Not Know He Heard the Creampie",
+      "direction": "{{char}} believes the encounter was private. {{user}} carries the auditory knowledge of the internal finish alone until he chooses whether and how to use it."
+    },
+    {
+      "id": "g13-she-admits-he-finished-inside-her",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "She Admits He Finished Inside Her",
+      "direction": "When the overheard encounter is raised, {{char}} confirms not only that she had sex but that the man came inside her. The specific admission is the hinge. Leave {{user}}’s response open."
+    },
+    {
+      "id": "g13-she-minimises-what-he-heard",
+      "group": "13 {{char}}’s Response After Discovery",
+      "title": "She Minimises What He Heard",
+      "direction": "{{char}} tries to reframe the sounds: it was not penetration, he pulled out, it was not her. The gap between what {{user}} believes he heard (creampie) and what she claims becomes the conflict."
+    },
+    {
+      "id": "g17-open-on-the-sound-of-her-taking-the-load",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Open on the Sound of Her Taking the Load",
+      "direction": "Open the scene at the acoustic climax: {{user}} is hearing the internal finish through the wall. Identity may still be uncertain. The next seconds — silence, voices, footsteps — drive the scene."
+    },
+    {
+      "id": "g17-she-returns-and-he-can-still-hear-the-creampie-in-his-head",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Returns and He Can Still Hear the Creampie in His Head",
+      "direction": "Open with {{char}} coming back into shared space while {{user}} is still holding the memory of the overheard internal finish. The contrast between normal greeting and what he heard is the charge."
+    },
+    {
+      "id": "g17-he-confronts-her-with-the-exact-words-he-heard",
+      "group": "17 Strong Roleplay Openings",
+      "title": "He Confronts Her With the Exact Words He Heard",
+      "direction": "Open with {{user}} repeating back the breeding talk or ‘fill me’ request he overheard. Specificity makes denial harder. Leave her reaction open."
+    },
+    {
+      "id": "g10-the-encounter-was-arranged-so-he-might-hear",
+      "group": "10 How the Encounter Came About",
+      "title": "The Encounter Was Arranged So He Might Hear",
+      "direction": "Someone ({{char}}, the other man, or a third party) chose the location partly because {{user}} could overhear the sex and the creampie. Being an audience was not fully accidental."
+    },
+    {
+      "id": "g09-the-other-man-knows-user-is-listening",
+      "group": "09 What the Other Adult Knows",
+      "title": "The Other Man Knows {{user}} Is Listening",
+      "direction": "The male partner is aware of the thin wall and of {{user}}’s presence. He may perform the internal finish more loudly or comment on it for that reason. Rivalry or exhibitionism colours the audio."
+    },
+    {
+      "id": "g06-certainty-locks-in-when-she-asks-for-the-creampie",
+      "group": "06 How Certainty Develops",
+      "title": "Certainty Locks In When She Asks for the Creampie",
+      "direction": "Doubt about identity remains until the woman clearly requests an internal finish in a phrasing or voice that {{user}} cannot mistake. The sexual peak and recognition certainty coincide."
+    },
+    {
+      "id": "g16-he-stays-and-listens-to-the-whole-creampie",
+      "group": "16 Privacy / Consent / Listener Boundaries",
+      "title": "He Stays and Listens to the Whole Creampie",
+      "direction": "{{user}} realises what he is hearing and does not leave. He listens through the request, the finish, and the aftermath. His choice to remain an audience is part of the ethical texture of the scene."
+    }
+  ],
+  "sections": [
+    {
+      "id": "audio-recognition-boundary",
+      "label": "Audio recognition is the core engine",
+      "content": "On the Other Side of the Wall is driven by overheard sound and gradual recognition. If the main evidence becomes a clip/photo, cross-link to The Girl in the Video."
+    },
+    {
+      "id": "identity-vs-cheating",
+      "label": "Correct identity does not automatically mean cheating",
+      "content": "Even if the woman is confirmed as {{char}}, establish exclusivity, open-relationship rules, breaks, timing, and other agreements separately."
+    },
+    {
+      "id": "false-positive-space",
+      "label": "Sound can mislead",
+      "content": "Walls, vents, echoes, background media, similar voices, wrong rooms, multiple sources, and recorded audio can all create convincing false impressions. Do not force recognition to be correct."
+    },
+    {
+      "id": "listener-consent",
+      "label": "Being audible can involve another person’s boundaries",
+      "content": "Accidental overhearing is different from deliberately involving {{user}} as an audience. If audible exposure is intentional, establish whether that involvement was agreed."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Combine groups for specificity—for example: Hotel Room + Former FWB + Distinctive Laugh + User Realises Only Later; Workplace Storage Room + Coworker + Two Independent Clues + Clearly Cheating; or Neighbour Through the Wall + Open-Relationship Regular + {{char}} Knows {{user}} Is Nearby + Correct Identity, Allowed Encounter."
+    }
+  ],
+  "raw_prompt": "Prioritise believable auditory recognition, acoustic ambiguity, relationship boundaries, listener privacy, and distinct live/recorded/misunderstood possibilities. Preserve the selected Direction Preset. Do not pre-write {{user}}’s reaction, confrontation, eavesdropping choice, forgiveness, breakup, or future behavior."
 }
