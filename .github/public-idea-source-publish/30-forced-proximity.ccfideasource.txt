@@ -3,6 +3,3110 @@
   "schema_version": 1,
   "id": "bible-i-30-forced-proximity",
   "title": "Forced Proximity",
+  "description": "Reusable adult forced-proximity engine in which {{user}} and adult {{char}} unexpectedly spend an extended period alone or in unusually close proximity because they are locked in, stranded, sheltering, delayed, assigned together, sharing limited accommodation, or otherwise unable to separate normally. Detailed presets vary cause, genuine lock versus practical constraint, duration, starting relationship, physical space and privacy, resources, sleeping arrangements, interaction dynamics, rescue/outside contact, consent and safety boundaries, emotional trajectory, workplace variants, travel/hotel/one-bed variants, strong openings, cross-series bridges, and outcomes.",
   "source_version": "1.2",
-  "note": "Full expanded content (495 presets) is available on Google Drive Idea Sources folder as 30-forced-proximity.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 30,
+    "category": "Setting & Slice of Life",
+    "source_date": "2026-09-21"
+  },
+  "summary": "Adult {{user}} and adult {{char}} are unexpectedly kept together far longer or more closely than normal. They may be locked in a room, shut inside a building after security closes it, sheltering from severe weather, dealing with a hotel booking error or one-bed room, stranded by travel disruption, stuck in an elevator, paired by an adult party game, working an overnight assignment, or trapped in a storage/equipment room. The source treats physical confinement, practical inability to leave, duration, privacy, resources, sleeping arrangements, rescue, starting relationship, and possible personal change as separate variables.",
+  "core_premise": "The engine is unusual closeness caused by circumstance rather than entitlement. The important questions are why separation is difficult, how long it lasts, whether the adults are truly locked in or merely better off staying, what space/resources/privacy they have, what their relationship was before the event, and what interaction naturally follows. Forced proximity can create friendship, respect, annoyance, vulnerability, attraction, closure, or no meaningful change. It never creates romantic or sexual consent.",
+  "setup": "Begin at or just after the moment the proximity becomes unavoidable: a door will not open, security confirms a delay, severe-weather advice arrives, transport is cancelled, a hotel reveals the room error, an elevator stops, the party game begins, an overnight assignment is extended, or the pair realize they may be waiting until morning. Establish the practical ground truth, expected duration if known, available communication, and enough starting relationship context to make the interaction meaningful. Do not pre-write {{user}}’s attraction, sleeping choice, touch, confession, consent, frustration, rescue decision, or future relationship.",
+  "core_variables": [
+    "Why {{user}} and {{char}} are stuck together or unable to separate normally.",
+    "Whether the constraint is a literal locked space, external danger, unavailable transport, work obligation, accommodation shortage, or merely the least-bad practical option.",
+    "How long the situation is expected to last and how that estimate changes.",
+    "What relationship the adults had before the event.",
+    "How much physical room, visual privacy, bathroom privacy, and personal space are available.",
+    "What food, water, power, communication, bedding, clothing, entertainment, and work resources are available.",
+    "Whether sleeping arrangements matter and what alternatives exist.",
+    "Who outside knows where they are and what rescue, staff, transport, or security updates are available.",
+    "What practical problems they have to solve together.",
+    "Whether boredom, stress, professional duty, bad weather, or simple inconvenience shapes the conversation.",
+    "Whether either adult already has attraction, resentment, friendship, history, or professional dependence.",
+    "What changes between them, if anything, after hours of unusual proximity.",
+    "Whether the circumstance ends earlier or later than expected.",
+    "Whether the setting is workplace, travel, hotel, student, residential, social, or outdoor shelter.",
+    "Whether the eventual outcome is friendship, respect, irritation, attraction, closure, a future invitation, or no change."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: adult {{user}} and adult {{char}} unexpectedly spend an extended period alone or in unusually close proximity.",
+    "If Locked Room is selected, establish a credible mechanical, administrative, or situational reason for the lock and a plausible expected exit/rescue path.",
+    "If Security Locked the Building is selected, distinguish safe after-hours lock-in from an active emergency that requires evacuation.",
+    "If Storm Shelter is selected, prioritize real safety and weather conditions over romantic framing.",
+    "If Hotel Booking Error is selected, preserve realistic attempts to seek another room, rollaway bed, sofa, refund, or alternate accommodation before treating room-sharing as fixed.",
+    "If One Bed is selected, keep all reasonable sleeping options open and never treat one bed as consent to physical intimacy.",
+    "If Travel Disruption is selected, make the transport problem and alternatives materially relevant.",
+    "If Elevator Breakdown is selected, use normal communication/rescue procedures and avoid inventing unnecessary danger.",
+    "If Party Game is selected, participation remains voluntary and either adult can end the game if uncomfortable.",
+    "If Overnight Work Assignment is selected, preserve legitimate work purpose, compensation/policy context where relevant, and professional boundaries.",
+    "If Locked Equipment / Storage Room is selected, preserve realistic ventilation, safety, access, and communication constraints.",
+    "Always distinguish physically locked confinement from practical inability to leave and from voluntary choice to stay.",
+    "Do not use the circumstance itself as evidence of attraction or consent.",
+    "Do not pre-write {{user}}’s attraction, touch, dialogue, sleeping choice, confession, romance, sex, rescue behavior, or future decision.",
+    "Allow fully platonic, professional, irritated, comedic, reflective, or unchanged trajectories.",
+    "If a selected preset narrows cause, duration, relationship, privacy, sleeping setup, work context, travel context, or outcome, preserve it while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic or sexual participants are adults.",
+    "Physical confinement, weather, transport failure, one bed, shared shelter, fatigue, fear, and privacy loss do not create romantic or sexual consent.",
+    "Do not deliberately sabotage doors, locks, lifts, vehicles, phones, bookings, transport, weather information, or rescue in order to trap another person.",
+    "Do not hide an available safe exit, rescue message, alternate room, or transportation option to prolong proximity.",
+    "Do not block or physically prevent an adult from leaving once safe exit is possible.",
+    "Serious emergencies prioritize safety, evacuation, first aid, and professional responders over relationship beats.",
+    "Do not romanticize unsafe sheltering during fire, flood, storm, structural danger, medical crisis, or other real emergencies.",
+    "One-bed scenarios must preserve separate sleeping alternatives where reasonably available and explicit agreement for any shared sleeping space.",
+    "A sleeping, intoxicated, medically impaired, or severely exhausted person cannot be treated as consenting to new sexual contact.",
+    "Preserve bathroom, changing, clothing, and personal-space privacy as much as circumstances allow.",
+    "For workplace variants, managerial, trainer, assessor, roster, pay, and employment power must remain separate from personal consent.",
+    "Do not treat party games as contracts for kissing, sex, nudity, or other intimacy.",
+    "Do not force confessions, reconciliation, dating, sex, or emotional disclosure merely because the pair cannot leave.",
+    "Do not use cosmetic changes of room, hotel, vehicle, storm, or job as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Mechanical lock, security closure, access failure, storm, flood, snow, heat, transport cancellation, missed connection, vehicle breakdown, hotel overbooking, booking error, one-bed room, work assignment, storage-room lock-in, party game, remote shelter, venue delay, or voluntary stay because leaving is worse",
+    "Physically locked, exit alarmed, staff required, repair required, weather barrier, no transport, expensive alternative, work obligation, voluntary game, hotel shortage, known rescue, uncertain rescue, false lock assumption, or safe exit later available",
+    "Ten minutes, half hour, one hour, several hours, afternoon, evening, overnight, one full night, 24 hours, weekend, several days, unknown duration, repeated short episodes, or long rerouted journey",
+    "Strangers, acquaintances, classmates, coworkers, work friends, rivals, boss/employee, trainer/trainee, trainees together, neighbours, friends, close friends, exes, former FWB, current couple, existing attraction, online friends, roommates, or mutual dislike",
+    "Large room, tiny room, elevator, office, hotel room, suite, one bed, sofa, two beds, floor space, shelter bench, vehicle, hut, tent, server room, archive, bathroom access, privacy screen, no visual privacy, separate corners, security cameras, or changing occupancy",
+    "Phone/signal, Wi-Fi, call button, landline, battery limits, lights, food, water, blankets, luggage, spare clothing, entertainment, work, news updates, or no meaningful resources",
+    "No sleep, chairs, sofa/bed, two beds, one bed with alternatives, taking turns, floor, shared bed by explicit agreement, different sleep times, work-watch rotation, temperature issues, or uneventful overnight",
+    "Polite small talk, silence, problem solving, irritation, rivalry, respect, vulnerability, shared hobby, games, media, work, stories, boundary negotiation, friendship, attraction from {{char}}, conflict, no change, or relief at separation",
+    "Security, maintenance, hotel staff, transport staff, roadside assistance, friends/family/coworkers, periodic updates, delayed rescue, early rescue, new room, resumed transport, additional people, or no signal",
+    "Workplace overtime, business travel, transport duty, stocktake, facilities lock-in, rail disruption, control room, trainees, server migration, lab observation, conference cancellation, last train, flight cancellation, regional transfer, hotel one-bed, or road trip breakdown",
+    "Friendship, closer friendship, professional respect, rivalry softening/intensifying, ex closure, {{char}} crush, unspoken attraction, inside joke, future invitation, relationship later under normal freedom, no lesson, unresolved tension, or no forced outcome"
+  ],
+  "cross_links": [
+    "Workplace Stories",
+    "My Neighbour in Class",
+    "New Dorm Mate",
+    "Fake Relationship",
+    "My New Neighbour",
+    "Come With Me",
+    "Her Hidden Side",
+    "Just a Prank!",
+    "She Wants You",
+    "Please Bang Me"
+  ],
+  "tags": [
+    "adult",
+    "forced proximity",
+    "locked room",
+    "storm shelter",
+    "hotel booking error",
+    "one bed",
+    "travel disruption",
+    "elevator",
+    "overnight work",
+    "storage room",
+    "stranded",
+    "privacy",
+    "sleeping arrangements",
+    "workplace",
+    "travel",
+    "slice of life"
+  ],
+  "notes": "Expanded from Series Bible I #30. The original ten seeds—Locked Room, Security Locked the Building, Storm Shelter, Hotel Booking Error, One Bed, Travel Disruption, Elevator Breakdown, Party Game, Overnight Work Assignment, and Locked Equipment / Storage Room—are preserved with their original preset IDs. The v1.1 source explicitly distinguishes literal confinement, practical inability to leave, and voluntary choice to remain, and keeps proximity separate from romantic or sexual consent.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied Forced Proximity concepts in which adult {{user}} and adult {{char}} unexpectedly spend an extended period alone or in unusually close proximity. Vary why they are stuck together, whether they are physically locked in or simply cannot reasonably leave, duration, starting relationship, available space and privacy, practical needs, sleeping arrangements, communication with the outside world, stress level, and what—if anything—changes between them. Preserve consent and independent agency: proximity, one bed, privacy loss, emergencies, or inability to leave do not create romantic or sexual consent, and romance is only one possible trajectory."
+    },
+    {
+      "id": "locked-room",
+      "group": "02 Original Bible Seeds",
+      "title": "Locked Room",
+      "direction": "Adult {{user}} and {{char}} are genuinely unable to leave a room for a period because of a mechanical, administrative, safety, or accidental lock situation. Establish a credible exit path or expected rescue rather than making the confinement arbitrary."
+    },
+    {
+      "id": "security-locked-the-building",
+      "group": "02 Original Bible Seeds",
+      "title": "Security Locked the Building",
+      "direction": "A building closes or locks while adult {{user}} and {{char}} are still inside. Distinguish being safely stuck until security returns from an emergency that requires immediate evacuation."
+    },
+    {
+      "id": "storm-shelter",
+      "group": "02 Original Bible Seeds",
+      "title": "Storm Shelter",
+      "direction": "Severe weather forces adult {{user}} and {{char}} to remain together in a safe shelter, building, vehicle, or protected area until conditions improve."
+    },
+    {
+      "id": "hotel-booking-error",
+      "group": "02 Original Bible Seeds",
+      "title": "Hotel Booking Error",
+      "direction": "A hotel or accommodation mistake leaves adult {{user}} and {{char}} unexpectedly sharing one room, suite, or limited space. Preserve the option to seek alternatives before accepting the arrangement."
+    },
+    {
+      "id": "one-bed",
+      "group": "02 Original Bible Seeds",
+      "title": "One Bed",
+      "direction": "The available accommodation has only one bed. Treat sharing, taking turns, using a sofa/floor/chair, seeking another room, or not sleeping as separate possibilities; one bed never implies intimacy."
+    },
+    {
+      "id": "travel-disruption",
+      "group": "02 Original Bible Seeds",
+      "title": "Travel Disruption",
+      "direction": "A delayed, cancelled, rerouted, stranded, or otherwise disrupted trip keeps adult {{user}} and {{char}} together much longer than planned."
+    },
+    {
+      "id": "elevator-breakdown",
+      "group": "02 Original Bible Seeds",
+      "title": "Elevator Breakdown",
+      "direction": "Adult {{user}} and {{char}} are stuck in a stopped elevator with communication or rescue procedures available. Keep the setting physically constrained but avoid inventing unrealistic danger without cause."
+    },
+    {
+      "id": "party-game",
+      "group": "02 Original Bible Seeds",
+      "title": "Party Game",
+      "direction": "A consensual adult party or social game creates temporary close proximity, isolation, hiding, pairing, or shared space. Participation in a game does not establish consent to romance or sex."
+    },
+    {
+      "id": "overnight-work-assignment",
+      "group": "02 Original Bible Seeds",
+      "title": "Overnight Work Assignment",
+      "direction": "Adult {{user}} and {{char}} must spend an unusually long overnight work period together because of a legitimate assignment, deadline, monitoring duty, travel, incident response, or staffing need."
+    },
+    {
+      "id": "locked-equipment-storage-room",
+      "group": "02 Original Bible Seeds",
+      "title": "Locked Equipment / Storage Room",
+      "direction": "Adult {{user}} and {{char}} become accidentally locked in an equipment, supply, archive, storage, backstage, maintenance, or similar room. Preserve realistic safety, ventilation, communication, and workplace boundaries."
+    },
+    {
+      "id": "g03-mechanical-lock-failure",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Mechanical Lock Failure",
+      "direction": "A door, latch, shutter, gate, or access system fails unexpectedly."
+    },
+    {
+      "id": "g03-access-card-failure",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Access Card Failure",
+      "direction": "Electronic access control prevents normal exit until authorized staff arrive."
+    },
+    {
+      "id": "g03-automatic-locking-schedule",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Automatic Locking Schedule",
+      "direction": "The building locks on a timer while the adults are still inside."
+    },
+    {
+      "id": "g03-security-miscommunication",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Security Miscommunication",
+      "direction": "Security believes the building is empty and closes it."
+    },
+    {
+      "id": "g03-cleaning-maintenance-lock-in",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Cleaning / Maintenance Lock-In",
+      "direction": "A routine closure or maintenance procedure accidentally leaves them inside."
+    },
+    {
+      "id": "g03-fire-door-compartment",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Fire-Door Compartment",
+      "direction": "A safety system temporarily restricts movement without creating an active fire emergency."
+    },
+    {
+      "id": "g03-power-outage",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Power Outage",
+      "direction": "A power failure disables normal access, lifts, lighting, or transport and makes staying put sensible."
+    },
+    {
+      "id": "g03-network-access-system-outage",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Network / Access-System Outage",
+      "direction": "Digital building systems fail and delay entry/exit."
+    },
+    {
+      "id": "g03-storm-warning",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Storm Warning",
+      "direction": "Official weather advice makes travel unsafe."
+    },
+    {
+      "id": "g03-flooded-road",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Flooded Road",
+      "direction": "Local flooding blocks the safe route out."
+    },
+    {
+      "id": "g03-heavy-snow-ice",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Heavy Snow / Ice",
+      "direction": "Winter weather makes departure unsafe."
+    },
+    {
+      "id": "g03-bushfire-smoke-route-closure",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Bushfire / Smoke Route Closure",
+      "direction": "Road or transport closures require sheltering safely; do not turn a real emergency into romantic pressure."
+    },
+    {
+      "id": "g03-extreme-heat",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Extreme Heat",
+      "direction": "Heat or infrastructure issues make a shared cooled location the safest option."
+    },
+    {
+      "id": "g03-severe-thunderstorm",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Severe Thunderstorm",
+      "direction": "Lightning, hail, or wind keeps them indoors."
+    },
+    {
+      "id": "g03-cyclone-typhoon-shelter",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Cyclone / Typhoon Shelter",
+      "direction": "A severe-weather shelter period creates prolonged shared space."
+    },
+    {
+      "id": "g03-transport-cancellation",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Transport Cancellation",
+      "direction": "The final train, bus, coach, ferry, or flight is cancelled."
+    },
+    {
+      "id": "g03-missed-connection",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Missed Connection",
+      "direction": "A delay causes both adults to miss the same connection."
+    },
+    {
+      "id": "g03-stranded-overnight",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Stranded Overnight",
+      "direction": "No safe onward transport is available until morning."
+    },
+    {
+      "id": "g03-replacement-bus-reroute",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Replacement Bus / Reroute",
+      "direction": "A disruption forces a much longer shared journey."
+    },
+    {
+      "id": "g03-road-closure",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Road Closure",
+      "direction": "A closure makes the intended drive impossible."
+    },
+    {
+      "id": "g03-car-breakdown",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Car Breakdown",
+      "direction": "A vehicle failure leaves them waiting together for roadside assistance."
+    },
+    {
+      "id": "g03-flat-tyre-minor-vehicle-issue",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Flat Tyre / Minor Vehicle Issue",
+      "direction": "A manageable vehicle problem creates temporary delay."
+    },
+    {
+      "id": "g03-remote-shuttle-missed",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Remote Shuttle Missed",
+      "direction": "They miss the last shuttle from a remote site or event."
+    },
+    {
+      "id": "g03-hotel-overbooking",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Hotel Overbooking",
+      "direction": "Only limited accommodation remains."
+    },
+    {
+      "id": "g03-reservation-lost",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Reservation Lost",
+      "direction": "A booking error leaves fewer rooms than planned."
+    },
+    {
+      "id": "g03-room-out-of-service",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Room Out of Service",
+      "direction": "One booked room becomes unusable and the hotel offers a temporary alternative."
+    },
+    {
+      "id": "g03-conference-accommodation-mix-up",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Conference Accommodation Mix-Up",
+      "direction": "A business or academic event produces an unexpected room-sharing problem."
+    },
+    {
+      "id": "g03-holiday-rental-error",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Holiday Rental Error",
+      "direction": "A rental listing or key problem reduces available sleeping space."
+    },
+    {
+      "id": "g03-dorm-hostel-allocation-error",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Dorm / Hostel Allocation Error",
+      "direction": "Adult accommodation staff assign shared space unexpectedly."
+    },
+    {
+      "id": "g03-one-sofa-one-bed",
+      "group": "03 Why They Are Stuck Together",
+      "title": "One Sofa, One Bed",
+      "direction": "The room has limited but not literally one sleeping surface."
+    },
+    {
+      "id": "g03-tiny-cabin",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Tiny Cabin",
+      "direction": "Travel accommodation is unusually compact."
+    },
+    {
+      "id": "g03-tent-shelter-shortage",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Tent / Shelter Shortage",
+      "direction": "A camping or event mistake leaves one available shelter; establish safe, consensual alternatives."
+    },
+    {
+      "id": "g03-overnight-shift-coverage",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Overnight Shift Coverage",
+      "direction": "Two workers are assigned the same unusually long duty period."
+    },
+    {
+      "id": "g03-system-monitoring-overnight",
+      "group": "03 Why They Are Stuck Together",
+      "title": "System Monitoring Overnight",
+      "direction": "A technical rollout, migration, outage watch, or test requires both adults to remain onsite."
+    },
+    {
+      "id": "g03-stocktake-overnight",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Stocktake Overnight",
+      "direction": "Retail, warehouse, or facilities work runs through the night."
+    },
+    {
+      "id": "g03-train-transport-disruption-duty",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Train / Transport Disruption Duty",
+      "direction": "Workplace disruption requires a transport team to remain on duty."
+    },
+    {
+      "id": "g03-research-lab-overnight",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Research / Lab Overnight",
+      "direction": "A timed experiment or observation keeps them at the site."
+    },
+    {
+      "id": "g03-event-pack-down-delay",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Event Pack-Down Delay",
+      "direction": "A late event teardown leaves the pair waiting for transport or access."
+    },
+    {
+      "id": "g03-locked-archive",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Locked Archive",
+      "direction": "A library/archive/store room lock fails."
+    },
+    {
+      "id": "g03-backstage-lock-in",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Backstage Lock-In",
+      "direction": "They are accidentally shut into a backstage or event-space room."
+    },
+    {
+      "id": "g03-escape-room-glitch",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Escape-Room Glitch",
+      "direction": "An adult escape-room session fails to release on schedule; staff are reachable."
+    },
+    {
+      "id": "g03-party-hide-and-seek",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Party Hide-and-Seek",
+      "direction": "A consensual adult party game places them in a cramped hiding spot."
+    },
+    {
+      "id": "g03-closet-photo-booth-game",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Closet / Photo Booth Game",
+      "direction": "A party challenge places them briefly in close quarters, with the option to leave if uncomfortable."
+    },
+    {
+      "id": "g03-scavenger-hunt-pairing",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Scavenger-Hunt Pairing",
+      "direction": "An adult social game pairs them for an extended task."
+    },
+    {
+      "id": "g03-cabin-quarantine-precaution",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Cabin Quarantine Precaution",
+      "direction": "A non-medical or low-risk precaution temporarily restricts movement according to legitimate instructions."
+    },
+    {
+      "id": "g03-administrative-hold",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Administrative Hold",
+      "direction": "Venue staff ask everyone to remain in place temporarily while resolving a safe operational issue."
+    },
+    {
+      "id": "g03-waiting-for-police-security-statement",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Waiting for Police / Security Statement",
+      "direction": "The pair remain nearby as witnesses after an incident, without being detained as suspects."
+    },
+    {
+      "id": "g03-lost-in-large-venue",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Lost in Large Venue",
+      "direction": "They end up in an isolated area and must navigate back together."
+    },
+    {
+      "id": "g03-hiking-route-closed",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Hiking Route Closed",
+      "direction": "A trail closure requires waiting at a safe hut or shelter."
+    },
+    {
+      "id": "g03-remote-weather-hut",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Remote Weather Hut",
+      "direction": "Bad weather forces them to stay in a hut longer than expected."
+    },
+    {
+      "id": "g03-boat-delayed-at-marina",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Boat Delayed at Marina",
+      "direction": "Weather or mechanical checks keep them aboard or at a marina."
+    },
+    {
+      "id": "g03-lift-gondola-stoppage",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Lift / Gondola Stoppage",
+      "direction": "A cable car, gondola, or lift pause leaves them in a confined cabin with rescue protocols."
+    },
+    {
+      "id": "g03-parking-garage-closure",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Parking Garage Closure",
+      "direction": "A gate or security issue temporarily prevents vehicle exit."
+    },
+    {
+      "id": "g03-public-transit-lock-in",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Public-Transit Lock-In",
+      "direction": "A station or facility closes unexpectedly while they are still inside a safe area."
+    },
+    {
+      "id": "g03-voluntary-stay-because-leaving-is-worse",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Voluntary Stay Because Leaving Is Worse",
+      "direction": "They technically could leave, but weather, cost, distance, fatigue, or risk makes staying together the sensible choice."
+    },
+    {
+      "id": "g04-physically-locked-in",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Physically Locked In",
+      "direction": "A barrier genuinely prevents normal exit."
+    },
+    {
+      "id": "g04-exit-exists-but-alarmed",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Exit Exists but Alarmed",
+      "direction": "A safety exit exists but should be used only if necessary."
+    },
+    {
+      "id": "g04-exit-requires-staff",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Exit Requires Staff",
+      "direction": "They need security, maintenance, or venue staff to release them."
+    },
+    {
+      "id": "g04-exit-requires-tool-repair",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Exit Requires Tool / Repair",
+      "direction": "A simple repair is needed before normal exit."
+    },
+    {
+      "id": "g04-could-force-exit-but-shouldnt",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Could Force Exit but Shouldn’t",
+      "direction": "Breaking property would be disproportionate given safe rescue is expected."
+    },
+    {
+      "id": "g04-could-leave-but-weather-is-unsafe",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Could Leave but Weather Is Unsafe",
+      "direction": "The door works; the environment outside is the real barrier."
+    },
+    {
+      "id": "g04-could-leave-but-no-transport",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Could Leave but No Transport",
+      "direction": "They are free to walk out but have no safe/practical way onward."
+    },
+    {
+      "id": "g04-could-leave-but-extremely-costly",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Could Leave but Extremely Costly",
+      "direction": "A taxi, alternate hotel, or route exists but is prohibitively expensive."
+    },
+    {
+      "id": "g04-could-leave-but-exhausted",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Could Leave but Exhausted",
+      "direction": "Fatigue makes staying the safer choice."
+    },
+    {
+      "id": "g04-could-leave-but-work-requires-presence",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Could Leave but Work Requires Presence",
+      "direction": "They are not trapped physically; their assignment requires remaining together."
+    },
+    {
+      "id": "g04-could-leave-one-at-a-time",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Could Leave One at a Time",
+      "direction": "Only one adult is actually needed onsite, creating a choice about whether both stay."
+    },
+    {
+      "id": "g04-free-to-leave-party-game",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Free to Leave Party Game",
+      "direction": "The social setup is voluntary and either adult can end participation."
+    },
+    {
+      "id": "g04-hotel-alternatives-fully-booked",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Hotel Alternatives Fully Booked",
+      "direction": "They attempt other rooms/accommodation before sharing."
+    },
+    {
+      "id": "g04-alternative-exists-nearby",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Alternative Exists Nearby",
+      "direction": "Another room or place is possible, keeping shared proximity optional."
+    },
+    {
+      "id": "g04-alternative-arrives-later",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Alternative Arrives Later",
+      "direction": "They must share space only until another option opens."
+    },
+    {
+      "id": "g04-waiting-for-morning-service",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Waiting for Morning Service",
+      "direction": "The constraint has a known end time."
+    },
+    {
+      "id": "g04-no-known-end-time-yet",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "No Known End Time Yet",
+      "direction": "Rescue/transport is expected but timing is uncertain."
+    },
+    {
+      "id": "g04-rescue-already-contacted",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Rescue Already Contacted",
+      "direction": "Someone outside knows exactly where they are."
+    },
+    {
+      "id": "g04-no-signal-yet",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "No Signal Yet",
+      "direction": "They must first find a communication method."
+    },
+    {
+      "id": "g04-false-locked-in-assumption",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "False Locked-In Assumption",
+      "direction": "They think they are trapped but later discover an ordinary exit route."
+    },
+    {
+      "id": "g04-one-person-knows-the-exit",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "One Person Knows the Exit",
+      "direction": "A misunderstanding about access creates awkward dependence."
+    },
+    {
+      "id": "g04-security-can-remote-unlock",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Security Can Remote-Unlock",
+      "direction": "The solution is administrative rather than physical."
+    },
+    {
+      "id": "g04-building-is-safe-to-occupy",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Building Is Safe to Occupy",
+      "direction": "The confinement is inconvenient but not hazardous."
+    },
+    {
+      "id": "g04-building-is-not-safe-to-occupy",
+      "group": "04 Locked, Stranded, or Simply Unavoidable?",
+      "title": "Building Is Not Safe to Occupy",
+      "direction": "If the location is unsafe, the priority is exit/rescue rather than relationship development."
+    },
+    {
+      "id": "g05-ten-minutes",
+      "group": "05 Duration / Time Horizon",
+      "title": "Ten Minutes",
+      "direction": "The proximity is brief but intense enough for one meaningful interaction."
+    },
+    {
+      "id": "g05-thirty-minutes",
+      "group": "05 Duration / Time Horizon",
+      "title": "Thirty Minutes",
+      "direction": "A short delay creates conversation or awkwardness."
+    },
+    {
+      "id": "g05-one-hour",
+      "group": "05 Duration / Time Horizon",
+      "title": "One Hour",
+      "direction": "They have enough time to settle into the situation."
+    },
+    {
+      "id": "g05-two-to-three-hours",
+      "group": "05 Duration / Time Horizon",
+      "title": "Two to Three Hours",
+      "direction": "Practical needs and boredom begin to matter."
+    },
+    {
+      "id": "g05-most-of-an-afternoon",
+      "group": "05 Duration / Time Horizon",
+      "title": "Most of an Afternoon",
+      "direction": "The disruption consumes a substantial part of the day."
+    },
+    {
+      "id": "g05-most-of-an-evening",
+      "group": "05 Duration / Time Horizon",
+      "title": "Most of an Evening",
+      "direction": "They spend the evening together unexpectedly."
+    },
+    {
+      "id": "g05-until-closing-crew-returns",
+      "group": "05 Duration / Time Horizon",
+      "title": "Until Closing Crew Returns",
+      "direction": "A known staff return time sets the horizon."
+    },
+    {
+      "id": "g05-until-security-round",
+      "group": "05 Duration / Time Horizon",
+      "title": "Until Security Round",
+      "direction": "They expect release on the next scheduled check."
+    },
+    {
+      "id": "g05-until-storm-passes",
+      "group": "05 Duration / Time Horizon",
+      "title": "Until Storm Passes",
+      "direction": "Weather determines the end."
+    },
+    {
+      "id": "g05-until-road-reopens",
+      "group": "05 Duration / Time Horizon",
+      "title": "Until Road Reopens",
+      "direction": "An external closure controls the duration."
+    },
+    {
+      "id": "g05-until-morning",
+      "group": "05 Duration / Time Horizon",
+      "title": "Until Morning",
+      "direction": "They know they will likely remain overnight."
+    },
+    {
+      "id": "g05-one-full-night",
+      "group": "05 Duration / Time Horizon",
+      "title": "One Full Night",
+      "direction": "Sleeping arrangements become materially relevant."
+    },
+    {
+      "id": "g05-overnight-into-morning-shift",
+      "group": "05 Duration / Time Horizon",
+      "title": "Overnight Into Morning Shift",
+      "direction": "The situation overlaps with the next day’s responsibilities."
+    },
+    {
+      "id": "g05-twenty-four-hours",
+      "group": "05 Duration / Time Horizon",
+      "title": "Twenty-Four Hours",
+      "direction": "Food, charging, hygiene, and rest become real concerns."
+    },
+    {
+      "id": "g05-weekend-delay",
+      "group": "05 Duration / Time Horizon",
+      "title": "Weekend Delay",
+      "direction": "The disruption lasts across much of a weekend."
+    },
+    {
+      "id": "g05-several-days-at-shelter",
+      "group": "05 Duration / Time Horizon",
+      "title": "Several Days at Shelter",
+      "direction": "A major weather/travel event creates longer shared routines; maintain safety and realism."
+    },
+    {
+      "id": "g05-unknown-duration",
+      "group": "05 Duration / Time Horizon",
+      "title": "Unknown Duration",
+      "direction": "Neither adult knows exactly when the situation will end."
+    },
+    {
+      "id": "g05-repeated-short-proximity",
+      "group": "05 Duration / Time Horizon",
+      "title": "Repeated Short Proximity",
+      "direction": "Several separate delays or shared assignments create an episodic version of the trope."
+    },
+    {
+      "id": "g05-long-journey-rather-than-confinement",
+      "group": "05 Duration / Time Horizon",
+      "title": "Long Journey Rather Than Confinement",
+      "direction": "They are together for many hours because of rerouting rather than being stuck in one place."
+    },
+    {
+      "id": "g05-one-night-by-choice",
+      "group": "05 Duration / Time Horizon",
+      "title": "One Night by Choice",
+      "direction": "They could separate at significant inconvenience but mutually decide to share the temporary arrangement."
+    },
+    {
+      "id": "g06-complete-strangers",
+      "group": "06 Starting Relationship",
+      "title": "Complete Strangers",
+      "direction": "The adults have never met before."
+    },
+    {
+      "id": "g06-just-introduced",
+      "group": "06 Starting Relationship",
+      "title": "Just Introduced",
+      "direction": "They know names and basic context only."
+    },
+    {
+      "id": "g06-acquaintances",
+      "group": "06 Starting Relationship",
+      "title": "Acquaintances",
+      "direction": "They recognize each other but are not close."
+    },
+    {
+      "id": "g06-classmates",
+      "group": "06 Starting Relationship",
+      "title": "Classmates",
+      "direction": "They know each other through adult university or training."
+    },
+    {
+      "id": "g06-coworkers",
+      "group": "06 Starting Relationship",
+      "title": "Coworkers",
+      "direction": "They share a workplace but little personal history."
+    },
+    {
+      "id": "g06-work-friends",
+      "group": "06 Starting Relationship",
+      "title": "Work Friends",
+      "direction": "They already get along outside strict work tasks."
+    },
+    {
+      "id": "g06-friendly-coworkers",
+      "group": "06 Starting Relationship",
+      "title": "Friendly Coworkers",
+      "direction": "They have warm professional rapport."
+    },
+    {
+      "id": "g06-work-rivals",
+      "group": "06 Starting Relationship",
+      "title": "Work Rivals",
+      "direction": "They compete or clash professionally."
+    },
+    {
+      "id": "g06-boss-and-employee",
+      "group": "06 Starting Relationship",
+      "title": "Boss and Employee",
+      "direction": "A workplace hierarchy exists and must not translate into personal pressure."
+    },
+    {
+      "id": "g06-trainer-and-trainee",
+      "group": "06 Starting Relationship",
+      "title": "Trainer and Trainee",
+      "direction": "Formal training/assessment power exists."
+    },
+    {
+      "id": "g06-trainees-together",
+      "group": "06 Starting Relationship",
+      "title": "Trainees Together",
+      "direction": "Both are peers under external instructors."
+    },
+    {
+      "id": "g06-neighbours",
+      "group": "06 Starting Relationship",
+      "title": "Neighbours",
+      "direction": "They know each other from living nearby."
+    },
+    {
+      "id": "g06-new-neighbours",
+      "group": "06 Starting Relationship",
+      "title": "New Neighbours",
+      "direction": "They have only recently met."
+    },
+    {
+      "id": "g06-friends",
+      "group": "06 Starting Relationship",
+      "title": "Friends",
+      "direction": "They already have a genuine friendship."
+    },
+    {
+      "id": "g06-close-friends",
+      "group": "06 Starting Relationship",
+      "title": "Close Friends",
+      "direction": "They know each other extremely well but have not necessarily been romantic."
+    },
+    {
+      "id": "g06-best-friends",
+      "group": "06 Starting Relationship",
+      "title": "Best Friends",
+      "direction": "The forced proximity challenges or deepens an established bond."
+    },
+    {
+      "id": "g06-former-friends",
+      "group": "06 Starting Relationship",
+      "title": "Former Friends",
+      "direction": "They used to be close but drifted apart."
+    },
+    {
+      "id": "g06-rivals",
+      "group": "06 Starting Relationship",
+      "title": "Rivals",
+      "direction": "A non-work rivalry shapes the interaction."
+    },
+    {
+      "id": "g06-friendly-rivals",
+      "group": "06 Starting Relationship",
+      "title": "Friendly Rivals",
+      "direction": "Competition coexists with respect."
+    },
+    {
+      "id": "g06-exes",
+      "group": "06 Starting Relationship",
+      "title": "Exes",
+      "direction": "They have a former adult romantic relationship."
+    },
+    {
+      "id": "g06-recent-exes",
+      "group": "06 Starting Relationship",
+      "title": "Recent Exes",
+      "direction": "The breakup is still fresh."
+    },
+    {
+      "id": "g06-long-ago-exes",
+      "group": "06 Starting Relationship",
+      "title": "Long-Ago Exes",
+      "direction": "The history is emotionally distant or unresolved depending on the preset combination."
+    },
+    {
+      "id": "g06-former-fwb",
+      "group": "06 Starting Relationship",
+      "title": "Former FWB",
+      "direction": "They share adult sexual history but are not currently involved."
+    },
+    {
+      "id": "g06-current-couple",
+      "group": "06 Starting Relationship",
+      "title": "Current Couple",
+      "direction": "They are already dating; proximity tests routines rather than creating romance from nothing."
+    },
+    {
+      "id": "g06-engaged-married",
+      "group": "06 Starting Relationship",
+      "title": "Engaged / Married",
+      "direction": "They are an established adult couple facing an inconvenient shared situation."
+    },
+    {
+      "id": "g06-secret-crush-from-char",
+      "group": "06 Starting Relationship",
+      "title": "Secret Crush From {{char}}",
+      "direction": "{{char}} already has feelings, while {{user}}’s feelings remain open."
+    },
+    {
+      "id": "g06-mutual-attraction-already-known",
+      "group": "06 Starting Relationship",
+      "title": "Mutual Attraction Already Known",
+      "direction": "Both adults have acknowledged attraction but not necessarily acted on it."
+    },
+    {
+      "id": "g06-one-awkward-date-previously",
+      "group": "06 Starting Relationship",
+      "title": "One Awkward Date Previously",
+      "direction": "They once tried dating and were unsure whether to continue."
+    },
+    {
+      "id": "g06-online-friends-meeting-in-person",
+      "group": "06 Starting Relationship",
+      "title": "Online Friends Meeting In Person",
+      "direction": "They know each other well digitally but are newly sharing physical space."
+    },
+    {
+      "id": "g06-former-coworkers",
+      "group": "06 Starting Relationship",
+      "title": "Former Coworkers",
+      "direction": "A past professional connection resurfaces during travel or an event."
+    },
+    {
+      "id": "g06-friends-of-friends",
+      "group": "06 Starting Relationship",
+      "title": "Friends-of-Friends",
+      "direction": "A social group connects them, but they rarely interact directly."
+    },
+    {
+      "id": "g06-family-acquaintances",
+      "group": "06 Starting Relationship",
+      "title": "Family Acquaintances",
+      "direction": "Their families know each other, though the adults are not close."
+    },
+    {
+      "id": "g06-roommates",
+      "group": "06 Starting Relationship",
+      "title": "Roommates",
+      "direction": "They already share living space but become unusually confined together."
+    },
+    {
+      "id": "g06-dorm-mates",
+      "group": "06 Starting Relationship",
+      "title": "Dorm Mates",
+      "direction": "Adult student roommates face an even smaller temporary space."
+    },
+    {
+      "id": "g06-travel-companions",
+      "group": "06 Starting Relationship",
+      "title": "Travel Companions",
+      "direction": "They intentionally began the trip together, but disruption changes the closeness."
+    },
+    {
+      "id": "g06-neither-likes-the-other",
+      "group": "06 Starting Relationship",
+      "title": "Neither Likes the Other",
+      "direction": "They begin with genuine irritation or distrust."
+    },
+    {
+      "id": "g06-misunderstood-each-other",
+      "group": "06 Starting Relationship",
+      "title": "Misunderstood Each Other",
+      "direction": "The starting tension comes from assumptions rather than established hostility."
+    },
+    {
+      "id": "g06-purely-professional",
+      "group": "06 Starting Relationship",
+      "title": "Purely Professional",
+      "direction": "Neither has considered the other personally before the situation."
+    },
+    {
+      "id": "g07-large-room",
+      "group": "07 Physical Space / Privacy",
+      "title": "Large Room",
+      "direction": "There is enough space to keep distance and privacy."
+    },
+    {
+      "id": "g07-small-office",
+      "group": "07 Physical Space / Privacy",
+      "title": "Small Office",
+      "direction": "The room is compact but functional."
+    },
+    {
+      "id": "g07-tiny-storage-room",
+      "group": "07 Physical Space / Privacy",
+      "title": "Tiny Storage Room",
+      "direction": "Movement is limited and practical organization matters."
+    },
+    {
+      "id": "g07-elevator-car",
+      "group": "07 Physical Space / Privacy",
+      "title": "Elevator Car",
+      "direction": "They are confined to a few square metres."
+    },
+    {
+      "id": "g07-hotel-room",
+      "group": "07 Physical Space / Privacy",
+      "title": "Hotel Room",
+      "direction": "A standard hotel room provides limited but real privacy options."
+    },
+    {
+      "id": "g07-hotel-suite",
+      "group": "07 Physical Space / Privacy",
+      "title": "Hotel Suite",
+      "direction": "Separate areas reduce pressure despite the booking error."
+    },
+    {
+      "id": "g07-one-bed-one-chair",
+      "group": "07 Physical Space / Privacy",
+      "title": "One Bed, One Chair",
+      "direction": "Sleeping options are constrained but not predetermined."
+    },
+    {
+      "id": "g07-one-bed-sofa",
+      "group": "07 Physical Space / Privacy",
+      "title": "One Bed, Sofa",
+      "direction": "The room provides an obvious separate sleeping surface."
+    },
+    {
+      "id": "g07-two-beds",
+      "group": "07 Physical Space / Privacy",
+      "title": "Two Beds",
+      "direction": "The booking problem is social/logistical rather than sleeping-space scarcity."
+    },
+    {
+      "id": "g07-floor-space-available",
+      "group": "07 Physical Space / Privacy",
+      "title": "Floor Space Available",
+      "direction": "A blanket or spare bedding could create another sleeping area."
+    },
+    {
+      "id": "g07-no-proper-sleeping-surface",
+      "group": "07 Physical Space / Privacy",
+      "title": "No Proper Sleeping Surface",
+      "direction": "Both may have to improvise rest."
+    },
+    {
+      "id": "g07-storm-shelter-benches",
+      "group": "07 Physical Space / Privacy",
+      "title": "Storm Shelter Benches",
+      "direction": "The space is communal/functional rather than romantic."
+    },
+    {
+      "id": "g07-vehicle-cabin",
+      "group": "07 Physical Space / Privacy",
+      "title": "Vehicle Cabin",
+      "direction": "A car, van, train compartment, or similar cabin limits movement."
+    },
+    {
+      "id": "g07-remote-hut",
+      "group": "07 Physical Space / Privacy",
+      "title": "Remote Hut",
+      "direction": "A simple shelter has sparse furniture and resources."
+    },
+    {
+      "id": "g07-tent",
+      "group": "07 Physical Space / Privacy",
+      "title": "Tent",
+      "direction": "Physical closeness is unavoidable but intimacy is not."
+    },
+    {
+      "id": "g07-back-room",
+      "group": "07 Physical Space / Privacy",
+      "title": "Back Room",
+      "direction": "Work equipment constrains where they can sit or rest."
+    },
+    {
+      "id": "g07-conference-room",
+      "group": "07 Physical Space / Privacy",
+      "title": "Conference Room",
+      "direction": "Tables/chairs provide distance but little comfort."
+    },
+    {
+      "id": "g07-break-room",
+      "group": "07 Physical Space / Privacy",
+      "title": "Break Room",
+      "direction": "Food and facilities are accessible."
+    },
+    {
+      "id": "g07-server-control-room",
+      "group": "07 Physical Space / Privacy",
+      "title": "Server / Control Room",
+      "direction": "Equipment requires careful handling and limits comfort."
+    },
+    {
+      "id": "g07-archive-library-room",
+      "group": "07 Physical Space / Privacy",
+      "title": "Archive / Library Room",
+      "direction": "Quiet surroundings create a conversational setting."
+    },
+    {
+      "id": "g07-bathroom-nearby",
+      "group": "07 Physical Space / Privacy",
+      "title": "Bathroom Nearby",
+      "direction": "Basic privacy is possible."
+    },
+    {
+      "id": "g07-no-private-bathroom",
+      "group": "07 Physical Space / Privacy",
+      "title": "No Private Bathroom",
+      "direction": "Practical privacy becomes an important issue."
+    },
+    {
+      "id": "g07-shared-bathroom-outside-room",
+      "group": "07 Physical Space / Privacy",
+      "title": "Shared Bathroom Outside Room",
+      "direction": "Access may require coordination or staff help."
+    },
+    {
+      "id": "g07-changing-privacy-screen",
+      "group": "07 Physical Space / Privacy",
+      "title": "Changing Privacy Screen",
+      "direction": "A curtain, partition, bathroom, or improvised screen allows changing clothes privately."
+    },
+    {
+      "id": "g07-no-visual-privacy",
+      "group": "07 Physical Space / Privacy",
+      "title": "No Visual Privacy",
+      "direction": "The adults must actively negotiate turning away, timing, or barriers."
+    },
+    {
+      "id": "g07-separate-corners",
+      "group": "07 Physical Space / Privacy",
+      "title": "Separate Corners",
+      "direction": "They create personal zones."
+    },
+    {
+      "id": "g07-shared-blanket-only",
+      "group": "07 Physical Space / Privacy",
+      "title": "Shared Blanket Only",
+      "direction": "Cold conditions create a resource issue; sharing is optional and not romantic by default."
+    },
+    {
+      "id": "g07-enough-blankets-for-both",
+      "group": "07 Physical Space / Privacy",
+      "title": "Enough Blankets for Both",
+      "direction": "Comfort is not artificially scarce."
+    },
+    {
+      "id": "g07-limited-charging",
+      "group": "07 Physical Space / Privacy",
+      "title": "Limited Charging",
+      "direction": "One outlet or power bank creates resource-sharing decisions."
+    },
+    {
+      "id": "g07-limited-seating",
+      "group": "07 Physical Space / Privacy",
+      "title": "Limited Seating",
+      "direction": "They must rotate or improvise."
+    },
+    {
+      "id": "g07-good-ventilation",
+      "group": "07 Physical Space / Privacy",
+      "title": "Good Ventilation",
+      "direction": "The space is physically safe despite inconvenience."
+    },
+    {
+      "id": "g07-uncomfortable-temperature",
+      "group": "07 Physical Space / Privacy",
+      "title": "Uncomfortable Temperature",
+      "direction": "Heat or cold becomes a practical concern."
+    },
+    {
+      "id": "g07-noisy-environment",
+      "group": "07 Physical Space / Privacy",
+      "title": "Noisy Environment",
+      "direction": "Conversation is difficult or exhausting."
+    },
+    {
+      "id": "g07-very-quiet-environment",
+      "group": "07 Physical Space / Privacy",
+      "title": "Very Quiet Environment",
+      "direction": "The lack of distraction makes silence more noticeable."
+    },
+    {
+      "id": "g07-windows-view-outside",
+      "group": "07 Physical Space / Privacy",
+      "title": "Windows / View Outside",
+      "direction": "They can see conditions or rescuers."
+    },
+    {
+      "id": "g07-no-windows",
+      "group": "07 Physical Space / Privacy",
+      "title": "No Windows",
+      "direction": "Time feels less clear and communication matters more."
+    },
+    {
+      "id": "g07-camera-security-monitoring",
+      "group": "07 Physical Space / Privacy",
+      "title": "Camera / Security Monitoring",
+      "direction": "They know security systems may observe the area; preserve privacy and no sexualization."
+    },
+    {
+      "id": "g07-public-shelter-with-others-nearby",
+      "group": "07 Physical Space / Privacy",
+      "title": "Public Shelter With Others Nearby",
+      "direction": "They are close together but not literally alone."
+    },
+    {
+      "id": "g07-initially-alone-others-arrive",
+      "group": "07 Physical Space / Privacy",
+      "title": "Initially Alone, Others Arrive",
+      "direction": "The privacy level changes during the scenario."
+    },
+    {
+      "id": "g07-initially-crowded-eventually-alone",
+      "group": "07 Physical Space / Privacy",
+      "title": "Initially Crowded, Eventually Alone",
+      "direction": "Others leave and the pair remain behind."
+    },
+    {
+      "id": "g08-phones-fully-charged",
+      "group": "08 Resources / Practical Needs",
+      "title": "Phones Fully Charged",
+      "direction": "Communication is easy."
+    },
+    {
+      "id": "g08-low-battery",
+      "group": "08 Resources / Practical Needs",
+      "title": "Low Battery",
+      "direction": "They must ration charging or phone use."
+    },
+    {
+      "id": "g08-no-mobile-signal",
+      "group": "08 Resources / Practical Needs",
+      "title": "No Mobile Signal",
+      "direction": "They rely on landline, Wi-Fi, radio, or waiting."
+    },
+    {
+      "id": "g08-wi-fi-available",
+      "group": "08 Resources / Practical Needs",
+      "title": "Wi-Fi Available",
+      "direction": "Digital contact reduces isolation."
+    },
+    {
+      "id": "g08-emergency-call-button",
+      "group": "08 Resources / Practical Needs",
+      "title": "Emergency Call Button",
+      "direction": "Elevator/venue systems provide a clear rescue channel."
+    },
+    {
+      "id": "g08-landline-available",
+      "group": "08 Resources / Practical Needs",
+      "title": "Landline Available",
+      "direction": "They can contact security or staff."
+    },
+    {
+      "id": "g08-power-bank",
+      "group": "08 Resources / Practical Needs",
+      "title": "Power Bank",
+      "direction": "One adult is unusually prepared."
+    },
+    {
+      "id": "g08-flashlights",
+      "group": "08 Resources / Practical Needs",
+      "title": "Flashlights",
+      "direction": "Lighting remains safe during an outage."
+    },
+    {
+      "id": "g08-emergency-lighting-only",
+      "group": "08 Resources / Practical Needs",
+      "title": "Emergency Lighting Only",
+      "direction": "The setting is dim but functional."
+    },
+    {
+      "id": "g08-plenty-of-water",
+      "group": "08 Resources / Practical Needs",
+      "title": "Plenty of Water",
+      "direction": "Hydration is not artificially scarce."
+    },
+    {
+      "id": "g08-limited-water",
+      "group": "08 Resources / Practical Needs",
+      "title": "Limited Water",
+      "direction": "They ration until expected rescue; do not invent dangerous deprivation for drama."
+    },
+    {
+      "id": "g08-snacks-available",
+      "group": "08 Resources / Practical Needs",
+      "title": "Snacks Available",
+      "direction": "Food becomes a small shared comfort."
+    },
+    {
+      "id": "g08-vending-machine",
+      "group": "08 Resources / Practical Needs",
+      "title": "Vending Machine",
+      "direction": "They have mundane food options."
+    },
+    {
+      "id": "g08-full-kitchen-nearby",
+      "group": "08 Resources / Practical Needs",
+      "title": "Full Kitchen Nearby",
+      "direction": "The situation becomes more like an unexpected overnight stay."
+    },
+    {
+      "id": "g08-no-food-until-morning",
+      "group": "08 Resources / Practical Needs",
+      "title": "No Food Until Morning",
+      "direction": "Mild hunger becomes part of the inconvenience."
+    },
+    {
+      "id": "g08-blankets-available",
+      "group": "08 Resources / Practical Needs",
+      "title": "Blankets Available",
+      "direction": "Comfort is manageable."
+    },
+    {
+      "id": "g08-only-work-jackets-coats",
+      "group": "08 Resources / Practical Needs",
+      "title": "Only Work Jackets / Coats",
+      "direction": "They improvise warmth."
+    },
+    {
+      "id": "g08-first-aid-kit",
+      "group": "08 Resources / Practical Needs",
+      "title": "First-Aid Kit",
+      "direction": "Normal emergency supplies are present without implying injury."
+    },
+    {
+      "id": "g08-basic-toiletries",
+      "group": "08 Resources / Practical Needs",
+      "title": "Basic Toiletries",
+      "direction": "An overnight accommodation error is easier to manage."
+    },
+    {
+      "id": "g08-no-toiletries",
+      "group": "08 Resources / Practical Needs",
+      "title": "No Toiletries",
+      "direction": "They improvise without turning it into forced intimacy."
+    },
+    {
+      "id": "g08-luggage-available",
+      "group": "08 Resources / Practical Needs",
+      "title": "Luggage Available",
+      "direction": "Travel disruption leaves them with personal belongings."
+    },
+    {
+      "id": "g08-only-one-person-has-luggage",
+      "group": "08 Resources / Practical Needs",
+      "title": "Only One Person Has Luggage",
+      "direction": "Resource-sharing becomes a choice."
+    },
+    {
+      "id": "g08-spare-clothing",
+      "group": "08 Resources / Practical Needs",
+      "title": "Spare Clothing",
+      "direction": "One adult can lend clean clothes if wanted."
+    },
+    {
+      "id": "g08-no-change-of-clothes",
+      "group": "08 Resources / Practical Needs",
+      "title": "No Change of Clothes",
+      "direction": "They simply remain in travel/work clothing."
+    },
+    {
+      "id": "g08-board-games-cards",
+      "group": "08 Resources / Practical Needs",
+      "title": "Board Games / Cards",
+      "direction": "Boredom relief creates interaction."
+    },
+    {
+      "id": "g08-laptop-tablet",
+      "group": "08 Resources / Practical Needs",
+      "title": "Laptop / Tablet",
+      "direction": "They can work, watch media, or occupy themselves separately."
+    },
+    {
+      "id": "g08-books",
+      "group": "08 Resources / Practical Needs",
+      "title": "Books",
+      "direction": "Quiet parallel activity is possible."
+    },
+    {
+      "id": "g08-work-to-finish",
+      "group": "08 Resources / Practical Needs",
+      "title": "Work to Finish",
+      "direction": "The assignment gives them structure."
+    },
+    {
+      "id": "g08-nothing-to-do",
+      "group": "08 Resources / Practical Needs",
+      "title": "Nothing to Do",
+      "direction": "Conversation or silence becomes more central."
+    },
+    {
+      "id": "g08-radio-news-updates",
+      "group": "08 Resources / Practical Needs",
+      "title": "Radio / News Updates",
+      "direction": "External information controls expectations."
+    },
+    {
+      "id": "g08-real-time-transport-updates",
+      "group": "08 Resources / Practical Needs",
+      "title": "Real-Time Transport Updates",
+      "direction": "They repeatedly reassess whether to leave."
+    },
+    {
+      "id": "g08-hotel-staff-reachable",
+      "group": "08 Resources / Practical Needs",
+      "title": "Hotel Staff Reachable",
+      "direction": "The room-sharing problem has customer-service support."
+    },
+    {
+      "id": "g08-security-updates",
+      "group": "08 Resources / Practical Needs",
+      "title": "Security Updates",
+      "direction": "Staff provide expected unlock timing."
+    },
+    {
+      "id": "g08-friends-know-where-they-are",
+      "group": "08 Resources / Practical Needs",
+      "title": "Friends Know Where They Are",
+      "direction": "Outside people are aware and can assist if needed."
+    },
+    {
+      "id": "g08-nobody-initially-knows",
+      "group": "08 Resources / Practical Needs",
+      "title": "Nobody Initially Knows",
+      "direction": "They need to notify someone once communication becomes available."
+    },
+    {
+      "id": "g09-no-sleep-needed",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "No Sleep Needed",
+      "direction": "The delay ends well before bedtime."
+    },
+    {
+      "id": "g09-doze-in-chairs",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Doze in Chairs",
+      "direction": "Both adults rest separately in available seating."
+    },
+    {
+      "id": "g09-sofa-and-bed",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Sofa and Bed",
+      "direction": "They can easily sleep separately."
+    },
+    {
+      "id": "g09-two-beds",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Two Beds",
+      "direction": "No sleeping-space conflict exists."
+    },
+    {
+      "id": "g09-one-bed-offered-to-char",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "One Bed Offered to {{char}}",
+      "direction": "{{char}} may suggest or accept one arrangement, but {{user}}’s choice remains open."
+    },
+    {
+      "id": "g09-one-bed-offered-to-user",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "One Bed Offered to {{user}}",
+      "direction": "{{char}} offers the bed and plans another surface."
+    },
+    {
+      "id": "g09-take-turns-using-bed",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Take Turns Using Bed",
+      "direction": "They consider rotating rest periods."
+    },
+    {
+      "id": "g09-one-uses-floor",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "One Uses Floor",
+      "direction": "A floor setup is available but should not be framed as obligatory sacrifice."
+    },
+    {
+      "id": "g09-both-choose-floor-improvised-bedding",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Both Choose Floor / Improvised Bedding",
+      "direction": "They avoid the bed for comfort/fairness reasons."
+    },
+    {
+      "id": "g09-share-bed-for-practical-reasons",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Share Bed for Practical Reasons",
+      "direction": "If both adults explicitly agree, they may share sleeping space without implying sex or romance."
+    },
+    {
+      "id": "g09-share-bed-with-clear-boundaries",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Share Bed With Clear Boundaries",
+      "direction": "They negotiate sides, clothing, blankets, and personal space."
+    },
+    {
+      "id": "g09-one-decides-not-to-sleep",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "One Decides Not to Sleep",
+      "direction": "An adult chooses to stay awake rather than share space."
+    },
+    {
+      "id": "g09-neither-can-sleep",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Neither Can Sleep",
+      "direction": "Stress, noise, or awkwardness keeps both awake."
+    },
+    {
+      "id": "g09-sleep-at-different-times",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Sleep at Different Times",
+      "direction": "Shift-work habits naturally separate rest."
+    },
+    {
+      "id": "g09-security-work-watch-rotation",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Security / Work Watch Rotation",
+      "direction": "One remains awake for a legitimate task while the other rests."
+    },
+    {
+      "id": "g09-cold-makes-warmth-relevant",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Cold Makes Warmth Relevant",
+      "direction": "Temperature creates practical discussion of blankets or proximity, not automatic intimacy."
+    },
+    {
+      "id": "g09-heat-makes-distance-relevant",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Heat Makes Distance Relevant",
+      "direction": "Warm conditions make physical distance preferable."
+    },
+    {
+      "id": "g09-snoring-comedy",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Snoring Comedy",
+      "direction": "Ordinary sleep habits become the awkward reveal."
+    },
+    {
+      "id": "g09-sleep-talking",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Sleep-Talking",
+      "direction": "A harmless personal quirk creates conversation the next day."
+    },
+    {
+      "id": "g09-early-morning-awkwardness",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Early Morning Awkwardness",
+      "direction": "The interesting scene begins after an uneventful shared night."
+    },
+    {
+      "id": "g09-nothing-romantic-happens-overnight",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Nothing Romantic Happens Overnight",
+      "direction": "Make the overnight period explicitly mundane and focus on conversation/routine."
+    },
+    {
+      "id": "g09-existing-couple-shares-bed-normally",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Existing Couple Shares Bed Normally",
+      "direction": "For established partners, the one-bed issue is not inherently dramatic."
+    },
+    {
+      "id": "g10-polite-small-talk",
+      "group": "10 What Happens While They Wait",
+      "title": "Polite Small Talk",
+      "direction": "They keep things formal and ordinary."
+    },
+    {
+      "id": "g10-comfortable-silence",
+      "group": "10 What Happens While They Wait",
+      "title": "Comfortable Silence",
+      "direction": "They learn they can coexist without constant conversation."
+    },
+    {
+      "id": "g10-boredom-breaks-the-ice",
+      "group": "10 What Happens While They Wait",
+      "title": "Boredom Breaks the Ice",
+      "direction": "Lack of distraction produces unexpected conversation."
+    },
+    {
+      "id": "g10-shared-problem-solving",
+      "group": "10 What Happens While They Wait",
+      "title": "Shared Problem Solving",
+      "direction": "They cooperate on practical issues."
+    },
+    {
+      "id": "g10-one-takes-practical-lead",
+      "group": "10 What Happens While They Wait",
+      "title": "One Takes Practical Lead",
+      "direction": "{{char}} becomes organized without becoming controlling."
+    },
+    {
+      "id": "g10-user-takes-practical-lead-open-ended",
+      "group": "10 What Happens While They Wait",
+      "title": "{{user}} Takes Practical Lead Open-Ended",
+      "direction": "The scenario allows {{user}} to take initiative without pre-writing it."
+    },
+    {
+      "id": "g10-both-overplan",
+      "group": "10 What Happens While They Wait",
+      "title": "Both Overplan",
+      "direction": "They turn a simple wait into a detailed survival/logistics plan."
+    },
+    {
+      "id": "g10-both-underreact",
+      "group": "10 What Happens While They Wait",
+      "title": "Both Underreact",
+      "direction": "They treat the inconvenience as barely worth discussing."
+    },
+    {
+      "id": "g10-irritation-builds",
+      "group": "10 What Happens While They Wait",
+      "title": "Irritation Builds",
+      "direction": "Small habits become more annoying in confined space."
+    },
+    {
+      "id": "g10-old-grievance-surfaces",
+      "group": "10 What Happens While They Wait",
+      "title": "Old Grievance Surfaces",
+      "direction": "Unresolved tension finally gets discussed."
+    },
+    {
+      "id": "g10-work-rivalry-softens",
+      "group": "10 What Happens While They Wait",
+      "title": "Work Rivalry Softens",
+      "direction": "Professional competition looks different outside normal context."
+    },
+    {
+      "id": "g10-rivalry-gets-worse",
+      "group": "10 What Happens While They Wait",
+      "title": "Rivalry Gets Worse",
+      "direction": "The stress highlights genuine incompatibility."
+    },
+    {
+      "id": "g10-mutual-respect-grows",
+      "group": "10 What Happens While They Wait",
+      "title": "Mutual Respect Grows",
+      "direction": "Competence under inconvenience changes {{char}}’s view."
+    },
+    {
+      "id": "g10-char-reveals-vulnerability",
+      "group": "10 What Happens While They Wait",
+      "title": "{{char}} Reveals Vulnerability",
+      "direction": "She shares something personal she normally keeps private."
+    },
+    {
+      "id": "g10-char-overshares-from-boredom",
+      "group": "10 What Happens While They Wait",
+      "title": "{{char}} Overshares From Boredom",
+      "direction": "The conversation becomes unexpectedly candid."
+    },
+    {
+      "id": "g10-shared-hobby-discovered",
+      "group": "10 What Happens While They Wait",
+      "title": "Shared Hobby Discovered",
+      "direction": "They realize they like the same media, game, sport, or interest."
+    },
+    {
+      "id": "g10-different-hobbies-shared",
+      "group": "10 What Happens While They Wait",
+      "title": "Different Hobbies Shared",
+      "direction": "They introduce each other to unrelated interests."
+    },
+    {
+      "id": "g10-play-a-game",
+      "group": "10 What Happens While They Wait",
+      "title": "Play a Game",
+      "direction": "A harmless game creates structure."
+    },
+    {
+      "id": "g10-watch-something-together",
+      "group": "10 What Happens While They Wait",
+      "title": "Watch Something Together",
+      "direction": "Shared media fills time."
+    },
+    {
+      "id": "g10-work-together-quietly",
+      "group": "10 What Happens While They Wait",
+      "title": "Work Together Quietly",
+      "direction": "They use the delay productively."
+    },
+    {
+      "id": "g10-tell-stories",
+      "group": "10 What Happens While They Wait",
+      "title": "Tell Stories",
+      "direction": "Personal anecdotes reveal unexpected similarities."
+    },
+    {
+      "id": "g10-discuss-future-plans",
+      "group": "10 What Happens While They Wait",
+      "title": "Discuss Future Plans",
+      "direction": "The setting creates time for ordinary life conversation."
+    },
+    {
+      "id": "g10-discuss-relationship-expectations",
+      "group": "10 What Happens While They Wait",
+      "title": "Discuss Relationship Expectations",
+      "direction": "If relevant, they talk about boundaries or dating without forcing an outcome."
+    },
+    {
+      "id": "g10-discuss-the-situation-only",
+      "group": "10 What Happens While They Wait",
+      "title": "Discuss the Situation Only",
+      "direction": "No major personal disclosure occurs."
+    },
+    {
+      "id": "g10-humor-helps",
+      "group": "10 What Happens While They Wait",
+      "title": "Humor Helps",
+      "direction": "{{char}} uses jokes to reduce tension."
+    },
+    {
+      "id": "g10-practical-friction",
+      "group": "10 What Happens While They Wait",
+      "title": "Practical Friction",
+      "direction": "Food, charging, seating, temperature, or sleep creates small conflicts."
+    },
+    {
+      "id": "g10-privacy-negotiation",
+      "group": "10 What Happens While They Wait",
+      "title": "Privacy Negotiation",
+      "direction": "They explicitly coordinate changing, bathroom use, sleep, or personal space."
+    },
+    {
+      "id": "g10-no-personal-change",
+      "group": "10 What Happens While They Wait",
+      "title": "No Personal Change",
+      "direction": "They handle the situation and leave with essentially the same relationship."
+    },
+    {
+      "id": "g10-friendship-starts",
+      "group": "10 What Happens While They Wait",
+      "title": "Friendship Starts",
+      "direction": "Repeated conversation creates genuine platonic interest."
+    },
+    {
+      "id": "g10-existing-friendship-deepens",
+      "group": "10 What Happens While They Wait",
+      "title": "Existing Friendship Deepens",
+      "direction": "They learn more about each other."
+    },
+    {
+      "id": "g10-attraction-from-char-develops",
+      "group": "10 What Happens While They Wait",
+      "title": "Attraction From {{char}} Develops",
+      "direction": "{{char}} may begin to feel attraction; {{user}}’s feelings remain open."
+    },
+    {
+      "id": "g10-existing-attraction-becomes-harder-to-ignore",
+      "group": "10 What Happens While They Wait",
+      "title": "Existing Attraction Becomes Harder to Ignore",
+      "direction": "Known feelings become more salient without forcing action."
+    },
+    {
+      "id": "g10-romantic-tension-without-action",
+      "group": "10 What Happens While They Wait",
+      "title": "Romantic Tension Without Action",
+      "direction": "The proximity creates awareness but no automatic physical escalation."
+    },
+    {
+      "id": "g10-conflict-followed-by-better-understanding",
+      "group": "10 What Happens While They Wait",
+      "title": "Conflict Followed by Better Understanding",
+      "direction": "They argue, then clarify assumptions."
+    },
+    {
+      "id": "g10-conflict-remains-unresolved",
+      "group": "10 What Happens While They Wait",
+      "title": "Conflict Remains Unresolved",
+      "direction": "The situation ends before emotional closure."
+    },
+    {
+      "id": "g10-one-needs-space-after-release",
+      "group": "10 What Happens While They Wait",
+      "title": "One Needs Space After Release",
+      "direction": "Proximity was exhausting and distance becomes welcome."
+    },
+    {
+      "id": "g10-both-glad-to-be-free",
+      "group": "10 What Happens While They Wait",
+      "title": "Both Glad to Be Free",
+      "direction": "The shared joke is simply relief at normal space returning."
+    },
+    {
+      "id": "g11-security-knows",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Security Knows",
+      "direction": "Staff are aware and provide updates."
+    },
+    {
+      "id": "g11-maintenance-en-route",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Maintenance En Route",
+      "direction": "A technician is coming."
+    },
+    {
+      "id": "g11-emergency-services-not-needed",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Emergency Services Not Needed",
+      "direction": "The situation is inconvenient but safe."
+    },
+    {
+      "id": "g11-emergency-services-called-appropriately",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Emergency Services Called Appropriately",
+      "direction": "If genuine danger exists, proper responders are contacted."
+    },
+    {
+      "id": "g11-hotel-staff-working-on-it",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Hotel Staff Working on It",
+      "direction": "Accommodation staff seek alternatives."
+    },
+    {
+      "id": "g11-airline-rail-staff-rebooking",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Airline / Rail Staff Rebooking",
+      "direction": "Travel workers provide updated plans."
+    },
+    {
+      "id": "g11-roadside-assistance-coming",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Roadside Assistance Coming",
+      "direction": "A vehicle problem has a clear response."
+    },
+    {
+      "id": "g11-friends-can-pick-them-up-later",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Friends Can Pick Them Up Later",
+      "direction": "Outside help is delayed but available."
+    },
+    {
+      "id": "g11-family-knows",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Family Knows",
+      "direction": "Relatives know where they are."
+    },
+    {
+      "id": "g11-coworkers-know",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Coworkers Know",
+      "direction": "The workplace is aware of the delay."
+    },
+    {
+      "id": "g11-boss-knows",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Boss Knows",
+      "direction": "Work expectations are adjusted appropriately."
+    },
+    {
+      "id": "g11-nobody-can-reach-them-yet",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Nobody Can Reach Them Yet",
+      "direction": "The adults wait for signal/access without inventing panic."
+    },
+    {
+      "id": "g11-periodic-check-ins",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Periodic Check-Ins",
+      "direction": "Updates arrive at intervals."
+    },
+    {
+      "id": "g11-conflicting-updates",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Conflicting Updates",
+      "direction": "Estimated release times keep changing."
+    },
+    {
+      "id": "g11-false-alarm-of-immediate-rescue",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "False Alarm of Immediate Rescue",
+      "direction": "They prepare to leave, then learn it will take longer."
+    },
+    {
+      "id": "g11-rescue-earlier-than-expected",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Rescue Earlier Than Expected",
+      "direction": "The proximity ends before either adult was ready for the conversation."
+    },
+    {
+      "id": "g11-rescue-later-than-expected",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Rescue Later Than Expected",
+      "direction": "Plans for a short wait turn into overnight logistics."
+    },
+    {
+      "id": "g11-self-exit-becomes-available",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Self-Exit Becomes Available",
+      "direction": "A normal safe exit opens and either adult can leave."
+    },
+    {
+      "id": "g11-transport-restarts",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Transport Restarts",
+      "direction": "The story moves from waiting room/shelter to shared onward travel."
+    },
+    {
+      "id": "g11-alternative-room-opens",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Alternative Room Opens",
+      "direction": "The hotel can finally separate them."
+    },
+    {
+      "id": "g11-other-people-join",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Other People Join",
+      "direction": "The scenario becomes less private."
+    },
+    {
+      "id": "g11-other-people-leave",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Other People Leave",
+      "direction": "The pair become the last two waiting."
+    },
+    {
+      "id": "g11-media-public-attention-none",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Media / Public Attention None",
+      "direction": "Keep the disruption private and ordinary."
+    },
+    {
+      "id": "g11-public-event-disruption",
+      "group": "11 Outside World / Rescue / Updates",
+      "title": "Public Event Disruption",
+      "direction": "A large travel/weather problem means many people are affected, reducing the sense that they were singled out."
+    },
+    {
+      "id": "g12-proximity-is-not-consent",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Proximity Is Not Consent",
+      "direction": "Being stuck together never establishes romantic or sexual consent."
+    },
+    {
+      "id": "g12-one-bed-is-not-consent",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "One Bed Is Not Consent",
+      "direction": "A shared sleeping surface is a logistical fact, not an invitation."
+    },
+    {
+      "id": "g12-shared-blanket-is-not-consent",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Shared Blanket Is Not Consent",
+      "direction": "Practical warmth does not imply intimacy."
+    },
+    {
+      "id": "g12-privacy-loss-is-not-consent",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Privacy Loss Is Not Consent",
+      "direction": "Limited changing/bathroom privacy requires more care, not fewer boundaries."
+    },
+    {
+      "id": "g12-emergency-is-not-romantic-leverage",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Emergency Is Not Romantic Leverage",
+      "direction": "Fear or stress must not be used to pressure affection or sex."
+    },
+    {
+      "id": "g12-no-blocking-the-exit",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "No Blocking the Exit",
+      "direction": "Once a safe exit exists, neither adult should prevent the other from leaving."
+    },
+    {
+      "id": "g12-no-hiding-rescue-information",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "No Hiding Rescue Information",
+      "direction": "Do not prolong confinement by concealing that help or an exit is available."
+    },
+    {
+      "id": "g12-no-sabotaging-transport",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "No Sabotaging Transport",
+      "direction": "Do not create forced proximity by damaging vehicles, bookings, phones, access systems, or travel plans."
+    },
+    {
+      "id": "g12-no-fake-lock-in-without-agreement",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "No Fake Lock-In Without Agreement",
+      "direction": "If the scenario is deliberately staged, transition toward a prank/party-game setup and preserve the other adult’s right to leave."
+    },
+    {
+      "id": "g12-no-workplace-retaliation",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "No Workplace Retaliation",
+      "direction": "For work assignments, professional power must remain separate from personal interest."
+    },
+    {
+      "id": "g12-no-trainer-boss-pressure",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "No Trainer / Boss Pressure",
+      "direction": "Hierarchy cannot substitute for romantic consent."
+    },
+    {
+      "id": "g12-no-intoxication-shortcut",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "No Intoxication Shortcut",
+      "direction": "Alcohol or fatigue does not create consent."
+    },
+    {
+      "id": "g12-sleep-boundaries-matter",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Sleep Boundaries Matter",
+      "direction": "A sleeping adult cannot consent to new sexual contact."
+    },
+    {
+      "id": "g12-changing-privacy-matters",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Changing Privacy Matters",
+      "direction": "Do not force nudity or undressing in view when alternatives exist."
+    },
+    {
+      "id": "g12-bathroom-privacy-matters",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Bathroom Privacy Matters",
+      "direction": "Coordinate access respectfully."
+    },
+    {
+      "id": "g12-touch-for-safety-only-when-needed",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Touch for Safety Only When Needed",
+      "direction": "Any necessary physical assistance should remain proportionate to the situation."
+    },
+    {
+      "id": "g12-fear-response-is-not-attraction",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Fear Response Is Not Attraction",
+      "direction": "Adrenaline, stress, or seeking reassurance should not automatically be interpreted romantically."
+    },
+    {
+      "id": "g12-comfort-is-not-commitment",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Comfort Is Not Commitment",
+      "direction": "A hug, shared blanket, or supportive conversation does not establish a relationship."
+    },
+    {
+      "id": "g12-confession-does-not-demand-answer",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Confession Does Not Demand Answer",
+      "direction": "If {{char}} admits feelings, {{user}} retains space to respond later."
+    },
+    {
+      "id": "g12-no-forced-confession",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "No Forced Confession",
+      "direction": "Proximity does not obligate either adult to reveal secrets."
+    },
+    {
+      "id": "g12-no-forced-sharing-of-bed",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "No Forced Sharing of Bed",
+      "direction": "Alternative rest arrangements remain valid even if inconvenient."
+    },
+    {
+      "id": "g12-no-forced-romance",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "No Forced Romance",
+      "direction": "Friendship, neutrality, irritation, professional respect, or no change are all valid outcomes."
+    },
+    {
+      "id": "g12-no-forced-breakup-reconciliation",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "No Forced Breakup / Reconciliation",
+      "direction": "Exes stuck together do not have to reunite or worsen."
+    },
+    {
+      "id": "g12-safe-exit-takes-priority",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Safe Exit Takes Priority",
+      "direction": "If the setting becomes hazardous, resolving the danger overrides relationship beats."
+    },
+    {
+      "id": "g12-real-emergencies-stay-realistic",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Real Emergencies Stay Realistic",
+      "direction": "Do not romanticize severe weather, structural danger, fire, medical crisis, or other emergencies."
+    },
+    {
+      "id": "g13-nothing-changes",
+      "group": "13 What Changes Between Them",
+      "title": "Nothing Changes",
+      "direction": "They leave with the same basic relationship."
+    },
+    {
+      "id": "g13-better-first-impression",
+      "group": "13 What Changes Between Them",
+      "title": "Better First Impression",
+      "direction": "{{char}} revises an initially poor opinion."
+    },
+    {
+      "id": "g13-worse-first-impression",
+      "group": "13 What Changes Between Them",
+      "title": "Worse First Impression",
+      "direction": "Stress reveals incompatibility."
+    },
+    {
+      "id": "g13-professional-respect",
+      "group": "13 What Changes Between Them",
+      "title": "Professional Respect",
+      "direction": "One adult’s competence changes how {{char}} sees them."
+    },
+    {
+      "id": "g13-friendship-begins",
+      "group": "13 What Changes Between Them",
+      "title": "Friendship Begins",
+      "direction": "They choose to talk again afterward."
+    },
+    {
+      "id": "g13-friendship-deepens",
+      "group": "13 What Changes Between Them",
+      "title": "Friendship Deepens",
+      "direction": "Existing friends become closer."
+    },
+    {
+      "id": "g13-rivalry-softens",
+      "group": "13 What Changes Between Them",
+      "title": "Rivalry Softens",
+      "direction": "Competition becomes more playful or respectful."
+    },
+    {
+      "id": "g13-rivalry-intensifies",
+      "group": "13 What Changes Between Them",
+      "title": "Rivalry Intensifies",
+      "direction": "They discover their styles genuinely clash."
+    },
+    {
+      "id": "g13-old-friendship-repairs",
+      "group": "13 What Changes Between Them",
+      "title": "Old Friendship Repairs",
+      "direction": "Former friends reopen communication."
+    },
+    {
+      "id": "g13-exes-gain-closure",
+      "group": "13 What Changes Between Them",
+      "title": "Exes Gain Closure",
+      "direction": "They understand the old relationship better without reuniting by default."
+    },
+    {
+      "id": "g13-exes-reconsider",
+      "group": "13 What Changes Between Them",
+      "title": "Exes Reconsider",
+      "direction": "{{char}} may wonder about reconciliation, but {{user}}’s choice remains open."
+    },
+    {
+      "id": "g13-char-develops-crush",
+      "group": "13 What Changes Between Them",
+      "title": "{{char}} Develops Crush",
+      "direction": "She leaves with new feelings."
+    },
+    {
+      "id": "g13-char-admits-existing-crush",
+      "group": "13 What Changes Between Them",
+      "title": "{{char}} Admits Existing Crush",
+      "direction": "She uses the quiet time to disclose feelings without demanding an answer."
+    },
+    {
+      "id": "g13-attraction-remains-unspoken",
+      "group": "13 What Changes Between Them",
+      "title": "Attraction Remains Unspoken",
+      "direction": "Nothing is confessed."
+    },
+    {
+      "id": "g13-mutual-attraction-still-unacted-on",
+      "group": "13 What Changes Between Them",
+      "title": "Mutual Attraction Still Unacted On",
+      "direction": "The situation creates no obligation to act."
+    },
+    {
+      "id": "g13-platonic-trust-increases",
+      "group": "13 What Changes Between Them",
+      "title": "Platonic Trust Increases",
+      "direction": "They become more comfortable relying on each other."
+    },
+    {
+      "id": "g13-professional-dependence-reframed",
+      "group": "13 What Changes Between Them",
+      "title": "Professional Dependence Reframed",
+      "direction": "Coworkers understand each other’s strengths better."
+    },
+    {
+      "id": "g13-one-learns-they-need-more-space",
+      "group": "13 What Changes Between Them",
+      "title": "One Learns They Need More Space",
+      "direction": "The experience clarifies personal boundaries."
+    },
+    {
+      "id": "g13-one-learns-they-enjoy-quiet-company",
+      "group": "13 What Changes Between Them",
+      "title": "One Learns They Enjoy Quiet Company",
+      "direction": "Comfortable coexistence becomes meaningful."
+    },
+    {
+      "id": "g13-embarrassing-story-only",
+      "group": "13 What Changes Between Them",
+      "title": "Embarrassing Story Only",
+      "direction": "The main result is a funny shared anecdote."
+    },
+    {
+      "id": "g13-inside-joke",
+      "group": "13 What Changes Between Them",
+      "title": "Inside Joke",
+      "direction": "A small incident becomes recurring humor."
+    },
+    {
+      "id": "g13-shared-secret",
+      "group": "13 What Changes Between Them",
+      "title": "Shared Secret",
+      "direction": "They learn something personal but non-harmful about each other."
+    },
+    {
+      "id": "g13-boundary-conversation",
+      "group": "13 What Changes Between Them",
+      "title": "Boundary Conversation",
+      "direction": "The event clarifies privacy or relationship expectations."
+    },
+    {
+      "id": "g13-future-invitation",
+      "group": "13 What Changes Between Them",
+      "title": "Future Invitation",
+      "direction": "{{char}} may later invite {{user}} somewhere under normal circumstances."
+    },
+    {
+      "id": "g13-no-immediate-follow-up",
+      "group": "13 What Changes Between Them",
+      "title": "No Immediate Follow-Up",
+      "direction": "The adults need time apart after an intense delay."
+    },
+    {
+      "id": "g14-overnight-office-monitoring",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Overnight Office Monitoring",
+      "direction": "A rollout, outage, migration, or security watch keeps coworkers onsite."
+    },
+    {
+      "id": "g14-locked-workplace-after-closing",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Locked Workplace After Closing",
+      "direction": "Security accidentally closes the building."
+    },
+    {
+      "id": "g14-stocktake-runs-late",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Stocktake Runs Late",
+      "direction": "A retail/warehouse count extends deep into the night."
+    },
+    {
+      "id": "g14-cleaning-facilities-lock-in",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Cleaning / Facilities Lock-In",
+      "direction": "Adult workers become stuck after a site closure or access mistake."
+    },
+    {
+      "id": "g14-rail-disruption-duty",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Rail Disruption Duty",
+      "direction": "Transport staff remain together during an operational disruption."
+    },
+    {
+      "id": "g14-control-room-shift-extension",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Control Room Shift Extension",
+      "direction": "Relief staff are delayed and two operators overlap much longer than expected."
+    },
+    {
+      "id": "g14-trainees-on-remote-training-trip",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Trainees on Remote Training Trip",
+      "direction": "Adult trainees share unexpected travel delay during formal training."
+    },
+    {
+      "id": "g14-business-trip-hotel-error",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Business Trip Hotel Error",
+      "direction": "Coworkers receive one room or reduced accommodation options."
+    },
+    {
+      "id": "g14-conference-travel-cancellation",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Conference Travel Cancellation",
+      "direction": "A work event ends but onward transport fails."
+    },
+    {
+      "id": "g14-site-visit-weather-delay",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Site Visit Weather Delay",
+      "direction": "A remote job site cannot be safely left immediately."
+    },
+    {
+      "id": "g14-after-hours-maintenance",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "After-Hours Maintenance",
+      "direction": "Technicians or facilities staff wait for a system test or contractor."
+    },
+    {
+      "id": "g14-server-migration-overnight",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Server Migration Overnight",
+      "direction": "Technical staff have hours of downtime between tasks."
+    },
+    {
+      "id": "g14-lab-observation-overnight",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Lab Observation Overnight",
+      "direction": "Researchers or technicians monitor a timed process."
+    },
+    {
+      "id": "g14-audit-deadline-overtime",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Audit / Deadline Overtime",
+      "direction": "A legitimate deadline keeps the pair in the workplace."
+    },
+    {
+      "id": "g14-emergency-callout-but-safe-waiting",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Emergency Callout—but Safe Waiting",
+      "direction": "The active incident is handled; the pair then wait for systems or transport."
+    },
+    {
+      "id": "g14-different-shifts-forced-overlap",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Different-Shifts Forced Overlap",
+      "direction": "A late handover turns into hours together."
+    },
+    {
+      "id": "g14-boss-and-employee-waiting",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Boss and Employee Waiting",
+      "direction": "Hierarchy exists, but the manager cannot use the situation for personal pressure."
+    },
+    {
+      "id": "g14-trainer-and-trainee-stranded",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Trainer and Trainee Stranded",
+      "direction": "The training relationship remains professional during travel disruption."
+    },
+    {
+      "id": "g14-peers-stranded",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Peers Stranded",
+      "direction": "No workplace hierarchy complicates the personal dynamic."
+    },
+    {
+      "id": "g14-one-is-on-the-clock-one-is-not",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "One Is On the Clock, One Is Not",
+      "direction": "Work/pay status differs and creates practical discussion."
+    },
+    {
+      "id": "g14-overtime-pay-time-in-lieu",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Overtime Pay / Time-in-Lieu",
+      "direction": "The source acknowledges legitimate compensation rather than treating extra work as free romantic time."
+    },
+    {
+      "id": "g14-workplace-privacy-rules",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Workplace Privacy Rules",
+      "direction": "Confidential files, cameras, systems, or client areas remain off-limits even while stuck."
+    },
+    {
+      "id": "g14-separate-rooms-become-available-later",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Separate Rooms Become Available Later",
+      "direction": "Coworkers move apart once normal accommodation becomes possible."
+    },
+    {
+      "id": "g14-relationship-only-considered-after-reassignment",
+      "group": "14 Workplace / Professional Forced Proximity",
+      "title": "Relationship Only Considered After Reassignment",
+      "direction": "If attraction develops under a reporting line, any dating trajectory waits until conflict is removed."
+    },
+    {
+      "id": "g15-last-train-cancelled",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Last Train Cancelled",
+      "direction": "Two adults are stranded after the final service is cancelled."
+    },
+    {
+      "id": "g15-flight-cancelled-overnight",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Flight Cancelled Overnight",
+      "direction": "The airline provides or fails to provide accommodation."
+    },
+    {
+      "id": "g15-coach-missed-connection",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Coach Missed Connection",
+      "direction": "A delay leaves them at a regional/intercity transfer point."
+    },
+    {
+      "id": "g15-rail-replacement-journey",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Rail Replacement Journey",
+      "direction": "A reroute turns a short trip into many hours together."
+    },
+    {
+      "id": "g15-ferry-cancelled",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Ferry Cancelled",
+      "direction": "Weather delays a crossing."
+    },
+    {
+      "id": "g15-road-trip-breakdown",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Road Trip Breakdown",
+      "direction": "A car issue creates a long roadside wait."
+    },
+    {
+      "id": "g15-rental-car-problem",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Rental Car Problem",
+      "direction": "Travel logistics fail after arrival."
+    },
+    {
+      "id": "g15-airport-overnight",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Airport Overnight",
+      "direction": "They wait in a terminal or nearby hotel."
+    },
+    {
+      "id": "g15-station-overnight",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Station Overnight",
+      "direction": "A safe station/waiting environment becomes temporary base."
+    },
+    {
+      "id": "g15-small-town-no-vacancy",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Small-Town No Vacancy",
+      "direction": "A regional disruption leaves very limited accommodation."
+    },
+    {
+      "id": "g15-only-one-hotel-room-left",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Only One Hotel Room Left",
+      "direction": "Staff offer one room while other alternatives are explored."
+    },
+    {
+      "id": "g15-twin-room-becomes-one-bed-room",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Twin Room Becomes One-Bed Room",
+      "direction": "The booked room differs from the reservation."
+    },
+    {
+      "id": "g15-suite-with-separate-sofa",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Suite With Separate Sofa",
+      "direction": "A room-sharing error has a reasonable privacy solution."
+    },
+    {
+      "id": "g15-hotel-sends-rollaway-bed",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Hotel Sends Rollaway Bed",
+      "direction": "Staff resolve the one-bed issue after a delay."
+    },
+    {
+      "id": "g15-hotel-cannot-fix-until-morning",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Hotel Cannot Fix Until Morning",
+      "direction": "The temporary arrangement lasts one night."
+    },
+    {
+      "id": "g15-conference-rooming-error",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Conference Rooming Error",
+      "direction": "A corporate/academic booking assigns the pair together."
+    },
+    {
+      "id": "g15-holiday-rental-only-one-bedroom",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Holiday Rental Only One Bedroom",
+      "direction": "The listing was misunderstood or changed."
+    },
+    {
+      "id": "g15-weather-extends-stay",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Weather Extends Stay",
+      "direction": "They expected one night but transport remains closed."
+    },
+    {
+      "id": "g15-shared-taxi-rideshare-long-detour",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Shared Taxi / Rideshare Long Detour",
+      "direction": "They are not trapped, just together far longer than planned."
+    },
+    {
+      "id": "g15-sleeper-train-compartment",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Sleeper Train Compartment",
+      "direction": "A booking change places them in one compartment with separate berths if available."
+    },
+    {
+      "id": "g15-cruise-ferry-cabin-reassignment",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Cruise / Ferry Cabin Reassignment",
+      "direction": "Travel staff temporarily reassign accommodation."
+    },
+    {
+      "id": "g15-camping-shelter-shortage",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Camping Shelter Shortage",
+      "direction": "They share shelter because weather makes separate setups impractical."
+    },
+    {
+      "id": "g15-one-bed-no-drama",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "One Bed, No Drama",
+      "direction": "Treat the bed as a mundane logistics problem rather than automatic tension."
+    },
+    {
+      "id": "g15-one-bed-existing-tension",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "One Bed, Existing Tension",
+      "direction": "The awkwardness matters because attraction/history already existed, while consent remains open."
+    },
+    {
+      "id": "g16-the-door-clicks-shut",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Door Clicks Shut",
+      "direction": "Open at the moment both adults realize the door will not reopen."
+    },
+    {
+      "id": "g16-did-you-bring-your-access-card",
+      "group": "16 Strong Roleplay Openings",
+      "title": "‘Did You Bring Your Access Card?’",
+      "direction": "Open when an access mistake becomes obvious."
+    },
+    {
+      "id": "g16-security-answers-the-phone",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Security Answers the Phone",
+      "direction": "Open with staff saying release will take a few hours."
+    },
+    {
+      "id": "g16-the-storm-alert-arrives",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Storm Alert Arrives",
+      "direction": "Open when official advice makes leaving unsafe."
+    },
+    {
+      "id": "g16-last-service-cancelled",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Last Service Cancelled",
+      "direction": "Open with the departure board showing there is no onward transport."
+    },
+    {
+      "id": "g16-road-closed-until-morning",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Road Closed Until Morning",
+      "direction": "Open when both learn the route will remain shut."
+    },
+    {
+      "id": "g16-the-car-wont-start",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Car Won’t Start",
+      "direction": "Open after a failed ignition attempt in a safe location."
+    },
+    {
+      "id": "g16-theres-only-one-room-left",
+      "group": "16 Strong Roleplay Openings",
+      "title": "‘There’s Only One Room Left’",
+      "direction": "Open at the accommodation desk before either adult agrees to share."
+    },
+    {
+      "id": "g16-theres-only-one-bed",
+      "group": "16 Strong Roleplay Openings",
+      "title": "‘There’s Only One Bed’",
+      "direction": "Open when they enter the room and see the booking error."
+    },
+    {
+      "id": "g16-rollaway-bed-delayed",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Rollaway Bed Delayed",
+      "direction": "Open when staff promise another sleeping option later."
+    },
+    {
+      "id": "g16-elevator-stops",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Elevator Stops",
+      "direction": "Open immediately after the lift halts and the emergency system is contacted."
+    },
+    {
+      "id": "g16-the-emergency-button-works",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Emergency Button Works",
+      "direction": "Open after rescue is confirmed but estimated to take time."
+    },
+    {
+      "id": "g16-party-game-door-closes",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Party Game Door Closes",
+      "direction": "Open at the start of a consensual social challenge with an easy opt-out."
+    },
+    {
+      "id": "g16-the-work-assignment-runs-past-midnight",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Work Assignment Runs Past Midnight",
+      "direction": "Open as the pair realize they will be onsite all night."
+    },
+    {
+      "id": "g16-security-locked-the-building",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Security Locked the Building",
+      "direction": "Open when they reach the exit and discover normal access is closed."
+    },
+    {
+      "id": "g16-storage-room-handle-fails",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Storage-Room Handle Fails",
+      "direction": "Open with a practical lock problem and limited space."
+    },
+    {
+      "id": "g16-the-weather-gets-worse",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Weather Gets Worse",
+      "direction": "Open when a short wait clearly becomes an overnight one."
+    },
+    {
+      "id": "g16-the-replacement-bus-is-hours-away",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Replacement Bus Is Hours Away",
+      "direction": "Open with a new long delay."
+    },
+    {
+      "id": "g16-the-hotel-calls-back-no-second-room",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Hotel Calls Back: No Second Room",
+      "direction": "Open after they have already tried to fix the accommodation issue."
+    },
+    {
+      "id": "g16-both-reach-for-the-same-charger",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Both Reach for the Same Charger",
+      "direction": "Open after practical scarcity becomes the first social problem."
+    },
+    {
+      "id": "g16-you-take-the-bed",
+      "group": "16 Strong Roleplay Openings",
+      "title": "‘You Take the Bed’",
+      "direction": "Open with {{char}} making an offer without deciding {{user}}’s response."
+    },
+    {
+      "id": "g16-neither-wants-the-bed",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Neither Wants the Bed",
+      "direction": "Open with an absurd politeness contest over sleeping arrangements."
+    },
+    {
+      "id": "g16-the-lights-switch-to-emergency-mode",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Lights Switch to Emergency Mode",
+      "direction": "Open during a safe building outage."
+    },
+    {
+      "id": "g16-they-finally-get-signal",
+      "group": "16 Strong Roleplay Openings",
+      "title": "They Finally Get Signal",
+      "direction": "Open after hours of isolation when outside contact becomes possible."
+    },
+    {
+      "id": "g16-rescue-is-delayed-again",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Rescue Is Delayed Again",
+      "direction": "Open after the expected end time moves."
+    },
+    {
+      "id": "g16-theyre-released-too-soon",
+      "group": "16 Strong Roleplay Openings",
+      "title": "They’re Released Too Soon",
+      "direction": "Open just as an unfinished important conversation is interrupted by rescue."
+    },
+    {
+      "id": "g16-morning-after-an-uneventful-night",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Morning After an Uneventful Night",
+      "direction": "Open after nothing romantic happened, focusing on the ordinary awkwardness of waking up in the same temporary space."
+    },
+    {
+      "id": "g16-the-locked-door-opens-easily",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The ‘Locked’ Door Opens Easily",
+      "direction": "Open with the realization they were never truly trapped."
+    },
+    {
+      "id": "g16-a-third-person-leaves-them-behind",
+      "group": "16 Strong Roleplay Openings",
+      "title": "A Third Person Leaves Them Behind",
+      "direction": "Open as the wider group departs and the pair become the last two waiting."
+    },
+    {
+      "id": "g16-this-is-going-to-be-a-long-night",
+      "group": "16 Strong Roleplay Openings",
+      "title": "‘This Is Going to Be a Long Night’",
+      "direction": "Open when {{char}} recognizes the practical reality without defining the emotional outcome."
+    },
+    {
+      "id": "g17-bridge-to-workplace-stories",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Workplace Stories",
+      "direction": "If the proximity comes from overtime, business travel, training, or a locked workplace, transition into Workplace Stories."
+    },
+    {
+      "id": "g17-bridge-to-my-neighbour-in-class",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to My Neighbour in Class",
+      "direction": "If adult classmates are stuck together after class or during a campus disruption, transition into My Neighbour in Class."
+    },
+    {
+      "id": "g17-bridge-to-new-dorm-mate",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to New Dorm Mate",
+      "direction": "If temporary room-sharing becomes ongoing student housing, transition into New Dorm Mate."
+    },
+    {
+      "id": "g17-bridge-to-fake-relationship",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Fake Relationship",
+      "direction": "If travel/accommodation problems lead them to pretend to be a couple for practical reasons, transition into Fake Relationship."
+    },
+    {
+      "id": "g17-bridge-to-my-new-neighbour",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to My New Neighbour",
+      "direction": "If a building outage or storm brings neighboring adults together, transition into My New Neighbour."
+    },
+    {
+      "id": "g17-bridge-to-come-with-me",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Come With Me",
+      "direction": "If one adult later invites the other on a normal trip/event after surviving the disruption together, transition into Come With Me."
+    },
+    {
+      "id": "g17-bridge-to-her-hidden-side",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Her Hidden Side",
+      "direction": "Long waiting time may reveal an unexpected hobby, persona, or private interest."
+    },
+    {
+      "id": "g17-bridge-to-just-a-prank",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Just a Prank!",
+      "direction": "If the supposed lock-in or one-bed crisis was deliberately staged as a consensual prank, transition into Just a Prank!."
+    },
+    {
+      "id": "g17-bridge-to-she-wants-you",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to She Wants You",
+      "direction": "If {{char}} already wanted {{user}} and the proximity gives her time to consider saying so, transition without forcing {{user}}’s response."
+    },
+    {
+      "id": "g17-bridge-to-please-bang-me",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Please Bang Me",
+      "direction": "Only if adult {{char}} later makes a direct consensual proposition after the forced situation has ended or both are free to decline; proximity itself must not create the proposition."
+    },
+    {
+      "id": "g17-keep-forced-proximity-pure",
+      "group": "17 Cross-Series Bridges",
+      "title": "Keep Forced Proximity Pure",
+      "direction": "Do not bridge; make the scenario about practical cooperation, conversation, and temporary space."
+    },
+    {
+      "id": "g18-released-and-go-separate-ways",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Released and Go Separate Ways",
+      "direction": "Nothing needs to continue afterward."
+    },
+    {
+      "id": "g18-exchange-contact-details",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Exchange Contact Details",
+      "direction": "If they were strangers/acquaintances, {{char}} may offer future contact."
+    },
+    {
+      "id": "g18-become-friends",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Become Friends",
+      "direction": "The event starts a platonic relationship."
+    },
+    {
+      "id": "g18-closer-friends",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Closer Friends",
+      "direction": "Existing friendship deepens."
+    },
+    {
+      "id": "g18-professional-respect-grows",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Professional Respect Grows",
+      "direction": "Coworkers work better afterward."
+    },
+    {
+      "id": "g18-rivals-gain-respect",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Rivals Gain Respect",
+      "direction": "Competition remains but becomes less personal."
+    },
+    {
+      "id": "g18-rivals-still-dislike-each-other",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Rivals Still Dislike Each Other",
+      "direction": "The experience confirms incompatibility."
+    },
+    {
+      "id": "g18-exes-gain-closure",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Exes Gain Closure",
+      "direction": "They part with clearer understanding."
+    },
+    {
+      "id": "g18-exes-reconnect-as-friends",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Exes Reconnect as Friends",
+      "direction": "A non-romantic reconciliation becomes possible."
+    },
+    {
+      "id": "g18-char-wants-another-date-outing",
+      "group": "18 Outcomes / Trajectories",
+      "title": "{{char}} Wants Another Date / Outing",
+      "direction": "If attraction develops, she may suggest meeting again under normal conditions."
+    },
+    {
+      "id": "g18-char-keeps-feelings-private",
+      "group": "18 Outcomes / Trajectories",
+      "title": "{{char}} Keeps Feelings Private",
+      "direction": "No confession is necessary."
+    },
+    {
+      "id": "g18-relationship-begins-later",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Relationship Begins Later",
+      "direction": "Any romance starts after the involuntary proximity ends and both have normal freedom to choose."
+    },
+    {
+      "id": "g18-existing-couple-learns-new-habit",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Existing Couple Learns New Habit",
+      "direction": "The episode reveals an ordinary compatibility quirk."
+    },
+    {
+      "id": "g18-inside-joke-about-the-bed",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Inside Joke About the Bed",
+      "direction": "The one-bed problem becomes harmless shared humor."
+    },
+    {
+      "id": "g18-inside-joke-about-being-trapped",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Inside Joke About Being ‘Trapped’",
+      "direction": "The inconvenience becomes a recurring story."
+    },
+    {
+      "id": "g18-workplace-procedure-changes",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Workplace Procedure Changes",
+      "direction": "A lock-in or overnight issue leads to better access/safety procedure."
+    },
+    {
+      "id": "g18-hotel-refund-apology",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Hotel Refund / Apology",
+      "direction": "The practical travel problem receives an ordinary customer-service resolution."
+    },
+    {
+      "id": "g18-transport-compensation",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Transport Compensation",
+      "direction": "The disruption results in mundane reimbursement/alternative travel."
+    },
+    {
+      "id": "g18-boundary-lesson",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Boundary Lesson",
+      "direction": "The pair learn to communicate privacy needs more clearly."
+    },
+    {
+      "id": "g18-no-big-emotional-lesson",
+      "group": "18 Outcomes / Trajectories",
+      "title": "No Big Emotional Lesson",
+      "direction": "The situation can simply be an inconvenient night."
+    },
+    {
+      "id": "g18-future-voluntary-trip",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Future Voluntary Trip",
+      "direction": "Afterward, they may choose to spend time together when neither is trapped."
+    },
+    {
+      "id": "g18-needs-space-afterward",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Needs Space Afterward",
+      "direction": "One or both adults prefer distance after intense proximity."
+    },
+    {
+      "id": "g18-unresolved-attraction",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Unresolved Attraction",
+      "direction": "Feelings exist but no immediate decision is made."
+    },
+    {
+      "id": "g18-unresolved-conflict",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Unresolved Conflict",
+      "direction": "They leave with tension still present."
+    },
+    {
+      "id": "g18-no-forced-outcome",
+      "group": "18 Outcomes / Trajectories",
+      "title": "No Forced Outcome",
+      "direction": "Preserve {{user}}’s reaction and all future relationship choices."
+    },
+    {
+      "id": "g09-one-bed-they-end-up-fucking-raw",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "One Bed — They End Up Fucking Raw",
+      "direction": "Sleeping arrangement is a single bed or equivalent. Consensual sex develops and becomes unprotected, including the possibility of an internal finish. Proximity created the opportunity; consent still has to be active and ongoing."
+    },
+    {
+      "id": "g09-she-asks-him-to-finish-inside-her-in-the-shared-bed",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "She Asks Him to Finish Inside Her in the Shared Bed",
+      "direction": "In the forced shared sleeping space, {{char}} explicitly asks {{user}} to come inside her. The ask is clear. Leave his answer and the emotional aftermath open."
+    },
+    {
+      "id": "g09-morning-after-she-is-still-full",
+      "group": "09 Sleeping / Rest Arrangements",
+      "title": "Morning After — She Is Still Full",
+      "direction": "They had sex overnight including an internal finish. Morning proximity means both are aware she is still carrying it while they wait for rescue, checkout, or unlock."
+    },
+    {
+      "id": "g07-no-privacy-for-sex-they-do-it-anyway",
+      "group": "07 Physical Space / Privacy",
+      "title": "No Privacy for Sex — They Do It Anyway",
+      "direction": "The space is small, thin-walled, or semi-exposed. If they have sex (possibly raw / creampie), the lack of privacy is part of the charge and the risk."
+    },
+    {
+      "id": "g07-bathroom-is-the-only-semi-private-place",
+      "group": "07 Physical Space / Privacy",
+      "title": "Bathroom Is the Only Semi-Private Place",
+      "direction": "Any sexual contact including potential internal finishes has to happen in a bathroom or similarly constrained space. Logistics and awkwardness shape the encounter."
+    },
+    {
+      "id": "g10-tension-breaks-into-creampie-sex",
+      "group": "10 What Happens While They Wait",
+      "title": "Tension Breaks Into Creampie Sex",
+      "direction": "While waiting out the forced proximity, accumulated tension becomes consensual sex that ends with him finishing inside her. Circumstance accelerated intimacy; it did not remove choice."
+    },
+    {
+      "id": "g10-they-have-sex-more-than-once-while-stuck",
+      "group": "10 What Happens While They Wait",
+      "title": "They Have Sex More Than Once While Stuck",
+      "direction": "Duration allows repeated encounters. Multiple internal finishes across the confinement period become possible. Track energy, consent refresh, and changing emotions."
+    },
+    {
+      "id": "g10-breeding-talk-starts-as-a-joke-gets-serious",
+      "group": "10 What Happens While They Wait",
+      "title": "Breeding Talk Starts as a Joke — Gets Serious",
+      "direction": "In close quarters, joking about pregnancy risk or breeding turns into genuine arousal and possibly a real request for an internal finish. Tone shift is the engine."
+    },
+    {
+      "id": "g06-exes-stuck-together-old-raw-habits-return",
+      "group": "06 Starting Relationship",
+      "title": "Exes Stuck Together — Old Raw Habits Return",
+      "direction": "They have a sexual history that included unprotected sex. Forced proximity reactivates old patterns, including the possibility of him finishing inside her again."
+    },
+    {
+      "id": "g06-strangers-who-end-up-with-a-creampie",
+      "group": "06 Starting Relationship",
+      "title": "Strangers Who End Up With a Creampie",
+      "direction": "They barely knew each other before the incident. Consensual sex including an internal finish still happens. Speed of intimacy is explained by circumstance without erasing consent."
+    },
+    {
+      "id": "g06-rivals-hate-sex-that-includes-a-creampie",
+      "group": "06 Starting Relationship",
+      "title": "Rivals — Hate Sex That Includes a Creampie",
+      "direction": "Mutual dislike or rivalry coexists with intense consensual sex. An internal finish can feel like winning, surrender, or complication depending on the pair."
+    },
+    {
+      "id": "g15-hotel-one-bed-she-offers-raw",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Hotel One-Bed — She Offers Raw",
+      "direction": "Classic one-bed hotel error or booking failure. {{char}} escalates by offering unprotected sex. Keep the offer explicit and his acceptance optional."
+    },
+    {
+      "id": "g15-delayed-flight-airport-hotel-creampie",
+      "group": "15 Travel / Hotel / One-Bed Variants",
+      "title": "Delayed Flight — Airport Hotel Creampie",
+      "direction": "Travel disruption strands them in a stopover room. The night includes consensual sex and an internal finish before the rescheduled departure."
+    },
+    {
+      "id": "g03-elevator-stuck-between-floors",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Elevator Stuck Between Floors",
+      "direction": "Classic elevator stall. Limited space, uncertain duration. Sexual escalation including potential creampie is possible but constrained by cameras, intercom, and rescue timing."
+    },
+    {
+      "id": "g03-snowed-in-cabin-multiple-loads",
+      "group": "03 Why They Are Stuck Together",
+      "title": "Snowed-In Cabin — Multiple Loads",
+      "direction": "Weather traps them in a cabin or similar shelter for days. Extended isolation allows a slower sexual arc that can include repeated internal finishes."
+    },
+    {
+      "id": "g12-consent-is-ongoing-even-when-exit-is-blocked",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "Consent Is Ongoing Even When Exit Is Blocked",
+      "direction": "Reaffirm that inability to leave the location does not equal sexual consent. Any raw sex or creampie must still be freely chosen moment to moment; either adult can stop."
+    },
+    {
+      "id": "g12-she-initiates-so-there-is-no-ambiguity",
+      "group": "12 Consent / Safety / Privacy Rules",
+      "title": "She Initiates So There Is No Ambiguity",
+      "direction": "{{char}} is the clear initiator of sexual contact and of any request to go raw or finish inside. Her agency is foregrounded to avoid proximity-as-pressure readings."
+    },
+    {
+      "id": "g13-after-the-creampie-the-dynamic-cannot-reset",
+      "group": "13 What Changes Between Them",
+      "title": "After the Creampie the Dynamic Cannot Reset",
+      "direction": "Once he has finished inside her during the confinement, returning to purely practical cooperation is difficult. Track awkwardness, attachment, or denial after rescue."
+    },
+    {
+      "id": "g13-they-agree-it-was-just-the-situation-then-want-more",
+      "group": "13 What Changes Between Them",
+      "title": "They Agree It Was ‘Just the Situation’ — Then Want More",
+      "direction": "Both verbally frame the creampie sex as circumstance-driven. After release from proximity, one or both find they want to continue. The story continues past the unlock."
+    },
+    {
+      "id": "g16-open-when-she-says-we-might-as-well-and-guides-him-in",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Open When She Says ‘We Might as Well’ and Guides Him In",
+      "direction": "Open at the moment {{char}} decides the tension has gone on long enough and initiates unprotected sex. The line can be dry, nervous, or hungry. Leave his participation open."
+    },
+    {
+      "id": "g16-open-on-the-single-bed-decision",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Open on the Single-Bed Decision",
+      "direction": "Open with the practical problem of one bed and the first negotiation of how they will sleep — which may lead toward sex and an internal finish, or may not."
+    },
+    {
+      "id": "g16-open-after-he-has-already-come-inside-her",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Open After He Has Already Come Inside Her",
+      "direction": "Open in the quiet after an internal finish while they are still stuck. Aftermath talk, second rounds, or regret all remain possible."
+    },
+    {
+      "id": "g05-stuck-for-days-pregnancy-risk-becomes-real",
+      "group": "05 Duration / Time Horizon",
+      "title": "Stuck for Days — Pregnancy Risk Becomes Real",
+      "direction": "Long confinement plus repeated unprotected sex makes pregnancy risk a concrete topic between them, not only a heat-of-the-moment line."
+    },
+    {
+      "id": "g08-limited-supplies-include-no-condoms",
+      "group": "08 Resources / Practical Needs",
+      "title": "Limited Supplies Include No Condoms",
+      "direction": "Practical inventory: there are no condoms (or they are unusable). If they choose to have sex, raw is the only option. That constraint should be stated; it still does not force sex."
+    },
+    {
+      "id": "g18-they-leave-with-a-secret-creampie-between-them",
+      "group": "18 Outcomes / Trajectories",
+      "title": "They Leave With a Secret Creampie Between Them",
+      "direction": "When the proximity ends, the internal finish (or finishes) remains a private fact. How they treat that secret afterward — ignore, repeat, confess to partners, build on it — is the ongoing trajectory."
+    }
+  ],
+  "sections": [
+    {
+      "id": "constraint-types",
+      "label": "Locked, stranded, or simply better off staying",
+      "content": "Forced proximity should specify whether a barrier literally prevents exit, an outside condition makes departure unsafe, transport/accommodation is unavailable, work requires continued presence, or both adults simply choose the least-bad shared option."
+    },
+    {
+      "id": "proximity-vs-consent",
+      "label": "Proximity is not consent",
+      "content": "One bed, shared shelter, fear, cold, fatigue, lack of privacy, or inability to leave does not create romantic or sexual consent. Any later intimacy must be independently chosen by adults who are free to decline."
+    },
+    {
+      "id": "practical-reality",
+      "label": "Resources and logistics matter",
+      "content": "Duration, communication, food, water, charging, bathroom access, bedding, temperature, work duties, rescue estimates, and alternate accommodation can materially change the story and should not be hand-waved."
+    },
+    {
+      "id": "romance-not-required",
+      "label": "The trope does not require romance",
+      "content": "The situation may create friendship, respect, irritation, closure, teamwork, an inside joke, or no personal change at all. Attraction is one trajectory rather than the default."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Combine groups for specificity—for example: Hotel Booking Error + One Bed + Work Rivals + Rollaway Bed Delayed + One Night; Storm Shelter + Neighbours + Several Hours + Shared Problem Solving; or Overnight Work Assignment + Coworkers + Server Migration Overnight + Comfortable Silence + Professional Respect."
+    }
+  ],
+  "raw_prompt": "Prioritise believable adult forced-proximity logistics, clear distinction between literal confinement and practical inconvenience, real privacy/resource constraints, and consent independent of proximity. Preserve the selected Direction Preset. Do not pre-write {{user}}’s attraction, sleeping choice, touch, confession, rescue behavior, romance, sex, or future decisions."
 }
