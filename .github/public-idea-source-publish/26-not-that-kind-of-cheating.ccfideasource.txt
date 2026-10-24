@@ -3,6 +3,2623 @@
   "schema_version": 1,
   "id": "bible-i-26-not-that-kind-of-cheating",
   "title": "Not That Kind of Cheating",
+  "description": "Reusable comedy/misunderstanding engine in which someone tells {{user}} that his adult girlfriend {{char}} is 'cheating', but the accusation refers to non-romantic rule-breaking in a game, sport, test, competition, trivia event, ranking system, workplace challenge, or hobby rather than infidelity. Detailed presets vary the activity, actual misconduct, accomplice, misleading witness phrasing, guilt level, motive, concealment, misunderstanding timing, {{char}}’s reaction, accuser identity, stakes, evidence, tone, interpretation rules, strong openings, and outcomes.",
   "source_version": "1.2",
-  "note": "Full expanded content (416 presets) is available on Google Drive Idea Sources folder as 26-not-that-kind-of-cheating.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 26,
+    "category": "Comedy, Secrets & Everyday Twists",
+    "source_date": "2026-09-21"
+  },
+  "summary": "Someone reports that {{char}} is 'cheating,' and the wording strongly suggests romantic infidelity until context reveals a very different kind of cheating. She may have abused a video-game exploit, cheated at cards, broken sports rules, copied on a university test, colluded at trivia, manipulated a ranking, or been falsely accused of a legitimate tactic. The relationship misunderstanding and the actual non-romantic misconduct are separate issues: one can be completely harmless while the other is trivial, ambiguous, serious, or nonexistent.",
+  "core_premise": "The engine is ambiguous language. The word 'cheating' carries a romantic meaning inside a relationship and a rule-breaking meaning inside games, sports, tests, and competitions. The scenario creates tension or comedy by letting those meanings briefly collide. Preserve the non-romantic ground truth and do not secretly turn the premise into a real affair unless explicitly directed elsewhere.",
+  "setup": "Begin with the accusation, suspicious evidence, a secret meeting, a misleading message, a moderation/disciplinary notice, or {{char}}’s own awkward confession. Establish what activity actually matters, what she did or is accused of doing, and enough ambiguous wording for the misunderstanding to be plausible. Do not decide whether {{user}} believes the accusation, becomes upset, finds it funny, or cares about the actual misconduct.",
+  "core_variables": [
+    "What game, sport, test, competition, ranking, workplace challenge, or hobby {{char}} is accused of cheating at.",
+    "What she actually did and whether it violates a clear rule, a gray area, or no rule at all.",
+    "Whether an adult accomplice or co-conspirator is involved.",
+    "How misleadingly a witness describes the situation.",
+    "How guilty {{char}} actually is of the non-romantic misconduct.",
+    "Why she cheated, exploited a loophole, or was accused.",
+    "How much she concealed from organizers, friends, or {{user}}.",
+    "How the romantic misunderstanding begins and how long it lasts.",
+    "How {{char}} reacts when she realizes what {{user}} thought 'cheating' meant.",
+    "Who makes the accusation and whether that person is honest, mistaken, malicious, or joking.",
+    "What practical consequences the real cheating could have.",
+    "What evidence supports or undermines the allegation.",
+    "Whether the story remains pure comedy or gives way to real academic, workplace, sport, or community consequences."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: the accusation of 'cheating' refers to non-romantic rule-breaking rather than a romantic or sexual affair.",
+    "If Video Game Exploit is selected, make the game-system issue materially relevant and avoid silently converting it into hacking instructions.",
+    "If Board / Card Game is selected, preserve social/game rules rather than romantic cheating.",
+    "If Sports is selected, make the disputed sport rule materially relevant.",
+    "If University Test is selected, keep the characters adult and treat academic misconduct as character behavior with possible consequences.",
+    "If Trivia is selected, preserve the quiz/knowledge-competition context.",
+    "If Ranking Manipulation is selected, make standings, votes, ladders, matchmaking, or scores central.",
+    "If She Notices the Misunderstanding Excited {{user}} is selected, preserve {{char}} noticing the mismatch in interpretations without defining why {{user}} reacts that way or what he wants next.",
+    "Do not add a genuine affair merely to make the scenario more dramatic.",
+    "Establish whether the actual activity rule was clear, ambiguous, outdated, badly communicated, or falsely alleged.",
+    "Do not treat accusations as established facts without evidence.",
+    "Do not write {{user}}’s jealousy, relief, humor, excitement, anger, forgiveness, dialogue, or decisions as settled fact.",
+    "If an accomplice exists, their cooperation in a game/test/sport does not imply romantic interest.",
+    "Do not provide step-by-step methods for cheating on exams, bypassing anti-cheat, manipulating rankings, or evading detection.",
+    "Allow innocent, technical, gray-area, minor, serious, and systematic misconduct variants.",
+    "If a selected preset narrows activity, guilt, witness phrasing, evidence, or outcome, preserve it while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic participants are adults.",
+    "Do not normalize or instruct academic cheating, anti-cheat bypass, score tampering, fraud, or evasion methods.",
+    "Keep operational details at scenario level rather than teaching how to perform misconduct.",
+    "Do not force {{user}} to believe the initial accusation or to react with jealousy.",
+    "Do not force {{char}} to be guilty; false accusation and legitimate tactic variants are valid.",
+    "Do not force forgiveness or punishment when actual misconduct is established.",
+    "Do not romanticize malicious false accusations, harassment, doxxing, or retaliation.",
+    "Do not turn a non-romantic accomplice into a sexual rival by default.",
+    "Do not use cosmetic changes of names, games, sports, or venues as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Video game, board/card game, tabletop, chess, sports, running, cycling, trivia, puzzle hunt, university test, certification, workplace competition, fitness challenge, poll, art contest, cosplay contest, photography contest, or hobby tournament",
+    "Legal tactic, false accusation, accidental violation, technicality, gray area, loophole, bug exploit, hidden assistance, unauthorized notes, AI assistance, automation, account sharing, boosting, win trading, collusion, vote stuffing, score tampering, route cutting, or academic copying",
+    "No accomplice, friend, coworker, classmate, teammate, rival, sibling, roommate, online friend, coach, judge, technical friend, whole team, or false accomplice",
+    "Accidental ambiguity, dramatic witness, deliberate joke, malicious phrasing, angry witness, technically true fragments, immediate clarification, or withheld context",
+    "Completely innocent, honest mistake, technical violation, gray area, minor rule-bending, moderate cheating, blatant cheating, systematic cheating, serious academic/workplace violation, or organizer error",
+    "Winning, rivalry, prize, grade, certification, work bonus, helping a friend, peer pressure, curiosity, testing a system, revenge, boredom, optimization, or no motive because innocent",
+    "Open behavior, hidden scheme, secret meetings, alternate account, fake schedule, deleted messages, private bragging, logs, replay evidence, or confession",
+    "Seconds-long misunderstanding, one conversation, long opening scene, suspicious messages, secret meeting, 'partner' language, late-night chat, or {{char}} walking in mid-accusation",
+    "Confusion, laughter, embarrassment, relief, defensiveness, technical explanation, teasing, accidental worsening, confession, apology, or public correction",
+    "Friend, teammate, rival, organizer, lecturer, coach, sibling, roommate, accomplice, anonymous sender, drama queen, prankster, malicious witness, or honest witness",
+    "No stakes, social stakes, local prize, ranking, tournament, ban, grade, certification, workplace bonus, disciplinary process, returned prize, rewritten rule, or community debate",
+    "Screenshots, replay, logs, score sheet, marked cards, notes, device, browser history, shared document, messages, vote logs, footage, witness statement, confession, ambiguous evidence, or exculpatory evidence",
+    "Pure comedy, awkward comedy, competitive comedy, deadpan, mystery, real misconduct/funny reveal, false accusation, gray-area debate, slice of life, academic trouble, workplace trouble, escalating farce, quick reveal, or slow reveal"
+  ],
+  "cross_links": [
+    "Turn You Into a Cuck",
+    "Open Relationship",
+    "Just a Prank!",
+    "Her Hidden Side"
+  ],
+  "tags": [
+    "adult",
+    "comedy",
+    "misunderstanding",
+    "cheating wordplay",
+    "video game",
+    "board game",
+    "sport",
+    "university",
+    "trivia",
+    "ranking manipulation",
+    "competition",
+    "rule breaking",
+    "false accusation",
+    "slice of life"
+  ],
+  "notes": "Expanded from Series Bible I #26. The original seeds—Video Game Exploit, Board / Card Game, Sports, University Test, Trivia, Ranking Manipulation, and She Notices the Misunderstanding Excited {{user}}—are preserved with their original preset IDs. The source explicitly separates the romantic misunderstanding from the actual non-romantic rules issue and supports both genuine misconduct and false accusations.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied Not That Kind of Cheating concepts in which someone tells {{user}} his adult girlfriend {{char}} is 'cheating', but the accusation refers to a non-romantic form of cheating such as a video game exploit, board or card game trick, sport, university test, trivia competition, ranking manipulation, workplace contest, hobby league, or other rules violation. Vary what she actually did, whether an accomplice helped, how misleadingly the witness phrases the accusation, how guilty {{char}} really is of the non-romantic misconduct, whether the rules themselves are clear, and how {{char}} reacts when she realizes {{user}} misunderstood. Do not pre-write {{user}}'s emotional reaction or final judgment."
+    },
+    {
+      "id": "video-game-exploit",
+      "group": "02 Original Bible Seeds",
+      "title": "Video Game Exploit",
+      "direction": "{{char}} is accused of cheating because she uses an exploit, glitch, macro, mod, forbidden tool, or controversial tactic in a video game."
+    },
+    {
+      "id": "board-card-game",
+      "group": "02 Original Bible Seeds",
+      "title": "Board / Card Game",
+      "direction": "The accusation concerns cheating at a board game, card game, tabletop game, or similar social competition."
+    },
+    {
+      "id": "sports",
+      "group": "02 Original Bible Seeds",
+      "title": "Sports",
+      "direction": "{{char}} is accused of breaking or manipulating the rules in an adult recreational or competitive sport."
+    },
+    {
+      "id": "university-test",
+      "group": "02 Original Bible Seeds",
+      "title": "University Test",
+      "direction": "The accusation concerns academic cheating on an adult university, college, certification, or training assessment."
+    },
+    {
+      "id": "trivia",
+      "group": "02 Original Bible Seeds",
+      "title": "Trivia",
+      "direction": "{{char}} is accused of cheating at trivia, pub quiz, quiz league, or another knowledge competition."
+    },
+    {
+      "id": "ranking-manipulation",
+      "group": "02 Original Bible Seeds",
+      "title": "Ranking Manipulation",
+      "direction": "{{char}} manipulates ratings, rankings, votes, matchmaking, ladders, leaderboards, or other competitive standings."
+    },
+    {
+      "id": "she-notices-the-misunderstanding-excited-user",
+      "group": "02 Original Bible Seeds",
+      "title": "She Notices the Misunderstanding Excited {{user}}",
+      "direction": "{{char}} realizes {{user}} interpreted 'cheating' romantically and reacts to the misunderstanding before explaining the much less dramatic truth."
+    },
+    {
+      "id": "g03-online-shooter",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Online Shooter",
+      "direction": "The alleged cheating occurs in an online shooter."
+    },
+    {
+      "id": "g03-fighting-game",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Fighting Game",
+      "direction": "The accusation concerns a fighting game tournament or ranked match."
+    },
+    {
+      "id": "g03-racing-game",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Racing Game",
+      "direction": "The issue is a racing game exploit, shortcut, setup, or leaderboard tactic."
+    },
+    {
+      "id": "g03-strategy-game",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Strategy Game",
+      "direction": "The cheating claim concerns hidden information, save-scumming, map knowledge, or prohibited tools in a strategy game."
+    },
+    {
+      "id": "g03-mmo",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "MMO",
+      "direction": "The issue involves an MMO exploit, automation, economy abuse, or raid rules."
+    },
+    {
+      "id": "g03-speedrunning",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Speedrunning",
+      "direction": "{{char}} is accused of using an invalid route, emulator setting, spliced run, or prohibited category method."
+    },
+    {
+      "id": "g03-mobile-game",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Mobile Game",
+      "direction": "The dispute concerns a mobile game exploit, emulator, automation, or account manipulation."
+    },
+    {
+      "id": "g03-board-game",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Board Game",
+      "direction": "The accusation is about moving pieces, hidden information, illegal trades, or rules-lawyering."
+    },
+    {
+      "id": "g03-card-game",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Card Game",
+      "direction": "The cheating involves marked cards, peeking, deck manipulation, illegal draw behavior, or a false accusation."
+    },
+    {
+      "id": "g03-tabletop-rpg",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Tabletop RPG",
+      "direction": "The dispute concerns dice, character sheets, hidden rolls, metagaming, or rules abuse."
+    },
+    {
+      "id": "g03-chess-strategy-board-game",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Chess / Strategy Board Game",
+      "direction": "The accusation involves outside assistance, engine use, or illegal moves."
+    },
+    {
+      "id": "g03-poker-night",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Poker Night",
+      "direction": "The cheating claim arises during a private adult poker or card night."
+    },
+    {
+      "id": "g03-fantasy-sports",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Fantasy Sports",
+      "direction": "{{char}} is accused of collusion, multi-accounting, insider information, or roster manipulation."
+    },
+    {
+      "id": "g03-pub-trivia",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Pub Trivia",
+      "direction": "The witness means cheating at a pub quiz."
+    },
+    {
+      "id": "g03-quiz-league",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Quiz League",
+      "direction": "The dispute comes from a formal adult quiz competition."
+    },
+    {
+      "id": "g03-karaoke-contest",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Karaoke Contest",
+      "direction": "The accusation involves vote manipulation or unfair judging in a karaoke contest."
+    },
+    {
+      "id": "g03-dance-competition",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Dance Competition",
+      "direction": "{{char}} is accused of rule-bending, scoring manipulation, or prohibited assistance."
+    },
+    {
+      "id": "g03-bowling-league",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Bowling League",
+      "direction": "The dispute is about scoring, handicap manipulation, or equipment rules."
+    },
+    {
+      "id": "g03-golf",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Golf",
+      "direction": "The accusation concerns scorekeeping, ball placement, or rule interpretation."
+    },
+    {
+      "id": "g03-tennis",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Tennis",
+      "direction": "The cheating claim involves line calls, score disputes, or coaching rules."
+    },
+    {
+      "id": "g03-running-event",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Running Event",
+      "direction": "The accusation is about course cutting, bib swapping, or timing manipulation."
+    },
+    {
+      "id": "g03-cycling-event",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Cycling Event",
+      "direction": "The issue concerns drafting, equipment, route cutting, or timing rules."
+    },
+    {
+      "id": "g03-esports-tournament",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Esports Tournament",
+      "direction": "The allegation arises in an organized esports event."
+    },
+    {
+      "id": "g03-university-exam",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "University Exam",
+      "direction": "The accusation concerns an adult university exam."
+    },
+    {
+      "id": "g03-take-home-assessment",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Take-Home Assessment",
+      "direction": "The issue is collaboration, unauthorized AI/tool use, or outside help on an assessment."
+    },
+    {
+      "id": "g03-certification-test",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Certification Test",
+      "direction": "The accusation concerns a professional or technical certification exam."
+    },
+    {
+      "id": "g03-workplace-competition",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Workplace Competition",
+      "direction": "{{char}} is accused of gaming a sales contest, KPI challenge, staff competition, or incentive program."
+    },
+    {
+      "id": "g03-office-step-challenge",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Office Step Challenge",
+      "direction": "The accusation is about falsifying steps, activity, or fitness statistics."
+    },
+    {
+      "id": "g03-weight-loss-fitness-challenge",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Weight-Loss / Fitness Challenge",
+      "direction": "The dispute concerns falsified tracking or hidden rule violations."
+    },
+    {
+      "id": "g03-sales-leaderboard",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Sales Leaderboard",
+      "direction": "{{char}} is accused of manipulating attribution or lead ownership."
+    },
+    {
+      "id": "g03-online-poll",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Online Poll",
+      "direction": "The issue is vote stuffing or coordinated voting."
+    },
+    {
+      "id": "g03-community-ranking",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Community Ranking",
+      "direction": "The accusation concerns ratings or leaderboard manipulation in a hobby community."
+    },
+    {
+      "id": "g03-fan-contest",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Fan Contest",
+      "direction": "The allegation involves coordinated votes, duplicate accounts, or rules loopholes."
+    },
+    {
+      "id": "g03-fantasy-contest",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Fantasy Contest",
+      "direction": "The issue is a non-gambling fantasy competition or prediction league."
+    },
+    {
+      "id": "g03-escape-room-competition",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Escape Room Competition",
+      "direction": "{{char}} allegedly used prior knowledge or leaked answers."
+    },
+    {
+      "id": "g03-puzzle-hunt",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Puzzle Hunt",
+      "direction": "The accusation concerns outside help, answer sharing, or pre-solved clues."
+    },
+    {
+      "id": "g03-cooking-competition",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Cooking Competition",
+      "direction": "The issue is hidden assistance, prohibited ingredients, or scoring manipulation."
+    },
+    {
+      "id": "g03-amateur-art-contest",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Amateur Art Contest",
+      "direction": "{{char}} is accused of vote manipulation, tracing, AI/tool rule violations, or undeclared assistance."
+    },
+    {
+      "id": "g03-cosplay-contest",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Cosplay Contest",
+      "direction": "The dispute concerns craftsmanship rules, commissioned work, or judging influence."
+    },
+    {
+      "id": "g03-photography-contest",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Photography Contest",
+      "direction": "The allegation concerns editing rules, metadata, authorship, or AI assistance."
+    },
+    {
+      "id": "g03-hobby-tournament",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Hobby Tournament",
+      "direction": "Use a small local hobby competition where the stakes are socially serious but not romantic."
+    },
+    {
+      "id": "g04-harmless-exploit-everyone-uses",
+      "group": "04 What She Actually Did",
+      "title": "Harmless Exploit Everyone Uses",
+      "direction": "{{char}} uses a loophole or exploit that is technically questionable but common and tolerated."
+    },
+    {
+      "id": "g04-known-bug-abuse",
+      "group": "04 What She Actually Did",
+      "title": "Known Bug Abuse",
+      "direction": "She knowingly exploits a bug that organizers explicitly forbid."
+    },
+    {
+      "id": "g04-accidental-exploit",
+      "group": "04 What She Actually Did",
+      "title": "Accidental Exploit",
+      "direction": "{{char}} discovers after the fact that her tactic relied on unintended behavior."
+    },
+    {
+      "id": "g04-rules-loophole",
+      "group": "04 What She Actually Did",
+      "title": "Rules Loophole",
+      "direction": "She follows the literal rules while violating their apparent spirit."
+    },
+    {
+      "id": "g04-rules-lawyering",
+      "group": "04 What She Actually Did",
+      "title": "Rules-Lawyering",
+      "direction": "{{char}} aggressively interprets ambiguous rules in her own favor."
+    },
+    {
+      "id": "g04-hidden-assistance",
+      "group": "04 What She Actually Did",
+      "title": "Hidden Assistance",
+      "direction": "Someone secretly helps {{char}} during a competition."
+    },
+    {
+      "id": "g04-unauthorized-notes",
+      "group": "04 What She Actually Did",
+      "title": "Unauthorized Notes",
+      "direction": "She uses notes or reference material where rules prohibit it."
+    },
+    {
+      "id": "g04-outside-search",
+      "group": "04 What She Actually Did",
+      "title": "Outside Search",
+      "direction": "{{char}} looks up answers or information during a closed-resource challenge."
+    },
+    {
+      "id": "g04-ai-assistance",
+      "group": "04 What She Actually Did",
+      "title": "AI Assistance",
+      "direction": "She uses AI or automated assistance where the specific event or assessment rules forbid it."
+    },
+    {
+      "id": "g04-macro-automation",
+      "group": "04 What She Actually Did",
+      "title": "Macro / Automation",
+      "direction": "She uses a macro, script, automation tool, or controller feature outside the allowed rules."
+    },
+    {
+      "id": "g04-modded-client",
+      "group": "04 What She Actually Did",
+      "title": "Modded Client",
+      "direction": "The accusation concerns a modified game client or plugin."
+    },
+    {
+      "id": "g04-save-editing",
+      "group": "04 What She Actually Did",
+      "title": "Save Editing",
+      "direction": "{{char}} manipulates save data or local state."
+    },
+    {
+      "id": "g04-account-sharing",
+      "group": "04 What She Actually Did",
+      "title": "Account Sharing",
+      "direction": "Another person plays, submits, or competes using her account."
+    },
+    {
+      "id": "g04-smurfing",
+      "group": "04 What She Actually Did",
+      "title": "Smurfing",
+      "direction": "She uses an alternate low-ranked account to gain an advantage."
+    },
+    {
+      "id": "g04-boosting",
+      "group": "04 What She Actually Did",
+      "title": "Boosting",
+      "direction": "Someone stronger helps inflate her rank."
+    },
+    {
+      "id": "g04-win-trading",
+      "group": "04 What She Actually Did",
+      "title": "Win Trading",
+      "direction": "{{char}} coordinates outcomes with another competitor."
+    },
+    {
+      "id": "g04-collusion",
+      "group": "04 What She Actually Did",
+      "title": "Collusion",
+      "direction": "She and an accomplice cooperate secretly against the intended competitive structure."
+    },
+    {
+      "id": "g04-vote-stuffing",
+      "group": "04 What She Actually Did",
+      "title": "Vote Stuffing",
+      "direction": "{{char}} uses repeated or coordinated votes beyond event rules."
+    },
+    {
+      "id": "g04-multiple-accounts",
+      "group": "04 What She Actually Did",
+      "title": "Multiple Accounts",
+      "direction": "She creates or controls extra accounts to influence results."
+    },
+    {
+      "id": "g04-fake-entries",
+      "group": "04 What She Actually Did",
+      "title": "Fake Entries",
+      "direction": "{{char}} submits fabricated or duplicate entries."
+    },
+    {
+      "id": "g04-score-tampering",
+      "group": "04 What She Actually Did",
+      "title": "Score Tampering",
+      "direction": "She directly alters recorded scores or statistics."
+    },
+    {
+      "id": "g04-time-manipulation",
+      "group": "04 What She Actually Did",
+      "title": "Time Manipulation",
+      "direction": "She manipulates timestamps, timers, or submission windows."
+    },
+    {
+      "id": "g04-route-cutting",
+      "group": "04 What She Actually Did",
+      "title": "Route Cutting",
+      "direction": "{{char}} takes an unauthorized shortcut in a physical or virtual event."
+    },
+    {
+      "id": "g04-equipment-violation",
+      "group": "04 What She Actually Did",
+      "title": "Equipment Violation",
+      "direction": "She knowingly uses prohibited equipment or settings."
+    },
+    {
+      "id": "g04-unintentional-equipment-violation",
+      "group": "04 What She Actually Did",
+      "title": "Unintentional Equipment Violation",
+      "direction": "Her equipment breaks a rule she did not realize existed."
+    },
+    {
+      "id": "g04-marked-cards-pieces",
+      "group": "04 What She Actually Did",
+      "title": "Marked Cards / Pieces",
+      "direction": "The accusation concerns deliberately identifiable cards or pieces."
+    },
+    {
+      "id": "g04-peeking",
+      "group": "04 What She Actually Did",
+      "title": "Peeking",
+      "direction": "{{char}} looks at hidden information she is not supposed to see."
+    },
+    {
+      "id": "g04-illegal-draw-move",
+      "group": "04 What She Actually Did",
+      "title": "Illegal Draw / Move",
+      "direction": "She knowingly performs an illegal game action."
+    },
+    {
+      "id": "g04-misreported-score",
+      "group": "04 What She Actually Did",
+      "title": "Misreported Score",
+      "direction": "{{char}} reports a favorable score that she knows is wrong."
+    },
+    {
+      "id": "g04-clerical-mistake",
+      "group": "04 What She Actually Did",
+      "title": "Clerical Mistake",
+      "direction": "The suspicious score comes from an innocent recording error."
+    },
+    {
+      "id": "g04-copying-answers",
+      "group": "04 What She Actually Did",
+      "title": "Copying Answers",
+      "direction": "She copies from another adult participant."
+    },
+    {
+      "id": "g04-answer-sharing",
+      "group": "04 What She Actually Did",
+      "title": "Answer Sharing",
+      "direction": "She gives or receives answers during an assessment or quiz."
+    },
+    {
+      "id": "g04-pre-knowledge",
+      "group": "04 What She Actually Did",
+      "title": "Pre-Knowledge",
+      "direction": "{{char}} gains access to questions or material before the competition."
+    },
+    {
+      "id": "g04-insider-information",
+      "group": "04 What She Actually Did",
+      "title": "Insider Information",
+      "direction": "She uses nonpublic information that gives an unfair advantage."
+    },
+    {
+      "id": "g04-friend-on-the-inside",
+      "group": "04 What She Actually Did",
+      "title": "Friend on the Inside",
+      "direction": "An organizer, judge, coworker, or friend secretly helps her."
+    },
+    {
+      "id": "g04-bribed-judge-as-joke-rumor",
+      "group": "04 What She Actually Did",
+      "title": "Bribed Judge as Joke Rumor",
+      "direction": "People jokingly claim a judge was bribed, while the actual result may be legitimate."
+    },
+    {
+      "id": "g04-bias-exploitation",
+      "group": "04 What She Actually Did",
+      "title": "Bias Exploitation",
+      "direction": "{{char}} knows how a judge scores and tailors entries strategically without actually breaking rules."
+    },
+    {
+      "id": "g04-strategic-tanking",
+      "group": "04 What She Actually Did",
+      "title": "Strategic Tanking",
+      "direction": "She intentionally loses or underperforms to affect later seeding or matchmaking."
+    },
+    {
+      "id": "g04-handicap-manipulation",
+      "group": "04 What She Actually Did",
+      "title": "Handicap Manipulation",
+      "direction": "{{char}} manipulates prior performance to gain a favorable handicap."
+    },
+    {
+      "id": "g04-ranking-dodging",
+      "group": "04 What She Actually Did",
+      "title": "Ranking Dodging",
+      "direction": "She avoids strong opponents or timing windows to protect rank."
+    },
+    {
+      "id": "g04-matchmaking-manipulation",
+      "group": "04 What She Actually Did",
+      "title": "Matchmaking Manipulation",
+      "direction": "She exploits queue timing or coordinated entries."
+    },
+    {
+      "id": "g04-no-cheating-at-all",
+      "group": "04 What She Actually Did",
+      "title": "No Cheating at All",
+      "direction": "The accusation is false; {{char}} used a legitimate tactic that someone dislikes."
+    },
+    {
+      "id": "g04-misunderstood-rule",
+      "group": "04 What She Actually Did",
+      "title": "Misunderstood Rule",
+      "direction": "A witness thinks something is illegal when it is explicitly permitted."
+    },
+    {
+      "id": "g04-old-rulebook",
+      "group": "04 What She Actually Did",
+      "title": "Old Rulebook",
+      "direction": "The accuser is relying on an outdated version of the rules."
+    },
+    {
+      "id": "g04-organizer-error",
+      "group": "04 What She Actually Did",
+      "title": "Organizer Error",
+      "direction": "The event itself applied rules incorrectly."
+    },
+    {
+      "id": "g04-ambiguous-rule",
+      "group": "04 What She Actually Did",
+      "title": "Ambiguous Rule",
+      "direction": "The conduct falls into a genuine gray area with no clear ruling."
+    },
+    {
+      "id": "g05-no-accomplice",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "No Accomplice",
+      "direction": "{{char}} acted alone."
+    },
+    {
+      "id": "g05-best-friend",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Best Friend",
+      "direction": "An adult best friend helped with the non-romantic cheating."
+    },
+    {
+      "id": "g05-coworker",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Coworker",
+      "direction": "An adult coworker participates."
+    },
+    {
+      "id": "g05-classmate",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Classmate",
+      "direction": "An adult classmate helps with an assessment or competition."
+    },
+    {
+      "id": "g05-teammate",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Teammate",
+      "direction": "A teammate cooperates with the rule-breaking."
+    },
+    {
+      "id": "g05-rival",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Rival",
+      "direction": "A supposed rival secretly colludes with {{char}}."
+    },
+    {
+      "id": "g05-sibling",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Sibling",
+      "direction": "An adult sibling helps."
+    },
+    {
+      "id": "g05-roommate",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Roommate",
+      "direction": "An adult roommate assists."
+    },
+    {
+      "id": "g05-online-friend",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Online Friend",
+      "direction": "An online friend provides help, tools, or answers."
+    },
+    {
+      "id": "g05-coach",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Coach",
+      "direction": "A coach or trainer gives prohibited assistance."
+    },
+    {
+      "id": "g05-judge-organizer",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Judge / Organizer",
+      "direction": "An event insider improperly helps {{char}}."
+    },
+    {
+      "id": "g05-it-savvy-friend",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "IT-Savvy Friend",
+      "direction": "A technical friend creates a script, macro, exploit, or workaround."
+    },
+    {
+      "id": "g05-whole-team-knows",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Whole Team Knows",
+      "direction": "Several adults are involved in the scheme."
+    },
+    {
+      "id": "g05-everyone-does-it",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Everyone Does It",
+      "direction": "The entire competitive group informally ignores the same rule."
+    },
+    {
+      "id": "g05-accomplice-thinks-it-is-harmless",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Accomplice Thinks It Is Harmless",
+      "direction": "The helper believes the rule violation is trivial."
+    },
+    {
+      "id": "g05-accomplice-wants-to-win",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Accomplice Wants to Win",
+      "direction": "The helper is more competitive than {{char}}."
+    },
+    {
+      "id": "g05-accomplice-pressured-char",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Accomplice Pressured {{char}}",
+      "direction": "Someone encouraged her to participate, but preserve {{char}}’s own adult agency."
+    },
+    {
+      "id": "g05-accomplice-confesses",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Accomplice Confesses",
+      "direction": "The helper is the one who tells {{user}} or another person."
+    },
+    {
+      "id": "g05-accomplice-blames-char",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Accomplice Blames {{char}}",
+      "direction": "The helper tries to shift all responsibility onto her."
+    },
+    {
+      "id": "g05-false-accomplice",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "False Accomplice",
+      "direction": "A second person is suspected but actually had no involvement."
+    },
+    {
+      "id": "g06-your-girlfriend-is-cheating",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘Your Girlfriend Is Cheating’",
+      "direction": "The witness uses the most misleading possible wording with no immediate context."
+    },
+    {
+      "id": "g06-i-caught-her-cheating",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘I Caught Her Cheating’",
+      "direction": "The accuser sounds personally certain and dramatic."
+    },
+    {
+      "id": "g06-shes-been-cheating-for-weeks",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘She’s Been Cheating for Weeks’",
+      "direction": "The phrase refers to repeated non-romantic rule-breaking."
+    },
+    {
+      "id": "g06-she-did-it-with-him",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘She Did It With Him’",
+      "direction": "The witness describes the accomplice in wording that sounds romantic."
+    },
+    {
+      "id": "g06-theyve-been-doing-it-behind-your-back",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘They’ve Been Doing It Behind Your Back’",
+      "direction": "The phrase accurately describes secrecy but misleadingly implies an affair."
+    },
+    {
+      "id": "g06-she-has-another-partner",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘She Has Another Partner’",
+      "direction": "The witness means a game partner, quiz partner, doubles partner, or teammate."
+    },
+    {
+      "id": "g06-shes-seeing-someone-else",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘She’s Seeing Someone Else’",
+      "direction": "The witness means meeting an accomplice or competitor for the cheating scheme."
+    },
+    {
+      "id": "g06-shes-been-sneaking-around-with-him",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘She’s Been Sneaking Around With Him’",
+      "direction": "The secret meetings concern practice, strategy, answers, or competition."
+    },
+    {
+      "id": "g06-she-lied-about-where-she-was",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘She Lied About Where She Was’",
+      "direction": "The lie was to hide the non-romantic cheating activity."
+    },
+    {
+      "id": "g06-shes-been-using-him",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘She’s Been Using Him’",
+      "direction": "The witness means using someone for answers, technical help, or competitive assistance."
+    },
+    {
+      "id": "g06-theres-proof",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘There’s Proof’",
+      "direction": "The witness has screenshots, score logs, test answers, game replays, or other non-romantic evidence."
+    },
+    {
+      "id": "g06-everyone-knows",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘Everyone Knows’",
+      "direction": "The cheating is common gossip within the competition or hobby group."
+    },
+    {
+      "id": "g06-shes-not-even-hiding-it-anymore",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘She’s Not Even Hiding It Anymore’",
+      "direction": "{{char}} is openly breaking or exploiting a non-romantic rule."
+    },
+    {
+      "id": "g06-ask-her-what-she-did-last-night",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘Ask Her What She Did Last Night’",
+      "direction": "The mysterious event was gaming, studying, competing, or manipulating rankings."
+    },
+    {
+      "id": "g06-i-saw-her-with-another-guy",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘I Saw Her With Another Guy’",
+      "direction": "The man is a teammate, tutor, accomplice, judge, or competitor."
+    },
+    {
+      "id": "g06-she-and-that-guy-have-a-system",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "‘She and That Guy Have a System’",
+      "direction": "The 'system' is a non-romantic collusion or optimization scheme."
+    },
+    {
+      "id": "g06-witness-is-accidentally-misleading",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "Witness Is Accidentally Misleading",
+      "direction": "The speaker does not realize how the words sound."
+    },
+    {
+      "id": "g06-witness-knows-exactly-how-it-sounds",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "Witness Knows Exactly How It Sounds",
+      "direction": "The speaker deliberately phrases the truth for maximum dramatic misunderstanding."
+    },
+    {
+      "id": "g06-witness-is-trying-to-be-funny",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "Witness Is Trying to Be Funny",
+      "direction": "A friend intentionally sets up the misunderstanding as a joke."
+    },
+    {
+      "id": "g06-witness-is-furious-about-the-actual-cheating",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "Witness Is Furious About the Actual Cheating",
+      "direction": "The speaker is too focused on the competition to realize the romantic implication."
+    },
+    {
+      "id": "g06-witness-gives-full-context-immediately",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "Witness Gives Full Context Immediately",
+      "direction": "The phrase 'cheating' is used, but the actual activity is clarified almost at once."
+    },
+    {
+      "id": "g06-witness-keeps-withholding-context",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "Witness Keeps Withholding Context",
+      "direction": "The accuser repeatedly answers in technically true but misleading fragments."
+    },
+    {
+      "id": "g07-completely-innocent",
+      "group": "07 How Guilty She Really Is",
+      "title": "Completely Innocent",
+      "direction": "{{char}} did nothing against the actual rules."
+    },
+    {
+      "id": "g07-false-accusation",
+      "group": "07 How Guilty She Really Is",
+      "title": "False Accusation",
+      "direction": "The witness is simply wrong."
+    },
+    {
+      "id": "g07-honest-mistake",
+      "group": "07 How Guilty She Really Is",
+      "title": "Honest Mistake",
+      "direction": "{{char}} broke a rule unintentionally."
+    },
+    {
+      "id": "g07-technical-violation-only",
+      "group": "07 How Guilty She Really Is",
+      "title": "Technical Violation Only",
+      "direction": "She violated a minor technicality with little competitive effect."
+    },
+    {
+      "id": "g07-gray-area-tactic",
+      "group": "07 How Guilty She Really Is",
+      "title": "Gray-Area Tactic",
+      "direction": "Reasonable people could disagree whether the tactic counts as cheating."
+    },
+    {
+      "id": "g07-loophole-abuse",
+      "group": "07 How Guilty She Really Is",
+      "title": "Loophole Abuse",
+      "direction": "She knowingly exploits a rules gap."
+    },
+    {
+      "id": "g07-minor-rule-bending",
+      "group": "07 How Guilty She Really Is",
+      "title": "Minor Rule-Bending",
+      "direction": "The misconduct is real but limited."
+    },
+    {
+      "id": "g07-moderate-cheating",
+      "group": "07 How Guilty She Really Is",
+      "title": "Moderate Cheating",
+      "direction": "{{char}} knowingly gains a meaningful unfair advantage."
+    },
+    {
+      "id": "g07-blatant-cheating",
+      "group": "07 How Guilty She Really Is",
+      "title": "Blatant Cheating",
+      "direction": "She deliberately and clearly violates important rules."
+    },
+    {
+      "id": "g07-systematic-cheating",
+      "group": "07 How Guilty She Really Is",
+      "title": "Systematic Cheating",
+      "direction": "The non-romantic cheating is repeated and planned."
+    },
+    {
+      "id": "g07-organizer-level-serious",
+      "group": "07 How Guilty She Really Is",
+      "title": "Organizer-Level Serious",
+      "direction": "The misconduct threatens tournament, academic, or workplace integrity."
+    },
+    {
+      "id": "g07-mostly-accomplices-idea",
+      "group": "07 How Guilty She Really Is",
+      "title": "Mostly Accomplice’s Idea",
+      "direction": "{{char}} knowingly participates but was not the mastermind."
+    },
+    {
+      "id": "g07-char-is-the-mastermind",
+      "group": "07 How Guilty She Really Is",
+      "title": "{{char}} Is the Mastermind",
+      "direction": "She designed the scheme."
+    },
+    {
+      "id": "g07-one-time-impulse",
+      "group": "07 How Guilty She Really Is",
+      "title": "One-Time Impulse",
+      "direction": "The cheating happens once without prior planning."
+    },
+    {
+      "id": "g07-escalated-over-time",
+      "group": "07 How Guilty She Really Is",
+      "title": "Escalated Over Time",
+      "direction": "A small shortcut grows into a larger scheme."
+    },
+    {
+      "id": "g07-only-against-friends",
+      "group": "07 How Guilty She Really Is",
+      "title": "Only Against Friends",
+      "direction": "The wrongdoing occurs in a low-stakes social game."
+    },
+    {
+      "id": "g07-formal-competition",
+      "group": "07 How Guilty She Really Is",
+      "title": "Formal Competition",
+      "direction": "The cheating affects a real organized event."
+    },
+    {
+      "id": "g07-academic-integrity-violation",
+      "group": "07 How Guilty She Really Is",
+      "title": "Academic Integrity Violation",
+      "direction": "The conduct genuinely violates university or certification rules."
+    },
+    {
+      "id": "g07-workplace-misconduct",
+      "group": "07 How Guilty She Really Is",
+      "title": "Workplace Misconduct",
+      "direction": "The cheating affects workplace results or incentives."
+    },
+    {
+      "id": "g07-no-victim-no-stakes",
+      "group": "07 How Guilty She Really Is",
+      "title": "No Victim / No Stakes",
+      "direction": "The 'cheating' is in a trivial private setting where nobody meaningfully loses anything."
+    },
+    {
+      "id": "g07-real-consequences",
+      "group": "07 How Guilty She Really Is",
+      "title": "Real Consequences",
+      "direction": "Other participants lose prizes, rankings, opportunities, or grades because of the cheating."
+    },
+    {
+      "id": "g07-rule-itself-is-silly",
+      "group": "07 How Guilty She Really Is",
+      "title": "Rule Itself Is Silly",
+      "direction": "{{char}} knowingly breaks a rule widely regarded as pointless, but it is still an explicit rule."
+    },
+    {
+      "id": "g07-rule-was-never-communicated",
+      "group": "07 How Guilty She Really Is",
+      "title": "Rule Was Never Communicated",
+      "direction": "Organizers blame {{char}} for a restriction participants were not told about."
+    },
+    {
+      "id": "g07-rule-changed-mid-event",
+      "group": "07 How Guilty She Really Is",
+      "title": "Rule Changed Mid-Event",
+      "direction": "The accusation arises from inconsistent enforcement."
+    },
+    {
+      "id": "g08-wanted-to-win",
+      "group": "08 Why She Did It",
+      "title": "Wanted to Win",
+      "direction": "Simple competitiveness motivates the cheating."
+    },
+    {
+      "id": "g08-couldnt-stand-losing",
+      "group": "08 Why She Did It",
+      "title": "Couldn’t Stand Losing",
+      "direction": "{{char}} takes losses too personally."
+    },
+    {
+      "id": "g08-wanted-to-beat-one-rival",
+      "group": "08 Why She Did It",
+      "title": "Wanted to Beat One Rival",
+      "direction": "A specific rival motivates rule-bending."
+    },
+    {
+      "id": "g08-wanted-a-prize",
+      "group": "08 Why She Did It",
+      "title": "Wanted a Prize",
+      "direction": "The reward matters enough to tempt her."
+    },
+    {
+      "id": "g08-wanted-bragging-rights",
+      "group": "08 Why She Did It",
+      "title": "Wanted Bragging Rights",
+      "direction": "Prestige within friends or a hobby community drives her."
+    },
+    {
+      "id": "g08-needed-the-grade",
+      "group": "08 Why She Did It",
+      "title": "Needed the Grade",
+      "direction": "Academic pressure motivates misconduct."
+    },
+    {
+      "id": "g08-needed-certification",
+      "group": "08 Why She Did It",
+      "title": "Needed Certification",
+      "direction": "Career pressure motivates an assessment violation."
+    },
+    {
+      "id": "g08-wanted-work-bonus",
+      "group": "08 Why She Did It",
+      "title": "Wanted Work Bonus",
+      "direction": "A workplace incentive encourages manipulation."
+    },
+    {
+      "id": "g08-helping-a-friend",
+      "group": "08 Why She Did It",
+      "title": "Helping a Friend",
+      "direction": "{{char}} cheats partly to help another adult."
+    },
+    {
+      "id": "g08-protecting-team-rank",
+      "group": "08 Why She Did It",
+      "title": "Protecting Team Rank",
+      "direction": "She breaks rules to preserve a team’s standing."
+    },
+    {
+      "id": "g08-everyone-else-was-doing-it",
+      "group": "08 Why She Did It",
+      "title": "Everyone Else Was Doing It",
+      "direction": "Normalization reduces her sense that the behavior is serious."
+    },
+    {
+      "id": "g08-thought-it-was-allowed",
+      "group": "08 Why She Did It",
+      "title": "Thought It Was Allowed",
+      "direction": "She genuinely misunderstood the rules."
+    },
+    {
+      "id": "g08-found-the-exploit-by-accident",
+      "group": "08 Why She Did It",
+      "title": "Found the Exploit by Accident",
+      "direction": "{{char}} discovers a loophole and becomes curious."
+    },
+    {
+      "id": "g08-wanted-to-test-the-system",
+      "group": "08 Why She Did It",
+      "title": "Wanted to Test the System",
+      "direction": "She deliberately probes whether organizers can detect the exploit."
+    },
+    {
+      "id": "g08-for-the-joke",
+      "group": "08 Why She Did It",
+      "title": "For the Joke",
+      "direction": "The rule-breaking starts as a prank or absurd challenge."
+    },
+    {
+      "id": "g08-to-prove-the-rules-are-broken",
+      "group": "08 Why She Did It",
+      "title": "To Prove the Rules Are Broken",
+      "direction": "{{char}} cheats openly to demonstrate a flaw."
+    },
+    {
+      "id": "g08-revenge-against-a-cheater",
+      "group": "08 Why She Did It",
+      "title": "Revenge Against a Cheater",
+      "direction": "She retaliates against someone she believes cheated first."
+    },
+    {
+      "id": "g08-peer-pressure",
+      "group": "08 Why She Did It",
+      "title": "Peer Pressure",
+      "direction": "Friends encourage her to join in."
+    },
+    {
+      "id": "g08-got-carried-away",
+      "group": "08 Why She Did It",
+      "title": "Got Carried Away",
+      "direction": "Competitive excitement overtakes judgment."
+    },
+    {
+      "id": "g08-habit-from-casual-play",
+      "group": "08 Why She Did It",
+      "title": "Habit From Casual Play",
+      "direction": "A tactic normal in casual games turns out to be illegal in formal competition."
+    },
+    {
+      "id": "g08-didnt-realize-stakes-were-serious",
+      "group": "08 Why She Did It",
+      "title": "Didn’t Realize Stakes Were Serious",
+      "direction": "{{char}} thought the event was casual."
+    },
+    {
+      "id": "g08-boredom",
+      "group": "08 Why She Did It",
+      "title": "Boredom",
+      "direction": "She cheats simply because manipulating the system seems fun."
+    },
+    {
+      "id": "g08-optimization-obsession",
+      "group": "08 Why She Did It",
+      "title": "Optimization Obsession",
+      "direction": "{{char}} enjoys finding edge cases more than winning itself."
+    },
+    {
+      "id": "g08-no-motive-because-she-didnt-cheat",
+      "group": "08 Why She Did It",
+      "title": "No Motive Because She Didn’t Cheat",
+      "direction": "The accusation is mistaken or malicious."
+    },
+    {
+      "id": "g09-doesnt-hide-it",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Doesn’t Hide It",
+      "direction": "{{char}} openly uses the disputed tactic."
+    },
+    {
+      "id": "g09-hides-from-organizers",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Hides From Organizers",
+      "direction": "She conceals the method from judges or moderators."
+    },
+    {
+      "id": "g09-hides-from-teammates",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Hides From Teammates",
+      "direction": "Only the accomplice knows."
+    },
+    {
+      "id": "g09-hides-from-friends",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Hides From Friends",
+      "direction": "{{char}} is embarrassed about how seriously she takes the competition."
+    },
+    {
+      "id": "g09-hides-from-user-because-it-is-nerdy",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Hides From {{user}} Because It Is Nerdy",
+      "direction": "She conceals the hobby or competition itself, not romance."
+    },
+    {
+      "id": "g09-hides-from-user-because-she-knows-hed-disapprove",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Hides From {{user}} Because She Knows He’d Disapprove",
+      "direction": "The secrecy is about misconduct."
+    },
+    {
+      "id": "g09-uses-code-words",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Uses Code Words",
+      "direction": "{{char}} and an accomplice use suspicious-sounding shorthand."
+    },
+    {
+      "id": "g09-deletes-game-quiz-messages",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Deletes Game / Quiz Messages",
+      "direction": "She removes evidence of the scheme."
+    },
+    {
+      "id": "g09-secret-practice-sessions",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Secret Practice Sessions",
+      "direction": "Meetings with an accomplice sound romantically suspicious but concern competition."
+    },
+    {
+      "id": "g09-alternate-account",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Alternate Account",
+      "direction": "She uses a second account to conceal the tactic."
+    },
+    {
+      "id": "g09-fake-schedule-excuse",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Fake Schedule Excuse",
+      "direction": "{{char}} lies about where she is while participating."
+    },
+    {
+      "id": "g09-fake-innocence",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Fake Innocence",
+      "direction": "She acts confused when organizers question her."
+    },
+    {
+      "id": "g09-keeps-trophy-reward-quiet",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Keeps Trophy / Reward Quiet",
+      "direction": "She avoids explaining how she won."
+    },
+    {
+      "id": "g09-brags-privately",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Brags Privately",
+      "direction": "{{char}} is proud of beating the system among trusted friends."
+    },
+    {
+      "id": "g09-no-concealment-needed",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "No Concealment Needed",
+      "direction": "The tactic is legal and only looks suspicious to the witness."
+    },
+    {
+      "id": "g09-witness-discovers-by-accident",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Witness Discovers by Accident",
+      "direction": "The accusation begins from an unrelated observation."
+    },
+    {
+      "id": "g09-logs-expose-it",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Logs Expose It",
+      "direction": "System records reveal what happened."
+    },
+    {
+      "id": "g09-replay-recording-exposes-it",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Replay / Recording Exposes It",
+      "direction": "Gameplay or competition footage makes the disputed behavior visible."
+    },
+    {
+      "id": "g09-accomplice-leaves-evidence",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "Accomplice Leaves Evidence",
+      "direction": "The helper is careless."
+    },
+    {
+      "id": "g09-char-confesses-herself",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "{{char}} Confesses Herself",
+      "direction": "She admits the non-romantic cheating before anyone exposes it."
+    },
+    {
+      "id": "g10-user-hears-only-the-word-cheating",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "{{user}} Hears Only the Word ‘Cheating’",
+      "direction": "The misunderstanding begins from one isolated word."
+    },
+    {
+      "id": "g10-witness-opens-with-accusation",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Witness Opens With Accusation",
+      "direction": "The accusation arrives before context."
+    },
+    {
+      "id": "g10-user-sees-suspicious-messages-first",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "{{user}} Sees Suspicious Messages First",
+      "direction": "Messages with an accomplice sound romantic out of context."
+    },
+    {
+      "id": "g10-user-sees-secret-meeting",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "{{user}} Sees Secret Meeting",
+      "direction": "He notices {{char}} meeting another adult for competition-related reasons."
+    },
+    {
+      "id": "g10-user-sees-partner-reference",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "{{user}} Sees ‘Partner’ Reference",
+      "direction": "A teammate or game partner is mistaken for a romantic partner."
+    },
+    {
+      "id": "g10-user-sees-we-did-it-message",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "{{user}} Sees ‘We Did It’ Message",
+      "direction": "A celebratory message sounds intimate."
+    },
+    {
+      "id": "g10-user-sees-late-night-chat",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "{{user}} Sees Late-Night Chat",
+      "direction": "The chat is actually strategy or study collaboration."
+    },
+    {
+      "id": "g10-friend-calls-to-warn-him",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Friend Calls to Warn Him",
+      "direction": "A witness urgently reports the 'cheating'."
+    },
+    {
+      "id": "g10-group-chat-explodes",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Group Chat Explodes",
+      "direction": "Friends discuss the cheating without explaining the activity."
+    },
+    {
+      "id": "g10-char-walks-in-mid-accusation",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "{{char}} Walks In Mid-Accusation",
+      "direction": "She immediately realizes what misunderstanding is forming."
+    },
+    {
+      "id": "g10-char-arrives-after-several-minutes",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "{{char}} Arrives After Several Minutes",
+      "direction": "The misunderstanding has time to become more elaborate."
+    },
+    {
+      "id": "g10-char-notices-users-expression",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "{{char}} Notices {{user}}’s Expression",
+      "direction": "She infers he interpreted the accusation romantically."
+    },
+    {
+      "id": "g10-char-hears-who-is-he",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "{{char}} Hears ‘Who Is He?’",
+      "direction": "A question reveals the misunderstanding."
+    },
+    {
+      "id": "g10-witness-finally-mentions-the-game-test",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Witness Finally Mentions the Game/Test",
+      "direction": "Context collapses the romantic interpretation."
+    },
+    {
+      "id": "g10-accomplice-appears",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Accomplice Appears",
+      "direction": "The supposedly romantic third party turns up with game gear, notes, or competition evidence."
+    },
+    {
+      "id": "g10-trophy-scoreboard-reveals-context",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Trophy / Scoreboard Reveals Context",
+      "direction": "A non-romantic object gives away the truth."
+    },
+    {
+      "id": "g10-misunderstanding-lasts-seconds",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Misunderstanding Lasts Seconds",
+      "direction": "The joke resolves almost immediately."
+    },
+    {
+      "id": "g10-misunderstanding-lasts-one-conversation",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Misunderstanding Lasts One Conversation",
+      "direction": "Context emerges after a short exchange."
+    },
+    {
+      "id": "g10-misunderstanding-lasts-most-of-the-opening-scene",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Misunderstanding Lasts Most of the Opening Scene",
+      "direction": "The roleplay begins before clarification."
+    },
+    {
+      "id": "g10-user-realizes-before-char-explains",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "User Realizes Before {{char}} Explains",
+      "direction": "Contextual clues let {{user}} infer the non-romantic meaning first."
+    },
+    {
+      "id": "g11-immediate-confusion",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Immediate Confusion",
+      "direction": "{{char}} initially has no idea why {{user}} looks alarmed."
+    },
+    {
+      "id": "g11-instant-realisation",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Instant Realisation",
+      "direction": "She understands the misunderstanding at once."
+    },
+    {
+      "id": "g11-laughs-immediately",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Laughs Immediately",
+      "direction": "{{char}} finds the romantic interpretation genuinely funny."
+    },
+    {
+      "id": "g11-mortified",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Mortified",
+      "direction": "She is embarrassed that the wording sounded like infidelity."
+    },
+    {
+      "id": "g11-relieved",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Relieved",
+      "direction": "{{char}} had feared discovery of the actual cheating, then realizes {{user}} thought something worse."
+    },
+    {
+      "id": "g11-offended-by-romantic-assumption",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Offended by Romantic Assumption",
+      "direction": "She dislikes that {{user}} jumped to infidelity."
+    },
+    {
+      "id": "g11-more-worried-about-game-test-consequences",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "More Worried About Game/Test Consequences",
+      "direction": "{{char}} barely cares about the misunderstanding compared with the real rule violation."
+    },
+    {
+      "id": "g11-proud-of-the-actual-cheat",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Proud of the Actual Cheat",
+      "direction": "She eagerly explains the clever exploit despite knowing it broke rules."
+    },
+    {
+      "id": "g11-defensive",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Defensive",
+      "direction": "{{char}} insists the tactic was not really cheating."
+    },
+    {
+      "id": "g11-technical-explanation-mode",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Technical Explanation Mode",
+      "direction": "She launches into a detailed explanation of why the rule interpretation is complicated."
+    },
+    {
+      "id": "g11-blames-the-witnesss-wording",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Blames the Witness’s Wording",
+      "direction": "{{char}} is annoyed at how dramatically the accusation was phrased."
+    },
+    {
+      "id": "g11-teases-user",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Teases {{user}}",
+      "direction": "After clarification, she lightly jokes about how the accusation sounded."
+    },
+    {
+      "id": "g11-lets-misunderstanding-continue-for-a-few-seconds",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Lets Misunderstanding Continue for a Few Seconds",
+      "direction": "{{char}} knowingly allows a brief comedic pause before clarifying."
+    },
+    {
+      "id": "g11-excited-user-misunderstood",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Excited {{user}} Misunderstood",
+      "direction": "She becomes amused or energized by the dramatic misunderstanding without using it to manipulate him."
+    },
+    {
+      "id": "g11-tries-to-clarify-but-makes-it-sound-worse",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Tries to Clarify but Makes It Sound Worse",
+      "direction": "Every explanation initially produces more suspicious wording."
+    },
+    {
+      "id": "g11-uses-even-more-ambiguous-language",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Uses Even More Ambiguous Language",
+      "direction": "She accidentally says things like 'I only did it with him once' when referring to the non-romantic scheme."
+    },
+    {
+      "id": "g11-apologises-for-actual-misconduct",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Apologises for Actual Misconduct",
+      "direction": "{{char}} separates the romantic misunderstanding from a real apology for cheating at the activity."
+    },
+    {
+      "id": "g11-insists-she-is-innocent-of-both",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Insists She Is Innocent of Both",
+      "direction": "She denies both romantic cheating and the non-romantic allegation."
+    },
+    {
+      "id": "g11-confesses-to-non-romantic-cheating",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Confesses to Non-Romantic Cheating",
+      "direction": "She admits the real rule violation cleanly."
+    },
+    {
+      "id": "g11-wants-user-to-help-her-fix-it",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Wants {{user}} to Help Her Fix It",
+      "direction": "{{char}} asks for advice on correcting scores, apologizing, or facing organizers."
+    },
+    {
+      "id": "g11-wants-to-keep-competing",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Wants to Keep Competing",
+      "direction": "She argues for a penalty rather than quitting."
+    },
+    {
+      "id": "g11-decides-to-come-clean-publicly",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Decides to Come Clean Publicly",
+      "direction": "The misunderstanding prompts her to confess to the competition organizers."
+    },
+    {
+      "id": "g11-still-thinks-the-rule-was-dumb",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "Still Thinks the Rule Was Dumb",
+      "direction": "She can apologize for breaking the rule while maintaining that the rule itself is bad."
+    },
+    {
+      "id": "g12-best-friend-witness",
+      "group": "12 Who Makes the Accusation",
+      "title": "Best Friend Witness",
+      "direction": "{{user}}’s adult best friend delivers the accusation."
+    },
+    {
+      "id": "g12-chars-friend",
+      "group": "12 Who Makes the Accusation",
+      "title": "{{char}}’s Friend",
+      "direction": "One of {{char}}’s adult friends reports it."
+    },
+    {
+      "id": "g12-coworker",
+      "group": "12 Who Makes the Accusation",
+      "title": "Coworker",
+      "direction": "A coworker means workplace or hobby cheating."
+    },
+    {
+      "id": "g12-classmate",
+      "group": "12 Who Makes the Accusation",
+      "title": "Classmate",
+      "direction": "An adult classmate means academic cheating."
+    },
+    {
+      "id": "g12-teammate",
+      "group": "12 Who Makes the Accusation",
+      "title": "Teammate",
+      "direction": "A teammate is furious about competitive rule-breaking."
+    },
+    {
+      "id": "g12-opponent",
+      "group": "12 Who Makes the Accusation",
+      "title": "Opponent",
+      "direction": "A rival competitor accuses {{char}}."
+    },
+    {
+      "id": "g12-organizer",
+      "group": "12 Who Makes the Accusation",
+      "title": "Organizer",
+      "direction": "An adult event organizer uses the word 'cheating'."
+    },
+    {
+      "id": "g12-professor-lecturer",
+      "group": "12 Who Makes the Accusation",
+      "title": "Professor / Lecturer",
+      "direction": "An adult educator reports suspected academic misconduct."
+    },
+    {
+      "id": "g12-coach",
+      "group": "12 Who Makes the Accusation",
+      "title": "Coach",
+      "direction": "A coach describes a sports rules violation."
+    },
+    {
+      "id": "g12-sibling",
+      "group": "12 Who Makes the Accusation",
+      "title": "Sibling",
+      "direction": "An adult sibling tells {{user}}."
+    },
+    {
+      "id": "g12-roommate",
+      "group": "12 Who Makes the Accusation",
+      "title": "Roommate",
+      "direction": "A roommate saw the secret competition activity."
+    },
+    {
+      "id": "g12-accomplice",
+      "group": "12 Who Makes the Accusation",
+      "title": "Accomplice",
+      "direction": "The person who helped {{char}} confesses."
+    },
+    {
+      "id": "g12-anonymous-message",
+      "group": "12 Who Makes the Accusation",
+      "title": "Anonymous Message",
+      "direction": "{{user}} receives an ominous anonymous warning."
+    },
+    {
+      "id": "g12-multiple-witnesses",
+      "group": "12 Who Makes the Accusation",
+      "title": "Multiple Witnesses",
+      "direction": "Several people independently describe the same non-romantic misconduct."
+    },
+    {
+      "id": "g12-known-drama-queen",
+      "group": "12 Who Makes the Accusation",
+      "title": "Known Drama Queen",
+      "direction": "The witness always phrases things dramatically."
+    },
+    {
+      "id": "g12-literal-minded-witness",
+      "group": "12 Who Makes the Accusation",
+      "title": "Literal-Minded Witness",
+      "direction": "The witness says 'cheating' accurately but never considers the romantic ambiguity."
+    },
+    {
+      "id": "g12-prankster-witness",
+      "group": "12 Who Makes the Accusation",
+      "title": "Prankster Witness",
+      "direction": "The speaker knowingly exploits the ambiguity for comedy."
+    },
+    {
+      "id": "g12-angry-witness",
+      "group": "12 Who Makes the Accusation",
+      "title": "Angry Witness",
+      "direction": "The witness is genuinely upset about the competition and has no patience for clarifying."
+    },
+    {
+      "id": "g12-malicious-witness",
+      "group": "12 Who Makes the Accusation",
+      "title": "Malicious Witness",
+      "direction": "The speaker deliberately wants {{user}} to believe an affair occurred."
+    },
+    {
+      "id": "g12-honest-witness",
+      "group": "12 Who Makes the Accusation",
+      "title": "Honest Witness",
+      "direction": "The speaker clarifies as soon as {{user}} asks what they mean."
+    },
+    {
+      "id": "g13-friendly-game-only",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Friendly Game Only",
+      "direction": "The cheating affects only a casual friends’ game."
+    },
+    {
+      "id": "g13-small-local-prize",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Small Local Prize",
+      "direction": "A modest prize or trophy is at stake."
+    },
+    {
+      "id": "g13-league-ranking",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "League Ranking",
+      "direction": "The misconduct affects a hobby league ladder."
+    },
+    {
+      "id": "g13-tournament-placement",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Tournament Placement",
+      "direction": "The result changes organized tournament standings."
+    },
+    {
+      "id": "g13-public-leaderboard",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Public Leaderboard",
+      "direction": "The cheat affects a visible online ranking."
+    },
+    {
+      "id": "g13-team-reputation",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Team Reputation",
+      "direction": "{{char}}’s team may suffer reputational consequences."
+    },
+    {
+      "id": "g13-disqualification-risk",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Disqualification Risk",
+      "direction": "She could be removed from an event."
+    },
+    {
+      "id": "g13-temporary-ban-risk",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Temporary Ban Risk",
+      "direction": "The platform or league may suspend her."
+    },
+    {
+      "id": "g13-permanent-ban-risk",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Permanent Ban Risk",
+      "direction": "Serious repeated cheating could lead to a permanent ban."
+    },
+    {
+      "id": "g13-prize-return",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Prize Return",
+      "direction": "{{char}} may have to return a prize or award."
+    },
+    {
+      "id": "g13-grade-penalty",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Grade Penalty",
+      "direction": "Academic misconduct could reduce or void an assessment result."
+    },
+    {
+      "id": "g13-course-discipline",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Course Discipline",
+      "direction": "A university process may investigate the cheating."
+    },
+    {
+      "id": "g13-certification-revocation",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Certification Revocation",
+      "direction": "A professional result could be invalidated."
+    },
+    {
+      "id": "g13-work-bonus-reversal",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Work Bonus Reversal",
+      "direction": "A manipulated workplace result affects pay or rewards."
+    },
+    {
+      "id": "g13-work-discipline",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Work Discipline",
+      "direction": "The conduct may trigger workplace consequences."
+    },
+    {
+      "id": "g13-friend-group-argument",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Friend Group Argument",
+      "direction": "The stakes are mostly social."
+    },
+    {
+      "id": "g13-no-real-consequence",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "No Real Consequence",
+      "direction": "The allegation concerns a harmless loophole in a casual setting."
+    },
+    {
+      "id": "g13-organizer-apologizes",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Organizer Apologizes",
+      "direction": "If the accusation was wrong, organizers may retract it."
+    },
+    {
+      "id": "g13-rule-gets-rewritten",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Rule Gets Rewritten",
+      "direction": "The incident reveals a loophole and causes future rules to change."
+    },
+    {
+      "id": "g13-community-splits-over-it",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Community Splits Over It",
+      "direction": "People disagree strongly about whether the tactic is cheating."
+    },
+    {
+      "id": "g13-char-becomes-meme-joke",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "{{char}} Becomes Meme / Joke",
+      "direction": "The misunderstanding or exploit becomes a running joke among friends."
+    },
+    {
+      "id": "g13-relationship-consequence-only-from-lying-about-where-she-was",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Relationship Consequence Only From Lying About Where She Was",
+      "direction": "The actual game/test cheating is less important to {{user}} than unrelated deception used to hide it."
+    },
+    {
+      "id": "g13-no-relationship-consequence-required",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "No Relationship Consequence Required",
+      "direction": "The scenario can remain pure comedy after clarification."
+    },
+    {
+      "id": "g14-screenshots",
+      "group": "14 Evidence / Proof",
+      "title": "Screenshots",
+      "direction": "Screenshots document the exploit, messages, or score manipulation."
+    },
+    {
+      "id": "g14-game-replay",
+      "group": "14 Evidence / Proof",
+      "title": "Game Replay",
+      "direction": "A replay clearly shows the disputed tactic."
+    },
+    {
+      "id": "g14-server-logs",
+      "group": "14 Evidence / Proof",
+      "title": "Server Logs",
+      "direction": "System logs record automation, account use, or unusual behavior."
+    },
+    {
+      "id": "g14-score-sheet",
+      "group": "14 Evidence / Proof",
+      "title": "Score Sheet",
+      "direction": "A physical or digital score sheet reveals tampering."
+    },
+    {
+      "id": "g14-marked-cards",
+      "group": "14 Evidence / Proof",
+      "title": "Marked Cards",
+      "direction": "Physical evidence supports the card-game accusation."
+    },
+    {
+      "id": "g14-hidden-notes",
+      "group": "14 Evidence / Proof",
+      "title": "Hidden Notes",
+      "direction": "Unauthorized notes are found."
+    },
+    {
+      "id": "g14-second-device",
+      "group": "14 Evidence / Proof",
+      "title": "Second Device",
+      "direction": "A second device was used for prohibited assistance."
+    },
+    {
+      "id": "g14-browser-history",
+      "group": "14 Evidence / Proof",
+      "title": "Browser History",
+      "direction": "Searches during a closed assessment become relevant evidence."
+    },
+    {
+      "id": "g14-shared-document",
+      "group": "14 Evidence / Proof",
+      "title": "Shared Document",
+      "direction": "A collaboration document shows answer sharing."
+    },
+    {
+      "id": "g14-chat-with-accomplice",
+      "group": "14 Evidence / Proof",
+      "title": "Chat With Accomplice",
+      "direction": "Messages establish coordination."
+    },
+    {
+      "id": "g14-vote-logs",
+      "group": "14 Evidence / Proof",
+      "title": "Vote Logs",
+      "direction": "Repeated or duplicate voting is visible."
+    },
+    {
+      "id": "g14-ip-account-pattern",
+      "group": "14 Evidence / Proof",
+      "title": "IP / Account Pattern",
+      "direction": "System evidence suggests multiple accounts."
+    },
+    {
+      "id": "g14-video-footage",
+      "group": "14 Evidence / Proof",
+      "title": "Video Footage",
+      "direction": "Competition footage shows a rule violation."
+    },
+    {
+      "id": "g14-witness-testimony",
+      "group": "14 Evidence / Proof",
+      "title": "Witness Testimony",
+      "direction": "The accusation rests mainly on what someone says they saw."
+    },
+    {
+      "id": "g14-confession",
+      "group": "14 Evidence / Proof",
+      "title": "Confession",
+      "direction": "{{char}} admits what she did."
+    },
+    {
+      "id": "g14-accomplice-confession",
+      "group": "14 Evidence / Proof",
+      "title": "Accomplice Confession",
+      "direction": "The helper admits the scheme."
+    },
+    {
+      "id": "g14-ambiguous-evidence",
+      "group": "14 Evidence / Proof",
+      "title": "Ambiguous Evidence",
+      "direction": "Evidence looks suspicious without conclusively proving cheating."
+    },
+    {
+      "id": "g14-exculpatory-evidence",
+      "group": "14 Evidence / Proof",
+      "title": "Exculpatory Evidence",
+      "direction": "Logs or footage show the tactic was legal."
+    },
+    {
+      "id": "g14-evidence-was-edited",
+      "group": "14 Evidence / Proof",
+      "title": "Evidence Was Edited",
+      "direction": "A misleading clip or screenshot exaggerates the misconduct."
+    },
+    {
+      "id": "g14-no-evidence",
+      "group": "14 Evidence / Proof",
+      "title": "No Evidence",
+      "direction": "The allegation is mostly rumor."
+    },
+    {
+      "id": "g15-pure-comedy",
+      "group": "15 Tone / Story Shape",
+      "title": "Pure Comedy",
+      "direction": "Keep the scenario light and centered on the linguistic misunderstanding."
+    },
+    {
+      "id": "g15-awkward-comedy",
+      "group": "15 Tone / Story Shape",
+      "title": "Awkward Comedy",
+      "direction": "The humor comes from everyone realizing how bad the wording sounded."
+    },
+    {
+      "id": "g15-competitive-comedy",
+      "group": "15 Tone / Story Shape",
+      "title": "Competitive Comedy",
+      "direction": "{{char}} is absurdly more upset about the game/test than about being accused of romantic infidelity."
+    },
+    {
+      "id": "g15-deadpan",
+      "group": "15 Tone / Story Shape",
+      "title": "Deadpan",
+      "direction": "Everyone treats the non-romantic cheating with exaggerated seriousness."
+    },
+    {
+      "id": "g15-mystery-first",
+      "group": "15 Tone / Story Shape",
+      "title": "Mystery First",
+      "direction": "Let the misunderstanding linger long enough to create a small mystery."
+    },
+    {
+      "id": "g15-relationship-reassurance",
+      "group": "15 Tone / Story Shape",
+      "title": "Relationship Reassurance",
+      "direction": "The reveal quickly establishes there was no romantic infidelity."
+    },
+    {
+      "id": "g15-real-misconduct-funny-reveal",
+      "group": "15 Tone / Story Shape",
+      "title": "Real Misconduct, Funny Reveal",
+      "direction": "The affair misunderstanding is false, but {{char}} still has an actual rule violation to answer for."
+    },
+    {
+      "id": "g15-false-accusation",
+      "group": "15 Tone / Story Shape",
+      "title": "False Accusation",
+      "direction": "Both meanings of cheating ultimately turn out to be wrong."
+    },
+    {
+      "id": "g15-gray-area-debate",
+      "group": "15 Tone / Story Shape",
+      "title": "Gray-Area Debate",
+      "direction": "The roleplay becomes a comedic argument over whether the tactic technically counts."
+    },
+    {
+      "id": "g15-prank-like-setup",
+      "group": "15 Tone / Story Shape",
+      "title": "Prank-Like Setup",
+      "direction": "The witness knowingly weaponizes ambiguous wording, naturally linking toward Just a Prank!."
+    },
+    {
+      "id": "g15-slice-of-life",
+      "group": "15 Tone / Story Shape",
+      "title": "Slice of Life",
+      "direction": "Use the misunderstanding as a small everyday couple incident."
+    },
+    {
+      "id": "g15-competitive-rivalry",
+      "group": "15 Tone / Story Shape",
+      "title": "Competitive Rivalry",
+      "direction": "The actual conflict is between {{char}} and a hobby/sport/game rival."
+    },
+    {
+      "id": "g15-academic-trouble",
+      "group": "15 Tone / Story Shape",
+      "title": "Academic Trouble",
+      "direction": "The comedic misunderstanding gives way to real university consequences."
+    },
+    {
+      "id": "g15-workplace-trouble",
+      "group": "15 Tone / Story Shape",
+      "title": "Workplace Trouble",
+      "direction": "The comedic misunderstanding gives way to workplace consequences."
+    },
+    {
+      "id": "g15-low-stakes-only",
+      "group": "15 Tone / Story Shape",
+      "title": "Low Stakes Only",
+      "direction": "Avoid major punishment or relationship drama."
+    },
+    {
+      "id": "g15-escalating-farce",
+      "group": "15 Tone / Story Shape",
+      "title": "Escalating Farce",
+      "direction": "Each clarification initially makes the accusation sound even more romantic."
+    },
+    {
+      "id": "g15-quick-reveal",
+      "group": "15 Tone / Story Shape",
+      "title": "Quick Reveal",
+      "direction": "Resolve the meaning early and focus on the actual non-romantic cheating."
+    },
+    {
+      "id": "g15-slow-reveal",
+      "group": "15 Tone / Story Shape",
+      "title": "Slow Reveal",
+      "direction": "Allow several misleading clues before the truth becomes obvious."
+    },
+    {
+      "id": "g16-cheating-means-rule-breaking-here",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Cheating Means Rule-Breaking Here",
+      "direction": "Preserve the central wordplay: the accusation is about non-romantic cheating."
+    },
+    {
+      "id": "g16-do-not-add-a-real-affair-by-default",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Do Not Add a Real Affair by Default",
+      "direction": "Do not undermine the premise by secretly making {{char}} romantically unfaithful as well unless a separate direction explicitly requires it."
+    },
+    {
+      "id": "g16-activity-rules-matter",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Activity Rules Matter",
+      "direction": "Determine what the competition or assessment actually permits before labeling behavior cheating."
+    },
+    {
+      "id": "g16-gray-areas-stay-gray",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Gray Areas Stay Gray",
+      "direction": "If the rule is ambiguous, do not force a definitive moral verdict."
+    },
+    {
+      "id": "g16-false-accusations-stay-possible",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "False Accusations Stay Possible",
+      "direction": "Allow {{char}} to be genuinely innocent."
+    },
+    {
+      "id": "g16-misconduct-can-still-matter",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Misconduct Can Still Matter",
+      "direction": "The romantic accusation can be false while the non-romantic rule-breaking is real and consequential."
+    },
+    {
+      "id": "g16-no-forced-jealousy",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "No Forced Jealousy",
+      "direction": "Do not write {{user}}’s emotional response."
+    },
+    {
+      "id": "g16-no-forced-forgiveness",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "No Forced Forgiveness",
+      "direction": "Do not decide whether {{user}} cares about related lies or misconduct."
+    },
+    {
+      "id": "g16-no-forced-punishment",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "No Forced Punishment",
+      "direction": "Do not pre-decide academic, workplace, league, or platform penalties."
+    },
+    {
+      "id": "g16-no-romantic-entitlement-from-accomplice",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "No Romantic Entitlement From Accomplice",
+      "direction": "Helping {{char}} cheat at a game/test does not imply romantic interest."
+    },
+    {
+      "id": "g16-secret-meetings-need-not-be-romantic",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Secret Meetings Need Not Be Romantic",
+      "direction": "Preserve non-romantic reasons for suspicious behavior."
+    },
+    {
+      "id": "g16-suspicious-messages-can-be-innocent-romantically",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Suspicious Messages Can Be Innocent Romantically",
+      "direction": "The wording may sound intimate while referring to tactics, answers, or plans."
+    },
+    {
+      "id": "g16-known-exploit-is-not-automatically-allowed",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Known Exploit Is Not Automatically Allowed",
+      "direction": "Community popularity does not override explicit event rules."
+    },
+    {
+      "id": "g16-literal-rules-vs-spirit-is-a-real-distinction",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Literal Rules vs Spirit Is a Real Distinction",
+      "direction": "Rules-lawyering variants should preserve disagreement about intent."
+    },
+    {
+      "id": "g16-academic-professional-consequences-can-be-serious",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Academic/Professional Consequences Can Be Serious",
+      "direction": "Keep the comedy of the misunderstanding separate from genuine integrity consequences."
+    },
+    {
+      "id": "g16-do-not-encourage-academic-cheating",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Do Not Encourage Academic Cheating",
+      "direction": "If academic misconduct is present, treat it as character behavior with consequences rather than instructional content."
+    },
+    {
+      "id": "g16-do-not-provide-operational-cheating-methods",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Do Not Provide Operational Cheating Methods",
+      "direction": "Keep methods scenario-level rather than giving step-by-step instructions for evading detection."
+    },
+    {
+      "id": "g16-no-violence-over-competition",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "No Violence Over Competition",
+      "direction": "Do not default to fights between participants."
+    },
+    {
+      "id": "g16-no-doxxing-or-harassment",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "No Doxxing or Harassment",
+      "direction": "Competitive misconduct does not justify harassment or exposing private information."
+    },
+    {
+      "id": "g16-the-witness-can-be-wrong-too",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "The Witness Can Be Wrong Too",
+      "direction": "Treat accusations as perspective until supported by facts."
+    },
+    {
+      "id": "g17-your-girlfriend-is-cheating",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘Your Girlfriend Is Cheating’",
+      "direction": "Open with the exact misleading accusation and no context for one beat."
+    },
+    {
+      "id": "g17-i-caught-her-with-him",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘I Caught Her With Him’",
+      "direction": "Open with wording that strongly implies romance but refers to an accomplice."
+    },
+    {
+      "id": "g17-shes-been-doing-it-for-weeks",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘She’s Been Doing It for Weeks’",
+      "direction": "Open with a repeated non-romantic cheating scheme described ambiguously."
+    },
+    {
+      "id": "g17-the-suspicious-screenshot",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Suspicious Screenshot",
+      "direction": "Open with messages that look romantic until the competition context appears."
+    },
+    {
+      "id": "g17-the-other-partner",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Other ‘Partner’",
+      "direction": "Open with someone saying {{char}} has another partner, meaning game/quiz/sport partner."
+    },
+    {
+      "id": "g17-wrong-place-wrong-words",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Wrong Place, Wrong Words",
+      "direction": "Open as {{user}} sees {{char}} secretly meeting her accomplice."
+    },
+    {
+      "id": "g17-char-walks-in-mid-warning",
+      "group": "17 Strong Roleplay Openings",
+      "title": "{{char}} Walks In Mid-Warning",
+      "direction": "Open when she hears someone accusing her of cheating."
+    },
+    {
+      "id": "g17-she-immediately-says-its-not-what-you-think",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Immediately Says ‘It’s Not What You Think’",
+      "direction": "The cliché sounds even worse before she explains the game/test."
+    },
+    {
+      "id": "g17-okay-i-did-cheat",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘Okay, I Did Cheat’",
+      "direction": "Open with {{char}} admitting the non-romantic offense before realizing what {{user}} thinks."
+    },
+    {
+      "id": "g17-i-only-did-it-with-him-once",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘I Only Did It With Him Once’",
+      "direction": "A technically relevant explanation accidentally sounds romantic."
+    },
+    {
+      "id": "g17-everyone-does-it",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘Everyone Does It’",
+      "direction": "{{char}} defends a game exploit in wording that initially sounds terrible."
+    },
+    {
+      "id": "g17-he-helped-me",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘He Helped Me’",
+      "direction": "The accomplice relationship sounds suspicious until context is clear."
+    },
+    {
+      "id": "g17-she-notices-user-is-weirdly-excited",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Notices {{user}} Is Weirdly Excited",
+      "direction": "Use the Bible seed where {{char}} realizes {{user}} misunderstood and reacts to that realization."
+    },
+    {
+      "id": "g17-trophy-on-the-table",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Trophy on the Table",
+      "direction": "A prize or score sheet abruptly reveals the non-romantic context."
+    },
+    {
+      "id": "g17-controller-cards-notes-reveal",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Controller / Cards / Notes Reveal",
+      "direction": "A physical object makes the misunderstanding collapse."
+    },
+    {
+      "id": "g17-accomplice-arrives-with-game-gear",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Accomplice Arrives With Game Gear",
+      "direction": "The supposed romantic rival appears carrying obviously non-romantic equipment."
+    },
+    {
+      "id": "g17-professor-calls",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Professor Calls",
+      "direction": "The word 'cheating' comes from an academic misconduct conversation."
+    },
+    {
+      "id": "g17-coach-calls",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Coach Calls",
+      "direction": "The accusation comes from sport."
+    },
+    {
+      "id": "g17-moderator-message",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Moderator Message",
+      "direction": "A platform moderation notice says {{char}} was caught cheating."
+    },
+    {
+      "id": "g17-ranking-ban",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Ranking Ban",
+      "direction": "A leaderboard penalty arrives while {{user}} is present."
+    },
+    {
+      "id": "g17-witness-keeps-making-it-worse",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Witness Keeps Making It Worse",
+      "direction": "Open with an accuser who answers every question in more suspicious wording."
+    },
+    {
+      "id": "g17-char-confesses-before-witness-can",
+      "group": "17 Strong Roleplay Openings",
+      "title": "{{char}} Confesses Before Witness Can",
+      "direction": "She says she has something to admit—and means a competition exploit."
+    },
+    {
+      "id": "g18-misunderstanding-ends-in-laughter",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Misunderstanding Ends in Laughter",
+      "direction": "The romantic interpretation collapses into comedy."
+    },
+    {
+      "id": "g18-char-still-faces-real-penalty",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "{{char}} Still Faces Real Penalty",
+      "direction": "The relationship misunderstanding is harmless, but competition consequences remain."
+    },
+    {
+      "id": "g18-char-is-cleared",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "{{char}} Is Cleared",
+      "direction": "Evidence proves she did not actually cheat."
+    },
+    {
+      "id": "g18-gray-area-ruling",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Gray-Area Ruling",
+      "direction": "Organizers clarify the rule without treating {{char}} as intentionally dishonest."
+    },
+    {
+      "id": "g18-disqualified",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Disqualified",
+      "direction": "A genuine violation leads to disqualification."
+    },
+    {
+      "id": "g18-returns-prize",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Returns Prize",
+      "direction": "{{char}} gives back a prize or ranking benefit."
+    },
+    {
+      "id": "g18-apologises-to-competitors",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Apologises to Competitors",
+      "direction": "She admits unfair play."
+    },
+    {
+      "id": "g18-fixes-the-score",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Fixes the Score",
+      "direction": "A manipulated result is corrected."
+    },
+    {
+      "id": "g18-rule-gets-changed",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Rule Gets Changed",
+      "direction": "The exploit prompts better rules."
+    },
+    {
+      "id": "g18-community-argument-continues",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Community Argument Continues",
+      "direction": "People never fully agree whether it counted as cheating."
+    },
+    {
+      "id": "g18-becomes-running-couple-joke",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Becomes Running Couple Joke",
+      "direction": "The phrase 'are you cheating again?' becomes an innocent reference to games or trivia."
+    },
+    {
+      "id": "g18-witness-gets-teased-for-wording",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Witness Gets Teased for Wording",
+      "direction": "Friends blame the accuser for the dramatic misunderstanding."
+    },
+    {
+      "id": "g18-accomplice-friendship-strengthens",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Accomplice Friendship Strengthens",
+      "direction": "The non-romantic partner remains a friend or teammate."
+    },
+    {
+      "id": "g18-competition-rivalry-continues",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Competition Rivalry Continues",
+      "direction": "{{char}} and a rival remain fiercely competitive."
+    },
+    {
+      "id": "g18-bridge-to-just-a-prank",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Just a Prank!",
+      "direction": "If the witness deliberately engineered the misunderstanding for laughs, transition into Just a Prank!."
+    },
+    {
+      "id": "g18-bridge-to-turn-you-into-a-cuck",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Turn You Into a Cuck",
+      "direction": "If the misunderstanding makes {{char}} discover that {{user}} is intrigued by the romantic implication, it can become a separate consensual discussion rather than retroactively making the accusation true."
+    },
+    {
+      "id": "g18-bridge-to-open-relationship",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Open Relationship",
+      "direction": "If the misunderstanding unexpectedly opens a serious discussion about relationship boundaries, transition into Open Relationship without implying any current affair."
+    },
+    {
+      "id": "g18-bridge-to-her-hidden-side",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Her Hidden Side",
+      "direction": "If {{user}} discovers {{char}} has a secret highly competitive hobby life, transition into Her Hidden Side."
+    },
+    {
+      "id": "g18-keep-it-pure-comedy",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Keep It Pure Comedy",
+      "direction": "Do not bridge into relationship drama; keep the whole premise a wordplay misunderstanding."
+    },
+    {
+      "id": "g18-no-forced-outcome",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "No Forced Outcome",
+      "direction": "Leave {{user}}’s reaction to both the misunderstanding and the actual non-romantic misconduct open."
+    },
+    {
+      "id": "g10-accusation-sounds-like-she-let-someone-finish-in-her",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Accusation Sounds Like She Let Someone Finish in Her",
+      "direction": "The way the ‘cheating’ is reported uses phrasing that {{user}} (or another listener) briefly interprets as sexual — e.g. someone saying she ‘took the load,’ ‘got filled in,’ or ‘went all the way’ in a game/sports/test context. The sexual mishearing is temporary; the ground truth remains non-romantic."
+    },
+    {
+      "id": "g10-witness-says-she-was-with-another-man-all-night",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Witness Says She Was With Another Man All Night",
+      "direction": "A witness describes {{char}} spending the night with another man. The truth is a gaming marathon, study session, tournament travel, or co-op grind — but the wording triggers fidelity panic before context arrives."
+    },
+    {
+      "id": "g10-photos-look-like-a-hookup-they-are-not",
+      "group": "10 How the Romantic Misunderstanding Forms",
+      "title": "Photos Look Like a Hookup — They Are Not",
+      "direction": "Images circulate of {{char}} looking intimate with someone (close, late-night, dishevelled, in a bedroom). The activity was actually cards, a raid, tutoring, or celebration. Visual ambiguity drives the romantic false alarm."
+    },
+    {
+      "id": "g06-witness-leans-into-sexual-innuendo-on-purpose",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "Witness Leans Into Sexual Innuendo on Purpose",
+      "direction": "The person reporting the ‘cheating’ deliberately uses sexually loaded language for humour or drama, knowing it will be misread. The joke is cruel or careless depending on tone."
+    },
+    {
+      "id": "g06-they-say-she-cheated-with-him-implying-sex",
+      "group": "06 How Misleadingly the Witness Describes It",
+      "title": "They Say She ‘Cheated With Him’ Implying Sex",
+      "direction": "The phrase ‘she cheated with [name]’ is used about a game/partner-in-crime, but the grammar strongly implies a sexual affair until clarified."
+    },
+    {
+      "id": "g11-she-plays-along-with-the-affair-joke",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "She Plays Along With the Affair Joke",
+      "direction": "When {{user}} or others jump to romantic cheating, {{char}} briefly leans into the misunderstanding for comedy — ‘yeah, he finished me off in ranked’ — before correcting the record. Tone can be playful or risky."
+    },
+    {
+      "id": "g11-she-is-horrified-they-thought-it-was-sex",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "She Is Horrified They Thought It Was Sex",
+      "direction": "{{char}}’s strongest reaction is not guilt about the real rule-breaking but shock that anyone believed she was sexually unfaithful. The mismatch of stakes is the emotional centre."
+    },
+    {
+      "id": "g11-she-confesses-the-real-cheat-to-kill-the-sex-rumour",
+      "group": "11 How {{char}} Reacts to the Misunderstanding",
+      "title": "She Confesses the Real Cheat to Kill the Sex Rumour",
+      "direction": "To stop the romantic-infidelity narrative, {{char}} immediately and fully admits the actual non-sexual cheating (exploit, exam, cards, etc.). Honesty about the real offence is a tool to protect the relationship."
+    },
+    {
+      "id": "g04-she-smurfed-boosted-or-threw-matches",
+      "group": "04 What She Actually Did",
+      "title": "She Smurfed, Boosted, or Threw Matches",
+      "direction": "Concrete non-romantic cheat: account sharing, elo boosting, match-fixing, or similar competitive integrity violation. Keep the detail specific so the ‘affair’ reading collapses cleanly."
+    },
+    {
+      "id": "g04-she-used-a-banned-item-or-substance-in-sport",
+      "group": "04 What She Actually Did",
+      "title": "She Used a Banned Item or Substance in Sport",
+      "direction": "The real cheating is athletic: performance aid, illegal equipment, or rules breach. Medical/competitive framing replaces any sexual implication once context is clear."
+    },
+    {
+      "id": "g04-she-colluded-on-a-test-or-assignment",
+      "group": "04 What She Actually Did",
+      "title": "She Colluded on a Test or Assignment",
+      "direction": "Academic dishonesty is the ground truth — shared answers, contract cheating, unauthorised collaboration. Stakes may be real (expulsion risk) without any romantic betrayal."
+    },
+    {
+      "id": "g03-ranked-ladder-integrity",
+      "group": "03 What She Is Actually Cheating At",
+      "title": "Ranked Ladder Integrity",
+      "direction": "Focus the non-romantic cheating on competitive ranking systems — win-trading, multi-accounting, script abuse. The ‘ladder’ vocabulary can accidentally sound like social climbing or affair logistics until clarified."
+    },
+    {
+      "id": "g07-she-feels-guiltier-about-the-misunderstanding-than-the-cheat",
+      "group": "07 How Guilty She Really Is",
+      "title": "She Feels Guiltier About the Misunderstanding Than the Cheat",
+      "direction": "{{char}}’s guilt centres on having caused {{user}} sexual-jealousy pain, not on the game/test/sports violation itself. Emotional priority reveals what she values."
+    },
+    {
+      "id": "g07-zero-sexual-guilt-full-competitive-guilt",
+      "group": "07 How Guilty She Really Is",
+      "title": "Zero Sexual Guilt — Full Competitive Guilt",
+      "direction": "She has no fidelity guilt because nothing sexual happened. She may have substantial guilt (or none) about the actual rule-breaking. Keep the two guilt tracks separate."
+    },
+    {
+      "id": "g08-she-hides-the-game-cheat-like-it-was-an-affair",
+      "group": "09 How She Hides—or Doesn’t Hide—It",
+      "title": "She Hides the Game Cheat Like It Was an Affair",
+      "direction": "Her concealment behaviour — deleted chats, nervous phone, secret meetings with the co-conspirator — perfectly mimics affair logistics even though the content is ranked games or exam prep. Behaviour fuels the wrong theory."
+    },
+    {
+      "id": "g14-chat-logs-look-incriminating-until-read-carefully",
+      "group": "14 Evidence / Proof",
+      "title": "Chat Logs Look Incriminating Until Read Carefully",
+      "direction": "Messages use words like ‘tonight,’ ‘don’t tell,’ ‘I’ll cover you,’ ‘we finished together.’ At a glance they read as sexual; in context they are match times, alibis for coaches, or co-op clears."
+    },
+    {
+      "id": "g14-someone-says-they-saw-her-leave-his-place-at-dawn",
+      "group": "14 Evidence / Proof",
+      "title": "Someone Says They Saw Her Leave His Place at Dawn",
+      "direction": "A sighting of {{char}} leaving another man’s home early morning is presented as proof of sex. Truth may be all-night raid, LAN, study crash, or tournament VOIP session that ran long."
+    },
+    {
+      "id": "g17-open-on-user-hearing-she-cheated-with-him",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Open on {{user}} Hearing She ‘Cheated With Him’",
+      "direction": "Open with {{user}} receiving the ambiguous report: {{char}} cheated with [named man]. Romantic meaning is the default interpretation until more context arrives. Delay the non-sexual reveal for tension or comedy."
+    },
+    {
+      "id": "g17-open-on-confrontation-before-the-truth",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Open on Confrontation Before the Truth",
+      "direction": "Open mid-accusation: {{user}} is already confronting {{char}} about sleeping with someone. She is confused, defensive, or trying to explain the real cheat while he is still on the sexual track."
+    },
+    {
+      "id": "g17-open-on-her-saying-it-wasnt-that-kind-of-cheating",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Open on Her Saying ‘It Wasn’t That Kind of Cheating’",
+      "direction": "Open with {{char}}’s corrective line — the title phrase or close variant — while {{user}} is still holding the affair interpretation. The clarification process is the scene."
+    },
+    {
+      "id": "g15-pure-comedy-of-sexual-assumptions",
+      "group": "15 Tone / Story Shape",
+      "title": "Pure Comedy of Sexual Assumptions",
+      "direction": "Lean into farce: every new detail seems to confirm an affair until the mundane competitive truth lands. Keep the ground truth firmly non-romantic."
+    },
+    {
+      "id": "g15-hurt-first-relief-second",
+      "group": "15 Tone / Story Shape",
+      "title": "Hurt First, Relief Second",
+      "direction": "Treat {{user}}’s initial pain as real even though the premise is non-sexual. Relief when the truth lands can be complicated by residual anger about secrecy or actual rule-breaking stakes."
+    },
+    {
+      "id": "g13-real-stakes-are-academic-or-competitive-not-romantic",
+      "group": "13 Stakes / Consequences of the Real Cheating",
+      "title": "Real Stakes Are Academic or Competitive — Not Romantic",
+      "direction": "Consequences attach to the true cheat: failed course, banned account, team suspension, legal risk in gambling contexts. Romantic stakes were illusory; practical stakes may be serious."
+    },
+    {
+      "id": "g05-accomplice-is-a-man-user-already-dislikes",
+      "group": "05 Accomplice / Co-Conspirator",
+      "title": "Accomplice Is a Man {{user}} Already Dislikes",
+      "direction": "The co-cheater in the game/test/sport is someone {{user}} already sees as a rival or threat. That pre-existing dislike makes the sexual misreading more sticky."
+    },
+    {
+      "id": "g16-do-not-retcon-into-real-affair",
+      "group": "16 Interpretation / Safety Rules",
+      "title": "Do Not Retcon Into Real Affair",
+      "direction": "Unless the user explicitly redirects the scenario, preserve the non-romantic ground truth. Sexual tension can exist in the misunderstanding phase, but the revealed facts should remain about games, tests, sports, or similar rule-breaking — not secret sex."
+    }
+  ],
+  "sections": [
+    {
+      "id": "wordplay-boundary",
+      "label": "The word 'cheating' has two meanings",
+      "content": "The series works because the witness means rule-breaking while {{user}} can plausibly hear romantic infidelity. Keep the ground truth non-romantic unless a separate cross-series transition occurs later."
+    },
+    {
+      "id": "actual-guilt-separate",
+      "label": "Relationship innocence and competition guilt are separate",
+      "content": "{{char}} can be completely faithful romantically while still being guilty of game, sport, academic, workplace, or competition misconduct—or innocent of both."
+    },
+    {
+      "id": "rules-first",
+      "label": "Establish the actual rule before judging the tactic",
+      "content": "Exploit use, outside help, AI tools, collaboration, equipment, ranking strategies, and loopholes may be allowed, forbidden, ambiguous, or badly communicated depending on the event. Treat the governing rule as scenario ground truth."
+    },
+    {
+      "id": "no-operational-cheating",
+      "label": "Scenario detail, not cheating instructions",
+      "content": "Keep misconduct descriptions high-level. The source should generate roleplay situations, not operational methods for bypassing detection, manipulating systems, or cheating on assessments."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Combine groups for specificity—for example: Video Game Exploit + Gray-Area Tactic + Angry Witness + Pure Comedy; University Test + Hidden Assistance + Classmate + Real Consequences; or Trivia + No Cheating at All + Witness Knows Exactly How It Sounds + Misunderstanding Ends in Laughter."
+    }
+  ],
+  "raw_prompt": "Prioritise the non-romantic meaning of cheating, believable ambiguous wording, clear rule context, varied guilt levels, and comedy that does not pre-write {{user}}’s reaction. Preserve the selected Direction Preset and keep operational misconduct details non-instructional."
 }
