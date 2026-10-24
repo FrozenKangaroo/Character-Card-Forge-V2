@@ -3,6 +3,2330 @@
   "schema_version": 1,
   "id": "bible-i-21-the-girl-in-the-video",
   "title": "The Girl in the Video",
+  "description": "Reusable adult visual-recognition engine in which {{user}} sees a clip, photo, or other visual of an unidentified adult woman and gradually or suddenly realizes she may be his partner {{char}}. Detailed presets vary who shows the material, format, why identity is hidden, recognition clues, certainty, timing, the other adult’s identity and knowledge, whether the other adult knows {{user}} is watching, recording/sharing consent, one encounter versus ongoing involvement, what {{char}} knows, her response, discovery setting, privacy/evidence rules, strong openings, and outcomes ranging from mistaken identity or old consensual history to unauthorized distribution or current infidelity.",
   "source_version": "1.2",
-  "note": "Full expanded content (366 presets) is available on Google Drive Idea Sources folder as 21-the-girl-in-the-video.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 21,
+    "category": "Hidden Past, Identity & Recognition",
+    "source_date": "2026-09-21"
+  },
+  "summary": "{{user}} encounters a visual of an unidentified adult woman and notices enough clues to wonder whether she is actually {{char}}. Recognition may be instant, gradual, uncertain, mistaken, independently confirmed, or admitted by {{char}}. The material may be old or recent, consensually recorded or privately leaked, one isolated encounter or evidence of ongoing involvement, and the other adult may or may not know about {{user}}, the relationship, or the fact that {{user}} is viewing the visual.",
+  "core_premise": "The engine is visual recognition plus uncertain context. The key reveal is not merely that an adult visual exists, but that {{user}} first sees it without realizing the woman may be his partner. Keep identity, timing, relationship agreement, the other adult’s knowledge, consent to recording, consent to distribution, and whether the encounter was isolated or ongoing as separate questions. A correct identification does not automatically prove cheating, and a real encounter does not automatically make the recording or sharing consensual.",
+  "setup": "Begin when {{user}} first sees the material, when a clue creates suspicion, when several clues accumulate, when someone deliberately identifies the woman, when {{char}} realizes {{user}} has seen it, or when timing/context finally resolves what the visual means. Establish enough material and context to make recognition plausible without pre-writing {{user}}’s emotional reaction, confrontation style, or relationship decision.",
+  "core_variables": [
+    "Who shows, sends, posts, or exposes the visual to {{user}}.",
+    "What visual format {{user}} sees and how much context it contains.",
+    "Why {{char}}’s identity is hidden or unclear.",
+    "Which visual, audio, contextual, or metadata clues point toward {{char}}.",
+    "How certain recognition becomes and whether any identification is mistaken.",
+    "When the visual was created relative to {{user}} and the current relationship.",
+    "Who the other adult is and whether {{user}} already knows that person.",
+    "What the other adult knew about {{char}}’s relationship status.",
+    "Whether the other adult knows {{user}} is viewing the material.",
+    "Whether {{char}} consented separately to the encounter, recording, sharing, publication, and current redistribution.",
+    "Whether the material documents one encounter, recurring encounters, an old relationship, content collaboration, current affair, or consensual outside relationship.",
+    "What {{char}} currently knows about the recording’s existence and circulation.",
+    "How {{char}} responds once recognition or confrontation occurs.",
+    "Whether the main issue is historical surprise, omission, deception, current fidelity, mistaken identity, or privacy violation.",
+    "What evidence remains ambiguous and what is independently verified."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{user}} sees a visual of an unidentified adult woman without initially realizing that the woman may be his adult partner {{char}}.",
+    "Keep this source distinct from The Anonymous Girl: The Girl in the Video centers on recognition of one specific visual or incident, while The Anonymous Girl centers on an anonymous-content persona or catalogue.",
+    "If University Bragging Clip is selected, preserve an adult university-era context and treat unauthorized bragging/sharing as a privacy issue rather than automatic consent.",
+    "If Anonymous Photo is selected, keep identity uncertain or concealed long enough for recognition clues to matter.",
+    "If Old Recording is selected, preserve historical timing rather than converting it into current cheating by default.",
+    "If Gradual Recognition is selected, make multiple clues meaningfully accumulate instead of using one instant giveaway.",
+    "Do not treat a correct identification as proof of current infidelity; establish timing and relationship boundaries.",
+    "Do not treat a consensual encounter as automatic consent to recording or sharing.",
+    "Do not treat a recording as proof that every surrounding caption, boast, date, or relationship claim is true.",
+    "Do not assume the other adult knows {{char}} is taken, knows {{user}}, or knows {{user}} is viewing the visual unless established.",
+    "Do not write {{user}}’s jealousy, arousal, anger, confrontation, forgiveness, breakup, dialogue, or future behavior as settled fact.",
+    "Do not require {{char}} to provide graphic detail, surrender private media, or identify every former adult partner to prove honesty.",
+    "If the visual is ambiguous, allow mistaken identity or unresolved uncertainty.",
+    "If the visual is current, establish whether the relationship was monogamous, open, paused, or otherwise structured before labeling the encounter cheating.",
+    "If distribution is non-consensual, treat {{char}} as the victim of that privacy violation even if the recorded encounter itself was consensual.",
+    "If the other adult deliberately shows {{user}} the visual, preserve that person’s motive as a separate character variable rather than assuming altruism or malice.",
+    "If multiple clips exist, determine whether they represent one event fragmented into files or repeated encounters.",
+    "If a selected preset narrows the source, clue, timing, collaborator, knowledge state, consent status, or outcome, preserve it while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Consent to an adult encounter does not automatically include consent to recording, publication, reposting, public identification, or showing the material to {{user}}.",
+    "Do not normalize revenge porn, non-consensual intimate distribution, hidden-camera sexual recording, doxxing, blackmail, stalking, or harassment.",
+    "Do not imply {{user}} is entitled to possess, copy, forward, publish, or demand the full intimate recording.",
+    "Do not force {{char}} to feel shame about consensual historical adult behavior.",
+    "Do not force {{user}} to accept a direct lie or present relationship violation merely because the recording itself was consensual.",
+    "Do not infer present STI status, pregnancy, or parentage from a visual without appropriate current evidence and realistic timing.",
+    "Do not treat resemblance, uploader captions, or third-party boasting as conclusive identity evidence by themselves.",
+    "Do not use cosmetic changes of names, occupations, or locations as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Best friend, coworker, brother, adult relative, mutual friend, other man, anonymous sender, group chat, archive, social feed, {{char}} herself, accidental screen share, or old device",
+    "Short clip, long video, photo, photo set, screenshot, cropped image, blurred face, mask, low light, silhouette, POV, mirror clue, voice-only clue, thumbnail, repost, compilation, or fabricated visual",
+    "Face hiding, blur, mask, stage persona, career privacy, family privacy, community privacy, shared anonymity, low-resolution accident, stripped metadata, covered tattoos, or anonymity condition",
+    "Tattoo, scar, birthmark, piercing, jewellery, watch, nails, hair, voice, laugh, phrase, posture, gesture, clothing, room, vehicle, date clue, phone case, alias, or multiple clues",
+    "No suspicion, faint familiarity, one clue, multiple clues, gradual certainty, sudden recognition, self-confirmation, third-party confirmation, denial, ambiguity, deepfake concern, lookalike, or correct identity/wrong context",
+    "Years before relationship, shortly before, pre-dating, pre-exclusivity, ambiguous early overlap, monogamy, open period, break, long-distance period, work trip, holiday, university years, old encounter/new upload, current, or unknown date",
+    "Former boyfriend, former FWB, one-night stand, coworker, friend, best friend, neighbour, travel acquaintance, compensated-dating partner, content collaborator, someone {{user}} knows, unknown man/woman, recurring partner, or varied partners",
+    "Other adult knew she was single, knew dating was casual, knew {{user}}, believed open relationship, believed separation, was lied to, never asked, suspected she was taken, learned later, believed {{user}} knew, or predates {{user}} entirely",
+    "Other adult does not know {{user}} will see it, accidentally shows him, realizes midway, deliberately reveals it, provokes, warns, exposes current affair, protects privacy, or keeps sharing against wishes",
+    "Encounter consent, recording consent, private-only recording, limited sharing, anonymous publication, repost without permission, hidden recording, fabricated media, or edited context",
+    "One encounter, one weekend, fling, FWB period, old relationship, recurring collaboration, long affair, open arrangement, one event/many files, repeated encounters, current affair, friendship-only present, or no current contact",
+    "Immediate admission, calm explanation, embarrassment, privacy anger, minimization, trickle-truth, denial, timing correction, open-relationship clarification, current-cheating admission, old-lie admission, or broad truthful account",
+    "Historical clarification, mistaken identity, privacy violation, direct-lie issue, current cheating, known-person twist, larger secret past, anonymous catalogue, or no forced outcome"
+  ],
+  "cross_links": [
+    "The Anonymous Girl",
+    "On the Other Side of the Wall",
+    "Her Secret Past",
+    "You Two Know Each Other?",
+    "Under Your Nose",
+    "NTR Report",
+    "The Man From Her Past",
+    "Open Relationship"
+  ],
+  "tags": [
+    "adult",
+    "hidden identity",
+    "video",
+    "photo",
+    "recognition",
+    "old recording",
+    "anonymous visual",
+    "former partner",
+    "privacy",
+    "recording consent",
+    "relationship trust",
+    "visual clues",
+    "identity reveal"
+  ],
+  "notes": "Expanded from Series Bible I #21. The original seeds—University Bragging Clip, Anonymous Photo, Old Recording, and Gradual Recognition—are preserved with their original preset IDs. The source distinguishes recognition from context: proving the woman is {{char}} does not by itself establish timing, infidelity, recording consent, distribution consent, or whether the encounter was isolated or ongoing.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied The Girl in the Video concepts in which {{user}} sees a clip, photo, or other visual of an unidentified adult woman and only gradually or suddenly realizes that the woman may actually be his adult partner {{char}}. Vary who shows or sends the material, why her identity is obscured, when it was created, who the other adult is, what that person knows about {{char}}’s relationship, whether anyone knows {{user}} is viewing it, which visual clues drive recognition, how certain the identification becomes, whether the encounter was historical or current, and whether it was one encounter or part of something ongoing. Keep recognition evidence, recording/publication consent, current fidelity, and {{user}}’s reaction separate."
+    },
+    {
+      "id": "university-bragging-clip",
+      "group": "02 Original Bible Seeds",
+      "title": "University Bragging Clip",
+      "direction": "An adult university/college-era clip is shown or circulated as a boast or story among adults. Establish whether {{char}} consented to recording and sharing rather than treating bragging as permission."
+    },
+    {
+      "id": "anonymous-photo",
+      "group": "02 Original Bible Seeds",
+      "title": "Anonymous Photo",
+      "direction": "{{user}} sees an adult photo whose subject is not identified, but details gradually suggest the woman may be {{char}}."
+    },
+    {
+      "id": "old-recording",
+      "group": "02 Original Bible Seeds",
+      "title": "Old Recording",
+      "direction": "The visual is genuinely historical and may predate {{user}} or the current relationship by years."
+    },
+    {
+      "id": "gradual-recognition",
+      "group": "02 Original Bible Seeds",
+      "title": "Gradual Recognition",
+      "direction": "Recognition develops across multiple visual or contextual clues rather than through one instantly decisive feature."
+    },
+    {
+      "id": "g03-best-friend-shows-it",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Best Friend Shows It",
+      "direction": "An adult best friend casually shows {{user}} the material without realizing who the woman is."
+    },
+    {
+      "id": "g03-coworker-shows-it",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Coworker Shows It",
+      "direction": "An adult coworker shares or mentions the visual during ordinary conversation."
+    },
+    {
+      "id": "g03-brother-shows-it",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Brother Shows It",
+      "direction": "{{user}}’s adult brother shows him the material without knowing the hidden identity."
+    },
+    {
+      "id": "g03-adult-relative-shows-it",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Adult Relative Shows It",
+      "direction": "Another adult relative shows or forwards the material."
+    },
+    {
+      "id": "g03-mutual-friend-shows-it",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Mutual Friend Shows It",
+      "direction": "A mutual adult friend is the person who puts the visual in front of {{user}}."
+    },
+    {
+      "id": "g03-friend-of-char-shows-it",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Friend of {{char}} Shows It",
+      "direction": "Someone from {{char}}’s current social circle unknowingly exposes the material."
+    },
+    {
+      "id": "g03-former-friend-of-char-shows-it",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Former Friend of {{char}} Shows It",
+      "direction": "A former friend deliberately or carelessly reveals the material."
+    },
+    {
+      "id": "g03-other-man-shows-it",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Other Man Shows It",
+      "direction": "The adult man appearing with {{char}} is the person who shows {{user}} the visual."
+    },
+    {
+      "id": "g03-other-man-brags-about-it",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Other Man Brags About It",
+      "direction": "The other adult displays the material as a boast. Treat his framing as perspective, and separately establish whether sharing was authorized."
+    },
+    {
+      "id": "g03-other-man-asks-for-advice",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Other Man Asks for Advice",
+      "direction": "The other adult shows the material while discussing a relationship or encounter, not knowing {{user}} knows the woman."
+    },
+    {
+      "id": "g03-other-man-wants-recognition",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Other Man Wants Recognition",
+      "direction": "The other adult intentionally wants {{user}} to realize who the woman is."
+    },
+    {
+      "id": "g03-other-man-does-not-know-user",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Other Man Does Not Know {{user}}",
+      "direction": "A stranger or new acquaintance shows material without knowing {{user}}’s connection to {{char}}."
+    },
+    {
+      "id": "g03-someone-sends-it-anonymously",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Someone Sends It Anonymously",
+      "direction": "{{user}} receives the visual from an unknown sender whose motive is initially unclear."
+    },
+    {
+      "id": "g03-group-chat-share",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Group Chat Share",
+      "direction": "The visual appears in an adult group chat or social thread."
+    },
+    {
+      "id": "g03-private-message-from-friend",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Private Message From Friend",
+      "direction": "A friend privately sends the visual with little context."
+    },
+    {
+      "id": "g03-accidental-screen-share",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Accidental Screen Share",
+      "direction": "The visual appears unintentionally during a screen share, photo scroll, or device handoff."
+    },
+    {
+      "id": "g03-old-device-discovery",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Old Device Discovery",
+      "direction": "{{user}} encounters the visual on an old device, drive, or backup he is legitimately using."
+    },
+    {
+      "id": "g03-social-media-post",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Social Media Post",
+      "direction": "A cropped or non-explicit derivative image appears in a social feed and links back to the source."
+    },
+    {
+      "id": "g03-forum-archive-post",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Forum / Archive Post",
+      "direction": "{{user}} encounters the visual in an online archive or discussion thread."
+    },
+    {
+      "id": "g03-char-shows-it-herself",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "{{char}} Shows It Herself",
+      "direction": "{{char}} deliberately shows {{user}} the material and waits to see whether he recognizes her."
+    },
+    {
+      "id": "g03-char-confesses-before-showing-it",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "{{char}} Confesses Before Showing It",
+      "direction": "She tells {{user}} first, then shows the historical visual as context."
+    },
+    {
+      "id": "g03-unknown-person-threatens-to-show-it",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Unknown Person Threatens to Show It",
+      "direction": "Someone uses the existence of the visual as leverage. Treat blackmail or threats as wrongdoing."
+    },
+    {
+      "id": "g04-short-video-clip",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Short Video Clip",
+      "direction": "The material is a brief adult video excerpt."
+    },
+    {
+      "id": "g04-longer-video",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Longer Video",
+      "direction": "The visual is part of a longer recording rather than a few seconds."
+    },
+    {
+      "id": "g04-single-photo",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Single Photo",
+      "direction": "The evidence is one adult still image."
+    },
+    {
+      "id": "g04-photo-set",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Photo Set",
+      "direction": "Several related adult photos provide more context."
+    },
+    {
+      "id": "g04-screenshot-from-video",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Screenshot From Video",
+      "direction": "{{user}} first sees a still screenshot taken from a longer recording."
+    },
+    {
+      "id": "g04-cropped-image",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Cropped Image",
+      "direction": "The image has been intentionally cropped to hide identifying context."
+    },
+    {
+      "id": "g04-blurred-face-video",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Blurred Face Video",
+      "direction": "The woman’s face is blurred or obscured in post-production."
+    },
+    {
+      "id": "g04-mask-costume-video",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Mask / Costume Video",
+      "direction": "The visual uses a mask, wig, costume, cosplay, or other identity-obscuring element."
+    },
+    {
+      "id": "g04-low-light-recording",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Low-Light Recording",
+      "direction": "Poor or deliberate low lighting makes recognition difficult."
+    },
+    {
+      "id": "g04-silhouette-back-view",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Silhouette / Back View",
+      "direction": "The visual avoids the woman’s face and relies on silhouette, posture, or back view."
+    },
+    {
+      "id": "g04-pov-style-recording",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "POV-Style Recording",
+      "direction": "The recording angle keeps the woman only partly visible."
+    },
+    {
+      "id": "g04-mirror-reflection",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Mirror Reflection",
+      "direction": "A reflection accidentally exposes more identifying detail than intended."
+    },
+    {
+      "id": "g04-background-reflection",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Background Reflection",
+      "direction": "A window, television, mirror, or shiny surface reveals a clue."
+    },
+    {
+      "id": "g04-silent-clip",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Silent Clip",
+      "direction": "There is no usable voice, making visual clues especially important."
+    },
+    {
+      "id": "g04-muffled-altered-audio",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Muffled / Altered Audio",
+      "direction": "Sound exists but voice recognition is limited."
+    },
+    {
+      "id": "g04-no-face-clear-voice",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "No Face, Clear Voice",
+      "direction": "The woman’s face is hidden but her natural voice is audible."
+    },
+    {
+      "id": "g04-old-phone-video",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Old Phone Video",
+      "direction": "The material has low resolution and older-device artifacts."
+    },
+    {
+      "id": "g04-high-resolution-modern-clip",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "High-Resolution Modern Clip",
+      "direction": "The visual is recent-looking and detailed enough for subtle clues to matter."
+    },
+    {
+      "id": "g04-security-door-camera-fragment",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Security / Door Camera Fragment",
+      "direction": "A non-bedroom visual source incidentally records people entering or leaving a location; do not imply hidden-camera intimacy."
+    },
+    {
+      "id": "g04-promotional-teaser",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Promotional Teaser",
+      "direction": "The visual is a cropped or censored teaser derived from adult material."
+    },
+    {
+      "id": "g04-thumbnail-only",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Thumbnail Only",
+      "direction": "{{user}} initially sees only a thumbnail, cover image, or preview still."
+    },
+    {
+      "id": "g04-re-encoded-reposted-copy",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Re-Encoded / Reposted Copy",
+      "direction": "The copy quality is degraded and metadata may no longer be reliable."
+    },
+    {
+      "id": "g04-edited-compilation",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Edited Compilation",
+      "direction": "The material is part of a montage or compilation that may obscure chronology."
+    },
+    {
+      "id": "g04-fake-manipulated-visual",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Fake / Manipulated Visual",
+      "direction": "The apparent evidence is edited, composited, AI-generated, or otherwise not authentic."
+    },
+    {
+      "id": "g05-face-intentionally-hidden",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Face Intentionally Hidden",
+      "direction": "The woman’s face is deliberately excluded or concealed."
+    },
+    {
+      "id": "g05-face-blurred-by-uploader",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Face Blurred by Uploader",
+      "direction": "The uploader blurs her face before distribution."
+    },
+    {
+      "id": "g05-mask-as-privacy",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Mask as Privacy",
+      "direction": "A mask is used specifically to protect identity."
+    },
+    {
+      "id": "g05-stage-persona",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Stage Persona",
+      "direction": "{{char}} used a pseudonymous adult persona with no public link to her real name."
+    },
+    {
+      "id": "g05-career-privacy",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Career Privacy",
+      "direction": "Identity concealment was intended to protect an ordinary career."
+    },
+    {
+      "id": "g05-family-privacy",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Family Privacy",
+      "direction": "{{char}} wanted separation between adult activity and family life."
+    },
+    {
+      "id": "g05-community-privacy",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Community Privacy",
+      "direction": "She wanted to avoid recognition in a small community or social circle."
+    },
+    {
+      "id": "g05-partner-privacy",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Partner Privacy",
+      "direction": "She wanted to avoid exposing a partner or collaborator as well as herself."
+    },
+    {
+      "id": "g05-anonymous-amateur-choice",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Anonymous Amateur Choice",
+      "direction": "Anonymity was simply the preferred style of consensual amateur content."
+    },
+    {
+      "id": "g05-other-man-wanted-privacy-too",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Other Man Wanted Privacy Too",
+      "direction": "Both adults agreed that neither identity should be visible."
+    },
+    {
+      "id": "g05-platform-required-cropping",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Platform Required Cropping",
+      "direction": "The upload format or community norms encouraged obscured identity."
+    },
+    {
+      "id": "g05-old-technology-accident",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Old Technology Accident",
+      "direction": "Her identity is unclear mostly because the recording is old and low quality, not because anonymity was planned."
+    },
+    {
+      "id": "g05-camera-angle-accident",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Camera Angle Accident",
+      "direction": "The shot simply does not show her face clearly."
+    },
+    {
+      "id": "g05-uploaded-without-identifying-caption",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Uploaded Without Identifying Caption",
+      "direction": "The content itself was not strongly anonymized, but no real name was attached."
+    },
+    {
+      "id": "g05-removed-metadata",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Removed Metadata",
+      "direction": "Identifying metadata was stripped before publication."
+    },
+    {
+      "id": "g05-distinctive-features-covered",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Distinctive Features Covered",
+      "direction": "Tattoos, jewellery, scars, or other clues were intentionally covered."
+    },
+    {
+      "id": "g05-anonymity-was-a-condition-of-consent",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Anonymity Was a Condition of Consent",
+      "direction": "{{char}} agreed to publication only because her identity was supposed to remain concealed."
+    },
+    {
+      "id": "g05-identity-was-hidden-from-user-specifically",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Identity Was Hidden From {{user}} Specifically",
+      "direction": "Someone deliberately obscured enough information to prevent {{user}} recognizing her."
+    },
+    {
+      "id": "g05-identity-hidden-from-public-not-inner-circle",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "Identity Hidden From Public, Not Inner Circle",
+      "direction": "Friends or collaborators knew who she was even though viewers did not."
+    },
+    {
+      "id": "g05-she-was-never-meant-to-be-publicly-identifiable",
+      "group": "05 Why Her Identity Is Hidden",
+      "title": "She Was Never Meant to Be Publicly Identifiable",
+      "direction": "The visual was created under an explicit expectation that real-world identity would remain private."
+    },
+    {
+      "id": "g06-distinctive-tattoo",
+      "group": "06 Recognition Clues",
+      "title": "Distinctive Tattoo",
+      "direction": "A familiar tattoo becomes a major recognition clue."
+    },
+    {
+      "id": "g06-small-tattoo",
+      "group": "06 Recognition Clues",
+      "title": "Small Tattoo",
+      "direction": "A minor tattoo visible only briefly starts {{user}} questioning the woman’s identity."
+    },
+    {
+      "id": "g06-birthmark",
+      "group": "06 Recognition Clues",
+      "title": "Birthmark",
+      "direction": "A distinctive birthmark or skin feature suggests {{char}}."
+    },
+    {
+      "id": "g06-scar",
+      "group": "06 Recognition Clues",
+      "title": "Scar",
+      "direction": "A known scar becomes a clue."
+    },
+    {
+      "id": "g06-piercing",
+      "group": "06 Recognition Clues",
+      "title": "Piercing",
+      "direction": "A familiar piercing or jewellery placement contributes to recognition."
+    },
+    {
+      "id": "g06-ring",
+      "group": "06 Recognition Clues",
+      "title": "Ring",
+      "direction": "A ring that {{char}} owns is visible."
+    },
+    {
+      "id": "g06-bracelet",
+      "group": "06 Recognition Clues",
+      "title": "Bracelet",
+      "direction": "A familiar bracelet or wrist item appears."
+    },
+    {
+      "id": "g06-necklace",
+      "group": "06 Recognition Clues",
+      "title": "Necklace",
+      "direction": "A necklace associated with {{char}} becomes identifiable."
+    },
+    {
+      "id": "g06-watch",
+      "group": "06 Recognition Clues",
+      "title": "Watch",
+      "direction": "A distinctive watch or fitness band provides a clue."
+    },
+    {
+      "id": "g06-nail-style",
+      "group": "06 Recognition Clues",
+      "title": "Nail Style",
+      "direction": "A very specific manicure or nail design matches {{char}} at a known time."
+    },
+    {
+      "id": "g06-hair-colour-style",
+      "group": "06 Recognition Clues",
+      "title": "Hair Colour / Style",
+      "direction": "Hair strongly resembles {{char}} but is not sufficient alone."
+    },
+    {
+      "id": "g06-voice",
+      "group": "06 Recognition Clues",
+      "title": "Voice",
+      "direction": "A brief line, laugh, or sound strongly resembles {{char}}."
+    },
+    {
+      "id": "g06-laugh",
+      "group": "06 Recognition Clues",
+      "title": "Laugh",
+      "direction": "Her distinctive laugh is the first clue."
+    },
+    {
+      "id": "g06-phrase-verbal-mannerism",
+      "group": "06 Recognition Clues",
+      "title": "Phrase / Verbal Mannerism",
+      "direction": "A familiar phrase or speech habit appears in the recording."
+    },
+    {
+      "id": "g06-posture",
+      "group": "06 Recognition Clues",
+      "title": "Posture",
+      "direction": "The woman’s posture or habitual movement feels familiar."
+    },
+    {
+      "id": "g06-hand-gesture",
+      "group": "06 Recognition Clues",
+      "title": "Hand Gesture",
+      "direction": "A characteristic hand gesture becomes recognizable."
+    },
+    {
+      "id": "g06-walk-movement",
+      "group": "06 Recognition Clues",
+      "title": "Walk / Movement",
+      "direction": "A familiar way of walking or moving provides a clue."
+    },
+    {
+      "id": "g06-clothing",
+      "group": "06 Recognition Clues",
+      "title": "Clothing",
+      "direction": "A distinctive garment matches something {{char}} owns."
+    },
+    {
+      "id": "g06-shoes",
+      "group": "06 Recognition Clues",
+      "title": "Shoes",
+      "direction": "Specific shoes become recognizable."
+    },
+    {
+      "id": "g06-costume-piece",
+      "group": "06 Recognition Clues",
+      "title": "Costume Piece",
+      "direction": "A costume or accessory matches an item {{user}} has seen before."
+    },
+    {
+      "id": "g06-room-furniture",
+      "group": "06 Recognition Clues",
+      "title": "Room / Furniture",
+      "direction": "The room resembles a place connected to {{char}}."
+    },
+    {
+      "id": "g06-bedsheets-decor",
+      "group": "06 Recognition Clues",
+      "title": "Bedsheets / Decor",
+      "direction": "Household details connect the visual to a known location."
+    },
+    {
+      "id": "g06-car-interior",
+      "group": "06 Recognition Clues",
+      "title": "Car Interior",
+      "direction": "A vehicle interior visible in the clip becomes a clue."
+    },
+    {
+      "id": "g06-hotel-venue-detail",
+      "group": "06 Recognition Clues",
+      "title": "Hotel / Venue Detail",
+      "direction": "A background feature links the visual to a known trip or event."
+    },
+    {
+      "id": "g06-date-calendar-clue",
+      "group": "06 Recognition Clues",
+      "title": "Date / Calendar Clue",
+      "direction": "A visible date, event, or contextual marker matches {{char}}’s known movements."
+    },
+    {
+      "id": "g06-phone-case",
+      "group": "06 Recognition Clues",
+      "title": "Phone Case",
+      "direction": "A recognizable phone or phone case appears."
+    },
+    {
+      "id": "g06-username-alias",
+      "group": "06 Recognition Clues",
+      "title": "Username / Alias",
+      "direction": "A username or pseudonym indirectly connects to {{char}}."
+    },
+    {
+      "id": "g06-other-man-names-her",
+      "group": "06 Recognition Clues",
+      "title": "Other Man Names Her",
+      "direction": "The other adult uses a first name, nickname, or pet name that narrows the possibilities."
+    },
+    {
+      "id": "g06-friend-recognizes-her",
+      "group": "06 Recognition Clues",
+      "title": "Friend Recognizes Her",
+      "direction": "A third party independently notices a resemblance."
+    },
+    {
+      "id": "g06-multiple-small-clues",
+      "group": "06 Recognition Clues",
+      "title": "Multiple Small Clues",
+      "direction": "No single clue proves identity; several independent details accumulate."
+    },
+    {
+      "id": "g06-one-strong-clue-several-weak-ones",
+      "group": "06 Recognition Clues",
+      "title": "One Strong Clue, Several Weak Ones",
+      "direction": "A decisive-looking feature is reinforced by circumstantial details."
+    },
+    {
+      "id": "g06-clue-is-actually-misleading",
+      "group": "06 Recognition Clues",
+      "title": "Clue Is Actually Misleading",
+      "direction": "A familiar feature turns out to belong to someone else or have another explanation."
+    },
+    {
+      "id": "g07-no-suspicion-at-first",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "No Suspicion at First",
+      "direction": "{{user}} watches or sees the material without initially considering {{char}} at all."
+    },
+    {
+      "id": "g07-faint-familiarity",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Faint Familiarity",
+      "direction": "Something feels familiar but cannot be identified."
+    },
+    {
+      "id": "g07-one-clue-creates-suspicion",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "One Clue Creates Suspicion",
+      "direction": "A single visual detail makes {{user}} wonder whether it could be {{char}}."
+    },
+    {
+      "id": "g07-two-independent-clues",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Two Independent Clues",
+      "direction": "Two separate details make coincidence less likely."
+    },
+    {
+      "id": "g07-recognition-builds-slowly",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Recognition Builds Slowly",
+      "direction": "Certainty increases across repeated viewing or additional context."
+    },
+    {
+      "id": "g07-recognition-hits-suddenly",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Recognition Hits Suddenly",
+      "direction": "A late visual clue causes an abrupt realization."
+    },
+    {
+      "id": "g07-almost-certain",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Almost Certain",
+      "direction": "The evidence strongly points to {{char}} but still stops short of absolute proof."
+    },
+    {
+      "id": "g07-certain-from-unique-feature",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Certain From Unique Feature",
+      "direction": "A truly distinctive feature makes identification very strong."
+    },
+    {
+      "id": "g07-metadata-corroborates-visual-clues",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Metadata Corroborates Visual Clues",
+      "direction": "Reliable date/location information supports the visual recognition."
+    },
+    {
+      "id": "g07-other-man-confirms-identity",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Other Man Confirms Identity",
+      "direction": "The other adult explicitly identifies {{char}}."
+    },
+    {
+      "id": "g07-char-confirms-identity",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "{{char}} Confirms Identity",
+      "direction": "She acknowledges that the woman in the visual is her."
+    },
+    {
+      "id": "g07-char-partially-confirms",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "{{char}} Partially Confirms",
+      "direction": "She admits some material is hers but disputes other files or interpretations."
+    },
+    {
+      "id": "g07-char-denies-it",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "{{char}} Denies It",
+      "direction": "She says the woman is not her; keep the denial open to evaluation based on evidence."
+    },
+    {
+      "id": "g07-third-party-misidentifies-her",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Third Party Misidentifies Her",
+      "direction": "Someone confidently but incorrectly claims the woman is {{char}}."
+    },
+    {
+      "id": "g07-visual-is-too-ambiguous",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Visual Is Too Ambiguous",
+      "direction": "The scenario remains genuinely uncertain."
+    },
+    {
+      "id": "g07-deepfake-concern",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Deepfake Concern",
+      "direction": "Similarity is strong enough to raise the possibility of manipulated content."
+    },
+    {
+      "id": "g07-wrong-date-breaks-the-theory",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Wrong Date Breaks the Theory",
+      "direction": "Timing evidence makes the initial recognition impossible or unlikely."
+    },
+    {
+      "id": "g07-lookalike-reveal",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Lookalike Reveal",
+      "direction": "The woman ultimately turns out to be a physically similar adult stranger."
+    },
+    {
+      "id": "g07-recognition-was-correct-context-was-wrong",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Recognition Was Correct, Context Was Wrong",
+      "direction": "Identity is correct but assumptions about timing, relationship status, or consent are mistaken."
+    },
+    {
+      "id": "g07-recognition-was-correct-file-was-misdated",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Recognition Was Correct, File Was Misdated",
+      "direction": "The woman is {{char}}, but uploader-provided timing is wrong."
+    },
+    {
+      "id": "g07-recognition-was-correct-caption-was-false",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Recognition Was Correct, Caption Was False",
+      "direction": "Identity is correct while the post’s surrounding story is fabricated."
+    },
+    {
+      "id": "g08-years-before-user",
+      "group": "08 When the Visual Was Created",
+      "title": "Years Before {{user}}",
+      "direction": "The material clearly predates {{char}} meeting {{user}} by years."
+    },
+    {
+      "id": "g08-shortly-before-relationship",
+      "group": "08 When the Visual Was Created",
+      "title": "Shortly Before Relationship",
+      "direction": "The recording happened shortly before {{char}} and {{user}} began dating."
+    },
+    {
+      "id": "g08-after-they-met-before-dating",
+      "group": "08 When the Visual Was Created",
+      "title": "After They Met, Before Dating",
+      "direction": "The encounter occurred after the adults knew each other but before romance began."
+    },
+    {
+      "id": "g08-dating-before-exclusivity",
+      "group": "08 When the Visual Was Created",
+      "title": "Dating, Before Exclusivity",
+      "direction": "The material was created while they were dating casually but before an exclusivity agreement."
+    },
+    {
+      "id": "g08-early-relationship-timing-unclear",
+      "group": "08 When the Visual Was Created",
+      "title": "Early Relationship, Timing Unclear",
+      "direction": "The date falls near the transition to exclusivity and requires careful clarification."
+    },
+    {
+      "id": "g08-clearly-during-monogamy",
+      "group": "08 When the Visual Was Created",
+      "title": "Clearly During Monogamy",
+      "direction": "Reliable evidence places the encounter after a monogamous agreement began."
+    },
+    {
+      "id": "g08-during-open-relationship",
+      "group": "08 When the Visual Was Created",
+      "title": "During Open Relationship",
+      "direction": "The encounter occurred during a consensually open period."
+    },
+    {
+      "id": "g08-during-agreed-break",
+      "group": "08 When the Visual Was Created",
+      "title": "During Agreed Break",
+      "direction": "The couple had explicitly separated or paused exclusivity."
+    },
+    {
+      "id": "g08-after-argument-no-break",
+      "group": "08 When the Visual Was Created",
+      "title": "After Argument, No Break",
+      "direction": "The encounter followed conflict but no relationship boundary had changed."
+    },
+    {
+      "id": "g08-during-long-distance-period",
+      "group": "08 When the Visual Was Created",
+      "title": "During Long-Distance Period",
+      "direction": "The material dates to a period when the couple was geographically separated but still together."
+    },
+    {
+      "id": "g08-during-work-trip",
+      "group": "08 When the Visual Was Created",
+      "title": "During Work Trip",
+      "direction": "The recording connects to a known business or work trip."
+    },
+    {
+      "id": "g08-during-holiday",
+      "group": "08 When the Visual Was Created",
+      "title": "During Holiday",
+      "direction": "It occurred during a known trip or holiday."
+    },
+    {
+      "id": "g08-during-university-years",
+      "group": "08 When the Visual Was Created",
+      "title": "During University Years",
+      "direction": "The visual is from {{char}}’s adult student years."
+    },
+    {
+      "id": "g08-old-encounter-new-upload",
+      "group": "08 When the Visual Was Created",
+      "title": "Old Encounter, New Upload",
+      "direction": "The encounter is historical but someone uploaded or reposted it recently."
+    },
+    {
+      "id": "g08-old-upload-newly-found",
+      "group": "08 When the Visual Was Created",
+      "title": "Old Upload, Newly Found",
+      "direction": "The visual has existed for years and is only now discovered."
+    },
+    {
+      "id": "g08-current-recent-visual",
+      "group": "08 When the Visual Was Created",
+      "title": "Current / Recent Visual",
+      "direction": "The material appears recent enough that current relationship boundaries matter immediately."
+    },
+    {
+      "id": "g08-date-cannot-be-established",
+      "group": "08 When the Visual Was Created",
+      "title": "Date Cannot Be Established",
+      "direction": "No reliable timing evidence is available."
+    },
+    {
+      "id": "g08-uploader-gives-false-date",
+      "group": "08 When the Visual Was Created",
+      "title": "Uploader Gives False Date",
+      "direction": "The public timestamp or caption misrepresents when the encounter happened."
+    },
+    {
+      "id": "g08-date-revealed-by-background-detail",
+      "group": "08 When the Visual Was Created",
+      "title": "Date Revealed by Background Detail",
+      "direction": "A visible event, calendar, ticket, or object establishes timing."
+    },
+    {
+      "id": "g08-one-encounter-across-multiple-files",
+      "group": "08 When the Visual Was Created",
+      "title": "One Encounter Across Multiple Files",
+      "direction": "Several uploads all come from the same historical event."
+    },
+    {
+      "id": "g09-former-boyfriend",
+      "group": "09 Who the Other Adult Is",
+      "title": "Former Boyfriend",
+      "direction": "The other adult is a former boyfriend from before {{user}}."
+    },
+    {
+      "id": "g09-former-fwb",
+      "group": "09 Who the Other Adult Is",
+      "title": "Former FWB",
+      "direction": "The other adult was a recurring friend-with-benefits."
+    },
+    {
+      "id": "g09-one-night-stand",
+      "group": "09 Who the Other Adult Is",
+      "title": "One-Night Stand",
+      "direction": "The visual came from one consensual adult encounter with no ongoing relationship."
+    },
+    {
+      "id": "g09-old-crush",
+      "group": "09 Who the Other Adult Is",
+      "title": "Old Crush",
+      "direction": "The other adult was someone {{char}} had wanted for a long time."
+    },
+    {
+      "id": "g09-coworker",
+      "group": "09 Who the Other Adult Is",
+      "title": "Coworker",
+      "direction": "The other adult was or is a coworker; keep workplace power separate from consent."
+    },
+    {
+      "id": "g09-boss-senior-coworker",
+      "group": "09 Who the Other Adult Is",
+      "title": "Boss / Senior Coworker",
+      "direction": "The other adult had professional seniority. Establish whether any workplace leverage affected consent."
+    },
+    {
+      "id": "g09-classmate",
+      "group": "09 Who the Other Adult Is",
+      "title": "Classmate",
+      "direction": "The other adult was an adult classmate or fellow trainee."
+    },
+    {
+      "id": "g09-friend",
+      "group": "09 Who the Other Adult Is",
+      "title": "Friend",
+      "direction": "The other adult was an adult friend."
+    },
+    {
+      "id": "g09-best-friend",
+      "group": "09 Who the Other Adult Is",
+      "title": "Best Friend",
+      "direction": "The other adult was someone {{char}} considered a close friend."
+    },
+    {
+      "id": "g09-neighbour",
+      "group": "09 Who the Other Adult Is",
+      "title": "Neighbour",
+      "direction": "The other adult lived nearby."
+    },
+    {
+      "id": "g09-travel-acquaintance",
+      "group": "09 Who the Other Adult Is",
+      "title": "Travel Acquaintance",
+      "direction": "The encounter came from travel, a festival, convention, or temporary setting."
+    },
+    {
+      "id": "g09-anonymous-hookup",
+      "group": "09 Who the Other Adult Is",
+      "title": "Anonymous Hookup",
+      "direction": "{{char}} barely knew the other adult."
+    },
+    {
+      "id": "g09-compensated-dating-partner",
+      "group": "09 Who the Other Adult Is",
+      "title": "Compensated-Dating Partner",
+      "direction": "The other adult came from a compensated-dating arrangement."
+    },
+    {
+      "id": "g09-adult-content-collaborator",
+      "group": "09 Who the Other Adult Is",
+      "title": "Adult-Content Collaborator",
+      "direction": "The other adult was a consensual content collaborator rather than necessarily a romantic partner."
+    },
+    {
+      "id": "g09-current-friend-former-lover",
+      "group": "09 Who the Other Adult Is",
+      "title": "Current Friend, Former Lover",
+      "direction": "The person is still in {{char}}’s life platonically."
+    },
+    {
+      "id": "g09-someone-user-knows",
+      "group": "09 Who the Other Adult Is",
+      "title": "Someone {{user}} Knows",
+      "direction": "The other adult is independently known to {{user}}."
+    },
+    {
+      "id": "g09-users-friend",
+      "group": "09 Who the Other Adult Is",
+      "title": "{{user}}’s Friend",
+      "direction": "The visual involves an adult friend of {{user}}."
+    },
+    {
+      "id": "g09-users-coworker",
+      "group": "09 Who the Other Adult Is",
+      "title": "{{user}}’s Coworker",
+      "direction": "The other adult is someone {{user}} knows through work."
+    },
+    {
+      "id": "g09-adult-relative-of-user",
+      "group": "09 Who the Other Adult Is",
+      "title": "Adult Relative of {{user}}",
+      "direction": "The other adult is an adult relative of {{user}}, increasing social consequences."
+    },
+    {
+      "id": "g09-unknown-man",
+      "group": "09 Who the Other Adult Is",
+      "title": "Unknown Man",
+      "direction": "The visual gives no reliable identity for the other adult."
+    },
+    {
+      "id": "g09-unknown-woman",
+      "group": "09 Who the Other Adult Is",
+      "title": "Unknown Woman",
+      "direction": "The visual involves another adult woman whose identity is unknown."
+    },
+    {
+      "id": "g09-recurring-partner",
+      "group": "09 Who the Other Adult Is",
+      "title": "Recurring Partner",
+      "direction": "Several visuals indicate the same adult partner appeared repeatedly."
+    },
+    {
+      "id": "g09-different-partners",
+      "group": "09 Who the Other Adult Is",
+      "title": "Different Partners",
+      "direction": "Additional material eventually shows more than one adult partner."
+    },
+    {
+      "id": "g10-knew-char-was-single",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Knew {{char}} Was Single",
+      "direction": "The other adult genuinely believed {{char}} was unattached at the time."
+    },
+    {
+      "id": "g10-knew-she-was-dating-casually",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Knew She Was Dating Casually",
+      "direction": "The other adult knew she was seeing someone but believed no exclusivity existed."
+    },
+    {
+      "id": "g10-knew-about-user",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Knew About {{user}}",
+      "direction": "The other adult knew {{char}} was in a relationship with {{user}}."
+    },
+    {
+      "id": "g10-knew-she-was-married-engaged",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Knew She Was Married / Engaged",
+      "direction": "The other adult knew the current relationship was highly committed."
+    },
+    {
+      "id": "g10-was-told-the-relationship-was-open",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Was Told the Relationship Was Open",
+      "direction": "{{char}} told the other adult outside sex was permitted. Keep the truth of that claim separate."
+    },
+    {
+      "id": "g10-verified-open-arrangement",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Verified Open Arrangement",
+      "direction": "The scenario establishes that the relationship was genuinely consensually non-monogamous."
+    },
+    {
+      "id": "g10-was-told-they-were-separated",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Was Told They Were Separated",
+      "direction": "The other adult believed the couple was on a break or separated."
+    },
+    {
+      "id": "g10-was-lied-to",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Was Lied To",
+      "direction": "{{char}} falsely described her relationship status to the other adult."
+    },
+    {
+      "id": "g10-never-asked-her-status",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Never Asked Her Status",
+      "direction": "The other adult did not know or ask whether {{char}} was partnered."
+    },
+    {
+      "id": "g10-suspected-she-was-taken",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Suspected She Was Taken",
+      "direction": "The other adult had doubts but proceeded anyway."
+    },
+    {
+      "id": "g10-found-out-later",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Found Out Later",
+      "direction": "He or she learned about {{user}} only after the encounter."
+    },
+    {
+      "id": "g10-knows-user-personally",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Knows {{user}} Personally",
+      "direction": "The other adult knew exactly who {{user}} was."
+    },
+    {
+      "id": "g10-did-not-know-user-personally",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Did Not Know {{user}} Personally",
+      "direction": "The other adult knew she had a partner but not his identity."
+    },
+    {
+      "id": "g10-believed-user-knew",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Believed {{user}} Knew",
+      "direction": "The other adult thought the encounter or recording was partner-aware."
+    },
+    {
+      "id": "g10-believed-user-would-never-know",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Believed {{user}} Would Never Know",
+      "direction": "The other adult expected permanent secrecy."
+    },
+    {
+      "id": "g10-relationship-status-was-irrelevant-historically",
+      "group": "10 What the Other Adult Knew About the Relationship",
+      "title": "Relationship Status Was Irrelevant Historically",
+      "direction": "The visual predates {{user}}, so knowledge of the current relationship is impossible and irrelevant."
+    },
+    {
+      "id": "g11-no-idea-user-will-see-it",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "No Idea {{user}} Will See It",
+      "direction": "The other adult never expects the visual to reach {{user}}."
+    },
+    {
+      "id": "g11-doesnt-know-viewer-is-user",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Doesn’t Know Viewer Is {{user}}",
+      "direction": "He shows or sends it to someone without realizing that person is {{char}}’s partner."
+    },
+    {
+      "id": "g11-realizes-midway",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Realizes Midway",
+      "direction": "The other adult gradually realizes who {{user}} is after the visual has already been shown."
+    },
+    {
+      "id": "g11-knows-exactly-who-user-is",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Knows Exactly Who {{user}} Is",
+      "direction": "He deliberately shows the visual to {{char}}’s partner."
+    },
+    {
+      "id": "g11-trying-to-provoke-user",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Trying to Provoke {{user}}",
+      "direction": "The sharing is intended to create jealousy, anger, or humiliation. Treat this as manipulation."
+    },
+    {
+      "id": "g11-trying-to-warn-user",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Trying to Warn {{user}}",
+      "direction": "The other adult believes {{user}} deserves information and shows the visual as evidence."
+    },
+    {
+      "id": "g11-trying-to-blackmail-char",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Trying to Blackmail {{char}}",
+      "direction": "The visual is used as leverage. Treat blackmail as wrongdoing."
+    },
+    {
+      "id": "g11-trying-to-expose-a-current-affair",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Trying to Expose a Current Affair",
+      "direction": "The other adult intentionally reveals ongoing infidelity."
+    },
+    {
+      "id": "g11-trying-to-expose-a-false-accusation",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Trying to Expose a False Accusation",
+      "direction": "The other adult provides context showing that rumors about {{char}} are inaccurate."
+    },
+    {
+      "id": "g11-showing-it-casually",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Showing It Casually",
+      "direction": "No special motive exists; the reveal is accidental."
+    },
+    {
+      "id": "g11-showing-it-as-a-story",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Showing It as a Story",
+      "direction": "The visual is used to illustrate a past anecdote without knowing the hidden connection."
+    },
+    {
+      "id": "g11-bragging-to-a-group",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Bragging to a Group",
+      "direction": "The other adult circulates it for status or attention; establish whether distribution was authorized."
+    },
+    {
+      "id": "g11-shares-with-consent",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "Shares With Consent",
+      "direction": "{{char}} explicitly agreed to this particular disclosure to {{user}}."
+    },
+    {
+      "id": "g11-char-asked-him-to-show-it",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "{{char}} Asked Him to Show It",
+      "direction": "She uses the collaborator to help reveal her past."
+    },
+    {
+      "id": "g11-he-refuses-to-show-more",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "He Refuses to Show More",
+      "direction": "The other adult protects {{char}}’s privacy once he realizes who {{user}} is."
+    },
+    {
+      "id": "g11-he-deletes-stops-sharing",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "He Deletes / Stops Sharing",
+      "direction": "On learning the connection or consent limits, the other adult stops redistribution."
+    },
+    {
+      "id": "g11-he-keeps-sharing-against-her-wishes",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "He Keeps Sharing Against Her Wishes",
+      "direction": "Current redistribution violates {{char}}’s wishes and becomes a privacy issue."
+    },
+    {
+      "id": "g12-consented-to-encounter-and-recording",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Consented to Encounter and Recording",
+      "direction": "{{char}} knowingly agreed both to the adult encounter and to recording."
+    },
+    {
+      "id": "g12-consented-to-encounter-not-recording",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Consented to Encounter, Not Recording",
+      "direction": "The encounter was consensual but the recording was not. Treat the recording as a privacy violation."
+    },
+    {
+      "id": "g12-consented-to-recording-not-sharing",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Consented to Recording, Not Sharing",
+      "direction": "She agreed to a private recording but not distribution."
+    },
+    {
+      "id": "g12-consented-to-private-sharing-only",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Consented to Private Sharing Only",
+      "direction": "{{char}} allowed a limited recipient or audience, not broad circulation."
+    },
+    {
+      "id": "g12-consented-to-anonymous-publication",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Consented to Anonymous Publication",
+      "direction": "She agreed to publication only under identity-concealment conditions."
+    },
+    {
+      "id": "g12-consented-to-publication-at-the-time",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Consented to Publication at the Time",
+      "direction": "The original upload was authorized."
+    },
+    {
+      "id": "g12-original-publication-authorized-repost-is-not",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Original Publication Authorized, Repost Is Not",
+      "direction": "Later mirrors or shares exceed the original agreement."
+    },
+    {
+      "id": "g12-consent-was-time-limited",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Consent Was Time-Limited",
+      "direction": "{{char}} expected the recording to be deleted or removed after a period."
+    },
+    {
+      "id": "g12-old-agreement-is-unclear",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Old Agreement Is Unclear",
+      "direction": "The adults remember or document the publication terms differently."
+    },
+    {
+      "id": "g12-no-recording-was-intended",
+      "group": "12 Recording / Sharing Consent",
+      "title": "No Recording Was Intended",
+      "direction": "The visual came from an unauthorized camera or screenshot. Treat it as non-consensual media."
+    },
+    {
+      "id": "g12-image-was-publicly-posted-by-char",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Image Was Publicly Posted by {{char}}",
+      "direction": "{{char}} herself originally published the visual under some level of anonymity."
+    },
+    {
+      "id": "g12-other-adult-had-permission-to-keep-it",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Other Adult Had Permission to Keep It",
+      "direction": "Private possession was permitted even though redistribution was not."
+    },
+    {
+      "id": "g12-other-adult-was-asked-to-delete-it",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Other Adult Was Asked to Delete It",
+      "direction": "The visual was retained contrary to a later agreement."
+    },
+    {
+      "id": "g12-consent-to-show-user-specifically",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Consent to Show {{user}} Specifically",
+      "direction": "{{char}} permits this one disclosure even if general sharing remains prohibited."
+    },
+    {
+      "id": "g12-no-consent-to-show-user",
+      "group": "12 Recording / Sharing Consent",
+      "title": "No Consent to Show {{user}}",
+      "direction": "The person showing it violates {{char}}’s privacy."
+    },
+    {
+      "id": "g12-fabricated-deepfake-visual",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Fabricated / Deepfake Visual",
+      "direction": "The apparent recording did not document a real encounter at all."
+    },
+    {
+      "id": "g12-edited-context",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Edited Context",
+      "direction": "Real footage is cut or captioned to imply something {{char}} did not agree happened."
+    },
+    {
+      "id": "g13-one-time-encounter",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "One-Time Encounter",
+      "direction": "The visual documents one isolated adult encounter."
+    },
+    {
+      "id": "g13-one-weekend",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "One Weekend",
+      "direction": "The material comes from a short-lived weekend or trip."
+    },
+    {
+      "id": "g13-brief-fling",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Brief Fling",
+      "direction": "The encounter was part of a short adult fling."
+    },
+    {
+      "id": "g13-former-fwb-period",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Former FWB Period",
+      "direction": "The visual came from a recurring casual arrangement."
+    },
+    {
+      "id": "g13-long-term-affair",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Long-Term Affair",
+      "direction": "The discovery may point to a sustained secret relationship."
+    },
+    {
+      "id": "g13-long-term-open-arrangement",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Long-Term Open Arrangement",
+      "direction": "Repeated encounters occurred within a consensually open agreement."
+    },
+    {
+      "id": "g13-old-relationship",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Old Relationship",
+      "direction": "The other adult was a genuine past boyfriend/girlfriend or partner."
+    },
+    {
+      "id": "g13-recurring-content-collaboration",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Recurring Content Collaboration",
+      "direction": "Multiple recordings exist because the adults worked together on content."
+    },
+    {
+      "id": "g13-one-recording-many-reposts",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "One Recording, Many Reposts",
+      "direction": "Apparent scale comes from duplicate circulation rather than repeated encounters."
+    },
+    {
+      "id": "g13-multiple-recordings-same-day",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Multiple Recordings, Same Day",
+      "direction": "Several clips are fragments of one encounter."
+    },
+    {
+      "id": "g13-several-encounters-same-person",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Several Encounters, Same Person",
+      "direction": "Additional evidence shows recurring meetings."
+    },
+    {
+      "id": "g13-several-encounters-different-people",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Several Encounters, Different People",
+      "direction": "The visual becomes an entry point into a broader hidden past."
+    },
+    {
+      "id": "g13-current-affair",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Current Affair",
+      "direction": "The recording appears to document ongoing current infidelity."
+    },
+    {
+      "id": "g13-current-consensual-outside-partner",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Current Consensual Outside Partner",
+      "direction": "Repeated current encounters exist within a known ENM arrangement."
+    },
+    {
+      "id": "g13-ended-before-user",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Ended Before {{user}}",
+      "direction": "Whatever relationship existed with the other adult was over before {{user}}."
+    },
+    {
+      "id": "g13-ended-after-meeting-user-before-exclusivity",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Ended After Meeting {{user}}, Before Exclusivity",
+      "direction": "The old involvement tapered off before a clear exclusive agreement."
+    },
+    {
+      "id": "g13-overlap-is-unclear",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Overlap Is Unclear",
+      "direction": "Evidence does not establish whether ongoing contact crossed relationship boundaries."
+    },
+    {
+      "id": "g13-only-emotional-contact-continues",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Only Emotional Contact Continues",
+      "direction": "The sexual relationship ended, but the former partner remains emotionally close."
+    },
+    {
+      "id": "g13-only-friendship-continues",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Only Friendship Continues",
+      "direction": "The people remained ordinary friends after the sexual history ended."
+    },
+    {
+      "id": "g13-no-current-contact",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "No Current Contact",
+      "direction": "The other adult has no present connection to {{char}}."
+    },
+    {
+      "id": "g14-knows-the-recording-exists",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "Knows the Recording Exists",
+      "direction": "{{char}} remembers the visual and knows who has it."
+    },
+    {
+      "id": "g14-forgot-it-existed",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "Forgot It Existed",
+      "direction": "She is genuinely surprised that an old recording still survives."
+    },
+    {
+      "id": "g14-thought-it-was-deleted",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "Thought It Was Deleted",
+      "direction": "{{char}} believed every copy had been removed."
+    },
+    {
+      "id": "g14-knew-it-was-online",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "Knew It Was Online",
+      "direction": "She has long known the visual remains accessible."
+    },
+    {
+      "id": "g14-knew-it-was-circulating-privately",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "Knew It Was Circulating Privately",
+      "direction": "She knew friends or collaborators retained copies."
+    },
+    {
+      "id": "g14-didnt-know-it-was-shared",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "Didn’t Know It Was Shared",
+      "direction": "The first surprise for {{char}} is not the content but its distribution."
+    },
+    {
+      "id": "g14-doesnt-know-user-has-seen-it",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "Doesn’t Know {{user}} Has Seen It",
+      "direction": "She remains unaware that the visual reached him."
+    },
+    {
+      "id": "g14-suspects-user-has-seen-it",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "Suspects {{user}} Has Seen It",
+      "direction": "His questions or behavior make her think he may know."
+    },
+    {
+      "id": "g14-other-adult-warns-her",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "Other Adult Warns Her",
+      "direction": "The collaborator tells {{char}} that {{user}} saw the material."
+    },
+    {
+      "id": "g14-she-arranged-the-reveal",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "She Arranged the Reveal",
+      "direction": "{{char}} deliberately lets the visual reach {{user}} as a difficult way of disclosing history."
+    },
+    {
+      "id": "g14-she-wants-it-gone",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "She Wants It Gone",
+      "direction": "She is actively trying to stop further circulation."
+    },
+    {
+      "id": "g14-she-is-comfortable-with-old-authorized-publication",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "She Is Comfortable With Old Authorized Publication",
+      "direction": "She does not object to legitimately published historical content remaining available."
+    },
+    {
+      "id": "g14-she-is-proud-of-the-historical-visual",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "She Is Proud of the Historical Visual",
+      "direction": "{{char}} regards the consensual material as a positive memory or part of her past identity."
+    },
+    {
+      "id": "g14-she-is-embarrassed-by-it",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "She Is Embarrassed by It",
+      "direction": "She wishes the old material were less visible even if its original creation was consensual."
+    },
+    {
+      "id": "g14-she-regrets-the-encounter-not-the-recording",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "She Regrets the Encounter, Not the Recording",
+      "direction": "Her feelings about the relationship differ from her feelings about the media."
+    },
+    {
+      "id": "g14-she-regrets-the-recording-not-the-encounter",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "She Regrets the Recording, Not the Encounter",
+      "direction": "She does not regret the adult encounter but wishes it had never been documented."
+    },
+    {
+      "id": "g14-she-disputes-the-caption-story",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "She Disputes the Caption / Story",
+      "direction": "The visual is real, but the surrounding narrative is false or exaggerated."
+    },
+    {
+      "id": "g15-immediate-admission",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Immediate Admission",
+      "direction": "{{char}} confirms the identity quickly once asked."
+    },
+    {
+      "id": "g15-calm-explanation",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Calm Explanation",
+      "direction": "She explains timing and context without panic."
+    },
+    {
+      "id": "g15-embarrassed-admission",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Embarrassed Admission",
+      "direction": "She confirms it but is uncomfortable discussing the visual."
+    },
+    {
+      "id": "g15-angry-at-the-sharing",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Angry at the Sharing",
+      "direction": "She focuses on the person who redistributed private or limited material."
+    },
+    {
+      "id": "g15-angry-at-snooping",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Angry at Snooping",
+      "direction": "If {{user}} obtained the visual through unauthorized access, she treats that as a separate present-day breach."
+    },
+    {
+      "id": "g15-asks-where-it-came-from",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Asks Where It Came From",
+      "direction": "Her first concern is tracing the source of the file."
+    },
+    {
+      "id": "g15-minimizes-the-relationship",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Minimizes the Relationship",
+      "direction": "She admits the visual but downplays how important the other adult was."
+    },
+    {
+      "id": "g15-minimizes-the-number-of-encounters",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Minimizes the Number of Encounters",
+      "direction": "She says it happened once even though the evidence may suggest more."
+    },
+    {
+      "id": "g15-trickle-truth",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Trickle-Truth",
+      "direction": "Additional details emerge in stages."
+    },
+    {
+      "id": "g15-denies-it-is-her",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Denies It Is Her",
+      "direction": "She rejects the identification; preserve uncertainty until evidence resolves it."
+    },
+    {
+      "id": "g15-corrects-wrong-timing",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Corrects Wrong Timing",
+      "direction": "She confirms identity but explains the recording predates the relationship."
+    },
+    {
+      "id": "g15-corrects-wrong-relationship-assumption",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Corrects Wrong Relationship Assumption",
+      "direction": "She explains the encounter was permitted under an open or nonexclusive agreement."
+    },
+    {
+      "id": "g15-admits-current-cheating",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Admits Current Cheating",
+      "direction": "The visual becomes evidence of a present boundary violation that {{char}} eventually acknowledges."
+    },
+    {
+      "id": "g15-admits-old-lie",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Admits Old Lie",
+      "direction": "The main trust issue is a prior false statement about the other adult or history."
+    },
+    {
+      "id": "g15-explains-privacy-boundary",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Explains Privacy Boundary",
+      "direction": "She confirms broad facts but refuses unnecessary graphic detail."
+    },
+    {
+      "id": "g15-protects-other-adults-identity",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Protects Other Adult’s Identity",
+      "direction": "{{char}} will discuss her own choices without exposing a former collaborator."
+    },
+    {
+      "id": "g15-shows-contextual-evidence",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Shows Contextual Evidence",
+      "direction": "She offers dates, messages, or broad context relevant to whether the visual predates exclusivity."
+    },
+    {
+      "id": "g15-relieved-user-finally-knows",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Relieved {{user}} Finally Knows",
+      "direction": "A long-hidden issue no longer has to be managed."
+    },
+    {
+      "id": "g15-voluntarily-gives-full-broad-account",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Voluntarily Gives Full Broad Account",
+      "direction": "She chooses to explain the history comprehensively without being forced into explicit detail."
+    },
+    {
+      "id": "g15-needs-time-before-talking",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "Needs Time Before Talking",
+      "direction": "{{char}} is willing to discuss it later but is overwhelmed by the circumstances of discovery."
+    },
+    {
+      "id": "g16-at-university-reunion",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "At University Reunion",
+      "direction": "The visual surfaces around an adult university reunion or old-friends gathering."
+    },
+    {
+      "id": "g16-at-a-party",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "At a Party",
+      "direction": "Someone shows the visual during an adult social event."
+    },
+    {
+      "id": "g16-after-work",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "After Work",
+      "direction": "Coworkers are casually discussing old or viral material."
+    },
+    {
+      "id": "g16-at-friends-house",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "At Friend’s House",
+      "direction": "A friend scrolls through old content or stories in a private home."
+    },
+    {
+      "id": "g16-during-gaming-night",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "During Gaming Night",
+      "direction": "The reveal happens in a casual adult friend-group setting."
+    },
+    {
+      "id": "g16-during-a-trip",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "During a Trip",
+      "direction": "The material surfaces while {{user}} is travelling with friends or colleagues."
+    },
+    {
+      "id": "g16-on-a-train-plane",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "On a Train / Plane",
+      "direction": "A nearby or shared-screen moment exposes the visual unexpectedly."
+    },
+    {
+      "id": "g16-at-a-convention",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "At a Convention",
+      "direction": "A fandom or event weekend creates the social setting for the reveal."
+    },
+    {
+      "id": "g16-in-a-group-chat",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "In a Group Chat",
+      "direction": "The material appears digitally among adults who may not know its significance."
+    },
+    {
+      "id": "g16-private-dm",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "Private DM",
+      "direction": "{{user}} receives the visual directly."
+    },
+    {
+      "id": "g16-old-hard-drive",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "Old Hard Drive",
+      "direction": "A legitimate archive or backup discovery brings it up."
+    },
+    {
+      "id": "g16-cloud-photo-memory",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "Cloud Photo Memory",
+      "direction": "An old automated photo/video memory surfaces."
+    },
+    {
+      "id": "g16-search-result",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "Search Result",
+      "direction": "A search for something unrelated leads to the visual."
+    },
+    {
+      "id": "g16-reverse-image-trail",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "Reverse Image Trail",
+      "direction": "A familiar image or alias leads {{user}} to the recording."
+    },
+    {
+      "id": "g16-someone-recognizes-background",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "Someone Recognizes Background",
+      "direction": "Another adult points out a location or object in the visual."
+    },
+    {
+      "id": "g16-other-man-shows-phone",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "Other Man Shows Phone",
+      "direction": "The collaborator himself puts the screen in front of {{user}}."
+    },
+    {
+      "id": "g16-char-leaves-it-open-accidentally",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "{{char}} Leaves It Open Accidentally",
+      "direction": "The visual appears on {{char}}’s device accidentally; avoid treating this as permission to search further."
+    },
+    {
+      "id": "g16-char-intentionally-opens-it",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "{{char}} Intentionally Opens It",
+      "direction": "She deliberately chooses to reveal the recording."
+    },
+    {
+      "id": "g16-public-screen-presentation-mistake",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "Public Screen / Presentation Mistake",
+      "direction": "A non-intimate preview or filename is accidentally displayed publicly, prompting private follow-up."
+    },
+    {
+      "id": "g16-old-social-archive",
+      "group": "16 Discovery Setting / Delivery",
+      "title": "Old Social Archive",
+      "direction": "Historical forum or social-media material provides enough context to locate the visual."
+    },
+    {
+      "id": "g17-identity-alone-does-not-establish-cheating",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Identity Alone Does Not Establish Cheating",
+      "direction": "Even if the woman is {{char}}, timing and relationship agreements must still be established."
+    },
+    {
+      "id": "g17-recording-alone-does-not-establish-consent-to-sharing",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Recording Alone Does Not Establish Consent to Sharing",
+      "direction": "A real recording can still be circulated without authorization."
+    },
+    {
+      "id": "g17-caption-is-not-evidence",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Caption Is Not Evidence",
+      "direction": "Uploader text or gossip is treated as a claim rather than fact."
+    },
+    {
+      "id": "g17-metadata-can-be-useful-but-fallible",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Metadata Can Be Useful but Fallible",
+      "direction": "Dates and file metadata may support context but can be altered or lost."
+    },
+    {
+      "id": "g17-one-visual-does-not-prove-a-long-affair",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "One Visual Does Not Prove a Long Affair",
+      "direction": "Do not infer repeated encounters from one clip without additional evidence."
+    },
+    {
+      "id": "g17-many-files-can-still-be-one-encounter",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Many Files Can Still Be One Encounter",
+      "direction": "Fragments, screenshots, or reposts can make one event look much larger."
+    },
+    {
+      "id": "g17-recognizable-feature-is-not-absolute-proof",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Recognizable Feature Is Not Absolute Proof",
+      "direction": "Tattoos, jewellery, clothing, or body resemblance can sometimes mislead."
+    },
+    {
+      "id": "g17-self-confirmation-is-strong-evidence",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Self-Confirmation Is Strong Evidence",
+      "direction": "{{char}} acknowledging identity resolves recognition without forcing every surrounding claim to be true."
+    },
+    {
+      "id": "g17-third-party-boasting-may-be-exaggerated",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Third-Party Boasting May Be Exaggerated",
+      "direction": "A person showing the visual may overstate their relationship with {{char}}."
+    },
+    {
+      "id": "g17-no-non-consensual-redistribution",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "No Non-Consensual Redistribution",
+      "direction": "Do not normalize revenge porn, unauthorized intimate sharing, or doxxing."
+    },
+    {
+      "id": "g17-no-right-to-demand-the-full-file",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "No Right to Demand the Full File",
+      "direction": "{{user}} can address relationship-relevant facts without being entitled to possess or distribute intimate media."
+    },
+    {
+      "id": "g17-no-right-to-share-with-friends",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "No Right to Share With Friends",
+      "direction": "Discovery does not authorize {{user}} to forward the material."
+    },
+    {
+      "id": "g17-no-right-to-identify-her-publicly",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "No Right to Identify Her Publicly",
+      "direction": "Recognition does not authorize public exposure of {{char}}."
+    },
+    {
+      "id": "g17-current-health-requires-current-information",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Current Health Requires Current Information",
+      "direction": "Do not infer present STI status from an old recording."
+    },
+    {
+      "id": "g17-pregnancy-requires-realistic-evidence",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Pregnancy Requires Realistic Evidence",
+      "direction": "Do not infer pregnancy or parentage from a sexual visual without appropriate timing and evidence."
+    },
+    {
+      "id": "g17-no-forced-shame",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "No Forced Shame",
+      "direction": "{{char}} need not condemn consensual historical adult behavior to explain it."
+    },
+    {
+      "id": "g17-direct-lies-still-matter",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Direct Lies Still Matter",
+      "direction": "If {{char}} explicitly lied about the other adult or timing, preserve that trust issue."
+    },
+    {
+      "id": "g17-privacy-and-fidelity-can-both-matter",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Privacy and Fidelity Can Both Matter",
+      "direction": "Unauthorized sharing and a real boundary violation can coexist; one does not erase the other."
+    },
+    {
+      "id": "g17-no-forced-forgiveness-or-breakup",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "No Forced Forgiveness or Breakup",
+      "direction": "Leave {{user}}’s relationship decision open."
+    },
+    {
+      "id": "g17-third-party-privacy-matters",
+      "group": "17 Evidence / Privacy / Interpretation Rules",
+      "title": "Third-Party Privacy Matters",
+      "direction": "The other adult’s identity and intimate details are not automatically public information either."
+    },
+    {
+      "id": "g18-doesnt-she-look-familiar",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "‘Doesn’t She Look Familiar?’",
+      "direction": "Open with another adult casually asking whether the unidentified woman seems familiar."
+    },
+    {
+      "id": "g18-the-tattoo-moment",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "The Tattoo Moment",
+      "direction": "Open when a brief frame reveals a distinctive feature that {{user}} recognizes."
+    },
+    {
+      "id": "g18-the-voice-gives-her-away",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "The Voice Gives Her Away",
+      "direction": "Open when the visual has hidden identity but a familiar voice or laugh changes everything."
+    },
+    {
+      "id": "g18-the-room-gives-her-away",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "The Room Gives Her Away",
+      "direction": "Open when {{user}} recognizes the location before recognizing the woman."
+    },
+    {
+      "id": "g18-other-man-says-her-name",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Other Man Says Her Name",
+      "direction": "Open when the collaborator casually uses a name that connects the visual to {{char}}."
+    },
+    {
+      "id": "g18-the-other-man-knows-user",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "The Other Man Knows {{user}}",
+      "direction": "Open with a deliberate reveal by someone fully aware of the relationship."
+    },
+    {
+      "id": "g18-the-other-man-doesnt-know",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "The Other Man Doesn’t Know",
+      "direction": "Open with accidental disclosure by someone who has no idea who {{user}} is."
+    },
+    {
+      "id": "g18-old-recording-from-before-they-met",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Old Recording From Before They Met",
+      "direction": "Open with strong recognition but a clearly historical date, making the question about disclosure rather than cheating."
+    },
+    {
+      "id": "g18-recent-looking-recording",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Recent-Looking Recording",
+      "direction": "Open with unclear timing and an immediate need to establish when it was made."
+    },
+    {
+      "id": "g18-char-walks-in-while-it-plays",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "{{char}} Walks In While It Plays",
+      "direction": "Open when {{char}} unexpectedly sees the visual already on screen."
+    },
+    {
+      "id": "g18-char-shows-it-herself",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "{{char}} Shows It Herself",
+      "direction": "Open with her intentionally asking {{user}} to watch enough to recognize her."
+    },
+    {
+      "id": "g18-false-recognition",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "False Recognition",
+      "direction": "Open with convincing resemblance that ultimately may belong to someone else."
+    },
+    {
+      "id": "g18-bridge-to-the-anonymous-girl",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Bridge to The Anonymous Girl",
+      "direction": "If the visual is one item from a broader anonymous adult catalogue, expand into The Anonymous Girl."
+    },
+    {
+      "id": "g18-bridge-to-on-the-other-side-of-the-wall",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Bridge to On the Other Side of the Wall",
+      "direction": "If recognition shifts from visual evidence to overheard audio nearby, transition into On the Other Side of the Wall."
+    },
+    {
+      "id": "g18-bridge-to-her-secret-past",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Her Secret Past",
+      "direction": "If the clip reveals a much larger undisclosed adult history, transition into Her Secret Past."
+    },
+    {
+      "id": "g18-bridge-to-you-two-know-each-other",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Bridge to You Two Know Each Other?",
+      "direction": "If the other adult is someone important in {{user}}’s current life, shift toward the hidden shared-history engine."
+    },
+    {
+      "id": "g18-bridge-to-under-your-nose",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Under Your Nose",
+      "direction": "If the visual documents an ongoing current affair, transition into Under Your Nose."
+    },
+    {
+      "id": "g18-bridge-to-ntr-report",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Bridge to NTR Report",
+      "direction": "If {{char}} later explains an outside encounter in detail, transition into NTR Report."
+    },
+    {
+      "id": "g18-historical-clarification",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Historical Clarification",
+      "direction": "The visual is real, old, consensual, and unrelated to current fidelity; the conflict centers on surprise or disclosure."
+    },
+    {
+      "id": "g18-privacy-violation-becomes-central",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Privacy Violation Becomes Central",
+      "direction": "The encounter may be historical or permissible, but unauthorized recording/sharing becomes the main issue."
+    },
+    {
+      "id": "g18-current-boundary-violation",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Current Boundary Violation",
+      "direction": "Reliable timing establishes a genuine current relationship breach."
+    },
+    {
+      "id": "g18-known-person-twist",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Known Person Twist",
+      "direction": "The biggest reveal is that the other adult is someone {{user}} already knows."
+    },
+    {
+      "id": "g18-one-encounter-only",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "One Encounter Only",
+      "direction": "The roleplay establishes that the visual came from one isolated historical encounter."
+    },
+    {
+      "id": "g18-ongoing-relationship-revealed",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Ongoing Relationship Revealed",
+      "direction": "Additional evidence shows recurring romantic or sexual involvement."
+    },
+    {
+      "id": "g18-mistaken-identity-resolved",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Mistaken Identity Resolved",
+      "direction": "The woman is not {{char}}, and the story becomes about why the resemblance looked convincing."
+    },
+    {
+      "id": "g18-unresolved-recognition-mystery",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "Unresolved Recognition Mystery",
+      "direction": "The roleplay remains centered on establishing whether the woman is actually {{char}}."
+    },
+    {
+      "id": "g18-no-forced-outcome",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "No Forced Outcome",
+      "direction": "Keep the evidence and context available while leaving {{user}}’s judgment and relationship decisions open."
+    },
+    {
+      "id": "g04-video-ends-with-creampie",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Video Ends With Creampie",
+      "direction": "The visual {{user}} encounters is a sex video that culminates in the man finishing inside the unidentified woman. If she is {{char}}, the internal finish is part of what he has seen. Vary length, angle, and how much of her face or body is shown."
+    },
+    {
+      "id": "g04-close-up-of-her-being-filled",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Close-Up of Her Being Filled",
+      "direction": "The material includes a clear close-up of penetration ending in an internal finish. Body details that enable recognition are visible in the same frames as the creampie."
+    },
+    {
+      "id": "g04-photo-set-of-her-after-the-load",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Photo Set of Her After the Load",
+      "direction": "Rather than (or in addition to) video, {{user}} sees stills of the woman immediately after receiving an internal finish — leaking, marked, or posed. Recognition clues are in the aftermath images."
+    },
+    {
+      "id": "g04-raw-sex-throughout-the-clip",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "Raw Sex Throughout the Clip",
+      "direction": "The video shows unprotected sex from the start, not only at the end. Absence of a condom is obvious and continuous. That detail sits alongside the recognition question."
+    },
+    {
+      "id": "g04-she-is-heard-asking-him-to-come-inside-her",
+      "group": "04 Material Format / Visual Presentation",
+      "title": "She Is Heard Asking Him to Come Inside Her",
+      "direction": "Audio is clear enough that the woman can be heard requesting or encouraging an internal finish. If {{user}} knows {{char}}’s voice, recognition may hinge on that request."
+    },
+    {
+      "id": "g06-he-recognises-her-body-as-she-takes-the-load",
+      "group": "06 Recognition Clues",
+      "title": "He Recognises Her Body as She Takes the Load",
+      "direction": "The moment of recognition coincides with the internal finish on screen — a birthmark, tattoo, proportion, or movement pattern becomes clear while she is being filled."
+    },
+    {
+      "id": "g06-her-voice-saying-fill-me-is-unmistakable",
+      "group": "06 Recognition Clues",
+      "title": "Her Voice Saying ‘Fill Me’ Is Unmistakable",
+      "direction": "A verbal cue in the video — ‘come inside me,’ ‘fill me,’ or similar — is delivered in a voice {{user}} is sure is {{char}}’s. The sexual content and the identification arrive together."
+    },
+    {
+      "id": "g09-the-other-man-finishes-inside-her-on-camera",
+      "group": "09 Who the Other Adult Is",
+      "title": "The Other Man Finishes Inside Her on Camera",
+      "direction": "Whoever the male partner is, the visual clearly shows him completing inside her. His identity (stranger, acquaintance, friend, rival) shapes what the creampie means once recognition is confirmed."
+    },
+    {
+      "id": "g09-the-other-man-is-someone-who-wanted-to-breed-her",
+      "group": "09 Who the Other Adult Is",
+      "title": "The Other Man Is Someone Who Wanted to Breed Her",
+      "direction": "Context around the video (messages, prior knowledge, the man’s reputation) suggests the male partner had breeding intent. The visual of the internal finish lands harder with that motive attached."
+    },
+    {
+      "id": "g13-the-video-is-one-of-several-creampie-encounters",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "The Video Is One of Several Creampie Encounters",
+      "direction": "Once recognition is established, it becomes clear the filmed internal finish was not unique — there is a pattern of raw sex and creampies with this man or others. The single video is a window into something larger."
+    },
+    {
+      "id": "g13-ongoing-arrangement-to-film-her-taking-loads",
+      "group": "13 One Encounter or Something Ongoing?",
+      "title": "Ongoing Arrangement to Film Her Taking Loads",
+      "direction": "The material points to a repeated arrangement: she meets someone (or several people) to have unprotected sex on camera, including internal finishes. Recognition opens a present-tense problem, not only a past one."
+    },
+    {
+      "id": "g08-filmed-while-she-was-with-user",
+      "group": "08 When the Visual Was Created",
+      "title": "Filmed While She Was With {{user}}",
+      "direction": "The creampie video was recorded during the current relationship. Timing makes the visual not only a recognition problem but a potential fidelity problem. Keep actual cheating vs other explanations open until evidence is clear."
+    },
+    {
+      "id": "g08-old-creampie-video-from-before-they-met",
+      "group": "08 When the Visual Was Created",
+      "title": "Old Creampie Video From Before They Met",
+      "direction": "The internal-finish video predates the relationship. Recognition is still destabilising, but the ethical questions centre on disclosure and privacy rather than present betrayal."
+    },
+    {
+      "id": "g14-she-knows-the-creampie-video-exists",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "She Knows the Creampie Video Exists",
+      "direction": "{{char}} is aware that a video of her receiving an internal finish is out there (or in someone’s possession). Vary whether she knows {{user}} has seen it yet."
+    },
+    {
+      "id": "g14-she-thought-the-creampie-clip-was-deleted",
+      "group": "14 What {{char}} Knows About the Material",
+      "title": "She Thought the Creampie Clip Was Deleted",
+      "direction": "{{char}} believed the recording of her taking a load had been destroyed or would never surface. Its appearance is a shock to her as well as to {{user}}."
+    },
+    {
+      "id": "g15-she-admits-it-is-her-taking-the-load",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "She Admits It Is Her Taking the Load",
+      "direction": "When recognition is raised, {{char}} confirms that the woman being finished in on camera is her. Vary emotional tone and how much context she immediately offers."
+    },
+    {
+      "id": "g15-she-focuses-on-minimising-the-creampie",
+      "group": "15 {{char}}’s Response to Recognition",
+      "title": "She Focuses on Minimising the Creampie",
+      "direction": "{{char}} may accept that it is her in the video but tries to reframe or downplay the internal finish — ‘it was only once,’ ‘we used protection most of the time,’ ‘the angle makes it look worse.’ The minimisation becomes part of the conflict."
+    },
+    {
+      "id": "g03-someone-sends-user-the-creampie-clip-on-purpose",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "Someone Sends {{user}} the Creampie Clip on Purpose",
+      "direction": "The visual does not appear by accident. A third party deliberately sends {{user}} the video of the unidentified (or semi-identified) woman receiving an internal finish, intending recognition or damage."
+    },
+    {
+      "id": "g03-the-other-man-shares-the-creampie-as-a-trophy",
+      "group": "03 Who Shows / Sends the Material",
+      "title": "The Other Man Shares the Creampie as a Trophy",
+      "direction": "The male partner from the video is the one who distributes or shows it, treating the internal finish as proof or status. His motive shapes how {{user}} and {{char}} experience the exposure."
+    },
+    {
+      "id": "g18-he-is-mid-creampie-scene-when-recognition-hits",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "He Is Mid-Creampie Scene When Recognition Hits",
+      "direction": "Open with {{user}} watching the video at the exact moment of internal finish when a recognition clue locks in. The sexual image and the identity crisis occupy the same second."
+    },
+    {
+      "id": "g18-she-walks-in-while-the-creampie-is-on-screen",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "She Walks In While the Creampie Is on Screen",
+      "direction": "Open with {{char}} entering the space while the video of the woman taking a load is visible. Whether she knows it is her content or not, the shared viewing is immediate and charged."
+    },
+    {
+      "id": "g18-he-asks-her-to-explain-the-creampie-video",
+      "group": "18 Strong Openings / Outcomes / Cross-Series Bridges",
+      "title": "He Asks Her to Explain the Creampie Video",
+      "direction": "Open with {{user}} already having seen the internal-finish material and confronting {{char}} with it — description, screenshot, or the video itself. Her first response is the scene’s hinge."
+    },
+    {
+      "id": "g12-recording-was-consensual-sharing-of-the-creampie-was-not",
+      "group": "12 Recording / Sharing Consent",
+      "title": "Recording Was Consensual — Sharing of the Creampie Was Not",
+      "direction": "{{char}} agreed to be filmed during sex including the internal finish, but did not agree to the clip being shown to {{user}} or distributed more widely. Layered consent is the ethical core."
+    },
+    {
+      "id": "g11-the-other-man-knows-user-is-watching-her-take-his-load",
+      "group": "11 Does the Other Adult Know {{user}} Is Watching?",
+      "title": "The Other Man Knows {{user}} Is Watching Her Take His Load",
+      "direction": "The male partner is aware that {{user}} has been sent or shown the creampie video. He may have engineered it. His knowledge adds a layer of rivalry or cruelty to the recognition."
+    },
+    {
+      "id": "g07-recognition-becomes-certain-at-the-moment-of-creampie",
+      "group": "07 How Certain Recognition Becomes",
+      "title": "Recognition Becomes Certain at the Moment of Creampie",
+      "direction": "Doubt remains until the exact frame or second of the internal finish, when a definitive clue (face angle, tattoo, voice, unique mark) removes the last uncertainty. Certainty and the sexual peak arrive together."
+    }
+  ],
+  "sections": [
+    {
+      "id": "specific-visual-boundary",
+      "label": "One visual is the core engine",
+      "content": "The Girl in the Video focuses on {{user}} recognizing {{char}} inside one specific visual or incident. If the story becomes primarily about a broad anonymous catalogue or performer identity, cross-link to The Anonymous Girl instead."
+    },
+    {
+      "id": "recognition-vs-context",
+      "label": "Recognition does not resolve context",
+      "content": "Even after identity is confirmed, timing, relationship status, the other adult’s knowledge, recording consent, sharing consent, and whether the encounter was isolated remain separate questions."
+    },
+    {
+      "id": "recording-sharing-boundary",
+      "label": "Recording and sharing are separate consent questions",
+      "content": "A consensual adult encounter may still involve an unauthorized recording or later unauthorized distribution. Conversely, a consensually shared historical recording does not establish current infidelity."
+    },
+    {
+      "id": "evidence-quality",
+      "label": "Visual evidence can mislead",
+      "content": "Resemblance, tattoos, captions, timestamps, usernames, and third-party claims vary in reliability. Multiple independent clues or self-confirmation can strengthen identification; manipulated media, misdating, lookalikes, and false captions can undermine it."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Combine presets across groups for specificity—for example: University Bragging Clip + Other Man Brags About It + Gradual Recognition + Years Before {{user}}; Anonymous Photo + Distinctive Tattoo + Visual Is Too Ambiguous + Former FWB; or Old Recording + {{char}} Confirms Identity + Original Publication Authorized, Repost Is Not + One-Time Encounter."
+    }
+  ],
+  "raw_prompt": "Prioritise believable recognition, evidence quality, timing, relationship boundaries, recording/sharing consent, and separation between identity and context. Preserve the selected Direction Preset. Do not pre-write {{user}}’s reaction, confrontation, forgiveness, breakup, or future choices."
 }
