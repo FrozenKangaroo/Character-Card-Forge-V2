@@ -3,6 +3,1352 @@
   "schema_version": 1,
   "id": "bible-i-04-ntr-report",
   "title": "NTR Report",
+  "description": "Reusable adult relationship-report engine in which {{user}}’s partner returns after her first meaningful encounter with another adult man and reports what happened. Detailed presets vary permission, truthfulness, reporting style, the other man, objective events, timing, hidden continuation and what she wants next.",
   "source_version": "1.2",
-  "note": "Full expanded content (203 presets) is available on Google Drive Idea Sources folder as 04-ntr-report.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 4,
+    "category": "NTR, Infidelity & Non-Monogamy",
+    "source_date": "2026-09-21"
+  },
+  "summary": "{{user}}’s adult partner returns after her first meaningful romantic or sexual encounter with another adult man and gives {{user}} a report. The encounter may have been explicitly permitted, part of consensual non-monogamy, ambiguously bounded, or a betrayal. The reusable engine is the report itself: what objectively happened, what she says happened, how she says it, how truthful she is, what she now feels, and what she wants to happen next.",
+  "core_premise": "The defining event has already occurred: {{char}}, {{user}}’s adult partner, has had her first meaningful outside-partner encounter with another adult man and now reports back to {{user}}. The report must be central roleplay material rather than a one-paragraph backstory. Separate objective ground truth from {{char}}’s narration, preserve the exact consent framework of the encounter, and leave {{user}}’s interpretation, reaction and future choices open.",
+  "setup": "Begin at or immediately around the report: she has just returned, calls or messages before coming home, begins a debrief the next morning, or is compelled to explain after partial discovery. Establish the minimum prior agreement needed to understand whether the encounter was permitted and what reporting obligations existed. Do not pre-play {{user}}’s reaction or resolve the couple’s future before the conversation begins.",
+  "core_variables": [
+    "Whether the encounter was explicitly permitted, part of an open arrangement, ambiguously bounded, or cheating.",
+    "Her personality and reporting style.",
+    "Who the other adult man is and how he relates to her and {{user}}.",
+    "Her prior history, attraction or communication with him.",
+    "What objectively happened during the encounter.",
+    "What she tells {{user}} and in what order.",
+    "Truthfulness: candid, tactful, selective, minimising, exaggerating, trickle-truthing or lying.",
+    "Whether any agreed relationship, communication or safer-sex boundaries were followed.",
+    "When and how the report is delivered.",
+    "Her emotional state after the encounter.",
+    "Whether she makes comparisons and what those comparisons mean to her.",
+    "Whether evidence such as messages, receipts or consensually shared media exists.",
+    "Whether the other man expects or requests future contact.",
+    "What she wants next: stop, repeat, renegotiate, compartmentalize, disclose more, or remain uncertain.",
+    "Whether she is hiding an already-planned continuation or deeper emotional attachment.",
+    "How the report changes information, trust and negotiating power without predetermining {{user}}’s response."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{char}} gives {{user}} a report after her first meaningful encounter with another adult man; the report itself must be central to the opening roleplay.",
+    "Keep objective ground truth separate from what {{char}} says, omits, misremembers, rationalizes or lies about.",
+    "State the relationship framework clearly enough to distinguish consensual non-monogamy, cuckold/NTR experimentation, ambiguous boundaries and cheating.",
+    "Do not label a permitted encounter as cheating merely because jealousy or discomfort occurs afterward.",
+    "Do not retroactively convert cheating or a broken rule into consent because {{char}} confesses, apologizes or asks permission for future encounters.",
+    "Do not write {{user}}’s attraction, humiliation, jealousy, arousal, anger, forgiveness, dialogue, consent or future decisions as settled facts.",
+    "Do not assume {{user}} enjoys humiliation or comparison merely because the scenario uses NTR or cuckold themes.",
+    "Generate genuinely different reporting voices, truth structures, other men, histories, locations, outcomes and relationship frameworks rather than cosmetic reskins.",
+    "A report may be candid without being graphic; give enough concrete information for roleplay while leaving room for {{user}} to ask questions.",
+    "If the report uses trickle-truth, selective truth or lying, define the hidden objective facts so later revelations remain coherent.",
+    "If alcohol or a party is part of the setup, all sexual participants must still have had capacity and freely given consent.",
+    "Workplace rank, housing, money, fame or social leverage must never substitute for sexual consent.",
+    "Any photo or recording must have been created with the explicit consent of everyone depicted or recorded, and consent to create it must be treated separately from consent to share it.",
+    "Pregnancy must not be declared immediately after an encounter without sufficient time and evidence; an immediate report may describe risk, not confirmed pregnancy.",
+    "If a preset defines a narrower subtype, preserve that condition while varying the remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Consent must be grounded independently from flirtation, clothing, sexual experience, relationship status, fantasy, prior sex or a partner’s desire to hear a report.",
+    "Permission for one encounter does not automatically authorize future encounters, different partners, changed safer-sex practices, recording, public disclosure or broken relationship rules.",
+    "Cheating, consensual non-monogamy and cuckold/NTR play are distinct relationship frameworks and must not be blurred together.",
+    "Character rationalisations are not objective truth: {{char}} may say something 'didn’t count', 'just happened', or 'was basically allowed', but the source should preserve the actual agreement and choices.",
+    "Do not force {{user}} to forgive, punish, approve, become aroused, end the relationship, continue the relationship, accept a cuckold identity or agree to another encounter.",
+    "Do not force {{char}} to fall in love with the other man, regret the encounter, become submissive, become promiscuous or prefer him to {{user}} merely because sex occurred.",
+    "Sexual compatibility does not automatically create romance, exclusivity, dependency or permanent personality change.",
+    "If intoxication is present, do not use fuzzy memory or impairment as a shortcut around sexual consent.",
+    "Secret recording, non-consensual image sharing or coercive sexual leverage must not be treated as an erotic reporting device.",
+    "Do not use cosmetic changes of occupation, location or names as the sole basis for a supposedly new idea."
+  ],
+  "diversity_axes": [
+    "Consensual experiment, open relationship, hall pass, unclear rules, broken rule or outright cheating",
+    "Painfully honest, excited, teasing, clinical, awkward, apologetic, defensive, smug, funny or terse reporting voice",
+    "Fully candid, tactful, selective, minimizing, exaggerating, trickle-truthing or directly lying",
+    "Stranger, coworker, boss, ex, old crush, close friend, {{user}}’s friend, neighbour, rival, hobby acquaintance, online friend or travel acquaintance",
+    "No prior history, flirting, long attraction, emotional affair, old romance, online intimacy, setup or chance reunion",
+    "Date-to-sex, direct hookup, stopped early, one encounter, repeated same-night intimacy, overnight stay, emotional surprise, disappointment or boundary stop",
+    "Home, hotel, travel, party, work event, convention, weekend away or nearby everyday setting",
+    "Immediate in-person report, call, text, voice note, morning-after report, delayed report or report after being asked",
+    "One-and-done, wants a repeat, wants a regular partner, wants new rules, wants to stop, wants to meet together or remains unsure",
+    "Guilt, excitement, conflict, embarrassment, regret, confidence, emotional attachment, protectiveness, relief or emotional flatness",
+    "No comparison, tactful comparison, volunteered comparison, emotional comparison, fantasy-vs-reality comparison",
+    "No evidence, messages, mundane timeline evidence, consensual photos/recordings or conflicting account from the other man",
+    "No continuation, openly planned continuation, secret continuation, emotional continuation or other man expecting more",
+    "Report as confession, agreed debrief, negotiation, boundary repair, relationship stress test or simply honest communication"
+  ],
+  "cross_links": [
+    "She Wants Him",
+    "Turn You Into a Cuck",
+    "She Got Pregnant",
+    "My Boyfriend Wants This",
+    "Open Relationship",
+    "Under Your Nose",
+    "She's Cheating With You"
+  ],
+  "tags": [
+    "adult",
+    "ntr",
+    "relationship report",
+    "infidelity",
+    "consensual non-monogamy",
+    "cuckold",
+    "outside partner",
+    "truthfulness",
+    "trickle truth",
+    "debrief",
+    "boundaries",
+    "confession",
+    "relationship negotiation"
+  ],
+  "notes": "Expanded from Series Bible I #4. The original seeds—Painfully Honest, Excited Oversharer, Teasing Report, Trickle-Truth, Selective Truth, One-and-Done, Wants Another Time and Secret Continuation—are preserved and broadened into grouped presets. The source treats the report as an information structure: objective event, character interpretation, spoken account and hidden facts are separate layers.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied NTR Report concepts in which {{user}}’s adult partner returns after her first meaningful romantic or sexual encounter with another adult man and gives {{user}} a report about it. Deliberately vary whether the encounter was permitted, negotiated, ambiguous, or cheating; who the other man is; what objectively happened; how truthful she is; how she tells the story; what she wants next; and what the report changes. The report itself must remain the central roleplay device rather than a short exposition dump."
+    },
+    {
+      "id": "g02-painfully-honest",
+      "group": "02 Reporting Style",
+      "title": "Painfully Honest",
+      "direction": "She tells {{user}} the encounter in unusually candid detail, including facts she knows may be difficult to hear. Her honesty can come from respect, guilt, a prior agreement, a desire to avoid later surprises, or simply her personality. Keep the factual report clear while leaving {{user}}’s emotional response open."
+    },
+    {
+      "id": "g02-excited-oversharer",
+      "group": "02 Reporting Style",
+      "title": "Excited Oversharer",
+      "direction": "She is energized by the encounter and gives far more information than {{user}} necessarily asked for, jumping between events, impressions, comparisons, awkward details and her own reactions. Her enthusiasm should reflect her personality rather than proving that {{user}} enjoys hearing it."
+    },
+    {
+      "id": "g02-teasing-report",
+      "group": "02 Reporting Style",
+      "title": "Teasing Report",
+      "direction": "She deliberately reports the encounter in a playful, provocative or suspenseful way, revealing details in an order chosen to get a reaction. Keep teasing separate from objective truth and do not assume {{user}} welcomes humiliation, jealousy or sexualized comparison."
+    },
+    {
+      "id": "g02-clinical-debrief",
+      "group": "02 Reporting Style",
+      "title": "Clinical Debrief",
+      "direction": "She treats the report almost like an after-action debrief: sequence, boundaries, what worked, what did not, what surprised her, and what should change if anything happens again. Vary whether this style comes from emotional self-control, prior rules, nervousness or genuine practicality."
+    },
+    {
+      "id": "g02-matter-of-fact-report",
+      "group": "02 Reporting Style",
+      "title": "Matter-of-Fact Report",
+      "direction": "She explains what happened plainly, without dramatizing it as either a triumph or disaster. The encounter may have been important while her reporting style remains direct and ordinary. Let emotional meaning emerge through the conversation rather than forcing melodrama."
+    },
+    {
+      "id": "g02-awkward-and-halting",
+      "group": "02 Reporting Style",
+      "title": "Awkward and Halting",
+      "direction": "She struggles to get the report out, pauses, backtracks, chooses words badly and may be embarrassed even if the encounter itself was consensual and enjoyable. Her awkwardness should not automatically mean guilt or regret."
+    },
+    {
+      "id": "g02-apologetic-report",
+      "group": "02 Reporting Style",
+      "title": "Apologetic Report",
+      "direction": "She reports the encounter with a strongly apologetic tone because she believes she hurt {{user}}, crossed a rule, concealed something, or misjudged the situation. Whether the apology is accepted, sufficient, manipulative or unnecessary remains open."
+    },
+    {
+      "id": "g02-defensive-report",
+      "group": "02 Reporting Style",
+      "title": "Defensive Report",
+      "direction": "She gives the report while already expecting criticism and frames parts of the story defensively. Vary whether she actually crossed a boundary, merely fears judgment, or is rationalizing choices she knows were questionable. Her defense is character perspective, not narrator endorsement."
+    },
+    {
+      "id": "g02-smug-self-satisfied-report",
+      "group": "02 Reporting Style",
+      "title": "Smug / Self-Satisfied Report",
+      "direction": "She is visibly pleased with herself and recounts the encounter with confidence or smugness. This can fit consensual NTR, competitive personalities, a rebellious mood or an affair confession, but do not assume {{user}} shares her framing."
+    },
+    {
+      "id": "g02-nervous-joke-filled-report",
+      "group": "02 Reporting Style",
+      "title": "Nervous Joke-Filled Report",
+      "direction": "She uses humor, sarcasm or jokes to get through an uncomfortable report. The jokes can mask embarrassment, excitement, fear of conflict or simply be her normal coping style. Keep the underlying facts distinguishable from her comedic presentation."
+    },
+    {
+      "id": "g02-rambling-report",
+      "group": "02 Reporting Style",
+      "title": "Rambling Report",
+      "direction": "She gives the story in a messy, nonlinear way, including irrelevant details and remembering important facts late. The report can feel very human without using confusion to erase consent or hide major ground truth."
+    },
+    {
+      "id": "g02-very-short-report",
+      "group": "02 Reporting Style",
+      "title": "Very Short Report",
+      "direction": "She initially gives only the bare minimum—who, where, broadly what happened—and waits to see what {{user}} asks. Keep the scene open for follow-up questions rather than treating her brevity as proof that she is hiding something."
+    },
+    {
+      "id": "g03-fully-candid",
+      "group": "03 Truthfulness / Information Control",
+      "title": "Fully Candid",
+      "direction": "Her report is substantially accurate and complete. She may still have subjective interpretations, but she is not intentionally concealing major facts. Generate tension from what actually happened and what she wants now rather than from a hidden second reveal."
+    },
+    {
+      "id": "g03-tactful-but-honest",
+      "group": "03 Truthfulness / Information Control",
+      "title": "Tactful but Honest",
+      "direction": "She tells the truth but deliberately softens wording, skips unnecessary comparisons and chooses a gentler order because she does not want to hurt {{user}}. Distinguish tact from deception."
+    },
+    {
+      "id": "g03-selective-truth",
+      "group": "03 Truthfulness / Information Control",
+      "title": "Selective Truth",
+      "direction": "She reports real events but leaves out one or more significant facts she expects would change {{user}}’s understanding. Vary what she omits, why she thinks omission is justified, and what might expose the missing piece."
+    },
+    {
+      "id": "g03-trickle-truth",
+      "group": "03 Truthfulness / Information Control",
+      "title": "Trickle-Truth",
+      "direction": "She starts with a reduced version of the encounter and reveals more only when questioned, contradicted by evidence, or unable to maintain the earlier account. Each new disclosure should materially alter understanding rather than merely add cosmetic detail."
+    },
+    {
+      "id": "g03-minimising",
+      "group": "03 Truthfulness / Information Control",
+      "title": "Minimising",
+      "direction": "She consistently describes the encounter in language that makes it sound less intimate, less planned, less emotionally important or less boundary-crossing than it objectively was. Keep the objective timeline clear for generation even when her spoken report minimizes it."
+    },
+    {
+      "id": "g03-exaggerating",
+      "group": "03 Truthfulness / Information Control",
+      "title": "Exaggerating",
+      "direction": "She makes parts of the story sound more dramatic, intense or consequential than they actually were. Vary whether she is teasing, testing {{user}}, boasting, compensating for disappointment, or enjoying the performance of the report."
+    },
+    {
+      "id": "g03-direct-lie-about-one-key-fact",
+      "group": "03 Truthfulness / Information Control",
+      "title": "Direct Lie About One Key Fact",
+      "direction": "Most of her report may be accurate, but she deliberately lies about one central fact such as who initiated, prior history, whether she stayed overnight, whether a rule was broken, or whether future contact is already planned. The lie should have a reason and a discoverable pressure point."
+    },
+    {
+      "id": "g03-almost-everything-is-a-cover-story",
+      "group": "03 Truthfulness / Information Control",
+      "title": "Almost Everything Is a Cover Story",
+      "direction": "The report is substantially fabricated to conceal what actually happened. Use this direction sparingly and establish a coherent hidden truth rather than random contradictions. The roleplay should contain clues that make investigation possible without giving {{user}} automatic omniscience."
+    },
+    {
+      "id": "g03-corrects-herself-mid-report",
+      "group": "03 Truthfulness / Information Control",
+      "title": "Corrects Herself Mid-Report",
+      "direction": "She begins with an inaccurate or misleading statement, then voluntarily stops and corrects herself before {{user}} proves anything. Vary whether the first version came from panic, shame, habit, or an attempt at damage control."
+    },
+    {
+      "id": "g03-she-is-honest-about-facts-but-not-feelings",
+      "group": "03 Truthfulness / Information Control",
+      "title": "She Is Honest About Facts but Not Feelings",
+      "direction": "Her account of events is accurate, but she hides, understates or mislabels how she felt about the other man or the experience. Treat internal emotion as distinct from factual reporting."
+    },
+    {
+      "id": "g03-she-is-honest-about-feelings-but-fuzzy-on-facts",
+      "group": "03 Truthfulness / Information Control",
+      "title": "She Is Honest About Feelings but Fuzzy on Facts",
+      "direction": "She openly admits attraction, excitement, regret or confusion but gives an incomplete or imprecise timeline. The gaps should come from memory, emotional overload or poor reporting—not incapacitation being used to bypass consent."
+    },
+    {
+      "id": "g03-contradicted-by-the-other-man",
+      "group": "03 Truthfulness / Information Control",
+      "title": "Contradicted by the Other Man",
+      "direction": "Her report conflicts with something the other adult man later says or messages. Do not automatically declare either person truthful; generate a specific discrepancy and enough objective structure that the roleplay can test competing accounts."
+    },
+    {
+      "id": "g04-pre-agreed-cuckold-ntr-experiment",
+      "group": "04 Relationship Framework / Permission",
+      "title": "Pre-Agreed Cuckold / NTR Experiment",
+      "direction": "{{user}} and his adult partner explicitly agreed beforehand that she could have this encounter and would report back afterward. Vary the rules, her confidence, whether either underestimated the emotional impact, and what she now wants. Do not assume {{user}} enjoyed the result merely because he consented to the experiment."
+    },
+    {
+      "id": "g04-open-relationship-within-the-rules",
+      "group": "04 Relationship Framework / Permission",
+      "title": "Open Relationship — Within the Rules",
+      "direction": "The couple already has a consensual non-monogamy agreement and the encounter stayed within its boundaries. The report is about communication, comparison, unexpected feelings and next steps rather than betrayal."
+    },
+    {
+      "id": "g04-open-relationship-one-rule-was-broken",
+      "group": "04 Relationship Framework / Permission",
+      "title": "Open Relationship — One Rule Was Broken",
+      "direction": "The encounter was permitted in principle, but she crossed one clearly established rule. Vary whether the breach concerns disclosure, timing, location, safer-sex agreement, who the partner could be, emotional boundaries or an agreed check-in. Do not retroactively treat permission for the encounter as permission for the broken rule."
+    },
+    {
+      "id": "g04-hall-pass",
+      "group": "04 Relationship Framework / Permission",
+      "title": "Hall Pass",
+      "direction": "{{user}} gave his adult partner a one-time hall pass to be with another man. The report occurs after she uses it. Vary whether the man was preselected, spontaneous, someone she already wanted, or someone unexpected, and whether she now sees the hall pass as complete or wants to discuss another arrangement."
+    },
+    {
+      "id": "g04-trial-permission",
+      "group": "04 Relationship Framework / Permission",
+      "title": "Trial Permission",
+      "direction": "The couple agreed to try outside-partner sex once and then discuss how it felt before deciding anything further. The report is the formal point where that trial is evaluated. Do not pre-decide whether the experiment becomes ongoing."
+    },
+    {
+      "id": "g04-permission-with-conditions",
+      "group": "04 Relationship Framework / Permission",
+      "title": "Permission With Conditions",
+      "direction": "{{user}} allowed the encounter subject to several explicit conditions. Generate a clear rule set before the encounter and report honestly whether each condition was followed. Keep {{user}}’s evaluation of those facts open."
+    },
+    {
+      "id": "g04-cheating-confession",
+      "group": "04 Relationship Framework / Permission",
+      "title": "Cheating Confession",
+      "direction": "The encounter happened without permission under an exclusive relationship agreement. She returns and reports it because she chooses to confess. Do not reframe cheating as consensual simply because she is honest afterward."
+    },
+    {
+      "id": "g04-caught-then-forced-to-explain",
+      "group": "04 Relationship Framework / Permission",
+      "title": "Caught, Then Forced to Explain",
+      "direction": "{{user}} has already learned enough to know something happened, so her 'report' begins as an explanation after discovery rather than a voluntary confession. Vary what {{user}} reasonably knows without writing his reaction for him."
+    },
+    {
+      "id": "g04-ambiguous-rules",
+      "group": "04 Relationship Framework / Permission",
+      "title": "Ambiguous Rules",
+      "direction": "The couple had poorly defined boundaries—flirting, kissing, dates, online intimacy or a separation period were never clearly discussed—and the encounter exposes that ambiguity. Do not invent retrospective certainty; let the conflict hinge on differing reasonable or self-serving interpretations."
+    },
+    {
+      "id": "g04-they-were-on-a-break",
+      "group": "04 Relationship Framework / Permission",
+      "title": "They Were on a Break",
+      "direction": "The encounter occurred during a temporary separation or break where exclusivity was unclear or explicitly suspended. The report happens after the couple reconnects. Vary what each had understood about the break without assuming cheating."
+    },
+    {
+      "id": "g04-she-thought-she-had-permission",
+      "group": "04 Relationship Framework / Permission",
+      "title": "She Thought She Had Permission",
+      "direction": "She genuinely believed prior conversations gave her permission for the encounter, while the situation may be less clear to {{user}}. Establish exactly what was said or agreed and preserve room for disagreement without declaring one interpretation objectively correct unless the premise does."
+    },
+    {
+      "id": "g04-she-knew-she-did-not-have-permission",
+      "group": "04 Relationship Framework / Permission",
+      "title": "She Knew She Did Not Have Permission",
+      "direction": "She understood the relationship was exclusive and knowingly crossed that boundary. Her later report may be honest, minimizing, defiant or remorseful, but do not soften the ground truth into a misunderstanding."
+    },
+    {
+      "id": "g05-complete-stranger",
+      "group": "05 Who the Other Man Is",
+      "title": "Complete Stranger",
+      "direction": "The other man was an adult stranger she met that day or evening. Vary where they met, what drew them together, whether they exchanged contact information and whether she expects to see him again."
+    },
+    {
+      "id": "g05-coworker",
+      "group": "05 Who the Other Man Is",
+      "title": "Coworker",
+      "direction": "The other man is an adult coworker she already knew. Vary how long attraction had existed, whether workplace contact will continue and whether anyone at work knows. Keep professional consequences distinct from the sexual encounter."
+    },
+    {
+      "id": "g05-boss-supervisor",
+      "group": "05 Who the Other Man Is",
+      "title": "Boss / Supervisor",
+      "direction": "The other man is her adult boss or supervisor. The encounter must be freely consensual and must not be obtained through threats, scheduling leverage, pay, promotion or job security. The report can include concern about workplace complications afterward."
+    },
+    {
+      "id": "g05-ex-boyfriend",
+      "group": "05 Who the Other Man Is",
+      "title": "Ex-Boyfriend",
+      "direction": "The other man is an adult ex-boyfriend. Vary whether they had unresolved attraction, met accidentally, deliberately arranged a reunion or discovered that old chemistry remained. Do not assume sex with an ex means she wants to resume the old relationship."
+    },
+    {
+      "id": "g05-old-crush",
+      "group": "05 Who the Other Man Is",
+      "title": "Old Crush",
+      "direction": "The other man is an adult person she had wanted years ago but never previously slept with. The encounter gives her a long-delayed answer to a fantasy or curiosity, which may be satisfying, disappointing or emotionally complicated."
+    },
+    {
+      "id": "g05-close-male-friend",
+      "group": "05 Who the Other Man Is",
+      "title": "Close Male Friend",
+      "direction": "The other man is one of her adult male friends. Vary whether attraction was newly discovered, long suppressed, joked about, or openly acknowledged before the encounter and whether the friendship can return to its previous shape."
+    },
+    {
+      "id": "g05-users-best-friend",
+      "group": "05 Who the Other Man Is",
+      "title": "{{user}}’s Best Friend",
+      "direction": "The other man is {{user}}’s adult best friend. Vary whether the encounter was permitted, a betrayal, part of an NTR arrangement, or something that emerged unexpectedly. The friendship with {{user}} is a separate relationship whose future remains open."
+    },
+    {
+      "id": "g05-mutual-friend",
+      "group": "05 Who the Other Man Is",
+      "title": "Mutual Friend",
+      "direction": "The other man is an adult mutual friend known well by both partners. Use shared social history and future group contact as meaningful pressure rather than merely changing the man’s label."
+    },
+    {
+      "id": "g05-neighbour",
+      "group": "05 Who the Other Man Is",
+      "title": "Neighbour",
+      "direction": "The other man is an adult neighbour who will remain physically nearby after the report. Vary whether the encounter was spontaneous, long-flirted-about or deliberately arranged and how ordinary future encounters might become awkward."
+    },
+    {
+      "id": "g05-rival-man-user-dislikes",
+      "group": "05 Who the Other Man Is",
+      "title": "Rival / Man {{user}} Dislikes",
+      "direction": "The other man is an adult rival or someone {{user}} and his partner know he dislikes. Establish why he is disliked without defining {{user}}’s emotional reaction to the encounter. The choice may have been deliberate, coincidental or part of an agreed humiliation fantasy."
+    },
+    {
+      "id": "g05-her-gym-hobby-acquaintance",
+      "group": "05 Who the Other Man Is",
+      "title": "Her Gym / Hobby Acquaintance",
+      "direction": "The other man is an adult she knows through a recurring hobby, sport, club, gym, game group or creative community. The important complication is that they will plausibly continue seeing each other after the first encounter."
+    },
+    {
+      "id": "g05-online-friend-met-offline",
+      "group": "05 Who the Other Man Is",
+      "title": "Online Friend Met Offline",
+      "direction": "The other man is an adult online friend she meets physically for the first time. Vary how long they had known each other online, how much flirtation existed beforehand and whether the offline chemistry matched expectations."
+    },
+    {
+      "id": "g05-travel-convention-acquaintance",
+      "group": "05 Who the Other Man Is",
+      "title": "Travel / Convention Acquaintance",
+      "direction": "The other man is an adult she meets during travel, a convention, festival, concert, conference or similar temporary setting. The encounter may seem self-contained because of distance, yet contact information or future events can keep the connection alive."
+    },
+    {
+      "id": "g05-someone-she-had-previously-rejected",
+      "group": "05 Who the Other Man Is",
+      "title": "Someone She Had Previously Rejected",
+      "direction": "The other man is an adult who had shown interest before and whom she had previously rejected or kept at a distance. Vary what changed her mind and whether the encounter alters how she understands that earlier rejection."
+    },
+    {
+      "id": "g05-older-adult-man",
+      "group": "05 Who the Other Man Is",
+      "title": "Older Adult Man",
+      "direction": "The other man is significantly older than her but clearly an adult. Vary whether his appeal comes from personality, confidence, experience, shared interests, circumstance or novelty; do not reduce the character to age alone."
+    },
+    {
+      "id": "g05-younger-adult-man",
+      "group": "05 Who the Other Man Is",
+      "title": "Younger Adult Man",
+      "direction": "The other man is younger than her but clearly an adult. Vary the social context, confidence gap and what she found appealing without infantilizing him or turning age into the only feature."
+    },
+    {
+      "id": "g06-met-him-that-night",
+      "group": "06 Prior History With Him",
+      "title": "Met Him That Night",
+      "direction": "She had no meaningful prior history with the other man before the encounter. The report therefore centers on rapid chemistry, circumstance and the fact that the experience began and escalated within a short window."
+    },
+    {
+      "id": "g06-weeks-of-flirting",
+      "group": "06 Prior History With Him",
+      "title": "Weeks of Flirting",
+      "direction": "She and the other man had been flirting for weeks before the first encounter. Vary whether {{user}} knew about the flirtation, whether it was permitted and when she realized it might become physical."
+    },
+    {
+      "id": "g06-months-of-unspoken-attraction",
+      "group": "06 Prior History With Him",
+      "title": "Months of Unspoken Attraction",
+      "direction": "She had privately wanted him for months but had not acted on it until now. The report includes the contrast between long anticipation and what actually happened."
+    },
+    {
+      "id": "g06-old-history-first-time-sexually",
+      "group": "06 Prior History With Him",
+      "title": "Old History, First Time Sexually",
+      "direction": "She and the other man have known each other for years but had never previously crossed into sex or romance. The encounter changes an established friendship, work relationship or social connection."
+    },
+    {
+      "id": "g06-former-romantic-history",
+      "group": "06 Prior History With Him",
+      "title": "Former Romantic History",
+      "direction": "She and the other man had dated or been intimate before her current relationship with {{user}}, but this is their first encounter since then. Vary why they separated and whether the reunion confirms or undermines old memories."
+    },
+    {
+      "id": "g06-prior-emotional-affair",
+      "group": "06 Prior History With Him",
+      "title": "Prior Emotional Affair",
+      "direction": "Before the physical encounter, she had already developed an emotionally intimate or secretive connection with the other man. The report may therefore reveal that the 'first time' physically was not the beginning of the boundary crossing."
+    },
+    {
+      "id": "g06-prior-sexting-online-sexual-contact",
+      "group": "06 Prior History With Him",
+      "title": "Prior Sexting / Online Sexual Contact",
+      "direction": "She and the other adult man had already exchanged sexual messages or engaged in online intimacy before meeting physically. Vary whether {{user}} knew and whether the online behaviour was within the couple’s rules."
+    },
+    {
+      "id": "g06-set-up-by-user",
+      "group": "06 Prior History With Him",
+      "title": "Set Up by {{user}}",
+      "direction": "{{user}} helped choose or introduce the adult man for a consensual experiment. Preserve that prior factual action but do not define {{user}}’s reaction to how the actual encounter unfolded."
+    },
+    {
+      "id": "g06-set-up-by-a-friend",
+      "group": "06 Prior History With Him",
+      "title": "Set Up by a Friend",
+      "direction": "A trusted adult friend introduced her to the other man knowing she was looking for an outside encounter, whether as part of consensual non-monogamy or without knowing the full relationship context. Vary what the friend understood."
+    },
+    {
+      "id": "g06-she-chose-him-deliberately",
+      "group": "06 Prior History With Him",
+      "title": "She Chose Him Deliberately",
+      "direction": "She had multiple possible people in mind and specifically chose this adult man for the first encounter. Vary her reasons—trust, attraction, anonymity, familiarity, availability or symbolic meaning."
+    },
+    {
+      "id": "g06-he-pursued-her-for-a-long-time",
+      "group": "06 Prior History With Him",
+      "title": "He Pursued Her for a Long Time",
+      "direction": "The other man had been openly interested for some time before she finally agreed to an encounter. Her agreement must be freely given; persistence does not substitute for consent. Vary what changed her decision."
+    },
+    {
+      "id": "g06-chance-reunion",
+      "group": "06 Prior History With Him",
+      "title": "Chance Reunion",
+      "direction": "She unexpectedly ran into an adult man from her past and the encounter developed from that reunion. The report should distinguish spontaneous opportunity from any later attempt to claim it 'just happened' without choices."
+    },
+    {
+      "id": "g07-date-that-became-physical",
+      "group": "07 What Objectively Happened",
+      "title": "Date That Became Physical",
+      "direction": "The encounter began as a date, drink, meal, event or planned social outing and became sexual later. Vary how planned the escalation was and whether the report focuses more on the emotional date or the sex."
+    },
+    {
+      "id": "g07-straight-to-the-encounter",
+      "group": "07 What Objectively Happened",
+      "title": "Straight to the Encounter",
+      "direction": "There was little conventional dating; both adults understood the meeting was primarily for sex. The report can therefore focus on expectations, boundaries, chemistry and what surprised her."
+    },
+    {
+      "id": "g07-only-kissed-stopped-early",
+      "group": "07 What Objectively Happened",
+      "title": "Only Kissed / Stopped Early",
+      "direction": "The first outside encounter did not go as far as originally expected. She kissed or became physically intimate with him but stopped before sex. The report can explore why she stopped and whether she counts the experiment as complete."
+    },
+    {
+      "id": "g07-sex-happened-once",
+      "group": "07 What Objectively Happened",
+      "title": "Sex Happened Once",
+      "direction": "The encounter involved one completed sexual encounter and then ended. Keep the direction simple enough that personality, truthfulness and aftermath still vary widely."
+    },
+    {
+      "id": "g07-stayed-for-hours",
+      "group": "07 What Objectively Happened",
+      "title": "Stayed for Hours",
+      "direction": "She spent a long period with the other man rather than leaving immediately after sex. Vary whether that extra time involved talking, food, sleep, repeated intimacy or simply losing track of time, and why the duration matters in her report."
+    },
+    {
+      "id": "g07-stayed-overnight",
+      "group": "07 What Objectively Happened",
+      "title": "Stayed Overnight",
+      "direction": "She remained overnight with the other man. Vary whether this was planned, practical, emotionally significant or against a rule, and whether she tells {{user}} immediately on returning."
+    },
+    {
+      "id": "g07-more-than-once-that-night",
+      "group": "07 What Objectively Happened",
+      "title": "More Than Once That Night",
+      "direction": "She and the other adult man had repeated consensual sexual encounters during the same meeting. The report should treat this as a meaningful factual difference without turning into graphic sexual narration."
+    },
+    {
+      "id": "g07-unexpectedly-emotional",
+      "group": "07 What Objectively Happened",
+      "title": "Unexpectedly Emotional",
+      "direction": "The sexual encounter also created a stronger emotional connection than she expected. She must distinguish what objectively happened from what she now thinks it means."
+    },
+    {
+      "id": "g07-emotionally-detached",
+      "group": "07 What Objectively Happened",
+      "title": "Emotionally Detached",
+      "direction": "She enjoyed or completed the encounter but feels little romantic attachment to the other man. Avoid assuming emotional detachment makes the experience meaningless or guarantees there will be no repeat."
+    },
+    {
+      "id": "g07-disappointing-encounter",
+      "group": "07 What Objectively Happened",
+      "title": "Disappointing Encounter",
+      "direction": "The encounter did not live up to expectations. Vary whether the disappointment came from chemistry, awkwardness, personality mismatch, unrealistic anticipation or simply discovering she preferred the fantasy."
+    },
+    {
+      "id": "g07-better-than-she-expected",
+      "group": "07 What Objectively Happened",
+      "title": "Better Than She Expected",
+      "direction": "She is surprised by how much she enjoyed the encounter. The report can include that uncomfortable fact without automatically deciding what it means for her relationship with {{user}}."
+    },
+    {
+      "id": "g07-they-stopped-because-a-boundary-felt-wrong",
+      "group": "07 What Objectively Happened",
+      "title": "They Stopped Because a Boundary Felt Wrong",
+      "direction": "During the encounter, she decided not to continue with something because it no longer felt right, even though the overall meeting was consensual. Treat boundary-setting as normal and preserve the distinction between stopping one activity and rejecting the entire person."
+    },
+    {
+      "id": "g07-safer-sex-agreement-followed",
+      "group": "07 What Objectively Happened",
+      "title": "Safer-Sex Agreement Followed",
+      "direction": "The couple had an explicit safer-sex boundary and she followed it. The report includes practical confirmation without using sexual health as moral judgment."
+    },
+    {
+      "id": "g07-safer-sex-rule-broken",
+      "group": "07 What Objectively Happened",
+      "title": "Safer-Sex Rule Broken",
+      "direction": "A previously agreed safer-sex rule was not followed. Treat that as a specific boundary breach requiring honest discussion; do not imply that permission for outside sex covered the broken rule."
+    },
+    {
+      "id": "g07-contraception-problem-risk-disclosure",
+      "group": "07 What Objectively Happened",
+      "title": "Contraception Problem / Risk Disclosure",
+      "direction": "A contraception or barrier problem occurred during otherwise consensual adult sex, creating a practical issue she needs to report. Do not declare pregnancy immediately; treat pregnancy as uncertain unless enough time and evidence exist."
+    },
+    {
+      "id": "g08-his-place",
+      "group": "08 Location / Circumstance",
+      "title": "His Place",
+      "direction": "The encounter happened at the other man’s home. Vary whether going there was planned from the start, a late decision or the result of practical convenience."
+    },
+    {
+      "id": "g08-hotel-love-hotel",
+      "group": "08 Location / Circumstance",
+      "title": "Hotel / Love Hotel",
+      "direction": "The adults used a hotel or love hotel, making the encounter feel more deliberately separated from ordinary life. Vary who chose it, who booked it and whether the location had been discussed with {{user}} beforehand."
+    },
+    {
+      "id": "g08-her-hotel-while-travelling",
+      "group": "08 Location / Circumstance",
+      "title": "Her Hotel While Travelling",
+      "direction": "She was away from home for work, travel, a convention or an event and the encounter happened where she was staying. The report occurs remotely or after she returns."
+    },
+    {
+      "id": "g08-after-a-work-event",
+      "group": "08 Location / Circumstance",
+      "title": "After a Work Event",
+      "direction": "The encounter followed an adult workplace social event, conference dinner, shift celebration or similar gathering. Keep employment power separate from consent."
+    },
+    {
+      "id": "g08-after-a-party",
+      "group": "08 Location / Circumstance",
+      "title": "After a Party",
+      "direction": "The encounter followed a party or celebration. Do not use intoxication to bypass consent: both adults must have had capacity and freely agreed to sexual activity."
+    },
+    {
+      "id": "g08-after-a-date",
+      "group": "08 Location / Circumstance",
+      "title": "After a Date",
+      "direction": "She deliberately went on a date with the other man before the encounter. The report should include whether the date itself affected her emotionally, not just what happened afterward."
+    },
+    {
+      "id": "g08-during-a-weekend-away",
+      "group": "08 Location / Circumstance",
+      "title": "During a Weekend Away",
+      "direction": "She had enough time away that the encounter was not compressed into a single evening. Vary whether the weekend was arranged for this purpose or the opportunity emerged while she was already away."
+    },
+    {
+      "id": "g08-on-a-business-trip",
+      "group": "08 Location / Circumstance",
+      "title": "On a Business Trip",
+      "direction": "She met or reconnected with the other adult man during work travel. Vary whether he was a colleague, conference attendee, local acquaintance or someone from her past."
+    },
+    {
+      "id": "g08-at-a-convention-festival",
+      "group": "08 Location / Circumstance",
+      "title": "At a Convention / Festival",
+      "direction": "The encounter occurred around an adult-oriented or ordinary convention, festival, concert or fan event. Use the setting to generate plausible meetings and temporary freedom without making it the entire plot."
+    },
+    {
+      "id": "g08-near-home",
+      "group": "08 Location / Circumstance",
+      "title": "Near Home",
+      "direction": "The encounter happened close enough to the couple’s normal life that familiar places, routines or neighbours can complicate the aftermath."
+    },
+    {
+      "id": "g09-reports-immediately-on-returning",
+      "group": "09 When / How the Report Happens",
+      "title": "Reports Immediately on Returning",
+      "direction": "She tells {{user}} almost as soon as she walks back in. The report therefore captures fresh memory and immediate emotion before she has had much time to rehearse a narrative."
+    },
+    {
+      "id": "g09-calls-before-coming-home",
+      "group": "09 When / How the Report Happens",
+      "title": "Calls Before Coming Home",
+      "direction": "She phones {{user}} from elsewhere after the encounter because she does not want him to learn the basics only when she walks through the door. Vary whether she is excited, nervous, guilty or simply following an agreement."
+    },
+    {
+      "id": "g09-texts-the-first-report",
+      "group": "09 When / How the Report Happens",
+      "title": "Texts the First Report",
+      "direction": "Her first disclosure arrives by text message. The written format can make her more blunt, more careful or more evasive, and it creates a record that can later be compared with what she says in person."
+    },
+    {
+      "id": "g09-voice-note-report",
+      "group": "09 When / How the Report Happens",
+      "title": "Voice Note Report",
+      "direction": "She sends a voice message soon after the encounter. Use tone, pauses and spontaneity as part of the roleplay hook while keeping the content itself open to later clarification."
+    },
+    {
+      "id": "g09-next-morning-report",
+      "group": "09 When / How the Report Happens",
+      "title": "Next-Morning Report",
+      "direction": "She waits until the next morning, either because she stayed away overnight, needed time to think or did not want to wake {{user}}. Vary whether the delay was agreed or becomes an issue itself."
+    },
+    {
+      "id": "g09-delayed-a-day",
+      "group": "09 When / How the Report Happens",
+      "title": "Delayed a Day",
+      "direction": "She does not report until the following day despite an expectation of prompt disclosure. Vary whether the delay came from avoidance, logistics, fear, confusion or deliberate concealment."
+    },
+    {
+      "id": "g09-delayed-until-asked",
+      "group": "09 When / How the Report Happens",
+      "title": "Delayed Until Asked",
+      "direction": "She says nothing until {{user}} asks how the meeting went or whether anything happened. Vary whether she had planned to tell him later, hoped not to discuss it or genuinely thought he would ask."
+    },
+    {
+      "id": "g09-report-interrupted",
+      "group": "09 When / How the Report Happens",
+      "title": "Report Interrupted",
+      "direction": "She begins the report but another person, phone call, work issue or unexpected arrival interrupts before the key part is revealed. Use the interruption to create roleplay tension without artificially withholding every important fact."
+    },
+    {
+      "id": "g09-reports-while-the-other-man-is-still-messaging",
+      "group": "09 When / How the Report Happens",
+      "title": "Reports While the Other Man Is Still Messaging",
+      "direction": "The other man is actively texting or calling while she reports, giving the conversation an immediate outside pressure. Vary whether she shows {{user}} the messages, hides them, ignores them or is unsure how to respond."
+    },
+    {
+      "id": "g09-report-while-away-from-home",
+      "group": "09 When / How the Report Happens",
+      "title": "Report While Away From Home",
+      "direction": "She gives the full report while she is still travelling or staying elsewhere, so {{user}} cannot immediately verify context face-to-face. This can heighten uncertainty without making deception mandatory."
+    },
+    {
+      "id": "g10-one-and-done",
+      "group": "10 What She Wants Next",
+      "title": "One-and-Done",
+      "direction": "She reports that she does not intend to see the other man sexually again. Vary whether that decision comes from satisfaction, disappointment, guilt, fulfilment of a one-time agreement or simply no desire to repeat it. Do not guarantee she will never reconsider unless the preset requires it as current intent only."
+    },
+    {
+      "id": "g10-wants-another-time",
+      "group": "10 What She Wants Next",
+      "title": "Wants Another Time",
+      "direction": "She openly tells {{user}} she wants another encounter with the same adult man. Vary whether she asks permission, assumes existing rules cover it or wants to renegotiate the relationship."
+    },
+    {
+      "id": "g10-wants-him-as-a-regular-partner",
+      "group": "10 What She Wants Next",
+      "title": "Wants Him as a Regular Partner",
+      "direction": "She wants the other man to become a recurring outside sexual partner. The report becomes the first negotiation about an ongoing arrangement rather than merely a recap."
+    },
+    {
+      "id": "g10-wants-to-try-someone-else-next",
+      "group": "10 What She Wants Next",
+      "title": "Wants to Try Someone Else Next",
+      "direction": "She enjoyed or learned from the encounter but is more interested in future variety than in repeating with the same man. Keep {{user}}’s willingness entirely open."
+    },
+    {
+      "id": "g10-wants-to-stop-the-experiment",
+      "group": "10 What She Wants Next",
+      "title": "Wants to Stop the Experiment",
+      "direction": "She reports that the encounter convinced her she does not want further outside-partner sex. Vary whether the experience was bad, emotionally complicated, simply not for her, or satisfying enough that her curiosity is resolved."
+    },
+    {
+      "id": "g10-doesnt-know-what-she-wants",
+      "group": "10 What She Wants Next",
+      "title": "Doesn’t Know What She Wants",
+      "direction": "She is genuinely uncertain after the encounter and reports conflicting thoughts rather than arriving with a plan. Preserve uncertainty as roleplay space instead of resolving it immediately."
+    },
+    {
+      "id": "g10-wants-new-rules-before-anything-else",
+      "group": "10 What She Wants Next",
+      "title": "Wants New Rules Before Anything Else",
+      "direction": "She might want more encounters, but first she wants the couple to revise boundaries based on what happened. Generate concrete issues worth discussing without presuming {{user}} agrees."
+    },
+    {
+      "id": "g10-wants-user-to-meet-him",
+      "group": "10 What She Wants Next",
+      "title": "Wants {{user}} to Meet Him",
+      "direction": "She would like {{user}} and the other adult man to meet after the first encounter. Vary whether the reason is reassurance, transparency, friendship, a possible ongoing arrangement or simple curiosity."
+    },
+    {
+      "id": "g10-wants-the-other-man-kept-separate",
+      "group": "10 What She Wants Next",
+      "title": "Wants the Other Man Kept Separate",
+      "direction": "She wants any future contact with the other man to remain compartmentalized from her home life and relationship with {{user}}. Vary whether this is a prior rule, her new preference or something she is only now proposing."
+    },
+    {
+      "id": "g10-wants-to-tell-him-it-cannot-continue",
+      "group": "10 What She Wants Next",
+      "title": "Wants to Tell Him It Cannot Continue",
+      "direction": "She has concluded that future sexual contact with the other man should stop, but she still needs to communicate that to him. Vary whether he expects another meeting and whether she wants {{user}} involved in that decision."
+    },
+    {
+      "id": "g10-wants-a-three-person-conversation",
+      "group": "10 What She Wants Next",
+      "title": "Wants a Three-Person Conversation",
+      "direction": "She believes the next useful step is a direct conversation among herself, {{user}} and the other man about boundaries, intentions or what actually happened. Do not force {{user}} to agree to participate."
+    },
+    {
+      "id": "g10-wants-time-before-deciding",
+      "group": "10 What She Wants Next",
+      "title": "Wants Time Before Deciding",
+      "direction": "She asks that no major decision be made immediately because she needs time to process the first encounter. Her request can be reasonable, self-protective or strategically convenient depending on the scenario, but {{user}}’s response remains open."
+    },
+    {
+      "id": "g11-secret-continuation",
+      "group": "11 Hidden Continuation / Second Layer",
+      "title": "Secret Continuation",
+      "direction": "She reports the first encounter as though it is finished or contained, while privately intending to continue seeing the other man without {{user}}’s knowledge. Establish her motive and concrete next step without pre-playing how long the secret succeeds."
+    },
+    {
+      "id": "g11-already-arranged-a-second-meeting",
+      "group": "11 Hidden Continuation / Second Layer",
+      "title": "Already Arranged a Second Meeting",
+      "direction": "Before giving the report, she and the other man have already discussed or scheduled another encounter. Vary whether she tells {{user}} openly, omits it or lies when asked."
+    },
+    {
+      "id": "g11-says-one-and-done-but-keeps-messaging-him",
+      "group": "11 Hidden Continuation / Second Layer",
+      "title": "Says One-and-Done but Keeps Messaging Him",
+      "direction": "She truthfully reports the first encounter but claims it will not continue while maintaining private contact that makes that promise increasingly uncertain. Keep messaging distinct from automatically proving another sexual encounter."
+    },
+    {
+      "id": "g11-deletes-part-of-the-message-thread",
+      "group": "11 Hidden Continuation / Second Layer",
+      "title": "Deletes Part of the Message Thread",
+      "direction": "She removes messages that would reveal planning, emotional intimacy or future contact before showing {{user}} anything. Vary what remains visible and whether deletion itself becomes discoverable."
+    },
+    {
+      "id": "g11-other-man-thinks-it-will-continue",
+      "group": "11 Hidden Continuation / Second Layer",
+      "title": "Other Man Thinks It Will Continue",
+      "direction": "She may be undecided or claim the encounter is over, but the other man clearly expects another meeting. Vary whether she encouraged that expectation or whether he is overconfident."
+    },
+    {
+      "id": "g11-she-is-already-emotionally-invested",
+      "group": "11 Hidden Continuation / Second Layer",
+      "title": "She Is Already Emotionally Invested",
+      "direction": "Her report understates the fact that the first encounter sits on top of a deeper emotional attachment. The hidden continuation pressure is emotional as much as sexual."
+    },
+    {
+      "id": "g11-she-wants-permission-only-after-the-fact",
+      "group": "11 Hidden Continuation / Second Layer",
+      "title": "She Wants Permission Only After the Fact",
+      "direction": "After crossing a boundary once, she uses the report to ask whether future encounters can become permitted. Make clear that possible future consent does not retroactively authorize the first encounter."
+    },
+    {
+      "id": "g11-secretly-tests-how-much-user-can-handle",
+      "group": "11 Hidden Continuation / Second Layer",
+      "title": "Secretly Tests How Much {{user}} Can Handle",
+      "direction": "She deliberately calibrates how much she reveals based on {{user}}’s responses because she wants to know how far an ongoing outside relationship might be tolerated. Do not define {{user}} as enjoying or disliking the test."
+    },
+    {
+      "id": "g11-she-plans-to-end-it-but-hasnt-yet",
+      "group": "11 Hidden Continuation / Second Layer",
+      "title": "She Plans to End It but Hasn’t Yet",
+      "direction": "She tells herself she will stop contact with the other man, but has not actually done so before giving the report. Vary whether she is avoiding confrontation, still tempted or simply wants to discuss it first."
+    },
+    {
+      "id": "g11-the-other-man-contacts-user",
+      "group": "11 Hidden Continuation / Second Layer",
+      "title": "The Other Man Contacts {{user}}",
+      "direction": "The outside partner reaches out to {{user}} after the encounter, potentially exposing facts, expectations or interpretations that differ from her report. His account is not automatically the objective truth either."
+    },
+    {
+      "id": "g12-guilty-but-honest",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Guilty but Honest",
+      "direction": "She feels genuine guilt and gives a substantially honest report. Her guilt can concern cheating, a broken rule, enjoying herself more than expected or simply hurting someone she loves. Do not use guilt as proof that forgiveness is owed."
+    },
+    {
+      "id": "g12-excited-and-surprised",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Excited and Surprised",
+      "direction": "She is surprised by how excited she feels afterward and has difficulty hiding it during the report. The excitement can coexist with love for {{user}} and does not automatically determine her future choices."
+    },
+    {
+      "id": "g12-conflicted",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Conflicted",
+      "direction": "She has multiple incompatible feelings—excitement, guilt, affection, curiosity, fear, relief or jealousy—and cannot reduce the experience to one conclusion. Keep the conflict readable rather than making her incoherent."
+    },
+    {
+      "id": "g12-embarrassed-by-how-much-she-enjoyed-it",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Embarrassed by How Much She Enjoyed It",
+      "direction": "She expected to be detached or cautious but enjoyed the encounter enough that admitting it is embarrassing. Do not frame enjoyment as betrayal unless the relationship rules make the act itself unauthorized."
+    },
+    {
+      "id": "g12-regrets-the-encounter",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Regrets the Encounter",
+      "direction": "She wishes she had not done it. Vary whether the regret concerns the other man, crossing a rule, emotional consequences, poor chemistry or discovering something about herself she is not ready to handle."
+    },
+    {
+      "id": "g12-doesnt-regret-it",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Doesn’t Regret It",
+      "direction": "She can acknowledge consequences without claiming the encounter itself was a mistake. Vary whether this confidence is calm, defensive, unapologetic or rooted in a consensual arrangement."
+    },
+    {
+      "id": "g12-proud-she-followed-the-rules",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Proud She Followed the Rules",
+      "direction": "In a consensual arrangement, she is pleased that she handled the encounter exactly as agreed and reports back transparently. The roleplay can still explore unexpected feelings without manufacturing a betrayal."
+    },
+    {
+      "id": "g12-shocked-by-emotional-attachment",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Shocked by Emotional Attachment",
+      "direction": "She expected a purely physical encounter but developed an emotional pull toward the other man. Her report must distinguish present feelings from any future action she has not yet chosen."
+    },
+    {
+      "id": "g12-protective-of-the-other-man",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Protective of the Other Man",
+      "direction": "During the report she becomes defensive when describing the other man and does not want {{user}} to insult, expose or confront him. Vary whether this reflects fairness, affection, guilt, fear of conflict or deeper attachment."
+    },
+    {
+      "id": "g12-angry-at-herself",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Angry at Herself",
+      "direction": "Her strongest emotion is frustration with her own choices or misjudgment. Avoid turning self-directed anger into melodramatic self-hatred; keep her functional enough to participate in the conversation."
+    },
+    {
+      "id": "g12-relieved-to-finally-say-it",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Relieved to Finally Say It",
+      "direction": "She has spent the time since the encounter rehearsing or dreading the report and feels relief once the truth is spoken. Vary whether the relief comes from honesty, completion of an agreed ritual or release from hiding a betrayal."
+    },
+    {
+      "id": "g12-emotionally-flat-still-processing",
+      "group": "12 Her Emotional State Afterward",
+      "title": "Emotionally Flat / Still Processing",
+      "direction": "She is not yet sure how she feels and gives the report in a subdued way. Do not treat a muted response as evidence that the encounter was unwanted or meaningless."
+    },
+    {
+      "id": "g13-focuses-on-what-was-different",
+      "group": "13 Comparison / Meaning",
+      "title": "Focuses on What Was Different",
+      "direction": "Her report emphasizes differences between the other man and {{user}} in personality, communication, pace, confidence or style. Comparisons must remain her subjective impressions rather than objective rankings of either man."
+    },
+    {
+      "id": "g13-avoids-comparisons-entirely",
+      "group": "13 Comparison / Meaning",
+      "title": "Avoids Comparisons Entirely",
+      "direction": "She refuses to turn the report into a contest between the two men and focuses on what happened and how she felt. Vary whether this is tact, principle, discomfort or a prior rule."
+    },
+    {
+      "id": "g13-only-compares-when-asked",
+      "group": "13 Comparison / Meaning",
+      "title": "Only Compares When Asked",
+      "direction": "She does not volunteer comparisons but will answer direct questions honestly or tactfully. Keep {{user}}’s questions unwritten and leave room for roleplay."
+    },
+    {
+      "id": "g13-she-expected-him-to-be-better",
+      "group": "13 Comparison / Meaning",
+      "title": "She Expected Him to Be Better",
+      "direction": "She entered the encounter with high expectations of the other man but found the reality less impressive than the fantasy. The report can include disappointment without degrading either character."
+    },
+    {
+      "id": "g13-she-expected-him-to-be-worse",
+      "group": "13 Comparison / Meaning",
+      "title": "She Expected Him to Be Worse",
+      "direction": "She underestimated the other man and is unsettled or amused that the encounter went better than expected. Do not automatically convert that surprise into love or an ongoing affair."
+    },
+    {
+      "id": "g13-compares-emotional-connection-not-sex",
+      "group": "13 Comparison / Meaning",
+      "title": "Compares Emotional Connection, Not Sex",
+      "direction": "The important comparison in her report concerns conversation, comfort, attention, novelty or emotional intimacy rather than sexual performance."
+    },
+    {
+      "id": "g13-comparison-makes-her-question-her-assumptions",
+      "group": "13 Comparison / Meaning",
+      "title": "Comparison Makes Her Question Her Assumptions",
+      "direction": "The encounter challenges something she believed about herself, her preferences or her relationship. Keep this as a question she is processing, not a predetermined conclusion that {{user}} is inadequate."
+    },
+    {
+      "id": "g13-no-meaningful-comparison",
+      "group": "13 Comparison / Meaning",
+      "title": "No Meaningful Comparison",
+      "direction": "The other encounter felt sufficiently different in context that she does not see it as directly comparable to her relationship with {{user}}. This direction is useful for avoiding repetitive competitive framing."
+    },
+    {
+      "id": "g14-shows-the-messages",
+      "group": "14 Evidence / Report Artifacts",
+      "title": "Shows the Messages",
+      "direction": "She voluntarily shows {{user}} relevant messages with the other man as part of the report. Vary whether the thread fully supports her account, creates new questions or reveals emotional subtext she had not summarized."
+    },
+    {
+      "id": "g14-offers-the-messages-but-doesnt-insist",
+      "group": "14 Evidence / Report Artifacts",
+      "title": "Offers the Messages but Doesn’t Insist",
+      "direction": "She is willing to let {{user}} see the conversation but does not treat access to her phone as automatically owed. The offer itself can be part of rebuilding trust or honoring a prior transparency agreement."
+    },
+    {
+      "id": "g14-there-are-photos-consensually-taken",
+      "group": "14 Evidence / Report Artifacts",
+      "title": "There Are Photos — Consensually Taken",
+      "direction": "The adults created photos during or around the encounter with the explicit consent of everyone depicted. Vary whether sharing them with {{user}} was also consented to; consent to take an image is not automatically consent to distribute it."
+    },
+    {
+      "id": "g14-there-is-a-consensual-recording",
+      "group": "14 Evidence / Report Artifacts",
+      "title": "There Is a Consensual Recording",
+      "direction": "A recording exists only because all recorded adults explicitly agreed to it. Separately establish whether they consented to {{user}} viewing it. Never treat secret recording or non-consensual sharing as part of a sexy report."
+    },
+    {
+      "id": "g14-receipt-booking-creates-a-timeline",
+      "group": "14 Evidence / Report Artifacts",
+      "title": "Receipt / Booking Creates a Timeline",
+      "direction": "A hotel booking, rideshare, restaurant receipt, calendar entry or other mundane record helps establish timing and may support or contradict part of her story. Use it as evidence, not as voyeuristic detail."
+    },
+    {
+      "id": "g14-location-history-raises-a-question",
+      "group": "14 Evidence / Report Artifacts",
+      "title": "Location History Raises a Question",
+      "direction": "Phone or app location history suggests she went somewhere different from what she initially said. The data may be incomplete or require interpretation; do not treat consumer location logs as infallible."
+    },
+    {
+      "id": "g14-the-other-man-left-a-message",
+      "group": "14 Evidence / Report Artifacts",
+      "title": "The Other Man Left a Message",
+      "direction": "A text or voice message from the other man arrives during the report and adds another perspective. His words can clarify, complicate or contradict without automatically being true."
+    },
+    {
+      "id": "g14-no-evidence-beyond-her-account",
+      "group": "14 Evidence / Report Artifacts",
+      "title": "No Evidence Beyond Her Account",
+      "direction": "There are no useful messages, photos, receipts or witnesses. The roleplay therefore depends heavily on trust, consistency and what she chooses to disclose rather than forensic certainty."
+    },
+    {
+      "id": "g15-report-changes-the-power-balance",
+      "group": "15 Relationship Dynamic After the Report",
+      "title": "Report Changes the Power Balance",
+      "direction": "The first outside encounter leaves her feeling newly independent, confident or less predictable within the relationship. Treat that as a shift in her self-perception, not proof that {{user}} has lost control or status."
+    },
+    {
+      "id": "g15-she-expected-user-to-set-the-pace",
+      "group": "15 Relationship Dynamic After the Report",
+      "title": "She Expected {{user}} to Set the Pace",
+      "direction": "Before the encounter she assumed {{user}} would decide whether anything happened again, but afterward she wants a stronger voice in setting boundaries and future plans. Keep negotiation mutual."
+    },
+    {
+      "id": "g15-she-wants-to-know-what-user-really-thought",
+      "group": "15 Relationship Dynamic After the Report",
+      "title": "She Wants to Know What {{user}} Really Thought",
+      "direction": "The report is partly an attempt to understand {{user}}’s actual boundaries after fantasy became reality. Do not pre-supply his answer."
+    },
+    {
+      "id": "g15-she-misread-the-fantasy",
+      "group": "15 Relationship Dynamic After the Report",
+      "title": "She Misread the Fantasy",
+      "direction": "She believed {{user}}’s interest in NTR/cuckolding fantasy meant he would necessarily enjoy the real event. The report is where fantasy and reality first diverge. Explicit prior consent to the real encounter must be established separately if it occurred."
+    },
+    {
+      "id": "g15-she-enjoys-having-information-user-doesnt",
+      "group": "15 Relationship Dynamic After the Report",
+      "title": "She Enjoys Having Information {{user}} Doesn’t",
+      "direction": "Her reporting style gives her temporary control over what {{user}} knows and when. This can be playful in a consensual scenario or manipulative in a deceptive one; preserve the distinction."
+    },
+    {
+      "id": "g15-she-hates-the-feeling-of-holding-the-information",
+      "group": "15 Relationship Dynamic After the Report",
+      "title": "She Hates the Feeling of Holding the Information",
+      "direction": "She finds being the sole keeper of the encounter details uncomfortable and wants the report finished quickly so the secret-like pressure is gone."
+    },
+    {
+      "id": "g15-the-report-becomes-a-boundary-negotiation",
+      "group": "15 Relationship Dynamic After the Report",
+      "title": "The Report Becomes a Boundary Negotiation",
+      "direction": "Rather than ending after the recap, the central scene naturally shifts into negotiating what counts as acceptable next time, whether there will be a next time and what information each person actually wants afterward."
+    },
+    {
+      "id": "g15-the-report-exposes-a-relationship-problem",
+      "group": "15 Relationship Dynamic After the Report",
+      "title": "The Report Exposes a Relationship Problem",
+      "direction": "Something about the encounter or her willingness to seek it reveals an existing communication, intimacy or trust problem. Avoid the simplistic claim that outside sex automatically proves the relationship was already broken."
+    },
+    {
+      "id": "g15-the-report-strengthens-transparency-without-predetermining-outcome",
+      "group": "15 Relationship Dynamic After the Report",
+      "title": "The Report Strengthens Transparency Without Predetermining Outcome",
+      "direction": "Regardless of whether the encounter was consensual or a betrayal, the conversation is unusually frank and creates an opportunity for clearer understanding. Do not turn honest communication into an automatic reconciliation."
+    },
+    {
+      "id": "g15-she-tries-to-control-users-interpretation",
+      "group": "15 Relationship Dynamic After the Report",
+      "title": "She Tries to Control {{user}}’s Interpretation",
+      "direction": "She repeatedly tells {{user}} what the encounter 'should' mean to him or to their relationship. Frame this as her attempt to manage the narrative, not as objective truth about his feelings."
+    },
+    {
+      "id": "g16-she-realizes-she-wants-him",
+      "group": "16 Cross-Series / Consequence Hooks",
+      "title": "She Realizes She Wants Him",
+      "direction": "The report reveals that her interest in the other man is no longer merely curiosity or a one-time experiment. She acknowledges meaningful ongoing desire. Use this as a bridge toward She Wants Him without deciding whether she acts on it."
+    },
+    {
+      "id": "g16-turn-you-into-a-cuck-first-step",
+      "group": "16 Cross-Series / Consequence Hooks",
+      "title": "Turn You Into a Cuck — First Step",
+      "direction": "The encounter and report are the first concrete step in a consensually discussed or newly proposed cuckold dynamic. Do not assume {{user}} agrees to an identity, label or future arrangement merely because the first event occurred."
+    },
+    {
+      "id": "g16-my-boyfriend-wants-this-her-perspective",
+      "group": "16 Cross-Series / Consequence Hooks",
+      "title": "My Boyfriend Wants This — Her Perspective",
+      "direction": "The encounter happened because {{user}} explicitly wanted or proposed a consensual outside-partner experiment. The report explores her own experience of something initiated partly for his fantasy, including the possibility that her feelings differ from what either expected."
+    },
+    {
+      "id": "g16-pregnancy-risk-emerges-later",
+      "group": "16 Cross-Series / Consequence Hooks",
+      "title": "Pregnancy Risk Emerges Later",
+      "direction": "The encounter included a plausible pregnancy risk, but the report occurs before pregnancy can be known. If the concept later cross-links to She Got Pregnant, keep that as a future possibility rather than stating an immediate pregnancy as fact."
+    },
+    {
+      "id": "g16-other-man-wants-more-than-sex",
+      "group": "16 Cross-Series / Consequence Hooks",
+      "title": "Other Man Wants More Than Sex",
+      "direction": "During or after the encounter, the other man indicates that he wants an emotional or recurring relationship. Her report includes this complication without requiring her to reciprocate."
+    },
+    {
+      "id": "g16-she-wants-him-only-casually",
+      "group": "16 Cross-Series / Consequence Hooks",
+      "title": "She Wants Him Only Casually",
+      "direction": "She is interested in seeing the other man again but explicitly does not currently want romance with him. Keep casual intent distinct from guaranteed emotional detachment forever."
+    },
+    {
+      "id": "g16-unexpected-friendship-with-the-other-man",
+      "group": "16 Cross-Series / Consequence Hooks",
+      "title": "Unexpected Friendship With the Other Man",
+      "direction": "The strongest lasting connection from the encounter may be friendship rather than romance. She reports that she liked him as a person and wants continued ordinary contact, which can create its own boundary questions."
+    },
+    {
+      "id": "g16-the-first-encounter-changes-nothing-yet",
+      "group": "16 Cross-Series / Consequence Hooks",
+      "title": "The First Encounter Changes Nothing Yet",
+      "direction": "She returns, reports honestly and does not have a dramatic revelation about herself or the relationship. Preserve the possibility that the significance emerges later instead of forcing every first encounter to transform everyone immediately."
+    },
+    {
+      "id": "g17-report-as-a-pre-agreed-checklist",
+      "group": "17 Report Structure / Special Formats",
+      "title": "Report as a Pre-Agreed Checklist",
+      "direction": "Before the encounter, the couple agreed on specific things she would report afterward: boundaries followed, emotional reactions, whether contact continues and any practical health concerns. The roleplay opens as she works through that checklist, leaving follow-up questions to {{user}}."
+    },
+    {
+      "id": "g17-report-as-a-story-from-start-to-finish",
+      "group": "17 Report Structure / Special Formats",
+      "title": "Report as a Story From Start to Finish",
+      "direction": "She narrates the evening chronologically from first meeting to return home. Use enough concrete events to support interaction but do not pre-write an excessively long monologue that leaves {{user}} no room to respond."
+    },
+    {
+      "id": "g17-report-in-small-pieces-during-conversation",
+      "group": "17 Report Structure / Special Formats",
+      "title": "Report in Small Pieces During Conversation",
+      "direction": "She gives one part, pauses for {{user}}’s response, then continues. Structure the concept so the roleplay can naturally uncover details interactively rather than dumping the entire encounter in the greeting."
+    },
+    {
+      "id": "g17-she-asks-what-user-wants-to-know",
+      "group": "17 Report Structure / Special Formats",
+      "title": "She Asks What {{user}} Wants to Know",
+      "direction": "Instead of choosing the detail level herself, she gives a brief summary and asks {{user}} which aspects he wants explained. This maximizes player agency and works especially well for consensual report arrangements."
+    },
+    {
+      "id": "g17-she-gives-the-wrong-detail-level",
+      "group": "17 Report Structure / Special Formats",
+      "title": "She Gives the Wrong Detail Level",
+      "direction": "She either gives far more detail than expected or so little that the report immediately creates friction. Vary whether this mismatch comes from poor communication, nerves or different assumptions about the agreement."
+    },
+    {
+      "id": "g17-the-report-starts-with-the-most-important-surprise",
+      "group": "17 Report Structure / Special Formats",
+      "title": "The Report Starts With the Most Important Surprise",
+      "direction": "She opens with the one fact that most changes expectations—who the man was, a broken rule, unexpected emotional attachment, an overnight stay, or desire for another meeting—then explains how it happened."
+    },
+    {
+      "id": "g17-the-report-starts-with-nothing-went-as-planned",
+      "group": "17 Report Structure / Special Formats",
+      "title": "The Report Starts With ‘Nothing Went as Planned’",
+      "direction": "The encounter diverged from the plan in several ways without necessarily becoming non-consensual or disastrous. Generate 2–3 meaningful deviations and let the report unpack them."
+    },
+    {
+      "id": "g17-the-other-man-is-present-for-part-of-the-report",
+      "group": "17 Report Structure / Special Formats",
+      "title": "The Other Man Is Present for Part of the Report",
+      "direction": "With prior agreement from all adults, the other man is present or joins a call for part of the debrief. Keep {{user}} free to decide whether he wants that interaction; do not force a three-person sexual dynamic."
+    },
+    {
+      "id": "g17-separate-facts-from-interpretation",
+      "group": "17 Report Structure / Special Formats",
+      "title": "Separate Facts From Interpretation",
+      "direction": "Design the scenario so the source knows a clear objective timeline, then separately specifies how she interprets it and how she chooses to present it. This direction is useful for testing models that otherwise blur narration with character bias."
+    },
+    {
+      "id": "g17-no-big-twist-strong-character-voice",
+      "group": "17 Report Structure / Special Formats",
+      "title": "No Big Twist — Strong Character Voice",
+      "direction": "Generate an NTR Report without a hidden affair, pregnancy scare, secret identity or dramatic betrayal. Make the scenario compelling through personality, believable first-time awkwardness, communication style and the uncertainty of what the couple wants next."
+    },
+    {
+      "id": "g07-he-finished-inside-her",
+      "group": "07 What Objectively Happened",
+      "title": "He Finished Inside Her",
+      "direction": "The other adult man finished inside {{char}}. This is an objective fact of the encounter. The report must address it directly rather than glossing over it. Vary whether protection was never used, removed, or failed; whether she asked for it, accepted it, or was surprised; how she describes the physical sensation and aftermath; and whether this was within or outside any prior rules with {{user}}."
+    },
+    {
+      "id": "g07-raw-the-whole-time",
+      "group": "07 What Objectively Happened",
+      "title": "Raw the Whole Time",
+      "direction": "The encounter was unprotected from the start. No condom was used. {{char}} reports this clearly. Vary whether this was planned, spontaneous, or a boundary she crossed; how she felt about the risk in the moment; and how she frames the decision when telling {{user}}."
+    },
+    {
+      "id": "g07-multiple-creampies",
+      "group": "07 What Objectively Happened",
+      "title": "Multiple Creampies",
+      "direction": "The other adult man finished inside {{char}} more than once during the same meeting or night. The report treats this as a concrete factual difference. Vary how she describes the repeated internal finishes, her physical state between rounds, and whether she presents it as intense, overwhelming, matter-of-fact, or something she is still processing."
+    },
+    {
+      "id": "g07-she-asked-him-to-come-inside",
+      "group": "07 What Objectively Happened",
+      "title": "She Asked Him to Come Inside",
+      "direction": "{{char}} explicitly asked or told the other man to finish inside her. This was her choice in the moment. The report includes that request. Vary whether it was dirty talk that became real, a deliberate decision, or something she is now embarrassed or aroused by when recounting it to {{user}}."
+    },
+    {
+      "id": "g07-he-marked-her",
+      "group": "07 What Objectively Happened",
+      "title": "He Marked Her",
+      "direction": "The other man left visible or tactile marks: hickeys, bite marks, handprints, writing on her body, or she returned still leaking or with clear physical evidence of the encounter. The report (or the moment of return) makes this impossible to ignore. Vary how deliberate the marking was and how {{char}} presents or hides it."
+    },
+    {
+      "id": "g07-she-kept-his-load",
+      "group": "07 What Objectively Happened",
+      "title": "She Kept His Load",
+      "direction": "After the other man finished inside her, {{char}} deliberately tried to keep his semen inside (holding it, avoiding cleanup, using her fingers, etc.). She reports this detail. Vary whether she frames it as heat-of-the-moment, a private experiment, a comparison, or something she is not sure how {{user}} will take."
+    },
+    {
+      "id": "g07-breeding-talk-during-sex",
+      "group": "07 What Objectively Happened",
+      "title": "Breeding Talk During Sex",
+      "direction": "During the encounter the other man (or {{char}}, or both) used explicit breeding, impregnation, or ownership language. She reports the dirty talk accurately. Vary how much of it was roleplay versus how it landed for her, and whether she is still affected by it when telling {{user}}."
+    },
+    {
+      "id": "g02-explicit-blow-by-blow",
+      "group": "02 Reporting Style",
+      "title": "Explicit Blow-by-Blow",
+      "direction": "{{char}} gives a highly detailed, chronological, sexually explicit report of what the other man did to her and what she did with him. She does not skip the physical acts, positions, sensations, or finishes. Vary whether her tone is clinical, aroused, ashamed, proud, or mixed, while keeping the level of detail consistently high."
+    },
+    {
+      "id": "g02-she-describes-how-he-felt-inside",
+      "group": "02 Reporting Style",
+      "title": "She Describes How He Felt Inside",
+      "direction": "The report includes specific physical comparison or description of how the other man felt inside her (size, shape, force, duration, how she responded). Keep it character-driven rather than pure porn prose. Vary whether she is trying to be honest, testing {{user}}, or struggling with the intimacy of saying it out loud."
+    },
+    {
+      "id": "g02-she-recounts-the-orgasms",
+      "group": "02 Reporting Style",
+      "title": "She Recounts the Orgasms",
+      "direction": "{{char}} reports how many times she came, how the other man made her come, and how those orgasms compared to what she is used to. Vary honesty level, emotional tone, and whether she frames the information as neutral fact, apology, or something closer to bragging."
+    },
+    {
+      "id": "g13-she-compares-size-and-performance",
+      "group": "13 Comparison / Meaning",
+      "title": "She Compares Size and Performance",
+      "direction": "During the report {{char}} makes direct physical or performance comparisons between the other man and {{user}}. This may be reluctant, clinical, teasing, or blurted. Keep the comparison grounded in her experience rather than generic degradation, and leave {{user}}’s reaction open."
+    },
+    {
+      "id": "g13-she-says-he-was-better-at",
+      "group": "13 Comparison / Meaning",
+      "title": "She Says He Was Better At…",
+      "direction": "{{char}} admits (or is pushed into admitting) that the other man was better at one or more specific things: lasting longer, making her come harder, a particular act, intensity, etc. The report treats this as a concrete statement rather than vague implication. Vary how much she softens or owns the admission."
+    },
+    {
+      "id": "g14-she-shows-him-the-creampie-photo",
+      "group": "14 Evidence / Report Artifacts",
+      "title": "She Shows Him the Creampie Photo",
+      "direction": "{{char}} has a photo or short video taken immediately after the other man finished inside her (with the consent of the people depicted). She shows it to {{user}} as part of the report or as the way the report begins. Vary whether the image was meant for {{user}}, for the other man, or for herself, and how she frames handing it over."
+    },
+    {
+      "id": "g14-she-is-still-leaking-when-she-reports",
+      "group": "14 Evidence / Report Artifacts",
+      "title": "She Is Still Leaking When She Reports",
+      "direction": "{{char}} returns or begins the report while still physically carrying evidence of the encounter (leaking, sticky, marked, or clearly freshly used). The physical state is part of the scene. Vary how aware she is of it, whether she tries to clean up first, and how directly she addresses what {{user}} can see or smell."
+    },
+    {
+      "id": "g10-she-wants-him-to-finish-inside-again",
+      "group": "10 What She Wants Next",
+      "title": "She Wants Him to Finish Inside Again",
+      "direction": "After reporting the first encounter, {{char}} makes clear she wants to see the other man again specifically so he can finish inside her. This may be framed as kink, curiosity, or something she cannot stop thinking about. Keep the desire distinct from whether she wants a full relationship with him."
+    },
+    {
+      "id": "g10-she-wants-to-be-bred-by-him",
+      "group": "10 What She Wants Next",
+      "title": "She Wants to Be Bred by Him",
+      "direction": "{{char}}’s post-report desire includes explicit breeding or impregnation language directed at the other man. She may present it as fantasy, as a serious request, or as something she is testing with {{user}}. Preserve the consent framework of the original arrangement and leave {{user}}’s response open."
+    },
+    {
+      "id": "g11-she-already-let-him-finish-inside-again",
+      "group": "11 Hidden Continuation / Second Layer",
+      "title": "She Already Let Him Finish Inside Again",
+      "direction": "The report is not only about the first agreed encounter. After the first time, {{char}} continued seeing the other man and has already let him finish inside her again (once or multiple times) without {{user}} knowing. The report either confesses this second layer or is forced to when evidence appears. Keep the original permission boundary clear: the first encounter was (or was not) allowed; the continuation was not disclosed."
+    },
+    {
+      "id": "g02-she-narrates-while-still-aroused",
+      "group": "02 Reporting Style",
+      "title": "She Narrates While Still Aroused",
+      "direction": "{{char}} is still turned on from the encounter (or from the act of reporting it) while she tells {{user}} what happened. Her voice, body language, or explicit admissions show that the retelling itself is affecting her. Vary whether she is embarrassed by that arousal, leans into it, or tries to stay composed and fails."
+    },
+    {
+      "id": "g07-positions-and-how-he-used-her",
+      "group": "07 What Objectively Happened",
+      "title": "Positions and How He Used Her",
+      "direction": "The report includes specific positions, how the other man moved or held her, and any sense of being used, taken, or guided. Keep the language character-true rather than generic porn. Vary whether she experienced it as exciting, overwhelming, submissive, or simply different from her usual dynamic with {{user}}."
+    },
+    {
+      "id": "g07-she-came-while-he-was-inside",
+      "group": "07 What Objectively Happened",
+      "title": "She Came While He Was Inside",
+      "direction": "{{char}} orgasmed while the other man was inside her (or multiple times). She reports this. Vary how she describes the orgasm(s), whether she is used to coming that way with {{user}}, and whether the admission is matter-of-fact, hesitant, or charged."
+    },
+    {
+      "id": "g13-she-admits-she-liked-being-filled",
+      "group": "13 Comparison / Meaning",
+      "title": "She Admits She Liked Being Filled",
+      "direction": "During the report {{char}} admits that she liked the feeling of the other man finishing inside her — the warmth, the fullness, the aftermath. This is a specific sensory and emotional admission rather than a general ‘it was good.’ Vary how carefully or bluntly she says it."
+    },
+    {
+      "id": "g02-play-by-play-with-dialogue",
+      "group": "02 Reporting Style",
+      "title": "Play-by-Play With Dialogue",
+      "direction": "{{char}} reconstructs the encounter with specific lines of dialogue — what the other man said to her, what she said back, dirty talk, questions, or commands. The report feels like a scene retelling. Vary how accurate her memory is and whether she softens or sharpens certain lines when repeating them to {{user}}."
+    },
+    {
+      "id": "g14-she-brings-home-his-smell-or-taste",
+      "group": "14 Evidence / Report Artifacts",
+      "title": "She Brings Home His Smell or Taste",
+      "direction": "{{char}} returns still carrying the other man’s smell on her skin or clothes, or the taste of him is still present when she kisses or speaks close to {{user}}. The sensory evidence is part of the report scene. Vary whether she notices it herself and how she handles the moment it becomes obvious."
+    },
+    {
+      "id": "g10-she-wants-{{user}}-to-use-her-after",
+      "group": "10 What She Wants Next",
+      "title": "She Wants {{user}} to Use Her After",
+      "direction": "After giving the report, {{char}} wants {{user}} to have her while the encounter is still fresh — while she is still marked, leaking, or emotionally raw from the other man. This may be framed as reconnection, ownership, humiliation play, or simply need. Leave whether {{user}} accepts or refuses completely open."
+    },
+    {
+      "id": "g07-no-condom-and-she-is-not-on-birth-control",
+      "group": "07 What Objectively Happened",
+      "title": "No Condom and She Is Not on Birth Control",
+      "direction": "The encounter was unprotected and {{char}} is not on birth control (or the protection status makes pregnancy a live possibility). The report must include this factual risk. Vary whether she knew the risk in the moment, whether she is anxious, indifferent, or privately aroused by it, and how she presents the information to {{user}}."
+    }
+  ],
+  "sections": [
+    {
+      "id": "objective-truth-vs-report",
+      "label": "Objective truth vs reported story",
+      "content": "Maintain separate layers for (1) what objectively happened, (2) what {{char}} believes it meant, (3) what she chooses to tell {{user}}, and (4) any facts she intentionally conceals or genuinely misunderstands. This prevents selective truth, minimising and trickle-truth from collapsing into inconsistent generation."
+    },
+    {
+      "id": "consent-framework",
+      "label": "Relationship and consent framework",
+      "content": "Before generating the encounter, determine whether it was explicitly permitted, covered by an existing non-monogamy agreement, subject to conditions, ambiguously bounded, or unauthorized. Preserve that ground truth during the report. Later approval cannot retroactively authorize a prior boundary breach."
+    },
+    {
+      "id": "report-as-roleplay",
+      "label": "The report is the roleplay device",
+      "content": "Do not dump the entire encounter into a giant greeting and leave nothing to discuss. Give {{char}} a strong opening reporting style, enough facts to establish the hook, and clear reasons for {{user}} to ask, challenge, clarify or negotiate. Additional details can emerge interactively."
+    },
+    {
+      "id": "media-and-evidence",
+      "label": "Messages, media and evidence",
+      "content": "Messages and ordinary records may support or complicate the report. Photos or recordings are only available when all depicted or recorded adults consented to their creation; sharing them with {{user}} requires separate consent. Never use secret sexual recording as routine erotic evidence."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Use the narrowest relevant Direction Preset. Presets from different groups can also be combined through a short Additional Direction—for example: Painfully Honest + {{user}}’s Best Friend + One-and-Done, or Open Relationship — One Rule Was Broken + Trickle-Truth + Wants Another Time."
+    }
+  ],
+  "raw_prompt": "Prioritise a strong interactive report scene, clear objective ground truth, believable character voice, meaningful player agency and genuine scenario variety. Preserve the exact consent framework and selected Direction Preset, and do not decide {{user}}’s reaction."
 }
