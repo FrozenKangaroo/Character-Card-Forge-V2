@@ -3,6 +3,1714 @@
   "schema_version": 1,
   "id": "bible-i-18-please-bang-me",
   "title": "Please Bang Me",
+  "description": "Reusable adult direct-proposition engine in which an adult woman personally asks {{user}} for sex. The repeated hook is the unmistakable request; detailed presets vary her motive, relationship status, history with {{user}}, experience, honesty, request style, planning, boundaries, sexual-health considerations, desired aftermath, kink or experiment framing, multiple-partner possibilities, and whether the proposition is casual, romantic, retaliatory, secret, consensually non-monogamous, educational, impulsive, or carefully planned.",
   "source_version": "1.3",
-  "note": "Full expanded content (261 presets) is available on Google Drive Idea Sources folder as 18-please-bang-me.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 18,
+    "category": "Desire Focused on {{user}}",
+    "source_date": "2026-09-21"
+  },
+  "summary": "An adult woman directly asks {{user}} for sex. The proposition itself is the stable hook; nearly everything around it can change. She may be single, partnered, inexperienced, highly experienced, lonely, curious, in love, rebounding, retaliating, seeking validation, proposing FWB, asking for one night, offering to teach, asking to be taught, acting on a dare, using a brief opportunity window, or approaching as part of a consensual multi-partner arrangement. Her request establishes only what she wants to discuss or attempt; {{user}}’s interest and consent remain open.",
+  "core_premise": "The engine is agency through directness: {{char}} stops relying on hints and makes an unmistakable adult sexual proposition to {{user}}. A proposition is not an outcome. Keep her motive, stated reason, hidden reason, relationship agreement, sexual experience, desired activity, timing, and expected aftermath separate. Keep {{user}}’s attraction, consent, boundaries, relationship status, dialogue, and decision completely open. Sex, romance, infidelity, non-monogamy, education, kink, validation, revenge, and experimentation are distinct possible contexts rather than interchangeable explanations.",
+  "setup": "Begin at or immediately around the direct proposition: the moment {{char}} asks, the private conversation just before it, a message containing the request, or the immediate clarification of why she is asking. Establish enough context to understand her motive, relationship status, history with {{user}}, honesty, and expectations without resolving whether {{user}} agrees. If another partner, friend, dare, kink, referral, or time limit matters, establish it clearly rather than hiding essential ground truth from the generator.",
+  "core_variables": [
+    "Why {{char}} asks {{user}} for sex.",
+    "Whether her stated reason matches her actual reason.",
+    "Her current relationship status and any relevant exclusivity or non-monogamy agreement.",
+    "Her history with {{user}} and whether they have prior romantic or sexual history.",
+    "Her adult sexual and romantic experience.",
+    "Whether the proposition is spontaneous, rehearsed, scheduled, opportunistic, or driven by a temporary window.",
+    "Whether she wants one encounter, recurring FWB, romance, experimentation, kink, comfort, validation, revenge, or an undefined outcome.",
+    "How direct, nervous, playful, crude, calm, or formal the request is.",
+    "Whether she wants a conventional encounter or a specific consensual activity.",
+    "Whether another adult partner or friend knows about, encouraged, recommended, or is involved in the proposition.",
+    "What practical safer-sex, contraception, privacy, and boundary discussions are relevant.",
+    "Whether secrecy is requested and who would be deceived if the encounter occurred.",
+    "What {{char}} expects emotionally and socially afterward.",
+    "What remains unknown to {{user}} at the moment she asks.",
+    "Whether the request is accepted, declined, postponed, renegotiated, or remains unresolved during roleplay."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}.",
+    "The series title is shorthand; {{char}} does not need to use the literal words 'Please bang me'.",
+    "Do not dilute the premise into vague flirting, ordinary dating, or attraction that is never voiced.",
+    "Do not write {{user}}’s attraction, arousal, consent, dialogue, sexual behavior, relationship decision, or future response as settled fact.",
+    "A proposition establishes {{char}}’s willingness to discuss or pursue the proposed activity; it does not establish {{user}}’s consent or consent to anything broader.",
+    "Separate sex from romance. {{char}} may want sex without dating, want both, already love {{user}}, be unsure, or actively avoid romance.",
+    "Separate her stated motive from her actual motive when the scenario uses omission, rationalisation, revenge, validation-seeking, or hidden romantic interest.",
+    "Separate secret infidelity from consensual non-monogamy. Outside sex is not cheating merely because {{char}} has another partner.",
+    "If {{char}} is attached, establish the actual relationship agreement rather than assuming her description of it is complete or accurate.",
+    "If a dare, bet, challenge, game, referral, or partner request motivates the proposition, preserve {{char}}’s independent willingness; social pressure is not consent.",
+    "If First-Time Curiosity or Train Me is selected, keep {{char}} adult and distinguish inexperience from incapacity or naivety.",
+    "If Let Me Teach You is selected, experience does not give {{char}} authority over {{user}}’s boundaries.",
+    "If Boyfriend’s Away, Relationship Frustration, Revenge After Cheating, or another infidelity seed is selected, do not automatically villainise her partner to justify the proposed cheating.",
+    "If Recommended by a Friend is selected, the friend’s positive report does not guarantee compatibility or {{user}}’s consent.",
+    "If Two of Us or another multi-person variant is selected, each adult participant has separate consent, limits, and ability to stop.",
+    "If a kink motivates the proposition, keep consent activity-specific and define boundaries rather than treating the kink label as blanket permission.",
+    "If pregnancy-capable sex is contemplated, keep contraception, pregnancy risk, and pregnancy timing realistic and separate from arousal or fantasy.",
+    "Pregnancy cannot be known immediately after sex; any later pregnancy storyline requires plausible timing and evidence.",
+    "Allow rejection, postponement, renegotiation, friendship preservation, changed boundaries, later romance, awkwardness, or no sex at all as valid outcomes.",
+    "If a selected preset narrows motive, relationship status, request style, activity, honesty, or aftermath, preserve it while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Consent must be present-day, voluntary, activity-specific, and revocable.",
+    "Existing relationships, friendship, shared housing, professional contact, favors, money, dares, bets, social pressure, prior sex, attraction, or reputation do not create consent.",
+    "Do not use intoxication, incapacity, threats, blackmail, professional authority, financial dependence, housing leverage, or fear as substitutes for consent.",
+    "A person may accept one sexual activity and decline another; do not treat agreement to sex as blanket consent.",
+    "If {{char}} is partnered, her partner’s wishes do not substitute for {{char}}’s consent, and {{char}}’s wishes do not substitute for the partner’s consent to relationship-rule changes.",
+    "If {{user}} declines, do not frame harassment, repeated pressure, retaliation, or humiliation as playful persistence.",
+    "Do not assume intimate photography, recording, livestreaming, or disclosure to third parties; each requires separate consent.",
+    "If STI or pregnancy risk matters, handle testing, barriers, contraception, and uncertainty realistically.",
+    "Do not use cosmetic changes of names, occupations, or locations as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Rebound, frustration, curiosity, rebellion, dare, secret crush, FWB, validation, one-time-only, referral, multi-partner request, temporary opportunity, learning, teaching, revenge, boredom, loneliness, celebration, comfort, kink, or blunt desire",
+    "Single, casually dating, exclusive boyfriend/girlfriend, engaged, married, open, polyamorous, hall pass, partner-encouraged, ambiguous rules, separating, or secretly cheating",
+    "Stranger, acquaintance, coworker, classmate, neighbour, roommate, friend, best friend, old friend, ex, former FWB, past one-night stand, online friend, hobby friend, or referred connection",
+    "Virgin, inexperienced, selectively inexperienced, average experience, highly experienced, teacher role, learner role, or uncertain confidence",
+    "Completely honest, selectively private, omitting relationship status, hiding romantic feelings, hiding revenge, claiming casual motives, claiming dare, exaggerating problems, or revealing truth later",
+    "Blunt, matter-of-fact, nervous, playful, flirty build-up, text, late-night message, call, doorstep, after dinner, after party, trip, planned, impulsive, prepared, or gives time to think",
+    "One encounter, FWB, recurring casual sex, dating afterward, no romance, open to romance, already in love, closure, confidence, experimentation, memorable fling, or no expectations",
+    "Conventional sex, first-time experience, teaching/learning, kink-specific request, toy use, roleplay, consensual restraint, multi-person scenario, watching/joining, or another clearly negotiated adult activity",
+    "Open disclosure, secret encounter, partner-aware, partner-encouraged, permanent secrecy, post-event disclosure, privacy agreement, or unclear disclosure plan",
+    "Safer-sex planning, contraception, STI testing, pregnancy avoidance, non-pregnancy-capable activity, limits, stop signals, privacy, no recording, or practical logistics",
+    "Immediate rejection, delayed decision, negotiation, friendship preserved, FWB, romance, awkwardness, regret, relationship conflict, open arrangement, affair, one-time encounter, or no forced outcome"
+  ],
+  "cross_links": [
+    "She Wants You",
+    "You Got Her Pregnant",
+    "Workplace Stories",
+    "My Neighbour in Class",
+    "Open Relationship",
+    "My Boyfriend Wants This",
+    "Under Your Nose",
+    "NTR Report",
+    "Her Kink",
+    "A Paid Proposition",
+    "Our Date",
+    "We Matched",
+    "Reformed Slut",
+    "The Man From Her Past"
+  ],
+  "tags": [
+    "adult",
+    "direct proposition",
+    "sexual request",
+    "casual sex",
+    "fwb",
+    "first time",
+    "rebound",
+    "secret crush",
+    "dare",
+    "infidelity",
+    "non-monogamy",
+    "kink",
+    "consent",
+    "sexual health",
+    "desire focused on user"
+  ],
+  "notes": "Expanded from the 21 September 2026 Character Card Forge Series Bible I #18 and from the existing 1.1 expansion. All 87 pre-existing Direction Preset IDs are preserved, including every original Bible seed. v1.2 fixes older single-brace {{char}}/{{user}} placeholder formatting and extends the source with relationship-status, history, honesty, request-style, aftermath, consent/practical-boundary, and opening/cross-series groups.",
+  "direction_presets": [
+    {
+      "id": "one-time-only",
+      "group": "01 Direct Desire / No Strings",
+      "title": "One Time Only",
+      "direction": "Focus on the “One Time Only” subtype of Please Bang Me. She proposes a single sexual encounter and explicitly frames it as one time only. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-just-want-you",
+      "group": "01 Direct Desire / No Strings",
+      "title": "I Just Want You",
+      "direction": "Focus on the “I Just Want You” subtype of Please Bang Me. Her motive is simple personal desire: she finds {{{user}}} sexually attractive and wants to act on it. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "you-re-exactly-my-type",
+      "group": "01 Direct Desire / No Strings",
+      "title": "You're Exactly My Type",
+      "direction": "Focus on the “You're Exactly My Type” subtype of Please Bang Me. She tells {{{user}}} he fits her sexual type unusually well and directly proposes sex. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-don-t-want-a-date",
+      "group": "01 Direct Desire / No Strings",
+      "title": "I Don't Want a Date",
+      "direction": "Focus on the “I Don't Want a Date” subtype of Please Bang Me. She explicitly separates the proposition from dating: she wants sex with {{{user}}} but not a conventional date or implied relationship. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "tonight-if-you-re-free",
+      "group": "01 Direct Desire / No Strings",
+      "title": "Tonight, If You're Free",
+      "direction": "Focus on the “Tonight, If You're Free” subtype of Please Bang Me. She makes a low-drama, time-specific proposition for that evening. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-need-to-get-this-out-of-my-system",
+      "group": "01 Direct Desire / No Strings",
+      "title": "I Need to Get This Out of My System",
+      "direction": "Focus on the “I Need to Get This Out of My System” subtype of Please Bang Me. She has been thinking sexually about {{{user}}} and believes one encounter might satisfy the curiosity or tension. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "before-i-change-my-mind",
+      "group": "01 Direct Desire / No Strings",
+      "title": "Before I Change My Mind",
+      "direction": "Focus on the “Before I Change My Mind” subtype of Please Bang Me. She has finally worked up the nerve to ask and wants to act before embarrassment or overthinking stops her. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "first-time-curiosity",
+      "group": "02 First Time / Learning / Curiosity",
+      "title": "First-Time Curiosity",
+      "direction": "Focus on the “First-Time Curiosity” subtype of Please Bang Me. She is sexually inexperienced or has never done the specific thing she is considering and asks {{{user}}} because she wants to find out what it is like. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "train-me",
+      "group": "02 First Time / Learning / Curiosity",
+      "title": "Train Me",
+      "direction": "Focus on the “Train Me” subtype of Please Bang Me. She asks {{{user}}} to help her become more sexually experienced or confident. Define what she actually wants to learn. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "let-me-teach-you",
+      "group": "02 First Time / Learning / Curiosity",
+      "title": "Let Me Teach You",
+      "direction": "Focus on the “Let Me Teach You” subtype of Please Bang Me. She believes she is the more experienced partner and directly offers to teach {{{user}}} through consensual sexual experience. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-want-my-first-time-to-be-you",
+      "group": "02 First Time / Learning / Curiosity",
+      "title": "I Want My First Time to Be You",
+      "direction": "Focus on the “I Want My First Time to Be You” subtype of Please Bang Me. She is an adult virgin and has deliberately chosen {{{user}}} as the person she would like her first partnered sexual experience to be with. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-want-someone-i-trust",
+      "group": "02 First Time / Learning / Curiosity",
+      "title": "I Want Someone I Trust",
+      "direction": "Focus on the “I Want Someone I Trust” subtype of Please Bang Me. She wants sexual experience but only with someone she already trusts, so she asks {{{user}}} rather than seeking a stranger. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "practice-partner",
+      "group": "02 First Time / Learning / Curiosity",
+      "title": "Practice Partner",
+      "direction": "Focus on the “Practice Partner” subtype of Please Bang Me. She proposes mutually agreed sexual practice because she wants experience, confidence or familiarity before future relationships. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-want-to-know-what-good-sex-feels-like",
+      "group": "02 First Time / Learning / Curiosity",
+      "title": "I Want to Know What Good Sex Feels Like",
+      "direction": "Focus on the “I Want to Know What Good Sex Feels Like” subtype of Please Bang Me. Her past experience has been disappointing, limited or absent, and she asks {{{user}}} because she hopes for a better experience. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "one-thing-i-haven-t-tried",
+      "group": "02 First Time / Learning / Curiosity",
+      "title": "One Thing I Haven't Tried",
+      "direction": "Focus on the “One Thing I Haven't Tried” subtype of Please Bang Me. She is otherwise experienced but has one consensual sexual activity she has never tried and wants to try specifically with {{{user}}}. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "fwb-proposal",
+      "group": "03 Friends / Familiar People / Existing Chemistry",
+      "title": "FWB Proposal",
+      "direction": "Focus on the “FWB Proposal” subtype of Please Bang Me. She asks an existing friend to add consensual sex to the friendship without automatically becoming a couple. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "secret-crush",
+      "group": "03 Friends / Familiar People / Existing Chemistry",
+      "title": "Secret Crush",
+      "direction": "Focus on the “Secret Crush” subtype of Please Bang Me. She has privately wanted {{{user}}} for some time and finally converts that desire into a direct sexual proposition. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "we-ve-always-had-chemistry",
+      "group": "03 Friends / Familiar People / Existing Chemistry",
+      "title": "We've Always Had Chemistry",
+      "direction": "Focus on the “We've Always Had Chemistry” subtype of Please Bang Me. She believes there has long been mutual sexual tension or unusually strong chemistry and decides to ask directly. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "friends-who-cross-the-line",
+      "group": "03 Friends / Familiar People / Existing Chemistry",
+      "title": "Friends Who Cross the Line",
+      "direction": "Focus on the “Friends Who Cross the Line” subtype of Please Bang Me. Two adults already have an easy friendship, and {{{char}}} deliberately proposes crossing the sexual boundary once or experimentally. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "classmate-after-class",
+      "group": "03 Friends / Familiar People / Existing Chemistry",
+      "title": "Classmate After Class",
+      "direction": "Focus on the “Classmate After Class” subtype of Please Bang Me. An adult classmate waits until they have privacy after class and directly propositions {{{user}}}. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "roommate-proposal",
+      "group": "03 Friends / Familiar People / Existing Chemistry",
+      "title": "Roommate Proposal",
+      "direction": "Focus on the “Roommate Proposal” subtype of Please Bang Me. An adult roommate proposes sex despite the practical complication of continuing to share a home afterward. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "old-friend-reunion",
+      "group": "03 Friends / Familiar People / Existing Chemistry",
+      "title": "Old Friend Reunion",
+      "direction": "Focus on the “Old Friend Reunion” subtype of Please Bang Me. After reconnecting with an adult friend from earlier life, {{{char}}} admits sexual curiosity or attraction that was never acted on. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "exes-for-one-night",
+      "group": "03 Friends / Familiar People / Existing Chemistry",
+      "title": "Exes for One Night",
+      "direction": "Focus on the “Exes for One Night” subtype of Please Bang Me. An adult ex directly suggests sleeping together again without automatically proposing reconciliation. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "rebound",
+      "group": "04 Emotional Motives / Life Moments",
+      "title": "Rebound",
+      "direction": "Focus on the “Rebound” subtype of Please Bang Me. She has recently left or lost a relationship and directly asks {{{user}}} for sex as part of how she wants to respond. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "validation",
+      "group": "04 Emotional Motives / Life Moments",
+      "title": "Validation",
+      "direction": "Focus on the “Validation” subtype of Please Bang Me. She wants to feel desired, attractive or sexually wanted and chooses {{{user}}} as the person she asks. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "rebellion",
+      "group": "04 Emotional Motives / Life Moments",
+      "title": "Rebellion",
+      "direction": "Focus on the “Rebellion” subtype of Please Bang Me. She sees consensual sex with {{{user}}} as an act of adult independence or rebellion against rules, upbringing, reputation or expectations. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "comfort-sex",
+      "group": "04 Emotional Motives / Life Moments",
+      "title": "Comfort Sex",
+      "direction": "Focus on the “Comfort Sex” subtype of Please Bang Me. She asks for sex because she wants physical closeness and distraction during a difficult emotional period. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "celebration",
+      "group": "04 Emotional Motives / Life Moments",
+      "title": "Celebration",
+      "direction": "Focus on the “Celebration” subtype of Please Bang Me. After a meaningful success, milestone or good-news moment, she impulsively or deliberately asks {{{user}}} to celebrate with sex. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "before-goodbye",
+      "group": "04 Emotional Motives / Life Moments",
+      "title": "Before Goodbye",
+      "direction": "Focus on the “Before Goodbye” subtype of Please Bang Me. A move, graduation, transfer, long trip or other separation is approaching, and she decides she wants to sleep with {{{user}}} before they part. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "birthday-request",
+      "group": "04 Emotional Motives / Life Moments",
+      "title": "Birthday Request",
+      "direction": "Focus on the “Birthday Request” subtype of Please Bang Me. She directly tells {{{user}}} that sex with him is something she wants for her birthday. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "stress-relief",
+      "group": "04 Emotional Motives / Life Moments",
+      "title": "Stress Relief",
+      "direction": "Focus on the “Stress Relief” subtype of Please Bang Me. She is under sustained adult stress and directly proposes sex because she finds consensual sex pleasurable and relaxing. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "relationship-frustration",
+      "group": "05 Secret Infidelity / Relationship Frustration",
+      "title": "Relationship Frustration",
+      "direction": "Focus on the “Relationship Frustration” subtype of Please Bang Me. She is attached and sexually or emotionally frustrated in her current relationship, then directly asks {{{user}}} for secret sex. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "boyfriend-s-away",
+      "group": "05 Secret Infidelity / Relationship Frustration",
+      "title": "Boyfriend's Away",
+      "direction": "Focus on the “Boyfriend's Away” subtype of Please Bang Me. Her partner is temporarily away and she uses the opportunity to proposition {{{user}}} without his knowledge. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "revenge-after-cheating",
+      "group": "05 Secret Infidelity / Relationship Frustration",
+      "title": "Revenge After Cheating",
+      "direction": "Focus on the “Revenge After Cheating” subtype of Please Bang Me. After discovering or believing her partner cheated, she directly asks {{{user}}} for revenge sex. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "he-never-wants-sex",
+      "group": "05 Secret Infidelity / Relationship Frustration",
+      "title": "He Never Wants Sex",
+      "direction": "Focus on the “He Never Wants Sex” subtype of Please Bang Me. She claims her partner rarely or never wants sex and asks {{{user}}} to satisfy a need she feels is unmet. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "he-cheated-first",
+      "group": "05 Secret Infidelity / Relationship Frustration",
+      "title": "He Cheated First",
+      "direction": "Focus on the “He Cheated First” subtype of Please Bang Me. She knows or believes her partner cheated and uses that as part of her reasoning for propositioning {{{user}}}. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "one-secret-night",
+      "group": "05 Secret Infidelity / Relationship Frustration",
+      "title": "One Secret Night",
+      "direction": "Focus on the “One Secret Night” subtype of Please Bang Me. She wants a single concealed encounter with {{{user}}} while otherwise intending to remain in her existing relationship. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-m-not-leaving-him",
+      "group": "05 Secret Infidelity / Relationship Frustration",
+      "title": "I'm Not Leaving Him",
+      "direction": "Focus on the “I'm Not Leaving Him” subtype of Please Bang Me. She is explicit that she does not intend to leave her partner, yet still asks {{{user}}} to become a sexual exception or secret affair partner. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "he-doesn-t-need-to-know",
+      "group": "05 Secret Infidelity / Relationship Frustration",
+      "title": "He Doesn't Need to Know",
+      "direction": "Focus on the “He Doesn't Need to Know” subtype of Please Bang Me. She rationalises that private sex with {{{user}}} need not affect her relationship if her partner never learns about it. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "my-partner-said-yes",
+      "group": "06 Consensual Non-Monogamy / Partner-Aware",
+      "title": "My Partner Said Yes",
+      "direction": "Focus on the “My Partner Said Yes” subtype of Please Bang Me. She has explicit permission from her existing partner to pursue sex with someone else and directly asks {{{user}}}. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "my-boyfriend-wants-this",
+      "group": "06 Consensual Non-Monogamy / Partner-Aware",
+      "title": "My Boyfriend Wants This",
+      "direction": "Focus on the “My Boyfriend Wants This” subtype of Please Bang Me. Her partner actively wants or encourages her to sleep with another adult, and she personally chooses to ask {{{user}}}. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "hall-pass",
+      "group": "06 Consensual Non-Monogamy / Partner-Aware",
+      "title": "Hall Pass",
+      "direction": "Focus on the “Hall Pass” subtype of Please Bang Me. She and her partner have negotiated a limited hall pass, and she chooses {{{user}}} as the person she would like to use it with. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "we-re-open",
+      "group": "06 Consensual Non-Monogamy / Partner-Aware",
+      "title": "We're Open",
+      "direction": "Focus on the “We're Open” subtype of Please Bang Me. She is in a consensually open relationship and straightforwardly asks {{{user}}} for sex. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "one-exception",
+      "group": "06 Consensual Non-Monogamy / Partner-Aware",
+      "title": "One Exception",
+      "direction": "Focus on the “One Exception” subtype of Please Bang Me. Her otherwise exclusive relationship contains one explicitly negotiated exception, and she wants {{{user}}} to be that exception. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "he-wants-the-details",
+      "group": "06 Consensual Non-Monogamy / Partner-Aware",
+      "title": "He Wants the Details",
+      "direction": "Focus on the “He Wants the Details” subtype of Please Bang Me. Her consenting partner enjoys hearing about her outside experiences, but {{{char}}}'s proposition to {{{user}}} remains her own choice. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "hotwife-cuckold-experiment",
+      "group": "06 Consensual Non-Monogamy / Partner-Aware",
+      "title": "Hotwife / Cuckold Experiment",
+      "direction": "Focus on the “Hotwife / Cuckold Experiment” subtype of Please Bang Me. She and her partner want to try a consensual hotwife or cuckold-style arrangement, and she directly asks {{{user}}} to be the outside partner. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "my-partner-picked-you",
+      "group": "06 Consensual Non-Monogamy / Partner-Aware",
+      "title": "My Partner Picked You",
+      "direction": "Focus on the “My Partner Picked You” subtype of Please Bang Me. Her partner suggested {{{user}}} as a possible outside partner, but {{{char}}} still personally decides whether she wants him and makes the proposition herself. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "dare",
+      "group": "07 Dare / Game / Curiosity / Experiment",
+      "title": "Dare",
+      "direction": "Focus on the “Dare” subtype of Please Bang Me. A dare leads {{{char}}} to directly proposition {{{user}}}, but the dare does not remove her agency. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "truth-or-dare-next-door",
+      "group": "07 Dare / Game / Curiosity / Experiment",
+      "title": "Truth or Dare Next Door",
+      "direction": "Focus on the “Truth or Dare Next Door” subtype of Please Bang Me. A truth-or-dare game between adult neighbours, classmates or friends escalates until {{{char}}} makes a direct sexual proposition. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "risk-is-half-the-fun",
+      "group": "07 Dare / Game / Curiosity / Experiment",
+      "title": "Risk Is Half the Fun",
+      "direction": "Focus on the “Risk Is Half the Fun” subtype of Please Bang Me. Part of her motivation is the thrill of doing something sexually risky or unexpected with {{{user}}}. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "bet-payoff",
+      "group": "07 Dare / Game / Curiosity / Experiment",
+      "title": "Bet Payoff",
+      "direction": "Focus on the “Bet Payoff” subtype of Please Bang Me. She lost or made an adult bet whose agreed consequence involves making a sexual proposition to {{{user}}}. The bet can require asking, but not sex. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "sexual-bucket-list",
+      "group": "07 Dare / Game / Curiosity / Experiment",
+      "title": "Sexual Bucket List",
+      "direction": "Focus on the “Sexual Bucket List” subtype of Please Bang Me. She has a consensual sexual experience on a personal bucket list and directly asks {{{user}}} to help her try it. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "try-this-with-me",
+      "group": "07 Dare / Game / Curiosity / Experiment",
+      "title": "Try This With Me",
+      "direction": "Focus on the “Try This With Me” subtype of Please Bang Me. She encountered a specific sexual idea and directly asks {{{user}}} to experiment with it together. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "porn-made-me-curious",
+      "group": "07 Dare / Game / Curiosity / Experiment",
+      "title": "Porn Made Me Curious",
+      "direction": "Focus on the “Porn Made Me Curious” subtype of Please Bang Me. Pornography, an adult game, erotica or another fantasy source made her curious about a particular experience, and she asks {{{user}}} to try a real-world version. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "can-we-test-something",
+      "group": "07 Dare / Game / Curiosity / Experiment",
+      "title": "Can We Test Something?",
+      "direction": "Focus on the “Can We Test Something?” subtype of Please Bang Me. She frames the proposition as an experiment: testing chemistry, a technique, a fantasy, a toy or a question she has about herself. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "until-monday",
+      "group": "08 Opportunity / Travel / Limited Time",
+      "title": "Until Monday",
+      "direction": "Focus on the “Until Monday” subtype of Please Bang Me. A weekend or short period of privacy creates a limited window, and she asks {{{user}}} to spend some of it having sex with her. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "want-to-kill-some-time",
+      "group": "08 Opportunity / Travel / Limited Time",
+      "title": "Want to Kill Some Time?",
+      "direction": "Focus on the “Want to Kill Some Time?” subtype of Please Bang Me. She is bored with time to spare and casually proposes sex with {{{user}}} as something mutually enjoyable they could do. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "keep-me-company-this-weekend",
+      "group": "08 Opportunity / Travel / Limited Time",
+      "title": "Keep Me Company This Weekend",
+      "direction": "Focus on the “Keep Me Company This Weekend” subtype of Please Bang Me. She has a free weekend and directly asks {{{user}}} to spend it with her, making clear that she is interested in sex as part of the arrangement. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "after-the-party",
+      "group": "08 Opportunity / Travel / Limited Time",
+      "title": "After the Party",
+      "direction": "Focus on the “After the Party” subtype of Please Bang Me. Once an adult party or social event winds down, she privately asks {{{user}}} to leave with her or have sex. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "empty-house-tonight",
+      "group": "08 Opportunity / Travel / Limited Time",
+      "title": "Empty House Tonight",
+      "direction": "Focus on the “Empty House Tonight” subtype of Please Bang Me. She unexpectedly has a private home or apartment to herself and decides to invite {{{user}}} over specifically because she wants sex. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "convention-weekend",
+      "group": "08 Opportunity / Travel / Limited Time",
+      "title": "Convention Weekend",
+      "direction": "Focus on the “Convention Weekend” subtype of Please Bang Me. During an adult convention, festival or multi-day event away from ordinary routine, she propositions {{{user}}} for a consensual hookup. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "holiday-fling",
+      "group": "08 Opportunity / Travel / Limited Time",
+      "title": "Holiday Fling",
+      "direction": "Focus on the “Holiday Fling” subtype of Please Bang Me. While travelling or on holiday, she directly proposes a short-term sexual encounter or fling with {{{user}}} without assuming it must continue after the trip. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "we-only-have-tonight",
+      "group": "08 Opportunity / Travel / Limited Time",
+      "title": "We Only Have Tonight",
+      "direction": "Focus on the “We Only Have Tonight” subtype of Please Bang Me. Circumstances mean the pair may not see each other again soon, and she chooses to make a direct proposition rather than leave the attraction untested. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "no-subtlety",
+      "group": "09 High-Libido / Blunt / Sex-Positive",
+      "title": "No Subtlety",
+      "direction": "Focus on the “No Subtlety” subtype of Please Bang Me. She is sexually direct by personality and asks {{{user}}} with almost no buildup, euphemism or embarrassment. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-m-horny-and-you-re-here",
+      "group": "09 High-Libido / Blunt / Sex-Positive",
+      "title": "I'm Horny and You're Here",
+      "direction": "Focus on the “I'm Horny and You're Here” subtype of Please Bang Me. She is openly aroused and directly asks {{{user}}} because he is an adult she finds attractive and available to ask. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-ve-been-trying-not-to-ask",
+      "group": "09 High-Libido / Blunt / Sex-Positive",
+      "title": "I've Been Trying Not to Ask",
+      "direction": "Focus on the “I've Been Trying Not to Ask” subtype of Please Bang Me. She has repeatedly suppressed the urge to proposition {{{user}}} and finally gives up on pretending she is not interested. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-masturbated-thinking-about-you",
+      "group": "09 High-Libido / Blunt / Sex-Positive",
+      "title": "I Masturbated Thinking About You",
+      "direction": "Focus on the “I Masturbated Thinking About You” subtype of Please Bang Me. She frankly admits that {{{user}}} has featured in her masturbation fantasies and follows the confession with a direct real-world proposition. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-need-sex-tonight",
+      "group": "09 High-Libido / Blunt / Sex-Positive",
+      "title": "I Need Sex Tonight",
+      "direction": "Focus on the “I Need Sex Tonight” subtype of Please Bang Me. She is unusually blunt that she wants partnered sex that night and asks {{{user}}} specifically. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "stop-making-me-hint",
+      "group": "09 High-Libido / Blunt / Sex-Positive",
+      "title": "Stop Making Me Hint",
+      "direction": "Focus on the “Stop Making Me Hint” subtype of Please Bang Me. She is tired of indirect flirting or her own failed hints and switches to an unmistakably direct sexual question. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "you-look-fuckable",
+      "group": "09 High-Libido / Blunt / Sex-Positive",
+      "title": "You Look Fuckable",
+      "direction": "Focus on the “You Look Fuckable” subtype of Please Bang Me. Her opening is deliberately crude and sexually candid: she finds {{{user}}} physically appealing and tells him so before asking. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-came-prepared",
+      "group": "09 High-Libido / Blunt / Sex-Positive",
+      "title": "I Came Prepared",
+      "direction": "Focus on the “I Came Prepared” subtype of Please Bang Me. She anticipated that she might ask {{{user}}} and brought practical items such as condoms, overnight necessities or a toy. Preparation shows intent, not guaranteed consent. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "recommended-by-a-friend",
+      "group": "10 Multiple People / Referral / Shared Interest",
+      "title": "Recommended by a Friend",
+      "direction": "Focus on the “Recommended by a Friend” subtype of Please Bang Me. A trusted adult friend tells {{{char}}} that {{{user}}} may be compatible, attractive or sexually skilled, leading her to make the proposition herself. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "two-of-us",
+      "group": "10 Multiple People / Referral / Shared Interest",
+      "title": "Two of Us",
+      "direction": "Focus on the “Two of Us” subtype of Please Bang Me. Two adult women jointly approach {{{user}}} with a consensual sexual proposition involving both of them. Treat each woman's boundaries independently. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "my-friend-wants-in",
+      "group": "10 Multiple People / Referral / Shared Interest",
+      "title": "My Friend Wants In",
+      "direction": "Focus on the “My Friend Wants In” subtype of Please Bang Me. {{{char}}} first propositions {{{user}}} and explains that an adult female friend is also interested in participating if everyone agrees. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "we-both-picked-you",
+      "group": "10 Multiple People / Referral / Shared Interest",
+      "title": "We Both Picked You",
+      "direction": "Focus on the “We Both Picked You” subtype of Please Bang Me. Two adult friends separately found {{{user}}} attractive and decided to ask him together rather than compete. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "couple-looking-for-a-third",
+      "group": "10 Multiple People / Referral / Shared Interest",
+      "title": "Couple Looking for a Third",
+      "direction": "Focus on the “Couple Looking for a Third” subtype of Please Bang Me. {{{char}}} is part of an adult couple seeking a consensual third person and personally asks {{{user}}}. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "she-says-you-re-good",
+      "group": "10 Multiple People / Referral / Shared Interest",
+      "title": "She Says You're Good",
+      "direction": "Focus on the “She Says You're Good” subtype of Please Bang Me. An adult woman who previously had consensual sex with {{{user}}} speaks positively about the experience to {{{char}}}, prompting {{{char}}} to ask him herself. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "we-made-a-pact-to-ask-you",
+      "group": "10 Multiple People / Referral / Shared Interest",
+      "title": "We Made a Pact to Ask You",
+      "direction": "Focus on the “We Made a Pact to Ask You” subtype of Please Bang Me. Two adult women have discussed their attraction to {{{user}}} and agree that one or both will finally ask him directly. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "take-turns",
+      "group": "10 Multiple People / Referral / Shared Interest",
+      "title": "Take Turns?",
+      "direction": "Focus on the “Take Turns?” subtype of Please Bang Me. {{{char}}} proposes a consensual multi-partner scenario in which she and another willing adult would each have sexual time with {{{user}}}. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "tie-me-up",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "Tie Me Up",
+      "direction": "Focus on the “Tie Me Up” subtype of Please Bang Me. She directly asks {{{user}}} for consensual bondage or restraint sex. Define restraints, limits, stop signals and desired activities. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "let-me-tie-you-up",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "Let Me Tie You Up",
+      "direction": "Focus on the “Let Me Tie You Up” subtype of Please Bang Me. She wants to take the controlling role and asks {{{user}}} to let her restrain him during consensual sex. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-want-to-try-roleplay",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "I Want to Try Roleplay",
+      "direction": "Focus on the “I Want to Try Roleplay” subtype of Please Bang Me. She has a specific adult roleplay fantasy and asks {{{user}}} to enact it with her. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "use-the-toy-with-me",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "Use the Toy With Me",
+      "direction": "Focus on the “Use the Toy With Me” subtype of Please Bang Me. She owns or wants to try a particular sex toy and directly asks {{{user}}} to use it with her or together. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "i-want-it-rougher",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "I Want It Rougher",
+      "direction": "Focus on the “I Want It Rougher” subtype of Please Bang Me. She asks for a consensually rougher sexual experience than she has previously had or normally has. Define what 'rougher' means. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "breeding-fantasy",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "Breeding Fantasy",
+      "direction": "Focus on the “Breeding Fantasy” subtype of Please Bang Me. She has a breeding/pregnancy-risk fantasy and asks {{{user}}} to participate in a version of it. Decide separately whether it is roleplay only or involves real reproductive risk. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "watch-me-then-join-me",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "Watch Me, Then Join Me",
+      "direction": "Focus on the “Watch Me, Then Join Me” subtype of Please Bang Me. She enjoys being watched and asks {{{user}}} to observe her masturbating or performing sexually before potentially joining if both still want that. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "teach-me-that-kink",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "Teach Me That Kink",
+      "direction": "Focus on the “Teach Me That Kink” subtype of Please Bang Me. She knows or believes {{{user}}} has experience with a kink she wants to explore and directly asks him to introduce her to it. Preserve the defining series hook that {{char}} personally makes a direct or unmistakable sexual proposition to {{user}}. Vary personality, history, experience, honesty, exact boundaries, setting and expected aftermath. Keep {{user}}'s attraction, dialogue, consent, reaction and decisions open, and do not force sex or a particular relationship outcome."
+    },
+    {
+      "id": "g12-single-and-available",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Single and Available",
+      "direction": "{{char}} is single and free to make the proposition without violating another relationship agreement."
+    },
+    {
+      "id": "g12-recently-single",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Recently Single",
+      "direction": "{{char}} has recently ended an adult relationship and makes the proposition during the unsettled period afterward."
+    },
+    {
+      "id": "g12-long-term-single",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Long-Term Single",
+      "direction": "{{char}} has been single for a long time and asks because she wants sex without necessarily wanting conventional dating."
+    },
+    {
+      "id": "g12-casually-dating-others",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Casually Dating Others",
+      "direction": "{{char}} is seeing other adults casually but has no exclusivity agreement that prevents the proposition."
+    },
+    {
+      "id": "g12-exclusive-boyfriend",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Exclusive Boyfriend",
+      "direction": "{{char}} has an adult boyfriend and knows the proposition would violate their monogamous agreement unless that agreement changes."
+    },
+    {
+      "id": "g12-exclusive-girlfriend",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Exclusive Girlfriend",
+      "direction": "{{char}} has an adult girlfriend and knows the proposition would violate their monogamous agreement unless that agreement changes."
+    },
+    {
+      "id": "g12-fianc-e-engaged",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Fiancée / Engaged",
+      "direction": "{{char}} is engaged to another adult, raising unusually high relationship stakes around the request."
+    },
+    {
+      "id": "g12-married",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Married",
+      "direction": "{{char}} is married and propositions {{user}} outside the marriage. Keep her spouse and actual relationship agreement distinct from her rationalisations."
+    },
+    {
+      "id": "g12-open-relationship",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Open Relationship",
+      "direction": "{{char}} is in a consensually open adult relationship and is permitted to seek outside sex within stated rules."
+    },
+    {
+      "id": "g12-polyamorous-relationship",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Polyamorous Relationship",
+      "direction": "{{char}} is in a consensual polyamorous structure and asks {{user}} as a potential additional sexual or romantic connection."
+    },
+    {
+      "id": "g12-hall-pass",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Hall Pass",
+      "direction": "{{char}} has a specific negotiated hall pass and chooses {{user}} as the adult she wants to ask."
+    },
+    {
+      "id": "g12-partner-aware-but-not-enthusiastic",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Partner-Aware but Not Enthusiastic",
+      "direction": "Her existing partner knows outside sex is permitted but has mixed feelings; preserve the actual agreement rather than treating discomfort as withdrawal of consent unless stated."
+    },
+    {
+      "id": "g12-partner-encourages-it",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Partner Encourages It",
+      "direction": "{{char}}’s partner actively encourages her to ask {{user}}, but {{char}}’s own desire and {{user}}’s consent remain independently necessary."
+    },
+    {
+      "id": "g12-partner-picked-user",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Partner Picked {{user}}",
+      "direction": "Her partner specifically suggested {{user}} as a possible outside partner, while {{char}} still decides for herself whether she wants him."
+    },
+    {
+      "id": "g12-relationship-rules-are-ambiguous",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Relationship Rules Are Ambiguous",
+      "direction": "{{char}} believes the request may be allowed, but the couple’s rules are poorly defined and need clarification."
+    },
+    {
+      "id": "g12-relationship-is-ending",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Relationship Is Ending",
+      "direction": "{{char}} is in the process of ending another relationship but has not fully resolved when exclusivity ends."
+    },
+    {
+      "id": "g12-separated-but-not-divorced",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Separated but Not Divorced",
+      "direction": "{{char}} is separated from a spouse and considers herself available; distinguish legal status from the actual relationship agreement."
+    },
+    {
+      "id": "g12-secretly-cheating",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Secretly Cheating",
+      "direction": "{{char}} knowingly wants sex with {{user}} despite an exclusivity agreement and plans to conceal it."
+    },
+    {
+      "id": "g12-claims-partner-wouldnt-care",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "Claims Partner Wouldn’t Care",
+      "direction": "{{char}} asserts that her partner would not mind, but that claim has not necessarily been verified."
+    },
+    {
+      "id": "g12-no-relationship-status-disclosed",
+      "group": "12 Relationship Status / Existing Agreements",
+      "title": "No Relationship Status Disclosed",
+      "direction": "{{char}} makes the proposition without initially telling {{user}} whether she is single or partnered."
+    },
+    {
+      "id": "g13-complete-stranger",
+      "group": "13 History With {{user}}",
+      "title": "Complete Stranger",
+      "direction": "{{char}} has only just met {{user}} and nevertheless makes a direct adult proposition."
+    },
+    {
+      "id": "g13-new-acquaintance",
+      "group": "13 History With {{user}}",
+      "title": "New Acquaintance",
+      "direction": "They have met a few times but do not yet have a substantial friendship or romantic history."
+    },
+    {
+      "id": "g13-coworker",
+      "group": "13 History With {{user}}",
+      "title": "Coworker",
+      "direction": "{{char}} knows {{user}} through work. Keep professional authority and workplace consequences separate from sexual consent."
+    },
+    {
+      "id": "g13-classmate",
+      "group": "13 History With {{user}}",
+      "title": "Classmate",
+      "direction": "{{char}} and {{user}} are adult classmates or trainees who know each other through study."
+    },
+    {
+      "id": "g13-neighbour",
+      "group": "13 History With {{user}}",
+      "title": "Neighbour",
+      "direction": "{{char}} is an adult neighbour with repeated everyday contact."
+    },
+    {
+      "id": "g13-roommate",
+      "group": "13 History With {{user}}",
+      "title": "Roommate",
+      "direction": "{{char}} shares housing with {{user}}, making the aftermath and home boundaries especially important."
+    },
+    {
+      "id": "g13-close-friend",
+      "group": "13 History With {{user}}",
+      "title": "Close Friend",
+      "direction": "{{char}} is a trusted friend and risks changing the friendship by asking."
+    },
+    {
+      "id": "g13-best-friend",
+      "group": "13 History With {{user}}",
+      "title": "Best Friend",
+      "direction": "The proposition comes from one of {{user}}’s closest adult friends."
+    },
+    {
+      "id": "g13-old-friend",
+      "group": "13 History With {{user}}",
+      "title": "Old Friend",
+      "direction": "They reconnect after years apart and {{char}} decides to act on old or new attraction."
+    },
+    {
+      "id": "g13-secret-crush-for-years",
+      "group": "13 History With {{user}}",
+      "title": "Secret Crush for Years",
+      "direction": "{{char}} has quietly desired {{user}} for a long period before finally asking."
+    },
+    {
+      "id": "g13-recent-crush",
+      "group": "13 History With {{user}}",
+      "title": "Recent Crush",
+      "direction": "Her attraction is new and she acts on it unusually quickly."
+    },
+    {
+      "id": "g13-former-date",
+      "group": "13 History With {{user}}",
+      "title": "Former Date",
+      "direction": "They went on one or more dates before but never became a couple."
+    },
+    {
+      "id": "g13-ex-girlfriend",
+      "group": "13 History With {{user}}",
+      "title": "Ex-Girlfriend",
+      "direction": "{{char}} is {{user}}’s adult ex and proposes sex without automatically asking to reconcile."
+    },
+    {
+      "id": "g13-former-fwb",
+      "group": "13 History With {{user}}",
+      "title": "Former FWB",
+      "direction": "{{char}} and {{user}} previously had a consensual casual sexual arrangement and she wants to restart or revisit it."
+    },
+    {
+      "id": "g13-past-one-night-stand",
+      "group": "13 History With {{user}}",
+      "title": "Past One-Night Stand",
+      "direction": "They have had sex once before and {{char}} directly asks for another encounter."
+    },
+    {
+      "id": "g13-previous-casual-partner",
+      "group": "13 History With {{user}}",
+      "title": "Previous Casual Partner",
+      "direction": "They have an established adult sexual history but no current arrangement."
+    },
+    {
+      "id": "g13-online-friend",
+      "group": "13 History With {{user}}",
+      "title": "Online Friend",
+      "direction": "Their connection developed online and the proposition comes before or around a first in-person meeting."
+    },
+    {
+      "id": "g13-gaming-hobby-friend",
+      "group": "13 History With {{user}}",
+      "title": "Gaming / Hobby Friend",
+      "direction": "{{char}} knows {{user}} through a shared hobby, club, game, or recurring community."
+    },
+    {
+      "id": "g13-friend-of-a-friend",
+      "group": "13 History With {{user}}",
+      "title": "Friend of a Friend",
+      "direction": "A mutual adult friend creates enough familiarity for {{char}} to approach {{user}} directly."
+    },
+    {
+      "id": "g13-recommended-by-previous-partner",
+      "group": "13 History With {{user}}",
+      "title": "Recommended by Previous Partner",
+      "direction": "Someone who has previously had consensual sex with {{user}} recommends him to {{char}}, prompting her to ask."
+    },
+    {
+      "id": "g13-someone-user-helped",
+      "group": "13 History With {{user}}",
+      "title": "Someone {{user}} Helped",
+      "direction": "A meaningful act of support created trust or attraction that later becomes a direct sexual request."
+    },
+    {
+      "id": "g13-someone-user-rejected-before",
+      "group": "13 History With {{user}}",
+      "title": "Someone {{user}} Rejected Before",
+      "direction": "{{char}} has expressed interest previously and now makes a more explicit proposition; preserve any prior clear boundaries."
+    },
+    {
+      "id": "g14-completely-honest",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Completely Honest",
+      "direction": "{{char}} gives {{user}} the real reason she is asking and accurately describes relevant relationship constraints."
+    },
+    {
+      "id": "g14-honest-about-desire-quiet-about-feelings",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Honest About Desire, Quiet About Feelings",
+      "direction": "She admits she wants sex but does not reveal that she also has romantic feelings."
+    },
+    {
+      "id": "g14-honest-about-sex-hides-relationship-status",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Honest About Sex, Hides Relationship Status",
+      "direction": "She directly asks for sex while omitting that she is currently partnered."
+    },
+    {
+      "id": "g14-honest-about-relationship-hides-revenge-motive",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Honest About Relationship, Hides Revenge Motive",
+      "direction": "She admits she is attached but conceals that the request is partly retaliation against her partner."
+    },
+    {
+      "id": "g14-claims-it-is-casual-but-has-a-crush",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Claims It Is Casual but Has a Crush",
+      "direction": "{{char}} frames the proposition as no-strings sex while privately hoping it develops into romance."
+    },
+    {
+      "id": "g14-claims-it-is-one-time-but-wants-more",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Claims It Is One Time but Wants More",
+      "direction": "She says she wants a single encounter while privately hoping to establish an ongoing arrangement."
+    },
+    {
+      "id": "g14-claims-it-is-a-dare",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Claims It Is a Dare",
+      "direction": "{{char}} blames a dare or game even though she personally wanted an excuse to ask."
+    },
+    {
+      "id": "g14-claims-she-is-just-curious",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Claims She Is Just Curious",
+      "direction": "Curiosity is real, but stronger attraction or feelings are also present."
+    },
+    {
+      "id": "g14-claims-partner-approved",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Claims Partner Approved",
+      "direction": "{{char}} says her partner consented to outside sex; keep open whether that statement is accurate unless the scenario establishes it."
+    },
+    {
+      "id": "g14-minimises-relationship-problems",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Minimises Relationship Problems",
+      "direction": "She mentions frustration at home but downplays how severe or complicated it actually is."
+    },
+    {
+      "id": "g14-exaggerates-relationship-problems",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Exaggerates Relationship Problems",
+      "direction": "{{char}} portrays her partner or relationship as worse than it is to make the proposition seem easier to justify."
+    },
+    {
+      "id": "g14-rebound-motive-hidden",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Rebound Motive Hidden",
+      "direction": "She does not initially disclose that a breakup or rejection is driving the request."
+    },
+    {
+      "id": "g14-validation-motive-hidden",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Validation Motive Hidden",
+      "direction": "She wants reassurance that she is desirable but presents the request as purely physical."
+    },
+    {
+      "id": "g14-testing-user",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Testing {{user}}",
+      "direction": "Part of the request is to find out whether {{user}} would agree, even if {{char}} is uncertain she would follow through."
+    },
+    {
+      "id": "g14-trying-to-make-someone-jealous",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Trying to Make Someone Jealous",
+      "direction": "She hopes another adult will learn about the proposition or encounter and become jealous."
+    },
+    {
+      "id": "g14-trying-to-prove-a-point",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Trying to Prove a Point",
+      "direction": "{{char}} wants the encounter to confirm something about herself, {{user}}, or another relationship."
+    },
+    {
+      "id": "g14-secret-romantic-agenda",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Secret Romantic Agenda",
+      "direction": "She uses sex as a hoped-for route into a romantic relationship without stating that goal upfront."
+    },
+    {
+      "id": "g14-no-hidden-agenda",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "No Hidden Agenda",
+      "direction": "Her stated reason is genuinely the whole reason."
+    },
+    {
+      "id": "g14-doesnt-fully-understand-her-own-motive",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Doesn’t Fully Understand Her Own Motive",
+      "direction": "{{char}} is sincere but emotionally confused about why she wants this now."
+    },
+    {
+      "id": "g14-reveals-the-real-reason-mid-conversation",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Reveals the Real Reason Mid-Conversation",
+      "direction": "The initial proposition is simple, but {{char}} becomes more honest about her motivation as the conversation continues."
+    },
+    {
+      "id": "g15-blunt-question",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Blunt Question",
+      "direction": "{{char}} simply asks {{user}} whether he wants to have sex with her."
+    },
+    {
+      "id": "g15-matter-of-fact-proposal",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Matter-of-Fact Proposal",
+      "direction": "She presents the request calmly and practically rather than dramatically."
+    },
+    {
+      "id": "g15-nervous-confession",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Nervous Confession",
+      "direction": "{{char}} is visibly anxious but makes the request clearly enough to avoid ambiguity."
+    },
+    {
+      "id": "g15-playful-proposition",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Playful Proposition",
+      "direction": "She uses teasing humor while still making the sexual request unmistakable."
+    },
+    {
+      "id": "g15-flirty-build-up-then-direct-ask",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Flirty Build-Up Then Direct Ask",
+      "direction": "She flirts first, then deliberately converts the tension into a clear proposition."
+    },
+    {
+      "id": "g15-text-message",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Text Message",
+      "direction": "{{char}} makes the request in a private message rather than face-to-face."
+    },
+    {
+      "id": "g15-late-night-message",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Late-Night Message",
+      "direction": "The proposition arrives unexpectedly late at night."
+    },
+    {
+      "id": "g15-voice-video-call",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Voice / Video Call",
+      "direction": "She asks directly during a private adult voice or video conversation."
+    },
+    {
+      "id": "g15-in-person-after-work",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "In Person After Work",
+      "direction": "She waits until work or another obligation ends before asking in private."
+    },
+    {
+      "id": "g15-at-her-door",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "At Her Door",
+      "direction": "{{char}} asks when {{user}} is already at or near her home."
+    },
+    {
+      "id": "g15-at-users-door",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "At {{user}}’s Door",
+      "direction": "She arrives specifically to make the proposition, leaving {{user}} free to decline."
+    },
+    {
+      "id": "g15-after-dinner",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "After Dinner",
+      "direction": "An ordinary meal ends with {{char}} directly asking whether {{user}} wants to continue the evening sexually."
+    },
+    {
+      "id": "g15-after-a-party",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "After a Party",
+      "direction": "She waits until an adult social event winds down before making the proposition."
+    },
+    {
+      "id": "g15-during-a-weekend-away",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "During a Weekend Away",
+      "direction": "A trip or event creates privacy and a limited window in which she asks."
+    },
+    {
+      "id": "g15-planned-for-days",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Planned for Days",
+      "direction": "{{char}} has rehearsed or prepared the proposition well in advance."
+    },
+    {
+      "id": "g15-pure-impulse",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Pure Impulse",
+      "direction": "She surprises herself by asking in the moment."
+    },
+    {
+      "id": "g15-after-repeated-hints-failed",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "After Repeated Hints Failed",
+      "direction": "{{char}} becomes direct because subtler flirting did not produce a clear answer."
+    },
+    {
+      "id": "g15-written-note",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Written Note",
+      "direction": "She leaves a direct adult note or message that {{user}} can consider without immediate pressure."
+    },
+    {
+      "id": "g15-asks-for-a-private-conversation-first",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Asks for a Private Conversation First",
+      "direction": "She deliberately creates a private, nonsexual conversation before making the proposition."
+    },
+    {
+      "id": "g15-gives-user-time-to-think",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Gives {{user}} Time to Think",
+      "direction": "{{char}} makes the request and explicitly says an immediate answer is not required."
+    },
+    {
+      "id": "g15-sets-a-time-limit",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Sets a Time Limit",
+      "direction": "She says the opportunity exists only until a specific date or event, without using the deadline as coercion."
+    },
+    {
+      "id": "g15-prepared-with-practical-details",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "Prepared With Practical Details",
+      "direction": "{{char}} has considered privacy, safer sex, location, timing, and aftermath before asking."
+    },
+    {
+      "id": "g16-nothing-changes-afterward",
+      "group": "16 What She Expects Afterward",
+      "title": "Nothing Changes Afterward",
+      "direction": "{{char}} expects one encounter followed by an ordinary return to the prior relationship."
+    },
+    {
+      "id": "g16-stay-friends",
+      "group": "16 What She Expects Afterward",
+      "title": "Stay Friends",
+      "direction": "She wants the existing friendship to remain intact even if they have sex."
+    },
+    {
+      "id": "g16-become-fwb",
+      "group": "16 What She Expects Afterward",
+      "title": "Become FWB",
+      "direction": "{{char}} hopes one encounter becomes a recurring casual arrangement."
+    },
+    {
+      "id": "g16-start-dating",
+      "group": "16 What She Expects Afterward",
+      "title": "Start Dating",
+      "direction": "She wants sex and then a genuine romantic relationship if both adults feel compatible."
+    },
+    {
+      "id": "g16-see-what-happens",
+      "group": "16 What She Expects Afterward",
+      "title": "See What Happens",
+      "direction": "{{char}} deliberately leaves the aftermath undefined."
+    },
+    {
+      "id": "g16-never-mention-it-again",
+      "group": "16 What She Expects Afterward",
+      "title": "Never Mention It Again",
+      "direction": "She wants the encounter treated as a sealed one-time event afterward."
+    },
+    {
+      "id": "g16-keep-it-secret",
+      "group": "16 What She Expects Afterward",
+      "title": "Keep It Secret",
+      "direction": "{{char}} expects both adults to conceal what happened from relevant partners or friends."
+    },
+    {
+      "id": "g16-tell-her-partner-afterward",
+      "group": "16 What She Expects Afterward",
+      "title": "Tell Her Partner Afterward",
+      "direction": "She intends to disclose the encounter later under whatever relationship agreement exists."
+    },
+    {
+      "id": "g16-partner-wants-details",
+      "group": "16 What She Expects Afterward",
+      "title": "Partner Wants Details",
+      "direction": "Her consenting partner expects a post-event account, but {{user}}’s privacy still requires agreement before intimate details are shared."
+    },
+    {
+      "id": "g16-sleep-over",
+      "group": "16 What She Expects Afterward",
+      "title": "Sleep Over",
+      "direction": "{{char}} expects the encounter to include an ordinary overnight stay rather than immediate departure."
+    },
+    {
+      "id": "g16-leave-immediately-after",
+      "group": "16 What She Expects Afterward",
+      "title": "Leave Immediately After",
+      "direction": "She prefers a clean physical boundary after sex and no overnight intimacy."
+    },
+    {
+      "id": "g16-breakfast-together",
+      "group": "16 What She Expects Afterward",
+      "title": "Breakfast Together",
+      "direction": "{{char}} imagines relaxed post-encounter companionship without necessarily calling it dating."
+    },
+    {
+      "id": "g16-try-it-once-before-deciding",
+      "group": "16 What She Expects Afterward",
+      "title": "Try It Once Before Deciding",
+      "direction": "She wants one experience before deciding whether an ongoing arrangement makes sense."
+    },
+    {
+      "id": "g16-no-romance-please",
+      "group": "16 What She Expects Afterward",
+      "title": "No Romance Please",
+      "direction": "{{char}} specifically does not want romantic escalation afterward."
+    },
+    {
+      "id": "g16-romance-is-welcome-but-not-required",
+      "group": "16 What She Expects Afterward",
+      "title": "Romance Is Welcome but Not Required",
+      "direction": "She is open to emotional development without making it a condition of sex."
+    },
+    {
+      "id": "g16-already-in-love",
+      "group": "16 What She Expects Afterward",
+      "title": "Already in Love",
+      "direction": "{{char}} hopes sex expresses feelings she already has, though {{user}}’s feelings remain open."
+    },
+    {
+      "id": "g16-wants-closure",
+      "group": "16 What She Expects Afterward",
+      "title": "Wants Closure",
+      "direction": "She believes one encounter may help resolve long-standing tension or curiosity."
+    },
+    {
+      "id": "g16-wants-confidence",
+      "group": "16 What She Expects Afterward",
+      "title": "Wants Confidence",
+      "direction": "She hopes a positive consensual experience will improve her confidence rather than create a new relationship."
+    },
+    {
+      "id": "g16-wants-to-learn-something-about-herself",
+      "group": "16 What She Expects Afterward",
+      "title": "Wants to Learn Something About Herself",
+      "direction": "The encounter is partly self-discovery, with no predetermined conclusion."
+    },
+    {
+      "id": "g16-wants-a-story-to-remember",
+      "group": "16 What She Expects Afterward",
+      "title": "Wants a Story to Remember",
+      "direction": "{{char}} values the experience as a memorable adult adventure rather than a long-term commitment."
+    },
+    {
+      "id": "g16-may-regret-it",
+      "group": "16 What She Expects Afterward",
+      "title": "May Regret It",
+      "direction": "She recognizes in advance that the choice could become emotionally complicated."
+    },
+    {
+      "id": "g16-no-expectations-stated",
+      "group": "16 What She Expects Afterward",
+      "title": "No Expectations Stated",
+      "direction": "{{char}} asks for sex but has not thought through what happens afterward."
+    },
+    {
+      "id": "g17-explicit-safer-sex-discussion",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Explicit Safer-Sex Discussion",
+      "direction": "{{char}} raises contraception, barriers, STI status/testing, and relevant practical boundaries before any activity."
+    },
+    {
+      "id": "g17-condoms-prepared",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Condoms Prepared",
+      "direction": "She has condoms available but still waits for mutual agreement about what they will do."
+    },
+    {
+      "id": "g17-recent-sti-testing-mentioned",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Recent STI Testing Mentioned",
+      "direction": "{{char}} discusses recent testing accurately without treating a test result as blanket permission or zero risk."
+    },
+    {
+      "id": "g17-contraception-discussed-separately",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Contraception Discussed Separately",
+      "direction": "Pregnancy prevention is addressed independently from STI prevention and sexual consent."
+    },
+    {
+      "id": "g17-pregnancy-risk-avoided",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Pregnancy Risk Avoided",
+      "direction": "{{char}} specifically wants an encounter with precautions intended to minimize pregnancy risk."
+    },
+    {
+      "id": "g17-pregnancy-risk-accepted-within-limits",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Pregnancy Risk Accepted Within Limits",
+      "direction": "Two adults knowingly discuss a nonzero pregnancy risk and choose precautions accordingly; do not imply immediate pregnancy knowledge afterward."
+    },
+    {
+      "id": "g17-no-pregnancy-capable-activity",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "No Pregnancy-Capable Activity",
+      "direction": "The proposed encounter does not include activity capable of causing pregnancy."
+    },
+    {
+      "id": "g17-activity-specific-consent",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Activity-Specific Consent",
+      "direction": "{{char}} names what she is asking for rather than treating agreement to sex as consent to every possible act."
+    },
+    {
+      "id": "g17-limits-stated-up-front",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Limits Stated Up Front",
+      "direction": "She clearly identifies activities she does not want."
+    },
+    {
+      "id": "g17-stop-signal-check-in",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Stop Signal / Check-In",
+      "direction": "The proposed encounter includes an agreed way to pause, stop, or check comfort."
+    },
+    {
+      "id": "g17-no-intoxication-shortcut",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "No Intoxication Shortcut",
+      "direction": "Both adults remain capable of meaningful consent; intoxication is not used to manufacture agreement."
+    },
+    {
+      "id": "g17-no-workplace-pressure",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "No Workplace Pressure",
+      "direction": "If they are coworkers, the proposition is separated from employment consequences and professional leverage."
+    },
+    {
+      "id": "g17-no-financial-pressure",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "No Financial Pressure",
+      "direction": "Money, gifts, debt, rent, or financial dependence do not substitute for genuine consent."
+    },
+    {
+      "id": "g17-no-housing-pressure",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "No Housing Pressure",
+      "direction": "Shared housing or access to shelter is not used to pressure {{user}} into sex."
+    },
+    {
+      "id": "g17-no-secret-recording",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "No Secret Recording",
+      "direction": "No intimate recording is assumed. Any recording would require separate explicit consent."
+    },
+    {
+      "id": "g17-privacy-expectations-discussed",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Privacy Expectations Discussed",
+      "direction": "{{char}} and {{user}} can establish what, if anything, may be disclosed to friends or partners afterward."
+    },
+    {
+      "id": "g17-either-person-can-change-their-mind",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Either Person Can Change Their Mind",
+      "direction": "The proposition remains revocable at any stage before or during activity."
+    },
+    {
+      "id": "g17-rejection-is-accepted",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Rejection Is Accepted",
+      "direction": "A no from {{user}} ends the sexual request without punishment, harassment, or repeated pressure."
+    },
+    {
+      "id": "g17-friendship-does-not-create-obligation",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Friendship Does Not Create Obligation",
+      "direction": "Existing closeness, favors, history, or trust do not make {{user}} owe sex."
+    },
+    {
+      "id": "g17-dare-does-not-create-obligation",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "Dare Does Not Create Obligation",
+      "direction": "A dare, bet, game, promise, or peer pressure never substitutes for either adult’s present consent."
+    },
+    {
+      "id": "g18-do-you-want-to-have-sex-with-me",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘Do You Want to Have Sex With Me?’",
+      "direction": "Open with {{char}} making the proposition in plain adult language and waiting for {{user}}’s answer."
+    },
+    {
+      "id": "g18-i-dont-want-a-date",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘I Don’t Want a Date’",
+      "direction": "Open with {{char}} clarifying that she is asking for sex rather than conventional romance."
+    },
+    {
+      "id": "g18-i-need-to-ask-you-something-weird",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘I Need to Ask You Something Weird’",
+      "direction": "Open with a nervous but direct lead-in that quickly becomes an unmistakable proposition."
+    },
+    {
+      "id": "g18-just-once",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘Just Once’",
+      "direction": "Open with {{char}} proposing a single encounter and explaining why one time matters to her."
+    },
+    {
+      "id": "g18-until-monday",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘Until Monday’",
+      "direction": "Open with a temporary private window and {{char}} directly asking how {{user}} wants to use it."
+    },
+    {
+      "id": "g18-keep-me-company-this-weekend",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘Keep Me Company This Weekend’",
+      "direction": "Open with a weekend invitation whose sexual intention {{char}} makes explicit rather than merely implying."
+    },
+    {
+      "id": "g18-train-me",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘Train Me’",
+      "direction": "Open with {{char}} asking {{user}} to help her gain adult sexual confidence or experience, while leaving his agreement open."
+    },
+    {
+      "id": "g18-let-me-teach-you",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘Let Me Teach You’",
+      "direction": "Open with an experienced {{char}} offering consensual instruction to {{user}}."
+    },
+    {
+      "id": "g18-my-boyfriend-knows",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘My Boyfriend Knows’",
+      "direction": "Open with {{char}} explaining that her partner is aware or supportive, while leaving verification and {{user}}’s interest open."
+    },
+    {
+      "id": "g18-my-boyfriend-doesnt-know",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘My Boyfriend Doesn’t Know’",
+      "direction": "Open with {{char}} explicitly acknowledging that she is proposing secret infidelity."
+    },
+    {
+      "id": "g18-he-cheated-first",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘He Cheated First’",
+      "direction": "Open with {{char}} giving revenge as her reason, while keeping whether {{user}} participates completely open."
+    },
+    {
+      "id": "g18-we-both-want-you",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘We Both Want You’",
+      "direction": "Open with two adult women making a joint proposition while preserving each person’s independent consent and boundaries."
+    },
+    {
+      "id": "g18-my-friend-recommended-you",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘My Friend Recommended You’",
+      "direction": "Open with {{char}} explaining that another adult spoke positively about {{user}} and encouraged her to ask."
+    },
+    {
+      "id": "g18-before-i-leave",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "‘Before I Leave’",
+      "direction": "Open with a looming move, trip, graduation, or transfer that motivates {{char}} to ask directly rather than keep wondering."
+    },
+    {
+      "id": "g18-bridge-to-she-wants-you",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "Bridge to She Wants You",
+      "direction": "The proposition is only one part of a larger romantic interest in {{user}}, creating a natural She Wants You trajectory."
+    },
+    {
+      "id": "g18-bridge-to-you-got-her-pregnant",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "Bridge to You Got Her Pregnant",
+      "direction": "If consensual pregnancy-capable sex occurs and conception later becomes plausible on a realistic timeline, transition into You Got Her Pregnant."
+    },
+    {
+      "id": "g18-bridge-to-workplace-stories",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "Bridge to Workplace Stories",
+      "direction": "Make the adult proposition arise through a workplace connection while preserving professional boundaries and consequences."
+    },
+    {
+      "id": "g18-bridge-to-my-neighbour-in-class",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "Bridge to My Neighbour in Class",
+      "direction": "Use an adult neighbour/classmate context where familiarity and opportunity make the direct request believable."
+    },
+    {
+      "id": "g18-bridge-to-open-relationship",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "Bridge to Open Relationship",
+      "direction": "The request comes from or leads into an honest discussion of consensual non-monogamy."
+    },
+    {
+      "id": "g18-bridge-to-under-your-nose",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "Bridge to Under Your Nose",
+      "direction": "If a secret attached-person encounter becomes repeated hidden involvement, it can evolve into Under Your Nose."
+    },
+    {
+      "id": "g18-bridge-to-ntr-report",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "Bridge to NTR Report",
+      "direction": "If an outside encounter later becomes something a partner is told about in detail, it can transition into an NTR Report premise."
+    },
+    {
+      "id": "g18-bridge-to-her-kink",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "Bridge to Her Kink",
+      "direction": "The direct request is motivated by a specific consensual kink that becomes the dominant engine."
+    },
+    {
+      "id": "g18-keep-please-bang-me-pure",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "Keep Please Bang Me Pure",
+      "direction": "Do not bridge to another series; focus on the direct proposition, motives, boundaries, and immediate aftermath."
+    },
+    {
+      "id": "g11-please-come-inside-me",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "Please Come Inside Me",
+      "direction": "{{char}}’s proposition is specific: she wants {{user}} to have sex with her and finish inside her. The internal finish is part of the ask, not an optional extra. Vary how blunt versus soft the wording is and whether she frames it as a one-time request or a standing preference."
+    },
+    {
+      "id": "g11-please-fuck-me-raw",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "Please Fuck Me Raw",
+      "direction": "{{char}} explicitly asks for unprotected sex. No condom is part of the proposition. Vary whether she has already thought about pregnancy/STI risk and how she presents that to {{user}}."
+    },
+    {
+      "id": "g11-please-breed-me",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "Please Breed Me",
+      "direction": "{{char}} uses breeding language in the direct ask — she wants {{user}} to try to get her pregnant, or at least to fuck her with that framing. Vary how serious versus purely kinky the request is."
+    },
+    {
+      "id": "g11-please-use-me-and-fill-me",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "Please Use Me and Fill Me",
+      "direction": "The proposition combines availability and internal finish: she wants to be used and left full. Vary tone (needy, dominant, casual, desperate) and what she expects after."
+    },
+    {
+      "id": "g11-please-give-me-multiple-loads",
+      "group": "11 Kink-Specific Direct Requests",
+      "title": "Please Give Me Multiple Loads",
+      "direction": "{{char}} asks not only for sex but for {{user}} to finish inside her more than once in the same encounter or night. The quantity is part of the request."
+    },
+    {
+      "id": "g17-she-is-not-on-birth-control-and-still-asks-for-creampie",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "She Is Not on Birth Control and Still Asks for Creampie",
+      "direction": "As part of the proposition or the negotiation that follows, {{char}} discloses she is not on birth control (or equivalent) and still wants {{user}} to finish inside her. The risk is stated up front. Leave {{user}}’s decision open."
+    },
+    {
+      "id": "g17-she-has-already-decided-pregnancy-risk-is-acceptable",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "She Has Already Decided Pregnancy Risk Is Acceptable",
+      "direction": "{{char}} has privately decided that the chance of pregnancy from this encounter is acceptable to her. She may or may not state that clearly when she asks {{user}} to come inside her."
+    },
+    {
+      "id": "g17-she-wants-raw-and-has-recent-test-results",
+      "group": "17 Consent / Practical Boundaries / Sexual Health",
+      "title": "She Wants Raw and Has Recent Test Results",
+      "direction": "{{char}} pairs the request for unprotected sex with practical reassurance — recent STI tests, clean status, willingness to show results. The ask is both sexual and organised."
+    },
+    {
+      "id": "g16-she-wants-to-leave-still-full",
+      "group": "16 What She Expects Afterward",
+      "title": "She Wants to Leave Still Full",
+      "direction": "After the sex she is asking for, {{char}} wants to leave (or go about the rest of her day/night) still carrying {{user}}’s semen. That aftermath is part of what she is requesting."
+    },
+    {
+      "id": "g16-she-wants-a-second-round-after-the-creampie",
+      "group": "16 What She Expects Afterward",
+      "title": "She Wants a Second Round After the Creampie",
+      "direction": "{{char}}’s expectation after the first internal finish is more sex, not cleanup and goodbye. The night is meant to continue. Vary how she communicates that."
+    },
+    {
+      "id": "g16-she-wants-him-to-watch-it-leak",
+      "group": "16 What She Expects Afterward",
+      "title": "She Wants Him to Watch It Leak",
+      "direction": "Part of what {{char}} wants after {{user}} finishes inside her is for him to see the result — her body, the mess, the leaking. The visual aftermath is intentional."
+    },
+    {
+      "id": "g15-she-asks-in-bed-already-naked",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "She Asks in Bed Already Naked",
+      "direction": "The proposition happens when {{char}} is already undressed and in a sexual context with {{user}} (or about to be). The ask for raw sex or creampie lands in the middle of rising physical momentum. Leave his answer open."
+    },
+    {
+      "id": "g15-she-asks-by-putting-him-inside-her-without-a-condom",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "She Asks by Putting Him Inside Her Without a Condom",
+      "direction": "Instead of only words, {{char}} escalates by guiding {{user}} into her unprotected. The physical move is the proposition. Keep his ability to stop or continue clear."
+    },
+    {
+      "id": "g15-she-texts-please-come-inside-me-tonight",
+      "group": "15 Request Style / Planning / Timing",
+      "title": "She Texts ‘Please Come Inside Me Tonight’",
+      "direction": "The direct ask arrives as a message that is already sexually specific about the internal finish. Vary how much other context the thread contains and how soon she expects an answer."
+    },
+    {
+      "id": "g09-high-libido-she-just-wants-to-be-filled",
+      "group": "09 High-Libido / Blunt / Sex-Positive",
+      "title": "High-Libido — She Just Wants to Be Filled",
+      "direction": "{{char}}’s blunt, sex-positive framing is that she is horny and wants {{user}} to fill her. Little romance, clear body-need language. Vary warmth versus pure appetite."
+    },
+    {
+      "id": "g05-she-is-partnered-and-asks-for-a-secret-creampie",
+      "group": "05 Secret Infidelity / Relationship Frustration",
+      "title": "She Is Partnered and Asks for a Secret Creampie",
+      "direction": "{{char}} has a partner and is still asking {{user}} to fuck her unprotected and finish inside her in secret. The proposition includes the betrayal. Keep all adults’ agency visible."
+    },
+    {
+      "id": "g05-she-wants-him-to-give-her-what-her-partner-will-not",
+      "group": "05 Secret Infidelity / Relationship Frustration",
+      "title": "She Wants Him to Give Her What Her Partner Will Not",
+      "direction": "The motive includes a specific sexual lack at home — her partner will not go raw, will not finish inside her, will not breed-play. She is asking {{user}} for that missing act."
+    },
+    {
+      "id": "g06-her-partner-knows-and-wants-user-to-fill-her",
+      "group": "06 Consensual Non-Monogamy / Partner-Aware",
+      "title": "Her Partner Knows and Wants {{user}} to Fill Her",
+      "direction": "The proposition is partner-aware: {{char}}’s partner knows and wants {{user}} to have her unprotected and finish inside her. Vary how the partner is involved (present, waiting at home, only informed)."
+    },
+    {
+      "id": "g01-one-night-raw-and-done",
+      "group": "01 Direct Desire / No Strings",
+      "title": "One Night Raw and Done",
+      "direction": "{{char}} wants one night of unprotected sex with {{user}}, including him finishing inside her, with no ongoing relationship implied. The clarity of the no-strings frame is part of the ask."
+    },
+    {
+      "id": "g02-first-time-she-wants-it-to-be-a-creampie",
+      "group": "02 First Time / Learning / Curiosity",
+      "title": "First Time — She Wants It to Be a Creampie",
+      "direction": "If this is her first time with {{user}} (or first time having sex at all, or first time raw), she specifically wants the encounter to include him finishing inside her. The milestone and the act are linked."
+    },
+    {
+      "id": "g14-hidden-motive-she-wants-to-get-pregnant",
+      "group": "14 Honesty / Hidden Motive",
+      "title": "Hidden Motive — She Wants to Get Pregnant",
+      "direction": "The stated reason for asking {{user}} for sex is incomplete. A hidden motive is that she wants to become pregnant by him. Vary how much of that motive she eventually reveals and how {{user}}’s consent to that risk is handled."
+    },
+    {
+      "id": "g18-she-asks-while-already-on-top-of-him",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "She Asks While Already on Top of Him",
+      "direction": "Open with {{char}} straddling or already aligned with {{user}} when she asks him to go in raw / come inside her. The physical position makes the proposition immediate. Leave his answer open."
+    },
+    {
+      "id": "g18-she-says-please-bang-me-and-means-fill-me",
+      "group": "18 Strong Openings / Cross-Series Bridges",
+      "title": "She Says ‘Please Bang Me’ and Means Fill Me",
+      "direction": "Open with the title phrase or equivalent, then clarify (through her words or actions) that she means unprotected sex and an internal finish. The gap between casual wording and specific intent is the hook."
+    },
+    {
+      "id": "g13-they-have-done-this-before-and-she-wants-another-load",
+      "group": "13 History With {{user}}",
+      "title": "They Have Done This Before and She Wants Another Load",
+      "direction": "{{char}} and {{user}} have already had sex in which he finished inside her. Her new proposition is for a repeat — another night, another load. History removes the need to explain the basic ask."
+    },
+    {
+      "id": "g08-limited-window-she-wants-to-be-filled-before-she-leaves-town",
+      "group": "08 Opportunity / Travel / Limited Time",
+      "title": "Limited Window — She Wants to Be Filled Before She Leaves Town",
+      "direction": "Time is short (travel, moving, a closing opportunity). {{char}}’s direct ask is that {{user}} fuck her raw and finish inside her before the window closes. Urgency shapes the proposition."
+    }
+  ],
+  "sections": [
+    {
+      "id": "direct-request-boundary",
+      "label": "The direct request is the stable hook",
+      "content": "Every generated idea should reach an unmistakable adult proposition from {{char}} to {{user}}. The words, motive, relationship context, timing, and proposed activity may vary, but do not reduce the source to unspoken attraction or generic flirting."
+    },
+    {
+      "id": "proposition-is-not-consent",
+      "label": "A proposition is not an outcome",
+      "content": "{{char}} making the request establishes only her own willingness to ask. It does not pre-write {{user}}’s interest, consent, dialogue, sexual behavior, or future relationship choices."
+    },
+    {
+      "id": "sex-romance-separation",
+      "label": "Sex and romance are separate axes",
+      "content": "A request for sex may be romantic, casual, educational, experimental, retaliatory, validating, kink-driven, or emotionally complicated. Do not automatically convert sex into love, or direct sexual desire into a request for a relationship."
+    },
+    {
+      "id": "relationship-structure",
+      "label": "Infidelity and non-monogamy are different",
+      "content": "If {{char}} is partnered, establish the actual agreement. Secret cheating, a hall pass, an open relationship, a partner-encouraged encounter, and ambiguous rules are different scenario engines and should not be collapsed together."
+    },
+    {
+      "id": "original-bible-seeds",
+      "label": "Original Bible I seeds retained",
+      "content": "Rebound; Relationship Frustration; First-Time Curiosity; Rebellion; Dare; Secret Crush; FWB Proposal; Validation; One Time Only; Recommended by a Friend; Two of Us; Boyfriend's Away; Train Me; Until Monday; Truth or Dare Next Door; Risk Is Half the Fun; Let Me Teach You; Revenge After Cheating; No Subtlety; Want to Kill Some Time?; Keep Me Company This Weekend."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Use the narrowest relevant Direction Preset. Multiple groups can be combined through one short visible Additional Direction—for example: Rebound + Close Friend + Completely Honest + Stay Friends, or Boyfriend's Away + Secretly Cheating + Late-Night Message + One Secret Night, or First-Time Curiosity + I Want Someone I Trust + Gives {{user}} Time to Think + Explicit Safer-Sex Discussion."
+    }
+  ],
+  "raw_prompt": "Prioritise a clear adult proposition, believable motive, accurate relationship structure, explicit separation between {{char}}’s request and {{user}}’s consent, and genuine variety in experience, honesty, timing, boundaries, and aftermath. Preserve the selected Direction Preset and do not pre-play {{user}}’s answer."
 }
