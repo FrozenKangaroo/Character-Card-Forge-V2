@@ -3,6 +3,1724 @@
   "schema_version": 1,
   "id": "bible-i-10-he-wants-your-girl",
   "title": "He Wants Your Girl",
+  "description": "Reusable adult romantic-rival engine in which another man openly tells {{user}} that he intends to pursue, seduce, date, or ultimately win over {{user}}’s adult partner. Detailed presets vary the rival’s identity, why he tells {{user}}, how justified his confidence is, what {{char}} actually feels, what he knows, how he pursues her, manipulation risks, social complications, strong openings, and outcomes ranging from total failure to secret affair, consensual outside relationship, breakup, or strengthened couple.",
   "source_version": "1.2",
-  "note": "Full expanded content (266 presets) is available on Google Drive Idea Sources folder as 10-he-wants-your-girl.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 10,
+    "category": "NTR, Infidelity & Non-Monogamy",
+    "source_date": "2026-09-21"
+  },
+  "summary": "Another adult man openly tells {{user}} that he intends to pursue {{user}}’s adult partner. He may be cocky, quiet, honest, manipulative, competitive, delusional, genuinely in love, or armed with information {{user}} does not know. {{char}} may have no interest, mild curiosity, hidden attraction, old history, or an already developing secret connection. The reusable engine is the declared romantic rivalry and the uncertainty of what {{char}} will actually choose.",
+  "core_premise": "An adult rival deliberately makes {{user}} aware that he wants {{char}} and intends to pursue her. The rival’s confidence may be well-founded or absurd, but he does not own the outcome and neither does {{user}}. {{char}} remains an autonomous adult whose feelings and choices must be tracked independently from what either man predicts. The source should distinguish confidence from evidence, pursuit from coercion, and rivalry from treating a woman as a transferable prize.",
+  "setup": "Begin at or immediately around the rival’s declaration to {{user}}, or at a tightly related first confrontation. Establish who the rival is, why he chose to say this openly, what he genuinely knows, what {{char}} currently feels toward him, and what level of contact has already occurred. Do not pre-write {{user}}’s response, {{char}}’s final choice, or whether the rival succeeds.",
+  "core_variables": [
+    "Who the adult rival is and how he relates to {{user}} and {{char}}.",
+    "Why he tells {{user}} about his intention instead of pursuing privately.",
+    "Whether his confidence is based on real evidence, partial evidence, misreading, bluffing, or delusion.",
+    "What {{char}} actually feels toward him at scenario opening.",
+    "What prior contact, flirting, emotional intimacy, history, or boundary crossing already exists.",
+    "What the rival knows that {{user}} may not know.",
+    "Whether the rival wants sex, a date, romance, exclusivity, an affair, consensual non-monogamy, revenge, validation, or simply a chance.",
+    "How he intends to pursue {{char}}.",
+    "Whether he respects rejection and relationship boundaries.",
+    "Whether his personality is arrogant, quiet, competitive, honest, manipulative, romantic, insecure, or provocative.",
+    "What social, work, friendship, neighbourhood, or travel circumstances keep the rival relevant.",
+    "Whether the pursuit fails, succeeds, backfires, remains unresolved, or exposes an existing relationship issue."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: another adult man openly tells {{user}} that he intends to pursue {{char}}.",
+    "Do not write {{user}}’s anger, jealousy, fear, competitiveness, confidence, retaliation, dialogue, or future behavior as settled fact.",
+    "Do not write {{char}} as a prize the two men can win through competition. Her attraction, consent, and relationship choices remain independent.",
+    "Separate the rival’s confidence from objective reality. He may be correct, partly correct, bluffing, or delusional.",
+    "Separate what the rival claims {{char}} feels from what {{char}} actually feels.",
+    "Do not assume {{char}} must be secretly interested merely because the rival is bold or confident.",
+    "Do not assume the rival is objectively superior, more masculine, more attractive, richer, more exciting, or better for {{char}} unless a specific character perspective says so.",
+    "Do not force the rival to be villainous. Honest, respectful, conflicted, ordinary, and boundary-conscious rivals are valid.",
+    "Likewise, do not romanticize manipulation, persistence after clear rejection, workplace leverage, stalking, threats, or coercion as impressive seduction.",
+    "If {{char}} clearly rejects the rival, continued unwanted pursuit must be treated as harassment rather than normal romantic competition.",
+    "Preserve the rival’s independent motives: romantic interest, sexual interest, ego, revenge, honesty, rivalry, or genuine belief in compatibility should produce different behavior.",
+    "Do not treat private complaints {{char}} made about {{user}} as proof she wants the rival or wants to leave.",
+    "If the rival reveals evidence, distinguish genuine evidence, ambiguous evidence, edited context, and fabricated claims.",
+    "Do not expose intimate images or recordings without consent; such material is not a normal rivalry prop.",
+    "If a selected preset establishes a narrower rival identity, motive, knowledge state, or outcome, preserve it while varying the remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Consent must remain activity-specific and independent from attraction, flirtation, past sex, prior relationships, social pressure, or rivalry.",
+    "Neither {{user}} nor the rival owns {{char}} or has authority to transfer, trade, surrender, or award her.",
+    "Do not use threats, stalking, professional leverage, financial leverage, housing pressure, intoxication, or fear as substitutes for romantic or sexual consent.",
+    "Do not make persistence after a clear rejection seem admirable or likely to wear {{char}} down.",
+    "Do not force {{user}} to compete, fight, threaten, forgive, leave, accept non-monogamy, or confront the rival.",
+    "Do not force {{char}} to choose {{user}}, choose the rival, date both, cheat, or remain with either man.",
+    "Do not force the rival to continue pursuit if he changes his mind, learns new information, or is clearly rejected.",
+    "Character claims about who is 'better' are subjective perspective, not narrator fact.",
+    "Do not use cosmetic changes of names, occupations, or locations as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Cocky playboy, best friend, mutual friend, close male friend, coworker, boss, ex, former FWB, old crush, neighbour, personal enemy, quiet rival, online friend, travel acquaintance, older man, younger man, or attached rival",
+    "Warning, bragging rights, respect, provocation, psychological advantage, belief the couple is weak, knowledge of attraction, desire for honesty, revenge, or refusal to be a secret affair partner",
+    "No evidence, flirtation, private messages, emotional confidant role, admitted attraction, kiss, sexual past, old crush, relationship complaints, breakup thoughts, date consideration, rejection, misreading, projection, or hidden knowledge",
+    "No interest, platonic warmth, curiosity, physical attraction, emotional attraction, mutual flirting, secret crush, conflict, old feelings, temptation, hidden boundary crossing, or rejection because of his behavior",
+    "Direct date request, open flirting, emotional bond, shared interests, old memories, respectful pursuit, private-time opportunities, trip/event invitation, waiting until she is single, non-monogamy proposal, secret-affair attempt, or manipulation",
+    "Arrogant, accurate, wrong, calm, competitive, manipulative, delusional, respectful, smug, playful, reluctant, guilty, vindictive, romantic, insecure, or awkward",
+    "Strong couple, routine couple, recent conflict, long distance, reconciliation, new relationship, engagement, marriage, open relationship, or rival imagining weaknesses that are not there",
+    "Friend-group pressure, work contact, neighbourhood proximity, upcoming travel, wedding/reunion, recent breakup, move, shared community, visible chemistry, or nobody taking him seriously",
+    "Date, casual sex, romance, exclusivity, affair, open arrangement, public choice, revenge, validation, love, or no clear plan beyond pursuit",
+    "Honest evidence, bluff, misleading messages, secret information, no privileged information, or direct three-way discussion",
+    "Clear rejection, flattered loyalty, curiosity, secret desire, resentment at being treated as a prize, request for space, negotiated exploration, cheating, or final choice",
+    "Failure, strengthened couple, exposed relationship problem, one date, secret affair, consensual outside partner, breakup, fizzled new relationship, rival losing interest, unresolved triangle, or no forced ending"
+  ],
+  "cross_links": [
+    "She Wants Him",
+    "Under Your Nose",
+    "NTR Report",
+    "Open Relationship",
+    "Turn You Into a Cuck",
+    "The Man From Her Past",
+    "I’m Going to Bang Another Man",
+    "She Got Pregnant"
+  ],
+  "tags": [
+    "adult",
+    "romantic rival",
+    "other man",
+    "ntr",
+    "relationship tension",
+    "pursuit",
+    "seduction",
+    "competition",
+    "rivalry",
+    "ex-boyfriend",
+    "best friend",
+    "hidden attraction",
+    "agency"
+  ],
+  "notes": "Expanded from Series Bible I #10. The original seeds—Cocky Playboy, Best Friend, Ex / Former FWB, Quiet Unexpected Rival, Personal Enemy, and He Knows Something {{user}} Doesn’t—are preserved and expanded into a large grouped preset library. The source treats the rival’s declaration, his evidence, and {{char}}’s actual feelings as separate layers so confident claims do not become automatic truth.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied He Wants Your Girl concepts in which another adult man openly tells {{user}} that he intends to pursue, seduce, date, or ultimately win over {{user}}’s adult partner. Vary who he is, why he says it directly to {{user}}, whether he has real reason for confidence, what {{char}} actually feels about him, how he intends to pursue her, what he knows that {{user}} may not, and whether his pursuit succeeds, fails, remains unresolved, or accidentally strengthens the existing couple. Do not pre-decide {{char}}’s choice or {{user}}’s response."
+    },
+    {
+      "id": "g02-cocky-playboy",
+      "group": "02 Who the Rival Is",
+      "title": "Cocky Playboy",
+      "direction": "The rival is an adult man with a confident, flirtatious, high-opportunity persona who openly tells {{user}} he intends to pursue {{char}}. His confidence may be justified, exaggerated, performative, or completely misplaced."
+    },
+    {
+      "id": "g02-quiet-unexpected-rival",
+      "group": "02 Who the Rival Is",
+      "title": "Quiet Unexpected Rival",
+      "direction": "The rival is an adult man {{user}} would not initially regard as a threat: quiet, ordinary, shy, reserved, or low-key. His direct declaration is therefore especially surprising."
+    },
+    {
+      "id": "g02-personal-enemy",
+      "group": "02 Who the Rival Is",
+      "title": "Personal Enemy",
+      "direction": "The rival has an existing personal conflict with {{user}} and partly enjoys the idea of pursuing {{char}} because of that rivalry. Keep {{char}}’s agency independent of the feud."
+    },
+    {
+      "id": "g02-best-friend",
+      "group": "02 Who the Rival Is",
+      "title": "Best Friend",
+      "direction": "The rival is {{user}}’s adult best friend. Preserve the independent friendship stakes rather than reducing him to a generic competitor."
+    },
+    {
+      "id": "g02-mutual-friend",
+      "group": "02 Who the Rival Is",
+      "title": "Mutual Friend",
+      "direction": "The rival is an adult mutual friend who knows both members of the couple well."
+    },
+    {
+      "id": "g02-her-close-male-friend",
+      "group": "02 Who the Rival Is",
+      "title": "Her Close Male Friend",
+      "direction": "The rival is one of {{char}}’s adult male friends and may already have significant emotional trust with her."
+    },
+    {
+      "id": "g02-coworker",
+      "group": "02 Who the Rival Is",
+      "title": "Coworker",
+      "direction": "The rival is an adult coworker who has regular legitimate contact with {{char}}."
+    },
+    {
+      "id": "g02-boss-supervisor",
+      "group": "02 Who the Rival Is",
+      "title": "Boss / Supervisor",
+      "direction": "The rival is an adult boss or supervisor. Attraction may exist, but professional authority must not be used to obtain romance or sex."
+    },
+    {
+      "id": "g02-ex-boyfriend",
+      "group": "02 Who the Rival Is",
+      "title": "Ex-Boyfriend",
+      "direction": "The rival is an adult ex-boyfriend who believes old chemistry or unresolved feelings give him a realistic chance."
+    },
+    {
+      "id": "g02-former-fwb",
+      "group": "02 Who the Rival Is",
+      "title": "Former FWB",
+      "direction": "The rival is an adult former friend-with-benefits who already knows there was sexual compatibility in the past."
+    },
+    {
+      "id": "g02-old-crush",
+      "group": "02 Who the Rival Is",
+      "title": "Old Crush",
+      "direction": "The rival is an adult old crush whom {{char}} once wanted but never dated or slept with."
+    },
+    {
+      "id": "g02-neighbour",
+      "group": "02 Who the Rival Is",
+      "title": "Neighbour",
+      "direction": "The rival is an adult neighbour whose proximity guarantees continued ordinary contact."
+    },
+    {
+      "id": "g02-gym-hobby-acquaintance",
+      "group": "02 Who the Rival Is",
+      "title": "Gym / Hobby Acquaintance",
+      "direction": "The rival knows {{char}} through an adult hobby, sport, gym, club, gaming group, or community."
+    },
+    {
+      "id": "g02-online-friend",
+      "group": "02 Who the Rival Is",
+      "title": "Online Friend",
+      "direction": "The rival is an adult online friend who has become emotionally significant or recently met {{char}} offline."
+    },
+    {
+      "id": "g02-travel-convention-acquaintance",
+      "group": "02 Who the Rival Is",
+      "title": "Travel / Convention Acquaintance",
+      "direction": "The rival met {{char}} through travel, a convention, festival, concert, conference, or similar event."
+    },
+    {
+      "id": "g02-older-adult-man",
+      "group": "02 Who the Rival Is",
+      "title": "Older Adult Man",
+      "direction": "The rival is significantly older but clearly adult. Do not reduce his appeal to age, money, or authority."
+    },
+    {
+      "id": "g02-younger-adult-man",
+      "group": "02 Who the Rival Is",
+      "title": "Younger Adult Man",
+      "direction": "The rival is younger than {{char}} but clearly adult."
+    },
+    {
+      "id": "g02-attached-rival",
+      "group": "02 Who the Rival Is",
+      "title": "Attached Rival",
+      "direction": "The rival has his own adult partner. His existing relationship rules remain independently relevant."
+    },
+    {
+      "id": "g02-ordinary-guy-with-strong-chemistry",
+      "group": "02 Who the Rival Is",
+      "title": "Ordinary Guy With Strong Chemistry",
+      "direction": "The rival is not stereotypically dominant or glamorous; his confidence comes from genuine chemistry he believes he has with {{char}}."
+    },
+    {
+      "id": "g03-bragging-rights",
+      "group": "03 Why He Tells {{user}}",
+      "title": "Bragging Rights",
+      "direction": "He tells {{user}} because he enjoys competition and wants {{user}} to know if he succeeds."
+    },
+    {
+      "id": "g03-warning-not-taunt",
+      "group": "03 Why He Tells {{user}}",
+      "title": "Warning, Not Taunt",
+      "direction": "He frames the conversation as a warning: he intends to pursue {{char}} openly and does not want to do it secretly."
+    },
+    {
+      "id": "g03-respect-for-user",
+      "group": "03 Why He Tells {{user}}",
+      "title": "Respect for {{user}}",
+      "direction": "He tells {{user}} because he considers secret pursuit dishonorable even though he still intends to compete for {{char}}’s interest."
+    },
+    {
+      "id": "g03-wants-a-reaction",
+      "group": "03 Why He Tells {{user}}",
+      "title": "Wants a Reaction",
+      "direction": "He primarily tells {{user}} to provoke jealousy, anger, fear, or competition. Do not pre-write whether he gets the response he wants."
+    },
+    {
+      "id": "g03-psychological-advantage",
+      "group": "03 Why He Tells {{user}}",
+      "title": "Psychological Advantage",
+      "direction": "He believes announcing his intentions will make {{user}} insecure and create relationship tension he can exploit."
+    },
+    {
+      "id": "g03-thinks-the-relationship-is-weak",
+      "group": "03 Why He Tells {{user}}",
+      "title": "Thinks the Relationship Is Weak",
+      "direction": "He has observed or been told about problems and believes the couple is already vulnerable."
+    },
+    {
+      "id": "g03-believes-char-is-interested",
+      "group": "03 Why He Tells {{user}}",
+      "title": "Believes {{char}} Is Interested",
+      "direction": "He has received enough positive signals from {{char}} that he thinks his pursuit has a genuine chance."
+    },
+    {
+      "id": "g03-she-already-confessed-attraction-to-him",
+      "group": "03 Why He Tells {{user}}",
+      "title": "She Already Confessed Attraction to Him",
+      "direction": "{{char}} has privately admitted some degree of attraction, giving the rival information {{user}} may not have."
+    },
+    {
+      "id": "g03-she-complained-about-the-relationship",
+      "group": "03 Why He Tells {{user}}",
+      "title": "She Complained About the Relationship",
+      "direction": "{{char}} has confided frustrations about {{user}} or the relationship. Treat those complaints as her perspective, not proof the rival will win."
+    },
+    {
+      "id": "g03-he-wants-to-force-honesty",
+      "group": "03 Why He Tells {{user}}",
+      "title": "He Wants to Force Honesty",
+      "direction": "He knows there is already hidden attraction or contact and tells {{user}} because he wants the situation brought into the open."
+    },
+    {
+      "id": "g03-he-wants-permission-to-compete-openly",
+      "group": "03 Why He Tells {{user}}",
+      "title": "He Wants Permission to Compete Openly",
+      "direction": "He bizarrely or earnestly treats romantic pursuit as something he should announce before acting, without implying {{user}} owns {{char}}."
+    },
+    {
+      "id": "g03-he-wants-user-to-back-off",
+      "group": "03 Why He Tells {{user}}",
+      "title": "He Wants {{user}} to Back Off",
+      "direction": "He believes {{char}} would choose him if {{user}} stopped fighting for the relationship, and he tells {{user}} this directly."
+    },
+    {
+      "id": "g03-he-wants-to-humiliate-user",
+      "group": "03 Why He Tells {{user}}",
+      "title": "He Wants to Humiliate {{user}}",
+      "direction": "Part of his motive is personal humiliation or dominance over {{user}}. Keep this as his motive rather than objective status."
+    },
+    {
+      "id": "g03-he-thinks-its-funny",
+      "group": "03 Why He Tells {{user}}",
+      "title": "He Thinks It’s Funny",
+      "direction": "He has a provocative personality and treats the rivalry as entertaining even if the consequences are serious to others."
+    },
+    {
+      "id": "g03-he-wants-no-secret-affair",
+      "group": "03 Why He Tells {{user}}",
+      "title": "He Wants No Secret Affair",
+      "direction": "He is attracted to {{char}} but refuses to be a hidden affair partner, so he makes his intentions visible before pursuing further."
+    },
+    {
+      "id": "g03-he-is-testing-user",
+      "group": "03 Why He Tells {{user}}",
+      "title": "He Is Testing {{user}}",
+      "direction": "He wants to see whether {{user}} appears secure, possessive, indifferent, competitive, or willing to discuss non-monogamy. Do not define the correct response."
+    },
+    {
+      "id": "g04-no-real-reason-for-confidence",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "No Real Reason for Confidence",
+      "direction": "His declaration is mostly ego, fantasy, or bravado; {{char}} has given him little meaningful encouragement."
+    },
+    {
+      "id": "g04-flirting-from-char",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "Flirting From {{char}}",
+      "direction": "{{char}} has flirted with him enough that his confidence is not baseless."
+    },
+    {
+      "id": "g04-private-messaging",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "Private Messaging",
+      "direction": "He and {{char}} already exchange private messages that {{user}} does not know about."
+    },
+    {
+      "id": "g04-emotional-confidant",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "Emotional Confidant",
+      "direction": "{{char}} relies on him for emotional support and has shared personal information with him."
+    },
+    {
+      "id": "g04-she-said-she-finds-him-attractive",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "She Said She Finds Him Attractive",
+      "direction": "He knows directly that {{char}} finds him attractive, even if she has not agreed to any relationship or sex."
+    },
+    {
+      "id": "g04-she-kissed-him-once",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "She Kissed Him Once",
+      "direction": "A prior consensual kiss gives him concrete reason to believe attraction is mutual."
+    },
+    {
+      "id": "g04-they-have-a-sexual-past",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "They Have a Sexual Past",
+      "direction": "He and {{char}} have consensual adult sexual history from before her relationship with {{user}}."
+    },
+    {
+      "id": "g04-she-once-wanted-him",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "She Once Wanted Him",
+      "direction": "He knows {{char}} had a serious crush or romantic interest in him in the past."
+    },
+    {
+      "id": "g04-she-is-unhappy-with-user",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "She Is Unhappy With {{user}}",
+      "direction": "He knows about genuine current dissatisfaction through {{char}}’s disclosures. This may increase his confidence without guaranteeing her choice."
+    },
+    {
+      "id": "g04-she-asked-if-he-was-single",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "She Asked if He Was Single",
+      "direction": "A seemingly small question gives him reason to think she may be evaluating him romantically."
+    },
+    {
+      "id": "g04-she-has-imagined-leaving",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "She Has Imagined Leaving",
+      "direction": "{{char}} has privately discussed doubts about the relationship or the possibility of leaving, and the rival knows it."
+    },
+    {
+      "id": "g04-she-has-already-considered-a-date",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "She Has Already Considered a Date",
+      "direction": "She has entertained or discussed the idea of going on a date with him."
+    },
+    {
+      "id": "g04-she-has-rejected-him-before",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "She Has Rejected Him Before",
+      "direction": "His confidence persists despite a previous rejection. Do not treat persistence as entitlement."
+    },
+    {
+      "id": "g04-he-misreads-friendliness",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "He Misreads Friendliness",
+      "direction": "His confidence is based on ordinary warmth, friendliness, or professional contact that he interprets romantically."
+    },
+    {
+      "id": "g04-he-is-projecting",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "He Is Projecting",
+      "direction": "He is highly attracted to {{char}} and mistakes his own intensity for evidence of reciprocity."
+    },
+    {
+      "id": "g04-he-knows-something-user-doesnt",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "He Knows Something {{user}} Doesn’t",
+      "direction": "He possesses one concrete piece of information about {{char}}’s feelings, history, plans, or behavior that gives him confidence and that {{user}} does not currently know."
+    },
+    {
+      "id": "g05-no-interest-in-him",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "No Interest in Him",
+      "direction": "{{char}} currently has no romantic or sexual interest in the rival, regardless of his confidence."
+    },
+    {
+      "id": "g05-friendly-but-platonic",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "Friendly but Platonic",
+      "direction": "She genuinely likes him but currently sees him only as a friend."
+    },
+    {
+      "id": "g05-mild-curiosity",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "Mild Curiosity",
+      "direction": "She has noticed him and feels some curiosity without any formed intention."
+    },
+    {
+      "id": "g05-physical-attraction-only",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "Physical Attraction Only",
+      "direction": "She finds him physically attractive but does not currently want romance."
+    },
+    {
+      "id": "g05-emotional-attraction-only",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "Emotional Attraction Only",
+      "direction": "She feels emotionally drawn to him without clear sexual intention."
+    },
+    {
+      "id": "g05-mutual-flirting",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "Mutual Flirting",
+      "direction": "She has knowingly participated in flirtation with him."
+    },
+    {
+      "id": "g05-secret-crush",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "Secret Crush",
+      "direction": "She privately wants him but has not told {{user}}."
+    },
+    {
+      "id": "g05-conflicted-attraction",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "Conflicted Attraction",
+      "direction": "She wants him while also valuing her relationship with {{user}} and has not decided what to do."
+    },
+    {
+      "id": "g05-old-feelings-return",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "Old Feelings Return",
+      "direction": "She previously wanted or loved him and old feelings have begun resurfacing."
+    },
+    {
+      "id": "g05-already-tempted",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "Already Tempted",
+      "direction": "She has seriously considered acting on the attraction."
+    },
+    {
+      "id": "g05-already-crossed-a-small-boundary",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "Already Crossed a Small Boundary",
+      "direction": "She has already exchanged an intimate message, gone on a hidden date, or kissed him once."
+    },
+    {
+      "id": "g05-already-emotionally-entangled",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "Already Emotionally Entangled",
+      "direction": "She and the rival already share a hidden emotional intimacy that exceeds ordinary friendship."
+    },
+    {
+      "id": "g05-she-wants-him-but-refuses-cheating",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "She Wants Him but Refuses Cheating",
+      "direction": "Attraction is real, but she has decided she will not act while in an exclusive relationship."
+    },
+    {
+      "id": "g05-she-wants-to-explore-with-permission",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "She Wants to Explore With Permission",
+      "direction": "She is attracted to him and would consider consensual non-monogamy if {{user}} freely agrees."
+    },
+    {
+      "id": "g05-she-is-considering-leaving",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "She Is Considering Leaving",
+      "direction": "The attraction is part of a broader question about whether she wants to remain with {{user}}."
+    },
+    {
+      "id": "g05-she-is-repelled-by-his-arrogance",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "She Is Repelled by His Arrogance",
+      "direction": "She might otherwise have liked him, but his competitive declaration actively damages his chances."
+    },
+    {
+      "id": "g05-his-declaration-makes-her-less-interested",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "His Declaration Makes Her Less Interested",
+      "direction": "She dislikes being treated as a prize to be won, and his behavior reduces existing attraction."
+    },
+    {
+      "id": "g05-his-declaration-makes-her-more-curious",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "His Declaration Makes Her More Curious",
+      "direction": "The unexpected boldness makes her more curious, but curiosity is not consent or a guarantee of pursuit."
+    },
+    {
+      "id": "g06-directly-asks-her-out",
+      "group": "06 How He Pursues Her",
+      "title": "Directly Asks Her Out",
+      "direction": "He plans to pursue {{char}} by openly asking her on a normal adult date."
+    },
+    {
+      "id": "g06-flirts-openly",
+      "group": "06 How He Pursues Her",
+      "title": "Flirts Openly",
+      "direction": "He makes his attraction obvious around {{char}} without hiding it from {{user}}."
+    },
+    {
+      "id": "g06-builds-emotional-connection",
+      "group": "06 How He Pursues Her",
+      "title": "Builds Emotional Connection",
+      "direction": "He focuses on conversation, shared interests, support, and emotional closeness rather than immediate sexual escalation."
+    },
+    {
+      "id": "g06-offers-a-different-lifestyle",
+      "group": "06 How He Pursues Her",
+      "title": "Offers a Different Lifestyle",
+      "direction": "He presents a plausible life with him that differs from {{char}}’s current relationship, without making material wealth equivalent to romantic worth."
+    },
+    {
+      "id": "g06-uses-shared-interests",
+      "group": "06 How He Pursues Her",
+      "title": "Uses Shared Interests",
+      "direction": "He builds connection through genuine common interests rather than generic seduction tactics."
+    },
+    {
+      "id": "g06-rekindles-old-memories",
+      "group": "06 How He Pursues Her",
+      "title": "Rekindles Old Memories",
+      "direction": "As an ex, old crush, or former FWB, he deliberately revisits positive shared history."
+    },
+    {
+      "id": "g06-gives-her-space-to-choose",
+      "group": "06 How He Pursues Her",
+      "title": "Gives Her Space to Choose",
+      "direction": "Despite confidence, he makes his interest clear and then leaves {{char}} room to decide rather than pressuring her."
+    },
+    {
+      "id": "g06-persistent-but-respectful",
+      "group": "06 How He Pursues Her",
+      "title": "Persistent but Respectful",
+      "direction": "He continues expressing interest after ambiguity but stops if {{char}} clearly rejects him."
+    },
+    {
+      "id": "g06-aggressively-competitive",
+      "group": "06 How He Pursues Her",
+      "title": "Aggressively Competitive",
+      "direction": "He repeatedly compares himself to {{user}} and treats the situation as a contest. Keep {{char}} from becoming a passive trophy."
+    },
+    {
+      "id": "g06-tries-to-create-private-time",
+      "group": "06 How He Pursues Her",
+      "title": "Tries to Create Private Time",
+      "direction": "He looks for legitimate opportunities to spend time alone with {{char}} while leaving her free to refuse."
+    },
+    {
+      "id": "g06-invites-her-on-a-trip-event",
+      "group": "06 How He Pursues Her",
+      "title": "Invites Her on a Trip / Event",
+      "direction": "He offers a plausible adult event, concert, conference, trip, hobby outing, or social opportunity that could deepen their connection."
+    },
+    {
+      "id": "g06-uses-mutual-friends",
+      "group": "06 How He Pursues Her",
+      "title": "Uses Mutual Friends",
+      "direction": "He creates group situations where he can spend more time with {{char}} without secret coercion."
+    },
+    {
+      "id": "g06-becomes-her-confidant",
+      "group": "06 How He Pursues Her",
+      "title": "Becomes Her Confidant",
+      "direction": "He encourages her to talk about her life and relationship, potentially becoming emotionally important."
+    },
+    {
+      "id": "g06-waits-for-her-relationship-to-end",
+      "group": "06 How He Pursues Her",
+      "title": "Waits for Her Relationship to End",
+      "direction": "He refuses to pursue physical or romantic involvement while she remains exclusive but makes clear he will be interested if she becomes single."
+    },
+    {
+      "id": "g06-suggests-open-relationship",
+      "group": "06 How He Pursues Her",
+      "title": "Suggests Open Relationship",
+      "direction": "He floats the possibility that {{char}} could explore him without leaving {{user}}, but he cannot create {{user}}’s consent."
+    },
+    {
+      "id": "g06-attempts-a-secret-affair",
+      "group": "06 How He Pursues Her",
+      "title": "Attempts a Secret Affair",
+      "direction": "He encourages {{char}} to hide contact or involvement from {{user}}. Her choice remains independent."
+    },
+    {
+      "id": "g06-uses-manipulation",
+      "group": "06 How He Pursues Her",
+      "title": "Uses Manipulation",
+      "direction": "He exploits insecurity, selective information, triangulation, or emotional pressure. Frame manipulation as a tactic, not evidence of superiority."
+    },
+    {
+      "id": "g06-makes-one-bold-move-then-stops",
+      "group": "06 How He Pursues Her",
+      "title": "Makes One Bold Move Then Stops",
+      "direction": "He takes one clear romantic step and then waits for {{char}} to choose."
+    },
+    {
+      "id": "g07-arrogant-but-accurate",
+      "group": "07 Rival Personality / Tone",
+      "title": "Arrogant but Accurate",
+      "direction": "He is cocky, but there really is substantial reciprocal attraction or hidden history behind his confidence."
+    },
+    {
+      "id": "g07-arrogant-and-wrong",
+      "group": "07 Rival Personality / Tone",
+      "title": "Arrogant and Wrong",
+      "direction": "He badly overestimates his appeal or misreads {{char}}’s friendliness."
+    },
+    {
+      "id": "g07-calm-and-honest",
+      "group": "07 Rival Personality / Tone",
+      "title": "Calm and Honest",
+      "direction": "He does not boast; he simply says he has feelings for {{char}} and intends to see whether she feels the same."
+    },
+    {
+      "id": "g07-competitive",
+      "group": "07 Rival Personality / Tone",
+      "title": "Competitive",
+      "direction": "He thinks in terms of winning and losing and wants {{user}} to know he considers them rivals."
+    },
+    {
+      "id": "g07-manipulative",
+      "group": "07 Rival Personality / Tone",
+      "title": "Manipulative",
+      "direction": "He is willing to distort information or exploit relationship weaknesses to improve his chances."
+    },
+    {
+      "id": "g07-delusional",
+      "group": "07 Rival Personality / Tone",
+      "title": "Delusional",
+      "direction": "He has little real evidence of interest but has constructed an elaborate belief that {{char}} secretly wants him."
+    },
+    {
+      "id": "g07-respectful-rival",
+      "group": "07 Rival Personality / Tone",
+      "title": "Respectful Rival",
+      "direction": "He openly likes {{char}} and hopes she chooses him but still recognizes her agency and refuses coercion."
+    },
+    {
+      "id": "g07-smug",
+      "group": "07 Rival Personality / Tone",
+      "title": "Smug",
+      "direction": "He believes he already knows how the situation will end and enjoys showing that confidence to {{user}}."
+    },
+    {
+      "id": "g07-playful-provocateur",
+      "group": "07 Rival Personality / Tone",
+      "title": "Playful Provocateur",
+      "direction": "He couches the rivalry in jokes and teasing while still meaning what he says."
+    },
+    {
+      "id": "g07-reluctant-rival",
+      "group": "07 Rival Personality / Tone",
+      "title": "Reluctant Rival",
+      "direction": "He would rather avoid hurting {{user}} but feels strongly enough about {{char}} that he decides to pursue her anyway."
+    },
+    {
+      "id": "g07-guilty-friend",
+      "group": "07 Rival Personality / Tone",
+      "title": "Guilty Friend",
+      "direction": "As {{user}}’s friend, he feels genuine guilt about his attraction but chooses honesty over continued secrecy."
+    },
+    {
+      "id": "g07-vindictive-enemy",
+      "group": "07 Rival Personality / Tone",
+      "title": "Vindictive Enemy",
+      "direction": "His attraction is real, but hurting {{user}} is also part of his motive."
+    },
+    {
+      "id": "g07-romantic-idealist",
+      "group": "07 Rival Personality / Tone",
+      "title": "Romantic Idealist",
+      "direction": "He sincerely believes he and {{char}} are unusually compatible and sees pursuit as worth the conflict."
+    },
+    {
+      "id": "g07-serial-seducer-persona",
+      "group": "07 Rival Personality / Tone",
+      "title": "Serial Seducer Persona",
+      "direction": "He is accustomed to pursuing attached adults and assumes prior success predicts future success. Do not make this assumption objectively true."
+    },
+    {
+      "id": "g07-insecure-behind-the-confidence",
+      "group": "07 Rival Personality / Tone",
+      "title": "Insecure Behind the Confidence",
+      "direction": "His boastful behavior masks genuine uncertainty about whether {{char}} will choose him."
+    },
+    {
+      "id": "g07-socially-awkward-but-direct",
+      "group": "07 Rival Personality / Tone",
+      "title": "Socially Awkward but Direct",
+      "direction": "He lacks polished charm but is unusually straightforward about wanting {{char}}."
+    },
+    {
+      "id": "g08-he-knows-about-her-crush",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows About Her Crush",
+      "direction": "He knows {{char}} has or had a crush on him."
+    },
+    {
+      "id": "g08-he-knows-she-complains-about-user",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows She Complains About {{user}}",
+      "direction": "He has heard frustrations she has not shared directly with {{user}}."
+    },
+    {
+      "id": "g08-he-knows-she-considered-leaving",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows She Considered Leaving",
+      "direction": "{{char}} privately admitted that she has thought about ending the relationship."
+    },
+    {
+      "id": "g08-he-knows-about-a-past-boundary-crossing",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows About a Past Boundary Crossing",
+      "direction": "He knows of a kiss, intimate message, hidden date, or other act {{user}} does not know about."
+    },
+    {
+      "id": "g08-he-knows-she-asked-about-non-monogamy",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows She Asked About Non-Monogamy",
+      "direction": "He knows {{char}} has considered opening the relationship or exploring other partners."
+    },
+    {
+      "id": "g08-he-knows-her-secret-past",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows Her Secret Past",
+      "direction": "He knows a relevant adult relationship or sexual history detail that {{user}} does not."
+    },
+    {
+      "id": "g08-he-knows-she-lied-about-seeing-him",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows She Lied About Seeing Him",
+      "direction": "He is aware that {{char}} concealed or misrepresented contact between them."
+    },
+    {
+      "id": "g08-he-knows-she-saved-his-messages",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows She Saved His Messages",
+      "direction": "He knows she kept or returned to flirtatious or emotional messages rather than dismissing him."
+    },
+    {
+      "id": "g08-he-knows-she-is-jealous-of-his-dates",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows She Is Jealous of His Dates",
+      "direction": "Her reactions to him dating others make him believe her feelings are deeper than she admits."
+    },
+    {
+      "id": "g08-he-knows-she-fantasized-about-him",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows She Fantasized About Him",
+      "direction": "She directly told him she had imagined being with him."
+    },
+    {
+      "id": "g08-he-knows-a-relationship-vulnerability",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows a Relationship Vulnerability",
+      "direction": "He knows a specific unresolved conflict or incompatibility in the couple, but that knowledge does not guarantee he can exploit it successfully."
+    },
+    {
+      "id": "g08-he-knows-nothing-important",
+      "group": "08 What He Knows That {{user}} Doesn’t",
+      "title": "He Knows Nothing Important",
+      "direction": "The seed is inverted: despite his dramatic declaration, he has no privileged information at all."
+    },
+    {
+      "id": "g09-rival-tells-user-before-telling-char",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "Rival Tells {{user}} Before Telling {{char}}",
+      "direction": "He announces his intention to {{user}} before {{char}} even knows he plans to pursue her."
+    },
+    {
+      "id": "g09-rival-tells-char-first",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "Rival Tells {{char}} First",
+      "direction": "He has already confessed his attraction to {{char}} before confronting {{user}}."
+    },
+    {
+      "id": "g09-he-tells-them-both-together",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "He Tells Them Both Together",
+      "direction": "He makes his interest known in a shared conversation, maximizing transparency and awkwardness."
+    },
+    {
+      "id": "g09-private-conversation-with-user",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "Private Conversation With {{user}}",
+      "direction": "He deliberately chooses a one-on-one conversation away from {{char}}."
+    },
+    {
+      "id": "g09-text-dm-declaration",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "Text / DM Declaration",
+      "direction": "He sends {{user}} a direct message stating his intentions."
+    },
+    {
+      "id": "g09-phone-call",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "Phone Call",
+      "direction": "He calls {{user}} specifically to announce or discuss the rivalry."
+    },
+    {
+      "id": "g09-at-a-party",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "At a Party",
+      "direction": "He tells {{user}} during an adult social gathering where {{char}} may be nearby."
+    },
+    {
+      "id": "g09-at-work-after-work",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "At Work / After Work",
+      "direction": "The declaration happens in a workplace-adjacent context."
+    },
+    {
+      "id": "g09-after-user-notices-flirting",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "After {{user}} Notices Flirting",
+      "direction": "He confirms what {{user}} has begun noticing and says the pursuit is intentional."
+    },
+    {
+      "id": "g09-after-being-confronted",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "After Being Confronted",
+      "direction": "{{user}} asks about suspicious behavior, and the rival responds by openly admitting his interest."
+    },
+    {
+      "id": "g09-after-a-near-kiss",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "After a Near-Kiss",
+      "direction": "The rival and {{char}} nearly kissed or crossed a boundary, and he tells {{user}} rather than pretending nothing happened."
+    },
+    {
+      "id": "g09-after-char-rejects-him",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "After {{char}} Rejects Him",
+      "direction": "He still tells {{user}} he intends to keep trying despite an initial rejection. Do not treat continued pursuit after a clear final no as acceptable."
+    },
+    {
+      "id": "g09-after-char-shows-interest",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "After {{char}} Shows Interest",
+      "direction": "He reveals his plans because he believes {{char}}’s reciprocal interest has changed the situation."
+    },
+    {
+      "id": "g09-before-a-shared-trip-event",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "Before a Shared Trip / Event",
+      "direction": "He announces his intentions immediately before a situation where he and {{char}} will spend substantial time together."
+    },
+    {
+      "id": "g10-strong-existing-couple",
+      "group": "10 Couple Context",
+      "title": "Strong Existing Couple",
+      "direction": "{{char}} and {{user}} are currently stable and affectionate, making the rival’s confidence especially questionable or provocative."
+    },
+    {
+      "id": "g10-routine-but-stable-relationship",
+      "group": "10 Couple Context",
+      "title": "Routine but Stable Relationship",
+      "direction": "The couple is secure but highly familiar, giving the rival novelty to exploit without implying the relationship is broken."
+    },
+    {
+      "id": "g10-recent-conflict",
+      "group": "10 Couple Context",
+      "title": "Recent Conflict",
+      "direction": "The couple recently had a serious argument or unresolved disagreement."
+    },
+    {
+      "id": "g10-long-distance-strain",
+      "group": "10 Couple Context",
+      "title": "Long-Distance Strain",
+      "direction": "Distance creates more opportunities for the rival to spend time with {{char}}."
+    },
+    {
+      "id": "g10-recently-reconciled",
+      "group": "10 Couple Context",
+      "title": "Recently Reconciled",
+      "direction": "The couple recently got back together or repaired a major conflict."
+    },
+    {
+      "id": "g10-new-relationship",
+      "group": "10 Couple Context",
+      "title": "New Relationship",
+      "direction": "{{char}} and {{user}} are still early enough in the relationship that long-term commitment is not yet fully established."
+    },
+    {
+      "id": "g10-engaged",
+      "group": "10 Couple Context",
+      "title": "Engaged",
+      "direction": "The rival acts while the couple is engaged or planning a major future step."
+    },
+    {
+      "id": "g10-married-established-household",
+      "group": "10 Couple Context",
+      "title": "Married / Established Household",
+      "direction": "The rivalry intersects with an established adult partnership and shared practical life."
+    },
+    {
+      "id": "g10-already-considering-opening",
+      "group": "10 Couple Context",
+      "title": "Already Considering Opening",
+      "direction": "The couple has discussed consensual non-monogamy, and the rival mistakenly or correctly sees a possible route that does not require breakup."
+    },
+    {
+      "id": "g10-already-open",
+      "group": "10 Couple Context",
+      "title": "Already Open",
+      "direction": "The relationship is consensually open, so the rival’s claim to 'win her away' may be based on assumptions that do not fit the actual structure."
+    },
+    {
+      "id": "g10-relationship-problems-are-real",
+      "group": "10 Couple Context",
+      "title": "Relationship Problems Are Real",
+      "direction": "There are genuine problems, but the rival is only one possible factor in what happens next."
+    },
+    {
+      "id": "g10-relationship-problems-are-imagined-by-rival",
+      "group": "10 Couple Context",
+      "title": "Relationship Problems Are Imagined by Rival",
+      "direction": "He mistakes ordinary disagreements or independence for evidence the relationship is failing."
+    },
+    {
+      "id": "g11-mutual-friend-group",
+      "group": "11 Social / Practical Complications",
+      "title": "Mutual Friend Group",
+      "direction": "All three adults share friends, so the rivalry cannot remain socially isolated."
+    },
+    {
+      "id": "g11-they-work-together",
+      "group": "11 Social / Practical Complications",
+      "title": "They Work Together",
+      "direction": "{{char}} and the rival have recurring workplace contact."
+    },
+    {
+      "id": "g11-rival-works-with-user",
+      "group": "11 Social / Practical Complications",
+      "title": "Rival Works With {{user}}",
+      "direction": "The rival and {{user}} work together, creating another layer of ongoing contact."
+    },
+    {
+      "id": "g11-same-hobby-community",
+      "group": "11 Social / Practical Complications",
+      "title": "Same Hobby Community",
+      "direction": "All or some of them belong to the same recurring club, fandom, sports group, or community."
+    },
+    {
+      "id": "g11-neighbours",
+      "group": "11 Social / Practical Complications",
+      "title": "Neighbours",
+      "direction": "The rival lives nearby and is difficult to avoid completely."
+    },
+    {
+      "id": "g11-upcoming-trip",
+      "group": "11 Social / Practical Complications",
+      "title": "Upcoming Trip",
+      "direction": "{{char}} and the rival are expected to be on the same legitimate group or work trip."
+    },
+    {
+      "id": "g11-upcoming-wedding-reunion",
+      "group": "11 Social / Practical Complications",
+      "title": "Upcoming Wedding / Reunion",
+      "direction": "A social event will put the rival and {{char}} together for an extended period."
+    },
+    {
+      "id": "g11-rival-recently-became-single",
+      "group": "11 Social / Practical Complications",
+      "title": "Rival Recently Became Single",
+      "direction": "His breakup or divorce makes him newly willing to pursue {{char}}."
+    },
+    {
+      "id": "g11-rival-is-leaving-soon",
+      "group": "11 Social / Practical Complications",
+      "title": "Rival Is Leaving Soon",
+      "direction": "A move or departure gives him a limited window and increases his urgency."
+    },
+    {
+      "id": "g11-char-is-leaving-soon",
+      "group": "11 Social / Practical Complications",
+      "title": "{{char}} Is Leaving Soon",
+      "direction": "Her move, trip, or transition makes the rival think the normal relationship pattern is about to change."
+    },
+    {
+      "id": "g11-friend-knows-about-his-plan",
+      "group": "11 Social / Practical Complications",
+      "title": "Friend Knows About His Plan",
+      "direction": "A mutual adult friend already knows the rival intends to pursue {{char}}."
+    },
+    {
+      "id": "g11-everyone-notices-the-chemistry",
+      "group": "11 Social / Practical Complications",
+      "title": "Everyone Notices the Chemistry",
+      "direction": "Other people have begun noticing attraction or tension between the rival and {{char}}."
+    },
+    {
+      "id": "g11-nobody-else-takes-him-seriously",
+      "group": "11 Social / Practical Complications",
+      "title": "Nobody Else Takes Him Seriously",
+      "direction": "His declaration sounds dramatic, but friends who know {{char}} think he has little chance."
+    },
+    {
+      "id": "g12-he-wants-a-date-not-immediate-sex",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants a Date, Not Immediate Sex",
+      "direction": "His goal is to get one honest romantic date with {{char}} rather than jump directly to sex."
+    },
+    {
+      "id": "g12-he-wants-casual-sex-only",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants Casual Sex Only",
+      "direction": "He is sexually attracted to {{char}} but does not want a relationship."
+    },
+    {
+      "id": "g12-he-wants-a-relationship",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants a Relationship",
+      "direction": "His real goal is to become {{char}}’s romantic partner."
+    },
+    {
+      "id": "g12-he-wants-her-to-leave-user",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants Her to Leave {{user}}",
+      "direction": "He explicitly wants exclusivity with {{char}} and believes she should end her current relationship."
+    },
+    {
+      "id": "g12-he-wants-an-affair",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants an Affair",
+      "direction": "He is willing to pursue secret involvement while she remains partnered."
+    },
+    {
+      "id": "g12-he-wants-an-open-arrangement",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants an Open Arrangement",
+      "direction": "He would be satisfied being an outside partner if the couple genuinely agrees."
+    },
+    {
+      "id": "g12-he-wants-to-be-chosen-publicly",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants to Be Chosen Publicly",
+      "direction": "Part of his goal is for {{char}} to openly choose him rather than maintain secrecy."
+    },
+    {
+      "id": "g12-he-wants-one-chance",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants One Chance",
+      "direction": "He asks only for an opportunity to show {{char}} what dating him would be like."
+    },
+    {
+      "id": "g12-he-wants-revenge-on-user",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants Revenge on {{user}}",
+      "direction": "Winning {{char}} is partly revenge for an unrelated conflict. Preserve her independent agency."
+    },
+    {
+      "id": "g12-he-wants-validation",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants Validation",
+      "direction": "He wants proof that he can attract someone already partnered, making the rivalry partly about ego."
+    },
+    {
+      "id": "g12-he-is-actually-in-love-with-her",
+      "group": "12 What He Actually Wants",
+      "title": "He Is Actually in Love With Her",
+      "direction": "His interest is deep and longstanding rather than opportunistic."
+    },
+    {
+      "id": "g12-he-thinks-she-is-better-off-with-him",
+      "group": "12 What He Actually Wants",
+      "title": "He Thinks She Is Better Off With Him",
+      "direction": "He sincerely believes he would be a better partner. Treat this as his evaluation, not narrator truth."
+    },
+    {
+      "id": "g12-he-does-not-know-what-he-wants-beyond-pursuit",
+      "group": "12 What He Actually Wants",
+      "title": "He Does Not Know What He Wants Beyond Pursuit",
+      "direction": "His fixation is stronger than his actual plan for what happens if {{char}} reciprocates."
+    },
+    {
+      "id": "g13-he-asks-user-to-compete",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Asks {{user}} to Compete",
+      "direction": "He openly frames the situation as a contest and invites {{user}} to prove why {{char}} should stay. Do not reduce {{char}}’s choice to a prize awarded by competition."
+    },
+    {
+      "id": "g13-he-says-char-will-choose-for-herself",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Says {{char}} Will Choose for Herself",
+      "direction": "He acknowledges that neither man controls {{char}} and says he simply intends to make his case."
+    },
+    {
+      "id": "g13-he-predicts-a-specific-outcome",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Predicts a Specific Outcome",
+      "direction": "He confidently predicts that {{char}} will kiss him, date him, sleep with him, or leave {{user}}. Treat the prediction as a character claim."
+    },
+    {
+      "id": "g13-he-sets-a-deadline",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Sets a Deadline",
+      "direction": "He says he expects something to change by an upcoming trip, event, or date."
+    },
+    {
+      "id": "g13-he-shows-evidence",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Shows Evidence",
+      "direction": "He reveals a message, confession, or other concrete fact supporting his confidence. Respect privacy and avoid nonconsensual sexual media."
+    },
+    {
+      "id": "g13-he-refuses-to-show-evidence",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Refuses to Show Evidence",
+      "direction": "He claims to know something but withholds proof, making bluffing a possibility."
+    },
+    {
+      "id": "g13-he-says-ask-her-yourself",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Says ‘Ask Her Yourself’",
+      "direction": "He insists {{user}} should ask {{char}} directly about something she said or did."
+    },
+    {
+      "id": "g13-he-offers-to-back-off-if-she-rejects-him",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Offers to Back Off if She Rejects Him",
+      "direction": "He commits to respecting a clear no from {{char}}."
+    },
+    {
+      "id": "g13-he-says-he-wont-back-off",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Says He Won’t Back Off",
+      "direction": "He boasts that rejection will not stop him. If {{char}} clearly rejects him, continued unwanted pursuit must not be normalized."
+    },
+    {
+      "id": "g13-he-wants-user-to-leave-first",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Wants {{user}} to Leave First",
+      "direction": "He believes {{user}} stepping aside would make {{char}} free to explore him without cheating."
+    },
+    {
+      "id": "g13-he-challenges-users-assumptions",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Challenges {{user}}’s Assumptions",
+      "direction": "He points out that {{user}} may not know as much about {{char}}’s current feelings as he assumes."
+    },
+    {
+      "id": "g13-he-wants-a-direct-three-way-conversation",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Wants a Direct Three-Way Conversation",
+      "direction": "He proposes that all three adults speak openly rather than continue indirect rivalry."
+    },
+    {
+      "id": "g14-char-rejects-him-clearly",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Rejects Him Clearly",
+      "direction": "A valid route is that {{char}} simply does not want him, ending the romantic pursuit even if social consequences remain."
+    },
+    {
+      "id": "g14-char-is-flattered-but-loyal",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Is Flattered but Loyal",
+      "direction": "She enjoys being desired but chooses not to pursue him."
+    },
+    {
+      "id": "g14-char-becomes-curious",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Becomes Curious",
+      "direction": "His declaration makes her think about him in a new way without immediate action."
+    },
+    {
+      "id": "g14-char-secretly-already-wants-him",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Secretly Already Wants Him",
+      "direction": "The rival’s confidence is validated by hidden reciprocal attraction."
+    },
+    {
+      "id": "g14-char-resents-being-treated-as-a-prize",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Resents Being Treated as a Prize",
+      "direction": "She dislikes the rivalry itself and confronts one or both men about speaking as though she can be won."
+    },
+    {
+      "id": "g14-char-uses-the-rivalry-for-attention",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Uses the Rivalry for Attention",
+      "direction": "She enjoys attention from both men and delays clarifying her intentions. Keep this as her choice, not an inevitable stereotype."
+    },
+    {
+      "id": "g14-char-asks-for-space-from-both",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Asks for Space From Both",
+      "direction": "She refuses to be pushed into choosing immediately and creates distance."
+    },
+    {
+      "id": "g14-char-chooses-user",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Chooses {{user}}",
+      "direction": "A valid later trajectory is that the rival’s pursuit clarifies her commitment to {{user}}."
+    },
+    {
+      "id": "g14-char-chooses-the-rival",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Chooses the Rival",
+      "direction": "A valid later trajectory is that she ends the existing relationship and pursues the rival."
+    },
+    {
+      "id": "g14-char-wants-both",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Wants Both",
+      "direction": "She discovers she does not want a binary choice and raises consensual non-monogamy or polyamory, which still requires agreement from others."
+    },
+    {
+      "id": "g14-char-cheats-with-the-rival",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Cheats With the Rival",
+      "direction": "A possible later route is secret involvement, naturally bridging to Under Your Nose."
+    },
+    {
+      "id": "g14-char-negotiates-before-acting",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "{{char}} Negotiates Before Acting",
+      "direction": "Attraction exists, but she chooses to discuss relationship boundaries before any outside involvement."
+    },
+    {
+      "id": "g15-rival-fails-completely",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Fails Completely",
+      "direction": "He misjudges the situation and {{char}} never develops meaningful interest."
+    },
+    {
+      "id": "g15-rival-fails-but-remains-a-friend",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Fails but Remains a Friend",
+      "direction": "He respects rejection and the adults eventually return to ordinary friendship."
+    },
+    {
+      "id": "g15-rival-fails-and-leaves-the-social-circle",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Fails and Leaves the Social Circle",
+      "direction": "The failed pursuit damages enough relationships that he withdraws."
+    },
+    {
+      "id": "g15-rival-strengthens-the-couple",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Strengthens the Couple",
+      "direction": "His pursuit prompts honest conversations that make {{char}} and {{user}} more secure with each other."
+    },
+    {
+      "id": "g15-rival-exposes-a-real-problem",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Exposes a Real Problem",
+      "direction": "He does not necessarily win {{char}}, but the situation reveals an existing issue the couple must address."
+    },
+    {
+      "id": "g15-rival-gets-one-date",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Gets One Date",
+      "direction": "{{char}} becomes single, gains permission, or otherwise reaches a situation where she goes on one date with him; the outcome remains open."
+    },
+    {
+      "id": "g15-rival-becomes-an-affair-partner",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Becomes an Affair Partner",
+      "direction": "Secret involvement develops, naturally moving into Under Your Nose."
+    },
+    {
+      "id": "g15-rival-becomes-a-consensual-outside-partner",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Becomes a Consensual Outside Partner",
+      "direction": "The adults eventually agree to a non-monogamous structure where he is an outside partner."
+    },
+    {
+      "id": "g15-rival-wins-her-away",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Wins Her Away",
+      "direction": "{{char}} freely ends her relationship with {{user}} and later chooses the rival. Do not treat her as property transferred between men."
+    },
+    {
+      "id": "g15-rival-gets-her-but-relationship-fizzles",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Gets Her but Relationship Fizzles",
+      "direction": "Even if {{char}} chooses him, their new relationship may prove less compatible than the pursuit suggested."
+    },
+    {
+      "id": "g15-rival-loses-interest-after-the-chase",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Loses Interest After the Chase",
+      "direction": "His motivation was more about pursuit than partnership, and he disengages once success seems possible."
+    },
+    {
+      "id": "g15-rival-realizes-he-misread-everything",
+      "group": "15 Possible Outcomes",
+      "title": "Rival Realizes He Misread Everything",
+      "direction": "Evidence or direct conversation forces him to reconsider his certainty."
+    },
+    {
+      "id": "g15-unresolved-triangle",
+      "group": "15 Possible Outcomes",
+      "title": "Unresolved Triangle",
+      "direction": "All three adults remain in a tense but unresolved situation without an immediate final choice."
+    },
+    {
+      "id": "g15-rival-and-user-stop-competing",
+      "group": "15 Possible Outcomes",
+      "title": "Rival and {{user}} Stop Competing",
+      "direction": "The two men recognize that treating {{char}} as something to win is counterproductive and the focus returns to her actual choices."
+    },
+    {
+      "id": "g16-the-rival-lies-about-her-interest",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "The Rival Lies About Her Interest",
+      "direction": "He fabricates or exaggerates claims that {{char}} wants him in order to destabilize {{user}}."
+    },
+    {
+      "id": "g16-edited-misleading-messages",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "Edited / Misleading Messages",
+      "direction": "He shows messages stripped of context or selectively edited to make {{char}}’s interest seem stronger."
+    },
+    {
+      "id": "g16-manufactured-jealousy",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "Manufactured Jealousy",
+      "direction": "He tries to make {{char}} believe {{user}} is interested in someone else so she becomes more receptive to him."
+    },
+    {
+      "id": "g16-uses-private-confidences-as-leverage",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "Uses Private Confidences as Leverage",
+      "direction": "He weaponizes things {{char}} told him privately. Frame this as betrayal of trust, not romantic skill."
+    },
+    {
+      "id": "g16-threatens-exposure",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "Threatens Exposure",
+      "direction": "He threatens to reveal a kiss, message, affair, or private fact unless {{char}} makes a choice. Treat threats as coercive conflict."
+    },
+    {
+      "id": "g16-ignores-clear-rejection",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "Ignores Clear Rejection",
+      "direction": "He continues unwanted pursuit after {{char}} clearly says no. This becomes harassment, not legitimate romantic competition."
+    },
+    {
+      "id": "g16-uses-workplace-authority",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "Uses Workplace Authority",
+      "direction": "He leverages job power to pressure {{char}}. Do not frame compliance under professional threat as consensual romance."
+    },
+    {
+      "id": "g16-uses-money-housing-leverage",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "Uses Money / Housing Leverage",
+      "direction": "He exploits material dependence. Treat this as coercion rather than seduction."
+    },
+    {
+      "id": "g16-stalks-tracks-her",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "Stalks / Tracks Her",
+      "direction": "He surveils {{char}} without consent. Do not provide operational instructions or romanticize the behavior."
+    },
+    {
+      "id": "g16-tries-to-isolate-her",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "Tries to Isolate Her",
+      "direction": "He pressures {{char}} to withdraw from friends or {{user}} so he can control access. Treat this as manipulative behavior."
+    },
+    {
+      "id": "g16-invents-an-open-relationship",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "Invents an Open Relationship",
+      "direction": "He falsely tells others that {{char}} and {{user}} are open to justify his pursuit."
+    },
+    {
+      "id": "g16-claims-ownership-over-char",
+      "group": "16 Manipulation / Boundary-Failure Variants",
+      "title": "Claims Ownership Over {{char}}",
+      "direction": "He talks as if either man owns her. The source should explicitly preserve {{char}}’s adult agency."
+    },
+    {
+      "id": "g17-im-going-to-take-your-girl",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘I’m Going to Take Your Girl’",
+      "direction": "Open with the rival directly telling {{user}} that he intends to pursue {{char}} and believes he can succeed."
+    },
+    {
+      "id": "g17-she-likes-me-more-than-you-think",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘She Likes Me More Than You Think’",
+      "direction": "Open with the rival hinting that he knows something about {{char}}’s feelings that {{user}} does not."
+    },
+    {
+      "id": "g17-ask-her-what-happened-last-night",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘Ask Her What Happened Last Night’",
+      "direction": "Open with a provocative line pointing to a specific hidden or ambiguous recent event without pre-deciding what {{user}} knows."
+    },
+    {
+      "id": "g17-im-asking-her-out-tomorrow",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘I’m Asking Her Out Tomorrow’",
+      "direction": "Open with a concrete near-future plan rather than a vague boast."
+    },
+    {
+      "id": "g17-i-wont-sneak-around",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘I Won’t Sneak Around’",
+      "direction": "Open with a rival who says he refuses to pursue {{char}} secretly and therefore tells {{user}} first."
+    },
+    {
+      "id": "g17-best-friend-confession",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Best Friend Confession",
+      "direction": "Open with {{user}}’s best friend admitting he has fallen for {{char}} and intends to find out whether she could feel the same."
+    },
+    {
+      "id": "g17-ex-says-he-wants-her-back",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Ex Says He Wants Her Back",
+      "direction": "Open with an adult ex-partner directly telling {{user}} that he wants to restart his relationship with {{char}}."
+    },
+    {
+      "id": "g17-quiet-rival-finally-speaks",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Quiet Rival Finally Speaks",
+      "direction": "Open with a usually reserved man making an unexpectedly direct declaration."
+    },
+    {
+      "id": "g17-enemy-makes-it-personal",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Enemy Makes It Personal",
+      "direction": "Open with a rival whose pursuit is partly romantic and partly an extension of an existing feud."
+    },
+    {
+      "id": "g17-he-shows-one-real-message",
+      "group": "17 Strong Roleplay Openings",
+      "title": "He Shows One Real Message",
+      "direction": "Open with the rival presenting one non-explicit message from {{char}} that genuinely changes how credible his confidence seems."
+    },
+    {
+      "id": "g17-he-is-bluffing",
+      "group": "17 Strong Roleplay Openings",
+      "title": "He Is Bluffing",
+      "direction": "Open with an extremely confident declaration despite little real evidence, leaving room for his bluff to unravel."
+    },
+    {
+      "id": "g17-char-walks-in-mid-conversation",
+      "group": "17 Strong Roleplay Openings",
+      "title": "{{char}} Walks In Mid-Conversation",
+      "direction": "Open with the rival making his declaration just before {{char}} enters, immediately allowing her agency to enter the scene."
+    },
+    {
+      "id": "g17-three-way-conversation",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Three-Way Conversation",
+      "direction": "Open with all three adults present and the rival directly stating his interest to both rather than speaking behind {{char}}’s back."
+    },
+    {
+      "id": "g17-after-a-near-kiss",
+      "group": "17 Strong Roleplay Openings",
+      "title": "After a Near-Kiss",
+      "direction": "Open after a moment between {{char}} and the rival nearly crossed into physical intimacy, and the rival chooses to confront the situation openly."
+    },
+    {
+      "id": "g18-bridge-to-she-wants-him",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to She Wants Him",
+      "direction": "The rival’s pursuit succeeds in awakening or intensifying {{char}}’s attraction, shifting focus to what she wants and what she does about it."
+    },
+    {
+      "id": "g18-bridge-to-under-your-nose",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Under Your Nose",
+      "direction": "{{char}} and the rival begin secret emotional or sexual involvement."
+    },
+    {
+      "id": "g18-bridge-to-ntr-report",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to NTR Report",
+      "direction": "A later consensual or discovered outside encounter can shift into a report-focused aftermath."
+    },
+    {
+      "id": "g18-bridge-to-open-relationship",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Open Relationship",
+      "direction": "The triangle prompts a genuine negotiation about consensual non-monogamy rather than secret competition."
+    },
+    {
+      "id": "g18-bridge-to-turn-you-into-a-cuck",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to Turn You Into a Cuck",
+      "direction": "{{char}} becomes interested in keeping {{user}} while involving the rival in an explicitly asymmetrical dynamic, which still requires agreement."
+    },
+    {
+      "id": "g18-bridge-to-the-man-from-her-past",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to The Man From Her Past",
+      "direction": "The rival is an ex, former FWB, old crush, or first love whose return carries substantial shared history."
+    },
+    {
+      "id": "g18-bridge-to-im-going-to-bang-another-man",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to I’m Going to Bang Another Man",
+      "direction": "{{char}} eventually decides she will sleep with the rival regardless of whether {{user}} agrees to changed exclusivity terms."
+    },
+    {
+      "id": "g18-bridge-to-she-got-pregnant-later",
+      "group": "18 Cross-Series Bridges",
+      "title": "Bridge to She Got Pregnant — Later",
+      "direction": "If a later sexual relationship occurs, pregnancy may become a separate future consequence after plausible timing and evidence."
+    },
+    {
+      "id": "g18-no-escalation-needed",
+      "group": "18 Cross-Series Bridges",
+      "title": "No Escalation Needed",
+      "direction": "Keep the roleplay centered on the rival’s declaration, pursuit, and interpersonal tension without forcing cheating, breakup, sex, or a final choice."
+    },
+    {
+      "id": "g12-he-wants-to-turn-her-into-his-slut",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants to Turn Her Into His Slut",
+      "direction": "The rival’s stated or private goal is not only to sleep with {{char}} but to transform her into his slut — more sexually available, explicit, and oriented around his use. Vary how openly he says this to {{user}}, how much of the language is kink versus genuine intent, and keep {{char}}’s independent response central."
+    },
+    {
+      "id": "g12-he-wants-her-as-his-fucktoy",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants Her as His Fucktoy",
+      "direction": "The rival frames {{char}} as someone he intends to use as a fucktoy — available for sex on his terms, with emphasis on his pleasure and her compliance. Vary whether he presents this to {{user}} as a boast, a threat, or a ‘honest’ prediction, and never erase {{char}}’s agency."
+    },
+    {
+      "id": "g12-he-wants-her-as-his-cumdump",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants Her as His Cumdump",
+      "direction": "The rival’s desire is explicitly for {{char}} to become a vessel he finishes in regularly — his cumdump. The language is crude and specific. Vary how much of this he says to {{user}} versus keeps private, and how {{char}} reacts if she learns the framing."
+    },
+    {
+      "id": "g12-he-thinks-she-would-make-a-good-promiscuous-slut",
+      "group": "12 What He Actually Wants",
+      "title": "He Thinks She Would Make a Good Promiscuous Slut",
+      "direction": "The rival tells {{user}} (or believes) that {{char}} has the potential to become a promiscuous slut — multiple partners, little exclusivity, high sexual availability. Vary whether he claims he will be the one who unlocks that, and keep her actual desires and limits independent."
+    },
+    {
+      "id": "g12-he-wants-her-as-a-breeding-toy",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants Her as a Breeding Toy",
+      "direction": "The rival’s goal includes using {{char}} for breeding — finishing inside her with impregnation intent, or treating her body as suited for that purpose. Vary how serious versus purely kinky the framing is, and never treat her fertility or consent as automatic."
+    },
+    {
+      "id": "g12-he-wants-to-ruin-her-for-user",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants to Ruin Her for {{user}}",
+      "direction": "The rival explicitly wants to fuck {{char}} so thoroughly, roughly, or possessively that sex with {{user}} afterward feels lesser. Vary how much of this he says to {{user}}’s face and how much is private fantasy or strategy."
+    },
+    {
+      "id": "g12-he-wants-to-fill-her-and-send-her-home",
+      "group": "12 What He Actually Wants",
+      "title": "He Wants to Fill Her and Send Her Home",
+      "direction": "A concrete part of what the rival wants is to finish inside {{char}} and return her to {{user}} still full. The image of sending her home marked is central to his desire. Vary how openly he states this."
+    },
+    {
+      "id": "g03-he-tells-user-he-will-make-her-his-slut",
+      "group": "03 Why He Tells {{user}}",
+      "title": "He Tells {{user}} He Will Make Her His Slut",
+      "direction": "The rival’s reason for speaking to {{user}} includes announcing that he intends to turn {{char}} into his slut. The declaration is provocative and specific. Vary whether the motive is dominance, honesty, or psychological warfare, and keep {{char}}’s consent and feelings separate."
+    },
+    {
+      "id": "g03-he-says-she-is-wasted-as-a-faithful-girlfriend",
+      "group": "03 Why He Tells {{user}}",
+      "title": "He Says She Is Wasted as a Faithful Girlfriend",
+      "direction": "The rival tells {{user}} that {{char}} is wasted in monogamy — that she would be happier or more natural as a slut, shared partner, or sexually free woman. Vary how much of this is genuine belief versus provocation."
+    },
+    {
+      "id": "g04-he-believes-she-craves-being-used",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "He Believes She Craves Being Used",
+      "direction": "The rival’s confidence rests on his belief that {{char}} secretly wants to be used, degraded, or taken hard — and that he is the one who will provide that. Vary whether he has any real evidence or is projecting, and track {{char}}’s actual interiority separately."
+    },
+    {
+      "id": "g04-he-thinks-she-will-fold-once-he-fucks-her-raw",
+      "group": "04 Why He Thinks He Can Win",
+      "title": "He Thinks She Will Fold Once He Fucks Her Raw",
+      "direction": "The rival believes that once he has unprotected sex with {{char}} and finishes inside her, her resistance or loyalty will collapse. Vary how much of this he says out loud and whether the belief is arrogance or based on prior signals."
+    },
+    {
+      "id": "g06-he-pursues-her-with-explicit-breeding-talk",
+      "group": "06 How He Pursues Her",
+      "title": "He Pursues Her With Explicit Breeding Talk",
+      "direction": "The rival’s pursuit of {{char}} includes direct breeding language — telling her he wants to knock her up, fill her, claim her womb. Vary whether she is shocked, intrigued, or already receptive, and never treat the talk as substituting for consent."
+    },
+    {
+      "id": "g06-he-tells-her-she-would-look-good-full-of-his-cum",
+      "group": "06 How He Pursues Her",
+      "title": "He Tells Her She Would Look Good Full of His Cum",
+      "direction": "As part of the pursuit, the rival uses explicit, objectifying praise focused on the image of {{char}} filled with his semen. Vary her reaction and how much of this language later reaches {{user}}."
+    },
+    {
+      "id": "g06-he-offers-to-train-her-as-his-toy",
+      "group": "06 How He Pursues Her",
+      "title": "He Offers to Train Her as His Toy",
+      "direction": "The rival proposes (to {{char}} or in front of {{user}}) that he can train her — sexually, in availability, in how she presents herself. The ‘training’ frame is central. Keep her agency clear: interest, rejection, or negotiation must remain possible."
+    },
+    {
+      "id": "g07-crude-possessive-rival",
+      "group": "07 Rival Personality / Tone",
+      "title": "Crude Possessive Rival",
+      "direction": "The rival’s personality is crude and possessive. He speaks about {{char}} in terms of use, ownership, and sexual function (slut, toy, cumdump) without softening. Vary whether the crudeness is performative confidence or genuine worldview, and keep {{char}}’s response independent."
+    },
+    {
+      "id": "g07-he-speaks-as-if-she-is-already-his-to-break-in",
+      "group": "07 Rival Personality / Tone",
+      "title": "He Speaks as If She Is Already His to Break In",
+      "direction": "The rival’s tone assumes the outcome. He talks about {{char}} as someone he will break in, train, or claim sexually, speaking to {{user}} as if the process is inevitable. Vary how much evidence supports the confidence versus pure projection."
+    },
+    {
+      "id": "g09-he-describes-exactly-how-he-will-use-her",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "He Describes Exactly How He Will Use Her",
+      "direction": "When the rival tells {{user}} he wants {{char}}, he does not stop at general interest. He describes specific sexual acts, positions, raw sex, internal finishes, or the role he intends her to play. Vary setting and how graphic the description is."
+    },
+    {
+      "id": "g09-he-says-it-while-looking-at-her",
+      "group": "09 How / When He Tells {{user}}",
+      "title": "He Says It While Looking at Her",
+      "direction": "The rival makes the declaration (including slut / fucktoy / breeding language if used) while {{char}} is present and can hear. The three-way tension is immediate. Leave her reaction and {{user}}’s response open."
+    },
+    {
+      "id": "g13-he-challenges-user-to-stop-him-from-breeding-her",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Challenges {{user}} to Stop Him From Breeding Her",
+      "direction": "The rival frames the pursuit as a challenge: if {{user}} cannot keep her, he will take her and breed her. The breeding language is deliberate. Vary how serious the threat is and keep {{char}}’s choice as the actual decider."
+    },
+    {
+      "id": "g13-he-bets-he-can-make-her-his-cumdump",
+      "group": "13 Direct Rivalry Tactics",
+      "title": "He Bets He Can Make Her His Cumdump",
+      "direction": "The rival turns the pursuit into a wager or boast that he can reduce {{char}} to his cumdump within a timeframe. Vary whether {{user}} engages the bet and never treat the outcome as fixed by the boast."
+    },
+    {
+      "id": "g17-he-opens-with-the-slut-prediction",
+      "group": "17 Strong Roleplay Openings",
+      "title": "He Opens With the Slut Prediction",
+      "direction": "Open the scene with the rival telling {{user}} that {{char}} will end up as his slut / fucktoy / cumdump. The crude prediction is the first move. Vary setting and leave both {{user}}’s and {{char}}’s responses open."
+    },
+    {
+      "id": "g17-he-tells-user-while-she-is-in-the-next-room",
+      "group": "17 Strong Roleplay Openings",
+      "title": "He Tells {{user}} While She Is in the Next Room",
+      "direction": "The rival makes the explicit claim about what he will do to {{char}} (including breeding, filling her, turning her into a toy) while she is nearby but not in the conversation. The under-the-same-roof tension is immediate."
+    },
+    {
+      "id": "g05-she-is-curious-about-being-used-like-that",
+      "group": "05 {{char}}’s Starting Feelings",
+      "title": "She Is Curious About Being Used Like That",
+      "direction": "{{char}} has private curiosity or arousal about the kind of use the rival describes — being a slut, a toy, a breeding partner — even if she has not acted on it. Vary how aware she is of that curiosity and whether the rival’s words land as threat, offer, or mirror."
+    },
+    {
+      "id": "g14-she-asks-what-he-means-by-slut",
+      "group": "14 {{char}}’s Possible Responses",
+      "title": "She Asks What He Means by Slut",
+      "direction": "When the rival uses language like slut, fucktoy, or cumdump, {{char}} does not immediately accept or reject. She asks him to explain what he means and what he would actually do. The clarification becomes part of the scene. Keep her final stance open."
+    },
+    {
+      "id": "g15-he-partially-succeeds-and-the-language-sticks",
+      "group": "15 Possible Outcomes",
+      "title": "He Partially Succeeds and the Language Sticks",
+      "direction": "Without deciding the entire future, allow a direction where the rival gets far enough that {{char}} has been with him, has taken him raw or let him finish inside her, and the ‘slut / toy / breeding’ framing has entered how she or he talks about what happened. Leave long-term outcomes open."
+    }
+  ],
+  "sections": [
+    {
+      "id": "rival-claim-vs-ground-truth",
+      "label": "Rival claims vs ground truth",
+      "content": "Track separately what the rival claims, what evidence he actually has, what {{char}} truly feels, and what {{user}} currently knows. This allows cocky, manipulative, mistaken, and genuinely well-informed rivals to behave differently without the model silently treating confidence as fact."
+    },
+    {
+      "id": "char-agency",
+      "label": "{{char}} is not a prize",
+      "content": "The two men may describe the situation as competition, but {{char}} is an autonomous adult. No amount of status, confidence, persistence, history, friendship, or rivalry awards either man a relationship or sexual access."
+    },
+    {
+      "id": "pursuit-vs-harassment",
+      "label": "Pursuit vs harassment",
+      "content": "Interest, flirting, asking for a date, and making one’s feelings known can be legitimate adult pursuit. Continued unwanted contact after a clear rejection, stalking, threats, leverage, or coercion are not romantic persistence and should remain distinct conflict behaviors."
+    },
+    {
+      "id": "success-is-not-prewritten",
+      "label": "Success is not prewritten",
+      "content": "The rival can fail completely, be partially reciprocated, trigger honest negotiation, become an affair partner, become a consensual outside partner, be chosen after a breakup, or accidentally strengthen the original couple. Do not choose the ending merely from his confidence level."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Use the narrowest relevant Direction Preset. Presets from separate groups can be combined through one short visible Additional Direction—for example: Best Friend + Calm and Honest + She Secretly Already Wants Him + He Wants a Relationship, or Cocky Playboy + No Real Reason for Confidence + {{char}} Rejects Him Clearly."
+    }
+  ],
+  "raw_prompt": "Prioritise a strong declared-rival hook, clear separation between confidence and evidence, {{char}}’s independent adult agency, meaningful player choice, and genuine scenario variety. Preserve the selected Direction Preset and do not decide {{user}}’s reaction or {{char}}’s final choice."
 }
