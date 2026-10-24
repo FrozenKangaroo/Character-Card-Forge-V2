@@ -3,6 +3,1560 @@
   "schema_version": 1,
   "id": "bible-i-05-she-wants-him",
   "title": "She Wants Him",
+  "description": "Reusable adult attraction-and-choice engine in which {{user}}’s partner develops meaningful desire for another adult man. Detailed grouped presets vary who he is, where attraction begins, its nature and intensity, current relationship rules, disclosure, reciprocity, escalation, and what she wants next without treating attraction as automatic infidelity.",
   "source_version": "1.2",
-  "note": "Full expanded content (238 presets) is available on Google Drive Idea Sources folder as 05-she-wants-him.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 5,
+    "category": "NTR, Infidelity & Non-Monogamy",
+    "source_date": "2026-09-21"
+  },
+  "summary": "{{user}}’s adult partner develops a meaningful attraction to another adult man. The series begins with desire and uncertainty rather than automatically with an affair. She may resist it, keep it private, confess it, negotiate before acting, flirt, seek permission, or cross a boundary. The central engine is what she wants, what she chooses to do with wanting it, what the other man wants, and how honestly the attraction is handled.",
+  "core_premise": "{{char}}, {{user}}’s adult partner, wants another adult man in a way that has become meaningful enough to affect her thoughts, choices, or relationship conversations. Attraction itself is not cheating, desire is not intention, and intention is not action. Preserve the distinction between feelings, choices, disclosure, relationship agreements, and the other man’s independent agency.",
+  "setup": "Begin near the point where the attraction becomes impossible for {{char}} to dismiss: she recognizes it, tells someone, receives clear reciprocation, gets invited somewhere, nearly crosses a line, or decides she needs to speak with {{user}} before another step. Establish what the relationship rules actually are and what has objectively happened so far, then leave {{user}}’s reaction and the future open.",
+  "core_variables": [
+    "Where and how she meets or reconnects with the other adult man.",
+    "Who he is in relation to her and {{user}}.",
+    "How quickly she recognizes the attraction.",
+    "Whether it is physical, emotional, intellectual, nostalgic, novelty-driven, or mixed.",
+    "Whether her relationship with {{user}} is happy, strained, new, long-term, long-distance, open, or paused.",
+    "Whether she has general curiosity about other partners or wants this one specific man.",
+    "What she has objectively done so far: nothing, fantasy, flirting, emotional intimacy, date, kiss, sex, or an ongoing affair.",
+    "Whether she tells {{user}} and how much she reveals.",
+    "Whether the other man knows she is attached and whether he reciprocates.",
+    "What boundaries the other man sets for himself.",
+    "What she believes the attraction means versus what it objectively proves.",
+    "What she wants next: distance, friendship, one date, one encounter, recurring involvement, polyamory, a one-person exception, a broader open relationship, or time.",
+    "What social or practical complications keep the attraction relevant."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{char}} develops a meaningful attraction to another adult man while partnered with {{user}}.",
+    "Do not treat attraction itself as cheating. Distinguish private feelings, fantasy, flirting, emotional intimacy, physical action, and secret ongoing involvement.",
+    "Do not assume attraction means {{char}}’s relationship with {{user}} is bad, unsatisfying, or doomed unless the selected direction establishes a specific problem.",
+    "Do not assume wanting one particular man means {{char}} wants non-monogamy in general.",
+    "Do not assume a proposal for non-monogamy is secretly about one man unless the scenario establishes that ground truth.",
+    "Define the relationship agreement clearly enough to tell whether behavior is permitted, ambiguous, or a boundary crossing.",
+    "Do not retroactively convert cheating into consent because {{char}} later confesses or asks for future permission.",
+    "Do not write {{user}}’s jealousy, arousal, anger, insecurity, forgiveness, dialogue, consent, or future decision as settled fact.",
+    "Do not write the other man as automatically predatory, superior, more masculine, more exciting, or objectively better for {{char}} merely because she wants him.",
+    "Do not reduce {{user}} to an obstacle between {{char}} and the other man; preserve the existing relationship as meaningful unless the selected direction explicitly says otherwise.",
+    "Do not force {{char}} to act on the attraction. Resisting, confessing, keeping distance, remaining friends, or letting it fade are valid trajectories.",
+    "Do not force {{char}} to fall in love after sex or prefer the other man after a first encounter.",
+    "If the other man has workplace, financial, housing, or other authority, intimacy must be freely chosen and independent of leverage.",
+    "If alcohol or a party is involved, sexual activity must still involve adults with capacity who freely consent.",
+    "If a preset narrows the man’s identity, escalation stage, or desired outcome, preserve that condition while varying the remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Consent is activity-specific and must be grounded independently from attraction, flirting, clothing, prior sex, fantasy, or relationship status.",
+    "Attraction never grants the other man permission to touch, kiss, date, message sexually, or have sex with {{char}}.",
+    "A partner’s fantasy about NTR, cuckolding, or non-monogamy does not authorize real action without an actual agreement.",
+    "Do not frame persistence, jealousy, workplace authority, financial leverage, or social pressure as substitutes for consent.",
+    "Do not moralize consensual non-monogamy as cheating, and do not sanitize secret boundary violations as consensual merely because attraction is mutual.",
+    "Do not force {{user}} to approve an open relationship, permit an encounter, accept a cuckold identity, end the relationship, or forgive a boundary crossing.",
+    "Do not force {{char}} to leave {{user}}, choose the other man, choose {{user}}, or maintain both relationships.",
+    "Character rationalizations are not objective truth.",
+    "Do not present cosmetic changes of occupation, location, or names as genuinely different ideas."
+  ],
+  "diversity_axes": [
+    "Party, workplace, neighbourhood, hobby, gym, online friendship, travel, convention, café, commute, reunion, or friend group",
+    "Stranger, coworker, boss, ex, old crush, friend, {{user}}’s friend, mutual friend, neighbour, rival, older man, younger man, public figure, or attached man",
+    "Instant spark, slow burn, sudden realization after years, attraction after a life change, or attraction noticed only after reciprocation",
+    "Physical, emotional, intellectual, nostalgic, novelty-driven, admiration-based, forbidden, specific sexual curiosity, or mixed attraction",
+    "Happy monogamy, strained exclusivity, long-term routine, long-distance, new relationship, marriage, open relationship, open-sex-only, on-a-break, or considering opening",
+    "No action, fantasy, flirting, emotional intimacy, date, almost-kiss, kiss, physical boundary crossing, first encounter, or ongoing affair",
+    "Full disclosure, partial disclosure, delayed confession, accidental reveal, caught flirting, caught messaging, or different stories",
+    "Other man unaware, reciprocating, rejecting, respecting boundaries, requiring transparency, encouraging secrecy, wanting romance, wanting casual, or already attached",
+    "Specific man only, general curiosity only, general curiosity becoming specific, or concealed mismatch between stated and actual desire",
+    "Resist, distance, confess, negotiate, seek permission, test reciprocity, flirt, pursue, cross one line, or let small choices accumulate",
+    "Guilt, excitement, confusion, fear, jealousy, embarrassment, relief, no guilt about the feeling, or conflicting emotions",
+    "Wants nothing to happen, friendship, one date, one encounter, regular casual contact, romance, polyamory, broad openness, one-man exception, or time",
+    "Friend-group pressure, work contact, travel, moving away, group trip, another partner, visible chemistry, or total secrecy",
+    "Attraction remains unresolved versus bridges into NTR Report, Open Relationship, Under Your Nose, The Man From Her Past, She's Cheating With You, or another series"
+  ],
+  "cross_links": [
+    "NTR Report",
+    "Open Relationship",
+    "Under Your Nose",
+    "The Man From Her Past",
+    "She's Cheating With You",
+    "My Boyfriend Wants This",
+    "Turn You Into a Cuck",
+    "He Wants Your Girl",
+    "She Got Pregnant"
+  ],
+  "tags": [
+    "adult",
+    "attraction",
+    "relationship tension",
+    "other man",
+    "ntr",
+    "infidelity",
+    "consensual non-monogamy",
+    "crush",
+    "desire",
+    "boundaries",
+    "disclosure",
+    "relationship negotiation",
+    "emotional affair"
+  ],
+  "notes": "Expanded from Series Bible I #5. The original Bible seeds—Party Encounter, Old Crush, Coworker Chemistry, and Specific Man vs General Curiosity—are preserved and expanded into a much larger grouped preset library. The source is intentionally pre-affair by default: attraction creates choices and pressure but does not predetermine cheating, non-monogamy, breakup, or sexual escalation.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied She Wants Him concepts. Preserve the premise that {{user}}’s adult partner develops a meaningful attraction to another adult man, but do not assume an affair. Vary who he is, where the attraction begins, what kind of attraction it is, how honest she is, what the other man wants, what boundaries exist, and whether she resists, confesses, negotiates, flirts, or acts."
+    },
+    {
+      "id": "g02-party-encounter",
+      "group": "02 Where the Attraction Begins",
+      "title": "Party Encounter",
+      "direction": "The attraction begins at an adult social event, party, celebration, or gathering. Vary whether they meet for the first time or reconnect, and do not use intoxication to bypass consent."
+    },
+    {
+      "id": "g02-coworker-chemistry",
+      "group": "02 Where the Attraction Begins",
+      "title": "Coworker Chemistry",
+      "direction": "The attraction develops through repeated contact with an adult coworker. Make their work connection meaningful beyond simply placing them together."
+    },
+    {
+      "id": "g02-neighbour-attraction",
+      "group": "02 Where the Attraction Begins",
+      "title": "Neighbour Attraction",
+      "direction": "The attraction develops through ordinary repeated contact with an adult neighbour. Proximity does not imply permission or intimacy."
+    },
+    {
+      "id": "g02-hobby-club-connection",
+      "group": "02 Where the Attraction Begins",
+      "title": "Hobby / Club Connection",
+      "direction": "She meets him through an adult hobby, club, sport, game group, fandom, creative community, or volunteer activity."
+    },
+    {
+      "id": "g02-gym-training-attraction",
+      "group": "02 Where the Attraction Begins",
+      "title": "Gym / Training Attraction",
+      "direction": "She notices him through a gym, fitness class, sport, or training setting. Physical proximity or coaching does not imply consent."
+    },
+    {
+      "id": "g02-online-friend-becomes-specific",
+      "group": "02 Where the Attraction Begins",
+      "title": "Online Friend Becomes Specific",
+      "direction": "An adult online friend she regarded as platonic becomes a specific object of attraction through messages, calls, gaming, or eventually meeting offline."
+    },
+    {
+      "id": "g02-convention-festival-encounter",
+      "group": "02 Where the Attraction Begins",
+      "title": "Convention / Festival Encounter",
+      "direction": "She meets or reconnects with him at a convention, festival, concert, conference, or fan event and keeps thinking about him afterward."
+    },
+    {
+      "id": "g02-work-trip",
+      "group": "02 Where the Attraction Begins",
+      "title": "Work Trip",
+      "direction": "The attraction develops during legitimate work travel. He may be a colleague, client, conference attendee, or local acquaintance, but professional leverage must not substitute for consent."
+    },
+    {
+      "id": "g02-holiday-travel-encounter",
+      "group": "02 Where the Attraction Begins",
+      "title": "Holiday / Travel Encounter",
+      "direction": "She meets him while travelling and is drawn to him despite the practical problem that they normally live far apart."
+    },
+    {
+      "id": "g02-regular-caf-shop-commute",
+      "group": "02 Where the Attraction Begins",
+      "title": "Regular Café / Shop / Commute",
+      "direction": "Repeated brief encounters in an ordinary routine gradually turn into recognition and attraction."
+    },
+    {
+      "id": "g02-friend-group",
+      "group": "02 Where the Attraction Begins",
+      "title": "Friend Group",
+      "direction": "An adult man already present in the couple’s wider social circle becomes newly attractive to her."
+    },
+    {
+      "id": "g02-wedding-reunion",
+      "group": "02 Where the Attraction Begins",
+      "title": "Wedding / Reunion",
+      "direction": "A wedding, reunion, or major social event puts her in extended contact with an adult man she once knew or never noticed before."
+    },
+    {
+      "id": "g03-complete-stranger",
+      "group": "03 Who He Is",
+      "title": "Complete Stranger",
+      "direction": "Make the man an adult stranger when she first notices him. The first choice is whether the attraction stays fleeting or becomes deliberate contact."
+    },
+    {
+      "id": "g03-coworker",
+      "group": "03 Who He Is",
+      "title": "Coworker",
+      "direction": "Make him an adult coworker she will continue seeing after the attraction becomes obvious."
+    },
+    {
+      "id": "g03-boss-supervisor",
+      "group": "03 Who He Is",
+      "title": "Boss / Supervisor",
+      "direction": "Make him her adult boss or supervisor. Attraction may exist, but workplace authority, pay, scheduling, or advancement must not be used to obtain intimacy."
+    },
+    {
+      "id": "g03-ex-boyfriend",
+      "group": "03 Who He Is",
+      "title": "Ex-Boyfriend",
+      "direction": "Make him an adult ex-boyfriend who re-enters her life. Vary nostalgia, unfinished chemistry, curiosity, and present-day compatibility."
+    },
+    {
+      "id": "g03-old-crush",
+      "group": "03 Who He Is",
+      "title": "Old Crush",
+      "direction": "Make him an adult old crush she strongly wanted in the past but never actually dated or slept with."
+    },
+    {
+      "id": "g03-close-male-friend",
+      "group": "03 Who He Is",
+      "title": "Close Male Friend",
+      "direction": "Make him one of her adult male friends and explore the complication of attraction appearing inside an established friendship."
+    },
+    {
+      "id": "g03-users-best-friend",
+      "group": "03 Who He Is",
+      "title": "{{user}}’s Best Friend",
+      "direction": "Make him {{user}}’s adult best friend. Preserve the existing friendship as a separate relationship whose future is not predetermined."
+    },
+    {
+      "id": "g03-mutual-friend",
+      "group": "03 Who He Is",
+      "title": "Mutual Friend",
+      "direction": "Make him an adult mutual friend known well to both {{char}} and {{user}}."
+    },
+    {
+      "id": "g03-neighbour",
+      "group": "03 Who He Is",
+      "title": "Neighbour",
+      "direction": "Make him an adult neighbour whose continued proximity matters even if nothing happens."
+    },
+    {
+      "id": "g03-rival-man-user-dislikes",
+      "group": "03 Who He Is",
+      "title": "Rival / Man {{user}} Dislikes",
+      "direction": "Make him an adult rival or someone {{user}} already dislikes. Establish a concrete reason for that history without defining {{user}}’s reaction to the attraction."
+    },
+    {
+      "id": "g03-man-she-used-to-dislike",
+      "group": "03 Who He Is",
+      "title": "Man She Used to Dislike",
+      "direction": "Make him an adult man she previously found irritating or incompatible until she sees a different side of him."
+    },
+    {
+      "id": "g03-older-adult-man",
+      "group": "03 Who He Is",
+      "title": "Older Adult Man",
+      "direction": "Make him significantly older than {{char}} but clearly an adult. Do not reduce the attraction to age, money, or authority alone."
+    },
+    {
+      "id": "g03-younger-adult-man",
+      "group": "03 Who He Is",
+      "title": "Younger Adult Man",
+      "direction": "Make him younger than {{char}} but clearly an adult. Do not infantilize him."
+    },
+    {
+      "id": "g03-local-celebrity-public-figure",
+      "group": "03 Who He Is",
+      "title": "Local Celebrity / Public Figure",
+      "direction": "Make him an adult local celebrity, performer, athlete, creator, or public figure with whom she has plausible real contact."
+    },
+    {
+      "id": "g03-friends-adult-brother",
+      "group": "03 Who He Is",
+      "title": "Friend’s Adult Brother",
+      "direction": "Make him the adult brother of one of her friends, creating overlapping social loyalties."
+    },
+    {
+      "id": "g03-someone-from-her-past",
+      "group": "03 Who He Is",
+      "title": "Someone From Her Past",
+      "direction": "Make him an adult classmate, former neighbour, old coworker, teammate, or acquaintance from an earlier part of her life."
+    },
+    {
+      "id": "g03-man-who-is-already-attached",
+      "group": "03 Who He Is",
+      "title": "Man Who Is Already Attached",
+      "direction": "Make him an adult man who has his own partner. His relationship boundaries are independent and must remain meaningful."
+    },
+    {
+      "id": "g03-man-who-clearly-respects-her-relationship",
+      "group": "03 Who He Is",
+      "title": "Man Who Clearly Respects Her Relationship",
+      "direction": "Make him aware of the attraction but unwilling to participate in cheating, pushing the story toward honesty, distance, or negotiation."
+    },
+    {
+      "id": "g04-mostly-physical",
+      "group": "04 Nature of the Attraction",
+      "title": "Mostly Physical",
+      "direction": "Make the attraction primarily physical without assuming she wants romance or action."
+    },
+    {
+      "id": "g04-emotional-pull",
+      "group": "04 Nature of the Attraction",
+      "title": "Emotional Pull",
+      "direction": "Make her want his attention, conversation, and emotional closeness more than sex at first."
+    },
+    {
+      "id": "g04-intellectual-attraction",
+      "group": "04 Nature of the Attraction",
+      "title": "Intellectual Attraction",
+      "direction": "Make her drawn to his mind, expertise, creativity, or worldview without ranking him as objectively superior to {{user}}."
+    },
+    {
+      "id": "g04-nostalgic-attraction",
+      "group": "04 Nature of the Attraction",
+      "title": "Nostalgic Attraction",
+      "direction": "Make much of the attraction come from shared history or the feeling of reconnecting with an earlier version of herself."
+    },
+    {
+      "id": "g04-admiration-becomes-desire",
+      "group": "04 Nature of the Attraction",
+      "title": "Admiration Becomes Desire",
+      "direction": "Start with admiration for an adult trait such as competence, kindness, talent, courage, humor, or dedication, then let it become attraction."
+    },
+    {
+      "id": "g04-novelty-attraction",
+      "group": "04 Nature of the Attraction",
+      "title": "Novelty Attraction",
+      "direction": "Make novelty and difference part of the appeal without implying her current relationship is objectively stale."
+    },
+    {
+      "id": "g04-forbidden-complicated-appeal",
+      "group": "04 Nature of the Attraction",
+      "title": "Forbidden / Complicated Appeal",
+      "direction": "Make the attraction stronger partly because pursuing it would be socially, professionally, or relationally complicated. Complication does not erase consent or boundaries."
+    },
+    {
+      "id": "g04-familiarity-becomes-attraction",
+      "group": "04 Nature of the Attraction",
+      "title": "Familiarity Becomes Attraction",
+      "direction": "She has known him for a long time without romantic interest, then gradually begins seeing him differently."
+    },
+    {
+      "id": "g04-unexpected-compatibility",
+      "group": "04 Nature of the Attraction",
+      "title": "Unexpected Compatibility",
+      "direction": "A situation reveals shared values, humor, interests, or goals she had never noticed before."
+    },
+    {
+      "id": "g04-sexual-curiosity-about-one-specific-man",
+      "group": "04 Nature of the Attraction",
+      "title": "Sexual Curiosity About One Specific Man",
+      "direction": "She specifically wonders what sex with this particular adult man would be like without wanting non-monogamy in general."
+    },
+    {
+      "id": "g04-romantic-curiosity-about-one-specific-man",
+      "group": "04 Nature of the Attraction",
+      "title": "Romantic Curiosity About One Specific Man",
+      "direction": "She specifically wonders what dating or emotional intimacy with this man would feel like."
+    },
+    {
+      "id": "g04-mixed-physical-and-emotional",
+      "group": "04 Nature of the Attraction",
+      "title": "Mixed Physical and Emotional",
+      "direction": "Make the attraction both physical and emotional, making compartmentalization harder."
+    },
+    {
+      "id": "g04-attraction-she-wishes-she-didnt-have",
+      "group": "04 Nature of the Attraction",
+      "title": "Attraction She Wishes She Didn’t Have",
+      "direction": "She would prefer not to want him because the attraction complicates something she values."
+    },
+    {
+      "id": "g04-attraction-she-enjoys-having",
+      "group": "04 Nature of the Attraction",
+      "title": "Attraction She Enjoys Having",
+      "direction": "She likes the feeling of wanting someone new even if she has not decided to act."
+    },
+    {
+      "id": "g04-admiration-without-intent-to-act",
+      "group": "04 Nature of the Attraction",
+      "title": "Admiration Without Intent to Act",
+      "direction": "She acknowledges real attraction but currently has no plan to pursue it."
+    },
+    {
+      "id": "g05-instant-spark",
+      "group": "05 When She Recognises It",
+      "title": "Instant Spark",
+      "direction": "She recognizes the attraction almost immediately on meeting him."
+    },
+    {
+      "id": "g05-slow-burn",
+      "group": "05 When She Recognises It",
+      "title": "Slow Burn",
+      "direction": "Repeated contact gradually turns into attraction over weeks or months."
+    },
+    {
+      "id": "g05-sudden-realization-after-years",
+      "group": "05 When She Recognises It",
+      "title": "Sudden Realization After Years",
+      "direction": "She has known him platonically for years, then one plausible moment makes her realize she wants him."
+    },
+    {
+      "id": "g05-after-he-changes",
+      "group": "05 When She Recognises It",
+      "title": "After He Changes",
+      "direction": "A believable adult life change in him makes her notice him differently without implying his previous self was worthless."
+    },
+    {
+      "id": "g05-after-she-changes",
+      "group": "05 When She Recognises It",
+      "title": "After She Changes",
+      "direction": "A change in her own confidence, priorities, identity, or circumstances makes him newly appealing."
+    },
+    {
+      "id": "g05-after-seeing-him-with-someone-else",
+      "group": "05 When She Recognises It",
+      "title": "After Seeing Him With Someone Else",
+      "direction": "Seeing him receive romantic attention makes her notice her own attraction. Jealousy does not create ownership."
+    },
+    {
+      "id": "g05-after-he-helps-her",
+      "group": "05 When She Recognises It",
+      "title": "After He Helps Her",
+      "direction": "An act of support or help changes how she sees him. Gratitude is not sexual obligation."
+    },
+    {
+      "id": "g05-after-an-argument",
+      "group": "05 When She Recognises It",
+      "title": "After an Argument",
+      "direction": "A disagreement reveals unexpected respect or chemistry. Do not romanticize hostility itself."
+    },
+    {
+      "id": "g05-after-a-compliment",
+      "group": "05 When She Recognises It",
+      "title": "After a Compliment",
+      "direction": "A moment of being seen or appreciated triggers an attraction she had not recognized."
+    },
+    {
+      "id": "g05-after-a-long-conversation",
+      "group": "05 When She Recognises It",
+      "title": "After a Long Conversation",
+      "direction": "An extended one-on-one conversation reveals unexpected compatibility."
+    },
+    {
+      "id": "g05-after-physical-proximity",
+      "group": "05 When She Recognises It",
+      "title": "After Physical Proximity",
+      "direction": "A dance, sport, performance, or other consensual physical situation makes her newly aware of desire. Proximity is not permission for more."
+    },
+    {
+      "id": "g05-only-after-he-shows-interest",
+      "group": "05 When She Recognises It",
+      "title": "Only After He Shows Interest",
+      "direction": "She did not initially want him, but learning he finds her attractive makes her reconsider."
+    },
+    {
+      "id": "g06-happy-monogamous-relationship",
+      "group": "06 Relationship With {{user}}",
+      "title": "Happy Monogamous Relationship",
+      "direction": "She and {{user}} are in an otherwise happy exclusive relationship. Do not invent relationship failure to justify the attraction."
+    },
+    {
+      "id": "g06-strained-but-still-exclusive",
+      "group": "06 Relationship With {{user}}",
+      "title": "Strained but Still Exclusive",
+      "direction": "There are real unresolved problems with {{user}}, but they remain exclusive. The attraction may interact with those problems without excusing deception."
+    },
+    {
+      "id": "g06-long-term-routine",
+      "group": "06 Relationship With {{user}}",
+      "title": "Long-Term Routine",
+      "direction": "The couple is stable and familiar; novelty makes the attraction vivid without proving the relationship is stale."
+    },
+    {
+      "id": "g06-long-distance-relationship",
+      "group": "06 Relationship With {{user}}",
+      "title": "Long-Distance Relationship",
+      "direction": "She and {{user}} spend significant time apart. Distance does not suspend exclusivity unless explicitly agreed."
+    },
+    {
+      "id": "g06-recently-reconciled",
+      "group": "06 Relationship With {{user}}",
+      "title": "Recently Reconciled",
+      "direction": "The couple has recently repaired a breakup, separation, or major conflict when the attraction becomes meaningful."
+    },
+    {
+      "id": "g06-new-relationship-with-user",
+      "group": "06 Relationship With {{user}}",
+      "title": "New Relationship With {{user}}",
+      "direction": "The relationship has only recently become exclusive, forcing her to consider what that commitment means."
+    },
+    {
+      "id": "g06-engaged-planning-a-future",
+      "group": "06 Relationship With {{user}}",
+      "title": "Engaged / Planning a Future",
+      "direction": "The attraction appears while she and {{user}} are making significant future plans."
+    },
+    {
+      "id": "g06-married-established-household",
+      "group": "06 Relationship With {{user}}",
+      "title": "Married / Established Household",
+      "direction": "The relationship is an established adult partnership, marriage, or shared household with practical history beyond the attraction."
+    },
+    {
+      "id": "g06-already-open-relationship",
+      "group": "06 Relationship With {{user}}",
+      "title": "Already Open Relationship",
+      "direction": "The couple already practices consensual non-monogamy, so pursuing him may be permitted while emotional and disclosure rules still matter."
+    },
+    {
+      "id": "g06-open-sex-but-not-dating",
+      "group": "06 Relationship With {{user}}",
+      "title": "Open Sex but Not Dating",
+      "direction": "The existing agreement permits casual sex but not romantic dating or emotional partnership, and this attraction may threaten that exact boundary."
+    },
+    {
+      "id": "g06-on-a-break",
+      "group": "06 Relationship With {{user}}",
+      "title": "On a Break",
+      "direction": "The couple is temporarily separated or on a break. Explicitly establish what exclusivity rules currently apply."
+    },
+    {
+      "id": "g06-considering-opening-up",
+      "group": "06 Relationship With {{user}}",
+      "title": "Considering Opening Up",
+      "direction": "They have discussed non-monogamy only in theory, and a specific man suddenly makes the discussion concrete."
+    },
+    {
+      "id": "g07-resists-the-attraction",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Resists the Attraction",
+      "direction": "She reduces contact or avoids private situations because she does not want the attraction to grow."
+    },
+    {
+      "id": "g07-confesses-to-user-early",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Confesses to {{user}} Early",
+      "direction": "She tells {{user}} about the attraction before crossing a romantic or sexual boundary."
+    },
+    {
+      "id": "g07-asks-for-permission-before-acting",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Asks for Permission Before Acting",
+      "direction": "She tells {{user}} she wants a specific man and asks whether they can discuss a consensual way to explore it."
+    },
+    {
+      "id": "g07-wants-to-negotiate-an-open-exception",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Wants to Negotiate an Open Exception",
+      "direction": "She wants a negotiated exception for this one man rather than necessarily opening the relationship generally."
+    },
+    {
+      "id": "g07-keeps-it-as-fantasy",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Keeps It as Fantasy",
+      "direction": "She allows the attraction to remain fantasy and has no current plan to act."
+    },
+    {
+      "id": "g07-flirts-but-stops-there",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Flirts but Stops There",
+      "direction": "Mutual flirting has begun but there has been no date, kiss, or sex. Establish whether flirting itself is inside the couple’s rules."
+    },
+    {
+      "id": "g07-creates-opportunities-to-see-him",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Creates Opportunities to See Him",
+      "direction": "She starts arranging ordinary reasons to spend more time near him without yet admitting what she intends."
+    },
+    {
+      "id": "g07-avoids-being-alone-with-him",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Avoids Being Alone With Him",
+      "direction": "She deliberately keeps interactions public or group-based because private time would make restraint harder."
+    },
+    {
+      "id": "g07-tests-whether-he-is-interested",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Tests Whether He Is Interested",
+      "direction": "She subtly tries to determine whether attraction is mutual without yet making a direct proposition."
+    },
+    {
+      "id": "g07-tells-him-she-is-attracted-but-sets-a-boundary",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Tells Him She Is Attracted but Sets a Boundary",
+      "direction": "She openly acknowledges attraction while stating that she will not have a secret affair or act beyond agreed boundaries."
+    },
+    {
+      "id": "g07-plans-to-tell-user-keeps-delaying",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Plans to Tell {{user}}, Keeps Delaying",
+      "direction": "She believes she should disclose the attraction but repeatedly postpones the conversation."
+    },
+    {
+      "id": "g07-decides-it-is-nobodys-business-yet",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Decides It Is Nobody’s Business Yet",
+      "direction": "She sees an unacted-on attraction as private and does not initially believe disclosure is necessary."
+    },
+    {
+      "id": "g07-deliberately-pursues-him",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Deliberately Pursues Him",
+      "direction": "She actively pursues the man. Establish whether she seeks permission first or knowingly crosses a boundary."
+    },
+    {
+      "id": "g07-crosses-one-boundary-and-stops",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Crosses One Boundary and Stops",
+      "direction": "She goes further than intended—such as an intimate message, date, or kiss—then stops and must decide what to do next."
+    },
+    {
+      "id": "g07-lets-the-situation-drift",
+      "group": "07 What She Does About Wanting Him",
+      "title": "Lets the Situation Drift",
+      "direction": "Repeated small choices gradually increase intimacy rather than one dramatic decision."
+    },
+    {
+      "id": "g08-fully-open-with-user",
+      "group": "08 Honesty / Disclosure",
+      "title": "Fully Open With {{user}}",
+      "direction": "She keeps {{user}} informed about the attraction and meaningful developments."
+    },
+    {
+      "id": "g08-admits-attraction-only",
+      "group": "08 Honesty / Disclosure",
+      "title": "Admits Attraction Only",
+      "direction": "She tells {{user}} she wants another man but does not disclose every interaction or fantasy."
+    },
+    {
+      "id": "g08-tells-user-who-he-is",
+      "group": "08 Honesty / Disclosure",
+      "title": "Tells {{user}} Who He Is",
+      "direction": "She explicitly names the man she wants, making existing social relationships relevant."
+    },
+    {
+      "id": "g08-refuses-to-name-him-yet",
+      "group": "08 Honesty / Disclosure",
+      "title": "Refuses to Name Him Yet",
+      "direction": "She admits there is a specific man but initially withholds his identity."
+    },
+    {
+      "id": "g08-accidental-confession",
+      "group": "08 Honesty / Disclosure",
+      "title": "Accidental Confession",
+      "direction": "A plausible comment, expression, message, or conversation exposes her attraction before she planned to discuss it."
+    },
+    {
+      "id": "g08-caught-flirting",
+      "group": "08 Honesty / Disclosure",
+      "title": "Caught Flirting",
+      "direction": "{{user}} sees or learns about mutual flirting before a physical affair is assumed."
+    },
+    {
+      "id": "g08-caught-messaging",
+      "group": "08 Honesty / Disclosure",
+      "title": "Caught Messaging",
+      "direction": "Messages reveal emotional or flirtatious involvement. Establish whether the messaging crosses actual relationship rules."
+    },
+    {
+      "id": "g08-friend-notices-first",
+      "group": "08 Honesty / Disclosure",
+      "title": "Friend Notices First",
+      "direction": "An adult friend recognizes the attraction before {{user}} does."
+    },
+    {
+      "id": "g08-she-downplays-it",
+      "group": "08 Honesty / Disclosure",
+      "title": "She Downplays It",
+      "direction": "She describes the attraction as smaller than it really feels because she fears what admitting its intensity would mean."
+    },
+    {
+      "id": "g08-she-overstates-it-to-provoke-a-conversation",
+      "group": "08 Honesty / Disclosure",
+      "title": "She Overstates It to Provoke a Conversation",
+      "direction": "She deliberately makes the attraction sound more dramatic to force a conversation about jealousy or non-monogamy. Treat deliberate distortion as manipulation."
+    },
+    {
+      "id": "g08-she-tells-the-other-man-before-user",
+      "group": "08 Honesty / Disclosure",
+      "title": "She Tells the Other Man Before {{user}}",
+      "direction": "She admits the attraction to the other man first, creating a secrecy problem even if nothing physical happens."
+    },
+    {
+      "id": "g08-she-tells-both-men-the-same-truth",
+      "group": "08 Honesty / Disclosure",
+      "title": "She Tells Both Men the Same Truth",
+      "direction": "She chooses unusually direct transparency and gives both men the same basic account of her attraction and boundaries."
+    },
+    {
+      "id": "g08-different-stories-to-each-man",
+      "group": "08 Honesty / Disclosure",
+      "title": "Different Stories to Each Man",
+      "direction": "She presents the situation differently to {{user}} and the other man. Define both stories and the objective truth."
+    },
+    {
+      "id": "g09-he-has-no-idea",
+      "group": "09 What the Other Man Does",
+      "title": "He Has No Idea",
+      "direction": "He is unaware that she is attracted to him."
+    },
+    {
+      "id": "g09-he-notices-but-does-nothing",
+      "group": "09 What the Other Man Does",
+      "title": "He Notices but Does Nothing",
+      "direction": "He recognizes the attraction but does not encourage it."
+    },
+    {
+      "id": "g09-he-reciprocates",
+      "group": "09 What the Other Man Does",
+      "title": "He Reciprocates",
+      "direction": "He genuinely wants her too. Mutual attraction increases pressure but does not erase commitments or consent boundaries."
+    },
+    {
+      "id": "g09-he-politely-rejects-her",
+      "group": "09 What the Other Man Does",
+      "title": "He Politely Rejects Her",
+      "direction": "He does not want a romantic or sexual relationship with her."
+    },
+    {
+      "id": "g09-he-refuses-to-be-an-affair-partner",
+      "group": "09 What the Other Man Does",
+      "title": "He Refuses to Be an Affair Partner",
+      "direction": "He wants her but refuses secret involvement while she is exclusive with {{user}}."
+    },
+    {
+      "id": "g09-he-is-open-if-user-knows",
+      "group": "09 What the Other Man Does",
+      "title": "He Is Open if {{user}} Knows",
+      "direction": "He is interested only if her relationship genuinely permits it and {{user}} is not being deceived."
+    },
+    {
+      "id": "g09-he-encourages-secrecy",
+      "group": "09 What the Other Man Does",
+      "title": "He Encourages Secrecy",
+      "direction": "He wants her and suggests hiding it from {{user}}. Her response remains her choice."
+    },
+    {
+      "id": "g09-he-wants-her-to-leave-user-first",
+      "group": "09 What the Other Man Does",
+      "title": "He Wants Her to Leave {{user}} First",
+      "direction": "He will only pursue her if she ends the current relationship first."
+    },
+    {
+      "id": "g09-he-wants-casual-only",
+      "group": "09 What the Other Man Does",
+      "title": "He Wants Casual Only",
+      "direction": "He reciprocates physically but does not want romance."
+    },
+    {
+      "id": "g09-he-wants-romance-not-casual-sex",
+      "group": "09 What the Other Man Does",
+      "title": "He Wants Romance, Not Casual Sex",
+      "direction": "He is interested but does not want to be treated as a one-time experiment."
+    },
+    {
+      "id": "g09-he-is-also-attached",
+      "group": "09 What the Other Man Does",
+      "title": "He Is Also Attached",
+      "direction": "He has his own adult partner. His relationship boundaries remain independent."
+    },
+    {
+      "id": "g09-he-misreads-her-friendliness",
+      "group": "09 What the Other Man Does",
+      "title": "He Misreads Her Friendliness",
+      "direction": "He believes she wants him, but his interpretation may be wrong or ahead of what she has decided."
+    },
+    {
+      "id": "g09-he-thought-user-already-knew",
+      "group": "09 What the Other Man Does",
+      "title": "He Thought {{user}} Already Knew",
+      "direction": "He believes her relationship is open or that {{user}} has already been told. Establish what created that belief."
+    },
+    {
+      "id": "g09-he-talks-to-user-directly",
+      "group": "09 What the Other Man Does",
+      "title": "He Talks to {{user}} Directly",
+      "direction": "He chooses to address the situation openly with {{user}}."
+    },
+    {
+      "id": "g09-he-creates-distance",
+      "group": "09 What the Other Man Does",
+      "title": "He Creates Distance",
+      "direction": "He deliberately reduces private contact once he realizes she is attached and attracted to him."
+    },
+    {
+      "id": "g10-nothing-has-happened-yet",
+      "group": "10 Stage of Escalation",
+      "title": "Nothing Has Happened Yet",
+      "direction": "No romantic or sexual boundary has been crossed. The engine is entirely what she does with wanting him."
+    },
+    {
+      "id": "g10-only-fantasy",
+      "group": "10 Stage of Escalation",
+      "title": "Only Fantasy",
+      "direction": "The involvement exists entirely in her thoughts and fantasies."
+    },
+    {
+      "id": "g10-mutual-flirting",
+      "group": "10 Stage of Escalation",
+      "title": "Mutual Flirting",
+      "direction": "They flirt, but there has been no date, kiss, or sex."
+    },
+    {
+      "id": "g10-private-emotional-intimacy",
+      "group": "10 Stage of Escalation",
+      "title": "Private Emotional Intimacy",
+      "direction": "They share private emotional closeness beyond ordinary friendship. Whether this crosses a boundary depends on the established agreement and secrecy."
+    },
+    {
+      "id": "g10-one-on-one-date",
+      "group": "10 Stage of Escalation",
+      "title": "One-on-One Date",
+      "direction": "She has agreed to or wants an outing that clearly feels date-like."
+    },
+    {
+      "id": "g10-almost-kissed",
+      "group": "10 Stage of Escalation",
+      "title": "Almost Kissed",
+      "direction": "A moment nearly became a kiss, but one or both adults stopped."
+    },
+    {
+      "id": "g10-kissed-once",
+      "group": "10 Stage of Escalation",
+      "title": "Kissed Once",
+      "direction": "They have shared one consensual kiss. The roleplay begins with what she does after that first clear escalation."
+    },
+    {
+      "id": "g10-physical-boundary-crossed-no-sex",
+      "group": "10 Stage of Escalation",
+      "title": "Physical Boundary Crossed, No Sex",
+      "direction": "They have gone beyond kissing but have not had sex. Keep the concept non-graphic and focused on relationship consequences."
+    },
+    {
+      "id": "g10-first-sexual-encounter-is-being-considered",
+      "group": "10 Stage of Escalation",
+      "title": "First Sexual Encounter Is Being Considered",
+      "direction": "Sex has not happened, but the possibility is explicit and concrete."
+    },
+    {
+      "id": "g10-first-encounter-already-happened",
+      "group": "10 Stage of Escalation",
+      "title": "First Encounter Already Happened",
+      "direction": "She has acted on the attraction once. Route toward NTR Report or cheating-related sources depending on permission and disclosure."
+    },
+    {
+      "id": "g10-ongoing-emotional-affair-no-sex-yet",
+      "group": "10 Stage of Escalation",
+      "title": "Ongoing Emotional Affair, No Sex Yet",
+      "direction": "She has built a secret emotionally intimate relationship while remaining physically faithful."
+    },
+    {
+      "id": "g10-ongoing-secret-physical-affair",
+      "group": "10 Stage of Escalation",
+      "title": "Ongoing Secret Physical Affair",
+      "direction": "She has crossed into repeated secret sexual involvement. Treat this as a bridge toward Under Your Nose or She's Cheating With You."
+    },
+    {
+      "id": "g10-permitted-encounter-has-happened",
+      "group": "10 Stage of Escalation",
+      "title": "Permitted Encounter Has Happened",
+      "direction": "She acted on the attraction with explicit relationship permission; the next question is what she feels and wants now."
+    },
+    {
+      "id": "g11-specific-chemistry",
+      "group": "11 Why She Wants Him",
+      "title": "Specific Chemistry",
+      "direction": "Her desire is primarily about the particular chemistry she has with him."
+    },
+    {
+      "id": "g11-general-curiosity-finds-a-face",
+      "group": "11 Why She Wants Him",
+      "title": "General Curiosity Finds a Face",
+      "direction": "She already wondered about other partners, and this man becomes the first specific person who makes the curiosity actionable."
+    },
+    {
+      "id": "g11-validation",
+      "group": "11 Why She Wants Him",
+      "title": "Validation",
+      "direction": "Part of the appeal is being wanted by someone new. Treat validation as one motive, not a diagnosis."
+    },
+    {
+      "id": "g11-novelty",
+      "group": "11 Why She Wants Him",
+      "title": "Novelty",
+      "direction": "The newness of him and the situation is part of the appeal without making her current relationship objectively boring."
+    },
+    {
+      "id": "g11-unresolved-old-desire",
+      "group": "11 Why She Wants Him",
+      "title": "Unresolved Old Desire",
+      "direction": "He revives attraction she never got to explore in the past."
+    },
+    {
+      "id": "g11-emotional-understanding",
+      "group": "11 Why She Wants Him",
+      "title": "Emotional Understanding",
+      "direction": "She feels unusually understood by him in one area of life without proving {{user}} is emotionally inadequate."
+    },
+    {
+      "id": "g11-shared-passion",
+      "group": "11 Why She Wants Him",
+      "title": "Shared Passion",
+      "direction": "A hobby, career, creative field, or obsession gives them a connection distinct from the one she has with {{user}}."
+    },
+    {
+      "id": "g11-rebellion",
+      "group": "11 Why She Wants Him",
+      "title": "Rebellion",
+      "direction": "Part of the appeal is wanting something she believes she is not supposed to want. Rebellious feeling is not automatic action."
+    },
+    {
+      "id": "g11-curiosity-about-her-own-boundaries",
+      "group": "11 Why She Wants Him",
+      "title": "Curiosity About Her Own Boundaries",
+      "direction": "She wants to learn what outside attraction, jealousy, or non-monogamy would actually feel like."
+    },
+    {
+      "id": "g11-life-transition",
+      "group": "11 Why She Wants Him",
+      "title": "Life Transition",
+      "direction": "An adult transition makes her question old assumptions about desire and relationships."
+    },
+    {
+      "id": "g11-fear-of-missing-out",
+      "group": "11 Why She Wants Him",
+      "title": "Fear of Missing Out",
+      "direction": "She worries that monogamy may mean never exploring certain experiences. Treat this as her concern, not a universal truth."
+    },
+    {
+      "id": "g11-relationship-frustration",
+      "group": "11 Why She Wants Him",
+      "title": "Relationship Frustration",
+      "direction": "Specific dissatisfaction with {{user}} contributes to her vulnerability to another attraction without excusing deception."
+    },
+    {
+      "id": "g11-no-relationship-problem-at-all",
+      "group": "11 Why She Wants Him",
+      "title": "No Relationship Problem at All",
+      "direction": "She wants another man despite genuinely valuing and enjoying her relationship with {{user}}."
+    },
+    {
+      "id": "g11-competition-being-chosen",
+      "group": "11 Why She Wants Him",
+      "title": "Competition / Being Chosen",
+      "direction": "Knowing the other man receives attention from others intensifies her interest. Do not treat people as objective prizes."
+    },
+    {
+      "id": "g11-he-feels-safe-to-fantasize-about",
+      "group": "11 Why She Wants Him",
+      "title": "He Feels Safe to Fantasize About",
+      "direction": "He initially seems unattainable or unlikely to act, making the attraction feel safely hypothetical until circumstances change."
+    },
+    {
+      "id": "g12-guilty-about-wanting-him",
+      "group": "12 Her Emotional Conflict",
+      "title": "Guilty About Wanting Him",
+      "direction": "She feels guilty even though she has not acted. The roleplay can explore whether feelings themselves count as betrayal without deciding for {{user}}."
+    },
+    {
+      "id": "g12-excited-by-the-attraction",
+      "group": "12 Her Emotional Conflict",
+      "title": "Excited by the Attraction",
+      "direction": "She enjoys the energy of wanting someone new and is reluctant to let that feeling go."
+    },
+    {
+      "id": "g12-confused-by-the-intensity",
+      "group": "12 Her Emotional Conflict",
+      "title": "Confused by the Intensity",
+      "direction": "The attraction is stronger than expected and she is unsure what, if anything, it says about her relationship."
+    },
+    {
+      "id": "g12-afraid-of-hurting-user",
+      "group": "12 Her Emotional Conflict",
+      "title": "Afraid of Hurting {{user}}",
+      "direction": "Her strongest hesitation is concern about how disclosure or action might affect {{user}}."
+    },
+    {
+      "id": "g12-afraid-of-losing-the-other-man",
+      "group": "12 Her Emotional Conflict",
+      "title": "Afraid of Losing the Other Man",
+      "direction": "She fears that if she waits for clarity or permission, the other man will move on."
+    },
+    {
+      "id": "g12-afraid-of-losing-both",
+      "group": "12 Her Emotional Conflict",
+      "title": "Afraid of Losing Both",
+      "direction": "She fears pursuing him could cost her relationship with {{user}}, while refusing could close the other possibility."
+    },
+    {
+      "id": "g12-jealous-of-his-other-dates",
+      "group": "12 Her Emotional Conflict",
+      "title": "Jealous of His Other Dates",
+      "direction": "She becomes jealous when the other man sees or flirts with someone else, revealing deeper emotional significance."
+    },
+    {
+      "id": "g12-embarrassed-by-who-it-is",
+      "group": "12 Her Emotional Conflict",
+      "title": "Embarrassed by Who It Is",
+      "direction": "The identity of the man makes admitting the attraction especially awkward."
+    },
+    {
+      "id": "g12-angry-at-herself",
+      "group": "12 Her Emotional Conflict",
+      "title": "Angry at Herself",
+      "direction": "She resents having developed a feeling that complicates something she values."
+    },
+    {
+      "id": "g12-no-guilt-about-the-feeling",
+      "group": "12 Her Emotional Conflict",
+      "title": "No Guilt About the Feeling",
+      "direction": "She believes attraction itself is morally neutral and only actions and agreements matter."
+    },
+    {
+      "id": "g12-relieved-when-she-admits-it",
+      "group": "12 Her Emotional Conflict",
+      "title": "Relieved When She Admits It",
+      "direction": "Keeping the attraction private has become stressful, and disclosure brings relief."
+    },
+    {
+      "id": "g12-protective-of-user-and-the-other-man",
+      "group": "12 Her Emotional Conflict",
+      "title": "Protective of {{user}} and the Other Man",
+      "direction": "She does not want either man reduced to a villain, loser, or competitor."
+    },
+    {
+      "id": "g12-wants-a-simple-answer-but-there-isnt-one",
+      "group": "12 Her Emotional Conflict",
+      "title": "Wants a Simple Answer but There Isn’t One",
+      "direction": "She keeps trying to reduce the situation to stay, leave, open, or cut contact, but no option feels obviously correct."
+    },
+    {
+      "id": "g13-wants-nothing-to-happen",
+      "group": "13 What She Wants Next",
+      "title": "Wants Nothing to Happen",
+      "direction": "She chooses not to pursue the attraction and hopes it fades."
+    },
+    {
+      "id": "g13-wants-to-stay-friends-with-him",
+      "group": "13 What She Wants Next",
+      "title": "Wants to Stay Friends With Him",
+      "direction": "She does not want to lose an important friendship simply because attraction appeared."
+    },
+    {
+      "id": "g13-wants-one-date",
+      "group": "13 What She Wants Next",
+      "title": "Wants One Date",
+      "direction": "She wants permission or space to go on one date before deciding whether the attraction is real outside fantasy."
+    },
+    {
+      "id": "g13-wants-one-sexual-encounter",
+      "group": "13 What She Wants Next",
+      "title": "Wants One Sexual Encounter",
+      "direction": "She specifically wants a one-time consensual sexual experience with this adult man and not necessarily an ongoing relationship."
+    },
+    {
+      "id": "g13-wants-casual-ongoing-contact",
+      "group": "13 What She Wants Next",
+      "title": "Wants Casual Ongoing Contact",
+      "direction": "She would like a recurring but non-romantic outside relationship if everyone’s boundaries permit it."
+    },
+    {
+      "id": "g13-wants-to-explore-romance",
+      "group": "13 What She Wants Next",
+      "title": "Wants to Explore Romance",
+      "direction": "She wants to know whether emotional or romantic compatibility with him is real."
+    },
+    {
+      "id": "g13-wants-polyamory",
+      "group": "13 What She Wants Next",
+      "title": "Wants Polyamory",
+      "direction": "She does not want to replace {{user}} but wonders whether she could have meaningful relationships with both men."
+    },
+    {
+      "id": "g13-wants-an-open-relationship-generally",
+      "group": "13 What She Wants Next",
+      "title": "Wants an Open Relationship Generally",
+      "direction": "The specific attraction becomes the catalyst for proposing broader consensual non-monogamy."
+    },
+    {
+      "id": "g13-wants-a-one-man-exception",
+      "group": "13 What She Wants Next",
+      "title": "Wants a One-Man Exception",
+      "direction": "She wants the relationship otherwise to remain monogamous with a negotiated exception for this specific man."
+    },
+    {
+      "id": "g13-wants-user-to-meet-him",
+      "group": "13 What She Wants Next",
+      "title": "Wants {{user}} to Meet Him",
+      "direction": "She thinks transparency would be easier if {{user}} actually knew the man she wants."
+    },
+    {
+      "id": "g13-wants-all-three-to-talk",
+      "group": "13 What She Wants Next",
+      "title": "Wants All Three to Talk",
+      "direction": "She wants a direct adult conversation among herself, {{user}}, and the other man."
+    },
+    {
+      "id": "g13-wants-time-before-deciding",
+      "group": "13 What She Wants Next",
+      "title": "Wants Time Before Deciding",
+      "direction": "She wants to acknowledge the attraction without immediately choosing a relationship structure or action."
+    },
+    {
+      "id": "g13-considering-leaving-user",
+      "group": "13 What She Wants Next",
+      "title": "Considering Leaving {{user}}",
+      "direction": "She is genuinely considering ending the relationship to pursue the other man, but has not made that decision."
+    },
+    {
+      "id": "g13-wants-to-end-contact-with-him",
+      "group": "13 What She Wants Next",
+      "title": "Wants to End Contact With Him",
+      "direction": "She concludes the attraction is too disruptive and plans to reduce or end contact."
+    },
+    {
+      "id": "g13-wants-to-know-what-user-would-permit",
+      "group": "13 What She Wants Next",
+      "title": "Wants to Know What {{user}} Would Permit",
+      "direction": "She wants a real conversation about which kinds of outside involvement might be acceptable."
+    },
+    {
+      "id": "g13-wants-the-fantasy-not-the-reality",
+      "group": "13 What She Wants Next",
+      "title": "Wants the Fantasy, Not the Reality",
+      "direction": "She discovers she likes imagining him more than she wants to restructure her life to pursue him."
+    },
+    {
+      "id": "g14-specific-man-no-general-interest",
+      "group": "14 Specific Man vs General Curiosity",
+      "title": "Specific Man, No General Interest",
+      "direction": "She is not broadly interested in non-monogamy; this one adult man is the exception."
+    },
+    {
+      "id": "g14-general-curiosity-no-specific-man-yet",
+      "group": "14 Specific Man vs General Curiosity",
+      "title": "General Curiosity, No Specific Man Yet",
+      "direction": "She is curious about other men in general before any specific target exists. This can naturally bridge toward Open Relationship."
+    },
+    {
+      "id": "g14-general-curiosity-becomes-one-specific-man",
+      "group": "14 Specific Man vs General Curiosity",
+      "title": "General Curiosity Becomes One Specific Man",
+      "direction": "A previously abstract interest becomes concrete when one adult man stands out."
+    },
+    {
+      "id": "g14-claims-its-general-but-its-really-about-him",
+      "group": "14 Specific Man vs General Curiosity",
+      "title": "Claims It’s General, But It’s Really About Him",
+      "direction": "She frames the issue as general openness while privately being focused on one specific man. Preserve the discrepancy."
+    },
+    {
+      "id": "g14-claims-its-only-him-but-curiosity-is-broader",
+      "group": "14 Specific Man vs General Curiosity",
+      "title": "Claims It’s Only Him, But Curiosity Is Broader",
+      "direction": "She sincerely wants him, but the attraction also awakens broader curiosity she has not fully admitted."
+    },
+    {
+      "id": "g14-she-wouldnt-want-anyone-else",
+      "group": "14 Specific Man vs General Curiosity",
+      "title": "She Wouldn’t Want Anyone Else",
+      "direction": "She believes that if this man were unavailable, she would not seek another. Treat that as her current belief, not an immutable fact."
+    },
+    {
+      "id": "g14-she-would-still-want-to-explore-without-him",
+      "group": "14 Specific Man vs General Curiosity",
+      "title": "She Would Still Want to Explore Without Him",
+      "direction": "Even if he rejects her, the experience of wanting him has changed how she thinks about exclusivity."
+    },
+    {
+      "id": "g14-the-specific-man-is-symbolic",
+      "group": "14 Specific Man vs General Curiosity",
+      "title": "The Specific Man Is Symbolic",
+      "direction": "He represents adventure, confidence, a lost part of herself, or another life possibility, so distinguish the real man from what she projects onto him."
+    },
+    {
+      "id": "g15-same-friend-group",
+      "group": "15 Social / Practical Complications",
+      "title": "Same Friend Group",
+      "direction": "She and the other man share a friend group, so future contact remains likely whatever she decides."
+    },
+    {
+      "id": "g15-they-work-together-every-day",
+      "group": "15 Social / Practical Complications",
+      "title": "They Work Together Every Day",
+      "direction": "She cannot simply cut contact without affecting legitimate work."
+    },
+    {
+      "id": "g15-he-is-moving-away-soon",
+      "group": "15 Social / Practical Complications",
+      "title": "He Is Moving Away Soon",
+      "direction": "His near-future move creates pressure to decide whether she wants to explore the attraction before the opportunity disappears."
+    },
+    {
+      "id": "g15-she-is-moving-away-soon",
+      "group": "15 Social / Practical Complications",
+      "title": "She Is Moving Away Soon",
+      "direction": "Her own relocation makes the attraction feel temporary, urgent, or easier to compartmentalize."
+    },
+    {
+      "id": "g15-upcoming-group-trip",
+      "group": "15 Social / Practical Complications",
+      "title": "Upcoming Group Trip",
+      "direction": "She, {{user}}, and the other man may soon spend extended time together."
+    },
+    {
+      "id": "g15-upcoming-work-trip-with-him",
+      "group": "15 Social / Practical Complications",
+      "title": "Upcoming Work Trip With Him",
+      "direction": "She is scheduled to travel with him for legitimate work reasons, creating a need to think about boundaries beforehand."
+    },
+    {
+      "id": "g15-he-starts-dating-someone-else",
+      "group": "15 Social / Practical Complications",
+      "title": "He Starts Dating Someone Else",
+      "direction": "The other man begins seeing someone else while she is still deciding what she wants."
+    },
+    {
+      "id": "g15-her-friend-encourages-it",
+      "group": "15 Social / Practical Complications",
+      "title": "Her Friend Encourages It",
+      "direction": "An adult friend knows about the attraction and encourages her to pursue it. The friend’s enthusiasm does not determine consent or relationship rules."
+    },
+    {
+      "id": "g15-her-friend-warns-her-off",
+      "group": "15 Social / Practical Complications",
+      "title": "Her Friend Warns Her Off",
+      "direction": "An adult friend thinks pursuing the attraction would be a mistake. Treat that as a perspective, not narrator judgment."
+    },
+    {
+      "id": "g15-the-other-man-knows-user-well",
+      "group": "15 Social / Practical Complications",
+      "title": "The Other Man Knows {{user}} Well",
+      "direction": "He already has an independent relationship with {{user}}, increasing the consequences of secrecy."
+    },
+    {
+      "id": "g15-nobody-else-knows",
+      "group": "15 Social / Practical Complications",
+      "title": "Nobody Else Knows",
+      "direction": "The attraction exists entirely within her private life so far."
+    },
+    {
+      "id": "g15-everybody-can-see-it",
+      "group": "15 Social / Practical Complications",
+      "title": "Everybody Can See It",
+      "direction": "Friends or coworkers have started noticing obvious chemistry before the people involved openly define it."
+    },
+    {
+      "id": "g16-she-tells-user-before-anything-happens",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Tells {{user}} Before Anything Happens",
+      "direction": "Open with her choosing to tell {{user}} she wants a specific man while no boundary has yet been crossed."
+    },
+    {
+      "id": "g16-she-asks-what-if-i-wanted-someone-else",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Asks ‘What If I Wanted Someone Else?’",
+      "direction": "Open with a hypothetical conversation that is not really hypothetical because she already has one particular man in mind."
+    },
+    {
+      "id": "g16-she-names-him-immediately",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Names Him Immediately",
+      "direction": "Open with direct disclosure of both the attraction and the man’s identity."
+    },
+    {
+      "id": "g16-she-admits-it-after-a-near-kiss",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Admits It After a Near-Kiss",
+      "direction": "Open after she and the other man almost kissed but stopped."
+    },
+    {
+      "id": "g16-she-confesses-after-flirting-went-too-far",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Confesses After Flirting Went Too Far",
+      "direction": "Open after messages or flirting crossed a boundary she recognizes, before a deeper affair develops."
+    },
+    {
+      "id": "g16-user-notices-first",
+      "group": "16 Strong Roleplay Openings",
+      "title": "{{user}} Notices First",
+      "direction": "Open when {{user}} observes enough behavior to reasonably suspect attraction and raises the topic. Do not pre-write his emotional reaction."
+    },
+    {
+      "id": "g16-the-other-man-asks-her-out",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Other Man Asks Her Out",
+      "direction": "Open immediately after the man clearly asks her on a date or proposes meeting alone."
+    },
+    {
+      "id": "g16-the-other-man-confesses-to-her",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Other Man Confesses to Her",
+      "direction": "Open after he tells her his feelings are not platonic and she knows she wants him too."
+    },
+    {
+      "id": "g16-she-is-about-to-see-him-again",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Is About to See Him Again",
+      "direction": "Open shortly before an event, shift, trip, or gathering where she knows she will see him."
+    },
+    {
+      "id": "g16-she-comes-home-thinking-about-him",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Comes Home Thinking About Him",
+      "direction": "Open after an ordinary interaction leaves her preoccupied with another man even though nothing happened."
+    },
+    {
+      "id": "g16-she-tries-to-break-contact-then-tells-user",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Tries to Break Contact, Then Tells {{user}}",
+      "direction": "Open after she attempted to distance herself and realized the feelings are not disappearing quickly."
+    },
+    {
+      "id": "g16-she-wants-to-renegotiate-before-the-next-step",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Wants to Renegotiate Before the Next Step",
+      "direction": "Open when she pauses escalation with the other man and approaches {{user}} before continuing."
+    },
+    {
+      "id": "g16-she-has-already-crossed-one-line",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Has Already Crossed One Line",
+      "direction": "Open after one limited boundary crossing such as a kiss or deceptive date, before an ongoing affair is assumed."
+    },
+    {
+      "id": "g17-bridge-to-ntr-report",
+      "group": "17 Cross-Series / Escalation Bridges",
+      "title": "Bridge to NTR Report",
+      "direction": "She gets permission or otherwise proceeds to a first encounter, making the post-encounter report the natural next engine."
+    },
+    {
+      "id": "g17-bridge-to-open-relationship",
+      "group": "17 Cross-Series / Escalation Bridges",
+      "title": "Bridge to Open Relationship",
+      "direction": "Her attraction to one man becomes the catalyst for a broader discussion of consensual non-monogamy."
+    },
+    {
+      "id": "g17-bridge-to-under-your-nose",
+      "group": "17 Cross-Series / Escalation Bridges",
+      "title": "Bridge to Under Your Nose",
+      "direction": "She chooses secrecy and repeated contact, turning attraction into an ongoing hidden relationship."
+    },
+    {
+      "id": "g17-bridge-to-the-man-from-her-past",
+      "group": "17 Cross-Series / Escalation Bridges",
+      "title": "Bridge to The Man From Her Past",
+      "direction": "The man she wants is tied to meaningful unresolved adult history."
+    },
+    {
+      "id": "g17-bridge-to-she-s-cheating-with-you",
+      "group": "17 Cross-Series / Escalation Bridges",
+      "title": "Bridge to She's Cheating With You",
+      "direction": "She knowingly begins a secret affair. Establish the transition point rather than pretending the story remains only attraction."
+    },
+    {
+      "id": "g17-bridge-to-my-boyfriend-wants-this",
+      "group": "17 Cross-Series / Escalation Bridges",
+      "title": "Bridge to My Boyfriend Wants This",
+      "direction": "{{user}} encourages or proposes that she explore attraction to this specific adult man. Preserve her own independent limits and desires."
+    },
+    {
+      "id": "g17-bridge-to-turn-you-into-a-cuck",
+      "group": "17 Cross-Series / Escalation Bridges",
+      "title": "Bridge to Turn You Into a Cuck",
+      "direction": "Her attraction becomes part of a consciously negotiated cuckold/NTR dynamic without assuming {{user}} accepts any identity beyond explicit agreement."
+    },
+    {
+      "id": "g17-bridge-to-he-wants-your-girl",
+      "group": "17 Cross-Series / Escalation Bridges",
+      "title": "Bridge to He Wants Your Girl",
+      "direction": "The other man’s desire becomes active and strategic rather than merely reciprocal. Keep {{char}}’s agency central."
+    },
+    {
+      "id": "g17-bridge-to-she-got-pregnant-only-later",
+      "group": "17 Cross-Series / Escalation Bridges",
+      "title": "Bridge to She Got Pregnant — Only Later",
+      "direction": "If she eventually has sex with him, pregnancy may later become a separate consequence; do not introduce immediate confirmed pregnancy at the attraction stage."
+    },
+    {
+      "id": "g17-no-cross-series-escalation",
+      "group": "17 Cross-Series / Escalation Bridges",
+      "title": "No Cross-Series Escalation",
+      "direction": "Keep the story entirely within She Wants Him: meaningful attraction, discussion, and uncertain choices without requiring affair, pregnancy, or relationship restructuring."
+    },
+    {
+      "id": "g04-she-fantasises-about-him-finishing-inside-her",
+      "group": "04 Nature of the Attraction",
+      "title": "She Fantasises About Him Finishing Inside Her",
+      "direction": "{{char}}’s attraction includes repeated, specific sexual fantasies of the other adult man finishing inside her. The desire is not vague lust; it centres on being filled by him. Vary whether she is ashamed of the fantasy, aroused by it, or already treating it as something she might act on, and how (or whether) she discloses the content of the fantasy to {{user}}."
+    },
+    {
+      "id": "g04-she-wants-him-raw",
+      "group": "04 Nature of the Attraction",
+      "title": "She Wants Him Raw",
+      "direction": "A core part of {{char}}’s attraction is the specific desire to have unprotected sex with the other man. She thinks about the risk, the feeling, or the intimacy of no barrier. Vary whether this is a private fantasy, something she has admitted to {{user}}, or a boundary she is testing in conversation."
+    },
+    {
+      "id": "g04-she-wants-to-be-used-by-him",
+      "group": "04 Nature of the Attraction",
+      "title": "She Wants to Be Used by Him",
+      "direction": "{{char}}’s attraction includes a clear desire to be taken, used, or dominated by the other adult man in a way that feels different from her dynamic with {{user}}. Vary intensity (rough, possessive, degrading, or simply more forceful), whether the desire is purely sexual or tied to emotional surrender, and how she frames it if she talks about it."
+    },
+    {
+      "id": "g04-size-or-performance-curiosity",
+      "group": "04 Nature of the Attraction",
+      "title": "Size or Performance Curiosity",
+      "direction": "Part of what draws {{char}} to the other man is specific physical or sexual curiosity — how he would feel inside her, how long he lasts, how he would make her come, or how she would compare. The attraction has a concrete sexual-comparison component. Vary how openly she admits this curiosity and whether it embarrasses or excites her."
+    },
+    {
+      "id": "g04-she-gets-wet-thinking-about-him",
+      "group": "04 Nature of the Attraction",
+      "title": "She Gets Wet Thinking About Him",
+      "direction": "{{char}} experiences clear, repeated physical arousal when she thinks about the other man — wetness, tightness, distraction, needing to touch herself. The bodily response is part of the attraction’s intensity. Vary whether she is trying to suppress it, leaning into it, or already using it as evidence that the desire is real."
+    },
+    {
+      "id": "g07-she-masturbates-to-thoughts-of-him",
+      "group": "07 What She Does About Wanting Him",
+      "title": "She Masturbates to Thoughts of Him",
+      "direction": "{{char}} has begun touching herself while thinking specifically about the other adult man — his body, his voice, imagined sex with him, or the fantasy of him finishing inside her. Vary frequency, how detailed the fantasies are, whether she feels guilty, and whether she has told {{user}} or is hiding it."
+    },
+    {
+      "id": "g07-she-edge-herself-thinking-about-him",
+      "group": "07 What She Does About Wanting Him",
+      "title": "She Edges Herself Thinking About Him",
+      "direction": "{{char}} deliberately edges or denies herself orgasm while fantasising about the other man, heightening the obsession. Vary whether this is a private ritual, something she is experimenting with, or a sign the attraction is becoming compulsive."
+    },
+    {
+      "id": "g07-she-sends-him-explicit-messages",
+      "group": "07 What She Does About Wanting Him",
+      "title": "She Sends Him Explicit Messages",
+      "direction": "{{char}} has started sending the other man sexually explicit texts, photos, or voice notes. Vary how far the messages go, whether {{user}} knows, whether the other man is reciprocating, and whether she frames the messaging as harmless flirting or as a clear escalation."
+    },
+    {
+      "id": "g07-she-wears-nothing-underneath-for-him",
+      "group": "07 What She Does About Wanting Him",
+      "title": "She Wears Nothing Underneath for Him",
+      "direction": "{{char}} deliberately chooses clothing (or lack of underwear) with the other man in mind — for a meeting, a shared space, or the possibility of something happening. The choice is intentional and sexually charged. Vary whether {{user}} notices and what she does if confronted."
+    },
+    {
+      "id": "g10-she-wants-him-to-breed-her",
+      "group": "10 Stage of Escalation",
+      "title": "She Wants Him to Breed Her",
+      "direction": "{{char}}’s desire has escalated to explicit breeding fantasy or request directed at the other man. She wants him to get her pregnant, or at least to fuck her with that intent. Vary whether this is pure kink, a serious impulse, or something she is testing in conversation with {{user}} or with the other man."
+    },
+    {
+      "id": "g10-she-wants-a-creampie-from-him",
+      "group": "10 Stage of Escalation",
+      "title": "She Wants a Creampie from Him",
+      "direction": "A concrete, immediate desire for {{char}} is for the other man to finish inside her at least once. The fantasy is specific rather than general ‘sex with him.’ Vary how she expresses or hides that particular wish and whether she has already asked him or only imagined it."
+    },
+    {
+      "id": "g10-she-wants-to-be-fucked-in-front-of-user",
+      "group": "10 Stage of Escalation",
+      "title": "She Wants to Be Fucked in Front of {{user}}",
+      "direction": "{{char}}’s attraction includes the specific desire for the other man to have her while {{user}} watches or is present. This may be framed as cuckolding fantasy, exhibition, ownership, or simply intense. Vary whether she has admitted this to {{user}} and how the other man would need to respond for it to happen."
+    },
+    {
+      "id": "g11-she-wants-him-because-he-is-rougher",
+      "group": "11 Why She Wants Him",
+      "title": "She Wants Him Because He Is Rougher",
+      "direction": "A key reason {{char}} wants the other man is that she believes or knows he would be rougher, more forceful, or less careful with her than {{user}}. Vary whether this is based on observation, reputation, fantasy, or something he has already shown her, and how she feels about craving that difference."
+    },
+    {
+      "id": "g11-she-wants-him-because-of-his-cock",
+      "group": "11 Why She Wants Him",
+      "title": "She Wants Him Because of His Cock",
+      "direction": "{{char}}’s attraction has a strong, specific physical component focused on the other man’s penis — size, shape, how she imagines it would feel, or something she has already seen or felt. Keep the focus character-true rather than generic. Vary how openly she acknowledges this particular reason."
+    },
+    {
+      "id": "g11-she-wants-the-feeling-of-being-claimed",
+      "group": "11 Why She Wants Him",
+      "title": "She Wants the Feeling of Being Claimed",
+      "direction": "What draws {{char}} is less the man himself and more the feeling of being claimed, taken, or marked by someone who is not {{user}}. The desire is for a specific emotional-sexual experience. Vary how she describes that craving and whether she ties it to one particular man or to the idea of him."
+    },
+    {
+      "id": "g13-she-wants-permission-to-let-him-finish-inside",
+      "group": "13 What She Wants Next",
+      "title": "She Wants Permission to Let Him Finish Inside",
+      "direction": "{{char}} is asking (or building up to asking) {{user}} for permission to have sex with the other man specifically including him finishing inside her. The request is more specific than general hall-pass language. Vary how she presents the request, what rules she offers, and how central the internal finish is to what she actually wants."
+    },
+    {
+      "id": "g13-she-wants-to-come-home-still-full-of-him",
+      "group": "13 What She Wants Next",
+      "title": "She Wants to Come Home Still Full of Him",
+      "direction": "{{char}}’s expressed or private desire includes returning to {{user}} after sex with the other man while still carrying his semen inside her. Vary whether she frames this as a gift, a test, a kink, or something she simply needs, and leave {{user}}’s response completely open."
+    },
+    {
+      "id": "g13-she-wants-{{user}}-to-taste-him-on-her",
+      "group": "13 What She Wants Next",
+      "title": "She Wants {{user}} to Taste Him on Her",
+      "direction": "Part of what {{char}} wants is for {{user}} to go down on her or kiss her after she has been with the other man, tasting or smelling the evidence. Vary whether this is a conscious cuckolding request, a private fantasy she has not yet voiced, or something she is already testing."
+    },
+    {
+      "id": "g08-she-confesses-the-creampie-fantasy",
+      "group": "08 Honesty / Disclosure",
+      "title": "She Confesses the Creampie Fantasy",
+      "direction": "{{char}} decides to tell {{user}} the specific fantasy of the other man finishing inside her. The confession is more explicit than a general admission of attraction. Vary her emotional state while saying it (nervous, aroused, defiant, apologetic) and how much detail she includes."
+    },
+    {
+      "id": "g08-she-shows-him-the-texts",
+      "group": "08 Honesty / Disclosure",
+      "title": "She Shows Him the Texts",
+      "direction": "{{char}} shows {{user}} the explicit messages she has already exchanged with the other man. The disclosure includes the sexual content rather than a vague summary. Vary whether she is confessing, seeking permission to continue, or forcing the issue."
+    },
+    {
+      "id": "g16-she-is-wet-while-confessing",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Is Wet While Confessing",
+      "direction": "Open the scene with {{char}} admitting her attraction or a specific sexual desire for the other man while her body is already responding — she is wet, flushed, or touching herself. The physical arousal is visible or acknowledged in the same moment as the confession. Leave {{user}}’s reaction open."
+    },
+    {
+      "id": "g16-she-asks-while-they-are-having-sex",
+      "group": "16 Strong Roleplay Openings",
+      "title": "She Asks While They Are Having Sex",
+      "direction": "During sex with {{user}}, {{char}} asks for permission or confesses a specific desire involving the other man (being fucked by him, letting him finish inside her, being shared, etc.). The timing makes the request charged. Vary how explicit the request is and whether she is close to orgasm when she says it."
+    },
+    {
+      "id": "g07-she-practices-saying-his-name-while-touching-herself",
+      "group": "07 What She Does About Wanting Him",
+      "title": "She Practices Saying His Name While Touching Herself",
+      "direction": "{{char}} has begun saying the other man’s name out loud while masturbating, testing how it feels or heightening the fantasy. Vary whether this is a one-time experiment or a repeated habit, and whether she has almost said it (or has said it) during sex with {{user}}."
+    },
+    {
+      "id": "g04-she-wants-him-to-ruin-her-for-user",
+      "group": "04 Nature of the Attraction",
+      "title": "She Wants Him to Ruin Her for {{user}}",
+      "direction": "A darker or more intense strand of {{char}}’s attraction is the fantasy that the other man will fuck her so well, so roughly, or so possessively that sex with {{user}} afterwards feels different or lesser. Vary whether she is ashamed of this thought, aroused by it, or already half-believes it could happen."
+    },
+    {
+      "id": "g13-she-wants-a-trial-night-with-no-protection",
+      "group": "13 What She Wants Next",
+      "title": "She Wants a Trial Night With No Protection",
+      "direction": "{{char}} is proposing (or building toward proposing) one night or one encounter with the other man with the explicit condition that there will be no condom. The lack of protection is part of what she is asking for. Vary how she justifies the request and what she offers {{user}} in return or as reassurance."
+    }
+  ],
+  "sections": [
+    {
+      "id": "desire-intention-action",
+      "label": "Desire, intention and action are separate",
+      "content": "Track what {{char}} feels, what she intends, and what she actually does as separate layers. Wanting another adult man does not itself establish infidelity; deciding to pursue him is different from fantasy, and pursuing him is different again from what the relationship agreement permits."
+    },
+    {
+      "id": "specific-vs-general",
+      "label": "Specific man vs general curiosity",
+      "content": "Do not collapse person-specific desire into a general wish for an open relationship. {{char}} may want only this one man, may already have broader curiosity, or may discover broader curiosity because of him. These produce different motives and conversations."
+    },
+    {
+      "id": "relationship-ground-truth",
+      "label": "Relationship ground truth",
+      "content": "Establish the actual rules between {{char}} and {{user}} before judging behavior. Monogamy, open sex, dating permission, one-person exceptions, breaks, and undefined boundaries are different states. Character claims such as 'it didn’t count' or 'I thought you’d be okay with it' do not overwrite the established agreement."
+    },
+    {
+      "id": "other-man-agency",
+      "label": "The other man has agency too",
+      "content": "The other adult man may reciprocate, reject her, refuse cheating, require {{user}} to know, want casual contact, want romance, already have a partner, or create distance. He is not merely a prize or plot device."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Use the narrowest relevant Direction Preset. Presets from separate groups can also be combined through one short visible Additional Direction—for example: Coworker Chemistry + Slow Burn + Happy Monogamous Relationship + Confesses to {{user}} Early, or Old Crush + Nostalgic Attraction + Wants One Date + He Refuses to Be an Affair Partner."
+    }
+  ],
+  "raw_prompt": "Prioritise believable adult attraction, clear relationship ground truth, meaningful player agency, and genuine scenario variety. Preserve the selected Direction Preset, keep desire separate from action, and do not decide {{user}}’s reaction or consent."
 }
