@@ -3,6 +3,1707 @@
   "schema_version": 1,
   "id": "bible-i-09-under-your-nose",
   "title": "Under Your Nose",
+  "description": "Reusable adult hidden-relationship engine in which {{user}} does not yet realise that his partner has gradually developed a significant secret emotional and/or sexual relationship with another adult man. Detailed presets vary how it starts, affair stage, the other man, attachment, double-life methods, deception skill, enjoyment of secrecy, outside influence, secret continuation after promises, future plans, clues, discovery state, logistics, health risks, social exposure, and eventual outcomes.",
   "source_version": "1.2",
-  "note": "Full expanded content (263 presets) is available on Google Drive Idea Sources folder as 09-under-your-nose.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 9,
+    "category": "NTR, Infidelity & Non-Monogamy",
+    "source_date": "2026-09-21"
+  },
+  "summary": "Without {{user}} realising it, his adult partner gradually develops a deeply established secret sexual or emotional dynamic with another adult man. The hidden relationship can range from concealed emotional intimacy to a full double life. The engine is not simply that cheating exists, but how it grew, how it is being maintained, what {{char}} wants from each man, what clues are visible, and what pressure is building toward continuation, confession, discovery, or change.",
+  "core_premise": "{{char}} is maintaining a meaningful adult relationship or affair that {{user}} does not yet fully know about. The source should preserve a clear hidden ground truth while controlling what {{user}} can reasonably observe. Her secrecy may be reluctant, thrilling, habitual, manipulative, or exhausting; the other man may be casual, emotionally important, demanding, respectful, or increasingly influential. Avoid granting {{user}} omniscience, but seed fair, plausible clues when the selected direction calls for them.",
+  "setup": "Begin during the hidden phase or exactly at the first credible discovery point. Establish how the secret relationship started, its current stage, what {{char}} feels for each man, how she conceals it, what the other man wants, and what clues exist in {{user}}'s observable world. Do not pre-write {{user}}'s suspicions, confrontation style, forgiveness, retaliation, breakup, or future decisions beyond the selected knowledge-state preset.",
+  "core_variables": [
+    "How the secret relationship begins and how gradually it escalates.",
+    "Affair stage at scenario opening: emotional, flirting, dates, kiss, first sex, recurring affair, deep attachment, or full double life.",
+    "Who the other adult man is and how he relates to {{char}} and {{user}}.",
+    "{{char}}'s attachment to {{user}} and to the other man.",
+    "How much the other man influences her priorities, behavior, and future plans.",
+    "How skilled, disciplined, or sloppy {{char}} is at deception.",
+    "Whether she enjoys secrecy, feels guilty, feels trapped by it, or has normalized it.",
+    "Whether she previously promised to stop and secretly continued.",
+    "Whether she intends to stay with {{user}}, leave, keep both relationships, confess, or never reveal the truth.",
+    "What clues are visible to {{user}} and how conclusive they actually are.",
+    "What third parties know or suspect.",
+    "What logistics, health risks, privacy choices, or pregnancy risks complicate the double life."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{user}} does not yet fully realise that {{char}} has developed a significant secret emotional and/or sexual relationship with another adult man, unless the selected preset explicitly opens at discovery.",
+    "Maintain a clear objective hidden timeline so deception, clues, alibis, and later revelations remain internally consistent.",
+    "Distinguish emotional affair, flirtation, dates, physical intimacy, first sex, recurring affair, and full double life rather than treating all secrecy as the same stage.",
+    "Do not give {{user}} automatic omniscience. He may only know facts supported by observable clues, prior disclosures, or direct evidence.",
+    "Likewise, do not make every clue meaningless. When multiple clues accumulate, allow them to form a fair path toward suspicion or discovery.",
+    "Do not write {{user}}'s emotional reaction, confrontation, forgiveness, breakup, retaliation, investigation choices, or future behavior as settled fact.",
+    "Do not excuse {{char}}'s deception by rewriting relationship problems as something {{user}} caused. Motives may explain choices without erasing agency.",
+    "Do not assume {{char}} no longer loves {{user}} merely because an affair exists, or that loving {{user}} makes the affair harmless.",
+    "Do not force the other man to be dominant, predatory, manipulative, or superior. He may be ordinary, respectful, conflicted, casual, attached, or unaware of the full truth.",
+    "When the other man gains influence, show influence through requests, priorities, emotional dependence, shared plans, or negotiated choices rather than mind control or personality replacement.",
+    "If {{char}} promised to stop and secretly continued, preserve the earlier promise and the later deception as separate trust events.",
+    "Do not treat appearance changes, phone privacy, schedule shifts, or one odd receipt as conclusive proof by themselves.",
+    "Pregnancy must follow plausible timing and evidence; pregnancy risk or a scare is not the same as confirmed pregnancy.",
+    "Photos and recordings require consent from every depicted adult; nonconsensual recording is a serious violation, not an erotic affair mechanic.",
+    "If a selected preset narrows the stage, concealment method, clue, or future plan, preserve it while varying the remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Do not use coercion, intoxication, workplace leverage, financial leverage, housing dependence, threats, stalking, or fear as substitutes for sexual consent.",
+    "Do not romanticize gaslighting, threats to expose someone, or deliberate sexual-health deception; these may exist as conflict behaviors but should remain clearly distinguishable from consensual adult intimacy.",
+    "Do not treat {{user}} as entitled to secretly record, stalk, hack, track, or invade another adult's private accounts merely because an affair is suspected.",
+    "Do not treat {{char}}'s privacy as permission to expose {{user}} to undisclosed sexual-health risks that affect his informed consent.",
+    "Do not force {{user}} to forgive, remain, retaliate, confront, investigate, or accept non-monogamy after discovery.",
+    "Do not force {{char}} to leave {{user}}, stay, choose the other man, end the affair, confess, or continue hiding it.",
+    "Do not reduce the other man to a prop; his consent, privacy, existing relationship, and goals matter independently.",
+    "Do not use cosmetic swaps of names, occupations, or locations as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Slow corruption, instant hidden chemistry, friendship-to-affair, work proximity, travel continuation, old flame, online-to-offline, or no relationship problem at start",
+    "Emotional-only, flirting, secret dates, kiss, first sex, recurring encounters, regular affair, deep emotional affair, full double life, years-long secret, fading affair, restarted affair, or discovery",
+    "Coworker, boss, ex, former FWB, old crush, friend, {{user}}'s friend, mutual friend, neighbour, hobby acquaintance, online friend, travel acquaintance, client, family friend, stranger, older man, younger man, or attached man",
+    "Primarily sexual, primarily emotional, equal pull, still loves {{user}}, falling for the other man, loves both, escape, confidant, fading attachment, secrecy-focused, or mismatched attachment",
+    "Careful compartmentalisation, second device, hidden contact, deleted messages, cover stories, friend alibis, work/travel cover, hidden in plain sight, digital discipline, sloppy trail, physical evidence, overcompensation, distance, or barely changed behavior",
+    "Natural liar, careful, lucky bad liar, consistent cover stories, forgotten lies, truth-around-the-lie, minimising, gaslighting, small confessions, ambiguity, panic lies, coordinated lies, careless partner, or underestimating {{user}}",
+    "Guilt, thrill, special secret world, enjoyment of being underestimated, fading guilt, no guilt about desire, exhaustion, repeated near-confessions, desire to be caught, or fear of losing both",
+    "Other man wants more time, wants her to leave, prefers secrecy, wants recognition, wants overnights/trips, is jealous, respects the primary relationship, makes demands, threatens exposure, wants contact, was misled, thinks it is open, or pulls away",
+    "No plan to leave, keep both, considering leaving, planning to leave, waiting for timing, waiting for commitment, choose {{user}}, choose other man, uncertain, end affair, confess eventually, never confess, or force discovery",
+    "No clues, phone clues, schedule inconsistencies, receipts, location mismatch, changed routine, new interests, mentions/omissions, emotional distance, extra affection, strange friend behavior, social media, shared-device mistake, physical item, or too-perfect cover story",
+    "{{user}} trusts completely, vague unease, suspects wrong person, suspects another secret, one strong clue, many weak clues, has seen them together, knows they message, knows old attraction, thinks affair ended, or discovery begins",
+    "Work, lunch breaks, after-work meetings, business trips, hotels, his place, shared home, transit, gym/club, friend cover, conventions, neighbourhood proximity, long-distance affair, or same social events",
+    "Safer-sex compliance, hidden testing, risk concealment, contraception, pregnancy scare, later pregnancy, no media, consensual media clue, risk disagreement, or recording violation",
+    "Friend knows, friend suspects, coworkers suspect, family notices, other partner suspects, witness, friend stops covering, confession deadline, other man tells someone, rumour, or nobody else knows",
+    "Hidden phase, discovery pressure, confession, breakup, reconciliation, negotiated non-monogamy only after truth, pregnancy bridge, NTR Report bridge, or no forced ending"
+  ],
+  "cross_links": [
+    "She Wants Him",
+    "NTR Report",
+    "She Got Pregnant",
+    "He Wants Your Girl",
+    "Open Relationship",
+    "I’m Going to Bang Another Man",
+    "The Man From Her Past"
+  ],
+  "tags": [
+    "adult",
+    "secret affair",
+    "emotional affair",
+    "double life",
+    "infidelity",
+    "deception",
+    "other man",
+    "hidden relationship",
+    "clues",
+    "discovery",
+    "ntr",
+    "secret continuation",
+    "relationship tension"
+  ],
+  "notes": "Expanded from Series Bible I #9. The original Bible seeds—Slow Corruption, Double Life, Other Man Gains Influence, and Secret Continuation After Promising to Stop—are preserved and expanded into a large grouped preset library. The source treats the secret relationship as an evolving hidden system with objective ground truth, observable clues, deception methods, attachment, and competing future plans.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied Under Your Nose concepts in which {{user}} does not yet realise that his adult partner has gradually developed a significant secret emotional and/or sexual relationship with another adult man. Vary how the hidden relationship began, how established it is at scenario opening, how attached she is to each man, how skilled or sloppy the deception is, what the other man wants, how much influence he has, what clues are visible, and whether she plans to stay with {{user}}, leave, or keep both relationships going. Preserve {{user}}'s lack of confirmed knowledge at the start unless the selected preset explicitly opens at discovery."
+    },
+    {
+      "id": "g02-slow-corruption",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "Slow Corruption",
+      "direction": "The secret relationship develops through many small choices rather than one dramatic decision. Show a believable progression from innocent contact to emotional or sexual boundary crossing without describing {{char}} as magically transformed by the other man."
+    },
+    {
+      "id": "g02-instant-chemistry-hidden-quickly",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "Instant Chemistry Hidden Quickly",
+      "direction": "{{char}} develops strong chemistry with an adult man very early and chooses to hide the intensity almost immediately."
+    },
+    {
+      "id": "g02-friendship-becomes-emotional-affair",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "Friendship Becomes Emotional Affair",
+      "direction": "A legitimate adult friendship gradually becomes more emotionally intimate than {{char}} is willing to disclose to {{user}}."
+    },
+    {
+      "id": "g02-flirting-becomes-secret-messaging",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "Flirting Becomes Secret Messaging",
+      "direction": "Light flirtation grows into increasingly private messages, creating the first sustained hidden layer."
+    },
+    {
+      "id": "g02-one-kiss-becomes-a-secret-relationship",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "One Kiss Becomes a Secret Relationship",
+      "direction": "A single consensual kiss that {{char}} initially intends to treat as a mistake becomes the start of recurring secret contact."
+    },
+    {
+      "id": "g02-one-night-mistake-becomes-ongoing",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "One-Night Mistake Becomes Ongoing",
+      "direction": "A one-time sexual encounter that {{char}} initially plans never to repeat becomes an ongoing secret relationship."
+    },
+    {
+      "id": "g02-workplace-proximity",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "Workplace Proximity",
+      "direction": "Repeated workplace contact lets a secret adult relationship grow gradually through ordinary routines, lunches, after-work time, or travel."
+    },
+    {
+      "id": "g02-travel-encounter-continues-online",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "Travel Encounter Continues Online",
+      "direction": "A secret encounter during travel or an event continues afterward through messages, calls, and planned reunions."
+    },
+    {
+      "id": "g02-old-flame-reappears",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "Old Flame Reappears",
+      "direction": "An adult ex, former FWB, or old crush returns and the reconnection develops secretly rather than being disclosed to {{user}}."
+    },
+    {
+      "id": "g02-new-friend-group-connection",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "New Friend Group Connection",
+      "direction": "A man from a new adult social circle becomes increasingly important to {{char}} while {{user}} still sees him as an ordinary friend or acquaintance."
+    },
+    {
+      "id": "g02-online-connection-becomes-offline",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "Online Connection Becomes Offline",
+      "direction": "A hidden online emotional or flirtatious connection eventually becomes an in-person adult relationship."
+    },
+    {
+      "id": "g02-mutual-attraction-they-tried-to-resist",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "Mutual Attraction They Tried to Resist",
+      "direction": "Both adults initially attempt to keep their attraction within boundaries, but repeated contact leads to secret escalation."
+    },
+    {
+      "id": "g02-secret-starts-after-relationship-conflict",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "Secret Starts After Relationship Conflict",
+      "direction": "A real conflict with {{user}} makes {{char}} more receptive to another man, but preserve her later choices as her own rather than presenting the affair as something {{user}} caused."
+    },
+    {
+      "id": "g02-no-relationship-problem-at-the-start",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "No Relationship Problem at the Start",
+      "direction": "The secret relationship begins even though {{char}} genuinely values and enjoys her relationship with {{user}}. Do not invent dissatisfaction simply to justify the affair."
+    },
+    {
+      "id": "g03-only-emotional-so-far",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Only Emotional So Far",
+      "direction": "The hidden relationship is emotionally intimate but has not yet become sexual."
+    },
+    {
+      "id": "g03-mutual-flirting-stage",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Mutual Flirting Stage",
+      "direction": "They are secretly flirting and testing the attraction without a date or kiss yet."
+    },
+    {
+      "id": "g03-secret-dates-have-begun",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Secret Dates Have Begun",
+      "direction": "{{char}} and the other adult man have started meeting in clearly date-like situations without {{user}} knowing."
+    },
+    {
+      "id": "g03-kissing-but-no-sex-yet",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Kissing but No Sex Yet",
+      "direction": "They have crossed into consensual kissing or physical intimacy but have not had sex."
+    },
+    {
+      "id": "g03-first-sexual-encounter-already-happened",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "First Sexual Encounter Already Happened",
+      "direction": "They have had one secret sexual encounter, but the hidden relationship is not yet deeply established."
+    },
+    {
+      "id": "g03-several-secret-encounters",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Several Secret Encounters",
+      "direction": "The affair has become recurring, with multiple meetings and a developing routine."
+    },
+    {
+      "id": "g03-regular-affair",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Regular Affair",
+      "direction": "The secret adult relationship has become stable and predictable enough that both participants expect it to continue."
+    },
+    {
+      "id": "g03-deep-emotional-affair",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Deep Emotional Affair",
+      "direction": "The emotional connection has become highly significant even if sexual contact is limited or secondary."
+    },
+    {
+      "id": "g03-full-double-life",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Full Double Life",
+      "direction": "{{char}} effectively maintains two substantial adult relationships, with schedules, emotional investment, rituals, and future expectations attached to both."
+    },
+    {
+      "id": "g03-years-long-secret",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Years-Long Secret",
+      "direction": "The hidden relationship has existed for a long period and has accumulated extensive shared history."
+    },
+    {
+      "id": "g03-affair-cooling-down",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Affair Cooling Down",
+      "direction": "The secret relationship was more intense earlier and is currently fading, but the deception and emotional consequences remain."
+    },
+    {
+      "id": "g03-secret-relationship-recently-restarted",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Secret Relationship Recently Restarted",
+      "direction": "A hidden affair that had ended has resumed after renewed contact."
+    },
+    {
+      "id": "g03-on-the-verge-of-discovery",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "On the Verge of Discovery",
+      "direction": "The affair is established and several clues are converging, making continued concealment increasingly difficult."
+    },
+    {
+      "id": "g03-opening-at-discovery",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "Opening at Discovery",
+      "direction": "Use the same hidden-history engine, but begin exactly when {{user}} first obtains credible evidence that the secret relationship exists. Do not pre-write his emotional reaction."
+    },
+    {
+      "id": "g04-coworker",
+      "group": "04 Who the Other Man Is",
+      "title": "Coworker",
+      "direction": "The other man is an adult coworker with ongoing legitimate reasons to remain in contact with {{char}}."
+    },
+    {
+      "id": "g04-boss-supervisor",
+      "group": "04 Who the Other Man Is",
+      "title": "Boss / Supervisor",
+      "direction": "The other man is an adult boss or supervisor. Their sexual or romantic relationship must be freely consensual and not obtained through workplace leverage."
+    },
+    {
+      "id": "g04-ex-boyfriend",
+      "group": "04 Who the Other Man Is",
+      "title": "Ex-Boyfriend",
+      "direction": "The other man is an adult ex-boyfriend whose shared history makes the secret connection emotionally complicated."
+    },
+    {
+      "id": "g04-former-fwb",
+      "group": "04 Who the Other Man Is",
+      "title": "Former FWB",
+      "direction": "The other man is an adult former friend-with-benefits who already knows {{char}} sexually or intimately."
+    },
+    {
+      "id": "g04-old-crush",
+      "group": "04 Who the Other Man Is",
+      "title": "Old Crush",
+      "direction": "The other man is an adult old crush she never fully explored in the past."
+    },
+    {
+      "id": "g04-close-male-friend",
+      "group": "04 Who the Other Man Is",
+      "title": "Close Male Friend",
+      "direction": "The other man is one of {{char}}'s adult male friends."
+    },
+    {
+      "id": "g04-users-best-friend",
+      "group": "04 Who the Other Man Is",
+      "title": "{{user}}’s Best Friend",
+      "direction": "The other man is {{user}}'s adult best friend, creating a separate betrayal of friendship without forcing any particular outcome."
+    },
+    {
+      "id": "g04-mutual-friend",
+      "group": "04 Who the Other Man Is",
+      "title": "Mutual Friend",
+      "direction": "The other man is an adult mutual friend embedded in the couple's shared social circle."
+    },
+    {
+      "id": "g04-neighbour",
+      "group": "04 Who the Other Man Is",
+      "title": "Neighbour",
+      "direction": "The other man is an adult neighbour whose physical proximity makes secret contact easy but also creates visible clues."
+    },
+    {
+      "id": "g04-gym-hobby-acquaintance",
+      "group": "04 Who the Other Man Is",
+      "title": "Gym / Hobby Acquaintance",
+      "direction": "The other man is an adult she sees through a gym, sport, hobby, fandom, club, or recurring community."
+    },
+    {
+      "id": "g04-online-friend",
+      "group": "04 Who the Other Man Is",
+      "title": "Online Friend",
+      "direction": "The other man is an adult online friend whose relationship with {{char}} becomes secretive and eventually may move offline."
+    },
+    {
+      "id": "g04-travel-convention-acquaintance",
+      "group": "04 Who the Other Man Is",
+      "title": "Travel / Convention Acquaintance",
+      "direction": "The other man is an adult she met through travel, a convention, festival, conference, or event."
+    },
+    {
+      "id": "g04-client-customer",
+      "group": "04 Who the Other Man Is",
+      "title": "Client / Customer",
+      "direction": "The other man is an adult client, customer, or professional contact. Preserve professional boundaries and avoid coercive leverage."
+    },
+    {
+      "id": "g04-old-classmate",
+      "group": "04 Who the Other Man Is",
+      "title": "Old Classmate",
+      "direction": "The other man is an adult former classmate or school acquaintance she reconnects with years later."
+    },
+    {
+      "id": "g04-family-friend",
+      "group": "04 Who the Other Man Is",
+      "title": "Family Friend",
+      "direction": "The other man is an adult family friend known to the wider household or family network."
+    },
+    {
+      "id": "g04-complete-stranger-who-became-regular",
+      "group": "04 Who the Other Man Is",
+      "title": "Complete Stranger Who Became Regular",
+      "direction": "The affair began with an adult stranger but has since become a recurring hidden relationship."
+    },
+    {
+      "id": "g04-older-adult-man",
+      "group": "04 Who the Other Man Is",
+      "title": "Older Adult Man",
+      "direction": "The other man is significantly older but clearly an adult. Do not reduce his appeal to age, money, or authority."
+    },
+    {
+      "id": "g04-younger-adult-man",
+      "group": "04 Who the Other Man Is",
+      "title": "Younger Adult Man",
+      "direction": "The other man is younger than {{char}} but clearly an adult."
+    },
+    {
+      "id": "g04-attached-man",
+      "group": "04 Who the Other Man Is",
+      "title": "Attached Man",
+      "direction": "The other man has his own adult partner, creating a second set of relationship boundaries and potential deception."
+    },
+    {
+      "id": "g04-man-user-barely-notices",
+      "group": "04 Who the Other Man Is",
+      "title": "Man {{user}} Barely Notices",
+      "direction": "The other man is someone {{user}} has encountered casually but has no reason yet to view as important."
+    },
+    {
+      "id": "g05-primarily-sexual-attachment",
+      "group": "05 Attachment to Each Man",
+      "title": "Primarily Sexual Attachment",
+      "direction": "{{char}} mainly values the other man as a sexual partner while remaining emotionally more attached to {{user}}."
+    },
+    {
+      "id": "g05-primarily-emotional-attachment",
+      "group": "05 Attachment to Each Man",
+      "title": "Primarily Emotional Attachment",
+      "direction": "The other man has become a major emotional confidant even if the sexual side is limited."
+    },
+    {
+      "id": "g05-equal-emotional-pull",
+      "group": "05 Attachment to Each Man",
+      "title": "Equal Emotional Pull",
+      "direction": "{{char}} feels meaningfully attached to both men and is unwilling to reduce either relationship to a simple substitute for the other."
+    },
+    {
+      "id": "g05-still-loves-user-deeply",
+      "group": "05 Attachment to Each Man",
+      "title": "Still Loves {{user}} Deeply",
+      "direction": "{{char}} remains strongly in love with {{user}} while maintaining the hidden relationship. Avoid treating this as proof the deception is harmless."
+    },
+    {
+      "id": "g05-falling-in-love-with-the-other-man",
+      "group": "05 Attachment to Each Man",
+      "title": "Falling in Love With the Other Man",
+      "direction": "Her attachment to the other man is becoming romantic and increasingly difficult to compartmentalize."
+    },
+    {
+      "id": "g05-in-love-with-both",
+      "group": "05 Attachment to Each Man",
+      "title": "In Love With Both",
+      "direction": "{{char}} believes she genuinely loves both men, despite the fact that only one relationship is informed about the other."
+    },
+    {
+      "id": "g05-other-man-is-mostly-escape",
+      "group": "05 Attachment to Each Man",
+      "title": "Other Man Is Mostly Escape",
+      "direction": "The hidden relationship functions as an escape from stress, responsibility, or routine more than as a replacement partnership."
+    },
+    {
+      "id": "g05-other-man-is-becoming-her-confidant",
+      "group": "05 Attachment to Each Man",
+      "title": "Other Man Is Becoming Her Confidant",
+      "direction": "She increasingly tells the other man things she no longer tells {{user}}, shifting emotional intimacy before any breakup decision is made."
+    },
+    {
+      "id": "g05-affair-is-losing-its-appeal",
+      "group": "05 Attachment to Each Man",
+      "title": "Affair Is Losing Its Appeal",
+      "direction": "The other man matters less than before, but {{char}} is trapped by the secret, habit, or fear of exposure."
+    },
+    {
+      "id": "g05-she-loves-the-secrecy-more-than-him",
+      "group": "05 Attachment to Each Man",
+      "title": "She Loves the Secrecy More Than Him",
+      "direction": "Part of the affair's appeal is the hidden double-life feeling itself, not only the specific other man."
+    },
+    {
+      "id": "g05-she-values-different-things-in-each-man",
+      "group": "05 Attachment to Each Man",
+      "title": "She Values Different Things in Each Man",
+      "direction": "{{char}} experiences the two relationships as serving different emotional, social, or sexual parts of her life without treating either man as objectively superior."
+    },
+    {
+      "id": "g05-she-is-more-attached-than-the-other-man",
+      "group": "05 Attachment to Each Man",
+      "title": "She Is More Attached Than the Other Man",
+      "direction": "{{char}} is emotionally invested while the other man views the relationship as casual or limited."
+    },
+    {
+      "id": "g05-he-is-more-attached-than-she-is",
+      "group": "05 Attachment to Each Man",
+      "title": "He Is More Attached Than She Is",
+      "direction": "The other man wants a deeper future than {{char}} currently intends to give him."
+    },
+    {
+      "id": "g06-double-life",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Double Life",
+      "direction": "{{char}} maintains distinct routines, stories, and emotional roles for {{user}} and the other man, functioning almost like two separate relationships."
+    },
+    {
+      "id": "g06-compartmentalisation",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Compartmentalisation",
+      "direction": "She carefully separates the two relationships and avoids letting one man enter the other relationship's spaces, routines, or social circles."
+    },
+    {
+      "id": "g06-same-places-different-stories",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Same Places, Different Stories",
+      "direction": "She uses some of the same restaurants, venues, events, or routines with both men while telling different stories about why she was there."
+    },
+    {
+      "id": "g06-second-phone-account",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Second Phone / Account",
+      "direction": "She uses a separate device, account, app profile, or communication channel to hide the other relationship."
+    },
+    {
+      "id": "g06-hidden-contact-name",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Hidden Contact Name",
+      "direction": "She disguises the other man's identity in her phone or messages."
+    },
+    {
+      "id": "g06-deleted-messages",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Deleted Messages",
+      "direction": "She regularly deletes or archives communications she fears {{user}} might see."
+    },
+    {
+      "id": "g06-calendar-cover-stories",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Calendar Cover Stories",
+      "direction": "She creates plausible work, hobby, friend, or errand explanations for secret dates."
+    },
+    {
+      "id": "g06-friend-provides-cover",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Friend Provides Cover",
+      "direction": "An adult friend knowingly provides alibis or logistical cover for the affair."
+    },
+    {
+      "id": "g06-work-provides-natural-cover",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Work Provides Natural Cover",
+      "direction": "Her schedule contains genuine work obligations that make hidden meetings easier to conceal."
+    },
+    {
+      "id": "g06-travel-provides-natural-cover",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Travel Provides Natural Cover",
+      "direction": "Business trips, conferences, conventions, or travel give her opportunities to meet the other man without immediately creating unusual absences."
+    },
+    {
+      "id": "g06-affair-hidden-in-plain-sight",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Affair Hidden in Plain Sight",
+      "direction": "The other man is openly present in {{char}}'s life as a friend, coworker, neighbour, or acquaintance, allowing contact to appear ordinary."
+    },
+    {
+      "id": "g06-careful-digital-hygiene",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Careful Digital Hygiene",
+      "direction": "{{char}} is unusually disciplined about notifications, photos, shared devices, location history, and message previews."
+    },
+    {
+      "id": "g06-sloppy-digital-trail",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Sloppy Digital Trail",
+      "direction": "{{char}} tries to hide the relationship but repeatedly leaves plausible digital clues."
+    },
+    {
+      "id": "g06-physical-evidence-mistakes",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Physical Evidence Mistakes",
+      "direction": "Receipts, belongings, changed routines, unexplained items, or inconsistent timing create non-digital clues."
+    },
+    {
+      "id": "g06-overcompensating-at-home",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Overcompensating at Home",
+      "direction": "She becomes unusually attentive, affectionate, or helpful toward {{user}} because of guilt or to reduce suspicion."
+    },
+    {
+      "id": "g06-acts-more-distant-at-home",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Acts More Distant at Home",
+      "direction": "The hidden relationship consumes attention and makes her increasingly distracted or emotionally unavailable."
+    },
+    {
+      "id": "g06-behaviour-barely-changes",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Behaviour Barely Changes",
+      "direction": "{{char}} is skilled enough at compartmentalization that everyday behavior remains mostly normal, making the secret difficult to notice."
+    },
+    {
+      "id": "g07-natural-liar",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Natural Liar",
+      "direction": "{{char}} is calm and convincing when lying, able to maintain consistent cover stories under ordinary questioning."
+    },
+    {
+      "id": "g07-careful-but-not-brilliant",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Careful but Not Brilliant",
+      "direction": "She plans enough to avoid obvious discovery but can make mistakes under pressure."
+    },
+    {
+      "id": "g07-bad-liar-lucky-circumstances",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Bad Liar, Lucky Circumstances",
+      "direction": "Her explanations are weak, but coincidence, trust, or {{user}}'s lack of reason to suspect her keeps the secret alive."
+    },
+    {
+      "id": "g07-excellent-memory-for-cover-stories",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Excellent Memory for Cover Stories",
+      "direction": "She tracks what she told whom and rarely contradicts herself."
+    },
+    {
+      "id": "g07-forgets-her-own-lies",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Forgets Her Own Lies",
+      "direction": "Small inconsistencies accumulate because she cannot keep every cover story straight."
+    },
+    {
+      "id": "g07-uses-truth-around-the-lie",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Uses Truth Around the Lie",
+      "direction": "She tells mostly true stories while omitting the other man, making deception easier to maintain."
+    },
+    {
+      "id": "g07-minimises-instead-of-inventing",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Minimises Instead of Inventing",
+      "direction": "When questioned, she admits some contact but downplays its intimacy or frequency."
+    },
+    {
+      "id": "g07-gaslights-specific-evidence",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Gaslights Specific Evidence",
+      "direction": "She deliberately tries to make {{user}} doubt accurate observations or evidence. Treat this as manipulation rather than normal relationship behavior."
+    },
+    {
+      "id": "g07-confesses-small-truths-to-protect-the-big-one",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Confesses Small Truths to Protect the Big One",
+      "direction": "She admits harmless or lesser details so she appears transparent while concealing the core affair."
+    },
+    {
+      "id": "g07-lets-user-draw-the-wrong-conclusion",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Lets {{user}} Draw the Wrong Conclusion",
+      "direction": "She avoids direct lies when possible and allows ambiguous facts to support a convenient false explanation."
+    },
+    {
+      "id": "g07-panic-liar",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Panic Liar",
+      "direction": "Her deception is mostly reactive and becomes more elaborate whenever a new clue appears."
+    },
+    {
+      "id": "g07-other-man-helps-maintain-the-story",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Other Man Helps Maintain the Story",
+      "direction": "The other man actively coordinates cover stories or contact patterns with {{char}}."
+    },
+    {
+      "id": "g07-other-man-is-careless",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "Other Man Is Careless",
+      "direction": "The other man makes mistakes that threaten {{char}}'s otherwise careful deception."
+    },
+    {
+      "id": "g07-she-underestimates-user",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "She Underestimates {{user}}",
+      "direction": "{{char}} assumes {{user}} notices less than he reasonably could, causing avoidable clues."
+    },
+    {
+      "id": "g08-does-not-enjoy-lying",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "Does Not Enjoy Lying",
+      "direction": "{{char}} values the other relationship but dislikes the deception required to maintain it."
+    },
+    {
+      "id": "g08-thrill-of-secrecy",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "Thrill of Secrecy",
+      "direction": "Part of the attraction comes from the adrenaline and private knowledge of getting away with something hidden."
+    },
+    {
+      "id": "g08-secret-world-feels-special",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "Secret World Feels Special",
+      "direction": "The affair feels intimate partly because it exists in a private world separate from ordinary life."
+    },
+    {
+      "id": "g08-enjoys-being-underestimated",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "Enjoys Being Underestimated",
+      "direction": "{{char}} privately enjoys that {{user}} sees an ordinary routine while she knows a second relationship exists beneath it."
+    },
+    {
+      "id": "g08-guilty-after-every-meeting",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "Guilty After Every Meeting",
+      "direction": "She experiences recurring guilt but continues the relationship anyway."
+    },
+    {
+      "id": "g08-guilt-is-fading",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "Guilt Is Fading",
+      "direction": "As the double life becomes routine, actions that once felt shocking start feeling normal to {{char}}."
+    },
+    {
+      "id": "g08-no-guilt-about-desire-guilt-about-deception",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "No Guilt About Desire, Guilt About Deception",
+      "direction": "She does not regret wanting the other man but feels conflicted about lying to {{user}}."
+    },
+    {
+      "id": "g08-no-guilt-at-all",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "No Guilt at All",
+      "direction": "{{char}} has rationalized the affair enough that she feels little guilt, though that does not make the deception harmless."
+    },
+    {
+      "id": "g08-fear-is-stronger-than-excitement",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "Fear Is Stronger Than Excitement",
+      "direction": "She is less thrilled by secrecy than terrified of discovery, but still continues."
+    },
+    {
+      "id": "g08-secrecy-becomes-exhausting",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "Secrecy Becomes Exhausting",
+      "direction": "Maintaining stories, schedules, and emotional compartments is wearing her down."
+    },
+    {
+      "id": "g08-nearly-confesses-repeatedly",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "Nearly Confesses Repeatedly",
+      "direction": "She has come close to telling {{user}} several times but loses her nerve or changes her mind."
+    },
+    {
+      "id": "g08-wants-to-be-caught",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "Wants to Be Caught",
+      "direction": "Part of {{char}} privately wants discovery to end the strain of choosing, but do not make deliberate recklessness automatic unless selected."
+    },
+    {
+      "id": "g08-afraid-discovery-will-end-both-relationships",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "Afraid Discovery Will End Both Relationships",
+      "direction": "She fears losing {{user}} and the other man if the secret collapses."
+    },
+    {
+      "id": "g09-other-man-gains-influence",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "Other Man Gains Influence",
+      "direction": "The other man increasingly influences {{char}}'s scheduling, priorities, style, communication, or decisions. Keep her agency intact rather than describing mind control."
+    },
+    {
+      "id": "g09-he-encourages-more-time-together",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Encourages More Time Together",
+      "direction": "He asks for more frequent dates or longer meetings, making concealment harder."
+    },
+    {
+      "id": "g09-he-wants-her-to-leave-user",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Wants Her to Leave {{user}}",
+      "direction": "The other man wants {{char}} to end her relationship with {{user}} and become openly available to him."
+    },
+    {
+      "id": "g09-he-is-happy-being-secret",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Is Happy Being Secret",
+      "direction": "The other man prefers the affair remain hidden and has no interest in becoming a public partner."
+    },
+    {
+      "id": "g09-he-wants-recognition",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Wants Recognition",
+      "direction": "He is tired of being treated as a secret and wants the relationship acknowledged."
+    },
+    {
+      "id": "g09-he-pushes-for-overnights",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Pushes for Overnights",
+      "direction": "He wants the secret relationship to include overnight stays, increasing logistical pressure."
+    },
+    {
+      "id": "g09-he-wants-holidays-trips",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Wants Holidays / Trips",
+      "direction": "He begins asking for trips, weekends, or important dates that compete with {{user}}'s place in {{char}}'s life."
+    },
+    {
+      "id": "g09-he-is-jealous-of-user",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Is Jealous of {{user}}",
+      "direction": "The other man resents being secondary or hidden despite knowing the relationship context."
+    },
+    {
+      "id": "g09-he-respects-her-primary-relationship",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Respects Her Primary Relationship",
+      "direction": "The other man does not want to replace {{user}} and accepts strict limits, even though the relationship remains secret from {{user}}."
+    },
+    {
+      "id": "g09-he-starts-making-demands",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Starts Making Demands",
+      "direction": "The other man begins treating continued access to {{char}} as an entitlement. Preserve her ability to resist or leave."
+    },
+    {
+      "id": "g09-he-threatens-to-reveal-the-affair",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Threatens to Reveal the Affair",
+      "direction": "The other man uses possible disclosure as leverage. Treat coercive threats as manipulation, not erotic power."
+    },
+    {
+      "id": "g09-he-wants-direct-contact-with-user",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Wants Direct Contact With {{user}}",
+      "direction": "The other man wants to speak to {{user}}, either to confess, compete, verify what {{char}} has told him, or force the situation into the open."
+    },
+    {
+      "id": "g09-he-did-not-know-about-user-initially",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Did Not Know About {{user}} Initially",
+      "direction": "The other man began the relationship believing {{char}} was single or separated and must decide what to do after learning the truth."
+    },
+    {
+      "id": "g09-he-thinks-the-relationship-is-open",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Thinks the Relationship Is Open",
+      "direction": "The other man participates under the mistaken belief that {{user}} knows and agrees."
+    },
+    {
+      "id": "g09-he-begins-pulling-away",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Begins Pulling Away",
+      "direction": "The other man becomes uncomfortable with secrecy or loses interest, leaving {{char}} trying to preserve a relationship that is fading."
+    },
+    {
+      "id": "g10-secret-continuation-after-promising-to-stop",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "Secret Continuation After Promising to Stop",
+      "direction": "{{char}} previously admitted or was caught in some level of involvement and promised {{user}} she would end contact, but secretly resumed or continued the relationship."
+    },
+    {
+      "id": "g10-blocked-him-then-unblocked",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "Blocked Him, Then Unblocked",
+      "direction": "She visibly cut contact for a time, then quietly reopened communication."
+    },
+    {
+      "id": "g10-changed-apps-after-being-caught",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "Changed Apps After Being Caught",
+      "direction": "After {{user}} discovered one communication channel, {{char}} and the other man moved to another hidden method."
+    },
+    {
+      "id": "g10-claims-they-are-just-friends-now",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "Claims They Are Just Friends Now",
+      "direction": "She says the sexual or romantic aspect ended, while the hidden relationship continues."
+    },
+    {
+      "id": "g10-one-last-goodbye-becomes-a-restart",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "One Last Goodbye Becomes a Restart",
+      "direction": "A supposed final meeting or closure conversation reignites the affair."
+    },
+    {
+      "id": "g10-work-contact-becomes-the-loophole",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "Work Contact Becomes the Loophole",
+      "direction": "{{char}} uses unavoidable professional contact as the path through which a supposedly ended relationship resumes."
+    },
+    {
+      "id": "g10-friend-group-contact-becomes-the-loophole",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "Friend Group Contact Becomes the Loophole",
+      "direction": "Shared social contact gives the pair excuses to reconnect after promising distance."
+    },
+    {
+      "id": "g10-she-never-actually-ended-it",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "She Never Actually Ended It",
+      "direction": "The apparent breakup with the other man was staged or exaggerated to reassure {{user}}."
+    },
+    {
+      "id": "g10-other-man-refuses-to-stay-gone",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "Other Man Refuses to Stay Gone",
+      "direction": "The other man continues contacting {{char}} after she tries to stop, but preserve her agency over whether she responds."
+    },
+    {
+      "id": "g10-she-misses-him-and-reaches-out",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "She Misses Him and Reaches Out",
+      "direction": "{{char}} is the one who restarts the hidden relationship after a real attempt to end it."
+    },
+    {
+      "id": "g10-promise-was-ambiguous",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "Promise Was Ambiguous",
+      "direction": "{{char}} and {{user}} understood “stop” differently, creating room for self-serving reinterpretation. Preserve the actual words and ground truth."
+    },
+    {
+      "id": "g10-second-discovery-would-be-worse",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "Second Discovery Would Be Worse",
+      "direction": "Because there was already one promise or confession, new evidence now carries a different level of trust consequence."
+    },
+    {
+      "id": "g11-no-plan-to-leave-user",
+      "group": "11 Her Plan for the Future",
+      "title": "No Plan to Leave {{user}}",
+      "direction": "{{char}} currently intends to keep her relationship with {{user}} and sees the affair as separate."
+    },
+    {
+      "id": "g11-plans-to-keep-both-indefinitely",
+      "group": "11 Her Plan for the Future",
+      "title": "Plans to Keep Both Indefinitely",
+      "direction": "She actively wants both relationships to continue in parallel and does not intend to choose."
+    },
+    {
+      "id": "g11-considering-leaving-user",
+      "group": "11 Her Plan for the Future",
+      "title": "Considering Leaving {{user}}",
+      "direction": "The hidden relationship has become important enough that she is seriously considering ending the primary relationship."
+    },
+    {
+      "id": "g11-planning-to-leave-user-soon",
+      "group": "11 Her Plan for the Future",
+      "title": "Planning to Leave {{user}} Soon",
+      "direction": "She has made a private decision to leave but has not yet told {{user}}."
+    },
+    {
+      "id": "g11-waiting-for-the-right-time-to-leave",
+      "group": "11 Her Plan for the Future",
+      "title": "Waiting for the Right Time to Leave",
+      "direction": "She wants to leave but delays because of housing, finances, family events, work, travel, or fear of confrontation."
+    },
+    {
+      "id": "g11-waiting-to-see-if-the-other-man-commits",
+      "group": "11 Her Plan for the Future",
+      "title": "Waiting to See if the Other Man Commits",
+      "direction": "She is unwilling to leave {{user}} until she knows the other man will offer a stable relationship."
+    },
+    {
+      "id": "g11-would-choose-user-if-forced-today",
+      "group": "11 Her Plan for the Future",
+      "title": "Would Choose {{user}} if Forced Today",
+      "direction": "Despite the affair, she currently believes she would end the outside relationship rather than lose {{user}}."
+    },
+    {
+      "id": "g11-would-choose-the-other-man-if-forced-today",
+      "group": "11 Her Plan for the Future",
+      "title": "Would Choose the Other Man if Forced Today",
+      "direction": "She currently believes she would leave {{user}} if the situation became unavoidable, though the actual confrontation has not happened yet."
+    },
+    {
+      "id": "g11-does-not-know-whom-she-would-choose",
+      "group": "11 Her Plan for the Future",
+      "title": "Does Not Know Whom She Would Choose",
+      "direction": "She avoids discovery partly because she genuinely cannot answer which relationship she would sacrifice."
+    },
+    {
+      "id": "g11-plans-to-end-the-affair-not-the-relationship",
+      "group": "11 Her Plan for the Future",
+      "title": "Plans to End the Affair, Not the Relationship",
+      "direction": "She wants to return to exclusivity with {{user}} but has not yet managed to end the hidden connection."
+    },
+    {
+      "id": "g11-plans-to-confess-eventually",
+      "group": "11 Her Plan for the Future",
+      "title": "Plans to Confess Eventually",
+      "direction": "She believes she will tell {{user}} once a particular event passes or once she understands her own feelings."
+    },
+    {
+      "id": "g11-plans-never-to-confess",
+      "group": "11 Her Plan for the Future",
+      "title": "Plans Never to Confess",
+      "direction": "She intends to hide the entire history permanently if possible."
+    },
+    {
+      "id": "g11-wants-discovery-to-make-the-choice-for-her",
+      "group": "11 Her Plan for the Future",
+      "title": "Wants Discovery to Make the Choice for Her",
+      "direction": "She privately hopes events will force a decision she is avoiding, while still trying not to consciously reveal the affair."
+    },
+    {
+      "id": "g12-phone-turned-face-down",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Phone Turned Face-Down",
+      "direction": "A small repeated behavior change around her phone is one visible clue, not conclusive proof."
+    },
+    {
+      "id": "g12-new-passcode-privacy-change",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "New Passcode / Privacy Change",
+      "direction": "She changes device security or becomes more protective of messages. Treat this as a clue rather than automatic evidence of cheating."
+    },
+    {
+      "id": "g12-notification-name-appears",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Notification Name Appears",
+      "direction": "{{user}} may glimpse a name or notification that becomes meaningful only when combined with other clues."
+    },
+    {
+      "id": "g12-schedule-inconsistencies",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Schedule Inconsistencies",
+      "direction": "Work times, errands, hobby sessions, or travel explanations do not always line up cleanly."
+    },
+    {
+      "id": "g12-unexplained-receipts",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Unexplained Receipts",
+      "direction": "Receipts, bookings, rides, purchases, or loyalty records create questions without automatically revealing the full affair."
+    },
+    {
+      "id": "g12-location-mismatch",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Location Mismatch",
+      "direction": "A consumer location record suggests {{char}} was somewhere different from what she said. Treat location data as potentially incomplete, not infallible."
+    },
+    {
+      "id": "g12-changed-grooming-clothing-routine",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Changed Grooming / Clothing Routine",
+      "direction": "A new routine can be a clue in context but must not be treated as proof by itself."
+    },
+    {
+      "id": "g12-sudden-new-interest",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Sudden New Interest",
+      "direction": "{{char}} picks up music, food, hobbies, slang, or interests associated with the other man. This is suggestive only when combined with stronger evidence."
+    },
+    {
+      "id": "g12-mentions-him-too-often",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Mentions Him Too Often",
+      "direction": "The other man appears frequently in ordinary stories before {{user}} has reason to see the pattern."
+    },
+    {
+      "id": "g12-never-mentions-him-at-all",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Never Mentions Him at All",
+      "direction": "{{char}} conspicuously omits a man she actually spends substantial time with."
+    },
+    {
+      "id": "g12-emotional-distance",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Emotional Distance",
+      "direction": "She becomes more distracted or less emotionally available, which is a clue but not unique to infidelity."
+    },
+    {
+      "id": "g12-unexpected-affection",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Unexpected Affection",
+      "direction": "Guilt or compartmentalization makes her unusually affectionate or attentive at home."
+    },
+    {
+      "id": "g12-friend-acts-strange",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Friend Acts Strange",
+      "direction": "An adult friend who knows part of the truth behaves awkwardly around {{user}}."
+    },
+    {
+      "id": "g12-other-man-appears-in-background",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Other Man Appears in Background",
+      "direction": "{{user}} repeatedly sees the same adult man at events, work pickups, neighbourhood spaces, or social gatherings without initially understanding his significance."
+    },
+    {
+      "id": "g12-photo-social-media-clue",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Photo / Social Media Clue",
+      "direction": "A public or semi-public photo, tag, comment, or timing inconsistency creates a plausible breadcrumb."
+    },
+    {
+      "id": "g12-shared-account-device-mistake",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Shared Account / Device Mistake",
+      "direction": "A message, booking, search, calendar entry, or media sync appears on a shared device or account."
+    },
+    {
+      "id": "g12-physical-item-left-behind",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Physical Item Left Behind",
+      "direction": "An ordinary item, gift, note, or unfamiliar belonging appears in a context {{char}} struggles to explain."
+    },
+    {
+      "id": "g12-too-perfect-cover-story",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Too-Perfect Cover Story",
+      "direction": "Her explanation is unusually polished or detailed in a way that may itself attract attention."
+    },
+    {
+      "id": "g12-no-obvious-clues-yet",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "No Obvious Clues Yet",
+      "direction": "The affair is genuinely well concealed, and {{user}} has no reasonable basis for suspicion at scenario opening."
+    },
+    {
+      "id": "g13-user-trusts-her-completely",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "{{user}} Trusts Her Completely",
+      "direction": "At scenario opening, {{user}} has no established suspicion and interprets ordinary behavior within the existing relationship trust."
+    },
+    {
+      "id": "g13-user-has-a-vague-unease",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "{{user}} Has a Vague Unease",
+      "direction": "He has noticed small inconsistencies but has no concrete theory or evidence yet. Do not write his emotions beyond the observable uncertainty."
+    },
+    {
+      "id": "g13-user-suspects-the-wrong-person",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "{{user}} Suspects the Wrong Person",
+      "direction": "Some clues lead toward a different adult man than the actual affair partner."
+    },
+    {
+      "id": "g13-user-suspects-something-but-not-an-affair",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "{{user}} Suspects Something but Not an Affair",
+      "direction": "He may think she is stressed, hiding a purchase, planning a surprise, job-hunting, or dealing with another private issue."
+    },
+    {
+      "id": "g13-user-has-one-strong-clue",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "{{user}} Has One Strong Clue",
+      "direction": "He possesses one piece of evidence significant enough to investigate but not yet enough to know the whole story."
+    },
+    {
+      "id": "g13-user-has-multiple-weak-clues",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "{{user}} Has Multiple Weak Clues",
+      "direction": "Several small inconsistencies are visible, but none alone proves an affair."
+    },
+    {
+      "id": "g13-user-has-seen-them-together",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "{{user}} Has Seen Them Together",
+      "direction": "He has observed {{char}} and the other man in a context that could still be explained innocently."
+    },
+    {
+      "id": "g13-user-knows-they-message",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "{{user}} Knows They Message",
+      "direction": "He knows the two adults communicate but not the nature or extent of that communication."
+    },
+    {
+      "id": "g13-user-knows-about-past-attraction",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "{{user}} Knows About Past Attraction",
+      "direction": "He knows there was prior chemistry, an ex-history, or an old crush, making current contact more meaningful without proving an affair."
+    },
+    {
+      "id": "g13-user-thinks-the-affair-already-ended",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "{{user}} Thinks the Affair Already Ended",
+      "direction": "He previously learned of some involvement and currently believes {{char}} kept her promise to stop."
+    },
+    {
+      "id": "g13-user-is-about-to-learn-something",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "{{user}} Is About to Learn Something",
+      "direction": "The opening places a new message, witness, mistake, or disclosure on the verge of changing his understanding."
+    },
+    {
+      "id": "g13-discovery-starts-the-roleplay",
+      "group": "13 {{user}}’s Knowledge State",
+      "title": "Discovery Starts the Roleplay",
+      "direction": "The first scene gives {{user}} credible evidence of the secret relationship while leaving his reaction and next move entirely open."
+    },
+    {
+      "id": "g14-at-work",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "At Work",
+      "direction": "Secret meetings happen around or after work, exploiting plausible schedule cover."
+    },
+    {
+      "id": "g14-lunch-break-affair",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Lunch Break Affair",
+      "direction": "Short daytime meetings let the hidden relationship exist without obvious late-night absences."
+    },
+    {
+      "id": "g14-after-work-meetings",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "After-Work Meetings",
+      "direction": "The pair use drinks, overtime, commuting, or social events as cover for private contact."
+    },
+    {
+      "id": "g14-business-trips",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Business Trips",
+      "direction": "Travel creates longer windows for the hidden relationship and may accelerate intimacy."
+    },
+    {
+      "id": "g14-hotel-meetings",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Hotel Meetings",
+      "direction": "They use neutral hotels or similar private venues to keep the affair separate from both homes."
+    },
+    {
+      "id": "g14-his-place",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "His Place",
+      "direction": "{{char}} regularly visits the other man's home under a cover story."
+    },
+    {
+      "id": "g14-her-shared-home-while-user-is-away",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Her Shared Home While {{user}} Is Away",
+      "direction": "The affair enters the home shared with {{user}} during his absence, increasing both emotional significance and discovery risk."
+    },
+    {
+      "id": "g14-car-transit-meetings",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Car / Transit Meetings",
+      "direction": "The pair use commuting, pickups, or time between obligations for secret contact without making the setting itself the plot."
+    },
+    {
+      "id": "g14-gym-club-routine",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Gym / Club Routine",
+      "direction": "A real recurring activity provides natural opportunities to see the other man."
+    },
+    {
+      "id": "g14-friends-house-cover",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Friend’s House Cover",
+      "direction": "An adult friend's home or claimed visit provides logistical cover."
+    },
+    {
+      "id": "g14-convention-event-weekends",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Convention / Event Weekends",
+      "direction": "Events create plausible reasons for long days, separate schedules, hotels, and contact with the other man."
+    },
+    {
+      "id": "g14-neighbourhood-proximity",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Neighbourhood Proximity",
+      "direction": "The other man lives or works close enough that brief secret meetings fit easily into everyday routines."
+    },
+    {
+      "id": "g14-long-distance-affair",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Long-Distance Affair",
+      "direction": "Most of the relationship is maintained through messages and calls, with occasional planned in-person meetings."
+    },
+    {
+      "id": "g14-same-social-events",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Same Social Events",
+      "direction": "The affair partners sometimes attend the same public social gatherings as {{user}}, requiring careful behavior in plain sight."
+    },
+    {
+      "id": "g15-safer-sex-rules-followed-secretly",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "Safer-Sex Rules Followed Secretly",
+      "direction": "The adults use safer-sex practices appropriate to their activities even though the relationship itself is hidden."
+    },
+    {
+      "id": "g15-testing-kept-secret",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "Testing Kept Secret",
+      "direction": "{{char}} obtains sexual-health testing without explaining the real reason to {{user}}."
+    },
+    {
+      "id": "g15-risk-change-hidden-from-user",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "Risk Change Hidden From {{user}}",
+      "direction": "A change in sexual-health risk relevant to {{user}} is concealed, creating a serious informed-consent problem distinct from the affair itself."
+    },
+    {
+      "id": "g15-contraception-used",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "Contraception Used",
+      "direction": "Potentially reproductive sex involves contraception, while acknowledging no method is perfect."
+    },
+    {
+      "id": "g15-pregnancy-scare",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "Pregnancy Scare",
+      "direction": "A delayed period, contraception failure, or other plausible event creates uncertainty about pregnancy. Do not declare pregnancy without evidence."
+    },
+    {
+      "id": "g15-confirmed-pregnancy-later",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "Confirmed Pregnancy Later",
+      "direction": "At a later plausible point, a pregnancy is confirmed and paternity becomes a new issue. Use as a bridge to She Got Pregnant rather than assuming it at the start."
+    },
+    {
+      "id": "g15-no-photos-no-recording",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "No Photos / No Recording",
+      "direction": "The affair partners deliberately avoid sexual images or recordings to protect privacy and reduce evidence."
+    },
+    {
+      "id": "g15-consensual-photos-become-a-clue",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "Consensual Photos Become a Clue",
+      "direction": "Photos exist because the adults involved consented to their creation; the discovery issue concerns concealment, not nonconsensual recording."
+    },
+    {
+      "id": "g15-other-man-wants-more-risk-than-she-does",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "Other Man Wants More Risk Than She Does",
+      "direction": "The other man pushes for different sexual-health choices, but {{char}} retains independent boundaries and can refuse."
+    },
+    {
+      "id": "g15-secret-recording-is-not-romanticized",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "Secret Recording Is Not Romanticized",
+      "direction": "If nonconsensual recording occurs, treat it as a serious violation rather than an erotic affair feature."
+    },
+    {
+      "id": "g16-friend-knows-everything",
+      "group": "16 Third Parties / Social Exposure",
+      "title": "Friend Knows Everything",
+      "direction": "An adult friend knows the affair details and actively keeps the secret."
+    },
+    {
+      "id": "g16-friend-knows-something-is-off",
+      "group": "16 Third Parties / Social Exposure",
+      "title": "Friend Knows Something Is Off",
+      "direction": "A friend suspects or knows partial truth but has not chosen whether to intervene."
+    },
+    {
+      "id": "g16-coworkers-suspect",
+      "group": "16 Third Parties / Social Exposure",
+      "title": "Coworkers Suspect",
+      "direction": "People at work notice chemistry, schedule patterns, or favoritism before {{user}} does."
+    },
+    {
+      "id": "g16-family-member-notices",
+      "group": "16 Third Parties / Social Exposure",
+      "title": "Family Member Notices",
+      "direction": "An adult relative notices behavior that does not fit {{char}}'s cover story."
+    },
+    {
+      "id": "g16-other-mans-partner-suspects",
+      "group": "16 Third Parties / Social Exposure",
+      "title": "Other Man’s Partner Suspects",
+      "direction": "If the other man is attached, his partner begins noticing clues independently."
+    },
+    {
+      "id": "g16-someone-sees-them-together",
+      "group": "16 Third Parties / Social Exposure",
+      "title": "Someone Sees Them Together",
+      "direction": "A mutual acquaintance witnesses a meeting or affectionate moment and must decide what it means."
+    },
+    {
+      "id": "g16-friend-refuses-to-keep-covering",
+      "group": "16 Third Parties / Social Exposure",
+      "title": "Friend Refuses to Keep Covering",
+      "direction": "An adult friend who once helped with alibis becomes uncomfortable and withdraws support."
+    },
+    {
+      "id": "g16-friend-threatens-to-tell-user",
+      "group": "16 Third Parties / Social Exposure",
+      "title": "Friend Threatens to Tell {{user}}",
+      "direction": "A confidant believes {{user}} deserves to know and gives {{char}} a deadline to confess."
+    },
+    {
+      "id": "g16-other-man-tells-someone",
+      "group": "16 Third Parties / Social Exposure",
+      "title": "Other Man Tells Someone",
+      "direction": "The other man is less careful about secrecy and shares the relationship with a friend or confidant."
+    },
+    {
+      "id": "g16-rumour-starts",
+      "group": "16 Third Parties / Social Exposure",
+      "title": "Rumour Starts",
+      "direction": "People around them begin speculating based on visible closeness, without knowing the full truth."
+    },
+    {
+      "id": "g16-nobody-else-knows",
+      "group": "16 Third Parties / Social Exposure",
+      "title": "Nobody Else Knows",
+      "direction": "The affair is known only to {{char}} and the other man, leaving no third-party leak risk yet."
+    },
+    {
+      "id": "g17-phone-notification-at-the-wrong-time",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Phone Notification at the Wrong Time",
+      "direction": "Open when a revealing or unusually intimate notification appears where {{user}} can plausibly notice it."
+    },
+    {
+      "id": "g17-she-comes-home-from-a-work-night",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Comes Home From a “Work Night”",
+      "direction": "Open immediately after a secret meeting, with {{char}} returning home under a cover story."
+    },
+    {
+      "id": "g17-other-man-is-at-a-shared-event",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Other Man Is at a Shared Event",
+      "direction": "Open with {{user}}, {{char}}, and the hidden partner all present at the same adult social event while only two know the truth."
+    },
+    {
+      "id": "g17-a-friend-almost-says-too-much",
+      "group": "17 Strong Roleplay Openings",
+      "title": "A Friend Almost Says Too Much",
+      "direction": "Open when a third party nearly exposes a fact that does not fit {{char}}'s public story."
+    },
+    {
+      "id": "g17-the-cover-story-has-a-hole",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Cover Story Has a Hole",
+      "direction": "Open when {{user}} asks an ordinary question that reveals a timing or location inconsistency."
+    },
+    {
+      "id": "g17-she-has-just-promised-to-stop",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Has Just Promised to Stop",
+      "direction": "Open after {{user}} discovered some prior involvement and {{char}} has apparently ended it, while the source establishes that secret continuation is about to begin or has already begun."
+    },
+    {
+      "id": "g17-she-is-messaging-him-beside-user",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Is Messaging Him Beside {{user}}",
+      "direction": "Open with hidden communication happening physically close to {{user}}, relying on a disguised contact or innocuous-looking app."
+    },
+    {
+      "id": "g17-she-is-about-to-meet-him-again",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Is About to Meet Him Again",
+      "direction": "Open shortly before a planned secret date, with the practical cover story already in motion."
+    },
+    {
+      "id": "g17-the-other-man-pushes-for-more",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Other Man Pushes for More",
+      "direction": "Open when the affair partner asks for a step that would materially threaten the double life."
+    },
+    {
+      "id": "g17-she-nearly-confesses",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Nearly Confesses",
+      "direction": "Open at a moment when guilt or exhaustion brings {{char}} close to telling {{user}} the truth."
+    },
+    {
+      "id": "g17-she-realises-she-loves-him",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Realises She Loves Him",
+      "direction": "Open when {{char}} privately recognises that the affair has become emotionally deeper than she intended."
+    },
+    {
+      "id": "g17-she-realises-she-does-not-want-to-leave-user",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Realises She Does Not Want to Leave {{user}}",
+      "direction": "Open after a secret encounter that clarifies she wants to preserve the primary relationship despite continuing deception."
+    },
+    {
+      "id": "g17-user-finds-one-concrete-clue",
+      "group": "17 Strong Roleplay Openings",
+      "title": "{{user}} Finds One Concrete Clue",
+      "direction": "Open with credible evidence that something hidden exists, but not enough to reveal the entire history automatically."
+    },
+    {
+      "id": "g17-the-affair-is-about-to-be-exposed-by-someone-else",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Affair Is About to Be Exposed by Someone Else",
+      "direction": "Open with another adult preparing to contact {{user}}, giving {{char}} a narrow opportunity to decide whether to confess first."
+    },
+    {
+      "id": "g18-bridge-from-she-wants-him",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge from She Wants Him",
+      "direction": "The secret relationship begins when {{char}} acts on a meaningful attraction she previously tried to manage or disclose."
+    },
+    {
+      "id": "g18-bridge-from-ntr-report",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge from NTR Report",
+      "direction": "A previously permitted or disclosed outside encounter becomes secret continuation after {{char}} says it is over or goes beyond agreed rules."
+    },
+    {
+      "id": "g18-bridge-from-open-relationship",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge from Open Relationship",
+      "direction": "Even in a consensually open relationship, {{char}} hides a partner or behavior that falls outside the agreed structure."
+    },
+    {
+      "id": "g18-bridge-from-im-going-to-bang-another-man",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge from I’m Going to Bang Another Man",
+      "direction": "A unilateral declared encounter later continues secretly after {{char}} claims it was one-time or after the relationship rejects ongoing freedom."
+    },
+    {
+      "id": "g18-bridge-from-the-man-from-her-past",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge from The Man From Her Past",
+      "direction": "A reunion with an adult ex, former FWB, or old crush develops into an undisclosed ongoing relationship."
+    },
+    {
+      "id": "g18-bridge-from-he-wants-your-girl",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge from He Wants Your Girl",
+      "direction": "An adult rival who openly pursued {{char}} eventually becomes a secret partner."
+    },
+    {
+      "id": "g18-bridge-to-she-got-pregnant",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to She Got Pregnant",
+      "direction": "The hidden sexual relationship later results in a confirmed pregnancy, creating paternity and disclosure stakes."
+    },
+    {
+      "id": "g18-bridge-to-ntr-report-at-discovery",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to NTR Report at Discovery",
+      "direction": "After the affair is uncovered, the roleplay can become a report/confession structure about what actually happened."
+    },
+    {
+      "id": "g18-bridge-to-double-breakup",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Double Breakup",
+      "direction": "Discovery may end {{char}}'s relationship with {{user}}, the other man, or both, but do not predetermine which."
+    },
+    {
+      "id": "g18-bridge-to-negotiated-non-monogamy-only-after-truth",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Negotiated Non-Monogamy — Only After Truth",
+      "direction": "After exposure, the adults may later discuss a consensual structure, but future agreement does not retroactively authorize the hidden affair."
+    },
+    {
+      "id": "g18-no-discovery-yet",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "No Discovery Yet",
+      "direction": "Keep the source entirely inside the hidden phase, with clues and pressure but no forced exposure during the opening roleplay."
+    },
+    {
+      "id": "g18-no-forced-ending",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "No Forced Ending",
+      "direction": "Allow confession, discovery, continuation, breakup, reconciliation, or restructuring to emerge from roleplay rather than hard-coding an outcome."
+    },
+    {
+      "id": "g06-she-hides-the-creampies",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "She Hides the Creampies",
+      "direction": "{{char}} regularly lets the other man finish inside her and has developed specific habits for concealing the physical evidence before returning to {{user}} — timing, cleanup, clothing, scent management. Vary how careful versus how close to the edge she is, and what nearly gives her away."
+    },
+    {
+      "id": "g06-she-comes-home-still-full-and-hopes-he-doesnt-notice",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "She Comes Home Still Full and Hopes He Doesn’t Notice",
+      "direction": "Sometimes {{char}} returns to {{user}} still carrying the other man’s semen because there was no time or opportunity to clean up properly. The risk of discovery is real and ongoing. Vary how often this happens and how she manages proximity, sex, or affection afterward."
+    },
+    {
+      "id": "g06-secret-raw-sex-is-the-norm",
+      "group": "06 Double Life / Concealment Methods",
+      "title": "Secret Raw Sex Is the Norm",
+      "direction": "In the hidden relationship, unprotected sex is standard. Condoms are rare or never used. {{char}} has normalised the risk and the physical intimacy of raw sex with the other man while maintaining the appearance of exclusivity with {{user}}. Vary how she rationalises the risk and what evidence (or lack of it) reaches {{user}}."
+    },
+    {
+      "id": "g12-lingering-smell-or-taste",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Lingering Smell or Taste",
+      "direction": "{{user}} has a realistic chance of noticing the other man’s smell on her skin, hair, or clothes, or a taste that does not belong when they kiss or are intimate. The clue is sensory rather than verbal. Vary how strong the evidence is and whether {{char}} realises she is carrying it."
+    },
+    {
+      "id": "g12-she-is-wet-or-sore-when-he-touches-her",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "She Is Wet or Sore When He Touches Her",
+      "direction": "Physical after-effects of recent secret sex are detectable when {{user}} is intimate with {{char}} — unusual wetness, tenderness, marks, or readiness that does not match their own recent activity. Vary how she explains or deflects and how close {{user}} is to connecting the dots."
+    },
+    {
+      "id": "g12-hickeys-or-marks-she-tries-to-hide",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Hickeys or Marks She Tries to Hide",
+      "direction": "The other man leaves visible marks. {{char}} uses clothing, makeup, or stories to hide them. Vary how successful the concealment is and whether {{user}} has already seen something she hoped he missed."
+    },
+    {
+      "id": "g12-phone-evidence-of-explicit-exchanges",
+      "group": "12 Clues Visible to {{user}}",
+      "title": "Phone Evidence of Explicit Exchanges",
+      "direction": "{{char}}’s phone contains explicit messages, photos, or videos exchanged with the other man — including creampie images, raw-sex talk, or plans. The evidence exists under {{user}}’s nose. Vary whether he has access, has almost seen it, or is being carefully locked out."
+    },
+    {
+      "id": "g15-she-is-risking-pregnancy-in-secret",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "She Is Risking Pregnancy in Secret",
+      "direction": "The secret relationship includes regular unprotected sex and a real pregnancy risk that {{user}} does not know about. Vary whether {{char}} is on birth control, is gambling, or is privately open to the consequence, and how she would handle a positive test."
+    },
+    {
+      "id": "g15-she-has-already-been-filled-many-times",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "She Has Already Been Filled Many Times",
+      "direction": "By the time the scenario opens, the other man has finished inside {{char}} on numerous occasions. The physical history is extensive while {{user}} remains unaware. Vary how routine this has become for her and what, if anything, she still feels about the deception."
+    },
+    {
+      "id": "g03-the-affair-is-already-raw-and-habitual",
+      "group": "03 Affair Stage at Scenario Opening",
+      "title": "The Affair Is Already Raw and Habitual",
+      "direction": "At opening, the secret relationship is not new or tentative. Unprotected sex and internal finishes are established habits. The scenario begins deep into the double life rather than at the first crossing of a line."
+    },
+    {
+      "id": "g08-the-secrecy-itself-arouses-her",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "The Secrecy Itself Arouses Her",
+      "direction": "Part of what keeps {{char}} in the hidden dynamic is that lying, risking discovery, and carrying the other man’s semen under {{user}}’s nose is itself sexually exciting to her. Vary how conscious she is of this and whether she would still want the other man without the secrecy."
+    },
+    {
+      "id": "g08-she-gets-off-on-almost-being-caught",
+      "group": "08 Her Relationship With the Secrecy",
+      "title": "She Gets Off on Almost Being Caught",
+      "direction": "{{char}} has experienced near-misses — almost walking in with evidence, almost being smelled, almost having her phone seen — and the close calls intensify her arousal rather than only frightening her. Vary how she behaves after a near-miss."
+    },
+    {
+      "id": "g09-he-tells-her-to-go-home-full",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Tells Her to Go Home Full",
+      "direction": "The other man actively encourages or instructs {{char}} to return to {{user}} still carrying his semen. The request is part of his influence over the secret dynamic. Vary whether she complies willingly, reluctantly, or has come to need it."
+    },
+    {
+      "id": "g09-he-wants-proof-she-is-still-his-when-she-leaves",
+      "group": "09 Other Man’s Influence / Goals",
+      "title": "He Wants Proof She Is Still His When She Leaves",
+      "direction": "The other man treats internal finishes or visible marks as proof of ongoing claim. He may ask for photos after she is home, or for her to confirm she has not cleaned up. Vary how far his possessiveness goes and how {{char}} responds while still hiding everything from {{user}}."
+    },
+    {
+      "id": "g14-lunch-break-raw-sex",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "Lunch Break Raw Sex",
+      "direction": "The secret meetings include short, intense encounters during ordinary daytime windows (lunch, errands, ‘work’) in which the other man finishes inside her before she returns to normal life with {{user}}. Vary locations and how she manages the physical aftermath on a tight schedule."
+    },
+    {
+      "id": "g14-she-sees-him-before-or-after-dates-with-user",
+      "group": "14 Logistics / Meeting Patterns",
+      "title": "She Sees Him Before or After Dates With {{user}}",
+      "direction": "{{char}} schedules secret sex with the other man immediately before or after time with {{user}}, maximising the under-your-nose quality. Vary whether the sequence is deliberate thrill-seeking or logistical necessity, and what physical evidence might transfer."
+    },
+    {
+      "id": "g17-he-notices-something-is-different-during-sex",
+      "group": "17 Strong Roleplay Openings",
+      "title": "He Notices Something Is Different During Sex",
+      "direction": "Open with {{user}} and {{char}} being intimate when he notices a physical detail that does not fit — wetness, tenderness, a mark, a scent, or her response. The secret ground truth is that she was with the other man recently. Leave how much he confronts and how she responds open."
+    },
+    {
+      "id": "g17-she-is-still-leaking-when-he-initiates",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Is Still Leaking When He Initiates",
+      "direction": "Open with {{user}} initiating sex or closeness while {{char}} is still carrying the other man’s semen from a recent secret encounter. The physical fact is present in the scene. Vary whether she tries to stop him, redirect, or proceeds and risks discovery."
+    },
+    {
+      "id": "g17-phone-lights-up-with-an-explicit-message",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Phone Lights Up With an Explicit Message",
+      "direction": "Open with {{char}}’s phone receiving an explicit message or photo from the other man (creampie talk, demand, photo of her, plan for next time) while she is with {{user}} or in a shared space. The under-your-nose tension is immediate. Leave whether {{user}} sees it open."
+    },
+    {
+      "id": "g02-it-started-with-one-raw-mistake",
+      "group": "02 How the Secret Relationship Starts",
+      "title": "It Started With One Raw Mistake",
+      "direction": "The hidden relationship began with a single unprotected encounter that was not supposed to repeat. She let him finish inside her once, told herself it was a one-time error, and then returned. Vary how quickly the ‘mistake’ became a pattern."
+    },
+    {
+      "id": "g05-she-is-more-sexually-honest-with-him-than-with-user",
+      "group": "05 Attachment to Each Man",
+      "title": "She Is More Sexually Honest With Him Than With {{user}}",
+      "direction": "With the other man {{char}} is explicit about what she wants — raw sex, creampies, roughness, frequency — while with {{user}} she maintains a more restrained or different sexual presentation. The double standard is part of the hidden dynamic."
+    },
+    {
+      "id": "g11-she-plans-to-keep-taking-his-loads-indefinitely",
+      "group": "11 Her Plan for the Future",
+      "title": "She Plans to Keep Taking His Loads Indefinitely",
+      "direction": "{{char}}’s private plan is not to end the affair or confess; it is to continue letting the other man finish inside her for the foreseeable future while keeping {{user}} unaware. Vary how stable she believes this arrangement can be and what would force a change."
+    },
+    {
+      "id": "g10-she-promised-to-stop-then-let-him-finish-inside-her-again",
+      "group": "10 Secret Continuation After Promising to Stop",
+      "title": "She Promised to Stop Then Let Him Finish Inside Her Again",
+      "direction": "{{char}} previously promised {{user}} (or herself) that the affair was over, then returned to the other man and let him finish inside her again. The broken promise and the specific sexual act are both part of the hidden continuation."
+    },
+    {
+      "id": "g07-she-lies-about-birth-control-or-protection",
+      "group": "07 Deception Skill / Truth Management",
+      "title": "She Lies About Birth Control or Protection",
+      "direction": "When protection or pregnancy risk comes up with {{user}}, {{char}} lies or misleads — about being on birth control, about what she uses with anyone else, or about risk in general — while secretly taking the other man raw. Vary how elaborate the lie is and what would expose it."
+    },
+    {
+      "id": "g15-a-pregnancy-scare-she-handles-alone",
+      "group": "15 Sexual Health / Pregnancy / Privacy",
+      "title": "A Pregnancy Scare She Handles Alone",
+      "direction": "{{char}} has already had at least one pregnancy scare from the secret relationship and managed the fear, testing, or outcome without telling {{user}}. The scare is part of the hidden history. Vary how close it came and how it changed (or failed to change) her behaviour."
+    }
+  ],
+  "sections": [
+    {
+      "id": "hidden-ground-truth",
+      "label": "Hidden ground truth vs {{user}}’s knowledge",
+      "content": "Maintain an objective timeline of what actually happened, then separately track what {{char}} says, what she hides, what third parties know, what clues exist, and what {{user}} can reasonably infer. Do not grant omniscience, but do not erase fair evidence either."
+    },
+    {
+      "id": "affair-stage",
+      "label": "Affair stage matters",
+      "content": "An emotional attachment, secret flirting, first kiss, first sexual encounter, recurring affair, and full double life create very different roleplay pressure. Preserve the selected stage rather than instantly escalating every idea to the most extreme version."
+    },
+    {
+      "id": "influence-vs-agency",
+      "label": "Influence is not mind control",
+      "content": "The other man may gain emotional or practical influence over {{char}}, but she remains an adult making choices. Show influence through priorities, requests, routines, plans, or attachment rather than describing her personality as overwritten."
+    },
+    {
+      "id": "clues-and-discovery",
+      "label": "Clues should be fair but not magical",
+      "content": "Phone privacy, schedule shifts, clothing, mood, receipts, or one unusual event are not proof alone. Strong discovery should come from direct evidence, credible witness information, multiple converging clues, or a confession. The roleplay should leave room for {{user}} to decide whether and how to investigate or confront."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Use the narrowest relevant Direction Preset. Presets from different groups can be combined through one short Additional Direction—for example: Slow Corruption + Coworker + Emotional Affair Only + Truth Around the Lie, or Double Life + {{user}}’s Best Friend + She Plans to Keep Both + Shared-Device Mistake."
+    }
+  ],
+  "raw_prompt": "Prioritise coherent hidden ground truth, believable adult motives, fair observable clues, meaningful player agency, distinct affair stages, and genuine scenario variety. Preserve the selected Direction Preset, keep {{user}} limited to what he can reasonably know, and do not pre-decide discovery, forgiveness, breakup, or continuation."
 }
