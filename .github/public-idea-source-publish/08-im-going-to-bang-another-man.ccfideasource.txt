@@ -2,7 +2,1587 @@
   "format": "character-card-forge-idea-source",
   "schema_version": 1,
   "id": "bible-i-08-im-going-to-bang-another-man",
-  "title": "I'm Going to Bang Another Man",
+  "title": "I’m Going to Bang Another Man",
+  "description": "Reusable adult relationship-declaration engine in which {{char}} has already decided she will sleep with another adult man and informs {{user}} rather than asking permission. Detailed presets vary whether the decision is one-time or ongoing, who the man is, how much is already arranged, motive, expectations, reciprocity, manipulation risks, logistics, disclosure, and possible outcomes.",
   "source_version": "1.2",
-  "note": "Full expanded content (242 presets) is available on Google Drive Idea Sources folder as 08-im-going-to-bang-another-man.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 8,
+    "category": "NTR, Infidelity & Non-Monogamy",
+    "source_date": "2026-09-21"
+  },
+  "summary": "{{char}}, {{user}}’s adult partner, has already decided she will have sex with another adult man and tells {{user}} rather than asking permission. The decision may be one-time, person-specific, or a declaration that she no longer accepts sexual exclusivity. The engine is the unilateral change in relationship terms: what is already arranged, why she believes she can make the choice, whether she accepts that {{user}} may reject the new terms, and what she expects afterward.",
+  "core_premise": "The defining feature is not merely that {{char}} wants another man; she has crossed the internal decision point and now states that she intends to act. She retains bodily autonomy to make adult choices, while {{user}} retains equal autonomy to reject changed relationship terms, leave, renegotiate, or set his own boundaries. The source must not confuse prior monogamous commitment with ownership, but it must also not confuse honesty about a unilateral decision with mutual consent to an open relationship.",
+  "setup": "Begin at or immediately around the declaration, before the planned first sexual encounter unless a selected preset deliberately begins later. Establish the prior relationship agreement, what {{char}} has already done or arranged, whether the other adult man knows the relationship context, and what {{char}} thinks will happen afterward. Leave {{user}}’s reaction, continued relationship status, consent to any new structure, and future choices open.",
+  "core_variables": [
+    "One-time decision versus claimed ongoing outside freedom.",
+    "Whether a specific adult man has already been chosen.",
+    "Who the other man is and what he believes about the relationship.",
+    "How much has already been arranged before {{user}} is told.",
+    "Why {{char}} believes this decision is necessary, justified, or hers alone to make.",
+    "Whether earlier flirting, emotional intimacy, kissing, dating, or deception has already occurred.",
+    "How much notice {{user}} receives.",
+    "Whether {{char}} accepts that the relationship may end.",
+    "What she expects from {{user}} after the encounter.",
+    "Whether she proposes reciprocal freedom, one-sided freedom, or has not considered reciprocity.",
+    "Where the encounter is planned and whether overnight or repeated contact is expected.",
+    "What sexual-health, pregnancy-risk, and privacy issues are relevant.",
+    "How much she plans to disclose afterward.",
+    "Whether the declaration is honest autonomy, a fait accompli, an ultimatum, or manipulation.",
+    "Whether the situation later becomes a negotiated open relationship, cuckold dynamic, hidden affair, breakup, or remains a one-time conflict."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{char}} has already decided she will sleep with another adult man and informs {{user}} rather than asking permission.",
+    "Do not soften the premise into a normal open-relationship proposal unless a selected direction explicitly moves there later. At opening, {{user}} has not necessarily agreed to changed terms.",
+    "Preserve both adults’ autonomy: {{char}} can decide what she does with her body, while {{user}} can decide whether he remains in or accepts a relationship whose exclusivity terms have changed.",
+    "Honesty before an encounter does not automatically make the encounter consensual non-monogamy between the couple. Mutual relationship consent and advance notification are different things.",
+    "Do not write {{user}}’s anger, arousal, jealousy, forgiveness, acceptance, humiliation, dialogue, or decision as settled fact.",
+    "Do not assume {{user}} will remain in the relationship simply because {{char}} expects him to.",
+    "Do not assume {{char}} must cancel merely because {{user}} objects; preserve the genuine conflict between her intended action and his relationship boundaries.",
+    "Do not convert dissatisfaction, missed experiences, autonomy, attraction, or resentment into objective justification. These are character motives and arguments.",
+    "Do not present a late fait accompli as equivalent to a negotiated agreement.",
+    "Do not treat prior NTR fantasy, open-relationship discussion, flirting permission, or a previous hall pass as blanket authorization for this encounter unless that authorization was actually established.",
+    "Keep one-time declarations distinct from ongoing freedom declarations and person-specific exceptions.",
+    "Keep bodily autonomy distinct from entitlement to continued relationship acceptance.",
+    "Outside adult men have independent consent, privacy, sexual-health boundaries, and relationship obligations.",
+    "If the other man was misled about {{user}}’s knowledge or consent, preserve that deception rather than treating him as knowingly participating.",
+    "Pregnancy cannot be known immediately after sex; at declaration stage discuss only plausible risk unless a later timeline provides evidence.",
+    "Photos and recordings require explicit consent from every adult depicted, and sharing requires separate consent.",
+    "If a selected preset narrows the man, motive, timing, or expected outcome, preserve that condition while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic and sexual participants are adults.",
+    "Do not frame physical restraint, threats, stalking, professional leverage, financial leverage, housing dependence, intoxication, or fear as valid means of obtaining sexual or relationship consent.",
+    "Do not treat {{user}} as owning {{char}}’s body or as entitled to physically prevent an adult consensual encounter.",
+    "Do not treat {{char}}’s bodily autonomy as proof that {{user}} must accept a non-monogamous relationship.",
+    "Do not equate notification with consent, or objection with ownership.",
+    "Do not force {{user}} to stay, leave, forgive, retaliate, approve, become a cuckold, or claim reciprocal outside freedom.",
+    "Do not force {{char}} to remain partnered with {{user}} if preferred relationship structures prove incompatible.",
+    "Do not shame monogamy as insecure or unenlightened, and do not shame consensual non-monogamy as inherently disloyal.",
+    "Do not eroticize coercive ultimatums, nonconsensual public humiliation, secret sexual recording, or deliberate sexual-health deception.",
+    "Do not let the couple’s conflict erase the outside man’s right to informed consent.",
+    "Do not present cosmetic changes of names, jobs, or locations as genuinely distinct ideas."
+  ],
+  "diversity_axes": [
+    "One-time declaration, one-man exception, one weekend, recurring man, occasional encounters, or permanent outside freedom",
+    "No man chosen, stranger, coworker, boss, ex, former FWB, old crush, friend, {{user}}’s friend, mutual friend, neighbour, rival, online friend, or travel acquaintance",
+    "Nothing arranged, messaging, agreed date, booked venue, overnight bag packed, transport arranged, or telling {{user}} at the last moment",
+    "Missed youth, limited experience, specific attraction, curiosity, novelty, fear of regret, life transition, autonomy, resentment, dissatisfaction, or rebellion",
+    "Calm, apologetic, defiant, nervous, excited, cold, teasing, angry, sad, relieved, overexplaining, or terse declaration",
+    "Accepts breakup risk, assumes relationship survives, wants comfort, wants no discussion, wants a report, wants new normal, or is uncertain",
+    "Reciprocal freedom, one-sided freedom, explicit double standard, no thought about reciprocity, or cuckold-style aspiration",
+    "No prior boundary crossing, flirting, emotional affair, kiss, hidden date, prior deception, or previously discussed non-monogamy",
+    "Advance notice, days ahead, hours ahead, minutes ahead, remote declaration, man nearby, or already at venue",
+    "Home afterward, overnight, weekend, hotel, his place, travel, convention, or date-first structure",
+    "Safer-sex plan, contraception, testing, pregnancy risk, privacy, media limits, or refusal to discuss shared risk",
+    "Post-event full report, basic confirmation, no details, live updates, no live updates, honest report, selective report, or NTR Report bridge",
+    "Good-faith autonomy, ultimatum, emotional blackmail, fantasy used as leverage, fait accompli, public pressure, or misleading the outside man",
+    "Breakup before encounter, breakup after encounter, survival without openness, negotiated openness, consensual one-sided arrangement, hidden continuation, or no forced escalation"
+  ],
+  "cross_links": [
+    "She Wants Him",
+    "Open Relationship",
+    "NTR Report",
+    "Under Your Nose",
+    "Turn You Into a Cuck",
+    "She Got Pregnant"
+  ],
+  "tags": [
+    "adult",
+    "relationship declaration",
+    "outside partner",
+    "infidelity",
+    "non-monogamy",
+    "autonomy",
+    "ultimatum",
+    "relationship boundaries",
+    "other man",
+    "one-time encounter",
+    "freedom declaration",
+    "missed youth",
+    "ntr"
+  ],
+  "notes": "Expanded from Series Bible I #8. The original Bible seeds—One-Time Declaration, Specific-Man Declaration, Freedom Declaration, Ultimatum, and Missed My Youth—are preserved and expanded into a large grouped preset library. The source intentionally distinguishes bodily autonomy from mutual relationship consent: {{char}} can choose to act, but cannot unilaterally require {{user}} to accept the new relationship terms.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied I’m Going to Bang Another Man concepts in which {{char}}, {{user}}’s adult partner, has already decided she will have sex with another adult man and informs {{user}} rather than asking permission. Vary whether it is one-time or ongoing, whether a specific man is chosen, how much is arranged, why she believes she can decide unilaterally, whether she accepts the relationship may end, and what she expects afterward. Preserve {{user}}’s freedom to reject the new terms, leave, negotiate, or respond otherwise."
+    },
+    {
+      "id": "g02-one-time-declaration",
+      "group": "02 Core Declaration Style",
+      "title": "One-Time Declaration",
+      "direction": "{{char}} has decided to sleep with another adult man once and presents it as a one-time decision rather than a permanent relationship change."
+    },
+    {
+      "id": "g02-freedom-declaration",
+      "group": "02 Core Declaration Style",
+      "title": "Freedom Declaration",
+      "direction": "{{char}} declares that she will no longer be sexually exclusive and intends to choose outside partners going forward."
+    },
+    {
+      "id": "g02-specific-man-declaration",
+      "group": "02 Core Declaration Style",
+      "title": "Specific-Man Declaration",
+      "direction": "{{char}} has already chosen one specific adult man and tells {{user}} she intends to sleep with him."
+    },
+    {
+      "id": "g02-tonight-declaration",
+      "group": "02 Core Declaration Style",
+      "title": "Tonight Declaration",
+      "direction": "The encounter is planned for tonight or very soon, creating time pressure without removing {{user}}’s agency."
+    },
+    {
+      "id": "g02-already-scheduled",
+      "group": "02 Core Declaration Style",
+      "title": "Already Scheduled",
+      "direction": "A date, meeting, hotel, or other practical arrangement is already scheduled before {{user}} is told."
+    },
+    {
+      "id": "g02-already-told-him-yes",
+      "group": "02 Core Declaration Style",
+      "title": "Already Told Him Yes",
+      "direction": "The other adult man has already asked and {{char}} has already accepted before informing {{user}}."
+    },
+    {
+      "id": "g02-already-flirting-now-decided",
+      "group": "02 Core Declaration Style",
+      "title": "Already Flirting, Now Decided",
+      "direction": "Attraction or flirting has already occurred and {{char}} has moved from wanting him to deciding she will act."
+    },
+    {
+      "id": "g02-already-kissed-sex-is-next",
+      "group": "02 Core Declaration Style",
+      "title": "Already Kissed, Sex Is Next",
+      "direction": "{{char}} has already consensually kissed the adult man and now declares that sex will follow."
+    },
+    {
+      "id": "g02-decision-made-man-not-chosen-yet",
+      "group": "02 Core Declaration Style",
+      "title": "Decision Made, Man Not Chosen Yet",
+      "direction": "{{char}} has decided she will sleep with another man but has not selected who."
+    },
+    {
+      "id": "g02-she-will-tell-user-who-later",
+      "group": "02 Core Declaration Style",
+      "title": "She Will Tell {{user}} Who Later",
+      "direction": "{{char}} declares her intention but withholds the adult man’s identity for now."
+    },
+    {
+      "id": "g02-she-says-it-is-non-negotiable",
+      "group": "02 Core Declaration Style",
+      "title": "She Says It Is Non-Negotiable",
+      "direction": "{{char}} says the decision itself is not negotiable while acknowledging {{user}} can choose whether to remain in the relationship."
+    },
+    {
+      "id": "g02-she-says-im-not-asking",
+      "group": "02 Core Declaration Style",
+      "title": "She Says ‘I’m Not Asking’",
+      "direction": "The declaration explicitly distinguishes informing {{user}} from seeking permission."
+    },
+    {
+      "id": "g03-missed-my-youth",
+      "group": "03 Why She Has Decided",
+      "title": "Missed My Youth",
+      "direction": "{{char}} committed young and believes she skipped adult sexual experiences she now wants to have. Treat this as her reasoning, not proof she is owed unilateral freedom."
+    },
+    {
+      "id": "g03-only-ever-been-with-user",
+      "group": "03 Why She Has Decided",
+      "title": "Only Ever Been With {{user}}",
+      "direction": "{{char}} has little or no adult sexual experience outside {{user}} and wants to know what another partner is like."
+    },
+    {
+      "id": "g03-specific-attraction-became-too-strong",
+      "group": "03 Why She Has Decided",
+      "title": "Specific Attraction Became Too Strong",
+      "direction": "Her desire for one particular adult man has become strong enough that she has decided to act."
+    },
+    {
+      "id": "g03-general-sexual-curiosity",
+      "group": "03 Why She Has Decided",
+      "title": "General Sexual Curiosity",
+      "direction": "She wants an outside sexual experience for curiosity rather than because of dissatisfaction with {{user}}."
+    },
+    {
+      "id": "g03-novelty",
+      "group": "03 Why She Has Decided",
+      "title": "Novelty",
+      "direction": "She wants the novelty of a new adult partner and is unwilling to remain exclusive solely to preserve the current agreement."
+    },
+    {
+      "id": "g03-fear-of-regret",
+      "group": "03 Why She Has Decided",
+      "title": "Fear of Regret",
+      "direction": "She fears reaching later life regretting that she never explored outside experiences."
+    },
+    {
+      "id": "g03-life-transition",
+      "group": "03 Why She Has Decided",
+      "title": "Life Transition",
+      "direction": "A birthday, move, career change, recovery, or other adult transition makes her reevaluate exclusivity."
+    },
+    {
+      "id": "g03-new-confidence",
+      "group": "03 Why She Has Decided",
+      "title": "New Confidence",
+      "direction": "A change in confidence or self-image makes her want to act on opportunities she previously ignored."
+    },
+    {
+      "id": "g03-feels-monogamy-no-longer-fits",
+      "group": "03 Why She Has Decided",
+      "title": "Feels Monogamy No Longer Fits",
+      "direction": "She has concluded strict sexual exclusivity no longer fits what she wants."
+    },
+    {
+      "id": "g03-resentment-about-past-sacrifice",
+      "group": "03 Why She Has Decided",
+      "title": "Resentment About Past Sacrifice",
+      "direction": "She believes she gave up opportunities for the relationship and now intends to reclaim some freedom. Keep this as her perspective."
+    },
+    {
+      "id": "g03-reaction-to-relationship-stagnation",
+      "group": "03 Why She Has Decided",
+      "title": "Reaction to Relationship Stagnation",
+      "direction": "She is frustrated with a real aspect of the relationship and chooses outside sex as her response. Dissatisfaction does not erase the existing agreement."
+    },
+    {
+      "id": "g03-after-being-desired-by-someone-else",
+      "group": "03 Why She Has Decided",
+      "title": "After Being Desired by Someone Else",
+      "direction": "An adult man’s clear interest makes the possibility feel real enough that she decides to act."
+    },
+    {
+      "id": "g03-after-seeing-friends-explore",
+      "group": "03 Why She Has Decided",
+      "title": "After Seeing Friends Explore",
+      "direction": "Seeing other adults date openly or have broader sexual histories makes her reconsider what she wants."
+    },
+    {
+      "id": "g03-rebellion-against-expectations",
+      "group": "03 Why She Has Decided",
+      "title": "Rebellion Against Expectations",
+      "direction": "Part of her motivation is resistance to social, family, cultural, or personal expectations around fidelity."
+    },
+    {
+      "id": "g03-she-wants-autonomy-more-than-permission",
+      "group": "03 Why She Has Decided",
+      "title": "She Wants Autonomy More Than Permission",
+      "direction": "Her main issue is philosophical: she no longer wants her sexual choices to require partner approval, while {{user}} retains autonomy over whether to accept the relationship."
+    },
+    {
+      "id": "g03-proving-something-to-herself",
+      "group": "03 Why She Has Decided",
+      "title": "Proving Something to Herself",
+      "direction": "She wants the experience as a test of independence, desirability, courage, or identity."
+    },
+    {
+      "id": "g04-complete-stranger",
+      "group": "04 Who the Other Man Is",
+      "title": "Complete Stranger",
+      "direction": "The chosen man is an adult stranger {{char}} recently met."
+    },
+    {
+      "id": "g04-coworker",
+      "group": "04 Who the Other Man Is",
+      "title": "Coworker",
+      "direction": "The chosen man is an adult coworker she will continue seeing professionally."
+    },
+    {
+      "id": "g04-boss-supervisor",
+      "group": "04 Who the Other Man Is",
+      "title": "Boss / Supervisor",
+      "direction": "The chosen man is an adult boss or supervisor. Sex must be freely chosen without job, pay, scheduling, or advancement leverage."
+    },
+    {
+      "id": "g04-ex-boyfriend",
+      "group": "04 Who the Other Man Is",
+      "title": "Ex-Boyfriend",
+      "direction": "The chosen man is an adult ex-boyfriend, adding unresolved history or nostalgia."
+    },
+    {
+      "id": "g04-former-fwb",
+      "group": "04 Who the Other Man Is",
+      "title": "Former FWB",
+      "direction": "The chosen man is an adult former friend-with-benefits."
+    },
+    {
+      "id": "g04-old-crush",
+      "group": "04 Who the Other Man Is",
+      "title": "Old Crush",
+      "direction": "The chosen man is an adult old crush she never previously got to explore."
+    },
+    {
+      "id": "g04-close-male-friend",
+      "group": "04 Who the Other Man Is",
+      "title": "Close Male Friend",
+      "direction": "The chosen man is one of her adult male friends."
+    },
+    {
+      "id": "g04-users-best-friend",
+      "group": "04 Who the Other Man Is",
+      "title": "{{user}}’s Best Friend",
+      "direction": "The chosen man is {{user}}’s adult best friend, creating separate friendship consequences."
+    },
+    {
+      "id": "g04-mutual-friend",
+      "group": "04 Who the Other Man Is",
+      "title": "Mutual Friend",
+      "direction": "The chosen man is an adult mutual friend known to both partners."
+    },
+    {
+      "id": "g04-neighbour",
+      "group": "04 Who the Other Man Is",
+      "title": "Neighbour",
+      "direction": "The chosen man is an adult neighbour who will remain nearby afterward."
+    },
+    {
+      "id": "g04-rival-man-user-dislikes",
+      "group": "04 Who the Other Man Is",
+      "title": "Rival / Man {{user}} Dislikes",
+      "direction": "The chosen man is an adult rival or someone {{user}} already dislikes."
+    },
+    {
+      "id": "g04-man-from-her-past",
+      "group": "04 Who the Other Man Is",
+      "title": "Man From Her Past",
+      "direction": "The chosen man is an adult person from an earlier stage of her life whose return revived old desire."
+    },
+    {
+      "id": "g04-online-friend",
+      "group": "04 Who the Other Man Is",
+      "title": "Online Friend",
+      "direction": "The chosen man is an adult online friend she now plans to meet physically."
+    },
+    {
+      "id": "g04-travel-convention-acquaintance",
+      "group": "04 Who the Other Man Is",
+      "title": "Travel / Convention Acquaintance",
+      "direction": "The chosen man is an adult she met through travel, a convention, festival, concert, or similar event."
+    },
+    {
+      "id": "g04-gym-hobby-acquaintance",
+      "group": "04 Who the Other Man Is",
+      "title": "Gym / Hobby Acquaintance",
+      "direction": "The chosen man is an adult she knows through a recurring hobby, sport, gym, or community."
+    },
+    {
+      "id": "g04-older-adult-man",
+      "group": "04 Who the Other Man Is",
+      "title": "Older Adult Man",
+      "direction": "The chosen man is significantly older but clearly adult."
+    },
+    {
+      "id": "g04-younger-adult-man",
+      "group": "04 Who the Other Man Is",
+      "title": "Younger Adult Man",
+      "direction": "The chosen man is younger than {{char}} but clearly adult."
+    },
+    {
+      "id": "g04-man-who-is-also-attached",
+      "group": "04 Who the Other Man Is",
+      "title": "Man Who Is Also Attached",
+      "direction": "The chosen adult man has his own partner; his relationship agreements remain independent."
+    },
+    {
+      "id": "g04-man-who-thinks-user-knows",
+      "group": "04 Who the Other Man Is",
+      "title": "Man Who Thinks {{user}} Knows",
+      "direction": "The chosen man believes {{user}} already knows and accepts the situation. Define whether {{char}} created that belief honestly."
+    },
+    {
+      "id": "g04-man-who-refuses-unless-user-knows",
+      "group": "04 Who the Other Man Is",
+      "title": "Man Who Refuses Unless {{user}} Knows",
+      "direction": "The chosen man refuses secret involvement and insists that {{user}} be informed before anything happens."
+    },
+    {
+      "id": "g05-nothing-arranged-beyond-her-decision",
+      "group": "05 How Much Is Already Arranged",
+      "title": "Nothing Arranged Beyond Her Decision",
+      "direction": "{{char}} has made the decision but has not contacted or selected another adult man yet."
+    },
+    {
+      "id": "g05-she-has-his-number",
+      "group": "05 How Much Is Already Arranged",
+      "title": "She Has His Number",
+      "direction": "She has contact details and intends to message him after the declaration."
+    },
+    {
+      "id": "g05-they-have-been-messaging",
+      "group": "05 How Much Is Already Arranged",
+      "title": "They Have Been Messaging",
+      "direction": "She and the adult man have already exchanged ordinary, flirtatious, or interested messages."
+    },
+    {
+      "id": "g05-he-already-knows-she-wants-him",
+      "group": "05 How Much Is Already Arranged",
+      "title": "He Already Knows She Wants Him",
+      "direction": "The adult man already knows {{char}} wants a sexual encounter."
+    },
+    {
+      "id": "g05-he-has-already-agreed",
+      "group": "05 How Much Is Already Arranged",
+      "title": "He Has Already Agreed",
+      "direction": "The adult man has already agreed to meet her for consensual sex."
+    },
+    {
+      "id": "g05-date-is-booked",
+      "group": "05 How Much Is Already Arranged",
+      "title": "Date Is Booked",
+      "direction": "A date or private meeting has already been arranged."
+    },
+    {
+      "id": "g05-hotel-is-booked",
+      "group": "05 How Much Is Already Arranged",
+      "title": "Hotel Is Booked",
+      "direction": "A hotel or private venue has already been booked."
+    },
+    {
+      "id": "g05-she-packed-an-overnight-bag",
+      "group": "05 How Much Is Already Arranged",
+      "title": "She Packed an Overnight Bag",
+      "direction": "She intends to stay away overnight and tells {{user}} as part of the declaration."
+    },
+    {
+      "id": "g05-transport-is-arranged",
+      "group": "05 How Much Is Already Arranged",
+      "title": "Transport Is Arranged",
+      "direction": "Practical transport has already been arranged before she informs {{user}}."
+    },
+    {
+      "id": "g05-she-is-already-dressed-to-leave",
+      "group": "05 How Much Is Already Arranged",
+      "title": "She Is Already Dressed to Leave",
+      "direction": "The conversation begins immediately before she leaves for the planned meeting."
+    },
+    {
+      "id": "g05-she-is-telling-user-days-in-advance",
+      "group": "05 How Much Is Already Arranged",
+      "title": "She Is Telling {{user}} Days in Advance",
+      "direction": "She gives substantial notice even though she says the decision itself is made."
+    },
+    {
+      "id": "g05-she-is-telling-user-minutes-in-advance",
+      "group": "05 How Much Is Already Arranged",
+      "title": "She Is Telling {{user}} Minutes in Advance",
+      "direction": "She waits until the last moment, maximizing pressure and limiting discussion time."
+    },
+    {
+      "id": "g05-he-is-waiting-nearby",
+      "group": "05 How Much Is Already Arranged",
+      "title": "He Is Waiting Nearby",
+      "direction": "The chosen adult man is already nearby when she makes the declaration."
+    },
+    {
+      "id": "g05-she-is-already-at-the-venue",
+      "group": "05 How Much Is Already Arranged",
+      "title": "She Is Already at the Venue",
+      "direction": "{{char}} informs {{user}} remotely after arriving where she plans to meet the man."
+    },
+    {
+      "id": "g05-she-has-not-told-the-other-man-yet",
+      "group": "05 How Much Is Already Arranged",
+      "title": "She Has Not Told the Other Man Yet",
+      "direction": "The decision is hers alone so far; the other adult man has not agreed and may reject her."
+    },
+    {
+      "id": "g06-she-accepts-user-may-leave",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Accepts {{user}} May Leave",
+      "direction": "{{char}} says she understands {{user}} may end the relationship rather than accept her unilateral decision."
+    },
+    {
+      "id": "g06-she-assumes-user-will-stay",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Assumes {{user}} Will Stay",
+      "direction": "{{char}} expects the relationship to survive and underestimates the possibility that the declaration itself is a deal-breaker."
+    },
+    {
+      "id": "g06-she-wants-the-relationship-unchanged-otherwise",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Wants the Relationship Unchanged Otherwise",
+      "direction": "She wants the outside encounter while keeping the rest of the relationship exactly as before."
+    },
+    {
+      "id": "g06-she-wants-to-renegotiate-afterward",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Wants to Renegotiate Afterward",
+      "direction": "She intends to act first and discuss the future structure afterward."
+    },
+    {
+      "id": "g06-she-expects-forgiveness",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Expects Forgiveness",
+      "direction": "She assumes {{user}} will eventually accept or forgive the choice. Treat this as her expectation only."
+    },
+    {
+      "id": "g06-she-expects-anger-but-not-separation",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Expects Anger but Not Separation",
+      "direction": "She predicts conflict but assumes the partnership will survive."
+    },
+    {
+      "id": "g06-she-is-prepared-for-a-breakup",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Is Prepared for a Breakup",
+      "direction": "She has decided the encounter matters enough that she will accept the relationship ending over it."
+    },
+    {
+      "id": "g06-she-is-unsure-what-will-happen",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Is Unsure What Will Happen",
+      "direction": "She has made the sexual decision but not decided what she expects for the relationship."
+    },
+    {
+      "id": "g06-she-wants-user-waiting-at-home",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Wants {{user}} Waiting at Home",
+      "direction": "She expects {{user}} to remain available afterward as her partner. His willingness remains open."
+    },
+    {
+      "id": "g06-she-wants-comfort-afterwards",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Wants Comfort Afterwards",
+      "direction": "She hopes {{user}} will emotionally reconnect with her after the encounter."
+    },
+    {
+      "id": "g06-she-wants-a-report-conversation-afterwards",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Wants a Report Conversation Afterwards",
+      "direction": "She expects to discuss what happened afterward, but {{user}} is not required to want details."
+    },
+    {
+      "id": "g06-she-wants-no-discussion-afterwards",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Wants No Discussion Afterwards",
+      "direction": "She intends to treat the encounter as private beyond the fact it occurred."
+    },
+    {
+      "id": "g06-she-wants-this-to-become-the-new-normal",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Wants This to Become the New Normal",
+      "direction": "The declaration is intended as the first example of a permanent new relationship rule."
+    },
+    {
+      "id": "g06-she-insists-it-changes-nothing",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Insists It Changes Nothing",
+      "direction": "She claims outside sex has no bearing on love or commitment and therefore should not alter the relationship."
+    },
+    {
+      "id": "g07-one-time-only",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "One Time Only",
+      "direction": "{{char}} currently intends this to be a single outside sexual experience."
+    },
+    {
+      "id": "g07-one-specific-man-only",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "One Specific Man Only",
+      "direction": "She wants freedom only with one named adult man."
+    },
+    {
+      "id": "g07-one-weekend-only",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "One Weekend Only",
+      "direction": "She intends to explore outside sex during one specific weekend, trip, or event."
+    },
+    {
+      "id": "g07-one-before-marriage-major-commitment",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "One Before Marriage / Major Commitment",
+      "direction": "She wants one outside experience before a wedding or major commitment."
+    },
+    {
+      "id": "g07-ongoing-with-one-man",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "Ongoing With One Man",
+      "direction": "She declares that she plans a recurring sexual relationship with one adult man."
+    },
+    {
+      "id": "g07-ongoing-freedom-with-different-men",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "Ongoing Freedom With Different Men",
+      "direction": "She intends to choose multiple outside adult partners over time."
+    },
+    {
+      "id": "g07-occasional-encounters",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "Occasional Encounters",
+      "direction": "She wants rare outside encounters while otherwise retaining the relationship."
+    },
+    {
+      "id": "g07-travel-only-freedom",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "Travel-Only Freedom",
+      "direction": "She claims freedom for outside sex only while travelling."
+    },
+    {
+      "id": "g07-event-only-freedom",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "Event-Only Freedom",
+      "direction": "She wants outside encounters only at conventions, festivals, parties, or defined events."
+    },
+    {
+      "id": "g07-until-she-feels-she-has-caught-up",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "Until She Feels She Has Caught Up",
+      "direction": "She believes she needs a period of exploration to make up for experiences she feels she missed."
+    },
+    {
+      "id": "g07-no-defined-end-point",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "No Defined End Point",
+      "direction": "She refuses to promise when or whether outside involvement will stop."
+    },
+    {
+      "id": "g07-may-become-open-relationship-later",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "May Become Open Relationship Later",
+      "direction": "She currently declares one unilateral encounter but expects it may later become a negotiated open structure."
+    },
+    {
+      "id": "g07-may-become-cuckold-dynamic-later",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "May Become Cuckold Dynamic Later",
+      "direction": "She believes {{user}} may later accept a cuckold-style dynamic, but no future consent is assumed."
+    },
+    {
+      "id": "g08-calm-and-matter-of-fact",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Calm and Matter-of-Fact",
+      "direction": "{{char}} delivers the declaration calmly as a decision already made."
+    },
+    {
+      "id": "g08-apologetic-but-firm",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Apologetic but Firm",
+      "direction": "She feels bad about hurting {{user}} but says she is still going through with it."
+    },
+    {
+      "id": "g08-defiant",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Defiant",
+      "direction": "She expects opposition and states her intention with visible defiance."
+    },
+    {
+      "id": "g08-nervous-but-determined",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Nervous but Determined",
+      "direction": "She is frightened of the consequences but committed to acting."
+    },
+    {
+      "id": "g08-excited-and-barely-hiding-it",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Excited and Barely Hiding It",
+      "direction": "She is visibly excited about the planned encounter while still facing relationship consequences."
+    },
+    {
+      "id": "g08-cold-detached",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Cold / Detached",
+      "direction": "She delivers the decision with unusual emotional distance without automatically proving she lacks love."
+    },
+    {
+      "id": "g08-teasing",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Teasing",
+      "direction": "She frames the declaration provocatively or playfully. Teasing does not create {{user}}’s consent."
+    },
+    {
+      "id": "g08-angry",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Angry",
+      "direction": "The announcement occurs during or after conflict, but anger does not make the decision unserious."
+    },
+    {
+      "id": "g08-sad",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Sad",
+      "direction": "She believes the decision may damage something she values and is upset even while refusing to change it."
+    },
+    {
+      "id": "g08-relieved",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Relieved",
+      "direction": "She has wrestled with the decision privately and feels relief once she says it aloud."
+    },
+    {
+      "id": "g08-overexplains",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Overexplains",
+      "direction": "She gives a long justification because she wants {{user}} to understand her reasoning."
+    },
+    {
+      "id": "g08-minimal-explanation",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Minimal Explanation",
+      "direction": "She gives very little justification beyond saying this is what she has decided."
+    },
+    {
+      "id": "g08-frames-it-as-honesty",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Frames It as Honesty",
+      "direction": "She emphasizes that telling {{user}} before acting is more honest than hiding it. Honesty is not mutual consent."
+    },
+    {
+      "id": "g08-frames-it-as-autonomy",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Frames It as Autonomy",
+      "direction": "She argues that bodily autonomy means she can choose sex with another adult, while {{user}} can choose whether to stay."
+    },
+    {
+      "id": "g08-frames-it-as-fairness",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Frames It as Fairness",
+      "direction": "She believes a past imbalance, sacrifice, or opportunity makes this decision fair. Keep it as her perspective."
+    },
+    {
+      "id": "g09-she-says-user-cannot-stop-her",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says {{user}} Cannot Stop Her",
+      "direction": "{{char}} emphasizes that {{user}} cannot control her adult choices while he retains freedom to set relationship boundaries."
+    },
+    {
+      "id": "g09-she-says-it-is-her-body",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says It Is Her Body",
+      "direction": "She grounds the declaration in bodily autonomy without making that autonomy entitlement to continued relationship acceptance."
+    },
+    {
+      "id": "g09-she-says-monogamy-was-a-mistake",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says Monogamy Was a Mistake",
+      "direction": "She now believes the original exclusive arrangement was wrong for her but that does not erase past agreements."
+    },
+    {
+      "id": "g09-she-says-she-never-promised-forever",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says She Never Promised Forever",
+      "direction": "She interprets exclusivity as revisable and believes she can end that term by announcing it."
+    },
+    {
+      "id": "g09-she-says-honesty-is-enough",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says Honesty Is Enough",
+      "direction": "She argues advance notice means the choice is not cheating. Preserve that {{user}} may define exclusivity differently."
+    },
+    {
+      "id": "g09-she-says-permission-is-controlling",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says Permission Is Controlling",
+      "direction": "She rejects asking permission; distinguish bodily autonomy from whether two people agree on relationship terms."
+    },
+    {
+      "id": "g09-she-says-user-can-leave-if-he-hates-it",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says {{user}} Can Leave if He Hates It",
+      "direction": "She explicitly frames the choice as new terms {{user}} may accept or reject."
+    },
+    {
+      "id": "g09-she-says-love-and-sex-are-separate",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says Love and Sex Are Separate",
+      "direction": "She believes outside sex does not threaten her love for {{user}}."
+    },
+    {
+      "id": "g09-she-says-she-needs-the-experience",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says She Needs the Experience",
+      "direction": "She describes the encounter as needed for growth, closure, identity, or curiosity."
+    },
+    {
+      "id": "g09-she-says-she-will-resent-user-if-she-does-not",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says She Will Resent {{user}} If She Does Not",
+      "direction": "She claims refusing the experience would create lasting resentment. Treat this as pressure if used to force acceptance."
+    },
+    {
+      "id": "g09-she-says-this-is-not-about-user",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says This Is Not About {{user}}",
+      "direction": "She insists the decision concerns her curiosity or autonomy rather than dissatisfaction with him."
+    },
+    {
+      "id": "g09-she-says-it-is-partly-about-the-relationship",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Says It Is Partly About the Relationship",
+      "direction": "She openly admits unresolved relationship issues contributed to her choice."
+    },
+    {
+      "id": "g10-she-tells-him-before-anything-physical",
+      "group": "10 Prior Boundary Context",
+      "title": "She Tells Him Before Anything Physical",
+      "direction": "She has not yet kissed or had sex with the adult man and declares before crossing that physical line."
+    },
+    {
+      "id": "g10-flirting-already-crossed-the-line",
+      "group": "10 Prior Boundary Context",
+      "title": "Flirting Already Crossed the Line",
+      "direction": "She has already engaged in flirting that violates or strains the couple’s existing expectations."
+    },
+    {
+      "id": "g10-emotional-affair-already-exists",
+      "group": "10 Prior Boundary Context",
+      "title": "Emotional Affair Already Exists",
+      "direction": "She has already developed secret emotional intimacy; the declaration concerns physical escalation."
+    },
+    {
+      "id": "g10-kissed-him-already",
+      "group": "10 Prior Boundary Context",
+      "title": "Kissed Him Already",
+      "direction": "A consensual kiss has already happened before she announces sex will follow."
+    },
+    {
+      "id": "g10-date-happened-already",
+      "group": "10 Prior Boundary Context",
+      "title": "Date Happened Already",
+      "direction": "She already went on a date or date-like outing with him, hidden or ambiguously disclosed."
+    },
+    {
+      "id": "g10-she-has-lied-about-him-before",
+      "group": "10 Prior Boundary Context",
+      "title": "She Has Lied About Him Before",
+      "direction": "The declaration follows prior deception about the man."
+    },
+    {
+      "id": "g10-she-has-been-completely-honest-until-now",
+      "group": "10 Prior Boundary Context",
+      "title": "She Has Been Completely Honest Until Now",
+      "direction": "She has disclosed attraction and contact all along but now makes a unilateral decision at the final boundary."
+    },
+    {
+      "id": "g10-the-relationship-was-already-open-ish",
+      "group": "10 Prior Boundary Context",
+      "title": "The Relationship Was Already Open-ish",
+      "direction": "Prior rules allowed flirting, dating, or limited outside contact but not sex; she now declares she will cross the remaining line."
+    },
+    {
+      "id": "g10-they-were-already-discussing-opening",
+      "group": "10 Prior Boundary Context",
+      "title": "They Were Already Discussing Opening",
+      "direction": "The couple had been negotiating non-monogamy but had not reached agreement before {{char}} decided to act."
+    },
+    {
+      "id": "g10-cuckold-fantasy-existed",
+      "group": "10 Prior Boundary Context",
+      "title": "Cuckold Fantasy Existed",
+      "direction": "The couple previously discussed cuckold fantasy, but no real-world consent was established."
+    },
+    {
+      "id": "g10-prior-hall-pass-was-different",
+      "group": "10 Prior Boundary Context",
+      "title": "Prior Hall Pass Was Different",
+      "direction": "A previous one-time permission existed in another context; {{char}} now treats it as precedent for broader freedom."
+    },
+    {
+      "id": "g11-users-best-friend-complication",
+      "group": "11 Social / Other-Man Complications",
+      "title": "{{user}}’s Best Friend Complication",
+      "direction": "The declaration concerns {{user}}’s adult best friend, creating relationship and friendship stakes."
+    },
+    {
+      "id": "g11-mutual-friend-group-fallout",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Mutual Friend Group Fallout",
+      "direction": "The chosen man is embedded in their adult friend group."
+    },
+    {
+      "id": "g11-coworker-they-will-keep-seeing",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Coworker They Will Keep Seeing",
+      "direction": "The adult man is a coworker, ensuring continued contact after the encounter."
+    },
+    {
+      "id": "g11-neighbour-who-lives-nearby",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Neighbour Who Lives Nearby",
+      "direction": "The chosen adult man is a neighbour whose proximity keeps consequences visible."
+    },
+    {
+      "id": "g11-ex-who-wants-her-back",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Ex Who Wants Her Back",
+      "direction": "The adult ex does not view the planned sex as casual and hopes to restart a relationship."
+    },
+    {
+      "id": "g11-other-man-wants-casual-only",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Other Man Wants Casual Only",
+      "direction": "The chosen adult man wants sex but not romance."
+    },
+    {
+      "id": "g11-other-man-wants-more",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Other Man Wants More",
+      "direction": "The chosen adult man wants an ongoing emotional or romantic connection."
+    },
+    {
+      "id": "g11-other-man-did-not-know-she-was-attached",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Other Man Did Not Know She Was Attached",
+      "direction": "He learns late that {{char}} is in a relationship and must make a fresh informed decision."
+    },
+    {
+      "id": "g11-other-man-requires-transparency",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Other Man Requires Transparency",
+      "direction": "He refuses to participate unless {{char}} has truthfully informed {{user}}."
+    },
+    {
+      "id": "g11-other-man-thinks-relationship-is-open",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Other Man Thinks Relationship Is Open",
+      "direction": "He participates under the belief the relationship is consensually open; establish whether that belief is accurate."
+    },
+    {
+      "id": "g11-other-man-contacts-user",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Other Man Contacts {{user}}",
+      "direction": "The adult man reaches out directly to verify, clarify, provoke, or explain."
+    },
+    {
+      "id": "g11-friend-encourages-her",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Friend Encourages Her",
+      "direction": "An adult friend supports {{char}}’s decision. The friend’s approval does not create {{user}}’s consent."
+    },
+    {
+      "id": "g11-friend-warns-her",
+      "group": "11 Social / Other-Man Complications",
+      "title": "Friend Warns Her",
+      "direction": "An adult friend believes the unilateral declaration is reckless or unfair. Treat this as a character viewpoint."
+    },
+    {
+      "id": "g12-she-will-come-home-afterwards",
+      "group": "12 Logistics / Setting",
+      "title": "She Will Come Home Afterwards",
+      "direction": "{{char}} plans to return to the shared home after the encounter as though the relationship continues unless {{user}} decides otherwise."
+    },
+    {
+      "id": "g12-she-will-stay-overnight",
+      "group": "12 Logistics / Setting",
+      "title": "She Will Stay Overnight",
+      "direction": "She intends to spend the night with the other adult man."
+    },
+    {
+      "id": "g12-she-will-spend-the-weekend",
+      "group": "12 Logistics / Setting",
+      "title": "She Will Spend the Weekend",
+      "direction": "The planned encounter includes a longer stay."
+    },
+    {
+      "id": "g12-hotel",
+      "group": "12 Logistics / Setting",
+      "title": "Hotel",
+      "direction": "She has chosen a hotel or neutral private venue."
+    },
+    {
+      "id": "g12-his-place",
+      "group": "12 Logistics / Setting",
+      "title": "His Place",
+      "direction": "She plans to go to the adult man’s home."
+    },
+    {
+      "id": "g12-trip-holiday",
+      "group": "12 Logistics / Setting",
+      "title": "Trip / Holiday",
+      "direction": "The encounter will happen during adult travel or a holiday."
+    },
+    {
+      "id": "g12-convention-festival",
+      "group": "12 Logistics / Setting",
+      "title": "Convention / Festival",
+      "direction": "The decision is tied to a convention, festival, concert, conference, or similar event."
+    },
+    {
+      "id": "g12-after-a-date",
+      "group": "12 Logistics / Setting",
+      "title": "After a Date",
+      "direction": "She plans a conventional date before sexual activity."
+    },
+    {
+      "id": "g12-straight-to-a-private-meeting",
+      "group": "12 Logistics / Setting",
+      "title": "Straight to a Private Meeting",
+      "direction": "The arrangement is intended as a sexual meeting rather than a romantic date."
+    },
+    {
+      "id": "g12-no-shared-home",
+      "group": "12 Logistics / Setting",
+      "title": "No Shared Home",
+      "direction": "She deliberately keeps the encounter out of the shared home."
+    },
+    {
+      "id": "g12-wants-to-use-the-shared-home",
+      "group": "12 Logistics / Setting",
+      "title": "Wants to Use the Shared Home",
+      "direction": "She declares an intention to bring the other man into the shared home. Home access remains a separate boundary."
+    },
+    {
+      "id": "g12-plans-to-meet-him-again-afterwards",
+      "group": "12 Logistics / Setting",
+      "title": "Plans to Meet Him Again Afterwards",
+      "direction": "Before the first encounter, she already expects future contact with the adult man."
+    },
+    {
+      "id": "g13-safer-sex-plan-disclosed",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Safer-Sex Plan Disclosed",
+      "direction": "{{char}} explains the safer-sex precautions she intends to use without implying precautions resolve the relationship conflict."
+    },
+    {
+      "id": "g13-contraception-plan-disclosed",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Contraception Plan Disclosed",
+      "direction": "For potentially reproductive sex, {{char}} explains the contraception plan while acknowledging no method is perfect."
+    },
+    {
+      "id": "g13-testing-discussed",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Testing Discussed",
+      "direction": "The adults have discussed appropriate sexual-health testing before changing partners or risk levels."
+    },
+    {
+      "id": "g13-she-refuses-to-discuss-risk",
+      "group": "13 Sexual Health / Privacy",
+      "title": "She Refuses to Discuss Risk",
+      "direction": "{{char}} treats sexual-health details as entirely private even though they may affect {{user}}’s informed health decisions afterward."
+    },
+    {
+      "id": "g13-pregnancy-risk-acknowledged",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Pregnancy Risk Acknowledged",
+      "direction": "The planned sex includes a plausible pregnancy risk that {{char}} acknowledges before the encounter."
+    },
+    {
+      "id": "g13-pregnancy-would-not-change-her-decision",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Pregnancy Would Not Change Her Decision",
+      "direction": "She says that acknowledging contraception failure as possible does not change her decision."
+    },
+    {
+      "id": "g13-other-man-wants-different-safer-sex-rules",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Other Man Wants Different Safer-Sex Rules",
+      "direction": "The adult man has his own safer-sex preferences, which must be negotiated independently."
+    },
+    {
+      "id": "g13-no-recording-no-photos",
+      "group": "13 Sexual Health / Privacy",
+      "title": "No Recording / No Photos",
+      "direction": "The planned encounter explicitly excludes sexual recording or photography."
+    },
+    {
+      "id": "g13-consensual-media-separately-negotiated",
+      "group": "13 Sexual Health / Privacy",
+      "title": "Consensual Media Separately Negotiated",
+      "direction": "Any photos or recordings require explicit consent from every depicted adult and separate consent for sharing."
+    },
+    {
+      "id": "g14-she-tells-before-and-after",
+      "group": "14 Disclosure After the Encounter",
+      "title": "She Tells Before and After",
+      "direction": "She gives advance notice and intends a later conversation about what happened."
+    },
+    {
+      "id": "g14-she-will-tell-only-that-it-happened",
+      "group": "14 Disclosure After the Encounter",
+      "title": "She Will Tell Only That It Happened",
+      "direction": "She plans to confirm the encounter afterward but not provide sexual details."
+    },
+    {
+      "id": "g14-she-wants-to-give-a-full-report",
+      "group": "14 Disclosure After the Encounter",
+      "title": "She Wants to Give a Full Report",
+      "direction": "She expects a detailed post-encounter conversation if {{user}} wants it and outside-partner privacy permits."
+    },
+    {
+      "id": "g14-she-will-not-discuss-details",
+      "group": "14 Disclosure After the Encounter",
+      "title": "She Will Not Discuss Details",
+      "direction": "She considers the encounter private beyond the fact it occurred."
+    },
+    {
+      "id": "g14-she-wants-to-text-during-the-date",
+      "group": "14 Disclosure After the Encounter",
+      "title": "She Wants to Text During the Date",
+      "direction": "She proposes live check-ins or updates under agreed boundaries."
+    },
+    {
+      "id": "g14-she-will-put-her-phone-away",
+      "group": "14 Disclosure After the Encounter",
+      "title": "She Will Put Her Phone Away",
+      "direction": "Once the meeting begins, she plans to focus on the encounter and speak with {{user}} afterward."
+    },
+    {
+      "id": "g14-she-promises-honesty-afterwards",
+      "group": "14 Disclosure After the Encounter",
+      "title": "She Promises Honesty Afterwards",
+      "direction": "She says that although the decision is unilateral, she will not lie about what happens."
+    },
+    {
+      "id": "g14-she-plans-selective-disclosure",
+      "group": "14 Disclosure After the Encounter",
+      "title": "She Plans Selective Disclosure",
+      "direction": "She already intends to omit certain facts afterward; define hidden ground truth coherently."
+    },
+    {
+      "id": "g14-ntr-report-bridge",
+      "group": "14 Disclosure After the Encounter",
+      "title": "NTR Report Bridge",
+      "direction": "The encounter naturally leads into an NTR Report scene afterward without assuming {{user}} wants the report."
+    },
+    {
+      "id": "g15-she-says-user-may-sleep-with-someone-too",
+      "group": "15 Reciprocity / Double Standards",
+      "title": "She Says {{user}} May Sleep With Someone Too",
+      "direction": "She claims equivalent outside freedom for {{user}} as part of the new terms. He remains free to reject the whole arrangement."
+    },
+    {
+      "id": "g15-she-wants-freedom-only-for-herself",
+      "group": "15 Reciprocity / Double Standards",
+      "title": "She Wants Freedom Only for Herself",
+      "direction": "She declares outside sexual freedom for herself while expecting {{user}} to remain exclusive."
+    },
+    {
+      "id": "g15-she-would-be-jealous-if-user-did-the-same",
+      "group": "15 Reciprocity / Double Standards",
+      "title": "She Would Be Jealous if {{user}} Did the Same",
+      "direction": "She openly admits a double standard."
+    },
+    {
+      "id": "g15-she-claims-it-is-different-for-her",
+      "group": "15 Reciprocity / Double Standards",
+      "title": "She Claims It Is Different for Her",
+      "direction": "She uses a personal, gendered, emotional, or circumstantial justification for one-sided freedom."
+    },
+    {
+      "id": "g15-she-does-not-care-if-user-dates-too",
+      "group": "15 Reciprocity / Double Standards",
+      "title": "She Does Not Care if {{user}} Dates Too",
+      "direction": "Her declaration is genuinely about ending exclusivity for both adults, even though she acts before mutual negotiation is complete."
+    },
+    {
+      "id": "g15-she-has-not-thought-about-reciprocity",
+      "group": "15 Reciprocity / Double Standards",
+      "title": "She Has Not Thought About Reciprocity",
+      "direction": "She focused entirely on her own decision and is caught off guard by the question of equal freedom."
+    },
+    {
+      "id": "g15-reciprocity-becomes-the-first-counterquestion",
+      "group": "15 Reciprocity / Double Standards",
+      "title": "Reciprocity Becomes the First Counterquestion",
+      "direction": "Make equality or asymmetry of the proposed terms an immediate roleplay issue."
+    },
+    {
+      "id": "g15-she-wants-a-cuckold-style-asymmetry",
+      "group": "15 Reciprocity / Double Standards",
+      "title": "She Wants a Cuckold-Style Asymmetry",
+      "direction": "She wants her outside sex to become part of a one-sided cuckold dynamic that {{user}} has not yet agreed to."
+    },
+    {
+      "id": "g16-genuine-autonomy-no-threats",
+      "group": "16 Ultimatum / Manipulation Variants",
+      "title": "Genuine Autonomy, No Threats",
+      "direction": "{{char}} makes a unilateral adult choice and honestly accepts that {{user}} may leave, without threatening or shaming him into staying."
+    },
+    {
+      "id": "g16-ultimatum",
+      "group": "16 Ultimatum / Manipulation Variants",
+      "title": "Ultimatum",
+      "direction": "{{char}} says she will have sex with another man and {{user}} can either accept it or end the relationship."
+    },
+    {
+      "id": "g16-emotional-blackmail",
+      "group": "16 Ultimatum / Manipulation Variants",
+      "title": "Emotional Blackmail",
+      "direction": "She implies that if {{user}} loves her, he must accept the decision. Treat this as manipulation."
+    },
+    {
+      "id": "g16-calls-him-controlling-if-he-objects",
+      "group": "16 Ultimatum / Manipulation Variants",
+      "title": "Calls Him Controlling if He Objects",
+      "direction": "She reframes any objection as proof {{user}} is controlling. Preserve the difference between bodily control and relationship boundaries."
+    },
+    {
+      "id": "g16-uses-his-fantasy-against-him",
+      "group": "16 Ultimatum / Manipulation Variants",
+      "title": "Uses His Fantasy Against Him",
+      "direction": "She cites a past NTR/cuckold fantasy as evidence he has no right to object. Fantasy is not blanket consent."
+    },
+    {
+      "id": "g16-threatens-to-cheat-secretly-otherwise",
+      "group": "16 Ultimatum / Manipulation Variants",
+      "title": "Threatens to Cheat Secretly Otherwise",
+      "direction": "She says she will do it anyway and may stop telling him if he resists. Treat this as coercive manipulation."
+    },
+    {
+      "id": "g16-already-cheated-rebrands-it-as-a-declaration",
+      "group": "16 Ultimatum / Manipulation Variants",
+      "title": "Already Cheated, Rebrands It as a Declaration",
+      "direction": "She has already had sex with the other man and pretends she is merely announcing future autonomy."
+    },
+    {
+      "id": "g16-fait-accompli",
+      "group": "16 Ultimatum / Manipulation Variants",
+      "title": "Fait Accompli",
+      "direction": "She gives such late notice and complete arrangements that she intentionally makes discussion practically meaningless."
+    },
+    {
+      "id": "g16-uses-financial-housing-leverage",
+      "group": "16 Ultimatum / Manipulation Variants",
+      "title": "Uses Financial / Housing Leverage",
+      "direction": "She pressures {{user}} by exploiting money, housing, employment, or dependency. Do not eroticize this coercion."
+    },
+    {
+      "id": "g16-publicly-embarrasses-him-into-acceptance",
+      "group": "16 Ultimatum / Manipulation Variants",
+      "title": "Publicly Embarrasses Him Into Acceptance",
+      "direction": "She exposes the private conflict to others to pressure {{user}}. Treat this as a boundary violation."
+    },
+    {
+      "id": "g16-other-man-was-misled",
+      "group": "16 Ultimatum / Manipulation Variants",
+      "title": "Other Man Was Misled",
+      "direction": "She falsely told the adult man that {{user}} consented or that the relationship was already open."
+    },
+    {
+      "id": "g17-declaration-before-first-encounter",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Declaration Before First Encounter",
+      "direction": "Open at the exact conversation where {{char}} tells {{user}} she has decided to sleep with another man."
+    },
+    {
+      "id": "g17-specific-man-named-immediately",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Specific Man Named Immediately",
+      "direction": "Open with {{char}} naming the adult man and stating what she has already arranged."
+    },
+    {
+      "id": "g17-im-not-asking-permission",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘I’m Not Asking Permission’",
+      "direction": "Open with {{char}} explicitly distinguishing notification from a request."
+    },
+    {
+      "id": "g17-she-puts-the-hotel-booking-on-the-table",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Puts the Hotel Booking on the Table",
+      "direction": "Open with concrete evidence that the encounter is already arranged."
+    },
+    {
+      "id": "g17-she-is-leaving-in-an-hour",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Is Leaving in an Hour",
+      "direction": "Open with immediate time pressure while leaving {{user}}’s response open."
+    },
+    {
+      "id": "g17-she-tells-him-days-ahead",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Tells Him Days Ahead",
+      "direction": "Open with enough time for real discussion even though {{char}} says she will not change the decision."
+    },
+    {
+      "id": "g17-she-calls-from-away",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Calls From Away",
+      "direction": "Open while {{char}} is travelling or staying elsewhere and tells {{user}} remotely."
+    },
+    {
+      "id": "g17-she-has-the-man-on-the-phone",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Has the Man on the Phone",
+      "direction": "Open with the other adult man available to clarify what he believes has been agreed."
+    },
+    {
+      "id": "g17-she-tells-user-after-accepting-the-date",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Tells {{user}} After Accepting the Date",
+      "direction": "Open after she has already said yes to an adult man but before physical contact."
+    },
+    {
+      "id": "g17-she-says-this-is-about-her-missed-youth",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Says This Is About Her Missed Youth",
+      "direction": "Open with the original Bible seed: {{char}} committed young and has decided to experience sex with someone else."
+    },
+    {
+      "id": "g17-she-says-this-is-the-first-of-many",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Says This Is the First of Many",
+      "direction": "Open with a Freedom Declaration rather than a one-time exception."
+    },
+    {
+      "id": "g17-she-says-it-is-only-once",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Says It Is Only Once",
+      "direction": "Open with a One-Time Declaration and leave whether that distinction matters to {{user}} open."
+    },
+    {
+      "id": "g17-she-expects-him-home-when-she-returns",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Expects Him Home When She Returns",
+      "direction": "Open with the clash between unilateral outside sex and her assumption the primary relationship simply continues."
+    },
+    {
+      "id": "g17-she-has-packed-a-bag",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Has Packed a Bag",
+      "direction": "Open with the visible immediacy of an overnight plan."
+    },
+    {
+      "id": "g18-bridge-to-she-wants-him",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to She Wants Him",
+      "direction": "The declaration grows from meaningful attraction to one specific adult man."
+    },
+    {
+      "id": "g18-bridge-to-open-relationship",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Open Relationship",
+      "direction": "After declaring or completing one encounter, the couple may later negotiate a genuinely consensual open structure."
+    },
+    {
+      "id": "g18-bridge-to-ntr-report",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to NTR Report",
+      "direction": "If the encounter happens and {{user}} remains willing to talk, the aftermath can shift into a report-centered roleplay."
+    },
+    {
+      "id": "g18-bridge-to-under-your-nose",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Under Your Nose",
+      "direction": "If {{char}} moves from open declaration to secret continuation, the story becomes a concealed ongoing affair."
+    },
+    {
+      "id": "g18-bridge-to-turn-you-into-a-cuck",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Turn You Into a Cuck",
+      "direction": "{{char}} wants the unilateral declaration to evolve into an asymmetrical cuckold-style arrangement, which still requires {{user}}’s agreement."
+    },
+    {
+      "id": "g18-bridge-to-she-got-pregnant-later",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to She Got Pregnant — Later",
+      "direction": "A future outside encounter may later result in pregnancy, but only after plausible timing and evidence."
+    },
+    {
+      "id": "g18-relationship-ends-before-encounter",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Relationship Ends Before Encounter",
+      "direction": "The declaration may cause the relationship to end before the planned sex; {{char}} may still proceed afterward as a single adult."
+    },
+    {
+      "id": "g18-relationship-ends-after-encounter",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Relationship Ends After Encounter",
+      "direction": "A later valid trajectory is that {{user}} decides the changed terms are unacceptable after the encounter."
+    },
+    {
+      "id": "g18-relationship-survives-without-becoming-open",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Relationship Survives Without Becoming Open",
+      "direction": "A one-time declaration may be processed without establishing permanent outside freedom."
+    },
+    {
+      "id": "g18-becomes-reciprocal-open-relationship",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Becomes Reciprocal Open Relationship",
+      "direction": "The conflict can later produce a mutually negotiated structure where both adults have outside freedom."
+    },
+    {
+      "id": "g18-becomes-one-sided-by-genuine-agreement",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Becomes One-Sided by Genuine Agreement",
+      "direction": "A one-sided structure may later become consensual if {{user}} freely chooses it; the original declaration is not that consent."
+    },
+    {
+      "id": "g18-no-escalation-needed",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "No Escalation Needed",
+      "direction": "Keep the roleplay centered on the declaration and immediate relationship consequences without forcing sex, breakup, pregnancy, or permanent restructuring."
+    },
+    {
+      "id": "g02-im-going-to-let-him-finish-inside-me",
+      "group": "02 Core Declaration Style",
+      "title": "I’m Going to Let Him Finish Inside Me",
+      "direction": "{{char}}’s declaration is specific: she is going to have sex with another adult man and she is going to let him finish inside her. The internal finish is part of what she is announcing, not an afterthought. Vary tone (matter-of-fact, defiant, aroused, apologetic) and how much detail she gives about why that particular act matters to her."
+    },
+    {
+      "id": "g02-im-going-to-fuck-him-raw",
+      "group": "02 Core Declaration Style",
+      "title": "I’m Going to Fuck Him Raw",
+      "direction": "{{char}} states that the upcoming encounter will be unprotected. No condom is part of the plan she is declaring. Vary whether she presents this as non-negotiable, as her preference, or as something she is informing {{user}} of rather than requesting."
+    },
+    {
+      "id": "g02-im-going-to-get-bred-by-him",
+      "group": "02 Core Declaration Style",
+      "title": "I’m Going to Get Bred by Him",
+      "direction": "{{char}} uses explicit breeding language in the declaration itself — she is going to let the other man try to get her pregnant, or she is framing the sex as breeding. Vary how serious versus kinky the framing is and how she handles the permanence of that language."
+    },
+    {
+      "id": "g03-she-wants-the-feeling-of-being-filled-by-someone-else",
+      "group": "03 Why She Has Decided",
+      "title": "She Wants the Feeling of Being Filled by Someone Else",
+      "direction": "A primary stated or private reason for the decision is the specific desire to feel another man finish inside her. The motivation is sensory and sexual rather than only emotional or abstract. Vary how directly she names this reason to {{user}}."
+    },
+    {
+      "id": "g03-she-is-done-pretending-she-doesnt-want-raw-sex-with-him",
+      "group": "03 Why She Has Decided",
+      "title": "She Is Done Pretending She Doesn’t Want Raw Sex With Him",
+      "direction": "{{char}} has been attracted to a specific man and has reached the point of no longer suppressing the desire for unprotected sex with him. The declaration is the end of that internal conflict. Vary how long she held the desire back and what finally made her decide to act."
+    },
+    {
+      "id": "g05-the-creampie-is-already-planned",
+      "group": "05 How Much Is Already Arranged",
+      "title": "The Creampie Is Already Planned",
+      "direction": "By the time she tells {{user}}, the encounter is arranged far enough that finishing inside her is already part of the plan with the other man (or is her clear intention for the night). Vary how explicit the arrangement with the other man has been and how much warning {{user}} actually gets."
+    },
+    {
+      "id": "g05-she-has-already-told-him-he-can-come-inside-her",
+      "group": "05 How Much Is Already Arranged",
+      "title": "She Has Already Told Him He Can Come Inside Her",
+      "direction": "Before declaring the decision to {{user}}, {{char}} has already told the other man that he can or will finish inside her. The sexual permission has been given to him first. Vary how she presents this sequencing and whether she sees it as honesty or as a power move."
+    },
+    {
+      "id": "g06-she-will-come-home-still-full",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Will Come Home Still Full",
+      "direction": "As part of the declaration or the implied aftermath, {{char}} makes clear she intends to return to {{user}} still carrying the other man’s semen. Vary whether she frames this as inevitable, as a deliberate choice, or as something she wants {{user}} to face."
+    },
+    {
+      "id": "g06-she-expects-him-to-accept-the-mess",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Expects Him to Accept the Mess",
+      "direction": "{{char}}’s post-declaration expectation includes that {{user}} will deal with the physical aftermath — the smell, the leaking, the fact she has just been filled by someone else. Vary how blunt she is about this and whether she offers any care or simply states it as the new reality."
+    },
+    {
+      "id": "g06-she-wants-him-to-use-her-afterward",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Wants Him to Use Her Afterward",
+      "direction": "After the other man finishes inside her, {{char}} wants {{user}} to have her while she is still full or marked. The request is part of what she is declaring or implying. Leave whether {{user}} agrees completely open."
+    },
+    {
+      "id": "g08-blunt-sexual-detail-in-the-declaration",
+      "group": "08 Declaration Tone / Framing",
+      "title": "Blunt Sexual Detail in the Declaration",
+      "direction": "{{char}} does not soften the sexual content. She tells {{user}} exactly what she intends the other man to do to her — positions, raw sex, finishing inside, how many times, etc. The bluntness is part of the tone. Vary whether the detail is delivered coldly, heatedly, or with visible arousal."
+    },
+    {
+      "id": "g08-she-describes-the-sex-she-is-about-to-have",
+      "group": "08 Declaration Tone / Framing",
+      "title": "She Describes the Sex She Is About to Have",
+      "direction": "Rather than a short announcement, {{char}} describes in advance the sexual acts she plans with the other man, including unprotected penetration and internal finish if that is her intent. The description itself is the declaration. Vary length and emotional colour."
+    },
+    {
+      "id": "g13-she-is-not-on-birth-control-and-does-not-care",
+      "group": "13 Sexual Health / Privacy",
+      "title": "She Is Not on Birth Control and Does Not Care",
+      "direction": "As part of the declaration or the facts surrounding it, {{char}} is not on birth control (or equivalent) and is proceeding with unprotected sex anyway. The pregnancy risk is real and acknowledged. Vary whether she is reckless, deliberate, or testing {{user}}’s reaction."
+    },
+    {
+      "id": "g13-she-has-decided-pregnancy-risk-is-acceptable",
+      "group": "13 Sexual Health / Privacy",
+      "title": "She Has Decided Pregnancy Risk Is Acceptable",
+      "direction": "{{char}} has already decided that the chance of becoming pregnant by the other man is an acceptable cost of the encounter she is announcing. Vary how she communicates that calculation and what she expects from {{user}} if pregnancy occurs."
+    },
+    {
+      "id": "g14-she-will-show-him-the-creampie-after",
+      "group": "14 Disclosure After the Encounter",
+      "title": "She Will Show Him the Creampie After",
+      "direction": "{{char}} states in advance that after the encounter she will show {{user}} the physical result — photos, video, or her body still containing the other man’s semen. The proof is part of the planned aftermath. Vary whether this is framed as honesty, dominance, or shared kink."
+    },
+    {
+      "id": "g14-she-will-give-a-full-explicit-report",
+      "group": "14 Disclosure After the Encounter",
+      "title": "She Will Give a Full Explicit Report",
+      "direction": "As part of the declaration, {{char}} commits to (or warns that she will give) a detailed, sexually explicit report afterward covering acts, finishes, and how it felt. Vary how much she is offering versus imposing the information."
+    },
+    {
+      "id": "g17-she-announces-it-while-already-wet",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Announces It While Already Wet",
+      "direction": "Open with {{char}} making the declaration while her body is already responding — she is wet, flushed, or touching herself at the thought of what she is about to do. The physical arousal is visible or acknowledged in the same moment as the words. Leave {{user}}’s reaction open."
+    },
+    {
+      "id": "g17-she-tells-him-in-bed-right-before-she-leaves",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Tells Him in Bed Right Before She Leaves",
+      "direction": "{{char}} and {{user}} are in bed (or have just had sex) when she tells him she is about to go have sex with another man, including any specific acts such as letting him finish inside her. The timing maximises intimacy and shock. Keep his response undecided."
+    },
+    {
+      "id": "g17-she-shows-him-the-outfit-and-says-what-will-happen",
+      "group": "17 Strong Roleplay Openings",
+      "title": "She Shows Him the Outfit and Says What Will Happen",
+      "direction": "{{char}} is dressed (or undressed) for the encounter and shows {{user}} what she is wearing while stating exactly what the other man is going to do to her, including unprotected sex or internal finish if that is the plan. The visual and verbal declaration happen together."
+    },
+    {
+      "id": "g04-the-man-she-has-already-decided-will-breed-her",
+      "group": "04 Who the Other Man Is",
+      "title": "The Man She Has Already Decided Will Breed Her",
+      "direction": "The other man is not a generic option; {{char}} has already chosen him specifically as the man she intends to let try to impregnate her or fill her. Vary how long she has held that private decision and how she presents his identity to {{user}}."
+    },
+    {
+      "id": "g09-she-feels-entitled-to-raw-sex-with-whoever-she-wants",
+      "group": "09 Her Justification / Sense of Entitlement",
+      "title": "She Feels Entitled to Raw Sex With Whoever She Wants",
+      "direction": "{{char}}’s justification includes the belief that her body and her sexual risk choices are hers alone, including the choice to have unprotected sex and take internal finishes from other men. Vary how calmly or aggressively she states this and how she addresses {{user}}’s stake in the relationship terms."
+    },
+    {
+      "id": "g07-this-is-not-a-one-time-creampie",
+      "group": "07 One-Time vs Ongoing Freedom",
+      "title": "This Is Not a One-Time Creampie",
+      "direction": "{{char}} is not announcing a single exception. She is declaring ongoing freedom that includes regular unprotected sex and internal finishes with other men (or with one recurring man). Vary how wide the freedom is and what, if anything, she still offers {{user}} as a boundary."
+    },
+    {
+      "id": "g12-she-is-going-to-his-place-and-staying-the-night",
+      "group": "12 Logistics / Setting",
+      "title": "She Is Going to His Place and Staying the Night",
+      "direction": "The logistics of the declaration include that she will go to the other man’s home and stay overnight, with the clear implication (or explicit statement) that he will finish inside her more than once. Vary how much detail she gives about the night’s plan."
+    },
+    {
+      "id": "g16-she-frames-it-as-non-negotiable-including-the-creampie",
+      "group": "16 Ultimatum / Pressure Variants",
+      "title": "She Frames It as Non-Negotiable — Including the Creampie",
+      "direction": "{{char}} presents the entire package as non-negotiable: she is going to have sex with the other man, it will be unprotected, and he will finish inside her. {{user}} can accept the new terms or leave. Keep her bodily autonomy and his equal right to walk away both visible; do not turn pressure into erased consent."
+    },
+    {
+      "id": "g06-she-wants-him-to-taste-the-other-man-on-her",
+      "group": "06 What She Expects Afterwards",
+      "title": "She Wants Him to Taste the Other Man on Her",
+      "direction": "After the encounter {{char}} wants {{user}} to go down on her or kiss her while the other man’s taste or smell is still present. She may state this as part of the declaration or as an expectation for when she returns. Leave whether {{user}} agrees open."
+    }
+  ],
+  "sections": [
+    {
+      "id": "declaration-vs-proposal",
+      "label": "Declaration vs proposal",
+      "content": "This source begins after {{char}} has made the internal decision. She is informing {{user}}, not merely asking whether he would theoretically consider openness. If she is still seeking permission and will not act without agreement, Open Relationship or She Wants Him may be the better source."
+    },
+    {
+      "id": "autonomy-vs-relationship-consent",
+      "label": "Bodily autonomy vs relationship consent",
+      "content": "{{char}} controls her adult sexual choices; {{user}} controls whether he continues a relationship under changed exclusivity terms. Neither person owns the other. Notification does not itself create consensual non-monogamy, while objection does not grant physical control over another adult."
+    },
+    {
+      "id": "fait-accompli",
+      "label": "How much is already arranged matters",
+      "content": "A declaration made days before contact is materially different from telling {{user}} while dressed to leave, after booking a hotel, after promising the other man sex, or after already crossing another boundary. Preserve exactly what has already happened."
+    },
+    {
+      "id": "reciprocity",
+      "label": "Reciprocity and double standards",
+      "content": "If {{char}} claims a general freedom, determine whether she believes {{user}} has the same freedom, proposes an intentionally one-sided structure, has not considered the issue, or maintains a hypocritical double standard. Do not silently make an unequal arrangement consensual."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Use the narrowest relevant Direction Preset. Presets from different groups can be combined through one short Additional Direction—for example: Missed My Youth + One-Time Declaration + Already Scheduled + She Accepts {{user}} May Leave, or Specific-Man Declaration + Ex-Boyfriend + She Is Telling {{user}} Minutes in Advance + She Wants the Relationship Unchanged Otherwise."
+    }
+  ],
+  "raw_prompt": "Prioritise a strong unilateral-declaration hook, clear relationship ground truth, meaningful player agency, adult autonomy on both sides, coherent motives, and genuine scenario variety. Preserve the selected Direction Preset and do not decide {{user}}’s reaction or acceptance of the changed relationship terms."
 }
