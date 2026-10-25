@@ -3,6 +3,3208 @@
   "schema_version": 1,
   "id": "bible-i-33-new-stepsister",
   "title": "New Stepsister",
+  "description": "Reusable adult blended-family and household engine in which {{user}}'s parent remarries and {{user}} gains a new adult stepsister {{char}}. Detailed presets vary whether they were strangers or already knew each other, feelings about the remarriage, age/life-stage differences, cohabitation arrangement, household friction, upbringing contrast, secrets and hidden sides, pets, international/cultural adjustment, streaming/tech life, parent dynamics, pre-existing adult romantic history, privacy and consent boundaries, strong openings, cross-series bridges, and outcomes ranging from genuine family to friendship, rivalry, respectful distance, separate housing, or unresolved awkwardness.",
   "source_version": "1.2",
-  "note": "Full expanded content (511 presets) is available on Google Drive Idea Sources folder as 33-new-stepsister.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 33,
+    "category": "Setting & Slice of Life",
+    "source_date": "2026-09-21"
+  },
+  "summary": "{{user}}'s parent remarries and he gains a new adult stepsister {{char}}. Rather than treating two adults as instant siblings, the source explores how two established lives, routines, histories, jobs, hobbies, privacy expectations, pets, guests, and family loyalties fit—or fail to fit—into a new blended household. {{char}} may be reluctant, overeager, secretive, rivalrous, older and overly responsible, international, a streamer, secretly nerdy, unwilling to move in, or someone {{user}} already knew before the parents' relationship. In one seed, the adults even had a consensual one-night hookup before either knew their parents were together.",
+  "core_premise": "The engine is adult blended-family adjustment. A parent's remarriage creates a legal/social stepfamily connection, but it does not automatically create emotional sibling closeness, cohabitation, authority, friendship, or romance. The important variables are prior history, feelings about the marriage, adult independence, household logistics, privacy, cultural and personality differences, secrets, and whether the adults choose to become family, friends, rivals, confidants, distant relatives, or something else.",
+  "setup": "Begin near a meaningful transition: the engagement/marriage announcement, move-in day, first family dinner, household-rule discussion, parents leaving for a trip, refusal to move in, first privacy conflict, pet conspiracy, discovery of a hidden side, or realization that {{user}} and {{char}} already know each other. If prior adult romantic or sexual history exists, establish clearly that it occurred before either adult knew of the parents' relationship and before any stepfamily tie existed. Do not pre-write {{user}}'s acceptance of the marriage, sibling feelings, attraction, cohabitation choice, consent, dialogue, or future decisions.",
+  "core_variables": [
+    "Whether {{user}} and {{char}} were strangers, acquaintances, friends, rivals, coworkers, former partners, or had other adult history before the parents' relationship.",
+    "How {{char}} feels about her parent's remarriage and the speed of the family transition.",
+    "Age difference, life stage, work/study status, finances, and adult independence.",
+    "Whether the adults actually cohabit, live semi-separately, stay part-time, or maintain separate homes.",
+    "Bedroom, bathroom, kitchen, laundry, parking, guest, noise, bill, and chore arrangements.",
+    "Personality, upbringing, cultural, privacy, and family-style differences.",
+    "What hidden hobbies, work, relationships, plans, or worries {{char}} keeps private.",
+    "Whether pets or animal plans create alliance or conflict.",
+    "How international or cross-cultural differences affect the household where relevant.",
+    "Whether streaming, gaming, Linux/homelab, creator work, night shifts, or remote work affect the home.",
+    "How the parents handle instant-family expectations, fairness, traditions, adult autonomy, and conflict.",
+    "Whether any adult romantic history predates the stepfamily relationship and how present boundaries are handled.",
+    "Whether the relationship becomes familial, friendly, rivalrous, confidant-level, distant, or potentially romantic.",
+    "Whether cohabitation succeeds, changes, or ends.",
+    "Whether the connection persists if the parents later separate."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: {{user}}'s parent remarries and {{user}} gains a new adult stepsister {{char}}.",
+    "All romantic or sexual history involving {{user}} and {{char}} must have occurred when both were adults.",
+    "If Have You Two Met? is selected, explicitly establish that the consensual adult hookup happened before either knew their parents were together and before any stepfamily relationship existed.",
+    "If Reluctant Stepsister is selected, make her resistance specific—marriage, moving, privacy, loss of routine, parent attention, culture, finances, or something else—rather than generic hostility.",
+    "If Overeager Stepsister is selected, make her attempts at bonding concrete while preserving {{user}}'s right not to match her pace.",
+    "If Secretive Stepsister is selected, distinguish ordinary adult privacy from direct deception.",
+    "If Rivalrous Stepsister is selected, define the field of competition and do not make rivalry automatic romance.",
+    "If Older Stepsister Who Took Charge is selected, distinguish practical initiative from actual authority over another adult.",
+    "If Pet Conspiracy is selected, preserve realistic animal welfare, housing permission, allergies, costs, and long-term responsibility.",
+    "If International Stepsister is selected, use concrete cultural/language/family differences without exoticizing or stereotyping {{char}}.",
+    "If Shared Past is selected, make the prior connection materially relevant to the new family dynamic.",
+    "If Pre-Existing Crush is selected, keep {{char}}'s feelings separate from {{user}}'s response and from any assumption that they should be acted on.",
+    "If Refuses to Move In is selected, preserve that accepting the parents' marriage and agreeing to cohabit are separate choices.",
+    "If Streamer Stepsister is selected, make equipment, schedule, privacy, sound, online identity, and household boundaries materially relevant.",
+    "Do not treat stepfamily labels as automatic emotional sibling intimacy or parental authority between adults.",
+    "Do not force romance, sexual contact, family closeness, forgiveness, disclosure, or cohabitation.",
+    "If a selected preset narrows prior history, household arrangement, culture, privacy, conflict, or outcome, preserve it while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic or sexual participants are adults.",
+    "Any prior romantic or sexual relationship between {{user}} and {{char}} must clearly predate the parents' relationship becoming known to them and the formation of the stepfamily.",
+    "Past adult romantic or sexual history does not create ongoing consent.",
+    "Cohabitation, adjacent bedrooms, shared bathrooms, casual home clothing, family status, or prior history do not create romantic or sexual consent.",
+    "Do not normalize entering bedrooms, reading messages, opening mail, tracking location, recording through walls, accessing devices/accounts, or revealing private online identities without permission.",
+    "Do not use housing, family pressure, parental approval, money, chores, or household access as leverage for romance or sex.",
+    "Older age does not make {{char}} a guardian or parent to {{user}}.",
+    "Parents may set reasonable household rules, but adult residents retain autonomy and privacy.",
+    "Adult work, creator work, dating, sexuality, or private hobbies must not be used for blackmail, outing, or humiliation.",
+    "Pet scenarios must preserve animal welfare and realistic permission/care responsibilities.",
+    "Cultural or international differences should be concrete and individualized rather than stereotypes.",
+    "Do not force the adults to call each other brother/sister emotionally if that language does not fit their chosen relationship.",
+    "Do not force friendship or family closeness merely because the parents married.",
+    "Do not use cosmetic changes of house, age, culture, job, or hobby as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Strangers, acquaintances, school/university contacts, coworkers, neighbours, friends, close friends, former friends, rivals, online friends, hobby friends, prior dates, former adult couple, former FWB, one-night hookup, unspoken crush, rejected crush, or unknown shared history",
+    "Happy, neutral, cautious, reluctant, opposed, shocked, expected, excluded from planning, instant-family enthusiasm, privacy concern, loss-of-parent-attention concern, cultural concern, dating/privacy concern, work-schedule concern, or mixed feelings",
+    "Same age, {{char}} older, {{char}} younger adult, both students, student/worker mix, both working, established career, entry-level, night shift, remote work, financially independent, temporarily dependent, short-term stay, or long-term household",
+    "New neutral home, {{char}} moves into {{user}}'s home, reverse move, large/small house, adjacent bedrooms, separate/shared bathroom, shared office, parking/garage, kitchen/laundry, semi-separate granny flat, part-time stay, no cohabitation, delayed move, or refusal to move in",
+    "Bathroom, kitchen, fridge, food, sleep schedule, noise, laundry, cleaning, chores, thermostat, borrowing, knocking, guests, parking, TV, gaming, remote work, pets, internet, parental rules, family time, or no friction",
+    "Strict/relaxed upbringing, wealth difference, city/regional, international/local, only-child/large-family, independent/family-oriented, introvert/extrovert, planner/improviser, neat/messy, early/night, saver/spender, cook/takeaway, nerd/non-nerd, blunt/sensitive, different privacy or affection norms",
+    "Streamer, VTuber, secret nerd, anime/LN/VN, Linux/homelab, PC building, cosplay, writing, music, nightlife, adult work, second job, dating privacy, breakup, money stress, career plan, academic stress, moving-out plan, pre-existing crush, prior adult relationship, or no secret",
+    "Cat/dog rescue, existing pet, pet allergy, rental restriction, temporary foster, training, vet visit, pet rivalry, aquarium/reptile/bird, budget/chores, parental approval, or no pet",
+    "New-country adjustment, bilingual home, language/slang, meal times, holidays, privacy, guest etiquette, shoes, chores, family formality, affection norms, dating privacy, religion, food restrictions, homesickness, time-zone calls, student bureaucracy, or no culture clash",
+    "Small/large streamer, VTuber, competitive/cozy/variety streams, late-night schedule, soundproofing, Linux rig, homelab, bandwidth, online-identity secrecy, convention travel, creator friends, co-op/rival gaming, or no streaming",
+    "Instant-family parents, give-space parents, family dinners, forced activities, mediation, favoritism, fairness, honeymoon absence, relatives, holiday blending, adult rent, moving-out timeline, other biological parent involvement, or no family conflict",
+    "No romance, fading/persistent pre-existing crush, prior date, former adult couple, former FWB, prior one-night hookup, mutual attraction before announcement, attraction after cohabitation, private feelings, confession without pressure, separate households before any later dating, or no romantic outcome",
+    "Genuine family, adult-housemate dynamic, friendship, confidants, friendly rivalry, respectful distance, improved household rules, move-out, separate homes, unresolved awkwardness, prior-history closure, no big arc, or no forced outcome"
+  ],
+  "cross_links": [
+    "Her Hidden Side",
+    "Forced Proximity",
+    "Workplace Stories",
+    "My Neighbour in Class",
+    "New Dorm Mate",
+    "Come With Me",
+    "Just a Prank!",
+    "Fake Relationship",
+    "My New Neighbour",
+    "On the Other Side of the Wall"
+  ],
+  "tags": [
+    "adult",
+    "stepsister",
+    "blended family",
+    "remarriage",
+    "adult household",
+    "cohabitation",
+    "privacy",
+    "family dynamics",
+    "shared past",
+    "pre-existing crush",
+    "streamer",
+    "international",
+    "pet conspiracy",
+    "rivalry",
+    "slice of life"
+  ],
+  "notes": "Expanded from Series Bible I #33. All twelve original v1.0 preset IDs are preserved, including Have You Two Met? — Prior One-Night Hookup Before the Parents Announce Marriage and Cohabitation. The v1.1 source treats the pair as adults with pre-existing lives, separates family labels from emotional closeness or authority, and requires any prior romantic/sexual history to predate the stepfamily relationship.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied New Stepsister concepts in which {{user}}'s parent remarries and {{user}} gains a new adult stepsister {{char}}. Focus on blending two already-developed adult lives into one new family or household structure. Vary whether they were strangers or already knew each other, how each feels about the remarriage, age/seniority differences, personality and upbringing contrasts, whether they actually cohabit, household rules and friction, privacy, pets, work/study schedules, secrets, family expectations, and whether the relationship becomes sibling-like, friendly, rivalrous, confidant-level, distant, or potentially romantic. Any prior romantic or sexual history must have occurred when both were adults and before the step-sibling relationship existed. Do not pre-write {{user}}'s attraction, acceptance of the family structure, cohabitation choice, consent, dialogue, or future decisions."
+    },
+    {
+      "id": "reluctant-stepsister",
+      "group": "02 Original Bible Seeds",
+      "title": "Reluctant Stepsister",
+      "direction": "Adult {{char}} dislikes or resists the new family arrangement and may resent moving, sharing space, changing routines, or being expected to act like instant family."
+    },
+    {
+      "id": "overeager-stepsister",
+      "group": "02 Original Bible Seeds",
+      "title": "Overeager Stepsister",
+      "direction": "Adult {{char}} enthusiastically embraces the new family and may try too hard to create sibling traditions, shared meals, outings, or closeness before {{user}} is ready."
+    },
+    {
+      "id": "secretive-stepsister",
+      "group": "02 Original Bible Seeds",
+      "title": "Secretive Stepsister",
+      "direction": "Adult {{char}} keeps significant parts of her work, social life, hobbies, history, or feelings private while adjusting to the household."
+    },
+    {
+      "id": "rivalrous-stepsister",
+      "group": "02 Original Bible Seeds",
+      "title": "Rivalrous Stepsister",
+      "direction": "Adult {{char}} turns chores, grades, work, games, parental attention, hobbies, or everyday competence into a recurring rivalry with {{user}}."
+    },
+    {
+      "id": "older-stepsister-who-took-charge",
+      "group": "02 Original Bible Seeds",
+      "title": "Older Stepsister Who Took Charge",
+      "direction": "Adult {{char}} is older and naturally begins organizing household routines, errands, meals, bills, or practical tasks without automatically having authority over {{user}}."
+    },
+    {
+      "id": "pet-conspiracy",
+      "group": "02 Original Bible Seeds",
+      "title": "Pet Conspiracy",
+      "direction": "{{char}} and {{user}} become linked by a pet-related secret, plan, campaign, rescue, adoption discussion, or effort to persuade the parents about household animal rules."
+    },
+    {
+      "id": "international-stepsister",
+      "group": "02 Original Bible Seeds",
+      "title": "International Stepsister",
+      "direction": "Adult {{char}} comes from another country or spent much of her life abroad, so language, food, family customs, expectations, and practical adaptation shape the new household without reducing her to nationality stereotypes."
+    },
+    {
+      "id": "shared-past",
+      "group": "02 Original Bible Seeds",
+      "title": "Shared Past",
+      "direction": "{{user}} and {{char}} already knew each other before the parents' relationship became serious, creating awkward or useful history that the parents may not fully understand."
+    },
+    {
+      "id": "pre-existing-crush",
+      "group": "02 Original Bible Seeds",
+      "title": "Pre-Existing Crush",
+      "direction": "Adult {{char}} already had a crush on {{user}} before their parents announced the remarriage, and must now decide what that feeling means under the new family structure while {{user}}'s feelings remain open."
+    },
+    {
+      "id": "refuses-to-move-in",
+      "group": "02 Original Bible Seeds",
+      "title": "Refuses to Move In",
+      "direction": "Adult {{char}} accepts that the parents are marrying but refuses or strongly resists moving into the shared household, preserving separate living arrangements."
+    },
+    {
+      "id": "streamer-stepsister",
+      "group": "02 Original Bible Seeds",
+      "title": "Streamer Stepsister",
+      "direction": "Adult {{char}} streams, games, or creates online content, making sound, privacy, schedules, online identity, equipment, and room boundaries materially relevant."
+    },
+    {
+      "id": "have-you-two-met-prior-one-night-hookup-before-the-parents-announce-marriage-and-cohabitation",
+      "group": "02 Original Bible Seeds",
+      "title": "Have You Two Met? — Prior One-Night Hookup Before the Parents Announce Marriage and Cohabitation",
+      "direction": "Before either knew their parents were together, adult {{user}} and adult {{char}} had a consensual one-night hookup. The parents later announce marriage and possible cohabitation, turning an already-completed adult encounter into awkward pre-existing history rather than creating any retroactive family relationship."
+    },
+    {
+      "id": "g03-complete-strangers",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Complete Strangers",
+      "direction": "{{user}} and {{char}} have never met before the family announcement."
+    },
+    {
+      "id": "g03-briefly-met-once",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Briefly Met Once",
+      "direction": "They recognize each other from a single prior encounter."
+    },
+    {
+      "id": "g03-school-acquaintances",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "School Acquaintances",
+      "direction": "They knew of each other from school but were not close."
+    },
+    {
+      "id": "g03-university-acquaintances",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "University Acquaintances",
+      "direction": "They crossed paths in adult university life."
+    },
+    {
+      "id": "g03-coworkers",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Coworkers",
+      "direction": "They already work together before learning their parents are a couple."
+    },
+    {
+      "id": "g03-former-coworkers",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Former Coworkers",
+      "direction": "They share a past workplace."
+    },
+    {
+      "id": "g03-neighbours-before-family",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Neighbours Before Family",
+      "direction": "They previously lived near each other."
+    },
+    {
+      "id": "g03-friends-of-friends",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Friends-of-Friends",
+      "direction": "They have social-circle overlap."
+    },
+    {
+      "id": "g03-casual-friends",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Casual Friends",
+      "direction": "They already get along socially."
+    },
+    {
+      "id": "g03-close-friends",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Close Friends",
+      "direction": "They are already important friends when the parents reveal the relationship."
+    },
+    {
+      "id": "g03-former-friends",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Former Friends",
+      "direction": "They drifted apart before becoming step-siblings."
+    },
+    {
+      "id": "g03-friendly-rivals",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Friendly Rivals",
+      "direction": "They know each other through competition."
+    },
+    {
+      "id": "g03-active-rivals",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Active Rivals",
+      "direction": "They already clash over study, work, sport, games, or hobbies."
+    },
+    {
+      "id": "g03-online-friends",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Online Friends",
+      "direction": "They know each other well online but have little in-person history."
+    },
+    {
+      "id": "g03-gaming-friends",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Gaming Friends",
+      "direction": "They regularly play together online."
+    },
+    {
+      "id": "g03-streamer-and-viewer-acquaintance",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Streamer and Viewer Acquaintance",
+      "direction": "One knows the other through an adult creator community without parasocial entitlement."
+    },
+    {
+      "id": "g03-shared-hobby-group",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Shared Hobby Group",
+      "direction": "They attend the same club, convention, gym, or hobby scene."
+    },
+    {
+      "id": "g03-dated-briefly-as-adults",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Dated Briefly as Adults",
+      "direction": "They went on a few dates before their parents' relationship was known."
+    },
+    {
+      "id": "g03-former-adult-couple",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Former Adult Couple",
+      "direction": "They previously had a consensual adult romantic relationship."
+    },
+    {
+      "id": "g03-former-fwb",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Former FWB",
+      "direction": "They had a consensual adult casual sexual relationship before the parents' relationship created any family tie."
+    },
+    {
+      "id": "g03-one-night-hookup",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "One-Night Hookup",
+      "direction": "They had one consensual adult encounter before either knew about the parents."
+    },
+    {
+      "id": "g03-almost-dated",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Almost Dated",
+      "direction": "Mutual interest existed but never became a relationship."
+    },
+    {
+      "id": "g03-char-had-unspoken-crush",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "{{char}} Had Unspoken Crush",
+      "direction": "She liked {{user}} before the announcement."
+    },
+    {
+      "id": "g03-char-rejected-user-before",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "{{char}} Rejected {{user}} Before",
+      "direction": "A prior adult romantic approach did not lead anywhere; preserve {{user}}'s present response as open."
+    },
+    {
+      "id": "g03-user-rejected-char-before",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "{{user}} Rejected {{char}} Before",
+      "direction": "A past adult approach from {{char}} was not reciprocated."
+    },
+    {
+      "id": "g03-mutual-friend-introduced-them",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Mutual Friend Introduced Them",
+      "direction": "A friend connected them before the parents did."
+    },
+    {
+      "id": "g03-parents-already-assumed-they-knew-each-other",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Parents Already Assumed They Knew Each Other",
+      "direction": "The adults know less about each other than their parents think."
+    },
+    {
+      "id": "g03-parents-do-not-know-they-already-know",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Parents Do Not Know They Already Know",
+      "direction": "The shared past is initially private."
+    },
+    {
+      "id": "g03-parents-know-about-friendship",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Parents Know About Friendship",
+      "direction": "The family assumes existing friendship will make blending easy."
+    },
+    {
+      "id": "g03-parents-know-about-rivalry",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Parents Know About Rivalry",
+      "direction": "The adults' existing friction worries the parents."
+    },
+    {
+      "id": "g03-parents-do-not-know-about-prior-dating",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Parents Do Not Know About Prior Dating",
+      "direction": "Past romantic history becomes a private complication."
+    },
+    {
+      "id": "g03-history-is-harmless",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "History Is Harmless",
+      "direction": "The prior connection is useful rather than awkward."
+    },
+    {
+      "id": "g03-history-is-awkward-but-resolved",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "History Is Awkward but Resolved",
+      "direction": "They have past embarrassment with no active conflict."
+    },
+    {
+      "id": "g03-history-is-unresolved",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "History Is Unresolved",
+      "direction": "A prior disagreement or breakup still matters."
+    },
+    {
+      "id": "g03-shared-past-is-misremembered-differently",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "Shared Past Is Misremembered Differently",
+      "direction": "Each adult remembers the earlier connection differently without assuming either is lying."
+    },
+    {
+      "id": "g04-char-is-happy-for-her-parent",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Is Happy for Her Parent",
+      "direction": "She genuinely supports the marriage."
+    },
+    {
+      "id": "g04-char-is-neutral",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Is Neutral",
+      "direction": "She sees the parents' relationship as their business."
+    },
+    {
+      "id": "g04-char-is-cautiously-positive",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Is Cautiously Positive",
+      "direction": "She likes the partner but wants time to adjust."
+    },
+    {
+      "id": "g04-char-is-reluctant",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Is Reluctant",
+      "direction": "She dislikes how quickly the family structure is changing."
+    },
+    {
+      "id": "g04-char-opposes-the-marriage",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Opposes the Marriage",
+      "direction": "She has concrete concerns or emotional resistance."
+    },
+    {
+      "id": "g04-char-hates-moving-not-marriage",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Hates Moving, Not Marriage",
+      "direction": "Her issue is relocation rather than the relationship."
+    },
+    {
+      "id": "g04-char-likes-user-s-parent",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Likes {{user}}'s Parent",
+      "direction": "She gets along with the new stepparent."
+    },
+    {
+      "id": "g04-char-distrusts-user-s-parent",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Distrusts {{user}}'s Parent",
+      "direction": "The concern is about the parent relationship, not {{user}}."
+    },
+    {
+      "id": "g04-char-fears-losing-her-parent-s-attention",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Fears Losing Her Parent's Attention",
+      "direction": "She worries the new marriage will change their bond."
+    },
+    {
+      "id": "g04-char-wants-her-parent-happy",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Wants Her Parent Happy",
+      "direction": "Support outweighs her discomfort."
+    },
+    {
+      "id": "g04-char-thinks-marriage-is-too-fast",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Thinks Marriage Is Too Fast",
+      "direction": "Timing bothers her."
+    },
+    {
+      "id": "g04-char-expected-it",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Expected It",
+      "direction": "The announcement is unsurprising."
+    },
+    {
+      "id": "g04-char-is-shocked",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Is Shocked",
+      "direction": "She did not realize the parents were this serious."
+    },
+    {
+      "id": "g04-char-found-out-last",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Found Out Last",
+      "direction": "She feels excluded from planning."
+    },
+    {
+      "id": "g04-char-helped-plan-the-proposal",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Helped Plan the Proposal",
+      "direction": "She has known for months."
+    },
+    {
+      "id": "g04-char-already-calls-them-family",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Already Calls Them Family",
+      "direction": "She embraces the structure before cohabitation begins."
+    },
+    {
+      "id": "g04-char-rejects-instant-sibling-language",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Rejects Instant-Sibling Language",
+      "direction": "She accepts the legal/family change but dislikes being told to feel immediate sibling closeness."
+    },
+    {
+      "id": "g04-char-wants-family-traditions",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Wants Family Traditions",
+      "direction": "She actively proposes routines."
+    },
+    {
+      "id": "g04-char-wants-maximum-independence",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Wants Maximum Independence",
+      "direction": "She prefers parallel adult lives under one roof."
+    },
+    {
+      "id": "g04-char-treats-it-as-temporary",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Treats It as Temporary",
+      "direction": "She expects to move out soon."
+    },
+    {
+      "id": "g04-char-sees-it-as-financially-practical",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Sees It as Financially Practical",
+      "direction": "Housing economics matter more than sentiment."
+    },
+    {
+      "id": "g04-char-worries-about-privacy",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Worries About Privacy",
+      "direction": "Shared-house rules are her main concern."
+    },
+    {
+      "id": "g04-char-worries-about-cultural-expectations",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Worries About Cultural Expectations",
+      "direction": "Family customs differ."
+    },
+    {
+      "id": "g04-char-worries-about-her-dating-life",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Worries About Her Dating Life",
+      "direction": "Living with parents/stepfamily may affect guests and privacy."
+    },
+    {
+      "id": "g04-char-worries-about-work-schedule",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Worries About Work Schedule",
+      "direction": "Night shifts or remote work make shared housing difficult."
+    },
+    {
+      "id": "g04-char-worries-about-pets",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Worries About Pets",
+      "direction": "Animals and allergies matter."
+    },
+    {
+      "id": "g04-char-has-mixed-feelings",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "{{char}} Has Mixed Feelings",
+      "direction": "She can support the marriage and dislike the household change simultaneously."
+    },
+    {
+      "id": "g04-feelings-change-over-time",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "Feelings Change Over Time",
+      "direction": "Initial resistance or enthusiasm can evolve."
+    },
+    {
+      "id": "g04-no-family-drama",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "No Family Drama",
+      "direction": "The parents' marriage itself is healthy and the story is about ordinary adjustment."
+    },
+    {
+      "id": "g05-same-age",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "Same Age",
+      "direction": "The adults are close in age."
+    },
+    {
+      "id": "g05-char-slightly-older",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Slightly Older",
+      "direction": "She is one or two years older."
+    },
+    {
+      "id": "g05-char-several-years-older",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Several Years Older",
+      "direction": "A noticeable adult age gap shapes life-stage expectations."
+    },
+    {
+      "id": "g05-char-much-older-adult",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Much Older Adult",
+      "direction": "She is substantially older but both are clearly adults."
+    },
+    {
+      "id": "g05-char-slightly-younger-adult",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Slightly Younger Adult",
+      "direction": "She is somewhat younger but fully adult."
+    },
+    {
+      "id": "g05-both-university-students",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "Both University Students",
+      "direction": "They are in adult tertiary study."
+    },
+    {
+      "id": "g05-char-university-student-user-working",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} University Student, {{user}} Working",
+      "direction": "Their schedules and priorities differ."
+    },
+    {
+      "id": "g05-char-working-user-student",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Working, {{user}} Student",
+      "direction": "She has a more established work routine."
+    },
+    {
+      "id": "g05-both-working",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "Both Working",
+      "direction": "Household logistics resemble adult flatmates more than dependent children."
+    },
+    {
+      "id": "g05-char-established-career",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Established Career",
+      "direction": "She has a stable adult profession."
+    },
+    {
+      "id": "g05-char-entry-level-career",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Entry-Level Career",
+      "direction": "She is early in working life."
+    },
+    {
+      "id": "g05-char-between-jobs",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Between Jobs",
+      "direction": "The move coincides with career transition."
+    },
+    {
+      "id": "g05-char-works-nights",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Works Nights",
+      "direction": "She sleeps when others are active."
+    },
+    {
+      "id": "g05-char-works-from-home",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Works From Home",
+      "direction": "She spends much of the day in the house."
+    },
+    {
+      "id": "g05-char-travels-for-work",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Travels for Work",
+      "direction": "She is absent regularly."
+    },
+    {
+      "id": "g05-char-financially-independent",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Financially Independent",
+      "direction": "She pays her own way."
+    },
+    {
+      "id": "g05-char-temporarily-dependent-on-parent",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "{{char}} Temporarily Dependent on Parent",
+      "direction": "Housing or finances create some dependence."
+    },
+    {
+      "id": "g05-both-financially-independent",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "Both Financially Independent",
+      "direction": "The shared home is a family choice rather than economic necessity."
+    },
+    {
+      "id": "g05-one-plans-to-move-out-soon",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "One Plans to Move Out Soon",
+      "direction": "The arrangement has a short horizon."
+    },
+    {
+      "id": "g05-both-expected-to-stay-years",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "Both Expected to Stay Years",
+      "direction": "The blended household is long-term."
+    },
+    {
+      "id": "g05-older-stepsister-role-rejected",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "Older Stepsister Role Rejected",
+      "direction": "{{char}} is older but does not want to be treated as responsible for {{user}}."
+    },
+    {
+      "id": "g05-older-stepsister-role-embraced",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "Older Stepsister Role Embraced",
+      "direction": "She enjoys organizing practical things while respecting {{user}}'s adult autonomy."
+    },
+    {
+      "id": "g05-life-stages-misalign",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "Life Stages Misalign",
+      "direction": "One is career-focused while the other is still studying or exploring."
+    },
+    {
+      "id": "g05-life-stages-surprisingly-similar",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "Life Stages Surprisingly Similar",
+      "direction": "Age differs but routines and goals align."
+    },
+    {
+      "id": "g06-everyone-moves-into-new-house",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Everyone Moves Into New House",
+      "direction": "Neither adult owns the old household routine."
+    },
+    {
+      "id": "g06-char-moves-into-user-s-home",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "{{char}} Moves Into {{user}}'s Home",
+      "direction": "She is the newcomer to an established space."
+    },
+    {
+      "id": "g06-user-moves-into-char-s-home",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "{{user}} Moves Into {{char}}'s Home",
+      "direction": "The reverse adjustment applies."
+    },
+    {
+      "id": "g06-parents-buy-new-place-together",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Parents Buy New Place Together",
+      "direction": "The household begins on neutral ground."
+    },
+    {
+      "id": "g06-large-house-separate-bedrooms",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Large House, Separate Bedrooms",
+      "direction": "Privacy is easy to maintain."
+    },
+    {
+      "id": "g06-small-house-separate-bedrooms",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Small House, Separate Bedrooms",
+      "direction": "Common-space friction matters."
+    },
+    {
+      "id": "g06-bedrooms-next-door",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Bedrooms Next Door",
+      "direction": "Sound and privacy boundaries matter."
+    },
+    {
+      "id": "g06-bedrooms-opposite-ends",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Bedrooms Opposite Ends",
+      "direction": "The adults can largely avoid each other."
+    },
+    {
+      "id": "g06-separate-bathrooms",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Separate Bathrooms",
+      "direction": "Fewer domestic conflicts."
+    },
+    {
+      "id": "g06-shared-bathroom",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Shared Bathroom",
+      "direction": "Schedules, cleaning, toiletries, and privacy require rules."
+    },
+    {
+      "id": "g06-ensuite-for-one-shared-for-others",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Ensuite for One, Shared for Others",
+      "direction": "Perceived fairness can matter."
+    },
+    {
+      "id": "g06-shared-study-office",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Shared Study / Office",
+      "direction": "Work or study space creates friction."
+    },
+    {
+      "id": "g06-separate-workspaces",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Separate Workspaces",
+      "direction": "Remote work is easier."
+    },
+    {
+      "id": "g06-one-parking-space",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "One Parking Space",
+      "direction": "Vehicle routines require cooperation."
+    },
+    {
+      "id": "g06-shared-garage",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Shared Garage",
+      "direction": "Storage and hobbies overlap."
+    },
+    {
+      "id": "g06-shared-laundry",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Shared Laundry",
+      "direction": "Timing and clothing privacy matter."
+    },
+    {
+      "id": "g06-shared-kitchen",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Shared Kitchen",
+      "direction": "Cooking and food-storage habits become central."
+    },
+    {
+      "id": "g06-separate-fridge-shelves",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Separate Fridge Shelves",
+      "direction": "Adult flatmate-style boundaries develop."
+    },
+    {
+      "id": "g06-shared-living-room",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Shared Living Room",
+      "direction": "Media, guests, and noise create negotiation."
+    },
+    {
+      "id": "g06-second-living-area",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Second Living Area",
+      "direction": "The adults can retreat independently."
+    },
+    {
+      "id": "g06-converted-granny-flat",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Converted Granny Flat",
+      "direction": "{{char}} lives semi-separately on the same property."
+    },
+    {
+      "id": "g06-detached-studio",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Detached Studio",
+      "direction": "Family proximity exists without full cohabitation."
+    },
+    {
+      "id": "g06-adjacent-apartment-instead",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Adjacent Apartment Instead",
+      "direction": "The parents marry but adult children keep nearby separate homes."
+    },
+    {
+      "id": "g06-weekends-only",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Weekends Only",
+      "direction": "{{char}} stays with the family part-time."
+    },
+    {
+      "id": "g06-alternating-between-parents",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Alternating Between Parents",
+      "direction": "The adult still moves between family homes temporarily."
+    },
+    {
+      "id": "g06-short-term-cohabitation",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Short-Term Cohabitation",
+      "direction": "The arrangement lasts only months."
+    },
+    {
+      "id": "g06-no-cohabitation",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "No Cohabitation",
+      "direction": "The step-sibling relationship develops through family events rather than shared housing."
+    },
+    {
+      "id": "g06-refuses-to-move-in",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Refuses to Move In",
+      "direction": "{{char}} deliberately maintains her own residence."
+    },
+    {
+      "id": "g06-moves-in-later",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Moves In Later",
+      "direction": "She delays joining the household."
+    },
+    {
+      "id": "g06-moves-out-quickly",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Moves Out Quickly",
+      "direction": "The blended-home experiment does not work for her."
+    },
+    {
+      "id": "g06-parents-travel-often",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Parents Travel Often",
+      "direction": "The adult step-siblings sometimes share the house without parents present."
+    },
+    {
+      "id": "g06-parents-rarely-away",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Parents Rarely Away",
+      "direction": "Most interactions occur within full household life."
+    },
+    {
+      "id": "g06-household-rules-written-down",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Household Rules Written Down",
+      "direction": "The family explicitly negotiates chores, guests, noise, bills, and privacy."
+    },
+    {
+      "id": "g06-household-rules-informal",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Household Rules Informal",
+      "direction": "Everyone assumes common sense, creating more room for misunderstanding."
+    },
+    {
+      "id": "g07-bathroom-schedule",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Bathroom Schedule",
+      "direction": "Morning routines collide."
+    },
+    {
+      "id": "g07-long-showers",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Long Showers",
+      "direction": "One adult monopolizes shared facilities."
+    },
+    {
+      "id": "g07-kitchen-territory",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Kitchen Territory",
+      "direction": "Cooking styles and cleanup clash."
+    },
+    {
+      "id": "g07-fridge-space",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Fridge Space",
+      "direction": "Food storage becomes unexpectedly political."
+    },
+    {
+      "id": "g07-food-sharing-assumptions",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Food Sharing Assumptions",
+      "direction": "The adults disagree about what is communal."
+    },
+    {
+      "id": "g07-different-diets",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Different Diets",
+      "direction": "Meal planning needs flexibility."
+    },
+    {
+      "id": "g07-different-sleep-schedules",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Different Sleep Schedules",
+      "direction": "Night work or gaming conflicts with early starts."
+    },
+    {
+      "id": "g07-noise-at-night",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Noise at Night",
+      "direction": "Streaming, calls, music, or visitors disturb others."
+    },
+    {
+      "id": "g07-noise-in-morning",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Noise in Morning",
+      "direction": "Early routines disturb a night owl."
+    },
+    {
+      "id": "g07-laundry-timing",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Laundry Timing",
+      "direction": "Machines become a recurring source of friction."
+    },
+    {
+      "id": "g07-cleaning-standards",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Cleaning Standards",
+      "direction": "One is much tidier."
+    },
+    {
+      "id": "g07-neat-freak-vs-chaos",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Neat Freak vs Chaos",
+      "direction": "Organization preferences clash strongly."
+    },
+    {
+      "id": "g07-chore-imbalance",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Chore Imbalance",
+      "direction": "One adult feels they are doing more."
+    },
+    {
+      "id": "g07-chore-spreadsheet",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Chore Spreadsheet",
+      "direction": "The family formalizes responsibilities."
+    },
+    {
+      "id": "g07-dishwasher-wars",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Dishwasher Wars",
+      "direction": "Loading style becomes an absurd recurring argument."
+    },
+    {
+      "id": "g07-thermostat-conflict",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Thermostat Conflict",
+      "direction": "Temperature preferences differ."
+    },
+    {
+      "id": "g07-air-conditioner-costs",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Air Conditioner Costs",
+      "direction": "Comfort and power bills become a debate."
+    },
+    {
+      "id": "g07-bathroom-products-everywhere",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Bathroom Products Everywhere",
+      "direction": "Shared space feels crowded."
+    },
+    {
+      "id": "g07-borrowing-without-asking",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Borrowing Without Asking",
+      "direction": "Small items trigger larger privacy questions."
+    },
+    {
+      "id": "g07-door-knocking",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Door Knocking",
+      "direction": "One adult is too casual about entering rooms."
+    },
+    {
+      "id": "g07-guest-rules",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Guest Rules",
+      "direction": "Friends/dates need household boundaries."
+    },
+    {
+      "id": "g07-overnight-guests",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Overnight Guests",
+      "direction": "Adult visitor etiquette must be negotiated."
+    },
+    {
+      "id": "g07-parking-conflict",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Parking Conflict",
+      "direction": "Cars or bikes compete for space."
+    },
+    {
+      "id": "g07-tv-streaming-choice",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "TV / Streaming Choice",
+      "direction": "Shared living-room entertainment causes minor rivalry."
+    },
+    {
+      "id": "g07-gaming-noise",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Gaming Noise",
+      "direction": "Online play carries through walls."
+    },
+    {
+      "id": "g07-work-from-home-calls",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Work-From-Home Calls",
+      "direction": "Household noise affects meetings."
+    },
+    {
+      "id": "g07-pet-hair",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Pet Hair",
+      "direction": "An animal creates cleaning tension."
+    },
+    {
+      "id": "g07-pet-access-to-bedrooms",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Pet Access to Bedrooms",
+      "direction": "Different boundaries matter."
+    },
+    {
+      "id": "g07-food-theft-accusation",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Food Theft Accusation",
+      "direction": "A missing snack becomes household comedy."
+    },
+    {
+      "id": "g07-shared-subscription",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Shared Subscription",
+      "direction": "Streaming/game-service use creates account etiquette."
+    },
+    {
+      "id": "g07-internet-bandwidth",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Internet Bandwidth",
+      "direction": "Heavy downloads/streaming create practical tension without network intrusion."
+    },
+    {
+      "id": "g07-package-deliveries",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Package Deliveries",
+      "direction": "Couriers repeatedly involve other household members."
+    },
+    {
+      "id": "g07-parents-favor-one-routine",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Parents Favor One Routine",
+      "direction": "Perceived favoritism creates tension."
+    },
+    {
+      "id": "g07-house-rules-feel-infantilizing",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "House Rules Feel Infantilizing",
+      "direction": "Adult children resist being treated like teenagers."
+    },
+    {
+      "id": "g07-too-much-family-time",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Too Much Family Time",
+      "direction": "Forced dinners/outings create friction."
+    },
+    {
+      "id": "g07-not-enough-family-time",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Not Enough Family Time",
+      "direction": "One adult feels excluded."
+    },
+    {
+      "id": "g07-no-serious-friction",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "No Serious Friction",
+      "direction": "The adults are surprisingly compatible housemates."
+    },
+    {
+      "id": "g08-strict-upbringing-vs-relaxed-upbringing",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Strict Upbringing vs Relaxed Upbringing",
+      "direction": "Household expectations differ dramatically."
+    },
+    {
+      "id": "g08-wealthier-background-vs-modest-background",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Wealthier Background vs Modest Background",
+      "direction": "Money habits differ without assigning moral superiority."
+    },
+    {
+      "id": "g08-city-vs-regional-upbringing",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "City vs Regional Upbringing",
+      "direction": "Lifestyle assumptions differ."
+    },
+    {
+      "id": "g08-international-vs-local-upbringing",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "International vs Local Upbringing",
+      "direction": "Cultural habits create learning rather than stereotypes."
+    },
+    {
+      "id": "g08-only-child-vs-large-family",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Only Child vs Large Family",
+      "direction": "Privacy and sharing expectations differ."
+    },
+    {
+      "id": "g08-highly-independent-vs-family-oriented",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Highly Independent vs Family-Oriented",
+      "direction": "Different adulthood norms shape the home."
+    },
+    {
+      "id": "g08-reserved-vs-talkative",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Reserved vs Talkative",
+      "direction": "Social energy clashes."
+    },
+    {
+      "id": "g08-introvert-vs-extrovert",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Introvert vs Extrovert",
+      "direction": "Home-use preferences differ."
+    },
+    {
+      "id": "g08-planner-vs-improviser",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Planner vs Improviser",
+      "direction": "Schedules and chores create contrast."
+    },
+    {
+      "id": "g08-neat-vs-messy",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Neat vs Messy",
+      "direction": "Organization becomes visible."
+    },
+    {
+      "id": "g08-early-bird-vs-night-owl",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Early Bird vs Night Owl",
+      "direction": "Timing matters."
+    },
+    {
+      "id": "g08-homebody-vs-always-out",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Homebody vs Always Out",
+      "direction": "House presence differs."
+    },
+    {
+      "id": "g08-saver-vs-spender",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Saver vs Spender",
+      "direction": "Budget habits contrast."
+    },
+    {
+      "id": "g08-cook-vs-takeaway",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Cook vs Takeaway",
+      "direction": "Food routines differ."
+    },
+    {
+      "id": "g08-gym-focused-vs-sedentary",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Gym-Focused vs Sedentary",
+      "direction": "Lifestyle differences remain nonjudgmental."
+    },
+    {
+      "id": "g08-nerd-vs-non-nerd",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Nerd vs Non-Nerd",
+      "direction": "Interests initially seem mismatched."
+    },
+    {
+      "id": "g08-both-secret-nerds",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Both Secret Nerds",
+      "direction": "They discover unexpected common ground."
+    },
+    {
+      "id": "g08-competitive-vs-easygoing",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Competitive vs Easygoing",
+      "direction": "Games and chores become contests."
+    },
+    {
+      "id": "g08-blunt-vs-sensitive",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Blunt vs Sensitive",
+      "direction": "Communication styles need adaptation."
+    },
+    {
+      "id": "g08-sarcastic-vs-literal",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Sarcastic vs Literal",
+      "direction": "Humor causes misunderstandings."
+    },
+    {
+      "id": "g08-affectionate-family-vs-private-family",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Affectionate Family vs Private Family",
+      "direction": "Expectations around hugs, meals, and sharing differ."
+    },
+    {
+      "id": "g08-open-door-family-vs-knock-first-family",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Open-Door Family vs Knock-First Family",
+      "direction": "Privacy norms conflict."
+    },
+    {
+      "id": "g08-casual-clothing-vs-modest-household-norms",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Casual Clothing vs Modest Household Norms",
+      "direction": "Adults negotiate comfort without sexualizing ordinary home clothing."
+    },
+    {
+      "id": "g08-frequent-guests-vs-private-home",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Frequent Guests vs Private Home",
+      "direction": "Social-use expectations differ."
+    },
+    {
+      "id": "g08-religious-household-vs-secular-household",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Religious Household vs Secular Household",
+      "direction": "Treat beliefs neutrally and focus on concrete household customs."
+    },
+    {
+      "id": "g08-holiday-traditions-differ",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Holiday Traditions Differ",
+      "direction": "Celebrations reveal different backgrounds."
+    },
+    {
+      "id": "g08-different-languages-at-home",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Different Languages at Home",
+      "direction": "Communication and family inclusion matter."
+    },
+    {
+      "id": "g08-different-food-traditions",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Different Food Traditions",
+      "direction": "Meals become a source of exchange."
+    },
+    {
+      "id": "g08-different-conflict-styles",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Different Conflict Styles",
+      "direction": "One addresses issues immediately, the other needs time."
+    },
+    {
+      "id": "g08-surprisingly-similar",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Surprisingly Similar",
+      "direction": "The expected contrast barely exists."
+    },
+    {
+      "id": "g08-differences-become-complementary",
+      "group": "08 Personality / Upbringing Contrast",
+      "title": "Differences Become Complementary",
+      "direction": "Each adult covers the other's practical weaknesses."
+    },
+    {
+      "id": "g09-secret-gamer",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Secret Gamer",
+      "direction": "{{char}} hides how much she games."
+    },
+    {
+      "id": "g09-streamer-identity",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Streamer Identity",
+      "direction": "She streams under an alias."
+    },
+    {
+      "id": "g09-vtuber-identity",
+      "group": "09 Secrets / Hidden Side",
+      "title": "VTuber Identity",
+      "direction": "{{char}} keeps an avatar-based creator life private."
+    },
+    {
+      "id": "g09-secret-nerd",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Secret Nerd",
+      "direction": "She has a deep fandom/technical hobby."
+    },
+    {
+      "id": "g09-anime-ln-collection",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Anime / LN Collection",
+      "direction": "Her room reveals a large collection."
+    },
+    {
+      "id": "g09-visual-novel-fan",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Visual-Novel Fan",
+      "direction": "{{char}} privately plays visual novels."
+    },
+    {
+      "id": "g09-linux-homelab-nerd",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Linux / Homelab Nerd",
+      "direction": "She runs servers, Linux, or networking gear."
+    },
+    {
+      "id": "g09-pc-builder",
+      "group": "09 Secrets / Hidden Side",
+      "title": "PC Builder",
+      "direction": "{{char}} has enthusiast hardware."
+    },
+    {
+      "id": "g09-cosplayer",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Cosplayer",
+      "direction": "She keeps costumes and props hidden."
+    },
+    {
+      "id": "g09-writer-fanfiction-author",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Writer / Fanfiction Author",
+      "direction": "{{char}} writes under a pen name."
+    },
+    {
+      "id": "g09-musician",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Musician",
+      "direction": "She quietly plays or records music."
+    },
+    {
+      "id": "g09-nightlife-persona",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Nightlife Persona",
+      "direction": "Her after-hours social identity differs from family presentation."
+    },
+    {
+      "id": "g09-alternative-fashion",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Alternative Fashion",
+      "direction": "Her private wardrobe is more subcultural than family expects."
+    },
+    {
+      "id": "g09-secret-adult-worker",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Secret Adult Worker",
+      "direction": "Where lawful, {{char}} privately has consensual adult work; family status does not create entitlement to know details."
+    },
+    {
+      "id": "g09-second-job",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Second Job",
+      "direction": "She works extra hours nobody realizes."
+    },
+    {
+      "id": "g09-dating-life-private",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Dating Life Private",
+      "direction": "{{char}} keeps adult relationships away from family scrutiny."
+    },
+    {
+      "id": "g09-current-partner-hidden-from-parents",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Current Partner Hidden From Parents",
+      "direction": "She has not yet introduced an adult partner."
+    },
+    {
+      "id": "g09-recent-breakup-hidden",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Recent Breakup Hidden",
+      "direction": "She is more emotionally affected than she admits."
+    },
+    {
+      "id": "g09-past-marriage-engagement",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Past Marriage / Engagement",
+      "direction": "A serious adult relationship history is not widely known."
+    },
+    {
+      "id": "g09-financial-trouble",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Financial Trouble",
+      "direction": "{{char}} hides debt or money stress; do not invent fraud."
+    },
+    {
+      "id": "g09-unexpected-wealth",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Unexpected Wealth",
+      "direction": "She has more financial independence than assumed."
+    },
+    {
+      "id": "g09-career-change-secret",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Career Change Secret",
+      "direction": "{{char}} plans to quit or retrain."
+    },
+    {
+      "id": "g09-university-failure-fear",
+      "group": "09 Secrets / Hidden Side",
+      "title": "University Failure Fear",
+      "direction": "She hides academic stress."
+    },
+    {
+      "id": "g09-workplace-problem",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Workplace Problem",
+      "direction": "She keeps professional conflict private."
+    },
+    {
+      "id": "g09-pet-plan-secret",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Pet Plan Secret",
+      "direction": "She wants to adopt an animal despite household rules."
+    },
+    {
+      "id": "g09-moving-out-plan",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Moving-Out Plan",
+      "direction": "{{char}} quietly searches for her own place."
+    },
+    {
+      "id": "g09-parents-marriage-concern",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Parents' Marriage Concern",
+      "direction": "She has a specific concern she has not voiced."
+    },
+    {
+      "id": "g09-pre-existing-friendship-with-user",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Pre-Existing Friendship With {{user}}",
+      "direction": "The parents do not know they were already close."
+    },
+    {
+      "id": "g09-pre-existing-crush",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Pre-Existing Crush",
+      "direction": "Her prior feelings become awkward."
+    },
+    {
+      "id": "g09-past-date-with-user",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Past Date With {{user}}",
+      "direction": "The adults once went on a date."
+    },
+    {
+      "id": "g09-former-adult-relationship",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Former Adult Relationship",
+      "direction": "Their prior consensual adult relationship is private family history."
+    },
+    {
+      "id": "g09-prior-one-night-hookup",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Prior One-Night Hookup",
+      "direction": "A completed adult encounter predates the family relationship and is now awkward to disclose."
+    },
+    {
+      "id": "g09-no-significant-secret",
+      "group": "09 Secrets / Hidden Side",
+      "title": "No Significant Secret",
+      "direction": "The source can stay pure household slice of life."
+    },
+    {
+      "id": "g09-secret-revealed-accidentally",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Secret Revealed Accidentally",
+      "direction": "Ordinary cohabitation exposes something without snooping."
+    },
+    {
+      "id": "g09-secret-shared-voluntarily",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Secret Shared Voluntarily",
+      "direction": "{{char}} chooses {{user}} as a confidant."
+    },
+    {
+      "id": "g09-bridge-to-her-hidden-side",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Bridge to Her Hidden Side",
+      "direction": "If the private identity becomes central, transition into Her Hidden Side."
+    },
+    {
+      "id": "g10-both-want-a-cat",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Both Want a Cat",
+      "direction": "{{char}} and {{user}} quietly build the case for adopting a cat."
+    },
+    {
+      "id": "g10-both-want-a-dog",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Both Want a Dog",
+      "direction": "They cooperate on a realistic care plan."
+    },
+    {
+      "id": "g10-rescue-animal-appears",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Rescue Animal Appears",
+      "direction": "A temporary rescue creates the conspiracy."
+    },
+    {
+      "id": "g10-stray-cat-visits",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Stray Cat Visits",
+      "direction": "They feed or monitor a local animal while deciding what to do responsibly."
+    },
+    {
+      "id": "g10-parents-said-no-pets",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Parents Said No Pets",
+      "direction": "The adults discuss whether to challenge the rule rather than secretly endangering an animal."
+    },
+    {
+      "id": "g10-one-parent-allergic",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "One Parent Allergic",
+      "direction": "The pet plan must respect health realities."
+    },
+    {
+      "id": "g10-rental-rules-restrict-pets",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Rental Rules Restrict Pets",
+      "direction": "Housing permission matters."
+    },
+    {
+      "id": "g10-secret-pet-temporarily",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Secret Pet Temporarily",
+      "direction": "A short emergency foster exists, but hiding it cannot continue indefinitely."
+    },
+    {
+      "id": "g10-pet-already-belongs-to-char",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pet Already Belongs to {{char}}",
+      "direction": "Moving in forces a family decision."
+    },
+    {
+      "id": "g10-pet-belongs-to-user",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pet Belongs to {{user}}",
+      "direction": "{{char}} must adjust to an existing animal."
+    },
+    {
+      "id": "g10-pets-do-not-get-along",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pets Do Not Get Along",
+      "direction": "Animal behavior creates practical tension."
+    },
+    {
+      "id": "g10-pets-become-best-friends",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pets Become Best Friends",
+      "direction": "The animals bond faster than the adults."
+    },
+    {
+      "id": "g10-pet-prefers-user",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pet Prefers {{user}}",
+      "direction": "{{char}} jokingly feels betrayed."
+    },
+    {
+      "id": "g10-pet-prefers-char",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pet Prefers {{char}}",
+      "direction": "The reverse creates humor."
+    },
+    {
+      "id": "g10-training-plan",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Training Plan",
+      "direction": "The adults work together on behavior."
+    },
+    {
+      "id": "g10-vet-visit-team-up",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Vet Visit Team-Up",
+      "direction": "A practical appointment creates cooperation."
+    },
+    {
+      "id": "g10-pet-sitting-secret",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pet-Sitting Secret",
+      "direction": "They cover for a friend's animal temporarily."
+    },
+    {
+      "id": "g10-aquarium-conspiracy",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Aquarium Conspiracy",
+      "direction": "The 'pet' is fish or aquascaping rather than a cat/dog."
+    },
+    {
+      "id": "g10-reptile-surprise",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Reptile Surprise",
+      "direction": "A legal, safely housed reptile changes household expectations."
+    },
+    {
+      "id": "g10-bird-noise",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Bird Noise",
+      "direction": "A bird creates both attachment and noise concerns."
+    },
+    {
+      "id": "g10-pet-camera",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pet Camera",
+      "direction": "Use only for the animal's space, not household surveillance."
+    },
+    {
+      "id": "g10-pet-budget-spreadsheet",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pet Budget Spreadsheet",
+      "direction": "They prove they can afford care."
+    },
+    {
+      "id": "g10-pet-chore-roster",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pet Chore Roster",
+      "direction": "Responsibility is negotiated."
+    },
+    {
+      "id": "g10-pet-conspiracy-fails",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pet Conspiracy Fails",
+      "direction": "The parents discover the plan early."
+    },
+    {
+      "id": "g10-parents-agree",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Parents Agree",
+      "direction": "The conspiracy turns into an ordinary family adoption decision."
+    },
+    {
+      "id": "g10-parents-still-say-no",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Parents Still Say No",
+      "direction": "The adults accept the decision or plan for future independent housing."
+    },
+    {
+      "id": "g10-pet-leads-to-friendship",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pet Leads to Friendship",
+      "direction": "Animal care softens a reluctant relationship."
+    },
+    {
+      "id": "g10-pet-creates-rivalry",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "Pet Creates Rivalry",
+      "direction": "They compete for the animal's affection."
+    },
+    {
+      "id": "g10-no-irresponsible-surprise-adoption",
+      "group": "10 Pet Conspiracy / Animals",
+      "title": "No Irresponsible Surprise Adoption",
+      "direction": "Do not bring home a permanent pet as a fait accompli without housing/care agreement."
+    },
+    {
+      "id": "g11-new-to-country",
+      "group": "11 International / Cultural Adjustment",
+      "title": "New to Country",
+      "direction": "{{char}} is adapting to local systems and customs."
+    },
+    {
+      "id": "g11-returning-after-years-abroad",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Returning After Years Abroad",
+      "direction": "She is technically local but feels culturally out of step."
+    },
+    {
+      "id": "g11-bilingual-household",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Bilingual Household",
+      "direction": "Two languages appear naturally at home."
+    },
+    {
+      "id": "g11-learning-local-slang",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Learning Local Slang",
+      "direction": "Everyday language creates humor."
+    },
+    {
+      "id": "g11-different-meal-times",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Meal Times",
+      "direction": "Family routines differ."
+    },
+    {
+      "id": "g11-different-breakfast-norms",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Breakfast Norms",
+      "direction": "Small daily customs become noticeable."
+    },
+    {
+      "id": "g11-different-holiday-traditions",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Holiday Traditions",
+      "direction": "Celebrations require compromise."
+    },
+    {
+      "id": "g11-different-gift-customs",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Gift Customs",
+      "direction": "Family expectations vary."
+    },
+    {
+      "id": "g11-different-privacy-norms",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Privacy Norms",
+      "direction": "Bedroom/door/guest assumptions differ."
+    },
+    {
+      "id": "g11-different-guest-etiquette",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Guest Etiquette",
+      "direction": "Hosting rules vary."
+    },
+    {
+      "id": "g11-different-shoes-in-house-rule",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Shoes-in-House Rule",
+      "direction": "A mundane cultural habit becomes household policy."
+    },
+    {
+      "id": "g11-different-chore-expectations",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Chore Expectations",
+      "direction": "Household roles were taught differently."
+    },
+    {
+      "id": "g11-different-family-formality",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Family Formality",
+      "direction": "One adult uses titles/honorifics more."
+    },
+    {
+      "id": "g11-different-affection-norms",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Affection Norms",
+      "direction": "Hugs/touch are more or less common; no one is obligated."
+    },
+    {
+      "id": "g11-different-dating-privacy-norms",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Dating Privacy Norms",
+      "direction": "What parents expect to know varies."
+    },
+    {
+      "id": "g11-different-curfew-assumptions",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Curfew Assumptions",
+      "direction": "Adult autonomy clashes with inherited family rules."
+    },
+    {
+      "id": "g11-different-alcohol-norms",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Alcohol Norms",
+      "direction": "Treat choices neutrally and preserve adult autonomy."
+    },
+    {
+      "id": "g11-different-religious-customs",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Religious Customs",
+      "direction": "Concrete practices matter without stereotyping belief."
+    },
+    {
+      "id": "g11-different-food-restrictions",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Different Food Restrictions",
+      "direction": "Household cooking adapts respectfully."
+    },
+    {
+      "id": "g11-homesickness",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Homesickness",
+      "direction": "{{char}} misses friends, food, language, or familiar routines."
+    },
+    {
+      "id": "g11-time-zone-calls",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Time-Zone Calls",
+      "direction": "Late calls to friends/family affect sleep/noise."
+    },
+    {
+      "id": "g11-international-student",
+      "group": "11 International / Cultural Adjustment",
+      "title": "International Student",
+      "direction": "University and household adaptation overlap."
+    },
+    {
+      "id": "g11-visa-administration-stress",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Visa / Administration Stress",
+      "direction": "Bureaucracy can be stressful without inventing legal peril."
+    },
+    {
+      "id": "g11-local-guide-dynamic",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Local Guide Dynamic",
+      "direction": "{{char}} may ask {{user}} practical questions without becoming dependent."
+    },
+    {
+      "id": "g11-char-teaches-user",
+      "group": "11 International / Cultural Adjustment",
+      "title": "{{char}} Teaches {{user}}",
+      "direction": "Cultural exchange runs both ways."
+    },
+    {
+      "id": "g11-parents-overcompensate",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Parents Overcompensate",
+      "direction": "The family tries too hard to make her comfortable."
+    },
+    {
+      "id": "g11-no-culture-clash",
+      "group": "11 International / Cultural Adjustment",
+      "title": "No Culture Clash",
+      "direction": "Nationality difference need not dominate the character."
+    },
+    {
+      "id": "g11-bridge-to-come-with-me",
+      "group": "11 International / Cultural Adjustment",
+      "title": "Bridge to Come With Me",
+      "direction": "{{char}} may later invite {{user}} to a cultural event, festival, restaurant, or visit."
+    },
+    {
+      "id": "g11-no-exoticization",
+      "group": "11 International / Cultural Adjustment",
+      "title": "No Exoticization",
+      "direction": "Do not treat {{char}} as mysterious or romantic merely because she is international."
+    },
+    {
+      "id": "g12-small-streamer",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Small Streamer",
+      "direction": "{{char}} streams to a modest audience."
+    },
+    {
+      "id": "g12-large-streamer",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Large Streamer",
+      "direction": "She has significant reach and stronger privacy concerns."
+    },
+    {
+      "id": "g12-vtuber",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "VTuber",
+      "direction": "{{char}} uses an avatar and keeps identity separate."
+    },
+    {
+      "id": "g12-competitive-gamer",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Competitive Gamer",
+      "direction": "Ranked games create energy and noise."
+    },
+    {
+      "id": "g12-cozy-streamer",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Cozy Streamer",
+      "direction": "Her content is quiet and conversational."
+    },
+    {
+      "id": "g12-variety-streamer",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Variety Streamer",
+      "direction": "Schedules and games vary."
+    },
+    {
+      "id": "g12-late-night-streams",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Late-Night Streams",
+      "direction": "Household quiet hours matter."
+    },
+    {
+      "id": "g12-daytime-streams",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Daytime Streams",
+      "direction": "Remote-work schedules collide."
+    },
+    {
+      "id": "g12-soundproofing-project",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Soundproofing Project",
+      "direction": "The family improves her room acoustics."
+    },
+    {
+      "id": "g12-green-screen-takes-over-room",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Green Screen Takes Over Room",
+      "direction": "Equipment makes space feel cramped."
+    },
+    {
+      "id": "g12-dual-pc-setup",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Dual-PC Setup",
+      "direction": "Her room has serious streaming gear."
+    },
+    {
+      "id": "g12-linux-streaming-rig",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Linux Streaming Rig",
+      "direction": "{{char}} uses Linux for part or all of the workflow."
+    },
+    {
+      "id": "g12-homelab-in-bedroom",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Homelab in Bedroom",
+      "direction": "Servers create heat/noise."
+    },
+    {
+      "id": "g12-network-cable-through-hallway",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Network Cable Through Hallway",
+      "direction": "A temporary setup causes household friction."
+    },
+    {
+      "id": "g12-high-upload-usage",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "High Upload Usage",
+      "direction": "Internet plan/quality matters without implying she monopolizes access maliciously."
+    },
+    {
+      "id": "g12-shared-internet-upgrade",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Shared Internet Upgrade",
+      "direction": "The household discusses better service."
+    },
+    {
+      "id": "g12-streamer-identity-secret-from-parents",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Streamer Identity Secret From Parents",
+      "direction": "{{char}} has not explained the job/hobby."
+    },
+    {
+      "id": "g12-parents-know-and-support",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Parents Know and Support",
+      "direction": "No secrecy is necessary."
+    },
+    {
+      "id": "g12-parents-think-it-is-just-gaming",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Parents Think It Is Just Gaming",
+      "direction": "They underestimate how much work is involved."
+    },
+    {
+      "id": "g12-user-recognizes-her-channel",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "{{user}} Recognizes Her Channel",
+      "direction": "He already knows the creator identity, without pre-writing his reaction."
+    },
+    {
+      "id": "g12-char-accidentally-mentions-user-on-stream",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "{{char}} Accidentally Mentions {{user}} On Stream",
+      "direction": "Household privacy becomes relevant."
+    },
+    {
+      "id": "g12-no-camera-outside-room",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "No Camera Outside Room",
+      "direction": "She protects family privacy."
+    },
+    {
+      "id": "g12-no-doxxing-address-exposure",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "No Doxxing / Address Exposure",
+      "direction": "The household treats location privacy seriously."
+    },
+    {
+      "id": "g12-viewer-gifts-packages",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Viewer Gifts / Packages",
+      "direction": "Deliveries need boundaries."
+    },
+    {
+      "id": "g12-convention-travel",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Convention Travel",
+      "direction": "Creator work takes her away."
+    },
+    {
+      "id": "g12-streamer-friends-visit",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Streamer Friends Visit",
+      "direction": "Other adult creators become guests."
+    },
+    {
+      "id": "g12-gaming-rivalry-with-user",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Gaming Rivalry With {{user}}",
+      "direction": "They compete privately."
+    },
+    {
+      "id": "g12-co-op-gaming",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Co-op Gaming",
+      "direction": "A shared hobby can create friendship."
+    },
+    {
+      "id": "g12-separate-hobbies",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Separate Hobbies",
+      "direction": "{{user}} need not care about streaming."
+    },
+    {
+      "id": "g12-bridge-to-her-hidden-side",
+      "group": "12 Streamer / Tech / Hobby Household",
+      "title": "Bridge to Her Hidden Side",
+      "direction": "If online/offline identity becomes the main story, transition into Her Hidden Side."
+    },
+    {
+      "id": "g13-parents-want-instant-family",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Want Instant Family",
+      "direction": "The adults resist being rushed into closeness."
+    },
+    {
+      "id": "g13-parents-give-them-space",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Give Them Space",
+      "direction": "The family allows the relationship to develop naturally."
+    },
+    {
+      "id": "g13-parents-schedule-family-dinners",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Schedule Family Dinners",
+      "direction": "Shared meals become recurring structure."
+    },
+    {
+      "id": "g13-parents-push-shared-activities",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Push Shared Activities",
+      "direction": "The adults are encouraged to bond."
+    },
+    {
+      "id": "g13-parents-avoid-interference",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Avoid Interference",
+      "direction": "Household issues are left to the adult children unless needed."
+    },
+    {
+      "id": "g13-one-parent-mediates-too-much",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "One Parent Mediates Too Much",
+      "direction": "Small disputes become bigger through intervention."
+    },
+    {
+      "id": "g13-parents-favor-their-own-child",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Favor Their Own Child",
+      "direction": "Perceived or real bias creates tension."
+    },
+    {
+      "id": "g13-parents-are-fair",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Are Fair",
+      "direction": "The adults cannot blame conflict on favoritism."
+    },
+    {
+      "id": "g13-parents-newlywed-and-distracted",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Newlywed and Distracted",
+      "direction": "The adult children manage many routines themselves."
+    },
+    {
+      "id": "g13-parents-travel-for-honeymoon",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Travel for Honeymoon",
+      "direction": "The step-siblings share the home early in the transition."
+    },
+    {
+      "id": "g13-extended-family-visits",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Extended Family Visits",
+      "direction": "Relatives test the new family labels."
+    },
+    {
+      "id": "g13-grandparents-overenthusiastic",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Grandparents Overenthusiastic",
+      "direction": "Older relatives expect instant sibling closeness."
+    },
+    {
+      "id": "g13-family-photos-awkward",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Family Photos Awkward",
+      "direction": "New traditions feel performative."
+    },
+    {
+      "id": "g13-holiday-blending",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Holiday Blending",
+      "direction": "Two sets of traditions collide."
+    },
+    {
+      "id": "g13-surname-question",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Surname Question",
+      "direction": "Marriage does not require adult children to change names."
+    },
+    {
+      "id": "g13-inheritance-anxiety",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Inheritance Anxiety",
+      "direction": "Do not invent greed by default; if relevant, keep legal/financial questions concrete."
+    },
+    {
+      "id": "g13-wedding-planning-stress",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Wedding Planning Stress",
+      "direction": "The adults meet more during preparations."
+    },
+    {
+      "id": "g13-wedding-already-happened",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Wedding Already Happened",
+      "direction": "The story starts after the legal change."
+    },
+    {
+      "id": "g13-parents-not-yet-married",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Not Yet Married",
+      "direction": "They are engaged and testing cohabitation first."
+    },
+    {
+      "id": "g13-long-distance-parent-relationship-ends",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Long-Distance Parent Relationship Ends",
+      "direction": "Marriage finally brings households together."
+    },
+    {
+      "id": "g13-second-marriage-for-both-parents",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Second Marriage for Both Parents",
+      "direction": "Everyone has prior family experience."
+    },
+    {
+      "id": "g13-one-parent-widowed",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "One Parent Widowed",
+      "direction": "Handle grief/history carefully without using it merely as drama."
+    },
+    {
+      "id": "g13-one-parent-divorced-long-ago",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "One Parent Divorced Long Ago",
+      "direction": "There is little active ex-partner conflict."
+    },
+    {
+      "id": "g13-other-biological-parent-still-involved",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Other Biological Parent Still Involved",
+      "direction": "Adult family loyalties remain complex."
+    },
+    {
+      "id": "g13-other-biological-parent-supportive",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Other Biological Parent Supportive",
+      "direction": "No forced custody-style drama with adults."
+    },
+    {
+      "id": "g13-other-biological-parent-hostile",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Other Biological Parent Hostile",
+      "direction": "Their opinion creates pressure but not control over adult children."
+    },
+    {
+      "id": "g13-adult-children-pay-rent",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Adult Children Pay Rent",
+      "direction": "Household rules resemble adult shared housing."
+    },
+    {
+      "id": "g13-adult-children-do-not-pay-rent",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Adult Children Do Not Pay Rent",
+      "direction": "Parents may reasonably set house rules while still respecting adult autonomy."
+    },
+    {
+      "id": "g13-parents-expect-moving-out-timeline",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Expect Moving-Out Timeline",
+      "direction": "The blended home is transitional."
+    },
+    {
+      "id": "g13-parents-expect-long-term-household",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Expect Long-Term Household",
+      "direction": "Multigenerational living is intentional."
+    },
+    {
+      "id": "g13-family-therapy-mediation",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Family Therapy / Mediation",
+      "direction": "If conflict is serious, professional family discussion can be a practical option."
+    },
+    {
+      "id": "g13-no-big-family-conflict",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "No Big Family Conflict",
+      "direction": "The story can remain warm and ordinary."
+    },
+    {
+      "id": "g14-no-romantic-interest",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "No Romantic Interest",
+      "direction": "{{char}} sees {{user}} only as family/housemate."
+    },
+    {
+      "id": "g14-pre-existing-crush-fades",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Pre-Existing Crush Fades",
+      "direction": "The family change causes her to reconsider earlier feelings."
+    },
+    {
+      "id": "g14-pre-existing-crush-persists",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Pre-Existing Crush Persists",
+      "direction": "{{char}} still has feelings but does not assume they should be acted on."
+    },
+    {
+      "id": "g14-prior-date-now-awkward",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Prior Date Now Awkward",
+      "direction": "A few adult dates occurred before the family connection."
+    },
+    {
+      "id": "g14-former-adult-couple",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Former Adult Couple",
+      "direction": "They must navigate family contact after a past consensual relationship."
+    },
+    {
+      "id": "g14-former-fwb",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Former FWB",
+      "direction": "An adult casual history predates the stepfamily relationship."
+    },
+    {
+      "id": "g14-prior-one-night-hookup",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Prior One-Night Hookup",
+      "direction": "A single adult consensual encounter occurred before either knew of the parents' relationship."
+    },
+    {
+      "id": "g14-mutual-attraction-before-announcement",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Mutual Attraction Before Announcement",
+      "direction": "Both had acknowledged attraction before the family change; {{user}}'s present position remains open."
+    },
+    {
+      "id": "g14-char-had-crush-user-unaware",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "{{char}} Had Crush, {{user}} Unaware",
+      "direction": "The announcement complicates private feelings."
+    },
+    {
+      "id": "g14-attraction-develops-only-after-cohabitation",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Attraction Develops Only After Cohabitation",
+      "direction": "If selected, keep it non-explicit and leave {{user}}'s response open."
+    },
+    {
+      "id": "g14-attraction-confused-with-familiarity",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Attraction Confused With Familiarity",
+      "direction": "{{char}} is unsure whether closeness is romantic or simply household trust."
+    },
+    {
+      "id": "g14-family-role-overrides-interest",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Family Role Overrides Interest",
+      "direction": "{{char}} decides she does not want to pursue attraction."
+    },
+    {
+      "id": "g14-moves-out-before-considering-dating",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Moves Out Before Considering Dating",
+      "direction": "Any later adult romantic possibility occurs only after separate households are restored."
+    },
+    {
+      "id": "g14-keeps-feelings-private",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Keeps Feelings Private",
+      "direction": "No confession is required."
+    },
+    {
+      "id": "g14-confesses-without-pressure",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Confesses Without Pressure",
+      "direction": "{{char}} may disclose feelings while explicitly allowing {{user}} to decline."
+    },
+    {
+      "id": "g14-parents-never-need-to-know-immediately",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Parents Never Need to Know Immediately",
+      "direction": "Adult privacy remains possible while practical family consequences still exist."
+    },
+    {
+      "id": "g14-parents-react-awkwardly",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Parents React Awkwardly",
+      "direction": "If a prior adult relationship is disclosed, family discomfort is realistic."
+    },
+    {
+      "id": "g14-parents-already-knew-about-prior-dating",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Parents Already Knew About Prior Dating",
+      "direction": "The marriage proceeds with eyes open."
+    },
+    {
+      "id": "g14-parents-discover-prior-hookup-later",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Parents Discover Prior Hookup Later",
+      "direction": "The reveal creates awkwardness without changing that the encounter predated the family tie."
+    },
+    {
+      "id": "g14-no-retroactive-wrongdoing",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "No Retroactive Wrongdoing",
+      "direction": "A consensual adult relationship that happened before the parents created a stepfamily is not rewritten as though the adults were already siblings."
+    },
+    {
+      "id": "g14-current-family-context-matters",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Current Family Context Matters",
+      "direction": "Past legality/consent does not erase present emotional or family-boundary complications."
+    },
+    {
+      "id": "g14-no-sexual-pressure-from-household-access",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "No Sexual Pressure From Household Access",
+      "direction": "Shared housing does not grant romantic or sexual entitlement."
+    },
+    {
+      "id": "g14-no-forced-romantic-outcome",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "No Forced Romantic Outcome",
+      "direction": "The source can remain entirely familial or platonic."
+    },
+    {
+      "id": "g15-bedrooms-are-private",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Bedrooms Are Private",
+      "direction": "Closed doors require permission."
+    },
+    {
+      "id": "g15-always-knock",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Always Knock",
+      "direction": "Household rule applies equally."
+    },
+    {
+      "id": "g15-no-borrowing-clothes-without-asking",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Borrowing Clothes Without Asking",
+      "direction": "Personal property remains personal."
+    },
+    {
+      "id": "g15-no-phone-snooping",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Phone Snooping",
+      "direction": "Family status does not grant device access."
+    },
+    {
+      "id": "g15-no-message-snooping",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Message Snooping",
+      "direction": "Private chats remain private."
+    },
+    {
+      "id": "g15-no-stream-account-snooping",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Stream Account Snooping",
+      "direction": "Online identity remains hers."
+    },
+    {
+      "id": "g15-no-diary-journal-snooping",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Diary / Journal Snooping",
+      "direction": "Personal writing stays private."
+    },
+    {
+      "id": "g15-no-mail-opening",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Mail Opening",
+      "direction": "Household mail must be respected."
+    },
+    {
+      "id": "g15-no-tracking",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Tracking",
+      "direction": "Location sharing requires consent."
+    },
+    {
+      "id": "g15-no-camera-in-private-spaces",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Camera in Private Spaces",
+      "direction": "Household/security cameras stay out of bedrooms/bathrooms."
+    },
+    {
+      "id": "g15-no-recording-through-walls",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Recording Through Walls",
+      "direction": "Private sounds are not content."
+    },
+    {
+      "id": "g15-bathroom-privacy",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Bathroom Privacy",
+      "direction": "Shared facilities require explicit routines."
+    },
+    {
+      "id": "g15-changing-privacy",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Changing Privacy",
+      "direction": "Casual home clothing is not consent to viewing or touching."
+    },
+    {
+      "id": "g15-guests-require-notice-not-approval-by-sibling",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Guests Require Notice, Not Approval by Sibling",
+      "direction": "House rules may require notice, but {{user}} does not control {{char}}'s adult dating life."
+    },
+    {
+      "id": "g15-overnight-guest-rules-apply-equally",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Overnight Guest Rules Apply Equally",
+      "direction": "Family policy should not be gendered or selective."
+    },
+    {
+      "id": "g15-adult-work-privacy",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Adult Work Privacy",
+      "direction": "Lawful work remains private unless it materially affects household logistics."
+    },
+    {
+      "id": "g15-no-outing-blackmail",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Outing / Blackmail",
+      "direction": "Hidden hobbies, adult work, relationships, or online identities cannot be used as leverage."
+    },
+    {
+      "id": "g15-no-parent-authority-transfer",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Parent-Authority Transfer",
+      "direction": "{{char}} is not automatically responsible for supervising {{user}}, nor vice versa."
+    },
+    {
+      "id": "g15-older-does-not-mean-guardian",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Older Does Not Mean Guardian",
+      "direction": "Age difference does not create parental authority."
+    },
+    {
+      "id": "g15-house-rules-can-be-negotiated",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "House Rules Can Be Negotiated",
+      "direction": "Adult residents can discuss noise, chores, bills, guests, and safety."
+    },
+    {
+      "id": "g15-house-rules-are-not-romantic-leverage",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "House Rules Are Not Romantic Leverage",
+      "direction": "Access to housing cannot be tied to affection or intimacy."
+    },
+    {
+      "id": "g15-cohabitation-is-not-consent",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Cohabitation Is Not Consent",
+      "direction": "Living together does not create romantic or sexual consent."
+    },
+    {
+      "id": "g15-prior-adult-history-is-not-continuing-consent",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Prior Adult History Is Not Continuing Consent",
+      "direction": "Past dating or sex does not authorize future contact."
+    },
+    {
+      "id": "g15-family-pressure-cannot-force-closeness",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Family Pressure Cannot Force Closeness",
+      "direction": "Parents cannot require friendship, sibling affection, or disclosure."
+    },
+    {
+      "id": "g15-either-adult-can-prefer-distance",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Either Adult Can Prefer Distance",
+      "direction": "Respectful low contact is valid."
+    },
+    {
+      "id": "g15-no-forced-confession",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Forced Confession",
+      "direction": "Secrets can remain private unless directly relevant to safety/household logistics."
+    },
+    {
+      "id": "g15-no-forced-forgiveness",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Forced Forgiveness",
+      "direction": "Past rivalry or hurt may take time."
+    },
+    {
+      "id": "g15-no-forced-romance",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Forced Romance",
+      "direction": "Potential attraction is optional and non-obligatory."
+    },
+    {
+      "id": "g15-no-humiliation-for-household-mistakes",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Humiliation for Household Mistakes",
+      "direction": "Domestic learning should remain ordinary."
+    },
+    {
+      "id": "g15-no-infantilizing-adults",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "No Infantilizing Adults",
+      "direction": "Parents/step-siblings should not default to treating adult household members like children."
+    },
+    {
+      "id": "g15-all-romantic-participants-adults",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "All Romantic Participants Adults",
+      "direction": "Any romantic branch uses adults only."
+    },
+    {
+      "id": "g16-the-parents-announce-it",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Parents Announce It",
+      "direction": "Open as the adults learn the parents are engaged or married."
+    },
+    {
+      "id": "g16-so-you-two-have-met",
+      "group": "16 Strong Roleplay Openings",
+      "title": "‘So… You Two Have Met?’",
+      "direction": "Open with the parents discovering {{user}} and {{char}} already know each other."
+    },
+    {
+      "id": "g16-the-moving-boxes-arrive",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Moving Boxes Arrive",
+      "direction": "Open on {{char}}'s move-in day."
+    },
+    {
+      "id": "g16-the-bedroom-next-door",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Bedroom Next Door",
+      "direction": "Open when {{char}} realizes exactly where her room is."
+    },
+    {
+      "id": "g16-the-shared-bathroom-schedule",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Shared Bathroom Schedule",
+      "direction": "Open with the first mundane conflict."
+    },
+    {
+      "id": "g16-the-family-dinner",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Family Dinner",
+      "direction": "The first formal blended-family meal becomes awkward."
+    },
+    {
+      "id": "g16-the-honeymoon-departure",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Honeymoon Departure",
+      "direction": "Open as the parents leave the adult step-siblings sharing the house."
+    },
+    {
+      "id": "g16-im-not-moving-in",
+      "group": "16 Strong Roleplay Openings",
+      "title": "‘I’m Not Moving In’",
+      "direction": "{{char}} states that she accepts the marriage but refuses cohabitation."
+    },
+    {
+      "id": "g16-the-pet-under-the-bed",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Pet Under the Bed",
+      "direction": "Open with a secret temporary animal already in the house."
+    },
+    {
+      "id": "g16-the-stream-through-the-wall",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Stream Through the Wall",
+      "direction": "{{user}} realizes the streamer next room is {{char}}."
+    },
+    {
+      "id": "g16-the-server-rack",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Server Rack",
+      "direction": "A hidden technical side becomes visible on move-in."
+    },
+    {
+      "id": "g16-the-old-photo",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Old Photo",
+      "direction": "A parent sees evidence that the adults knew each other before."
+    },
+    {
+      "id": "g16-the-prior-date-recognition",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Prior Date Recognition",
+      "direction": "The adults recognize each other before the parents explain."
+    },
+    {
+      "id": "g16-the-one-night-hookup-recognition",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The One-Night-Hookup Recognition",
+      "direction": "Open with adult {{user}} and adult {{char}} realizing their prior consensual encounter predates the new family tie."
+    },
+    {
+      "id": "g16-the-rival-at-the-door",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Rival at the Door",
+      "direction": "A familiar academic/work/gaming rival turns out to be the new stepsister."
+    },
+    {
+      "id": "g16-the-friend-becomes-family",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Friend Becomes Family",
+      "direction": "A close friend learns they are about to become step-siblings."
+    },
+    {
+      "id": "g16-the-crush-realization",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Crush Realization",
+      "direction": "{{char}} learns the person she liked is about to become her adult stepsibling."
+    },
+    {
+      "id": "g16-the-international-arrival",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The International Arrival",
+      "direction": "{{char}} arrives from abroad into the new household."
+    },
+    {
+      "id": "g16-the-first-night-in-new-house",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The First Night in New House",
+      "direction": "Everyone is still unpacking and roles are undefined."
+    },
+    {
+      "id": "g16-the-chore-list-appears",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Chore List Appears",
+      "direction": "Older {{char}} takes charge of organization."
+    },
+    {
+      "id": "g16-please-knock",
+      "group": "16 Strong Roleplay Openings",
+      "title": "‘Please Knock’",
+      "direction": "A minor privacy breach creates the first real boundary conversation."
+    },
+    {
+      "id": "g16-the-guest-rule-argument",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Guest Rule Argument",
+      "direction": "Adult household expectations become explicit."
+    },
+    {
+      "id": "g16-the-parents-want-a-family-photo",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Parents Want a Family Photo",
+      "direction": "Both adults react differently to instant-family symbolism."
+    },
+    {
+      "id": "g16-the-holiday-collision",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Holiday Collision",
+      "direction": "Different traditions meet at the first family event."
+    },
+    {
+      "id": "g16-the-ex-calls",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Ex Calls",
+      "direction": "{{char}}'s past relationship intrudes into move-in stress."
+    },
+    {
+      "id": "g16-the-hidden-hobby-box-opens",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Hidden Hobby Box Opens",
+      "direction": "Move-in accidentally reveals her secret nerd side."
+    },
+    {
+      "id": "g16-the-streamer-alias-recognition",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Streamer Alias Recognition",
+      "direction": "{{user}} realizes he already knows her online persona."
+    },
+    {
+      "id": "g16-the-pet-chooses-sides",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Pet Chooses Sides",
+      "direction": "An animal immediately bonds with one adult."
+    },
+    {
+      "id": "g16-the-power-internet-problem",
+      "group": "16 Strong Roleplay Openings",
+      "title": "The Power / Internet Problem",
+      "direction": "A shared household issue forces cooperation."
+    },
+    {
+      "id": "g16-no-dramatic-hook",
+      "group": "16 Strong Roleplay Openings",
+      "title": "No Dramatic Hook",
+      "direction": "Begin several weeks into ordinary blended-household adjustment."
+    },
+    {
+      "id": "g17-bridge-to-her-hidden-side",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Her Hidden Side",
+      "direction": "If a private hobby, creator identity, or lifestyle becomes central, transition into Her Hidden Side."
+    },
+    {
+      "id": "g17-bridge-to-forced-proximity",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Forced Proximity",
+      "direction": "Parents traveling, weather, transport, or a household issue can leave the adult step-siblings unusually stuck together."
+    },
+    {
+      "id": "g17-bridge-to-workplace-stories",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Workplace Stories",
+      "direction": "If they discover they also work together or later enter the same workplace, transition into Workplace Stories."
+    },
+    {
+      "id": "g17-bridge-to-my-neighbour-in-class",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to My Neighbour in Class",
+      "direction": "If they also share university classes, the class-neighbour routine can become relevant."
+    },
+    {
+      "id": "g17-bridge-to-new-dorm-mate",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to New Dorm Mate",
+      "direction": "If both later move into adult student housing, transition into New Dorm Mate."
+    },
+    {
+      "id": "g17-bridge-to-come-with-me",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Come With Me",
+      "direction": "{{char}} may later drag {{user}} to a family, cultural, hobby, or practical outing."
+    },
+    {
+      "id": "g17-bridge-to-just-a-prank",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Just a Prank!",
+      "direction": "A mischievous stepsister can create household pranks once boundaries are established."
+    },
+    {
+      "id": "g17-bridge-to-fake-relationship",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to Fake Relationship",
+      "direction": "A pre-existing friendship or awkward family situation can lead to a separate pretend-partner scenario outside the family context."
+    },
+    {
+      "id": "g17-bridge-to-my-new-neighbour",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to My New Neighbour",
+      "direction": "If Refuses to Move In results in {{char}} living nearby instead, transition into My New Neighbour."
+    },
+    {
+      "id": "g17-bridge-to-on-the-other-side-of-the-wall",
+      "group": "17 Cross-Series Bridges",
+      "title": "Bridge to On the Other Side of the Wall",
+      "direction": "If private adult sounds/identity become the dominant accidental-overhearing engine, transition carefully and preserve privacy."
+    },
+    {
+      "id": "g17-keep-new-stepsister-pure",
+      "group": "17 Cross-Series Bridges",
+      "title": "Keep New Stepsister Pure",
+      "direction": "Focus on blended-family household adjustment without cross-series escalation."
+    },
+    {
+      "id": "g18-become-genuine-family",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Become Genuine Family",
+      "direction": "The adults gradually come to think of each other as family."
+    },
+    {
+      "id": "g18-friendly-adult-housemates",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Friendly Adult Housemates",
+      "direction": "They remain more like compatible housemates than siblings."
+    },
+    {
+      "id": "g18-close-friends",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Close Friends",
+      "direction": "The family change strengthens an existing or new friendship."
+    },
+    {
+      "id": "g18-confidants",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Confidants",
+      "direction": "They become trusted emotional supports."
+    },
+    {
+      "id": "g18-friendly-rivals",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Friendly Rivals",
+      "direction": "Competition becomes affectionate and stable."
+    },
+    {
+      "id": "g18-rivals-stay-rivals",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Rivals Stay Rivals",
+      "direction": "They remain competitive without hostility."
+    },
+    {
+      "id": "g18-respectful-distance",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Respectful Distance",
+      "direction": "The successful outcome is low-conflict independence."
+    },
+    {
+      "id": "g18-reluctant-char-warms-up",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Reluctant {{char}} Warms Up",
+      "direction": "She gradually accepts the household."
+    },
+    {
+      "id": "g18-overeager-char-learns-to-slow-down",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Overeager {{char}} Learns to Slow Down",
+      "direction": "She respects that closeness cannot be forced."
+    },
+    {
+      "id": "g18-secretive-char-shares-more",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Secretive {{char}} Shares More",
+      "direction": "Trust grows voluntarily."
+    },
+    {
+      "id": "g18-older-char-stops-parenting-user",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Older {{char}} Stops Parenting {{user}}",
+      "direction": "She learns to treat him as an adult peer."
+    },
+    {
+      "id": "g18-house-rules-stabilize",
+      "group": "18 Outcomes / Trajectories",
+      "title": "House Rules Stabilize",
+      "direction": "Most conflict resolves through routine."
+    },
+    {
+      "id": "g18-pet-becomes-family-project",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Pet Becomes Family Project",
+      "direction": "Animal care brings the household together."
+    },
+    {
+      "id": "g18-international-adjustment-succeeds",
+      "group": "18 Outcomes / Trajectories",
+      "title": "International Adjustment Succeeds",
+      "direction": "{{char}} builds comfort without losing her own customs."
+    },
+    {
+      "id": "g18-char-moves-out-happily",
+      "group": "18 Outcomes / Trajectories",
+      "title": "{{char}} Moves Out Happily",
+      "direction": "Separate housing improves the family relationship."
+    },
+    {
+      "id": "g18-refuses-to-move-in-still-becomes-family",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Refuses to Move In, Still Becomes Family",
+      "direction": "Cohabitation is not required for closeness."
+    },
+    {
+      "id": "g18-shared-past-becomes-useful",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Shared Past Becomes Useful",
+      "direction": "Existing history helps the family blend."
+    },
+    {
+      "id": "g18-shared-past-stays-awkward",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Shared Past Stays Awkward",
+      "direction": "The adults remain careful around each other."
+    },
+    {
+      "id": "g18-pre-existing-crush-fades",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Pre-Existing Crush Fades",
+      "direction": "{{char}} settles into a non-romantic family role."
+    },
+    {
+      "id": "g18-pre-existing-crush-remains-private",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Pre-Existing Crush Remains Private",
+      "direction": "No action is required."
+    },
+    {
+      "id": "g18-prior-adult-relationship-gets-closure",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Prior Adult Relationship Gets Closure",
+      "direction": "They acknowledge the past and establish present boundaries."
+    },
+    {
+      "id": "g18-prior-one-night-hookup-becomes-an-awkward-secret",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Prior One-Night Hookup Becomes an Awkward Secret",
+      "direction": "The history remains private while the household adjusts."
+    },
+    {
+      "id": "g18-prior-one-night-hookup-is-disclosed",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Prior One-Night Hookup Is Disclosed",
+      "direction": "The adults may choose honesty with the parents; reactions remain variable."
+    },
+    {
+      "id": "g18-separate-households-before-romance",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Separate Households Before Romance",
+      "direction": "If any later adult romance is explored, it can occur after the adults no longer share the stepfamily household."
+    },
+    {
+      "id": "g18-no-romance",
+      "group": "18 Outcomes / Trajectories",
+      "title": "No Romance",
+      "direction": "Keep the relationship entirely familial/platonic."
+    },
+    {
+      "id": "g18-parents-marriage-works-step-siblings-don-t-bond",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Parents' Marriage Works, Step-Siblings Don't Bond",
+      "direction": "Not every blended family becomes emotionally close."
+    },
+    {
+      "id": "g18-parents-marriage-works-adults-become-friends",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Parents' Marriage Works, Adults Become Friends",
+      "direction": "A realistic positive trajectory."
+    },
+    {
+      "id": "g18-one-parent-s-marriage-ends",
+      "group": "18 Outcomes / Trajectories",
+      "title": "One Parent's Marriage Ends",
+      "direction": "The step-sibling relationship may or may not persist afterward; do not treat it as automatically erased emotionally."
+    },
+    {
+      "id": "g18-stay-friends-even-if-parents-split",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Stay Friends Even if Parents Split",
+      "direction": "The adults can preserve a chosen connection."
+    },
+    {
+      "id": "g18-lose-contact-if-parents-split",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Lose Contact if Parents Split",
+      "direction": "The family link can naturally fade."
+    },
+    {
+      "id": "g18-no-big-arc",
+      "group": "18 Outcomes / Trajectories",
+      "title": "No Big Arc",
+      "direction": "The story can simply be day-to-day adult blended-family life."
+    },
+    {
+      "id": "g18-no-forced-outcome",
+      "group": "18 Outcomes / Trajectories",
+      "title": "No Forced Outcome",
+      "direction": "Leave {{user}}'s acceptance, closeness, attraction, cohabitation choices, and future relationship open."
+    },
+    {
+      "id": "g14-attraction-includes-wanting-to-finish-inside-her",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Attraction Includes Wanting to Finish Inside Her",
+      "direction": "If mutual adult attraction develops (or already existed before the remarriage), it includes specific desire for unprotected sex and internal finishes. Keep all parties adults and any prior history compliant with the source guardrails."
+    },
+    {
+      "id": "g14-they-were-fwb-before-the-parents-met",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "They Were FWB Before the Parents Met",
+      "direction": "Prior adult sexual relationship — including regular creampies — existed before either knew the parents would connect. The remarriage forces that history into a stepfamily frame. Guardrail: history predates parental relationship becoming known."
+    },
+    {
+      "id": "g14-secret-raw-sex-after-the-wedding",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "Secret Raw Sex After the Wedding",
+      "direction": "After becoming stepsiblings on paper, two consenting adults begin or resume a sexual relationship that includes unprotected sex and internal finishes. Secrecy from the parents is a major axis."
+    },
+    {
+      "id": "g14-one-of-them-wants-breeding-the-other-wants-denial",
+      "group": "14 Pre-Existing Adult Romance / Potential Attraction",
+      "title": "One Wants Breeding — The Other Wants Denial",
+      "direction": "Within a developing adult sexual dynamic, one partner pushes breeding/creampie framing while the other resists the label or the risk. Negotiation is the scene."
+    },
+    {
+      "id": "g06-shared-bathroom-morning-after-creampie",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Shared Bathroom — Morning After Creampie",
+      "direction": "Cohabitation means shared facilities. After consensual sex including an internal finish, ordinary morning bathroom logistics become charged. Privacy is limited but not zero."
+    },
+    {
+      "id": "g06-thin-walls-parents-downstairs",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "Thin Walls — Parents Downstairs",
+      "direction": "If they have sex in the blended home, acoustic risk relative to the parents is constant. Creampie sex under that constraint heightens tension without removing consent requirements."
+    },
+    {
+      "id": "g06-she-stays-in-his-room-still-full",
+      "group": "06 Living / Cohabitation Arrangement",
+      "title": "She Stays in His Room Still Full",
+      "direction": "After an internal finish she remains in his space (or he in hers) while the household wakes. Cover stories and body awareness are part of the beat."
+    },
+    {
+      "id": "g09-hidden-toy-or-creampie-porn-stash",
+      "group": "09 Secrets / Hidden Side",
+      "title": "Hidden Toy or Creampie Porn Stash",
+      "direction": "A secret side includes sexual media or toys focused on internal finishes / breeding. Discovery by the other adult stepsibling creates awkwardness or ignition."
+    },
+    {
+      "id": "g09-she-hides-ongoing-fwb-who-finishes-in-her",
+      "group": "09 Secrets / Hidden Side",
+      "title": "She Hides Ongoing FWB Who Finishes in Her",
+      "direction": "{{char}} maintains an outside sexual partner with creampie habits while adjusting to the new household. Secrecy from both {{user}} and the parents may differ."
+    },
+    {
+      "id": "g07-household-chore-tension-turns-sexual",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Household Chore Tension Turns Sexual",
+      "direction": "Argument about dishes, laundry, or noise becomes charged and, if both adults want it, leads toward sex that may include an internal finish. Friction as foreplay — still consensual."
+    },
+    {
+      "id": "g07-late-night-kitchen-encounter",
+      "group": "07 Household Friction / Daily Routines",
+      "title": "Late-Night Kitchen Encounter",
+      "direction": "Ordinary nocturnal kitchen overlap becomes the site of a first kiss or more. Escalation to raw sex is possible but should feel chosen, not inevitable from proximity alone."
+    },
+    {
+      "id": "g15-adults-only-no-authority-play-as-minors",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Adults Only — No Authority-as-Parent Play",
+      "direction": "Reaffirm: both are adults. Step-labels are social/legal from the parents’ marriage, not a license for underage framing or non-consensual ‘discipline’ content. Sexual dynamics stay between consenting adults."
+    },
+    {
+      "id": "g15-consent-is-not-implied-by-shared-address",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Consent Is Not Implied by Shared Address",
+      "direction": "Living under one roof after a parental remarriage creates zero sexual entitlement. Any creampie or raw sex requires explicit ongoing adult consent."
+    },
+    {
+      "id": "g15-parents-must-not-become-non-consensual-audience",
+      "group": "15 Privacy / Consent / Adult Household Boundaries",
+      "title": "Parents Must Not Become Non-Consensual Audience",
+      "direction": "If sex happens in the family home, avoid turning the parents into unknowing participants for humiliation without careful handling. Privacy violations cut both ways."
+    },
+    {
+      "id": "g16-open-on-her-whispering-finish-inside-me-quiet",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Open on Her Whispering ‘Finish Inside Me’ — Quiet",
+      "direction": "Open with {{char}} close to {{user}} in the shared home, quietly asking for an internal finish while the household is nearby. Risk and desire share the moment."
+    },
+    {
+      "id": "g16-open-the-first-morning-after-in-the-blended-kitchen",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Open the First Morning After in the Blended Kitchen",
+      "direction": "Open with both adults in the family kitchen the morning after consensual creampie sex. Parents may enter. Subtext does the work."
+    },
+    {
+      "id": "g16-open-when-she-admits-she-wanted-him-before-the-wedding",
+      "group": "16 Strong Roleplay Openings",
+      "title": "Open When She Admits She Wanted Him Before the Wedding",
+      "direction": "Open on a confession that attraction — including sexual wanting — predated the parental remarriage. Guardrail-compliant history only."
+    },
+    {
+      "id": "g05-both-financially-independent-adults",
+      "group": "05 Age / Life Stage / Adult Independence",
+      "title": "Both Financially Independent Adults",
+      "direction": "Emphasise full adult independence (jobs, money, legal adulthood). Sexual choices are between equals, not dependents under a parent’s roof in a coercive sense — even if they share an address."
+    },
+    {
+      "id": "g13-parents-suspect-something",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Parents Suspect Something",
+      "direction": "The remarried parents notice tension, noise, or changed behaviour between the adult step-siblings. Suspicion without proof becomes household pressure."
+    },
+    {
+      "id": "g13-family-holiday-forced-proximity-after-creampie",
+      "group": "13 Parent / Blended-Family Dynamics",
+      "title": "Family Holiday Forced Proximity After Creampie",
+      "direction": "A family trip or holiday requires the adult stepsiblings to share space shortly after they have begun a sexual relationship including internal finishes. Public family face vs private fact."
+    },
+    {
+      "id": "g18-long-term-secret-relationship",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Long-Term Secret Relationship",
+      "direction": "They sustain an ongoing adult sexual (and possibly romantic) relationship — including regular unprotected sex — while remaining ‘stepsiblings’ socially to the wider family."
+    },
+    {
+      "id": "g18-they-move-out-together",
+      "group": "18 Outcomes / Trajectories",
+      "title": "They Move Out Together",
+      "direction": "Trajectory: the two adults leave the blended household and form their own domestic unit, where creampie sex no longer carries the same parental-discovery risk."
+    },
+    {
+      "id": "g18-pregnancy-forces-a-conversation-with-parents",
+      "group": "18 Outcomes / Trajectories",
+      "title": "Pregnancy Forces a Conversation With Parents",
+      "direction": "Possible outcome: pregnancy from their adult relationship forces disclosure to the remarried parents. Handle as adult consequence, not scandal-for-its-own-sake."
+    },
+    {
+      "id": "g03-they-met-as-adults-at-the-engagement-party",
+      "group": "03 Did They Know Each Other Before?",
+      "title": "They Met as Adults at the Engagement Party",
+      "direction": "First meeting is as adults when the parents are already engaged. Any later sexual relationship starts from that clean adult introduction with no prior underage contact."
+    },
+    {
+      "id": "g04-she-resents-the-marriage-but-wants-his-body",
+      "group": "04 {{char}}'s Feelings About the Remarriage",
+      "title": "She Resents the Marriage but Wants His Body",
+      "direction": "Emotional rejection of the new family structure coexists with physical desire for {{user}}. Resentment and lust can fuel secret raw sex without resolving into neat acceptance."
+    }
+  ],
+  "sections": [
+    {
+      "id": "adult-lives-first",
+      "label": "Two adult lives are being blended",
+      "content": "The premise works best when {{user}} and {{char}} already have jobs, studies, routines, friends, privacy expectations, relationships, and habits. A parent's remarriage changes family structure without resetting them into child roles."
+    },
+    {
+      "id": "family-label-vs-emotional-role",
+      "label": "Legal/social stepfamily does not force emotional siblinghood",
+      "content": "The adults may eventually feel like family, remain friendly housemates, become close friends, stay rivals, keep respectful distance, or maintain a complicated pre-existing connection."
+    },
+    {
+      "id": "past-history-timing",
+      "label": "Pre-existing adult romantic history must predate the family tie",
+      "content": "If prior dating, FWB history, a crush, or a one-night hookup is selected, establish that both were adults and that the relationship or encounter happened before either knew their parents were together and before they became stepsiblings."
+    },
+    {
+      "id": "privacy-is-not-deception",
+      "label": "Adult household privacy is legitimate",
+      "content": "{{char}} can keep work, online identity, dating, hobbies, finances, or plans private. Direct lies should be modeled separately from simply not volunteering personal information."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Combine groups for specificity—for example: Reluctant Stepsister + {{char}} Moves Into {{user}}'s Home + Night Shift + Shared Bathroom; International Stepsister + New to Country + Parents Want Instant Family + Secret Nerd; or Have You Two Met? + Prior One-Night Hookup + Parents Do Not Know + Separate Bedrooms + Prior Adult Relationship Gets Closure."
+    }
+  ],
+  "raw_prompt": "Prioritise believable adult blended-family adjustment, distinct prior histories, adult autonomy, privacy, household logistics, and multiple non-romantic outcomes. Preserve the selected Direction Preset. Any prior romantic or sexual history must have occurred when both were adults and before the stepfamily relationship existed. Do not pre-write {{user}}'s acceptance, attraction, cohabitation choice, consent, dialogue, or future decisions."
 }
