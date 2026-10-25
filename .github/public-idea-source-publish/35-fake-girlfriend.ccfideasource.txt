@@ -3,6 +3,3859 @@
   "schema_version": 1,
   "id": "bible-i-35-fake-girlfriend",
   "title": "Fake Girlfriend",
+  "description": "Reusable adult fake-dating engine in which {{user}} asks adult {{char}} to pretend to be his girlfriend for a social, family, romantic, or practical reason. Detailed presets vary the reason for the arrangement, {{char}}'s prior relationship to {{user}}, target audience, duration, cover story, public affection rules, private boundaries, performance style, hidden feelings, family/friend pressure, practical evidence, jealousy complications, cover mistakes, emotional escalation, strong openings, and outcomes ranging from a clean platonic favor to friendship changes or an honestly negotiated real relationship.",
   "source_version": "1.2",
-  "note": "Full expanded content (620 presets) is available on Google Drive Idea Sources folder as 35-fake-girlfriend.ccfideasource.json. Replace this placeholder with the full JSON from Drive or artifacts before running publish-public-idea-sources."
+  "bible": {
+    "series": "Character Card Forge — Series Bible I",
+    "series_number": 35,
+    "category": "Setting & Slice of Life",
+    "source_date": "2026-09-21"
+  },
+  "summary": "Adult {{user}} asks adult {{char}} to pose as his girlfriend because of family pressure, friends who keep setting him up, an unwanted admirer, a wedding or reunion, a jealousy plan, or another concrete social reason. They must decide who needs to believe the cover, how long it lasts, what history they claim, what affection is permitted, what private boundaries remain untouched, and how they will end the arrangement. {{char}} may begin completely platonic, already have hidden feelings, develop feelings during the performance, discover they are incompatible, or remain a friend throughout.",
+  "core_premise": "The engine is consensual adult social roleplay between {{user}} and {{char}}, not automatic romance. A convincing fake relationship requires a purpose, target audience, believable history, boundaries, logistics, and an exit plan. The strongest concepts distinguish what the pair performs publicly from what they actually feel privately, and allow the experience to deepen friendship, create awkwardness, expose incompatibility, or become genuinely romantic only through later honest mutual choice.",
+  "setup": "Begin near the request, negotiation, rehearsal, first public appearance, a cover-story mistake, the moment the original target appears, or a later point when the fake relationship starts carrying unexpected emotional weight. Establish why {{user}} needs the arrangement, who {{char}} is to him beforehand, who must believe it, and at least the initial boundaries. Do not pre-write {{user}}'s attraction, affection, consent, dialogue, jealousy, acceptance of real dating, or future behavior.",
+  "core_variables": [
+    "Why {{user}} needs a fake girlfriend.",
+    "Who adult {{char}} is to {{user}} before the request.",
+    "Who must believe the fake relationship and how skeptical they are.",
+    "How long the arrangement lasts and what ends it.",
+    "What dating history, first meeting, anniversary, or shared details they claim.",
+    "What public affection, flirting, photos, pet names, and couple behavior are permitted.",
+    "What remains explicitly off-limits in private.",
+    "Whether either adult has an existing partner or real dating life that must be respected.",
+    "Whether {{char}} begins with hidden romantic feelings, curiosity, old feelings, or none.",
+    "How good {{char}} is at improvising and maintaining the cover.",
+    "How family, friends, exes, admirers, coworkers, or social-media audiences complicate the plan.",
+    "What physical or digital evidence is created and who may use it.",
+    "What mistakes, contradictions, or skeptical observers threaten exposure.",
+    "Whether jealousy tactics are involved and whether they work, fail, or are abandoned.",
+    "What happens when public performance and private emotion stop matching.",
+    "How the pair plans to end the fake relationship.",
+    "Whether the eventual outcome is cleanly platonic, closer friendship, awkward distance, confession, or an honestly negotiated real relationship."
+  ],
+  "generation_rules": [
+    "Preserve the defining hook: adult {{user}} asks adult {{char}} to pretend to be his girlfriend for a concrete social, family, romantic, or practical reason.",
+    "If Parents Pestering is selected, define the specific family pressure without giving relatives authority over either adult's dating life.",
+    "If Friends Keep Setting Him Up is selected, make the matchmaking behavior concrete and preserve {{user}}'s right simply to refuse dates.",
+    "If Make Another Girl Back Off is selected, treat the goal as reinforcing a boundary rather than humiliating or provoking the other woman; a fake relationship does not replace a direct no when one is safe and appropriate.",
+    "If Wedding / Reunion Date is selected, make the event, audience, travel, dress, photos, or follow-up invitations materially relevant.",
+    "If Jealousy Play is selected, treat jealousy manipulation as uncertain and potentially messy rather than proof of love or a guaranteed strategy.",
+    "Distinguish public performance from actual private feelings and consent.",
+    "Agreeing to fake-date does not automatically include kissing, sexual behavior, shared sleeping, account access, social-media posting, or exclusivity.",
+    "If either adult has a real partner, preserve that relationship's explicit agreements rather than treating fake dating as automatically harmless.",
+    "Keep social deception bounded; do not escalate the premise into legal, immigration, benefits, financial, tenancy, or employment fraud.",
+    "If feelings become genuine, move from performance to explicit honest conversation rather than silently treating fake consent as real consent.",
+    "Do not pre-write {{user}}'s attraction, affection, jealousy, dialogue, consent, date acceptance, or future relationship.",
+    "A fully platonic success, failed plan, honest confession of the lie, or friendship-only ending is valid.",
+    "If a selected preset narrows reason, audience, duration, cover history, affection, emotional state, complication, or outcome, preserve it while varying remaining axes."
+  ],
+  "guardrails": [
+    "All romantic or sexual participants are adults.",
+    "Fake-dating consent is consent to the agreed performance only; it does not imply consent to kissing, sex, nudity, shared beds, surveillance, account access, or future dating.",
+    "Public affection must remain within explicitly negotiated boundaries, and either adult may stop the performance.",
+    "Past romantic or sexual history does not create present consent.",
+    "Existing real relationships must be respected according to the adults' agreements.",
+    "Do not use a fake relationship as justification for harassment, stalking, coercion, blackmail, revenge, public humiliation, or deliberately escalating an unwanted admirer's behavior.",
+    "Do not use the premise for legal-status, immigration, government-benefit, insurance, housing, employment-benefit, or financial fraud.",
+    "Do not manufacture intimate photos, private messages, passwords, or device access as 'proof' without mutual consent.",
+    "Do not post, tag, or share images of either adult without agreement.",
+    "Do not make alcohol or intoxication expand previously agreed affection boundaries.",
+    "A persistent admirer ignoring a relationship label remains a boundary/safety problem; relationship status is not the only valid reason for saying no.",
+    "Jealousy is information, not ownership, entitlement, or proof of love.",
+    "Family or friends may apply social pressure but cannot compel either adult to continue the arrangement.",
+    "Do not force confession, romance, kissing, sex, exclusivity, or a real relationship as the payoff.",
+    "Do not use cosmetic changes of event, audience, or fake backstory as the sole basis for supposedly different ideas."
+  ],
+  "diversity_axes": [
+    "Family pressure, blind dates, friend matchmaking, wedding, reunion, work event, holiday visit, couples event, persistent admirer, ex, jealousy plan, privacy cover, cultural expectation, accidental lie, confidence practice, or mutual benefit",
+    "Best friend, close/casual friend, childhood friend, classmate, study partner, coworker, former coworker, neighbour, housemate, friend-of-friend, gaming/online/hobby friend, rival, former date, former girlfriend, former FWB, old crush, recent acquaintance, actor/performer friend, or stranger via mutual friend",
+    "Parents, one parent, grandparents, extended family, sibling, cousins, friends, matchmaker friend, coworkers, boss at social event, old classmates, ex, persistent admirer, crush, both families, social-media audience, wedding guests, reunion crowd, university peers, community, or one skeptic",
+    "One conversation, dinner, evening, party, wedding, reunion, day, weekend, trip, week, month, repeated appearances, until family leaves, until admirer backs off, until event ends, hard end date, weekly review, or open-ended arrangement",
+    "Just started dating, one/three/six months, year-long claim, friends-to-lovers, met at school/work/online/hobby, neighbours, long-distance, reconciled, mostly truthful cover, elaborate fake history, minimal history, cheat sheet, practice Q&A, or no rehearsal",
+    "No touch, hand-holding, arm linking, hugs, cheek/forehead kiss, optional checked-in mouth kiss, dancing, sitting close, pet names, compliments, mild flirting, photo-only closeness, target-only affection, signals, or no surprise affection",
+    "Private friendship, strict off-switch, separate sleeping, separate hotel rooms, no sex/nudity/device access/passwords, posting approval, expense rules, existing-partner consent, exit clauses, regular check-ins, no legal/financial escalation, or privacy after ending",
+    "Natural actress, awkward liar, overactor, minimalist, deadpan, playful, shy, confident, blunt, chaotic, strategic, protective, competitive, popular, introverted, sarcastic, literal, detail-oriented, forgetful, ex, professional performer, creator, romantic, cautious, or loyalty-driven {{char}}",
+    "No feelings, curiosity, current/old/long-term crush, former attraction, ex with/without feelings, likes someone else, not dating, attraction during rehearsal/event/private time, uncertain feelings, jealousy, protective friendship, exit before feelings grow, confession, or no feelings ever",
+    "Warm/skeptical parents, nosy relatives, siblings, supportive/suspicious friends, exes, admirers, coworkers, reunion peers, photographers, couples games, dances, family photos, gifts, group chats, follow-up invitations, or surprisingly indifferent audiences",
+    "Cheat sheet, calendar, staged photos, no photos, status changes, private accounts, rehearsed stories, real facts, minimal lies, correction signals, wardrobe, gifts, practice date, names/timeline memorization, exit story, expenses, separate travel lodging, or no password evidence",
+    "Ex/crush jealousy target, indifferent target, relieved target, congratulations, competition, bluff called, third-party friendship, genuine jealousy from {{char}}, plan cancellation, direct conversation, respectful back-off, admirer ignores status, or no jealousy element",
+    "Wrong anniversary/story, forgotten nickname, missing birthday/favorite, social-media contradiction, mutual-friend contradiction, old date appears, accidental 'fake' slip, too much/little affection, couples quiz, unexpected overnight assumption, real-date collision, discovery, confession, or unnoticed mistake",
+    "Fully fake success, deeper friendship, new perspective, feelings from {{char}}, rules renegotiation, exit clause, confession, real-date invitation, incompatible-as-couple realization, compatibility realization, platonic outcome, fake breakup, discovery, move-on, or unresolved ending"
+  ],
+  "cross_links": [
+    "Fake Boyfriend",
+    "My Neighbour in Class",
+    "Workplace Stories",
+    "Come With Me",
+    "Forced Proximity",
+    "My New Neighbour",
+    "Her Hidden Side"
+  ],
+  "tags": [
+    "adult",
+    "fake dating",
+    "fake girlfriend",
+    "friends to lovers",
+    "family pressure",
+    "wedding date",
+    "reunion",
+    "jealousy",
+    "social cover",
+    "boundaries",
+    "slow burn",
+    "friendship",
+    "romance optional",
+    "slice of life"
+  ],
+  "notes": "Expanded from Series Bible I #35. The five original seeds—Parents Pestering, Friends Keep Setting Him Up, Make Another Girl Back Off, Wedding / Reunion Date, and Jealousy Play—are preserved with their original preset IDs. The v1.1 source separates public performance from private consent, keeps jealousy tactics uncertain rather than inherently romantic, limits the arrangement to social deception rather than legal/financial fraud, and supports fully platonic as well as romantic outcomes.",
+  "direction_presets": [
+    {
+      "id": "g01-general-mixed",
+      "group": "01 General / Mixed",
+      "title": "General / Mixed",
+      "direction": "Generate broadly varied Fake Girlfriend concepts in which adult {{user}} asks adult {{char}} to pretend to be his girlfriend for a social, family, romantic, or practical reason. Vary why he needs the arrangement, who {{char}} is to him beforehand, who must believe the cover story, how long it lasts, what history they claim, what public affection is permitted, what private rules they set, whether either adult already has hidden feelings, how convincingly {{char}} performs the role, what mistakes or complications threaten the arrangement, and whether the relationship remains fake, ends cleanly, becomes genuine, or changes their original relationship in some other way. Do not pre-write {{user}}'s attraction, consent, dialogue, affection, or future decisions."
+    },
+    {
+      "id": "parents-pestering",
+      "group": "02 Original Bible Seeds",
+      "title": "Parents Pestering",
+      "direction": "{{user}} asks adult {{char}} to pose as his girlfriend because family members keep questioning his dating life, setting expectations, or trying to arrange introductions. Keep the family pressure social rather than giving them control over either adult."
+    },
+    {
+      "id": "friends-keep-setting-him-up",
+      "group": "02 Original Bible Seeds",
+      "title": "Friends Keep Setting Him Up",
+      "direction": "{{user}} wants friends to stop arranging dates or treating him as a project, so adult {{char}} agrees to appear as his girlfriend for a defined period or event."
+    },
+    {
+      "id": "make-another-girl-back-off",
+      "group": "02 Original Bible Seeds",
+      "title": "Make Another Girl Back Off",
+      "direction": "{{user}} asks adult {{char}} to help communicate that he is unavailable to another adult woman whose attention he does not want. Keep the goal boundary-setting rather than humiliation, retaliation, or deliberately provoking obsession."
+    },
+    {
+      "id": "wedding-reunion-date",
+      "group": "02 Original Bible Seeds",
+      "title": "Wedding / Reunion Date",
+      "direction": "{{user}} needs a convincing adult partner for a wedding, reunion, formal dinner, or similar event where arriving alone would create unwanted attention."
+    },
+    {
+      "id": "jealousy-play",
+      "group": "02 Original Bible Seeds",
+      "title": "Jealousy Play",
+      "direction": "The fake relationship is intended to provoke or test jealousy in another adult. Treat this as a potentially messy social tactic rather than proof of love, and avoid coercion, harassment, or targeting someone vulnerable."
+    },
+    {
+      "id": "g03-stop-family-questions",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Stop Family Questions",
+      "direction": "{{user}} wants a temporary answer to repetitive family questions about dating."
+    },
+    {
+      "id": "g03-stop-blind-date-attempts",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Stop Blind-Date Attempts",
+      "direction": "Family members keep arranging introductions."
+    },
+    {
+      "id": "g03-stop-friends-setting-him-up",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Stop Friends Setting Him Up",
+      "direction": "Friends repeatedly try to pair him with people."
+    },
+    {
+      "id": "g03-wedding-plus-one",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Wedding Plus-One",
+      "direction": "A formal invitation allows or expects a partner."
+    },
+    {
+      "id": "g03-school-university-reunion",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "School / University Reunion",
+      "direction": "{{user}} wants to avoid invasive questions at a reunion."
+    },
+    {
+      "id": "g03-work-function-plus-one",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Work Function Plus-One",
+      "direction": "A company dinner or social event creates the need; workplace consequences remain separate from romance."
+    },
+    {
+      "id": "g03-family-holiday-visit",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Family Holiday Visit",
+      "direction": "A multi-day visit creates a longer fake-dating performance."
+    },
+    {
+      "id": "g03-birthday-gathering",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Birthday Gathering",
+      "direction": "The arrangement only needs to survive one social event."
+    },
+    {
+      "id": "g03-engagement-party",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Engagement Party",
+      "direction": "Someone else’s engagement prompts questions about {{user}}'s relationship status."
+    },
+    {
+      "id": "g03-siblings-wedding",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Sibling’s Wedding",
+      "direction": "Close family makes the cover harder because they know {{user}} well."
+    },
+    {
+      "id": "g03-cousins-wedding",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Cousin’s Wedding",
+      "direction": "Extended family is easier to fool but more numerous."
+    },
+    {
+      "id": "g03-high-school-reunion",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "High-School Reunion",
+      "direction": "Old classmates become the target audience."
+    },
+    {
+      "id": "g03-university-alumni-event",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "University Alumni Event",
+      "direction": "Adult peers expect updates on everyone’s lives."
+    },
+    {
+      "id": "g03-friend-group-couples-night",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Friend Group Couples Night",
+      "direction": "{{user}} is tired of being treated as the only single person."
+    },
+    {
+      "id": "g03-double-date-obligation",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Double-Date Obligation",
+      "direction": "Friends insist on a couples outing."
+    },
+    {
+      "id": "g03-holiday-party",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Holiday Party",
+      "direction": "A seasonal party creates a one-night cover."
+    },
+    {
+      "id": "g03-family-dinner",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Family Dinner",
+      "direction": "The fake relationship starts with a simple meal."
+    },
+    {
+      "id": "g03-weekend-away-with-friends",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Weekend Away With Friends",
+      "direction": "The cover must survive shared accommodation and extended social time without implying intimacy."
+    },
+    {
+      "id": "g03-destination-wedding",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Destination Wedding",
+      "direction": "Travel extends the arrangement."
+    },
+    {
+      "id": "g03-cruise-resort-event",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Cruise / Resort Event",
+      "direction": "A trip makes the performance more sustained."
+    },
+    {
+      "id": "g03-convention-festival-weekend",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Convention / Festival Weekend",
+      "direction": "A social event overlaps with a shared hobby."
+    },
+    {
+      "id": "g03-make-persistent-admirer-back-off",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Make Persistent Admirer Back Off",
+      "direction": "The goal is to reinforce a clear no to unwanted adult attention."
+    },
+    {
+      "id": "g03-make-an-ex-stop-asking-questions",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Make an Ex Stop Asking Questions",
+      "direction": "{{user}} wants an ex to understand he has moved on, while avoiding cruelty or harassment."
+    },
+    {
+      "id": "g03-stop-coworker-matchmaking",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Stop Coworker Matchmaking",
+      "direction": "Colleagues keep speculating or arranging dates."
+    },
+    {
+      "id": "g03-avoid-being-seated-at-singles-table",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Avoid Being Seated at Singles Table",
+      "direction": "A trivial social reason creates comedy."
+    },
+    {
+      "id": "g03-family-tradition-requires-plus-one",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Family Tradition Requires Plus-One",
+      "direction": "A peculiar family custom motivates the lie."
+    },
+    {
+      "id": "g03-parents-think-he-is-lonely",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Parents Think He Is Lonely",
+      "direction": "{{user}} wants to reduce parental worry, even if the method creates later complications."
+    },
+    {
+      "id": "g03-prove-he-is-not-secretly-heartbroken",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Prove He Is Not Secretly Heartbroken",
+      "direction": "Friends misread his single status after an old breakup."
+    },
+    {
+      "id": "g03-protect-privacy-about-real-dating-life",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Protect Privacy About Real Dating Life",
+      "direction": "The fake relationship deflects curiosity while {{user}} keeps another part of his adult personal life private."
+    },
+    {
+      "id": "g03-avoid-questions-about-orientation-or-preferences",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Avoid Questions About Orientation or Preferences",
+      "direction": "The cover deflects invasive questions without defining {{user}}'s identity."
+    },
+    {
+      "id": "g03-temporary-social-cover",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Temporary Social Cover",
+      "direction": "{{user}} simply needs a believable answer for a short period."
+    },
+    {
+      "id": "g03-practice-dating-confidence",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Practice Dating Confidence",
+      "direction": "{{char}} agrees to rehearse public social situations, but the arrangement remains explicit between them."
+    },
+    {
+      "id": "g03-help-with-family-image-problem",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Help With Family Image Problem",
+      "direction": "A relative wrongly assumes something about {{user}}'s stability or adulthood."
+    },
+    {
+      "id": "g03-cultural-family-expectation",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Cultural / Family Expectation",
+      "direction": "Family expectations make partnered status socially significant; avoid stereotyping culture."
+    },
+    {
+      "id": "g03-community-event",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Community Event",
+      "direction": "A local or religious/community event creates social pressure; beliefs remain neutral."
+    },
+    {
+      "id": "g03-apartment-neighbour-gossip",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Apartment / Neighbour Gossip",
+      "direction": "{{user}} wants nosy neighbors to stop speculating."
+    },
+    {
+      "id": "g03-online-friend-group-assumption",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Online Friend Group Assumption",
+      "direction": "A mistaken belief in an online community becomes easier to maintain briefly than correct."
+    },
+    {
+      "id": "g03-accidental-lie-needs-short-term-cover",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Accidental Lie Needs Short-Term Cover",
+      "direction": "{{user}} once implied he was dating someone and now asks {{char}} to help before admitting the truth."
+    },
+    {
+      "id": "g03-mutual-benefit",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "Mutual Benefit",
+      "direction": "{{char}} also gets something social or practical from the fake relationship."
+    },
+    {
+      "id": "g03-no-grand-reason",
+      "group": "03 Why {{user}} Needs a Fake Girlfriend",
+      "title": "No Grand Reason",
+      "direction": "The premise can begin from a small, almost silly inconvenience rather than high drama."
+    },
+    {
+      "id": "g04-best-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Best Friend",
+      "direction": "{{char}} is {{user}}'s closest adult friend and already knows his habits."
+    },
+    {
+      "id": "g04-close-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Close Friend",
+      "direction": "They trust each other but have not dated."
+    },
+    {
+      "id": "g04-casual-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Casual Friend",
+      "direction": "The request itself creates new closeness."
+    },
+    {
+      "id": "g04-childhood-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Childhood Friend",
+      "direction": "Long history makes the cover believable but family may know them too well."
+    },
+    {
+      "id": "g04-university-classmate",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "University Classmate",
+      "direction": "They know each other through adult study."
+    },
+    {
+      "id": "g04-study-partner",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Study Partner",
+      "direction": "Academic familiarity provides plausible shared history."
+    },
+    {
+      "id": "g04-coworker",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Coworker",
+      "direction": "They know each other professionally; workplace boundaries remain separate."
+    },
+    {
+      "id": "g04-former-coworker",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Former Coworker",
+      "direction": "They can invent a workplace-origin dating story with fewer current consequences."
+    },
+    {
+      "id": "g04-neighbour",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Neighbour",
+      "direction": "Repeated proximity makes the request convenient."
+    },
+    {
+      "id": "g04-dorm-housemate-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Dorm / Housemate Friend",
+      "direction": "They already spend time together but cohabitation does not imply romance."
+    },
+    {
+      "id": "g04-friend-of-a-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Friend-of-a-Friend",
+      "direction": "{{char}} is socially adjacent rather than personally close."
+    },
+    {
+      "id": "g04-siblings-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Sibling’s Friend",
+      "direction": "Family may already recognize {{char}}."
+    },
+    {
+      "id": "g04-friends-sister",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Friend’s Sister",
+      "direction": "She has a social connection to {{user}}'s circle."
+    },
+    {
+      "id": "g04-gaming-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Gaming Friend",
+      "direction": "They know each other through games."
+    },
+    {
+      "id": "g04-online-friend-meeting-in-person",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Online Friend Meeting In Person",
+      "direction": "The arrangement overlaps with a first or early offline meeting."
+    },
+    {
+      "id": "g04-hobby-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Hobby Friend",
+      "direction": "A club, gym, convention, or fandom connects them."
+    },
+    {
+      "id": "g04-former-classmate",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Former Classmate",
+      "direction": "They reconnect for the favor."
+    },
+    {
+      "id": "g04-old-school-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Old School Friend",
+      "direction": "Years of distance make the request surprising."
+    },
+    {
+      "id": "g04-friendly-rival",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Friendly Rival",
+      "direction": "Competition gives their fake affection an unusual edge."
+    },
+    {
+      "id": "g04-work-rival",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Work Rival",
+      "direction": "They cooperate socially despite professional competition."
+    },
+    {
+      "id": "g04-barely-acquainted",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Barely Acquainted",
+      "direction": "{{user}} takes a risk asking someone he does not know well."
+    },
+    {
+      "id": "g04-recently-met",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Recently Met",
+      "direction": "They only just became friendly."
+    },
+    {
+      "id": "g04-former-date",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Former Date",
+      "direction": "They went on one or several adult dates but never became a couple."
+    },
+    {
+      "id": "g04-almost-girlfriend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Almost Girlfriend",
+      "direction": "They nearly dated previously."
+    },
+    {
+      "id": "g04-former-girlfriend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Former Girlfriend",
+      "direction": "An adult ex agrees to temporarily pretend they got back together; old issues need not be resolved."
+    },
+    {
+      "id": "g04-former-fwb",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Former FWB",
+      "direction": "A past consensual adult casual relationship complicates the performance."
+    },
+    {
+      "id": "g04-had-one-adult-hookup",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Had One Adult Hookup",
+      "direction": "There is prior consensual adult history without a relationship."
+    },
+    {
+      "id": "g04-char-once-had-a-crush",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "{{char}} Once Had a Crush",
+      "direction": "She previously liked {{user}}."
+    },
+    {
+      "id": "g04-char-secretly-has-a-crush-now",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "{{char}} Secretly Has a Crush Now",
+      "direction": "She agrees partly because she already likes him."
+    },
+    {
+      "id": "g04-char-used-to-reject-user",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "{{char}} Used to Reject {{user}}",
+      "direction": "A past mismatch makes the request ironic; do not pre-write his present feelings."
+    },
+    {
+      "id": "g04-user-previously-rejected-char",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "{{user}} Previously Rejected {{char}}",
+      "direction": "Her decision to help is not proof her old feelings remain."
+    },
+    {
+      "id": "g04-mutual-attraction-never-discussed",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Mutual Attraction Never Discussed",
+      "direction": "Both may have noticed tension, but {{user}}'s current feelings remain open."
+    },
+    {
+      "id": "g04-no-romantic-history-at-all",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "No Romantic History at All",
+      "direction": "Their friendship has always been clearly platonic."
+    },
+    {
+      "id": "g04-professional-acquaintance",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Professional Acquaintance",
+      "direction": "They know each other through a service, project, or industry network."
+    },
+    {
+      "id": "g04-fake-dating-veteran",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Fake Dating Veteran",
+      "direction": "{{char}} has done harmless roleplay/acting favors before and treats it practically."
+    },
+    {
+      "id": "g04-complete-stranger-through-mutual-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Complete Stranger Through Mutual Friend",
+      "direction": "A trusted mutual friend introduces them specifically for the arrangement."
+    },
+    {
+      "id": "g04-actor-performer-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Actor / Performer Friend",
+      "direction": "{{char}} is comfortable improvising public behavior."
+    },
+    {
+      "id": "g04-shy-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Shy Friend",
+      "direction": "The performance pushes {{char}} outside her comfort zone."
+    },
+    {
+      "id": "g04-popular-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Popular Friend",
+      "direction": "Her social confidence makes the cover convincing."
+    },
+    {
+      "id": "g04-blunt-practical-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Blunt Practical Friend",
+      "direction": "{{char}} treats the fake relationship like a project."
+    },
+    {
+      "id": "g04-chaotic-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Chaotic Friend",
+      "direction": "She keeps adding unnecessary details to the cover story."
+    },
+    {
+      "id": "g04-protective-friend",
+      "group": "04 Who {{char}} Is to {{user}} Beforehand",
+      "title": "Protective Friend",
+      "direction": "She agrees because she thinks the social pressure on {{user}} is unfair."
+    },
+    {
+      "id": "g05-user-s-parents",
+      "group": "05 Who Must Believe It",
+      "title": "{{user}}'s Parents",
+      "direction": "His parents are the main people who must believe it."
+    },
+    {
+      "id": "g05-one-parent-only",
+      "group": "05 Who Must Believe It",
+      "title": "One Parent Only",
+      "direction": "Only one parent is applying pressure."
+    },
+    {
+      "id": "g05-grandparents",
+      "group": "05 Who Must Believe It",
+      "title": "Grandparents",
+      "direction": "Older relatives become the target audience."
+    },
+    {
+      "id": "g05-extended-family",
+      "group": "05 Who Must Believe It",
+      "title": "Extended Family",
+      "direction": "A large family gathering requires consistency."
+    },
+    {
+      "id": "g05-sibling",
+      "group": "05 Who Must Believe It",
+      "title": "Sibling",
+      "direction": "A sibling is the most skeptical observer."
+    },
+    {
+      "id": "g05-cousins",
+      "group": "05 Who Must Believe It",
+      "title": "Cousins",
+      "direction": "Peers within the family are curious."
+    },
+    {
+      "id": "g05-family-friend",
+      "group": "05 Who Must Believe It",
+      "title": "Family Friend",
+      "direction": "Someone who has known {{user}} for years is hard to fool."
+    },
+    {
+      "id": "g05-best-friends",
+      "group": "05 Who Must Believe It",
+      "title": "Best Friends",
+      "direction": "His closest friends know his habits."
+    },
+    {
+      "id": "g05-wider-friend-group",
+      "group": "05 Who Must Believe It",
+      "title": "Wider Friend Group",
+      "direction": "The audience is socially broad but less observant."
+    },
+    {
+      "id": "g05-one-matchmaking-friend",
+      "group": "05 Who Must Believe It",
+      "title": "One Matchmaking Friend",
+      "direction": "A particular friend keeps setting him up."
+    },
+    {
+      "id": "g05-coworkers",
+      "group": "05 Who Must Believe It",
+      "title": "Coworkers",
+      "direction": "Professional acquaintances are the audience."
+    },
+    {
+      "id": "g05-boss-at-social-event",
+      "group": "05 Who Must Believe It",
+      "title": "Boss at Social Event",
+      "direction": "Keep employment power separate from the private arrangement."
+    },
+    {
+      "id": "g05-old-classmates",
+      "group": "05 Who Must Believe It",
+      "title": "Old Classmates",
+      "direction": "A reunion crowd becomes the audience."
+    },
+    {
+      "id": "g05-ex-girlfriend",
+      "group": "05 Who Must Believe It",
+      "title": "Ex-Girlfriend",
+      "direction": "An adult ex is expected to see the performance."
+    },
+    {
+      "id": "g05-persistent-admirer",
+      "group": "05 Who Must Believe It",
+      "title": "Persistent Admirer",
+      "direction": "An adult woman who ignores softer signals is the target; clear direct boundaries remain valid."
+    },
+    {
+      "id": "g05-another-girl-he-likes",
+      "group": "05 Who Must Believe It",
+      "title": "Another Girl He Likes",
+      "direction": "The fake relationship is intended to provoke jealousy; frame this as risky rather than guaranteed effective."
+    },
+    {
+      "id": "g05-char-s-friends-too",
+      "group": "05 Who Must Believe It",
+      "title": "{{char}}'s Friends Too",
+      "direction": "Her circle must also maintain the story."
+    },
+    {
+      "id": "g05-both-families",
+      "group": "05 Who Must Believe It",
+      "title": "Both Families",
+      "direction": "The cover rapidly becomes larger than intended."
+    },
+    {
+      "id": "g05-both-friend-groups",
+      "group": "05 Who Must Believe It",
+      "title": "Both Friend Groups",
+      "direction": "The arrangement requires consistent public behavior across circles."
+    },
+    {
+      "id": "g05-social-media-audience",
+      "group": "05 Who Must Believe It",
+      "title": "Social Media Audience",
+      "direction": "Online posts or status changes become part of the cover only by mutual agreement."
+    },
+    {
+      "id": "g05-wedding-guests",
+      "group": "05 Who Must Believe It",
+      "title": "Wedding Guests",
+      "direction": "Most observers are temporary acquaintances."
+    },
+    {
+      "id": "g05-reunion-attendees",
+      "group": "05 Who Must Believe It",
+      "title": "Reunion Attendees",
+      "direction": "Old history makes invented details easy to challenge."
+    },
+    {
+      "id": "g05-neighbourhood-community",
+      "group": "05 Who Must Believe It",
+      "title": "Neighbourhood / Community",
+      "direction": "A local social circle sees them together repeatedly."
+    },
+    {
+      "id": "g05-church-community-group",
+      "group": "05 Who Must Believe It",
+      "title": "Church / Community Group",
+      "direction": "A community setting creates expectations without caricaturing beliefs."
+    },
+    {
+      "id": "g05-university-friends",
+      "group": "05 Who Must Believe It",
+      "title": "University Friends",
+      "direction": "Campus peers see them regularly."
+    },
+    {
+      "id": "g05-club-hobby-group",
+      "group": "05 Who Must Believe It",
+      "title": "Club / Hobby Group",
+      "direction": "Shared interests make repeated encounters likely."
+    },
+    {
+      "id": "g05-one-skeptical-person",
+      "group": "05 Who Must Believe It",
+      "title": "One Skeptical Person",
+      "direction": "Most people accept the story except a single observer."
+    },
+    {
+      "id": "g05-nobody-particularly-skeptical",
+      "group": "05 Who Must Believe It",
+      "title": "Nobody Particularly Skeptical",
+      "direction": "The fake relationship is easier than expected."
+    },
+    {
+      "id": "g05-target-changes-midway",
+      "group": "05 Who Must Believe It",
+      "title": "Target Changes Midway",
+      "direction": "The arrangement starts for one audience and unexpectedly expands to another."
+    },
+    {
+      "id": "g05-secret-from-char-s-circle",
+      "group": "05 Who Must Believe It",
+      "title": "Secret From {{char}}'s Circle",
+      "direction": "Only {{user}}'s side is supposed to believe it."
+    },
+    {
+      "id": "g05-secret-from-user-s-circle",
+      "group": "05 Who Must Believe It",
+      "title": "Secret From {{user}}'s Circle",
+      "direction": "The reverse setup keeps the performance narrowly scoped."
+    },
+    {
+      "id": "g05-public-to-everyone-for-one-weekend",
+      "group": "05 Who Must Believe It",
+      "title": "Public to Everyone for One Weekend",
+      "direction": "They agree to behave as a couple anywhere they might be seen."
+    },
+    {
+      "id": "g05-private-cover-only",
+      "group": "05 Who Must Believe It",
+      "title": "Private Cover Only",
+      "direction": "They only need to tell a few people; there is no public social-media performance."
+    },
+    {
+      "id": "g06-one-conversation",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "One Conversation",
+      "direction": "The fake relationship only needs to survive a brief introduction."
+    },
+    {
+      "id": "g06-one-dinner",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "One Dinner",
+      "direction": "A single meal defines the arrangement."
+    },
+    {
+      "id": "g06-one-evening",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "One Evening",
+      "direction": "They perform for several hours."
+    },
+    {
+      "id": "g06-one-party",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "One Party",
+      "direction": "The lie ends when the event does."
+    },
+    {
+      "id": "g06-one-wedding",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "One Wedding",
+      "direction": "The arrangement covers ceremony, reception, and associated social time."
+    },
+    {
+      "id": "g06-one-reunion",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "One Reunion",
+      "direction": "It lasts through a reunion event."
+    },
+    {
+      "id": "g06-one-day",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "One Day",
+      "direction": "Morning-to-night contact creates more opportunities for mistakes."
+    },
+    {
+      "id": "g06-one-weekend",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "One Weekend",
+      "direction": "They must stay consistent across multiple events."
+    },
+    {
+      "id": "g06-three-day-trip",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Three-Day Trip",
+      "direction": "Travel creates private downtime between public performances."
+    },
+    {
+      "id": "g06-one-week",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "One Week",
+      "direction": "The cover extends into ordinary routines."
+    },
+    {
+      "id": "g06-two-weeks",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Two Weeks",
+      "direction": "The relationship requires repeated appearances."
+    },
+    {
+      "id": "g06-one-month",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "One Month",
+      "direction": "The arrangement begins affecting everyday life."
+    },
+    {
+      "id": "g06-until-family-leaves-town",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Until Family Leaves Town",
+      "direction": "There is a clear external end date."
+    },
+    {
+      "id": "g06-until-wedding-season-ends",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Until Wedding Season Ends",
+      "direction": "Several related events keep extending it."
+    },
+    {
+      "id": "g06-until-friend-stops-matchmaking",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Until Friend Stops Matchmaking",
+      "direction": "The end condition is behavioral rather than a date."
+    },
+    {
+      "id": "g06-until-persistent-admirer-backs-off",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Until Persistent Admirer Backs Off",
+      "direction": "The fake relationship ends once the boundary is accepted; direct refusal remains preferable if safe."
+    },
+    {
+      "id": "g06-until-reunion-is-over",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Until Reunion Is Over",
+      "direction": "A defined social milestone ends it."
+    },
+    {
+      "id": "g06-until-holiday-visit-ends",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Until Holiday Visit Ends",
+      "direction": "Family travel creates a natural endpoint."
+    },
+    {
+      "id": "g06-until-social-media-questions-die-down",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Until Social Media Questions Die Down",
+      "direction": "Online visibility extends the cover."
+    },
+    {
+      "id": "g06-open-ended-but-review-weekly",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Open-Ended but Review Weekly",
+      "direction": "They agree to reassess instead of letting the lie drift indefinitely."
+    },
+    {
+      "id": "g06-ends-after-one-public-appearance",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Ends After One Public Appearance",
+      "direction": "Minimal deception is preferred."
+    },
+    {
+      "id": "g06-repeated-occasional-appearances",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Repeated Occasional Appearances",
+      "direction": "They only act as a couple at specific events."
+    },
+    {
+      "id": "g06-public-only-private-friendship",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Public Only, Private Friendship",
+      "direction": "The relationship switches off completely in private."
+    },
+    {
+      "id": "g06-weekend-couple-weekday-friends",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Weekend Couple, Weekday Friends",
+      "direction": "The cover is active only around visiting family."
+    },
+    {
+      "id": "g06-long-distance-cover",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Long-Distance Cover",
+      "direction": "Most fake dating occurs through messages/photos rather than physical appearances."
+    },
+    {
+      "id": "g06-temporary-then-extended",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Temporary Then Extended",
+      "direction": "A one-night favor unexpectedly needs a sequel."
+    },
+    {
+      "id": "g06-keeps-getting-extended",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Keeps Getting Extended",
+      "direction": "Each apparent ending creates another reason to continue."
+    },
+    {
+      "id": "g06-hard-end-date",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Hard End Date",
+      "direction": "They explicitly agree the arrangement stops on a certain date."
+    },
+    {
+      "id": "g06-either-can-end-it-anytime",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Either Can End It Anytime",
+      "direction": "No social objective overrides either adult's boundaries."
+    },
+    {
+      "id": "g06-ends-if-feelings-get-complicated",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Ends if Feelings Get Complicated",
+      "direction": "They build an emotional safety clause into the agreement."
+    },
+    {
+      "id": "g06-ends-if-existing-partner-objects",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Ends if Existing Partner Objects",
+      "direction": "If either has another relationship, that agreement takes priority."
+    },
+    {
+      "id": "g06-ends-if-lie-requires-legal-financial-fraud",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Ends if Lie Requires Legal/Financial Fraud",
+      "direction": "They refuse to escalate beyond harmless social deception."
+    },
+    {
+      "id": "g06-no-formal-duration",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "No Formal Duration",
+      "direction": "The lack of an end date becomes the core problem."
+    },
+    {
+      "id": "g07-just-started-dating",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Just Started Dating",
+      "direction": "They only need a short shared history."
+    },
+    {
+      "id": "g07-dating-for-one-month",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Dating for One Month",
+      "direction": "Enough history exists for basic questions."
+    },
+    {
+      "id": "g07-dating-for-three-months",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Dating for Three Months",
+      "direction": "Friends expect more details."
+    },
+    {
+      "id": "g07-dating-for-six-months",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Dating for Six Months",
+      "direction": "Family wonders why they were not told sooner."
+    },
+    {
+      "id": "g07-dating-for-a-year",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Dating for a Year",
+      "direction": "The lie requires an extensive invented timeline."
+    },
+    {
+      "id": "g07-friends-to-lovers-story",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Friends-to-Lovers Story",
+      "direction": "They claim friendship gradually became romantic."
+    },
+    {
+      "id": "g07-met-at-university",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Met at University",
+      "direction": "A plausible campus origin story."
+    },
+    {
+      "id": "g07-met-at-work",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Met at Work",
+      "direction": "A workplace-origin story may be easy if they actually know each other there."
+    },
+    {
+      "id": "g07-met-through-friends",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Met Through Friends",
+      "direction": "Mutual contacts provide a believable explanation."
+    },
+    {
+      "id": "g07-met-online",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Met Online",
+      "direction": "They claim a dating app or online community origin."
+    },
+    {
+      "id": "g07-met-through-hobby",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Met Through Hobby",
+      "direction": "A club/game/convention provides shared details."
+    },
+    {
+      "id": "g07-neighbours-who-started-dating",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Neighbours Who Started Dating",
+      "direction": "Existing proximity supplies credibility."
+    },
+    {
+      "id": "g07-reconnected-after-years",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Reconnected After Years",
+      "direction": "Their real history supports the cover."
+    },
+    {
+      "id": "g07-very-new-and-keeping-it-casual",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Very New and Keeping It Casual",
+      "direction": "This explains missing details and limited affection."
+    },
+    {
+      "id": "g07-serious-but-private",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Serious but Private",
+      "direction": "They claim they intentionally kept the relationship quiet."
+    },
+    {
+      "id": "g07-long-distance-until-recently",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Long-Distance Until Recently",
+      "direction": "Explains why friends rarely saw them together."
+    },
+    {
+      "id": "g07-on-and-off-relationship",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "On-and-Off Relationship",
+      "direction": "Messy history can explain contradictions but invites more questions."
+    },
+    {
+      "id": "g07-recently-reconciled",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Recently Reconciled",
+      "direction": "Useful when {{char}} is an actual ex or old date."
+    },
+    {
+      "id": "g07-first-met-at-specific-event",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "First Met at Specific Event",
+      "direction": "They memorize one believable shared anecdote."
+    },
+    {
+      "id": "g07-fake-first-date-story",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Fake First Date Story",
+      "direction": "They invent how the first date went."
+    },
+    {
+      "id": "g07-fake-anniversary-date",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Fake Anniversary Date",
+      "direction": "A date becomes dangerous when someone expects them to remember it."
+    },
+    {
+      "id": "g07-fake-favorite-restaurant",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Fake Favorite Restaurant",
+      "direction": "A detail can later become a real shared place."
+    },
+    {
+      "id": "g07-fake-nicknames",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Fake Nicknames",
+      "direction": "They choose public pet names they can both tolerate."
+    },
+    {
+      "id": "g07-fake-shared-hobby",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Fake Shared Hobby",
+      "direction": "Risky if neither knows enough about it."
+    },
+    {
+      "id": "g07-real-shared-hobby",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Real Shared Hobby",
+      "direction": "Using genuine common ground reduces mistakes."
+    },
+    {
+      "id": "g07-real-friendship-history",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Real Friendship History",
+      "direction": "They tell the truth except for the romantic label."
+    },
+    {
+      "id": "g07-mostly-truthful-cover",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Mostly Truthful Cover",
+      "direction": "Real facts are rearranged into a dating narrative."
+    },
+    {
+      "id": "g07-elaborate-fabrication",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Elaborate Fabrication",
+      "direction": "{{char}} enjoys inventing unnecessary lore."
+    },
+    {
+      "id": "g07-minimal-cover-story",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Minimal Cover Story",
+      "direction": "They agree never to volunteer details."
+    },
+    {
+      "id": "g07-different-versions-by-accident",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Different Versions by Accident",
+      "direction": "They realize they rehearsed poorly."
+    },
+    {
+      "id": "g07-written-cheat-sheet",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Written Cheat Sheet",
+      "direction": "They privately record dates, preferences, and cover details."
+    },
+    {
+      "id": "g07-no-rehearsal",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "No Rehearsal",
+      "direction": "They improvise and hope familiarity is enough."
+    },
+    {
+      "id": "g07-practice-q-a",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Practice Q&A",
+      "direction": "They quiz each other before the event."
+    },
+    {
+      "id": "g07-family-safe-version",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Family-Safe Version",
+      "direction": "They keep the story intentionally boring."
+    },
+    {
+      "id": "g07-one-embarrassing-fake-story",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "One Embarrassing Fake Story",
+      "direction": "{{char}} invents a harmless anecdote that {{user}} then has to support."
+    },
+    {
+      "id": "g07-cover-story-becomes-real-memory",
+      "group": "07 Cover Story / Claimed Relationship History",
+      "title": "Cover Story Becomes Real Memory",
+      "direction": "A fake 'favorite place' later becomes somewhere they genuinely visit."
+    },
+    {
+      "id": "g08-no-public-touch",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "No Public Touch",
+      "direction": "They only use verbal labels and proximity."
+    },
+    {
+      "id": "g08-hand-holding-allowed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Hand-Holding Allowed",
+      "direction": "Hand-holding is the maximum agreed affection."
+    },
+    {
+      "id": "g08-arm-linking-allowed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Arm Linking Allowed",
+      "direction": "{{char}} may link arms in public."
+    },
+    {
+      "id": "g08-hand-on-arm-shoulder",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Hand on Arm / Shoulder",
+      "direction": "Brief casual touch is permitted."
+    },
+    {
+      "id": "g08-side-hug-allowed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Side Hug Allowed",
+      "direction": "They allow ordinary greeting/photos hugs."
+    },
+    {
+      "id": "g08-full-hug-allowed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Full Hug Allowed",
+      "direction": "Hugs are acceptable within agreed contexts."
+    },
+    {
+      "id": "g08-cheek-kiss-allowed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Cheek Kiss Allowed",
+      "direction": "A brief cheek kiss is pre-approved."
+    },
+    {
+      "id": "g08-forehead-kiss-allowed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Forehead Kiss Allowed",
+      "direction": "A non-mouth kiss is part of the performance."
+    },
+    {
+      "id": "g08-one-public-kiss-if-necessary",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "One Public Kiss if Necessary",
+      "direction": "They discuss whether a brief consensual kiss could be used, without assuming it will happen."
+    },
+    {
+      "id": "g08-mouth-kissing-off-limits",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Mouth Kissing Off-Limits",
+      "direction": "They explicitly exclude kissing."
+    },
+    {
+      "id": "g08-mouth-kissing-allowed-only-after-check-in",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Mouth Kissing Allowed Only After Check-In",
+      "direction": "They require a direct private check-in before any kiss."
+    },
+    {
+      "id": "g08-no-surprise-affection",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "No Surprise Affection",
+      "direction": "Neither adult may improvise physical affection without prior agreement."
+    },
+    {
+      "id": "g08-photos-only-touch",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Photos Only Touch",
+      "direction": "They pose closely for pictures but otherwise keep distance."
+    },
+    {
+      "id": "g08-dance-together-allowed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Dance Together Allowed",
+      "direction": "A formal dance is part of the cover."
+    },
+    {
+      "id": "g08-sitting-close-allowed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Sitting Close Allowed",
+      "direction": "They can share a couch/bench space."
+    },
+    {
+      "id": "g08-lap-sitting-off-limits",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Lap Sitting Off-Limits",
+      "direction": "They define a clear limit."
+    },
+    {
+      "id": "g08-pet-names-allowed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Pet Names Allowed",
+      "direction": "Verbal affection is easier than touch."
+    },
+    {
+      "id": "g08-pet-names-feel-too-weird",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Pet Names Feel Too Weird",
+      "direction": "They avoid terms of endearment."
+    },
+    {
+      "id": "g08-compliments-allowed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Compliments Allowed",
+      "direction": "They can praise each other publicly."
+    },
+    {
+      "id": "g08-flirting-allowed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Flirting Allowed",
+      "direction": "{{char}} can flirt as part of the role without that implying private consent."
+    },
+    {
+      "id": "g08-flirting-kept-mild",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Flirting Kept Mild",
+      "direction": "The act stays believable but restrained."
+    },
+    {
+      "id": "g08-char-is-very-convincing",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "{{char}} Is Very Convincing",
+      "direction": "Her public affection looks natural."
+    },
+    {
+      "id": "g08-char-overacts",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "{{char}} Overacts",
+      "direction": "She performs an exaggerated romance for comedy or nerves."
+    },
+    {
+      "id": "g08-char-underacts",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "{{char}} Underacts",
+      "direction": "She forgets they are supposed to look like a couple."
+    },
+    {
+      "id": "g08-affection-only-in-front-of-target",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Affection Only in Front of Target",
+      "direction": "They switch off immediately when the audience leaves."
+    },
+    {
+      "id": "g08-affection-in-any-public-space",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Affection in Any Public Space",
+      "direction": "They maintain cover anywhere acquaintances might see them."
+    },
+    {
+      "id": "g08-private-decompression-after-touch",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Private Decompression After Touch",
+      "direction": "They check in after unusually intimate-seeming public moments."
+    },
+    {
+      "id": "g08-signal-for-stop",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Signal for Stop",
+      "direction": "A word/gesture ends any performance immediately."
+    },
+    {
+      "id": "g08-signal-for-more-convincing",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Signal for More Convincing",
+      "direction": "They establish a nonverbal cue to increase the act within pre-agreed limits."
+    },
+    {
+      "id": "g08-no-alcohol-driven-boundary-changes",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "No Alcohol-Driven Boundary Changes",
+      "direction": "Intoxication does not expand agreed affection."
+    },
+    {
+      "id": "g08-public-affection-evolves-by-agreement",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Public Affection Evolves by Agreement",
+      "direction": "They may renegotiate boundaries as comfort changes."
+    },
+    {
+      "id": "g08-real-affection-must-be-distinguished",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Real Affection Must Be Distinguished",
+      "direction": "If feelings develop, they discuss when touch stops being merely part of the act."
+    },
+    {
+      "id": "g09-friends-in-private",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Friends in Private",
+      "direction": "They return to normal friendship when alone."
+    },
+    {
+      "id": "g09-no-couple-behavior-in-private",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Couple Behavior in Private",
+      "direction": "The performance has a strict off-switch."
+    },
+    {
+      "id": "g09-private-practice-sessions",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Private Practice Sessions",
+      "direction": "They rehearse stories and gestures."
+    },
+    {
+      "id": "g09-separate-sleeping-spaces",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Separate Sleeping Spaces",
+      "direction": "Travel or events never imply sharing a bed."
+    },
+    {
+      "id": "g09-separate-hotel-rooms",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Separate Hotel Rooms",
+      "direction": "If practical, fake dating does not require shared accommodation."
+    },
+    {
+      "id": "g09-shared-room-separate-beds",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Shared Room, Separate Beds",
+      "direction": "A booking may place them together while preserving separate sleep."
+    },
+    {
+      "id": "g09-no-bedroom-performance",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Bedroom Performance",
+      "direction": "They refuse any lie that requires pretending about private intimacy."
+    },
+    {
+      "id": "g09-no-sex-as-part-of-the-arrangement",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Sex as Part of the Arrangement",
+      "direction": "Sex is explicitly outside the fake-dating agreement."
+    },
+    {
+      "id": "g09-no-nudity-as-part-of-the-arrangement",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Nudity as Part of the Arrangement",
+      "direction": "The cover never requires private exposure."
+    },
+    {
+      "id": "g09-no-access-to-devices",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Access to Devices",
+      "direction": "Phones/accounts stay private."
+    },
+    {
+      "id": "g09-no-password-sharing",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Password Sharing",
+      "direction": "A convincing couple does not need account access."
+    },
+    {
+      "id": "g09-no-reading-messages",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Reading Messages",
+      "direction": "They do not inspect each other's private communications."
+    },
+    {
+      "id": "g09-no-posting-without-approval",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Posting Without Approval",
+      "direction": "Any photo/status must be mutually approved."
+    },
+    {
+      "id": "g09-no-tagging-without-approval",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Tagging Without Approval",
+      "direction": "Online identity boundaries remain intact."
+    },
+    {
+      "id": "g09-no-family-lies-beyond-relationship-status",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Family Lies Beyond Relationship Status",
+      "direction": "They minimize the scope of deception."
+    },
+    {
+      "id": "g09-no-financial-entanglement",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Financial Entanglement",
+      "direction": "No fake joint accounts, loans, or purchases."
+    },
+    {
+      "id": "g09-no-legal-documents",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Legal Documents",
+      "direction": "The arrangement stays social and does not become legal fraud."
+    },
+    {
+      "id": "g09-no-employer-deception-for-benefits",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Employer Deception for Benefits",
+      "direction": "They do not claim relationship benefits they are not entitled to."
+    },
+    {
+      "id": "g09-no-housing-fraud",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Housing Fraud",
+      "direction": "They do not fake partnership for tenancy advantages requiring truthful status."
+    },
+    {
+      "id": "g09-no-immigration-visa-fraud",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Immigration / Visa Fraud",
+      "direction": "The fake-girlfriend premise remains social, not legal-status fraud."
+    },
+    {
+      "id": "g09-either-can-veto-an-event",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Either Can Veto an Event",
+      "direction": "No obligation to attend every social function."
+    },
+    {
+      "id": "g09-either-can-end-arrangement",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Either Can End Arrangement",
+      "direction": "Consent to continue is ongoing."
+    },
+    {
+      "id": "g09-daily-check-in",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Daily Check-In",
+      "direction": "Longer arrangements include short boundary reviews."
+    },
+    {
+      "id": "g09-weekly-review",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Weekly Review",
+      "direction": "They reassess whether the cover is still worth it."
+    },
+    {
+      "id": "g09-expenses-split",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Expenses Split",
+      "direction": "Tickets, meals, clothes, or travel costs are agreed in advance."
+    },
+    {
+      "id": "g09-user-covers-event-cost",
+      "group": "09 Private Rules / Boundaries",
+      "title": "{{user}} Covers Event Cost",
+      "direction": "If he requested the favor, he may offer to cover direct expenses without buying affection."
+    },
+    {
+      "id": "g09-no-payment-beyond-expenses",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Payment Beyond Expenses",
+      "direction": "The favor remains friendship-based."
+    },
+    {
+      "id": "g09-paid-acting-arrangement",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Paid Acting Arrangement",
+      "direction": "If {{char}} is a professional performer, compensation is for time/performance, not intimacy."
+    },
+    {
+      "id": "g09-gift-afterward",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Gift Afterward",
+      "direction": "A thank-you gift does not create romantic obligation."
+    },
+    {
+      "id": "g09-code-word-for-rescue",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Code Word for Rescue",
+      "direction": "Either can signal discomfort at an event."
+    },
+    {
+      "id": "g09-truth-if-directly-harmful",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Truth if Directly Harmful",
+      "direction": "They agree to stop lying if the cover starts harming someone."
+    },
+    {
+      "id": "g09-no-using-fake-relationship-against-ex",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Using Fake Relationship Against Ex",
+      "direction": "They avoid cruelty, public humiliation, or targeted harassment."
+    },
+    {
+      "id": "g09-no-secret-recording",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Secret Recording",
+      "direction": "The arrangement does not justify hidden cameras/audio."
+    },
+    {
+      "id": "g09-no-sharing-private-photos",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Sharing Private Photos",
+      "direction": "Only intentionally created cover photos may be used."
+    },
+    {
+      "id": "g09-existing-relationships-must-consent",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Existing Relationships Must Consent",
+      "direction": "If either adult is actually partnered, the fake arrangement must fit that relationship's agreements."
+    },
+    {
+      "id": "g09-no-assumption-of-exclusivity",
+      "group": "09 Private Rules / Boundaries",
+      "title": "No Assumption of Exclusivity",
+      "direction": "Fake dating does not control either adult's real dating life unless mutually negotiated for practical cover."
+    },
+    {
+      "id": "g09-real-dates-require-disclosure-plan",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Real Dates Require Disclosure Plan",
+      "direction": "If either starts seeing someone, they discuss how it affects the cover."
+    },
+    {
+      "id": "g09-privacy-after-it-ends",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Privacy After It Ends",
+      "direction": "They agree not to weaponize embarrassing fake-dating details later."
+    },
+    {
+      "id": "g10-natural-actress",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Natural Actress",
+      "direction": "{{char}} slips into the role effortlessly."
+    },
+    {
+      "id": "g10-terrible-actress",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Terrible Actress",
+      "direction": "She is visibly awkward when lying."
+    },
+    {
+      "id": "g10-overcommitted-performer",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Overcommitted Performer",
+      "direction": "{{char}} invents elaborate details and affection."
+    },
+    {
+      "id": "g10-minimalist-performer",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Minimalist Performer",
+      "direction": "She says as little as possible."
+    },
+    {
+      "id": "g10-deadpan-girlfriend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Deadpan Girlfriend",
+      "direction": "Her dry delivery somehow convinces people."
+    },
+    {
+      "id": "g10-playful-tease",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Playful Tease",
+      "direction": "{{char}} enjoys embarrassing {{user}} with harmless fake-couple stories."
+    },
+    {
+      "id": "g10-shy-performer",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Shy Performer",
+      "direction": "Public affection makes her nervous even though she agreed."
+    },
+    {
+      "id": "g10-confident-performer",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Confident Performer",
+      "direction": "She is comfortable with crowds and improvisation."
+    },
+    {
+      "id": "g10-blunt-rule-follower",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Blunt Rule-Follower",
+      "direction": "{{char}} sticks exactly to the agreement."
+    },
+    {
+      "id": "g10-chaotic-improviser",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Chaotic Improviser",
+      "direction": "She changes the cover story without warning."
+    },
+    {
+      "id": "g10-strategic-planner",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Strategic Planner",
+      "direction": "{{char}} prepares names, dates, photos, and answers."
+    },
+    {
+      "id": "g10-rom-com-fan",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Rom-Com Fan",
+      "direction": "She treats the premise like a familiar trope."
+    },
+    {
+      "id": "g10-rom-com-skeptic",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Rom-Com Skeptic",
+      "direction": "{{char}} keeps pointing out how unrealistic the plan is."
+    },
+    {
+      "id": "g10-practical-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Practical Friend",
+      "direction": "She focuses on the objective and exit strategy."
+    },
+    {
+      "id": "g10-protective-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Protective Friend",
+      "direction": "She becomes assertive when others pressure {{user}}."
+    },
+    {
+      "id": "g10-competitive-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Competitive Friend",
+      "direction": "She wants to make the cover impossibly convincing."
+    },
+    {
+      "id": "g10-popular-social-butterfly",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Popular Social Butterfly",
+      "direction": "She can charm family/friends easily."
+    },
+    {
+      "id": "g10-introverted-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Introverted Friend",
+      "direction": "Large gatherings are harder than fake affection."
+    },
+    {
+      "id": "g10-family-experienced-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Family-Experienced Friend",
+      "direction": "{{char}} knows how to handle intrusive relatives."
+    },
+    {
+      "id": "g10-strict-boundary-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Strict-Boundary Friend",
+      "direction": "She agrees only after clear limits are written down."
+    },
+    {
+      "id": "g10-no-modesty-but-not-romantic",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "No-Modesty but Not Romantic",
+      "direction": "{{char}} is physically relaxed but not necessarily attracted."
+    },
+    {
+      "id": "g10-affectionate-platonic-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Affectionate Platonic Friend",
+      "direction": "Hugs and closeness are already normal between them."
+    },
+    {
+      "id": "g10-touch-averse-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Touch-Averse Friend",
+      "direction": "They build a convincing relationship with almost no physical contact."
+    },
+    {
+      "id": "g10-sarcastic-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Sarcastic Friend",
+      "direction": "Her humor creates risky comments."
+    },
+    {
+      "id": "g10-literal-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Literal Friend",
+      "direction": "She struggles with improvisational lies."
+    },
+    {
+      "id": "g10-detail-oriented-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Detail-Oriented Friend",
+      "direction": "She remembers every invented fact."
+    },
+    {
+      "id": "g10-forgetful-friend",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Forgetful Friend",
+      "direction": "She constantly risks contradicting the cover."
+    },
+    {
+      "id": "g10-jealous-performer",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Jealous Performer",
+      "direction": "Hidden feelings make third parties harder to discuss."
+    },
+    {
+      "id": "g10-unbothered-performer",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Unbothered Performer",
+      "direction": "She can separate fake dating from real emotion."
+    },
+    {
+      "id": "g10-curious-performer",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Curious Performer",
+      "direction": "She starts wondering what real dating {{user}} would be like."
+    },
+    {
+      "id": "g10-former-ex-who-knows-the-role",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Former Ex Who Knows the Role",
+      "direction": "Past real dating makes the performance unnervingly easy."
+    },
+    {
+      "id": "g10-former-ex-who-hates-repeating-old-habits",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Former Ex Who Hates Repeating Old Habits",
+      "direction": "She intentionally avoids old couple behaviors."
+    },
+    {
+      "id": "g10-professional-actor",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Professional Actor",
+      "direction": "She treats each event like a role."
+    },
+    {
+      "id": "g10-content-creator",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Content Creator",
+      "direction": "She understands public image and online consistency."
+    },
+    {
+      "id": "g10-secretly-romantic",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Secretly Romantic",
+      "direction": "{{char}} enjoys the emotional texture more than she expected."
+    },
+    {
+      "id": "g10-emotionally-cautious",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Emotionally Cautious",
+      "direction": "She watches for signs the arrangement is becoming too real."
+    },
+    {
+      "id": "g10-does-it-for-the-story",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Does It for the Story",
+      "direction": "{{char}} agrees because the situation sounds hilarious."
+    },
+    {
+      "id": "g10-does-it-out-of-loyalty",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Does It Out of Loyalty",
+      "direction": "The favor matters because {{user}} is important to her."
+    },
+    {
+      "id": "g10-does-it-for-mutual-benefit",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Does It for Mutual Benefit",
+      "direction": "She has her own social goal that the fake relationship solves."
+    },
+    {
+      "id": "g11-no-hidden-feelings",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "No Hidden Feelings",
+      "direction": "{{char}} begins completely platonic."
+    },
+    {
+      "id": "g11-mild-curiosity",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Mild Curiosity",
+      "direction": "She wonders about dating {{user}} but has no clear crush."
+    },
+    {
+      "id": "g11-existing-crush",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Existing Crush",
+      "direction": "{{char}} already likes {{user}} before he asks."
+    },
+    {
+      "id": "g11-long-term-secret-crush",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Long-Term Secret Crush",
+      "direction": "She has hidden feelings for years."
+    },
+    {
+      "id": "g11-recent-crush",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Recent Crush",
+      "direction": "Her interest only developed recently."
+    },
+    {
+      "id": "g11-old-crush-she-thought-was-gone",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Old Crush She Thought Was Gone",
+      "direction": "The request revives feelings she believed had faded."
+    },
+    {
+      "id": "g11-former-attraction-now-platonic",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Former Attraction, Now Platonic",
+      "direction": "She has genuinely moved on."
+    },
+    {
+      "id": "g11-former-girlfriend-still-has-feelings",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Former Girlfriend Still Has Feelings",
+      "direction": "An adult ex agrees despite unresolved emotion."
+    },
+    {
+      "id": "g11-former-girlfriend-has-no-feelings",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Former Girlfriend Has No Feelings",
+      "direction": "She can perform the old role without wanting it back."
+    },
+    {
+      "id": "g11-char-thinks-user-likes-someone-else",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "{{char}} Thinks {{user}} Likes Someone Else",
+      "direction": "She assumes the fake arrangement cannot become real."
+    },
+    {
+      "id": "g11-char-knows-user-likes-someone-else",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "{{char}} Knows {{user}} Likes Someone Else",
+      "direction": "Jealousy or restraint may complicate her behavior."
+    },
+    {
+      "id": "g11-char-likes-someone-else",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "{{char}} Likes Someone Else",
+      "direction": "Her own crush/partner remains relevant."
+    },
+    {
+      "id": "g11-char-is-dating-someone-else-with-consent",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "{{char}} Is Dating Someone Else With Consent",
+      "direction": "Her real partner understands and agrees to the social performance."
+    },
+    {
+      "id": "g11-char-is-not-looking-to-date-anyone",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "{{char}} Is Not Looking to Date Anyone",
+      "direction": "The fake relationship stays emotionally compartmentalized."
+    },
+    {
+      "id": "g11-attraction-appears-during-rehearsal",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Attraction Appears During Rehearsal",
+      "direction": "Practice creates unexpected awareness."
+    },
+    {
+      "id": "g11-attraction-appears-during-event",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Attraction Appears During Event",
+      "direction": "Seeing {{user}} in a new social context changes her view."
+    },
+    {
+      "id": "g11-attraction-after-family-likes-her",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Attraction After Family Likes Her",
+      "direction": "Being welcomed affects her emotions."
+    },
+    {
+      "id": "g11-attraction-after-protective-moment",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Attraction After Protective Moment",
+      "direction": "A moment of mutual support changes the dynamic."
+    },
+    {
+      "id": "g11-attraction-after-public-affection",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Attraction After Public Affection",
+      "direction": "A pre-agreed gesture unexpectedly feels meaningful."
+    },
+    {
+      "id": "g11-attraction-after-quiet-private-moment",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Attraction After Quiet Private Moment",
+      "direction": "The shift happens away from the audience."
+    },
+    {
+      "id": "g11-attraction-after-arrangement-ends",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Attraction After Arrangement Ends",
+      "direction": "Only afterward does {{char}} realize she misses the role."
+    },
+    {
+      "id": "g11-confuses-performance-with-feeling",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Confuses Performance With Feeling",
+      "direction": "She is unsure whether chemistry is real or practiced."
+    },
+    {
+      "id": "g11-denies-her-feelings",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Denies Her Feelings",
+      "direction": "{{char}} insists the arrangement means nothing."
+    },
+    {
+      "id": "g11-admits-feelings-to-herself-only",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Admits Feelings to Herself Only",
+      "direction": "No confession is required."
+    },
+    {
+      "id": "g11-tells-a-friend-not-user",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Tells a Friend, Not {{user}}",
+      "direction": "A side character knows before {{user}} does."
+    },
+    {
+      "id": "g11-accidentally-says-something-too-real",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Accidentally Says Something Too Real",
+      "direction": "Her performance briefly reveals genuine emotion."
+    },
+    {
+      "id": "g11-gets-jealous-outside-the-script",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Gets Jealous Outside the Script",
+      "direction": "{{char}} reacts to {{user}} discussing a real date."
+    },
+    {
+      "id": "g11-not-jealous-at-all",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Not Jealous at All",
+      "direction": "Fake dating never creates possessiveness."
+    },
+    {
+      "id": "g11-feels-protective-not-romantic",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Feels Protective, Not Romantic",
+      "direction": "Closeness is meaningful without romance."
+    },
+    {
+      "id": "g11-enjoys-being-chosen",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Enjoys Being Chosen",
+      "direction": "She values that {{user}} trusted her without interpreting it as love."
+    },
+    {
+      "id": "g11-likes-the-family-not-the-romance",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Likes the Family, Not the Romance",
+      "direction": "She bonds with his relatives while remaining platonic."
+    },
+    {
+      "id": "g11-wants-the-arrangement-to-end-before-feelings-grow",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Wants the Arrangement to End Before Feelings Grow",
+      "direction": "{{char}} considers activating their exit clause."
+    },
+    {
+      "id": "g11-wants-to-renegotiate-honestly",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Wants to Renegotiate Honestly",
+      "direction": "She prefers a real conversation once feelings become unclear."
+    },
+    {
+      "id": "g11-hidden-feelings-stay-unresolved",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "Hidden Feelings Stay Unresolved",
+      "direction": "The source can preserve ambiguity."
+    },
+    {
+      "id": "g11-no-feelings-ever-develop",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "No Feelings Ever Develop",
+      "direction": "A completely successful platonic fake relationship is valid."
+    },
+    {
+      "id": "g12-warm-parents",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Warm Parents",
+      "direction": "{{user}}'s parents quickly like {{char}}."
+    },
+    {
+      "id": "g12-skeptical-parents",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Skeptical Parents",
+      "direction": "They ask detailed questions."
+    },
+    {
+      "id": "g12-overexcited-mother",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Overexcited Mother",
+      "direction": "One parent begins imagining a long-term future."
+    },
+    {
+      "id": "g12-protective-father",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Protective Father",
+      "direction": "A parent wants to know {{char}}'s intentions without controlling either adult."
+    },
+    {
+      "id": "g12-nosy-grandparent",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Nosy Grandparent",
+      "direction": "Older family asks blunt questions."
+    },
+    {
+      "id": "g12-matchmaking-aunt",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Matchmaking Aunt",
+      "direction": "The person who caused the problem becomes suspicious."
+    },
+    {
+      "id": "g12-competitive-sibling",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Competitive Sibling",
+      "direction": "A sibling tries to catch inconsistencies."
+    },
+    {
+      "id": "g12-supportive-sibling",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Supportive Sibling",
+      "direction": "A sibling quietly helps maintain the cover."
+    },
+    {
+      "id": "g12-sibling-knows-the-truth",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Sibling Knows the Truth",
+      "direction": "One relative becomes an ally."
+    },
+    {
+      "id": "g12-family-already-knows-char",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Family Already Knows {{char}}",
+      "direction": "Existing familiarity makes some parts easier and others harder."
+    },
+    {
+      "id": "g12-family-has-never-met-char",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Family Has Never Met {{char}}",
+      "direction": "The pair can design the first impression."
+    },
+    {
+      "id": "g12-family-loves-char-too-much",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Family Loves {{char}} Too Much",
+      "direction": "The eventual breakup story becomes harder."
+    },
+    {
+      "id": "g12-family-dislikes-the-match",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Family Dislikes the Match",
+      "direction": "The fake relationship unexpectedly draws criticism."
+    },
+    {
+      "id": "g12-friends-immediately-believe-it",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Friends Immediately Believe It",
+      "direction": "The cover is easier than expected."
+    },
+    {
+      "id": "g12-friends-do-not-believe-it",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Friends Do Not Believe It",
+      "direction": "Their chemistry/performance seems wrong."
+    },
+    {
+      "id": "g12-best-friend-knows-the-truth",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Best Friend Knows the Truth",
+      "direction": "A confidant helps coordinate."
+    },
+    {
+      "id": "g12-friend-is-offended-by-the-lie",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Friend Is Offended by the Lie",
+      "direction": "Someone dislikes being deceived."
+    },
+    {
+      "id": "g12-friend-finds-it-hilarious",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Friend Finds It Hilarious",
+      "direction": "The secret becomes a source of comedy."
+    },
+    {
+      "id": "g12-coworkers-gossip",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Coworkers Gossip",
+      "direction": "Public workplace appearances create rumors."
+    },
+    {
+      "id": "g12-reunion-rival",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Reunion Rival",
+      "direction": "An old peer asks invasive questions."
+    },
+    {
+      "id": "g12-ex-appears-at-event",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Ex Appears at Event",
+      "direction": "Past history complicates the performance."
+    },
+    {
+      "id": "g12-persistent-admirer-tests-boundaries",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Persistent Admirer Tests Boundaries",
+      "direction": "The target refuses to accept the relationship label; clear refusal and safety planning remain valid."
+    },
+    {
+      "id": "g12-another-couple-wants-double-dates",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Another Couple Wants Double Dates",
+      "direction": "The lie now requires follow-up events."
+    },
+    {
+      "id": "g12-wedding-photographer",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Wedding Photographer",
+      "direction": "Couple-like photos become unexpectedly permanent."
+    },
+    {
+      "id": "g12-table-seating-creates-intimacy",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Table Seating Creates Intimacy",
+      "direction": "They spend hours together because of event logistics."
+    },
+    {
+      "id": "g12-family-photo-includes-char",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Family Photo Includes {{char}}",
+      "direction": "A temporary lie becomes part of an album."
+    },
+    {
+      "id": "g12-holiday-gift-exchange",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Holiday Gift Exchange",
+      "direction": "The cover unexpectedly requires a partner-style gift."
+    },
+    {
+      "id": "g12-birthday-gift-expectations",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Birthday Gift Expectations",
+      "direction": "Others expect {{char}} to know what {{user}} likes."
+    },
+    {
+      "id": "g12-family-tradition-quiz",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Family Tradition Quiz",
+      "direction": "Relatives ask how well they know each other."
+    },
+    {
+      "id": "g12-couples-game",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Couples Game",
+      "direction": "A party game tests their cover story."
+    },
+    {
+      "id": "g12-dance-floor",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Dance Floor",
+      "direction": "A slow dance may be socially expected but remains optional."
+    },
+    {
+      "id": "g12-speech-mentions-them",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Speech Mentions Them",
+      "direction": "Someone publicly references their relationship."
+    },
+    {
+      "id": "g12-social-media-tag",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Social Media Tag",
+      "direction": "A relative posts them online."
+    },
+    {
+      "id": "g12-group-chat-adds-char",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Group Chat Adds {{char}}",
+      "direction": "Family/friends include her in ongoing conversations."
+    },
+    {
+      "id": "g12-after-event-invitations",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "After-Event Invitations",
+      "direction": "People begin inviting them as a couple."
+    },
+    {
+      "id": "g12-parents-offer-future-visit",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Parents Offer Future Visit",
+      "direction": "The arrangement gains an unwanted sequel."
+    },
+    {
+      "id": "g12-family-starts-wedding-jokes",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "Family Starts Wedding Jokes",
+      "direction": "The fake relationship gets projected too far into the future."
+    },
+    {
+      "id": "g12-no-one-cares-that-much",
+      "group": "12 Family / Friends / Event Pressure",
+      "title": "No One Cares That Much",
+      "direction": "The social pressure turns out to be mostly in {{user}}'s head."
+    },
+    {
+      "id": "g13-relationship-cheat-sheet",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Relationship Cheat Sheet",
+      "direction": "They write down key cover details."
+    },
+    {
+      "id": "g13-shared-calendar",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Shared Calendar",
+      "direction": "They coordinate appearances."
+    },
+    {
+      "id": "g13-fake-anniversary-reminder",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Fake Anniversary Reminder",
+      "direction": "A calendar prevents contradictions."
+    },
+    {
+      "id": "g13-approved-photo-folder",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Approved Photo Folder",
+      "direction": "They create a small set of mutually approved couple-looking photos."
+    },
+    {
+      "id": "g13-one-staged-selfie",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "One Staged Selfie",
+      "direction": "A single photo is enough."
+    },
+    {
+      "id": "g13-several-casual-photos",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Several Casual Photos",
+      "direction": "The cover needs a believable timeline."
+    },
+    {
+      "id": "g13-no-fake-photos",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "No Fake Photos",
+      "direction": "They rely on in-person performance."
+    },
+    {
+      "id": "g13-social-status-change",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Social Status Change",
+      "direction": "They may change a relationship status online only by agreement."
+    },
+    {
+      "id": "g13-no-social-status-change",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "No Social Status Change",
+      "direction": "They keep the cover offline."
+    },
+    {
+      "id": "g13-temporary-profile-photo",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Temporary Profile Photo",
+      "direction": "A couple photo is used briefly."
+    },
+    {
+      "id": "g13-private-accounts-only",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Private Accounts Only",
+      "direction": "Nothing is posted publicly."
+    },
+    {
+      "id": "g13-family-group-chat",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Family Group Chat",
+      "direction": "{{char}} must decide how much messaging participation is reasonable."
+    },
+    {
+      "id": "g13-daily-good-morning-text-for-cover",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Daily Good-Morning Text for Cover",
+      "direction": "Messages are performative only when there is a reason someone else will see them."
+    },
+    {
+      "id": "g13-no-fake-private-messages",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "No Fake Private Messages",
+      "direction": "They refuse to manufacture private-chat evidence."
+    },
+    {
+      "id": "g13-rehearsed-first-date-story",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Rehearsed First-Date Story",
+      "direction": "They memorize one origin anecdote."
+    },
+    {
+      "id": "g13-memorize-favorites",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Memorize Favorites",
+      "direction": "Basic preferences help them answer questions naturally."
+    },
+    {
+      "id": "g13-use-real-facts-wherever-possible",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Use Real Facts Wherever Possible",
+      "direction": "Truth reduces cognitive load."
+    },
+    {
+      "id": "g13-invent-minimal-details",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Invent Minimal Details",
+      "direction": "They avoid unnecessary lies."
+    },
+    {
+      "id": "g13-emergency-correction-signal",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Emergency Correction Signal",
+      "direction": "One adult subtly signals when the other gives the wrong detail."
+    },
+    {
+      "id": "g13-cover-for-forgotten-detail",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Cover for Forgotten Detail",
+      "direction": "{{char}} improvises a plausible explanation."
+    },
+    {
+      "id": "g13-wardrobe-coordination",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Wardrobe Coordination",
+      "direction": "They choose outfits that look appropriate together without requiring matching clothes."
+    },
+    {
+      "id": "g13-borrowed-accessory",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Borrowed Accessory",
+      "direction": "A visible item becomes fake evidence of closeness."
+    },
+    {
+      "id": "g13-gift-prop",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Gift Prop",
+      "direction": "A harmless object is framed as a partner gift."
+    },
+    {
+      "id": "g13-real-gift-fake-context",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Real Gift, Fake Context",
+      "direction": "An existing present is reinterpreted as romantic."
+    },
+    {
+      "id": "g13-restaurant-reservation",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Restaurant Reservation",
+      "direction": "They rehearse during a real meal."
+    },
+    {
+      "id": "g13-practice-date",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Practice Date",
+      "direction": "A rehearsal outing starts feeling suspiciously real."
+    },
+    {
+      "id": "g13-photo-practice",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Photo Practice",
+      "direction": "They figure out how close they are comfortable standing."
+    },
+    {
+      "id": "g13-affection-practice",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Affection Practice",
+      "direction": "Only pre-agreed gestures are rehearsed."
+    },
+    {
+      "id": "g13-introductions-practice",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Introductions Practice",
+      "direction": "They decide what titles/nicknames to use."
+    },
+    {
+      "id": "g13-family-names-practice",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Family Names Practice",
+      "direction": "{{char}} learns key relatives."
+    },
+    {
+      "id": "g13-relationship-timeline-practice",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Relationship Timeline Practice",
+      "direction": "They align dates and milestones."
+    },
+    {
+      "id": "g13-exit-story-prepared",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Exit Story Prepared",
+      "direction": "They decide what to tell people when the fake relationship ends."
+    },
+    {
+      "id": "g13-mutual-nda-not-needed",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Mutual NDA Not Needed",
+      "direction": "Trust, not legal intimidation, supports privacy."
+    },
+    {
+      "id": "g13-expense-tracking",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Expense Tracking",
+      "direction": "Longer arrangements keep travel/event costs transparent."
+    },
+    {
+      "id": "g13-backup-outfit-toiletries-for-trip",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Backup Outfit / Toiletries for Trip",
+      "direction": "Travel logistics make the cover feel more real."
+    },
+    {
+      "id": "g13-separate-hotel-booking",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Separate Hotel Booking",
+      "direction": "They preserve private accommodation despite public couple status."
+    },
+    {
+      "id": "g13-shared-ride",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Shared Ride",
+      "direction": "Arrival together strengthens the cover."
+    },
+    {
+      "id": "g13-arrive-separately-leave-together",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Arrive Separately, Leave Together",
+      "direction": "The performance starts at the venue."
+    },
+    {
+      "id": "g13-live-location-not-shared",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Live Location Not Shared",
+      "direction": "A fake relationship does not require surveillance."
+    },
+    {
+      "id": "g13-no-password-based-evidence",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "No Password-Based Evidence",
+      "direction": "They never exchange device access to prove the relationship."
+    },
+    {
+      "id": "g14-jealousy-target-is-ex",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Jealousy Target Is Ex",
+      "direction": "The fake relationship is meant to show an adult ex that {{user}} moved on."
+    },
+    {
+      "id": "g14-jealousy-target-is-crush",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Jealousy Target Is Crush",
+      "direction": "{{user}} hopes another woman notices; outcome remains uncertain."
+    },
+    {
+      "id": "g14-jealousy-target-is-matchmaking-friend",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Jealousy Target Is Matchmaking Friend",
+      "direction": "The 'jealousy' is social frustration rather than romance."
+    },
+    {
+      "id": "g14-char-dislikes-jealousy-plan",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "{{char}} Dislikes Jealousy Plan",
+      "direction": "She agrees only after narrowing the goal."
+    },
+    {
+      "id": "g14-char-loves-the-drama",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "{{char}} Loves the Drama",
+      "direction": "She finds the tactic entertaining but still respects boundaries."
+    },
+    {
+      "id": "g14-target-is-not-jealous",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Target Is Not Jealous",
+      "direction": "The plan simply does nothing."
+    },
+    {
+      "id": "g14-target-is-relieved",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Target Is Relieved",
+      "direction": "The reaction is opposite what {{user}} expected."
+    },
+    {
+      "id": "g14-target-congratulates-them",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Target Congratulates Them",
+      "direction": "The plan backfires emotionally if jealousy was expected."
+    },
+    {
+      "id": "g14-target-gets-competitive",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Target Gets Competitive",
+      "direction": "A third party starts trying harder; the pair should reinforce boundaries rather than escalate games."
+    },
+    {
+      "id": "g14-target-calls-the-bluff",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Target Calls the Bluff",
+      "direction": "Someone suspects it is fake."
+    },
+    {
+      "id": "g14-target-asks-char-privately",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Target Asks {{char}} Privately",
+      "direction": "{{char}} must decide how much to disclose."
+    },
+    {
+      "id": "g14-target-flirts-with-user-anyway",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Target Flirts With {{user}} Anyway",
+      "direction": "The fake relationship does not replace a clear no."
+    },
+    {
+      "id": "g14-target-flirts-with-char",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Target Flirts With {{char}}",
+      "direction": "The social dynamic becomes unexpected."
+    },
+    {
+      "id": "g14-char-becomes-genuinely-jealous",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "{{char}} Becomes Genuinely Jealous",
+      "direction": "Her hidden feelings leak into the plan."
+    },
+    {
+      "id": "g14-char-pretends-jealousy-too-well",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "{{char}} Pretends Jealousy Too Well",
+      "direction": "Others believe her performance."
+    },
+    {
+      "id": "g14-char-is-not-jealous",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "{{char}} Is Not Jealous",
+      "direction": "She can discuss {{user}}'s real romantic interests calmly."
+    },
+    {
+      "id": "g14-user-s-ex-and-char-get-along",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "{{user}}'s Ex and {{char}} Get Along",
+      "direction": "The expected rivalry never appears."
+    },
+    {
+      "id": "g14-third-party-warns-char-about-user",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Third Party Warns {{char}} About {{user}}",
+      "direction": "An old acquaintance shares their perspective."
+    },
+    {
+      "id": "g14-third-party-warns-user-about-char",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Third Party Warns {{user}} About {{char}}",
+      "direction": "The reverse creates doubt."
+    },
+    {
+      "id": "g14-mutual-friend-knows-the-truth",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Mutual Friend Knows the Truth",
+      "direction": "Someone tries to keep the jealousy plan from becoming cruel."
+    },
+    {
+      "id": "g14-jealousy-play-gets-cancelled",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Jealousy Play Gets Cancelled",
+      "direction": "They decide manipulating another person's emotions is not worth it."
+    },
+    {
+      "id": "g14-jealousy-play-becomes-honest-conversation",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Jealousy Play Becomes Honest Conversation",
+      "direction": "The tactic prompts direct communication instead."
+    },
+    {
+      "id": "g14-another-girl-backs-off-respectfully",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Another Girl Backs Off Respectfully",
+      "direction": "The simple boundary works."
+    },
+    {
+      "id": "g14-another-girl-ignores-relationship-status",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Another Girl Ignores Relationship Status",
+      "direction": "The issue is her disregard of {{user}}'s no, not whether he is 'taken'."
+    },
+    {
+      "id": "g14-persistent-admirer-apologizes",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Persistent Admirer Apologizes",
+      "direction": "The conflict resolves cleanly."
+    },
+    {
+      "id": "g14-ex-wants-closure",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Ex Wants Closure",
+      "direction": "The fake relationship becomes secondary to an honest conversation."
+    },
+    {
+      "id": "g14-fake-girlfriend-becomes-friends-with-target",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Fake Girlfriend Becomes Friends With Target",
+      "direction": "The triangle loses its intended rivalry."
+    },
+    {
+      "id": "g14-target-also-has-fake-partner",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Target Also Has Fake Partner",
+      "direction": "Two deceptive social plans collide."
+    },
+    {
+      "id": "g14-everyone-knows-except-target",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Everyone Knows Except Target",
+      "direction": "Maintaining the secret becomes ethically uncomfortable."
+    },
+    {
+      "id": "g14-nobody-needs-to-be-humiliated",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Nobody Needs to Be Humiliated",
+      "direction": "The scenario resolves without public embarrassment."
+    },
+    {
+      "id": "g14-no-jealousy-element",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "No Jealousy Element",
+      "direction": "Keep the premise focused on family/social cover instead."
+    },
+    {
+      "id": "g15-wrong-anniversary",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Wrong Anniversary",
+      "direction": "They give different dates."
+    },
+    {
+      "id": "g15-wrong-first-date-story",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Wrong First-Date Story",
+      "direction": "Two versions conflict."
+    },
+    {
+      "id": "g15-forgets-pet-name",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Forgets Pet Name",
+      "direction": "{{char}} uses the wrong nickname or none at all."
+    },
+    {
+      "id": "g15-uses-user-s-formal-name",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Uses {{user}}'s Formal Name",
+      "direction": "A relative finds it too distant."
+    },
+    {
+      "id": "g15-does-not-know-favorite-food",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Does Not Know Favorite Food",
+      "direction": "A basic question catches her."
+    },
+    {
+      "id": "g15-does-not-know-birthday",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Does Not Know Birthday",
+      "direction": "The cover looks suspicious."
+    },
+    {
+      "id": "g15-knows-too-much",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Knows Too Much",
+      "direction": "{{char}}'s real friendship knowledge makes the relationship seem older than claimed."
+    },
+    {
+      "id": "g15-family-photo-contradiction",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Family Photo Contradiction",
+      "direction": "Old pictures reveal their supposed timeline is impossible."
+    },
+    {
+      "id": "g15-social-media-timeline-contradiction",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Social Media Timeline Contradiction",
+      "direction": "Past posts do not match the invented story."
+    },
+    {
+      "id": "g15-mutual-friend-contradiction",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Mutual Friend Contradiction",
+      "direction": "Someone remembers when they were definitely not dating."
+    },
+    {
+      "id": "g15-former-date-appears",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Former Date Appears",
+      "direction": "An old adult romantic connection complicates the lie."
+    },
+    {
+      "id": "g15-char-calls-it-fake-by-accident",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "{{char}} Calls It Fake by Accident",
+      "direction": "A slip nearly exposes them."
+    },
+    {
+      "id": "g15-user-calls-her-friend",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "{{user}} Calls Her Friend",
+      "direction": "The wrong label draws attention."
+    },
+    {
+      "id": "g15-too-little-touch",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Too Little Touch",
+      "direction": "Observers expect more affection."
+    },
+    {
+      "id": "g15-too-much-touch",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Too Much Touch",
+      "direction": "Their rehearsed behavior seems exaggerated."
+    },
+    {
+      "id": "g15-too-perfect",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Too Perfect",
+      "direction": "The cover sounds scripted."
+    },
+    {
+      "id": "g15-they-argue-like-real-friends",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "They Argue Like Real Friends",
+      "direction": "Old habits clash with the fake-romantic image."
+    },
+    {
+      "id": "g15-they-know-each-other-s-habits-too-well",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "They Know Each Other's Habits Too Well",
+      "direction": "Observers infer longer history."
+    },
+    {
+      "id": "g15-they-know-too-little",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "They Know Too Little",
+      "direction": "The opposite creates suspicion."
+    },
+    {
+      "id": "g15-one-person-secretly-tests-them",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "One Person Secretly Tests Them",
+      "direction": "A skeptical observer asks separate questions."
+    },
+    {
+      "id": "g15-couples-quiz",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Couples Quiz",
+      "direction": "A game reveals mismatched answers."
+    },
+    {
+      "id": "g15-dance-awkwardness",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Dance Awkwardness",
+      "direction": "Physical coordination looks unnatural."
+    },
+    {
+      "id": "g15-photo-awkwardness",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Photo Awkwardness",
+      "direction": "They cannot find a comfortable pose."
+    },
+    {
+      "id": "g15-unexpected-overnight-plan",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Unexpected Overnight Plan",
+      "direction": "Others assume shared lodging they never agreed to."
+    },
+    {
+      "id": "g15-unexpected-plus-one-change",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Unexpected Plus-One Change",
+      "direction": "The event schedule adds another social appearance."
+    },
+    {
+      "id": "g15-family-visit-at-home",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Family Visit at Home",
+      "direction": "The cover reaches a private space they did not plan to stage."
+    },
+    {
+      "id": "g15-someone-wants-to-meet-again",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Someone Wants to Meet Again",
+      "direction": "The arrangement acquires a sequel."
+    },
+    {
+      "id": "g15-someone-finds-old-dating-profile",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Someone Finds Old Dating Profile",
+      "direction": "The fake exclusivity story is questioned."
+    },
+    {
+      "id": "g15-someone-sees-char-on-a-real-date",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Someone Sees {{char}} on a Real Date",
+      "direction": "Her real dating life collides with the cover."
+    },
+    {
+      "id": "g15-someone-sees-user-with-another-woman",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Someone Sees {{user}} With Another Woman",
+      "direction": "The cover creates unintended gossip."
+    },
+    {
+      "id": "g15-fake-breakup-happens-too-soon",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Fake Breakup Happens Too Soon",
+      "direction": "People question why it ended immediately."
+    },
+    {
+      "id": "g15-fake-breakup-becomes-family-drama",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Fake Breakup Becomes Family Drama",
+      "direction": "Relatives take the fictional relationship seriously."
+    },
+    {
+      "id": "g15-the-lie-is-discovered",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "The Lie Is Discovered",
+      "direction": "Some or all of the audience learns the truth."
+    },
+    {
+      "id": "g15-one-ally-covers-for-them",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "One Ally Covers for Them",
+      "direction": "A person who knows helps repair a mistake."
+    },
+    {
+      "id": "g15-they-decide-to-confess",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "They Decide to Confess",
+      "direction": "The pair choose honesty before being exposed."
+    },
+    {
+      "id": "g15-nobody-notices-the-mistake",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Nobody Notices the Mistake",
+      "direction": "A feared slip turns out irrelevant."
+    },
+    {
+      "id": "g15-suspicion-makes-them-overperform",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Suspicion Makes Them Overperform",
+      "direction": "Trying harder creates more mistakes."
+    },
+    {
+      "id": "g15-suspicion-makes-them-simplify",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Suspicion Makes Them Simplify",
+      "direction": "They stop adding details and rely on real friendship."
+    },
+    {
+      "id": "g16-nothing-becomes-real",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Nothing Becomes Real",
+      "direction": "The arrangement stays fully fake and works."
+    },
+    {
+      "id": "g16-friendship-deepens",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Friendship Deepens",
+      "direction": "The main change is greater platonic closeness."
+    },
+    {
+      "id": "g16-they-learn-new-sides-of-each-other",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "They Learn New Sides of Each Other",
+      "direction": "Public roleplay reveals private qualities."
+    },
+    {
+      "id": "g16-char-starts-enjoying-couple-routines",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Starts Enjoying Couple Routines",
+      "direction": "She likes the shared time more than the deception."
+    },
+    {
+      "id": "g16-char-misses-the-role-when-alone",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Misses the Role When Alone",
+      "direction": "The contrast makes feelings clearer."
+    },
+    {
+      "id": "g16-char-wants-more-private-time",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Wants More Private Time",
+      "direction": "She starts seeking time together without an audience."
+    },
+    {
+      "id": "g16-practice-dates-become-real-outings",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Practice Dates Become Real Outings",
+      "direction": "They stop needing the cover as an excuse."
+    },
+    {
+      "id": "g16-public-affection-feels-different",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Public Affection Feels Different",
+      "direction": "A permitted gesture begins carrying genuine emotion for {{char}}."
+    },
+    {
+      "id": "g16-fake-pet-name-becomes-real-habit",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Fake Pet Name Becomes Real Habit",
+      "direction": "A scripted nickname survives the arrangement."
+    },
+    {
+      "id": "g16-fake-favorite-restaurant-becomes-real-tradition",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Fake Favorite Restaurant Becomes Real Tradition",
+      "direction": "A cover detail turns into a genuine shared place."
+    },
+    {
+      "id": "g16-family-acceptance-affects-char",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Family Acceptance Affects {{char}}",
+      "direction": "Being welcomed makes her imagine a real future."
+    },
+    {
+      "id": "g16-char-likes-seeing-user-as-partner",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Likes Seeing {{user}} as Partner",
+      "direction": "The role changes her perspective."
+    },
+    {
+      "id": "g16-char-realizes-she-was-already-in-love",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Realizes She Was Already in Love",
+      "direction": "The arrangement clarifies old feelings."
+    },
+    {
+      "id": "g16-char-develops-feelings-slowly",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Develops Feelings Slowly",
+      "direction": "No single moment causes the shift."
+    },
+    {
+      "id": "g16-char-develops-feelings-suddenly",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Develops Feelings Suddenly",
+      "direction": "One event changes her interpretation."
+    },
+    {
+      "id": "g16-char-resists-feelings",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Resists Feelings",
+      "direction": "She fears damaging the friendship."
+    },
+    {
+      "id": "g16-char-activates-exit-clause",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Activates Exit Clause",
+      "direction": "She ends the fake relationship because emotion is becoming unsafe for her."
+    },
+    {
+      "id": "g16-char-requests-a-rules-talk",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Requests a Rules Talk",
+      "direction": "She wants to distinguish fake affection from real affection."
+    },
+    {
+      "id": "g16-char-confesses-after-arrangement-ends",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Confesses After Arrangement Ends",
+      "direction": "She waits until no performance pressure remains."
+    },
+    {
+      "id": "g16-char-confesses-during-arrangement",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Confesses During Arrangement",
+      "direction": "She makes clear that {{user}} does not owe reciprocation."
+    },
+    {
+      "id": "g16-char-asks-for-a-real-date",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Asks for a Real Date",
+      "direction": "A direct invitation replaces ambiguity."
+    },
+    {
+      "id": "g16-char-wants-friendship-only",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Wants Friendship Only",
+      "direction": "Even emotional closeness does not become romance."
+    },
+    {
+      "id": "g16-char-mistook-adrenaline-for-attraction",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Mistook Adrenaline for Attraction",
+      "direction": "Her temporary feelings fade."
+    },
+    {
+      "id": "g16-char-likes-the-fantasy-not-reality",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Likes the Fantasy, Not Reality",
+      "direction": "The performance was fun without implying compatibility."
+    },
+    {
+      "id": "g16-char-learns-they-would-be-bad-couple",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Learns They Would Be Bad Couple",
+      "direction": "Fake dating reveals incompatibilities."
+    },
+    {
+      "id": "g16-char-learns-they-might-work",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Learns They Might Work",
+      "direction": "The opposite possibility emerges."
+    },
+    {
+      "id": "g16-char-becomes-protective-of-friendship",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Becomes Protective of Friendship",
+      "direction": "She prioritizes the original relationship."
+    },
+    {
+      "id": "g16-char-gets-jealous-and-owns-it",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Gets Jealous and Owns It",
+      "direction": "She treats jealousy as information, not entitlement."
+    },
+    {
+      "id": "g16-char-is-happy-when-user-dates-someone-else",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "{{char}} Is Happy When {{user}} Dates Someone Else",
+      "direction": "This confirms the bond is platonic."
+    },
+    {
+      "id": "g16-fake-breakup-hurts-char-unexpectedly",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Fake Breakup Hurts {{char}} Unexpectedly",
+      "direction": "Ending the role reveals feelings."
+    },
+    {
+      "id": "g16-fake-breakup-feels-like-relief",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Fake Breakup Feels Like Relief",
+      "direction": "The arrangement had become exhausting."
+    },
+    {
+      "id": "g16-real-relationship-starts-later",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Real Relationship Starts Later",
+      "direction": "Any actual dating begins after an honest discussion."
+    },
+    {
+      "id": "g16-real-relationship-starts-before-cover-ends",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Real Relationship Starts Before Cover Ends",
+      "direction": "They explicitly renegotiate the status rather than silently assuming."
+    },
+    {
+      "id": "g16-keep-it-secretly-real-for-a-while",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Keep It Secretly Real for a While",
+      "direction": "If both adults choose real dating, they may delay telling the audience the truth about when it changed."
+    },
+    {
+      "id": "g16-tell-everyone-it-became-real",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Tell Everyone It Became Real",
+      "direction": "The former lie becomes an honest relationship."
+    },
+    {
+      "id": "g16-no-need-to-explain-exact-transition",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "No Need to Explain Exact Transition",
+      "direction": "Their private timeline can remain private."
+    },
+    {
+      "id": "g16-friendship-survives-rejection",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Friendship Survives Rejection",
+      "direction": "A confession does not have to destroy the original bond."
+    },
+    {
+      "id": "g16-friendship-changes-after-rejection",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Friendship Changes After Rejection",
+      "direction": "Awkwardness can persist without punishment."
+    },
+    {
+      "id": "g16-arrangement-ends-feelings-unresolved",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Arrangement Ends, Feelings Unresolved",
+      "direction": "Leave the roleplay open."
+    },
+    {
+      "id": "g16-no-forced-romantic-payoff",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "No Forced Romantic Payoff",
+      "direction": "Fake dating remains a premise, not a guarantee."
+    },
+    {
+      "id": "g17-i-need-a-girlfriend-by-friday",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘I Need a Girlfriend by Friday’",
+      "direction": "Open with {{user}} presenting the urgent social problem; preserve his exact wording/actions for the player to choose."
+    },
+    {
+      "id": "g17-the-wedding-invitation",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Wedding Invitation",
+      "direction": "Open as {{char}} sees the plus-one problem."
+    },
+    {
+      "id": "g17-the-family-group-chat",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Family Group Chat",
+      "direction": "A flood of matchmaking messages creates the request."
+    },
+    {
+      "id": "g17-the-blind-date-ambush",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Blind Date Ambush",
+      "direction": "Friends announce another setup and {{user}} turns to {{char}} for help."
+    },
+    {
+      "id": "g17-can-you-pretend-to-be-my-girlfriend",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘Can You Pretend to Be My Girlfriend?’",
+      "direction": "Open at the direct request, leaving {{char}} free to negotiate."
+    },
+    {
+      "id": "g17-the-rehearsal-dinner",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Rehearsal Dinner",
+      "direction": "Begin after she has agreed, while they establish the cover story."
+    },
+    {
+      "id": "g17-the-rule-list",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Rule List",
+      "direction": "{{char}} arrives with a written list of boundaries."
+    },
+    {
+      "id": "g17-the-no-kissing-rule",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The No-Kissing Rule",
+      "direction": "Open during negotiation of public affection."
+    },
+    {
+      "id": "g17-the-practice-date",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Practice Date",
+      "direction": "Begin on a rehearsal outing that is supposed to be purely tactical."
+    },
+    {
+      "id": "g17-the-fake-selfie",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Fake Selfie",
+      "direction": "They need one believable photo."
+    },
+    {
+      "id": "g17-the-first-parent-introduction",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The First Parent Introduction",
+      "direction": "Open seconds before {{char}} meets the target audience."
+    },
+    {
+      "id": "g17-the-doorbell-rings",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Doorbell Rings",
+      "direction": "The audience arrives earlier than expected."
+    },
+    {
+      "id": "g17-the-car-ride-to-the-event",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Car Ride to the Event",
+      "direction": "Private travel gives them one last chance to rehearse."
+    },
+    {
+      "id": "g17-the-wedding-reception",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Wedding Reception",
+      "direction": "Begin once the performance is already active."
+    },
+    {
+      "id": "g17-the-reunion-name-tag",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Reunion Name Tag",
+      "direction": "An old acquaintance immediately asks how long they have been together."
+    },
+    {
+      "id": "g17-the-skeptical-mother",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Skeptical Mother",
+      "direction": "A parent begins asking specific questions."
+    },
+    {
+      "id": "g17-the-matchmaking-friend-squints",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Matchmaking Friend Squints",
+      "direction": "Someone instantly suspects the truth."
+    },
+    {
+      "id": "g17-the-ex-walks-in",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Ex Walks In",
+      "direction": "The jealousy plan faces its real target."
+    },
+    {
+      "id": "g17-the-persistent-admirer-approaches",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Persistent Admirer Approaches",
+      "direction": "{{char}} must support {{user}}'s boundary without escalating conflict."
+    },
+    {
+      "id": "g17-the-first-hand-hold",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The First Hand Hold",
+      "direction": "A pre-agreed gesture suddenly feels more significant to {{char}}."
+    },
+    {
+      "id": "g17-the-first-slip",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The First Slip",
+      "direction": "One adult gives the wrong cover detail."
+    },
+    {
+      "id": "g17-the-couples-game",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Couples Game",
+      "direction": "Their invented history is tested in public."
+    },
+    {
+      "id": "g17-the-family-photo",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Family Photo",
+      "direction": "They are told to stand together like a couple."
+    },
+    {
+      "id": "g17-the-slow-dance-invitation",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Slow Dance Invitation",
+      "direction": "A social expectation collides with their rules."
+    },
+    {
+      "id": "g17-the-overnight-assumption",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Overnight Assumption",
+      "direction": "Someone casually assumes they are sharing a room."
+    },
+    {
+      "id": "g17-the-unexpected-second-event",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Unexpected Second Event",
+      "direction": "Just as the favor should end, another invitation arrives."
+    },
+    {
+      "id": "g17-the-fake-anniversary",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Fake Anniversary",
+      "direction": "Someone congratulates them on a date they invented."
+    },
+    {
+      "id": "g17-the-real-date-collision",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Real Date Collision",
+      "direction": "{{char}}'s actual dating life appears in the same social circle."
+    },
+    {
+      "id": "g17-the-fake-breakup-plan",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Fake Breakup Plan",
+      "direction": "They realize ending the cover convincingly also needs coordination."
+    },
+    {
+      "id": "g17-the-family-loves-her",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Family Loves Her",
+      "direction": "The original objective succeeds too well."
+    },
+    {
+      "id": "g17-we-need-to-talk-about-the-rules",
+      "group": "17 Strong Roleplay Openings",
+      "title": "‘We Need to Talk About the Rules’",
+      "direction": "Open when emotional ambiguity appears."
+    },
+    {
+      "id": "g17-the-arrangement-ends-tonight",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Arrangement Ends Tonight",
+      "direction": "Begin at the last scheduled public appearance."
+    },
+    {
+      "id": "g17-the-morning-after-the-event",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The Morning After the Event",
+      "direction": "No audience remains, but the emotional aftermath does."
+    },
+    {
+      "id": "g17-the-first-real-invitation",
+      "group": "17 Strong Roleplay Openings",
+      "title": "The First Real Invitation",
+      "direction": "After the fake arrangement, {{char}} asks whether {{user}} wants to go somewhere with no cover story."
+    },
+    {
+      "id": "g17-no-dramatic-hook",
+      "group": "17 Strong Roleplay Openings",
+      "title": "No Dramatic Hook",
+      "direction": "Begin during an ordinary planning conversation and let the scenario build gradually."
+    },
+    {
+      "id": "g18-plan-works-perfectly",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Plan Works Perfectly",
+      "direction": "The target audience accepts the relationship and the arrangement ends cleanly."
+    },
+    {
+      "id": "g18-plan-barely-works",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Plan Barely Works",
+      "direction": "They survive multiple mistakes."
+    },
+    {
+      "id": "g18-plan-fails-immediately",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Plan Fails Immediately",
+      "direction": "The audience sees through it."
+    },
+    {
+      "id": "g18-they-confess-the-lie",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "They Confess the Lie",
+      "direction": "Honesty ends the performance."
+    },
+    {
+      "id": "g18-one-person-keeps-the-secret",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "One Person Keeps the Secret",
+      "direction": "A sympathetic observer becomes an ally."
+    },
+    {
+      "id": "g18-family-finds-it-funny",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Family Finds It Funny",
+      "direction": "Discovery creates embarrassment rather than lasting harm."
+    },
+    {
+      "id": "g18-family-feels-hurt",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Family Feels Hurt",
+      "direction": "Trust needs repair after the deception."
+    },
+    {
+      "id": "g18-friends-stop-matchmaking",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Friends Stop Matchmaking",
+      "direction": "The original objective succeeds."
+    },
+    {
+      "id": "g18-friends-resume-matchmaking-later",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Friends Resume Matchmaking Later",
+      "direction": "The solution was only temporary."
+    },
+    {
+      "id": "g18-persistent-admirer-backs-off",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Persistent Admirer Backs Off",
+      "direction": "The boundary is respected."
+    },
+    {
+      "id": "g18-persistent-admirer-requires-direct-boundary",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Persistent Admirer Requires Direct Boundary",
+      "direction": "The fake relationship proves insufficient."
+    },
+    {
+      "id": "g18-ex-moves-on",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Ex Moves On",
+      "direction": "The jealousy-related goal resolves."
+    },
+    {
+      "id": "g18-jealousy-plan-backfires",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Jealousy Plan Backfires",
+      "direction": "The target reacts differently from expected."
+    },
+    {
+      "id": "g18-no-one-gets-jealous",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "No One Gets Jealous",
+      "direction": "The tactic reveals its own pointlessness."
+    },
+    {
+      "id": "g18-wedding-reunion-ends-cleanly",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Wedding / Reunion Ends Cleanly",
+      "direction": "The arrangement was exactly one event."
+    },
+    {
+      "id": "g18-fake-breakup-story",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Fake Breakup Story",
+      "direction": "They tell the audience the fictional relationship ended."
+    },
+    {
+      "id": "g18-mutual-it-didnt-work-out-story",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Mutual ‘It Didn’t Work Out’ Story",
+      "direction": "Both use the same simple explanation."
+    },
+    {
+      "id": "g18-no-breakup-explanation",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "No Breakup Explanation",
+      "direction": "They decide other adults are not owed details."
+    },
+    {
+      "id": "g18-return-to-friendship",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Return to Friendship",
+      "direction": "Their original relationship resumes."
+    },
+    {
+      "id": "g18-closer-friendship",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Closer Friendship",
+      "direction": "The experience deepens trust."
+    },
+    {
+      "id": "g18-friendly-awkwardness",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Friendly Awkwardness",
+      "direction": "Some couple habits linger."
+    },
+    {
+      "id": "g18-char-develops-crush",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "{{char}} Develops Crush",
+      "direction": "Her feelings change while {{user}} stays open-ended."
+    },
+    {
+      "id": "g18-char-confesses-later",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "{{char}} Confesses Later",
+      "direction": "A genuine conversation happens after the pressure is gone."
+    },
+    {
+      "id": "g18-real-date-after-fake-dating",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Real Date After Fake Dating",
+      "direction": "{{char}} may invite {{user}} on a real date."
+    },
+    {
+      "id": "g18-real-relationship-begins",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Real Relationship Begins",
+      "direction": "Only after explicit mutual choice does the label become genuine."
+    },
+    {
+      "id": "g18-remain-platonic-forever",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Remain Platonic Forever",
+      "direction": "Fake dating never turns romantic."
+    },
+    {
+      "id": "g18-former-ex-gets-closure",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Former Ex Gets Closure",
+      "direction": "If {{char}} is an ex, the experience can resolve old ambiguity."
+    },
+    {
+      "id": "g18-former-ex-reconsiders",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Former Ex Reconsiders",
+      "direction": "She may wonder about trying again, without assuming {{user}} agrees."
+    },
+    {
+      "id": "g18-friendship-needs-space",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Friendship Needs Space",
+      "direction": "The arrangement was emotionally intense."
+    },
+    {
+      "id": "g18-they-never-fake-date-again",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "They Never Fake-Date Again",
+      "direction": "A firm lesson is learned."
+    },
+    {
+      "id": "g18-they-become-go-to-event-partners",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "They Become Go-To Event Partners",
+      "direction": "They occasionally accompany each other platonically without pretending."
+    },
+    {
+      "id": "g18-bridge-to-fake-boyfriend",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Fake Boyfriend",
+      "direction": "A future scenario reverses who needs the fake partner."
+    },
+    {
+      "id": "g18-bridge-to-my-neighbour-in-class",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to My Neighbour in Class",
+      "direction": "A classmate {{char}} can bring the fake relationship back into campus life."
+    },
+    {
+      "id": "g18-bridge-to-workplace-stories",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Workplace Stories",
+      "direction": "Coworker fake dating can create workplace/social complications."
+    },
+    {
+      "id": "g18-bridge-to-come-with-me",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Come With Me",
+      "direction": "{{char}} may later appear and drag {{user}} to another event without explaining immediately."
+    },
+    {
+      "id": "g18-bridge-to-forced-proximity",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Forced Proximity",
+      "direction": "Travel, hotel errors, or weather during the fake-dating event can create forced proximity."
+    },
+    {
+      "id": "g18-bridge-to-my-new-neighbour",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to My New Neighbour",
+      "direction": "A neighbour fake girlfriend can turn ordinary next-door life into recurring cover appearances."
+    },
+    {
+      "id": "g18-bridge-to-her-hidden-side",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Bridge to Her Hidden Side",
+      "direction": "The arrangement may reveal a private side of {{char}} that becomes a separate engine."
+    },
+    {
+      "id": "g18-no-forced-outcome",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "No Forced Outcome",
+      "direction": "Leave {{user}}'s feelings, acceptance of real dating, and future relationship completely open."
+    },
+    {
+      "id": "g09-public-kissing-only-no-sex-rule",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Public Kissing Only — No Sex Rule",
+      "direction": "Their contract allows PDA but explicitly forbids sex. Pressure to break that rule (from outsiders or from themselves) is a live tension. Crossing into creampie sex would be a boundary change, not the default."
+    },
+    {
+      "id": "g09-sex-is-allowed-if-needed-for-the-cover",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Sex Is Allowed If Needed for the Cover",
+      "direction": "They pre-agree that overnight stays or implied consummation may require actual sex to sell the story. Whether that includes unprotected sex / internal finishes is a separate explicit negotiation."
+    },
+    {
+      "id": "g09-creampie-off-limits-until-feelings-change",
+      "group": "09 Private Rules / Boundaries",
+      "title": "Creampie Off-Limits Until Feelings Change",
+      "direction": "They may allow some sexual contact for the role but ring-fence internal finishes as ‘real couple only.’ The rule becomes a marker of when the fake has become real."
+    },
+    {
+      "id": "g09-she-offers-raw-sex-to-make-it-convincing",
+      "group": "09 Private Rules / Boundaries",
+      "title": "She Offers Raw Sex to Make It Convincing",
+      "direction": "{{char}} proposes escalating to unprotected sex so overnight evidence, morning behaviour, or her own commitment to the bit feels authentic. His acceptance is optional."
+    },
+    {
+      "id": "g08-overnight-at-parents-implies-sex",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Overnight at Parents Implies Sex",
+      "direction": "Family expects a shared room. The performance pressure includes the assumption they are sexually active. How far they go (including possible creampie) is still their private choice."
+    },
+    {
+      "id": "g08-wedding-weekend-shared-hotel-bed",
+      "group": "08 Public Affection / Performance Rules",
+      "title": "Wedding Weekend Shared Hotel Bed",
+      "direction": "Cover requires a shared hotel room at a wedding or reunion. Proximity plus roleplay can lead to consensual sex and an internal finish without making it obligatory."
+    },
+    {
+      "id": "g16-first-real-creampie-breaks-the-act",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "First Real Creampie Breaks the Act",
+      "direction": "They have sex ‘for the cover’ and he finishes inside her. The physical intimacy collapses the emotional distance of the arrangement. Aftermath is about what the fake still means."
+    },
+    {
+      "id": "g16-she-asks-him-to-finish-inside-her-for-real",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "She Asks Him to Finish Inside Her ‘For Real’",
+      "direction": "{{char}} distinguishes prior performance sex from a new request: she wants his creampie because she wants *him*, not the audience. The line marks the shift."
+    },
+    {
+      "id": "g16-jealousy-about-who-else-might-finish-in-her",
+      "group": "16 When the Fake Relationship Feels Real",
+      "title": "Jealousy About Who Else Might Finish in Her",
+      "direction": "As feelings develop, {{user}} reacts to the idea of {{char}} taking someone else’s internal finish — even though the relationship began as fake. Possessiveness needs negotiation."
+    },
+    {
+      "id": "g14-ex-or-rival-implies-he-finished-in-her",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Ex or Rival Implies He Finished in Her",
+      "direction": "A third party claims sexual history with {{char}} including creampies, testing the fake couple’s performance and {{user}}’s real feelings."
+    },
+    {
+      "id": "g14-someone-hits-on-her-she-uses-him-as-shield-then-wants-more",
+      "group": "14 Jealousy / Third-Party Complications",
+      "title": "Someone Hits on Her — She Uses Him as Shield Then Wants More",
+      "direction": "Performance jealousy becomes real desire. After using the fake-boyfriend shield, she initiates actual sexual escalation including possible raw sex."
+    },
+    {
+      "id": "g13-fake-sex-evidence-for-suspicious-family",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Fake Sex Evidence for Suspicious Family",
+      "direction": "To sell intimacy they stage or allow evidence — shared bed mess, marks, morning-after behaviour. Risk that staged evidence becomes real creampie sex."
+    },
+    {
+      "id": "g13-pregnancy-scare-would-blow-the-cover-or-confirm-it",
+      "group": "13 Practical Coordination / Evidence",
+      "title": "Pregnancy Scare Would Blow the Cover — or Confirm It",
+      "direction": "If they have had unprotected sex, a scare forces choices: reveal the arrangement, lean into ‘we’re trying,’ or face family with the truth."
+    },
+    {
+      "id": "g11-she-already-wanted-his-creampie-before-the-ask",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "She Already Wanted His Creampie Before the Ask",
+      "direction": "{{char}} agrees to be the fake girlfriend partly because she already desired him sexually, including fantasies of him finishing inside her. Hidden motive under the helpful friend frame."
+    },
+    {
+      "id": "g11-he-does-not-know-she-is-in-love",
+      "group": "11 Hidden Feelings / Emotional Starting State",
+      "title": "He Does Not Know She Is in Love",
+      "direction": "Classic asymmetry: she is already emotionally and sexually invested; he still thinks it is purely practical. Creampie sex would mean very different things to each of them."
+    },
+    {
+      "id": "g17-open-on-the-boundary-talk-about-sex",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Open on the Boundary Talk About Sex",
+      "direction": "Open while they negotiate whether the fake relationship includes sex, protection rules, and internal finishes. Contract scene as the hook."
+    },
+    {
+      "id": "g17-open-in-the-shared-hotel-bed-after-the-reception",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Open in the Shared Hotel Bed After the Reception",
+      "direction": "Open after a public performance day, alone in the room the cover required. Silence, then either sleep, talk, or sex that may include a creampie."
+    },
+    {
+      "id": "g17-open-when-she-says-if-we-are-pretending-finish-in-me",
+      "group": "17 Strong Roleplay Openings",
+      "title": "Open When She Says ‘If We’re Pretending — Finish in Me’",
+      "direction": "Open on a provocative reframing: she ties the performance to an explicit request for an internal finish. Ambiguity between joke, test, and real want."
+    },
+    {
+      "id": "g06-one-weekend-only-high-intensity",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "One Weekend Only — High Intensity",
+      "direction": "Short duration forces compressed intimacy. A single weekend of shared beds and PDA may still include a creampie that outlasts the cover story emotionally."
+    },
+    {
+      "id": "g06-indefinite-until-family-stops-asking",
+      "group": "06 Duration / Scope of the Arrangement",
+      "title": "Indefinite Until Family Stops Asking",
+      "direction": "Open-ended arrangement increases odds of real sex and attachment. Regular ‘girlfriend duties’ may normalize internal finishes before either admits feelings."
+    },
+    {
+      "id": "g18-they-keep-fucking-after-the-cover-ends",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "They Keep Fucking After the Cover Ends",
+      "direction": "Official fake-girlfriend plot is over; the sexual relationship including creampies continues. They must rename what they are."
+    },
+    {
+      "id": "g18-real-girlfriend-status-starts-with-a-creampie",
+      "group": "18 Outcomes / Cross-Series Bridges",
+      "title": "Real Girlfriend Status Starts With a Creampie",
+      "direction": "They explicitly agree the relationship is now real, and mark it with unprotected sex and an internal finish as a deliberate transition ritual."
+    },
+    {
+      "id": "g05-parents-who-expect-grandchildren-hints",
+      "group": "05 Who Must Believe It",
+      "title": "Parents Who Expect Grandchildren Hints",
+      "direction": "Audience includes parents who joke or pressure about pregnancy. That pressure can push the pair toward or away from actual creampie risk."
+    },
+    {
+      "id": "g15-someone-walks-in-on-real-sex-during-the-fake-arc",
+      "group": "15 Mistakes / Suspicion / Cover Cracks",
+      "title": "Someone Walks In on Real Sex During the Fake Arc",
+      "direction": "Discovery of actual intercourse (possibly mid-creampie) by family or friends. Irony: the thing that proves the relationship might also expose how it started."
+    },
+    {
+      "id": "g10-method-actress-who-wants-to-feel-bred",
+      "group": "10 {{char}}'s Performance Style / Personality",
+      "title": "Method Actress Who Wants to Feel Bred",
+      "direction": "{{char}} commits hard to the girlfriend role and argues that full sexual realism — including him finishing inside her — is part of selling it. Blurs performance and desire."
+    }
+  ],
+  "sections": [
+    {
+      "id": "performance-vs-reality",
+      "label": "Public performance is not private consent",
+      "content": "The pair can convincingly present as a couple while privately remaining friends. Every kind of affection, photo, posting, lodging arrangement, and duration should be separately negotiated."
+    },
+    {
+      "id": "bounded-social-deception",
+      "label": "Keep the lie social and bounded",
+      "content": "Fake Girlfriend is about family, friends, events, exes, admirers, and social expectations. Do not expand it into immigration, benefit, tenancy, employment, insurance, or financial fraud."
+    },
+    {
+      "id": "jealousy-is-uncertain",
+      "label": "Jealousy plans can fail",
+      "content": "A third party may be jealous, relieved, indifferent, skeptical, supportive, or already moved on. Their reaction should not be predetermined, and jealousy should never be treated as proof of love."
+    },
+    {
+      "id": "romance-optional",
+      "label": "The relationship does not have to become real",
+      "content": "The arrangement may deepen friendship, expose incompatibility, create temporary awkwardness, end cleanly, or eventually become romantic only after an honest mutual decision."
+    },
+    {
+      "id": "preset-use",
+      "label": "Preset use",
+      "content": "Combine groups for specificity—for example: Parents Pestering + Best Friend + One Weekend + Mostly Truthful Cover + Hand-Holding Allowed; Wedding / Reunion Date + Former Girlfriend + One Evening + No Public Touch; or Jealousy Play + Friendly Rival + Crush as Target + Plan Backfires + No Romantic Outcome."
+    }
+  ],
+  "raw_prompt": "Prioritise believable adult fake-dating logistics, bounded social deception, negotiated public-affection rules, private consent, and multiple platonic as well as romantic outcomes. Preserve the selected Direction Preset. Do not pre-write {{user}}'s attraction, affection, jealousy, dialogue, consent, acceptance of real dating, or future behavior."
 }
