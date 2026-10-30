@@ -10,6 +10,7 @@ const KNOWN_GROUP_FIELDS := [
 	"spec", "spec_version", "name", "members", "raw_member_data", "turn_order",
 	"auto_advance", "director_mode", "first_message", "scenario", "system_prompt",
 	"character_system_prompts", "group_lorebook", "world_ids", "world_names",
+	"lore_world_ids",
 	"inherit_character_lorebooks", "chaos_mode_enabled", "chaos_nsfw_enabled",
 	"baseline_realism_state", "default_member_realism_state", "member_objectives",
 	"extensions"
@@ -33,6 +34,7 @@ static func default_group_options(project: Dictionary, workflow: Dictionary = {}
 		"group_lorebook": "",
 		"world_ids": [],
 		"world_names": [],
+		"lore_world_ids": null,
 		"inherit_character_lorebooks": true,
 		"chaos_mode_enabled": false,
 		"chaos_nsfw_enabled": false,
@@ -124,6 +126,11 @@ static func build_group_payload(
 	payload["group_lorebook"] = str(options.get("group_lorebook", ""))
 	payload["world_ids"] = _string_array(options.get("world_ids", []))
 	payload["world_names"] = _string_array(options.get("world_names", []))
+	var lore_world_ids_value: Variant = options.get("lore_world_ids", null)
+	if lore_world_ids_value is Array:
+		payload["lore_world_ids"] = _string_array(lore_world_ids_value)
+	else:
+		payload.erase("lore_world_ids")
 	payload["inherit_character_lorebooks"] = bool(
 		options.get("inherit_character_lorebooks", true)
 	)
@@ -328,6 +335,10 @@ static func import_group_to_project(payload: Dictionary, source_path: String = "
 		"group_lorebook": str(payload.get("group_lorebook", "")),
 		"world_ids": _string_array(payload.get("world_ids", [])),
 		"world_names": _string_array(payload.get("world_names", [])),
+		"lore_world_ids": (
+			_string_array(payload.get("lore_world_ids", []))
+			if payload.has("lore_world_ids") else null
+		),
 		"inherit_character_lorebooks": bool(payload.get("inherit_character_lorebooks", true)),
 		"chaos_mode_enabled": bool(payload.get("chaos_mode_enabled", false)),
 		"chaos_nsfw_enabled": bool(payload.get("chaos_nsfw_enabled", false)),

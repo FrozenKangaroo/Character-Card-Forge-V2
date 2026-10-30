@@ -7,6 +7,9 @@ const WORK_DAYS_V02111 = preload(
 const CHAOS_MODE_V02116 = preload(
 	"res://scripts/services/front_porch_chaos_mode_v02116.gd"
 )
+const RAW_HIDE_CHARACTER_V02116 = preload(
+	"res://scripts/services/front_porch_rawhide_character_v02116.gd"
+)
 
 const CHAOS_FIELD_ID_V02116 := "fp_chaos_mode"
 
@@ -48,6 +51,7 @@ func apply_control_values(
 		if not errors.has(chaos_error):
 			errors.append(chaos_error)
 		result["errors"] = errors
+	_canonicalise_rawhide_omissions_v02116(document)
 	var validation := validate_document(document)
 	var final_errors: Array = result.get("errors", [])
 	for error_text in validation.get("errors", []):
@@ -68,6 +72,23 @@ func apply_control_values(
 
 
 func _normalise_value(field: Dictionary, raw_value: Variant) -> Dictionary:
+	var field_id := str(field.get("id", ""))
+	if field_id == "fp_needs_off":
+		return RAW_HIDE_CHARACTER_V02116.normalise_needs_off(raw_value)
+	if field_id == "fp_recovery":
+		return RAW_HIDE_CHARACTER_V02116.normalise_recovery(raw_value)
+	if field_id == "fp_needs_pace":
+		var raw_pace := str(raw_value).strip_edges()
+		var pace := raw_pace.to_lower()
+		if raw_pace.is_empty():
+			return {"ok": false, "error": "Choose a Needs pace."}
+		return {"ok": true, "value": pace if pace in RAW_HIDE_CHARACTER_V02116.NEED_PACES else raw_pace}
+	if field_id == "fp_sex":
+		var raw_sex := str(raw_value).strip_edges()
+		var sex := raw_sex.to_lower()
+		if raw_sex.is_empty():
+			return {"ok": false, "error": "Choose a Sex value."}
+		return {"ok": true, "value": sex if sex in RAW_HIDE_CHARACTER_V02116.SEX_VALUES else raw_sex}
 	if str(field.get("id", "")) == CHAOS_FIELD_ID_V02116:
 		return CHAOS_MODE_V02116.normalise_control_value(raw_value)
 	if str(field.get("id", "")) == "fp_work_days":
@@ -123,7 +144,30 @@ func capabilities() -> Dictionary:
 	]
 	result["chaos_modes"] = CHAOS_MODE_V02116.ENABLED_MODES.duplicate()
 	result["chaos_legacy_boolean_compatibility"] = true
+	result["rawhide_schema_commit"] = RAW_HIDE_CHARACTER_V02116.RAW_HIDE_COMMIT
+	result["needs_paces"] = RAW_HIDE_CHARACTER_V02116.NEED_PACES.duplicate()
+	result["needs_off_keys"] = RAW_HIDE_CHARACTER_V02116.NEED_KEYS.duplicate()
+	result["recovery_modes"] = RAW_HIDE_CHARACTER_V02116.RECOVERY_MODES.duplicate()
+	result["pcd_modes"] = RAW_HIDE_CHARACTER_V02116.PCD_MODES.duplicate()
 	return result
+
+
+func _canonicalise_rawhide_omissions_v02116(document: Dictionary) -> void:
+	var realism := _chaos_realism_v02116(document)
+	if realism.get("needs_off", null) is Array and realism.get("needs_off", []).is_empty():
+		realism.erase("needs_off")
+	if bool(realism.get("pockets_enabled", false)):
+		realism.erase("pockets_enabled")
+	var recovery_value: Variant = realism.get("recovery", null)
+	if recovery_value is Dictionary:
+		var normalised := RAW_HIDE_CHARACTER_V02116.normalise_recovery(recovery_value)
+		if bool(normalised.get("ok", false)):
+			var recovery: Dictionary = normalised.get("value", {})
+			if recovery.is_empty():
+				realism.erase("recovery")
+			else:
+				realism["recovery"] = recovery
+	_write_chaos_realism_v02116(document, realism)
 
 
 func _chaos_realism_v02116(document: Dictionary) -> Dictionary:

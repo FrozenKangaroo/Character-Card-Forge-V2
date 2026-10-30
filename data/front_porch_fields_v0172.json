@@ -41,6 +41,7 @@
         {"id":"fp_intimate_not_into","key_path":"intimate_preferences.not_into","label":"Intimate preferences — not interested in","type":"tags","default":[],"generate":true,"adult":true,"generation_prompt":"Adult boundaries or disinterests only. Keep them character-owned and never prescribe {{user}}."},
         {"id":"fp_inventory_worn","key_path":"inventory.worn","label":"Wearing","type":"tags","default":[],"generate":true,"generation_prompt":"Up to eight starting wardrobe items. A condition may be written in parentheses, for example: sundress (rain-soaked)."},
         {"id":"fp_inventory_carrying","key_path":"inventory.carrying","label":"Carrying","type":"tags","default":[],"generate":true,"generation_prompt":"Up to eight objects the character carries when a new conversation starts."}
+		,{"id":"fp_pockets_enabled","key_path":"pockets_enabled","label":"Pockets & Wardrobe enabled","type":"checkbox","default":true,"generate":false}
       ]
     },
     {
@@ -66,25 +67,28 @@
     {
       "id": "needs_inventory",
       "label": "Needs Simulation",
-      "description": "Optional per-character starting needs and decay rates for new conversations.",
+      "description": "Current Rawhide per-character needs controls. Legacy strength/decay values remain visible for old projects but current Rawhide ignores them.",
       "fields": [
         {"id":"fp_needs_enabled","key_path":"needs_sim_enabled","label":"Needs Simulation default","type":"checkbox","default":true,"generate":true},
+		{"id":"fp_needs_pace","key_path":"needs_pace","label":"Needs pace","type":"select","default":"normal","options":["sloth","normal","fast"],"option_labels":{"sloth":"Sloth","normal":"Normal","fast":"Fast"},"generate":true},
+		{"id":"fp_needs_off","key_path":"needs_off","label":"Disabled needs","type":"needs_off","default":[],"generate":false},
         {"id":"fp_enjoys_low_hygiene","key_path":"enjoys_low_hygiene","label":"Enjoys low hygiene","type":"checkbox","default":false,"generate":true},
-        {"id":"fp_needs_strength","key_path":"needs_sim_strength","label":"Needs delta strength","type":"number","default":1,"minimum":1,"maximum":5,"step":1,"generate":true},
+		{"id":"fp_needs_strength","key_path":"needs_sim_strength","label":"Legacy needs strength (ignored by Rawhide)","type":"number","default":1,"minimum":1,"maximum":5,"step":1,"generate":false,"legacy_ignored":true},
         {"id":"fp_baseline_hunger","key_path":"needs_baseline_hunger","label":"Hunger baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
-        {"id":"fp_decay_hunger","key_path":"needs_decay_hunger","label":"Hunger decay / turn","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":true},
+		{"id":"fp_decay_hunger","key_path":"needs_decay_hunger","label":"Legacy hunger decay (ignored by Rawhide)","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":false,"legacy_ignored":true},
         {"id":"fp_baseline_bladder","key_path":"needs_baseline_bladder","label":"Bladder baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
-        {"id":"fp_decay_bladder","key_path":"needs_decay_bladder","label":"Bladder decay / turn","type":"number","default":3,"minimum":0,"maximum":10,"step":1,"generate":true},
+		{"id":"fp_decay_bladder","key_path":"needs_decay_bladder","label":"Legacy bladder decay (ignored by Rawhide)","type":"number","default":3,"minimum":0,"maximum":10,"step":1,"generate":false,"legacy_ignored":true},
         {"id":"fp_baseline_energy","key_path":"needs_baseline_energy","label":"Energy baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
-        {"id":"fp_decay_energy","key_path":"needs_decay_energy","label":"Energy decay / turn","type":"number","default":3,"minimum":0,"maximum":10,"step":1,"generate":true},
+		{"id":"fp_decay_energy","key_path":"needs_decay_energy","label":"Legacy energy decay (ignored by Rawhide)","type":"number","default":3,"minimum":0,"maximum":10,"step":1,"generate":false,"legacy_ignored":true},
         {"id":"fp_baseline_social","key_path":"needs_baseline_social","label":"Social baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
-        {"id":"fp_decay_social","key_path":"needs_decay_social","label":"Social decay / turn","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":true},
+		{"id":"fp_decay_social","key_path":"needs_decay_social","label":"Legacy social decay (ignored by Rawhide)","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":false,"legacy_ignored":true},
         {"id":"fp_baseline_fun","key_path":"needs_baseline_fun","label":"Fun baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
-        {"id":"fp_decay_fun","key_path":"needs_decay_fun","label":"Fun decay / turn","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":true},
+		{"id":"fp_decay_fun","key_path":"needs_decay_fun","label":"Legacy fun decay (ignored by Rawhide)","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":false,"legacy_ignored":true},
         {"id":"fp_baseline_hygiene","key_path":"needs_baseline_hygiene","label":"Hygiene baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
-        {"id":"fp_decay_hygiene","key_path":"needs_decay_hygiene","label":"Hygiene decay / turn","type":"number","default":1,"minimum":0,"maximum":10,"step":1,"generate":true},
+		{"id":"fp_decay_hygiene","key_path":"needs_decay_hygiene","label":"Legacy hygiene decay (ignored by Rawhide)","type":"number","default":1,"minimum":0,"maximum":10,"step":1,"generate":false,"legacy_ignored":true},
         {"id":"fp_baseline_comfort","key_path":"needs_baseline_comfort","label":"Comfort baseline","type":"number","default":80,"minimum":0,"maximum":100,"step":1,"generate":true},
-        {"id":"fp_decay_comfort","key_path":"needs_decay_comfort","label":"Comfort decay / turn","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":true}
+		{"id":"fp_decay_comfort","key_path":"needs_decay_comfort","label":"Legacy comfort decay (ignored by Rawhide)","type":"number","default":2,"minimum":0,"maximum":10,"step":1,"generate":false,"legacy_ignored":true},
+		{"id":"fp_recovery","key_path":"recovery","label":"Recovery profile","type":"recovery_profile","default":{"mode":"auto","pcd":"off"},"generate":false,"adult":true}
       ]
     },
     {
@@ -97,6 +101,9 @@
         {"id":"fp_verification_strictness","key_path":"realism_verification_strictness","label":"Verification strictness","type":"number","default":3,"minimum":1,"maximum":5,"step":1,"generate":true},
         {"id":"fp_director_authority","key_path":"realism_needs_director_authority","label":"Director authority over needs","type":"checkbox","default":false,"generate":true},
         {"id":"fp_current_task","key_path":"current_task","label":"Starting task / objective","type":"multiline","height":90,"default":"","generate":true,"generation_prompt":"An optional character-owned starting objective. Do not make {{user}} responsible for completing it."},
+		{"id":"fp_sex","key_path":"sex","label":"Sex","type":"select","default":"other","options":["male","female","other"],"option_labels":{"male":"Male","female":"Female","other":"Other"},"generate":false,"adult":true},
+		{"id":"fp_world_names","card_path":"character.world_names","label":"World names","type":"tags","default":[],"generate":false},
+		{"id":"fp_lore_world_names","card_path":"character.lore_world_names","label":"Lore-only world names","type":"tags","default":[],"generate":false},
         {"id":"fp_stable_id","key_path":"stable_id","label":"Stable character ID","type":"line","default":"","generate":false,"placeholder":"Optional UUID supplied by Front Porch"},
         {"id":"fp_tier","key_path":"tier","label":"Character tier","type":"select","default":"lite","options":["lite"],"generate":false},
         {"id":"fp_avatar_locked","key_path":"avatar_locked","label":"Lock avatar width","type":"checkbox","default":false,"generate":false},

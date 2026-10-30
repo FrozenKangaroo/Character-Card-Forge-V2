@@ -849,6 +849,9 @@
       "steps": [
         "Open the Front Porch — Optional Workspace tab.",
         "Enter fields manually, choose Select All in a Front Porch section, or use AI Suggest for the selected field or enabled group.",
+        "Use Needs pace and the independent Disabled needs choices for current Rawhide; legacy strength and per-need decay values are retained only for old-card compatibility.",
+        "Adult-gated character data includes Sex and the nested Recovery/PCD profile; default Recovery is omitted from portable data.",
+        "World names and lore-only world names preserve explicit empty lists when you deliberately include them.",
         "For Work, enter separate start and end times and choose Work Days. AI results accept Monday=1 through Sunday=7, day names, clear ranges, weekdays or weekends before normalising to numeric IDs.",
         "Under Opening State, choose Chaos Mode Disabled, Rare, Normal or Wild. Legacy enabled cards open as Normal and legacy disabled cards remain Disabled.",
         "Review every proposal before including it in the project.",

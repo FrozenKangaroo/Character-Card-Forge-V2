@@ -15,11 +15,11 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.16 — Front Porch Chaos Modes**. The existing
-Front Porch Chaos control now supports Disabled plus Rawhide's Rare, Normal and Wild
-frequencies. Legacy boolean projects and cards remain compatible: enabled maps to Normal
-and disabled remains Disabled, while current exports retain the portable enable flag and
-the selected frequency.
+The current source candidate is **v0.21.16 — Front Porch Rawhide Character
+Compatibility**. It adds current Pockets, Needs pace/off, Sex and Recovery fields,
+lossless world-link metadata, group lore-world IDs and Rawhide's Rare/Normal/Wild Chaos
+choices to the existing optional editor. Legacy and unknown Front Porch data remains
+round-trip safe.
 
 The v0.21.13 public Idea Source catalog, v0.21.12 global streaming and settings-safety
 work, v0.21.8–v0.21.11 Idea review, Generate More and Direction Preset workflows, and
@@ -136,6 +136,12 @@ The optional Front Porch opening-state editor exposes Chaos Mode as **Disabled**
 **Normal** or **Wild**. Older cards that contain only `chaos_mode_enabled: true` open as
 Normal, matching Rawhide's default frequency; `false` remains Disabled. Current exports
 write both the established boolean enable flag and, when enabled, `chaos_frequency`.
+
+The same editor now exposes current Rawhide `needs_pace`, independent `needs_off` toggles,
+Pockets & Wardrobe enablement, adult-gated Sex and nested Recovery/PCD choices. Older
+per-need decay and strength values remain inspectable for old projects but are labelled as
+ignored by current Rawhide. Character and group world links preserve absent versus
+explicit-empty values where the upstream schema distinguishes them.
 
 Passwords, two-factor codes and session cookies are not persisted. Network actions are
 user-initiated and capability-gated. Character Card Forge never reads or writes Front

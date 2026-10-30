@@ -36,11 +36,20 @@ const CANONICAL_FIELD_MAP := {
 	"data.alternate_greetings": "character.alternate_greetings",
 	"data.character_book": "character.character_book",
 	"data.tts_voice": "character.tts_voice",
+	"data.world_names": "character.world_names",
+	"data.lore_world_names": "character.lore_world_names",
 	"data.tags": "metadata.tags",
 	"data.creator": "metadata.creator",
 	"data.character_version": "metadata.character_version",
 	"data.extensions": "character.card_extensions"
 }
+
+const KNOWN_V2_DATA_FIELDS := [
+	"name", "description", "personality", "scenario", "first_mes", "mes_example",
+	"creator_notes", "system_prompt", "post_history_instructions",
+	"alternate_greetings", "tags", "creator", "character_version", "extensions",
+	"tts_voice", "character_book", "world_names", "lore_world_names"
+]
 
 
 static func export_character_v2(project: Dictionary, character_id: String) -> Dictionary:
@@ -74,7 +83,16 @@ static func export_character_v2(project: Dictionary, character_id: String) -> Di
 	}
 	extensions[CCF_EXTENSION_KEY] = ccf_extension
 
-	var data := {
+	var interoperability_value: Variant = character_record.get("interoperability", {})
+	var interoperability: Dictionary = (
+		interoperability_value if interoperability_value is Dictionary else {}
+	)
+	var preserved_data_value: Variant = interoperability.get("character_card_v2_extra_data", {})
+	var data: Dictionary = (
+		(preserved_data_value as Dictionary).duplicate(true)
+		if preserved_data_value is Dictionary else {}
+	)
+	data.merge({
 		"name": str(card_data.get("name", "")),
 		"description": str(card_data.get("description", "")),
 		"personality": str(card_data.get("personality", "")),
@@ -89,13 +107,17 @@ static func export_character_v2(project: Dictionary, character_id: String) -> Di
 		"creator": str(metadata.get("creator", "")),
 		"character_version": str(metadata.get("character_version", "")),
 		"extensions": extensions
-	}
+	}, true)
 	var tts_voice := str(card_data.get("tts_voice", "")).strip_edges()
 	if not tts_voice.is_empty():
 		data["tts_voice"] = tts_voice
 	var character_book := _dictionary_copy(card_data.get("character_book", {}))
 	if not character_book.is_empty():
 		data["character_book"] = character_book
+	if card_data.has("world_names"):
+		data["world_names"] = _string_array(card_data.get("world_names", []))
+	if card_data.has("lore_world_names"):
+		data["lore_world_names"] = _string_array(card_data.get("lore_world_names", []))
 	return {
 		"spec": FORMAT_V2,
 		"spec_version": SPEC_VERSION_V2,
@@ -331,17 +353,26 @@ static func import_card_to_project(card: Dictionary, source_format: String = "js
 	card_data["character_book"] = _dictionary_copy(data.get("character_book", {}))
 	card_data["card_extensions"] = _dictionary_copy(data.get("extensions", {}))
 	card_data["tts_voice"] = str(data.get("tts_voice", ""))
+	if data.has("world_names"):
+		card_data["world_names"] = _string_array(data.get("world_names", []))
+	if data.has("lore_world_names"):
+		card_data["lore_world_names"] = _string_array(data.get("lore_world_names", []))
 	metadata["name"] = str(data.get("name", "Untitled Character"))
 	metadata["tags"] = _string_array(data.get("tags", []))
 	metadata["creator"] = str(data.get("creator", ""))
 	metadata["character_version"] = str(data.get("character_version", ""))
 	character_record["character"] = card_data
 	character_record["metadata"] = metadata
+	var extra_data: Dictionary = {}
+	for data_key in data:
+		if str(data_key) not in KNOWN_V2_DATA_FIELDS:
+			extra_data[str(data_key)] = _duplicate_variant(data.get(data_key))
 	character_record["interoperability"] = {
 		"source_format": source_format,
 		"source_spec": str(normalised.get("spec", FORMAT_V2)),
 		"source_spec_version": str(normalised.get("spec_version", SPEC_VERSION_V2)),
-		"imported_at": Time.get_datetime_string_from_system(true)
+		"imported_at": Time.get_datetime_string_from_system(true),
+		"character_card_v2_extra_data": extra_data
 	}
 	_restore_ccf_extension(character_record, data.get("extensions", {}))
 	characters[0] = character_record

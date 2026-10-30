@@ -1,7 +1,7 @@
 {
   "format_version": 1,
   "name": "Character Card Forge v0.21.16 complete regression suites",
-  "description": "v0.21.15 baseline plus Rawhide-compatible Front Porch Chaos frequency modes and legacy boolean migration.",
+  "description": "v0.21.15 baseline plus current Rawhide character compatibility, Chaos modes and lossless world-link round trips.",
   "base_manifest": "regression_suites_v02115.json",
   "suite_additions": {
     "current_wiring": [
@@ -10,6 +10,13 @@
         "label": "v0.21.16 Front Porch Chaos modes and legacy round trips",
         "kind": "godot",
         "path": "tools/test_v02116_front_porch_chaos_modes.gd",
+        "timeout_seconds": 120
+      },
+      {
+        "id": "v02116_rawhide_character_compatibility",
+        "label": "v0.21.16 current Rawhide character fields and world-link round trips",
+        "kind": "godot",
+        "path": "tools/test_v02116_rawhide_character_compatibility.gd",
         "timeout_seconds": 120
       }
     ]
