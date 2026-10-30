@@ -30,11 +30,34 @@ static func normalise_recovery(value: Variant) -> Dictionary:
 	var pcd := str(source.get("pcd", "off")).strip_edges().to_lower()
 	var result := source
 	result["mode"] = mode
-	result["pcd"] = pcd
+	if pcd == "off":
+		result.erase("pcd")
+	else:
+		result["pcd"] = pcd
 	if mode == "hard":
-		result["minutes"] = clampi(int(source.get("minutes", 0)), 0, 180)
+		var duration := explicit_recovery_minutes(source)
+		if bool(duration.get("present", false)):
+			result["minutes"] = int(duration.get("value", 0))
+		else:
+			result.erase("minutes")
 	elif mode in RECOVERY_MODES:
 		result.erase("minutes")
-	if mode == "auto" and pcd == "off" and result.size() == 2:
+	if mode == "auto" and pcd == "off" and result.size() == 1:
 		return {"ok": true, "value": {}, "is_default": true}
 	return {"ok": true, "value": result, "is_default": false}
+
+
+static func explicit_recovery_minutes(value: Variant) -> Dictionary:
+	if not value is Dictionary or not (value as Dictionary).has("minutes"):
+		return {"present": false}
+	var raw_minutes: Variant = (value as Dictionary).get("minutes")
+	var parsed: int
+	if raw_minutes is int or raw_minutes is float:
+		parsed = int(raw_minutes)
+	elif raw_minutes is String and str(raw_minutes).strip_edges().is_valid_int():
+		parsed = int(str(raw_minutes).strip_edges())
+	else:
+		return {"present": false}
+	if parsed < 0:
+		return {"present": false}
+	return {"present": true, "value": clampi(parsed, 0, 180)}

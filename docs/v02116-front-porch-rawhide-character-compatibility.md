@@ -14,7 +14,7 @@ write to Front Porch's database.
 | `needs_pace` | Sloth / Normal / Fast | Stored as `sloth`, `normal` or `fast`; Rawhide defaults to `normal`. |
 | `needs_off` | Seven independent Disable toggles | Canonical keys are hunger, bladder, energy, social, fun, hygiene and comfort. Empty is omitted. |
 | `sex` | Male / Female / Other | Adult-gated and omitted unless explicitly included. |
-| `recovery` | Recovery mode, minutes and PCD | Modes are `auto`, `hard`, `soft`; minutes are 0–180 and only stored for `hard`; PCD is `off`, `rare`, `sometimes`. The default auto/off profile is omitted. |
+| `recovery` | Recovery mode, duration choice, minutes and PCD | Modes are `auto`, `hard`, `soft`. Hard duration can be **Personality decides** (no `minutes` property) or **Fixed duration** (0–180, including an explicit zero). PCD is independently `off`, `rare`, `sometimes`. The default auto/off profile is omitted. |
 
 Current Rawhide explicitly ignores the former `needs_sim_strength` and all
 `needs_decay_*` properties. CCF keeps those properties visible and round-trip safe for

@@ -3,6 +3,9 @@ extends SceneTree
 const RAW_HIDE = preload(
 	"res://scripts/services/front_porch_rawhide_character_v02116.gd"
 )
+const RECOVERY_CONTROL = preload(
+	"res://scripts/ui/front_porch_recovery_control_v02116.gd"
+)
 
 
 func _init() -> void:
@@ -25,6 +28,10 @@ func _require(condition: bool, message: String) -> bool:
 func _run() -> void:
 	var service := CCFFrontPorchExtensionServiceCurrent.new()
 	if not _test_catalog_and_values(service):
+		return
+	if not _test_recovery_duration_normalisation():
+		return
+	if not _test_recovery_editor_round_trip(service):
 		return
 	if not _test_card_v2_round_trip(service):
 		return
@@ -147,6 +154,156 @@ func _test_card_v2_round_trip(service: CCFFrontPorchExtensionServiceCurrent) -> 
 		and exported_data.get("lore_world_names") == []
 		and exported_data.get("future_world_link", {}).get("id") == "future-1",
 		"Known world links and unknown V2 data must round-trip losslessly."
+	)
+
+
+func _test_recovery_duration_normalisation() -> bool:
+	var cases := [
+		{"input": {"mode": "hard"}, "present": false, "value": -1},
+		{"input": {"mode": "hard", "minutes": null}, "present": false, "value": -1},
+		{"input": {"mode": "hard", "minutes": "invalid"}, "present": false, "value": -1},
+		{"input": {"mode": "hard", "minutes": -1}, "present": false, "value": -1},
+		{"input": {"mode": "hard", "minutes": 0}, "present": true, "value": 0},
+		{"input": {"mode": "hard", "minutes": 30}, "present": true, "value": 30},
+		{"input": {"mode": "hard", "minutes": 90}, "present": true, "value": 90},
+		{"input": {"mode": "hard", "minutes": 180}, "present": true, "value": 180},
+		{"input": {"mode": "hard", "minutes": 240}, "present": true, "value": 180}
+	]
+	for test_case in cases:
+		var normalised := RAW_HIDE.normalise_recovery(test_case.get("input", {}))
+		var recovery: Dictionary = normalised.get("value", {})
+		var expected_present := bool(test_case.get("present", false))
+		if not _require(
+			bool(normalised.get("ok", false))
+			and recovery.has("minutes") == expected_present
+			and (
+				not expected_present
+				or int(recovery.get("minutes", -1)) == int(test_case.get("value", -1))
+			),
+			"Recovery duration case %s must match Rawhide null/clamp semantics."
+			% JSON.stringify(test_case.get("input", {}))
+		):
+			return false
+	var soft: Dictionary = RAW_HIDE.normalise_recovery(
+		{"mode": "soft", "minutes": 90, "pcd": "rare"}
+	).get("value", {})
+	var default_recovery: Dictionary = RAW_HIDE.normalise_recovery(
+		{"mode": "auto", "minutes": 30, "pcd": "off"}
+	).get("value", {})
+	return _require(
+		not soft.has("minutes")
+		and str(soft.get("pcd", "")) == "rare"
+		and default_recovery.is_empty(),
+		"Soft must drop duration and default Auto/Off must remain canonically omitted."
+	)
+
+
+func _test_recovery_editor_round_trip(
+	service: CCFFrontPorchExtensionServiceCurrent
+) -> bool:
+	var source := CCFStorageService.new_project()
+	var source_id := CCFStorageService.active_character_id(source)
+	var card := CCFCardFormatService.export_character_v2(source, source_id)
+	CCFStorageService.set_value_at_path(
+		card,
+		"data.extensions.front_porch.realism_engine.recovery",
+		{"mode": "hard", "future_rule": {"enabled": true}}
+	)
+	var imported := CCFCardFormatService.import_card_to_project(card, "json")
+	if not _require(bool(imported.get("ok", false)), "Hard/personality Recovery must import."):
+		return false
+	var project: Dictionary = imported.get("project", {})
+	var character_id := CCFStorageService.active_character_id(project)
+	var document := CCFStorageService.character_workspace_document(project, character_id)
+	var field := service.field_by_id("fp_recovery")
+	var control := RECOVERY_CONTROL.new()
+	control.set_recovery_value(service.value_for(document, field))
+	var duration := control.find_child("DurationMode", true, false) as OptionButton
+	var minutes := control.find_child("FixedMinutes", true, false) as SpinBox
+	var mode := control.find_child("RecoveryMode", true, false) as OptionButton
+	if not _require(
+		duration != null and minutes != null and mode != null
+		and str(duration.get_selected_metadata()) == "personality"
+		and not control.recovery_value().has("minutes")
+		and control.recovery_value().get("future_rule", {}).get("enabled", false),
+		"Hard Recovery without minutes must load as Personality decides and preserve unknown data."
+	):
+		control.free()
+		return false
+	var maps := _control_maps(service, document)
+	var enabled: Dictionary = maps.enabled
+	var values: Dictionary = maps.values
+	enabled["fp_recovery"] = true
+	values["fp_recovery"] = control.recovery_value()
+	if not _apply_and_expect_minutes(
+		service, project, document, character_id, enabled, values, false, -1,
+		"Saving an untouched personality-determined duration must keep minutes absent."
+	):
+		control.free()
+		return false
+	duration.select(1)
+	duration.item_selected.emit(1)
+	minutes.value = 30
+	values["fp_recovery"] = control.recovery_value()
+	if not _apply_and_expect_minutes(
+		service, project, document, character_id, enabled, values, true, 30,
+		"Fixed duration must export the exact selected number."
+	):
+		control.free()
+		return false
+	duration.select(0)
+	duration.item_selected.emit(0)
+	values["fp_recovery"] = control.recovery_value()
+	if not _apply_and_expect_minutes(
+		service, project, document, character_id, enabled, values, false, -1,
+		"Switching back to Personality decides must remove minutes."
+	):
+		control.free()
+		return false
+	mode.select(0)
+	mode.item_selected.emit(0)
+	if not _require(
+		duration.disabled and not minutes.editable,
+		"Auto Recovery must disable Hard-duration controls."
+	):
+		control.free()
+		return false
+	mode.select(2)
+	mode.item_selected.emit(2)
+	if not _require(
+		duration.disabled and not minutes.editable,
+		"Soft Recovery must disable Hard-duration controls."
+	):
+		control.free()
+		return false
+	control.free()
+	return true
+
+
+func _apply_and_expect_minutes(
+	service: CCFFrontPorchExtensionServiceCurrent,
+	project: Dictionary,
+	document: Dictionary,
+	character_id: String,
+	enabled: Dictionary,
+	values: Dictionary,
+	expects_minutes: bool,
+	expected_minutes: int,
+	message: String
+) -> bool:
+	var applied := service.apply_control_values(document, enabled, values, true)
+	CCFStorageService.update_character(project, document)
+	var exported := CCFCardFormatService.export_character_v2(project, character_id)
+	var recovery_value: Variant = CCFStorageService.get_value_at_path(
+		exported, "data.extensions.front_porch.realism_engine.recovery", {}
+	)
+	var recovery: Dictionary = recovery_value if recovery_value is Dictionary else {}
+	return _require(
+		bool(applied.get("ok", false))
+		and recovery.has("minutes") == expects_minutes
+		and (not expects_minutes or int(recovery.get("minutes", -1)) == expected_minutes)
+		and recovery.get("future_rule", {}).get("enabled", false),
+		message
 	)
 
 

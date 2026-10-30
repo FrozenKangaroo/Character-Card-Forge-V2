@@ -6,7 +6,7 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
-## [0.21.16] - 2026-10-12
+## [0.21.16] - 2026-10-30
 
 ### Highlights
 
