@@ -6,6 +6,59 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.16] - 2026-10-30
+
+### Highlights
+
+- Audited Front Porch Rawhide commit `2876ee5d8e92290d2f4498bf0f459652010aa735`
+  and added its current per-character Pockets, Needs pace/off, Sex and Recovery controls
+  to the existing optional Front Porch editor.
+- Added lossless Character Card V2 world-name and unknown-data preservation plus
+  `lore_world_ids` support for Front Porch group cards.
+- Expanded the existing optional Front Porch **Chaos Mode** control from a boolean into
+  **Disabled**, **Rare**, **Normal** and **Wild**, matching the current Rawhide frequency
+  names.
+
+### Changes
+
+- Preserve the meaningful distinction between absent values, explicit `false`, and
+  explicit empty lists for Rawhide fields such as `needs_sim_enabled`, `pockets_enabled`,
+  `lore_world_names` and group `lore_world_ids`.
+- Replaced obsolete per-need decay/strength authoring with current `needs_pace` and
+  independently selectable `needs_off` controls. Old values remain visible and lossless,
+  clearly labelled as ignored by current Rawhide, and are no longer AI-generated.
+- Added nested Recovery authoring for `auto`/`hard`/`soft`, hard-mode minutes and
+  post-climax dip `off`/`rare`/`sometimes`, behind the existing adult-content reveal.
+- Preserve unknown Character Card V2 `data` properties through project, JSON, PNG and
+  Front Porch group-member round trips instead of rebuilding only CCF-known fields.
+- Export the established `chaos_mode_enabled` flag for existing Front Porch compatibility
+  and the selected `chaos_frequency` value for multi-mode preservation.
+- Import current frequency values through the same Front Porch field and preserve them
+  through Character Card V2 export/import round trips.
+- Added focused regression coverage for every mode, legacy projects, legacy cards,
+  unknown-value fallback and preservation of unrelated future extension data.
+
+### Migration notes
+
+- None. Existing Front Porch and Character Card data loads in place. Legacy
+  `chaos_mode_enabled: false` loads as Disabled; legacy `true` loads as
+  Normal, which is Rawhide's default Chaos frequency.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Current Rawhide deliberately ignores the older `needs_sim_strength` and
+  `needs_decay_*` properties. CCF preserves them for compatibility but labels them as
+  legacy rather than implying that they affect current Rawhide simulation.
+- Rawhide currently stores frequency as a global Porch Life preference while portable
+  character and group schemas still formally expose the boolean enable flag. CCF includes
+  both keys on character-card export so existing builds honor enablement and newer schema
+  consumers can preserve the selected frequency. Group-card Chaos remains boolean because
+  Rawhide's current group-card schema has no frequency field.
+
 ## [0.21.15] - 2026-10-05
 
 ### Highlights

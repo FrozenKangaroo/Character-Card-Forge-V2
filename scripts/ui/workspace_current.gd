@@ -7,6 +7,12 @@ const FRONT_PORCH_SERVICE_CURRENT = preload(
 const FRONT_PORCH_WORK_HOURS_CONTROL_V0209 = preload(
 	"res://scripts/ui/front_porch_work_hours_control_v0209.gd"
 )
+const FRONT_PORCH_NEEDS_OFF_CONTROL_V02116 = preload(
+	"res://scripts/ui/front_porch_needs_off_control_v02116.gd"
+)
+const FRONT_PORCH_RECOVERY_CONTROL_V02116 = preload(
+	"res://scripts/ui/front_porch_recovery_control_v02116.gd"
+)
 const IDEA_GENERATOR_CURRENT = preload(
 	"res://scripts/ui/idea_generator_window_current.gd"
 )
@@ -2630,6 +2636,16 @@ func _build_front_porch_group_v0172(group: Dictionary) -> void:
 func _create_front_porch_input_v0172(
 	field: Dictionary, value: Variant
 ) -> Control:
+	if str(field.get("id", "")) == "fp_needs_off":
+		var needs_off := FRONT_PORCH_NEEDS_OFF_CONTROL_V02116.new()
+		needs_off.set_needs_off(value)
+		needs_off.value_changed.connect(_mark_dirty)
+		return needs_off
+	if str(field.get("id", "")) == "fp_recovery":
+		var recovery := FRONT_PORCH_RECOVERY_CONTROL_V02116.new()
+		recovery.set_recovery_value(value)
+		recovery.value_changed.connect(_mark_dirty)
+		return recovery
 	if str(field.get("id", "")) == "fp_work_hours":
 		var hours := FRONT_PORCH_WORK_HOURS_CONTROL_V0209.new()
 		hours.set_work_hours_value_v0209(value)
@@ -2642,14 +2658,18 @@ func _front_porch_input_value_v0172(
 	input_value: Variant, field: Dictionary
 ) -> Variant:
 	var raw_value: Variant
-	if input_value is CCFFrontPorchWorkHoursControlV0209:
+	if input_value is Control and input_value.get_script() == FRONT_PORCH_NEEDS_OFF_CONTROL_V02116:
+		raw_value = input_value.call("needs_off_value")
+	elif input_value is Control and input_value.get_script() == FRONT_PORCH_RECOVERY_CONTROL_V02116:
+		raw_value = input_value.call("recovery_value")
+	elif input_value is CCFFrontPorchWorkHoursControlV0209:
 		raw_value = (
 			input_value as CCFFrontPorchWorkHoursControlV0209
 		).work_hours_value_v0209()
 	else:
 		raw_value = super._front_porch_input_value_v0172(input_value, field)
 	var field_id := str(field.get("id", ""))
-	if field_id not in ["fp_work_days", "fp_work_hours"]:
+	if field_id not in ["fp_work_days", "fp_work_hours", "fp_needs_off", "fp_recovery"]:
 		return raw_value
 	var normalised := (
 		_front_porch_service_v0172 as CCFFrontPorchExtensionServiceCurrent
@@ -2660,6 +2680,12 @@ func _front_porch_input_value_v0172(
 func _set_front_porch_input_enabled_v0172(
 	input: Control, enabled: bool
 ) -> void:
+	if input.get_script() == FRONT_PORCH_NEEDS_OFF_CONTROL_V02116:
+		input.call("set_editable", enabled)
+		return
+	if input.get_script() == FRONT_PORCH_RECOVERY_CONTROL_V02116:
+		input.call("set_editable", enabled)
+		return
 	if input is CCFFrontPorchWorkHoursControlV0209:
 		(input as CCFFrontPorchWorkHoursControlV0209).set_editable_v0209(enabled)
 		return
@@ -2669,6 +2695,12 @@ func _set_front_porch_input_enabled_v0172(
 func _set_front_porch_control_value_v0172(
 	input_value: Variant, value: Variant, field: Dictionary
 ) -> void:
+	if input_value is Control and input_value.get_script() == FRONT_PORCH_NEEDS_OFF_CONTROL_V02116:
+		input_value.call("set_needs_off", value)
+		return
+	if input_value is Control and input_value.get_script() == FRONT_PORCH_RECOVERY_CONTROL_V02116:
+		input_value.call("set_recovery_value", value)
+		return
 	if input_value is CCFFrontPorchWorkHoursControlV0209:
 		(
 			input_value as CCFFrontPorchWorkHoursControlV0209

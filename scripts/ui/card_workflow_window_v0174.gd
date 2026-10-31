@@ -16,6 +16,8 @@ var _group_system_prompt_v0174: TextEdit
 var _group_lorebook_v0174: TextEdit
 var _world_ids_v0174: LineEdit
 var _world_names_v0174: LineEdit
+var _lore_world_ids_enabled_v02116: CheckBox
+var _lore_world_ids_v02116: LineEdit
 var _character_prompts_v0174: TextEdit
 var _member_objectives_v0174: TextEdit
 var _baseline_realism_v0174: TextEdit
@@ -79,6 +81,15 @@ func _build_group_fields_v0174() -> void:
 	_group_lorebook_v0174 = _group_text_v0174("Group lorebook JSON (or leave empty)", 100)
 	_world_ids_v0174 = _group_line_v0174("World IDs — comma separated")
 	_world_names_v0174 = _group_line_v0174("World names — comma separated")
+	_lore_world_ids_enabled_v02116 = _check_v0174(
+		"Include lore-only world IDs (an enabled blank list preserves explicit [])", false
+	)
+	_lore_world_ids_enabled_v02116.toggled.connect(
+		func(enabled: bool): _lore_world_ids_v02116.editable = enabled
+	)
+	_group_panel_v0174.add_child(_lore_world_ids_enabled_v02116)
+	_lore_world_ids_v02116 = _group_line_v0174("Lore-only world IDs — comma separated")
+	_lore_world_ids_v02116.editable = false
 	_character_prompts_v0174 = _group_text_v0174("Per-character system prompts JSON", 130)
 	_member_objectives_v0174 = _group_text_v0174("Member objectives JSON", 150)
 	_baseline_realism_v0174 = _group_text_v0174("Baseline realism JSON", 140)
@@ -259,6 +270,10 @@ func _capture_group_options_v0174() -> Dictionary:
 		"group_lorebook": _group_lorebook_v0174.text,
 		"world_ids": _split_list_v0174(_world_ids_v0174.text),
 		"world_names": _split_list_v0174(_world_names_v0174.text),
+		"lore_world_ids": (
+			_split_list_v0174(_lore_world_ids_v02116.text)
+			if _lore_world_ids_enabled_v02116.button_pressed else null
+		),
 		"inherit_character_lorebooks": _inherit_lorebooks_v0174.button_pressed,
 		"chaos_mode_enabled": _chaos_mode_v0174.button_pressed,
 		"chaos_nsfw_enabled": _chaos_nsfw_v0174.button_pressed,
@@ -282,6 +297,13 @@ func _load_group_options_v0174(options: Dictionary) -> void:
 	_group_lorebook_v0174.text = str(options.get("group_lorebook", ""))
 	_world_ids_v0174.text = ", ".join(PackedStringArray(options.get("world_ids", [])))
 	_world_names_v0174.text = ", ".join(PackedStringArray(options.get("world_names", [])))
+	var lore_world_ids_value: Variant = options.get("lore_world_ids", null)
+	_lore_world_ids_enabled_v02116.button_pressed = lore_world_ids_value is Array
+	_lore_world_ids_v02116.editable = lore_world_ids_value is Array
+	_lore_world_ids_v02116.text = (
+		", ".join(PackedStringArray(lore_world_ids_value))
+		if lore_world_ids_value is Array else ""
+	)
 	_character_prompts_v0174.text = JSON.stringify(options.get("character_system_prompts", {}), "  ")
 	_member_objectives_v0174.text = JSON.stringify(options.get("member_objectives", {}), "  ")
 	_baseline_realism_v0174.text = str(options.get("baseline_realism_state", "{}"))

@@ -415,12 +415,16 @@ func _create_front_porch_input_v0172(field: Dictionary, value: Variant) -> Contr
 			return checkbox
 		"select":
 			var options := OptionButton.new()
+			var option_labels_value: Variant = field.get("option_labels", {})
+			var option_labels: Dictionary = (
+				option_labels_value if option_labels_value is Dictionary else {}
+			)
 			var selected_index := 0
 			var found := false
 			for option_value in field.get("options", []):
 				var index := options.item_count
 				var option_text := str(option_value)
-				options.add_item(option_text)
+				options.add_item(str(option_labels.get(option_text, option_text)))
 				options.set_item_metadata(index, option_text)
 				if option_text == str(value):
 					selected_index = index
