@@ -726,7 +726,7 @@ func _test_live_adaptive_sequence(workspace: CCFWorkspaceCurrent) -> void:
 			"project_id": ""
 		}
 	)
-	var generator := workspace.get("_idea_generator_v01532") as CCFIdeaGeneratorWindowCurrent
+	var generator: Variant = workspace.get("_idea_generator_v01532")
 	var captured: Array = generator.get("_last_generated_ideas_v01532")
 	var status := workspace.get("_idea_status") as Label
 	_require(
@@ -789,7 +789,7 @@ func _test_live_one_shot_top_up(
 			"project_id": ""
 		}
 	)
-	var generator := workspace.get("_idea_generator_v01532") as CCFIdeaGeneratorWindowCurrent
+	var generator: Variant = workspace.get("_idea_generator_v01532")
 	var captured: Array = generator.get("_last_generated_ideas_v01532")
 	var status := workspace.get("_idea_status") as Label
 	_require(
@@ -850,7 +850,7 @@ func _test_live_final_review(
 		}]},
 		{}
 	)
-	var generator := workspace.get("_idea_generator_v01532") as CCFIdeaGeneratorWindowCurrent
+	var generator: Variant = workspace.get("_idea_generator_v01532")
 	var report := workspace.find_child("IdeaSimilarityReviewReportV0214", true, false) as TextEdit
 	_require(
 		fake.review_requests == 1

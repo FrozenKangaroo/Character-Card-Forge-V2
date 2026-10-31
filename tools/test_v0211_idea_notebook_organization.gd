@@ -41,12 +41,13 @@ func _run() -> void:
 		"_idea_generator_v01532"
 	)
 	if not _require(
-		generator_value is CCFIdeaGeneratorWindowCurrent,
+		generator_value is Window
+		and (generator_value as Window).has_method("open_notebook_v01532"),
 		"The live Workspace must install the current Idea Generator."
 	):
 		_finish()
 		return
-	var generator := generator_value as CCFIdeaGeneratorWindowCurrent
+	var generator: Variant = generator_value
 	var notebook_search := generator.find_child(
 		"NotebookSearchV0211", true, false
 	) as LineEdit

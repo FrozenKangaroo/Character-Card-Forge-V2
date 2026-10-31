@@ -132,7 +132,11 @@ func _test_current_ui(parent_id: String, folder_id: String) -> void:
 	await process_frame
 	var workspace: Variant = app.get("_workspace")
 	var generator: Variant = workspace.get("_idea_generator_v01532") if workspace != null else null
-	if not _require(generator is CCFIdeaGeneratorWindowCurrent, "The current Idea Library window must load."):
+	if not _require(
+		generator is Window
+		and (generator as Window).has_method("open_notebook_v01532"),
+		"The current Idea Library window must load."
+	):
 		app.queue_free()
 		return
 	workspace.call("_prepare_unified_idea_generator")
@@ -193,9 +197,7 @@ func _test_current_ui(parent_id: String, folder_id: String) -> void:
 	app.queue_free()
 	await process_frame
 
-func _test_idea_generator_sizing(
-	generator: CCFIdeaGeneratorWindowCurrent
-) -> void:
+func _test_idea_generator_sizing(generator: Variant) -> void:
 	var result_scroll := generator.find_child(
 		"IdeaResultsScrollV0217", true, false
 	) as ScrollContainer

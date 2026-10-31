@@ -126,7 +126,7 @@ func _test_live_review_and_generate_more_windows() -> void:
 	await process_frame
 	await process_frame
 	var workspace: CCFWorkspaceCurrent = app.get("_workspace")
-	var generator: CCFIdeaGeneratorWindowCurrent = workspace.get(
+	var generator: Variant = workspace.get(
 		"_idea_generator_v01532"
 	)
 	var project: Dictionary = (workspace.get("_project") as Dictionary).duplicate(true)
