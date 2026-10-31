@@ -13,6 +13,9 @@ const FRONT_PORCH_NEEDS_OFF_CONTROL_V02116 = preload(
 const FRONT_PORCH_RECOVERY_CONTROL_V02116 = preload(
 	"res://scripts/ui/front_porch_recovery_control_v02116.gd"
 )
+const FRONT_PORCH_STRING_LIST_CONTROL_V02116 = preload(
+	"res://scripts/ui/front_porch_string_list_control_v02116.gd"
+)
 const IDEA_GENERATOR_CURRENT = preload(
 	"res://scripts/ui/idea_generator_window_current.gd"
 )
@@ -307,6 +310,15 @@ func _add_field(parent: VBoxContainer, field: Dictionary) -> void:
 func _add_preview_row(
 	field: Dictionary, current_value: Variant, proposed_value: Variant
 ) -> void:
+	if (
+		int(_preview_metadata.get("front_porch_generation_contract", 0)) == 1
+		and str(field.get("type", "")) == "tags"
+		and str(field.get("front_porch_source_type", "")) != "integer_tags"
+	):
+		_add_front_porch_list_preview_row_v02116(
+			field, current_value, proposed_value
+		)
+		return
 	var previous_count := _preview_rows.size()
 	super._add_preview_row(field, current_value, proposed_value)
 	if (
@@ -339,6 +351,77 @@ func _add_preview_row(
 		toolbar,
 		"PersonalityGeneratedReadablePreviewV0212"
 	)
+
+
+func _add_front_porch_list_preview_row_v02116(
+	field: Dictionary, current_value: Variant, proposed_value: Variant
+) -> void:
+	var validation := (
+		_front_porch_service_v0172 as CCFFrontPorchExtensionServiceCurrent
+	).normalise_generated_preview_value_v02116(field, proposed_value)
+	var valid_shape := bool(validation.get("ok", false))
+	var editor_value: Variant = (
+		validation.get("value", []) if valid_shape else proposed_value
+	)
+	var panel := PanelContainer.new()
+	_preview_result_box.add_child(panel)
+	var margin := MarginContainer.new()
+	margin.add_theme_constant_override("margin_left", 12)
+	margin.add_theme_constant_override("margin_right", 12)
+	margin.add_theme_constant_override("margin_top", 10)
+	margin.add_theme_constant_override("margin_bottom", 12)
+	panel.add_child(margin)
+	var content := VBoxContainer.new()
+	content.add_theme_constant_override("separation", 7)
+	margin.add_child(content)
+
+	var checkbox := CheckBox.new()
+	checkbox.text = str(field.get("label", field.get("id", "Field")))
+	checkbox.button_pressed = valid_shape
+	content.add_child(checkbox)
+	if not valid_shape:
+		var error_label := Label.new()
+		error_label.name = "FrontPorchListValidationV02116"
+		error_label.text = str(validation.get("error", "Expected a JSON array of strings."))
+		error_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		error_label.modulate = Color(0.92, 0.48, 0.42)
+		content.add_child(error_label)
+
+	var current_items := _front_porch_list_display_v02116(current_value)
+	if not current_items.is_empty():
+		var current_label := Label.new()
+		current_label.text = "Current:\n" + current_items
+		current_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		current_label.modulate = Color(0.62, 0.65, 0.73)
+		content.add_child(current_label)
+	var guidance := Label.new()
+	guidance.text = (
+		"Each editor below is one atomic list item. Commas, parentheses, quotes and line breaks stay inside that item."
+	)
+	guidance.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	guidance.modulate = Color(0.68, 0.71, 0.82)
+	content.add_child(guidance)
+
+	var editor := FRONT_PORCH_STRING_LIST_CONTROL_V02116.new()
+	editor.set_items(editor_value)
+	content.add_child(editor)
+	_preview_rows.append({
+		"field": field.duplicate(true),
+		"checkbox": checkbox,
+		"editor": editor,
+		"front_porch_generated_shape_valid_v02116": valid_shape
+	})
+
+
+func _front_porch_list_display_v02116(value: Variant) -> String:
+	if not value is Array:
+		return str(value).strip_edges()
+	var lines: Array[String] = []
+	for item in value as Array:
+		var text := str(item).strip_edges()
+		if not text.is_empty():
+			lines.append("• " + text)
+	return "\n".join(lines)
 
 
 func _install_personality_readable_view_v0212(
@@ -2636,6 +2719,11 @@ func _build_front_porch_group_v0172(group: Dictionary) -> void:
 func _create_front_porch_input_v0172(
 	field: Dictionary, value: Variant
 ) -> Control:
+	if str(field.get("type", "")) == "tags":
+		var list_control := FRONT_PORCH_STRING_LIST_CONTROL_V02116.new()
+		list_control.set_items(value)
+		list_control.value_changed.connect(_mark_dirty)
+		return list_control
 	if str(field.get("id", "")) == "fp_needs_off":
 		var needs_off := FRONT_PORCH_NEEDS_OFF_CONTROL_V02116.new()
 		needs_off.set_needs_off(value)
@@ -2658,7 +2746,11 @@ func _front_porch_input_value_v0172(
 	input_value: Variant, field: Dictionary
 ) -> Variant:
 	var raw_value: Variant
-	if input_value is Control and input_value.get_script() == FRONT_PORCH_NEEDS_OFF_CONTROL_V02116:
+	if input_value is CCFFrontPorchStringListControlV02116:
+		raw_value = (
+			input_value as CCFFrontPorchStringListControlV02116
+		).items_value()
+	elif input_value is Control and input_value.get_script() == FRONT_PORCH_NEEDS_OFF_CONTROL_V02116:
 		raw_value = input_value.call("needs_off_value")
 	elif input_value is Control and input_value.get_script() == FRONT_PORCH_RECOVERY_CONTROL_V02116:
 		raw_value = input_value.call("recovery_value")
@@ -2680,6 +2772,9 @@ func _front_porch_input_value_v0172(
 func _set_front_porch_input_enabled_v0172(
 	input: Control, enabled: bool
 ) -> void:
+	if input is CCFFrontPorchStringListControlV02116:
+		(input as CCFFrontPorchStringListControlV02116).set_editable(enabled)
+		return
 	if input.get_script() == FRONT_PORCH_NEEDS_OFF_CONTROL_V02116:
 		input.call("set_editable", enabled)
 		return
@@ -2695,6 +2790,11 @@ func _set_front_porch_input_enabled_v0172(
 func _set_front_porch_control_value_v0172(
 	input_value: Variant, value: Variant, field: Dictionary
 ) -> void:
+	if input_value is CCFFrontPorchStringListControlV02116:
+		(
+			input_value as CCFFrontPorchStringListControlV02116
+		).set_items(value)
+		return
 	if input_value is Control and input_value.get_script() == FRONT_PORCH_NEEDS_OFF_CONTROL_V02116:
 		input_value.call("set_needs_off", value)
 		return

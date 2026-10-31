@@ -21,6 +21,10 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ### Changes
 
+- Preserve every AI-generated Front Porch list element as one atomic value, including
+  sentences and inventory descriptions containing commas, quotes, parentheses or line
+  breaks. Malformed string proposals are now unchecked with a visible type error instead
+  of being silently split, while the manual editor uses one explicit editor per item.
 - Preserve the meaningful distinction between absent values, explicit `false`, and
   explicit empty lists for Rawhide fields such as `needs_sim_enabled`, `pockets_enabled`,
   `lore_world_names` and group `lore_world_ids`.
