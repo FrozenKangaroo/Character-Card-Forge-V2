@@ -438,7 +438,7 @@ func _normalise_string_array(raw_value: Variant) -> Array[String]:
 	var result: Array[String] = []
 	for item in source:
 		var text := str(item).strip_edges()
-		if not text.is_empty() and not result.has(text):
+		if not text.is_empty():
 			result.append(text)
 	return result
 

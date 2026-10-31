@@ -107,6 +107,46 @@ func normalise_preview_value_v0209(
 	return _normalise_value(canonical, raw_value)
 
 
+func normalise_generated_preview_value_v02116(
+	field: Dictionary, raw_value: Variant
+) -> Dictionary:
+	var canonical := field_by_id(str(field.get("id", "")))
+	if canonical.is_empty():
+		canonical = field
+	if str(canonical.get("type", "")) != "tags":
+		return _normalise_value(canonical, raw_value)
+	if not raw_value is Array:
+		return {
+			"ok": false,
+			"error": (
+				"Expected a JSON array of strings for %s; the model returned %s. "
+				+ "The existing value was preserved. Edit each complete item explicitly or regenerate."
+			) % [
+				str(canonical.get("label", canonical.get("id", "this field"))),
+				type_string(typeof(raw_value))
+			]
+		}
+	var result: Array[String] = []
+	for index in range((raw_value as Array).size()):
+		var item: Variant = (raw_value as Array)[index]
+		if not item is String:
+			return {
+				"ok": false,
+				"error": (
+					"Expected every %s item to be a JSON string; item %d was %s. "
+					+ "The existing value was preserved."
+				) % [
+					str(canonical.get("label", canonical.get("id", "list"))),
+					index + 1,
+					type_string(typeof(item))
+				]
+			}
+		var text := str(item).strip_edges()
+		if not text.is_empty():
+			result.append(text)
+	return {"ok": true, "value": result}
+
+
 func validate_document(document: Dictionary) -> Dictionary:
 	var validation := super.validate_document(document)
 	var errors: Array = validation.get("errors", [])

@@ -54,6 +54,8 @@ func queue_front_porch_fields_v0172(
 		+ "CURRENT CHARACTER CARD DATA:\n%s\n\n"
 		+ "REQUESTED JSON FIELDS:\n%s\n\n"
 		+ "Return one valid JSON object using exactly the requested field IDs as keys. "
+		+ "Every requested list must be an actual JSON array. In string lists, each array element must be one complete, independent string; "
+		+ "commas, parentheses, quotation marks and line breaks inside a string item are ordinary text and must not create extra elements. "
 		+ "These are proposals for a review screen; do not add commentary or markdown fences."
 	) % [concept, character_context, "\n".join(field_lines)]
 	var shared_context := _shared_context_text(project)
@@ -111,7 +113,10 @@ func front_porch_generation_capabilities_v0172() -> Dictionary:
 func _front_porch_type_instruction_v0172(field: Dictionary) -> String:
 	match str(field.get("type", "line")):
 		"tags":
-			return "JSON array of concise strings"
+			return (
+				"JSON array of strings; each element is one complete independent item, "
+				+ "and punctuation inside an element remains part of that element"
+			)
 		"integer_tags":
 			return "JSON array of whole numbers from %d to %d" % [
 				int(field.get("minimum", 1)), int(field.get("maximum", 7))
