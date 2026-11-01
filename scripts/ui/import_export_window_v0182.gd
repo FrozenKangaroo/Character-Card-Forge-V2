@@ -64,10 +64,9 @@ func _build_dialogs() -> void:
 
 
 func _on_card_import_selected(path: String) -> void:
+	_reset_import_preview_v0182()
 	super._on_card_import_selected(path)
 	if _pending_import_card.is_empty():
-		_import_inspection_v0182.clear()
-		_set_current_import_actions_enabled_v0182(false)
 		return
 	_import_inspection_v0182 = INSPECTION_SERVICE.import_inspection(path)
 	if not bool(_import_inspection_v0182.get("ok", false)):
@@ -188,20 +187,49 @@ func _apply_current_import_action_v0182() -> void:
 	inspection_project_changed_v0182.emit(
 		_project.duplicate(true), _active_character_id, message_text
 	)
-	_cancel_import_preview_v0182()
+	_reset_import_preview_v0182()
+	_status.text = message_text
+
+
+func _import_selected_card() -> void:
+	var had_pending_import := not _pending_import_card.is_empty()
+	super._import_selected_card()
+	if had_pending_import and _pending_import_card.is_empty():
+		_reset_import_preview_v0182()
+		_status.text = "Character card imported as a new CCF project."
 
 
 func _cancel_import_preview_v0182() -> void:
+	_reset_import_preview_v0182()
+	_status.text = "Import preview cancelled. No project data changed."
+
+
+func _reset_import_preview_v0182() -> void:
 	_import_inspection_v0182.clear()
 	_pending_import_card.clear()
 	_pending_import_source_path = ""
 	_pending_import_source_format = ""
-	_import_button.disabled = true
-	_import_portrait_v0182.texture = null
-	_import_portrait_v0182.visible = false
-	_import_summary.text = "[color=#a8acbd]No card selected.[/color]"
+	_pending_import_action_v0182 = ""
+	if _import_button != null:
+		_import_button.disabled = true
+	if _import_portrait_v0182 != null:
+		_import_portrait_v0182.texture = null
+		_import_portrait_v0182.visible = false
+	if _import_summary != null:
+		_import_summary.text = "[color=#a8acbd]No card selected.[/color]"
+	if _import_action_confirm_v0182 != null:
+		_import_action_confirm_v0182.hide()
 	_set_current_import_actions_enabled_v0182(false)
-	_status.text = "Import preview cancelled. No project data changed."
+
+
+func _hide_window() -> void:
+	_reset_import_preview_v0182()
+	super._hide_window()
+
+
+func release_project() -> void:
+	_reset_import_preview_v0182()
+	super.release_project()
 
 
 func _set_current_import_actions_enabled_v0182(enabled: bool) -> void:

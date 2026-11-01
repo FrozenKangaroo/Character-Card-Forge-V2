@@ -397,7 +397,9 @@ func _on_card_import_selected(path: String) -> void:
 	if not result.get("ok", false):
 		_pending_import_card.clear()
 		_import_button.disabled = true
-		_import_summary.text = "[color=#ff9b9b]%s[/color]" % str(result.get("error", "Could not load character card."))
+		var error_text := str(result.get("error", "Could not load character card."))
+		_import_summary.text = "[color=#ff9b9b]%s[/color]" % error_text
+		_status.text = "Import failed. %s No project data changed." % error_text
 		return
 	_pending_import_card = result.get("data", {}).duplicate(true)
 	_pending_import_source_path = path

@@ -62,7 +62,11 @@ func _run() -> void:
 		await process_frame
 		var workspace: Variant = app.get("_workspace")
 		var generator: Variant = workspace.get("_idea_generator_v01532") if workspace != null else null
-		if _require(generator is CCFIdeaGeneratorWindowCurrent, "The current Idea Library must load."):
+		if _require(
+			generator is Window
+			and (generator as Window).has_method("open_notebook_v01532"),
+			"The current Idea Library must load."
+		):
 			generator.open_notebook_v01532()
 			await process_frame
 			await process_frame

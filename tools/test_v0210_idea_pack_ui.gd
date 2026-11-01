@@ -22,16 +22,25 @@ func _run() -> void:
 		return
 	var workspace := workspace_value as CCFWorkspaceCurrent
 	var generator_value: Variant = workspace.get("_idea_generator_v01532")
-	if not _require(generator_value is CCFIdeaGeneratorWindowCurrent, "The live Workspace must install the Idea Pack-aware Idea Generator."):
+	if not _require(
+		generator_value is Window
+		and (generator_value as Window).has_method("open_notebook_v01532"),
+		"The live Workspace must install the Idea Pack-aware Idea Generator."
+	):
 		return
-	var generator := generator_value as CCFIdeaGeneratorWindowCurrent
+	# Keep this integration test runtime-oriented. A compile-time reference to
+	# CCFIdeaGeneratorWindowCurrent makes the editor resolve the complete live
+	# scene/class chain while it is still scanning this test, which Godot 4.7 can
+	# report as a false cyclic class dependency. The capability check above still
+	# verifies that the installed Window is the expected Idea Generator surface.
+	var generator: Variant = generator_value
 	var import_button := generator.find_child("ImportIdeaPackV0210", true, false) as Button
 	var export_button := generator.find_child("ExportIdeaPackV0210", true, false) as Button
 	if not _require(import_button != null and export_button != null, "Idea Notebook must expose Import and Export Idea Pack actions."):
 		return
-	var toolbar := generator.find_child("IdeaPackActionsV0210", true, false)
-	var action_row := generator.find_child("IdeaPackActionButtonsV0210", true, false)
-	var explanation := generator.find_child("IdeaPackExplanationV0210", true, false)
+	var toolbar: Node = generator.find_child("IdeaPackActionsV0210", true, false)
+	var action_row: Node = generator.find_child("IdeaPackActionButtonsV0210", true, false)
+	var explanation: Node = generator.find_child("IdeaPackExplanationV0210", true, false)
 	if not _require(
 		toolbar is VBoxContainer
 		and action_row is HFlowContainer
@@ -67,7 +76,7 @@ func _run() -> void:
 	):
 		return
 	generator.hide()
-	var structured_details := generator.find_child("StructuredIdeaDetailsV0210", true, false)
+	var structured_details: Node = generator.find_child("StructuredIdeaDetailsV0210", true, false)
 	if not _require(structured_details != null, "Idea Notebook must expose structured semantic details for imported entries."):
 		return
 	var import_dialog_value: Variant = generator.get("_import_dialog_v0210")
@@ -110,7 +119,7 @@ func _run() -> void:
 
 
 func _test_export_scope_selection(
-	generator: CCFIdeaGeneratorWindowCurrent,
+	generator: Variant,
 	notebook_export_button: Button
 ) -> bool:
 	generator.call("_build_export_window_v0210")
@@ -263,7 +272,7 @@ func _test_export_scope_selection(
 
 
 func _test_export_context_freshness(
-	generator: CCFIdeaGeneratorWindowCurrent
+	generator: Variant
 ) -> bool:
 	var test_root := "/tmp/ccf_v0210_export_context_%d" % Time.get_ticks_usec()
 	var service := CCFIdeaPackServiceV0210.new(test_root)
@@ -378,7 +387,7 @@ func _test_export_context_freshness(
 
 
 func _test_notebook_multi_select_and_scope(
-	generator: CCFIdeaGeneratorWindowCurrent
+	generator: Variant
 ) -> bool:
 	var test_root := "/tmp/ccf_v0214_notebook_scope_%d" % Time.get_ticks_usec()
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(test_root))
@@ -554,7 +563,7 @@ func _test_notebook_multi_select_and_scope(
 
 
 func _test_independent_file_dialogs(
-	generator: CCFIdeaGeneratorWindowCurrent
+	generator: Variant
 ) -> bool:
 	var dialogs := {
 		"Import Idea Pack": generator.get("_import_dialog_v0210"),
@@ -666,7 +675,7 @@ func _export_test_idea(
 
 
 func _apply_scope(
-	generator: CCFIdeaGeneratorWindowCurrent,
+	generator: Variant,
 	scope: OptionButton,
 	index: int
 ) -> void:

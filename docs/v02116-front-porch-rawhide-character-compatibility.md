@@ -34,6 +34,19 @@ Unknown Character Card V2 `data` properties, unknown Front Porch extension prope
 unknown group-card properties are retained during import and merged back during export.
 Known edited CCF fields take precedence over their preserved source copies.
 
+## Generated list integrity
+
+Front Porch list fields such as Ambitions, Plan lines, Likes, Dislikes, worn/carried
+inventory and intimate preferences use an explicit item editor. Each editor represents
+one complete array element, so punctuation and line breaks inside an item remain part of
+that item.
+
+AI proposals must provide real JSON arrays of strings. A malformed string proposal is
+shown as a validation error and left unchecked; it cannot silently overwrite the existing
+value. The author may regenerate it or explicitly review and correct its item boundaries.
+Valid arrays retain their order through review, save, Character Card V2 export, import and
+reload.
+
 ## Compatibility notes
 
 - Existing projects require no migration.
