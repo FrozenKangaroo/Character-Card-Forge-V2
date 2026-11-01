@@ -10,6 +10,14 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ### Highlights
 
+- This cumulative release contains the completed v0.21.13–v0.21.16 work since the
+  previous public v0.21.12 release.
+- Added **Browse Public Sources…** with a searchable, integrity-checked catalog of
+  reusable Idea Sources hosted through the official Character Card Forge public service.
+- Saved Ideas now retain their exact originating AI prompt and can send that prompt back
+  to the Idea Generator for reuse or editing.
+- Added a dedicated Character Collaborator **Safe Section Build** handoff strategy with
+  bounded repair of incomplete Generation Concepts and preservation of accepted sections.
 - Audited Front Porch Rawhide commit `2876ee5d8e92290d2f4498bf0f459652010aa735`
   and added its current per-character Pockets, Needs pace/off, Sex and Recovery controls
   to the existing optional Front Porch editor.
@@ -21,6 +29,15 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ### Changes
 
+- Public Idea Sources use a versioned manifest, stable IDs, immutable content-addressed
+  objects, size and SHA-256 verification, schema validation, and explicit local saving.
+  Choosing a public source never silently overwrites the local Source Library.
+- Idea prompt provenance now survives Final Idea Review, deletion, Generate More, local
+  storage and Idea Pack export/import. Older Ideas and packs without prompt metadata remain
+  supported, and restoring a complete prompt avoids applying unrelated source context twice.
+- Collaborator handoffs freeze their transcript and evidence context, validate canonical
+  blueprint sections, recover safe partial structured output, and rebuild only the malformed
+  section onward. Provisional handoff content is not committed after a failed generation.
 - Import preview cleanup no longer reports successful copy, merge or replacement
   operations as cancelled. Cancellation status is now reserved for an explicit user
   cancellation, while successful and failed imports retain their own outcome messages.
@@ -50,6 +67,9 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 - None. Existing Front Porch and Character Card data loads in place. Legacy
   `chaos_mode_enabled: false` loads as Disabled; legacy `true` loads as
   Normal, which is Rawhide's default Chaos frequency.
+- Existing local Idea Sources, portable Idea Source files, saved Ideas, Idea Packs and AI
+  profiles continue to load without conversion. Prompt-reuse actions remain disabled only
+  for older Ideas that never stored an originating prompt.
 
 ### Breaking changes
 
@@ -57,6 +77,10 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ### Known limitations
 
+- Browsing or selecting a public Idea Source requires internet access. A selected source
+  can be explicitly saved locally and then used offline.
+- Collaborator Safe Section Build uses more provider requests than Single Response, and
+  prompts that were never stored in older Ideas cannot be reconstructed automatically.
 - Current Rawhide deliberately ignores the older `needs_sim_strength` and
   `needs_decay_*` properties. CCF preserves them for compatibility but labels them as
   legacy rather than implying that they affect current Rawhide simulation.
