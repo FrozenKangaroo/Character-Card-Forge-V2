@@ -21,6 +21,9 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ### Changes
 
+- Import preview cleanup no longer reports successful copy, merge or replacement
+  operations as cancelled. Cancellation status is now reserved for an explicit user
+  cancellation, while successful and failed imports retain their own outcome messages.
 - Preserve every AI-generated Front Porch list element as one atomic value, including
   sentences and inventory descriptions containing commas, quotes, parentheses or line
   breaks. Malformed string proposals are now unchecked with a visible type error instead

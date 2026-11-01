@@ -307,6 +307,14 @@ func _run() -> void:
 		"Reviewed replacement must preserve the target identity and recovery history."
 	):
 		return
+	if not await _test_import_preview_lifecycle(
+		project,
+		character_id,
+		inspection,
+		legacy_card,
+		import_path
+	):
+		return
 
 	var imported_project: Dictionary = inspection.get("imported_project", {})
 	CCFStorageService.save_project(imported_project)
@@ -370,6 +378,149 @@ func _run() -> void:
 	await process_frame
 	print("v0.18.2 Card Health and Interchange Inspection regression passed")
 	quit(0)
+
+
+func _test_import_preview_lifecycle(
+	project: Dictionary,
+	character_id: String,
+	inspection: Dictionary,
+	legacy_card: Dictionary,
+	import_path: String
+) -> bool:
+	var import_window := CCFImportExportWindowV0182.new()
+	import_window.visible = false
+	root.add_child(import_window)
+	await process_frame
+	import_window.hide()
+	import_window.set("_project", project.duplicate(true))
+	import_window.set("_project_id", str(project.get("project_id", "")))
+	import_window.set("_active_character_id", character_id)
+	var status := import_window.get("_status") as Label
+	var replacement_signal := {
+		"count": 0,
+		"project": {},
+		"character_id": "",
+		"message": ""
+	}
+	import_window.inspection_project_changed_v0182.connect(
+		func(
+			updated_project: Dictionary,
+			updated_character_id: String,
+			message_text: String
+		) -> void:
+			replacement_signal["count"] = int(replacement_signal["count"]) + 1
+			replacement_signal["project"] = updated_project.duplicate(true)
+			replacement_signal["character_id"] = updated_character_id
+			replacement_signal["message"] = message_text
+	)
+	_set_window_import_preview(
+		import_window, inspection, legacy_card, import_path
+	)
+	import_window.set("_pending_import_action_v0182", "replace")
+	import_window.call("_apply_current_import_action_v0182")
+	var emitted_project: Dictionary = replacement_signal["project"]
+	var replaced := CCFStorageService.get_character(
+		emitted_project, character_id
+	)
+	if not _require(
+		int(replacement_signal["count"]) == 1
+		and str(replacement_signal["character_id"]) == character_id
+		and str(replaced.get("character_id", "")) == character_id
+		and str(replaced.get("character", {}).get("name", ""))
+		== "Legacy Inspector"
+		and CCFRevisionServiceV0181.list_revisions(replaced).size() >= 2
+		and status.text.contains("replaced the active character")
+		and not status.text.to_lower().contains("cancel"),
+		"Confirmed replacement must emit the updated project, preserve identity and recovery history, and report success rather than cancellation."
+	):
+		return false
+	if not _require(
+		(import_window.get("_import_inspection_v0182") as Dictionary).is_empty()
+		and (import_window.get("_pending_import_card") as Dictionary).is_empty(),
+		"Successful replacement must clear temporary preview state without changing its success status."
+	):
+		return false
+
+	import_window.set("_project", emitted_project.duplicate(true))
+	var project_before_cancel := JSON.stringify(import_window.get("_project"))
+	_set_window_import_preview(
+		import_window, inspection, legacy_card, import_path
+	)
+	import_window.call("_cancel_import_preview_v0182")
+	if not _require(
+		status.text == "Import preview cancelled. No project data changed."
+		and JSON.stringify(import_window.get("_project")) == project_before_cancel
+		and (import_window.get("_import_inspection_v0182") as Dictionary).is_empty(),
+		"Explicit cancellation must clear only preview state, leave project data unchanged and report cancellation."
+	):
+		return false
+
+	import_window.call("_on_card_import_selected", import_path)
+	var cancel_button := import_window.get(
+		"_cancel_import_button_v0182"
+	) as Button
+	if not _require(
+		not (import_window.get("_import_inspection_v0182") as Dictionary).is_empty()
+		and status.text.contains("Import inspection complete")
+		and cancel_button != null
+		and not cancel_button.disabled,
+		"A new valid import after cancellation must build a fresh actionable preview."
+	):
+		return false
+
+	var new_project_signal := {"count": 0, "project": {}}
+	import_window.project_imported.connect(
+		func(imported_project: Dictionary) -> void:
+			new_project_signal["count"] = int(new_project_signal["count"]) + 1
+			new_project_signal["project"] = imported_project.duplicate(true)
+	)
+	import_window.call("_import_selected_card")
+	if not _require(
+		int(new_project_signal["count"]) == 1
+		and not (new_project_signal["project"] as Dictionary).is_empty()
+		and status.text == "Character card imported as a new CCF project."
+		and (import_window.get("_import_inspection_v0182") as Dictionary).is_empty(),
+		"New-character import must retain its success status and clear the completed preview."
+	):
+		return false
+
+	var project_before_failure := JSON.stringify(import_window.get("_project"))
+	import_window.call(
+		"_on_card_import_selected", "user://unsupported-import-does-not-exist.png"
+	)
+	if not _require(
+		status.text.begins_with("Import failed.")
+		and status.text.ends_with("No project data changed.")
+		and not status.text.to_lower().contains("cancel")
+		and JSON.stringify(import_window.get("_project")) == project_before_failure
+		and (import_window.get("_import_inspection_v0182") as Dictionary).is_empty(),
+		"Failed imports must retain a meaningful failure status, clear stale previews and leave project data unchanged."
+	):
+		return false
+
+	import_window.call("_on_card_import_selected", import_path)
+	if not _require(
+		status.text.contains("Import inspection complete")
+		and not (import_window.get("_import_inspection_v0182") as Dictionary).is_empty(),
+		"A valid repeated import must reset a previous failure and behave normally."
+	):
+		return false
+	import_window.queue_free()
+	await process_frame
+	return true
+
+
+func _set_window_import_preview(
+	import_window: CCFImportExportWindowV0182,
+	inspection: Dictionary,
+	legacy_card: Dictionary,
+	import_path: String
+) -> void:
+	import_window.set("_import_inspection_v0182", inspection.duplicate(true))
+	import_window.set("_pending_import_card", legacy_card.duplicate(true))
+	import_window.set("_pending_import_source_path", import_path)
+	import_window.set("_pending_import_source_format", "json")
+	import_window.call("_set_current_import_actions_enabled_v0182", true)
 
 
 func _replace_character(project: Dictionary, character_record: Dictionary) -> void:
