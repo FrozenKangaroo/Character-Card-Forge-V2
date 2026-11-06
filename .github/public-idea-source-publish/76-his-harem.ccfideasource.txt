@@ -1,0 +1,1725 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "series-bible-ii-25-his-harem",
+  "title": "His Harem",
+  "description": "Expanded Series Bible II #25 His Harem reusable adult idea source: a recurring group of multiple adult women around {{user}} — genuine consensual polycule, mixed partners and friends, or a joking platonic circle. The engine varies each member's status and private feelings, intra-group bonds, hierarchy, living arrangements, outsider perception and {{user}}'s own role, without scripting his choices.",
+  "source_version": "1.1",
+  "bible": {
+    "series": "Character Card Forge — Series Bible II",
+    "series_number": 25,
+    "category": "Group & Social Dynamics"
+  },
+  "summary": "{{user}} is at the centre of a recurring group of multiple adult women who are closely associated with him. The group may be an actual consensual romantic or sexual harem, a mixed network of partners and friends, or an entirely platonic social group that outsiders—or the women themselves—jokingly call a harem. Each woman’s relationship with {{user}} and with the other women should be generated independently.",
+  "core_premise": "{{user}} is at the centre of a recurring group of multiple adult women who are closely associated with him. The group may be an actual consensual romantic or sexual harem, a mixed network of partners and friends, or an entirely platonic social group that outsiders—or the women themselves—jokingly call a harem. Each woman’s relationship with {{user}} and with the other women should be generated independently.",
+  "setup": "Create a non-graphic adult group-dynamics roleplay opening. Establish how many adult women are in the recurring circle around {{user}} and how it formed; whether it is a genuine consensual romantic or sexual harem, a mixed network of partners and friends, or a purely platonic group carrying the joke label. Define each woman's own bond with {{user}} and her own friendships, rivalries or romances with the other women. Set the group's hierarchy or lack of it, who lives where, and how outsiders misread or correctly read the group. Decide whether {{user}} built any of it deliberately, but do not script his feelings, consent or decisions. Open at a concrete group moment — a dinner, a gathering, an announcement — with every member's agency and every outcome left open.",
+  "core_variables": [
+    "How many adult women are in the group, and how the group originally formed.",
+    "Whether it is a genuine consensual romantic or sexual harem, a mixed network of partners and friends, or a purely platonic circle carrying the joke label.",
+    "Each member's own status with {{user}}: partner, casual lover, friend, roommate, coworker, classmate, ex, admirer, rival or undefined.",
+    "The gap between each woman's official status and her private feelings, generated separately for every member.",
+    "The women's friendships, rivalries, cliques, jealousy and affection among themselves, independent of {{user}}.",
+    "Whether some women in the group date or sleep with each other, with their own adult agreements.",
+    "Whether the group has one primary partner, an explicit negotiated hierarchy, or a declared flat equality.",
+    "Who lives where: one shared house, adjoining homes, or separate addresses with shared territory.",
+    "How outsiders perceive the group and how wrong, or right, their theories are.",
+    "Whether {{user}} deliberately built anything resembling a harem, accidentally accumulated it, or actively resists it.",
+    "How each woman joined and when, giving older and newer members different standing.",
+    "The group's recurring rituals and obligations: dinners, holidays, rosters, celebrations and shared projects.",
+    "What, if anything, is currently in motion: a member leaving, a new member arriving, a label dispute, a live question about the group's future.",
+    "Whether any non-monogamy present rests on explicit current adult agreements, and who knows about whom.",
+    "How each woman relates to the harem label itself: proud, indifferent, amused, irritated or campaigning to retire it."
+  ],
+  "generation_rules": [
+    "Do not write {{user}} for the player or define {{user}}'s feelings, decisions, dialogue, consent, intentions, future behaviour, or whether a seduction succeeds unless the source explicitly supplies that fact.",
+    "Character belief is not objective truth; keep assumptions, propaganda, cover stories, public records, and objective ground truth distinct where relevant.",
+    "Do not pre-play outcomes. Leave cooperation, refusal, forgiveness, exposure, romance, betrayal, joining, leaving, and other player choices open.",
+    "All explicit romantic or sexual characters are adults.",
+    "Marriage, cohabitation, room sharing, travel, confinement, family relationships, financial payment, and occupational roles do not create romantic or sexual consent.",
+    "Sex or intimacy must not erase a character's baseline personality, goals, nonsexual interests, judgement, or boundaries.",
+    "Do not assume every woman is attracted to {{user}} merely because she belongs to the group.",
+    "Do not establish that {{user}} enjoys, wants, manages, or romantically reciprocates the “harem” unless the source premise supplies that fact.",
+    "If romantic or sexual non-monogamy exists, establish the relevant adults’ agreements and boundaries rather than treating group membership as blanket consent.",
+    "Overlap boundary: Distinct from Open Relationship because the recurring engine is the multi-woman social/relationship ecosystem itself rather than one couple negotiating openness; distinct from Crossed Couples because it is not built around two paired couples swapping partners.",
+    "Generate each woman's bond with {{user}} and with every other woman independently; do not copy a template across members or assume uniform affection.",
+    "Give the group a concrete shared life — recurring gatherings, rituals, logistics — so it functions as a recurring ecosystem rather than a list of names.",
+    "Keep outsider theories about the group clearly separate from the ground truth of what the group actually is.",
+    "Vary the group's tone: warm found-family, chaotic bickering, cool formality, competitive or quietly fragile, without forcing harmony or drama.",
+    "The harem label must never be treated as a factual description of consent; whether a given member is romantically or sexually involved with anyone is established per member, per agreement.",
+    "Do not default to warm harmony or bitter rivalry; the group's overall tone and each member's temperament are independent variation axes.",
+    "Each woman needs her own occupation or occupation-adjacent life, personal history and reason for staying in the group beyond {{user}} himself.",
+    "Outsider perception, the women's self-description and the objective situation are three separate layers; keep them distinct and let them disagree.",
+    "Where a member is romantically involved with another member rather than {{user}}, generate that bond on its own terms; it is not a side effect of the group's shape.",
+    "Leave the group's future open: members joining, leaving, deepening bonds or falling out are all live possibilities, not pre-played outcomes."
+  ],
+  "guardrails": [
+    "All participants are adults; no romantic or sexual content involves anyone underage.",
+    "The harem label, however used, never implies blanket consent, availability or guaranteed attraction to {{user}}.",
+    "Do not assume every woman in the group is attracted to {{user}}; some may be attached elsewhere, uninterested or members for entirely other reasons.",
+    "Do not establish that {{user}} enjoys, wants, manages or reciprocates the harem unless the scenario explicitly supplies that fact.",
+    "Where romantic or sexual non-monogamy exists, the relevant adults' explicit agreements and boundaries must be established; membership is not consent.",
+    "Do not script {{user}}'s feelings, decisions, dialogue or future; his role in the group is an open question for the player.",
+    "No woman is reduced to her bond with {{user}}: each keeps her own life, interests, judgement, boundaries and right to refuse or leave.",
+    "Jealousy, rivalry and intra-group romance are character material, never permission for coercion, manipulation or ignoring anyone's boundaries.",
+    "Living together, shared finances or group rituals create no romantic or sexual entitlement for anyone.",
+    "Wealth, popularity or the group's affection for {{user}} do not make him objectively superior or guaranteed anything.",
+    "Do not predetermine whether the group endures, transforms, romantically realigns or dissolves; all outcomes remain open.",
+    "Keep all intimate content non-graphic and foreground the social, emotional and practical texture of the group."
+  ],
+  "diversity_axes": [
+    "Group size and formation: three to seven-plus women; shared house, workplace, club, inheritance, slow accumulation or pure accident.",
+    "Group nature: genuine consensual polycule, mixed partners and friends, or entirely platonic circle with a joking label.",
+    "Each member's status with {{user}}: partner, casual lover, friend, roommate, coworker, classmate, ex, admirer, rival or undefined.",
+    "Feelings versus official status: declared partners who feel like friends, friends who quietly want more, members who want less attention.",
+    "Intra-group bonds: best friendships, cold wars, cliques, mediators, members who date each other, exes within the group.",
+    "Structure: one acknowledged primary, explicit negotiated hierarchy, elected or informal roles, or declared flat equality.",
+    "Living arrangements: one crowded shared house, adjoining flats, separate homes with shared territory, a rural cooperative.",
+    "Outsider perception: confident wrong theories, polite silence, viral fame, community approval, family suspicion.",
+    "{{user}}'s intent: accidental, deliberate, regretted, practical, inherited, actively resisted or debated without ever asking him.",
+    "Tone of the group: warm found-family, chaotic bickering, competitive, formal, quietly fragile or quietly solid.",
+    "The live question in motion: a member leaving, a newcomer arriving, a label dispute, an outside partner objecting, an honest question finally asked.",
+    "How the women treat the harem label: coined it, love it, tolerate it, campaign against it or refuse to discuss it.",
+    "Group rituals and obligations: Sunday dinners, annual holidays, birthday rules, shared projects, care rotas.",
+    "Whether non-monogamy, where present, is fully informed and agreed among all relevant adults, including outside partners.",
+    "{{user}}'s place in his own group: centre, caretaker, bemused mascot, hired help in the group's joke, or quietly one member among equals."
+  ],
+  "cross_links": [
+    "Bible I: Open Relationship — one couple negotiating openness is that series' engine; here the multi-woman group ecosystem itself is the recurring premise.",
+    "She Wants You — individual members may carry that series' dynamic toward {{user}}; generate each woman's interest separately and never by default.",
+    "Crossed Couples — distinct because this group is not built around two paired couples swapping partners.",
+    "Just Married — one member of the group may be newly married to {{user}} or to someone else, importing that series' milestone dynamics.",
+    "Our Trip Together — the group's shared holiday is a natural crossover for this series' recurring-ritual axis.",
+    "Bible I: Forced Proximity — origins like shared housing or adjoining flats borrow that series' closeness mechanics for individual members."
+  ],
+  "tags": [
+    "series bible ii",
+    "group & social dynamics",
+    "harem",
+    "friend group",
+    "found family",
+    "consensual non monogamy",
+    "polyamory",
+    "multiple adult partners",
+    "group dynamics",
+    "platonic or romantic",
+    "household drama",
+    "rivalries",
+    "jealousy",
+    "shared house",
+    "outsider gossip",
+    "player agency",
+    "adults only"
+  ],
+  "notes": "Expanded Series Bible II #25 to version 1.1 preserving all 10 original seed IDs. Adds 246 direction presets exploring group size and formation, the gap between the harem label and reality, each member's independent status and feelings, intra-group friendships and rivalries, hierarchies and living arrangements, outsider perception, and whether {{user}} built any of it deliberately, plus a structure-combination group crossing group size against relationship mix. The source template in Google Drive is unchanged.",
+  "direction_presets": [
+    {
+      "id": "accidental-harem",
+      "group": "Original Bible seeds",
+      "title": "Accidental Harem",
+      "direction": "Use the Bible II subtype/seed ‘Accidental Harem’ as the defining direction for this batch. Preserve the His Harem core premise and any series-specific generation rules, vary the remaining core variables and surface details, and leave {{user}}’s reactions and outcomes open."
+    },
+    {
+      "id": "one-girlfriend-several-friends",
+      "group": "Original Bible seeds",
+      "title": "One Girlfriend, Several Friends",
+      "direction": "Use the Bible II subtype/seed ‘One Girlfriend, Several Friends’ as the defining direction for this batch. Preserve the His Harem core premise and any series-specific generation rules, vary the remaining core variables and surface details, and leave {{user}}’s reactions and outcomes open."
+    },
+    {
+      "id": "consensual-poly-household",
+      "group": "Original Bible seeds",
+      "title": "Consensual Poly Household",
+      "direction": "Use the Bible II subtype/seed ‘Consensual Poly Household’ as the defining direction for this batch. Preserve the His Harem core premise and any series-specific generation rules, vary the remaining core variables and surface details, and leave {{user}}’s reactions and outcomes open."
+    },
+    {
+      "id": "mixed-partners-and-friends",
+      "group": "Original Bible seeds",
+      "title": "Mixed Partners and Friends",
+      "direction": "Use the Bible II subtype/seed ‘Mixed Partners and Friends’ as the defining direction for this batch. Preserve the His Harem core premise and any series-specific generation rules, vary the remaining core variables and surface details, and leave {{user}}’s reactions and outcomes open."
+    },
+    {
+      "id": "the-girl-who-coined-the-harem-joke",
+      "group": "Original Bible seeds",
+      "title": "The Girl Who Coined the Harem Joke",
+      "direction": "Use the Bible II subtype/seed ‘The Girl Who Coined the Harem Joke’ as the defining direction for this batch. Preserve the His Harem core premise and any series-specific generation rules, vary the remaining core variables and surface details, and leave {{user}}’s reactions and outcomes open."
+    },
+    {
+      "id": "not-every-girl-likes-him",
+      "group": "Original Bible seeds",
+      "title": "Not Every Girl Likes Him",
+      "direction": "Use the Bible II subtype/seed ‘Not Every Girl Likes Him’ as the defining direction for this batch. Preserve the His Harem core premise and any series-specific generation rules, vary the remaining core variables and surface details, and leave {{user}}’s reactions and outcomes open."
+    },
+    {
+      "id": "rivals-in-the-same-group",
+      "group": "Original Bible seeds",
+      "title": "Rivals in the Same Group",
+      "direction": "Use the Bible II subtype/seed ‘Rivals in the Same Group’ as the defining direction for this batch. Preserve the His Harem core premise and any series-specific generation rules, vary the remaining core variables and surface details, and leave {{user}}’s reactions and outcomes open."
+    },
+    {
+      "id": "everyone-thinks-they-are-dating",
+      "group": "Original Bible seeds",
+      "title": "Everyone Thinks They Are Dating",
+      "direction": "Use the Bible II subtype/seed ‘Everyone Thinks They Are Dating’ as the defining direction for this batch. Preserve the His Harem core premise and any series-specific generation rules, vary the remaining core variables and surface details, and leave {{user}}’s reactions and outcomes open."
+    },
+    {
+      "id": "one-primary-partner",
+      "group": "Original Bible seeds",
+      "title": "One Primary Partner",
+      "direction": "Use the Bible II subtype/seed ‘One Primary Partner’ as the defining direction for this batch. Preserve the His Harem core premise and any series-specific generation rules, vary the remaining core variables and surface details, and leave {{user}}’s reactions and outcomes open."
+    },
+    {
+      "id": "group-holiday",
+      "group": "Original Bible seeds",
+      "title": "Group Holiday",
+      "direction": "Use the Bible II subtype/seed ‘Group Holiday’ as the defining direction for this batch. Preserve the His Harem core premise and any series-specific generation rules, vary the remaining core variables and surface details, and leave {{user}}’s reactions and outcomes open."
+    },
+    {
+      "id": "group-size-and-formation-01",
+      "group": "Group size and formation",
+      "title": "Three Women, One Flat",
+      "direction": "The group formed when three adult women — a partner, a friend and a coworker of {{user}} — ended up sharing one large flat with him by separate coincidences of rent and timing. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-size-and-formation-02",
+      "group": "Group size and formation",
+      "title": "The Five Regulars",
+      "direction": "Five adult women became {{user}}'s recurring circle after years of overlapping shifts at the same workplace, each with her own reason for staying close. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-size-and-formation-03",
+      "group": "Group size and formation",
+      "title": "Formed by a Shared House",
+      "direction": "The group coalesced around a shared student-era house: two ex-partners, two current friends and one admirer of {{user}} all still gather there weekly. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-size-and-formation-04",
+      "group": "Group size and formation",
+      "title": "Built One Friend at a Time",
+      "direction": "The group has no single origin; each adult woman joined separately — a classmate here, a neighbour there — until outsiders started counting heads. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-size-and-formation-05",
+      "group": "Group size and formation",
+      "title": "Inherited Circle",
+      "direction": "{{user}} inherited the social circle when a cousin moved abroad: the four adult women who had orbited the cousin now orbit him, each renegotiating her own place. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-size-and-formation-06",
+      "group": "Group size and formation",
+      "title": "The Sudden Six",
+      "direction": "Six adult women attend the same weekly hobby club and all separately named {{user}} their closest confidant; the 'harem' joke started at the club's annual dinner. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-size-and-formation-07",
+      "group": "Group size and formation",
+      "title": "After the Band Broke Up",
+      "direction": "The group is the surviving social wreckage of a defunct band or theatre troupe: three adult women who each once worked with {{user}} and never left his orbit. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-size-and-formation-08",
+      "group": "Group size and formation",
+      "title": "Rescue-by-Circumstance",
+      "direction": "Each adult woman was helped through a rough patch — a job referral, a spare room, a co-signed lease — at different times, and the circle quietly grew from gratitude and habit. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-size-and-formation-09",
+      "group": "Group size and formation",
+      "title": "Two Close, Four Peripheral",
+      "direction": "The core is two very close adult friends of {{user}}; four others drift in and out enough that outsiders, and sometimes the women, call it a harem. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-size-and-formation-10",
+      "group": "Group size and formation",
+      "title": "The Group Chat Made It Official",
+      "direction": "A chaotic shared group chat named 'the harem' by its funniest member is the actual backbone of the group's weekly plans around {{user}}. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-size-and-formation-11",
+      "group": "Group size and formation",
+      "title": "Fraternal Alumni Circle",
+      "direction": "The women are former members of the same university society who all stayed in {{user}}'s city; the group re-formed around his cooking nights. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-size-and-formation-12",
+      "group": "Group size and formation",
+      "title": "Workplace Diaspora",
+      "direction": "A closed-down office scattered colleagues, and five adult women from it kept meeting {{user}} for Friday drinks; nobody calls it anything but Friday, everyone else calls it a harem. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-size-and-formation-13",
+      "group": "Group size and formation",
+      "title": "Born on a Group Holiday",
+      "direction": "A chaotic shared holiday cabin — partners, friends and a rival in one van — bonded six adult women into a permanent circle around {{user}}. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-size-and-formation-14",
+      "group": "Group size and formation",
+      "title": "Slow Accumulation",
+      "direction": "Over a decade the group simply accumulated: an ex who stayed friendly, a roommate who never moved out, an admirer who got promoted to friend, all around adult {{user}}. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-size-and-formation-15",
+      "group": "Group size and formation",
+      "title": "The Committee",
+      "direction": "The group organises itself like a benign committee — a shared calendar, a rota for {{user}}'s birthday — which outsiders misread as something far more romantic. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-size-and-formation-16",
+      "group": "Group size and formation",
+      "title": "No One Agrees How It Started",
+      "direction": "Each adult woman tells a different, contradictory story of how the group formed around {{user}}, and no one has ever checked the facts. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-01",
+      "group": "Genuine harem versus joking label",
+      "title": "A Real Consensual Polycule",
+      "direction": "Every adult woman in the group is, or has been, a consenting romantic partner of {{user}} under explicit written-style agreements; the word harem is accurate and everyone negotiated it. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-02",
+      "group": "Genuine harem versus joking label",
+      "title": "The Joke That Stuck",
+      "direction": "The group is entirely platonic, but one woman's running joke — calling them '{{user}}'s harem' — became the name everyone, including strangers, uses. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-03",
+      "group": "Genuine harem versus joking label",
+      "title": "Half Real, Half Joke",
+      "direction": "Two adult women are actual partners of {{user}}; the other four are friends who find the harem label hilarious and use it at every gathering. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-04",
+      "group": "Genuine harem versus joking label",
+      "title": "Outsiders Say It, They Don't",
+      "direction": "The women never use the word, but neighbours, coworkers and relatives insist {{user}} 'keeps a harem', to the group's collective exasperation. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-05",
+      "group": "Genuine harem versus joking label",
+      "title": "She Uses It as a Flirt",
+      "direction": "One adult woman deploys the harem joke specifically to tease {{user}} in front of the others, testing reactions she never explains. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-06",
+      "group": "Genuine harem versus joking label",
+      "title": "The Word Got Them in Trouble",
+      "direction": "The joking label reached a landlord or HR department, and now the group must explain to a sceptical outsider what the 'harem' actually is. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-07",
+      "group": "Genuine harem versus joking label",
+      "title": "Title in the Group Chat Only",
+      "direction": "The label exists solely as the group chat's name, set on a drunken night, which new members discover with a raised eyebrow. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-08",
+      "group": "Genuine harem versus joking label",
+      "title": "Genuine but Never Named",
+      "direction": "It is a true consensual multi-partner household; everyone avoids the word harem because one member dislikes its history. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-09",
+      "group": "Genuine harem versus joking label",
+      "title": "Label With Legal Weight",
+      "direction": "In this setting the word carries ceremonial or social meaning, and one adult woman wants the group formally recognised; the others vary in their willingness. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-10",
+      "group": "Genuine harem versus joking label",
+      "title": "The Journalist Got It Wrong",
+      "direction": "A local article described the household as a harem; the group argues about whether to correct it, cash in on it, or laugh. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-11",
+      "group": "Genuine harem versus joking label",
+      "title": "She Insists It's Earned",
+      "direction": "The woman who coined the joke argues the group has organically earned the title now that two members are genuinely involved with adult {{user}}. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-12",
+      "group": "Genuine harem versus joking label",
+      "title": "Platonic and Defensive",
+      "direction": "The group is strictly platonic and mutually protective of that fact, but the persistent rumour shapes how every new person treats each woman. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-13",
+      "group": "Genuine harem versus joking label",
+      "title": "Ambiguous on Purpose",
+      "direction": "No one in the group will confirm or deny anything, keeping outsiders — and {{user}} — guessing for their own amusement. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-14",
+      "group": "Genuine harem versus joking label",
+      "title": "Label Rejected by One",
+      "direction": "Most of the group enjoys the joke, but one adult woman genuinely dislikes it and its assumptions, creating an ongoing, unresolved disagreement. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-15",
+      "group": "Genuine harem versus joking label",
+      "title": "Self-Aware Performance",
+      "direction": "The group plays up the harem aesthetic for an annual charity event, with costumes and titles, then quietly returns to ordinary life. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "genuine-harem-versus-joking-label-16",
+      "group": "Genuine harem versus joking label",
+      "title": "True Polycule, Public Denial",
+      "direction": "The romantic reality is real and consensual, but the group publicly denies everything to protect two members' professional positions. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "each-member-s-relationship-status-01",
+      "group": "Each member's relationship status",
+      "title": "Partner, Friend, Rival",
+      "direction": "Among the women: one is {{user}}'s committed partner, two are close friends, one is a friendly rival from a competing shop, and one is a former classmate who admires him from a careful distance. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "each-member-s-relationship-status-02",
+      "group": "Each member's relationship status",
+      "title": "The Ex Who Stayed",
+      "direction": "One adult woman is {{user}}'s ex; they parted amicably, she never really left the friend group, and her current feelings are her own business. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "each-member-s-relationship-status-03",
+      "group": "Each member's relationship status",
+      "title": "Roommate With a Boundary",
+      "direction": "One woman shares {{user}}'s flat as a strictly platonic roommate and is weary of everyone assuming otherwise. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "each-member-s-relationship-status-04",
+      "group": "Each member's relationship status",
+      "title": "Coworker and Confidant",
+      "direction": "One adult woman is {{user}}'s coworker who knows his work secrets; her closeness is professional and personal in ways outsiders misread. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "each-member-s-relationship-status-05",
+      "group": "Each member's relationship status",
+      "title": "The Admirer Who Won't Say",
+      "direction": "One woman has quietly admired {{user}} for years, tells no one, and treats the harem joke as a way to stay close without risking anything. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "each-member-s-relationship-status-06",
+      "group": "Each member's relationship status",
+      "title": "Casual and Content",
+      "direction": "One adult woman is a casual, occasional lover of {{user}} by explicit mutual agreement; neither wants more, which baffles the others. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "each-member-s-relationship-status-07",
+      "group": "Each member's relationship status",
+      "title": "The Rival Competes",
+      "direction": "One woman treats another as a rival for {{user}}'s attention, though neither his feelings nor the outcome are settled. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "each-member-s-relationship-status-08",
+      "group": "Each member's relationship status",
+      "title": "Classmates Turned Regulars",
+      "direction": "Two women were classmates of {{user}} years ago; their bond with him is nostalgic, warm and completely undefined. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "each-member-s-relationship-status-09",
+      "group": "Each member's relationship status",
+      "title": "New and Proving",
+      "direction": "The newest woman in the group is still earning her place, and each of the established members relates to her differently. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "each-member-s-relationship-status-10",
+      "group": "Each member's relationship status",
+      "title": "The One Who Refuses Labels",
+      "direction": "One adult woman declines to define her relationship with {{user}} at all, to the group's endless frustration and occasional envy. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "each-member-s-relationship-status-11",
+      "group": "Each member's relationship status",
+      "title": "Sister of a Member",
+      "direction": "One woman joined because her sister was already in the group; she considers {{user}} practically family, which no one else does. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "each-member-s-relationship-status-12",
+      "group": "Each member's relationship status",
+      "title": "Friend to Her Only",
+      "direction": "One woman is close to just one other member of the group, not to {{user}} himself; the harem joke misfires completely in her case. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "each-member-s-relationship-status-13",
+      "group": "Each member's relationship status",
+      "title": "Partner of a Partner",
+      "direction": "One woman in the group is herself the romantic partner of another woman in the group, complicating the outsiders' simple diagram of who belongs to whom. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "each-member-s-relationship-status-14",
+      "group": "Each member's relationship status",
+      "title": "The Reluctant Member",
+      "direction": "One woman dislikes groups but keeps attending because of exactly one person present; her loyalty has a single name. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "each-member-s-relationship-status-15",
+      "group": "Each member's relationship status",
+      "title": "Everyone's Status Is Fluid",
+      "direction": "No relationship in the group is officially defined; pairings, friendships and ambiguities shift by the month and resist any outsider's chart. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "each-member-s-relationship-status-16",
+      "group": "Each member's relationship status",
+      "title": "The Matchmaker",
+      "direction": "One woman's role is unofficially to push other members toward (or away from) romance with {{user}}, while her own stance stays unspoken. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "feelings-versus-official-status-01",
+      "group": "Feelings versus official status",
+      "title": "Officially Just Friends",
+      "direction": "Every adult woman is officially only {{user}}'s friend, but at least one privately wants more, and another privately wants less attention than she gets. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "feelings-versus-official-status-02",
+      "group": "Feelings versus official status",
+      "title": "Officially His Partner",
+      "direction": "One woman holds the official title of {{user}}'s partner, yet privately feels more like a friend lately; the gap is her secret to manage. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "feelings-versus-official-status-03",
+      "group": "Feelings versus official status",
+      "title": "The Secret Relationship",
+      "direction": "Two women are secretly involved with {{user}}'s closest friend — not with {{user}} at all — and their discretion keeps the whole group's assumptions wrong. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "feelings-versus-official-status-04",
+      "group": "Feelings versus official status",
+      "title": "Titles Nobody Wanted",
+      "direction": "The group avoids titles entirely; 'what we are' is a running question each woman answers differently on different days. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "feelings-versus-official-status-05",
+      "group": "Feelings versus official status",
+      "title": "In Love With Someone Else in the Group",
+      "direction": "One woman's unspoken love is for another woman in the group, not for {{user}}, and the harem framing hides it in plain sight. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "feelings-versus-official-status-06",
+      "group": "Feelings versus official status",
+      "title": "Widow of the Circle's Founder",
+      "direction": "One woman joined as the partner of the friend who once held {{user}}'s role in the group; her official place is honorary and her feelings are newly her own. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "feelings-versus-official-status-07",
+      "group": "Feelings versus official status",
+      "title": "Ex on Paper",
+      "direction": "One woman is still, technically and legally, {{user}}'s ex-wife or ex-partner; paperwork and real life stopped matching years ago. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "feelings-versus-official-status-08",
+      "group": "Feelings versus official status",
+      "title": "The Publicly Assumed Couple",
+      "direction": "Outsiders confidently pair {{user}} with one particular woman; neither of them has ever confirmed or denied it, including to each other. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "feelings-versus-official-status-09",
+      "group": "Feelings versus official status",
+      "title": "Quietly Overlapping",
+      "direction": "Two women each believe their private arrangement with {{user}} is unique; whether that is ignorance, agreement or something else is unwritten. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "feelings-versus-official-status-10",
+      "group": "Feelings versus official status",
+      "title": "Her Feelings Changed Last Month",
+      "direction": "One woman's feelings toward {{user}} shifted recently, and she is still deciding what, if anything, to do about it — which changes the group's chemistry already. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "feelings-versus-official-status-11",
+      "group": "Feelings versus official status",
+      "title": "Status Is a Running Gag",
+      "direction": "The women maintain a joke ranking of 'official positions' with absurd invented titles, under which real feelings move unmarked. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "feelings-versus-official-status-12",
+      "group": "Feelings versus official status",
+      "title": "The Honest One",
+      "direction": "One woman states her feelings plainly and publicly, regularly, and the group's varied reactions are its constant background hum. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "feelings-versus-official-status-13",
+      "group": "Feelings versus official status",
+      "title": "Loyalty Without Romance",
+      "direction": "The strongest bond in the group is a woman whose devotion to {{user}} is entirely non-romantic — and unshakeable. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "feelings-versus-official-status-14",
+      "group": "Feelings versus official status",
+      "title": "Public Partner, Private Question",
+      "direction": "The woman publicly known as {{user}}'s girlfriend has been privately questioning the label, and one other member has noticed. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "feelings-versus-official-status-15",
+      "group": "Feelings versus official status",
+      "title": "Admiration Mislabelled",
+      "direction": "The youngest-looking dynamic in the group — one woman's mentor-style admiration for {{user}} — keeps being misread by outsiders as courtship. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "feelings-versus-official-status-16",
+      "group": "Feelings versus official status",
+      "title": "Everyone Guesses Wrong",
+      "direction": "The outsiders' confident map of who loves whom within the group is wrong in every particular, and the women find that funny. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-01",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "Best Friends Within",
+      "direction": "Two of the women are each other's closest friends in the city; their bond is the group's real spine and predates most other loyalties. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-02",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "The Cold War Pair",
+      "direction": "Two women maintain a flawless surface politeness while competing over everything from group-chat jokes to birthday plans for {{user}}. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-03",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "A Clique of Two",
+      "direction": "Two women form a closed inner clique, sharing in-jokes and Saturday plans, which the others navigate with varying grace. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-04",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "Everybody's Mediator",
+      "direction": "One woman's informal role is settling the group's small disputes — seating, schedules, whose turn it is to drag {{user}} to the dentist. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-05",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "The Feud Nobody Explains",
+      "direction": "Two women have an old, unexplained animosity; every member has a different theory and the two of them refuse comment. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-06",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "Mother-Hen of the Circle",
+      "direction": "One woman tracks birthdays, allergies and heartbreaks for everyone, including {{user}}, and considers the group her extended family. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-07",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "The Two Who Date Each Other",
+      "direction": "Two women in the group are dating each other, openly and happily, which continuously breaks outsiders' assumptions about the harem's shape. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-08",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "Alliance Against the Joke",
+      "direction": "Three women have allied to retire the harem label permanently; the rest have allied, less seriously, to keep it. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-09",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "Competitive Hospitality",
+      "direction": "The women's rivalry is entirely over who hosts better dinners for {{user}} and the group — a competition with escalading courses and thin politeness. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-10",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "The Peaceful One",
+      "direction": "One woman gets along with absolutely everyone, which two other members quietly find suspicious. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-11",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "The Guarded New Bond",
+      "direction": "The newest friendship in the group is between two women who met through {{user}} but are carefully, tentatively becoming close on their own terms. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-12",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "Jealousy She Admits",
+      "direction": "One woman openly admits she is jealous of another's closeness to {{user}} while insisting that honesty settles the matter; the others vary in believing her. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-13",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "Old Teammates",
+      "direction": "Two women were once on the same sports team or in the same troupe, with an old captains' rivalry that {{user}}'s group inherited. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-14",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "The Split Loyalty",
+      "direction": "One woman is equally close to {{user}} and to a member currently feuding with the rest, and refuses to pick a side. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-15",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "Quiet Undercurrent",
+      "direction": "Nothing is declared, but one woman's small kindnesses toward another reveal a warmer bond than either has ever named. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "friendships-rivalries-and-intra-group-bo-16",
+      "group": "Friendships, rivalries and intra-group bonds",
+      "title": "Group Therapy Session",
+      "direction": "The women's monthly dinners function as group therapy, with {{user}} as nominal occasion and the real conversation belonging entirely to them. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "whether-some-women-date-each-other-01",
+      "group": "Whether some women date each other",
+      "title": "The Established Couple",
+      "direction": "Two women in the group have been a couple for years; {{user}} was the mutual friend who introduced them and remains their favourite person. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "whether-some-women-date-each-other-02",
+      "group": "Whether some women date each other",
+      "title": "Recently Realised",
+      "direction": "Two women recently realised their closeness had become romance; the group is mid-adjustment and the news is still travelling. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "whether-some-women-date-each-other-03",
+      "group": "Whether some women date each other",
+      "title": "Known Only to Two",
+      "direction": "Two women keep their relationship hidden from the rest of the group, meeting under transparent pretexts. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "whether-some-women-date-each-other-04",
+      "group": "Whether some women date each other",
+      "title": "Once, on a Holiday",
+      "direction": "Two women had one drunken holiday encounter years ago and have a permanent, unspoken agreement never to mention it — which the harem joke keeps grazing. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "whether-some-women-date-each-other-05",
+      "group": "Whether some women date each other",
+      "title": "Everyone Assumed Wrong",
+      "direction": "The two women everyone believes are secretly together are not — but the two nobody suspects are. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "whether-some-women-date-each-other-06",
+      "group": "Whether some women date each other",
+      "title": "The Open Pair",
+      "direction": "One woman in the group openly dates both inside and outside the circle, with everyone's knowledge and no drama, as a matter of plain agreements. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "whether-some-women-date-each-other-07",
+      "group": "Whether some women date each other",
+      "title": "It Ended Badly",
+      "direction": "Two women dated and broke up; the group now carefully hosts them in alternation, and one gathering rule exists because of it. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "whether-some-women-date-each-other-08",
+      "group": "Whether some women date each other",
+      "title": "She Asked, She Was Refused",
+      "direction": "One woman asked another member out and was gently refused; their friendship survived, and the story belongs to them alone. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "whether-some-women-date-each-other-09",
+      "group": "Whether some women date each other",
+      "title": "A Triangular Possibility",
+      "direction": "One woman, {{user}} and another member navigate an ambiguous triangular closeness that all three describe differently and none will define. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "whether-some-women-date-each-other-10",
+      "group": "Whether some women date each other",
+      "title": "Strictly the Group's Business",
+      "direction": "Whether any women are involved with each other is nobody's business but theirs, a boundary they enforce together with gentle, immovable politeness. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "whether-some-women-date-each-other-11",
+      "group": "Whether some women date each other",
+      "title": "The Matchmade Pair",
+      "direction": "One woman has been trying to set up two other members with each other for a year, with a success rate the group follows like a sport. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "whether-some-women-date-each-other-12",
+      "group": "Whether some women date each other",
+      "title": "History Repeating",
+      "direction": "Two women who dated long before the group existed now navigate it as exes — the group knows, and treats the past as closed. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "whether-some-women-date-each-other-13",
+      "group": "Whether some women date each other",
+      "title": "A Question She Hasn't Asked",
+      "direction": "One woman has been drafting the same question to another member for months, and the harem's busy calendar keeps rescuing her from sending it. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "whether-some-women-date-each-other-14",
+      "group": "Whether some women date each other",
+      "title": "The Practical Arrangement",
+      "direction": "Two women share a bedroom for rent reasons and are tired of clarifying; the truth is boring, warm and entirely theirs. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "whether-some-women-date-each-other-15",
+      "group": "Whether some women date each other",
+      "title": "Publicly, Yes",
+      "direction": "Two women are openly together and equally open that they both consider {{user}} their dearest friend; outsiders find the geometry incomprehensible. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "whether-some-women-date-each-other-16",
+      "group": "Whether some women date each other",
+      "title": "Nobody's Category",
+      "direction": "Several pairings within the group refuse every category — some nights, some seasons, some secrets — and the women prefer it that way. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-01",
+      "group": "Hierarchy and primary partners",
+      "title": "One Acknowledged Primary",
+      "direction": "One woman is the acknowledged primary partner of {{user}} within an otherwise ambiguous group; what that authority actually means is renegotiated at every gathering. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-02",
+      "group": "Hierarchy and primary partners",
+      "title": "Strictly Flat Structure",
+      "direction": "The group insists on no hierarchy; every woman, including {{user}}'s actual partner, has equal standing, equal veto on group plans and equal claim on his time. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-03",
+      "group": "Hierarchy and primary partners",
+      "title": "The Rotation",
+      "direction": "The group runs on a light-hearted formal rotation for {{user}}'s attention — dinner schedules written on the fridge — that everyone treats seriously and jokes about constantly. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-04",
+      "group": "Hierarchy and primary partners",
+      "title": "Elected Spokesperson",
+      "direction": "The women hold a joke 'election' each year for who represents the group's interests to {{user}}; the office comes with a fake sash and real influence. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-05",
+      "group": "Hierarchy and primary partners",
+      "title": "Hierarchy by Seniority",
+      "direction": "Standing in the group quietly follows years-of-acquaintance with {{user}}; the oldest friend's opinions carry soft weight the others accept or resist. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-06",
+      "group": "Hierarchy and primary partners",
+      "title": "The Informal Second",
+      "direction": "One woman is widely treated as the primary partner's lieutenant — a role she never asked for and occasionally resents. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-07",
+      "group": "Hierarchy and primary partners",
+      "title": "Contested Primacy",
+      "direction": "Two women both consider themselves the natural centre of the group beside {{user}}; the others watch the contest unfold with popcorn and care. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-08",
+      "group": "Hierarchy and primary partners",
+      "title": "No Primary at All",
+      "direction": "Nobody in the group holds primary status; the romantic elements, such as they are, are deliberately, explicitly unordered. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-09",
+      "group": "Hierarchy and primary partners",
+      "title": "The Partner Sets Rules",
+      "direction": "{{user}}'s actual partner drafted the group's house rules for visits and celebrations, and each woman's relationship to those rules differs. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-10",
+      "group": "Hierarchy and primary partners",
+      "title": "Hierarchy Nobody Admits",
+      "direction": "The group formally denies any hierarchy while quietly operating a precise one that every member can recite. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-11",
+      "group": "Hierarchy and primary partners",
+      "title": "The Elder Stateswoman",
+      "direction": "The oldest or longest-standing member's word settles disputes by unspoken convention, a role she wields with visible delight. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-12",
+      "group": "Hierarchy and primary partners",
+      "title": "Primary in Transition",
+      "direction": "The previous primary partner of {{user}} moved abroad; which woman, if any, now holds the role is the group's live, unopened question. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-13",
+      "group": "Hierarchy and primary partners",
+      "title": "Two Primaries, Declared",
+      "direction": "Two women openly share the primary role with {{user}}'s knowledge and each other's agreement — the arrangement the rest of the group orbits and analyses. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-14",
+      "group": "Hierarchy and primary partners",
+      "title": "The Caretaking Rota",
+      "direction": "Hierarchy expresses itself only in who cares for whom: each woman informally 'owns' one domain of the group's shared life, from finances to ferrying {{user}} to appointments. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-15",
+      "group": "Hierarchy and primary partners",
+      "title": "Anti-Hierarchy Rebel",
+      "direction": "One woman actively campaigns against the group's soft hierarchy, calling the structure a cosy fiction, and tests it at every meeting. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "hierarchy-and-primary-partners-16",
+      "group": "Hierarchy and primary partners",
+      "title": "Rank by Holiday Hostess",
+      "direction": "Standing in the group is set, half-seriously, by whose holiday hosting succeeded; the current titleholder guards her recipes like state secrets. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "living-arrangements-01",
+      "group": "Living arrangements",
+      "title": "One Crowded House",
+      "direction": "All the women plus adult {{user}} share a large, chaotic inherited house — a genuine community with a chore wheel and a waiting list. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "living-arrangements-02",
+      "group": "Living arrangements",
+      "title": "His Flat, Their Kettle",
+      "direction": "The women keep separate homes but treat {{user}}'s flat as the group's headquarters; his kettle has served more crises than his own meals. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "living-arrangements-03",
+      "group": "Living arrangements",
+      "title": "Adjoining Balconies",
+      "direction": "Three women in the group deliberately rented the three flats flanking and above {{user}}'s; the building is the harem and the landlord has theories. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "living-arrangements-04",
+      "group": "Living arrangements",
+      "title": "Half In, Half Out",
+      "direction": "Two women live with {{user}}, two nearby, one refuses to live within ten kilometres and visits daily anyway. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "living-arrangements-05",
+      "group": "Living arrangements",
+      "title": "The Communal Meal Rule",
+      "direction": "Whoever lives closest cooks Sunday dinner for everyone; the rule migrates as leases change, and residency is a running score. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "living-arrangements-06",
+      "group": "Living arrangements",
+      "title": "She Just Never Left",
+      "direction": "One woman sublet a room for two months three years ago; her tenancy, like several things in the group, simply never resolved. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "living-arrangements-07",
+      "group": "Living arrangements",
+      "title": "Separate Homes, One Table",
+      "direction": "The group's members all keep independent addresses but maintain one shared long table in {{user}}'s dining room as neutral territory. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "living-arrangements-08",
+      "group": "Living arrangements",
+      "title": "The Rural Compound",
+      "direction": "The group occupies a small rural property — farmhouse, converted barn, one woman in the cottage — running it as a loose cooperative. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "living-arrangements-09",
+      "group": "Living arrangements",
+      "title": "City Scatter",
+      "direction": "The women are scattered across one city's districts and the group's life happens in transit, in group chats and at {{user}}'s kitchen bench. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "living-arrangements-10",
+      "group": "Living arrangements",
+      "title": "Nomadic Overlap",
+      "direction": "Between them the women hold the keys to four homes, including {{user}}'s; where anyone sleeps on a given night is a logistics spreadsheet. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "living-arrangements-11",
+      "group": "Living arrangements",
+      "title": "The Formal Households",
+      "direction": "In a setting where households are formal things, the group is a recognised multi-adult household with documented relationships, to the registry's confusion. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "living-arrangements-12",
+      "group": "Living arrangements",
+      "title": "Apartments Within Earshot",
+      "direction": "Every woman lives within earshot of {{user}}'s window by long-standing accident, and the street's nickname for them is not subtle. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "living-arrangements-13",
+      "group": "Living arrangements",
+      "title": "The Move-In Debate",
+      "direction": "Whether one more member should move into the shared house is the group's live debate, with every resident holding a different veto. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "living-arrangements-14",
+      "group": "Living arrangements",
+      "title": "Her Independent Flat",
+      "direction": "One woman pointedly maintains a completely independent flat on the far side of town, which she calls her 'escape hatch' and the others call her 'vanity'. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "living-arrangements-15",
+      "group": "Living arrangements",
+      "title": "Rotating Houses",
+      "direction": "The group rotates its Sunday gathering through every member's home, including {{user}}'s, with the calendar kept by whoever was last late. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "living-arrangements-16",
+      "group": "Living arrangements",
+      "title": "Quietly Cohabiting Pairs",
+      "direction": "The group's address list is a puzzle: pairs who cohabit without romance, singles who cohabit with it, and one member whose address nobody can remember. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "outsiders-perception-01",
+      "group": "Outsiders' perception",
+      "title": "The Neighbours Keep Count",
+      "direction": "The neighbours have a running, confident and mostly wrong account of which woman 'currently has' {{user}}, updated from sightings at the letterboxes. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "outsiders-perception-02",
+      "group": "Outsiders' perception",
+      "title": "The Office Assumption",
+      "direction": "Coworkers assume {{user}}'s group is a scandal in progress; HR has twice scheduled conversations, and the women find the minutes hilarious. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "outsiders-perception-03",
+      "group": "Outsiders' perception",
+      "title": "Family Suspicion",
+      "direction": "{{user}}'s relatives treat the group as a polite fiction concealing something improper and say so at every holiday, to the group's varying amusement. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "outsiders-perception-04",
+      "group": "Outsiders' perception",
+      "title": "The Village Verdict",
+      "direction": "In a small town the group is simply famous; children count the women like carriages of a train, and shopkeepers keep a friendly ledger. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "outsiders-perception-05",
+      "group": "Outsiders' perception",
+      "title": "Internet Famous",
+      "direction": "A viral photo of {{user}} walking with all the women made the group minor local celebrities; the caption invented a whole mythology. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "outsiders-perception-06",
+      "group": "Outsiders' perception",
+      "title": "Nobody Believes the Truth",
+      "direction": "The group's perfectly ordinary explanation — friends, history, agreements — is universally disbelieved in favour of something juicier each teller improves. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "outsiders-perception-07",
+      "group": "Outsiders' perception",
+      "title": "The Curious Newcomer",
+      "direction": "A new person entering one woman's life interrogates the group's nature at a dinner, and each woman gives a different, deadpan answer. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "outsiders-perception-08",
+      "group": "Outsiders' perception",
+      "title": "Respectable and Approved",
+      "direction": "The local community has come to treat the arrangement, whatever it is, with genuine warmth; the harem label became an honourary title. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "outsiders-perception-09",
+      "group": "Outsiders' perception",
+      "title": "The Landlord's Theory",
+      "direction": "The landlord is certain the lease conceals a scandal; the actual scandal is how one member regrouted the bathroom without telling him. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "outsiders-perception-10",
+      "group": "Outsiders' perception",
+      "title": "Whispered at the Market",
+      "direction": "Market stall holders whisper a competitive range of theories about the group, each woman aware of her personal rumour and each responding differently. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "outsiders-perception-11",
+      "group": "Outsiders' perception",
+      "title": "The Boring Truth Won't Sell",
+      "direction": "One woman has tried, honestly and repeatedly, to explain the group to outsiders; the truth is so dull nobody will hold onto it. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "outsiders-perception-12",
+      "group": "Outsiders' perception",
+      "title": "Rival Group's Mockery",
+      "direction": "A rival social circle mocks the group, and the women's mutual defence of one another is the most reliable thing about them. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "outsiders-perception-13",
+      "group": "Outsiders' perception",
+      "title": "The Documentary Pitch",
+      "direction": "Someone has proposed filming the group's story; each woman's answer to the producer was different, and two were unprintable. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "outsiders-perception-14",
+      "group": "Outsiders' perception",
+      "title": "Polite Silence",
+      "direction": "The group's social world responds with careful, respectful silence, which one woman reads as acceptance, another as permanent suspicion. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "outsiders-perception-15",
+      "group": "Outsiders' perception",
+      "title": "The Rumour They Started Themselves",
+      "direction": "The women deliberately feed one absurd rumour about the group to keep outsiders from the mundane truth, and maintaining it is a group art. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "outsiders-perception-16",
+      "group": "Outsiders' perception",
+      "title": "Outsider Who Fits",
+      "direction": "One outsider perceives the group precisely and accurately — and the women's mixed reaction to being seen is its own slow drama. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-01",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "Entirely Accidental",
+      "direction": "{{user}} never intended any of it; each friendship and connection formed independently, and he is as bemused by the word harem as anyone. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-02",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "He Genuinely Tried to Avoid It",
+      "direction": "{{user}} has spent years actively discouraging the group's convergence — separate birthday parties, staggered coffees — and failed completely. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-03",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "Quietly Orchestrated",
+      "direction": "{{user}} introduced each woman to the others, one by one, and never once admitted that the group's shape is his own quiet architecture. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-04",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "Openly Deliberate",
+      "direction": "Everyone knows {{user}} consciously built this circle around himself; the open question, which each woman answers differently, is why. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-05",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "It Was a Practical Plan",
+      "direction": "The group began as {{user}}'s practical arrangement — shared rent, shared childcare for a member's sibling, shared shifts — and sentiment crept in sideways. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-06",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "The Matchmaker's Pride",
+      "direction": "{{user}} takes visible, mischievous pride in the group he curated, treating every new member like a personal acquisition the women rate and review. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-07",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "He Inherited, He Continued",
+      "direction": "{{user}} inherited the circle from a departed friend and consciously chose to keep it alive; the women know and honour that choice. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-08",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "Deliberate, Then Regretted",
+      "direction": "{{user}} admits he once deliberately cultivated the group, has complicated feelings about it now, and has never said so to any of them. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-09",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "The others Built It Around Him",
+      "direction": "Far from {{user}} building anything, the women built the group around him as their fixed point, and find the assumption that he 'collected' them insulting. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-10",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "Organised, Then Self-Organising",
+      "direction": "{{user}} started the circle with two introductions; the women subsequently expanded and reshaped it themselves until he barely recognised it. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-11",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "A Bit of Both",
+      "direction": "{{user}} half-planned it: he wanted the company, denies wanting the label, and cannot honestly untangle the two even to himself. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-12",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "Corporate-Style Recruitment",
+      "direction": "{{user}} recruits group members like a genial HR department — his dinners are practically interviews — a running joke the women audit mercilessly. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-13",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "He Wrote It Down Once",
+      "direction": "A surviving list in {{user}}'s handwriting, titled half-jokingly years ago, is the group's only evidence of intent; every member has read it and no one agrees on its meaning. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-14",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "He Believes It Was Fate",
+      "direction": "{{user}} sincerely claims no credit — the group just happened to him; two women believe him completely and two keep receipts. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-15",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "He's the Group's Employee",
+      "direction": "The women joke that {{user}} isn't the harem's master but its hired help — rostered to fix, drive and barbecue — and the joke has hardened into doctrine. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "whether-user-built-it-deliberately-16",
+      "group": "Whether {{user}} built it deliberately",
+      "title": "Nobody Asks Him",
+      "direction": "The group has fiercely debated {{user}}'s intent among themselves for years without ever actually asking him, which nobody has noticed. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-life-events-and-turning-points-01",
+      "group": "Group life, events and turning points",
+      "title": "The Annual Beach Week",
+      "direction": "The group's fixed annual beach holiday — shared house, shared costs, fierce rosters — is where two members always argue and one always cries, and it is beloved. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-life-events-and-turning-points-02",
+      "group": "Group life, events and turning points",
+      "title": "Somebody's Birthday Rule",
+      "direction": "The group has an absolute rule that birthdays are celebrated together with {{user}} as head chef; the rule's authorship is disputed to this day. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-life-events-and-turning-points-03",
+      "group": "Group life, events and turning points",
+      "title": "A Member Is Moving Away",
+      "direction": "One woman's relocation for work has thrown the group into logistics and quiet grief; nobody has said what it actually means yet. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-life-events-and-turning-points-04",
+      "group": "Group life, events and turning points",
+      "title": "A New Job for One",
+      "direction": "One woman's new job — rival firm, night shifts, or a rival group's hangout — is straining her place in the circle in ways the group is navigating unevenly. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-life-events-and-turning-points-05",
+      "group": "Group life, events and turning points",
+      "title": "The Group Secret",
+      "direction": "The women share one secret from {{user}} — its content varies — and the maintenance of that secret is the group's real bond. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-life-events-and-turning-points-06",
+      "group": "Group life, events and turning points",
+      "title": "A Member's New Partner Outside",
+      "direction": "One woman's new outside partner dislikes the group and wants her to quit it; the group's responses range from frosty to scheming. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-life-events-and-turning-points-07",
+      "group": "Group life, events and turning points",
+      "title": "The Anniversary of the Founder",
+      "direction": "The group annually marks the departure or death of the friend who founded it; {{user}}'s quiet toast is the only scheduled solemnity in the group's year. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-life-events-and-turning-points-08",
+      "group": "Group life, events and turning points",
+      "title": "The Sick Week",
+      "direction": "When one woman fell ill, the group's self-organised care rota — meals, pharmacy runs, shifts — revealed exactly how much machinery hides under the jokes. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-life-events-and-turning-points-09",
+      "group": "Group life, events and turning points",
+      "title": "The Election Year",
+      "direction": "The group's silly annual elections (Best Host, Most Improved Attendance) turned unexpectedly serious this year, exposing a real rivalry underneath. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-life-events-and-turning-points-10",
+      "group": "Group life, events and turning points",
+      "title": "Somebody Finally Asked",
+      "direction": "At one ordinary dinner, someone finally asked {{user}} directly what the group is to him; his answer, and the week of follow-ups, is the opening. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-life-events-and-turning-points-11",
+      "group": "Group life, events and turning points",
+      "title": "The Group Loan",
+      "direction": "The women once pooled money to help a member out of trouble; the unwritten ledger of who owes what shapes a dozen small interactions. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-life-events-and-turning-points-12",
+      "group": "Group life, events and turning points",
+      "title": "A Wedding Invitation",
+      "direction": "An outside wedding invitation addressed to 'Mr {{user}} and the harem' arrived; the group is deciding, as one, whether to be offended or delighted. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-life-events-and-turning-points-13",
+      "group": "Group life, events and turning points",
+      "title": "The Fading Member",
+      "direction": "One woman has been quietly skipping gatherings for months; each remaining member notices, worries and proposes a different rescue. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-life-events-and-turning-points-14",
+      "group": "Group life, events and turning points",
+      "title": "The Group Business",
+      "direction": "The women and {{user}} half-accidentally run a small side enterprise together — a stall, a podcast, a supper club — whose accounts are a second calendar of loyalties. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-life-events-and-turning-points-15",
+      "group": "Group life, events and turning points",
+      "title": "The Photograph Album",
+      "direction": "The group's shared decade of photographs is being curated for an anniversary exhibition; each woman's caption choices are turning into memoir, argument and confession. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-life-events-and-turning-points-16",
+      "group": "Group life, events and turning points",
+      "title": "The Quiet Ordinary Evening",
+      "direction": "No event at all: a flat, warm, unremarkable evening among the women and {{user}} — and the play is in the texture, the in-jokes and the small shifts of attention. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-01",
+      "group": "Group Structure Combinations",
+      "title": "a tight two-woman pair with an orbit — all friends, zero romance",
+      "direction": "Generate two closely bonded adult women with a loose orbit of others who claim membership on alternate weeks closely associated with adult {user}, in which every woman is a platonic friend of {{user}} and the harem label is pure joke. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-02",
+      "group": "Group Structure Combinations",
+      "title": "a tight two-woman pair with an orbit — one partner plus friends",
+      "direction": "Generate two closely bonded adult women with a loose orbit of others who claim membership on alternate weeks closely associated with adult {user}, in which one woman is {{user}}'s partner and the rest are friends who enjoy the harem joke at her indulgence. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-03",
+      "group": "Group Structure Combinations",
+      "title": "a tight two-woman pair with an orbit — two partners, agreed non-exclusivity",
+      "direction": "Generate two closely bonded adult women with a loose orbit of others who claim membership on alternate weeks closely associated with adult {user}, in which two women are {{user}}'s partners under an explicit, negotiated adult agreement, and the group knows its terms. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-04",
+      "group": "Group Structure Combinations",
+      "title": "a tight two-woman pair with an orbit — partners, exes and friends mixed",
+      "direction": "Generate two closely bonded adult women with a loose orbit of others who claim membership on alternate weeks closely associated with adult {user}, in which the group mixes current partners, one amiable ex and unattached friends, each bond generated separately. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-05",
+      "group": "Group Structure Combinations",
+      "title": "a tight two-woman pair with an orbit — mostly platonic, one admirer",
+      "direction": "Generate two closely bonded adult women with a loose orbit of others who claim membership on alternate weeks closely associated with adult {user}, in which the group is platonic except one woman's quiet, undeclared admiration for {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-structure-combinations-06",
+      "group": "Group Structure Combinations",
+      "title": "a tight two-woman pair with an orbit — rivalrous but loyal",
+      "direction": "Generate two closely bonded adult women with a loose orbit of others who claim membership on alternate weeks closely associated with adult {user}, in which the women compete and bicker constantly yet close ranks against anything outside, and {{user}} is their common ground. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-structure-combinations-07",
+      "group": "Group Structure Combinations",
+      "title": "a tight two-woman pair with an orbit — some women dating each other",
+      "direction": "Generate two closely bonded adult women with a loose orbit of others who claim membership on alternate weeks closely associated with adult {user}, in which two women in the group are romantically involved with each other, whatever their separate bonds to {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-08",
+      "group": "Group Structure Combinations",
+      "title": "a tight two-woman pair with an orbit — a genuine consensual polycule",
+      "direction": "Generate two closely bonded adult women with a loose orbit of others who claim membership on alternate weeks closely associated with adult {user}, in which the group is a true consensual multi-partner household in which every adult agreement is explicit and current. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-09",
+      "group": "Group Structure Combinations",
+      "title": "a tight two-woman pair with an orbit — a bonded found family",
+      "direction": "Generate two closely bonded adult women with a loose orbit of others who claim membership on alternate weeks closely associated with adult {user}, in which the group is a devoted found family with no romance at all, and the harem label amuses and annoys them in equal measure. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-10",
+      "group": "Group Structure Combinations",
+      "title": "a tight two-woman pair with an orbit — a formal household in-period",
+      "direction": "Generate two closely bonded adult women with a loose orbit of others who claim membership on alternate weeks closely associated with adult {user}, in which the setting treats multi-adult households as a recognised institution, and the group's standing within it is formal and public. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-11",
+      "group": "Group Structure Combinations",
+      "title": "a three-woman group — all friends, zero romance",
+      "direction": "Generate three adult women closely associated with adult {user}, in which every woman is a platonic friend of {{user}} and the harem label is pure joke. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-structure-combinations-12",
+      "group": "Group Structure Combinations",
+      "title": "a three-woman group — one partner plus friends",
+      "direction": "Generate three adult women closely associated with adult {user}, in which one woman is {{user}}'s partner and the rest are friends who enjoy the harem joke at her indulgence. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-structure-combinations-13",
+      "group": "Group Structure Combinations",
+      "title": "a three-woman group — two partners, agreed non-exclusivity",
+      "direction": "Generate three adult women closely associated with adult {user}, in which two women are {{user}}'s partners under an explicit, negotiated adult agreement, and the group knows its terms. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-14",
+      "group": "Group Structure Combinations",
+      "title": "a three-woman group — partners, exes and friends mixed",
+      "direction": "Generate three adult women closely associated with adult {user}, in which the group mixes current partners, one amiable ex and unattached friends, each bond generated separately. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-15",
+      "group": "Group Structure Combinations",
+      "title": "a three-woman group — mostly platonic, one admirer",
+      "direction": "Generate three adult women closely associated with adult {user}, in which the group is platonic except one woman's quiet, undeclared admiration for {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-16",
+      "group": "Group Structure Combinations",
+      "title": "a three-woman group — rivalrous but loyal",
+      "direction": "Generate three adult women closely associated with adult {user}, in which the women compete and bicker constantly yet close ranks against anything outside, and {{user}} is their common ground. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-17",
+      "group": "Group Structure Combinations",
+      "title": "a three-woman group — some women dating each other",
+      "direction": "Generate three adult women closely associated with adult {user}, in which two women in the group are romantically involved with each other, whatever their separate bonds to {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-structure-combinations-18",
+      "group": "Group Structure Combinations",
+      "title": "a three-woman group — a genuine consensual polycule",
+      "direction": "Generate three adult women closely associated with adult {user}, in which the group is a true consensual multi-partner household in which every adult agreement is explicit and current. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-structure-combinations-19",
+      "group": "Group Structure Combinations",
+      "title": "a three-woman group — a bonded found family",
+      "direction": "Generate three adult women closely associated with adult {user}, in which the group is a devoted found family with no romance at all, and the harem label amuses and annoys them in equal measure. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-20",
+      "group": "Group Structure Combinations",
+      "title": "a three-woman group — a formal household in-period",
+      "direction": "Generate three adult women closely associated with adult {user}, in which the setting treats multi-adult households as a recognised institution, and the group's standing within it is formal and public. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-21",
+      "group": "Group Structure Combinations",
+      "title": "a four-woman group — all friends, zero romance",
+      "direction": "Generate four adult women closely associated with adult {user}, in which every woman is a platonic friend of {{user}} and the harem label is pure joke. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-22",
+      "group": "Group Structure Combinations",
+      "title": "a four-woman group — one partner plus friends",
+      "direction": "Generate four adult women closely associated with adult {user}, in which one woman is {{user}}'s partner and the rest are friends who enjoy the harem joke at her indulgence. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-23",
+      "group": "Group Structure Combinations",
+      "title": "a four-woman group — two partners, agreed non-exclusivity",
+      "direction": "Generate four adult women closely associated with adult {user}, in which two women are {{user}}'s partners under an explicit, negotiated adult agreement, and the group knows its terms. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-structure-combinations-24",
+      "group": "Group Structure Combinations",
+      "title": "a four-woman group — partners, exes and friends mixed",
+      "direction": "Generate four adult women closely associated with adult {user}, in which the group mixes current partners, one amiable ex and unattached friends, each bond generated separately. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-structure-combinations-25",
+      "group": "Group Structure Combinations",
+      "title": "a four-woman group — mostly platonic, one admirer",
+      "direction": "Generate four adult women closely associated with adult {user}, in which the group is platonic except one woman's quiet, undeclared admiration for {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-26",
+      "group": "Group Structure Combinations",
+      "title": "a four-woman group — rivalrous but loyal",
+      "direction": "Generate four adult women closely associated with adult {user}, in which the women compete and bicker constantly yet close ranks against anything outside, and {{user}} is their common ground. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-27",
+      "group": "Group Structure Combinations",
+      "title": "a four-woman group — some women dating each other",
+      "direction": "Generate four adult women closely associated with adult {user}, in which two women in the group are romantically involved with each other, whatever their separate bonds to {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-28",
+      "group": "Group Structure Combinations",
+      "title": "a four-woman group — a genuine consensual polycule",
+      "direction": "Generate four adult women closely associated with adult {user}, in which the group is a true consensual multi-partner household in which every adult agreement is explicit and current. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-29",
+      "group": "Group Structure Combinations",
+      "title": "a four-woman group — a bonded found family",
+      "direction": "Generate four adult women closely associated with adult {user}, in which the group is a devoted found family with no romance at all, and the harem label amuses and annoys them in equal measure. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-structure-combinations-30",
+      "group": "Group Structure Combinations",
+      "title": "a four-woman group — a formal household in-period",
+      "direction": "Generate four adult women closely associated with adult {user}, in which the setting treats multi-adult households as a recognised institution, and the group's standing within it is formal and public. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-structure-combinations-31",
+      "group": "Group Structure Combinations",
+      "title": "a five-woman group — all friends, zero romance",
+      "direction": "Generate five adult women closely associated with adult {user}, in which every woman is a platonic friend of {{user}} and the harem label is pure joke. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-32",
+      "group": "Group Structure Combinations",
+      "title": "a five-woman group — one partner plus friends",
+      "direction": "Generate five adult women closely associated with adult {user}, in which one woman is {{user}}'s partner and the rest are friends who enjoy the harem joke at her indulgence. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-33",
+      "group": "Group Structure Combinations",
+      "title": "a five-woman group — two partners, agreed non-exclusivity",
+      "direction": "Generate five adult women closely associated with adult {user}, in which two women are {{user}}'s partners under an explicit, negotiated adult agreement, and the group knows its terms. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-34",
+      "group": "Group Structure Combinations",
+      "title": "a five-woman group — partners, exes and friends mixed",
+      "direction": "Generate five adult women closely associated with adult {user}, in which the group mixes current partners, one amiable ex and unattached friends, each bond generated separately. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-35",
+      "group": "Group Structure Combinations",
+      "title": "a five-woman group — mostly platonic, one admirer",
+      "direction": "Generate five adult women closely associated with adult {user}, in which the group is platonic except one woman's quiet, undeclared admiration for {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-structure-combinations-36",
+      "group": "Group Structure Combinations",
+      "title": "a five-woman group — rivalrous but loyal",
+      "direction": "Generate five adult women closely associated with adult {user}, in which the women compete and bicker constantly yet close ranks against anything outside, and {{user}} is their common ground. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-structure-combinations-37",
+      "group": "Group Structure Combinations",
+      "title": "a five-woman group — some women dating each other",
+      "direction": "Generate five adult women closely associated with adult {user}, in which two women in the group are romantically involved with each other, whatever their separate bonds to {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-38",
+      "group": "Group Structure Combinations",
+      "title": "a five-woman group — a genuine consensual polycule",
+      "direction": "Generate five adult women closely associated with adult {user}, in which the group is a true consensual multi-partner household in which every adult agreement is explicit and current. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-39",
+      "group": "Group Structure Combinations",
+      "title": "a five-woman group — a bonded found family",
+      "direction": "Generate five adult women closely associated with adult {user}, in which the group is a devoted found family with no romance at all, and the harem label amuses and annoys them in equal measure. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-40",
+      "group": "Group Structure Combinations",
+      "title": "a five-woman group — a formal household in-period",
+      "direction": "Generate five adult women closely associated with adult {user}, in which the setting treats multi-adult households as a recognised institution, and the group's standing within it is formal and public. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-41",
+      "group": "Group Structure Combinations",
+      "title": "a six-woman group — all friends, zero romance",
+      "direction": "Generate six adult women closely associated with adult {user}, in which every woman is a platonic friend of {{user}} and the harem label is pure joke. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-structure-combinations-42",
+      "group": "Group Structure Combinations",
+      "title": "a six-woman group — one partner plus friends",
+      "direction": "Generate six adult women closely associated with adult {user}, in which one woman is {{user}}'s partner and the rest are friends who enjoy the harem joke at her indulgence. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-structure-combinations-43",
+      "group": "Group Structure Combinations",
+      "title": "a six-woman group — two partners, agreed non-exclusivity",
+      "direction": "Generate six adult women closely associated with adult {user}, in which two women are {{user}}'s partners under an explicit, negotiated adult agreement, and the group knows its terms. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-44",
+      "group": "Group Structure Combinations",
+      "title": "a six-woman group — partners, exes and friends mixed",
+      "direction": "Generate six adult women closely associated with adult {user}, in which the group mixes current partners, one amiable ex and unattached friends, each bond generated separately. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-45",
+      "group": "Group Structure Combinations",
+      "title": "a six-woman group — mostly platonic, one admirer",
+      "direction": "Generate six adult women closely associated with adult {user}, in which the group is platonic except one woman's quiet, undeclared admiration for {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-46",
+      "group": "Group Structure Combinations",
+      "title": "a six-woman group — rivalrous but loyal",
+      "direction": "Generate six adult women closely associated with adult {user}, in which the women compete and bicker constantly yet close ranks against anything outside, and {{user}} is their common ground. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-47",
+      "group": "Group Structure Combinations",
+      "title": "a six-woman group — some women dating each other",
+      "direction": "Generate six adult women closely associated with adult {user}, in which two women in the group are romantically involved with each other, whatever their separate bonds to {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-structure-combinations-48",
+      "group": "Group Structure Combinations",
+      "title": "a six-woman group — a genuine consensual polycule",
+      "direction": "Generate six adult women closely associated with adult {user}, in which the group is a true consensual multi-partner household in which every adult agreement is explicit and current. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-structure-combinations-49",
+      "group": "Group Structure Combinations",
+      "title": "a six-woman group — a bonded found family",
+      "direction": "Generate six adult women closely associated with adult {user}, in which the group is a devoted found family with no romance at all, and the harem label amuses and annoys them in equal measure. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-50",
+      "group": "Group Structure Combinations",
+      "title": "a six-woman group — a formal household in-period",
+      "direction": "Generate six adult women closely associated with adult {user}, in which the setting treats multi-adult households as a recognised institution, and the group's standing within it is formal and public. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-51",
+      "group": "Group Structure Combinations",
+      "title": "a large loose circle of seven or more — all friends, zero romance",
+      "direction": "Generate seven or more adult women closely associated with adult {user}, in which every woman is a platonic friend of {{user}} and the harem label is pure joke. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-52",
+      "group": "Group Structure Combinations",
+      "title": "a large loose circle of seven or more — one partner plus friends",
+      "direction": "Generate seven or more adult women closely associated with adult {user}, in which one woman is {{user}}'s partner and the rest are friends who enjoy the harem joke at her indulgence. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-53",
+      "group": "Group Structure Combinations",
+      "title": "a large loose circle of seven or more — two partners, agreed non-exclusivity",
+      "direction": "Generate seven or more adult women closely associated with adult {user}, in which two women are {{user}}'s partners under an explicit, negotiated adult agreement, and the group knows its terms. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-structure-combinations-54",
+      "group": "Group Structure Combinations",
+      "title": "a large loose circle of seven or more — partners, exes and friends mixed",
+      "direction": "Generate seven or more adult women closely associated with adult {user}, in which the group mixes current partners, one amiable ex and unattached friends, each bond generated separately. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-structure-combinations-55",
+      "group": "Group Structure Combinations",
+      "title": "a large loose circle of seven or more — mostly platonic, one admirer",
+      "direction": "Generate seven or more adult women closely associated with adult {user}, in which the group is platonic except one woman's quiet, undeclared admiration for {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-56",
+      "group": "Group Structure Combinations",
+      "title": "a large loose circle of seven or more — rivalrous but loyal",
+      "direction": "Generate seven or more adult women closely associated with adult {user}, in which the women compete and bicker constantly yet close ranks against anything outside, and {{user}} is their common ground. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-57",
+      "group": "Group Structure Combinations",
+      "title": "a large loose circle of seven or more — some women dating each other",
+      "direction": "Generate seven or more adult women closely associated with adult {user}, in which two women in the group are romantically involved with each other, whatever their separate bonds to {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-58",
+      "group": "Group Structure Combinations",
+      "title": "a large loose circle of seven or more — a genuine consensual polycule",
+      "direction": "Generate seven or more adult women closely associated with adult {user}, in which the group is a true consensual multi-partner household in which every adult agreement is explicit and current. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-59",
+      "group": "Group Structure Combinations",
+      "title": "a large loose circle of seven or more — a bonded found family",
+      "direction": "Generate seven or more adult women closely associated with adult {user}, in which the group is a devoted found family with no romance at all, and the harem label amuses and annoys them in equal measure. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-structure-combinations-60",
+      "group": "Group Structure Combinations",
+      "title": "a large loose circle of seven or more — a formal household in-period",
+      "direction": "Generate seven or more adult women closely associated with adult {user}, in which the setting treats multi-adult households as a recognised institution, and the group's standing within it is formal and public. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-structure-combinations-61",
+      "group": "Group Structure Combinations",
+      "title": "a sprawling network of eight-plus across two households — all friends, zero romance",
+      "direction": "Generate eight or more adult women split across two adjoining households that function as one group closely associated with adult {user}, in which every woman is a platonic friend of {{user}} and the harem label is pure joke. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-62",
+      "group": "Group Structure Combinations",
+      "title": "a sprawling network of eight-plus across two households — one partner plus friends",
+      "direction": "Generate eight or more adult women split across two adjoining households that function as one group closely associated with adult {user}, in which one woman is {{user}}'s partner and the rest are friends who enjoy the harem joke at her indulgence. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-63",
+      "group": "Group Structure Combinations",
+      "title": "a sprawling network of eight-plus across two households — two partners, agreed non-exclusivity",
+      "direction": "Generate eight or more adult women split across two adjoining households that function as one group closely associated with adult {user}, in which two women are {{user}}'s partners under an explicit, negotiated adult agreement, and the group knows its terms. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-64",
+      "group": "Group Structure Combinations",
+      "title": "a sprawling network of eight-plus across two households — partners, exes and friends mixed",
+      "direction": "Generate eight or more adult women split across two adjoining households that function as one group closely associated with adult {user}, in which the group mixes current partners, one amiable ex and unattached friends, each bond generated separately. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    },
+    {
+      "id": "group-structure-combinations-65",
+      "group": "Group Structure Combinations",
+      "title": "a sprawling network of eight-plus across two households — mostly platonic, one admirer",
+      "direction": "Generate eight or more adult women split across two adjoining households that function as one group closely associated with adult {user}, in which the group is platonic except one woman's quiet, undeclared admiration for {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Whether the group is romantic, platonic or mixed stays open, as do all outcomes."
+    },
+    {
+      "id": "group-structure-combinations-66",
+      "group": "Group Structure Combinations",
+      "title": "a sprawling network of eight-plus across two households — rivalrous but loyal",
+      "direction": "Generate eight or more adult women split across two adjoining households that function as one group closely associated with adult {user}, in which the women compete and bicker constantly yet close ranks against anything outside, and {{user}} is their common ground. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. The 'harem' label describes the group, never blanket consent or guaranteed attraction."
+    },
+    {
+      "id": "group-structure-combinations-67",
+      "group": "Group Structure Combinations",
+      "title": "a sprawling network of eight-plus across two households — some women dating each other",
+      "direction": "Generate eight or more adult women split across two adjoining households that function as one group closely associated with adult {user}, in which two women in the group are romantically involved with each other, whatever their separate bonds to {{user}}. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Membership never implies attraction; official status and private feelings are distinct."
+    },
+    {
+      "id": "group-structure-combinations-68",
+      "group": "Group Structure Combinations",
+      "title": "a sprawling network of eight-plus across two households — a genuine consensual polycule",
+      "direction": "Generate eight or more adult women split across two adjoining households that function as one group closely associated with adult {user}, in which the group is a true consensual multi-partner household in which every adult agreement is explicit and current. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. No woman's feelings, rivalries or agreements are predetermined; {{user}}'s future is unwritten."
+    },
+    {
+      "id": "group-structure-combinations-69",
+      "group": "Group Structure Combinations",
+      "title": "a sprawling network of eight-plus across two households — a bonded found family",
+      "direction": "Generate eight or more adult women split across two adjoining households that function as one group closely associated with adult {user}, in which the group is a devoted found family with no romance at all, and the harem label amuses and annoys them in equal measure. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Any non-monogamy requires the relevant adults' explicit informed agreements."
+    },
+    {
+      "id": "group-structure-combinations-70",
+      "group": "Group Structure Combinations",
+      "title": "a sprawling network of eight-plus across two households — a formal household in-period",
+      "direction": "Generate eight or more adult women split across two adjoining households that function as one group closely associated with adult {user}, in which the setting treats multi-adult households as a recognised institution, and the group's standing within it is formal and public. How the group formed, whether they share a home, and what outsiders say about them all vary. Adult {{user}} sits at the centre of a recurring multi-woman group; each woman's bond with {{user}} and with the others is generated independently. All participants are adults; consent, agreements and {{user}}'s choices remain open. Hierarchies, labels and jokes never override any adult's autonomy or boundaries."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "The multi-woman recurring group",
+      "content": "The engine is a recurring circle of multiple adult women closely associated with {{user}}. Each woman's bond to {{user}} and to every other member is generated independently: partner, casual lover, friend, roommate, coworker, classmate, ex, admirer, rival or unlabelled."
+    },
+    {
+      "id": "trigger",
+      "label": "What kind of group it actually is",
+      "content": "Decide explicitly whether the group is a genuine consensual romantic or sexual polycule, a mixed network of partners and friends, or an entirely platonic circle that outsiders or the women jokingly call a harem. The label and the reality may or may not match."
+    },
+    {
+      "id": "status",
+      "label": "Each member's status and private feelings",
+      "content": "Give each adult woman her own official status and her own private feelings, and keep the two distinct. Not every member likes {{user}}; some may dislike him but love the group; some may love someone else within the circle."
+    },
+    {
+      "id": "web",
+      "label": "Relationships among the women",
+      "content": "Establish the women's friendships, rivalries, cliques, jealousies and affection for one another as the group's real texture. Some may date or sleep with each other; that belongs to their own consenting adult choices, not to {{user}}."
+    },
+    {
+      "id": "hierarchy",
+      "label": "Hierarchy and primary partnerships",
+      "content": "Vary whether there is one acknowledged primary partner, an explicit negotiated hierarchy, or a flat insistence on equality. Any structure is described by its actual adult agreements, never assumed from the harem label."
+    },
+    {
+      "id": "consent",
+      "label": "Agreements over blanket assumptions",
+      "content": "If romantic or sexual non-monogamy exists, write the relevant adults' actual agreements and boundaries. Group membership is never blanket consent, and uninvolved outsiders' consent cannot be presumed."
+    },
+    {
+      "id": "user",
+      "label": "{{user}}'s unstated interior",
+      "content": "Do not establish that {{user}} enjoys, wants, manages or reciprocates the harem unless the chosen scenario explicitly supplies it. Whether he deliberately built the group, tolerates it or is bewildered by it is an open axis, not a default."
+    },
+    {
+      "id": "origin",
+      "label": "How the group formed",
+      "content": "Vary the origin: shared housing, a workplace, a club, one friend at a time, an inherited circle or pure accident. The formation story shapes which members feel senior and which feel new."
+    },
+    {
+      "id": "living",
+      "label": "Living arrangements and daily logistics",
+      "content": "Decide who lives where: one crowded shared house, adjoining flats, separate homes with a shared table. The group's chore wheels, rosters and calendars are good material and never imply anything romantic."
+    },
+    {
+      "id": "outsiders",
+      "label": "How outsiders perceive the group",
+      "content": "Neighbours, coworkers, families and the internet hold theories about the group that range from boring to wildly wrong. Outside perception is distinct from ground truth, and the women respond to it differently."
+    },
+    {
+      "id": "character",
+      "label": "Complete women, not a collection",
+      "content": "Each adult woman keeps her own occupation, history, hobbies, values, boundaries and life outside the group. No member is reduced to her relationship with {{user}} or her slot in the group."
+    },
+    {
+      "id": "events",
+      "label": "Group life and turning points",
+      "content": "Anchor the card in recurring group life — Sunday dinners, holidays, birthdays, shared projects — plus one live question or turning point that gives the opening its momentum without deciding its outcome."
+    },
+    {
+      "id": "opening",
+      "label": "Playable first scene",
+      "content": "Open at a concrete group moment: a dinner that runs long, a new member's first visit, a moving-away announcement, a dinner-table interrogation of what the group is. Do not script {{user}}'s feelings, answers or decisions."
+    },
+    {
+      "id": "boundary",
+      "label": "Related series and optional crossovers",
+      "content": "Distinct from Bible I Open Relationship, which is one couple negotiating openness, and from Crossed Couples, which is two paired couples. Just Married, Our Trip Together and She Wants You supply optional crossovers for specific members' situations."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult character-card premise for His Harem. Adult {{user}} is at the centre of a recurring group of three to seven or more adult women, formed by shared housing, work, a club or accident. The group may be a genuine consensual romantic or sexual harem with explicit adult agreements, a mixed network of partners and friends, or an entirely platonic circle that outsiders or the women jokingly call a harem. Generate each woman independently: her own bond with {{user}} (partner, casual lover, friend, roommate, coworker, ex, admirer or rival), her own private feelings, and her own friendships, rivalries or romances with the other women. Vary hierarchy, living arrangements and outsider theories, and never assume {{user}} enjoys, wants or reciprocates any of it. Membership is never consent; all non-monogamy requires informed adult agreement. Open at a concrete group moment with every outcome unwritten."
+}
