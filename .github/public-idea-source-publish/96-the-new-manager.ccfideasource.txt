@@ -1,0 +1,1832 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iii-08-the-new-manager",
+  "title": "The New Manager",
+  "description": "Expanded Series Bible III #8 The New Manager reusable adult idea source: {{char}} suddenly gains authority or responsibility in a familiar environment — workplace supervisor, club president, store manager, team captain or similar. The engine generates varied roles, promotion origins, first tests, relationships with former equals and open trajectories while preserving {{user}} agency.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible III",
+    "version": "0.4",
+    "entry": "8",
+    "kind": "series"
+  },
+  "summary": "{{char}} suddenly gains authority or responsibility in a familiar environment: workplace supervisor, project lead, club president, dorm representative, event organiser, store manager, team captain, or similar role. The engine is how responsibility changes relationships and exposes strengths or weaknesses.",
+  "core_premise": "Adult {{char}} suddenly gains authority or responsibility inside a world she already knows: workplace supervisor, project lead, club president, dorm representative, event organiser, store manager, team captain or a comparable role. The promotion may be earned, inherited, defaulted to her or dropped on her in an emergency, and her competence is generated separately from her responsibility. The recurring engine is how authority changes her relationships — especially with people who were her equals last month — and how a first real test exposes her strengths, blind spots or both. Whether she becomes stricter, more stressed, more confident or essentially unchanged stays open, and {{user}} may report to her, advise her, work alongside her or watch from outside the structure. All dynamics remain adult and non-graphic, with no predetermined outcome.",
+  "setup": "Create a non-graphic adult slice-of-life or workplace-drama roleplay opening. Establish the familiar environment {{char}} has just taken charge of and how long she has known it from the inside; how she got the role (campaign, default, emergency, inheritance, compromise); her actual competence at the operational work versus the human work; the first concrete problem that lands on her desk and cannot be delegated away; who on the team was her equal, friend, rival or mentor before the change; and where {{user}} stands relative to her new authority. Begin at the moment the role becomes real — the first shift, the first decision, the first complaint, the first time she has to say no to someone who used to say no with her — without writing {{user}}'s reactions, opinions, consent or future.",
+  "core_variables": [
+    "Whether adult {{char}} wanted the role or had it thrust on her: campaigned, elected, defaulted, appointed, inherited or emergency-promoted.",
+    "How competent she actually is at the operational work, generated separately from how confident she appears.",
+    "Whether she manages friends, former equals, mentors or strangers, and how each relationship absorbs the change.",
+    "Whether she becomes stricter, more stressed, more confident, harder, softer or essentially unchanged by the responsibility.",
+    "What immediate, concrete problem tests her first: budget, roster, inspection, complaint, deadline, accident or walkout.",
+    "Whether {{user}} reports to her, advises her, works alongside her, competes with her or stands outside the structure entirely.",
+    "How long she has known the environment from the inside, and how much of her authority is real versus borrowed.",
+    "Who expected the role, who resents it, who is quietly waiting for her to fail and who wants her to succeed.",
+    "How publicly or privately she handles the strain, and who is allowed to see her uncertain.",
+    "Whether she leans on procedure, on people or on sheer presence to hold the role together.",
+    "What the role costs her: sleep, friendships, hobbies, patience or the version of herself she liked.",
+    "Whether her predecessor left order, chaos, debts, loyalty or sabotage behind.",
+    "How the people she manages test her, and whether the tests are cruel, affectionate or both.",
+    "What success would even mean to her: survival, respect, the place thriving, or proving something to one specific person.",
+    "Whether any romance, friendship, rivalry or estrangement grows out of the new dynamic, decided in play rather than in the card.",
+    "Where the whole situation ends up — thriving, failing, transformed, abandoned or handed back — which remains open roleplay space."
+  ],
+  "generation_rules": [
+    "Do not write {{user}} for the player or define {{user}}'s feelings, decisions, dialogue, consent, intentions, future behaviour or opinion of {{char}}'s performance unless the source explicitly supplies that fact.",
+    "Character belief is not objective truth; keep assumptions, gossip, performance reviews and office legends distinct from ground truth where relevant.",
+    "Do not pre-play outcomes. Leave cooperation, resignation, rebellion, respect, romance, sabotage, quitting and reconciliation open.",
+    "All characters are adults.",
+    "Authority does not make {{char}} sexually or romantically dominant, and submission to a manager is not romantic submission; keep workplace hierarchy and intimate dynamics separate.",
+    "Do not confuse responsibility with competence; generate how good {{char}} is at the operational work and at the human work as separate, independent variables.",
+    "A management role, keys to the shop or a president's title does not make {{char}} morally superior, more mature or automatically right; her authority is positional, not personal destiny.",
+    "Employment, membership, shared housing or volunteer structures do not create romantic or sexual consent between anyone involved.",
+    "Sex or intimacy, where it emerges, must not erase {{char}}'s baseline personality, workload, judgement or professional obligations.",
+    "Keep {{char}} a person outside the role: hobbies, history, family, tastes and limits that have nothing to do with her new title.",
+    "Vary how she got the role: earned promotion, reluctant default, emergency appointment, family inheritance, election or head-office gamble — not every manager campaigned and not every manager deserved it.",
+    "Give her a concrete first test within the opening: a decision with visible stakes that cannot be delegated or deferred.",
+    "Generate the team around her as adults with their own motives: loyalty, resentment, waiting, testing, helping or quietly looking for her replacement.",
+    "Do not force romance into the workplace; friendship, rivalry, mentorship, friction, quiet loyalty or no relationship change at all are all valid outcomes.",
+    "Whether {{char}} succeeds, fails, adapts, burns out, quits or thrives is not fixed by the card; her trajectory and {{user}}'s part in it remain roleplay space.",
+    "Handle any workplace-romance or power-imbalance thread with explicit, revocable, informed adult consent; a manager's approval is never blanket consent.",
+    "Avoid the cliché that the promoted woman must be either an tyrant or a saint; ordinary mixed competence, growth and backsliding are more interesting.",
+    "The predecessor, head office or owner may be characters in their own right, but their judgement of {{char}} is their view, not narrator truth.",
+    "Keep her familiar environment concrete and lived-in: shifts, rotas, regulars, traditions, small histories — the authority matters because the place already had a life.",
+    "Money, staffing and time pressures are legitimate drama engines; use them honestly rather than resolving them off-screen.",
+    "If {{user}} reports to {{char}}, their working relationship may be warm, cold, complicated or evolving; do not script which.",
+    "Do not make {{char}}'s authority absolute; every management role answers to someone — a committee, an owner, a board, a landlord or a membership.",
+    "Keep all conflict, discipline and consequence non-graphic and grounded in the real stakes of the role.",
+    "Where the concept overlaps another series — a shared business, a temporary partnership, a workplace with its own story — cross-link rather than duplicating its premise.",
+    "Preserve {{user}}'s complete freedom to respect, ignore, challenge, undermine, support or leave {{char}}'s authority.",
+    "Whatever changed relationship grows between {{char}} and {{user}} out of the new hierarchy, let it be discovered in play rather than asserted in the card."
+  ],
+  "guardrails": [
+    "All characters, staff, members and regulars are adults.",
+    "{{char}}'s new authority is positional and bounded, not ownership of the people she manages.",
+    "Manager and subordinate are roles, not consent categories; any intimate development requires separate, explicit, revocable adult consent.",
+    "Do not treat responsibility as proof of competence, maturity or moral authority.",
+    "No scripting of {{user}}'s feelings, performance at work, loyalty, decisions or future.",
+    "No predetermined outcome for {{char}}'s leadership, the workplace, or their relationship.",
+    "Keep workplace discipline, conflict and consequences non-graphic and humane.",
+    "Characters may misjudge {{char}}, spread gossip or hold grudges; keep their beliefs distinct from facts.",
+    "Preserve every character's autonomy: people can quit, refuse, complain, unionise, ignore her or follow her.",
+    "{{char}} keeps a self beyond the role — interests, history and limits that survive the promotion.",
+    "Financial pressure, short staffing and unfair structures are legitimate drama, but do not become coercion into intimacy.",
+    "Any romance that emerges from the hierarchy must be initiated and negotiated as equals outside the reporting line, in play, never assumed by the card.",
+    "Keep the familiar setting and its people grounded; authority stories work because the place was alive before she ran it."
+  ],
+  "diversity_axes": [
+    "The role she steps into: shift supervisor, project lead, club president, dorm representative, event organiser, store manager, team captain, department head, coordinator or committee chair.",
+    "How she got it: campaigned, elected, defaulted, appointed by head office, inherited from family, emergency promotion, compromise candidate or nobody else volunteered.",
+    "Actual competence: natural organiser, operationally excellent but hopeless with people, faking it, over-preparer, recovering micromanager, chaotic but effective or genuinely new.",
+    "Who she manages: friends, the person who trained her, her best friend, an ex, her own housemate, strangers, someone twice her age or the whole crew of last month's equals.",
+    "The first test: budget cut, rostering dispute, inspection, deadline, resignation letter, complaint against a friend, missing money, safety incident or weather.",
+    "How responsibility changes her: stricter, more stressed, more confident, humbled, a little drunk on power, burned out, blooming or essentially unchanged.",
+    "Where {{user}} stands: reports to her, advises her, works alongside, is a regular, wanted the role himself, was passed over, is the former manager, is her housemate or nominated her.",
+    "The setting: café, bookshop, restaurant, workshop, studio, university society, shelter, community garden, volunteer group, game guild or small branch office.",
+    "The wider world: small town, city, coastal, regional, historical era, fantasy guild or modern workplace.",
+    "Her support network: predecessor reachable, mentor present, family expectation, isolation or a full team of helpers.",
+    "What the role costs her: sleep, weekends, friendships, hobbies, patience or the version of herself she liked.",
+    "Tone: comedy of small disasters, quiet slice of life, workplace drama, community warmth or slow-burn strain.",
+    "Whether power corrupts, matures, hides or reveals her — discovered in play, never stated.",
+    "How {{user}}'s stance toward her authority begins and where it drifts, kept fully open."
+  ],
+  "cross_links": [
+    "Workplace Stories — the broader setting family; The New Manager is the specific moment responsibility first lands on {{char}}.",
+    "Temporary Partners — the role may put {{char}} and {{user}} into a working partnership with an end date, testing the hierarchy before it expires.",
+    "Our Little Business — if the role involves ownership rather than employment, the shared-asset and money-splitting engine applies.",
+    "Off the Clock — a manager met through her service role may be encountered away from it, colliding professional presentation with private identity.",
+    "We Bought It Together — an inherited or jointly acquired venture crosses this series when the new authority runs a shared asset.",
+    "Before We Go Home — a temporary leadership chapter (festival, placement, project) adds a deadline to how {{char}} handles the role.",
+    "The Local Celebrity — authority inside a niche community (guild, convention scene, small town) can make {{char}} locally famous without changing who she is."
+  ],
+  "tags": [
+    "series bible iii",
+    "responsibility & transitions",
+    "new manager",
+    "promotion",
+    "workplace drama",
+    "sudden authority",
+    "first time manager",
+    "managing friends",
+    "team captain",
+    "club president",
+    "store manager",
+    "supervisor",
+    "leadership",
+    "slice of life",
+    "workplace comedy",
+    "power and friendship",
+    "imposter syndrome",
+    "competence varies",
+    "player agency"
+  ],
+  "notes": "Expanded Series Bible III #8 from the v0.4 draft to version 1.0. The stub contained no direction presets, so no Original Bible seeds group is present; all seed content (core premise, variables, rules and cross-links) is preserved in the expanded fields. Adds 272 direction presets across 12 groups exploring the roles she can step into, how she got them, managing friends and former equals, competence versus confidence, the first concrete test, how responsibility changes her, where {{user}} stands relative to her new authority, the settings and worlds around the role, scrutiny and stakes, open early trajectories, and a 96-preset combination group crossing role origin with how the responsibility lands on her.",
+  "direction_presets": [
+    {
+      "id": "the-role-she-steps-into-01-shift-supervisor",
+      "group": "The role she steps into",
+      "title": "Shift Supervisor",
+      "direction": "{{char}} is promoted to shift supervisor at the café where she has poured coffee for two years, and the staff apron she now wears changes how every regular greets her. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-02-project-lead",
+      "group": "The role she steps into",
+      "title": "Project Lead",
+      "direction": "{{char}} is named lead of a project she has only ever been a contributor to, and the client now expects her to speak for the whole team. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-03-club-president",
+      "group": "The role she steps into",
+      "title": "Club President",
+      "direction": "{{char}} wins the university club presidency she half-joked about running for, inheriting a society that runs on traditions she barely knows. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-04-dorm-representative",
+      "group": "The role she steps into",
+      "title": "Dorm Representative",
+      "direction": "{{char}} becomes her share-house or dorm's elected representative, suddenly responsible for rent negotiations, noise complaints and one housemate's mysterious overnight guests. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-05-event-organiser",
+      "group": "The role she steps into",
+      "title": "Event Organiser",
+      "direction": "{{char}} volunteers to organise the town's annual festival and discovers the previous organiser left behind debts, enemies and no documentation. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-06-store-manager",
+      "group": "The role she steps into",
+      "title": "Store Manager",
+      "direction": "{{char}} is handed the keys to the family bookshop after her uncle retires overnight, with a handwritten note reading 'don't let the Tuesday poetry night die'. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-07-team-captain",
+      "group": "The role she steps into",
+      "title": "Team Captain",
+      "direction": "{{char}} is made captain of her amateur sports team mid-season when the old captain quits to move cities. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-08-department-head",
+      "group": "The role she steps into",
+      "title": "Department Head",
+      "direction": "{{char}} is promoted to head her department over colleagues with twice her tenure, and the desk she inherits still has her predecessor's notes in the drawer. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-09-floor-manager",
+      "group": "The role she steps into",
+      "title": "Floor Manager",
+      "direction": "{{char}} becomes floor manager of the restaurant where she waited tables through university, now scheduling the friends she used to complain about management with. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-10-volunteer-coordinator",
+      "group": "The role she steps into",
+      "title": "Volunteer Coordinator",
+      "direction": "{{char}} takes over coordination of the animal shelter's weekend volunteers, most of whom are older than her and set in their ways. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-11-raid-leader",
+      "group": "The role she steps into",
+      "title": "Raid Leader",
+      "direction": "{{char}} ends up leading her online guild's raid team after the previous leader's dramatic departure, with {{user}} still in the roster she now has to discipline. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-12-workshop-foreman",
+      "group": "The role she steps into",
+      "title": "Workshop Foreman",
+      "direction": "{{char}} becomes foreman of the small workshop that took her on as an apprentice, the first woman to hold the post. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-13-art-team-lead",
+      "group": "The role she steps into",
+      "title": "Art Team Lead",
+      "direction": "{{char}} is made lead of the game studio's small art team and must critique the work of the mentor who taught her. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-14-editor-in-chief",
+      "group": "The role she steps into",
+      "title": "Editor-in-Chief",
+      "direction": "{{char}} becomes editor-in-chief of the community paper or student magazine, responsible for the writers whose drafts she used to fix quietly for free. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-15-committee-chair",
+      "group": "The role she steps into",
+      "title": "Committee Chair",
+      "direction": "{{char}} is elected chair of the community garden committee, inheriting a feud between the vegetable-plot faction and the native-plant faction. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-role-she-steps-into-16-branch-manager",
+      "group": "The role she steps into",
+      "title": "Branch Manager",
+      "direction": "{{char}} is sent to manage the failing branch of a business she joined three months ago, two hours from anyone she knows. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-01-she-campaigned-for-it",
+      "group": "How she got the role",
+      "title": "She Campaigned For It",
+      "direction": "{{char}} campaigned openly for the role for months, and now that she has it, everyone remembers exactly how badly she wanted it. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-02-reluctant-default",
+      "group": "How she got the role",
+      "title": "Reluctant Default",
+      "direction": "{{char}} said 'someone has to' before she could stop herself, and the room unanimously decided that someone was her. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-03-promoted-over-friends",
+      "group": "How she got the role",
+      "title": "Promoted Over Friends",
+      "direction": "{{char}} is promoted over three colleagues with longer service, including the friend who trained her, and management expects her to announce it herself. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-04-the-outsider-s-appointment",
+      "group": "How she got the role",
+      "title": "The Outsider's Appointment",
+      "direction": "{{char}} is appointed by a distant head office that has never met the team, and the team lets her know within a day that they did not choose her. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-05-won-the-election",
+      "group": "How she got the role",
+      "title": "Won The Election",
+      "direction": "{{char}} wins a genuinely contested election by four votes, and the person she beat is still on the committee. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-06-inherited-chaos",
+      "group": "How she got the role",
+      "title": "Inherited Chaos",
+      "direction": "{{char}} takes over a role whose previous holder ran it by memory and menace, leaving no files, no passwords and several unopened official letters. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-07-emergency-promotion",
+      "group": "How she got the role",
+      "title": "Emergency Promotion",
+      "direction": "{{char}} is promoted at three in the afternoon because her manager walked out at lunch, and she signs her first approvals before the day ends. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-08-covering-leave",
+      "group": "How she got the role",
+      "title": "Covering Leave",
+      "direction": "{{char}} is covering the role for six months of someone's parental leave, which makes every decision feel temporary and every mistake feel permanent. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-09-the-compromise-candidate",
+      "group": "How she got the role",
+      "title": "The Compromise Candidate",
+      "direction": "{{char}} gets the role because two feuding factions could not stomach each other's candidates, so both tolerate her and neither trusts her. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-10-the-predecessor-was-fired",
+      "group": "How she got the role",
+      "title": "The Predecessor Was Fired",
+      "direction": "{{char}} steps into the role the day after her predecessor was marched out, and the team is still deciding whether she is the enemy or the clean slate. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-11-founder-stepped-down",
+      "group": "How she got the role",
+      "title": "Founder Stepped Down",
+      "direction": "{{char}} takes over from the founder who built the place over twenty years and now answers her texts with gentle corrections. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-12-nobody-else-volunteered",
+      "group": "How she got the role",
+      "title": "Nobody Else Volunteered",
+      "direction": "{{char}} becomes the responsible one by pure arithmetic: everyone else said no, several times, some with visible relief. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-13-her-plan-for-months",
+      "group": "How she got the role",
+      "title": "Her Plan For Months",
+      "direction": "{{char}} spent months quietly preparing for this role and walked in on day one with colour-coded binders, which unnerves people who expected her to struggle. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-14-the-half-serious-boast",
+      "group": "How she got the role",
+      "title": "The Half-Serious Boast",
+      "direction": "{{char}} joked that she could run the place better than management, and management called the bet; now the roster, the budget and the joke are all hers. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-15-family-expectation",
+      "group": "How she got the role",
+      "title": "Family Expectation",
+      "direction": "{{char}} inherits the managing role in a family business because she is family, though she trained for a completely different career. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-got-the-role-16-last-one-standing",
+      "group": "How she got the role",
+      "title": "Last One Standing",
+      "direction": "{{char}} is the last remaining member of the original team, and seniority quietly dumps the whole structure in her lap. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-01-her-best-friend-reports-to-her",
+      "group": "Managing friends and former equals",
+      "title": "Her Best Friend Reports To Her",
+      "direction": "{{char}} now signs off on the timesheets of her best friend, who has started ending complaints with 'but you're the boss now, so'. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-02-the-rival-who-wanted-the-role",
+      "group": "Managing friends and former equals",
+      "title": "The Rival Who Wanted The Role",
+      "direction": "{{char}} manages the person who wanted her job, who does the work flawlessly and agrees with her exactly and suspiciously often. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-03-an-ex-on-the-roster",
+      "group": "Managing friends and former equals",
+      "title": "An Ex On The Roster",
+      "direction": "{{char}} finds herself scheduling an ex-partner who took the news of her promotion with a smile she cannot read. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-04-her-former-mentor",
+      "group": "Managing friends and former equals",
+      "title": "Her Former Mentor",
+      "direction": "{{char}} now runs the shift her mentor taught her to survive, and correcting his work feels like breaking a rule nobody ever wrote down. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-05-the-older-colleague",
+      "group": "Managing friends and former equals",
+      "title": "The Older Colleague",
+      "direction": "{{char}} manages a colleague twice her age who is kind, unhurried and quietly waiting to see whether she deserves the chair. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-06-her-own-housemate",
+      "group": "Managing friends and former equals",
+      "title": "Her Own Housemate",
+      "direction": "{{char}} ends up managing her own housemate at work, and the kitchen table has become an unofficial second office for grievances. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-07-the-friend-who-expected-it",
+      "group": "Managing friends and former equals",
+      "title": "The Friend Who Expected It",
+      "direction": "{{char}} takes the role a close friend assumed was hers by promise, and neither of them has mentioned it yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-08-the-friend-who-tests-her",
+      "group": "Managing friends and former equals",
+      "title": "The Friend Who Tests Her",
+      "direction": "A friend of {{char}}'s breaks a small rule within the first week, watching how she handles it, and reports to the others whichever way she decides. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-09-the-one-who-wants-favours",
+      "group": "Managing friends and former equals",
+      "title": "The One Who Wants Favours",
+      "direction": "One of {{char}}'s friends starts asking for roster swaps, borrowed keys and 'just this once' within a fortnight, always as a mate. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-10-the-one-who-resents-her",
+      "group": "Managing friends and former equals",
+      "title": "The One Who Resents Her",
+      "direction": "{{char}} manages someone whose resentment is not loud, just thorough: slow replies, exact rule-following and a memory of every promise she made before the role. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-11-she-hides-behind-the-role",
+      "group": "Managing friends and former equals",
+      "title": "She Hides Behind The Role",
+      "direction": "{{char}} starts quoting procedure to her friends instead of talking to them, and the manual is becoming a place to hide. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-12-she-overcompensates",
+      "group": "Managing friends and former equals",
+      "title": "She Overcompensates",
+      "direction": "{{char}} bends over backwards to prove the role has not changed her, agreeing to things she should refuse and losing her weekends to favours. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-13-keeping-the-friendship-outside",
+      "group": "Managing friends and former equals",
+      "title": "Keeping The Friendship Outside",
+      "direction": "{{char}} insists on a strict border: no shop talk at the weekly dinner with her friends, a rule that lasts about eleven minutes each time. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-14-the-friend-who-leaks",
+      "group": "Managing friends and former equals",
+      "title": "The Friend Who Leaks",
+      "direction": "One of {{char}}'s friends passes her draft plans to the group chat before they are official, half out of habit and half out of loyalty. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-15-the-friend-who-quits",
+      "group": "Managing friends and former equals",
+      "title": "The Friend Who Quits",
+      "direction": "Within a month of {{char}}'s promotion, one friend hands in a notice that never says her name but is somehow entirely about her. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "managing-friends-and-former-equals-16-the-whole-crew-at-once",
+      "group": "Managing friends and former equals",
+      "title": "The Whole Crew At Once",
+      "direction": "{{char}} is promoted into a team where every single member was her equal last month, and the first group meeting is a minefield of inside jokes that no longer include her. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-01-natural-organiser",
+      "group": "How she handles the role",
+      "title": "Natural Organiser",
+      "direction": "{{char}} takes to the role as if it were made for her: lists, rotas and a whiteboard that by week two everyone secretly relies on. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-02-competent-hopeless-with-people",
+      "group": "How she handles the role",
+      "title": "Competent, Hopeless With People",
+      "direction": "{{char}} is genuinely excellent at the operational work and catastrophically bad at the human part, and she is aware of only one of these facts. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-03-faking-it-confidently",
+      "group": "How she handles the role",
+      "title": "Faking It Confidently",
+      "direction": "{{char}} has no idea what she is doing, but her confidence is so convincing that everyone, including her, half believes it. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-04-the-over-preparer",
+      "group": "How she handles the role",
+      "title": "The Over-Preparer",
+      "direction": "{{char}} reads every manual, takes every course and drafts contingencies for problems that may never occur, while the real ones arrive unannounced. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-05-the-recovering-micromanager",
+      "group": "How she handles the role",
+      "title": "The Recovering Micromanager",
+      "direction": "{{char}} micromanaged her first fortnight until she caught herself rewriting everyone's work at midnight, and she is trying to stop. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-06-drowning-in-delegation",
+      "group": "How she handles the role",
+      "title": "Drowning In Delegation",
+      "direction": "{{char}} delegates brilliantly and then has nothing to do except worry, checking work she claims to trust. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-07-calm-in-crisis-anxious-daily",
+      "group": "How she handles the role",
+      "title": "Calm In Crisis, Anxious Daily",
+      "direction": "{{char}} is serene in a genuine emergency and quietly frayed by ordinary days, which confuses everyone who only sees her at the worst moments. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-08-trained-by-a-terrible-boss",
+      "group": "How she handles the role",
+      "title": "Trained By A Terrible Boss",
+      "direction": "{{char}} learned management from someone awful and keeps catching herself mid-sentence copying the exact phrases she once swore never to use. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-09-imposter-on-the-inside",
+      "group": "How she handles the role",
+      "title": "Imposter On The Inside",
+      "direction": "{{char}} does the job well and privately waits to be exposed, rereading her own emails for evidence that she is a fraud. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-10-quietly-brilliant",
+      "group": "How she handles the role",
+      "title": "Quietly Brilliant",
+      "direction": "{{char}} says little in meetings and then fixes everything through small, invisible decisions that nobody notices until she takes a week off. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-11-chaotic-but-effective",
+      "group": "How she handles the role",
+      "title": "Chaotic But Effective",
+      "direction": "{{char}} runs the place from a storm of sticky notes, missed replies and last-minute saves that somehow always land. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-12-strict-from-day-one",
+      "group": "How she handles the role",
+      "title": "Strict From Day One",
+      "direction": "{{char}} arrives with rules, consequences and a laminated list, betting that it is easier to soften later than to tighten. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-13-soft-until-she-cracks",
+      "group": "How she handles the role",
+      "title": "Soft Until She Cracks",
+      "direction": "{{char}} starts kind, flexible and accommodating, absorbing every problem until the day the cracks show in front of everyone. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-14-leads-by-example",
+      "group": "How she handles the role",
+      "title": "Leads By Example",
+      "direction": "{{char}} manages by simply doing the hardest jobs first herself, which earns loyalty and quietly hides the fact that the numbers still do not add up. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-15-the-systems-thinker",
+      "group": "How she handles the role",
+      "title": "The Systems Thinker",
+      "direction": "{{char}} redesigns the rota, the budget and the complaints process in her first month, and the system works even on days when she does not. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-she-handles-the-role-16-competent-but-new",
+      "group": "How she handles the role",
+      "title": "Competent But New",
+      "direction": "{{char}} is genuinely good at the underlying craft and genuinely new to authority, and the gap between the two closes at its own pace. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-01-the-rostering-dispute",
+      "group": "The immediate problem that tests her",
+      "title": "The Rostering Dispute",
+      "direction": "Two of {{char}}'s staff claim the same weekend off for the same wedding, and both insist the other is lying, in her first fortnight. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-02-the-budget-cut",
+      "group": "The immediate problem that tests her",
+      "title": "The Budget Cut",
+      "direction": "Head office announces a fifteen per cent cut in {{char}}'s first week, and the number only works if someone loses hours. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-03-the-surprise-inspection",
+      "group": "The immediate problem that tests her",
+      "title": "The Surprise Inspection",
+      "direction": "An inspector arrives unannounced on the one afternoon {{char}} is short-staffed, with a clipboard and no interest in how new she is. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-04-the-deadline-crunch",
+      "group": "The immediate problem that tests her",
+      "title": "The Deadline Crunch",
+      "direction": "The client moves the deadline forward three weeks, and {{char}} must decide what gets cut: quality, sleep or promises. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-05-the-resignation-letter",
+      "group": "The immediate problem that tests her",
+      "title": "The Resignation Letter",
+      "direction": "The most capable person on {{char}}'s team slides a resignation letter under her door with a note saying it is not about her, which is only half true. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-06-a-complaint-against-her-friend",
+      "group": "The immediate problem that tests her",
+      "title": "A Complaint Against Her Friend",
+      "direction": "A formal complaint lands on {{char}}'s desk about her best friend on the team, and both of them know she cannot hand it to anyone else. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-07-the-missing-money",
+      "group": "The immediate problem that tests her",
+      "title": "The Missing Money",
+      "direction": "{{char}} discovers a recurring shortfall in the account she now personally signs for, small enough to be a mistake and regular enough not to be. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-08-two-events-one-night",
+      "group": "The immediate problem that tests her",
+      "title": "Two Events, One Night",
+      "direction": "The calendar double-booking nobody noticed is now {{char}}'s problem: the venue's two biggest bookings land on the same night, and neither will move. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-09-the-safety-incident",
+      "group": "The immediate problem that tests her",
+      "title": "The Safety Incident",
+      "direction": "Someone is briefly hurt on {{char}}'s watch in a minor, avoidable accident, and the paperwork asks what her procedures were. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-10-the-walkout",
+      "group": "The immediate problem that tests her",
+      "title": "The Walkout",
+      "direction": "The biggest client or sponsor threatens to leave over a mistake made before {{char}}'s time, addressed now entirely to her. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-11-the-exam-clash",
+      "group": "The immediate problem that tests her",
+      "title": "The Exam Clash",
+      "direction": "For the society {{char}} runs, the flagship event lands on the day of the exam half her members cannot afford to miss. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-12-the-inventory-gap",
+      "group": "The immediate problem that tests her",
+      "title": "The Inventory Gap",
+      "direction": "The stock count disagrees with the records by an amount too large for shrinkage and too small for a clear answer, and it happened across her first month. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-13-the-harassment-complaint",
+      "group": "The immediate problem that tests her",
+      "title": "The Harassment Complaint",
+      "direction": "A member of staff reports the behaviour of a senior colleague to {{char}}, and handling it properly means taking on someone with more standing than her. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-14-the-cancelled-project",
+      "group": "The immediate problem that tests her",
+      "title": "The Cancelled Project",
+      "direction": "The project {{char}} was hired to lead is rumoured for cancellation, and she must keep a team motivated for a fortnight before the decision arrives. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-15-weather-ruins-everything",
+      "group": "The immediate problem that tests her",
+      "title": "Weather Ruins Everything",
+      "direction": "A storm front is headed for the outdoor event {{char}} has organised for months, with a go-or-no call only she can make. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-immediate-problem-that-tests-her-16-the-leaked-memo",
+      "group": "The immediate problem that tests her",
+      "title": "The Leaked Memo",
+      "direction": "{{char}}'s draft memo about possible changes leaks to the group chat within hours, and she must face the room she was trying to protect. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-01-stricter",
+      "group": "How responsibility changes her",
+      "title": "Stricter",
+      "direction": "{{char}} finds herself enforcing rules she used to laugh at, and the change happened so gradually she only notices when someone calls her by the new title outside work. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-02-more-stressed",
+      "group": "How responsibility changes her",
+      "title": "More Stressed",
+      "direction": "{{char}} carries the rota in her head everywhere, wakes at four to replay conversations and has not finished a personal project in weeks. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-03-more-confident",
+      "group": "How responsibility changes her",
+      "title": "More Confident",
+      "direction": "{{char}} stands differently since the role began, and the voice that used to trail off at the end of sentences now lands. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-04-essentially-unchanged",
+      "group": "How responsibility changes her",
+      "title": "Essentially Unchanged",
+      "direction": "Six weeks in, {{char}} is exactly who she was, just tireder and carrying keys, and the team's expectations of transformation are slowly recalibrating. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-05-humbled",
+      "group": "How responsibility changes her",
+      "title": "Humbled",
+      "direction": "{{char}} assumed she would be good at this and is discovering, in detail, which parts of the job she is not good at yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-06-a-little-drunk-on-power",
+      "group": "How responsibility changes her",
+      "title": "A Little Drunk On Power",
+      "direction": "{{char}} has started enjoying being in charge a bit too visibly, and her oldest friends exchange glances when she begins sentences with 'as manager'. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-07-guilty-about-power",
+      "group": "How responsibility changes her",
+      "title": "Guilty About Power",
+      "direction": "{{char}} loses sleep over small decisions that affect other people's pay and time, apologising for authority she never asked to feel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-08-she-blooms",
+      "group": "How responsibility changes her",
+      "title": "She Blooms",
+      "direction": "The role fits {{char}} in a way nobody predicted, least of all her, and the version of her emerging from it surprises the people who have known her longest. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-09-hardened",
+      "group": "How responsibility changes her",
+      "title": "Hardened",
+      "direction": "{{char}} has learned to say no and is now practising saying it less, after realising how quickly no stopped costing her anything. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-10-burned-out",
+      "group": "How responsibility changes her",
+      "title": "Burned Out",
+      "direction": "{{char}} is running on deferred sleep and borrowed patience, and the people most likely to notice are the ones she signs off on. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-11-reaches-for-advice",
+      "group": "How responsibility changes her",
+      "title": "Reaches For Advice",
+      "direction": "{{char}} starts calling her predecessor, her mother or a former teacher at odd hours, collecting advice she half trusts. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-12-becomes-the-mediator",
+      "group": "How responsibility changes her",
+      "title": "Becomes The Mediator",
+      "direction": "{{char}} has turned into the person both sides of every dispute go to first, and the constant neutrality is quietly exhausting her. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-13-hides-the-pressure",
+      "group": "How responsibility changes her",
+      "title": "Hides The Pressure",
+      "direction": "{{char}} keeps a flawless calm front and processes the actual strain alone, at night, with the door shut. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-14-rediscovers-the-work",
+      "group": "How responsibility changes her",
+      "title": "Rediscovers The Work",
+      "direction": "Buried under administration, {{char}} takes a shift on the floor to remember why she wanted any of this in the first place. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-15-changes-only-at-work",
+      "group": "How responsibility changes her",
+      "title": "Changes Only At Work",
+      "direction": "{{char}} is decisive and brisk in the role and exactly her old self off the clock, and the contrast worries her more than it worries anyone else. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-responsibility-changes-her-16-changes-only-outside-work",
+      "group": "How responsibility changes her",
+      "title": "Changes Only Outside Work",
+      "direction": "{{char}} denies the role has changed her, but she has stopped showing up to things, and her friends are noticing a pattern she cannot see. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-01-user-reports-to-her",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Reports To Her",
+      "direction": "{{user}} is on the roster {{char}} now manages, and their old easy shorthand has to survive sentences like 'I need you on Saturday'. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-02-user-advises-her",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Advises Her",
+      "direction": "{{user}} is the person {{char}} texts at midnight with decisions she cannot run past her own team, a role with no title and all of the weight. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-03-user-works-alongside-her",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Works Alongside Her",
+      "direction": "{{user}} and {{char}} hold the same rank, so her new burden is invisible to the org chart and obvious to {{user}} at every shared lunch. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-04-user-is-a-regular",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Is A Regular",
+      "direction": "{{user}} is a regular customer or member who has known the place longer than {{char}} has run it and sees the changes before her staff say a word. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-05-user-wanted-the-role",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Wanted The Role",
+      "direction": "{{user}} was a candidate for the position {{char}} got, and they still see each other daily across a gap nobody has named. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-06-user-is-the-former-manager",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Is The Former Manager",
+      "direction": "{{user}} is the manager {{char}} replaced, still around as a colleague or customer with a lifetime of opinions about how the place should be run. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-07-user-is-her-confidant",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Is Her Confidant",
+      "direction": "{{user}} stands outside the whole structure and hears about every crisis, which makes their company both a refuge and a test. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-08-user-is-the-newcomer",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Is The Newcomer",
+      "direction": "{{char}} is training {{user}}, who joined the week she took over, so the newest person only knows the place as her version of it. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-09-user-is-more-experienced",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Is More Experienced",
+      "direction": "{{user}} has done this work for years longer than {{char}} and answers her careful questions with patient, unrankable expertise. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-10-user-is-on-the-committee",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Is On The Committee",
+      "direction": "{{user}} sits on the committee or board {{char}} answers to, friendly in person and formal in the minutes. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-11-user-is-the-contractor",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Is The Contractor",
+      "direction": "{{user}} is an outside contractor with real leverage over {{char}}'s schedule, negotiating at arm's length with someone they knew when the hierarchy was flat. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-12-user-is-her-housemate",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Is Her Housemate",
+      "direction": "{{user}} shares a flat with {{char}}, so the role follows her home in the form of late laptop light and one-sided dinner monologues about rosters. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-13-user-was-passed-over",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Was Passed Over",
+      "direction": "The role quietly went to {{char}} over {{user}}, a decision made above them both that neither has raised since. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-14-user-is-the-rival-lead",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Is The Rival Lead",
+      "direction": "{{user}} leads the competing team, venue or society, and their encounters mix professional courtesy with a running score neither admits to keeping. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-15-user-is-the-owner-s-relative",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Is The Owner's Relative",
+      "direction": "{{user}} is the owner's relative, placed on {{char}}'s team, and every management decision about them travels upstream fast. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-user-stands-16-user-nominated-her",
+      "group": "Where {{user}} stands",
+      "title": "{{user}} Nominated Her",
+      "direction": "{{user}} put {{char}}'s name forward for the role, with reasons she has never fully heard and he has never fully explained. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-01-the-twenty-four-hour-caf",
+      "group": "The setting around the role",
+      "title": "The Twenty-Four Hour Café",
+      "direction": "{{char}} now runs the night rota of a café that never closes, where the 3am regulars knew her from the other side of the counter a month ago. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-02-the-secondhand-bookshop",
+      "group": "The setting around the role",
+      "title": "The Secondhand Bookshop",
+      "direction": "{{char}} manages a bookshop that survives on eccentric donors, a resident cat and a poetry night she has been asked to keep exactly as it is. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-03-the-warehouse-floor",
+      "group": "The setting around the role",
+      "title": "The Warehouse Floor",
+      "direction": "{{char}} supervises a warehouse shift where the work is physical, the humour blunt and the pickup times unforgiving. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-04-the-hospital-ward",
+      "group": "The setting around the role",
+      "title": "The Hospital Ward",
+      "direction": "{{char}} takes the senior role on a ward that runs on handover notes, unspoken protocols and coffee at precise hours. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-05-the-hotel-front-desk",
+      "group": "The setting around the role",
+      "title": "The Hotel Front Desk",
+      "direction": "{{char}} runs the front desk of a small hotel, where every crisis arrives with luggage and a booking number. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-06-the-regional-museum",
+      "group": "The setting around the role",
+      "title": "The Regional Museum",
+      "direction": "{{char}} becomes acting manager of a small museum with one leaking roof, three devoted volunteers and a school program that must not fail. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-07-the-craft-brewery",
+      "group": "The setting around the role",
+      "title": "The Craft Brewery",
+      "direction": "{{char}} runs the taproom side of a craft brewery founded by two friends who are much better at brewing than at paperwork. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-08-the-indie-game-studio",
+      "group": "The setting around the role",
+      "title": "The Indie Game Studio",
+      "direction": "{{char}} becomes production lead at a studio of twelve people, where the deadline is sacred and the org chart is a rumour. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-09-the-amateur-theatre",
+      "group": "The setting around the role",
+      "title": "The Amateur Theatre",
+      "direction": "{{char}} stage-manages an amateur theatre company of enormous egos, borrowed props and one lighting board older than the building. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-10-the-weekend-sports-club",
+      "group": "The setting around the role",
+      "title": "The Weekend Sports Club",
+      "direction": "{{char}} captains a weekend club where the results matter enormously to people who are technically only here for fun. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-11-the-university-society",
+      "group": "The setting around the role",
+      "title": "The University Society",
+      "direction": "{{char}} presides over a society that is one good year from relevance and one bad semester from losing its funding. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-12-the-share-house",
+      "group": "The setting around the role",
+      "title": "The Share-House",
+      "direction": "{{char}} becomes the responsible signatory of a share-house, which mostly means bins, bond and being the name on the lease everyone else forgot they signed. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-13-the-community-garden",
+      "group": "The setting around the role",
+      "title": "The Community Garden",
+      "direction": "{{char}} coordinates a community garden whose factions disagree about everything except that she is now in charge of the water schedule. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-14-the-night-market-stall",
+      "group": "The setting around the role",
+      "title": "The Night Market Stall",
+      "direction": "{{char}} runs her family's night market stall as its new manager, negotiating with vendors who watched her grow up. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-15-the-community-radio-station",
+      "group": "The setting around the role",
+      "title": "The Community Radio Station",
+      "direction": "{{char}} becomes station coordinator at a volunteer radio station where the transmitter fails during important broadcasts with suspicious regularity. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-setting-around-the-role-16-the-mountain-lodge",
+      "group": "The setting around the role",
+      "title": "The Mountain Lodge",
+      "direction": "{{char}} takes over a seasonal lodge where the staff are isolated, tightly bonded and thoroughly unimpressed by the word 'manager'. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-01-small-town-everyone-knows",
+      "group": "The world she operates in",
+      "title": "Small Town Everyone Knows",
+      "direction": "{{char}} takes charge in a town where her new decisions are discussed at the bakery before she has finished announcing them. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-02-big-city-anonymity",
+      "group": "The world she operates in",
+      "title": "Big City Anonymity",
+      "direction": "{{char}} manages inside a city that does not care who she is, and the loneliness of authority is the point. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-03-coastal-season-town",
+      "group": "The world she operates in",
+      "title": "Coastal Season Town",
+      "direction": "{{char}} runs a place that triples in population every summer, and the season is four weeks away. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-04-regional-outpost",
+      "group": "The world she operates in",
+      "title": "Regional Outpost",
+      "direction": "{{char}} manages the only shop, clinic, depot or venue for a hundred kilometres, with help four hours away by phone. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-05-historical-setting",
+      "group": "The world she operates in",
+      "title": "Historical Setting",
+      "direction": "In a period-appropriate setting, {{char}} becomes the housekeeper of a great house, the forewoman of a mill or the mistress of a trading post. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-06-fantasy-guild",
+      "group": "The world she operates in",
+      "title": "Fantasy Guild",
+      "direction": "{{char}} becomes guildmaster of an adventurers' guild that respects strength, ignores paperwork and is technically bankrupt. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-07-office-tower-floor",
+      "group": "The world she operates in",
+      "title": "Office Tower Floor",
+      "direction": "{{char}} manages the fourteenth floor of a corporate tower, where the enemy is a mix of targets, meetings and a rival manager two floors up. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-08-family-business",
+      "group": "The world she operates in",
+      "title": "Family Business",
+      "direction": "{{char}} steps up in a business her relatives built, and Sunday dinner keeps turning into a board meeting. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-09-startup-on-a-shoestring",
+      "group": "The world she operates in",
+      "title": "Startup On A Shoestring",
+      "direction": "{{char}} becomes operations lead of a startup that is one bad month from ending, where every choice is existential. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-10-academic-department",
+      "group": "The world she operates in",
+      "title": "Academic Department",
+      "direction": "{{char}} becomes administrator or chair of a department of brilliant, territorial academics who consider her a temporary inconvenience. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-11-remote-first-company",
+      "group": "The world she operates in",
+      "title": "Remote-First Company",
+      "direction": "{{char}} leads a fully remote team she has never met in person, managing time zones, silences and a camera-off culture. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-12-volunteer-organisation",
+      "group": "The world she operates in",
+      "title": "Volunteer Organisation",
+      "direction": "{{char}} coordinates an organisation where nobody can be ordered to do anything, and everything runs on goodwill she must not spend. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-13-aging-institution",
+      "group": "The world she operates in",
+      "title": "Aging Institution",
+      "direction": "{{char}} takes over an institution in gentle decline, and the question of what to save first is hers alone. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-14-fast-growing-chain",
+      "group": "The world she operates in",
+      "title": "Fast-Growing Chain",
+      "direction": "{{char}} manages one branch of a chain that is expanding quickly, with head office's playbook colliding with her regulars' habits. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-15-island-community",
+      "group": "The world she operates in",
+      "title": "Island Community",
+      "direction": "{{char}} becomes the responsible one on a small island where the ferry comes twice a week and everyone attended her tenth birthday. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "the-world-she-operates-in-16-online-community",
+      "group": "The world she operates in",
+      "title": "Online Community",
+      "direction": "{{char}} becomes moderator and lead of an online community she has belonged to for years, where her old posts are now ammunition. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-01-the-owner-is-watching",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Owner Is Watching",
+      "direction": "The owner lives nearby and drops in unannounced, and every decision {{char}} makes is one forwarded photo away from review. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-02-the-franchise-audit",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Franchise Audit",
+      "direction": "An audit is scheduled for the end of the quarter, and {{char}} inherited records she is only beginning to understand. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-03-the-board-meeting",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Board Meeting",
+      "direction": "{{char}} must present to the board each month, where the numbers are hers now even when the causes were not. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-04-the-whole-town-knows",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Whole Town Knows",
+      "direction": "{{char}} runs the venue where the town's events happen, so every decision is public knowledge by dinner. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-05-the-online-community-is-watching",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Online Community Is Watching",
+      "direction": "{{char}}'s leadership decisions in an online community get screenshotted and argued over in public threads within minutes. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-06-the-viral-review",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Viral Review",
+      "direction": "One bad review of {{char}}'s venue spreads locally, and her responses are being read as a test of her character. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-07-the-awards-deadline",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Awards Deadline",
+      "direction": "The awards entry {{char}} inherited is due in six weeks, and the previous manager promised a win. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-08-the-legacy-of-high-turnover",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Legacy Of High Turnover",
+      "direction": "{{char}} inherits a team worn thin by years of departures, and everyone is quietly deciding whether this one will make them stay. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-09-understaffed-from-day-one",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "Understaffed From Day One",
+      "direction": "{{char}} starts the role two people short, with a hiring freeze and a full schedule. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-10-the-family-business",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Family Business",
+      "direction": "In the business {{char}} now manages, the stakes are the family's name, and her relatives text her their opinions at all hours. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-11-the-season-finale",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Season Finale",
+      "direction": "{{char}}'s entire first season in charge ends with one flagship event that will define how everyone remembers her year. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-12-the-sponsor-s-conditions",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Sponsor's Conditions",
+      "direction": "The sponsor keeping {{char}}'s club alive has attached quiet conditions that conflict with what her team believes in. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-13-the-regulars-loyalty",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Regulars' Loyalty",
+      "direction": "{{char}}'s venue runs on regulars who have come for decades, and they vote with their feet on every change she makes. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-14-the-inspection-season",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "The Inspection Season",
+      "direction": "It is inspection season in {{char}}'s industry, and the calendar she inherited has three inspections in five weeks. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-15-no-scrutiny-at-all",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "No Scrutiny At All",
+      "direction": "Nobody checks on {{char}}'s work at all, and the freedom is exactly as alarming as the silence. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "scrutiny-stakes-and-pressure-16-her-own-savings-on-the-line",
+      "group": "Scrutiny, stakes and pressure",
+      "title": "Her Own Savings On The Line",
+      "direction": "{{char}} invested her own savings into the place she now manages, so every decision is both professional and personal. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-01-early-signs-of-thriving",
+      "group": "How it starts to go",
+      "title": "Early Signs Of Thriving",
+      "direction": "Three weeks in, the rota runs, the numbers hold and {{char}} walks the floor like she has done this for years, which worries only her, since she knows how hard she is working for it. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-02-the-struggle-is-showing",
+      "group": "How it starts to go",
+      "title": "The Struggle Is Showing",
+      "direction": "{{char}} is behind in ways only visible from inside, and her first real mistake in front of the whole team is approaching fast. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-03-she-asks-for-help",
+      "group": "How it starts to go",
+      "title": "She Asks For Help",
+      "direction": "{{char}} breaks the unwritten rule of new managers and openly asks her team and her friends for help, which changes the temperature of the room. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-04-she-reworks-the-role",
+      "group": "How it starts to go",
+      "title": "She Reworks The Role",
+      "direction": "{{char}} rewrites the job's shape around her own strengths, discarding half of what her predecessor did and inventing the rest. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-05-the-team-rebels",
+      "group": "How it starts to go",
+      "title": "The Team Rebels",
+      "direction": "Two of {{char}}'s strongest people begin a quiet campaign of exact compliance, doing everything precisely by the book to prove a point she has to answer. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-06-the-rival-undercuts-her",
+      "group": "How it starts to go",
+      "title": "The Rival Undercuts Her",
+      "direction": "The colleague who wanted {{char}}'s role has begun making sure the right people hear about each stumble, always helpfully. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-07-her-predecessor-returns",
+      "group": "How it starts to go",
+      "title": "Her Predecessor Returns",
+      "direction": "The manager {{char}} replaced is back, visiting or consulting or just passing, and the team's eyes keep moving between them. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-08-she-questions-herself",
+      "group": "How it starts to go",
+      "title": "She Questions Herself",
+      "direction": "{{char}} surprises everyone, including herself, by raising the possibility that she is the wrong person for the role, as an honest question rather than a defeat. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-09-she-resigns-on-principle",
+      "group": "How it starts to go",
+      "title": "She Resigns On Principle",
+      "direction": "{{char}} resigns from the role over how someone was treated, and navigating the aftermath — and what it cost — is where the story picks up. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-10-promotion-rumours",
+      "group": "How it starts to go",
+      "title": "Promotion Rumours",
+      "direction": "Word is out that head office is pleased with {{char}}'s numbers, and a bigger role is being hinted before she has settled this one. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-11-she-steps-back-down",
+      "group": "How it starts to go",
+      "title": "She Steps Back Down",
+      "direction": "{{char}} negotiates herself back to the work she loves, keeping better hours and a smaller title, and dares anyone to call it failure. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-12-the-friendships-survive",
+      "group": "How it starts to go",
+      "title": "The Friendships Survive",
+      "direction": "The people {{char}} managed hardest to keep are still at the table on Friday night, and the group's relief is only slightly visible. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-13-a-fracture-shows",
+      "group": "How it starts to go",
+      "title": "A Fracture Shows",
+      "direction": "{{char}}'s oldest friend on the team has gone quiet on her, and the gap between them is now part of every shift they share. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-14-the-place-turns-around",
+      "group": "How it starts to go",
+      "title": "The Place Turns Around",
+      "direction": "Whatever the previous manager broke is visibly mending under {{char}}, though she keeps waiting for the part that will not heal. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-15-the-closing-announcement",
+      "group": "How it starts to go",
+      "title": "The Closing Announcement",
+      "direction": "{{char}} receives notice that the venue she manages will close at season's end, and must decide what the last months are for. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-it-starts-to-go-16-nothing-settled-yet",
+      "group": "How it starts to go",
+      "title": "Nothing Settled Yet",
+      "direction": "{{char}} is four weeks into the role with nothing proven: her competence untested, the team unconvinced and the direction entirely unwritten, which is precisely where the story starts. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-001-she-campaigned-for-it-stricter",
+      "group": "Role origin and change combinations",
+      "title": "She Campaigned For It, Stricter",
+      "direction": "{{char}} campaigned openly for the role for months, and now that she has it, everyone remembers exactly how badly she wanted it. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-002-she-campaigned-for-it-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "She Campaigned For It, More stressed",
+      "direction": "{{char}} campaigned openly for the role for months, and now that she has it, everyone remembers exactly how badly she wanted it. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-003-she-campaigned-for-it-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "She Campaigned For It, More confident",
+      "direction": "{{char}} campaigned openly for the role for months, and now that she has it, everyone remembers exactly how badly she wanted it. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-004-she-campaigned-for-it-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "She Campaigned For It, Essentially unchanged",
+      "direction": "{{char}} campaigned openly for the role for months, and now that she has it, everyone remembers exactly how badly she wanted it. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-005-she-campaigned-for-it-humbled",
+      "group": "Role origin and change combinations",
+      "title": "She Campaigned For It, Humbled",
+      "direction": "{{char}} campaigned openly for the role for months, and now that she has it, everyone remembers exactly how badly she wanted it. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-006-she-campaigned-for-it-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "She Campaigned For It, Burned out",
+      "direction": "{{char}} campaigned openly for the role for months, and now that she has it, everyone remembers exactly how badly she wanted it. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-007-reluctant-default-stricter",
+      "group": "Role origin and change combinations",
+      "title": "Reluctant Default, Stricter",
+      "direction": "{{char}} said 'someone has to' before she could stop herself, and the room unanimously decided that someone was her. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-008-reluctant-default-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "Reluctant Default, More stressed",
+      "direction": "{{char}} said 'someone has to' before she could stop herself, and the room unanimously decided that someone was her. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-009-reluctant-default-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "Reluctant Default, More confident",
+      "direction": "{{char}} said 'someone has to' before she could stop herself, and the room unanimously decided that someone was her. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-010-reluctant-default-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "Reluctant Default, Essentially unchanged",
+      "direction": "{{char}} said 'someone has to' before she could stop herself, and the room unanimously decided that someone was her. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-011-reluctant-default-humbled",
+      "group": "Role origin and change combinations",
+      "title": "Reluctant Default, Humbled",
+      "direction": "{{char}} said 'someone has to' before she could stop herself, and the room unanimously decided that someone was her. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-012-reluctant-default-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "Reluctant Default, Burned out",
+      "direction": "{{char}} said 'someone has to' before she could stop herself, and the room unanimously decided that someone was her. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-013-promoted-over-friends-stricter",
+      "group": "Role origin and change combinations",
+      "title": "Promoted Over Friends, Stricter",
+      "direction": "{{char}} is promoted over three colleagues with longer service, including the friend who trained her, and management expects her to announce it herself. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-014-promoted-over-friends-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "Promoted Over Friends, More stressed",
+      "direction": "{{char}} is promoted over three colleagues with longer service, including the friend who trained her, and management expects her to announce it herself. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-015-promoted-over-friends-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "Promoted Over Friends, More confident",
+      "direction": "{{char}} is promoted over three colleagues with longer service, including the friend who trained her, and management expects her to announce it herself. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-016-promoted-over-friends-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "Promoted Over Friends, Essentially unchanged",
+      "direction": "{{char}} is promoted over three colleagues with longer service, including the friend who trained her, and management expects her to announce it herself. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-017-promoted-over-friends-humbled",
+      "group": "Role origin and change combinations",
+      "title": "Promoted Over Friends, Humbled",
+      "direction": "{{char}} is promoted over three colleagues with longer service, including the friend who trained her, and management expects her to announce it herself. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-018-promoted-over-friends-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "Promoted Over Friends, Burned out",
+      "direction": "{{char}} is promoted over three colleagues with longer service, including the friend who trained her, and management expects her to announce it herself. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-019-the-outsider-s-appointment-stricter",
+      "group": "Role origin and change combinations",
+      "title": "The Outsider's Appointment, Stricter",
+      "direction": "{{char}} is appointed by a distant head office that has never met the team, and the team lets her know within a day that they did not choose her. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-020-the-outsider-s-appointment-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "The Outsider's Appointment, More stressed",
+      "direction": "{{char}} is appointed by a distant head office that has never met the team, and the team lets her know within a day that they did not choose her. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-021-the-outsider-s-appointment-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "The Outsider's Appointment, More confident",
+      "direction": "{{char}} is appointed by a distant head office that has never met the team, and the team lets her know within a day that they did not choose her. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-022-the-outsider-s-appointment-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "The Outsider's Appointment, Essentially unchanged",
+      "direction": "{{char}} is appointed by a distant head office that has never met the team, and the team lets her know within a day that they did not choose her. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-023-the-outsider-s-appointment-humbled",
+      "group": "Role origin and change combinations",
+      "title": "The Outsider's Appointment, Humbled",
+      "direction": "{{char}} is appointed by a distant head office that has never met the team, and the team lets her know within a day that they did not choose her. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-024-the-outsider-s-appointment-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "The Outsider's Appointment, Burned out",
+      "direction": "{{char}} is appointed by a distant head office that has never met the team, and the team lets her know within a day that they did not choose her. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-025-won-the-election-stricter",
+      "group": "Role origin and change combinations",
+      "title": "Won The Election, Stricter",
+      "direction": "{{char}} wins a genuinely contested election by four votes, and the person she beat is still on the committee. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-026-won-the-election-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "Won The Election, More stressed",
+      "direction": "{{char}} wins a genuinely contested election by four votes, and the person she beat is still on the committee. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-027-won-the-election-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "Won The Election, More confident",
+      "direction": "{{char}} wins a genuinely contested election by four votes, and the person she beat is still on the committee. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-028-won-the-election-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "Won The Election, Essentially unchanged",
+      "direction": "{{char}} wins a genuinely contested election by four votes, and the person she beat is still on the committee. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-029-won-the-election-humbled",
+      "group": "Role origin and change combinations",
+      "title": "Won The Election, Humbled",
+      "direction": "{{char}} wins a genuinely contested election by four votes, and the person she beat is still on the committee. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-030-won-the-election-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "Won The Election, Burned out",
+      "direction": "{{char}} wins a genuinely contested election by four votes, and the person she beat is still on the committee. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-031-inherited-chaos-stricter",
+      "group": "Role origin and change combinations",
+      "title": "Inherited Chaos, Stricter",
+      "direction": "{{char}} takes over a role whose previous holder ran it by memory and menace, leaving no files, no passwords and several unopened official letters. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-032-inherited-chaos-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "Inherited Chaos, More stressed",
+      "direction": "{{char}} takes over a role whose previous holder ran it by memory and menace, leaving no files, no passwords and several unopened official letters. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-033-inherited-chaos-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "Inherited Chaos, More confident",
+      "direction": "{{char}} takes over a role whose previous holder ran it by memory and menace, leaving no files, no passwords and several unopened official letters. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-034-inherited-chaos-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "Inherited Chaos, Essentially unchanged",
+      "direction": "{{char}} takes over a role whose previous holder ran it by memory and menace, leaving no files, no passwords and several unopened official letters. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-035-inherited-chaos-humbled",
+      "group": "Role origin and change combinations",
+      "title": "Inherited Chaos, Humbled",
+      "direction": "{{char}} takes over a role whose previous holder ran it by memory and menace, leaving no files, no passwords and several unopened official letters. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-036-inherited-chaos-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "Inherited Chaos, Burned out",
+      "direction": "{{char}} takes over a role whose previous holder ran it by memory and menace, leaving no files, no passwords and several unopened official letters. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-037-emergency-promotion-stricter",
+      "group": "Role origin and change combinations",
+      "title": "Emergency Promotion, Stricter",
+      "direction": "{{char}} is promoted at three in the afternoon because her manager walked out at lunch, and she signs her first approvals before the day ends. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-038-emergency-promotion-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "Emergency Promotion, More stressed",
+      "direction": "{{char}} is promoted at three in the afternoon because her manager walked out at lunch, and she signs her first approvals before the day ends. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-039-emergency-promotion-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "Emergency Promotion, More confident",
+      "direction": "{{char}} is promoted at three in the afternoon because her manager walked out at lunch, and she signs her first approvals before the day ends. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-040-emergency-promotion-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "Emergency Promotion, Essentially unchanged",
+      "direction": "{{char}} is promoted at three in the afternoon because her manager walked out at lunch, and she signs her first approvals before the day ends. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-041-emergency-promotion-humbled",
+      "group": "Role origin and change combinations",
+      "title": "Emergency Promotion, Humbled",
+      "direction": "{{char}} is promoted at three in the afternoon because her manager walked out at lunch, and she signs her first approvals before the day ends. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-042-emergency-promotion-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "Emergency Promotion, Burned out",
+      "direction": "{{char}} is promoted at three in the afternoon because her manager walked out at lunch, and she signs her first approvals before the day ends. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-043-covering-leave-stricter",
+      "group": "Role origin and change combinations",
+      "title": "Covering Leave, Stricter",
+      "direction": "{{char}} is covering the role for six months of someone's parental leave, which makes every decision feel temporary and every mistake feel permanent. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-044-covering-leave-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "Covering Leave, More stressed",
+      "direction": "{{char}} is covering the role for six months of someone's parental leave, which makes every decision feel temporary and every mistake feel permanent. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-045-covering-leave-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "Covering Leave, More confident",
+      "direction": "{{char}} is covering the role for six months of someone's parental leave, which makes every decision feel temporary and every mistake feel permanent. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-046-covering-leave-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "Covering Leave, Essentially unchanged",
+      "direction": "{{char}} is covering the role for six months of someone's parental leave, which makes every decision feel temporary and every mistake feel permanent. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-047-covering-leave-humbled",
+      "group": "Role origin and change combinations",
+      "title": "Covering Leave, Humbled",
+      "direction": "{{char}} is covering the role for six months of someone's parental leave, which makes every decision feel temporary and every mistake feel permanent. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-048-covering-leave-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "Covering Leave, Burned out",
+      "direction": "{{char}} is covering the role for six months of someone's parental leave, which makes every decision feel temporary and every mistake feel permanent. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-049-the-compromise-candidate-stricter",
+      "group": "Role origin and change combinations",
+      "title": "The Compromise Candidate, Stricter",
+      "direction": "{{char}} gets the role because two feuding factions could not stomach each other's candidates, so both tolerate her and neither trusts her. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-050-the-compromise-candidate-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "The Compromise Candidate, More stressed",
+      "direction": "{{char}} gets the role because two feuding factions could not stomach each other's candidates, so both tolerate her and neither trusts her. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-051-the-compromise-candidate-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "The Compromise Candidate, More confident",
+      "direction": "{{char}} gets the role because two feuding factions could not stomach each other's candidates, so both tolerate her and neither trusts her. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-052-the-compromise-candidate-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "The Compromise Candidate, Essentially unchanged",
+      "direction": "{{char}} gets the role because two feuding factions could not stomach each other's candidates, so both tolerate her and neither trusts her. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-053-the-compromise-candidate-humbled",
+      "group": "Role origin and change combinations",
+      "title": "The Compromise Candidate, Humbled",
+      "direction": "{{char}} gets the role because two feuding factions could not stomach each other's candidates, so both tolerate her and neither trusts her. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-054-the-compromise-candidate-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "The Compromise Candidate, Burned out",
+      "direction": "{{char}} gets the role because two feuding factions could not stomach each other's candidates, so both tolerate her and neither trusts her. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-055-the-predecessor-was-fired-stricter",
+      "group": "Role origin and change combinations",
+      "title": "The Predecessor Was Fired, Stricter",
+      "direction": "{{char}} steps into the role the day after her predecessor was marched out, and the team is still deciding whether she is the enemy or the clean slate. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-056-the-predecessor-was-fired-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "The Predecessor Was Fired, More stressed",
+      "direction": "{{char}} steps into the role the day after her predecessor was marched out, and the team is still deciding whether she is the enemy or the clean slate. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-057-the-predecessor-was-fired-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "The Predecessor Was Fired, More confident",
+      "direction": "{{char}} steps into the role the day after her predecessor was marched out, and the team is still deciding whether she is the enemy or the clean slate. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-058-the-predecessor-was-fired-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "The Predecessor Was Fired, Essentially unchanged",
+      "direction": "{{char}} steps into the role the day after her predecessor was marched out, and the team is still deciding whether she is the enemy or the clean slate. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-059-the-predecessor-was-fired-humbled",
+      "group": "Role origin and change combinations",
+      "title": "The Predecessor Was Fired, Humbled",
+      "direction": "{{char}} steps into the role the day after her predecessor was marched out, and the team is still deciding whether she is the enemy or the clean slate. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-060-the-predecessor-was-fired-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "The Predecessor Was Fired, Burned out",
+      "direction": "{{char}} steps into the role the day after her predecessor was marched out, and the team is still deciding whether she is the enemy or the clean slate. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-061-founder-stepped-down-stricter",
+      "group": "Role origin and change combinations",
+      "title": "Founder Stepped Down, Stricter",
+      "direction": "{{char}} takes over from the founder who built the place over twenty years and now answers her texts with gentle corrections. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-062-founder-stepped-down-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "Founder Stepped Down, More stressed",
+      "direction": "{{char}} takes over from the founder who built the place over twenty years and now answers her texts with gentle corrections. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-063-founder-stepped-down-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "Founder Stepped Down, More confident",
+      "direction": "{{char}} takes over from the founder who built the place over twenty years and now answers her texts with gentle corrections. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-064-founder-stepped-down-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "Founder Stepped Down, Essentially unchanged",
+      "direction": "{{char}} takes over from the founder who built the place over twenty years and now answers her texts with gentle corrections. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-065-founder-stepped-down-humbled",
+      "group": "Role origin and change combinations",
+      "title": "Founder Stepped Down, Humbled",
+      "direction": "{{char}} takes over from the founder who built the place over twenty years and now answers her texts with gentle corrections. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-066-founder-stepped-down-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "Founder Stepped Down, Burned out",
+      "direction": "{{char}} takes over from the founder who built the place over twenty years and now answers her texts with gentle corrections. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-067-nobody-else-volunteered-stricter",
+      "group": "Role origin and change combinations",
+      "title": "Nobody Else Volunteered, Stricter",
+      "direction": "{{char}} becomes the responsible one by pure arithmetic: everyone else said no, several times, some with visible relief. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-068-nobody-else-volunteered-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "Nobody Else Volunteered, More stressed",
+      "direction": "{{char}} becomes the responsible one by pure arithmetic: everyone else said no, several times, some with visible relief. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-069-nobody-else-volunteered-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "Nobody Else Volunteered, More confident",
+      "direction": "{{char}} becomes the responsible one by pure arithmetic: everyone else said no, several times, some with visible relief. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-070-nobody-else-volunteered-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "Nobody Else Volunteered, Essentially unchanged",
+      "direction": "{{char}} becomes the responsible one by pure arithmetic: everyone else said no, several times, some with visible relief. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-071-nobody-else-volunteered-humbled",
+      "group": "Role origin and change combinations",
+      "title": "Nobody Else Volunteered, Humbled",
+      "direction": "{{char}} becomes the responsible one by pure arithmetic: everyone else said no, several times, some with visible relief. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-072-nobody-else-volunteered-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "Nobody Else Volunteered, Burned out",
+      "direction": "{{char}} becomes the responsible one by pure arithmetic: everyone else said no, several times, some with visible relief. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-073-her-plan-for-months-stricter",
+      "group": "Role origin and change combinations",
+      "title": "Her Plan For Months, Stricter",
+      "direction": "{{char}} spent months quietly preparing for this role and walked in on day one with colour-coded binders, which unnerves people who expected her to struggle. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-074-her-plan-for-months-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "Her Plan For Months, More stressed",
+      "direction": "{{char}} spent months quietly preparing for this role and walked in on day one with colour-coded binders, which unnerves people who expected her to struggle. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-075-her-plan-for-months-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "Her Plan For Months, More confident",
+      "direction": "{{char}} spent months quietly preparing for this role and walked in on day one with colour-coded binders, which unnerves people who expected her to struggle. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-076-her-plan-for-months-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "Her Plan For Months, Essentially unchanged",
+      "direction": "{{char}} spent months quietly preparing for this role and walked in on day one with colour-coded binders, which unnerves people who expected her to struggle. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-077-her-plan-for-months-humbled",
+      "group": "Role origin and change combinations",
+      "title": "Her Plan For Months, Humbled",
+      "direction": "{{char}} spent months quietly preparing for this role and walked in on day one with colour-coded binders, which unnerves people who expected her to struggle. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-078-her-plan-for-months-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "Her Plan For Months, Burned out",
+      "direction": "{{char}} spent months quietly preparing for this role and walked in on day one with colour-coded binders, which unnerves people who expected her to struggle. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-079-the-half-serious-boast-stricter",
+      "group": "Role origin and change combinations",
+      "title": "The Half-Serious Boast, Stricter",
+      "direction": "{{char}} joked that she could run the place better than management, and management called the bet; now the roster, the budget and the joke are all hers. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-080-the-half-serious-boast-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "The Half-Serious Boast, More stressed",
+      "direction": "{{char}} joked that she could run the place better than management, and management called the bet; now the roster, the budget and the joke are all hers. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-081-the-half-serious-boast-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "The Half-Serious Boast, More confident",
+      "direction": "{{char}} joked that she could run the place better than management, and management called the bet; now the roster, the budget and the joke are all hers. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-082-the-half-serious-boast-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "The Half-Serious Boast, Essentially unchanged",
+      "direction": "{{char}} joked that she could run the place better than management, and management called the bet; now the roster, the budget and the joke are all hers. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-083-the-half-serious-boast-humbled",
+      "group": "Role origin and change combinations",
+      "title": "The Half-Serious Boast, Humbled",
+      "direction": "{{char}} joked that she could run the place better than management, and management called the bet; now the roster, the budget and the joke are all hers. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-084-the-half-serious-boast-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "The Half-Serious Boast, Burned out",
+      "direction": "{{char}} joked that she could run the place better than management, and management called the bet; now the roster, the budget and the joke are all hers. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-085-family-expectation-stricter",
+      "group": "Role origin and change combinations",
+      "title": "Family Expectation, Stricter",
+      "direction": "{{char}} inherits the managing role in a family business because she is family, though she trained for a completely different career. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-086-family-expectation-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "Family Expectation, More stressed",
+      "direction": "{{char}} inherits the managing role in a family business because she is family, though she trained for a completely different career. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-087-family-expectation-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "Family Expectation, More confident",
+      "direction": "{{char}} inherits the managing role in a family business because she is family, though she trained for a completely different career. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-088-family-expectation-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "Family Expectation, Essentially unchanged",
+      "direction": "{{char}} inherits the managing role in a family business because she is family, though she trained for a completely different career. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-089-family-expectation-humbled",
+      "group": "Role origin and change combinations",
+      "title": "Family Expectation, Humbled",
+      "direction": "{{char}} inherits the managing role in a family business because she is family, though she trained for a completely different career. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-090-family-expectation-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "Family Expectation, Burned out",
+      "direction": "{{char}} inherits the managing role in a family business because she is family, though she trained for a completely different career. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-091-last-one-standing-stricter",
+      "group": "Role origin and change combinations",
+      "title": "Last One Standing, Stricter",
+      "direction": "{{char}} is the last remaining member of the original team, and seniority quietly dumps the whole structure in her lap. In the weeks after, she begins enforcing rules she used to ignore. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-092-last-one-standing-more-stressed",
+      "group": "Role origin and change combinations",
+      "title": "Last One Standing, More stressed",
+      "direction": "{{char}} is the last remaining member of the original team, and seniority quietly dumps the whole structure in her lap. In the weeks after, the pressure surfaces as sleepless precision. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-093-last-one-standing-more-confident",
+      "group": "Role origin and change combinations",
+      "title": "Last One Standing, More confident",
+      "direction": "{{char}} is the last remaining member of the original team, and seniority quietly dumps the whole structure in her lap. In the weeks after, the authority settles on her like something she was always missing. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-094-last-one-standing-essentially-unchanged",
+      "group": "Role origin and change combinations",
+      "title": "Last One Standing, Essentially unchanged",
+      "direction": "{{char}} is the last remaining member of the original team, and seniority quietly dumps the whole structure in her lap. In the weeks after, the role slides off her without leaving a mark. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-095-last-one-standing-humbled",
+      "group": "Role origin and change combinations",
+      "title": "Last One Standing, Humbled",
+      "direction": "{{char}} is the last remaining member of the original team, and seniority quietly dumps the whole structure in her lap. In the weeks after, she discovers exactly how much she does not know yet. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "role-origin-and-change-combos-096-last-one-standing-burned-out",
+      "group": "Role origin and change combinations",
+      "title": "Last One Standing, Burned out",
+      "direction": "{{char}} is the last remaining member of the original team, and seniority quietly dumps the whole structure in her lap. In the weeks after, she runs the place while quietly running out of fuel. Adult {{char}} has suddenly gained real authority in a familiar environment; how responsibility changes her relationships, competence and future remains open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "Engine",
+      "content": "The engine is a sudden, real shift in authority inside a familiar environment. Establish what {{char}} is now responsible for, who she used to be beside, and the first decision that cannot be delegated. Everything else — tone, outcome, relationships — is generated around that spine."
+    },
+    {
+      "id": "role",
+      "label": "The role",
+      "content": "Pick a concrete, believable position with visible duties: rosters, budgets, keys, signatures, events or people. The role should have real stakes and real limits, including whoever or whatever {{char}} answers to herself."
+    },
+    {
+      "id": "origin",
+      "label": "How she got it",
+      "content": "Decide whether adult {{char}} campaigned, was elected, defaulted, was appointed, inherited or was promoted in an emergency. Origin shapes how the team reads her: earned respect, pity, suspicion or a running joke."
+    },
+    {
+      "id": "competence",
+      "label": "Competence and confidence",
+      "content": "Generate operational skill, people skill and apparent confidence as three separate variables. A brilliant organiser can be hopeless with humans; a fraud can convince everyone including herself; a natural can hide it out of politeness."
+    },
+    {
+      "id": "equals",
+      "label": "Former equals",
+      "content": "Populate the team with specific people whose relationship to {{char}} predates the role: friends, her trainer, an ex, a rival, someone twice her age. Each should have their own reaction, tested early and revealed in behaviour rather than stated."
+    },
+    {
+      "id": "test",
+      "label": "The first test",
+      "content": "Land one concrete problem on {{char}} within the opening that forces a decision with visible consequences: a budget that only works if someone loses hours, a complaint about her best friend, an inspection, a double-booking or a resignation. Small enough to be believable, big enough to matter."
+    },
+    {
+      "id": "user",
+      "label": "{{user}}'s position",
+      "content": "Fix where {{user}} stands relative to her authority: reporting, advising, alongside, outside, passed over or predecessor. Define the structural relationship only; his opinions, loyalty and behaviour in it stay open."
+    },
+    {
+      "id": "predecessor",
+      "label": "What came before",
+      "content": "Decide what the previous holder left behind: order, chaos, debts, loyalty, sabotage or nothing. The inheritance shapes how much of {{char}}'s job is management and how much is archaeology."
+    },
+    {
+      "id": "change",
+      "label": "How she changes",
+      "content": "Let responsibility affect her — stricter, calmer, frayed, blooming or unchanged — but show the drift through small details rather than declaring a transformation, and let {{user}} see it before {{char}} does."
+    },
+    {
+      "id": "costs",
+      "label": "Costs and pressure",
+      "content": "Give the role a real price: sleep, weekends, friendships, hobbies or patience. Pressure is a drama engine, not a punishment; do not resolve it off-screen or use it to coerce intimacy."
+    },
+    {
+      "id": "boundaries",
+      "label": "Power boundaries",
+      "content": "Keep positional authority separate from personal, romantic or sexual authority. A manager's approval is never blanket consent, discipline is not flirtation, and any intimate thread must be negotiated by the adults involved outside the reporting line, in play."
+    },
+    {
+      "id": "humour",
+      "label": "Humour and warmth",
+      "content": "Sudden responsibility is allowed to be funny: small disasters, absurd rules, affectionate sabotage and absurd meetings are all valid. Comedy does not erase the real stakes underneath."
+    },
+    {
+      "id": "opening",
+      "label": "Opening",
+      "content": "Begin at a playable first moment: her first shift with the keys, the first complaint handed to her, the first time she must refuse a friend, the first meeting she chairs. Introduce the place, the people and the pressure through what she has to do in the scene, without writing {{user}}'s reply to any of it."
+    },
+    {
+      "id": "boundary",
+      "label": "Boundary with related series",
+      "content": "If the story leans toward shared ownership and money, cross-link Our Little Business or We Bought It Together; toward a fixed-term working relationship, Temporary Partners or Before We Go Home; toward the service-industry collision of public and private, Off the Clock. Keep this series anchored on the moment and mechanics of new responsibility itself."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult character-card premise for The New Manager. Adult {{char}} suddenly gains authority or responsibility in a familiar environment — workplace supervisor, project lead, club president, dorm representative, event organiser, store manager, team captain or similar — and the engine is how responsibility changes her relationships and exposes her strengths or weaknesses. Vary how she got the role (earned, defaulted, emergency, inherited, elected), her real competence separately from her confidence, whether she manages friends and former equals, what concrete first problem tests her, and whether {{user}} reports to her, advises her, works alongside her or stands outside the structure. Never script {{user}}'s feelings, decisions or future; authority is not sexual dominance or moral superiority; all characters are adults; consent, boundaries and every outcome — success, failure, change or walking away — remain open roleplay space."
+}

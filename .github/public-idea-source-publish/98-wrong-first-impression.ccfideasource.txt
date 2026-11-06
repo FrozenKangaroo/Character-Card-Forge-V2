@@ -1,0 +1,1473 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iii-10-wrong-first-impression",
+  "title": "Wrong First Impression",
+  "description": "Expanded Series Bible III #10 Wrong First Impression reusable adult idea source: the engine generates substantial but believable mistaken first impressions between adult {{char}} and {{user}} — misread identities, misleading circumstances, reputation errors and incompatible assumptions — then varies who was wrong, why the mistake was reasonable, how quickly evidence contradicts it and how the correction lands.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible III",
+    "version": "0.4",
+    "entry": "10",
+    "kind": "series"
+  },
+  "summary": "The opening centres on a substantial but believable mistaken impression between adults. {{char}} may initially misread {{user}} — taking him for a colleague, a client, a stranger, an intruder, a rival, a date or something he is not — or {{user}} may be handed circumstances that make {{char}} look very different from reality: an inherited nickname, a mis-sent message, borrowed clothes, a case of mistaken identity, an old reputation or misleading timing. Both may begin with incompatible assumptions and only gradually discover the mismatch. The mistake should be reasonable given the available evidence, the correction can be embarrassing, funny, irritating or genuinely consequential, and every outcome — friendship, rivalry, romance, partnership or nothing — stays open.",
+  "core_premise": "Two adults meet while at least one holds a significant but plausible false impression about the other, formed through ordinary inference errors, incomplete context, misleading timing, secondhand reputation, mistaken identity or deliberate encouragement by a third party. This is not automatically a secret-identity story. The engine is the gap between what the characters reasonably believe and what is actually true: how they act on the wrong assumption, how and when contradicting evidence appears, and what the correction costs or earns. {{char}}'s mistaken assumptions about {{user}} are her beliefs, never objective truth, and {{user}}'s reaction to being misjudged — amusement, offence, correction, exploitation of the misunderstanding or silence — remains entirely his choice.",
+  "setup": "Create a non-graphic adult roleplay opening built on a mistaken first impression. Specify who holds the false impression and what it is, why it was reasonable to form given the available evidence, the setting and circumstance that produced it, whether anyone deliberately encouraged the misunderstanding, and how close the first contradicting clue sits to the surface. Establish {{char}} as a complete adult person — occupation, interests, temperament, her own possible blind spots — acting on her wrong assumption at a playable moment: a greeting aimed at the wrong identity, a frosty reception, an over-familiar welcome, an accusation, a proposition or an apology offered to the wrong man. Do not write {{user}}'s feelings, dialogue, corrections or decisions, and do not predetermine whether the misunderstanding resolves warmly, badly, hilariously or not at all.",
+  "core_variables": [
+    "Who holds the mistaken impression: {{char}} about {{user}}, {{user}} about {{char}}, or both about each other in incompatible ways.",
+    "What caused the mistake: mistaken identity, incomplete context, secondhand reputation, misleading timing, an honest misread of behaviour or appearance, or deliberate encouragement by someone else.",
+    "How reasonable the mistake was: nearly unavoidable given the evidence, plausible but hasty, or a lazy stereotype the character chose not to verify.",
+    "How quickly evidence contradicting the impression appears: within the first conversation, within days, or only after the relationship has developed.",
+    "Whether anyone intentionally encouraged the misunderstanding, and why — protection, mischief, jealousy, convenience or agenda.",
+    "Whether the correction is embarrassing, funny, irritating, professionally consequential, personally devastating or quietly relieving.",
+    "How {{char}} reacts to being wrong: apology, doubling down, laughter, withdrawal, curiosity, guilt or defensiveness.",
+    "What {{char}}'s mistaken assumption actually is about {{user}}: his job, wealth, availability, sexuality, intentions, past, danger or personality.",
+    "How {{user}} is situationally framed at the meeting: replacement colleague, blind date, new tenant, security escort, delivery, relative of someone, or the wrong name entirely.",
+    "Whether the two share prior history neither has recognised, and whether the impression hides or distorts it.",
+    "What stakes ride on the first impression: a job, a friendship group, a landlord relationship, a team, a family introduction or a reputation.",
+    "Whether {{char}} treats her assumption as established fact or entertains doubts she suppresses.",
+    "How much of the mistake {{char}} owns up to voluntarily versus is confronted with.",
+    "Whether resolving the misunderstanding is even wanted, or whether living with the false impression suits one of them.",
+    "What the corrected picture reveals about {{char}}: her generosity with wrong guesses, her snobbery, her nosiness, her fairness or her jumpiness.",
+    "Whether the episode becomes a shared joke, a lasting grudge, a foundation story or a caution between them.",
+    "Where the opening lands: before the reveal, mid-reveal, or after the correction with its consequences still unfolding.",
+    "How much the misunderstanding permanently changes the trajectory versus being a bump the players can route around."
+  ],
+  "generation_rules": [
+    "Do not write {{user}} for the player or define {{user}}'s feelings, decisions, dialogue, consent, intentions, future behaviour, or whether he corrects, exploits or ignores the misunderstanding unless the source explicitly supplies that fact.",
+    "Character belief is not objective truth: {{char}}'s mistaken impression of {{user}} remains her belief, however reasonable, and must never be narrated as established fact about him.",
+    "Do not pre-play outcomes. Whether the reveal lands as comedy, embarrassment, offence, apology, romance, rivalry, friendship or nothing remains roleplay space.",
+    "All romantic or sexual characters are adults.",
+    "This is not automatically a secret-identity story. Prefer ordinary human inference errors, incomplete context, misleading timing, case of mistaken identity, or reputation rather than hidden double lives unless a generated variant explicitly chooses one.",
+    "The mistaken impression must be reasonable given the available evidence. A character who jumps to conclusions should have a plausible reason for the leap.",
+    "Do not force romance, sex, friendship or reconciliation out of the correction. Amusement, wariness, professional courtesy, distance or a clean reset are all valid.",
+    "Sex or attraction, if it appears, must not erase personality: the correction can sting, flatter, bore or unsettle independently of romance.",
+    "Do not make the misunderstood {{user}} secretly superior — wealth, status or hidden talent is optional, never the default payoff of being misjudged.",
+    "Do not make the misunderstanding automatically flattering to {{char}} either: she may look prejudiced, nosy, careless or foolish once corrected, and that is a legitimate outcome.",
+    "If a third party engineered the misunderstanding, give them a coherent motive; their interference does not strip the leads of responsibility for their own assumptions.",
+    "Keep correction and consequence separate: the reveal itself should not bundle a mandatory reward, punishment, apology or confession.",
+    "Characters should remain people outside the hook: occupation, hobbies, friends, values and non-mistake-related personality persist before, during and after the reveal.",
+    "Vary the size of the mistake: a trivial wrong-name comedy and a life-altering professional misidentification are both in range.",
+    "Do not require the misunderstanding to be resolved within the opening; some of the best versions sustain it well into play or leave it standing.",
+    "The first contradicting evidence should exist somewhere in reach; a mistake with no possible discovery collapses into pure farce or pure suspense — choose deliberately.",
+    "Consent is activity-specific: an apology, a laugh or shared amusement over the mix-up does not imply touch, dating or intimacy.",
+    "British/Australian spellings; keep all content non-graphic and foreground the human comedy, tension or drama of mistaken belief rather than explicit material.",
+    "Do not script other bystanders' reactions as unanimous: colleagues, friends or family may find the mix-up funnier, crueler or less important than the leads do.",
+    "Overlap boundary: distinct from You're Not Who I Expected, which builds on true prior history whose details have changed; here at least one party's belief is factually wrong at the start. Cross-link when both apply.",
+    "Overlap boundary: distinct from Her Hidden Side, where the truth is concealed by the character herself; here the false belief can arise with no deception from the misjudged party at all.",
+    "Overlap boundary: distinct from What Are You Doing Here?, where surprise comes from unexpected place-based recognition; here the surprise is about who the other person is, not where they are.",
+    "Generate the impression, the evidence and the correction timing independently — a slow reveal with a silly mistake can outperform a fast reveal with a serious one.",
+    "Do not predetermine whether {{user}} ever corrects the impression, confirms it for his own convenience, or lets {{char}} discover it by accident; all three are valid player strategies.",
+    "Open at a playable moment where the mistaken impression is actively shaping behaviour: the reveal, its build-up or its immediate aftermath."
+  ],
+  "guardrails": [
+    "All participants are adults; every interaction is non-graphic and consent-forward.",
+    "{{char}}'s mistaken beliefs about {{user}} are her assumptions, never narrator-endorsed facts.",
+    "No scripting of {{user}}'s feelings, corrections, dialogue, consent or future behaviour.",
+    "Do not pre-play outcomes: apology, laughter, offence, romance, friendship, rivalry or indifference all remain open.",
+    "The mistaken impression must be believable given available evidence; no absurd contrivance disguised as human error.",
+    "Being misjudged does not make {{user}} secretly better or worse than the impression; hidden superiority is optional, never default.",
+    "Being wrong does not reduce {{char}} to a fool; her reaction should match her established personality.",
+    "Third-party manipulation, if present, has a coherent motive and does not dissolve the leads' own responsibility.",
+    "Consent is activity-specific: shared amusement, apology or gratitude does not imply touch, dating or sex.",
+    "No forced romance from the correction; professional, platonic, cool or adversarial continuations are equally valid.",
+    "No humiliation kink, punishment or revenge as a mandatory consequence of the misunderstanding.",
+    "Preserve each character's life beyond the hook: job, interests, friends and boundaries survive the reveal.",
+    "If the impression touches on reputation (criminal, romantic, professional), keep rumours distinct from verified facts in the narration."
+  ],
+  "diversity_axes": [
+    "Who is wrong: {{char}} about {{user}}, {{user}} about {{char}}, both mutually, or a whole group wrong about one person.",
+    "Cause of the impression: mistaken identity, partial information, secondhand gossip, misleading appearance, borrowed belongings, an overheard fragment, or a deliberate set-up.",
+    "Reasonableness: virtually unavoidable, plausible but unverified, or a prejudiced shortcut the character privately knows is unfair.",
+    "Speed of contradiction: during the first exchange, within the first week, or only after the relationship has deepened.",
+    "Content of the false belief: wrong job, wrong wealth level, wrong availability, wrong intentions, wrong danger level, wrong personality, wrong name or wrong history.",
+    "Emotional tone of the correction: mortifying, hilarious, irritating, chilling, professionally serious, quietly relieving or bittersweet.",
+    "{{char}}'s handling of being wrong: graceful apology, deflecting humour, stubborn doubling-down, mortified retreat, eager over-correction or defensive counter-accusation.",
+    "Third parties: no one involved, a meddling matchmaker, a jealous rival, a protective friend, a bored colleague or a family member with an agenda.",
+    "Setting: workplace, apartment block, university-of-adults, small town, event, wedding, hospital, shop, club, holiday, online-to-offline handoff.",
+    "Stakes of the first impression: none beyond social awkwardness, a job or contract, a tenancy, a friendship group's opinion, a family's approval, a team position.",
+    "Prior history: strangers, acquaintances who misremember, people connected through a third party, or two people hiding a shared past.",
+    "Whether anyone benefits from the misunderstanding and quietly resists correcting it.",
+    "Relationship outcome: friends, colleagues, rivals, partners, lovers, distant acquaintances or people who agree to forget it.",
+    "Whether the story opens pre-reveal, mid-reveal or post-correction.",
+    "Scale: a single wrong sentence and a life-defining misidentification sit at opposite ends of the same axis."
+  ],
+  "cross_links": [
+    "You're Not Who I Expected — sibling series built on true prior history where the other person has genuinely changed; here the belief is factually wrong from the start, and the two can chain when the mistaken impression is corrected into an unexpected reunion.",
+    "Her Hidden Side — the truth is concealed by the character herself there; here the misjudged party may have deceived no one, though a variant can combine both.",
+    "What Are You Doing Here? — surprise of place versus surprise of identity; a corrected first impression at an impossible location naturally crosses into it.",
+    "We Used to Know Each Other — mutual misidentification of someone half-remembered can route into this reconnection series once identities resolve.",
+    "We Matched — profiles and messages create deliberate self-presentation, so an inaccurate first impression at the real-world meeting belongs here.",
+    "The Other Regular — a habitué mistaken for staff, owner or a fellow regular of a different kind fits the recurring-venue engine.",
+    "Set Up Together — a third-party set-up is a natural engine for engineered wrong impressions; cross when the matchmaker's framing was false.",
+    "Convention Meetup — online handles meeting offline invite both mistaken-identity and expectation-mismatch versions."
+  ],
+  "tags": [
+    "series bible iii",
+    "reconnection & expectation",
+    "mistaken impression",
+    "mistaken identity",
+    "first impressions",
+    "wrong assumptions",
+    "misunderstanding",
+    "reputation",
+    "secondhand information",
+    "comedy of errors",
+    "correction",
+    "embarrassment",
+    "blind date",
+    "new colleagues",
+    "player agency",
+    "belief vs truth",
+    "social dynamics"
+  ],
+  "notes": "Expanded Series Bible III #10 Wrong First Impression from the v0.4 draft to version 1.0 (the stub contained no direction presets, so no Original Bible seeds group exists; all five core variables and all three cross-links are preserved in expanded form). Adds 178 direction presets across nine thematic groups exploring causes of mistaken impressions, the content of false beliefs, third-party engineering, correction timing and tone, settings, stakes, character reactions, open outcomes and a crossed belief-by-reveal combination group. All participants are adults; nothing explicit; {{user}}'s responses are never scripted.",
+  "direction_presets": [
+    {
+      "id": "how-the-mistake-happens-01-wrong-name-at-the-door",
+      "group": "How the mistake happens",
+      "title": "Wrong Name at the Door",
+      "direction": "{{char}} greets {{user}} at her apartment door by another man's name, certain the landlord sent him about the leak he never reported; the real repair visit is for the flat upstairs. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-02-the-borrowed-blazer",
+      "group": "How the mistake happens",
+      "title": "The Borrowed Blazer",
+      "direction": "{{char}} treats {{user}} as the company auditor after finding him in the office kitchen wearing a borrowed suit jacket, when he is actually the new hire she will be training. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-03-overheard-half-a-story",
+      "group": "How the mistake happens",
+      "title": "Overheard Half a Story",
+      "direction": "{{char}} overhears {{user}}'s phone conversation about 'getting rid of it before Friday' and concludes he is dangerous, when he is rehoming a piano. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-04-the-mis-sent-message",
+      "group": "How the mistake happens",
+      "title": "The Mis-sent Message",
+      "direction": "A colleague forwards {{user}}'s private joke message to {{char}} without context, and she arrives convinced he has been mocking her for weeks. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-05-identical-cars",
+      "group": "How the mistake happens",
+      "title": "Identical Cars",
+      "direction": "{{char}} gets into {{user}}'s car at the supermarket car park and starts a conversation about their supposed history before noticing the stranger at the wheel. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-06-the-standing-reservation",
+      "group": "How the mistake happens",
+      "title": "The Standing Reservation",
+      "direction": "A restaurant greets {{user}} as 'Mr Sato, your usual table', and {{char}}, the maître d's assistant, treats him as the reclusive regular whose tab she is meant to manage. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-07-case-of-mistaken-patient",
+      "group": "How the mistake happens",
+      "title": "Case of Mistaken Patient",
+      "direction": "At a clinic {{char}}, a nurse, reads the wrong chart and addresses {{user}} with grave sympathy for a condition he does not have. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-08-the-funeral-stranger",
+      "group": "How the mistake happens",
+      "title": "The Funeral Stranger",
+      "direction": "At a packed funeral {{char}} assumes {{user}} is the deceased's estranged son and gives him the front-row seat and a planned eulogy slot. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-09-wrong-hotel-room",
+      "group": "How the mistake happens",
+      "title": "Wrong Hotel Room",
+      "direction": "{{char}} finds {{user}} in what she believes is her hotel room and reacts accordingly; the front desk reassigned the rooms at midnight. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-10-the-costume-party",
+      "group": "How the mistake happens",
+      "title": "The Costume Party",
+      "direction": "{{char}} assumes {{user}}'s uniform at a fancy-dress party is a costume, and treats him as a fellow guest rather than the venue's actual off-duty security consultant. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-11-the-resume-mix-up",
+      "group": "How the mistake happens",
+      "title": "The Résumé Mix-Up",
+      "direction": "HR sends {{char}} the wrong candidate file, so she spends the first day treating {{user}} as the experienced manager she was warned about instead of the junior he actually is. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-12-someone-elses-dog",
+      "group": "How the mistake happens",
+      "title": "Someone Else's Dog",
+      "direction": "A dog with a familiar collar attaches itself to {{user}} in the park; {{char}} assumes he is the thief from the neighbourhood group chat and confronts him. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-13-the-wrong-twin-photograph",
+      "group": "How the mistake happens",
+      "title": "The Wrong Twin Photograph",
+      "direction": "{{char}} was shown a photograph of {{user}}'s brother and spends their first meeting convinced {{user}} is the man who ghosted her friend. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-14-the-shopkeepers-greeting",
+      "group": "How the mistake happens",
+      "title": "The Shopkeeper's Greeting",
+      "direction": "{{char}} insists on serving {{user}} with effusive familiarity as the son of the shop's old owner, with a discount she refuses to retract, while he has never been there before. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-15-the-language-assumption",
+      "group": "How the mistake happens",
+      "title": "The Language Assumption",
+      "direction": "{{char}} speaks about {{user}} freely in her second language, assuming he cannot understand it; he answers her question fluently. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-16-the-nameplate-swap",
+      "group": "How the mistake happens",
+      "title": "The Nameplate Swap",
+      "direction": "New nameplates place {{user}} in {{char}}'s expected supervisor's office, so she delivers a candid opinion of the department to the wrong man. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-17-the-wrong-band",
+      "group": "How the mistake happens",
+      "title": "The Wrong Band",
+      "direction": "{{char}} meets {{user}} at the loading dock wearing a band shirt and assumes he is tonight's guitarist; he is the venue inspector who simply likes the band. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-mistake-happens-18-the-misaddressed-letter",
+      "group": "How the mistake happens",
+      "title": "The Misaddressed Letter",
+      "direction": "{{char}} receives a letter meant for the previous tenant and acts on its contents, confronting {{user}} about obligations that are not his. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-01-richer-than-he-looks",
+      "group": "What the false belief says",
+      "title": "Richer Than He Looks",
+      "direction": "{{char}} assumes from his worn clothes that {{user}} is broke and quietly pays for everything, when the clothes are deliberate and his finances are nobody's business yet. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-02-poorer-than-he-looks",
+      "group": "What the false belief says",
+      "title": "Poorer Than He Looks",
+      "direction": "{{char}} treats {{user}} as the heir whose family funds her project, flattering and deferring to a man who is actually the hired surveyor. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-03-taken",
+      "group": "What the false belief says",
+      "title": "Taken",
+      "direction": "{{char}} writes {{user}} off as married after seeing him return a woman's umbrella, and treats all his friendliness as suspect. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-04-single-by-her-design",
+      "group": "What the false belief says",
+      "title": "Single By Her Design",
+      "direction": "A matchmaking friend describes {{user}} as single and desperate when he is neither, and {{char}} opens with inappropriate pity rather than interest. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-05-the-feared-new-boss",
+      "group": "What the false belief says",
+      "title": "The Feared New Boss",
+      "direction": "{{char}} believes {{user}} is the notorious new department head and treats him with brittle deference on his first day as a contractor. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-06-the-rumoured-rat",
+      "group": "What the false belief says",
+      "title": "The Rumoured Rat",
+      "direction": "Office gossip has labelled {{user}} as the informant behind last year's redundancies, and {{char}} freezes him out before he says a word. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-07-harmless",
+      "group": "What the false belief says",
+      "title": "Harmless",
+      "direction": "{{char}} assumes {{user}}, small and soft-spoked, poses no risk on the late shift, and manages him accordingly, missing entirely what kind of person he actually is. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-08-dangerous",
+      "group": "What the false belief says",
+      "title": "Dangerous",
+      "direction": "{{char}} is convinced {{user}} is the man her brother warned her about, and treats every ordinary gesture as a threat with a witness present. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-09-famous",
+      "group": "What the false belief says",
+      "title": "Famous",
+      "direction": "{{char}} mistakes {{user}} for a semi-famous author and asks him to sign her copy at the café, in front of the actual regulars who know better. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-10-the-probation-violation",
+      "group": "What the false belief says",
+      "title": "The Probation Violation",
+      "direction": "{{char}} treats {{user}} as the neighbour everyone says is in a gang, when the actual reason for the late-night traffic is the ambulance shifts he works. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-11-gay-by-assumption",
+      "group": "What the false belief says",
+      "title": "Gay By Assumption",
+      "direction": "{{char}} assumes from {{user}}'s style and interests that he is uninterested in women and therefore treats him as her safe confidant, with mismatched expectations on both sides. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-12-the-seller",
+      "group": "What the false belief says",
+      "title": "The Seller",
+      "direction": "{{char}} assumes {{user}} works on commission for the development company and distrusts every helpful thing he tells her about the neighbourhood. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-13-grieving",
+      "group": "What the false belief says",
+      "title": "Grieving",
+      "direction": "{{char}} treats {{user}} with hushed sympathy for a loss he never suffered, because the sympathy email was meant for the colleague whose desk he now has. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-14-the-landlords-nephew",
+      "group": "What the false belief says",
+      "title": "The Landlord's Nephew",
+      "direction": "{{char}} believes {{user}} got the workshop lease through family connections and opens with an accusation of unfairness. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-15-an-ex-convict",
+      "group": "What the false belief says",
+      "title": "An Ex-Convict",
+      "direction": "{{char}}'s friend recognises the name and insists {{user}} served time; the truth involves a namesake, a short mistaken arrest or nothing at all, and she behaves on the rumour. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-16-the-health-nut",
+      "group": "What the false belief says",
+      "title": "The Health Nut",
+      "direction": "{{char}} assumes from his gym bag that {{user}} will judge her habits and pre-empts with defensiveness he never earned. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-17-her-sisters-ex",
+      "group": "What the false belief says",
+      "title": "Her Sister's Ex",
+      "direction": "{{char}} is certain {{user}} is the man who broke her sister's heart and only her certainty keeps her from checking the name. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "what-the-false-belief-says-18-the-quiet-one",
+      "group": "What the false belief says",
+      "title": "The Quiet One",
+      "direction": "{{char}} assumes {{user}}'s silence means contempt rather than deafness in his better ear, and escalates a misunderstanding into a feud. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-01-the-matchmakers-embellishment",
+      "group": "Encouraged misunderstandings",
+      "title": "The Matchmaker's Embellishment",
+      "direction": "A mutual friend described {{user}} to {{char}} as a successful architect to improve his odds; he knows nothing of it and cannot understand her questions about buildings. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-02-the-rivals-smear",
+      "group": "Encouraged misunderstandings",
+      "title": "The Rival's Smear",
+      "direction": "A jealous colleague tells {{char}} that {{user}} got others sacked before, so she refuses his friendly overtures from day one. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-03-the-protective-lie",
+      "group": "Encouraged misunderstandings",
+      "title": "The Protective Lie",
+      "direction": "{{char}}'s brother tells her {{user}} is 'just the cleaner' to keep them apart, and she treats the supposed cleaner with careless familiarity. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-04-the-cover-story",
+      "group": "Encouraged misunderstandings",
+      "title": "The Cover Story",
+      "direction": "{{user}}'s friend introduced him at the wedding by a false name as a joke, and {{char}} now greets him by it every week at the climbing gym. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-05-the-bored-receptionist",
+      "group": "Encouraged misunderstandings",
+      "title": "The Bored Receptionist",
+      "direction": "A receptionist assigns {{user}} the wrong visitor badge on purpose to watch the confusion, and {{char}} acts on the mislabelled access level. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-06-the-familys-invention",
+      "group": "Encouraged misunderstandings",
+      "title": "The Family's Invention",
+      "direction": "{{char}}'s family has decided {{user}} is a wealthy suitor and she must disabuse or exploit the assumption while he tries to work out what they want from him. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-07-the-legacy-prank",
+      "group": "Encouraged misunderstandings",
+      "title": "The Legacy Prank",
+      "direction": "An office tradition makes every new hire adopt the previous holder's nickname, so {{char}} blames {{user}} for his predecessor's sins. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-08-the-fake-profile",
+      "group": "Encouraged misunderstandings",
+      "title": "The Fake Profile",
+      "direction": "Someone created a fake account using {{user}}'s photos and {{char}} has spent a week talking to it; now the real man walks into her shop. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-09-the-escalating-white-lie",
+      "group": "Encouraged misunderstandings",
+      "title": "The Escalating White Lie",
+      "direction": "{{char}}'s friend implied {{user}} was coming to the reunion 'alone and miserable' to get her to attend; he arrives happy and accompanied and everyone behaves on the earlier version. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-10-the-managers-shorthand",
+      "group": "Encouraged misunderstandings",
+      "title": "The Manager's Shorthand",
+      "direction": "A boss introduces {{user}} as 'our compliance problem' as a joke, and {{char}} spends the induction treating him as a risk to be contained. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-11-the-two-sided-setup",
+      "group": "Encouraged misunderstandings",
+      "title": "The Two-Sided Setup",
+      "direction": "Two friends deliberately described each of {{char}} and {{user}} falsely to the other, then step back to enjoy the collision of expectations. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-12-the-guarded-heiress",
+      "group": "Encouraged misunderstandings",
+      "title": "The Guarded Heiress",
+      "direction": "{{char}}'s staff routinely misrepresent her visitors to filter them, so {{user}} arrives believing she is the estate manager, not the owner. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-13-the-acting-coachs-trick",
+      "group": "Encouraged misunderstandings",
+      "title": "The Acting Coach's Trick",
+      "direction": "{{char}}'s director tells the whole cast that {{user}} is a feared critic so they rehearse well; {{user}} is actually the new sound engineer, terrified of critics. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-14-the-protective-alias",
+      "group": "Encouraged misunderstandings",
+      "title": "The Protective Alias",
+      "direction": "{{user}} was given a false name by a witness-protection-style misunderstanding years ago; {{char}} knows that name and its ugly reputation. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-15-the-local-legend",
+      "group": "Encouraged misunderstandings",
+      "title": "The Local Legend",
+      "direction": "A story has grown in the small town about 'the man from the insurance company' and {{char}} greets {{user}} as the villain of a policy dispute from before he was born. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "encouraged-misunderstandings-16-the-sabotaged-introduction",
+      "group": "Encouraged misunderstandings",
+      "title": "The Sabotaged Introduction",
+      "direction": "{{char}}'s business rival deliberately sends her to meet {{user}} believing he is a hostile buyer, hoping the deal collapses on first contact. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-01-mid-sentence-realisation",
+      "group": "How the correction lands",
+      "title": "Mid-Sentence Realisation",
+      "direction": "{{char}} stops cold mid-scolding as the real evidence clicks into place, with an audience of her colleagues watching the exact moment her certainty collapses. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-02-the-slow-unravelling",
+      "group": "How the correction lands",
+      "title": "The Slow Unravelling",
+      "direction": "Over a fortnight of small contradictions {{char}} dismantles her own belief about {{user}} piece by piece, embarrassed more by how long she defended it than by the mistake itself. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-03-the-public-humiliation",
+      "group": "How the correction lands",
+      "title": "The Public Humiliation",
+      "direction": "The correction arrives in front of the entire dinner party, orchestrated by a smug relative, and {{char}} must decide how to be wrong in public. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-04-the-quiet-note",
+      "group": "How the correction lands",
+      "title": "The Quiet Note",
+      "direction": "The truth arrives as an anonymous note and {{char}} has to correct course without ever admitting she was wrong aloud. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-05-the-funny-coincidence",
+      "group": "How the correction lands",
+      "title": "The Funny Coincidence",
+      "direction": "The reveal lands exactly when the real person she mistook {{user}} for walks into the same room, and the comparison destroys her credibility instantly. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-06-too-late-to-retract",
+      "group": "How the correction lands",
+      "title": "Too Late to Retract",
+      "direction": "{{char}} has already told her whole network the false story before the correction, and must manage reputational fallout she caused. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-07-he-never-corrects-her",
+      "group": "How the correction lands",
+      "title": "He Never Corrects Her",
+      "direction": "{{user}} finds the misunderstanding useful and says nothing; {{char}} may never learn the truth, or may find out in the worst possible way. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-08-the-graceful-apology",
+      "group": "How the correction lands",
+      "title": "The Graceful Apology",
+      "direction": "{{char}} corrects her error immediately and without excuses, and the relationship restarts from a foundation of her being genuinely wrong and handling it. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-09-the-double-down",
+      "group": "How the correction lands",
+      "title": "The Double-Down",
+      "direction": "{{char}} cannot afford to be wrong again after a previous mistake at work, so she defends the false impression against mounting evidence. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-10-the-cold-professional-pivot",
+      "group": "How the correction lands",
+      "title": "The Cold Professional Pivot",
+      "direction": "The correction changes nothing emotionally for {{char}}: she was wrong, adjusts, and treats {{user}} with exact professional neutrality, which he may find worse. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-11-she-laughs-first",
+      "group": "How the correction lands",
+      "title": "She Laughs First",
+      "direction": "{{char}} realises the mistake, and before {{user}} can say a word, she is laughing so hard she cannot apologise properly. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-12-the-consequential-reveal",
+      "group": "How the correction lands",
+      "title": "The Consequential Reveal",
+      "direction": "The misunderstanding has already cost {{user}} a contract or a friendship, and the correction opens with {{char}} owing him something real. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-13-reveal-through-a-third-party",
+      "group": "How the correction lands",
+      "title": "Reveal Through a Third Party",
+      "direction": "{{char}} learns the truth from a bored bystander who assumes she already knew, and must absorb it without reaction in front of both of them. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-14-the-partial-correction",
+      "group": "How the correction lands",
+      "title": "The Partial Correction",
+      "direction": "The reveal fixes half the misunderstanding while the other half stands: {{char}} learns his job but keeps the wrong idea about his intentions. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-15-she-refuses-to-believe-it",
+      "group": "How the correction lands",
+      "title": "She Refuses to Believe It",
+      "direction": "The evidence is clear but contradicts something {{char}} needs to be true, and she chooses her belief over the facts for a while. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "how-the-correction-lands-16-the-mutual-reveal",
+      "group": "How the correction lands",
+      "title": "The Mutual Reveal",
+      "direction": "Each discovers their own false assumption about the other in the same conversation, and they must rank which error needs apologising for first. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-01-the-new-job-day-one",
+      "group": "Where and when it happens",
+      "title": "The New Job, Day One",
+      "direction": "{{char}} has been briefed about the person covering {{user}}'s role and treats him accordingly from the first morning; the brief was wrong. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-02-the-apartment-viewing",
+      "group": "Where and when it happens",
+      "title": "The Apartment Viewing",
+      "direction": "{{char}} assumes {{user}} is the landlord when he is actually the first applicant she is bidding against for the same flat. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-03-the-wedding-seating",
+      "group": "Where and when it happens",
+      "title": "The Wedding Seating",
+      "direction": "{{char}} believes {{user}} is her assigned table partner, the groom's cousin with whom she is meant to get along, and shares confidences with a stranger. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-04-the-hospital-waiting-room",
+      "group": "Where and when it happens",
+      "title": "The Hospital Waiting Room",
+      "direction": "{{char}} assumes {{user}} is the family member of her patient and updates him warmly, when he is waiting on an entirely different case. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-05-the-adult-class",
+      "group": "Where and when it happens",
+      "title": "The Adult Class",
+      "direction": "{{char}} treats {{user}} as the instructor of their evening pottery class and follows his advice for a full hour while the real teacher watches. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-06-the-small-town-return",
+      "group": "Where and when it happens",
+      "title": "The Small Town Return",
+      "direction": "{{char}} returns to her hometown and treats {{user}} as the man who bought her grandmother's orchard, when he merely rents the cottage beside it. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-07-the-late-train",
+      "group": "Where and when it happens",
+      "title": "The Late Train",
+      "direction": "{{char}} sits beside {{user}}, assumes he is the conductor off-duty, and complains about the timetable to a passenger who merely dresses sensibly. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-08-the-firms-retreat",
+      "group": "Where and when it happens",
+      "title": "The Firm's Retreat",
+      "direction": "At a team-building event {{char}} is told {{user}} is the consultant brought in to grade them, and performs accordingly for two days. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-09-the-reunion-name-tag",
+      "group": "Where and when it happens",
+      "title": "The Reunion Name Tag",
+      "direction": "A printer error gives {{user}} another classmate's name tag, and {{char}} spends the evening telling him what she really thought of 'him' in school. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-10-the-shared-delivery",
+      "group": "Where and when it happens",
+      "title": "The Shared Delivery",
+      "direction": "{{char}} accepts a delivery meant for {{user}}'s flat, assumes from the contents that he runs some strange business, and confronts him on the stairs. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-11-the-volunteer-shift",
+      "group": "Where and when it happens",
+      "title": "The Volunteer Shift",
+      "direction": "{{char}} assumes {{user}} is a paid coordinator at the shelter and hands him her complaints about management, which he will have to relay to himself. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-12-the-rented-venue",
+      "group": "Where and when it happens",
+      "title": "The Rented Venue",
+      "direction": "{{char}} assumes {{user}} owns the gallery she wants for her exhibition and begins negotiating with a man who came to look at the art. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-13-the-gym-induction",
+      "group": "Where and when it happens",
+      "title": "The Gym Induction",
+      "direction": "{{char}} mistakes {{user}} for the personal trainer she booked and follows his workout until the actual trainer appears. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-14-the-neighbours-party",
+      "group": "Where and when it happens",
+      "title": "The Neighbour's Party",
+      "direction": "{{char}} assumes {{user}} is the building's notorious complainer and pre-empts him with hostility at the party he was invited to. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-15-the-airport-pickup",
+      "group": "Where and when it happens",
+      "title": "The Airport Pickup",
+      "direction": "{{char}} holds a sign with the wrong name and takes {{user}}'s silence as confirmation, driving him to a hotel he has never heard of. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-and-when-it-happens-16-the-blind-date-swap",
+      "group": "Where and when it happens",
+      "title": "The Blind Date Swap",
+      "direction": "Two tables booked, two dates swapped by a frazzled host, and {{char}} spends an hour building on a completely mistaken idea of who {{user}} is. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-01-the-lost-contract",
+      "group": "Stakes and consequences",
+      "title": "The Lost Contract",
+      "direction": "{{char}}'s mistaken belief led her team to pass over {{user}}'s company; the correction surfaces when their firms are both finalists for the same bid. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-02-the-bad-reference",
+      "group": "Stakes and consequences",
+      "title": "The Bad Reference",
+      "direction": "{{char}} once described 'the incident' involving a man she now knows she misidentified, and {{user}}'s job search has been paying for it for a year. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-03-the-friendship-group",
+      "group": "Stakes and consequences",
+      "title": "The Friendship Group",
+      "direction": "{{char}}'s whole circle treated {{user}} on her mistaken report, and unwinding the collective error tests which friendships are actually hers. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-04-the-almost-affair",
+      "group": "Stakes and consequences",
+      "title": "The Almost Affair",
+      "direction": "{{char}} believed {{user}} was unhappily single and moved toward him on that basis; learning the truth forces her to confront what she was doing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-05-the-family-introduction",
+      "group": "Stakes and consequences",
+      "title": "The Family Introduction",
+      "direction": "{{char}} told her family {{user}} was a doctor, and now he must attend dinner with people who think his presence is charity. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-06-the-business-partnership",
+      "group": "Stakes and consequences",
+      "title": "The Business Partnership",
+      "direction": "{{char}} offered {{user}} a partnership believing he owned the workshop's client list; the correction arrives after the papers are drafted. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-07-the-tenancy",
+      "group": "Stakes and consequences",
+      "title": "The Tenancy",
+      "direction": "{{char}} accepted {{user}} as a lodger on the understanding that he works nights, and the truth about his schedule threatens the arrangement she built. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-08-the-public-apology",
+      "group": "Stakes and consequences",
+      "title": "The Public Apology",
+      "direction": "The correction requires {{char}} to apologise in front of the same colleagues she corrected from with a flourish. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-09-the-kept-advantage",
+      "group": "Stakes and consequences",
+      "title": "The Kept Advantage",
+      "direction": "The mistake made {{user}} undercharge her significantly, and no one else has noticed; whether she profits from it is her choice. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-10-the-broken-confidence",
+      "group": "Stakes and consequences",
+      "title": "The Broken Confidence",
+      "direction": "{{char}} confided personal things to {{user}} while labouring under her false assumption, and the reveal makes the confidence feel newly dangerous. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-11-the-missed-connection",
+      "group": "Stakes and consequences",
+      "title": "The Missed Connection",
+      "direction": "{{char}}'s mistaken impression made her ghost a man she now must meet professionally, and the cost is a chance she cannot prove existed. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-12-the-innocent-accusation",
+      "group": "Stakes and consequences",
+      "title": "The Innocent Accusation",
+      "direction": "{{char}} reported {{user}} for theft on mistaken grounds; the correction cannot unmake the record or the week he spent under suspicion. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-13-the-inherited-grudge",
+      "group": "Stakes and consequences",
+      "title": "The Inherited Grudge",
+      "direction": "{{char}} was raised to distrust {{user}}'s family for something their older generation did, and discovers the feud's origin was a misidentification. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-14-the-reputation-rebuild",
+      "group": "Stakes and consequences",
+      "title": "The Reputation Rebuild",
+      "direction": "The correction clears {{user}} but leaves {{char}} with the reputation for hasty judgment, and she must live in the town that now watches her. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-15-the-valuable-wrong-belief",
+      "group": "Stakes and consequences",
+      "title": "The Valuable Wrong Belief",
+      "direction": "{{char}} is wrong about {{user}} but the belief pushed her to treat him decently, and the truth would have earned him nothing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-and-consequences-16-the-nothing-at-all",
+      "group": "Stakes and consequences",
+      "title": "The Nothing At All",
+      "direction": "The correction costs nobody anything, changes nothing, and the two simply get on with the rest of their lives; the mistake becomes a story neither tells. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-01-the-chronic-first-imresser",
+      "group": "Character reactions and blind spots",
+      "title": "The Chronic First-Imresser",
+      "direction": "{{char}} prides herself on reading people instantly and has never been wrong in her own telling; {{user}}'s file is her first genuine misfire in years. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-02-the-guilty-re-reader",
+      "group": "Character reactions and blind spots",
+      "title": "The Guilty Re-Reader",
+      "direction": "{{char}} was burned once by trusting a false first impression of a friend's partner, and now she over-reads {{user}} to avoid repeating it. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-03-the-prejudice-she-owns",
+      "group": "Character reactions and blind spots",
+      "title": "The Prejudice She Owns",
+      "direction": "{{char}}'s mistake comes from a bias she privately knows she holds, and the correction forces a reckoning she has postponed for years. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-04-the-jumper",
+      "group": "Character reactions and blind spots",
+      "title": "The Jumper",
+      "direction": "{{char}} forms opinions in seconds and revises them only on overwhelming evidence, so her wrong belief about {{user}} hardens before anyone can intervene. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-05-the-evidence-hoarder",
+      "group": "Character reactions and blind spots",
+      "title": "The Evidence Hoarder",
+      "direction": "{{char}} collects quiet proof about people before trusting them, and the mistaken file she has built on {{user}} is thorough, dated and wrong. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-06-the-apology-avoider",
+      "group": "Character reactions and blind spots",
+      "title": "The Apology Avoider",
+      "direction": "{{char}} has never learned to apologise and structures her whole life around never being wrong; this misunderstanding corners her. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-07-the-comic-self-narrator",
+      "group": "Character reactions and blind spots",
+      "title": "The Comic Self-Narrator",
+      "direction": "{{char}} treats her own mistakes as material and narrates the misunderstanding as a bit, using humour to avoid its edges. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-08-the-suspicious-landlady",
+      "group": "Character reactions and blind spots",
+      "title": "The Suspicious Landlady",
+      "direction": "Years of bad tenants make {{char}} treat {{user}}'s entirely innocent habits as red flags she keeps to herself and acts upon. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-09-the-reputation-manager",
+      "group": "Character reactions and blind spots",
+      "title": "The Reputation Manager",
+      "direction": "{{char}} runs a small business whose reviews mention 'the rude man at the counter' — her, on a day her impression of a customer was completely wrong. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-10-the-mindful-overcorrector",
+      "group": "Character reactions and blind spots",
+      "title": "The Mindful Overcorrector",
+      "direction": "{{char}} is so determined to correct her error about {{user}} that she overcorrects into ingratiation, which he may find worse than the original coldness. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-11-the-cliques-chairwoman",
+      "group": "Character reactions and blind spots",
+      "title": "The Cliques' Chairwoman",
+      "direction": "{{char}}'s social standing rests on her judgments being right, so admitting the mistake publicly risks her position. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-12-the-second-chance-believer",
+      "group": "Character reactions and blind spots",
+      "title": "The Second-Chance Believer",
+      "direction": "{{char}} has spent her life defending people others misread, and does not notice she is the one misreading this time. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-13-the-grudge-holder",
+      "group": "Character reactions and blind spots",
+      "title": "The Grudge Holder",
+      "direction": "{{char}} never puts down a grudge once formed, and the last obstacle between her and {{user}} is a first impression formed under wrong lights. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-14-the-blame-deflector",
+      "group": "Character reactions and blind spots",
+      "title": "The Blame Deflector",
+      "direction": "{{char}} was fed the misinformation by a trusted friend, and choosing between the friend's reputation and {{user}}'s vindication is her real test. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-15-the-competent-stranger-reader",
+      "group": "Character reactions and blind spots",
+      "title": "The Competent Stranger-Reader",
+      "direction": "{{char}} reads strangers for a living and gets {{user}} precisely backwards, which unsettles her professional identity more than her manners. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "character-reactions-and-blind-spots-16-the-sincere-ostrich",
+      "group": "Character reactions and blind spots",
+      "title": "The Sincere Ostrich",
+      "direction": "{{char}} suspects within a day that she has misjudged {{user}} but cannot face the conversation, and behaves increasingly strangely around him while he does the sums. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-01-the-running-joke",
+      "group": "Where it can lead",
+      "title": "The Running Joke",
+      "direction": "The corrected misunderstanding becomes the founding story of a genuine friendship, retold at every gathering with escalating inaccuracy. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-02-the-cold-peace",
+      "group": "Where it can lead",
+      "title": "The Cold Peace",
+      "direction": "The correction is accepted but nothing warms; {{char}} and {{user}} coexist in mutual, courteous wariness, which either could thaw. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-03-the-professional-bond",
+      "group": "Where it can lead",
+      "title": "The Professional Bond",
+      "direction": "Nothing personal develops, but the two become excellent colleagues because the mistake's wreckage forced them to actually communicate. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-04-the-slow-rebuild",
+      "group": "Where it can lead",
+      "title": "The Slow Rebuild",
+      "direction": "The correction opens the door but the damage takes months of small proofs to repair, and the roleplay is the repair. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-05-the-alliance-against-everyone",
+      "group": "Where it can lead",
+      "title": "The Alliance Against Everyone",
+      "direction": "{{char}} and {{user}} end up on the same side of the misunderstanding's fallout, allied against the gossips, bosses or relatives who propagated it. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-06-the-odd-co-dependency",
+      "group": "Where it can lead",
+      "title": "The Odd Co-dependency",
+      "direction": "Each holds a wrong belief about the other that neither corrects, and the fragile arrangement becomes its own quiet comedy or slow disaster. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-07-the-grudge-match",
+      "group": "Where it can lead",
+      "title": "The Grudge Match",
+      "direction": "The correction arrives but {{char}}'s conduct during the mistaken period is not forgiven by {{user}}, and the new dynamic is adversarial. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-08-the-second-chance-declined",
+      "group": "Where it can lead",
+      "title": "The Second Chance Declined",
+      "direction": "{{char}} offers a complete apology and restart; {{user}}'s interest in accepting is entirely his own and not for the card to settle. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-09-the-awkward-flirtation",
+      "group": "Where it can lead",
+      "title": "The Awkward Flirtation",
+      "direction": "The correction does not resolve the attraction the mistake accidentally created, and both must work out what was real. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-10-the-reputational-team-up",
+      "group": "Where it can lead",
+      "title": "The Reputational Team-Up",
+      "direction": "Clearing {{user}}'s name becomes a shared project, and the two become friends while working out what actually happened. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-11-the-quiet-fade",
+      "group": "Where it can lead",
+      "title": "The Quiet Fade",
+      "direction": "The matter resolves and the two simply drift apart, an ending the engine permits and no pursuit scene is owed. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-12-the-teacher",
+      "group": "Where it can lead",
+      "title": "The Teacher",
+      "direction": "{{char}} changes how she meets every new person afterwards, and {{user}}'s presence in her life becomes a permanent cautionary benchmark. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-13-the-unresolved-stalemate",
+      "group": "Where it can lead",
+      "title": "The Unresolved Stalemate",
+      "direction": "The misunderstanding is half-corrected, both are too proud to finish the job, and play continues inside the gap. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-14-the-accidental-romance",
+      "group": "Where it can lead",
+      "title": "The Accidental Romance",
+      "direction": "The mistake brought them together and the correction gives them a reason to stay; nothing about either is guaranteed. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-15-the-rumours-second-life",
+      "group": "Where it can lead",
+      "title": "The Rumour's Second Life",
+      "direction": "The correction circulates worse than the original falsehood, and the two must manage a misunderstanding about their misunderstanding. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-it-can-lead-16-the-crossroads",
+      "group": "Where it can lead",
+      "title": "The Crossroads",
+      "direction": "The correction lands and the opening stops exactly there: everything {{char}} and {{user}} become next is undecided roleplay space. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-01-richer-than-he-looks-mid-sentence-in-public",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Richer Than He Looks, mid-sentence in public",
+      "direction": "{{char}} treats adult {{user}} as richer than he looks and only learns the truth when the impression unravels mid-sentence in public. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-02-richer-than-he-looks-through-a-slow-fortnight-of-clues",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Richer Than He Looks, through a slow fortnight of clues",
+      "direction": "{{char}} treats adult {{user}} as richer than he looks and only learns the truth when the impression unravels through a slow fortnight of clues. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-03-richer-than-he-looks-when-the-real-person-walks-in",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Richer Than He Looks, when the real person walks in",
+      "direction": "{{char}} treats adult {{user}} as richer than he looks and only learns the truth when the impression unravels when the real person walks in. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-04-richer-than-he-looks-via-a-bored-third-party",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Richer Than He Looks, via a bored third party",
+      "direction": "{{char}} treats adult {{user}} as richer than he looks and only learns the truth when the impression unravels via a bored third party. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-05-richer-than-he-looks-too-late-after-she-has-told-everyone",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Richer Than He Looks, too late after she has told everyone",
+      "direction": "{{char}} treats adult {{user}} as richer than he looks and only learns the truth when the impression unravels too late after she has told everyone. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-06-richer-than-he-looks-in-a-note-she-cant-trace",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Richer Than He Looks, in a note she can't trace",
+      "direction": "{{char}} treats adult {{user}} as richer than he looks and only learns the truth when the impression unravels in a note she can't trace. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-07-richer-than-he-looks-when-he-chooses-to-say-nothing",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Richer Than He Looks, when he chooses to say nothing",
+      "direction": "{{char}} treats adult {{user}} as richer than he looks and only learns the truth when the impression unravels when he chooses to say nothing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-08-richer-than-he-looks-at-the-worst-professional-moment",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Richer Than He Looks, at the worst professional moment",
+      "direction": "{{char}} treats adult {{user}} as richer than he looks and only learns the truth when the impression unravels at the worst professional moment. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-09-poorer-than-he-looks-mid-sentence-in-public",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Poorer Than He Looks, mid-sentence in public",
+      "direction": "{{char}} treats adult {{user}} as poorer than he looks and only learns the truth when the impression unravels mid-sentence in public. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-10-poorer-than-he-looks-through-a-slow-fortnight-of-clues",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Poorer Than He Looks, through a slow fortnight of clues",
+      "direction": "{{char}} treats adult {{user}} as poorer than he looks and only learns the truth when the impression unravels through a slow fortnight of clues. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-11-poorer-than-he-looks-when-the-real-person-walks-in",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Poorer Than He Looks, when the real person walks in",
+      "direction": "{{char}} treats adult {{user}} as poorer than he looks and only learns the truth when the impression unravels when the real person walks in. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-12-poorer-than-he-looks-via-a-bored-third-party",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Poorer Than He Looks, via a bored third party",
+      "direction": "{{char}} treats adult {{user}} as poorer than he looks and only learns the truth when the impression unravels via a bored third party. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-13-poorer-than-he-looks-too-late-after-she-has-told-everyone",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Poorer Than He Looks, too late after she has told everyone",
+      "direction": "{{char}} treats adult {{user}} as poorer than he looks and only learns the truth when the impression unravels too late after she has told everyone. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-14-poorer-than-he-looks-in-a-note-she-cant-trace",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Poorer Than He Looks, in a note she can't trace",
+      "direction": "{{char}} treats adult {{user}} as poorer than he looks and only learns the truth when the impression unravels in a note she can't trace. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-15-poorer-than-he-looks-when-he-chooses-to-say-nothing",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Poorer Than He Looks, when he chooses to say nothing",
+      "direction": "{{char}} treats adult {{user}} as poorer than he looks and only learns the truth when the impression unravels when he chooses to say nothing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-16-poorer-than-he-looks-at-the-worst-professional-moment",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Poorer Than He Looks, at the worst professional moment",
+      "direction": "{{char}} treats adult {{user}} as poorer than he looks and only learns the truth when the impression unravels at the worst professional moment. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-17-taken-already-mid-sentence-in-public",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Taken Already, mid-sentence in public",
+      "direction": "{{char}} treats adult {{user}} as taken already and only learns the truth when the impression unravels mid-sentence in public. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-18-taken-already-through-a-slow-fortnight-of-clues",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Taken Already, through a slow fortnight of clues",
+      "direction": "{{char}} treats adult {{user}} as taken already and only learns the truth when the impression unravels through a slow fortnight of clues. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-19-taken-already-when-the-real-person-walks-in",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Taken Already, when the real person walks in",
+      "direction": "{{char}} treats adult {{user}} as taken already and only learns the truth when the impression unravels when the real person walks in. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-20-taken-already-via-a-bored-third-party",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Taken Already, via a bored third party",
+      "direction": "{{char}} treats adult {{user}} as taken already and only learns the truth when the impression unravels via a bored third party. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-21-taken-already-too-late-after-she-has-told-everyone",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Taken Already, too late after she has told everyone",
+      "direction": "{{char}} treats adult {{user}} as taken already and only learns the truth when the impression unravels too late after she has told everyone. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-22-taken-already-in-a-note-she-cant-trace",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Taken Already, in a note she can't trace",
+      "direction": "{{char}} treats adult {{user}} as taken already and only learns the truth when the impression unravels in a note she can't trace. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-23-taken-already-when-he-chooses-to-say-nothing",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Taken Already, when he chooses to say nothing",
+      "direction": "{{char}} treats adult {{user}} as taken already and only learns the truth when the impression unravels when he chooses to say nothing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-24-taken-already-at-the-worst-professional-moment",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Taken Already, at the worst professional moment",
+      "direction": "{{char}} treats adult {{user}} as taken already and only learns the truth when the impression unravels at the worst professional moment. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-25-the-feared-new-boss-mid-sentence-in-public",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Feared New Boss, mid-sentence in public",
+      "direction": "{{char}} treats adult {{user}} as the feared new boss and only learns the truth when the impression unravels mid-sentence in public. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-26-the-feared-new-boss-through-a-slow-fortnight-of-clues",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Feared New Boss, through a slow fortnight of clues",
+      "direction": "{{char}} treats adult {{user}} as the feared new boss and only learns the truth when the impression unravels through a slow fortnight of clues. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-27-the-feared-new-boss-when-the-real-person-walks-in",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Feared New Boss, when the real person walks in",
+      "direction": "{{char}} treats adult {{user}} as the feared new boss and only learns the truth when the impression unravels when the real person walks in. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-28-the-feared-new-boss-via-a-bored-third-party",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Feared New Boss, via a bored third party",
+      "direction": "{{char}} treats adult {{user}} as the feared new boss and only learns the truth when the impression unravels via a bored third party. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-29-the-feared-new-boss-too-late-after-she-has-told-everyone",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Feared New Boss, too late after she has told everyone",
+      "direction": "{{char}} treats adult {{user}} as the feared new boss and only learns the truth when the impression unravels too late after she has told everyone. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-30-the-feared-new-boss-in-a-note-she-cant-trace",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Feared New Boss, in a note she can't trace",
+      "direction": "{{char}} treats adult {{user}} as the feared new boss and only learns the truth when the impression unravels in a note she can't trace. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-31-the-feared-new-boss-when-he-chooses-to-say-nothing",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Feared New Boss, when he chooses to say nothing",
+      "direction": "{{char}} treats adult {{user}} as the feared new boss and only learns the truth when the impression unravels when he chooses to say nothing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-32-the-feared-new-boss-at-the-worst-professional-moment",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Feared New Boss, at the worst professional moment",
+      "direction": "{{char}} treats adult {{user}} as the feared new boss and only learns the truth when the impression unravels at the worst professional moment. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-33-the-office-informant-mid-sentence-in-public",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Office Informant, mid-sentence in public",
+      "direction": "{{char}} treats adult {{user}} as the office informant and only learns the truth when the impression unravels mid-sentence in public. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-34-the-office-informant-through-a-slow-fortnight-of-clues",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Office Informant, through a slow fortnight of clues",
+      "direction": "{{char}} treats adult {{user}} as the office informant and only learns the truth when the impression unravels through a slow fortnight of clues. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-35-the-office-informant-when-the-real-person-walks-in",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Office Informant, when the real person walks in",
+      "direction": "{{char}} treats adult {{user}} as the office informant and only learns the truth when the impression unravels when the real person walks in. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-36-the-office-informant-via-a-bored-third-party",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Office Informant, via a bored third party",
+      "direction": "{{char}} treats adult {{user}} as the office informant and only learns the truth when the impression unravels via a bored third party. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-37-the-office-informant-too-late-after-she-has-told-everyone",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Office Informant, too late after she has told everyone",
+      "direction": "{{char}} treats adult {{user}} as the office informant and only learns the truth when the impression unravels too late after she has told everyone. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-38-the-office-informant-in-a-note-she-cant-trace",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Office Informant, in a note she can't trace",
+      "direction": "{{char}} treats adult {{user}} as the office informant and only learns the truth when the impression unravels in a note she can't trace. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-39-the-office-informant-when-he-chooses-to-say-nothing",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Office Informant, when he chooses to say nothing",
+      "direction": "{{char}} treats adult {{user}} as the office informant and only learns the truth when the impression unravels when he chooses to say nothing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-40-the-office-informant-at-the-worst-professional-moment",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Office Informant, at the worst professional moment",
+      "direction": "{{char}} treats adult {{user}} as the office informant and only learns the truth when the impression unravels at the worst professional moment. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-41-dangerous-on-sight-mid-sentence-in-public",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Dangerous On Sight, mid-sentence in public",
+      "direction": "{{char}} treats adult {{user}} as dangerous on sight and only learns the truth when the impression unravels mid-sentence in public. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-42-dangerous-on-sight-through-a-slow-fortnight-of-clues",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Dangerous On Sight, through a slow fortnight of clues",
+      "direction": "{{char}} treats adult {{user}} as dangerous on sight and only learns the truth when the impression unravels through a slow fortnight of clues. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-43-dangerous-on-sight-when-the-real-person-walks-in",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Dangerous On Sight, when the real person walks in",
+      "direction": "{{char}} treats adult {{user}} as dangerous on sight and only learns the truth when the impression unravels when the real person walks in. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-44-dangerous-on-sight-via-a-bored-third-party",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Dangerous On Sight, via a bored third party",
+      "direction": "{{char}} treats adult {{user}} as dangerous on sight and only learns the truth when the impression unravels via a bored third party. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-45-dangerous-on-sight-too-late-after-she-has-told-everyone",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Dangerous On Sight, too late after she has told everyone",
+      "direction": "{{char}} treats adult {{user}} as dangerous on sight and only learns the truth when the impression unravels too late after she has told everyone. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-46-dangerous-on-sight-in-a-note-she-cant-trace",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Dangerous On Sight, in a note she can't trace",
+      "direction": "{{char}} treats adult {{user}} as dangerous on sight and only learns the truth when the impression unravels in a note she can't trace. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-47-dangerous-on-sight-when-he-chooses-to-say-nothing",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Dangerous On Sight, when he chooses to say nothing",
+      "direction": "{{char}} treats adult {{user}} as dangerous on sight and only learns the truth when the impression unravels when he chooses to say nothing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-48-dangerous-on-sight-at-the-worst-professional-moment",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Dangerous On Sight, at the worst professional moment",
+      "direction": "{{char}} treats adult {{user}} as dangerous on sight and only learns the truth when the impression unravels at the worst professional moment. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-49-famous-in-a-niche-mid-sentence-in-public",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Famous In A Niche, mid-sentence in public",
+      "direction": "{{char}} treats adult {{user}} as famous in a niche and only learns the truth when the impression unravels mid-sentence in public. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-50-famous-in-a-niche-through-a-slow-fortnight-of-clues",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Famous In A Niche, through a slow fortnight of clues",
+      "direction": "{{char}} treats adult {{user}} as famous in a niche and only learns the truth when the impression unravels through a slow fortnight of clues. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-51-famous-in-a-niche-when-the-real-person-walks-in",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Famous In A Niche, when the real person walks in",
+      "direction": "{{char}} treats adult {{user}} as famous in a niche and only learns the truth when the impression unravels when the real person walks in. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-52-famous-in-a-niche-via-a-bored-third-party",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Famous In A Niche, via a bored third party",
+      "direction": "{{char}} treats adult {{user}} as famous in a niche and only learns the truth when the impression unravels via a bored third party. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-53-famous-in-a-niche-too-late-after-she-has-told-everyone",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Famous In A Niche, too late after she has told everyone",
+      "direction": "{{char}} treats adult {{user}} as famous in a niche and only learns the truth when the impression unravels too late after she has told everyone. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-54-famous-in-a-niche-in-a-note-she-cant-trace",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Famous In A Niche, in a note she can't trace",
+      "direction": "{{char}} treats adult {{user}} as famous in a niche and only learns the truth when the impression unravels in a note she can't trace. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-55-famous-in-a-niche-when-he-chooses-to-say-nothing",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Famous In A Niche, when he chooses to say nothing",
+      "direction": "{{char}} treats adult {{user}} as famous in a niche and only learns the truth when the impression unravels when he chooses to say nothing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-56-famous-in-a-niche-at-the-worst-professional-moment",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Famous In A Niche, at the worst professional moment",
+      "direction": "{{char}} treats adult {{user}} as famous in a niche and only learns the truth when the impression unravels at the worst professional moment. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-57-an-ex-convict-by-rumour-mid-sentence-in-public",
+      "group": "Wrong belief and reveal combinations",
+      "title": "An Ex-Convict By Rumour, mid-sentence in public",
+      "direction": "{{char}} treats adult {{user}} as an ex-convict by rumour and only learns the truth when the impression unravels mid-sentence in public. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-58-an-ex-convict-by-rumour-through-a-slow-fortnight-of-clues",
+      "group": "Wrong belief and reveal combinations",
+      "title": "An Ex-Convict By Rumour, through a slow fortnight of clues",
+      "direction": "{{char}} treats adult {{user}} as an ex-convict by rumour and only learns the truth when the impression unravels through a slow fortnight of clues. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-59-an-ex-convict-by-rumour-when-the-real-person-walks-in",
+      "group": "Wrong belief and reveal combinations",
+      "title": "An Ex-Convict By Rumour, when the real person walks in",
+      "direction": "{{char}} treats adult {{user}} as an ex-convict by rumour and only learns the truth when the impression unravels when the real person walks in. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-60-an-ex-convict-by-rumour-via-a-bored-third-party",
+      "group": "Wrong belief and reveal combinations",
+      "title": "An Ex-Convict By Rumour, via a bored third party",
+      "direction": "{{char}} treats adult {{user}} as an ex-convict by rumour and only learns the truth when the impression unravels via a bored third party. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-61-an-ex-convict-by-rumour-too-late-after-she-has-told-everyone",
+      "group": "Wrong belief and reveal combinations",
+      "title": "An Ex-Convict By Rumour, too late after she has told everyone",
+      "direction": "{{char}} treats adult {{user}} as an ex-convict by rumour and only learns the truth when the impression unravels too late after she has told everyone. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-62-an-ex-convict-by-rumour-in-a-note-she-cant-trace",
+      "group": "Wrong belief and reveal combinations",
+      "title": "An Ex-Convict By Rumour, in a note she can't trace",
+      "direction": "{{char}} treats adult {{user}} as an ex-convict by rumour and only learns the truth when the impression unravels in a note she can't trace. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-63-an-ex-convict-by-rumour-when-he-chooses-to-say-nothing",
+      "group": "Wrong belief and reveal combinations",
+      "title": "An Ex-Convict By Rumour, when he chooses to say nothing",
+      "direction": "{{char}} treats adult {{user}} as an ex-convict by rumour and only learns the truth when the impression unravels when he chooses to say nothing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-64-an-ex-convict-by-rumour-at-the-worst-professional-moment",
+      "group": "Wrong belief and reveal combinations",
+      "title": "An Ex-Convict By Rumour, at the worst professional moment",
+      "direction": "{{char}} treats adult {{user}} as an ex-convict by rumour and only learns the truth when the impression unravels at the worst professional moment. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-65-her-sisters-ex-mid-sentence-in-public",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Her Sister'S Ex, mid-sentence in public",
+      "direction": "{{char}} treats adult {{user}} as her sister's ex and only learns the truth when the impression unravels mid-sentence in public. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-66-her-sisters-ex-through-a-slow-fortnight-of-clues",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Her Sister'S Ex, through a slow fortnight of clues",
+      "direction": "{{char}} treats adult {{user}} as her sister's ex and only learns the truth when the impression unravels through a slow fortnight of clues. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-67-her-sisters-ex-when-the-real-person-walks-in",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Her Sister'S Ex, when the real person walks in",
+      "direction": "{{char}} treats adult {{user}} as her sister's ex and only learns the truth when the impression unravels when the real person walks in. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-68-her-sisters-ex-via-a-bored-third-party",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Her Sister'S Ex, via a bored third party",
+      "direction": "{{char}} treats adult {{user}} as her sister's ex and only learns the truth when the impression unravels via a bored third party. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-69-her-sisters-ex-too-late-after-she-has-told-everyone",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Her Sister'S Ex, too late after she has told everyone",
+      "direction": "{{char}} treats adult {{user}} as her sister's ex and only learns the truth when the impression unravels too late after she has told everyone. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-70-her-sisters-ex-in-a-note-she-cant-trace",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Her Sister'S Ex, in a note she can't trace",
+      "direction": "{{char}} treats adult {{user}} as her sister's ex and only learns the truth when the impression unravels in a note she can't trace. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-71-her-sisters-ex-when-he-chooses-to-say-nothing",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Her Sister'S Ex, when he chooses to say nothing",
+      "direction": "{{char}} treats adult {{user}} as her sister's ex and only learns the truth when the impression unravels when he chooses to say nothing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-72-her-sisters-ex-at-the-worst-professional-moment",
+      "group": "Wrong belief and reveal combinations",
+      "title": "Her Sister'S Ex, at the worst professional moment",
+      "direction": "{{char}} treats adult {{user}} as her sister's ex and only learns the truth when the impression unravels at the worst professional moment. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-73-the-landlords-nephew-mid-sentence-in-public",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Landlord'S Nephew, mid-sentence in public",
+      "direction": "{{char}} treats adult {{user}} as the landlord's nephew and only learns the truth when the impression unravels mid-sentence in public. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-74-the-landlords-nephew-through-a-slow-fortnight-of-clues",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Landlord'S Nephew, through a slow fortnight of clues",
+      "direction": "{{char}} treats adult {{user}} as the landlord's nephew and only learns the truth when the impression unravels through a slow fortnight of clues. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-75-the-landlords-nephew-when-the-real-person-walks-in",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Landlord'S Nephew, when the real person walks in",
+      "direction": "{{char}} treats adult {{user}} as the landlord's nephew and only learns the truth when the impression unravels when the real person walks in. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-76-the-landlords-nephew-via-a-bored-third-party",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Landlord'S Nephew, via a bored third party",
+      "direction": "{{char}} treats adult {{user}} as the landlord's nephew and only learns the truth when the impression unravels via a bored third party. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-77-the-landlords-nephew-too-late-after-she-has-told-everyone",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Landlord'S Nephew, too late after she has told everyone",
+      "direction": "{{char}} treats adult {{user}} as the landlord's nephew and only learns the truth when the impression unravels too late after she has told everyone. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-78-the-landlords-nephew-in-a-note-she-cant-trace",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Landlord'S Nephew, in a note she can't trace",
+      "direction": "{{char}} treats adult {{user}} as the landlord's nephew and only learns the truth when the impression unravels in a note she can't trace. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-79-the-landlords-nephew-when-he-chooses-to-say-nothing",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Landlord'S Nephew, when he chooses to say nothing",
+      "direction": "{{char}} treats adult {{user}} as the landlord's nephew and only learns the truth when the impression unravels when he chooses to say nothing. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "wrong-belief-and-reveal-combinations-80-the-landlords-nephew-at-the-worst-professional-moment",
+      "group": "Wrong belief and reveal combinations",
+      "title": "The Landlord'S Nephew, at the worst professional moment",
+      "direction": "{{char}} treats adult {{user}} as the landlord's nephew and only learns the truth when the impression unravels at the worst professional moment. The mistaken belief is a reasonable adult inference error, not objective truth. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "A substantial mistaken first impression",
+      "content": "Establish a significant but believable false impression held by at least one adult about the other: a wrong identity, wrong job, wrong reputation, wrong availability or wrong intentions. The mistake must be a reasonable inference from the evidence available, not a contrivance."
+    },
+    {
+      "id": "cause",
+      "label": "How the error formed",
+      "content": "Choose the cause deliberately: partial information, mistaken identity, secondhand gossip, misleading timing, borrowed belongings, an overheard fragment or deliberate encouragement by a third party with a motive. Not every version requires a deceiver."
+    },
+    {
+      "id": "belief",
+      "label": "The content of the false belief",
+      "content": "Make the specific false belief concrete: what {{char}} thinks {{user}} is, does, wants, earns or has done. The belief is her assumption, never narrated as fact, and it should visibly shape her behaviour in the opening."
+    },
+    {
+      "id": "reasonableness",
+      "label": "Why it was believable",
+      "content": "Give the character a plausible reason for the leap: the evidence really did point that way, time pressure forced a judgment, a trusted source misinformed, or a bias she did not check. Reasonableness protects her dignity and the story's credibility."
+    },
+    {
+      "id": "evidence",
+      "label": "Contradicting evidence and timing",
+      "content": "Place at least one contradicting clue somewhere within reach of the opening. Decide how fast the truth can surface: mid-conversation, within days, or after the relationship has developed, and let the timing set the engine's tension or comedy."
+    },
+    {
+      "id": "encouragement",
+      "label": "Third-party engineering",
+      "content": "If anyone deliberately fostered the misunderstanding, define their motive — protection, mischief, jealousy, convenience or agenda. Their interference does not dissolve the leads' responsibility for their own assumptions, and the reveal should reach them too."
+    },
+    {
+      "id": "reaction",
+      "label": "{{char}} handling being wrong",
+      "content": "Let {{char}}'s response to correction grow from her established personality: apology, humour, defensiveness, doubling-down, retreat or over-correction. Her handling is characterisation, not a moral verdict the card imposes."
+    },
+    {
+      "id": "stakes",
+      "label": "What the first impression costs",
+      "content": "Decide what rides on the belief: a job, a tenancy, a contract, a friendship group's opinion, a family introduction or nothing beyond social awkwardness. Scale the stakes to the story you want, from single wrong sentence to life-altering misidentification."
+    },
+    {
+      "id": "user",
+      "label": "No scripted {{user}}",
+      "content": "Never write {{user}}'s feelings, corrections, dialogue or choices. Whether he sets the record straight immediately, exploits the error for a while, stays silent or resents being misjudged is entirely the player's call."
+    },
+    {
+      "id": "truth",
+      "label": "Ground truth versus belief",
+      "content": "Keep the narration honest: {{char}}'s assumption is false, and the reader should always be able to tell her belief apart from the actual facts, even while she cannot. Rumours, records and reputation stay distinct from verified truth."
+    },
+    {
+      "id": "character",
+      "label": "Complete people beyond the hook",
+      "content": "Give {{char}} a job, interests, friends and a temperament that survive the reveal. A woman defined only by being wrong collapses the moment the plot no longer needs the mistake."
+    },
+    {
+      "id": "outcome",
+      "label": "Every consequence remains open",
+      "content": "The correction may land as comedy, embarrassment, offence, relief, professional consequence or nothing at all; friendship, rivalry, romance, partnership and mutual forgetting are all valid trajectories, and none is owed to either character."
+    },
+    {
+      "id": "opening",
+      "label": "Playable first scene",
+      "content": "Open at a moment where the mistaken impression is actively shaping behaviour: the wrong-name greeting, the frosty reception, the over-familiar welcome, the misdirected accusation or the reveal's immediate aftermath, with {{user}}'s next move unstated."
+    },
+    {
+      "id": "boundary",
+      "label": "Related series and crossovers",
+      "content": "You're Not Who I Expected covers true history with changed details, Her Hidden Side covers self-concealed truth, and What Are You Doing Here? covers surprise of place; cross over when a concept genuinely fits more than one engine rather than blending them."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult character-card premise for Wrong First Impression. At least one adult holds a substantial but believable false first impression about the other: a mistaken identity, wrong job or wealth, misread intentions, a misleading reputation or a third party's deliberate embellishment. Vary who is wrong and who is wronged, how reasonable the inference was, how quickly contradicting evidence appears, what the correction costs or earns, and whether anyone engineered the error. Character belief is never objective truth and the narration must keep assumptions distinct from facts. Do not script {{user}}'s feelings, corrections or decisions; whether the reveal lands as comedy, offence, apology or nothing is open, and friendship, rivalry, romance, partnership or a clean reset are all valid outcomes. Open where the mistaken impression is actively shaping behaviour. All participants are adults; consent, boundaries and player agency are non-negotiable."
+}

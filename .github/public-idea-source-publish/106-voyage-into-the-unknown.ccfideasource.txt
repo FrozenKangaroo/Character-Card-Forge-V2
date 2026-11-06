@@ -1,0 +1,1936 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iii-18-voyage-into-the-unknown",
+  "title": "Voyage Into the Unknown",
+  "description": "Expanded Series Bible III #18 Voyage Into the Unknown reusable adult idea source: the engine generates long-duration city-ship exploration scenarios — boarding a self-contained vessel that is a town in space, moving into an assigned apartment, shipboard occupations and society, planetary surveys, anomalies and settlement scouting — varying mission profile, relationships, discoveries and outcomes while keeping {{user}}'s choices open.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible III",
+    "version": "0.4",
+    "entry": "18",
+    "kind": "series"
+  },
+  "summary": "Adult {{user}} and {{char}} join a vast long-duration scientific exploration vessel that functions as a self-contained city in space. The ship carries residential districts, laboratories, schools, market decks, hydroponics parks, industry and internal transit, and it sails beyond established territory to survey star systems, study planets, deploy probes, investigate anomalies and identify possible future settlement locations. The roleplay can begin at the spaceport as they board and move into their assigned apartment before departure, and the voyage that follows — its discoveries, its friendships and its costs — remains unwritten.",
+  "core_premise": "Adult {{user}} and {{char}} are residents and crew of a city-scale exploration vessel on a multi-year scientific expedition beyond settled space: surveying systems, studying worlds, probing anomalies and scouting settlement candidates. The fixed engine is the ship itself — a working community with apartments, jobs, transit lines, schools and neighbours — plus the distance from home that makes every letter, every port call and every discovery carry weight. How {{user}} and {{char}} came aboard, what they do, what the ship finds and what changes between them all vary; the vessel, the voyage and the frontier do not.",
+  "setup": "Create a non-graphic adult exploration-life opening. Establish the vessel's scale and mission duration, how {{user}} and {{char}} came aboard and their ordinary occupations or departments, the apartment they are assigned (shared bedroom or separate rooms), and the ship's community texture — mess halls, trams, parks, market decks, neighbours. Anchor the opening at a playable moment such as spaceport boarding, the first night aboard, departure day or an early survey assignment, and ground it in daily logistics rather than guaranteed danger. Do not write {{user}}'s dialogue, feelings, agreement or future, and do not decide in advance what any discovery, relationship or the mission's fate turns out to be.",
+  "core_variables": [
+    "Mission duration: a two-year circuit, a five-year survey, a decade-long deep-range push, or an open-ended commission",
+    "Ship population and scale: a few thousand residents or a city of hundreds of thousands",
+    "Faster-than-light jump travel versus slower-than-light cruising between systems",
+    "Communication delay with settled space: near-real-time, hours-to-days lag, or mail packets that arrive weeks apart",
+    "The occupations of {{user}} and {{char}}: technical, medical, logistical, educational, culinary, scientific-support, transit, comms or administrative roles",
+    "Whether they share a bedroom, keep separate rooms in one apartment, or live as flatmates who barely cross shifts",
+    "Family life aboard: singles, young couples, families with children, or multi-generation households",
+    "Artificial gravity: spin sections, deck plating, low-gravity districts or variable environments",
+    "Internal transport: trams, automated trains, lift networks, boulevards or the freight walkways",
+    "Scientific specialties of the expedition: planetary survey, xenobiology, astrophysics, geology, ecology, archaeology or settlement planning",
+    "How often the ship visits established colonies or stations: regular circuit calls, rare rendezvous, or none until the return leg",
+    "What discovered worlds turn out to be: lifeless, habitable, dangerous, inhabited, scientifically strange or already settled",
+    "How {{user}} and {{char}} came aboard: childhood friends, partners, siblings, strangers assigned together, colleagues, or reunited exes",
+    "Why each joined the expedition: vocation, escape, contracts, family expectation, curiosity or a fresh start after loss",
+    "Ship culture and command style: naval discipline, civic self-government, academic committee culture or corporate charter habits",
+    "The event that anchors the opening: boarding day, departure, first transit, a survey assignment, an anomaly or a shipboard milestone"
+  ],
+  "generation_rules": [
+    "Do not write for {{user}} or define {{user}}'s feelings, decisions, dialogue, consent, intentions or future behaviour unless the generated concept explicitly establishes a fact.",
+    "Character belief is not objective truth: crew rumours, mission reports, spin from mission control and personal assumptions stay distinct from ground truth.",
+    "Do not pre-play outcomes. Whether {{user}} adapts aboard, commits to the mission, warms to {{char}}, requests a transfer, or leaves the ship remains roleplay space.",
+    "All explicit romantic or sexual characters are adults; anyone aboard who could appear young must be unambiguously adult or absent.",
+    "Cohabitation, shared apartments, shared bedrooms, long confinement and mission postings do not create romantic or sexual consent.",
+    "Sex or intimacy must not erase a character's baseline personality, profession, judgement, nonsexual interests or boundaries.",
+    "Do not make {{user}} or {{char}} elite scientists unless the generated roles call for it; city-scale exploration requires engineers, technicians, computing and network staff, medical workers, logistics, environmental systems, food production, educators, communications, maintenance and many other professions.",
+    "Discovery creates possibilities, not mandatory danger or alien contact; a habitable world, a derelict or a strange signal can anchor intrigue without forcing a crisis.",
+    "Shared accommodation and a multi-year mission do not force romance between {{user}} and {{char}}; friendship, rivalry, practical partnership, casual intimacy, slow-burn tension or no relationship change are all valid outcomes.",
+    "The vessel is simultaneously home, workplace, transport and community; give residential, industrial, scientific and civic spaces equal reality.",
+    "Do not script {{user}}'s reaction to departure, transit, discoveries, hazards or any shipboard event.",
+    "Rank, seniority and scientific prestige do not make a character morally, romantically or sexually superior.",
+    "Uniforms and roles do not remove autonomy: any officer, resident or specialist can refuse, negotiate, complain, resign or transfer.",
+    "Do not force estrangement or conflict between {{user}} and {{char}} for drama any more than you force romance between them.",
+    "Anomaly and first-contact scenarios stay non-graphic and uncertain: protocols, competence and outcomes all vary, and wonder is as valid as threat.",
+    "Mission distance shapes stakes honestly: homesickness, delayed letters and missed funerals are real possibilities, not guaranteed tragedies.",
+    "Occupational detail gives the ship texture: shifts, maintenance cycles, crop harvests, school terms, watch rotations and survey schedules.",
+    "The ship's population is a society: politics, gossip, markets, faiths, festivals, unions and romances exist beyond the bridge.",
+    "Do not predetermine whether the expedition succeeds, finds anything, survives its hazards, or changes {{user}} and {{char}}'s relationship.",
+    "Keep home-side lives real: family, debts, careers and relationships left behind can matter without dictating outcomes.",
+    "Any inhabited world's people are written as sapient adults of their kind with their own agency; diplomacy, trade, curiosity, caution and misunderstanding are all open paths.",
+    "The city ship runs on logistics — mess prices, power budgets, water claims — not adventure alone.",
+    "Open at a playable moment such as boarding, a first night aboard, a survey briefing or a mail-packet day, without writing {{user}}'s response.",
+    "Overlap boundary: distinct from stranded-survival series because the ship is a functioning home; distinct from colony series because the voyage itself is the premise; cross-link Our Trip Together when the pair's journey dominates and What We Found when the discovery dominates."
+  ],
+  "guardrails": [
+    "Preserve the user-agency rules from Series Bibles I and II. Do not define {{user}}'s personality, attraction, feelings, dialogue, consent, decisions or future behaviour unless the supplied concept explicitly establishes a fact. A character may assume things about {{user}}, but those assumptions are not objective truth.",
+    "Do not pre-play outcomes. Characters may want, invite, tempt, pressure, negotiate, confess, lie, tease, manipulate, hope or plan, but whether {{user}} cooperates, rejects them, exposes them, forgives them, leaves, joins them or changes course remains roleplay space.",
+    "All explicit romantic or sexual characters are adults. Sexual openness, promiscuity, flirtatiousness, clothing, confidence, loyalty and romantic attachment are independent traits; do not infer one from another.",
+    "Consent is activity-specific. Agreement to look, flirt or share an apartment does not imply permission to touch, record or go further. Shared housing and long missions never create blanket consent.",
+    "Keep ground truth separate from character rationalisation: a rumour about a neighbour, a captain's framing of an order, or a scientist's pet theory is a belief, not narrator-endorsed fact.",
+    "Do not force romance into friendship, workplace, shared-hobby or chance-encounter framings. Friendship, rivalry, practical partnership, casual intimacy, unresolved tension or no relationship change are all valid outcomes.",
+    "Characters remain people outside their hook: an occupation, rank, discovery or unusual posting matters without becoming the only thing they discuss.",
+    "Long-duration confinement, delayed communications and distance from home must never be used to pressure {{user}} or {{char}} toward intimacy.",
+    "Command hierarchy creates professional authority only; it never grants sexual access or removes a subordinate's right to refuse, report or exit.",
+    "Any discovered inhabitants are written as people with agency; wonder, trade, caution and misunderstanding replace conquest framing.",
+    "Ship emergencies, quarantines and hazards create stakes without scripting panic, sacrifice, heroism or blame onto {{user}}.",
+    "Keep intimacy non-graphic and open at a playable moment; foreground exploration, daily life and interpersonal meaning."
+  ],
+  "diversity_axes": [
+    "Mission duration: two-year circuit, five-year survey, decade-long deep push, or open-ended commission",
+    "Ship scale: a few thousand souls, a mid-size town, or a city of hundreds of thousands",
+    "Travel mode: FTL jump lanes, slower-than-light cruising with relay hops, or mixed transit",
+    "Communication with settled space: near-real-time, hours-to-days lag, or rare mail packets",
+    "Occupations of {{user}} and {{char}}: engineering, medicine, hydroponics, education, transit, comms, logistics, culinary, emergency response, science support or administration",
+    "Their history: childhood friends, partners, married, adult siblings, former colleagues, strangers assigned together, or reunited exes",
+    "Accommodation: shared bedroom, separate rooms in one apartment, adjacent cabins, or a family flat",
+    "Why they joined: vocation, escape, family expectation, contract money, curiosity, or a fresh start after loss",
+    "Ship culture: naval discipline, civic self-government, relaxed academic habits, or corporate charter culture",
+    "Family life aboard: singles dominate, young families, multi-generation households, or a mostly older complement",
+    "Discovered worlds: lifeless, habitable, hostile, inhabited, microbial, ruined, or scientifically strange",
+    "Frontier events: routine surveys, anomalous signals, derelicts, hazards, quarantines or first contact",
+    "Colony contact: regular port calls, rare rendezvous, mail-only contact, or total isolation until return",
+    "Opening moment: spaceport boarding, first night aboard, departure day, first transit, a survey briefing, or a mid-voyage transfer",
+    "The trajectory between {{user}} and {{char}}: friendship, partnership, tension, romance, distance or no change — all undecided"
+  ],
+  "cross_links": [
+    "Our Trip Together — shared long-duration travel and enforced togetherness, scaled up to years aboard one city ship",
+    "Temporary Partners — assigned collaboration and professional partnership dynamics among the crew",
+    "What We Found — the discovery engine: what a survey team uncovers and what they choose to do about it",
+    "A World After Our Time — habitable and ruined worlds raise settlement, legacy and who-comes-after questions",
+    "The Other Regular — shipboard community life: neighbours, familiar faces, routines and gossip in a closed society"
+  ],
+  "tags": [
+    "series bible iii",
+    "long-duration space exploration",
+    "space",
+    "city ship",
+    "starship",
+    "deep space",
+    "planetary survey",
+    "shipboard life",
+    "shared apartment",
+    "mission crew",
+    "frontier",
+    "anomaly",
+    "first contact",
+    "spaceport",
+    "ship society",
+    "scientific expedition",
+    "voyage",
+    "player agency"
+  ],
+  "notes": "Expanded Series Bible III #18 from the v0.4 draft to version 1.0 (preserving all 1 original seed IDs where present). Adds 290 direction presets exploring mission profiles and voyages, ordinary shipboard occupations, how {{user}} and {{char}} came aboard, apartments and domestic life, shipboard society, survey and anomaly portfolios, family and life-cycle aboard, departure openings, command and duty culture, plus crossed combinations of discovered worlds and voyage phases. All participants are adults; consent, boundaries and {{user}}'s choices remain open throughout.",
+  "direction_presets": [
+    {
+      "id": "p01-relationship",
+      "group": "Original Bible seeds",
+      "title": "Relationship",
+      "direction": "{{user}} and {{char}} are adult childhood friends undertaking the expedition together. They may have applied together, one may have encouraged the other to join, or both may have independently qualified and then requested shared accommodation. Childhood friendship does not create romance."
+    },
+    {
+      "id": "mission-five-year-survey-contract",
+      "group": "Mission profiles and voyages",
+      "title": "Five-Year Survey Contract",
+      "direction": "The ship runs a five-year circuit of a dozen unexplored systems with two colony port calls; {{char}} signed on for the adventure and {{user}} for the steady pay. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-the-decade-push",
+      "group": "Mission profiles and voyages",
+      "title": "The Decade Push",
+      "direction": "A ten-year deep-range expedition past the last relay; everyone boarding knows departure is close to a one-way farewell to life at home. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-jump-lane-expedition",
+      "group": "Mission profiles and voyages",
+      "title": "Jump-Lane Expedition",
+      "direction": "The vessel rides an FTL jump network, reaching a new system every few weeks and collecting mail packets at each junction buoy. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-slow-boat-to-nowhere-charted",
+      "group": "Mission profiles and voyages",
+      "title": "Slow Boat to Nowhere Charted",
+      "direction": "Slower-than-light cruising leaves months of transit between survey stops; the real life of the ship happens in the crossing. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-relay-mail-only",
+      "group": "Mission profiles and voyages",
+      "title": "Relay Mail Only",
+      "direction": "Letters home take weeks each way; {{user}} and {{char}} draft theirs during long transits and reread the replies for months. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-the-colony-circuit",
+      "group": "Mission profiles and voyages",
+      "title": "The Colony Circuit",
+      "direction": "The ship never fully leaves touched space, running survey loops that call at four young colonies a year; frontier is a matter of degree. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-open-ended-commission",
+      "group": "Mission profiles and voyages",
+      "title": "Open-Ended Commission",
+      "direction": "No fixed return date: mission control extends the voyage whenever the findings justify it, and the crew votes on whether to stay out. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-the-return-leg",
+      "group": "Mission profiles and voyages",
+      "title": "The Return Leg",
+      "direction": "The expedition is years in and homeward bound; long-service veterans eye fresh transfers like {{user}} and {{char}} with mixed feelings. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-two-year-shakedown",
+      "group": "Mission profiles and voyages",
+      "title": "Two-Year Shakedown",
+      "direction": "A short proving voyage with a mixed civilian and service crew; everyone aboard knows the ship may be retired when the report lands. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-the-second-ship",
+      "group": "Mission profiles and voyages",
+      "title": "The Second Ship",
+      "direction": "The programme's flagship left years ago; this vessel follows the same route to resupply and relieve the first crew. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-watch-and-sleep",
+      "group": "Mission profiles and voyages",
+      "title": "Watch and Sleep",
+      "direction": "Crew rotate through hibernation shifts so the ship carries double its berthing capacity; {{char}} wakes months after {{user}} last saw them. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-the-long-silence",
+      "group": "Mission profiles and voyages",
+      "title": "The Long Silence",
+      "direction": "A relay failure leaves months without word from settled space; the mission continues on its own judgement and the ship argues about whether that is right. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-mission-of-firsts",
+      "group": "Mission profiles and voyages",
+      "title": "Mission of Firsts",
+      "direction": "The first voyage under a new treaty puts rival agencies on one hull; {{user}} and {{char}} hold adjacent bunks and opposite allegiances. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-settlement-scouting-commission",
+      "group": "Mission profiles and voyages",
+      "title": "Settlement Scouting Commission",
+      "direction": "The charter is explicitly to find and certify colony candidates, so planners, farmers and surveyors sail beside the scientists. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-the-deep-anomaly-tasking",
+      "group": "Mission profiles and voyages",
+      "title": "The Deep Anomaly Tasking",
+      "direction": "A gravitational anomaly detected decades ago is the single destination; every other wonder is en route. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "mission-year-nine-of-twelve",
+      "group": "Mission profiles and voyages",
+      "title": "Year Nine of Twelve",
+      "direction": "{{user}} and {{char}} are long-service crew partway through a fixed twelve-year mission; the novelty is gone and the life aboard is simply real. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "duty-hull-maintenance-divers",
+      "group": "Shipboard occupations",
+      "title": "Hull Maintenance Divers",
+      "direction": "Exterior inspection work in suits on the outer hull; the pay carries a hazard bonus and {{char}} loves the silence out there. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-hydroponics-growers",
+      "group": "Shipboard occupations",
+      "title": "Hydroponics Growers",
+      "direction": "Tending the farm decks means crop failures, pest scares and harvest festivals; {{user}} runs a tomato line and {{char}} the seed library. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-tram-depot-hands",
+      "group": "Shipboard occupations",
+      "title": "Tram Depot Hands",
+      "direction": "Running the internal transit network puts them in every district daily; the drivers know the whole ship's gossip and share none of it. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-schoolteachers-aboard",
+      "group": "Shipboard occupations",
+      "title": "Schoolteachers Aboard",
+      "direction": "Teaching shipboard children means small classes and every parent a colleague; the school term structures the whole residential deck's year. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-medical-bay-staff",
+      "group": "Shipboard occupations",
+      "title": "Medical Bay Staff",
+      "direction": "The ship's hospital employs {{char}} as a nurse and {{user}} as a technician; slow shifts, sudden drills and everyone's private worries. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-comms-room-watch",
+      "group": "Shipboard occupations",
+      "title": "Comms Room Watch",
+      "direction": "Handling delayed mail and mission reports, they read nothing personal and see everything; {{char}} keeps the mail queue smiling. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-galley-crew",
+      "group": "Shipboard occupations",
+      "title": "Galley Crew",
+      "direction": "Feeding a small city from one mess system; {{char}} is a baker whose morning queue crosses three districts' worth of regulars. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-cargo-and-logistics",
+      "group": "Shipboard occupations",
+      "title": "Cargo and Logistics",
+      "direction": "Loading at port calls, manifest politics and the endless quiet argument about who gets the empty hold space. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-environmental-systems-techs",
+      "group": "Shipboard occupations",
+      "title": "Environmental Systems Techs",
+      "direction": "Air, water and heat; unglamorous power over everyone's comfort that the whole ship notices only when it fails. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-network-administrators",
+      "group": "Shipboard occupations",
+      "title": "Network Administrators",
+      "direction": "The ship's intranet, forums and entertainment archive answer to them; quiet authority, constant requests, zero glory. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-shuttle-pilots",
+      "group": "Shipboard occupations",
+      "title": "Shuttle Pilots",
+      "direction": "Ferrying survey teams to planetfall means every landing is different; {{char}} flies and {{user}} keeps the manifests honest. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-laboratory-technicians",
+      "group": "Shipboard occupations",
+      "title": "Laboratory Technicians",
+      "direction": "Supporting the science departments without being scientists themselves; {{user}} maintains the mass spectrometers everyone fights over. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-counsellors-and-chaplains",
+      "group": "Shipboard occupations",
+      "title": "Counsellors and Chaplains",
+      "direction": "Tending morale, homesickness and grief in a closed society; {{char}} holds evening hours nobody admits to needing. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-archivists-and-cartographers",
+      "group": "Shipboard occupations",
+      "title": "Archivists and Cartographers",
+      "direction": "Mapping new systems and preserving the voyage's records; {{user}} charts and {{char}} argues about what deserves a named feature. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-security-and-emergency-response",
+      "group": "Shipboard occupations",
+      "title": "Security and Emergency Response",
+      "direction": "Mostly mediating noise complaints and running drills; {{char}} knows every shortcut and {{user}} every regulation. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "duty-stewards-of-the-market-deck",
+      "group": "Shipboard occupations",
+      "title": "Stewards of the Market Deck",
+      "direction": "Running shops, bars and the barter exchange; {{char}} keeps a stall of traded curios and {{user}} balances its books. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "origins-applied-together",
+      "group": "How they came aboard",
+      "title": "Applied Together",
+      "direction": "They filed a joint application citing years of compatible flat-sharing, and the billeting office took it at face value. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-strangers-at-assignment",
+      "group": "How they came aboard",
+      "title": "Strangers at Assignment",
+      "direction": "The billeting office paired two unaccompanied qualifiers; they met for the first time over a shared kitchen table on boarding day. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-reunited-exes",
+      "group": "How they came aboard",
+      "title": "Reunited Exes",
+      "direction": "They were together years ago, broke up cleanly, and both independently joined — then were assigned one apartment for the duration. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-colleagues-who-followed-the-project",
+      "group": "How they came aboard",
+      "title": "Colleagues Who Followed the Project",
+      "direction": "The same employer transferred them together when the company won shipboard contracts; the old office hierarchy sails along. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-the-impulse-application",
+      "group": "How they came aboard",
+      "title": "The Impulse Application",
+      "direction": "{{user}} was recruited through the proper channels; {{char}} saw the departure on the news and applied on impulse, qualifying at the wire. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-the-last-minute-replacement",
+      "group": "How they came aboard",
+      "title": "The Last-Minute Replacement",
+      "direction": "{{char}} took a vacant berth two days before departure when a crewmate withdrew, inheriting an apartment and a shift rota sight unseen. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-born-aboard-returning",
+      "group": "How they came aboard",
+      "title": "Born Aboard, Returning",
+      "direction": "{{char}} was born on this ship years ago, left as a child, and now re-boards as adult crew; the vessel is their hometown. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-sent-by-their-family",
+      "group": "How they came aboard",
+      "title": "Sent by Their Family",
+      "direction": "A family that has served the expedition programme for generations expected {{char}} to sail, and {{char}} did not say no. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-escaping-a-broken-engagement",
+      "group": "How they came aboard",
+      "title": "Escaping a Broken Engagement",
+      "direction": "{{char}} signed on after a broken engagement; the voyage is a fresh start they do not discuss, and the deck gossip respects it imperfectly. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-the-veteran-and-the-new-hand",
+      "group": "How they came aboard",
+      "title": "The Veteran and the New Hand",
+      "direction": "{{user}} is sailing a second voyage; {{char}} is a first-timer assigned to the same apartment and determined not to show it. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-refugees-of-a-closed-programme",
+      "group": "How they came aboard",
+      "title": "Refugees of a Closed Programme",
+      "direction": "Their research station was defunded and the expedition absorbed the staff as crew; the ship is the only employer that said yes. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-pen-pals-made-real",
+      "group": "How they came aboard",
+      "title": "Pen-Pals Made Real",
+      "direction": "They corresponded through the mission's crew forum for a year before the expedition and met in person for the first time at the gangway. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-the-family-aboard",
+      "group": "How they came aboard",
+      "title": "The Family Aboard",
+      "direction": "{{char}}'s parents are aboard as long-service crew; {{char}} grew up visiting the ship on leave and now joins it as staff in their own right. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-rivals-from-training",
+      "group": "How they came aboard",
+      "title": "Rivals From Training",
+      "direction": "They competed through every assessment and both passed; the billeting office found it funny to assign them one apartment. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-civilian-and-crew",
+      "group": "How they came aboard",
+      "title": "Civilian and Crew",
+      "direction": "{{char}} is a civilian specialist and {{user}} a crew hand; different mess halls, different rules, and one shared kitchen. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "origins-reassigned-mid-voyage",
+      "group": "How they came aboard",
+      "title": "Reassigned Mid-Voyage",
+      "direction": "Both were aboard in different departments until a reorganisation merged their duties and their accommodation. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "home-two-bedrooms-one-view",
+      "group": "Apartments and domestic life",
+      "title": "Two Bedrooms, One View",
+      "direction": "A corner flat overlooking the promenade; the view is the ship's best-kept secret and the rent reflects nothing. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-interior-flat-no-windows",
+      "group": "Apartments and domestic life",
+      "title": "Interior Flat, No Windows",
+      "direction": "A cheap central-deck flat without a window between them; they learn the neighbourhood by its sounds. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-adjoining-cabins",
+      "group": "Apartments and domestic life",
+      "title": "Adjoining Cabins",
+      "direction": "Technically separate berths sharing a door they keep propped open; privacy by agreement, company by default. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-the-family-flat-upgrade",
+      "group": "Apartments and domestic life",
+      "title": "The Family Flat Upgrade",
+      "direction": "Another household transferred off mid-voyage and they were moved up to a larger flat; growing into the space is its own quiet event. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-above-the-market-deck",
+      "group": "Apartments and domestic life",
+      "title": "Above the Market Deck",
+      "direction": "Noise, smells and total convenience; {{char}} thrives on it while {{user}} buys earplugs from the stall downstairs. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-park-level-neighbours",
+      "group": "Apartments and domestic life",
+      "title": "Park Level Neighbours",
+      "direction": "Their building backs onto the hydroponics park; morning jogs under grow-lights and borrowed window-box cuttings. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-the-former-officers-flat",
+      "group": "Apartments and domestic life",
+      "title": "The Former Officer's Flat",
+      "direction": "Inherited from a promoted officer complete with bookshelves of the previous tenant's personal logs, which nobody has the heart to remove. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-subletting-the-spare-room",
+      "group": "Apartments and domestic life",
+      "title": "Subletting the Spare Room",
+      "direction": "A mid-voyage shortfall pushes them to take a third flatmate; the apartment's careful equilibrium shifts around the new arrival. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-bunkmates-by-necessity",
+      "group": "Apartments and domestic life",
+      "title": "Bunkmates by Necessity",
+      "direction": "A surge of transfers after a port call leaves them sharing one bedroom until new housing is fitted out; the arrangement has an end date neither trusts. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-the-old-couple-below",
+      "group": "Apartments and domestic life",
+      "title": "The Old Couple Below",
+      "direction": "Their downstairs neighbours are thirty-year ship veterans who adopt them with advice, cake and an alarming quantity of opinions. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-mess-hall-economy",
+      "group": "Apartments and domestic life",
+      "title": "Mess-Hall Economy",
+      "direction": "They cook rarely and treat the mess hall as home; the apartment is for sleeping and the kitchen stays pristine out of disuse. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-the-converted-cargo-flat",
+      "group": "Apartments and domestic life",
+      "title": "The Converted Cargo Flat",
+      "direction": "Their apartment was a storeroom in the last refit; odd angles, a door in the wrong place, and beloved beyond reason. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-district-reassignment",
+      "group": "Apartments and domestic life",
+      "title": "District Reassignment",
+      "direction": "Mid-voyage the ship re-zones residential blocks; the household may be split across districts or offered a move together, and the choice is theirs. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-the-balcony-over-the-tram-yard",
+      "group": "Apartments and domestic life",
+      "title": "The Balcony Over the Tram Yard",
+      "direction": "The noisiest spot in the district; {{char}} calls it the best seat in the house and defends it fiercely. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-keeping-a-garden-window",
+      "group": "Apartments and domestic life",
+      "title": "Keeping a Garden Window",
+      "direction": "One window box of herbs everyone on the corridor wants cuttings from; {{char}} trades sprigs for favours like currency. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "home-the-flat-that-fits-a-family-someday",
+      "group": "Apartments and domestic life",
+      "title": "The Flat That Fits a Family Someday",
+      "direction": "An oversized apartment assigned optimistically by the billeting office; the extra room waits unnamed and neither mentions it. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "community-founding-day-festival",
+      "group": "Ship society and community",
+      "title": "Founding Day Festival",
+      "direction": "The ship's launch anniversary brings three days of parades on the promenade, and every district competes at the stalls. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-the-district-council",
+      "group": "Ship society and community",
+      "title": "The District Council",
+      "direction": "An elected residents' council argues mess prices and transit schedules; {{char}} is persuaded to run and {{user}} ends up managing the campaign. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-league-nights",
+      "group": "Ship society and community",
+      "title": "League Nights",
+      "direction": "The transit-depot ball league runs fierce rivalries; {{user}} plays reserve and {{char}} narrates from the stand with a following. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-the-ships-own-theatre",
+      "group": "Ship society and community",
+      "title": "The Ship's Own Theatre",
+      "direction": "An amateur troupe mounts plays about the voyage itself; {{user}} is roped into set-building and {{char}} into box office by separate accidents. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-faith-aboard",
+      "group": "Ship society and community",
+      "title": "Faith Aboard",
+      "direction": "Three congregations share one hall on a rotating schedule; a quiet backbone of community life and occasional scheduling wars. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-the-barter-exchange",
+      "group": "Ship society and community",
+      "title": "The Barter Exchange",
+      "direction": "A skills-and-goods swap runs weekly on the market deck; {{char}} trades repairs for cooking and keeps the books in a notebook. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-gossip-networks",
+      "group": "Ship society and community",
+      "title": "Gossip Networks",
+      "direction": "The tram drivers know everything; news crosses the ship faster than the internal mail and twice as bent. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-the-ships-paper",
+      "group": "Ship society and community",
+      "title": "The Ship's Paper",
+      "direction": "A volunteer broadsheet of announcements, essays and rumours; {{user}} writes a column under a pen name and {{char}} denies being the source. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-union-troubles",
+      "group": "Ship society and community",
+      "title": "Union Troubles",
+      "direction": "The maintenance guild and the charter company dispute shore-leave pay; a vote approaches and friendships show their margins. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-night-watch-culture",
+      "group": "Ship society and community",
+      "title": "Night Watch Culture",
+      "direction": "The third-shift population of bakers, cleaners and engineers keeps its own bars, its own etiquette and its own festivals. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-the-welcoming-committee",
+      "group": "Ship society and community",
+      "title": "The Welcoming Committee",
+      "direction": "Veterans adopt each intake of transfers with a mix of kindness and nosiness; {{char}} was adopted first and {{user}} by association. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-hydroponics-show-days",
+      "group": "Ship society and community",
+      "title": "Hydroponics Show Days",
+      "direction": "Grow-deck exhibitions where farmers show prize produce like a county fair; the pumpkin equivalent is enormous and disputed. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-the-archive-open-day",
+      "group": "Ship society and community",
+      "title": "The Archive Open Day",
+      "direction": "The cartography department exhibits its new star charts once a season; the queue crosses three decks and nobody minds. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-the-quiet-car",
+      "group": "Ship society and community",
+      "title": "The Quiet Car",
+      "direction": "Tram car six is reserved for silence by unbreakable custom; violating it is the ship's gravest social crime and its best story. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-departure-parties",
+      "group": "Ship society and community",
+      "title": "Departure Parties",
+      "direction": "Every port call, some crew leave and some arrive; the ship has made a culture of farewells and {{char}} hosts them properly. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "community-the-founders-photograph",
+      "group": "Ship society and community",
+      "title": "The Founders' Photograph",
+      "direction": "A corridor of the founding crew's portraits hangs outside the council hall; the residents argue about which traditions still bind. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "worlds-lifeless-rock-survey",
+      "group": "What the ship finds: worlds",
+      "title": "Lifeless Rock Survey",
+      "direction": "A mineral-rich dead world of iron mesas and gem caves; beautiful, profitable and empty, and the survey team argues about which it is most. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-the-garden-candidate",
+      "group": "What the ship finds: worlds",
+      "title": "The Garden Candidate",
+      "direction": "A genuinely habitable world with breathable air; the first landing parties bring back mud on their boots and the ship argues about settlement within days. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-beautiful-and-toxic",
+      "group": "What the ship finds: worlds",
+      "title": "Beautiful and Toxic",
+      "direction": "A stunning biosphere that kills unprotected humans slowly; the surveys happen in suits and the arguments about worth happen over every meal. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-the-ocean-world",
+      "group": "What the ship finds: worlds",
+      "title": "The Ocean World",
+      "direction": "No continents and weather like a fist; probes go below while the whole ship watches the storm footage in silence. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-ice-moon-anomaly",
+      "group": "What the ship finds: worlds",
+      "title": "Ice Moon Anomaly",
+      "direction": "Thermal vent networks under the ice show warm water and odd chemistry; a light burns over a kilometre of ice while the drills run. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-the-desert-of-glass",
+      "group": "What the ship finds: worlds",
+      "title": "The Desert of Glass",
+      "direction": "Fused silica plains suggest an ancient catastrophe; dating it unsettles the scientists more than any hazard would. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-microbial-confirmation",
+      "group": "What the ship finds: worlds",
+      "title": "Microbial Confirmation",
+      "direction": "Life is confirmed at last, and it is mat and slime; the philosophical letdown and its defenders have a standing argument in the mess. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-proto-industrial-natives",
+      "group": "What the ship finds: worlds",
+      "title": "Proto-Industrial Natives",
+      "direction": "An inhabited world at roughly early-industrial development sits under strict observation protocols; the observation deck has waiting lists and the debates have none. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-the-answering-signal",
+      "group": "What the ship finds: worlds",
+      "title": "The Answering Signal",
+      "direction": "The survey probes are noticed from the ground and answered with a patterned light; first contact becomes a scheduling problem before it becomes a philosophical one. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-ruins-without-authors",
+      "group": "What the ship finds: worlds",
+      "title": "Ruins Without Authors",
+      "direction": "Cities stand empty of owners for ten thousand years; nobody knows who built them and everybody aboard has a theory and a favourite street. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-the-physics-defiance",
+      "group": "What the ship finds: worlds",
+      "title": "The Physics Defiance",
+      "direction": "A region where instruments disagree about which way is down and how fast light moves; the crew jokes nervously and recalibrates constantly. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-double-planet",
+      "group": "What the ship finds: worlds",
+      "title": "Double Planet",
+      "direction": "Twin habitable worlds orbit a common centre; both surveyable, both tempting, and the settlement lobby splits its own vote. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-the-living-cloud",
+      "group": "What the ship finds: worlds",
+      "title": "The Living Cloud",
+      "direction": "A gas giant whose atmospheric patterns look coded; pattern-hunters aboard grow fractious and secretive about their findings. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-already-settled",
+      "group": "What the ship finds: worlds",
+      "title": "Already Settled",
+      "direction": "The supposedly undiscovered world turns out to host a young human colony from another programme; jurisdiction awkwardness arrives before the shuttle lands. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-the-salvage-world",
+      "group": "What the ship finds: worlds",
+      "title": "The Salvage World",
+      "direction": "Wreckage of unknown origin orbits a lifeless planet; the salvage board argues law and temptation while the survey teams wait for a ruling. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "worlds-nothing-at-all",
+      "group": "What the ship finds: worlds",
+      "title": "Nothing at All",
+      "direction": "Three systems in a row of unremarkable rock; the mission's mood dips and ordinary shipboard life carries the voyage for a while. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "frontier-the-repeating-signal",
+      "group": "Anomalies and frontier events",
+      "title": "The Repeating Signal",
+      "direction": "A pulse from deep space as regular as a clock; the ship alters course to listen properly and the listening takes months. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-derelict-drift",
+      "group": "Anomalies and frontier events",
+      "title": "Derelict Drift",
+      "direction": "An intact but dead vessel drifts at the system's edge; the boarding party asks for volunteers and gets more than it can use. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-probe-silence",
+      "group": "Anomalies and frontier events",
+      "title": "Probe Silence",
+      "direction": "A surface probe stops transmitting forty minutes after landing; the second probe is built slower and watched closer. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-quarantine-turn",
+      "group": "Anomalies and frontier events",
+      "title": "Quarantine Turn",
+      "direction": "A survey team returns with an unexplained fever; the medical bay closes a deck and the rumour mill fills the gap. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-sensor-ghost",
+      "group": "Anomalies and frontier events",
+      "title": "Sensor Ghost",
+      "direction": "Contacts appear and vanish at the edge of sensor range; whether it is an instrument fault or something else stays unresolved for weeks. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-the-bookkeeping-error",
+      "group": "Anomalies and frontier events",
+      "title": "The Bookkeeping Error",
+      "direction": "Mass readings of a gas giant refuse to add up; the argument between departments gets personal before it gets anywhere. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-uncharted-hazard",
+      "group": "Anomalies and frontier events",
+      "title": "Uncharted Hazard",
+      "direction": "A debris field sits where the charts promised clear passage; a close call and a review board follow, and opinions harden. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-first-contact-protocols",
+      "group": "Anomalies and frontier events",
+      "title": "First Contact Protocols",
+      "direction": "The strange signals resolve into something like language; every department drafts a position paper and the mail packet to home carries them all. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-the-volcano-clock",
+      "group": "Anomalies and frontier events",
+      "title": "The Volcano Clock",
+      "direction": "A geologically furious world has habitable pockets between eruptions; the survey schedule becomes a wager the teams bet shifts on. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-the-cave-atmosphere",
+      "group": "Anomalies and frontier events",
+      "title": "The Cave Atmosphere",
+      "direction": "Breathable air fills caverns on an otherwise airless world; the exploration-approval queue is long and political. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-lost-colony-reprise",
+      "group": "Anomalies and frontier events",
+      "title": "Lost Colony Reprise",
+      "direction": "A settlement planted by an earlier programme missed its check-in years ago; the ship detours and every guess about what it will find circulates. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-the-occulting-star",
+      "group": "Anomalies and frontier events",
+      "title": "The Occulting Star",
+      "direction": "A star dims on a precise schedule as if something were passing in front of it that no instrument can find. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-the-museum-impact",
+      "group": "Anomalies and frontier events",
+      "title": "The Museum Impact",
+      "direction": "An impact crater shows regular geometry; natural or made, the debate splits dinner tables and friendships down the middle. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-deep-relay-riddle",
+      "group": "Anomalies and frontier events",
+      "title": "Deep Relay Riddle",
+      "direction": "A relay buoy that should not exist sits on the route, transmitting an old mission's call sign with no log of who placed it. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-the-bioluminescent-night",
+      "group": "Anomalies and frontier events",
+      "title": "The Bioluminescent Night",
+      "direction": "Landfall on a world whose dark side glows; the overnight camps become inevitable, enchanted and slightly against regulation. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "frontier-all-quiet-finally",
+      "group": "Anomalies and frontier events",
+      "title": "All Quiet, Finally",
+      "direction": "After months of anomalies, a system with nothing but honest rock; the crew exhales and some feel let down by the quiet. The ship is home, workplace and community at once, and the voyage's outcome stays open. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "family-children-of-the-ship",
+      "group": "Family and life cycle aboard",
+      "title": "Children of the Ship",
+      "direction": "A third of the residents were born aboard; the school's map of home is a rumour to them and a memory to their teachers. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-a-birth-mid-voyage",
+      "group": "Family and life cycle aboard",
+      "title": "A Birth Mid-Voyage",
+      "direction": "The first birth of the expedition's third year belongs to the whole residential deck; the celebration runs three shifts deep. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-multi-generation-households",
+      "group": "Family and life cycle aboard",
+      "title": "Multi-Generation Households",
+      "direction": "Grandparents who boarded at the launch still run a bakery on the market deck; the household expects {{char}} to inherit the ovens. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-couples-formed-in-transit",
+      "group": "Family and life cycle aboard",
+      "title": "Couples Formed in Transit",
+      "direction": "The ship's marriage register grows every year; {{char}} signs as a witness twice in one season and jokes about collecting fees. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-grief-at-distance",
+      "group": "Family and life cycle aboard",
+      "title": "Grief at Distance",
+      "direction": "News arrives of a death at home, months late; the voyage's cost becomes concrete for one household and the whole deck respects it differently. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-the-family-that-sailed-together",
+      "group": "Family and life cycle aboard",
+      "title": "The Family That Sailed Together",
+      "direction": "{{user}}'s colleagues transferred aboard with spouses and kids; family dinner invitations arrive weekly and shift the apartment's social calendar. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-leaving-a-partner-ashore",
+      "group": "Family and life cycle aboard",
+      "title": "Leaving a Partner Ashore",
+      "direction": "{{char}}'s partner stayed on-planet for a career that could not sail; the relationship carries by delayed letters with its own private timetable. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-the-retirement-deck",
+      "group": "Family and life cycle aboard",
+      "title": "The Retirement Deck",
+      "direction": "Crew who finish their contracts stay on as civilian residents; the pensioners' committees know the ship better than its captains. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-the-school-term-at-sea",
+      "group": "Family and life cycle aboard",
+      "title": "The School Term at Sea",
+      "direction": "Exams, recitals and careers advice where every career day features the ship itself; {{char}} tutors and {{user}} judges the science fair. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-expecting-at-launch",
+      "group": "Family and life cycle aboard",
+      "title": "Expecting at Launch",
+      "direction": "A couple in the next apartment boarded expecting a baby; its first steps happen in the park deck and the block claims them collectively. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-siblings-split-by-the-voyage",
+      "group": "Family and life cycle aboard",
+      "title": "Siblings Split by the Voyage",
+      "direction": "{{char}}'s sibling stayed home; their correspondence is a study in two different lives kept parallel by mail packets. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-the-adopted-crew",
+      "group": "Family and life cycle aboard",
+      "title": "The Adopted Crew",
+      "direction": "The ship's habit of adopting far-from-home crew into family dinners catches {{user}} and {{char}} by surprise and then by rotation. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-the-third-generation",
+      "group": "Family and life cycle aboard",
+      "title": "The Third Generation",
+      "direction": "Adults whose grandparents boarded at the launch treat the ship as a homeland with etiquette; newcomers learn it or stay politely outside it. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-the-wedding-booked-for-the-return",
+      "group": "Family and life cycle aboard",
+      "title": "The Wedding Booked for the Return",
+      "direction": "A couple postpones their ceremony until the homecoming; the whole ship argues whether that is romantic or defeatist over every port call. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-the-parents-last-leg",
+      "group": "Family and life cycle aboard",
+      "title": "The Parents' Last Leg",
+      "direction": "{{char}}'s parents, long-service crew, announce they will not sail the return leg; the family gathers to argue it properly. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "family-the-family-franchise",
+      "group": "Family and life cycle aboard",
+      "title": "The Family Franchise",
+      "direction": "The family running the corner shop has done so on three different decks across two refits; their roots are the ship's living memory. The vessel and its multi-year mission remain the fixed core of the series. Everyone aboard is an adult; cohabitation and duty imply no consent, and {{user}}'s course is unwritten."
+    },
+    {
+      "id": "opening-spaceport-boarding-day",
+      "group": "Openings and departure scenes",
+      "title": "Spaceport Boarding Day",
+      "direction": "The gangway queue, the weight allowance and the last call home on the concourse; {{user}} and {{char}} meet their own futures in the same hour. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-first-night-aboard",
+      "group": "Openings and departure scenes",
+      "title": "First Night Aboard",
+      "direction": "Docked and humming, the new apartment unfamiliar and the city around them silent for the last time until launch. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-departure-day",
+      "group": "Openings and departure scenes",
+      "title": "Departure Day",
+      "direction": "The ship leaves its berth; districts gather at viewports and nothing aboard is ordinary today, whatever tomorrow promises. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-the-first-transit",
+      "group": "Openings and departure scenes",
+      "title": "The First Transit",
+      "direction": "Days out and the routine begins; the novelty ends, the work starts and the real voyage quietly replaces the imagined one. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-first-port-call",
+      "group": "Openings and departure scenes",
+      "title": "First Port Call",
+      "direction": "Months in, a colony station rendezvous; mail, fresh food, departures and the sudden reminder that other lives continued without them. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-the-survey-briefing",
+      "group": "Openings and departure scenes",
+      "title": "The Survey Briefing",
+      "direction": "Assignment of the first planetary survey; departments, teams and one unverified rumour about something strange in the data. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-mid-voyage-transfer",
+      "group": "Openings and departure scenes",
+      "title": "Mid-Voyage Transfer",
+      "direction": "{{user}} joins an in-progress voyage at a colony rendezvous; the ship has a settled society to learn and {{char}} offers the unofficial tour. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-shore-leave-before-the-deep-legs",
+      "group": "Openings and departure scenes",
+      "title": "Shore Leave Before the Deep Legs",
+      "direction": "The last colony visit before uncharted space; everyone says goodbye properly and some promises survive the distance. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-the-anniversary-of-launch",
+      "group": "Openings and departure scenes",
+      "title": "The Anniversary of Launch",
+      "direction": "Year-one day brings a festival, a mission review and a captain's address; the ship takes stock of itself. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-crew-rotation-day",
+      "group": "Openings and departure scenes",
+      "title": "Crew Rotation Day",
+      "direction": "A large intake and outflow changes the apartment block overnight; new neighbours, new shifts and renegotiated habits. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-the-night-before-the-jump",
+      "group": "Openings and departure scenes",
+      "title": "The Night Before the Jump",
+      "direction": "The ship's first FTL transit is scheduled for dawn; nobody sleeps well and the mess hall stays open all night. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-first-planetfall",
+      "group": "Openings and departure scenes",
+      "title": "First Planetfall",
+      "direction": "Boots on the first surveyed world; the survey team's first camp, first storm and first full-circle argument about why they came. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-the-anomaly-watch",
+      "group": "Openings and departure scenes",
+      "title": "The Anomaly Watch",
+      "direction": "The quiet night shift flags something on the sensors; what it is stays unresolved while what it does to the crew begins. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-housewarming-at-the-edge-of-home",
+      "group": "Openings and departure scenes",
+      "title": "Housewarming at the Edge of Home",
+      "direction": "The week after launch, the neighbours throw a housewarming in the new apartment; the ship proves it is a place people live. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-the-return-announcement",
+      "group": "Openings and departure scenes",
+      "title": "The Return Announcement",
+      "direction": "Word arrives that the mission's end date has changed; celebration, dread and renegotiated plans cross three shifts of opinion. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "opening-the-mail-packet",
+      "group": "Openings and departure scenes",
+      "title": "The Mail Packet",
+      "direction": "The first personal letters arrive after months of silence; the whole ship's mood turns on envelopes and {{char}} watches {{user}}'s come off the stack. The city-ship premise holds: a self-contained community sailing beyond settled space for years. All characters are adults with full autonomy; {{user}}'s feelings, decisions and future remain open."
+    },
+    {
+      "id": "command-the-strict-master",
+      "group": "Command, duty and ship culture",
+      "title": "The Strict Master",
+      "direction": "A captain from the naval service tradition runs inspections, drills and unexpected kindnesses; the crew never decides which to expect. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-the-civic-ship",
+      "group": "Command, duty and ship culture",
+      "title": "The Civic Ship",
+      "direction": "The residents' council holds real power; the captain chairs meetings more often than issuing orders, and {{char}} serves a term. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-the-academic-fleet",
+      "group": "Command, duty and ship culture",
+      "title": "The Academic Fleet",
+      "direction": "The charter answers to a research institute; committees, citations and grant anxieties reach all the way to the tram depot. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-departmental-rivalries",
+      "group": "Command, duty and ship culture",
+      "title": "Departmental Rivalries",
+      "direction": "Survey sciences and engineering fight over lab space and power budgets; {{user}} and {{char}} land on different sides of the same apartment. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-the-emergency-drill-tradition",
+      "group": "Command, duty and ship culture",
+      "title": "The Emergency Drill Tradition",
+      "direction": "A ship that drills relentlessly; newcomers groan about it until the first real incident and then groan more quietly. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-watch-rotation-culture",
+      "group": "Command, duty and ship culture",
+      "title": "Watch Rotation Culture",
+      "direction": "The weeks their shifts align against the weeks they barely meet; the apartment keeps a calendar and both pretend not to consult it. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-the-morale-crisis",
+      "group": "Command, duty and ship culture",
+      "title": "The Morale Crisis",
+      "direction": "Bad news from home, a failed survey and a wages dispute land in the same month; the council debates what the ship owes its people. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-the-companys-man",
+      "group": "Command, duty and ship culture",
+      "title": "The Company's Man",
+      "direction": "The charter representative aboard watches costs; popular with nobody and fair or not, he signs the supply orders. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-the-laid-back-old-hand",
+      "group": "Command, duty and ship culture",
+      "title": "The Laid-Back Old Hand",
+      "direction": "A captain who trusts departments and dislikes ceremony; the ship runs on mutual respect and an alarming tolerance for improvised repairs. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-the-inspection-from-home",
+      "group": "Command, duty and ship culture",
+      "title": "The Inspection From Home",
+      "direction": "An oversight delegation arrives at a port call; the ship polishes itself for a fortnight and gossips for a year. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-hull-breach-response",
+      "group": "Command, duty and ship culture",
+      "title": "Hull Breach Response",
+      "direction": "A micrometeoroid strike hits a residential deck; damage control, a corridor evacuated and the aftermath politics that follow real fear. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-the-discipline-case",
+      "group": "Command, duty and ship culture",
+      "title": "The Discipline Case",
+      "direction": "A popular senior technician is caught falsifying maintenance logs; the hearing splits the crew between mercy and the air they breathe. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-the-rumour-of-a-second-vessel",
+      "group": "Command, duty and ship culture",
+      "title": "The Rumour of a Second Vessel",
+      "direction": "Charts and supply manifests suggest another ship may be following the route; the official denials are vague enough to feed it. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-promotion-season",
+      "group": "Command, duty and ship culture",
+      "title": "Promotion Season",
+      "direction": "The annual postings round offers {{char}} a department post that would change their shifts, district and the apartment's whole rhythm. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-the-stranded-colony-dilemma",
+      "group": "Command, duty and ship culture",
+      "title": "The Stranded Colony Dilemma",
+      "direction": "An emergency signal arrives from an off-route settlement; the fuel and schedule cost of answering becomes the ship's hardest argument. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "command-the-quiet-command",
+      "group": "Command, duty and ship culture",
+      "title": "The Quiet Command",
+      "direction": "A captain who communicates in written orders and rarely appears; legends grow in the absence and the legends have opinions. The fixed reusable engine remains a long-duration exploration vessel and the society it carries. Adults only; consent is specific, boundaries hold, and {{user}} decides their own path."
+    },
+    {
+      "id": "world-phase-lifeless-boarding",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — boarding",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls at spaceport boarding, the assigned apartment still smelling of fresh paint. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-first-transit",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — first transit",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls during the first long transit, routines just forming. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-assignment",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — assignment",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls at the briefing where this world is assigned to the survey teams. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-planetfall",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — planetfall",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls at first planetfall on this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-mid-survey",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — mid survey",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls mid-survey, when the world has become a work site. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-anomaly",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — anomaly",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls the night the survey data stops making sense. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-years-in",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — years in",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls years into the mission, this world simply the current stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-port-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — port call",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls at a colony port call en route to or from this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-festival",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — festival",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls on a shipboard festival day the survey interrupts. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-mail-day",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — mail day",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls as a long-delayed mail packet arrives alongside the world's findings. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-command-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — command call",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls as command must rule on a disputed plan for this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-homebound",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — homebound",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls on the homebound leg, this world the expedition's last major stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-lifeless-crew-change",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "lifeless mineral world — crew change",
+      "direction": "The current survey target is a lifeless mineral world: iron mesas and gem-studded caves, and nothing alive anywhere. The opening falls as transfers join or leave with this world's survey unfinished. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-boarding",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — boarding",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls at spaceport boarding, the assigned apartment still smelling of fresh paint. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-first-transit",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — first transit",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls during the first long transit, routines just forming. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-assignment",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — assignment",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls at the briefing where this world is assigned to the survey teams. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-planetfall",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — planetfall",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls at first planetfall on this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-mid-survey",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — mid survey",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls mid-survey, when the world has become a work site. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-anomaly",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — anomaly",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls the night the survey data stops making sense. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-years-in",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — years in",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls years into the mission, this world simply the current stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-port-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — port call",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls at a colony port call en route to or from this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-festival",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — festival",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls on a shipboard festival day the survey interrupts. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-mail-day",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — mail day",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls as a long-delayed mail packet arrives alongside the world's findings. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-command-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — command call",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls as command must rule on a disputed plan for this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-homebound",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — homebound",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls on the homebound leg, this world the expedition's last major stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-garden-crew-change",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "habitable garden world — crew change",
+      "direction": "The current survey target is a habitable garden world: the first breathable air the expedition has smelled beyond home. The opening falls as transfers join or leave with this world's survey unfinished. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-boarding",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — boarding",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls at spaceport boarding, the assigned apartment still smelling of fresh paint. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-first-transit",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — first transit",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls during the first long transit, routines just forming. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-assignment",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — assignment",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls at the briefing where this world is assigned to the survey teams. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-planetfall",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — planetfall",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls at first planetfall on this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-mid-survey",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — mid survey",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls mid-survey, when the world has become a work site. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-anomaly",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — anomaly",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls the night the survey data stops making sense. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-years-in",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — years in",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls years into the mission, this world simply the current stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-port-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — port call",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls at a colony port call en route to or from this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-festival",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — festival",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls on a shipboard festival day the survey interrupts. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-mail-day",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — mail day",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls as a long-delayed mail packet arrives alongside the world's findings. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-command-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — command call",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls as command must rule on a disputed plan for this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-homebound",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — homebound",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls on the homebound leg, this world the expedition's last major stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-hostile-crew-change",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "hostile but tempting world — crew change",
+      "direction": "The current survey target is a hostile but tempting world: storms that reshape the coastline between every visit. The opening falls as transfers join or leave with this world's survey unfinished. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-boarding",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — boarding",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls at spaceport boarding, the assigned apartment still smelling of fresh paint. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-first-transit",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — first transit",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls during the first long transit, routines just forming. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-assignment",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — assignment",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls at the briefing where this world is assigned to the survey teams. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-planetfall",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — planetfall",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls at first planetfall on this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-mid-survey",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — mid survey",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls mid-survey, when the world has become a work site. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-anomaly",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — anomaly",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls the night the survey data stops making sense. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-years-in",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — years in",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls years into the mission, this world simply the current stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-port-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — port call",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls at a colony port call en route to or from this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-festival",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — festival",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls on a shipboard festival day the survey interrupts. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-mail-day",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — mail day",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls as a long-delayed mail packet arrives alongside the world's findings. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-command-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — command call",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls as command must rule on a disputed plan for this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-homebound",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — homebound",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls on the homebound leg, this world the expedition's last major stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ocean-crew-change",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ocean world — crew change",
+      "direction": "The current survey target is a ocean world: weather systems the survey crews name like rivals. The opening falls as transfers join or leave with this world's survey unfinished. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-boarding",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — boarding",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls at spaceport boarding, the assigned apartment still smelling of fresh paint. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-first-transit",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — first transit",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls during the first long transit, routines just forming. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-assignment",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — assignment",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls at the briefing where this world is assigned to the survey teams. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-planetfall",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — planetfall",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls at first planetfall on this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-mid-survey",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — mid survey",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls mid-survey, when the world has become a work site. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-anomaly",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — anomaly",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls the night the survey data stops making sense. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-years-in",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — years in",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls years into the mission, this world simply the current stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-port-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — port call",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls at a colony port call en route to or from this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-festival",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — festival",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls on a shipboard festival day the survey interrupts. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-mail-day",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — mail day",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls as a long-delayed mail packet arrives alongside the world's findings. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-command-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — command call",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls as command must rule on a disputed plan for this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-homebound",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — homebound",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls on the homebound leg, this world the expedition's last major stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ice-moon-crew-change",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "ice-locked moon — crew change",
+      "direction": "The current survey target is a ice-locked moon: a warm subsurface ocean under a kilometre of ice. The opening falls as transfers join or leave with this world's survey unfinished. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-boarding",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — boarding",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls at spaceport boarding, the assigned apartment still smelling of fresh paint. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-first-transit",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — first transit",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls during the first long transit, routines just forming. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-assignment",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — assignment",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls at the briefing where this world is assigned to the survey teams. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-planetfall",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — planetfall",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls at first planetfall on this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-mid-survey",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — mid survey",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls mid-survey, when the world has become a work site. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-anomaly",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — anomaly",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls the night the survey data stops making sense. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-years-in",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — years in",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls years into the mission, this world simply the current stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-port-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — port call",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls at a colony port call en route to or from this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-festival",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — festival",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls on a shipboard festival day the survey interrupts. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-mail-day",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — mail day",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls as a long-delayed mail packet arrives alongside the world's findings. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-command-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — command call",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls as command must rule on a disputed plan for this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-homebound",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — homebound",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls on the homebound leg, this world the expedition's last major stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-microbial-crew-change",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "microbial-life world — crew change",
+      "direction": "The current survey target is a microbial-life world: a tide-pool ecosystem the biologists fight over sampling rights to. The opening falls as transfers join or leave with this world's survey unfinished. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-boarding",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — boarding",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls at spaceport boarding, the assigned apartment still smelling of fresh paint. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-first-transit",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — first transit",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls during the first long transit, routines just forming. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-assignment",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — assignment",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls at the briefing where this world is assigned to the survey teams. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-planetfall",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — planetfall",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls at first planetfall on this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-mid-survey",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — mid survey",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls mid-survey, when the world has become a work site. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-anomaly",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — anomaly",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls the night the survey data stops making sense. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-years-in",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — years in",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls years into the mission, this world simply the current stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-port-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — port call",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls at a colony port call en route to or from this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-festival",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — festival",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls on a shipboard festival day the survey interrupts. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-mail-day",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — mail day",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls as a long-delayed mail packet arrives alongside the world's findings. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-command-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — command call",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls as command must rule on a disputed plan for this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-homebound",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — homebound",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls on the homebound leg, this world the expedition's last major stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-pre-contact-crew-change",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited pre-industrial world — crew change",
+      "direction": "The current survey target is a inhabited pre-industrial world: orchard villages visible from high orbit and a protocol manual thick with maybes. The opening falls as transfers join or leave with this world's survey unfinished. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-boarding",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — boarding",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls at spaceport boarding, the assigned apartment still smelling of fresh paint. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-first-transit",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — first transit",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls during the first long transit, routines just forming. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-assignment",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — assignment",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls at the briefing where this world is assigned to the survey teams. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-planetfall",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — planetfall",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls at first planetfall on this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-mid-survey",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — mid survey",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls mid-survey, when the world has become a work site. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-anomaly",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — anomaly",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls the night the survey data stops making sense. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-years-in",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — years in",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls years into the mission, this world simply the current stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-port-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — port call",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls at a colony port call en route to or from this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-festival",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — festival",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls on a shipboard festival day the survey interrupts. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-mail-day",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — mail day",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls as a long-delayed mail packet arrives alongside the world's findings. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-command-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — command call",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls as command must rule on a disputed plan for this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-homebound",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — homebound",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls on the homebound leg, this world the expedition's last major stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-contacting-crew-change",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "inhabited world that has noticed the ship — crew change",
+      "direction": "The current survey target is a inhabited world that has noticed the ship: mirrored heliograph greetings from a mountain observatory. The opening falls as transfers join or leave with this world's survey unfinished. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-boarding",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — boarding",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls at spaceport boarding, the assigned apartment still smelling of fresh paint. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-first-transit",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — first transit",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls during the first long transit, routines just forming. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-assignment",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — assignment",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls at the briefing where this world is assigned to the survey teams. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-planetfall",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — planetfall",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls at first planetfall on this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-mid-survey",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — mid survey",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls mid-survey, when the world has become a work site. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-anomaly",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — anomaly",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls the night the survey data stops making sense. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-years-in",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — years in",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls years into the mission, this world simply the current stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-port-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — port call",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls at a colony port call en route to or from this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-festival",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — festival",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls on a shipboard festival day the survey interrupts. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-mail-day",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — mail day",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls as a long-delayed mail packet arrives alongside the world's findings. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-command-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — command call",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls as command must rule on a disputed plan for this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-homebound",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — homebound",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls on the homebound leg, this world the expedition's last major stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-ruins-crew-change",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "world of ruins — crew change",
+      "direction": "The current survey target is a world of ruins: streets built for bodies nobody can yet identify. The opening falls as transfers join or leave with this world's survey unfinished. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-boarding",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — boarding",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls at spaceport boarding, the assigned apartment still smelling of fresh paint. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-first-transit",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — first transit",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls during the first long transit, routines just forming. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-assignment",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — assignment",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls at the briefing where this world is assigned to the survey teams. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-planetfall",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — planetfall",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls at first planetfall on this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-mid-survey",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — mid survey",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls mid-survey, when the world has become a work site. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-anomaly",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — anomaly",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls the night the survey data stops making sense. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-years-in",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — years in",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls years into the mission, this world simply the current stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-port-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — port call",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls at a colony port call en route to or from this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-festival",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — festival",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls on a shipboard festival day the survey interrupts. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-mail-day",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — mail day",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls as a long-delayed mail packet arrives alongside the world's findings. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-command-call",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — command call",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls as command must rule on a disputed plan for this world. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-homebound",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — homebound",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls on the homebound leg, this world the expedition's last major stop. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "world-phase-strange-crew-change",
+      "group": "Discovered worlds and voyage phase combinations",
+      "title": "scientifically strange world — crew change",
+      "direction": "The current survey target is a scientifically strange world: instruments that disagree about sunrise. The opening falls as transfers join or leave with this world's survey unfinished. Adult {{user}} and {{char}} are crew or residents aboard the city ship with ordinary duties of their own, and the fixed premise of a self-contained vessel sailing beyond settled space holds. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "City-ship engine",
+      "content": "Accommodation is an apartment rather than a tiny cabin. The ship can contain residential districts, laboratories, medical facilities, education and training spaces, restaurants, shops, recreation, parks or hydroponics, industrial sections, cargo areas, shuttle bays and internal transit such as automated trains or trams. The vessel is simultaneously home, workplace, transport and community."
+    },
+    {
+      "id": "flagship",
+      "label": "Flagship relationship",
+      "content": "{{user}} and {{char}} are adult childhood friends undertaking the expedition together. They may have applied together, one may have encouraged the other to join, or both may have independently qualified and then requested shared accommodation. Childhood friendship does not create romance."
+    },
+    {
+      "id": "boarding",
+      "label": "Departure and boarding",
+      "content": "Open at a playable point of transition: the spaceport queue, the walk up the gangway, the first night in an unfamiliar apartment, or the departure itself. Establish what each is leaving behind without scripting {{user}}'s feelings about it."
+    },
+    {
+      "id": "duty",
+      "label": "Ordinary crew professions",
+      "content": "Do not default to elite scientists. The city ship needs engineers, technicians, network staff, medics, growers, teachers, logistics hands, cooks, transit crews, counsellors and administrators; {{user}} and {{char}}'s actual jobs should shape their days, neighbours and arguments."
+    },
+    {
+      "id": "accommodation",
+      "label": "Apartments and domestic life",
+      "content": "Specify the apartment honestly: rooms, neighbours, noise, view or its absence, and whether bedrooms are shared. Shared accommodation is a housing fact, not a romantic device, and everything it implies stays negotiable between the characters."
+    },
+    {
+      "id": "society",
+      "label": "Ship society",
+      "content": "Give the vessel a working community: market decks, mess halls, tram lines, festivals, councils, gossip and night-shift customs. Life aboard should feel like a small city with its own politics and rituals rather than a corridor of duty stations."
+    },
+    {
+      "id": "science",
+      "label": "Survey and discovery work",
+      "content": "The expedition's science is ordinary work: briefings, probes, sample queues, landings, data and long transits between finds. Discovery creates possibilities and texture, not mandatory danger; let any anomaly's true nature stay open."
+    },
+    {
+      "id": "worlds",
+      "label": "What the ship finds",
+      "content": "Vary the portfolio honestly: lifeless rock, genuine habitability, hostile beauty, oceans, ice, microbes, ruins, strange physics or inhabited peoples. Habitability is rare and precious; inhabited worlds demand restraint and protocol rather than conquest framing."
+    },
+    {
+      "id": "comms",
+      "label": "Distance from home",
+      "content": "The communication delay shapes daily life: letters that age in transit, news that arrives already old, homesickness handled publicly and privately. Treat distance as a real condition of the voyage, not a guaranteed tragedy."
+    },
+    {
+      "id": "family",
+      "label": "Life cycle aboard",
+      "content": "Families, children born aboard, couples formed in transit, retirees who stay as civilians and grief at distance all belong to shipboard life. Family life is background society and never a lever placed on {{user}}."
+    },
+    {
+      "id": "command",
+      "label": "Command and incidents",
+      "content": "Command style varies — naval discipline, civic council, academic committee — and grants professional authority only. Incidents and hazards create stakes and after-hours politics without scripting {{user}}'s panic, heroism or blame."
+    },
+    {
+      "id": "opening",
+      "label": "Playable first scene",
+      "content": "Begin with a concrete, playable moment: boarding day, the first night aboard, departure, a survey briefing or a mail-packet day. Ground it in logistics, people and place. Do not write {{user}}'s dialogue or reactions, and do not resolve what the voyage will mean."
+    },
+    {
+      "id": "boundary",
+      "label": "Related series and optional crossovers",
+      "content": "Cross-link Our Trip Together when the pair's journey dominates, Temporary Partners for assigned professional pairing, What We Found when a discovery is the heart, A World After Our Time for settlement and legacy questions, and The Other Regular for shipboard community intimacy. Distinct from colony and survival series: the voyage itself, aboard a functioning home, is the premise."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult character-card premise for Voyage Into the Unknown. Adult {{user}} and {{char}} join a vast long-duration scientific exploration vessel that is a self-contained city in space, sailing beyond settled territory to survey star systems, study planets, deploy probes, investigate anomalies and scout settlement sites. Vary mission duration, ship scale, FTL versus slower travel, communication delay with home, their ordinary occupations (engineers, medics, growers, teachers, transit and comms staff — not just elite scientists), how they came aboard and their apartment arrangement, shipboard society, family life aboard, and what the ship finds: lifeless, habitable, hostile, inhabited or scientifically strange worlds. Shared accommodation and years together do not force romance; command rank grants no consent; discovery creates possibility, not mandatory danger. Open at boarding, departure or an early mission moment and leave {{user}}'s reactions and every outcome unwritten."
+}

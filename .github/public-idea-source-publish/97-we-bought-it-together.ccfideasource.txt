@@ -1,0 +1,2017 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iii-09-we-bought-it-together",
+  "title": "We Bought It Together",
+  "description": "Expanded Series Bible III #09 We Bought It Together reusable adult idea-source engine. Generates premises in which {{char}} and {{user}} jointly acquire a significant shared asset that forces an ongoing practical partnership, varying the asset, the money, the work and every interpersonal outcome.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible III",
+    "version": "0.4",
+    "entry": "9",
+    "kind": "series"
+  },
+  "summary": "Adult {{char}} and {{user}} jointly acquire something significant that creates an ongoing practical relationship: a small business, fixer-upper, campervan, boat, workshop, expensive hobby machine, holiday property, vehicle, arcade cabinet, studio equipment or other shared asset. The engine is the recurring contact the shared ownership forces: money, maintenance, scheduling, decisions and disagreements that keep bringing the two back to the same table. Ownership creates obligation and familiarity, never a script for romance, conflict or success.",
+  "core_premise": "{{char}} and {{user}} own something together. The asset is significant enough that neither can walk away casually, and practical reality — costs, repairs, permits, bookings, operating hours — forces them into recurring contact and shared decisions. The premise fixes only the joint ownership and what the asset is; who wanted it more, who pays, who works, who benefits, whether it thrives or collapses, and what the two become to each other are all open. Shared ownership establishes no cohabitation, no shared finances beyond the asset and no romance by default.",
+  "setup": "Create a non-graphic adult roleplay opening around a shared asset. Establish what {{char}} and {{user}} bought, roughly how the ownership and money are split, why they bought it together, and the immediate practical situation that forces their next shared decision — a breakdown, a bill, a booking, a deadline, a season opening or a quiet month. Give {{char}} a defined life, skills, history with the asset and reasons for wanting it. Open at a playable moment where the partnership's texture shows: a working bee, a handover, a settlement day or a hard conversation about the numbers. Do not script {{user}}'s feelings, effort, attraction or choices, and leave the partnership's future unwritten.",
+  "core_variables": [
+    "What the shared asset is: small business, fixer-upper, campervan, boat, workshop, hobby machine, holiday property, vehicle, arcade cabinet, studio equipment or another significant purchase.",
+    "Why {{char}} and {{user}} bought it together: affordability, romance, friendship, circumstance, persuasion, investment or impulse.",
+    "The ownership split and how formal it is: equal shares, unequal shares, handshake or contract.",
+    "Cost, debt and financial pressure: what the asset earns versus what it drains each month.",
+    "Whether one person pushed the idea, and how the other's agreement was reached.",
+    "Repair, maintenance and operating requirements, and who can actually meet them.",
+    "Scheduling conflicts and competing demands on each owner's time.",
+    "Whether the asset is profitable, useful, ridiculous, or all three at once.",
+    "What each owner contributed: money, labour, skills, contacts or presence.",
+    "The history between {{char}} and {{user}} before the purchase: strangers, friends, exes, colleagues, family.",
+    "External pressures: landlords, inspectors, competitors, customers, family opinions.",
+    "The first real test the opening places on the partnership.",
+    "How honest each owner has been about money, effort and intent.",
+    "Whether either owner wants out, and whether the other knows.",
+    "{{char}}'s life and identity beyond the asset: work, home, friends, other commitments.",
+    "Whether the partnership ends, changes, or endures — deliberately left open."
+  ],
+  "generation_rules": [
+    "Do not write {{user}} for the player or define {{user}}'s feelings, decisions, dialogue, consent, effort levels, financial contributions or future behaviour unless the source explicitly supplies that fact.",
+    "Character belief is not objective truth; keep {{char}}'s assumptions about {{user}}'s reliability, wealth, motives or commitment distinct from verified facts.",
+    "Do not pre-play outcomes. Leave cooperation, conflict, honesty, exit, sale, romance and the asset's fate open.",
+    "All characters are adults.",
+    "Shared ownership of an asset does not create romantic or sexual consent, cohabitation or merged finances.",
+    "Cohabitation, travel together, one bed at the asset, physical closeness during repairs and financial entanglement do not create blanket consent.",
+    "Sex or intimacy, if it ever develops, must not erase a character's baseline personality, goals, nonsexual interests, judgement or boundaries.",
+    "Do not force romance into the partnership. Practical cooperation, friendship, rivalry, unresolved tension, businesslike distance or no relationship change are all valid outcomes.",
+    "Shared ownership establishes the asset and its decisions only: not a household, not joint bank accounts, not a relationship label.",
+    "Make practical decisions — money, repairs, schedules, bookings — part of the roleplay engine rather than background noise the story skips.",
+    "Vary what the asset is across generations; do not default every card to the same business or vehicle type.",
+    "Vary the ownership split and how formal or informal it is; a handshake partnership behaves differently from a contracted one.",
+    "Let {{char}} keep a full life beyond the asset: occupation where relevant, friends, family, interests and boundaries that are not the shared purchase.",
+    "Financial pressure, breakdowns and deadlines create urgency, never mandated fights, confessions or reconciliations.",
+    "Third parties — landlords, inspectors, competitors, relatives, customers — may pressure the partnership, but do not use them to railroad {{user}}'s choices.",
+    "An owner wanting to sell, buy out or exit is a proposal or a secret, never a settled outcome that overrides {{user}}'s agency.",
+    "Vary skill, competence and effort independently; neither owner is automatically the competent one or the lazy one.",
+    "Do not treat the asset's commercial failure or success as a moral verdict on either owner.",
+    "Keep any intimacy non-graphic and grounded in the partnership's practical texture: shared work, money and time.",
+    "Preserve {{user}}'s right to renegotiate terms, refuse tasks, set boundaries, or exit the partnership at any point in play.",
+    "Overlap boundary: distinct from Our Little Business, which centres on running the venture; here the joint acquisition and its ongoing obligations are the engine. Distinct from Temporary Partners, where the partnership has a defined end.",
+    "Open at a playable moment where the partnership's stakes are visible without having resolved them."
+  ],
+  "guardrails": [
+    "All participants are adults.",
+    "No scripted {{user}} feelings, dialogue, effort, consent or future decisions.",
+    "Shared ownership is practical entanglement, not automatic intimacy, obligation or romance.",
+    "Consent is activity-specific; sharing an asset, a bed at the property or a working weekend never implies sexual consent.",
+    "No predetermined reconciliation, breakup, buyout, bankruptcy or success for the partnership.",
+    "Character beliefs about money, effort or each other are viewpoints, not narrator-endorsed facts.",
+    "Financial pressure and shared debt must not be used to coerce intimacy or compliance from {{user}}.",
+    "Third-party pressure does not override {{user}}'s agency or force a single resolution.",
+    "Keep the asset's dangers and physical demands realistic without staging mandatory injuries.",
+    "Keep any intimacy non-graphic and secondary to the partnership's practical decisions.",
+    "Do not force romance, sex or conflict where the premise supports calm cooperation, friendship or businesslike distance.",
+    "{{char}} remains a complete person beyond the shared asset: her own life, history, interests and boundaries.",
+    "Every major partnership decision — sell, expand, dissolve, restructure — stays open for {{user}} to influence or make."
+  ],
+  "diversity_axes": [
+    "The asset type: cafe, fixer-upper, campervan, sailboat, workshop, laser cutter or hobby machine, holiday property, project car, arcade cabinet, studio equipment, food truck, bookshop, smallholding, laundromat, vending route or aircraft share.",
+    "Why they bought together: affordability, romance, friendship, family inheritance, colleagues, persuasion, auction impulse, a reason to stay in touch, investment, bailout, forced circumstance, spite, midlife purchase or estate bargain.",
+    "Ownership split: equal, unequal, formal contract, handshake, deposit-versus-debt, family loan or friends-and-family shares.",
+    "Financial state: profitable, breaking even, a money pit, arrears, hidden debt, surprise levies or a windfall.",
+    "Who pushed the purchase, and how willingly the other agreed.",
+    "Skill distribution: she knows and he learns, he knows and she learns, both hopeless, both competent, or one carrying the workload.",
+    "Work patterns: weekend ritual, night-shift handovers, remote ownership, seasonal crunch or quiet off-season.",
+    "The pair's history: strangers, friends, exes, siblings, colleagues, rivals, mentor and mentee or newlyweds.",
+    "The relationship's temperature: warm banter, unresolved attraction, polite distance, rivalry, drift or growing closeness.",
+    "External pressure: landlord, inspector, competitor, customers, family, neighbours, media or a would-be third partner.",
+    "Turning point: first profit, breakdown, failed inspection, buyout offer, storm damage, redundancy, health scare or quiet month.",
+    "Whether either owner secretly or openly wants out.",
+    "What {{user}} contributed and wants from the asset, left open for him to play.",
+    "Whether the asset is profitable, useful, ridiculous or all three, and whether that verdict changes.",
+    "The outcome of the partnership: survival, sale, dissolution, restructure or transformation — deliberately unwritten."
+  ],
+  "cross_links": [
+    "Our Little Business — the closest neighbour; there the running of the venture is the engine, while here the joint acquisition and its recurring obligations lead.",
+    "Our Trip Together — shared travel can grow from a co-owned campervan, boat or aircraft share and its booking calendar.",
+    "Temporary Partners — use when the partnership has a defined expiry; We Bought It Together is open-ended unless generated so.",
+    "The New Manager — one co-owner may take formal authority over the asset's operation, changing the friendship into a reporting line.",
+    "Before We Go Home — a jointly owned asset can be the thing {{char}} and {{user}} must decide about before a shared chapter ends.",
+    "Wrong First Impression — early disputes over money, keys or missed handovers can seed a mistaken reading between co-owners.",
+    "Off the Clock — a shared asset may bring {{user}} into contact with {{char}}'s working persona before he knows her private one."
+  ],
+  "tags": [
+    "series bible iii",
+    "shared tasks & recurring contact",
+    "joint ownership",
+    "co-owned asset",
+    "shared purchase",
+    "fixer upper",
+    "campervan",
+    "boat restoration",
+    "shared workshop",
+    "hobby machine",
+    "holiday property",
+    "food truck",
+    "bookshop",
+    "practical partnership",
+    "money and stakes",
+    "scheduling conflicts",
+    "repair and maintenance",
+    "financial pressure",
+    "open outcomes",
+    "player agency"
+  ],
+  "notes": "Expanded Series Bible III #9 from the v0.4 draft to version 1.0 (preserving all original seed IDs where present; the v0.4 stub carried none, so no Original Bible seeds group appears). Adds 304 direction presets exploring what the shared asset is, why it was bought jointly, how money and ownership split, who does the work, how time and schedules collide, what the partnership does to the two people, external pressures, stakes and turning points, {{user}}'s agency, and a 160-preset combination grid crossing ten asset flavours with sixteen reasons for buying together. All interpersonal outcomes — romance, dissolution, sale, success — remain open.",
+  "direction_presets": [
+    {
+      "id": "asset-01-corner-cafe",
+      "group": "The shared asset",
+      "title": "Corner Cafe",
+      "direction": "Adult {{char}} and {{user}} complete settlement day on a small corner cafe, taking the keys together for the first time. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "asset-02-fixer-upper-house",
+      "group": "The shared asset",
+      "title": "Fixer-Upper House",
+      "direction": "{{char}} and {{user}} sign for a run-down fixer-upper neither could afford alone, and the first walkthrough reveals decades of other people's shortcuts. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "asset-03-the-campervan",
+      "group": "The shared asset",
+      "title": "The Campervan",
+      "direction": "{{char}} and {{user}} collect a second-hand campervan from a distant seller, driving it home while arguing about who handles the first booking calendar. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "asset-04-a-wooden-sailboat",
+      "group": "The shared asset",
+      "title": "A Wooden Sailboat",
+      "direction": "{{char}} and {{user}} take delivery of an ageing wooden sailboat on a mooring they jointly rent, with a hull survey that lists more problems than the ad mentioned. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "asset-05-the-shared-workshop",
+      "group": "The shared asset",
+      "title": "The Shared Workshop",
+      "direction": "{{char}} and {{user}} receive keys to a rented industrial bay fitted out as a shared workshop, dividing bench space and tool storage on day one. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "asset-06-the-laser-cutter",
+      "group": "The shared asset",
+      "title": "The Laser Cutter",
+      "direction": "A pallet of crated machine arrives for {{char}} and {{user}}: a laser cutter bought at auction, requiring assembly, venting and a shared operating rota. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "asset-07-the-beach-shack",
+      "group": "The shared asset",
+      "title": "The Beach Shack",
+      "direction": "{{char}} and {{user}} inherit-by-purchase a salt-bitten beach shack as equal owners, standing in the doorway arguing about which repairs come first. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "asset-08-the-project-car",
+      "group": "The shared asset",
+      "title": "The Project Car",
+      "direction": "{{char}} and {{user}} push a stripped vintage car body into their shared garage space, the beginning of a restoration neither has fully scoped. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "asset-09-the-arcade-cabinet",
+      "group": "The shared asset",
+      "title": "The Arcade Cabinet",
+      "direction": "{{char}} and {{user}} load a classic arcade cabinet into the back of a hired trailer, splitting restoration costs screen by screen. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "asset-10-studio-equipment",
+      "group": "The shared asset",
+      "title": "Studio Equipment",
+      "direction": "{{char}} and {{user}} sign the invoice on a room of second-hand recording equipment, working out whose headphones go where. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "asset-11-the-food-truck",
+      "group": "The shared asset",
+      "title": "The Food Truck",
+      "direction": "{{char}} and {{user}} accept handover of a food truck from a retiring owner, including her old route notes and a list of council permit deadlines. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "asset-12-the-second-hand-bookshop",
+      "group": "The shared asset",
+      "title": "The Second-Hand Bookshop",
+      "direction": "{{char}} and {{user}} take over a dusty second-hand bookshop with the lease attached, discovering the previous owner's filing system in the process. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "asset-13-the-smallholding",
+      "group": "The shared asset",
+      "title": "The Smallholding",
+      "direction": "{{char}} and {{user}} complete papers on a few acres with a leaning barn and one stubborn fence line, splitting the chores before they have even moved a tool. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "asset-14-the-laundromat",
+      "group": "The shared asset",
+      "title": "The Laundromat",
+      "direction": "{{char}} and {{user}} receive the folder of keys for a fading laundromat, machines numbered in faded marker by generations of prior owners. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "asset-15-the-vending-route",
+      "group": "The shared asset",
+      "title": "The Vending Route",
+      "direction": "{{char}} and {{user}} buy a small vending machine route, learning its locations, stockists and quirks one coin box at a time. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "asset-16-a-share-in-an-aircraft",
+      "group": "The shared asset",
+      "title": "A Share In An Aircraft",
+      "direction": "{{char}} and {{user}} sign into a syndicate share of a small aircraft, and the first hangar visit clarifies how little either of them read the agreement. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "reason-01-neither-could-afford-it-alone",
+      "group": "Why they bought it together",
+      "title": "Neither Could Afford It Alone",
+      "direction": "The deposit only worked when {{char}} and {{user}} pooled their savings, and both know exactly what each contributed. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "reason-02-a-couple-consolidating",
+      "group": "Why they bought it together",
+      "title": "A Couple Consolidating",
+      "direction": "{{char}} and {{user}} bought the asset as a couple building a life together, and the purchase still carries the shape of that hope. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "reason-03-old-friends-and-a-shared-dream",
+      "group": "Why they bought it together",
+      "title": "Old Friends And A Shared Dream",
+      "direction": "Two school friends {{char}} and {{user}} finally acted on a promise made years ago, and now the dream has invoices. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "reason-04-uni-friends-going-in-together",
+      "group": "Why they bought it together",
+      "title": "Uni Friends Going In Together",
+      "direction": "Former university housemates {{char}} and {{user}} signed as co-owners, banking on a friendship that has never been tested by money. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "reason-05-siblings-inheriting-halfway",
+      "group": "Why they bought it together",
+      "title": "Siblings Inheriting Halfway",
+      "direction": "{{char}} and {{user}} each hold shares that only make sense together, forcing a partnership neither would have chosen. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "reason-06-colleagues-going-in-together",
+      "group": "Why they bought it together",
+      "title": "Colleagues Going In Together",
+      "direction": "Workplace colleagues {{char}} and {{user}} turned water-cooler talk into signatures, without checking how they operate outside office hours. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "reason-07-one-talked-the-other-into-it",
+      "group": "Why they bought it together",
+      "title": "One Talked The Other Into It",
+      "direction": "{{char}} pushed the idea hard, and {{user}}'s agreement was real even if it arrived after a long evening of persuasion. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "reason-08-a-spontaneous-auction-win",
+      "group": "Why they bought it together",
+      "title": "A Spontaneous Auction Win",
+      "direction": "Neither {{char}} nor {{user}} planned to buy until a low reserve changed everything, and the handshake afterwards became a partnership. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "reason-09-a-reason-to-stay-in-contact",
+      "group": "Why they bought it together",
+      "title": "A Reason To Stay In Contact",
+      "direction": "{{char}} wanted the asset partly because it guaranteed {{user}} would keep appearing, a motive that has never been said out loud. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "reason-10-an-investment-for-a-shared-future",
+      "group": "Why they bought it together",
+      "title": "An Investment For A Shared Future",
+      "direction": "{{char}} and {{user}} treated the purchase as a deliberate long-term investment, with spreadsheets and a five-year sketch. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "reason-11-bailing-out-a-friend",
+      "group": "Why they bought it together",
+      "title": "Bailing Out A Friend",
+      "direction": "{{user}} bought into a struggling asset to help {{char}} keep it, and the imbalance sits quietly inside every decision since. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "reason-12-forced-together-by-circumstances",
+      "group": "Why they bought it together",
+      "title": "Forced Together By Circumstances",
+      "direction": "A dissolution or default left {{char}} and {{user}} as reluctant co-owners, neither of whom chose the other. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "reason-13-to-prove-someone-wrong",
+      "group": "Why they bought it together",
+      "title": "To Prove Someone Wrong",
+      "direction": "{{char}} partly bought the asset to prove doubters wrong, and {{user}}'s belief in the idea is what made the signatures possible. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "reason-14-the-midlife-purchase",
+      "group": "Why they bought it together",
+      "title": "The Midlife Purchase",
+      "direction": "{{char}} arrived at the purchase during a restless season of life, and {{user}} matched it with savings of his own. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "reason-15-a-deceased-estate-bargain",
+      "group": "Why they bought it together",
+      "title": "A Deceased Estate Bargain",
+      "direction": "The price was too low to refuse at a deceased estate clearing sale, and {{char}} and {{user}} closed the deal the same afternoon. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "reason-16-an-exit-from-city-life",
+      "group": "Why they bought it together",
+      "title": "An Exit From City Life",
+      "direction": "{{char}} and {{user}} framed the purchase as the first step out of city routines, and the asset is the proof of that intention. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "money-01-fifty-fifty-and-fragile",
+      "group": "Money and ownership splits",
+      "title": "Fifty-Fifty And Fragile",
+      "direction": "{{char}} and {{user}} own exactly half each, which turns every disagreement into a stalemate waiting to happen. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "money-02-the-sixty-forty-split",
+      "group": "Money and ownership splits",
+      "title": "The Sixty-Forty Split",
+      "direction": "{{char}} holds the larger share and treats small decisions as hers to steer, while {{user}}'s smaller voice still matters. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "money-03-deposit-versus-debt",
+      "group": "Money and ownership splits",
+      "title": "Deposit Versus Debt",
+      "direction": "{{user}} found the deposit while {{char}} services the loan, and each privately believes they carry the real weight. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "money-04-the-hidden-second-mortgage",
+      "group": "Money and ownership splits",
+      "title": "The Hidden Second Mortgage",
+      "direction": "{{char}} quietly borrowed against something else to complete the purchase, and that secret sits under the partnership's arithmetic. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "money-05-handshake-versus-contract",
+      "group": "Money and ownership splits",
+      "title": "Handshake Versus Contract",
+      "direction": "The two never formalised the split, and now a real decision has arrived that exposes what a handshake cannot settle. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "money-06-the-buy-sell-clause",
+      "group": "Money and ownership splits",
+      "title": "The Buy-Sell Clause",
+      "direction": "A signed buy-sell clause says one owner can offer to buy the other out, and {{char}} has started reading it again. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "money-07-covering-the-arrears",
+      "group": "Money and ownership splits",
+      "title": "Covering The Arrears",
+      "direction": "{{user}} discovered the missed payments {{char}} hid, or believes he did, and the money conversation is overdue. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "money-08-the-family-loan-with-strings",
+      "group": "Money and ownership splits",
+      "title": "The Family Loan With Strings",
+      "direction": "{{char}}'s relatives lent their share of the deposit, and they have begun arriving with opinions attached. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "money-09-rent-to-own",
+      "group": "Money and ownership splits",
+      "title": "Rent To Own",
+      "direction": "{{char}} and {{user}} are buying the asset from its previous owner in instalments, and she still visits to inspect 'her' property. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "money-10-friends-and-family-shares",
+      "group": "Money and ownership splits",
+      "title": "Friends-And-Family Shares",
+      "direction": "A handful of small investors hold slices of the asset, complicating every decision {{char}} and {{user}} make together. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "money-11-pays-for-itself",
+      "group": "Money and ownership splits",
+      "title": "Pays For Itself",
+      "direction": "The asset turned unexpectedly profitable this quarter, and {{char}} and {{user}} are negotiating what profit means for two such different lives. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "money-12-the-money-pit",
+      "group": "Money and ownership splits",
+      "title": "The Money Pit",
+      "direction": "Every month the asset costs more than it earns, and the spreadsheet {{char}} keeps has started to look like an argument. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "money-13-one-wants-to-sell",
+      "group": "Money and ownership splits",
+      "title": "One Wants To Sell",
+      "direction": "{{char}} wants out and {{user}} wants to hold on, and the asset is now both the problem and the only reason they still meet. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "money-14-the-inheritance-deposit",
+      "group": "Money and ownership splits",
+      "title": "The Inheritance Deposit",
+      "direction": "{{user}} funded his share from a bereavement, and the weight of that money changes how {{char}} raises any dispute. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "money-15-the-insurance-payout",
+      "group": "Money and ownership splits",
+      "title": "The Insurance Payout",
+      "direction": "A payout arrived after damage to the asset, and {{char}} and {{user}} disagree about repair versus keeping the difference. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "money-16-surprise-levies",
+      "group": "Money and ownership splits",
+      "title": "Surprise Levies",
+      "direction": "An unexpected body-corporate fee, mooring charge or rates bill lands, forcing the first real budget conversation since settlement. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "work-01-she-knows-he-learns",
+      "group": "Work, repair and skill",
+      "title": "She Knows, He Learns",
+      "direction": "{{char}} has the trade skills and {{user}} is honest about being the apprentice, which she teases him about at every working bee. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "work-02-he-knows-she-learns",
+      "group": "Work, repair and skill",
+      "title": "He Knows, She Learns",
+      "direction": "{{user}} carries the technical experience while {{char}} learns fast, and she hates asking for help more than she admits. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "work-03-both-hopeless-together",
+      "group": "Work, repair and skill",
+      "title": "Both Hopeless Together",
+      "direction": "Neither {{char}} nor {{user}} knew what they were doing when they started, and the tutorial videos have become a shared evening ritual. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "work-04-the-quiet-resentment",
+      "group": "Work, repair and skill",
+      "title": "The Quiet Resentment",
+      "direction": "{{char}} does most of the maintenance alone and says nothing, and the imbalance is becoming audible. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "work-05-diy-versus-professional",
+      "group": "Work, repair and skill",
+      "title": "DIY Versus Professional",
+      "direction": "{{user}} wants to hire a tradesperson and {{char}} insists they fix it themselves, and the machine waits while they argue. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "work-06-the-weekend-ritual",
+      "group": "Work, repair and skill",
+      "title": "The Weekend Ritual",
+      "direction": "Saturday mornings on the asset have become the fixed point of both {{char}} and {{user}}'s weeks, whoever else is annoyed about it. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "work-07-the-secret-repair",
+      "group": "Work, repair and skill",
+      "title": "The Secret Repair",
+      "direction": "{{char}} quietly finished a job {{user}} had promised to do, and the reveal lands at exactly the wrong moment. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "work-08-the-botched-job",
+      "group": "Work, repair and skill",
+      "title": "The Botched Job",
+      "direction": "A well-intentioned repair by {{user}} made things worse, and {{char}}'s reaction will set the tone for a long while. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "work-09-certification-needed",
+      "group": "Work, repair and skill",
+      "title": "Certification Needed",
+      "direction": "Operating the asset requires a licence or certification that only one of {{char}} and {{user}} can practically obtain, reshaping the workload. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "work-10-dangerous-equipment",
+      "group": "Work, repair and skill",
+      "title": "Dangerous Equipment",
+      "direction": "The asset can genuinely hurt someone, and {{char}} enforces safety rules {{user}} finds patronising until the day they stop being funny. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "work-11-perfectionist-versus-good-enough",
+      "group": "Work, repair and skill",
+      "title": "Perfectionist Versus Good Enough",
+      "direction": "{{char}} wants it done properly and {{user}} wants it done today, and the asset keeps exposing the difference. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "work-12-skill-gap-at-the-worst-time",
+      "group": "Work, repair and skill",
+      "title": "Skill Gap At The Worst Time",
+      "direction": "Something critical fails mid-season, and only one of {{char}} and {{user}} can plausibly fix it under pressure. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "work-13-the-maintenance-log",
+      "group": "Work, repair and skill",
+      "title": "The Maintenance Log",
+      "direction": "{{char}} keeps an immaculate logbook and {{user}} mostly remembers things, and the logbook has begun recording more than the machine. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "work-14-the-physical-toll",
+      "group": "Work, repair and skill",
+      "title": "The Physical Toll",
+      "direction": "The work is heavier and older than {{char}} and {{user}} expected, and their bodies are keeping score faster than the asset improves. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "work-15-when-one-is-injured",
+      "group": "Work, repair and skill",
+      "title": "When One Is Injured",
+      "direction": "An injury sidelines one owner, and the other carries the asset alone while discovering how it feels from the other side. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "work-16-only-she-understands-it",
+      "group": "Work, repair and skill",
+      "title": "Only She Understands It",
+      "direction": "The asset runs because {{char}} alone understands its quirks, a quiet leverage she has never quite named. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "time-01-weekends-only",
+      "group": "Time, scheduling and logistics",
+      "title": "Weekends Only",
+      "direction": "Both {{char}} and {{user}} hold weekday jobs, so every real decision about the asset gets squeezed into their weekends. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "time-02-calendar-chaos",
+      "group": "Time, scheduling and logistics",
+      "title": "Calendar Chaos",
+      "direction": "The shared booking calendar for the asset is a mess of overlapping claims that has finally caused a real double-booking. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "time-03-one-person-hogging-it",
+      "group": "Time, scheduling and logistics",
+      "title": "One Person Hogging It",
+      "direction": "{{char}} uses the asset far more than {{user}}, and the statistics are starting to feel political. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "time-04-a-real-booking-conflict",
+      "group": "Time, scheduling and logistics",
+      "title": "A Real Booking Conflict",
+      "direction": "A wedding, a holiday and an inspection all demand the asset in the same week, and compromise is not obvious. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "time-05-the-seasonal-deadline",
+      "group": "Time, scheduling and logistics",
+      "title": "The Seasonal Deadline",
+      "direction": "Summer or peak season is coming, and everything {{char}} and {{user}} deferred all winter must be finished first. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "time-06-night-shifts",
+      "group": "Time, scheduling and logistics",
+      "title": "Night Shifts",
+      "direction": "{{user}} works nights and {{char}} works days, and their handovers happen in car parks and text messages. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "time-07-always-late-to-handover",
+      "group": "Time, scheduling and logistics",
+      "title": "Always Late To Handover",
+      "direction": "{{user}} is chronically late to every scheduled handover, and {{char}} has stopped pretending it does not matter. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "time-08-the-key-ritual",
+      "group": "Time, scheduling and logistics",
+      "title": "The Key Ritual",
+      "direction": "The spare keys get handed over at a standing weekly meeting, which doubles as the closest thing {{char}} and {{user}} have to a state of the union. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "time-09-overbooked-holidays",
+      "group": "Time, scheduling and logistics",
+      "title": "Overbooked Holidays",
+      "direction": "The public holidays are fully booked for the asset, and {{char}} and {{user}} must decide who gets which. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "time-10-the-distant-location",
+      "group": "Time, scheduling and logistics",
+      "title": "The Distant Location",
+      "direction": "The asset lives hours away from where {{char}} and {{user}} live, and every visit is an expedition with its own logistics. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "time-11-the-online-booking-mishap",
+      "group": "Time, scheduling and logistics",
+      "title": "The Online Booking Mishap",
+      "direction": "A misconfigured online listing let strangers book the asset, and {{char}} and {{user}} must face the fallout together. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "time-12-one-has-moved-away",
+      "group": "Time, scheduling and logistics",
+      "title": "One Has Moved Away",
+      "direction": "{{user}} took a job in another city and kept his share, and the partnership now runs on calls and occasional visits. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "time-13-the-customers-ask-for-her",
+      "group": "Time, scheduling and logistics",
+      "title": "The Customers Ask For Her",
+      "direction": "Clients of the asset specifically want {{char}}'s attention, and the pattern is not lost on {{user}}. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "time-14-both-must-attend",
+      "group": "Time, scheduling and logistics",
+      "title": "Both Must Attend",
+      "direction": "A regulatory or bank appointment requires both owners present, forcing {{char}} and {{user}} into the same room with a full agenda. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "time-15-the-quiet-off-season",
+      "group": "Time, scheduling and logistics",
+      "title": "The Quiet Off-Season",
+      "direction": "A quiet stretch in the calendar opens space for the conversation {{char}} and {{user}} have both avoided. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "time-16-the-double-booked-occasion",
+      "group": "Time, scheduling and logistics",
+      "title": "The Double-Booked Occasion",
+      "direction": "A birthday or anniversary lands on a day the asset absolutely needs one of them, and it is {{user}}'s call which loses. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "relations-01-exes-still-co-owners",
+      "group": "Relationship dynamics and history",
+      "title": "Exes Still Co-Owners",
+      "direction": "{{char}} and {{user}} were a couple when they bought it and are not now, and the asset outlived the relationship. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "relations-02-unresolved-attraction",
+      "group": "Relationship dynamics and history",
+      "title": "Unresolved Attraction",
+      "direction": "Something unspoken has been growing between {{char}} and {{user}} across the working weekends, and neither has risked naming it. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "relations-03-rival-partners",
+      "group": "Relationship dynamics and history",
+      "title": "Rival Partners",
+      "direction": "{{char}} treats every joint task as a competition, and {{user}} alternates between enjoying it and being exhausted by it. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "relations-04-mentor-and-mentee",
+      "group": "Relationship dynamics and history",
+      "title": "Mentor And Mentee",
+      "direction": "{{char}} taught {{user}} most of what he knows about the asset, and the gap is closing faster than is comfortable. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "relations-05-after-the-falling-out",
+      "group": "Relationship dynamics and history",
+      "title": "After The Falling Out",
+      "direction": "A serious argument months ago was never resolved, and {{char}} and {{user}} now communicate like polite strangers at the asset. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "relations-06-the-banter",
+      "group": "Relationship dynamics and history",
+      "title": "The Banter",
+      "direction": "The friendship between {{char}} and {{user}} runs on constant teasing, and the jokes have started landing differently. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "relations-07-growing-closer",
+      "group": "Relationship dynamics and history",
+      "title": "Growing Closer",
+      "direction": "The shared work is quietly making {{char}} and {{user}} into each other's most trusted person, whether or not either intended it. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "relations-08-drifting-apart",
+      "group": "Relationship dynamics and history",
+      "title": "Drifting Apart",
+      "direction": "The novelty that brought {{char}} and {{user}} together has faded for one of them, and the asset is becoming a chore. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "relations-09-one-wants-out-quietly",
+      "group": "Relationship dynamics and history",
+      "title": "One Wants Out Quietly",
+      "direction": "{{char}} has begun researching how to exit the partnership, and has not yet found the words to say to {{user}}. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "relations-10-partners-to-other-people",
+      "group": "Relationship dynamics and history",
+      "title": "Partners To Other People",
+      "direction": "Both {{char}} and {{user}} are dating other people, whose patience with the co-owned asset is wearing thin. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "relations-11-family-disapproval",
+      "group": "Relationship dynamics and history",
+      "title": "Family Disapproval",
+      "direction": "{{char}}'s family thinks the whole arrangement is a mistake and have started saying so in front of {{user}}. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "relations-12-neighbourhood-gossip",
+      "group": "Relationship dynamics and history",
+      "title": "Neighbourhood Gossip",
+      "direction": "Local gossips have firm theories about what {{char}} and {{user}} are to each other, and both hear the versions secondhand. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "relations-13-the-old-flame-returns",
+      "group": "Relationship dynamics and history",
+      "title": "The Old Flame Returns",
+      "direction": "Someone from {{char}}'s past reappears wanting to buy into the asset, testing what her partnership with {{user}} actually means. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "relations-14-mutual-friends-pick-sides",
+      "group": "Relationship dynamics and history",
+      "title": "Mutual Friends Pick Sides",
+      "direction": "A shared friendship group has begun splitting along lines drawn by every minor dispute between {{char}} and {{user}}. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "relations-15-newlyweds-under-pressure",
+      "group": "Relationship dynamics and history",
+      "title": "Newlyweds Under Pressure",
+      "direction": "The purchase is a young married couple's first big test, and {{char}} and {{user}} are learning what money reveals about each other. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "relations-16-rediscovered-friends",
+      "group": "Relationship dynamics and history",
+      "title": "Rediscovered Friends",
+      "direction": "The asset reconnected {{char}} and {{user}} after years of distance, and they are learning each other again as adults. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "stakes-01-the-first-profit",
+      "group": "Stakes and turning points",
+      "title": "The First Profit",
+      "direction": "The asset turned its first real profit this month, and {{char}} and {{user}} must decide what to do with both the money and the proof. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "stakes-02-catastrophic-breakdown",
+      "group": "Stakes and turning points",
+      "title": "Catastrophic Breakdown",
+      "direction": "The engine, boiler or heating element died spectacularly, and the repair quote will decide whether the partnership survives the month. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "stakes-03-failed-inspection",
+      "group": "Stakes and turning points",
+      "title": "Failed Inspection",
+      "direction": "A council or safety inspection failed on points {{char}} and {{user}} must fix quickly, with a deadline neither can miss. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-04-the-buy-out-offer",
+      "group": "Stakes and turning points",
+      "title": "The Buy-Out Offer",
+      "direction": "A stranger has made a generous offer for the asset, forcing {{char}} and {{user}} to price what it is worth to each of them. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "stakes-05-storm-or-fire-damage",
+      "group": "Stakes and turning points",
+      "title": "Storm Or Fire Damage",
+      "direction": "Weather or accident damaged the asset overnight, and {{char}} and {{user}} are standing in the wreckage deciding what comes next. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "stakes-06-one-lost-their-day-job",
+      "group": "Stakes and turning points",
+      "title": "One Lost Their Day Job",
+      "direction": "{{user}}'s redundancy means he can now work on the asset constantly, or that he needs his money back, or both. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-07-the-health-scare",
+      "group": "Stakes and turning points",
+      "title": "The Health Scare",
+      "direction": "A diagnosis or hospital stay has changed what {{char}} can give to the asset, and the conversation about roles cannot wait. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "stakes-08-the-debt-collector",
+      "group": "Stakes and turning points",
+      "title": "The Debt Collector",
+      "direction": "A liability nobody budgeted for has surfaced with interest, and the paperwork names both {{char}} and {{user}}. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "stakes-09-the-chance-to-expand",
+      "group": "Stakes and turning points",
+      "title": "The Chance To Expand",
+      "direction": "An opportunity to expand the asset's capacity has appeared, but it requires capital and a new level of commitment from both owners. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-10-vandalism",
+      "group": "Stakes and turning points",
+      "title": "Vandalism",
+      "direction": "The asset was broken into or defaced, and how {{char}} and {{user}} handle it together says more than the damage itself. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "stakes-11-unexpected-virality",
+      "group": "Stakes and turning points",
+      "title": "Unexpected Virality",
+      "direction": "A passing video or article made the asset briefly famous, and {{char}} and {{user}} are handling very different versions of the attention. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "stakes-12-the-spouse-demands-a-sale",
+      "group": "Stakes and turning points",
+      "title": "The Spouse Demands A Sale",
+      "direction": "{{user}}'s partner has insisted he end the arrangement, framing it as a choice between his share and his household. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-13-the-near-miss",
+      "group": "Stakes and turning points",
+      "title": "The Near Miss",
+      "direction": "A serious accident was narrowly avoided, and the shake-up has both {{char}} and {{user}} reconsidering what they are doing. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "stakes-14-a-tied-full-time-role",
+      "group": "Stakes and turning points",
+      "title": "A Tied Full-Time Role",
+      "direction": "The asset can now support one full-time owner, and {{char}} and {{user}} both want, or neither wants, to be the one. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "stakes-15-the-rising-costs",
+      "group": "Stakes and turning points",
+      "title": "The Rising Costs",
+      "direction": "Insurance, materials or interest rates keep climbing, and each month moves a line {{char}} and {{user}} have not agreed on. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "stakes-16-the-quiet-month",
+      "group": "Stakes and turning points",
+      "title": "The Quiet Month",
+      "direction": "The worst trading month since they bought it forces a long night of spreadsheets, options and honesty between {{char}} and {{user}}. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "externals-01-the-demanding-landlord",
+      "group": "External pressures and third parties",
+      "title": "The Demanding Landlord",
+      "direction": "The premises landlord raises issues monthly, and only {{char}} is willing to deal with him, which {{user}} misreads. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "externals-02-the-competitor",
+      "group": "External pressures and third parties",
+      "title": "The Competitor",
+      "direction": "A slick competitor has opened nearby, and {{char}} and {{user}} disagree about whether to fight on price or on character. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "externals-03-the-supplier-problem",
+      "group": "External pressures and third parties",
+      "title": "The Supplier Problem",
+      "direction": "The main supplier has started failing orders, and the pressure lands unevenly on {{char}} and {{user}}. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "externals-04-the-difficult-regular",
+      "group": "External pressures and third parties",
+      "title": "The Difficult Regular",
+      "direction": "A high-spending regular customer adores {{char}} and barely tolerates {{user}}, and everyone notices including both of them. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "externals-05-the-inspector",
+      "group": "External pressures and third parties",
+      "title": "The Inspector",
+      "direction": "A recurring official visits the asset on a schedule that always manages to catch only one of the two owners. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "externals-06-the-review-thread",
+      "group": "External pressures and third parties",
+      "title": "The Review Thread",
+      "direction": "A string of online reviews has begun telling a story about {{char}} and {{user}}'s asset that neither recognises, and one review clearly knows them. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "externals-07-the-well-meaning-investor",
+      "group": "External pressures and third parties",
+      "title": "The Well-Meaning Investor",
+      "direction": "A relative or friend wants to inject uninvited capital into the asset, testing the boundaries of the two-owner structure. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "externals-08-buying-out-just-one",
+      "group": "External pressures and third parties",
+      "title": "Buying Out Just One",
+      "direction": "An outside party has approached {{user}} alone with an offer for his share, and {{char}} does not yet know. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "externals-09-the-shared-employee",
+      "group": "External pressures and third parties",
+      "title": "The Shared Employee",
+      "direction": "The asset employs one staff member both {{char}} and {{user}} like, and she has started relaying what each says about the other. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "externals-10-the-noise-complaint",
+      "group": "External pressures and third parties",
+      "title": "The Noise Complaint",
+      "direction": "A neighbour's formal complaint restricts how {{char}} and {{user}} can use the asset, and the compromise favours one of them. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "externals-11-the-assessor",
+      "group": "External pressures and third parties",
+      "title": "The Assessor",
+      "direction": "An insurance assessor is scrutinising a claim on the asset, and the process has both owners reviewing their own honesty. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "externals-12-the-friend-who-wants-in",
+      "group": "External pressures and third parties",
+      "title": "The Friend Who Wants In",
+      "direction": "A mutual friend has begun campaigning to become a third owner, and {{char}} and {{user}} are not aligned on the answer. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "externals-13-the-lenders-weigh-in",
+      "group": "External pressures and third parties",
+      "title": "The Lenders Weigh In",
+      "direction": "The family who lent money for the asset have begun attending its events uninvited, with opinions on everything. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "externals-14-the-seasonal-crowd",
+      "group": "External pressures and third parties",
+      "title": "The Seasonal Crowd",
+      "direction": "Tourist season overwhelmed the asset's capacity, and one of {{char}} and {{user}} was not there when it mattered. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "externals-15-the-accountant",
+      "group": "External pressures and third parties",
+      "title": "The Accountant",
+      "direction": "A blunt new accountant has audited the asset and asked {{char}} and {{user}} questions neither wanted raised. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "externals-16-local-media",
+      "group": "External pressures and third parties",
+      "title": "Local Media",
+      "direction": "A local journalist wants to profile the asset as a community story, and {{char}} and {{user}} disagree about what should be public. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "user-01-his-share-is-unfixed",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "His Share Is Unfixed",
+      "direction": "How much of the asset {{user}} truly owns, controls or wants to keep is established by the card but resolved only in play. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "user-02-whether-it-survives",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "Whether It Survives",
+      "direction": "Whether the partnership outlasts the season stays unwritten, whatever pressure the opening applies to it. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "user-03-sell-or-keep",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "Sell Or Keep",
+      "direction": "A sale, expansion or dissolution may be proposed to {{user}}, and his answer is never scripted. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "user-04-his-share-of-the-work",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "His Share Of The Work",
+      "direction": "How much of the labour {{user}} actually contributes, and why, remains his to reveal. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "user-05-romance-stays-open",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "Romance Stays Open",
+      "direction": "Any romantic development between {{char}} and {{user}} is optional and undecided, never the price of the partnership. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "user-06-honesty-about-money",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "Honesty About Money",
+      "direction": "What {{user}} knows, suspects or hides about the asset's finances stays a live question for him to play. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "user-07-who-stays-local",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "Who Stays Local",
+      "direction": "Whether {{user}} moves, stays, or divides his life around the asset is his choice, not the premise's. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "user-08-commercial-success-unknown",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "Commercial Success Unknown",
+      "direction": "Whether the asset ever turns a profit is not decided by the opening, however bleak or bright the first scene looks. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "user-09-his-skill-trajectory",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "His Skill Trajectory",
+      "direction": "How competent {{user}} becomes with the asset is unwritten, whatever {{char}} currently assumes about his abilities. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "user-10-his-boundaries-matter",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "His Boundaries Matter",
+      "direction": "Limits {{user}} sets around time, money or risk remain his to state, and {{char}} does not get to overrule them by default. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "user-11-offers-to-him-alone",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "Offers To Him Alone",
+      "direction": "Any outside offer made privately to {{user}} waits unanswered until he chooses what to do with it. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "user-12-his-commitment-level",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "His Commitment Level",
+      "direction": "How invested {{user}} is in the asset, the friendship or anything beyond remains his to declare in play. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "user-13-his-own-reasons",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "His Own Reasons",
+      "direction": "Why {{user}} really agreed to buy is left open, and may differ from what {{char}} believes. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "user-14-renegotiation-is-his",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "Renegotiation Is His",
+      "direction": "Whether {{user}} seeks new terms, a restructure or a formal contract is his move to make, not the narrator's. Shared ownership does not by itself create romance, shared bank accounts or a household; it creates recurring contact and shared decisions. All participants are adults; consent and {{user}}'s autonomy remain in force."
+    },
+    {
+      "id": "user-15-the-exit-always-exists",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "The Exit Always Exists",
+      "direction": "A buyout, walk-away or dissolution remains a real option available to {{user}} at any point in the story. Shared ownership establishes the asset and its practical decisions only, never shared finances beyond it, cohabitation or romance by default. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "user-16-no-predetermined-ending",
+      "group": "{{user}}'s agency and open outcomes",
+      "title": "No Predetermined Ending",
+      "direction": "The engine forbids writing reconciliation, romance, failure or sale in advance; every ending is played, not assumed. The joint purchase is the fixed premise; every interpersonal outcome beyond it stays unwritten. All participants are adults; {{user}}'s reactions, commitments and future choices remain open."
+    },
+    {
+      "id": "comb-01-01",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — Neither Could Afford It Alone",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because neither could afford it alone, and both know what the other put in. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-02",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — A Couple Consolidating",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because they were a couple when they signed, and the asset carries that history. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-03",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — Old Friends And A Shared Dream",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because old friends finally acted on a promise from years ago. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-04",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — Uni Friends Going In Together",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because former housemates testing a friendship that money has never touched. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-05",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — Siblings Inheriting Halfway",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because each holds shares that only make sense together. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-06",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — Colleagues Going In Together",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because colleagues turned a running joke into signatures. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-07",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — One Talked The Other Into It",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because {{char}} pushed the idea and {{user}} agreed after real persuasion. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-08",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — A Spontaneous Auction Win",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because a low auction reserve changed everything in one afternoon. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-09",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — A Reason To Stay In Contact",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because {{char}} partly wanted a guaranteed reason for {{user}} to keep turning up. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-10",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — An Investment For A Shared Future",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because it was framed as a deliberate long-term investment. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-11",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — Bailing Out A Friend",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because {{user}} bought in to help {{char}} keep something she was about to lose. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-12",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — Forced Together By Circumstances",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because a dissolution or default forced them into partnership. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-13",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — To Prove Someone Wrong",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because {{char}} wanted to prove doubters wrong, and {{user}} believed. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-14",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — The Midlife Purchase",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because it was a midlife itch that {{user}} scratched with his own savings. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-15",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — A Deceased Estate Bargain",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because a deceased-estate clearing sale priced it below refusal. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-01-16",
+      "group": "Asset and reason combinations",
+      "title": "Corner Cafe — An Exit From City Life",
+      "direction": "Adult {char} and {user} jointly own a small cafe with tired tiles and a loyal morning crowd; they bought it because it was meant to be the first step out of city life. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-01",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — Neither Could Afford It Alone",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because neither could afford it alone, and both know what the other put in. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-02",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — A Couple Consolidating",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because they were a couple when they signed, and the asset carries that history. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-03",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — Old Friends And A Shared Dream",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because old friends finally acted on a promise from years ago. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-04",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — Uni Friends Going In Together",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because former housemates testing a friendship that money has never touched. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-05",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — Siblings Inheriting Halfway",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because each holds shares that only make sense together. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-06",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — Colleagues Going In Together",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because colleagues turned a running joke into signatures. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-07",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — One Talked The Other Into It",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because {{char}} pushed the idea and {{user}} agreed after real persuasion. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-08",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — A Spontaneous Auction Win",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because a low auction reserve changed everything in one afternoon. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-09",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — A Reason To Stay In Contact",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because {{char}} partly wanted a guaranteed reason for {{user}} to keep turning up. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-10",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — An Investment For A Shared Future",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because it was framed as a deliberate long-term investment. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-11",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — Bailing Out A Friend",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because {{user}} bought in to help {{char}} keep something she was about to lose. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-12",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — Forced Together By Circumstances",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because a dissolution or default forced them into partnership. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-13",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — To Prove Someone Wrong",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because {{char}} wanted to prove doubters wrong, and {{user}} believed. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-14",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — The Midlife Purchase",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because it was a midlife itch that {{user}} scratched with his own savings. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-15",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — A Deceased Estate Bargain",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because a deceased-estate clearing sale priced it below refusal. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-02-16",
+      "group": "Asset and reason combinations",
+      "title": "Fixer-Upper House — An Exit From City Life",
+      "direction": "Adult {char} and {user} jointly own a fixer-upper that hides more problems than its listing admitted; they bought it because it was meant to be the first step out of city life. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-01",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — Neither Could Afford It Alone",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because neither could afford it alone, and both know what the other put in. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-02",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — A Couple Consolidating",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because they were a couple when they signed, and the asset carries that history. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-03",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — Old Friends And A Shared Dream",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because old friends finally acted on a promise from years ago. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-04",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — Uni Friends Going In Together",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because former housemates testing a friendship that money has never touched. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-05",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — Siblings Inheriting Halfway",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because each holds shares that only make sense together. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-06",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — Colleagues Going In Together",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because colleagues turned a running joke into signatures. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-07",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — One Talked The Other Into It",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because {{char}} pushed the idea and {{user}} agreed after real persuasion. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-08",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — A Spontaneous Auction Win",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because a low auction reserve changed everything in one afternoon. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-09",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — A Reason To Stay In Contact",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because {{char}} partly wanted a guaranteed reason for {{user}} to keep turning up. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-10",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — An Investment For A Shared Future",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because it was framed as a deliberate long-term investment. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-11",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — Bailing Out A Friend",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because {{user}} bought in to help {{char}} keep something she was about to lose. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-12",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — Forced Together By Circumstances",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because a dissolution or default forced them into partnership. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-13",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — To Prove Someone Wrong",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because {{char}} wanted to prove doubters wrong, and {{user}} believed. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-14",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — The Midlife Purchase",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because it was a midlife itch that {{user}} scratched with his own savings. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-15",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — A Deceased Estate Bargain",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because a deceased-estate clearing sale priced it below refusal. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-03-16",
+      "group": "Asset and reason combinations",
+      "title": "The Campervan — An Exit From City Life",
+      "direction": "Adult {char} and {user} jointly own a campervan that has already broken down twice in its first summer; they bought it because it was meant to be the first step out of city life. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-01",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — Neither Could Afford It Alone",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because neither could afford it alone, and both know what the other put in. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-02",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — A Couple Consolidating",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because they were a couple when they signed, and the asset carries that history. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-03",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — Old Friends And A Shared Dream",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because old friends finally acted on a promise from years ago. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-04",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — Uni Friends Going In Together",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because former housemates testing a friendship that money has never touched. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-05",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — Siblings Inheriting Halfway",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because each holds shares that only make sense together. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-06",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — Colleagues Going In Together",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because colleagues turned a running joke into signatures. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-07",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — One Talked The Other Into It",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because {{char}} pushed the idea and {{user}} agreed after real persuasion. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-08",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — A Spontaneous Auction Win",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because a low auction reserve changed everything in one afternoon. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-09",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — A Reason To Stay In Contact",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because {{char}} partly wanted a guaranteed reason for {{user}} to keep turning up. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-10",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — An Investment For A Shared Future",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because it was framed as a deliberate long-term investment. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-11",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — Bailing Out A Friend",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because {{user}} bought in to help {{char}} keep something she was about to lose. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-12",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — Forced Together By Circumstances",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because a dissolution or default forced them into partnership. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-13",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — To Prove Someone Wrong",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because {{char}} wanted to prove doubters wrong, and {{user}} believed. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-14",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — The Midlife Purchase",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because it was a midlife itch that {{user}} scratched with his own savings. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-15",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — A Deceased Estate Bargain",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because a deceased-estate clearing sale priced it below refusal. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-04-16",
+      "group": "Asset and reason combinations",
+      "title": "A Wooden Sailboat — An Exit From City Life",
+      "direction": "Adult {char} and {user} jointly own an ageing wooden sailboat on a shared mooring; they bought it because it was meant to be the first step out of city life. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-01",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — Neither Could Afford It Alone",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because neither could afford it alone, and both know what the other put in. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-02",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — A Couple Consolidating",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because they were a couple when they signed, and the asset carries that history. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-03",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — Old Friends And A Shared Dream",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because old friends finally acted on a promise from years ago. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-04",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — Uni Friends Going In Together",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because former housemates testing a friendship that money has never touched. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-05",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — Siblings Inheriting Halfway",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because each holds shares that only make sense together. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-06",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — Colleagues Going In Together",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because colleagues turned a running joke into signatures. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-07",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — One Talked The Other Into It",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because {{char}} pushed the idea and {{user}} agreed after real persuasion. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-08",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — A Spontaneous Auction Win",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because a low auction reserve changed everything in one afternoon. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-09",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — A Reason To Stay In Contact",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because {{char}} partly wanted a guaranteed reason for {{user}} to keep turning up. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-10",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — An Investment For A Shared Future",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because it was framed as a deliberate long-term investment. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-11",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — Bailing Out A Friend",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because {{user}} bought in to help {{char}} keep something she was about to lose. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-12",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — Forced Together By Circumstances",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because a dissolution or default forced them into partnership. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-13",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — To Prove Someone Wrong",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because {{char}} wanted to prove doubters wrong, and {{user}} believed. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-14",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — The Midlife Purchase",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because it was a midlife itch that {{user}} scratched with his own savings. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-15",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — A Deceased Estate Bargain",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because a deceased-estate clearing sale priced it below refusal. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-05-16",
+      "group": "Asset and reason combinations",
+      "title": "The Shared Workshop — An Exit From City Life",
+      "direction": "Adult {char} and {user} jointly own a rented workshop bay with tools neither of them fully understands yet; they bought it because it was meant to be the first step out of city life. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-01",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — Neither Could Afford It Alone",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because neither could afford it alone, and both know what the other put in. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-02",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — A Couple Consolidating",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because they were a couple when they signed, and the asset carries that history. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-03",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — Old Friends And A Shared Dream",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because old friends finally acted on a promise from years ago. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-04",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — Uni Friends Going In Together",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because former housemates testing a friendship that money has never touched. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-05",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — Siblings Inheriting Halfway",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because each holds shares that only make sense together. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-06",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — Colleagues Going In Together",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because colleagues turned a running joke into signatures. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-07",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — One Talked The Other Into It",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because {{char}} pushed the idea and {{user}} agreed after real persuasion. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-08",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — A Spontaneous Auction Win",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because a low auction reserve changed everything in one afternoon. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-09",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — A Reason To Stay In Contact",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because {{char}} partly wanted a guaranteed reason for {{user}} to keep turning up. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-10",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — An Investment For A Shared Future",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because it was framed as a deliberate long-term investment. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-11",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — Bailing Out A Friend",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because {{user}} bought in to help {{char}} keep something she was about to lose. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-12",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — Forced Together By Circumstances",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because a dissolution or default forced them into partnership. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-13",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — To Prove Someone Wrong",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because {{char}} wanted to prove doubters wrong, and {{user}} believed. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-14",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — The Midlife Purchase",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because it was a midlife itch that {{user}} scratched with his own savings. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-15",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — A Deceased Estate Bargain",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because a deceased-estate clearing sale priced it below refusal. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-06-16",
+      "group": "Asset and reason combinations",
+      "title": "The Laser Cutter — An Exit From City Life",
+      "direction": "Adult {char} and {user} jointly own a holiday property with peeling paint and one working key; they bought it because it was meant to be the first step out of city life. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-01",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — Neither Could Afford It Alone",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because neither could afford it alone, and both know what the other put in. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-02",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — A Couple Consolidating",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because they were a couple when they signed, and the asset carries that history. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-03",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — Old Friends And A Shared Dream",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because old friends finally acted on a promise from years ago. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-04",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — Uni Friends Going In Together",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because former housemates testing a friendship that money has never touched. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-05",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — Siblings Inheriting Halfway",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because each holds shares that only make sense together. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-06",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — Colleagues Going In Together",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because colleagues turned a running joke into signatures. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-07",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — One Talked The Other Into It",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because {{char}} pushed the idea and {{user}} agreed after real persuasion. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-08",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — A Spontaneous Auction Win",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because a low auction reserve changed everything in one afternoon. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-09",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — A Reason To Stay In Contact",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because {{char}} partly wanted a guaranteed reason for {{user}} to keep turning up. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-10",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — An Investment For A Shared Future",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because it was framed as a deliberate long-term investment. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-11",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — Bailing Out A Friend",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because {{user}} bought in to help {{char}} keep something she was about to lose. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-12",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — Forced Together By Circumstances",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because a dissolution or default forced them into partnership. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-13",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — To Prove Someone Wrong",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because {{char}} wanted to prove doubters wrong, and {{user}} believed. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-14",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — The Midlife Purchase",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because it was a midlife itch that {{user}} scratched with his own savings. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-15",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — A Deceased Estate Bargain",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because a deceased-estate clearing sale priced it below refusal. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-07-16",
+      "group": "Asset and reason combinations",
+      "title": "The Beach Shack — An Exit From City Life",
+      "direction": "Adult {char} and {user} jointly own a vintage car restoration project with parts ordered on credit; they bought it because it was meant to be the first step out of city life. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-01",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — Neither Could Afford It Alone",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because neither could afford it alone, and both know what the other put in. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-02",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — A Couple Consolidating",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because they were a couple when they signed, and the asset carries that history. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-03",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — Old Friends And A Shared Dream",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because old friends finally acted on a promise from years ago. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-04",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — Uni Friends Going In Together",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because former housemates testing a friendship that money has never touched. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-05",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — Siblings Inheriting Halfway",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because each holds shares that only make sense together. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-06",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — Colleagues Going In Together",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because colleagues turned a running joke into signatures. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-07",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — One Talked The Other Into It",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because {{char}} pushed the idea and {{user}} agreed after real persuasion. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-08",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — A Spontaneous Auction Win",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because a low auction reserve changed everything in one afternoon. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-09",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — A Reason To Stay In Contact",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because {{char}} partly wanted a guaranteed reason for {{user}} to keep turning up. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-10",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — An Investment For A Shared Future",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because it was framed as a deliberate long-term investment. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-11",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — Bailing Out A Friend",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because {{user}} bought in to help {{char}} keep something she was about to lose. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-12",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — Forced Together By Circumstances",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because a dissolution or default forced them into partnership. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-13",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — To Prove Someone Wrong",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because {{char}} wanted to prove doubters wrong, and {{user}} believed. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-14",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — The Midlife Purchase",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because it was a midlife itch that {{user}} scratched with his own savings. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-15",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — A Deceased Estate Bargain",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because a deceased-estate clearing sale priced it below refusal. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-08-16",
+      "group": "Asset and reason combinations",
+      "title": "The Project Car — An Exit From City Life",
+      "direction": "Adult {char} and {user} jointly own a food truck with a council permit folder thicker than its service history; they bought it because it was meant to be the first step out of city life. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-01",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — Neither Could Afford It Alone",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because neither could afford it alone, and both know what the other put in. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-02",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — A Couple Consolidating",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because they were a couple when they signed, and the asset carries that history. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-03",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — Old Friends And A Shared Dream",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because old friends finally acted on a promise from years ago. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-04",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — Uni Friends Going In Together",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because former housemates testing a friendship that money has never touched. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-05",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — Siblings Inheriting Halfway",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because each holds shares that only make sense together. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-06",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — Colleagues Going In Together",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because colleagues turned a running joke into signatures. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-07",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — One Talked The Other Into It",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because {{char}} pushed the idea and {{user}} agreed after real persuasion. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-08",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — A Spontaneous Auction Win",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because a low auction reserve changed everything in one afternoon. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-09",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — A Reason To Stay In Contact",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because {{char}} partly wanted a guaranteed reason for {{user}} to keep turning up. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-10",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — An Investment For A Shared Future",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because it was framed as a deliberate long-term investment. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-11",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — Bailing Out A Friend",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because {{user}} bought in to help {{char}} keep something she was about to lose. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-12",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — Forced Together By Circumstances",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because a dissolution or default forced them into partnership. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-13",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — To Prove Someone Wrong",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because {{char}} wanted to prove doubters wrong, and {{user}} believed. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-14",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — The Midlife Purchase",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because it was a midlife itch that {{user}} scratched with his own savings. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-15",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — A Deceased Estate Bargain",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because a deceased-estate clearing sale priced it below refusal. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-09-16",
+      "group": "Asset and reason combinations",
+      "title": "The Arcade Cabinet — An Exit From City Life",
+      "direction": "Adult {char} and {user} jointly own a second-hand bookshop whose stock arrived in unlabeled boxes; they bought it because it was meant to be the first step out of city life. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-01",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — Neither Could Afford It Alone",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because neither could afford it alone, and both know what the other put in. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-02",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — A Couple Consolidating",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because they were a couple when they signed, and the asset carries that history. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-03",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — Old Friends And A Shared Dream",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because old friends finally acted on a promise from years ago. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-04",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — Uni Friends Going In Together",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because former housemates testing a friendship that money has never touched. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-05",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — Siblings Inheriting Halfway",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because each holds shares that only make sense together. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-06",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — Colleagues Going In Together",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because colleagues turned a running joke into signatures. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-07",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — One Talked The Other Into It",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because {{char}} pushed the idea and {{user}} agreed after real persuasion. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-08",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — A Spontaneous Auction Win",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because a low auction reserve changed everything in one afternoon. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-09",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — A Reason To Stay In Contact",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because {{char}} partly wanted a guaranteed reason for {{user}} to keep turning up. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-10",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — An Investment For A Shared Future",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because it was framed as a deliberate long-term investment. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-11",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — Bailing Out A Friend",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because {{user}} bought in to help {{char}} keep something she was about to lose. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-12",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — Forced Together By Circumstances",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because a dissolution or default forced them into partnership. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-13",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — To Prove Someone Wrong",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because {{char}} wanted to prove doubters wrong, and {{user}} believed. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-14",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — The Midlife Purchase",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because it was a midlife itch that {{user}} scratched with his own savings. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-15",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — A Deceased Estate Bargain",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because a deceased-estate clearing sale priced it below refusal. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "comb-10-16",
+      "group": "Asset and reason combinations",
+      "title": "Studio Equipment — An Exit From City Life",
+      "direction": "Adult {char} and {user} jointly own a smallholding with a leaning barn and a fence that will not stay upright; they bought it because it was meant to be the first step out of city life. The asset and the reason for buying it are fixed; how the partnership actually works and where it leads remain unwritten. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "The joint acquisition engine",
+      "content": "{{char}} and {{user}} own something significant together, and the asset's demands — money, maintenance, permits, bookings — force recurring contact. The ownership is the fixed premise; everything it does to the two people is played out, not assumed."
+    },
+    {
+      "id": "asset",
+      "label": "What they bought",
+      "content": "Vary the asset across the full range: small business, fixer-upper, campervan, boat, workshop, hobby machine, holiday property, project vehicle, arcade cabinet, studio equipment or stranger variants. The asset should be concrete, inspectable and demanding, not a vague symbol."
+    },
+    {
+      "id": "motive",
+      "label": "Why they bought together",
+      "content": "Establish why the purchase needed two people: affordability, romance, friendship, circumstance, persuasion or impulse. Who wanted it more, and how the other's agreement was obtained, colours every later decision."
+    },
+    {
+      "id": "money",
+      "label": "Ownership, debt and pressure",
+      "content": "Set the split and how formal it is, plus the asset's real economics. Unequal shares, hidden debt, family loans and money-pit trajectories give the partnership texture; they must never coerce intimacy or dictate an outcome."
+    },
+    {
+      "id": "work",
+      "label": "Work, repair and skill",
+      "content": "Decide who can actually do the work and who shows up. Skill gaps, quiet resentment, secret repairs, botched jobs and dangerous equipment keep the maintenance schedule a source of story rather than a checklist."
+    },
+    {
+      "id": "time",
+      "label": "Schedules and logistics",
+      "content": "Give the asset a rhythm: weekend rituals, handover meetings, booking calendars, seasonal deadlines, distance. The logistics of sharing time is where most co-owner friction and most co-owner intimacy actually live."
+    },
+    {
+      "id": "relations",
+      "label": "What ownership does to the relationship",
+      "content": "Let the pair's history and temperature vary — friends, exes, rivals, strangers, newlyweds — and let the shared work push them closer, further apart or nowhere in particular. Do not force romance or conflict as the destination."
+    },
+    {
+      "id": "pressure",
+      "label": "External pressures and third parties",
+      "content": "Landlords, inspectors, competitors, customers, relatives and would-be partners can all press on the two owners. Use them to raise stakes, never to railroad {{user}}'s decisions or resolve the story on his behalf."
+    },
+    {
+      "id": "user",
+      "label": "{{user}}'s stake stays open",
+      "content": "What {{user}} contributed, wants, tolerates and chooses remains his to play. The buyout, renegotiation and exit doors always exist. Do not write his effort, feelings or his future."
+    },
+    {
+      "id": "character",
+      "label": "{{char}} beyond the asset",
+      "content": "She has her own job or means where relevant, friends, history, habits and boundaries that existed before the purchase. The asset matters to her; it is not all she is."
+    },
+    {
+      "id": "tone",
+      "label": "Practical, adult, non-graphic",
+      "content": "Ground the story in concrete decisions — invoices, keys, rosters, breakdowns, quiet months — and keep any intimacy non-graphic and secondary to the partnership's texture. All characters are adults throughout."
+    },
+    {
+      "id": "opening",
+      "label": "Playable first scene",
+      "content": "Open where the partnership is visible and under mild pressure: settlement day, a working bee, a handover of keys, a failed inspection, a bill neither budgeted for, or the first quiet month. Present a real decision for {{user}} without writing his answer."
+    },
+    {
+      "id": "boundary",
+      "label": "Related series and optional crossovers",
+      "content": "When the running of the venture is the engine rather than the acquisition itself, prefer Our Little Business; for a partnership with a defined end, Temporary Partners; a co-owned vehicle or boat can pull in Our Trip Together. Joint ownership may seed Wrong First Impression or The New Manager situations as overlays."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult character-card premise for We Bought It Together. Adult {{char}} and {{user}} jointly own something significant — a small business, fixer-upper, campervan, boat, workshop, hobby machine, holiday property or similar — and its money, repairs, permits and scheduling force them into recurring contact and shared decisions. Vary what the asset is, why they bought together, the ownership split and how formal it is, who contributes money versus labour versus skills, their prior history, external pressures and the first real test the opening applies. Shared ownership creates obligation and familiarity, never automatic cohabitation, merged finances or romance; friendship, rivalry, businesslike distance, unresolved tension or no change are all valid outcomes. Do not script {{user}}'s feelings, effort or choices, and leave sale, dissolution, success and every relationship change open. All characters are adults; consent, boundaries and {{user}}'s autonomy remain in force."
+}

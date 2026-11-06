@@ -1,0 +1,1730 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iii-26-call-the-number",
+  "title": "Call the Number",
+  "description": "Expanded Series Bible III #26 Call the Number reusable adult idea source: {{user}} contacts an anonymous public message and discovers who answers, who really wrote it, what they truly want and what happens next. The engine varies message wording, placement, authorship, motive and the woman reached.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible III",
+    "version": "0.4",
+    "entry": "26",
+    "kind": "series"
+  },
+  "summary": "{{user}} encounters an anonymous public message offering something intriguing, provocative, romantic, sexual, strange or suspicious and providing a way to make contact. He decides to contact it without knowing who created the message, whether it is truthful or what circumstances lie behind it.",
+  "core_premise": "{{user}} encounters an anonymous public message offering something intriguing, provocative, romantic, sexual, strange or suspicious, with a way to make contact, and decides to use it without knowing who created the message, whether it is truthful, or what circumstances lie behind it. The woman reached may be the author, a target whose details were posted without her knowledge, a professional behind a paid condition, or someone lying about all of it. What the message promises, who wrote it, who answers, and what follows remain the generator's open variables, with {{user}}'s reactions and every outcome unwritten.",
+  "setup": "Create a non-graphic adult opening around the moment the engine activates: establish where the message appears, its exact wording, the contact method, and enough of the woman reached (if reached in the opening) to make her a person rather than a voice. Establish whether she wrote it, knows about it, or is lying, as belief rather than narrator-confirmed fact where possible. Begin at or just after {{user}}'s decision to make contact, without scripting {{user}}'s feelings, motives or future.",
+  "core_variables": [
+    "Message wording, tone and sincerity, from blunt invitation to riddle to lonely plea.",
+    "Where the message appears: toilet wall, bus shelter, corkboard, library book, flyer, billboard, digital posting.",
+    "Contact medium: phone number, handle, email, QR code, burner or anonymous chat link.",
+    "Who actually wrote the message: the woman reached, an ex, pranksters, a marketing team, a scam operation, a stranger, or unknown.",
+    "The message's true nature: genuine invitation, prank, dare, marketing stunt, scam, social experiment or nonconsensual third-party posting.",
+    "Whether the woman reached knows her information was posted, and how she reacts to learning it.",
+    "Her motive if she did write it: loneliness, curiosity, kink, research, grief, commerce or a dare she never expected to be answered.",
+    "Whether the encounter carries a paid condition (subscription or similar) — one named subtype, never the default.",
+    "Who answers and how: expecting the call, blindsided, professional, guarded, joking, or only a voicemail.",
+    "How first contact unfolds: text, call, photo exchange, public meeting, screening questions, or a wrong number.",
+    "How honest each side is during first contact, and what verification either asks of the other.",
+    "What the message claims versus what is objectively true about her identity, availability and intentions.",
+    "Her life beyond the message: occupation, friends, history, boundaries and what she wants out of whoever calls.",
+    "What happens after contact: meeting, ghosting, investigation, romance, friendship, exposure of a scam, or nothing.",
+    "Whether any third party — partners, roommates, the original poster, an audience — intervenes in the contact.",
+    "{{user}}'s complete freedom in whether to call, keep calling, meet, walk away, expose or believe anything."
+  ],
+  "generation_rules": [
+    "Do not write {{user}} for the player or define {{user}}'s personality, feelings, motives, dialogue, consent, decisions or future behaviour.",
+    "The message establishes only that an invitation exists. It never proves authorship, truth, or that the person reached consents to the advertised activity.",
+    "If a third party posted somebody's details, contacting her creates no entitlement; her alarm, anger or boundaries are valid reactions to script.",
+    "Keep the paid-subscription condition as one clearly labelled optional subtype with honest pricing, never the default or a hidden bait-and-switch.",
+    "Do not pre-play outcomes. Characters may invite, lie, tease, test, apologise, disappear or propose, but whether {{user}} cooperates, refuses, exposes them, falls for them or leaves remains roleplay space.",
+    "Character belief is not objective truth: keep her claims, cover stories and self-descriptions separate from narrator-verified ground truth.",
+    "All romantic, intimate and roleplay participants are adults; the message, the voice and the meeting all involve adults only.",
+    "A call, a meeting, loneliness, flirtation, payment or prior honesty never create blanket consent; agreement to talk implies nothing further.",
+    "Roles do not remove autonomy: a scam worker, content creator, shy first-timer or confident initiator retains full personality, interests and boundaries beyond the hook.",
+    "Sex or intimacy must not erase a character's baseline personality, occupation, judgement, humour or limits.",
+    "{{user}}'s future is not predetermined by answering, refusing or ignoring the message; no outcome (romance, exposure, embarrassment, nothing) is mandated.",
+    "Wealth, voice, confidence, marketing polish or paid attention do not prove sincerity, quality or safety; attractive-sounding offers can be traps and dubious-looking ones genuine.",
+    "Do not force romance or sex where the configuration doesn't support it: friendship, a single conversation, a refunded call or a dead line are all valid outcomes.",
+    "Vary the contact medium and era sensibly: numbers, handles, QR codes and chat links all fit modern settings; keep the method plausible for the setting chosen.",
+    "Anonymous does not mean without texture: characterise the voice, the timing, the message's handwriting or typography, and the place it appeared.",
+    "Keep ground truth available to the generator: decide authorship and sincerity as facts, but present them to {{user}} only through what characters say and do.",
+    "A wrong-number or redirected-contact configuration is valid and should be handled with realism rather than comedic erase.",
+    "If the message references a specific past with {{user}}, decide whether the reference is genuine, mistaken or bait, and keep {{user}} free to remember differently.",
+    "Adults verifying strangers before meeting — public places, screening, photos, no-shows — is reasonable caution and should be written as such, not as plot failure.",
+    "No message, however sincere, obliges the reached woman to follow through; she may rescind or reinterpret the invitation at any point.",
+    "The woman reached is a complete person with an independent life; her occupation, history and boundaries exist whether or not they surface in the opening.",
+    "British/Australian spellings and non-graphic framing apply throughout; suggest intimacy and consequence rather than depicting them."
+  ],
+  "guardrails": [
+    "All participants in the message, the contact and any meeting are adults; no minors in any capacity.",
+    "Preserve {{user}} agency: never script {{user}}'s feelings, attraction, decisions, consent or future behaviour.",
+    "Do not pre-play outcomes: whether {{user}} calls, continues, meets, refuses, exposes or forgets remains open.",
+    "The message proves nothing about the reached person's consent; a nonconsensual third-party posting grants the caller no entitlement.",
+    "Contacting a number is not consent to anything; any intimate scenario requires specific, informed, ongoing adult agreement from everyone involved.",
+    "Keep the paid-condition subtype honest: stated prices, no coerced payment, and the caller's free choice to decline.",
+    "Scam, fraud and manipulation may be depicted as risks and characterised honestly, but do not glorify them or reward them with predetermined success.",
+    "A character's claims about herself — authorship, sincerity, availability, identity — are beliefs or lies, never narrator-confirmed truth unless the card states it.",
+    "Guarding adults (public meets, screening, references, location sharing) is good practice; depict it as safety, not as paranoia or plot failure.",
+    "No compulsory romance, sex, humiliation, exposure or punishment for any character; friendship, one conversation or nothing are all valid outcomes.",
+    "Characters keep full autonomy, boundaries and lives beyond the hook; intimacy never erases personality, occupation or judgement.",
+    "Keep all content non-graphic: imply, reference and frame rather than depict explicit detail.",
+    "Loneliness, grief and mental-health framings in messages should be handled with care, never played for cruelty."
+  ],
+  "diversity_axes": [
+    "Message wording: blunt sexual invitation, lonely plea, dare, riddle, confession, honest rules list, or unexplainable.",
+    "Placement: toilet wall, bus shelter, corkboard, library book, windshield, alley door, billboard, hotel drawer, digital posting.",
+    "Contact medium: phone number, landline, handle, email, QR code, burner chat link, voicemail-only line.",
+    "True authorship: the woman reached, ex or friend, roommates, marketing team, scam operation, copycat stranger, or never established.",
+    "The message's nature: genuine, prank, dare, marketing stunt, scam, social experiment, or nonconsensual posting of her details.",
+    "Whether she knows it was posted: fully aware, partially, or finding out because {{user}} called.",
+    "Her motive if genuine: loneliness, curiosity, kink, grief, research, commerce, therapy task or accident.",
+    "The paid subtype: subscription wall, content creator, professional companionship, or explicitly refused payment.",
+    "Who answers: expecting the call, blindsided, guarded, joking, shy, professional, elderly, or only voicemail.",
+    "Her life beyond the message: occupation, age range, family status, city or countryside, social circle, and how public her world is.",
+    "First contact format: text, call, photo exchange, video refusal, public coffee, busy bar, cutout meeting, or group chat.",
+    "Honesty levels on both sides: mutual audit, one-sided deception, mutual deception, or full candour.",
+    "What follows: dinner, walk, ghosting, investigation, marathon call, boyfriend interception, mutual exit, or unwritten ending.",
+    "{{user}}'s response at every step: call or not, verify or trust, meet or decline, believe or expose — all equally supported."
+  ],
+  "cross_links": [
+    "Please Bang Me — the flagrant public invitation premise; here the invitation is anonymous and its authorship is the mystery.",
+    "Just a Prank! — overlaps when the message turns out to be a prank or dare; pranks here risk real people's numbers and reputations.",
+    "A Paid Proposition — the paid-condition subtype; where that series negotiates arrangement terms up front, this one hides them behind an anonymous wall.",
+    "We Matched — a contrast case: no mutual match or profile-based compatibility process exists here, only a one-way posted invitation.",
+    "Series Bible II: The Other Regular — possible shared-setting overlap where the number reaches a woman {{user}} has unknowingly seen before.",
+    "Bible III: We Bought It Together — alternate route to a stranger-entanglement where the connection is a transaction rather than a message."
+  ],
+  "tags": [
+    "series bible iii",
+    "anonymous contact & private discovery",
+    "anonymous message",
+    "call the number",
+    "phone number",
+    "mysterious invitation",
+    "stranger contact",
+    "prank or genuine",
+    "scam risk",
+    "authorship mystery",
+    "lonely hearts",
+    "paid condition subtype",
+    "adult industry honest",
+    "first contact",
+    "who wrote it",
+    "player agency",
+    "open outcomes"
+  ],
+  "notes": "Expanded Series Bible III #26 from the v0.4 draft to version 1.0 (preserving all 1 original seed IDs). Adds 256 direction presets exploring message placement and wording, the identity and motive of the real author, who answers the call, first-contact verification, the honest paid-condition subtype, aftermaths from dinner to ghosting, and two combination groups crossing message placement with authorship and promise with answerer. The source template in Google Drive is unchanged.",
+  "direction_presets": [
+    {
+      "id": "p01-free-sex",
+      "group": "Original Bible seeds",
+      "title": "Free Sex",
+      "direction": "Free Sex: {{user}} sees a message such as “FREE SEX — [phone number]” written in permanent marker in a public toilet or similar place and contacts the number partly to discover whether it is genuine, a prank, a scam or something else."
+    },
+    {
+      "id": "where-01-toilet-wall-marker",
+      "group": "Where the message appears",
+      "title": "Toilet Wall Marker",
+      "direction": "{{user}} finds 'FREE SEX' followed by a phone number scrawled in permanent marker above a public toilet hand dryer and texts it out of pure curiosity. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-02-bus-shelter-flyer",
+      "group": "Where the message appears",
+      "title": "Bus Shelter Flyer",
+      "direction": "A torn photocopied flyer taped inside a bus shelter reads 'Lonely? Call me. I mean it.' with a handwritten number, and {{user}} photographs it before the rain destroys it. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-03-bar-bathroom-stall",
+      "group": "Where the message appears",
+      "title": "Bar Bathroom Stall",
+      "direction": "Ballpoint pen on the back of a bar stall door offers an evening of no-questions company with only a number and a small drawn heart. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-04-craigslist-style-posting",
+      "group": "Where the message appears",
+      "title": "Craigslist Style Posting",
+      "direction": "An anonymous classified ad promises a genuine, judgment-free night with a woman who claims to be 'tired of apps' and leaves a burner email. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-05-library-book-margin",
+      "group": "Where the message appears",
+      "title": "Library Book Margin",
+      "direction": "{{user}} borrows a secondhand novel and finds a pencilled note on the last page: 'If you're reading this, you're my type. Here's how to reach me.' Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-06-grocery-store-corkboard",
+      "group": "Where the message appears",
+      "title": "Grocery Store Corkboard",
+      "direction": "A neatly typed card pinned among babysitter and piano-lesson ads simply reads 'Adult company, no strings, first to call wins' with a landline number. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-07-laundromat-wall",
+      "group": "Where the message appears",
+      "title": "Laundromat Wall",
+      "direction": "Someone has written in marker above a laundromat folding table: 'Waiting for a stranger. Prove you're interesting.' followed by a chat handle. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-08-rest-stop-bulletin",
+      "group": "Where the message appears",
+      "title": "Rest Stop Bulletin",
+      "direction": "A highway rest-stop notice board carries a weathered card reading 'Traveller welcome — dinner, conversation, whatever follows' with a number. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-09-parking-lot-windshield",
+      "group": "Where the message appears",
+      "title": "Parking Lot Windshield",
+      "direction": "The flyer tucked under {{user}}'s windscreen wiper advertises a 'singles hotline' that, oddly, has one real woman's name on it. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-10-graffiti-alley-door",
+      "group": "Where the message appears",
+      "title": "Graffiti Alley Door",
+      "direction": "Spray paint on a green service door in an alley spells out a number above the words 'I keep my promises'. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-11-university-notice-board",
+      "group": "Where the message appears",
+      "title": "University Notice Board",
+      "direction": "Between club flyers, an anonymous A4 sheet reads 'I posted this so someone brave would find it' with a QR code leading to an unnamed chat. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-12-tattoo-shop-bathroom",
+      "group": "Where the message appears",
+      "title": "Tattoo Shop Bathroom",
+      "direction": "The tattoo parlour's bathroom wall is covered in jokes except one sincere line: 'Not a joke. Ask for nothing, get everything.' plus a number. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-13-festival-handout",
+      "group": "Where the message appears",
+      "title": "Festival Handout",
+      "direction": "A street-team stack of cards at a festival says only 'CALL THE NUMBER' on one side and a phone number on the other. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-14-hotel-room-note",
+      "group": "Where the message appears",
+      "title": "Hotel Room Note",
+      "direction": "A previous guest left a folded note in the hotel nightstand drawer: 'To whoever finds this — I'll be in the city until Friday.' Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-15-railway-lost-property",
+      "group": "Where the message appears",
+      "title": "Railway Lost Property",
+      "direction": "Inside a lost jacket {{user}} handles at a railway office is a stitched label reading 'If lost, call me — I'll come to you.' Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "where-16-digital-billboard-glitch",
+      "group": "Where the message appears",
+      "title": "Digital Billboard Glitch",
+      "direction": "A hacked digital billboard cycles public service ads before flashing a personal number and the words 'I'm real. Try me.' for ten seconds. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-01-blunt-invitation",
+      "group": "What the message promises",
+      "title": "Blunt Invitation",
+      "direction": "The message is an unambiguous sexual invitation from a woman claiming to want exactly one anonymous encounter with whoever calls first. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-02-lonely-hearts-plea",
+      "group": "What the message promises",
+      "title": "Lonely Hearts Plea",
+      "direction": "'I just want someone to eat dinner with tonight. Nothing else expected.' The sincerity is either touching or a very good trap. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-03-curiosity-test",
+      "group": "What the message promises",
+      "title": "Curiosity Test",
+      "direction": "The note says only 'Call if you dare' — no promise, no name, no explanation of what happens next. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-04-free-month-offer",
+      "group": "What the message promises",
+      "title": "Free Month Offer",
+      "direction": "A genuine-sounding romantic offer with a strange condition: the caller must agree to be met blindfolded at a public place of her choosing. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-05-whistleblower-claim",
+      "group": "What the message promises",
+      "title": "Whistleblower Claim",
+      "direction": "'I know what happened at the mill. Call if you want the truth.' {{user}} rings expecting a source and reaches a woman with something else in mind. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-06-treasure-riddle",
+      "group": "What the message promises",
+      "title": "Treasure Riddle",
+      "direction": "The flyer promises 'I've hidden something worth finding. First call gets the first clue.' — part game, part date, part something else. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-07-confession-line",
+      "group": "What the message promises",
+      "title": "Confession Line",
+      "direction": "'I wronged a stranger once. If you call, I'll tell you everything and let you decide what I owe.' Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-08-skill-swap",
+      "group": "What the message promises",
+      "title": "Skill Swap",
+      "direction": "'I'll fix anything you own, no charge, if you tell me one true story about yourself.' A strange bargain from a stranger. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-09-reunion-shot",
+      "group": "What the message promises",
+      "title": "Reunion Shot",
+      "direction": "'It's me from the wedding in 2019. If you remember the song, call.' {{user}} doesn't remember any wedding. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-10-anti-suicide-note",
+      "group": "What the message promises",
+      "title": "Anti-Suicide Note",
+      "direction": "'I posted this because tonight I need one reason not to do something stupid. Be that reason.' The stakes are heavier than flirtation. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-11-scam-that-almost-isnt",
+      "group": "What the message promises",
+      "title": "Scam That Almost Isn't",
+      "direction": "The pitch is textbook advance-fee fraud except the woman on the line is funny, self-aware, and keeps calling back to apologise. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-12-marketing-stunt",
+      "group": "What the message promises",
+      "title": "Marketing Stunt",
+      "direction": "The number routes to a soft-launched romance app's 'real human concierge' — a paid actress who is tired of the script. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-13-dare-chain-letter",
+      "group": "What the message promises",
+      "title": "Dare Chain Letter",
+      "direction": "'I was dared to post this by people who don't think anyone will call. Prove them wrong.' Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-14-art-project",
+      "group": "What the message promises",
+      "title": "Art Project",
+      "direction": "The message is part of a gallery installation about loneliness; the woman answering is the artist, genuinely curious who dials. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-15-wrong-number-destiny",
+      "group": "What the message promises",
+      "title": "Wrong Number Destiny",
+      "direction": "'If you've been handed this card by mistake, that's exactly how you were meant to get it.' Nothing about it is explicable. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-16-honest-conditions",
+      "group": "What the message promises",
+      "title": "Honest Conditions",
+      "direction": "The message lists her rules plainly: once, anonymous, a public meet first, and 'a hard no ends it with no questions'. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-01-she-wrote-it",
+      "group": "Who actually wrote it",
+      "title": "She Wrote It",
+      "direction": "The woman who answers confirms immediately she wrote every word, and has been checking the phone for weeks hoping someone would call. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-02-ex-boyfriend",
+      "group": "Who actually wrote it",
+      "title": "Ex Boyfriend",
+      "direction": "The number belongs to a woman whose ex posted her details out of spite; she answers {{user}}'s text with confusion, then alarm. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-03-pranking-roommates",
+      "group": "Who actually wrote it",
+      "title": "Pranking Roommates",
+      "direction": "Her roommates posted her number as a joke after she complained about being single; she discovers the message because {{user}} calls. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-04-marketing-intern",
+      "group": "Who actually wrote it",
+      "title": "Marketing Intern",
+      "direction": "A junior ad employee leaked a real model's contact onto 'viral' posters without her knowledge, and the woman is furious with her agency. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-05-she-paid-a-stranger",
+      "group": "Who actually wrote it",
+      "title": "She Paid a Stranger",
+      "direction": "She hired someone to post it for her because she couldn't bear the risk of being seen doing it herself. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-06-recovery-programme-task",
+      "group": "Who actually wrote it",
+      "title": "Recovery Programme Task",
+      "direction": "She wrote it as a social-anxiety exercise her therapist assigned — call-waiting was supposed to be the hard part. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-07-bachatal-betrayal",
+      "group": "Who actually wrote it",
+      "title": "Bachatal Betrayal",
+      "direction": "A friend posted it after an argument and signed her initials to make her look desperate; {{user}} is the third caller today. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-08-copycat-killer",
+      "group": "Who actually wrote it",
+      "title": "Copycat Killer",
+      "direction": "Someone has been reposting an old message from years ago, altering the number to route to a different woman each time. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-09-dead-womans-number",
+      "group": "Who actually wrote it",
+      "title": "Dead Woman's Number",
+      "direction": "The number belonged to a woman who died last year; whoever answers now claims to be her and knows things only she knew. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-10-collective-authorship",
+      "group": "Who actually wrote it",
+      "title": "Collective Authorship",
+      "direction": "A whole dorm floor co-wrote the message about one of its members as a chaotic birthday gift; she is waiting by the phone, mortified. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-11-he-wrote-it-about-her",
+      "group": "Who actually wrote it",
+      "title": "He Wrote It About Her",
+      "direction": "Her boyfriend wrote the message to trap someone into confirming she'd cheat; she is unaware both {{user}} and the boyfriend exist in the same call. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-12-burner-agency",
+      "group": "Who actually wrote it",
+      "title": "Burner Agency",
+      "direction": "A discreet agency posts such messages on behalf of clients too private to do it themselves; the woman reached has never seen the wording. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-13-self-test",
+      "group": "Who actually wrote it",
+      "title": "Self Test",
+      "direction": "She wrote it about herself to test whether her boyfriend would call — {{user}} did instead, and she answers anyway. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-14-grandmothers-ghostwriter",
+      "group": "Who actually wrote it",
+      "title": "Grandmother's Ghostwriter",
+      "direction": "A teenage grandson posted his grandmother's number on a companionship flyer, editing out the part where she just wants chess partners. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-15-journalists-bait",
+      "group": "Who actually wrote it",
+      "title": "Journalist's Bait",
+      "direction": "An investigative reporter posted the message to expose the people who call; she answers in a different voice each time. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "author-16-unknown-even-now",
+      "group": "Who actually wrote it",
+      "title": "Unknown Even Now",
+      "direction": "No author is ever established: the woman reached insists she didn't write it, the trail is cold, and the call is already rolling. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-01-retired-teacher",
+      "group": "Who answers the call",
+      "title": "Retired Teacher",
+      "direction": "A measured, articulate older woman answers, amused that anyone called at all, and insists on meeting somewhere public first. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-02-night-shift-nurse",
+      "group": "Who answers the call",
+      "title": "Night Shift Nurse",
+      "direction": "She answers between patients at 3am with tired honesty and warns {{user}} that her availability will always look like this. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-03-small-town-bar-owner",
+      "group": "Who answers the call",
+      "title": "Small Town Bar Owner",
+      "direction": "A woman running her late father's pub answers from behind the bar, half expecting the call to be the health inspector. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-04-travel-photographer",
+      "group": "Who answers the call",
+      "title": "Travel Photographer",
+      "direction": "She answers from an airport and offers a single evening in the two days she's in the country before flying out. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-05-widowed-farmer",
+      "group": "Who answers the call",
+      "title": "Widowed Farmer",
+      "direction": "A plainspoken woman in her fifties answers over the sound of a storm, says the poster was her late husband's idea, and asks why the caller waited. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-06-escaped-scammer",
+      "group": "Who answers the call",
+      "title": "Escaped Scammer",
+      "direction": "She used to work the scam call-centre that owns the number, and answers intercepted lines to warn people away from it. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-07-guarded-comedian",
+      "group": "Who answers the call",
+      "title": "Guarded Comedian",
+      "direction": "She answers everything with jokes, deflects every sincere question, and never quite hangs up. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-08-shy-student",
+      "group": "Who answers the call",
+      "title": "Shy Student",
+      "direction": "A soft-spoken graduate student answers, admits she's never done anything like this, and keeps talking despite her own nerves. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-09-undercover-celebrity",
+      "group": "Who answers the call",
+      "title": "Undercover Celebrity",
+      "direction": "A locally famous singer answers in a stage whisper because the number was meant only for her bandmates. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-10-retired-spy",
+      "group": "Who answers the call",
+      "title": "Retired Spy",
+      "direction": "An older woman answers, determines within one minute exactly who {{user}} is, and decides the call is interesting enough to continue. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-11-mail-carrier",
+      "group": "Who answers the call",
+      "title": "Mail Carrier",
+      "direction": "She's on her delivery route and offers {{user}} one conversation while she finishes her street, and nothing promised beyond it. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-12-busy-mother",
+      "group": "Who answers the call",
+      "title": "Busy Mother",
+      "direction": "A single mum answers with a toddler shouting in the background and is startlingly frank about what she does and doesn't have time for. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-13-cult-survivor",
+      "group": "Who answers the call",
+      "title": "Cult Survivor",
+      "direction": "A woman who left an isolated community answers the number left on a flyer by the commune, wary that callers are sent to pull her back. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-14-sommelier",
+      "group": "Who answers the call",
+      "title": "Sommelier",
+      "direction": "A wine-country professional answers during closing, offering a tasting-room conversation that she says has ended stranger evenings well. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-15-ride-share-driver",
+      "group": "Who answers the call",
+      "title": "Ride Share Driver",
+      "direction": "She answers while driving; the call ends up being a tour of the whole city's night geography, one fare at a time. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "answerer-16-voicemail-woman",
+      "group": "Who answers the call",
+      "title": "Voicemail Woman",
+      "direction": "Only her voicemail ever answers — warm, specific, and updated daily — until one night she picks up mid-greeting. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-01-genuine-invitation",
+      "group": "Why she posted it",
+      "title": "Genuine Invitation",
+      "direction": "She wrote it meaning every word: one honest meeting with a stranger, no performance, no obligation past the first hello. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-02-prank-spiralling",
+      "group": "Why she posted it",
+      "title": "Prank Spiralling",
+      "direction": "It started as a joke with friends and got reposted by strangers; now hundreds have called and she can't take it down. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-03-dare-follow-through",
+      "group": "Why she posted it",
+      "title": "Dare Follow Through",
+      "direction": "She lost a bet and had to post it, never expecting a reply — and now has to decide whether the dare ends or becomes her life. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-04-loneliness-experiment",
+      "group": "Why she posted it",
+      "title": "Loneliness Experiment",
+      "direction": "A researcher on isolation, she posted it to study who calls, and is disturbed to find she likes the callers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-05-marketing-genius",
+      "group": "Why she posted it",
+      "title": "Marketing Genius",
+      "direction": "She runs a boutique hotel and posted it as a lurid ad; every caller books a room, and {{user}} is the first not to. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-06-scam-operation",
+      "group": "Why she posted it",
+      "title": "Scam Operation",
+      "direction": "The message is the top of a well-oiled romance-fraud funnel; the woman working it is friendly, fluent, and working from a script. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-07-revenge-post",
+      "group": "Why she posted it",
+      "title": "Revenge Post",
+      "direction": "Her ex posted it to flood her phone; she answers to protect anyone who might be hurt by what comes next. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-08-third-party-posting",
+      "group": "Why she posted it",
+      "title": "Third Party Posting",
+      "direction": "Someone else entirely posted a real woman's details as harassment; she learns of it from {{user}} and must decide what to do with the contact. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-09-paid-condition",
+      "group": "Why she posted it",
+      "title": "Paid Condition",
+      "direction": "She wrote it sincerely, but her message explains the encounter is behind a paywall subscription — and she's embarrassed to say it out loud. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-10-grief-companion",
+      "group": "Why she posted it",
+      "title": "Grief Companion",
+      "direction": "Widowed, she posted it the night she couldn't stand her own kitchen; the message is really an application to be a dinner guest. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-11-novel-research",
+      "group": "Why she posted it",
+      "title": "Novel Research",
+      "direction": "A writer seeking material for a book about loneliness answers calls in the voice of her protagonist. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-12-kink-curiosity",
+      "group": "Why she posted it",
+      "title": "Kink Curiosity",
+      "direction": "She posted it to explore an anonymous-encounter fantasy with firm rules and a stated safe-word culture. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-13-social-challenge",
+      "group": "Why she posted it",
+      "title": "Social Challenge",
+      "direction": "An influencer posted it publicly as a 'call a stranger' challenge; the intended followers called, and {{user}} is the wildcard. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-14-reconnection-bid",
+      "group": "Why she posted it",
+      "title": "Reconnection Bid",
+      "direction": "She suspects an old friend now goes by a different name and posted it hoping the right person dials; {{user}} is the wrong person. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-15-bureaucratic-leak",
+      "group": "Why she posted it",
+      "title": "Bureaucratic Leak",
+      "direction": "A clerical error printed her personal ad from a private matching service onto public flyers; she's receiving the city's whole romantic output. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "motive-16-no-clear-reason",
+      "group": "Why she posted it",
+      "title": "No Clear Reason",
+      "direction": "Pressed on why, she gives a different answer each time, and none of them are provably false. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-01-text-first",
+      "group": "First contact and verification",
+      "title": "Text First",
+      "direction": "{{user}} texts instead of calling; her reply takes six hours and is worth the wait. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-02-she-asks-questions",
+      "group": "First contact and verification",
+      "title": "She Asks Questions",
+      "direction": "She answers with a screening interview — favourite books, last kind act, worst lie — before deciding whether to keep talking. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-03-photo-exchange",
+      "group": "First contact and verification",
+      "title": "Photo Exchange",
+      "direction": "She asks for a photo to confirm {{user}} is real; whether she sends one back becomes the first negotiation. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-04-voice-only",
+      "group": "First contact and verification",
+      "title": "Voice Only",
+      "direction": "She refuses all photos, all names, and all questions about her life, and is more present than most people {{user}} knows by name. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-05-public-coffee",
+      "group": "First contact and verification",
+      "title": "Public Coffee",
+      "direction": "The first meet is a daytime café she chose, twenty minutes, one conversation, and no promises. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-06-busy-bar",
+      "group": "First contact and verification",
+      "title": "Busy Bar",
+      "direction": "She names a loud bar and says she'll be wearing something specific; the crowd makes every identification uncertain. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-07-video-refusal",
+      "group": "First contact and verification",
+      "title": "Video Refusal",
+      "direction": "She will text, call, and meet, but never on video; the reason turns out to be ordinary, complicated, and hers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-08-reverse-search",
+      "group": "First contact and verification",
+      "title": "Reverse Search",
+      "direction": "{{user}} reverse-searches the number and finds an old missing-person report with her face on it. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-09-wrong-person-answer",
+      "group": "First contact and verification",
+      "title": "Wrong Person Answer",
+      "direction": "The first three calls reach a confused electrician; the fourth reaches the woman, who has been forwarding her phone badly. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-10-she-stands-him-up",
+      "group": "First contact and verification",
+      "title": "She Stands Him Up",
+      "direction": "She agrees to meet and doesn't show; her apology text the next morning is the most honest thing anyone has said all week. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-11-dead-line",
+      "group": "First contact and verification",
+      "title": "Dead Line",
+      "direction": "The number rings out for two weeks until {{user}} stops trying; it answers the night after that. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-12-mutual-suspicion",
+      "group": "First contact and verification",
+      "title": "Mutual Suspicion",
+      "direction": "Each assumes the other is a scam for the first hour; the slow mutual audit becomes the whole relationship. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-13-she-sends-proof",
+      "group": "First contact and verification",
+      "title": "She Sends Proof",
+      "direction": "Unprompted, she sends a photo of today's newspaper beside her phone, then apologises for assuming {{user}} needed it. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-14-cutout-meeting",
+      "group": "First contact and verification",
+      "title": "Cutout Meeting",
+      "direction": "She insists the first meeting happens through a locked door, voices only, before anything else is negotiated. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-15-escort-screening",
+      "group": "First contact and verification",
+      "title": "Escort Screening",
+      "direction": "Her safety habits are professional-grade — references, deposits, location sharing — because she's been burned before and it isn't a scam. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "contact-16-group-chat",
+      "group": "First contact and verification",
+      "title": "Group Chat",
+      "direction": "The number is one of five; the message was posted by all of them, and whoever calls joins a conversation already in progress. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-01-subscription-reveal",
+      "group": "The paid condition and adult industry variants",
+      "title": "Subscription Reveal",
+      "direction": "She is genuinely interested in meeting, but explains the invitation lives behind her paid subscription page and the call goes quiet while {{user}} decides. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-02-freemium-dating",
+      "group": "The paid condition and adult industry variants",
+      "title": "Freemium Dating",
+      "direction": "The message routes to a 'free' dating tier where every additional word of her attention has a price, and she is candid about the menu. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-03-content-creator-loneliness",
+      "group": "The paid condition and adult industry variants",
+      "title": "Content Creator Loneliness",
+      "direction": "She built a business on parasocial intimacy and posted the flyer to find one person who wants the unmonetised version of her. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-04-retiring-from-it",
+      "group": "The paid condition and adult industry variants",
+      "title": "Retiring From It",
+      "direction": "The message is her last week in the industry; she wants one encounter that isn't a transaction and isn't sure she remembers how. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-05-boyfriend-experience",
+      "group": "The paid condition and adult industry variants",
+      "title": "Boyfriend Experience",
+      "direction": "Her service sells long-form companionship — texts, good mornings, a calendar — and the flyer is a discounted trial she's genuinely offering. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-06-anti-hustle",
+      "group": "The paid condition and adult industry variants",
+      "title": "Anti Hustle",
+      "direction": "She refuses any payment and is offended by the offer; the encounter is only possible if {{user}} never brings it up again. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-07-two-line-scam",
+      "group": "The paid condition and adult industry variants",
+      "title": "Two Line Scam",
+      "direction": "The message is a flat advance-fee scam with no woman behind it; a second, real message nearby leads to an actual person. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-08-her-manager-posted",
+      "group": "The paid condition and adult industry variants",
+      "title": "Her Manager Posted",
+      "direction": "Her manager posted her personal number as a promotion without consent; she is deciding whether to be furious or grateful. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-09-paywall-honesty",
+      "group": "The paid condition and adult industry variants",
+      "title": "Paywall Honesty",
+      "direction": "She leads with the paywall, prices it clearly, and is the most straightforwardly honest person {{user}} meets all month. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-10-backpage-ghost",
+      "group": "The paid condition and adult industry variants",
+      "title": "Backpage Ghost",
+      "direction": "The flyer is a decade old; the woman who placed it now runs a small business and is stunned the number still routes to her. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-11-currency-of-attention",
+      "group": "The paid condition and adult industry variants",
+      "title": "Currency of Attention",
+      "direction": "No money changes hands; her stated price is proof of a genuine connection, and she defines the test. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-12-niche-industry",
+      "group": "The paid condition and adult industry variants",
+      "title": "Niche Industry",
+      "direction": "Her specialisation is unusual and stated plainly in the second message; consent culture is her professional pride. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-13-sponsor-logic",
+      "group": "The paid condition and adult industry variants",
+      "title": "Sponsor Logic",
+      "direction": "She frames the subscription as her filter against unserious callers and is upfront that it also pays her rent. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-14-client-boundary",
+      "group": "The paid condition and adult industry variants",
+      "title": "Client Boundary",
+      "direction": "She will talk for free but meets only paying clients, and the line between the two is a real negotiation. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-15-soft-launch",
+      "group": "The paid condition and adult industry variants",
+      "title": "Soft Launch",
+      "direction": "The message is a quiet market test for her adult brand and works so well that the encounter becomes market research she forgets to take notes for. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "paid-16-refund-offered",
+      "group": "The paid condition and adult industry variants",
+      "title": "Refund Offered",
+      "direction": "Halfway through the paid call she decides {{user}} isn't what the service is for and refunds it — then keeps talking anyway. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-01-dinner-reservation",
+      "group": "What happens next",
+      "title": "Dinner Reservation",
+      "direction": "One dinner at a mid-week restaurant, and the evening's real question is whether either of them asks for a second. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-02-walk-not-encounter",
+      "group": "What happens next",
+      "title": "Walk Not Encounter",
+      "direction": "She proposes a walk along the river instead of anything intimate, and the two hours of conversation rearrange what {{user}} wanted. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-03-catfish-reveal",
+      "group": "What happens next",
+      "title": "Catfish Reveal",
+      "direction": "The woman who arrives is not the voice on the phone, and the mismatch is not what {{user}} assumed it would be. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-04-third-person-present",
+      "group": "What happens next",
+      "title": "Third Person Present",
+      "direction": "She brings a chaperone friend; the friend likes {{user}} more than she does. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-05-snowball-escalation",
+      "group": "What happens next",
+      "title": "Snowball Escalation",
+      "direction": "One call becomes a week of texts, a month of calls, and a situation none of them named until it was too big to. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-06-ghost-after-first",
+      "group": "What happens next",
+      "title": "Ghost After First",
+      "direction": "She vanishes the morning after the first meeting; three months later the poster reappears in a different part of town. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-07-moral-inventory",
+      "group": "What happens next",
+      "title": "Moral Inventory",
+      "direction": "She spends the whole evening asking {{user}} what kind of person posts answers to such a message, and is working out her own answer. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-08-confront-the-poster",
+      "group": "What happens next",
+      "title": "Confront The Poster",
+      "direction": "The evening becomes an investigation into who really posted the flyer, and neither likes what they find. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-09-boyfriend-intercepts",
+      "group": "What happens next",
+      "title": "Boyfriend Intercepts",
+      "direction": "Her boyfriend answers {{user}}'s second call, and the conversation between the two men is not what either expected. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-10-it-was-a-test-all-along",
+      "group": "What happens next",
+      "title": "It Was A Test All Along",
+      "direction": "She reveals the message was a test of a specific person who never called — and {{user}} has just become a variable in someone else's relationship. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-11-public-fallout",
+      "group": "What happens next",
+      "title": "Public Fallout",
+      "direction": "Someone photographed {{user}} at the meeting and the small town's rumour engine starts before dessert. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-12-slow-reveal",
+      "group": "What happens next",
+      "title": "Slow Reveal",
+      "direction": "Only across weeks does {{user}} learn who she is, what the message really said between its lines, and why she picked that wall. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-13-return-the-number",
+      "group": "What happens next",
+      "title": "Return The Number",
+      "direction": "{{user}} realises the flyer routes to someone he already knows, and has to decide whether knowing changes anything. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-14-mutual-exit",
+      "group": "What happens next",
+      "title": "Mutual Exit",
+      "direction": "Both agree at the first meeting that it was a lovely idea and a bad one in practice, and part as the strangest almost-friends either has. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-15-marathon-call",
+      "group": "What happens next",
+      "title": "Marathon Call",
+      "direction": "The call itself is the whole card: eleven hours, every subject, and a goodbye that neither wants to repeat or ruin. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "after-16-unanswered-ending",
+      "group": "What happens next",
+      "title": "Unanswered Ending",
+      "direction": "The card ends the night before the first meeting; whether {{user}} goes, what she is like, and what it means stay unwritten. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-01",
+      "group": "Message placement and authorship combinations",
+      "title": "Toilet Wall × She Wrote It",
+      "direction": "The message is marker on a toilet wall. The woman reached wrote it herself and is waiting. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-02",
+      "group": "Message placement and authorship combinations",
+      "title": "Toilet Wall × Ex's Spite",
+      "direction": "The message is marker on a toilet wall. An ex posted her details out of spite; she is unaware. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-03",
+      "group": "Message placement and authorship combinations",
+      "title": "Toilet Wall × Roommate Prank",
+      "direction": "The message is marker on a toilet wall. Roommates posted it as a joke; she is mortified. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-04",
+      "group": "Message placement and authorship combinations",
+      "title": "Toilet Wall × Scam Funnel",
+      "direction": "The message is marker on a toilet wall. It is the top of a romance-scam funnel. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-05",
+      "group": "Message placement and authorship combinations",
+      "title": "Toilet Wall × Marketing Stunt",
+      "direction": "The message is marker on a toilet wall. It is a soft-launched marketing stunt. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-06",
+      "group": "Message placement and authorship combinations",
+      "title": "Toilet Wall × Therapy Task",
+      "direction": "The message is marker on a toilet wall. She wrote it as a therapy assignment for social anxiety. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-07",
+      "group": "Message placement and authorship combinations",
+      "title": "Toilet Wall × Copycat",
+      "direction": "The message is marker on a toilet wall. A stranger has been reposting an old message. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-08",
+      "group": "Message placement and authorship combinations",
+      "title": "Toilet Wall × Unknown",
+      "direction": "The message is marker on a toilet wall. No author is ever established; the call rolls anyway. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-09",
+      "group": "Message placement and authorship combinations",
+      "title": "Bus Shelter × She Wrote It",
+      "direction": "The message is a taped flyer in a bus shelter. The woman reached wrote it herself and is waiting. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-10",
+      "group": "Message placement and authorship combinations",
+      "title": "Bus Shelter × Ex's Spite",
+      "direction": "The message is a taped flyer in a bus shelter. An ex posted her details out of spite; she is unaware. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-11",
+      "group": "Message placement and authorship combinations",
+      "title": "Bus Shelter × Roommate Prank",
+      "direction": "The message is a taped flyer in a bus shelter. Roommates posted it as a joke; she is mortified. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-12",
+      "group": "Message placement and authorship combinations",
+      "title": "Bus Shelter × Scam Funnel",
+      "direction": "The message is a taped flyer in a bus shelter. It is the top of a romance-scam funnel. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-13",
+      "group": "Message placement and authorship combinations",
+      "title": "Bus Shelter × Marketing Stunt",
+      "direction": "The message is a taped flyer in a bus shelter. It is a soft-launched marketing stunt. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-14",
+      "group": "Message placement and authorship combinations",
+      "title": "Bus Shelter × Therapy Task",
+      "direction": "The message is a taped flyer in a bus shelter. She wrote it as a therapy assignment for social anxiety. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-15",
+      "group": "Message placement and authorship combinations",
+      "title": "Bus Shelter × Copycat",
+      "direction": "The message is a taped flyer in a bus shelter. A stranger has been reposting an old message. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-16",
+      "group": "Message placement and authorship combinations",
+      "title": "Bus Shelter × Unknown",
+      "direction": "The message is a taped flyer in a bus shelter. No author is ever established; the call rolls anyway. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-17",
+      "group": "Message placement and authorship combinations",
+      "title": "Corkboard × She Wrote It",
+      "direction": "The message is a typed card on a grocery corkboard. The woman reached wrote it herself and is waiting. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-18",
+      "group": "Message placement and authorship combinations",
+      "title": "Corkboard × Ex's Spite",
+      "direction": "The message is a typed card on a grocery corkboard. An ex posted her details out of spite; she is unaware. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-19",
+      "group": "Message placement and authorship combinations",
+      "title": "Corkboard × Roommate Prank",
+      "direction": "The message is a typed card on a grocery corkboard. Roommates posted it as a joke; she is mortified. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-20",
+      "group": "Message placement and authorship combinations",
+      "title": "Corkboard × Scam Funnel",
+      "direction": "The message is a typed card on a grocery corkboard. It is the top of a romance-scam funnel. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-21",
+      "group": "Message placement and authorship combinations",
+      "title": "Corkboard × Marketing Stunt",
+      "direction": "The message is a typed card on a grocery corkboard. It is a soft-launched marketing stunt. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-22",
+      "group": "Message placement and authorship combinations",
+      "title": "Corkboard × Therapy Task",
+      "direction": "The message is a typed card on a grocery corkboard. She wrote it as a therapy assignment for social anxiety. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-23",
+      "group": "Message placement and authorship combinations",
+      "title": "Corkboard × Copycat",
+      "direction": "The message is a typed card on a grocery corkboard. A stranger has been reposting an old message. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-24",
+      "group": "Message placement and authorship combinations",
+      "title": "Corkboard × Unknown",
+      "direction": "The message is a typed card on a grocery corkboard. No author is ever established; the call rolls anyway. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-25",
+      "group": "Message placement and authorship combinations",
+      "title": "Library Book × She Wrote It",
+      "direction": "The message is pencilled in a secondhand novel. The woman reached wrote it herself and is waiting. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-26",
+      "group": "Message placement and authorship combinations",
+      "title": "Library Book × Ex's Spite",
+      "direction": "The message is pencilled in a secondhand novel. An ex posted her details out of spite; she is unaware. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-27",
+      "group": "Message placement and authorship combinations",
+      "title": "Library Book × Roommate Prank",
+      "direction": "The message is pencilled in a secondhand novel. Roommates posted it as a joke; she is mortified. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-28",
+      "group": "Message placement and authorship combinations",
+      "title": "Library Book × Scam Funnel",
+      "direction": "The message is pencilled in a secondhand novel. It is the top of a romance-scam funnel. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-29",
+      "group": "Message placement and authorship combinations",
+      "title": "Library Book × Marketing Stunt",
+      "direction": "The message is pencilled in a secondhand novel. It is a soft-launched marketing stunt. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-30",
+      "group": "Message placement and authorship combinations",
+      "title": "Library Book × Therapy Task",
+      "direction": "The message is pencilled in a secondhand novel. She wrote it as a therapy assignment for social anxiety. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-31",
+      "group": "Message placement and authorship combinations",
+      "title": "Library Book × Copycat",
+      "direction": "The message is pencilled in a secondhand novel. A stranger has been reposting an old message. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-32",
+      "group": "Message placement and authorship combinations",
+      "title": "Library Book × Unknown",
+      "direction": "The message is pencilled in a secondhand novel. No author is ever established; the call rolls anyway. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-33",
+      "group": "Message placement and authorship combinations",
+      "title": "Digital × She Wrote It",
+      "direction": "The message is a hacked billboard flashing a number. The woman reached wrote it herself and is waiting. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-34",
+      "group": "Message placement and authorship combinations",
+      "title": "Digital × Ex's Spite",
+      "direction": "The message is a hacked billboard flashing a number. An ex posted her details out of spite; she is unaware. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-35",
+      "group": "Message placement and authorship combinations",
+      "title": "Digital × Roommate Prank",
+      "direction": "The message is a hacked billboard flashing a number. Roommates posted it as a joke; she is mortified. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-36",
+      "group": "Message placement and authorship combinations",
+      "title": "Digital × Scam Funnel",
+      "direction": "The message is a hacked billboard flashing a number. It is the top of a romance-scam funnel. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-37",
+      "group": "Message placement and authorship combinations",
+      "title": "Digital × Marketing Stunt",
+      "direction": "The message is a hacked billboard flashing a number. It is a soft-launched marketing stunt. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-38",
+      "group": "Message placement and authorship combinations",
+      "title": "Digital × Therapy Task",
+      "direction": "The message is a hacked billboard flashing a number. She wrote it as a therapy assignment for social anxiety. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-39",
+      "group": "Message placement and authorship combinations",
+      "title": "Digital × Copycat",
+      "direction": "The message is a hacked billboard flashing a number. A stranger has been reposting an old message. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-40",
+      "group": "Message placement and authorship combinations",
+      "title": "Digital × Unknown",
+      "direction": "The message is a hacked billboard flashing a number. No author is ever established; the call rolls anyway. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-41",
+      "group": "Message placement and authorship combinations",
+      "title": "Windshield × She Wrote It",
+      "direction": "The message is a card under {{user}}'s windscreen wiper. The woman reached wrote it herself and is waiting. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-42",
+      "group": "Message placement and authorship combinations",
+      "title": "Windshield × Ex's Spite",
+      "direction": "The message is a card under {{user}}'s windscreen wiper. An ex posted her details out of spite; she is unaware. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-43",
+      "group": "Message placement and authorship combinations",
+      "title": "Windshield × Roommate Prank",
+      "direction": "The message is a card under {{user}}'s windscreen wiper. Roommates posted it as a joke; she is mortified. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-44",
+      "group": "Message placement and authorship combinations",
+      "title": "Windshield × Scam Funnel",
+      "direction": "The message is a card under {{user}}'s windscreen wiper. It is the top of a romance-scam funnel. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-45",
+      "group": "Message placement and authorship combinations",
+      "title": "Windshield × Marketing Stunt",
+      "direction": "The message is a card under {{user}}'s windscreen wiper. It is a soft-launched marketing stunt. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-46",
+      "group": "Message placement and authorship combinations",
+      "title": "Windshield × Therapy Task",
+      "direction": "The message is a card under {{user}}'s windscreen wiper. She wrote it as a therapy assignment for social anxiety. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-47",
+      "group": "Message placement and authorship combinations",
+      "title": "Windshield × Copycat",
+      "direction": "The message is a card under {{user}}'s windscreen wiper. A stranger has been reposting an old message. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-48",
+      "group": "Message placement and authorship combinations",
+      "title": "Windshield × Unknown",
+      "direction": "The message is a card under {{user}}'s windscreen wiper. No author is ever established; the call rolls anyway. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-49",
+      "group": "Message placement and authorship combinations",
+      "title": "Alley Door × She Wrote It",
+      "direction": "The message is spray paint on an alley service door. The woman reached wrote it herself and is waiting. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-50",
+      "group": "Message placement and authorship combinations",
+      "title": "Alley Door × Ex's Spite",
+      "direction": "The message is spray paint on an alley service door. An ex posted her details out of spite; she is unaware. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-51",
+      "group": "Message placement and authorship combinations",
+      "title": "Alley Door × Roommate Prank",
+      "direction": "The message is spray paint on an alley service door. Roommates posted it as a joke; she is mortified. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-52",
+      "group": "Message placement and authorship combinations",
+      "title": "Alley Door × Scam Funnel",
+      "direction": "The message is spray paint on an alley service door. It is the top of a romance-scam funnel. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-53",
+      "group": "Message placement and authorship combinations",
+      "title": "Alley Door × Marketing Stunt",
+      "direction": "The message is spray paint on an alley service door. It is a soft-launched marketing stunt. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-54",
+      "group": "Message placement and authorship combinations",
+      "title": "Alley Door × Therapy Task",
+      "direction": "The message is spray paint on an alley service door. She wrote it as a therapy assignment for social anxiety. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-55",
+      "group": "Message placement and authorship combinations",
+      "title": "Alley Door × Copycat",
+      "direction": "The message is spray paint on an alley service door. A stranger has been reposting an old message. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-56",
+      "group": "Message placement and authorship combinations",
+      "title": "Alley Door × Unknown",
+      "direction": "The message is spray paint on an alley service door. No author is ever established; the call rolls anyway. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-57",
+      "group": "Message placement and authorship combinations",
+      "title": "Hotel Drawer × She Wrote It",
+      "direction": "The message is a folded note in a hotel drawer. The woman reached wrote it herself and is waiting. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-58",
+      "group": "Message placement and authorship combinations",
+      "title": "Hotel Drawer × Ex's Spite",
+      "direction": "The message is a folded note in a hotel drawer. An ex posted her details out of spite; she is unaware. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-59",
+      "group": "Message placement and authorship combinations",
+      "title": "Hotel Drawer × Roommate Prank",
+      "direction": "The message is a folded note in a hotel drawer. Roommates posted it as a joke; she is mortified. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-60",
+      "group": "Message placement and authorship combinations",
+      "title": "Hotel Drawer × Scam Funnel",
+      "direction": "The message is a folded note in a hotel drawer. It is the top of a romance-scam funnel. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-61",
+      "group": "Message placement and authorship combinations",
+      "title": "Hotel Drawer × Marketing Stunt",
+      "direction": "The message is a folded note in a hotel drawer. It is a soft-launched marketing stunt. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-62",
+      "group": "Message placement and authorship combinations",
+      "title": "Hotel Drawer × Therapy Task",
+      "direction": "The message is a folded note in a hotel drawer. She wrote it as a therapy assignment for social anxiety. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-63",
+      "group": "Message placement and authorship combinations",
+      "title": "Hotel Drawer × Copycat",
+      "direction": "The message is a folded note in a hotel drawer. A stranger has been reposting an old message. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "place-author-64",
+      "group": "Message placement and authorship combinations",
+      "title": "Hotel Drawer × Unknown",
+      "direction": "The message is a folded note in a hotel drawer. No author is ever established; the call rolls anyway. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-01",
+      "group": "Promise and answerer combinations",
+      "title": "Blunt Invitation × Retired Teacher",
+      "direction": "It bluntly offers one anonymous encounter. A measured retired teacher answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-02",
+      "group": "Promise and answerer combinations",
+      "title": "Blunt Invitation × Night Nurse",
+      "direction": "It bluntly offers one anonymous encounter. A tired night-shift nurse answers between patients. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-03",
+      "group": "Promise and answerer combinations",
+      "title": "Blunt Invitation × Bar Owner",
+      "direction": "It bluntly offers one anonymous encounter. A small-town bar owner answers mid-service. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-04",
+      "group": "Promise and answerer combinations",
+      "title": "Blunt Invitation × Photographer",
+      "direction": "It bluntly offers one anonymous encounter. A passing travel photographer answers from an airport. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-05",
+      "group": "Promise and answerer combinations",
+      "title": "Blunt Invitation × Guarded Comedian",
+      "direction": "It bluntly offers one anonymous encounter. A deflecting comedian answers in jokes. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-06",
+      "group": "Promise and answerer combinations",
+      "title": "Blunt Invitation × Shy Student",
+      "direction": "It bluntly offers one anonymous encounter. A nervous graduate student answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-07",
+      "group": "Promise and answerer combinations",
+      "title": "Blunt Invitation × Widow",
+      "direction": "It bluntly offers one anonymous encounter. A plainspoken widow answers over a storm. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-08",
+      "group": "Promise and answerer combinations",
+      "title": "Blunt Invitation × Only Voicemail",
+      "direction": "It bluntly offers one anonymous encounter. Only her voicemail ever answers — until it doesn't. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-09",
+      "group": "Promise and answerer combinations",
+      "title": "Lonely Hearts × Retired Teacher",
+      "direction": "It is a sincere lonely-hearts plea for company. A measured retired teacher answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-10",
+      "group": "Promise and answerer combinations",
+      "title": "Lonely Hearts × Night Nurse",
+      "direction": "It is a sincere lonely-hearts plea for company. A tired night-shift nurse answers between patients. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-11",
+      "group": "Promise and answerer combinations",
+      "title": "Lonely Hearts × Bar Owner",
+      "direction": "It is a sincere lonely-hearts plea for company. A small-town bar owner answers mid-service. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-12",
+      "group": "Promise and answerer combinations",
+      "title": "Lonely Hearts × Photographer",
+      "direction": "It is a sincere lonely-hearts plea for company. A passing travel photographer answers from an airport. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-13",
+      "group": "Promise and answerer combinations",
+      "title": "Lonely Hearts × Guarded Comedian",
+      "direction": "It is a sincere lonely-hearts plea for company. A deflecting comedian answers in jokes. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-14",
+      "group": "Promise and answerer combinations",
+      "title": "Lonely Hearts × Shy Student",
+      "direction": "It is a sincere lonely-hearts plea for company. A nervous graduate student answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-15",
+      "group": "Promise and answerer combinations",
+      "title": "Lonely Hearts × Widow",
+      "direction": "It is a sincere lonely-hearts plea for company. A plainspoken widow answers over a storm. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-16",
+      "group": "Promise and answerer combinations",
+      "title": "Lonely Hearts × Only Voicemail",
+      "direction": "It is a sincere lonely-hearts plea for company. Only her voicemail ever answers — until it doesn't. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-17",
+      "group": "Promise and answerer combinations",
+      "title": "Curiosity Test × Retired Teacher",
+      "direction": "It dares the reader to call with no promises. A measured retired teacher answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-18",
+      "group": "Promise and answerer combinations",
+      "title": "Curiosity Test × Night Nurse",
+      "direction": "It dares the reader to call with no promises. A tired night-shift nurse answers between patients. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-19",
+      "group": "Promise and answerer combinations",
+      "title": "Curiosity Test × Bar Owner",
+      "direction": "It dares the reader to call with no promises. A small-town bar owner answers mid-service. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-20",
+      "group": "Promise and answerer combinations",
+      "title": "Curiosity Test × Photographer",
+      "direction": "It dares the reader to call with no promises. A passing travel photographer answers from an airport. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-21",
+      "group": "Promise and answerer combinations",
+      "title": "Curiosity Test × Guarded Comedian",
+      "direction": "It dares the reader to call with no promises. A deflecting comedian answers in jokes. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-22",
+      "group": "Promise and answerer combinations",
+      "title": "Curiosity Test × Shy Student",
+      "direction": "It dares the reader to call with no promises. A nervous graduate student answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-23",
+      "group": "Promise and answerer combinations",
+      "title": "Curiosity Test × Widow",
+      "direction": "It dares the reader to call with no promises. A plainspoken widow answers over a storm. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-24",
+      "group": "Promise and answerer combinations",
+      "title": "Curiosity Test × Only Voicemail",
+      "direction": "It dares the reader to call with no promises. Only her voicemail ever answers — until it doesn't. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-25",
+      "group": "Promise and answerer combinations",
+      "title": "Treasure Riddle × Retired Teacher",
+      "direction": "It promises a hidden thing and a first clue. A measured retired teacher answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-26",
+      "group": "Promise and answerer combinations",
+      "title": "Treasure Riddle × Night Nurse",
+      "direction": "It promises a hidden thing and a first clue. A tired night-shift nurse answers between patients. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-27",
+      "group": "Promise and answerer combinations",
+      "title": "Treasure Riddle × Bar Owner",
+      "direction": "It promises a hidden thing and a first clue. A small-town bar owner answers mid-service. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-28",
+      "group": "Promise and answerer combinations",
+      "title": "Treasure Riddle × Photographer",
+      "direction": "It promises a hidden thing and a first clue. A passing travel photographer answers from an airport. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-29",
+      "group": "Promise and answerer combinations",
+      "title": "Treasure Riddle × Guarded Comedian",
+      "direction": "It promises a hidden thing and a first clue. A deflecting comedian answers in jokes. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-30",
+      "group": "Promise and answerer combinations",
+      "title": "Treasure Riddle × Shy Student",
+      "direction": "It promises a hidden thing and a first clue. A nervous graduate student answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-31",
+      "group": "Promise and answerer combinations",
+      "title": "Treasure Riddle × Widow",
+      "direction": "It promises a hidden thing and a first clue. A plainspoken widow answers over a storm. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-32",
+      "group": "Promise and answerer combinations",
+      "title": "Treasure Riddle × Only Voicemail",
+      "direction": "It promises a hidden thing and a first clue. Only her voicemail ever answers — until it doesn't. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-33",
+      "group": "Promise and answerer combinations",
+      "title": "Confession × Retired Teacher",
+      "direction": "It offers a confession and asks to be judged. A measured retired teacher answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-34",
+      "group": "Promise and answerer combinations",
+      "title": "Confession × Night Nurse",
+      "direction": "It offers a confession and asks to be judged. A tired night-shift nurse answers between patients. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-35",
+      "group": "Promise and answerer combinations",
+      "title": "Confession × Bar Owner",
+      "direction": "It offers a confession and asks to be judged. A small-town bar owner answers mid-service. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-36",
+      "group": "Promise and answerer combinations",
+      "title": "Confession × Photographer",
+      "direction": "It offers a confession and asks to be judged. A passing travel photographer answers from an airport. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-37",
+      "group": "Promise and answerer combinations",
+      "title": "Confession × Guarded Comedian",
+      "direction": "It offers a confession and asks to be judged. A deflecting comedian answers in jokes. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-38",
+      "group": "Promise and answerer combinations",
+      "title": "Confession × Shy Student",
+      "direction": "It offers a confession and asks to be judged. A nervous graduate student answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-39",
+      "group": "Promise and answerer combinations",
+      "title": "Confession × Widow",
+      "direction": "It offers a confession and asks to be judged. A plainspoken widow answers over a storm. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-40",
+      "group": "Promise and answerer combinations",
+      "title": "Confession × Only Voicemail",
+      "direction": "It offers a confession and asks to be judged. Only her voicemail ever answers — until it doesn't. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-41",
+      "group": "Promise and answerer combinations",
+      "title": "Whistleblower × Retired Teacher",
+      "direction": "It claims secret knowledge about a local scandal. A measured retired teacher answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-42",
+      "group": "Promise and answerer combinations",
+      "title": "Whistleblower × Night Nurse",
+      "direction": "It claims secret knowledge about a local scandal. A tired night-shift nurse answers between patients. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-43",
+      "group": "Promise and answerer combinations",
+      "title": "Whistleblower × Bar Owner",
+      "direction": "It claims secret knowledge about a local scandal. A small-town bar owner answers mid-service. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-44",
+      "group": "Promise and answerer combinations",
+      "title": "Whistleblower × Photographer",
+      "direction": "It claims secret knowledge about a local scandal. A passing travel photographer answers from an airport. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-45",
+      "group": "Promise and answerer combinations",
+      "title": "Whistleblower × Guarded Comedian",
+      "direction": "It claims secret knowledge about a local scandal. A deflecting comedian answers in jokes. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-46",
+      "group": "Promise and answerer combinations",
+      "title": "Whistleblower × Shy Student",
+      "direction": "It claims secret knowledge about a local scandal. A nervous graduate student answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-47",
+      "group": "Promise and answerer combinations",
+      "title": "Whistleblower × Widow",
+      "direction": "It claims secret knowledge about a local scandal. A plainspoken widow answers over a storm. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-48",
+      "group": "Promise and answerer combinations",
+      "title": "Whistleblower × Only Voicemail",
+      "direction": "It claims secret knowledge about a local scandal. Only her voicemail ever answers — until it doesn't. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-49",
+      "group": "Promise and answerer combinations",
+      "title": "Reunion × Retired Teacher",
+      "direction": "It implies a shared past {{user}} doesn't remember. A measured retired teacher answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-50",
+      "group": "Promise and answerer combinations",
+      "title": "Reunion × Night Nurse",
+      "direction": "It implies a shared past {{user}} doesn't remember. A tired night-shift nurse answers between patients. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-51",
+      "group": "Promise and answerer combinations",
+      "title": "Reunion × Bar Owner",
+      "direction": "It implies a shared past {{user}} doesn't remember. A small-town bar owner answers mid-service. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-52",
+      "group": "Promise and answerer combinations",
+      "title": "Reunion × Photographer",
+      "direction": "It implies a shared past {{user}} doesn't remember. A passing travel photographer answers from an airport. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-53",
+      "group": "Promise and answerer combinations",
+      "title": "Reunion × Guarded Comedian",
+      "direction": "It implies a shared past {{user}} doesn't remember. A deflecting comedian answers in jokes. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-54",
+      "group": "Promise and answerer combinations",
+      "title": "Reunion × Shy Student",
+      "direction": "It implies a shared past {{user}} doesn't remember. A nervous graduate student answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-55",
+      "group": "Promise and answerer combinations",
+      "title": "Reunion × Widow",
+      "direction": "It implies a shared past {{user}} doesn't remember. A plainspoken widow answers over a storm. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-56",
+      "group": "Promise and answerer combinations",
+      "title": "Reunion × Only Voicemail",
+      "direction": "It implies a shared past {{user}} doesn't remember. Only her voicemail ever answers — until it doesn't. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-57",
+      "group": "Promise and answerer combinations",
+      "title": "Conditions Listed × Retired Teacher",
+      "direction": "It lists her honest rules up front. A measured retired teacher answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-58",
+      "group": "Promise and answerer combinations",
+      "title": "Conditions Listed × Night Nurse",
+      "direction": "It lists her honest rules up front. A tired night-shift nurse answers between patients. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-59",
+      "group": "Promise and answerer combinations",
+      "title": "Conditions Listed × Bar Owner",
+      "direction": "It lists her honest rules up front. A small-town bar owner answers mid-service. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-60",
+      "group": "Promise and answerer combinations",
+      "title": "Conditions Listed × Photographer",
+      "direction": "It lists her honest rules up front. A passing travel photographer answers from an airport. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-61",
+      "group": "Promise and answerer combinations",
+      "title": "Conditions Listed × Guarded Comedian",
+      "direction": "It lists her honest rules up front. A deflecting comedian answers in jokes. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-62",
+      "group": "Promise and answerer combinations",
+      "title": "Conditions Listed × Shy Student",
+      "direction": "It lists her honest rules up front. A nervous graduate student answers. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-63",
+      "group": "Promise and answerer combinations",
+      "title": "Conditions Listed × Widow",
+      "direction": "It lists her honest rules up front. A plainspoken widow answers over a storm. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    },
+    {
+      "id": "promise-answerer-64",
+      "group": "Promise and answerer combinations",
+      "title": "Conditions Listed × Only Voicemail",
+      "direction": "It lists her honest rules up front. Only her voicemail ever answers — until it doesn't. Adult {{char}} may be the author of an anonymous public message, the unaware woman whose details were posted, or someone drawn into its aftermath; the message itself proves nothing about authorship, truth or consent. All participants are adults; consent, boundaries and {{user}}'s choices remain open."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "Anonymous message as the engine",
+      "content": "An anonymous public message offers something intriguing, provocative, romantic, sexual, strange or suspicious and supplies one way to make contact. The message proves only that an invitation exists — never authorship, truth, or the reached person's consent."
+    },
+    {
+      "id": "trigger",
+      "label": "The decision to call",
+      "content": "{{user}} finds the message in an everyday place and chooses to contact it without knowing who wrote it or why. Write the moment of decision without scripting {{user}}'s feelings; curiosity alone is sufficient motive."
+    },
+    {
+      "id": "authorship",
+      "label": "Who actually wrote it",
+      "content": "Vary authorship: the reached woman herself, an ex or prankster using her details, a marketing team, a scam operation, or no established author at all. If a third party posted her details, contacting her creates no entitlement."
+    },
+    {
+      "id": "answerer",
+      "label": "Who answers the call",
+      "content": "The voice on the line is a complete adult with her own occupation, history and boundaries. She may be expecting the call, blindsided by it, or lying about which — and her claims are her beliefs, not objective truth."
+    },
+    {
+      "id": "truth",
+      "label": "Belief is not objective truth",
+      "content": "Every claim in or after the message — sincerity, safety, identity, motive — may be honest, mistaken or staged. Keep the narrator's ground truth separate from what characters say or believe."
+    },
+    {
+      "id": "paid",
+      "label": "The paid-condition subtype",
+      "content": "One optional variant has a genuine invitation whose creator then requires a paid subscription or similar condition before considering an encounter. Keep this a named subtype with honest pricing, never the default or a bait-and-switch."
+    },
+    {
+      "id": "verification",
+      "label": "First contact and screening",
+      "content": "First contact varies: texts, calls, public meetings, photo exchanges, refusal of both. Adults verifying strangers is reasonable caution, not romance-plotting; scams and over-caution are both valid configurations."
+    },
+    {
+      "id": "agency",
+      "label": "Nothing about {{user}} is predetermined",
+      "content": "Do not script {{user}}'s personality, attraction, decisions or future. Whether {{user}} calls, keeps calling, meets, walks away, exposes a scam, or falls for someone is entirely roleplay space."
+    },
+    {
+      "id": "person",
+      "label": "Complete character beyond the hook",
+      "content": "Whoever answers retains a full life — work, friends, humour, limits — outside the message. A kink, scam, loneliness or occupation can matter without becoming the only thing she talks about."
+    },
+    {
+      "id": "outcomes",
+      "label": "Outcomes remain open",
+      "content": "No predetermined endings: dinner, a decade of texts, a ghosted number, a refunded call, a friendship or nothing at all. Characters may want, lie, hope and invite; results are not fixed."
+    },
+    {
+      "id": "consent",
+      "label": "Consent stays specific",
+      "content": "Agreement to call implies nothing further. Meeting implies nothing further. Payment, loneliness, flirtation or prior honesty never create blanket consent, and any intimate scenario requires ongoing, specific, adult agreement."
+    },
+    {
+      "id": "opening",
+      "label": "Playable opening scene",
+      "content": "Open at the moment {{user}} finds the message or places the first contact, with the wording, location and medium concrete, and the woman (if reached) characterised beyond a voice. End the opening before any meeting or outcome is resolved."
+    },
+    {
+      "id": "boundary",
+      "label": "Related series and crossovers",
+      "content": "Cross-link naturally to Please Bang Me (flagrant invitation), Just a Prank! (authorship mischief), A Paid Proposition (the paid subtype) and We Matched (distinct: no mutual-match platform here). Optional crossovers should be labelled as such."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult character-card premise for Call the Number. Adult {{user}} finds an anonymous public message — marker on a toilet wall, a bus-shelter flyer, a pencilled library note, a hacked billboard — offering something intriguing, romantic, sexual, strange or suspicious, with one way to make contact, and decides to use it without knowing who wrote it, whether it is true, or what lies behind it. Vary the wording and placement of the message, the contact medium, who actually authored it (the woman reached, an ex's spite, pranksters, a marketing stunt, a scam funnel, or unknown), whether she knows her details were posted, her motive if genuine, who answers, and what happens next — including the honest paid-subscription subtype as one option, never the default. The message proves nothing about authorship, truth or consent; contacting a number creates no entitlement, and any intimacy requires specific ongoing adult agreement. Keep belief separate from objective truth, never script {{user}}'s feelings, decisions or future, and leave every outcome from dinner to ghosting unwritten. Open at the moment of contact."
+}
