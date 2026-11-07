@@ -9,7 +9,7 @@ write to Front Porch's database.
 
 | Rawhide property | CCF control | Portable behaviour |
 | --- | --- | --- |
-| `pockets_enabled` | Pockets & Wardrobe enabled | Absent means enabled; explicit `false` disables it. Canonical enabled/default is omitted. |
+| `pockets_enabled` | Pockets & Wardrobe default for new chats | Absent means enabled; CCF preserves absent, explicit `true` and explicit `false`. Existing chats keep their own runtime switch. |
 | `needs_sim_enabled` | Needs Simulation default | Nullable/absent remains distinct from explicit `false`. |
 | `needs_pace` | Sloth / Normal / Fast | Stored as `sloth`, `normal` or `fast`; Rawhide defaults to `normal`. |
 | `needs_off` | Seven independent Disable toggles | Canonical keys are hunger, bladder, energy, social, fun, hygiene and comfort. Empty is omitted. |

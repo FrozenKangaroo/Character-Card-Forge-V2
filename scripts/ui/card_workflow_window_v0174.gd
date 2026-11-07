@@ -10,6 +10,7 @@ var _turn_order_v0174: OptionButton
 var _auto_advance_v0174: CheckBox
 var _director_mode_v0174: CheckBox
 var _inherit_lorebooks_v0174: CheckBox
+var _group_pockets_default_v02117: CheckBox
 var _chaos_mode_v0174: CheckBox
 var _chaos_nsfw_v0174: CheckBox
 var _group_system_prompt_v0174: TextEdit
@@ -72,9 +73,18 @@ func _build_group_fields_v0174() -> void:
 	_auto_advance_v0174 = _check_v0174("Automatically advance to the next member", true)
 	_director_mode_v0174 = _check_v0174("Enable director mode", false)
 	_inherit_lorebooks_v0174 = _check_v0174("Inherit each character's lorebook", true)
+	_group_pockets_default_v02117 = _check_v0174(
+		"Start new group chats with Pockets & Wardrobe", true
+	)
+	_group_pockets_default_v02117.tooltip_text = (
+		"This is the group-level default for new chats. Rawhide also applies each "
+		+ "member character card's Pockets default. Existing chats keep their own "
+		+ "per-member session switches."
+	)
 	_chaos_mode_v0174 = _check_v0174("Enable chaos mode", false)
 	_chaos_nsfw_v0174 = _check_v0174("Allow adult chaos events", false)
 	for checkbox in [_auto_advance_v0174, _director_mode_v0174, _inherit_lorebooks_v0174,
+		_group_pockets_default_v02117,
 		_chaos_mode_v0174, _chaos_nsfw_v0174]:
 		_group_panel_v0174.add_child(checkbox)
 	_group_system_prompt_v0174 = _group_text_v0174("Group system prompt", 110)
@@ -278,7 +288,12 @@ func _capture_group_options_v0174() -> Dictionary:
 		"chaos_mode_enabled": _chaos_mode_v0174.button_pressed,
 		"chaos_nsfw_enabled": _chaos_nsfw_v0174.button_pressed,
 		"baseline_realism_state": _baseline_realism_v0174.text,
-		"default_member_realism_state": _default_realism_v0174.text,
+		"default_member_realism_state": (
+			GROUP_SERVICE_V0174.with_group_pockets_default_for_new_chats_v02117(
+				_default_realism_v0174.text,
+				_group_pockets_default_v02117.button_pressed
+			)
+		),
 		"member_objectives": _parse_object_v0174(_member_objectives_v0174.text),
 		"extensions": _parse_object_v0174(_extensions_v0174.text),
 		"preserved_fields": _preserved_fields_v0174.duplicate(true)
@@ -291,6 +306,11 @@ func _load_group_options_v0174(options: Dictionary) -> void:
 	_auto_advance_v0174.button_pressed = bool(options.get("auto_advance", true))
 	_director_mode_v0174.button_pressed = bool(options.get("director_mode", false))
 	_inherit_lorebooks_v0174.button_pressed = bool(options.get("inherit_character_lorebooks", true))
+	_group_pockets_default_v02117.button_pressed = (
+		GROUP_SERVICE_V0174.group_pockets_default_for_new_chats_v02117(
+			options.get("default_member_realism_state", "{}")
+		)
+	)
 	_chaos_mode_v0174.button_pressed = bool(options.get("chaos_mode_enabled", false))
 	_chaos_nsfw_v0174.button_pressed = bool(options.get("chaos_nsfw_enabled", false))
 	_group_system_prompt_v0174.text = str(options.get("system_prompt", ""))

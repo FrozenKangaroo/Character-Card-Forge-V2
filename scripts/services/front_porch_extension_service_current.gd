@@ -12,6 +12,9 @@ const RAW_HIDE_CHARACTER_V02116 = preload(
 )
 
 const CHAOS_FIELD_ID_V02116 := "fp_chaos_mode"
+const RAW_HIDE_POCKETS_PR708_COMMIT_V02117 := (
+	"04f260783499728ffc93708132eb36900e280868"
+)
 
 
 func is_included(document: Dictionary, field: Dictionary) -> bool:
@@ -189,6 +192,10 @@ func capabilities() -> Dictionary:
 	result["needs_off_keys"] = RAW_HIDE_CHARACTER_V02116.NEED_KEYS.duplicate()
 	result["recovery_modes"] = RAW_HIDE_CHARACTER_V02116.RECOVERY_MODES.duplicate()
 	result["pcd_modes"] = RAW_HIDE_CHARACTER_V02116.PCD_MODES.duplicate()
+	result["rawhide_pockets_pr708_commit"] = (
+		RAW_HIDE_POCKETS_PR708_COMMIT_V02117
+	)
+	result["pockets_character_default_is_tristate"] = true
 	return result
 
 
@@ -196,8 +203,6 @@ func _canonicalise_rawhide_omissions_v02116(document: Dictionary) -> void:
 	var realism := _chaos_realism_v02116(document)
 	if realism.get("needs_off", null) is Array and realism.get("needs_off", []).is_empty():
 		realism.erase("needs_off")
-	if bool(realism.get("pockets_enabled", false)):
-		realism.erase("pockets_enabled")
 	var recovery_value: Variant = realism.get("recovery", null)
 	if recovery_value is Dictionary:
 		var normalised := RAW_HIDE_CHARACTER_V02116.normalise_recovery(recovery_value)

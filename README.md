@@ -15,10 +15,10 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.16 — Front Porch Rawhide Character
-Compatibility**. It adds current Pockets, Needs pace/off, Sex and Recovery fields,
-lossless world-link metadata, group lore-world IDs and Rawhide's Rare/Normal/Wild Chaos
-choices to the existing optional editor. Legacy and unknown Front Porch data remains
+The current source candidate is **v0.21.17 — Rawhide Pockets & Wardrobe Defaults**.
+It clarifies that portable Pockets settings are defaults for new chats, preserves missing,
+explicit-on and explicit-off character values, and adds Rawhide PR #708's confirmed group
+default to the existing group-card editor. Legacy and unknown Front Porch data remains
 round-trip safe.
 
 The v0.21.13 public Idea Source catalog, v0.21.12 global streaming and settings-safety
@@ -138,10 +138,16 @@ Normal, matching Rawhide's default frequency; `false` remains Disabled. Current 
 write both the established boolean enable flag and, when enabled, `chaos_frequency`.
 
 The same editor now exposes current Rawhide `needs_pace`, independent `needs_off` toggles,
-Pockets & Wardrobe enablement, adult-gated Sex and nested Recovery/PCD choices. Older
+the Pockets & Wardrobe default for new chats, adult-gated Sex and nested Recovery/PCD choices. Older
 per-need decay and strength values remain inspectable for old projects but are labelled as
 ignored by current Rawhide. Character and group world links preserve absent versus
 explicit-empty values where the upstream schema distinguishes them.
+
+For Pockets & Wardrobe, a missing character value uses Rawhide's enabled default while
+CCF preserves explicit `true` and `false` values. Group cards also expose the confirmed
+group-wide new-chat default in `default_member_realism_state`; embedded member cards retain
+their own defaults. Existing chat switches are runtime-only Front Porch state and are never
+written into portable cards.
 
 Passwords, two-factor codes and session cookies are not persisted. Network actions are
 user-initiated and capability-gated. Character Card Forge never reads or writes Front
