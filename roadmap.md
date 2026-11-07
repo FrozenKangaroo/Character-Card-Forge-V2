@@ -113,6 +113,13 @@ per-need decay/strength values remain readable and lossless but are clearly labe
 ignored by current Rawhide. Older boolean-only Chaos values still load without migration
 (`true` becomes Normal and `false` remains Disabled).
 
+The v0.21.17 development candidate follows merged Rawhide PR #708 for Pockets & Wardrobe.
+Character editing now presents `pockets_enabled` explicitly as a default for new chats and
+preserves missing, explicit `true` and explicit `false` through portable round trips. The
+existing group-card editor exposes the confirmed group-wide default inside
+`default_member_realism_state`, while embedded member cards retain their own defaults.
+Runtime `pockets_switch` values remain session-owned and are never written into cards.
+
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
 validation, task-oriented user documentation, a smaller manifest-driven CI surface,

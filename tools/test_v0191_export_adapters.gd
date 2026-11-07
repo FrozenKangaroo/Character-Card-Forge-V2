@@ -429,6 +429,7 @@ func _run() -> void:
 						or current_main_text.contains("0.21.14")
 						or current_main_text.contains("0.21.15")
 						or current_main_text.contains("0.21.16")
+						or current_main_text.contains("0.21.17")
 					)
 				),
 		"The live application must mount the v0.19.1 workspace and display its version."

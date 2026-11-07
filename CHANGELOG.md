@@ -6,6 +6,45 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.17] - 2026-11-07
+
+### Highlights
+
+- Updated the optional Front Porch editor for Rawhide PR #708's Pockets & Wardrobe
+  new-chat defaults without treating portable card settings as live conversation switches.
+- Added the confirmed group-level Pockets default to the existing group-card authoring
+  surface while retaining each embedded member card's own default.
+
+### Changes
+
+- Renamed the character control to **Pockets & Wardrobe default for new chats** and added
+  inline help explaining that existing conversations keep their own runtime state.
+- Preserve missing, explicit `true` and explicit `false` character-card values through
+  editing, Character Card V2 export, import and re-export. Missing continues to use
+  Rawhide's enabled default.
+- Store the group-wide default only in the confirmed `pockets_enabled` property inside
+  `default_member_realism_state`; enabled uses Rawhide's canonical omission and disabled
+  writes `false`.
+- Keep member defaults in their embedded character cards and preserve unknown Front Porch
+  and group-card properties.
+- Retain atomic `inventory.worn` and `inventory.carrying` arrays, including punctuation,
+  Unicode and line breaks inside individual values.
+
+### Migration notes
+
+- None. Existing cards and projects retain their prior missing/explicit value, and unknown
+  extension fields remain lossless.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Live one-to-one and group conversation switches remain session-owned Front Porch data.
+  CCF intentionally does not export those runtime values in portable character or group
+  cards.
+
 ## [0.21.16] - 2026-10-30
 
 ### Highlights

@@ -378,8 +378,19 @@ func _add_front_porch_field_v0172(parent: VBoxContainer, field: Dictionary) -> v
 			_suggest_front_porch_field_v0172.bind(field.duplicate(true))
 		)
 		heading.add_child(suggest)
+	var help_text := str(field.get("help_text", "")).strip_edges()
+	if not help_text.is_empty():
+		label.tooltip_text = help_text
+		include.tooltip_text = help_text
+		var help := Label.new()
+		help.text = help_text
+		help.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		help.modulate = Color(0.68, 0.72, 0.82)
+		content.add_child(help)
 
 	var input := _create_front_porch_input_v0172(field, value)
+	if not help_text.is_empty():
+		input.tooltip_text = help_text
 	content.add_child(input)
 	_set_front_porch_input_enabled_v0172(input, included)
 	include.toggled.connect(
