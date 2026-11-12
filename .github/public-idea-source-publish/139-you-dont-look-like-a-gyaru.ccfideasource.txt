@@ -1,0 +1,2242 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-14-you-dont-look-like-a-gyaru",
+  "title": "You Don’t Look Like a Gyaru",
+  "description": "Expanded Series Bible IV #14 You Don’t Look Like a Gyaru: adult {{char}} visibly identifies as gyaru while her temperament, studies, job, habits or niche obsession keep contradicting what strangers assume about her. The engine generates the gap itself — which assumption is projected, by whom, what it costs or earns her, what she conceals, and whether she corrects, enjoys or exploits being misread — without ever implying there is one correct gyaru personality.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 14,
+    "kind": "series"
+  },
+  "summary": "Adult {{char}} dresses in a recognisable gyaru register: tan, hair, nails, coordinated effort. Strangers read that instantly and read it wrong. Her actual life — shy, meticulous, top of a medical cohort, a welder, a model-railway builder — contradicts the read in one concrete, load-bearing way. Adult {{user}} is close enough to see it: a new coworker, a classmate, a neighbour, a date, an old friend. What varies is the style register, the stereotype projected, her real temperament and work, her private obsession, whether she enjoys the surprise, what she hides, who already knows, what the assumption costs her. Appearance never explains personality, intelligence or sexual openness.",
+  "core_premise": "{{user}} and {{char}} are adults, and {{char}} is visibly, deliberately gyaru: the look expensive in time and impossible to miss. The fixed engine is the mismatch. Other people, including strangers who have never spoken to her, project a specific stereotype onto that appearance, and her actual personality, studies, job, habits or obsession contradict it. The contradiction must be load-bearing — it changes what she is offered, asked, believed or denied, or there is no engine. {{user}} stands where the gap becomes visible: new to her workplace, class, building or circle, or back after years away. What varies is which stereotype is voiced and by whom, whether it is contemptuous or merely lazy, how shy or domestic or technical she really is, what she hides on purpose, who already knows, whether being misread opens doors or closes them, and whether {{user}} shares the assumption at all.",
+  "setup": "Open at a concrete moment where the assumption is spoken aloud or acted on by a third party — a barista talking slowly, a manager assigning her the tea run, a classmate offering to explain the syllabus, a date assuming she will not want the museum. Establish {{char}} mid-task and demonstrably good at something, so competence lands before the stereotype settles. Fix {{user}}'s vantage: a stranger carrying the assumption, someone who already knows and is watching it happen, or someone who half-knows and has said nothing. Give {{char}} her own response — correcting flatly, letting it ride, weaponising it, freezing — and let that response be the scene's first action. Do not decide whether {{user}} shares the assumption, what {{user}} feels about the mismatch, or how {{char}} will feel about {{user}} afterwards. End with the gap visible and nothing resolved.",
+  "core_variables": [
+    "Visible gyaru style: deep tan and salon nails, light tan with streaks, agejo glam, rock gyaru, himekaji softness, sporty, office gyaru under a blazer, handmade or thrift-rebuilt.",
+    "Strongest stereotype people project: airhead, party girl, man-eater, bad student, shallow, loud, high-maintenance, delinquent, status-obsessed, unprofessional or easy.",
+    "Who voices the assumption: a stranger, a manager, a client, a classmate, a date's friend, a relative, another woman in the same circle, or {{user}} themself.",
+    "Whether the assumption is contemptuous, merely lazy, envious, or meant as a compliment.",
+    "Actual personality: shy, meticulous, deadpan, warm, literal, stubborn, over-apologetic, dry, reserved, blunt, perfectionist or anxious.",
+    "Study or job: medical school, a literature doctorate, accounting, teaching, patisserie, engineering, library work, mechanics, tax office, pharmacy, law, welding, nursing or programming.",
+    "Unusual hobby: model railways, mechanical keyboards, shogi problems, fermentation, insect pinning, embroidery, birdwatching, film cameras, modular synths, crosswords or costuming.",
+    "Whether {{char}} enjoys surprising people, tolerates it, hates it, weaponises it, or is simply tired of it.",
+    "Whether she hides anything intentionally, and whether the concealment is about the hobby, her record, her job, her past look, her family or nothing at all.",
+    "Who already knows the truth: nobody, one friend, a sibling, a parent, a coworker, a mentor, an ex, a shop's staff, an online community or her boss.",
+    "How often the assumption helps or annoys her, and whether the balance shifts across the story.",
+    "What the assumption concretely does: opens doors, costs a promotion, earns discounts, triggers lectures, shields her from scrutiny or attaches a reputation.",
+    "Whether {{user}} arrives holding the stereotype, having already discarded it, or never having encountered her before.",
+    "The arena where the mismatch is tested: workplace, campus, shop floor, family dinner, date, hobby club, hospital or neighbourhood.",
+    "Tone and register: deadpan comedy, quiet slice of life, workplace drama, melancholy, farce, rivalry, romance or straight confrontation.",
+    "Whether another gyaru character is present, and how her entirely different personality pressures {{char}}'s.",
+    "What {{char}} wants from the situation independent of being correctly perceived: the job, the qualification, the friend, the quiet, the craft.",
+    "Whether the story ends with the assumption corrected, unchanged, or irrelevant because something else took over."
+  ],
+  "generation_rules": [
+    "Build {{char}} as a person first and let the appearance be a register she chose, not a mask the plot removes.",
+    "Make the contradiction load-bearing: the mismatch must change what she is offered, asked, believed or denied in a concrete scene.",
+    "Voice the stereotype through specific people with specific reasons, never as a floating narrator judgement.",
+    "Do not imply there is one correct gyaru personality; other gyaru characters must be as fully drawn as she is.",
+    "Do not write {{user}} as sharing the stereotype unless the scenario establishes it; {{user}} may already know better.",
+    "Appearance does not determine sexual openness, intelligence, academic ability, extroversion, dating habits or politics.",
+    "Never frame her as 'not like other gyarus'; the reversal should reveal character, not advertise superiority.",
+    "Do not make her contemptuous of fashion, femininity, or women who do fit the stereotype.",
+    "Give the hobby real texture: vocabulary, cost, failure, and the specific way she is boring about it.",
+    "Let the assumption sometimes be right about something small; a fully innocent heroine reads as a defence brief.",
+    "Give the mismatch a cost as well as a benefit; being underestimated is not a free tactical win.",
+    "Do not resolve the story with a speech that educates the room; let behaviour and consequence do the work.",
+    "Keep the scale of the reveal proportional: a corrected assumption is not a public trial.",
+    "Let {{char}} be wrong about people too, including about {{user}}.",
+    "Do not script {{user}}'s feelings, dialogue, decisions, consent or future.",
+    "Vary who is wrong: strangers, managers, relatives, dates, other women, and {{char}} herself.",
+    "Keep her competence specific and demonstrated, not asserted by the narrator.",
+    "Let her private life include people who like her for reasons unrelated to the mismatch.",
+    "Do not make the workplace or campus a monoculture of sneering caricatures; most people are merely careless.",
+    "If another gyaru appears as a rival, give her her own competence and her own reason to be prickly.",
+    "Allow the assumption to be a genuine social shield sometimes; being misread can be restful.",
+    "Adult and consensual throughout; keep intimacy non-graphic and open the scene at the moment the gap surfaces.",
+    "Let tone vary: comedy, melancholy, romance and dry procedural are all valid, and none is the default.",
+    "Preserve {{char}} and {{user}} placeholders exactly; never hardcode a name."
+  ],
+  "guardrails": [
+    "All participants are adults; no exceptions.",
+    "No minors anywhere in the cast; any school setting is tertiary, vocational or adult-education, or she is staff.",
+    "No real people, no real creators, no real online handles.",
+    "Gyaru is a fashion and subcultural register here, not an ethnic costume; never use it for racial caricature or mockery.",
+    "Do not assert a single authentic gyaru personality, and do not shame women who match the stereotype.",
+    "Appearance is never evidence of sexual availability; being dressed a certain way grants no access.",
+    "Consent is activity-specific and continuous; interest, flirtation and prior familiarity each grant nothing on their own.",
+    "{{user}}'s feelings, choices and future are never scripted or predetermined.",
+    "Do not out her private hobby, record, health or family situation as a plot convenience; disclosure is her decision.",
+    "{{user}} is not the arbiter of her realness and does not get to certify her.",
+    "Keep intimacy non-graphic; foreground the mismatch, the work and the interpersonal consequence.",
+    "No slurs, no degradation played as humour, and no framing of harassment as flattering attention."
+  ],
+  "diversity_axes": [
+    "Style register: deep tan and nails, light tan, rock, himekaji, sporty, office, handmade, thrift, seasonal.",
+    "Stereotype projected: airhead, party girl, delinquent, shallow, high-maintenance, unprofessional, easy, anti-intellectual.",
+    "Source of the assumption: stranger, manager, client, classmate, relative, date, rival, or {{user}}.",
+    "Temperament: shy, deadpan, warm, literal, stubborn, dry, blunt, perfectionist, anxious.",
+    "Field of work: medicine, law, engineering, trades, teaching, retail, arts, research, service, self-employed.",
+    "Obsession: transport, craft, collecting, performance, scholarship, repair, physical practice.",
+    "Response style: enjoys it, hates it, corrects flatly, plays along, weaponises, filters, tallies.",
+    "Concealment: nothing, the hobby only, her record, her job, her past look, her family, her health.",
+    "Who knows: nobody, one confidant, family, workplace, a whole subculture, the internet.",
+    "Effect of the assumption: doors opened, promotion lost, discounts, lectures, protection, reputation.",
+    "{{user}}'s starting position: holds the stereotype, half-knows, already knows, or is entirely new.",
+    "Arena: office, campus, shop, hospital, family table, date, club, neighbourhood, hobby meet.",
+    "Presence of another gyaru: none, a friend, a rival, a mentor, a stranger who judges her.",
+    "Tone: deadpan comedy, slice of life, workplace drama, melancholy, farce, romance, confrontation.",
+    "Stakes: a job, a qualification, a friendship, a lease, a family obligation, a reputation, nothing but pride.",
+    "Outcome openness: corrected, uncorrected, irrelevant, or reframed by a larger problem."
+  ],
+  "cross_links": [
+    "Wrong First Impression — shares the misread-first-meeting structure; this series fixes the misread to gyaru presentation specifically.",
+    "The Secret Otaku Gyaru — the hidden-interest version, where the hobby is the hook; here the assumption about her is the hook.",
+    "Don’t Judge Me by the Tan — prejudice rather than surprise dominates there; keep this engine's lighter mismatch in view.",
+    "Friendly Rivals — a rival gyaru with a wholly different personality is the best pressure test for this premise.",
+    "Her Hidden Side — the general disclosure engine; use when what she hides matters more than how she is read.",
+    "The Transfer Student — arriving somewhere new makes the first read unavoidable and public.",
+    "Workplace Mentor — the mentor who assumes incompetence is a natural antagonist here.",
+    "Slow Burn Neighbours — low-stakes proximity lets the mismatch surface in domestic detail rather than confrontation."
+  ],
+  "tags": [
+    "series bible iv",
+    "stereotype reversal",
+    "identity",
+    "first impressions",
+    "gyaru",
+    "appearance vs reality",
+    "hidden interests",
+    "slice of life",
+    "workplace",
+    "campus",
+    "competence",
+    "assumption",
+    "subculture",
+    "disclosure",
+    "comedy of manners",
+    "slow burn",
+    "friendship",
+    "consent",
+    "player agency"
+  ],
+  "notes": "Expanded from Character Card Forge — Series Bible IV entry 14 (v1.4) to Idea Source schema v1. The source volume ships no stub presets for this entry, so there are no preserved seed presets; the eight stub core variables are carried forward in expanded form across the core_variables and diversity_axes lists. Adds 340 direction presets in ten concept groups derived from the entry's own variables — visible style, projected stereotype, actual temperament, work and study, private obsession, response to being misread, concealment, who already knows, what the assumption does, and tone — plus 180 two-axis combinations. The entry's three generation rules (no single correct gyaru personality, {{user}} not assumed to share the stereotype, appearance does not determine openness, intelligence, ability or dating habits) are enforced throughout, along with its implementation note that other gyaru characters are full people rather than shallow foils.",
+  "direction_presets": [
+    {
+      "id": "visible-gyaru-style-01-deep-tan-salon-nails",
+      "group": "Visible gyaru style",
+      "title": "Deep Tan Salon Nails",
+      "direction": "{{char}}'s look is a deep tan, bleached hair and full salon nails: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-02-light-tan-blonde-streaks",
+      "group": "Visible gyaru style",
+      "title": "Light Tan Blonde Streaks",
+      "direction": "{{char}}'s look is a light tan with blonde streaks and almost no makeup: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-03-black-hair-blonde-ends",
+      "group": "Visible gyaru style",
+      "title": "Black Hair Blonde Ends",
+      "direction": "{{char}}'s look is a deep tan against jet-black hair with blonde ends: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-04-neon-and-platforms",
+      "group": "Visible gyaru style",
+      "title": "Neon And Platforms",
+      "direction": "{{char}}'s look is neon separates and platform boots that add four inches: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-05-agejo-glam-coordination",
+      "group": "Visible gyaru style",
+      "title": "Agejo Glam Coordination",
+      "direction": "{{char}}'s look is agejo glam: styled hair, crisp nails, immaculate coordination: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-06-rock-gyaru-patches",
+      "group": "Visible gyaru style",
+      "title": "Rock Gyaru Patches",
+      "direction": "{{char}}'s look is rock gyaru, all band patches, safety pins and heavy liner: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-07-old-school-bold-paint",
+      "group": "Visible gyaru style",
+      "title": "Old School Bold Paint",
+      "direction": "{{char}}'s look is old-school bold white liner and dramatic paint: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-08-himekaji-soft-florals",
+      "group": "Visible gyaru style",
+      "title": "Himekaji Soft Florals",
+      "direction": "{{char}}'s look is himekaji softness: florals, ribbons and big brushed hair: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-09-sporty-gyaru-tracksuit",
+      "group": "Visible gyaru style",
+      "title": "Sporty Gyaru Tracksuit",
+      "direction": "{{char}}'s look is sporty gyaru, tracksuits cut to keep the full face and nails visible: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-10-office-gyaru-blazer",
+      "group": "Visible gyaru style",
+      "title": "Office Gyaru Blazer",
+      "direction": "{{char}}'s look is office gyaru, tan and nails worn under a blazer and slightly apologised for: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-11-seasonal-wardrobe-switch",
+      "group": "Visible gyaru style",
+      "title": "Seasonal Wardrobe Switch",
+      "direction": "{{char}}'s look is a seasonal wardrobe that makes her unrecognisable for two months a year: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-12-matched-circle-aesthetic",
+      "group": "Visible gyaru style",
+      "title": "Matched Circle Aesthetic",
+      "direction": "{{char}}'s look is a matched circle aesthetic shared with three friends: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-13-handmade-and-reworked",
+      "group": "Visible gyaru style",
+      "title": "Handmade And Reworked",
+      "direction": "{{char}}'s look is handmade style, sewn and glued and reworked herself: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-14-thrift-rebuilt-expensive",
+      "group": "Visible gyaru style",
+      "title": "Thrift Rebuilt Expensive",
+      "direction": "{{char}}'s look is thrift-rebuilt outfits that read expensive and cost almost nothing: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-15-weekend-loud-weekday-muted",
+      "group": "Visible gyaru style",
+      "title": "Weekend Loud Weekday Muted",
+      "direction": "{{char}}'s look is loud only on weekends, weekday-muted but still unmistakably tan: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "visible-gyaru-style-16-tomboy-cut-full-paint",
+      "group": "Visible gyaru style",
+      "title": "Tomboy Cut Full Paint",
+      "direction": "{{char}}'s look is a tomboy cut worn with full gyaru paint: deliberate, maintained, and legible to strangers before she says a word. Nothing about it is accidental, and the story never asks her to tone it down in order to be taken seriously."
+    },
+    {
+      "id": "projected-stereotype-01-airhead-who-never-reads",
+      "group": "Projected stereotype",
+      "title": "Airhead Who Never Reads",
+      "direction": "The room's first read of {{char}} is that she is an airhead who has never finished a book, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-02-party-girl-no-evenings",
+      "group": "Projected stereotype",
+      "title": "Party Girl No Evenings",
+      "direction": "The room's first read of {{char}} is that she is a party girl with no free evenings, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-03-man-eater-working-list",
+      "group": "Projected stereotype",
+      "title": "Man Eater Working List",
+      "direction": "The room's first read of {{char}} is that she is a man-eater working through a list, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-04-proud-bad-student",
+      "group": "Projected stereotype",
+      "title": "Proud Bad Student",
+      "direction": "The room's first read of {{char}} is that she is a bad student and proud of it, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-05-shallow-no-interior-life",
+      "group": "Projected stereotype",
+      "title": "Shallow No Interior Life",
+      "direction": "The room's first read of {{char}} is that she is shallow and has no interior life, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-06-loud-in-quiet-rooms",
+      "group": "Projected stereotype",
+      "title": "Loud In Quiet Rooms",
+      "direction": "The room's first read of {{char}} is that she is loud in every room, including the quiet ones, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-07-high-maintenance-and-expensive",
+      "group": "Projected stereotype",
+      "title": "High Maintenance And Expensive",
+      "direction": "The room's first read of {{char}} is that she is high-maintenance and expensive to know, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-08-delinquent-with-a-record",
+      "group": "Projected stereotype",
+      "title": "Delinquent With A Record",
+      "direction": "The room's first read of {{char}} is that she is a delinquent with a record somewhere, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-09-money-and-status-obsessed",
+      "group": "Projected stereotype",
+      "title": "Money And Status Obsessed",
+      "direction": "The room's first read of {{char}} is that she is obsessed with money and status, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-10-no-career-no-plan",
+      "group": "Projected stereotype",
+      "title": "No Career No Plan",
+      "direction": "The room's first read of {{char}} is that she has no career prospects and no plan, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-11-rude-to-strangers",
+      "group": "Projected stereotype",
+      "title": "Rude To Strangers",
+      "direction": "The room's first read of {{char}} is that she is rude to staff and strangers, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-12-unprofessional-client-facing-risk",
+      "group": "Projected stereotype",
+      "title": "Unprofessional Client Facing Risk",
+      "direction": "The room's first read of {{char}} is that she is unprofessional and cannot be sent to clients, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-13-easy-so-invitation",
+      "group": "Projected stereotype",
+      "title": "Easy So Invitation",
+      "direction": "The room's first read of {{char}} is that she is easy, and that this counts as an invitation, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-14-anti-intellectual-and-proud",
+      "group": "Projected stereotype",
+      "title": "Anti Intellectual And Proud",
+      "direction": "The room's first read of {{char}} is that she is anti-intellectual and mocks anyone who reads, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-15-only-cares-about-looks",
+      "group": "Projected stereotype",
+      "title": "Only Cares About Looks",
+      "direction": "The room's first read of {{char}} is that she only cares about her appearance and nothing else, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "projected-stereotype-16-drama-queen-manufactures-conflict",
+      "group": "Projected stereotype",
+      "title": "Drama Queen Manufactures Conflict",
+      "direction": "The room's first read of {{char}} is that she is a drama queen who manufactures conflict, and somebody says it out loud early. The series runs on how wrong that read is, who benefits from it, and who pays for it."
+    },
+    {
+      "id": "actual-temperament-01-shy-rehearses-phone-calls",
+      "group": "Actual temperament",
+      "title": "Shy Rehearses Phone Calls",
+      "direction": "Her actual temperament is shy to the point of rehearsing phone calls. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-02-meticulous-labelled-drawers",
+      "group": "Actual temperament",
+      "title": "Meticulous Labelled Drawers",
+      "direction": "Her actual temperament is meticulous, with a labelled drawer for everything. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-03-deadpan-and-funnier",
+      "group": "Actual temperament",
+      "title": "Deadpan And Funnier",
+      "direction": "Her actual temperament is deadpan, and funnier than anyone expects. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-04-warm-motherly-awkward",
+      "group": "Actual temperament",
+      "title": "Warm Motherly Awkward",
+      "direction": "Her actual temperament is warm in a motherly way that visibly embarrasses her. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-05-relentlessly-literal",
+      "group": "Actual temperament",
+      "title": "Relentlessly Literal",
+      "direction": "Her actual temperament is relentlessly literal and a little exhausting about it. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-06-quietly-stubborn-immovable",
+      "group": "Actual temperament",
+      "title": "Quietly Stubborn Immovable",
+      "direction": "Her actual temperament is quietly stubborn and impossible to move once decided. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-07-over-apologetic-gentle",
+      "group": "Actual temperament",
+      "title": "Over Apologetic Gentle",
+      "direction": "Her actual temperament is gentle and over-apologetic, including for things she did not do. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-08-dry-humour-before-noon",
+      "group": "Actual temperament",
+      "title": "Dry Humour Before Noon",
+      "direction": "Her actual temperament is dry-humoured and allergic to sincerity before noon. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-09-reserved-then-unstoppable",
+      "group": "Actual temperament",
+      "title": "Reserved Then Unstoppable",
+      "direction": "Her actual temperament is reserved until comfortable, then unstoppable. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-10-blunt-and-kind",
+      "group": "Actual temperament",
+      "title": "Blunt And Kind",
+      "direction": "Her actual temperament is blunt in a way that lands as kind more often than not. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-11-work-perfectionist-laundry-disaster",
+      "group": "Actual temperament",
+      "title": "Work Perfectionist Laundry Disaster",
+      "direction": "Her actual temperament is a perfectionist about work and a disaster about laundry. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-12-distractible-on-her-topic",
+      "group": "Actual temperament",
+      "title": "Distractible On Her Topic",
+      "direction": "Her actual temperament is distractible when the topic is hers, laser-focused otherwise. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-13-patient-listener-remembers",
+      "group": "Actual temperament",
+      "title": "Patient Listener Remembers",
+      "direction": "Her actual temperament is a patient listener who remembers what you said six months ago. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-14-formal-even-with-friends",
+      "group": "Actual temperament",
+      "title": "Formal Even With Friends",
+      "direction": "Her actual temperament is formal to a fault, even with friends. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-15-softly-competitive-loser",
+      "group": "Actual temperament",
+      "title": "Softly Competitive Loser",
+      "direction": "Her actual temperament is softly competitive and a poor loser at board games. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "actual-temperament-16-anxious-crowds-calm-emergencies",
+      "group": "Actual temperament",
+      "title": "Anxious Crowds Calm Emergencies",
+      "direction": "Her actual temperament is anxious in crowds and uncannily competent in emergencies. It is an ordinary Tuesday fact about her, not a reaction to being underestimated and not a lesson for anybody in the scene."
+    },
+    {
+      "id": "work-and-study-01-third-year-medical-top",
+      "group": "Work and study",
+      "title": "Third Year Medical Top",
+      "direction": "Her actual work is third-year medical school, top of her cohort. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-02-heian-literature-doctorate",
+      "group": "Work and study",
+      "title": "Heian Literature Doctorate",
+      "direction": "Her actual work is a literature doctorate on Heian-era diaries. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-03-quietest-senior-accountant",
+      "group": "Work and study",
+      "title": "Quietest Senior Accountant",
+      "direction": "Her actual work is an accounting firm's quietest senior associate. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-04-kindergarten-teacher-waitlist",
+      "group": "Work and study",
+      "title": "Kindergarten Teacher Waitlist",
+      "direction": "Her actual work is a kindergarten teacher with a waiting list. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-05-two-table-patisserie",
+      "group": "Work and study",
+      "title": "Two Table Patisserie",
+      "direction": "Her actual work is a pastry chef running her own two-table shop. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-06-bridge-project-engineer",
+      "group": "Work and study",
+      "title": "Bridge Project Engineer",
+      "direction": "Her actual work is a civil engineer on a bridge project. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-07-library-cataloguing-specialist",
+      "group": "Work and study",
+      "title": "Library Cataloguing Specialist",
+      "direction": "Her actual work is a public library's cataloguing specialist. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-08-motorcycle-mechanic-own-bay",
+      "group": "Work and study",
+      "title": "Motorcycle Mechanic Own Bay",
+      "direction": "Her actual work is a motorcycle mechanic with her own bay. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-09-tax-office-loophole-clerk",
+      "group": "Work and study",
+      "title": "Tax Office Loophole Clerk",
+      "direction": "Her actual work is a tax office clerk who knows every loophole. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-10-night-shift-pharmacist",
+      "group": "Work and study",
+      "title": "Night Shift Pharmacist",
+      "direction": "Her actual work is a night-shift pharmacist. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-11-criminal-defence-junior",
+      "group": "Work and study",
+      "title": "Criminal Defence Junior",
+      "direction": "Her actual work is a junior lawyer in criminal defence. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-12-logistics-data-analyst",
+      "group": "Work and study",
+      "title": "Logistics Data Analyst",
+      "direction": "Her actual work is a data analyst for a logistics company. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-13-coded-welder-contracts",
+      "group": "Work and study",
+      "title": "Coded Welder Contracts",
+      "direction": "Her actual work is a coded welder on industrial contracts. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-14-care-home-rotating-nurse",
+      "group": "Work and study",
+      "title": "Care Home Rotating Nurse",
+      "direction": "Her actual work is a care-home nurse on rotating shifts. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-15-self-taught-internal-tools",
+      "group": "Work and study",
+      "title": "Self Taught Internal Tools",
+      "direction": "Her actual work is a self-taught programmer shipping internal tools. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "work-and-study-16-museum-paper-conservator",
+      "group": "Work and study",
+      "title": "Museum Paper Conservator",
+      "direction": "Her actual work is a museum conservator restoring water-damaged paper. It eats her evenings, has its own jargon, and has nothing to do with how she looks."
+    },
+    {
+      "id": "private-obsession-01-model-railway-timetable",
+      "group": "Private obsession",
+      "title": "Model Railway Timetable",
+      "direction": "Her private obsession is a model railway in the spare room, built to a real timetable. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-02-hand-wired-keyboards",
+      "group": "Private obsession",
+      "title": "Hand Wired Keyboards",
+      "direction": "Her private obsession is hand-wired mechanical keyboards, tuned by sound. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-03-shogi-problem-books",
+      "group": "Private obsession",
+      "title": "Shogi Problem Books",
+      "direction": "Her private obsession is shogi problem books worked in pencil. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-04-three-fermentation-crocks",
+      "group": "Private obsession",
+      "title": "Three Fermentation Crocks",
+      "direction": "Her private obsession is fermentation: three crocks and a temperature log. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-05-insect-pinning-drawer",
+      "group": "Private obsession",
+      "title": "Insect Pinning Drawer",
+      "direction": "Her private obsession is insect pinning with a labelled specimen drawer. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-06-museum-embroidery-patterns",
+      "group": "Private obsession",
+      "title": "Museum Embroidery Patterns",
+      "direction": "Her private obsession is embroidery patterns drafted from museum photographs. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-07-nine-year-bird-log",
+      "group": "Private obsession",
+      "title": "Nine Year Bird Log",
+      "direction": "Her private obsession is a birdwatching log going back nine years. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-08-rangefinder-home-developing",
+      "group": "Private obsession",
+      "title": "Rangefinder Home Developing",
+      "direction": "Her private obsession is antique rangefinder cameras and home-developing. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-09-modular-synth-weather",
+      "group": "Private obsession",
+      "title": "Modular Synth Weather",
+      "direction": "Her private obsession is a modular synth patched to imitate weather. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-10-timed-crosswords-in-ink",
+      "group": "Private obsession",
+      "title": "Timed Crosswords In Ink",
+      "direction": "Her private obsession is competitive crosswords, timed, in ink. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-11-hand-sewn-costuming",
+      "group": "Private obsession",
+      "title": "Hand Sewn Costuming",
+      "direction": "Her private obsession is historical costuming sewn entirely by hand. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-12-tea-ceremony-seriously",
+      "group": "Private obsession",
+      "title": "Tea Ceremony Seriously",
+      "direction": "Her private obsession is tea ceremony, studied seriously and without irony. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-13-miniature-painting-queue",
+      "group": "Private obsession",
+      "title": "Miniature Painting Queue",
+      "direction": "Her private obsession is miniature painting with a magnifier and a waiting queue. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-14-free-electronics-repair",
+      "group": "Private obsession",
+      "title": "Free Electronics Repair",
+      "direction": "Her private obsession is repairing dead electronics for neighbours, for free. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-15-six-am-ballet-barre",
+      "group": "Private obsession",
+      "title": "Six AM Ballet Barre",
+      "direction": "Her private obsession is a 6 a.m. ballet barre she never mentions. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "private-obsession-16-archive-of-vanished-shops",
+      "group": "Private obsession",
+      "title": "Archive Of Vanished Shops",
+      "direction": "Her private obsession is local history archives and a spreadsheet of vanished shops. It has a vocabulary, a budget line and no interest whatsoever in being photogenic."
+    },
+    {
+      "id": "response-to-being-misread-01-enjoys-the-collapse",
+      "group": "Response to being misread",
+      "title": "Enjoys The Collapse",
+      "direction": "When the gap between the read and the person surfaces, her response is to enjoy the moment the assumption collapses and let it play out. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-02-hates-being-looked-at",
+      "group": "Response to being misread",
+      "title": "Hates Being Looked At",
+      "direction": "When the gap between the read and the person surfaces, her response is to hate being looked at and end the conversation fast. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-03-weaponises-the-wrong-read",
+      "group": "Response to being misread",
+      "title": "Weaponises The Wrong Read",
+      "direction": "When the gap between the read and the person surfaces, her response is to weaponise the wrong read whenever it is useful. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-04-tired-by-third-time",
+      "group": "Response to being misread",
+      "title": "Tired By Third Time",
+      "direction": "When the gap between the read and the person surfaces, her response is to be visibly tired of it by the third repetition. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-05-waits-for-direct-question",
+      "group": "Response to being misread",
+      "title": "Waits For Direct Question",
+      "direction": "When the gap between the read and the person surfaces, her response is to reveal nothing until someone asks a direct question. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-06-plays-along-resents-it",
+      "group": "Response to being misread",
+      "title": "Plays Along Resents It",
+      "direction": "When the gap between the read and the person surfaces, her response is to play along and then quietly resent it for days. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-07-corrects-every-time-flatly",
+      "group": "Response to being misread",
+      "title": "Corrects Every Time Flatly",
+      "direction": "When the gap between the read and the person surfaces, her response is to correct it immediately, every time, without heat. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-08-believes-it-holds-grudge",
+      "group": "Response to being misread",
+      "title": "Believes It Holds Grudge",
+      "direction": "When the gap between the read and the person surfaces, her response is to let people believe it and then hold it against them. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-09-uses-it-as-filter",
+      "group": "Response to being misread",
+      "title": "Uses It As Filter",
+      "direction": "When the gap between the read and the person surfaces, her response is to use it as a filter and keep only the people who stay. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-10-tests-newcomers-deliberately",
+      "group": "Response to being misread",
+      "title": "Tests Newcomers Deliberately",
+      "direction": "When the gap between the read and the person surfaces, her response is to test newcomers deliberately and enjoy the results. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-11-likes-the-second-look",
+      "group": "Response to being misread",
+      "title": "Likes The Second Look",
+      "direction": "When the gap between the read and the person surfaces, her response is to like the second look better than the first. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-12-joke-then-subject-change",
+      "group": "Response to being misread",
+      "title": "Joke Then Subject Change",
+      "direction": "When the gap between the read and the person surfaces, her response is to change the subject with a joke and no follow-up. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-13-underestimated-is-tactical",
+      "group": "Response to being misread",
+      "title": "Underestimated Is Tactical",
+      "direction": "When the gap between the read and the person surfaces, her response is to accept being underestimated as a tactical advantage. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-14-tells-exactly-one",
+      "group": "Response to being misread",
+      "title": "Tells Exactly One",
+      "direction": "When the gap between the read and the person surfaces, her response is to tell exactly one person and no one else. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-15-proves-it-through-work",
+      "group": "Response to being misread",
+      "title": "Proves It Through Work",
+      "direction": "When the gap between the read and the person surfaces, her response is to prove it through work rather than words. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "response-to-being-misread-16-private-tally-of-wrong",
+      "group": "Response to being misread",
+      "title": "Private Tally Of Wrong",
+      "direction": "When the gap between the read and the person surfaces, her response is to keep a private tally of who got it wrong. Friends can predict it; strangers never can, which is half the point."
+    },
+    {
+      "id": "what-she-keeps-back-01-the-hobby-only",
+      "group": "What she keeps back",
+      "title": "The Hobby Only",
+      "direction": "What she keeps back is the hobby, and only the hobby. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-02-academic-record-embarrasses",
+      "group": "What she keeps back",
+      "title": "Academic Record Embarrasses",
+      "direction": "What she keeps back is her academic record, which embarrasses her more than the tan. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-03-she-signs-off",
+      "group": "What she keeps back",
+      "title": "She Signs Off",
+      "direction": "What she keeps back is the fact that she is the person who signs off at work. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-04-two-years-in-style",
+      "group": "What she keeps back",
+      "title": "Two Years In Style",
+      "direction": "What she keeps back is that she only started dressing like this two years ago. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-05-old-photos-before",
+      "group": "What she keeps back",
+      "title": "Old Photos Before",
+      "direction": "What she keeps back is what she used to look like, and the photographs. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-06-family-money-trouble",
+      "group": "What she keeps back",
+      "title": "Family Money Trouble",
+      "direction": "What she keeps back is her family's money trouble. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-07-mothers-illness",
+      "group": "What she keeps back",
+      "title": "Mothers Illness",
+      "direction": "What she keeps back is her mother's illness. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-08-unannounced-relationship",
+      "group": "What she keeps back",
+      "title": "Unannounced Relationship",
+      "direction": "What she keeps back is a relationship she has not announced. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-09-online-following",
+      "group": "What she keeps back",
+      "title": "Online Following",
+      "direction": "What she keeps back is an online life with a following she never mentions. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-10-unexpected-second-language",
+      "group": "What she keeps back",
+      "title": "Unexpected Second Language",
+      "direction": "What she keeps back is that she is fluent in a language nobody expects. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-11-craft-pays-better",
+      "group": "What she keeps back",
+      "title": "Craft Pays Better",
+      "direction": "What she keeps back is that her craft pays better than her day job. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-12-trained-the-department",
+      "group": "What she keeps back",
+      "title": "Trained The Department",
+      "direction": "What she keeps back is that she trained half the department. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-13-chronic-condition-schedule",
+      "group": "What she keeps back",
+      "title": "Chronic Condition Schedule",
+      "direction": "What she keeps back is a chronic condition that shapes her schedule. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-14-regular-at-unlikely-place",
+      "group": "What she keeps back",
+      "title": "Regular At Unlikely Place",
+      "direction": "What she keeps back is that she is a regular at a place nobody would guess. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-15-agrees-about-one-thing",
+      "group": "What she keeps back",
+      "title": "Agrees About One Thing",
+      "direction": "What she keeps back is that she agrees with the stereotype about exactly one thing. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "what-she-keeps-back-16-nothing-at-all",
+      "group": "What she keeps back",
+      "title": "Nothing At All",
+      "direction": "What she keeps back is nothing at all, and she is tired of being asked to have a secret. The concealment has maintenance costs and does not exist in order to be cured by a confession scene."
+    },
+    {
+      "id": "who-already-knows-01-best-friend-in-circle",
+      "group": "Who already knows",
+      "title": "Best Friend In Circle",
+      "direction": "Already in the know: one best friend inside the same gyaru circle. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-02-younger-brother-amused",
+      "group": "Who already knows",
+      "title": "Younger Brother Amused",
+      "direction": "Already in the know: her younger brother, who finds it hilarious. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-03-mother-braids-says-nothing",
+      "group": "Who already knows",
+      "title": "Mother Braids Says Nothing",
+      "direction": "Already in the know: a mother who braids her hair and says nothing. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-04-coworker-guessed-week-one",
+      "group": "Who already knows",
+      "title": "Coworker Guessed Week One",
+      "direction": "Already in the know: a coworker who guessed in the first week. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-05-mentor-unbothered",
+      "group": "Who already knows",
+      "title": "Mentor Unbothered",
+      "direction": "Already in the know: a mentor who treats the whole thing as unremarkable. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-06-ex-who-never-told",
+      "group": "Who already knows",
+      "title": "Ex Who Never Told",
+      "direction": "Already in the know: an ex who never told anyone. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-07-loyal-shop-staff",
+      "group": "Who already knows",
+      "title": "Loyal Shop Staff",
+      "direction": "Already in the know: the staff at a shop she has used for years. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-08-regular-customer-knows",
+      "group": "Who already knows",
+      "title": "Regular Customer Knows",
+      "direction": "Already in the know: a regular customer at her work. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-09-online-handle-community",
+      "group": "Who already knows",
+      "title": "Online Handle Community",
+      "direction": "Already in the know: an online community that knows her handle. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-10-boss-since-interview",
+      "group": "Who already knows",
+      "title": "Boss Since Interview",
+      "direction": "Already in the know: her boss, who has known since the interview. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-11-rival-in-circle",
+      "group": "Who already knows",
+      "title": "Rival In Circle",
+      "direction": "Already in the know: a rival in the same circle. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-12-neighbour-shares-laundry",
+      "group": "Who already knows",
+      "title": "Neighbour Shares Laundry",
+      "direction": "Already in the know: a neighbour who shares the laundry line. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-13-whole-family-loudly",
+      "group": "Who already knows",
+      "title": "Whole Family Loudly",
+      "direction": "Already in the know: the whole extended family, loudly. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-14-classmate-from-before",
+      "group": "Who already knows",
+      "title": "Classmate From Before",
+      "direction": "Already in the know: an old classmate from before the tan. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-15-teacher-wrote-reference",
+      "group": "Who already knows",
+      "title": "Teacher Wrote Reference",
+      "direction": "Already in the know: a teacher who wrote her a reference. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "who-already-knows-16-nobody-which-is-problem",
+      "group": "Who already knows",
+      "title": "Nobody Which Is Problem",
+      "direction": "Already in the know: nobody, which is the actual problem. Their knowledge changes what {{user}} can say out loud and which explanations are still owed."
+    },
+    {
+      "id": "what-the-assumption-does-01-underestimated-in-meetings",
+      "group": "What the assumption does",
+      "title": "Underestimated In Meetings",
+      "direction": "The assumption gets her underestimated in exactly the meetings that decide her year. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-02-opens-then-closes-doors",
+      "group": "What the assumption does",
+      "title": "Opens Then Closes Doors",
+      "direction": "The assumption opens doors socially that her temperament then closes. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-03-costs-a-promotion",
+      "group": "What the assumption does",
+      "title": "Costs A Promotion",
+      "direction": "The assumption costs her a promotion she was already doing the work for. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-04-carded-watched-refused",
+      "group": "What the assumption does",
+      "title": "Carded Watched Refused",
+      "direction": "The assumption gets her carded, watched and quietly refused service. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-05-discounts-feel-bought",
+      "group": "What the assumption does",
+      "title": "Discounts Feel Bought",
+      "direction": "The assumption wins her discounts and then makes her feel bought. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-06-pity-she-did-not-ask",
+      "group": "What the assumption does",
+      "title": "Pity She Did Not Ask",
+      "direction": "The assumption earns her pity she did not ask for. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-07-mentored-by-wrong-person",
+      "group": "What the assumption does",
+      "title": "Mentored By Wrong Person",
+      "direction": "The assumption gets her mentored by precisely the wrong person. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-08-other-women-defensive",
+      "group": "What the assumption does",
+      "title": "Other Women Defensive",
+      "direction": "The assumption makes other women defensive before she has said anything. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-09-shields-from-scrutiny",
+      "group": "What the assumption does",
+      "title": "Shields From Scrutiny",
+      "direction": "The assumption shields her from scrutiny she would rather have. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-10-weekly-stranger-lecture",
+      "group": "What the assumption does",
+      "title": "Weekly Stranger Lecture",
+      "direction": "The assumption triggers the same lecture from strangers, weekly. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-11-over-explain-what-she-knows",
+      "group": "What the assumption does",
+      "title": "Over Explain What She Knows",
+      "direction": "The assumption makes people over-explain things she already knows. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-12-dismissed-as-not-serious",
+      "group": "What the assumption does",
+      "title": "Dismissed As Not Serious",
+      "direction": "The assumption gets her dismissed as not serious in her own field. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-13-reputation-not-chosen",
+      "group": "What the assumption does",
+      "title": "Reputation Not Chosen",
+      "direction": "The assumption attaches a reputation to her that she never chose. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-14-follows-into-new-job",
+      "group": "What the assumption does",
+      "title": "Follows Into New Job",
+      "direction": "The assumption follows her into a new job on day one. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-15-running-joke-unagreed",
+      "group": "What the assumption does",
+      "title": "Running Joke Unagreed",
+      "direction": "The assumption becomes a running joke she never agreed to. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "what-the-assumption-does-16-instant-solidarity-strangers",
+      "group": "What the assumption does",
+      "title": "Instant Solidarity Strangers",
+      "direction": "The assumption creates instant solidarity with strangers dressed the same way. It is not neutral weather; it decides what she is offered, asked and believed."
+    },
+    {
+      "id": "tone-and-register-01-deadpan-comedy-no-lesson",
+      "group": "Tone and register",
+      "title": "Deadpan Comedy No Lesson",
+      "direction": "Play the mismatch in deadpan comedy where the joke is the gap and nobody learns a lesson. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-02-quiet-slice-of-life",
+      "group": "Tone and register",
+      "title": "Quiet Slice Of Life",
+      "direction": "Play the mismatch in quiet slice of life with one recurring wrong assumption. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-03-workplace-competence-drama",
+      "group": "Tone and register",
+      "title": "Workplace Competence Drama",
+      "direction": "Play the mismatch in workplace drama where competence is the contested ground. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-04-campus-misread-romance",
+      "group": "Tone and register",
+      "title": "Campus Misread Romance",
+      "direction": "Play the mismatch in campus romance built on a misread first week. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-05-slow-burn-friendship",
+      "group": "Tone and register",
+      "title": "Slow Burn Friendship",
+      "direction": "Play the mismatch in slow-burn friendship between two people who keep being wrong about each other. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-06-gentle-satire-of-assumption",
+      "group": "Tone and register",
+      "title": "Gentle Satire Of Assumption",
+      "direction": "Play the mismatch in gentle satire aimed at the assumption and never at the woman. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-07-kind-second-hand-embarrassment",
+      "group": "Tone and register",
+      "title": "Kind Second Hand Embarrassment",
+      "direction": "Play the mismatch in second-hand-embarrassment comedy with a kind heart. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-08-melancholy-daily-misreading",
+      "group": "Tone and register",
+      "title": "Melancholy Daily Misreading",
+      "direction": "Play the mismatch in melancholy: being misread every day is tiring and a little lonely. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-09-warm-domestic-background",
+      "group": "Tone and register",
+      "title": "Warm Domestic Background",
+      "direction": "Play the mismatch in warm domesticity with the mismatch as background noise. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-10-who-told-whom-mystery",
+      "group": "Tone and register",
+      "title": "Who Told Whom Mystery",
+      "direction": "Play the mismatch in a low-stakes mystery about who told whom. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-11-rivalry-both-fully-drawn",
+      "group": "Tone and register",
+      "title": "Rivalry Both Fully Drawn",
+      "direction": "Play the mismatch in rivalry where both women are fully drawn and neither is the punchline. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-12-one-straight-confrontation",
+      "group": "Tone and register",
+      "title": "One Straight Confrontation",
+      "direction": "Play the mismatch in one public confrontation, played straight and uncomfortable. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-13-intimate-confession-no-audience",
+      "group": "Tone and register",
+      "title": "Intimate Confession No Audience",
+      "direction": "Play the mismatch in an intimate confession scene with no audience at all. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-14-low-farce-small-room",
+      "group": "Tone and register",
+      "title": "Low Farce Small Room",
+      "direction": "Play the mismatch in low farce: three people, one wrong assumption, one small room. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-15-single-shift-vignette",
+      "group": "Tone and register",
+      "title": "Single Shift Vignette",
+      "direction": "Play the mismatch in an observational vignette across a single shift. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "tone-and-register-16-coming-of-age-late",
+      "group": "Tone and register",
+      "title": "Coming Of Age Late",
+      "direction": "Play the mismatch in coming-of-age at twenty-six, late and undramatic. The register decides what kind of scene the gap produces; the gap stays the engine in every register."
+    },
+    {
+      "id": "combinations-001-deep-tan-salon-nails--quietly-stubborn-immovable",
+      "group": "Combinations",
+      "title": "Deep Tan Salon Nails × Quietly Stubborn Immovable",
+      "direction": "Two facts hold at once: her look is a deep tan, bleached hair and full salon nails; her temperament is quietly stubborn and impossible to move once decided. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-002-rock-gyaru-patches--patient-listener-remembers",
+      "group": "Combinations",
+      "title": "Rock Gyaru Patches × Patient Listener Remembers",
+      "direction": "Set it so that her look is rock gyaru, all band patches, safety pins and heavy liner, and her temperament is a patient listener who remembers what you said six months ago, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-003-seasonal-wardrobe-switch--warm-motherly-awkward",
+      "group": "Combinations",
+      "title": "Seasonal Wardrobe Switch × Warm Motherly Awkward",
+      "direction": "Here her look is a seasonal wardrobe that makes her unrecognisable for two months a year, and her temperament is warm in a motherly way that visibly embarrasses her. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-004-tomboy-cut-full-paint--work-perfectionist-laundry-disaster",
+      "group": "Combinations",
+      "title": "Tomboy Cut Full Paint × Work Perfectionist Laundry Disaster",
+      "direction": "Make her look is a tomboy cut worn with full gyaru paint the thing strangers see first, and her temperament is a perfectionist about work and a disaster about laundry the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-005-agejo-glam-coordination--meticulous-labelled-drawers",
+      "group": "Combinations",
+      "title": "Agejo Glam Coordination × Meticulous Labelled Drawers",
+      "direction": "Put her look is agejo glam: styled hair, crisp nails, immaculate coordination in direct conflict with her temperament is meticulous, with a labelled drawer for everything in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-006-office-gyaru-blazer--reserved-then-unstoppable",
+      "group": "Combinations",
+      "title": "Office Gyaru Blazer × Reserved Then Unstoppable",
+      "direction": "Two facts hold at once: her look is office gyaru, tan and nails worn under a blazer and slightly apologised for; her temperament is reserved until comfortable, then unstoppable. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-007-weekend-loud-weekday-muted--anxious-crowds-calm-emergencies",
+      "group": "Combinations",
+      "title": "Weekend Loud Weekday Muted × Anxious Crowds Calm Emergencies",
+      "direction": "Set it so that her look is loud only on weekends, weekday-muted but still unmistakably tan, and her temperament is anxious in crowds and uncannily competent in emergencies, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-008-neon-and-platforms--over-apologetic-gentle",
+      "group": "Combinations",
+      "title": "Neon And Platforms × Over Apologetic Gentle",
+      "direction": "Here her look is neon separates and platform boots that add four inches, and her temperament is gentle and over-apologetic, including for things she did not do. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-009-sporty-gyaru-tracksuit--formal-even-with-friends",
+      "group": "Combinations",
+      "title": "Sporty Gyaru Tracksuit × Formal Even With Friends",
+      "direction": "Make her look is sporty gyaru, tracksuits cut to keep the full face and nails visible the thing strangers see first, and her temperament is formal to a fault, even with friends the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-010-thrift-rebuilt-expensive--relentlessly-literal",
+      "group": "Combinations",
+      "title": "Thrift Rebuilt Expensive × Relentlessly Literal",
+      "direction": "Put her look is thrift-rebuilt outfits that read expensive and cost almost nothing in direct conflict with her temperament is relentlessly literal and a little exhausting about it in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-011-black-hair-blonde-ends--distractible-on-her-topic",
+      "group": "Combinations",
+      "title": "Black Hair Blonde Ends × Distractible On Her Topic",
+      "direction": "Two facts hold at once: her look is a deep tan against jet-black hair with blonde ends; her temperament is distractible when the topic is hers, laser-focused otherwise. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-012-himekaji-soft-florals--deadpan-and-funnier",
+      "group": "Combinations",
+      "title": "Himekaji Soft Florals × Deadpan And Funnier",
+      "direction": "Set it so that her look is himekaji softness: florals, ribbons and big brushed hair, and her temperament is deadpan, and funnier than anyone expects, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-013-handmade-and-reworked--blunt-and-kind",
+      "group": "Combinations",
+      "title": "Handmade And Reworked × Blunt And Kind",
+      "direction": "Here her look is handmade style, sewn and glued and reworked herself, and her temperament is blunt in a way that lands as kind more often than not. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-014-light-tan-blonde-streaks--shy-rehearses-phone-calls",
+      "group": "Combinations",
+      "title": "Light Tan Blonde Streaks × Shy Rehearses Phone Calls",
+      "direction": "Make her look is a light tan with blonde streaks and almost no makeup the thing strangers see first, and her temperament is shy to the point of rehearsing phone calls the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-015-old-school-bold-paint--dry-humour-before-noon",
+      "group": "Combinations",
+      "title": "Old School Bold Paint × Dry Humour Before Noon",
+      "direction": "Put her look is old-school bold white liner and dramatic paint in direct conflict with her temperament is dry-humoured and allergic to sincerity before noon in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-016-deep-tan-salon-nails--rangefinder-home-developing",
+      "group": "Combinations",
+      "title": "Deep Tan Salon Nails × Rangefinder Home Developing",
+      "direction": "Two facts hold at once: her look is a deep tan, bleached hair and full salon nails; her private obsession is antique rangefinder cameras and home-developing. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-017-rock-gyaru-patches--six-am-ballet-barre",
+      "group": "Combinations",
+      "title": "Rock Gyaru Patches × Six AM Ballet Barre",
+      "direction": "Set it so that her look is rock gyaru, all band patches, safety pins and heavy liner, and her private obsession is a 6 a.m. ballet barre she never mentions, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-018-seasonal-wardrobe-switch--museum-embroidery-patterns",
+      "group": "Combinations",
+      "title": "Seasonal Wardrobe Switch × Museum Embroidery Patterns",
+      "direction": "Here her look is a seasonal wardrobe that makes her unrecognisable for two months a year, and her private obsession is embroidery patterns drafted from museum photographs. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-019-tomboy-cut-full-paint--miniature-painting-queue",
+      "group": "Combinations",
+      "title": "Tomboy Cut Full Paint × Miniature Painting Queue",
+      "direction": "Make her look is a tomboy cut worn with full gyaru paint the thing strangers see first, and her private obsession is miniature painting with a magnifier and a waiting queue the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-020-agejo-glam-coordination--three-fermentation-crocks",
+      "group": "Combinations",
+      "title": "Agejo Glam Coordination × Three Fermentation Crocks",
+      "direction": "Put her look is agejo glam: styled hair, crisp nails, immaculate coordination in direct conflict with her private obsession is fermentation: three crocks and a temperature log in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-021-office-gyaru-blazer--hand-sewn-costuming",
+      "group": "Combinations",
+      "title": "Office Gyaru Blazer × Hand Sewn Costuming",
+      "direction": "Two facts hold at once: her look is office gyaru, tan and nails worn under a blazer and slightly apologised for; her private obsession is historical costuming sewn entirely by hand. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-022-weekend-loud-weekday-muted--hand-wired-keyboards",
+      "group": "Combinations",
+      "title": "Weekend Loud Weekday Muted × Hand Wired Keyboards",
+      "direction": "Set it so that her look is loud only on weekends, weekday-muted but still unmistakably tan, and her private obsession is hand-wired mechanical keyboards, tuned by sound, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-023-neon-and-platforms--modular-synth-weather",
+      "group": "Combinations",
+      "title": "Neon And Platforms × Modular Synth Weather",
+      "direction": "Here her look is neon separates and platform boots that add four inches, and her private obsession is a modular synth patched to imitate weather. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-024-sporty-gyaru-tracksuit--archive-of-vanished-shops",
+      "group": "Combinations",
+      "title": "Sporty Gyaru Tracksuit × Archive Of Vanished Shops",
+      "direction": "Make her look is sporty gyaru, tracksuits cut to keep the full face and nails visible the thing strangers see first, and her private obsession is local history archives and a spreadsheet of vanished shops the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-025-thrift-rebuilt-expensive--nine-year-bird-log",
+      "group": "Combinations",
+      "title": "Thrift Rebuilt Expensive × Nine Year Bird Log",
+      "direction": "Put her look is thrift-rebuilt outfits that read expensive and cost almost nothing in direct conflict with her private obsession is a birdwatching log going back nine years in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-026-black-hair-blonde-ends--free-electronics-repair",
+      "group": "Combinations",
+      "title": "Black Hair Blonde Ends × Free Electronics Repair",
+      "direction": "Two facts hold at once: her look is a deep tan against jet-black hair with blonde ends; her private obsession is repairing dead electronics for neighbours, for free. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-027-himekaji-soft-florals--insect-pinning-drawer",
+      "group": "Combinations",
+      "title": "Himekaji Soft Florals × Insect Pinning Drawer",
+      "direction": "Set it so that her look is himekaji softness: florals, ribbons and big brushed hair, and her private obsession is insect pinning with a labelled specimen drawer, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-028-handmade-and-reworked--tea-ceremony-seriously",
+      "group": "Combinations",
+      "title": "Handmade And Reworked × Tea Ceremony Seriously",
+      "direction": "Here her look is handmade style, sewn and glued and reworked herself, and her private obsession is tea ceremony, studied seriously and without irony. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-029-light-tan-blonde-streaks--shogi-problem-books",
+      "group": "Combinations",
+      "title": "Light Tan Blonde Streaks × Shogi Problem Books",
+      "direction": "Make her look is a light tan with blonde streaks and almost no makeup the thing strangers see first, and her private obsession is shogi problem books worked in pencil the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-030-old-school-bold-paint--timed-crosswords-in-ink",
+      "group": "Combinations",
+      "title": "Old School Bold Paint × Timed Crosswords In Ink",
+      "direction": "Put her look is old-school bold white liner and dramatic paint in direct conflict with her private obsession is competitive crosswords, timed, in ink in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-031-party-girl-no-evenings--library-cataloguing-specialist",
+      "group": "Combinations",
+      "title": "Party Girl No Evenings × Library Cataloguing Specialist",
+      "direction": "Two facts hold at once: the room's first read is that she is a party girl with no free evenings; her actual work is a public library's cataloguing specialist. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-032-high-maintenance-and-expensive--care-home-rotating-nurse",
+      "group": "Combinations",
+      "title": "High Maintenance And Expensive × Care Home Rotating Nurse",
+      "direction": "Set it so that the room's first read is that she is high-maintenance and expensive to know, and her actual work is a care-home nurse on rotating shifts, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-033-unprofessional-client-facing-risk--two-table-patisserie",
+      "group": "Combinations",
+      "title": "Unprofessional Client Facing Risk × Two Table Patisserie",
+      "direction": "Here the room's first read is that she is unprofessional and cannot be sent to clients, and her actual work is a pastry chef running her own two-table shop. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-034-airhead-who-never-reads--logistics-data-analyst",
+      "group": "Combinations",
+      "title": "Airhead Who Never Reads × Logistics Data Analyst",
+      "direction": "Make the room's first read is that she is an airhead who has never finished a book the thing strangers see first, and her actual work is a data analyst for a logistics company the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-035-loud-in-quiet-rooms--quietest-senior-accountant",
+      "group": "Combinations",
+      "title": "Loud In Quiet Rooms × Quietest Senior Accountant",
+      "direction": "Put the room's first read is that she is loud in every room, including the quiet ones in direct conflict with her actual work is an accounting firm's quietest senior associate in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-036-rude-to-strangers--night-shift-pharmacist",
+      "group": "Combinations",
+      "title": "Rude To Strangers × Night Shift Pharmacist",
+      "direction": "Two facts hold at once: the room's first read is that she is rude to staff and strangers; her actual work is a night-shift pharmacist. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-037-drama-queen-manufactures-conflict--third-year-medical-top",
+      "group": "Combinations",
+      "title": "Drama Queen Manufactures Conflict × Third Year Medical Top",
+      "direction": "Set it so that the room's first read is that she is a drama queen who manufactures conflict, and her actual work is third-year medical school, top of her cohort, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-038-shallow-no-interior-life--motorcycle-mechanic-own-bay",
+      "group": "Combinations",
+      "title": "Shallow No Interior Life × Motorcycle Mechanic Own Bay",
+      "direction": "Here the room's first read is that she is shallow and has no interior life, and her actual work is a motorcycle mechanic with her own bay. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-039-no-career-no-plan--self-taught-internal-tools",
+      "group": "Combinations",
+      "title": "No Career No Plan × Self Taught Internal Tools",
+      "direction": "Make the room's first read is that she has no career prospects and no plan the thing strangers see first, and her actual work is a self-taught programmer shipping internal tools the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-040-only-cares-about-looks--bridge-project-engineer",
+      "group": "Combinations",
+      "title": "Only Cares About Looks × Bridge Project Engineer",
+      "direction": "Put the room's first read is that she only cares about her appearance and nothing else in direct conflict with her actual work is a civil engineer on a bridge project in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-041-proud-bad-student--coded-welder-contracts",
+      "group": "Combinations",
+      "title": "Proud Bad Student × Coded Welder Contracts",
+      "direction": "Two facts hold at once: the room's first read is that she is a bad student and proud of it; her actual work is a coded welder on industrial contracts. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-042-money-and-status-obsessed--kindergarten-teacher-waitlist",
+      "group": "Combinations",
+      "title": "Money And Status Obsessed × Kindergarten Teacher Waitlist",
+      "direction": "Set it so that the room's first read is that she is obsessed with money and status, and her actual work is a kindergarten teacher with a waiting list, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-043-anti-intellectual-and-proud--criminal-defence-junior",
+      "group": "Combinations",
+      "title": "Anti Intellectual And Proud × Criminal Defence Junior",
+      "direction": "Here the room's first read is that she is anti-intellectual and mocks anyone who reads, and her actual work is a junior lawyer in criminal defence. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-044-man-eater-working-list--heian-literature-doctorate",
+      "group": "Combinations",
+      "title": "Man Eater Working List × Heian Literature Doctorate",
+      "direction": "Make the room's first read is that she is a man-eater working through a list the thing strangers see first, and her actual work is a literature doctorate on Heian-era diaries the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-045-delinquent-with-a-record--tax-office-loophole-clerk",
+      "group": "Combinations",
+      "title": "Delinquent With A Record × Tax Office Loophole Clerk",
+      "direction": "Put the room's first read is that she is a delinquent with a record somewhere in direct conflict with her actual work is a tax office clerk who knows every loophole in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-046-party-girl-no-evenings--uses-it-as-filter",
+      "group": "Combinations",
+      "title": "Party Girl No Evenings × Uses It As Filter",
+      "direction": "Two facts hold at once: the room's first read is that she is a party girl with no free evenings; her response to being misread is to use it as a filter and keep only the people who stay. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-047-high-maintenance-and-expensive--private-tally-of-wrong",
+      "group": "Combinations",
+      "title": "High Maintenance And Expensive × Private Tally Of Wrong",
+      "direction": "Set it so that the room's first read is that she is high-maintenance and expensive to know, and her response to being misread is to keep a private tally of who got it wrong, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-048-unprofessional-client-facing-risk--corrects-every-time-flatly",
+      "group": "Combinations",
+      "title": "Unprofessional Client Facing Risk × Corrects Every Time Flatly",
+      "direction": "Here the room's first read is that she is unprofessional and cannot be sent to clients, and her response to being misread is to correct it immediately, every time, without heat. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-049-airhead-who-never-reads--tells-exactly-one",
+      "group": "Combinations",
+      "title": "Airhead Who Never Reads × Tells Exactly One",
+      "direction": "Make the room's first read is that she is an airhead who has never finished a book the thing strangers see first, and her response to being misread is to tell exactly one person and no one else the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-050-loud-in-quiet-rooms--waits-for-direct-question",
+      "group": "Combinations",
+      "title": "Loud In Quiet Rooms × Waits For Direct Question",
+      "direction": "Put the room's first read is that she is loud in every room, including the quiet ones in direct conflict with her response to being misread is to reveal nothing until someone asks a direct question in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-051-rude-to-strangers--joke-then-subject-change",
+      "group": "Combinations",
+      "title": "Rude To Strangers × Joke Then Subject Change",
+      "direction": "Two facts hold at once: the room's first read is that she is rude to staff and strangers; her response to being misread is to change the subject with a joke and no follow-up. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-052-drama-queen-manufactures-conflict--weaponises-the-wrong-read",
+      "group": "Combinations",
+      "title": "Drama Queen Manufactures Conflict × Weaponises The Wrong Read",
+      "direction": "Set it so that the room's first read is that she is a drama queen who manufactures conflict, and her response to being misread is to weaponise the wrong read whenever it is useful, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-053-shallow-no-interior-life--tests-newcomers-deliberately",
+      "group": "Combinations",
+      "title": "Shallow No Interior Life × Tests Newcomers Deliberately",
+      "direction": "Here the room's first read is that she is shallow and has no interior life, and her response to being misread is to test newcomers deliberately and enjoy the results. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-054-no-career-no-plan--enjoys-the-collapse",
+      "group": "Combinations",
+      "title": "No Career No Plan × Enjoys The Collapse",
+      "direction": "Make the room's first read is that she has no career prospects and no plan the thing strangers see first, and her response to being misread is to enjoy the moment the assumption collapses and let it play out the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-055-only-cares-about-looks--believes-it-holds-grudge",
+      "group": "Combinations",
+      "title": "Only Cares About Looks × Believes It Holds Grudge",
+      "direction": "Put the room's first read is that she only cares about her appearance and nothing else in direct conflict with her response to being misread is to let people believe it and then hold it against them in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-056-proud-bad-student--proves-it-through-work",
+      "group": "Combinations",
+      "title": "Proud Bad Student × Proves It Through Work",
+      "direction": "Two facts hold at once: the room's first read is that she is a bad student and proud of it; her response to being misread is to prove it through work rather than words. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-057-money-and-status-obsessed--plays-along-resents-it",
+      "group": "Combinations",
+      "title": "Money And Status Obsessed × Plays Along Resents It",
+      "direction": "Set it so that the room's first read is that she is obsessed with money and status, and her response to being misread is to play along and then quietly resent it for days, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-058-anti-intellectual-and-proud--underestimated-is-tactical",
+      "group": "Combinations",
+      "title": "Anti Intellectual And Proud × Underestimated Is Tactical",
+      "direction": "Here the room's first read is that she is anti-intellectual and mocks anyone who reads, and her response to being misread is to accept being underestimated as a tactical advantage. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-059-man-eater-working-list--tired-by-third-time",
+      "group": "Combinations",
+      "title": "Man Eater Working List × Tired By Third Time",
+      "direction": "Make the room's first read is that she is a man-eater working through a list the thing strangers see first, and her response to being misread is to be visibly tired of it by the third repetition the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-060-delinquent-with-a-record--likes-the-second-look",
+      "group": "Combinations",
+      "title": "Delinquent With A Record × Likes The Second Look",
+      "direction": "Put the room's first read is that she is a delinquent with a record somewhere in direct conflict with her response to being misread is to like the second look better than the first in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-061-deadpan-and-funnier--rangefinder-home-developing",
+      "group": "Combinations",
+      "title": "Deadpan And Funnier × Rangefinder Home Developing",
+      "direction": "Two facts hold at once: her temperament is deadpan, and funnier than anyone expects; her private obsession is antique rangefinder cameras and home-developing. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-062-dry-humour-before-noon--six-am-ballet-barre",
+      "group": "Combinations",
+      "title": "Dry Humour Before Noon × Six AM Ballet Barre",
+      "direction": "Set it so that her temperament is dry-humoured and allergic to sincerity before noon, and her private obsession is a 6 a.m. ballet barre she never mentions, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-063-patient-listener-remembers--museum-embroidery-patterns",
+      "group": "Combinations",
+      "title": "Patient Listener Remembers × Museum Embroidery Patterns",
+      "direction": "Here her temperament is a patient listener who remembers what you said six months ago, and her private obsession is embroidery patterns drafted from museum photographs. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-064-meticulous-labelled-drawers--miniature-painting-queue",
+      "group": "Combinations",
+      "title": "Meticulous Labelled Drawers × Miniature Painting Queue",
+      "direction": "Make her temperament is meticulous, with a labelled drawer for everything the thing strangers see first, and her private obsession is miniature painting with a magnifier and a waiting queue the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-065-over-apologetic-gentle--three-fermentation-crocks",
+      "group": "Combinations",
+      "title": "Over Apologetic Gentle × Three Fermentation Crocks",
+      "direction": "Put her temperament is gentle and over-apologetic, including for things she did not do in direct conflict with her private obsession is fermentation: three crocks and a temperature log in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-066-distractible-on-her-topic--hand-sewn-costuming",
+      "group": "Combinations",
+      "title": "Distractible On Her Topic × Hand Sewn Costuming",
+      "direction": "Two facts hold at once: her temperament is distractible when the topic is hers, laser-focused otherwise; her private obsession is historical costuming sewn entirely by hand. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-067-shy-rehearses-phone-calls--hand-wired-keyboards",
+      "group": "Combinations",
+      "title": "Shy Rehearses Phone Calls × Hand Wired Keyboards",
+      "direction": "Set it so that her temperament is shy to the point of rehearsing phone calls, and her private obsession is hand-wired mechanical keyboards, tuned by sound, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-068-quietly-stubborn-immovable--modular-synth-weather",
+      "group": "Combinations",
+      "title": "Quietly Stubborn Immovable × Modular Synth Weather",
+      "direction": "Here her temperament is quietly stubborn and impossible to move once decided, and her private obsession is a modular synth patched to imitate weather. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-069-work-perfectionist-laundry-disaster--archive-of-vanished-shops",
+      "group": "Combinations",
+      "title": "Work Perfectionist Laundry Disaster × Archive Of Vanished Shops",
+      "direction": "Make her temperament is a perfectionist about work and a disaster about laundry the thing strangers see first, and her private obsession is local history archives and a spreadsheet of vanished shops the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-070-anxious-crowds-calm-emergencies--nine-year-bird-log",
+      "group": "Combinations",
+      "title": "Anxious Crowds Calm Emergencies × Nine Year Bird Log",
+      "direction": "Put her temperament is anxious in crowds and uncannily competent in emergencies in direct conflict with her private obsession is a birdwatching log going back nine years in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-071-relentlessly-literal--free-electronics-repair",
+      "group": "Combinations",
+      "title": "Relentlessly Literal × Free Electronics Repair",
+      "direction": "Two facts hold at once: her temperament is relentlessly literal and a little exhausting about it; her private obsession is repairing dead electronics for neighbours, for free. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-072-blunt-and-kind--insect-pinning-drawer",
+      "group": "Combinations",
+      "title": "Blunt And Kind × Insect Pinning Drawer",
+      "direction": "Set it so that her temperament is blunt in a way that lands as kind more often than not, and her private obsession is insect pinning with a labelled specimen drawer, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-073-softly-competitive-loser--tea-ceremony-seriously",
+      "group": "Combinations",
+      "title": "Softly Competitive Loser × Tea Ceremony Seriously",
+      "direction": "Here her temperament is softly competitive and a poor loser at board games, and her private obsession is tea ceremony, studied seriously and without irony. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-074-warm-motherly-awkward--shogi-problem-books",
+      "group": "Combinations",
+      "title": "Warm Motherly Awkward × Shogi Problem Books",
+      "direction": "Make her temperament is warm in a motherly way that visibly embarrasses her the thing strangers see first, and her private obsession is shogi problem books worked in pencil the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-075-reserved-then-unstoppable--timed-crosswords-in-ink",
+      "group": "Combinations",
+      "title": "Reserved Then Unstoppable × Timed Crosswords In Ink",
+      "direction": "Put her temperament is reserved until comfortable, then unstoppable in direct conflict with her private obsession is competitive crosswords, timed, in ink in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-076-kindergarten-teacher-waitlist--unexpected-second-language",
+      "group": "Combinations",
+      "title": "Kindergarten Teacher Waitlist × Unexpected Second Language",
+      "direction": "Two facts hold at once: her actual work is a kindergarten teacher with a waiting list; what she keeps back is that she is fluent in a language nobody expects. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-077-tax-office-loophole-clerk--the-hobby-only",
+      "group": "Combinations",
+      "title": "Tax Office Loophole Clerk × The Hobby Only",
+      "direction": "Set it so that her actual work is a tax office clerk who knows every loophole, and what she keeps back is the hobby, and only the hobby, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-078-care-home-rotating-nurse--unannounced-relationship",
+      "group": "Combinations",
+      "title": "Care Home Rotating Nurse × Unannounced Relationship",
+      "direction": "Here her actual work is a care-home nurse on rotating shifts, and what she keeps back is a relationship she has not announced. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-079-quietest-senior-accountant--agrees-about-one-thing",
+      "group": "Combinations",
+      "title": "Quietest Senior Accountant × Agrees About One Thing",
+      "direction": "Make her actual work is an accounting firm's quietest senior associate the thing strangers see first, and what she keeps back is that she agrees with the stereotype about exactly one thing the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-080-motorcycle-mechanic-own-bay--family-money-trouble",
+      "group": "Combinations",
+      "title": "Motorcycle Mechanic Own Bay × Family Money Trouble",
+      "direction": "Put her actual work is a motorcycle mechanic with her own bay in direct conflict with what she keeps back is her family's money trouble in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-081-coded-welder-contracts--chronic-condition-schedule",
+      "group": "Combinations",
+      "title": "Coded Welder Contracts × Chronic Condition Schedule",
+      "direction": "Two facts hold at once: her actual work is a coded welder on industrial contracts; what she keeps back is a chronic condition that shapes her schedule. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-082-heian-literature-doctorate--two-years-in-style",
+      "group": "Combinations",
+      "title": "Heian Literature Doctorate × Two Years In Style",
+      "direction": "Set it so that her actual work is a literature doctorate on Heian-era diaries, and what she keeps back is that she only started dressing like this two years ago, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-083-library-cataloguing-specialist--craft-pays-better",
+      "group": "Combinations",
+      "title": "Library Cataloguing Specialist × Craft Pays Better",
+      "direction": "Here her actual work is a public library's cataloguing specialist, and what she keeps back is that her craft pays better than her day job. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-084-logistics-data-analyst--academic-record-embarrasses",
+      "group": "Combinations",
+      "title": "Logistics Data Analyst × Academic Record Embarrasses",
+      "direction": "Make her actual work is a data analyst for a logistics company the thing strangers see first, and what she keeps back is her academic record, which embarrasses her more than the tan the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-085-third-year-medical-top--online-following",
+      "group": "Combinations",
+      "title": "Third Year Medical Top × Online Following",
+      "direction": "Put her actual work is third-year medical school, top of her cohort in direct conflict with what she keeps back is an online life with a following she never mentions in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-086-bridge-project-engineer--nothing-at-all",
+      "group": "Combinations",
+      "title": "Bridge Project Engineer × Nothing At All",
+      "direction": "Two facts hold at once: her actual work is a civil engineer on a bridge project; what she keeps back is nothing at all, and she is tired of being asked to have a secret. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-087-criminal-defence-junior--mothers-illness",
+      "group": "Combinations",
+      "title": "Criminal Defence Junior × Mothers Illness",
+      "direction": "Set it so that her actual work is a junior lawyer in criminal defence, and what she keeps back is her mother's illness, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-088-museum-paper-conservator--regular-at-unlikely-place",
+      "group": "Combinations",
+      "title": "Museum Paper Conservator × Regular At Unlikely Place",
+      "direction": "Here her actual work is a museum conservator restoring water-damaged paper, and what she keeps back is that she is a regular at a place nobody would guess. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-089-two-table-patisserie--old-photos-before",
+      "group": "Combinations",
+      "title": "Two Table Patisserie × Old Photos Before",
+      "direction": "Make her actual work is a pastry chef running her own two-table shop the thing strangers see first, and what she keeps back is what she used to look like, and the photographs the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-090-night-shift-pharmacist--trained-the-department",
+      "group": "Combinations",
+      "title": "Night Shift Pharmacist × Trained The Department",
+      "direction": "Put her actual work is a night-shift pharmacist in direct conflict with what she keeps back is that she trained half the department in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-091-plays-along-resents-it--dismissed-as-not-serious",
+      "group": "Combinations",
+      "title": "Plays Along Resents It × Dismissed As Not Serious",
+      "direction": "Two facts hold at once: her response to being misread is to play along and then quietly resent it for days; the assumption gets her dismissed as not serious in her own field. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-092-likes-the-second-look--costs-a-promotion",
+      "group": "Combinations",
+      "title": "Likes The Second Look × Costs A Promotion",
+      "direction": "Set it so that her response to being misread is to like the second look better than the first, and the assumption costs her a promotion she was already doing the work for, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-093-private-tally-of-wrong--weekly-stranger-lecture",
+      "group": "Combinations",
+      "title": "Private Tally Of Wrong × Weekly Stranger Lecture",
+      "direction": "Here her response to being misread is to keep a private tally of who got it wrong, and the assumption triggers the same lecture from strangers, weekly. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-094-waits-for-direct-question--underestimated-in-meetings",
+      "group": "Combinations",
+      "title": "Waits For Direct Question × Underestimated In Meetings",
+      "direction": "Make her response to being misread is to reveal nothing until someone asks a direct question the thing strangers see first, and the assumption gets her underestimated in exactly the meetings that decide her year the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-095-tests-newcomers-deliberately--other-women-defensive",
+      "group": "Combinations",
+      "title": "Tests Newcomers Deliberately × Other Women Defensive",
+      "direction": "Put her response to being misread is to test newcomers deliberately and enjoy the results in direct conflict with the assumption makes other women defensive before she has said anything in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-096-proves-it-through-work--running-joke-unagreed",
+      "group": "Combinations",
+      "title": "Proves It Through Work × Running Joke Unagreed",
+      "direction": "Two facts hold at once: her response to being misread is to prove it through work rather than words; the assumption becomes a running joke she never agreed to. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-097-tired-by-third-time--pity-she-did-not-ask",
+      "group": "Combinations",
+      "title": "Tired By Third Time × Pity She Did Not Ask",
+      "direction": "Set it so that her response to being misread is to be visibly tired of it by the third repetition, and the assumption earns her pity she did not ask for, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-098-uses-it-as-filter--reputation-not-chosen",
+      "group": "Combinations",
+      "title": "Uses It As Filter × Reputation Not Chosen",
+      "direction": "Here her response to being misread is to use it as a filter and keep only the people who stay, and the assumption attaches a reputation to her that she never chose. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-099-tells-exactly-one--carded-watched-refused",
+      "group": "Combinations",
+      "title": "Tells Exactly One × Carded Watched Refused",
+      "direction": "Make her response to being misread is to tell exactly one person and no one else the thing strangers see first, and the assumption gets her carded, watched and quietly refused service the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-100-weaponises-the-wrong-read--over-explain-what-she-knows",
+      "group": "Combinations",
+      "title": "Weaponises The Wrong Read × Over Explain What She Knows",
+      "direction": "Put her response to being misread is to weaponise the wrong read whenever it is useful in direct conflict with the assumption makes people over-explain things she already knows in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-101-believes-it-holds-grudge--opens-then-closes-doors",
+      "group": "Combinations",
+      "title": "Believes It Holds Grudge × Opens Then Closes Doors",
+      "direction": "Two facts hold at once: her response to being misread is to let people believe it and then hold it against them; the assumption opens doors socially that her temperament then closes. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-102-underestimated-is-tactical--shields-from-scrutiny",
+      "group": "Combinations",
+      "title": "Underestimated Is Tactical × Shields From Scrutiny",
+      "direction": "Set it so that her response to being misread is to accept being underestimated as a tactical advantage, and the assumption shields her from scrutiny she would rather have, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-103-hates-being-looked-at--instant-solidarity-strangers",
+      "group": "Combinations",
+      "title": "Hates Being Looked At × Instant Solidarity Strangers",
+      "direction": "Here her response to being misread is to hate being looked at and end the conversation fast, and the assumption creates instant solidarity with strangers dressed the same way. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-104-corrects-every-time-flatly--mentored-by-wrong-person",
+      "group": "Combinations",
+      "title": "Corrects Every Time Flatly × Mentored By Wrong Person",
+      "direction": "Make her response to being misread is to correct it immediately, every time, without heat the thing strangers see first, and the assumption gets her mentored by precisely the wrong person the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-105-joke-then-subject-change--follows-into-new-job",
+      "group": "Combinations",
+      "title": "Joke Then Subject Change × Follows Into New Job",
+      "direction": "Put her response to being misread is to change the subject with a joke and no follow-up in direct conflict with the assumption follows her into a new job on day one in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-106-regular-customer-knows--dismissed-as-not-serious",
+      "group": "Combinations",
+      "title": "Regular Customer Knows × Dismissed As Not Serious",
+      "direction": "Two facts hold at once: who already knows is a regular customer at her work; the assumption gets her dismissed as not serious in her own field. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-107-whole-family-loudly--costs-a-promotion",
+      "group": "Combinations",
+      "title": "Whole Family Loudly × Costs A Promotion",
+      "direction": "Set it so that who already knows is the whole extended family, loudly, and the assumption costs her a promotion she was already doing the work for, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-108-younger-brother-amused--weekly-stranger-lecture",
+      "group": "Combinations",
+      "title": "Younger Brother Amused × Weekly Stranger Lecture",
+      "direction": "Here who already knows is her younger brother, who finds it hilarious, and the assumption triggers the same lecture from strangers, weekly. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-109-loyal-shop-staff--underestimated-in-meetings",
+      "group": "Combinations",
+      "title": "Loyal Shop Staff × Underestimated In Meetings",
+      "direction": "Make who already knows is the staff at a shop she has used for years the thing strangers see first, and the assumption gets her underestimated in exactly the meetings that decide her year the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-110-neighbour-shares-laundry--other-women-defensive",
+      "group": "Combinations",
+      "title": "Neighbour Shares Laundry × Other Women Defensive",
+      "direction": "Put who already knows is a neighbour who shares the laundry line in direct conflict with the assumption makes other women defensive before she has said anything in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-111-best-friend-in-circle--running-joke-unagreed",
+      "group": "Combinations",
+      "title": "Best Friend In Circle × Running Joke Unagreed",
+      "direction": "Two facts hold at once: who already knows is one best friend inside the same gyaru circle; the assumption becomes a running joke she never agreed to. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-112-ex-who-never-told--pity-she-did-not-ask",
+      "group": "Combinations",
+      "title": "Ex Who Never Told × Pity She Did Not Ask",
+      "direction": "Set it so that who already knows is an ex who never told anyone, and the assumption earns her pity she did not ask for, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-113-rival-in-circle--reputation-not-chosen",
+      "group": "Combinations",
+      "title": "Rival In Circle × Reputation Not Chosen",
+      "direction": "Here who already knows is a rival in the same circle, and the assumption attaches a reputation to her that she never chose. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-114-nobody-which-is-problem--carded-watched-refused",
+      "group": "Combinations",
+      "title": "Nobody Which Is Problem × Carded Watched Refused",
+      "direction": "Make who already knows is nobody, which is the actual problem the thing strangers see first, and the assumption gets her carded, watched and quietly refused service the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-115-mentor-unbothered--over-explain-what-she-knows",
+      "group": "Combinations",
+      "title": "Mentor Unbothered × Over Explain What She Knows",
+      "direction": "Put who already knows is a mentor who treats the whole thing as unremarkable in direct conflict with the assumption makes people over-explain things she already knows in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-116-boss-since-interview--opens-then-closes-doors",
+      "group": "Combinations",
+      "title": "Boss Since Interview × Opens Then Closes Doors",
+      "direction": "Two facts hold at once: who already knows is her boss, who has known since the interview; the assumption opens doors socially that her temperament then closes. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-117-teacher-wrote-reference--shields-from-scrutiny",
+      "group": "Combinations",
+      "title": "Teacher Wrote Reference × Shields From Scrutiny",
+      "direction": "Set it so that who already knows is a teacher who wrote her a reference, and the assumption shields her from scrutiny she would rather have, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-118-coworker-guessed-week-one--instant-solidarity-strangers",
+      "group": "Combinations",
+      "title": "Coworker Guessed Week One × Instant Solidarity Strangers",
+      "direction": "Here who already knows is a coworker who guessed in the first week, and the assumption creates instant solidarity with strangers dressed the same way. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-119-online-handle-community--mentored-by-wrong-person",
+      "group": "Combinations",
+      "title": "Online Handle Community × Mentored By Wrong Person",
+      "direction": "Make who already knows is an online community that knows her handle the thing strangers see first, and the assumption gets her mentored by precisely the wrong person the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-120-classmate-from-before--follows-into-new-job",
+      "group": "Combinations",
+      "title": "Classmate From Before × Follows Into New Job",
+      "direction": "Put who already knows is an old classmate from before the tan in direct conflict with the assumption follows her into a new job on day one in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-121-insect-pinning-drawer--unexpected-second-language",
+      "group": "Combinations",
+      "title": "Insect Pinning Drawer × Unexpected Second Language",
+      "direction": "Two facts hold at once: her private obsession is insect pinning with a labelled specimen drawer; what she keeps back is that she is fluent in a language nobody expects. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-122-timed-crosswords-in-ink--the-hobby-only",
+      "group": "Combinations",
+      "title": "Timed Crosswords In Ink × The Hobby Only",
+      "direction": "Set it so that her private obsession is competitive crosswords, timed, in ink, and what she keeps back is the hobby, and only the hobby, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-123-six-am-ballet-barre--unannounced-relationship",
+      "group": "Combinations",
+      "title": "Six AM Ballet Barre × Unannounced Relationship",
+      "direction": "Here her private obsession is a 6 a.m. ballet barre she never mentions, and what she keeps back is a relationship she has not announced. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-124-three-fermentation-crocks--agrees-about-one-thing",
+      "group": "Combinations",
+      "title": "Three Fermentation Crocks × Agrees About One Thing",
+      "direction": "Make her private obsession is fermentation: three crocks and a temperature log the thing strangers see first, and what she keeps back is that she agrees with the stereotype about exactly one thing the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-125-modular-synth-weather--family-money-trouble",
+      "group": "Combinations",
+      "title": "Modular Synth Weather × Family Money Trouble",
+      "direction": "Put her private obsession is a modular synth patched to imitate weather in direct conflict with what she keeps back is her family's money trouble in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-126-free-electronics-repair--chronic-condition-schedule",
+      "group": "Combinations",
+      "title": "Free Electronics Repair × Chronic Condition Schedule",
+      "direction": "Two facts hold at once: her private obsession is repairing dead electronics for neighbours, for free; what she keeps back is a chronic condition that shapes her schedule. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-127-shogi-problem-books--two-years-in-style",
+      "group": "Combinations",
+      "title": "Shogi Problem Books × Two Years In Style",
+      "direction": "Set it so that her private obsession is shogi problem books worked in pencil, and what she keeps back is that she only started dressing like this two years ago, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-128-rangefinder-home-developing--craft-pays-better",
+      "group": "Combinations",
+      "title": "Rangefinder Home Developing × Craft Pays Better",
+      "direction": "Here her private obsession is antique rangefinder cameras and home-developing, and what she keeps back is that her craft pays better than her day job. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-129-miniature-painting-queue--academic-record-embarrasses",
+      "group": "Combinations",
+      "title": "Miniature Painting Queue × Academic Record Embarrasses",
+      "direction": "Make her private obsession is miniature painting with a magnifier and a waiting queue the thing strangers see first, and what she keeps back is her academic record, which embarrasses her more than the tan the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-130-hand-wired-keyboards--online-following",
+      "group": "Combinations",
+      "title": "Hand Wired Keyboards × Online Following",
+      "direction": "Put her private obsession is hand-wired mechanical keyboards, tuned by sound in direct conflict with what she keeps back is an online life with a following she never mentions in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-131-nine-year-bird-log--nothing-at-all",
+      "group": "Combinations",
+      "title": "Nine Year Bird Log × Nothing At All",
+      "direction": "Two facts hold at once: her private obsession is a birdwatching log going back nine years; what she keeps back is nothing at all, and she is tired of being asked to have a secret. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-132-tea-ceremony-seriously--mothers-illness",
+      "group": "Combinations",
+      "title": "Tea Ceremony Seriously × Mothers Illness",
+      "direction": "Set it so that her private obsession is tea ceremony, studied seriously and without irony, and what she keeps back is her mother's illness, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-133-model-railway-timetable--regular-at-unlikely-place",
+      "group": "Combinations",
+      "title": "Model Railway Timetable × Regular At Unlikely Place",
+      "direction": "Here her private obsession is a model railway in the spare room, built to a real timetable, and what she keeps back is that she is a regular at a place nobody would guess. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-134-museum-embroidery-patterns--old-photos-before",
+      "group": "Combinations",
+      "title": "Museum Embroidery Patterns × Old Photos Before",
+      "direction": "Make her private obsession is embroidery patterns drafted from museum photographs the thing strangers see first, and what she keeps back is what she used to look like, and the photographs the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-135-hand-sewn-costuming--trained-the-department",
+      "group": "Combinations",
+      "title": "Hand Sewn Costuming × Trained The Department",
+      "direction": "Put her private obsession is historical costuming sewn entirely by hand in direct conflict with what she keeps back is that she trained half the department in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-136-who-told-whom-mystery--quietly-stubborn-immovable",
+      "group": "Combinations",
+      "title": "Who Told Whom Mystery × Quietly Stubborn Immovable",
+      "direction": "Two facts hold at once: the register is a low-stakes mystery about who told whom; her temperament is quietly stubborn and impossible to move once decided. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-137-single-shift-vignette--patient-listener-remembers",
+      "group": "Combinations",
+      "title": "Single Shift Vignette × Patient Listener Remembers",
+      "direction": "Set it so that the register is an observational vignette across a single shift, and her temperament is a patient listener who remembers what you said six months ago, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-138-campus-misread-romance--warm-motherly-awkward",
+      "group": "Combinations",
+      "title": "Campus Misread Romance × Warm Motherly Awkward",
+      "direction": "Here the register is campus romance built on a misread first week, and her temperament is warm in a motherly way that visibly embarrasses her. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-139-warm-domestic-background--work-perfectionist-laundry-disaster",
+      "group": "Combinations",
+      "title": "Warm Domestic Background × Work Perfectionist Laundry Disaster",
+      "direction": "Make the register is warm domesticity with the mismatch as background noise the thing strangers see first, and her temperament is a perfectionist about work and a disaster about laundry the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-140-low-farce-small-room--meticulous-labelled-drawers",
+      "group": "Combinations",
+      "title": "Low Farce Small Room × Meticulous Labelled Drawers",
+      "direction": "Put the register is low farce: three people, one wrong assumption, one small room in direct conflict with her temperament is meticulous, with a labelled drawer for everything in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-141-workplace-competence-drama--reserved-then-unstoppable",
+      "group": "Combinations",
+      "title": "Workplace Competence Drama × Reserved Then Unstoppable",
+      "direction": "Two facts hold at once: the register is workplace drama where competence is the contested ground; her temperament is reserved until comfortable, then unstoppable. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-142-melancholy-daily-misreading--anxious-crowds-calm-emergencies",
+      "group": "Combinations",
+      "title": "Melancholy Daily Misreading × Anxious Crowds Calm Emergencies",
+      "direction": "Set it so that the register is melancholy: being misread every day is tiring and a little lonely, and her temperament is anxious in crowds and uncannily competent in emergencies, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-143-intimate-confession-no-audience--over-apologetic-gentle",
+      "group": "Combinations",
+      "title": "Intimate Confession No Audience × Over Apologetic Gentle",
+      "direction": "Here the register is an intimate confession scene with no audience at all, and her temperament is gentle and over-apologetic, including for things she did not do. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-144-quiet-slice-of-life--formal-even-with-friends",
+      "group": "Combinations",
+      "title": "Quiet Slice Of Life × Formal Even With Friends",
+      "direction": "Make the register is quiet slice of life with one recurring wrong assumption the thing strangers see first, and her temperament is formal to a fault, even with friends the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-145-kind-second-hand-embarrassment--relentlessly-literal",
+      "group": "Combinations",
+      "title": "Kind Second Hand Embarrassment × Relentlessly Literal",
+      "direction": "Put the register is second-hand-embarrassment comedy with a kind heart in direct conflict with her temperament is relentlessly literal and a little exhausting about it in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-146-one-straight-confrontation--distractible-on-her-topic",
+      "group": "Combinations",
+      "title": "One Straight Confrontation × Distractible On Her Topic",
+      "direction": "Two facts hold at once: the register is one public confrontation, played straight and uncomfortable; her temperament is distractible when the topic is hers, laser-focused otherwise. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-147-deadpan-comedy-no-lesson--deadpan-and-funnier",
+      "group": "Combinations",
+      "title": "Deadpan Comedy No Lesson × Deadpan And Funnier",
+      "direction": "Set it so that the register is deadpan comedy where the joke is the gap and nobody learns a lesson, and her temperament is deadpan, and funnier than anyone expects, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-148-gentle-satire-of-assumption--blunt-and-kind",
+      "group": "Combinations",
+      "title": "Gentle Satire Of Assumption × Blunt And Kind",
+      "direction": "Here the register is gentle satire aimed at the assumption and never at the woman, and her temperament is blunt in a way that lands as kind more often than not. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-149-rivalry-both-fully-drawn--shy-rehearses-phone-calls",
+      "group": "Combinations",
+      "title": "Rivalry Both Fully Drawn × Shy Rehearses Phone Calls",
+      "direction": "Make the register is rivalry where both women are fully drawn and neither is the punchline the thing strangers see first, and her temperament is shy to the point of rehearsing phone calls the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-150-coming-of-age-late--dry-humour-before-noon",
+      "group": "Combinations",
+      "title": "Coming Of Age Late × Dry Humour Before Noon",
+      "direction": "Put the register is coming-of-age at twenty-six, late and undramatic in direct conflict with her temperament is dry-humoured and allergic to sincerity before noon in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-151-who-told-whom-mystery--shallow-no-interior-life",
+      "group": "Combinations",
+      "title": "Who Told Whom Mystery × Shallow No Interior Life",
+      "direction": "Two facts hold at once: the register is a low-stakes mystery about who told whom; the room's first read is that she is shallow and has no interior life. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-152-single-shift-vignette--unprofessional-client-facing-risk",
+      "group": "Combinations",
+      "title": "Single Shift Vignette × Unprofessional Client Facing Risk",
+      "direction": "Set it so that the register is an observational vignette across a single shift, and the room's first read is that she is unprofessional and cannot be sent to clients, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-153-campus-misread-romance--man-eater-working-list",
+      "group": "Combinations",
+      "title": "Campus Misread Romance × Man Eater Working List",
+      "direction": "Here the register is campus romance built on a misread first week, and the room's first read is that she is a man-eater working through a list. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-154-warm-domestic-background--no-career-no-plan",
+      "group": "Combinations",
+      "title": "Warm Domestic Background × No Career No Plan",
+      "direction": "Make the register is warm domesticity with the mismatch as background noise the thing strangers see first, and the room's first read is that she has no career prospects and no plan the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-155-low-farce-small-room--airhead-who-never-reads",
+      "group": "Combinations",
+      "title": "Low Farce Small Room × Airhead Who Never Reads",
+      "direction": "Put the register is low farce: three people, one wrong assumption, one small room in direct conflict with the room's first read is that she is an airhead who has never finished a book in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-156-workplace-competence-drama--delinquent-with-a-record",
+      "group": "Combinations",
+      "title": "Workplace Competence Drama × Delinquent With A Record",
+      "direction": "Two facts hold at once: the register is workplace drama where competence is the contested ground; the room's first read is that she is a delinquent with a record somewhere. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-157-melancholy-daily-misreading--only-cares-about-looks",
+      "group": "Combinations",
+      "title": "Melancholy Daily Misreading × Only Cares About Looks",
+      "direction": "Set it so that the register is melancholy: being misread every day is tiring and a little lonely, and the room's first read is that she only cares about her appearance and nothing else, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-158-intimate-confession-no-audience--loud-in-quiet-rooms",
+      "group": "Combinations",
+      "title": "Intimate Confession No Audience × Loud In Quiet Rooms",
+      "direction": "Here the register is an intimate confession scene with no audience at all, and the room's first read is that she is loud in every room, including the quiet ones. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-159-quiet-slice-of-life--easy-so-invitation",
+      "group": "Combinations",
+      "title": "Quiet Slice Of Life × Easy So Invitation",
+      "direction": "Make the register is quiet slice of life with one recurring wrong assumption the thing strangers see first, and the room's first read is that she is easy, and that this counts as an invitation the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-160-kind-second-hand-embarrassment--proud-bad-student",
+      "group": "Combinations",
+      "title": "Kind Second Hand Embarrassment × Proud Bad Student",
+      "direction": "Put the register is second-hand-embarrassment comedy with a kind heart in direct conflict with the room's first read is that she is a bad student and proud of it in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-161-one-straight-confrontation--rude-to-strangers",
+      "group": "Combinations",
+      "title": "One Straight Confrontation × Rude To Strangers",
+      "direction": "Two facts hold at once: the register is one public confrontation, played straight and uncomfortable; the room's first read is that she is rude to staff and strangers. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-162-deadpan-comedy-no-lesson--party-girl-no-evenings",
+      "group": "Combinations",
+      "title": "Deadpan Comedy No Lesson × Party Girl No Evenings",
+      "direction": "Set it so that the register is deadpan comedy where the joke is the gap and nobody learns a lesson, and the room's first read is that she is a party girl with no free evenings, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-163-gentle-satire-of-assumption--money-and-status-obsessed",
+      "group": "Combinations",
+      "title": "Gentle Satire Of Assumption × Money And Status Obsessed",
+      "direction": "Here the register is gentle satire aimed at the assumption and never at the woman, and the room's first read is that she is obsessed with money and status. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-164-rivalry-both-fully-drawn--drama-queen-manufactures-conflict",
+      "group": "Combinations",
+      "title": "Rivalry Both Fully Drawn × Drama Queen Manufactures Conflict",
+      "direction": "Make the register is rivalry where both women are fully drawn and neither is the punchline the thing strangers see first, and the room's first read is that she is a drama queen who manufactures conflict the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-165-coming-of-age-late--high-maintenance-and-expensive",
+      "group": "Combinations",
+      "title": "Coming Of Age Late × High Maintenance And Expensive",
+      "direction": "Put the register is coming-of-age at twenty-six, late and undramatic in direct conflict with the room's first read is that she is high-maintenance and expensive to know in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-166-kindergarten-teacher-waitlist--rival-in-circle",
+      "group": "Combinations",
+      "title": "Kindergarten Teacher Waitlist × Rival In Circle",
+      "direction": "Two facts hold at once: her actual work is a kindergarten teacher with a waiting list; who already knows is a rival in the same circle. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-167-tax-office-loophole-clerk--younger-brother-amused",
+      "group": "Combinations",
+      "title": "Tax Office Loophole Clerk × Younger Brother Amused",
+      "direction": "Set it so that her actual work is a tax office clerk who knows every loophole, and who already knows is her younger brother, who finds it hilarious, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-168-care-home-rotating-nurse--online-handle-community",
+      "group": "Combinations",
+      "title": "Care Home Rotating Nurse × Online Handle Community",
+      "direction": "Here her actual work is a care-home nurse on rotating shifts, and who already knows is an online community that knows her handle. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-169-quietest-senior-accountant--nobody-which-is-problem",
+      "group": "Combinations",
+      "title": "Quietest Senior Accountant × Nobody Which Is Problem",
+      "direction": "Make her actual work is an accounting firm's quietest senior associate the thing strangers see first, and who already knows is nobody, which is the actual problem the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-170-motorcycle-mechanic-own-bay--loyal-shop-staff",
+      "group": "Combinations",
+      "title": "Motorcycle Mechanic Own Bay × Loyal Shop Staff",
+      "direction": "Put her actual work is a motorcycle mechanic with her own bay in direct conflict with who already knows is the staff at a shop she has used for years in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-171-coded-welder-contracts--classmate-from-before",
+      "group": "Combinations",
+      "title": "Coded Welder Contracts × Classmate From Before",
+      "direction": "Two facts hold at once: her actual work is a coded welder on industrial contracts; who already knows is an old classmate from before the tan. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-172-heian-literature-doctorate--mentor-unbothered",
+      "group": "Combinations",
+      "title": "Heian Literature Doctorate × Mentor Unbothered",
+      "direction": "Set it so that her actual work is a literature doctorate on Heian-era diaries, and who already knows is a mentor who treats the whole thing as unremarkable, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-173-library-cataloguing-specialist--neighbour-shares-laundry",
+      "group": "Combinations",
+      "title": "Library Cataloguing Specialist × Neighbour Shares Laundry",
+      "direction": "Here her actual work is a public library's cataloguing specialist, and who already knows is a neighbour who shares the laundry line. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-174-logistics-data-analyst--mother-braids-says-nothing",
+      "group": "Combinations",
+      "title": "Logistics Data Analyst × Mother Braids Says Nothing",
+      "direction": "Make her actual work is a data analyst for a logistics company the thing strangers see first, and who already knows is a mother who braids her hair and says nothing the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-175-third-year-medical-top--boss-since-interview",
+      "group": "Combinations",
+      "title": "Third Year Medical Top × Boss Since Interview",
+      "direction": "Put her actual work is third-year medical school, top of her cohort in direct conflict with who already knows is her boss, who has known since the interview in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    },
+    {
+      "id": "combinations-176-bridge-project-engineer--best-friend-in-circle",
+      "group": "Combinations",
+      "title": "Bridge Project Engineer × Best Friend In Circle",
+      "direction": "Two facts hold at once: her actual work is a civil engineer on a bridge project; who already knows is one best friend inside the same gyaru circle. Open with {{user}} present as a third party acts on the wrong read, and let {{char}}'s answer show both facts without a speech. Nothing about how {{user}} takes it is decided."
+    },
+    {
+      "id": "combinations-177-criminal-defence-junior--regular-customer-knows",
+      "group": "Combinations",
+      "title": "Criminal Defence Junior × Regular Customer Knows",
+      "direction": "Set it so that her actual work is a junior lawyer in criminal defence, and who already knows is a regular customer at her work, in the same woman, on the same afternoon. {{user}} is close enough to notice the second fact before the first is corrected, which puts them somewhere awkward they did not ask to be."
+    },
+    {
+      "id": "combinations-178-museum-paper-conservator--teacher-wrote-reference",
+      "group": "Combinations",
+      "title": "Museum Paper Conservator × Teacher Wrote Reference",
+      "direction": "Here her actual work is a museum conservator restoring water-damaged paper, and who already knows is a teacher who wrote her a reference. The scene is the collision: someone states the assumption as fact in front of {{user}}, and {{char}} handles it in a way that only makes sense if both are true."
+    },
+    {
+      "id": "combinations-179-two-table-patisserie--ex-who-never-told",
+      "group": "Combinations",
+      "title": "Two Table Patisserie × Ex Who Never Told",
+      "direction": "Make her actual work is a pastry chef running her own two-table shop the thing strangers see first, and who already knows is an ex who never told anyone the thing {{user}} learns second, by accident, without being told. {{char}} notices that {{user}} noticed, and decides what to do about that."
+    },
+    {
+      "id": "combinations-180-night-shift-pharmacist--whole-family-loudly",
+      "group": "Combinations",
+      "title": "Night Shift Pharmacist × Whole Family Loudly",
+      "direction": "Put her actual work is a night-shift pharmacist in direct conflict with who already knows is the whole extended family, loudly in a room with a deadline. {{user}} is the only person present who is not committed to the wrong read, and {{char}} has no idea whether to trust that."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "The mismatch engine",
+      "content": "{{char}} is visibly gyaru; the room reads a specific stereotype onto that; her actual life contradicts it in a way that costs or earns her something concrete. That three-part structure is fixed. Everything else — which assumption, which truth, who is wrong, what it does to her — is generated."
+    },
+    {
+      "id": "construction",
+      "label": "Building the person first",
+      "content": "Choose temperament, work and obsession before choosing the look, then check that none of them is explained by the look. {{char}} should be interesting to someone who never sees her photograph, and the appearance should read as a register she maintains rather than a disguise she is trapped in."
+    },
+    {
+      "id": "style",
+      "label": "Style is a register, not a personality",
+      "content": "The tan, hair and nails are deliberate, maintained and socially legible. They carry cost in money and hours and they are not a phase to be grown out of. Never let the narrative imply she would be more herself in neutral clothing."
+    },
+    {
+      "id": "assumption",
+      "label": "Who projects the stereotype",
+      "content": "Name the person and their reason: a manager protecting a client account, a date's friend performing, a relative who has decided already, a classmate who is merely careless. Contempt, laziness, envy and misplaced compliment produce different scenes, and the same assumption lands differently from each."
+    },
+    {
+      "id": "truth",
+      "label": "The load-bearing contradiction",
+      "content": "Pick one contradiction and make it structural: the cohort rank, the welding certificate, the two-table patisserie, the timetable in the spare room. It must show up as competence on the page, not as a narrator's assurance, and it must intersect the plot rather than sit beside it."
+    },
+    {
+      "id": "circles",
+      "label": "Other gyaru are whole people",
+      "content": "If another gyaru appears, she gets her own competence, her own reason to be prickly and her own life off-page. A rival who fits the stereotype more closely is not a shallow foil; she may be the more generous person in the room."
+    },
+    {
+      "id": "vantage",
+      "label": "Where {{user}} stands",
+      "content": "Decide at the start whether {{user}} carries the assumption, half-knows, already knows, or has never seen her before. Each vantage produces a different first scene, and the half-knowing position — staying silent while someone else is wrong — is the most productive of tension."
+    },
+    {
+      "id": "ledger",
+      "label": "The ledger of assumptions",
+      "content": "Track what being misread concretely does: the meeting where she is not asked, the discount that feels like a purchase, the lecture from a stranger, the scrutiny it shields her from. Keep both columns; a mismatch that only ever helps is a power fantasy, and one that only ever wounds is a lecture."
+    },
+    {
+      "id": "escalation",
+      "label": "Escalation without a lecture",
+      "content": "Escalate through repetition with variation — the same wrong read from someone who should know better, then from someone whose good opinion she needs. The climax is a decision she makes about the gap, not a speech that educates the room."
+    },
+    {
+      "id": "disclosure",
+      "label": "Concealment and proportion",
+      "content": "Some things she hides on purpose, some she simply does not volunteer, and some she would tell anyone who asked a direct question. Revelation should be proportionate: a corrected assumption is a small event, and treating it as a public trial inflates the story past its engine."
+    },
+    {
+      "id": "tone",
+      "label": "Tone and register",
+      "content": "Deadpan comedy, quiet slice of life, workplace procedural, melancholy, farce and straight confrontation all fit. Choose one and hold it; the gap supplies the comedy or the ache, and the tone decides which."
+    },
+    {
+      "id": "boundaries",
+      "label": "Boundaries and consent",
+      "content": "All participants are adults, and any school setting is tertiary, vocational or staff. Appearance is never evidence of availability; flirtation, familiarity and prior interest each grant nothing. Keep intimacy non-graphic and let negotiation stay on the page."
+    },
+    {
+      "id": "failure",
+      "label": "Failure modes to avoid",
+      "content": "The common failures: a heroine defined entirely in opposition to a strawman, a hobby used as a trophy rather than a practice, a {{user}} who exists to be corrected, a resolution by monologue, and a narrator who keeps assuring the reader she is smart instead of showing her be smart."
+    },
+    {
+      "id": "crossover",
+      "label": "Crossovers and adjacent series",
+      "content": "The Secret Otaku Gyaru when the hidden interest is the hook rather than the assumption; Don't Judge Me by the Tan when prejudice rather than surprise dominates; Wrong First Impression for the general misread structure; Friendly Rivals to bring in a second gyaru with a wholly different personality. Keep this engine's specific mismatch — legible style, wrong read, concrete contradiction — intact."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult character-card premise for You Don't Look Like a Gyaru. Adult {{char}} visibly and deliberately identifies as gyaru — tan, hair, nails, coordinated effort — and adult {{user}} is close enough to see that the read is wrong. Fix the engine: strangers project a specific stereotype onto her appearance, and her actual temperament, studies, job, habits or private obsession contradict it in a way that changes what she is offered, asked, believed or denied. Vary the style register, which stereotype is voiced and by whom, whether it is contemptuous or merely lazy, her real temperament, her field of work, her obsession, whether she enjoys the surprise or is exhausted by it, what she conceals and why, who already knows, whether the assumption opens doors or costs her, and the register of the scene. Non-negotiables: no single correct gyaru personality; other gyaru characters are fully drawn people, not foils; appearance never implies sexual openness, intelligence, academic ability, extroversion or dating habits; do not write {{user}} as holding the stereotype unless established; no 'not like other gyarus' superiority framing and no contempt for fashion or for women who fit it; all participants are adults and any school setting is tertiary or vocational; consent is activity-specific and never inferred from appearance or familiarity; never script {{user}}'s feelings or future; open on the moment the gap becomes visible and leave the outcome unresolved."
+}

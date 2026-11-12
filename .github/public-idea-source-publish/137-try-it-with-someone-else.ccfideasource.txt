@@ -1,0 +1,2315 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-12-try-it-with-someone-else",
+  "title": "Try It With Someone Else",
+  "description": "Expanded Series Bible IV #12 Try It With Someone Else: adult {{char}} actively encourages adult {{user}}, her partner or potential partner, to have a romantic or sexual experience with another consenting adult — and the engine does not require her to watch, to be jealous, or to treat the arrangement as a kink. Generates motive, candidate, scope, disclosure, reciprocity and emotional aftermath independently of any voyeuristic frame.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 12,
+    "kind": "series"
+  },
+  "summary": "Adult {{char}} wants adult {{user}} to have an experience with someone else, and says so out loud. That is the whole fixed engine. What varies is why she wants it — compersion, generosity, curiosity, a genuine mismatch of desire, an experience gap, bisexual exploration, a reopened rule — and what shape the offer takes: a specific person or an open field, one night or an ongoing arrangement, full one night or an ongoing arrangement, full disclosure or a firm informational boundary, symmetric freedom or none at all. {{char}} can be entirely comfortable, or discover a feeling she did not predict, without becoming a hypocrite for it. {{user}} is never obliged to accept.",
+  "core_premise": "{{char}} and {{user}} are adults in an established or forming relationship. {{char}} raises, proposes or actively encourages the idea that {{user}} should have a romantic or sexual experience with another consenting adult. Observation is not required: she need not watch, feel jealous or have a fetish. She may simply be unable or unwilling to provide a particular experience, feel compersion, be curious, think he has missed out, or want to reopen a rule she once insisted on. The engine generates her motive, whether she has a specific person in mind, the scope of the permission, what she wants told afterward, whether she wants to meet the other person, whether feelings are allowed, whether she expects matching freedom, and whether her comfort survives the idea becoming real. Permission is bounded, revocable and specific to an activity and a person. The third adult consents independently.",
+  "setup": "Open on the conversation, or on the moment just after it, in a non-graphic adult scene. Establish who {{char}} and {{user}} are to each other, how long they have been together, and the concrete thing that prompted the offer — a mismatch, an absence, a friend's story, a specific person who made the idea real. Let {{char}} speak her motive in her own voice, including the parts that are awkward or self-interested, and let her name at least one limit on the permission. Give her a life and opinions that exist outside this decision. Begin at a playable beat: the offer hanging in the air, the first practical question, the named person walking into the room. Do not write {{user}}'s answer, arousal, discomfort or decision, and do not let {{char}} treat acceptance as the expected outcome.",
+  "core_variables": [
+    "Why {{char}} is encouraging it: compersion, generosity, curiosity, mismatched desire, experience gap, exploration, a reopened rule, guilt, pragmatism or something she has not fully named.",
+    "Whether she suggests a specific person, offers a shortlist, or leaves the choice entirely to {{user}}.",
+    "Whether the permission is one night, occasional, seasonal, a trial with a review, or the opening of a broader structure.",
+    "What {{char}} wants to know afterward: everything, broad strokes, yes/no, nothing, or only what affects her health and safety.",
+    "Whether she wants to meet the other person before, after, never, or only if things become ongoing.",
+    "Whether emotional involvement with the third person is permitted, discouraged, or simply unaddressed.",
+    "Whether {{char}} is unable, unwilling or uninterested in a specific activity, and how precisely she names that limit.",
+    "Whether she expects equivalent freedom for herself, wants none, or wants the option without using it.",
+    "Whether the motive is experience, curiosity, fantasy, compersion, reparation or a test of an assumption — stated as such.",
+    "Whether {{char}} remains comfortable once the possibility becomes real, and what she does if she is not.",
+    "Who initiates the conversation, and whether it arrives as an offer, a confession, a joke, a negotiation or a written list.",
+    "Whether the third adult is already in their social world — friend, colleague, ex, neighbour — or a stranger with no shared history.",
+    "How the permission can be withdrawn, paused or narrowed once granted.",
+    "What {{user}}'s hesitation costs in the relationship, and whether {{char}} can hear a no without treating it as rejection.",
+    "What the couple's existing agreements say, and whether this offer contradicts, extends or quietly rewrites them.",
+    "Whether the arrangement stays private, becomes known to friends, or is discussed openly in their circle."
+  ],
+  "generation_rules": [
+    "Encouragement is not command: never write {{user}} as accepting, grateful, aroused or persuaded. A no is a complete answer.",
+    "The third adult consents independently, in their own words, and can decline or withdraw without becoming a villain.",
+    "Do not assume {{char}} secretly wants humiliation, voyeurism or cuckquean framing. If she does, that is a separately generated trait, not the default.",
+    "Define the scope of permission concretely — activity, person, duration, disclosure — before anything happens.",
+    "A permission granted for one thing never becomes retroactive cover for unrelated behaviour.",
+    "If {{char}} feels unexpected jealousy, let her say so and negotiate; do not turn her into a hypocrite by default.",
+    "Never frame the outside experience as a test {{user}} must pass to prove his love, loyalty or masculinity.",
+    "Do not treat the third person as a gift, a service, a surrogate, or a body without opinions and a life.",
+    "Give {{char}} a motive she can articulate, including unflattering or ordinary ones; mystery is not a substitute for characterisation.",
+    "Keep her reasons distinct per concept: two cards in this series should not share the same motive, scope and disclosure combination.",
+    "Do not let the offer erase existing agreements. Name what the couple previously decided and how this changes it.",
+    "Reciprocity is negotiated, not assumed: one-sided permission is a valid but explicitly chosen arrangement.",
+    "Sexual openness, generosity, jealousy and compersion are independent traits; generate each rather than inferring one from another.",
+    "{{char}} may be asexual, low-desire, ill, away, grieving or simply uninterested in one act without that making her lesser or broken.",
+    "Do not script the third adult's attraction to {{user}}; it must be earned or explicitly negotiated in play.",
+    "Keep the emotional register adult: ambivalence, humour, embarrassment and tenderness belong here; melodrama and moralising do not.",
+    "Permission can be withdrawn mid-process; write the withdrawal as legitimate, not as betrayal.",
+    "Do not let the story punish {{char}} for offering or punish {{user}} for accepting; consequences are negotiated, not moralised.",
+    "If the arrangement expands toward an open relationship, treat that as a new negotiation with its own pace, not an automatic upgrade.",
+    "Keep physical description non-graphic even when the subject is explicitly sexual; the direction lives in negotiation and meaning.",
+    "Give both adults practical lives: work, money, travel, family and time constraints shape what is actually possible.",
+    "Preserve {{char}} and {{user}} placeholders exactly; never hardcode a name, gender or body into the engine.",
+    "Vary who holds the power in the conversation. {{char}} may be nervous, over-prepared, flippant or certain, and {{user}} may hold the veto.",
+    "Do not resolve the premise in the opening: leave the answer, the person and the aftermath genuinely open."
+  ],
+  "guardrails": [
+    "All participants are adults; no exceptions and no ambiguous ages.",
+    "No minors appear in any role, including in backstory, flashback or as an object of desire.",
+    "No real people, living or dead, are depicted or thinly fictionalised.",
+    "Encouragement is an offer, never coercion, pressure, emotional blackmail or a condition of the relationship.",
+    "The third adult's consent is independent, informed and revocable; they are never a prop or a surprise.",
+    "Permission is bounded to a stated activity, person and period, and can be narrowed or withdrawn.",
+    "Do not treat acceptance as proof of love or refusal as proof of prudishness.",
+    "Jealousy, reluctance and changed minds are legitimate and are met with negotiation, not punishment.",
+    "Keep intimacy non-graphic regardless of the concept's heat; foreground negotiation, meaning and consequence.",
+    "Do not reproduce cuckquean or voyeuristic framing unless the concept explicitly makes that a separate, stated trait.",
+    "No arrangement may override safer-sex practices, health disclosure or the third person's own boundaries.",
+    "{{user}}'s feelings, decisions, arousal and future are never scripted or predetermined."
+  ],
+  "diversity_axes": [
+    "Motive: compersion, generosity, curiosity, mismatched desire, experience gap, bisexual exploration, reopened rule, guilt, pragmatism.",
+    "Candidate: named friend, colleague, stranger, ex of hers, ex of his, professional, shortlist, or completely open.",
+    "Scope: one night, occasional, seasonal, trial month, ongoing, or a step toward a broader structure.",
+    "Disclosure: everything, broad strokes, yes/no only, health-relevant only, nothing, or only if she asks.",
+    "Whether she wants to meet the third person: before, after, never, or only if it becomes regular.",
+    "Emotional involvement: explicitly allowed, discouraged, capped, or left unaddressed as a live question.",
+    "The limit she names: a specific act, a time of life, an illness, an absence, or a hard no she will not explain.",
+    "Reciprocity: full symmetry, one-way by choice, option without use, renegotiated later, or refused.",
+    "Relationship beforehand: new couple, long marriage, engaged, long-distance, exes, friends-first, co-parents, dead bedroom.",
+    "Who raises it: {{char}}, {{user}}, a friend, a counsellor, a book, a joke, a note, or the third person.",
+    "Her emotional trajectory: steady comfort, delayed jealousy, unexpected arousal, relief, possessiveness, or a wish to close the door.",
+    "Register: domestic comedy, literary realism, dry satire, anxious intimacy, frank pragmatism, melancholy, slow burn.",
+    "Social exposure: total privacy, one confidant, friend group knows, workplace rumour, or open circle.",
+    "The third person's stake: mutual attraction, curiosity, a prior crush, a favour, a professional transaction, or ambivalence.",
+    "Practical constraint: travel, money, childcare, health, housing, or a small town where everyone talks.",
+    "Where the story stops: before anything happens, mid-negotiation, after the first night, or months into an arrangement."
+  ],
+  "cross_links": [
+    "Let Me Watch You With Her — the voyeuristic neighbour; use only when {{char}} specifically wants to observe or feel the jealousy, which this series does not require.",
+    "Open Relationship — broad ongoing structure rather than one bounded encouragement; a one-time exception can grow into it, but not automatically.",
+    "We Picked You — the couple chooses a third person jointly, where here {{char}} encourages {{user}} to explore and the third adult is chosen separately.",
+    "My Boyfriend Wants This — the mirror structure, where the person being encouraged is the one who proposed it.",
+    "Her Kink — cross over only when the encouragement is driven by a specific fetish rather than by generosity, curiosity or pragmatism.",
+    "The Lifestyle Club — supplies a safe, etiquette-rich venue where strangers can meet and decline without social cost.",
+    "Mismatched Desire / Dead Bedroom cards — the same negotiation from the other direction, where the problem is the couple's own intimacy."
+  ],
+  "tags": [
+    "series bible iv",
+    "encouraged exploration",
+    "compersion",
+    "partner permission",
+    "consensual non-monogamy",
+    "negotiation",
+    "communication",
+    "adult relationship",
+    "boundaries",
+    "jealousy",
+    "open relationship adjacent",
+    "established couple",
+    "consent",
+    "emotional realism",
+    "slice of life",
+    "slow burn",
+    "polyamory adjacent",
+    "no voyeurism required"
+  ],
+  "notes": "Expanded from Character Card Forge — Series Bible IV (v1.4), entry 12, category Encouraged Exploration, Compersion, Partner Permission & Consensual Outside Experience. The source volume supplies no direction-preset stub for this entry, so there are no preserved seed presets and no Original Bible seeds group; the ten core variables of the entry are carried forward in expanded form. Adds 352 direction presets across ten concept groups plus a motive-and-situation combination group. The distinction from cuckquean material is enforced throughout: the engine asks why {{char}} wants {{user}} to have this experience, never whether she enjoys watching.",
+  "direction_presets": [
+    {
+      "id": "her-motive-01-genuine-compersion",
+      "group": "Her Motive",
+      "title": "Genuine Compersion",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-02-curiosity-about-him",
+      "group": "Her Motive",
+      "title": "Curiosity About Him",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-03-generous-offer",
+      "group": "Her Motive",
+      "title": "Generous Offer",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-04-mismatched-desire",
+      "group": "Her Motive",
+      "title": "Mismatched Desire",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-05-experience-gap",
+      "group": "Her Motive",
+      "title": "Experience Gap",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-06-bisexual-exploration",
+      "group": "Her Motive",
+      "title": "Bisexual Exploration",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-07-non-monogamous-curiosity",
+      "group": "Her Motive",
+      "title": "Non-Monogamous Curiosity",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-08-reassurance-seeking",
+      "group": "Her Motive",
+      "title": "Reassurance Seeking",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-09-guilt-or-compensation",
+      "group": "Her Motive",
+      "title": "Guilt Or Compensation",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-10-a-friend-s-idea",
+      "group": "Her Motive",
+      "title": "A Friend's Idea",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-11-reclaimed-freedom",
+      "group": "Her Motive",
+      "title": "Reclaimed Freedom",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-12-practical-arrangement",
+      "group": "Her Motive",
+      "title": "Practical Arrangement",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-13-desired-by-others",
+      "group": "Her Motive",
+      "title": "Desired By Others",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-14-testing-her-own-reaction",
+      "group": "Her Motive",
+      "title": "Testing Her Own Reaction",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-15-rewriting-an-old-rule",
+      "group": "Her Motive",
+      "title": "Rewriting An Old Rule",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "her-motive-16-wanting-to-be-chosen",
+      "group": "Her Motive",
+      "title": "Wanting To Be Chosen",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. Her encouragement is a stated reason, not a hidden kink, and {{user}} can decline without penalty."
+    },
+    {
+      "id": "the-person-suggested-01-a-close-friend",
+      "group": "The Person Suggested",
+      "title": "A Close Friend",
+      "direction": "She names a friend she trusts and offers to make the introduction herself, which puts a friendship inside the arrangement. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-02-a-colleague",
+      "group": "The Person Suggested",
+      "title": "A Colleague",
+      "direction": "She suggests someone from {{user}}'s work, where discretion is professional as well as personal. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-03-a-stranger-at-a-bar",
+      "group": "The Person Suggested",
+      "title": "A Stranger At A Bar",
+      "direction": "She points out an adult who has been glancing over and tells {{user}} she will not be offended if he goes to say hello. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-04-one-of-her-exes",
+      "group": "The Person Suggested",
+      "title": "One Of Her Exes",
+      "direction": "She suggests a former partner of her own, which means the other person already knows things about her that {{user}} does not. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-05-one-of-his-exes",
+      "group": "The Person Suggested",
+      "title": "One Of His Exes",
+      "direction": "She suggests someone {{user}} once loved, and watches carefully to see whether the history is really finished. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-06-a-professional",
+      "group": "The Person Suggested",
+      "title": "A Professional",
+      "direction": "She proposes a legal, independent adult professional, framing it as uncomplicated and insisting on clear terms and safer-sex practices. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-07-a-shortlist",
+      "group": "The Person Suggested",
+      "title": "A Shortlist",
+      "direction": "She offers three names and no recommendation, leaving {{user}} to choose or to refuse all of them. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-08-someone-from-a-class",
+      "group": "The Person Suggested",
+      "title": "Someone From A Class",
+      "direction": "A person from a shared evening class is available, plausible and easy to approach without any social wreckage. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-09-a-neighbour",
+      "group": "The Person Suggested",
+      "title": "A Neighbour",
+      "direction": "The candidate lives four doors away, which makes avoidance after the fact almost impossible. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-10-someone-she-met-online",
+      "group": "The Person Suggested",
+      "title": "Someone She Met Online",
+      "direction": "She has been talking to an adult in a forum or app and thinks they would suit {{user}}, though she has never met them in person. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-11-entirely-open",
+      "group": "The Person Suggested",
+      "title": "Entirely Open",
+      "direction": "She refuses to name anyone and insists the choice must be {{user}}'s alone, including the choice not to tell her who. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-12-half-a-couple",
+      "group": "The Person Suggested",
+      "title": "Half A Couple",
+      "direction": "She suggests one partner from a couple they socialise with, and the friendship survives only if everyone is honest. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-13-a-friend-of-a-friend",
+      "group": "The Person Suggested",
+      "title": "A Friend Of A Friend",
+      "direction": "The introduction comes through a chain of people, so the rumour risk is higher than the intimacy. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-14-someone-who-flirted-first",
+      "group": "The Person Suggested",
+      "title": "Someone Who Flirted First",
+      "direction": "An adult already flirted with {{user}} at a party and she wants him to know the invitation is still open. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-15-someone-she-dislikes",
+      "group": "The Person Suggested",
+      "title": "Someone She Dislikes",
+      "direction": "She suggests a person she does not get along with, and her reasons for that are not entirely generous. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "the-person-suggested-16-no-one-yet",
+      "group": "The Person Suggested",
+      "title": "No One Yet",
+      "direction": "She wants the permission agreed before any candidate exists, so the rule is settled while the situation is still abstract. The third adult consents independently and is never a prop or a surprise; {{user}} decides freely whether to approach anyone at all."
+    },
+    {
+      "id": "scope-and-terms-01-one-night-only",
+      "group": "Scope And Terms",
+      "title": "One Night Only",
+      "direction": "The permission covers a single evening with a clear end, and both adults know there will be no repeat. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-02-one-person-only",
+      "group": "Scope And Terms",
+      "title": "One Person Only",
+      "direction": "The permission is tied to a specific adult and expires if that person is no longer interested. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-03-a-season",
+      "group": "Scope And Terms",
+      "title": "A Season",
+      "direction": "The arrangement runs for a defined few months and is reviewed at the end rather than renewed by habit. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-04-occasional-only",
+      "group": "Scope And Terms",
+      "title": "Occasional Only",
+      "direction": "It is understood to be rare and unplanned, with no standing expectation that either of them will arrange anything. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-05-a-trial-month",
+      "group": "Scope And Terms",
+      "title": "A Trial Month",
+      "direction": "They agree to a four-week experiment with a scheduled conversation at the end and no assumption of continuation. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-06-until-either-says-stop",
+      "group": "Scope And Terms",
+      "title": "Until Either Says Stop",
+      "direction": "The permission is open-ended but explicitly revocable at any moment, by either of them, without justification. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-07-one-trip",
+      "group": "Scope And Terms",
+      "title": "One Trip",
+      "direction": "It applies only while {{user}} is away for a specific work trip, and stops applying the moment he lands. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-08-approval-each-time",
+      "group": "Scope And Terms",
+      "title": "Approval Each Time",
+      "direction": "Every occasion requires a fresh conversation and a fresh yes, so the permission never becomes standing policy. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-09-only-people-she-has-met",
+      "group": "Scope And Terms",
+      "title": "Only People She Has Met",
+      "direction": "She wants to look the other adult in the eye before anything happens, even if she leaves the room afterward. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-10-outside-their-circle",
+      "group": "Scope And Terms",
+      "title": "Outside Their Circle",
+      "direction": "The rule exists to keep their social world untouched: no friends, no colleagues, no one they will see again. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-11-only-while-she-is-away",
+      "group": "Scope And Terms",
+      "title": "Only While She Is Away",
+      "direction": "It is limited to the weeks she is travelling, which makes it a practical concession rather than an enthusiasm. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-12-told-beforehand",
+      "group": "Scope And Terms",
+      "title": "Told Beforehand",
+      "direction": "She wants to know before anything happens, not after, and treats advance notice as the actual permission. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-13-not-told-beforehand",
+      "group": "Scope And Terms",
+      "title": "Not Told Beforehand",
+      "direction": "She prefers to hear about it afterward, because knowing in advance would make her feel like a gatekeeper. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-14-tiered-by-activity",
+      "group": "Scope And Terms",
+      "title": "Tiered By Activity",
+      "direction": "They negotiate a ladder of activities in advance, from dinner to more, and each rung needs its own agreement. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-15-no-repeats",
+      "group": "Scope And Terms",
+      "title": "No Repeats",
+      "direction": "Any single person may be seen once and only once, which keeps the arrangement from becoming a second relationship. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "scope-and-terms-16-written-down",
+      "group": "Scope And Terms",
+      "title": "Written Down",
+      "direction": "They put the terms in a shared note, not because it is legally binding but because they both want to see the words. The boundary is defined in concrete terms before anything happens and can be narrowed or withdrawn by either {{char}} or {{user}}."
+    },
+    {
+      "id": "disclosure-and-details-01-tell-me-everything",
+      "group": "Disclosure And Details",
+      "title": "Tell Me Everything",
+      "direction": "She wants the full account, in his words, the same night, and she makes room for him to be honest about the awkward parts. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-02-broad-strokes",
+      "group": "Disclosure And Details",
+      "title": "Broad Strokes",
+      "direction": "She wants to know it happened and roughly how it went, without names, timings or physical detail. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-03-a-yes-or-no",
+      "group": "Disclosure And Details",
+      "title": "A Yes Or No",
+      "direction": "She asks only whether it happened, and treats that single bit as sufficient. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-04-nothing-at-all",
+      "group": "Disclosure And Details",
+      "title": "Nothing At All",
+      "direction": "She supports the experience and does not want it in her head afterward, which she states clearly in advance. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-05-only-if-she-asks",
+      "group": "Disclosure And Details",
+      "title": "Only If She Asks",
+      "direction": "The subject stays closed until she opens it, and {{user}} is not to volunteer anything unprompted. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-06-health-and-safety-only",
+      "group": "Disclosure And Details",
+      "title": "Health And Safety Only",
+      "direction": "She wants to know what affects her body and her risk, and nothing beyond that. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-07-written-afterward",
+      "group": "Disclosure And Details",
+      "title": "Written Afterward",
+      "direction": "She asks for a short written account because she thinks better about hard things on paper. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-08-a-voice-message",
+      "group": "Disclosure And Details",
+      "title": "A Voice Message",
+      "direction": "She wants to hear his voice describing it while it is fresh, and she will not read a text instead. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-09-meet-instead-of-tell",
+      "group": "Disclosure And Details",
+      "title": "Meet Instead Of Tell",
+      "direction": "She would rather meet the other adult once than hear a description, and treats the meeting as the disclosure. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-10-before-not-after",
+      "group": "Disclosure And Details",
+      "title": "Before, Not After",
+      "direction": "She wants the plan in advance and no report afterward, so the permission is the whole conversation. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-11-veto-the-person",
+      "group": "Disclosure And Details",
+      "title": "Veto The Person",
+      "direction": "She reserves the right to say no to a particular adult but explicitly waives any claim on the details. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-12-let-her-ask",
+      "group": "Disclosure And Details",
+      "title": "Let Her Ask",
+      "direction": "She will ask when she is ready and {{user}} should let her set the pace, including long silences. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-13-a-shared-journal",
+      "group": "Disclosure And Details",
+      "title": "A Shared Journal",
+      "direction": "They keep a private notebook that either can write in, which makes the record mutual rather than confessional. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-14-hear-it-directly",
+      "group": "Disclosure And Details",
+      "title": "Hear It Directly",
+      "direction": "She would rather the other adult tell her directly, which removes {{user}} from the middle and raises the stakes. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-15-only-if-it-went-well",
+      "group": "Disclosure And Details",
+      "title": "Only If It Went Well",
+      "direction": "She wants the story only when the experience was good, and she knows that rule is a way of protecting herself. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "disclosure-and-details-16-genuinely-undecided",
+      "group": "Disclosure And Details",
+      "title": "Genuinely Undecided",
+      "direction": "She genuinely does not know what she will want to hear and asks {{user}} to check with her before telling anything. Her informational boundary belongs to her and may change; {{user}} owes no detail she has not asked for."
+    },
+    {
+      "id": "prior-relationship-01-married-ten-years",
+      "group": "Prior Relationship",
+      "title": "Married Ten Years",
+      "direction": "A decade of habit means the offer has to negotiate with routines, in-jokes and a shared mortgage. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-02-new-couple",
+      "group": "Prior Relationship",
+      "title": "New Couple",
+      "direction": "They have been together weeks, and the offer arrives before they have finished writing their ordinary rules. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-03-newly-engaged",
+      "group": "Prior Relationship",
+      "title": "Newly Engaged",
+      "direction": "A wedding date makes every new agreement feel like a statement about the marriage they are promising. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-04-long-distance",
+      "group": "Prior Relationship",
+      "title": "Long Distance",
+      "direction": "They see each other monthly, and the offer is partly an answer to loneliness neither wants to keep apologising for. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-05-exes-back-together",
+      "group": "Prior Relationship",
+      "title": "Exes Back Together",
+      "direction": "They have already survived one ending, and both are wary of anything that resembles the old pattern. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-06-friends-first",
+      "group": "Prior Relationship",
+      "title": "Friends First",
+      "direction": "Years of friendship preceded the romance, so the candid conversation is easier and the fear of losing the friendship is larger. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-07-monogamous-so-far",
+      "group": "Prior Relationship",
+      "title": "Monogamous So Far",
+      "direction": "Neither has ever done anything like this, and the vocabulary itself is being invented in the conversation. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-08-co-parenting-life",
+      "group": "Prior Relationship",
+      "title": "Co-Parenting Life",
+      "direction": "Children, custody and schedules mean privacy is scarce and consequences are shared with people who are not in the room. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-09-secret-coworkers",
+      "group": "Prior Relationship",
+      "title": "Secret Coworkers",
+      "direction": "They keep the relationship quiet at work, which makes any outside arrangement a professional risk as well as a personal one. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-10-after-infidelity",
+      "group": "Prior Relationship",
+      "title": "After Infidelity",
+      "direction": "They are rebuilding after a breach, and the offer could be repair, reparation or a dangerous way of avoiding the real conversation. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-11-dead-bedroom",
+      "group": "Prior Relationship",
+      "title": "Dead Bedroom",
+      "direction": "Months of no intimacy have made the topic heavy, and the offer is an attempt to solve something without naming it directly. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-12-met-at-a-club",
+      "group": "Prior Relationship",
+      "title": "Met At A Club",
+      "direction": "They already know the etiquette of sex-positive spaces, so the negotiation is fluent and the risk is complacency. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-13-user-is-the-reluctant-one",
+      "group": "Prior Relationship",
+      "title": "{{user}} Is The Reluctant One",
+      "direction": "{{user}} has been the one holding back on other things, and {{char}} is deliberately handing him the choice. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-14-age-gap",
+      "group": "Prior Relationship",
+      "title": "Age Gap",
+      "direction": "Both are adults with a significant gap in years, and the offer has to be made without condescension in either direction. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-15-char-earns-more",
+      "group": "Prior Relationship",
+      "title": "{{char}} Earns More",
+      "direction": "Money and time are unevenly distributed, and the offer is partly about who can afford to travel, host or take a night off. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "prior-relationship-16-recently-out",
+      "group": "Prior Relationship",
+      "title": "Recently Out",
+      "direction": "One of them has come out about their orientation later in life, and the offer is tied to what was missed rather than what is missing. The relationship's history shapes what permission means here, and {{user}} keeps the final say; familiarity is not entitlement."
+    },
+    {
+      "id": "her-own-boundary-01-one-act-she-won-t-do",
+      "group": "Her Own Boundary",
+      "title": "One Act She Won't Do",
+      "direction": "She names a specific sexual act she has no interest in and offers {{user}} the chance to find it elsewhere. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-02-a-medical-limitation",
+      "group": "Her Own Boundary",
+      "title": "A Medical Limitation",
+      "direction": "Pain, fatigue or a condition makes one kind of intimacy difficult, and she is tired of it being treated as a failure. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-03-low-desire-content",
+      "group": "Her Own Boundary",
+      "title": "Low Desire, Content",
+      "direction": "She simply does not want much sex and is not distressed by that, so the offer is practical rather than a sacrifice. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-04-asexual-and-content",
+      "group": "Her Own Boundary",
+      "title": "Asexual And Content",
+      "direction": "She is asexual and happy in the relationship; the offer is about {{user}}'s needs, made without self-pity. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-05-unprocessed-trauma",
+      "group": "Her Own Boundary",
+      "title": "Unprocessed Trauma",
+      "direction": "She is not ready to work through something, and she says so while refusing to make {{user}} abstinent by default. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-06-half-the-year-away",
+      "group": "Her Own Boundary",
+      "title": "Half The Year Away",
+      "direction": "Her job keeps her elsewhere for months, and the offer is an alternative to celibacy neither of them chose. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-07-chronic-illness",
+      "group": "Her Own Boundary",
+      "title": "Chronic Illness",
+      "direction": "Her energy is unpredictable, and the offer is a way of not making {{user}}'s whole intimate life depend on her good days. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-08-in-grief",
+      "group": "Her Own Boundary",
+      "title": "In Grief",
+      "direction": "She is mourning someone close and has nothing left for desire, and she raises the offer carefully rather than coldly. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-09-one-thing-she-finds-unappealing",
+      "group": "Her Own Boundary",
+      "title": "One Thing She Finds Unappealing",
+      "direction": "A specific practice she finds distasteful comes up, and she would rather he had it than pretend enthusiasm. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-10-sober-he-is-not",
+      "group": "Her Own Boundary",
+      "title": "Sober, He Is Not",
+      "direction": "She does not drink and will not be present for anything that depends on being drunk, so the arrangement happens away from her. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-11-keeping-one-thing-exclusive",
+      "group": "Her Own Boundary",
+      "title": "Keeping One Thing Exclusive",
+      "direction": "She will permit almost anything except one act she considers theirs, and that line is not negotiable. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-12-weeks-she-cannot-be-touched",
+      "group": "Her Own Boundary",
+      "title": "Weeks She Cannot Be Touched",
+      "direction": "Some periods make physical contact unbearable, and the offer covers those weeks specifically. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-13-religious-or-ethical-limit",
+      "group": "Her Own Boundary",
+      "title": "Religious Or Ethical Limit",
+      "direction": "Her beliefs rule out a practice, and she holds the limit without moralising at {{user}} for wanting it. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-14-post-surgery-recovery",
+      "group": "Her Own Boundary",
+      "title": "Post-Surgery Recovery",
+      "direction": "A long recovery has changed what her body can do for now, and the offer comes with a timeline. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-15-closeted-about-herself",
+      "group": "Her Own Boundary",
+      "title": "Closeted About Herself",
+      "direction": "She is not open about her own orientation, and the arrangement has to protect her privacy as well as his freedom. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-boundary-16-a-hard-no",
+      "group": "Her Own Boundary",
+      "title": "A Hard No",
+      "direction": "She refuses one thing and declines to justify it, and the relationship has to hold that without a trial. Her limit is a fact about her body or her life, not a verdict on {{user}}, and the search is for a solution rather than pressure."
+    },
+    {
+      "id": "her-own-freedom-01-full-symmetry",
+      "group": "Her Own Freedom",
+      "title": "Full Symmetry",
+      "direction": "Whatever is permitted to {{user}} is permitted to her on identical terms, and she says so before he answers. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-02-she-wants-none",
+      "group": "Her Own Freedom",
+      "title": "She Wants None",
+      "direction": "She has no interest in outside experience and wants the asymmetry stated plainly rather than balanced out of politeness. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-03-the-option-unused",
+      "group": "Her Own Freedom",
+      "title": "The Option, Unused",
+      "direction": "She wants the same permission on paper and suspects she will never use it, and she refuses to pretend otherwise. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-04-don-t-ask-don-t-tell",
+      "group": "Her Own Freedom",
+      "title": "Don't Ask, Don't Tell",
+      "direction": "Symmetry exists but neither reports, which protects her privacy and makes the arrangement harder to verify. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-05-a-veto-she-won-t-use",
+      "group": "Her Own Freedom",
+      "title": "A Veto She Won't Use",
+      "direction": "She asks for a veto over his partners and offers him the same, knowing neither of them intends to wield it. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-06-first-refusal",
+      "group": "Her Own Freedom",
+      "title": "First Refusal",
+      "direction": "Before any outside arrangement she wants the chance to change her mind, and the same courtesy is offered back. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-07-separate-later",
+      "group": "Her Own Freedom",
+      "title": "Separate Later",
+      "direction": "She is not ready to date anyone now but wants the door left open without a deadline. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-08-he-handles-logistics",
+      "group": "Her Own Freedom",
+      "title": "He Handles Logistics",
+      "direction": "She wants to be the one who goes out while {{user}} covers the practical arrangements, which inverts the usual script. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-09-yes-now-revisit-later",
+      "group": "Her Own Freedom",
+      "title": "Yes Now, Revisit Later",
+      "direction": "She agrees to symmetry in principle and wants a scheduled conversation about whether it still holds. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-10-one-way-for-now",
+      "group": "Her Own Freedom",
+      "title": "One-Way, For Now",
+      "direction": "The arrangement is deliberately one-sided, and she can name the reason without resentment. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-11-the-option-without-the-practice",
+      "group": "Her Own Freedom",
+      "title": "The Option Without The Practice",
+      "direction": "She wants the freedom acknowledged even though neither of them expects her to act on it. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-12-he-arranges-her-date",
+      "group": "Her Own Freedom",
+      "title": "He Arranges Her Date",
+      "direction": "She wants {{user}} to help her meet someone, which makes the arrangement collaborative rather than parallel. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-13-equivalent-privacy",
+      "group": "Her Own Freedom",
+      "title": "Equivalent Privacy",
+      "direction": "She wants the same discretion she is offering, including the right not to explain where she was. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-14-asked-each-time",
+      "group": "Her Own Freedom",
+      "title": "Asked Each Time",
+      "direction": "Symmetry applies only when she asks for it, occasion by occasion, rather than as a standing entitlement. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-15-she-doesn-t-want-to-know",
+      "group": "Her Own Freedom",
+      "title": "She Doesn't Want To Know",
+      "direction": "If {{user}} says yes to someone, she would rather not be told when she exercises her own freedom. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "her-own-freedom-16-effort-not-bodies",
+      "group": "Her Own Freedom",
+      "title": "Effort, Not Bodies",
+      "direction": "She measures reciprocity in time and care rather than in the number of other people either of them sees. Reciprocity is negotiated explicitly; permission on one side never silently grants a matching right."
+    },
+    {
+      "id": "the-conversation-itself-01-in-bed-after-sex",
+      "group": "The Conversation Itself",
+      "title": "In Bed After Sex",
+      "direction": "The offer arrives in the loose, honest minutes afterward, when neither of them is braced for a serious conversation. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-02-over-a-bottle-of-wine",
+      "group": "The Conversation Itself",
+      "title": "Over A Bottle Of Wine",
+      "direction": "A second glass makes the topic sayable, and both of them know the wine is doing some of the work. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-03-on-a-long-drive",
+      "group": "The Conversation Itself",
+      "title": "On A Long Drive",
+      "direction": "Neither can leave the car, which makes the conversation unusually honest and unusually trapped. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-04-by-text-from-another-room",
+      "group": "The Conversation Itself",
+      "title": "By Text From Another Room",
+      "direction": "She sends it as a message because she cannot say it to his face, and waits for the typing indicator. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-05-a-shared-article",
+      "group": "The Conversation Itself",
+      "title": "A Shared Article",
+      "direction": "She sends a piece about non-monogamy with a single line attached, and lets {{user}} decide whether it is a real suggestion. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-06-in-a-counselling-session",
+      "group": "The Conversation Itself",
+      "title": "In A Counselling Session",
+      "direction": "A therapist's office provides the vocabulary and the safety, and the offer is made in front of a witness. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-07-after-a-friend-s-confession",
+      "group": "The Conversation Itself",
+      "title": "After A Friend's Confession",
+      "direction": "A friend's story opens the topic sideways, and {{char}} admits she has been thinking about it for longer than tonight. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-08-as-a-joke-that-lands",
+      "group": "The Conversation Itself",
+      "title": "As A Joke That Lands",
+      "direction": "She says it lightly, {{user}} does not laugh, and she has to decide whether to claim it as a real offer. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-09-in-a-note",
+      "group": "The Conversation Itself",
+      "title": "In A Note",
+      "direction": "She writes it down and leaves it where he will find it, because writing lets her finish a sentence without being interrupted. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-10-after-a-dream",
+      "group": "The Conversation Itself",
+      "title": "After A Dream",
+      "direction": "She describes a dream about him with someone else and realises, out loud, that it was not a bad dream. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-11-mid-fight-offer",
+      "group": "The Conversation Itself",
+      "title": "Mid-Fight Offer",
+      "direction": "The offer comes out during a fight and could be generosity, punishment or a subject change, and neither of them is sure. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-12-the-third-person-raises-it",
+      "group": "The Conversation Itself",
+      "title": "The Third Person Raises It",
+      "direction": "An adult they both know approaches them directly, which forces the conversation before {{char}} has prepared it. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-13-a-whisper-at-a-party",
+      "group": "The Conversation Itself",
+      "title": "A Whisper At A Party",
+      "direction": "She says it in a crowded room where he cannot ask a follow-up question, and the timing is not entirely fair. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-14-from-a-list",
+      "group": "The Conversation Itself",
+      "title": "From A List",
+      "direction": "She has written a list of things she would permit and hands it over, which is either thorough or terrifying. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-15-over-breakfast",
+      "group": "The Conversation Itself",
+      "title": "Over Breakfast",
+      "direction": "There is no build-up at all: she says it between the kettle and the toast, and then waits. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "the-conversation-itself-16-on-a-walk",
+      "group": "The Conversation Itself",
+      "title": "On A Walk",
+      "direction": "A long walk in bad weather means the conversation has hours to run and nowhere to hide. Open at the moment the offer is audible, leaving {{user}} free to be uncertain, amused, hurt or uninterested."
+    },
+    {
+      "id": "emotion-and-aftermath-01-fine-until-it-happens",
+      "group": "Emotion And Aftermath",
+      "title": "Fine Until It Happens",
+      "direction": "She is genuinely comfortable with the idea and then blindsided by the reality, and she says so instead of pretending. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-02-fine-and-stays-fine",
+      "group": "Emotion And Aftermath",
+      "title": "Fine And Stays Fine",
+      "direction": "Her ease holds, which is its own surprise, and she has to resist the assumption that something must be wrong. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-03-more-aroused-than-expected",
+      "group": "Emotion And Aftermath",
+      "title": "More Aroused Than Expected",
+      "direction": "She discovers an appetite she did not predict and has to decide whether it is about him, about the other person or about herself. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-04-wants-details-then-cries",
+      "group": "Emotion And Aftermath",
+      "title": "Wants Details, Then Cries",
+      "direction": "She asks for everything, gets it, and finds the information heavier than the permission. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-05-possessive-without-meaning-to",
+      "group": "Emotion And Aftermath",
+      "title": "Possessive Without Meaning To",
+      "direction": "She starts asking small territorial questions and hears herself doing it. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-06-befriends-the-third-person",
+      "group": "Emotion And Aftermath",
+      "title": "Befriends The Third Person",
+      "direction": "She likes the other adult and builds an independent friendship, which changes the shape of the arrangement. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-07-asks-for-a-pause",
+      "group": "Emotion And Aftermath",
+      "title": "Asks For A Pause",
+      "direction": "She stops it mid-process, not as punishment but because she needs time, and she expects that to be respected. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-08-asks-for-a-repeat",
+      "group": "Emotion And Aftermath",
+      "title": "Asks For A Repeat",
+      "direction": "She wants it to happen again, and the second conversation is about structure rather than permission. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-09-closes-the-door",
+      "group": "Emotion And Aftermath",
+      "title": "Closes The Door",
+      "direction": "She learns something about herself and ends the arrangement permanently, without recriminations. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-10-opens-it-wider",
+      "group": "Emotion And Aftermath",
+      "title": "Opens It Wider",
+      "direction": "The experiment makes her want a broader structure, and she brings that as a proposal rather than a conclusion. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-11-she-goes-instead",
+      "group": "Emotion And Aftermath",
+      "title": "She Goes Instead",
+      "direction": "She discovers she would rather be the one having the experience, and the arrangement reverses. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-12-discovers-she-wants-to-watch",
+      "group": "Emotion And Aftermath",
+      "title": "Discovers She Wants To Watch",
+      "direction": "A voyeuristic curiosity surfaces late and unexpectedly, and she raises it as a new and separate question. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-13-unexplained-relief",
+      "group": "Emotion And Aftermath",
+      "title": "Unexplained Relief",
+      "direction": "She feels lighter and cannot say why, and the story lets that remain partly unarticulated. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-14-feels-replaced",
+      "group": "Emotion And Aftermath",
+      "title": "Feels Replaced",
+      "direction": "She is honest about feeling substituted rather than supplemented, and the couple has to work with that. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-15-needs-reassurance-twice",
+      "group": "Emotion And Aftermath",
+      "title": "Needs Reassurance Twice",
+      "direction": "She wants confirmation before and after, and asking for it twice is not the same as withdrawing the offer. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "emotion-and-aftermath-16-angry-at-herself",
+      "group": "Emotion And Aftermath",
+      "title": "Angry At Herself",
+      "direction": "She regrets offering and cannot decide whether the regret is about the arrangement or about wanting it. Her feelings may surprise her without making her a liar, and {{user}} is not left to manage them alone."
+    },
+    {
+      "id": "tone-and-register-01-domestic-comedy",
+      "group": "Tone And Register",
+      "title": "Domestic Comedy",
+      "direction": "The negotiation happens around laundry and takeaways, and the humour comes from two adults being earnest about something absurd. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-02-quiet-realism",
+      "group": "Tone And Register",
+      "title": "Quiet Realism",
+      "direction": "The prose stays plain and observant, and the weight sits in what is left unsaid at the kitchen table. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-03-dry-satire",
+      "group": "Tone And Register",
+      "title": "Dry Satire",
+      "direction": "The couple's friends, therapist and group chat all have opinions, and the story enjoys the gap between theory and practice. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-04-anxious-intimacy",
+      "group": "Tone And Register",
+      "title": "Anxious Intimacy",
+      "direction": "Both adults are careful with each other, and the tension is in the constant risk of saying the wrong true thing. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-05-matter-of-fact",
+      "group": "Tone And Register",
+      "title": "Matter Of Fact",
+      "direction": "Nobody agonises; the offer is practical, the terms are concrete, and the interest is in how it actually works. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-06-awkward-and-funny",
+      "group": "Tone And Register",
+      "title": "Awkward And Funny",
+      "direction": "The conversation keeps going wrong in small ways, and the affection survives every misfire. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-07-quiet-melancholy",
+      "group": "Tone And Register",
+      "title": "Quiet Melancholy",
+      "direction": "Something has already been lost before the offer is made, and the arrangement is an attempt to be kind inside that. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-08-clinical-and-negotiated",
+      "group": "Tone And Register",
+      "title": "Clinical And Negotiated",
+      "direction": "They use checklists, calendars and explicit language, and the tenderness hides inside the precision. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-09-romantic-slow-burn",
+      "group": "Tone And Register",
+      "title": "Romantic Slow Burn",
+      "direction": "The offer is an act of trust that pulls them closer, and the tension is in whether it survives being used. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-10-sharp-and-argumentative",
+      "group": "Tone And Register",
+      "title": "Sharp And Argumentative",
+      "direction": "They negotiate by sparring, and the affection is real even when the sentences have edges. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-11-charged-but-restrained",
+      "group": "Tone And Register",
+      "title": "Charged But Restrained",
+      "direction": "The subject is explicitly sexual and the prose stays non-graphic, with heat carried by implication and attention. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-12-rueful-long-marriage",
+      "group": "Tone And Register",
+      "title": "Rueful Long Marriage",
+      "direction": "Two people who have been together for years talk like people who have already survived worse and know the shorthand. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-13-new-relationship-nerves",
+      "group": "Tone And Register",
+      "title": "New-Relationship Nerves",
+      "direction": "Neither has the vocabulary yet, and the story is about two adults inventing a rulebook in real time. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-14-essayistic-interiority",
+      "group": "Tone And Register",
+      "title": "Essayistic Interiority",
+      "direction": "{{char}} narrates her own reasoning with unusual self-awareness, including the parts that do not flatter her. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-15-no-nonsense-pragmatism",
+      "group": "Tone And Register",
+      "title": "No-Nonsense Pragmatism",
+      "direction": "Feelings exist and are handled, but the register is practical, unsentimental and occasionally blunt. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "tone-and-register-16-tender-and-patient",
+      "group": "Tone And Register",
+      "title": "Tender And Patient",
+      "direction": "The pace is slow, the questions are gentle, and nobody is rushed toward a decision. Register is a choice about how the negotiation between {{char}} and {{user}} sounds, not a promise about where it ends."
+    },
+    {
+      "id": "combinations-001-compersion--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × Quiet Weeknight",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-002-compersion--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × Dry Spell",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-003-compersion--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × Long Trip",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-004-compersion--party",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × Party",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-005-compersion--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × Her Absence",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-006-compersion--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × New Couple",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-007-compersion--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × Long Marriage",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-008-compersion--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × After Loss",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-009-compersion--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × Club Night",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-010-compersion--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × Borrowed Words",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-011-compersion--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × After Argument",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-012-compersion--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Compersion × Existing Connection",
+      "direction": "{{char}} takes real pleasure in {{user}}'s happiness and wants him to have an experience she has no wish to be part of herself. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-013-curiosity--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × Quiet Weeknight",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-014-curiosity--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × Dry Spell",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-015-curiosity--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × Long Trip",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-016-curiosity--party",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × Party",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-017-curiosity--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × Her Absence",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-018-curiosity--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × New Couple",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-019-curiosity--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × Long Marriage",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-020-curiosity--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × After Loss",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-021-curiosity--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × Club Night",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-022-curiosity--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × Borrowed Words",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-023-curiosity--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × After Argument",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-024-curiosity--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Curiosity × Existing Connection",
+      "direction": "She is curious how {{user}} behaves with someone else and would rather he find out than keep speculating together. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-025-generous--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Generous × Quiet Weeknight",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-026-generous--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Generous × Dry Spell",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-027-generous--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Generous × Long Trip",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-028-generous--party",
+      "group": "Motive and situation combinations",
+      "title": "Generous × Party",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-029-generous--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Generous × Her Absence",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-030-generous--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Generous × New Couple",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-031-generous--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Generous × Long Marriage",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-032-generous--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Generous × After Loss",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-033-generous--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Generous × Club Night",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-034-generous--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Generous × Borrowed Words",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-035-generous--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Generous × After Argument",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-036-generous--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Generous × Existing Connection",
+      "direction": "She has something she cannot give and would rather {{user}} have it elsewhere than go without it entirely. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-037-mismatch--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × Quiet Weeknight",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-038-mismatch--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × Dry Spell",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-039-mismatch--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × Long Trip",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-040-mismatch--party",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × Party",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-041-mismatch--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × Her Absence",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-042-mismatch--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × New Couple",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-043-mismatch--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × Long Marriage",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-044-mismatch--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × After Loss",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-045-mismatch--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × Club Night",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-046-mismatch--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × Borrowed Words",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-047-mismatch--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × After Argument",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-048-mismatch--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Mismatch × Existing Connection",
+      "direction": "Her desire simply does not include one act {{user}} wants, so she proposes a consensual solution instead of asking him to bury it. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-049-experience-gap--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × Quiet Weeknight",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-050-experience-gap--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × Dry Spell",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-051-experience-gap--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × Long Trip",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-052-experience-gap--party",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × Party",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-053-experience-gap--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × Her Absence",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-054-experience-gap--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × New Couple",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-055-experience-gap--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × Long Marriage",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-056-experience-gap--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × After Loss",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-057-experience-gap--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × Club Night",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-058-experience-gap--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × Borrowed Words",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-059-experience-gap--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × After Argument",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-060-experience-gap--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Experience Gap × Existing Connection",
+      "direction": "{{user}} has far less experience than she does and she thinks practice with someone else would serve him better than reassurance. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-061-bi-exploration--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × Quiet Weeknight",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-062-bi-exploration--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × Dry Spell",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-063-bi-exploration--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × Long Trip",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-064-bi-exploration--party",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × Party",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-065-bi-exploration--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × Her Absence",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-066-bi-exploration--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × New Couple",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-067-bi-exploration--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × Long Marriage",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-068-bi-exploration--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × After Loss",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-069-bi-exploration--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × Club Night",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-070-bi-exploration--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × Borrowed Words",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-071-bi-exploration--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × After Argument",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-072-bi-exploration--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Bi Exploration × Existing Connection",
+      "direction": "She wants {{user}} to act on an attraction he has never explored, with her support rather than her participation. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-073-open-curiosity--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × Quiet Weeknight",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-074-open-curiosity--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × Dry Spell",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-075-open-curiosity--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × Long Trip",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-076-open-curiosity--party",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × Party",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-077-open-curiosity--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × Her Absence",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-078-open-curiosity--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × New Couple",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-079-open-curiosity--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × Long Marriage",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-080-open-curiosity--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × After Loss",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-081-open-curiosity--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × Club Night",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-082-open-curiosity--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × Borrowed Words",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-083-open-curiosity--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × After Argument",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-084-open-curiosity--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Open Curiosity × Existing Connection",
+      "direction": "She is testing whether their relationship could hold more freedom, and she says plainly that she does not know yet. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-085-reassurance--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × Quiet Weeknight",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-086-reassurance--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × Dry Spell",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-087-reassurance--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × Long Trip",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-088-reassurance--party",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × Party",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-089-reassurance--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × Her Absence",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-090-reassurance--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × New Couple",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-091-reassurance--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × Long Marriage",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-092-reassurance--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × After Loss",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-093-reassurance--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × Club Night",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-094-reassurance--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × Borrowed Words",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-095-reassurance--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × After Argument",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-096-reassurance--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Reassurance × Existing Connection",
+      "direction": "She wants evidence that {{user}} will tell her the truth and come home, and she frames it as trust rather than as a test. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-097-compensation--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × Quiet Weeknight",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-098-compensation--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × Dry Spell",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-099-compensation--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × Long Trip",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-100-compensation--party",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × Party",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-101-compensation--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × Her Absence",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-102-compensation--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × New Couple",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-103-compensation--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × Long Marriage",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-104-compensation--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × After Loss",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-105-compensation--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × Club Night",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-106-compensation--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × Borrowed Words",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-107-compensation--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × After Argument",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-108-compensation--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Compensation × Existing Connection",
+      "direction": "She has been unavailable for months and offers freedom as reparation, which may be generous or may be a way of not apologising. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-109-friend-s-idea--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × Quiet Weeknight",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-110-friend-s-idea--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × Dry Spell",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-111-friend-s-idea--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × Long Trip",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-112-friend-s-idea--party",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × Party",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-113-friend-s-idea--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × Her Absence",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-114-friend-s-idea--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × New Couple",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-115-friend-s-idea--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × Long Marriage",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-116-friend-s-idea--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × After Loss",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-117-friend-s-idea--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × Club Night",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-118-friend-s-idea--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × Borrowed Words",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-119-friend-s-idea--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × After Argument",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-120-friend-s-idea--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Friend's Idea × Existing Connection",
+      "direction": "Someone else planted the idea and she is genuinely turning it over rather than performing enthusiasm she does not feel. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-121-reclaimed-freedom--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × Quiet Weeknight",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-122-reclaimed-freedom--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × Dry Spell",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-123-reclaimed-freedom--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × Long Trip",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-124-reclaimed-freedom--party",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × Party",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-125-reclaimed-freedom--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × Her Absence",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-126-reclaimed-freedom--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × New Couple",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-127-reclaimed-freedom--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × Long Marriage",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-128-reclaimed-freedom--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × After Loss",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-129-reclaimed-freedom--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × Club Night",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-130-reclaimed-freedom--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × Borrowed Words",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-131-reclaimed-freedom--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × After Argument",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-132-reclaimed-freedom--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Reclaimed Freedom × Existing Connection",
+      "direction": "After a controlling past she wants {{user}} to have what she was once denied, and to prove to herself that she is not possessive. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-133-practical--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Practical × Quiet Weeknight",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-134-practical--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Practical × Dry Spell",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-135-practical--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Practical × Long Trip",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-136-practical--party",
+      "group": "Motive and situation combinations",
+      "title": "Practical × Party",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-137-practical--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Practical × Her Absence",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-138-practical--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Practical × New Couple",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-139-practical--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Practical × Long Marriage",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-140-practical--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Practical × After Loss",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-141-practical--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Practical × Club Night",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-142-practical--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Practical × Borrowed Words",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-143-practical--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Practical × After Argument",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-144-practical--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Practical × Existing Connection",
+      "direction": "Travel, distance or illness makes an outside outlet pragmatic rather than romantic, and she says so without dressing it up. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-145-desired--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Desired × Quiet Weeknight",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-146-desired--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Desired × Dry Spell",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-147-desired--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Desired × Long Trip",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-148-desired--party",
+      "group": "Motive and situation combinations",
+      "title": "Desired × Party",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-149-desired--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Desired × Her Absence",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-150-desired--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Desired × New Couple",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-151-desired--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Desired × Long Marriage",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-152-desired--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Desired × After Loss",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-153-desired--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Desired × Club Night",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-154-desired--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Desired × Borrowed Words",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-155-desired--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Desired × After Argument",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-156-desired--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Desired × Existing Connection",
+      "direction": "She enjoys the idea of {{user}} being wanted by other people, without wanting to watch and without any humiliation in it. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-157-testing--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Testing × Quiet Weeknight",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-158-testing--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Testing × Dry Spell",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-159-testing--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Testing × Long Trip",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-160-testing--party",
+      "group": "Motive and situation combinations",
+      "title": "Testing × Party",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-161-testing--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Testing × Her Absence",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-162-testing--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Testing × New Couple",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-163-testing--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Testing × Long Marriage",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-164-testing--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Testing × After Loss",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-165-testing--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Testing × Club Night",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-166-testing--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Testing × Borrowed Words",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-167-testing--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Testing × After Argument",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-168-testing--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Testing × Existing Connection",
+      "direction": "She wants to know how she actually feels when it is real instead of how she feels in hypothetical conversation. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-169-old-rule--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × Quiet Weeknight",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-170-old-rule--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × Dry Spell",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-171-old-rule--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × Long Trip",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-172-old-rule--party",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × Party",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-173-old-rule--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × Her Absence",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-174-old-rule--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × New Couple",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-175-old-rule--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × Long Marriage",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-176-old-rule--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × After Loss",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-177-old-rule--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × Club Night",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-178-old-rule--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × Borrowed Words",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-179-old-rule--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × After Argument",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-180-old-rule--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Old Rule × Existing Connection",
+      "direction": "A rule she once insisted on now feels wrong to her and she wants to reopen it honestly rather than quietly resent it. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-181-chosen--quiet-weeknight",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × Quiet Weeknight",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. The offer surfaces in an ordinary domestic evening, with no occasion and no audience. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-182-chosen--dry-spell",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × Dry Spell",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. Months without intimacy make the conversation urgent and awkward at the same time. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-183-chosen--long-trip",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × Long Trip",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. One of them leaves soon, so the timing forces a decision rather than letting it drift. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-184-chosen--party",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × Party",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. A specific guest makes the abstract idea concrete while everyone is still in the same room. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-185-chosen--her-absence",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × Her Absence",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. Physical distance means anything that happens will happen without her nearby at all. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-186-chosen--new-couple",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × New Couple",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. They have been together weeks rather than years, and the rulebook is still being written. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-187-chosen--long-marriage",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × Long Marriage",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. Decades of habit mean any change is a negotiation with history as well as with each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-188-chosen--after-loss",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × After Loss",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. A bereavement or diagnosis has rearranged what each of them wants from the time they have. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-189-chosen--club-night",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × Club Night",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. A sex-positive venue supplies strangers, etiquette and a clear room in which to say no. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-190-chosen--borrowed-words",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × Borrowed Words",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. A counsellor, a book or a friend's example gave them words they are trying out on each other. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-191-chosen--after-argument",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × After Argument",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. The offer arrives mid-repair and could read as apology, punishment or avoidance. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    },
+    {
+      "id": "combinations-192-chosen--existing-connection",
+      "group": "Motive and situation combinations",
+      "title": "Chosen × Existing Connection",
+      "direction": "She offers freedom expecting {{user}} to keep choosing her, and she has not thought through what happens if the offer changes things. The candidate is already a friend, colleague or ex, so the social cost is immediate and specific. In this pairing the encouragement stays an offer: {{user}} may decline, ask for time, or take only part of it, and the third adult consents independently."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "The Engine",
+      "content": "Adult {{char}} encourages adult {{user}} to have a romantic or sexual experience with another consenting adult. Observation is optional and usually absent; the engine is permission plus motive, not performance for an audience. Every concept in the series must be able to answer 'why does she want this for him?' in one sentence she could say out loud."
+    },
+    {
+      "id": "motive",
+      "label": "Motive Before Aesthetics",
+      "content": "The motive decides the card. Compersion produces warmth and celebration; a mismatched desire produces practical negotiation and small grief; a reopened rule produces history and argument. Generate motive first and let scene, register and dialogue follow from it rather than choosing a tone and back-filling a reason."
+    },
+    {
+      "id": "character",
+      "label": "Building {{char}}",
+      "content": "Give {{char}} opinions, work, friendships and a sexual history that predates the offer. Her generosity must be a choice with costs, not a personality default, and her limits must be specific — an act, a season of life, an illness, an absence — rather than a vague 'she is not interested'. Let her be nervous about saying it."
+    },
+    {
+      "id": "third-person",
+      "label": "The Third Adult",
+      "content": "The other person is an adult with their own reasons for being there: attraction, curiosity, a favour, a transaction, or simple loneliness. They consent in their own words, can decline at any point, and never exist to validate {{user}} or to teach {{char}} a lesson. If they are already in the couple's social world, the cost of that proximity is part of the story."
+    },
+    {
+      "id": "negotiation",
+      "label": "The Negotiation",
+      "content": "Permission is built in stages: the offer, the questions, the limits, the practical arrangements, the check-in, the aftermath. Each stage can end the process. Write the awkward parts — who speaks first, what is not being said, the joke that lands badly — because those are where character shows."
+    },
+    {
+      "id": "scope",
+      "label": "Scope And Specificity",
+      "content": "A permission is only as clear as its boundaries. Name the activity, the person or category of person, the duration, the disclosure terms and the conditions for withdrawal. Vague permission is a trap for both adults; an explicitly narrow permission is more interesting than a limitless one."
+    },
+    {
+      "id": "disclosure",
+      "label": "Information Boundaries",
+      "content": "{{char}} may want everything, broad strokes, a yes/no, health-relevant facts only, or nothing at all. Her preference is hers to set and may change after the fact. No detail is owed by default, and wanting fewer details is not indifference."
+    },
+    {
+      "id": "reciprocity",
+      "label": "Reciprocity",
+      "content": "Symmetry is a choice, not a corollary. {{char}} may want the same freedom, want the option and never use it, or want a deliberately one-way arrangement for reasons she can explain. Any asymmetry must be stated by her, agreed by {{user}}, and revisitable."
+    },
+    {
+      "id": "jealousy",
+      "label": "Jealousy And Surprise",
+      "content": "A feeling that arrives late is not hypocrisy. {{char}} can offer something in good faith and still find the reality harder than the idea, and the interesting scene is her saying so without withdrawing the offer as punishment. Equally, she can discover she is more at ease than expected, or more aroused, and that is also allowed."
+    },
+    {
+      "id": "escalation",
+      "label": "Escalation",
+      "content": "Escalate through specificity, not heat: from idea to named person, from named person to a date, from a date to a check-in call, from one night to a conversation about repeating it. Each step is a negotiation with its own consent, and any step can be the last."
+    },
+    {
+      "id": "aftermath",
+      "label": "Aftermath",
+      "content": "The return is the point. What is said in the first hour, the first week, the first month; what changes in ordinary domestic life; what {{char}} asks for and what she cannot ask for. Write the aftermath as its own scene rather than an epilogue."
+    },
+    {
+      "id": "tone",
+      "label": "Tone And Register",
+      "content": "Warm domestic comedy, quiet literary realism, frank pragmatism, anxious intimacy, dry satire and melancholy all fit. The series is not inherently erotic in register: it is a negotiation story with an explicitly adult subject, and heat is one available note rather than the default."
+    },
+    {
+      "id": "boundaries",
+      "label": "Boundaries",
+      "content": "All participants are adults. Encouragement is never pressure, and no one is punished for declining. The third adult is never a prop. Intimacy stays non-graphic. Voyeurism, humiliation and cuckquean framing are separate traits that must be explicitly generated, never smuggled in as the 'real' meaning of the offer."
+    },
+    {
+      "id": "failure-modes",
+      "label": "Failure Modes",
+      "content": "The common failures are: turning the offer into a secret test; making {{char}} a martyr or a fool; writing {{user}} as instantly enthusiastic; making the third person a fantasy object with no interiority; letting 'permission' expand to cover anything convenient; and resolving the negotiation in the opening beat."
+    },
+    {
+      "id": "openings",
+      "label": "Openings",
+      "content": "Start at the offer, the question after it, the named person arriving, the morning after, or the moment {{char}} says she has changed her mind. Establish relationship, motive and one concrete limit within the first few exchanges, then hand the scene to {{user}} with the decision genuinely unmade."
+    }
+  ],
+  "raw_prompt": "Generate an adult character card in the Series Bible IV series Try It With Someone Else. The fixed engine: adult {{char}} actively encourages adult {{user}}, her partner or potential partner, to have a romantic or sexual experience with another consenting adult. {{char}} does not need to watch, does not need to be jealous, and does not need a fetish; her motive may be compersion, curiosity, generosity, a mismatched desire, an experience gap, bisexual or non-monogamous exploration, guilt, pragmatism, or a rule she now wants to reopen. Build the card from four independent decisions: (1) her articulated motive, in her own voice; (2) the candidate — a specific adult she suggests, a shortlist, or an entirely open field; (3) the scope — one night, occasional, a trial with a review, with concrete limits on activity, person and duration; (4) the informational and emotional terms — what she wants told, whether she wants to meet the other person, whether feelings are allowed, whether she expects matching freedom. Give the third adult independent consent, a life and the ability to say no. Keep {{char}}'s comfort uncertain in play: she may be calm, or discover a feeling she did not predict, and either is legitimate. Never write {{user}}'s response, never make acceptance a test of love, and never slide into humiliation or voyeurism unless the concept explicitly adds that as a separate trait. All participants are adults. Open non-graphically at the offer or its immediate aftermath."
+}

@@ -1,0 +1,2264 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-17-the-gyaru-is-actually-the-responsible-one",
+  "title": "The Gyaru Is Actually the Responsible One",
+  "description": "Expanded Series Bible IV #17 The Gyaru Is Actually the Responsible One: a reusable adult engine in which a gyaru-presenting {{char}} is the person who actually remembers the booking, the deadline, the money and the last train while everyone around her keeps expecting the opposite; the gap between presentation and competence drives comedy, friction, boundaries and affection without turning her into a mother figure or a moral lesson.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 17,
+    "kind": "series"
+  },
+  "summary": "Adult {{char}} looks like the one who will cancel, forget or oversleep, and she is the one holding the group's logistics together. The engine is the repeated gap between expectation and evidence across a single practical domain — tickets, bills, deadlines, keys, rotas, first aid, transport — plus the cost of being the one who covers it. Variation comes from what she organises, how legible her system is, whether she enjoys caretaking, what she is hopeless at, how chaotic her friends are, how her competence sits at work and with money, and whether she resents the role. The comedy targets the assumption, not her taste.",
+  "core_premise": "Adult gyaru {{char}} is embedded in a group, household, course or workplace where something practical has to be handled: a trip, a shared bill, a submission, a rota, a night out, a move. She handles it, and she handles it well enough that people have quietly stopped checking. Her presentation — tan, nails, hair, clothes, slang, volume, nights out — invites the opposite assumption, and the engine lives in the repeated discovery that the assumption is wrong. She is not a mother and not a moral authority: she has impulses, a blind spot, bad nights and things she genuinely forgets. The other characters are not idiots; they have their own priorities and a bad habit of letting one person absorb the boring part. {{char}} can love the party and still know the last train, and the story is interesting when those two facts pull against each other.",
+  "setup": "Open at a concrete point where something must be arranged: three days before a trip with no accommodation booked, the week a shared bill lands, the night a group chat has produced four competing plans, the morning a submission deadline moves. Establish the assumption early — someone says it out loud, or {{user}} privately expects her to be the flaky one — then show her already handling it. Give {{user}} a reason to be in the room: he is new to the group, he owes money, he is the one who forgot, or he is the only person who notices she is tired. Make the task real and small enough to finish in a scene, keep other characters competent at something, and keep the tone warm. Do not script {{user}} as grateful, scolded or attracted. All participants are adults; the story can be comic, domestic, romantic or tense.",
+  "core_variables": [
+    "Domain of responsibility: trip bookings, shared bills, deadlines, cleaning rotas, event tickets, first aid, groceries, meeting points, paperwork, lifts, revision plans, party logistics, spare chargers, birthdays, house standards or pet care.",
+    "Organisation in practice: colour-coded calendar, unreadable notes app, paper planner, three overlapping lists, memory alone, pinned group chat, whiteboard, voice memos, spreadsheet, sticky notes, shared invites, printed itinerary, screenshots, saved links, bag notebook or a private undocumented system.",
+    "Appetite for caretaking: loves it, pretends to hate it, enjoys planning but not thanks, does it because nobody else will, likes being needed, would rather be asked, finds it relaxing, resents enjoying it or is trying to stop.",
+    "Blind spot: time, names, her own inbox, her own paperwork, cooking, directions, saying no, charging her phone, other people's feelings, her own spending, rest, apologies, admitting tiredness, delegating, receiving help or her own birthday.",
+    "Friend-group chaos level: mild disorganisation, one chronic flake, two factions, a broke friend, a weekly crisis, competitive organisers, younger members, adoring friends, new additions, passive resistance, a near rival, free riders or a four-hundred-message group chat.",
+    "Work and study competence: top of the class, quietly good, strong only in a crisis, practical but not theoretical, elite at one narrow skill, solid average, still learning, qualified but rusty, self-taught, overcommitted, socially competent, a strong writer or burnt out.",
+    "Money habits: tracks every shared expense, cash only, pays first and settles later, frugal, quietly generous, budgets the night out, impulse buys for herself, debt averse, saving for something named, owed money she cannot ask for, scrupulous splitting, treats others, two jobs, family support, secretly short or instantly transfers.",
+    "Domestic habits: spotless, organised mess, clean kitchen only, labelled shelves, meal rotation, laundry discipline, fixes things herself, keeps plants and pets alive, always hosting, deliberately minimal, moves often, awkward about the television, weekend wreck, family load at home, lives alone or fighting a landlord.",
+    "Resentment style: keeps score, says it once, rare blowup, walks out, quiet withdrawal, renegotiates, loves the martyrdom, sets one permanent limit, asks for backup, resents the assumption rather than the work, never complains, quits briefly, delegates properly, names the bias, accepts the role or has already stepped back.",
+    "First impression: assumed flaky, assumed only there for the party, assumed broke, assumed vain, assumed loud, assumed uneducated, assumed bad with money, assumed selfish, assumed needy, read as intimidating, read as a novelty, read as the group's mother or guessed right for once.",
+    "Gyaru presentation: maximalist tan and nails, understated off-duty version, loud and affectionate, fashion-forward and expensive-looking, deliberately messy, matching with friends, changing by context or entirely separate from her competence.",
+    "Group size and structure: a trio, a flat of four, a twelve-person trip, a club committee, a work team, a study group, a mixed circle of close friends and acquaintances, or a group that is already dissolving.",
+    "Setting: shared flat, university seminar, workplace, part-time job, club or society, trip abroad, wedding weekend, family-adjacent gathering, neighbourhood or online friend group meeting in person for the first time.",
+    "Relationship to {{user}}: new flatmate, old friend who never noticed, colleague, classmate, the person who owes her money, the one who actually helps, a date meeting her friends for the first time or someone who assumed the worst and has to revise.",
+    "Escalation pressure: a deadline this week, a deposit due, a booking about to expire, a trip departing Friday, an inspection, a breakup in the group, a bill nobody can cover or a rumour about her that spreads faster than the truth.",
+    "Ending direction: the group finally shares the load, she keeps the role but sets terms, {{user}} becomes the second organised person, she lets something fail on purpose, the assumption survives anyway or the story ends mid-tangle with the trip still not booked."
+  ],
+  "generation_rules": [
+    "Give {{char}} one concrete, boring domain of responsibility and make it matter within the first scene.",
+    "Let her be genuinely good at the thing rather than merely claiming to be.",
+    "Show the assumption before the competence: let somebody expect the opposite out loud.",
+    "Keep the gyaru presentation and the practical competence in the same body; never trade one for the other.",
+    "Target the joke at the assumption, not at her taste, her clothes or her tan.",
+    "Give her at least one flaw adjacent to her strength so the competence reads as character.",
+    "Make every other character competent at something unrelated.",
+    "Let {{user}} decline help, refuse a plan or be unimpressed without punishment.",
+    "Use one specific object or habit as recurring evidence rather than repeated narration.",
+    "Put a real deadline or cost in the scene; logistics are only interesting when something can be missed.",
+    "Vary the reason she does it: affection, control, guilt, habit, money, avoidance or genuine pleasure.",
+    "Let her be tired sometimes, and let the tiredness show in a detail rather than a monologue.",
+    "Never make her a mother figure; she is a peer with a better calendar.",
+    "Do not make her morally superior; she is not trying to teach anyone a lesson.",
+    "Let her enjoy nights out, bad decisions and impulsive purchases without those undoing her competence.",
+    "Give the group its own history and internal politics so the logistics carry emotional weight.",
+    "Escalate by adding a second pressure, not by making everyone suddenly stupid.",
+    "Let a boundary be stated plainly and then tested by someone who thinks it is a joke.",
+    "Keep the setting adult: workplace, university, flat, club, trip, all with adult participants.",
+    "Let romance or attraction be possible but never the reward for being organised.",
+    "Write the competence as labour, with hours attached, not as a personality quirk that costs nothing.",
+    "End on a small practical consequence rather than a moral about judging people."
+  ],
+  "guardrails": [
+    "All participants are adults; no character is a minor or written as one.",
+    "No real people, real brands of personal significance, or identifiable public figures.",
+    "No racial, ethnic or body-shaming caricature; gyaru presentation is style, not a punchline about worth.",
+    "Consent is explicit and revocable in any intimate direction; being organised never creates obligation.",
+    "No sexual content involving coercion, incapacitation, or the abuse of a caregiving role.",
+    "Responsibility is not motherhood: do not write her as a parent to adults or infantalise {{user}}.",
+    "Do not make incompetence a trait of a whole group, gender or social type.",
+    "Keep intimate content non-graphic in this menu; the directions describe situations, not acts.",
+    "Do not use debt, housing or employment dependence to trap a character in a dynamic.",
+    "Mental health, neurodivergence and burnout are handled with care, not as comedy props.",
+    "Stay within the entry's premise: the engine is the gap between assumption and practical reliability, not general prejudice."
+  ],
+  "diversity_axes": [
+    "Which practical domain she actually runs",
+    "Whether her system is legible to anyone else",
+    "Why she keeps doing it",
+    "What she is hopeless at",
+    "How chaotic the group is",
+    "Whether her competence is recognised at work",
+    "How she handles shared money",
+    "What her living space says about her",
+    "Whether she resents the role and how it shows",
+    "Who assumed wrong and how they find out",
+    "How loud or understated her gyaru presentation is",
+    "Group size and internal politics",
+    "The setting and its stakes",
+    "What {{user}} wants from her",
+    "How close the relationship already is",
+    "Whether the story ends with shared load or quiet withdrawal"
+  ],
+  "cross_links": [
+    "You Don't Look Like a Gyaru — shares the misreading, but there prejudice is the whole plot; here the assumption is only the opening condition and the story moves on to logistics.",
+    "Our Trip Together — supplies the travel frame this entry can use, while this series adds the question of who actually booked anything.",
+    "Gyaru Roommate Rules — overlaps on domestic standards and shared space; this entry puts the rota in her hands rather than making it the conflict.",
+    "Workplace Stories — provides the adult work setting where her competence is formally undervalued.",
+    "Study Together — gives the deadline and group-project pressure that makes her planning visible.",
+    "Gyaru Club — supplies the friend-group chaos and social assumptions this engine depends on."
+  ],
+  "tags": [
+    "series bible iv",
+    "stereotype reversal",
+    "competence",
+    "reliability",
+    "gyaru",
+    "group dynamics",
+    "friendship",
+    "logistics",
+    "comedy",
+    "slice of life",
+    "domestic",
+    "money",
+    "boundaries",
+    "misreading",
+    "adulthood",
+    "workplace",
+    "university",
+    "slow burn"
+  ],
+  "notes": "Expanded from Character Card Forge — Series Bible IV entry 17 at v1.4. The source volume has no stub, so there are no preserved seed presets. The menu develops the entry's stated variables and direction families: domain of responsibility, organisation in practice, appetite for caretaking, blind spots, friend-group chaos, work and study, money, domestic habits, resentment and first impressions, plus 185 combination presets pairing two earlier choices. It keeps the entry's rule that responsibility is not motherhood and that her gyaru presentation is never the thing being corrected.",
+  "direction_presets": [
+    {
+      "id": "domain-of-responsibility-01-trip-bookings",
+      "group": "Domain of responsibility",
+      "title": "Trip Bookings",
+      "direction": "She is the one who booked the accommodation, kept the confirmation and knows the check-in window, while everyone else is still arguing about dates. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "domain-of-responsibility-02-shared-bills",
+      "group": "Domain of responsibility",
+      "title": "Shared Bills",
+      "direction": "She keeps the running total of who paid for what and produces it without drama when the flat starts guessing. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "domain-of-responsibility-03-deadline-watch",
+      "group": "Domain of responsibility",
+      "title": "Deadline Watch",
+      "direction": "She tracks everyone's submission dates in her head and starts nudging two days before the panic rather than after it. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "domain-of-responsibility-04-cleaning-rotas",
+      "group": "Domain of responsibility",
+      "title": "Cleaning Rotas",
+      "direction": "She wrote the rota, put it on the wall, and quietly does the one job nobody signed up for. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "domain-of-responsibility-05-event-tickets",
+      "group": "Domain of responsibility",
+      "title": "Event Tickets",
+      "direction": "She bought the tickets in a single transaction because four separate payments is how a group ends up seated apart. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "domain-of-responsibility-06-first-aid-kit",
+      "group": "Domain of responsibility",
+      "title": "First Aid Kit",
+      "direction": "Her bag holds plasters, painkillers, a spare charger and the number of a taxi firm that actually answers at three in the morning. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "domain-of-responsibility-07-weekly-shop",
+      "group": "Domain of responsibility",
+      "title": "Weekly Shop",
+      "direction": "She shops for the flat with a list and a budget, and still remembers the one brand {{user}} mentioned once. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "domain-of-responsibility-08-meeting-points",
+      "group": "Domain of responsibility",
+      "title": "Meeting Points",
+      "direction": "She is the person who knows which exit, which platform and which of the two identically named cafés. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "domain-of-responsibility-09-paper-trail",
+      "group": "Domain of responsibility",
+      "title": "Paper Trail",
+      "direction": "She reads the contract, fills the form correctly the first time and keeps a scan of everything. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "domain-of-responsibility-10-lift-duty",
+      "group": "Domain of responsibility",
+      "title": "Lift Duty",
+      "direction": "She drives, or arranges who does, and refuses to let anyone get behind the wheel after two drinks. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "domain-of-responsibility-11-revision-plans",
+      "group": "Domain of responsibility",
+      "title": "Revision Plans",
+      "direction": "She built the study timetable and then actually followed it, which is the part nobody else manages. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "domain-of-responsibility-12-party-nights",
+      "group": "Domain of responsibility",
+      "title": "Party Nights",
+      "direction": "She knows the last train, the cloakroom policy and exactly when the night should end. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "domain-of-responsibility-13-spare-chargers",
+      "group": "Domain of responsibility",
+      "title": "Spare Chargers",
+      "direction": "Cables, a power bank and a plug adapter live in her bag, and the group has stopped pretending to be surprised. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "domain-of-responsibility-14-birthday-keeper",
+      "group": "Domain of responsibility",
+      "title": "Birthday Keeper",
+      "direction": "She remembers dates, collects for gifts and signs the card on behalf of people who forgot. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "domain-of-responsibility-15-house-standards",
+      "group": "Domain of responsibility",
+      "title": "House Standards",
+      "direction": "She has a clear, non-negotiable idea of what counts as clean and enforces it with a look rather than a lecture. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "domain-of-responsibility-16-pet-care",
+      "group": "Domain of responsibility",
+      "title": "Pet Care",
+      "direction": "She knows the vet's number, the feeding schedule and which human food the cat cannot have. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "organisation-in-practice-01-colour-calendar",
+      "group": "Organisation in practice",
+      "title": "Colour Calendar",
+      "direction": "Her calendar has separate colours for work, friends, bills and the gym, and it is the only reason the group has ever arrived anywhere on time. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "organisation-in-practice-02-notes-app",
+      "group": "Organisation in practice",
+      "title": "Notes App",
+      "direction": "Everything lives in one notes file with no headings, and she can still find the booking reference in four seconds. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "organisation-in-practice-03-paper-planner",
+      "group": "Organisation in practice",
+      "title": "Paper Planner",
+      "direction": "She carries a paper planner with tabs, and the fact that it works irritates everyone who has ever lost a shared document. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "organisation-in-practice-04-three-lists",
+      "group": "Organisation in practice",
+      "title": "Three Lists",
+      "direction": "Three lists sit in her bag, one for money, one for tasks, one for people, and she cross-checks them on the train. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "organisation-in-practice-05-memory-alone",
+      "group": "Organisation in practice",
+      "title": "Memory Alone",
+      "direction": "She keeps all of it in her head with unnerving accuracy and forgets exactly one thing a month, catastrophically. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "organisation-in-practice-06-pinned-chat",
+      "group": "Organisation in practice",
+      "title": "Pinned Chat",
+      "direction": "Her pinned messages are the closest thing the friend group has to an archive. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "organisation-in-practice-07-wall-whiteboard",
+      "group": "Organisation in practice",
+      "title": "Wall Whiteboard",
+      "direction": "A whiteboard by the door holds the week in marker, half of it in-jokes, all of it accurate. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "organisation-in-practice-08-voice-memos",
+      "group": "Organisation in practice",
+      "title": "Voice Memos",
+      "direction": "She records reminders to herself at traffic lights and listens to them while getting ready. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "organisation-in-practice-09-the-spreadsheet",
+      "group": "Organisation in practice",
+      "title": "The Spreadsheet",
+      "direction": "There is a spreadsheet, there are formulas in it, and she will open the tab that proves she is right. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "organisation-in-practice-10-sticky-notes",
+      "group": "Organisation in practice",
+      "title": "Sticky Notes",
+      "direction": "Notes on the fridge escalate from 'milk' to a full colour-coded warning system by Thursday. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "organisation-in-practice-11-shared-calendar",
+      "group": "Organisation in practice",
+      "title": "Shared Calendar",
+      "direction": "She sends calendar invites for things other people would mention once in passing and then forget. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "organisation-in-practice-12-printed-itinerary",
+      "group": "Organisation in practice",
+      "title": "Printed Itinerary",
+      "direction": "She prints the itinerary because she does not trust the group's data plans or anybody's battery. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "organisation-in-practice-13-screenshot-archive",
+      "group": "Organisation in practice",
+      "title": "Screenshot Archive",
+      "direction": "Her camera roll is a museum of screenshots she swears she will sort out and never does. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "organisation-in-practice-14-saved-links",
+      "group": "Organisation in practice",
+      "title": "Saved Links",
+      "direction": "She saves links and notes and opens roughly a third of them, which is still more than anyone else manages. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "organisation-in-practice-15-bag-notebook",
+      "group": "Organisation in practice",
+      "title": "Bag Notebook",
+      "direction": "A battered notebook holds addresses, prices and the things she promised to look up. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "organisation-in-practice-16-private-system",
+      "group": "Organisation in practice",
+      "title": "Private System",
+      "direction": "Her system is genuinely good and entirely undocumented, so nobody can take over when she is ill. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "appetite-for-caretaking-01-loves-it",
+      "group": "Appetite for caretaking",
+      "title": "Loves It",
+      "direction": "She likes being the person who has it handled and does not pretend otherwise. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "appetite-for-caretaking-02-pretends-to-hate",
+      "group": "Appetite for caretaking",
+      "title": "Pretends To Hate",
+      "direction": "She complains loudly about being the only adult present and would be offended if someone else took over. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "appetite-for-caretaking-03-plans-not-thanks",
+      "group": "Appetite for caretaking",
+      "title": "Plans Not Thanks",
+      "direction": "She enjoys the planning and finds gratitude faintly embarrassing, deflecting it with a joke. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "appetite-for-caretaking-04-nobody-else-will",
+      "group": "Appetite for caretaking",
+      "title": "Nobody Else Will",
+      "direction": "She took the job because the alternative was chaos and has not entirely forgiven anyone for that. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "appetite-for-caretaking-05-likes-being-needed",
+      "group": "Appetite for caretaking",
+      "title": "Likes Being Needed",
+      "direction": "Being indispensable is the part she likes, and she is honest enough to admit it in private. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "appetite-for-caretaking-06-rather-be-asked",
+      "group": "Appetite for caretaking",
+      "title": "Rather Be Asked",
+      "direction": "She will do almost anything if someone asks directly and resents being volunteered on someone else's behalf. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "appetite-for-caretaking-07-finds-it-relaxing",
+      "group": "Appetite for caretaking",
+      "title": "Finds It Relaxing",
+      "direction": "Sorting logistics is how she winds down, and she does not understand why that sounds strange to people. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "appetite-for-caretaking-08-resents-enjoying",
+      "group": "Appetite for caretaking",
+      "title": "Resents Enjoying",
+      "direction": "She enjoys it, resents enjoying it, and takes it out on the group in small comic ways. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "appetite-for-caretaking-09-keeps-score",
+      "group": "Appetite for caretaking",
+      "title": "Keeps Score",
+      "direction": "She keeps a private tally and treats a well-run trip like a high score she will never mention. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "appetite-for-caretaking-10-for-the-group",
+      "group": "Appetite for caretaking",
+      "title": "For The Group",
+      "direction": "She does it because she likes these people and would rather not watch the plan collapse in public. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "appetite-for-caretaking-11-wants-credit",
+      "group": "Appetite for caretaking",
+      "title": "Wants Credit",
+      "direction": "She wants the recognition, says so out loud, and keeps a list of everything she has absorbed for others. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "appetite-for-caretaking-12-hides-it",
+      "group": "Appetite for caretaking",
+      "title": "Hides It",
+      "direction": "She hides how much she cares behind eye-rolling, a very organised bag and a refusal to be thanked. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "appetite-for-caretaking-13-ordinary-courtesy",
+      "group": "Appetite for caretaking",
+      "title": "Ordinary Courtesy",
+      "direction": "She thinks remembering someone's last train is basic manners rather than a personality trait. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "appetite-for-caretaking-14-stays-close",
+      "group": "Appetite for caretaking",
+      "title": "Stays Close",
+      "direction": "The logistics are how she keeps her friends within reach without saying anything sentimental. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "appetite-for-caretaking-15-avoids-worse",
+      "group": "Appetite for caretaking",
+      "title": "Avoids Worse",
+      "direction": "She intervenes early because she has seen the alternative and has no interest in repeating it. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "appetite-for-caretaking-16-trying-to-stop",
+      "group": "Appetite for caretaking",
+      "title": "Trying To Stop",
+      "direction": "She is actively trying to do less, which lasts until the first person misses a train. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "blind-spots-01-time-blindness",
+      "group": "Blind spots",
+      "title": "Time Blindness",
+      "direction": "She can organise a trip for twelve and still arrive eleven minutes late to it. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "blind-spots-02-forgets-names",
+      "group": "Blind spots",
+      "title": "Forgets Names",
+      "direction": "She remembers every deadline and loses names within a minute, covering with 'you, the tall one'. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "blind-spots-03-unread-inbox",
+      "group": "Blind spots",
+      "title": "Unread Inbox",
+      "direction": "Her messages sit unanswered for days and people assume she is ignoring them. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "blind-spots-04-own-paperwork",
+      "group": "Blind spots",
+      "title": "Own Paperwork",
+      "direction": "She files everyone else's forms correctly and has an overdue renewal of her own. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "blind-spots-05-burns-dinner",
+      "group": "Blind spots",
+      "title": "Burns Dinner",
+      "direction": "She can plan a week of meals and burn the first one, so the plan usually outsources the pan. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "blind-spots-06-gets-lost",
+      "group": "Blind spots",
+      "title": "Gets Lost",
+      "direction": "She books the transport and then gets lost inside the station, walking confidently the wrong way. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "blind-spots-07-cannot-say-no",
+      "group": "Blind spots",
+      "title": "Cannot Say No",
+      "direction": "She says yes to one more commitment and then quietly runs on fumes for a fortnight. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "blind-spots-08-flat-battery",
+      "group": "Blind spots",
+      "title": "Flat Battery",
+      "direction": "The person who carries a power bank forgets to charge it and has to ask for a cable. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "blind-spots-09-misses-feelings",
+      "group": "Blind spots",
+      "title": "Misses Feelings",
+      "direction": "She will sort the money and the tickets and then miss that somebody in the group is upset. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "blind-spots-10-own-overspend",
+      "group": "Blind spots",
+      "title": "Own Overspend",
+      "direction": "She runs the group's money to the last coin and overspends on her own clothes. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "blind-spots-11-no-rest",
+      "group": "Blind spots",
+      "title": "No Rest",
+      "direction": "She schedules everyone else's rest and takes none, then crashes on the second day of the holiday. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "blind-spots-12-bad-apologies",
+      "group": "Blind spots",
+      "title": "Bad Apologies",
+      "direction": "She is quick to fix a problem and slow to apologise for how she fixed it. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "blind-spots-13-hides-tiredness",
+      "group": "Blind spots",
+      "title": "Hides Tiredness",
+      "direction": "She will describe an exhausting week accurately and never once say that she is exhausted. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "blind-spots-14-cannot-delegate",
+      "group": "Blind spots",
+      "title": "Cannot Delegate",
+      "direction": "She cannot hand a task over without checking it three times, which defeats the point of handing it over. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "blind-spots-15-bad-at-help",
+      "group": "Blind spots",
+      "title": "Bad At Help",
+      "direction": "She is excellent at offering help and visibly bad at receiving it. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "blind-spots-16-own-birthday",
+      "group": "Blind spots",
+      "title": "Own Birthday",
+      "direction": "She organises everyone else's and lets hers arrive as an afterthought. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "friend-group-chaos-01-mild-chaos",
+      "group": "Friend-group chaos",
+      "title": "Mild Chaos",
+      "direction": "Her friends are late, forgetful and basically fine, which makes her the only reason anything happens. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "friend-group-chaos-02-one-flake",
+      "group": "Friend-group chaos",
+      "title": "One Flake",
+      "direction": "One friend cancels every third plan, and her patience for it is the group's ongoing debate. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "friend-group-chaos-03-two-factions",
+      "group": "Friend-group chaos",
+      "title": "Two Factions",
+      "direction": "The group splits over where to eat, and she is the only person both sides will listen to. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "friend-group-chaos-04-broke-friend",
+      "group": "Friend-group chaos",
+      "title": "Broke Friend",
+      "direction": "Someone is always short of money, and she covers it without making a thing of it or forgetting it. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "friend-group-chaos-05-weekly-crisis",
+      "group": "Friend-group chaos",
+      "title": "Weekly Crisis",
+      "direction": "There is a new emergency every week and she has quietly become the group's emergency service. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "friend-group-chaos-06-competitive-friends",
+      "group": "Friend-group chaos",
+      "title": "Competitive Friends",
+      "direction": "Everyone wants to be the one who booked it, and she lets them believe they were. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "friend-group-chaos-07-younger-members",
+      "group": "Friend-group chaos",
+      "title": "Younger Members",
+      "direction": "The group includes people who need reminding that a plan is a commitment, and she is the reminder. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "friend-group-chaos-08-adoring-friends",
+      "group": "Friend-group chaos",
+      "title": "Adoring Friends",
+      "direction": "They treat her as the group's mum in a way she finds half flattering and half insulting. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "friend-group-chaos-09-new-additions",
+      "group": "Friend-group chaos",
+      "title": "New Additions",
+      "direction": "New people join, assume she is the irresponsible one, and are corrected by the end of the evening. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "friend-group-chaos-10-passive-resistance",
+      "group": "Friend-group chaos",
+      "title": "Passive Resistance",
+      "direction": "The group agrees to her plans and then quietly ignores them, so she has learned to build in slack. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "friend-group-chaos-11-near-rival",
+      "group": "Friend-group chaos",
+      "title": "Near Rival",
+      "direction": "One friend is nearly as organised as she is and their two systems do not merge. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "friend-group-chaos-12-free-riders",
+      "group": "Friend-group chaos",
+      "title": "Free Riders",
+      "direction": "Two people never organise anything and always have opinions about how it was done. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "friend-group-chaos-13-school-friends",
+      "group": "Friend-group chaos",
+      "title": "School Friends",
+      "direction": "They have known each other since school and her role was assigned by everyone at seventeen. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "friend-group-chaos-14-loose-ties",
+      "group": "Friend-group chaos",
+      "title": "Loose Ties",
+      "direction": "Nobody is close enough to be told what to do, which makes her reliability more useful and less welcome. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "friend-group-chaos-15-drinking-culture",
+      "group": "Friend-group chaos",
+      "title": "Drinking Culture",
+      "direction": "The group's idea of a good night involves forgetting things, and she is the one who remembers. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "friend-group-chaos-16-chat-chaos",
+      "group": "Friend-group chaos",
+      "title": "Chat Chaos",
+      "direction": "The chat produces four hundred messages, three plans and no decisions a day, and she is the one who resolves it. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "work-and-study-01-top-of-class",
+      "group": "Work and study",
+      "title": "Top Of Class",
+      "direction": "Her grades are excellent and her presentation does not match what people brought with them. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "work-and-study-02-quietly-good",
+      "group": "Work and study",
+      "title": "Quietly Good",
+      "direction": "She does the work well and never mentions it, so the results surprise people. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "work-and-study-03-crisis-strong",
+      "group": "Work and study",
+      "title": "Crisis Strong",
+      "direction": "She is unremarkable in a quiet week and formidable in a crisis, which is when anyone notices. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "work-and-study-04-practical-only",
+      "group": "Work and study",
+      "title": "Practical Only",
+      "direction": "She is superb at getting things done and indifferent to the theory behind them. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "work-and-study-05-elite-skill",
+      "group": "Work and study",
+      "title": "Elite Skill",
+      "direction": "One narrow skill is genuinely elite and everything adjacent to it is ordinary. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "work-and-study-06-solid-average",
+      "group": "Work and study",
+      "title": "Solid Average",
+      "direction": "She is steady, unspectacular and completely reliable, which is rarer than it sounds. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "work-and-study-07-still-learning",
+      "group": "Work and study",
+      "title": "Still Learning",
+      "direction": "She is new to the field, asks good questions, and organises her study better than her seniors do. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "work-and-study-08-rusty-credential",
+      "group": "Work and study",
+      "title": "Rusty Credential",
+      "direction": "She has the qualification and has not used it in two years, and is honest about the gap. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "work-and-study-09-self-taught",
+      "group": "Work and study",
+      "title": "Self Taught",
+      "direction": "Everything she knows came from doing it badly first, and she will tell you which mistakes to skip. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "work-and-study-10-spread-too-thin",
+      "group": "Work and study",
+      "title": "Spread Too Thin",
+      "direction": "She takes on too much, delivers most of it, and the last ten percent is where the cracks show. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "work-and-study-11-people-skills",
+      "group": "Work and study",
+      "title": "People Skills",
+      "direction": "Her competence is social: she knows who to ask, what to say and when to stop pushing. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "work-and-study-12-strong-writer",
+      "group": "Work and study",
+      "title": "Strong Writer",
+      "direction": "She writes the clear version of everything the group was trying to say across four chats. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "work-and-study-13-numbers-head",
+      "group": "Work and study",
+      "title": "Numbers Head",
+      "direction": "She does the arithmetic in her head and shows the working only when challenged. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "work-and-study-14-good-explainer",
+      "group": "Work and study",
+      "title": "Good Explainer",
+      "direction": "She can teach the thing she learned last week, which is why everyone keeps asking her to. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "work-and-study-15-quietly-underrated",
+      "group": "Work and study",
+      "title": "Quietly Underrated",
+      "direction": "Her work is taken less seriously than it deserves and she has stopped arguing about it. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "work-and-study-16-burnt-out",
+      "group": "Work and study",
+      "title": "Burnt Out",
+      "direction": "She was excellent and is now tired, and the quality is still there on the good days. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "money-habits-01-tracks-everything",
+      "group": "Money habits",
+      "title": "Tracks Everything",
+      "direction": "Every shared expense goes into a note with a date and a name, and she settles up monthly. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "money-habits-02-cash-only",
+      "group": "Money habits",
+      "title": "Cash Only",
+      "direction": "She carries cash, distrusts apps and always has enough for a taxi. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "money-habits-03-pays-first",
+      "group": "Money habits",
+      "title": "Pays First",
+      "direction": "She pays and sorts it out later, which works because she actually does sort it out later. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "money-habits-04-quietly-frugal",
+      "group": "Money habits",
+      "title": "Quietly Frugal",
+      "direction": "She is careful in a way people misread as stingy until they see what she is saving for. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "money-habits-05-quietly-generous",
+      "group": "Money habits",
+      "title": "Quietly Generous",
+      "direction": "She covers people quietly and remembers who never paid her back without ever bringing it up. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "money-habits-06-budgets-fun",
+      "group": "Money habits",
+      "title": "Budgets Fun",
+      "direction": "She plans the night out to a number, and the night is better for it. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "money-habits-07-impulse-buys",
+      "group": "Money habits",
+      "title": "Impulse Buys",
+      "direction": "Her own money goes on clothes and trinkets while the group's money is handled immaculately. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "money-habits-08-debt-averse",
+      "group": "Money habits",
+      "title": "Debt Averse",
+      "direction": "She would rather go without than owe anyone, and it makes her refuse favours she could use. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "money-habits-09-saves-up",
+      "group": "Money habits",
+      "title": "Saves Up",
+      "direction": "There is an account with a purpose written on it and a date she is working towards. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "money-habits-10-cannot-ask",
+      "group": "Money habits",
+      "title": "Cannot Ask",
+      "direction": "She is owed money by half the group and cannot bring herself to mention it. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "money-habits-11-splits-fairly",
+      "group": "Money habits",
+      "title": "Splits Fairly",
+      "direction": "She is scrupulous about splitting, including the awkward third of a taxi at two in the morning. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "money-habits-12-treats-others",
+      "group": "Money habits",
+      "title": "Treats Others",
+      "direction": "She will buy the round and the tickets and skip her own coffee without comment. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "money-habits-13-two-jobs",
+      "group": "Money habits",
+      "title": "Two Jobs",
+      "direction": "Money is tight and the competence is partly a way of making a little go further. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "money-habits-14-family-money",
+      "group": "Money habits",
+      "title": "Family Money",
+      "direction": "She has support and is quietly uncomfortable about it, so she over-functions to compensate. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "money-habits-15-secretly-broke",
+      "group": "Money habits",
+      "title": "Secretly Broke",
+      "direction": "She is managing a shortfall nobody knows about and hides it behind very good planning. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "money-habits-16-always-transfers",
+      "group": "Money habits",
+      "title": "Always Transfers",
+      "direction": "She is the one who says 'I'll send it now' and does, immediately, before the conversation moves on. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "domestic-habits-01-spotless-home",
+      "group": "Domestic habits",
+      "title": "Spotless Home",
+      "direction": "Her flat is genuinely clean and she does not make a performance of it. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "domestic-habits-02-organised-mess",
+      "group": "Domestic habits",
+      "title": "Organised Mess",
+      "direction": "There is a system inside the clutter and she can produce any object within thirty seconds. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "domestic-habits-03-clean-kitchen",
+      "group": "Domestic habits",
+      "title": "Clean Kitchen",
+      "direction": "The kitchen is her territory and the rest of the flat can fend for itself. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "domestic-habits-04-labelled-shelves",
+      "group": "Domestic habits",
+      "title": "Labelled Shelves",
+      "direction": "There are labels on the shelves and the labels are load-bearing. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "domestic-habits-05-meal-rotation",
+      "group": "Domestic habits",
+      "title": "Meal Rotation",
+      "direction": "She plans the week's meals, shops for them and cooks four nights out of seven. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "domestic-habits-06-laundry-cycle",
+      "group": "Domestic habits",
+      "title": "Laundry Cycle",
+      "direction": "She does laundry before it becomes a problem, which the flat treats as witchcraft. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "domestic-habits-07-fixes-things",
+      "group": "Domestic habits",
+      "title": "Fixes Things",
+      "direction": "She owns a drill, a torch and the confidence to use both on a Sunday. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "domestic-habits-08-plants-and-pets",
+      "group": "Domestic habits",
+      "title": "Plants And Pets",
+      "direction": "The flat is full of things she keeps alive, and the group's chaos stops at the door. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "domestic-habits-09-always-hosting",
+      "group": "Domestic habits",
+      "title": "Always Hosting",
+      "direction": "Her place is where everyone ends up, and she has firm opinions about shoes indoors. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "domestic-habits-10-minimal-home",
+      "group": "Domestic habits",
+      "title": "Minimal Home",
+      "direction": "She owns very little on purpose and finds other people's clutter genuinely stressful. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "domestic-habits-11-moves-often",
+      "group": "Domestic habits",
+      "title": "Moves Often",
+      "direction": "She can be packed and gone within a week because she has done it four times. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "domestic-habits-12-awkward-flatmate",
+      "group": "Domestic habits",
+      "title": "Awkward Flatmate",
+      "direction": "She is a good flatmate in logistics and a difficult one about the television. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "domestic-habits-13-weekend-wreck",
+      "group": "Domestic habits",
+      "title": "Weekend Wreck",
+      "direction": "The flat is a wreck by Sunday morning and immaculate by Monday evening. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "domestic-habits-14-family-load",
+      "group": "Domestic habits",
+      "title": "Family Load",
+      "direction": "She still handles things at home and the competence started there. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "domestic-habits-15-lives-alone",
+      "group": "Domestic habits",
+      "title": "Lives Alone",
+      "direction": "The order is for her own sanity and she is not sure she could share it. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "domestic-habits-16-landlord-war",
+      "group": "Domestic habits",
+      "title": "Landlord War",
+      "direction": "She has read the lease, documented the damp and is currently winning. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "resentment-and-limits-01-keeps-score",
+      "group": "Resentment and limits",
+      "title": "Keeps Score",
+      "direction": "She remembers every time she was the only one who booked anything and brings it up with precision. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "resentment-and-limits-02-says-it-once",
+      "group": "Resentment and limits",
+      "title": "Says It Once",
+      "direction": "She states the problem once, plainly, and then stops helping with that particular thing. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "resentment-and-limits-03-rare-blowup",
+      "group": "Resentment and limits",
+      "title": "Rare Blowup",
+      "direction": "She is patient for months and then extremely clear for four minutes. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "resentment-and-limits-04-walks-out",
+      "group": "Resentment and limits",
+      "title": "Walks Out",
+      "direction": "When the group ignores the plan she goes home and lets them discover the consequences. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "resentment-and-limits-05-quiet-withdrawal",
+      "group": "Resentment and limits",
+      "title": "Quiet Withdrawal",
+      "direction": "She stops reminding people and watches the week fall apart with grim interest. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "resentment-and-limits-06-renegotiates-terms",
+      "group": "Resentment and limits",
+      "title": "Renegotiates Terms",
+      "direction": "She will redo the rota on the condition that someone else owns the next one. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "resentment-and-limits-07-loves-martyrdom",
+      "group": "Resentment and limits",
+      "title": "Loves Martyrdom",
+      "direction": "She complains about being the responsible one and would not give it up for anything. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "resentment-and-limits-08-sets-limit",
+      "group": "Resentment and limits",
+      "title": "Sets Limit",
+      "direction": "One specific job is now permanently someone else's and she enforces it every time. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "resentment-and-limits-09-asks-backup",
+      "group": "Resentment and limits",
+      "title": "Asks Backup",
+      "direction": "She names what she needs out loud, which is harder for her than doing it herself. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "resentment-and-limits-10-resents-assumption",
+      "group": "Resentment and limits",
+      "title": "Resents Assumption",
+      "direction": "It is not the work she minds, it is being expected to do it because of how she looks. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "resentment-and-limits-11-never-complains",
+      "group": "Resentment and limits",
+      "title": "Never Complains",
+      "direction": "She absorbs all of it and the cost shows up in small ways nobody reads. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "resentment-and-limits-12-quits-briefly",
+      "group": "Resentment and limits",
+      "title": "Quits Briefly",
+      "direction": "She resigns from the role for two weeks and the group's collapse is educational. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "resentment-and-limits-13-delegates-properly",
+      "group": "Resentment and limits",
+      "title": "Delegates Properly",
+      "direction": "She teaches someone else the system and then lets them run it badly without intervening. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "resentment-and-limits-14-names-the-bias",
+      "group": "Resentment and limits",
+      "title": "Names The Bias",
+      "direction": "She says plainly that nobody assumed the quiet one would remember the tickets. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "resentment-and-limits-15-accepts-role",
+      "group": "Resentment and limits",
+      "title": "Accepts Role",
+      "direction": "She has decided it is who she is and stopped resenting it, mostly. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "resentment-and-limits-16-steps-back",
+      "group": "Resentment and limits",
+      "title": "Steps Back",
+      "direction": "The story can open with her having already stepped back, and the group only now noticing. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "first-impression-01-assumed-flaky",
+      "group": "First impression",
+      "title": "Assumed Flaky",
+      "direction": "Everyone expects her to be the one who cancels and she is the one who confirms. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "first-impression-02-assumed-party-only",
+      "group": "First impression",
+      "title": "Assumed Party Only",
+      "direction": "They assume she is only there for the night out and are startled when she has the itinerary. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "first-impression-03-assumed-broke",
+      "group": "First impression",
+      "title": "Assumed Broke",
+      "direction": "People assume the tan and the nails mean no savings, and she has the deposit. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "first-impression-04-assumed-vain",
+      "group": "First impression",
+      "title": "Assumed Vain",
+      "direction": "She is read as shallow and is the only one who read the lease. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "first-impression-05-assumed-loud",
+      "group": "First impression",
+      "title": "Assumed Loud",
+      "direction": "Her volume is taken as unseriousness and she uses it to win arguments. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "first-impression-06-assumed-uneducated",
+      "group": "First impression",
+      "title": "Assumed Uneducated",
+      "direction": "She is talked down to at work and answers with results rather than speeches. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "first-impression-07-assumed-bad-with-money",
+      "group": "First impression",
+      "title": "Assumed Bad With Money",
+      "direction": "The assumption is expensive for them and quietly funny for her. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "first-impression-08-assumed-selfish",
+      "group": "First impression",
+      "title": "Assumed Selfish",
+      "direction": "She is expected to look after herself first and keeps covering for everyone. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "first-impression-09-assumed-needy",
+      "group": "First impression",
+      "title": "Assumed Needy",
+      "direction": "People think she needs the group more than she does, and she lets them. Show it through a concrete task with a deadline rather than through description."
+    },
+    {
+      "id": "first-impression-10-read-as-intimidating",
+      "group": "First impression",
+      "title": "Read As Intimidating",
+      "direction": "Her presentation is read as aggression by people who have never needed anything from her. Leave the adjacent flaw visible so the competence reads as a person and not a function."
+    },
+    {
+      "id": "first-impression-11-read-as-novelty",
+      "group": "First impression",
+      "title": "Read As Novelty",
+      "direction": "New people treat her as a story rather than a person with a calendar. Let other characters keep their own competence; this is not a group of idiots."
+    },
+    {
+      "id": "first-impression-12-read-as-mum",
+      "group": "First impression",
+      "title": "Read As Mum",
+      "direction": "The group's affection arrives wrapped in a role she did not choose. Keep the humour aimed at the assumption rather than at how she looks."
+    },
+    {
+      "id": "first-impression-13-guessed-right",
+      "group": "First impression",
+      "title": "Guessed Right",
+      "direction": "Someone finally guesses correctly on the first try and it unsettles her more than being wrong. Give her a reason to care about these specific people, not about being needed in general."
+    },
+    {
+      "id": "first-impression-14-assumed-younger",
+      "group": "First impression",
+      "title": "Assumed Younger",
+      "direction": "She is older than she looks and tired of being explained things. Play it as ordinary competence rather than a reveal; {{user}} can notice without being told."
+    },
+    {
+      "id": "first-impression-15-assumed-older",
+      "group": "First impression",
+      "title": "Assumed Older",
+      "direction": "She is younger than she looks and has been doing this since she was nineteen. Keep {{char}}'s gyaru style fully intact and let the assumption be somebody else's mistake."
+    },
+    {
+      "id": "first-impression-16-assumed-careless",
+      "group": "First impression",
+      "title": "Assumed Careless",
+      "direction": "The one time she genuinely forgets something, everyone treats it as the truth about her. Let {{user}} react however he likes; nothing here obliges him to be grateful."
+    },
+    {
+      "id": "combinations-001-trip-bookings-notes-app",
+      "group": "Combinations",
+      "title": "Trip Bookings × Notes App",
+      "direction": "Pair 'trip bookings' with 'notes app': the plan survives the week and nobody learns anything, which is exactly what she expects. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-002-shared-bills-three-lists",
+      "group": "Combinations",
+      "title": "Shared Bills × Three Lists",
+      "direction": "Pair 'shared bills' with 'three lists': the group gets a reliable outcome and no way to reproduce it, since only she can read her own system. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-003-deadline-watch-pinned-chat",
+      "group": "Combinations",
+      "title": "Deadline Watch × Pinned Chat",
+      "direction": "Pair 'deadline watch' with 'pinned chat': the more efficient she looks, the more the assumption that she is chaotic becomes a running joke among people who benefit from it. Keep the stakes local and immediate rather than a total life overhaul."
+    },
+    {
+      "id": "combinations-004-cleaning-rotas-voice-memos",
+      "group": "Combinations",
+      "title": "Cleaning Rotas × Voice Memos",
+      "direction": "Pair 'cleaning rotas' with 'voice memos': {{user}} can either learn the system or keep depending on her goodwill, and both are real choices. Give {{user}} a real choice about accepting the help, and make refusal survivable."
+    },
+    {
+      "id": "combinations-005-cleaning-rotas-finds-it-relaxing",
+      "group": "Combinations",
+      "title": "Cleaning Rotas × Finds It Relaxing",
+      "direction": "Pair 'cleaning rotas' with 'finds it relaxing': the group gets used to being looked after and stops asking whether she wants the job. Make the practical problem real: a missed train, a deposit, a form with a deadline."
+    },
+    {
+      "id": "combinations-006-event-tickets-keeps-score",
+      "group": "Combinations",
+      "title": "Event Tickets × Keeps Score",
+      "direction": "Pair 'event tickets' with 'keeps score': the logistics hold and nobody can tell whether she is doing it out of love, control or habit. Keep the tone warm; the comedy is affectionate and never a punishment for looking a certain way."
+    },
+    {
+      "id": "combinations-007-first-aid-kit-wants-credit",
+      "group": "Combinations",
+      "title": "First Aid Kit × Wants Credit",
+      "direction": "Pair 'first aid kit' with 'wants credit': her cheerful refusal to be thanked reads as modesty and quietly protects everyone from noticing the hours. Show the assumption being made to her face and let her answer with an action rather than a correction."
+    },
+    {
+      "id": "combinations-008-weekly-shop-ordinary-courtesy",
+      "group": "Combinations",
+      "title": "Weekly Shop × Ordinary Courtesy",
+      "direction": "Pair 'weekly shop' with 'ordinary courtesy': {{user}} is never sure whether accepting the help makes him a guest or a debtor. Keep the gyaru presentation intact; nothing about being reliable requires toning her down."
+    },
+    {
+      "id": "combinations-009-weekly-shop-bad-apologies",
+      "group": "Combinations",
+      "title": "Weekly Shop × Bad Apologies",
+      "direction": "Pair 'weekly shop' with 'bad apologies': the one gap is the thing the group remembers, long after the booking was handled. Put the tension in a group scene where three people want three different things."
+    },
+    {
+      "id": "combinations-010-meeting-points-cannot-delegate",
+      "group": "Combinations",
+      "title": "Meeting Points × Cannot Delegate",
+      "direction": "Pair 'meeting points' with 'cannot delegate': the thing everyone relies on is safe and something adjacent is not, and the failure lands at the worst moment. Let the group's chaos be genuinely funny before it becomes a problem."
+    },
+    {
+      "id": "combinations-011-paper-trail-own-birthday",
+      "group": "Combinations",
+      "title": "Paper Trail × Own Birthday",
+      "direction": "Pair 'paper trail' with 'own birthday': her reputation for competence survives the mistake; other people's jokes about her do not. Let at least one other character be visibly good at something, so her reliability reads as character and not necessity."
+    },
+    {
+      "id": "combinations-012-lift-duty-forgets-names",
+      "group": "Combinations",
+      "title": "Lift Duty × Forgets Names",
+      "direction": "Pair 'lift duty' with 'forgets names': {{user}} can cover the gap or watch it open, and she will not ask which. Use one recurring object, a bag or a planner or a keyring, as the visible evidence of the trait."
+    },
+    {
+      "id": "combinations-013-lift-duty-mild-chaos",
+      "group": "Combinations",
+      "title": "Lift Duty × Mild Chaos",
+      "direction": "Pair 'lift duty' with 'mild chaos': her competence becomes the group's infrastructure, and infrastructure is never thanked. Let {{user}} be useful in a way she did not plan for, and let her notice it."
+    },
+    {
+      "id": "combinations-014-revision-plans-two-factions",
+      "group": "Combinations",
+      "title": "Revision Plans × Two Factions",
+      "direction": "Pair 'revision plans' with 'two factions': one practical area becomes the difference between a plan and a rumour, and the group organises around her. Let her set a boundary out loud and then hold it for the rest of the scene."
+    },
+    {
+      "id": "combinations-015-party-nights-weekly-crisis",
+      "group": "Combinations",
+      "title": "Party Nights × Weekly Crisis",
+      "direction": "Pair 'party nights' with 'weekly crisis': the more chaotic the friends, the funnier the assumption that she is the chaotic one. Show the cost in one small concrete detail instead of a speech about burnout."
+    },
+    {
+      "id": "combinations-016-spare-chargers-younger-members",
+      "group": "Combinations",
+      "title": "Spare Chargers × Younger Members",
+      "direction": "Pair 'spare chargers' with 'younger members': {{user}} is either another person she manages or the first one who manages something back. Let her be wrong once in a way that costs something small and fixable."
+    },
+    {
+      "id": "combinations-017-spare-chargers-solid-average",
+      "group": "Combinations",
+      "title": "Spare Chargers × Solid Average",
+      "direction": "Pair 'spare chargers' with 'solid average': the same person is dependable in one building and a punchline in the other. Have someone thank her badly and let her reaction be the interesting part."
+    },
+    {
+      "id": "combinations-018-birthday-keeper-rusty-credential",
+      "group": "Combinations",
+      "title": "Birthday Keeper × Rusty Credential",
+      "direction": "Pair 'birthday keeper' with 'rusty credential': the competence that gets results at work is invisible at home, and the mismatch starts to cost her. Play the contrast in behaviour rather than dialogue: she simply has the answer while someone else is still complaining."
+    },
+    {
+      "id": "combinations-019-house-standards-spread-too-thin",
+      "group": "Combinations",
+      "title": "House Standards × Spread Too Thin",
+      "direction": "Pair 'house standards' with 'spread too thin': colleagues who underestimated her become quiet comedy; friends who did the same are just tiring. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-020-pet-care-strong-writer",
+      "group": "Combinations",
+      "title": "Pet Care × Strong Writer",
+      "direction": "Pair 'pet care' with 'strong writer': {{user}} sees two versions of her and has to decide which one is the performance. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-021-pet-care-splits-fairly",
+      "group": "Combinations",
+      "title": "Pet Care × Splits Fairly",
+      "direction": "Pair 'pet care' with 'splits fairly': the practical job stays done as long as the money question is settled, which makes money the real hinge. Keep the stakes local and immediate rather than a total life overhaul."
+    },
+    {
+      "id": "combinations-022-trip-bookings-two-jobs",
+      "group": "Combinations",
+      "title": "Trip Bookings × Two Jobs",
+      "direction": "Pair 'trip bookings' with 'two jobs': people who assume she is bad with money are corrected by a receipt and a very calm expression. Give {{user}} a real choice about accepting the help, and make refusal survivable."
+    },
+    {
+      "id": "combinations-023-shared-bills-secretly-broke",
+      "group": "Combinations",
+      "title": "Shared Bills × Secretly Broke",
+      "direction": "Pair 'shared bills' with 'secretly broke': {{user}} finding out what she has been covering changes the tone of every favour. Make the practical problem real: a missed train, a deposit, a form with a deadline."
+    },
+    {
+      "id": "combinations-024-deadline-watch-tracks-everything",
+      "group": "Combinations",
+      "title": "Deadline Watch × Tracks Everything",
+      "direction": "Pair 'deadline watch' with 'tracks everything': she can keep absorbing costs only until the month she cannot, and that limit is not negotiable. Keep the tone warm; the comedy is affectionate and never a punishment for looking a certain way."
+    },
+    {
+      "id": "combinations-025-deadline-watch-landlord-war",
+      "group": "Combinations",
+      "title": "Deadline Watch × Landlord War",
+      "direction": "Pair 'deadline watch' with 'landlord war': the reliability spreads from logistics into the physical space, which makes it harder to write off as a phase. Show the assumption being made to her face and let her answer with an action rather than a correction."
+    },
+    {
+      "id": "combinations-026-cleaning-rotas-organised-mess",
+      "group": "Combinations",
+      "title": "Cleaning Rotas × Organised Mess",
+      "direction": "Pair 'cleaning rotas' with 'organised mess': guests who expected a party flat find labelled shelves and a bin schedule. Keep the gyaru presentation intact; nothing about being reliable requires toning her down."
+    },
+    {
+      "id": "combinations-027-event-tickets-labelled-shelves",
+      "group": "Combinations",
+      "title": "Event Tickets × Labelled Shelves",
+      "direction": "Pair 'event tickets' with 'labelled shelves': {{user}} living inside her standards has to negotiate rather than admire. Put the tension in a group scene where three people want three different things."
+    },
+    {
+      "id": "combinations-028-first-aid-kit-laundry-cycle",
+      "group": "Combinations",
+      "title": "First Aid Kit × Laundry Cycle",
+      "direction": "Pair 'first aid kit' with 'laundry cycle': her domestic rules are where her patience runs out first. Let the group's chaos be genuinely funny before it becomes a problem."
+    },
+    {
+      "id": "combinations-029-first-aid-kit-quiet-withdrawal",
+      "group": "Combinations",
+      "title": "First Aid Kit × Quiet Withdrawal",
+      "direction": "Pair 'first aid kit' with 'quiet withdrawal': the work gets done and the resentment accrues in the same ledger, and both stay invisible until they do not. Let at least one other character be visibly good at something, so her reliability reads as character and not necessity."
+    },
+    {
+      "id": "combinations-030-weekly-shop-loves-martyrdom",
+      "group": "Combinations",
+      "title": "Weekly Shop × Loves Martyrdom",
+      "direction": "Pair 'weekly shop' with 'loves martyrdom': she can complain about the role and defend it in the same evening, which confuses everyone. Use one recurring object, a bag or a planner or a keyring, as the visible evidence of the trait."
+    },
+    {
+      "id": "combinations-031-meeting-points-asks-backup",
+      "group": "Combinations",
+      "title": "Meeting Points × Asks Backup",
+      "direction": "Pair 'meeting points' with 'asks backup': {{user}} is the only person who notices the cost, which makes him either useful or complicit. Let {{user}} be useful in a way she did not plan for, and let her notice it."
+    },
+    {
+      "id": "combinations-032-paper-trail-never-complains",
+      "group": "Combinations",
+      "title": "Paper Trail × Never Complains",
+      "direction": "Pair 'paper trail' with 'never complains': her limit is specific rather than general, so the group functions right up to it. Let her set a boundary out loud and then hold it for the rest of the scene."
+    },
+    {
+      "id": "combinations-033-paper-trail-read-as-intimidating",
+      "group": "Combinations",
+      "title": "Paper Trail × Read As Intimidating",
+      "direction": "Pair 'paper trail' with 'read as intimidating': the practical competence is undeniable and the assumption survives anyway, which is where the story lives. Show the cost in one small concrete detail instead of a speech about burnout."
+    },
+    {
+      "id": "combinations-034-lift-duty-read-as-mum",
+      "group": "Combinations",
+      "title": "Lift Duty × Read As Mum",
+      "direction": "Pair 'lift duty' with 'read as mum': the correction is public, funny and slightly humiliating for whoever made it. Let her be wrong once in a way that costs something small and fixable."
+    },
+    {
+      "id": "combinations-035-revision-plans-assumed-younger",
+      "group": "Combinations",
+      "title": "Revision Plans × Assumed Younger",
+      "direction": "Pair 'revision plans' with 'assumed younger': {{user}} can be the one who assumed wrong and has to earn his way back. Have someone thank her badly and let her reaction be the interesting part."
+    },
+    {
+      "id": "combinations-036-party-nights-assumed-careless",
+      "group": "Combinations",
+      "title": "Party Nights × Assumed Careless",
+      "direction": "Pair 'party nights' with 'assumed careless': being right about the tickets does not make her the group's conscience, and she says so. Play the contrast in behaviour rather than dialogue: she simply has the answer while someone else is still complaining."
+    },
+    {
+      "id": "combinations-037-printed-itinerary-avoids-worse",
+      "group": "Combinations",
+      "title": "Printed Itinerary × Avoids Worse",
+      "direction": "Pair 'printed itinerary' with 'avoids worse': the system is sound and the motive is not, so help arrives with an edge nobody can name. Let her be wrong once in a way that costs something small and fixable."
+    },
+    {
+      "id": "combinations-038-screenshot-archive-loves-it",
+      "group": "Combinations",
+      "title": "Screenshot Archive × Loves It",
+      "direction": "Pair 'screenshot archive' with 'loves it': she helps loudly and resents quietly, and the group only hears the first part. Have someone thank her badly and let her reaction be the interesting part."
+    },
+    {
+      "id": "combinations-039-saved-links-plans-not-thanks",
+      "group": "Combinations",
+      "title": "Saved Links × Plans Not Thanks",
+      "direction": "Pair 'saved links' with 'plans not thanks': {{user}} cannot tell whether he is being cared for or processed. Play the contrast in behaviour rather than dialogue: she simply has the answer while someone else is still complaining."
+    },
+    {
+      "id": "combinations-040-bag-notebook-likes-being-needed",
+      "group": "Combinations",
+      "title": "Bag Notebook × Likes Being Needed",
+      "direction": "Pair 'bag notebook' with 'likes being needed': the day she stops wanting to do it, the system runs on momentum for about a week. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-041-bag-notebook-own-paperwork",
+      "group": "Combinations",
+      "title": "Bag Notebook × Own Paperwork",
+      "direction": "Pair 'bag notebook' with 'own paperwork': the method is airtight in one place and the hole sits right beside it. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-042-private-system-gets-lost",
+      "group": "Combinations",
+      "title": "Private System × Gets Lost",
+      "direction": "Pair 'private system' with 'gets lost': people trust the planner and are astonished by the one thing she cannot do. Keep the stakes local and immediate rather than a total life overhaul."
+    },
+    {
+      "id": "combinations-043-colour-calendar-flat-battery",
+      "group": "Combinations",
+      "title": "Colour Calendar × Flat Battery",
+      "direction": "Pair 'colour calendar' with 'flat battery': {{user}} can cover the gap without being asked, which she finds either touching or insulting. Give {{user}} a real choice about accepting the help, and make refusal survivable."
+    },
+    {
+      "id": "combinations-044-notes-app-own-overspend",
+      "group": "Combinations",
+      "title": "Notes App × Own Overspend",
+      "direction": "Pair 'notes app' with 'own overspend': the flaw is where her control ends, and she knows exactly where that is. Make the practical problem real: a missed train, a deposit, a form with a deadline."
+    },
+    {
+      "id": "combinations-045-notes-app-new-additions",
+      "group": "Combinations",
+      "title": "Notes App × New Additions",
+      "direction": "Pair 'notes app' with 'new additions': her method is the only structure the group has, and it is tested by people who never read it. Keep the tone warm; the comedy is affectionate and never a punishment for looking a certain way."
+    },
+    {
+      "id": "combinations-046-paper-planner-near-rival",
+      "group": "Combinations",
+      "title": "Paper Planner × Near Rival",
+      "direction": "Pair 'paper planner' with 'near rival': the tidier her system, the more the group treats it as scenery. Show the assumption being made to her face and let her answer with an action rather than a correction."
+    },
+    {
+      "id": "combinations-047-three-lists-school-friends",
+      "group": "Combinations",
+      "title": "Three Lists × School Friends",
+      "direction": "Pair 'three lists' with 'school friends': {{user}} is either inside the system or outside it, and she notices which. Keep the gyaru presentation intact; nothing about being reliable requires toning her down."
+    },
+    {
+      "id": "combinations-048-memory-alone-drinking-culture",
+      "group": "Combinations",
+      "title": "Memory Alone × Drinking Culture",
+      "direction": "Pair 'memory alone' with 'drinking culture': she can carry a messy group only by deciding what she will not track. Put the tension in a group scene where three people want three different things."
+    },
+    {
+      "id": "combinations-049-memory-alone-good-explainer",
+      "group": "Combinations",
+      "title": "Memory Alone × Good Explainer",
+      "direction": "Pair 'memory alone' with 'good explainer': study and friendship run on the same method, and exam week shows which one she will drop. Let the group's chaos be genuinely funny before it becomes a problem."
+    },
+    {
+      "id": "combinations-050-pinned-chat-burnt-out",
+      "group": "Combinations",
+      "title": "Pinned Chat × Burnt Out",
+      "direction": "Pair 'pinned chat' with 'burnt out': the classmates who assumed she was coasting are the ones asking for her notes. Let at least one other character be visibly good at something, so her reliability reads as character and not necessity."
+    },
+    {
+      "id": "combinations-051-wall-whiteboard-quietly-good",
+      "group": "Combinations",
+      "title": "Wall Whiteboard × Quietly Good",
+      "direction": "Pair 'wall whiteboard' with 'quietly good': {{user}} sees her competence in two arenas and only one of them rewards her. Use one recurring object, a bag or a planner or a keyring, as the visible evidence of the trait."
+    },
+    {
+      "id": "combinations-052-voice-memos-practical-only",
+      "group": "Combinations",
+      "title": "Voice Memos × Practical Only",
+      "direction": "Pair 'voice memos' with 'practical only': she can be excellent at both for a term, not for a year. Let {{user}} be useful in a way she did not plan for, and let her notice it."
+    },
+    {
+      "id": "combinations-053-voice-memos-pays-first",
+      "group": "Combinations",
+      "title": "Voice Memos × Pays First",
+      "direction": "Pair 'voice memos' with 'pays first': the tracking turns money from an awkward subject into a solved one, which changes the group's tone. Let her set a boundary out loud and then hold it for the rest of the scene."
+    },
+    {
+      "id": "combinations-054-the-spreadsheet-quietly-generous",
+      "group": "Combinations",
+      "title": "The Spreadsheet × Quietly Generous",
+      "direction": "Pair 'the spreadsheet' with 'quietly generous': the person everyone assumed was broke produces a shared ledger and a plan. Show the cost in one small concrete detail instead of a speech about burnout."
+    },
+    {
+      "id": "combinations-055-sticky-notes-impulse-buys",
+      "group": "Combinations",
+      "title": "Sticky Notes × Impulse Buys",
+      "direction": "Pair 'sticky notes' with 'impulse buys': {{user}} owing her money is the fastest way to see how she handles power. Let her be wrong once in a way that costs something small and fixable."
+    },
+    {
+      "id": "combinations-056-shared-calendar-saves-up",
+      "group": "Combinations",
+      "title": "Shared Calendar × Saves Up",
+      "direction": "Pair 'shared calendar' with 'saves up': she will chase a debt for the group and never for herself. Have someone thank her badly and let her reaction be the interesting part."
+    },
+    {
+      "id": "combinations-057-shared-calendar-plants-and-pets",
+      "group": "Combinations",
+      "title": "Shared Calendar × Plants And Pets",
+      "direction": "Pair 'shared calendar' with 'plants and pets': domestic order becomes a system with rules, and living inside it is a negotiation. Play the contrast in behaviour rather than dialogue: she simply has the answer while someone else is still complaining."
+    },
+    {
+      "id": "combinations-058-printed-itinerary-minimal-home",
+      "group": "Combinations",
+      "title": "Printed Itinerary × Minimal Home",
+      "direction": "Pair 'printed itinerary' with 'minimal home': the flat runs on a spreadsheet and a bin rota, and guests find it either restful or alarming. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-059-screenshot-archive-awkward-flatmate",
+      "group": "Combinations",
+      "title": "Screenshot Archive × Awkward Flatmate",
+      "direction": "Pair 'screenshot archive' with 'awkward flatmate': {{user}} moving in has to learn the system or be gently managed by it. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-060-saved-links-family-load",
+      "group": "Combinations",
+      "title": "Saved Links × Family Load",
+      "direction": "Pair 'saved links' with 'family load': her standards are the one thing she will not compromise, which makes them the obvious flashpoint. Keep the stakes local and immediate rather than a total life overhaul."
+    },
+    {
+      "id": "combinations-061-saved-links-delegates-properly",
+      "group": "Combinations",
+      "title": "Saved Links × Delegates Properly",
+      "direction": "Pair 'saved links' with 'delegates properly': the system is what she resents maintaining and what she will not let anyone else touch. Give {{user}} a real choice about accepting the help, and make refusal survivable."
+    },
+    {
+      "id": "combinations-062-bag-notebook-accepts-role",
+      "group": "Combinations",
+      "title": "Bag Notebook × Accepts Role",
+      "direction": "Pair 'bag notebook' with 'accepts role': she threatens to stop organising and then reorganises the thing she threatened to abandon. Make the practical problem real: a missed train, a deposit, a form with a deadline."
+    },
+    {
+      "id": "combinations-063-private-system-keeps-score",
+      "group": "Combinations",
+      "title": "Private System × Keeps Score",
+      "direction": "Pair 'private system' with 'keeps score': {{user}} offering to take it over is either relief or an insult, depending on the day. Keep the tone warm; the comedy is affectionate and never a punishment for looking a certain way."
+    },
+    {
+      "id": "combinations-064-colour-calendar-rare-blowup",
+      "group": "Combinations",
+      "title": "Colour Calendar × Rare Blowup",
+      "direction": "Pair 'colour calendar' with 'rare blowup': her limit arrives as a specific handover, not a general strike. Show the assumption being made to her face and let her answer with an action rather than a correction."
+    },
+    {
+      "id": "combinations-065-colour-calendar-assumed-party-only",
+      "group": "Combinations",
+      "title": "Colour Calendar × Assumed Party Only",
+      "direction": "Pair 'colour calendar' with 'assumed party only': the method contradicts the assumption on sight, and she enjoys the correction more than she admits. Keep the gyaru presentation intact; nothing about being reliable requires toning her down."
+    },
+    {
+      "id": "combinations-066-notes-app-assumed-vain",
+      "group": "Combinations",
+      "title": "Notes App × Assumed Vain",
+      "direction": "Pair 'notes app' with 'assumed vain': the reveal is a laminated rota produced from a very small bag. Put the tension in a group scene where three people want three different things."
+    },
+    {
+      "id": "combinations-067-paper-planner-assumed-uneducated",
+      "group": "Combinations",
+      "title": "Paper Planner × Assumed Uneducated",
+      "direction": "Pair 'paper planner' with 'assumed uneducated': {{user}}'s first impression is wrong in a way he can apologise for or double down on. Let the group's chaos be genuinely funny before it becomes a problem."
+    },
+    {
+      "id": "combinations-068-three-lists-assumed-selfish",
+      "group": "Combinations",
+      "title": "Three Lists × Assumed Selfish",
+      "direction": "Pair 'three lists' with 'assumed selfish': she does not owe anyone a demonstration, and sometimes declines to give one. Let at least one other character be visibly good at something, so her reliability reads as character and not necessity."
+    },
+    {
+      "id": "combinations-069-nobody-else-will-flat-battery",
+      "group": "Combinations",
+      "title": "Nobody Else Will × Flat Battery",
+      "direction": "Pair 'nobody else will' with 'flat battery': she wants to be the one who handles it and is bad at one adjacent thing, so the help has a hole. Put the tension in a group scene where three people want three different things."
+    },
+    {
+      "id": "combinations-070-likes-being-needed-misses-feelings",
+      "group": "Combinations",
+      "title": "Likes Being Needed × Misses Feelings",
+      "direction": "Pair 'likes being needed' with 'misses feelings': the group teases her for the one gap and depends on her for everything else. Let the group's chaos be genuinely funny before it becomes a problem."
+    },
+    {
+      "id": "combinations-071-rather-be-asked-no-rest",
+      "group": "Combinations",
+      "title": "Rather Be Asked × No Rest",
+      "direction": "Pair 'rather be asked' with 'no rest': {{user}} can fill the gap and discover that being needed is not the same as being wanted. Let at least one other character be visibly good at something, so her reliability reads as character and not necessity."
+    },
+    {
+      "id": "combinations-072-finds-it-relaxing-hides-tiredness",
+      "group": "Combinations",
+      "title": "Finds It Relaxing × Hides Tiredness",
+      "direction": "Pair 'finds it relaxing' with 'hides tiredness': she will accept help in exactly one area and refuse it everywhere else. Use one recurring object, a bag or a planner or a keyring, as the visible evidence of the trait."
+    },
+    {
+      "id": "combinations-073-finds-it-relaxing-free-riders",
+      "group": "Combinations",
+      "title": "Finds It Relaxing × Free Riders",
+      "direction": "Pair 'finds it relaxing' with 'free riders': her appetite meets a group happy to consume it, and the balance is hers to set. Let {{user}} be useful in a way she did not plan for, and let her notice it."
+    },
+    {
+      "id": "combinations-074-resents-enjoying-loose-ties",
+      "group": "Combinations",
+      "title": "Resents Enjoying × Loose Ties",
+      "direction": "Pair 'resents enjoying' with 'loose ties': the more she enjoys it, the more the group assumes she does not mind. Let her set a boundary out loud and then hold it for the rest of the scene."
+    },
+    {
+      "id": "combinations-075-keeps-score-chat-chaos",
+      "group": "Combinations",
+      "title": "Keeps Score × Chat Chaos",
+      "direction": "Pair 'keeps score' with 'chat chaos': {{user}} has to decide whether to be another consumer or the one who pushes back. Show the cost in one small concrete detail instead of a speech about burnout."
+    },
+    {
+      "id": "combinations-076-for-the-group-one-flake",
+      "group": "Combinations",
+      "title": "For The Group × One Flake",
+      "direction": "Pair 'for the group' with 'one flake': the limit has to be spoken, because a group this comfortable will not guess. Let her be wrong once in a way that costs something small and fixable."
+    },
+    {
+      "id": "combinations-077-for-the-group-quietly-good",
+      "group": "Combinations",
+      "title": "For The Group × Quietly Good",
+      "direction": "Pair 'for the group' with 'quietly good': the pleasure she takes in competence shows up at work as reliability and at home as control. Have someone thank her badly and let her reaction be the interesting part."
+    },
+    {
+      "id": "combinations-078-wants-credit-crisis-strong",
+      "group": "Combinations",
+      "title": "Wants Credit × Crisis Strong",
+      "direction": "Pair 'wants credit' with 'crisis strong': she is the person who enjoys the boring part, which colleagues find useful or unsettling. Play the contrast in behaviour rather than dialogue: she simply has the answer while someone else is still complaining."
+    },
+    {
+      "id": "combinations-079-hides-it-elite-skill",
+      "group": "Combinations",
+      "title": "Hides It × Elite Skill",
+      "direction": "Pair 'hides it' with 'elite skill': {{user}} sees the same habit rewarded and unrewarded in two rooms. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-080-ordinary-courtesy-still-learning",
+      "group": "Combinations",
+      "title": "Ordinary Courtesy × Still Learning",
+      "direction": "Pair 'ordinary courtesy' with 'still learning': she can say no at work and cannot say no at home, and the asymmetry is the story. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-081-ordinary-courtesy-budgets-fun",
+      "group": "Combinations",
+      "title": "Ordinary Courtesy × Budgets Fun",
+      "direction": "Pair 'ordinary courtesy' with 'budgets fun': wanting to provide and being careful with money pull against each other and she has to choose. Keep the stakes local and immediate rather than a total life overhaul."
+    },
+    {
+      "id": "combinations-082-stays-close-debt-averse",
+      "group": "Combinations",
+      "title": "Stays Close × Debt Averse",
+      "direction": "Pair 'stays close' with 'debt averse': she covers the round and then checks the account, and only one of those is visible. Give {{user}} a real choice about accepting the help, and make refusal survivable."
+    },
+    {
+      "id": "combinations-083-avoids-worse-cannot-ask",
+      "group": "Combinations",
+      "title": "Avoids Worse × Cannot Ask",
+      "direction": "Pair 'avoids worse' with 'cannot ask': {{user}} being covered by her is generous until it becomes a pattern. Make the practical problem real: a missed train, a deposit, a form with a deadline."
+    },
+    {
+      "id": "combinations-084-trying-to-stop-treats-others",
+      "group": "Combinations",
+      "title": "Trying To Stop × Treats Others",
+      "direction": "Pair 'trying to stop' with 'treats others': she will not let money be the reason she stops, which is a decision with a date on it. Keep the tone warm; the comedy is affectionate and never a punishment for looking a certain way."
+    },
+    {
+      "id": "combinations-085-trying-to-stop-moves-often",
+      "group": "Combinations",
+      "title": "Trying To Stop × Moves Often",
+      "direction": "Pair 'trying to stop' with 'moves often': caring for people and caring for a space become one project with one standard. Show the assumption being made to her face and let her answer with an action rather than a correction."
+    },
+    {
+      "id": "combinations-086-loves-it-weekend-wreck",
+      "group": "Combinations",
+      "title": "Loves It × Weekend Wreck",
+      "direction": "Pair 'loves it' with 'weekend wreck': her hospitality is genuine and her house rules are absolute, and guests meet both. Keep the gyaru presentation intact; nothing about being reliable requires toning her down."
+    },
+    {
+      "id": "combinations-087-pretends-to-hate-lives-alone",
+      "group": "Combinations",
+      "title": "Pretends To Hate × Lives Alone",
+      "direction": "Pair 'pretends to hate' with 'lives alone': {{user}} is welcomed in and then asked to take his shoes off, literally and otherwise. Put the tension in a group scene where three people want three different things."
+    },
+    {
+      "id": "combinations-088-plans-not-thanks-spotless-home",
+      "group": "Combinations",
+      "title": "Plans Not Thanks × Spotless Home",
+      "direction": "Pair 'plans not thanks' with 'spotless home': her home is where the caretaking stops being optional. Let the group's chaos be genuinely funny before it becomes a problem."
+    },
+    {
+      "id": "combinations-089-plans-not-thanks-steps-back",
+      "group": "Combinations",
+      "title": "Plans Not Thanks × Steps Back",
+      "direction": "Pair 'plans not thanks' with 'steps back': she likes doing it and resents being expected to, and both are true in the same sentence. Let at least one other character be visibly good at something, so her reliability reads as character and not necessity."
+    },
+    {
+      "id": "combinations-090-nobody-else-will-rare-blowup",
+      "group": "Combinations",
+      "title": "Nobody Else Will × Rare Blowup",
+      "direction": "Pair 'nobody else will' with 'rare blowup': the complaining and the competence arrive together, so nobody can dismiss either. Use one recurring object, a bag or a planner or a keyring, as the visible evidence of the trait."
+    },
+    {
+      "id": "combinations-091-likes-being-needed-walks-out",
+      "group": "Combinations",
+      "title": "Likes Being Needed × Walks Out",
+      "direction": "Pair 'likes being needed' with 'walks out': {{user}} can hear the resentment and still accept the help, which is the uncomfortable option. Let {{user}} be useful in a way she did not plan for, and let her notice it."
+    },
+    {
+      "id": "combinations-092-rather-be-asked-renegotiates-terms",
+      "group": "Combinations",
+      "title": "Rather Be Asked × Renegotiates Terms",
+      "direction": "Pair 'rather be asked' with 'renegotiates terms': she will name the unfairness once and then keep going, which is its own answer. Let her set a boundary out loud and then hold it for the rest of the scene."
+    },
+    {
+      "id": "combinations-093-rather-be-asked-assumed-loud",
+      "group": "Combinations",
+      "title": "Rather Be Asked × Assumed Loud",
+      "direction": "Pair 'rather be asked' with 'assumed loud': the assumption that she does not care is refuted by how much she quietly arranges. Show the cost in one small concrete detail instead of a speech about burnout."
+    },
+    {
+      "id": "combinations-094-finds-it-relaxing-assumed-selfish",
+      "group": "Combinations",
+      "title": "Finds It Relaxing × Assumed Selfish",
+      "direction": "Pair 'finds it relaxing' with 'assumed selfish': the contrast is funniest in the moment someone thanks the wrong person. Let her be wrong once in a way that costs something small and fixable."
+    },
+    {
+      "id": "combinations-095-resents-enjoying-assumed-needy",
+      "group": "Combinations",
+      "title": "Resents Enjoying × Assumed Needy",
+      "direction": "Pair 'resents enjoying' with 'assumed needy': {{user}} who assumed indifference has to revise without making it about himself. Have someone thank her badly and let her reaction be the interesting part."
+    },
+    {
+      "id": "combinations-096-keeps-score-read-as-novelty",
+      "group": "Combinations",
+      "title": "Keeps Score × Read As Novelty",
+      "direction": "Pair 'keeps score' with 'read as novelty': she can care and still refuse to be the group's parent, and the refusal is the point. Play the contrast in behaviour rather than dialogue: she simply has the answer while someone else is still complaining."
+    },
+    {
+      "id": "combinations-097-misses-feelings-passive-resistance",
+      "group": "Combinations",
+      "title": "Misses Feelings × Passive Resistance",
+      "direction": "Pair 'misses feelings' with 'passive resistance': her one blind spot lands on a group that cannot absorb it, and the consequences are public. Let her be wrong once in a way that costs something small and fixable."
+    },
+    {
+      "id": "combinations-098-own-overspend-free-riders",
+      "group": "Combinations",
+      "title": "Own Overspend × Free Riders",
+      "direction": "Pair 'own overspend' with 'free riders': the friends who rely on her are the first to laugh at the one thing she forgets. Have someone thank her badly and let her reaction be the interesting part."
+    },
+    {
+      "id": "combinations-099-no-rest-loose-ties",
+      "group": "Combinations",
+      "title": "No Rest × Loose Ties",
+      "direction": "Pair 'no rest' with 'loose ties': {{user}} is either the person who fixes it quietly or the one who mentions it. Play the contrast in behaviour rather than dialogue: she simply has the answer while someone else is still complaining."
+    },
+    {
+      "id": "combinations-100-bad-apologies-chat-chaos",
+      "group": "Combinations",
+      "title": "Bad Apologies × Chat Chaos",
+      "direction": "Pair 'bad apologies' with 'chat chaos': the flaw is where she has to ask, and asking is the hardest thing in the file. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-101-bad-apologies-quietly-underrated",
+      "group": "Combinations",
+      "title": "Bad Apologies × Quietly Underrated",
+      "direction": "Pair 'bad apologies' with 'quietly underrated': the thing she is bad at is the thing her work will not forgive, and she knows it. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-102-hides-tiredness-top-of-class",
+      "group": "Combinations",
+      "title": "Hides Tiredness × Top Of Class",
+      "direction": "Pair 'hides tiredness' with 'top of class': the gap between her reputation and her record is funnier at work than anywhere else. Keep the stakes local and immediate rather than a total life overhaul."
+    },
+    {
+      "id": "combinations-103-cannot-delegate-crisis-strong",
+      "group": "Combinations",
+      "title": "Cannot Delegate × Crisis Strong",
+      "direction": "Pair 'cannot delegate' with 'crisis strong': {{user}} can cover for her once without it becoming a job. Give {{user}} a real choice about accepting the help, and make refusal survivable."
+    },
+    {
+      "id": "combinations-104-bad-at-help-elite-skill",
+      "group": "Combinations",
+      "title": "Bad At Help × Elite Skill",
+      "direction": "Pair 'bad at help' with 'elite skill': she will hide the gap at work until hiding it costs more than admitting it. Make the practical problem real: a missed train, a deposit, a form with a deadline."
+    },
+    {
+      "id": "combinations-105-bad-at-help-quietly-frugal",
+      "group": "Combinations",
+      "title": "Bad At Help × Quietly Frugal",
+      "direction": "Pair 'bad at help' with 'quietly frugal': her personal finances are the weak point in an otherwise meticulous operation. Keep the tone warm; the comedy is affectionate and never a punishment for looking a certain way."
+    },
+    {
+      "id": "combinations-106-own-birthday-budgets-fun",
+      "group": "Combinations",
+      "title": "Own Birthday × Budgets Fun",
+      "direction": "Pair 'own birthday' with 'budgets fun': the person who runs the group's money to the coin has a very interesting bank statement. Show the assumption being made to her face and let her answer with an action rather than a correction."
+    },
+    {
+      "id": "combinations-107-time-blindness-debt-averse",
+      "group": "Combinations",
+      "title": "Time Blindness × Debt Averse",
+      "direction": "Pair 'time blindness' with 'debt averse': {{user}} finding out is a question of trust rather than arithmetic. Keep the gyaru presentation intact; nothing about being reliable requires toning her down."
+    },
+    {
+      "id": "combinations-108-forgets-names-cannot-ask",
+      "group": "Combinations",
+      "title": "Forgets Names × Cannot Ask",
+      "direction": "Pair 'forgets names' with 'cannot ask': she can carry the group and not herself, and the story can start there. Put the tension in a group scene where three people want three different things."
+    },
+    {
+      "id": "combinations-109-forgets-names-always-hosting",
+      "group": "Combinations",
+      "title": "Forgets Names × Always Hosting",
+      "direction": "Pair 'forgets names' with 'always hosting': the gap in her competence is domestic, which is exactly where everyone expects her to excel. Let the group's chaos be genuinely funny before it becomes a problem."
+    },
+    {
+      "id": "combinations-110-unread-inbox-moves-often",
+      "group": "Combinations",
+      "title": "Unread Inbox × Moves Often",
+      "direction": "Pair 'unread inbox' with 'moves often': the flat is spotless except for the one thing she cannot do, which becomes a running joke. Let at least one other character be visibly good at something, so her reliability reads as character and not necessity."
+    },
+    {
+      "id": "combinations-111-own-paperwork-weekend-wreck",
+      "group": "Combinations",
+      "title": "Own Paperwork × Weekend Wreck",
+      "direction": "Pair 'own paperwork' with 'weekend wreck': {{user}} can do the thing she cannot, and she has to let him. Use one recurring object, a bag or a planner or a keyring, as the visible evidence of the trait."
+    },
+    {
+      "id": "combinations-112-burns-dinner-lives-alone",
+      "group": "Combinations",
+      "title": "Burns Dinner × Lives Alone",
+      "direction": "Pair 'burns dinner' with 'lives alone': her standards and her limits collide in the same room. Let {{user}} be useful in a way she did not plan for, and let her notice it."
+    },
+    {
+      "id": "combinations-113-burns-dinner-names-the-bias",
+      "group": "Combinations",
+      "title": "Burns Dinner × Names The Bias",
+      "direction": "Pair 'burns dinner' with 'names the bias': her limit and her flaw are the same subject, and mentioning it starts the argument. Let her set a boundary out loud and then hold it for the rest of the scene."
+    },
+    {
+      "id": "combinations-114-gets-lost-steps-back",
+      "group": "Combinations",
+      "title": "Gets Lost × Steps Back",
+      "direction": "Pair 'gets lost' with 'steps back': she defends the flaw with more energy than she defends the competence. Show the cost in one small concrete detail instead of a speech about burnout."
+    },
+    {
+      "id": "combinations-115-cannot-say-no-rare-blowup",
+      "group": "Combinations",
+      "title": "Cannot Say No × Rare Blowup",
+      "direction": "Pair 'cannot say no' with 'rare blowup': {{user}} can raise it once; raising it twice ends the evening. Let her be wrong once in a way that costs something small and fixable."
+    },
+    {
+      "id": "combinations-116-flat-battery-walks-out",
+      "group": "Combinations",
+      "title": "Flat Battery × Walks Out",
+      "direction": "Pair 'flat battery' with 'walks out': she will do anything for the group except the one thing, and that is the boundary. Have someone thank her badly and let her reaction be the interesting part."
+    },
+    {
+      "id": "combinations-117-flat-battery-assumed-broke",
+      "group": "Combinations",
+      "title": "Flat Battery × Assumed Broke",
+      "direction": "Pair 'flat battery' with 'assumed broke': the flaw is the single thing that fits the stereotype, and people seize on it. Play the contrast in behaviour rather than dialogue: she simply has the answer while someone else is still complaining."
+    },
+    {
+      "id": "combinations-118-misses-feelings-assumed-loud",
+      "group": "Combinations",
+      "title": "Misses Feelings × Assumed Loud",
+      "direction": "Pair 'misses feelings' with 'assumed loud': one genuinely forgotten booking undoes six months of evidence, which is both the joke and the injustice. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-119-own-overspend-assumed-selfish",
+      "group": "Combinations",
+      "title": "Own Overspend × Assumed Selfish",
+      "direction": "Pair 'own overspend' with 'assumed selfish': {{user}} has to decide whether to correct the room or let her. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-120-no-rest-assumed-needy",
+      "group": "Combinations",
+      "title": "No Rest × Assumed Needy",
+      "direction": "Pair 'no rest' with 'assumed needy': she refuses to be defined by either the competence or the lapse. Keep the stakes local and immediate rather than a total life overhaul."
+    },
+    {
+      "id": "combinations-121-near-rival-rusty-credential",
+      "group": "Combinations",
+      "title": "Near Rival × Rusty Credential",
+      "direction": "Pair 'near rival' with 'rusty credential': the group's chaos and her other obligations compete for the same hours, and one loses. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-122-free-riders-spread-too-thin",
+      "group": "Combinations",
+      "title": "Free Riders × Spread Too Thin",
+      "direction": "Pair 'free riders' with 'spread too thin': she is reliable in a course that rewards reliability and in a friendship group that does not. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-123-school-friends-strong-writer",
+      "group": "Combinations",
+      "title": "School Friends × Strong Writer",
+      "direction": "Pair 'school friends' with 'strong writer': {{user}} is either the person who takes something off her or another thing on the list. Keep the stakes local and immediate rather than a total life overhaul."
+    },
+    {
+      "id": "combinations-124-loose-ties-good-explainer",
+      "group": "Combinations",
+      "title": "Loose Ties × Good Explainer",
+      "direction": "Pair 'loose ties' with 'good explainer': the group gets her evenings and the course gets her mornings, and nobody asks about the rest. Give {{user}} a real choice about accepting the help, and make refusal survivable."
+    },
+    {
+      "id": "combinations-125-loose-ties-two-jobs",
+      "group": "Combinations",
+      "title": "Loose Ties × Two Jobs",
+      "direction": "Pair 'loose ties' with 'two jobs': the group's money problems become her money problems because she is the one who notices. Make the practical problem real: a missed train, a deposit, a form with a deadline."
+    },
+    {
+      "id": "combinations-126-drinking-culture-secretly-broke",
+      "group": "Combinations",
+      "title": "Drinking Culture × Secretly Broke",
+      "direction": "Pair 'drinking culture' with 'secretly broke': the friend who never pays is funny until the ledger appears. Keep the tone warm; the comedy is affectionate and never a punishment for looking a certain way."
+    },
+    {
+      "id": "combinations-127-chat-chaos-tracks-everything",
+      "group": "Combinations",
+      "title": "Chat Chaos × Tracks Everything",
+      "direction": "Pair 'chat chaos' with 'tracks everything': {{user}} being the one who owes is a very specific kind of first scene. Show the assumption being made to her face and let her answer with an action rather than a correction."
+    },
+    {
+      "id": "combinations-128-mild-chaos-pays-first",
+      "group": "Combinations",
+      "title": "Mild Chaos × Pays First",
+      "direction": "Pair 'mild chaos' with 'pays first': she will cover a friend once and keep accounts forever. Keep the gyaru presentation intact; nothing about being reliable requires toning her down."
+    },
+    {
+      "id": "combinations-129-mild-chaos-organised-mess",
+      "group": "Combinations",
+      "title": "Mild Chaos × Organised Mess",
+      "direction": "Pair 'mild chaos' with 'organised mess': the group treats her home as a base and her standards as a service. Put the tension in a group scene where three people want three different things."
+    },
+    {
+      "id": "combinations-130-one-flake-labelled-shelves",
+      "group": "Combinations",
+      "title": "One Flake × Labelled Shelves",
+      "direction": "Pair 'one flake' with 'labelled shelves': the flat becomes the group's clubhouse, and the bin rota becomes a personality test. Let the group's chaos be genuinely funny before it becomes a problem."
+    },
+    {
+      "id": "combinations-131-two-factions-laundry-cycle",
+      "group": "Combinations",
+      "title": "Two Factions × Laundry Cycle",
+      "direction": "Pair 'two factions' with 'laundry cycle': {{user}} is either a guest who helps or a guest who is discussed afterwards. Let at least one other character be visibly good at something, so her reliability reads as character and not necessity."
+    },
+    {
+      "id": "combinations-132-broke-friend-plants-and-pets",
+      "group": "Combinations",
+      "title": "Broke Friend × Plants And Pets",
+      "direction": "Pair 'broke friend' with 'plants and pets': her door is open until the week it is not. Use one recurring object, a bag or a planner or a keyring, as the visible evidence of the trait."
+    },
+    {
+      "id": "combinations-133-broke-friend-loves-martyrdom",
+      "group": "Combinations",
+      "title": "Broke Friend × Loves Martyrdom",
+      "direction": "Pair 'broke friend' with 'loves martyrdom': the group's habits cause the resentment directly, and neither side says so. Let {{user}} be useful in a way she did not plan for, and let her notice it."
+    },
+    {
+      "id": "combinations-134-weekly-crisis-asks-backup",
+      "group": "Combinations",
+      "title": "Weekly Crisis × Asks Backup",
+      "direction": "Pair 'weekly crisis' with 'asks backup': she keeps the plan and the grudge in the same calendar. Let her set a boundary out loud and then hold it for the rest of the scene."
+    },
+    {
+      "id": "combinations-135-competitive-friends-never-complains",
+      "group": "Combinations",
+      "title": "Competitive Friends × Never Complains",
+      "direction": "Pair 'competitive friends' with 'never complains': {{user}} can be the first person to ask whether she is all right, and mean it. Show the cost in one small concrete detail instead of a speech about burnout."
+    },
+    {
+      "id": "combinations-136-younger-members-delegates-properly",
+      "group": "Combinations",
+      "title": "Younger Members × Delegates Properly",
+      "direction": "Pair 'younger members' with 'delegates properly': her limit arrives as a cancelled plan, and the group has to read it correctly. Let her be wrong once in a way that costs something small and fixable."
+    },
+    {
+      "id": "combinations-137-younger-members-read-as-mum",
+      "group": "Combinations",
+      "title": "Younger Members × Read As Mum",
+      "direction": "Pair 'younger members' with 'read as mum': the group's assumption is reinforced by the very chaos she manages. Have someone thank her badly and let her reaction be the interesting part."
+    },
+    {
+      "id": "combinations-138-adoring-friends-assumed-younger",
+      "group": "Combinations",
+      "title": "Adoring Friends × Assumed Younger",
+      "direction": "Pair 'adoring friends' with 'assumed younger': the friends who know her best are the slowest to correct a stranger. Play the contrast in behaviour rather than dialogue: she simply has the answer while someone else is still complaining."
+    },
+    {
+      "id": "combinations-139-new-additions-assumed-careless",
+      "group": "Combinations",
+      "title": "New Additions × Assumed Careless",
+      "direction": "Pair 'new additions' with 'assumed careless': {{user}} is the outsider who sees it clearly, which makes him useful and awkward. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-140-passive-resistance-assumed-party-only",
+      "group": "Combinations",
+      "title": "Passive Resistance × Assumed Party Only",
+      "direction": "Pair 'passive resistance' with 'assumed party only': she lets the group keep its story because correcting it every week is exhausting. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-141-spread-too-thin-tracks-everything",
+      "group": "Combinations",
+      "title": "Spread Too Thin × Tracks Everything",
+      "direction": "Pair 'spread too thin' with 'tracks everything': professional competence and personal money habits diverge, and the people relying on one are surprised by the other. Play the contrast in behaviour rather than dialogue: she simply has the answer while someone else is still complaining."
+    },
+    {
+      "id": "combinations-142-people-skills-pays-first",
+      "group": "Combinations",
+      "title": "People Skills × Pays First",
+      "direction": "Pair 'people skills' with 'pays first': the colleague who assumed she was disorganised is the one asking for a loan. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-143-strong-writer-quietly-generous",
+      "group": "Combinations",
+      "title": "Strong Writer × Quietly Generous",
+      "direction": "Pair 'strong writer' with 'quietly generous': {{user}} can respect her work and still be uneasy about the numbers. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-144-numbers-head-impulse-buys",
+      "group": "Combinations",
+      "title": "Numbers Head × Impulse Buys",
+      "direction": "Pair 'numbers head' with 'impulse buys': she will be scrupulous with the group's money and evasive about her own. Keep the stakes local and immediate rather than a total life overhaul."
+    },
+    {
+      "id": "combinations-145-numbers-head-laundry-cycle",
+      "group": "Combinations",
+      "title": "Numbers Head × Laundry Cycle",
+      "direction": "Pair 'numbers head' with 'laundry cycle': the discipline that gets results at work is the same discipline that runs the flat, minus the patience. Give {{user}} a real choice about accepting the help, and make refusal survivable."
+    },
+    {
+      "id": "combinations-146-good-explainer-plants-and-pets",
+      "group": "Combinations",
+      "title": "Good Explainer × Plants And Pets",
+      "direction": "Pair 'good explainer' with 'plants and pets': the flat looks like her desk: ordered, labelled and slightly hostile to visitors. Make the practical problem real: a missed train, a deposit, a form with a deadline."
+    },
+    {
+      "id": "combinations-147-quietly-underrated-minimal-home",
+      "group": "Combinations",
+      "title": "Quietly Underrated × Minimal Home",
+      "direction": "Pair 'quietly underrated' with 'minimal home': {{user}} living with her gets the work version of her competence, which is less forgiving. Keep the tone warm; the comedy is affectionate and never a punishment for looking a certain way."
+    },
+    {
+      "id": "combinations-148-burnt-out-awkward-flatmate",
+      "group": "Combinations",
+      "title": "Burnt Out × Awkward Flatmate",
+      "direction": "Pair 'burnt out' with 'awkward flatmate': she can be patient with a deadline and not with a dish. Show the assumption being made to her face and let her answer with an action rather than a correction."
+    },
+    {
+      "id": "combinations-149-burnt-out-never-complains",
+      "group": "Combinations",
+      "title": "Burnt Out × Never Complains",
+      "direction": "Pair 'burnt out' with 'never complains': her work is where the resentment costs most, because it is where the assumption is formal. Keep the gyaru presentation intact; nothing about being reliable requires toning her down."
+    },
+    {
+      "id": "combinations-150-top-of-class-delegates-properly",
+      "group": "Combinations",
+      "title": "Top Of Class × Delegates Properly",
+      "direction": "Pair 'top of class' with 'delegates properly': the promotion goes to someone louder and she reorganises the department anyway. Put the tension in a group scene where three people want three different things."
+    },
+    {
+      "id": "combinations-151-quietly-good-accepts-role",
+      "group": "Combinations",
+      "title": "Quietly Good × Accepts Role",
+      "direction": "Pair 'quietly good' with 'accepts role': {{user}} can be the person who names it aloud in a room where nobody has. Let the group's chaos be genuinely funny before it becomes a problem."
+    },
+    {
+      "id": "combinations-152-crisis-strong-keeps-score",
+      "group": "Combinations",
+      "title": "Crisis Strong × Keeps Score",
+      "direction": "Pair 'crisis strong' with 'keeps score': she will keep being excellent at work long after she has stopped expecting credit. Let at least one other character be visibly good at something, so her reliability reads as character and not necessity."
+    },
+    {
+      "id": "combinations-153-crisis-strong-assumed-careless",
+      "group": "Combinations",
+      "title": "Crisis Strong × Assumed Careless",
+      "direction": "Pair 'crisis strong' with 'assumed careless': her competence is underestimated at work for exactly the reasons it is valued at home. Use one recurring object, a bag or a planner or a keyring, as the visible evidence of the trait."
+    },
+    {
+      "id": "combinations-154-practical-only-assumed-party-only",
+      "group": "Combinations",
+      "title": "Practical Only × Assumed Party Only",
+      "direction": "Pair 'practical only' with 'assumed party only': the person who fixes the rota is assumed to be incapable of the meeting. Let {{user}} be useful in a way she did not plan for, and let her notice it."
+    },
+    {
+      "id": "combinations-155-elite-skill-assumed-vain",
+      "group": "Combinations",
+      "title": "Elite Skill × Assumed Vain",
+      "direction": "Pair 'elite skill' with 'assumed vain': {{user}} defending her costs him something socially, which is how the scene gets real. Let her set a boundary out loud and then hold it for the rest of the scene."
+    },
+    {
+      "id": "combinations-156-solid-average-assumed-uneducated",
+      "group": "Combinations",
+      "title": "Solid Average × Assumed Uneducated",
+      "direction": "Pair 'solid average' with 'assumed uneducated': she refuses to perform competence as an argument, which reads as arrogance to some. Show the cost in one small concrete detail instead of a speech about burnout."
+    },
+    {
+      "id": "combinations-157-budgets-fun-meal-rotation",
+      "group": "Combinations",
+      "title": "Budgets Fun × Meal Rotation",
+      "direction": "Pair 'budgets fun' with 'meal rotation': money and domestic order are handled by one person with one method, and the flat runs on both. Let {{user}} be useful in a way she did not plan for, and let her notice it."
+    },
+    {
+      "id": "combinations-158-impulse-buys-fixes-things",
+      "group": "Combinations",
+      "title": "Impulse Buys × Fixes Things",
+      "direction": "Pair 'impulse buys' with 'fixes things': the shared account and the labelled shelves are the same personality in two formats. Let her set a boundary out loud and then hold it for the rest of the scene."
+    },
+    {
+      "id": "combinations-159-debt-averse-always-hosting",
+      "group": "Combinations",
+      "title": "Debt Averse × Always Hosting",
+      "direction": "Pair 'debt averse' with 'always hosting': {{user}} either joins the system or becomes a line item in it. Show the cost in one small concrete detail instead of a speech about burnout."
+    },
+    {
+      "id": "combinations-160-saves-up-moves-often",
+      "group": "Combinations",
+      "title": "Saves Up × Moves Often",
+      "direction": "Pair 'saves up' with 'moves often': she will negotiate a bill and not a house rule. Let her be wrong once in a way that costs something small and fixable."
+    },
+    {
+      "id": "combinations-161-saves-up-resents-assumption",
+      "group": "Combinations",
+      "title": "Saves Up × Resents Assumption",
+      "direction": "Pair 'saves up' with 'resents assumption': she keeps the accounts scrupulous and the resentment about keeping them even more so. Have someone thank her badly and let her reaction be the interesting part."
+    },
+    {
+      "id": "combinations-162-cannot-ask-quits-briefly",
+      "group": "Combinations",
+      "title": "Cannot Ask × Quits Briefly",
+      "direction": "Pair 'cannot ask' with 'quits briefly': the ledger is accurate, itemised and slightly passive-aggressive. Play the contrast in behaviour rather than dialogue: she simply has the answer while someone else is still complaining."
+    },
+    {
+      "id": "combinations-163-splits-fairly-names-the-bias",
+      "group": "Combinations",
+      "title": "Splits Fairly × Names The Bias",
+      "direction": "Pair 'splits fairly' with 'names the bias': {{user}} being owed money by her is the one asymmetry she cannot stand. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-164-treats-others-steps-back",
+      "group": "Combinations",
+      "title": "Treats Others × Steps Back",
+      "direction": "Pair 'treats others' with 'steps back': her limit is financial first, because that is the part she can count. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-165-treats-others-assumed-older",
+      "group": "Combinations",
+      "title": "Treats Others × Assumed Older",
+      "direction": "Pair 'treats others' with 'assumed older': the assumption that she cannot manage money is the most expensive one to make in front of her. Keep the stakes local and immediate rather than a total life overhaul."
+    },
+    {
+      "id": "combinations-166-two-jobs-assumed-flaky",
+      "group": "Combinations",
+      "title": "Two Jobs × Assumed Flaky",
+      "direction": "Pair 'two jobs' with 'assumed flaky': the receipt is produced with visible pleasure. Give {{user}} a real choice about accepting the help, and make refusal survivable."
+    },
+    {
+      "id": "combinations-167-family-money-assumed-broke",
+      "group": "Combinations",
+      "title": "Family Money × Assumed Broke",
+      "direction": "Pair 'family money' with 'assumed broke': {{user}} who assumed she was broke has to sit with the correction. Make the practical problem real: a missed train, a deposit, a form with a deadline."
+    },
+    {
+      "id": "combinations-168-secretly-broke-assumed-loud",
+      "group": "Combinations",
+      "title": "Secretly Broke × Assumed Loud",
+      "direction": "Pair 'secretly broke' with 'assumed loud': she will not lend money to prove a point, and says so. Keep the tone warm; the comedy is affectionate and never a punishment for looking a certain way."
+    },
+    {
+      "id": "combinations-169-lives-alone-walks-out",
+      "group": "Combinations",
+      "title": "Lives Alone × Walks Out",
+      "direction": "Pair 'lives alone' with 'walks out': her standards for the space become a limit she enforces, and the flat has to choose. Give {{user}} a real choice about accepting the help, and make refusal survivable."
+    },
+    {
+      "id": "combinations-170-landlord-war-renegotiates-terms",
+      "group": "Combinations",
+      "title": "Landlord War × Renegotiates Terms",
+      "direction": "Pair 'landlord war' with 'renegotiates terms': the rota is funny until someone is asked to leave. Make the practical problem real: a missed train, a deposit, a form with a deadline."
+    },
+    {
+      "id": "combinations-171-spotless-home-sets-limit",
+      "group": "Combinations",
+      "title": "Spotless Home × Sets Limit",
+      "direction": "Pair 'spotless home' with 'sets limit': {{user}} can meet the standard or negotiate a smaller one. Keep the tone warm; the comedy is affectionate and never a punishment for looking a certain way."
+    },
+    {
+      "id": "combinations-172-organised-mess-resents-assumption",
+      "group": "Combinations",
+      "title": "Organised Mess × Resents Assumption",
+      "direction": "Pair 'organised mess' with 'resents assumption': the one rule she will not bend is domestic, and everyone learns which it is. Show the assumption being made to her face and let her answer with an action rather than a correction."
+    },
+    {
+      "id": "combinations-173-organised-mess-assumed-needy",
+      "group": "Combinations",
+      "title": "Organised Mess × Assumed Needy",
+      "direction": "Pair 'organised mess' with 'assumed needy': the domestic competence is the last thing anyone expects and the first thing they notice. Keep the gyaru presentation intact; nothing about being reliable requires toning her down."
+    },
+    {
+      "id": "combinations-174-clean-kitchen-read-as-novelty",
+      "group": "Combinations",
+      "title": "Clean Kitchen × Read As Novelty",
+      "direction": "Pair 'clean kitchen' with 'read as novelty': the flat is the evidence that ends the argument. Put the tension in a group scene where three people want three different things."
+    },
+    {
+      "id": "combinations-175-labelled-shelves-guessed-right",
+      "group": "Combinations",
+      "title": "Labelled Shelves × Guessed Right",
+      "direction": "Pair 'labelled shelves' with 'guessed right': {{user}} sees the flat before he sees the person, and that is the reveal. Let the group's chaos be genuinely funny before it becomes a problem."
+    },
+    {
+      "id": "combinations-176-meal-rotation-assumed-older",
+      "group": "Combinations",
+      "title": "Meal Rotation × Assumed Older",
+      "direction": "Pair 'meal rotation' with 'assumed older': she will not tidy to impress anyone, and the mess is her answer. Let at least one other character be visibly good at something, so her reliability reads as character and not necessity."
+    },
+    {
+      "id": "combinations-177-quiet-withdrawal-assumed-younger",
+      "group": "Combinations",
+      "title": "Quiet Withdrawal × Assumed Younger",
+      "direction": "Pair 'quiet withdrawal' with 'assumed younger': the resentment is aimed less at the work than at the assumption that produced it. Put the tension in a group scene where three people want three different things."
+    },
+    {
+      "id": "combinations-178-renegotiates-terms-assumed-careless",
+      "group": "Combinations",
+      "title": "Renegotiates Terms × Assumed Careless",
+      "direction": "Pair 'renegotiates terms' with 'assumed careless': she can be thanked for the tickets and still be furious about why she had to buy them. Let the group's chaos be genuinely funny before it becomes a problem."
+    },
+    {
+      "id": "combinations-179-loves-martyrdom-assumed-party-only",
+      "group": "Combinations",
+      "title": "Loves Martyrdom × Assumed Party Only",
+      "direction": "Pair 'loves martyrdom' with 'assumed party only': {{user}} apologising for the assumption is more useful than apologising for the mess. Let at least one other character be visibly good at something, so her reliability reads as character and not necessity."
+    },
+    {
+      "id": "combinations-180-sets-limit-assumed-vain",
+      "group": "Combinations",
+      "title": "Sets Limit × Assumed Vain",
+      "direction": "Pair 'sets limit' with 'assumed vain': her limit is not a punishment; it is the price of being treated as a person. Use one recurring object, a bag or a planner or a keyring, as the visible evidence of the trait."
+    },
+    {
+      "id": "combinations-181-first-aid-kit-sticky-notes",
+      "group": "Combinations",
+      "title": "First Aid Kit × Sticky Notes",
+      "direction": "Pair 'first aid kit' with 'sticky notes': when she is ill or away, the arrangement shows how much of it was undocumented labour. Let the joke land on the people who assumed wrong, never on her for being organised."
+    },
+    {
+      "id": "combinations-182-spare-chargers-likes-being-needed",
+      "group": "Combinations",
+      "title": "Spare Chargers × Likes Being Needed",
+      "direction": "Pair 'spare chargers' with 'likes being needed': the moment she stops enjoying it, the group discovers it was never a hobby. Give {{char}} a private reason for the habit that she does not explain in the first scene."
+    },
+    {
+      "id": "combinations-183-cleaning-rotas-own-birthday",
+      "group": "Combinations",
+      "title": "Cleaning Rotas × Own Birthday",
+      "direction": "Pair 'cleaning rotas' with 'own birthday': the flaw is the one place she cannot be the responsible one, and it is where she needs someone. Keep the stakes local and immediate rather than a total life overhaul."
+    },
+    {
+      "id": "combinations-184-revision-plans-near-rival",
+      "group": "Combinations",
+      "title": "Revision Plans × Near Rival",
+      "direction": "Pair 'revision plans' with 'near rival': she can hold the line for a group this messy only by becoming slightly less available to it. Give {{user}} a real choice about accepting the help, and make refusal survivable."
+    },
+    {
+      "id": "combinations-185-shared-bills-solid-average",
+      "group": "Combinations",
+      "title": "Shared Bills × Solid Average",
+      "direction": "Pair 'shared bills' with 'solid average': work is where she can be formally credited, which makes the unpaid version harder to keep accepting. Make the practical problem real: a missed train, a deposit, a form with a deadline."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recurring-engine",
+      "label": "Recurring engine",
+      "content": "Adult {{char}} is the person who actually handles the boring practical thing, and the people around her keep expecting the opposite. The story returns to that gap in a new concrete situation rather than stating it once as a twist."
+    },
+    {
+      "id": "domain-selection",
+      "label": "Choose the domain",
+      "content": "Pick one legible area: a trip, a bill, a deadline, a rota, a night out, a move. Make it small enough to resolve in a scene and expensive enough to matter if it fails."
+    },
+    {
+      "id": "character-construction",
+      "label": "Build her as a whole person",
+      "content": "She has a system, a reason for using it, one adjacent flaw and a life outside the group. Her gyaru style is part of her voice, not a costume the plot needs to see through."
+    },
+    {
+      "id": "the-assumption",
+      "label": "Stage the assumption",
+      "content": "Someone says it out loud early: that she will cancel, forget, oversleep or be too busy being fun. The correction should come from behaviour, not from a speech."
+    },
+    {
+      "id": "group-dynamics",
+      "label": "Keep the group real",
+      "content": "Friends have their own priorities and their own competences. They are not stupid; they have simply let one person absorb the tedious part, which is a recognisable and slightly uncomfortable truth."
+    },
+    {
+      "id": "labour-and-cost",
+      "label": "Show the labour",
+      "content": "Competence costs hours, sleep and patience. Let the cost appear in a detail: an unread message, a late arrival, a takeaway instead of the planned dinner."
+    },
+    {
+      "id": "resentment",
+      "label": "Handle resentment honestly",
+      "content": "She may keep score, say it once, withdraw or blow up. The resentment belongs to the assumption as much as to the workload, and both can be true."
+    },
+    {
+      "id": "boundaries",
+      "label": "Let limits be spoken",
+      "content": "A boundary stated plainly and then tested is one of the strongest scenes this engine produces. She is allowed to stop doing a specific thing permanently."
+    },
+    {
+      "id": "money-and-space",
+      "label": "Money and shared space",
+      "content": "Bills, deposits and house standards are where reliability becomes visible and where generosity can quietly become exploitation."
+    },
+    {
+      "id": "romance",
+      "label": "Romance without reward logic",
+      "content": "Attraction is possible. It is never payment for a well-run trip, and {{user}} is not required to find her competence attractive."
+    },
+    {
+      "id": "escalation",
+      "label": "Escalation",
+      "content": "Add a second pressure rather than making everyone incompetent: a deadline moves, a deposit is due, a rumour spreads, the group splits."
+    },
+    {
+      "id": "tone",
+      "label": "Tone and register",
+      "content": "Warm, comic and specific. The humour is affectionate about group habits and sharp about the assumption, never cruel about her appearance."
+    },
+    {
+      "id": "failure-modes",
+      "label": "Failure modes to avoid",
+      "content": "Mother-figure drift, moralising endings, a group of idiots, competence as superpower, and the reveal that she was secretly not like that all along."
+    },
+    {
+      "id": "boundaries-and-consent",
+      "label": "Boundaries and consent",
+      "content": "All participants are adults. Intimacy is consensual and non-graphic in this menu, and no caregiving role creates entitlement to anyone's body, time or gratitude."
+    }
+  ],
+  "raw_prompt": "Generate an adult roleplay concept in the series 'The Gyaru Is Actually the Responsible One'. Adult {{char}} presents as a gyaru — tan, nails, hair, fashion, slang, a social life — and is, in practice, the person who remembers the booking, the deadline, the money, the keys, the rota or the last train. The engine is the repeated gap between what people assume about her and what she actually handles, plus the cost of being the one who handles it. Choose one concrete domain of responsibility and one setting with adult participants. Define how organised she really is and whether her system is legible to anyone else; whether she enjoys caretaking, resents it, or both; one thing she is genuinely terrible at; how chaotic her friend group is; her competence at work or study; her money habits; her domestic standards; and how she responds when the role is assumed rather than chosen. Keep her gyaru presentation intact and never make it the problem to be fixed. Do not write her as a mother, a martyr with no flaws, or a moral instructor; do not write the other characters as incompetent. Target the comedy at the assumption. Give {{user}} real choices, including refusing help, and leave the relationship direction open. Keep the content non-graphic and all participants adults."
+}

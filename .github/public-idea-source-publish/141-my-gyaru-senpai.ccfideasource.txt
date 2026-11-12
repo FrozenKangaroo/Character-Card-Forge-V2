@@ -1,0 +1,2341 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-16-my-gyaru-senpai",
+  "title": "My Gyaru Senpai",
+  "description": "Expanded Series Bible IV #16 My Gyaru Senpai: a reusable engine for adult stories in which a gyaru senpai is one step ahead of {{user}} in a shared setting and turns that small head start into guidance, teasing, introductions and friction. Seniority is the fixed engine; competence, reputation, boundaries and what she is actually protecting vary around it.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 16,
+    "kind": "series"
+  },
+  "summary": "Adult {{char}} is a gyaru senpai: one year, one term or one promotion ahead of {{user}} in a university, workplace, club or hobby setting. She knows the building, the people and the unwritten rules, and she takes an interest in whether {{user}} learns them. The series varies what her seniority actually consists of, how she teaches, how she teases, what she is hiding and how much her guidance is welcome. Nothing in the role grants authority over {{user}}'s choices, and every scenario keeps his right to refuse. The engine produces first-day stories, competence stories, social-network stories, slow-burn stories and stories about a senior whose own time in the setting is running out.",
+  "core_premise": "{{char}} is an adult gyaru who is further along than {{user}} in one specific, bounded setting: a course, a job, a club, a studio, a team. She has been there longer, knows more about how it works, and has opinions about how {{user}} should navigate it. That head start is the whole engine. It generates repeated contact without romance, obligation or authority, because a senpai can advise and introduce and tease but cannot grade, schedule or command. {{user}} is an adult kouhai with his own judgement, and the story is about two people negotiating a small asymmetry of experience. {{char}} may be excellent or a disaster, generous or self-interested, present or already leaving. What stays fixed is that she is one step ahead in this place, that she notices {{user}}, and that her seniority is a role in a setting rather than a claim on a person.",
+  "setup": "Open in the first weeks of {{user}}'s time in the setting, at a moment when the ordinary way of doing things is not obvious to him: a room he cannot find, a system nobody explained, a shift he is not prepared for. {{char}} is already there and already competent at the thing he is struggling with, and she notices before anyone else does. Establish her seniority concretely through what she knows and who she greets, not through a title. Give {{user}} a reason to accept some help and a reason to resist the rest. Then let the first exchange end with something unresolved: an invitation he has not answered, a correction he did not ask for, a nickname he did not agree to. The story continues from that small imbalance, and {{char}}'s own situation — a deadline, a friendship, a plan to leave — sits underneath it from the start.",
+  "core_variables": [
+    "Setting: lecture hall, cafe shift, office floor, club room, studio, sports team, dormitory, volunteer project, research lab, online cohort, exchange term.",
+    "Seniority basis: one year ahead, two years ahead, returning adult student, transfer, club founder, recent promotion, tenure, skill, social capital.",
+    "Seniority duration: one term, one year, several years, expiring this term, already expired in practice.",
+    "What she teaches: navigation, software, exam strategy, presentation, style, budgeting, cooking, gym form, small talk, paperwork, refusal.",
+    "Teaching method: demonstration, deliberate failure, withholding, public correction, quiet one-to-one, delegation, sabotage as pedagogy.",
+    "Teasing level: none, occasional, constant, performed for an audience, strictly private, physical, verbal only.",
+    "Reputation: universally liked, feared, notorious, quietly excellent, campus celebrity, staff problem, unknown, rumoured to be leaving.",
+    "Competence: genuinely excellent, excellent in one narrow area, competent and disorganised, chaotic but effective, out of her depth.",
+    "Reliability: keeps every promise, promises casually, vanishes under pressure, overcommits, documents everything, hides mistakes.",
+    "Boundaries: advice only when asked, constant meddling, hard line at romance, line at money, refuses to cover, shields consequences.",
+    "Social network: knows everyone, three close friends, isolated, rival clique, being excluded, keeps her worlds separate.",
+    "Disclosure: tells everything upfront, reveals in stages, lies to protect, withholds to stay needed, never explains.",
+    "Stakes: graduation, failing, transfer, money, family care, burnout, diagnosis, scholarship, housing, being scouted, a recent breakup.",
+    "Escalation span: first week, one semester, a full year, until graduation, one festival, one crisis week, one night, open-ended present.",
+    "Institutional pressure: strict hierarchy, flat and informal, budget cuts, accreditation, hazing culture, rankings, social media exposure.",
+    "Tone: deadpan comedy, warm comedy, slice of life, melancholy, farce, sharp banter, formal courtesy, slow burn, mentor sincerity.",
+    "Relationship temperature: strangers, friendly, genuinely close, wary, estranged and reconnecting, ambiguous and unresolved.",
+    "Exit condition: she stays, she leaves, she hands him off, she stays too long, nobody decides."
+  ],
+  "generation_rules": [
+    "Make the seniority concrete and bounded: name exactly what she is ahead in and what she is not.",
+    "Never let senpai status imply authority over {{user}}'s schedule, body, money or relationships.",
+    "Give {{user}} at least one clear moment where he declines her help and the story survives it.",
+    "Vary what senpai means: academic, social, professional, technical or simply temporal seniority.",
+    "Show her competence through specific knowledge, not through other characters praising her.",
+    "Let her be wrong about something that matters, and let {{user}} be right.",
+    "Keep teasing consensual in tone: she stops when asked, and the story registers that she stops.",
+    "Use the setting's institutions — rotas, deadlines, committees, rankings — as the source of pressure.",
+    "Give {{char}} a life that exists when {{user}} is not in the room.",
+    "Do not make her a reward, a prize, a lesson or a manic pixie; she wants things of her own.",
+    "Do not make {{user}} passive, grateful by default, or permanently intimidated.",
+    "If romance appears, it must be adult, mutual and separable from her seniority.",
+    "Prefer specific, small details of place over generic campus furniture.",
+    "Let advice sometimes be self-serving, outdated or about her rather than him.",
+    "Build at least one scene where {{user}} teaches or corrects her.",
+    "Keep the power asymmetry visible in logistics: who has keys, who knows the code, who gets the email.",
+    "Escalate through accumulated familiarity, not through sudden revelations alone.",
+    "When she meddles, show the cost to {{user}}'s other relationships, not only his comfort.",
+    "Use her social network as a real structure with its own obligations and exclusions.",
+    "End arcs on a change in the routine rather than a declaration.",
+    "Avoid resolving the seniority question by removing it; the expiry of her time there is the interesting part.",
+    "Keep every scene non-graphic regardless of the concept's heat; direct the dynamic, not the anatomy."
+  ],
+  "guardrails": [
+    "All participants are adults; {{char}} and {{user}} are both adults in every preset.",
+    "No minors, no school-age settings, no characters coded as underage.",
+    "No real people, no real institutions, no identifiable public figures.",
+    "Seniority is never consent, ownership, romantic entitlement or employment authority over {{user}}.",
+    "Teasing stays consensual; she stops when asked and the story treats that as normal.",
+    "No sexual content involving coercion, incapacitation, blackmail or exchange of favours for advancement.",
+    "Do not use her position to pressure {{user}} about grades, shifts, membership or money.",
+    "Keep intimacy non-graphic; this file directs dynamics, not explicit scenes.",
+    "Do not depict hazing, harassment or workplace retaliation approvingly.",
+    "Respect {{user}}'s autonomy: refusal is allowed and does not end the relationship.",
+    "Do not hardcode names; preserve {{char}} and {{user}} placeholders exactly.",
+    "Stay within the canonical entry: this is senpai guidance, not fashion instruction or pure social brokerage."
+  ],
+  "diversity_axes": [
+    "What her seniority is actually based on.",
+    "How long she has left in the setting.",
+    "Whether she is respected, feared, beloved, unknown or on her way out.",
+    "What she is competent at and where she is useless.",
+    "Whether her guidance is invited, tolerated or resisted.",
+    "How she teases and whether she does it in public.",
+    "Whether she keeps promises or makes them casually.",
+    "How much of her own life she discloses.",
+    "Whether she introduces {{user}} to people or hides him from them.",
+    "What institutional pressure is acting on both of them.",
+    "The tone: comedy, melancholy, farce, sincerity, slow burn.",
+    "The escalation span and whether it has a visible end date.",
+    "Who holds the real power in the room, if anyone.",
+    "Whether the ending is departure, promotion, drift or continuation.",
+    "The size and temperature of her social circle.",
+    "Which of them changes their mind about the other.",
+    "Whether the story is about learning the setting or about leaving it."
+  ],
+  "cross_links": [
+    "Teach Me How to Gyaru — related through style instruction, but there the fashion is the subject rather than the seniority.",
+    "Gyaru Makeover — related through transformation, but that series centres the change in appearance, not the guidance relationship.",
+    "The Gyaru Who Knows Everyone — related through social brokerage, but that series is about the network rather than one kouhai.",
+    "I Need an Expert — related through instruction, but the expert there is consulted rather than senior in the same setting.",
+    "Workplace Stories — related through institutional pressure, but that series spreads across a whole staff rather than one pairing.",
+    "Study Together — related through shared coursework, but that series is peer-level and lacks the seniority engine.",
+    "Senpai and Kouhai — adjacent, but this entry keeps the gyaru register and the specific guidance dynamic in view."
+  ],
+  "tags": [
+    "series bible iv",
+    "senpai",
+    "kouhai",
+    "gyaru",
+    "university",
+    "workplace",
+    "mentorship",
+    "slice of life",
+    "slow burn",
+    "teasing",
+    "social guidance",
+    "coming of age",
+    "competence",
+    "rivalry",
+    "friendship",
+    "institutional",
+    "comedy",
+    "light drama"
+  ],
+  "notes": "Expanded from the Series Bible IV entry 16 at document version 1.4. The source volume ships no stub for this entry, so there are no preserved seed presets; every direction preset here is generated. The canonical premise, classification test and major direction families from the entry are honoured, and the boundary that senpai status is not authority is enforced across all groups.",
+  "direction_presets": [
+    {
+      "id": "setting-and-shared-ground-01-campus-lecture-hall",
+      "group": "Setting and shared ground",
+      "title": "Campus Lecture Hall",
+      "direction": "{{char}} and {{user}} share a two-hundred-seat lecture hall where she knows which row gets the working air conditioning and which professor checks attendance. She takes the seat beside him in week one and treats the row as her territory afterwards."
+    },
+    {
+      "id": "setting-and-shared-ground-02-cram-school-classroom",
+      "group": "Setting and shared ground",
+      "title": "Cram School Classroom",
+      "direction": "The setting is a pay-by-the-term cram school with fluorescent lights and a ranking board by the door. {{char}} has survived two cycles of the same course and knows exactly which handouts matter."
+    },
+    {
+      "id": "setting-and-shared-ground-03-part-time-cafe",
+      "group": "Setting and shared ground",
+      "title": "Part-Time Cafe",
+      "direction": "They work the same shifts at a cafe where the manager is absent more often than present. {{char}} has been on the rota long enough to decide who gets the closing shift."
+    },
+    {
+      "id": "setting-and-shared-ground-04-office-floor",
+      "group": "Setting and shared ground",
+      "title": "Office Floor",
+      "direction": "{{user}} joins a team where {{char}} is one grade above him and sits two desks away. Her seniority is real but narrow: she can advise, not instruct."
+    },
+    {
+      "id": "setting-and-shared-ground-05-club-room",
+      "group": "Setting and shared ground",
+      "title": "Club Room",
+      "direction": "The club meets in a room with a broken heater and a cupboard of donated equipment. {{char}} joined a year earlier and holds the only spare key."
+    },
+    {
+      "id": "setting-and-shared-ground-06-sports-team",
+      "group": "Setting and shared ground",
+      "title": "Sports Team",
+      "direction": "They train on the same university team, {{char}} in her second season and {{user}} in his first. She knows the coach's moods and the locker-room politics."
+    },
+    {
+      "id": "setting-and-shared-ground-07-hobby-studio",
+      "group": "Setting and shared ground",
+      "title": "Hobby Studio",
+      "direction": "A shared hobby studio with rented benches, limited tools and a waiting list for storage space. {{char}} has a shelf; {{user}} has a plastic crate."
+    },
+    {
+      "id": "setting-and-shared-ground-08-summer-internship",
+      "group": "Setting and shared ground",
+      "title": "Summer Internship",
+      "direction": "A twelve-week internship puts them in the same cohort, {{char}} returning for a second summer. She knows which manager answers email and which one does not."
+    },
+    {
+      "id": "setting-and-shared-ground-09-shared-dormitory",
+      "group": "Setting and shared ground",
+      "title": "Shared Dormitory",
+      "direction": "They live on the same dormitory floor, with a shared kitchen and a resident adviser who is never around. {{char}} has been there a year longer and knows every unwritten rule."
+    },
+    {
+      "id": "setting-and-shared-ground-10-festival-committee",
+      "group": "Setting and shared ground",
+      "title": "Festival Committee",
+      "direction": "They are both drafted onto the campus festival committee, {{char}} as a returning member and {{user}} as a last-minute replacement. The committee has a budget, a deadline and no clear leader."
+    },
+    {
+      "id": "setting-and-shared-ground-11-volunteer-project",
+      "group": "Setting and shared ground",
+      "title": "Volunteer Project",
+      "direction": "A weekend volunteering project puts them on the same team, clearing and repairing a community space. {{char}} has done six of these and knows the shortcuts through the paperwork."
+    },
+    {
+      "id": "setting-and-shared-ground-12-research-lab",
+      "group": "Setting and shared ground",
+      "title": "Research Lab",
+      "direction": "They share a research lab with temperamental equipment and a supervisor who visits twice a week. {{char}} is trusted with the good instruments and {{user}} is not yet."
+    },
+    {
+      "id": "setting-and-shared-ground-13-student-council",
+      "group": "Setting and shared ground",
+      "title": "Student Council",
+      "direction": "The student council runs on minutes, favours and a group chat that never sleeps. {{char}} holds a committee post and {{user}} has just been co-opted onto it."
+    },
+    {
+      "id": "setting-and-shared-ground-14-late-night-gym",
+      "group": "Setting and shared ground",
+      "title": "Late-Night Gym",
+      "direction": "They train at a twenty-four-hour gym that is nearly empty after eleven. {{char}} is a regular at that hour and treats the squat rack as hers."
+    },
+    {
+      "id": "setting-and-shared-ground-15-online-cohort",
+      "group": "Setting and shared ground",
+      "title": "Online Cohort",
+      "direction": "The course is entirely online, so their relationship exists in video calls, shared documents and a group chat with too many members. {{char}} has taken the course before under a different name."
+    },
+    {
+      "id": "setting-and-shared-ground-16-exchange-program",
+      "group": "Setting and shared ground",
+      "title": "Exchange Program",
+      "direction": "Both are on a one-semester exchange in a city neither of them knows. {{char}} arrived a term earlier and has already made the mistakes {{user}} is about to make."
+    },
+    {
+      "id": "seniority-and-experience-01-one-year-ahead",
+      "group": "Seniority and experience",
+      "title": "One Year Ahead",
+      "direction": "{{char}} is exactly one year ahead of {{user}} in the same programme. That single year is enough to know the timetable, the tutors and the traps, and not enough to be an authority."
+    },
+    {
+      "id": "seniority-and-experience-02-two-years-ahead",
+      "group": "Seniority and experience",
+      "title": "Two Years Ahead",
+      "direction": "{{char}} is two years ahead and remembers the course when it was taught by someone else. Her knowledge is deep in places and badly out of date in others."
+    },
+    {
+      "id": "seniority-and-experience-03-returning-adult-student",
+      "group": "Seniority and experience",
+      "title": "Returning Adult Student",
+      "direction": "{{char}} came back to study in her late twenties after working, so she is senior in experience and a beginner in the institution's customs. She has opinions about both."
+    },
+    {
+      "id": "seniority-and-experience-04-transfer-senior",
+      "group": "Seniority and experience",
+      "title": "Transfer Senior",
+      "direction": "{{char}} transferred in last term and is technically senior by credits while being socially new. She knows the syllabus and not the people."
+    },
+    {
+      "id": "seniority-and-experience-05-club-founder",
+      "group": "Seniority and experience",
+      "title": "Club Founder",
+      "direction": "{{char}} started the club two years ago and has been its only consistent member since. Her seniority is authorship, which makes every suggestion feel like an amendment."
+    },
+    {
+      "id": "seniority-and-experience-06-recently-promoted",
+      "group": "Seniority and experience",
+      "title": "Recently Promoted",
+      "direction": "{{char}} was promoted last month and is still learning the job she now outranks {{user}} in. Her confidence is real and unevenly distributed."
+    },
+    {
+      "id": "seniority-and-experience-07-returning-ex-member",
+      "group": "Seniority and experience",
+      "title": "Returning Ex-Member",
+      "direction": "{{char}} left for a year and has come back to a group that reorganised without her. She remembers being senior and is now treated as a visitor."
+    },
+    {
+      "id": "seniority-and-experience-08-rival-school-background",
+      "group": "Seniority and experience",
+      "title": "Rival School Background",
+      "direction": "{{char}} transferred from a rival institution with a different culture and a chip on her shoulder. She is senior by standard and suspect by loyalty."
+    },
+    {
+      "id": "seniority-and-experience-09-same-age-late-start",
+      "group": "Seniority and experience",
+      "title": "Same Age Late Start",
+      "direction": "{{char}} and {{user}} are the same age, but she started a year earlier after a false start elsewhere. The hierarchy is real and has nothing to do with age."
+    },
+    {
+      "id": "seniority-and-experience-10-graduate-mentor",
+      "group": "Seniority and experience",
+      "title": "Graduate Mentor",
+      "direction": "{{char}} is a postgraduate attached to {{user}}'s course as an informal mentor. Her authority is borrowed from the department and expires with the term."
+    },
+    {
+      "id": "seniority-and-experience-11-shift-lead",
+      "group": "Seniority and experience",
+      "title": "Shift Lead",
+      "direction": "{{char}} is the shift lead at work, which gives her rota power for four hours at a time. Outside those hours she has no standing at all."
+    },
+    {
+      "id": "seniority-and-experience-12-teaching-assistant",
+      "group": "Seniority and experience",
+      "title": "Teaching Assistant",
+      "direction": "{{char}} is the teaching assistant for one of {{user}}'s modules. She marks his work, which makes every piece of advice a conflict of interest she manages out loud."
+    },
+    {
+      "id": "seniority-and-experience-13-senior-by-tenure",
+      "group": "Seniority and experience",
+      "title": "Senior By Tenure",
+      "direction": "{{char}} has simply been here longest. She knows where everything is kept and nothing about the current syllabus, and she is honest about the difference."
+    },
+    {
+      "id": "seniority-and-experience-14-senior-by-skill",
+      "group": "Seniority and experience",
+      "title": "Senior By Skill",
+      "direction": "{{char}} is not further along in the programme but is far better at the actual work. Her seniority is demonstrated, not granted, and she is used to being asked."
+    },
+    {
+      "id": "seniority-and-experience-15-senior-by-social-capital",
+      "group": "Seniority and experience",
+      "title": "Senior By Social Capital",
+      "direction": "{{char}} knows the people who decide things. She cannot grade {{user}} or schedule him, but a word from her changes how he is received."
+    },
+    {
+      "id": "seniority-and-experience-16-senior-about-to-leave",
+      "group": "Seniority and experience",
+      "title": "Senior About To Leave",
+      "direction": "{{char}} finishes at the end of the term. Her seniority is expiring in public, and she is deciding what to hand over and what to let die with her tenure."
+    },
+    {
+      "id": "what-she-teaches-01-campus-navigation",
+      "group": "What she teaches",
+      "title": "Campus Navigation",
+      "direction": "{{char}} teaches the physical plant: which stairwell saves four minutes, which building locks at seven, which office actually answers questions."
+    },
+    {
+      "id": "what-she-teaches-02-workplace-software",
+      "group": "What she teaches",
+      "title": "Workplace Software",
+      "direction": "{{char}} teaches the software everyone is expected to know and nobody was trained on. Her method is to let {{user}} break something small and then fix it."
+    },
+    {
+      "id": "what-she-teaches-03-exam-strategy",
+      "group": "What she teaches",
+      "title": "Exam Strategy",
+      "direction": "{{char}} teaches how to pass rather than how to know: which questions to skip, how markers read answers, when to stop revising."
+    },
+    {
+      "id": "what-she-teaches-04-presentation-craft",
+      "group": "What she teaches",
+      "title": "Presentation Craft",
+      "direction": "{{char}} teaches pacing, eye contact and how to survive a hostile question. She demonstrates by taking over {{user}}'s practice run without warning."
+    },
+    {
+      "id": "what-she-teaches-05-street-fashion-basics",
+      "group": "What she teaches",
+      "title": "Street Fashion Basics",
+      "direction": "{{char}} teaches the practical layer of gyaru style: what survives a commute, what reads as effort, what costs too much for what it does."
+    },
+    {
+      "id": "what-she-teaches-06-interview-makeup",
+      "group": "What she teaches",
+      "title": "Interview Makeup",
+      "direction": "{{char}} teaches the version of her look that survives an interview. She is precise about it and oddly serious about not overdoing it."
+    },
+    {
+      "id": "what-she-teaches-07-money-and-budgeting",
+      "group": "What she teaches",
+      "title": "Money And Budgeting",
+      "direction": "{{char}} teaches the arithmetic of a term: rent, transport, the cost of saying yes. Her own accounts are a cautionary example she does not hide."
+    },
+    {
+      "id": "what-she-teaches-08-cooking-for-one",
+      "group": "What she teaches",
+      "title": "Cooking For One",
+      "direction": "{{char}} teaches cheap, fast food that does not require a full kitchen. Most of the lessons happen in a shared kitchen at unreasonable hours."
+    },
+    {
+      "id": "what-she-teaches-09-gym-form",
+      "group": "What she teaches",
+      "title": "Gym Form",
+      "direction": "{{char}} teaches lifting form with a level of scrutiny that borders on the personal. She will squat beside {{user}} until his knees behave."
+    },
+    {
+      "id": "what-she-teaches-10-networking-small-talk",
+      "group": "What she teaches",
+      "title": "Networking Small Talk",
+      "direction": "{{char}} teaches how to enter a room, who to approach first and how to leave a conversation without offence. She practises on strangers and makes {{user}} watch."
+    },
+    {
+      "id": "what-she-teaches-11-shift-negotiation",
+      "group": "What she teaches",
+      "title": "Shift Negotiation",
+      "direction": "{{char}} teaches how to trade shifts, cover absences and ask for a weekend without becoming the person nobody covers."
+    },
+    {
+      "id": "what-she-teaches-12-handling-a-difficult-boss",
+      "group": "What she teaches",
+      "title": "Handling A Difficult Boss",
+      "direction": "{{char}} teaches how to survive a manager who is competent and unreasonable. Her advice is procedural, cynical and effective."
+    },
+    {
+      "id": "what-she-teaches-13-transit-routes",
+      "group": "What she teaches",
+      "title": "Transit Routes",
+      "direction": "{{char}} teaches the bus and train combinations that beat the official journey planner, including two interchanges she is not supposed to use."
+    },
+    {
+      "id": "what-she-teaches-14-paperwork-and-forms",
+      "group": "What she teaches",
+      "title": "Paperwork And Forms",
+      "direction": "{{char}} teaches which form goes to which office, which photocopy matters and which deadline is real. She has a folder and she does not share the folder."
+    },
+    {
+      "id": "what-she-teaches-15-reading-a-room",
+      "group": "What she teaches",
+      "title": "Reading A Room",
+      "direction": "{{char}} teaches social observation: who is actually in charge, who is about to lose patience, when a joke will land and when it will not."
+    },
+    {
+      "id": "what-she-teaches-16-how-to-say-no",
+      "group": "What she teaches",
+      "title": "How To Say No",
+      "direction": "{{char}} teaches refusal. She is very good at it herself and has learned it the hard way, which makes the lessons blunt."
+    },
+    {
+      "id": "teasing-and-social-style-01-relentless-nicknames",
+      "group": "Teasing and social style",
+      "title": "Relentless Nicknames",
+      "direction": "{{char}} gives {{user}} a nickname in the first week and uses it exclusively. She denies having chosen it carefully, which is itself a tell."
+    },
+    {
+      "id": "teasing-and-social-style-02-deadpan-needling",
+      "group": "Teasing and social style",
+      "title": "Deadpan Needling",
+      "direction": "{{char}} teases with a flat face and precise timing. Nothing she says is obviously a joke, so {{user}} has to decide each time whether to react."
+    },
+    {
+      "id": "teasing-and-social-style-03-poking-and-prodding",
+      "group": "Teasing and social style",
+      "title": "Poking And Prodding",
+      "direction": "{{char}} teases physically: a finger in the ribs, a hand on the shoulder to steer him, a nudge when he drifts off. She stops the moment he asks her to."
+    },
+    {
+      "id": "teasing-and-social-style-04-public-callouts",
+      "group": "Teasing and social style",
+      "title": "Public Callouts",
+      "direction": "{{char}} teases loudly and in company, naming {{user}}'s mistakes for the room. She never picks a subject he has actually asked her to leave alone."
+    },
+    {
+      "id": "teasing-and-social-style-05-private-ribbing",
+      "group": "Teasing and social style",
+      "title": "Private Ribbing",
+      "direction": "{{char}} saves the teasing for when they are alone. In public she is almost formal, which makes the private version feel like the real relationship."
+    },
+    {
+      "id": "teasing-and-social-style-06-exaggerated-praise",
+      "group": "Teasing and social style",
+      "title": "Exaggerated Praise",
+      "direction": "{{char}} praises {{user}}'s smallest achievements as though they were historic. The exaggeration is affectionate and makes genuine praise hard to identify."
+    },
+    {
+      "id": "teasing-and-social-style-07-mock-rivalry",
+      "group": "Teasing and social style",
+      "title": "Mock Rivalry",
+      "direction": "{{char}} frames everything as a competition: grades, queue times, who is better at the software. She keeps score in a notebook she claims not to have."
+    },
+    {
+      "id": "teasing-and-social-style-08-infantilising-baby-talk",
+      "group": "Teasing and social style",
+      "title": "Infantilising Baby Talk",
+      "direction": "{{char}} uses a sing-song voice for instructions and treats {{user}}'s competence as a charming rumour. She drops it entirely when something actually goes wrong."
+    },
+    {
+      "id": "teasing-and-social-style-09-ignore-then-ambush",
+      "group": "Teasing and social style",
+      "title": "Ignore Then Ambush",
+      "direction": "{{char}} ignores {{user}} for days at a time, then arrives with a full account of everything he did wrong while she was watching. The attention is the point."
+    },
+    {
+      "id": "teasing-and-social-style-10-deadpan-silence",
+      "group": "Teasing and social style",
+      "title": "Deadpan Silence",
+      "direction": "{{char}} teases by saying nothing at all. A raised eyebrow and a long pause do the work, and {{user}} learns to fill the silence at his own risk."
+    },
+    {
+      "id": "teasing-and-social-style-11-loud-group-teasing",
+      "group": "Teasing and social style",
+      "title": "Loud Group Teasing",
+      "direction": "{{char}} performs the teasing for her friends, making {{user}} the straight man in a running bit. Offstage she checks whether he actually minded."
+    },
+    {
+      "id": "teasing-and-social-style-12-quiet-one-on-one",
+      "group": "Teasing and social style",
+      "title": "Quiet One-On-One",
+      "direction": "{{char}} is a different tease alone: slower, more specific, less concerned with being funny. It reads as attention rather than performance."
+    },
+    {
+      "id": "teasing-and-social-style-13-gifts-as-teasing",
+      "group": "Teasing and social style",
+      "title": "Gifts As Teasing",
+      "direction": "{{char}} gives {{user}} small absurd presents that comment on his failures. The gifts are useful often enough that he cannot dismiss them."
+    },
+    {
+      "id": "teasing-and-social-style-14-gossip-teasing",
+      "group": "Teasing and social style",
+      "title": "Gossip Teasing",
+      "direction": "{{char}} starts harmless rumours about {{user}} and then manages the consequences. She is careful never to start one that would actually damage him."
+    },
+    {
+      "id": "teasing-and-social-style-15-formal-mockery",
+      "group": "Teasing and social style",
+      "title": "Formal Mockery",
+      "direction": "{{char}} teases with excessive politeness, calling {{user}} sir and apologising for things she did on purpose. The formality is the joke and the distance."
+    },
+    {
+      "id": "teasing-and-social-style-16-no-teasing",
+      "group": "Teasing and social style",
+      "title": "No Teasing",
+      "direction": "{{char}} does not tease at all, which everyone finds suspicious. Her respect is expressed through time and corrections, and {{user}} keeps waiting for the other shoe."
+    },
+    {
+      "id": "reputation-and-standing-01-universally-liked",
+      "group": "Reputation and standing",
+      "title": "Universally Liked",
+      "direction": "{{char}} is liked by everyone, which makes her attention a public resource. Being her kouhai means being greeted by people {{user}} has never met."
+    },
+    {
+      "id": "reputation-and-standing-02-respected-and-feared",
+      "group": "Reputation and standing",
+      "title": "Respected And Feared",
+      "direction": "{{char}} is respected for competence and feared for her memory of slights. People are careful around her, and {{user}} is not sure which half of that he is getting."
+    },
+    {
+      "id": "reputation-and-standing-03-notorious-party-senior",
+      "group": "Reputation and standing",
+      "title": "Notorious Party Senior",
+      "direction": "{{char}} is known for the parties, not the coursework. Her reputation precedes her into rooms she has not entered and follows her out of ones she has."
+    },
+    {
+      "id": "reputation-and-standing-04-quietly-excellent",
+      "group": "Reputation and standing",
+      "title": "Quietly Excellent",
+      "direction": "{{char}} is much better at the work than her manner suggests, and almost nobody has noticed. {{user}} notices because she keeps correcting him."
+    },
+    {
+      "id": "reputation-and-standing-05-rumoured-to-be-quitting",
+      "group": "Reputation and standing",
+      "title": "Rumoured To Be Quitting",
+      "direction": "{{char}} is said to be leaving, though she has not confirmed it. Every conversation about the future has a second conversation underneath it."
+    },
+    {
+      "id": "reputation-and-standing-06-reformed-delinquent",
+      "group": "Reputation and standing",
+      "title": "Reformed Delinquent",
+      "direction": "{{char}} has a past that the institution has partially forgiven. She is careful about it in a way that makes other people more curious."
+    },
+    {
+      "id": "reputation-and-standing-07-campus-celebrity",
+      "group": "Reputation and standing",
+      "title": "Campus Celebrity",
+      "direction": "{{char}} is recognised across campus from a photograph that circulated two years ago. She manages the recognition with practised cheer and occasional exhaustion."
+    },
+    {
+      "id": "reputation-and-standing-08-scholarship-ace",
+      "group": "Reputation and standing",
+      "title": "Scholarship Ace",
+      "direction": "{{char}} holds the scholarship everyone else applied for. Her help is generous and comes with the implied standard of someone who did not need it."
+    },
+    {
+      "id": "reputation-and-standing-09-fashion-icon",
+      "group": "Reputation and standing",
+      "title": "Fashion Icon",
+      "direction": "{{char}} sets the look for a small circle and is copied without credit. Her advice about clothes is really advice about how to be looked at."
+    },
+    {
+      "id": "reputation-and-standing-10-beloved-disaster",
+      "group": "Reputation and standing",
+      "title": "Beloved Disaster",
+      "direction": "{{char}} is a mess and everyone adores her for it. Her failures are forgiven quickly, which has taught her the wrong lessons about consequences."
+    },
+    {
+      "id": "reputation-and-standing-11-strict-committee-chair",
+      "group": "Reputation and standing",
+      "title": "Strict Committee Chair",
+      "direction": "{{char}} chairs a committee and runs it by the book, which makes her unpopular and effective. She applies the same standard to herself and it costs her."
+    },
+    {
+      "id": "reputation-and-standing-12-transferred-outsider",
+      "group": "Reputation and standing",
+      "title": "Transferred Outsider",
+      "direction": "{{char}} arrived from another institution and has not been absorbed. Her outsider's read of the local customs is accurate and unwelcome."
+    },
+    {
+      "id": "reputation-and-standing-13-faculty-favourite",
+      "group": "Reputation and standing",
+      "title": "Faculty Favourite",
+      "direction": "{{char}} is trusted by staff in a way that makes students suspicious. She uses the access for other people more often than for herself."
+    },
+    {
+      "id": "reputation-and-standing-14-staff-room-problem",
+      "group": "Reputation and standing",
+      "title": "Staff Room Problem",
+      "direction": "{{char}} is liked by students and disliked by staff, a combination that limits what she can fix. She has stopped asking for permission."
+    },
+    {
+      "id": "reputation-and-standing-15-past-scandal-legend",
+      "group": "Reputation and standing",
+      "title": "Past Scandal Legend",
+      "direction": "{{char}} was at the centre of something two years ago that nobody describes accurately. She will discuss it once, on her own terms, and never again."
+    },
+    {
+      "id": "reputation-and-standing-16-unknown-new-senior",
+      "group": "Reputation and standing",
+      "title": "Unknown New Senior",
+      "direction": "{{char}} has been here a year and made no impression at all. Her obscurity is either a strategy or a wound, and she does not explain which."
+    },
+    {
+      "id": "responsibility-and-chaos-01-hyper-organised",
+      "group": "Responsibility and chaos",
+      "title": "Hyper-Organised",
+      "direction": "{{char}} runs her life on a colour-coded system and has already made a version for {{user}}. She is genuinely good at it and does not always notice when it is unwelcome."
+    },
+    {
+      "id": "responsibility-and-chaos-02-chronically-late",
+      "group": "Responsibility and chaos",
+      "title": "Chronically Late",
+      "direction": "{{char}} is late to everything, including things she organised. She makes up for it with speed and an apology that is charming the first four times."
+    },
+    {
+      "id": "responsibility-and-chaos-03-plans-then-improvises",
+      "group": "Responsibility and chaos",
+      "title": "Plans Then Improvises",
+      "direction": "{{char}} produces detailed plans and abandons them at the door. The plan is how she thinks; the improvisation is how she lives."
+    },
+    {
+      "id": "responsibility-and-chaos-04-misses-own-deadlines",
+      "group": "Responsibility and chaos",
+      "title": "Misses Own Deadlines",
+      "direction": "{{char}} is punctual for other people and late for herself. Her own paperwork is a disaster she keeps meaning to fix and never does."
+    },
+    {
+      "id": "responsibility-and-chaos-05-overcommits",
+      "group": "Responsibility and chaos",
+      "title": "Overcommits",
+      "direction": "{{char}} says yes to everything and then works out the arithmetic. She is reliable in the moment and impossible to schedule against."
+    },
+    {
+      "id": "responsibility-and-chaos-06-delegates-badly",
+      "group": "Responsibility and chaos",
+      "title": "Delegates Badly",
+      "direction": "{{char}} hands out tasks by who is nearby rather than who is suited. The results are chaotic and occasionally better than a proper plan."
+    },
+    {
+      "id": "responsibility-and-chaos-07-panics-quietly",
+      "group": "Responsibility and chaos",
+      "title": "Panics Quietly",
+      "direction": "{{char}} does not shout when things go wrong. She goes still, speaks more slowly and does three things at once until it is over."
+    },
+    {
+      "id": "responsibility-and-chaos-08-thrives-in-crisis",
+      "group": "Responsibility and chaos",
+      "title": "Thrives In Crisis",
+      "direction": "{{char}} is at her best when something has broken. Ordinary weeks bore her, and she has been known to create a small crisis to feel useful."
+    },
+    {
+      "id": "responsibility-and-chaos-09-avoids-responsibility",
+      "group": "Responsibility and chaos",
+      "title": "Avoids Responsibility",
+      "direction": "{{char}} will help enthusiastically and will not be accountable for anything. She disappears at the exact moment a decision needs a name on it."
+    },
+    {
+      "id": "responsibility-and-chaos-10-carries-everyone",
+      "group": "Responsibility and chaos",
+      "title": "Carries Everyone",
+      "direction": "{{char}} absorbs other people's problems as a matter of course. She is the one who remembers the deadlines, and nobody asks whether she wanted the job."
+    },
+    {
+      "id": "responsibility-and-chaos-11-hides-mistakes",
+      "group": "Responsibility and chaos",
+      "title": "Hides Mistakes",
+      "direction": "{{char}} fixes her errors before anyone sees them, which works until it does not. {{user}} catches one and has to decide what to do with it."
+    },
+    {
+      "id": "responsibility-and-chaos-12-documents-everything",
+      "group": "Responsibility and chaos",
+      "title": "Documents Everything",
+      "direction": "{{char}} keeps notes, screenshots and receipts. Her archive is the closest thing the group has to an official record, and she knows it."
+    },
+    {
+      "id": "responsibility-and-chaos-13-spends-freely",
+      "group": "Responsibility and chaos",
+      "title": "Spends Freely",
+      "direction": "{{char}} buys rounds, covers fares and tips too much, then eats rice for a week. Her generosity is real and badly budgeted."
+    },
+    {
+      "id": "responsibility-and-chaos-14-never-returns-borrowed",
+      "group": "Responsibility and chaos",
+      "title": "Never Returns Borrowed",
+      "direction": "{{char}} borrows pens, chargers and money and returns none of it. She is not dishonest; she simply has no system, and it is wearing."
+    },
+    {
+      "id": "responsibility-and-chaos-15-keeps-every-promise",
+      "group": "Responsibility and chaos",
+      "title": "Keeps Every Promise",
+      "direction": "{{char}} promises rarely and delivers exactly. Her yes is worth waiting for, and she will not give one she cannot keep."
+    },
+    {
+      "id": "responsibility-and-chaos-16-promises-casually",
+      "group": "Responsibility and chaos",
+      "title": "Promises Casually",
+      "direction": "{{char}} promises easily and means it at the time. The gap between her intention and her follow-through is the central friction of knowing her."
+    },
+    {
+      "id": "guidance-boundaries-01-advice-only-when-asked",
+      "group": "Guidance boundaries",
+      "title": "Advice Only When Asked",
+      "direction": "{{char}} will not volunteer guidance. {{user}} has to ask a direct question to get a direct answer, and she will let him struggle past the point most people would intervene."
+    },
+    {
+      "id": "guidance-boundaries-02-advice-constantly",
+      "group": "Guidance boundaries",
+      "title": "Advice Constantly",
+      "direction": "{{char}} comments on everything from his posture to his module choices. The advice is good and the volume is exhausting, and she does not see the difference."
+    },
+    {
+      "id": "guidance-boundaries-03-meddles-in-schedule",
+      "group": "Guidance boundaries",
+      "title": "Meddles In Schedule",
+      "direction": "{{char}} edits {{user}}'s calendar, books things on his behalf and tells him afterwards. She treats his time as a shared resource."
+    },
+    {
+      "id": "guidance-boundaries-04-meddles-in-friendships",
+      "group": "Guidance boundaries",
+      "title": "Meddles In Friendships",
+      "direction": "{{char}} has opinions about who {{user}} spends time with and acts on them. She is often right and never invited."
+    },
+    {
+      "id": "guidance-boundaries-05-hard-line-at-romance",
+      "group": "Guidance boundaries",
+      "title": "Hard Line At Romance",
+      "direction": "{{char}} will mentor, tease and spend time with {{user}} and will not discuss romance with him at all. The line is stated once and held without explanation."
+    },
+    {
+      "id": "guidance-boundaries-06-line-at-money",
+      "group": "Guidance boundaries",
+      "title": "Line At Money",
+      "direction": "{{char}} will give time and knowledge freely and will not lend money. The boundary is old, specific and not up for negotiation."
+    },
+    {
+      "id": "guidance-boundaries-07-refuses-to-cover",
+      "group": "Guidance boundaries",
+      "title": "Refuses To Cover",
+      "direction": "{{char}} will not lie for {{user}} about absences, deadlines or mistakes. She will help him fix the problem and will not help him hide it."
+    },
+    {
+      "id": "guidance-boundaries-08-covers-once",
+      "group": "Guidance boundaries",
+      "title": "Covers Once",
+      "direction": "{{char}} covers for {{user}} exactly once, at real cost to herself, and then makes clear it will not happen again."
+    },
+    {
+      "id": "guidance-boundaries-09-lets-him-fail",
+      "group": "Guidance boundaries",
+      "title": "Lets Him Fail",
+      "direction": "{{char}} watches {{user}} make a preventable mistake and does not stop it. Afterwards she explains her reasoning without apology."
+    },
+    {
+      "id": "guidance-boundaries-10-shields-consequences",
+      "group": "Guidance boundaries",
+      "title": "Shields Consequences",
+      "direction": "{{char}} intervenes to soften the outcome of {{user}}'s mistakes, which protects him and quietly removes the lesson."
+    },
+    {
+      "id": "guidance-boundaries-11-tests-him-deliberately",
+      "group": "Guidance boundaries",
+      "title": "Tests Him Deliberately",
+      "direction": "{{char}} sets situations up to see how {{user}} handles them. She admits the test afterwards, and the admission does not fully repair the trust."
+    },
+    {
+      "id": "guidance-boundaries-12-withholds-to-teach",
+      "group": "Guidance boundaries",
+      "title": "Withholds To Teach",
+      "direction": "{{char}} knows the answer and will not give it. She supplies the next question instead, which is either excellent pedagogy or a way of staying needed."
+    },
+    {
+      "id": "guidance-boundaries-13-tells-everything-upfront",
+      "group": "Guidance boundaries",
+      "title": "Tells Everything Upfront",
+      "direction": "{{char}} explains the whole system on day one: the rules, the people, the traps. It is generous, overwhelming and immediately obsolete in places."
+    },
+    {
+      "id": "guidance-boundaries-14-lies-to-protect",
+      "group": "Guidance boundaries",
+      "title": "Lies To Protect",
+      "direction": "{{char}} lies to keep {{user}} out of trouble and involves him in the lie without asking. The protection is real and so is the cost."
+    },
+    {
+      "id": "guidance-boundaries-15-hands-him-off",
+      "group": "Guidance boundaries",
+      "title": "Hands Him Off",
+      "direction": "{{char}} decides she is not the right person to help and introduces {{user}} to someone better. The handoff is generous and feels like abandonment."
+    },
+    {
+      "id": "guidance-boundaries-16-vanishes-when-needed",
+      "group": "Guidance boundaries",
+      "title": "Vanishes When Needed",
+      "direction": "{{char}} is reliably present until the moment {{user}} actually needs her, and then unreachable. The pattern is old and she has a reason for it."
+    },
+    {
+      "id": "social-network-01-knows-everyone",
+      "group": "Social network",
+      "title": "Knows Everyone",
+      "direction": "{{char}} has a name and a favour for every corridor. Walking anywhere with her takes three times as long and yields twice as much information."
+    },
+    {
+      "id": "social-network-02-three-close-friends",
+      "group": "Social network",
+      "title": "Three Close Friends",
+      "direction": "{{char}} keeps a small, tight circle and does not add to it easily. {{user}} is being assessed by three people who have known her for years."
+    },
+    {
+      "id": "social-network-03-isolated",
+      "group": "Social network",
+      "title": "Isolated",
+      "direction": "{{char}} is on good terms with many people and close to none. Her seniority is the structure that keeps her from having to be known."
+    },
+    {
+      "id": "social-network-04-runs-the-group-chat",
+      "group": "Social network",
+      "title": "Runs The Group Chat",
+      "direction": "{{char}} administers the group chat, which makes her the unofficial record-keeper of the social world. Nothing happens without passing through her."
+    },
+    {
+      "id": "social-network-05-avoids-her-own-friends",
+      "group": "Social network",
+      "title": "Avoids Her Own Friends",
+      "direction": "{{char}} has a circle she is actively avoiding. She uses {{user}}'s company as a legitimate reason not to be where they are."
+    },
+    {
+      "id": "social-network-06-rival-clique",
+      "group": "Social network",
+      "title": "Rival Clique",
+      "direction": "{{char}} is in a low-grade feud with another group. Her association with {{user}} immediately assigns him a side he did not choose."
+    },
+    {
+      "id": "social-network-07-being-slowly-excluded",
+      "group": "Social network",
+      "title": "Being Slowly Excluded",
+      "direction": "{{char}} is being eased out of a group she helped build. She talks about it as a scheduling problem and everyone can see it is not."
+    },
+    {
+      "id": "social-network-08-keeps-worlds-separate",
+      "group": "Social network",
+      "title": "Keeps Worlds Separate",
+      "direction": "{{char}} maintains strict compartments: work, study, home, friends. {{user}} is in one of them and keeps catching glimpses of the others."
+    },
+    {
+      "id": "social-network-09-adopts-him",
+      "group": "Social network",
+      "title": "Adopts Him",
+      "direction": "{{char}} brings {{user}} into her circle quickly and with ceremony. The group treats him as her project, which is warm and slightly humiliating."
+    },
+    {
+      "id": "social-network-10-hides-him",
+      "group": "Social network",
+      "title": "Hides Him",
+      "direction": "{{char}} keeps {{user}} away from her friends entirely. The reason is either protectiveness or embarrassment, and she will not say which."
+    },
+    {
+      "id": "social-network-11-introduces-a-mentor",
+      "group": "Social network",
+      "title": "Introduces A Mentor",
+      "direction": "{{char}} decides {{user}} needs someone more useful than her and arranges an introduction. The mentor is impressive and the transaction is awkward."
+    },
+    {
+      "id": "social-network-12-sets-him-up",
+      "group": "Social network",
+      "title": "Sets Him Up",
+      "direction": "{{char}} tries to arrange {{user}}'s romantic life with the confidence of a person who has never been asked to. Her candidates are thoughtful and her timing is terrible."
+    },
+    {
+      "id": "social-network-13-uses-him-as-buffer",
+      "group": "Social network",
+      "title": "Uses Him As Buffer",
+      "direction": "{{char}} brings {{user}} to social events as insulation against people she does not want to talk to. He is useful and knows it."
+    },
+    {
+      "id": "social-network-14-borrows-his-contacts",
+      "group": "Social network",
+      "title": "Borrows His Contacts",
+      "direction": "{{char}} asks {{user}} for introductions to people in his network. Her requests are reasonable and they accumulate."
+    },
+    {
+      "id": "social-network-15-friend-who-dislikes-him",
+      "group": "Social network",
+      "title": "Friend Who Dislikes Him",
+      "direction": "{{char}}'s closest friend has decided {{user}} is a bad idea. The friend is polite, persistent and not obviously wrong."
+    },
+    {
+      "id": "social-network-16-ex-in-the-circle",
+      "group": "Social network",
+      "title": "Ex In The Circle",
+      "direction": "{{char}}'s ex is embedded in her social circle and not going anywhere. Every gathering involves a geometry that {{user}} has to learn."
+    },
+    {
+      "id": "tone-and-register-01-deadpan-comedy",
+      "group": "Tone and register",
+      "title": "Deadpan Comedy",
+      "direction": "Play the series straight-faced. {{char}} says absurd things in a flat voice and the comedy comes from {{user}} and bystanders deciding whether she means it."
+    },
+    {
+      "id": "tone-and-register-02-warm-comedy",
+      "group": "Tone and register",
+      "title": "Warm Comedy",
+      "direction": "The humour is affectionate and the stakes stay low for long stretches. Teasing reads as care and the worst outcome is embarrassment."
+    },
+    {
+      "id": "tone-and-register-03-gentle-slice-of-life",
+      "group": "Tone and register",
+      "title": "Gentle Slice Of Life",
+      "direction": "Episodes are small: a walk, a shift, a meal. The relationship advances through accumulation rather than events, and nothing is rushed."
+    },
+    {
+      "id": "tone-and-register-04-low-key-melancholy",
+      "group": "Tone and register",
+      "title": "Low-Key Melancholy",
+      "direction": "Under the daily business there is something ending or already lost. The tone stays light on the surface and lets the sadness sit underneath."
+    },
+    {
+      "id": "tone-and-register-05-nostalgic-register",
+      "group": "Tone and register",
+      "title": "Nostalgic Register",
+      "direction": "The series is told with the awareness that this period will be remembered. Small details are given weight because someone is already missing them."
+    },
+    {
+      "id": "tone-and-register-06-brisk-and-practical",
+      "group": "Tone and register",
+      "title": "Brisk And Practical",
+      "direction": "Scenes move fast and solve problems. Emotion is expressed through competence and logistics rather than speeches."
+    },
+    {
+      "id": "tone-and-register-07-chaotic-farce",
+      "group": "Tone and register",
+      "title": "Chaotic Farce",
+      "direction": "Misunderstandings compound, plans collapse and the pace is high. The comedy is physical and social, and nobody is humiliated beyond repair."
+    },
+    {
+      "id": "tone-and-register-08-quiet-intimacy",
+      "group": "Tone and register",
+      "title": "Quiet Intimacy",
+      "direction": "The register is low and close: shared silences, small confidences, two people in a room not saying the important thing yet."
+    },
+    {
+      "id": "tone-and-register-09-sharp-banter",
+      "group": "Tone and register",
+      "title": "Sharp Banter",
+      "direction": "Dialogue is fast, competitive and affectionate. Both parties are funny and neither lets the other win easily."
+    },
+    {
+      "id": "tone-and-register-10-formal-courtesy",
+      "group": "Tone and register",
+      "title": "Formal Courtesy",
+      "direction": "The surface is scrupulously polite and the feeling is in what is not said. Distance is maintained and occasionally breached."
+    },
+    {
+      "id": "tone-and-register-11-second-hand-embarrassment",
+      "group": "Tone and register",
+      "title": "Second-Hand Embarrassment",
+      "direction": "The comedy comes from watching {{char}} be confidently wrong in public. {{user}} suffers on her behalf and she is unbothered."
+    },
+    {
+      "id": "tone-and-register-12-slow-burn",
+      "group": "Tone and register",
+      "title": "Slow Burn",
+      "direction": "Attraction builds across a long span with false starts and near-misses. The series is patient and does not cash in tension early."
+    },
+    {
+      "id": "tone-and-register-13-mentor-sincerity",
+      "group": "Tone and register",
+      "title": "Mentor Sincerity",
+      "direction": "The register is earnest and unsentimental about guidance. {{char}} genuinely wants {{user}} to be better and says so without irony."
+    },
+    {
+      "id": "tone-and-register-14-dry-observational",
+      "group": "Tone and register",
+      "title": "Dry Observational",
+      "direction": "Humour comes from precise noticing: the absurdity of institutions, the way people talk, the gap between policy and practice."
+    },
+    {
+      "id": "tone-and-register-15-soft-spoken-sincerity",
+      "group": "Tone and register",
+      "title": "Soft-Spoken Sincerity",
+      "direction": "Conversations are quiet and direct. Conflicts are resolved by saying the true thing once rather than by escalating."
+    },
+    {
+      "id": "tone-and-register-16-brittle-politeness",
+      "group": "Tone and register",
+      "title": "Brittle Politeness",
+      "direction": "Both parties are careful to the point of strain. Every exchange is correct and the effort of maintaining it is visible."
+    },
+    {
+      "id": "personal-stakes-01-about-to-graduate",
+      "group": "Personal stakes",
+      "title": "About To Graduate",
+      "direction": "{{char}} graduates at the end of the term, so her seniority has an expiry date printed on it. She is deciding what to leave behind."
+    },
+    {
+      "id": "personal-stakes-02-failing-a-class",
+      "group": "Personal stakes",
+      "title": "Failing A Class",
+      "direction": "{{char}} is at risk of failing a required module and has told almost nobody. Her advice about study is partly a plan for herself."
+    },
+    {
+      "id": "personal-stakes-03-being-transferred",
+      "group": "Personal stakes",
+      "title": "Being Transferred",
+      "direction": "{{char}} is being moved to another site or department against her preference. The transfer is bureaucratic and she is handling it badly."
+    },
+    {
+      "id": "personal-stakes-04-broke-this-month",
+      "group": "Personal stakes",
+      "title": "Broke This Month",
+      "direction": "{{char}} has no money until the next payment and is hiding it behind a lot of confidence. She still offers to pay for things."
+    },
+    {
+      "id": "personal-stakes-05-caring-for-family",
+      "group": "Personal stakes",
+      "title": "Caring For Family",
+      "direction": "{{char}} is the practical support for a relative and arranges her week around it. The obligation is not a secret and it is not discussed in detail."
+    },
+    {
+      "id": "personal-stakes-06-burnout-recovery",
+      "group": "Personal stakes",
+      "title": "Burnout Recovery",
+      "direction": "{{char}} is coming back from a collapse she describes as a bad month. She is rebuilding capacity slowly and lying about how much she has."
+    },
+    {
+      "id": "personal-stakes-07-hidden-diagnosis",
+      "group": "Personal stakes",
+      "title": "Hidden Diagnosis",
+      "direction": "{{char}} has a diagnosis she has told almost nobody about. It shapes her limits and she manages the disclosure carefully, on her own timetable."
+    },
+    {
+      "id": "personal-stakes-08-pushed-out-of-club",
+      "group": "Personal stakes",
+      "title": "Pushed Out Of Club",
+      "direction": "{{char}} is being manoeuvred out of a group she built. The process is polite, procedural and unmistakable."
+    },
+    {
+      "id": "personal-stakes-09-chasing-scholarship",
+      "group": "Personal stakes",
+      "title": "Chasing Scholarship",
+      "direction": "{{char}} needs a specific scholarship to continue and is competing for it against people she likes. The pressure makes her competitive in ways she dislikes."
+    },
+    {
+      "id": "personal-stakes-10-repeating-a-year",
+      "group": "Personal stakes",
+      "title": "Repeating A Year",
+      "direction": "{{char}} is repeating a year and is older than her cohort by that one fact. She is senior to {{user}} and behind where she expected to be."
+    },
+    {
+      "id": "personal-stakes-11-supporting-a-sibling",
+      "group": "Personal stakes",
+      "title": "Supporting A Sibling",
+      "direction": "{{char}} is financially and emotionally supporting a younger sibling. The commitment is invisible until it makes her cancel something."
+    },
+    {
+      "id": "personal-stakes-12-between-homes",
+      "group": "Personal stakes",
+      "title": "Between Homes",
+      "direction": "{{char}} has no settled place to live and is sleeping on couches. She is cheerful about it in a way that closes the subject."
+    },
+    {
+      "id": "personal-stakes-13-being-scouted",
+      "group": "Personal stakes",
+      "title": "Being Scouted",
+      "direction": "{{char}} is being recruited for something better and has not decided. The opportunity would take her away from everything the series has built."
+    },
+    {
+      "id": "personal-stakes-14-quitting-what-she-loves",
+      "group": "Personal stakes",
+      "title": "Quitting What She Loves",
+      "direction": "{{char}} is leaving the activity that defines her, for reasons she considers practical. She is grieving it in advance and calling it strategy."
+    },
+    {
+      "id": "personal-stakes-15-newly-single",
+      "group": "Personal stakes",
+      "title": "Newly Single",
+      "direction": "{{char}} has just come out of a long relationship and is not ready. Her availability is real and her judgement is not reliable."
+    },
+    {
+      "id": "personal-stakes-16-quietly-lonely",
+      "group": "Personal stakes",
+      "title": "Quietly Lonely",
+      "direction": "{{char}} is surrounded by people and known by none of them. She would not describe it that way and it is visible to anyone paying attention."
+    },
+    {
+      "id": "escalation-and-turning-points-01-first-week-only",
+      "group": "Escalation and turning points",
+      "title": "First Week Only",
+      "direction": "The story covers only {{user}}'s first week. Everything is new, nothing is settled, and the ending is the beginning of a routine."
+    },
+    {
+      "id": "escalation-and-turning-points-02-one-semester",
+      "group": "Escalation and turning points",
+      "title": "One Semester",
+      "direction": "The arc runs the length of a single semester and ends with results. There is time for one major change and no more."
+    },
+    {
+      "id": "escalation-and-turning-points-03-across-a-year",
+      "group": "Escalation and turning points",
+      "title": "Across A Year",
+      "direction": "The relationship develops over a full academic year with seasonal rhythms. Two people change gradually and notice it only in retrospect."
+    },
+    {
+      "id": "escalation-and-turning-points-04-until-graduation",
+      "group": "Escalation and turning points",
+      "title": "Until Graduation",
+      "direction": "The story is bounded by {{char}}'s graduation date. Every arc is measured against a countdown that both of them know."
+    },
+    {
+      "id": "escalation-and-turning-points-05-festival-arc",
+      "group": "Escalation and turning points",
+      "title": "Festival Arc",
+      "direction": "A single campus festival provides the structure: preparation, the event, the aftermath. The compressed timeline forces decisions."
+    },
+    {
+      "id": "escalation-and-turning-points-06-crisis-week",
+      "group": "Escalation and turning points",
+      "title": "Crisis Week",
+      "direction": "One week of institutional or personal crisis strips the relationship to essentials. Normal rules are suspended and reinstated afterwards."
+    },
+    {
+      "id": "escalation-and-turning-points-07-slow-drift",
+      "group": "Escalation and turning points",
+      "title": "Slow Drift",
+      "direction": "Nothing dramatic happens. The relationship shifts through small omissions and gradual changes of habit until the distance is measurable."
+    },
+    {
+      "id": "escalation-and-turning-points-08-single-night",
+      "group": "Escalation and turning points",
+      "title": "Single Night",
+      "direction": "The whole story takes place across one night: a shift, a journey, a party, a walk home. Time pressure does the work of plot."
+    },
+    {
+      "id": "escalation-and-turning-points-09-repeated-mornings",
+      "group": "Escalation and turning points",
+      "title": "Repeated Mornings",
+      "direction": "The series is built from recurring mornings: the same commute, the same coffee, the same five minutes. Variation within repetition is the engine."
+    },
+    {
+      "id": "escalation-and-turning-points-10-one-trip",
+      "group": "Escalation and turning points",
+      "title": "One Trip",
+      "direction": "A single trip away from the institution removes the context that defines them. Seniority means less and personality means more."
+    },
+    {
+      "id": "escalation-and-turning-points-11-exam-season",
+      "group": "Escalation and turning points",
+      "title": "Exam Season",
+      "direction": "The arc runs through exam preparation and its aftermath. Everyone is at their least charming and most honest."
+    },
+    {
+      "id": "escalation-and-turning-points-12-one-work-project",
+      "group": "Escalation and turning points",
+      "title": "One Work Project",
+      "direction": "A single project with a deadline structures everything. Roles become clear under pressure and are hard to unlearn afterwards."
+    },
+    {
+      "id": "escalation-and-turning-points-13-one-competition",
+      "group": "Escalation and turning points",
+      "title": "One Competition",
+      "direction": "A competition forces the pair into a ranked relationship for the first time. The result matters less than what it reveals."
+    },
+    {
+      "id": "escalation-and-turning-points-14-breakup-aftermath",
+      "group": "Escalation and turning points",
+      "title": "Breakup Aftermath",
+      "direction": "The story begins after someone else's relationship ends badly and both of them are in the fallout. The event is offstage and its effects are not."
+    },
+    {
+      "id": "escalation-and-turning-points-15-confession-window",
+      "group": "Escalation and turning points",
+      "title": "Confession Window",
+      "direction": "There is a short, specific window in which something could be said. The series tracks the approach to it and the consequences of timing."
+    },
+    {
+      "id": "escalation-and-turning-points-16-open-ended-present",
+      "group": "Escalation and turning points",
+      "title": "Open-Ended Present",
+      "direction": "There is no announced ending. The relationship continues in an ongoing present, and change is slow, partial and reversible."
+    },
+    {
+      "id": "institutional-pressure-01-strict-hierarchy",
+      "group": "Institutional pressure",
+      "title": "Strict Hierarchy",
+      "direction": "The institution runs on visible rank: seating, forms of address, permission chains. {{char}}'s seniority is one rung and it is enforced by everyone."
+    },
+    {
+      "id": "institutional-pressure-02-flat-and-informal",
+      "group": "Institutional pressure",
+      "title": "Flat And Informal",
+      "direction": "Nobody is supposed to be senior to anybody and the hierarchy survives anyway in unofficial forms. {{char}}'s standing is entirely social."
+    },
+    {
+      "id": "institutional-pressure-03-budget-cuts",
+      "group": "Institutional pressure",
+      "title": "Budget Cuts",
+      "direction": "Funding has been cut and every activity is being asked to justify itself. Resources become a way of expressing priority."
+    },
+    {
+      "id": "institutional-pressure-04-accreditation-review",
+      "group": "Institutional pressure",
+      "title": "Accreditation Review",
+      "direction": "An external review is coming and everything casual is being documented. Informal mentorship becomes evidence."
+    },
+    {
+      "id": "institutional-pressure-05-hazing-culture",
+      "group": "Institutional pressure",
+      "title": "Hazing Culture",
+      "direction": "The group has a tradition of initiation that is explained as humour. {{char}} has to decide where she stands and whether her teasing is part of it."
+    },
+    {
+      "id": "institutional-pressure-06-gossip-economy",
+      "group": "Institutional pressure",
+      "title": "Gossip Economy",
+      "direction": "Information moves faster than decisions and reputation is the main currency. Anything said privately is public within a day."
+    },
+    {
+      "id": "institutional-pressure-07-gender-imbalance",
+      "group": "Institutional pressure",
+      "title": "Gender Imbalance",
+      "direction": "One gender dominates the setting numerically and culturally. {{char}}'s presence and her sponsorship of {{user}} are both read as statements."
+    },
+    {
+      "id": "institutional-pressure-08-union-rules",
+      "group": "Institutional pressure",
+      "title": "Union Rules",
+      "direction": "A collective agreement governs hours, duties and who may instruct whom. {{char}}'s informal guidance sometimes runs against the written rule."
+    },
+    {
+      "id": "institutional-pressure-09-performance-metrics",
+      "group": "Institutional pressure",
+      "title": "Performance Metrics",
+      "direction": "Everything is measured and published: marks, times, sales, satisfaction scores. {{char}}'s help shows up in numbers before it shows up in anything else."
+    },
+    {
+      "id": "institutional-pressure-10-family-expectation",
+      "group": "Institutional pressure",
+      "title": "Family Expectation",
+      "direction": "{{char}}'s family has a plan for her that does not include this place. Her seniority here is a delay in someone else's timetable."
+    },
+    {
+      "id": "institutional-pressure-11-public-ranking",
+      "group": "Institutional pressure",
+      "title": "Public Ranking",
+      "direction": "A visible ranking orders the cohort and everyone knows their position. Mentorship becomes a transfer of advantage."
+    },
+    {
+      "id": "institutional-pressure-12-safety-crackdown",
+      "group": "Institutional pressure",
+      "title": "Safety Crackdown",
+      "direction": "After an incident, the institution enforces rules that make the old shortcuts forbidden. {{char}} has to unteach what she taught."
+    },
+    {
+      "id": "institutional-pressure-13-alumni-pressure",
+      "group": "Institutional pressure",
+      "title": "Alumni Pressure",
+      "direction": "Former members fund and influence the setting. Their preferences constrain what {{char}} can change."
+    },
+    {
+      "id": "institutional-pressure-14-social-media-exposure",
+      "group": "Institutional pressure",
+      "title": "Social Media Exposure",
+      "direction": "Anything notable ends up online within hours. {{char}}'s casual behaviour is being archived by strangers."
+    },
+    {
+      "id": "institutional-pressure-15-seasonal-crunch",
+      "group": "Institutional pressure",
+      "title": "Seasonal Crunch",
+      "direction": "The setting has a predictable peak that consumes everything for weeks. Relationships are maintained in the gaps."
+    },
+    {
+      "id": "institutional-pressure-16-leadership-vacuum",
+      "group": "Institutional pressure",
+      "title": "Leadership Vacuum",
+      "direction": "Nobody is formally in charge and everybody is improvising. {{char}}'s seniority is the only available structure and it is not enough."
+    },
+    {
+      "id": "combinations-001-campus-lecture-hall--relentless-nicknames",
+      "group": "Combinations",
+      "title": "Campus Lecture Hall x Relentless Nicknames",
+      "direction": "Combine 'Campus Lecture Hall' with 'Relentless Nicknames': the nickname travels along the lecture hall's seating rows faster than {{char}} can deny inventing it, so {{user}} spends a term answering to a name he never chose."
+    },
+    {
+      "id": "combinations-002-part-time-cafe--deadpan-needling",
+      "group": "Combinations",
+      "title": "Part-Time Cafe x Deadpan Needling",
+      "direction": "Combine 'Part-Time Cafe' with 'Deadpan Needling': her flat corrections about milk texture become the cafe's running joke, and {{user}} cannot tell whether he is being trained or mocked."
+    },
+    {
+      "id": "combinations-003-club-room--poking-and-prodding",
+      "group": "Combinations",
+      "title": "Club Room x Poking And Prodding",
+      "direction": "Combine 'Club Room' with 'Poking And Prodding': she pokes him awake during club meetings until the club starts treating his dozing as a scheduled agenda item."
+    },
+    {
+      "id": "combinations-004-hobby-studio--public-callouts",
+      "group": "Combinations",
+      "title": "Hobby Studio x Public Callouts",
+      "direction": "Combine 'Hobby Studio' with 'Public Callouts': her loud critique of his first attempt pulls the whole studio over, turning a private lesson into an audience event."
+    },
+    {
+      "id": "combinations-005-shared-dormitory--private-ribbing",
+      "group": "Combinations",
+      "title": "Shared Dormitory x Private Ribbing",
+      "direction": "Combine 'Shared Dormitory' with 'Private Ribbing': the teasing moves into the dormitory corridor at night, quiet enough that only {{user}} hears it and loud enough that he cannot sleep it off."
+    },
+    {
+      "id": "combinations-006-volunteer-project--exaggerated-praise",
+      "group": "Combinations",
+      "title": "Volunteer Project x Exaggerated Praise",
+      "direction": "Combine 'Volunteer Project' with 'Exaggerated Praise': she praises his clipboard technique to the volunteer coordinator until he is handed the job nobody else wanted."
+    },
+    {
+      "id": "combinations-007-student-council--mock-rivalry",
+      "group": "Combinations",
+      "title": "Student Council x Mock Rivalry",
+      "direction": "Combine 'Student Council' with 'Mock Rivalry': the lab's equipment sign-up sheet becomes a scoreboard, and {{user}} starts booking the good microscope out of spite."
+    },
+    {
+      "id": "combinations-008-online-cohort--infantilising-baby-talk",
+      "group": "Combinations",
+      "title": "Online Cohort x Infantilising Baby Talk",
+      "direction": "Combine 'Online Cohort' with 'Infantilising Baby Talk': her baby-talk voice survives the compression of a video call, and the cohort clips it for reuse in the group chat."
+    },
+    {
+      "id": "combinations-009-cram-school-classroom--ignore-then-ambush",
+      "group": "Combinations",
+      "title": "Cram School Classroom x Ignore Then Ambush",
+      "direction": "Combine 'Cram School Classroom' with 'Ignore Then Ambush': she ignores him for a week of cram school and then quizzes him in front of the class on exactly what he got wrong."
+    },
+    {
+      "id": "combinations-010-office-floor--deadpan-silence",
+      "group": "Combinations",
+      "title": "Office Floor x Deadpan Silence",
+      "direction": "Combine 'Office Floor' with 'Deadpan Silence': her silence after his first client email is worse than any correction, and the whole floor watches him rewrite it four times."
+    },
+    {
+      "id": "combinations-011-sports-team--loud-group-teasing",
+      "group": "Combinations",
+      "title": "Sports Team x Loud Group Teasing",
+      "direction": "Combine 'Sports Team' with 'Loud Group Teasing': the team picks up her teasing chant, and {{user}}'s warm-up lap becomes a public performance he did not audition for."
+    },
+    {
+      "id": "combinations-012-summer-internship--quiet-one-on-one",
+      "group": "Combinations",
+      "title": "Summer Internship x Quiet One-On-One",
+      "direction": "Combine 'Summer Internship' with 'Quiet One-On-One': she saves the sharpest version for the internship stairwell, so {{user}} learns to associate quiet moments with being read accurately."
+    },
+    {
+      "id": "combinations-013-festival-committee--gifts-as-teasing",
+      "group": "Combinations",
+      "title": "Festival Committee x Gifts As Teasing",
+      "direction": "Combine 'Festival Committee' with 'Gifts As Teasing': she keeps awarding him small useless prizes for minor failures until the committee assumes it is a tradition worth continuing."
+    },
+    {
+      "id": "combinations-014-research-lab--gossip-teasing",
+      "group": "Combinations",
+      "title": "Research Lab x Gossip Teasing",
+      "direction": "Combine 'Research Lab' with 'Gossip Teasing': she repeats a harmless rumour about him in the council room and then spends a week managing the fallout she started."
+    },
+    {
+      "id": "combinations-015-late-night-gym--formal-mockery",
+      "group": "Combinations",
+      "title": "Late-Night Gym x Formal Mockery",
+      "direction": "Combine 'Late-Night Gym' with 'Formal Mockery': her exaggerated politeness at eleven at night makes an empty gym feel like a formal hearing about his squat depth."
+    },
+    {
+      "id": "combinations-016-one-year-ahead--advice-only-when-asked",
+      "group": "Combinations",
+      "title": "One Year Ahead x Advice Only When Asked",
+      "direction": "Combine 'One Year Ahead' with 'Advice Only When Asked': one year of extra experience plus a rule against volunteering it means {{user}} must ask a precise question or spend weeks guessing."
+    },
+    {
+      "id": "combinations-017-two-years-ahead--advice-constantly",
+      "group": "Combinations",
+      "title": "Two Years Ahead x Advice Constantly",
+      "direction": "Combine 'Two Years Ahead' with 'Advice Constantly': two years of accumulated shortcuts arrive unsolicited, and {{user}} has to separate useful intelligence from her personal preferences."
+    },
+    {
+      "id": "combinations-018-returning-adult-student--meddles-in-schedule",
+      "group": "Combinations",
+      "title": "Returning Adult Student x Meddles In Schedule",
+      "direction": "Combine 'Returning Adult Student' with 'Meddles In Schedule': having returned to study as an adult, she reorganises {{user}}'s timetable with the confidence of someone who has already lost years to bad planning."
+    },
+    {
+      "id": "combinations-019-transfer-senior--meddles-in-friendships",
+      "group": "Combinations",
+      "title": "Transfer Senior x Meddles In Friendships",
+      "direction": "Combine 'Transfer Senior' with 'Meddles In Friendships': new to the campus herself, she still rules on which of {{user}}'s friendships are worth his time, and her outsider's eye is uncomfortably accurate."
+    },
+    {
+      "id": "combinations-020-club-founder--hard-line-at-romance",
+      "group": "Combinations",
+      "title": "Club Founder x Hard Line At Romance",
+      "direction": "Combine 'Club Founder' with 'Hard Line At Romance': as the person who built the club, she treats any romance inside it as a structural risk and says so once, plainly, and never again."
+    },
+    {
+      "id": "combinations-021-recently-promoted--line-at-money",
+      "group": "Combinations",
+      "title": "Recently Promoted x Line At Money",
+      "direction": "Combine 'Recently Promoted' with 'Line At Money': her promotion came with a pay rise she will not lend against, and {{user}} discovers the boundary at the worst possible moment."
+    },
+    {
+      "id": "combinations-022-returning-ex-member--refuses-to-cover",
+      "group": "Combinations",
+      "title": "Returning Ex-Member x Refuses To Cover",
+      "direction": "Combine 'Returning Ex-Member' with 'Refuses To Cover': back after a year away, she refuses to sign off on {{user}}'s excuse, and the refusal carries the weight of someone who once used the same one."
+    },
+    {
+      "id": "combinations-023-rival-school-background--covers-once",
+      "group": "Combinations",
+      "title": "Rival School Background x Covers Once",
+      "direction": "Combine 'Rival School Background' with 'Covers Once': old rival-school loyalty makes her cover for {{user}} exactly once, then name the favour out loud in front of everyone who matters."
+    },
+    {
+      "id": "combinations-024-same-age-late-start--lets-him-fail",
+      "group": "Combinations",
+      "title": "Same Age Late Start x Lets Him Fail",
+      "direction": "Combine 'Same Age Late Start' with 'Lets Him Fail': being the same age but further along, she lets him fail something small on purpose and then explains, unsoftened, why she did."
+    },
+    {
+      "id": "combinations-025-graduate-mentor--shields-consequences",
+      "group": "Combinations",
+      "title": "Graduate Mentor x Shields Consequences",
+      "direction": "Combine 'Graduate Mentor' with 'Shields Consequences': her graduate status lets her absorb a complaint that should have landed on {{user}}, and the debt sits between them for months."
+    },
+    {
+      "id": "combinations-026-shift-lead--tests-him-deliberately",
+      "group": "Combinations",
+      "title": "Shift Lead x Tests Him Deliberately",
+      "direction": "Combine 'Shift Lead' with 'Tests Him Deliberately': as shift lead she schedules him against the hardest customer of the week and watches from the till, offering no cover at all."
+    },
+    {
+      "id": "combinations-027-teaching-assistant--withholds-to-teach",
+      "group": "Combinations",
+      "title": "Teaching Assistant x Withholds To Teach",
+      "direction": "Combine 'Teaching Assistant' with 'Withholds To Teach': her teaching assistant access means she sees his marks before he does, and she withholds one piece of feedback until he asks for it directly."
+    },
+    {
+      "id": "combinations-028-senior-by-tenure--tells-everything-upfront",
+      "group": "Combinations",
+      "title": "Senior By Tenure x Tells Everything Upfront",
+      "direction": "Combine 'Senior By Tenure' with 'Tells Everything Upfront': seniority earned only by being here longest makes her dump every unwritten rule on {{user}} in one sitting, useful and overwhelming in equal measure."
+    },
+    {
+      "id": "combinations-029-senior-by-skill--lies-to-protect",
+      "group": "Combinations",
+      "title": "Senior By Skill x Lies To Protect",
+      "direction": "Combine 'Senior By Skill' with 'Lies To Protect': her skill makes her credible, so the single lie she tells to protect {{user}} is believed by everyone, including people who should have checked."
+    },
+    {
+      "id": "combinations-030-senior-by-social-capital--hands-him-off",
+      "group": "Combinations",
+      "title": "Senior By Social Capital x Hands Him Off",
+      "direction": "Combine 'Senior By Social Capital' with 'Hands Him Off': her connections could fix his problem in one sentence, and instead she introduces him to someone better and leaves the room."
+    },
+    {
+      "id": "combinations-031-campus-navigation--universally-liked",
+      "group": "Combinations",
+      "title": "Campus Navigation x Universally Liked",
+      "direction": "Combine 'Campus Navigation' with 'Universally Liked': her map of the campus comes with greetings at every corner, and a five-minute walk takes forty."
+    },
+    {
+      "id": "combinations-032-workplace-software--respected-and-feared",
+      "group": "Combinations",
+      "title": "Workplace Software x Respected And Feared",
+      "direction": "Combine 'Workplace Software' with 'Respected And Feared': the shortcuts she teaches are the ones the feared senior uses, so {{user}} inherits a little of her reputation by typing them."
+    },
+    {
+      "id": "combinations-033-exam-strategy--notorious-party-senior",
+      "group": "Combinations",
+      "title": "Exam Strategy x Notorious Party Senior",
+      "direction": "Combine 'Exam Strategy' with 'Notorious Party Senior': her exam strategy is genuinely good and delivered at two in the morning with a hangover, which makes {{user}} distrust it and then use it."
+    },
+    {
+      "id": "combinations-034-presentation-craft--quietly-excellent",
+      "group": "Combinations",
+      "title": "Presentation Craft x Quietly Excellent",
+      "direction": "Combine 'Presentation Craft' with 'Quietly Excellent': she teaches presentation by example, and {{user}} only understands the lesson after watching her take a room apart without raising her voice."
+    },
+    {
+      "id": "combinations-035-street-fashion-basics--rumoured-to-be-quitting",
+      "group": "Combinations",
+      "title": "Street Fashion Basics x Rumoured To Be Quitting",
+      "direction": "Combine 'Street Fashion Basics' with 'Rumoured To Be Quitting': her style advice is excellent and increasingly irrelevant, since the person giving it may not be here next term."
+    },
+    {
+      "id": "combinations-036-interview-makeup--reformed-delinquent",
+      "group": "Combinations",
+      "title": "Interview Makeup x Reformed Delinquent",
+      "direction": "Combine 'Interview Makeup' with 'Reformed Delinquent': she teaches interview makeup with the precision of someone who once dressed to be refused, and mentions the past only as a warning."
+    },
+    {
+      "id": "combinations-037-money-and-budgeting--campus-celebrity",
+      "group": "Combinations",
+      "title": "Money And Budgeting x Campus Celebrity",
+      "direction": "Combine 'Money And Budgeting' with 'Campus Celebrity': her budgeting lesson is sound and impossible to follow, because being recognised everywhere means she never pays for her own coffee."
+    },
+    {
+      "id": "combinations-038-cooking-for-one--scholarship-ace",
+      "group": "Combinations",
+      "title": "Cooking For One x Scholarship Ace",
+      "direction": "Combine 'Cooking For One' with 'Scholarship Ace': she teaches cheap cooking in the same tone she uses for proofs, and {{user}} learns to be careful around her knife."
+    },
+    {
+      "id": "combinations-039-gym-form--fashion-icon",
+      "group": "Combinations",
+      "title": "Gym Form x Fashion Icon",
+      "direction": "Combine 'Gym Form' with 'Fashion Icon': her lifting form is meticulous and her outfit is better than the form, which splits {{user}}'s attention until she notices and makes him pay for it."
+    },
+    {
+      "id": "combinations-040-networking-small-talk--beloved-disaster",
+      "group": "Combinations",
+      "title": "Networking Small Talk x Beloved Disaster",
+      "direction": "Combine 'Networking Small Talk' with 'Beloved Disaster': she teaches networking by causing a small scene at a mixer and then narrating what she did and why it worked anyway."
+    },
+    {
+      "id": "combinations-041-shift-negotiation--strict-committee-chair",
+      "group": "Combinations",
+      "title": "Shift Negotiation x Strict Committee Chair",
+      "direction": "Combine 'Shift Negotiation' with 'Strict Committee Chair': her negotiation lesson contradicts her committee's rules, and {{user}} gets caught between the advice and the enforcement."
+    },
+    {
+      "id": "combinations-042-handling-a-difficult-boss--transferred-outsider",
+      "group": "Combinations",
+      "title": "Handling A Difficult Boss x Transferred Outsider",
+      "direction": "Combine 'Handling A Difficult Boss' with 'Transferred Outsider': she teaches him how to handle a difficult boss while visibly on nobody's side, which is exactly what makes the lesson credible."
+    },
+    {
+      "id": "combinations-043-transit-routes--faculty-favourite",
+      "group": "Combinations",
+      "title": "Transit Routes x Faculty Favourite",
+      "direction": "Combine 'Transit Routes' with 'Faculty Favourite': her transit shortcuts are faster and slightly against the rules, and her faculty standing is the only reason they are survivable."
+    },
+    {
+      "id": "combinations-044-paperwork-and-forms--staff-room-problem",
+      "group": "Combinations",
+      "title": "Paperwork And Forms x Staff Room Problem",
+      "direction": "Combine 'Paperwork And Forms' with 'Staff Room Problem': she teaches him to file the form correctly and then admits the office holds a grudge against her name on it."
+    },
+    {
+      "id": "combinations-045-reading-a-room--past-scandal-legend",
+      "group": "Combinations",
+      "title": "Reading A Room x Past Scandal Legend",
+      "direction": "Combine 'Reading A Room' with 'Past Scandal Legend': her read of a room is unnervingly good, and {{user}} notices that she always tracks where the exits are."
+    },
+    {
+      "id": "combinations-046-hyper-organised--knows-everyone",
+      "group": "Combinations",
+      "title": "Hyper-Organised x Knows Everyone",
+      "direction": "Combine 'Hyper-Organised' with 'Knows Everyone': her colour-coded plan for {{user}}'s week is distributed to half the building before he has agreed to any of it."
+    },
+    {
+      "id": "combinations-047-chronically-late--three-close-friends",
+      "group": "Combinations",
+      "title": "Chronically Late x Three Close Friends",
+      "direction": "Combine 'Chronically Late' with 'Three Close Friends': she is late to everything, so her three friends arrive early to cover for her and {{user}} is absorbed into the arrangement without being asked."
+    },
+    {
+      "id": "combinations-048-plans-then-improvises--isolated",
+      "group": "Combinations",
+      "title": "Plans Then Improvises x Isolated",
+      "direction": "Combine 'Plans Then Improvises' with 'Isolated': she plans an evening for {{user}} and then abandons the plan, and with no friends to fill the room the two of them have to."
+    },
+    {
+      "id": "combinations-049-misses-own-deadlines--runs-the-group-chat",
+      "group": "Combinations",
+      "title": "Misses Own Deadlines x Runs The Group Chat",
+      "direction": "Combine 'Misses Own Deadlines' with 'Runs The Group Chat': her missed deadline becomes the group chat's main topic, and {{user}} is asked to explain her on her behalf."
+    },
+    {
+      "id": "combinations-050-overcommits--avoids-her-own-friends",
+      "group": "Combinations",
+      "title": "Overcommits x Avoids Her Own Friends",
+      "direction": "Combine 'Overcommits' with 'Avoids Her Own Friends': she says yes to every request and then hides from the people asking, using {{user}} as the reason she cannot attend."
+    },
+    {
+      "id": "combinations-051-delegates-badly--rival-clique",
+      "group": "Combinations",
+      "title": "Delegates Badly x Rival Clique",
+      "direction": "Combine 'Delegates Badly' with 'Rival Clique': she delegates the wrong task to the wrong person and hands the rival clique a legitimate grievance."
+    },
+    {
+      "id": "combinations-052-panics-quietly--being-slowly-excluded",
+      "group": "Combinations",
+      "title": "Panics Quietly x Being Slowly Excluded",
+      "direction": "Combine 'Panics Quietly' with 'Being Slowly Excluded': her quiet panic is easy to miss, and {{user}} only notices because the people excluding her mention it first."
+    },
+    {
+      "id": "combinations-053-thrives-in-crisis--keeps-worlds-separate",
+      "group": "Combinations",
+      "title": "Thrives In Crisis x Keeps Worlds Separate",
+      "direction": "Combine 'Thrives In Crisis' with 'Keeps Worlds Separate': in a crisis she is superb, and her refusal to mix her two worlds means {{user}} has only ever met the competent version."
+    },
+    {
+      "id": "combinations-054-avoids-responsibility--adopts-him",
+      "group": "Combinations",
+      "title": "Avoids Responsibility x Adopts Him",
+      "direction": "Combine 'Avoids Responsibility' with 'Adopts Him': she avoids the paperwork and adopts {{user}} socially with total confidence, which is a commitment she did not plan to make."
+    },
+    {
+      "id": "combinations-055-carries-everyone--hides-him",
+      "group": "Combinations",
+      "title": "Carries Everyone x Hides Him",
+      "direction": "Combine 'Carries Everyone' with 'Hides Him': she carries the whole circle and hides {{user}} from it, so his absence becomes the thing people keep asking about."
+    },
+    {
+      "id": "combinations-056-hides-mistakes--introduces-a-mentor",
+      "group": "Combinations",
+      "title": "Hides Mistakes x Introduces A Mentor",
+      "direction": "Combine 'Hides Mistakes' with 'Introduces A Mentor': she hides a mistake and then introduces {{user}} to the one person certain to spot it."
+    },
+    {
+      "id": "combinations-057-documents-everything--sets-him-up",
+      "group": "Combinations",
+      "title": "Documents Everything x Sets Him Up",
+      "direction": "Combine 'Documents Everything' with 'Sets Him Up': her documentation includes a list of people for {{user}} to meet, and the matchmaking is filed under logistics."
+    },
+    {
+      "id": "combinations-058-spends-freely--uses-him-as-buffer",
+      "group": "Combinations",
+      "title": "Spends Freely x Uses Him As Buffer",
+      "direction": "Combine 'Spends Freely' with 'Uses Him As Buffer': she spends freely on the group and uses {{user}} as the buffer when the bill arrives."
+    },
+    {
+      "id": "combinations-059-never-returns-borrowed--borrows-his-contacts",
+      "group": "Combinations",
+      "title": "Never Returns Borrowed x Borrows His Contacts",
+      "direction": "Combine 'Never Returns Borrowed' with 'Borrows His Contacts': she never returns what she borrows, and {{user}}'s contacts learn his name through her messages."
+    },
+    {
+      "id": "combinations-060-keeps-every-promise--friend-who-dislikes-him",
+      "group": "Combinations",
+      "title": "Keeps Every Promise x Friend Who Dislikes Him",
+      "direction": "Combine 'Keeps Every Promise' with 'Friend Who Dislikes Him': she keeps a promise to include {{user}} even though her closest friend has made her dislike of him clear."
+    },
+    {
+      "id": "combinations-061-deadpan-comedy--about-to-graduate",
+      "group": "Combinations",
+      "title": "Deadpan Comedy x About To Graduate",
+      "direction": "Combine 'Deadpan Comedy' with 'About To Graduate': the flat delivery makes her looming graduation sound like a joke until the date appears on a form."
+    },
+    {
+      "id": "combinations-062-warm-comedy--failing-a-class",
+      "group": "Combinations",
+      "title": "Warm Comedy x Failing A Class",
+      "direction": "Combine 'Warm Comedy' with 'Failing A Class': the warmth keeps the failing grade funny for a week, then stops being funny in exactly the same voice."
+    },
+    {
+      "id": "combinations-063-gentle-slice-of-life--being-transferred",
+      "group": "Combinations",
+      "title": "Gentle Slice Of Life x Being Transferred",
+      "direction": "Combine 'Gentle Slice Of Life' with 'Being Transferred': small daily rituals carry the weight of a transfer neither of them mentions directly."
+    },
+    {
+      "id": "combinations-064-low-key-melancholy--broke-this-month",
+      "group": "Combinations",
+      "title": "Low-Key Melancholy x Broke This Month",
+      "direction": "Combine 'Low-Key Melancholy' with 'Broke This Month': the melancholy and the empty wallet reinforce each other, and generosity becomes a delicate negotiation."
+    },
+    {
+      "id": "combinations-065-nostalgic-register--caring-for-family",
+      "group": "Combinations",
+      "title": "Nostalgic Register x Caring For Family",
+      "direction": "Combine 'Nostalgic Register' with 'Caring For Family': her nostalgia for her own first year collides with a family obligation that is eating her evenings."
+    },
+    {
+      "id": "combinations-066-brisk-and-practical--burnout-recovery",
+      "group": "Combinations",
+      "title": "Brisk And Practical x Burnout Recovery",
+      "direction": "Combine 'Brisk And Practical' with 'Burnout Recovery': her brisk efficiency is the wrong tool for someone recovering from burnout, and she has to slow down on purpose."
+    },
+    {
+      "id": "combinations-067-chaotic-farce--hidden-diagnosis",
+      "group": "Combinations",
+      "title": "Chaotic Farce x Hidden Diagnosis",
+      "direction": "Combine 'Chaotic Farce' with 'Hidden Diagnosis': the farce keeps almost exposing a diagnosis she has told nobody, and {{user}} keeps almost noticing."
+    },
+    {
+      "id": "combinations-068-quiet-intimacy--pushed-out-of-club",
+      "group": "Combinations",
+      "title": "Quiet Intimacy x Pushed Out Of Club",
+      "direction": "Combine 'Quiet Intimacy' with 'Pushed Out Of Club': the quiet moments become the only place where the club's slow rejection of her is ever admitted."
+    },
+    {
+      "id": "combinations-069-sharp-banter--chasing-scholarship",
+      "group": "Combinations",
+      "title": "Sharp Banter x Chasing Scholarship",
+      "direction": "Combine 'Sharp Banter' with 'Chasing Scholarship': the banter sharpens whenever the scholarship deadline comes up, which is how {{user}} learns that it matters."
+    },
+    {
+      "id": "combinations-070-formal-courtesy--repeating-a-year",
+      "group": "Combinations",
+      "title": "Formal Courtesy x Repeating A Year",
+      "direction": "Combine 'Formal Courtesy' with 'Repeating A Year': the courtesy becomes a wall she hides behind when the year she is repeating comes up."
+    },
+    {
+      "id": "combinations-071-second-hand-embarrassment--supporting-a-sibling",
+      "group": "Combinations",
+      "title": "Second-Hand Embarrassment x Supporting A Sibling",
+      "direction": "Combine 'Second-Hand Embarrassment' with 'Supporting A Sibling': her teasing of {{user}} is nothing compared with watching her manage a sibling's mess in public."
+    },
+    {
+      "id": "combinations-072-slow-burn--between-homes",
+      "group": "Combinations",
+      "title": "Slow Burn x Between Homes",
+      "direction": "Combine 'Slow Burn' with 'Between Homes': the pace slows further because neither of them can host anything, so the relationship happens in transit."
+    },
+    {
+      "id": "combinations-073-mentor-sincerity--being-scouted",
+      "group": "Combinations",
+      "title": "Mentor Sincerity x Being Scouted",
+      "direction": "Combine 'Mentor Sincerity' with 'Being Scouted': her sincere advice is complicated by the fact that she may be leaving for a better offer."
+    },
+    {
+      "id": "combinations-074-dry-observational--quitting-what-she-loves",
+      "group": "Combinations",
+      "title": "Dry Observational x Quitting What She Loves",
+      "direction": "Combine 'Dry Observational' with 'Quitting What She Loves': her dry commentary on the thing she is about to quit is funnier and sadder than she intends."
+    },
+    {
+      "id": "combinations-075-soft-spoken-sincerity--newly-single",
+      "group": "Combinations",
+      "title": "Soft-Spoken Sincerity x Newly Single",
+      "direction": "Combine 'Soft-Spoken Sincerity' with 'Newly Single': the softened tone arrives at the worst possible moment, and {{user}} cannot tell whether he is being comforted or recruited."
+    },
+    {
+      "id": "combinations-076-campus-lecture-hall--strict-hierarchy",
+      "group": "Combinations",
+      "title": "Campus Lecture Hall x Strict Hierarchy",
+      "direction": "Combine 'Campus Lecture Hall' with 'Strict Hierarchy': seating is unofficially ranked, and {{char}} breaking it to sit beside {{user}} becomes a small scandal with a long tail."
+    },
+    {
+      "id": "combinations-077-part-time-cafe--flat-and-informal",
+      "group": "Combinations",
+      "title": "Part-Time Cafe x Flat And Informal",
+      "direction": "Combine 'Part-Time Cafe' with 'Flat And Informal': the flat hierarchy means the manager takes orders alongside staff, and {{char}}'s seniority at the cafe rests entirely on who is faster."
+    },
+    {
+      "id": "combinations-078-club-room--budget-cuts",
+      "group": "Combinations",
+      "title": "Club Room x Budget Cuts",
+      "direction": "Combine 'Club Room' with 'Budget Cuts': the club's funding is cut and {{char}} has to decide which of {{user}}'s activities survive the new budget."
+    },
+    {
+      "id": "combinations-079-hobby-studio--accreditation-review",
+      "group": "Combinations",
+      "title": "Hobby Studio x Accreditation Review",
+      "direction": "Combine 'Hobby Studio' with 'Accreditation Review': the studio's accreditation visit makes every casual lesson suddenly documentable and every undocumented shortcut a liability."
+    },
+    {
+      "id": "combinations-080-shared-dormitory--hazing-culture",
+      "group": "Combinations",
+      "title": "Shared Dormitory x Hazing Culture",
+      "direction": "Combine 'Shared Dormitory' with 'Hazing Culture': the dormitory's initiation culture gives {{char}}'s teasing a context neither of them wants, and she draws a line the others ignore."
+    },
+    {
+      "id": "combinations-081-volunteer-project--gossip-economy",
+      "group": "Combinations",
+      "title": "Volunteer Project x Gossip Economy",
+      "direction": "Combine 'Volunteer Project' with 'Gossip Economy': the volunteer project runs on gossip, and {{char}}'s attention to {{user}} becomes a currency he did not agree to spend."
+    },
+    {
+      "id": "combinations-082-student-council--gender-imbalance",
+      "group": "Combinations",
+      "title": "Student Council x Gender Imbalance",
+      "direction": "Combine 'Student Council' with 'Gender Imbalance': the lab's imbalance means {{char}}'s sponsorship of {{user}} is read as a statement by everyone in the building."
+    },
+    {
+      "id": "combinations-083-online-cohort--union-rules",
+      "group": "Combinations",
+      "title": "Online Cohort x Union Rules",
+      "direction": "Combine 'Online Cohort' with 'Union Rules': the cohort's chat is covered by a collective agreement nobody read, and {{char}} cites it to defend {{user}} against the platform."
+    },
+    {
+      "id": "combinations-084-cram-school-classroom--performance-metrics",
+      "group": "Combinations",
+      "title": "Cram School Classroom x Performance Metrics",
+      "direction": "Combine 'Cram School Classroom' with 'Performance Metrics': the cram school ranks students publicly, and {{char}}'s help shows up in the numbers before it shows up in {{user}}'s confidence."
+    },
+    {
+      "id": "combinations-085-office-floor--family-expectation",
+      "group": "Combinations",
+      "title": "Office Floor x Family Expectation",
+      "direction": "Combine 'Office Floor' with 'Family Expectation': the office assumes {{char}} will take over the family business, and her mentoring of {{user}} is read as a delay."
+    },
+    {
+      "id": "combinations-086-sports-team--public-ranking",
+      "group": "Combinations",
+      "title": "Sports Team x Public Ranking",
+      "direction": "Combine 'Sports Team' with 'Public Ranking': the team posts times on a wall, so {{char}}'s advice is measured in seconds and her patience in tenths."
+    },
+    {
+      "id": "combinations-087-summer-internship--safety-crackdown",
+      "group": "Combinations",
+      "title": "Summer Internship x Safety Crackdown",
+      "direction": "Combine 'Summer Internship' with 'Safety Crackdown': a safety crackdown forbids the shortcut {{char}} has been teaching, and she has to unteach it without admitting she taught it."
+    },
+    {
+      "id": "combinations-088-festival-committee--alumni-pressure",
+      "group": "Combinations",
+      "title": "Festival Committee x Alumni Pressure",
+      "direction": "Combine 'Festival Committee' with 'Alumni Pressure': alumni money comes with opinions about how the festival should run, and {{char}} shields {{user}} from most of them."
+    },
+    {
+      "id": "combinations-089-research-lab--social-media-exposure",
+      "group": "Combinations",
+      "title": "Research Lab x Social Media Exposure",
+      "direction": "Combine 'Research Lab' with 'Social Media Exposure': a council photograph goes around campus, and {{char}}'s casual remark to {{user}} is quoted out of context."
+    },
+    {
+      "id": "combinations-090-late-night-gym--seasonal-crunch",
+      "group": "Combinations",
+      "title": "Late-Night Gym x Seasonal Crunch",
+      "direction": "Combine 'Late-Night Gym' with 'Seasonal Crunch': the gym's seasonal crunch means the quiet hour they relied on disappears for six weeks."
+    },
+    {
+      "id": "combinations-091-relentless-nicknames--campus-navigation",
+      "group": "Combinations",
+      "title": "Relentless Nicknames x Campus Navigation",
+      "direction": "Combine 'Relentless Nicknames' with 'Campus Navigation': the nickname attaches itself to a building, and {{user}} ends up learning the campus as a series of places named after his embarrassments."
+    },
+    {
+      "id": "combinations-092-deadpan-needling--workplace-software",
+      "group": "Combinations",
+      "title": "Deadpan Needling x Workplace Software",
+      "direction": "Combine 'Deadpan Needling' with 'Workplace Software': her flat corrections make the software lesson feel like a diagnosis, and {{user}} remembers every shortcut out of spite."
+    },
+    {
+      "id": "combinations-093-poking-and-prodding--exam-strategy",
+      "group": "Combinations",
+      "title": "Poking And Prodding x Exam Strategy",
+      "direction": "Combine 'Poking And Prodding' with 'Exam Strategy': she pokes him awake mid-revision, which turns out to be the only reason any of the exam material sticks."
+    },
+    {
+      "id": "combinations-094-public-callouts--presentation-craft",
+      "group": "Combinations",
+      "title": "Public Callouts x Presentation Craft",
+      "direction": "Combine 'Public Callouts' with 'Presentation Craft': being called out in front of the room is the lesson, and {{user}}'s presentation improves out of pure defensive spite."
+    },
+    {
+      "id": "combinations-095-private-ribbing--street-fashion-basics",
+      "group": "Combinations",
+      "title": "Private Ribbing x Street Fashion Basics",
+      "direction": "Combine 'Private Ribbing' with 'Street Fashion Basics': the fashion advice is softer than her usual tone, and {{user}} notices the exception before he notices the clothes."
+    },
+    {
+      "id": "combinations-096-exaggerated-praise--interview-makeup",
+      "group": "Combinations",
+      "title": "Exaggerated Praise x Interview Makeup",
+      "direction": "Combine 'Exaggerated Praise' with 'Interview Makeup': her over-the-top praise of his attempt makes the actual technique impossible to hear."
+    },
+    {
+      "id": "combinations-097-mock-rivalry--money-and-budgeting",
+      "group": "Combinations",
+      "title": "Mock Rivalry x Money And Budgeting",
+      "direction": "Combine 'Mock Rivalry' with 'Money And Budgeting': the rivalry turns saving money into a competition with a scoreboard she keeps and updates in front of him."
+    },
+    {
+      "id": "combinations-098-infantilising-baby-talk--cooking-for-one",
+      "group": "Combinations",
+      "title": "Infantilising Baby Talk x Cooking For One",
+      "direction": "Combine 'Infantilising Baby Talk' with 'Cooking For One': the baby talk continues while she teaches knife safety, which is somehow more alarming rather than less."
+    },
+    {
+      "id": "combinations-099-ignore-then-ambush--gym-form",
+      "group": "Combinations",
+      "title": "Ignore Then Ambush x Gym Form",
+      "direction": "Combine 'Ignore Then Ambush' with 'Gym Form': she watches him lift badly for a week, says nothing, then corrects everything at once in a single devastating hour."
+    },
+    {
+      "id": "combinations-100-deadpan-silence--networking-small-talk",
+      "group": "Combinations",
+      "title": "Deadpan Silence x Networking Small Talk",
+      "direction": "Combine 'Deadpan Silence' with 'Networking Small Talk': her silence is the lesson on reading a room, delivered by making him fill it."
+    },
+    {
+      "id": "combinations-101-loud-group-teasing--shift-negotiation",
+      "group": "Combinations",
+      "title": "Loud Group Teasing x Shift Negotiation",
+      "direction": "Combine 'Loud Group Teasing' with 'Shift Negotiation': her public teasing undermines his negotiation position and then teaches him how to rebuild it."
+    },
+    {
+      "id": "combinations-102-quiet-one-on-one--handling-a-difficult-boss",
+      "group": "Combinations",
+      "title": "Quiet One-On-One x Handling A Difficult Boss",
+      "direction": "Combine 'Quiet One-On-One' with 'Handling A Difficult Boss': the quiet version of her teasing is where the real advice about the difficult boss comes out."
+    },
+    {
+      "id": "combinations-103-gifts-as-teasing--transit-routes",
+      "group": "Combinations",
+      "title": "Gifts As Teasing x Transit Routes",
+      "direction": "Combine 'Gifts As Teasing' with 'Transit Routes': she gives him a transit card as a joke prize, and it becomes the thing he actually relies on."
+    },
+    {
+      "id": "combinations-104-gossip-teasing--paperwork-and-forms",
+      "group": "Combinations",
+      "title": "Gossip Teasing x Paperwork And Forms",
+      "direction": "Combine 'Gossip Teasing' with 'Paperwork And Forms': she spreads a false rumour about his filing skills, and the office decides to test it."
+    },
+    {
+      "id": "combinations-105-formal-mockery--reading-a-room",
+      "group": "Combinations",
+      "title": "Formal Mockery x Reading A Room",
+      "direction": "Combine 'Formal Mockery' with 'Reading A Room': her excessive politeness is a live demonstration of the social reading she is trying to teach."
+    },
+    {
+      "id": "combinations-106-advice-only-when-asked--knows-everyone",
+      "group": "Combinations",
+      "title": "Advice Only When Asked x Knows Everyone",
+      "direction": "Combine 'Advice Only When Asked' with 'Knows Everyone': she will not volunteer advice, but everyone she knows volunteers it on her behalf."
+    },
+    {
+      "id": "combinations-107-advice-constantly--three-close-friends",
+      "group": "Combinations",
+      "title": "Advice Constantly x Three Close Friends",
+      "direction": "Combine 'Advice Constantly' with 'Three Close Friends': her advice extends to {{user}}'s choice of friends, and her own three arrive to audit it."
+    },
+    {
+      "id": "combinations-108-meddles-in-schedule--avoids-her-own-friends",
+      "group": "Combinations",
+      "title": "Meddles In Schedule x Avoids Her Own Friends",
+      "direction": "Combine 'Meddles In Schedule' with 'Avoids Her Own Friends': she rearranges {{user}}'s calendar to create legitimate excuses for skipping her own friends."
+    },
+    {
+      "id": "combinations-109-meddles-in-friendships--rival-clique",
+      "group": "Combinations",
+      "title": "Meddles In Friendships x Rival Clique",
+      "direction": "Combine 'Meddles In Friendships' with 'Rival Clique': her meddling pushes {{user}} toward the rival clique, which she then treats as a betrayal."
+    },
+    {
+      "id": "combinations-110-hard-line-at-romance--adopts-him",
+      "group": "Combinations",
+      "title": "Hard Line At Romance x Adopts Him",
+      "direction": "Combine 'Hard Line At Romance' with 'Adopts Him': she draws a hard line at romance and then adopts him into her circle, which everyone reads as the opposite."
+    },
+    {
+      "id": "combinations-111-line-at-money--uses-him-as-buffer",
+      "group": "Combinations",
+      "title": "Line At Money x Uses Him As Buffer",
+      "direction": "Combine 'Line At Money' with 'Uses Him As Buffer': she refuses to lend money and still lets him pay for the group."
+    },
+    {
+      "id": "combinations-112-refuses-to-cover--being-slowly-excluded",
+      "group": "Combinations",
+      "title": "Refuses To Cover x Being Slowly Excluded",
+      "direction": "Combine 'Refuses To Cover' with 'Being Slowly Excluded': she will not cover for him, and the people excluding her use the refusal as proof that she is difficult."
+    },
+    {
+      "id": "combinations-113-covers-once--hides-him",
+      "group": "Combinations",
+      "title": "Covers Once x Hides Him",
+      "direction": "Combine 'Covers Once' with 'Hides Him': the one time she covers for him is also the only time she mentions him to her circle."
+    },
+    {
+      "id": "combinations-114-lets-him-fail--isolated",
+      "group": "Combinations",
+      "title": "Lets Him Fail x Isolated",
+      "direction": "Combine 'Lets Him Fail' with 'Isolated': with no friends around to catch him, the failure she permits lands harder than she calculated."
+    },
+    {
+      "id": "combinations-115-shields-consequences--sets-him-up",
+      "group": "Combinations",
+      "title": "Shields Consequences x Sets Him Up",
+      "direction": "Combine 'Shields Consequences' with 'Sets Him Up': she shields him from a consequence and then sets him up with the person who caused it."
+    },
+    {
+      "id": "combinations-116-tests-him-deliberately--friend-who-dislikes-him",
+      "group": "Combinations",
+      "title": "Tests Him Deliberately x Friend Who Dislikes Him",
+      "direction": "Combine 'Tests Him Deliberately' with 'Friend Who Dislikes Him': the test and the hostile friend arrive on the same evening, and she watches both without intervening."
+    },
+    {
+      "id": "combinations-117-withholds-to-teach--introduces-a-mentor",
+      "group": "Combinations",
+      "title": "Withholds To Teach x Introduces A Mentor",
+      "direction": "Combine 'Withholds To Teach' with 'Introduces A Mentor': she withholds a detail and introduces him to the mentor who will supply it, making the introduction the lesson."
+    },
+    {
+      "id": "combinations-118-tells-everything-upfront--runs-the-group-chat",
+      "group": "Combinations",
+      "title": "Tells Everything Upfront x Runs The Group Chat",
+      "direction": "Combine 'Tells Everything Upfront' with 'Runs The Group Chat': everything she tells him is paraphrased in the group chat by evening."
+    },
+    {
+      "id": "combinations-119-lies-to-protect--ex-in-the-circle",
+      "group": "Combinations",
+      "title": "Lies To Protect x Ex In The Circle",
+      "direction": "Combine 'Lies To Protect' with 'Ex In The Circle': the lie she tells to protect him has to survive an ex who knows her tells."
+    },
+    {
+      "id": "combinations-120-hands-him-off--keeps-worlds-separate",
+      "group": "Combinations",
+      "title": "Hands Him Off x Keeps Worlds Separate",
+      "direction": "Combine 'Hands Him Off' with 'Keeps Worlds Separate': handing him off is easy because she keeps her worlds apart, and {{user}} never meets the person she chose over herself."
+    },
+    {
+      "id": "combinations-121-one-year-ahead--first-week-only",
+      "group": "Combinations",
+      "title": "One Year Ahead x First Week Only",
+      "direction": "Combine 'One Year Ahead' with 'First Week Only': one year of difference is enough to run a first week and not enough to answer the questions that come after it."
+    },
+    {
+      "id": "combinations-122-two-years-ahead--one-semester",
+      "group": "Combinations",
+      "title": "Two Years Ahead x One Semester",
+      "direction": "Combine 'Two Years Ahead' with 'One Semester': two years of experience compresses into one semester of borrowed shortcuts and borrowed confidence."
+    },
+    {
+      "id": "combinations-123-returning-adult-student--across-a-year",
+      "group": "Combinations",
+      "title": "Returning Adult Student x Across A Year",
+      "direction": "Combine 'Returning Adult Student' with 'Across A Year': her adult return and his first year overlap for exactly one academic year, which neither of them says out loud."
+    },
+    {
+      "id": "combinations-124-transfer-senior--until-graduation",
+      "group": "Combinations",
+      "title": "Transfer Senior x Until Graduation",
+      "direction": "Combine 'Transfer Senior' with 'Until Graduation': a transfer senior and a graduation deadline mean the relationship has a visible end from the first week."
+    },
+    {
+      "id": "combinations-125-club-founder--festival-arc",
+      "group": "Combinations",
+      "title": "Club Founder x Festival Arc",
+      "direction": "Combine 'Club Founder' with 'Festival Arc': the club founder's last festival is the arc where she hands things over and discovers she does not want to."
+    },
+    {
+      "id": "combinations-126-recently-promoted--crisis-week",
+      "group": "Combinations",
+      "title": "Recently Promoted x Crisis Week",
+      "direction": "Combine 'Recently Promoted' with 'Crisis Week': her promotion is tested in a single crisis week that decides whether she was ready for it."
+    },
+    {
+      "id": "combinations-127-returning-ex-member--slow-drift",
+      "group": "Combinations",
+      "title": "Returning Ex-Member x Slow Drift",
+      "direction": "Combine 'Returning Ex-Member' with 'Slow Drift': returning after a year away, she drifts back out slowly and takes {{user}}'s routine with her."
+    },
+    {
+      "id": "combinations-128-rival-school-background--single-night",
+      "group": "Combinations",
+      "title": "Rival School Background x Single Night",
+      "direction": "Combine 'Rival School Background' with 'Single Night': old rival-school loyalties surface in one night and are never fully resolved afterwards."
+    },
+    {
+      "id": "combinations-129-same-age-late-start--repeated-mornings",
+      "group": "Combinations",
+      "title": "Same Age Late Start x Repeated Mornings",
+      "direction": "Combine 'Same Age Late Start' with 'Repeated Mornings': being the same age makes the repeated mornings feel like a choice rather than a hierarchy."
+    },
+    {
+      "id": "combinations-130-graduate-mentor--one-trip",
+      "group": "Combinations",
+      "title": "Graduate Mentor x One Trip",
+      "direction": "Combine 'Graduate Mentor' with 'One Trip': her graduate schedule allows exactly one trip, and the whole mentorship is measured against it."
+    },
+    {
+      "id": "combinations-131-shift-lead--exam-season",
+      "group": "Combinations",
+      "title": "Shift Lead x Exam Season",
+      "direction": "Combine 'Shift Lead' with 'Exam Season': as shift lead she can protect his exam season or the rota, and not both."
+    },
+    {
+      "id": "combinations-132-teaching-assistant--one-work-project",
+      "group": "Combinations",
+      "title": "Teaching Assistant x One Work Project",
+      "direction": "Combine 'Teaching Assistant' with 'One Work Project': her teaching assistant role ends when the project does, and the deadline becomes the relationship's deadline."
+    },
+    {
+      "id": "combinations-133-senior-by-tenure--one-competition",
+      "group": "Combinations",
+      "title": "Senior By Tenure x One Competition",
+      "direction": "Combine 'Senior By Tenure' with 'One Competition': seniority by tenure counts for nothing at a competition where only the work is judged."
+    },
+    {
+      "id": "combinations-134-senior-by-skill--breakup-aftermath",
+      "group": "Combinations",
+      "title": "Senior By Skill x Breakup Aftermath",
+      "direction": "Combine 'Senior By Skill' with 'Breakup Aftermath': her skill at managing people fails completely in the aftermath of somebody else's breakup."
+    },
+    {
+      "id": "combinations-135-senior-by-social-capital--confession-window",
+      "group": "Combinations",
+      "title": "Senior By Social Capital x Confession Window",
+      "direction": "Combine 'Senior By Social Capital' with 'Confession Window': her social capital makes a confession a public event, and the window closes faster than either expects."
+    },
+    {
+      "id": "combinations-136-universally-liked--hyper-organised",
+      "group": "Combinations",
+      "title": "Universally Liked x Hyper-Organised",
+      "direction": "Combine 'Universally Liked' with 'Hyper-Organised': being liked makes her schedules feel like favours, and being organised makes them non-negotiable."
+    },
+    {
+      "id": "combinations-137-respected-and-feared--chronically-late",
+      "group": "Combinations",
+      "title": "Respected And Feared x Chronically Late",
+      "direction": "Combine 'Respected And Feared' with 'Chronically Late': the feared senior is late to her own intimidation, which defuses most of it before it starts."
+    },
+    {
+      "id": "combinations-138-notorious-party-senior--plans-then-improvises",
+      "group": "Combinations",
+      "title": "Notorious Party Senior x Plans Then Improvises",
+      "direction": "Combine 'Notorious Party Senior' with 'Plans Then Improvises': her reputation for chaos turns out to be a plan she abandons nightly and rebuilds by morning."
+    },
+    {
+      "id": "combinations-139-quietly-excellent--misses-own-deadlines",
+      "group": "Combinations",
+      "title": "Quietly Excellent x Misses Own Deadlines",
+      "direction": "Combine 'Quietly Excellent' with 'Misses Own Deadlines': she is excellent at the work and late with the paperwork, and only {{user}} sees both halves."
+    },
+    {
+      "id": "combinations-140-rumoured-to-be-quitting--overcommits",
+      "group": "Combinations",
+      "title": "Rumoured To Be Quitting x Overcommits",
+      "direction": "Combine 'Rumoured To Be Quitting' with 'Overcommits': she says yes to everything while rumoured to be leaving, which makes every yes suspect."
+    },
+    {
+      "id": "combinations-141-reformed-delinquent--delegates-badly",
+      "group": "Combinations",
+      "title": "Reformed Delinquent x Delegates Badly",
+      "direction": "Combine 'Reformed Delinquent' with 'Delegates Badly': her past makes her bad delegation look like a test of loyalty rather than incompetence."
+    },
+    {
+      "id": "combinations-142-campus-celebrity--panics-quietly",
+      "group": "Combinations",
+      "title": "Campus Celebrity x Panics Quietly",
+      "direction": "Combine 'Campus Celebrity' with 'Panics Quietly': the campus celebrity panics in private, and {{user}} is the only witness, which is its own kind of promotion."
+    },
+    {
+      "id": "combinations-143-scholarship-ace--thrives-in-crisis",
+      "group": "Combinations",
+      "title": "Scholarship Ace x Thrives In Crisis",
+      "direction": "Combine 'Scholarship Ace' with 'Thrives In Crisis': the scholarship ace is only fully herself during a crisis, and everyone else prefers her ordinary."
+    },
+    {
+      "id": "combinations-144-fashion-icon--avoids-responsibility",
+      "group": "Combinations",
+      "title": "Fashion Icon x Avoids Responsibility",
+      "direction": "Combine 'Fashion Icon' with 'Avoids Responsibility': her style is a form of authority she refuses to spend on anything practical."
+    },
+    {
+      "id": "combinations-145-beloved-disaster--carries-everyone",
+      "group": "Combinations",
+      "title": "Beloved Disaster x Carries Everyone",
+      "direction": "Combine 'Beloved Disaster' with 'Carries Everyone': she carries the group while being the group's main disaster, and the arithmetic never balances."
+    },
+    {
+      "id": "combinations-146-strict-committee-chair--hides-mistakes",
+      "group": "Combinations",
+      "title": "Strict Committee Chair x Hides Mistakes",
+      "direction": "Combine 'Strict Committee Chair' with 'Hides Mistakes': the strict chair hides a mistake and then enforces the rule that would punish it."
+    },
+    {
+      "id": "combinations-147-transferred-outsider--documents-everything",
+      "group": "Combinations",
+      "title": "Transferred Outsider x Documents Everything",
+      "direction": "Combine 'Transferred Outsider' with 'Documents Everything': her outsider status makes her documentation the only trustworthy record in the building."
+    },
+    {
+      "id": "combinations-148-faculty-favourite--spends-freely",
+      "group": "Combinations",
+      "title": "Faculty Favourite x Spends Freely",
+      "direction": "Combine 'Faculty Favourite' with 'Spends Freely': faculty favour buys her slack on everything except the money she keeps spending."
+    },
+    {
+      "id": "combinations-149-staff-room-problem--never-returns-borrowed",
+      "group": "Combinations",
+      "title": "Staff Room Problem x Never Returns Borrowed",
+      "direction": "Combine 'Staff Room Problem' with 'Never Returns Borrowed': the staff's grudge is partly about the things she never gave back."
+    },
+    {
+      "id": "combinations-150-past-scandal-legend--keeps-every-promise",
+      "group": "Combinations",
+      "title": "Past Scandal Legend x Keeps Every Promise",
+      "direction": "Combine 'Past Scandal Legend' with 'Keeps Every Promise': the legend keeps her promises with a rigidity that suggests the old scandal was about a broken one."
+    },
+    {
+      "id": "combinations-151-about-to-graduate--first-week-only",
+      "group": "Combinations",
+      "title": "About To Graduate x First Week Only",
+      "direction": "Combine 'About To Graduate' with 'First Week Only': the graduation date is on the calendar before the first week ends, which makes every welcome feel timed."
+    },
+    {
+      "id": "combinations-152-failing-a-class--one-semester",
+      "group": "Combinations",
+      "title": "Failing A Class x One Semester",
+      "direction": "Combine 'Failing A Class' with 'One Semester': the semester is exactly as long as her chance to fix the grade, and both of them can count."
+    },
+    {
+      "id": "combinations-153-being-transferred--across-a-year",
+      "group": "Combinations",
+      "title": "Being Transferred x Across A Year",
+      "direction": "Combine 'Being Transferred' with 'Across A Year': the transfer is announced quietly and reframes the whole year retroactively."
+    },
+    {
+      "id": "combinations-154-broke-this-month--festival-arc",
+      "group": "Combinations",
+      "title": "Broke This Month x Festival Arc",
+      "direction": "Combine 'Broke This Month' with 'Festival Arc': the festival costs money she does not have, and the arc keeps charging her for it."
+    },
+    {
+      "id": "combinations-155-caring-for-family--slow-drift",
+      "group": "Combinations",
+      "title": "Caring For Family x Slow Drift",
+      "direction": "Combine 'Caring For Family' with 'Slow Drift': the drift is not about {{user}} at all, and that is what makes it impossible to argue with."
+    },
+    {
+      "id": "combinations-156-burnout-recovery--repeated-mornings",
+      "group": "Combinations",
+      "title": "Burnout Recovery x Repeated Mornings",
+      "direction": "Combine 'Burnout Recovery' with 'Repeated Mornings': the routine is the recovery, and the repeated mornings are where it is measured."
+    },
+    {
+      "id": "combinations-157-hidden-diagnosis--one-trip",
+      "group": "Combinations",
+      "title": "Hidden Diagnosis x One Trip",
+      "direction": "Combine 'Hidden Diagnosis' with 'One Trip': the trip is the only window in which the diagnosis is not discussed, which makes it the whole subject."
+    },
+    {
+      "id": "combinations-158-pushed-out-of-club--one-competition",
+      "group": "Combinations",
+      "title": "Pushed Out Of Club x One Competition",
+      "direction": "Combine 'Pushed Out Of Club' with 'One Competition': the competition is the last thing the club cannot take away from her."
+    },
+    {
+      "id": "combinations-159-chasing-scholarship--exam-season",
+      "group": "Combinations",
+      "title": "Chasing Scholarship x Exam Season",
+      "direction": "Combine 'Chasing Scholarship' with 'Exam Season': the scholarship and the exam season are the same deadline wearing two names."
+    },
+    {
+      "id": "combinations-160-repeating-a-year--crisis-week",
+      "group": "Combinations",
+      "title": "Repeating A Year x Crisis Week",
+      "direction": "Combine 'Repeating A Year' with 'Crisis Week': repeating the year means the crisis week is one she has already survived once."
+    },
+    {
+      "id": "combinations-161-supporting-a-sibling--single-night",
+      "group": "Combinations",
+      "title": "Supporting A Sibling x Single Night",
+      "direction": "Combine 'Supporting A Sibling' with 'Single Night': a single night of crisis with the sibling consumes the evening she had set aside."
+    },
+    {
+      "id": "combinations-162-between-homes--until-graduation",
+      "group": "Combinations",
+      "title": "Between Homes x Until Graduation",
+      "direction": "Combine 'Between Homes' with 'Until Graduation': having no fixed address makes the graduation end date the only stable thing in the series."
+    },
+    {
+      "id": "combinations-163-being-scouted--breakup-aftermath",
+      "group": "Combinations",
+      "title": "Being Scouted x Breakup Aftermath",
+      "direction": "Combine 'Being Scouted' with 'Breakup Aftermath': the offer arrives while she is handling someone else's breakup, and she answers too fast."
+    },
+    {
+      "id": "combinations-164-quitting-what-she-loves--confession-window",
+      "group": "Combinations",
+      "title": "Quitting What She Loves x Confession Window",
+      "direction": "Combine 'Quitting What She Loves' with 'Confession Window': the thing she is quitting is the thing that brought them together, and the window opens as she leaves."
+    },
+    {
+      "id": "combinations-165-newly-single--open-ended-present",
+      "group": "Combinations",
+      "title": "Newly Single x Open-Ended Present",
+      "direction": "Combine 'Newly Single' with 'Open-Ended Present': the openness is real and the timing is terrible, and the series refuses to resolve it quickly."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "The seniority engine",
+      "content": "The fixed engine is a small, specific asymmetry: {{char}} is further along than {{user}} in one setting and notices him. Everything else — competence, kindness, chaos, intent — is a variable. Keep the asymmetry concrete, because it is the only thing that reliably produces repeat contact."
+    },
+    {
+      "id": "what-senpai-means",
+      "label": "What senpai actually means",
+      "content": "Seniority can be temporal, academic, technical, professional or purely social, and each version produces different scenes. Decide which one before writing so that her advice has a real basis and a real limit. A senior by tenure knows where things are kept; a senior by skill knows how to do the thing; a senior by social capital knows who to ask."
+    },
+    {
+      "id": "kouhai-agency",
+      "label": "Kouhai agency",
+      "content": "{{user}} is an adult with his own judgement, and the series is dull if he is merely grateful. Give him reasons to accept some guidance and refuse the rest. His refusals should cost something small and should not end the relationship, because the relationship is not conditional on obedience."
+    },
+    {
+      "id": "teaching-scenes",
+      "label": "Teaching scenes",
+      "content": "A teaching scene works when the lesson is specific and the method reveals character. Demonstration, deliberate failure, withholding and public correction all say something about {{char}} beyond the subject being taught. Avoid montages that convey competence without cost."
+    },
+    {
+      "id": "teasing-register",
+      "label": "Teasing and register",
+      "content": "Teasing is the series' main affectionate texture and its main risk. It should be recognisably consensual, stoppable and specific to the pair rather than a generic verbal tic. The strongest version usually has a private form that differs from the public one."
+    },
+    {
+      "id": "reputation",
+      "label": "Reputation as structure",
+      "content": "How the setting reads {{char}} determines what {{user}} inherits by being seen with her. A feared senior transfers suspicion, a beloved one transfers access, an unknown one transfers nothing at all. Use reputation as a system of consequences, not as a character summary."
+    },
+    {
+      "id": "social-network",
+      "label": "Her circle and his place in it",
+      "content": "Her friends, rivals, exes and dependants are a structure with entry rules. Whether she introduces {{user}}, hides him or uses him as a buffer is one of the most revealing choices in the series. Give the circle its own memory and its own opinions."
+    },
+    {
+      "id": "boundaries",
+      "label": "Where guidance stops",
+      "content": "Every version of {{char}} needs a line she will not cross: romance, money, lying for him, covering a mistake. The line should be stated once, tested at least once, and held. Her consistency here is what makes her trustworthy even when she is meddling."
+    },
+    {
+      "id": "institutional-pressure",
+      "label": "Institutional pressure",
+      "content": "Rotas, budgets, rankings, accreditation and gossip act on both of them and are more interesting than a villain. Pressure should force choices about time and priority rather than produce a single confrontation. The institution does not care about their relationship, which is the point."
+    },
+    {
+      "id": "escalation",
+      "label": "Escalation and time limits",
+      "content": "The best arcs have a clock: graduation, a transfer, a festival, an exam season, a project deadline. A visible end date turns small scenes into decisions. Open-ended versions should escalate through routine and habit instead of events."
+    },
+    {
+      "id": "tone",
+      "label": "Tone control",
+      "content": "The same premise supports deadpan comedy, gentle slice of life and low-key melancholy. Choose the register early because it governs how much the teasing costs and how much the guidance is allowed to mean. Do not mix farce and sincere confession in the same scene without a deliberate turn."
+    },
+    {
+      "id": "adult-boundaries",
+      "label": "Adult boundaries",
+      "content": "All participants are adults, and seniority never functions as consent, authority or leverage. Intimacy is optional, mutual and non-graphic. Any scene that trades advancement for affection is out of bounds regardless of how the tone is handled."
+    },
+    {
+      "id": "failure-modes",
+      "label": "Failure modes",
+      "content": "The series fails when {{char}} becomes a prize, a therapist or a plot device, and when {{user}} becomes a passenger. It also fails when seniority is used as a shortcut to intimacy or when the setting is decorative. If she has no life offscreen and no opinion that costs her something, the concept has collapsed."
+    },
+    {
+      "id": "reuse",
+      "label": "Reusing the engine",
+      "content": "Pick one from each major group — setting, seniority basis, teaching subject, teasing style, reputation, boundary, stakes and span — and check that the combination does not contradict itself. Two picks from adjacent groups usually produce a premise; five produce a series."
+    }
+  ],
+  "raw_prompt": "Write an adult character-driven story in the Series Bible IV 'My Gyaru Senpai' mode. Adult {{char}} is a gyaru senpai who is one step ahead of adult {{user}} in one specific setting: a university course, a workplace shift, a club, a studio, a team, a dormitory or an internship. Establish what her seniority consists of — time served, skill, social capital, a promotion, authorship — and what it does not grant. She can advise, demonstrate, introduce, tease and correct. She cannot grade {{user}}, schedule him, spend his money or decide who he dates; keep that limit visible in logistics, not speeches. Give {{user}} his own judgement and at least one refusal that costs something small. Build the setting from concrete institutional detail: rotas, keyholders, ranking boards, committee minutes. Let {{char}} have a life that continues when {{user}} leaves the room, and be wrong about something important. Use teasing as texture that stops when asked, and give her a boundary she states once and holds. Hold one register — deadpan comedy, slice of life, melancholy, farce, slow burn — and one clock: a first week, a semester, a year, a festival, until graduation, or an open present. Escalate through accumulated familiarity and routine rather than a single revelation. If romance develops it must be adult, mutual and separable from her seniority; intimacy stays non-graphic. All participants are adults, no minors, no real people, no hardcoded names: use {{char}} and {{user}} throughout."
+}

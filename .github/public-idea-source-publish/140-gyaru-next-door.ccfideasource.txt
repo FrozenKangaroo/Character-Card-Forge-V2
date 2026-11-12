@@ -1,0 +1,2240 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-15-gyaru-next-door",
+  "title": "Gyaru Next Door",
+  "description": "Expanded Series Bible IV #15 Gyaru Next Door: a reusable engine for adult neighbour stories where a visibly gyaru {{char}} lives close enough that her ordinary life becomes visible. Proximity, not plot, drives the contact, and the gap between her public presentation and her private habits supplies the tension, comedy and slow intimacy.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 15,
+    "kind": "series"
+  },
+  "summary": "Adult {{char}} is {{user}}'s neighbour and is visibly gyaru: loud, styled and unmistakable on the street. Living a wall away exposes everything strangers never see — the routine at six in the morning, the coursework at midnight, the leftovers, the mess, the bad cold, the family call on the balcony. The engine is proximity plus contrast. What varies is how they already knew each other, which part of the building forces contact, what she needs help with, how loud she is, what her life outside the corridor costs her, how the relationship escalates and how ordinary or strange the whole thing is allowed to feel.",
+  "core_premise": "Adult {{char}} lives next door, across the corridor, above or below adult {{user}}, and her gyaru presentation is a visible fact rather than a secret. The recurring engine is that being neighbours repeatedly creates interaction — balconies, parcels, noise, bins, laundry, parking, the group chat, the fire alarm — and that the same person who looks like an event on the street is completely ordinary at home. {{char}} has routines, obligations, money problems and relationships that exist entirely without {{user}}. Proximity is not permission: she does not owe {{user}} entry to her flat, her time or her confidence, and the story has to earn each of those. Everything else varies — history, building, her work, her upkeep, her friends, the escalation and the tone.",
+  "setup": "Open on an ordinary repeated moment rather than a dramatic one: a parcel left with the wrong person, a wall carrying music at eleven, a shared balcony, a lift that has stopped. Establish the building, how long they have known each other and which version of {{char}} {{user}} has actually seen. Give {{char}} a life already in progress — a shift starting in four hours, an exam on Thursday, a sibling who needs her — so that {{user}} is one part of her week and not its centre. Keep the first scene small enough to be interrupted. Do not write {{user}}'s feelings, decisions or dialogue, do not make {{char}} flirtatious by default, and do not treat a shared wall as an invitation to walk in.",
+  "core_variables": [
+    "Building type: old wooden apartment, concrete tower, converted house, suburban street, new build, unit above a shop.",
+    "Unit relationship: directly adjacent, across the corridor, one floor up, one floor down, opposite sides of a shared landing.",
+    "Relationship beforehand: total strangers, nodding acquaintances, friends, ex's friend, landlord and tenant, former classmates.",
+    "Contact mechanism: balcony, corridor, stairwell, laundry room, parcel handover, bins, parking, group chat.",
+    "Noise profile: loud music, heels on floorboards, gaming voice chat, karaoke guests, drilling, near silence.",
+    "Her work: retail shifts, salon work, care work, night college, apprenticeship, side hustle, rehearsal schedule.",
+    "Her obligations: siblings, a parent, a pet, an exam, a second job, a debt she is paying down.",
+    "Home presentation: bare-faced and done, still fully styled, unglamorous loungewear, two strict wardrobes.",
+    "Housekeeping: immaculate, controlled chaos, half stockroom, actively hostile to furniture.",
+    "Maintenance burden: nails, hair appointments, tan, lenses, shoe repair, the cost she will not discuss.",
+    "Social circle: established friends who predate {{user}}, an ex in the orbit, a protective sibling, a nosy caretaker.",
+    "Favour type: borrowing, parcel sitting, plant watering, heavy lifting, tech help, cat duty, waiting for a repair.",
+    "Privacy preference: open door, strictly closed door, open in daylight and closed at night, no fixed rule.",
+    "Escalation: slow accretion, one favour too many, a crisis, a misread by a visitor, no escalation at all.",
+    "Tone: deadpan comedy, warm slice of life, quiet melancholy, sharp banter, working-class realism, gentle suspense.",
+    "Season and weather: humid summer with open windows, cold snap with thin walls, rainy week, festival season.",
+    "Visibility: does the street know her, does the building, does anyone at all, and does she want it that way.",
+    "Endpoint: friendship held steady, a confession, a quiet arrangement, her moving out, an open question."
+  ],
+  "generation_rules": [
+    "Keep the neighbour premise load-bearing: if the story would work identically with them living apart, the concept is off-series.",
+    "Let the gyaru identity colour the encounters through presentation, upkeep, assumptions and reputation rather than through personality clichés.",
+    "Do not make {{char}} automatically flirtatious, loud, promiscuous or shallow because she is gyaru.",
+    "Give {{char}} at least two obligations that have nothing to do with {{user}} and let them interrupt the story.",
+    "Treat proximity as contact, never as consent; {{char}} decides who enters her flat and when.",
+    "Vary the contact mechanism across the series and let the building do structural work.",
+    "Keep at least one recurring mundane errand in every concept so the series stays domestic rather than dramatic.",
+    "Let {{char}} be competent at something unglamorous; the contrast is the engine, not a joke.",
+    "Use her upkeep honestly: it costs money, time and privacy, and she is allowed to be tired of it.",
+    "Allow {{char}} to be unimpressive at home: bad mornings, unmade beds, leftovers, a cold.",
+    "Do not resolve the public/private gap in a single conversation; it is a permanent feature of knowing her.",
+    "Let other neighbours exist as people with opinions, not as audience members.",
+    "Keep conflict proportionate: bins, parking, noise and borrowed items are sufficient engines for whole arcs.",
+    "If a favour is traded, let it create an obligation in both directions rather than one-way service.",
+    "Write {{user}} as a neighbour with their own schedule, not as a rescuer or a project manager.",
+    "Keep physical intimacy non-graphic in the direction text and let the pacing stay grounded and adult.",
+    "Avoid making the building a metaphor for a relationship; keep it a building with bad plumbing.",
+    "Let her friend group be real and occasionally hostile to {{user}}'s presence.",
+    "Permit endings other than romance: friendship, distance, her moving out, an unresolved standing arrangement.",
+    "Keep the register observational; much of the series is noticing rather than declaring.",
+    "Use seasonal markers and small recurring occasions to measure change instead of dramatic milestones.",
+    "Do not import plots from adjacent series; cohabitation, mystery and nightlife belong to their own entries."
+  ],
+  "guardrails": [
+    "All participants are adults, including every neighbour, friend, sibling and visitor who appears.",
+    "No minors anywhere in the story, including in flashback or reference.",
+    "No real people, no real addresses and no real businesses presented as fact.",
+    "Proximity, a shared wall, a borrowed key or a favour is never consent; consent is specific and ongoing.",
+    "No romantic or sexual escalation that ignores a stated no, a closed door or an unanswered question.",
+    "Stay within the entry's boundaries: neighbours, slice of life, contrasting public and private life, repeated encounters.",
+    "Do not use the gyaru identity as a shortcut to hypersexuality, stupidity or availability.",
+    "Do not depict coercion, stalking, hidden cameras, secret recording or entering a home without permission as romantic.",
+    "Keep physical description and intimacy non-graphic in generated directions; the menu is direction, not prose.",
+    "Respect her privacy: a closed door, an unanswered message and a declined invitation all stand.",
+    "Do not resolve money problems, family obligations or career precarity as a reward for romance.",
+    "Do not hardcode names; preserve {{char}} and {{user}} placeholders exactly."
+  ],
+  "diversity_axes": [
+    "How long they have known each other before the series begins.",
+    "Which part of the building forces the contact.",
+    "Whether {{char}} is the established resident or the newcomer.",
+    "How much of her private life {{user}} has already seen.",
+    "Her source of income and how visible it is.",
+    "The size and intrusiveness of her social circle.",
+    "Whether the building is old, new, converted or suburban.",
+    "Her housekeeping standard versus her presentation standard.",
+    "The specific favour that starts the exchange.",
+    "How loud she is and which sounds carry.",
+    "Her relationship with her family and how often it intrudes.",
+    "Whether the street knows her and how wrong its opinion is.",
+    "The financial pressure she is under and whether she admits it.",
+    "The escalation path and how quickly it moves.",
+    "The tone, from farce to melancholy.",
+    "The endpoint: friendship, romance, distance or departure.",
+    "The season, weather and how much the windows are open.",
+    "Whose privacy is more at risk, hers or {{user}}'s."
+  ],
+  "cross_links": [
+    "My New Neighbour — same proximity engine without the gyaru-specific pressures and public presentation gap.",
+    "Gyaru Roommate Rules — use when the premise requires shared domestic space rather than separate homes.",
+    "The Gyaru Who Knows Everyone — the same social density, but centred on local reputation rather than one corridor.",
+    "Gyaru After Dark — nightlife and venue settings; this series stays residential and domestic.",
+    "The Other Regular — repeated encounters in a third place rather than a shared address.",
+    "Workplace Slow Burn — obligation-driven proximity in a paid setting instead of a building.",
+    "Small Town Welcome — newcomer integration at street scale rather than one landing."
+  ],
+  "tags": [
+    "series bible iv",
+    "neighbours",
+    "slice of life",
+    "gyaru",
+    "slow burn",
+    "proximity",
+    "contrast",
+    "domestic",
+    "slice-of-life romance",
+    "comedy of manners",
+    "working class",
+    "urban",
+    "repeated encounters",
+    "public persona",
+    "privacy",
+    "friendship first",
+    "low stakes",
+    "adult"
+  ],
+  "notes": "Expanded from Series Bible IV entry #15 (v1.4) to Idea Source version 1.0. The source volume has no stub presets for this entry, so there are no preserved seed presets and no Original Bible group; every preset here is newly generated. Ten concept groups of sixteen cover prior relationship, glamour versus home life, encounter mechanics, the favour economy, walls and noise, the building, her life beyond {{user}}, upkeep, escalation and tone. A Combinations group of 180 pairs a glamour or noise choice with an encounter or life choice, each with its own consequence sentence.",
+  "direction_presets": [
+    {
+      "id": "relationship-beforehand-01-strangers-on-arrival",
+      "group": "Relationship beforehand",
+      "title": "Strangers On Arrival",
+      "direction": "{{char}} moves in two doors down the same week {{user}} does, and neither has unpacked enough to be polite about it. The first weeks are all boxes, wrong deliveries and borrowed tape."
+    },
+    {
+      "id": "relationship-beforehand-02-three-years-of-nodding",
+      "group": "Relationship beforehand",
+      "title": "Three Years Of Nodding",
+      "direction": "They have nodded at each other for three years without ever learning names. The series starts on the day one of them finally says something."
+    },
+    {
+      "id": "relationship-beforehand-03-awkward-history",
+      "group": "Relationship beforehand",
+      "title": "Awkward History",
+      "direction": "They hooked up once at a party neither mentions and now share a corridor. Both have decided the other does not remember."
+    },
+    {
+      "id": "relationship-beforehand-04-friends-first",
+      "group": "Relationship beforehand",
+      "title": "Friends First",
+      "direction": "They already borrow things and trade leftovers. The gyaru layer is simply the part of {{char}}'s life {{user}} has never been inside."
+    },
+    {
+      "id": "relationship-beforehand-05-ex-s-best-friend",
+      "group": "Relationship beforehand",
+      "title": "Ex's Best Friend",
+      "direction": "{{char}} is a friend of {{user}}'s ex, and the building makes avoidance structurally impossible. Neither wants to be the one who makes it weird."
+    },
+    {
+      "id": "relationship-beforehand-06-landlord-and-tenant",
+      "group": "Relationship beforehand",
+      "title": "Landlord And Tenant",
+      "direction": "{{char}} owns or manages the unit next door, so small repairs are a standing excuse for contact that neither of them calls socialising."
+    },
+    {
+      "id": "relationship-beforehand-07-coworkers-by-coincidence",
+      "group": "Relationship beforehand",
+      "title": "Coworkers By Coincidence",
+      "direction": "After a month of separate small talk they discover the same office badge on the same morning commute, and the corridor becomes the second half of the workday."
+    },
+    {
+      "id": "relationship-beforehand-08-sibling-s-friend",
+      "group": "Relationship beforehand",
+      "title": "Sibling's Friend",
+      "direction": "{{char}} is a friend of {{user}}'s sibling and treats {{user}} as an extension of that household, with all the informality and none of the courtship."
+    },
+    {
+      "id": "relationship-beforehand-09-classmate-from-years-ago",
+      "group": "Relationship beforehand",
+      "title": "Classmate From Years Ago",
+      "direction": "They recognise each other from school with two incompatible memories of who the other person was. Each is quietly correcting the record."
+    },
+    {
+      "id": "relationship-beforehand-10-rival-in-the-building",
+      "group": "Relationship beforehand",
+      "title": "Rival In The Building",
+      "direction": "They compete about noise, parking and the hallway plants with genuine but low-stakes venom. Neither would describe it as flirting and both would be wrong."
+    },
+    {
+      "id": "relationship-beforehand-11-caretaker-arrangement",
+      "group": "Relationship beforehand",
+      "title": "Caretaker Arrangement",
+      "direction": "{{user}} waters plants and takes parcels for a unit whose occupant keeps hours that do not match anyone else's."
+    },
+    {
+      "id": "relationship-beforehand-12-newcomer-and-local",
+      "group": "Relationship beforehand",
+      "title": "Newcomer And Local",
+      "direction": "{{char}} has lived on this street for years and treats {{user}} as a project: which shop, which bus, which neighbour to avoid."
+    },
+    {
+      "id": "relationship-beforehand-13-mutual-friends-favourite-pair",
+      "group": "Relationship beforehand",
+      "title": "Mutual Friends' Favourite Pair",
+      "direction": "Friends keep insisting they should meet, and then it turns out they share a wall. The setup is embarrassing and neither can opt out of it."
+    },
+    {
+      "id": "relationship-beforehand-14-temporary-sublet",
+      "group": "Relationship beforehand",
+      "title": "Temporary Sublet",
+      "direction": "{{char}} is only meant to be in the unit for a few months, which puts a quiet clock on every casual habit they build."
+    },
+    {
+      "id": "relationship-beforehand-15-shift-work-overlap",
+      "group": "Relationship beforehand",
+      "title": "Shift-Work Overlap",
+      "direction": "They pass each other at odd hours, one coming home as the other leaves, and the street at those hours belongs to the two of them."
+    },
+    {
+      "id": "relationship-beforehand-16-reconnecting-after-distance",
+      "group": "Relationship beforehand",
+      "title": "Reconnecting After Distance",
+      "direction": "They knew each other in another city and the shared address is the first time in years they have been close enough to be careless."
+    },
+    {
+      "id": "glamour-and-home-life-01-full-face-off-duty",
+      "group": "Glamour and home life",
+      "title": "Full Face Off Duty",
+      "direction": "{{char}} wears the whole look on the street and a bare face at home. The contrast is a private self she does not hand out to strangers."
+    },
+    {
+      "id": "glamour-and-home-life-02-uniform-she-sheds",
+      "group": "Glamour and home life",
+      "title": "Uniform She Sheds",
+      "direction": "The gyaru presentation is part of her job or her public identity and she drops it at the door like a coat on a chair."
+    },
+    {
+      "id": "glamour-and-home-life-03-home-is-her-studio",
+      "group": "Glamour and home life",
+      "title": "Home Is Her Studio",
+      "direction": "{{char}} does her hair and makeup at home with the door open, so {{user}} hears the entire production through the wall and the corridor."
+    },
+    {
+      "id": "glamour-and-home-life-04-messy-glamour",
+      "group": "Glamour and home life",
+      "title": "Messy Glamour",
+      "direction": "The look is immaculate and the flat is a disaster. The gap is not a character flaw, it is a statement about her priorities."
+    },
+    {
+      "id": "glamour-and-home-life-05-neat-to-a-fault",
+      "group": "Glamour and home life",
+      "title": "Neat To A Fault",
+      "direction": "Everything is arranged and labelled, and {{char}} notices within a day when {{user}} has moved something she lent them."
+    },
+    {
+      "id": "glamour-and-home-life-06-small-flat-big-routine",
+      "group": "Glamour and home life",
+      "title": "Small Flat, Big Routine",
+      "direction": "The unit is too small for the equipment her routine requires, so parts of it spill into the corridor and the shared landing."
+    },
+    {
+      "id": "glamour-and-home-life-07-loungewear-gyaru",
+      "group": "Glamour and home life",
+      "title": "Loungewear Gyaru",
+      "direction": "At home she is still visibly gyaru, just an unglamorous version: old nails, hair clipped up, last year's accessories and no intention of being seen."
+    },
+    {
+      "id": "glamour-and-home-life-08-two-wardrobes",
+      "group": "Glamour and home life",
+      "title": "Two Wardrobes",
+      "direction": "There is a presentation wardrobe and a home wardrobe, and the line between them is strict, enforced and quietly meaningful."
+    },
+    {
+      "id": "glamour-and-home-life-09-sickness-breaks-the-look",
+      "group": "Glamour and home life",
+      "title": "Sickness Breaks The Look",
+      "direction": "A bad cold strips the presentation off entirely, and {{char}} would rather not be seen in that state by anyone, least of all {{user}}."
+    },
+    {
+      "id": "glamour-and-home-life-10-night-out-prep-through-the-wall",
+      "group": "Glamour and home life",
+      "title": "Night-Out Prep Through The Wall",
+      "direction": "Getting ready for a night out is audible across three rooms: music, spray, friends arriving, heels on the stairs."
+    },
+    {
+      "id": "glamour-and-home-life-11-morning-after-the-look",
+      "group": "Glamour and home life",
+      "title": "Morning After The Look",
+      "direction": "The day after a big night the flat stays quiet and the curtains stay shut, and she is briefly a much slower, softer person."
+    },
+    {
+      "id": "glamour-and-home-life-12-hides-the-effort",
+      "group": "Glamour and home life",
+      "title": "Hides The Effort",
+      "direction": "She will not admit how long the routine takes or what it costs, and deflects every question with a joke and a change of subject."
+    },
+    {
+      "id": "glamour-and-home-life-13-proud-of-the-craft",
+      "group": "Glamour and home life",
+      "title": "Proud Of The Craft",
+      "direction": "She treats the look as skilled work and will explain technique at length to anyone who asks sincerely rather than mockingly."
+    },
+    {
+      "id": "glamour-and-home-life-14-public-recognition",
+      "group": "Glamour and home life",
+      "title": "Public Recognition",
+      "direction": "People on the street know her face. At home she is nobody in particular, and she likes the difference more than she admits."
+    },
+    {
+      "id": "glamour-and-home-life-15-family-expectations",
+      "group": "Glamour and home life",
+      "title": "Family Expectations",
+      "direction": "Her presentation is an ongoing negotiation with family who prefer the version of her they remember from before."
+    },
+    {
+      "id": "glamour-and-home-life-16-presentation-as-armour",
+      "group": "Glamour and home life",
+      "title": "Presentation As Armour",
+      "direction": "The look goes on before anything difficult, an interview or a hospital visit or a hard conversation, and comes off only where she feels safe."
+    },
+    {
+      "id": "repeated-encounters-01-shared-balcony",
+      "group": "Repeated encounters",
+      "title": "Shared Balcony",
+      "direction": "Their balconies are adjacent, so a cigarette, a laundry line or a phone call becomes a conversation without either of them planning it."
+    },
+    {
+      "id": "repeated-encounters-02-corridor-collisions",
+      "group": "Repeated encounters",
+      "title": "Corridor Collisions",
+      "direction": "The corridor is short, the doors are loud and they cannot avoid passing each other at least twice a day."
+    },
+    {
+      "id": "repeated-encounters-03-stairwell",
+      "group": "Repeated encounters",
+      "title": "Stairwell",
+      "direction": "No lift, four floors, and the stairwell is where every real conversation in the building happens."
+    },
+    {
+      "id": "repeated-encounters-04-laundry-room-queue",
+      "group": "Repeated encounters",
+      "title": "Laundry Room Queue",
+      "direction": "The shared machines impose a schedule neither of them controls, and waiting is the whole social ritual."
+    },
+    {
+      "id": "repeated-encounters-05-parcel-handovers",
+      "group": "Repeated encounters",
+      "title": "Parcel Handovers",
+      "direction": "Deliveries arrive when nobody is home, and someone always has to knock on someone else's door."
+    },
+    {
+      "id": "repeated-encounters-06-bins-and-recycling",
+      "group": "Repeated encounters",
+      "title": "Bins And Recycling",
+      "direction": "The collection schedule forces contact at unsociable hours, in slippers, holding things nobody wants to be seen holding."
+    },
+    {
+      "id": "repeated-encounters-07-parking-space",
+      "group": "Repeated encounters",
+      "title": "Parking Space",
+      "direction": "There are more cars than spaces and the negotiation is permanent, personal and entirely unspoken."
+    },
+    {
+      "id": "repeated-encounters-08-shared-entrance-at-odd-hours",
+      "group": "Repeated encounters",
+      "title": "Shared Entrance At Odd Hours",
+      "direction": "They work opposite schedules and meet at the front door at midnight or five in the morning, when neither has the energy for a performance."
+    },
+    {
+      "id": "repeated-encounters-09-local-shop-queue",
+      "group": "Repeated encounters",
+      "title": "Local Shop Queue",
+      "direction": "The same convenience store, the same late hour, the same tired clerk who has opinions about both of them."
+    },
+    {
+      "id": "repeated-encounters-10-fire-alarm-evacuation",
+      "group": "Repeated encounters",
+      "title": "Fire Alarm Evacuation",
+      "direction": "The alarm goes off often enough that standing outside in slippers at eleven at night is simply normal."
+    },
+    {
+      "id": "repeated-encounters-11-building-group-chat",
+      "group": "Repeated encounters",
+      "title": "Building Group Chat",
+      "direction": "A group chat of forty neighbours hosts complaints, lost keys, misdirected photos and accidental comedy that both of them read too closely."
+    },
+    {
+      "id": "repeated-encounters-12-lift-breakdown",
+      "group": "Repeated encounters",
+      "title": "Lift Breakdown",
+      "direction": "When the lift dies everyone on the top floor becomes temporarily social, and the stairs take long enough for real conversation."
+    },
+    {
+      "id": "repeated-encounters-13-seasonal-maintenance",
+      "group": "Repeated encounters",
+      "title": "Seasonal Maintenance",
+      "direction": "Gutter clearing, window washing and inspection days put everyone in the same courtyard with nothing to do but talk."
+    },
+    {
+      "id": "repeated-encounters-14-passing-the-pet",
+      "group": "Repeated encounters",
+      "title": "Passing The Pet",
+      "direction": "An animal needs walking or feeding at hours that overlap conveniently, and the animal has no interest in anyone's boundaries."
+    },
+    {
+      "id": "repeated-encounters-15-rooftop-access",
+      "group": "Repeated encounters",
+      "title": "Rooftop Access",
+      "direction": "The roof is technically off limits and universally used, and it is the only place in the building with a view and no walls."
+    },
+    {
+      "id": "repeated-encounters-16-shared-utility-meter",
+      "group": "Repeated encounters",
+      "title": "Shared Utility Meter",
+      "direction": "Reading a meter means knocking, and knocking means being invited in and staying far longer than the meter requires."
+    },
+    {
+      "id": "favour-economy-01-borrow-some-sugar",
+      "group": "Favour economy",
+      "title": "Borrow Some Sugar",
+      "direction": "A trivial ingredient request opens the door to a standing exchange of small items that neither of them keeps track of."
+    },
+    {
+      "id": "favour-economy-02-package-sitting",
+      "group": "Favour economy",
+      "title": "Package Sitting",
+      "direction": "{{user}} takes delivery of things that will not fit through her door, and the parcels accumulate in the hallway."
+    },
+    {
+      "id": "favour-economy-03-plant-watering",
+      "group": "Favour economy",
+      "title": "Plant Watering",
+      "direction": "A trip away turns into a key, a watering schedule and a set of instructions delivered with visible reluctance."
+    },
+    {
+      "id": "favour-economy-04-lift-a-heavy-thing",
+      "group": "Favour economy",
+      "title": "Lift A Heavy Thing",
+      "direction": "Furniture arrives flat-packed and she cannot get it up the stairs alone, which is both true and convenient."
+    },
+    {
+      "id": "favour-economy-05-jump-start",
+      "group": "Favour economy",
+      "title": "Jump Start",
+      "direction": "A dead battery in the lot makes {{user}} the nearest capable person, and the car is not the only thing that needs charging."
+    },
+    {
+      "id": "favour-economy-06-meet-the-visitor",
+      "group": "Favour economy",
+      "title": "Meet The Visitor",
+      "direction": "{{char}} needs someone to let a friend in while she is running late, and the friend has questions afterwards."
+    },
+    {
+      "id": "favour-economy-07-tech-help",
+      "group": "Favour economy",
+      "title": "Tech Help",
+      "direction": "Her phone, router or laptop fails and {{user}} is the one who answers the knock, twice, because the first fix does not hold."
+    },
+    {
+      "id": "favour-economy-08-food-overflow",
+      "group": "Favour economy",
+      "title": "Food Overflow",
+      "direction": "She cooks too much and the surplus has to go somewhere, which is how {{user}} ends up eating her cooking twice a week."
+    },
+    {
+      "id": "favour-economy-09-spare-key",
+      "group": "Favour economy",
+      "title": "Spare Key",
+      "direction": "An emergency key exchange makes each of them responsible for the other's flat and gives both of them something to think about."
+    },
+    {
+      "id": "favour-economy-10-lend-a-tool",
+      "group": "Favour economy",
+      "title": "Lend A Tool",
+      "direction": "A drill, a ladder, a screwdriver set; the tool comes back late and with a story attached."
+    },
+    {
+      "id": "favour-economy-11-cover-a-signature",
+      "group": "Favour economy",
+      "title": "Cover A Signature",
+      "direction": "She needs a signature she cannot provide in person, and the reason is more interesting than the errand."
+    },
+    {
+      "id": "favour-economy-12-feed-the-cat",
+      "group": "Favour economy",
+      "title": "Feed The Cat",
+      "direction": "Two days of cat duty turns into a standing arrangement with its own rules, timing and minor disputes."
+    },
+    {
+      "id": "favour-economy-13-move-a-mattress",
+      "group": "Favour economy",
+      "title": "Move A Mattress",
+      "direction": "The item is absurd, the stairwell is narrow, and the comedy is built into the architecture."
+    },
+    {
+      "id": "favour-economy-14-wait-for-the-repairman",
+      "group": "Favour economy",
+      "title": "Wait For The Repairman",
+      "direction": "Someone has to be home for the plumber and neither of them can be, so they trade the shift like a custody arrangement."
+    },
+    {
+      "id": "favour-economy-15-walk-her-home",
+      "group": "Favour economy",
+      "title": "Walk Her Home",
+      "direction": "The last train is late and the street is quiet, and she asks, or does not ask, and either way it matters."
+    },
+    {
+      "id": "favour-economy-16-return-something-borrowed",
+      "group": "Favour economy",
+      "title": "Return Something Borrowed",
+      "direction": "Every favour creates a return visit, and the returns get slower and longer as the months pass."
+    },
+    {
+      "id": "walls-and-noise-01-music-too-loud",
+      "group": "Walls and noise",
+      "title": "Music Too Loud",
+      "direction": "Her playlists run past midnight and the wall is thinner than either of them assumed when they signed the lease."
+    },
+    {
+      "id": "walls-and-noise-02-thin-walls-both-ways",
+      "group": "Walls and noise",
+      "title": "Thin Walls Both Ways",
+      "direction": "They each know too much about the other's habits and both pretend otherwise with increasing effort."
+    },
+    {
+      "id": "walls-and-noise-03-heels-on-floorboards",
+      "group": "Walls and noise",
+      "title": "Heels On Floorboards",
+      "direction": "A late return is audible in three rooms and the timing tells {{user}} more than a conversation would."
+    },
+    {
+      "id": "walls-and-noise-04-karaoke-neighbours",
+      "group": "Walls and noise",
+      "title": "Karaoke Neighbours",
+      "direction": "Friends come over and the singing is enthusiastic rather than good, and the playlist is aggressively nostalgic."
+    },
+    {
+      "id": "walls-and-noise-05-gaming-headset-voice",
+      "group": "Walls and noise",
+      "title": "Gaming Headset Voice",
+      "direction": "Late-night matches produce commentary {{user}} can follow without any context and gradually starts to enjoy."
+    },
+    {
+      "id": "walls-and-noise-06-balcony-phone-calls",
+      "group": "Walls and noise",
+      "title": "Balcony Phone Calls",
+      "direction": "Her family calls are loud and half the building knows her mother's opinions on her career, her hair and her love life."
+    },
+    {
+      "id": "walls-and-noise-07-alarm-clock-war",
+      "group": "Walls and noise",
+      "title": "Alarm Clock War",
+      "direction": "Two alarms, two schedules, one wall, and a silent competition about who gets up first."
+    },
+    {
+      "id": "walls-and-noise-08-renovation-noise",
+      "group": "Walls and noise",
+      "title": "Renovation Noise",
+      "direction": "Someone is drilling at nine on a Saturday and it is not {{user}}, and the apology arrives with pastries."
+    },
+    {
+      "id": "walls-and-noise-09-silence-is-suspicious",
+      "group": "Walls and noise",
+      "title": "Silence Is Suspicious",
+      "direction": "When the flat next door goes quiet, {{user}} notices, and the noticing is the beginning of the story."
+    },
+    {
+      "id": "walls-and-noise-10-compromise-playlist",
+      "group": "Walls and noise",
+      "title": "Compromise Playlist",
+      "direction": "A negotiated volume leads to shared listening through the wall, and then to opinions about the tracklist."
+    },
+    {
+      "id": "walls-and-noise-11-noise-complaint-formally-filed",
+      "group": "Walls and noise",
+      "title": "Noise Complaint Formally Filed",
+      "direction": "The building's complaint process forces them to talk as adversaries with a form between them."
+    },
+    {
+      "id": "walls-and-noise-12-apology-is-a-plate-of-food",
+      "group": "Walls and noise",
+      "title": "Apology Is A Plate Of Food",
+      "direction": "She handles the noise complaint by cooking rather than explaining, and the food is genuinely good."
+    },
+    {
+      "id": "walls-and-noise-13-headphones-as-peace-treaty",
+      "group": "Walls and noise",
+      "title": "Headphones As Peace Treaty",
+      "direction": "She starts using them after the second complaint, and the silence turns out to be oddly disappointing."
+    },
+    {
+      "id": "walls-and-noise-14-a-party-not-invited-to",
+      "group": "Walls and noise",
+      "title": "A Party Not Invited To",
+      "direction": "The wall carries a party {{user}} can hear and was not asked to join, and the exclusion is louder than the music."
+    },
+    {
+      "id": "walls-and-noise-15-sound-of-studying",
+      "group": "Walls and noise",
+      "title": "Sound Of Studying",
+      "direction": "The late-night keyboard and paper turns out to be coursework rather than a party, and the discovery revises several assumptions."
+    },
+    {
+      "id": "walls-and-noise-16-morning-argument-through-the-wall",
+      "group": "Walls and noise",
+      "title": "Morning Argument Through The Wall",
+      "direction": "An argument with someone else tells {{user}} more than {{char}} would ever volunteer, and neither mentions it afterwards."
+    },
+    {
+      "id": "block-and-building-01-old-wooden-apartment",
+      "group": "Block and building",
+      "title": "Old Wooden Apartment",
+      "direction": "Creaking floors, bad insulation and a landlord who does not answer the phone; everything about the building is audible and nothing is fixed."
+    },
+    {
+      "id": "block-and-building-02-concrete-tower",
+      "group": "Block and building",
+      "title": "Concrete Tower",
+      "direction": "Impersonal, anonymous and therefore full of accidental intimacy between people who would never otherwise speak."
+    },
+    {
+      "id": "block-and-building-03-above-a-shop",
+      "group": "Block and building",
+      "title": "Above A Shop",
+      "direction": "The units sit over a convenience store that never quite closes, and the till bell is the building's clock."
+    },
+    {
+      "id": "block-and-building-04-shared-house-conversion",
+      "group": "Block and building",
+      "title": "Shared House Conversion",
+      "direction": "The building was one house and is now four flats with one front door and a hallway that belongs to everybody."
+    },
+    {
+      "id": "block-and-building-05-suburban-street",
+      "group": "Block and building",
+      "title": "Suburban Street",
+      "direction": "Houses with driveways, low fences and a shared sense of who is watching which window at what hour."
+    },
+    {
+      "id": "block-and-building-06-new-build-estate",
+      "group": "Block and building",
+      "title": "New Build Estate",
+      "direction": "Everything is beige, the walls are paper and nobody has lived there long enough to have a reputation."
+    },
+    {
+      "id": "block-and-building-07-riverside-block",
+      "group": "Block and building",
+      "title": "Riverside Block",
+      "direction": "The building backs onto water and the balcony view is the only luxury anyone in it can afford."
+    },
+    {
+      "id": "block-and-building-08-station-proximity",
+      "group": "Block and building",
+      "title": "Station Proximity",
+      "direction": "The train line runs close enough that conversation pauses when a train passes and resumes exactly where it stopped."
+    },
+    {
+      "id": "block-and-building-09-above-a-covered-arcade",
+      "group": "Block and building",
+      "title": "Above A Covered Arcade",
+      "direction": "Her unit is above a shopping arcade that empties at eight, leaving the whole street to the residents."
+    },
+    {
+      "id": "block-and-building-10-rural-outskirts",
+      "group": "Block and building",
+      "title": "Rural Outskirts",
+      "direction": "The nearest shop is a drive away, so neighbours matter more than they would in a city and privacy is harder to keep."
+    },
+    {
+      "id": "block-and-building-11-bar-below",
+      "group": "Block and building",
+      "title": "Bar Below",
+      "direction": "The bar's closing time sets the rhythm of the whole building, and the pavement outside is a nightly theatre."
+    },
+    {
+      "id": "block-and-building-12-building-with-a-custodian",
+      "group": "Block and building",
+      "title": "Building With A Custodian",
+      "direction": "An interfering caretaker knows everything, comments freely and has decided the two of them are a couple."
+    },
+    {
+      "id": "block-and-building-13-gated-complex-with-rules",
+      "group": "Block and building",
+      "title": "Gated Complex With Rules",
+      "direction": "The management company has opinions about visitors, noise and balcony plants, and enforces them by email."
+    },
+    {
+      "id": "block-and-building-14-corner-unit-two-aspects",
+      "group": "Block and building",
+      "title": "Corner Unit, Two Aspects",
+      "direction": "The layout means they see different streets from their windows and argue about which view is better."
+    },
+    {
+      "id": "block-and-building-15-top-floor-no-lift",
+      "group": "Block and building",
+      "title": "Top Floor, No Lift",
+      "direction": "Everything requires stairs, including groceries, furniture and excuses, and the climb is where honesty tends to happen."
+    },
+    {
+      "id": "block-and-building-16-basement-flat",
+      "group": "Block and building",
+      "title": "Basement Flat",
+      "direction": "Her windows sit at pavement level, so the street sees in and she has strong opinions about curtains."
+    },
+    {
+      "id": "her-life-beyond-user-01-shift-work-in-retail",
+      "group": "Her life beyond {{user}}",
+      "title": "Shift Work In Retail",
+      "direction": "Her hours are unpredictable and the look is partly professional armour she puts on for customers."
+    },
+    {
+      "id": "her-life-beyond-user-02-night-college",
+      "group": "Her life beyond {{user}}",
+      "title": "Night College",
+      "direction": "She studies during the day and works evenings, and coursework is always due on a night when something else is happening."
+    },
+    {
+      "id": "her-life-beyond-user-03-family-obligations",
+      "group": "Her life beyond {{user}}",
+      "title": "Family Obligations",
+      "direction": "A younger sibling or a parent needs her, and it is not negotiable, reschedulable or something she will complain about."
+    },
+    {
+      "id": "her-life-beyond-user-04-side-hustle",
+      "group": "Her life beyond {{user}}",
+      "title": "Side Hustle",
+      "direction": "She sells something online and the flat is half stockroom, half studio and only barely a home."
+    },
+    {
+      "id": "her-life-beyond-user-05-apprenticeship",
+      "group": "Her life beyond {{user}}",
+      "title": "Apprenticeship",
+      "direction": "She is training in a trade that her presentation does not suggest and that she is quietly excellent at."
+    },
+    {
+      "id": "her-life-beyond-user-06-salon-work",
+      "group": "Her life beyond {{user}}",
+      "title": "Salon Work",
+      "direction": "She does other people's hair and makeup as her actual job and treats her own appearance as advertising."
+    },
+    {
+      "id": "her-life-beyond-user-07-care-work",
+      "group": "Her life beyond {{user}}",
+      "title": "Care Work",
+      "direction": "Her job is exhausting, unglamorous and central to who she is, and it explains most of her schedule."
+    },
+    {
+      "id": "her-life-beyond-user-08-band-or-dance-troupe",
+      "group": "Her life beyond {{user}}",
+      "title": "Band Or Dance Troupe",
+      "direction": "Rehearsal eats her evenings and the neighbours hear the results, which are improving."
+    },
+    {
+      "id": "her-life-beyond-user-09-language-study",
+      "group": "Her life beyond {{user}}",
+      "title": "Language Study",
+      "direction": "She is working toward an exam that would change her entire plan, and the stakes make her unusually serious."
+    },
+    {
+      "id": "her-life-beyond-user-10-money-is-tight",
+      "group": "Her life beyond {{user}}",
+      "title": "Money Is Tight",
+      "direction": "The look is maintained on a budget she does not discuss and the arithmetic is always present."
+    },
+    {
+      "id": "her-life-beyond-user-11-a-friend-group-that-predates-user",
+      "group": "Her life beyond {{user}}",
+      "title": "A Friend Group That Predates {{user}}",
+      "direction": "Her people are established, loud and protective, and {{user}} is the newcomer in her life rather than the centre of it."
+    },
+    {
+      "id": "her-life-beyond-user-12-an-ex-still-in-the-orbit",
+      "group": "Her life beyond {{user}}",
+      "title": "An Ex Still In The Orbit",
+      "direction": "Someone from her past turns up at the building and the dynamic is clearly not resolved for either of them."
+    },
+    {
+      "id": "her-life-beyond-user-13-caring-for-a-pet",
+      "group": "Her life beyond {{user}}",
+      "title": "Caring For A Pet",
+      "direction": "The animal structures her day more reliably than any person does and judges everyone equally."
+    },
+    {
+      "id": "her-life-beyond-user-14-saving-to-leave",
+      "group": "Her life beyond {{user}}",
+      "title": "Saving To Leave",
+      "direction": "She is putting money aside to move, which means the friendship has a horizon neither of them mentions."
+    },
+    {
+      "id": "her-life-beyond-user-15-local-reputation",
+      "group": "Her life beyond {{user}}",
+      "title": "Local Reputation",
+      "direction": "Everyone nearby has an opinion about her, most of it wrong, and she has stopped correcting it."
+    },
+    {
+      "id": "her-life-beyond-user-16-a-craft-she-takes-seriously",
+      "group": "Her life beyond {{user}}",
+      "title": "A Craft She Takes Seriously",
+      "direction": "Something unglamorous and precise absorbs her completely and she is genuinely good at it."
+    },
+    {
+      "id": "beauty-and-upkeep-01-nails-as-a-deadline",
+      "group": "Beauty and upkeep",
+      "title": "Nails As A Deadline",
+      "direction": "Fresh nails mean two hours of not using her hands, and she needs help with everything from zips to door handles."
+    },
+    {
+      "id": "beauty-and-upkeep-02-hair-appointment",
+      "group": "Beauty and upkeep",
+      "title": "Hair Appointment",
+      "direction": "The salon visit is a fixed ritual and the aftermath is a whole evening of not sleeping on it."
+    },
+    {
+      "id": "beauty-and-upkeep-03-skin-routine-argument",
+      "group": "Beauty and upkeep",
+      "title": "Skin Routine Argument",
+      "direction": "She has strong, specific opinions about products and will defend them against anyone with a different shelf."
+    },
+    {
+      "id": "beauty-and-upkeep-04-contact-lenses",
+      "group": "Beauty and upkeep",
+      "title": "Contact Lenses",
+      "direction": "A lost lens at midnight makes {{user}} the nearest pair of hands and the nearest source of light."
+    },
+    {
+      "id": "beauty-and-upkeep-05-tan-maintenance",
+      "group": "Beauty and upkeep",
+      "title": "Tan Maintenance",
+      "direction": "The upkeep is a chore she complains about honestly and undertakes anyway, on a schedule."
+    },
+    {
+      "id": "beauty-and-upkeep-06-shoe-repair",
+      "group": "Beauty and upkeep",
+      "title": "Shoe Repair",
+      "direction": "The heels she loves are falling apart and she will not replace them, for reasons that turn out to be sentimental."
+    },
+    {
+      "id": "beauty-and-upkeep-07-wardrobe-emergency",
+      "group": "Beauty and upkeep",
+      "title": "Wardrobe Emergency",
+      "direction": "A zip, a stain or a broken strap needs a second person at short notice and there is nobody else on the landing."
+    },
+    {
+      "id": "beauty-and-upkeep-08-shopping-trip-logistics",
+      "group": "Beauty and upkeep",
+      "title": "Shopping Trip Logistics",
+      "direction": "She needs a second opinion and a bag carrier, and the second opinion turns out to matter more."
+    },
+    {
+      "id": "beauty-and-upkeep-09-getting-ready-together",
+      "group": "Beauty and upkeep",
+      "title": "Getting Ready Together",
+      "direction": "A shared mirror and limited time produce a specific kind of intimacy that neither of them planned."
+    },
+    {
+      "id": "beauty-and-upkeep-10-costume-for-an-event",
+      "group": "Beauty and upkeep",
+      "title": "Costume For An Event",
+      "direction": "She is dressing for something specific and the pressure is visible in ways her ordinary look never shows."
+    },
+    {
+      "id": "beauty-and-upkeep-11-removing-the-look",
+      "group": "Beauty and upkeep",
+      "title": "Removing The Look",
+      "direction": "The end of the night is a whole process and she is tired, and the tiredness is more honest than anything she says."
+    },
+    {
+      "id": "beauty-and-upkeep-12-compliment-deflection",
+      "group": "Beauty and upkeep",
+      "title": "Compliment Deflection",
+      "direction": "She never takes a compliment straight and always redirects it into a joke about the effort involved."
+    },
+    {
+      "id": "beauty-and-upkeep-13-photograph-refusal",
+      "group": "Beauty and upkeep",
+      "title": "Photograph Refusal",
+      "direction": "She will not be photographed without preparation and has physically removed herself from group shots."
+    },
+    {
+      "id": "beauty-and-upkeep-14-old-photos",
+      "group": "Beauty and upkeep",
+      "title": "Old Photos",
+      "direction": "A photo from before the look shows a version of her {{user}} did not expect and she would rather not discuss."
+    },
+    {
+      "id": "beauty-and-upkeep-15-shared-products",
+      "group": "Beauty and upkeep",
+      "title": "Shared Products",
+      "direction": "Something of hers ends up in {{user}}'s bathroom and neither of them mentions it for a week."
+    },
+    {
+      "id": "beauty-and-upkeep-16-the-look-is-expensive",
+      "group": "Beauty and upkeep",
+      "title": "The Look Is Expensive",
+      "direction": "She tracks the cost precisely, down to the yen, and it is a source of real and ongoing stress."
+    },
+    {
+      "id": "escalation-path-01-slow-accretion",
+      "group": "Escalation path",
+      "title": "Slow Accretion",
+      "direction": "Nothing dramatic happens; the contact simply becomes the shape of the week and neither of them can name when it changed."
+    },
+    {
+      "id": "escalation-path-02-one-favour-too-many",
+      "group": "Escalation path",
+      "title": "One Favour Too Many",
+      "direction": "The exchange tilts and someone has to name it, and neither of them is good at naming things."
+    },
+    {
+      "id": "escalation-path-03-the-night-it-rains",
+      "group": "Escalation path",
+      "title": "The Night It Rains",
+      "direction": "Bad weather forces an unplanned shared evening and the alternative was worse for both of them."
+    },
+    {
+      "id": "escalation-path-04-a-fight-about-something-small",
+      "group": "Escalation path",
+      "title": "A Fight About Something Small",
+      "direction": "The bins, the parking or the noise becomes a proxy for something neither will say directly."
+    },
+    {
+      "id": "escalation-path-05-a-crisis-handled-together",
+      "group": "Escalation path",
+      "title": "A Crisis Handled Together",
+      "direction": "Something breaks, floods or fails and they deal with it as a pair, efficiently and without discussion."
+    },
+    {
+      "id": "escalation-path-06-the-almost-confession",
+      "group": "Escalation path",
+      "title": "The Almost-Confession",
+      "direction": "One of them says most of it, at the door, at the wrong hour, and then retreats into logistics."
+    },
+    {
+      "id": "escalation-path-07-a-visitor-misreads-them",
+      "group": "Escalation path",
+      "title": "A Visitor Misreads Them",
+      "direction": "Someone assumes they are together and neither corrects it fast enough to be convincing."
+    },
+    {
+      "id": "escalation-path-08-the-key-stays",
+      "group": "Escalation path",
+      "title": "The Key Stays",
+      "direction": "A borrowed key is never returned and both pretend not to notice it on the hook."
+    },
+    {
+      "id": "escalation-path-09-a-standing-invitation",
+      "group": "Escalation path",
+      "title": "A Standing Invitation",
+      "direction": "Dinner becomes weekly without anyone deciding it, and then it becomes expected."
+    },
+    {
+      "id": "escalation-path-10-a-temporary-separation",
+      "group": "Escalation path",
+      "title": "A Temporary Separation",
+      "direction": "She leaves for a week and the absence is louder than the contact ever was."
+    },
+    {
+      "id": "escalation-path-11-someone-else-notices",
+      "group": "Escalation path",
+      "title": "Someone Else Notices",
+      "direction": "A third party names the tension out loud in front of both of them and enjoys doing it."
+    },
+    {
+      "id": "escalation-path-12-a-deliberate-step-back",
+      "group": "Escalation path",
+      "title": "A Deliberate Step Back",
+      "direction": "One of them pulls away to protect something and the withdrawal does not achieve what it was meant to."
+    },
+    {
+      "id": "escalation-path-13-an-honest-conversation-at-the-door",
+      "group": "Escalation path",
+      "title": "An Honest Conversation At The Door",
+      "direction": "The corridor becomes the venue for the conversation they have been avoiding for months."
+    },
+    {
+      "id": "escalation-path-14-a-change-in-circumstances",
+      "group": "Escalation path",
+      "title": "A Change In Circumstances",
+      "direction": "Her lease, job or family situation shifts and the whole arrangement is suddenly at risk."
+    },
+    {
+      "id": "escalation-path-15-the-public-test",
+      "group": "Escalation path",
+      "title": "The Public Test",
+      "direction": "They are seen together somewhere that makes the relationship legible to people who matter."
+    },
+    {
+      "id": "escalation-path-16-no-escalation-at-all",
+      "group": "Escalation path",
+      "title": "No Escalation At All",
+      "direction": "The series stays inside the friendship and the unresolved tension is the entire point rather than a delay."
+    },
+    {
+      "id": "tone-and-register-01-deadpan-comedy",
+      "group": "Tone and register",
+      "title": "Deadpan Comedy",
+      "direction": "The humour is dry, nothing is treated as momentous and the absurdity is delivered without emphasis."
+    },
+    {
+      "id": "tone-and-register-02-warm-slice-of-life",
+      "group": "Tone and register",
+      "title": "Warm Slice Of Life",
+      "direction": "Small kindnesses accumulate without irony and the story trusts the reader to find them sufficient."
+    },
+    {
+      "id": "tone-and-register-03-quiet-melancholy",
+      "group": "Tone and register",
+      "title": "Quiet Melancholy",
+      "direction": "The street is quiet and both of them are carrying something that predates the meeting."
+    },
+    {
+      "id": "tone-and-register-04-sharp-banter",
+      "group": "Tone and register",
+      "title": "Sharp Banter",
+      "direction": "They are funny at each other's expense, both enjoy it, and the wit is a form of care."
+    },
+    {
+      "id": "tone-and-register-05-awkward-sincerity",
+      "group": "Tone and register",
+      "title": "Awkward Sincerity",
+      "direction": "Neither is good at direct statements, both keep trying, and the failures are the good parts."
+    },
+    {
+      "id": "tone-and-register-06-low-stakes-rivalry",
+      "group": "Tone and register",
+      "title": "Low-Stakes Rivalry",
+      "direction": "Competition about trivial things is the main channel and neither will admit what it is channelling."
+    },
+    {
+      "id": "tone-and-register-07-gentle-suspense",
+      "group": "Tone and register",
+      "title": "Gentle Suspense",
+      "direction": "Something is being withheld and the reader feels it before {{user}} does."
+    },
+    {
+      "id": "tone-and-register-08-working-class-realism",
+      "group": "Tone and register",
+      "title": "Working-Class Realism",
+      "direction": "Money, shifts and tiredness are present, unromanticised and not solved by the relationship."
+    },
+    {
+      "id": "tone-and-register-09-sunlit-nostalgia",
+      "group": "Tone and register",
+      "title": "Sunlit Nostalgia",
+      "direction": "The street feels like a place that will be remembered later, and the narration knows it."
+    },
+    {
+      "id": "tone-and-register-10-farcical-escalation",
+      "group": "Tone and register",
+      "title": "Farcical Escalation",
+      "direction": "One small lie compounds until the situation is absurd and the only exit is a bigger lie."
+    },
+    {
+      "id": "tone-and-register-11-intimate-confessional",
+      "group": "Tone and register",
+      "title": "Intimate Confessional",
+      "direction": "Conversations happen at the door at one in the morning and go further than either intended."
+    },
+    {
+      "id": "tone-and-register-12-observational-quiet",
+      "group": "Tone and register",
+      "title": "Observational Quiet",
+      "direction": "Much of the series is {{user}} noticing rather than speaking, and the noticing is the action."
+    },
+    {
+      "id": "tone-and-register-13-bittersweet-comedy",
+      "group": "Tone and register",
+      "title": "Bittersweet Comedy",
+      "direction": "It is genuinely funny and it is not quite all right, and both things stay true to the end."
+    },
+    {
+      "id": "tone-and-register-14-neighbourly-formality",
+      "group": "Tone and register",
+      "title": "Neighbourly Formality",
+      "direction": "They maintain politeness long past the point where it is honest, and the politeness becomes the obstacle."
+    },
+    {
+      "id": "tone-and-register-15-stormy-weather",
+      "group": "Tone and register",
+      "title": "Stormy Weather",
+      "direction": "The weather does emotional work, the building feels smaller and the power goes out at the useful moment."
+    },
+    {
+      "id": "tone-and-register-16-seasonal-structure",
+      "group": "Tone and register",
+      "title": "Seasonal Structure",
+      "direction": "The series is organised around a year of recurring occasions, each one a small measuring stick."
+    },
+    {
+      "id": "combinations-001-full-face-off-duty-shared-balcony",
+      "group": "Combinations",
+      "title": "Full Face Off Duty × Shared Balcony",
+      "direction": "Combine ‘Full Face Off Duty’ with ‘Shared Balcony’: the look is a performance she takes off at the door, and the balconies are close enough for conversation. So {{user}} meets the private version before the public one, and the order matters more than either of them expected."
+    },
+    {
+      "id": "combinations-002-loungewear-gyaru-corridor-collisions",
+      "group": "Combinations",
+      "title": "Loungewear Gyaru × Corridor Collisions",
+      "direction": "Combine ‘Loungewear Gyaru’ with ‘Corridor Collisions’: at home she is gyaru in an unglamorous register, and the corridor is short and the doors are loud. The comedy comes from how completely normal it all becomes, and the tenderness comes from the same place."
+    },
+    {
+      "id": "combinations-003-proud-of-the-craft-stairwell",
+      "group": "Combinations",
+      "title": "Proud Of The Craft × Stairwell",
+      "direction": "Combine ‘Proud Of The Craft’ with ‘Stairwell’: she treats the look as craft and will teach it, and four flights of stairs make every meeting unhurried. Proximity does the work that conversation would otherwise have to do, and it does it faster than either of them likes."
+    },
+    {
+      "id": "combinations-004-home-is-her-studio-laundry-room-queue",
+      "group": "Combinations",
+      "title": "Home Is Her Studio × Laundry Room Queue",
+      "direction": "Combine ‘Home Is Her Studio’ with ‘Laundry Room Queue’: getting ready happens at home, audibly, with the door open, and the shared machines impose a schedule. The difference between her two selves becomes the thing {{user}} is actually curious about."
+    },
+    {
+      "id": "combinations-005-sickness-breaks-the-look-parcel-handovers",
+      "group": "Combinations",
+      "title": "Sickness Breaks The Look × Parcel Handovers",
+      "direction": "Combine ‘Sickness Breaks The Look’ with ‘Parcel Handovers’: illness strips the presentation off completely, and deliveries always need a second person. What begins as logistics becomes the part of the day she plans around, and she would deny that under oath."
+    },
+    {
+      "id": "combinations-006-family-expectations-bins-and-recycling",
+      "group": "Combinations",
+      "title": "Family Expectations × Bins And Recycling",
+      "direction": "Combine ‘Family Expectations’ with ‘Bins And Recycling’: her family prefers a version of her that no longer exists, and the collection schedule forces contact at bad hours. Every repeated contact lowers the cost of the next one, and the lowering is the plot."
+    },
+    {
+      "id": "combinations-007-neat-to-a-fault-parking-space",
+      "group": "Combinations",
+      "title": "Neat To A Fault × Parking Space",
+      "direction": "Combine ‘Neat To A Fault’ with ‘Parking Space’: her flat is arranged to a standard she enforces, and there are more cars than spaces. Neither of them can pretend the contact is accidental after the third time, and both keep pretending anyway."
+    },
+    {
+      "id": "combinations-008-morning-after-the-look-shared-entrance-at-odd-hours",
+      "group": "Combinations",
+      "title": "Morning After The Look × Shared Entrance At Odd Hours",
+      "direction": "Combine ‘Morning After The Look’ with ‘Shared Entrance At Odd Hours’: the morning after is a closed curtain and a different person, and opposite shifts meet at the door at midnight. Each encounter is small, and the accumulation rather than any single scene is the story."
+    },
+    {
+      "id": "combinations-009-full-face-off-duty-local-shop-queue",
+      "group": "Combinations",
+      "title": "Full Face Off Duty × Local Shop Queue",
+      "direction": "Combine ‘Full Face Off Duty’ with ‘Local Shop Queue’: the look is a performance she takes off at the door, and the same late-night shop and the same clerk. It makes the building feel smaller and her life feel considerably larger than the corridor suggests."
+    },
+    {
+      "id": "combinations-010-loungewear-gyaru-fire-alarm-evacuation",
+      "group": "Combinations",
+      "title": "Loungewear Gyaru × Fire Alarm Evacuation",
+      "direction": "Combine ‘Loungewear Gyaru’ with ‘Fire Alarm Evacuation’: at home she is gyaru in an unglamorous register, and the fire alarm empties the building regularly. Every favour is also a small admission that she needs the help, and she hears it that way."
+    },
+    {
+      "id": "combinations-011-proud-of-the-craft-building-group-chat",
+      "group": "Combinations",
+      "title": "Proud Of The Craft × Building Group Chat",
+      "direction": "Combine ‘Proud Of The Craft’ with ‘Building Group Chat’: she treats the look as craft and will teach it, and forty neighbours share one group chat. She gets to be ordinary in front of someone who has already seen the other version, and that is rarer than she admits."
+    },
+    {
+      "id": "combinations-012-home-is-her-studio-lift-breakdown",
+      "group": "Combinations",
+      "title": "Home Is Her Studio × Lift Breakdown",
+      "direction": "Combine ‘Home Is Her Studio’ with ‘Lift Breakdown’: getting ready happens at home, audibly, with the door open, and a broken lift makes the top floor social. It gives {{user}} a role in her week that neither of them is willing to name out loud."
+    },
+    {
+      "id": "combinations-013-sickness-breaks-the-look-seasonal-maintenance",
+      "group": "Combinations",
+      "title": "Sickness Breaks The Look × Seasonal Maintenance",
+      "direction": "Combine ‘Sickness Breaks The Look’ with ‘Seasonal Maintenance’: illness strips the presentation off completely, and maintenance days put everyone in the courtyard. She can hold one version of herself together in public and lose it entirely at home, and {{user}} sees both."
+    },
+    {
+      "id": "combinations-014-family-expectations-passing-the-pet",
+      "group": "Combinations",
+      "title": "Family Expectations × Passing The Pet",
+      "direction": "Combine ‘Family Expectations’ with ‘Passing The Pet’: her family prefers a version of her that no longer exists, and an animal needs walking at convenient hours. She keeps the boundary and the boundary keeps moving, one small favour at a time."
+    },
+    {
+      "id": "combinations-015-neat-to-a-fault-rooftop-access",
+      "group": "Combinations",
+      "title": "Neat To A Fault × Rooftop Access",
+      "direction": "Combine ‘Neat To A Fault’ with ‘Rooftop Access’: her flat is arranged to a standard she enforces, and the roof is off limits and universally used. The street becomes the relationship's only venue, which limits it and defines it at the same time."
+    },
+    {
+      "id": "combinations-016-morning-after-the-look-shared-utility-meter",
+      "group": "Combinations",
+      "title": "Morning After The Look × Shared Utility Meter",
+      "direction": "Combine ‘Morning After The Look’ with ‘Shared Utility Meter’: the morning after is a closed curtain and a different person, and reading a meter means knocking and staying. The politeness has to be renegotiated every single time, and the renegotiation is where the honesty leaks out."
+    },
+    {
+      "id": "combinations-017-uniform-she-sheds-shared-balcony",
+      "group": "Combinations",
+      "title": "Uniform She Sheds × Shared Balcony",
+      "direction": "Combine ‘Uniform She Sheds’ with ‘Shared Balcony’: her presentation belongs to her job rather than her evenings, and the balconies are close enough for conversation. The result is a standing arrangement that neither of them ever agreed to and neither is willing to end."
+    },
+    {
+      "id": "combinations-018-two-wardrobes-corridor-collisions",
+      "group": "Combinations",
+      "title": "Two Wardrobes × Corridor Collisions",
+      "direction": "Combine ‘Two Wardrobes’ with ‘Corridor Collisions’: she keeps two wardrobes and a hard line between them, and the corridor is short and the doors are loud. It makes her public face feel like a costume she is tired of wearing by the end of the day."
+    },
+    {
+      "id": "combinations-019-public-recognition-stairwell",
+      "group": "Combinations",
+      "title": "Public Recognition × Stairwell",
+      "direction": "Combine ‘Public Recognition’ with ‘Stairwell’: strangers recognise her face and neighbours do not, and four flights of stairs make every meeting unhurried. The difference between her two selves becomes the thing {{user}} is actually curious about."
+    },
+    {
+      "id": "combinations-020-messy-glamour-laundry-room-queue",
+      "group": "Combinations",
+      "title": "Messy Glamour × Laundry Room Queue",
+      "direction": "Combine ‘Messy Glamour’ with ‘Laundry Room Queue’: the glamour is immaculate and the flat is not, and the shared machines impose a schedule. It turns a private routine into a shared schedule without anyone making a decision."
+    },
+    {
+      "id": "combinations-021-night-out-prep-through-the-wall-parcel-handovers",
+      "group": "Combinations",
+      "title": "Night-Out Prep Through The Wall × Parcel Handovers",
+      "direction": "Combine ‘Night-Out Prep Through The Wall’ with ‘Parcel Handovers’: a night out is prepared for over several loud hours, and deliveries always need a second person. The contact lands exactly where she is least prepared for it, which is the whole engine of the series."
+    },
+    {
+      "id": "combinations-022-presentation-as-armour-bins-and-recycling",
+      "group": "Combinations",
+      "title": "Presentation As Armour × Bins And Recycling",
+      "direction": "Combine ‘Presentation As Armour’ with ‘Bins And Recycling’: the look goes on before anything difficult, and the collection schedule forces contact at bad hours. Neither of them can pretend the contact is accidental after the third time, and both keep pretending anyway."
+    },
+    {
+      "id": "combinations-023-small-flat-big-routine-parking-space",
+      "group": "Combinations",
+      "title": "Small Flat, Big Routine × Parking Space",
+      "direction": "Combine ‘Small Flat, Big Routine’ with ‘Parking Space’: the routine does not fit the square footage, and there are more cars than spaces. The arrangement survives on being unspoken, which is also exactly its weakness."
+    },
+    {
+      "id": "combinations-024-hides-the-effort-shared-entrance-at-odd-hours",
+      "group": "Combinations",
+      "title": "Hides The Effort × Shared Entrance At Odd Hours",
+      "direction": "Combine ‘Hides The Effort’ with ‘Shared Entrance At Odd Hours’: she refuses to discuss what the upkeep costs her, and opposite shifts meet at the door at midnight. It makes the building feel smaller and her life feel considerably larger than the corridor suggests."
+    },
+    {
+      "id": "combinations-025-uniform-she-sheds-local-shop-queue",
+      "group": "Combinations",
+      "title": "Uniform She Sheds × Local Shop Queue",
+      "direction": "Combine ‘Uniform She Sheds’ with ‘Local Shop Queue’: her presentation belongs to her job rather than her evenings, and the same late-night shop and the same clerk. The comedy comes from how completely normal it all becomes, and the tenderness comes from the same place."
+    },
+    {
+      "id": "combinations-026-two-wardrobes-fire-alarm-evacuation",
+      "group": "Combinations",
+      "title": "Two Wardrobes × Fire Alarm Evacuation",
+      "direction": "Combine ‘Two Wardrobes’ with ‘Fire Alarm Evacuation’: she keeps two wardrobes and a hard line between them, and the fire alarm empties the building regularly. Proximity does the work that conversation would otherwise have to do, and it does it faster than either of them likes."
+    },
+    {
+      "id": "combinations-027-public-recognition-building-group-chat",
+      "group": "Combinations",
+      "title": "Public Recognition × Building Group Chat",
+      "direction": "Combine ‘Public Recognition’ with ‘Building Group Chat’: strangers recognise her face and neighbours do not, and forty neighbours share one group chat. It gives {{user}} a role in her week that neither of them is willing to name out loud."
+    },
+    {
+      "id": "combinations-028-messy-glamour-lift-breakdown",
+      "group": "Combinations",
+      "title": "Messy Glamour × Lift Breakdown",
+      "direction": "Combine ‘Messy Glamour’ with ‘Lift Breakdown’: the glamour is immaculate and the flat is not, and a broken lift makes the top floor social. What begins as logistics becomes the part of the day she plans around, and she would deny that under oath."
+    },
+    {
+      "id": "combinations-029-night-out-prep-through-the-wall-seasonal-maintenance",
+      "group": "Combinations",
+      "title": "Night-Out Prep Through The Wall × Seasonal Maintenance",
+      "direction": "Combine ‘Night-Out Prep Through The Wall’ with ‘Seasonal Maintenance’: a night out is prepared for over several loud hours, and maintenance days put everyone in the courtyard. Every repeated contact lowers the cost of the next one, and the lowering is the plot."
+    },
+    {
+      "id": "combinations-030-presentation-as-armour-passing-the-pet",
+      "group": "Combinations",
+      "title": "Presentation As Armour × Passing The Pet",
+      "direction": "Combine ‘Presentation As Armour’ with ‘Passing The Pet’: the look goes on before anything difficult, and an animal needs walking at convenient hours. The street becomes the relationship's only venue, which limits it and defines it at the same time."
+    },
+    {
+      "id": "combinations-031-small-flat-big-routine-rooftop-access",
+      "group": "Combinations",
+      "title": "Small Flat, Big Routine × Rooftop Access",
+      "direction": "Combine ‘Small Flat, Big Routine’ with ‘Rooftop Access’: the routine does not fit the square footage, and the roof is off limits and universally used. Each encounter is small, and the accumulation rather than any single scene is the story."
+    },
+    {
+      "id": "combinations-032-hides-the-effort-shared-utility-meter",
+      "group": "Combinations",
+      "title": "Hides The Effort × Shared Utility Meter",
+      "direction": "Combine ‘Hides The Effort’ with ‘Shared Utility Meter’: she refuses to discuss what the upkeep costs her, and reading a meter means knocking and staying. The friction is real, small and impossible to escalate cleanly, so it simply continues."
+    },
+    {
+      "id": "combinations-033-home-is-her-studio-shared-balcony",
+      "group": "Combinations",
+      "title": "Home Is Her Studio × Shared Balcony",
+      "direction": "Combine ‘Home Is Her Studio’ with ‘Shared Balcony’: getting ready happens at home, audibly, with the door open, and the balconies are close enough for conversation. She gets to be ordinary in front of someone who has already seen the other version, and that is rarer than she admits."
+    },
+    {
+      "id": "combinations-034-sickness-breaks-the-look-corridor-collisions",
+      "group": "Combinations",
+      "title": "Sickness Breaks The Look × Corridor Collisions",
+      "direction": "Combine ‘Sickness Breaks The Look’ with ‘Corridor Collisions’: illness strips the presentation off completely, and the corridor is short and the doors are loud. It is ordinary, repeatable and therefore much harder to walk away from than a dramatic attachment would be."
+    },
+    {
+      "id": "combinations-035-family-expectations-stairwell",
+      "group": "Combinations",
+      "title": "Family Expectations × Stairwell",
+      "direction": "Combine ‘Family Expectations’ with ‘Stairwell’: her family prefers a version of her that no longer exists, and four flights of stairs make every meeting unhurried. It turns a private routine into a shared schedule without anyone making a decision."
+    },
+    {
+      "id": "combinations-036-neat-to-a-fault-laundry-room-queue",
+      "group": "Combinations",
+      "title": "Neat To A Fault × Laundry Room Queue",
+      "direction": "Combine ‘Neat To A Fault’ with ‘Laundry Room Queue’: her flat is arranged to a standard she enforces, and the shared machines impose a schedule. She keeps the boundary and the boundary keeps moving, one small favour at a time."
+    },
+    {
+      "id": "combinations-037-morning-after-the-look-parcel-handovers",
+      "group": "Combinations",
+      "title": "Morning After The Look × Parcel Handovers",
+      "direction": "Combine ‘Morning After The Look’ with ‘Parcel Handovers’: the morning after is a closed curtain and a different person, and deliveries always need a second person. What {{user}} learns is never quite the thing she meant to show, and the gap becomes the interesting part."
+    },
+    {
+      "id": "combinations-038-full-face-off-duty-bins-and-recycling",
+      "group": "Combinations",
+      "title": "Full Face Off Duty × Bins And Recycling",
+      "direction": "Combine ‘Full Face Off Duty’ with ‘Bins And Recycling’: the look is a performance she takes off at the door, and the collection schedule forces contact at bad hours. The politeness has to be renegotiated every single time, and the renegotiation is where the honesty leaks out."
+    },
+    {
+      "id": "combinations-039-loungewear-gyaru-parking-space",
+      "group": "Combinations",
+      "title": "Loungewear Gyaru × Parking Space",
+      "direction": "Combine ‘Loungewear Gyaru’ with ‘Parking Space’: at home she is gyaru in an unglamorous register, and there are more cars than spaces. So {{user}} meets the private version before the public one, and the order matters more than either of them expected."
+    },
+    {
+      "id": "combinations-040-proud-of-the-craft-shared-entrance-at-odd-hours",
+      "group": "Combinations",
+      "title": "Proud Of The Craft × Shared Entrance At Odd Hours",
+      "direction": "Combine ‘Proud Of The Craft’ with ‘Shared Entrance At Odd Hours’: she treats the look as craft and will teach it, and opposite shifts meet at the door at midnight. The comedy comes from how completely normal it all becomes, and the tenderness comes from the same place."
+    },
+    {
+      "id": "combinations-041-home-is-her-studio-local-shop-queue",
+      "group": "Combinations",
+      "title": "Home Is Her Studio × Local Shop Queue",
+      "direction": "Combine ‘Home Is Her Studio’ with ‘Local Shop Queue’: getting ready happens at home, audibly, with the door open, and the same late-night shop and the same clerk. It makes her public face feel like a costume she is tired of wearing by the end of the day."
+    },
+    {
+      "id": "combinations-042-sickness-breaks-the-look-fire-alarm-evacuation",
+      "group": "Combinations",
+      "title": "Sickness Breaks The Look × Fire Alarm Evacuation",
+      "direction": "Combine ‘Sickness Breaks The Look’ with ‘Fire Alarm Evacuation’: illness strips the presentation off completely, and the fire alarm empties the building regularly. The difference between her two selves becomes the thing {{user}} is actually curious about."
+    },
+    {
+      "id": "combinations-043-family-expectations-building-group-chat",
+      "group": "Combinations",
+      "title": "Family Expectations × Building Group Chat",
+      "direction": "Combine ‘Family Expectations’ with ‘Building Group Chat’: her family prefers a version of her that no longer exists, and forty neighbours share one group chat. What begins as logistics becomes the part of the day she plans around, and she would deny that under oath."
+    },
+    {
+      "id": "combinations-044-neat-to-a-fault-lift-breakdown",
+      "group": "Combinations",
+      "title": "Neat To A Fault × Lift Breakdown",
+      "direction": "Combine ‘Neat To A Fault’ with ‘Lift Breakdown’: her flat is arranged to a standard she enforces, and a broken lift makes the top floor social. The contact lands exactly where she is least prepared for it, which is the whole engine of the series."
+    },
+    {
+      "id": "combinations-045-morning-after-the-look-seasonal-maintenance",
+      "group": "Combinations",
+      "title": "Morning After The Look × Seasonal Maintenance",
+      "direction": "Combine ‘Morning After The Look’ with ‘Seasonal Maintenance’: the morning after is a closed curtain and a different person, and maintenance days put everyone in the courtyard. Neither of them can pretend the contact is accidental after the third time, and both keep pretending anyway."
+    },
+    {
+      "id": "combinations-046-full-face-off-duty-passing-the-pet",
+      "group": "Combinations",
+      "title": "Full Face Off Duty × Passing The Pet",
+      "direction": "Combine ‘Full Face Off Duty’ with ‘Passing The Pet’: the look is a performance she takes off at the door, and an animal needs walking at convenient hours. The arrangement survives on being unspoken, which is also exactly its weakness."
+    },
+    {
+      "id": "combinations-047-loungewear-gyaru-rooftop-access",
+      "group": "Combinations",
+      "title": "Loungewear Gyaru × Rooftop Access",
+      "direction": "Combine ‘Loungewear Gyaru’ with ‘Rooftop Access’: at home she is gyaru in an unglamorous register, and the roof is off limits and universally used. It makes the building feel smaller and her life feel considerably larger than the corridor suggests."
+    },
+    {
+      "id": "combinations-048-proud-of-the-craft-shared-utility-meter",
+      "group": "Combinations",
+      "title": "Proud Of The Craft × Shared Utility Meter",
+      "direction": "Combine ‘Proud Of The Craft’ with ‘Shared Utility Meter’: she treats the look as craft and will teach it, and reading a meter means knocking and staying. Every favour is also a small admission that she needs the help, and she hears it that way."
+    },
+    {
+      "id": "combinations-049-messy-glamour-shared-balcony",
+      "group": "Combinations",
+      "title": "Messy Glamour × Shared Balcony",
+      "direction": "Combine ‘Messy Glamour’ with ‘Shared Balcony’: the glamour is immaculate and the flat is not, and the balconies are close enough for conversation. It gives {{user}} a role in her week that neither of them is willing to name out loud."
+    },
+    {
+      "id": "combinations-050-night-out-prep-through-the-wall-corridor-collisions",
+      "group": "Combinations",
+      "title": "Night-Out Prep Through The Wall × Corridor Collisions",
+      "direction": "Combine ‘Night-Out Prep Through The Wall’ with ‘Corridor Collisions’: a night out is prepared for over several loud hours, and the corridor is short and the doors are loud. She can hold one version of herself together in public and lose it entirely at home, and {{user}} sees both."
+    },
+    {
+      "id": "combinations-051-presentation-as-armour-stairwell",
+      "group": "Combinations",
+      "title": "Presentation As Armour × Stairwell",
+      "direction": "Combine ‘Presentation As Armour’ with ‘Stairwell’: the look goes on before anything difficult, and four flights of stairs make every meeting unhurried. She keeps the boundary and the boundary keeps moving, one small favour at a time."
+    },
+    {
+      "id": "combinations-052-small-flat-big-routine-laundry-room-queue",
+      "group": "Combinations",
+      "title": "Small Flat, Big Routine × Laundry Room Queue",
+      "direction": "Combine ‘Small Flat, Big Routine’ with ‘Laundry Room Queue’: the routine does not fit the square footage, and the shared machines impose a schedule. The street becomes the relationship's only venue, which limits it and defines it at the same time."
+    },
+    {
+      "id": "combinations-053-hides-the-effort-parcel-handovers",
+      "group": "Combinations",
+      "title": "Hides The Effort × Parcel Handovers",
+      "direction": "Combine ‘Hides The Effort’ with ‘Parcel Handovers’: she refuses to discuss what the upkeep costs her, and deliveries always need a second person. The politeness has to be renegotiated every single time, and the renegotiation is where the honesty leaks out."
+    },
+    {
+      "id": "combinations-054-uniform-she-sheds-bins-and-recycling",
+      "group": "Combinations",
+      "title": "Uniform She Sheds × Bins And Recycling",
+      "direction": "Combine ‘Uniform She Sheds’ with ‘Bins And Recycling’: her presentation belongs to her job rather than her evenings, and the collection schedule forces contact at bad hours. The friction is real, small and impossible to escalate cleanly, so it simply continues."
+    },
+    {
+      "id": "combinations-055-two-wardrobes-parking-space",
+      "group": "Combinations",
+      "title": "Two Wardrobes × Parking Space",
+      "direction": "Combine ‘Two Wardrobes’ with ‘Parking Space’: she keeps two wardrobes and a hard line between them, and there are more cars than spaces. The result is a standing arrangement that neither of them ever agreed to and neither is willing to end."
+    },
+    {
+      "id": "combinations-056-public-recognition-shared-entrance-at-odd-hours",
+      "group": "Combinations",
+      "title": "Public Recognition × Shared Entrance At Odd Hours",
+      "direction": "Combine ‘Public Recognition’ with ‘Shared Entrance At Odd Hours’: strangers recognise her face and neighbours do not, and opposite shifts meet at the door at midnight. It makes her public face feel like a costume she is tired of wearing by the end of the day."
+    },
+    {
+      "id": "combinations-057-messy-glamour-local-shop-queue",
+      "group": "Combinations",
+      "title": "Messy Glamour × Local Shop Queue",
+      "direction": "Combine ‘Messy Glamour’ with ‘Local Shop Queue’: the glamour is immaculate and the flat is not, and the same late-night shop and the same clerk. It is ordinary, repeatable and therefore much harder to walk away from than a dramatic attachment would be."
+    },
+    {
+      "id": "combinations-058-night-out-prep-through-the-wall-fire-alarm-evacuation",
+      "group": "Combinations",
+      "title": "Night-Out Prep Through The Wall × Fire Alarm Evacuation",
+      "direction": "Combine ‘Night-Out Prep Through The Wall’ with ‘Fire Alarm Evacuation’: a night out is prepared for over several loud hours, and the fire alarm empties the building regularly. It turns a private routine into a shared schedule without anyone making a decision."
+    },
+    {
+      "id": "combinations-059-presentation-as-armour-building-group-chat",
+      "group": "Combinations",
+      "title": "Presentation As Armour × Building Group Chat",
+      "direction": "Combine ‘Presentation As Armour’ with ‘Building Group Chat’: the look goes on before anything difficult, and forty neighbours share one group chat. The contact lands exactly where she is least prepared for it, which is the whole engine of the series."
+    },
+    {
+      "id": "combinations-060-small-flat-big-routine-lift-breakdown",
+      "group": "Combinations",
+      "title": "Small Flat, Big Routine × Lift Breakdown",
+      "direction": "Combine ‘Small Flat, Big Routine’ with ‘Lift Breakdown’: the routine does not fit the square footage, and a broken lift makes the top floor social. What {{user}} learns is never quite the thing she meant to show, and the gap becomes the interesting part."
+    },
+    {
+      "id": "combinations-061-hides-the-effort-seasonal-maintenance",
+      "group": "Combinations",
+      "title": "Hides The Effort × Seasonal Maintenance",
+      "direction": "Combine ‘Hides The Effort’ with ‘Seasonal Maintenance’: she refuses to discuss what the upkeep costs her, and maintenance days put everyone in the courtyard. The arrangement survives on being unspoken, which is also exactly its weakness."
+    },
+    {
+      "id": "combinations-062-uniform-she-sheds-passing-the-pet",
+      "group": "Combinations",
+      "title": "Uniform She Sheds × Passing The Pet",
+      "direction": "Combine ‘Uniform She Sheds’ with ‘Passing The Pet’: her presentation belongs to her job rather than her evenings, and an animal needs walking at convenient hours. So {{user}} meets the private version before the public one, and the order matters more than either of them expected."
+    },
+    {
+      "id": "combinations-063-two-wardrobes-rooftop-access",
+      "group": "Combinations",
+      "title": "Two Wardrobes × Rooftop Access",
+      "direction": "Combine ‘Two Wardrobes’ with ‘Rooftop Access’: she keeps two wardrobes and a hard line between them, and the roof is off limits and universally used. The comedy comes from how completely normal it all becomes, and the tenderness comes from the same place."
+    },
+    {
+      "id": "combinations-064-public-recognition-shared-utility-meter",
+      "group": "Combinations",
+      "title": "Public Recognition × Shared Utility Meter",
+      "direction": "Combine ‘Public Recognition’ with ‘Shared Utility Meter’: strangers recognise her face and neighbours do not, and reading a meter means knocking and staying. Proximity does the work that conversation would otherwise have to do, and it does it faster than either of them likes."
+    },
+    {
+      "id": "combinations-065-neat-to-a-fault-shared-balcony",
+      "group": "Combinations",
+      "title": "Neat To A Fault × Shared Balcony",
+      "direction": "Combine ‘Neat To A Fault’ with ‘Shared Balcony’: her flat is arranged to a standard she enforces, and the balconies are close enough for conversation. What begins as logistics becomes the part of the day she plans around, and she would deny that under oath."
+    },
+    {
+      "id": "combinations-066-morning-after-the-look-corridor-collisions",
+      "group": "Combinations",
+      "title": "Morning After The Look × Corridor Collisions",
+      "direction": "Combine ‘Morning After The Look’ with ‘Corridor Collisions’: the morning after is a closed curtain and a different person, and the corridor is short and the doors are loud. Every repeated contact lowers the cost of the next one, and the lowering is the plot."
+    },
+    {
+      "id": "combinations-067-full-face-off-duty-stairwell",
+      "group": "Combinations",
+      "title": "Full Face Off Duty × Stairwell",
+      "direction": "Combine ‘Full Face Off Duty’ with ‘Stairwell’: the look is a performance she takes off at the door, and four flights of stairs make every meeting unhurried. Neither of them can pretend the contact is accidental after the third time, and both keep pretending anyway."
+    },
+    {
+      "id": "combinations-068-loungewear-gyaru-laundry-room-queue",
+      "group": "Combinations",
+      "title": "Loungewear Gyaru × Laundry Room Queue",
+      "direction": "Combine ‘Loungewear Gyaru’ with ‘Laundry Room Queue’: at home she is gyaru in an unglamorous register, and the shared machines impose a schedule. Each encounter is small, and the accumulation rather than any single scene is the story."
+    },
+    {
+      "id": "combinations-069-proud-of-the-craft-parcel-handovers",
+      "group": "Combinations",
+      "title": "Proud Of The Craft × Parcel Handovers",
+      "direction": "Combine ‘Proud Of The Craft’ with ‘Parcel Handovers’: she treats the look as craft and will teach it, and deliveries always need a second person. The friction is real, small and impossible to escalate cleanly, so it simply continues."
+    },
+    {
+      "id": "combinations-070-home-is-her-studio-bins-and-recycling",
+      "group": "Combinations",
+      "title": "Home Is Her Studio × Bins And Recycling",
+      "direction": "Combine ‘Home Is Her Studio’ with ‘Bins And Recycling’: getting ready happens at home, audibly, with the door open, and the collection schedule forces contact at bad hours. Every favour is also a small admission that she needs the help, and she hears it that way."
+    },
+    {
+      "id": "combinations-071-sickness-breaks-the-look-parking-space",
+      "group": "Combinations",
+      "title": "Sickness Breaks The Look × Parking Space",
+      "direction": "Combine ‘Sickness Breaks The Look’ with ‘Parking Space’: illness strips the presentation off completely, and there are more cars than spaces. She gets to be ordinary in front of someone who has already seen the other version, and that is rarer than she admits."
+    },
+    {
+      "id": "combinations-072-family-expectations-shared-entrance-at-odd-hours",
+      "group": "Combinations",
+      "title": "Family Expectations × Shared Entrance At Odd Hours",
+      "direction": "Combine ‘Family Expectations’ with ‘Shared Entrance At Odd Hours’: her family prefers a version of her that no longer exists, and opposite shifts meet at the door at midnight. It is ordinary, repeatable and therefore much harder to walk away from than a dramatic attachment would be."
+    },
+    {
+      "id": "combinations-073-neat-to-a-fault-local-shop-queue",
+      "group": "Combinations",
+      "title": "Neat To A Fault × Local Shop Queue",
+      "direction": "Combine ‘Neat To A Fault’ with ‘Local Shop Queue’: her flat is arranged to a standard she enforces, and the same late-night shop and the same clerk. She can hold one version of herself together in public and lose it entirely at home, and {{user}} sees both."
+    },
+    {
+      "id": "combinations-074-morning-after-the-look-fire-alarm-evacuation",
+      "group": "Combinations",
+      "title": "Morning After The Look × Fire Alarm Evacuation",
+      "direction": "Combine ‘Morning After The Look’ with ‘Fire Alarm Evacuation’: the morning after is a closed curtain and a different person, and the fire alarm empties the building regularly. She keeps the boundary and the boundary keeps moving, one small favour at a time."
+    },
+    {
+      "id": "combinations-075-full-face-off-duty-building-group-chat",
+      "group": "Combinations",
+      "title": "Full Face Off Duty × Building Group Chat",
+      "direction": "Combine ‘Full Face Off Duty’ with ‘Building Group Chat’: the look is a performance she takes off at the door, and forty neighbours share one group chat. The street becomes the relationship's only venue, which limits it and defines it at the same time."
+    },
+    {
+      "id": "combinations-076-loungewear-gyaru-lift-breakdown",
+      "group": "Combinations",
+      "title": "Loungewear Gyaru × Lift Breakdown",
+      "direction": "Combine ‘Loungewear Gyaru’ with ‘Lift Breakdown’: at home she is gyaru in an unglamorous register, and a broken lift makes the top floor social. The politeness has to be renegotiated every single time, and the renegotiation is where the honesty leaks out."
+    },
+    {
+      "id": "combinations-077-proud-of-the-craft-seasonal-maintenance",
+      "group": "Combinations",
+      "title": "Proud Of The Craft × Seasonal Maintenance",
+      "direction": "Combine ‘Proud Of The Craft’ with ‘Seasonal Maintenance’: she treats the look as craft and will teach it, and maintenance days put everyone in the courtyard. So {{user}} meets the private version before the public one, and the order matters more than either of them expected."
+    },
+    {
+      "id": "combinations-078-home-is-her-studio-passing-the-pet",
+      "group": "Combinations",
+      "title": "Home Is Her Studio × Passing The Pet",
+      "direction": "Combine ‘Home Is Her Studio’ with ‘Passing The Pet’: getting ready happens at home, audibly, with the door open, and an animal needs walking at convenient hours. The result is a standing arrangement that neither of them ever agreed to and neither is willing to end."
+    },
+    {
+      "id": "combinations-079-sickness-breaks-the-look-rooftop-access",
+      "group": "Combinations",
+      "title": "Sickness Breaks The Look × Rooftop Access",
+      "direction": "Combine ‘Sickness Breaks The Look’ with ‘Rooftop Access’: illness strips the presentation off completely, and the roof is off limits and universally used. It makes her public face feel like a costume she is tired of wearing by the end of the day."
+    },
+    {
+      "id": "combinations-080-family-expectations-shared-utility-meter",
+      "group": "Combinations",
+      "title": "Family Expectations × Shared Utility Meter",
+      "direction": "Combine ‘Family Expectations’ with ‘Shared Utility Meter’: her family prefers a version of her that no longer exists, and reading a meter means knocking and staying. The difference between her two selves becomes the thing {{user}} is actually curious about."
+    },
+    {
+      "id": "combinations-081-small-flat-big-routine-shared-balcony",
+      "group": "Combinations",
+      "title": "Small Flat, Big Routine × Shared Balcony",
+      "direction": "Combine ‘Small Flat, Big Routine’ with ‘Shared Balcony’: the routine does not fit the square footage, and the balconies are close enough for conversation. The contact lands exactly where she is least prepared for it, which is the whole engine of the series."
+    },
+    {
+      "id": "combinations-082-hides-the-effort-corridor-collisions",
+      "group": "Combinations",
+      "title": "Hides The Effort × Corridor Collisions",
+      "direction": "Combine ‘Hides The Effort’ with ‘Corridor Collisions’: she refuses to discuss what the upkeep costs her, and the corridor is short and the doors are loud. Neither of them can pretend the contact is accidental after the third time, and both keep pretending anyway."
+    },
+    {
+      "id": "combinations-083-uniform-she-sheds-stairwell",
+      "group": "Combinations",
+      "title": "Uniform She Sheds × Stairwell",
+      "direction": "Combine ‘Uniform She Sheds’ with ‘Stairwell’: her presentation belongs to her job rather than her evenings, and four flights of stairs make every meeting unhurried. The arrangement survives on being unspoken, which is also exactly its weakness."
+    },
+    {
+      "id": "combinations-084-two-wardrobes-laundry-room-queue",
+      "group": "Combinations",
+      "title": "Two Wardrobes × Laundry Room Queue",
+      "direction": "Combine ‘Two Wardrobes’ with ‘Laundry Room Queue’: she keeps two wardrobes and a hard line between them, and the shared machines impose a schedule. It makes the building feel smaller and her life feel considerably larger than the corridor suggests."
+    },
+    {
+      "id": "combinations-085-public-recognition-parcel-handovers",
+      "group": "Combinations",
+      "title": "Public Recognition × Parcel Handovers",
+      "direction": "Combine ‘Public Recognition’ with ‘Parcel Handovers’: strangers recognise her face and neighbours do not, and deliveries always need a second person. Every favour is also a small admission that she needs the help, and she hears it that way."
+    },
+    {
+      "id": "combinations-086-messy-glamour-bins-and-recycling",
+      "group": "Combinations",
+      "title": "Messy Glamour × Bins And Recycling",
+      "direction": "Combine ‘Messy Glamour’ with ‘Bins And Recycling’: the glamour is immaculate and the flat is not, and the collection schedule forces contact at bad hours. Proximity does the work that conversation would otherwise have to do, and it does it faster than either of them likes."
+    },
+    {
+      "id": "combinations-087-night-out-prep-through-the-wall-parking-space",
+      "group": "Combinations",
+      "title": "Night-Out Prep Through The Wall × Parking Space",
+      "direction": "Combine ‘Night-Out Prep Through The Wall’ with ‘Parking Space’: a night out is prepared for over several loud hours, and there are more cars than spaces. It gives {{user}} a role in her week that neither of them is willing to name out loud."
+    },
+    {
+      "id": "combinations-088-presentation-as-armour-shared-entrance-at-odd-hours",
+      "group": "Combinations",
+      "title": "Presentation As Armour × Shared Entrance At Odd Hours",
+      "direction": "Combine ‘Presentation As Armour’ with ‘Shared Entrance At Odd Hours’: the look goes on before anything difficult, and opposite shifts meet at the door at midnight. She can hold one version of herself together in public and lose it entirely at home, and {{user}} sees both."
+    },
+    {
+      "id": "combinations-089-small-flat-big-routine-local-shop-queue",
+      "group": "Combinations",
+      "title": "Small Flat, Big Routine × Local Shop Queue",
+      "direction": "Combine ‘Small Flat, Big Routine’ with ‘Local Shop Queue’: the routine does not fit the square footage, and the same late-night shop and the same clerk. Every repeated contact lowers the cost of the next one, and the lowering is the plot."
+    },
+    {
+      "id": "combinations-090-hides-the-effort-fire-alarm-evacuation",
+      "group": "Combinations",
+      "title": "Hides The Effort × Fire Alarm Evacuation",
+      "direction": "Combine ‘Hides The Effort’ with ‘Fire Alarm Evacuation’: she refuses to discuss what the upkeep costs her, and the fire alarm empties the building regularly. The street becomes the relationship's only venue, which limits it and defines it at the same time."
+    },
+    {
+      "id": "combinations-091-music-too-loud-shift-work-in-retail",
+      "group": "Combinations",
+      "title": "Music Too Loud × Shift Work In Retail",
+      "direction": "Combine ‘Music Too Loud’ with ‘Shift Work In Retail’: her playlists run past midnight through a thin wall, and her shifts are unpredictable. So {{user}} meets the private version before the public one, and the order matters more than either of them expected."
+    },
+    {
+      "id": "combinations-092-alarm-clock-war-night-college",
+      "group": "Combinations",
+      "title": "Alarm Clock War × Night College",
+      "direction": "Combine ‘Alarm Clock War’ with ‘Night College’: two alarms and one wall, and she studies by day and works by night. The comedy comes from how completely normal it all becomes, and the tenderness comes from the same place."
+    },
+    {
+      "id": "combinations-093-headphones-as-peace-treaty-family-obligations",
+      "group": "Combinations",
+      "title": "Headphones As Peace Treaty × Family Obligations",
+      "direction": "Combine ‘Headphones As Peace Treaty’ with ‘Family Obligations’: she switches to headphones and the quiet disappoints, and a sibling or parent needs her and it is not negotiable. Proximity does the work that conversation would otherwise have to do, and it does it faster than either of them likes."
+    },
+    {
+      "id": "combinations-094-heels-on-floorboards-side-hustle",
+      "group": "Combinations",
+      "title": "Heels On Floorboards × Side Hustle",
+      "direction": "Combine ‘Heels On Floorboards’ with ‘Side Hustle’: heels on floorboards announce every return, and the flat is half stockroom for something she sells. The difference between her two selves becomes the thing {{user}} is actually curious about."
+    },
+    {
+      "id": "combinations-095-silence-is-suspicious-apprenticeship",
+      "group": "Combinations",
+      "title": "Silence Is Suspicious × Apprenticeship",
+      "direction": "Combine ‘Silence Is Suspicious’ with ‘Apprenticeship’: silence next door is more noticeable than noise, and she is training in a trade the look does not suggest. What begins as logistics becomes the part of the day she plans around, and she would deny that under oath."
+    },
+    {
+      "id": "combinations-096-sound-of-studying-salon-work",
+      "group": "Combinations",
+      "title": "Sound Of Studying × Salon Work",
+      "direction": "Combine ‘Sound Of Studying’ with ‘Salon Work’: the late-night sound is coursework, not a party, and she does other people's hair as her actual work. Every repeated contact lowers the cost of the next one, and the lowering is the plot."
+    },
+    {
+      "id": "combinations-097-gaming-headset-voice-care-work",
+      "group": "Combinations",
+      "title": "Gaming Headset Voice × Care Work",
+      "direction": "Combine ‘Gaming Headset Voice’ with ‘Care Work’: late matches come with running commentary, and her job is exhausting and unglamorous. Neither of them can pretend the contact is accidental after the third time, and both keep pretending anyway."
+    },
+    {
+      "id": "combinations-098-noise-complaint-formally-filed-band-or-dance-troupe",
+      "group": "Combinations",
+      "title": "Noise Complaint Formally Filed × Band Or Dance Troupe",
+      "direction": "Combine ‘Noise Complaint Formally Filed’ with ‘Band Or Dance Troupe’: a formal complaint makes them adversaries, and rehearsal eats her evenings. Each encounter is small, and the accumulation rather than any single scene is the story."
+    },
+    {
+      "id": "combinations-099-music-too-loud-language-study",
+      "group": "Combinations",
+      "title": "Music Too Loud × Language Study",
+      "direction": "Combine ‘Music Too Loud’ with ‘Language Study’: her playlists run past midnight through a thin wall, and an exam would change her whole plan. It makes the building feel smaller and her life feel considerably larger than the corridor suggests."
+    },
+    {
+      "id": "combinations-100-alarm-clock-war-money-is-tight",
+      "group": "Combinations",
+      "title": "Alarm Clock War × Money Is Tight",
+      "direction": "Combine ‘Alarm Clock War’ with ‘Money Is Tight’: two alarms and one wall, and money is tight and she does not say so. Every favour is also a small admission that she needs the help, and she hears it that way."
+    },
+    {
+      "id": "combinations-101-headphones-as-peace-treaty-a-friend-group-that-predates-user",
+      "group": "Combinations",
+      "title": "Headphones As Peace Treaty × A Friend Group That Predates {{user}}",
+      "direction": "Combine ‘Headphones As Peace Treaty’ with ‘A Friend Group That Predates {{user}}’: she switches to headphones and the quiet disappoints, and her friend group predates {{user}} entirely. She gets to be ordinary in front of someone who has already seen the other version, and that is rarer than she admits."
+    },
+    {
+      "id": "combinations-102-heels-on-floorboards-an-ex-still-in-the-orbit",
+      "group": "Combinations",
+      "title": "Heels On Floorboards × An Ex Still In The Orbit",
+      "direction": "Combine ‘Heels On Floorboards’ with ‘An Ex Still In The Orbit’: heels on floorboards announce every return, and an ex is still in the orbit. It gives {{user}} a role in her week that neither of them is willing to name out loud."
+    },
+    {
+      "id": "combinations-103-silence-is-suspicious-caring-for-a-pet",
+      "group": "Combinations",
+      "title": "Silence Is Suspicious × Caring For A Pet",
+      "direction": "Combine ‘Silence Is Suspicious’ with ‘Caring For A Pet’: silence next door is more noticeable than noise, and an animal structures her day. She can hold one version of herself together in public and lose it entirely at home, and {{user}} sees both."
+    },
+    {
+      "id": "combinations-104-sound-of-studying-saving-to-leave",
+      "group": "Combinations",
+      "title": "Sound Of Studying × Saving To Leave",
+      "direction": "Combine ‘Sound Of Studying’ with ‘Saving To Leave’: the late-night sound is coursework, not a party, and she is saving to leave. She keeps the boundary and the boundary keeps moving, one small favour at a time."
+    },
+    {
+      "id": "combinations-105-gaming-headset-voice-local-reputation",
+      "group": "Combinations",
+      "title": "Gaming Headset Voice × Local Reputation",
+      "direction": "Combine ‘Gaming Headset Voice’ with ‘Local Reputation’: late matches come with running commentary, and the street has opinions about her that are wrong. The street becomes the relationship's only venue, which limits it and defines it at the same time."
+    },
+    {
+      "id": "combinations-106-noise-complaint-formally-filed-a-craft-she-takes-seriously",
+      "group": "Combinations",
+      "title": "Noise Complaint Formally Filed × A Craft She Takes Seriously",
+      "direction": "Combine ‘Noise Complaint Formally Filed’ with ‘A Craft She Takes Seriously’: a formal complaint makes them adversaries, and something precise and unglamorous absorbs her. The politeness has to be renegotiated every single time, and the renegotiation is where the honesty leaks out."
+    },
+    {
+      "id": "combinations-107-thin-walls-both-ways-shift-work-in-retail",
+      "group": "Combinations",
+      "title": "Thin Walls Both Ways × Shift Work In Retail",
+      "direction": "Combine ‘Thin Walls Both Ways’ with ‘Shift Work In Retail’: both of them know too much about the other's habits, and her shifts are unpredictable. The result is a standing arrangement that neither of them ever agreed to and neither is willing to end."
+    },
+    {
+      "id": "combinations-108-renovation-noise-night-college",
+      "group": "Combinations",
+      "title": "Renovation Noise × Night College",
+      "direction": "Combine ‘Renovation Noise’ with ‘Night College’: someone is drilling at nine on a Saturday, and she studies by day and works by night. It makes her public face feel like a costume she is tired of wearing by the end of the day."
+    },
+    {
+      "id": "combinations-109-a-party-not-invited-to-family-obligations",
+      "group": "Combinations",
+      "title": "A Party Not Invited To × Family Obligations",
+      "direction": "Combine ‘A Party Not Invited To’ with ‘Family Obligations’: there is a party {{user}} can hear and was not invited to, and a sibling or parent needs her and it is not negotiable. The difference between her two selves becomes the thing {{user}} is actually curious about."
+    },
+    {
+      "id": "combinations-110-karaoke-neighbours-side-hustle",
+      "group": "Combinations",
+      "title": "Karaoke Neighbours × Side Hustle",
+      "direction": "Combine ‘Karaoke Neighbours’ with ‘Side Hustle’: her friends sing badly and often, and the flat is half stockroom for something she sells. It turns a private routine into a shared schedule without anyone making a decision."
+    },
+    {
+      "id": "combinations-111-compromise-playlist-apprenticeship",
+      "group": "Combinations",
+      "title": "Compromise Playlist × Apprenticeship",
+      "direction": "Combine ‘Compromise Playlist’ with ‘Apprenticeship’: a negotiated volume turns into shared listening, and she is training in a trade the look does not suggest. The contact lands exactly where she is least prepared for it, which is the whole engine of the series."
+    },
+    {
+      "id": "combinations-112-morning-argument-through-the-wall-salon-work",
+      "group": "Combinations",
+      "title": "Morning Argument Through The Wall × Salon Work",
+      "direction": "Combine ‘Morning Argument Through The Wall’ with ‘Salon Work’: an argument with someone else carries through the wall, and she does other people's hair as her actual work. Neither of them can pretend the contact is accidental after the third time, and both keep pretending anyway."
+    },
+    {
+      "id": "combinations-113-balcony-phone-calls-care-work",
+      "group": "Combinations",
+      "title": "Balcony Phone Calls × Care Work",
+      "direction": "Combine ‘Balcony Phone Calls’ with ‘Care Work’: her family calls are loud enough to follow, and her job is exhausting and unglamorous. The arrangement survives on being unspoken, which is also exactly its weakness."
+    },
+    {
+      "id": "combinations-114-apology-is-a-plate-of-food-band-or-dance-troupe",
+      "group": "Combinations",
+      "title": "Apology Is A Plate Of Food × Band Or Dance Troupe",
+      "direction": "Combine ‘Apology Is A Plate Of Food’ with ‘Band Or Dance Troupe’: she apologises with food rather than words, and rehearsal eats her evenings. It makes the building feel smaller and her life feel considerably larger than the corridor suggests."
+    },
+    {
+      "id": "combinations-115-thin-walls-both-ways-language-study",
+      "group": "Combinations",
+      "title": "Thin Walls Both Ways × Language Study",
+      "direction": "Combine ‘Thin Walls Both Ways’ with ‘Language Study’: both of them know too much about the other's habits, and an exam would change her whole plan. The comedy comes from how completely normal it all becomes, and the tenderness comes from the same place."
+    },
+    {
+      "id": "combinations-116-renovation-noise-money-is-tight",
+      "group": "Combinations",
+      "title": "Renovation Noise × Money Is Tight",
+      "direction": "Combine ‘Renovation Noise’ with ‘Money Is Tight’: someone is drilling at nine on a Saturday, and money is tight and she does not say so. Proximity does the work that conversation would otherwise have to do, and it does it faster than either of them likes."
+    },
+    {
+      "id": "combinations-117-a-party-not-invited-to-a-friend-group-that-predates-user",
+      "group": "Combinations",
+      "title": "A Party Not Invited To × A Friend Group That Predates {{user}}",
+      "direction": "Combine ‘A Party Not Invited To’ with ‘A Friend Group That Predates {{user}}’: there is a party {{user}} can hear and was not invited to, and her friend group predates {{user}} entirely. It gives {{user}} a role in her week that neither of them is willing to name out loud."
+    },
+    {
+      "id": "combinations-118-karaoke-neighbours-an-ex-still-in-the-orbit",
+      "group": "Combinations",
+      "title": "Karaoke Neighbours × An Ex Still In The Orbit",
+      "direction": "Combine ‘Karaoke Neighbours’ with ‘An Ex Still In The Orbit’: her friends sing badly and often, and an ex is still in the orbit. What begins as logistics becomes the part of the day she plans around, and she would deny that under oath."
+    },
+    {
+      "id": "combinations-119-compromise-playlist-caring-for-a-pet",
+      "group": "Combinations",
+      "title": "Compromise Playlist × Caring For A Pet",
+      "direction": "Combine ‘Compromise Playlist’ with ‘Caring For A Pet’: a negotiated volume turns into shared listening, and an animal structures her day. Every repeated contact lowers the cost of the next one, and the lowering is the plot."
+    },
+    {
+      "id": "combinations-120-morning-argument-through-the-wall-saving-to-leave",
+      "group": "Combinations",
+      "title": "Morning Argument Through The Wall × Saving To Leave",
+      "direction": "Combine ‘Morning Argument Through The Wall’ with ‘Saving To Leave’: an argument with someone else carries through the wall, and she is saving to leave. The street becomes the relationship's only venue, which limits it and defines it at the same time."
+    },
+    {
+      "id": "combinations-121-balcony-phone-calls-local-reputation",
+      "group": "Combinations",
+      "title": "Balcony Phone Calls × Local Reputation",
+      "direction": "Combine ‘Balcony Phone Calls’ with ‘Local Reputation’: her family calls are loud enough to follow, and the street has opinions about her that are wrong. Each encounter is small, and the accumulation rather than any single scene is the story."
+    },
+    {
+      "id": "combinations-122-apology-is-a-plate-of-food-a-craft-she-takes-seriously",
+      "group": "Combinations",
+      "title": "Apology Is A Plate Of Food × A Craft She Takes Seriously",
+      "direction": "Combine ‘Apology Is A Plate Of Food’ with ‘A Craft She Takes Seriously’: she apologises with food rather than words, and something precise and unglamorous absorbs her. The friction is real, small and impossible to escalate cleanly, so it simply continues."
+    },
+    {
+      "id": "combinations-123-heels-on-floorboards-shift-work-in-retail",
+      "group": "Combinations",
+      "title": "Heels On Floorboards × Shift Work In Retail",
+      "direction": "Combine ‘Heels On Floorboards’ with ‘Shift Work In Retail’: heels on floorboards announce every return, and her shifts are unpredictable. She gets to be ordinary in front of someone who has already seen the other version, and that is rarer than she admits."
+    },
+    {
+      "id": "combinations-124-silence-is-suspicious-night-college",
+      "group": "Combinations",
+      "title": "Silence Is Suspicious × Night College",
+      "direction": "Combine ‘Silence Is Suspicious’ with ‘Night College’: silence next door is more noticeable than noise, and she studies by day and works by night. It is ordinary, repeatable and therefore much harder to walk away from than a dramatic attachment would be."
+    },
+    {
+      "id": "combinations-125-sound-of-studying-family-obligations",
+      "group": "Combinations",
+      "title": "Sound Of Studying × Family Obligations",
+      "direction": "Combine ‘Sound Of Studying’ with ‘Family Obligations’: the late-night sound is coursework, not a party, and a sibling or parent needs her and it is not negotiable. It turns a private routine into a shared schedule without anyone making a decision."
+    },
+    {
+      "id": "combinations-126-gaming-headset-voice-side-hustle",
+      "group": "Combinations",
+      "title": "Gaming Headset Voice × Side Hustle",
+      "direction": "Combine ‘Gaming Headset Voice’ with ‘Side Hustle’: late matches come with running commentary, and the flat is half stockroom for something she sells. She keeps the boundary and the boundary keeps moving, one small favour at a time."
+    },
+    {
+      "id": "combinations-127-noise-complaint-formally-filed-apprenticeship",
+      "group": "Combinations",
+      "title": "Noise Complaint Formally Filed × Apprenticeship",
+      "direction": "Combine ‘Noise Complaint Formally Filed’ with ‘Apprenticeship’: a formal complaint makes them adversaries, and she is training in a trade the look does not suggest. What {{user}} learns is never quite the thing she meant to show, and the gap becomes the interesting part."
+    },
+    {
+      "id": "combinations-128-music-too-loud-salon-work",
+      "group": "Combinations",
+      "title": "Music Too Loud × Salon Work",
+      "direction": "Combine ‘Music Too Loud’ with ‘Salon Work’: her playlists run past midnight through a thin wall, and she does other people's hair as her actual work. The politeness has to be renegotiated every single time, and the renegotiation is where the honesty leaks out."
+    },
+    {
+      "id": "combinations-129-alarm-clock-war-care-work",
+      "group": "Combinations",
+      "title": "Alarm Clock War × Care Work",
+      "direction": "Combine ‘Alarm Clock War’ with ‘Care Work’: two alarms and one wall, and her job is exhausting and unglamorous. So {{user}} meets the private version before the public one, and the order matters more than either of them expected."
+    },
+    {
+      "id": "combinations-130-headphones-as-peace-treaty-band-or-dance-troupe",
+      "group": "Combinations",
+      "title": "Headphones As Peace Treaty × Band Or Dance Troupe",
+      "direction": "Combine ‘Headphones As Peace Treaty’ with ‘Band Or Dance Troupe’: she switches to headphones and the quiet disappoints, and rehearsal eats her evenings. The comedy comes from how completely normal it all becomes, and the tenderness comes from the same place."
+    },
+    {
+      "id": "combinations-131-heels-on-floorboards-language-study",
+      "group": "Combinations",
+      "title": "Heels On Floorboards × Language Study",
+      "direction": "Combine ‘Heels On Floorboards’ with ‘Language Study’: heels on floorboards announce every return, and an exam would change her whole plan. It makes her public face feel like a costume she is tired of wearing by the end of the day."
+    },
+    {
+      "id": "combinations-132-silence-is-suspicious-money-is-tight",
+      "group": "Combinations",
+      "title": "Silence Is Suspicious × Money Is Tight",
+      "direction": "Combine ‘Silence Is Suspicious’ with ‘Money Is Tight’: silence next door is more noticeable than noise, and money is tight and she does not say so. The difference between her two selves becomes the thing {{user}} is actually curious about."
+    },
+    {
+      "id": "combinations-133-sound-of-studying-a-friend-group-that-predates-user",
+      "group": "Combinations",
+      "title": "Sound Of Studying × A Friend Group That Predates {{user}}",
+      "direction": "Combine ‘Sound Of Studying’ with ‘A Friend Group That Predates {{user}}’: the late-night sound is coursework, not a party, and her friend group predates {{user}} entirely. What begins as logistics becomes the part of the day she plans around, and she would deny that under oath."
+    },
+    {
+      "id": "combinations-134-gaming-headset-voice-an-ex-still-in-the-orbit",
+      "group": "Combinations",
+      "title": "Gaming Headset Voice × An Ex Still In The Orbit",
+      "direction": "Combine ‘Gaming Headset Voice’ with ‘An Ex Still In The Orbit’: late matches come with running commentary, and an ex is still in the orbit. The contact lands exactly where she is least prepared for it, which is the whole engine of the series."
+    },
+    {
+      "id": "combinations-135-noise-complaint-formally-filed-caring-for-a-pet",
+      "group": "Combinations",
+      "title": "Noise Complaint Formally Filed × Caring For A Pet",
+      "direction": "Combine ‘Noise Complaint Formally Filed’ with ‘Caring For A Pet’: a formal complaint makes them adversaries, and an animal structures her day. Neither of them can pretend the contact is accidental after the third time, and both keep pretending anyway."
+    },
+    {
+      "id": "combinations-136-music-too-loud-saving-to-leave",
+      "group": "Combinations",
+      "title": "Music Too Loud × Saving To Leave",
+      "direction": "Combine ‘Music Too Loud’ with ‘Saving To Leave’: her playlists run past midnight through a thin wall, and she is saving to leave. The arrangement survives on being unspoken, which is also exactly its weakness."
+    },
+    {
+      "id": "combinations-137-alarm-clock-war-local-reputation",
+      "group": "Combinations",
+      "title": "Alarm Clock War × Local Reputation",
+      "direction": "Combine ‘Alarm Clock War’ with ‘Local Reputation’: two alarms and one wall, and the street has opinions about her that are wrong. It makes the building feel smaller and her life feel considerably larger than the corridor suggests."
+    },
+    {
+      "id": "combinations-138-headphones-as-peace-treaty-a-craft-she-takes-seriously",
+      "group": "Combinations",
+      "title": "Headphones As Peace Treaty × A Craft She Takes Seriously",
+      "direction": "Combine ‘Headphones As Peace Treaty’ with ‘A Craft She Takes Seriously’: she switches to headphones and the quiet disappoints, and something precise and unglamorous absorbs her. Every favour is also a small admission that she needs the help, and she hears it that way."
+    },
+    {
+      "id": "combinations-139-karaoke-neighbours-shift-work-in-retail",
+      "group": "Combinations",
+      "title": "Karaoke Neighbours × Shift Work In Retail",
+      "direction": "Combine ‘Karaoke Neighbours’ with ‘Shift Work In Retail’: her friends sing badly and often, and her shifts are unpredictable. It gives {{user}} a role in her week that neither of them is willing to name out loud."
+    },
+    {
+      "id": "combinations-140-compromise-playlist-night-college",
+      "group": "Combinations",
+      "title": "Compromise Playlist × Night College",
+      "direction": "Combine ‘Compromise Playlist’ with ‘Night College’: a negotiated volume turns into shared listening, and she studies by day and works by night. She can hold one version of herself together in public and lose it entirely at home, and {{user}} sees both."
+    },
+    {
+      "id": "combinations-141-morning-argument-through-the-wall-family-obligations",
+      "group": "Combinations",
+      "title": "Morning Argument Through The Wall × Family Obligations",
+      "direction": "Combine ‘Morning Argument Through The Wall’ with ‘Family Obligations’: an argument with someone else carries through the wall, and a sibling or parent needs her and it is not negotiable. She keeps the boundary and the boundary keeps moving, one small favour at a time."
+    },
+    {
+      "id": "combinations-142-balcony-phone-calls-side-hustle",
+      "group": "Combinations",
+      "title": "Balcony Phone Calls × Side Hustle",
+      "direction": "Combine ‘Balcony Phone Calls’ with ‘Side Hustle’: her family calls are loud enough to follow, and the flat is half stockroom for something she sells. The street becomes the relationship's only venue, which limits it and defines it at the same time."
+    },
+    {
+      "id": "combinations-143-apology-is-a-plate-of-food-apprenticeship",
+      "group": "Combinations",
+      "title": "Apology Is A Plate Of Food × Apprenticeship",
+      "direction": "Combine ‘Apology Is A Plate Of Food’ with ‘Apprenticeship’: she apologises with food rather than words, and she is training in a trade the look does not suggest. The politeness has to be renegotiated every single time, and the renegotiation is where the honesty leaks out."
+    },
+    {
+      "id": "combinations-144-thin-walls-both-ways-salon-work",
+      "group": "Combinations",
+      "title": "Thin Walls Both Ways × Salon Work",
+      "direction": "Combine ‘Thin Walls Both Ways’ with ‘Salon Work’: both of them know too much about the other's habits, and she does other people's hair as her actual work. The friction is real, small and impossible to escalate cleanly, so it simply continues."
+    },
+    {
+      "id": "combinations-145-renovation-noise-care-work",
+      "group": "Combinations",
+      "title": "Renovation Noise × Care Work",
+      "direction": "Combine ‘Renovation Noise’ with ‘Care Work’: someone is drilling at nine on a Saturday, and her job is exhausting and unglamorous. The result is a standing arrangement that neither of them ever agreed to and neither is willing to end."
+    },
+    {
+      "id": "combinations-146-a-party-not-invited-to-band-or-dance-troupe",
+      "group": "Combinations",
+      "title": "A Party Not Invited To × Band Or Dance Troupe",
+      "direction": "Combine ‘A Party Not Invited To’ with ‘Band Or Dance Troupe’: there is a party {{user}} can hear and was not invited to, and rehearsal eats her evenings. It makes her public face feel like a costume she is tired of wearing by the end of the day."
+    },
+    {
+      "id": "combinations-147-karaoke-neighbours-language-study",
+      "group": "Combinations",
+      "title": "Karaoke Neighbours × Language Study",
+      "direction": "Combine ‘Karaoke Neighbours’ with ‘Language Study’: her friends sing badly and often, and an exam would change her whole plan. It is ordinary, repeatable and therefore much harder to walk away from than a dramatic attachment would be."
+    },
+    {
+      "id": "combinations-148-compromise-playlist-money-is-tight",
+      "group": "Combinations",
+      "title": "Compromise Playlist × Money Is Tight",
+      "direction": "Combine ‘Compromise Playlist’ with ‘Money Is Tight’: a negotiated volume turns into shared listening, and money is tight and she does not say so. It turns a private routine into a shared schedule without anyone making a decision."
+    },
+    {
+      "id": "combinations-149-morning-argument-through-the-wall-a-friend-group-that-predates-user",
+      "group": "Combinations",
+      "title": "Morning Argument Through The Wall × A Friend Group That Predates {{user}}",
+      "direction": "Combine ‘Morning Argument Through The Wall’ with ‘A Friend Group That Predates {{user}}’: an argument with someone else carries through the wall, and her friend group predates {{user}} entirely. The contact lands exactly where she is least prepared for it, which is the whole engine of the series."
+    },
+    {
+      "id": "combinations-150-balcony-phone-calls-an-ex-still-in-the-orbit",
+      "group": "Combinations",
+      "title": "Balcony Phone Calls × An Ex Still In The Orbit",
+      "direction": "Combine ‘Balcony Phone Calls’ with ‘An Ex Still In The Orbit’: her family calls are loud enough to follow, and an ex is still in the orbit. What {{user}} learns is never quite the thing she meant to show, and the gap becomes the interesting part."
+    },
+    {
+      "id": "combinations-151-apology-is-a-plate-of-food-caring-for-a-pet",
+      "group": "Combinations",
+      "title": "Apology Is A Plate Of Food × Caring For A Pet",
+      "direction": "Combine ‘Apology Is A Plate Of Food’ with ‘Caring For A Pet’: she apologises with food rather than words, and an animal structures her day. The arrangement survives on being unspoken, which is also exactly its weakness."
+    },
+    {
+      "id": "combinations-152-thin-walls-both-ways-saving-to-leave",
+      "group": "Combinations",
+      "title": "Thin Walls Both Ways × Saving To Leave",
+      "direction": "Combine ‘Thin Walls Both Ways’ with ‘Saving To Leave’: both of them know too much about the other's habits, and she is saving to leave. So {{user}} meets the private version before the public one, and the order matters more than either of them expected."
+    },
+    {
+      "id": "combinations-153-renovation-noise-local-reputation",
+      "group": "Combinations",
+      "title": "Renovation Noise × Local Reputation",
+      "direction": "Combine ‘Renovation Noise’ with ‘Local Reputation’: someone is drilling at nine on a Saturday, and the street has opinions about her that are wrong. The comedy comes from how completely normal it all becomes, and the tenderness comes from the same place."
+    },
+    {
+      "id": "combinations-154-a-party-not-invited-to-a-craft-she-takes-seriously",
+      "group": "Combinations",
+      "title": "A Party Not Invited To × A Craft She Takes Seriously",
+      "direction": "Combine ‘A Party Not Invited To’ with ‘A Craft She Takes Seriously’: there is a party {{user}} can hear and was not invited to, and something precise and unglamorous absorbs her. Proximity does the work that conversation would otherwise have to do, and it does it faster than either of them likes."
+    },
+    {
+      "id": "combinations-155-gaming-headset-voice-shift-work-in-retail",
+      "group": "Combinations",
+      "title": "Gaming Headset Voice × Shift Work In Retail",
+      "direction": "Combine ‘Gaming Headset Voice’ with ‘Shift Work In Retail’: late matches come with running commentary, and her shifts are unpredictable. What begins as logistics becomes the part of the day she plans around, and she would deny that under oath."
+    },
+    {
+      "id": "combinations-156-noise-complaint-formally-filed-night-college",
+      "group": "Combinations",
+      "title": "Noise Complaint Formally Filed × Night College",
+      "direction": "Combine ‘Noise Complaint Formally Filed’ with ‘Night College’: a formal complaint makes them adversaries, and she studies by day and works by night. Every repeated contact lowers the cost of the next one, and the lowering is the plot."
+    },
+    {
+      "id": "combinations-157-music-too-loud-family-obligations",
+      "group": "Combinations",
+      "title": "Music Too Loud × Family Obligations",
+      "direction": "Combine ‘Music Too Loud’ with ‘Family Obligations’: her playlists run past midnight through a thin wall, and a sibling or parent needs her and it is not negotiable. Neither of them can pretend the contact is accidental after the third time, and both keep pretending anyway."
+    },
+    {
+      "id": "combinations-158-alarm-clock-war-side-hustle",
+      "group": "Combinations",
+      "title": "Alarm Clock War × Side Hustle",
+      "direction": "Combine ‘Alarm Clock War’ with ‘Side Hustle’: two alarms and one wall, and the flat is half stockroom for something she sells. Each encounter is small, and the accumulation rather than any single scene is the story."
+    },
+    {
+      "id": "combinations-159-headphones-as-peace-treaty-apprenticeship",
+      "group": "Combinations",
+      "title": "Headphones As Peace Treaty × Apprenticeship",
+      "direction": "Combine ‘Headphones As Peace Treaty’ with ‘Apprenticeship’: she switches to headphones and the quiet disappoints, and she is training in a trade the look does not suggest. The friction is real, small and impossible to escalate cleanly, so it simply continues."
+    },
+    {
+      "id": "combinations-160-heels-on-floorboards-salon-work",
+      "group": "Combinations",
+      "title": "Heels On Floorboards × Salon Work",
+      "direction": "Combine ‘Heels On Floorboards’ with ‘Salon Work’: heels on floorboards announce every return, and she does other people's hair as her actual work. Every favour is also a small admission that she needs the help, and she hears it that way."
+    },
+    {
+      "id": "combinations-161-silence-is-suspicious-care-work",
+      "group": "Combinations",
+      "title": "Silence Is Suspicious × Care Work",
+      "direction": "Combine ‘Silence Is Suspicious’ with ‘Care Work’: silence next door is more noticeable than noise, and her job is exhausting and unglamorous. She gets to be ordinary in front of someone who has already seen the other version, and that is rarer than she admits."
+    },
+    {
+      "id": "combinations-162-sound-of-studying-band-or-dance-troupe",
+      "group": "Combinations",
+      "title": "Sound Of Studying × Band Or Dance Troupe",
+      "direction": "Combine ‘Sound Of Studying’ with ‘Band Or Dance Troupe’: the late-night sound is coursework, not a party, and rehearsal eats her evenings. It is ordinary, repeatable and therefore much harder to walk away from than a dramatic attachment would be."
+    },
+    {
+      "id": "combinations-163-gaming-headset-voice-language-study",
+      "group": "Combinations",
+      "title": "Gaming Headset Voice × Language Study",
+      "direction": "Combine ‘Gaming Headset Voice’ with ‘Language Study’: late matches come with running commentary, and an exam would change her whole plan. She can hold one version of herself together in public and lose it entirely at home, and {{user}} sees both."
+    },
+    {
+      "id": "combinations-164-noise-complaint-formally-filed-money-is-tight",
+      "group": "Combinations",
+      "title": "Noise Complaint Formally Filed × Money Is Tight",
+      "direction": "Combine ‘Noise Complaint Formally Filed’ with ‘Money Is Tight’: a formal complaint makes them adversaries, and money is tight and she does not say so. She keeps the boundary and the boundary keeps moving, one small favour at a time."
+    },
+    {
+      "id": "combinations-165-music-too-loud-a-friend-group-that-predates-user",
+      "group": "Combinations",
+      "title": "Music Too Loud × A Friend Group That Predates {{user}}",
+      "direction": "Combine ‘Music Too Loud’ with ‘A Friend Group That Predates {{user}}’: her playlists run past midnight through a thin wall, and her friend group predates {{user}} entirely. The street becomes the relationship's only venue, which limits it and defines it at the same time."
+    },
+    {
+      "id": "combinations-166-alarm-clock-war-an-ex-still-in-the-orbit",
+      "group": "Combinations",
+      "title": "Alarm Clock War × An Ex Still In The Orbit",
+      "direction": "Combine ‘Alarm Clock War’ with ‘An Ex Still In The Orbit’: two alarms and one wall, and an ex is still in the orbit. The politeness has to be renegotiated every single time, and the renegotiation is where the honesty leaks out."
+    },
+    {
+      "id": "combinations-167-headphones-as-peace-treaty-caring-for-a-pet",
+      "group": "Combinations",
+      "title": "Headphones As Peace Treaty × Caring For A Pet",
+      "direction": "Combine ‘Headphones As Peace Treaty’ with ‘Caring For A Pet’: she switches to headphones and the quiet disappoints, and an animal structures her day. So {{user}} meets the private version before the public one, and the order matters more than either of them expected."
+    },
+    {
+      "id": "combinations-168-heels-on-floorboards-saving-to-leave",
+      "group": "Combinations",
+      "title": "Heels On Floorboards × Saving To Leave",
+      "direction": "Combine ‘Heels On Floorboards’ with ‘Saving To Leave’: heels on floorboards announce every return, and she is saving to leave. The result is a standing arrangement that neither of them ever agreed to and neither is willing to end."
+    },
+    {
+      "id": "combinations-169-silence-is-suspicious-local-reputation",
+      "group": "Combinations",
+      "title": "Silence Is Suspicious × Local Reputation",
+      "direction": "Combine ‘Silence Is Suspicious’ with ‘Local Reputation’: silence next door is more noticeable than noise, and the street has opinions about her that are wrong. It makes her public face feel like a costume she is tired of wearing by the end of the day."
+    },
+    {
+      "id": "combinations-170-sound-of-studying-a-craft-she-takes-seriously",
+      "group": "Combinations",
+      "title": "Sound Of Studying × A Craft She Takes Seriously",
+      "direction": "Combine ‘Sound Of Studying’ with ‘A Craft She Takes Seriously’: the late-night sound is coursework, not a party, and something precise and unglamorous absorbs her. The difference between her two selves becomes the thing {{user}} is actually curious about."
+    },
+    {
+      "id": "combinations-171-balcony-phone-calls-shift-work-in-retail",
+      "group": "Combinations",
+      "title": "Balcony Phone Calls × Shift Work In Retail",
+      "direction": "Combine ‘Balcony Phone Calls’ with ‘Shift Work In Retail’: her family calls are loud enough to follow, and her shifts are unpredictable. The contact lands exactly where she is least prepared for it, which is the whole engine of the series."
+    },
+    {
+      "id": "combinations-172-apology-is-a-plate-of-food-night-college",
+      "group": "Combinations",
+      "title": "Apology Is A Plate Of Food × Night College",
+      "direction": "Combine ‘Apology Is A Plate Of Food’ with ‘Night College’: she apologises with food rather than words, and she studies by day and works by night. Neither of them can pretend the contact is accidental after the third time, and both keep pretending anyway."
+    },
+    {
+      "id": "combinations-173-thin-walls-both-ways-family-obligations",
+      "group": "Combinations",
+      "title": "Thin Walls Both Ways × Family Obligations",
+      "direction": "Combine ‘Thin Walls Both Ways’ with ‘Family Obligations’: both of them know too much about the other's habits, and a sibling or parent needs her and it is not negotiable. The arrangement survives on being unspoken, which is also exactly its weakness."
+    },
+    {
+      "id": "combinations-174-renovation-noise-side-hustle",
+      "group": "Combinations",
+      "title": "Renovation Noise × Side Hustle",
+      "direction": "Combine ‘Renovation Noise’ with ‘Side Hustle’: someone is drilling at nine on a Saturday, and the flat is half stockroom for something she sells. It makes the building feel smaller and her life feel considerably larger than the corridor suggests."
+    },
+    {
+      "id": "combinations-175-a-party-not-invited-to-apprenticeship",
+      "group": "Combinations",
+      "title": "A Party Not Invited To × Apprenticeship",
+      "direction": "Combine ‘A Party Not Invited To’ with ‘Apprenticeship’: there is a party {{user}} can hear and was not invited to, and she is training in a trade the look does not suggest. Every favour is also a small admission that she needs the help, and she hears it that way."
+    },
+    {
+      "id": "combinations-176-karaoke-neighbours-salon-work",
+      "group": "Combinations",
+      "title": "Karaoke Neighbours × Salon Work",
+      "direction": "Combine ‘Karaoke Neighbours’ with ‘Salon Work’: her friends sing badly and often, and she does other people's hair as her actual work. Proximity does the work that conversation would otherwise have to do, and it does it faster than either of them likes."
+    },
+    {
+      "id": "combinations-177-compromise-playlist-care-work",
+      "group": "Combinations",
+      "title": "Compromise Playlist × Care Work",
+      "direction": "Combine ‘Compromise Playlist’ with ‘Care Work’: a negotiated volume turns into shared listening, and her job is exhausting and unglamorous. It gives {{user}} a role in her week that neither of them is willing to name out loud."
+    },
+    {
+      "id": "combinations-178-morning-argument-through-the-wall-band-or-dance-troupe",
+      "group": "Combinations",
+      "title": "Morning Argument Through The Wall × Band Or Dance Troupe",
+      "direction": "Combine ‘Morning Argument Through The Wall’ with ‘Band Or Dance Troupe’: an argument with someone else carries through the wall, and rehearsal eats her evenings. She can hold one version of herself together in public and lose it entirely at home, and {{user}} sees both."
+    },
+    {
+      "id": "combinations-179-balcony-phone-calls-language-study",
+      "group": "Combinations",
+      "title": "Balcony Phone Calls × Language Study",
+      "direction": "Combine ‘Balcony Phone Calls’ with ‘Language Study’: her family calls are loud enough to follow, and an exam would change her whole plan. Every repeated contact lowers the cost of the next one, and the lowering is the plot."
+    },
+    {
+      "id": "combinations-180-apology-is-a-plate-of-food-money-is-tight",
+      "group": "Combinations",
+      "title": "Apology Is A Plate Of Food × Money Is Tight",
+      "direction": "Combine ‘Apology Is A Plate Of Food’ with ‘Money Is Tight’: she apologises with food rather than words, and money is tight and she does not say so. The street becomes the relationship's only venue, which limits it and defines it at the same time."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "Proximity engine",
+      "content": "Adult {{char}} lives one wall away from adult {{user}} and is visibly gyaru. The series runs on repeated ordinary contact rather than a single premise event, so every scene is a small increment in a relationship that already has a physical address."
+    },
+    {
+      "id": "public-private-gap",
+      "label": "The public/private gap",
+      "content": "The street sees a presentation; the corridor sees the routine behind it. This gap is the series' central tension and it does not resolve, it only becomes familiar. {{char}} decides how much of the private version anyone earns."
+    },
+    {
+      "id": "character-construction",
+      "label": "Building {{char}}",
+      "content": "Give her a job, a schedule, a money situation and at least one person who needs her. Her gyaru identity should shape her calendar, her budget and her reputation before it shapes her flirting, which it should not do by default."
+    },
+    {
+      "id": "building-as-cast",
+      "label": "The building as a cast member",
+      "content": "The corridor, the balcony, the laundry room and the group chat create contact that neither party has to initiate. Choose the building's architecture early because it determines which conversations are possible and which are merely audible."
+    },
+    {
+      "id": "favour-economy",
+      "label": "The favour economy",
+      "content": "Small trades — parcels, plants, tools, cat duty, a lift to the station — are the series' real plot engine. Each favour should create a return obligation, and the ledger should never quite balance."
+    },
+    {
+      "id": "noise-and-privacy",
+      "label": "Noise and privacy",
+      "content": "Sound carries and so do assumptions. A complaint can be an opening or an ending, and a closed door must be allowed to mean no. Keep the acoustics specific: heels, playlists, karaoke, a phone call to her mother."
+    },
+    {
+      "id": "relationship-arc",
+      "label": "Relationship arc",
+      "content": "The default arc is accretion, not escalation: weekly dinners, a key that stays on the hook, a standing walk home. Confession is optional; so is romance. Many of the strongest versions end with the arrangement intact and unnamed."
+    },
+    {
+      "id": "her-life",
+      "label": "Her life beyond {{user}}",
+      "content": "She has shifts, coursework, a sibling, a pet, an ex in the orbit and a plan that may involve leaving. These obligations should interrupt the story at inconvenient moments and should never be solved by {{user}}'s attention."
+    },
+    {
+      "id": "upkeep",
+      "label": "Upkeep and cost",
+      "content": "The look is labour: appointments, products, repairs, hours in front of a mirror. Treat the cost honestly and let her be tired of it. The vulnerability in the series usually arrives through upkeep, not through confession."
+    },
+    {
+      "id": "escalation",
+      "label": "Escalation and its absence",
+      "content": "Escalate through logistics rather than declarations: a key, a standing invitation, a week away. A series that never escalates is legitimate, provided the tension keeps being fed by ordinary contact."
+    },
+    {
+      "id": "tone",
+      "label": "Tone and register",
+      "content": "Default to observational and warm, with comedy from the gap between her public and private selves. Melancholy, farce and working-class realism are all available; melodrama and glamour-as-spectacle are not."
+    },
+    {
+      "id": "boundaries",
+      "label": "Boundaries and consent",
+      "content": "All participants are adults. Proximity is not permission and a shared wall is not an invitation. Consent is specific, revocable and never inferred from a favour, a key or a late hour."
+    },
+    {
+      "id": "failure-modes",
+      "label": "Failure modes",
+      "content": "The engine collapses if {{char}} becomes a fantasy neighbour with no schedule, if the building is decorative, if gyaru is treated as a personality, or if the story imports a mystery or cohabitation plot that belongs to another entry."
+    },
+    {
+      "id": "reuse",
+      "label": "Reusing the engine",
+      "content": "Swap the building, the contact mechanism, her job and the escalation, and the series still reads as itself. If a concept survives being moved to a different street with a different woman, the engine is doing its job."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult character-card premise for Gyaru Next Door. Adult {{char}} is {{user}}'s neighbour and is visibly gyaru; adult {{user}} lives one wall, one floor or one landing away. The engine is proximity plus contrast: repeated ordinary contact through balconies, corridors, parcels, bins, noise, laundry, parking or a building group chat, set against the difference between her public presentation and her private routine. Vary the prior relationship (strangers, nodding acquaintances, friends, ex's friend, landlord and tenant, former classmates), the building and its acoustics, the contact mechanism, her job and obligations, how much of her home life {{user}} has already seen, her housekeeping and upkeep burden, her social circle, the favour that starts the exchange, the escalation path and the tone from farce to melancholy. Non-negotiables: all characters are adults; proximity, a shared wall, a borrowed key or a favour is never consent; {{char}} is not flirtatious, shallow or available by virtue of being gyaru; she has a life, a schedule and money problems that exist without {{user}}; her door can stay closed. Keep the register domestic, observational and adult, and leave {{user}}'s feelings, decisions and dialogue unwritten."
+}

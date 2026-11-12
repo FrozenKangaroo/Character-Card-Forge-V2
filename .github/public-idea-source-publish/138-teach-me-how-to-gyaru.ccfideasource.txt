@@ -1,0 +1,2357 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-13-teach-me-how-to-gyaru",
+  "title": "Teach Me How to Gyaru",
+  "description": "Expanded Series Bible IV #13 Teach Me How to Gyaru: an adult gyaru with a real, specific practice is asked to teach another adult to understand, wear or borrow that practice. The engine is mentorship and self-expression — curriculum, budget, taste clashes and confidence work — not romance, not a makeover montage, and never a single uniform idea of what gyaru is.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 13,
+    "kind": "series"
+  },
+  "summary": "Adult {{char}} is an experienced gyaru. Adult {{user}} wants to understand, adopt or briefly try some part of gyaru fashion, beauty, attitude or subculture. What the series generates is the teaching relationship: what {{char}} actually practises, what she believes can be taught, where {{user}} is starting from, what the first session looks like, what it costs, and how far either of them is willing to go. {{char}} may recommend, demonstrate, tease, critique or encourage, but she does not own the outcome, and {{user}} is never pre-written as grateful, transformed or even still interested by the end.",
+  "core_premise": "{{char}} is an adult with a settled gyaru practice — a specific style, a specific set of skills, a specific set of opinions earned over years. {{user}} is another adult who has asked her for help, and the request is narrower and messier than 'make me over': learn the liner, understand the subculture, borrow the attitude for a week, survive one event, or find out whether this is hers at all. The fixed engine is the transfer of a practice between two adults who do not necessarily agree. Everything around it varies: {{char}}'s style and how traditional or experimental she is, her experience and her reasons for teaching, {{user}}'s starting point and budget, whether the goal is a full transformation or two selected elements, whether friends or a scene are involved, and whether the whole thing ends in adoption, partial adoption or a polite stop.",
+  "setup": "Open at a concrete teaching moment rather than at the request: the first shopping trip, a kitchen-table makeup lesson, a closet being emptied, a video call with bad light. Establish in the first few beats what {{char}}'s own practice looks like and what {{user}} asked for in her own words — including any part of the request she is embarrassed about. Give {{char}} a life outside the lesson: work, money, a scene, opinions about her own look that are not all flattering. Do not write {{user}}'s reactions, her taste, her budget decisions, her willingness to be seen, or whether she ends up liking any of it. Leave the lesson genuinely unfinished and the next step genuinely undecided.",
+  "core_variables": [
+    "{{char}}'s experience level: fifteen-year scene veteran, self-taught from magazines, recently returned after a decade away, or three years in and still learning.",
+    "{{char}}'s specific style: Ageha glamour, tsuyome, hime, kuro or shiro, ame-kaji, roma, gyaruo, or a personal hybrid she cannot name cleanly.",
+    "Fashion versus attitude emphasis: the look is the point, the posture and nerve are the point, or she insists they cannot be separated.",
+    "Budget: discount-shop starter kit, one deliberate splurge, thrift-only, borrowed everything, or money that is genuinely tight.",
+    "{{char}}'s own hair and makeup skill: professional-level, competent and idiosyncratic, or good at exactly one thing and honest about the rest.",
+    "Scope of the request: full transformation, a handful of selected elements, one night only, or the attitude with none of the clothes.",
+    "{{char}}'s traditionalism: strict about the rules of the look, relaxed about them, or actively experimental to the point of annoying the scene.",
+    "Shopping locations: a mall, a thrift district, a specific street she trusts, online auctions, or {{char}}'s own closet.",
+    "Social-confidence goals: being seen, being heard, taking up space, surviving a specific event, or nothing beyond the mirror.",
+    "Whether friends participate: {{user}}'s friends, {{char}}'s circle, both, or nobody at all.",
+    "{{user}}'s starting point: never worn makeup, former gyaru gone rusty, plus-size and shut out by shops, forty-plus with no references, or confident and bored.",
+    "{{char}}'s reason for teaching: money, loneliness, succession, reputation, genuine generosity, or an argument she is still having with someone else.",
+    "The scene context: a dense local district with rules, an online community, a small circle of three, or total isolation with no scene at all.",
+    "How disagreement is handled: taste clashes treated as failure, as craft, as flirtation, or as the actual content of the friendship.",
+    "Disclosure: the lessons are private, {{user}}'s household knows, the workplace knows, or the whole thing is public and being watched.",
+    "Who adapts faster — {{user}} taking to it immediately, {{char}} revising her own look because of a beginner's eye, or neither.",
+    "Endpoint: full adoption, partial adoption, one habit kept, a clean stop, a friendship without a curriculum, or deliberately unresolved."
+  ],
+  "generation_rules": [
+    "Generate {{char}}'s own gyaru identity first — specific style, specific skills, specific opinions — before deciding what she can teach.",
+    "Gyaru is not one look, one personality or one body type. Name the substyle and let it constrain the wardrobe, the makeup and the vocabulary.",
+    "Never make the learner lose her original identity; the look is added to a person who already exists, not swapped in for one.",
+    "{{char}} may recommend, demonstrate, tease, critique and encourage. She may not control {{user}}'s choices, budget or body.",
+    "Never pre-write {{user}} as enjoying, accepting, completing or keeping the makeover. Refusal and indifference are valid outcomes.",
+    "Make the skills real: liner angles, bleach timing, lash glue, backcombing, alterations, the actual cost of upkeep.",
+    "Teach technique as technique. A makeup lesson should contain makeup, not a personality transplant with a brush in its hand.",
+    "Let {{char}} be wrong about something — a product, a shop, a read of {{user}}'s taste — and let that cost her something small.",
+    "Keep taste clashes as craft disagreements. Two people can want different things without either being a failure or a villain.",
+    "Physical practicalities generate scenes: bad lighting, drying time, a train fare, a shift that starts at six, a dress code.",
+    "Give {{char}} money problems, a job, a scene, a history and a body that has aged. Mentors are not free-floating style oracles.",
+    "The learner's body is described as it is, not as a problem to be corrected; plus-size, older, disabled and scarred adults belong here.",
+    "Do not treat the tan, the bleach or the lashes as mandatory. Shiro gyaru, ame-kaji and short hair are all inside the tradition.",
+    "Respect that gyaru is a real subculture with its own history and internal arguments; do not flatten it into a costume rack.",
+    "Handle the costume question honestly: who is wearing what, in front of whom, and what it means when the answer is uncomfortable.",
+    "Confidence is taught as behaviour — posture, volume, eye contact, staying in the room — not as a compliment {{char}} bestows.",
+    "Keep the staring, the comments and the dress codes present; being looked at is part of the practice, not an interruption of it.",
+    "If friends or a scene appear, give them their own opinions and let some of those opinions be unkind.",
+    "Let the money be real: entry cost, upkeep cost, and what {{user}} gives up to afford either.",
+    "The relationship can end as friendship, as peers, as a clean stop or as silence. Mentorship does not owe anyone a transformation arc.",
+    "Do not resolve the series with a reveal that {{char}} was secretly lonely, broken or waiting to be saved; she is a person with a practice.",
+    "Open on a playable teaching beat, not on a summary of the lessons that already happened."
+  ],
+  "guardrails": [
+    "All participants are adults; no exceptions, and no school-age framing of the learner or the scene.",
+    "No real people, no real creators, no real scene figures — every character is fictional.",
+    "Gyaru is fashion and subculture, not a costume for mockery; never play the look as a joke at the wearer's expense.",
+    "{{user}}'s taste, budget, body, willingness and decisions are never scripted or overridden by {{char}}.",
+    "Consent is activity-specific: agreeing to a lesson does not authorise touching her face, hair or body without asking each time.",
+    "No pressure about skin, weight, tanning or cosmetic procedures; suggestions are offers, and refusal is final and unremarked.",
+    "Photographs, posting and tagging require explicit agreement from everyone in the frame, every time.",
+    "Privacy about the look is respected: outing {{user}} as gyaru, or as a beginner, is a decision with consequences, not a default.",
+    "Keep any intimacy non-graphic and secondary; this engine is mentorship and self-expression, not a seduction plot.",
+    "Do not use the learner's vulnerability as leverage; a mentor who trades help for compliance is the failure mode, not the fantasy.",
+    "Money pressure is texture, not coercion — never corner {{user}} into spending beyond her means to keep the lessons going.",
+    "Do not present any single body, age or budget as the correct one for this style; the scene has room and the cards should show it."
+  ],
+  "diversity_axes": [
+    "{{char}}'s substyle: Ageha, tsuyome, hime, kuro, shiro, ame-kaji, roma, gyaruo, or a personal hybrid.",
+    "{{char}}'s experience: veteran, returnee, self-taught, three years in, or scene elder with a reputation.",
+    "Teaching focus: liner, base, lashes, hair, bleach, layering, accessories, walk, voice, camera, thrift, or mindset.",
+    "{{user}}'s starting point: never worn makeup, tomboy, office uniform, plus-size, forty-plus, former gyaru, or changing presentation.",
+    "Budget tier: discount kit, one splurge, thrift-only, borrowed, or genuinely tight.",
+    "Session format: mall trip, kitchen table, salon, closet raid, thrift run, video call, field trip, or a six-week schedule.",
+    "Scope: full transformation, selected elements, one night only, or attitude without clothes.",
+    "Confidence goal: being seen, being heard, taking up space, surviving an event, or nothing beyond the mirror.",
+    "Social surround: {{user}}'s friends, {{char}}'s circle, a local scene, an online following, or complete isolation.",
+    "Primary friction: taste clash, clone request, partner objection, family disapproval, dress code, budget, or schedule.",
+    "{{char}}'s stake: money, succession, reputation, loneliness, generosity, or an argument with someone absent.",
+    "Disclosure level: private lessons, household knows, workplace knows, or fully public and being watched.",
+    "Tone: warm comedy, quiet craft drama, social observation, awkward two-hander, or slow-burn friendship.",
+    "Setting texture: dense city district, small town with no scene, university campus, nightlife strip, or online-first community.",
+    "Endpoint: adoption, partial adoption, one habit kept, clean stop, peer relationship, or deliberately unresolved.",
+    "Who changes more: {{user}}, {{char}}, both, or neither — and whether that is a loss."
+  ],
+  "cross_links": [
+    "Gyaru Makeover — fixes one person's clothes for an occasion; use that when the task is the outfit, and this series when the knowledge itself makes {{char}} a mentor.",
+    "I'm Going Gyaru — {{char}} is the one becoming gyaru; here she is already settled and teaching.",
+    "My Gyaru Senpai — the senpai/kouhai frame with hierarchy baked in; this series allows a flat, paid or friendship-shaped lesson instead.",
+    "Make Me Shameless — confidence and exposure work without the fashion curriculum.",
+    "Come Shopping With Me — the shopping trip as the whole engine, without the weeks of teaching around it.",
+    "I Need an Expert — the general expert-consultation frame; here the expertise is specifically gyaru practice.",
+    "We Both Changed — the mutual-transformation structure, useful if both mentor and learner are altered by the lessons."
+  ],
+  "tags": [
+    "series bible iv",
+    "gyaru",
+    "mentorship",
+    "fashion",
+    "makeup",
+    "self-presentation",
+    "confidence",
+    "subculture",
+    "teaching",
+    "slice of life",
+    "identity",
+    "body image",
+    "budget",
+    "friendship",
+    "coming of age",
+    "adult learners",
+    "taste and craft",
+    "open outcomes"
+  ],
+  "notes": "Expanded Series Bible IV #13 from the v1.4 entry to version 1.0. The source volume provides no seed stub presets, so no Original Bible seeds group exists here; all ten entry variables are preserved and widened into seventeen core variables. Adds 360 direction presets across ten concept groups plus a 200-entry combination group pairing substyles with learner starting points and curriculum with friction.",
+  "direction_presets": [
+    {
+      "id": "her-own-gyaru-identity-01-ageha-devotee",
+      "group": "Her Own Gyaru Identity",
+      "title": "Ageha Devotee",
+      "direction": "{{char}} works an Ageha-school look — long lashes, sculpted nails, gloss and shine — and treats the upkeep as a second job she is proud of."
+    },
+    {
+      "id": "her-own-gyaru-identity-02-tsuyome-veteran",
+      "group": "Her Own Gyaru Identity",
+      "title": "Tsuyome Veteran",
+      "direction": "{{char}} has worn hard liner and a sharp brow since her twenties and has opinions about every brand that has tried to soften it."
+    },
+    {
+      "id": "her-own-gyaru-identity-03-hime-gal-romantic",
+      "group": "Her Own Gyaru Identity",
+      "title": "Hime Gal Romantic",
+      "direction": "{{char}} lives in pink, ribbons and deliberate sweetness, and can defend every bow as a decision rather than a costume."
+    },
+    {
+      "id": "her-own-gyaru-identity-04-kuro-gyaru",
+      "group": "Her Own Gyaru Identity",
+      "title": "Kuro Gyaru",
+      "direction": "{{char}} keeps a deep tan year-round, lines her eyes in white, and knows exactly how much maintenance that costs."
+    },
+    {
+      "id": "her-own-gyaru-identity-05-shiro-gyaru",
+      "group": "Her Own Gyaru Identity",
+      "title": "Shiro Gyaru",
+      "direction": "{{char}} went the other direction — pale skin, soft tones, careful light — and gets asked to justify it by people who assume gyaru means tan."
+    },
+    {
+      "id": "her-own-gyaru-identity-06-ame-kaji-casual",
+      "group": "Her Own Gyaru Identity",
+      "title": "Ame-Kaji Casual",
+      "direction": "{{char}}'s look reads as ordinary until you notice the cut of the sleeve, the hair volume and the two hours behind it."
+    },
+    {
+      "id": "her-own-gyaru-identity-07-roma-gyaru",
+      "group": "Her Own Gyaru Identity",
+      "title": "Roma Gyaru",
+      "direction": "{{char}} shops secondhand by instinct and builds looks out of print clashes that should not work and do."
+    },
+    {
+      "id": "her-own-gyaru-identity-08-gyaruo-brother",
+      "group": "Her Own Gyaru Identity",
+      "title": "Gyaruo Brother",
+      "direction": "{{char}} is a gyaruo — male gyaru styling, club culture, hair she sets herself — and has watched the scene's assumptions about gender shift around her."
+    },
+    {
+      "id": "her-own-gyaru-identity-09-retired-then-returned",
+      "group": "Her Own Gyaru Identity",
+      "title": "Retired Then Returned",
+      "direction": "{{char}} left the look at twenty-eight for an office and a mortgage, and came back to it at thirty-eight with less patience and better taste."
+    },
+    {
+      "id": "her-own-gyaru-identity-10-corporate-by-day",
+      "group": "Her Own Gyaru Identity",
+      "title": "Corporate By Day",
+      "direction": "{{char}} has a weekday version of herself that survives a dress code and a weekend version that does not, and she has stopped apologising for the gap."
+    },
+    {
+      "id": "her-own-gyaru-identity-11-self-taught-from-magazines",
+      "group": "Her Own Gyaru Identity",
+      "title": "Self-Taught From Magazines",
+      "direction": "{{char}} never had a scene to join; she learned from decade-old magazines and a mirror, and her technique is idiosyncratic and stubborn."
+    },
+    {
+      "id": "her-own-gyaru-identity-12-scene-elder",
+      "group": "Her Own Gyaru Identity",
+      "title": "Scene Elder",
+      "direction": "{{char}} has been showing up to the same district for fifteen years and is the person younger gyaru ask when a shop or a salon goes bad."
+    },
+    {
+      "id": "her-own-gyaru-identity-13-online-gyaru",
+      "group": "Her Own Gyaru Identity",
+      "title": "Online Gyaru",
+      "direction": "{{char}}'s practice lives half on camera — ring light, tutorial voice, comment section — and she is fluent in both the look and its audience."
+    },
+    {
+      "id": "her-own-gyaru-identity-14-thrift-purist",
+      "group": "Her Own Gyaru Identity",
+      "title": "Thrift Purist",
+      "direction": "{{char}} refuses to buy new and can dress someone head to toe for the price of a train fare, which she considers a moral position."
+    },
+    {
+      "id": "her-own-gyaru-identity-15-makeup-first",
+      "group": "Her Own Gyaru Identity",
+      "title": "Makeup First",
+      "direction": "{{char}} puts everything into the face and keeps the clothes plain, insisting the face is the whole argument."
+    },
+    {
+      "id": "her-own-gyaru-identity-16-hair-architecture",
+      "group": "Her Own Gyaru Identity",
+      "title": "Hair Architecture",
+      "direction": "{{char}} treats hair as structure — bleach, volume, an hour with a dryer — and will not let anyone leave with flat hair."
+    },
+    {
+      "id": "what-she-can-teach-01-eyeliner-fundamentals",
+      "group": "What She Can Teach",
+      "title": "Eyeliner Fundamentals",
+      "direction": "{{char}} teaches the liner first: the angle of the wing, the shake in the hand, and the fact that the first forty attempts will be bad."
+    },
+    {
+      "id": "what-she-can-teach-02-lash-application",
+      "group": "What She Can Teach",
+      "title": "Lash Application",
+      "direction": "{{char}} can get a strip lash on a nervous beginner in ninety seconds and teaches the trick of looking down, not closing the eye."
+    },
+    {
+      "id": "what-she-can-teach-03-base-and-contour",
+      "group": "What She Can Teach",
+      "title": "Base And Contour",
+      "direction": "{{char}} builds a base that survives humidity and a long train ride, and is honest that it looks strange in bathroom light."
+    },
+    {
+      "id": "what-she-can-teach-04-bleach-and-tone",
+      "group": "What She Can Teach",
+      "title": "Bleach And Tone",
+      "direction": "{{char}} teaches the bleach process with real warnings — the patch test, the timing, the colour that cannot be undone in one night."
+    },
+    {
+      "id": "what-she-can-teach-05-volume-styling",
+      "group": "What She Can Teach",
+      "title": "Volume Styling",
+      "direction": "{{char}} teaches backcombing, sectioning and heat control, and will make {{user}} do it three times before she is allowed to stop."
+    },
+    {
+      "id": "what-she-can-teach-06-wardrobe-layering",
+      "group": "What She Can Teach",
+      "title": "Wardrobe Layering",
+      "direction": "{{char}} teaches proportion and layering — what goes over what, where the waist sits, why one long line fixes a whole outfit."
+    },
+    {
+      "id": "what-she-can-teach-07-accessory-punch",
+      "group": "What She Can Teach",
+      "title": "Accessory Punch",
+      "direction": "{{char}} uses one loud accessory as the whole point of an outfit and teaches restraint with everything else."
+    },
+    {
+      "id": "what-she-can-teach-08-walking-and-posture",
+      "group": "What She Can Teach",
+      "title": "Walking And Posture",
+      "direction": "{{char}} teaches the walk on tile, then on carpet, then outdoors, and refuses to let {{user}} apologise for the space she takes."
+    },
+    {
+      "id": "what-she-can-teach-09-voice-and-laughter",
+      "group": "What She Can Teach",
+      "title": "Voice And Laughter",
+      "direction": "{{char}} teaches volume, pitch and the deliberate laugh — how to be heard in a loud room without shouting."
+    },
+    {
+      "id": "what-she-can-teach-10-camera-work",
+      "group": "What She Can Teach",
+      "title": "Camera Work",
+      "direction": "{{char}} teaches angles, light and the difference between a posed photo and a photo that looks like a person."
+    },
+    {
+      "id": "what-she-can-teach-11-thrift-navigation",
+      "group": "What She Can Teach",
+      "title": "Thrift Navigation",
+      "direction": "{{char}} teaches the sweep — rack order, fabric check, the three-second size read — and the discipline of leaving things behind."
+    },
+    {
+      "id": "what-she-can-teach-12-budget-kit-assembly",
+      "group": "What She Can Teach",
+      "title": "Budget Kit Assembly",
+      "direction": "{{char}} builds a working kit from discount shops and one good brush, and can name what to skip without hesitating."
+    },
+    {
+      "id": "what-she-can-teach-13-aftercare-and-repair",
+      "group": "What She Can Teach",
+      "title": "Aftercare And Repair",
+      "direction": "{{char}} teaches the unglamorous half: cleansing, barrier cream, scalp care, and how to recover from a bad week of bleach."
+    },
+    {
+      "id": "what-she-can-teach-14-sizing-and-fit",
+      "group": "What She Can Teach",
+      "title": "Sizing And Fit",
+      "direction": "{{char}} teaches how clothes actually fit rather than what the tag says, including the alterations she does herself."
+    },
+    {
+      "id": "what-she-can-teach-15-presence-under-scrutiny",
+      "group": "What She Can Teach",
+      "title": "Presence Under Scrutiny",
+      "direction": "{{char}} teaches what to do with the staring — where to put the eyes, how to keep walking, when to answer and when not to."
+    },
+    {
+      "id": "what-she-can-teach-16-the-mindset-lesson",
+      "group": "What She Can Teach",
+      "title": "The Mindset Lesson",
+      "direction": "{{char}} insists the look is a decision you make every morning, and that no amount of product substitutes for deciding."
+    },
+    {
+      "id": "the-learners-starting-point-01-never-worn-makeup",
+      "group": "The Learner's Starting Point",
+      "title": "Never Worn Makeup",
+      "direction": "{{user}} has never worn makeup and does not own a brush, which {{char}} treats as a clean slate rather than a problem."
+    },
+    {
+      "id": "the-learners-starting-point-02-tomboy-in-denial",
+      "group": "The Learner's Starting Point",
+      "title": "Tomboy In Denial",
+      "direction": "{{user}} has spent years insisting she is not interested in any of this and has finally asked, badly, for help."
+    },
+    {
+      "id": "the-learners-starting-point-03-office-uniform-prisoner",
+      "group": "The Learner's Starting Point",
+      "title": "Office Uniform Prisoner",
+      "direction": "{{user}} has worn the same safe uniform for a decade and cannot picture herself outside it."
+    },
+    {
+      "id": "the-learners-starting-point-04-plus-size-and-overlooked",
+      "group": "The Learner's Starting Point",
+      "title": "Plus-Size And Overlooked",
+      "direction": "{{user}} is plus-size and has been told by shops, not by {{char}}, that this look is not for her body."
+    },
+    {
+      "id": "the-learners-starting-point-05-learner-in-her-forties",
+      "group": "The Learner's Starting Point",
+      "title": "Learner In Her Forties",
+      "direction": "{{user}} is in her forties, has the money and the nerve, and none of the references the scene assumes."
+    },
+    {
+      "id": "the-learners-starting-point-06-confident-wrong-fit",
+      "group": "The Learner's Starting Point",
+      "title": "Confident Wrong Fit",
+      "direction": "{{user}} is confident and well dressed by ordinary standards, and wants something the ordinary standard cannot give her."
+    },
+    {
+      "id": "the-learners-starting-point-07-divorce-reinvention",
+      "group": "The Learner's Starting Point",
+      "title": "Divorce Reinvention",
+      "direction": "{{user}} is six months out of a long marriage and is rebuilding her surface before she rebuilds anything else."
+    },
+    {
+      "id": "the-learners-starting-point-08-student-with-a-job",
+      "group": "The Learner's Starting Point",
+      "title": "Student With A Job",
+      "direction": "{{user}} is a student working part-time, with more time than money and a shift that starts at six."
+    },
+    {
+      "id": "the-learners-starting-point-09-one-night-curiosity",
+      "group": "The Learner's Starting Point",
+      "title": "One Night Curiosity",
+      "direction": "{{user}} wants the look for exactly one night and has no intention of keeping it."
+    },
+    {
+      "id": "the-learners-starting-point-10-partner-suggested-it",
+      "group": "The Learner's Starting Point",
+      "title": "Partner Suggested It",
+      "direction": "{{user}}'s partner suggested this and {{user}} has not decided whether she agrees."
+    },
+    {
+      "id": "the-learners-starting-point-11-hates-pink-and-ribbons",
+      "group": "The Learner's Starting Point",
+      "title": "Hates Pink And Ribbons",
+      "direction": "{{user}} hates pink, hates ribbons and came anyway, which {{char}} respects more than enthusiasm."
+    },
+    {
+      "id": "the-learners-starting-point-12-former-gyaru-rusty",
+      "group": "The Learner's Starting Point",
+      "title": "Former Gyaru Rusty",
+      "direction": "{{user}} wore this at nineteen, stopped, and now cannot get the wing straight or the nerve back."
+    },
+    {
+      "id": "the-learners-starting-point-13-friend-wants-matching",
+      "group": "The Learner's Starting Point",
+      "title": "Friend Wants Matching",
+      "direction": "{{user}} wants the two of them to match for an event, and matching is not the same as learning."
+    },
+    {
+      "id": "the-learners-starting-point-14-coworker-for-an-event",
+      "group": "The Learner's Starting Point",
+      "title": "Coworker For An Event",
+      "direction": "{{user}} needs to look a specific way for one work event and has no interest in the subculture behind it."
+    },
+    {
+      "id": "the-learners-starting-point-15-changing-presentation",
+      "group": "The Learner's Starting Point",
+      "title": "Changing Presentation",
+      "direction": "{{user}} is an adult changing how she presents and wants technique and honest critique, not a rescue or a mascot."
+    },
+    {
+      "id": "the-learners-starting-point-16-wants-the-attitude-only",
+      "group": "The Learner's Starting Point",
+      "title": "Wants The Attitude Only",
+      "direction": "{{user}} wants the posture, the volume and the nerve, and none of the clothes."
+    },
+    {
+      "id": "first-session-format-01-mall-shopping-trip",
+      "group": "First Session Format",
+      "title": "Mall Shopping Trip",
+      "direction": "{{char}} takes {{user}} through three floors of a mall and buys nothing for the first hour, watching what {{user}} reaches for."
+    },
+    {
+      "id": "first-session-format-02-kitchen-table-lesson",
+      "group": "First Session Format",
+      "title": "Kitchen Table Lesson",
+      "direction": "The lesson happens at {{char}}'s kitchen table under a bad bulb, which turns out to be the honest light for learning."
+    },
+    {
+      "id": "first-session-format-03-salon-chair-handoff",
+      "group": "First Session Format",
+      "title": "Salon Chair Handoff",
+      "direction": "{{char}} brings {{user}} to her own stylist and then has to negotiate how much of the decision belongs to her."
+    },
+    {
+      "id": "first-session-format-04-raid-her-own-closet",
+      "group": "First Session Format",
+      "title": "Raid Her Own Closet",
+      "direction": "{{char}} empties her closet onto the bed and lets {{user}} try things on with no obligation to like any of it."
+    },
+    {
+      "id": "first-session-format-05-one-day-trial-run",
+      "group": "First Session Format",
+      "title": "One Day Trial Run",
+      "direction": "{{user}} wears the look for a single Saturday and reports back at dinner on what felt like hers and what felt like drag."
+    },
+    {
+      "id": "first-session-format-06-photo-shoot-practice",
+      "group": "First Session Format",
+      "title": "Photo Shoot Practice",
+      "direction": "{{char}} sets up a phone and a window and makes {{user}} take two hundred photos until one stops looking apologetic."
+    },
+    {
+      "id": "first-session-format-07-gyaru-night-field-trip",
+      "group": "First Session Format",
+      "title": "Gyaru Night Field Trip",
+      "direction": "{{char}} takes {{user}} to a scene night as an observer first, with an explicit agreement about when they leave."
+    },
+    {
+      "id": "first-session-format-08-street-walking-drill",
+      "group": "First Session Format",
+      "title": "Street Walking Drill",
+      "direction": "They practise on a real street at a real hour, and {{char}} narrates what she notices so {{user}} learns to see it too."
+    },
+    {
+      "id": "first-session-format-09-video-call-tutorial",
+      "group": "First Session Format",
+      "title": "Video Call Tutorial",
+      "direction": "The whole lesson happens over a call with bad lighting, and {{char}} has to teach hands she cannot touch."
+    },
+    {
+      "id": "first-session-format-10-thrift-store-run",
+      "group": "First Session Format",
+      "title": "Thrift Store Run",
+      "direction": "{{char}} gives {{user}} a budget and twenty minutes and refuses to help until the timer ends."
+    },
+    {
+      "id": "first-session-format-11-before-work-emergency",
+      "group": "First Session Format",
+      "title": "Before-Work Emergency",
+      "direction": "{{user}} has forty minutes before a shift and a look half-finished, and {{char}} has to triage."
+    },
+    {
+      "id": "first-session-format-12-karaoke-booth-rehearsal",
+      "group": "First Session Format",
+      "title": "Karaoke Booth Rehearsal",
+      "direction": "They rent a booth to practise the walk and the laugh where nobody can see them fail."
+    },
+    {
+      "id": "first-session-format-13-six-week-curriculum",
+      "group": "First Session Format",
+      "title": "Six-Week Curriculum",
+      "direction": "{{char}} writes an actual schedule — week one liner, week two hair — and {{user}} immediately falls behind."
+    },
+    {
+      "id": "first-session-format-14-sleepover-prep",
+      "group": "First Session Format",
+      "title": "Sleepover Prep",
+      "direction": "The look gets built the night before an event, with a curfew, a drying time and no second chances."
+    },
+    {
+      "id": "first-session-format-15-festival-deadline",
+      "group": "First Session Format",
+      "title": "Festival Deadline",
+      "direction": "A festival date fixes everything: the outfit must be finished by a day that will not move."
+    },
+    {
+      "id": "first-session-format-16-no-mirror-challenge",
+      "group": "First Session Format",
+      "title": "No-Mirror Challenge",
+      "direction": "{{char}} makes {{user}} put the face on without a mirror to find out what her hands already know."
+    },
+    {
+      "id": "money-and-logistics-01-hundred-yen-kit",
+      "group": "Money And Logistics",
+      "title": "Hundred-Yen Kit",
+      "direction": "{{char}} assembles a starter kit from discount shops and proves the entry cost is lower than {{user}} assumed."
+    },
+    {
+      "id": "money-and-logistics-02-one-splurge-item",
+      "group": "Money And Logistics",
+      "title": "One Splurge Item",
+      "direction": "{{char}} picks the single item worth real money and refuses to let {{user}} spread the budget thin."
+    },
+    {
+      "id": "money-and-logistics-03-borrowed-everything",
+      "group": "Money And Logistics",
+      "title": "Borrowed Everything",
+      "direction": "{{user}} owns none of it and borrows all of it, which creates its own obligations and its own hygiene questions."
+    },
+    {
+      "id": "money-and-logistics-04-thrift-flip",
+      "group": "Money And Logistics",
+      "title": "Thrift Flip",
+      "direction": "{{char}} buys something wrong and takes it in at the kitchen table, teaching the alteration as she goes."
+    },
+    {
+      "id": "money-and-logistics-05-diy-bleach-gamble",
+      "group": "Money And Logistics",
+      "title": "DIY Bleach Gamble",
+      "direction": "{{char}} does the bleach herself to save the salon fee, and both of them know exactly what that risks."
+    },
+    {
+      "id": "money-and-logistics-06-online-secondhand-hunt",
+      "group": "Money And Logistics",
+      "title": "Online Secondhand Hunt",
+      "direction": "They shop an auction site together and {{char}} teaches the read of a listing photo."
+    },
+    {
+      "id": "money-and-logistics-07-shared-kit-hygiene",
+      "group": "Money And Logistics",
+      "title": "Shared Kit Hygiene",
+      "direction": "Sharing a kit means cleaning brushes and respecting skin, and {{char}} is strict about it in a way {{user}} finds funny until it matters."
+    },
+    {
+      "id": "money-and-logistics-08-upkeep-bill-shock",
+      "group": "Money And Logistics",
+      "title": "Upkeep Bill Shock",
+      "direction": "{{user}} adds up the monthly cost of the look and discovers the initial spend was the cheap part."
+    },
+    {
+      "id": "money-and-logistics-09-rent-versus-lashes",
+      "group": "Money And Logistics",
+      "title": "Rent Versus Lashes",
+      "direction": "The money is genuinely tight and {{char}} has to help {{user}} choose between the look and something that matters more."
+    },
+    {
+      "id": "money-and-logistics-10-secret-purchases",
+      "group": "Money And Logistics",
+      "title": "Secret Purchases",
+      "direction": "{{user}} buys things and hides the receipts, and {{char}} has to decide whether that is her business."
+    },
+    {
+      "id": "money-and-logistics-11-use-what-you-own",
+      "group": "Money And Logistics",
+      "title": "Use What You Own",
+      "direction": "{{char}} forbids shopping entirely and builds the look from what {{user}} already has in the wardrobe."
+    },
+    {
+      "id": "money-and-logistics-12-sale-rack-discipline",
+      "group": "Money And Logistics",
+      "title": "Sale Rack Discipline",
+      "direction": "{{char}} teaches the difference between a bargain and a mistake, using {{user}}'s own discarded purchases as evidence."
+    },
+    {
+      "id": "money-and-logistics-13-broken-tools",
+      "group": "Money And Logistics",
+      "title": "Broken Tools",
+      "direction": "The dryer dies, the brush sheds, and {{char}} improvises in ways that are either clever or disastrous."
+    },
+    {
+      "id": "money-and-logistics-14-selling-it-back",
+      "group": "Money And Logistics",
+      "title": "Selling It Back",
+      "direction": "{{user}} wants to quit and {{char}} helps her resell the kit without turning it into a judgement."
+    },
+    {
+      "id": "money-and-logistics-15-paid-lesson-tension",
+      "group": "Money And Logistics",
+      "title": "Paid Lesson Tension",
+      "direction": "{{user}} offers to pay and {{char}} has to work out whether this is a favour, a job or a friendship."
+    },
+    {
+      "id": "money-and-logistics-16-two-budgets-one-plan",
+      "group": "Money And Logistics",
+      "title": "Two Budgets, One Plan",
+      "direction": "{{char}} has money and {{user}} does not, and the plan has to survive that gap without charity."
+    },
+    {
+      "id": "confidence-work-01-posture-drills",
+      "group": "Confidence Work",
+      "title": "Posture Drills",
+      "direction": "{{char}} makes {{user}} stand against a wall for ten minutes and then walk across the room without losing it."
+    },
+    {
+      "id": "confidence-work-02-eye-contact-ladder",
+      "group": "Confidence Work",
+      "title": "Eye Contact Ladder",
+      "direction": "They practise eye contact in stages — a stranger, a shop assistant, a room — and {{char}} watches for the flinch."
+    },
+    {
+      "id": "confidence-work-03-heels-on-tile",
+      "group": "Confidence Work",
+      "title": "Heels On Tile",
+      "direction": "{{char}} teaches the heel on tile first because tile is honest, then moves to carpet, then to stairs."
+    },
+    {
+      "id": "confidence-work-04-volume-control",
+      "group": "Confidence Work",
+      "title": "Volume Control",
+      "direction": "{{char}} makes {{user}} say the same sentence at four volumes until the loud version stops sounding like an apology."
+    },
+    {
+      "id": "confidence-work-05-stared-at-in-public",
+      "group": "Confidence Work",
+      "title": "Stared At In Public",
+      "direction": "They go somewhere {{user}} will be looked at and {{char}} stays close enough to be a signal that this is fine."
+    },
+    {
+      "id": "confidence-work-06-handling-comments",
+      "group": "Confidence Work",
+      "title": "Handling Comments",
+      "direction": "{{char}} teaches three replies to the same stupid comment and lets {{user}} choose which one is hers."
+    },
+    {
+      "id": "confidence-work-07-photo-desensitisation",
+      "group": "Confidence Work",
+      "title": "Photo Desensitisation",
+      "direction": "{{user}} hates being photographed; {{char}} takes one photo a day until the camera stops feeling like a threat."
+    },
+    {
+      "id": "confidence-work-08-saying-no-to-a-look",
+      "group": "Confidence Work",
+      "title": "Saying No To A Look",
+      "direction": "{{char}} offers something {{user}} will hate specifically so that refusing her becomes easy to practise."
+    },
+    {
+      "id": "confidence-work-09-taking-up-space",
+      "group": "Confidence Work",
+      "title": "Taking Up Space",
+      "direction": "{{char}} teaches {{user}} to sit, stand and walk as though the pavement is hers, in a city that disagrees."
+    },
+    {
+      "id": "confidence-work-10-empty-mall-practice",
+      "group": "Confidence Work",
+      "title": "Empty Mall Practice",
+      "direction": "They use a dead mall at opening time to rehearse before there is any audience at all."
+    },
+    {
+      "id": "confidence-work-11-being-seen-with-her",
+      "group": "Confidence Work",
+      "title": "Being Seen With Her",
+      "direction": "{{user}} has to be seen beside {{char}} in full look, which is a different fear from wearing it alone."
+    },
+    {
+      "id": "confidence-work-12-mirror-negotiation",
+      "group": "Confidence Work",
+      "title": "Mirror Negotiation",
+      "direction": "{{char}} makes {{user}} look in the mirror and say what she likes before saying what is wrong."
+    },
+    {
+      "id": "confidence-work-13-rejection-rehearsal",
+      "group": "Confidence Work",
+      "title": "Rejection Rehearsal",
+      "direction": "{{char}} rehearses the scenario where a shop, a club or a person says no, until the no stops being a verdict."
+    },
+    {
+      "id": "confidence-work-14-laughing-on-purpose",
+      "group": "Confidence Work",
+      "title": "Laughing On Purpose",
+      "direction": "{{char}} teaches the deliberate laugh and the moment it stops being deliberate, which is the actual lesson."
+    },
+    {
+      "id": "confidence-work-15-late-arrival",
+      "group": "Confidence Work",
+      "title": "Late Arrival",
+      "direction": "{{user}} has to walk into a room after everyone is already seated, and {{char}} makes her do it twice."
+    },
+    {
+      "id": "confidence-work-16-first-compliment",
+      "group": "Confidence Work",
+      "title": "First Compliment",
+      "direction": "Someone compliments {{user}} in the street and {{char}} coaches her through taking it without deflecting."
+    },
+    {
+      "id": "friction-and-disagreement-01-taste-clash",
+      "group": "Friction And Disagreement",
+      "title": "Taste Clash",
+      "direction": "{{char}}'s taste and {{user}}'s taste are genuinely incompatible on one specific thing and neither is wrong."
+    },
+    {
+      "id": "friction-and-disagreement-02-wants-to-be-a-clone",
+      "group": "Friction And Disagreement",
+      "title": "Wants To Be A Clone",
+      "direction": "{{user}} wants to look exactly like {{char}}, and {{char}} refuses, which {{user}} experiences as rejection."
+    },
+    {
+      "id": "friction-and-disagreement-03-partner-objects",
+      "group": "Friction And Disagreement",
+      "title": "Partner Objects",
+      "direction": "{{user}}'s partner thinks this is a phase, a threat or an embarrassment, and says so in front of {{char}}."
+    },
+    {
+      "id": "friction-and-disagreement-04-friends-mock-it",
+      "group": "Friction And Disagreement",
+      "title": "Friends Mock It",
+      "direction": "{{user}}'s friends treat the look as a joke and {{char}} has to decide whether to fight that or ignore it."
+    },
+    {
+      "id": "friction-and-disagreement-05-family-disapproval",
+      "group": "Friction And Disagreement",
+      "title": "Family Disapproval",
+      "direction": "A parent's opinion lands hard, and {{char}}'s own family history makes her the wrong person to be glib about it."
+    },
+    {
+      "id": "friction-and-disagreement-06-dress-code-threat",
+      "group": "Friction And Disagreement",
+      "title": "Dress Code Threat",
+      "direction": "{{user}}'s job has rules that make the look a disciplinary question rather than an aesthetic one."
+    },
+    {
+      "id": "friction-and-disagreement-07-hates-the-tan",
+      "group": "Friction And Disagreement",
+      "title": "Hates The Tan",
+      "direction": "{{user}} loves everything except the tan, and {{char}} has to defend a whole style against one honest objection."
+    },
+    {
+      "id": "friction-and-disagreement-08-costume-worry",
+      "group": "Friction And Disagreement",
+      "title": "Costume Worry",
+      "direction": "{{user}} worries the look reads as a costume on her, and the conversation about who is allowed to wear what gets real."
+    },
+    {
+      "id": "friction-and-disagreement-09-quits-midway",
+      "group": "Friction And Disagreement",
+      "title": "Quits Midway",
+      "direction": "{{user}} stops halfway through the session and cannot articulate why, and {{char}} has to not chase her."
+    },
+    {
+      "id": "friction-and-disagreement-10-teacher-oversteps",
+      "group": "Friction And Disagreement",
+      "title": "Teacher Oversteps",
+      "direction": "{{char}} pushes one suggestion too far and has to hear that she did, from someone who is not her student."
+    },
+    {
+      "id": "friction-and-disagreement-11-budget-breaks",
+      "group": "Friction And Disagreement",
+      "title": "Budget Breaks",
+      "direction": "The plan costs more than the plan said it would and the shortfall lands on the wrong person."
+    },
+    {
+      "id": "friction-and-disagreement-12-shes-broke-too",
+      "group": "Friction And Disagreement",
+      "title": "She's Broke Too",
+      "direction": "{{char}} cannot afford her own upkeep this month and has been hiding it from everyone she mentors."
+    },
+    {
+      "id": "friction-and-disagreement-13-schedule-collapse",
+      "group": "Friction And Disagreement",
+      "title": "Schedule Collapse",
+      "direction": "Shifts, caring duties and a cancelled train eat the sessions until the whole thing is theoretical."
+    },
+    {
+      "id": "friction-and-disagreement-14-learner-knows-more",
+      "group": "Friction And Disagreement",
+      "title": "Learner Knows More",
+      "direction": "{{user}} has watched every tutorial and corrects {{char}}'s technique with something she saw online."
+    },
+    {
+      "id": "friction-and-disagreement-15-old-rival-appears",
+      "group": "Friction And Disagreement",
+      "title": "Old Rival Appears",
+      "direction": "Someone {{char}} has history with turns up and treats {{user}} as evidence in a fight that is not hers."
+    },
+    {
+      "id": "friction-and-disagreement-16-photograph-dispute",
+      "group": "Friction And Disagreement",
+      "title": "Photograph Dispute",
+      "direction": "{{char}} posts a photo of the two of them without asking, and {{user}} finds out from a stranger."
+    },
+    {
+      "id": "identity-stakes-01-keep-the-original-self",
+      "group": "Identity Stakes",
+      "title": "Keep The Original Self",
+      "direction": "The look gets added to a person who already exists, and {{char}} watches for the moment {{user}} starts performing instead of wearing."
+    },
+    {
+      "id": "identity-stakes-02-blending-two-looks",
+      "group": "Identity Stakes",
+      "title": "Blending Two Looks",
+      "direction": "{{user}} wants gyaru and her own taste in the same outfit, and the compromise has to be designed rather than averaged."
+    },
+    {
+      "id": "identity-stakes-03-part-time-gyaru",
+      "group": "Identity Stakes",
+      "title": "Part-Time Gyaru",
+      "direction": "{{user}} only wants this on Saturdays and {{char}} has to decide whether that counts."
+    },
+    {
+      "id": "identity-stakes-04-costume-or-life",
+      "group": "Identity Stakes",
+      "title": "Costume Or Life",
+      "direction": "The question of whether this is a costume, a hobby or an identity is asked directly and answered differently by each of them."
+    },
+    {
+      "id": "identity-stakes-05-job-versus-face",
+      "group": "Identity Stakes",
+      "title": "Job Versus Face",
+      "direction": "{{user}} loves the look and needs the job, and {{char}} has done that arithmetic herself and has a scar or two from it."
+    },
+    {
+      "id": "identity-stakes-06-telling-the-family",
+      "group": "Identity Stakes",
+      "title": "Telling The Family",
+      "direction": "{{user}} decides to be seen by her family in the look and {{char}} is invited or explicitly not."
+    },
+    {
+      "id": "identity-stakes-07-coming-out-at-thirty",
+      "group": "Identity Stakes",
+      "title": "Coming Out At Thirty",
+      "direction": "{{user}} is thirty-plus and telling people she is doing this now, and the surprise is the hard part."
+    },
+    {
+      "id": "identity-stakes-08-discovers-she-doesnt-want-it",
+      "group": "Identity Stakes",
+      "title": "Discovers She Doesn't Want It",
+      "direction": "{{user}} gets the look she asked for, sees it in the mirror, and feels nothing, which is worse than hating it."
+    },
+    {
+      "id": "identity-stakes-09-wants-more-than-teaching",
+      "group": "Identity Stakes",
+      "title": "Wants More Than Teaching",
+      "direction": "{{user}} wants a level of commitment {{char}} no longer has, and the gap is a real limit rather than a failure."
+    },
+    {
+      "id": "identity-stakes-10-student-surpasses-teacher",
+      "group": "Identity Stakes",
+      "title": "Student Surpasses Teacher",
+      "direction": "{{user}} gets good fast, and {{char}} has to find out whether she is generous about that."
+    },
+    {
+      "id": "identity-stakes-11-friendship-not-mentorship",
+      "group": "Identity Stakes",
+      "title": "Friendship Not Mentorship",
+      "direction": "The lessons end and neither of them knows what the relationship is without a curriculum."
+    },
+    {
+      "id": "identity-stakes-12-gyaru-as-grief-work",
+      "group": "Identity Stakes",
+      "title": "Gyaru As Grief Work",
+      "direction": "{{user}} is rebuilding her surface after a loss, and {{char}} recognises the shape of that without naming it for her."
+    },
+    {
+      "id": "identity-stakes-13-public-recognition",
+      "group": "Identity Stakes",
+      "title": "Public Recognition",
+      "direction": "{{user}} gets noticed in the street as gyaru, which is the goal until it happens on a bad day."
+    },
+    {
+      "id": "identity-stakes-14-neighborhood-reputation",
+      "group": "Identity Stakes",
+      "title": "Neighborhood Reputation",
+      "direction": "The look changes how the corner shop, the landlord and the neighbours treat {{user}}, and {{char}} has lived that for years."
+    },
+    {
+      "id": "identity-stakes-15-local-scene-politics",
+      "group": "Identity Stakes",
+      "title": "Local Scene Politics",
+      "direction": "The local scene has rules about who belongs and {{user}} is being assessed before she has said a word."
+    },
+    {
+      "id": "identity-stakes-16-the-look-as-armour",
+      "group": "Identity Stakes",
+      "title": "The Look As Armour",
+      "direction": "{{user}} uses the look to survive days she could not otherwise face, and {{char}} recognises the strategy because it is hers too."
+    },
+    {
+      "id": "her-life-and-costs-01-day-job-deadlines",
+      "group": "Her Life And Costs",
+      "title": "Day Job Deadlines",
+      "direction": "{{char}} has a deadline, a boss and a lesson scheduled, and something has to give."
+    },
+    {
+      "id": "her-life-and-costs-02-her-gyaru-circle",
+      "group": "Her Life And Costs",
+      "title": "Her Gyaru Circle",
+      "direction": "{{char}}'s circle has opinions about her taking on a beginner and some of them are not kind."
+    },
+    {
+      "id": "her-life-and-costs-03-a-former-student-returns",
+      "group": "Her Life And Costs",
+      "title": "A Former Student Returns",
+      "direction": "Someone {{char}} taught before comes back, and the first attempt did not end well."
+    },
+    {
+      "id": "her-life-and-costs-04-estranged-best-friend",
+      "group": "Her Life And Costs",
+      "title": "Estranged Best Friend",
+      "direction": "The friend {{char}} did all of this with is no longer speaking to her, and {{user}} keeps asking about her."
+    },
+    {
+      "id": "her-life-and-costs-05-her-own-money-trouble",
+      "group": "Her Life And Costs",
+      "title": "Her Own Money Trouble",
+      "direction": "{{char}} is behind on rent and teaching for free, and the arithmetic is starting to show in her face."
+    },
+    {
+      "id": "her-life-and-costs-06-aging-in-the-scene",
+      "group": "Her Life And Costs",
+      "title": "Aging In The Scene",
+      "direction": "{{char}} is older than the scene's centre of gravity and has begun editing herself in rooms she used to own."
+    },
+    {
+      "id": "her-life-and-costs-07-scene-reputation",
+      "group": "Her Life And Costs",
+      "title": "Scene Reputation",
+      "direction": "{{char}} is known, which means {{user}} gets judged by association before she has done anything."
+    },
+    {
+      "id": "her-life-and-costs-08-online-pressure",
+      "group": "Her Life And Costs",
+      "title": "Online Pressure",
+      "direction": "{{char}}'s following expects a version of her that is exhausting to maintain, and {{user}} sees the cost up close."
+    },
+    {
+      "id": "her-life-and-costs-09-rival-in-the-scene",
+      "group": "Her Life And Costs",
+      "title": "Rival In The Scene",
+      "direction": "Another gyaru runs a competing circle and has started poaching students."
+    },
+    {
+      "id": "her-life-and-costs-10-old-photos-surface",
+      "group": "Her Life And Costs",
+      "title": "Old Photos Surface",
+      "direction": "Photos of {{char}} at twenty circulate again and {{user}} sees someone she does not recognise."
+    },
+    {
+      "id": "her-life-and-costs-11-her-eyes-are-tired",
+      "group": "Her Life And Costs",
+      "title": "Her Eyes Are Tired",
+      "direction": "{{char}}'s eyes have had twenty years of liner and glue and are telling her about it."
+    },
+    {
+      "id": "her-life-and-costs-12-a-hoard-of-supplies",
+      "group": "Her Life And Costs",
+      "title": "A Hoard Of Supplies",
+      "direction": "{{char}}'s flat is mostly product and she cannot throw any of it away, which {{user}} finds funny and then does not."
+    },
+    {
+      "id": "her-life-and-costs-13-non-gyaru-partner",
+      "group": "Her Life And Costs",
+      "title": "Non-Gyaru Partner",
+      "direction": "{{char}}'s partner is not in the scene, is supportive in a limited way, and {{user}} has to read the limits."
+    },
+    {
+      "id": "her-life-and-costs-14-her-mothers-opinion",
+      "group": "Her Life And Costs",
+      "title": "Her Mother's Opinion",
+      "direction": "{{char}}'s mother still says the same sentence about her face, and it still lands."
+    },
+    {
+      "id": "her-life-and-costs-15-body-changed-since-then",
+      "group": "Her Life And Costs",
+      "title": "Body Changed Since Then",
+      "direction": "{{char}}'s body has changed with age and her old techniques no longer produce the old result."
+    },
+    {
+      "id": "her-life-and-costs-16-looking-for-a-successor",
+      "group": "Her Life And Costs",
+      "title": "Looking For A Successor",
+      "direction": "{{char}} is quietly auditioning {{user}} to carry something she cannot carry much longer."
+    },
+    {
+      "id": "endpoint-and-exit-01-bounded-experiment",
+      "group": "Endpoint And Exit",
+      "title": "Bounded Experiment",
+      "direction": "The look is explicitly temporary, and the ending is a Saturday night with the makeup coming off."
+    },
+    {
+      "id": "endpoint-and-exit-02-full-adoption",
+      "group": "Endpoint And Exit",
+      "title": "Full Adoption",
+      "direction": "{{user}} goes all the way and the series ends somewhere past the lessons."
+    },
+    {
+      "id": "endpoint-and-exit-03-partial-adoption",
+      "group": "Endpoint And Exit",
+      "title": "Partial Adoption",
+      "direction": "{{user}} keeps three elements and discards the rest, and the three are not the ones {{char}} would have picked."
+    },
+    {
+      "id": "endpoint-and-exit-04-one-element-kept",
+      "group": "Endpoint And Exit",
+      "title": "One Element Kept",
+      "direction": "A single habit survives — the liner, the posture, the laugh — and that is the whole legacy."
+    },
+    {
+      "id": "endpoint-and-exit-05-learner-quits",
+      "group": "Endpoint And Exit",
+      "title": "Learner Quits",
+      "direction": "{{user}} stops for good reasons and {{char}} has to be gracious about a thing she wanted."
+    },
+    {
+      "id": "endpoint-and-exit-06-learner-teaches-back",
+      "group": "Endpoint And Exit",
+      "title": "Learner Teaches Back",
+      "direction": "{{user}} ends up teaching {{char}} something about her own look, and {{char}} has to accept it."
+    },
+    {
+      "id": "endpoint-and-exit-07-ongoing-friendship",
+      "group": "Endpoint And Exit",
+      "title": "Ongoing Friendship",
+      "direction": "The mentorship dissolves into an ordinary friendship with no curriculum and no obligation."
+    },
+    {
+      "id": "endpoint-and-exit-08-quiet-drift",
+      "group": "Endpoint And Exit",
+      "title": "Quiet Drift",
+      "direction": "They stop texting, and neither of them makes it a story."
+    },
+    {
+      "id": "endpoint-and-exit-09-becomes-a-peer",
+      "group": "Endpoint And Exit",
+      "title": "Becomes A Peer",
+      "direction": "{{user}} starts getting asked for advice by other people, and {{char}} watches it happen."
+    },
+    {
+      "id": "endpoint-and-exit-10-co-conspirators-now",
+      "group": "Endpoint And Exit",
+      "title": "Co-Conspirators Now",
+      "direction": "They end up doing this together — a shared project, a shared night out, a shared rule about weekends."
+    },
+    {
+      "id": "endpoint-and-exit-11-learner-moves-away",
+      "group": "Endpoint And Exit",
+      "title": "Learner Moves Away",
+      "direction": "{{user}} moves cities and the look has to survive without the person who taught it."
+    },
+    {
+      "id": "endpoint-and-exit-12-she-stops-being-gyaru",
+      "group": "Endpoint And Exit",
+      "title": "She Stops Being Gyaru",
+      "direction": "{{char}} stops, and {{user}} is the person who notices first and has to decide what to say."
+    },
+    {
+      "id": "endpoint-and-exit-13-mutual-makeover",
+      "group": "Endpoint And Exit",
+      "title": "Mutual Makeover",
+      "direction": "They dress each other, and {{char}} ends up changed by a beginner's eye."
+    },
+    {
+      "id": "endpoint-and-exit-14-public-debut",
+      "group": "Endpoint And Exit",
+      "title": "Public Debut",
+      "direction": "The endpoint is a specific night where {{user}} is seen by everyone who doubted her."
+    },
+    {
+      "id": "endpoint-and-exit-15-private-only",
+      "group": "Endpoint And Exit",
+      "title": "Private Only",
+      "direction": "{{user}} never goes public and the look stays inside {{char}}'s flat, which both of them have to accept."
+    },
+    {
+      "id": "endpoint-and-exit-16-deliberately-open",
+      "group": "Endpoint And Exit",
+      "title": "Deliberately Open",
+      "direction": "The ending is deliberately unresolved: the kit is on the table, the next session unscheduled, and nothing is decided."
+    },
+    {
+      "id": "combinations-001-ageha-devotee--never-worn-makeup",
+      "group": "Combinations",
+      "title": "Ageha × Complete Beginner",
+      "direction": "{{char}} practises an Ageha-school glamour of lashes, nails and gloss; {{user}} arrives as an adult who has never worn makeup and owns no brushes. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-002-ageha-devotee--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "Ageha × Tomboy",
+      "direction": "{{char}}'s own practice is an Ageha-school glamour of lashes, nails and gloss. {{user}} is a tomboy who has finally asked, badly, for help, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-003-ageha-devotee--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "Ageha × Office Uniform",
+      "direction": "Set {{char}}'s practice as an Ageha-school glamour of lashes, nails and gloss against someone who has worn the same safe office uniform for a decade. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-004-ageha-devotee--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "Ageha × Plus-Size",
+      "direction": "{{char}} practises an Ageha-school glamour of lashes, nails and gloss. {{user}} arrives as a plus-size adult whom shops have told this look is not for her — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-005-ageha-devotee--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "Ageha × Forty-Plus",
+      "direction": "{{char}} practises an Ageha-school glamour of lashes, nails and gloss; {{user}} arrives as an adult in her forties with money, nerve and none of the references. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-006-ageha-devotee--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "Ageha × The Overdressed",
+      "direction": "{{char}}'s own practice is an Ageha-school glamour of lashes, nails and gloss. {{user}} is a confident adult dressed well by ordinary standards and bored of it, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-007-ageha-devotee--divorce-reinvention",
+      "group": "Combinations",
+      "title": "Ageha × Post-Divorce",
+      "direction": "Set {{char}}'s practice as an Ageha-school glamour of lashes, nails and gloss against an adult six months out of a long marriage, rebuilding her surface first. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-008-ageha-devotee--student-with-a-job",
+      "group": "Combinations",
+      "title": "Ageha × Working Student",
+      "direction": "{{char}} practises an Ageha-school glamour of lashes, nails and gloss. {{user}} arrives as a student with more time than money and a six o'clock shift — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-009-ageha-devotee--one-night-curiosity",
+      "group": "Combinations",
+      "title": "Ageha × One Night",
+      "direction": "{{char}} practises an Ageha-school glamour of lashes, nails and gloss; {{user}} arrives as an adult who wants the look for exactly one night. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-010-ageha-devotee--partner-suggested-it",
+      "group": "Combinations",
+      "title": "Ageha × Partner's Idea",
+      "direction": "{{char}}'s own practice is an Ageha-school glamour of lashes, nails and gloss. {{user}} is an adult whose partner suggested this and who has not agreed, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-011-tsuyome-veteran--never-worn-makeup",
+      "group": "Combinations",
+      "title": "Tsuyome × Complete Beginner",
+      "direction": "Set {{char}}'s practice as a tsuyome look of hard liner and a sharper attitude against an adult who has never worn makeup and owns no brushes. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-012-tsuyome-veteran--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "Tsuyome × Tomboy",
+      "direction": "{{char}} practises a tsuyome look of hard liner and a sharper attitude. {{user}} arrives as a tomboy who has finally asked, badly, for help — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-013-tsuyome-veteran--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "Tsuyome × Office Uniform",
+      "direction": "{{char}} practises a tsuyome look of hard liner and a sharper attitude; {{user}} arrives as someone who has worn the same safe office uniform for a decade. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-014-tsuyome-veteran--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "Tsuyome × Plus-Size",
+      "direction": "{{char}}'s own practice is a tsuyome look of hard liner and a sharper attitude. {{user}} is a plus-size adult whom shops have told this look is not for her, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-015-tsuyome-veteran--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "Tsuyome × Forty-Plus",
+      "direction": "Set {{char}}'s practice as a tsuyome look of hard liner and a sharper attitude against an adult in her forties with money, nerve and none of the references. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-016-tsuyome-veteran--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "Tsuyome × The Overdressed",
+      "direction": "{{char}} practises a tsuyome look of hard liner and a sharper attitude. {{user}} arrives as a confident adult dressed well by ordinary standards and bored of it — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-017-tsuyome-veteran--divorce-reinvention",
+      "group": "Combinations",
+      "title": "Tsuyome × Post-Divorce",
+      "direction": "{{char}} practises a tsuyome look of hard liner and a sharper attitude; {{user}} arrives as an adult six months out of a long marriage, rebuilding her surface first. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-018-tsuyome-veteran--student-with-a-job",
+      "group": "Combinations",
+      "title": "Tsuyome × Working Student",
+      "direction": "{{char}}'s own practice is a tsuyome look of hard liner and a sharper attitude. {{user}} is a student with more time than money and a six o'clock shift, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-019-tsuyome-veteran--one-night-curiosity",
+      "group": "Combinations",
+      "title": "Tsuyome × One Night",
+      "direction": "Set {{char}}'s practice as a tsuyome look of hard liner and a sharper attitude against an adult who wants the look for exactly one night. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-020-tsuyome-veteran--partner-suggested-it",
+      "group": "Combinations",
+      "title": "Tsuyome × Partner's Idea",
+      "direction": "{{char}} practises a tsuyome look of hard liner and a sharper attitude. {{user}} arrives as an adult whose partner suggested this and who has not agreed — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-021-hime-gal-romantic--never-worn-makeup",
+      "group": "Combinations",
+      "title": "Hime Gal × Complete Beginner",
+      "direction": "{{char}} practises hime-gal pink, ribbons and deliberate sweetness; {{user}} arrives as an adult who has never worn makeup and owns no brushes. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-022-hime-gal-romantic--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "Hime Gal × Tomboy",
+      "direction": "{{char}}'s own practice is hime-gal pink, ribbons and deliberate sweetness. {{user}} is a tomboy who has finally asked, badly, for help, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-023-hime-gal-romantic--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "Hime Gal × Office Uniform",
+      "direction": "Set {{char}}'s practice as hime-gal pink, ribbons and deliberate sweetness against someone who has worn the same safe office uniform for a decade. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-024-hime-gal-romantic--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "Hime Gal × Plus-Size",
+      "direction": "{{char}} practises hime-gal pink, ribbons and deliberate sweetness. {{user}} arrives as a plus-size adult whom shops have told this look is not for her — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-025-hime-gal-romantic--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "Hime Gal × Forty-Plus",
+      "direction": "{{char}} practises hime-gal pink, ribbons and deliberate sweetness; {{user}} arrives as an adult in her forties with money, nerve and none of the references. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-026-hime-gal-romantic--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "Hime Gal × The Overdressed",
+      "direction": "{{char}}'s own practice is hime-gal pink, ribbons and deliberate sweetness. {{user}} is a confident adult dressed well by ordinary standards and bored of it, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-027-hime-gal-romantic--divorce-reinvention",
+      "group": "Combinations",
+      "title": "Hime Gal × Post-Divorce",
+      "direction": "Set {{char}}'s practice as hime-gal pink, ribbons and deliberate sweetness against an adult six months out of a long marriage, rebuilding her surface first. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-028-hime-gal-romantic--student-with-a-job",
+      "group": "Combinations",
+      "title": "Hime Gal × Working Student",
+      "direction": "{{char}} practises hime-gal pink, ribbons and deliberate sweetness. {{user}} arrives as a student with more time than money and a six o'clock shift — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-029-hime-gal-romantic--one-night-curiosity",
+      "group": "Combinations",
+      "title": "Hime Gal × One Night",
+      "direction": "{{char}} practises hime-gal pink, ribbons and deliberate sweetness; {{user}} arrives as an adult who wants the look for exactly one night. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-030-hime-gal-romantic--partner-suggested-it",
+      "group": "Combinations",
+      "title": "Hime Gal × Partner's Idea",
+      "direction": "{{char}}'s own practice is hime-gal pink, ribbons and deliberate sweetness. {{user}} is an adult whose partner suggested this and who has not agreed, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-031-kuro-gyaru--never-worn-makeup",
+      "group": "Combinations",
+      "title": "Kuro Gyaru × Complete Beginner",
+      "direction": "Set {{char}}'s practice as kuro-gyaru tan and white liner against an adult who has never worn makeup and owns no brushes. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-032-kuro-gyaru--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "Kuro Gyaru × Tomboy",
+      "direction": "{{char}} practises kuro-gyaru tan and white liner. {{user}} arrives as a tomboy who has finally asked, badly, for help — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-033-kuro-gyaru--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "Kuro Gyaru × Office Uniform",
+      "direction": "{{char}} practises kuro-gyaru tan and white liner; {{user}} arrives as someone who has worn the same safe office uniform for a decade. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-034-kuro-gyaru--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "Kuro Gyaru × Plus-Size",
+      "direction": "{{char}}'s own practice is kuro-gyaru tan and white liner. {{user}} is a plus-size adult whom shops have told this look is not for her, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-035-kuro-gyaru--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "Kuro Gyaru × Forty-Plus",
+      "direction": "Set {{char}}'s practice as kuro-gyaru tan and white liner against an adult in her forties with money, nerve and none of the references. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-036-kuro-gyaru--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "Kuro Gyaru × The Overdressed",
+      "direction": "{{char}} practises kuro-gyaru tan and white liner. {{user}} arrives as a confident adult dressed well by ordinary standards and bored of it — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-037-kuro-gyaru--divorce-reinvention",
+      "group": "Combinations",
+      "title": "Kuro Gyaru × Post-Divorce",
+      "direction": "{{char}} practises kuro-gyaru tan and white liner; {{user}} arrives as an adult six months out of a long marriage, rebuilding her surface first. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-038-kuro-gyaru--student-with-a-job",
+      "group": "Combinations",
+      "title": "Kuro Gyaru × Working Student",
+      "direction": "{{char}}'s own practice is kuro-gyaru tan and white liner. {{user}} is a student with more time than money and a six o'clock shift, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-039-kuro-gyaru--one-night-curiosity",
+      "group": "Combinations",
+      "title": "Kuro Gyaru × One Night",
+      "direction": "Set {{char}}'s practice as kuro-gyaru tan and white liner against an adult who wants the look for exactly one night. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-040-kuro-gyaru--partner-suggested-it",
+      "group": "Combinations",
+      "title": "Kuro Gyaru × Partner's Idea",
+      "direction": "{{char}} practises kuro-gyaru tan and white liner. {{user}} arrives as an adult whose partner suggested this and who has not agreed — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-041-shiro-gyaru--never-worn-makeup",
+      "group": "Combinations",
+      "title": "Shiro Gyaru × Complete Beginner",
+      "direction": "{{char}} practises shiro-gyaru pale skin and soft, high-contrast tones; {{user}} arrives as an adult who has never worn makeup and owns no brushes. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-042-shiro-gyaru--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "Shiro Gyaru × Tomboy",
+      "direction": "{{char}}'s own practice is shiro-gyaru pale skin and soft, high-contrast tones. {{user}} is a tomboy who has finally asked, badly, for help, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-043-shiro-gyaru--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "Shiro Gyaru × Office Uniform",
+      "direction": "Set {{char}}'s practice as shiro-gyaru pale skin and soft, high-contrast tones against someone who has worn the same safe office uniform for a decade. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-044-shiro-gyaru--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "Shiro Gyaru × Plus-Size",
+      "direction": "{{char}} practises shiro-gyaru pale skin and soft, high-contrast tones. {{user}} arrives as a plus-size adult whom shops have told this look is not for her — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-045-shiro-gyaru--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "Shiro Gyaru × Forty-Plus",
+      "direction": "{{char}} practises shiro-gyaru pale skin and soft, high-contrast tones; {{user}} arrives as an adult in her forties with money, nerve and none of the references. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-046-shiro-gyaru--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "Shiro Gyaru × The Overdressed",
+      "direction": "{{char}}'s own practice is shiro-gyaru pale skin and soft, high-contrast tones. {{user}} is a confident adult dressed well by ordinary standards and bored of it, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-047-shiro-gyaru--divorce-reinvention",
+      "group": "Combinations",
+      "title": "Shiro Gyaru × Post-Divorce",
+      "direction": "Set {{char}}'s practice as shiro-gyaru pale skin and soft, high-contrast tones against an adult six months out of a long marriage, rebuilding her surface first. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-048-shiro-gyaru--student-with-a-job",
+      "group": "Combinations",
+      "title": "Shiro Gyaru × Working Student",
+      "direction": "{{char}} practises shiro-gyaru pale skin and soft, high-contrast tones. {{user}} arrives as a student with more time than money and a six o'clock shift — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-049-shiro-gyaru--one-night-curiosity",
+      "group": "Combinations",
+      "title": "Shiro Gyaru × One Night",
+      "direction": "{{char}} practises shiro-gyaru pale skin and soft, high-contrast tones; {{user}} arrives as an adult who wants the look for exactly one night. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-050-shiro-gyaru--partner-suggested-it",
+      "group": "Combinations",
+      "title": "Shiro Gyaru × Partner's Idea",
+      "direction": "{{char}}'s own practice is shiro-gyaru pale skin and soft, high-contrast tones. {{user}} is an adult whose partner suggested this and who has not agreed, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-051-ame-kaji-casual--never-worn-makeup",
+      "group": "Combinations",
+      "title": "Ame-Kaji × Complete Beginner",
+      "direction": "Set {{char}}'s practice as ame-kaji softness that only looks casual against an adult who has never worn makeup and owns no brushes. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-052-ame-kaji-casual--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "Ame-Kaji × Tomboy",
+      "direction": "{{char}} practises ame-kaji softness that only looks casual. {{user}} arrives as a tomboy who has finally asked, badly, for help — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-053-ame-kaji-casual--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "Ame-Kaji × Office Uniform",
+      "direction": "{{char}} practises ame-kaji softness that only looks casual; {{user}} arrives as someone who has worn the same safe office uniform for a decade. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-054-ame-kaji-casual--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "Ame-Kaji × Plus-Size",
+      "direction": "{{char}}'s own practice is ame-kaji softness that only looks casual. {{user}} is a plus-size adult whom shops have told this look is not for her, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-055-ame-kaji-casual--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "Ame-Kaji × Forty-Plus",
+      "direction": "Set {{char}}'s practice as ame-kaji softness that only looks casual against an adult in her forties with money, nerve and none of the references. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-056-ame-kaji-casual--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "Ame-Kaji × The Overdressed",
+      "direction": "{{char}} practises ame-kaji softness that only looks casual. {{user}} arrives as a confident adult dressed well by ordinary standards and bored of it — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-057-ame-kaji-casual--divorce-reinvention",
+      "group": "Combinations",
+      "title": "Ame-Kaji × Post-Divorce",
+      "direction": "{{char}} practises ame-kaji softness that only looks casual; {{user}} arrives as an adult six months out of a long marriage, rebuilding her surface first. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-058-ame-kaji-casual--student-with-a-job",
+      "group": "Combinations",
+      "title": "Ame-Kaji × Working Student",
+      "direction": "{{char}}'s own practice is ame-kaji softness that only looks casual. {{user}} is a student with more time than money and a six o'clock shift, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-059-ame-kaji-casual--one-night-curiosity",
+      "group": "Combinations",
+      "title": "Ame-Kaji × One Night",
+      "direction": "Set {{char}}'s practice as ame-kaji softness that only looks casual against an adult who wants the look for exactly one night. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-060-ame-kaji-casual--partner-suggested-it",
+      "group": "Combinations",
+      "title": "Ame-Kaji × Partner's Idea",
+      "direction": "{{char}} practises ame-kaji softness that only looks casual. {{user}} arrives as an adult whose partner suggested this and who has not agreed — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-061-roma-gyaru--never-worn-makeup",
+      "group": "Combinations",
+      "title": "Roma × Complete Beginner",
+      "direction": "{{char}} practises roma-gyaru print-clash and scavenged layers; {{user}} arrives as an adult who has never worn makeup and owns no brushes. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-062-roma-gyaru--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "Roma × Tomboy",
+      "direction": "{{char}}'s own practice is roma-gyaru print-clash and scavenged layers. {{user}} is a tomboy who has finally asked, badly, for help, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-063-roma-gyaru--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "Roma × Office Uniform",
+      "direction": "Set {{char}}'s practice as roma-gyaru print-clash and scavenged layers against someone who has worn the same safe office uniform for a decade. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-064-roma-gyaru--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "Roma × Plus-Size",
+      "direction": "{{char}} practises roma-gyaru print-clash and scavenged layers. {{user}} arrives as a plus-size adult whom shops have told this look is not for her — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-065-roma-gyaru--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "Roma × Forty-Plus",
+      "direction": "{{char}} practises roma-gyaru print-clash and scavenged layers; {{user}} arrives as an adult in her forties with money, nerve and none of the references. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-066-roma-gyaru--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "Roma × The Overdressed",
+      "direction": "{{char}}'s own practice is roma-gyaru print-clash and scavenged layers. {{user}} is a confident adult dressed well by ordinary standards and bored of it, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-067-roma-gyaru--divorce-reinvention",
+      "group": "Combinations",
+      "title": "Roma × Post-Divorce",
+      "direction": "Set {{char}}'s practice as roma-gyaru print-clash and scavenged layers against an adult six months out of a long marriage, rebuilding her surface first. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-068-roma-gyaru--student-with-a-job",
+      "group": "Combinations",
+      "title": "Roma × Working Student",
+      "direction": "{{char}} practises roma-gyaru print-clash and scavenged layers. {{user}} arrives as a student with more time than money and a six o'clock shift — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-069-roma-gyaru--one-night-curiosity",
+      "group": "Combinations",
+      "title": "Roma × One Night",
+      "direction": "{{char}} practises roma-gyaru print-clash and scavenged layers; {{user}} arrives as an adult who wants the look for exactly one night. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-070-roma-gyaru--partner-suggested-it",
+      "group": "Combinations",
+      "title": "Roma × Partner's Idea",
+      "direction": "{{char}}'s own practice is roma-gyaru print-clash and scavenged layers. {{user}} is an adult whose partner suggested this and who has not agreed, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-071-gyaruo-brother--never-worn-makeup",
+      "group": "Combinations",
+      "title": "Gyaruo × Complete Beginner",
+      "direction": "Set {{char}}'s practice as gyaruo styling, club culture and self-set hair against an adult who has never worn makeup and owns no brushes. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-072-gyaruo-brother--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "Gyaruo × Tomboy",
+      "direction": "{{char}} practises gyaruo styling, club culture and self-set hair. {{user}} arrives as a tomboy who has finally asked, badly, for help — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-073-gyaruo-brother--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "Gyaruo × Office Uniform",
+      "direction": "{{char}} practises gyaruo styling, club culture and self-set hair; {{user}} arrives as someone who has worn the same safe office uniform for a decade. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-074-gyaruo-brother--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "Gyaruo × Plus-Size",
+      "direction": "{{char}}'s own practice is gyaruo styling, club culture and self-set hair. {{user}} is a plus-size adult whom shops have told this look is not for her, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-075-gyaruo-brother--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "Gyaruo × Forty-Plus",
+      "direction": "Set {{char}}'s practice as gyaruo styling, club culture and self-set hair against an adult in her forties with money, nerve and none of the references. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-076-gyaruo-brother--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "Gyaruo × The Overdressed",
+      "direction": "{{char}} practises gyaruo styling, club culture and self-set hair. {{user}} arrives as a confident adult dressed well by ordinary standards and bored of it — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-077-gyaruo-brother--divorce-reinvention",
+      "group": "Combinations",
+      "title": "Gyaruo × Post-Divorce",
+      "direction": "{{char}} practises gyaruo styling, club culture and self-set hair; {{user}} arrives as an adult six months out of a long marriage, rebuilding her surface first. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-078-gyaruo-brother--student-with-a-job",
+      "group": "Combinations",
+      "title": "Gyaruo × Working Student",
+      "direction": "{{char}}'s own practice is gyaruo styling, club culture and self-set hair. {{user}} is a student with more time than money and a six o'clock shift, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-079-gyaruo-brother--one-night-curiosity",
+      "group": "Combinations",
+      "title": "Gyaruo × One Night",
+      "direction": "Set {{char}}'s practice as gyaruo styling, club culture and self-set hair against an adult who wants the look for exactly one night. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-080-gyaruo-brother--partner-suggested-it",
+      "group": "Combinations",
+      "title": "Gyaruo × Partner's Idea",
+      "direction": "{{char}} practises gyaruo styling, club culture and self-set hair. {{user}} arrives as an adult whose partner suggested this and who has not agreed — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-081-retired-then-returned--never-worn-makeup",
+      "group": "Combinations",
+      "title": "The Returnee × Complete Beginner",
+      "direction": "{{char}} practises a look she abandoned at twenty-eight and rebuilt at thirty-eight; {{user}} arrives as an adult who has never worn makeup and owns no brushes. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-082-retired-then-returned--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "The Returnee × Tomboy",
+      "direction": "{{char}}'s own practice is a look she abandoned at twenty-eight and rebuilt at thirty-eight. {{user}} is a tomboy who has finally asked, badly, for help, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-083-retired-then-returned--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "The Returnee × Office Uniform",
+      "direction": "Set {{char}}'s practice as a look she abandoned at twenty-eight and rebuilt at thirty-eight against someone who has worn the same safe office uniform for a decade. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-084-retired-then-returned--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "The Returnee × Plus-Size",
+      "direction": "{{char}} practises a look she abandoned at twenty-eight and rebuilt at thirty-eight. {{user}} arrives as a plus-size adult whom shops have told this look is not for her — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-085-retired-then-returned--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "The Returnee × Forty-Plus",
+      "direction": "{{char}} practises a look she abandoned at twenty-eight and rebuilt at thirty-eight; {{user}} arrives as an adult in her forties with money, nerve and none of the references. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-086-retired-then-returned--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "The Returnee × The Overdressed",
+      "direction": "{{char}}'s own practice is a look she abandoned at twenty-eight and rebuilt at thirty-eight. {{user}} is a confident adult dressed well by ordinary standards and bored of it, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-087-retired-then-returned--divorce-reinvention",
+      "group": "Combinations",
+      "title": "The Returnee × Post-Divorce",
+      "direction": "Set {{char}}'s practice as a look she abandoned at twenty-eight and rebuilt at thirty-eight against an adult six months out of a long marriage, rebuilding her surface first. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-088-retired-then-returned--student-with-a-job",
+      "group": "Combinations",
+      "title": "The Returnee × Working Student",
+      "direction": "{{char}} practises a look she abandoned at twenty-eight and rebuilt at thirty-eight. {{user}} arrives as a student with more time than money and a six o'clock shift — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-089-retired-then-returned--one-night-curiosity",
+      "group": "Combinations",
+      "title": "The Returnee × One Night",
+      "direction": "{{char}} practises a look she abandoned at twenty-eight and rebuilt at thirty-eight; {{user}} arrives as an adult who wants the look for exactly one night. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-090-retired-then-returned--partner-suggested-it",
+      "group": "Combinations",
+      "title": "The Returnee × Partner's Idea",
+      "direction": "{{char}}'s own practice is a look she abandoned at twenty-eight and rebuilt at thirty-eight. {{user}} is an adult whose partner suggested this and who has not agreed, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-091-corporate-by-day--never-worn-makeup",
+      "group": "Combinations",
+      "title": "Corporate × Complete Beginner",
+      "direction": "Set {{char}}'s practice as a weekday version that survives a corporate dress code against an adult who has never worn makeup and owns no brushes. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-092-corporate-by-day--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "Corporate × Tomboy",
+      "direction": "{{char}} practises a weekday version that survives a corporate dress code. {{user}} arrives as a tomboy who has finally asked, badly, for help — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-093-corporate-by-day--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "Corporate × Office Uniform",
+      "direction": "{{char}} practises a weekday version that survives a corporate dress code; {{user}} arrives as someone who has worn the same safe office uniform for a decade. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-094-corporate-by-day--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "Corporate × Plus-Size",
+      "direction": "{{char}}'s own practice is a weekday version that survives a corporate dress code. {{user}} is a plus-size adult whom shops have told this look is not for her, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-095-corporate-by-day--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "Corporate × Forty-Plus",
+      "direction": "Set {{char}}'s practice as a weekday version that survives a corporate dress code against an adult in her forties with money, nerve and none of the references. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-096-corporate-by-day--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "Corporate × The Overdressed",
+      "direction": "{{char}} practises a weekday version that survives a corporate dress code. {{user}} arrives as a confident adult dressed well by ordinary standards and bored of it — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-097-corporate-by-day--divorce-reinvention",
+      "group": "Combinations",
+      "title": "Corporate × Post-Divorce",
+      "direction": "{{char}} practises a weekday version that survives a corporate dress code; {{user}} arrives as an adult six months out of a long marriage, rebuilding her surface first. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-098-corporate-by-day--student-with-a-job",
+      "group": "Combinations",
+      "title": "Corporate × Working Student",
+      "direction": "{{char}}'s own practice is a weekday version that survives a corporate dress code. {{user}} is a student with more time than money and a six o'clock shift, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-099-corporate-by-day--one-night-curiosity",
+      "group": "Combinations",
+      "title": "Corporate × One Night",
+      "direction": "Set {{char}}'s practice as a weekday version that survives a corporate dress code against an adult who wants the look for exactly one night. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-100-corporate-by-day--partner-suggested-it",
+      "group": "Combinations",
+      "title": "Corporate × Partner's Idea",
+      "direction": "{{char}} practises a weekday version that survives a corporate dress code. {{user}} arrives as an adult whose partner suggested this and who has not agreed — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-101-self-taught-from-magazines--never-worn-makeup",
+      "group": "Combinations",
+      "title": "Self-Taught × Complete Beginner",
+      "direction": "{{char}} practises a self-taught technique assembled from decade-old magazines; {{user}} arrives as an adult who has never worn makeup and owns no brushes. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-102-self-taught-from-magazines--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "Self-Taught × Tomboy",
+      "direction": "{{char}}'s own practice is a self-taught technique assembled from decade-old magazines. {{user}} is a tomboy who has finally asked, badly, for help, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-103-self-taught-from-magazines--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "Self-Taught × Office Uniform",
+      "direction": "Set {{char}}'s practice as a self-taught technique assembled from decade-old magazines against someone who has worn the same safe office uniform for a decade. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-104-self-taught-from-magazines--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "Self-Taught × Plus-Size",
+      "direction": "{{char}} practises a self-taught technique assembled from decade-old magazines. {{user}} arrives as a plus-size adult whom shops have told this look is not for her — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-105-self-taught-from-magazines--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "Self-Taught × Forty-Plus",
+      "direction": "{{char}} practises a self-taught technique assembled from decade-old magazines; {{user}} arrives as an adult in her forties with money, nerve and none of the references. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-106-self-taught-from-magazines--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "Self-Taught × The Overdressed",
+      "direction": "{{char}}'s own practice is a self-taught technique assembled from decade-old magazines. {{user}} is a confident adult dressed well by ordinary standards and bored of it, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-107-self-taught-from-magazines--divorce-reinvention",
+      "group": "Combinations",
+      "title": "Self-Taught × Post-Divorce",
+      "direction": "Set {{char}}'s practice as a self-taught technique assembled from decade-old magazines against an adult six months out of a long marriage, rebuilding her surface first. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-108-self-taught-from-magazines--student-with-a-job",
+      "group": "Combinations",
+      "title": "Self-Taught × Working Student",
+      "direction": "{{char}} practises a self-taught technique assembled from decade-old magazines. {{user}} arrives as a student with more time than money and a six o'clock shift — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-109-self-taught-from-magazines--one-night-curiosity",
+      "group": "Combinations",
+      "title": "Self-Taught × One Night",
+      "direction": "{{char}} practises a self-taught technique assembled from decade-old magazines; {{user}} arrives as an adult who wants the look for exactly one night. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-110-self-taught-from-magazines--partner-suggested-it",
+      "group": "Combinations",
+      "title": "Self-Taught × Partner's Idea",
+      "direction": "{{char}}'s own practice is a self-taught technique assembled from decade-old magazines. {{user}} is an adult whose partner suggested this and who has not agreed, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-111-scene-elder--never-worn-makeup",
+      "group": "Combinations",
+      "title": "Scene Elder × Complete Beginner",
+      "direction": "Set {{char}}'s practice as a scene elder's authority built on fifteen years of showing up against an adult who has never worn makeup and owns no brushes. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-112-scene-elder--tomboy-in-denial",
+      "group": "Combinations",
+      "title": "Scene Elder × Tomboy",
+      "direction": "{{char}} practises a scene elder's authority built on fifteen years of showing up. {{user}} arrives as a tomboy who has finally asked, badly, for help — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-113-scene-elder--office-uniform-prisoner",
+      "group": "Combinations",
+      "title": "Scene Elder × Office Uniform",
+      "direction": "{{char}} practises a scene elder's authority built on fifteen years of showing up; {{user}} arrives as someone who has worn the same safe office uniform for a decade. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-114-scene-elder--plus-size-and-overlooked",
+      "group": "Combinations",
+      "title": "Scene Elder × Plus-Size",
+      "direction": "{{char}}'s own practice is a scene elder's authority built on fifteen years of showing up. {{user}} is a plus-size adult whom shops have told this look is not for her, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-115-scene-elder--learner-in-her-forties",
+      "group": "Combinations",
+      "title": "Scene Elder × Forty-Plus",
+      "direction": "Set {{char}}'s practice as a scene elder's authority built on fifteen years of showing up against an adult in her forties with money, nerve and none of the references. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-116-scene-elder--confident-wrong-fit",
+      "group": "Combinations",
+      "title": "Scene Elder × The Overdressed",
+      "direction": "{{char}} practises a scene elder's authority built on fifteen years of showing up. {{user}} arrives as a confident adult dressed well by ordinary standards and bored of it — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-117-scene-elder--divorce-reinvention",
+      "group": "Combinations",
+      "title": "Scene Elder × Post-Divorce",
+      "direction": "{{char}} practises a scene elder's authority built on fifteen years of showing up; {{user}} arrives as an adult six months out of a long marriage, rebuilding her surface first. The first session has to reconcile the two before either of them decides what the look is for."
+    },
+    {
+      "id": "combinations-118-scene-elder--student-with-a-job",
+      "group": "Combinations",
+      "title": "Scene Elder × Working Student",
+      "direction": "{{char}}'s own practice is a scene elder's authority built on fifteen years of showing up. {{user}} is a student with more time than money and a six o'clock shift, and nothing in the lesson {{char}} planned was designed for that gap."
+    },
+    {
+      "id": "combinations-119-scene-elder--one-night-curiosity",
+      "group": "Combinations",
+      "title": "Scene Elder × One Night",
+      "direction": "Set {{char}}'s practice as a scene elder's authority built on fifteen years of showing up against an adult who wants the look for exactly one night. The lesson has to be rebuilt in the room, in front of {{user}}, and {{char}} does not get to pre-approve the result."
+    },
+    {
+      "id": "combinations-120-scene-elder--partner-suggested-it",
+      "group": "Combinations",
+      "title": "Scene Elder × Partner's Idea",
+      "direction": "{{char}} practises a scene elder's authority built on fifteen years of showing up. {{user}} arrives as an adult whose partner suggested this and who has not agreed — before a single item is bought, {{char}} has to work out whether she is teaching toward her own look or toward the one {{user}} can actually carry."
+    },
+    {
+      "id": "combinations-121-eyeliner-fundamentals--taste-clash",
+      "group": "Combinations",
+      "title": "Eyeliner × Taste Clash",
+      "direction": "The curriculum is the wing, the hand tremor and forty bad first attempts. What gets in the way is one specific disagreement where neither taste is wrong, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-122-eyeliner-fundamentals--wants-to-be-a-clone",
+      "group": "Combinations",
+      "title": "Eyeliner × Clone Request",
+      "direction": "the wing, the hand tremor and forty bad first attempts is the lesson; {{user}} wanting to be an exact copy and being refused is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-123-eyeliner-fundamentals--partner-objects",
+      "group": "Combinations",
+      "title": "Eyeliner × Partner Objects",
+      "direction": "A lesson on the wing, the hand tremor and forty bad first attempts collides with a partner who calls it a phase, a threat or an embarrassment, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-124-eyeliner-fundamentals--friends-mock-it",
+      "group": "Combinations",
+      "title": "Eyeliner × Mocking Friends",
+      "direction": "{{char}} plans a session on the wing, the hand tremor and forty bad first attempts and runs straight into friends who treat the whole thing as a joke. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-125-eyeliner-fundamentals--family-disapproval",
+      "group": "Combinations",
+      "title": "Eyeliner × Family",
+      "direction": "The curriculum is the wing, the hand tremor and forty bad first attempts. What gets in the way is a parent's disapproval landing hard on both of them, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-126-eyeliner-fundamentals--dress-code-threat",
+      "group": "Combinations",
+      "title": "Eyeliner × Dress Code",
+      "direction": "the wing, the hand tremor and forty bad first attempts is the lesson; a workplace rule that turns the look into a disciplinary question is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-127-eyeliner-fundamentals--hates-the-tan",
+      "group": "Combinations",
+      "title": "Eyeliner × The Tan",
+      "direction": "A lesson on the wing, the hand tremor and forty bad first attempts collides with one honest objection to the tan that threatens the whole plan, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-128-eyeliner-fundamentals--costume-worry",
+      "group": "Combinations",
+      "title": "Eyeliner × The Costume Question",
+      "direction": "{{char}} plans a session on the wing, the hand tremor and forty bad first attempts and runs straight into the worry that it reads as a costume on her, said out loud. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-129-eyeliner-fundamentals--quits-midway",
+      "group": "Combinations",
+      "title": "Eyeliner × Quitting",
+      "direction": "The curriculum is the wing, the hand tremor and forty bad first attempts. What gets in the way is a session abandoned halfway through with no explanation, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-130-eyeliner-fundamentals--teacher-oversteps",
+      "group": "Combinations",
+      "title": "Eyeliner × Overstepping",
+      "direction": "the wing, the hand tremor and forty bad first attempts is the lesson; one suggestion pushed too far and named as such is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-131-lash-application--taste-clash",
+      "group": "Combinations",
+      "title": "Lashes × Taste Clash",
+      "direction": "A lesson on strip lashes, glue control and the looking-down trick collides with one specific disagreement where neither taste is wrong, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-132-lash-application--wants-to-be-a-clone",
+      "group": "Combinations",
+      "title": "Lashes × Clone Request",
+      "direction": "{{char}} plans a session on strip lashes, glue control and the looking-down trick and runs straight into {{user}} wanting to be an exact copy and being refused. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-133-lash-application--partner-objects",
+      "group": "Combinations",
+      "title": "Lashes × Partner Objects",
+      "direction": "The curriculum is strip lashes, glue control and the looking-down trick. What gets in the way is a partner who calls it a phase, a threat or an embarrassment, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-134-lash-application--friends-mock-it",
+      "group": "Combinations",
+      "title": "Lashes × Mocking Friends",
+      "direction": "strip lashes, glue control and the looking-down trick is the lesson; friends who treat the whole thing as a joke is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-135-lash-application--family-disapproval",
+      "group": "Combinations",
+      "title": "Lashes × Family",
+      "direction": "A lesson on strip lashes, glue control and the looking-down trick collides with a parent's disapproval landing hard on both of them, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-136-lash-application--dress-code-threat",
+      "group": "Combinations",
+      "title": "Lashes × Dress Code",
+      "direction": "{{char}} plans a session on strip lashes, glue control and the looking-down trick and runs straight into a workplace rule that turns the look into a disciplinary question. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-137-lash-application--hates-the-tan",
+      "group": "Combinations",
+      "title": "Lashes × The Tan",
+      "direction": "The curriculum is strip lashes, glue control and the looking-down trick. What gets in the way is one honest objection to the tan that threatens the whole plan, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-138-lash-application--costume-worry",
+      "group": "Combinations",
+      "title": "Lashes × The Costume Question",
+      "direction": "strip lashes, glue control and the looking-down trick is the lesson; the worry that it reads as a costume on her, said out loud is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-139-lash-application--quits-midway",
+      "group": "Combinations",
+      "title": "Lashes × Quitting",
+      "direction": "A lesson on strip lashes, glue control and the looking-down trick collides with a session abandoned halfway through with no explanation, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-140-lash-application--teacher-oversteps",
+      "group": "Combinations",
+      "title": "Lashes × Overstepping",
+      "direction": "{{char}} plans a session on strip lashes, glue control and the looking-down trick and runs straight into one suggestion pushed too far and named as such. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-141-base-and-contour--taste-clash",
+      "group": "Combinations",
+      "title": "Base × Taste Clash",
+      "direction": "The curriculum is a base built to survive humidity and a long train ride. What gets in the way is one specific disagreement where neither taste is wrong, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-142-base-and-contour--wants-to-be-a-clone",
+      "group": "Combinations",
+      "title": "Base × Clone Request",
+      "direction": "a base built to survive humidity and a long train ride is the lesson; {{user}} wanting to be an exact copy and being refused is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-143-base-and-contour--partner-objects",
+      "group": "Combinations",
+      "title": "Base × Partner Objects",
+      "direction": "A lesson on a base built to survive humidity and a long train ride collides with a partner who calls it a phase, a threat or an embarrassment, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-144-base-and-contour--friends-mock-it",
+      "group": "Combinations",
+      "title": "Base × Mocking Friends",
+      "direction": "{{char}} plans a session on a base built to survive humidity and a long train ride and runs straight into friends who treat the whole thing as a joke. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-145-base-and-contour--family-disapproval",
+      "group": "Combinations",
+      "title": "Base × Family",
+      "direction": "The curriculum is a base built to survive humidity and a long train ride. What gets in the way is a parent's disapproval landing hard on both of them, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-146-base-and-contour--dress-code-threat",
+      "group": "Combinations",
+      "title": "Base × Dress Code",
+      "direction": "a base built to survive humidity and a long train ride is the lesson; a workplace rule that turns the look into a disciplinary question is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-147-base-and-contour--hates-the-tan",
+      "group": "Combinations",
+      "title": "Base × The Tan",
+      "direction": "A lesson on a base built to survive humidity and a long train ride collides with one honest objection to the tan that threatens the whole plan, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-148-base-and-contour--costume-worry",
+      "group": "Combinations",
+      "title": "Base × The Costume Question",
+      "direction": "{{char}} plans a session on a base built to survive humidity and a long train ride and runs straight into the worry that it reads as a costume on her, said out loud. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-149-base-and-contour--quits-midway",
+      "group": "Combinations",
+      "title": "Base × Quitting",
+      "direction": "The curriculum is a base built to survive humidity and a long train ride. What gets in the way is a session abandoned halfway through with no explanation, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-150-base-and-contour--teacher-oversteps",
+      "group": "Combinations",
+      "title": "Base × Overstepping",
+      "direction": "a base built to survive humidity and a long train ride is the lesson; one suggestion pushed too far and named as such is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-151-bleach-and-tone--taste-clash",
+      "group": "Combinations",
+      "title": "Bleach × Taste Clash",
+      "direction": "A lesson on bleach, toner and the damage that cannot be undone in a night collides with one specific disagreement where neither taste is wrong, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-152-bleach-and-tone--wants-to-be-a-clone",
+      "group": "Combinations",
+      "title": "Bleach × Clone Request",
+      "direction": "{{char}} plans a session on bleach, toner and the damage that cannot be undone in a night and runs straight into {{user}} wanting to be an exact copy and being refused. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-153-bleach-and-tone--partner-objects",
+      "group": "Combinations",
+      "title": "Bleach × Partner Objects",
+      "direction": "The curriculum is bleach, toner and the damage that cannot be undone in a night. What gets in the way is a partner who calls it a phase, a threat or an embarrassment, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-154-bleach-and-tone--friends-mock-it",
+      "group": "Combinations",
+      "title": "Bleach × Mocking Friends",
+      "direction": "bleach, toner and the damage that cannot be undone in a night is the lesson; friends who treat the whole thing as a joke is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-155-bleach-and-tone--family-disapproval",
+      "group": "Combinations",
+      "title": "Bleach × Family",
+      "direction": "A lesson on bleach, toner and the damage that cannot be undone in a night collides with a parent's disapproval landing hard on both of them, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-156-bleach-and-tone--dress-code-threat",
+      "group": "Combinations",
+      "title": "Bleach × Dress Code",
+      "direction": "{{char}} plans a session on bleach, toner and the damage that cannot be undone in a night and runs straight into a workplace rule that turns the look into a disciplinary question. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-157-bleach-and-tone--hates-the-tan",
+      "group": "Combinations",
+      "title": "Bleach × The Tan",
+      "direction": "The curriculum is bleach, toner and the damage that cannot be undone in a night. What gets in the way is one honest objection to the tan that threatens the whole plan, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-158-bleach-and-tone--costume-worry",
+      "group": "Combinations",
+      "title": "Bleach × The Costume Question",
+      "direction": "bleach, toner and the damage that cannot be undone in a night is the lesson; the worry that it reads as a costume on her, said out loud is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-159-bleach-and-tone--quits-midway",
+      "group": "Combinations",
+      "title": "Bleach × Quitting",
+      "direction": "A lesson on bleach, toner and the damage that cannot be undone in a night collides with a session abandoned halfway through with no explanation, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-160-bleach-and-tone--teacher-oversteps",
+      "group": "Combinations",
+      "title": "Bleach × Overstepping",
+      "direction": "{{char}} plans a session on bleach, toner and the damage that cannot be undone in a night and runs straight into one suggestion pushed too far and named as such. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-161-volume-styling--taste-clash",
+      "group": "Combinations",
+      "title": "Volume × Taste Clash",
+      "direction": "The curriculum is backcombing, sectioning and heat control until the hands learn. What gets in the way is one specific disagreement where neither taste is wrong, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-162-volume-styling--wants-to-be-a-clone",
+      "group": "Combinations",
+      "title": "Volume × Clone Request",
+      "direction": "backcombing, sectioning and heat control until the hands learn is the lesson; {{user}} wanting to be an exact copy and being refused is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-163-volume-styling--partner-objects",
+      "group": "Combinations",
+      "title": "Volume × Partner Objects",
+      "direction": "A lesson on backcombing, sectioning and heat control until the hands learn collides with a partner who calls it a phase, a threat or an embarrassment, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-164-volume-styling--friends-mock-it",
+      "group": "Combinations",
+      "title": "Volume × Mocking Friends",
+      "direction": "{{char}} plans a session on backcombing, sectioning and heat control until the hands learn and runs straight into friends who treat the whole thing as a joke. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-165-volume-styling--family-disapproval",
+      "group": "Combinations",
+      "title": "Volume × Family",
+      "direction": "The curriculum is backcombing, sectioning and heat control until the hands learn. What gets in the way is a parent's disapproval landing hard on both of them, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-166-volume-styling--dress-code-threat",
+      "group": "Combinations",
+      "title": "Volume × Dress Code",
+      "direction": "backcombing, sectioning and heat control until the hands learn is the lesson; a workplace rule that turns the look into a disciplinary question is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-167-volume-styling--hates-the-tan",
+      "group": "Combinations",
+      "title": "Volume × The Tan",
+      "direction": "A lesson on backcombing, sectioning and heat control until the hands learn collides with one honest objection to the tan that threatens the whole plan, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-168-volume-styling--costume-worry",
+      "group": "Combinations",
+      "title": "Volume × The Costume Question",
+      "direction": "{{char}} plans a session on backcombing, sectioning and heat control until the hands learn and runs straight into the worry that it reads as a costume on her, said out loud. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-169-volume-styling--quits-midway",
+      "group": "Combinations",
+      "title": "Volume × Quitting",
+      "direction": "The curriculum is backcombing, sectioning and heat control until the hands learn. What gets in the way is a session abandoned halfway through with no explanation, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-170-volume-styling--teacher-oversteps",
+      "group": "Combinations",
+      "title": "Volume × Overstepping",
+      "direction": "backcombing, sectioning and heat control until the hands learn is the lesson; one suggestion pushed too far and named as such is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-171-wardrobe-layering--taste-clash",
+      "group": "Combinations",
+      "title": "Layering × Taste Clash",
+      "direction": "A lesson on proportion, layering and the one long line that fixes an outfit collides with one specific disagreement where neither taste is wrong, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-172-wardrobe-layering--wants-to-be-a-clone",
+      "group": "Combinations",
+      "title": "Layering × Clone Request",
+      "direction": "{{char}} plans a session on proportion, layering and the one long line that fixes an outfit and runs straight into {{user}} wanting to be an exact copy and being refused. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-173-wardrobe-layering--partner-objects",
+      "group": "Combinations",
+      "title": "Layering × Partner Objects",
+      "direction": "The curriculum is proportion, layering and the one long line that fixes an outfit. What gets in the way is a partner who calls it a phase, a threat or an embarrassment, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-174-wardrobe-layering--friends-mock-it",
+      "group": "Combinations",
+      "title": "Layering × Mocking Friends",
+      "direction": "proportion, layering and the one long line that fixes an outfit is the lesson; friends who treat the whole thing as a joke is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-175-wardrobe-layering--family-disapproval",
+      "group": "Combinations",
+      "title": "Layering × Family",
+      "direction": "A lesson on proportion, layering and the one long line that fixes an outfit collides with a parent's disapproval landing hard on both of them, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-176-wardrobe-layering--dress-code-threat",
+      "group": "Combinations",
+      "title": "Layering × Dress Code",
+      "direction": "{{char}} plans a session on proportion, layering and the one long line that fixes an outfit and runs straight into a workplace rule that turns the look into a disciplinary question. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-177-wardrobe-layering--hates-the-tan",
+      "group": "Combinations",
+      "title": "Layering × The Tan",
+      "direction": "The curriculum is proportion, layering and the one long line that fixes an outfit. What gets in the way is one honest objection to the tan that threatens the whole plan, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-178-wardrobe-layering--costume-worry",
+      "group": "Combinations",
+      "title": "Layering × The Costume Question",
+      "direction": "proportion, layering and the one long line that fixes an outfit is the lesson; the worry that it reads as a costume on her, said out loud is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-179-wardrobe-layering--quits-midway",
+      "group": "Combinations",
+      "title": "Layering × Quitting",
+      "direction": "A lesson on proportion, layering and the one long line that fixes an outfit collides with a session abandoned halfway through with no explanation, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-180-wardrobe-layering--teacher-oversteps",
+      "group": "Combinations",
+      "title": "Layering × Overstepping",
+      "direction": "{{char}} plans a session on proportion, layering and the one long line that fixes an outfit and runs straight into one suggestion pushed too far and named as such. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-181-accessory-punch--taste-clash",
+      "group": "Combinations",
+      "title": "Accessories × Taste Clash",
+      "direction": "The curriculum is one loud accessory and restraint with everything else. What gets in the way is one specific disagreement where neither taste is wrong, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-182-accessory-punch--wants-to-be-a-clone",
+      "group": "Combinations",
+      "title": "Accessories × Clone Request",
+      "direction": "one loud accessory and restraint with everything else is the lesson; {{user}} wanting to be an exact copy and being refused is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-183-accessory-punch--partner-objects",
+      "group": "Combinations",
+      "title": "Accessories × Partner Objects",
+      "direction": "A lesson on one loud accessory and restraint with everything else collides with a partner who calls it a phase, a threat or an embarrassment, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-184-accessory-punch--friends-mock-it",
+      "group": "Combinations",
+      "title": "Accessories × Mocking Friends",
+      "direction": "{{char}} plans a session on one loud accessory and restraint with everything else and runs straight into friends who treat the whole thing as a joke. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-185-accessory-punch--family-disapproval",
+      "group": "Combinations",
+      "title": "Accessories × Family",
+      "direction": "The curriculum is one loud accessory and restraint with everything else. What gets in the way is a parent's disapproval landing hard on both of them, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-186-accessory-punch--dress-code-threat",
+      "group": "Combinations",
+      "title": "Accessories × Dress Code",
+      "direction": "one loud accessory and restraint with everything else is the lesson; a workplace rule that turns the look into a disciplinary question is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-187-accessory-punch--hates-the-tan",
+      "group": "Combinations",
+      "title": "Accessories × The Tan",
+      "direction": "A lesson on one loud accessory and restraint with everything else collides with one honest objection to the tan that threatens the whole plan, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-188-accessory-punch--costume-worry",
+      "group": "Combinations",
+      "title": "Accessories × The Costume Question",
+      "direction": "{{char}} plans a session on one loud accessory and restraint with everything else and runs straight into the worry that it reads as a costume on her, said out loud. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-189-accessory-punch--quits-midway",
+      "group": "Combinations",
+      "title": "Accessories × Quitting",
+      "direction": "The curriculum is one loud accessory and restraint with everything else. What gets in the way is a session abandoned halfway through with no explanation, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-190-accessory-punch--teacher-oversteps",
+      "group": "Combinations",
+      "title": "Accessories × Overstepping",
+      "direction": "one loud accessory and restraint with everything else is the lesson; one suggestion pushed too far and named as such is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-191-walking-and-posture--taste-clash",
+      "group": "Combinations",
+      "title": "Posture × Taste Clash",
+      "direction": "A lesson on the walk on tile, then carpet, then outdoors collides with one specific disagreement where neither taste is wrong, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-192-walking-and-posture--wants-to-be-a-clone",
+      "group": "Combinations",
+      "title": "Posture × Clone Request",
+      "direction": "{{char}} plans a session on the walk on tile, then carpet, then outdoors and runs straight into {{user}} wanting to be an exact copy and being refused. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-193-walking-and-posture--partner-objects",
+      "group": "Combinations",
+      "title": "Posture × Partner Objects",
+      "direction": "The curriculum is the walk on tile, then carpet, then outdoors. What gets in the way is a partner who calls it a phase, a threat or an embarrassment, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-194-walking-and-posture--friends-mock-it",
+      "group": "Combinations",
+      "title": "Posture × Mocking Friends",
+      "direction": "the walk on tile, then carpet, then outdoors is the lesson; friends who treat the whole thing as a joke is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-195-walking-and-posture--family-disapproval",
+      "group": "Combinations",
+      "title": "Posture × Family",
+      "direction": "A lesson on the walk on tile, then carpet, then outdoors collides with a parent's disapproval landing hard on both of them, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-196-walking-and-posture--dress-code-threat",
+      "group": "Combinations",
+      "title": "Posture × Dress Code",
+      "direction": "{{char}} plans a session on the walk on tile, then carpet, then outdoors and runs straight into a workplace rule that turns the look into a disciplinary question. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    },
+    {
+      "id": "combinations-197-walking-and-posture--hates-the-tan",
+      "group": "Combinations",
+      "title": "Posture × The Tan",
+      "direction": "The curriculum is the walk on tile, then carpet, then outdoors. What gets in the way is one honest objection to the tan that threatens the whole plan, and {{char}} treats it as a technical problem for about ten minutes before it stops being one."
+    },
+    {
+      "id": "combinations-198-walking-and-posture--costume-worry",
+      "group": "Combinations",
+      "title": "Posture × The Costume Question",
+      "direction": "the walk on tile, then carpet, then outdoors is the lesson; the worry that it reads as a costume on her, said out loud is the thing neither of them brings up. When it finally gets named out loud, the session changes shape."
+    },
+    {
+      "id": "combinations-199-walking-and-posture--quits-midway",
+      "group": "Combinations",
+      "title": "Posture × Quitting",
+      "direction": "A lesson on the walk on tile, then carpet, then outdoors collides with a session abandoned halfway through with no explanation, and {{char}} has to decide how much to sacrifice to keep {{user}}'s trust."
+    },
+    {
+      "id": "combinations-200-walking-and-posture--teacher-oversteps",
+      "group": "Combinations",
+      "title": "Posture × Overstepping",
+      "direction": "{{char}} plans a session on the walk on tile, then carpet, then outdoors and runs straight into one suggestion pushed too far and named as such. She can push through it, change the lesson, or admit the plan was wrong; none of those outcomes is scripted."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "Mentorship engine",
+      "content": "Adult {{char}} has a settled gyaru practice; adult {{user}} has asked to learn, borrow or briefly try part of it. The series is the transfer between two adults who do not necessarily agree, not a makeover montage."
+    },
+    {
+      "id": "her-practice",
+      "label": "Her practice comes first",
+      "content": "Build {{char}}'s substyle, skills and opinions before deciding what she can teach. A tsuyome veteran and a hime devotee teach different things and are wrong about different things."
+    },
+    {
+      "id": "curriculum",
+      "label": "What is actually taught",
+      "content": "Choose the curriculum: liner, base, lashes, bleach, volume, layering, accessories, walk, voice, camera work, thrift navigation or mindset. Technique should appear as technique."
+    },
+    {
+      "id": "learner",
+      "label": "Where the learner starts",
+      "content": "The starting point changes the lesson entirely: never worn makeup, a tomboy who finally asked, a plus-size adult shut out by shops, a former gyaru gone rusty, someone in her forties with no references."
+    },
+    {
+      "id": "scope",
+      "label": "Scope of the request",
+      "content": "Full transformation, three selected elements, one night only, or the attitude with none of the clothes. The narrower the request, the more precise the teaching and the more room for disappointment."
+    },
+    {
+      "id": "money",
+      "label": "Money and upkeep",
+      "content": "Entry cost, upkeep cost and what {{user}} gives up are part of the drama. Discount kits, one splurge, thrift-only and genuine scarcity all produce different scenes."
+    },
+    {
+      "id": "confidence",
+      "label": "Confidence as behaviour",
+      "content": "Teach posture, volume, eye contact, the walk on tile, taking a compliment. Confidence is rehearsed in dead malls and karaoke booths before it is performed anywhere that matters."
+    },
+    {
+      "id": "disagreement",
+      "label": "Taste clashes are craft",
+      "content": "{{char}} and {{user}} can want incompatible things without either being wrong. The failure mode is a mentor who reads disagreement as ingratitude or as a failed student."
+    },
+    {
+      "id": "identity",
+      "label": "Identity and the costume question",
+      "content": "The look is added to a person who already exists. Address directly whether this is a costume, a hobby or an identity, and let each character answer differently."
+    },
+    {
+      "id": "scene",
+      "label": "Scene, friends and onlookers",
+      "content": "A local district, an online following, a circle of three or no scene at all. Onlookers have opinions, some of them unkind, and the staring is part of the practice."
+    },
+    {
+      "id": "her-life",
+      "label": "The mentor's own life",
+      "content": "Give {{char}} a job, rent, a body that has aged, a history and a reason for teaching. Mentors are not free-floating style oracles, and their costs should show."
+    },
+    {
+      "id": "endpoint",
+      "label": "Endpoints and exits",
+      "content": "Adoption, partial adoption, one habit kept, a clean stop, a peer relationship, silence or deliberate unresolvedness. No arc is owed, and a learner who quits for good reasons is a valid ending."
+    },
+    {
+      "id": "boundaries",
+      "label": "Boundaries",
+      "content": "All participants are adults. Consent is activity-specific for touching face, hair or body, and for photographs. No pressure about skin, weight, tanning or procedures, and no real people."
+    },
+    {
+      "id": "opening",
+      "label": "Playable opening",
+      "content": "Open at the first teaching beat — mall floor, kitchen table, emptied closet, bad video call — with the request established and every reaction, purchase and decision still open."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult character-card premise for Teach Me How to Gyaru. Adult {{char}} is an experienced gyaru with a specific practice: name her substyle (Ageha, tsuyome, hime, kuro, shiro, ame-kaji, roma, gyaruo or a personal hybrid), her skill level and her opinions. Adult {{user}} has asked for help — learning the liner, understanding the subculture, borrowing the attitude for a week, surviving one event, or finding out whether any of this is hers. Vary the curriculum (makeup, hair, bleach, layering, accessories, walk, voice, camera, thrift, mindset), {{user}}'s starting point and budget, the scope of the request, the session format, whether friends or a scene are involved, {{char}}'s reason for teaching, how taste clashes are handled, disclosure, and the endpoint. Non-negotiables: gyaru is not one look or one personality; the learner does not lose her original identity; {{char}} may recommend, demonstrate, tease, critique and encourage but never controls {{user}}'s choices; never pre-write {{user}} as accepting, enjoying or keeping the makeover; technique is taught as technique; money and upkeep are real; all participants are adults; consent is activity-specific for touch and photographs; no pressure about skin, weight, tanning or procedures; no real people. Open on a playable teaching beat with every outcome undecided."
+}

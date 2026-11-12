@@ -1,0 +1,2251 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-20-the-gyaru-club",
+  "title": "The Gyaru Club",
+  "description": "Expanded Series Bible IV #20 The Gyaru Club: a reusable ensemble engine for adult university and community gyaru circles, where {{user}} is drawn into a group of several gyaru women with distinct styles, temperaments, hobbies and reasons for belonging. What varies is the club's structure and shared purpose, the member lineup, leadership and organisation, internal friendships and rivalries, the event calendar, newcomer rules, outside visibility, and {{user}}'s route in — never the premise that one specific, individuated group is the story.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 20,
+    "kind": "series"
+  },
+  "summary": "The Gyaru Club is a multi-character ensemble series about an adult gyaru social circle — a chartered campus society, an informal table, a rented karaoke room — and the several women who make it real. Each member has her own style inside the subculture, her own degree or day job, her own reason for being there and her own opinion about what the group is for. {{user}} becomes involved by recruitment, accident, friendship, employment or inheritance. Episodes come from meetings, fashion swaps, conventions, trips, recruitment drives and the arrival of a new gyaru. Joining the group establishes no attraction and membership never guarantees romance.",
+  "core_premise": "{{user}} becomes involved with an adult gyaru social circle that already exists. The group is the engine, not the backdrop: it has a structure, a membership of several distinct women, a shared purpose that may have little to do with fashion, a leader or a power vacuum, friendships, debts, rivalries and an event calendar. {{char}} is one member of that circle, generated after the ensemble is composed, with her own style, work, opinions and stake in the group. What varies is structural: how formal the club is, how many members it holds, who leads, what they do together, how people join, how visible they are, and how {{user}} arrives. What does not vary is that every recurring member be an individual — different look, different register of speech, different reason for identifying as gyaru — and that {{user}}'s membership, however obtained, grants no access, no intimacy and no consent.",
+  "setup": "Open at a live group moment: a first meeting of term where several members are already mid-argument, a fashion swap with clothes in piles on the floor, a recruitment table nobody is manning, the fifth hour of a trip-planning session, or the meeting after a member has quit. Establish the club's structure, its purpose, three to five members with clearly different styles and voices, and the specific reason {{user}} is in the room. Give {{char}} a defined role inside the group — the serious president, the silent treasurer, the one who joined for a friend, the member who does not look gyaru — and let her have opinions about the others that are not all generous. Begin at a playable moment: stop before writing {{user}}'s reactions, dialogue, decisions or feelings, and before resolving whatever the group is arguing about.",
+  "core_variables": [
+    "Club structure: chartered campus society, informal circle with no name, community-centre group, splinter club, merged club or a rotating rota of flats.",
+    "Member count: four, six, nine, fifteen or a capped roster with a waiting list, and how that number changes what can be said in the room.",
+    "Gyaru styles present: ageha glam, host-club tailoring, onee-gyaru, retro 2000s, goth-adjacent, sporty, thrift-only, minimalist, cosplay crossover, vintage.",
+    "Shared purpose: circulating wardrobe, dance crew, fighting games, band, photo zine, event hosting, shared shifts, mutual aid, karaoke circuit or company only.",
+    "Setting: university campus, community centre, gyaru cafe back room, rented karaoke box, shared clubroom, or no fixed address.",
+    "Leadership: serious president, reluctant president, absent founder, rotating chair, treasurer in charge, faculty advisor, patron, or no leader at all.",
+    "Internal friendships: childhood friends, ex-friends in one room, unrequited crush, siblings, senpai debt, quiet caretaking, competitive best friends.",
+    "Rivalries: over a style, over money, over a person, over who founded the club, or with a better-funded rival chapter across campus.",
+    "Hobbies and skills: nails, sewing, gaming, choreography, camera work, admin, negotiation, makeup technique, singing.",
+    "Event calendar: first meeting, fashion swap, convention day, trip planning, recruitment fair, anniversary, photoshoot, charity drive, the last meeting.",
+    "Newcomer rules: open door, sponsorship, trial period, unanimous vote, dues, initiation prank, skill test, roster full, or membership by proximity alone.",
+    "Visibility: campus-famous, invisible, misread by faculty, rumoured, shop-sponsored, small online following, deliberately private, watched by a dean.",
+    "Outsiders' assumptions: that it is a fashion club, a clique, a dating pool, a phase, a discipline problem or a waste of a degree.",
+    "{{user}}'s entry point: recruitment, a friend, a roommate, a job at the venue, a research project, an inherited membership, or a mistaken assumption nobody corrected.",
+    "Whether {{char}} is inside the group's inner circle, on its edge, or the member holding it together without credit.",
+    "How the group handles disagreement: open argument, passive aggression, formal minutes, group-chat diplomacy, or long silences nobody breaks.",
+    "Whether attraction exists at all, and if it does, whether it predates {{user}}'s arrival or is a consequence of proximity.",
+    "How the series ends or pauses: the club continues, dissolves, merges, or loses the room and keeps the friendships."
+  ],
+  "generation_rules": [
+    "Compose the ensemble before choosing {{char}}: decide the club's structure, purpose and three to five distinct members first.",
+    "Do not make every member look, speak, flirt or think alike; a club that reads as one personality copied five times has failed.",
+    "Build each recurring member as an individual with a style, a job or degree, a reason for joining and an opinion about the others.",
+    "Give every member a different register of speech, not just a different outfit; accent, volume, vocabulary and sentence length should distinguish them.",
+    "Joining the group does not establish attraction, and membership never implies sexual access to any member.",
+    "Do not write {{user}} for the player: leave their reactions, decisions, dialogue, feelings and loyalties open.",
+    "Do not pre-play the group's argument; state what is being disputed and stop before anyone wins it.",
+    "Vary the group composition across generations before varying the premise; member count and lineup are the strongest differentiators.",
+    "Keep {{char}}'s role inside the group concrete: who she sits next to, who she texts, whose side she takes.",
+    "Let some members be indifferent to {{user}}; not everyone in a club is curious about the newcomer.",
+    "Ground the subculture in specifics — shops, tools, magazines, routines, money — rather than generic enthusiasm.",
+    "Do not treat the subculture as a costume for a romance plot; the club's business must be able to carry a scene on its own.",
+    "Allow the club's stated purpose to be a cover for a different one, but decide which is true and keep it consistent.",
+    "Make disagreement about something concrete: a budget, a date, a venue, a member's behaviour, a photograph.",
+    "Give at least one member an obligation outside the club — work, family, study, health — that limits her availability.",
+    "Let leadership be contested or ambiguous rather than assumed; the person who runs the room may not be the president.",
+    "Keep outsiders' assumptions about gyaru distinct from what the members actually think, and let members disagree with each other about the label.",
+    "Escalate through the calendar: a meeting, a deadline, an event and its aftermath are enough structure for a long scene.",
+    "Do not resolve a rivalry permanently in one scene; grudges in a small club are recurring material.",
+    "Use money and logistics as real pressure: dues, room hire, deposits, transport and who pays for the cake.",
+    "If romance begins, let it be one thread among the club's business, not the reason the club exists.",
+    "Keep every description non-graphic regardless of heat; this is a premise engine, not prose."
+  ],
+  "guardrails": [
+    "All participants are adults; every member, guest and romantic interest is an adult with no ambiguity.",
+    "No minors anywhere in the club, the roster, the flashbacks or the guest list.",
+    "No real people, and no real-world idols, creators or public figures as members or as the object of imitation.",
+    "Joining the club never constitutes consent, and neither does being sponsored, voted in, or given a key.",
+    "Consent is activity-specific: agreeing to a swap, a photograph, a lift or a night out is not agreement to anything else.",
+    "Do not script {{user}}'s feelings, decisions, dialogue, attraction or future membership.",
+    "Stay within the entry's boundaries: a recurring multi-character gyaru circle is central, not a single gyaru and her ordinary friends.",
+    "No stereotyped personality assignment by style; appearance predicts no temperament, intelligence or sexual availability.",
+    "Do not use the subculture as a punchline; satire must be affectionate and aimed at behaviour, not at the women.",
+    "Keep privacy rules real: a member who asks not to be photographed is not photographed, and breaking that has consequences.",
+    "Keep intimacy non-graphic and secondary to the group's business, conflicts and friendships.",
+    "Do not let one member speak for all gyaru; the group must disagree internally about what the label means."
+  ],
+  "diversity_axes": [
+    "Structure: chartered society, informal circle, community group, splinter club, merged club, franchise-like chapter or rota of living rooms.",
+    "Size: four intimate members, six with factions, fifteen with a crowd problem, or a capped roster with a waiting list.",
+    "Purpose: wardrobe circulation, dance, gaming, music, publishing, events, employment, mutual aid, mentoring, or nothing but company.",
+    "Style spread: how many distinct gyaru styles are represented, and whether one member refuses the label while insisting on belonging.",
+    "Age and life stage: all undergraduates, a mixed group with late starters, members with careers, one member a decade older.",
+    "Leadership: settled president, contested presidency, rotating chair, absent founder, patron with veto, or no leadership at all.",
+    "Internal history: childhood friends, ex-friends, siblings, exes of the same person, a founding fight, a member who left and returned.",
+    "Money: dues that everyone pays, dues quietly waived, a sponsor, a patron, or constant improvisation.",
+    "Event focus: meetings, swaps, conventions, trips, recruitment, competitions, charity drives, or the club's final term.",
+    "Admission: open, sponsored, vetted, voted, tested, pranked, inherited, or simply assumed.",
+    "Visibility: campus-famous, neighbourhood fixture, invisible, infamous, deliberately private, or briefly viral for the wrong reason.",
+    "{{user}}'s route in: recruited, dragged, employed, related, researching, mistaken, inherited, or the only one who asked.",
+    "{{char}}'s position: president, treasurer, organiser, outsider within the group, newest member, or the one everyone underestimates.",
+    "Romance: none at all, an existing couple inside the club, an unspoken crush, a slow development, or attraction that is refused.",
+    "Tone: deadpan comedy, warm slice of life, melancholy, sharp social comedy, documentary realism, farce or quiet study.",
+    "Conflict type: aesthetic, financial, procedural, romantic, familial, reputational, or about who the club belongs to.",
+    "Outsider pressure: faculty disapproval, family embarrassment, rival club, local paper, online commenters, or shop sponsorship.",
+    "Ending shape: the club continues, dissolves, merges, loses its room, or survives only as a group chat."
+  ],
+  "cross_links": [
+    "Convention Meetup — the same group on an outing; here the outing is one event in a continuing club rather than the whole premise.",
+    "Friendly Rivals — supplies the rival chapter and the competitive friendship; in this series rivalry is internal to a club that must still meet next week.",
+    "The Gyaru Who Knows Everyone — a single gyaru and her ordinary friend network; use it when one woman introduces {{user}} around rather than a club existing.",
+    "Study Together — the study-group structure as a social alibi; this series can borrow it when the club's stated purpose is a cover.",
+    "The Secret Otaku Gyaru — handles one member's hidden fandom; here that member is one voice in an ensemble that already knows.",
+    "Gyaru After Dark — the nightlife register; a club night episode can use it without changing the group's daytime structure.",
+    "Ensemble Cast / Found Family — the general multi-character engine; this series fixes the subculture, the club structure and the outsider lens."
+  ],
+  "tags": [
+    "series bible iv",
+    "gyaru",
+    "ensemble cast",
+    "university",
+    "subculture",
+    "friendship",
+    "slice of life",
+    "group dynamics",
+    "fashion",
+    "club",
+    "multiple characters",
+    "social comedy",
+    "newcomer",
+    "loyalty",
+    "rivalry",
+    "outsider perspective",
+    "adult",
+    "found family"
+  ],
+  "notes": "Expanded from Character Card Forge — Series Bible IV entry 20 “The Gyaru Club” at v1.4 to Idea Source schema v1.0. The source volume ships no stub presets for this entry (the stub carries an empty direction_presets array), so there are no preserved Original Bible seed presets and no seeds group. All eight stub core variables — official versus informal club, member count, gyaru styles, shared purpose, setting, leadership, internal friendships and rivalries, hobbies, event calendar, newcomer rules and visibility — are preserved in expanded form across core_variables and the eleven concept groups. The 341 direction presets cover club structure, style spread, shared purpose, member lineup, leadership, friendships and friction, the event calendar, newcomer rules, visibility, {{user}}'s entry point and tone, plus a 165-entry combination group. The classification test is kept explicit: a recurring multi-character gyaru circle must be central, or the concept belongs to The Gyaru Who Knows Everyone. The generator varies group composition before choosing {{char}}.",
+  "direction_presets": [
+    {
+      "id": "club-structure-01-official-campus-society",
+      "group": "Club structure",
+      "title": "Official Campus Society",
+      "direction": "The circle is a chartered society with a constitution, a budget line and an annual report nobody reads. {{char}} treats the paperwork as seriously as the makeup, and {{user}} walks in during a membership audit."
+    },
+    {
+      "id": "club-structure-02-informal-table",
+      "group": "Club structure",
+      "title": "Informal Table",
+      "direction": "No name, no dues, no roster: the group exists because six people keep occupying the same corner table on the same two afternoons. {{user}} is absorbed into it before anyone explains the rules, because there are none to explain."
+    },
+    {
+      "id": "club-structure-03-four-members",
+      "group": "Club structure",
+      "title": "Four Members",
+      "direction": "Four members, all adults with jobs or full timetables, which makes every absence an event. {{char}} keeps a mental attendance record and {{user}} is the first new face in two years."
+    },
+    {
+      "id": "club-structure-04-fifteen-strong",
+      "group": "Club structure",
+      "title": "Fifteen Strong",
+      "direction": "Fifteen members and three overlapping factions, so no meeting fits in one room comfortably. {{user}} cannot learn the names fast, and {{char}} enjoys watching them try."
+    },
+    {
+      "id": "club-structure-05-splinter-group",
+      "group": "Club structure",
+      "title": "Splinter Group",
+      "direction": "The club exists because half its founders walked out of a bigger, older gyaru circle after a fight nobody will fully describe. {{char}} was on the losing side of that vote and still keeps the old group chat."
+    },
+    {
+      "id": "club-structure-06-three-weeks-old",
+      "group": "Club structure",
+      "title": "Three Weeks Old",
+      "direction": "Chartered three weeks ago, the club is still improvising: no bank account, a name nobody likes, and a constitution being drafted in a shared document. {{user}} arrives early enough to shape what it becomes."
+    },
+    {
+      "id": "club-structure-07-on-probation",
+      "group": "Club structure",
+      "title": "On Probation",
+      "direction": "The faculty or venue has warned that the group dissolves at the end of term unless membership grows. {{char}} is recruiting with grim efficiency and {{user}} is the first success, which the others find funny or insulting depending on the member."
+    },
+    {
+      "id": "club-structure-08-karaoke-room-regulars",
+      "group": "Club structure",
+      "title": "Karaoke Room Regulars",
+      "direction": "The group has no clubroom and meets in a rented karaoke box every Thursday, where singing is the ritual and conversation happens between songs. {{char}} has a fixed slot in the queue and defends it."
+    },
+    {
+      "id": "club-structure-09-cafe-back-room",
+      "group": "Club structure",
+      "title": "Cafe Back Room",
+      "direction": "A gyaru cafe lets the group use its back room in exchange for weekend shifts, which makes work rosters and membership overlap. {{char}} is protective of the arrangement and {{user}} is either staff, customer or both."
+    },
+    {
+      "id": "club-structure-10-community-centre",
+      "group": "Club structure",
+      "title": "Community Centre",
+      "direction": "Not a university club at all: a mixed-age neighbourhood group that meets in a community centre with a council grant and a caretaker who complains. {{char}} is the youngest member and {{user}} is the newest."
+    },
+    {
+      "id": "club-structure-11-shared-clubroom",
+      "group": "Club structure",
+      "title": "Shared Clubroom",
+      "direction": "The group shares one room with the astronomy society and a passive-aggressive whiteboard schedule. {{char}} has opinions about the telescope stored in the cupboard and {{user}} is drawn into the scheduling war."
+    },
+    {
+      "id": "club-structure-12-the-waiting-list",
+      "group": "Club structure",
+      "title": "The Waiting List",
+      "direction": "Membership is capped, applications are read, and there is a waiting list longer than the roster. {{user}} got in by accident, a clerical error or a cancelled place, and {{char}} wants to know which."
+    },
+    {
+      "id": "club-structure-13-alumna-patronage",
+      "group": "Club structure",
+      "title": "Alumna Patronage",
+      "direction": "The club was founded by a former member who still pays for the room and drops by unannounced, which gives her quiet veto power. {{char}} owes her something specific and {{user}} becomes part of that debt."
+    },
+    {
+      "id": "club-structure-14-merged-club",
+      "group": "Club structure",
+      "title": "Merged Club",
+      "direction": "Two struggling circles merged last year and the old loyalties never dissolved; seating, nicknames and traditions still split along the old line. {{char}} came from the smaller side and {{user}} cannot tell which side they have been placed on."
+    },
+    {
+      "id": "club-structure-15-rival-chapter",
+      "group": "Club structure",
+      "title": "Rival Chapter",
+      "direction": "There is a second, better-funded gyaru circle across campus with better photos and worse manners. {{char}} measures everything against them and {{user}} is expected to take a side before understanding the history."
+    },
+    {
+      "id": "club-structure-16-no-fixed-address",
+      "group": "Club structure",
+      "title": "No Fixed Address",
+      "direction": "The group rotates between members' flats and a different living room every week, so logistics dominate conversation. {{char}} hosts rarely and is sensitive about it, and {{user}}'s place becomes the rumoured next venue."
+    },
+    {
+      "id": "gyaru-styles-01-ageha-glam",
+      "group": "Gyaru styles",
+      "title": "Ageha Glam",
+      "direction": "Heavy lashes, sculpted nails, enormous hair volume and a two-hour preparation ritual she refuses to compress. {{char}} treats the look as craft and gets genuinely wounded when a member calls it dated."
+    },
+    {
+      "id": "gyaru-styles-02-host-club-silver",
+      "group": "Gyaru styles",
+      "title": "Host Club Silver",
+      "direction": "She dresses like a host-club star: sharp suits, silver accessories, hair set hard. {{char}} enjoys the double-take and {{user}}'s first assumption about her is almost certainly wrong."
+    },
+    {
+      "id": "gyaru-styles-03-onee-gyaru",
+      "group": "Gyaru styles",
+      "title": "Onee-Gyaru",
+      "direction": "Polished, unhurried and older than the rest, she is the member younger ones copy without admitting it. {{char}} mentors generously and interferes badly, and {{user}} is her newest project whether they agreed or not."
+    },
+    {
+      "id": "gyaru-styles-04-retro-two-thousands",
+      "group": "Gyaru styles",
+      "title": "Retro Two-Thousands",
+      "direction": "Flip phones, old magazines, a specific revival of a scene she was too young to attend the first time. {{char}} can date any photograph by its lashes and considers the rest of the club insufficiently researched."
+    },
+    {
+      "id": "gyaru-styles-05-goth-adjacent",
+      "group": "Gyaru styles",
+      "title": "Goth-Adjacent",
+      "direction": "Black lace, crosses and platform boots, and she insists this is still gyaru whatever the others say. {{char}} has stopped arguing about the label and started arguing about the playlist instead."
+    },
+    {
+      "id": "gyaru-styles-06-sporty-streak",
+      "group": "Gyaru styles",
+      "title": "Sporty Streak",
+      "direction": "Tracksuits, trainers, a bleached streak and nails cut short for practical reasons. {{char}} is the member who can run in her outfit and the one who organises anything physical."
+    },
+    {
+      "id": "gyaru-styles-07-thrift-only",
+      "group": "Gyaru styles",
+      "title": "Thrift Only",
+      "direction": "Everything second-hand, nothing bought new, and a moral position attached to it. {{char}} will date and price any garment in the room and quietly judges {{user}}'s shoes."
+    },
+    {
+      "id": "gyaru-styles-08-nails-as-practice",
+      "group": "Gyaru styles",
+      "title": "Nails As Practice",
+      "direction": "The nails are the entire practice and everything else is deliberately plain; she charges other members for sets. {{char}} talks about structure and lacquer like an engineer and notices hands before faces."
+    },
+    {
+      "id": "gyaru-styles-09-cosplay-crossover",
+      "group": "Gyaru styles",
+      "title": "Cosplay Crossover",
+      "direction": "Style is costume and she changes persona with the outfit, which the group finds either impressive or exhausting. {{char}} has a wardrobe organised by character and {{user}} meets a different woman each week."
+    },
+    {
+      "id": "gyaru-styles-10-the-minimalist",
+      "group": "Gyaru styles",
+      "title": "The Minimalist",
+      "direction": "One earring, no foundation, hair tied back, and a stubborn insistence that she counts as gyaru. {{char}} makes the argument on subculture grounds rather than aesthetics, and {{user}} is expected to have an opinion."
+    },
+    {
+      "id": "gyaru-styles-11-country-gyaru",
+      "group": "Gyaru styles",
+      "title": "Country Gyaru",
+      "direction": "A small-town variant with different vocabulary, louder hair and no interest in city rules. {{char}} gets teased gently for the accent and gives it back harder, and {{user}} is the only one who has to ask what a word means."
+    },
+    {
+      "id": "gyaru-styles-12-idol-imitation",
+      "group": "Gyaru styles",
+      "title": "Idol Imitation",
+      "direction": "She copies the look of a specific, entirely invented idol and will not break character about it. {{char}} treats the imitation as practice rather than disguise, and {{user}} cannot tell where the persona stops."
+    },
+    {
+      "id": "gyaru-styles-13-makeup-first",
+      "group": "Gyaru styles",
+      "title": "Makeup First",
+      "direction": "The face is the craft and the clothes are utilitarian; she will spend ninety minutes on eyes and thirty seconds on a jacket. {{char}} teaches technique to anyone who asks and refuses to be photographed unlit."
+    },
+    {
+      "id": "gyaru-styles-14-hair-as-identity",
+      "group": "Gyaru styles",
+      "title": "Hair As Identity",
+      "direction": "Her hair changes monthly and the group tracks it like weather; the current colour is a statement about something. {{char}} will not explain the statement and {{user}} becomes the person who guesses."
+    },
+    {
+      "id": "gyaru-styles-15-vintage-devotee",
+      "group": "Gyaru styles",
+      "title": "Vintage Devotee",
+      "direction": "Eighties and nineties Japanese street fashion, sourced seriously, worn carefully, mended obsessively. {{char}} can identify a label from across a room and considers modern gyaru a pale imitation."
+    },
+    {
+      "id": "gyaru-styles-16-style-chameleon",
+      "group": "Gyaru styles",
+      "title": "Style Chameleon",
+      "direction": "No fixed look: she matches whoever she is standing next to and claims that is the point. {{char}} is impossible to describe to a stranger, which is exactly what {{user}} has to do."
+    },
+    {
+      "id": "shared-purpose-01-fashion-swap",
+      "group": "Shared purpose",
+      "title": "Fashion Swap",
+      "direction": "The club's real activity is a circulating wardrobe: bags of clothes move between flats with borrowing rules, sign-out sheets and grudges. {{char}} is protective of one specific garment and {{user}} will eventually be asked to wear it."
+    },
+    {
+      "id": "shared-purpose-02-dance-crew",
+      "group": "Shared purpose",
+      "title": "Dance Crew",
+      "direction": "They rehearse a routine for a campus showcase and argue about choreography more than anything else. {{char}} counts the music and {{user}} is either drafted in or asked to hold the phone."
+    },
+    {
+      "id": "shared-purpose-03-fighting-games",
+      "group": "Shared purpose",
+      "title": "Fighting Games",
+      "direction": "The club is a fighting-game scene with mains, brackets and trash talk that sounds worse than it is. {{char}} is the member everyone can beat except on her one character, and {{user}} is thrown a controller immediately."
+    },
+    {
+      "id": "shared-purpose-04-band-logistics",
+      "group": "Shared purpose",
+      "title": "Band Logistics",
+      "direction": "They are a band in the sense that they own instruments and argue about practice rooms; the music is the excuse. {{char}} books the room badly and {{user}} is the only one with a car or a spare amp."
+    },
+    {
+      "id": "shared-purpose-05-photo-zine",
+      "group": "Shared purpose",
+      "title": "Photo Zine",
+      "direction": "They publish a tiny photocopied zine of photographs and writing about the subculture, four issues a year, badly distributed. {{char}} edits it and {{user}}'s first contribution is either welcomed or rewritten."
+    },
+    {
+      "id": "shared-purpose-06-event-hosting",
+      "group": "Shared purpose",
+      "title": "Event Hosting",
+      "direction": "The group runs campus parties and small club nights, which means money, guest lists and blame. {{char}} handles the door and {{user}} is on the wrong side of it for the first ten minutes."
+    },
+    {
+      "id": "shared-purpose-07-shared-shifts",
+      "group": "Shared purpose",
+      "title": "Shared Shifts",
+      "direction": "They work together at the same cafe, shop or venue, so the club and the rota are the same social world. {{char}} is the senior colleague and {{user}}'s shifts become the real story."
+    },
+    {
+      "id": "shared-purpose-08-clothing-drives",
+      "group": "Shared purpose",
+      "title": "Clothing Drives",
+      "direction": "Their purpose is mutual aid: clothing drives, swaps for people who need them, and a storage problem nobody solved. {{char}} keeps the inventory and {{user}} is asked to give up a Saturday."
+    },
+    {
+      "id": "shared-purpose-09-thrifting-circuit",
+      "group": "Shared purpose",
+      "title": "Thrifting Circuit",
+      "direction": "Weekend runs to specific shops in a specific order, with a route that has been optimised over years. {{char}} navigates and {{user}} is told to keep up and not to buy the thing she is looking at."
+    },
+    {
+      "id": "shared-purpose-10-small-channel",
+      "group": "Shared purpose",
+      "title": "Small Channel",
+      "direction": "They run a small beauty and style channel with eleven hundred subscribers and serious disagreements about editing. {{char}} appears in every video and {{user}} is asked to hold the camera and then to be in frame."
+    },
+    {
+      "id": "shared-purpose-11-the-study-alibi",
+      "group": "Shared purpose",
+      "title": "The Study Alibi",
+      "direction": "The club is nominally a study group and nobody has studied in a year; the room is the point. {{char}} maintains the fiction for the faculty and {{user}} arrives expecting notes."
+    },
+    {
+      "id": "shared-purpose-12-cosplay-builds",
+      "group": "Shared purpose",
+      "title": "Cosplay Builds",
+      "direction": "They build outfits for conventions, which means foam, glue, deadlines and a shared workspace. {{char}} is exacting about seams and {{user}} is handed a hot glue gun and no instructions."
+    },
+    {
+      "id": "shared-purpose-13-karaoke-circuit",
+      "group": "Shared purpose",
+      "title": "Karaoke Circuit",
+      "direction": "They tour karaoke boxes and keep a running scoreboard of scores and forfeits. {{char}} holds a record she will not let go and {{user}} is entered into the competition without consenting to it."
+    },
+    {
+      "id": "shared-purpose-14-sports-day-team",
+      "group": "Shared purpose",
+      "title": "Sports Day Team",
+      "direction": "They train for one campus tournament a year and take it far too seriously for a group that calls itself a fashion club. {{char}} is competitive about a relay and {{user}} is the last person recruited."
+    },
+    {
+      "id": "shared-purpose-15-makeup-mentoring",
+      "group": "Shared purpose",
+      "title": "Makeup Mentoring",
+      "direction": "They teach first-years how to do the look safely and cheaply, which brings a stream of nervous strangers into the room. {{char}} teaches well and {{user}} is one of the nervous strangers, or the one calming them."
+    },
+    {
+      "id": "shared-purpose-16-company-only",
+      "group": "Shared purpose",
+      "title": "Company Only",
+      "direction": "Nothing is shared except the room and the refusal to spend the evening alone; the purpose is company and nobody says so. {{char}} would deny it under oath and {{user}} notices it in a week."
+    },
+    {
+      "id": "member-lineup-01-the-unserious-president",
+      "group": "Member lineup",
+      "title": "The Unserious President",
+      "direction": "She looks like the least organised person in the room and runs the group with terrifying precision. {{char}} keeps the schedule in her head, forgets nothing, and lets everyone underestimate her until it matters."
+    },
+    {
+      "id": "member-lineup-02-the-silent-treasurer",
+      "group": "Member lineup",
+      "title": "The Silent Treasurer",
+      "direction": "She says eleven words a meeting and knows exactly what everyone owes. {{char}} controls the money, therefore the room, and {{user}}'s first conversation with her is about a receipt."
+    },
+    {
+      "id": "member-lineup-03-joined-for-a-friend",
+      "group": "Member lineup",
+      "title": "Joined For A Friend",
+      "direction": "She is here because someone else asked her to be, and her actual interests lie elsewhere. {{char}} is loyal to one member rather than to the club and {{user}} is the first person to ask her what she likes."
+    },
+    {
+      "id": "member-lineup-04-the-oldest-member",
+      "group": "Member lineup",
+      "title": "The Oldest Member",
+      "direction": "Ten years older than the rest, back at university late, with a career, a mortgage or a child at home. {{char}} has no patience for club drama and unexpected authority when she uses it."
+    },
+    {
+      "id": "member-lineup-05-the-transfer-student",
+      "group": "Member lineup",
+      "title": "The Transfer Student",
+      "direction": "She arrived this term from another city or country and joined within a fortnight, which the others find either brave or suspicious. {{char}} misreads local rules constantly and {{user}} becomes her translator."
+    },
+    {
+      "id": "member-lineup-06-does-not-look-gyaru",
+      "group": "Member lineup",
+      "title": "Does Not Look Gyaru",
+      "direction": "She dresses plainly, works a serious job, and is the most committed member in the room. {{char}} has explained her membership so many times that she now does it badly on purpose, and {{user}} is the first to not ask."
+    },
+    {
+      "id": "member-lineup-07-member-with-a-day-job",
+      "group": "Member lineup",
+      "title": "Member With A Day Job",
+      "direction": "She arrives late, leaves early, and has a manager who does not know the club exists. {{char}} keeps a work phone face-down on the table and {{user}} learns her schedule before her surname."
+    },
+    {
+      "id": "member-lineup-08-the-organiser",
+      "group": "Member lineup",
+      "title": "The Organiser",
+      "direction": "Not the president, but the person who books the room, remembers the birthdays and texts everyone twice. {{char}} is thanked rarely and needed constantly, and {{user}} is the only one who notices the load."
+    },
+    {
+      "id": "member-lineup-09-the-chaos-agent",
+      "group": "Member lineup",
+      "title": "The Chaos Agent",
+      "direction": "She starts the arguments, proposes the bad ideas and is genuinely beloved. {{char}} means well about sixty percent of the time and {{user}} is her favourite new audience."
+    },
+    {
+      "id": "member-lineup-10-the-documenter",
+      "group": "Member lineup",
+      "title": "The Documenter",
+      "direction": "She photographs everything and has an archive going back years, including things people asked her to delete. {{char}} controls the group's public face and {{user}} is on camera before being asked."
+    },
+    {
+      "id": "member-lineup-11-the-perpetual-newcomer",
+      "group": "Member lineup",
+      "title": "The Perpetual Newcomer",
+      "direction": "Three years in and still treated as new, because the others' history predates her by a decade. {{char}} is inside the group and outside the friendship and {{user}}'s arrival is the first thing that shifts it."
+    },
+    {
+      "id": "member-lineup-12-barely-attends",
+      "group": "Member lineup",
+      "title": "Barely Attends",
+      "direction": "On the roster, in the group chat, rarely in the room, and nobody has decided whether to say something. {{char}} has a reason that is either very good or very bad and {{user}} is asked to deliver the message."
+    },
+    {
+      "id": "member-lineup-13-knows-every-shop",
+      "group": "Member lineup",
+      "title": "Knows Every Shop",
+      "direction": "She grew up in this neighbourhood and has a relationship with every shopkeeper, which the club depends on. {{char}} gets discounts, warnings and gossip and {{user}} gets an introduction that is really an appraisal."
+    },
+    {
+      "id": "member-lineup-14-the-one-with-money",
+      "group": "Member lineup",
+      "title": "The One With Money",
+      "direction": "She pays for things without discussing it, which buys influence nobody has named. {{char}} is generous and tactless about it and {{user}} is the first person to refuse."
+    },
+    {
+      "id": "member-lineup-15-actually-shy",
+      "group": "Member lineup",
+      "title": "Actually Shy",
+      "direction": "Loud clothes, quiet voice: she performs confidence in the outfit and has none in conversation. {{char}} is fine one-to-one and disappears in the group, and {{user}} is easier to talk to than anyone else."
+    },
+    {
+      "id": "member-lineup-16-underestimated",
+      "group": "Member lineup",
+      "title": "Underestimated",
+      "direction": "Everyone has decided she is the decorative one, and she lets them because it is useful. {{char}} is the member with the sharpest read on the room and {{user}} is the first to say it aloud."
+    },
+    {
+      "id": "leadership-and-organisation-01-the-serious-president",
+      "group": "Leadership and organisation",
+      "title": "The Serious President",
+      "direction": "Organisation comes from the member nobody expected: minutes, deadlines, a spreadsheet with tabs. {{char}} runs the club properly and the others have not decided whether to be grateful, and {{user}} interrupts an agenda item."
+    },
+    {
+      "id": "leadership-and-organisation-02-reluctant-president",
+      "group": "Leadership and organisation",
+      "title": "Reluctant President",
+      "direction": "She was elected while absent and has been trying to resign for months. {{char}} does the job well out of spite and {{user}} is the excuse she needs to hold a new vote."
+    },
+    {
+      "id": "leadership-and-organisation-03-absent-founder",
+      "group": "Leadership and organisation",
+      "title": "Absent Founder",
+      "direction": "The founder left, still holds the group chat admin and occasionally issues rulings from another city. {{char}} is running a club she did not design and {{user}} arrives during a succession argument."
+    },
+    {
+      "id": "leadership-and-organisation-04-rotating-chair",
+      "group": "Leadership and organisation",
+      "title": "Rotating Chair",
+      "direction": "The chair rotates monthly and the club's personality changes with it; this month is a disaster. {{char}} is next in the rotation and {{user}}'s first meeting is the worst-attended one on record."
+    },
+    {
+      "id": "leadership-and-organisation-05-treasurer-in-charge",
+      "group": "Leadership and organisation",
+      "title": "Treasurer In Charge",
+      "direction": "The president is decorative; the treasurer has the bank card, the receipts and the real veto. {{char}} approves nothing without a reason and {{user}} needs something approved today."
+    },
+    {
+      "id": "leadership-and-organisation-06-no-leader-at-all",
+      "group": "Leadership and organisation",
+      "title": "No Leader At All",
+      "direction": "Nobody leads and the group functions by habit until something breaks. {{char}} is the member who quietly fixes it and refuses the title, and {{user}}'s arrival is the thing that breaks."
+    },
+    {
+      "id": "leadership-and-organisation-07-faculty-advisor",
+      "group": "Leadership and organisation",
+      "title": "Faculty Advisor",
+      "direction": "A staff member signs the forms and has opinions about propriety that the club ignores at its peril. {{char}} handles the advisor and {{user}} says the wrong thing in front of them."
+    },
+    {
+      "id": "leadership-and-organisation-08-the-patron",
+      "group": "Leadership and organisation",
+      "title": "The Patron",
+      "direction": "An older former member funds the room and expects a say, delivered as advice. {{char}} accepts the money and resents the advice and {{user}} is caught between the two positions."
+    },
+    {
+      "id": "leadership-and-organisation-09-the-unpaid-adult",
+      "group": "Leadership and organisation",
+      "title": "The Unpaid Adult",
+      "direction": "One member does the insurance, the bookings and the difficult phone calls because nobody else will. {{char}} is exhausted and hiding it and {{user}} is the first person to offer to help."
+    },
+    {
+      "id": "leadership-and-organisation-10-rules-by-group-chat",
+      "group": "Leadership and organisation",
+      "title": "Rules By Group Chat",
+      "direction": "There is no constitution, only a group chat where decisions are made at one in the morning and forgotten by noon. {{char}} screenshots everything and {{user}} is added to the chat before being added to the club."
+    },
+    {
+      "id": "leadership-and-organisation-11-impeachment-season",
+      "group": "Leadership and organisation",
+      "title": "Impeachment Season",
+      "direction": "Two members have circulated a motion and the next meeting will decide it. {{char}} is on one side and {{user}} is asked to speak, which is a trap disguised as an honour."
+    },
+    {
+      "id": "leadership-and-organisation-12-two-claimants",
+      "group": "Leadership and organisation",
+      "title": "Two Claimants",
+      "direction": "Two members both believe they are in charge and the group has quietly split its loyalty. {{char}} is one of them and {{user}}'s first small favour will be read as a declaration."
+    },
+    {
+      "id": "leadership-and-organisation-13-delegates-everything",
+      "group": "Leadership and organisation",
+      "title": "Delegates Everything",
+      "direction": "The president is excellent at assigning work and terrible at doing it, and the club runs on other people's evenings. {{char}} is one of the people carrying it and {{user}} is handed a task in the first ten minutes."
+    },
+    {
+      "id": "leadership-and-organisation-14-secretary-runs-it",
+      "group": "Leadership and organisation",
+      "title": "Secretary Runs It",
+      "direction": "The secretary keeps the room, the calendar and the passwords, which makes her the actual leadership. {{char}} has never been elected to anything and {{user}} assumes the wrong person is in charge."
+    },
+    {
+      "id": "leadership-and-organisation-15-election-this-week",
+      "group": "Leadership and organisation",
+      "title": "Election This Week",
+      "direction": "The annual vote is in four days and everyone is being unusually nice. {{char}} is standing, or pretending not to, and {{user}} is the newest vote in the room."
+    },
+    {
+      "id": "leadership-and-organisation-16-leadership-by-seniority",
+      "group": "Leadership and organisation",
+      "title": "Leadership By Seniority",
+      "direction": "The oldest member decides by custom rather than election, and the custom is older than anyone's patience. {{char}} benefits from it and dislikes it, and {{user}} questions it out loud."
+    },
+    {
+      "id": "friendships-and-friction-01-childhood-friends",
+      "group": "Friendships and friction",
+      "title": "Childhood Friends",
+      "direction": "Two members have known each other since primary school and speak in a shorthand nobody else can enter. {{char}} is one of them and {{user}} is the first person in years to make the other one laugh differently."
+    },
+    {
+      "id": "friendships-and-friction-02-ex-friends-in-one-room",
+      "group": "Friendships and friction",
+      "title": "Ex-Friends In One Room",
+      "direction": "They stopped speaking two years ago and neither will leave the club, so the group has organised itself around the silence. {{char}} sits at the far end and {{user}} is seated in the middle without explanation."
+    },
+    {
+      "id": "friendships-and-friction-03-unrequited-crush",
+      "group": "Friendships and friction",
+      "title": "Unrequited Crush",
+      "direction": "One member is in love with another and everyone except the object of it seems to know. {{char}} is either the one hoping or the one protecting her, and {{user}} is told nothing and notices everything."
+    },
+    {
+      "id": "friendships-and-friction-04-rivalry-over-a-look",
+      "group": "Friendships and friction",
+      "title": "Rivalry Over A Look",
+      "direction": "Two members claim the same style and have been competing for years about who does it properly. {{char}} is one of them and {{user}}'s compliment, given carelessly, becomes a diplomatic incident."
+    },
+    {
+      "id": "friendships-and-friction-05-money-tension",
+      "group": "Friendships and friction",
+      "title": "Money Tension",
+      "direction": "One member can afford everything and one cannot, and the club keeps proposing activities that cost money. {{char}} is on one side of that line and {{user}} is asked to split a bill in front of everyone."
+    },
+    {
+      "id": "friendships-and-friction-06-mutual-ex",
+      "group": "Friendships and friction",
+      "title": "Mutual Ex",
+      "direction": "Two members dated the same person and the joke has outlived the discomfort, mostly. {{char}} is one of them and {{user}} is warned about the topic by three separate people."
+    },
+    {
+      "id": "friendships-and-friction-07-sisters",
+      "group": "Friendships and friction",
+      "title": "Sisters",
+      "direction": "Two members are siblings, one older and one who joined first, and the group has learned to read their arguments. {{char}} is one of them and {{user}} is immediately compared to the other."
+    },
+    {
+      "id": "friendships-and-friction-08-senpai-debt",
+      "group": "Friendships and friction",
+      "title": "Senpai Debt",
+      "direction": "One member got the other her job, her room or her introduction, and the debt is repaid in favours. {{char}} owes it or is owed it and {{user}}'s arrival shifts the balance."
+    },
+    {
+      "id": "friendships-and-friction-09-formed-from-a-fight",
+      "group": "Friendships and friction",
+      "title": "Formed From A Fight",
+      "direction": "The group's founding friendship was made in an argument with a third party and the story is told differently by each member. {{char}} tells the version that flatters her and {{user}} hears another at the next table."
+    },
+    {
+      "id": "friendships-and-friction-10-left-and-came-back",
+      "group": "Friendships and friction",
+      "title": "Left And Came Back",
+      "direction": "One member quit publicly, badly, and returned six months later without explanation. {{char}} is her, or the one who let her back in, and {{user}} is the only person who asks why."
+    },
+    {
+      "id": "friendships-and-friction-11-best-friends-who-compete",
+      "group": "Friendships and friction",
+      "title": "Best Friends Who Compete",
+      "direction": "They are each other's closest friend and cannot stop keeping score about anything. {{char}} is one of them and {{user}}'s neutral opinion is treated as a referee's ruling."
+    },
+    {
+      "id": "friendships-and-friction-12-nobody-defends-her",
+      "group": "Friendships and friction",
+      "title": "Nobody Defends Her",
+      "direction": "One member is the group's easy target and the jokes have gone past funny without anyone calling it. {{char}} is either the target or the first to stop laughing and {{user}} has to decide where to stand."
+    },
+    {
+      "id": "friendships-and-friction-13-a-secret-between-two",
+      "group": "Friendships and friction",
+      "title": "A Secret Between Two",
+      "direction": "Two members know something about a third that would reorganise the group if it surfaced. {{char}} is one of the two and {{user}} is told half of it by accident."
+    },
+    {
+      "id": "friendships-and-friction-14-caretaking",
+      "group": "Friendships and friction",
+      "title": "Caretaking",
+      "direction": "One member is quietly looking after another — money, health, a bad year — and calls it nothing. {{char}} is doing the looking after and {{user}} is the first person to name the cost."
+    },
+    {
+      "id": "friendships-and-friction-15-broken-group-chat",
+      "group": "Friendships and friction",
+      "title": "Broken Group Chat",
+      "direction": "The group chat split in two and each side believes the other left first. {{char}} is in both, which is either diplomacy or cowardice, and {{user}} is added to the wrong one."
+    },
+    {
+      "id": "friendships-and-friction-16-new-favourite",
+      "group": "Friendships and friction",
+      "title": "New Favourite",
+      "direction": "Someone new has become the favourite and the members who were close to that person feel it daily. {{char}} is the one displaced and {{user}} is the newcomer, whether or not they wanted the position."
+    },
+    {
+      "id": "event-calendar-01-first-club-meeting",
+      "group": "Event calendar",
+      "title": "First Club Meeting",
+      "direction": "A first meeting of term with too many people, an agenda nobody follows and one folding chair short. {{char}} arrives with a bag of clothes for a swap that was not announced and {{user}} is in her seat."
+    },
+    {
+      "id": "event-calendar-02-fashion-swap-night",
+      "group": "Event calendar",
+      "title": "Fashion Swap Night",
+      "direction": "Everyone brings a bag, everything goes on the floor, and the borrowing rules are explained only after someone has already taken something. {{char}} guards one item and {{user}} is offered it as a test."
+    },
+    {
+      "id": "event-calendar-03-convention-day",
+      "group": "Event calendar",
+      "title": "Convention Day",
+      "direction": "The group goes to a convention together: early train, a queue, a schedule that collapses by noon. {{char}} has a list and {{user}} has been given half of it without context."
+    },
+    {
+      "id": "event-calendar-04-beach-trip-planning",
+      "group": "Event calendar",
+      "title": "Beach Trip Planning",
+      "direction": "The annual trip is being planned in a room where nobody can agree on a budget, a date or a destination. {{char}} has strong opinions about one option and {{user}} holds the deciding vote by accident."
+    },
+    {
+      "id": "event-calendar-05-recruitment-fair",
+      "group": "Event calendar",
+      "title": "Recruitment Fair",
+      "direction": "A folding table, a hand-painted banner and four hours of trying to look approachable. {{char}} is terrible at recruiting and {{user}} is the only person who stops."
+    },
+    {
+      "id": "event-calendar-06-anniversary",
+      "group": "Event calendar",
+      "title": "Anniversary",
+      "direction": "The club's anniversary falls on a date that two members remember differently, and both have planned something. {{char}} is behind one plan and {{user}} is expected to choose without knowing the history."
+    },
+    {
+      "id": "event-calendar-07-photoshoot-day",
+      "group": "Event calendar",
+      "title": "Photoshoot Day",
+      "direction": "A location, a borrowed camera, six people and no art director. {{char}} wants one specific shot and {{user}} is either behind the lens or refusing to be in front of it."
+    },
+    {
+      "id": "event-calendar-08-club-collab",
+      "group": "Event calendar",
+      "title": "Club Collab",
+      "direction": "Another society proposes a joint event and the club cannot agree whether it is flattering or insulting. {{char}} is negotiating and {{user}} is the reason the other club asked."
+    },
+    {
+      "id": "event-calendar-09-charity-event",
+      "group": "Event calendar",
+      "title": "Charity Event",
+      "direction": "A donation drive with a deadline, a venue problem and a member who has over-promised on behalf of everyone. {{char}} is fixing it at speed and {{user}} is handed a clipboard."
+    },
+    {
+      "id": "event-calendar-10-karaoke-night",
+      "group": "Event calendar",
+      "title": "Karaoke Night",
+      "direction": "A karaoke night where the song choice is a social instrument and everyone is keeping score. {{char}} has a song reserved and {{user}} is called up before they have chosen one."
+    },
+    {
+      "id": "event-calendar-11-overnight-trip",
+      "group": "Event calendar",
+      "title": "Overnight Trip",
+      "direction": "One night away, too few rooms, and a booking that does not match what anyone believed. {{char}} sorts the sleeping arrangements and {{user}} is left in the corridor during the argument."
+    },
+    {
+      "id": "event-calendar-12-exam-hiatus",
+      "group": "Event calendar",
+      "title": "Exam Hiatus",
+      "direction": "The club does not meet for six weeks and the friendships have to survive without the room. {{char}} sends nothing and {{user}} is the one who notices, or the one who breaks the silence."
+    },
+    {
+      "id": "event-calendar-13-group-birthday",
+      "group": "Event calendar",
+      "title": "Group Birthday",
+      "direction": "Four members have birthdays within a fortnight and the club has one cake budget. {{char}} is organising it badly and {{user}} is asked to keep a secret that three people already know."
+    },
+    {
+      "id": "event-calendar-14-moving-day",
+      "group": "Event calendar",
+      "title": "Moving Day",
+      "direction": "The clubroom is being taken away and everything accumulated over years has to go somewhere. {{char}} will not throw anything out and {{user}} is the only person with a car."
+    },
+    {
+      "id": "event-calendar-15-the-reunion",
+      "group": "Event calendar",
+      "title": "The Reunion",
+      "direction": "A former member returns for one evening and the group's old configuration reasserts itself immediately. {{char}} is on the wrong side of that reversion and {{user}} is the reason she stays in the room."
+    },
+    {
+      "id": "event-calendar-16-the-last-meeting",
+      "group": "Event calendar",
+      "title": "The Last Meeting",
+      "direction": "The final meeting of the year, or of the club, and nobody has said which. {{char}} is treating it as an ordinary Thursday and {{user}} is the only person who asks."
+    },
+    {
+      "id": "newcomer-rules-01-open-door",
+      "group": "Newcomer rules",
+      "title": "Open Door",
+      "direction": "Anyone can come and anyone can drift away; the group has no memory of deciding to admit {{user}}. {{char}} assumes {{user}} has been here for weeks and {{user}} has been here for forty minutes."
+    },
+    {
+      "id": "newcomer-rules-02-vetting-interview",
+      "group": "Newcomer rules",
+      "title": "Vetting Interview",
+      "direction": "Prospective members are asked three questions by two members and the questions are not the ones on the form. {{char}} asks the one that matters and {{user}} answers it badly, honestly or both."
+    },
+    {
+      "id": "newcomer-rules-03-sponsorship",
+      "group": "Newcomer rules",
+      "title": "Sponsorship",
+      "direction": "You cannot join alone: a member has to bring you and put her name behind you. {{char}} is {{user}}'s sponsor and the obligation runs in both directions."
+    },
+    {
+      "id": "newcomer-rules-04-trial-period",
+      "group": "Newcomer rules",
+      "title": "Trial Period",
+      "direction": "Newcomers get four meetings to prove themselves and nobody defines what proof looks like. {{char}} is judging quietly and {{user}} is on the clock from the first hello."
+    },
+    {
+      "id": "newcomer-rules-05-unanimous-vote",
+      "group": "Newcomer rules",
+      "title": "Unanimous Vote",
+      "direction": "Admission requires everyone to agree, which gives each member a quiet veto. {{char}} has used hers before and {{user}} is one conversation away from finding out why."
+    },
+    {
+      "id": "newcomer-rules-06-no-rules-at-all",
+      "group": "Newcomer rules",
+      "title": "No Rules At All",
+      "direction": "There is no process, no vote and no dues, so joining is a matter of simply continuing to show up. {{char}} finds this system elegant and {{user}} finds it impossible to know if they are in."
+    },
+    {
+      "id": "newcomer-rules-07-initiation-prank",
+      "group": "Newcomer rules",
+      "title": "Initiation Prank",
+      "direction": "New members are subjected to a harmless, elaborate prank that has escalated over the years. {{char}} designed the current version and {{user}} is the first target in a year."
+    },
+    {
+      "id": "newcomer-rules-08-dues-and-costs",
+      "group": "Newcomer rules",
+      "title": "Dues And Costs",
+      "direction": "Membership costs money for room hire, and the fee is quietly waived for people who cannot pay. {{char}} keeps the list of waivers and {{user}} does not know which list they are on."
+    },
+    {
+      "id": "newcomer-rules-09-bring-something",
+      "group": "Newcomer rules",
+      "title": "Bring Something",
+      "direction": "You are admitted by contributing one item to the shared wardrobe and it has to be judged worthy. {{char}} does the judging and {{user}}'s offering is either accepted or scrutinised in silence."
+    },
+    {
+      "id": "newcomer-rules-10-roommate-clause",
+      "group": "Newcomer rules",
+      "title": "Roommate Clause",
+      "direction": "Members can bring a roommate, a classmate or a colleague once, and that guest decides whether they come back. {{char}} was brought that way herself and {{user}} is somebody's one invitation."
+    },
+    {
+      "id": "newcomer-rules-11-quiet-membership",
+      "group": "Newcomer rules",
+      "title": "Quiet Membership",
+      "direction": "Some members are in the group and not on any list, and they prefer it that way. {{char}} is one of them and {{user}} only learns she is a member after three conversations about something else."
+    },
+    {
+      "id": "newcomer-rules-12-the-one-veto",
+      "group": "Newcomer rules",
+      "title": "The One Veto",
+      "direction": "One member has never explained why she blocked a particular person, and the rule has never been tested since. {{char}} holds the veto and {{user}} is the first test in years."
+    },
+    {
+      "id": "newcomer-rules-13-probationary-membership",
+      "group": "Newcomer rules",
+      "title": "Probationary Membership",
+      "direction": "New members are provisional for a term: they cannot vote, hold keys or appear in photographs. {{char}} is the one enforcing it and {{user}} is the provisional member with something to prove."
+    },
+    {
+      "id": "newcomer-rules-14-by-proximity",
+      "group": "Newcomer rules",
+      "title": "By Proximity",
+      "direction": "You become a member by being present often enough, and nobody ever tells you it has happened. {{char}} notices the moment it does and {{user}} has been a member for a month without knowing."
+    },
+    {
+      "id": "newcomer-rules-15-skill-test",
+      "group": "Newcomer rules",
+      "title": "Skill Test",
+      "direction": "There is a test, and it is about a specific skill — a makeup technique, a game, a song, a stitch. {{char}} administers it fairly and {{user}}'s competence is not the point of the evening."
+    },
+    {
+      "id": "newcomer-rules-16-roster-full",
+      "group": "Newcomer rules",
+      "title": "Roster Full",
+      "direction": "The group has decided it is complete and {{user}} is welcome as a guest but not as a member. {{char}} is the one who has to say it and {{user}} is the guest who keeps being invited anyway."
+    },
+    {
+      "id": "visibility-and-outsiders-01-campus-famous",
+      "group": "Visibility and outsiders",
+      "title": "Campus Famous",
+      "direction": "Everyone on campus knows the group and has an opinion formed entirely from photographs. {{char}} is recognised in the corridor and {{user}} is suddenly visible by association."
+    },
+    {
+      "id": "visibility-and-outsiders-02-invisible",
+      "group": "Visibility and outsiders",
+      "title": "Invisible",
+      "direction": "The club has existed for years and the campus has never noticed it. {{char}} likes the privacy and {{user}} is the first person to suggest a public event."
+    },
+    {
+      "id": "visibility-and-outsiders-03-misread-by-faculty",
+      "group": "Visibility and outsiders",
+      "title": "Misread By Faculty",
+      "direction": "Staff read the group as a discipline problem and treat every request as a warning sign. {{char}} manages the reputation and {{user}}'s first mistake becomes a formal note on file."
+    },
+    {
+      "id": "visibility-and-outsiders-04-rumour-mill",
+      "group": "Visibility and outsiders",
+      "title": "Rumour Mill",
+      "direction": "The stories about the group are more detailed than the group, and none of them started inside it. {{char}} corrects one rumour and creates three and {{user}} is asked to confirm something untrue."
+    },
+    {
+      "id": "visibility-and-outsiders-05-shop-sponsorship",
+      "group": "Visibility and outsiders",
+      "title": "Shop Sponsorship",
+      "direction": "A local shop provides clothes, a discount and a logo on the banner in exchange for photographs. {{char}} negotiates the terms and {{user}} is asked to model, unpaid."
+    },
+    {
+      "id": "visibility-and-outsiders-06-small-following",
+      "group": "Visibility and outsiders",
+      "title": "Small Following",
+      "direction": "The club has a modest online following and a comment section that has begun to shape decisions. {{char}} reads every comment and {{user}}'s appearance in one post changes how strangers greet them."
+    },
+    {
+      "id": "visibility-and-outsiders-07-deliberately-private",
+      "group": "Visibility and outsiders",
+      "title": "Deliberately Private",
+      "direction": "Photographs are not posted, names are not tagged and the group's privacy is a stated rule. {{char}} enforces it strictly and {{user}} breaks it once, accidentally or not."
+    },
+    {
+      "id": "visibility-and-outsiders-08-famous-alumna",
+      "group": "Visibility and outsiders",
+      "title": "Famous Alumna",
+      "direction": "A former member became locally well known and the club lives in the shade of that. {{char}} is compared to her constantly and {{user}} makes the mistake of asking which one she is."
+    },
+    {
+      "id": "visibility-and-outsiders-09-family-disapproval",
+      "group": "Visibility and outsiders",
+      "title": "Family Disapproval",
+      "direction": "One member's family considers the whole subculture embarrassing, and the club knows it. {{char}} keeps the two worlds separate and {{user}} is the first person who has met both."
+    },
+    {
+      "id": "visibility-and-outsiders-10-local-paper-feature",
+      "group": "Visibility and outsiders",
+      "title": "Local Paper Feature",
+      "direction": "A small newspaper wants a photograph and a quote about the subculture, and everyone has a different idea of what to say. {{char}} is nominated to speak and {{user}} is asked to be in the picture."
+    },
+    {
+      "id": "visibility-and-outsiders-11-the-group-photo-problem",
+      "group": "Visibility and outsiders",
+      "title": "The Group Photo Problem",
+      "direction": "One member has asked not to be photographed and the group keeps forgetting in the moment. {{char}} is the one reminding them and {{user}} is the one holding the camera when it happens again."
+    },
+    {
+      "id": "visibility-and-outsiders-12-photographed-unasked",
+      "group": "Visibility and outsiders",
+      "title": "Photographed Unasked",
+      "direction": "A passer-by films the group without asking and posts it, and the reaction splits the club. {{char}} wants it taken down and {{user}} has the account that could do it."
+    },
+    {
+      "id": "visibility-and-outsiders-13-rival-smear",
+      "group": "Visibility and outsiders",
+      "title": "Rival Smear",
+      "direction": "The rival club has been telling a story about this one that is almost true. {{char}} wants to respond publicly and {{user}} is the only person with a credible account of the night in question."
+    },
+    {
+      "id": "visibility-and-outsiders-14-dean-s-watchlist",
+      "group": "Visibility and outsiders",
+      "title": "Dean's Watchlist",
+      "direction": "The club is one complaint away from an official review and everyone knows the complaint will be petty. {{char}} is keeping a file of evidence and {{user}}'s arrival is the first new entry in months."
+    },
+    {
+      "id": "visibility-and-outsiders-15-always-invited",
+      "group": "Visibility and outsiders",
+      "title": "Always Invited",
+      "direction": "The group gets asked to every event on campus as decoration, and half the members are tired of it. {{char}} accepts every invitation and {{user}} is the first to ask what the club gets."
+    },
+    {
+      "id": "visibility-and-outsiders-16-walked-past",
+      "group": "Visibility and outsiders",
+      "title": "Walked Past",
+      "direction": "The group is a fixture of a particular street and the same people walk past it daily without looking. {{char}} knows the regulars by sight and {{user}} is the first passer-by who stops."
+    },
+    {
+      "id": "user-entry-point-01-orientation-recruitment",
+      "group": "{{user}} entry point",
+      "title": "Orientation Recruitment",
+      "direction": "{{user}} signs a sheet at an orientation fair to be polite and is added to the group chat that evening. {{char}} is the member who took the sheet and who now has to explain what was actually agreed."
+    },
+    {
+      "id": "user-entry-point-02-dragged-by-a-friend",
+      "group": "{{user}} entry point",
+      "title": "Dragged By A Friend",
+      "direction": "A friend brings {{user}} to one meeting as moral support and then stops attending herself. {{char}} assumed {{user}} was the enthusiastic one and the friend's absence needs explaining."
+    },
+    {
+      "id": "user-entry-point-03-accidental-treasurer",
+      "group": "{{user}} entry point",
+      "title": "Accidental Treasurer",
+      "direction": "{{user}} mentions being good with numbers and is elected treasurer within the hour, having not agreed. {{char}} is the president who ran that vote and who now depends on {{user}} completely."
+    },
+    {
+      "id": "user-entry-point-04-fixes-something",
+      "group": "{{user}} entry point",
+      "title": "Fixes Something",
+      "direction": "{{user}} repairs a lock, a laptop, a booking or a broken chair and is treated as indispensable before learning anyone's name. {{char}} is the member who asked and who now considers {{user}} hers to defend."
+    },
+    {
+      "id": "user-entry-point-05-roommate-connection",
+      "group": "{{user}} entry point",
+      "title": "Roommate Connection",
+      "direction": "{{user}} is the roommate, neighbour or classmate of a member and gets absorbed sideways into the group. {{char}} is the member who brought them and who feels responsible for how it goes."
+    },
+    {
+      "id": "user-entry-point-06-works-at-the-venue",
+      "group": "{{user}} entry point",
+      "title": "Works At The Venue",
+      "direction": "{{user}} works at the cafe, hall or shop the club depends on, so the relationship starts as a transaction. {{char}} is the member who talks to staff and who crosses the line into friendship first."
+    },
+    {
+      "id": "user-entry-point-07-mistaken-for-a-member",
+      "group": "{{user}} entry point",
+      "title": "Mistaken For A Member",
+      "direction": "Someone assumes {{user}} is already in the club and {{user}} does not correct them fast enough. {{char}} is the member who notices the mistake and decides, for her own reasons, not to fix it."
+    },
+    {
+      "id": "user-entry-point-08-research-project",
+      "group": "{{user}} entry point",
+      "title": "Research Project",
+      "direction": "{{user}} is studying the subculture, the group or the neighbourhood, and the club agrees to be observed. {{char}} is a willing subject until the questions get personal and {{user}} has to decide what to publish."
+    },
+    {
+      "id": "user-entry-point-09-only-one-with-a-car",
+      "group": "{{user}} entry point",
+      "title": "Only One With A Car",
+      "direction": "{{user}} has the only vehicle and the club's entire calendar now depends on it. {{char}} is the member who asks first and who is embarrassed about asking at all."
+    },
+    {
+      "id": "user-entry-point-10-inherited-membership",
+      "group": "{{user}} entry point",
+      "title": "Inherited Membership",
+      "direction": "{{user}} takes over a membership from someone who left — a sibling, a friend, a predecessor — and inherits their reputation. {{char}} is the member who knew the predecessor and who compares."
+    },
+    {
+      "id": "user-entry-point-11-the-neighbour",
+      "group": "{{user}} entry point",
+      "title": "The Neighbour",
+      "direction": "{{user}} lives next door to the venue or to a member and is gradually included by proximity and noise. {{char}} is the one who knocked on the door first and who now feels ownership of the friendship."
+    },
+    {
+      "id": "user-entry-point-12-the-swap-partner",
+      "group": "{{user}} entry point",
+      "title": "The Swap Partner",
+      "direction": "{{user}} answers an advert for a clothing swap and turns up with one bag to a room of people who all know each other. {{char}} is the member who takes the bag and who decides {{user}} is interesting."
+    },
+    {
+      "id": "user-entry-point-13-the-guest-who-stayed",
+      "group": "{{user}} entry point",
+      "title": "The Guest Who Stayed",
+      "direction": "{{user}} is invited once as somebody's guest and simply keeps being invited. No one has ever formally decided {{user}} is a member and {{char}} is the one who would have to raise it."
+    },
+    {
+      "id": "user-entry-point-14-rival-club-defector",
+      "group": "{{user}} entry point",
+      "title": "Rival Club Defector",
+      "direction": "{{user}} came from the rival club, which makes every kindness a diplomatic act. {{char}} is the member who argued for admitting {{user}} and who now has to be right about it."
+    },
+    {
+      "id": "user-entry-point-15-the-photographer",
+      "group": "{{user}} entry point",
+      "title": "The Photographer",
+      "direction": "{{user}} is asked to take photographs and is therefore present at everything without quite belonging. {{char}} is the member who wants the pictures and who forgets {{user}} is in the room."
+    },
+    {
+      "id": "user-entry-point-16-the-one-who-asked",
+      "group": "{{user}} entry point",
+      "title": "The One Who Asked",
+      "direction": "{{user}} walks up and asks to join, which nobody has done in years and which the club has no procedure for. {{char}} is the member who answers and who improvises a rule on the spot."
+    },
+    {
+      "id": "tone-and-register-01-deadpan-comedy",
+      "group": "Tone and register",
+      "title": "Deadpan Comedy",
+      "direction": "Play the absurdity of a formally constituted club about hair straight down the line, with no winking. {{char}} is the straightest face in the room and {{user}} is the only one who keeps breaking."
+    },
+    {
+      "id": "tone-and-register-02-warm-slice-of-life",
+      "group": "Tone and register",
+      "title": "Warm Slice Of Life",
+      "direction": "Low stakes, food, small kindnesses and the pleasure of a room where people are glad to see each other. {{char}} is the member who makes it feel like that and {{user}} notices before she does."
+    },
+    {
+      "id": "tone-and-register-03-low-key-melancholy",
+      "group": "Tone and register",
+      "title": "Low-Key Melancholy",
+      "direction": "The club is the last thing holding several friendships together and everyone can feel it thinning. {{char}} is the one who says nothing and {{user}} is the one who asks the question out loud."
+    },
+    {
+      "id": "tone-and-register-04-sharp-social-comedy",
+      "group": "Tone and register",
+      "title": "Sharp Social Comedy",
+      "direction": "Status, money and taste are negotiated in jokes that are two-thirds hostile. {{char}} is very good at this and {{user}} is the newest available target."
+    },
+    {
+      "id": "tone-and-register-05-slow-burn-romance",
+      "group": "Tone and register",
+      "title": "Slow-Burn Romance",
+      "direction": "The club is the reason {{user}} and {{char}} keep being in the same room, and neither is doing anything about it. Let the group's schedule do the work and keep the pace unhurried."
+    },
+    {
+      "id": "tone-and-register-06-documentary-realism",
+      "group": "Tone and register",
+      "title": "Documentary Realism",
+      "direction": "Observe rather than dramatise: real admin, real money, real awkward gaps in conversation. {{char}} is ordinary and specific and {{user}} is the newcomer whose questions expose the structure."
+    },
+    {
+      "id": "tone-and-register-07-ensemble-farce",
+      "group": "Tone and register",
+      "title": "Ensemble Farce",
+      "direction": "Six people, one room, three simultaneous misunderstandings and a deadline nobody can meet. {{char}} is at the centre of two of them and {{user}} is the person who could clear it up."
+    },
+    {
+      "id": "tone-and-register-08-quiet-character-study",
+      "group": "Tone and register",
+      "title": "Quiet Character Study",
+      "direction": "One long conversation in a corner while the meeting happens around it. {{char}} reveals herself slowly and indirectly and {{user}} has to read the room rather than the words."
+    },
+    {
+      "id": "tone-and-register-09-bittersweet-farewell",
+      "group": "Tone and register",
+      "title": "Bittersweet Farewell",
+      "direction": "The club is ending and everyone knows; the evening is about what people choose to say before it does. {{char}} is the member leaving and {{user}} is the reason she hesitates."
+    },
+    {
+      "id": "tone-and-register-10-gentle-satire",
+      "group": "Tone and register",
+      "title": "Gentle Satire",
+      "direction": "Affectionate mockery of subculture rules, brand loyalty and the seriousness with which a hobby is defended. {{char}} is a true believer with a sense of humour and {{user}} is the outsider who asks why it matters."
+    },
+    {
+      "id": "tone-and-register-11-workplace-comedy",
+      "group": "Tone and register",
+      "title": "Workplace Comedy",
+      "direction": "The shifts, the rota and the manager matter more than the club and the humour comes from labour. {{char}} is the colleague who makes the shift survivable and {{user}} is on the same rota."
+    },
+    {
+      "id": "tone-and-register-12-coming-of-age",
+      "group": "Tone and register",
+      "title": "Coming Of Age",
+      "direction": "The group is where several adults are working out who they are in their early twenties, badly and loudly. {{char}} is mid-decision and {{user}} arrives at the same moment of uncertainty."
+    },
+    {
+      "id": "tone-and-register-13-gossip-engine",
+      "group": "Tone and register",
+      "title": "Gossip Engine",
+      "direction": "Everything arrives secondhand: what someone said, what someone wore, what someone is definitely not telling. {{char}} is a reliable narrator about nobody and {{user}} is the only one who checks."
+    },
+    {
+      "id": "tone-and-register-14-tender-and-awkward",
+      "group": "Tone and register",
+      "title": "Tender And Awkward",
+      "direction": "People are kind to each other in badly executed ways and nobody has the vocabulary for it. {{char}} means well and lands it wrong and {{user}} is on the receiving end of a clumsy kindness."
+    },
+    {
+      "id": "tone-and-register-15-loud-and-high-energy",
+      "group": "Tone and register",
+      "title": "Loud And High Energy",
+      "direction": "Volume, interruption, overlapping conversations and something always about to spill. {{char}} is the loudest and {{user}} can barely finish a sentence for the first hour."
+    },
+    {
+      "id": "tone-and-register-16-observational-dry-wit",
+      "group": "Tone and register",
+      "title": "Observational Dry Wit",
+      "direction": "The narration notices the details people reveal without meaning to: the chair moved, the receipt kept. {{char}} is read through these details and {{user}} is the one who notices first."
+    },
+    {
+      "id": "combinations-001-official-society-x-sporty-streak",
+      "group": "Combinations",
+      "title": "Official Society × Sporty Streak",
+      "direction": "A chartered society with a budget and an annual report collides with tracksuits, trainers and short practical nails. The group's paperwork and its wardrobe describe two different clubs. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-002-four-members-x-idol-imitation",
+      "group": "Combinations",
+      "title": "Four Members × Idol Imitation",
+      "direction": "A four-person circle where every absence is felt collides with a fixed imitation of an invented idol. The group's paperwork and its wardrobe describe two different clubs. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-003-on-probation-x-retro-2000s",
+      "group": "Combinations",
+      "title": "On Probation × Retro 2000s",
+      "direction": "A club on probation that must grow or dissolve collides with a 2000s revival built from old magazines. The group's paperwork and its wardrobe describe two different clubs. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-004-informal-table-x-thrift-circuit",
+      "group": "Combinations",
+      "title": "Informal Table × Thrift Circuit",
+      "direction": "An unnamed circle holding the same corner table collides with an optimised weekend thrifting route. The structure exists mostly to justify the thing they actually do. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-005-karaoke-regulars-x-fighting-games",
+      "group": "Combinations",
+      "title": "Karaoke Regulars × Fighting Games",
+      "direction": "A karaoke-box club with a fixed Thursday slot collides with a fighting-game bracket with serious trash talk. The structure exists mostly to justify the thing they actually do. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-006-informal-table-x-fashion-swap",
+      "group": "Combinations",
+      "title": "Informal Table × Fashion Swap",
+      "direction": "An unnamed circle holding the same corner table collides with a circulating wardrobe with borrowing rules. The structure exists mostly to justify the thing they actually do. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-007-four-members-x-barely-attends",
+      "group": "Combinations",
+      "title": "Four Members × Barely Attends",
+      "direction": "A four-person circle where every absence is felt collides with a member on the roster who never appears. The size of the roster determines who gets heard. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-008-alumna-patron-x-documenter",
+      "group": "Combinations",
+      "title": "Alumna Patron × Documenter",
+      "direction": "A patron alumna who still pays and still visits collides with an archivist with the camera and the old photos. The size of the roster determines who gets heard. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-009-alumna-patron-x-has-money",
+      "group": "Combinations",
+      "title": "Alumna Patron × Has Money",
+      "direction": "A patron alumna who still pays and still visits collides with a generous member whose money buys influence. The size of the roster determines who gets heard. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-010-fifteen-strong-x-election-week",
+      "group": "Combinations",
+      "title": "Fifteen Strong × Election Week",
+      "direction": "A fifteen-member club with three overlapping factions collides with an annual vote four days away and everyone being nice. The constitution decides who can overrule whom. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-011-informal-table-x-serious-president",
+      "group": "Combinations",
+      "title": "Informal Table × Serious President",
+      "direction": "An unnamed circle holding the same corner table collides with a president with minutes, deadlines and tabs. The constitution decides who can overrule whom. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-012-karaoke-regulars-x-impeachment-season",
+      "group": "Combinations",
+      "title": "Karaoke Regulars × Impeachment Season",
+      "direction": "A karaoke-box club with a fixed Thursday slot collides with a motion to remove the leader, tabled for this week. The constitution decides who can overrule whom. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-013-splinter-group-x-ex-friends",
+      "group": "Combinations",
+      "title": "Splinter Group × Ex-Friends",
+      "direction": "A splinter club founded on an unexplained walkout collides with two members not speaking, in the same small room. The rules keep people in a room they would otherwise have left. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-014-on-probation-x-senpai-debt",
+      "group": "Combinations",
+      "title": "On Probation × Senpai Debt",
+      "direction": "A club on probation that must grow or dissolve collides with an old favour still being repaid in small ways. The rules keep people in a room they would otherwise have left. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-015-four-members-x-senpai-debt",
+      "group": "Combinations",
+      "title": "Four Members × Senpai Debt",
+      "direction": "A four-person circle where every absence is felt collides with an old favour still being repaid in small ways. The rules keep people in a room they would otherwise have left. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-016-newly-chartered-x-recruitment-fair",
+      "group": "Combinations",
+      "title": "Newly Chartered × Recruitment Fair",
+      "direction": "A three-week-old club still drafting its own rules collides with a recruitment table with a hand-painted banner. The calendar is the constitution in practice. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-017-waiting-list-x-reunion",
+      "group": "Combinations",
+      "title": "Waiting List × Reunion",
+      "direction": "A capped roster with a long waiting list collides with a returning member who resets the old hierarchy. The calendar is the constitution in practice. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-018-merged-club-x-recruitment-fair",
+      "group": "Combinations",
+      "title": "Merged Club × Recruitment Fair",
+      "direction": "A merged club with two unreconciled halves collides with a recruitment table with a hand-painted banner. The calendar is the constitution in practice. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-019-on-probation-x-dues",
+      "group": "Combinations",
+      "title": "On Probation × Dues",
+      "direction": "A club on probation that must grow or dissolve collides with dues collected unevenly and quietly waived. Admission procedure is the club's real personality. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-020-official-society-x-no-rules",
+      "group": "Combinations",
+      "title": "Official Society × No Rules",
+      "direction": "A chartered society with a budget and an annual report collides with no process at all, only continuing to show up. Admission procedure is the club's real personality. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-021-cafe-back-room-x-vetting-interview",
+      "group": "Combinations",
+      "title": "Cafe Back Room × Vetting Interview",
+      "direction": "A back room granted in exchange for weekend shifts collides with a two-member interview with unwritten questions. Admission procedure is the club's real personality. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-022-karaoke-regulars-x-photo-problem",
+      "group": "Combinations",
+      "title": "Karaoke Regulars × Photo Problem",
+      "direction": "A karaoke-box club with a fixed Thursday slot collides with one member asking not to be photographed. How the club presents itself depends on who is allowed in. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-023-newly-chartered-x-rival-smear",
+      "group": "Combinations",
+      "title": "Newly Chartered × Rival Smear",
+      "direction": "A three-week-old club still drafting its own rules collides with an almost-true story spread by a rival club. How the club presents itself depends on who is allowed in. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-024-fifteen-strong-x-always-invited",
+      "group": "Combinations",
+      "title": "Fifteen Strong × Always Invited",
+      "direction": "A fifteen-member club with three overlapping factions collides with invited everywhere as decoration and tired of it. How the club presents itself depends on who is allowed in. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-025-official-society-x-defector",
+      "group": "Combinations",
+      "title": "Official Society × Defector",
+      "direction": "A chartered society with a budget and an annual report collides with a defector from the rival club who must be defended. {{user}}'s arrival is either a formality or a rupture. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-026-shared-room-x-fixed-something",
+      "group": "Combinations",
+      "title": "Shared Room × Fixed Something",
+      "direction": "A shared clubroom and a passive-aggressive timetable collides with a newcomer who repaired one thing and became indispensable. {{user}}'s arrival is either a formality or a rupture. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-027-rival-chapter-x-swap-partner",
+      "group": "Combinations",
+      "title": "Rival Chapter × Swap Partner",
+      "direction": "A rival chapter with better funding and worse manners collides with a stranger who answered a swap advert with one bag. {{user}}'s arrival is either a formality or a rupture. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-028-informal-table-x-deadpan-comedy",
+      "group": "Combinations",
+      "title": "Informal Table × Deadpan Comedy",
+      "direction": "An unnamed circle holding the same corner table collides with deadpan comedy played completely straight. The same structure reads as warm in one register and absurd in another. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-029-no-fixed-address-x-workplace-comedy",
+      "group": "Combinations",
+      "title": "No Fixed Address × Workplace Comedy",
+      "direction": "A rota of flats with a different living room weekly collides with shift work comedy where the rota rules. The same structure reads as warm in one register and absurd in another. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-030-community-centre-x-farewell",
+      "group": "Combinations",
+      "title": "Community Centre × Farewell",
+      "direction": "A mixed-age neighbourhood group with a council grant collides with a club ending and the things left unsaid. The same structure reads as warm in one register and absurd in another. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-031-onee-gyaru-x-band-logistics",
+      "group": "Combinations",
+      "title": "Onee-Gyaru × Band Logistics",
+      "direction": "An older, polished onee-gyaru who mentors collides with a band that mostly argues about practice rooms. The look has to justify itself against what the club actually does. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-032-goth-adjacent-x-dance-crew",
+      "group": "Combinations",
+      "title": "Goth-Adjacent × Dance Crew",
+      "direction": "Goth-adjacent black lace that still claims gyaru collides with a dance crew rehearsing for a showcase. The look has to justify itself against what the club actually does. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-033-goth-adjacent-x-event-hosting",
+      "group": "Combinations",
+      "title": "Goth-Adjacent × Event Hosting",
+      "direction": "Goth-adjacent black lace that still claims gyaru collides with running club nights with a door list and a cash box. The look has to justify itself against what the club actually does. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-034-retro-2000s-x-day-job-member",
+      "group": "Combinations",
+      "title": "Retro 2000s × Day Job Member",
+      "direction": "A 2000s revival built from old magazines collides with a member whose shift pattern shapes the calendar. The style spread becomes the group's visible hierarchy. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-035-minimalist-x-chaos-agent",
+      "group": "Combinations",
+      "title": "Minimalist × Chaos Agent",
+      "direction": "Minimalism defended on subculture grounds collides with a beloved instigator of every bad idea. The style spread becomes the group's visible hierarchy. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-036-chameleon-x-joined-for-a-friend",
+      "group": "Combinations",
+      "title": "Chameleon × Joined For A Friend",
+      "direction": "No fixed look, matching whoever she stands beside collides with a member who joined only for a friend. The style spread becomes the group's visible hierarchy. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-037-goth-adjacent-x-rules-by-chat",
+      "group": "Combinations",
+      "title": "Goth-Adjacent × Rules By Chat",
+      "direction": "Goth-adjacent black lace that still claims gyaru collides with a constitution that exists only as late-night chat. Aesthetic authority and formal authority rarely sit with the same member. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-038-vintage-devotee-x-seniority-rule",
+      "group": "Combinations",
+      "title": "Vintage Devotee × Seniority Rule",
+      "direction": "Eighties and nineties street fashion, sourced seriously collides with an unwritten seniority rule nobody defends. Aesthetic authority and formal authority rarely sit with the same member. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-039-country-gyaru-x-seniority-rule",
+      "group": "Combinations",
+      "title": "Country Gyaru × Seniority Rule",
+      "direction": "A small-town variant with its own vocabulary collides with an unwritten seniority rule nobody defends. Aesthetic authority and formal authority rarely sit with the same member. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-040-sporty-streak-x-shared-secret",
+      "group": "Combinations",
+      "title": "Sporty Streak × Shared Secret",
+      "direction": "Tracksuits, trainers and short practical nails collides with a secret two members keep about a third. Taste is the safest proxy for an older argument. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-041-retro-2000s-x-sisters",
+      "group": "Combinations",
+      "title": "Retro 2000s × Sisters",
+      "direction": "A 2000s revival built from old magazines collides with two sisters in the same small club. Taste is the safest proxy for an older argument. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-042-sporty-streak-x-caretaking",
+      "group": "Combinations",
+      "title": "Sporty Streak × Caretaking",
+      "direction": "Tracksuits, trainers and short practical nails collides with quiet caretaking that nobody calls caretaking. Taste is the safest proxy for an older argument. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-043-thrift-only-x-last-meeting",
+      "group": "Combinations",
+      "title": "Thrift Only × Last Meeting",
+      "direction": "A thrift-only wardrobe with a moral position collides with a final meeting nobody has named as final. The calendar becomes a sequence of looks. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-044-cosplay-crossover-x-moving-day",
+      "group": "Combinations",
+      "title": "Cosplay Crossover × Moving Day",
+      "direction": "Style as costume with a persona per outfit collides with a clubroom emptied into someone's hallway. The calendar becomes a sequence of looks. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-045-ageha-glam-x-karaoke-night",
+      "group": "Combinations",
+      "title": "Ageha Glam × Karaoke Night",
+      "direction": "Ageha glam with two hours of preparation collides with karaoke night where the song choice is social. The calendar becomes a sequence of looks. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-046-nails-only-x-sponsorship",
+      "group": "Combinations",
+      "title": "Nails Only × Sponsorship",
+      "direction": "Nails as the whole practice, everything else plain collides with membership only through a sponsor's name. Admission is partly a judgement about appearance and everyone knows it. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-047-hair-identity-x-unanimous-vote",
+      "group": "Combinations",
+      "title": "Hair Identity × Unanimous Vote",
+      "direction": "Hair that changes monthly as a statement collides with unanimous admission and a quiet veto. Admission is partly a judgement about appearance and everyone knows it. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-048-idol-imitation-x-initiation-prank",
+      "group": "Combinations",
+      "title": "Idol Imitation × Initiation Prank",
+      "direction": "A fixed imitation of an invented idol collides with an initiation prank that keeps escalating. Admission is partly a judgement about appearance and everyone knows it. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-049-ageha-glam-x-small-following",
+      "group": "Combinations",
+      "title": "Ageha Glam × Small Following",
+      "direction": "Ageha glam with two hours of preparation collides with a small online following steering real decisions. Outsiders read the group entirely from its most photogenic member. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-050-onee-gyaru-x-photographed-unasked",
+      "group": "Combinations",
+      "title": "Onee-Gyaru × Photographed Unasked",
+      "direction": "An older, polished onee-gyaru who mentors collides with a stranger's video posted without asking. Outsiders read the group entirely from its most photogenic member. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-051-thrift-only-x-rumour-mill",
+      "group": "Combinations",
+      "title": "Thrift Only × Rumour Mill",
+      "direction": "A thrift-only wardrobe with a moral position collides with rumours more elaborate than the club itself. Outsiders read the group entirely from its most photogenic member. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-052-host-silver-x-the-driver",
+      "group": "Combinations",
+      "title": "Host Silver × The Driver",
+      "direction": "Host-club tailoring and silver accessories collides with the only person with a car and a calendar. {{user}}'s own clothes are the first thing being assessed. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-053-nails-only-x-accidental-treasurer",
+      "group": "Combinations",
+      "title": "Nails Only × Accidental Treasurer",
+      "direction": "Nails as the whole practice, everything else plain collides with a treasurer elected within the hour without agreeing. {{user}}'s own clothes are the first thing being assessed. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-054-host-silver-x-orientation",
+      "group": "Combinations",
+      "title": "Host Silver × Orientation",
+      "direction": "Host-club tailoring and silver accessories collides with a newcomer signed up at an orientation fair by accident. {{user}}'s own clothes are the first thing being assessed. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-055-onee-gyaru-x-coming-of-age",
+      "group": "Combinations",
+      "title": "Onee-Gyaru × Coming Of Age",
+      "direction": "An older, polished onee-gyaru who mentors collides with adults working out who they are, loudly. The same wardrobe is tender in one register and merciless in another. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-056-makeup-first-x-gentle-satire",
+      "group": "Combinations",
+      "title": "Makeup First × Gentle Satire",
+      "direction": "Makeup as craft, clothes as afterthought collides with affectionate satire of subculture orthodoxy. The same wardrobe is tender in one register and merciless in another. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-057-makeup-first-x-tender-awkward",
+      "group": "Combinations",
+      "title": "Makeup First × Tender Awkward",
+      "direction": "Makeup as craft, clothes as afterthought collides with clumsy kindness and no vocabulary for it. The same wardrobe is tender in one register and merciless in another. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-058-band-logistics-x-actually-shy",
+      "group": "Combinations",
+      "title": "Band Logistics × Actually Shy",
+      "direction": "A band that mostly argues about practice rooms collides with a loud wardrobe and a quiet voice. The members were recruited by different versions of the same hobby. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-059-dance-crew-x-unserious-president",
+      "group": "Combinations",
+      "title": "Dance Crew × Unserious President",
+      "direction": "A dance crew rehearsing for a showcase collides with an apparently chaotic president who runs everything. The members were recruited by different versions of the same hobby. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-060-clothing-drives-x-perpetual-newcomer",
+      "group": "Combinations",
+      "title": "Clothing Drives × Perpetual Newcomer",
+      "direction": "Clothing drives and a storage problem collides with a long-standing member still treated as new. The members were recruited by different versions of the same hobby. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-061-photo-zine-x-reluctant-president",
+      "group": "Combinations",
+      "title": "Photo Zine × Reluctant President",
+      "direction": "A photocopied zine published four times a year collides with a president elected in absentia, trying to resign. Leadership is really control of the activity. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-062-shared-shifts-x-the-patron",
+      "group": "Combinations",
+      "title": "Shared Shifts × The Patron",
+      "direction": "A shared work rota as the club's social core collides with an older patron whose money comes with advice. Leadership is really control of the activity. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-063-fighting-games-x-the-patron",
+      "group": "Combinations",
+      "title": "Fighting Games × The Patron",
+      "direction": "A fighting-game bracket with serious trash talk collides with an older patron whose money comes with advice. Leadership is really control of the activity. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-064-event-hosting-x-money-tension",
+      "group": "Combinations",
+      "title": "Event Hosting × Money Tension",
+      "direction": "Running club nights with a door list and a cash box collides with a club whose activities quietly cost money. The shared activity is often the instrument of the grudge. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-065-cosplay-builds-x-broken-chat",
+      "group": "Combinations",
+      "title": "Cosplay Builds × Broken Chat",
+      "direction": "Convention builds, foam, glue and deadlines collides with a group chat split in two, blame disputed. The shared activity is often the instrument of the grudge. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-066-sports-day-team-x-money-tension",
+      "group": "Combinations",
+      "title": "Sports Day Team × Money Tension",
+      "direction": "A once-a-year tournament taken too seriously collides with a club whose activities quietly cost money. The shared activity is often the instrument of the grudge. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-067-shared-shifts-x-club-collab",
+      "group": "Combinations",
+      "title": "Shared Shifts × Club Collab",
+      "direction": "A shared work rota as the club's social core collides with a joint event another club proposed. The calendar is a commitment to the hobby rather than to each other. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-068-fashion-swap-x-anniversary",
+      "group": "Combinations",
+      "title": "Fashion Swap × Anniversary",
+      "direction": "A circulating wardrobe with borrowing rules collides with an anniversary two members remember differently. The calendar is a commitment to the hobby rather than to each other. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-069-thrift-circuit-x-swap-night",
+      "group": "Combinations",
+      "title": "Thrift Circuit × Swap Night",
+      "direction": "An optimised weekend thrifting route collides with a swap night with bags on the floor. The calendar is a commitment to the hobby rather than to each other. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-070-clothing-drives-x-quiet-membership",
+      "group": "Combinations",
+      "title": "Clothing Drives × Quiet Membership",
+      "direction": "Clothing drives and a storage problem collides with unlisted members who prefer no record. Newcomers are tested on the activity, not on fitting in. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-071-event-hosting-x-probationary",
+      "group": "Combinations",
+      "title": "Event Hosting × Probationary",
+      "direction": "Running club nights with a door list and a cash box collides with a term of provisional status with no keys or votes. Newcomers are tested on the activity, not on fitting in. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-072-band-logistics-x-skill-test",
+      "group": "Combinations",
+      "title": "Band Logistics × Skill Test",
+      "direction": "A band that mostly argues about practice rooms collides with a specific skill test applied fairly. Newcomers are tested on the activity, not on fitting in. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-073-fashion-swap-x-dean-s-watchlist",
+      "group": "Combinations",
+      "title": "Fashion Swap × Dean's Watchlist",
+      "direction": "A circulating wardrobe with borrowing rules collides with one complaint away from an official review. Outsiders misread the hobby as the whole identity. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-074-study-alibi-x-rumour-mill",
+      "group": "Combinations",
+      "title": "Study Alibi × Rumour Mill",
+      "direction": "A study group that has not studied in a year collides with rumours more elaborate than the club itself. Outsiders misread the hobby as the whole identity. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-075-makeup-mentoring-x-photographed-unasked",
+      "group": "Combinations",
+      "title": "Makeup Mentoring × Photographed Unasked",
+      "direction": "Makeup lessons for nervous first-years collides with a stranger's video posted without asking. Outsiders misread the hobby as the whole identity. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-076-dance-crew-x-orientation",
+      "group": "Combinations",
+      "title": "Dance Crew × Orientation",
+      "direction": "A dance crew rehearsing for a showcase collides with a newcomer signed up at an orientation fair by accident. {{user}} was drawn in by the activity and stayed for the people. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-077-company-only-x-neighbour",
+      "group": "Combinations",
+      "title": "Company Only × Neighbour",
+      "direction": "A club with no shared activity, only company collides with a neighbour included by proximity and constant noise. {{user}} was drawn in by the activity and stayed for the people. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-078-tiny-channel-x-the-driver",
+      "group": "Combinations",
+      "title": "Tiny Channel × The Driver",
+      "direction": "A small video channel with editing disputes collides with the only person with a car and a calendar. {{user}} was drawn in by the activity and stayed for the people. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-079-fighting-games-x-sharp-comedy",
+      "group": "Combinations",
+      "title": "Fighting Games × Sharp Comedy",
+      "direction": "A fighting-game bracket with serious trash talk collides with status negotiated through half-hostile jokes. The hobby's absurdity and its sincerity are the same material. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-080-photo-zine-x-warm-slice",
+      "group": "Combinations",
+      "title": "Photo Zine × Warm Slice",
+      "direction": "A photocopied zine published four times a year collides with warm, low-stakes, food and small kindnesses. The hobby's absurdity and its sincerity are the same material. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-081-photo-zine-x-documentary",
+      "group": "Combinations",
+      "title": "Photo Zine × Documentary",
+      "direction": "A photocopied zine published four times a year collides with observed realism, admin and awkward gaps. The hobby's absurdity and its sincerity are the same material. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-082-oldest-member-x-faculty-advisor",
+      "group": "Combinations",
+      "title": "Oldest Member × Faculty Advisor",
+      "direction": "A member a decade older with a life outside collides with a staff advisor with forms and opinions. The person with formal power is rarely the person with the room. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-083-documenter-x-unpaid-adult",
+      "group": "Combinations",
+      "title": "Documenter × Unpaid Adult",
+      "direction": "An archivist with the camera and the old photos collides with one exhausted member doing all the real admin. The person with formal power is rarely the person with the room. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-084-underestimated-x-absent-founder",
+      "group": "Combinations",
+      "title": "Underestimated × Absent Founder",
+      "direction": "The member everyone wrongly writes off collides with an absent founder still issuing rulings remotely. The person with formal power is rarely the person with the room. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-085-transfer-student-x-came-back",
+      "group": "Combinations",
+      "title": "Transfer Student × Came Back",
+      "direction": "A recent transfer still learning local rules collides with a member who quit loudly and returned quietly. The ensemble's history is carried by two members at most. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-086-actually-shy-x-new-favourite",
+      "group": "Combinations",
+      "title": "Actually Shy × New Favourite",
+      "direction": "A loud wardrobe and a quiet voice collides with a new favourite displacing an old closeness. The ensemble's history is carried by two members at most. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-087-perpetual-newcomer-x-new-favourite",
+      "group": "Combinations",
+      "title": "Perpetual Newcomer × New Favourite",
+      "direction": "A long-standing member still treated as new collides with a new favourite displacing an old closeness. The ensemble's history is carried by two members at most. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-088-not-visibly-gyaru-x-group-birthday",
+      "group": "Combinations",
+      "title": "Not Visibly Gyaru × Group Birthday",
+      "direction": "A plainly dressed member with the deepest commitment collides with four birthdays, one cake budget. Absences and arrivals are the loudest events of the term. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-089-oldest-member-x-photoshoot-day",
+      "group": "Combinations",
+      "title": "Oldest Member × Photoshoot Day",
+      "direction": "A member a decade older with a life outside collides with a photoshoot with six people and no director. Absences and arrivals are the loudest events of the term. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-090-not-visibly-gyaru-x-moving-day",
+      "group": "Combinations",
+      "title": "Not Visibly Gyaru × Moving Day",
+      "direction": "A plainly dressed member with the deepest commitment collides with a clubroom emptied into someone's hallway. Absences and arrivals are the loudest events of the term. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-091-day-job-member-x-roster-full",
+      "group": "Combinations",
+      "title": "Day Job Member × Roster Full",
+      "direction": "A member whose shift pattern shapes the calendar collides with a group that has declared itself complete. The newcomer's status depends on who sponsored them. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-092-chaos-agent-x-by-proximity",
+      "group": "Combinations",
+      "title": "Chaos Agent × By Proximity",
+      "direction": "A beloved instigator of every bad idea collides with membership granted by sheer proximity, unannounced. The newcomer's status depends on who sponsored them. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-093-unserious-president-x-roommate-clause",
+      "group": "Combinations",
+      "title": "Unserious President × Roommate Clause",
+      "direction": "An apparently chaotic president who runs everything collides with one guest pass issued to a roommate or classmate. The newcomer's status depends on who sponsored them. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-094-the-organiser-x-misread-by-faculty",
+      "group": "Combinations",
+      "title": "The Organiser × Misread By Faculty",
+      "direction": "The unofficial organiser who books and remembers collides with faculty who read the club as a problem. One member becomes the face of a group she did not design. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-095-has-money-x-shop-sponsor",
+      "group": "Combinations",
+      "title": "Has Money × Shop Sponsor",
+      "direction": "A generous member whose money buys influence collides with a local shop trading clothes for photographs. One member becomes the face of a group she did not design. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-096-barely-attends-x-deliberately-private",
+      "group": "Combinations",
+      "title": "Barely Attends × Deliberately Private",
+      "direction": "A member on the roster who never appears collides with a no-photographs rule enforced strictly. One member becomes the face of a group she did not design. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-097-unserious-president-x-venue-staff",
+      "group": "Combinations",
+      "title": "Unserious President × Venue Staff",
+      "direction": "An apparently chaotic president who runs everything collides with venue staff the club depends on. {{user}} has a specific ally and a specific obstacle from minute one. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-098-joined-for-a-friend-x-swap-partner",
+      "group": "Combinations",
+      "title": "Joined For A Friend × Swap Partner",
+      "direction": "A member who joined only for a friend collides with a stranger who answered a swap advert with one bag. {{user}} has a specific ally and a specific obstacle from minute one. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-099-day-job-member-x-fixed-something",
+      "group": "Combinations",
+      "title": "Day Job Member × Fixed Something",
+      "direction": "A member whose shift pattern shapes the calendar collides with a newcomer who repaired one thing and became indispensable. {{user}} has a specific ally and a specific obstacle from minute one. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-100-silent-treasurer-x-farewell",
+      "group": "Combinations",
+      "title": "Silent Treasurer × Farewell",
+      "direction": "A near-silent treasurer holding the money collides with a club ending and the things left unsaid. The same six people read as a farce or a study depending on framing. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-101-the-organiser-x-melancholy",
+      "group": "Combinations",
+      "title": "The Organiser × Melancholy",
+      "direction": "The unofficial organiser who books and remembers collides with the quiet knowledge that the group is thinning. The same six people read as a farce or a study depending on framing. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-102-silent-treasurer-x-deadpan-comedy",
+      "group": "Combinations",
+      "title": "Silent Treasurer × Deadpan Comedy",
+      "direction": "A near-silent treasurer holding the money collides with deadpan comedy played completely straight. The same six people read as a farce or a study depending on framing. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-103-absent-founder-x-nobody-defends-her",
+      "group": "Combinations",
+      "title": "Absent Founder × Nobody Defends Her",
+      "direction": "An absent founder still issuing rulings remotely collides with jokes about one member that stopped being funny. Every procedural dispute reopens a personal one. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-104-delegates-everything-x-came-back",
+      "group": "Combinations",
+      "title": "Delegates Everything × Came Back",
+      "direction": "A leader who assigns everything and does nothing collides with a member who quit loudly and returned quietly. Every procedural dispute reopens a personal one. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-105-delegates-everything-x-caretaking",
+      "group": "Combinations",
+      "title": "Delegates Everything × Caretaking",
+      "direction": "A leader who assigns everything and does nothing collides with quiet caretaking that nobody calls caretaking. Every procedural dispute reopens a personal one. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-106-rotating-chair-x-reunion",
+      "group": "Combinations",
+      "title": "Rotating Chair × Reunion",
+      "direction": "A monthly rotating chair and its consequences collides with a returning member who resets the old hierarchy. Whoever holds the calendar controls the term. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-107-reluctant-president-x-first-meeting",
+      "group": "Combinations",
+      "title": "Reluctant President × First Meeting",
+      "direction": "A president elected in absentia, trying to resign collides with a first meeting one chair short. Whoever holds the calendar controls the term. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-108-the-patron-x-overnight-trip",
+      "group": "Combinations",
+      "title": "The Patron × Overnight Trip",
+      "direction": "An older patron whose money comes with advice collides with an overnight trip with too few rooms. Whoever holds the calendar controls the term. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-109-treasurer-in-charge-x-vetting-interview",
+      "group": "Combinations",
+      "title": "Treasurer In Charge × Vetting Interview",
+      "direction": "Real power sitting in the treasurer's receipts collides with a two-member interview with unwritten questions. Admission rules are the leader's instrument or her constraint. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-110-faculty-advisor-x-dues",
+      "group": "Combinations",
+      "title": "Faculty Advisor × Dues",
+      "direction": "A staff advisor with forms and opinions collides with dues collected unevenly and quietly waived. Admission rules are the leader's instrument or her constraint. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-111-absent-founder-x-dues",
+      "group": "Combinations",
+      "title": "Absent Founder × Dues",
+      "direction": "An absent founder still issuing rulings remotely collides with dues collected unevenly and quietly waived. Admission rules are the leader's instrument or her constraint. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-112-no-leader-x-shop-sponsor",
+      "group": "Combinations",
+      "title": "No Leader × Shop Sponsor",
+      "direction": "A club with no leader and only habit collides with a local shop trading clothes for photographs. The club's public face is a leadership decision somebody resents. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-113-two-claimants-x-always-invited",
+      "group": "Combinations",
+      "title": "Two Claimants × Always Invited",
+      "direction": "Two members both certain they are in charge collides with invited everywhere as decoration and tired of it. The club's public face is a leadership decision somebody resents. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-114-secretary-runs-it-x-shop-sponsor",
+      "group": "Combinations",
+      "title": "Secretary Runs It × Shop Sponsor",
+      "direction": "The secretary holding calendar, room and passwords collides with a local shop trading clothes for photographs. The club's public face is a leadership decision somebody resents. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-115-faculty-advisor-x-researcher",
+      "group": "Combinations",
+      "title": "Faculty Advisor × Researcher",
+      "direction": "A staff advisor with forms and opinions collides with a researcher observing the club for a project. {{user}}'s first ally is also a faction. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-116-serious-president-x-venue-staff",
+      "group": "Combinations",
+      "title": "Serious President × Venue Staff",
+      "direction": "A president with minutes, deadlines and tabs collides with venue staff the club depends on. {{user}}'s first ally is also a faction. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-117-unpaid-adult-x-dragged-along",
+      "group": "Combinations",
+      "title": "Unpaid Adult × Dragged Along",
+      "direction": "One exhausted member doing all the real admin collides with a guest brought once by a friend who stopped coming. {{user}}'s first ally is also a faction. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-118-the-patron-x-workplace-comedy",
+      "group": "Combinations",
+      "title": "The Patron × Workplace Comedy",
+      "direction": "An older patron whose money comes with advice collides with shift work comedy where the rota rules. Authority is either comic or quietly sad, not both at once. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-119-no-leader-x-gossip-engine",
+      "group": "Combinations",
+      "title": "No Leader × Gossip Engine",
+      "direction": "A club with no leader and only habit collides with a world mediated entirely by secondhand information. Authority is either comic or quietly sad, not both at once. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-120-rotating-chair-x-high-energy",
+      "group": "Combinations",
+      "title": "Rotating Chair × High Energy",
+      "direction": "A monthly rotating chair and its consequences collides with overlapping conversation and constant volume. Authority is either comic or quietly sad, not both at once. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-121-childhood-friends-x-moving-day",
+      "group": "Combinations",
+      "title": "Childhood Friends × Moving Day",
+      "direction": "Childhood friends with impenetrable shorthand collides with a clubroom emptied into someone's hallway. The event is the pretext and the grudge is the plot. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-122-competitive-friends-x-trip-planning",
+      "group": "Combinations",
+      "title": "Competitive Friends × Trip Planning",
+      "direction": "Best friends who keep score about everything collides with trip planning that cannot agree on anything. The event is the pretext and the grudge is the plot. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-123-broken-chat-x-exam-hiatus",
+      "group": "Combinations",
+      "title": "Broken Chat × Exam Hiatus",
+      "direction": "A group chat split in two, blame disputed collides with a six-week hiatus that tests the friendships. The event is the pretext and the grudge is the plot. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-124-ex-friends-x-open-door",
+      "group": "Combinations",
+      "title": "Ex-Friends × Open Door",
+      "direction": "Two members not speaking, in the same small room collides with an open door with no memory of admitting anyone. Admitting someone new redistributes old loyalties. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-125-new-favourite-x-quiet-membership",
+      "group": "Combinations",
+      "title": "New Favourite × Quiet Membership",
+      "direction": "A new favourite displacing an old closeness collides with unlisted members who prefer no record. Admitting someone new redistributes old loyalties. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-126-came-back-x-bring-something",
+      "group": "Combinations",
+      "title": "Came Back × Bring Something",
+      "direction": "A member who quit loudly and returned quietly collides with admission by one garment, judged on arrival. Admitting someone new redistributes old loyalties. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-127-unrequited-crush-x-rumour-mill",
+      "group": "Combinations",
+      "title": "Unrequited Crush × Rumour Mill",
+      "direction": "An unspoken crush the whole club is managing collides with rumours more elaborate than the club itself. The group performs unity it does not have. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-128-money-tension-x-invisible",
+      "group": "Combinations",
+      "title": "Money Tension × Invisible",
+      "direction": "A club whose activities quietly cost money collides with a club the campus has never noticed. The group performs unity it does not have. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-129-money-tension-x-small-following",
+      "group": "Combinations",
+      "title": "Money Tension × Small Following",
+      "direction": "A club whose activities quietly cost money collides with a small online following steering real decisions. The group performs unity it does not have. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-130-style-rivalry-x-mistaken-member",
+      "group": "Combinations",
+      "title": "Style Rivalry × Mistaken Member",
+      "direction": "Two members claiming the same style collides with a stranger assumed to be a member who did not correct it. {{user}} becomes evidence in an argument they did not know existed. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-131-came-back-x-the-driver",
+      "group": "Combinations",
+      "title": "Came Back × The Driver",
+      "direction": "A member who quit loudly and returned quietly collides with the only person with a car and a calendar. {{user}} becomes evidence in an argument they did not know existed. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-132-new-favourite-x-accidental-treasurer",
+      "group": "Combinations",
+      "title": "New Favourite × Accidental Treasurer",
+      "direction": "A new favourite displacing an old closeness collides with a treasurer elected within the hour without agreeing. {{user}} becomes evidence in an argument they did not know existed. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-133-money-tension-x-gentle-satire",
+      "group": "Combinations",
+      "title": "Money Tension × Gentle Satire",
+      "direction": "A club whose activities quietly cost money collides with affectionate satire of subculture orthodoxy. The same grudge plays as comedy in one register and grief in the other. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-134-broken-chat-x-dry-wit",
+      "group": "Combinations",
+      "title": "Broken Chat × Dry Wit",
+      "direction": "A group chat split in two, blame disputed collides with dry observation of revealing small details. The same grudge plays as comedy in one register and grief in the other. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-135-competitive-friends-x-dry-wit",
+      "group": "Combinations",
+      "title": "Competitive Friends × Dry Wit",
+      "direction": "Best friends who keep score about everything collides with dry observation of revealing small details. The same grudge plays as comedy in one register and grief in the other. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-136-anniversary-x-probationary",
+      "group": "Combinations",
+      "title": "Anniversary × Probationary",
+      "direction": "An anniversary two members remember differently collides with a term of provisional status with no keys or votes. The calendar and the door policy set the club's whole rhythm. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-137-trip-planning-x-initiation-prank",
+      "group": "Combinations",
+      "title": "Trip Planning × Initiation Prank",
+      "direction": "Trip planning that cannot agree on anything collides with an initiation prank that keeps escalating. The calendar and the door policy set the club's whole rhythm. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-138-anniversary-x-by-proximity",
+      "group": "Combinations",
+      "title": "Anniversary × By Proximity",
+      "direction": "An anniversary two members remember differently collides with membership granted by sheer proximity, unannounced. The calendar and the door policy set the club's whole rhythm. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-139-photoshoot-day-x-walked-past",
+      "group": "Combinations",
+      "title": "Photoshoot Day × Walked Past",
+      "direction": "A photoshoot with six people and no director collides with a daily fixture on a street nobody looks at. The visible event is never the important one. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-140-charity-event-x-dean-s-watchlist",
+      "group": "Combinations",
+      "title": "Charity Event × Dean's Watchlist",
+      "direction": "A donation drive with an over-promise attached collides with one complaint away from an official review. The visible event is never the important one. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-141-first-meeting-x-local-feature",
+      "group": "Combinations",
+      "title": "First Meeting × Local Feature",
+      "direction": "A first meeting one chair short collides with a local paper wanting a quote and a photo. The visible event is never the important one. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-142-club-collab-x-accidental-treasurer",
+      "group": "Combinations",
+      "title": "Club Collab × Accidental Treasurer",
+      "direction": "A joint event another club proposed collides with a treasurer elected within the hour without agreeing. {{user}}'s arrival lands on a specific date for a specific reason. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-143-moving-day-x-roommate-route",
+      "group": "Combinations",
+      "title": "Moving Day × Roommate Route",
+      "direction": "A clubroom emptied into someone's hallway collides with a roommate absorbed sideways into the group. {{user}}'s arrival lands on a specific date for a specific reason. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-144-exam-hiatus-x-mistaken-member",
+      "group": "Combinations",
+      "title": "Exam Hiatus × Mistaken Member",
+      "direction": "A six-week hiatus that tests the friendships collides with a stranger assumed to be a member who did not correct it. {{user}}'s arrival lands on a specific date for a specific reason. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-145-first-meeting-x-documentary",
+      "group": "Combinations",
+      "title": "First Meeting × Documentary",
+      "direction": "A first meeting one chair short collides with observed realism, admin and awkward gaps. A routine evening carries whatever weight the tone gives it. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-146-convention-day-x-coming-of-age",
+      "group": "Combinations",
+      "title": "Convention Day × Coming Of Age",
+      "direction": "A convention day with an early train and a list collides with adults working out who they are, loudly. A routine evening carries whatever weight the tone gives it. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-147-photoshoot-day-x-sharp-comedy",
+      "group": "Combinations",
+      "title": "Photoshoot Day × Sharp Comedy",
+      "direction": "A photoshoot with six people and no director collides with status negotiated through half-hostile jokes. A routine evening carries whatever weight the tone gives it. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-148-vetting-interview-x-family-disapproval",
+      "group": "Combinations",
+      "title": "Vetting Interview × Family Disapproval",
+      "direction": "A two-member interview with unwritten questions collides with a member's family who disapprove of the club. Who is allowed in determines what outsiders think is happening. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-149-dues-x-misread-by-faculty",
+      "group": "Combinations",
+      "title": "Dues × Misread By Faculty",
+      "direction": "Dues collected unevenly and quietly waived collides with faculty who read the club as a problem. Who is allowed in determines what outsiders think is happening. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-150-vetting-interview-x-campus-famous",
+      "group": "Combinations",
+      "title": "Vetting Interview × Campus Famous",
+      "direction": "A two-member interview with unwritten questions collides with a group recognised everywhere from photographs alone. Who is allowed in determines what outsiders think is happening. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-151-sponsorship-x-swap-partner",
+      "group": "Combinations",
+      "title": "Sponsorship × Swap Partner",
+      "direction": "Membership only through a sponsor's name collides with a stranger who answered a swap advert with one bag. {{user}} was admitted by a rule somebody is already contesting. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-152-probationary-x-inherited-place",
+      "group": "Combinations",
+      "title": "Probationary × Inherited Place",
+      "direction": "A term of provisional status with no keys or votes collides with a member inheriting a membership and its reputation. {{user}} was admitted by a rule somebody is already contesting. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-153-probationary-x-defector",
+      "group": "Combinations",
+      "title": "Probationary × Defector",
+      "direction": "A term of provisional status with no keys or votes collides with a defector from the rival club who must be defended. {{user}} was admitted by a rule somebody is already contesting. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-154-trial-period-x-high-energy",
+      "group": "Combinations",
+      "title": "Trial Period × High Energy",
+      "direction": "Four trial meetings with undefined criteria collides with overlapping conversation and constant volume. Admission reads as comedy, cruelty or kindness depending on register. Play the friction as ordinary club business until somebody decides to make it a crisis — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-155-vetting-interview-x-deadpan-comedy",
+      "group": "Combinations",
+      "title": "Vetting Interview × Deadpan Comedy",
+      "direction": "A two-member interview with unwritten questions collides with deadpan comedy played completely straight. Admission reads as comedy, cruelty or kindness depending on register. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-156-dues-x-workplace-comedy",
+      "group": "Combinations",
+      "title": "Dues × Workplace Comedy",
+      "direction": "Dues collected unevenly and quietly waived collides with shift work comedy where the rota rules. Admission reads as comedy, cruelty or kindness depending on register. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-157-shop-sponsor-x-dragged-along",
+      "group": "Combinations",
+      "title": "Shop Sponsor × Dragged Along",
+      "direction": "A local shop trading clothes for photographs collides with a guest brought once by a friend who stopped coming. {{user}} is seen by strangers as part of something before joining it. Keep {{char}} specific: her view of one half should quietly contradict her view of the other — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-158-deliberately-private-x-researcher",
+      "group": "Combinations",
+      "title": "Deliberately Private × Researcher",
+      "direction": "A no-photographs rule enforced strictly collides with a researcher observing the club for a project. {{user}} is seen by strangers as part of something before joining it. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-159-misread-by-faculty-x-researcher",
+      "group": "Combinations",
+      "title": "Misread By Faculty × Researcher",
+      "direction": "Faculty who read the club as a problem collides with a researcher observing the club for a project. {{user}} is seen by strangers as part of something before joining it. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-160-small-following-x-slow-burn",
+      "group": "Combinations",
+      "title": "Small Following × Slow Burn",
+      "direction": "A small online following steering real decisions collides with proximity enforced by a club schedule. Reputation is either a joke the club is in on or a weight it carries. Use the overlap to reveal one member rather than to decorate the meeting — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-161-photographed-unasked-x-high-energy",
+      "group": "Combinations",
+      "title": "Photographed Unasked × High Energy",
+      "direction": "A stranger's video posted without asking collides with overlapping conversation and constant volume. Reputation is either a joke the club is in on or a weight it carries. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-162-dean-s-watchlist-x-slow-burn",
+      "group": "Combinations",
+      "title": "Dean's Watchlist × Slow Burn",
+      "direction": "One complaint away from an official review collides with proximity enforced by a club schedule. Reputation is either a joke the club is in on or a weight it carries. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-163-mistaken-member-x-character-study",
+      "group": "Combinations",
+      "title": "Mistaken Member × Character Study",
+      "direction": "A stranger assumed to be a member who did not correct it collides with one long conversation in the corner of a meeting. The reason {{user}} is in the room sets the emotional temperature. Open where both pressures are live in the same conversation, and let {{char}} hold a position on each — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-164-orientation-x-documentary",
+      "group": "Combinations",
+      "title": "Orientation × Documentary",
+      "direction": "A newcomer signed up at an orientation fair by accident collides with observed realism, admin and awkward gaps. The reason {{user}} is in the room sets the emotional temperature. Give {{char}} a stake in both halves and let {{user}} notice the seam between them — all participants are adults, and membership implies no attraction, consent or obligation."
+    },
+    {
+      "id": "combinations-165-the-driver-x-warm-slice",
+      "group": "Combinations",
+      "title": "The Driver × Warm Slice",
+      "direction": "The only person with a car and a calendar collides with warm, low-stakes, food and small kindnesses. The reason {{user}} is in the room sets the emotional temperature. Let the collision create the episode's first practical problem, not just its background colour — all participants are adults, and membership implies no attraction, consent or obligation."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "The club is the engine",
+      "content": "The recurring entity is a social circle of several gyaru women, not a single character. Its structure, purpose, membership, leadership and calendar generate episodes; {{char}} is one member of it. If the circle is not load-bearing, the concept is not this series."
+    },
+    {
+      "id": "classification",
+      "label": "Classification test",
+      "content": "Use this series when a recurring multi-character gyaru circle is central to the premise. If one gyaru simply introduces {{user}} to her ordinary friend network, The Gyaru Who Knows Everyone fits better; if the whole story is one outing, Convention Meetup fits better."
+    },
+    {
+      "id": "composition-first",
+      "label": "Compose the ensemble first",
+      "content": "Decide the club's structure, size, purpose and three to five members before choosing {{char}}. Member count and lineup are the strongest differentiators between two generated concepts, so vary them before varying anything cosmetic."
+    },
+    {
+      "id": "individuation",
+      "label": "One member, one person",
+      "content": "Every recurring member needs a style within the subculture, a job or degree, a reason for joining, a register of speech and an opinion about the others. A club that reads as one personality in five outfits has failed the entry's central rule."
+    },
+    {
+      "id": "purpose",
+      "label": "Not actually a fashion club",
+      "content": "The shared activity may be gaming, dance, music, publishing, event hosting, mutual aid or simply company. Choose the real purpose and let the fashion be the visible surface; the mismatch between the two is one of the series' best comic and dramatic resources."
+    },
+    {
+      "id": "joining",
+      "label": "How {{user}} gets in",
+      "content": "Entry routes range from an open door to sponsorship, trial, unanimous vote or a clerical accident. The route determines {{user}}'s status, obligations and who inside the group is responsible for them, so choose it before the opening scene."
+    },
+    {
+      "id": "entry-scene",
+      "label": "Opening at a live meeting",
+      "content": "Begin inside club business: an argument mid-sentence, a swap with clothes on the floor, a table nobody is manning, a trip budget that will not balance. Open at a playable moment and stop before resolving the dispute or writing {{user}}'s response."
+    },
+    {
+      "id": "friction",
+      "label": "Disagreement as episode fuel",
+      "content": "Conflict should be concrete and small: a date, a deposit, a photograph, a member's behaviour, a seat. Small clubs make small grievances durable, so grudges recur rather than resolve, and the same argument returns with new stakes at the next event."
+    },
+    {
+      "id": "leadership",
+      "label": "Leadership and organisation",
+      "content": "Organisation can come from the least likely member, and formal authority rarely matches social authority. A serious president, a silent treasurer, a rotating chair or an absent founder each produce different procedures and different resentments."
+    },
+    {
+      "id": "subculture",
+      "label": "Subculture without caricature",
+      "content": "Ground the gyaru identity in specifics: shops, tools, magazines, preparation time, money, technique and vocabulary. Let members disagree about what counts as gyaru, and never let one member speak for the subculture as a whole."
+    },
+    {
+      "id": "outsiders",
+      "label": "Outsiders' assumptions",
+      "content": "Faculty, family, rivals, a local paper and passing strangers all read the group through a narrow lens. Keep their assumptions distinct from what members actually think, and let the gap between reputation and reality drive scenes without becoming a lecture."
+    },
+    {
+      "id": "escalation",
+      "label": "Escalation through the calendar",
+      "content": "The calendar is the escalation engine: a meeting, a deadline, an event and its aftermath. Raise stakes by narrowing time and widening the audience — a private disagreement becomes a public problem when it happens in front of a sponsor, a rival club or a camera."
+    },
+    {
+      "id": "romance",
+      "label": "Attraction is not membership",
+      "content": "Joining the club establishes nothing romantic. If attraction exists it is one thread among the group's business, may predate {{user}}'s arrival, may be refused, and never converts membership, sponsorship or a shared changing room into consent."
+    },
+    {
+      "id": "failure-modes",
+      "label": "Failure modes",
+      "content": "The recurring failures are a club of identical women, a fashion club with no other activity, a harem disguised as a society, a newcomer who is instantly beloved by everyone, and a group with no internal disagreement. Check for each before play."
+    },
+    {
+      "id": "boundaries",
+      "label": "Boundaries and tone",
+      "content": "All participants are adults, no real people appear, intimacy stays non-graphic and secondary, and privacy rules inside the club are real. Tone ranges from deadpan comedy to quiet melancholy; the series does not default to erotica, and satire is aimed at behaviour rather than at the women."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult ensemble premise for The Gyaru Club. Build a recurring gyaru social circle that already exists — a chartered campus society, an informal table, a karaoke-room club, a community-centre group — with several adult women who differ in style (ageha glam, host-club tailoring, onee-gyaru, retro 2000s, goth-adjacent, thrift-only, minimalist, cosplay crossover), in life (degree, day job, family obligation, age), in reason for joining, and in opinion about what the club is for. Choose the structure and size, the shared purpose (which need not be fashion — it may be gaming, dance, music, a zine, event hosting, mutual aid or company only), the leadership and how contested it is, the internal friendships and rivalries, the event calendar, the newcomer rules, the group's visibility to campus or neighbourhood, and how {{user}} gets in. Then choose {{char}} as one member with a defined role inside the group and opinions about the others. Non-negotiables: every member is an individual, not a copy; joining the club implies no attraction and grants no consent; do not script {{user}}'s feelings, decisions or future; all participants are adults and no real people appear; open at a live meeting or event, mid-dispute, before anything is resolved."
+}
