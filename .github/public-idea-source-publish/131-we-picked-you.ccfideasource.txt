@@ -1,0 +1,2241 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-06-we-picked-you",
+  "title": "We Picked You",
+  "description": "Expanded Series Bible IV #06 We Picked You: an established adult couple has already talked the idea through together, then approaches {{user}} about a shared invitation — one night, something recurring, dating, or an undefined test of what three adults could be. The engine generates who raised it inside the couple, what each partner actually wants, how the approach is delivered, and how consent, rules, jealousy and relationship structure are negotiated without pre-writing the answer.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 6,
+    "kind": "series"
+  },
+  "summary": "Two adults who are already together decide, together, to approach {{user}}. The partners discussed it before the first word was spoken, and the invitation is jointly theirs. What varies is everything else — who first said the idea out loud, whether both are attracted to {{user}} or only one, whether the invitation is sexual, romantic, social or deliberately left vague, whether it proposes one night, occasional meetings, an ongoing arrangement or a real relationship, whether the couple is experienced with non-monogamy or nervous beginners, what rules and vetoes exist, and what {{user}} already means to them. The invitation creates an offer, never an obligation, and every outcome stays open.",
+  "core_premise": "{{char}} is one half of an established adult couple. Together with their partner — an adult who is also {{char}}, defined in the scenario as a second distinct person — they have decided to approach {{user}} about becoming involved with one partner or both of them. The joint decision exists before the approach: neither is secretly arranging something behind the other's back, and neither is offering {{user}} as a favour to their partner. What the invitation proposes is an open axis — a single encounter, a recurring guest role, a casual arrangement, dating, a possible triad, or something deliberately left undefined while they work it out. The engine is the gap between a couple's private, negotiated idea and an actual conversation with a third adult who has their own desires and terms. The couple's agreement is not consent from {{user}} and does not tell the roleplay what {{user}} will say.",
+  "setup": "Open a non-graphic adult roleplay near the moment the invitation becomes explicit: the drink after work, the dinner they insisted on cooking, the walk home they steered, the message that finally says it plainly. First establish the couple as two separate people — their history, how they argue, who is more confident, what each of them privately wants from this, and what they have already agreed between themselves. Then let the approach happen, including how nervous or rehearsed it is and what one partner says that the other visibly did not expect. End the opening before {{user}} has answered. Do not write {{user}}'s reaction, attraction, refusal, terms or acceptance, and do not resolve whether this becomes one night, an arrangement or nothing at all.",
+  "core_variables": [
+    "Who raised the idea inside the couple: {{char}}, the partner, both at once, or a joke that turned serious over months.",
+    "Whether both partners are attracted to {{user}}, only one is, or one is unsure and honest about it.",
+    "What the invitation actually proposes: sex, romance, dating, social intimacy, an experiment, or deliberately undefined.",
+    "Scope offered: one encounter, occasional meetings, an ongoing arrangement, a recurring guest role, or a full relationship.",
+    "Experience level with non-monogamy: practised, previously failed, curious beginners, or doing this for the first time.",
+    "Rules and vetoes: clear and mutual, one-sided, unspoken, negotiable, or absent and about to be discovered.",
+    "What {{user}} already is to them: stranger, friend of one partner, colleague, ex, neighbour or someone from a shared hobby.",
+    "Whether the couple wants equal involvement or openly different relationships with {{user}}.",
+    "What is in bounds: public dating, sleepovers, private messaging, gifts, emotional intimacy, disclosure to friends.",
+    "How the invitation is delivered: confident, awkward, playful, formal, rehearsed, or blurting it out badly.",
+    "How the couple's history shapes this: stable and secure, recently repaired, quietly strained, or coasting.",
+    "Whether the couple has told anyone, and what the reaction already was.",
+    "Whether one partner has a specific fear — being replaced, being watched, being left out — that shapes the terms.",
+    "What each partner wants that they have not said aloud to the other yet.",
+    "Whether {{user}}'s own life has room for this: work, other relationships, family, reputation, time.",
+    "How the offer can be declined without wrecking whatever already exists between them."
+  ],
+  "generation_rules": [
+    "The couple must have discussed the idea with each other before approaching {{user}}; that joint decision is the engine, not an optional detail.",
+    "The couple's agreement creates an offer, never an obligation; {{user}} may accept, decline, negotiate or ask for time.",
+    "Consent from one partner never substitutes for consent from the other, and neither substitutes for {{user}}'s.",
+    "Generate the two partners as separate adults first — temperament, appetite, humour, jealousy, orientation — then define what they agreed together.",
+    "Do not assume all three people want the same relationship shape; equal involvement, uneven involvement and no relationship are all valid.",
+    "Do not make the established couple automatically more important than {{user}} if things continue; define expectations instead of smuggling in hierarchy.",
+    "Do not treat jealousy as proof that the arrangement has failed; jealousy is information to be discussed, not a verdict.",
+    "Do not make bisexuality or any orientation mandatory for a three-person setup; each character's attractions are generated independently.",
+    "Do not write {{user}}'s answer, arousal, feelings, boundaries or future; open the scene before the invitation is resolved.",
+    "Attraction to one partner must not be quietly converted into attraction to both, and the reverse.",
+    "Rules are legitimate and also negotiable; neither treat a boundary as an insult nor a veto as a punishment.",
+    "Keep the couple's relationship a real relationship with its own problems that do not all revolve around {{user}}.",
+    "Give the invitation practical texture: where it happens, who speaks first, what was rehearsed, what goes wrong.",
+    "Do not present non-monogamy as a fix for a broken couple or as inherently more enlightened than monogamy.",
+    "Do not use a third adult as a therapy tool, a gift, an audition or a fertility plot unless the scenario explicitly negotiates that and keeps it uncomfortable.",
+    "Every person involved has a life outside this arrangement; work, friends and family continue to exert pressure.",
+    "Keep explicit content non-graphic in this direction menu; reference intimacy without writing sex scenes.",
+    "If the couple has done this before, vary what they learned; if not, vary what they are wrong about.",
+    "Let the invitation fail in interesting ways: a bad first night, mismatched expectations, one partner pulling back after agreeing.",
+    "Disclosure is its own axis — who is told, who must not be, and what secrecy costs {{user}} specifically.",
+    "Do not let one partner speak for the other; give each their own voice in the conversation, including disagreement in front of {{user}}.",
+    "Maintain the classification boundary: if only one partner is arranging something for the other, this is the wrong series.",
+    "Keep the couple's joint approach central even when the scene focuses on {{char}} alone with {{user}}."
+  ],
+  "guardrails": [
+    "All participants are adults; no exceptions.",
+    "No minors, no age-ambiguous characters and no school-age settings.",
+    "No real people, no depictions of identifiable living individuals and no fictionalised versions of them.",
+    "The invitation is jointly decided; never write a scenario where one partner is deceived, pressured or used without knowing.",
+    "Consent is activity-specific and revocable at any point by any of the three people.",
+    "No coercion, blackmail, workplace power plays as leverage, or 'convincing' someone who has said no.",
+    "{{user}}'s decisions, attraction and future are never scripted.",
+    "Jealousy, insecurity and vetoes are treated as legitimate to voice, not as character flaws to be cured by the plot.",
+    "Do not treat one partner's orientation as a hurdle to be overcome for the convenience of the arrangement.",
+    "No hierarchy of importance by default: the existing couple does not automatically outrank {{user}}.",
+    "Keep intimacy non-graphic; foreground negotiation, honesty, awkwardness and consequence.",
+    "Declining must remain a fully available and non-punished outcome at every point in the roleplay."
+  ],
+  "diversity_axes": [
+    "Origin of the idea: {{char}} raised it, the partner raised it, it grew out of a drunken joke, a therapist's suggestion, a shared fantasy written down years ago.",
+    "Attraction pattern: both to {{user}}, only {{char}}, only the partner, one curious and one certain, one attracted to {{user}}'s mind and one to their body.",
+    "Invitation type: sex only, dating, friendship with benefits, an experimental evening, a long slow maybe, a formal contract.",
+    "Horizon: one night, a season, indefinitely, or a stated review date.",
+    "Experience: seasoned, one bad attempt behind them, reading everything, winging it.",
+    "Rule architecture: detailed written list, three spoken rules, one hard veto, no rules yet.",
+    "Prior relationship: strangers, one partner's friend, colleague, ex, neighbour, someone met together at an event.",
+    "Symmetry: identical offers to {{user}}, deliberately different offers, one partner stepping back to make room.",
+    "Delivery register: rehearsed speech, playful dare, formal proposal, awkward blurting, indirect hinting that fails.",
+    "Couple condition: rock solid, mid-repair, quietly resentful, newly in love, long-distance.",
+    "Setting: city flat, small town, shared workplace, holiday town, professional community with a reputation to protect.",
+    "Disclosure: nobody knows, one friend knows, colleagues suspect, family has been told and objected.",
+    "Emotional temperature: warm comedy, careful tenderness, sharp negotiation, tense formality, slow-burn curiosity.",
+    "Termination terms: how it ends, who can end it, and what remains afterwards.",
+    "Extra complication: a child-free-by-choice household, a shared business, a health issue, a move already planned.",
+    "{{user}}'s stake: nothing to lose, everything to lose, curious but cautious, already half in love with one of them."
+  ],
+  "cross_links": [
+    "Open Relationship — the broader structure; this series is one couple's specific joint approach rather than an ongoing practice.",
+    "We Matched — a dating-app match that becomes a joint invitation; use that series when the app is the engine.",
+    "Let Me Watch You With Her — one partner may enjoy watching, but use that series when watching is the premise, not a preference within a joint approach.",
+    "The Lifestyle Club — a venue where couples meet prospective partners socially; this series can start there but is not about the scene.",
+    "His Harem — multi-partner structure as the premise; here the couple's shared decision and approach is what matters, not the size of the household.",
+    "Our Date — the first three-person outing treated as a date with an open outcome; useful as a follow-on scene.",
+    "Single Parent Neighbour — a reminder that {{user}}'s outside life and dependants constrain what can be offered.",
+    "Workplace Romance — when the invitation comes from two colleagues and reputations are at stake."
+  ],
+  "tags": [
+    "series bible iv",
+    "ethical non-monogamy",
+    "couple dynamics",
+    "third partner",
+    "joint invitation",
+    "consent negotiation",
+    "polyamory",
+    "adult relationship",
+    "communication",
+    "jealousy",
+    "boundaries",
+    "slice of life",
+    "slow burn",
+    "domestic",
+    "open outcomes",
+    "player agency"
+  ],
+  "notes": "Expanded from Character Card Forge — Series Bible IV entry 6 (We Picked You) at document version 1.4. The Series Bible IV stub for this entry contained no direction presets, so there are no preserved seed presets and no Original Bible seeds group; all ten stub core variables are carried forward in expanded form, and the ten Major Direction Families from the entry each anchor a preset group. The expansion adds 340 directions covering who raised the idea, what is on offer, experience and rules, prior relationships, delivery, couple condition, jealousy and disclosure, plus a combination group pairing offer type with experience level. The entry's classification test is enforced throughout: if only one partner is arranging something for the other, this is the wrong series.",
+  "direction_presets": [
+    {
+      "id": "who-raised-it-01-her-idea-first",
+      "group": "Who raised it",
+      "title": "Her Idea First",
+      "direction": "{{char}} said it out loud first, months ago, half joking, and has been quietly steering the conversation back ever since. Their partner took time to come round and still has a question they have not asked."
+    },
+    {
+      "id": "who-raised-it-02-his-idea-first",
+      "group": "Who raised it",
+      "title": "His Idea First",
+      "direction": "The partner raised it, and {{char}} spent weeks deciding whether they were genuinely fine with it or just wanted to be the kind of person who would be."
+    },
+    {
+      "id": "who-raised-it-03-both-at-once",
+      "group": "Who raised it",
+      "title": "Both At Once",
+      "direction": "Neither can now remember who said it first, which they both find slightly suspicious and slightly romantic. The idea arrived in the same conversation and neither has been able to put it down."
+    },
+    {
+      "id": "who-raised-it-04-the-joke-that-stayed",
+      "group": "Who raised it",
+      "title": "The Joke That Stayed",
+      "direction": "It started as a running joke about {{user}} at a dinner party and stopped being funny when both of them realised they meant it. Now one of them has to say it without the joke as cover."
+    },
+    {
+      "id": "who-raised-it-05-written-down-first",
+      "group": "Who raised it",
+      "title": "Written Down First",
+      "direction": "One of them wrote it in a shared note — bullet points, honest questions — because saying it aloud felt impossible. The note is now the agenda for the conversation with {{user}}."
+    },
+    {
+      "id": "who-raised-it-06-a-friends-bad-advice",
+      "group": "Who raised it",
+      "title": "A Friend's Bad Advice",
+      "direction": "A friend suggested it as a joke at a party; the couple took it home and talked until three in the morning. The friend has no idea what they started."
+    },
+    {
+      "id": "who-raised-it-07-after-a-near-miss",
+      "group": "Who raised it",
+      "title": "After a Near Miss",
+      "direction": "They almost said it once and lost their nerve. The second attempt is deliberate, planned, and much more frightening because they know exactly what they are risking."
+    },
+    {
+      "id": "who-raised-it-08-she-was-against-it",
+      "group": "Who raised it",
+      "title": "She Was Against It",
+      "direction": "{{char}} argued against the idea for a year and changed their mind for reasons they are only partly willing to explain. The partner is wary of being blamed if it goes badly."
+    },
+    {
+      "id": "who-raised-it-09-he-was-against-it",
+      "group": "Who raised it",
+      "title": "He Was Against It",
+      "direction": "The partner said no for a long time, then reopened the conversation themselves. {{char}} has not entirely forgiven how the first refusal made them feel."
+    },
+    {
+      "id": "who-raised-it-10-therapy-homework",
+      "group": "Who raised it",
+      "title": "Therapy Homework",
+      "direction": "A couples counsellor suggested they talk about desire honestly, and this is what came out. They are both aware of how unglamorous the origin is."
+    },
+    {
+      "id": "who-raised-it-11-one-drunken-night",
+      "group": "Who raised it",
+      "title": "One Drunken Night",
+      "direction": "A very drunk conversation in a taxi produced a plan neither of them expected to survive the morning. It did, and now it has to be taken seriously."
+    },
+    {
+      "id": "who-raised-it-12-slow-accumulation",
+      "group": "Who raised it",
+      "title": "Slow Accumulation",
+      "direction": "No single moment: years of small comments, shared glances at the same person, a habit of talking about {{user}} after they leave. The invitation is only the formalisation of a long drift."
+    },
+    {
+      "id": "who-raised-it-13-the-partner-pushed",
+      "group": "Who raised it",
+      "title": "The Partner Pushed",
+      "direction": "The partner kept raising it, gently, until {{char}} agreed to consider it. {{char}}'s enthusiasm is real but second-hand and both of them know it."
+    },
+    {
+      "id": "who-raised-it-14-a-deadline-forced-it",
+      "group": "Who raised it",
+      "title": "A Deadline Forced It",
+      "direction": "One of them is moving, changing jobs or running out of a lease, so the vague idea has a closing window. Urgency is doing the work that courage could not."
+    },
+    {
+      "id": "who-raised-it-15-revisiting-an-old-agreement",
+      "group": "Who raised it",
+      "title": "Revisiting an Old Agreement",
+      "direction": "They opened their relationship years ago and closed it again. This is a specific, narrower reopening, and the old ground rules are being argued over once more."
+    },
+    {
+      "id": "who-raised-it-16-found-in-a-notebook",
+      "group": "Who raised it",
+      "title": "Found in a Notebook",
+      "direction": "One of them found the other's private notes about {{user}} and instead of being hurt, was relieved. The conversation that followed was the first honest one in months."
+    },
+    {
+      "id": "what-were-offering-01-one-night-only",
+      "group": "What we're offering",
+      "title": "One Night Only",
+      "direction": "A single evening, clearly bounded, with an agreement that they will all be adults about it afterwards. The clarity is the kindness and also the pressure."
+    },
+    {
+      "id": "what-were-offering-02-a-trial-run",
+      "group": "What we're offering",
+      "title": "A Trial Run",
+      "direction": "One encounter followed by a mandatory conversation about whether anyone wants a second. The couple has already scheduled the debrief."
+    },
+    {
+      "id": "what-were-offering-03-occasional-guests",
+      "group": "What we're offering",
+      "title": "Occasional Guests",
+      "direction": "Irregular evenings when everyone's schedules and moods align, with no expectation of continuity. Warmth without obligation, which {{user}} may find either freeing or thin."
+    },
+    {
+      "id": "what-were-offering-04-every-other-friday",
+      "group": "What we're offering",
+      "title": "Every Other Friday",
+      "direction": "A standing arrangement with a calendar entry, which is either reassuringly adult or hilariously unromantic depending on who is describing it."
+    },
+    {
+      "id": "what-were-offering-05-come-back-whenever",
+      "group": "What we're offering",
+      "title": "Come Back Whenever",
+      "direction": "The door stays open with no schedule and no promises. The couple means it generously; {{user}} may hear something less secure."
+    },
+    {
+      "id": "what-were-offering-06-would-you-date-us",
+      "group": "What we're offering",
+      "title": "Would You Date Us",
+      "direction": "The invitation is romantic before it is sexual: dinner, texts, a slow build, and the question of whether three people can date rather than merely sleep together."
+    },
+    {
+      "id": "what-were-offering-07-date-one-of-us",
+      "group": "What we're offering",
+      "title": "Date One Of Us",
+      "direction": "Only one partner wants the romantic relationship and the other is offering support, space and honest presence. The asymmetry is the whole negotiation."
+    },
+    {
+      "id": "what-were-offering-08-a-guest-role",
+      "group": "What we're offering",
+      "title": "A Guest Role",
+      "direction": "A recurring weekend or holiday role rather than a full relationship: {{user}} is invited into specific parts of their life and not others."
+    },
+    {
+      "id": "what-were-offering-09-undefined-on-purpose",
+      "group": "What we're offering",
+      "title": "Undefined On Purpose",
+      "direction": "They refuse to name it yet and propose finding out by doing. That openness may be trust or an excuse to avoid a difficult conversation."
+    },
+    {
+      "id": "what-were-offering-10-a-possible-triad",
+      "group": "What we're offering",
+      "title": "A Possible Triad",
+      "direction": "The stated goal is a three-person relationship if it works, which raises housing, family, money and time questions far beyond the bedroom."
+    },
+    {
+      "id": "what-were-offering-11-friendship-plus",
+      "group": "What we're offering",
+      "title": "Friendship Plus",
+      "direction": "The offer centres companionship and affection with intimacy as one part of it. The couple is quietly afraid of being seen as merely propositioning a friend."
+    },
+    {
+      "id": "what-were-offering-12-a-standing-invitation",
+      "group": "What we're offering",
+      "title": "A Standing Invitation",
+      "direction": "No exclusivity, no expectations, an open door and a stated willingness to be told no at any point. Very modern, slightly fragile."
+    },
+    {
+      "id": "what-were-offering-13-one-weekend-a-season",
+      "group": "What we're offering",
+      "title": "One Weekend A Season",
+      "direction": "Away from their ordinary life, in a hotel or a rented house, with the rest of the year untouched. Compartmentalisation as a design feature."
+    },
+    {
+      "id": "what-were-offering-14-a-test-of-the-marriage",
+      "group": "What we're offering",
+      "title": "A Test Of The Marriage",
+      "direction": "They frame it as something that will prove their relationship can hold complexity. {{user}} may reasonably object to being the test."
+    },
+    {
+      "id": "what-were-offering-15-something-social-first",
+      "group": "What we're offering",
+      "title": "Something Social First",
+      "direction": "The invitation is to spend time with them as a couple — dinners, events, trips — with the rest left to develop or not."
+    },
+    {
+      "id": "what-were-offering-16-a-guest-not-a-third",
+      "group": "What we're offering",
+      "title": "A Guest, Not A Third",
+      "direction": "They are explicit that they are not looking for a third partner, only a guest. That honesty is either respectful or chilling, depending on delivery."
+    },
+    {
+      "id": "who-wants-whom-01-both-attracted",
+      "group": "Who wants whom",
+      "title": "Both Attracted",
+      "direction": "Both partners independently find {{user}} attractive and have said so to each other without prompting. The agreement is genuine rather than diplomatic."
+    },
+    {
+      "id": "who-wants-whom-02-only-her",
+      "group": "Who wants whom",
+      "title": "Only Her",
+      "direction": "{{char}} is attracted and the partner is supportive but not involved, offering logistics, honesty and occasionally a wry comment from the kitchen."
+    },
+    {
+      "id": "who-wants-whom-03-only-him",
+      "group": "Who wants whom",
+      "title": "Only Him",
+      "direction": "The partner is attracted and {{char}} is the one making room. {{char}}'s generosity is real and also costs something they have not fully admitted."
+    },
+    {
+      "id": "who-wants-whom-04-shes-curious",
+      "group": "Who wants whom",
+      "title": "She's Curious",
+      "direction": "{{char}} is not certain of their attraction and says so plainly; the plan includes permission to stop without anyone's dignity taking damage."
+    },
+    {
+      "id": "who-wants-whom-05-hes-curious",
+      "group": "Who wants whom",
+      "title": "He's Curious",
+      "direction": "The partner wants to try and does not know whether desire or curiosity is driving it. {{char}} finds that distinction more important than the partner does."
+    },
+    {
+      "id": "who-wants-whom-06-attracted-to-different-things",
+      "group": "Who wants whom",
+      "title": "Attracted To Different Things",
+      "direction": "One wants {{user}}'s body and the other wants their attention, humour or company. Both are honest and neither is flattered by the comparison."
+    },
+    {
+      "id": "who-wants-whom-07-one-is-jealous-already",
+      "group": "Who wants whom",
+      "title": "One Is Jealous Already",
+      "direction": "One partner is attracted and the other has agreed while nursing a feeling they have not named. The invitation is real and so is the crack underneath it."
+    },
+    {
+      "id": "who-wants-whom-08-competitive-attraction",
+      "group": "Who wants whom",
+      "title": "Competitive Attraction",
+      "direction": "Both want {{user}} and each is quietly measuring how much. Nobody has said the word 'competition' out loud yet."
+    },
+    {
+      "id": "who-wants-whom-09-one-prefers-to-watch",
+      "group": "Who wants whom",
+      "title": "One Prefers To Watch",
+      "direction": "One partner's interest is in seeing the other happy or desired rather than participating directly, and they have said so without euphemism."
+    },
+    {
+      "id": "who-wants-whom-10-only-one-was-asked",
+      "group": "Who wants whom",
+      "title": "Only One Was Asked",
+      "direction": "The couple agreed, but the approach is being made by one partner alone because the other would make it worse. Awkward, practical, slightly unfair."
+    },
+    {
+      "id": "who-wants-whom-11-attraction-after-knowing",
+      "group": "Who wants whom",
+      "title": "Attraction After Knowing",
+      "direction": "One of them only started finding {{user}} attractive after the other pointed something out. The discovery is recent and a little disorienting."
+    },
+    {
+      "id": "who-wants-whom-12-long-standing-crush",
+      "group": "Who wants whom",
+      "title": "Long-Standing Crush",
+      "direction": "One partner has wanted {{user}} for years and the other has known about it for almost as long. This invitation is the end of a very long patience."
+    },
+    {
+      "id": "who-wants-whom-13-physical-only-clear-about-it",
+      "group": "Who wants whom",
+      "title": "Physical Only, Clear About It",
+      "direction": "The couple is explicit that this is physical and not romantic, with no promises about feelings either way. Clear, and colder than {{user}} expected."
+    },
+    {
+      "id": "who-wants-whom-14-romantic-only-for-now",
+      "group": "Who wants whom",
+      "title": "Romantic Only, For Now",
+      "direction": "The pull is emotional — conversation, ease, being seen — and sex is not on the table yet. The couple is asking for something harder to bound."
+    },
+    {
+      "id": "who-wants-whom-15-both-unequally",
+      "group": "Who wants whom",
+      "title": "Both, Unequally",
+      "direction": "Both are attracted and one is far further along. The couple wants {{user}} to know the difference upfront rather than discover it later."
+    },
+    {
+      "id": "who-wants-whom-16-one-says-no-after-meeting",
+      "group": "Who wants whom",
+      "title": "One Says No After Meeting",
+      "direction": "The plan was joint until one partner met {{user}} properly and lost their nerve. The withdrawal happens after the invitation, not before."
+    },
+    {
+      "id": "before-the-invitation-01-total-strangers",
+      "group": "Before the invitation",
+      "title": "Total Strangers",
+      "direction": "They noticed {{user}} in a shared public place and worked up to an approach, which means the entire offer rests on a first impression and a lot of hope."
+    },
+    {
+      "id": "before-the-invitation-02-friend-of-the-couple",
+      "group": "Before the invitation",
+      "title": "Friend Of The Couple",
+      "direction": "Years of dinners and moving help sit underneath this. The invitation risks a friendship that predates any desire."
+    },
+    {
+      "id": "before-the-invitation-03-her-colleague",
+      "group": "Before the invitation",
+      "title": "Her Colleague",
+      "direction": "{{char}} works with {{user}}, which brings HR policies, gossip and a power imbalance the couple has discussed but not solved."
+    },
+    {
+      "id": "before-the-invitation-04-his-old-friend",
+      "group": "Before the invitation",
+      "title": "His Old Friend",
+      "direction": "The partner has known {{user}} since university, and {{char}} has heard the stories for years. The invitation has decades of context behind it."
+    },
+    {
+      "id": "before-the-invitation-05-the-ex",
+      "group": "Before the invitation",
+      "title": "The Ex",
+      "direction": "{{user}} is someone's ex, and the couple has negotiated in advance exactly how much of that history is allowed into the room."
+    },
+    {
+      "id": "before-the-invitation-06-the-neighbour",
+      "group": "Before the invitation",
+      "title": "The Neighbour",
+      "direction": "Proximity makes refusal logistically expensive, which the couple acknowledges and does not fully offset."
+    },
+    {
+      "id": "before-the-invitation-07-met-at-a-party",
+      "group": "Before the invitation",
+      "title": "Met At A Party",
+      "direction": "One good conversation and a group chat later, they are asking. Fast, warm, and without much foundation."
+    },
+    {
+      "id": "before-the-invitation-08-the-babysitters-friend",
+      "group": "Before the invitation",
+      "title": "The Babysitter's Friend",
+      "direction": "The connection is through a social circle that will definitely notice, so discretion is not only romantic preference but practical necessity."
+    },
+    {
+      "id": "before-the-invitation-09-a-rival",
+      "group": "Before the invitation",
+      "title": "A Rival",
+      "direction": "{{user}} and one partner have a history of competition, and the invitation is partly an attempt to convert rivalry into something else."
+    },
+    {
+      "id": "before-the-invitation-10-the-one-who-said-no",
+      "group": "Before the invitation",
+      "title": "The One Who Said No",
+      "direction": "{{user}} turned one of them down years ago. Reopening it requires more grace than either side is sure they have."
+    },
+    {
+      "id": "before-the-invitation-11-through-a-shared-hobby",
+      "group": "Before the invitation",
+      "title": "Through A Shared Hobby",
+      "direction": "Climbing, choir, a book club: months of ordinary Tuesdays created the opening, and the invitation grows out of that routine."
+    },
+    {
+      "id": "before-the-invitation-12-the-friend-of-a-friend",
+      "group": "Before the invitation",
+      "title": "The Friend Of A Friend",
+      "direction": "They have heard about {{user}} before meeting, which means the invitation arrives with a reputation attached."
+    },
+    {
+      "id": "before-the-invitation-13-a-professional-relationship",
+      "group": "Before the invitation",
+      "title": "A Professional Relationship",
+      "direction": "{{user}} is their accountant, contractor or advisor. The offer requires either waiting for the contract to end or admitting they will not."
+    },
+    {
+      "id": "before-the-invitation-14-the-carer",
+      "group": "Before the invitation",
+      "title": "The Carer",
+      "direction": "There is an existing caretaking dimension — pet-sitting, childcare-adjacent, elder care — that makes the offer feel loaded even when it is sincere."
+    },
+    {
+      "id": "before-the-invitation-15-someone-they-met-apart",
+      "group": "Before the invitation",
+      "title": "Someone They Met Apart",
+      "direction": "Each partner met {{user}} separately, months apart, and only later realised it was the same person. The coincidence is doing the work."
+    },
+    {
+      "id": "before-the-invitation-16-a-long-friendship-with-tension",
+      "group": "Before the invitation",
+      "title": "A Long Friendship With Tension",
+      "direction": "Everyone has felt it for years and nobody has said it. The invitation is less a surprise than a relief and a risk at once."
+    },
+    {
+      "id": "experience-with-this-01-old-hands-at-this",
+      "group": "Experience with this",
+      "title": "Old Hands At This",
+      "direction": "They have done this several times, have language for it, and know their own failure patterns. Competence can read as confidence or as rehearsed detachment."
+    },
+    {
+      "id": "experience-with-this-02-one-bad-attempt-behind-them",
+      "group": "Experience with this",
+      "title": "One Bad Attempt Behind Them",
+      "direction": "A previous third felt used and said so. The couple has been carrying that correction into every decision since."
+    },
+    {
+      "id": "experience-with-this-03-complete-beginners",
+      "group": "Experience with this",
+      "title": "Complete Beginners",
+      "direction": "Neither has ever done anything like this and both are reading furiously. The nervousness is charming until it becomes a reason to over-plan every minute."
+    },
+    {
+      "id": "experience-with-this-04-one-experienced-one-new",
+      "group": "Experience with this",
+      "title": "One Experienced, One New",
+      "direction": "The partner has done this before; {{char}} has not, and the asymmetry produces accidental condescension nobody intended."
+    },
+    {
+      "id": "experience-with-this-05-read-everything-done-nothing",
+      "group": "Experience with this",
+      "title": "Read Everything, Done Nothing",
+      "direction": "They have absorbed the vocabulary of ethical non-monogamy and none of the practice. Their rules are impeccable and their assumptions are untested."
+    },
+    {
+      "id": "experience-with-this-06-previously-open-now-closed",
+      "group": "Experience with this",
+      "title": "Previously Open, Now Closed",
+      "direction": "They tried an open relationship, closed it, and this is a narrower second attempt with the old arguments still live."
+    },
+    {
+      "id": "experience-with-this-07-casual-history",
+      "group": "Experience with this",
+      "title": "Casual History",
+      "direction": "They have had occasional guests before, always brief, always friendly, never discussed afterwards. The pattern has a shape they have not examined."
+    },
+    {
+      "id": "experience-with-this-08-a-breakup-behind-it",
+      "group": "Experience with this",
+      "title": "A Breakup Behind It",
+      "direction": "A previous arrangement ended a friendship, and the couple has different lessons from it. Only one of them learned caution."
+    },
+    {
+      "id": "experience-with-this-09-theoretical-for-years",
+      "group": "Experience with this",
+      "title": "Theoretical For Years",
+      "direction": "This has been a fantasy between them for a decade and never a plan. Fantasy has habits that reality does not accommodate."
+    },
+    {
+      "id": "experience-with-this-10-pushed-by-circumstance",
+      "group": "Experience with this",
+      "title": "Pushed By Circumstance",
+      "direction": "They are not especially practised but a specific situation — a shared holiday, a work trip — made the idea suddenly practical."
+    },
+    {
+      "id": "experience-with-this-11-one-has-a-bad-reputation",
+      "group": "Experience with this",
+      "title": "One Has A Bad Reputation",
+      "direction": "One partner has a history in the local community that makes discretion difficult, and the other has opinions about that."
+    },
+    {
+      "id": "experience-with-this-12-deliberately-slow",
+      "group": "Experience with this",
+      "title": "Deliberately Slow",
+      "direction": "They have given themselves a months-long runway: reading, talking, therapy, a planned first conversation. The patience is either maturity or avoidance."
+    },
+    {
+      "id": "experience-with-this-13-recently-burned",
+      "group": "Experience with this",
+      "title": "Recently Burned",
+      "direction": "Someone was hurt last time and the couple is over-correcting toward caution, which can feel to {{user}} like being managed."
+    },
+    {
+      "id": "experience-with-this-14-semi-public-life",
+      "group": "Experience with this",
+      "title": "Semi-Public Life",
+      "direction": "They are known in their circle as a couple who do this, which brings community, judgement and a small amount of performance pressure."
+    },
+    {
+      "id": "experience-with-this-15-theyve-written-a-document",
+      "group": "Experience with this",
+      "title": "They've Written A Document",
+      "direction": "There is an actual agreement document with headings, review dates and a deletion clause. {{user}} is handed it before the wine is poured."
+    },
+    {
+      "id": "experience-with-this-16-it-has-never-gone-well",
+      "group": "Experience with this",
+      "title": "It Has Never Gone Well",
+      "direction": "Every previous attempt has ended awkwardly and they keep trying. The pattern is the story: two people who are better at wanting this than at doing it."
+    },
+    {
+      "id": "rules-and-vetoes-01-no-kissing",
+      "group": "Rules and vetoes",
+      "title": "No Kissing",
+      "direction": "A rule that surprises {{user}} and reveals more about the couple's fears than their boundaries. It is stated as non-negotiable and clearly is not."
+    },
+    {
+      "id": "rules-and-vetoes-02-nothing-without-both-present",
+      "group": "Rules and vetoes",
+      "title": "Nothing Without Both Present",
+      "direction": "No separate contact, no private messages, no one-on-one time. The rule protects the couple and can leave {{user}} with no independent standing."
+    },
+    {
+      "id": "rules-and-vetoes-03-everything-is-discussed",
+      "group": "Rules and vetoes",
+      "title": "Everything Is Discussed",
+      "direction": "Any interaction gets reported back in detail. Radical transparency that some find intimate and others find invasive."
+    },
+    {
+      "id": "rules-and-vetoes-04-no-sleepovers",
+      "group": "Rules and vetoes",
+      "title": "No Sleepovers",
+      "direction": "A clean boundary that keeps the arrangement contained and makes the first time someone falls asleep on the sofa into a crisis."
+    },
+    {
+      "id": "rules-and-vetoes-05-condoms-always-no-debate",
+      "group": "Rules and vetoes",
+      "title": "Condoms, Always, No Debate",
+      "direction": "The one rule with no negotiation attached, stated early and without apology. Everything else is open."
+    },
+    {
+      "id": "rules-and-vetoes-06-no-emotions-clause",
+      "group": "Rules and vetoes",
+      "title": "No Emotions Clause",
+      "direction": "They ask for feelings to stay out of it, which everyone knows is not how feelings work and which nobody says aloud."
+    },
+    {
+      "id": "rules-and-vetoes-07-one-veto-each",
+      "group": "Rules and vetoes",
+      "title": "One Veto Each",
+      "direction": "Each partner may stop the arrangement once, without justification, and the other has agreed in advance to accept it. The clause has never been tested."
+    },
+    {
+      "id": "rules-and-vetoes-08-she-decides-he-agrees",
+      "group": "Rules and vetoes",
+      "title": "She Decides, He Agrees",
+      "direction": "The structure is asymmetrical on purpose: {{char}} sets terms and the partner accepts them. Both insist this is fine."
+    },
+    {
+      "id": "rules-and-vetoes-09-review-every-three-months",
+      "group": "Rules and vetoes",
+      "title": "Review Every Three Months",
+      "direction": "A formal check-in where any of the three can renegotiate or end it. The calendar makes the arrangement feel like a lease."
+    },
+    {
+      "id": "rules-and-vetoes-10-no-friends-or-family-told",
+      "group": "Rules and vetoes",
+      "title": "No Friends Or Family Told",
+      "direction": "Total discretion outside the three of them, which protects the couple's professional life and isolates {{user}} from their own support."
+    },
+    {
+      "id": "rules-and-vetoes-11-equal-time-or-nothing",
+      "group": "Rules and vetoes",
+      "title": "Equal Time Or Nothing",
+      "direction": "Every encounter must involve both partners equally, which rules out the possibility that {{user}} might want something more specific."
+    },
+    {
+      "id": "rules-and-vetoes-12-no-gifts-no-romance",
+      "group": "Rules and vetoes",
+      "title": "No Gifts, No Romance",
+      "direction": "Affection is welcome, presents and dates are not. The rule is meant to keep things simple and mostly succeeds."
+    },
+    {
+      "id": "rules-and-vetoes-13-rules-not-yet-written",
+      "group": "Rules and vetoes",
+      "title": "Rules Not Yet Written",
+      "direction": "They have agreed in principle and have not agreed in detail. {{user}} is walking into unspecified expectations."
+    },
+    {
+      "id": "rules-and-vetoes-14-one-rule-revealed-later",
+      "group": "Rules and vetoes",
+      "title": "One Rule Revealed Later",
+      "direction": "A significant condition surfaces only after something has already happened, and the apology is sincere without undoing the damage."
+    },
+    {
+      "id": "rules-and-vetoes-15-her-partner-has-final-say",
+      "group": "Rules and vetoes",
+      "title": "Her Partner Has Final Say",
+      "direction": "The partner holds an unspoken veto that {{char}} has not disclosed because it has never been used. When it is, the cost lands on {{user}}."
+    },
+    {
+      "id": "rules-and-vetoes-16-nothing-is-off-limits",
+      "group": "Rules and vetoes",
+      "title": "Nothing Is Off Limits",
+      "direction": "They claim total openness and mean it, which is either radical trust or a failure to think anything through."
+    },
+    {
+      "id": "how-we-ask-01-a-rehearsed-speech",
+      "group": "How we ask",
+      "title": "A Rehearsed Speech",
+      "direction": "One partner has memorised it and the other keeps interrupting with corrections. The polish falls apart in the first thirty seconds."
+    },
+    {
+      "id": "how-we-ask-02-over-dinner-at-home",
+      "group": "How we ask",
+      "title": "Over Dinner At Home",
+      "direction": "They cook, they wait until the plates are cleared, and the domesticity makes the offer both safer and stranger."
+    },
+    {
+      "id": "how-we-ask-03-a-written-note",
+      "group": "How we ask",
+      "title": "A Written Note",
+      "direction": "A letter is handed over because neither could say it. The handwriting does most of the emotional work."
+    },
+    {
+      "id": "how-we-ask-04-blurted-out-badly",
+      "group": "How we ask",
+      "title": "Blurted Out Badly",
+      "direction": "It comes out wrong, at the wrong moment, and the awkwardness becomes part of what {{user}} is being asked to accept."
+    },
+    {
+      "id": "how-we-ask-05-as-a-joke-first",
+      "group": "How we ask",
+      "title": "As A Joke First",
+      "direction": "They test the water with humour and watch {{user}}'s face before admitting they mean it. The retreat option is real and slightly cowardly."
+    },
+    {
+      "id": "how-we-ask-06-over-drinks-loudly",
+      "group": "How we ask",
+      "title": "Over Drinks, Loudly",
+      "direction": "A bar, a booth, too much noise, and a conversation that has to be repeated three times. Nobody can pretend they misheard."
+    },
+    {
+      "id": "how-we-ask-07-after-a-shared-evening",
+      "group": "How we ask",
+      "title": "After A Shared Evening",
+      "direction": "The invitation comes at the end of a genuinely good night, which makes it hard to tell how much is the evening talking."
+    },
+    {
+      "id": "how-we-ask-08-in-the-car",
+      "group": "How we ask",
+      "title": "In The Car",
+      "direction": "Nowhere to walk away from, no eye contact required. Intimate and slightly trapped."
+    },
+    {
+      "id": "how-we-ask-09-a-formal-proposal",
+      "group": "How we ask",
+      "title": "A Formal Proposal",
+      "direction": "There is a printed page, a list of terms and a request for a considered answer. The formality is respectful and unnerving."
+    },
+    {
+      "id": "how-we-ask-10-through-one-partner",
+      "group": "How we ask",
+      "title": "Through One Partner",
+      "direction": "Only one of them speaks, with the other nodding along. {{user}} cannot tell how much of this is a shared position."
+    },
+    {
+      "id": "how-we-ask-11-in-two-halves",
+      "group": "How we ask",
+      "title": "In Two Halves",
+      "direction": "Each partner says their own part separately, and the two halves do not quite match. The discrepancy is the interesting part."
+    },
+    {
+      "id": "how-we-ask-12-at-their-own-party",
+      "group": "How we ask",
+      "title": "At Their Own Party",
+      "direction": "Surrounded by guests who do not know, they pull {{user}} aside. The secrecy in the room adds pressure."
+    },
+    {
+      "id": "how-we-ask-13-by-text-first",
+      "group": "How we ask",
+      "title": "By Text First",
+      "direction": "A message arrives days before the conversation. The written words can be reread, which is both a kindness and a trap."
+    },
+    {
+      "id": "how-we-ask-14-during-a-walk",
+      "group": "How we ask",
+      "title": "During A Walk",
+      "direction": "Side by side, outdoors, moving. It is easier to talk and easier to keep walking away from."
+    },
+    {
+      "id": "how-we-ask-15-as-a-question-about-user",
+      "group": "How we ask",
+      "title": "As A Question About [USER]",
+      "direction": "They ask what {{user}} wants before they make any offer, and the whole thing becomes an interview with no clear proposal."
+    },
+    {
+      "id": "how-we-ask-16-they-argue-first",
+      "group": "How we ask",
+      "title": "They Argue First",
+      "direction": "A disagreement about how to say it happens in front of {{user}}, and the invitation arrives inside the argument."
+    },
+    {
+      "id": "us-lately-01-rock-solid",
+      "group": "Us, lately",
+      "title": "Rock Solid",
+      "direction": "The couple is genuinely secure, which removes the usual dramatic tension and leaves room for a different one: what secure people do with an unusual idea."
+    },
+    {
+      "id": "us-lately-02-mid-repair-year",
+      "group": "Us, lately",
+      "title": "Mid-Repair Year",
+      "direction": "They are rebuilding after a bad year. This is either part of the rebuilding or a detour around it, and neither is sure which."
+    },
+    {
+      "id": "us-lately-03-quietly-resentful",
+      "group": "Us, lately",
+      "title": "Quietly Resentful",
+      "direction": "The invitation is functioning as an alternative to a conversation they should be having. {{user}} may become the place that argument lands."
+    },
+    {
+      "id": "us-lately-04-newly-in-love",
+      "group": "Us, lately",
+      "title": "Newly In Love",
+      "direction": "Six months in, still slightly disbelieving, and the invitation is a way of showing each other how modern and unafraid they are."
+    },
+    {
+      "id": "us-lately-05-long-distance-weekdays",
+      "group": "Us, lately",
+      "title": "Long-Distance Weekdays",
+      "direction": "They live apart during the week, and {{user}} is being invited into a structure already stretched by distance."
+    },
+    {
+      "id": "us-lately-06-just-coasting",
+      "group": "Us, lately",
+      "title": "Just Coasting",
+      "direction": "Nothing is wrong and nothing is happening. The arrangement is an attempt to feel something, and both know it."
+    },
+    {
+      "id": "us-lately-07-business-partners-too",
+      "group": "Us, lately",
+      "title": "Business Partners Too",
+      "direction": "They share a company as well as a bed, so any complication carries financial weight."
+    },
+    {
+      "id": "us-lately-08-newly-parents-of-a-dog",
+      "group": "Us, lately",
+      "title": "Newly Parents Of A Dog",
+      "direction": "A comic register: their lives are organised around a small animal with strong opinions and no respect for privacy."
+    },
+    {
+      "id": "us-lately-09-one-is-ill",
+      "group": "Us, lately",
+      "title": "One Is Ill",
+      "direction": "A health issue has reshaped intimacy and the couple is negotiating carefully around it, with {{user}} invited into a bounded role."
+    },
+    {
+      "id": "us-lately-10-just-moved-in",
+      "group": "Us, lately",
+      "title": "Just Moved In",
+      "direction": "Boxes still unpacked, a new city, and no social circle to be discreet in front of."
+    },
+    {
+      "id": "us-lately-11-a-long-marriage",
+      "group": "Us, lately",
+      "title": "A Long Marriage",
+      "direction": "Twenty years together and the invitation is the first genuinely new conversation in a decade."
+    },
+    {
+      "id": "us-lately-12-recently-married",
+      "group": "Us, lately",
+      "title": "Recently Married",
+      "direction": "Eight months married and already renegotiating, which some of their friends will read as a warning sign."
+    },
+    {
+      "id": "us-lately-13-grieving-together",
+      "group": "Us, lately",
+      "title": "Grieving Together",
+      "direction": "They lost someone close and are handling it differently. The invitation is either a return to life or a way of not sitting still."
+    },
+    {
+      "id": "us-lately-14-separated-not-divorced",
+      "group": "Us, lately",
+      "title": "Separated, Not Divorced",
+      "direction": "They live in separate flats and call themselves a couple. The ambiguity is real and {{user}} is not being told all of it."
+    },
+    {
+      "id": "us-lately-15-on-a-break",
+      "group": "Us, lately",
+      "title": "On A Break",
+      "direction": "They have agreed to see other people during a planned separation, and {{user}} is being invited into something defined by an ending."
+    },
+    {
+      "id": "us-lately-16-deeply-familiar-slightly-bored",
+      "group": "Us, lately",
+      "title": "Deeply Familiar, Slightly Bored",
+      "direction": "Comfortable, unexciting, honest. The offer is made from a place of contentment that both find harder to admit than dissatisfaction."
+    },
+    {
+      "id": "what-were-afraid-of-01-being-replaced",
+      "group": "What we're afraid of",
+      "title": "Being Replaced",
+      "direction": "One partner's unspoken fear is that {{user}} will be better at something they have always been praised for. The fear is admitted late and changes the terms."
+    },
+    {
+      "id": "what-were-afraid-of-02-being-left-out",
+      "group": "What we're afraid of",
+      "title": "Being Left Out",
+      "direction": "One partner expects to be the one watching from the edge and has agreed anyway. The plan needs to address it or it will fail."
+    },
+    {
+      "id": "what-were-afraid-of-03-being-used",
+      "group": "What we're afraid of",
+      "title": "Being Used",
+      "direction": "The couple worries they are treating {{user}} as an experiment, and the worry is well founded enough to be worth discussing."
+    },
+    {
+      "id": "what-were-afraid-of-04-being-seen",
+      "group": "What we're afraid of",
+      "title": "Being Seen",
+      "direction": "One of them is afraid of being watched, judged or described later. The fear is specific and physical."
+    },
+    {
+      "id": "what-were-afraid-of-05-losing-the-friendship",
+      "group": "What we're afraid of",
+      "title": "Losing The Friendship",
+      "direction": "The dominant fear is losing {{user}} entirely, and both partners have a different risk tolerance for that."
+    },
+    {
+      "id": "what-were-afraid-of-06-the-story-getting-out",
+      "group": "What we're afraid of",
+      "title": "The Story Getting Out",
+      "direction": "Reputation, career, family — a concrete fear with concrete consequences, especially for {{user}}."
+    },
+    {
+      "id": "what-were-afraid-of-07-one-wants-out-already",
+      "group": "What we're afraid of",
+      "title": "One Wants Out Already",
+      "direction": "One partner is looking for permission to end the relationship and has mistaken this for a way to save it."
+    },
+    {
+      "id": "what-were-afraid-of-08-being-ordinary",
+      "group": "What we're afraid of",
+      "title": "Being Ordinary",
+      "direction": "The fear is not of harm but of anticlimax: that this will be fine, fine, fine, and change nothing."
+    },
+    {
+      "id": "what-were-afraid-of-09-hurting-someone-again",
+      "group": "What we're afraid of",
+      "title": "Hurting Someone Again",
+      "direction": "A previous third person was hurt. The fear is specific, named, and makes the couple over-cautious and slightly patronising."
+    },
+    {
+      "id": "what-were-afraid-of-10-the-rules-not-holding",
+      "group": "What we're afraid of",
+      "title": "The Rules Not Holding",
+      "direction": "They suspect their agreement will not survive contact with an actual person, and neither will say which rule they expect to break."
+    },
+    {
+      "id": "what-were-afraid-of-11-asymmetry-becoming-visible",
+      "group": "What we're afraid of",
+      "title": "Asymmetry Becoming Visible",
+      "direction": "One partner fears being revealed as less enthusiastic than they have performed, in front of both other people."
+    },
+    {
+      "id": "what-were-afraid-of-12-attraction-fading",
+      "group": "What we're afraid of",
+      "title": "Attraction Fading",
+      "direction": "One of them worries {{user}} will prefer the other, and has not decided whether saying so would help or poison everything."
+    },
+    {
+      "id": "what-were-afraid-of-13-losing-their-marriage",
+      "group": "What we're afraid of",
+      "title": "Losing Their Marriage",
+      "direction": "An honest, unromantic fear that is not a reason to refuse and not a small thing either."
+    },
+    {
+      "id": "what-were-afraid-of-14-becoming-a-clich",
+      "group": "What we're afraid of",
+      "title": "Becoming A Cliché",
+      "direction": "They are embarrassed to want something so culturally fashionable and would rather not explain themselves to anyone."
+    },
+    {
+      "id": "what-were-afraid-of-15-not-being-enough",
+      "group": "What we're afraid of",
+      "title": "Not Being Enough",
+      "direction": "The fear is about themselves, not {{user}}: that they are proposing this because they are failing at something ordinary."
+    },
+    {
+      "id": "what-were-afraid-of-16-nothing-at-all",
+      "group": "What we're afraid of",
+      "title": "Nothing At All",
+      "direction": "They claim no fear, which is either unusual maturity or a conversation they have both agreed to avoid."
+    },
+    {
+      "id": "who-knows-01-nobody-at-all",
+      "group": "Who knows",
+      "title": "Nobody At All",
+      "direction": "The three of them and no one else. The secrecy is presented as romance and functions as isolation."
+    },
+    {
+      "id": "who-knows-02-one-trusted-friend",
+      "group": "Who knows",
+      "title": "One Trusted Friend",
+      "direction": "A single friend knows and has opinions, which gives {{user}} someone to hear the story from."
+    },
+    {
+      "id": "who-knows-03-her-sister-knows",
+      "group": "Who knows",
+      "title": "Her Sister Knows",
+      "direction": "A sibling knows and disapproves in a way that has already caused one argument the couple has not resolved."
+    },
+    {
+      "id": "who-knows-04-his-best-friend-knows",
+      "group": "Who knows",
+      "title": "His Best Friend Knows",
+      "direction": "The friend thinks it is a mistake and said so. His scepticism is available to {{user}} as an outside view."
+    },
+    {
+      "id": "who-knows-05-colleagues-suspect",
+      "group": "Who knows",
+      "title": "Colleagues Suspect",
+      "direction": "Nothing is confirmed and everything is assumed, which makes ordinary work interactions heavy."
+    },
+    {
+      "id": "who-knows-06-family-has-been-told",
+      "group": "Who knows",
+      "title": "Family Has Been Told",
+      "direction": "Parents know, reactions are mixed, and the couple is managing relatives before they have even managed the invitation."
+    },
+    {
+      "id": "who-knows-07-therapist-knows",
+      "group": "Who knows",
+      "title": "Therapist Knows",
+      "direction": "A professional has heard all three of them separately, which produces its own asymmetries of information."
+    },
+    {
+      "id": "who-knows-08-a-community-knows",
+      "group": "Who knows",
+      "title": "A Community Knows",
+      "direction": "They are part of a local scene that is small enough for everyone to hear about {{user}} within a week."
+    },
+    {
+      "id": "who-knows-09-the-ex-knows",
+      "group": "Who knows",
+      "title": "The Ex Knows",
+      "direction": "A previous partner has been told, which means it will travel further than intended."
+    },
+    {
+      "id": "who-knows-10-public-by-accident",
+      "group": "Who knows",
+      "title": "Public By Accident",
+      "direction": "Something slipped — a message, a sighting, a photo — and the invitation is happening in the aftermath of exposure."
+    },
+    {
+      "id": "who-knows-11-deliberately-open",
+      "group": "Who knows",
+      "title": "Deliberately Open",
+      "direction": "They intend to be visible about it, which is a political statement as much as a personal one and not everyone involved signed up for that."
+    },
+    {
+      "id": "who-knows-12-only-on-a-need-to-know-basis",
+      "group": "Who knows",
+      "title": "Only On A Need-To-Know Basis",
+      "direction": "A rotation of people know fragments. Anyone comparing notes would get a confusing picture."
+    },
+    {
+      "id": "who-knows-13-their-children-know",
+      "group": "Who knows",
+      "title": "Their Children Know",
+      "direction": "Adult children know and have views, which adds a generational negotiation to the arrangement."
+    },
+    {
+      "id": "who-knows-14-workplace-rules-apply",
+      "group": "Who knows",
+      "title": "Workplace Rules Apply",
+      "direction": "Colleagues are involved, so disclosure is governed by policy rather than preference."
+    },
+    {
+      "id": "who-knows-15-one-wants-to-tell",
+      "group": "Who knows",
+      "title": "One Wants To Tell",
+      "direction": "One partner wants openness and the other wants silence. The disagreement sits inside the invitation itself."
+    },
+    {
+      "id": "who-knows-16-everyone-already-assumes",
+      "group": "Who knows",
+      "title": "Everyone Already Assumes",
+      "direction": "No announcement was made and yet the assumption is everywhere, and nobody will confirm or deny it."
+    },
+    {
+      "id": "offer-and-experience-combinations-01-one-night-only--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-02-one-night-only--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-03-one-night-only--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-04-one-night-only--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-05-one-night-only--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-06-one-night-only--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-07-one-night-only--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-08-one-night-only--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-09-one-night-only--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-10-one-night-only--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-11-one-night-only--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-12-one-night-only--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-13-one-night-only--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-14-one-night-only--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-15-one-night-only--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "One Night Only × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is a single clearly bounded evening, agreed in advance to have no sequel unless everyone asks for one. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-16-a-trial-run--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-17-a-trial-run--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-18-a-trial-run--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-19-a-trial-run--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-20-a-trial-run--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-21-a-trial-run--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-22-a-trial-run--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-23-a-trial-run--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-24-a-trial-run--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-25-a-trial-run--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-26-a-trial-run--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-27-a-trial-run--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-28-a-trial-run--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-29-a-trial-run--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-30-a-trial-run--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "A Trial Run × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is one encounter followed by a scheduled honest conversation about whether a second should happen. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-31-occasional-guests--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-32-occasional-guests--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-33-occasional-guests--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-34-occasional-guests--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-35-occasional-guests--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-36-occasional-guests--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-37-occasional-guests--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-38-occasional-guests--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-39-occasional-guests--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-40-occasional-guests--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-41-occasional-guests--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-42-occasional-guests--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-43-occasional-guests--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-44-occasional-guests--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-45-occasional-guests--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "Occasional Guests × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is irregular evenings when moods and calendars align, with warmth and no continuity promised. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-46-every-other-friday--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-47-every-other-friday--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-48-every-other-friday--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-49-every-other-friday--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-50-every-other-friday--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-51-every-other-friday--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-52-every-other-friday--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-53-every-other-friday--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-54-every-other-friday--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-55-every-other-friday--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-56-every-other-friday--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-57-every-other-friday--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-58-every-other-friday--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-59-every-other-friday--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-60-every-other-friday--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "Every Other Friday × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is a standing fortnightly arrangement with a calendar entry and a review clause. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-61-come-back-whenever--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-62-come-back-whenever--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-63-come-back-whenever--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-64-come-back-whenever--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-65-come-back-whenever--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-66-come-back-whenever--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-67-come-back-whenever--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-68-come-back-whenever--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-69-come-back-whenever--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-70-come-back-whenever--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-71-come-back-whenever--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-72-come-back-whenever--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-73-come-back-whenever--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-74-come-back-whenever--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-75-come-back-whenever--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "Come Back Whenever × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is an open door with no schedule and no promises, offered generously and heard differently by each person. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-76-would-you-date-us--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-77-would-you-date-us--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-78-would-you-date-us--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-79-would-you-date-us--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-80-would-you-date-us--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-81-would-you-date-us--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-82-would-you-date-us--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-83-would-you-date-us--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-84-would-you-date-us--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-85-would-you-date-us--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-86-would-you-date-us--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-87-would-you-date-us--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-88-would-you-date-us--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-89-would-you-date-us--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-90-would-you-date-us--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "Would You Date Us × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic courtship first, with sex as a possible later development rather than the opening bid. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-91-date-one-of-us--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-92-date-one-of-us--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-93-date-one-of-us--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-94-date-one-of-us--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-95-date-one-of-us--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-96-date-one-of-us--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-97-date-one-of-us--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-98-date-one-of-us--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-99-date-one-of-us--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-100-date-one-of-us--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-101-date-one-of-us--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-102-date-one-of-us--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-103-date-one-of-us--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-104-date-one-of-us--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-105-date-one-of-us--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "Date One Of Us × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is a romantic relationship with one partner while the other offers support, space and honest presence. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-106-a-guest-role--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-107-a-guest-role--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-108-a-guest-role--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-109-a-guest-role--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-110-a-guest-role--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-111-a-guest-role--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-112-a-guest-role--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-113-a-guest-role--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-114-a-guest-role--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-115-a-guest-role--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-116-a-guest-role--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-117-a-guest-role--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-118-a-guest-role--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-119-a-guest-role--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-120-a-guest-role--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "A Guest Role × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is a recurring role inside specific parts of their life and deliberately not others. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-121-undefined-on-purpose--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-122-undefined-on-purpose--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-123-undefined-on-purpose--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-124-undefined-on-purpose--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-125-undefined-on-purpose--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-126-undefined-on-purpose--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-127-undefined-on-purpose--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-128-undefined-on-purpose--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-129-undefined-on-purpose--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-130-undefined-on-purpose--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-131-undefined-on-purpose--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-132-undefined-on-purpose--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-133-undefined-on-purpose--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-134-undefined-on-purpose--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-135-undefined-on-purpose--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "Undefined On Purpose × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is a refusal to name the shape yet, with discovery proposed as the method. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-136-a-possible-triad--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-137-a-possible-triad--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-138-a-possible-triad--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-139-a-possible-triad--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-140-a-possible-triad--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-141-a-possible-triad--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-142-a-possible-triad--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-143-a-possible-triad--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-144-a-possible-triad--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-145-a-possible-triad--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-146-a-possible-triad--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-147-a-possible-triad--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-148-a-possible-triad--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-149-a-possible-triad--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-150-a-possible-triad--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "A Possible Triad × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is a three-person relationship as the stated goal, with housing, family and money on the table from the start. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-151-friendship-plus--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-152-friendship-plus--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-153-friendship-plus--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-154-friendship-plus--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-155-friendship-plus--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-156-friendship-plus--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-157-friendship-plus--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-158-friendship-plus--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-159-friendship-plus--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-160-friendship-plus--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-161-friendship-plus--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-162-friendship-plus--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-163-friendship-plus--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-164-friendship-plus--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-165-friendship-plus--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "Friendship Plus × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is companionship and affection as the centre, with intimacy as one strand rather than the point. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-166-a-standing-invitation--old-hands-at-this",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × Old Hands At This",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. They have done this before and arrive with vocabulary, habits and known failure patterns. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-167-a-standing-invitation--one-bad-attempt-behind-them",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × One Bad Attempt Behind Them",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. A previous third felt used and said so, and that correction now shapes every term. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-168-a-standing-invitation--complete-beginners",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × Complete Beginners",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. Neither has done anything like this, so the nervousness is real and the planning is excessive. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-169-a-standing-invitation--one-experienced-one-new",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × One Experienced, One New",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. One partner has practice and the other does not, producing accidental condescension nobody intends. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-170-a-standing-invitation--read-everything-done-nothing",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × Read Everything, Done Nothing",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. They know the vocabulary of ethical non-monogamy and none of the practice. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-171-a-standing-invitation--previously-open-now-closed",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × Previously Open, Now Closed",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. They are narrowing an earlier open relationship rather than starting from nothing. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-172-a-standing-invitation--casual-history",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × Casual History",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. They have had brief friendly guests before and never examined the pattern. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-173-a-standing-invitation--a-breakup-behind-it",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × A Breakup Behind It",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. A past arrangement cost them a friendship, and only one of them learned caution from it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-174-a-standing-invitation--theoretical-for-years",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × Theoretical For Years",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. A decade of fantasy is meeting its first practical test. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-175-a-standing-invitation--pushed-by-circumstance",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × Pushed By Circumstance",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. A holiday, a work trip or an empty flat made an old idea suddenly feasible. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-176-a-standing-invitation--one-has-a-bad-reputation",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × One Has A Bad Reputation",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. One partner is known locally in ways that make discretion difficult and the other resents it. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-177-a-standing-invitation--deliberately-slow",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × Deliberately Slow",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. They have given themselves months of reading and talking before anything happens. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-178-a-standing-invitation--recently-burned",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × Recently Burned",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. Someone was hurt last time, so the caution now reads as management. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-179-a-standing-invitation--semi-public-life",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × Semi-Public Life",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. Their circle knows they do this, bringing community, judgement and performance pressure. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    },
+    {
+      "id": "offer-and-experience-combinations-180-a-standing-invitation--theyve-written-a-document",
+      "group": "Offer and experience combinations",
+      "title": "A Standing Invitation × They've Written A Document",
+      "direction": "For adult {char} and their partner, the joint proposal is no exclusivity, no expectations and an explicit standing permission to say no at any time. There is an agreement with headings, review dates and a deletion clause, handed over before the wine. Both partners agreed to this before approaching {user}, and {user}'s answer, terms and whether anything continues stay open."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "The Engine",
+      "content": "Two adults who are already together decide together to approach {{user}}. The reusable tension is the distance between what a couple negotiated in private and what happens when a third adult with their own wants answers. Nothing is happening behind anyone's back; the engine is honesty, not betrayal."
+    },
+    {
+      "id": "classification",
+      "label": "Classification Test",
+      "content": "Use this series when the couple's joint decision and shared approach are central. If only one partner is arranging something for the other, use a different series. If the defining feature is that {{char}} wants to watch {{user}} with another woman, Let Me Watch You With Her is primary."
+    },
+    {
+      "id": "two-people-first",
+      "label": "Two People First",
+      "content": "Generate {{char}} and their partner as fully separate adults before defining the agreement: different temperaments, different appetites, different orientations, different reasons. Only then decide what they have agreed together and where that agreement is thinner than either admits."
+    },
+    {
+      "id": "the-offer",
+      "label": "What Is Being Offered",
+      "content": "The invitation ranges from a single night to casual recurrence, to dating, to a possible triad, to something deliberately undefined while they work it out. Name the offer precisely in the scenario; vagueness should be a stated choice with a reason, not authorial laziness."
+    },
+    {
+      "id": "consent-architecture",
+      "label": "Consent Architecture",
+      "content": "Three consents are in play and none substitutes for another: each partner to the idea, both partners to the specific proposal, and {{user}} to whichever version they are actually offered. Consent is activity-specific and revocable by any of the three at any time."
+    },
+    {
+      "id": "rules-and-vetoes",
+      "label": "Rules and Vetoes",
+      "content": "Rules may be written, spoken, assumed or missing. Treat them as legitimate to hold and legitimate to renegotiate; a veto is a boundary from a real person, not a weapon. Let some rules be revealed only after they are unintentionally broken."
+    },
+    {
+      "id": "asymmetry",
+      "label": "Asymmetry and Uneven Want",
+      "content": "Both partners attracted, one attracted and one supportive, one curious and one certain, or different things wanted from {{user}} by each. Unequal involvement is usually more honest than a symmetrical fantasy, and the work of the arrangement is negotiating it aloud."
+    },
+    {
+      "id": "hierarchy",
+      "label": "No Automatic Hierarchy",
+      "content": "The established couple has history, shared housing and legal ties — not a default right to outrank {{user}}. Define practical expectations: whose plans win, whose feelings get airtime, who leaves the room when someone needs to speak alone."
+    },
+    {
+      "id": "jealousy",
+      "label": "Jealousy as Information",
+      "content": "Jealousy, insecurity and comparison are normalised as messages about unmet needs. They may be voiced, negotiated, accommodated or refused — and none of that proves the arrangement failed. Silence about jealousy is the more common failure mode."
+    },
+    {
+      "id": "delivery",
+      "label": "How the Ask Lands",
+      "content": "The approach itself is a scene: a rehearsed speech that one partner derails, a joke that stops being a joke, a formal document, an invitation over washing-up. Include what each partner does with their hands, who speaks first, and which detail was not agreed between them."
+    },
+    {
+      "id": "outside-life",
+      "label": "Lives Outside the Offer",
+      "content": "All three have work, friends, families and reputations that the invitation touches. Disclosure is a choice with costs, and {{user}} may have more to lose than the couple does — a fact the couple may have conveniently forgotten."
+    },
+    {
+      "id": "endings",
+      "label": "Outcomes and Exits",
+      "content": "Acceptance, refusal, delay, a trial period that ends, a night that goes badly, a friendship that survives intact, or a slow drift into something nobody named. The series does not require success, and declining must never be punished by the narrative."
+    },
+    {
+      "id": "failure-modes",
+      "label": "Failure Modes",
+      "content": "Common failures: an unmentioned veto revealed mid-scene, one partner quietly performing enthusiasm, {{user}} written as grateful, orientation assumed from the shape of the arrangement, and the couple's problems magically solved by a third person. Name these in any generated setup and avoid them."
+    },
+    {
+      "id": "tone",
+      "label": "Tone and Register",
+      "content": "Ranges from warm domestic comedy to careful, slightly clinical negotiation to charged slow burn. The constant is adult honesty: people who talk about difficult things imperfectly rather than characters who never have to."
+    },
+    {
+      "id": "crossover",
+      "label": "Cross-Series Use",
+      "content": "Pair with Open Relationship, We Matched, The Lifestyle Club or Our Date; keep this series primary only when the couple's joint decision and shared approach are what the story turns on."
+    }
+  ],
+  "raw_prompt": "Generate a Character Card Forge concept in the 'We Picked You' series. An established adult couple has already discussed the idea with each other and jointly approaches {{user}} about becoming involved with one of them or both. Work in this order: (1) build the two partners as separate adults — temperament, humour, appetite for risk, sexual orientation, private desires and private fears — then (2) decide what they actually agreed between themselves, including where they disagree or where one is going along with more than they let on, then (3) define the invitation: what is being proposed, for how long, with what rules, and how it is delivered. The partners' agreement is an offer, never an obligation; {{user}}'s answer must remain unwritten. Vary the desire for equal versus uneven involvement, the couple's experience with non-monogamy, what {{user}} already means to them, and whether the existing couple will treat {{user}} as a guest or as a person with standing. Treat jealousy as information rather than failure, orientation as independent rather than implied, and rules as negotiable rather than sacred. Open near the moment the invitation becomes explicit, with the couple's history established and {{user}}'s response still open. Keep it non-graphic, adult and consensual throughout."
+}

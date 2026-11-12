@@ -1,0 +1,2237 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-04-ill-show-you-around",
+  "title": "I’ll Show You Around",
+  "description": "Expanded Series Bible IV #04 I’ll Show You Around: adult {{user}} arrives in a place he does not know and adult {{char}} — a local, a transplant or a knowledgeable enthusiast — offers to show him around in person. The engine is asymmetry of familiarity: she can guide, interpret, recommend or improvise, and her tastes decide what the destination becomes. It generates varied destinations, visit reasons, online first contacts, guide styles, transport, money arrangements and complications without scripting romance or {{user}}’s reactions.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 4,
+    "kind": "series"
+  },
+  "summary": "Adult {{user}} is visiting somewhere unfamiliar — another city, another region or another country. Before or during the trip he makes contact online with adult {{char}}, who offers to show him around personally, and the roleplay opens when they meet face to face at an agreed place. There is no requirement of a long online friendship: a handful of messages is enough to arrange a meeting. What varies is the destination, why he came, how they found each other, how well she actually knows the place, whether the guiding is paid, free or reciprocal, what she wants him to see, how they get around, what goes wrong, and whether the day ever becomes anything more than a tour.",
+  "core_premise": "{{user}} is a visitor and {{char}} knows the ground. That single asymmetry of familiarity is the fixed engine: she has enough local knowledge to guide, interpret, recommend, improvise or share her own version of the place, and he does not. The roleplay begins at or immediately around their first face-to-face meeting — a station gate, hotel lobby, café, landmark, airport or convention entrance — after an online exchange that was only as detailed as it needed to be to arrange it. Everything else is a variable: which destination and what kind of place it is, why {{user}} is there and for how long, which platform or community produced the contact, whether {{char}} is a lifelong local, a transplant, a student, an expat or a frequent visitor, whether the guiding is paid, free, reciprocal or a favour, how organised or chaotic her style is, what she cares about showing, how confident she is with the route, and what the day does to the plan. Romance may be present, absent or unresolved; the tour does not create it.",
+  "setup": "Open at the meeting point, minutes before or at the moment of contact. Give the player the practical furniture of the scene — where they are, what the place looks, sounds and smells like at that hour, how {{char}} identifies {{user}}, and what she says or does first — then let her personality arrive through her first suggestion rather than a dumped itinerary. Establish just enough of the online exchange that the meeting is plausible: what was agreed, what she promised, what she does not know. Give {{char}} her own reason for being there, her own life in this place, and at least one blind spot in her local knowledge. Leave {{user}}’s mood, attraction, gratitude, stamina and willingness to follow along entirely to the player, and end the opening on a concrete choice: which direction to walk, whether to accept the first suggestion, or what to do about the thing that has just gone wrong.",
+  "core_variables": [
+    "Destination type: neighbourhood, regional town, major city, resort, island, rural area, another state or province, or another country.",
+    "Why {{user}} is visiting: holiday, event, convention, concert, work, university, stopover, rail trip, family visit, hobby, or open-ended travel.",
+    "Length of visit: a few hours, one day, several days, weeks, or an undecided stay.",
+    "How contact was made: travel forum, social media, hobby community, language exchange, game community, local group, tourism app, mutual contact, or a direct request for local advice.",
+    "How much they communicated before meeting: two messages, a week of chat, voice calls, or almost nothing but a time and a place.",
+    "{{char}}’s relationship to the destination: lifelong local, recent transplant, university student, expat, tourism worker, volunteer, enthusiast, or frequent visitor.",
+    "Payment: free, professionally paid, informally compensated, reciprocal, expenses only, or simply something {{char}} offered for fun.",
+    "Guide style: meticulously planned, loose list of ideas, spontaneous wandering, highly opinionated, or built entirely around {{user}}’s stated interests.",
+    "Tour focus: famous sights, hidden local places, food, nightlife, trains, shopping, history, art, gaming, anime, architecture, nature, photography, sport, music, or everyday local life.",
+    "Stance on tourist attractions: loves them, tolerates them, avoids them on principle, or has never been to the famous ones.",
+    "Transport mode: walking, trains, buses, cycling, car, ferries, mixed public transport, or whatever the destination forces.",
+    "Language overlap: shared fluent language, one side translating, a third language, translation apps, or gestures and goodwill.",
+    "Navigational confidence: flawless, mostly fine, shaky in unfamiliar districts, or confidently wrong.",
+    "Whether {{char}} gets lost or discovers somewhere new alongside {{user}}.",
+    "Disruption: weather, closures, crowds, festivals, strikes, transport failure, seasonal conditions, or a spontaneous local event.",
+    "Duration arc: hours, a full day, several days, or repeated meetups across the visit.",
+    "Framing: explicitly platonic, potentially romantic, ambiguous, or openly a date — decided by the characters, never assumed by the card.",
+    "What {{char}} wants {{user}} to understand about the place beyond standard tourism."
+  ],
+  "generation_rules": [
+    "Open at or immediately around the first face-to-face meeting unless a direction explicitly says otherwise.",
+    "Do not automatically turn the meetup into a date; romance is a possible development, not the default premise.",
+    "Never write {{user}}’s attraction, gratitude, comfort, travel preferences, stamina or willingness to follow suggestions.",
+    "Give {{char}} a concrete personal reason for offering to guide: friendliness, local pride, boredom, hobby enthusiasm, paid work, language practice or curiosity.",
+    "Do not make the local guide omniscient: she can forget opening hours, know one district well and another barely, or admit she has never visited the famous landmark.",
+    "Do not assume {{user}} is helpless; unfamiliarity with a place is not incompetence at travel, language or planning.",
+    "Let {{user}} decline suggestions, change the schedule, leave early, extend the outing or propose alternatives without penalty.",
+    "A paid arrangement creates no romantic or sexual obligation; neither does a free personal favour.",
+    "Keep factual location knowledge separate from {{char}}’s personal opinion about the place.",
+    "Tie cultural observations to {{char}}’s perspective; one local’s opinion does not represent a country.",
+    "Let the destination generate events — transport, meals, weather, closures, neighbourhood change — rather than only conversation.",
+    "Give {{char}} a life in the place beyond guiding: work, friends, routines, obligations she has to fit the tour around.",
+    "If {{char}} has an ulterior motive, make it a deliberate variant with its own direction rather than a hidden default.",
+    "Vary the guide’s competence across cards: two guides in the same city should feel like different people with different priorities.",
+    "Keep the first scene playable: one proposal, one complication, one choice — not a recitation of the whole itinerary.",
+    "Use real destinations carefully: checkable facts stay factual, and invented venues should not be presented as real.",
+    "Allow the tour to end early, extend, repeat on another day, or collapse entirely.",
+    "Respect that {{char}} may be working; a guide on shift has limits on time and attention.",
+    "Do not let the tour become a lecture; information arrives because something is happening in front of them.",
+    "Keep heat non-graphic; the direction menu describes situations, not prose.",
+    "If the pair have a substantial prior online relationship, that is a cross-link to Finally Meeting Offline, not this engine’s core.",
+    "Preserve {{char}} and {{user}} placeholders exactly; never hardcode names or genders beyond what a direction states."
+  ],
+  "guardrails": [
+    "All participants are adults; no exceptions, including students, guides and anyone met through an app.",
+    "No minors appear as participants, romantic interests or sexualised figures in any direction.",
+    "No real people are depicted; public figures and living named individuals are out of scope.",
+    "Guiding, payment, hospitality or a shared day out never creates romantic or sexual obligation.",
+    "Consent is activity-specific and revocable; agreeing to a tour is not agreeing to anything else.",
+    "{{user}}’s feelings, decisions, attraction and reactions are never scripted by the card.",
+    "Keep intimacy non-graphic and secondary to place, character and situation.",
+    "Do not present one character’s cultural opinion as objective fact about a country or its people.",
+    "Avoid stereotype-driven characterisation of locals, tourists, service workers or any nationality.",
+    "Do not use real, identifiable private individuals or reproduce someone’s personal information.",
+    "Stay within the entry’s boundaries: this is a meeting-and-guiding engine, not an established-relationship or travel-companion engine.",
+    "Do not romanticise unsafe or coercive situations; a stranded visitor is a story problem, not a consent shortcut."
+  ],
+  "diversity_axes": [
+    "Destination scale: single neighbourhood, mid-size regional town, megacity, island, rural valley or another country.",
+    "Relationship of guide to place: born there, moved there for work, studying there, expatriate, seasonal worker, returning native.",
+    "Contact channel: forum, hobby Discord, language exchange, tourism app, mutual friend, comment thread or a cold message.",
+    "Pre-meeting familiarity: total strangers, a week of chat, voice calls, or one awkward video call.",
+    "Money: unpaid favour, professional fee, split costs, barter, expenses only or never discussed.",
+    "Planning style: spreadsheet itinerary, three loose ideas, pure wandering or following {{user}}’s list.",
+    "Subject matter: food, transport, architecture, nightlife, shopping, nature, history, games, music or ordinary daily life.",
+    "Mobility: walking only, transit-heavy, cycling, driving, ferries or a mixture forced by geography.",
+    "Language situation: shared fluency, one-sided translation, third language, app-mediated or gesture-based.",
+    "Competence: unshakeable, decent but proud, occasionally lost, or confidently wrong about one crucial thing.",
+    "Disruption: weather, strike, closure, festival, renovation, injury, lost booking or nothing at all.",
+    "Time budget: two hours, one day, three days of outings, or an open-ended stay.",
+    "Framing: clearly platonic, quietly charged, openly flirtatious, explicitly a date or deliberately unlabelled.",
+    "Tone: warm comedy, quiet slice of life, brisk practicality, melancholy, cultural curiosity or slow burn.",
+    "{{char}}’s motive: pride, loneliness, paid work, curiosity about the visitor, hobby evangelism or an excuse to revisit her own city.",
+    "Ending shape: warm goodbye, second meeting promised, plan abandoned, or an unresolved parting at a station."
+  ],
+  "cross_links": [
+    "Finally Meeting Offline — use when a substantial prior online relationship exists and the guiding is secondary to the reunion.",
+    "Our Trip Together — use when the pair become broader travel companions rather than guide and visitor.",
+    "I Need an Expert — when {{char}}’s value is specialist knowledge of a scene, craft or subject rather than the place itself.",
+    "Come With Me — when the guide spontaneously invites {{user}} to something outside the original plan.",
+    "The Local Celebrity — when a locally recognised guide draws public attention that changes the day.",
+    "She Has an Agenda — when the offer to guide partly serves a separate objective and that becomes the spine.",
+    "Missed the Last Train — when an evening tour creates a transport complication as the central problem."
+  ],
+  "tags": [
+    "series bible iv",
+    "travel",
+    "local guide",
+    "first meeting",
+    "stranger to familiar",
+    "place-based",
+    "destination",
+    "slice of life",
+    "slow burn",
+    "cultural exchange",
+    "itinerary",
+    "walking tour",
+    "food",
+    "transport",
+    "ambiguity",
+    "player agency",
+    "consent"
+  ],
+  "notes": "Expanded from Series Bible IV entry #04 at v1.4. The source volume ships no stub presets for this entry, so there are no preserved seed presets and no Original Bible seeds group; the eighteen core variables from the entry are carried over in expanded form. Adds 340 direction presets across ten groups — destination, reason for the visit, how the contact was made, the guide’s ties to the place, guide style, subject matter, transport, money and obligation, complications, tone — plus a 180-preset combination group pairing a reason for visiting with a subject to explore. Asymmetry-of-familiarity, anti-omniscience, no-automatic-date and open-romance rules are enforced throughout.",
+  "direction_presets": [
+    {
+      "id": "destination-01-small-neighbourhood",
+      "group": "Destination",
+      "title": "Small Neighbourhood",
+      "direction": "The destination is one neighbourhood of a larger city, and {{char}} insists it is the only part worth seeing. Everything worth showing fits within a twenty-minute walk."
+    },
+    {
+      "id": "destination-02-regional-town",
+      "group": "Destination",
+      "title": "Regional Town",
+      "direction": "A mid-size town where the station is the centre of gravity and everyone seems to know {{char}}. She can point at the shop where she bought her first bike."
+    },
+    {
+      "id": "destination-03-major-city",
+      "group": "Destination",
+      "title": "Major City",
+      "direction": "A megacity where {{char}} knows four districts excellently and two famous ones barely at all. Distances are real and the day has to be rationed."
+    },
+    {
+      "id": "destination-04-resort-strip",
+      "group": "Destination",
+      "title": "Resort Strip",
+      "direction": "A coastal or lakeside resort out of season, half the businesses shuttered and {{char}} still fond of it. She shows {{user}} the version that exists when the crowds leave."
+    },
+    {
+      "id": "destination-05-small-island",
+      "group": "Destination",
+      "title": "Small Island",
+      "direction": "An island with one ferry schedule and no plan B. The timetable quietly sets the shape of the whole outing."
+    },
+    {
+      "id": "destination-06-rural-valley",
+      "group": "Destination",
+      "title": "Rural Valley",
+      "direction": "A farming valley where the roads are narrow, the buses run three times a day, and {{char}}’s knowledge is measured in which farm sells what."
+    },
+    {
+      "id": "destination-07-other-province",
+      "group": "Destination",
+      "title": "Other Province",
+      "direction": "The destination is domestic but culturally unfamiliar: different accent, different food, different assumptions about how things are done."
+    },
+    {
+      "id": "destination-08-another-country",
+      "group": "Destination",
+      "title": "Another Country",
+      "direction": "{{user}} is in another country and {{char}} is his first personal local contact. Language, etiquette and ordinary errands are the substance of the day."
+    },
+    {
+      "id": "destination-09-border-city",
+      "group": "Destination",
+      "title": "Border City",
+      "direction": "A city where two languages and two currencies overlap, and {{char}} moves between them without noticing she is doing it."
+    },
+    {
+      "id": "destination-10-university-town",
+      "group": "Destination",
+      "title": "University Town",
+      "direction": "A small city inflated by its student population, where {{char}} knows the cheap places, the quiet places and the one bar that is not a trap."
+    },
+    {
+      "id": "destination-11-historic-quarter",
+      "group": "Destination",
+      "title": "Historic Quarter",
+      "direction": "A preserved old town that is genuinely beautiful and genuinely impractical: cobbles, closures, and one café that {{char}} swears is worth the hill."
+    },
+    {
+      "id": "destination-12-industrial-city",
+      "group": "Destination",
+      "title": "Industrial City",
+      "direction": "A working city with no tourist board energy. {{char}} is defensive about it, precise about its history, and uninterested in apologising for it."
+    },
+    {
+      "id": "destination-13-mountain-village",
+      "group": "Destination",
+      "title": "Mountain Village",
+      "direction": "A village at the end of a cable car or a long switchback road, where weather decides what is open and {{char}} checks the webcam before suggesting anything."
+    },
+    {
+      "id": "destination-14-coastal-town",
+      "group": "Destination",
+      "title": "Coastal Town",
+      "direction": "A harbour town with a working fleet and a tourist façade two streets back. {{char}} shows the difference deliberately."
+    },
+    {
+      "id": "destination-15-capital-city",
+      "group": "Destination",
+      "title": "Capital City",
+      "direction": "A capital where {{char}} navigates by ministries and side streets rather than monuments, and treats the famous square as a shortcut."
+    },
+    {
+      "id": "destination-16-anywhere-with-trains",
+      "group": "Destination",
+      "title": "Anywhere With Trains",
+      "direction": "The place itself is negotiable; what matters is that {{char}} thinks in lines, platforms and connections and has built the day around them."
+    },
+    {
+      "id": "why-youre-here-01-short-holiday",
+      "group": "Why You’re Here",
+      "title": "Short Holiday",
+      "direction": "{{user}} has two or three days and a list he half trusts. {{char}} can see immediately that it is too much."
+    },
+    {
+      "id": "why-youre-here-02-work-trip",
+      "group": "Why You’re Here",
+      "title": "Work Trip",
+      "direction": "{{user}} is in town for meetings with a free afternoon, and {{char}} has to work around a schedule that is not hers to change."
+    },
+    {
+      "id": "why-youre-here-03-convention-weekend",
+      "group": "Why You’re Here",
+      "title": "Convention Weekend",
+      "direction": "{{user}} came for a convention and has one clear day outside the venue. {{char}} may or may not care about the convention itself."
+    },
+    {
+      "id": "why-youre-here-04-concert-night",
+      "group": "Why You’re Here",
+      "title": "Concert Night",
+      "direction": "{{user}} came for one show and has a whole day to fill before doors. {{char}} knows where to eat near the venue and where not to queue."
+    },
+    {
+      "id": "why-youre-here-05-family-visit",
+      "group": "Why You’re Here",
+      "title": "Family Visit",
+      "direction": "{{user}} is in town for relatives and has carved out a day away from them. {{char}} asks exactly one question about that and then lets it go."
+    },
+    {
+      "id": "why-youre-here-06-long-stopover",
+      "group": "Why You’re Here",
+      "title": "Long Stopover",
+      "direction": "{{user}} has nine hours between flights and a bag he cannot leave. {{char}} has planned for the bag."
+    },
+    {
+      "id": "why-youre-here-07-rail-holiday",
+      "group": "Why You’re Here",
+      "title": "Rail Holiday",
+      "direction": "{{user}} is travelling by train and stopping where the timetable allowed. {{char}} treats the station as a natural meeting point."
+    },
+    {
+      "id": "why-youre-here-08-exchange-semester",
+      "group": "Why You’re Here",
+      "title": "Exchange Semester",
+      "direction": "{{user}} has just arrived for a term and needs orientation rather than tourism: phone plan, grocery run, which corner is safe at 2 a.m."
+    },
+    {
+      "id": "why-youre-here-09-hobby-pilgrimage",
+      "group": "Why You’re Here",
+      "title": "Hobby Pilgrimage",
+      "direction": "{{user}} came for one specific thing — a shop, a venue, a match, a workshop — and {{char}} knows the scene around it."
+    },
+    {
+      "id": "why-youre-here-10-house-hunt",
+      "group": "Why You’re Here",
+      "title": "House Hunt",
+      "direction": "{{user}} is considering moving here and wants to see it as a resident. {{char}} is honest about rents and dishonest about nothing else."
+    },
+    {
+      "id": "why-youre-here-11-open-trip",
+      "group": "Why You’re Here",
+      "title": "Open Trip",
+      "direction": "{{user}} has no fixed itinerary and no return date. {{char}} finds this either intriguing or mildly alarming."
+    },
+    {
+      "id": "why-youre-here-12-research-visit",
+      "group": "Why You’re Here",
+      "title": "Research Visit",
+      "direction": "{{user}} is gathering material — an article, a thesis, a family history — and needs a local who will answer specific questions."
+    },
+    {
+      "id": "why-youre-here-13-recovery-stay",
+      "group": "Why You’re Here",
+      "title": "Recovery Stay",
+      "direction": "{{user}} is here to slow down after something difficult and has told {{char}} very little. {{char}} plans a gentle day without making it a therapy session."
+    },
+    {
+      "id": "why-youre-here-14-match-day",
+      "group": "Why You’re Here",
+      "title": "Match Day",
+      "direction": "{{user}} came for a fixture and the whole city is oriented around it. {{char}} has opinions about the crowd, the route and the timing."
+    },
+    {
+      "id": "why-youre-here-15-language-course",
+      "group": "Why You’re Here",
+      "title": "Language Course",
+      "direction": "{{user}} is enrolled for a fortnight and wants to practise outside the classroom. {{char}} is patient with the grammar and merciless about the slang."
+    },
+    {
+      "id": "why-youre-here-16-visa-run",
+      "group": "Why You’re Here",
+      "title": "Visa Run",
+      "direction": "{{user}} is here for bureaucratic reasons, with an appointment tomorrow and a free day today. {{char}} knows where the photocopier is."
+    },
+    {
+      "id": "how-we-met-online-01-travel-forum",
+      "group": "How We Met Online",
+      "title": "Travel Forum",
+      "direction": "{{char}} answered a thread {{user}} posted months ago; the message history is three replies long and slightly formal."
+    },
+    {
+      "id": "how-we-met-online-02-social-feed",
+      "group": "How We Met Online",
+      "title": "Social Feed",
+      "direction": "{{char}} commented on a photo {{user}} posted from the airport, and the conversation moved to messages within an hour."
+    },
+    {
+      "id": "how-we-met-online-03-hobby-community",
+      "group": "How We Met Online",
+      "title": "Hobby Community",
+      "direction": "They met in a small server about a shared hobby, where {{char}} is a known name and {{user}} is new."
+    },
+    {
+      "id": "how-we-met-online-04-language-exchange",
+      "group": "How We Met Online",
+      "title": "Language Exchange",
+      "direction": "The arrangement began as practice: half an hour of her language, half of his. Neither expected an actual meeting."
+    },
+    {
+      "id": "how-we-met-online-05-game-guild",
+      "group": "How We Met Online",
+      "title": "Game Guild",
+      "direction": "They played together for weeks before {{char}} mentioned she lived twenty minutes from {{user}}’s hotel."
+    },
+    {
+      "id": "how-we-met-online-06-local-group",
+      "group": "How We Met Online",
+      "title": "Local Group",
+      "direction": "{{char}} is a moderator of a city group and answers the same question every week; {{user}}’s was unusually specific."
+    },
+    {
+      "id": "how-we-met-online-07-tourism-app",
+      "group": "How We Met Online",
+      "title": "Tourism App",
+      "direction": "{{char}} is listed as a volunteer local on an app, with a profile photo from four years ago and nineteen good reviews."
+    },
+    {
+      "id": "how-we-met-online-08-mutual-friend",
+      "group": "How We Met Online",
+      "title": "Mutual Friend",
+      "direction": "A friend of a friend passed {{char}}’s handle along with the words ‘she knows everywhere worth eating’."
+    },
+    {
+      "id": "how-we-met-online-09-direct-ask",
+      "group": "How We Met Online",
+      "title": "Direct Ask",
+      "direction": "{{user}} messaged a stranger cold, and {{char}} said yes for reasons she has not fully explained."
+    },
+    {
+      "id": "how-we-met-online-10-photo-comments",
+      "group": "How We Met Online",
+      "title": "Photo Comments",
+      "direction": "Months of commenting on each other’s pictures turned into a plan almost by accident."
+    },
+    {
+      "id": "how-we-met-online-11-event-chat",
+      "group": "How We Met Online",
+      "title": "Event Chat",
+      "direction": "A convention or festival chat group is where they first spoke; {{char}} offered to meet before the doors opened."
+    },
+    {
+      "id": "how-we-met-online-12-long-comment-thread",
+      "group": "How We Met Online",
+      "title": "Long Comment Thread",
+      "direction": "One argument about the best bakery in the city ran to forty comments and ended with {{char}} offering to settle it in person."
+    },
+    {
+      "id": "how-we-met-online-13-meetup-board",
+      "group": "How We Met Online",
+      "title": "Meetup Board",
+      "direction": "{{char}} posted an open invitation to anyone visiting that week, and {{user}} was the only one who replied."
+    },
+    {
+      "id": "how-we-met-online-14-discord-server",
+      "group": "How We Met Online",
+      "title": "Discord Server",
+      "direction": "They know each other’s usernames and voice, not faces. The first meeting involves a certain amount of mutual squinting."
+    },
+    {
+      "id": "how-we-met-online-15-blog-reply",
+      "group": "How We Met Online",
+      "title": "Blog Reply",
+      "direction": "{{user}} replied to a post {{char}} wrote about her district two years ago; she answered this week."
+    },
+    {
+      "id": "how-we-met-online-16-pen-pal-site",
+      "group": "How We Met Online",
+      "title": "Pen Pal Site",
+      "direction": "Months of long letters, one photograph each, and now a platform and a time."
+    },
+    {
+      "id": "guides-ties-to-the-place-01-lifelong-local",
+      "group": "Guide’s Ties To The Place",
+      "title": "Lifelong Local",
+      "direction": "{{char}} was born six streets away and has never lived anywhere else. Her knowledge is dense, localised and full of personal history."
+    },
+    {
+      "id": "guides-ties-to-the-place-02-recent-transplant",
+      "group": "Guide’s Ties To The Place",
+      "title": "Recent Transplant",
+      "direction": "{{char}} moved here eighteen months ago and is still delighted by things residents ignore. She is honest about what she does not know."
+    },
+    {
+      "id": "guides-ties-to-the-place-03-university-student",
+      "group": "Guide’s Ties To The Place",
+      "title": "University Student",
+      "direction": "{{char}} has lived here for three years, knows the student economy and the cheap routes, and has never been to the museum."
+    },
+    {
+      "id": "guides-ties-to-the-place-04-local-expat",
+      "group": "Guide’s Ties To The Place",
+      "title": "Local Expat",
+      "direction": "{{char}} has been here long enough to be trusted by locals and still treated as a foreigner by some. She explains both sides."
+    },
+    {
+      "id": "guides-ties-to-the-place-05-tourism-worker",
+      "group": "Guide’s Ties To The Place",
+      "title": "Tourism Worker",
+      "direction": "{{char}} does this for a living and is visibly pacing herself. The professional patter drops the moment the tour goes off-script."
+    },
+    {
+      "id": "guides-ties-to-the-place-06-volunteer-guide",
+      "group": "Guide’s Ties To The Place",
+      "title": "Volunteer Guide",
+      "direction": "{{char}} volunteers at a heritage site or information desk and guides because she likes the place, not the money."
+    },
+    {
+      "id": "guides-ties-to-the-place-07-scene-enthusiast",
+      "group": "Guide’s Ties To The Place",
+      "title": "Scene Enthusiast",
+      "direction": "{{char}} knows the trams, the architecture or the record shops better than most residents, and will not pretend otherwise."
+    },
+    {
+      "id": "guides-ties-to-the-place-08-frequent-visitor",
+      "group": "Guide’s Ties To The Place",
+      "title": "Frequent Visitor",
+      "direction": "{{char}} does not live here but comes often enough to have routines. She knows the good version of a place she does not inhabit."
+    },
+    {
+      "id": "guides-ties-to-the-place-09-returning-native",
+      "group": "Guide’s Ties To The Place",
+      "title": "Returning Native",
+      "direction": "{{char}} grew up here, left for a decade and came back to a city she keeps misremembering."
+    },
+    {
+      "id": "guides-ties-to-the-place-10-boat-dweller",
+      "group": "Guide’s Ties To The Place",
+      "title": "Boat Dweller",
+      "direction": "{{char}} lives on a boat or in a van in the area, which makes her knowledge practical, seasonal and slightly illegal in places."
+    },
+    {
+      "id": "guides-ties-to-the-place-11-seasonal-worker",
+      "group": "Guide’s Ties To The Place",
+      "title": "Seasonal Worker",
+      "direction": "{{char}} is here for the season and knows the town only in its busy form. She has never seen it in February."
+    },
+    {
+      "id": "guides-ties-to-the-place-12-night-shift-worker",
+      "group": "Guide’s Ties To The Place",
+      "title": "Night Shift Worker",
+      "direction": "{{char}}’s whole map is arranged around what is open at 3 a.m. and which streets are quiet then."
+    },
+    {
+      "id": "guides-ties-to-the-place-13-market-trader",
+      "group": "Guide’s Ties To The Place",
+      "title": "Market Trader",
+      "direction": "{{char}} works a stall three days a week and knows every other trader, which turns the market into a sequence of introductions."
+    },
+    {
+      "id": "guides-ties-to-the-place-14-museum-staff",
+      "group": "Guide’s Ties To The Place",
+      "title": "Museum Staff",
+      "direction": "{{char}} works behind the scenes at a museum and is far more interesting about the collection than the audio guide."
+    },
+    {
+      "id": "guides-ties-to-the-place-15-delivery-rider",
+      "group": "Guide’s Ties To The Place",
+      "title": "Delivery Rider",
+      "direction": "{{char}} knows every shortcut, service entrance and impossible staircase in the district, and drives like it."
+    },
+    {
+      "id": "guides-ties-to-the-place-16-one-year-in",
+      "group": "Guide’s Ties To The Place",
+      "title": "One Year In",
+      "direction": "{{char}} arrived a year ago and has made it her project to know the place properly. The enthusiasm has not worn off yet."
+    },
+    {
+      "id": "guide-style-01-meticulous-plan",
+      "group": "Guide Style",
+      "title": "Meticulous Plan",
+      "direction": "{{char}} arrives with times, platforms, reservations and two backup options. She is not defensive about the plan, but she is watching the clock."
+    },
+    {
+      "id": "guide-style-02-loose-list",
+      "group": "Guide Style",
+      "title": "Loose List",
+      "direction": "{{char}} has three ideas and no order. She will let {{user}} pick one and happily abandon the other two."
+    },
+    {
+      "id": "guide-style-03-spontaneous-wandering",
+      "group": "Guide Style",
+      "title": "Spontaneous Wandering",
+      "direction": "{{char}} has no plan at all beyond a direction. The day is decided by whatever looks interesting at the next corner."
+    },
+    {
+      "id": "guide-style-04-strong-opinions",
+      "group": "Guide Style",
+      "title": "Strong Opinions",
+      "direction": "{{char}} has firm views on which bakery, viewpoint and street are correct, and states them without hedging."
+    },
+    {
+      "id": "guide-style-05-built-around-you",
+      "group": "Guide Style",
+      "title": "Built Around You",
+      "direction": "{{char}} asks three questions at the meeting point and constructs the day from the answers, discarding her own preferences."
+    },
+    {
+      "id": "guide-style-06-no-plan-at-all",
+      "group": "Guide Style",
+      "title": "No Plan At All",
+      "direction": "{{char}} turns up late, unbothered, with no idea what is open and complete confidence that it will work out."
+    },
+    {
+      "id": "guide-style-07-timed-to-the-minute",
+      "group": "Guide Style",
+      "title": "Timed To The Minute",
+      "direction": "{{char}} has scheduled the day in blocks and mentions the next slot every time they run four minutes late."
+    },
+    {
+      "id": "guide-style-08-one-anchor-stop",
+      "group": "Guide Style",
+      "title": "One Anchor Stop",
+      "direction": "{{char}} has exactly one fixed commitment and everything else is negotiable around it."
+    },
+    {
+      "id": "guide-style-09-follow-the-weather",
+      "group": "Guide Style",
+      "title": "Follow The Weather",
+      "direction": "{{char}} checks the radar repeatedly and reshuffles the day around a rain band moving in from the west."
+    },
+    {
+      "id": "guide-style-10-ask-the-locals",
+      "group": "Guide Style",
+      "title": "Ask The Locals",
+      "direction": "{{char}}’s method is to ask the nearest person over forty where to eat, and it has never failed her yet."
+    },
+    {
+      "id": "guide-style-11-reverse-itinerary",
+      "group": "Guide Style",
+      "title": "Reverse Itinerary",
+      "direction": "{{char}} starts with the thing everyone does last, at opening time, to beat the queue, then works backwards."
+    },
+    {
+      "id": "guide-style-12-walking-loop",
+      "group": "Guide Style",
+      "title": "Walking Loop",
+      "direction": "{{char}} has a loop in mind that ends near where it started, so {{user}} can bail at any point without being stranded."
+    },
+    {
+      "id": "guide-style-13-theme-of-the-day",
+      "group": "Guide Style",
+      "title": "Theme Of The Day",
+      "direction": "{{char}} has picked a single thread — staircases, old signage, river crossings — and built the day around noticing it."
+    },
+    {
+      "id": "guide-style-14-kid-in-a-candy-store",
+      "group": "Guide Style",
+      "title": "Kid In A Candy Store",
+      "direction": "{{char}} keeps getting distracted by her own city and has to be reminded that {{user}} has not seen any of this before."
+    },
+    {
+      "id": "guide-style-15-reluctant-guide",
+      "group": "Guide Style",
+      "title": "Reluctant Guide",
+      "direction": "{{char}} offered, and now seems mildly appalled to be doing it. Her suggestions are excellent and delivered with visible reluctance."
+    },
+    {
+      "id": "guide-style-16-improvise-everything",
+      "group": "Guide Style",
+      "title": "Improvise Everything",
+      "direction": "{{char}} decides each step at the moment of arriving somewhere, and treats any plan as a personal insult."
+    },
+    {
+      "id": "what-were-seeing-01-food-crawl",
+      "group": "What We’re Seeing",
+      "title": "Food Crawl",
+      "direction": "{{char}} treats the destination as a menu and refuses to spend a meal slot anywhere she has not personally eaten. The day becomes a sequence of small stops, each with a reason attached."
+    },
+    {
+      "id": "what-were-seeing-02-hidden-places",
+      "group": "What We’re Seeing",
+      "title": "Hidden Places",
+      "direction": "{{char}} wants {{user}} to see the back street, the courtyard and the stairwell with the good view — places with no signage, no queue and no entry fee."
+    },
+    {
+      "id": "what-were-seeing-03-night-streets",
+      "group": "What We’re Seeing",
+      "title": "Night Streets",
+      "direction": "The tour starts after dark, when ordinary streets look better and the crowds have gone home. {{char}} knows exactly which route is worth walking at ten at night."
+    },
+    {
+      "id": "what-were-seeing-04-architecture-walk",
+      "group": "What We’re Seeing",
+      "title": "Architecture Walk",
+      "direction": "{{char}} reads buildings the way other people read novels and will stop mid-sentence to point at a balcony. She has strong views about one renovation in particular."
+    },
+    {
+      "id": "what-were-seeing-05-art-circuit",
+      "group": "What We’re Seeing",
+      "title": "Art Circuit",
+      "direction": "{{char}} has three small galleries and one deeply strange museum in mind, plus firm opinions about which floor to skip."
+    },
+    {
+      "id": "what-were-seeing-06-shopping-districts",
+      "group": "What We’re Seeing",
+      "title": "Shopping Districts",
+      "direction": "{{char}} knows which street sells what, which shop is a tourist trap and where the genuinely second-hand things are."
+    },
+    {
+      "id": "what-were-seeing-07-green-spaces",
+      "group": "What We’re Seeing",
+      "title": "Green Spaces",
+      "direction": "{{char}} builds the day around parks, riverbanks and one hill with a bench, treating the city as a set of places to sit down in."
+    },
+    {
+      "id": "what-were-seeing-08-local-history",
+      "group": "What We’re Seeing",
+      "title": "Local History",
+      "direction": "{{char}} explains the place through what used to be there: a demolished station, a renamed square, a factory that is now flats."
+    },
+    {
+      "id": "what-were-seeing-09-photo-spots",
+      "group": "What We’re Seeing",
+      "title": "Photo Spots",
+      "direction": "{{char}} knows where the light is good at this hour and is willing to wait for it. She also knows which courtyard guards will object."
+    },
+    {
+      "id": "what-were-seeing-10-arcade-run",
+      "group": "What We’re Seeing",
+      "title": "Arcade Run",
+      "direction": "{{char}} knows the arcades, which cabinets are worth queuing for and the one back room with a working rhythm game and no crowd."
+    },
+    {
+      "id": "what-were-seeing-11-live-music",
+      "group": "What We’re Seeing",
+      "title": "Live Music",
+      "direction": "{{char}} builds the evening around a small venue, a support act worth arriving early for, and exactly where to stand."
+    },
+    {
+      "id": "what-were-seeing-12-everyday-life",
+      "group": "What We’re Seeing",
+      "title": "Everyday Life",
+      "direction": "{{char}} shows {{user}} the errands: the market, the laundrette, the library, the good supermarket. The point is how the place actually runs."
+    },
+    {
+      "id": "what-were-seeing-13-market-halls",
+      "group": "What We’re Seeing",
+      "title": "Market Halls",
+      "direction": "{{char}} walks {{user}} through the covered market stall by stall, greeting traders by name and translating the prices without being asked."
+    },
+    {
+      "id": "what-were-seeing-14-railway-lines",
+      "group": "What We’re Seeing",
+      "title": "Railway Lines",
+      "direction": "{{char}} treats the network itself as the attraction: an old terminus, a branch line, a station clock worth the detour."
+    },
+    {
+      "id": "what-were-seeing-15-the-waterfront",
+      "group": "What We’re Seeing",
+      "title": "The Waterfront",
+      "direction": "{{char}} follows the harbour, the river path or the old docks, and knows which side of the water is worth standing on."
+    },
+    {
+      "id": "what-were-seeing-16-neighbourhood-drift",
+      "group": "What We’re Seeing",
+      "title": "Neighbourhood Drift",
+      "direction": "{{char}} picks a direction and lets one neighbourhood turn into the next, refusing to name a destination until they arrive at one."
+    },
+    {
+      "id": "getting-around-01-on-foot",
+      "group": "Getting Around",
+      "title": "On Foot",
+      "direction": "The whole outing is walked, which limits the radius severely and makes shoes a genuine topic of conversation."
+    },
+    {
+      "id": "getting-around-02-metro-lines",
+      "group": "Getting Around",
+      "title": "Metro Lines",
+      "direction": "{{char}} navigates by line colour and treats a two-stop ride as an unacceptable waste of legwork."
+    },
+    {
+      "id": "getting-around-03-night-bus",
+      "group": "Getting Around",
+      "title": "Night Bus",
+      "direction": "The plan depends on a night bus that runs hourly and is unreliable in exactly the way {{char}} warns about."
+    },
+    {
+      "id": "getting-around-04-bicycle-hire",
+      "group": "Getting Around",
+      "title": "Bicycle Hire",
+      "direction": "{{char}} has hired two bikes and a route that is mostly safe, with one stretch she is noticeably quiet about."
+    },
+    {
+      "id": "getting-around-05-borrowed-car",
+      "group": "Getting Around",
+      "title": "Borrowed Car",
+      "direction": "{{char}} has borrowed a car with a parking permit that expires at six, which quietly deadlines the entire day."
+    },
+    {
+      "id": "getting-around-06-ferry-hop",
+      "group": "Getting Around",
+      "title": "Ferry Hop",
+      "direction": "A short ferry crossing is part of the route, and {{char}} insists on standing at the back rather than sitting inside."
+    },
+    {
+      "id": "getting-around-07-tram-loop",
+      "group": "Getting Around",
+      "title": "Tram Loop",
+      "direction": "{{char}} uses a heritage tram loop as transport and attraction at once, and knows the driver well enough to wave."
+    },
+    {
+      "id": "getting-around-08-one-long-walk",
+      "group": "Getting Around",
+      "title": "One Long Walk",
+      "direction": "The route is a single continuous walk with no return leg planned, so the day ends wherever their legs give out."
+    },
+    {
+      "id": "getting-around-09-taxi-splurge",
+      "group": "Getting Around",
+      "title": "Taxi Splurge",
+      "direction": "{{char}} decides the one place worth paying a taxi for, and is defensive about the expense when questioned."
+    },
+    {
+      "id": "getting-around-10-rush-hour",
+      "group": "Getting Around",
+      "title": "Rush Hour",
+      "direction": "They are moving through the city at exactly the wrong hour, and {{char}}’s route depends on which platform gets less crowded."
+    },
+    {
+      "id": "getting-around-11-last-train",
+      "group": "Getting Around",
+      "title": "Last Train",
+      "direction": "The day has a hard end dictated by the last service back, and {{char}} keeps checking the time without comment."
+    },
+    {
+      "id": "getting-around-12-rented-scooter",
+      "group": "Getting Around",
+      "title": "Rented Scooter",
+      "direction": "{{char}} has arranged scooters and a helmet that fits approximately, and drives with the confidence of someone who grew up on one."
+    },
+    {
+      "id": "getting-around-13-cable-car",
+      "group": "Getting Around",
+      "title": "Cable Car",
+      "direction": "A cable car or funicular is the only sensible way up, and {{char}} has opinions about which side to stand on for the view."
+    },
+    {
+      "id": "getting-around-14-regional-rail",
+      "group": "Getting Around",
+      "title": "Regional Rail",
+      "direction": "The outing leaves the city on a regional service with four carriages and a guard who knows {{char}} by name."
+    },
+    {
+      "id": "getting-around-15-wrong-platform",
+      "group": "Getting Around",
+      "title": "Wrong Platform",
+      "direction": "{{char}} confidently leads them onto the wrong platform and has to negotiate the recovery with some dignity."
+    },
+    {
+      "id": "getting-around-16-no-transport-plan",
+      "group": "Getting Around",
+      "title": "No Transport Plan",
+      "direction": "No decision has been made about how to get anywhere, and {{char}} treats each leg as a problem to solve on arrival."
+    },
+    {
+      "id": "money-and-obligation-01-free-favour",
+      "group": "Money And Obligation",
+      "title": "Free Favour",
+      "direction": "{{char}} refuses money on principle and gets visibly uncomfortable every time {{user}} reaches for his wallet."
+    },
+    {
+      "id": "money-and-obligation-02-paid-tour",
+      "group": "Money And Obligation",
+      "title": "Paid Tour",
+      "direction": "{{char}} is working: there is a rate, a receipt and a professional boundary she maintains until the tour is over."
+    },
+    {
+      "id": "money-and-obligation-03-split-costs",
+      "group": "Money And Obligation",
+      "title": "Split Costs",
+      "direction": "Everything is split down the middle, and {{char}} keeps a running total in her head with unnerving accuracy."
+    },
+    {
+      "id": "money-and-obligation-04-she-refuses-money",
+      "group": "Money And Obligation",
+      "title": "She Refuses Money",
+      "direction": "{{char}} will not take payment but will accept being bought lunch, and is specific about what counts as lunch."
+    },
+    {
+      "id": "money-and-obligation-05-he-insists",
+      "group": "Money And Obligation",
+      "title": "He Insists",
+      "direction": "{{user}} has offered to pay and {{char}} has not decided whether accepting would change what the day is."
+    },
+    {
+      "id": "money-and-obligation-06-gift-barter",
+      "group": "Money And Obligation",
+      "title": "Gift Barter",
+      "direction": "{{char}} wants something from {{user}}’s home city in exchange, and has already told him exactly which thing."
+    },
+    {
+      "id": "money-and-obligation-07-professional-rate",
+      "group": "Money And Obligation",
+      "title": "Professional Rate",
+      "direction": "The company {{user}} works for is paying, which makes {{char}} formal in a way that sits badly with the actual day."
+    },
+    {
+      "id": "money-and-obligation-08-expenses-only",
+      "group": "Money And Obligation",
+      "title": "Expenses Only",
+      "direction": "{{char}} asks only for transport and entry costs to be covered, and produces a small itemised list at the end."
+    },
+    {
+      "id": "money-and-obligation-09-reciprocal-trade",
+      "group": "Money And Obligation",
+      "title": "Reciprocal Trade",
+      "direction": "{{char}} guides {{user}} today in exchange for a favour she will call in later, and she means it."
+    },
+    {
+      "id": "money-and-obligation-10-awkward-bill",
+      "group": "Money And Obligation",
+      "title": "Awkward Bill",
+      "direction": "Nobody discussed money, the bill has arrived, and both of them are being extremely polite about it."
+    },
+    {
+      "id": "money-and-obligation-11-company-paid",
+      "group": "Money And Obligation",
+      "title": "Company Paid",
+      "direction": "{{char}} is being paid by a tourism board or hotel and has to mention it, which changes how her recommendations land."
+    },
+    {
+      "id": "money-and-obligation-12-tips-only",
+      "group": "Money And Obligation",
+      "title": "Tips Only",
+      "direction": "{{char}} works for tips and mentions it once, lightly, and then never again."
+    },
+    {
+      "id": "money-and-obligation-13-she-pays-everything",
+      "group": "Money And Obligation",
+      "title": "She Pays Everything",
+      "direction": "{{char}} pays for everything before {{user}} can react, and treats any objection as a personal insult."
+    },
+    {
+      "id": "money-and-obligation-14-half-joke-invoice",
+      "group": "Money And Obligation",
+      "title": "Half Joke Invoice",
+      "direction": "{{char}} presents a handwritten invoice as a joke that is not entirely a joke and watches {{user}}’s face."
+    },
+    {
+      "id": "money-and-obligation-15-no-money-discussed",
+      "group": "Money And Obligation",
+      "title": "No Money Discussed",
+      "direction": "The question never comes up, and its absence sits under the whole day like a piece of furniture."
+    },
+    {
+      "id": "money-and-obligation-16-discounted-rate",
+      "group": "Money And Obligation",
+      "title": "Discounted Rate",
+      "direction": "{{char}} has quietly quoted {{user}} less than her usual rate and would rather not explain why."
+    },
+    {
+      "id": "complications-01-sudden-rain",
+      "group": "Complications",
+      "title": "Sudden Rain",
+      "direction": "A wall of rain arrives twenty minutes into the walk and {{char}}’s backup plan is a shop doorway and one very specific café."
+    },
+    {
+      "id": "complications-02-closed-landmark",
+      "group": "Complications",
+      "title": "Closed Landmark",
+      "direction": "The one thing {{char}} promised is shut for renovation, and she finds out from a laminated sign while {{user}} is standing next to her."
+    },
+    {
+      "id": "complications-03-transport-strike",
+      "group": "Complications",
+      "title": "Transport Strike",
+      "direction": "A strike halts half the network and {{char}} has to rebuild the day on foot with visible irritation."
+    },
+    {
+      "id": "complications-04-festival-crowds",
+      "group": "Complications",
+      "title": "Festival Crowds",
+      "direction": "An unannounced festival fills every street {{char}} planned to use, and the crowds are not her crowd."
+    },
+    {
+      "id": "complications-05-lost-booking",
+      "group": "Complications",
+      "title": "Lost Booking",
+      "direction": "The reservation {{char}} made is not in the system, and she is not handling it as gracefully as she would like."
+    },
+    {
+      "id": "complications-06-dead-phone",
+      "group": "Complications",
+      "title": "Dead Phone",
+      "direction": "{{char}}’s phone dies with the map, the tickets and the contact details on it, and she refuses to ask for directions."
+    },
+    {
+      "id": "complications-07-wrong-season",
+      "group": "Complications",
+      "title": "Wrong Season",
+      "direction": "The place is between seasons: the summer places shut, the winter places not yet open, and {{char}} improvises around the gap."
+    },
+    {
+      "id": "complications-08-renovation-works",
+      "group": "Complications",
+      "title": "Renovation Works",
+      "direction": "Scaffolding covers the view {{char}} wanted to show, and she takes it personally."
+    },
+    {
+      "id": "complications-09-missed-ferry",
+      "group": "Complications",
+      "title": "Missed Ferry",
+      "direction": "They watch the ferry leave without them and {{char}} immediately starts calculating the next option."
+    },
+    {
+      "id": "complications-10-summer-heatwave",
+      "group": "Complications",
+      "title": "Summer Heatwave",
+      "direction": "The heat forces the day indoors and {{char}} has to admit that her plan was designed for fifteen degrees cooler."
+    },
+    {
+      "id": "complications-11-unannounced-parade",
+      "group": "Complications",
+      "title": "Unannounced Parade",
+      "direction": "A parade closes the main street and {{char}} uses it as an excuse to show {{user}} somewhere she has been wanting to revisit."
+    },
+    {
+      "id": "complications-12-bag-left-behind",
+      "group": "Complications",
+      "title": "Bag Left Behind",
+      "direction": "{{user}}’s bag is still on the train or in the café, and {{char}} is already halfway back before he finishes the sentence."
+    },
+    {
+      "id": "complications-13-late-arrival",
+      "group": "Complications",
+      "title": "Late Arrival",
+      "direction": "{{char}} is twenty-five minutes late with no message, and arrives with an explanation that only partially covers it."
+    },
+    {
+      "id": "complications-14-crowd-surge",
+      "group": "Complications",
+      "title": "Crowd Surge",
+      "direction": "A match, a concert or a school trip disgorges into the square and the quiet route becomes impossible."
+    },
+    {
+      "id": "complications-15-power-cut",
+      "group": "Complications",
+      "title": "Power Cut",
+      "direction": "A district-wide outage takes out the lights, the tills and the lifts, and {{char}} adapts faster than the staff do."
+    },
+    {
+      "id": "complications-16-something-better",
+      "group": "Complications",
+      "title": "Something Better",
+      "direction": "{{char}} spots something happening that beats her entire plan and asks {{user}} whether he minds abandoning it."
+    },
+    {
+      "id": "tone-and-register-01-warm-comedy",
+      "group": "Tone And Register",
+      "title": "Warm Comedy",
+      "direction": "The day runs on small disasters and mutual good humour; nothing is at stake except the plan and her pride in it."
+    },
+    {
+      "id": "tone-and-register-02-quiet-slice-of-life",
+      "group": "Tone And Register",
+      "title": "Quiet Slice Of Life",
+      "direction": "Low stakes, long walks, ordinary conversation. The pleasure is in the texture of a place and two people paying attention to it."
+    },
+    {
+      "id": "tone-and-register-03-slow-burn",
+      "group": "Tone And Register",
+      "title": "Slow Burn",
+      "direction": "Nothing is declared; the charge comes from small decisions about where to stand, what to share and how long to keep walking."
+    },
+    {
+      "id": "tone-and-register-04-ambiguous-charm",
+      "group": "Tone And Register",
+      "title": "Ambiguous Charm",
+      "direction": "{{char}} is warm in a way that could be friendliness or interest, and the card never resolves which."
+    },
+    {
+      "id": "tone-and-register-05-brisk-practical",
+      "group": "Tone And Register",
+      "title": "Brisk Practical",
+      "direction": "Efficient, unsentimental and competent. {{char}} treats the day as a logistics problem with a good outcome."
+    },
+    {
+      "id": "tone-and-register-06-dry-deadpan",
+      "group": "Tone And Register",
+      "title": "Dry Deadpan",
+      "direction": "{{char}}’s humour is flat, constant and easy to miss, and her compliments arrive disguised as complaints."
+    },
+    {
+      "id": "tone-and-register-07-cultural-curiosity",
+      "group": "Tone And Register",
+      "title": "Cultural Curiosity",
+      "direction": "The day is full of questions in both directions, and each of them is genuinely interested in how the other’s place works."
+    },
+    {
+      "id": "tone-and-register-08-melancholy-return",
+      "group": "Tone And Register",
+      "title": "Melancholy Return",
+      "direction": "The place has changed under {{char}} and showing it to a stranger is a way of taking inventory."
+    },
+    {
+      "id": "tone-and-register-09-bright-chaos",
+      "group": "Tone And Register",
+      "title": "Bright Chaos",
+      "direction": "Everything goes sideways in a way that is funny rather than dangerous, and {{char}} gets louder as the plan degrades."
+    },
+    {
+      "id": "tone-and-register-10-documentary-calm",
+      "group": "Tone And Register",
+      "title": "Documentary Calm",
+      "direction": "Detached, observational and specific: what things cost, who was standing there, what the sign actually said."
+    },
+    {
+      "id": "tone-and-register-11-flirtatious-tease",
+      "group": "Tone And Register",
+      "title": "Flirtatious Tease",
+      "direction": "{{char}} flirts as a form of conversation and would deny doing it, and {{user}}’s response is entirely unscripted."
+    },
+    {
+      "id": "tone-and-register-12-platonic-warmth",
+      "group": "Tone And Register",
+      "title": "Platonic Warmth",
+      "direction": "Two people having a genuinely good day with no romantic current at all, and no sense that anything is missing."
+    },
+    {
+      "id": "tone-and-register-13-rivalry-spark",
+      "group": "Tone And Register",
+      "title": "Rivalry Spark",
+      "direction": "They disagree about the place constantly and enjoy the argument more than the sightseeing."
+    },
+    {
+      "id": "tone-and-register-14-nostalgic-drift",
+      "group": "Tone And Register",
+      "title": "Nostalgic Drift",
+      "direction": "{{char}} keeps steering toward places from her own past, and the tour becomes an oblique autobiography."
+    },
+    {
+      "id": "tone-and-register-15-wry-observer",
+      "group": "Tone And Register",
+      "title": "Wry Observer",
+      "direction": "{{char}} narrates the city as a series of absurdities she has stopped being surprised by."
+    },
+    {
+      "id": "tone-and-register-16-unhurried-romance",
+      "group": "Tone And Register",
+      "title": "Unhurried Romance",
+      "direction": "The romantic reading is available from early on and nobody hurries it; the tour remains the actual subject."
+    },
+    {
+      "id": "combinations-01-visa-run-photo-spots",
+      "group": "Combinations",
+      "title": "Visa Run Photo Spots",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-02-recovery-stay-art-circuit",
+      "group": "Combinations",
+      "title": "Recovery Stay Art Circuit",
+      "direction": "{{user}} is in town for a fortnight of doing very little after a hard year — and {{char}} spends the day on a plan that runs through three small galleries and one deeply strange museum. The day is shaped by both facts at once — the day has to stay gentle without becoming a conversation about it, and {{char}} has firm views about which floor to skip. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-03-family-visit-photo-spots",
+      "group": "Combinations",
+      "title": "Family Visit Photo Spots",
+      "direction": "{{user}} is in town for a week with relatives and one day carved out away from them — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — the day is a holiday from the visit as much as from home, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-04-recovery-stay-shopping-districts",
+      "group": "Combinations",
+      "title": "Recovery Stay Shopping Districts",
+      "direction": "{{user}} is in town for a fortnight of doing very little after a hard year — and {{char}} spends the day on a plan that follows the streets that sell things, from specialist to second-hand. The day is shaped by both facts at once — the day has to stay gentle without becoming a conversation about it, and {{char}} knows which shops are traps and says so. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-05-exchange-semester-the-waterfront",
+      "group": "Combinations",
+      "title": "Exchange Semester The Waterfront",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — the practical errands matter more than any sight, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-06-convention-weekend-architecture-walk",
+      "group": "Combinations",
+      "title": "Convention Weekend Architecture Walk",
+      "direction": "{{user}} is in town for a convention and one clear day outside the venue — and {{char}} spends the day on a plan that is read through buildings rather than monuments. The day is shaped by both facts at once — the badge around his neck marks him as a visitor everywhere, and {{char}} stops mid-sentence to point at a balcony. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-07-match-day-hidden-places",
+      "group": "Combinations",
+      "title": "Match Day Hidden Places",
+      "direction": "{{user}} is in town for a fixture that has swallowed the entire city — and {{char}} spends the day on a plan that consists of courtyards, back stairs and places with no signage. The day is shaped by both facts at once — the crowd dictates the route whether they like it or not, and none of it is on any map he has seen. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-08-match-day-green-spaces",
+      "group": "Combinations",
+      "title": "Match Day Green Spaces",
+      "direction": "{{user}} is in town for a fixture that has swallowed the entire city — and {{char}} spends the day on a plan that is built around parks, riverbanks and benches. The day is shaped by both facts at once — the crowd dictates the route whether they like it or not, and the city becomes a set of places to sit down in. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-09-open-trip-architecture-walk",
+      "group": "Combinations",
+      "title": "Open Trip Architecture Walk",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that is read through buildings rather than monuments. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and {{char}} stops mid-sentence to point at a balcony. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-10-research-visit-arcade-run",
+      "group": "Combinations",
+      "title": "Research Visit Arcade Run",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that is spent in arcades, back rooms and one very specific cabinet. The day is shaped by both facts at once — he has specific questions and a limited number of days, and {{char}} has a rivalry with a machine and does not hide it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-11-exchange-semester-art-circuit",
+      "group": "Combinations",
+      "title": "Exchange Semester Art Circuit",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that runs through three small galleries and one deeply strange museum. The day is shaped by both facts at once — the practical errands matter more than any sight, and {{char}} has firm views about which floor to skip. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-12-recovery-stay-live-music",
+      "group": "Combinations",
+      "title": "Recovery Stay Live Music",
+      "direction": "{{user}} is in town for a fortnight of doing very little after a hard year — and {{char}} spends the day on a plan that ends at a small venue with a support act worth arriving early for. The day is shaped by both facts at once — the day has to stay gentle without becoming a conversation about it, and {{char}} knows exactly where to stand. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-13-short-holiday-food-crawl",
+      "group": "Combinations",
+      "title": "Short Holiday Food Crawl",
+      "direction": "{{user}} is in town for a three-day holiday and a list he half trusts — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — the visit is short enough that every stop costs something else, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-14-convention-weekend-everyday-life",
+      "group": "Combinations",
+      "title": "Convention Weekend Everyday Life",
+      "direction": "{{user}} is in town for a convention and one clear day outside the venue — and {{char}} spends the day on a plan that is made of errands: market, laundrette, library, supermarket. The day is shaped by both facts at once — the badge around his neck marks him as a visitor everywhere, and the point is how the place actually runs, not what it displays. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-15-convention-weekend-photo-spots",
+      "group": "Combinations",
+      "title": "Convention Weekend Photo Spots",
+      "direction": "{{user}} is in town for a convention and one clear day outside the venue — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — the badge around his neck marks him as a visitor everywhere, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-16-long-stopover-live-music",
+      "group": "Combinations",
+      "title": "Long Stopover Live Music",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that ends at a small venue with a support act worth arriving early for. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and {{char}} knows exactly where to stand. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-17-family-visit-hidden-places",
+      "group": "Combinations",
+      "title": "Family Visit Hidden Places",
+      "direction": "{{user}} is in town for a week with relatives and one day carved out away from them — and {{char}} spends the day on a plan that consists of courtyards, back stairs and places with no signage. The day is shaped by both facts at once — the day is a holiday from the visit as much as from home, and none of it is on any map he has seen. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-18-match-day-the-waterfront",
+      "group": "Combinations",
+      "title": "Match Day The Waterfront",
+      "direction": "{{user}} is in town for a fixture that has swallowed the entire city — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — the crowd dictates the route whether they like it or not, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-19-exchange-semester-local-history",
+      "group": "Combinations",
+      "title": "Exchange Semester Local History",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — the practical errands matter more than any sight, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-20-hobby-pilgrimage-neighbourhood-drift",
+      "group": "Combinations",
+      "title": "Hobby Pilgrimage Neighbourhood Drift",
+      "direction": "{{user}} is in town for one specific shop, venue or workshop he came for — and {{char}} spends the day on a plan that drifts from one neighbourhood into the next with no named destination. The day is shaped by both facts at once — everything else in the day is arranged around that one place, and {{char}} refuses to decide where it ends until they get there. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-21-convention-weekend-night-streets",
+      "group": "Combinations",
+      "title": "Convention Weekend Night Streets",
+      "direction": "{{user}} is in town for a convention and one clear day outside the venue — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — the badge around his neck marks him as a visitor everywhere, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-22-family-visit-art-circuit",
+      "group": "Combinations",
+      "title": "Family Visit Art Circuit",
+      "direction": "{{user}} is in town for a week with relatives and one day carved out away from them — and {{char}} spends the day on a plan that runs through three small galleries and one deeply strange museum. The day is shaped by both facts at once — the day is a holiday from the visit as much as from home, and {{char}} has firm views about which floor to skip. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-23-language-course-photo-spots",
+      "group": "Combinations",
+      "title": "Language Course Photo Spots",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-24-rail-holiday-hidden-places",
+      "group": "Combinations",
+      "title": "Rail Holiday Hidden Places",
+      "direction": "{{user}} is in town for a rail pass and a stop dictated by the timetable — and {{char}} spends the day on a plan that consists of courtyards, back stairs and places with no signage. The day is shaped by both facts at once — the next departure is the only fixed point in the day, and none of it is on any map he has seen. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-25-research-visit-neighbourhood-drift",
+      "group": "Combinations",
+      "title": "Research Visit Neighbourhood Drift",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that drifts from one neighbourhood into the next with no named destination. The day is shaped by both facts at once — he has specific questions and a limited number of days, and {{char}} refuses to decide where it ends until they get there. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-26-house-hunt-architecture-walk",
+      "group": "Combinations",
+      "title": "House Hunt Architecture Walk",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that is read through buildings rather than monuments. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and {{char}} stops mid-sentence to point at a balcony. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-27-short-holiday-photo-spots",
+      "group": "Combinations",
+      "title": "Short Holiday Photo Spots",
+      "direction": "{{user}} is in town for a three-day holiday and a list he half trusts — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — the visit is short enough that every stop costs something else, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-28-work-trip-railway-lines",
+      "group": "Combinations",
+      "title": "Work Trip Railway Lines",
+      "direction": "{{user}} is in town for a two-day work conference with one free afternoon — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — the day has a hard stop when the evening sessions begin, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-29-convention-weekend-green-spaces",
+      "group": "Combinations",
+      "title": "Convention Weekend Green Spaces",
+      "direction": "{{user}} is in town for a convention and one clear day outside the venue — and {{char}} spends the day on a plan that is built around parks, riverbanks and benches. The day is shaped by both facts at once — the badge around his neck marks him as a visitor everywhere, and the city becomes a set of places to sit down in. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-30-open-trip-green-spaces",
+      "group": "Combinations",
+      "title": "Open Trip Green Spaces",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that is built around parks, riverbanks and benches. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and the city becomes a set of places to sit down in. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-31-long-stopover-hidden-places",
+      "group": "Combinations",
+      "title": "Long Stopover Hidden Places",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that consists of courtyards, back stairs and places with no signage. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and none of it is on any map he has seen. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-32-language-course-railway-lines",
+      "group": "Combinations",
+      "title": "Language Course Railway Lines",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-33-concert-night-arcade-run",
+      "group": "Combinations",
+      "title": "Concert Night Arcade Run",
+      "direction": "{{user}} is in town for a show that evening and a whole day to fill before doors — and {{char}} spends the day on a plan that is spent in arcades, back rooms and one very specific cabinet. The day is shaped by both facts at once — the venue dictates where the day has to end up, and {{char}} has a rivalry with a machine and does not hide it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-34-open-trip-local-history",
+      "group": "Combinations",
+      "title": "Open Trip Local History",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-35-visa-run-food-crawl",
+      "group": "Combinations",
+      "title": "Visa Run Food Crawl",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-36-work-trip-night-streets",
+      "group": "Combinations",
+      "title": "Work Trip Night Streets",
+      "direction": "{{user}} is in town for a two-day work conference with one free afternoon — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — the day has a hard stop when the evening sessions begin, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-37-rail-holiday-night-streets",
+      "group": "Combinations",
+      "title": "Rail Holiday Night Streets",
+      "direction": "{{user}} is in town for a rail pass and a stop dictated by the timetable — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — the next departure is the only fixed point in the day, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-38-house-hunt-railway-lines",
+      "group": "Combinations",
+      "title": "House Hunt Railway Lines",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-39-exchange-semester-market-halls",
+      "group": "Combinations",
+      "title": "Exchange Semester Market Halls",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that goes stall by stall through the covered market. The day is shaped by both facts at once — the practical errands matter more than any sight, and {{char}} greets the traders by name and translates the prices. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-40-house-hunt-neighbourhood-drift",
+      "group": "Combinations",
+      "title": "House Hunt Neighbourhood Drift",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that drifts from one neighbourhood into the next with no named destination. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and {{char}} refuses to decide where it ends until they get there. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-41-language-course-everyday-life",
+      "group": "Combinations",
+      "title": "Language Course Everyday Life",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that is made of errands: market, laundrette, library, supermarket. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and the point is how the place actually runs, not what it displays. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-42-long-stopover-railway-lines",
+      "group": "Combinations",
+      "title": "Long Stopover Railway Lines",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-43-long-stopover-shopping-districts",
+      "group": "Combinations",
+      "title": "Long Stopover Shopping Districts",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that follows the streets that sell things, from specialist to second-hand. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and {{char}} knows which shops are traps and says so. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-44-house-hunt-local-history",
+      "group": "Combinations",
+      "title": "House Hunt Local History",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-45-short-holiday-night-streets",
+      "group": "Combinations",
+      "title": "Short Holiday Night Streets",
+      "direction": "{{user}} is in town for a three-day holiday and a list he half trusts — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — the visit is short enough that every stop costs something else, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-46-research-visit-night-streets",
+      "group": "Combinations",
+      "title": "Research Visit Night Streets",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — he has specific questions and a limited number of days, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-47-long-stopover-photo-spots",
+      "group": "Combinations",
+      "title": "Long Stopover Photo Spots",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-48-long-stopover-food-crawl",
+      "group": "Combinations",
+      "title": "Long Stopover Food Crawl",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-49-house-hunt-market-halls",
+      "group": "Combinations",
+      "title": "House Hunt Market Halls",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that goes stall by stall through the covered market. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and {{char}} greets the traders by name and translates the prices. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-50-hobby-pilgrimage-food-crawl",
+      "group": "Combinations",
+      "title": "Hobby Pilgrimage Food Crawl",
+      "direction": "{{user}} is in town for one specific shop, venue or workshop he came for — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — everything else in the day is arranged around that one place, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-51-convention-weekend-art-circuit",
+      "group": "Combinations",
+      "title": "Convention Weekend Art Circuit",
+      "direction": "{{user}} is in town for a convention and one clear day outside the venue — and {{char}} spends the day on a plan that runs through three small galleries and one deeply strange museum. The day is shaped by both facts at once — the badge around his neck marks him as a visitor everywhere, and {{char}} has firm views about which floor to skip. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-52-rail-holiday-railway-lines",
+      "group": "Combinations",
+      "title": "Rail Holiday Railway Lines",
+      "direction": "{{user}} is in town for a rail pass and a stop dictated by the timetable — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — the next departure is the only fixed point in the day, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-53-short-holiday-architecture-walk",
+      "group": "Combinations",
+      "title": "Short Holiday Architecture Walk",
+      "direction": "{{user}} is in town for a three-day holiday and a list he half trusts — and {{char}} spends the day on a plan that is read through buildings rather than monuments. The day is shaped by both facts at once — the visit is short enough that every stop costs something else, and {{char}} stops mid-sentence to point at a balcony. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-54-visa-run-live-music",
+      "group": "Combinations",
+      "title": "Visa Run Live Music",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that ends at a small venue with a support act worth arriving early for. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and {{char}} knows exactly where to stand. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-55-short-holiday-arcade-run",
+      "group": "Combinations",
+      "title": "Short Holiday Arcade Run",
+      "direction": "{{user}} is in town for a three-day holiday and a list he half trusts — and {{char}} spends the day on a plan that is spent in arcades, back rooms and one very specific cabinet. The day is shaped by both facts at once — the visit is short enough that every stop costs something else, and {{char}} has a rivalry with a machine and does not hide it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-56-work-trip-food-crawl",
+      "group": "Combinations",
+      "title": "Work Trip Food Crawl",
+      "direction": "{{user}} is in town for a two-day work conference with one free afternoon — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — the day has a hard stop when the evening sessions begin, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-57-concert-night-local-history",
+      "group": "Combinations",
+      "title": "Concert Night Local History",
+      "direction": "{{user}} is in town for a show that evening and a whole day to fill before doors — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — the venue dictates where the day has to end up, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-58-rail-holiday-photo-spots",
+      "group": "Combinations",
+      "title": "Rail Holiday Photo Spots",
+      "direction": "{{user}} is in town for a rail pass and a stop dictated by the timetable — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — the next departure is the only fixed point in the day, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-59-rail-holiday-local-history",
+      "group": "Combinations",
+      "title": "Rail Holiday Local History",
+      "direction": "{{user}} is in town for a rail pass and a stop dictated by the timetable — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — the next departure is the only fixed point in the day, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-60-match-day-food-crawl",
+      "group": "Combinations",
+      "title": "Match Day Food Crawl",
+      "direction": "{{user}} is in town for a fixture that has swallowed the entire city — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — the crowd dictates the route whether they like it or not, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-61-short-holiday-railway-lines",
+      "group": "Combinations",
+      "title": "Short Holiday Railway Lines",
+      "direction": "{{user}} is in town for a three-day holiday and a list he half trusts — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — the visit is short enough that every stop costs something else, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-62-convention-weekend-hidden-places",
+      "group": "Combinations",
+      "title": "Convention Weekend Hidden Places",
+      "direction": "{{user}} is in town for a convention and one clear day outside the venue — and {{char}} spends the day on a plan that consists of courtyards, back stairs and places with no signage. The day is shaped by both facts at once — the badge around his neck marks him as a visitor everywhere, and none of it is on any map he has seen. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-63-rail-holiday-food-crawl",
+      "group": "Combinations",
+      "title": "Rail Holiday Food Crawl",
+      "direction": "{{user}} is in town for a rail pass and a stop dictated by the timetable — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — the next departure is the only fixed point in the day, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-64-family-visit-food-crawl",
+      "group": "Combinations",
+      "title": "Family Visit Food Crawl",
+      "direction": "{{user}} is in town for a week with relatives and one day carved out away from them — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — the day is a holiday from the visit as much as from home, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-65-exchange-semester-railway-lines",
+      "group": "Combinations",
+      "title": "Exchange Semester Railway Lines",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — the practical errands matter more than any sight, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-66-research-visit-local-history",
+      "group": "Combinations",
+      "title": "Research Visit Local History",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — he has specific questions and a limited number of days, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-67-recovery-stay-night-streets",
+      "group": "Combinations",
+      "title": "Recovery Stay Night Streets",
+      "direction": "{{user}} is in town for a fortnight of doing very little after a hard year — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — the day has to stay gentle without becoming a conversation about it, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-68-work-trip-photo-spots",
+      "group": "Combinations",
+      "title": "Work Trip Photo Spots",
+      "direction": "{{user}} is in town for a two-day work conference with one free afternoon — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — the day has a hard stop when the evening sessions begin, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-69-recovery-stay-railway-lines",
+      "group": "Combinations",
+      "title": "Recovery Stay Railway Lines",
+      "direction": "{{user}} is in town for a fortnight of doing very little after a hard year — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — the day has to stay gentle without becoming a conversation about it, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-70-language-course-green-spaces",
+      "group": "Combinations",
+      "title": "Language Course Green Spaces",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that is built around parks, riverbanks and benches. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and the city becomes a set of places to sit down in. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-71-research-visit-food-crawl",
+      "group": "Combinations",
+      "title": "Research Visit Food Crawl",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — he has specific questions and a limited number of days, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-72-long-stopover-arcade-run",
+      "group": "Combinations",
+      "title": "Long Stopover Arcade Run",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that is spent in arcades, back rooms and one very specific cabinet. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and {{char}} has a rivalry with a machine and does not hide it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-73-visa-run-market-halls",
+      "group": "Combinations",
+      "title": "Visa Run Market Halls",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that goes stall by stall through the covered market. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and {{char}} greets the traders by name and translates the prices. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-74-concert-night-shopping-districts",
+      "group": "Combinations",
+      "title": "Concert Night Shopping Districts",
+      "direction": "{{user}} is in town for a show that evening and a whole day to fill before doors — and {{char}} spends the day on a plan that follows the streets that sell things, from specialist to second-hand. The day is shaped by both facts at once — the venue dictates where the day has to end up, and {{char}} knows which shops are traps and says so. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-75-work-trip-market-halls",
+      "group": "Combinations",
+      "title": "Work Trip Market Halls",
+      "direction": "{{user}} is in town for a two-day work conference with one free afternoon — and {{char}} spends the day on a plan that goes stall by stall through the covered market. The day is shaped by both facts at once — the day has a hard stop when the evening sessions begin, and {{char}} greets the traders by name and translates the prices. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-76-open-trip-market-halls",
+      "group": "Combinations",
+      "title": "Open Trip Market Halls",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that goes stall by stall through the covered market. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and {{char}} greets the traders by name and translates the prices. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-77-hobby-pilgrimage-railway-lines",
+      "group": "Combinations",
+      "title": "Hobby Pilgrimage Railway Lines",
+      "direction": "{{user}} is in town for one specific shop, venue or workshop he came for — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — everything else in the day is arranged around that one place, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-78-hobby-pilgrimage-live-music",
+      "group": "Combinations",
+      "title": "Hobby Pilgrimage Live Music",
+      "direction": "{{user}} is in town for one specific shop, venue or workshop he came for — and {{char}} spends the day on a plan that ends at a small venue with a support act worth arriving early for. The day is shaped by both facts at once — everything else in the day is arranged around that one place, and {{char}} knows exactly where to stand. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-79-rail-holiday-everyday-life",
+      "group": "Combinations",
+      "title": "Rail Holiday Everyday Life",
+      "direction": "{{user}} is in town for a rail pass and a stop dictated by the timetable — and {{char}} spends the day on a plan that is made of errands: market, laundrette, library, supermarket. The day is shaped by both facts at once — the next departure is the only fixed point in the day, and the point is how the place actually runs, not what it displays. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-80-work-trip-the-waterfront",
+      "group": "Combinations",
+      "title": "Work Trip The Waterfront",
+      "direction": "{{user}} is in town for a two-day work conference with one free afternoon — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — the day has a hard stop when the evening sessions begin, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-81-hobby-pilgrimage-green-spaces",
+      "group": "Combinations",
+      "title": "Hobby Pilgrimage Green Spaces",
+      "direction": "{{user}} is in town for one specific shop, venue or workshop he came for — and {{char}} spends the day on a plan that is built around parks, riverbanks and benches. The day is shaped by both facts at once — everything else in the day is arranged around that one place, and the city becomes a set of places to sit down in. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-82-concert-night-railway-lines",
+      "group": "Combinations",
+      "title": "Concert Night Railway Lines",
+      "direction": "{{user}} is in town for a show that evening and a whole day to fill before doors — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — the venue dictates where the day has to end up, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-83-house-hunt-live-music",
+      "group": "Combinations",
+      "title": "House Hunt Live Music",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that ends at a small venue with a support act worth arriving early for. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and {{char}} knows exactly where to stand. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-84-concert-night-art-circuit",
+      "group": "Combinations",
+      "title": "Concert Night Art Circuit",
+      "direction": "{{user}} is in town for a show that evening and a whole day to fill before doors — and {{char}} spends the day on a plan that runs through three small galleries and one deeply strange museum. The day is shaped by both facts at once — the venue dictates where the day has to end up, and {{char}} has firm views about which floor to skip. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-85-research-visit-market-halls",
+      "group": "Combinations",
+      "title": "Research Visit Market Halls",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that goes stall by stall through the covered market. The day is shaped by both facts at once — he has specific questions and a limited number of days, and {{char}} greets the traders by name and translates the prices. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-86-language-course-shopping-districts",
+      "group": "Combinations",
+      "title": "Language Course Shopping Districts",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that follows the streets that sell things, from specialist to second-hand. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} knows which shops are traps and says so. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-87-research-visit-the-waterfront",
+      "group": "Combinations",
+      "title": "Research Visit The Waterfront",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — he has specific questions and a limited number of days, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-88-language-course-market-halls",
+      "group": "Combinations",
+      "title": "Language Course Market Halls",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that goes stall by stall through the covered market. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} greets the traders by name and translates the prices. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-89-research-visit-live-music",
+      "group": "Combinations",
+      "title": "Research Visit Live Music",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that ends at a small venue with a support act worth arriving early for. The day is shaped by both facts at once — he has specific questions and a limited number of days, and {{char}} knows exactly where to stand. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-90-house-hunt-art-circuit",
+      "group": "Combinations",
+      "title": "House Hunt Art Circuit",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that runs through three small galleries and one deeply strange museum. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and {{char}} has firm views about which floor to skip. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-91-exchange-semester-neighbourhood-drift",
+      "group": "Combinations",
+      "title": "Exchange Semester Neighbourhood Drift",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that drifts from one neighbourhood into the next with no named destination. The day is shaped by both facts at once — the practical errands matter more than any sight, and {{char}} refuses to decide where it ends until they get there. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-92-concert-night-the-waterfront",
+      "group": "Combinations",
+      "title": "Concert Night The Waterfront",
+      "direction": "{{user}} is in town for a show that evening and a whole day to fill before doors — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — the venue dictates where the day has to end up, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-93-match-day-railway-lines",
+      "group": "Combinations",
+      "title": "Match Day Railway Lines",
+      "direction": "{{user}} is in town for a fixture that has swallowed the entire city — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — the crowd dictates the route whether they like it or not, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-94-house-hunt-food-crawl",
+      "group": "Combinations",
+      "title": "House Hunt Food Crawl",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-95-visa-run-the-waterfront",
+      "group": "Combinations",
+      "title": "Visa Run The Waterfront",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-96-hobby-pilgrimage-architecture-walk",
+      "group": "Combinations",
+      "title": "Hobby Pilgrimage Architecture Walk",
+      "direction": "{{user}} is in town for one specific shop, venue or workshop he came for — and {{char}} spends the day on a plan that is read through buildings rather than monuments. The day is shaped by both facts at once — everything else in the day is arranged around that one place, and {{char}} stops mid-sentence to point at a balcony. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-97-language-course-local-history",
+      "group": "Combinations",
+      "title": "Language Course Local History",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-98-exchange-semester-everyday-life",
+      "group": "Combinations",
+      "title": "Exchange Semester Everyday Life",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that is made of errands: market, laundrette, library, supermarket. The day is shaped by both facts at once — the practical errands matter more than any sight, and the point is how the place actually runs, not what it displays. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-99-match-day-local-history",
+      "group": "Combinations",
+      "title": "Match Day Local History",
+      "direction": "{{user}} is in town for a fixture that has swallowed the entire city — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — the crowd dictates the route whether they like it or not, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-100-long-stopover-the-waterfront",
+      "group": "Combinations",
+      "title": "Long Stopover The Waterfront",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-101-visa-run-everyday-life",
+      "group": "Combinations",
+      "title": "Visa Run Everyday Life",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that is made of errands: market, laundrette, library, supermarket. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and the point is how the place actually runs, not what it displays. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-102-language-course-hidden-places",
+      "group": "Combinations",
+      "title": "Language Course Hidden Places",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that consists of courtyards, back stairs and places with no signage. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and none of it is on any map he has seen. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-103-short-holiday-local-history",
+      "group": "Combinations",
+      "title": "Short Holiday Local History",
+      "direction": "{{user}} is in town for a three-day holiday and a list he half trusts — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — the visit is short enough that every stop costs something else, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-104-short-holiday-the-waterfront",
+      "group": "Combinations",
+      "title": "Short Holiday The Waterfront",
+      "direction": "{{user}} is in town for a three-day holiday and a list he half trusts — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — the visit is short enough that every stop costs something else, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-105-rail-holiday-live-music",
+      "group": "Combinations",
+      "title": "Rail Holiday Live Music",
+      "direction": "{{user}} is in town for a rail pass and a stop dictated by the timetable — and {{char}} spends the day on a plan that ends at a small venue with a support act worth arriving early for. The day is shaped by both facts at once — the next departure is the only fixed point in the day, and {{char}} knows exactly where to stand. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-106-language-course-art-circuit",
+      "group": "Combinations",
+      "title": "Language Course Art Circuit",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that runs through three small galleries and one deeply strange museum. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} has firm views about which floor to skip. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-107-visa-run-railway-lines",
+      "group": "Combinations",
+      "title": "Visa Run Railway Lines",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-108-language-course-the-waterfront",
+      "group": "Combinations",
+      "title": "Language Course The Waterfront",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-109-short-holiday-market-halls",
+      "group": "Combinations",
+      "title": "Short Holiday Market Halls",
+      "direction": "{{user}} is in town for a three-day holiday and a list he half trusts — and {{char}} spends the day on a plan that goes stall by stall through the covered market. The day is shaped by both facts at once — the visit is short enough that every stop costs something else, and {{char}} greets the traders by name and translates the prices. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-110-open-trip-railway-lines",
+      "group": "Combinations",
+      "title": "Open Trip Railway Lines",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-111-match-day-night-streets",
+      "group": "Combinations",
+      "title": "Match Day Night Streets",
+      "direction": "{{user}} is in town for a fixture that has swallowed the entire city — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — the crowd dictates the route whether they like it or not, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-112-exchange-semester-night-streets",
+      "group": "Combinations",
+      "title": "Exchange Semester Night Streets",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — the practical errands matter more than any sight, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-113-visa-run-shopping-districts",
+      "group": "Combinations",
+      "title": "Visa Run Shopping Districts",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that follows the streets that sell things, from specialist to second-hand. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and {{char}} knows which shops are traps and says so. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-114-rail-holiday-art-circuit",
+      "group": "Combinations",
+      "title": "Rail Holiday Art Circuit",
+      "direction": "{{user}} is in town for a rail pass and a stop dictated by the timetable — and {{char}} spends the day on a plan that runs through three small galleries and one deeply strange museum. The day is shaped by both facts at once — the next departure is the only fixed point in the day, and {{char}} has firm views about which floor to skip. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-115-research-visit-architecture-walk",
+      "group": "Combinations",
+      "title": "Research Visit Architecture Walk",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that is read through buildings rather than monuments. The day is shaped by both facts at once — he has specific questions and a limited number of days, and {{char}} stops mid-sentence to point at a balcony. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-116-recovery-stay-arcade-run",
+      "group": "Combinations",
+      "title": "Recovery Stay Arcade Run",
+      "direction": "{{user}} is in town for a fortnight of doing very little after a hard year — and {{char}} spends the day on a plan that is spent in arcades, back rooms and one very specific cabinet. The day is shaped by both facts at once — the day has to stay gentle without becoming a conversation about it, and {{char}} has a rivalry with a machine and does not hide it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-117-house-hunt-photo-spots",
+      "group": "Combinations",
+      "title": "House Hunt Photo Spots",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-118-visa-run-green-spaces",
+      "group": "Combinations",
+      "title": "Visa Run Green Spaces",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that is built around parks, riverbanks and benches. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and the city becomes a set of places to sit down in. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-119-convention-weekend-the-waterfront",
+      "group": "Combinations",
+      "title": "Convention Weekend The Waterfront",
+      "direction": "{{user}} is in town for a convention and one clear day outside the venue — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — the badge around his neck marks him as a visitor everywhere, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-120-language-course-arcade-run",
+      "group": "Combinations",
+      "title": "Language Course Arcade Run",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that is spent in arcades, back rooms and one very specific cabinet. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} has a rivalry with a machine and does not hide it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-121-hobby-pilgrimage-local-history",
+      "group": "Combinations",
+      "title": "Hobby Pilgrimage Local History",
+      "direction": "{{user}} is in town for one specific shop, venue or workshop he came for — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — everything else in the day is arranged around that one place, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-122-match-day-everyday-life",
+      "group": "Combinations",
+      "title": "Match Day Everyday Life",
+      "direction": "{{user}} is in town for a fixture that has swallowed the entire city — and {{char}} spends the day on a plan that is made of errands: market, laundrette, library, supermarket. The day is shaped by both facts at once — the crowd dictates the route whether they like it or not, and the point is how the place actually runs, not what it displays. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-123-research-visit-shopping-districts",
+      "group": "Combinations",
+      "title": "Research Visit Shopping Districts",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that follows the streets that sell things, from specialist to second-hand. The day is shaped by both facts at once — he has specific questions and a limited number of days, and {{char}} knows which shops are traps and says so. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-124-recovery-stay-photo-spots",
+      "group": "Combinations",
+      "title": "Recovery Stay Photo Spots",
+      "direction": "{{user}} is in town for a fortnight of doing very little after a hard year — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — the day has to stay gentle without becoming a conversation about it, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-125-concert-night-food-crawl",
+      "group": "Combinations",
+      "title": "Concert Night Food Crawl",
+      "direction": "{{user}} is in town for a show that evening and a whole day to fill before doors — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — the venue dictates where the day has to end up, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-126-convention-weekend-food-crawl",
+      "group": "Combinations",
+      "title": "Convention Weekend Food Crawl",
+      "direction": "{{user}} is in town for a convention and one clear day outside the venue — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — the badge around his neck marks him as a visitor everywhere, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-127-open-trip-arcade-run",
+      "group": "Combinations",
+      "title": "Open Trip Arcade Run",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that is spent in arcades, back rooms and one very specific cabinet. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and {{char}} has a rivalry with a machine and does not hide it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-128-house-hunt-hidden-places",
+      "group": "Combinations",
+      "title": "House Hunt Hidden Places",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that consists of courtyards, back stairs and places with no signage. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and none of it is on any map he has seen. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-129-exchange-semester-hidden-places",
+      "group": "Combinations",
+      "title": "Exchange Semester Hidden Places",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that consists of courtyards, back stairs and places with no signage. The day is shaped by both facts at once — the practical errands matter more than any sight, and none of it is on any map he has seen. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-130-recovery-stay-hidden-places",
+      "group": "Combinations",
+      "title": "Recovery Stay Hidden Places",
+      "direction": "{{user}} is in town for a fortnight of doing very little after a hard year — and {{char}} spends the day on a plan that consists of courtyards, back stairs and places with no signage. The day is shaped by both facts at once — the day has to stay gentle without becoming a conversation about it, and none of it is on any map he has seen. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-131-family-visit-everyday-life",
+      "group": "Combinations",
+      "title": "Family Visit Everyday Life",
+      "direction": "{{user}} is in town for a week with relatives and one day carved out away from them — and {{char}} spends the day on a plan that is made of errands: market, laundrette, library, supermarket. The day is shaped by both facts at once — the day is a holiday from the visit as much as from home, and the point is how the place actually runs, not what it displays. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-132-work-trip-architecture-walk",
+      "group": "Combinations",
+      "title": "Work Trip Architecture Walk",
+      "direction": "{{user}} is in town for a two-day work conference with one free afternoon — and {{char}} spends the day on a plan that is read through buildings rather than monuments. The day is shaped by both facts at once — the day has a hard stop when the evening sessions begin, and {{char}} stops mid-sentence to point at a balcony. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-133-open-trip-photo-spots",
+      "group": "Combinations",
+      "title": "Open Trip Photo Spots",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-134-visa-run-arcade-run",
+      "group": "Combinations",
+      "title": "Visa Run Arcade Run",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that is spent in arcades, back rooms and one very specific cabinet. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and {{char}} has a rivalry with a machine and does not hide it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-135-open-trip-neighbourhood-drift",
+      "group": "Combinations",
+      "title": "Open Trip Neighbourhood Drift",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that drifts from one neighbourhood into the next with no named destination. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and {{char}} refuses to decide where it ends until they get there. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-136-hobby-pilgrimage-everyday-life",
+      "group": "Combinations",
+      "title": "Hobby Pilgrimage Everyday Life",
+      "direction": "{{user}} is in town for one specific shop, venue or workshop he came for — and {{char}} spends the day on a plan that is made of errands: market, laundrette, library, supermarket. The day is shaped by both facts at once — everything else in the day is arranged around that one place, and the point is how the place actually runs, not what it displays. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-137-language-course-night-streets",
+      "group": "Combinations",
+      "title": "Language Course Night Streets",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-138-short-holiday-art-circuit",
+      "group": "Combinations",
+      "title": "Short Holiday Art Circuit",
+      "direction": "{{user}} is in town for a three-day holiday and a list he half trusts — and {{char}} spends the day on a plan that runs through three small galleries and one deeply strange museum. The day is shaped by both facts at once — the visit is short enough that every stop costs something else, and {{char}} has firm views about which floor to skip. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-139-long-stopover-architecture-walk",
+      "group": "Combinations",
+      "title": "Long Stopover Architecture Walk",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that is read through buildings rather than monuments. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and {{char}} stops mid-sentence to point at a balcony. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-140-research-visit-railway-lines",
+      "group": "Combinations",
+      "title": "Research Visit Railway Lines",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that treats the network as the attraction. The day is shaped by both facts at once — he has specific questions and a limited number of days, and {{char}} has a terminus, a branch line and a station clock in mind. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-141-work-trip-shopping-districts",
+      "group": "Combinations",
+      "title": "Work Trip Shopping Districts",
+      "direction": "{{user}} is in town for a two-day work conference with one free afternoon — and {{char}} spends the day on a plan that follows the streets that sell things, from specialist to second-hand. The day is shaped by both facts at once — the day has a hard stop when the evening sessions begin, and {{char}} knows which shops are traps and says so. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-142-open-trip-the-waterfront",
+      "group": "Combinations",
+      "title": "Open Trip The Waterfront",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-143-short-holiday-live-music",
+      "group": "Combinations",
+      "title": "Short Holiday Live Music",
+      "direction": "{{user}} is in town for a three-day holiday and a list he half trusts — and {{char}} spends the day on a plan that ends at a small venue with a support act worth arriving early for. The day is shaped by both facts at once — the visit is short enough that every stop costs something else, and {{char}} knows exactly where to stand. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-144-language-course-architecture-walk",
+      "group": "Combinations",
+      "title": "Language Course Architecture Walk",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that is read through buildings rather than monuments. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} stops mid-sentence to point at a balcony. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-145-exchange-semester-shopping-districts",
+      "group": "Combinations",
+      "title": "Exchange Semester Shopping Districts",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that follows the streets that sell things, from specialist to second-hand. The day is shaped by both facts at once — the practical errands matter more than any sight, and {{char}} knows which shops are traps and says so. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-146-recovery-stay-green-spaces",
+      "group": "Combinations",
+      "title": "Recovery Stay Green Spaces",
+      "direction": "{{user}} is in town for a fortnight of doing very little after a hard year — and {{char}} spends the day on a plan that is built around parks, riverbanks and benches. The day is shaped by both facts at once — the day has to stay gentle without becoming a conversation about it, and the city becomes a set of places to sit down in. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-147-language-course-food-crawl",
+      "group": "Combinations",
+      "title": "Language Course Food Crawl",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-148-long-stopover-art-circuit",
+      "group": "Combinations",
+      "title": "Long Stopover Art Circuit",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that runs through three small galleries and one deeply strange museum. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and {{char}} has firm views about which floor to skip. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-149-work-trip-neighbourhood-drift",
+      "group": "Combinations",
+      "title": "Work Trip Neighbourhood Drift",
+      "direction": "{{user}} is in town for a two-day work conference with one free afternoon — and {{char}} spends the day on a plan that drifts from one neighbourhood into the next with no named destination. The day is shaped by both facts at once — the day has a hard stop when the evening sessions begin, and {{char}} refuses to decide where it ends until they get there. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-150-concert-night-market-halls",
+      "group": "Combinations",
+      "title": "Concert Night Market Halls",
+      "direction": "{{user}} is in town for a show that evening and a whole day to fill before doors — and {{char}} spends the day on a plan that goes stall by stall through the covered market. The day is shaped by both facts at once — the venue dictates where the day has to end up, and {{char}} greets the traders by name and translates the prices. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-151-house-hunt-shopping-districts",
+      "group": "Combinations",
+      "title": "House Hunt Shopping Districts",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that follows the streets that sell things, from specialist to second-hand. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and {{char}} knows which shops are traps and says so. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-152-research-visit-hidden-places",
+      "group": "Combinations",
+      "title": "Research Visit Hidden Places",
+      "direction": "{{user}} is in town for an article, thesis or family history he is chasing — and {{char}} spends the day on a plan that consists of courtyards, back stairs and places with no signage. The day is shaped by both facts at once — he has specific questions and a limited number of days, and none of it is on any map he has seen. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-153-concert-night-live-music",
+      "group": "Combinations",
+      "title": "Concert Night Live Music",
+      "direction": "{{user}} is in town for a show that evening and a whole day to fill before doors — and {{char}} spends the day on a plan that ends at a small venue with a support act worth arriving early for. The day is shaped by both facts at once — the venue dictates where the day has to end up, and {{char}} knows exactly where to stand. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-154-language-course-neighbourhood-drift",
+      "group": "Combinations",
+      "title": "Language Course Neighbourhood Drift",
+      "direction": "{{user}} is in town for a fortnight of classes and a need to practise outside them — and {{char}} spends the day on a plan that drifts from one neighbourhood into the next with no named destination. The day is shaped by both facts at once — every conversation is also a lesson, whether he wants one or not, and {{char}} refuses to decide where it ends until they get there. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-155-work-trip-arcade-run",
+      "group": "Combinations",
+      "title": "Work Trip Arcade Run",
+      "direction": "{{user}} is in town for a two-day work conference with one free afternoon — and {{char}} spends the day on a plan that is spent in arcades, back rooms and one very specific cabinet. The day is shaped by both facts at once — the day has a hard stop when the evening sessions begin, and {{char}} has a rivalry with a machine and does not hide it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-156-house-hunt-the-waterfront",
+      "group": "Combinations",
+      "title": "House Hunt The Waterfront",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-157-open-trip-live-music",
+      "group": "Combinations",
+      "title": "Open Trip Live Music",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that ends at a small venue with a support act worth arriving early for. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and {{char}} knows exactly where to stand. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-158-hobby-pilgrimage-the-waterfront",
+      "group": "Combinations",
+      "title": "Hobby Pilgrimage The Waterfront",
+      "direction": "{{user}} is in town for one specific shop, venue or workshop he came for — and {{char}} spends the day on a plan that follows the harbour, the river or the old docks. The day is shaped by both facts at once — everything else in the day is arranged around that one place, and {{char}} knows which side of the water is worth standing on. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-159-long-stopover-night-streets",
+      "group": "Combinations",
+      "title": "Long Stopover Night Streets",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-160-house-hunt-green-spaces",
+      "group": "Combinations",
+      "title": "House Hunt Green Spaces",
+      "direction": "{{user}} is in town for a possible move and a week of viewings — and {{char}} spends the day on a plan that is built around parks, riverbanks and benches. The day is shaped by both facts at once — he is looking at the place as a resident, not a visitor, and the city becomes a set of places to sit down in. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-161-rail-holiday-neighbourhood-drift",
+      "group": "Combinations",
+      "title": "Rail Holiday Neighbourhood Drift",
+      "direction": "{{user}} is in town for a rail pass and a stop dictated by the timetable — and {{char}} spends the day on a plan that drifts from one neighbourhood into the next with no named destination. The day is shaped by both facts at once — the next departure is the only fixed point in the day, and {{char}} refuses to decide where it ends until they get there. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-162-long-stopover-everyday-life",
+      "group": "Combinations",
+      "title": "Long Stopover Everyday Life",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that is made of errands: market, laundrette, library, supermarket. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and the point is how the place actually runs, not what it displays. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-163-convention-weekend-neighbourhood-drift",
+      "group": "Combinations",
+      "title": "Convention Weekend Neighbourhood Drift",
+      "direction": "{{user}} is in town for a convention and one clear day outside the venue — and {{char}} spends the day on a plan that drifts from one neighbourhood into the next with no named destination. The day is shaped by both facts at once — the badge around his neck marks him as a visitor everywhere, and {{char}} refuses to decide where it ends until they get there. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-164-visa-run-architecture-walk",
+      "group": "Combinations",
+      "title": "Visa Run Architecture Walk",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that is read through buildings rather than monuments. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and {{char}} stops mid-sentence to point at a balcony. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-165-exchange-semester-food-crawl",
+      "group": "Combinations",
+      "title": "Exchange Semester Food Crawl",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — the practical errands matter more than any sight, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-166-open-trip-hidden-places",
+      "group": "Combinations",
+      "title": "Open Trip Hidden Places",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that consists of courtyards, back stairs and places with no signage. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and none of it is on any map he has seen. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-167-open-trip-night-streets",
+      "group": "Combinations",
+      "title": "Open Trip Night Streets",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-168-concert-night-architecture-walk",
+      "group": "Combinations",
+      "title": "Concert Night Architecture Walk",
+      "direction": "{{user}} is in town for a show that evening and a whole day to fill before doors — and {{char}} spends the day on a plan that is read through buildings rather than monuments. The day is shaped by both facts at once — the venue dictates where the day has to end up, and {{char}} stops mid-sentence to point at a balcony. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-169-recovery-stay-food-crawl",
+      "group": "Combinations",
+      "title": "Recovery Stay Food Crawl",
+      "direction": "{{user}} is in town for a fortnight of doing very little after a hard year — and {{char}} spends the day on a plan that eats its way through three neighbourhoods, one small stop at a time. The day is shaped by both facts at once — the day has to stay gentle without becoming a conversation about it, and {{char}} has a ranking and is prepared to defend it. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-170-visa-run-local-history",
+      "group": "Combinations",
+      "title": "Visa Run Local History",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-171-concert-night-night-streets",
+      "group": "Combinations",
+      "title": "Concert Night Night Streets",
+      "direction": "{{user}} is in town for a show that evening and a whole day to fill before doors — and {{char}} spends the day on a plan that starts after dark and stays out until the streets empty. The day is shaped by both facts at once — the venue dictates where the day has to end up, and {{char}} knows which route is worth walking at midnight. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-172-convention-weekend-shopping-districts",
+      "group": "Combinations",
+      "title": "Convention Weekend Shopping Districts",
+      "direction": "{{user}} is in town for a convention and one clear day outside the venue — and {{char}} spends the day on a plan that follows the streets that sell things, from specialist to second-hand. The day is shaped by both facts at once — the badge around his neck marks him as a visitor everywhere, and {{char}} knows which shops are traps and says so. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-173-long-stopover-local-history",
+      "group": "Combinations",
+      "title": "Long Stopover Local History",
+      "direction": "{{user}} is in town for nine hours between flights and a bag he cannot leave — and {{char}} spends the day on a plan that is explained through what used to be there. The day is shaped by both facts at once — the airport train sets both the start and the deadline, and {{char}} keeps pointing at ordinary walls with unreasonable feeling. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-174-visa-run-neighbourhood-drift",
+      "group": "Combinations",
+      "title": "Visa Run Neighbourhood Drift",
+      "direction": "{{user}} is in town for an embassy appointment tomorrow and a free day today — and {{char}} spends the day on a plan that drifts from one neighbourhood into the next with no named destination. The day is shaped by both facts at once — tomorrow’s paperwork sits under the whole outing, and {{char}} refuses to decide where it ends until they get there. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-175-open-trip-shopping-districts",
+      "group": "Combinations",
+      "title": "Open Trip Shopping Districts",
+      "direction": "{{user}} is in town for no itinerary and no return date — and {{char}} spends the day on a plan that follows the streets that sell things, from specialist to second-hand. The day is shaped by both facts at once — nothing has to be finished today, which changes every choice, and {{char}} knows which shops are traps and says so. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-176-hobby-pilgrimage-photo-spots",
+      "group": "Combinations",
+      "title": "Hobby Pilgrimage Photo Spots",
+      "direction": "{{user}} is in town for one specific shop, venue or workshop he came for — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — everything else in the day is arranged around that one place, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-177-hobby-pilgrimage-art-circuit",
+      "group": "Combinations",
+      "title": "Hobby Pilgrimage Art Circuit",
+      "direction": "{{user}} is in town for one specific shop, venue or workshop he came for — and {{char}} spends the day on a plan that runs through three small galleries and one deeply strange museum. The day is shaped by both facts at once — everything else in the day is arranged around that one place, and {{char}} has firm views about which floor to skip. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-178-recovery-stay-everyday-life",
+      "group": "Combinations",
+      "title": "Recovery Stay Everyday Life",
+      "direction": "{{user}} is in town for a fortnight of doing very little after a hard year — and {{char}} spends the day on a plan that is made of errands: market, laundrette, library, supermarket. The day is shaped by both facts at once — the day has to stay gentle without becoming a conversation about it, and the point is how the place actually runs, not what it displays. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-179-match-day-photo-spots",
+      "group": "Combinations",
+      "title": "Match Day Photo Spots",
+      "direction": "{{user}} is in town for a fixture that has swallowed the entire city — and {{char}} spends the day on a plan that is arranged around light and the places it falls at this hour. The day is shaped by both facts at once — the crowd dictates the route whether they like it or not, and {{char}} is willing to wait four minutes for a cloud to move. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    },
+    {
+      "id": "combinations-180-exchange-semester-green-spaces",
+      "group": "Combinations",
+      "title": "Exchange Semester Green Spaces",
+      "direction": "{{user}} is in town for a term starting on Monday and no idea how anything works — and {{char}} spends the day on a plan that is built around parks, riverbanks and benches. The day is shaped by both facts at once — the practical errands matter more than any sight, and the city becomes a set of places to sit down in. {{char}} reworks the plan in front of {{user}} rather than pretending it all still fits."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "Asymmetry of familiarity",
+      "content": "{{user}} is the visitor, {{char}} is the one who knows the ground. That gap is the fixed engine; every other element — place, reason, platform, payment, style — is a variable layered on top of it."
+    },
+    {
+      "id": "opening",
+      "label": "The meeting point",
+      "content": "The roleplay opens at or beside the first face-to-face meeting: station gate, hotel lobby, café, landmark, airport or convention entrance. Identify {{user}}, let {{char}}’s first suggestion carry her personality, and end the scene on a choice."
+    },
+    {
+      "id": "contact",
+      "label": "How they found each other",
+      "content": "An online contact is required but a relationship is not. Two messages and a time are enough; long history pushes the concept toward Finally Meeting Offline."
+    },
+    {
+      "id": "guide-construction",
+      "label": "Building the guide",
+      "content": "{{char}} needs a life in this place: work, routines, obligations, friends, and a reason she said yes. Her tastes should shape what she shows far more than any tourism board would."
+    },
+    {
+      "id": "not-omniscient",
+      "label": "Competence with gaps",
+      "content": "She knows some districts excellently and others not at all, may never have visited the famous landmark, and can get lost. Local knowledge is not a character superpower."
+    },
+    {
+      "id": "tour-focus",
+      "label": "What the day is about",
+      "content": "Food, transport, architecture, nightlife, shopping, nature, history, games, music or ordinary daily life. Two guides in the same city should produce entirely different days."
+    },
+    {
+      "id": "money",
+      "label": "Payment and obligation",
+      "content": "Free, paid, split, bartered or never discussed — each changes the register of the day. None of these arrangements creates romantic or sexual obligation."
+    },
+    {
+      "id": "romance",
+      "label": "Romance stays open",
+      "content": "The meetup is not automatically a date. Attraction may be present from the start, emerge over the day, stay ambiguous, or never appear at all."
+    },
+    {
+      "id": "player-agency",
+      "label": "Leaving {{user}} to the player",
+      "content": "Never write {{user}}’s mood, gratitude, attraction, stamina or willingness. He can decline, reroute, leave early or take over the planning."
+    },
+    {
+      "id": "destination-events",
+      "label": "The place as an engine",
+      "content": "Weather, closures, crowds, strikes, festivals and transport failures generate scenes without any character needing to create conflict."
+    },
+    {
+      "id": "culture",
+      "label": "Perspective, not authority",
+      "content": "Cultural observations belong to {{char}} and are hers, not the narrator’s. A local’s opinion is not a national fact, and the card says so through how she is written."
+    },
+    {
+      "id": "escalation",
+      "label": "From hours to days",
+      "content": "A short bounded outing is the default. Extending it, repeating it tomorrow or turning it into a whole visit emerges from choices made in play."
+    },
+    {
+      "id": "tone",
+      "label": "Register range",
+      "content": "Warm comedy, quiet slice of life, brisk practicality, melancholy, cultural curiosity or slow burn all fit. The card should not collapse every guide into a quirky extrovert."
+    },
+    {
+      "id": "failure-modes",
+      "label": "What breaks the card",
+      "content": "Itinerary dumps, omniscient guides, helpless visitors, instant romance, culturally generic locals and tours that ignore money and time are the recurring failure modes; each rule exists to block one."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult character-card premise for I’ll Show You Around. Adult {{user}} is visiting a place he does not know — another city, region or country — and adult {{char}} is a local, transplant or knowledgeable enthusiast who offered online to show him around in person. The roleplay opens at their first face-to-face meeting at an agreed location. The fixed engine is asymmetry of familiarity: {{char}} can guide, interpret, recommend or improvise, and her personal tastes decide what the destination becomes. Vary the destination type and scale, why {{user}} is there and for how long, which platform produced the contact and how much was said beforehand, {{char}}’s actual relationship to the place, whether the guiding is paid, free, split or reciprocal, how organised or chaotic her style is, what she wants to show (food, transport, architecture, nightlife, shopping, nature, history, games, everyday life), how they get around, and what disruption reshapes the plan. Non-negotiables: {{user}}’s reactions, attraction, stamina and choices are never written; the meetup is not automatically a date; {{char}} is not omniscient about her own city and may be wrong, forgetful or ignorant of famous sights; payment and hospitality create no romantic or sexual obligation; all participants are adults; no minors, no real people; keep any intimacy non-graphic and secondary to place and situation."
+}

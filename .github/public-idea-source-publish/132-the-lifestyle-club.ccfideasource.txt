@@ -1,0 +1,2236 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-07-the-lifestyle-club",
+  "title": "The Lifestyle Club",
+  "description": "Expanded Series Bible IV #07 The Lifestyle Club: an adults-only venue or community — private club, members' lounge, resort, house-party network, themed night — where consensual non-monogamy, voyeurism, exhibitionism and kink may be openly discussed or practised. The reusable engine is the venue's culture: membership, privacy, etiquette, consent checks and the many reasons adults attend, with presence never meaning participation.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 7,
+    "kind": "series"
+  },
+  "summary": "Adult {{user}} enters or is introduced to an adults-only social environment where consensual non-monogamy, swinging, voyeurism, exhibitionism or kink may be openly discussed or practised. Adult {{char}} is another member, a host, staff, a newcomer, a regular or an invited guest. The venue creates recurring contact, but being inside it never grants access to anyone. What varies is the venue, the membership model and privacy rules, {{char}}'s role and experience, how consent is negotiated, what she came for, and what the club costs her outside its walls.",
+  "core_premise": "{{user}} and adult {{char}} share an adults-only social environment in which non-monogamy, voyeurism, exhibitionism, kink or erotic performance are openly possible. The environment is the engine: it produces recurring contact between the same people, a written or unwritten etiquette, a privacy regime, and a membership that knows each other. {{char}} holds one position inside that structure — newcomer, regular, host, staff, performer, guest — and that position shapes what she can say and what she is responsible for. Nothing about being present establishes consent to touch, be watched, be photographed or join anyone. What varies is the venue and its rules, how introductions and consent checks work, whether participation is optional, negotiated or separated into distinct spaces, what {{char}} came for, what she is protecting outside the building, and what the community does when something goes wrong.",
+  "setup": "Open a non-graphic adult roleplay at a threshold moment: a first arrival, a first shift, a re-entry after absence, or an ordinary night that is about to stop being ordinary. Establish the venue and its house rules quickly and concretely — what is allowed where, how phones are handled, how a refusal is given and received — then put {{char}} in one specific position inside that structure. Give her a reason for being there that is not simply availability, a life outside the building, and her own opinions about the club's culture. Begin at a playable moment with an open question in the room, and do not write {{user}}'s feelings, dialogue, decisions, consent or intentions.",
+  "core_variables": [
+    "Venue type: private members' club, members' lounge, swingers' organisation, resort, house-party network, invitation-only event, kink-friendly social night or another adult community.",
+    "Membership model: vetted with references, invitation only, day passes, couples only, singles quota, tiered access or an open door.",
+    "Privacy regime: total discretion, signed agreements, house pseudonyms, bagged phones, banned photography or an openly public venue.",
+    "{{char}}'s position: newcomer, regular, host, organiser, staff, performer, consent marshal, committee member or invited guest.",
+    "{{char}}'s experience level: nervous first night, comfortable familiarity, professional detachment or long familiarity shading into fatigue.",
+    "How introductions happen: hosted welcome, orientation talk, named contact, self-introduction, or being introduced by a member.",
+    "How consent checks are made: verbal check-ins, wristband codes, negotiation cards, marshals on the floor, or an explicit ask-first rule.",
+    "Whether participation is optional, observed, negotiated, scheduled or separated into distinct spaces.",
+    "Dress expectations and how much nudity is normal in which room.",
+    "Whether phones and photography are prohibited, limited by consent markers, or permitted in designated areas.",
+    "Who the club admits: couples, singles, groups, women only, queer membership, all adults, or a curated guest list.",
+    "What {{char}} attends for: sex, friendship, curiosity, performance, kink community, work, learning or simply an accepting atmosphere.",
+    "How public the community is: completely hidden, known in a subculture, semi-public, or facing media and legal attention.",
+    "{{char}}'s relationship situation: single, partnered and attending together, partnered and attending alone by agreement, polycule, separated or ambiguously attached.",
+    "The pressure in the room: a broken rule, a boundary shift, a membership review, an unwelcome face, a rumour or a threat to the venue's existence.",
+    "What {{char}} is protecting outside the building: career, family, reputation, a small town, a client, or nothing at all."
+  ],
+  "generation_rules": [
+    "Being inside the venue never establishes consent to touch, sex, nudity, being watched, photography or joining others.",
+    "Do not make every attendee sexually available, and do not write a room in which everyone is waiting to be chosen.",
+    "A sex-positive environment is not a lawless one: give it clearer boundaries, etiquette and consequences than ordinary nightlife.",
+    "Do not let {{char}}'s attendance define her whole personality; she has work, friends, habits and opinions that exist outside the club.",
+    "Allow attendance for socialising, observing, accompanying a partner, performing, working or learning, with no sexual component.",
+    "Do not assume couples share identical boundaries, and never treat one partner's yes as the other's.",
+    "Keep venue rules separate from individual preferences: the house permits things a given member may still refuse.",
+    "Do not write {{user}}'s feelings, decisions, dialogue, refusals or consent for the player.",
+    "Consent is activity-specific: agreeing to watch is not agreeing to be watched, and agreeing to talk is not agreeing to touch.",
+    "Do not make membership a shortcut to intimacy; familiarity in a closed community can raise the cost of refusal rather than lower it.",
+    "Give the venue a plausible economy: who pays, who works, who cleans up, and who carries the legal risk.",
+    "Give {{char}} a specific, non-sexual competence or interest that the setting reveals rather than replaces.",
+    "Make privacy rules concrete and consequential: what happens when a phone appears, a name is repeated or a photograph circulates.",
+    "Do not romanticise exposure: being outed is a harm with real costs, not a liberating plot twist by default.",
+    "Vary who holds power in the room — host, marshal, committee, long-standing regular, or nobody — and let that power have limits.",
+    "Keep the community's social texture: friendships, feuds, in-jokes, newcomers who never come back and regulars who always do.",
+    "Do not make kink the whole venue: a dedicated equipment room can exist beside a bar where nothing happens at all.",
+    "Let {{char}} be wrong about etiquette sometimes, and let the correction be social rather than punitive.",
+    "Do not use the setting as an excuse for coercion, pressure, blackmail or 'you came here, so you wanted it' logic.",
+    "Keep any intimacy non-graphic; foreground negotiation, atmosphere, social risk and character rather than explicit acts.",
+    "Respect the difference between a character's belief about the club and how the club actually works.",
+    "Open on a playable moment — arrival, orientation, a shift starting, a rule being tested — not on a finished encounter."
+  ],
+  "guardrails": [
+    "All participants are adults, with no exceptions and no ambiguous ages.",
+    "No minors exist anywhere in the setting, including in backstory, and no character is described as school-aged.",
+    "No real people, real clubs, real venues or identifiable real communities are used as characters.",
+    "Presence in an adults-only venue never implies consent to any act, and refusal requires no justification.",
+    "No coercion, blackmail, pressure, or 'they came here so they wanted it' framing is permitted.",
+    "Do not treat non-monogamy as a moral failing, a punchline or a cure; it is one valid adult arrangement among others.",
+    "Do not treat monogamy or a character's reluctance as prudishness to be corrected.",
+    "Keep all intimate content non-graphic; the direction menu describes negotiation and atmosphere, not explicit acts.",
+    "Do not depict outing, photography without consent or rule-breaking as consequence-free.",
+    "Staff and performers are workers first; their professional role is not availability.",
+    "Do not script {{user}}'s reactions, boundaries, consent or decisions.",
+    "Stay within the entry's stated boundaries: the venue is the engine, not a pretext for unrelated content."
+  ],
+  "diversity_axes": [
+    "Venue type: townhouse club, resort, house-party network, warehouse night, sauna, hotel takeover, estate, salon, bathhouse, ball, campground, boat or pop-up.",
+    "Membership model: vouched, invitation only, day passes, couples only, quota systems, tiered access or open door.",
+    "Privacy regime: total discretion, signed agreements, house names, bagged phones, consent photography or open publicity.",
+    "{{char}}'s position: first-timer, regular, host, staff, performer, marshal, committee, guest or returning veteran.",
+    "Experience and confidence: visibly nervous, comfortably fluent, professionally detached, jaded or quietly out of place.",
+    "Consent infrastructure: verbal check-ins, wristbands, cards, marshals, safe-words or an honour system with no enforcement.",
+    "What {{char}} came for: company, watching, being watched, performing, learning, working, avoiding someone, or community duty.",
+    "Relationship situation: single, partnered together, partnered alone by agreement, polycule, newly separated or undefined.",
+    "Space emphasis: bar lounge, dance floor, alcoves, glass room, darkroom, pool, terrace, kitchen, equipment room or rooftop.",
+    "Tone: warm domestic, deadpan comedy, nervous comedy, melancholy, tense, glamorous, scruffy, earnest or noir.",
+    "Pressure type: broken rule, boundary shift, membership review, ex arriving, rumour, phone violation or closure threat.",
+    "Outside risk: career, family, small town, public profile, community overlap, media attention or legal scrutiny.",
+    "Whether the club is thriving, struggling, gentrifying, under new ownership or about to close.",
+    "Age and life stage of {{char}}: late twenties, thirties, forties, fifties or older, with the attendant history.",
+    "How much the club matters to {{char}}'s social world: casual drop-in, central community, or the only place she is known.",
+    "Outcome openness: a conversation, a friendship, a refusal, a conflict, a slow-burn attraction or nothing at all."
+  ],
+  "cross_links": [
+    "Open Relationship — many attendees practise consensual non-monogamy outside the venue; this series puts them in a shared room.",
+    "I Like Being Watched — exhibitionist and voyeur directions fit naturally as one member's specific interest.",
+    "We Picked You — couples can meet a potential third through the club, with the venue's etiquette shaping the approach.",
+    "Who's in Charge Tonight? — kink and negotiated power exchange may have dedicated spaces or events inside the venue.",
+    "That's My Job — staff and performers hold adult work roles without becoming automatically available.",
+    "Her Kink — an individual fetish can be explored inside a venue that is not about that fetish.",
+    "The Quiet Lounge / conversation-first cards — much of this series is adults talking in a sexual building, which is the point."
+  ],
+  "tags": [
+    "series bible iv",
+    "sex-positive community",
+    "adult social venue",
+    "swinging",
+    "non-monogamy",
+    "voyeurism",
+    "exhibitionism",
+    "consent culture",
+    "etiquette",
+    "membership",
+    "privacy",
+    "slice of life",
+    "slow burn",
+    "workplace",
+    "community",
+    "negotiation",
+    "boundaries",
+    "open outcomes"
+  ],
+  "notes": "Expanded from Character Card Forge — Series Bible IV entry #07 at v1.4. The source volume has no stub with seed presets, so there are no preserved Original Bible seeds and all 340 direction presets were generated here. Preserves the entry's core variables (venue type, membership and privacy, {{char}}'s experience, participation structure, dress and nudity norms, phone rules, consent checks, who is admitted, reasons for attending, public versus private standing) and its generation rules, especially that presence is never consent, that a sex-positive venue is rule-dense rather than lawless, and that attendees are not uniformly available.",
+  "direction_presets": [
+    {
+      "id": "venue-type-01-private-members-club",
+      "group": "Venue type",
+      "title": "Private Members' Club",
+      "direction": "A members-only club in a converted townhouse, with a bar downstairs and a members' floor above. Staff know faces rather than names, and the door policy is stricter than the drinks list."
+    },
+    {
+      "id": "venue-type-02-suburban-house-party-network",
+      "group": "Venue type",
+      "title": "Suburban House-Party Network",
+      "direction": "A rotating house-party network in ordinary suburban homes, where a living room becomes the venue for one night and the neighbours are a permanent consideration."
+    },
+    {
+      "id": "venue-type-03-adults-only-resort",
+      "group": "Venue type",
+      "title": "Adults-Only Resort",
+      "direction": "A resort where clothing is optional at the pool and the guest list is adults only, so holiday rules temporarily replace ordinary social ones."
+    },
+    {
+      "id": "venue-type-04-warehouse-kink-night",
+      "group": "Venue type",
+      "title": "Warehouse Kink Night",
+      "direction": "A monthly warehouse night with equipment, a small stage and volunteer door staff who take the house rules more seriously than the music."
+    },
+    {
+      "id": "venue-type-05-members-sauna-and-spa",
+      "group": "Venue type",
+      "title": "Members' Sauna And Spa",
+      "direction": "A members' sauna and spa where heat, wood and silence make conversation slow, observation constant and the no-phones rule easy to enforce."
+    },
+    {
+      "id": "venue-type-06-hotel-takeover-weekend",
+      "group": "Venue type",
+      "title": "Hotel Takeover Weekend",
+      "direction": "An entire hotel booked out for a weekend, with corridors that count as public, rooms that count as private and a printed schedule nobody follows exactly."
+    },
+    {
+      "id": "venue-type-07-country-estate-retreat",
+      "group": "Venue type",
+      "title": "Country Estate Retreat",
+      "direction": "A country estate rented for a long weekend, with grounds, outbuildings and a dining hall; the isolation is both the appeal and the risk."
+    },
+    {
+      "id": "venue-type-08-city-apartment-salon",
+      "group": "Venue type",
+      "title": "City Apartment Salon",
+      "direction": "A monthly salon in a large city flat: thirty people, one kitchen and a host who curates the guest list like a dinner party."
+    },
+    {
+      "id": "venue-type-09-womens-social-club",
+      "group": "Venue type",
+      "title": "Women's Social Club",
+      "direction": "A women-only social club with a bar, a dance floor and a back lounge, run as a community rather than a business."
+    },
+    {
+      "id": "venue-type-10-queer-bathhouse",
+      "group": "Venue type",
+      "title": "Queer Bathhouse",
+      "direction": "A queer bathhouse with a long history, a complicated reputation and a clientele that treats the building as a shared institution."
+    },
+    {
+      "id": "venue-type-11-fetish-ball",
+      "group": "Venue type",
+      "title": "Fetish Ball",
+      "direction": "A black-tie fetish ball in a rented ballroom, half performance and half social event, with photographers at the door and none inside."
+    },
+    {
+      "id": "venue-type-12-private-cinema-lounge",
+      "group": "Venue type",
+      "title": "Private Cinema Lounge",
+      "direction": "A private cinema lounge with reclining seats, a bar at the back and a membership that genuinely comes for the films as well."
+    },
+    {
+      "id": "venue-type-13-members-bar-with-back-rooms",
+      "group": "Venue type",
+      "title": "Members' Bar With Back Rooms",
+      "direction": "An ordinary-looking members' bar where the back rooms are understood rather than advertised and the front bar is honestly just a bar."
+    },
+    {
+      "id": "venue-type-14-rural-campground-gathering",
+      "group": "Venue type",
+      "title": "Rural Campground Gathering",
+      "direction": "A rural campground gathering with tents, a firepit and a generator, where privacy is a matter of distance and weather."
+    },
+    {
+      "id": "venue-type-15-chartered-boat-party",
+      "group": "Venue type",
+      "title": "Chartered Boat Party",
+      "direction": "A chartered boat with a bar below deck and a rail above it, where nobody can leave early and the harbour lights stay in view all night."
+    },
+    {
+      "id": "venue-type-16-one-night-pop-up",
+      "group": "Venue type",
+      "title": "One-Night Pop-Up",
+      "direction": "A single-night pop-up in a space that will be something else entirely by Monday, announced by message and finished by dawn."
+    },
+    {
+      "id": "character-role-01-first-timer",
+      "group": "Character role",
+      "title": "First-Timer",
+      "direction": "{{char}} is here for the first time, has read the rules twice and is still unsure what to do with her hands."
+    },
+    {
+      "id": "character-role-02-seasoned-regular",
+      "group": "Character role",
+      "title": "Seasoned Regular",
+      "direction": "{{char}} has been a member for years, knows the staff by name and treats the place as a second living room."
+    },
+    {
+      "id": "character-role-03-host-and-organiser",
+      "group": "Character role",
+      "title": "Host And Organiser",
+      "direction": "{{char}} runs the night: door list, schedule, problem-solving and the responsibility of making the room feel safe."
+    },
+    {
+      "id": "character-role-04-bartender-on-shift",
+      "group": "Character role",
+      "title": "Bartender On Shift",
+      "direction": "{{char}} is working the bar, which means she sees everything and is discreet about it as a condition of the job."
+    },
+    {
+      "id": "character-role-05-door-and-concierge",
+      "group": "Character role",
+      "title": "Door And Concierge",
+      "direction": "{{char}} works the door, checks names against the list and decides who gets an explanation and who gets a refusal."
+    },
+    {
+      "id": "character-role-06-consent-marshal",
+      "group": "Character role",
+      "title": "Consent Marshal",
+      "direction": "{{char}} is the designated consent marshal on duty, a role that makes her approachable and slightly apart from the party at once."
+    },
+    {
+      "id": "character-role-07-booked-performer",
+      "group": "Character role",
+      "title": "Booked Performer",
+      "direction": "{{char}} is paid to perform or work a room, and the boundary between her job and her evening is one she has to hold herself."
+    },
+    {
+      "id": "character-role-08-house-photographer",
+      "group": "Character role",
+      "title": "House Photographer",
+      "direction": "{{char}} shoots the event with written consent from every subject and treats the camera as a limit as much as a tool."
+    },
+    {
+      "id": "character-role-09-partner-of-a-member",
+      "group": "Character role",
+      "title": "Partner Of A Member",
+      "direction": "{{char}} is here as somebody's plus-one, with her own opinions about the arrangement and her own reasons for coming in."
+    },
+    {
+      "id": "character-role-10-invited-guest",
+      "group": "Character role",
+      "title": "Invited Guest",
+      "direction": "{{char}} was invited by a friend and is not a member, so every room feels like it comes with a temporary pass."
+    },
+    {
+      "id": "character-role-11-membership-interviewer",
+      "group": "Character role",
+      "title": "Membership Interviewer",
+      "direction": "{{char}} sits on the membership committee and is used to asking strangers careful questions about what they want."
+    },
+    {
+      "id": "character-role-12-kitchen-lead",
+      "group": "Character role",
+      "title": "Kitchen Lead",
+      "direction": "{{char}} runs the kitchen, feeds the party and has strong views about people who forget to eat."
+    },
+    {
+      "id": "character-role-13-security",
+      "group": "Character role",
+      "title": "Security",
+      "direction": "{{char}} works security, keeps the door calm and takes a professional interest in anyone whose behaviour is about to become a problem."
+    },
+    {
+      "id": "character-role-14-returning-after-absence",
+      "group": "Character role",
+      "title": "Returning After Absence",
+      "direction": "{{char}} used to be a fixture here, left for reasons she will discuss and has come back to a room that moved on without her."
+    },
+    {
+      "id": "character-role-15-burnt-out-veteran",
+      "group": "Character role",
+      "title": "Burnt-Out Veteran",
+      "direction": "{{char}} has been part of this community long enough to be tired of it and still turns up to keep it running."
+    },
+    {
+      "id": "character-role-16-quiet-observer",
+      "group": "Character role",
+      "title": "Quiet Observer",
+      "direction": "{{char}} is not on staff and not on stage; she has found the corner with the best view and intends to keep it."
+    },
+    {
+      "id": "membership-and-privacy-01-vouched-by-two-members",
+      "group": "Membership and privacy",
+      "title": "Vouched By Two Members",
+      "direction": "Membership needs two existing members to vouch, so every new face arrives pre-explained by somebody."
+    },
+    {
+      "id": "membership-and-privacy-02-invitation-only",
+      "group": "Membership and privacy",
+      "title": "Invitation Only",
+      "direction": "The club has no public address and no application form; you are invited or you are not."
+    },
+    {
+      "id": "membership-and-privacy-03-day-passes",
+      "group": "Membership and privacy",
+      "title": "Day Passes",
+      "direction": "Guests can buy a day pass, so the room holds regulars and strangers in equal measure."
+    },
+    {
+      "id": "membership-and-privacy-04-couples-only",
+      "group": "Membership and privacy",
+      "title": "Couples Only",
+      "direction": "The house rule is couples only, which turns every single guest into a negotiation before they are a person."
+    },
+    {
+      "id": "membership-and-privacy-05-singles-quota",
+      "group": "Membership and privacy",
+      "title": "Singles Quota",
+      "direction": "A quota keeps the numbers even and puts a queue at the door on the wrong nights."
+    },
+    {
+      "id": "membership-and-privacy-06-house-pseudonyms",
+      "group": "Membership and privacy",
+      "title": "House Pseudonyms",
+      "direction": "Members use house names, and the etiquette of never asking for a real one is absolute."
+    },
+    {
+      "id": "membership-and-privacy-07-no-phones-at-all",
+      "group": "Membership and privacy",
+      "title": "No Phones At All",
+      "direction": "Phones are bagged at the door by staff, and everyone who wants to come back understands why."
+    },
+    {
+      "id": "membership-and-privacy-08-consent-photography",
+      "group": "Membership and privacy",
+      "title": "Consent Photography",
+      "direction": "Photographs are allowed only with written consent and a visible marker, and the marker is honoured without argument."
+    },
+    {
+      "id": "membership-and-privacy-09-discretion-agreement",
+      "group": "Membership and privacy",
+      "title": "Discretion Agreement",
+      "direction": "Every member signs a discretion agreement that is legally thin and socially absolute."
+    },
+    {
+      "id": "membership-and-privacy-10-closed-circle",
+      "group": "Membership and privacy",
+      "title": "Closed Circle",
+      "direction": "Everyone knows everyone, which makes for warmth, gossip and almost no anonymity."
+    },
+    {
+      "id": "membership-and-privacy-11-newcomer-orientation",
+      "group": "Membership and privacy",
+      "title": "Newcomer Orientation",
+      "direction": "First-timers get a short orientation and a named contact, and the quality of that welcome shapes their whole night."
+    },
+    {
+      "id": "membership-and-privacy-12-tiered-membership",
+      "group": "Membership and privacy",
+      "title": "Tiered Membership",
+      "direction": "Different tiers buy different access, and the stair between them is a permanent small resentment."
+    },
+    {
+      "id": "membership-and-privacy-13-waiting-list",
+      "group": "Membership and privacy",
+      "title": "Waiting List",
+      "direction": "There is a waiting list measured in months, and the people on it know exactly who is ahead of them."
+    },
+    {
+      "id": "membership-and-privacy-14-guest-sign-in",
+      "group": "Membership and privacy",
+      "title": "Guest Sign-In",
+      "direction": "Members bring guests who sign in, which makes each member quietly responsible for somebody else's behaviour."
+    },
+    {
+      "id": "membership-and-privacy-15-location-check-ins",
+      "group": "Membership and privacy",
+      "title": "Location Check-Ins",
+      "direction": "Partners can see where each other are in the building, on the understanding that seeing is not supervising."
+    },
+    {
+      "id": "membership-and-privacy-16-open-door-policy",
+      "group": "Membership and privacy",
+      "title": "Open Door Policy",
+      "direction": "The venue is open enough that anyone could walk in, which puts the burden of safety on culture rather than a lock."
+    },
+    {
+      "id": "consent-culture-01-verbal-check-ins",
+      "group": "Consent culture",
+      "title": "Verbal Check-Ins",
+      "direction": "The house norm is a spoken question before anything, in a room small enough that everyone hears the answer."
+    },
+    {
+      "id": "consent-culture-02-wristband-codes",
+      "group": "Consent culture",
+      "title": "Wristband Codes",
+      "direction": "Coloured wristbands signal what a person is open to discussing, and misreading one is a serious social error."
+    },
+    {
+      "id": "consent-culture-03-ask-first-always",
+      "group": "Consent culture",
+      "title": "Ask First, Always",
+      "direction": "Nothing is assumed here: not a conversation, not a drink, not a dance, not a touch."
+    },
+    {
+      "id": "consent-culture-04-floor-marshals",
+      "group": "Consent culture",
+      "title": "Floor Marshals",
+      "direction": "Marshals circulate in plain clothes, easy to find and hard to ignore."
+    },
+    {
+      "id": "consent-culture-05-house-safe-word",
+      "group": "Consent culture",
+      "title": "House Safe-Word",
+      "direction": "A house safe-word stops any scene and clears a room without argument or explanation."
+    },
+    {
+      "id": "consent-culture-06-invitation-only-touch",
+      "group": "Consent culture",
+      "title": "Invitation Only Touch",
+      "direction": "Touching requires an explicit invitation, and an invitation given once is not an invitation given tonight."
+    },
+    {
+      "id": "consent-culture-07-chaperoned-first-visit",
+      "group": "Consent culture",
+      "title": "Chaperoned First Visit",
+      "direction": "A first visit comes with a host who stays close, explains the room and shows the newcomer the exit."
+    },
+    {
+      "id": "consent-culture-08-mandatory-induction-talk",
+      "group": "Consent culture",
+      "title": "Mandatory Induction Talk",
+      "direction": "Nobody gets past the bar without a short talk about rules, refusals and who to tell if something goes wrong."
+    },
+    {
+      "id": "consent-culture-09-negotiation-cards",
+      "group": "Consent culture",
+      "title": "Negotiation Cards",
+      "direction": "Members write limits and interests on small cards, and the cards are treated as binding rather than flirtatious."
+    },
+    {
+      "id": "consent-culture-10-aftercare-lounge",
+      "group": "Consent culture",
+      "title": "Aftercare Lounge",
+      "direction": "A quiet room with blankets, water and no expectations says more about the club than the dance floor does."
+    },
+    {
+      "id": "consent-culture-11-no-reason-required",
+      "group": "Consent culture",
+      "title": "No Reason Required",
+      "direction": "Anyone can decline anything without giving a reason, and pressing for one is itself a violation."
+    },
+    {
+      "id": "consent-culture-12-rules-at-the-bar",
+      "group": "Consent culture",
+      "title": "Rules At The Bar",
+      "direction": "The house rules are printed, framed and unglamorous, and staff will point at them mid-argument."
+    },
+    {
+      "id": "consent-culture-13-staff-model-it",
+      "group": "Consent culture",
+      "title": "Staff Model It",
+      "direction": "Staff ask, decline and accept refusals in public, which teaches the room faster than any sign."
+    },
+    {
+      "id": "consent-culture-14-community-accountability",
+      "group": "Consent culture",
+      "title": "Community Accountability",
+      "direction": "Violations are handled by people who know each other, with all the awkwardness that implies."
+    },
+    {
+      "id": "consent-culture-15-sober-enough-standard",
+      "group": "Consent culture",
+      "title": "Sober Enough Standard",
+      "direction": "The bar serves properly, water is everywhere, and being too drunk to consent is treated as a boundary rather than a mood."
+    },
+    {
+      "id": "consent-culture-16-frictionless-exit",
+      "group": "Consent culture",
+      "title": "Frictionless Exit",
+      "direction": "Leaving early, alone or without explanation is made easy on purpose, and nobody is followed to the door."
+    },
+    {
+      "id": "reason-for-attending-01-conversation-and-company",
+      "group": "Reason for attending",
+      "title": "Conversation And Company",
+      "direction": "{{char}} came for the conversation, which in this room is unusually direct and unusually kind."
+    },
+    {
+      "id": "reason-for-attending-02-here-to-watch",
+      "group": "Reason for attending",
+      "title": "Here To Watch",
+      "direction": "{{char}}'s interest is watching, stated plainly and without turning anybody into an exhibit."
+    },
+    {
+      "id": "reason-for-attending-03-here-to-be-watched",
+      "group": "Reason for attending",
+      "title": "Here To Be Watched",
+      "direction": "{{char}} enjoys being seen and has negotiated exactly how much, with whom and for how long."
+    },
+    {
+      "id": "reason-for-attending-04-here-to-perform",
+      "group": "Reason for attending",
+      "title": "Here To Perform",
+      "direction": "{{char}} came to perform, and the stage gives her an appetite the rest of the week does not."
+    },
+    {
+      "id": "reason-for-attending-05-learning-the-craft",
+      "group": "Reason for attending",
+      "title": "Learning The Craft",
+      "direction": "{{char}} is here for a workshop on negotiation, rope or touch, and she takes notes."
+    },
+    {
+      "id": "reason-for-attending-06-accompanying-a-partner",
+      "group": "Reason for attending",
+      "title": "Accompanying A Partner",
+      "direction": "{{char}} came because her partner wanted to, and her own enthusiasm is a separate question."
+    },
+    {
+      "id": "reason-for-attending-07-on-shift",
+      "group": "Reason for attending",
+      "title": "On Shift",
+      "direction": "{{char}} is working, and the professional frame is what lets her enjoy the room without joining it."
+    },
+    {
+      "id": "reason-for-attending-08-first-night-curiosity",
+      "group": "Reason for attending",
+      "title": "First-Night Curiosity",
+      "direction": "{{char}} wants to know what the fuss is about and has given herself one night to find out."
+    },
+    {
+      "id": "reason-for-attending-09-reconnecting-with-someone",
+      "group": "Reason for attending",
+      "title": "Reconnecting With Someone",
+      "direction": "{{char}} came because a particular person would be here, and the rest of the room is scenery."
+    },
+    {
+      "id": "reason-for-attending-10-marking-an-occasion",
+      "group": "Reason for attending",
+      "title": "Marking An Occasion",
+      "direction": "{{char}} is marking a birthday, a divorce, a promotion or a dare, and the occasion is doing the talking."
+    },
+    {
+      "id": "reason-for-attending-11-avoiding-someone",
+      "group": "Reason for attending",
+      "title": "Avoiding Someone",
+      "direction": "{{char}} is here partly because the person she is avoiding would never think to look for her here."
+    },
+    {
+      "id": "reason-for-attending-12-research-and-interviews",
+      "group": "Reason for attending",
+      "title": "Research And Interviews",
+      "direction": "{{char}} is writing or studying the community, with permission and a visible notebook."
+    },
+    {
+      "id": "reason-for-attending-13-community-organising",
+      "group": "Reason for attending",
+      "title": "Community Organising",
+      "direction": "{{char}} is here to keep the place running: rotas, complaints, raffle tickets, the boiler."
+    },
+    {
+      "id": "reason-for-attending-14-here-to-dance",
+      "group": "Reason for attending",
+      "title": "Here To Dance",
+      "direction": "{{char}} came to dance badly and stay late, and the rest of the venue is a bonus."
+    },
+    {
+      "id": "reason-for-attending-15-quiet-decompression",
+      "group": "Reason for attending",
+      "title": "Quiet Decompression",
+      "direction": "{{char}} came to sit somewhere nobody expects anything of her, and this is the least demanding room she knows."
+    },
+    {
+      "id": "reason-for-attending-16-professional-networking",
+      "group": "Reason for attending",
+      "title": "Professional Networking",
+      "direction": "{{char}} is here because the room contains people she would never otherwise meet in her working life."
+    },
+    {
+      "id": "relationship-situation-01-single-and-solo",
+      "group": "Relationship situation",
+      "title": "Single And Solo",
+      "direction": "{{char}} arrives alone and unattached, entirely responsible for her own evening."
+    },
+    {
+      "id": "relationship-situation-02-partnered-attending-together",
+      "group": "Relationship situation",
+      "title": "Partnered, Attending Together",
+      "direction": "{{char}} and her partner are both here, and their boundaries are theirs to state rather than the club's to assume."
+    },
+    {
+      "id": "relationship-situation-03-partnered-attending-alone",
+      "group": "Relationship situation",
+      "title": "Partnered, Attending Alone",
+      "direction": "{{char}}'s partner knows exactly where she is and chose not to come, which makes the evening a negotiated freedom rather than a secret."
+    },
+    {
+      "id": "relationship-situation-04-open-marriage",
+      "group": "Relationship situation",
+      "title": "Open Marriage",
+      "direction": "{{char}} is married inside an arrangement with rules, check-ins and a history of renegotiation."
+    },
+    {
+      "id": "relationship-situation-05-newly-divorced",
+      "group": "Relationship situation",
+      "title": "Newly Divorced",
+      "direction": "{{char}} is recently out of a long marriage and testing what she actually wants now that the question belongs to her."
+    },
+    {
+      "id": "relationship-situation-06-polycule-member",
+      "group": "Relationship situation",
+      "title": "Polycule Member",
+      "direction": "{{char}} is one node of a polycule with its own calendar, etiquette and small politics."
+    },
+    {
+      "id": "relationship-situation-07-dating-a-member",
+      "group": "Relationship situation",
+      "title": "Dating A Member",
+      "direction": "{{char}} is seeing someone who is a member, and the venue is where the relationship keeps happening in public."
+    },
+    {
+      "id": "relationship-situation-08-ex-is-a-member",
+      "group": "Relationship situation",
+      "title": "Ex Is A Member",
+      "direction": "{{char}}'s ex is a member, and the club's discretion policy is the only thing keeping the evening civil."
+    },
+    {
+      "id": "relationship-situation-09-long-distance-partner",
+      "group": "Relationship situation",
+      "title": "Long-Distance Partner",
+      "direction": "{{char}}'s partner lives elsewhere, and the club is where she spends the nights that would otherwise be empty."
+    },
+    {
+      "id": "relationship-situation-10-private-arrangement",
+      "group": "Relationship situation",
+      "title": "Private Arrangement",
+      "direction": "{{char}} has an agreement with a partner who prefers not to know details, on the strict understanding that the agreement is real and current."
+    },
+    {
+      "id": "relationship-situation-11-widowed-and-returning",
+      "group": "Relationship situation",
+      "title": "Widowed And Returning",
+      "direction": "{{char}} is back after losing a partner, and the community remembers them both."
+    },
+    {
+      "id": "relationship-situation-12-in-a-triad",
+      "group": "Relationship situation",
+      "title": "In A Triad",
+      "direction": "{{char}} is part of a triad, and the club is one of the few rooms where the three of them are simply ordinary."
+    },
+    {
+      "id": "relationship-situation-13-first-solo-night-under-rules",
+      "group": "Relationship situation",
+      "title": "First Solo Night Under Rules",
+      "direction": "{{char}} is here alone for the first time under rules agreed at home and written down."
+    },
+    {
+      "id": "relationship-situation-14-casual-plus-one",
+      "group": "Relationship situation",
+      "title": "Casual Plus-One",
+      "direction": "{{char}} is somebody's guest for the night, with no claims beyond the evening and no expectation of more."
+    },
+    {
+      "id": "relationship-situation-15-separated-not-divorced",
+      "group": "Relationship situation",
+      "title": "Separated, Not Divorced",
+      "direction": "{{char}} is in the long limbo of a separation where the paperwork lags years behind the decision."
+    },
+    {
+      "id": "relationship-situation-16-ambiguously-attached",
+      "group": "Relationship situation",
+      "title": "Ambiguously Attached",
+      "direction": "{{char}} is in a relationship that has never been defined, which makes the club's habit of saying things out loud quietly unbearable."
+    },
+    {
+      "id": "space-and-setting-01-main-bar-lounge",
+      "group": "Space and setting",
+      "title": "Main Bar Lounge",
+      "direction": "The bar is where everything begins: loud enough to flirt in, quiet enough to refuse in."
+    },
+    {
+      "id": "space-and-setting-02-dance-floor",
+      "group": "Space and setting",
+      "title": "Dance Floor",
+      "direction": "The floor is dark, hot and public, and dancing is not a promise of anything."
+    },
+    {
+      "id": "space-and-setting-03-curtained-alcoves",
+      "group": "Space and setting",
+      "title": "Curtained Alcoves",
+      "direction": "Heavy curtains line one wall, and a closed curtain is a complete sentence."
+    },
+    {
+      "id": "space-and-setting-04-glass-viewing-room",
+      "group": "Space and setting",
+      "title": "Glass Viewing Room",
+      "direction": "One room is glass on a single side, for people who like the arrangement and for people who want to be certain they are only watching."
+    },
+    {
+      "id": "space-and-setting-05-pool-and-spa",
+      "group": "Space and setting",
+      "title": "Pool And Spa",
+      "direction": "Water, steam and tile make the pool area echo, and sound carries further than anyone intends."
+    },
+    {
+      "id": "space-and-setting-06-the-darkroom",
+      "group": "Space and setting",
+      "title": "The Darkroom",
+      "direction": "The darkroom is genuinely dark, which puts the entire burden of consent onto voices and words."
+    },
+    {
+      "id": "space-and-setting-07-private-suites-upstairs",
+      "group": "Space and setting",
+      "title": "Private Suites Upstairs",
+      "direction": "Stairs lead to rented suites, and the top step is where the club's rules end and a private door begins."
+    },
+    {
+      "id": "space-and-setting-08-walled-terrace",
+      "group": "Space and setting",
+      "title": "Walled Terrace",
+      "direction": "A walled terrace with heaters and a smoking corner, where the most honest conversations of the night happen."
+    },
+    {
+      "id": "space-and-setting-09-courtyard",
+      "group": "Space and setting",
+      "title": "Courtyard",
+      "direction": "The courtyard is cold, quiet and the only place to have an argument without an audience."
+    },
+    {
+      "id": "space-and-setting-10-cloakroom",
+      "group": "Space and setting",
+      "title": "Cloakroom",
+      "direction": "The cloakroom is where people arrive nervous and leave honest, and the attendant hears all of it."
+    },
+    {
+      "id": "space-and-setting-11-kitchen",
+      "group": "Space and setting",
+      "title": "Kitchen",
+      "direction": "The kitchen is staff territory: warm, bright and the one room where the club feels like a workplace."
+    },
+    {
+      "id": "space-and-setting-12-equipment-room",
+      "group": "Space and setting",
+      "title": "Equipment Room",
+      "direction": "A dedicated equipment room with mats, rails and a rota, run with more paperwork than the bar."
+    },
+    {
+      "id": "space-and-setting-13-cinema-room",
+      "group": "Space and setting",
+      "title": "Cinema Room",
+      "direction": "A small cinema with reclining seats, where watching a film and watching each other are separable activities."
+    },
+    {
+      "id": "space-and-setting-14-sauna",
+      "group": "Space and setting",
+      "title": "Sauna",
+      "direction": "Heat, wood and silence, with a towel rule everybody claims to know and nobody can quite recite."
+    },
+    {
+      "id": "space-and-setting-15-dressing-room",
+      "group": "Space and setting",
+      "title": "Dressing Room",
+      "direction": "The dressing room is where performers become performers and where a host can finally sit down."
+    },
+    {
+      "id": "space-and-setting-16-rooftop",
+      "group": "Space and setting",
+      "title": "Rooftop",
+      "direction": "The roof is unofficial, unlocked and where regulars go when they want to talk about the club instead of being in it."
+    },
+    {
+      "id": "tone-and-register-01-warm-and-domestic",
+      "group": "Tone and register",
+      "title": "Warm And Domestic",
+      "direction": "Play it as a community that happens to be sexual: warm, slightly shabby, and capable of bringing a casserole to the AGM."
+    },
+    {
+      "id": "tone-and-register-02-deadpan-comedy",
+      "group": "Tone and register",
+      "title": "Deadpan Comedy",
+      "direction": "The comedy comes from treating a highly charged venue as an admin problem with excellent catering."
+    },
+    {
+      "id": "tone-and-register-03-nervous-first-night",
+      "group": "Tone and register",
+      "title": "Nervous First Night",
+      "direction": "Everything is slightly too loud and slightly too fast, and the humour is the humour of being out of your depth."
+    },
+    {
+      "id": "tone-and-register-04-cool-professionalism",
+      "group": "Tone and register",
+      "title": "Cool Professionalism",
+      "direction": "Staff competence is the mood: clipboards, clear instructions, no drama, warmth issued in small doses."
+    },
+    {
+      "id": "tone-and-register-05-melancholy",
+      "group": "Tone and register",
+      "title": "Melancholy",
+      "direction": "The room is full and the feeling is lonely, and the story is about what people come here to avoid."
+    },
+    {
+      "id": "tone-and-register-06-quietly-tense",
+      "group": "Tone and register",
+      "title": "Quietly Tense",
+      "direction": "Something is being managed under the surface, and every pleasant conversation has a second purpose."
+    },
+    {
+      "id": "tone-and-register-07-playful-rivalry",
+      "group": "Tone and register",
+      "title": "Playful Rivalry",
+      "direction": "Two regulars have been needling each other for years, and the whole club has opinions about it."
+    },
+    {
+      "id": "tone-and-register-08-earnest-sincerity",
+      "group": "Tone and register",
+      "title": "Earnest Sincerity",
+      "direction": "No irony: the community matters, the rules matter and the characters mean what they say."
+    },
+    {
+      "id": "tone-and-register-09-documentary-realism",
+      "group": "Tone and register",
+      "title": "Documentary Realism",
+      "direction": "Observational, procedural, unhurried and genuinely interested in how the place works."
+    },
+    {
+      "id": "tone-and-register-10-glamour",
+      "group": "Tone and register",
+      "title": "Glamour",
+      "direction": "Dress codes, lighting and money, with the sense that the surface is the point and the point is expensive."
+    },
+    {
+      "id": "tone-and-register-11-scruffy-and-ordinary",
+      "group": "Tone and register",
+      "title": "Scruffy And Ordinary",
+      "direction": "Chipped paint, mismatched chairs, a kettle, and a room that is sexy despite itself."
+    },
+    {
+      "id": "tone-and-register-12-etiquette-manual",
+      "group": "Tone and register",
+      "title": "Etiquette Manual",
+      "direction": "Dry and instructional in voice, with tension coming from everything the rules cannot cover."
+    },
+    {
+      "id": "tone-and-register-13-seductive-slow-burn",
+      "group": "Tone and register",
+      "title": "Seductive Slow Burn",
+      "direction": "Long looks, low lighting, patient conversation and nothing moving faster than either person wants."
+    },
+    {
+      "id": "tone-and-register-14-communal-warmth",
+      "group": "Tone and register",
+      "title": "Communal Warmth",
+      "direction": "The club as extended family, with the bickering and the loyalty that implies."
+    },
+    {
+      "id": "tone-and-register-15-wry-self-awareness",
+      "group": "Tone and register",
+      "title": "Wry Self-Awareness",
+      "direction": "Everybody knows what this place looks like from outside and nobody is defensive about it."
+    },
+    {
+      "id": "tone-and-register-16-noir-secrecy",
+      "group": "Tone and register",
+      "title": "Noir Secrecy",
+      "direction": "Discretion shading into secrecy, with a membership that protects its own and remembers who did not."
+    },
+    {
+      "id": "pressure-and-escalation-01-a-rule-gets-broken",
+      "group": "Pressure and escalation",
+      "title": "A Rule Gets Broken",
+      "direction": "Somebody breaks a house rule in a way that cannot be quietly ignored, and the room waits to see who handles it."
+    },
+    {
+      "id": "pressure-and-escalation-02-a-boundary-shifts",
+      "group": "Pressure and escalation",
+      "title": "A Boundary Shifts",
+      "direction": "A partner revisits a limit mid-evening, and the change has to be respected without anyone losing face."
+    },
+    {
+      "id": "pressure-and-escalation-03-membership-review",
+      "group": "Pressure and escalation",
+      "title": "Membership Review",
+      "direction": "A membership is under review and the committee's questions are being asked in a corridor."
+    },
+    {
+      "id": "pressure-and-escalation-04-an-ex-walks-in",
+      "group": "Pressure and escalation",
+      "title": "An Ex Walks In",
+      "direction": "The door opens and somebody's history walks through it, into a room that prides itself on composure."
+    },
+    {
+      "id": "pressure-and-escalation-05-a-rumour-spreads",
+      "group": "Pressure and escalation",
+      "title": "A Rumour Spreads",
+      "direction": "A story moves through the club faster than the bar service, and its accuracy is beside the point."
+    },
+    {
+      "id": "pressure-and-escalation-06-a-phone-appears",
+      "group": "Pressure and escalation",
+      "title": "A Phone Appears",
+      "direction": "A phone is out where phones are banned, and the room's reaction tells you everything about the culture."
+    },
+    {
+      "id": "pressure-and-escalation-07-a-newcomer-is-pressured",
+      "group": "Pressure and escalation",
+      "title": "A Newcomer Is Pressured",
+      "direction": "Somebody is being worked on by people who mistake enthusiasm for consent, and intervention is not guaranteed."
+    },
+    {
+      "id": "pressure-and-escalation-08-the-host-intervenes",
+      "group": "Pressure and escalation",
+      "title": "The Host Intervenes",
+      "direction": "{{char}} has to step in as host rather than participant, and the cost is her own evening."
+    },
+    {
+      "id": "pressure-and-escalation-09-overbooked-night",
+      "group": "Pressure and escalation",
+      "title": "Overbooked Night",
+      "direction": "The list is too long and the bar is too small, and every small failure compounds into a bad night."
+    },
+    {
+      "id": "pressure-and-escalation-10-emergency-in-the-building",
+      "group": "Pressure and escalation",
+      "title": "Emergency In The Building",
+      "direction": "A fire alarm, a faint or a power cut turns a fantasy venue into a building with a legal duty of care."
+    },
+    {
+      "id": "pressure-and-escalation-11-public-complaint",
+      "group": "Pressure and escalation",
+      "title": "Public Complaint",
+      "direction": "A complaint arrives from outside the community, and the club has to decide how much it cares."
+    },
+    {
+      "id": "pressure-and-escalation-12-photograph-without-consent",
+      "group": "Pressure and escalation",
+      "title": "Photograph Without Consent",
+      "direction": "A photograph is taken where consent was not given, and the response defines the venue's reputation for years."
+    },
+    {
+      "id": "pressure-and-escalation-13-journalist-at-the-door",
+      "group": "Pressure and escalation",
+      "title": "Journalist At The Door",
+      "direction": "Someone is here under false pretences, and the ethics of exposure belong to the characters rather than the narrator."
+    },
+    {
+      "id": "pressure-and-escalation-14-first-timer-freezes",
+      "group": "Pressure and escalation",
+      "title": "First-Timer Freezes",
+      "direction": "A newcomer panics in a public room, and the nearest person has to decide how much to help."
+    },
+    {
+      "id": "pressure-and-escalation-15-the-club-might-close",
+      "group": "Pressure and escalation",
+      "title": "The Club Might Close",
+      "direction": "Rent, licensing or a sale means the community may end, and everyone suddenly becomes honest about what it is worth."
+    },
+    {
+      "id": "pressure-and-escalation-16-a-favour-is-asked",
+      "group": "Pressure and escalation",
+      "title": "A Favour Is Asked",
+      "direction": "{{char}} is asked to bend a rule for somebody she likes, and the rule exists for a reason she knows."
+    },
+    {
+      "id": "secrecy-and-outside-life-01-total-discretion",
+      "group": "Secrecy and outside life",
+      "title": "Total Discretion",
+      "direction": "Nothing leaves the building, and the discipline of that is part of the appeal."
+    },
+    {
+      "id": "secrecy-and-outside-life-02-workplace-risk",
+      "group": "Secrecy and outside life",
+      "title": "Workplace Risk",
+      "direction": "{{char}}'s job would not survive this being known, and the calculation is constant."
+    },
+    {
+      "id": "secrecy-and-outside-life-03-family-might-find-out",
+      "group": "Secrecy and outside life",
+      "title": "Family Might Find Out",
+      "direction": "A sibling, a parent or a cousin lives close enough to matter, and the city is smaller than it looks."
+    },
+    {
+      "id": "secrecy-and-outside-life-04-public-facing-job",
+      "group": "Secrecy and outside life",
+      "title": "Public-Facing Job",
+      "direction": "{{char}} is recognisable in ordinary life, and the club is the only room where she is not."
+    },
+    {
+      "id": "secrecy-and-outside-life-05-small-town",
+      "group": "Secrecy and outside life",
+      "title": "Small Town",
+      "direction": "Everyone in the club knows somebody from {{char}}'s ordinary Tuesday, and discretion is a group project."
+    },
+    {
+      "id": "secrecy-and-outside-life-06-community-overlap",
+      "group": "Secrecy and outside life",
+      "title": "Community Overlap",
+      "direction": "The queer or kink community overlaps with the rest of {{char}}'s life, so the club is both refuge and gossip network."
+    },
+    {
+      "id": "secrecy-and-outside-life-07-professional-reputation",
+      "group": "Secrecy and outside life",
+      "title": "Professional Reputation",
+      "direction": "{{char}} has a reputation to protect, and the culture of not asking helps without solving it."
+    },
+    {
+      "id": "secrecy-and-outside-life-08-one-friend-knows",
+      "group": "Secrecy and outside life",
+      "title": "One Friend Knows",
+      "direction": "Exactly one person outside knows, and that friendship carries the weight of being the only outlet."
+    },
+    {
+      "id": "secrecy-and-outside-life-09-an-ex-knows",
+      "group": "Secrecy and outside life",
+      "title": "An Ex Knows",
+      "direction": "An ex knows, and the knowledge sits there, unusable and unreturned."
+    },
+    {
+      "id": "secrecy-and-outside-life-10-a-client-is-a-member",
+      "group": "Secrecy and outside life",
+      "title": "A Client Is A Member",
+      "direction": "Somebody from {{char}}'s working life turns out to be a member, and neither wants to be the one who mentions it."
+    },
+    {
+      "id": "secrecy-and-outside-life-11-media-interest",
+      "group": "Secrecy and outside life",
+      "title": "Media Interest",
+      "direction": "A journalist or documentary crew has started asking questions, and the club is deciding what to say."
+    },
+    {
+      "id": "secrecy-and-outside-life-12-legal-scrutiny",
+      "group": "Secrecy and outside life",
+      "title": "Legal Scrutiny",
+      "direction": "Licensing, zoning or a police visit makes the private feel provisional."
+    },
+    {
+      "id": "secrecy-and-outside-life-13-religious-family",
+      "group": "Secrecy and outside life",
+      "title": "Religious Family",
+      "direction": "{{char}}'s family would read this as a moral catastrophe, and the weight of that is real without being endorsed."
+    },
+    {
+      "id": "secrecy-and-outside-life-14-health-privacy",
+      "group": "Secrecy and outside life",
+      "title": "Health Privacy",
+      "direction": "{{char}} has reason to be careful about who knows what, and the club's norms are either a help or a hazard."
+    },
+    {
+      "id": "secrecy-and-outside-life-15-shared-secret-with-user",
+      "group": "Secrecy and outside life",
+      "title": "Shared Secret With {{user}}",
+      "direction": "{{char}} and {{user}} know something about each other that neither has told the room."
+    },
+    {
+      "id": "secrecy-and-outside-life-16-no-secrecy-at-all",
+      "group": "Secrecy and outside life",
+      "title": "No Secrecy At All",
+      "direction": "{{char}} is entirely open about where she spends her evenings, and the friction is other people's discomfort."
+    },
+    {
+      "id": "combinations-001-private-members-club-first-timer",
+      "group": "Combinations",
+      "title": "Private Members' Club + First-Timer",
+      "direction": "A members-only club in a converted townhouse, with a bar downstairs and a members' floor above. Staff know faces rather than names, and the door policy is stricter than the drinks list. {{char}} is here for the first time, has read the rules twice and is still unsure what to do with her hands. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-002-private-members-club-door-and-concierge",
+      "group": "Combinations",
+      "title": "Private Members' Club + Door And Concierge",
+      "direction": "A members-only club in a converted townhouse, with a bar downstairs and a members' floor above. Staff know faces rather than names, and the door policy is stricter than the drinks list. {{char}} works the door, checks names against the list and decides who gets an explanation and who gets a refusal. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-003-private-members-club-partner-of-a-member",
+      "group": "Combinations",
+      "title": "Private Members' Club + Partner Of A Member",
+      "direction": "A members-only club in a converted townhouse, with a bar downstairs and a members' floor above. Staff know faces rather than names, and the door policy is stricter than the drinks list. {{char}} is here as somebody's plus-one, with her own opinions about the arrangement and her own reasons for coming in. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-004-private-members-club-security",
+      "group": "Combinations",
+      "title": "Private Members' Club + Security",
+      "direction": "A members-only club in a converted townhouse, with a bar downstairs and a members' floor above. Staff know faces rather than names, and the door policy is stricter than the drinks list. {{char}} works security, keeps the door calm and takes a professional interest in anyone whose behaviour is about to become a problem. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-005-suburban-house-party-net-seasoned-regular",
+      "group": "Combinations",
+      "title": "Suburban House-Party Network + Seasoned Regular",
+      "direction": "A rotating house-party network in ordinary suburban homes, where a living room becomes the venue for one night and the neighbours are a permanent consideration. {{char}} has been a member for years, knows the staff by name and treats the place as a second living room. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-006-suburban-house-party-net-consent-marshal",
+      "group": "Combinations",
+      "title": "Suburban House-Party Network + Consent Marshal",
+      "direction": "A rotating house-party network in ordinary suburban homes, where a living room becomes the venue for one night and the neighbours are a permanent consideration. {{char}} is the designated consent marshal on duty, a role that makes her approachable and slightly apart from the party at once. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-007-suburban-house-party-net-invited-guest",
+      "group": "Combinations",
+      "title": "Suburban House-Party Network + Invited Guest",
+      "direction": "A rotating house-party network in ordinary suburban homes, where a living room becomes the venue for one night and the neighbours are a permanent consideration. {{char}} was invited by a friend and is not a member, so every room feels like it comes with a temporary pass. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-008-suburban-house-party-net-returning-after-absence",
+      "group": "Combinations",
+      "title": "Suburban House-Party Network + Returning After Absence",
+      "direction": "A rotating house-party network in ordinary suburban homes, where a living room becomes the venue for one night and the neighbours are a permanent consideration. {{char}} used to be a fixture here, left for reasons she will discuss and has come back to a room that moved on without her. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-009-adults-only-resort-host-and-organiser",
+      "group": "Combinations",
+      "title": "Adults-Only Resort + Host And Organiser",
+      "direction": "A resort where clothing is optional at the pool and the guest list is adults only, so holiday rules temporarily replace ordinary social ones. {{char}} runs the night: door list, schedule, problem-solving and the responsibility of making the room feel safe. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-010-adults-only-resort-booked-performer",
+      "group": "Combinations",
+      "title": "Adults-Only Resort + Booked Performer",
+      "direction": "A resort where clothing is optional at the pool and the guest list is adults only, so holiday rules temporarily replace ordinary social ones. {{char}} is paid to perform or work a room, and the boundary between her job and her evening is one she has to hold herself. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-011-adults-only-resort-membership-interviewer",
+      "group": "Combinations",
+      "title": "Adults-Only Resort + Membership Interviewer",
+      "direction": "A resort where clothing is optional at the pool and the guest list is adults only, so holiday rules temporarily replace ordinary social ones. {{char}} sits on the membership committee and is used to asking strangers careful questions about what they want. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-012-adults-only-resort-burnt-out-veteran",
+      "group": "Combinations",
+      "title": "Adults-Only Resort + Burnt-Out Veteran",
+      "direction": "A resort where clothing is optional at the pool and the guest list is adults only, so holiday rules temporarily replace ordinary social ones. {{char}} has been part of this community long enough to be tired of it and still turns up to keep it running. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-013-warehouse-kink-night-bartender-on-shift",
+      "group": "Combinations",
+      "title": "Warehouse Kink Night + Bartender On Shift",
+      "direction": "A monthly warehouse night with equipment, a small stage and volunteer door staff who take the house rules more seriously than the music. {{char}} is working the bar, which means she sees everything and is discreet about it as a condition of the job. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-014-warehouse-kink-night-house-photographer",
+      "group": "Combinations",
+      "title": "Warehouse Kink Night + House Photographer",
+      "direction": "A monthly warehouse night with equipment, a small stage and volunteer door staff who take the house rules more seriously than the music. {{char}} shoots the event with written consent from every subject and treats the camera as a limit as much as a tool. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-015-warehouse-kink-night-kitchen-lead",
+      "group": "Combinations",
+      "title": "Warehouse Kink Night + Kitchen Lead",
+      "direction": "A monthly warehouse night with equipment, a small stage and volunteer door staff who take the house rules more seriously than the music. {{char}} runs the kitchen, feeds the party and has strong views about people who forget to eat. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-016-members-sauna-and-spa-first-timer",
+      "group": "Combinations",
+      "title": "Members' Sauna And Spa + First-Timer",
+      "direction": "A members' sauna and spa where heat, wood and silence make conversation slow, observation constant and the no-phones rule easy to enforce. {{char}} is here for the first time, has read the rules twice and is still unsure what to do with her hands. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-017-members-sauna-and-spa-door-and-concierge",
+      "group": "Combinations",
+      "title": "Members' Sauna And Spa + Door And Concierge",
+      "direction": "A members' sauna and spa where heat, wood and silence make conversation slow, observation constant and the no-phones rule easy to enforce. {{char}} works the door, checks names against the list and decides who gets an explanation and who gets a refusal. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-018-members-sauna-and-spa-partner-of-a-member",
+      "group": "Combinations",
+      "title": "Members' Sauna And Spa + Partner Of A Member",
+      "direction": "A members' sauna and spa where heat, wood and silence make conversation slow, observation constant and the no-phones rule easy to enforce. {{char}} is here as somebody's plus-one, with her own opinions about the arrangement and her own reasons for coming in. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-019-members-sauna-and-spa-security",
+      "group": "Combinations",
+      "title": "Members' Sauna And Spa + Security",
+      "direction": "A members' sauna and spa where heat, wood and silence make conversation slow, observation constant and the no-phones rule easy to enforce. {{char}} works security, keeps the door calm and takes a professional interest in anyone whose behaviour is about to become a problem. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-020-hotel-takeover-weekend-seasoned-regular",
+      "group": "Combinations",
+      "title": "Hotel Takeover Weekend + Seasoned Regular",
+      "direction": "An entire hotel booked out for a weekend, with corridors that count as public, rooms that count as private and a printed schedule nobody follows exactly. {{char}} has been a member for years, knows the staff by name and treats the place as a second living room. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-021-hotel-takeover-weekend-consent-marshal",
+      "group": "Combinations",
+      "title": "Hotel Takeover Weekend + Consent Marshal",
+      "direction": "An entire hotel booked out for a weekend, with corridors that count as public, rooms that count as private and a printed schedule nobody follows exactly. {{char}} is the designated consent marshal on duty, a role that makes her approachable and slightly apart from the party at once. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-022-hotel-takeover-weekend-invited-guest",
+      "group": "Combinations",
+      "title": "Hotel Takeover Weekend + Invited Guest",
+      "direction": "An entire hotel booked out for a weekend, with corridors that count as public, rooms that count as private and a printed schedule nobody follows exactly. {{char}} was invited by a friend and is not a member, so every room feels like it comes with a temporary pass. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-023-hotel-takeover-weekend-returning-after-absence",
+      "group": "Combinations",
+      "title": "Hotel Takeover Weekend + Returning After Absence",
+      "direction": "An entire hotel booked out for a weekend, with corridors that count as public, rooms that count as private and a printed schedule nobody follows exactly. {{char}} used to be a fixture here, left for reasons she will discuss and has come back to a room that moved on without her. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-024-country-estate-retreat-host-and-organiser",
+      "group": "Combinations",
+      "title": "Country Estate Retreat + Host And Organiser",
+      "direction": "A country estate rented for a long weekend, with grounds, outbuildings and a dining hall; the isolation is both the appeal and the risk. {{char}} runs the night: door list, schedule, problem-solving and the responsibility of making the room feel safe. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-025-country-estate-retreat-booked-performer",
+      "group": "Combinations",
+      "title": "Country Estate Retreat + Booked Performer",
+      "direction": "A country estate rented for a long weekend, with grounds, outbuildings and a dining hall; the isolation is both the appeal and the risk. {{char}} is paid to perform or work a room, and the boundary between her job and her evening is one she has to hold herself. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-026-country-estate-retreat-membership-interviewer",
+      "group": "Combinations",
+      "title": "Country Estate Retreat + Membership Interviewer",
+      "direction": "A country estate rented for a long weekend, with grounds, outbuildings and a dining hall; the isolation is both the appeal and the risk. {{char}} sits on the membership committee and is used to asking strangers careful questions about what they want. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-027-country-estate-retreat-burnt-out-veteran",
+      "group": "Combinations",
+      "title": "Country Estate Retreat + Burnt-Out Veteran",
+      "direction": "A country estate rented for a long weekend, with grounds, outbuildings and a dining hall; the isolation is both the appeal and the risk. {{char}} has been part of this community long enough to be tired of it and still turns up to keep it running. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-028-city-apartment-salon-bartender-on-shift",
+      "group": "Combinations",
+      "title": "City Apartment Salon + Bartender On Shift",
+      "direction": "A monthly salon in a large city flat: thirty people, one kitchen and a host who curates the guest list like a dinner party. {{char}} is working the bar, which means she sees everything and is discreet about it as a condition of the job. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-029-city-apartment-salon-house-photographer",
+      "group": "Combinations",
+      "title": "City Apartment Salon + House Photographer",
+      "direction": "A monthly salon in a large city flat: thirty people, one kitchen and a host who curates the guest list like a dinner party. {{char}} shoots the event with written consent from every subject and treats the camera as a limit as much as a tool. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-030-city-apartment-salon-kitchen-lead",
+      "group": "Combinations",
+      "title": "City Apartment Salon + Kitchen Lead",
+      "direction": "A monthly salon in a large city flat: thirty people, one kitchen and a host who curates the guest list like a dinner party. {{char}} runs the kitchen, feeds the party and has strong views about people who forget to eat. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-031-womens-social-club-first-timer",
+      "group": "Combinations",
+      "title": "Women's Social Club + First-Timer",
+      "direction": "A women-only social club with a bar, a dance floor and a back lounge, run as a community rather than a business. {{char}} is here for the first time, has read the rules twice and is still unsure what to do with her hands. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-032-womens-social-club-door-and-concierge",
+      "group": "Combinations",
+      "title": "Women's Social Club + Door And Concierge",
+      "direction": "A women-only social club with a bar, a dance floor and a back lounge, run as a community rather than a business. {{char}} works the door, checks names against the list and decides who gets an explanation and who gets a refusal. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-033-womens-social-club-partner-of-a-member",
+      "group": "Combinations",
+      "title": "Women's Social Club + Partner Of A Member",
+      "direction": "A women-only social club with a bar, a dance floor and a back lounge, run as a community rather than a business. {{char}} is here as somebody's plus-one, with her own opinions about the arrangement and her own reasons for coming in. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-034-womens-social-club-security",
+      "group": "Combinations",
+      "title": "Women's Social Club + Security",
+      "direction": "A women-only social club with a bar, a dance floor and a back lounge, run as a community rather than a business. {{char}} works security, keeps the door calm and takes a professional interest in anyone whose behaviour is about to become a problem. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-035-queer-bathhouse-seasoned-regular",
+      "group": "Combinations",
+      "title": "Queer Bathhouse + Seasoned Regular",
+      "direction": "A queer bathhouse with a long history, a complicated reputation and a clientele that treats the building as a shared institution. {{char}} has been a member for years, knows the staff by name and treats the place as a second living room. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-036-queer-bathhouse-consent-marshal",
+      "group": "Combinations",
+      "title": "Queer Bathhouse + Consent Marshal",
+      "direction": "A queer bathhouse with a long history, a complicated reputation and a clientele that treats the building as a shared institution. {{char}} is the designated consent marshal on duty, a role that makes her approachable and slightly apart from the party at once. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-037-queer-bathhouse-invited-guest",
+      "group": "Combinations",
+      "title": "Queer Bathhouse + Invited Guest",
+      "direction": "A queer bathhouse with a long history, a complicated reputation and a clientele that treats the building as a shared institution. {{char}} was invited by a friend and is not a member, so every room feels like it comes with a temporary pass. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-038-queer-bathhouse-returning-after-absence",
+      "group": "Combinations",
+      "title": "Queer Bathhouse + Returning After Absence",
+      "direction": "A queer bathhouse with a long history, a complicated reputation and a clientele that treats the building as a shared institution. {{char}} used to be a fixture here, left for reasons she will discuss and has come back to a room that moved on without her. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-039-fetish-ball-host-and-organiser",
+      "group": "Combinations",
+      "title": "Fetish Ball + Host And Organiser",
+      "direction": "A black-tie fetish ball in a rented ballroom, half performance and half social event, with photographers at the door and none inside. {{char}} runs the night: door list, schedule, problem-solving and the responsibility of making the room feel safe. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-040-fetish-ball-booked-performer",
+      "group": "Combinations",
+      "title": "Fetish Ball + Booked Performer",
+      "direction": "A black-tie fetish ball in a rented ballroom, half performance and half social event, with photographers at the door and none inside. {{char}} is paid to perform or work a room, and the boundary between her job and her evening is one she has to hold herself. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-041-fetish-ball-membership-interviewer",
+      "group": "Combinations",
+      "title": "Fetish Ball + Membership Interviewer",
+      "direction": "A black-tie fetish ball in a rented ballroom, half performance and half social event, with photographers at the door and none inside. {{char}} sits on the membership committee and is used to asking strangers careful questions about what they want. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-042-fetish-ball-burnt-out-veteran",
+      "group": "Combinations",
+      "title": "Fetish Ball + Burnt-Out Veteran",
+      "direction": "A black-tie fetish ball in a rented ballroom, half performance and half social event, with photographers at the door and none inside. {{char}} has been part of this community long enough to be tired of it and still turns up to keep it running. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-043-private-cinema-lounge-bartender-on-shift",
+      "group": "Combinations",
+      "title": "Private Cinema Lounge + Bartender On Shift",
+      "direction": "A private cinema lounge with reclining seats, a bar at the back and a membership that genuinely comes for the films as well. {{char}} is working the bar, which means she sees everything and is discreet about it as a condition of the job. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-044-private-cinema-lounge-house-photographer",
+      "group": "Combinations",
+      "title": "Private Cinema Lounge + House Photographer",
+      "direction": "A private cinema lounge with reclining seats, a bar at the back and a membership that genuinely comes for the films as well. {{char}} shoots the event with written consent from every subject and treats the camera as a limit as much as a tool. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-045-private-cinema-lounge-kitchen-lead",
+      "group": "Combinations",
+      "title": "Private Cinema Lounge + Kitchen Lead",
+      "direction": "A private cinema lounge with reclining seats, a bar at the back and a membership that genuinely comes for the films as well. {{char}} runs the kitchen, feeds the party and has strong views about people who forget to eat. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-046-members-bar-with-back-ro-first-timer",
+      "group": "Combinations",
+      "title": "Members' Bar With Back Rooms + First-Timer",
+      "direction": "An ordinary-looking members' bar where the back rooms are understood rather than advertised and the front bar is honestly just a bar. {{char}} is here for the first time, has read the rules twice and is still unsure what to do with her hands. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-047-members-bar-with-back-ro-door-and-concierge",
+      "group": "Combinations",
+      "title": "Members' Bar With Back Rooms + Door And Concierge",
+      "direction": "An ordinary-looking members' bar where the back rooms are understood rather than advertised and the front bar is honestly just a bar. {{char}} works the door, checks names against the list and decides who gets an explanation and who gets a refusal. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-048-members-bar-with-back-ro-partner-of-a-member",
+      "group": "Combinations",
+      "title": "Members' Bar With Back Rooms + Partner Of A Member",
+      "direction": "An ordinary-looking members' bar where the back rooms are understood rather than advertised and the front bar is honestly just a bar. {{char}} is here as somebody's plus-one, with her own opinions about the arrangement and her own reasons for coming in. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-049-members-bar-with-back-ro-security",
+      "group": "Combinations",
+      "title": "Members' Bar With Back Rooms + Security",
+      "direction": "An ordinary-looking members' bar where the back rooms are understood rather than advertised and the front bar is honestly just a bar. {{char}} works security, keeps the door calm and takes a professional interest in anyone whose behaviour is about to become a problem. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-050-rural-campground-gatheri-seasoned-regular",
+      "group": "Combinations",
+      "title": "Rural Campground Gathering + Seasoned Regular",
+      "direction": "A rural campground gathering with tents, a firepit and a generator, where privacy is a matter of distance and weather. {{char}} has been a member for years, knows the staff by name and treats the place as a second living room. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-051-rural-campground-gatheri-consent-marshal",
+      "group": "Combinations",
+      "title": "Rural Campground Gathering + Consent Marshal",
+      "direction": "A rural campground gathering with tents, a firepit and a generator, where privacy is a matter of distance and weather. {{char}} is the designated consent marshal on duty, a role that makes her approachable and slightly apart from the party at once. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-052-rural-campground-gatheri-invited-guest",
+      "group": "Combinations",
+      "title": "Rural Campground Gathering + Invited Guest",
+      "direction": "A rural campground gathering with tents, a firepit and a generator, where privacy is a matter of distance and weather. {{char}} was invited by a friend and is not a member, so every room feels like it comes with a temporary pass. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-053-rural-campground-gatheri-returning-after-absence",
+      "group": "Combinations",
+      "title": "Rural Campground Gathering + Returning After Absence",
+      "direction": "A rural campground gathering with tents, a firepit and a generator, where privacy is a matter of distance and weather. {{char}} used to be a fixture here, left for reasons she will discuss and has come back to a room that moved on without her. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-054-chartered-boat-party-host-and-organiser",
+      "group": "Combinations",
+      "title": "Chartered Boat Party + Host And Organiser",
+      "direction": "A chartered boat with a bar below deck and a rail above it, where nobody can leave early and the harbour lights stay in view all night. {{char}} runs the night: door list, schedule, problem-solving and the responsibility of making the room feel safe. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-055-chartered-boat-party-booked-performer",
+      "group": "Combinations",
+      "title": "Chartered Boat Party + Booked Performer",
+      "direction": "A chartered boat with a bar below deck and a rail above it, where nobody can leave early and the harbour lights stay in view all night. {{char}} is paid to perform or work a room, and the boundary between her job and her evening is one she has to hold herself. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-056-chartered-boat-party-membership-interviewer",
+      "group": "Combinations",
+      "title": "Chartered Boat Party + Membership Interviewer",
+      "direction": "A chartered boat with a bar below deck and a rail above it, where nobody can leave early and the harbour lights stay in view all night. {{char}} sits on the membership committee and is used to asking strangers careful questions about what they want. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-057-chartered-boat-party-burnt-out-veteran",
+      "group": "Combinations",
+      "title": "Chartered Boat Party + Burnt-Out Veteran",
+      "direction": "A chartered boat with a bar below deck and a rail above it, where nobody can leave early and the harbour lights stay in view all night. {{char}} has been part of this community long enough to be tired of it and still turns up to keep it running. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-058-one-night-pop-up-bartender-on-shift",
+      "group": "Combinations",
+      "title": "One-Night Pop-Up + Bartender On Shift",
+      "direction": "A single-night pop-up in a space that will be something else entirely by Monday, announced by message and finished by dawn. {{char}} is working the bar, which means she sees everything and is discreet about it as a condition of the job. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-059-one-night-pop-up-house-photographer",
+      "group": "Combinations",
+      "title": "One-Night Pop-Up + House Photographer",
+      "direction": "A single-night pop-up in a space that will be something else entirely by Monday, announced by message and finished by dawn. {{char}} shoots the event with written consent from every subject and treats the camera as a limit as much as a tool. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-060-one-night-pop-up-kitchen-lead",
+      "group": "Combinations",
+      "title": "One-Night Pop-Up + Kitchen Lead",
+      "direction": "A single-night pop-up in a space that will be something else entirely by Monday, announced by message and finished by dawn. {{char}} runs the kitchen, feeds the party and has strong views about people who forget to eat. The venue's rules and {{char}}'s position inside them should both shape the scene, and neither should dissolve the other."
+    },
+    {
+      "id": "combinations-061-verbal-check-ins-conversation-and-company",
+      "group": "Combinations",
+      "title": "Verbal Check-Ins + Conversation And Company",
+      "direction": "The house norm is a spoken question before anything, in a room small enough that everyone hears the answer. {{char}} came for the conversation, which in this room is unusually direct and unusually kind. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-062-verbal-check-ins-learning-the-craft",
+      "group": "Combinations",
+      "title": "Verbal Check-Ins + Learning The Craft",
+      "direction": "The house norm is a spoken question before anything, in a room small enough that everyone hears the answer. {{char}} is here for a workshop on negotiation, rope or touch, and she takes notes. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-063-verbal-check-ins-reconnecting-with-someon",
+      "group": "Combinations",
+      "title": "Verbal Check-Ins + Reconnecting With Someone",
+      "direction": "The house norm is a spoken question before anything, in a room small enough that everyone hears the answer. {{char}} came because a particular person would be here, and the rest of the room is scenery. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-064-verbal-check-ins-community-organising",
+      "group": "Combinations",
+      "title": "Verbal Check-Ins + Community Organising",
+      "direction": "The house norm is a spoken question before anything, in a room small enough that everyone hears the answer. {{char}} is here to keep the place running: rotas, complaints, raffle tickets, the boiler. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-065-wristband-codes-here-to-watch",
+      "group": "Combinations",
+      "title": "Wristband Codes + Here To Watch",
+      "direction": "Coloured wristbands signal what a person is open to discussing, and misreading one is a serious social error. {{char}}'s interest is watching, stated plainly and without turning anybody into an exhibit. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-066-wristband-codes-accompanying-a-partner",
+      "group": "Combinations",
+      "title": "Wristband Codes + Accompanying A Partner",
+      "direction": "Coloured wristbands signal what a person is open to discussing, and misreading one is a serious social error. {{char}} came because her partner wanted to, and her own enthusiasm is a separate question. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-067-wristband-codes-marking-an-occasion",
+      "group": "Combinations",
+      "title": "Wristband Codes + Marking An Occasion",
+      "direction": "Coloured wristbands signal what a person is open to discussing, and misreading one is a serious social error. {{char}} is marking a birthday, a divorce, a promotion or a dare, and the occasion is doing the talking. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-068-wristband-codes-here-to-dance",
+      "group": "Combinations",
+      "title": "Wristband Codes + Here To Dance",
+      "direction": "Coloured wristbands signal what a person is open to discussing, and misreading one is a serious social error. {{char}} came to dance badly and stay late, and the rest of the venue is a bonus. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-069-ask-first-always-here-to-be-watched",
+      "group": "Combinations",
+      "title": "Ask First, Always + Here To Be Watched",
+      "direction": "Nothing is assumed here: not a conversation, not a drink, not a dance, not a touch. {{char}} enjoys being seen and has negotiated exactly how much, with whom and for how long. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-070-ask-first-always-on-shift",
+      "group": "Combinations",
+      "title": "Ask First, Always + On Shift",
+      "direction": "Nothing is assumed here: not a conversation, not a drink, not a dance, not a touch. {{char}} is working, and the professional frame is what lets her enjoy the room without joining it. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-071-ask-first-always-avoiding-someone",
+      "group": "Combinations",
+      "title": "Ask First, Always + Avoiding Someone",
+      "direction": "Nothing is assumed here: not a conversation, not a drink, not a dance, not a touch. {{char}} is here partly because the person she is avoiding would never think to look for her here. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-072-ask-first-always-quiet-decompression",
+      "group": "Combinations",
+      "title": "Ask First, Always + Quiet Decompression",
+      "direction": "Nothing is assumed here: not a conversation, not a drink, not a dance, not a touch. {{char}} came to sit somewhere nobody expects anything of her, and this is the least demanding room she knows. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-073-floor-marshals-here-to-perform",
+      "group": "Combinations",
+      "title": "Floor Marshals + Here To Perform",
+      "direction": "Marshals circulate in plain clothes, easy to find and hard to ignore. {{char}} came to perform, and the stage gives her an appetite the rest of the week does not. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-074-floor-marshals-first-night-curiosity",
+      "group": "Combinations",
+      "title": "Floor Marshals + First-Night Curiosity",
+      "direction": "Marshals circulate in plain clothes, easy to find and hard to ignore. {{char}} wants to know what the fuss is about and has given herself one night to find out. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-075-floor-marshals-research-and-interviews",
+      "group": "Combinations",
+      "title": "Floor Marshals + Research And Interviews",
+      "direction": "Marshals circulate in plain clothes, easy to find and hard to ignore. {{char}} is writing or studying the community, with permission and a visible notebook. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-076-house-safe-word-conversation-and-company",
+      "group": "Combinations",
+      "title": "House Safe-Word + Conversation And Company",
+      "direction": "A house safe-word stops any scene and clears a room without argument or explanation. {{char}} came for the conversation, which in this room is unusually direct and unusually kind. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-077-house-safe-word-learning-the-craft",
+      "group": "Combinations",
+      "title": "House Safe-Word + Learning The Craft",
+      "direction": "A house safe-word stops any scene and clears a room without argument or explanation. {{char}} is here for a workshop on negotiation, rope or touch, and she takes notes. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-078-house-safe-word-reconnecting-with-someon",
+      "group": "Combinations",
+      "title": "House Safe-Word + Reconnecting With Someone",
+      "direction": "A house safe-word stops any scene and clears a room without argument or explanation. {{char}} came because a particular person would be here, and the rest of the room is scenery. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-079-house-safe-word-community-organising",
+      "group": "Combinations",
+      "title": "House Safe-Word + Community Organising",
+      "direction": "A house safe-word stops any scene and clears a room without argument or explanation. {{char}} is here to keep the place running: rotas, complaints, raffle tickets, the boiler. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-080-invitation-only-touch-here-to-watch",
+      "group": "Combinations",
+      "title": "Invitation Only Touch + Here To Watch",
+      "direction": "Touching requires an explicit invitation, and an invitation given once is not an invitation given tonight. {{char}}'s interest is watching, stated plainly and without turning anybody into an exhibit. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-081-invitation-only-touch-accompanying-a-partner",
+      "group": "Combinations",
+      "title": "Invitation Only Touch + Accompanying A Partner",
+      "direction": "Touching requires an explicit invitation, and an invitation given once is not an invitation given tonight. {{char}} came because her partner wanted to, and her own enthusiasm is a separate question. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-082-invitation-only-touch-marking-an-occasion",
+      "group": "Combinations",
+      "title": "Invitation Only Touch + Marking An Occasion",
+      "direction": "Touching requires an explicit invitation, and an invitation given once is not an invitation given tonight. {{char}} is marking a birthday, a divorce, a promotion or a dare, and the occasion is doing the talking. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-083-invitation-only-touch-here-to-dance",
+      "group": "Combinations",
+      "title": "Invitation Only Touch + Here To Dance",
+      "direction": "Touching requires an explicit invitation, and an invitation given once is not an invitation given tonight. {{char}} came to dance badly and stay late, and the rest of the venue is a bonus. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-084-chaperoned-first-visit-here-to-be-watched",
+      "group": "Combinations",
+      "title": "Chaperoned First Visit + Here To Be Watched",
+      "direction": "A first visit comes with a host who stays close, explains the room and shows the newcomer the exit. {{char}} enjoys being seen and has negotiated exactly how much, with whom and for how long. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-085-chaperoned-first-visit-on-shift",
+      "group": "Combinations",
+      "title": "Chaperoned First Visit + On Shift",
+      "direction": "A first visit comes with a host who stays close, explains the room and shows the newcomer the exit. {{char}} is working, and the professional frame is what lets her enjoy the room without joining it. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-086-chaperoned-first-visit-avoiding-someone",
+      "group": "Combinations",
+      "title": "Chaperoned First Visit + Avoiding Someone",
+      "direction": "A first visit comes with a host who stays close, explains the room and shows the newcomer the exit. {{char}} is here partly because the person she is avoiding would never think to look for her here. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-087-chaperoned-first-visit-quiet-decompression",
+      "group": "Combinations",
+      "title": "Chaperoned First Visit + Quiet Decompression",
+      "direction": "A first visit comes with a host who stays close, explains the room and shows the newcomer the exit. {{char}} came to sit somewhere nobody expects anything of her, and this is the least demanding room she knows. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-088-mandatory-induction-talk-here-to-perform",
+      "group": "Combinations",
+      "title": "Mandatory Induction Talk + Here To Perform",
+      "direction": "Nobody gets past the bar without a short talk about rules, refusals and who to tell if something goes wrong. {{char}} came to perform, and the stage gives her an appetite the rest of the week does not. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-089-mandatory-induction-talk-first-night-curiosity",
+      "group": "Combinations",
+      "title": "Mandatory Induction Talk + First-Night Curiosity",
+      "direction": "Nobody gets past the bar without a short talk about rules, refusals and who to tell if something goes wrong. {{char}} wants to know what the fuss is about and has given herself one night to find out. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-090-mandatory-induction-talk-research-and-interviews",
+      "group": "Combinations",
+      "title": "Mandatory Induction Talk + Research And Interviews",
+      "direction": "Nobody gets past the bar without a short talk about rules, refusals and who to tell if something goes wrong. {{char}} is writing or studying the community, with permission and a visible notebook. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-091-negotiation-cards-conversation-and-company",
+      "group": "Combinations",
+      "title": "Negotiation Cards + Conversation And Company",
+      "direction": "Members write limits and interests on small cards, and the cards are treated as binding rather than flirtatious. {{char}} came for the conversation, which in this room is unusually direct and unusually kind. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-092-negotiation-cards-learning-the-craft",
+      "group": "Combinations",
+      "title": "Negotiation Cards + Learning The Craft",
+      "direction": "Members write limits and interests on small cards, and the cards are treated as binding rather than flirtatious. {{char}} is here for a workshop on negotiation, rope or touch, and she takes notes. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-093-negotiation-cards-reconnecting-with-someon",
+      "group": "Combinations",
+      "title": "Negotiation Cards + Reconnecting With Someone",
+      "direction": "Members write limits and interests on small cards, and the cards are treated as binding rather than flirtatious. {{char}} came because a particular person would be here, and the rest of the room is scenery. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-094-negotiation-cards-community-organising",
+      "group": "Combinations",
+      "title": "Negotiation Cards + Community Organising",
+      "direction": "Members write limits and interests on small cards, and the cards are treated as binding rather than flirtatious. {{char}} is here to keep the place running: rotas, complaints, raffle tickets, the boiler. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-095-aftercare-lounge-here-to-watch",
+      "group": "Combinations",
+      "title": "Aftercare Lounge + Here To Watch",
+      "direction": "A quiet room with blankets, water and no expectations says more about the club than the dance floor does. {{char}}'s interest is watching, stated plainly and without turning anybody into an exhibit. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-096-aftercare-lounge-accompanying-a-partner",
+      "group": "Combinations",
+      "title": "Aftercare Lounge + Accompanying A Partner",
+      "direction": "A quiet room with blankets, water and no expectations says more about the club than the dance floor does. {{char}} came because her partner wanted to, and her own enthusiasm is a separate question. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-097-aftercare-lounge-marking-an-occasion",
+      "group": "Combinations",
+      "title": "Aftercare Lounge + Marking An Occasion",
+      "direction": "A quiet room with blankets, water and no expectations says more about the club than the dance floor does. {{char}} is marking a birthday, a divorce, a promotion or a dare, and the occasion is doing the talking. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-098-aftercare-lounge-here-to-dance",
+      "group": "Combinations",
+      "title": "Aftercare Lounge + Here To Dance",
+      "direction": "A quiet room with blankets, water and no expectations says more about the club than the dance floor does. {{char}} came to dance badly and stay late, and the rest of the venue is a bonus. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-099-no-reason-required-here-to-be-watched",
+      "group": "Combinations",
+      "title": "No Reason Required + Here To Be Watched",
+      "direction": "Anyone can decline anything without giving a reason, and pressing for one is itself a violation. {{char}} enjoys being seen and has negotiated exactly how much, with whom and for how long. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-100-no-reason-required-on-shift",
+      "group": "Combinations",
+      "title": "No Reason Required + On Shift",
+      "direction": "Anyone can decline anything without giving a reason, and pressing for one is itself a violation. {{char}} is working, and the professional frame is what lets her enjoy the room without joining it. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-101-no-reason-required-avoiding-someone",
+      "group": "Combinations",
+      "title": "No Reason Required + Avoiding Someone",
+      "direction": "Anyone can decline anything without giving a reason, and pressing for one is itself a violation. {{char}} is here partly because the person she is avoiding would never think to look for her here. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-102-no-reason-required-quiet-decompression",
+      "group": "Combinations",
+      "title": "No Reason Required + Quiet Decompression",
+      "direction": "Anyone can decline anything without giving a reason, and pressing for one is itself a violation. {{char}} came to sit somewhere nobody expects anything of her, and this is the least demanding room she knows. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-103-rules-at-the-bar-here-to-perform",
+      "group": "Combinations",
+      "title": "Rules At The Bar + Here To Perform",
+      "direction": "The house rules are printed, framed and unglamorous, and staff will point at them mid-argument. {{char}} came to perform, and the stage gives her an appetite the rest of the week does not. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-104-rules-at-the-bar-first-night-curiosity",
+      "group": "Combinations",
+      "title": "Rules At The Bar + First-Night Curiosity",
+      "direction": "The house rules are printed, framed and unglamorous, and staff will point at them mid-argument. {{char}} wants to know what the fuss is about and has given herself one night to find out. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-105-rules-at-the-bar-research-and-interviews",
+      "group": "Combinations",
+      "title": "Rules At The Bar + Research And Interviews",
+      "direction": "The house rules are printed, framed and unglamorous, and staff will point at them mid-argument. {{char}} is writing or studying the community, with permission and a visible notebook. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-106-staff-model-it-conversation-and-company",
+      "group": "Combinations",
+      "title": "Staff Model It + Conversation And Company",
+      "direction": "Staff ask, decline and accept refusals in public, which teaches the room faster than any sign. {{char}} came for the conversation, which in this room is unusually direct and unusually kind. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-107-staff-model-it-learning-the-craft",
+      "group": "Combinations",
+      "title": "Staff Model It + Learning The Craft",
+      "direction": "Staff ask, decline and accept refusals in public, which teaches the room faster than any sign. {{char}} is here for a workshop on negotiation, rope or touch, and she takes notes. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-108-staff-model-it-reconnecting-with-someon",
+      "group": "Combinations",
+      "title": "Staff Model It + Reconnecting With Someone",
+      "direction": "Staff ask, decline and accept refusals in public, which teaches the room faster than any sign. {{char}} came because a particular person would be here, and the rest of the room is scenery. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-109-staff-model-it-community-organising",
+      "group": "Combinations",
+      "title": "Staff Model It + Community Organising",
+      "direction": "Staff ask, decline and accept refusals in public, which teaches the room faster than any sign. {{char}} is here to keep the place running: rotas, complaints, raffle tickets, the boiler. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-110-community-accountability-here-to-watch",
+      "group": "Combinations",
+      "title": "Community Accountability + Here To Watch",
+      "direction": "Violations are handled by people who know each other, with all the awkwardness that implies. {{char}}'s interest is watching, stated plainly and without turning anybody into an exhibit. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-111-community-accountability-accompanying-a-partner",
+      "group": "Combinations",
+      "title": "Community Accountability + Accompanying A Partner",
+      "direction": "Violations are handled by people who know each other, with all the awkwardness that implies. {{char}} came because her partner wanted to, and her own enthusiasm is a separate question. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-112-community-accountability-marking-an-occasion",
+      "group": "Combinations",
+      "title": "Community Accountability + Marking An Occasion",
+      "direction": "Violations are handled by people who know each other, with all the awkwardness that implies. {{char}} is marking a birthday, a divorce, a promotion or a dare, and the occasion is doing the talking. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-113-community-accountability-here-to-dance",
+      "group": "Combinations",
+      "title": "Community Accountability + Here To Dance",
+      "direction": "Violations are handled by people who know each other, with all the awkwardness that implies. {{char}} came to dance badly and stay late, and the rest of the venue is a bonus. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-114-sober-enough-standard-here-to-be-watched",
+      "group": "Combinations",
+      "title": "Sober Enough Standard + Here To Be Watched",
+      "direction": "The bar serves properly, water is everywhere, and being too drunk to consent is treated as a boundary rather than a mood. {{char}} enjoys being seen and has negotiated exactly how much, with whom and for how long. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-115-sober-enough-standard-on-shift",
+      "group": "Combinations",
+      "title": "Sober Enough Standard + On Shift",
+      "direction": "The bar serves properly, water is everywhere, and being too drunk to consent is treated as a boundary rather than a mood. {{char}} is working, and the professional frame is what lets her enjoy the room without joining it. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-116-sober-enough-standard-avoiding-someone",
+      "group": "Combinations",
+      "title": "Sober Enough Standard + Avoiding Someone",
+      "direction": "The bar serves properly, water is everywhere, and being too drunk to consent is treated as a boundary rather than a mood. {{char}} is here partly because the person she is avoiding would never think to look for her here. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-117-sober-enough-standard-quiet-decompression",
+      "group": "Combinations",
+      "title": "Sober Enough Standard + Quiet Decompression",
+      "direction": "The bar serves properly, water is everywhere, and being too drunk to consent is treated as a boundary rather than a mood. {{char}} came to sit somewhere nobody expects anything of her, and this is the least demanding room she knows. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-118-frictionless-exit-here-to-perform",
+      "group": "Combinations",
+      "title": "Frictionless Exit + Here To Perform",
+      "direction": "Leaving early, alone or without explanation is made easy on purpose, and nobody is followed to the door. {{char}} came to perform, and the stage gives her an appetite the rest of the week does not. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-119-frictionless-exit-first-night-curiosity",
+      "group": "Combinations",
+      "title": "Frictionless Exit + First-Night Curiosity",
+      "direction": "Leaving early, alone or without explanation is made easy on purpose, and nobody is followed to the door. {{char}} wants to know what the fuss is about and has given herself one night to find out. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-120-frictionless-exit-research-and-interviews",
+      "group": "Combinations",
+      "title": "Frictionless Exit + Research And Interviews",
+      "direction": "Leaving early, alone or without explanation is made easy on purpose, and nobody is followed to the door. {{char}} is writing or studying the community, with permission and a visible notebook. Consent culture and personal motive are separate facts here: the etiquette is real and the reason is private."
+    },
+    {
+      "id": "combinations-121-single-and-solo-total-discretion",
+      "group": "Combinations",
+      "title": "Single And Solo + Total Discretion",
+      "direction": "{{char}} arrives alone and unattached, entirely responsible for her own evening. Nothing leaves the building, and the discipline of that is part of the appeal. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-122-single-and-solo-small-town",
+      "group": "Combinations",
+      "title": "Single And Solo + Small Town",
+      "direction": "{{char}} arrives alone and unattached, entirely responsible for her own evening. Everyone in the club knows somebody from {{char}}'s ordinary Tuesday, and discretion is a group project. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-123-single-and-solo-an-ex-knows",
+      "group": "Combinations",
+      "title": "Single And Solo + An Ex Knows",
+      "direction": "{{char}} arrives alone and unattached, entirely responsible for her own evening. An ex knows, and the knowledge sits there, unusable and unreturned. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-124-single-and-solo-religious-family",
+      "group": "Combinations",
+      "title": "Single And Solo + Religious Family",
+      "direction": "{{char}} arrives alone and unattached, entirely responsible for her own evening. {{char}}'s family would read this as a moral catastrophe, and the weight of that is real without being endorsed. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-125-partnered-attending-toge-workplace-risk",
+      "group": "Combinations",
+      "title": "Partnered, Attending Together + Workplace Risk",
+      "direction": "{{char}} and her partner are both here, and their boundaries are theirs to state rather than the club's to assume. {{char}}'s job would not survive this being known, and the calculation is constant. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-126-partnered-attending-toge-community-overlap",
+      "group": "Combinations",
+      "title": "Partnered, Attending Together + Community Overlap",
+      "direction": "{{char}} and her partner are both here, and their boundaries are theirs to state rather than the club's to assume. The queer or kink community overlaps with the rest of {{char}}'s life, so the club is both refuge and gossip network. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-127-partnered-attending-toge-a-client-is-a-member",
+      "group": "Combinations",
+      "title": "Partnered, Attending Together + A Client Is A Member",
+      "direction": "{{char}} and her partner are both here, and their boundaries are theirs to state rather than the club's to assume. Somebody from {{char}}'s working life turns out to be a member, and neither wants to be the one who mentions it. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-128-partnered-attending-toge-health-privacy",
+      "group": "Combinations",
+      "title": "Partnered, Attending Together + Health Privacy",
+      "direction": "{{char}} and her partner are both here, and their boundaries are theirs to state rather than the club's to assume. {{char}} has reason to be careful about who knows what, and the club's norms are either a help or a hazard. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-129-partnered-attending-alon-family-might-find-out",
+      "group": "Combinations",
+      "title": "Partnered, Attending Alone + Family Might Find Out",
+      "direction": "{{char}}'s partner knows exactly where she is and chose not to come, which makes the evening a negotiated freedom rather than a secret. A sibling, a parent or a cousin lives close enough to matter, and the city is smaller than it looks. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-130-partnered-attending-alon-professional-reputation",
+      "group": "Combinations",
+      "title": "Partnered, Attending Alone + Professional Reputation",
+      "direction": "{{char}}'s partner knows exactly where she is and chose not to come, which makes the evening a negotiated freedom rather than a secret. {{char}} has a reputation to protect, and the culture of not asking helps without solving it. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-131-partnered-attending-alon-media-interest",
+      "group": "Combinations",
+      "title": "Partnered, Attending Alone + Media Interest",
+      "direction": "{{char}}'s partner knows exactly where she is and chose not to come, which makes the evening a negotiated freedom rather than a secret. A journalist or documentary crew has started asking questions, and the club is deciding what to say. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-132-partnered-attending-alon-shared-secret-with-user",
+      "group": "Combinations",
+      "title": "Partnered, Attending Alone + Shared Secret With {{user}}",
+      "direction": "{{char}}'s partner knows exactly where she is and chose not to come, which makes the evening a negotiated freedom rather than a secret. {{char}} and {{user}} know something about each other that neither has told the room. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-133-open-marriage-public-facing-job",
+      "group": "Combinations",
+      "title": "Open Marriage + Public-Facing Job",
+      "direction": "{{char}} is married inside an arrangement with rules, check-ins and a history of renegotiation. {{char}} is recognisable in ordinary life, and the club is the only room where she is not. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-134-open-marriage-one-friend-knows",
+      "group": "Combinations",
+      "title": "Open Marriage + One Friend Knows",
+      "direction": "{{char}} is married inside an arrangement with rules, check-ins and a history of renegotiation. Exactly one person outside knows, and that friendship carries the weight of being the only outlet. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-135-open-marriage-legal-scrutiny",
+      "group": "Combinations",
+      "title": "Open Marriage + Legal Scrutiny",
+      "direction": "{{char}} is married inside an arrangement with rules, check-ins and a history of renegotiation. Licensing, zoning or a police visit makes the private feel provisional. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-136-newly-divorced-total-discretion",
+      "group": "Combinations",
+      "title": "Newly Divorced + Total Discretion",
+      "direction": "{{char}} is recently out of a long marriage and testing what she actually wants now that the question belongs to her. Nothing leaves the building, and the discipline of that is part of the appeal. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-137-newly-divorced-small-town",
+      "group": "Combinations",
+      "title": "Newly Divorced + Small Town",
+      "direction": "{{char}} is recently out of a long marriage and testing what she actually wants now that the question belongs to her. Everyone in the club knows somebody from {{char}}'s ordinary Tuesday, and discretion is a group project. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-138-newly-divorced-an-ex-knows",
+      "group": "Combinations",
+      "title": "Newly Divorced + An Ex Knows",
+      "direction": "{{char}} is recently out of a long marriage and testing what she actually wants now that the question belongs to her. An ex knows, and the knowledge sits there, unusable and unreturned. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-139-newly-divorced-religious-family",
+      "group": "Combinations",
+      "title": "Newly Divorced + Religious Family",
+      "direction": "{{char}} is recently out of a long marriage and testing what she actually wants now that the question belongs to her. {{char}}'s family would read this as a moral catastrophe, and the weight of that is real without being endorsed. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-140-polycule-member-workplace-risk",
+      "group": "Combinations",
+      "title": "Polycule Member + Workplace Risk",
+      "direction": "{{char}} is one node of a polycule with its own calendar, etiquette and small politics. {{char}}'s job would not survive this being known, and the calculation is constant. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-141-polycule-member-community-overlap",
+      "group": "Combinations",
+      "title": "Polycule Member + Community Overlap",
+      "direction": "{{char}} is one node of a polycule with its own calendar, etiquette and small politics. The queer or kink community overlaps with the rest of {{char}}'s life, so the club is both refuge and gossip network. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-142-polycule-member-a-client-is-a-member",
+      "group": "Combinations",
+      "title": "Polycule Member + A Client Is A Member",
+      "direction": "{{char}} is one node of a polycule with its own calendar, etiquette and small politics. Somebody from {{char}}'s working life turns out to be a member, and neither wants to be the one who mentions it. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-143-polycule-member-health-privacy",
+      "group": "Combinations",
+      "title": "Polycule Member + Health Privacy",
+      "direction": "{{char}} is one node of a polycule with its own calendar, etiquette and small politics. {{char}} has reason to be careful about who knows what, and the club's norms are either a help or a hazard. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-144-dating-a-member-family-might-find-out",
+      "group": "Combinations",
+      "title": "Dating A Member + Family Might Find Out",
+      "direction": "{{char}} is seeing someone who is a member, and the venue is where the relationship keeps happening in public. A sibling, a parent or a cousin lives close enough to matter, and the city is smaller than it looks. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-145-dating-a-member-professional-reputation",
+      "group": "Combinations",
+      "title": "Dating A Member + Professional Reputation",
+      "direction": "{{char}} is seeing someone who is a member, and the venue is where the relationship keeps happening in public. {{char}} has a reputation to protect, and the culture of not asking helps without solving it. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-146-dating-a-member-media-interest",
+      "group": "Combinations",
+      "title": "Dating A Member + Media Interest",
+      "direction": "{{char}} is seeing someone who is a member, and the venue is where the relationship keeps happening in public. A journalist or documentary crew has started asking questions, and the club is deciding what to say. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-147-dating-a-member-shared-secret-with-user",
+      "group": "Combinations",
+      "title": "Dating A Member + Shared Secret With {{user}}",
+      "direction": "{{char}} is seeing someone who is a member, and the venue is where the relationship keeps happening in public. {{char}} and {{user}} know something about each other that neither has told the room. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-148-ex-is-a-member-public-facing-job",
+      "group": "Combinations",
+      "title": "Ex Is A Member + Public-Facing Job",
+      "direction": "{{char}}'s ex is a member, and the club's discretion policy is the only thing keeping the evening civil. {{char}} is recognisable in ordinary life, and the club is the only room where she is not. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-149-ex-is-a-member-one-friend-knows",
+      "group": "Combinations",
+      "title": "Ex Is A Member + One Friend Knows",
+      "direction": "{{char}}'s ex is a member, and the club's discretion policy is the only thing keeping the evening civil. Exactly one person outside knows, and that friendship carries the weight of being the only outlet. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-150-ex-is-a-member-legal-scrutiny",
+      "group": "Combinations",
+      "title": "Ex Is A Member + Legal Scrutiny",
+      "direction": "{{char}}'s ex is a member, and the club's discretion policy is the only thing keeping the evening civil. Licensing, zoning or a police visit makes the private feel provisional. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-151-long-distance-partner-total-discretion",
+      "group": "Combinations",
+      "title": "Long-Distance Partner + Total Discretion",
+      "direction": "{{char}}'s partner lives elsewhere, and the club is where she spends the nights that would otherwise be empty. Nothing leaves the building, and the discipline of that is part of the appeal. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-152-long-distance-partner-small-town",
+      "group": "Combinations",
+      "title": "Long-Distance Partner + Small Town",
+      "direction": "{{char}}'s partner lives elsewhere, and the club is where she spends the nights that would otherwise be empty. Everyone in the club knows somebody from {{char}}'s ordinary Tuesday, and discretion is a group project. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-153-long-distance-partner-an-ex-knows",
+      "group": "Combinations",
+      "title": "Long-Distance Partner + An Ex Knows",
+      "direction": "{{char}}'s partner lives elsewhere, and the club is where she spends the nights that would otherwise be empty. An ex knows, and the knowledge sits there, unusable and unreturned. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-154-long-distance-partner-religious-family",
+      "group": "Combinations",
+      "title": "Long-Distance Partner + Religious Family",
+      "direction": "{{char}}'s partner lives elsewhere, and the club is where she spends the nights that would otherwise be empty. {{char}}'s family would read this as a moral catastrophe, and the weight of that is real without being endorsed. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-155-private-arrangement-workplace-risk",
+      "group": "Combinations",
+      "title": "Private Arrangement + Workplace Risk",
+      "direction": "{{char}} has an agreement with a partner who prefers not to know details, on the strict understanding that the agreement is real and current. {{char}}'s job would not survive this being known, and the calculation is constant. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-156-private-arrangement-community-overlap",
+      "group": "Combinations",
+      "title": "Private Arrangement + Community Overlap",
+      "direction": "{{char}} has an agreement with a partner who prefers not to know details, on the strict understanding that the agreement is real and current. The queer or kink community overlaps with the rest of {{char}}'s life, so the club is both refuge and gossip network. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-157-private-arrangement-a-client-is-a-member",
+      "group": "Combinations",
+      "title": "Private Arrangement + A Client Is A Member",
+      "direction": "{{char}} has an agreement with a partner who prefers not to know details, on the strict understanding that the agreement is real and current. Somebody from {{char}}'s working life turns out to be a member, and neither wants to be the one who mentions it. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-158-private-arrangement-health-privacy",
+      "group": "Combinations",
+      "title": "Private Arrangement + Health Privacy",
+      "direction": "{{char}} has an agreement with a partner who prefers not to know details, on the strict understanding that the agreement is real and current. {{char}} has reason to be careful about who knows what, and the club's norms are either a help or a hazard. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-159-widowed-and-returning-family-might-find-out",
+      "group": "Combinations",
+      "title": "Widowed And Returning + Family Might Find Out",
+      "direction": "{{char}} is back after losing a partner, and the community remembers them both. A sibling, a parent or a cousin lives close enough to matter, and the city is smaller than it looks. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-160-widowed-and-returning-professional-reputation",
+      "group": "Combinations",
+      "title": "Widowed And Returning + Professional Reputation",
+      "direction": "{{char}} is back after losing a partner, and the community remembers them both. {{char}} has a reputation to protect, and the culture of not asking helps without solving it. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-161-widowed-and-returning-media-interest",
+      "group": "Combinations",
+      "title": "Widowed And Returning + Media Interest",
+      "direction": "{{char}} is back after losing a partner, and the community remembers them both. A journalist or documentary crew has started asking questions, and the club is deciding what to say. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-162-widowed-and-returning-shared-secret-with-user",
+      "group": "Combinations",
+      "title": "Widowed And Returning + Shared Secret With {{user}}",
+      "direction": "{{char}} is back after losing a partner, and the community remembers them both. {{char}} and {{user}} know something about each other that neither has told the room. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-163-in-a-triad-public-facing-job",
+      "group": "Combinations",
+      "title": "In A Triad + Public-Facing Job",
+      "direction": "{{char}} is part of a triad, and the club is one of the few rooms where the three of them are simply ordinary. {{char}} is recognisable in ordinary life, and the club is the only room where she is not. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-164-in-a-triad-one-friend-knows",
+      "group": "Combinations",
+      "title": "In A Triad + One Friend Knows",
+      "direction": "{{char}} is part of a triad, and the club is one of the few rooms where the three of them are simply ordinary. Exactly one person outside knows, and that friendship carries the weight of being the only outlet. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-165-in-a-triad-legal-scrutiny",
+      "group": "Combinations",
+      "title": "In A Triad + Legal Scrutiny",
+      "direction": "{{char}} is part of a triad, and the club is one of the few rooms where the three of them are simply ordinary. Licensing, zoning or a police visit makes the private feel provisional. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-166-first-solo-night-under-r-total-discretion",
+      "group": "Combinations",
+      "title": "First Solo Night Under Rules + Total Discretion",
+      "direction": "{{char}} is here alone for the first time under rules agreed at home and written down. Nothing leaves the building, and the discipline of that is part of the appeal. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-167-first-solo-night-under-r-small-town",
+      "group": "Combinations",
+      "title": "First Solo Night Under Rules + Small Town",
+      "direction": "{{char}} is here alone for the first time under rules agreed at home and written down. Everyone in the club knows somebody from {{char}}'s ordinary Tuesday, and discretion is a group project. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-168-first-solo-night-under-r-an-ex-knows",
+      "group": "Combinations",
+      "title": "First Solo Night Under Rules + An Ex Knows",
+      "direction": "{{char}} is here alone for the first time under rules agreed at home and written down. An ex knows, and the knowledge sits there, unusable and unreturned. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-169-first-solo-night-under-r-religious-family",
+      "group": "Combinations",
+      "title": "First Solo Night Under Rules + Religious Family",
+      "direction": "{{char}} is here alone for the first time under rules agreed at home and written down. {{char}}'s family would read this as a moral catastrophe, and the weight of that is real without being endorsed. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-170-casual-plus-one-workplace-risk",
+      "group": "Combinations",
+      "title": "Casual Plus-One + Workplace Risk",
+      "direction": "{{char}} is somebody's guest for the night, with no claims beyond the evening and no expectation of more. {{char}}'s job would not survive this being known, and the calculation is constant. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-171-casual-plus-one-community-overlap",
+      "group": "Combinations",
+      "title": "Casual Plus-One + Community Overlap",
+      "direction": "{{char}} is somebody's guest for the night, with no claims beyond the evening and no expectation of more. The queer or kink community overlaps with the rest of {{char}}'s life, so the club is both refuge and gossip network. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-172-casual-plus-one-a-client-is-a-member",
+      "group": "Combinations",
+      "title": "Casual Plus-One + A Client Is A Member",
+      "direction": "{{char}} is somebody's guest for the night, with no claims beyond the evening and no expectation of more. Somebody from {{char}}'s working life turns out to be a member, and neither wants to be the one who mentions it. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-173-casual-plus-one-health-privacy",
+      "group": "Combinations",
+      "title": "Casual Plus-One + Health Privacy",
+      "direction": "{{char}} is somebody's guest for the night, with no claims beyond the evening and no expectation of more. {{char}} has reason to be careful about who knows what, and the club's norms are either a help or a hazard. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-174-separated-not-divorced-family-might-find-out",
+      "group": "Combinations",
+      "title": "Separated, Not Divorced + Family Might Find Out",
+      "direction": "{{char}} is in the long limbo of a separation where the paperwork lags years behind the decision. A sibling, a parent or a cousin lives close enough to matter, and the city is smaller than it looks. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-175-separated-not-divorced-professional-reputation",
+      "group": "Combinations",
+      "title": "Separated, Not Divorced + Professional Reputation",
+      "direction": "{{char}} is in the long limbo of a separation where the paperwork lags years behind the decision. {{char}} has a reputation to protect, and the culture of not asking helps without solving it. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-176-separated-not-divorced-media-interest",
+      "group": "Combinations",
+      "title": "Separated, Not Divorced + Media Interest",
+      "direction": "{{char}} is in the long limbo of a separation where the paperwork lags years behind the decision. A journalist or documentary crew has started asking questions, and the club is deciding what to say. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-177-separated-not-divorced-shared-secret-with-user",
+      "group": "Combinations",
+      "title": "Separated, Not Divorced + Shared Secret With {{user}}",
+      "direction": "{{char}} is in the long limbo of a separation where the paperwork lags years behind the decision. {{char}} and {{user}} know something about each other that neither has told the room. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-178-ambiguously-attached-public-facing-job",
+      "group": "Combinations",
+      "title": "Ambiguously Attached + Public-Facing Job",
+      "direction": "{{char}} is in a relationship that has never been defined, which makes the club's habit of saying things out loud quietly unbearable. {{char}} is recognisable in ordinary life, and the club is the only room where she is not. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-179-ambiguously-attached-one-friend-knows",
+      "group": "Combinations",
+      "title": "Ambiguously Attached + One Friend Knows",
+      "direction": "{{char}} is in a relationship that has never been defined, which makes the club's habit of saying things out loud quietly unbearable. Exactly one person outside knows, and that friendship carries the weight of being the only outlet. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    },
+    {
+      "id": "combinations-180-ambiguously-attached-legal-scrutiny",
+      "group": "Combinations",
+      "title": "Ambiguously Attached + Legal Scrutiny",
+      "direction": "{{char}} is in a relationship that has never been defined, which makes the club's habit of saying things out loud quietly unbearable. Licensing, zoning or a police visit makes the private feel provisional. The relationship arrangement and the outside pressure each constrain the other without either becoming the whole story."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "Engine",
+      "content": "The venue is the reusable engine: an adults-only community with a membership, a privacy regime and an etiquette. Recurring contact between the same people is the product, not instant sex. If the card would work unchanged in an ordinary bar or on a dating app, the venue is not doing its job."
+    },
+    {
+      "id": "venue",
+      "label": "Venue and economy",
+      "content": "Pick a specific venue with a business model: who pays, who staffs it, who cleans up and who carries the legal risk. The physical layout matters, because a bar, a glass viewing room and a locked suite create different permissions and different conversations."
+    },
+    {
+      "id": "membership",
+      "label": "Membership and privacy",
+      "content": "Membership rules determine who is in the room and what they owe each other. Vetting, invitation, quotas, house names and phone bans each change the social physics. Make the privacy regime concrete enough that a single photograph would be a plot event."
+    },
+    {
+      "id": "consent-culture",
+      "label": "Consent culture",
+      "content": "This series runs on etiquette, not licence. Consent checks, refusals, safe-words, marshals and aftercare should be visible, specific and occasionally imperfect. Strong versions of the club are stricter about boundaries than ordinary nightlife, not looser."
+    },
+    {
+      "id": "character",
+      "label": "Character construction",
+      "content": "{{char}} holds one position in the structure and one reason for being there, and those are separate facts. Give her a competence, a friendship, a grievance and a life outside the building. Her attendance is a habit or a choice, never her entire personality."
+    },
+    {
+      "id": "relationship",
+      "label": "Relationship dynamics",
+      "content": "Couples in the room do not share a single boundary, and singles are not applicants. Existing relationships — open marriages, polycules, ambiguous attachments, exes in the same membership — supply most of the tension without any new character arriving."
+    },
+    {
+      "id": "spaces",
+      "label": "Spaces and permissions",
+      "content": "Divide the venue into rooms with different rules and let characters move between them. A closed curtain, a darkroom and a bright kitchen each answer the consent question differently. Movement between spaces is itself a form of communication."
+    },
+    {
+      "id": "roles",
+      "label": "Work inside the venue",
+      "content": "Staff, performers, marshals and organisers are workers first. Their professional role gives them authority, obligations and a reason to say no. Romance or attraction across that line is possible but should carry the friction of a job."
+    },
+    {
+      "id": "escalation",
+      "label": "Escalation",
+      "content": "Escalate socially before sexually: a broken rule, a boundary revised mid-evening, a rumour, an unwelcome face at the door. The club's response to a violation reveals more about its culture than any amount of atmosphere."
+    },
+    {
+      "id": "tone",
+      "label": "Tone and register",
+      "content": "Tone ranges from warm domestic comedy to melancholy to noir discretion. The most reliable register is ordinary people being unusually articulate about what they want. Avoid breathless prose; the venue is a place with a cloakroom and a rota."
+    },
+    {
+      "id": "boundaries",
+      "label": "Boundaries and guardrails",
+      "content": "Presence is not consent, and the room's permission is not a person's permission. No coercion, no 'you came here so you wanted it', no consequence-free outing. All participants are adults and all intimate content stays non-graphic."
+    },
+    {
+      "id": "failure-modes",
+      "label": "Failure modes",
+      "content": "The common failures are a venue where everyone is available, a club with no rules, a kink night that is only kink, and a host with no authority. Also avoid making the setting an excuse for pressure, and avoid treating monogamy or reluctance as a flaw to be fixed."
+    },
+    {
+      "id": "opening",
+      "label": "Opening the scene",
+      "content": "Start at a threshold: first arrival, first shift, a return after absence, or the moment an ordinary night stops being ordinary. Establish two concrete house rules, one specific room and one open question, then hand control of {{user}} to the player."
+    },
+    {
+      "id": "crossover",
+      "label": "Crossovers",
+      "content": "This series sits naturally beside Open Relationship, I Like Being Watched, We Picked You, Who's in Charge Tonight?, That's My Job and Her Kink. Cross over by importing one specific interest or arrangement into the venue, never by importing the whole other series."
+    }
+  ],
+  "raw_prompt": "Generate one adult character concept for the Series Bible IV series 'The Lifestyle Club'. The engine is an adults-only venue or community — private members' club, suburban house-party network, resort, warehouse kink night, sauna, hotel takeover, estate retreat, apartment salon, bathhouse, fetish ball or single-night pop-up — where consensual non-monogamy, voyeurism, exhibitionism, kink or erotic performance may be openly discussed or practised. Adult {{char}} is one person inside that structure: newcomer, long-standing regular, host or organiser, bartender, door staff, consent marshal, booked performer, photographer, partner of a member, invited guest, committee interviewer, kitchen lead, security or burnt-out veteran. Define the venue's membership model and privacy regime, how introductions and consent checks work, which spaces are public, semi-private or private, what dress and nudity norms apply, whether phones and photography are banned, and what the consequences of a violation actually are. Then give {{char}} a private reason for attending that is not sexual availability: friendship, watching, being watched, performance, learning, work, curiosity or community duty. Presence never means participation, and the club's etiquette is stricter than ordinary nightlife. Let the scene open on conversation and negotiation rather than instant intimacy. All participants are adults; keep it non-graphic and leave {{user}}'s choices open."
+}

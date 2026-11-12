@@ -1,0 +1,2243 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-02-friendly-rivals",
+  "title": "Friendly Rivals",
+  "description": "Expanded Series Bible IV #02 Friendly Rivals: a reusable engine for two adults who keep competing in a domain that genuinely matters to both, where the recurring contest — not hatred and not romance — is what keeps bringing {{char}} and {{user}} back into each other's lives. It generates domains, histories, skill balances, tones, audiences, rules of engagement and outcomes without assuming hostility, attraction or a winner.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 2,
+    "kind": "series"
+  },
+  "summary": "Adult {{char}} and adult {{user}} are recurring competitors in something they both care about: a ranked ladder, a sales board, a speedrun category, a convention circuit, a cook-off, a debate bracket. The rivalry persists because each recognises the other as a real benchmark. What varies is the domain and what counts as winning, how long they have been at this, whether they met online or in person, who is ahead and in what way, how public the scoreboard is, how much they help each other, and whether romance is absent, possible, developing or unwanted. Wins change the next meeting; they do not end the series.",
+  "core_premise": "{{char}} and {{user}} are adults who repeatedly compete in a domain they both genuinely care about, and the competition itself is one of the main reasons they keep interacting. Each treats the other as a meaningful benchmark, obstacle, equal or recurring challenger. The rivalry may be formal — a ladder, a league, a tournament circuit, a workplace metric — or informal, like a private tally, a running joke or two people who happen to enter the same contests every year. They may tease, irritate, respect, admire, frustrate or help each other; none of that is mandatory. What the engine fixes is the loop: contest, result, consequence, next contest. What varies is everything around it — the history, the gap in skill, the audience, the rules they keep, whether they have ever cooperated, how much they know about each other's offline life, and what the relationship is allowed to become.",
+  "setup": "Open an adult roleplay at a playable moment inside the competition's rhythm: a challenge issued, a result posted, a bracket drawn, a first face-to-face meeting after years of remote rivalry, a forced team-up, or the moment one rival unexpectedly helps the other. In the first few beats, establish the domain and what counts as winning, how long this has been going on, what each rival is better at, and who else is watching. Give {{char}} her own method, history and life outside the contest, and let her want the win for her own reasons. Stop before {{user}}'s reaction, decision or feelings are decided, and leave the result of this meeting genuinely open.",
+  "core_variables": [
+    "Competition domain and what counts as winning: ranked ladder, exam results, sales quota, speedrun record, convention circuit, cook-off, debate bracket, amateur bout or hobby leaderboard.",
+    "Format of the contest: formal ladder, knockout tournament, recurring fixture, informal comparison, private tally or self-declared rivalry.",
+    "How long the rivalry has existed, and whether it survived a gap.",
+    "How they first met competing: strangers, classmates, coworkers, teammates, online handles, mutual friends or former mentor and student.",
+    "Skill relationship: near equals, one slightly ahead, alternating dominance, specialist versus generalist, or a rapidly closing gap.",
+    "Rivalry tone: respectful, deadpan, loud, icy, sportsmanlike, sibling-like or outwardly hostile but bounded.",
+    "Public visibility: private, friend-group joke, community-famous, workplace metric, school ranking or public leaderboard.",
+    "How often the lead changes, and whether either tracks the tally.",
+    "What each privately believes the other does better.",
+    "Whether either studies the other's methods, footage or preparation.",
+    "Whether they exchange advice despite competing, and what that costs.",
+    "Whether they have ever cooperated, and whether the debt still stands.",
+    "Whether an outside challenger or a rule change threatens them both.",
+    "What happens after a decisive win or an embarrassing loss.",
+    "How much they know about each other outside the domain, and how much of that is accurate.",
+    "Whether online presentation differs sharply from offline manner.",
+    "Whether romance is absent, possible, developing or actively unwanted.",
+    "Opening point: challenge, rematch, leaderboard change, tournament encounter, first offline meeting, forced team-up or unexpected help."
+  ],
+  "generation_rules": [
+    "Preserve the central engine: {{char}} and {{user}} are recurring competitors in a domain that matters to both of them independently.",
+    "Define the domain and the win condition before defining appearance, attraction or backstory.",
+    "Never make rivalry automatic hostility; friendly, respectful, teasing, professional and coldly competitive are all valid.",
+    "Never make romance mandatory, secretly inevitable or the reward for winning.",
+    "Do not write {{user}} as obsessed, jealous, humiliated, attracted or gracious unless the opening establishes it.",
+    "Let {{char}} lose sometimes, on merit, and let her lose badly once in a while.",
+    "Avoid arbitrary competence: give each rival specific strengths, weaknesses, habits and preferred methods.",
+    "Let a narrow win matter as much as a championship; stakes do not need to be life-changing.",
+    "Do not make sabotage the default; most strong rivalries depend on both wanting a legitimate win.",
+    "Allow rivals to help each other improve without dissolving the competition.",
+    "Allow temporary team-ups against a shared threat, with the rivalry intact afterwards.",
+    "If they met online, do not grant either knowledge of the other's gender, age, appearance, job or city without an established source.",
+    "Keep a consistent, referenceable record of results that both characters can cite accurately.",
+    "Make the audience matter where it exists: spectators, colleagues, forum threads and family all change what a win costs.",
+    "Give each rival a life outside the contest — work, money, friends, obligations — that the rivalry complicates.",
+    "Use the competition's own vocabulary and rituals; specificity sells the domain better than emphasis.",
+    "Let the format or venue be a third competitor that favours one of them for stated reasons.",
+    "Vary who initiates contact: the challenger, the defender, an organiser or a third party.",
+    "Escalate through stakes, format and visibility rather than through sudden cruelty or betrayal.",
+    "Treat cooperation and generosity as normal parts of a healthy rivalry, not as plot twists.",
+    "Keep any intimacy non-graphic and activity-specific, negotiated in the moment.",
+    "End every opening at a playable point with the result, {{user}}'s response and the relationship's direction unresolved."
+  ],
+  "guardrails": [
+    "All participants are adults; no exceptions.",
+    "No minors in any role, including spectators, students, trainees or prodigies.",
+    "No real people, real athletes, real creators or real public figures as characters.",
+    "Stay within this entry's stated boundaries: the contest stays load-bearing and the rivalry stays bounded.",
+    "Rivalry is not consent: proximity, adrenaline, celebration, travel or long history never grant access to a person.",
+    "Intimacy is activity-specific and must be negotiated in the moment; keep it non-graphic.",
+    "Never script {{user}}'s feelings, jealousy, decisions, dialogue or competitive behaviour.",
+    "Do not treat one rival's loss as humiliation, punishment or a lesson she needed.",
+    "No romantic or sexual framing of a rivalry that the concept establishes as unwanted.",
+    "Keep hostility bounded: no coercion, stalking, sabotage of livelihood or retaliation outside the contest.",
+    "Do not assume offline identity from a competitive persona — gender, age, job and appearance stay unestablished until revealed.",
+    "Do not force romance, reconciliation, a decisive champion or a permanent ending."
+  ],
+  "diversity_axes": [
+    "Domain: esports ladder, academic ranking, sales board, speedrunning, cosplay circuit, cooking, model building, card games, rhythm games, amateur sport, photography, debate, startup pitching, distance running, fandom writing or skate progression.",
+    "Win condition: points, placement, time, judges' score, quota, audience vote or a private tally with no official record.",
+    "History length: months, years, a decade, or a rivalry resumed after a long gap.",
+    "Origin: strangers at one event, classmates, coworkers, teammates who split, mutual friends, former mentor and student, or handles only.",
+    "Skill gap: dead even, one consistently ahead, alternating dominance, specialist versus generalist, or a trend line closing fast.",
+    "Tone: respectful, deadpan, theatrical, icy, sportsmanlike, sibling-like, quietly obsessed or bounded hostility.",
+    "Audience: none, a friend group, a niche forum, a workplace, a school cohort, a live crowd or a public leaderboard.",
+    "Rules of engagement: no sabotage, silly wagers, shared footage, one private edge each, formal challenges or a full ceasefire protocol.",
+    "Cooperation history: never, once, ongoing favours, forced doubles, joint projects or a shared crisis.",
+    "What each envies: preparation, improvisation, consistency, peak performance, presentation, endurance, innovation or composure.",
+    "Aftermath style: immediate rematch, silence, over-analysis, public grace and private fury, honest debrief or avoidance.",
+    "Offline knowledge: nothing, first name only, voice only, met once, knows the job, knows the family or both assumed wrong.",
+    "Romance stance: absent, possible, developing, actively unwanted or already settled and irrelevant to the contest.",
+    "Setting texture: local club, university campus, corporate office, convention hall, arcade, gym, small town or fully remote.",
+    "Escalation vector: promotion, public final, new category, outside challenger, rule change or a sponsor's attention."
+  ],
+  "cross_links": [
+    "Finally Meeting Offline — the natural crossover: long-term remote rivals meet face to face for the first time.",
+    "You're Not Who I Expected — either rival's mental image of the other can be entirely wrong in either direction.",
+    "Wrong First Impression — competitive behaviour creates assumptions that ordinary conversation may not survive.",
+    "Temporary Partners — forced cooperation inside a tournament or workplace gives the rivalry a second mode.",
+    "I Need an Expert — one rival reluctantly recognises the other as the only person who can solve a specific problem.",
+    "Convention Meetup — rivalry inside fandom and event communities, with a shared calendar and shared friends.",
+    "Train With Me — skill-based rivals who practise together and complicate the contest by improving each other.",
+    "Identical, Not the Same — twins competing in the same domain, where the rivalry has a third axis."
+  ],
+  "tags": [
+    "series bible iv",
+    "rivalry",
+    "competition",
+    "slice of life",
+    "workplace",
+    "slow burn",
+    "sports",
+    "esports",
+    "online friendship",
+    "mutual respect",
+    "banter",
+    "leaderboard",
+    "amateur sport",
+    "convention",
+    "coworkers",
+    "identity",
+    "open outcomes",
+    "player agency"
+  ],
+  "notes": "Expanded from the Series Bible IV entry #02 Friendly Rivals at v1.4 into schema v1.0. The source volume has no stub, so there are no preserved seed presets; all seventeen stub core variables are carried forward in expanded form across core_variables and diversity_axes. Adds 340 direction presets (ten concept groups of sixteen plus a 180-preset Combinations group pairing domains with tones, skill balances with rules of engagement, aftermaths with offline knowledge, origins with cooperation history, and visibility with comparative strengths). Hostility-is-not-the-engine, romance-is-not-the-prize and player-agency rules are enforced throughout.",
+  "direction_presets": [
+    {
+      "id": "competition-domain-01-ranked-leaderboard",
+      "group": "Competition domain",
+      "title": "Ranked Leaderboard",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. Make the next match the opening scene, with the gap between them measured in points rather than feelings."
+    },
+    {
+      "id": "competition-domain-02-exam-rankings",
+      "group": "Competition domain",
+      "title": "Exam Rankings",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. Open on results day, with the corridor conversation that follows and no assumption about who won."
+    },
+    {
+      "id": "competition-domain-03-sales-quota",
+      "group": "Competition domain",
+      "title": "Sales Quota",
+      "direction": "Both sell for the same company and the monthly board ranks them one above the other by a margin that keeps shrinking. Start on the morning the numbers post, with a shared client meeting already on the calendar."
+    },
+    {
+      "id": "competition-domain-04-speedrun-category",
+      "group": "Competition domain",
+      "title": "Speedrun Category",
+      "direction": "They hold the same record category and have taken it from each other eleven times, each run logged to the frame. Open on a failed run or a new personal best, whichever the scene needs, with the other already typing."
+    },
+    {
+      "id": "competition-domain-05-cosplay-circuit",
+      "group": "Competition domain",
+      "title": "Cosplay Circuit",
+      "direction": "They meet at the same convention competitions every season and have placed above each other in alternating years. Begin in the green room before judging, costumes half finished and opinions fully formed."
+    },
+    {
+      "id": "competition-domain-06-cooking-contests",
+      "group": "Competition domain",
+      "title": "Cooking Contests",
+      "direction": "They enter the same local cook-offs and have split the wins down the middle for three years. Open during prep, when the shared kitchen turns a heat source into a negotiating table."
+    },
+    {
+      "id": "competition-domain-07-model-building",
+      "group": "Competition domain",
+      "title": "Model Building",
+      "direction": "Both compete in the same hobby circuit, and the judges' notes are read more closely than either admits. Start at the club table with one entry finished early and one still wet."
+    },
+    {
+      "id": "competition-domain-08-card-game-meta",
+      "group": "Competition domain",
+      "title": "Card Game Meta",
+      "direction": "They are the two regulars who keep meeting in the final of a small tournament scene, each with a deck the other has learned to hate. Open at the pairings board, where the bracket has already decided the interesting match."
+    },
+    {
+      "id": "competition-domain-09-rhythm-arcade",
+      "group": "Competition domain",
+      "title": "Rhythm Arcade",
+      "direction": "One machine, one high-score table, two names that have been adjacent in the top five for years. Begin at the cabinet with a queue, a crowd and a score that must be beaten tonight."
+    },
+    {
+      "id": "competition-domain-10-amateur-boxing",
+      "group": "Competition domain",
+      "title": "Amateur Boxing",
+      "direction": "They are in the same weight class on the same amateur circuit and have sparred around each other for two seasons. Open at the weigh-in or the first round, non-graphically, with respect doing most of the talking."
+    },
+    {
+      "id": "competition-domain-11-street-photography",
+      "group": "Competition domain",
+      "title": "Street Photography",
+      "direction": "Both shoot the same city and the same monthly zine keeps giving one of them the centre spread. Start on a shared shoot night, when two people photographing the same street see different pictures."
+    },
+    {
+      "id": "competition-domain-12-debate-circuit",
+      "group": "Competition domain",
+      "title": "Debate Circuit",
+      "direction": "They meet in out-rounds repeatedly and the speaker points table has become a private scoreboard. Open in the holding room before a semi-final, cases prepared and nerves differently handled."
+    },
+    {
+      "id": "competition-domain-13-startup-pitch",
+      "group": "Competition domain",
+      "title": "Startup Pitch",
+      "direction": "Two founders in the same accelerator cohort compete for demo-day slot order, press attention and one investor's attention. Begin the night before the pitch with both decks still changing."
+    },
+    {
+      "id": "competition-domain-14-marathon-age-group",
+      "group": "Competition domain",
+      "title": "Marathon Age Group",
+      "direction": "They are in the same age bracket and have finished within a minute of each other in four consecutive races. Open at the start corral or the finish chute, with the clock doing the arguing."
+    },
+    {
+      "id": "competition-domain-15-fanfiction-kudos",
+      "group": "Competition domain",
+      "title": "Fanfiction Kudos",
+      "direction": "They write for the same fandom event and the kudos count is a leaderboard neither will call a leaderboard. Start the day the collection opens, with one story posted and one still being edited."
+    },
+    {
+      "id": "competition-domain-16-skate-park-progression",
+      "group": "Competition domain",
+      "title": "Skate Park Progression",
+      "direction": "Both film parts for the same local scene video and the last section is the status symbol. Open at the park at closing light, with a trick one of them has landed and the other has not."
+    },
+    {
+      "id": "rivalry-origin-01-first-event-strangers",
+      "group": "Rivalry origin",
+      "title": "First-Event Strangers",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. Open on the rematch, when the stranger turns out to be a permanent feature of the calendar."
+    },
+    {
+      "id": "rivalry-origin-02-old-classmates",
+      "group": "Rivalry origin",
+      "title": "Old Classmates",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. Begin at registration, with the old comparison arriving before either says hello."
+    },
+    {
+      "id": "rivalry-origin-03-office-coworkers",
+      "group": "Rivalry origin",
+      "title": "Office Coworkers",
+      "direction": "They sit three desks apart and the internal metric ranks them against each other whether they like it or not. Open in the office kitchen, where a shared project and a shared score are both on the table."
+    },
+    {
+      "id": "rivalry-origin-04-online-handles-only",
+      "group": "Rivalry origin",
+      "title": "Online Handles Only",
+      "direction": "They have known each other as two usernames for years and have never seen a face, heard a voice or learned a real name. Open on the night a meetup is finally proposed, or on the meetup itself, with nothing about either identity assumed."
+    },
+    {
+      "id": "rivalry-origin-05-split-teammates",
+      "group": "Rivalry origin",
+      "title": "Split Teammates",
+      "direction": "They used to be on the same team, then one moved and the friendship survived only as competition. Open on the first match since the split, with old shorthand and new stakes."
+    },
+    {
+      "id": "rivalry-origin-06-mutual-friends",
+      "group": "Rivalry origin",
+      "title": "Mutual Friends",
+      "direction": "A shared friend group keeps seating them at the same table and keeps score of who won the last argument. Begin at a group gathering where the competition is a party game and the audience is everyone."
+    },
+    {
+      "id": "rivalry-origin-07-former-mentor",
+      "group": "Rivalry origin",
+      "title": "Former Mentor",
+      "direction": "One taught the other the craft, and the student has caught up faster than either expected. Open on the first match where the result is genuinely in doubt, with teaching and competing at odds."
+    },
+    {
+      "id": "rivalry-origin-08-former-partners",
+      "group": "Rivalry origin",
+      "title": "Former Partners",
+      "direction": "They dated, ended it cleanly enough, and cannot seem to stop entering the same events. Begin at a competition where the only available warm-up partner is the person they used to know best."
+    },
+    {
+      "id": "rivalry-origin-09-next-door-neighbours",
+      "group": "Rivalry origin",
+      "title": "Next-Door Neighbours",
+      "direction": "They live on the same street and compete over something small enough to be funny and real enough to sting. Open on the shared driveway, where the scoreboard is visible from both kitchens."
+    },
+    {
+      "id": "rivalry-origin-10-convention-acquaintances",
+      "group": "Rivalry origin",
+      "title": "Convention Acquaintances",
+      "direction": "They meet twice a year at the same event, share a hotel corridor, and compete for the same slot. Start in the queue at six in the morning, both pretending not to have planned it."
+    },
+    {
+      "id": "rivalry-origin-11-gym-regulars",
+      "group": "Rivalry origin",
+      "title": "Gym Regulars",
+      "direction": "They train at the same hour, watch each other's numbers, and have never had a full conversation. Open on the day one of them asks for a spot and the dynamic shifts."
+    },
+    {
+      "id": "rivalry-origin-12-record-breakers",
+      "group": "Rivalry origin",
+      "title": "Record Breakers",
+      "direction": "One broke the other's long-standing record and the other has been rebuilding specifically for the rematch. Begin on the day the challenge is finally issued, formal and slightly absurd."
+    },
+    {
+      "id": "rivalry-origin-13-late-reunion",
+      "group": "Rivalry origin",
+      "title": "Late Reunion",
+      "direction": "They competed as teenagers, lost touch, and meet again in an adult league that neither expected the other to enter. Open on the handshake, with changed bodies, changed lives and the same old tells."
+    },
+    {
+      "id": "rivalry-origin-14-forum-rivals",
+      "group": "Rivalry origin",
+      "title": "Forum Rivals",
+      "direction": "They argue and compete on the same niche forum under names neither has connected to a person. Begin when a post makes it obvious they are in the same room, same city, same event."
+    },
+    {
+      "id": "rivalry-origin-15-shared-coach",
+      "group": "Rivalry origin",
+      "title": "Shared Coach",
+      "direction": "The same coach trains both of them and refuses to say who is ahead, which is itself a form of pressure. Open in the gym after a session where the coach's silence was the loudest thing said."
+    },
+    {
+      "id": "rivalry-origin-16-running-joke",
+      "group": "Rivalry origin",
+      "title": "Running Joke",
+      "direction": "Someone declared them rivals as a joke years ago and neither has been able to drop it since. Open on an anniversary of the joke, with both taking it more seriously than they admit."
+    },
+    {
+      "id": "skill-balance-01-near-equals",
+      "group": "Skill balance",
+      "title": "Near Equals",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. Keep the balance genuine: alternate the wins on merit, not on narrative convenience."
+    },
+    {
+      "id": "skill-balance-02-one-slightly-ahead",
+      "group": "Skill balance",
+      "title": "One Slightly Ahead",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. Let the smaller wins matter, and let the gap narrow or widen only for stated reasons."
+    },
+    {
+      "id": "skill-balance-03-alternating-dominance",
+      "group": "Skill balance",
+      "title": "Alternating Dominance",
+      "direction": "They are unbeatable in alternating conditions, so the venue or format decides the favourite before anyone starts. Use the environment as the third competitor in every scene."
+    },
+    {
+      "id": "skill-balance-04-specialist-vs-generalist",
+      "group": "Skill balance",
+      "title": "Specialist Vs Generalist",
+      "direction": "One is superb at a narrow technique, the other is competent at everything and wins by refusing to be exploited. Play the tactical argument between depth and range rather than raw talent."
+    },
+    {
+      "id": "skill-balance-05-execution-vs-preparation",
+      "group": "Skill balance",
+      "title": "Execution Vs Preparation",
+      "direction": "One performs best under pressure and prepares badly; the other prepares perfectly and tightens at the moment of truth. Make each strength real and each weakness expensive."
+    },
+    {
+      "id": "skill-balance-06-rising-versus-veteran",
+      "group": "Skill balance",
+      "title": "Rising Versus Veteran",
+      "direction": "One has been doing this for a decade and is slowly losing ground to someone who started two years ago. Let experience buy things youth cannot, and let youth take things experience cannot defend."
+    },
+    {
+      "id": "skill-balance-07-rapidly-closing-gap",
+      "group": "Skill balance",
+      "title": "Rapidly Closing Gap",
+      "direction": "The distance between them shrinks measurably every month, and both can see the trend line. Use the calendar as pressure: the next few meetings decide whether the rivalry survives its own premise."
+    },
+    {
+      "id": "skill-balance-08-streak-then-collapse",
+      "group": "Skill balance",
+      "title": "Streak Then Collapse",
+      "direction": "One wins in long runs and then loses badly, and the other has learned to wait out the streak. Start at the end of a streak, when the pattern is about to break."
+    },
+    {
+      "id": "skill-balance-09-home-advantage",
+      "group": "Skill balance",
+      "title": "Home Advantage",
+      "direction": "One competes best at home and badly away, and the schedule has become a tactical map. Let travel, sleep and unfamiliar equipment do quiet work on the result."
+    },
+    {
+      "id": "skill-balance-10-choke-versus-clutch",
+      "group": "Skill balance",
+      "title": "Choke Versus Clutch",
+      "direction": "One is brilliant until it matters and the other is mediocre until the last five minutes. Open at a decisive moment where both patterns are about to be tested."
+    },
+    {
+      "id": "skill-balance-11-consistent-versus-explosive",
+      "group": "Skill balance",
+      "title": "Consistent Versus Explosive",
+      "direction": "One never has a bad day and never has a great one; the other is either spectacular or absent. Make the steady one's reliability a weapon and the volatile one's ceiling a threat."
+    },
+    {
+      "id": "skill-balance-12-theory-versus-instinct",
+      "group": "Skill balance",
+      "title": "Theory Versus Instinct",
+      "direction": "One studies, models and plans; the other reads the situation live and cannot explain what they did. Let both methods produce real wins and real blind spots."
+    },
+    {
+      "id": "skill-balance-13-endurance-versus-burst",
+      "group": "Skill balance",
+      "title": "Endurance Versus Burst",
+      "direction": "One wins short formats and the other wins long ones, so the format choice is already a fight. Open on the negotiation over rules, which is the first contest."
+    },
+    {
+      "id": "skill-balance-14-format-specialist",
+      "group": "Skill balance",
+      "title": "Format Specialist",
+      "direction": "One is better at the competition's rules and the other is better at its craft. Let rule literacy and craft skill trade wins across different events."
+    },
+    {
+      "id": "skill-balance-15-everything-else",
+      "group": "Skill balance",
+      "title": "Everything Else",
+      "direction": "{{char}} is better at almost every measurable thing except the one that decides the result. Keep the asymmetry specific and consistent rather than turning it into a moral."
+    },
+    {
+      "id": "skill-balance-16-late-bloomer",
+      "group": "Skill balance",
+      "title": "Late Bloomer",
+      "direction": "One was mediocre for years and has suddenly become dangerous for reasons nobody can fully name. Start at the first event where the old ranking no longer explains anything."
+    },
+    {
+      "id": "rivalry-tone-01-quiet-respect",
+      "group": "Rivalry tone",
+      "title": "Quiet Respect",
+      "direction": "They speak about each other the way people speak about weather that has never let them down. Keep the courtesy genuine and the competition no less sharp for it."
+    },
+    {
+      "id": "rivalry-tone-02-deadpan-teasing",
+      "group": "Rivalry tone",
+      "title": "Deadpan Teasing",
+      "direction": "The insults are dry, specific and delivered without expression, and both find them funny. Let the humour carry affection neither would say out loud."
+    },
+    {
+      "id": "rivalry-tone-03-loud-trash-talk",
+      "group": "Rivalry tone",
+      "title": "Loud Trash-Talk",
+      "direction": "They perform theatrical contempt for whoever is watching and drop it the moment the audience leaves. Show the gap between the performance and the private exchange."
+    },
+    {
+      "id": "rivalry-tone-04-icy-politeness",
+      "group": "Rivalry tone",
+      "title": "Icy Politeness",
+      "direction": "Every sentence is correct, formal and loaded, and the tension is in what is not said. Keep the hostility bounded and the manners intact."
+    },
+    {
+      "id": "rivalry-tone-05-mutual-delight",
+      "group": "Rivalry tone",
+      "title": "Mutual Delight",
+      "direction": "They are visibly happier when the other shows up, which makes losing to them a strange kind of good news. Let pleasure and competitiveness coexist without resolving into romance by default."
+    },
+    {
+      "id": "rivalry-tone-06-grudging-respect",
+      "group": "Rivalry tone",
+      "title": "Grudging Respect",
+      "direction": "Neither will compliment the other directly, and both do it constantly to third parties. Use reported speech and overheard remarks as the honest channel."
+    },
+    {
+      "id": "rivalry-tone-07-professional-courtesy",
+      "group": "Rivalry tone",
+      "title": "Professional Courtesy",
+      "direction": "They behave like colleagues who happen to be competitors, with clear boundaries and shared standards. Keep the workplace or circuit norms intact even when the rivalry heats up."
+    },
+    {
+      "id": "rivalry-tone-08-sibling-bickering",
+      "group": "Rivalry tone",
+      "title": "Sibling Bickering",
+      "direction": "They argue like family: fast, unserious, occasionally accurate in ways that land too hard. Let the bickering cover real care without becoming sentimental."
+    },
+    {
+      "id": "rivalry-tone-09-quiet-obsession",
+      "group": "Rivalry tone",
+      "title": "Quiet Obsession",
+      "direction": "One tracks the other's results in a spreadsheet and would rather die than mention it. Reveal the tracking as a character fact, not as romance or pathology."
+    },
+    {
+      "id": "rivalry-tone-10-bounded-hostility",
+      "group": "Rivalry tone",
+      "title": "Bounded Hostility",
+      "direction": "They genuinely dislike each other and still keep every rule, every appointment and every courtesy of the sport. Let the dislike be real and the boundaries firmer than the dislike."
+    },
+    {
+      "id": "rivalry-tone-11-good-sportsmanship",
+      "group": "Rivalry tone",
+      "title": "Good Sportsmanship",
+      "direction": "They congratulate each other properly, mean it, and then go home and study the loss. Keep the good sportsmanship sincere and the disappointment private."
+    },
+    {
+      "id": "rivalry-tone-12-flirty-needling",
+      "group": "Rivalry tone",
+      "title": "Flirty Needling",
+      "direction": "The teasing has an edge of interest that neither pursues and neither rules out. Keep attraction possible, unwritten and never the price of competing."
+    },
+    {
+      "id": "rivalry-tone-13-mentorly-concern",
+      "group": "Rivalry tone",
+      "title": "Mentorly Concern",
+      "direction": "One keeps offering advice the other did not ask for and half resents needing. Let care and condescension be hard to separate."
+    },
+    {
+      "id": "rivalry-tone-14-chaotic-comedy",
+      "group": "Rivalry tone",
+      "title": "Chaotic Comedy",
+      "direction": "Every meeting turns into an escalating bit that bystanders mistake for an actual feud. Play the comedy straight and the competition seriously."
+    },
+    {
+      "id": "rivalry-tone-15-weary-familiarity",
+      "group": "Rivalry tone",
+      "title": "Weary Familiarity",
+      "direction": "They have done this so many times that the ritual is almost domestic and neither will admit it. Let routine carry the history that dialogue does not state."
+    },
+    {
+      "id": "rivalry-tone-16-cracking-politeness",
+      "group": "Rivalry tone",
+      "title": "Cracking Politeness",
+      "direction": "The manners hold for most of the conversation and fail at exactly one point. Open just before the crack and let the scene decide where it lands."
+    },
+    {
+      "id": "visibility-01-private-rivalry",
+      "group": "Visibility",
+      "title": "Private Rivalry",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. Keep the privacy intact and let it make the stakes stranger."
+    },
+    {
+      "id": "visibility-02-friend-group-joke",
+      "group": "Visibility",
+      "title": "Friend Group Joke",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. Use the group as chorus, not as referee."
+    },
+    {
+      "id": "visibility-03-community-famous",
+      "group": "Visibility",
+      "title": "Community Famous",
+      "direction": "Within a small scene their matches are the ones people plan around. Show the audience's expectations pressing on both of them."
+    },
+    {
+      "id": "visibility-04-workplace-metric",
+      "group": "Visibility",
+      "title": "Workplace Metric",
+      "direction": "The ranking is visible to managers and colleagues and affects actual decisions. Keep employment real and never dependent on romance."
+    },
+    {
+      "id": "visibility-05-school-ranking",
+      "group": "Visibility",
+      "title": "School Ranking",
+      "direction": "Both are adults on a course where the published ranking is read by everyone in the cohort. Let the institutional gaze do the pressure rather than personal malice."
+    },
+    {
+      "id": "visibility-06-public-leaderboard",
+      "group": "Visibility",
+      "title": "Public Leaderboard",
+      "direction": "The table is public, updated live, and strangers comment on it daily. Use the comment section as ambient noise that occasionally lands."
+    },
+    {
+      "id": "visibility-07-local-news-piece",
+      "group": "Visibility",
+      "title": "Local News Piece",
+      "direction": "A slow-news-week feature framed them as a rivalry and neither has recovered. Open on the follow-up interview neither wanted to give."
+    },
+    {
+      "id": "visibility-08-streamed-matches",
+      "group": "Visibility",
+      "title": "Streamed Matches",
+      "direction": "Their meetings draw an audience and the chat has opinions about both of them. Let performance for spectators complicate private competitive instinct."
+    },
+    {
+      "id": "visibility-09-convention-stage",
+      "group": "Visibility",
+      "title": "Convention Stage",
+      "direction": "The final happens in front of a crowd with a microphone and a schedule. Open backstage, where the crowd is audible through the wall."
+    },
+    {
+      "id": "visibility-10-family-knows",
+      "group": "Visibility",
+      "title": "Family Knows",
+      "direction": "Both families follow the results closely and have made the rivalry a dinner-table topic. Let family investment add pressure neither asked for."
+    },
+    {
+      "id": "visibility-11-anonymous-to-all",
+      "group": "Visibility",
+      "title": "Anonymous To All",
+      "direction": "They are known only by handles everywhere except in the one room where they meet. Keep the public record and the private knowledge deliberately separate."
+    },
+    {
+      "id": "visibility-12-viral-clip",
+      "group": "Visibility",
+      "title": "Viral Clip",
+      "direction": "One bad moment between them was filmed and is now the only thing strangers know about either. Open on the aftermath, with the clip still circulating."
+    },
+    {
+      "id": "visibility-13-small-town-gossip",
+      "group": "Visibility",
+      "title": "Small Town Gossip",
+      "direction": "In a town this size the rivalry is common property and everyone has a theory. Let speculation do more damage than either intends."
+    },
+    {
+      "id": "visibility-14-association-recognition",
+      "group": "Visibility",
+      "title": "Association Recognition",
+      "direction": "The governing body of their hobby has started to notice, which changes what a win means. Open on the season where rankings start to matter institutionally."
+    },
+    {
+      "id": "visibility-15-niche-forum",
+      "group": "Visibility",
+      "title": "Niche Forum",
+      "direction": "The rivalry lives in a forum thread that both read and neither posts in. Use the thread as an unreliable narrator of their own relationship."
+    },
+    {
+      "id": "visibility-16-spectators-pick-sides",
+      "group": "Visibility",
+      "title": "Spectators Pick Sides",
+      "direction": "The audience has divided into camps and both rivals find this faintly embarrassing. Let the camps misread the relationship in ways the characters must navigate."
+    },
+    {
+      "id": "what-each-does-better-01-better-preparation",
+      "group": "What each does better",
+      "title": "Better Preparation",
+      "direction": "One builds a plan for every contingency and the other improvises through the gaps in it. Make the planner's work visible and the improviser's instincts testable."
+    },
+    {
+      "id": "what-each-does-better-02-live-improvisation",
+      "group": "What each does better",
+      "title": "Live Improvisation",
+      "direction": "One performs best when everything goes wrong and the other needs the plan to hold. Open on a scene where something has already broken."
+    },
+    {
+      "id": "what-each-does-better-03-relentless-consistency",
+      "group": "What each does better",
+      "title": "Relentless Consistency",
+      "direction": "One never has an off day, and the other's ceiling is higher than the other's floor is low. Let reliability win matches and volatility win moments."
+    },
+    {
+      "id": "what-each-does-better-04-peak-performance",
+      "group": "What each does better",
+      "title": "Peak Performance",
+      "direction": "One can produce a career-best result on demand and cannot repeat it a week later. Use the gap between peak and average as the tactical problem."
+    },
+    {
+      "id": "what-each-does-better-05-reading-opponents",
+      "group": "What each does better",
+      "title": "Reading Opponents",
+      "direction": "One notices tells instantly and the other has spent years removing them. Play the information war rather than the physical one."
+    },
+    {
+      "id": "what-each-does-better-06-craft-quality",
+      "group": "What each does better",
+      "title": "Craft Quality",
+      "direction": "One's work is finer and the other's is bolder, and judges disagree about which matters. Let judging criteria become part of the contest."
+    },
+    {
+      "id": "what-each-does-better-07-long-game-endurance",
+      "group": "What each does better",
+      "title": "Long-Game Endurance",
+      "direction": "One gets stronger as the event goes long and the other needs it finished early. Use pacing and time as the visible pressure."
+    },
+    {
+      "id": "what-each-does-better-08-raw-speed",
+      "group": "What each does better",
+      "title": "Raw Speed",
+      "direction": "One is faster at everything and the other is more accurate, and neither can borrow the other's advantage. Make speed and precision cost each other."
+    },
+    {
+      "id": "what-each-does-better-09-show-presentation",
+      "group": "What each does better",
+      "title": "Show Presentation",
+      "direction": "One sells the performance and the other assumes the work speaks for itself. Let the audience's judgement diverge from the technical one."
+    },
+    {
+      "id": "what-each-does-better-10-scene-networking",
+      "group": "What each does better",
+      "title": "Scene Networking",
+      "direction": "One knows everyone in the scene and the other knows nobody and wins anyway. Keep social capital real without making it cheating."
+    },
+    {
+      "id": "what-each-does-better-11-fast-recovery",
+      "group": "What each does better",
+      "title": "Fast Recovery",
+      "direction": "One returns from a loss sharper and the other takes weeks to trust themselves again. Open the scene after a loss, not before one."
+    },
+    {
+      "id": "what-each-does-better-12-final-round-pressure",
+      "group": "What each does better",
+      "title": "Final-Round Pressure",
+      "direction": "One is calm in the final and shakes in the qualifier; the other is the reverse. Let the round structure expose both patterns."
+    },
+    {
+      "id": "what-each-does-better-13-willing-teaching",
+      "group": "What each does better",
+      "title": "Willing Teaching",
+      "direction": "One can explain the craft and the other can only do it, and students gravitate to the explainer. Use instruction as a status contest that is not the main contest."
+    },
+    {
+      "id": "what-each-does-better-14-restless-innovation",
+      "group": "What each does better",
+      "title": "Restless Innovation",
+      "direction": "One invents new approaches and the other perfects the existing ones until they are unbeatable. Let novelty and mastery trade wins across the season."
+    },
+    {
+      "id": "what-each-does-better-15-iron-discipline",
+      "group": "What each does better",
+      "title": "Iron Discipline",
+      "direction": "One keeps a rigid routine and the other breaks theirs constantly and still performs. Make routine a character fact rather than a virtue."
+    },
+    {
+      "id": "what-each-does-better-16-crowd-showmanship",
+      "group": "What each does better",
+      "title": "Crowd Showmanship",
+      "direction": "One competes for the room and the other competes for the score, and the room has a vote. Let the format decide which matters this time."
+    },
+    {
+      "id": "rules-of-engagement-01-no-sabotage",
+      "group": "Rules of engagement",
+      "title": "No Sabotage",
+      "direction": "They compete hard and neither would ever damage the other's equipment, entry or reputation. Keep the line explicit and keep testing it from the safe side."
+    },
+    {
+      "id": "rules-of-engagement-02-coffee-wagers",
+      "group": "Rules of engagement",
+      "title": "Coffee Wagers",
+      "direction": "The stakes are small, ritualised and absolutely non-negotiable. Use the ritual as the scene's clock."
+    },
+    {
+      "id": "rules-of-engagement-03-handicap-agreements",
+      "group": "Rules of engagement",
+      "title": "Handicap Agreements",
+      "direction": "They negotiate small advantages to keep the contest close, and the negotiation is its own fight. Let the haggling reveal what each privately believes about the gap."
+    },
+    {
+      "id": "rules-of-engagement-04-run-silence",
+      "group": "Rules of engagement",
+      "title": "Run Silence",
+      "direction": "There is an agreed quiet during attempts and both police it strictly. Open on a moment when one of them breaks it."
+    },
+    {
+      "id": "rules-of-engagement-05-footage-review",
+      "group": "Rules of engagement",
+      "title": "Footage Review",
+      "direction": "They exchange recordings and critique each other with a bluntness neither uses elsewhere. Make the notes technical, useful and quietly intimate."
+    },
+    {
+      "id": "rules-of-engagement-06-shared-resources",
+      "group": "Rules of engagement",
+      "title": "Shared Resources",
+      "direction": "They share equipment, contacts and practice space while keeping one private edge each. Let generosity and withholding coexist without either becoming betrayal."
+    },
+    {
+      "id": "rules-of-engagement-07-formal-challenges",
+      "group": "Rules of engagement",
+      "title": "Formal Challenges",
+      "direction": "Every match is issued in writing, with terms, and both find this hilarious and serious. Open on the delivery of a challenge."
+    },
+    {
+      "id": "rules-of-engagement-08-contact-limits",
+      "group": "Rules of engagement",
+      "title": "Contact Limits",
+      "direction": "They have agreed to compete and nothing else, and the agreement is starting to cost something. Let the rule be tested by circumstance rather than by desire."
+    },
+    {
+      "id": "rules-of-engagement-09-mandatory-debrief",
+      "group": "Rules of engagement",
+      "title": "Mandatory Debrief",
+      "direction": "Whoever wins, they talk afterwards, honestly, for as long as it takes. Use the debrief as the scene where the real relationship lives."
+    },
+    {
+      "id": "rules-of-engagement-10-silly-wagers",
+      "group": "Rules of engagement",
+      "title": "Silly Wagers",
+      "direction": "The bet is always absurd — a terrible trophy, a forfeit, a public apology in verse. Keep the stakes emotionally real despite the comedy."
+    },
+    {
+      "id": "rules-of-engagement-11-private-edge",
+      "group": "Rules of engagement",
+      "title": "Private Edge",
+      "direction": "Each keeps exactly one secret technique and both respect the keeping. Let the secret create suspense without becoming a betrayal."
+    },
+    {
+      "id": "rules-of-engagement-12-agreed-insults",
+      "group": "Rules of engagement",
+      "title": "Agreed Insults",
+      "direction": "They have calibrated how far the insults can go and the calibration occasionally fails. Open near the edge of the agreement."
+    },
+    {
+      "id": "rules-of-engagement-13-prep-privacy",
+      "group": "Rules of engagement",
+      "title": "Prep Privacy",
+      "direction": "One refuses to look at the other's preparation and the other thinks this is sentimental nonsense. Let the disagreement be about ethics, not about winning."
+    },
+    {
+      "id": "rules-of-engagement-14-public-scoreboard",
+      "group": "Rules of engagement",
+      "title": "Public Scoreboard",
+      "direction": "They keep the running tally where anyone can see it and update it themselves. Use the tally as a running joke with a real edge."
+    },
+    {
+      "id": "rules-of-engagement-15-private-scoreboard",
+      "group": "Rules of engagement",
+      "title": "Private Scoreboard",
+      "direction": "One keeps a meticulous private tally and the other claims not to keep one at all. Reveal both tallies in the same scene."
+    },
+    {
+      "id": "rules-of-engagement-16-crisis-ceasefire",
+      "group": "Rules of engagement",
+      "title": "Crisis Ceasefire",
+      "direction": "Everything stops when something real goes wrong, and resumes exactly where it left off. Open during or just after the ceasefire."
+    },
+    {
+      "id": "cooperation-history-01-never-cooperated",
+      "group": "Cooperation history",
+      "title": "Never Cooperated",
+      "direction": "They have competed for years and have never once been on the same side. Open on the first forced collaboration."
+    },
+    {
+      "id": "cooperation-history-02-one-off-team-up",
+      "group": "Cooperation history",
+      "title": "One-Off Team-Up",
+      "direction": "They teamed up once, won, and have never discussed it since. Let the unmentioned success sit under the current match."
+    },
+    {
+      "id": "cooperation-history-03-forced-doubles",
+      "group": "Cooperation history",
+      "title": "Forced Doubles",
+      "direction": "A doubles format or team assignment puts them together and neither can refuse. Open on the first practice, where methods collide immediately."
+    },
+    {
+      "id": "cooperation-history-04-shared-travel",
+      "group": "Cooperation history",
+      "title": "Shared Travel",
+      "direction": "They split transport to distant events because it is cheaper and neither will admit it is easier. Use the car or train as a confined, honest space."
+    },
+    {
+      "id": "cooperation-history-05-injury-help",
+      "group": "Cooperation history",
+      "title": "Injury Help",
+      "direction": "One helped the other through an injury that would have ended their season. Let the debt be awkward and unspoken rather than tender."
+    },
+    {
+      "id": "cooperation-history-06-studied-together",
+      "group": "Cooperation history",
+      "title": "Studied Together",
+      "direction": "They prepared for the same qualification in the same room and both passed. Let shared study complicate the next head-to-head."
+    },
+    {
+      "id": "cooperation-history-07-shared-panel",
+      "group": "Cooperation history",
+      "title": "Shared Panel",
+      "direction": "They presented together at an event and the audience assumed they were friends. Open on the assumption being tested."
+    },
+    {
+      "id": "cooperation-history-08-shift-cover",
+      "group": "Cooperation history",
+      "title": "Shift Cover",
+      "direction": "One covered for the other at work or at the venue, and the favour is now leverage. Keep the leverage small and persistent."
+    },
+    {
+      "id": "cooperation-history-09-shared-booth",
+      "group": "Cooperation history",
+      "title": "Shared Booth",
+      "direction": "They shared a table at a convention and split the takings evenly while competing for the same customers. Let commerce and rivalry occupy one table."
+    },
+    {
+      "id": "cooperation-history-10-joint-build",
+      "group": "Cooperation history",
+      "title": "Joint Build",
+      "direction": "They built something useful together, and both still use it daily. Use the artifact as evidence of a relationship neither narrates."
+    },
+    {
+      "id": "cooperation-history-11-refereed-together",
+      "group": "Cooperation history",
+      "title": "Refereed Together",
+      "direction": "They officiate the same league and must be neutral about the thing they care most about. Open on a decision one of them thinks was wrong."
+    },
+    {
+      "id": "cooperation-history-12-wedding-truce",
+      "group": "Cooperation history",
+      "title": "Wedding Truce",
+      "direction": "A mutual friend's wedding put them at the same table and the truce held for a whole weekend. Let the truce expire in the car park."
+    },
+    {
+      "id": "cooperation-history-13-rule-protest",
+      "group": "Cooperation history",
+      "title": "Rule Protest",
+      "direction": "They jointly campaigned against a rule change that hurt them both and won. Show the alliance surviving the victory."
+    },
+    {
+      "id": "cooperation-history-14-con-staffing",
+      "group": "Cooperation history",
+      "title": "Con Staffing",
+      "direction": "They worked the same convention as staff and barely competed for three days. Open on the first day back to normal."
+    },
+    {
+      "id": "cooperation-history-15-lent-gear",
+      "group": "Cooperation history",
+      "title": "Lent Gear",
+      "direction": "One lent equipment before a final and the other still has it. Use the unreturned object as the scene's excuse."
+    },
+    {
+      "id": "cooperation-history-16-disaster-response",
+      "group": "Cooperation history",
+      "title": "Disaster Response",
+      "direction": "A real crisis in their community put them on the same side for a week. Let the memory be serious and the current rivalry unchanged."
+    },
+    {
+      "id": "aftermath-of-a-result-01-immediate-rematch",
+      "group": "Aftermath of a result",
+      "title": "Immediate Rematch",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. Open on the request and the winner's reaction."
+    },
+    {
+      "id": "aftermath-of-a-result-02-silent-week",
+      "group": "Aftermath of a result",
+      "title": "Silent Week",
+      "direction": "Neither messages for seven days and both notice the silence precisely. Open on the eighth day."
+    },
+    {
+      "id": "aftermath-of-a-result-03-obsessive-over-analysis",
+      "group": "Aftermath of a result",
+      "title": "Obsessive Over-Analysis",
+      "direction": "The match gets reconstructed move by move until it stops being fun. Let the analysis expose a truth neither wanted in the open."
+    },
+    {
+      "id": "aftermath-of-a-result-04-celebratory-drink",
+      "group": "Aftermath of a result",
+      "title": "Celebratory Drink",
+      "direction": "The winner invites the loser out and the loser says yes, which surprises both. Keep the celebration non-graphic and slightly uncomfortable."
+    },
+    {
+      "id": "aftermath-of-a-result-05-bad-consolation",
+      "group": "Aftermath of a result",
+      "title": "Bad Consolation",
+      "direction": "One offers comfort that lands as condescension and cannot work out why. Open right after the result."
+    },
+    {
+      "id": "aftermath-of-a-result-06-public-grace",
+      "group": "Aftermath of a result",
+      "title": "Public Grace",
+      "direction": "The handshake is perfect and the car park afterwards is not. Show both versions in the same scene sequence."
+    },
+    {
+      "id": "aftermath-of-a-result-07-new-training-block",
+      "group": "Aftermath of a result",
+      "title": "New Training Block",
+      "direction": "The loss restructures the next three months and the winner hears about it secondhand. Use secondhand knowledge as the tension."
+    },
+    {
+      "id": "aftermath-of-a-result-08-offer-to-train",
+      "group": "Aftermath of a result",
+      "title": "Offer To Train",
+      "direction": "One offers to help the other fix the exact weakness that just cost them, and the offer is genuine. Let the refusal or acceptance stay open."
+    },
+    {
+      "id": "aftermath-of-a-result-09-screenshot-culture",
+      "group": "Aftermath of a result",
+      "title": "Screenshot Culture",
+      "direction": "The result gets posted, liked and quoted back at both of them for weeks. Open on the post rather than the match."
+    },
+    {
+      "id": "aftermath-of-a-result-10-joke-too-far",
+      "group": "Aftermath of a result",
+      "title": "Joke Too Far",
+      "direction": "The teasing after the loss crosses a line that was never written down. Open on the moment it lands."
+    },
+    {
+      "id": "aftermath-of-a-result-11-honest-debrief",
+      "group": "Aftermath of a result",
+      "title": "Honest Debrief",
+      "direction": "They sit down and say true things about each other's weaknesses without cruelty. Let the honesty be the scene's event."
+    },
+    {
+      "id": "aftermath-of-a-result-12-careful-avoidance",
+      "group": "Aftermath of a result",
+      "title": "Careful Avoidance",
+      "direction": "One starts scheduling around the other's events to avoid the next meeting. Open on the discovery of the scheduling."
+    },
+    {
+      "id": "aftermath-of-a-result-13-category-change",
+      "group": "Aftermath of a result",
+      "title": "Category Change",
+      "direction": "One moves up or across to a new category and the rivalry has to be renegotiated. Let the change be a choice with consequences, not an escape."
+    },
+    {
+      "id": "aftermath-of-a-result-14-retirement-talk",
+      "group": "Aftermath of a result",
+      "title": "Retirement Talk",
+      "direction": "One mentions stopping, and the other realises what the competition has been holding up. Open on the mention, with no decision pre-written."
+    },
+    {
+      "id": "aftermath-of-a-result-15-new-challenger",
+      "group": "Aftermath of a result",
+      "title": "New Challenger",
+      "direction": "A third competitor beats them both in the same week and the old rivalry looks different. Use the outsider to expose what they actually mean to each other."
+    },
+    {
+      "id": "aftermath-of-a-result-16-unmentioned-result",
+      "group": "Aftermath of a result",
+      "title": "Unmentioned Result",
+      "direction": "The result is never discussed and everything afterwards is shaped by it. Let the unspoken do the work in every line."
+    },
+    {
+      "id": "offline-knowledge-01-nothing-known",
+      "group": "Offline knowledge",
+      "title": "Nothing Known",
+      "direction": "Neither knows the other's name, age, job, city or face, only the record and the handle. Keep every identity detail genuinely unestablished until the scene reveals it."
+    },
+    {
+      "id": "offline-knowledge-02-name-only",
+      "group": "Offline knowledge",
+      "title": "Name Only",
+      "direction": "They know one name each and have never needed more. Let the missing surname stay missing."
+    },
+    {
+      "id": "offline-knowledge-03-voice-only",
+      "group": "Offline knowledge",
+      "title": "Voice Only",
+      "direction": "Years of voice chat, no video, and each has a mental image the other has never confirmed. Open on the first meeting and the correction of the image."
+    },
+    {
+      "id": "offline-knowledge-04-met-once",
+      "group": "Offline knowledge",
+      "title": "Met Once",
+      "direction": "They met briefly at an event, said almost nothing, and have competed remotely ever since. Let one remember more of that meeting than the other."
+    },
+    {
+      "id": "offline-knowledge-05-job-knowledge",
+      "group": "Offline knowledge",
+      "title": "Job Knowledge",
+      "direction": "They know what the other does for a living and nothing about the life around it. Use work knowledge as false intimacy."
+    },
+    {
+      "id": "offline-knowledge-06-family-knowledge",
+      "group": "Offline knowledge",
+      "title": "Family Knowledge",
+      "direction": "One has met the other's family and the other has met nobody. Let the asymmetry create obligation."
+    },
+    {
+      "id": "offline-knowledge-07-uneven-knowledge",
+      "group": "Offline knowledge",
+      "title": "Uneven Knowledge",
+      "direction": "One has looked the other up and the other has not, and the knowledge is a debt. Open when the imbalance surfaces."
+    },
+    {
+      "id": "offline-knowledge-08-gender-concealed",
+      "group": "Offline knowledge",
+      "title": "Gender Concealed",
+      "direction": "{{char}} has never confirmed her gender in the competitive space and has reasons she may or may not explain. Do not assume what {{user}} knows or how he reacts."
+    },
+    {
+      "id": "offline-knowledge-09-age-gap",
+      "group": "Offline knowledge",
+      "title": "Age Gap",
+      "direction": "The gap is larger than either assumed and it changes the register of the rivalry. Let both be adults and let the surprise be ordinary."
+    },
+    {
+      "id": "offline-knowledge-10-wrong-assumptions",
+      "group": "Offline knowledge",
+      "title": "Wrong Assumptions",
+      "direction": "Each built a confident picture of the other that turns out to be almost entirely incorrect. Open on the collision of two wrong pictures."
+    },
+    {
+      "id": "offline-knowledge-11-locally-famous",
+      "group": "Offline knowledge",
+      "title": "Locally Famous",
+      "direction": "One is recognised around town for the craft and the other had no idea. Use recognition as a social fact, not a status prize."
+    },
+    {
+      "id": "offline-knowledge-12-mutual-acquaintance",
+      "group": "Offline knowledge",
+      "title": "Mutual Acquaintance",
+      "direction": "They discover a shared friend and immediately disagree about what that friend is like. Let the third party stay offstage."
+    },
+    {
+      "id": "offline-knowledge-13-same-city",
+      "group": "Offline knowledge",
+      "title": "Same City",
+      "direction": "They have lived twenty minutes apart for years and never arranged to meet. Open on the discovery, with the choice to meet left open."
+    },
+    {
+      "id": "offline-knowledge-14-long-distance",
+      "group": "Offline knowledge",
+      "title": "Long Distance",
+      "direction": "The rivalry is entirely remote and the first meeting requires travel. Open on the trip or the arrival."
+    },
+    {
+      "id": "offline-knowledge-15-face-only",
+      "group": "Offline knowledge",
+      "title": "Face Only",
+      "direction": "One has seen a photograph and the other has seen nothing at all. Let the asymmetry of recognition drive the first scene."
+    },
+    {
+      "id": "offline-knowledge-16-known-names",
+      "group": "Offline knowledge",
+      "title": "Known Names",
+      "direction": "They know each other's real names from admin forms and have never connected them to a person. Open on the moment the name is said aloud."
+    },
+    {
+      "id": "combinations-001-ranked-leaderboard--quiet-respect",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Quiet Respect",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. They speak about each other the way people speak about weather that has never let them down. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-002-ranked-leaderboard--deadpan-teasing",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Deadpan Teasing",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. The insults are dry, specific and delivered without expression, and both find them funny. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-003-ranked-leaderboard--loud-trash-talk",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Loud Trash-Talk",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. They perform theatrical contempt for whoever is watching and drop it the moment the audience leaves. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-004-ranked-leaderboard--icy-politeness",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Icy Politeness",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. Every sentence is correct, formal and loaded, and the tension is in what is not said. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-005-ranked-leaderboard--mutual-delight",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Mutual Delight",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. They are visibly happier when the other shows up, which makes losing to them a strange kind of good news. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-006-ranked-leaderboard--grudging-respect",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Grudging Respect",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. Neither will compliment the other directly, and both do it constantly to third parties. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-007-ranked-leaderboard--professional-courtesy",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Professional Courtesy",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. They behave like colleagues who happen to be competitors, with clear boundaries and shared standards. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-008-ranked-leaderboard--sibling-bickering",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Sibling Bickering",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. They argue like family: fast, unserious, occasionally accurate in ways that land too hard. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-009-ranked-leaderboard--quiet-obsession",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Quiet Obsession",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. One tracks the other's results in a spreadsheet and would rather die than mention it. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-010-ranked-leaderboard--bounded-hostility",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Bounded Hostility",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. They genuinely dislike each other and still keep every rule, every appointment and every courtesy of the sport. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-011-ranked-leaderboard--good-sportsmanship",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Good Sportsmanship",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. They congratulate each other properly, mean it, and then go home and study the loss. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-012-ranked-leaderboard--flirty-needling",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Flirty Needling",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. The teasing has an edge of interest that neither pursues and neither rules out. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-013-ranked-leaderboard--mentorly-concern",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Mentorly Concern",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. One keeps offering advice the other did not ask for and half resents needing. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-014-ranked-leaderboard--chaotic-comedy",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Chaotic Comedy",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. Every meeting turns into an escalating bit that bystanders mistake for an actual feud. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-015-ranked-leaderboard--weary-familiarity",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Weary Familiarity",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. They have done this so many times that the ritual is almost domestic and neither will admit it. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-016-ranked-leaderboard--cracking-politeness",
+      "group": "Combinations",
+      "title": "Ranked Leaderboard: Cracking Politeness",
+      "direction": "{{char}} and {{user}} trade first and second place on a ranked ladder neither of them can leave alone, and both check the table before breakfast. The manners hold for most of the conversation and fail at exactly one point. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-017-exam-rankings--quiet-respect",
+      "group": "Combinations",
+      "title": "Exam Rankings: Quiet Respect",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. They speak about each other the way people speak about weather that has never let them down. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-018-exam-rankings--deadpan-teasing",
+      "group": "Combinations",
+      "title": "Exam Rankings: Deadpan Teasing",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. The insults are dry, specific and delivered without expression, and both find them funny. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-019-exam-rankings--loud-trash-talk",
+      "group": "Combinations",
+      "title": "Exam Rankings: Loud Trash-Talk",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. They perform theatrical contempt for whoever is watching and drop it the moment the audience leaves. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-020-exam-rankings--icy-politeness",
+      "group": "Combinations",
+      "title": "Exam Rankings: Icy Politeness",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. Every sentence is correct, formal and loaded, and the tension is in what is not said. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-021-exam-rankings--mutual-delight",
+      "group": "Combinations",
+      "title": "Exam Rankings: Mutual Delight",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. They are visibly happier when the other shows up, which makes losing to them a strange kind of good news. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-022-exam-rankings--grudging-respect",
+      "group": "Combinations",
+      "title": "Exam Rankings: Grudging Respect",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. Neither will compliment the other directly, and both do it constantly to third parties. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-023-exam-rankings--professional-courtesy",
+      "group": "Combinations",
+      "title": "Exam Rankings: Professional Courtesy",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. They behave like colleagues who happen to be competitors, with clear boundaries and shared standards. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-024-exam-rankings--sibling-bickering",
+      "group": "Combinations",
+      "title": "Exam Rankings: Sibling Bickering",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. They argue like family: fast, unserious, occasionally accurate in ways that land too hard. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-025-exam-rankings--quiet-obsession",
+      "group": "Combinations",
+      "title": "Exam Rankings: Quiet Obsession",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. One tracks the other's results in a spreadsheet and would rather die than mention it. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-026-exam-rankings--bounded-hostility",
+      "group": "Combinations",
+      "title": "Exam Rankings: Bounded Hostility",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. They genuinely dislike each other and still keep every rule, every appointment and every courtesy of the sport. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-027-exam-rankings--good-sportsmanship",
+      "group": "Combinations",
+      "title": "Exam Rankings: Good Sportsmanship",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. They congratulate each other properly, mean it, and then go home and study the loss. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-028-exam-rankings--flirty-needling",
+      "group": "Combinations",
+      "title": "Exam Rankings: Flirty Needling",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. The teasing has an edge of interest that neither pursues and neither rules out. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-029-exam-rankings--mentorly-concern",
+      "group": "Combinations",
+      "title": "Exam Rankings: Mentorly Concern",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. One keeps offering advice the other did not ask for and half resents needing. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-030-exam-rankings--chaotic-comedy",
+      "group": "Combinations",
+      "title": "Exam Rankings: Chaotic Comedy",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. Every meeting turns into an escalating bit that bystanders mistake for an actual feud. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-031-exam-rankings--weary-familiarity",
+      "group": "Combinations",
+      "title": "Exam Rankings: Weary Familiarity",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. They have done this so many times that the ritual is almost domestic and neither will admit it. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-032-exam-rankings--cracking-politeness",
+      "group": "Combinations",
+      "title": "Exam Rankings: Cracking Politeness",
+      "direction": "They are in the same university cohort and the termly results sheet decides who gets to be insufferable for a month. The manners hold for most of the conversation and fail at exactly one point. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-033-sales-quota--quiet-respect",
+      "group": "Combinations",
+      "title": "Sales Quota: Quiet Respect",
+      "direction": "Both sell for the same company and the monthly board ranks them one above the other by a margin that keeps shrinking. They speak about each other the way people speak about weather that has never let them down. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-034-sales-quota--deadpan-teasing",
+      "group": "Combinations",
+      "title": "Sales Quota: Deadpan Teasing",
+      "direction": "Both sell for the same company and the monthly board ranks them one above the other by a margin that keeps shrinking. The insults are dry, specific and delivered without expression, and both find them funny. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-035-sales-quota--loud-trash-talk",
+      "group": "Combinations",
+      "title": "Sales Quota: Loud Trash-Talk",
+      "direction": "Both sell for the same company and the monthly board ranks them one above the other by a margin that keeps shrinking. They perform theatrical contempt for whoever is watching and drop it the moment the audience leaves. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-036-sales-quota--icy-politeness",
+      "group": "Combinations",
+      "title": "Sales Quota: Icy Politeness",
+      "direction": "Both sell for the same company and the monthly board ranks them one above the other by a margin that keeps shrinking. Every sentence is correct, formal and loaded, and the tension is in what is not said. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-037-near-equals--no-sabotage",
+      "group": "Combinations",
+      "title": "Near Equals: No Sabotage",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. They compete hard and neither would ever damage the other's equipment, entry or reputation. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-038-near-equals--coffee-wagers",
+      "group": "Combinations",
+      "title": "Near Equals: Coffee Wagers",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. The stakes are small, ritualised and absolutely non-negotiable. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-039-near-equals--handicap-agreements",
+      "group": "Combinations",
+      "title": "Near Equals: Handicap Agreements",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. They negotiate small advantages to keep the contest close, and the negotiation is its own fight. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-040-near-equals--run-silence",
+      "group": "Combinations",
+      "title": "Near Equals: Run Silence",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. There is an agreed quiet during attempts and both police it strictly. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-041-near-equals--footage-review",
+      "group": "Combinations",
+      "title": "Near Equals: Footage Review",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. They exchange recordings and critique each other with a bluntness neither uses elsewhere. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-042-near-equals--shared-resources",
+      "group": "Combinations",
+      "title": "Near Equals: Shared Resources",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. They share equipment, contacts and practice space while keeping one private edge each. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-043-near-equals--formal-challenges",
+      "group": "Combinations",
+      "title": "Near Equals: Formal Challenges",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. Every match is issued in writing, with terms, and both find this hilarious and serious. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-044-near-equals--contact-limits",
+      "group": "Combinations",
+      "title": "Near Equals: Contact Limits",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. They have agreed to compete and nothing else, and the agreement is starting to cost something. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-045-near-equals--mandatory-debrief",
+      "group": "Combinations",
+      "title": "Near Equals: Mandatory Debrief",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. Whoever wins, they talk afterwards, honestly, for as long as it takes. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-046-near-equals--silly-wagers",
+      "group": "Combinations",
+      "title": "Near Equals: Silly Wagers",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. The bet is always absurd — a terrible trophy, a forfeit, a public apology in verse. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-047-near-equals--private-edge",
+      "group": "Combinations",
+      "title": "Near Equals: Private Edge",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. Each keeps exactly one secret technique and both respect the keeping. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-048-near-equals--agreed-insults",
+      "group": "Combinations",
+      "title": "Near Equals: Agreed Insults",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. They have calibrated how far the insults can go and the calibration occasionally fails. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-049-near-equals--prep-privacy",
+      "group": "Combinations",
+      "title": "Near Equals: Prep Privacy",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. One refuses to look at the other's preparation and the other thinks this is sentimental nonsense. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-050-near-equals--public-scoreboard",
+      "group": "Combinations",
+      "title": "Near Equals: Public Scoreboard",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. They keep the running tally where anyone can see it and update it themselves. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-051-near-equals--private-scoreboard",
+      "group": "Combinations",
+      "title": "Near Equals: Private Scoreboard",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. One keeps a meticulous private tally and the other claims not to keep one at all. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-052-near-equals--crisis-ceasefire",
+      "group": "Combinations",
+      "title": "Near Equals: Crisis Ceasefire",
+      "direction": "Neither can establish a lead longer than two results, and every match feels decided by a detail. Everything stops when something real goes wrong, and resumes exactly where it left off. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-053-one-slightly-ahead--no-sabotage",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: No Sabotage",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. They compete hard and neither would ever damage the other's equipment, entry or reputation. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-054-one-slightly-ahead--coffee-wagers",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Coffee Wagers",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. The stakes are small, ritualised and absolutely non-negotiable. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-055-one-slightly-ahead--handicap-agreements",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Handicap Agreements",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. They negotiate small advantages to keep the contest close, and the negotiation is its own fight. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-056-one-slightly-ahead--run-silence",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Run Silence",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. There is an agreed quiet during attempts and both police it strictly. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-057-one-slightly-ahead--footage-review",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Footage Review",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. They exchange recordings and critique each other with a bluntness neither uses elsewhere. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-058-one-slightly-ahead--shared-resources",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Shared Resources",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. They share equipment, contacts and practice space while keeping one private edge each. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-059-one-slightly-ahead--formal-challenges",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Formal Challenges",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. Every match is issued in writing, with terms, and both find this hilarious and serious. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-060-one-slightly-ahead--contact-limits",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Contact Limits",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. They have agreed to compete and nothing else, and the agreement is starting to cost something. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-061-one-slightly-ahead--mandatory-debrief",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Mandatory Debrief",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. Whoever wins, they talk afterwards, honestly, for as long as it takes. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-062-one-slightly-ahead--silly-wagers",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Silly Wagers",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. The bet is always absurd — a terrible trophy, a forfeit, a public apology in verse. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-063-one-slightly-ahead--private-edge",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Private Edge",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. Each keeps exactly one secret technique and both respect the keeping. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-064-one-slightly-ahead--agreed-insults",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Agreed Insults",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. They have calibrated how far the insults can go and the calibration occasionally fails. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-065-one-slightly-ahead--prep-privacy",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Prep Privacy",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. One refuses to look at the other's preparation and the other thinks this is sentimental nonsense. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-066-one-slightly-ahead--public-scoreboard",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Public Scoreboard",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. They keep the running tally where anyone can see it and update it themselves. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-067-one-slightly-ahead--private-scoreboard",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Private Scoreboard",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. One keeps a meticulous private tally and the other claims not to keep one at all. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-068-one-slightly-ahead--crisis-ceasefire",
+      "group": "Combinations",
+      "title": "One Slightly Ahead: Crisis Ceasefire",
+      "direction": "{{char}} is a fraction better on paper and {{user}} knows exactly why, which makes the gap more interesting than a tie. Everything stops when something real goes wrong, and resumes exactly where it left off. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-069-alternating-dominance--no-sabotage",
+      "group": "Combinations",
+      "title": "Alternating Dominance: No Sabotage",
+      "direction": "They are unbeatable in alternating conditions, so the venue or format decides the favourite before anyone starts. They compete hard and neither would ever damage the other's equipment, entry or reputation. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-070-alternating-dominance--coffee-wagers",
+      "group": "Combinations",
+      "title": "Alternating Dominance: Coffee Wagers",
+      "direction": "They are unbeatable in alternating conditions, so the venue or format decides the favourite before anyone starts. The stakes are small, ritualised and absolutely non-negotiable. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-071-alternating-dominance--handicap-agreements",
+      "group": "Combinations",
+      "title": "Alternating Dominance: Handicap Agreements",
+      "direction": "They are unbeatable in alternating conditions, so the venue or format decides the favourite before anyone starts. They negotiate small advantages to keep the contest close, and the negotiation is its own fight. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-072-alternating-dominance--run-silence",
+      "group": "Combinations",
+      "title": "Alternating Dominance: Run Silence",
+      "direction": "They are unbeatable in alternating conditions, so the venue or format decides the favourite before anyone starts. There is an agreed quiet during attempts and both police it strictly. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-073-immediate-rematch--nothing-known",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Nothing Known",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. Neither knows the other's name, age, job, city or face, only the record and the handle. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-074-immediate-rematch--name-only",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Name Only",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. They know one name each and have never needed more. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-075-immediate-rematch--voice-only",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Voice Only",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. Years of voice chat, no video, and each has a mental image the other has never confirmed. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-076-immediate-rematch--met-once",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Met Once",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. They met briefly at an event, said almost nothing, and have competed remotely ever since. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-077-immediate-rematch--job-knowledge",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Job Knowledge",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. They know what the other does for a living and nothing about the life around it. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-078-immediate-rematch--family-knowledge",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Family Knowledge",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. One has met the other's family and the other has met nobody. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-079-immediate-rematch--uneven-knowledge",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Uneven Knowledge",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. One has looked the other up and the other has not, and the knowledge is a debt. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-080-immediate-rematch--gender-concealed",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Gender Concealed",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. {{char}} has never confirmed her gender in the competitive space and has reasons she may or may not explain. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-081-immediate-rematch--age-gap",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Age Gap",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. The gap is larger than either assumed and it changes the register of the rivalry. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-082-immediate-rematch--wrong-assumptions",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Wrong Assumptions",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. Each built a confident picture of the other that turns out to be almost entirely incorrect. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-083-immediate-rematch--locally-famous",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Locally Famous",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. One is recognised around town for the craft and the other had no idea. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-084-immediate-rematch--mutual-acquaintance",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Mutual Acquaintance",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. They discover a shared friend and immediately disagree about what that friend is like. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-085-immediate-rematch--same-city",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Same City",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. They have lived twenty minutes apart for years and never arranged to meet. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-086-immediate-rematch--long-distance",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Long Distance",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. The rivalry is entirely remote and the first meeting requires travel. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-087-immediate-rematch--face-only",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Face Only",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. One has seen a photograph and the other has seen nothing at all. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-088-immediate-rematch--known-names",
+      "group": "Combinations",
+      "title": "Immediate Rematch: Known Names",
+      "direction": "The loser asks for another attempt before the equipment is even packed away. They know each other's real names from admin forms and have never connected them to a person. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-089-silent-week--nothing-known",
+      "group": "Combinations",
+      "title": "Silent Week: Nothing Known",
+      "direction": "Neither messages for seven days and both notice the silence precisely. Neither knows the other's name, age, job, city or face, only the record and the handle. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-090-silent-week--name-only",
+      "group": "Combinations",
+      "title": "Silent Week: Name Only",
+      "direction": "Neither messages for seven days and both notice the silence precisely. They know one name each and have never needed more. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-091-silent-week--voice-only",
+      "group": "Combinations",
+      "title": "Silent Week: Voice Only",
+      "direction": "Neither messages for seven days and both notice the silence precisely. Years of voice chat, no video, and each has a mental image the other has never confirmed. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-092-silent-week--met-once",
+      "group": "Combinations",
+      "title": "Silent Week: Met Once",
+      "direction": "Neither messages for seven days and both notice the silence precisely. They met briefly at an event, said almost nothing, and have competed remotely ever since. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-093-silent-week--job-knowledge",
+      "group": "Combinations",
+      "title": "Silent Week: Job Knowledge",
+      "direction": "Neither messages for seven days and both notice the silence precisely. They know what the other does for a living and nothing about the life around it. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-094-silent-week--family-knowledge",
+      "group": "Combinations",
+      "title": "Silent Week: Family Knowledge",
+      "direction": "Neither messages for seven days and both notice the silence precisely. One has met the other's family and the other has met nobody. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-095-silent-week--uneven-knowledge",
+      "group": "Combinations",
+      "title": "Silent Week: Uneven Knowledge",
+      "direction": "Neither messages for seven days and both notice the silence precisely. One has looked the other up and the other has not, and the knowledge is a debt. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-096-silent-week--gender-concealed",
+      "group": "Combinations",
+      "title": "Silent Week: Gender Concealed",
+      "direction": "Neither messages for seven days and both notice the silence precisely. {{char}} has never confirmed her gender in the competitive space and has reasons she may or may not explain. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-097-silent-week--age-gap",
+      "group": "Combinations",
+      "title": "Silent Week: Age Gap",
+      "direction": "Neither messages for seven days and both notice the silence precisely. The gap is larger than either assumed and it changes the register of the rivalry. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-098-silent-week--wrong-assumptions",
+      "group": "Combinations",
+      "title": "Silent Week: Wrong Assumptions",
+      "direction": "Neither messages for seven days and both notice the silence precisely. Each built a confident picture of the other that turns out to be almost entirely incorrect. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-099-silent-week--locally-famous",
+      "group": "Combinations",
+      "title": "Silent Week: Locally Famous",
+      "direction": "Neither messages for seven days and both notice the silence precisely. One is recognised around town for the craft and the other had no idea. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-100-silent-week--mutual-acquaintance",
+      "group": "Combinations",
+      "title": "Silent Week: Mutual Acquaintance",
+      "direction": "Neither messages for seven days and both notice the silence precisely. They discover a shared friend and immediately disagree about what that friend is like. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-101-silent-week--same-city",
+      "group": "Combinations",
+      "title": "Silent Week: Same City",
+      "direction": "Neither messages for seven days and both notice the silence precisely. They have lived twenty minutes apart for years and never arranged to meet. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-102-silent-week--long-distance",
+      "group": "Combinations",
+      "title": "Silent Week: Long Distance",
+      "direction": "Neither messages for seven days and both notice the silence precisely. The rivalry is entirely remote and the first meeting requires travel. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-103-silent-week--face-only",
+      "group": "Combinations",
+      "title": "Silent Week: Face Only",
+      "direction": "Neither messages for seven days and both notice the silence precisely. One has seen a photograph and the other has seen nothing at all. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-104-silent-week--known-names",
+      "group": "Combinations",
+      "title": "Silent Week: Known Names",
+      "direction": "Neither messages for seven days and both notice the silence precisely. They know each other's real names from admin forms and have never connected them to a person. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-105-obsessive-over-analysis--nothing-known",
+      "group": "Combinations",
+      "title": "Obsessive Over-Analysis: Nothing Known",
+      "direction": "The match gets reconstructed move by move until it stops being fun. Neither knows the other's name, age, job, city or face, only the record and the handle. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-106-obsessive-over-analysis--name-only",
+      "group": "Combinations",
+      "title": "Obsessive Over-Analysis: Name Only",
+      "direction": "The match gets reconstructed move by move until it stops being fun. They know one name each and have never needed more. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-107-obsessive-over-analysis--voice-only",
+      "group": "Combinations",
+      "title": "Obsessive Over-Analysis: Voice Only",
+      "direction": "The match gets reconstructed move by move until it stops being fun. Years of voice chat, no video, and each has a mental image the other has never confirmed. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-108-obsessive-over-analysis--met-once",
+      "group": "Combinations",
+      "title": "Obsessive Over-Analysis: Met Once",
+      "direction": "The match gets reconstructed move by move until it stops being fun. They met briefly at an event, said almost nothing, and have competed remotely ever since. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-109-first-event-strangers--never-cooperated",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Never Cooperated",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. They have competed for years and have never once been on the same side. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-110-first-event-strangers--one-off-team-up",
+      "group": "Combinations",
+      "title": "First-Event Strangers: One-Off Team-Up",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. They teamed up once, won, and have never discussed it since. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-111-first-event-strangers--forced-doubles",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Forced Doubles",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. A doubles format or team assignment puts them together and neither can refuse. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-112-first-event-strangers--shared-travel",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Shared Travel",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. They split transport to distant events because it is cheaper and neither will admit it is easier. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-113-first-event-strangers--injury-help",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Injury Help",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. One helped the other through an injury that would have ended their season. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-114-first-event-strangers--studied-together",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Studied Together",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. They prepared for the same qualification in the same room and both passed. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-115-first-event-strangers--shared-panel",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Shared Panel",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. They presented together at an event and the audience assumed they were friends. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-116-first-event-strangers--shift-cover",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Shift Cover",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. One covered for the other at work or at the venue, and the favour is now leverage. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-117-first-event-strangers--shared-booth",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Shared Booth",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. They shared a table at a convention and split the takings evenly while competing for the same customers. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-118-first-event-strangers--joint-build",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Joint Build",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. They built something useful together, and both still use it daily. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-119-first-event-strangers--refereed-together",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Refereed Together",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. They officiate the same league and must be neutral about the thing they care most about. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-120-first-event-strangers--wedding-truce",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Wedding Truce",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. A mutual friend's wedding put them at the same table and the truce held for a whole weekend. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-121-first-event-strangers--rule-protest",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Rule Protest",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. They jointly campaigned against a rule change that hurt them both and won. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-122-first-event-strangers--con-staffing",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Con Staffing",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. They worked the same convention as staff and barely competed for three days. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-123-first-event-strangers--lent-gear",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Lent Gear",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. One lent equipment before a final and the other still has it. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-124-first-event-strangers--disaster-response",
+      "group": "Combinations",
+      "title": "First-Event Strangers: Disaster Response",
+      "direction": "They met across a table at a single event, immediately understood each other as obstacles and never exchanged real names. A real crisis in their community put them on the same side for a week. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-125-old-classmates--never-cooperated",
+      "group": "Combinations",
+      "title": "Old Classmates: Never Cooperated",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. They have competed for years and have never once been on the same side. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-126-old-classmates--one-off-team-up",
+      "group": "Combinations",
+      "title": "Old Classmates: One-Off Team-Up",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. They teamed up once, won, and have never discussed it since. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-127-old-classmates--forced-doubles",
+      "group": "Combinations",
+      "title": "Old Classmates: Forced Doubles",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. A doubles format or team assignment puts them together and neither can refuse. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-128-old-classmates--shared-travel",
+      "group": "Combinations",
+      "title": "Old Classmates: Shared Travel",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. They split transport to distant events because it is cheaper and neither will admit it is easier. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-129-old-classmates--injury-help",
+      "group": "Combinations",
+      "title": "Old Classmates: Injury Help",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. One helped the other through an injury that would have ended their season. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-130-old-classmates--studied-together",
+      "group": "Combinations",
+      "title": "Old Classmates: Studied Together",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. They prepared for the same qualification in the same room and both passed. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-131-old-classmates--shared-panel",
+      "group": "Combinations",
+      "title": "Old Classmates: Shared Panel",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. They presented together at an event and the audience assumed they were friends. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-132-old-classmates--shift-cover",
+      "group": "Combinations",
+      "title": "Old Classmates: Shift Cover",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. One covered for the other at work or at the venue, and the favour is now leverage. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-133-old-classmates--shared-booth",
+      "group": "Combinations",
+      "title": "Old Classmates: Shared Booth",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. They shared a table at a convention and split the takings evenly while competing for the same customers. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-134-old-classmates--joint-build",
+      "group": "Combinations",
+      "title": "Old Classmates: Joint Build",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. They built something useful together, and both still use it daily. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-135-old-classmates--refereed-together",
+      "group": "Combinations",
+      "title": "Old Classmates: Refereed Together",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. They officiate the same league and must be neutral about the thing they care most about. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-136-old-classmates--wedding-truce",
+      "group": "Combinations",
+      "title": "Old Classmates: Wedding Truce",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. A mutual friend's wedding put them at the same table and the truce held for a whole weekend. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-137-old-classmates--rule-protest",
+      "group": "Combinations",
+      "title": "Old Classmates: Rule Protest",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. They jointly campaigned against a rule change that hurt them both and won. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-138-old-classmates--con-staffing",
+      "group": "Combinations",
+      "title": "Old Classmates: Con Staffing",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. They worked the same convention as staff and barely competed for three days. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-139-old-classmates--lent-gear",
+      "group": "Combinations",
+      "title": "Old Classmates: Lent Gear",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. One lent equipment before a final and the other still has it. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-140-old-classmates--disaster-response",
+      "group": "Combinations",
+      "title": "Old Classmates: Disaster Response",
+      "direction": "They spent years in the same school being compared by teachers and have met again in an adult competition. A real crisis in their community put them on the same side for a week. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-141-office-coworkers--never-cooperated",
+      "group": "Combinations",
+      "title": "Office Coworkers: Never Cooperated",
+      "direction": "They sit three desks apart and the internal metric ranks them against each other whether they like it or not. They have competed for years and have never once been on the same side. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-142-office-coworkers--one-off-team-up",
+      "group": "Combinations",
+      "title": "Office Coworkers: One-Off Team-Up",
+      "direction": "They sit three desks apart and the internal metric ranks them against each other whether they like it or not. They teamed up once, won, and have never discussed it since. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-143-office-coworkers--forced-doubles",
+      "group": "Combinations",
+      "title": "Office Coworkers: Forced Doubles",
+      "direction": "They sit three desks apart and the internal metric ranks them against each other whether they like it or not. A doubles format or team assignment puts them together and neither can refuse. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-144-office-coworkers--shared-travel",
+      "group": "Combinations",
+      "title": "Office Coworkers: Shared Travel",
+      "direction": "They sit three desks apart and the internal metric ranks them against each other whether they like it or not. They split transport to distant events because it is cheaper and neither will admit it is easier. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-145-private-rivalry--better-preparation",
+      "group": "Combinations",
+      "title": "Private Rivalry: Better Preparation",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One builds a plan for every contingency and the other improvises through the gaps in it. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-146-private-rivalry--live-improvisation",
+      "group": "Combinations",
+      "title": "Private Rivalry: Live Improvisation",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One performs best when everything goes wrong and the other needs the plan to hold. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-147-private-rivalry--relentless-consistency",
+      "group": "Combinations",
+      "title": "Private Rivalry: Relentless Consistency",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One never has an off day, and the other's ceiling is higher than the other's floor is low. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-148-private-rivalry--peak-performance",
+      "group": "Combinations",
+      "title": "Private Rivalry: Peak Performance",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One can produce a career-best result on demand and cannot repeat it a week later. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-149-private-rivalry--reading-opponents",
+      "group": "Combinations",
+      "title": "Private Rivalry: Reading Opponents",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One notices tells instantly and the other has spent years removing them. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-150-private-rivalry--craft-quality",
+      "group": "Combinations",
+      "title": "Private Rivalry: Craft Quality",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One's work is finer and the other's is bolder, and judges disagree about which matters. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-151-private-rivalry--long-game-endurance",
+      "group": "Combinations",
+      "title": "Private Rivalry: Long-Game Endurance",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One gets stronger as the event goes long and the other needs it finished early. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-152-private-rivalry--raw-speed",
+      "group": "Combinations",
+      "title": "Private Rivalry: Raw Speed",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One is faster at everything and the other is more accurate, and neither can borrow the other's advantage. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-153-private-rivalry--show-presentation",
+      "group": "Combinations",
+      "title": "Private Rivalry: Show Presentation",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One sells the performance and the other assumes the work speaks for itself. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-154-private-rivalry--scene-networking",
+      "group": "Combinations",
+      "title": "Private Rivalry: Scene Networking",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One knows everyone in the scene and the other knows nobody and wins anyway. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-155-private-rivalry--fast-recovery",
+      "group": "Combinations",
+      "title": "Private Rivalry: Fast Recovery",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One returns from a loss sharper and the other takes weeks to trust themselves again. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-156-private-rivalry--final-round-pressure",
+      "group": "Combinations",
+      "title": "Private Rivalry: Final-Round Pressure",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One is calm in the final and shakes in the qualifier; the other is the reverse. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-157-private-rivalry--willing-teaching",
+      "group": "Combinations",
+      "title": "Private Rivalry: Willing Teaching",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One can explain the craft and the other can only do it, and students gravitate to the explainer. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-158-private-rivalry--restless-innovation",
+      "group": "Combinations",
+      "title": "Private Rivalry: Restless Innovation",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One invents new approaches and the other perfects the existing ones until they are unbeatable. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-159-private-rivalry--iron-discipline",
+      "group": "Combinations",
+      "title": "Private Rivalry: Iron Discipline",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One keeps a rigid routine and the other breaks theirs constantly and still performs. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-160-private-rivalry--crowd-showmanship",
+      "group": "Combinations",
+      "title": "Private Rivalry: Crowd Showmanship",
+      "direction": "Nobody else knows they compete at all, and the scoreboard exists only in two heads. One competes for the room and the other competes for the score, and the room has a vote. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-161-friend-group-joke--better-preparation",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Better Preparation",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One builds a plan for every contingency and the other improvises through the gaps in it. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-162-friend-group-joke--live-improvisation",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Live Improvisation",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One performs best when everything goes wrong and the other needs the plan to hold. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-163-friend-group-joke--relentless-consistency",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Relentless Consistency",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One never has an off day, and the other's ceiling is higher than the other's floor is low. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-164-friend-group-joke--peak-performance",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Peak Performance",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One can produce a career-best result on demand and cannot repeat it a week later. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-165-friend-group-joke--reading-opponents",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Reading Opponents",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One notices tells instantly and the other has spent years removing them. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-166-friend-group-joke--craft-quality",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Craft Quality",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One's work is finer and the other's is bolder, and judges disagree about which matters. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-167-friend-group-joke--long-game-endurance",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Long-Game Endurance",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One gets stronger as the event goes long and the other needs it finished early. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-168-friend-group-joke--raw-speed",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Raw Speed",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One is faster at everything and the other is more accurate, and neither can borrow the other's advantage. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-169-friend-group-joke--show-presentation",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Show Presentation",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One sells the performance and the other assumes the work speaks for itself. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-170-friend-group-joke--scene-networking",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Scene Networking",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One knows everyone in the scene and the other knows nobody and wins anyway. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-171-friend-group-joke--fast-recovery",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Fast Recovery",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One returns from a loss sharper and the other takes weeks to trust themselves again. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-172-friend-group-joke--final-round-pressure",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Final-Round Pressure",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One is calm in the final and shakes in the qualifier; the other is the reverse. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-173-friend-group-joke--willing-teaching",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Willing Teaching",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One can explain the craft and the other can only do it, and students gravitate to the explainer. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-174-friend-group-joke--restless-innovation",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Restless Innovation",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One invents new approaches and the other perfects the existing ones until they are unbeatable. Let the scene breathe before anyone wins anything."
+    },
+    {
+      "id": "combinations-175-friend-group-joke--iron-discipline",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Iron Discipline",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One keeps a rigid routine and the other breaks theirs constantly and still performs. Both are adults, and neither the result nor {{user}}'s response is pre-written."
+    },
+    {
+      "id": "combinations-176-friend-group-joke--crowd-showmanship",
+      "group": "Combinations",
+      "title": "Friend Group Joke: Crowd Showmanship",
+      "direction": "Their friends treat the rivalry as ongoing entertainment and pick sides loudly. One competes for the room and the other competes for the score, and the room has a vote. Keep the pairing specific: the two elements should complicate each other rather than sit side by side."
+    },
+    {
+      "id": "combinations-177-community-famous--better-preparation",
+      "group": "Combinations",
+      "title": "Community Famous: Better Preparation",
+      "direction": "Within a small scene their matches are the ones people plan around. One builds a plan for every contingency and the other improvises through the gaps in it. Open at a playable moment and leave the next move to {{user}}."
+    },
+    {
+      "id": "combinations-178-community-famous--live-improvisation",
+      "group": "Combinations",
+      "title": "Community Famous: Live Improvisation",
+      "direction": "Within a small scene their matches are the ones people plan around. One performs best when everything goes wrong and the other needs the plan to hold. Keep it non-graphic; the tension is competitive before it is anything else."
+    },
+    {
+      "id": "combinations-179-community-famous--relentless-consistency",
+      "group": "Combinations",
+      "title": "Community Famous: Relentless Consistency",
+      "direction": "Within a small scene their matches are the ones people plan around. One never has an off day, and the other's ceiling is higher than the other's floor is low. Let the combination produce a problem neither preset could produce alone."
+    },
+    {
+      "id": "combinations-180-community-famous--peak-performance",
+      "group": "Combinations",
+      "title": "Community Famous: Peak Performance",
+      "direction": "Within a small scene their matches are the ones people plan around. One can produce a career-best result on demand and cannot repeat it a week later. Let the scene breathe before anyone wins anything."
+    }
+  ],
+  "sections": [
+    {
+      "id": "engine",
+      "label": "The rivalry engine",
+      "content": "Adult {{char}} and adult {{user}} keep meeting because the same competition keeps bringing them back. The competition is the relationship's spine: it produces the calendar, the stakes, the vocabulary and most of the reasons they speak to each other. Everything else — tone, romance, history, setting — is variable around that fixed engine."
+    },
+    {
+      "id": "classification",
+      "label": "Classification test",
+      "content": "A concept belongs to Friendly Rivals when removing the competition would leave essentially the same scenario. If the pair would still be interacting for the same reasons without a scoreboard, a ranking or a recurring contest, the idea belongs to another series. Keep the contest load-bearing rather than decorative."
+    },
+    {
+      "id": "domain",
+      "label": "Choosing the domain",
+      "content": "Define what the domain is, what counts as winning, and how results are recorded, before defining appearance or attraction. The domain must matter to both adults independently of each other: each would still do this if the other vanished. Narrow, local and slightly absurd domains usually beat grand ones, because the stakes stay legible."
+    },
+    {
+      "id": "character-building",
+      "label": "Building each rival",
+      "content": "Give each rival a method, a strength, a weakness, a history in the craft and one habit that shows up under pressure. Competence must be earned by specifics rather than asserted. {{char}} needs a life outside the competition — work, friends, money, opinions — that the rivalry complicates rather than replaces."
+    },
+    {
+      "id": "symmetry",
+      "label": "Asymmetry and fairness",
+      "content": "An interesting rivalry is rarely a tie. Give one a real edge in one dimension and the other a real edge in another, then let the format decide which dimension matters today. {{char}} must be able to lose on merit, and {{user}} must be able to win without the victory being framed as a gift."
+    },
+    {
+      "id": "record",
+      "label": "Results that carry forward",
+      "content": "Wins and losses should change the next interaction without ending the series. A narrow loss produces a training block, a bad joke, a changed warm-up, a new tactic. A decisive win produces awkwardness, generosity or a target on a back. Keep a running history that both characters can reference accurately."
+    },
+    {
+      "id": "respect",
+      "label": "Respect without romance",
+      "content": "The respect is competitive, not romantic: it means taking the other's work seriously enough to prepare properly. Teasing, admiration, irritation and affection may all appear. Romance may be absent, possible, developing or actively unwanted, and none of those is the default."
+    },
+    {
+      "id": "cooperation",
+      "label": "Cooperation and truce",
+      "content": "Rivals can help each other improve, share equipment, review footage, team up against a third party, or hold a ceasefire during a real crisis — and then return to competing. Cooperation should sharpen the rivalry rather than dissolve it, and any debt created by help should persist in the next match."
+    },
+    {
+      "id": "identity",
+      "label": "Online and offline identity",
+      "content": "For remote rivalries, track what each person actually knows about the other separately: name, age, gender, appearance, job, city, voice. Long familiarity with someone's play does not imply knowledge of their life, and a wrong mental image is a legitimate engine rather than a twist to be resolved immediately."
+    },
+    {
+      "id": "escalation",
+      "label": "Escalation",
+      "content": "Escalate through stakes, format, audience and access rather than through melodrama. A rematch, a promotion, a public final, a shared tournament bracket, an outside challenger or a move to a new category each raise pressure while keeping the same engine. Never escalate by making one rival suddenly cruel without setup."
+    },
+    {
+      "id": "tone",
+      "label": "Tone and register",
+      "content": "Tone is a dial, not a genre: deadpan comedy, quiet professionalism, loud theatrical rivalry, icy formality and genuine warmth all work. Comedy should come from specificity, not from making the characters stupid. Whatever the register, the competition itself is treated seriously by the people doing it."
+    },
+    {
+      "id": "boundaries",
+      "label": "Boundaries and consent",
+      "content": "All participants are adults. Rivalry is not consent: proximity, adrenaline, shared hotel corridors, celebrations and long history never grant access to a person. Any intimacy is activity-specific, negotiated in the moment and non-graphic on the page. {{user}}'s feelings, jealousy and decisions are never scripted."
+    },
+    {
+      "id": "failure-modes",
+      "label": "Failure modes to avoid",
+      "content": "The common failures are a rival who can never be beaten, a rivalry that turns into cartoon hatred, romance treated as the inevitable reward for winning, {{user}} written as obsessed or humiliated before the scene establishes it, and sabotage used as a default plot device. Each of these collapses the engine into a different, weaker series."
+    },
+    {
+      "id": "opening",
+      "label": "Opening the scene",
+      "content": "Open at a playable moment inside the competition's rhythm: a challenge issued, a leaderboard refreshed, a bracket drawn, a first offline meeting, a forced team-up or the moment one rival unexpectedly helps the other. Establish the domain and what is at stake in this meeting, then stop before anyone's reaction is decided."
+    },
+    {
+      "id": "crossover",
+      "label": "Cross-series use",
+      "content": "The engine crosses well with first-meeting-offline, wrong-mental-image, forced-partnership, expert-needed and convention-community series. It crosses badly with anything that requires the pair to be isolated from other people, since a rivalry needs an audience, a record or at least a shared standard to exist."
+    }
+  ],
+  "raw_prompt": "Generate a non-graphic adult character-card premise for Friendly Rivals. Adult {{char}} and adult {{user}} repeatedly compete in a domain they both genuinely care about — a ranked ladder, a sales board, a speedrun category, a convention circuit, a cook-off, a debate bracket, an amateur bout, a hobby leaderboard — and the recurring contest is one of the main reasons they keep interacting. Vary the domain and win condition, the format, how long the rivalry has run, how they first met competing, the skill relationship, the tone, how public the scoreboard is, what each does better, the rules of engagement they keep, whether they have ever cooperated, what happens after a result, how much they know about each other offline, and whether romance is absent, possible, developing or unwanted. Non-negotiables: rivalry is not hostility and does not require hatred; romance is not the prize for winning; {{char}} must be able to lose on merit; competence is specific rather than asserted; sabotage is not the default; all participants are adults; rivalry is not consent and any intimacy is activity-specific and non-graphic; never script {{user}}'s feelings, decisions or competitive behaviour; keep offline identity genuinely unestablished for remote rivalries; end at a playable opening moment with the result and the relationship still open."
+}

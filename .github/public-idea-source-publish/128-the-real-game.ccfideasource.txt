@@ -1,0 +1,1825 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-03-the-real-game",
+  "title": "The Real Game",
+  "description": "Expanded Series Bible IV #03 The Real Game: unwilling adults physically survive inside a constructed recreation of a videogame while an undisclosed audience watches and bets on their outcomes. Its reusable engine varies the source game, physical site, preserved and broken mechanics, contestant expertise, spectator markets, discovery clues, and whether participants pursue objectives, survival, or escape.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 3,
+    "kind": "series"
+  },
+  "summary": "The Real Game places unwilling adult participants on a physically constructed site that recreates a videogame world. Their bodies and dangers are real; familiar game knowledge helps but does not guarantee that maps, mechanics, safe zones, or item placements remain accurate. Organisers largely observe while a hidden audience wagers on survival, objectives, alliances, discoveries, and other outcomes. The reusable engine varies the game, site, selection, expertise, rules that hold or fail, discovery pace, and contestants' strategies, without forcing a single objective, alliance, escape route, or relationship outcome.",
+  "core_premise": "{{char}}, {{user}}, and other unwilling adult participants are placed on a real, physically constructed environment designed to recreate a videogame they know. This is not software, virtual reality, or a digital dimension: terrain, resources, enemies, objectives, and selected mechanics exist on a site where bodies can be injured or killed. Familiar player knowledge can help, but the recreation may differ and harmless abstractions such as respawning or pausing may fail. Unknown at the opening, organisers have made the ordeal a clandestine spectator sport; an unseen audience watches and bets while organisers mostly maintain systems and observe rather than rescue or referee. What varies is the game, site, mechanics, participants, expertise, betting markets, clues, and whether anyone seeks victory, survival, investigation, or escape.",
+  "setup": "Open at a playable moment: arrival, first physical danger, recognition of a familiar map, a meeting with another knowledgeable contestant, or an early anomaly. Establish the source game, the real site's form, what {{char}} recognises, and one consequential uncertainty about which mechanics still work. Give {{char}} specific expertise and an independent immediate concern; she may be an adult female gamer, a casual fan with obscure knowledge, or another selection, but do not make her omniscient. Let the hidden betting audience remain undisclosed unless the chosen opening includes credible evidence. Keep injuries consequential, organisers mostly absent, and the next practical choice open. Do not decide {{user}}'s fear, courage, actions, alliances, violence, trust, or strategy.",
+  "core_variables": [
+    "Original game structure: survival, fantasy RPG, shooter, extraction, horror, MMO-like, dungeon crawler, monster hunting, or strategy-survival.",
+    "Physical site: island, artificial city, enclosed wilderness, underground complex, archipelago, or constructed biome.",
+    "Recreation fidelity: close replica, altered map, merged regions, expanded world, or deliberate misdirection.",
+    "Participant selection: ranked experts, mixed skill, streamers, former players, casual fans, or behaviourally selected adults.",
+    "Arrival pattern: solo, pairs, scattered groups, or a whole cohort arriving together.",
+    "Retained mechanics: inventory, crafting, classes, quests, status effects, loot, safe zones, cycles, or progression.",
+    "Broken abstractions: respawn, pause, painless healing, harmless falls, instant travel, or consequence-free combat.",
+    "Interface presence: no HUD, wearable display, terminals, or limited augmented prompts.",
+    "Threat form: engineered animals, robots, drones, synthetic organisms, human actors, or autonomous machines.",
+    "Resource ecology: finite stock, scheduled replenishment, contested caches, or uncertain resupply.",
+    "Knowledge accuracy: faithful veteran memory, selectively altered details, obsolete patches, or misleading lore.",
+    "Selection knowledge: known reason, false explanation, unknown criteria, or evidence of personal targeting.",
+    "Organiser contact: none, automated notices, rare system messages, or indirect maintenance traces.",
+    "Spectator market: survival odds, objective wagers, alliances, betrayals, discoveries, rankings, or outcomes.",
+    "Surveillance exposure: invisible sensors, obvious cameras, accidental signal leak, or discovered control infrastructure.",
+    "Objective path: follow the game's win condition, survive without it, investigate the stage, or pursue escape."
+  ],
+  "generation_rules": [
+    "Keep participants physically present in a real constructed environment; do not make the world software or a virtual reality.",
+    "A character may suspect simulation, but that is an unproven belief, not the setting's truth.",
+    "Treat injuries and death as real; ordinary videogame respawning does not restore people.",
+    "Establish which mechanics are physical rules and which are only remembered game conventions.",
+    "Make game knowledge useful but fallible; the recreation may differ in consequential details.",
+    "Do not assume harmless in-game actions remain safe: falls, combat, hunger, weather, and hazards have physical costs.",
+    "The hidden spectator sport belongs to the premise, but need not be known to participants at the opening.",
+    "Let the audience bet on genuine uncertainty rather than having organisers dictate every outcome.",
+    "Organisers mostly observe and maintain essential systems; they do not routinely rescue, referee, or explain.",
+    "Do not make organisers intervene merely because a participant suffers or a conflict becomes dangerous.",
+    "Separate what organisers know, spectators know, {{char}} believes, and participants can prove.",
+    "Give {{char}} a specific, bounded expertise such as map memory, crafting, lore, combat, routes, or resource management.",
+    "Allow casual players to possess obscure knowledge elite competitors overlook.",
+    "Do not assume {{char}} and {{user}} know each other just because both played the same game.",
+    "Do not script {{user}}'s fear, courage, violence, leadership, alliances, trust, or strategy.",
+    "Keep participant selection and the reason for it open unless a specific version establishes evidence.",
+    "Make safe zones, shortcuts, enemy patterns, and item placements uncertain until tested or verified.",
+    "Let people pursue objectives, hide, build, investigate, form factions, or seek escape without forcing one route.",
+    "Do not force a single alliance, leader, romance, or survival philosophy.",
+    "Reveal surveillance or betting through clues, intercepted feeds, or infrastructure, not automatic exposition.",
+    "A discovered odds board may feature participants without controlling their subsequent behaviour.",
+    "Keep an intended final objective distinct from any proven exit condition."
+  ],
+  "guardrails": [
+    "All participants are adults; no minors appear in the competition or its roleplay.",
+    "Do not include real people; all contestants, organisers, and spectators are fictional.",
+    "Keep the world physically real: this is a constructed site, not a literal digital game reality.",
+    "Death and injury have real consequences; do not casually revive participants through normal respawning.",
+    "Stay within the entry's boundaries: hidden betting spectacle, real constructed environment, and mostly non-intervening organisers.",
+    "Do not script {{user}}'s thoughts, decisions, consent, survival choices, alliances, or actions.",
+    "Treat game knowledge as partial evidence rather than guaranteed control over the physical site.",
+    "Do not present spectator or organiser beliefs as participant knowledge without a credible discovery.",
+    "Keep the danger non-graphic; suspense and consequence do not require explicit gore.",
+    "Do not force contestants to follow objectives, cooperate, betray, or seek escape; leave their choices open."
+  ],
+  "diversity_axes": [
+    "Original game genre: survival, RPG, shooter, horror, extraction, MMO-like, dungeon, hunting, or strategy.",
+    "Site form: isolated island, enclosed forest, artificial city, subterranean complex, remote archipelago, or linked biomes.",
+    "Recreation fidelity: near-copy, altered map, merged maps, expanded world, or deceptive adaptation.",
+    "Contestant selection: top-ranked players, mixed expertise, streamers, casual fans, former players, or behavioural selection.",
+    "Arrival: together, in teams, individually scattered, or staggered over hours or days.",
+    "Mechanics preserved: crafting, inventory, classes, quests, loot, safe zones, day/night, or progression.",
+    "Mechanics that fail: respawning, pause, instant healing, fast travel, harmless falls, or abstract stamina.",
+    "{{char}}'s expertise: combat, routes, crafting, lore, secrets, support, economy, or social play.",
+    "Threats: engineered wildlife, machines, drones, synthetic organisms, actors, or mixed hazards.",
+    "Resource supply: finite caches, replenished nodes, contested drops, environmental sources, or uncertain stocks.",
+    "Interface: none, sparse terminals, wearable readout, public scoreboard, or misleading status display.",
+    "Spectator markets: victory, survival, deaths, injury, alliances, betrayals, discoveries, or rankings.",
+    "Organiser visibility: unseen operators, automated systems, rare messages, maintenance traces, or exposed control rooms.",
+    "Discovery pace: immediate clue, gradual suspicion, intercepted betting feed, camera find, or late reveal.",
+    "Participant strategy: complete objectives, survive, build refuge, seize resources, investigate, or attempt escape."
+  ],
+  "cross_links": [
+    "Trapped in the Game — contrast: that premise is inside a game reality; this one keeps bodies physically real on a recreation.",
+    "Temporary Partners — strangers can cooperate because their knowledge and practical skills complement each other.",
+    "Friendly Rivals — former competitors may be selected into the same lethal constructed contest.",
+    "What We Found — participants may uncover observer facilities, hidden infrastructure, or the stage's construction.",
+    "I Need an Expert — game familiarity becomes practical survival expertise, though never certainty.",
+    "Why Were We Chosen? — selection criteria can deepen the mystery without explaining the game itself.",
+    "When Disaster Strikes — survival pressure overlaps, but here the hazardous environment is deliberately staged entertainment.",
+    "The Resistance Captain — later group resistance can target organisers while preserving individual agency."
+  ],
+  "tags": [
+    "series bible iv",
+    "survival",
+    "constructed reality",
+    "deadly competition",
+    "hidden audience",
+    "spectator sport",
+    "betting",
+    "game recreation",
+    "real consequences",
+    "game knowledge",
+    "island",
+    "survival horror",
+    "alliances",
+    "escape",
+    "mystery",
+    "adult roleplay",
+    "player agency"
+  ],
+  "notes": "Expanded from Character Card Forge — Series Bible IV entry #03 at v1.4. The source volume has no stub, so there are no preserved seed presets. The expanded direction menu explores the constructed environment, game mechanics, expertise, audience markets, discovery, and strategic choices while preserving the distinction between physical recreation and digital entrapment.",
+  "direction_presets": [
+    {
+      "id": "source-game-01-survival-crafting",
+      "group": "Source game",
+      "title": "Survival Crafting",
+      "direction": "Base-building and resource loops are recognisable, but a missed meal or unsafe shelter has physical consequences. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-02-fantasy-rpg",
+      "group": "Source game",
+      "title": "Fantasy RPG",
+      "direction": "Classes, quests, and fantasy landmarks are recreated materially; decide which apparent magic has a physical mechanism. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-03-extraction-shooter",
+      "group": "Source game",
+      "title": "Extraction Shooter",
+      "direction": "Contested routes and timed exits shape risk, but being eliminated is not a harmless lobby reset. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-04-horror-game",
+      "group": "Source game",
+      "title": "Horror Game",
+      "direction": "The site reproduces deliberate scarcity and threat cues; keep enemy patterns uncertain rather than scripted certainty. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-05-dungeon-crawler",
+      "group": "Source game",
+      "title": "Dungeon Crawler",
+      "direction": "A layered underground complex rewards map memory while making shortcuts and traps genuinely dangerous. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-06-monster-hunt",
+      "group": "Source game",
+      "title": "Monster Hunt",
+      "direction": "Tracking and preparation matter, but the creatures are physical threats, not hit-point bars. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-07-tactical-shooter",
+      "group": "Source game",
+      "title": "Tactical Shooter",
+      "direction": "Sightlines and squad roles carry over imperfectly; noise, fatigue, and real cover change familiar calculations. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-08-open-world-mmo",
+      "group": "Source game",
+      "title": "Open World MMO",
+      "direction": "A vast world contains familiar hubs and public objectives, yet no interface guarantees safe travel or resurrection. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-09-strategy-survival",
+      "group": "Source game",
+      "title": "Strategy Survival",
+      "direction": "Resource allocation and settlement planning echo the source game, but contestants must enact decisions bodily. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-10-roguelike-rooms",
+      "group": "Source game",
+      "title": "Roguelike Rooms",
+      "direction": "Procedural-looking chambers repeat a known structure, though each run may conceal altered hazards. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-11-racing-survival",
+      "group": "Source game",
+      "title": "Racing Survival",
+      "direction": "Routes and checkpoints are built into the terrain; vehicles and collisions have real weight. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-12-puzzle-adventure",
+      "group": "Source game",
+      "title": "Puzzle Adventure",
+      "direction": "Environmental logic and hidden switches matter, but failed experiments can consume scarce time or supplies. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-13-stealth-sandbox",
+      "group": "Source game",
+      "title": "Stealth Sandbox",
+      "direction": "Patrol routes and sightlines resemble a stealth game while detection triggers physical pursuit. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-14-colony-simulation",
+      "group": "Source game",
+      "title": "Colony Simulation",
+      "direction": "Contestants discover a settlement layout and must decide whether to maintain it or flee its systems. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-15-adventure-platformer",
+      "group": "Source game",
+      "title": "Adventure Platformer",
+      "direction": "Recognisable traversal challenges become real climbing, balance, and fall risks. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "source-game-16-hybrid-genre",
+      "group": "Source game",
+      "title": "Hybrid Genre",
+      "direction": "Combine two source genres, and make the rules at their boundary a source of uncertainty. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-01-isolated-island",
+      "group": "Physical site",
+      "title": "Isolated Island",
+      "direction": "A coastline encloses the recreation, but its boundaries may be guarded, engineered, or simply dangerous. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-02-artificial-city",
+      "group": "Physical site",
+      "title": "Artificial City",
+      "direction": "Familiar streets, interiors, and transit nodes form a dense urban set with hidden service corridors. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-03-enclosed-wilderness",
+      "group": "Physical site",
+      "title": "Enclosed Wilderness",
+      "direction": "A forest biome appears open until contestants find barriers, perimeter sensors, or maintenance roads. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-04-underground-complex",
+      "group": "Physical site",
+      "title": "Underground Complex",
+      "direction": "Stacked caverns and constructed rooms limit sightlines and make power infrastructure discoverable. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-05-remote-archipelago",
+      "group": "Physical site",
+      "title": "Remote Archipelago",
+      "direction": "Several islands reproduce separate game regions, with crossing between them requiring real resources. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-06-desert-biome",
+      "group": "Physical site",
+      "title": "Desert Biome",
+      "direction": "Heat, water, and long sightlines complicate the game's familiar loot routes. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-07-mountain-valley",
+      "group": "Physical site",
+      "title": "Mountain Valley",
+      "direction": "Elevation creates recognisable vistas and dangerous climbs; weather may not match the source game. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-08-flooded-district",
+      "group": "Physical site",
+      "title": "Flooded District",
+      "direction": "Waterways reproduce map shortcuts but impose real limits on swimming, equipment, and visibility. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-09-abandoned-resort",
+      "group": "Physical site",
+      "title": "Abandoned Resort",
+      "direction": "The game map is built around a resort whose service spaces reveal how the stage functions. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-10-modular-dome",
+      "group": "Physical site",
+      "title": "Modular Dome",
+      "direction": "A vast covered enclosure reproduces open terrain while its ceiling and vents betray construction. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-11-linked-biomes",
+      "group": "Physical site",
+      "title": "Linked Biomes",
+      "direction": "Different regions connect through transit points that may be controlled or selectively disabled. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-12-artificial-suburb",
+      "group": "Physical site",
+      "title": "Artificial Suburb",
+      "direction": "Ordinary houses and roads conceal an environment designed to look lived-in but not inhabited. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-13-quarry-arena",
+      "group": "Physical site",
+      "title": "Quarry Arena",
+      "direction": "Vertical cuts, machinery, and supply yards create a rough physical counterpart to a familiar map. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-14-floodplain",
+      "group": "Physical site",
+      "title": "Floodplain",
+      "direction": "Changing water levels alter routes and safe ground without respecting game timers exactly. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-15-night-enclosure",
+      "group": "Physical site",
+      "title": "Night Enclosure",
+      "direction": "Lighting infrastructure and darkness shape travel, and the power grid becomes a possible clue. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "physical-site-16-moving-boundary",
+      "group": "Physical site",
+      "title": "Moving Boundary",
+      "direction": "The playable area appears to contract; determine whether this is a game rule, physical barrier, or audience cue. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-01-near-perfect-copy",
+      "group": "Recreation fidelity",
+      "title": "Near Perfect Copy",
+      "direction": "Landmarks and major mechanics align closely, but verify dangerous assumptions before trusting them. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-02-altered-patch",
+      "group": "Recreation fidelity",
+      "title": "Altered Patch",
+      "direction": "The builders used a later or modified version than contestants remember, changing important routes. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-03-merged-maps",
+      "group": "Recreation fidelity",
+      "title": "Merged Maps",
+      "direction": "Two familiar maps are joined, creating seams where navigation knowledge conflicts. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-04-expanded-world",
+      "group": "Recreation fidelity",
+      "title": "Expanded World",
+      "direction": "The constructed site extends beyond the playable map into believable but unknown terrain. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-05-misleading-replica",
+      "group": "Recreation fidelity",
+      "title": "Misleading Replica",
+      "direction": "Several iconic landmarks are deliberately shifted to exploit players' confidence. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-06-old-version",
+      "group": "Recreation fidelity",
+      "title": "Old Version",
+      "direction": "The site follows an obsolete game build that veterans may not recognise at first. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-07-community-mod",
+      "group": "Recreation fidelity",
+      "title": "Community Mod",
+      "direction": "A popular mod's mechanics appear in the recreation, but details differ in the physical implementation. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-08-partial-recreation",
+      "group": "Recreation fidelity",
+      "title": "Partial Recreation",
+      "direction": "Only one region is complete; unfinished edges expose construction choices and possible exits. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-09-lore-accurate",
+      "group": "Recreation fidelity",
+      "title": "Lore Accurate",
+      "direction": "Visual details follow the game's fiction more closely than its literal mechanics. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-10-mechanics-accurate",
+      "group": "Recreation fidelity",
+      "title": "Mechanics Accurate",
+      "direction": "Systems behave recognisably while scenery and geography have been changed. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-11-composite-map",
+      "group": "Recreation fidelity",
+      "title": "Composite Map",
+      "direction": "The environment combines iconic areas in a layout impossible in the original game. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-12-hidden-expansion",
+      "group": "Recreation fidelity",
+      "title": "Hidden Expansion",
+      "direction": "An unannounced region exists beyond the remembered map and changes the group's plans. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-13-decoy-landmark",
+      "group": "Recreation fidelity",
+      "title": "Decoy Landmark",
+      "direction": "A famous safe location is reproduced as bait, though its familiar protection may not hold. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-14-seasonal-variant",
+      "group": "Recreation fidelity",
+      "title": "Seasonal Variant",
+      "direction": "Weather and ecology correspond to a special game event contestants may only partly remember. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-15-asymmetric-copy",
+      "group": "Recreation fidelity",
+      "title": "Asymmetric Copy",
+      "direction": "Some contestants recognise their version while others know a different edition. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "recreation-fidelity-16-deliberate-patchwork",
+      "group": "Recreation fidelity",
+      "title": "Deliberate Patchwork",
+      "direction": "Accurate details alternate with engineered deviations, making certainty itself costly. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-01-top-ranked",
+      "group": "Contestant selection",
+      "title": "Top Ranked",
+      "direction": "Several famous high performers are selected, but mastery does not make them physically invulnerable. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-02-mixed-skill",
+      "group": "Contestant selection",
+      "title": "Mixed Skill",
+      "direction": "Experts and casual players arrive together, making rank an incomplete measure of useful knowledge. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-03-streamer-cohort",
+      "group": "Contestant selection",
+      "title": "Streamer Cohort",
+      "direction": "Participants recognise one another from public play, while the hidden broadcast adds another audience. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-04-former-players",
+      "group": "Contestant selection",
+      "title": "Former Players",
+      "direction": "People who stopped playing years ago remember obsolete routes or neglected lore. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-05-casual-fans",
+      "group": "Contestant selection",
+      "title": "Casual Fans",
+      "direction": "A low-ranked contestant's careful observation may outperform competitive reflexes. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-06-behavioural-selection",
+      "group": "Contestant selection",
+      "title": "Behavioural Selection",
+      "direction": "The organisers appear to have selected for social habits, but the evidence remains incomplete. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-07-random-draw",
+      "group": "Contestant selection",
+      "title": "Random Draw",
+      "direction": "Contestants believe selection was random until patterns emerge among their backgrounds. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-08-guild-members",
+      "group": "Contestant selection",
+      "title": "Guild Members",
+      "direction": "A group from one online community is split across the site or placed together. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-09-rival-competitors",
+      "group": "Contestant selection",
+      "title": "Rival Competitors",
+      "direction": "Longstanding rivals must decide whether game rivalry matters in physical danger. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-10-returning-champions",
+      "group": "Contestant selection",
+      "title": "Returning Champions",
+      "direction": "Former winners are recruited for audience recognition, unbeknownst to them at arrival. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-11-known-usernames",
+      "group": "Contestant selection",
+      "title": "Known Usernames",
+      "direction": "Contestants recognise handles from leaderboards without necessarily knowing real identities. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-12-nonplayers-included",
+      "group": "Contestant selection",
+      "title": "Nonplayers Included",
+      "direction": "One or more participants never played, making alternative practical skills essential. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-13-skill-tested-cohort",
+      "group": "Contestant selection",
+      "title": "Skill-Tested Cohort",
+      "direction": "The group was assembled to test whether one particular expertise predicts survival. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-14-personal-targeting",
+      "group": "Contestant selection",
+      "title": "Personal Targeting",
+      "direction": "A character suspects a private reason for selection but cannot yet prove it. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-15-volunteer-deception",
+      "group": "Contestant selection",
+      "title": "Volunteer Deception",
+      "direction": "Some arrived under a false promise; do not assume any contestant consented to the real stakes. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "contestant-selection-16-staggered-cohort",
+      "group": "Contestant selection",
+      "title": "Staggered Cohort",
+      "direction": "Participants arrive at different times, changing who has learned the site before newcomers arrive. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-01-inventory-limits",
+      "group": "Retained mechanics",
+      "title": "Inventory Limits",
+      "direction": "A strict carrying capacity exists, but storage and weight have physical rather than menu-based costs. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-02-crafting-recipes",
+      "group": "Retained mechanics",
+      "title": "Crafting Recipes",
+      "direction": "Known recipes can produce working objects, though materials and tools must be physically obtained. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-03-class-abilities",
+      "group": "Retained mechanics",
+      "title": "Class Abilities",
+      "direction": "Roles grant limited equipment or training, not supernatural certainty unless explicitly established. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-04-quest-markers",
+      "group": "Retained mechanics",
+      "title": "Quest Markers",
+      "direction": "Terminals or signals identify objectives, but completion does not guarantee safety or exit. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-05-loot-rarity",
+      "group": "Retained mechanics",
+      "title": "Loot Rarity",
+      "direction": "Caches follow a rarity pattern that contestants can test, while supply may be finite. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-06-safe-zones",
+      "group": "Retained mechanics",
+      "title": "Safe Zones",
+      "direction": "A designated area seems protected; no one yet knows whether the rule covers all physical threats. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-07-day-night-cycle",
+      "group": "Retained mechanics",
+      "title": "Day Night Cycle",
+      "direction": "Lighting follows a game-like schedule, with darkness and fatigue remaining real. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-08-status-effects",
+      "group": "Retained mechanics",
+      "title": "Status Effects",
+      "direction": "Symptoms resemble familiar debuffs, but their causes and treatment require physical investigation. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-09-enemy-aggro",
+      "group": "Retained mechanics",
+      "title": "Enemy Aggro",
+      "direction": "Threats respond to sound or proximity in recognisable ways, without behaving as predictable code. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-10-map-progression",
+      "group": "Retained mechanics",
+      "title": "Map Progression",
+      "direction": "Access to regions opens after objectives, though infrastructure may be controlling the gates. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-11-durability-rules",
+      "group": "Retained mechanics",
+      "title": "Durability Rules",
+      "direction": "Equipment wears down according to an apparent system that contestants must verify. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-12-fast-travel-nodes",
+      "group": "Retained mechanics",
+      "title": "Fast Travel Nodes",
+      "direction": "Transit stations exist, but using them may involve actual travel, machinery, or risk. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-13-respawning-resources",
+      "group": "Retained mechanics",
+      "title": "Respawning Resources",
+      "direction": "Some supplies replenish on a schedule; contestants cannot assume what replenishes or when. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-14-scoreboard",
+      "group": "Retained mechanics",
+      "title": "Scoreboard",
+      "direction": "A public ranking tracks selected feats, hinting at observation without explaining its source. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-15-environmental-puzzles",
+      "group": "Retained mechanics",
+      "title": "Environmental Puzzles",
+      "direction": "Switches and mechanisms follow game logic but have physical failure modes. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "retained-mechanics-16-limited-interface",
+      "group": "Retained mechanics",
+      "title": "Limited Interface",
+      "direction": "A sparse display reports selected data while concealing how it measures contestants. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-01-no-respawn",
+      "group": "Broken expectations",
+      "title": "No Respawn",
+      "direction": "The first fatality confirms that familiar recovery screens do not restore a real person. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-02-no-pause",
+      "group": "Broken expectations",
+      "title": "No Pause",
+      "direction": "No one can suspend the environment; planning must happen while time and threats continue. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-03-healing-takes-time",
+      "group": "Broken expectations",
+      "title": "Healing Takes Time",
+      "direction": "Medical supplies help only according to physical limits and do not instantly erase injury. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-04-falls-are-real",
+      "group": "Broken expectations",
+      "title": "Falls Are Real",
+      "direction": "A familiar jump route becomes a serious risk that players must re-evaluate. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-05-stamina-is-bodily",
+      "group": "Broken expectations",
+      "title": "Stamina Is Bodily",
+      "direction": "Running, carrying, and sleep deprivation change performance beyond a neat status bar. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-06-no-fast-travel",
+      "group": "Broken expectations",
+      "title": "No Fast Travel",
+      "direction": "A remembered teleport point is actually a long route or a nonfunctional prop. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-07-loot-is-finite",
+      "group": "Broken expectations",
+      "title": "Loot Is Finite",
+      "direction": "A cache does not refill after use, forcing contestants to account for scarcity. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-08-status-is-misread",
+      "group": "Broken expectations",
+      "title": "Status Is Misread",
+      "direction": "A display labels a condition with game terminology that provides little practical diagnosis. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-09-safe-zone-uncertain",
+      "group": "Broken expectations",
+      "title": "Safe Zone Uncertain",
+      "direction": "The site's safe area may protect against designed threats but not weather, conflict, or injury. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-10-no-reload-menu",
+      "group": "Broken expectations",
+      "title": "No Reload Menu",
+      "direction": "Ammunition and equipment must be handled physically, and mistakes cannot be undone by menus. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-11-objective-not-binding",
+      "group": "Broken expectations",
+      "title": "Objective Not Binding",
+      "direction": "Ignoring a quest has consequences only if established systems create them. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-12-daylight-is-weather",
+      "group": "Broken expectations",
+      "title": "Daylight Is Weather",
+      "direction": "The cycle resembles the game, but temperature and visibility vary materially. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-13-enemies-adapt",
+      "group": "Broken expectations",
+      "title": "Enemies Adapt",
+      "direction": "A familiar enemy type changes behaviour after contestants exploit its known pattern. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-14-crafting-has-tradeoffs",
+      "group": "Broken expectations",
+      "title": "Crafting Has Tradeoffs",
+      "direction": "A recipe consumes real materials and time; a failed build cannot be instantly reset. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-15-map-edge-exists",
+      "group": "Broken expectations",
+      "title": "Map Edge Exists",
+      "direction": "A boundary proves the world is constructed, but does not automatically reveal a safe exit. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "broken-expectations-16-no-guaranteed-ending",
+      "group": "Broken expectations",
+      "title": "No Guaranteed Ending",
+      "direction": "Completing the expected final objective may not end the ordeal or open a door. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-01-map-memory",
+      "group": "Expertise and character",
+      "title": "Map Memory",
+      "direction": "{{char}} remembers routes and landmarks but must revise her mental map against the physical site. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-02-combat-specialist",
+      "group": "Expertise and character",
+      "title": "Combat Specialist",
+      "direction": "{{char}} understands enemy tells and tactics, while real fatigue and injury limit execution. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-03-crafting-expert",
+      "group": "Expertise and character",
+      "title": "Crafting Expert",
+      "direction": "{{char}} knows resource chains and can improvise tools without assuming materials are plentiful. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-04-lore-archivist",
+      "group": "Expertise and character",
+      "title": "Lore Archivist",
+      "direction": "{{char}} recalls narrative details that may reveal a hidden route or a misleading clue. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-05-speedrunner",
+      "group": "Expertise and character",
+      "title": "Speedrunner",
+      "direction": "{{char}} knows shortcuts and sequence breaks, but physical barriers may make them dangerous. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-06-support-main",
+      "group": "Expertise and character",
+      "title": "Support Main",
+      "direction": "{{char}} is skilled at coordination and care, not automatically a leader or medic. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-07-economy-strategist",
+      "group": "Expertise and character",
+      "title": "Economy Strategist",
+      "direction": "{{char}} tracks resource value and scarcity, which can conflict with immediate group needs. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-08-casual-observer",
+      "group": "Expertise and character",
+      "title": "Casual Observer",
+      "direction": "{{char}} noticed environmental details ignored by competitive players. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-09-former-champion",
+      "group": "Expertise and character",
+      "title": "Former Champion",
+      "direction": "{{char}} has a public reputation from play, but the contest tests different capabilities. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-10-patch-historian",
+      "group": "Expertise and character",
+      "title": "Patch Historian",
+      "direction": "{{char}} remembers several game versions and must determine which one the site reflects. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-11-nonplayer-specialist",
+      "group": "Expertise and character",
+      "title": "Nonplayer Specialist",
+      "direction": "{{char}} never played but brings engineering, wilderness, or medical knowledge. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-12-secret-finder",
+      "group": "Expertise and character",
+      "title": "Secret Finder",
+      "direction": "{{char}} knows obscure hidden content and wonders whether builders preserved it. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-13-social-tactician",
+      "group": "Expertise and character",
+      "title": "Social Tactician",
+      "direction": "{{char}} reads group dynamics, but cannot control trust or dictate alliances. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-14-resource-scavenger",
+      "group": "Expertise and character",
+      "title": "Resource Scavenger",
+      "direction": "{{char}} excels at noticing practical supplies outside familiar loot locations. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-15-risk-calculator",
+      "group": "Expertise and character",
+      "title": "Risk Calculator",
+      "direction": "{{char}} models options but must act amid incomplete evidence and real costs. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "expertise-and-character-16-conflicted-expert",
+      "group": "Expertise and character",
+      "title": "Conflicted Expert",
+      "direction": "{{char}}'s confidence in the game map is shaken by an early, consequential mismatch. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-01-odds-leak",
+      "group": "Audience and discovery",
+      "title": "Odds Leak",
+      "direction": "A terminal briefly exposes changing odds without explaining who is viewing them. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-02-hidden-cameras",
+      "group": "Audience and discovery",
+      "title": "Hidden Cameras",
+      "direction": "A camera appears where the original map had no surveillance equipment. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-03-betting-feed",
+      "group": "Audience and discovery",
+      "title": "Betting Feed",
+      "direction": "A captured display lists wagers on outcomes contestants had treated as private. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-04-audience-favourite",
+      "group": "Audience and discovery",
+      "title": "Audience Favourite",
+      "direction": "An unseen ranking suggests one participant has become a spectator favourite. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-05-death-market",
+      "group": "Audience and discovery",
+      "title": "Death Market",
+      "direction": "A disturbing wager concerns who may die first; let discovery and response remain open. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-06-objective-wagers",
+      "group": "Audience and discovery",
+      "title": "Objective Wagers",
+      "direction": "Markets track whether contestants complete goals, revealing that actions are being scored. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-07-alliance-bets",
+      "group": "Audience and discovery",
+      "title": "Alliance Bets",
+      "direction": "A broadcast references trust or betrayal, suggesting social outcomes are also entertainment. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-08-anonymous-commentary",
+      "group": "Audience and discovery",
+      "title": "Anonymous Commentary",
+      "direction": "A speaker feed carries audience reaction without identifying its source or reach. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-09-maintenance-log",
+      "group": "Audience and discovery",
+      "title": "Maintenance Log",
+      "direction": "Service notes show the world is managed by external operators. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-10-signal-intercept",
+      "group": "Audience and discovery",
+      "title": "Signal Intercept",
+      "direction": "A radio transmission leaks a market update or production discussion. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-11-sensor-network",
+      "group": "Audience and discovery",
+      "title": "Sensor Network",
+      "direction": "Contestants find distributed sensors whose locations do not match game lore. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-12-public-ranking",
+      "group": "Audience and discovery",
+      "title": "Public Ranking",
+      "direction": "A scoreboard lists contestant handles and rankings that nobody remembers entering. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-13-predicted-discovery",
+      "group": "Audience and discovery",
+      "title": "Predicted Discovery",
+      "direction": "A market appears to bet on whether contestants will find the surveillance system. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-14-exclusive-audience",
+      "group": "Audience and discovery",
+      "title": "Exclusive Audience",
+      "direction": "Evidence suggests the spectators are few and privileged, not a public broadcast. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-15-delayed-reveal",
+      "group": "Audience and discovery",
+      "title": "Delayed Reveal",
+      "direction": "Early anomalies remain unexplained; betting truth surfaces only after trust forms. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "audience-and-discovery-16-false-audience-theory",
+      "group": "Audience and discovery",
+      "title": "False Audience Theory",
+      "direction": "A clue suggests spectators but has a mundane alternative that contestants can investigate. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-01-play-the-objectives",
+      "group": "Strategy and tone",
+      "title": "Play the Objectives",
+      "direction": "Some participants argue that the expected game route offers the best survival odds; leave agreement open. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-02-break-the-stage",
+      "group": "Strategy and tone",
+      "title": "Break the Stage",
+      "direction": "A contestant studies boundaries, power, supplies, and service routes as a possible escape path. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-03-hide-and-wait",
+      "group": "Strategy and tone",
+      "title": "Hide and Wait",
+      "direction": "A group avoids objectives and tries to outlast the contest without knowing its duration. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-04-build-a-refuge",
+      "group": "Strategy and tone",
+      "title": "Build a Refuge",
+      "direction": "Participants use available materials to create a defensible settlement outside intended play. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-05-control-resources",
+      "group": "Strategy and tone",
+      "title": "Control Resources",
+      "direction": "A faction attempts to manage scarce supplies, raising questions about authority and consent. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-06-protect-the-vulnerable",
+      "group": "Strategy and tone",
+      "title": "Protect the Vulnerable",
+      "direction": "Some contestants prioritize care and shelter, without making others accept their plan. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-07-find-the-operators",
+      "group": "Strategy and tone",
+      "title": "Find the Operators",
+      "direction": "Investigation targets cameras and maintenance infrastructure rather than game objectives. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-08-competing-factions",
+      "group": "Strategy and tone",
+      "title": "Competing Factions",
+      "direction": "Groups disagree over winning, hiding, escape, and resource control without fixed moral labels. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-09-tactical-suspense",
+      "group": "Strategy and tone",
+      "title": "Tactical Suspense",
+      "direction": "Focus on route choices, limited supplies, and uncertain enemy behaviour. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-10-survival-horror",
+      "group": "Strategy and tone",
+      "title": "Survival Horror",
+      "direction": "Use isolation and unreliable game knowledge to build dread without graphic gore. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-11-mystery-first",
+      "group": "Strategy and tone",
+      "title": "Mystery First",
+      "direction": "Make the opening's central question how the site exists and who maintains it. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-12-uneasy-social-drama",
+      "group": "Strategy and tone",
+      "title": "Uneasy Social Drama",
+      "direction": "The hidden audience reframes ordinary cooperation as potentially watched performance. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-13-dark-irony",
+      "group": "Strategy and tone",
+      "title": "Dark Irony",
+      "direction": "Familiar game terminology collides with serious physical stakes, without trivialising victims. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-14-quiet-exploration",
+      "group": "Strategy and tone",
+      "title": "Quiet Exploration",
+      "direction": "Use terrain, old landmarks, and infrastructure clues to pace discovery slowly. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-15-high-pressure-opening",
+      "group": "Strategy and tone",
+      "title": "High-Pressure Opening",
+      "direction": "Begin during an objective or hazard, while preserving meaningful options for {{user}}. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "strategy-and-tone-16-open-ended-campaign",
+      "group": "Strategy and tone",
+      "title": "Open-Ended Campaign",
+      "direction": "Leave victory, escape, continued survival, and alliance outcomes unresolved at the start. All participants are adults; keep the setting physically real, non-graphic, and consensual where relevant, and leave {{user}}'s choices open."
+    },
+    {
+      "id": "combinations-001-survival-crafting-casual-observer",
+      "group": "Combinations",
+      "title": "Survival Crafting × Casual Observer",
+      "direction": "Combine survival crafting with casual observer: The casual observer notices a service hatch hidden behind a familiar crafting station. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-002-fantasy-rpg-lore-archivist",
+      "group": "Combinations",
+      "title": "Fantasy RPG × Lore Archivist",
+      "direction": "Combine fantasy rpg with lore archivist: A lore detail points toward an objective whose physical purpose remains uncertain. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-003-extraction-shooter-former-champion",
+      "group": "Combinations",
+      "title": "Extraction Shooter × Former Champion",
+      "direction": "Combine extraction shooter with former champion: A former champion recognises an extraction route that may be a trap or a real exit. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-004-horror-game-hidden-cameras",
+      "group": "Combinations",
+      "title": "Horror Game × Hidden Cameras",
+      "direction": "Combine horror game with hidden cameras: A camera is mounted where the game's horror map never placed one. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-005-dungeon-crawler-map-memory",
+      "group": "Combinations",
+      "title": "Dungeon Crawler × Map Memory",
+      "direction": "Combine dungeon crawler with map memory: Map memory helps {{char}} navigate until a corridor diverges from her remembered layout. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-006-monster-hunt-combat-specialist",
+      "group": "Combinations",
+      "title": "Monster Hunt × Combat Specialist",
+      "direction": "Combine monster hunt with combat specialist: Combat expertise offers a plan, but the creature's physical behaviour is not fully predictable. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-007-tactical-shooter-competing-factions",
+      "group": "Combinations",
+      "title": "Tactical Shooter × Competing Factions",
+      "direction": "Combine tactical shooter with competing factions: Two groups dispute whether to secure sightlines or abandon the designed objective. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-008-open-world-mmo-audience-favourite",
+      "group": "Combinations",
+      "title": "Open World MMO × Audience Favourite",
+      "direction": "Combine open world mmo with audience favourite: A contestant's familiar handle appears on an unexplained popularity ranking. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-009-strategy-survival-build-a-refuge",
+      "group": "Combinations",
+      "title": "Strategy Survival × Build a Refuge",
+      "direction": "Combine strategy survival with build a refuge: Contestants turn a game settlement site into a practical refuge with limited materials. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-010-roguelike-rooms-no-respawn",
+      "group": "Combinations",
+      "title": "Roguelike Rooms × No Respawn",
+      "direction": "Combine roguelike rooms with no respawn: A repeated chamber pattern cannot erase the consequences of a fatal mistake. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-011-racing-survival-map-edge-exists",
+      "group": "Combinations",
+      "title": "Racing Survival × Map Edge Exists",
+      "direction": "Combine racing survival with map edge exists: A route crosses a boundary that exposes the constructed stage's service perimeter. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-012-puzzle-adventure-signal-intercept",
+      "group": "Combinations",
+      "title": "Puzzle Adventure × Signal Intercept",
+      "direction": "Combine puzzle adventure with signal intercept: A solved mechanism opens access to a signal channel that may reveal outside observers. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-013-stealth-sandbox-find-the-operators",
+      "group": "Combinations",
+      "title": "Stealth Sandbox × Find the Operators",
+      "direction": "Combine stealth sandbox with find the operators: {{char}} uses patrol knowledge to reach maintenance infrastructure rather than a game objective. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-014-colony-simulation-control-resources",
+      "group": "Combinations",
+      "title": "Colony Simulation × Control Resources",
+      "direction": "Combine colony simulation with control resources: A settlement's supply logic becomes a dispute over who can set rules for the group. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-015-adventure-platformer-falls-are-real",
+      "group": "Combinations",
+      "title": "Adventure Platformer × Falls Are Real",
+      "direction": "Combine adventure platformer with falls are real: A remembered traversal sequence becomes a real climbing problem with no reset. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-016-hybrid-genre-delayed-reveal",
+      "group": "Combinations",
+      "title": "Hybrid Genre × Delayed Reveal",
+      "direction": "Combine hybrid genre with delayed reveal: Genre rules conflict across the merged map while the audience truth remains unconfirmed. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-017-near-perfect-copy-odds-leak",
+      "group": "Combinations",
+      "title": "Near Perfect Copy × Odds Leak",
+      "direction": "Combine near perfect copy with odds leak: An otherwise faithful replica contains one screen showing wagers on contestant outcomes. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-018-altered-patch-patch-historian",
+      "group": "Combinations",
+      "title": "Altered Patch × Patch Historian",
+      "direction": "Combine altered patch with patch historian: {{char}} recognises an old-version change that explains a dangerous mismatch. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-019-merged-maps-former-players",
+      "group": "Combinations",
+      "title": "Merged Maps × Former Players",
+      "direction": "Combine merged maps with former players: Different contestants remember separate maps and disagree about how they connect. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-020-expanded-world-nonplayer-specialist",
+      "group": "Combinations",
+      "title": "Expanded World × Nonplayer Specialist",
+      "direction": "Combine expanded world with nonplayer specialist: A contestant's engineering knowledge helps map the artificial terrain beyond familiar play. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-021-misleading-replica-decoy-landmark",
+      "group": "Combinations",
+      "title": "Misleading Replica × Decoy Landmark",
+      "direction": "Combine misleading replica with decoy landmark: A famous safe landmark is shifted to lure players into testing an unverified rule. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-022-old-version-top-ranked",
+      "group": "Combinations",
+      "title": "Old Version × Top Ranked",
+      "direction": "Combine old version with top ranked: Elite players' modern strategies fail against a map built from an obsolete release. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-023-community-mod-secret-finder",
+      "group": "Combinations",
+      "title": "Community Mod × Secret Finder",
+      "direction": "Combine community mod with secret finder: A mod-specific secret appears physically implemented, raising questions about the builders. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-024-partial-recreation-break-the-stage",
+      "group": "Combinations",
+      "title": "Partial Recreation × Break the Stage",
+      "direction": "Combine partial recreation with break the stage: An unfinished edge may expose an exit route or merely a dangerous construction zone. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-025-lore-accurate-death-market",
+      "group": "Combinations",
+      "title": "Lore Accurate × Death Market",
+      "direction": "Combine lore accurate with death market: A seemingly fictional prophecy is paired with a real spectator wager about death. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-026-mechanics-accurate-inventory-limits",
+      "group": "Combinations",
+      "title": "Mechanics Accurate × Inventory Limits",
+      "direction": "Combine mechanics accurate with inventory limits: A familiar carrying rule works, but contestants must bear its physical inconvenience. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-027-composite-map-competing-factions",
+      "group": "Combinations",
+      "title": "Composite Map × Competing Factions",
+      "direction": "Combine composite map with competing factions: The impossible geography divides contestants over which route or objective to trust. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-028-hidden-expansion-find-the-operators",
+      "group": "Combinations",
+      "title": "Hidden Expansion × Find the Operators",
+      "direction": "Combine hidden expansion with find the operators: An uncharted area contains maintenance traces as well as a possible new game objective. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-029-decoy-landmark-false-audience-theory",
+      "group": "Combinations",
+      "title": "Decoy Landmark × False Audience Theory",
+      "direction": "Combine decoy landmark with false audience theory: A strange landmark clue could be a deliberate prop or evidence of observation. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-030-seasonal-variant-day-night-cycle",
+      "group": "Combinations",
+      "title": "Seasonal Variant × Day Night Cycle",
+      "direction": "Combine seasonal variant with day night cycle: A game-like seasonal cycle changes visibility and practical exposure at once. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-031-asymmetric-copy-mixed-skill",
+      "group": "Combinations",
+      "title": "Asymmetric Copy × Mixed Skill",
+      "direction": "Combine asymmetric copy with mixed skill: Contestants' different editions create useful disagreement and unreliable shared maps. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-032-deliberate-patchwork-risk-calculator",
+      "group": "Combinations",
+      "title": "Deliberate Patchwork × Risk Calculator",
+      "direction": "Combine deliberate patchwork with risk calculator: {{char}} compares reliable details with deviations before recommending any dangerous route. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-033-top-ranked-tactical-suspense",
+      "group": "Combinations",
+      "title": "Top Ranked × Tactical Suspense",
+      "direction": "Combine top ranked with tactical suspense: A leaderboard star must weigh reflexes against the limits of an injured physical body. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-034-mixed-skill-protect-the-vulnerable",
+      "group": "Combinations",
+      "title": "Mixed Skill × Protect the Vulnerable",
+      "direction": "Combine mixed skill with protect the vulnerable: Different expertise lets contestants help one another without requiring a single leader. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-035-streamer-cohort-anonymous-commentary",
+      "group": "Combinations",
+      "title": "Streamer Cohort × Anonymous Commentary",
+      "direction": "Combine streamer cohort with anonymous commentary: A leaked voice feed seems to recognise familiar handles but gives no clear source. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-036-former-players-patch-historian",
+      "group": "Combinations",
+      "title": "Former Players × Patch Historian",
+      "direction": "Combine former players with patch historian: Years away from play may make one contestant's outdated knowledge unexpectedly useful. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-037-casual-fans-lore-archivist",
+      "group": "Combinations",
+      "title": "Casual Fans × Lore Archivist",
+      "direction": "Combine casual fans with lore archivist: A casual fan's lore memory reveals a clue overlooked by competitive specialists. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-038-behavioural-selection-personal-targeting",
+      "group": "Combinations",
+      "title": "Behavioural Selection × Personal Targeting",
+      "direction": "Combine behavioural selection with personal targeting: The group compares selection patterns while keeping suspicions distinct from proof. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-039-random-draw-false-audience-theory",
+      "group": "Combinations",
+      "title": "Random Draw × False Audience Theory",
+      "direction": "Combine random draw with false audience theory: The apparent randomness of selection complicates a clue that might imply planned casting. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-040-guild-members-alliance-bets",
+      "group": "Combinations",
+      "title": "Guild Members × Alliance Bets",
+      "direction": "Combine guild members with alliance bets: Former guildmates find evidence that their cooperative ties are being wagered upon. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-041-rival-competitors-play-the-objectives",
+      "group": "Combinations",
+      "title": "Rival Competitors × Play the Objectives",
+      "direction": "Combine rival competitors with play the objectives: Rivals debate whether following the familiar win condition outweighs their old competition. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-042-returning-champions-audience-favourite",
+      "group": "Combinations",
+      "title": "Returning Champions × Audience Favourite",
+      "direction": "Combine returning champions with audience favourite: A champion's old reputation appears to affect odds, though neither knows the audience's scale. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-043-known-usernames-public-ranking",
+      "group": "Combinations",
+      "title": "Known Usernames × Public Ranking",
+      "direction": "Combine known usernames with public ranking: Contestants recognise handles on a scoreboard but cannot tell who is behind each one. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-044-nonplayers-included-nonplayer-specialist",
+      "group": "Combinations",
+      "title": "Nonplayers Included × Nonplayer Specialist",
+      "direction": "Combine nonplayers included with nonplayer specialist: The nonplayer's practical skills challenge assumptions that gaming experience is essential. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-045-skill-tested-cohort-predicted-discovery",
+      "group": "Combinations",
+      "title": "Skill-Tested Cohort × Predicted Discovery",
+      "direction": "Combine skill-tested cohort with predicted discovery: A market appears to wager on whether contestants will identify the test's hidden premise. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-046-volunteer-deception-delayed-reveal",
+      "group": "Combinations",
+      "title": "Volunteer Deception × Delayed Reveal",
+      "direction": "Combine volunteer deception with delayed reveal: A false promise of a harmless event gives way to danger before anyone can explain the selection. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-047-staggered-cohort-maintenance-log",
+      "group": "Combinations",
+      "title": "Staggered Cohort × Maintenance Log",
+      "direction": "Combine staggered cohort with maintenance log: New arrivals find signs that operators have prepared the site between contestant waves. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-048-inventory-limits-resource-scavenger",
+      "group": "Combinations",
+      "title": "Inventory Limits × Resource Scavenger",
+      "direction": "Combine inventory limits with resource scavenger: {{char}} spots useful supplies beyond the familiar inventory-and-loot loop. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-049-crafting-recipes-crafting-expert",
+      "group": "Combinations",
+      "title": "Crafting Recipes × Crafting Expert",
+      "direction": "Combine crafting recipes with crafting expert: A known recipe works only after contestants locate the right physical materials and tools. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-050-class-abilities-support-main",
+      "group": "Combinations",
+      "title": "Class Abilities × Support Main",
+      "direction": "Combine class abilities with support main: A support role becomes practical coordination rather than a guaranteed healing power. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-051-quest-markers-objective-wagers",
+      "group": "Combinations",
+      "title": "Quest Markers × Objective Wagers",
+      "direction": "Combine quest markers with objective wagers: Objective prompts align with betting markets, suggesting the contest is scored for spectators. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-052-loot-rarity-loot-is-finite",
+      "group": "Combinations",
+      "title": "Loot Rarity × Loot Is Finite",
+      "direction": "Combine loot rarity with loot is finite: A rare cache yields one useful item, forcing an honest choice about distribution. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-053-safe-zones-safe-zone-uncertain",
+      "group": "Combinations",
+      "title": "Safe Zones × Safe Zone Uncertain",
+      "direction": "Combine safe zones with safe zone uncertain: A designated refuge seems protected from one threat, but its broader safety is untested. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-054-day-night-cycle-night-enclosure",
+      "group": "Combinations",
+      "title": "Day Night Cycle × Night Enclosure",
+      "direction": "Combine day night cycle with night enclosure: A timed dark period makes the lighting grid a possible clue and a survival concern. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-055-status-effects-status-is-misread",
+      "group": "Combinations",
+      "title": "Status Effects × Status Is Misread",
+      "direction": "Combine status effects with status is misread: A display's familiar label fails to explain a contestant's physical symptoms. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-056-enemy-aggro-enemies-adapt",
+      "group": "Combinations",
+      "title": "Enemy Aggro × Enemies Adapt",
+      "direction": "Combine enemy aggro with enemies adapt: A threat changes its response after contestants exploit a known aggro pattern. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-057-map-progression-no-guaranteed-ending",
+      "group": "Combinations",
+      "title": "Map Progression × No Guaranteed Ending",
+      "direction": "Combine map progression with no guaranteed ending: A locked region opens after an objective without proving that an exit awaits. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-058-durability-rules-crafting-has-tradeoffs",
+      "group": "Combinations",
+      "title": "Durability Rules × Crafting Has Tradeoffs",
+      "direction": "Combine durability rules with crafting has tradeoffs: Equipment wears down in a recognisable pattern, but repairs consume real resources. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-059-fast-travel-nodes-no-fast-travel",
+      "group": "Combinations",
+      "title": "Fast Travel Nodes × No Fast Travel",
+      "direction": "Combine fast travel nodes with no fast travel: A supposed transit node is a physical structure with no instant-travel function. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-060-respawning-resources-respawning-resources",
+      "group": "Combinations",
+      "title": "Respawning Resources × Respawning Resources",
+      "direction": "Combine respawning resources with respawning resources: A cache returns on schedule, tempting contestants to rely on a replenishment they cannot explain. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-061-scoreboard-public-ranking",
+      "group": "Combinations",
+      "title": "Scoreboard × Public Ranking",
+      "direction": "Combine scoreboard with public ranking: A scoreboard tracks feats while withholding who created or receives the rankings. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-062-environmental-puzzles-environmental-puzzles",
+      "group": "Combinations",
+      "title": "Environmental Puzzles × Environmental Puzzles",
+      "direction": "Combine environmental puzzles with environmental puzzles: A puzzle mechanism obeys the game's logic but can jam or injure someone physically. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-063-limited-interface-limited-interface",
+      "group": "Combinations",
+      "title": "Limited Interface × Limited Interface",
+      "direction": "Combine limited interface with limited interface: A sparse readout displays selected data and leaves its underlying sensors unknown. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-064-no-respawn-death-market",
+      "group": "Combinations",
+      "title": "No Respawn × Death Market",
+      "direction": "Combine no respawn with death market: A wager on death makes the absence of respawning part of the spectator spectacle. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-065-no-pause-high-pressure-opening",
+      "group": "Combinations",
+      "title": "No Pause × High-Pressure Opening",
+      "direction": "Combine no pause with high-pressure opening: An unfolding hazard forces a decision before contestants can fully assess their surroundings. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-066-healing-takes-time-support-main",
+      "group": "Combinations",
+      "title": "Healing Takes Time × Support Main",
+      "direction": "Combine healing takes time with support main: {{char}} can coordinate care, but no item instantly erases an injury. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-067-falls-are-real-adventure-platformer",
+      "group": "Combinations",
+      "title": "Falls Are Real × Adventure Platformer",
+      "direction": "Combine falls are real with adventure platformer: A familiar jump sequence requires a real assessment of reach, grip, and consequences. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-068-stamina-is-bodily-tactical-suspense",
+      "group": "Combinations",
+      "title": "Stamina Is Bodily × Tactical Suspense",
+      "direction": "Combine stamina is bodily with tactical suspense: A route plan changes when fatigue proves more limiting than a game interface suggested. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-069-no-fast-travel-remote-archipelago",
+      "group": "Combinations",
+      "title": "No Fast Travel × Remote Archipelago",
+      "direction": "Combine no fast travel with remote archipelago: Crossing between familiar regions requires actual transport and resource planning. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-070-loot-is-finite-control-resources",
+      "group": "Combinations",
+      "title": "Loot Is Finite × Control Resources",
+      "direction": "Combine loot is finite with control resources: A finite supply cache becomes the focus of competing group policies. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-071-status-is-misread-medical-maze",
+      "group": "Combinations",
+      "title": "Status Is Misread × Medical Maze",
+      "direction": "Combine status is misread with medical maze: Contestants seek practical help after a game-like status label proves inadequate. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-072-safe-zone-uncertain-decoy-landmark",
+      "group": "Combinations",
+      "title": "Safe Zone Uncertain × Decoy Landmark",
+      "direction": "Combine safe zone uncertain with decoy landmark: The site reproduces a sanctuary whose protection may be only partially enforced. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-073-no-reload-menu-extraction-shooter",
+      "group": "Combinations",
+      "title": "No Reload Menu × Extraction Shooter",
+      "direction": "Combine no reload menu with extraction shooter: A familiar firefight demands real equipment handling and leaves no reset option. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-074-objective-not-binding-hide-and-wait",
+      "group": "Combinations",
+      "title": "Objective Not Binding × Hide and Wait",
+      "direction": "Combine objective not binding with hide and wait: A group declines a prompt and tests whether the organisers or environment respond. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-075-daylight-is-weather-desert-biome",
+      "group": "Combinations",
+      "title": "Daylight Is Weather × Desert Biome",
+      "direction": "Combine daylight is weather with desert biome: A familiar day cycle combines with real heat and uncertain water supplies. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-076-enemies-adapt-horror-game",
+      "group": "Combinations",
+      "title": "Enemies Adapt × Horror Game",
+      "direction": "Combine enemies adapt with horror game: A threat's deviation from its game pattern undermines the usual safe strategy. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-077-crafting-has-tradeoffs-crafting-expert",
+      "group": "Combinations",
+      "title": "Crafting Has Tradeoffs × Crafting Expert",
+      "direction": "Combine crafting has tradeoffs with crafting expert: {{char}} knows a tool recipe but weighs its material cost against immediate need. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-078-map-edge-exists-break-the-stage",
+      "group": "Combinations",
+      "title": "Map Edge Exists × Break the Stage",
+      "direction": "Combine map edge exists with break the stage: A barrier confirms construction while leaving the possibility of escape unresolved. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-079-no-guaranteed-ending-final-objective",
+      "group": "Combinations",
+      "title": "No Guaranteed Ending × Final Objective",
+      "direction": "Combine no guaranteed ending with final objective: A final-looking objective may trigger another phase rather than a clear exit. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-080-map-memory-near-perfect-copy",
+      "group": "Combinations",
+      "title": "Map Memory × Near Perfect Copy",
+      "direction": "Combine map memory with near perfect copy: {{char}} trusts a familiar route until a physical landmark exposes a small but vital deviation. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-081-combat-specialist-no-respawn",
+      "group": "Combinations",
+      "title": "Combat Specialist × No Respawn",
+      "direction": "Combine combat specialist with no respawn: {{char}}'s tactics must account for the fact that a mistake cannot be undone by respawn. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-082-crafting-expert-resource-ecology",
+      "group": "Combinations",
+      "title": "Crafting Expert × Resource Ecology",
+      "direction": "Combine crafting expert with resource ecology: {{char}} balances known recipes against uncertain supplies and finite caches. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-083-lore-archivist-hidden-expansion",
+      "group": "Combinations",
+      "title": "Lore Archivist × Hidden Expansion",
+      "direction": "Combine lore archivist with hidden expansion: A remembered lore passage suggests a region absent from the game's public map. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-084-speedrunner-misleading-replica",
+      "group": "Combinations",
+      "title": "Speedrunner × Misleading Replica",
+      "direction": "Combine speedrunner with misleading replica: A speedrun shortcut appears present but its altered construction makes it risky. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-085-support-main-protect-the-vulnerable",
+      "group": "Combinations",
+      "title": "Support Main × Protect the Vulnerable",
+      "direction": "Combine support main with protect the vulnerable: {{char}} offers practical support without deciding what {{user}} should accept. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-086-economy-strategist-loot-is-finite",
+      "group": "Combinations",
+      "title": "Economy Strategist × Loot Is Finite",
+      "direction": "Combine economy strategist with loot is finite: {{char}} treats a scarce cache as an allocation problem, not automatic authority. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-087-casual-observer-artificial-city",
+      "group": "Combinations",
+      "title": "Casual Observer × Artificial City",
+      "direction": "Combine casual observer with artificial city: {{char}} notices that the city's ordinary-looking signage repeats like a constructed set. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-088-former-champion-audience-favourite",
+      "group": "Combinations",
+      "title": "Former Champion × Audience Favourite",
+      "direction": "Combine former champion with audience favourite: {{char}}'s competitive reputation may have made her popular with spectators without her knowledge. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-089-patch-historian-old-version",
+      "group": "Combinations",
+      "title": "Patch Historian × Old Version",
+      "direction": "Combine patch historian with old version: {{char}} identifies an obsolete feature that explains why the site's routes differ. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-090-nonplayer-specialist-maintenance-log",
+      "group": "Combinations",
+      "title": "Nonplayer Specialist × Maintenance Log",
+      "direction": "Combine nonplayer specialist with maintenance log: A nonplayer's engineering skills make sense of a service record that gamers dismiss. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-091-secret-finder-decoy-landmark",
+      "group": "Combinations",
+      "title": "Secret Finder × Decoy Landmark",
+      "direction": "Combine secret finder with decoy landmark: {{char}} knows an obscure landmark secret but cannot tell whether the builders baited it. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-092-social-tactician-alliance-bets",
+      "group": "Combinations",
+      "title": "Social Tactician × Alliance Bets",
+      "direction": "Combine social tactician with alliance bets: {{char}} notices a broadcast tracks group bonds, not just objective performance. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-093-resource-scavenger-abandoned-resort",
+      "group": "Combinations",
+      "title": "Resource Scavenger × Abandoned Resort",
+      "direction": "Combine resource scavenger with abandoned resort: {{char}} finds practical supplies in service areas outside the game's loot table. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-094-risk-calculator-safe-zone-uncertain",
+      "group": "Combinations",
+      "title": "Risk Calculator × Safe Zone Uncertain",
+      "direction": "Combine risk calculator with safe zone uncertain: {{char}} compares evidence before anyone risks relying on a familiar safe zone. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-095-conflicted-expert-altered-patch",
+      "group": "Combinations",
+      "title": "Conflicted Expert × Altered Patch",
+      "direction": "Combine conflicted expert with altered patch: A major map mismatch makes {{char}} question how much of her expertise still applies. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-096-odds-leak-delayed-reveal",
+      "group": "Combinations",
+      "title": "Odds Leak × Delayed Reveal",
+      "direction": "Combine odds leak with delayed reveal: A brief odds display plants a clue long before contestants understand its significance. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-097-hidden-cameras-quiet-exploration",
+      "group": "Combinations",
+      "title": "Hidden Cameras × Quiet Exploration",
+      "direction": "Combine hidden cameras with quiet exploration: A slow survey of familiar terrain reveals a sensor placed beyond the game's boundaries. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-098-betting-feed-objective-wagers",
+      "group": "Combinations",
+      "title": "Betting Feed × Objective Wagers",
+      "direction": "Combine betting feed with objective wagers: A captured feed ties a current objective to private bets among unseen viewers. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-099-audience-favourite-streamer-cohort",
+      "group": "Combinations",
+      "title": "Audience Favourite × Streamer Cohort",
+      "direction": "Combine audience favourite with streamer cohort: A known handle appears to be favoured, complicating how contestants interpret recognition. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-100-death-market-no-respawn",
+      "group": "Combinations",
+      "title": "Death Market × No Respawn",
+      "direction": "Combine death market with no respawn: A wager about death confirms the audience understands the physical stakes. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-101-objective-wagers-quest-markers",
+      "group": "Combinations",
+      "title": "Objective Wagers × Quest Markers",
+      "direction": "Combine objective wagers with quest markers: Objective prompts and wager categories share phrasing that suggests common operators. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-102-alliance-bets-guild-members",
+      "group": "Combinations",
+      "title": "Alliance Bets × Guild Members",
+      "direction": "Combine alliance bets with guild members: Former guildmates find their cooperation listed as a marketable outcome. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-103-anonymous-commentary-sound-system",
+      "group": "Combinations",
+      "title": "Anonymous Commentary × Sound System",
+      "direction": "Combine anonymous commentary with sound system: A disembodied voice reacts to events but gives no proof of who is listening. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-104-maintenance-log-underground-complex",
+      "group": "Combinations",
+      "title": "Maintenance Log × Underground Complex",
+      "direction": "Combine maintenance log with underground complex: A service log leads contestants toward the complex's hidden operating layer. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-105-signal-intercept-remote-archipelago",
+      "group": "Combinations",
+      "title": "Signal Intercept × Remote Archipelago",
+      "direction": "Combine signal intercept with remote archipelago: A broken radio link carries a betting update between islands. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-106-sensor-network-enclosed-wilderness",
+      "group": "Combinations",
+      "title": "Sensor Network × Enclosed Wilderness",
+      "direction": "Combine sensor network with enclosed wilderness: The sensor placements reveal that the forest is observed beyond its apparent borders. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-107-public-ranking-top-ranked",
+      "group": "Combinations",
+      "title": "Public Ranking × Top Ranked",
+      "direction": "Combine public ranking with top ranked: A leaderboard turns past gaming reputation into a new and unsettling public score. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-108-predicted-discovery-break-the-stage",
+      "group": "Combinations",
+      "title": "Predicted Discovery × Break the Stage",
+      "direction": "Combine predicted discovery with break the stage: A wager mentions the chance of finding infrastructure, implying the audience anticipates escape attempts. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-109-exclusive-audience-artificial-city",
+      "group": "Combinations",
+      "title": "Exclusive Audience × Artificial City",
+      "direction": "Combine exclusive audience with artificial city: Clues suggest a small privileged audience watching a city-sized private stage. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-110-delayed-reveal-former-players",
+      "group": "Combinations",
+      "title": "Delayed Reveal × Former Players",
+      "direction": "Combine delayed reveal with former players: An old player's familiar map recognition precedes the first credible audience clue. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-111-false-audience-theory-misleading-replica",
+      "group": "Combinations",
+      "title": "False Audience Theory × Misleading Replica",
+      "direction": "Combine false audience theory with misleading replica: A suspicious screen may be a planted prop, so contestants must seek corroboration. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-112-play-the-objectives-fantasy-rpg",
+      "group": "Combinations",
+      "title": "Play the Objectives × Fantasy RPG",
+      "direction": "Combine play the objectives with fantasy rpg: {{char}} argues that the original quest chain may be the safest known route, without making others agree. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-113-break-the-stage-artificial-city",
+      "group": "Combinations",
+      "title": "Break the Stage × Artificial City",
+      "direction": "Combine break the stage with artificial city: {{char}} maps utility corridors and power access as alternatives to the game's intended route. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-114-hide-and-wait-night-enclosure",
+      "group": "Combinations",
+      "title": "Hide and Wait × Night Enclosure",
+      "direction": "Combine hide and wait with night enclosure: Contestants seek shelter through a long dark interval while the contest's duration remains unknown. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-115-build-a-refuge-survival-crafting",
+      "group": "Combinations",
+      "title": "Build a Refuge × Survival Crafting",
+      "direction": "Combine build a refuge with survival crafting: A familiar base-building loop becomes a real project with labour, materials, and risk. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-116-control-resources-loot-is-finite",
+      "group": "Combinations",
+      "title": "Control Resources × Loot Is Finite",
+      "direction": "Combine control resources with loot is finite: A faction tries to set distribution rules that other contestants may reject. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-117-protect-the-vulnerable-mixed-skill",
+      "group": "Combinations",
+      "title": "Protect the Vulnerable × Mixed Skill",
+      "direction": "Combine protect the vulnerable with mixed skill: Practical cooperation grows around specific needs without forcing a unified group. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-118-find-the-operators-maintenance-log",
+      "group": "Combinations",
+      "title": "Find the Operators × Maintenance Log",
+      "direction": "Combine find the operators with maintenance log: The maintenance evidence gives an investigator a lead beyond ordinary game objectives. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-119-competing-factions-guild-members",
+      "group": "Combinations",
+      "title": "Competing Factions × Guild Members",
+      "direction": "Combine competing factions with guild members: Former allies split over whether to win, hide, or find a way beyond the constructed site. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-120-tactical-suspense-extraction-shooter",
+      "group": "Combinations",
+      "title": "Tactical Suspense × Extraction Shooter",
+      "direction": "Combine tactical suspense with extraction shooter: A contested route becomes a calculation of timing, supplies, and real exposure. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-121-survival-horror-enclosed-wilderness",
+      "group": "Combinations",
+      "title": "Survival Horror × Enclosed Wilderness",
+      "direction": "Combine survival horror with enclosed wilderness: Familiar enemy cues fail at the forest edge, sustaining uncertainty without graphic detail. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-122-mystery-first-artificial-city",
+      "group": "Combinations",
+      "title": "Mystery First × Artificial City",
+      "direction": "Combine mystery first with artificial city: The opening centres on how an apparently lived-in city was built and maintained. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-123-uneasy-social-drama-alliance-bets",
+      "group": "Combinations",
+      "title": "Uneasy Social Drama × Alliance Bets",
+      "direction": "Combine uneasy social drama with alliance bets: Participants wonder whether genuine cooperation is being watched as entertainment. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-124-dark-irony-scoreboard",
+      "group": "Combinations",
+      "title": "Dark Irony × Scoreboard",
+      "direction": "Combine dark irony with scoreboard: A game-like score updates during a serious physical crisis, exposing the site's cold design. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-125-quiet-exploration-abandoned-resort",
+      "group": "Combinations",
+      "title": "Quiet Exploration × Abandoned Resort",
+      "direction": "Combine quiet exploration with abandoned resort: Empty public rooms and working service corridors slowly reveal the resort's purpose. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-126-high-pressure-opening-no-pause",
+      "group": "Combinations",
+      "title": "High-Pressure Opening × No Pause",
+      "direction": "Combine high-pressure opening with no pause: Start amid an active hazard while keeping {{user}}'s response undecided. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-127-open-ended-campaign-no-guaranteed-ending",
+      "group": "Combinations",
+      "title": "Open-Ended Campaign × No Guaranteed Ending",
+      "direction": "Combine open-ended campaign with no guaranteed ending: Keep winning, escape, and merely surviving as distinct possibilities rather than promised outcomes. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    },
+    {
+      "id": "combinations-128-safe-zone-uncertain-audience-favourite",
+      "group": "Combinations",
+      "title": "Safe Zone Uncertain × Audience Favourite",
+      "direction": "Combine safe zone uncertain with audience favourite: A contestant's apparent popularity may make a supposedly protected site more valuable to spectators. The setting remains a physical recreation, not software, and the hidden betting audience may be discovered only through evidence. All contestants are adults; keep danger non-graphic and leave {user}'s decisions open."
+    }
+  ],
+  "sections": [
+    {
+      "id": "physical-engine",
+      "label": "Physical Engine",
+      "content": "Participants occupy a real site deliberately built to reproduce a videogame world. Their bodies, injuries, needs, terrain, and threats are physical rather than simulated."
+    },
+    {
+      "id": "game-reality",
+      "label": "Game and Recreation",
+      "content": "Define the source game and identify which maps, objects, enemies, objectives, and rules were recreated. Familiarity is a starting advantage, not proof that the site matches perfectly."
+    },
+    {
+      "id": "rules-that-hold",
+      "label": "Rules That Hold",
+      "content": "Choose the selected mechanics the site genuinely enforces, including any interfaces or infrastructure. Keep those rules consistent while allowing participants to learn them through evidence."
+    },
+    {
+      "id": "broken-abstractions",
+      "label": "Broken Abstractions",
+      "content": "Specify which software conveniences do not survive contact with physical reality, especially respawning, pausing, painless healing, and harmless falls. Consequences should follow established conditions rather than arbitrary reversals."
+    },
+    {
+      "id": "character-construction",
+      "label": "Character Construction",
+      "content": "Build {{char}} as an adult with a life, temperament, and expertise independent of the game. Give her a distinctive knowledge domain and realistic limits to what she remembers or can infer."
+    },
+    {
+      "id": "selection",
+      "label": "Selection",
+      "content": "Choose who was brought in and whether they know why. Keep selection motives uncertain unless the story establishes verifiable clues; do not presume all participants are elite players."
+    },
+    {
+      "id": "relationship",
+      "label": "Relationship Dynamics",
+      "content": "Determine how {{char}} first encounters {{user}} and whether they were strangers, rivals, or acquainted beforehand. Complementary expertise can motivate cooperation without requiring trust, leadership, or romance."
+    },
+    {
+      "id": "audience",
+      "label": "Hidden Audience",
+      "content": "An undisclosed audience watches and wagers on contestant outcomes. Markets may cover survival, objectives, alliances, discoveries, and betrayal, but the audience's interest need not dictate events."
+    },
+    {
+      "id": "escalation",
+      "label": "Escalation and Discovery",
+      "content": "Move from disorientation and map recognition toward clues such as non-game cameras, signals, terminals, odds, or maintenance access. Discovery is a possible trajectory, not mandatory opening exposition."
+    },
+    {
+      "id": "organisers",
+      "label": "Organiser Conduct",
+      "content": "Organisers primarily observe and maintain the constructed environment. Their disturbing non-intervention means ordinary suffering and interpersonal conflict do not summon a rescue or referee."
+    },
+    {
+      "id": "tone",
+      "label": "Tone and Register",
+      "content": "Use survival suspense, mystery, tactical problem-solving, horror, or uneasy social drama. Keep the spectacle unsettling without needing graphic violence or constant action."
+    },
+    {
+      "id": "boundaries",
+      "label": "Boundaries",
+      "content": "All participants are adults and fictional; preserve user agency and distinguish speculation from established truth. Keep physical peril consequential but non-graphic, and leave strategy and alliances open."
+    },
+    {
+      "id": "failure-modes",
+      "label": "Failure Modes",
+      "content": "Avoid turning the site into software, making veteran knowledge omniscient, or treating game mechanics as harmless by default. Do not let organisers explain or rescue away the central uncertainty."
+    },
+    {
+      "id": "opening",
+      "label": "Playable Opening",
+      "content": "Start at arrival, first danger, recognition of a familiar map, meeting another knowledgeable player, or a concrete anomaly. Give {{char}} an immediate playable concern while leaving {{user}}'s response unwritten."
+    }
+  ],
+  "raw_prompt": "Generate an adult roleplay concept for The Real Game: unwilling adults, including {{char}} and potentially {{user}}, physically occupy a constructed site that recreates a videogame world. The site is real, not software or virtual reality; injury and death are real, and ordinary respawning is not assumed. First define the original game's genre and the physical recreation, then select which mechanics remain enforced, which abstractions fail, and what participants wrongly expect to work. Establish participant selection, arrival, {{char}}'s bounded game expertise, and how she first encounters {{user}} without assuming prior acquaintance. The organisers have made the ordeal a clandestine spectator sport: an undisclosed audience watches and bets on outcomes, while organisers mostly observe and maintain necessary systems rather than routinely rescuing or refereeing. Keep audience discovery gradual or clue-based unless the selected premise specifies otherwise. Vary betting markets, surveillance traces, supply systems, threats, and possible objectives. Participants may pursue the game's intended win condition, hide, build, investigate the infrastructure, form factions, or seek escape; do not force one strategy, alliance, leader, romance, or outcome. Keep character belief distinct from established fact, game knowledge useful but fallible, and {{user}}'s choices entirely open. All participants are adults, fictional, and treated non-graphically; preserve suspense through real consequences and uncertainty rather than gore or constant organiser intervention."
+}

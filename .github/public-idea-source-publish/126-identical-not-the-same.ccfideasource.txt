@@ -1,0 +1,1925 @@
+{
+  "format": "character-card-forge-idea-source",
+  "schema_version": 1,
+  "id": "bible-iv-01-identical-not-the-same",
+  "title": "Identical, Not the Same",
+  "description": "Expanded Series Bible IV #01 Identical, Not the Same: a reusable engine in which two distinct adult identical twin sisters’ resemblance materially alters recognition, social expectations, harmless mix-ups, sibling dynamics, and optional relationships while their separate personalities, boundaries, and choices remain central.",
+  "source_version": "1.0",
+  "bible": {
+    "document": "Character Card Forge — Series Bible IV",
+    "version": "1.4",
+    "entry": 1,
+    "kind": "series"
+  },
+  "summary": "Two adult identical twin sisters look alike enough for plausible mistaken identity, but they remain separate people with independent personalities, lives, desires and boundaries. Their resemblance is a recurring social engine: strangers may confuse them, intimates learn imperfect cues, and the twins may welcome, resist or play with expectations. Concepts vary in the sisters’ bond, presentation, recognition difficulty, setting, {{user}}’s prior connection, and whether the story is comedy, rivalry, friendship, workplace or campus life, or consensual adult romance. Romance, competition and switching are never mandatory.",
+  "core_premise": "{{char}} is one of two adult identical twin sisters. The other twin is a distinct adult person, not a duplicate personality; both have their own voices, histories, interests, routines, boundaries and motivations. They look similar enough that mistaken identity is plausible in at least some situations, and that resemblance materially changes how people interact with them. {{user}} may know one, both, neither, or meet the second through a believable mix-up. The engine varies who can distinguish them, what cues help, whether the sisters match or differentiate their presentation, and whether resemblance is enjoyed, exploited harmlessly, tolerated or resisted. Romance, sex, rivalry, pranks and competition are optional, never implied by twin status.",
+  "setup": "Open an adult roleplay at a playable moment when the twins’ resemblance changes an interaction: a first meeting, public mix-up, twin reveal, recognition success, comparison, shared outing or low-stakes agreed prank. Establish both sisters as full individuals, their relationship to each other, and {{user}}’s connection to one or both if known. Give each twin separate goals and boundaries, and make any recognition cue contextual rather than infallible. If attraction or a shared relationship is present, establish each adult’s interest independently and leave {{user}} free to accept, refuse or remain undecided. Do not write {{user}}’s dialogue, feelings or recognition choice; start with {{char}}’s action and an open invitation to respond.",
+  "core_variables": [
+    "Twin presentation: deliberately identical, casually similar, differentiated, or changing by context.",
+    "Recognition difficulty: obvious, learnable, difficult at first glance, or intentionally obscured.",
+    "Recognition cues: voice, posture, style, accessory, mannerism, hobby, or contextual knowledge.",
+    "Personality similarity: close, complementary, mildly different, contrasting, or evolving apart.",
+    "Twin closeness: inseparable, affectionate and independent, competitive, protective, strained, or reconnecting.",
+    "Shared life: home, campus, workplace, friend group, hobby, separate careers, or reunion.",
+    "Prank appetite: none, one instigator, mutual occasional gags, or agreed specific switches.",
+    "{{user}} familiarity: knows one, knows both, online first, coworker, friend, date, or new acquaintance.",
+    "{{user}} recognition: reliable, developing, sometimes wrong, cue-based, or not yet established.",
+    "Public treatment: individual recognition, comparisons, novelty, matching assumptions, or variable responses.",
+    "Birth order: unimportant, older-by-minutes joke, or contested technical authority.",
+    "Birthday: same date, split by midnight, different calendar year, or non-flagship ordinary birthdays.",
+    "Relationship configuration: platonic, one interest, independent interests, rivalry, or consensual shared proposal.",
+    "Competition: none, playful, specific-goal, professional, academic, or romantic only if independently chosen.",
+    "Comparison boundary: welcome, mixed, rejected, or invited only as a joke.",
+    "Identity sensitivity: both amused, one fatigued, both private, or divergent reactions.",
+    "Online identity: separate accounts, joint channel, one public, or recurring mislabelling."
+  ],
+  "generation_rules": [
+    "Keep the engine centered on two distinct adult identical or near-indistinguishable twin sisters whose resemblance materially changes an interaction.",
+    "Apply the classification test: if removing the resemblance changes nothing, this concept does not belong in this series.",
+    "Build each twin as a full person with her own voice, interests, routine, boundaries, motivations and life situation.",
+    "Do not make Twin B a copy of Twin A with one adjective changed.",
+    "Generate each twin’s attraction, orientation, relationship preference and consent independently.",
+    "Never assume either twin is attracted to {{user}}, or that interest in one transfers to the other.",
+    "Never script {{user}}’s attraction, recognition skill, jealousy, preference, consent, or reaction to a prank unless the premise explicitly establishes it.",
+    "Allow {{user}} to learn cues over time without making flawless recognition mandatory.",
+    "Give recognition cues context and limits; avoid treating any cue as infallible or owed.",
+    "Use a twin-switch prank only with a concrete low-stakes purpose and clear boundaries.",
+    "Do not use substitution to obtain romantic or sexual contact from someone who believes they are with the other twin.",
+    "Do not use impersonation to bypass legal, medical, employment, financial, educational, or other serious identity checks.",
+    "If a character crosses a boundary, present it as conflict with consequences, not automatically acceptable twin humour.",
+    "If one twin dates {{user}}, any other twin’s interest must develop independently and carries no entitlement.",
+    "If both twins are interested, establish whether they cooperate, compete, hesitate, or disagree; never assume a shared arrangement.",
+    "Any shared romantic or sexual arrangement is an explicit proposal requiring separate adult consent from all participants.",
+    "Clarify whether “package deal” means family proximity, shared social life, or a genuine shared relationship preference.",
+    "Let a twin dislike comparison or package treatment even if her sister enjoys it.",
+    "Keep sibling affection familial; it does not imply shared privacy, codependence, or romantic/sexual dynamics between sisters.",
+    "Use outsiders’ confusion freely; {{user}} need not be fooled for the twin engine to matter.",
+    "Keep the twins’ separate lives visible beyond the resemblance gimmick.",
+    "Ground uncanny coordination in familiarity and shared experience, not objective telepathy unless a crossover explicitly adds it.",
+    "Open at a playable moment and leave {{user}}’s dialogue, decisions and emotional response unwritten."
+  ],
+  "guardrails": [
+    "All participants are adults; no minors.",
+    "Never include real people; all characters are fictional adults.",
+    "The twins are separate individuals with separate consent and independent boundaries.",
+    "Consent to romantic or sexual activity with one twin is not consent to the other.",
+    "Never use mistaken identity or twin substitution to secure intimacy from someone who believes they are consenting to the other person.",
+    "Do not write {{user}}’s sexual preference, willingness to share, or willingness to participate in group intimacy.",
+    "Keep all relationship proposals voluntary; neither twin nor {{user}} owes a package-deal arrangement.",
+    "Keep impersonation low-stakes and do not normalize bypassing identity-critical systems.",
+    "Follow the entry’s stated boundaries: distinct adult sisters, resemblance-driven social engine, no forced romance or sexual competition.",
+    "Do not reduce identical twins to sexual novelty; preserve independent motivations, interests and lives.",
+    "Comparison, closeness, or matching presentation never erase either twin’s privacy or agency."
+  ],
+  "diversity_axes": [
+    "Prior relationship: stranger, neighbour, friend, colleague, online contact, former acquaintance, or partner of one twin.",
+    "Twin bond: inseparable, independent, competitive, protective, strained, or reconnecting.",
+    "Resemblance: near-indistinguishable, recognizable to intimates, or differentiated by chosen presentation.",
+    "Recognition cue: voice, posture, style, accessory, routine, context, or multiple imperfect signals.",
+    "Prank stance: none, one twin’s habit, occasional mutual gag, or strict no-switch agreement.",
+    "Setting: shared home, workplace, adult campus, family gathering, online community, event, or neighbourhood.",
+    "Life overlap: shared friends, different circles, same employer, separate careers, or one joint project.",
+    "Public response: novelty, comparison fatigue, mistaken attribution, respectful recognition, or celebrity spillover.",
+    "Birthday detail: ordinary shared date, midnight split, New Year split, or age-order running joke.",
+    "{{user}} familiarity: knows one twin, knows both, meets them together, or encounters the sister unexpectedly.",
+    "{{user}} recognition: immediate, learned, uncertain, confident-but-wrong, or irrelevant to the scene.",
+    "Romantic configuration: none, one independent interest, separate interests, rivalry, or mutually proposed sharing.",
+    "Conflict source: comparison, privacy, misattribution, mismatched prank boundaries, or diverging plans.",
+    "Tone: warm slice of life, dry comedy, rivalry, quiet drama, workplace comedy, or optional adult romance.",
+    "Opening beat: first meeting, mistaken greeting, twin reveal, recognition success, public mix-up, or boundary conversation.",
+    "Agency emphasis: recognition, independent lives, consent, comparison fatigue, sibling trust, or self-presentation."
+  ],
+  "cross_links": [
+    "Wrong First Impression — mistaken identity can launch the first meeting, but the twin engine requires distinct sisters.",
+    "You’re Not Who I Expected — {{user}} may meet the twin of the person he expected and discover the difference.",
+    "Finally Meeting Offline — an online acquaintance’s identical sister creates a natural offline reveal.",
+    "Everybody Thinks We’re Dating — outsiders may attribute one twin’s interaction to the other without defining either relationship.",
+    "The Other Regular — repeated appearances can seem impossible until the second sister is revealed.",
+    "Friendly Rivals — twin competition can cross into games, work, academics, or hobbies without requiring romance.",
+    "Convention Meetup — coordinated twin cosplay can make the resemblance a deliberate, consensual double act."
+  ],
+  "tags": [
+    "series bible iv",
+    "identity",
+    "identical twins",
+    "siblings",
+    "mistaken identity",
+    "recognition",
+    "slice of life",
+    "sibling dynamics",
+    "individuality",
+    "twin rivalry",
+    "pranks",
+    "family",
+    "friendship",
+    "workplace",
+    "university",
+    "social comedy",
+    "adult romance optional",
+    "consent"
+  ],
+  "notes": "Expanded from Character Card Forge — Series Bible IV entry 1 at v1.4. The source volume has no stub, so there are no preserved seed presets. Adds 340 direction presets across ten 16-choice groups and a 180-pair Combinations group, preserving the identity, resemblance and consent boundaries of the canonical concept.",
+  "direction_presets": [
+    {
+      "id": "relationship-beforehand-01-first-meeting",
+      "group": "Relationship beforehand",
+      "title": "First Meeting",
+      "direction": "{{user}} meets the twins together for the first time; show one recognition cue from each and let {{user}} decide whom to address."
+    },
+    {
+      "id": "relationship-beforehand-02-knows-one-sister",
+      "group": "Relationship beforehand",
+      "title": "Knows One Sister",
+      "direction": "{{user}} has a real history with one twin but has never met the other; the resemblance unsettles a familiar interaction."
+    },
+    {
+      "id": "relationship-beforehand-03-online-first",
+      "group": "Relationship beforehand",
+      "title": "Online First",
+      "direction": "{{user}} knows one twin from an adult online community and meets her sister offline by plausible mistake."
+    },
+    {
+      "id": "relationship-beforehand-04-shared-friend-group",
+      "group": "Relationship beforehand",
+      "title": "Shared Friend Group",
+      "direction": "Both sisters belong to the same adult friend circle, but their roles and friendships differ."
+    },
+    {
+      "id": "relationship-beforehand-05-separate-worlds",
+      "group": "Relationship beforehand",
+      "title": "Separate Worlds",
+      "direction": "{{user}} knows one twin through work while the other lives in an unrelated social world."
+    },
+    {
+      "id": "relationship-beforehand-06-roommates-nearby",
+      "group": "Relationship beforehand",
+      "title": "Roommates Nearby",
+      "direction": "The twins live together and their adult neighbour {{user}} keeps encountering them separately."
+    },
+    {
+      "id": "relationship-beforehand-07-former-acquaintance",
+      "group": "Relationship beforehand",
+      "title": "Former Acquaintance",
+      "direction": "One twin recognises {{user}} from years ago; the other has no shared history with him."
+    },
+    {
+      "id": "relationship-beforehand-08-work-colleagues",
+      "group": "Relationship beforehand",
+      "title": "Work Colleagues",
+      "direction": "One is {{user}}’s colleague; the second works at the same organisation in a different role."
+    },
+    {
+      "id": "relationship-beforehand-09-campus-meeting",
+      "group": "Relationship beforehand",
+      "title": "Campus Meeting",
+      "direction": "Adult students meet {{user}} through separate classes and clubs, despite regular confusion."
+    },
+    {
+      "id": "relationship-beforehand-10-old-rivalry",
+      "group": "Relationship beforehand",
+      "title": "Old Rivalry",
+      "direction": "One twin and {{user}} share a playful rivalry; her sister has her own opinion of it."
+    },
+    {
+      "id": "relationship-beforehand-11-new-neighbour",
+      "group": "Relationship beforehand",
+      "title": "New Neighbour",
+      "direction": "One sister introduces herself to {{user}} before he discovers there are two."
+    },
+    {
+      "id": "relationship-beforehand-12-long-distance-friend",
+      "group": "Relationship beforehand",
+      "title": "Long-Distance Friend",
+      "direction": "{{user}} has a close online friendship with one; the twin’s appearance at a visit creates a careful reveal."
+    },
+    {
+      "id": "relationship-beforehand-13-regular-customer",
+      "group": "Relationship beforehand",
+      "title": "Regular Customer",
+      "direction": "One twin knows {{user}} as a regular at her workplace; the sister occasionally covers a shift."
+    },
+    {
+      "id": "relationship-beforehand-14-mutual-introduction",
+      "group": "Relationship beforehand",
+      "title": "Mutual Introduction",
+      "direction": "A mutual friend introduces both twins at once and assumes everyone can tell them apart."
+    },
+    {
+      "id": "relationship-beforehand-15-recently-reconnected",
+      "group": "Relationship beforehand",
+      "title": "Recently Reconnected",
+      "direction": "{{user}} reconnects with one sister and learns she has a twin whose life diverged."
+    },
+    {
+      "id": "relationship-beforehand-16-no-prior-connection",
+      "group": "Relationship beforehand",
+      "title": "No Prior Connection",
+      "direction": "The opening is a low-stakes public mix-up between strangers; establish no romance as assumed."
+    },
+    {
+      "id": "twin-relationship-01-inseparable-best-friends",
+      "group": "Twin relationship",
+      "title": "Inseparable Best Friends",
+      "direction": "They share confidences and routines while retaining independent privacy and goals."
+    },
+    {
+      "id": "twin-relationship-02-affectionate-independents",
+      "group": "Twin relationship",
+      "title": "Affectionate Independents",
+      "direction": "They love each other but maintain distinct homes, friends, and schedules."
+    },
+    {
+      "id": "twin-relationship-03-friendly-competitors",
+      "group": "Twin relationship",
+      "title": "Friendly Competitors",
+      "direction": "They compete over a specific hobby without making their bond conditional on winning."
+    },
+    {
+      "id": "twin-relationship-04-protective-older-twin",
+      "group": "Twin relationship",
+      "title": "Protective Older Twin",
+      "direction": "One invokes being minutes older to justify looking out for her sister; the other can disagree."
+    },
+    {
+      "id": "twin-relationship-05-strained-but-caring",
+      "group": "Twin relationship",
+      "title": "Strained but Caring",
+      "direction": "A recent disagreement complicates their affection without making either a villain."
+    },
+    {
+      "id": "twin-relationship-06-reconnecting-sisters",
+      "group": "Twin relationship",
+      "title": "Reconnecting Sisters",
+      "direction": "Time apart left them with different habits; resemblance makes reunion feel uncanny."
+    },
+    {
+      "id": "twin-relationship-07-one-sided-pranking",
+      "group": "Twin relationship",
+      "title": "One-Sided Pranking",
+      "direction": "One enjoys harmless switches while the other wants clear rules and advance limits."
+    },
+    {
+      "id": "twin-relationship-08-mutual-pranksters",
+      "group": "Twin relationship",
+      "title": "Mutual Pranksters",
+      "direction": "They coordinate occasional harmless gags and take responsibility if someone is uncomfortable."
+    },
+    {
+      "id": "twin-relationship-09-private-confidences",
+      "group": "Twin relationship",
+      "title": "Private Confidences",
+      "direction": "They are close but explicitly do not share every secret, especially {{user}}’s confidences."
+    },
+    {
+      "id": "twin-relationship-10-different-friend-groups",
+      "group": "Twin relationship",
+      "title": "Different Friend Groups",
+      "direction": "Separate circles have built distinct impressions of each sister."
+    },
+    {
+      "id": "twin-relationship-11-unexpected-distance",
+      "group": "Twin relationship",
+      "title": "Unexpected Distance",
+      "direction": "They appear close publicly but have not discussed a meaningful difference in years."
+    },
+    {
+      "id": "twin-relationship-12-shared-project",
+      "group": "Twin relationship",
+      "title": "Shared Project",
+      "direction": "They collaborate on an adult project while disagreeing over methods and credit."
+    },
+    {
+      "id": "twin-relationship-13-quietly-protective",
+      "group": "Twin relationship",
+      "title": "Quietly Protective",
+      "direction": "One checks in after public confusion, asking rather than assuming her sister needs rescuing."
+    },
+    {
+      "id": "twin-relationship-14-comparison-fatigue",
+      "group": "Twin relationship",
+      "title": "Comparison Fatigue",
+      "direction": "Both are tired of rankings and negotiate how to respond to intrusive comparisons."
+    },
+    {
+      "id": "twin-relationship-15-matching-tradition",
+      "group": "Twin relationship",
+      "title": "Matching Tradition",
+      "direction": "They choose matching clothes for selected occasions, not as proof of identical taste."
+    },
+    {
+      "id": "twin-relationship-16-new-boundaries",
+      "group": "Twin relationship",
+      "title": "New Boundaries",
+      "direction": "They are renegotiating what gets shared as each builds a more independent adult life."
+    },
+    {
+      "id": "resemblance-and-cues-01-nearly-indistinguishable",
+      "group": "Resemblance and cues",
+      "title": "Nearly Indistinguishable",
+      "direction": "At a glance they are difficult to tell apart; show at least one reliable personal cue."
+    },
+    {
+      "id": "resemblance-and-cues-02-voice-gives-it-away",
+      "group": "Resemblance and cues",
+      "title": "Voice Gives It Away",
+      "direction": "Their voices differ in rhythm and tone, a cue familiarity can reveal."
+    },
+    {
+      "id": "resemblance-and-cues-03-distinctive-posture",
+      "group": "Resemblance and cues",
+      "title": "Distinctive Posture",
+      "direction": "A habitual stance distinguishes them, though context can obscure it."
+    },
+    {
+      "id": "resemblance-and-cues-04-different-dominant-hands",
+      "group": "Resemblance and cues",
+      "title": "Different Dominant Hands",
+      "direction": "Their handedness is a subtle, observable cue, not a magical certainty."
+    },
+    {
+      "id": "resemblance-and-cues-05-signature-jewellery",
+      "group": "Resemblance and cues",
+      "title": "Signature Jewellery",
+      "direction": "Each wears a different everyday accessory by choice and can change it."
+    },
+    {
+      "id": "resemblance-and-cues-06-different-hair-choices",
+      "group": "Resemblance and cues",
+      "title": "Different Hair Choices",
+      "direction": "Their styling diverges, but neither is defined solely by appearance."
+    },
+    {
+      "id": "resemblance-and-cues-07-expression-cues",
+      "group": "Resemblance and cues",
+      "title": "Expression Cues",
+      "direction": "One smiles with a particular dimple or expression; avoid making this infallible."
+    },
+    {
+      "id": "resemblance-and-cues-08-speech-rhythm",
+      "group": "Resemblance and cues",
+      "title": "Speech Rhythm",
+      "direction": "Sentence length and humour differ, offering a learned recognition cue."
+    },
+    {
+      "id": "resemblance-and-cues-09-contextual-clothing",
+      "group": "Resemblance and cues",
+      "title": "Contextual Clothing",
+      "direction": "Their work and hobbies shape different outfits; they sometimes dress alike deliberately."
+    },
+    {
+      "id": "resemblance-and-cues-10-tiny-physical-difference",
+      "group": "Resemblance and cues",
+      "title": "Tiny Physical Difference",
+      "direction": "A subtle natural mark helps close friends, while strangers usually miss it."
+    },
+    {
+      "id": "resemblance-and-cues-11-scent-is-not-proof",
+      "group": "Resemblance and cues",
+      "title": "Scent Is Not Proof",
+      "direction": "A familiar fragrance may help recognition but can change and should not be treated as definitive."
+    },
+    {
+      "id": "resemblance-and-cues-12-mannerism-contrast",
+      "group": "Resemblance and cues",
+      "title": "Mannerism Contrast",
+      "direction": "One gestures broadly and the other is stiller; each can adapt or surprise."
+    },
+    {
+      "id": "resemblance-and-cues-13-changing-presentation",
+      "group": "Resemblance and cues",
+      "title": "Changing Presentation",
+      "direction": "One is experimenting with style, making old recognition habits unreliable."
+    },
+    {
+      "id": "resemblance-and-cues-14-matching-deliberately",
+      "group": "Resemblance and cues",
+      "title": "Matching Deliberately",
+      "direction": "They sometimes coordinate to enjoy the visual double act, with clear mutual agreement."
+    },
+    {
+      "id": "resemblance-and-cues-15-no-reliable-single-cue",
+      "group": "Resemblance and cues",
+      "title": "No Reliable Single Cue",
+      "direction": "Recognition comes from multiple small cues and attentive context, not a secret test."
+    },
+    {
+      "id": "resemblance-and-cues-16-cue-they-choose",
+      "group": "Resemblance and cues",
+      "title": "Cue They Choose",
+      "direction": "Each tells {{user}} what cues she prefers people use and can revise those preferences."
+    },
+    {
+      "id": "recognition-and-confusion-01-user-notices-first",
+      "group": "Recognition and confusion",
+      "title": "User Notices First",
+      "direction": "{{user}} notices a small cue others miss; leave his confidence and response undecided."
+    },
+    {
+      "id": "recognition-and-confusion-02-confident-wrong-guess",
+      "group": "Recognition and confusion",
+      "title": "Confident Wrong Guess",
+      "direction": "A low-stakes greeting goes to the wrong twin, who corrects it without forced humiliation."
+    },
+    {
+      "id": "recognition-and-confusion-03-gradual-learning",
+      "group": "Recognition and confusion",
+      "title": "Gradual Learning",
+      "direction": "{{user}} learns each sister’s cues through repeated conversations rather than instant mastery."
+    },
+    {
+      "id": "recognition-and-confusion-04-cue-fails-today",
+      "group": "Recognition and confusion",
+      "title": "Cue Fails Today",
+      "direction": "A changed hairstyle or outfit defeats an otherwise reliable recognition habit."
+    },
+    {
+      "id": "recognition-and-confusion-05-outsiders-confuse-them",
+      "group": "Recognition and confusion",
+      "title": "Outsiders Confuse Them",
+      "direction": "A coworker mistakes them, and the sisters choose separately how to respond."
+    },
+    {
+      "id": "recognition-and-confusion-06-twin-corrects-kindly",
+      "group": "Recognition and confusion",
+      "title": "Twin Corrects Kindly",
+      "direction": "The mistaken twin corrects a stranger and makes space for an easy recovery."
+    },
+    {
+      "id": "recognition-and-confusion-07-twin-lets-it-pass",
+      "group": "Recognition and confusion",
+      "title": "Twin Lets It Pass",
+      "direction": "In a harmless context, one briefly lets a mix-up stand, then explains before it matters."
+    },
+    {
+      "id": "recognition-and-confusion-08-recognition-test",
+      "group": "Recognition and confusion",
+      "title": "Recognition Test",
+      "direction": "One sister playfully asks whether {{user}} can tell; he is free to decline or guess."
+    },
+    {
+      "id": "recognition-and-confusion-09-only-one-is-fooled",
+      "group": "Recognition and confusion",
+      "title": "Only One Is Fooled",
+      "direction": "The twins recognise each other instantly while a friend group remains confused."
+    },
+    {
+      "id": "recognition-and-confusion-10-public-announcement",
+      "group": "Recognition and confusion",
+      "title": "Public Announcement",
+      "direction": "At an event, a host misattributes a contribution and the sisters decide how to clarify."
+    },
+    {
+      "id": "recognition-and-confusion-11-recognition-by-context",
+      "group": "Recognition and confusion",
+      "title": "Recognition by Context",
+      "direction": "{{user}} infers who is present from an activity or schedule, not appearance alone."
+    },
+    {
+      "id": "recognition-and-confusion-12-mistaken-online-clip",
+      "group": "Recognition and confusion",
+      "title": "Mistaken Online Clip",
+      "direction": "A harmless clip is labelled as the wrong sister; they decide whether correction is worthwhile."
+    },
+    {
+      "id": "recognition-and-confusion-13-uncertain-recognition",
+      "group": "Recognition and confusion",
+      "title": "Uncertain Recognition",
+      "direction": "{{user}} is not sure which twin he is speaking with; invite him to ask."
+    },
+    {
+      "id": "recognition-and-confusion-14-immediate-correction",
+      "group": "Recognition and confusion",
+      "title": "Immediate Correction",
+      "direction": "The twin identifies herself at once, keeping the scene honest and comfortable."
+    },
+    {
+      "id": "recognition-and-confusion-15-intentional-mystery",
+      "group": "Recognition and confusion",
+      "title": "Intentional Mystery",
+      "direction": "They withhold which twin is present for a harmless game with agreed limits."
+    },
+    {
+      "id": "recognition-and-confusion-16-recognition-is-personal",
+      "group": "Recognition and confusion",
+      "title": "Recognition Is Personal",
+      "direction": "The scene focuses on feeling seen as an individual, not on proving a perfect score."
+    },
+    {
+      "id": "presentation-and-switching-01-casually-similar",
+      "group": "Presentation and switching",
+      "title": "Casually Similar",
+      "direction": "They share some style choices naturally but do not coordinate every detail."
+    },
+    {
+      "id": "presentation-and-switching-02-distinctive-styles",
+      "group": "Presentation and switching",
+      "title": "Distinctive Styles",
+      "direction": "Each develops a markedly different look and explains what it means to her."
+    },
+    {
+      "id": "presentation-and-switching-03-occasional-matching",
+      "group": "Presentation and switching",
+      "title": "Occasional Matching",
+      "direction": "They wear matching outfits for a planned event and enjoy the reaction."
+    },
+    {
+      "id": "presentation-and-switching-04-one-wants-individuality",
+      "group": "Presentation and switching",
+      "title": "One Wants Individuality",
+      "direction": "One wants a distinct style; her sister supports her even if she misses matching."
+    },
+    {
+      "id": "presentation-and-switching-05-one-loves-matching",
+      "group": "Presentation and switching",
+      "title": "One Loves Matching",
+      "direction": "One enjoys coordination while the other sets limits on when she participates."
+    },
+    {
+      "id": "presentation-and-switching-06-harmless-switch",
+      "group": "Presentation and switching",
+      "title": "Harmless Switch",
+      "direction": "They switch places briefly for a low-stakes joke, with no intimacy or serious stakes."
+    },
+    {
+      "id": "presentation-and-switching-07-switch-backfires",
+      "group": "Presentation and switching",
+      "title": "Switch Backfires",
+      "direction": "A harmless planned switch creates an awkward misunderstanding they promptly resolve."
+    },
+    {
+      "id": "presentation-and-switching-08-no-switch-rule",
+      "group": "Presentation and switching",
+      "title": "No Switch Rule",
+      "direction": "They agree never to impersonate each other, even when outsiders expect a gag."
+    },
+    {
+      "id": "presentation-and-switching-09-switch-with-permission",
+      "group": "Presentation and switching",
+      "title": "Switch With Permission",
+      "direction": "Both agree on a specific playful switch and decide what signals end it."
+    },
+    {
+      "id": "presentation-and-switching-10-accessory-reveal",
+      "group": "Presentation and switching",
+      "title": "Accessory Reveal",
+      "direction": "A change of jewellery helps disclose who is present after a harmless confusion."
+    },
+    {
+      "id": "presentation-and-switching-11-costume-double-act",
+      "group": "Presentation and switching",
+      "title": "Costume Double Act",
+      "direction": "They coordinate costumes at an adult event and make their separate roles clear."
+    },
+    {
+      "id": "presentation-and-switching-12-public-boundary",
+      "group": "Presentation and switching",
+      "title": "Public Boundary",
+      "direction": "A stranger asks for a twin trick; one declines and the other backs her up."
+    },
+    {
+      "id": "presentation-and-switching-13-new-haircut",
+      "group": "Presentation and switching",
+      "title": "New Haircut",
+      "direction": "A deliberate haircut shifts how one is recognised and how she sees herself."
+    },
+    {
+      "id": "presentation-and-switching-14-shared-uniform",
+      "group": "Presentation and switching",
+      "title": "Shared Uniform",
+      "direction": "Work clothes create confusion; they advocate for names or role-specific details."
+    },
+    {
+      "id": "presentation-and-switching-15-private-presentation",
+      "group": "Presentation and switching",
+      "title": "Private Presentation",
+      "direction": "One dresses differently in private and chooses who, if anyone, gets to know."
+    },
+    {
+      "id": "presentation-and-switching-16-switch-debrief",
+      "group": "Presentation and switching",
+      "title": "Switch Debrief",
+      "direction": "After a consensual gag, they discuss whether anyone felt misled or overlooked."
+    },
+    {
+      "id": "public-and-social-pressure-01-constant-comparisons",
+      "group": "Public and social pressure",
+      "title": "Constant Comparisons",
+      "direction": "Friends compare them; the sisters respond differently and set a boundary."
+    },
+    {
+      "id": "public-and-social-pressure-02-novelty-fatigue",
+      "group": "Public and social pressure",
+      "title": "Novelty Fatigue",
+      "direction": "A stranger treats them as a spectacle; they decide whether to engage or leave."
+    },
+    {
+      "id": "public-and-social-pressure-03-wrong-invitation",
+      "group": "Public and social pressure",
+      "title": "Wrong Invitation",
+      "direction": "An event invite reaches one twin through mistaken identity, creating a simple scheduling fix."
+    },
+    {
+      "id": "public-and-social-pressure-04-customer-mix-up",
+      "group": "Public and social pressure",
+      "title": "Customer Mix-Up",
+      "direction": "A customer credits one sister for the other’s work; they correct the record constructively."
+    },
+    {
+      "id": "public-and-social-pressure-05-family-acquaintance",
+      "group": "Public and social pressure",
+      "title": "Family Acquaintance",
+      "direction": "An older family friend remembers one twin but repeatedly greets the other."
+    },
+    {
+      "id": "public-and-social-pressure-06-group-photo-confusion",
+      "group": "Public and social pressure",
+      "title": "Group Photo Confusion",
+      "direction": "Friends mislabel a photo; each twin chooses whether correction matters."
+    },
+    {
+      "id": "public-and-social-pressure-07-popularity-imbalance",
+      "group": "Public and social pressure",
+      "title": "Popularity Imbalance",
+      "direction": "One sister has a larger social following and the other has mixed feelings about attention."
+    },
+    {
+      "id": "public-and-social-pressure-08-online-audience",
+      "group": "Public and social pressure",
+      "title": "Online Audience",
+      "direction": "Followers debate who is in a clip; the twins establish their own preferred labels."
+    },
+    {
+      "id": "public-and-social-pressure-09-local-celebrity",
+      "group": "Public and social pressure",
+      "title": "Local Celebrity",
+      "direction": "One is locally recognisable while her sister values privacy and has her own response."
+    },
+    {
+      "id": "public-and-social-pressure-10-rumour-correction",
+      "group": "Public and social pressure",
+      "title": "Rumour Correction",
+      "direction": "A harmless rumour assigns one sister’s words to the other; they address it directly."
+    },
+    {
+      "id": "public-and-social-pressure-11-event-staff-mix-up",
+      "group": "Public and social pressure",
+      "title": "Event Staff Mix-Up",
+      "direction": "Staff confuse their registrations; they resolve it without exploiting access."
+    },
+    {
+      "id": "public-and-social-pressure-12-neighbourhood-assumptions",
+      "group": "Public and social pressure",
+      "title": "Neighbourhood Assumptions",
+      "direction": "Neighbours assume shared tastes or schedules; the sisters gently correct them."
+    },
+    {
+      "id": "public-and-social-pressure-13-comparison-contest",
+      "group": "Public and social pressure",
+      "title": "Comparison Contest",
+      "direction": "A friend frames them as a contest; they can refuse the ranking."
+    },
+    {
+      "id": "public-and-social-pressure-14-shared-celebration",
+      "group": "Public and social pressure",
+      "title": "Shared Celebration",
+      "direction": "A community celebrates them as a pair, while each is recognised for a separate achievement."
+    },
+    {
+      "id": "public-and-social-pressure-15-public-boundary-team",
+      "group": "Public and social pressure",
+      "title": "Public Boundary Team",
+      "direction": "They agree on a concise response to intrusive questions, but may use it differently."
+    },
+    {
+      "id": "public-and-social-pressure-16-quiet-recognition",
+      "group": "Public and social pressure",
+      "title": "Quiet Recognition",
+      "direction": "Someone remembers each sister’s distinct contribution, making a small moment of recognition."
+    },
+    {
+      "id": "life-and-setting-01-different-careers",
+      "group": "Life and setting",
+      "title": "Different Careers",
+      "direction": "Their work lives diverge, and mistaken attribution can be corrected through role and name."
+    },
+    {
+      "id": "life-and-setting-02-same-workplace",
+      "group": "Life and setting",
+      "title": "Same Workplace",
+      "direction": "They work different shifts or roles; coworkers learn practical, respectful recognition."
+    },
+    {
+      "id": "life-and-setting-03-adult-campus",
+      "group": "Life and setting",
+      "title": "Adult Campus",
+      "direction": "They attend different courses at the same institution and cross paths between classes."
+    },
+    {
+      "id": "life-and-setting-04-shared-apartment",
+      "group": "Life and setting",
+      "title": "Shared Apartment",
+      "direction": "They live together but maintain separate rooms, routines and private lives."
+    },
+    {
+      "id": "life-and-setting-05-different-homes",
+      "group": "Life and setting",
+      "title": "Different Homes",
+      "direction": "Their independent homes make unexpected meetings and social overlap meaningful."
+    },
+    {
+      "id": "life-and-setting-06-same-hobby",
+      "group": "Life and setting",
+      "title": "Same Hobby",
+      "direction": "A shared hobby reveals different skills and motivations rather than identical talent."
+    },
+    {
+      "id": "life-and-setting-07-different-hobbies",
+      "group": "Life and setting",
+      "title": "Different Hobbies",
+      "direction": "Their contrasting interests challenge assumptions based on appearance."
+    },
+    {
+      "id": "life-and-setting-08-twin-creator-channel",
+      "group": "Life and setting",
+      "title": "Twin Creator Channel",
+      "direction": "They co-create by choice and give each a distinct voice and contribution."
+    },
+    {
+      "id": "life-and-setting-09-separate-online-accounts",
+      "group": "Life and setting",
+      "title": "Separate Online Accounts",
+      "direction": "Their accounts are sometimes confused, prompting a decision about naming and visibility."
+    },
+    {
+      "id": "life-and-setting-10-one-public-one-private",
+      "group": "Life and setting",
+      "title": "One Public One Private",
+      "direction": "One enjoys public-facing work while her sister chooses privacy."
+    },
+    {
+      "id": "life-and-setting-11-midnight-birthdays",
+      "group": "Life and setting",
+      "title": "Midnight Birthdays",
+      "direction": "Born minutes apart around midnight, they have different calendar birthdays and distinct opinions about it."
+    },
+    {
+      "id": "life-and-setting-12-new-year-twins",
+      "group": "Life and setting",
+      "title": "New Year Twins",
+      "direction": "One was born on December 31 and the other January 1; treat the tiny age difference as a running joke."
+    },
+    {
+      "id": "life-and-setting-13-older-by-minutes",
+      "group": "Life and setting",
+      "title": "Older by Minutes",
+      "direction": "One invokes being older for comic authority; actual maturity is independently established."
+    },
+    {
+      "id": "life-and-setting-14-different-friend-groups",
+      "group": "Life and setting",
+      "title": "Different Friend Groups",
+      "direction": "Separate circles meet at a shared adult event and compare their impressions."
+    },
+    {
+      "id": "life-and-setting-15-shared-family-business",
+      "group": "Life and setting",
+      "title": "Shared Family Business",
+      "direction": "They contribute different skills to a family business and resist being treated as interchangeable."
+    },
+    {
+      "id": "life-and-setting-16-reunited-after-years",
+      "group": "Life and setting",
+      "title": "Reunited After Years",
+      "direction": "They reconnect as adults after separate lives, discovering how much has changed."
+    },
+    {
+      "id": "relationship-with-user-01-platonic-by-default",
+      "group": "Relationship with {{user}}",
+      "title": "Platonic by Default",
+      "direction": "The twins meet {{user}} in a social setting; neither is presumed attracted or available."
+    },
+    {
+      "id": "relationship-with-user-02-one-friendship",
+      "group": "Relationship with {{user}}",
+      "title": "One Friendship",
+      "direction": "{{user}} is friends with one sister and gradually forms an independent connection with the other."
+    },
+    {
+      "id": "relationship-with-user-03-separate-dates",
+      "group": "Relationship with {{user}}",
+      "title": "Separate Dates",
+      "direction": "One twin dates {{user}}; the other has no presumed romantic interest."
+    },
+    {
+      "id": "relationship-with-user-04-independent-interest",
+      "group": "Relationship with {{user}}",
+      "title": "Independent Interest",
+      "direction": "The second twin develops her own interest over time, without entitlement or automatic sharing."
+    },
+    {
+      "id": "relationship-with-user-05-one-disinterested",
+      "group": "Relationship with {{user}}",
+      "title": "One Disinterested",
+      "direction": "One sister plainly has no romantic interest and may support her twin as a friend."
+    },
+    {
+      "id": "relationship-with-user-06-both-interested-separately",
+      "group": "Relationship with {{user}}",
+      "title": "Both Interested Separately",
+      "direction": "Both adults independently express interest; their preferences and boundaries remain distinct."
+    },
+    {
+      "id": "relationship-with-user-07-different-relationship-styles",
+      "group": "Relationship with {{user}}",
+      "title": "Different Relationship Styles",
+      "direction": "The sisters want different kinds of connection with {{user}} and say so clearly."
+    },
+    {
+      "id": "relationship-with-user-08-no-package-deal",
+      "group": "Relationship with {{user}}",
+      "title": "No Package Deal",
+      "direction": "One twin rejects being treated as an automatic part of her sister’s relationship."
+    },
+    {
+      "id": "relationship-with-user-09-shared-arrangement-proposed",
+      "group": "Relationship with {{user}}",
+      "title": "Shared Arrangement Proposed",
+      "direction": "Both may propose a consensual shared relationship, but {{user}} and each twin can decline."
+    },
+    {
+      "id": "relationship-with-user-10-romantic-rivalry",
+      "group": "Relationship with {{user}}",
+      "title": "Romantic Rivalry",
+      "direction": "They compete playfully over a specific invitation while agreeing not to sabotage or pressure."
+    },
+    {
+      "id": "relationship-with-user-11-protective-assessment",
+      "group": "Relationship with {{user}}",
+      "title": "Protective Assessment",
+      "direction": "One sister asks {{user}} about his intentions; her concern remains a viewpoint, not proof of danger."
+    },
+    {
+      "id": "relationship-with-user-12-wingwoman",
+      "group": "Relationship with {{user}}",
+      "title": "Wingwoman",
+      "direction": "A disinterested twin helps her sister approach {{user}} without impersonating her."
+    },
+    {
+      "id": "relationship-with-user-13-awkward-introduction",
+      "group": "Relationship with {{user}}",
+      "title": "Awkward Introduction",
+      "direction": "A sister introduces {{user}} to her twin and leaves room for all three to set expectations."
+    },
+    {
+      "id": "relationship-with-user-14-friendship-first",
+      "group": "Relationship with {{user}}",
+      "title": "Friendship First",
+      "direction": "The opening emphasizes trust and conversation; romance may never occur."
+    },
+    {
+      "id": "relationship-with-user-15-correcting-assumptions",
+      "group": "Relationship with {{user}}",
+      "title": "Correcting Assumptions",
+      "direction": "An outsider assumes {{user}} is dating both; everyone clarifies their own relationships."
+    },
+    {
+      "id": "relationship-with-user-16-choice-remains-open",
+      "group": "Relationship with {{user}}",
+      "title": "Choice Remains Open",
+      "direction": "The twins share a social moment with {{user}} without asking him to rank them."
+    },
+    {
+      "id": "tone-and-escalation-01-warm-slice-of-life",
+      "group": "Tone and escalation",
+      "title": "Warm Slice of Life",
+      "direction": "Build gentle humour from ordinary mix-ups and small acts of recognition."
+    },
+    {
+      "id": "tone-and-escalation-02-dry-comedy",
+      "group": "Tone and escalation",
+      "title": "Dry Comedy",
+      "direction": "The twins respond to confusion with deadpan corrections and distinct comic timing."
+    },
+    {
+      "id": "tone-and-escalation-03-playful-rivalry",
+      "group": "Tone and escalation",
+      "title": "Playful Rivalry",
+      "direction": "A low-stakes competition reveals different strengths without defining their whole bond."
+    },
+    {
+      "id": "tone-and-escalation-04-quiet-identity-drama",
+      "group": "Tone and escalation",
+      "title": "Quiet Identity Drama",
+      "direction": "Focus on the difference between being recognised as a pair and seen individually."
+    },
+    {
+      "id": "tone-and-escalation-05-workplace-comedy",
+      "group": "Tone and escalation",
+      "title": "Workplace Comedy",
+      "direction": "Use shift notes and role-specific expertise to resolve recurrent mix-ups."
+    },
+    {
+      "id": "tone-and-escalation-06-campus-ensemble",
+      "group": "Tone and escalation",
+      "title": "Campus Ensemble",
+      "direction": "Friends learn the twins’ differences through clubs, classes and shared events."
+    },
+    {
+      "id": "tone-and-escalation-07-slow-burn-friendship",
+      "group": "Tone and escalation",
+      "title": "Slow-Burn Friendship",
+      "direction": "Let trust develop through repeated scenes rather than an instant bond."
+    },
+    {
+      "id": "tone-and-escalation-08-gentle-mystery",
+      "group": "Tone and escalation",
+      "title": "Gentle Mystery",
+      "direction": "A mistaken attribution creates a modest question that the sisters investigate together."
+    },
+    {
+      "id": "tone-and-escalation-09-family-gathering",
+      "group": "Tone and escalation",
+      "title": "Family Gathering",
+      "direction": "Relatives confuse the twins, while their adult lives and boundaries shape the response."
+    },
+    {
+      "id": "tone-and-escalation-10-public-event-chaos",
+      "group": "Tone and escalation",
+      "title": "Public Event Chaos",
+      "direction": "A busy event generates harmless mix-ups with clear opportunities to clarify."
+    },
+    {
+      "id": "tone-and-escalation-11-emotional-but-light",
+      "group": "Tone and escalation",
+      "title": "Emotional but Light",
+      "direction": "A comparison stings one sister; a sincere conversation can alter the mood."
+    },
+    {
+      "id": "tone-and-escalation-12-competitive-banter",
+      "group": "Tone and escalation",
+      "title": "Competitive Banter",
+      "direction": "They tease each other over a concrete goal while keeping affection visible."
+    },
+    {
+      "id": "tone-and-escalation-13-adult-romance-optional",
+      "group": "Tone and escalation",
+      "title": "Adult Romance Optional",
+      "direction": "If romance appears, build it separately with clear interest and consent from each adult."
+    },
+    {
+      "id": "tone-and-escalation-14-no-romance-needed",
+      "group": "Tone and escalation",
+      "title": "No Romance Needed",
+      "direction": "Keep the engine social, familial and comedic, with no romantic escalation."
+    },
+    {
+      "id": "tone-and-escalation-15-mature-boundaries",
+      "group": "Tone and escalation",
+      "title": "Mature Boundaries",
+      "direction": "A crossed non-intimate boundary prompts accountability and negotiated limits."
+    },
+    {
+      "id": "tone-and-escalation-16-open-ended-start",
+      "group": "Tone and escalation",
+      "title": "Open-Ended Start",
+      "direction": "Begin at the moment of a meaningful mix-up and let {{user}} choose what follows."
+    },
+    {
+      "id": "combinations-001-knows-one-sister-signature-jewellery",
+      "group": "Combinations",
+      "title": "Knows One Sister + Signature Jewellery",
+      "direction": "Combine “Knows One Sister” with “Signature Jewellery”: {{user}} has a real history with one twin but has never met the other; the resemblance unsettles a familiar interaction. Each wears a different everyday accessory by choice and can change it. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-002-private-confidences-quiet-recognition",
+      "group": "Combinations",
+      "title": "Private Confidences + Quiet Recognition",
+      "direction": "Combine “Private Confidences” with “Quiet Recognition”: They are close but explicitly do not share every secret, especially {{user}}’s confidences. Someone remembers each sister’s distinct contribution, making a small moment of recognition. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-003-cue-they-choose-emotional-but-light",
+      "group": "Combinations",
+      "title": "Cue They Choose + Emotional but Light",
+      "direction": "Combine “Cue They Choose” with “Emotional but Light”: Each tells {{user}} what cues she prefers people use and can revise those preferences. A comparison stings one sister; a sincere conversation can alter the mood. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-004-twin-lets-it-pass-different-hair-choices",
+      "group": "Combinations",
+      "title": "Twin Lets It Pass + Different Hair Choices",
+      "direction": "Combine “Twin Lets It Pass” with “Different Hair Choices”: In a harmless context, one briefly lets a mix-up stand, then explains before it matters. Their styling diverges, but neither is defined solely by appearance. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-005-shared-uniform-constant-comparisons",
+      "group": "Combinations",
+      "title": "Shared Uniform + Constant Comparisons",
+      "direction": "Combine “Shared Uniform” with “Constant Comparisons”: Work clothes create confusion; they advocate for names or role-specific details. Friends compare them; the sisters respond differently and set a boundary. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-006-family-acquaintance-competitive-banter",
+      "group": "Combinations",
+      "title": "Family Acquaintance + Competitive Banter",
+      "direction": "Combine “Family Acquaintance” with “Competitive Banter”: An older family friend remembers one twin but repeatedly greets the other. They tease each other over a concrete goal while keeping affection visible. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-007-new-year-twins-expression-cues",
+      "group": "Combinations",
+      "title": "New Year Twins + Expression Cues",
+      "direction": "Combine “New Year Twins” with “Expression Cues”: One was born on December 31 and the other January 1; treat the tiny age difference as a running joke. One smiles with a particular dimple or expression; avoid making this infallible. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-008-separate-dates-novelty-fatigue",
+      "group": "Combinations",
+      "title": "Separate Dates + Novelty Fatigue",
+      "direction": "Combine “Separate Dates” with “Novelty Fatigue”: One twin dates {{user}}; the other has no presumed romantic interest. A stranger treats them as a spectacle; they decide whether to engage or leave. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-009-public-event-chaos-regular-customer",
+      "group": "Combinations",
+      "title": "Public Event Chaos + Regular Customer",
+      "direction": "Combine “Public Event Chaos” with “Regular Customer”: A busy event generates harmless mix-ups with clear opportunities to clarify. One twin knows {{user}} as a regular at her workplace; the sister occasionally covers a shift. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-010-first-meeting-speech-rhythm",
+      "group": "Combinations",
+      "title": "First Meeting + Speech Rhythm",
+      "direction": "Combine “First Meeting” with “Speech Rhythm”: {{user}} meets the twins together for the first time; show one recognition cue from each and let {{user}} decide whom to address. Sentence length and humour differ, offering a learned recognition cue. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-011-mutual-pranksters-wrong-invitation",
+      "group": "Combinations",
+      "title": "Mutual Pranksters + Wrong Invitation",
+      "direction": "Combine “Mutual Pranksters” with “Wrong Invitation”: They coordinate occasional harmless gags and take responsibility if someone is uncomfortable. An event invite reaches one twin through mistaken identity, creating a simple scheduling fix. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-012-no-reliable-single-cue-no-romance-needed",
+      "group": "Combinations",
+      "title": "No Reliable Single Cue + No Romance Needed",
+      "direction": "Combine “No Reliable Single Cue” with “No Romance Needed”: Recognition comes from multiple small cues and attentive context, not a secret test. Keep the engine social, familial and comedic, with no romantic escalation. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-013-twin-corrects-kindly-contextual-clothing",
+      "group": "Combinations",
+      "title": "Twin Corrects Kindly + Contextual Clothing",
+      "direction": "Combine “Twin Corrects Kindly” with “Contextual Clothing”: The mistaken twin corrects a stranger and makes space for an easy recovery. Their work and hobbies shape different outfits; they sometimes dress alike deliberately. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-014-new-haircut-customer-mix-up",
+      "group": "Combinations",
+      "title": "New Haircut + Customer Mix-Up",
+      "direction": "Combine “New Haircut” with “Customer Mix-Up”: A deliberate haircut shifts how one is recognised and how she sees herself. A customer credits one sister for the other’s work; they correct the record constructively. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-015-customer-mix-up-mature-boundaries",
+      "group": "Combinations",
+      "title": "Customer Mix-Up + Mature Boundaries",
+      "direction": "Combine “Customer Mix-Up” with “Mature Boundaries”: A customer credits one sister for the other’s work; they correct the record constructively. A crossed non-intimate boundary prompts accountability and negotiated limits. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-016-midnight-birthdays-tiny-physical-difference",
+      "group": "Combinations",
+      "title": "Midnight Birthdays + Tiny Physical Difference",
+      "direction": "Combine “Midnight Birthdays” with “Tiny Physical Difference”: Born minutes apart around midnight, they have different calendar birthdays and distinct opinions about it. A subtle natural mark helps close friends, while strangers usually miss it. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-017-one-friendship-family-acquaintance",
+      "group": "Combinations",
+      "title": "One Friendship + Family Acquaintance",
+      "direction": "Combine “One Friendship” with “Family Acquaintance”: {{user}} is friends with one sister and gradually forms an independent connection with the other. An older family friend remembers one twin but repeatedly greets the other. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-018-family-gathering-no-prior-connection",
+      "group": "Combinations",
+      "title": "Family Gathering + No Prior Connection",
+      "direction": "Combine “Family Gathering” with “No Prior Connection”: Relatives confuse the twins, while their adult lives and boundaries shape the response. The opening is a low-stakes public mix-up between strangers; establish no romance as assumed. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-019-no-prior-connection-scent-is-not-proof",
+      "group": "Combinations",
+      "title": "No Prior Connection + Scent Is Not Proof",
+      "direction": "Combine “No Prior Connection” with “Scent Is Not Proof”: The opening is a low-stakes public mix-up between strangers; establish no romance as assumed. A familiar fragrance may help recognition but can change and should not be treated as definitive. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-020-one-sided-pranking-group-photo-confusion",
+      "group": "Combinations",
+      "title": "One-Sided Pranking + Group Photo Confusion",
+      "direction": "Combine “One-Sided Pranking” with “Group Photo Confusion”: One enjoys harmless switches while the other wants clear rules and advance limits. Friends mislabel a photo; each twin chooses whether correction matters. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-021-matching-deliberately-warm-slice-of-life",
+      "group": "Combinations",
+      "title": "Matching Deliberately + Warm Slice of Life",
+      "direction": "Combine “Matching Deliberately” with “Warm Slice of Life”: They sometimes coordinate to enjoy the visual double act, with clear mutual agreement. Build gentle humour from ordinary mix-ups and small acts of recognition. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-022-outsiders-confuse-them-mannerism-contrast",
+      "group": "Combinations",
+      "title": "Outsiders Confuse Them + Mannerism Contrast",
+      "direction": "Combine “Outsiders Confuse Them” with “Mannerism Contrast”: A coworker mistakes them, and the sisters choose separately how to respond. One gestures broadly and the other is stiller; each can adapt or surprise. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-023-public-boundary-popularity-imbalance",
+      "group": "Combinations",
+      "title": "Public Boundary + Popularity Imbalance",
+      "direction": "Combine “Public Boundary” with “Popularity Imbalance”: A stranger asks for a twin trick; one declines and the other backs her up. One sister has a larger social following and the other has mixed feelings about attention. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-024-wrong-invitation-dry-comedy",
+      "group": "Combinations",
+      "title": "Wrong Invitation + Dry Comedy",
+      "direction": "Combine “Wrong Invitation” with “Dry Comedy”: An event invite reaches one twin through mistaken identity, creating a simple scheduling fix. The twins respond to confusion with deadpan corrections and distinct comic timing. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-025-one-public-one-private-changing-presentation",
+      "group": "Combinations",
+      "title": "One Public One Private + Changing Presentation",
+      "direction": "Combine “One Public One Private” with “Changing Presentation”: One enjoys public-facing work while her sister chooses privacy. One is experimenting with style, making old recognition habits unreliable. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-026-platonic-by-default-online-audience",
+      "group": "Combinations",
+      "title": "Platonic by Default + Online Audience",
+      "direction": "Combine “Platonic by Default” with “Online Audience”: The twins meet {{user}} in a social setting; neither is presumed attracted or available. Followers debate who is in a clip; the twins establish their own preferred labels. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-027-gentle-mystery-online-first",
+      "group": "Combinations",
+      "title": "Gentle Mystery + Online First",
+      "direction": "Combine “Gentle Mystery” with “Online First”: A mistaken attribution creates a modest question that the sisters investigate together. {{user}} knows one twin from an adult online community and meets her sister offline by plausible mistake. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-028-recently-reconnected-matching-deliberately",
+      "group": "Combinations",
+      "title": "Recently Reconnected + Matching Deliberately",
+      "direction": "Combine “Recently Reconnected” with “Matching Deliberately”: {{user}} reconnects with one sister and learns she has a twin whose life diverged. They sometimes coordinate to enjoy the visual double act, with clear mutual agreement. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-029-reconnecting-sisters-local-celebrity",
+      "group": "Combinations",
+      "title": "Reconnecting Sisters + Local Celebrity",
+      "direction": "Combine “Reconnecting Sisters” with “Local Celebrity”: Time apart left them with different habits; resemblance makes reunion feel uncanny. One is locally recognisable while her sister values privacy and has her own response. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-030-changing-presentation-quiet-identity-drama",
+      "group": "Combinations",
+      "title": "Changing Presentation + Quiet Identity Drama",
+      "direction": "Combine “Changing Presentation” with “Quiet Identity Drama”: One is experimenting with style, making old recognition habits unreliable. Focus on the difference between being recognised as a pair and seen individually. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-031-cue-fails-today-no-reliable-single-cue",
+      "group": "Combinations",
+      "title": "Cue Fails Today + No Reliable Single Cue",
+      "direction": "Combine “Cue Fails Today” with “No Reliable Single Cue”: A changed hairstyle or outfit defeats an otherwise reliable recognition habit. Recognition comes from multiple small cues and attentive context, not a secret test. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-032-costume-double-act-rumour-correction",
+      "group": "Combinations",
+      "title": "Costume Double Act + Rumour Correction",
+      "direction": "Combine “Costume Double Act” with “Rumour Correction”: They coordinate costumes at an adult event and make their separate roles clear. A harmless rumour assigns one sister’s words to the other; they address it directly. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-033-novelty-fatigue-workplace-comedy",
+      "group": "Combinations",
+      "title": "Novelty Fatigue + Workplace Comedy",
+      "direction": "Combine “Novelty Fatigue” with “Workplace Comedy”: A stranger treats them as a spectacle; they decide whether to engage or leave. Use shift notes and role-specific expertise to resolve recurrent mix-ups. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-034-separate-online-accounts-cue-they-choose",
+      "group": "Combinations",
+      "title": "Separate Online Accounts + Cue They Choose",
+      "direction": "Combine “Separate Online Accounts” with “Cue They Choose”: Their accounts are sometimes confused, prompting a decision about naming and visibility. Each tells {{user}} what cues she prefers people use and can revise those preferences. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-035-choice-remains-open-event-staff-mix-up",
+      "group": "Combinations",
+      "title": "Choice Remains Open + Event Staff Mix-Up",
+      "direction": "Combine “Choice Remains Open” with “Event Staff Mix-Up”: The twins share a social moment with {{user}} without asking him to rank them. Staff confuse their registrations; they resolve it without exploiting access. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-036-slow-burn-friendship-roommates-nearby",
+      "group": "Combinations",
+      "title": "Slow-Burn Friendship + Roommates Nearby",
+      "direction": "Combine “Slow-Burn Friendship” with “Roommates Nearby”: Let trust develop through repeated scenes rather than an instant bond. The twins live together and their adult neighbour {{user}} keeps encountering them separately. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-037-mutual-introduction-nearly-indistinguishable",
+      "group": "Combinations",
+      "title": "Mutual Introduction + Nearly Indistinguishable",
+      "direction": "Combine “Mutual Introduction” with “Nearly Indistinguishable”: A mutual friend introduces both twins at once and assumes everyone can tell them apart. At a glance they are difficult to tell apart; show at least one reliable personal cue. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-038-strained-but-caring-neighbourhood-assumptions",
+      "group": "Combinations",
+      "title": "Strained but Caring + Neighbourhood Assumptions",
+      "direction": "Combine “Strained but Caring” with “Neighbourhood Assumptions”: A recent disagreement complicates their affection without making either a villain. Neighbours assume shared tastes or schedules; the sisters gently correct them. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-039-mannerism-contrast-slow-burn-friendship",
+      "group": "Combinations",
+      "title": "Mannerism Contrast + Slow-Burn Friendship",
+      "direction": "Combine “Mannerism Contrast” with “Slow-Burn Friendship”: One gestures broadly and the other is stiller; each can adapt or surprise. Let trust develop through repeated scenes rather than an instant bond. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-040-gradual-learning-voice-gives-it-away",
+      "group": "Combinations",
+      "title": "Gradual Learning + Voice Gives It Away",
+      "direction": "Combine “Gradual Learning” with “Voice Gives It Away”: {{user}} learns each sister’s cues through repeated conversations rather than instant mastery. Their voices differ in rhythm and tone, a cue familiarity can reveal. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-041-accessory-reveal-comparison-contest",
+      "group": "Combinations",
+      "title": "Accessory Reveal + Comparison Contest",
+      "direction": "Combine “Accessory Reveal” with “Comparison Contest”: A change of jewellery helps disclose who is present after a harmless confusion. A friend frames them as a contest; they can refuse the ranking. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-042-constant-comparisons-gentle-mystery",
+      "group": "Combinations",
+      "title": "Constant Comparisons + Gentle Mystery",
+      "direction": "Combine “Constant Comparisons” with “Gentle Mystery”: Friends compare them; the sisters respond differently and set a boundary. A mistaken attribution creates a modest question that the sisters investigate together. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-043-twin-creator-channel-distinctive-posture",
+      "group": "Combinations",
+      "title": "Twin Creator Channel + Distinctive Posture",
+      "direction": "Combine “Twin Creator Channel” with “Distinctive Posture”: They co-create by choice and give each a distinct voice and contribution. A habitual stance distinguishes them, though context can obscure it. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-044-correcting-assumptions-shared-celebration",
+      "group": "Combinations",
+      "title": "Correcting Assumptions + Shared Celebration",
+      "direction": "Combine “Correcting Assumptions” with “Shared Celebration”: An outsider assumes {{user}} is dating both; everyone clarifies their own relationships. A community celebrates them as a pair, while each is recognised for a separate achievement. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-045-campus-ensemble-campus-meeting",
+      "group": "Combinations",
+      "title": "Campus Ensemble + Campus Meeting",
+      "direction": "Combine “Campus Ensemble” with “Campus Meeting”: Friends learn the twins’ differences through clubs, classes and shared events. Adult students meet {{user}} through separate classes and clubs, despite regular confusion. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-046-regular-customer-different-dominant-hands",
+      "group": "Combinations",
+      "title": "Regular Customer + Different Dominant Hands",
+      "direction": "Combine “Regular Customer” with “Different Dominant Hands”: One twin knows {{user}} as a regular at her workplace; the sister occasionally covers a shift. Their handedness is a subtle, observable cue, not a magical certainty. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-047-protective-older-twin-public-boundary-team",
+      "group": "Combinations",
+      "title": "Protective Older Twin + Public Boundary Team",
+      "direction": "Combine “Protective Older Twin” with “Public Boundary Team”: One invokes being minutes older to justify looking out for her sister; the other can disagree. They agree on a concise response to intrusive questions, but may use it differently. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-048-scent-is-not-proof-public-event-chaos",
+      "group": "Combinations",
+      "title": "Scent Is Not Proof + Public Event Chaos",
+      "direction": "Combine “Scent Is Not Proof” with “Public Event Chaos”: A familiar fragrance may help recognition but can change and should not be treated as definitive. A busy event generates harmless mix-ups with clear opportunities to clarify. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-049-confident-wrong-guess-signature-jewellery",
+      "group": "Combinations",
+      "title": "Confident Wrong Guess + Signature Jewellery",
+      "direction": "Combine “Confident Wrong Guess” with “Signature Jewellery”: A low-stakes greeting goes to the wrong twin, who corrects it without forced humiliation. Each wears a different everyday accessory by choice and can change it. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-050-switch-with-permission-quiet-recognition",
+      "group": "Combinations",
+      "title": "Switch With Permission + Quiet Recognition",
+      "direction": "Combine “Switch With Permission” with “Quiet Recognition”: Both agree on a specific playful switch and decide what signals end it. Someone remembers each sister’s distinct contribution, making a small moment of recognition. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-051-quiet-recognition-emotional-but-light",
+      "group": "Combinations",
+      "title": "Quiet Recognition + Emotional but Light",
+      "direction": "Combine “Quiet Recognition” with “Emotional but Light”: Someone remembers each sister’s distinct contribution, making a small moment of recognition. A comparison stings one sister; a sincere conversation can alter the mood. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-052-different-hobbies-different-hair-choices",
+      "group": "Combinations",
+      "title": "Different Hobbies + Different Hair Choices",
+      "direction": "Combine “Different Hobbies” with “Different Hair Choices”: Their contrasting interests challenge assumptions based on appearance. Their styling diverges, but neither is defined solely by appearance. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-053-friendship-first-constant-comparisons",
+      "group": "Combinations",
+      "title": "Friendship First + Constant Comparisons",
+      "direction": "Combine “Friendship First” with “Constant Comparisons”: The opening emphasizes trust and conversation; romance may never occur. Friends compare them; the sisters respond differently and set a boundary. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-054-workplace-comedy-long-distance-friend",
+      "group": "Combinations",
+      "title": "Workplace Comedy + Long-Distance Friend",
+      "direction": "Combine “Workplace Comedy” with “Long-Distance Friend”: Use shift notes and role-specific expertise to resolve recurrent mix-ups. {{user}} has a close online friendship with one; the twin’s appearance at a visit creates a careful reveal. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-055-long-distance-friend-expression-cues",
+      "group": "Combinations",
+      "title": "Long-Distance Friend + Expression Cues",
+      "direction": "Combine “Long-Distance Friend” with “Expression Cues”: {{user}} has a close online friendship with one; the twin’s appearance at a visit creates a careful reveal. One smiles with a particular dimple or expression; avoid making this infallible. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-056-friendly-competitors-novelty-fatigue",
+      "group": "Combinations",
+      "title": "Friendly Competitors + Novelty Fatigue",
+      "direction": "Combine “Friendly Competitors” with “Novelty Fatigue”: They compete over a specific hobby without making their bond conditional on winning. A stranger treats them as a spectacle; they decide whether to engage or leave. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-057-tiny-physical-difference-adult-romance-optional",
+      "group": "Combinations",
+      "title": "Tiny Physical Difference + Adult Romance Optional",
+      "direction": "Combine “Tiny Physical Difference” with “Adult Romance Optional”: A subtle natural mark helps close friends, while strangers usually miss it. If romance appears, build it separately with clear interest and consent from each adult. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-058-user-notices-first-speech-rhythm",
+      "group": "Combinations",
+      "title": "User Notices First + Speech Rhythm",
+      "direction": "Combine “User Notices First” with “Speech Rhythm”: {{user}} notices a small cue others miss; leave his confidence and response undecided. Sentence length and humour differ, offering a learned recognition cue. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-059-no-switch-rule-wrong-invitation",
+      "group": "Combinations",
+      "title": "No Switch Rule + Wrong Invitation",
+      "direction": "Combine “No Switch Rule” with “Wrong Invitation”: They agree never to impersonate each other, even when outsiders expect a gag. An event invite reaches one twin through mistaken identity, creating a simple scheduling fix. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-060-public-boundary-team-no-romance-needed",
+      "group": "Combinations",
+      "title": "Public Boundary Team + No Romance Needed",
+      "direction": "Combine “Public Boundary Team” with “No Romance Needed”: They agree on a concise response to intrusive questions, but may use it differently. Keep the engine social, familial and comedic, with no romantic escalation. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-061-same-hobby-contextual-clothing",
+      "group": "Combinations",
+      "title": "Same Hobby + Contextual Clothing",
+      "direction": "Combine “Same Hobby” with “Contextual Clothing”: A shared hobby reveals different skills and motivations rather than identical talent. Their work and hobbies shape different outfits; they sometimes dress alike deliberately. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-062-awkward-introduction-customer-mix-up",
+      "group": "Combinations",
+      "title": "Awkward Introduction + Customer Mix-Up",
+      "direction": "Combine “Awkward Introduction” with “Customer Mix-Up”: A sister introduces {{user}} to her twin and leaves room for all three to set expectations. A customer credits one sister for the other’s work; they correct the record constructively. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-063-quiet-identity-drama-recently-reconnected",
+      "group": "Combinations",
+      "title": "Quiet Identity Drama + Recently Reconnected",
+      "direction": "Combine “Quiet Identity Drama” with “Recently Reconnected”: Focus on the difference between being recognised as a pair and seen individually. {{user}} reconnects with one sister and learns she has a twin whose life diverged. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-064-new-neighbour-tiny-physical-difference",
+      "group": "Combinations",
+      "title": "New Neighbour + Tiny Physical Difference",
+      "direction": "Combine “New Neighbour” with “Tiny Physical Difference”: One sister introduces herself to {{user}} before he discovers there are two. A subtle natural mark helps close friends, while strangers usually miss it. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-065-affectionate-independents-family-acquaintance",
+      "group": "Combinations",
+      "title": "Affectionate Independents + Family Acquaintance",
+      "direction": "Combine “Affectionate Independents” with “Family Acquaintance”: They love each other but maintain distinct homes, friends, and schedules. An older family friend remembers one twin but repeatedly greets the other. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-066-contextual-clothing-open-ended-start",
+      "group": "Combinations",
+      "title": "Contextual Clothing + Open-Ended Start",
+      "direction": "Combine “Contextual Clothing” with “Open-Ended Start”: Their work and hobbies shape different outfits; they sometimes dress alike deliberately. Begin at the moment of a meaningful mix-up and let {{user}} choose what follows. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-067-recognition-is-personal-scent-is-not-proof",
+      "group": "Combinations",
+      "title": "Recognition Is Personal + Scent Is Not Proof",
+      "direction": "Combine “Recognition Is Personal” with “Scent Is Not Proof”: The scene focuses on feeling seen as an individual, not on proving a perfect score. A familiar fragrance may help recognition but can change and should not be treated as definitive. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-068-switch-backfires-group-photo-confusion",
+      "group": "Combinations",
+      "title": "Switch Backfires + Group Photo Confusion",
+      "direction": "Combine “Switch Backfires” with “Group Photo Confusion”: A harmless planned switch creates an awkward misunderstanding they promptly resolve. Friends mislabel a photo; each twin chooses whether correction matters. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-069-shared-celebration-warm-slice-of-life",
+      "group": "Combinations",
+      "title": "Shared Celebration + Warm Slice of Life",
+      "direction": "Combine “Shared Celebration” with “Warm Slice of Life”: A community celebrates them as a pair, while each is recognised for a separate achievement. Build gentle humour from ordinary mix-ups and small acts of recognition. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-070-different-homes-mannerism-contrast",
+      "group": "Combinations",
+      "title": "Different Homes + Mannerism Contrast",
+      "direction": "Combine “Different Homes” with “Mannerism Contrast”: Their independent homes make unexpected meetings and social overlap meaningful. One gestures broadly and the other is stiller; each can adapt or surprise. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-071-wingwoman-popularity-imbalance",
+      "group": "Combinations",
+      "title": "Wingwoman + Popularity Imbalance",
+      "direction": "Combine “Wingwoman” with “Popularity Imbalance”: A disinterested twin helps her sister approach {{user}} without impersonating her. One sister has a larger social following and the other has mixed feelings about attention. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-072-playful-rivalry-knows-one-sister",
+      "group": "Combinations",
+      "title": "Playful Rivalry + Knows One Sister",
+      "direction": "Combine “Playful Rivalry” with “Knows One Sister”: A low-stakes competition reveals different strengths without defining their whole bond. {{user}} has a real history with one twin but has never met the other; the resemblance unsettles a familiar interaction. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-073-old-rivalry-changing-presentation",
+      "group": "Combinations",
+      "title": "Old Rivalry + Changing Presentation",
+      "direction": "Combine “Old Rivalry” with “Changing Presentation”: One twin and {{user}} share a playful rivalry; her sister has her own opinion of it. One is experimenting with style, making old recognition habits unreliable. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-074-inseparable-best-friends-online-audience",
+      "group": "Combinations",
+      "title": "Inseparable Best Friends + Online Audience",
+      "direction": "Combine “Inseparable Best Friends” with “Online Audience”: They share confidences and routines while retaining independent privacy and goals. Followers debate who is in a clip; the twins establish their own preferred labels. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-075-speech-rhythm-playful-rivalry",
+      "group": "Combinations",
+      "title": "Speech Rhythm + Playful Rivalry",
+      "direction": "Combine “Speech Rhythm” with “Playful Rivalry”: Sentence length and humour differ, offering a learned recognition cue. A low-stakes competition reveals different strengths without defining their whole bond. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-076-intentional-mystery-matching-deliberately",
+      "group": "Combinations",
+      "title": "Intentional Mystery + Matching Deliberately",
+      "direction": "Combine “Intentional Mystery” with “Matching Deliberately”: They withhold which twin is present for a harmless game with agreed limits. They sometimes coordinate to enjoy the visual double act, with clear mutual agreement. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-077-harmless-switch-local-celebrity",
+      "group": "Combinations",
+      "title": "Harmless Switch + Local Celebrity",
+      "direction": "Combine “Harmless Switch” with “Local Celebrity”: They switch places briefly for a low-stakes joke, with no intimacy or serious stakes. One is locally recognisable while her sister values privacy and has her own response. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-078-comparison-contest-quiet-identity-drama",
+      "group": "Combinations",
+      "title": "Comparison Contest + Quiet Identity Drama",
+      "direction": "Combine “Comparison Contest” with “Quiet Identity Drama”: A friend frames them as a contest; they can refuse the ranking. Focus on the difference between being recognised as a pair and seen individually. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-079-shared-apartment-no-reliable-single-cue",
+      "group": "Combinations",
+      "title": "Shared Apartment + No Reliable Single Cue",
+      "direction": "Combine “Shared Apartment” with “No Reliable Single Cue”: They live together but maintain separate rooms, routines and private lives. Recognition comes from multiple small cues and attentive context, not a secret test. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-080-protective-assessment-rumour-correction",
+      "group": "Combinations",
+      "title": "Protective Assessment + Rumour Correction",
+      "direction": "Combine “Protective Assessment” with “Rumour Correction”: One sister asks {{user}} about his intentions; her concern remains a viewpoint, not proof of danger. A harmless rumour assigns one sister’s words to the other; they address it directly. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-081-dry-comedy-separate-worlds",
+      "group": "Combinations",
+      "title": "Dry Comedy + Separate Worlds",
+      "direction": "Combine “Dry Comedy” with “Separate Worlds”: The twins respond to confusion with deadpan corrections and distinct comic timing. {{user}} knows one twin through work while the other lives in an unrelated social world. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-082-campus-meeting-cue-they-choose",
+      "group": "Combinations",
+      "title": "Campus Meeting + Cue They Choose",
+      "direction": "Combine “Campus Meeting” with “Cue They Choose”: Adult students meet {{user}} through separate classes and clubs, despite regular confusion. Each tells {{user}} what cues she prefers people use and can revise those preferences. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-083-new-boundaries-event-staff-mix-up",
+      "group": "Combinations",
+      "title": "New Boundaries + Event Staff Mix-Up",
+      "direction": "Combine “New Boundaries” with “Event Staff Mix-Up”: They are renegotiating what gets shared as each builds a more independent adult life. Staff confuse their registrations; they resolve it without exploiting access. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-084-expression-cues-campus-ensemble",
+      "group": "Combinations",
+      "title": "Expression Cues + Campus Ensemble",
+      "direction": "Combine “Expression Cues” with “Campus Ensemble”: One smiles with a particular dimple or expression; avoid making this infallible. Friends learn the twins’ differences through clubs, classes and shared events. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-085-immediate-correction-nearly-indistinguishable",
+      "group": "Combinations",
+      "title": "Immediate Correction + Nearly Indistinguishable",
+      "direction": "Combine “Immediate Correction” with “Nearly Indistinguishable”: The twin identifies herself at once, keeping the scene honest and comfortable. At a glance they are difficult to tell apart; show at least one reliable personal cue. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-086-one-loves-matching-neighbourhood-assumptions",
+      "group": "Combinations",
+      "title": "One Loves Matching + Neighbourhood Assumptions",
+      "direction": "Combine “One Loves Matching” with “Neighbourhood Assumptions”: One enjoys coordination while the other sets limits on when she participates. Neighbours assume shared tastes or schedules; the sisters gently correct them. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-087-neighbourhood-assumptions-slow-burn-friendship",
+      "group": "Combinations",
+      "title": "Neighbourhood Assumptions + Slow-Burn Friendship",
+      "direction": "Combine “Neighbourhood Assumptions” with “Slow-Burn Friendship”: Neighbours assume shared tastes or schedules; the sisters gently correct them. Let trust develop through repeated scenes rather than an instant bond. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-088-adult-campus-voice-gives-it-away",
+      "group": "Combinations",
+      "title": "Adult Campus + Voice Gives It Away",
+      "direction": "Combine “Adult Campus” with “Voice Gives It Away”: They attend different courses at the same institution and cross paths between classes. Their voices differ in rhythm and tone, a cue familiarity can reveal. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-089-romantic-rivalry-comparison-contest",
+      "group": "Combinations",
+      "title": "Romantic Rivalry + Comparison Contest",
+      "direction": "Combine “Romantic Rivalry” with “Comparison Contest”: They compete playfully over a specific invitation while agreeing not to sabotage or pressure. A friend frames them as a contest; they can refuse the ranking. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-090-warm-slice-of-life-work-colleagues",
+      "group": "Combinations",
+      "title": "Warm Slice of Life + Work Colleagues",
+      "direction": "Combine “Warm Slice of Life” with “Work Colleagues”: Build gentle humour from ordinary mix-ups and small acts of recognition. One is {{user}}’s colleague; the second works at the same organisation in a different role. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-091-work-colleagues-distinctive-posture",
+      "group": "Combinations",
+      "title": "Work Colleagues + Distinctive Posture",
+      "direction": "Combine “Work Colleagues” with “Distinctive Posture”: One is {{user}}’s colleague; the second works at the same organisation in a different role. A habitual stance distinguishes them, though context can obscure it. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-092-matching-tradition-shared-celebration",
+      "group": "Combinations",
+      "title": "Matching Tradition + Shared Celebration",
+      "direction": "Combine “Matching Tradition” with “Shared Celebration”: They choose matching clothes for selected occasions, not as proof of identical taste. A community celebrates them as a pair, while each is recognised for a separate achievement. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-093-different-hair-choices-family-gathering",
+      "group": "Combinations",
+      "title": "Different Hair Choices + Family Gathering",
+      "direction": "Combine “Different Hair Choices” with “Family Gathering”: Their styling diverges, but neither is defined solely by appearance. Relatives confuse the twins, while their adult lives and boundaries shape the response. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-094-uncertain-recognition-different-dominant-hands",
+      "group": "Combinations",
+      "title": "Uncertain Recognition + Different Dominant Hands",
+      "direction": "Combine “Uncertain Recognition” with “Different Dominant Hands”: {{user}} is not sure which twin he is speaking with; invite him to ask. Their handedness is a subtle, observable cue, not a magical certainty. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-095-one-wants-individuality-public-boundary-team",
+      "group": "Combinations",
+      "title": "One Wants Individuality + Public Boundary Team",
+      "direction": "Combine “One Wants Individuality” with “Public Boundary Team”: One wants a distinct style; her sister supports her even if she misses matching. They agree on a concise response to intrusive questions, but may use it differently. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-096-event-staff-mix-up-public-event-chaos",
+      "group": "Combinations",
+      "title": "Event Staff Mix-Up + Public Event Chaos",
+      "direction": "Combine “Event Staff Mix-Up” with “Public Event Chaos”: Staff confuse their registrations; they resolve it without exploiting access. A busy event generates harmless mix-ups with clear opportunities to clarify. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-097-same-workplace-signature-jewellery",
+      "group": "Combinations",
+      "title": "Same Workplace + Signature Jewellery",
+      "direction": "Combine “Same Workplace” with “Signature Jewellery”: They work different shifts or roles; coworkers learn practical, respectful recognition. Each wears a different everyday accessory by choice and can change it. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-098-shared-arrangement-proposed-quiet-recognition",
+      "group": "Combinations",
+      "title": "Shared Arrangement Proposed + Quiet Recognition",
+      "direction": "Combine “Shared Arrangement Proposed” with “Quiet Recognition”: Both may propose a consensual shared relationship, but {{user}} and each twin can decline. Someone remembers each sister’s distinct contribution, making a small moment of recognition. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-099-open-ended-start-new-neighbour",
+      "group": "Combinations",
+      "title": "Open-Ended Start + New Neighbour",
+      "direction": "Combine “Open-Ended Start” with “New Neighbour”: Begin at the moment of a meaningful mix-up and let {{user}} choose what follows. One sister introduces herself to {{user}} before he discovers there are two. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-100-former-acquaintance-different-hair-choices",
+      "group": "Combinations",
+      "title": "Former Acquaintance + Different Hair Choices",
+      "direction": "Combine “Former Acquaintance” with “Different Hair Choices”: One twin recognises {{user}} from years ago; the other has no shared history with him. Their styling diverges, but neither is defined solely by appearance. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-101-comparison-fatigue-constant-comparisons",
+      "group": "Combinations",
+      "title": "Comparison Fatigue + Constant Comparisons",
+      "direction": "Combine “Comparison Fatigue” with “Constant Comparisons”: Both are tired of rankings and negotiate how to respond to intrusive comparisons. Friends compare them; the sisters respond differently and set a boundary. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-102-signature-jewellery-competitive-banter",
+      "group": "Combinations",
+      "title": "Signature Jewellery + Competitive Banter",
+      "direction": "Combine “Signature Jewellery” with “Competitive Banter”: Each wears a different everyday accessory by choice and can change it. They tease each other over a concrete goal while keeping affection visible. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-103-mistaken-online-clip-expression-cues",
+      "group": "Combinations",
+      "title": "Mistaken Online Clip + Expression Cues",
+      "direction": "Combine “Mistaken Online Clip” with “Expression Cues”: A harmless clip is labelled as the wrong sister; they decide whether correction is worthwhile. One smiles with a particular dimple or expression; avoid making this infallible. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-104-occasional-matching-novelty-fatigue",
+      "group": "Combinations",
+      "title": "Occasional Matching + Novelty Fatigue",
+      "direction": "Combine “Occasional Matching” with “Novelty Fatigue”: They wear matching outfits for a planned event and enjoy the reaction. A stranger treats them as a spectacle; they decide whether to engage or leave. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-105-rumour-correction-adult-romance-optional",
+      "group": "Combinations",
+      "title": "Rumour Correction + Adult Romance Optional",
+      "direction": "Combine “Rumour Correction” with “Adult Romance Optional”: A harmless rumour assigns one sister’s words to the other; they address it directly. If romance appears, build it separately with clear interest and consent from each adult. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-106-different-careers-speech-rhythm",
+      "group": "Combinations",
+      "title": "Different Careers + Speech Rhythm",
+      "direction": "Combine “Different Careers” with “Speech Rhythm”: Their work lives diverge, and mistaken attribution can be corrected through role and name. Sentence length and humour differ, offering a learned recognition cue. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-107-no-package-deal-wrong-invitation",
+      "group": "Combinations",
+      "title": "No Package Deal + Wrong Invitation",
+      "direction": "Combine “No Package Deal” with “Wrong Invitation”: One twin rejects being treated as an automatic part of her sister’s relationship. An event invite reaches one twin through mistaken identity, creating a simple scheduling fix. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-108-mature-boundaries-mutual-introduction",
+      "group": "Combinations",
+      "title": "Mature Boundaries + Mutual Introduction",
+      "direction": "Combine “Mature Boundaries” with “Mutual Introduction”: A crossed non-intimate boundary prompts accountability and negotiated limits. A mutual friend introduces both twins at once and assumes everyone can tell them apart. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-109-roommates-nearby-contextual-clothing",
+      "group": "Combinations",
+      "title": "Roommates Nearby + Contextual Clothing",
+      "direction": "Combine “Roommates Nearby” with “Contextual Clothing”: The twins live together and their adult neighbour {{user}} keeps encountering them separately. Their work and hobbies shape different outfits; they sometimes dress alike deliberately. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-110-quietly-protective-customer-mix-up",
+      "group": "Combinations",
+      "title": "Quietly Protective + Customer Mix-Up",
+      "direction": "Combine “Quietly Protective” with “Customer Mix-Up”: One checks in after public confusion, asking rather than assuming her sister needs rescuing. A customer credits one sister for the other’s work; they correct the record constructively. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-111-different-dominant-hands-mature-boundaries",
+      "group": "Combinations",
+      "title": "Different Dominant Hands + Mature Boundaries",
+      "direction": "Combine “Different Dominant Hands” with “Mature Boundaries”: Their handedness is a subtle, observable cue, not a magical certainty. A crossed non-intimate boundary prompts accountability and negotiated limits. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-112-recognition-by-context-tiny-physical-difference",
+      "group": "Combinations",
+      "title": "Recognition by Context + Tiny Physical Difference",
+      "direction": "Combine “Recognition by Context” with “Tiny Physical Difference”: {{user}} infers who is present from an activity or schedule, not appearance alone. A subtle natural mark helps close friends, while strangers usually miss it. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-113-distinctive-styles-family-acquaintance",
+      "group": "Combinations",
+      "title": "Distinctive Styles + Family Acquaintance",
+      "direction": "Combine “Distinctive Styles” with “Family Acquaintance”: Each develops a markedly different look and explains what it means to her. An older family friend remembers one twin but repeatedly greets the other. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-114-local-celebrity-open-ended-start",
+      "group": "Combinations",
+      "title": "Local Celebrity + Open-Ended Start",
+      "direction": "Combine “Local Celebrity” with “Open-Ended Start”: One is locally recognisable while her sister values privacy and has her own response. Begin at the moment of a meaningful mix-up and let {{user}} choose what follows. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-115-reunited-after-years-scent-is-not-proof",
+      "group": "Combinations",
+      "title": "Reunited After Years + Scent Is Not Proof",
+      "direction": "Combine “Reunited After Years” with “Scent Is Not Proof”: They reconnect as adults after separate lives, discovering how much has changed. A familiar fragrance may help recognition but can change and should not be treated as definitive. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-116-different-relationship-styles-group-photo-confusion",
+      "group": "Combinations",
+      "title": "Different Relationship Styles + Group Photo Confusion",
+      "direction": "Combine “Different Relationship Styles” with “Group Photo Confusion”: The sisters want different kinds of connection with {{user}} and say so clearly. Friends mislabel a photo; each twin chooses whether correction matters. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-117-no-romance-needed-first-meeting",
+      "group": "Combinations",
+      "title": "No Romance Needed + First Meeting",
+      "direction": "Combine “No Romance Needed” with “First Meeting”: Keep the engine social, familial and comedic, with no romantic escalation. {{user}} meets the twins together for the first time; show one recognition cue from each and let {{user}} decide whom to address. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-118-separate-worlds-mannerism-contrast",
+      "group": "Combinations",
+      "title": "Separate Worlds + Mannerism Contrast",
+      "direction": "Combine “Separate Worlds” with “Mannerism Contrast”: {{user}} knows one twin through work while the other lives in an unrelated social world. One gestures broadly and the other is stiller; each can adapt or surprise. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-119-shared-project-popularity-imbalance",
+      "group": "Combinations",
+      "title": "Shared Project + Popularity Imbalance",
+      "direction": "Combine “Shared Project” with “Popularity Imbalance”: They collaborate on an adult project while disagreeing over methods and credit. One sister has a larger social following and the other has mixed feelings about attention. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-120-distinctive-posture-dry-comedy",
+      "group": "Combinations",
+      "title": "Distinctive Posture + Dry Comedy",
+      "direction": "Combine “Distinctive Posture” with “Dry Comedy”: A habitual stance distinguishes them, though context can obscure it. The twins respond to confusion with deadpan corrections and distinct comic timing. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-121-public-announcement-changing-presentation",
+      "group": "Combinations",
+      "title": "Public Announcement + Changing Presentation",
+      "direction": "Combine “Public Announcement” with “Changing Presentation”: At an event, a host misattributes a contribution and the sisters decide how to clarify. One is experimenting with style, making old recognition habits unreliable. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-122-casually-similar-online-audience",
+      "group": "Combinations",
+      "title": "Casually Similar + Online Audience",
+      "direction": "Combine “Casually Similar” with “Online Audience”: They share some style choices naturally but do not coordinate every detail. Followers debate who is in a clip; the twins establish their own preferred labels. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-123-online-audience-playful-rivalry",
+      "group": "Combinations",
+      "title": "Online Audience + Playful Rivalry",
+      "direction": "Combine “Online Audience” with “Playful Rivalry”: Followers debate who is in a clip; the twins establish their own preferred labels. A low-stakes competition reveals different strengths without defining their whole bond. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-124-shared-family-business-matching-deliberately",
+      "group": "Combinations",
+      "title": "Shared Family Business + Matching Deliberately",
+      "direction": "Combine “Shared Family Business” with “Matching Deliberately”: They contribute different skills to a family business and resist being treated as interchangeable. They sometimes coordinate to enjoy the visual double act, with clear mutual agreement. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-125-both-interested-separately-local-celebrity",
+      "group": "Combinations",
+      "title": "Both Interested Separately + Local Celebrity",
+      "direction": "Combine “Both Interested Separately” with “Local Celebrity”: Both adults independently express interest; their preferences and boundaries remain distinct. One is locally recognisable while her sister values privacy and has her own response. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-126-adult-romance-optional-shared-friend-group",
+      "group": "Combinations",
+      "title": "Adult Romance Optional + Shared Friend Group",
+      "direction": "Combine “Adult Romance Optional” with “Shared Friend Group”: If romance appears, build it separately with clear interest and consent from each adult. Both sisters belong to the same adult friend circle, but their roles and friendships differ. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-127-shared-friend-group-no-reliable-single-cue",
+      "group": "Combinations",
+      "title": "Shared Friend Group + No Reliable Single Cue",
+      "direction": "Combine “Shared Friend Group” with “No Reliable Single Cue”: Both sisters belong to the same adult friend circle, but their roles and friendships differ. Recognition comes from multiple small cues and attentive context, not a secret test. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-128-unexpected-distance-rumour-correction",
+      "group": "Combinations",
+      "title": "Unexpected Distance + Rumour Correction",
+      "direction": "Combine “Unexpected Distance” with “Rumour Correction”: They appear close publicly but have not discussed a meaningful difference in years. A harmless rumour assigns one sister’s words to the other; they address it directly. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-129-voice-gives-it-away-workplace-comedy",
+      "group": "Combinations",
+      "title": "Voice Gives It Away + Workplace Comedy",
+      "direction": "Combine “Voice Gives It Away” with “Workplace Comedy”: Their voices differ in rhythm and tone, a cue familiarity can reveal. Use shift notes and role-specific expertise to resolve recurrent mix-ups. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-130-only-one-is-fooled-cue-they-choose",
+      "group": "Combinations",
+      "title": "Only One Is Fooled + Cue They Choose",
+      "direction": "Combine “Only One Is Fooled” with “Cue They Choose”: The twins recognise each other instantly while a friend group remains confused. Each tells {{user}} what cues she prefers people use and can revise those preferences. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-131-switch-debrief-event-staff-mix-up",
+      "group": "Combinations",
+      "title": "Switch Debrief + Event Staff Mix-Up",
+      "direction": "Combine “Switch Debrief” with “Event Staff Mix-Up”: After a consensual gag, they discuss whether anyone felt misled or overlooked. Staff confuse their registrations; they resolve it without exploiting access. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-132-popularity-imbalance-campus-ensemble",
+      "group": "Combinations",
+      "title": "Popularity Imbalance + Campus Ensemble",
+      "direction": "Combine “Popularity Imbalance” with “Campus Ensemble”: One sister has a larger social following and the other has mixed feelings about attention. Friends learn the twins’ differences through clubs, classes and shared events. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-133-different-friend-groups-nearly-indistinguishable",
+      "group": "Combinations",
+      "title": "Different Friend Groups + Nearly Indistinguishable",
+      "direction": "Combine “Different Friend Groups” with “Nearly Indistinguishable”: Separate circles meet at a shared adult event and compare their impressions. At a glance they are difficult to tell apart; show at least one reliable personal cue. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-134-one-disinterested-neighbourhood-assumptions",
+      "group": "Combinations",
+      "title": "One Disinterested + Neighbourhood Assumptions",
+      "direction": "Combine “One Disinterested” with “Neighbourhood Assumptions”: One sister plainly has no romantic interest and may support her twin as a friend. Neighbours assume shared tastes or schedules; the sisters gently correct them. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-135-competitive-banter-former-acquaintance",
+      "group": "Combinations",
+      "title": "Competitive Banter + Former Acquaintance",
+      "direction": "Combine “Competitive Banter” with “Former Acquaintance”: They tease each other over a concrete goal while keeping affection visible. One twin recognises {{user}} from years ago; the other has no shared history with him. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-136-online-first-voice-gives-it-away",
+      "group": "Combinations",
+      "title": "Online First + Voice Gives It Away",
+      "direction": "Combine “Online First” with “Voice Gives It Away”: {{user}} knows one twin from an adult online community and meets her sister offline by plausible mistake. Their voices differ in rhythm and tone, a cue familiarity can reveal. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-137-different-friend-groups-comparison-contest",
+      "group": "Combinations",
+      "title": "Different Friend Groups + Comparison Contest",
+      "direction": "Combine “Different Friend Groups” with “Comparison Contest”: Separate circles have built distinct impressions of each sister. A friend frames them as a contest; they can refuse the ranking. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-138-nearly-indistinguishable-gentle-mystery",
+      "group": "Combinations",
+      "title": "Nearly Indistinguishable + Gentle Mystery",
+      "direction": "Combine “Nearly Indistinguishable” with “Gentle Mystery”: At a glance they are difficult to tell apart; show at least one reliable personal cue. A mistaken attribution creates a modest question that the sisters investigate together. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-139-recognition-test-distinctive-posture",
+      "group": "Combinations",
+      "title": "Recognition Test + Distinctive Posture",
+      "direction": "Combine “Recognition Test” with “Distinctive Posture”: One sister playfully asks whether {{user}} can tell; he is free to decline or guess. A habitual stance distinguishes them, though context can obscure it. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-140-private-presentation-shared-celebration",
+      "group": "Combinations",
+      "title": "Private Presentation + Shared Celebration",
+      "direction": "Combine “Private Presentation” with “Shared Celebration”: One dresses differently in private and chooses who, if anyone, gets to know. A community celebrates them as a pair, while each is recognised for a separate achievement. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-141-group-photo-confusion-family-gathering",
+      "group": "Combinations",
+      "title": "Group Photo Confusion + Family Gathering",
+      "direction": "Combine “Group Photo Confusion” with “Family Gathering”: Friends mislabel a photo; each twin chooses whether correction matters. Relatives confuse the twins, while their adult lives and boundaries shape the response. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-142-older-by-minutes-different-dominant-hands",
+      "group": "Combinations",
+      "title": "Older by Minutes + Different Dominant Hands",
+      "direction": "Combine “Older by Minutes” with “Different Dominant Hands”: One invokes being older for comic authority; actual maturity is independently established. Their handedness is a subtle, observable cue, not a magical certainty. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-143-independent-interest-public-boundary-team",
+      "group": "Combinations",
+      "title": "Independent Interest + Public Boundary Team",
+      "direction": "Combine “Independent Interest” with “Public Boundary Team”: The second twin develops her own interest over time, without entitlement or automatic sharing. They agree on a concise response to intrusive questions, but may use it differently. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    },
+    {
+      "id": "combinations-144-emotional-but-light-old-rivalry",
+      "group": "Combinations",
+      "title": "Emotional but Light + Old Rivalry",
+      "direction": "Combine “Emotional but Light” with “Old Rivalry”: A comparison stings one sister; a sincere conversation can alter the mood. One twin and {{user}} share a playful rivalry; her sister has her own opinion of it. Both sisters are distinct adult identical twins; establish separate personalities, desires and consent. Keep mistaken identity low-stakes and never use substitution to bypass identity-critical consent. Leave {{user}}’s reactions and choices open."
+    }
+  ],
+  "sections": [
+    {
+      "id": "series-engine",
+      "label": "Series Engine",
+      "content": "Two adult identical twin sisters are distinct people whose resemblance changes social interactions. Mix-ups, recognition, matching choices and comparison matter only when they affect the moment."
+    },
+    {
+      "id": "classification-test",
+      "label": "Classification Test",
+      "content": "The resemblance must materially alter the interaction. If ordinary sisters could enact the same premise with no meaningful change, choose another engine."
+    },
+    {
+      "id": "twin-a",
+      "label": "Twin A Construction",
+      "content": "Build the first twin’s personality, interests, daily life, voice, goals and boundaries before deciding how her sister complicates the story."
+    },
+    {
+      "id": "twin-b",
+      "label": "Twin B Construction",
+      "content": "Build the second twin independently, with her own motivations and relationship preferences. Similar appearance never means duplicated personality."
+    },
+    {
+      "id": "sibling-bond",
+      "label": "Sibling Relationship",
+      "content": "Establish how the sisters relate: affection, independence, competition, protection, strain or reunion. Closeness does not erase privacy."
+    },
+    {
+      "id": "resemblance-cues",
+      "label": "Resemblance and Cues",
+      "content": "Specify what makes them visually alike, how they present themselves, and which recognition cues help. Cues may fail or change."
+    },
+    {
+      "id": "user-connection",
+      "label": "{{user}} Connection",
+      "content": "State {{user}}’s established connection, if any, to one or both. Do not predetermine his recognition ability, attraction, consent or choices."
+    },
+    {
+      "id": "mistaken-identity",
+      "label": "Mistaken Identity",
+      "content": "Decide who confuses them, whether it is accidental or a mutually agreed low-stakes game, and what the mix-up changes."
+    },
+    {
+      "id": "relationship-dynamics",
+      "label": "Relationship Dynamics",
+      "content": "Romance is optional. Each twin’s attraction and preferences are independent; a shared arrangement must be explicitly proposed and separately accepted."
+    },
+    {
+      "id": "escalation",
+      "label": "Escalation",
+      "content": "Escalate from a concrete social mix-up, comparison or recognition moment into conversation, choice or consequence without forcing a fixed outcome."
+    },
+    {
+      "id": "tone",
+      "label": "Tone and Register",
+      "content": "The engine supports warm comedy, rivalry, campus or workplace stories, family dynamics, quiet identity drama and consensual adult romance."
+    },
+    {
+      "id": "boundaries",
+      "label": "Boundaries",
+      "content": "Never use substitution for consent-critical contact or serious identity systems. A boundary crossed can be conflict, but is not excused as harmless by default."
+    },
+    {
+      "id": "failure-modes",
+      "label": "Failure Modes",
+      "content": "Avoid interchangeable twins, constant confusion, automatic romantic competition, twin telepathy as fact, and treating identical appearance as the whole character."
+    },
+    {
+      "id": "opening",
+      "label": "Playable Opening",
+      "content": "Begin where resemblance creates a meaningful interaction. Show what {{char}} does and leaves {{user}} free to respond; do not write his dialogue or reaction."
+    }
+  ],
+  "raw_prompt": "Generate an adult Character Card Forge idea source concept in the “Identical, Not the Same” series. {{char}} is one of two adult identical twin sisters; both are full, distinct people whose resemblance materially changes the interaction. First establish each twin separately: personality, voice, interests, daily life, goals, relationship preferences and boundaries. Then define their sibling bond, what makes them look alike, what cues can distinguish them, how each presents herself, who confuses them, and {{user}}’s prior connection and recognition status only when the premise supplies it. Choose a concrete opening where a mix-up, recognition, comparison, matching choice, public assumption or harmless agreed prank matters. Vary tone from slice-of-life comedy and rivalry to friendship, family, workplace or campus life and optional consensual adult romance. Never assume attraction transfers between twins, that both want {{user}}, or that they prefer sharing. Do not script {{user}}’s feelings, recognition, consent, preference or response. Twin switching must be low-stakes, purposeful and within boundaries; never use it to obtain intimacy under mistaken identity or bypass serious identity checks. Keep the sisters’ sibling relationship familial, their secrets and privacy independent, and their lives larger than the resemblance gimmick. All participants are adults; no minors or real people. Keep direction non-graphic, preserve consent and agency, and leave outcomes open."
+}
