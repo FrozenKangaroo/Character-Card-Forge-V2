@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.17 complete regression suites",
+  "description": "v0.21.16 baseline plus Rawhide PR #708 Pockets & Wardrobe new-chat defaults for characters and groups.",
+  "base_manifest": "regression_suites_v02116.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v02117_front_porch_pockets_defaults",
+        "label": "v0.21.17 Rawhide Pockets & Wardrobe character and group defaults",
+        "kind": "godot",
+        "path": "tools/test_v02117_front_porch_pockets_defaults.gd",
+        "timeout_seconds": 120
+      }
+    ]
+  }
+}

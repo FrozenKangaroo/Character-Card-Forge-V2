@@ -117,10 +117,10 @@ func _test_catalog_and_values(service: CCFFrontPorchExtensionServiceCurrent) -> 
 	)
 	return _require(
 		bool(applied.get("ok", false))
-		and not realism.has("pockets_enabled")
+		and realism.get("pockets_enabled") == true
 		and not realism.has("needs_off")
 		and not realism.has("recovery"),
-		"Rawhide defaults and empty lists must use canonical omission semantics."
+		"Explicit Pockets true must remain distinct while other canonical defaults are omitted."
 	)
 
 

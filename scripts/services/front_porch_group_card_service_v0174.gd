@@ -6,6 +6,7 @@ const GROUP_SPEC_VERSION := "1.0"
 const GROUP_PNG_KEY := "fpa_group"
 const CHARACTER_PNG_KEY := "chara"
 const VALID_TURN_ORDERS := ["roundRobin", "random"]
+const GROUP_POCKETS_DEFAULT_KEY_V02117 := "pockets_enabled"
 const KNOWN_GROUP_FIELDS := [
 	"spec", "spec_version", "name", "members", "raw_member_data", "turn_order",
 	"auto_advance", "director_mode", "first_message", "scenario", "system_prompt",
@@ -44,6 +45,34 @@ static func default_group_options(project: Dictionary, workflow: Dictionary = {}
 		"extensions": {},
 		"preserved_fields": {}
 	}
+
+
+static func group_pockets_default_for_new_chats_v02117(
+	default_member_realism_state: Variant
+) -> bool:
+	var parsed := _group_default_state_v02117(default_member_realism_state)
+	return parsed.get(GROUP_POCKETS_DEFAULT_KEY_V02117, true) != false
+
+
+static func with_group_pockets_default_for_new_chats_v02117(
+	default_member_realism_state: Variant, enabled: bool
+) -> String:
+	var parsed := _group_default_state_v02117(default_member_realism_state)
+	if enabled:
+		# Rawhide's confirmed portable contract uses omission for the default-on
+		# group value. The member card's own pockets_enabled default is AND-ed at
+		# new-chat creation time; neither value is a live session switch.
+		parsed.erase(GROUP_POCKETS_DEFAULT_KEY_V02117)
+	else:
+		parsed[GROUP_POCKETS_DEFAULT_KEY_V02117] = false
+	return JSON.stringify(parsed)
+
+
+static func _group_default_state_v02117(value: Variant) -> Dictionary:
+	if value is Dictionary:
+		return (value as Dictionary).duplicate(true)
+	var parsed = JSON.parse_string(str(value))
+	return (parsed as Dictionary).duplicate(true) if parsed is Dictionary else {}
 
 
 static func build_group_payload(

@@ -41,7 +41,7 @@
         {"id":"fp_intimate_not_into","key_path":"intimate_preferences.not_into","label":"Intimate preferences — not interested in","type":"tags","default":[],"generate":true,"adult":true,"generation_prompt":"Adult boundaries or disinterests only. Keep them character-owned and never prescribe {{user}}."},
         {"id":"fp_inventory_worn","key_path":"inventory.worn","label":"Wearing","type":"tags","default":[],"generate":true,"generation_prompt":"Up to eight starting wardrobe items. A condition may be written in parentheses, for example: sundress (rain-soaked)."},
         {"id":"fp_inventory_carrying","key_path":"inventory.carrying","label":"Carrying","type":"tags","default":[],"generate":true,"generation_prompt":"Up to eight objects the character carries when a new conversation starts."}
-		,{"id":"fp_pockets_enabled","key_path":"pockets_enabled","label":"Pockets & Wardrobe enabled","type":"checkbox","default":true,"generate":false}
+		,{"id":"fp_pockets_enabled","key_path":"pockets_enabled","label":"Pockets & Wardrobe default for new chats","type":"checkbox","default":true,"generate":false,"help_text":"Sets the starting choice for new chats with this character. Existing conversations keep their own session switch, and changing this card default does not turn tracking on or off in chats already in progress."}
       ]
     },
     {
