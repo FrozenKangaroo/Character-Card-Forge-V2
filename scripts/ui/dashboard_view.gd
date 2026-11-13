@@ -80,8 +80,7 @@ func refresh() -> void:
         empty.modulate = Color(0.7, 0.71, 0.78)
         _recent_box.add_child(empty)
         return
-    for index in range(min(5, projects.size())):
-        var row: Dictionary = projects[index]
+    for row in recent_rows(projects, 5):
         var button := Button.new()
         button.text = "%s   •   %d character%s   •   %s" % [
             str(row.get("name", "Untitled Project")),
@@ -97,6 +96,39 @@ func refresh() -> void:
         button.pressed.connect(_emit_open_project.bind(str(row.get("project_id", ""))))
         _recent_box.add_child(button)
 
+
+## Newest-first slice of the library index.
+##
+## The index is written in directory order, so the dashboard must order the
+## rows itself: "Recent projects" was previously showing whichever projects
+## happened to be listed first. Rows without a usable timestamp sort last.
+static func recent_rows(rows: Array, limit: int = 5) -> Array[Dictionary]:
+    var sorted_rows: Array[Dictionary] = []
+    for raw_row in rows:
+        if raw_row is Dictionary:
+            sorted_rows.append((raw_row as Dictionary).duplicate(true))
+    sorted_rows.sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
+        var first_time := _sort_time(first)
+        var second_time := _sort_time(second)
+        if first_time != second_time:
+            return first_time > second_time
+        return str(first.get("name", "")).naturalnocasecmp_to(
+            str(second.get("name", ""))
+        ) < 0
+    )
+    if limit > 0 and sorted_rows.size() > limit:
+        sorted_rows.resize(limit)
+    return sorted_rows
+
+
+static func _sort_time(row: Dictionary) -> float:
+    var raw := str(row.get("updated_at", "")).strip_edges()
+    if raw.is_empty():
+        raw = str(row.get("created_at", "")).strip_edges()
+    if raw.is_empty():
+        return 0.0
+    return Time.get_unix_time_from_datetime_string(raw)
+
 func _button(text: String, callback: Callable, accent := false) -> Button:
     var button := Button.new()
     button.text = text
@@ -107,9 +139,16 @@ func _button(text: String, callback: Callable, accent := false) -> Button:
     return button
 
 func _friendly_date(value: String) -> String:
-    if value.is_empty():
+    var text := value.strip_edges()
+    if text.is_empty():
         return "Unknown date"
-    return value.replace("T", " ").trim_suffix("Z")
+    text = text.replace("T", " ").trim_suffix("Z")
+    var fractional := text.find(".")
+    if fractional > 0:
+        text = text.substr(0, fractional)
+    if text.length() > 16:
+        text = text.substr(0, 16)
+    return text
 
 func _emit_open_project(project_id: String) -> void:
     open_project_requested.emit(project_id)

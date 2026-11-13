@@ -1,0 +1,31 @@
+{
+  "format_version": 1,
+  "name": "Character Card Forge v0.21.18 complete regression suites",
+  "description": "v0.21.17 baseline plus Rawhide PR #669 Afterglow new-chat defaults, newest-first Recent projects, the collapsible project setup block and release-metadata version consistency.",
+  "base_manifest": "regression_suites_v02117.json",
+  "suite_additions": {
+    "current_wiring": [
+      {
+        "id": "v02118_front_porch_afterglow_defaults",
+        "label": "v0.21.18 Rawhide Afterglow new-chat defaults and text-boolean normalisation",
+        "kind": "godot",
+        "path": "tools/test_v02118_front_porch_afterglow_defaults.gd",
+        "timeout_seconds": 120
+      },
+      {
+        "id": "v02118_dashboard_recent_order",
+        "label": "v0.21.18 Dashboard newest-first Recent projects",
+        "kind": "godot",
+        "path": "tools/test_v02118_dashboard_recent_order.gd",
+        "timeout_seconds": 120
+      },
+      {
+        "id": "v02118_workspace_setup_collapse",
+        "label": "v0.21.18 Collapsible workspace project setup",
+        "kind": "godot",
+        "path": "tools/test_v02118_workspace_setup_collapse.gd",
+        "timeout_seconds": 120
+      }
+    ]
+  }
+}

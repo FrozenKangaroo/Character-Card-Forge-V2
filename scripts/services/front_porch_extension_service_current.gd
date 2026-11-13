@@ -15,6 +15,10 @@ const CHAOS_FIELD_ID_V02116 := "fp_chaos_mode"
 const RAW_HIDE_POCKETS_PR708_COMMIT_V02117 := (
 	"04f260783499728ffc93708132eb36900e280868"
 )
+const RAW_HIDE_AFTERGLOW_PR669_COMMIT_V02118 := (
+	"756d1a33959036498a6657bc0d0989438654e2f4"
+)
+const AFTERGLOW_FIELD_ID_V02118 := "fp_afterglow_enabled"
 
 
 func is_included(document: Dictionary, field: Dictionary) -> bool:
@@ -76,6 +80,11 @@ func apply_control_values(
 
 func _normalise_value(field: Dictionary, raw_value: Variant) -> Dictionary:
 	var field_id := str(field.get("id", ""))
+	if str(field.get("type", "")) == "checkbox":
+		# AI proposals and hand-typed values can arrive as booleans, numbers or
+		# the strings "true"/"false". bool("false") is true in GDScript, so a
+		# text boolean must be parsed explicitly instead of coerced.
+		return _normalise_checkbox_value_v02118(field, raw_value)
 	if field_id == "fp_needs_off":
 		return RAW_HIDE_CHARACTER_V02116.normalise_needs_off(raw_value)
 	if field_id == "fp_recovery":
@@ -178,7 +187,11 @@ func validate_document(document: Dictionary) -> Dictionary:
 
 func capabilities() -> Dictionary:
 	var result := super.capabilities()
-	result["version"] = "0.21.16"
+	# Report the running application version from project.godot instead of a
+	# hand-maintained copy that silently went stale in earlier releases.
+	result["version"] = str(
+		ProjectSettings.get_setting("application/config/version", "0")
+	)
 	result["typed_work_hours"] = true
 	result["work_days_preview_normalisation"] = true
 	result["work_days_tolerant_generation_formats"] = [
@@ -196,7 +209,51 @@ func capabilities() -> Dictionary:
 		RAW_HIDE_POCKETS_PR708_COMMIT_V02117
 	)
 	result["pockets_character_default_is_tristate"] = true
+	result["rawhide_afterglow_pr669_commit"] = (
+		RAW_HIDE_AFTERGLOW_PR669_COMMIT_V02118
+	)
+	result["afterglow_character_default_is_tristate"] = true
+	result["afterglow_field_id"] = AFTERGLOW_FIELD_ID_V02118
+	result["checkbox_values_accept_text_booleans"] = true
 	return result
+
+
+func _normalise_checkbox_value_v02118(
+	field: Dictionary, raw_value: Variant
+) -> Dictionary:
+	if raw_value is bool:
+		return {"ok": true, "value": raw_value}
+	if raw_value is int or raw_value is float:
+		return {"ok": true, "value": float(raw_value) != 0.0}
+	if raw_value is String:
+		var text := (raw_value as String).strip_edges().to_lower()
+		if text in ["true", "1", "yes", "on", "enabled"]:
+			return {"ok": true, "value": true}
+		if text in ["false", "0", "no", "off", "disabled"]:
+			return {"ok": true, "value": false}
+		return {
+			"ok": false,
+			"error": (
+				"Use a true or false value for %s."
+				% str(field.get("label", field.get("id", "this field")))
+			)
+		}
+	if raw_value == null:
+		# An absent proposal must not silently flip a checkbox off.
+		return {
+			"ok": false,
+			"error": (
+				"No value was proposed for %s."
+				% str(field.get("label", field.get("id", "this field")))
+			)
+		}
+	return {
+		"ok": false,
+		"error": (
+			"Use a true or false value for %s."
+			% str(field.get("label", field.get("id", "this field")))
+		)
+	}
 
 
 func _canonicalise_rawhide_omissions_v02116(document: Dictionary) -> void:

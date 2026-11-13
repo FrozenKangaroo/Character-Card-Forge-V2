@@ -57,7 +57,8 @@ func _run() -> void:
 
 	var capabilities := service.capabilities()
 	if not _require(
-		str(capabilities.get("version", "")) == "0.21.16"
+		str(capabilities.get("version", ""))
+		== str(ProjectSettings.get_setting("application/config/version", ""))
 		and capabilities.get("chaos_modes", []) == ["rare", "normal", "wild"]
 		and bool(capabilities.get("chaos_legacy_boolean_compatibility", false)),
 		"Current Front Porch capabilities must disclose multi-mode and legacy support."

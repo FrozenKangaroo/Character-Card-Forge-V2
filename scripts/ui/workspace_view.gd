@@ -20,6 +20,11 @@ var _save_button: Button
 var _generate_button: Button
 var _cancel_button: Button
 var _tabs: TabContainer
+var _setup_panel: VBoxContainer
+var _setup_toggle: Button
+var _setup_hint: Label
+var _setup_collapsed := false
+var _setup_user_toggled := false
 var _generation_service: CCFGenerationService
 var _concept_token_label: Label
 var _template_selector: OptionButton
@@ -120,9 +125,38 @@ func _ready() -> void:
 	library_button.pressed.connect(func(): library_requested.emit())
 	top.add_child(library_button)
 
+	# Project/series/character/template setup is used between saves, not while
+	# editing, and it used to occupy roughly a third of the window: on a
+	# 1440x810 window only a single Front Porch field was visible below it.
+	# The block now collapses behind one clearly labelled control and opens by
+	# itself whenever there is no project to edit yet.
+	var setup_bar := HFlowContainer.new()
+	setup_bar.add_theme_constant_override("separation", 8)
+	add_child(setup_bar)
+	_setup_toggle = Button.new()
+	_setup_toggle.name = "ProjectSetupToggleV02118"
+	_setup_toggle.text = "Project setup"
+	_setup_toggle.toggle_mode = true
+	_setup_toggle.tooltip_text = (
+		"Show or hide project naming, series, character selection and template controls."
+	)
+	_setup_toggle.pressed.connect(_toggle_project_setup_v02118)
+	setup_bar.add_child(_setup_toggle)
+	_setup_hint = Label.new()
+	_setup_hint.name = "ProjectSetupHintV02118"
+	_setup_hint.modulate = Color(0.62, 0.65, 0.74)
+	_setup_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_setup_hint.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	setup_bar.add_child(_setup_hint)
+
+	_setup_panel = VBoxContainer.new()
+	_setup_panel.name = "ProjectSetupPanelV02118"
+	_setup_panel.add_theme_constant_override("separation", 10)
+	add_child(_setup_panel)
+
 	var project_row := HFlowContainer.new()
 	project_row.add_theme_constant_override("separation", 8)
-	add_child(project_row)
+	_setup_panel.add_child(project_row)
 	var project_label := Label.new()
 	project_label.text = "Project"
 	project_row.add_child(project_label)
@@ -170,7 +204,7 @@ func _ready() -> void:
 
 	var character_row := HFlowContainer.new()
 	character_row.add_theme_constant_override("separation", 8)
-	add_child(character_row)
+	_setup_panel.add_child(character_row)
 	var character_label := Label.new()
 	character_label.text = "Active character"
 	character_row.add_child(character_label)
@@ -201,7 +235,7 @@ func _ready() -> void:
 
 	var template_row := HFlowContainer.new()
 	template_row.add_theme_constant_override("separation", 8)
-	add_child(template_row)
+	_setup_panel.add_child(template_row)
 	var template_label := Label.new()
 	template_label.text = "Workspace template"
 	template_row.add_child(template_label)
@@ -273,6 +307,11 @@ func load_project(project: Dictionary, template: Dictionary, settings: Dictionar
 	_populate_template_selector()
 	_rebuild_form()
 	_update_header()
+	if not _setup_user_toggled:
+		# A loaded project no longer needs the setup rows on screen, and they
+		# crowd out the tab being edited. The author's own toggle wins from
+		# then on.
+		_set_project_setup_collapsed_v02118(true)
 	_update_project_level_window_contexts()
 	_status.text = "Loaded. Changes remain local until you press Save."
 
@@ -2276,6 +2315,45 @@ func _mark_dirty() -> void:
 	_update_header()
 
 
+func _toggle_project_setup_v02118() -> void:
+	_setup_user_toggled = true
+	_set_project_setup_collapsed_v02118(not _setup_collapsed)
+
+
+func _set_project_setup_collapsed_v02118(collapsed: bool) -> void:
+	_setup_collapsed = collapsed
+	if _setup_panel != null:
+		_setup_panel.visible = not collapsed
+	if _setup_toggle != null:
+		_setup_toggle.text = "Project setup" if collapsed else "Hide project setup"
+		_setup_toggle.button_pressed = not collapsed
+	_update_setup_hint_v02118()
+
+
+func _update_setup_hint_v02118() -> void:
+	if _setup_hint == null:
+		return
+	if not _setup_collapsed:
+		_setup_hint.text = "Optional: rename the project, change series, switch character or template."
+		return
+	var template_name := ""
+	if _template_selector != null and _template_selector.selected >= 0:
+		template_name = _template_selector.get_item_text(_template_selector.selected)
+	var parts: Array[String] = []
+	if not template_name.strip_edges().is_empty():
+		parts.append("Template: %s" % template_name.strip_edges())
+	var character_count := 0
+	for raw_character in _project_container.get("characters", []):
+		if raw_character is Dictionary:
+			character_count += 1
+	if character_count > 1:
+		parts.append("%d characters" % character_count)
+	if parts.is_empty():
+		_setup_hint.text = ""
+	else:
+		_setup_hint.text = "  •  ".join(parts)
+
+
 func _update_header() -> void:
 	if _project.is_empty():
 		_title.text = "Character Workspace"
@@ -2291,6 +2369,7 @@ func _update_header() -> void:
 	if metadata is Dictionary:
 		project_name = str(metadata.get("name", project_name)).strip_edges()
 	_title.text = "%s  •  %s%s" % [project_name, character_name, " *" if _dirty else ""]
+	_update_setup_hint_v02118()
 
 
 func _default_value_for_type(field_type: String) -> Variant:

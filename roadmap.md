@@ -120,6 +120,16 @@ existing group-card editor exposes the confirmed group-wide default inside
 `default_member_realism_state`, while embedded member cards retain their own defaults.
 Runtime `pockets_switch` values remain session-owned and are never written into cards.
 
+The v0.21.18 development candidate follows Rawhide PR #669's `afterglow_enabled` portable
+default. The optional Front Porch editor exposes it under Opening State, preserving a
+missing property (Rawhide's enabled default) separately from explicit `true` and `false`
+through editing, Card V2 export, import and re-export. Checkbox proposals are now parsed
+explicitly rather than through `bool()`, so the text `"false"` can no longer switch a
+field on. Home's Recent projects list sorts newest first with compact timestamps, and the
+Workspace project-setup rows collapse behind one labelled control so the edited tab uses
+the full window. Release validation additionally checks the in-app build version and its
+tooltip against `VERSION`.
+
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
 validation, task-oriented user documentation, a smaller manifest-driven CI surface,

@@ -6,6 +6,62 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.18] - 2026-11-13
+
+### Highlights
+
+- Added the Front Porch Rawhide Afterglow new-chat default (`afterglow_enabled`,
+  Rawhide PR #669) to the optional Front Porch editor and to portable Card V2
+  round trips.
+- Home now orders **Recent projects** newest first instead of showing the first
+  five library-index rows.
+- The Workspace collapses its project/series/character/template setup block, so
+  the tab being edited gets the space the setup rows were using.
+- Release metadata now fails validation when the in-app build version or its
+  tooltip drifts from `VERSION`.
+
+### Changes
+
+- Added the **Afterglow default for new chats** control under Front Porch →
+  Opening State. Missing stays missing and reads as Rawhide's enabled default;
+  explicit `true` and explicit `false` are both preserved through editing,
+  Character Card V2 export, import and re-export.
+- Checkbox values proposed by AI or typed by hand are parsed explicitly
+  (`true`/`false`/`yes`/`no`/`on`/`off`/`1`/`0`) instead of through `bool()`,
+  which treated the string `"false"` as true. Invalid or absent proposals now
+  raise a validation error and leave the stored value untouched.
+- `CCFDashboardView.recent_rows()` sorts by `updated_at` (falling back to
+  `created_at`), puts undated rows last, breaks ties by name and copies the
+  rows so the shared library index is not reordered in place.
+- Dashboard timestamps render as `YYYY-MM-DD HH:MM` rather than raw ISO text.
+- Project, series, active-character, group-role and template rows move into one
+  collapsible **Project setup** block. It collapses when a project loads, shows
+  the active template while collapsed, and keeps an explicit author choice for
+  the rest of the session.
+- The sidebar build-label tooltip is generated from the current release instead
+  of a hard-coded v0.21.7 description.
+- `tools/validate_project.py` now checks `CURRENT_BUILD_VERSION` in
+  `scripts/main_current.gd` against `VERSION`, plus the build-label tooltip.
+- The Front Porch service capability report now reads the running application
+  version from `project.godot` (it had been pinned to a stale `0.21.16` string)
+  and names the Afterglow contract commit.
+
+### Migration notes
+
+- None. Existing cards keep their missing/explicit Afterglow state, and no
+  project or template data is rewritten.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Afterglow runtime switches on existing conversations and group sessions remain
+  Front Porch-owned. CCF deliberately does not export them.
+- The project setup block's collapsed/expanded choice is session-scoped rather
+  than a saved setting.
+
 ## [0.21.17] - 2026-11-07
 
 ### Highlights

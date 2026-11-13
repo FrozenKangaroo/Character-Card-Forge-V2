@@ -61,7 +61,8 @@
         {"id":"fp_emotion_intensity","key_path":"emotion_intensity","label":"Emotion intensity","type":"select","default":"mild","options":["mild","moderate","strong"],"generate":true},
         {"id":"fp_nsfw_cooldown","key_path":"nsfw_cooldown_enabled","label":"NSFW cooldown default","type":"checkbox","default":false,"generate":true},
         {"id":"fp_passage_of_time","key_path":"passage_of_time_enabled","label":"Automatic passage of time","type":"checkbox","default":true,"generate":true},
-        {"id":"fp_chaos_mode","key_path":"chaos_frequency","label":"Chaos Mode","type":"select","default":"disabled","options":["disabled","rare","normal","wild"],"option_labels":{"disabled":"Disabled","rare":"Rare","normal":"Normal","wild":"Wild"},"generate":true,"generation_prompt":"Choose exactly one Chaos Mode value: disabled, rare, normal or wild."}
+        {"id":"fp_chaos_mode","key_path":"chaos_frequency","label":"Chaos Mode","type":"select","default":"disabled","options":["disabled","rare","normal","wild"],"option_labels":{"disabled":"Disabled","rare":"Rare","normal":"Normal","wild":"Wild"},"generate":true,"generation_prompt":"Choose exactly one Chaos Mode value: disabled, rare, normal or wild."},
+        {"id":"fp_afterglow_enabled","key_path":"afterglow_enabled","label":"Afterglow default for new chats","type":"checkbox","default":true,"generate":true,"generation_prompt":"Choose whether Afterglow starts on for new chats with this character. Return true unless the character's own material clearly says the feature should start off.","help_text":"Front Porch starts Afterglow on for new chats unless the card says otherwise, so an untouched Include box means enabled. Existing conversations keep their own session switch, and changing this card default does not alter a chat already in progress. In a group, the group's own switch can still turn Afterglow off for everyone."}
       ]
     },
     {

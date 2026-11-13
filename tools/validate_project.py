@@ -72,6 +72,11 @@ def main() -> None:
         "scripts/main.gd": read_match(
             ROOT / "scripts/main.gd", r'^const APP_VERSION := "([^"]+)"$', "APP_VERSION"
         ),
+        "scripts/main_current.gd": read_match(
+            ROOT / "scripts/main_current.gd",
+            r'^const CURRENT_BUILD_VERSION := "([^"]+)"$',
+            "current build version",
+        ),
         "project_package_service.gd": read_match(
             ROOT / "scripts/services/project_package_service.gd",
             r'^\s*"application_version":\s*"([^"]+)"',
@@ -88,6 +93,12 @@ def main() -> None:
             source_version == version,
             f"{source} reports {source_version}, but VERSION reports {version}.",
         )
+
+    main_current_text = (ROOT / "scripts/main_current.gd").read_text(encoding="utf-8")
+    require(
+        f"v{version} " in main_current_text,
+        "The build-label tooltip must describe the current release version.",
+    )
 
     project_text = (ROOT / "project.godot").read_text(encoding="utf-8")
     require(

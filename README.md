@@ -15,11 +15,11 @@ interface architecture.
 
 ## Current status
 
-The current source candidate is **v0.21.17 — Rawhide Pockets & Wardrobe Defaults**.
-It clarifies that portable Pockets settings are defaults for new chats, preserves missing,
-explicit-on and explicit-off character values, and adds Rawhide PR #708's confirmed group
-default to the existing group-card editor. Legacy and unknown Front Porch data remains
-round-trip safe.
+The current source candidate is **v0.21.18 — Afterglow Defaults & Workspace Density**.
+It adds Rawhide PR #669's `afterglow_enabled` new-chat default to the optional Front Porch
+editor with lossless missing/true/false round trips, orders Home's Recent projects newest
+first, and collapses the Workspace project-setup rows so the edited tab gets the space.
+Release validation now also fails when the in-app build version drifts from `VERSION`.
 
 The v0.21.13 public Idea Source catalog, v0.21.12 global streaming and settings-safety
 work, v0.21.8–v0.21.11 Idea review, Generate More and Direction Preset workflows, and
