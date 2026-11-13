@@ -242,11 +242,11 @@ func _finish_safe_blueprint_handoff_v02115() -> void:
 		"handoff_mode": "blueprint",
 		"handoff_build_strategy": SAFE_HANDOFF_V02115.STRATEGY_SAFE_SECTION,
 	}
-	var title := str(
+	var session_title := str(
 		_safe_handoff_v02115.get("session_title", "Character Collaboration")
 	)
 	_safe_handoff_v02115.clear()
-	character_draft_ready.emit(payload, title)
+	character_draft_ready.emit(payload, session_title)
 	_status.text = (
 		"Safe Section Generation Blueprint sent to Workspace. Review the Generation Concept, then use Generate Character when ready."
 	)
@@ -320,11 +320,11 @@ func _handle_safe_supplement_v02115(data: Variant) -> void:
 		"handoff_mode": "detailed_workspace_draft",
 		"handoff_build_strategy": SAFE_HANDOFF_V02115.STRATEGY_SAFE_SECTION,
 	}
-	var title := str(
+	var session_title := str(
 		_safe_handoff_v02115.get("session_title", "Character Collaboration")
 	)
 	_safe_handoff_v02115.clear()
-	character_draft_ready.emit(payload, title)
+	character_draft_ready.emit(payload, session_title)
 	_status.text = (
 		"Detailed Safe Section character draft, Alternative Greetings and Lorebook sent to Workspace."
 	)

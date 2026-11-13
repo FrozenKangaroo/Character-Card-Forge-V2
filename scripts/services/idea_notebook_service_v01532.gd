@@ -132,14 +132,14 @@ static func hierarchy_snapshot() -> Dictionary:
 static func hierarchy_counts_from_snapshot(
 	snapshot: Dictionary, ideas: Array, include_archived: bool = false
 ) -> Dictionary:
-	var direct_folder_counts := {"__all__": 0, "__unfiled__": 0}
-	var folder_counts := {}
+	var direct_counts := {"__all__": 0, "__unfiled__": 0}
+	var nested_counts := {}
 	var parent_by_folder := {}
 	for folder_value in snapshot.get("folders", []):
 		var folder: Dictionary = folder_value
 		var folder_id := str(folder.get("id", ""))
-		folder_counts[folder_id] = 0
-		direct_folder_counts[folder_id] = 0
+		nested_counts[folder_id] = 0
+		direct_counts[folder_id] = 0
 		parent_by_folder[folder_id] = str(folder.get("parent_folder_id", ""))
 	for idea_value in ideas:
 		if not idea_value is Dictionary:
@@ -147,25 +147,25 @@ static func hierarchy_counts_from_snapshot(
 		var idea: Dictionary = idea_value
 		if not include_archived and bool(idea.get("archived", false)):
 			continue
-		direct_folder_counts["__all__"] = int(direct_folder_counts.get("__all__", 0)) + 1
+		direct_counts["__all__"] = int(direct_counts.get("__all__", 0)) + 1
 		var folder_id := str(idea.get("folder_id", ""))
-		if folder_id.is_empty() or not direct_folder_counts.has(folder_id):
-			direct_folder_counts["__unfiled__"] = int(
-				direct_folder_counts.get("__unfiled__", 0)
+		if folder_id.is_empty() or not direct_counts.has(folder_id):
+			direct_counts["__unfiled__"] = int(
+				direct_counts.get("__unfiled__", 0)
 			) + 1
 		else:
-			direct_folder_counts[folder_id] = int(direct_folder_counts.get(folder_id, 0)) + 1
+			direct_counts[folder_id] = int(direct_counts.get(folder_id, 0)) + 1
 		var cursor := folder_id
 		var visited := {}
-		while not cursor.is_empty() and folder_counts.has(cursor) and not visited.has(cursor):
+		while not cursor.is_empty() and nested_counts.has(cursor) and not visited.has(cursor):
 			visited[cursor] = true
-			folder_counts[cursor] = int(folder_counts.get(cursor, 0)) + 1
+			nested_counts[cursor] = int(nested_counts.get(cursor, 0)) + 1
 			cursor = str(parent_by_folder.get(cursor, ""))
 	return {
-		"direct_folder_counts": direct_folder_counts,
-		"folder_counts": folder_counts,
+		"direct_folder_counts": direct_counts,
+		"folder_counts": nested_counts,
 		# Historical key retained for older internal callers during the v3 transition.
-		"notebook_counts": direct_folder_counts
+		"notebook_counts": direct_counts
 	}
 
 

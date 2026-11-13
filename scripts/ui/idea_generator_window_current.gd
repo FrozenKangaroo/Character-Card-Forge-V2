@@ -1390,15 +1390,15 @@ func _tree_presentation_descriptor_v0216(kind: String, item_id: String = "") -> 
 
 
 func _notebook_tree_sort_less_v0215(
-	first: Dictionary, second: Dictionary, mode: String,
+	first: Dictionary, second: Dictionary, sort_mode: String,
 	counts: Dictionary, activity: Dictionary
 ) -> bool:
-	if mode == "count":
+	if sort_mode == "count":
 		var first_count := int(counts.get(str(first.get("id", "")), 0))
 		var second_count := int(counts.get(str(second.get("id", "")), 0))
 		if first_count != second_count:
 			return first_count > second_count
-	elif mode == "recent":
+	elif sort_mode == "recent":
 		var first_updated := str(activity.get(str(first.get("id", "")), first.get("updated_at", "")))
 		var second_updated := str(activity.get(str(second.get("id", "")), second.get("updated_at", "")))
 		if first_updated != second_updated:
@@ -3493,11 +3493,11 @@ func _build_direction_preset_editor_v02111(parent: VBoxContainer) -> void:
 
 
 func _preset_list_label_v02111(preset: Dictionary) -> String:
-	var title := str(preset.get("title", "")).strip_edges()
-	if title.is_empty():
-		title = "Untitled direction"
+	var preset_title := str(preset.get("title", "")).strip_edges()
+	if preset_title.is_empty():
+		preset_title = "Untitled direction"
 	var group := str(preset.get("group", "")).strip_edges()
-	return "%s  ·  %s" % [group, title] if not group.is_empty() else title
+	return "%s  ·  %s" % [group, preset_title] if not group.is_empty() else preset_title
 
 
 func _rebuild_source_preset_list_v02111(selected_index: int = -1) -> void:

@@ -244,7 +244,7 @@ Return JSON only.""" % [
 
 static func section_request_prompt(
 	heading: String,
-	source_context: String,
+	source_text: String,
 	accepted_sections: String
 ) -> String:
 	var continuity := ""
@@ -265,7 +265,7 @@ AUTHORITATIVE COLLABORATOR SOURCE:
 Return one valid JSON object in exactly this shape:
 {"section_text":"complete section body"}
 
-Return JSON only.""" % [heading, source_context, continuity]
+Return JSON only.""" % [heading, source_text, continuity]
 
 
 static func source_context(

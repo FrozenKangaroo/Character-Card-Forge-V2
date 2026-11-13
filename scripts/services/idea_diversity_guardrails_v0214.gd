@@ -289,11 +289,11 @@ static func ledger_record_for_idea(
 	include_comparison_data: bool = true
 ) -> Dictionary:
 	var title := str(idea.get("title", "Untitled idea")).strip_edges()
-	var summary := _idea_summary(idea)
+	var summary_text := _idea_summary(idea)
 	return {
 		"id": ledger_id,
 		"title": title if not title.is_empty() else "Untitled idea",
-		"summary": summary,
+		"summary": summary_text,
 		"fingerprint": semantic_fingerprint(idea) if include_comparison_data else "",
 		"structural_tokens": structural_tokens(idea) if include_comparison_data else [],
 		"normalised_title": normalise_title(title) if include_comparison_data else "",

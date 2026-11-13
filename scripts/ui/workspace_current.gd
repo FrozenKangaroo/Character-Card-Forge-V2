@@ -2233,7 +2233,7 @@ func _delete_generated_idea_v0218(index: int) -> void:
 	)
 	if not bool(removed.get("ok", false)):
 		return
-	var visible: Array = _idea_curation_session_v0218.get("visible_ideas", []) as Array
+	var remaining_ideas: Array = _idea_curation_session_v0218.get("visible_ideas", []) as Array
 	var metadata: Dictionary = (
 		_idea_curation_session_v0218.get("metadata", {}) as Dictionary
 	).duplicate(true)
@@ -2241,13 +2241,13 @@ func _delete_generated_idea_v0218(index: int) -> void:
 		_idea_curation_session_v0218.get("user_deleted_count", 0)
 	)
 	_idea_curation_session_v0218["metadata"] = metadata.duplicate(true)
-	_render_ideas(visible)
+	_render_ideas(remaining_ideas)
 	if _idea_generator_v01532 != null:
-		_idea_generator_v01532.set_last_generated_ideas_v01532(visible, metadata)
+		_idea_generator_v01532.set_last_generated_ideas_v01532(remaining_ideas, metadata)
 	if _idea_generate_more_v0218 != null:
 		_idea_generate_more_v0218.disabled = false
 	_idea_status.text = "%d generated Idea%s remain. The deleted concept stays in temporary repeat-prevention memory." % [
-		visible.size(), "" if visible.size() == 1 else "s"
+		remaining_ideas.size(), "" if remaining_ideas.size() == 1 else "s"
 	]
 
 
@@ -2300,7 +2300,7 @@ func _restore_completed_curation_after_extension_v0219(
 	var visible_value: Variant = _idea_curation_session_v0218.get(
 		"visible_ideas", []
 	)
-	var visible: Array = (
+	var visible_ideas: Array = (
 		(visible_value as Array).duplicate(true)
 		if visible_value is Array else []
 	)
@@ -2319,9 +2319,9 @@ func _restore_completed_curation_after_extension_v0219(
 		metadata["idea_last_extension_retained_count"] = 0
 		metadata["idea_last_extension_errors"] = _idea_batch_errors_v0211.duplicate()
 		_idea_curation_session_v0218["metadata"] = metadata.duplicate(true)
-	_render_ideas(visible)
+	_render_ideas(visible_ideas)
 	if _idea_generator_v01532 != null:
-		_idea_generator_v01532.set_last_generated_ideas_v01532(visible, metadata)
+		_idea_generator_v01532.set_last_generated_ideas_v01532(visible_ideas, metadata)
 	if _idea_generate_more_v0218 != null:
 		_idea_generate_more_v0218.disabled = false
 	if _idea_similarity_review_window_v0214 != null:

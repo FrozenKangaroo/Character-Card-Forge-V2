@@ -271,6 +271,9 @@ func _validate_group_editors_v0174() -> String:
 
 
 func _capture_group_options_v0174() -> Dictionary:
+	var lore_world_ids_value_v02118: Variant = null
+	if _lore_world_ids_enabled_v02116.button_pressed:
+		lore_world_ids_value_v02118 = _split_list_v0174(_lore_world_ids_v02116.text)
 	return {
 		"turn_order": str(_turn_order_v0174.get_item_metadata(_turn_order_v0174.selected)),
 		"auto_advance": _auto_advance_v0174.button_pressed,
@@ -280,10 +283,7 @@ func _capture_group_options_v0174() -> Dictionary:
 		"group_lorebook": _group_lorebook_v0174.text,
 		"world_ids": _split_list_v0174(_world_ids_v0174.text),
 		"world_names": _split_list_v0174(_world_names_v0174.text),
-		"lore_world_ids": (
-			_split_list_v0174(_lore_world_ids_v02116.text)
-			if _lore_world_ids_enabled_v02116.button_pressed else null
-		),
+		"lore_world_ids": lore_world_ids_value_v02118,
 		"inherit_character_lorebooks": _inherit_lorebooks_v0174.button_pressed,
 		"chaos_mode_enabled": _chaos_mode_v0174.button_pressed,
 		"chaos_nsfw_enabled": _chaos_nsfw_v0174.button_pressed,

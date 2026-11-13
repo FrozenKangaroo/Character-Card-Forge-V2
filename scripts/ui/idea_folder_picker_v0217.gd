@@ -191,11 +191,11 @@ func _append_folder_children_v0217(
 func _visible_folder_ids_v0217(
 	folder_by_id: Dictionary, folder_paths: Dictionary
 ) -> Dictionary:
-	var visible: Dictionary = {}
+	var visible_ids: Dictionary = {}
 	if _query.is_empty():
 		for folder_id in folder_by_id.keys():
-			visible[str(folder_id)] = true
-		return visible
+			visible_ids[str(folder_id)] = true
+		return visible_ids
 	for folder_id_value in folder_by_id.keys():
 		var folder_id := str(folder_id_value)
 		var folder: Dictionary = folder_by_id.get(folder_id, {})
@@ -206,13 +206,13 @@ func _visible_folder_ids_v0217(
 			continue
 		var current_id := folder_id
 		while not current_id.is_empty() and folder_by_id.has(current_id):
-			visible[current_id] = true
+			visible_ids[current_id] = true
 			current_id = str(
 				(folder_by_id.get(current_id, {}) as Dictionary).get(
 					"parent_folder_id", ""
 				)
 			)
-	return visible
+	return visible_ids
 
 
 func _restore_expansion_v0217() -> void:

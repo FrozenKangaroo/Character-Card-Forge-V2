@@ -355,6 +355,9 @@ static func import_group_to_project(payload: Dictionary, source_path: String = "
 	for field_name in payload:
 		if str(field_name) not in KNOWN_GROUP_FIELDS:
 			preserved_fields[str(field_name)] = payload[field_name]
+	var lore_world_ids_value_v02118: Variant = null
+	if payload.has("lore_world_ids"):
+		lore_world_ids_value_v02118 = _string_array(payload.get("lore_world_ids", []))
 	var options := {
 		"turn_order": _turn_order(payload.get("turn_order", "roundRobin")),
 		"auto_advance": bool(payload.get("auto_advance", true)),
@@ -364,10 +367,7 @@ static func import_group_to_project(payload: Dictionary, source_path: String = "
 		"group_lorebook": str(payload.get("group_lorebook", "")),
 		"world_ids": _string_array(payload.get("world_ids", [])),
 		"world_names": _string_array(payload.get("world_names", [])),
-		"lore_world_ids": (
-			_string_array(payload.get("lore_world_ids", []))
-			if payload.has("lore_world_ids") else null
-		),
+		"lore_world_ids": lore_world_ids_value_v02118,
 		"inherit_character_lorebooks": bool(payload.get("inherit_character_lorebooks", true)),
 		"chaos_mode_enabled": bool(payload.get("chaos_mode_enabled", false)),
 		"chaos_nsfw_enabled": bool(payload.get("chaos_nsfw_enabled", false)),
