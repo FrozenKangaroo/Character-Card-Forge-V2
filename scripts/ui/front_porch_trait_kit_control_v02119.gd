@@ -251,7 +251,7 @@ func _add_entry_from_dictionary(raw_entry: Dictionary) -> void:
 		"Optional: name the boon this flaw works against. Front Porch grows the "
 		+ "boon toward overcoming the bogey."
 	)
-	link_select.item_selected.connect(_on_row_changed)
+	link_select.item_selected.connect(_on_link_selected.bind(panel))
 	link_row.add_child(link_select)
 
 	var extras := raw_entry.duplicate(true)
@@ -282,6 +282,15 @@ func _on_kind_selected(_index: int, row: PanelContainer) -> void:
 		value_changed.emit()
 
 
+func _on_link_selected(_index: int, row: PanelContainer) -> void:
+	# Store the chosen target before any later rebuild reconstructs the list,
+	# otherwise the imported link (or a cleared one) silently comes back.
+	row.set_meta("trait_kit_link", _row_link(row))
+	_refresh_status()
+	if not _loading:
+		value_changed.emit()
+
+
 func _on_row_changed(_value: Variant = null) -> void:
 	_refresh_status()
 	if not _loading:
@@ -303,7 +312,9 @@ func _on_text_changed(row: PanelContainer) -> void:
 			if str(other.get_meta("trait_kit_link", "")) == previous:
 				other.set_meta("trait_kit_link", current)
 	row.set_meta("trait_kit_previous_text", current)
-	_refresh_status()
+	# Rebuild every link selector: a renamed boon must appear under its new
+	# text, and links that followed the rename must show the new target.
+	_refresh_all()
 	if not _loading:
 		value_changed.emit()
 

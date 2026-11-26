@@ -67,6 +67,10 @@ func _run() -> void:
 		return
 	if not _test_links_and_unknown_keys(service):
 		return
+	if not await _test_ai_preview_apply(service):
+		return
+	if not _test_control_link_behaviour():
+		return
 	var capabilities := service.capabilities()
 	if not _require(
 		str(capabilities.get("trait_kit_field_id", "")) == "fp_trait_kit"
@@ -294,3 +298,132 @@ func _sample_card() -> Dictionary:
 			},
 		},
 	}
+
+
+# The AI proposal path is separate from the form: the review window builds its
+# own editor per field, and only then applies the value. A valid kit proposal
+# must survive that pipeline, not just the main form.
+func _test_ai_preview_apply(
+	service: CCFFrontPorchExtensionServiceCurrent
+) -> bool:
+	var workspace := CCFWorkspaceCurrent.new()
+	root.add_child(workspace)
+	await process_frame
+	await process_frame
+	await process_frame
+
+	var project := CCFStorageService.new_project()
+	workspace.load_project(
+		project,
+		CCFTemplateService.load_default_template(),
+		CCFSettingsService.load_settings()
+	)
+	await process_frame
+	await process_frame
+
+	var field := service.field_by_id("fp_trait_kit")
+	workspace.set("_preview_metadata", {"front_porch_generation_contract": 1})
+	var loaded_document: Dictionary = workspace.get("_project")
+	workspace.set(
+		"_preview_project_id", str(loaded_document.get("project_id", ""))
+	)
+	workspace.set("_preview_rows", [])
+	workspace.call(
+		"_add_front_porch_trait_kit_preview_row_v02119", field, [], SAMPLE_KIT
+	)
+	if not _require(
+		(workspace.get("_preview_rows") as Array).size() == 1,
+		"The review window must build one trait-kit row for an AI proposal."
+	):
+		workspace.queue_free()
+		return false
+	var row: Dictionary = (workspace.get("_preview_rows") as Array)[0]
+	var editor: Variant = row.get("editor")
+	if not _require(
+		editor is CCFFrontPorchTraitKitControlV02119,
+		"The trait-kit review row must use the structured editor, not a text box."
+	):
+		workspace.queue_free()
+		return false
+	(editor as CCFFrontPorchTraitKitControlV02119).set_editable(true)
+	workspace.call("_apply_preview")
+	await process_frame
+
+	var document: Dictionary = workspace.get("_project")
+	var applied: Variant = CCFStorageService.get_value_at_path(
+		document,
+		"character.card_extensions.front_porch.realism_engine.traitKit",
+		null
+	)
+	var ok: bool = applied == SAMPLE_KIT
+	if not ok:
+		_fail(
+			"Applying a valid AI trait-kit proposal must store the array, got %s."
+			% str(applied)
+		)
+	workspace.queue_free()
+	return ok
+
+
+# Findings 2 and 3 from the PR review: renaming a boon must move the links, and
+# a link the author clears must stay cleared across later rebuilds.
+func _test_control_link_behaviour() -> bool:
+	var boon_text := "reads a room fast"
+	var control := CCFFrontPorchTraitKitControlV02119.new()
+	control.set_items([
+		{"kind": "boon", "text": boon_text, "tier": "emerging", "pinned": false},
+		{
+			"kind": "bogey", "text": "talks over people", "tier": "emerging",
+			"pinned": true, "linkedTo": boon_text
+		},
+	])
+	control.set_editable(true)
+
+	var editors := control.find_children("TextV02119", "TextEdit", true, false)
+	if not _require(
+		editors.size() == 2,
+		"The control must build one text editor per entry."
+	):
+		control.free()
+		return false
+	var boon_editor := editors[0] as TextEdit
+	var bogey_panel := _row_panel_for(boon_editor)
+	boon_editor.text = "reads a room instantly"
+	control.call("_on_text_changed", bogey_panel)
+	var entries: Array = control.items_value()
+	if not _require(
+		str(entries[1].get("linkedTo", "")) == "reads a room instantly",
+		"Renaming a boon must move every link that pointed at its old text."
+	):
+		control.free()
+		return false
+
+	var link_selects := control.find_children("LinkV02119", "OptionButton", true, false)
+	if not _require(
+		link_selects.size() == 2,
+		"Every entry must carry a link selector, hidden for boons."
+	):
+		control.free()
+		return false
+	# Row order matches the kit, so the bogey's selector is the second one.
+	var bogey_link := link_selects[1] as OptionButton
+	var bogey_panel_for_link := _row_panel_for(bogey_link)
+	bogey_link.select(0)
+	control.call("_on_link_selected", 0, bogey_panel_for_link)
+	control.call("_refresh_all")
+	entries = control.items_value()
+	if not _require(
+		not entries[1].has("linkedTo"),
+		"Clearing a link must survive the next rebuild of the link selectors."
+	):
+		control.free()
+		return false
+	control.free()
+	return true
+
+
+func _row_panel_for(control: Control) -> PanelContainer:
+	var node: Node = control
+	while node != null and not node is PanelContainer:
+		node = node.get_parent()
+	return node as PanelContainer

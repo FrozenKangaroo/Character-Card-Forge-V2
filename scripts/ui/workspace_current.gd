@@ -322,6 +322,14 @@ func _add_preview_row(
 			field, current_value, proposed_value
 		)
 		return
+	if (
+		int(_preview_metadata.get("front_porch_generation_contract", 0)) == 1
+		and str(field.get("type", "")) == "trait_kit"
+	):
+		_add_front_porch_trait_kit_preview_row_v02119(
+			field, current_value, proposed_value
+		)
+		return
 	var previous_count := _preview_rows.size()
 	super._add_preview_row(field, current_value, proposed_value)
 	if (
@@ -414,6 +422,85 @@ func _add_front_porch_list_preview_row_v02116(
 		"editor": editor,
 		"front_porch_generated_shape_valid_v02116": valid_shape
 	})
+
+
+func _add_front_porch_trait_kit_preview_row_v02119(
+	field: Dictionary, current_value: Variant, proposed_value: Variant
+) -> void:
+	var validation := (
+		_front_porch_service_v0172 as CCFFrontPorchExtensionServiceCurrent
+	).normalise_generated_preview_value_v02116(field, proposed_value)
+	var valid_shape := bool(validation.get("ok", false))
+	var editor_value: Variant = (
+		validation.get("value", []) if valid_shape else proposed_value
+	)
+	var panel := PanelContainer.new()
+	_preview_result_box.add_child(panel)
+	var margin := MarginContainer.new()
+	margin.add_theme_constant_override("margin_left", 12)
+	margin.add_theme_constant_override("margin_right", 12)
+	margin.add_theme_constant_override("margin_top", 10)
+	margin.add_theme_constant_override("margin_bottom", 12)
+	panel.add_child(margin)
+	var content := VBoxContainer.new()
+	content.add_theme_constant_override("separation", 7)
+	margin.add_child(content)
+
+	var checkbox := CheckBox.new()
+	checkbox.text = str(field.get("label", field.get("id", "Field")))
+	checkbox.button_pressed = valid_shape
+	content.add_child(checkbox)
+	if not valid_shape:
+		var error_label := Label.new()
+		error_label.name = "FrontPorchTraitKitValidationV02119"
+		error_label.text = str(
+			validation.get("error", "Expected a JSON array of boon and bogey entries.")
+		)
+		error_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		error_label.modulate = Color(0.92, 0.48, 0.42)
+		content.add_child(error_label)
+
+	var current_text := _front_porch_trait_kit_display_v02119(current_value)
+	if not current_text.is_empty():
+		var current_label := Label.new()
+		current_label.text = "Current:\n" + current_text
+		current_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		current_label.modulate = Color(0.62, 0.65, 0.73)
+		content.add_child(current_label)
+	var guidance := Label.new()
+	guidance.text = (
+		"Review each proposed boon and bogey. Turning a row off or removing it "
+		+ "before Apply keeps it out of the card."
+	)
+	guidance.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	guidance.modulate = Color(0.68, 0.71, 0.82)
+	content.add_child(guidance)
+
+	var editor := FRONT_PORCH_TRAIT_KIT_CONTROL_V02119.new()
+	editor.set_items(editor_value)
+	content.add_child(editor)
+	_preview_rows.append({
+		"field": field.duplicate(true),
+		"checkbox": checkbox,
+		"editor": editor,
+		"front_porch_generated_shape_valid_v02119": valid_shape
+	})
+
+
+func _front_porch_trait_kit_display_v02119(value: Variant) -> String:
+	if not value is Array:
+		return ""
+	var lines: Array[String] = []
+	for raw_entry in value as Array:
+		if not raw_entry is Dictionary:
+			continue
+		var entry: Dictionary = raw_entry
+		lines.append("• %s — %s (%s)" % [
+			str(entry.get("kind", "")).capitalize(),
+			str(entry.get("text", "")),
+			str(entry.get("tier", "")),
+		])
+	return "\n".join(lines)
 
 
 func _front_porch_list_display_v02116(value: Variant) -> String:
