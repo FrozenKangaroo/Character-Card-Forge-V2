@@ -16,6 +16,9 @@ const FRONT_PORCH_RECOVERY_CONTROL_V02116 = preload(
 const FRONT_PORCH_STRING_LIST_CONTROL_V02116 = preload(
 	"res://scripts/ui/front_porch_string_list_control_v02116.gd"
 )
+const FRONT_PORCH_TRAIT_KIT_CONTROL_V02119 = preload(
+	"res://scripts/ui/front_porch_trait_kit_control_v02119.gd"
+)
 const IDEA_GENERATOR_CURRENT = preload(
 	"res://scripts/ui/idea_generator_window_current.gd"
 )
@@ -2724,6 +2727,11 @@ func _create_front_porch_input_v0172(
 		list_control.set_items(value)
 		list_control.value_changed.connect(_mark_dirty)
 		return list_control
+	if str(field.get("type", "")) == "trait_kit":
+		var trait_kit := FRONT_PORCH_TRAIT_KIT_CONTROL_V02119.new()
+		trait_kit.set_items(value)
+		trait_kit.value_changed.connect(_mark_dirty)
+		return trait_kit
 	if str(field.get("id", "")) == "fp_needs_off":
 		var needs_off := FRONT_PORCH_NEEDS_OFF_CONTROL_V02116.new()
 		needs_off.set_needs_off(value)
@@ -2750,6 +2758,10 @@ func _front_porch_input_value_v0172(
 		raw_value = (
 			input_value as CCFFrontPorchStringListControlV02116
 		).items_value()
+	elif input_value is CCFFrontPorchTraitKitControlV02119:
+		raw_value = (
+			input_value as CCFFrontPorchTraitKitControlV02119
+		).items_value()
 	elif input_value is Control and input_value.get_script() == FRONT_PORCH_NEEDS_OFF_CONTROL_V02116:
 		raw_value = input_value.call("needs_off_value")
 	elif input_value is Control and input_value.get_script() == FRONT_PORCH_RECOVERY_CONTROL_V02116:
@@ -2761,7 +2773,9 @@ func _front_porch_input_value_v0172(
 	else:
 		raw_value = super._front_porch_input_value_v0172(input_value, field)
 	var field_id := str(field.get("id", ""))
-	if field_id not in ["fp_work_days", "fp_work_hours", "fp_needs_off", "fp_recovery"]:
+	if field_id not in [
+		"fp_work_days", "fp_work_hours", "fp_needs_off", "fp_recovery", "fp_trait_kit"
+	]:
 		return raw_value
 	var normalised := (
 		_front_porch_service_v0172 as CCFFrontPorchExtensionServiceCurrent
@@ -2774,6 +2788,9 @@ func _set_front_porch_input_enabled_v0172(
 ) -> void:
 	if input is CCFFrontPorchStringListControlV02116:
 		(input as CCFFrontPorchStringListControlV02116).set_editable(enabled)
+		return
+	if input is CCFFrontPorchTraitKitControlV02119:
+		(input as CCFFrontPorchTraitKitControlV02119).set_editable(enabled)
 		return
 	if input.get_script() == FRONT_PORCH_NEEDS_OFF_CONTROL_V02116:
 		input.call("set_editable", enabled)
@@ -2793,6 +2810,11 @@ func _set_front_porch_control_value_v0172(
 	if input_value is CCFFrontPorchStringListControlV02116:
 		(
 			input_value as CCFFrontPorchStringListControlV02116
+		).set_items(value)
+		return
+	if input_value is CCFFrontPorchTraitKitControlV02119:
+		(
+			input_value as CCFFrontPorchTraitKitControlV02119
 		).set_items(value)
 		return
 	if input_value is Control and input_value.get_script() == FRONT_PORCH_NEEDS_OFF_CONTROL_V02116:

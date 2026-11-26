@@ -19,6 +19,11 @@ const RAW_HIDE_AFTERGLOW_PR669_COMMIT_V02118 := (
 	"756d1a33959036498a6657bc0d0989438654e2f4"
 )
 const AFTERGLOW_FIELD_ID_V02118 := "fp_afterglow_enabled"
+const TRAIT_KIT_FIELD_ID_V02119 := "fp_trait_kit"
+const TRAIT_KIT_MAX_ENTRIES_V02119 := 6
+const TRAIT_KIT_MAX_BOGEYS_V02119 := 3
+const TRAIT_KIT_KINDS_V02119 := ["boon", "bogey"]
+const TRAIT_KIT_TIERS_V02119 := ["emerging", "developing", "established"]
 
 
 func is_included(document: Dictionary, field: Dictionary) -> bool:
@@ -87,6 +92,8 @@ func _normalise_value(field: Dictionary, raw_value: Variant) -> Dictionary:
 		return _normalise_checkbox_value_v02118(field, raw_value)
 	if field_id == "fp_needs_off":
 		return RAW_HIDE_CHARACTER_V02116.normalise_needs_off(raw_value)
+	if field_id == TRAIT_KIT_FIELD_ID_V02119:
+		return normalise_trait_kit_v02119(raw_value)
 	if field_id == "fp_recovery":
 		return RAW_HIDE_CHARACTER_V02116.normalise_recovery(raw_value)
 	if field_id == "fp_needs_pace":
@@ -180,6 +187,16 @@ func validate_document(document: Dictionary) -> Dictionary:
 			errors.append(
 				"Work hours: %s" % str(parsed.get("error", "Invalid work hours."))
 			)
+	var trait_kit_field := field_by_id(TRAIT_KIT_FIELD_ID_V02119)
+	if is_included(document, trait_kit_field):
+		var kit_result := normalise_trait_kit_v02119(
+			value_for(document, trait_kit_field)
+		)
+		if not bool(kit_result.get("ok", false)):
+			errors.append(
+				"Boons & Bogies: %s"
+				% str(kit_result.get("error", "Invalid trait kit."))
+			)
 	validation["errors"] = errors
 	validation["ok"] = errors.is_empty()
 	return validation
@@ -215,6 +232,12 @@ func capabilities() -> Dictionary:
 	result["afterglow_character_default_is_tristate"] = true
 	result["afterglow_field_id"] = AFTERGLOW_FIELD_ID_V02118
 	result["checkbox_values_accept_text_booleans"] = true
+	result["trait_kit_field_id"] = TRAIT_KIT_FIELD_ID_V02119
+	result["trait_kit_max_entries"] = TRAIT_KIT_MAX_ENTRIES_V02119
+	result["trait_kit_max_bogeys"] = TRAIT_KIT_MAX_BOGEYS_V02119
+	result["trait_kit_kinds"] = TRAIT_KIT_KINDS_V02119.duplicate()
+	result["trait_kit_tiers"] = TRAIT_KIT_TIERS_V02119.duplicate()
+	result["trait_kit_links_boons_by_text"] = true
 	return result
 
 
@@ -254,6 +277,130 @@ func _normalise_checkbox_value_v02118(
 			% str(field.get("label", field.get("id", "this field")))
 		)
 	}
+
+
+func normalise_trait_kit_v02119(raw_value: Variant) -> Dictionary:
+	# Front Porch docs/design/boons-and-bogies.md §4: at most six entries
+	# combined, at most three bogeys, unique text, and `linkedTo` only on a
+	# bogey, naming a boon's exact text. Unknown per-entry keys are preserved
+	# so a later Front Porch field survives the round trip.
+	if raw_value == null:
+		return {"ok": true, "value": []}
+	if not raw_value is Array:
+		return {
+			"ok": false,
+			"error": "Expected a JSON array of boon and bogey entries."
+		}
+	var entries: Array = raw_value as Array
+	if entries.size() > TRAIT_KIT_MAX_ENTRIES_V02119:
+		return {
+			"ok": false,
+			"error": (
+				"A card may carry at most %d boons and bogies combined; this has %d."
+				% [TRAIT_KIT_MAX_ENTRIES_V02119, entries.size()]
+			)
+		}
+	var result: Array = []
+	var seen_texts := {}
+	var bogey_count := 0
+	for index in range(entries.size()):
+		var raw_entry: Variant = entries[index]
+		if not raw_entry is Dictionary:
+			return {
+				"ok": false,
+				"error": "Entry %d must be a JSON object with kind, text and tier." % (index + 1)
+			}
+		var entry: Dictionary = raw_entry
+		var kind := str(entry.get("kind", "")).strip_edges().to_lower()
+		if kind not in TRAIT_KIT_KINDS_V02119:
+			return {
+				"ok": false,
+				"error": (
+					"Entry %d must be kind \"boon\" or \"bogey\"." % (index + 1)
+				)
+			}
+		var text := str(entry.get("text", "")).strip_edges()
+		if text.is_empty():
+			return {
+				"ok": false,
+				"error": "Entry %d has no text." % (index + 1)
+			}
+		var text_key := text.to_lower()
+		if seen_texts.has(text_key):
+			return {
+				"ok": false,
+				"error": (
+					"Entry %d repeats an earlier text; every boon and bogey must be unique."
+					% (index + 1)
+				)
+			}
+		seen_texts[text_key] = true
+		var tier := str(entry.get("tier", "emerging")).strip_edges().to_lower()
+		if tier not in TRAIT_KIT_TIERS_V02119:
+			return {
+				"ok": false,
+				"error": (
+					"Entry %d must use tier emerging, developing or established."
+					% (index + 1)
+				)
+			}
+		var pinned_result := _normalise_checkbox_value_v02118(
+			{"label": "Pinned"}, entry.get("pinned", false)
+		)
+		if not bool(pinned_result.get("ok", false)):
+			return {
+				"ok": false,
+				"error": (
+					"Entry %d: %s" % [index + 1, str(pinned_result.get("error", ""))]
+				)
+			}
+		if kind == "bogey":
+			bogey_count += 1
+		var clean: Dictionary = entry.duplicate(true)
+		clean["kind"] = kind
+		clean["text"] = text
+		clean["tier"] = tier
+		clean["pinned"] = bool(pinned_result.get("value", false))
+		if entry.has("linkedTo"):
+			if kind != "bogey":
+				return {
+					"ok": false,
+					"error": (
+						"Entry %d: only a bogey may link to a boon." % (index + 1)
+					)
+				}
+			var link := str(entry.get("linkedTo", "")).strip_edges()
+			if link.is_empty():
+				clean.erase("linkedTo")
+			else:
+				clean["linkedTo"] = link
+		result.append(clean)
+	if bogey_count > TRAIT_KIT_MAX_BOGEYS_V02119:
+		return {
+			"ok": false,
+			"error": (
+				"A card may carry at most %d bogies; this has %d. Card bogies share "
+				+ "the same three-flaw budget."
+			) % [TRAIT_KIT_MAX_BOGEYS_V02119, bogey_count]
+		}
+	var boon_texts := {}
+	for entry_value in result:
+		var entry: Dictionary = entry_value
+		if str(entry.get("kind", "")) == "boon":
+			boon_texts[str(entry.get("text", ""))] = true
+	for index in range(result.size()):
+		var entry: Dictionary = result[index]
+		if not entry.has("linkedTo"):
+			continue
+		if not boon_texts.has(str(entry.get("linkedTo", ""))):
+			return {
+				"ok": false,
+				"error": (
+					"Entry %d links to \"%s\", which is not one of this kit's boons."
+					% [index + 1, str(entry.get("linkedTo", ""))]
+				)
+			}
+	return {"ok": true, "value": result}
 
 
 func _canonicalise_rawhide_omissions_v02116(document: Dictionary) -> void:

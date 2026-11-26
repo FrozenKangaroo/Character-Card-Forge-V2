@@ -58,12 +58,13 @@ func _run() -> void:
 	await _settle(6)
 	var project_id := _find_project_id(project_name)
 	if project_id.is_empty():
-		printerr("CAPTURE_WARNING: project %s not found" % project_name)
+		printerr("CAPTURE_WARNING: project %s not found; using an in-memory sample" % project_name)
+		await _load_sample_project()
 	else:
 		_main.call("_open_project", project_id)
 		await _settle(14)
-		await _shot("workspace_character")
-		await _capture_workspace_tabs()
+	await _shot("workspace_character")
+	await _capture_workspace_tabs()
 
 	_main.call("_show_view", "settings")
 	await _settle(10)
@@ -77,10 +78,51 @@ func _run() -> void:
 	quit(0)
 
 
+const SAMPLE_TRAIT_KIT := [
+	{
+		"kind": "boon",
+		"text": "Turns a chaotic group project into a schedule with owners and deadlines",
+		"tier": "developing",
+		"pinned": false
+	},
+	{
+		"kind": "boon",
+		"text": "Names the real problem in a badly written brief before anyone else has finished reading it",
+		"tier": "emerging",
+		"pinned": false
+	},
+	{
+		"kind": "bogey",
+		"text": "No internal clock: starts a timed task and loses track of the deadline entirely",
+		"tier": "developing",
+		"pinned": true
+	},
+	{
+		"kind": "bogey",
+		"text": "Argues with a constraint she did not negotiate instead of working inside it",
+		"tier": "emerging",
+		"pinned": true,
+		"linkedTo": "Names the real problem in a badly written brief before anyone else has finished reading it"
+	},
+]
+
+
 func _capture_workspace_tabs() -> void:
 	var workspace: Node = _main.get("_workspace")
 	if workspace == null:
 		return
+	# Inject a sample Boons & Bogies kit in memory so the capture can show the
+	# structured editor even when the loaded card has no kit yet. Nothing is
+	# saved: the harness never writes to the project.
+	var project_value: Variant = workspace.get("_project")
+	if project_value is Dictionary:
+		CCFStorageService.set_value_at_path(
+			project_value,
+			"character.card_extensions.front_porch.realism_engine.traitKit",
+			SAMPLE_TRAIT_KIT
+		)
+		workspace.call("_rebuild_form")
+		await _settle(6)
 	var tabs: TabContainer = workspace.get("_tabs")
 	if tabs == null:
 		printerr("CAPTURE_WARNING: workspace tabs not found")
@@ -101,6 +143,8 @@ func _capture_workspace_tabs() -> void:
 				await _shot("front_porch_%s" % slug)
 				if slug == "opening_state":
 					await _capture_opening_state_tail(workspace, group_tabs)
+				if slug.begins_with("boons"):
+					await _capture_trait_kit(workspace, group_tabs)
 		return
 
 
@@ -152,3 +196,59 @@ func _capture_opening_state_tail(workspace: Node, group_tabs: TabContainer) -> v
 	scroll.ensure_control_visible(row)
 	await _settle(8)
 	await _shot("front_porch_afterglow_row")
+
+
+# Builds a throwaway project in memory from a Card V2 sample so the harness can
+# run against an empty profile. Nothing is written to disk.
+func _load_sample_project() -> void:
+	var card := {
+		"spec": "chara_card_v2",
+		"spec_version": "2.0",
+		"data": {
+			"name": "Boons Sample",
+			"description": "A sample card used to capture the Boons & Bogies editor.",
+			"personality": "Careful and blunt.",
+			"scenario": "A workshop at the end of the day.",
+			"first_mes": "The bench is clear. Start talking.",
+			"mes_example": "",
+			"system_prompt": "",
+			"post_history_instructions": "",
+			"alternate_greetings": [],
+			"tags": ["sample"],
+			"creator": "",
+			"character_version": "",
+			"extensions": {"front_porch": {"version": "2.5", "realism_engine": {}}},
+		},
+	}
+	var imported: Dictionary = CCFCardFormatService.import_card_to_project(card, "json")
+	if not bool(imported.get("ok", false)):
+		printerr("CAPTURE_FAILED: sample project could not be built")
+		return
+	var project: Dictionary = imported.get("project", {})
+	var workspace: Node = _main.get("_workspace")
+	workspace.call(
+		"load_project",
+		project,
+		CCFTemplateService.load_default_template(),
+		CCFSettingsService.load_settings()
+	)
+	await _settle(4)
+	# Switch after loading: _show_view refuses "workspace" while no project is open.
+	_main.call("_show_view", "workspace")
+	await _settle(14)
+
+
+# Scrolls the Boons & Bogies section to its entry rows so the capture proves the
+# structured editor exists, not only the field header.
+func _capture_trait_kit(workspace: Node, group_tabs: TabContainer) -> void:
+	var page: Node = group_tabs.get_child(group_tabs.current_tab)
+	var scroll := page as ScrollContainer
+	if scroll == null:
+		return
+	var row := page.find_child("fp_trait_kit_row_v0172", true, false) as Control
+	if row == null:
+		printerr("CAPTURE_WARNING: trait kit row not found")
+		return
+	scroll.ensure_control_visible(row)
+	await _settle(8)
+	await _shot("boons_bogies_rows")
