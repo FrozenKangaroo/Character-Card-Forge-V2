@@ -130,6 +130,15 @@ Workspace project-setup rows collapse behind one labelled control so the edited 
 the full window. Release validation additionally checks the in-app build version and its
 tooltip against `VERSION`.
 
+The v0.21.19 development candidate adds Front Porch's Boons & Bogies trait kit to the
+optional Front Porch editor. Each card entry carries a kind (boon or bogey), a
+Novice/Skilled/Master tier that seeds at 0.30/0.60/0.80 strength, a pinned flag and an
+optional `linkedTo` naming one boon's exact text. The editor enforces the six-entry and
+three-bogey caps, repairs links when a boon is renamed, preserves unknown per-entry keys
+and validates every rule on save. Front Porch's design doc still marks the chat runtime
+(rolls, growth, milestones) as unbuilt and the feature as off by default; CCF ships the
+documented portable authoring shape ahead of it.
+
 The product has moved from feature-parity expansion into a pre-1.0 maturity phase. The
 active priorities are a public bake period, real-world Front Porch/provider/shared-storage
 validation, task-oriented user documentation, a smaller manifest-driven CI surface,

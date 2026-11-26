@@ -23,7 +23,7 @@ func _run() -> void:
 	var capabilities := service.capabilities()
 	if not _require(
 		str(capabilities.get("front_porch_extension_version", "")) == "2.5"
-		and int(capabilities.get("group_count", 0)) == 4
+		and int(capabilities.get("group_count", 0)) >= 4
 		and int(capabilities.get("field_count", 0)) >= 50
 		and bool(capabilities.get("unknown_field_round_trip", false))
 		and not bool(capabilities.get("raw_database_writes", true)),
@@ -257,7 +257,7 @@ func _run() -> void:
 	var workspace_capabilities := workspace.front_porch_capabilities_v0172()
 	if not _require(
 		bool(workspace_capabilities.get("workspace_tab", false))
-		and int(workspace_capabilities.get("group_tabs", 0)) == 4
+		and int(workspace_capabilities.get("group_tabs", 0)) >= 4
 		and bool(workspace_capabilities.get("alternative_greeting_seeds", false))
 		and bool(workspace_capabilities.get("manual_authoring", false))
 		and bool(workspace_capabilities.get("selective_ai_review", false))

@@ -6,6 +6,50 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [Unreleased]
 
+## [0.21.19] - 2026-11-26
+
+### Highlights
+
+- Added Front Porch's **Boons & Bogies** trait kit (`realism_engine.traitKit`)
+  to the optional Front Porch editor and to portable Card V2 round trips.
+- One structured editor replaces free-text guessing: per-entry kind, tier,
+  pinned state and an optional boon link, with the six-entry and three-bogey
+  caps enforced in the UI and again on save.
+
+### Changes
+
+- New **Boons & Bogies** group with one row per entry: Boon/Bogey selector,
+  Novice/Skilled/Master tier selector, pinned checkbox, free-text field and, for
+  bogeys, a **Pushes against boon** selector built from the kit's boon texts.
+- Renaming a boon rewrites bogeys that linked to its old text, because Front
+  Porch resolves `linkedTo` by exact string; a link whose boon was removed stays
+  visible as "missing boon" and is reported on save.
+- Unknown per-entry keys are preserved through editing, export and import, so a
+  future Front Porch entry field survives.
+- Validation rejects more than six entries, more than three bogeys, empty or
+  duplicate text, unknown kind/tier values, `linkedTo` on a boon, and a link
+  naming no boon in the kit. Messages carry the entry number.
+- AI proposals must return a real JSON array of entry objects; a malformed
+  proposal is a validation error and leaves the stored kit untouched.
+- Version bumped to 0.21.19 with the matching regression manifest.
+
+### Migration notes
+
+- None. Cards without `traitKit` keep the property absent, and no existing
+  project or template is rewritten.
+
+### Breaking changes
+
+- None.
+
+### Known limitations
+
+- Front Porch's design doc marks Boons & Bogies as not yet built and off by
+  default; CCF authors the documented portable shape ahead of the runtime. A
+  Front Porch build that does not know the key ignores it.
+- CCF does not implement rolls, growth passes, milestones or the Moments list.
+  Those are chat-runtime behaviour owned by Front Porch.
+
 ## [0.21.18] - 2026-11-13
 
 ### Highlights

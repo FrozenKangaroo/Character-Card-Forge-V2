@@ -45,6 +45,14 @@
       ]
     },
     {
+      "id": "boons_bogies",
+      "label": "Boons & Bogies",
+      "description": "Portable trait kit. Each entry seeds one boon or bogey into a new conversation at the tier you choose; Front Porch grows them from there.",
+      "fields": [
+        {"id":"fp_trait_kit","key_path":"traitKit","label":"Boons & Bogies","type":"trait_kit","default":[],"generate":true,"generation_prompt":"Propose at most six entries. Each entry is a JSON object with: kind (boon or bogey), text (one short sentence in the character's own terms), tier (emerging, developing or established), pinned (boolean), and for a bogey only an optional linkedTo naming one boon's exact text. At most three bogeys. Never duplicate a text. A boon is an ability that can improve; a bogey is a recurring flaw that sometimes shows. Do not prescribe {{user}}'s actions.","help_text":"Front Porch copies this kit into a new chat, one ring per entry: Novice starts at 0.30 strength, Skilled at 0.60 and Master at 0.80. At most six entries combined and at most three bogies, which share the card's flaw budget. A bogey's linkedTo must match a boon's text exactly. Boons & Bogies ships off in Front Porch, and nothing here changes a conversation that already exists."}
+      ]
+    },
+    {
       "id": "opening_state",
       "label": "Opening State",
       "description": "Optional starting values for new Front Porch conversations. Existing conversations keep their living state.",
