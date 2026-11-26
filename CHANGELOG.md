@@ -8,15 +8,26 @@ none. GitHub Releases use the matching reviewed section instead of generated not
 
 ## [0.21.19] - 2026-11-26
 
+This cumulative release contains the completed v0.21.17–v0.21.19 work since the
+previous public v0.21.16 release.
+
 ### Highlights
 
 - Added Front Porch's **Boons & Bogies** trait kit (`realism_engine.traitKit`)
-  to the optional Front Porch editor and to portable Card V2 round trips.
-- One structured editor replaces free-text guessing: per-entry kind, tier,
-  pinned state and an optional boon link, with the six-entry and three-bogey
-  caps enforced in the UI and again on save.
+  to the optional Front Porch editor and to portable Card V2 round trips, with
+  one structured editor per entry instead of free text.
+- Added the Front Porch **Afterglow new-chat default** (`afterglow_enabled`,
+  Rawhide PR #669) with lossless missing/true/false round trips, and clarified
+  **Pockets & Wardrobe** as a new-chat default (Rawhide PR #708).
+- Home's **Recent projects** now orders newest first, the Workspace collapses
+  its project-setup rows so the edited tab gets the space, and release
+  validation fails when the in-app build version drifts from `VERSION`.
+- Checkbox values proposed by AI or typed by hand are parsed explicitly, so the
+  text `"false"` can no longer switch a field on.
 
 ### Changes
+
+**v0.21.19 — Boons & Bogies**
 
 - New **Boons & Bogies** group with one row per entry: Boon/Bogey selector,
   Novice/Skilled/Master tier selector, pinned checkbox, free-text field and, for
@@ -30,13 +41,52 @@ none. GitHub Releases use the matching reviewed section instead of generated not
   duplicate text, unknown kind/tier values, `linkedTo` on a boon, and a link
   naming no boon in the kit. Messages carry the entry number.
 - AI proposals must return a real JSON array of entry objects; a malformed
-  proposal is a validation error and leaves the stored kit untouched.
-- Version bumped to 0.21.19 with the matching regression manifest.
+  proposal is a validation error and leaves the stored kit untouched. The
+  review window uses the same structured editor, so a valid proposal applies.
+
+**v0.21.18 — Afterglow defaults, workspace density**
+
+- Added the **Afterglow default for new chats** control (`afterglow_enabled`).
+  Missing stays missing and reads as Front Porch's enabled default; explicit
+  `true` and explicit `false` both survive editing, export, import and
+  re-export.
+- Checkbox values are parsed explicitly (`true`/`false`/`yes`/`no`/`on`/`off`/
+  `1`/`0`) instead of through `bool()`, which treated the string `"false"` as
+  true; invalid or absent proposals raise a validation error and leave the
+  stored value untouched.
+- Home's **Recent projects** sorts by `updated_at` (falling back to
+  `created_at`), puts undated rows last, breaks ties by name and shows compact
+  timestamps instead of raw ISO text.
+- The Workspace project/series/character/template rows collapse behind one
+  **Project setup** control, keeping the active template visible and the
+  author's explicit choice for the session.
+- The sidebar build-label tooltip is generated from the current release, and
+  the Front Porch capability report reads its version from `project.godot`
+  instead of a stale string. `validate_project.py` now checks both against
+  `VERSION`.
+
+**v0.21.17 — Pockets & Wardrobe defaults**
+
+- The character control is now **Pockets & Wardrobe default for new chats**,
+  preserving missing, explicit `true` and explicit `false` through editing,
+  Card V2 export, import and re-export.
+- The confirmed group-wide default lives in `default_member_realism_state`
+  (`pockets_enabled`), while embedded member cards keep their own defaults.
+  Runtime `pockets_switch` values remain session-owned and are never exported.
+
+**Across the release line**
+
+- Version bumped to 0.21.19 with the matching regression manifest; the release
+  suite now carries 192 tests.
+- GDScript analyzer warnings in the app scripts were cleared (name shadowing
+  and two incompatible ternaries), and the scripted UI harnesses
+  (`tools/dev/capture_ui.gd`, `tools/dev/smoke_ui.gd`) were added for
+  screenshot and runtime-noise checks.
 
 ### Migration notes
 
-- None. Cards without `traitKit` keep the property absent, and no existing
-  project or template is rewritten.
+- None. Cards without `traitKit` or `afterglow_enabled` keep those properties
+  absent, and no existing project, card or template is rewritten.
 
 ### Breaking changes
 
@@ -49,6 +99,8 @@ none. GitHub Releases use the matching reviewed section instead of generated not
   Front Porch build that does not know the key ignores it.
 - CCF does not implement rolls, growth passes, milestones or the Moments list.
   Those are chat-runtime behaviour owned by Front Porch.
+- Afterglow and Pockets runtime switches on existing conversations and group
+  sessions remain Front Porch-owned; CCF does not export them.
 
 ## [0.21.18] - 2026-11-13
 
